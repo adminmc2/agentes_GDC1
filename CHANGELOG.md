@@ -3,15 +3,15 @@
 
 ---
 
-## [2026-02-16] — Formato de output y formulación de objetivos
+## [2026-02-16] — Formato de output, formulación de objetivos y fundamentación teórica
 
 ### Añadido
-- `referencias/formulacion-objetivos.md` — Documento de referencia para formulación de objetivos de aprendizaje (MCER A1 + Bloom niveles 1-3). Incluye: verbos permitidos/prohibidos, estructura Verbo+Contenido+Condición+Criterio, objetivos tipo por sección, checklist de verificación.
+- `referencias/formulacion-objetivos.md` — Documento de referencia v2 para formulación de objetivos. Incorpora: 3 tipos de objetivos (comunicativo/lingüístico/gramatical), objetivos de procesamiento del input (VanPatten), regla del "no 2 por 1", correspondencia ACTFL-MCER (A1 ≈ Novice High), modelo SMART completo (5 componentes con temporalización), regla del 40% para número de objetivos, 5 errores frecuentes, matiz de Conti sobre Bloom en lenguas. Fuentes: MCER, PCIC, ACTFL, VanPatten, Canale y Swain, Long, Ellis, Dörnyei, Deci y Ryan, Vygotsky, Marzano, Wiggins y McTighe.
 - `unidades/U03-vocabulario-tarjetas.csv` — Archivo CSV independiente (18 palabras, delimitador punto y coma, UTF-8) listo para importar en InDesign mediante data merge.
 
 ### Modificado
 - `agentes/ag-vocabulario.md` — Eliminadas todas las cajas ASCII (┌─┐│└─┘) del formato de output. Sustituidas por encabezados markdown en negrita. Concepto de "Caja" preservado como instrucción funcional para el profesor (qué material preparar/imprimir). Añadida referencia a `formulacion-objetivos.md` para verbos observables.
-- `unidades/U03-familia.md` — Reformulados los 4 objetivos (gamificación + 3 bloques) con verbos observables Bloom 1-3. Eliminadas las 9 cajas ASCII. Añadido bloque CSV para producción en InDesign.
+- `unidades/U03-familia.md` — Objetivos corregidos según regla del "no 2 por 1": gamificación ahora con un solo verbo Bloom 3 ("Describir su propia familia y la de otros usando frases sencillas con al menos 6 términos de parentesco"), bloque 2 con un solo verbo Bloom 3 ("Producir un texto breve describiendo su propia familia usando las estructuras del texto modelo"). Eliminadas las 9 cajas ASCII. Añadido bloque CSV.
 
 ---
 

@@ -160,10 +160,10 @@ sobrina;F;rojo;so-BRI-na;M termina en -o, F termina en -a: sobrin-o / sobrin-a;U
 
 ##### GAMIFICACIÓN
 
-**Objetivo** — Nombrar las relaciones de parentesco básicas y describir su propia familia y la de otros usando frases sencillas.
+**Objetivo** — Describir su propia familia y la de otros usando frases sencillas con al menos 6 términos de parentesco.
 
 **Insignia: GENEALOGISTA**
-**Competencia:** "Sé nombrar a todos los miembros de una familia y describir las relaciones entre ellos."
+**Competencia:** "Sé describir mi familia y la de otros en español."
 **Para obtenerla:** Acumular 15 puntos a lo largo de la sección.
 **Compartir:** "Ya soy GENEALOGISTA: sé hablar de mi familia en español."
 
@@ -398,7 +398,7 @@ Los alumnos, con el libro cerrado, dicen relaciones de memoria lo más rápido p
 
 ##### BLOQUE 2 — Actividades 5-8 (p.35, primera mitad): Textos sobre familias reales y producción
 
-**Objetivo** — Identificar vocabulario de parentesco en textos breves sobre familias reales y producir un texto propio describiendo su familia usando frases sencillas.
+**Objetivo** — Producir un texto breve describiendo su propia familia usando las estructuras del texto modelo.
 
 **PREPARACIÓN**
 - Tener: libro abierto en p.35.
@@ -782,3 +782,4 @@ Diga: *"En los textos de Javier y Leonora habéis visto verbos como 'vive', 'tra
 | 2025-02-01 | Eliminada prueba manual — se rehará con sistema de agentes completo |
 | 2025-02-01 | Eliminada explotación §3.1 — se rehará con arquitectura corregida (7 agentes de sección: 1 agente = 1 sección del libro) |
 | 2026-02-01 | Generada explotación completa §3.1 Vocabulario — Parientes (p.34-35) por Agente Vocabulario v5.0. 11 actividades en 3 bloques, 14 fases, 4 notas lingüísticas, insignia GENEALOGISTA, reciclaje 70/30 integrado |
+| 2026-02-16 | Corregidos objetivos que violaban la regla del "no 2 por 1": gamificación (un solo verbo Bloom 3: "describir") y bloque 2 (un solo verbo Bloom 3: "producir"). Aplicados criterios de `referencias/formulacion-objetivos.md` v2. |

@@ -2,7 +2,7 @@
 
 ## Contexto de aplicación
 - **Curso:** Nuevo Compañeros 1 (SGEL)
-- **Nivel:** A1.1 (MCER)
+- **Nivel:** A1.1 (MCER) ≈ ACTFL Novice High
 - **Público:** Adolescentes 12-15 años, aula multilingüe
 - **Uso:** Referencia obligatoria para todos los agentes de sección al formular objetivos de gamificación, de bloque y de sección
 
@@ -29,20 +29,35 @@ El MCER define A1 así (CVC Cervantes, Cap. 3):
 
 > *"Es capaz de comprender y utilizar expresiones cotidianas de uso muy frecuente, así como frases sencillas destinadas a satisfacer necesidades de tipo inmediato. Puede presentarse a sí mismo y a otros, pedir y dar información personal básica sobre su domicilio, sus pertenencias y las personas que conoce."*
 
-Esto significa que en A1.1 los objetivos se sitúan en los **tres primeros niveles** de la taxonomía de Bloom: Recordar, Comprender y Aplicar. Los niveles superiores (Analizar, Evaluar, Crear) no son apropiados para este nivel.
+La correspondencia ACTFL sitúa A1 del MCER como equivalente aproximado a **Novice High** (no a todo el rango Novice). Los Can-Do Statements de NCSSFL-ACTFL son una fuente útil de ejemplos: "I can greet and take leave in a polite way", "I can introduce myself on an online site".
+
+Esto significa que en A1.1 los objetivos **de producción** se sitúan en los **tres primeros niveles** de la taxonomía de Bloom: Recordar, Comprender y Aplicar. Los niveles superiores (Analizar, Evaluar, Crear) no son apropiados como objetivos explícitos de producción en este nivel.
+
+**Matiz importante (Conti, 2015):** En el procesamiento de lenguas, los niveles superiores de Bloom no son secuenciales sino paralelos. Un alumno A1 que lee un texto desconocido simultáneamente analiza relaciones sintáctico-semánticas, crea significado mediante inferencia y evalúa cada inferencia. La restricción Bloom 1-3 se aplica a los **objetivos de producción formulados explícitamente**, no a los procesos cognitivos implícitos de comprensión.
 
 ### 1.3 El objetivo debe usar formato "can-do" del MCER
 
 El MCER usa descriptores en formato **"Soy capaz de..."** / **"Puedo..."**. En la guía del profesor, el equivalente es **"El alumno es capaz de..."** o directamente el verbo en infinitivo como acción esperada.
 
+### 1.4 Un objetivo = un verbo = un proceso cognitivo
+
+**Regla del "no 2 por 1":** Cada objetivo contiene UN solo verbo principal que describe UN solo proceso cognitivo. El uso de "y", "para" o "a fin de" frecuentemente señala un objetivo doble que debe dividirse.
+
+| Formulación | Problema | Corrección |
+|-------------|----------|------------|
+| "Conocer y aplicar las reglas de acentuación" | Dos niveles Bloom (Recordar + Aplicar) | Dividir en dos objetivos separados |
+| "Nombrar las relaciones de parentesco y describir su propia familia" | Recordar + Aplicar mezclados | Objetivo 1: "Nombrar..." / Objetivo 2: "Describir..." |
+
+**Excepción:** Cuando los dos verbos están en el **mismo nivel de Bloom** y comparten contenido, pueden combinarse: "Reconocer y nombrar los términos de parentesco" (ambos Bloom 1: Recordar).
+
 ---
 
-## 2. Estructura de un objetivo
+## 2. Estructura de un objetivo (modelo SMART + A-B-C-D)
 
-Un objetivo de aprendizaje tiene **cuatro componentes** (adaptación de Bloom + MCER):
+Un objetivo de aprendizaje tiene **cinco componentes**:
 
 ```
-VERBO OBSERVABLE + CONTENIDO + CONDICIÓN + CRITERIO DE LOGRO
+VERBO OBSERVABLE + CONTENIDO + CONDICIÓN + CRITERIO DE LOGRO + TEMPORALIZACIÓN
 ```
 
 | Componente | Definición | Ejemplo (U03 Vocabulario) |
@@ -51,15 +66,51 @@ VERBO OBSERVABLE + CONTENIDO + CONDICIÓN + CRITERIO DE LOGRO
 | **Contenido** | Qué conocimiento o habilidad se trabaja | las relaciones de parentesco básicas |
 | **Condición** | Con qué apoyo, en qué contexto | señalándolas en un árbol genealógico |
 | **Criterio de logro** | Cuánto, con qué precisión, qué umbral | al menos 8 de 10 miembros sin errores |
+| **Temporalización** | Cuándo se evalúa | Al final de este bloque |
 
-**Ejemplo completo:**
-> Nombrar las relaciones de parentesco básicas señalándolas en un árbol genealógico, identificando correctamente al menos 8 de 10 miembros.
+**Ejemplo completo (SMART):**
+> Al final de este bloque, nombrar las relaciones de parentesco básicas señalándolas en un árbol genealógico, identificando correctamente al menos 8 de 10 miembros.
 
-**Nota:** No todos los objetivos necesitan los 4 componentes explícitos. El verbo + contenido son obligatorios. La condición y el criterio se añaden cuando aportan claridad.
+**Nota:** No todos los objetivos necesitan los 5 componentes explícitos. El verbo + contenido son obligatorios. La condición, el criterio y la temporalización se añaden cuando aportan claridad. Para los objetivos de bloque de la guía, la temporalización está implícita ("al final de este bloque").
 
 ---
 
-## 3. Verbos permitidos por nivel de Bloom para A1.1
+## 3. Tres tipos de objetivos
+
+En cada sección coexisten tres tipos de objetivos que cumplen funciones diferentes:
+
+| Tipo | Qué define | Ejemplo (U03) | Cuándo se usa |
+|------|-----------|---------------|---------------|
+| **Comunicativo** | Qué puede *hacer* el alumno con la lengua | "Describir su propia familia usando frases sencillas" | Objetivo global de sección y gamificación |
+| **Lingüístico** | Qué recursos léxicos/fonéticos tiene | "Nombrar al menos 10 términos de parentesco" | Objetivos de bloque en secciones de Vocabulario |
+| **Gramatical** | Qué estructuras maneja | "Completar frases con la forma correcta de *tener*" | Objetivos de bloque en secciones de Gramática |
+
+**Principio (Canale y Swain, 1980):** La gramática se enseña al servicio de la comunicación, nunca como fin en sí misma. En A1, los objetivos gramaticales y lingüísticos son cimiento de metas comunicativas.
+
+**Regla para la guía:** El objetivo de **gamificación** (insignia) es siempre **comunicativo**. Los objetivos de **bloque** pueden ser lingüísticos, gramaticales o comunicativos según la fase de la sección.
+
+---
+
+## 4. Objetivos de procesamiento del input (VanPatten)
+
+La teoría del Procesamiento del Input (VanPatten, 1996, 2004) establece que antes de exigir producción, el alumno debe haber procesado el input. Esto genera un tipo de objetivo específico para las fases receptivas (F1a, F1b, F2a del Ciclo de 5 fases):
+
+**Objetivos de procesamiento (para fases receptivas):**
+- "Identificar los términos de parentesco en un audio, señalándolos en el árbol genealógico" (F2a — Receptivo)
+- "Distinguir los pares masculino/femenino en el vocabulario de parentesco" (F1b — Awareness)
+- "Reconocer las formas del presente regular en un texto modelo, sin producirlas" (F1a — Modelling)
+
+**Objetivos de producción (para fases productivas):**
+- "Describir su propia familia usando al menos 4 términos de parentesco" (F2b — Productivo)
+- "Escribir un texto de 40-60 palabras presentando a su familia" (F2b — Productivo)
+
+**Principio:** Los objetivos de procesamiento son legítimos y necesarios. No todo objetivo debe culminar en producción. Las fases receptivas del Ciclo de 5 fases tienen sus propios objetivos de comprensión/procesamiento.
+
+**Aplicación en la guía:** Los objetivos de bloque cubren tanto procesamiento como producción. El objetivo de gamificación siempre es de producción (Bloom 3: Aplicar).
+
+---
+
+## 5. Verbos permitidos por nivel de Bloom para A1.1
 
 ### Nivel 1 — RECORDAR (reconocer y evocar información)
 
@@ -98,7 +149,7 @@ Ejemplos para secciones del libro:
 
 ---
 
-## 4. Verbos PROHIBIDOS en objetivos
+## 6. Verbos PROHIBIDOS en objetivos
 
 Estos verbos NO deben usarse porque no son observables, no son medibles, o son desproporcionados para A1.1:
 
@@ -118,125 +169,182 @@ Estos verbos NO deben usarse porque no son observables, no son medibles, o son d
 
 ---
 
-## 5. Objetivos por tipo de sección
+## 7. Errores frecuentes que los agentes deben evitar
 
-### 5.1 Sección de Vocabulario
+### 7.1 Confundir actividad con objetivo
+
+| Error | Corrección |
+|-------|------------|
+| "Los alumnos completarán una hoja de trabajo sobre ser vs. estar" | "Distinguir entre ser y estar para describir personas y ubicaciones" |
+| "Los alumnos escucharán el audio de la actividad 1" | "Identificar los términos de parentesco en el audio" |
+
+La actividad es lo que el alumno *hace*; el objetivo es lo que *aprende*.
+
+### 7.2 Objetivo doble ("2 por 1")
+
+Ver §1.4 arriba. Un objetivo = un verbo = un proceso cognitivo.
+
+### 7.3 Foco en el profesor en vez de en el alumno
+
+| Error | Corrección |
+|-------|------------|
+| "El profesor explicará el uso de los artículos" | "El alumno seleccionará el artículo correcto (el/la/los/las) para 10 sustantivos" |
+
+### 7.4 Número excesivo de objetivos
+
+**Regla del 40%:** El número de objetivos globales debe ser aproximadamente el 40% del número de sesiones. 2 sesiones para vocabulario → 1 objetivo global de sección. No más.
+
+Los objetivos de bloque son subsidiarios del objetivo global. No son objetivos independientes adicionales.
+
+### 7.5 Nivel desproporcionado para A1.1
+
+No esperar que un A1 "analice recursos literarios" o "evalúe la corrección de un texto". Verbos de Bloom 4-6 (Analizar, Evaluar, Crear) no se formulan como objetivos explícitos en A1.1.
+
+---
+
+## 8. Objetivos por tipo de sección
+
+### 8.1 Sección de Vocabulario
 
 El objetivo de vocabulario en A1.1 progresa dentro de la sección:
 
-| Momento | Nivel Bloom | Objetivo tipo |
-|---------|------------|--------------|
-| Inicio de sección (acts. 1-2) | Recordar | Reconocer y nombrar el vocabulario del campo semántico [X] |
-| Mitad de sección (acts. 3-6) | Comprender | Asociar el vocabulario con su contexto de uso y clasificarlo por [categoría] |
-| Final de sección (acts. 7-11) | Aplicar | Describir / producir [tema] usando el vocabulario aprendido en frases sencillas |
+| Momento | Nivel Bloom | Tipo | Objetivo modelo |
+|---------|------------|------|----------------|
+| Inicio (acts. 1-2) | Recordar | Lingüístico | Reconocer y nombrar el vocabulario del campo semántico [X] |
+| Mitad (acts. 3-6) | Comprender | Lingüístico | Asociar el vocabulario con su contexto de uso y clasificarlo por [categoría] |
+| Final (acts. 7-11) | Aplicar | Comunicativo | Describir [tema] usando el vocabulario aprendido en frases sencillas |
 
 **Objetivo global de sección (para la gamificación):**
-Siempre en nivel Aplicar (Bloom 3), porque la insignia certifica que el alumno PUEDE HACER algo con lo aprendido.
+Siempre comunicativo, en nivel Aplicar (Bloom 3), porque la insignia certifica que el alumno PUEDE HACER algo con lo aprendido.
 
 Formato:
 > **[Verbo Bloom 3]** + [contenido del campo semántico] + [condición: usando frases sencillas / en contexto oral/escrito] + [criterio: con al menos X elementos / sin errores de Y]
 
 Ejemplo:
-> "Nombrar las relaciones de parentesco y describir su propia familia y la de otros usando frases sencillas."
+> "Describir su propia familia y la de otros usando frases sencillas con al menos 6 términos de parentesco."
 
-### 5.2 Sección de Gramática
+### 8.2 Sección de Gramática
 
-| Momento | Nivel Bloom | Objetivo tipo |
-|---------|------------|--------------|
-| Inicio | Recordar | Identificar las formas del [paradigma gramatical] |
-| Mitad | Comprender | Clasificar / asociar las formas con su función |
-| Final | Aplicar | Completar / producir frases usando [estructura gramatical] correctamente |
+| Momento | Nivel Bloom | Tipo | Objetivo modelo |
+|---------|------------|------|----------------|
+| Inicio | Recordar | Gramatical | Identificar las formas del [paradigma gramatical] |
+| Mitad | Comprender | Gramatical | Clasificar / asociar las formas con su función |
+| Final | Aplicar | Comunicativo | Producir frases usando [estructura gramatical] para [función comunicativa] |
 
 Ejemplo global:
-> "Conjugar los verbos regulares en presente y usar el verbo *tener* para describir personas en frases sencillas."
+> "Producir frases sencillas usando el presente regular y el verbo *tener* para describir personas."
 
-### 5.3 Sección de Comunicación
+### 8.3 Sección de Comunicación
 
-| Momento | Nivel Bloom | Objetivo tipo |
-|---------|------------|--------------|
-| Inicio | Recordar | Reconocer los exponentes lingüísticos de la función [X] |
-| Mitad | Comprender | Asociar cada exponente con la situación comunicativa adecuada |
-| Final | Aplicar | Usar los exponentes para [función comunicativa] en un diálogo / interacción |
+| Momento | Nivel Bloom | Tipo | Objetivo modelo |
+|---------|------------|------|----------------|
+| Inicio | Recordar | Lingüístico | Reconocer los exponentes lingüísticos de la función [X] |
+| Mitad | Comprender | Comunicativo | Asociar cada exponente con la situación comunicativa adecuada |
+| Final | Aplicar | Comunicativo | Usar los exponentes para [función comunicativa] en un diálogo / interacción |
 
 Ejemplo global:
 > "Presentar a un familiar o compañero dando su nombre, edad, nacionalidad y parentesco."
 
-### 5.4 Sección de Destrezas
+### 8.4 Sección de Destrezas
 
 Ejemplo global:
 > "Escribir un correo de 40-60 palabras presentando a su familia, usando el vocabulario y las estructuras de la unidad."
 
-### 5.5 Sección de Cultura
+### 8.5 Sección de Cultura
 
 Ejemplo global:
 > "Identificar 3 características del cómic hispano y comparar con el cómic de su propio país."
 
-### 5.6 Sección de Reflexión
+### 8.6 Sección de Reflexión
 
 Ejemplo global:
 > "Identificar qué contenidos de la unidad puede usar con seguridad y cuáles necesita repasar."
 
-### 5.7 Sección de Evaluación
+### 8.7 Sección de Evaluación
 
 Ejemplo global:
 > "Completar las tareas de evaluación demostrando las competencias trabajadas en la unidad."
 
 ---
 
-## 6. Formulación del objetivo en la caja de Gamificación
+## 9. Formulación del objetivo en la gamificación
 
-El objetivo aparece en la caja de gamificación al inicio de cada sección. Formato obligatorio:
+El objetivo aparece en la gamificación al inicio de cada sección. Formato obligatorio:
 
-```
-┌─ GAMIFICACIÓN ───────────────────────────────────────────────────────┐
-│                                                                       │
-│  Objetivo — [Verbo observable (Bloom 3)] + [contenido] +             │
-│  [condición] usando [tipo de producción: frases sencillas /          │
-│  diálogo / texto breve].                                             │
-│                                                                       │
-│  Insignia: [NOMBRE]                                                  │
-│  Competencia: "Sé + infinitivo..."                                  │
-│  ...                                                                 │
-│                                                                       │
-└───────────────────────────────────────────────────────────────────────┘
-```
+**Objetivo** — [Verbo observable (Bloom 3)] + [contenido] + [condición] usando [tipo de producción: frases sencillas / diálogo / texto breve].
+
+**Insignia:** [NOMBRE]
+**Competencia:** "Sé + infinitivo..."
+**Para obtenerla:** [criterio de obtención]
+**Compartir:** "[descripción breve para redes]"
 
 **Reglas:**
-1. El verbo del objetivo es SIEMPRE observable (ver §3)
-2. El verbo NUNCA es "dominar", "conocer", "entender", "saber" ni ninguno de la lista prohibida (ver §4)
+1. El verbo del objetivo es SIEMPRE observable (ver §5)
+2. El verbo NUNCA es "dominar", "conocer", "entender", "saber" ni ninguno de la lista prohibida (ver §6)
 3. El objetivo está en nivel Aplicar (Bloom 3) porque la insignia certifica capacidad de uso
-4. El objetivo es coherente con A1.1: usa "frases sencillas", "expresiones básicas", no exige fluidez ni complejidad
-5. La competencia de la insignia ("Sé + infinitivo") es una versión simplificada del objetivo, formulada desde el punto de vista del alumno
+4. El objetivo es siempre **comunicativo** (tipo "puede hacer con la lengua"), no lingüístico ni gramatical
+5. El objetivo contiene UN solo verbo principal (regla del "no 2 por 1", ver §1.4)
+6. El objetivo es coherente con A1.1: usa "frases sencillas", "expresiones básicas", no exige fluidez ni complejidad
+7. La competencia de la insignia ("Sé + infinitivo") es una versión simplificada del objetivo, formulada desde el punto de vista del alumno
 
 **Relación objetivo ↔ competencia de insignia:**
 
 | Elemento | Punto de vista | Ejemplo |
 |----------|---------------|---------|
-| **Objetivo** (para el profesor) | Tercera persona / infinitivo | "Nombrar las relaciones de parentesco y describir su propia familia y la de otros usando frases sencillas" |
-| **Competencia** (para el alumno) | Primera persona "Sé..." | "Sé nombrar a todos los miembros de una familia y describir las relaciones entre ellos" |
+| **Objetivo** (para el profesor) | Tercera persona / infinitivo | "Describir su propia familia y la de otros usando frases sencillas con al menos 6 términos de parentesco" |
+| **Competencia** (para el alumno) | Primera persona "Sé..." | "Sé describir mi familia y la de otros en español" |
 
 ---
 
-## 7. Checklist de verificación del objetivo
+## 10. Checklist de verificación del objetivo
 
 Antes de validar un objetivo, el agente (o el revisor) verifica:
 
 - [ ] ¿El verbo es observable? (¿El profesor puede ver/oír la acción?)
 - [ ] ¿El verbo está en los niveles 1-3 de Bloom? (Recordar / Comprender / Aplicar)
-- [ ] ¿El verbo NO está en la lista de prohibidos? (§4)
+- [ ] ¿El verbo NO está en la lista de prohibidos? (§6)
 - [ ] ¿Es coherente con A1.1? (frases sencillas, expresiones básicas, necesidades inmediatas)
 - [ ] ¿Tiene al menos verbo + contenido?
-- [ ] ¿El objetivo de gamificación está en nivel Aplicar (Bloom 3)?
+- [ ] ¿Contiene UN solo verbo principal? (regla del "no 2 por 1")
+- [ ] ¿El tipo de objetivo (comunicativo/lingüístico/gramatical) es coherente con su posición? (§3)
+- [ ] ¿El objetivo de gamificación es comunicativo y está en nivel Aplicar (Bloom 3)?
 - [ ] ¿La competencia de la insignia es la versión "Sé + infinitivo" del objetivo?
+- [ ] ¿El número de objetivos globales es proporcional? (~40% del número de sesiones)
+- [ ] ¿Las fases receptivas tienen objetivos de procesamiento, no solo de producción? (§4)
 
 ---
 
 ## Fuentes
 
-- **MCER / CEFR:** Consejo de Europa. *Marco Común Europeo de Referencia para las Lenguas.* Descriptores A1, Cap. 3, Cuadro 2. Disponible en: CVC Cervantes (https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/cap_03_02.htm)
-- **Taxonomía de Bloom (revisada):** Anderson, L.W. & Krathwohl, D.R. (2001). *A Taxonomy for Learning, Teaching, and Assessing.* Niveles: Recordar, Comprender, Aplicar, Analizar, Evaluar, Crear.
-- **Formulación de objetivos:** Estructura Verbo + Contenido + Condición + Criterio. Adaptación de: Docentes al día (https://docentesaldia.com/2019/01/28/como-usar-la-taxonomia-de-bloom-para-redactar-objetivos-de-aprendizaje/)
-- **Can-do statements MCER:** Descriptores ilustrativos del MCER, Anejo 1, Volumen complementario (2020). CVC Cervantes (https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco_complementario/anejo_01.htm)
+### Marcos institucionales
+- **MCER / CEFR:** Consejo de Europa (2001/2020). *Marco Común Europeo de Referencia para las Lenguas.* Descriptores A1, Cap. 3. CVC Cervantes.
+- **MCER Companion Volume:** Consejo de Europa (2020). *CEFR Companion Volume with New Descriptors.* Nuevas escalas de mediación, interacción en línea, Pre-A1, control fonológico basado en inteligibilidad.
+- **PCIC:** Instituto Cervantes (2006). *Plan Curricular del Instituto Cervantes.* 12 inventarios en 5 componentes. Tres dimensiones del alumno: agente social, hablante intercultural, aprendiente autónomo.
+- **ACTFL:** American Council on the Teaching of Foreign Languages (2024). *Proficiency Guidelines.* A1 MCER ≈ Novice High.
+- **NCSSFL-ACTFL:** (2017). *Can-Do Statements.* Organizados por modos comunicativos (interpretativo, interpersonal, presentacional).
+
+### Taxonomías y cognición
+- **Bloom (revisada):** Anderson, L.W. & Krathwohl, D.R. (2001). *A Taxonomy for Learning, Teaching, and Assessing.* Seis niveles cruzados con cuatro dimensiones de conocimiento.
+- **Conti (2015):** Crítica de Bloom aplicada a lenguas — los niveles superiores no son secuenciales sino paralelos en el procesamiento de L2.
+- **Marzano (2000/2007):** Nueva taxonomía con sistema del yo (autoeficacia, respuestas emocionales) y sistema metacognitivo.
+
+### Adquisición de segundas lenguas
+- **VanPatten (1996, 2004):** Procesamiento del Input. Principio de Primacía del Significado. Instrucción de Procesamiento (PI): objetivos de comprensión antes que de producción.
+- **Canale y Swain (1980):** Competencia comunicativa = gramatical + sociolingüística + discursiva + estratégica.
+- **Long (1991, 2015):** Focus on Form vs. Focus on FormS. Enseñanza Basada en Tareas (TBLT).
+- **Ellis (2003, 2020):** TBLT. Interfaz débil entre conocimiento explícito e implícito.
+- **Krashen (1982):** Distinción adquisición/aprendizaje. Filtro afectivo.
+
+### Motivación y adolescentes
+- **Dörnyei (2005, 2009):** Sistema Motivacional del Yo L2. Experiencia de Aprendizaje como predictor más fuerte en adolescentes.
+- **Deci y Ryan (2000):** Teoría de la Autodeterminación. Tres necesidades: autonomía, competencia, relación.
+- **Roseth, Johnson y Johnson (2008):** Metaanálisis con 17.000 adolescentes (12-15 años): estructuras cooperativas → mejores relaciones entre pares + mayor rendimiento.
+- **Vygotsky (1978):** Zona de Desarrollo Próximo. Andamiaje con retirada gradual.
+
+### Diseño instruccional
+- **Modelo SMART:** Doran (1981). Específico, Medible, Alcanzable, Relevante, Temporalizado.
+- **Modelo A-B-C-D:** Mager (1962/1997). Audiencia, Comportamiento, Condición, Grado.
+- **Backward Design:** Wiggins y McTighe (2005). Partir de objetivos → diseñar evaluación → planificar actividades.
 
 ---
 
@@ -245,3 +353,4 @@ Antes de validar un objetivo, el agente (o el revisor) verifica:
 | Fecha | Cambio |
 |-------|--------|
 | 2026-02-16 | Creación inicial — Documento de referencia para formulación de objetivos, basado en MCER A1 + Taxonomía de Bloom (niveles 1-3) |
+| 2026-02-16 | Ampliación mayor: añadidos 3 tipos de objetivos (comunicativo/lingüístico/gramatical), objetivos de procesamiento del input (VanPatten), regla del "no 2 por 1", correspondencia ACTFL-MCER, modelo SMART completo (5 componentes con temporalización), regla del 40% para número de objetivos, errores frecuentes (§7), matiz de Conti sobre Bloom en lenguas. Fuentes ampliadas con PCIC, ACTFL, VanPatten, Canale y Swain, Long, Dörnyei, Deci y Ryan, Vygotsky, Marzano. |
