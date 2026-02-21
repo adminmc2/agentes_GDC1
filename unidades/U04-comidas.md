@@ -35,7 +35,7 @@
 |---------|-------------------|---------|-----------------|
 | *pendiente — necesito datos/U04-inventario.json* |
 
-### 2. Notas lingüísticas para el profesor
+### 2. Píldoras formativas para el profesor
 *Genera: Agente 1 (Planificador)*
 
 *pendiente*

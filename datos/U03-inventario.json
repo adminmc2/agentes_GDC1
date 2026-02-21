@@ -7,15 +7,15 @@
   "contenidos_indice": {
     "vocabulario": "Parientes",
     "gramatica": "Presente de los verbos regulares. Verbo tener. Posesivos. Hacer un cuaderno de vocabulario",
-    "comunicacion": "Presentar a alguien. Hablar de la familia. La hora. El sonido /g/",
+    "comunicacion": "Presentar a alguien. Hablar de la familia. La hora. El sonido /θ/",
     "destrezas": "Escribir un correo con información personal, sobre la familia y los compañeros de clase. Escuchar la programación de la televisión",
-    "cultura": "El cómic y el dibujo animado"
+    "cultura": "El cómic y las películas de animación"
   },
 
   "paginas_detalle": [
     {
       "pagina": 34,
-      "imagen": "datos/imagenes/U03/U03-p34.jpg",
+      "imagen": "datos/imagenes/U03/U3_p01.jpg",
       "seccion": "Vocabulario — Parientes",
       "actividades": [
         {
@@ -26,20 +26,37 @@
           "contenido_linguistico": ["vocabulario de parentesco: abuelo, abuela, madre, padre, tío, tía, hermano, hermana, primo, prima"],
           "destreza": "comprensión oral + producción oral",
           "tiene_audio": true,
+          "pista_audio": 31,
           "tiene_imagen": true,
-          "descripcion_imagen": "Árbol genealógico de David con 12 fotos de familiares etiquetados por relación de parentesco"
+          "descripcion_imagen": "Árbol genealógico de David con 12 fotos de familiares. Fila superior: abuelo (1), abuela (2). Fila media: madre (3), padre (4), tío (5), tía (6), tía (7). Fila inferior: hermano (8), DAVID (centro), hermana (9), primo (10), prima (11). Cada foto muestra el término de parentesco en una etiqueta naranja numerada.",
+          "descripcion": "El alumno observa el árbol genealógico de David con los términos de parentesco etiquetados, escucha el audio y repite cada término."
         },
         {
           "id": "U03-p34-act02",
           "numero": 2,
-          "tipo": "escucha y relaciona",
-          "instruccion_original": "Escucha a David. Relaciona cada personaje de su árbol genealógico con los siguientes nombres.",
-          "contenido_linguistico": ["vocabulario de parentesco", "nombres propios: Carmen, Roberto, Carlos, Alicia, María, Nacho, Juana, Luis, Álvaro, Paloma, Pilar"],
-          "destreza": "comprensión oral",
+          "tipo": "escucha y forma frases",
+          "instruccion_original": "Escucha a David. Mira el árbol genealógico anterior y forma frases con los siguientes nombres como en el ejemplo.",
+          "contenido_linguistico": ["vocabulario de parentesco", "posesivo su", "nombres propios: Carmen, Roberto, Carlos, Alicia, María, Nacho, Juana, Luis, Álvaro, Paloma, Pilar"],
+          "destreza": "comprensión oral + producción oral",
           "tiene_audio": true,
+          "pista_audio": 32,
           "tiene_imagen": false,
           "ejemplo_libro": "Su abuelo se llama Carlos.",
-          "descripcion": "El alumno escucha a David presentar a su familia y asigna nombres a cada personaje del árbol"
+          "nombres_dados": ["Carmen", "Roberto", "Carlos", "Alicia", "María", "Nacho", "Juana", "Luis", "Álvaro", "Paloma", "Pilar"],
+          "respuestas": [
+            "1. Su abuelo se llama Carlos.",
+            "2. Su abuela se llama Juana.",
+            "3. Su madre se llama Alicia.",
+            "4. Su padre se llama Luis.",
+            "5. Su tío se llama Roberto.",
+            "6. Su tía se llama Pilar.",
+            "7. Su tía se llama Carmen.",
+            "8. Su hermano se llama Nacho.",
+            "9. Su hermana se llama María.",
+            "10. Su primo se llama Álvaro.",
+            "11. Su prima se llama Paloma."
+          ],
+          "descripcion": "El alumno escucha a David presentar a su familia y forma frases con la estructura 'Su [parentesco] se llama [nombre]' para cada uno de los 11 nombres."
         },
         {
           "id": "U03-p34-act03",
@@ -49,6 +66,7 @@
           "contenido_linguistico": ["abuelos, padres, mujer, marido, hijos, hija, nietos, nietas, sobrino, sobrina"],
           "destreza": "comprensión oral + mediación (traducción)",
           "tiene_audio": true,
+          "pista_audio": 33,
           "tiene_imagen": false,
           "frases": [
             "1. Carlos y Juana son los abuelos de David.",
@@ -61,25 +79,35 @@
             "8. David es el sobrino de Roberto y Carmen.",
             "9. Paloma es la sobrina de Alicia."
           ],
-          "descripcion": "9 frases con palabras de parentesco subrayadas; el alumno identifica y traduce a su L1"
+          "descripcion": "9 frases con palabras de parentesco subrayadas (plurales, mujer/marido, nietos/nietas, sobrino/sobrina); el alumno identifica y traduce a su L1."
         },
         {
           "id": "U03-p34-act04",
           "numero": 4,
           "tipo": "práctica oral en parejas",
-          "instruccion_original": "En parejas, practica la siguiente conversación. Después, pregunta y responde sobre otros miembros de la familia de David.",
+          "instruccion_original": "En parejas, practica la siguiente conversación. Pregunta y responde sobre otros miembros de la familia de David.",
           "contenido_linguistico": ["¿Quién es Carlos?", "Es el abuelo de David.", "¿Cómo se llama la madre de David?", "Alicia."],
           "destreza": "interacción oral",
           "tiene_audio": false,
           "tiene_imagen": false,
-          "descripcion": "Diálogo modelo para practicar preguntas sobre relaciones familiares; luego producción libre sobre el árbol"
+          "dialogos_modelo": [
+            "—¿Quién es Carlos? —Es el abuelo de David.",
+            "—¿Cómo se llama la madre de David? —Alicia."
+          ],
+          "descripcion": "Diálogo modelo para practicar preguntas sobre relaciones familiares del árbol de David; luego producción libre sobre otros miembros."
         }
       ]
     },
     {
       "pagina": 35,
-      "imagen": "datos/imagenes/U03/U03-p35.jpg",
+      "imagen": "datos/imagenes/U03/U3_p02.jpg",
       "seccion": "Vocabulario — Parientes",
+      "respuestas_recuadro_naranja": [
+        "Lucía es de un pueblo de Cantabria.",
+        "2 Seis personas: su padre, su madre, su hermana Ana, sus hermanos Pablo y Carlos y ella.",
+        "3 Su padre es agricultor y también tiene vacas.",
+        "4 Su madre trabaja en el hotel del pueblo."
+      ],
       "actividades": [
         {
           "id": "U03-p35-act05",
@@ -90,46 +118,29 @@
           "destreza": "comprensión lectora + producción escrita",
           "tiene_audio": false,
           "tiene_imagen": false,
-          "texto_modelo": "Mi padre se llama Antonio y tiene cuarenta años. Mi madre tiene treinta y cinco y se llama Elena. Tengo dos hermanas, se llaman Ana y Marta. Ana tiene ocho años y Marta, cinco. No tengo hermanos.",
-          "descripcion": "Texto modelo breve de una niña que describe a su familia; el alumno escribe un texto similar sobre la suya"
+          "texto_modelo": "Mi padre se llama Antonio y tiene cuarenta años. Mi madre tiene treinta y cinco y se llama Elena. Tengo dos hermanas, se llaman Ana y Marta. Ana tiene seis años y Marta, cinco. No tengo hermanos.",
+          "descripcion": "Texto modelo breve de una niña que describe a su familia; el alumno escribe un texto similar sobre la suya."
         },
         {
           "id": "U03-p35-act06",
           "numero": 6,
           "tipo": "lee y escucha",
           "instruccion_original": "Lee y escucha.",
-          "contenido_linguistico": ["vocabulario de parentesco", "verbos: ser, vivir, tener, llamarse, trabajar, estudiar", "profesiones: camionero, enfermera", "lugares: Getafe, Madrid"],
+          "contenido_linguistico": ["vocabulario de parentesco", "verbos: ser, vivir, tener, llamarse, trabajar, estudiar, jugar", "profesiones: camionero, enfermera", "lugares: Getafe, Madrid"],
           "destreza": "comprensión lectora + comprensión oral",
           "tiene_audio": true,
-          "pista_audio": 24,
+          "pista_audio": 34,
           "tiene_imagen": true,
-          "descripcion_imagen": "Foto de la familia de Javier (4 personas sonriendo)",
-          "texto_completo": "Javier Rodríguez es madrileño. Vive en Getafe, un pueblo cerca de Madrid. Javier tiene una hermana pequeña, se llama Alejandra, y en la misma casa vive también Manolo, su abuelo. El padre de Javier es camionero, y de lunes a viernes trabaja fuera de Madrid. La madre, Catalina, es enfermera. Javier estudia el segundo curso de Educación Secundaria Obligatoria en el instituto de su barrio.",
-          "descripcion": "Texto sobre Javier Rodríguez y su familia de Getafe; introduce vocabulario de parentesco en contexto real"
+          "descripcion_imagen": "Foto de la familia de Javier: padre, madre Catalina, Javier y hermana Alejandra, sonriendo juntos.",
+          "texto_completo": "Javier Rodríguez vive en Getafe, una ciudad muy cerca de Madrid. Javier tiene una hermana pequeña, se llama Alejandra y tiene 9 años, y en la misma casa vive también Manolo, su abuelo. El padre de Javier es camionero y de lunes a viernes trabaja fuera de Madrid. La madre, Catalina, es enfermera. Javier estudia el segundo curso de Educación Secundaria Obligatoria en el instituto de su barrio y juega al fútbol tres días a la semana.",
+          "descripcion": "Texto sobre Javier Rodríguez y su familia de Getafe; introduce vocabulario de parentesco en contexto real."
         },
         {
           "id": "U03-p35-act07",
           "numero": 7,
-          "tipo": "comprensión lectora",
-          "instruccion_original": "Responde a las preguntas.",
-          "contenido_linguistico": ["interrogativos: de dónde, dónde, cuántas, qué"],
-          "destreza": "comprensión lectora + producción escrita",
-          "tiene_audio": false,
-          "tiene_imagen": false,
-          "preguntas": [
-            "1. ¿De dónde es Javier?",
-            "2. ¿Dónde vive?",
-            "3. ¿Cuántas personas viven en su casa?",
-            "4. ¿Qué profesión tiene el padre? ¿Y la madre?"
-          ],
-          "descripcion": "4 preguntas de comprensión sobre el texto de Javier (actividad 6)"
-        },
-        {
-          "id": "U03-p35-act08",
-          "numero": 8,
           "tipo": "completa huecos",
           "instruccion_original": "Completa las frases con la información del texto.",
-          "contenido_linguistico": ["vocabulario de parentesco: hermana, hermano, abuelos, padre"],
+          "contenido_linguistico": ["vocabulario de parentesco: madre, hijo, nietos, hermano"],
           "destreza": "comprensión lectora + producción escrita",
           "tiene_audio": false,
           "tiene_imagen": false,
@@ -139,62 +150,83 @@
             "3. Javier y Alejandra son los ___ de Manolo.",
             "4. Javier es el ___ de Alejandra."
           ],
-          "descripcion": "4 frases con huecos sobre relaciones de parentesco; el alumno completa con información del texto de Javier"
+          "respuestas": [
+            "1. madre",
+            "2. hijo",
+            "3. nietos",
+            "4. hermano"
+          ],
+          "descripcion": "4 frases con huecos sobre relaciones de parentesco; el alumno completa con información del texto de Javier."
+        },
+        {
+          "id": "U03-p35-act08",
+          "numero": 8,
+          "tipo": "lee y escucha",
+          "instruccion_original": "Lee y escucha.",
+          "contenido_linguistico": ["vocabulario de parentesco", "verbos: ser, vivir, estudiar, llamarse, tener, jugar", "profesiones: agricultor", "lugares: Cantabria, España", "vocabulario: vacas, hotel, piano"],
+          "destreza": "comprensión lectora + comprensión oral",
+          "tiene_audio": true,
+          "pista_audio": 35,
+          "tiene_imagen": true,
+          "descripcion_imagen": "Foto de Lucía Alonso, niña con sombrero rosa, de un pueblo de Cantabria.",
+          "texto_completo": "Lucía Alonso es de un pueblo de Cantabria, España. Tiene tres hermanos. Ana, la hermana mayor, estudia ingeniería; Carlos, que tiene 16 años, estudia en el mismo instituto que Lucía; y Pablo, que es el hermano pequeño, tiene 9 años. El padre de Lucía es agricultor y también tiene vacas. Su madre trabaja en el hotel del pueblo. Lucía estudia el primer curso de Educación Secundaria Obligatoria en un pueblo cerca de su casa y también juega fútbol y estudia piano.",
+          "descripcion": "Texto sobre Lucía Alonso, niña de un pueblo de Cantabria; contraste urbano/rural con el texto de Javier."
         },
         {
           "id": "U03-p35-act09",
           "numero": 9,
-          "tipo": "lee y escucha",
-          "instruccion_original": "Lee y escucha.",
-          "contenido_linguistico": ["vocabulario de parentesco", "verbos: ser, vivir, estudiar, llamarse, enseñar, vender, bordar, tener", "cultura: arahuacos, tradiciones indígenas", "vocabulario: mochilas bordadas, productos, vacas"],
-          "destreza": "comprensión lectora + comprensión oral",
-          "tiene_audio": true,
-          "pista_audio": 25,
-          "tiene_imagen": true,
-          "descripcion_imagen": "Foto de Leonora, niña arahuaca colombiana",
-          "texto_completo": "Leonora es arahuaca. Vive en un pueblo en la montaña colombiana. Allí los niños estudian en escuelas, donde también les enseñan la cultura y las tradiciones indígenas. El hermano pequeño de Leonora se llama Miguel. Su padre es agricultor y también tiene vacas. Normalmente vende sus productos en los pueblos vecinos. Las mujeres y las niñas bordan mochilas con dibujos de la naturaleza: animales, plantas... Todos los arahuacos tienen mochilas bordadas.",
-          "descripcion": "Texto sobre Leonora, niña arahuaca de Colombia; contraste cultural con el texto de Javier"
-        },
-        {
-          "id": "U03-p35-act10",
-          "numero": 10,
           "tipo": "comprensión lectora",
           "instruccion_original": "Responde a las preguntas.",
-          "contenido_linguistico": ["interrogativos: de qué, qué, cómo, de qué"],
+          "contenido_linguistico": ["interrogativos: de dónde, cuántas, qué, dónde"],
           "destreza": "comprensión lectora + producción escrita",
           "tiene_audio": false,
           "tiene_imagen": false,
           "preguntas": [
-            "1. ¿De qué país es Leonora?",
-            "2. ¿Qué aprenden los niños arahuacos en sus escuelas?",
-            "3. ¿Cómo se llama su hermano?",
-            "4. ¿De qué trabaja el padre de Leonora?"
+            "1. ¿De dónde es Lucía?",
+            "2. ¿Cuántas personas viven en su casa?",
+            "3. ¿Qué profesión tiene el padre?",
+            "4. ¿Dónde trabaja la madre?"
           ],
-          "descripcion": "4 preguntas de comprensión sobre el texto de Leonora (actividad 9)"
+          "respuestas": [
+            "1. Lucía es de un pueblo de Cantabria.",
+            "2. Seis personas: su padre, su madre, su hermana Ana, sus hermanos Pablo y Carlos y ella.",
+            "3. Su padre es agricultor y también tiene vacas.",
+            "4. Su madre trabaja en el hotel del pueblo."
+          ],
+          "descripcion": "4 preguntas de comprensión sobre el texto de Lucía (actividad 8)."
         },
         {
-          "id": "U03-p35-act11",
-          "numero": 11,
+          "id": "U03-p35-act10",
+          "numero": 10,
           "tipo": "completa huecos",
-          "instruccion_original": "Completa las frases con la información de los textos de los ejercicios 6 y 9.",
-          "contenido_linguistico": ["vocabulario de parentesco", "verbos: vivir, llamarse, ser, tener, enseñar, bordar", "comparación entre dos familias"],
+          "instruccion_original": "Completa las frases con la información de los textos de los ejercicios 6 y 8.",
+          "contenido_linguistico": ["vocabulario de parentesco", "verbos: vivir, llamarse, ser, tener, estudiar", "comparación entre dos familias"],
           "destreza": "comprensión lectora + producción escrita",
           "tiene_audio": false,
           "tiene_imagen": false,
           "frases": [
-            "1. Javier Rodríguez vive en ___ y Leonora vive en ___.",
-            "2. La hermana de Javier ___ Alejandra y el hermano de Leonora ___ Miguel.",
-            "3. El padre de Javier ___ camionero y el padre de Leonora ___ agricultor y también ___ vacas.",
-            "4. A Leonora en la ___ le enseñan cultura y tradiciones indígenas.",
-            "5. Los arahuacos ___ mochilas bordadas."
+            "1. Javier Rodríguez ___ en Getafe. Lucía ___ en un pueblo de Cantabria.",
+            "2. La hermana de Javier ___ Alejandra y los hermanos de Lucía ___ Carlos y Pablo.",
+            "3. El padre de Javier ___ camionero y su madre ___ enfermera.",
+            "4. El padre de Lucía ___ agricultor y ___ vacas.",
+            "5. Javier y Lucía ___ Educación Secundaria Obligatoria.",
+            "6. Javier y Lucía no ___ los mismos años, Javier ___ un año más."
           ],
-          "descripcion": "5 frases con huecos que cruzan información de ambos textos (Javier y Leonora); síntesis comparativa"
+          "respuestas": [
+            "1. vive / vive",
+            "2. se llama / se llaman",
+            "3. es / es",
+            "4. es / tiene",
+            "5. estudian",
+            "6. tienen / tiene"
+          ],
+          "descripcion": "6 frases con huecos que cruzan información de ambos textos (Javier y Lucía); síntesis comparativa."
         }
       ]
     },
     {
       "pagina": 36,
-      "imagen": "datos/imagenes/U03/U03-p36.jpg",
+      "imagen": "datos/imagenes/U03/U3_p03.jpg",
       "seccion": "Gramática — Presente de los verbos regulares / Interrogativos",
       "cuadros_gramaticales": [
         {
@@ -210,7 +242,12 @@
               "ellos/ellas/Uds.": ["estudian", "comen", "viven"]
             }
           },
-          "nota": "* Ud. = usted; Uds. = ustedes"
+          "nota": "* Ud. = usted; Uds. = ustedes",
+          "ejemplos_contextualizados": [
+            "¿Dónde estudias vosotros?",
+            "Ana y Sebastián comen en el instituto.",
+            "Nosotros vivimos en Lima."
+          ]
         },
         {
           "titulo": "Interrogativos",
@@ -230,47 +267,68 @@
           "id": "U03-p36-act01",
           "numero": 1,
           "tipo": "señala la forma correcta",
-          "instruccion_original": "Señala la forma correcta.",
+          "instruccion_original": "Completa con la forma correcta del verbo.",
           "contenido_linguistico": ["presente regular: estudiar, comer, vivir", "concordancia sujeto-verbo", "todas las personas gramaticales"],
           "destreza": "comprensión lectora + reflexión gramatical",
           "tiene_audio": false,
           "tiene_imagen": false,
+          "ejemplo_libro": "Su hermano (vivir) vive en Buenos Aires.",
           "items": [
-            "Su hermano vive / vives en Buenos Aires",
-            "1. Pablo y Jorge estudian / estudias en el mismo colegio",
-            "2. Yo como / come a las dos y veinte.",
-            "3. ¿Dónde vives / vive tú?",
-            "4. Jorge estudias / estudia Música",
-            "5. Mis primos y yo viven / vivimos en Ávila.",
-            "6. ¿Dónde coméis / comes vosotras?",
-            "7. Mi madre trabajas / trabaja en un hospital.",
-            "8. María y yo hablo / hablamos mucho por móvil.",
-            "9. Elena escribes / escribe muchos mensajes.",
-            "10. ¿Dónde viven / vivís ustedes?"
+            "1. Pablo y Jorge (estudiar) ___ en el mismo colegio.",
+            "2. Yo (comer) ___ a las dos y veinte.",
+            "3. ¿Dónde (vivir) ___ tú?",
+            "4. Jorge (estudiar) ___ música.",
+            "5. Mis primos y yo (vivir) ___ en Arévalo.",
+            "6. ¿Dónde (comer, vosotros) ___ ?",
+            "7. Mi madre (trabajar) ___ en un hospital.",
+            "8. María y yo (hablar) ___ mucho por teléfono.",
+            "9. Elena (no escribir) ___ en su diario todos los días.",
+            "10. ¿Dónde (vivir, vosotros) ___ ?"
           ],
-          "descripcion": "10 ítems de selección entre dos formas verbales; práctica de concordancia sujeto-verbo en presente regular"
+          "respuestas": [
+            "1. estudian",
+            "2. como",
+            "3. vives",
+            "4. estudia",
+            "5. vivimos",
+            "6. coméis",
+            "7. trabaja",
+            "8. hablamos",
+            "9. escribe",
+            "10. vivís"
+          ],
+          "descripcion": "10 ítems para conjugar verbos regulares en presente; práctica de concordancia sujeto-verbo."
         },
         {
           "id": "U03-p36-act02",
           "numero": 2,
-          "tipo": "ordena frases",
-          "instruccion_original": "Ordena las frases.",
-          "contenido_linguistico": ["orden de palabras en español", "presente regular", "vocabulario variado: asignaturas, familia, lugares"],
+          "tipo": "completa preguntas",
+          "instruccion_original": "Completa estas preguntas con los verbos anteriores.",
+          "contenido_linguistico": ["interrogativos + verbos regulares en presente", "concordancia sujeto-verbo en preguntas"],
           "destreza": "producción escrita + reflexión gramatical",
           "tiene_audio": false,
           "tiene_imagen": false,
-          "ejemplo_libro": "hermano / Matemáticas / mi / estudia → Mi hermano estudia Matemáticas.",
           "items": [
-            "1. ¿cuál / favorita / es / asignatura / tu?",
-            "2. vive / Marie / Berlín / en",
-            "3. asignatura / es / Educación Física / su / favorita",
-            "4. idiomas / tres / habla / hermana / tu",
-            "5. restaurante / un / trabaja / un / padre / mi",
-            "6. Química / mi / estudia / prima",
-            "7. comemos / colegio / nosotros / el / en",
-            "8. no / café / bebo / yo"
+            "1. ¿Dónde ___ tu padre?",
+            "2. ¿Qué ___ (tú)?",
+            "3. ¿Dónde ___ el profesor?",
+            "4. ¿Dónde ___ María y sus padres?",
+            "5. ¿Qué ___ vosotros?",
+            "6. ¿Qué ___ (tú)?",
+            "7. ¿Qué idiomas ___ tu hermano?",
+            "8. ¿Dónde ___ ellos?"
           ],
-          "descripcion": "8 frases desordenadas para reconstruir; refuerza orden SVO y concordancia"
+          "respuestas": [
+            "1. trabaja — En un banco.",
+            "2. escribes — Un correo electrónico.",
+            "3. come — En un restaurante.",
+            "4. viven — En Sevilla.",
+            "5. estudiáis — Matemáticas.",
+            "6. comes — Un bocadillo.",
+            "7. habla — Inglés, español y francés.",
+            "8. trabajan — En un hospital."
+          ],
+          "descripcion": "8 preguntas para completar con la forma verbal correcta; cada una con su respuesta dada como contexto."
         },
         {
           "id": "U03-p36-act03",
@@ -282,16 +340,26 @@
           "tiene_audio": false,
           "tiene_imagen": false,
           "items": [
-            "1. ¿Dónde / Cuál viven tus abuelos? — En Marbella.",
-            "2. ¿Cómo / Cuál os llamáis vosotras? — Yo me llamo Rosa y ella, Alicia.",
-            "3. ¿Qué / Cuál estudia tu hermana mayor? — Geografía e Historia.",
-            "4. ¿Cómo / Dónde trabaja tu tío Óscar? — En un banco.",
-            "5. ¿Qué / Cuál día de la semana es tu favorito? — El jueves.",
-            "6. ¿Qué / Dónde comes? — Patatas fritas.",
-            "7. ¿Quién / Quiénes son estos niños? — Son los hijos de Julia.",
-            "8. ¿Dónde / Qué estudian los hijos de Julia? — En la universidad."
+            "1. ¿Dónde / Cuál viven tus abuelos?",
+            "2. ¿Cómo / Cuál os llamáis vosotras?",
+            "3. ¿Qué / Cuál estudia tu hermana mayor?",
+            "4. ¿Cómo / Dónde trabaja tu tío Óscar?",
+            "5. ¿Cuál / Cómo es tu día de la semana favorito?",
+            "6. ¿Qué / Dónde comes?",
+            "7. ¿Quién / Quiénes son estos niños?",
+            "8. ¿Dónde / Qué estudian los hijos de Julia?"
           ],
-          "descripcion": "8 ítems de selección entre dos interrogativos con respuesta incluida; práctica de uso contextualizado"
+          "respuestas": [
+            "1. Dónde — En Marbella.",
+            "2. Cómo — Yo me llamo Rosa y ella, Alicia.",
+            "3. Qué — Geografía e Historia.",
+            "4. Dónde — En un banco.",
+            "5. Cuál — El jueves.",
+            "6. Qué — Patatas fritas.",
+            "7. Quiénes — Son los hijos de Julia.",
+            "8. Dónde — En la universidad."
+          ],
+          "descripcion": "8 ítems de selección entre dos interrogativos con respuesta incluida; práctica de uso contextualizado."
         },
         {
           "id": "U03-p36-act04",
@@ -302,7 +370,7 @@
           "destreza": "producción escrita + reflexión gramatical",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "Mano escribiendo en un cuaderno",
+          "descripcion_imagen": "Mano escribiendo en un cuaderno.",
           "ejemplo_libro": "¿Cuántos bolígrafos tienes?",
           "items": [
             "1. ¿___ idiomas hablas?",
@@ -314,13 +382,23 @@
             "7. ¿___ horas trabaja la profesora al día?",
             "8. ¿___ mochilas tienes?"
           ],
-          "descripcion": "8 frases para completar con cuánto/-a/-os/-as; práctica de concordancia del interrogativo cuantitativo"
+          "respuestas": [
+            "1. Cuántos",
+            "2. Cuántas",
+            "3. Cuántos",
+            "4. Cuánta",
+            "5. Cuántas",
+            "6. Cuánto",
+            "7. Cuántas",
+            "8. Cuántas"
+          ],
+          "descripcion": "8 frases para completar con cuánto/-a/-os/-as; práctica de concordancia del interrogativo cuantitativo."
         }
       ]
     },
     {
       "pagina": 37,
-      "imagen": "datos/imagenes/U03/U03-p37.jpg",
+      "imagen": "datos/imagenes/U03/U3_p04.jpg",
       "seccion": "Gramática — Posesivos / Para aprender",
       "cuadros_gramaticales": [
         {
@@ -337,6 +415,38 @@
       ],
       "actividades": [
         {
+          "id": "U03-p37-act04",
+          "numero": 4,
+          "tipo": "completa huecos",
+          "instruccion_original": "Completa las frases con cuánto/-a/-os/-as.",
+          "nota": "Esta actividad aparece en la parte superior de la p.37 pero pertenece a la sección de interrogativos de p.36.",
+          "contenido_linguistico": ["interrogativo cuánto con concordancia de género y número"],
+          "destreza": "producción escrita + reflexión gramatical",
+          "tiene_audio": false,
+          "tiene_imagen": false,
+          "items": [
+            "1. ¿___ idiomas hablas?",
+            "2. ¿___ naranjas come María?",
+            "3. ¿___ móviles tiene el profesor?",
+            "4. ¿___ agua bebes en un día?",
+            "5. ¿___ hermanas tiene tu madre?",
+            "6. ¿___ café bebe tu abuelo?",
+            "7. ¿___ horas trabaja la profesora al día?",
+            "8. ¿___ mochilas tienes?"
+          ],
+          "respuestas": [
+            "1. Cuántos",
+            "2. Cuántas",
+            "3. Cuántos",
+            "4. Cuánta",
+            "5. Cuántas",
+            "6. Cuánto",
+            "7. Cuántas",
+            "8. Cuántas"
+          ],
+          "descripcion": "8 frases para completar con cuánto/-a/-os/-as."
+        },
+        {
           "id": "U03-p37-act05",
           "numero": 5,
           "tipo": "completa huecos",
@@ -344,8 +454,7 @@
           "contenido_linguistico": ["adjetivos posesivos: mi, tu, su, sus, nuestro/-a, vuestro/-a"],
           "destreza": "producción escrita + reflexión gramatical",
           "tiene_audio": false,
-          "tiene_imagen": true,
-          "descripcion_imagen": "Dos chicos estudiando juntos con un ordenador",
+          "tiene_imagen": false,
           "ejemplo_libro": "Daniel estudia con su primo los fines de semana.",
           "items": [
             "1. ¿Estudias música en ___ instituto?",
@@ -353,9 +462,23 @@
             "3. Ellos tienen ___ ordenador en la habitación.",
             "4. Graciela vive con ___ tíos.",
             "5. Yo tengo ___ libros en la cartera.",
-            "6. Pedro tiene ___ bicicleta en la calle."
+            "6. Pedro tiene ___ bicicleta en la calle.",
+            "7. Mi hermano y yo tenemos dos mochilas iguales. ___ mochilas son rojas.",
+            "8. La casa de mis tíos es muy grande y ___ jardín es muy bonito.",
+            "9. Mis compañeros y yo estamos muy contentos. ___ profesor de matemáticas es muy simpático."
           ],
-          "descripcion": "6 frases con huecos para completar con el posesivo adecuado según el sujeto"
+          "respuestas": [
+            "1. tu",
+            "2. mi",
+            "3. su",
+            "4. sus",
+            "5. mis",
+            "6. su",
+            "7. Nuestras",
+            "8. su",
+            "9. Nuestro"
+          ],
+          "descripcion": "9 frases con huecos para completar con el posesivo adecuado según el sujeto."
         },
         {
           "id": "U03-p37-act06",
@@ -367,14 +490,22 @@
           "tiene_audio": false,
           "tiene_imagen": false,
           "items": [
-            "1. ___ → Mi familia vive en Buenos Aires.",
-            "2. ___ → Nuestro gato se llama Tom.",
-            "3. ___ → Mis abuelos son mexicanos.",
-            "4. ___ → Mis tíos tienen dos hijos.",
-            "5. ___ → Sus hijos tienen 10 y 11 años.",
-            "6. ___ → Nuestra madre tiene 45 años."
+            "1. ¿___? — Mi familia vive en Buenos Aires.",
+            "2. ¿___? — Nuestro gato se llama Tom.",
+            "3. ¿___? — Mis abuelos son mexicanos.",
+            "4. ¿___? — Mis tíos tienen dos hijos.",
+            "5. ¿___? — Sus hijos tienen 10 y 11 años.",
+            "6. ¿___? — Nuestra madre tiene 45 años."
           ],
-          "descripcion": "6 respuestas dadas; el alumno debe formular la pregunta correspondiente usando interrogativos"
+          "respuestas": [
+            "1. ¿Dónde vive tu familia?",
+            "2. ¿Cómo se llama vuestro gato?",
+            "3. ¿De dónde son tus abuelos?",
+            "4. ¿Cuántos hijos tienen tus tíos?",
+            "5. ¿Cuántos años tienen sus hijos?",
+            "6. ¿Cuántos años tiene vuestra madre?"
+          ],
+          "descripcion": "6 respuestas dadas; el alumno debe formular la pregunta correspondiente usando interrogativos."
         },
         {
           "id": "U03-p37-act07",
@@ -386,7 +517,7 @@
           "tiene_audio": false,
           "tiene_imagen": false,
           "ejemplo_libro": "¿Cómo se llaman tus padres? — Pepe y Luisa.",
-          "descripcion": "Práctica oral libre en parejas preguntando nombres de familiares"
+          "descripcion": "Práctica oral libre en parejas preguntando nombres de familiares."
         },
         {
           "id": "U03-p37-act08",
@@ -398,77 +529,99 @@
           "tiene_audio": false,
           "tiene_imagen": false,
           "ejemplo_libro": "Mis padres se llaman Juan y María; sus padres se llaman Pepe y Luisa. Mi hermano se llama Carlos; su hermana se llama Marta...",
-          "descripcion": "Producción oral ante la clase; transición de 2ª a 3ª persona (tu → su)"
+          "descripcion": "Producción oral ante la clase; transición de 2ª a 3ª persona (tu → su)."
         },
         {
           "id": "U03-p37-act09",
           "numero": 9,
           "tipo": "para aprender — cuaderno de vocabulario",
-          "instruccion_original": "Mira este cuaderno de Ronaldo, un brasileño que estudia español. Escribe palabras nuevas y tradúcelas a tu idioma.",
+          "instruccion_original": "Mira el cuaderno de Ronaldo, un brasileño que estudia español. Escribe palabras nuevas y tradúcelas a tu idioma.",
           "contenido_linguistico": ["estrategia de aprendizaje: cuaderno de vocabulario bilingüe"],
           "destreza": "producción escrita + mediación (traducción)",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "Foto de Ronaldo (brasileño) y su cuaderno con palabras: Abuelo-a = Avô, Hijo-a = Filho-a, Vivir = Viver",
-          "descripcion": "Sección Para aprender: modelo de cuaderno de vocabulario bilingüe; el alumno crea el suyo propio"
+          "descripcion_imagen": "Foto de Ronaldo (brasileño) y su cuaderno manuscrito con palabras: Abuelo/-a = Avô/Avó, Hijo/-a = Filho/-a, Vivir = Viver.",
+          "descripcion": "Sección Para aprender: modelo de cuaderno de vocabulario bilingüe; el alumno crea el suyo propio."
         }
       ]
     },
     {
       "pagina": 38,
-      "imagen": "datos/imagenes/U03/U03-p38.jpg",
-      "seccion": "Comunicación — Presentar a alguien / Hablar de la familia / A la hora del recreo",
+      "imagen": "datos/imagenes/U03/U3_p05.jpg",
+      "seccion": "Comunicación — Hablar de la familia / La hora / El sonido /θ/",
       "actividades": [
         {
           "id": "U03-p38-act01",
           "numero": 1,
-          "tipo": "escucha y completa huecos",
-          "instruccion_original": "Escucha y completa el diálogo con las siguientes palabras.",
-          "contenido_linguistico": ["verbo tener (tengo, tienes, tienen)", "interrogativos: quiénes, cuántos, dónde", "está", "vocabulario de familia: primos, hermanos, gemelos", "la hora: son las seis y media"],
+          "tipo": "mira el vídeo o lee y escucha y completa huecos",
+          "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
+          "contenido_linguistico": ["verbo tener (tengo, tienes, tienen)", "interrogativos: cuántos, cómo, dónde", "está", "vocabulario de familia: hermanos, hermana, primos, gemelas"],
           "destreza": "comprensión oral + producción escrita",
           "tiene_audio": true,
+          "pista_audio": 36,
+          "tiene_video": true,
           "tiene_imagen": true,
-          "descripcion_imagen": "Imagen de Jorge y Graciela sentados en un banco del parque viendo fotos en su móvil",
-          "palabras_para_completar": ["tienes", "tienen", "tengo", "quiénes", "cuántos", "dónde", "está"],
+          "descripcion_imagen": "Se pondrá fotograma del vídeo (PENDIENTE). Cuatro adolescentes en el recreo: Pablo, Graciela, Julia y Jorge.",
+          "palabras_para_completar": ["tienes", "tienen", "tengo", "cuántos", "cómo", "dónde", "está"],
+          "titulo_dialogo": "En el recreo",
           "dialogo_completo": [
-            "GRACIELA: ¡Qué foto más divertida! ¿[1] ___ son?",
-            "JORGE: Son mis primos.",
-            "GRACIELA: ¿Cómo se llaman?",
-            "JORGE: Elsa y Nacho.",
-            "GRACIELA: ¿[2] ___ viven?",
-            "JORGE: En Madrid con sus padres, mis tíos Jose y Mari.",
-            "GRACIELA: ¿Dónde están en la foto?",
-            "JORGE: Están en la playa. ¿Y tú, [3] ___ primos?",
-            "GRACIELA: No, pero [4] ___ dos hermanos pequeños. Yo soy la mayor de los tres. Mira: [5] ___ es mi hermana Carla y ... es mi hermano Simón.",
-            "JORGE: ¡Qué simpáticos! ¡Son gemelos!",
-            "GRACIELA: ¡Sí! ¡Son iguales! Los dos [6] ___ los ojos azules y el pelo rubio.",
-            "JORGE: ¿[7] ___ años tienen?",
-            "GRACIELA: Siete.",
-            "JORGE: Mi primo Nacho también tiene 7 años... Oye, ¿qué hora es?",
-            "GRACIELA: Son las seis y media...",
-            "JORGE: Vamos a casa de mi abuelo y te presento a mis primos. Hoy están con él.",
-            "GRACIELA: ¡Bárbaro!"
+            "PABLO: Son las once. ¡Por fin el recreo!",
+            "GRACIELA: ¡Sí! Julia, ¿[1] tienes hermanos?",
+            "JULIA: No, soy hija única. ¿Y tú?",
+            "GRACIELA: Sí, [2] tengo una hermana dos años mayor que yo. Se llama Rebeca. ¿Y tú, Jorge?",
+            "JORGE: No tengo hermanos, pero tengo muchos primos en Argentina.",
+            "PABLO: Yo tengo dos hermanas gemelas de ocho años.",
+            "JORGE: ¡Gemelas! ¿[3] Cuántos años tienen?",
+            "PABLO: [4] Tienen 8 años.",
+            "JORGE: ¿[5] Cómo se llaman?",
+            "PABLO: Se llaman Adela y Luisa. Esta tarde podéis venir a mi casa a merendar y a conocer a mis hermanas y a mis padres. Vivo muy cerca de aquí.",
+            "JULIA: ¡Genial! ¿[6] Dónde vives?",
+            "PABLO: Vivo en la calle del instituto. [7] Está muy cerca de aquí.",
+            "GRACIELA: Yo no puedo, lo siento, mi abuelo viene a visitarnos esta tarde."
           ],
-          "descripcion": "Diálogo entre Graciela y Jorge en el parque; 7 huecos para completar con palabras dadas. Introduce verbo tener en contexto comunicativo."
+          "respuestas": [
+            "1. tienes",
+            "2. tengo",
+            "3. Cuántos",
+            "4. Tienen",
+            "5. Cómo",
+            "6. Dónde",
+            "7. Está"
+          ],
+          "descripcion": "Diálogo entre Pablo, Graciela, Julia y Jorge en el recreo; 7 huecos para completar con palabras dadas. Introduce verbo tener y preguntas sobre la familia en contexto comunicativo."
         },
         {
           "id": "U03-p38-act02",
           "numero": 2,
-          "tipo": "relaciona",
-          "instruccion_original": "Relaciona los adjetivos del recuadro con las fotos A, B y C.",
-          "contenido_linguistico": ["adjetivos de descripción física: pelo rubio, pelo negro, alto/-a, bajo/-a, pequeño/-a, mayor"],
+          "tipo": "completa con nombres",
+          "instruccion_original": "Completa las frases con los nombres.",
+          "contenido_linguistico": ["comprensión del diálogo", "vocabulario de familia: primos, hija única, hermana, gemelas"],
           "destreza": "comprensión lectora + producción escrita",
           "tiene_audio": false,
-          "tiene_imagen": true,
-          "descripcion_imagen": "Tres fotos: A (chico alto con pelo negro), B (mujer con niños pequeños), C (niña con pelo rubio)",
-          "adjetivos_recuadro": ["pelo rubio", "pelo negro", "alto/-a", "bajo/-a", "pequeño/-a", "mayor"],
-          "descripcion": "El alumno asocia adjetivos de descripción física con las fotos de tres personas (A, B, C)"
+          "tiene_imagen": false,
+          "items": [
+            "1. ___ tiene primos en Argentina.",
+            "2. ___ es hija única.",
+            "3. La hermana de ___ se llama Rebeca.",
+            "4. Rebeca es dos años mayor que ___.",
+            "5. Las hermanas de ___ son gemelas.",
+            "6. ___ y Luisa tienen ocho años."
+          ],
+          "respuestas": [
+            "1. Jorge",
+            "2. Julia",
+            "3. Graciela",
+            "4. Graciela",
+            "5. Pablo",
+            "6. Adela"
+          ],
+          "descripcion": "6 frases para completar con los nombres de los personajes del diálogo; comprensión detallada."
         },
         {
           "id": "U03-p38-act03",
           "numero": 3,
           "tipo": "verdadero / falso",
-          "instruccion_original": "Los hermanos de Graciela son gemelos. ¿Qué sabes tú de sobre los gemelos? ¿Son las frases siguientes verdaderas o falsas?",
+          "instruccion_original": "Las hermanas de Pablo son gemelas. ¿Qué sabes tú de sobre los gemelos? ¿Son las frases siguientes verdaderas o falsas?",
           "contenido_linguistico": ["vocabulario: gemelos, nacer, mismo día, iguales, mismo sexo", "comprensión de definiciones"],
           "destreza": "comprensión lectora + reflexión",
           "tiene_audio": false,
@@ -478,7 +631,12 @@
             "2. Los gemelos son dos hermanos iguales.",
             "3. Los gemelos son siempre del mismo sexo: dos chicos o dos chicas."
           ],
-          "descripcion": "3 frases V/F sobre gemelos; activa conocimiento previo y comprensión lectora"
+          "respuestas": [
+            "1. V",
+            "2. V",
+            "3. F"
+          ],
+          "descripcion": "3 frases V/F sobre gemelos; activa conocimiento previo y comprensión lectora."
         },
         {
           "id": "U03-p38-act04",
@@ -495,26 +653,33 @@
             "Practica el diálogo con tu compañero.",
             "Representa el diálogo delante de la clase."
           ],
-          "descripcion": "Tarea final de la sección Comunicación: producción semilibre guiada en 4 pasos, desde la preparación hasta la representación ante la clase"
+          "descripcion": "Tarea final de la sección Comunicación: producción semilibre guiada en 4 pasos, desde la preparación hasta la representación ante la clase."
         }
       ]
     },
     {
       "pagina": 39,
-      "imagen": "datos/imagenes/U03/U03-p39.jpg",
+      "imagen": "datos/imagenes/U03/U3_p06.jpg",
       "seccion": "Comunicación (cont.) — La hora / Pronunciación y ortografía",
+      "respuestas_recuadro_naranja": [
+        "1 Son las once y media.",
+        "2 Son las dos y veinte.",
+        "3 Es la una y cuarto.",
+        "4 Son las siete menos diez."
+      ],
       "actividades": [
         {
           "id": "U03-p39-act05",
           "numero": 5,
           "tipo": "escucha y repite",
-          "instruccion_original": "¿Qué hora es? Son las tres y diez. Después, escucha y repite.",
+          "instruccion_original": "¿Qué hora es? Completa, escucha y repite.",
           "contenido_linguistico": ["la hora: en punto, y cinco, y diez, y cuarto, y veinte, y veinticinco, y media, menos veinticinco, menos veinte, menos cuarto, menos diez, menos cinco"],
           "destreza": "comprensión oral + producción oral",
           "tiene_audio": true,
+          "pista_audio": 37,
           "tiene_imagen": true,
-          "descripcion_imagen": "Reloj analógico grande con todas las expresiones horarias etiquetadas alrededor de la esfera",
-          "descripcion": "Presentación visual y auditiva del sistema horario español completo; el alumno escucha y repite cada expresión"
+          "descripcion_imagen": "Reloj analógico grande con todas las expresiones horarias etiquetadas alrededor de la esfera: en punto, y cinco, y diez, y cuarto, y veinte, y veinticinco, y media, menos veinticinco, menos veinte, menos cuarto, menos diez, menos cinco. Nota: cuarto = 1/4.",
+          "descripcion": "Presentación visual y auditiva del sistema horario español completo; el alumno completa las etiquetas, escucha y repite cada expresión."
         },
         {
           "id": "U03-p39-act06",
@@ -524,15 +689,22 @@
           "contenido_linguistico": ["la hora en contexto: 11:30, 14:20, 13:15, 18:50"],
           "destreza": "producción escrita + comprensión oral",
           "tiene_audio": true,
+          "pista_audio": 38,
           "tiene_imagen": true,
-          "descripcion_imagen": "4 relojes digitales/smartwatches mostrando las horas 11:30, 14:20, 13:15, 18:50",
+          "descripcion_imagen": "4 smartwatches mostrando las horas: 1) 11:30, 2) 14:20 (2:20), 3) 13:15 (1:15), 4) 18:50 (6:50).",
           "items": [
             "1. 11:30",
             "2. 14:20",
             "3. 13:15",
             "4. 18:50"
           ],
-          "descripcion": "4 horas en formato digital que el alumno escribe en palabras; después escucha para comprobar"
+          "respuestas": [
+            "1. Son las once y media.",
+            "2. Son las dos y veinte.",
+            "3. Es la una y cuarto.",
+            "4. Son las siete menos diez."
+          ],
+          "descripcion": "4 horas en formato digital que el alumno escribe en palabras; después escucha para comprobar."
         },
         {
           "id": "U03-p39-act07",
@@ -543,9 +715,9 @@
           "destreza": "interacción oral",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "Cartelera 'Cines Ideales' con 5 salas y horarios: Sala 1 Robot Dreams, Sala 2 Padre no hay más que uno 5, Sala 3 Sin instrucciones, Sala 4 Flow, Sala 5 Cómo entrenar a tu dragón",
+          "descripcion_imagen": "Cartelera 'Cines Ideales' con 5 salas: Sala 1 Robot Dreams, Sala 2 Padre no hay más que uno 5, Sala 3 Sin instrucciones, Sala 4 Flow, Sala 5 Cómo entrenar a tu dragón. Cada sala con su horario. Carteles de las películas visibles.",
           "ejemplo_libro": "¿A qué hora es \"Padre no hay más que uno 5\"? — A las cinco y veinte.",
-          "descripcion": "Práctica oral en parejas usando cartelera de cine real; el alumno pregunta y responde sobre horarios de películas"
+          "descripcion": "Práctica oral en parejas usando cartelera de cine; el alumno pregunta y responde sobre horarios de películas."
         },
         {
           "id": "U03-p39-act08",
@@ -555,13 +727,14 @@
           "contenido_linguistico": ["sonido /θ/: azul, bicicleta, cinco, marzo, zapato", "regla: /θ/ + a, o, u → za, zo, zu", "regla: /θ/ + e, i → ce, ci"],
           "destreza": "comprensión oral + producción oral",
           "tiene_audio": true,
+          "pista_audio": 39,
           "tiene_imagen": false,
           "reglas_foneticas": {
             "/θ/ + a, o, u": "za, zo, zu",
             "/θ/ + e, i": "ce, ci"
           },
           "palabras_modelo": ["azul", "bicicleta", "cinco", "marzo", "zapato"],
-          "descripcion": "Sección Pronunciación y ortografía: presentación del sonido /θ/ con reglas de distribución z/c y 5 palabras modelo"
+          "descripcion": "Sección Pronunciación y ortografía: presentación del sonido /θ/ con reglas de distribución z/c y 5 palabras modelo."
         },
         {
           "id": "U03-p39-act09",
@@ -584,7 +757,19 @@
             "9. pi_arra",
             "10. habita_ión"
           ],
-          "descripcion": "10 palabras con huecos para completar con z o c; práctica de las reglas ortográficas del sonido /θ/"
+          "respuestas": [
+            "1. cine",
+            "2. once",
+            "3. zumo",
+            "4. zoo",
+            "5. baloncesto",
+            "6. ciclismo",
+            "7. ciudad",
+            "8. zona",
+            "9. pizarra",
+            "10. habitación"
+          ],
+          "descripcion": "10 palabras con huecos para completar con z o c; práctica de las reglas ortográficas del sonido /θ/."
         },
         {
           "id": "U03-p39-act10",
@@ -594,15 +779,33 @@
           "contenido_linguistico": ["comprobación auditiva de las palabras de la actividad 9"],
           "destreza": "comprensión oral + producción oral",
           "tiene_audio": true,
+          "pista_audio": 40,
           "tiene_imagen": false,
-          "descripcion": "Escucha de comprobación: el alumno verifica sus respuestas de la act. 9 y repite las palabras correctas"
+          "descripcion": "Escucha de comprobación: el alumno verifica sus respuestas de la act. 9 y repite las palabras correctas."
         }
       ]
     },
     {
       "pagina": 40,
-      "imagen": "datos/imagenes/U03/U03-p40.jpg",
+      "imagen": "datos/imagenes/U03/U3_p07.jpg",
       "seccion": "Destrezas — Leer / Escribir",
+      "respuestas_recuadro_naranja_act1": [
+        "1. Su hermano tiene once años y su hermana, seis.",
+        "2. Su hermana se llama Ana.",
+        "3. Bárbara estudia en Cádiz / Bárbara es de Barcelona.",
+        "4. El padre de Marta trabaja en un hotel / La madre de Marta y el padre de Bárbara trabajan en un hospital.",
+        "5. En el instituto de Marta tres días a la semana tienen clase hasta las 15:30.",
+        "6. Marta tiene siempre muchos deberes de Tecnología y de Matemáticas.",
+        "7. A Marta le gusta la Historia."
+      ],
+      "respuestas_recuadro_naranja_act2": [
+        "1. Los hermanos de Marta.",
+        "2. Los amigos de Marta.",
+        "3. La compañera nueva de Marta.",
+        "4. La madre de Marta y el padre de Bárbara.",
+        "5. De Tecnología y de Matemáticas.",
+        "6. La Historia."
+      ],
       "actividades": [
         {
           "id": "U03-p40-act01",
@@ -613,14 +816,16 @@
           "destreza": "comprensión lectora",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "Foto de la familia de Marta (padre, madre, Marta y dos hermanos) + correo electrónico en pantalla",
+          "tiene_video": true,
+          "descripcion_imagen": "Foto de la familia de Marta (padre, madre, Marta y dos hermanos) + correo electrónico en pantalla de tablet.",
           "texto_correo": {
             "de": "Marta",
             "para": "Pierre",
             "texto": "¡Hola, Pierre! ¿Qué tal estás?\nHoy te hablo de mi familia: mi padre trabaja en un hotel y mi madre en un hospital. Mi hermano Mario tiene once años y mi hermana Ana tiene seis. ¿Y tú, cuántos hermanos tienes?\nY en el instituto, ¿qué tal el nuevo curso? Yo este año tengo muchos amigos en mi clase: Emilio, Elena, Santiago... y también tengo una compañera nueva: se llama Bárbara. Es de Barcelona. Sus padres trabajan en Cádiz y sus abuelos también viven aquí. Su padre y mi madre trabajan en el mismo hospital.\nEste curso es un poco más difícil. Tres días a la semana salimos a las 15:30 y además tenemos muchos deberes, especialmente de Tecnología y Matemáticas. A mí me gusta mucho la Historia.\n¿Tú también tienes muchos deberes este año?\n¡Un saludo desde Cádiz!\nMarta"
           },
           "afirmaciones_a_corregir": [
-            "1. Su hermana tiene once años y su hermano, seis.",
+            "Marta tiene tres hermanos.",
+            "1. Su hermano tiene once años y su hermana, seis.",
             "2. Su hermana se llama Bárbara.",
             "3. Bárbara estudia en Barcelona.",
             "4. El padre de Marta trabaja en un hospital.",
@@ -628,7 +833,17 @@
             "6. Marta tiene siempre muchos deberes de Historia.",
             "7. A Marta le gusta la Tecnología."
           ],
-          "descripcion": "Correo completo de Marta a Pierre con información personal, familiar, escolar; 7 afirmaciones falsas que el alumno debe corregir contrastando con el texto"
+          "respuestas": [
+            "Ejemplo: Marta tiene tres hermanos. → Marta tiene dos hermanos.",
+            "1. Su hermano tiene once años y su hermana, seis. → Correcto.",
+            "2. Su hermana se llama Bárbara. → Su hermana se llama Ana.",
+            "3. Bárbara estudia en Barcelona. → Bárbara estudia en Cádiz / Bárbara es de Barcelona.",
+            "4. El padre de Marta trabaja en un hospital. → El padre de Marta trabaja en un hotel / La madre de Marta y el padre de Bárbara trabajan en un hospital.",
+            "5. En el instituto de Marta todos los días tienen clase hasta las 15:30. → En el instituto de Marta tres días a la semana tienen clase hasta las 15:30.",
+            "6. Marta tiene siempre muchos deberes de Historia. → Marta tiene siempre muchos deberes de Tecnología y de Matemáticas.",
+            "7. A Marta le gusta la Tecnología. → A Marta le gusta la Historia."
+          ],
+          "descripcion": "Correo completo de Marta a Pierre con información personal, familiar, escolar; afirmaciones incorrectas que el alumno debe corregir contrastando con el texto. El ejemplo resuelto ('Marta tiene tres hermanos' tachado) está dado."
         },
         {
           "id": "U03-p40-act02",
@@ -647,13 +862,21 @@
             "5. ¿De qué asignaturas tiene Marta mucho trabajo para casa?",
             "6. ¿Cuál es su asignatura favorita?"
           ],
-          "descripcion": "6 preguntas de comprensión sobre el correo de Marta (actividad 1)"
+          "respuestas": [
+            "1. Los hermanos de Marta.",
+            "2. Los amigos de Marta.",
+            "3. La compañera nueva de Marta.",
+            "4. La madre de Marta y el padre de Bárbara.",
+            "5. De Tecnología y de Matemáticas.",
+            "6. La Historia."
+          ],
+          "descripcion": "6 preguntas de comprensión sobre el correo de Marta (actividad 1)."
         },
         {
           "id": "U03-p40-act03",
           "numero": 3,
           "tipo": "producción escrita guiada",
-          "instruccion_original": "Escribe un correo contestando a Marta. Sigue los siguientes pasos:",
+          "instruccion_original": "Imagina que escribes a un amigo español un correo como el de Marta a Pierre. Sigue los siguientes pasos:",
           "contenido_linguistico": ["producción escrita guiada: familia, compañeros, asignaturas, horario", "saludos: ¡Hola! ¿Qué tal estás?", "despedidas: ¡Un abrazo / Un saludo / Recuerdos desde...", "verbos regulares + tener"],
           "destreza": "producción escrita",
           "tiene_audio": false,
@@ -667,13 +890,13 @@
             "No te olvides de escribir: un saludo para empezar tu mensaje (¡Hola! ¿Qué tal estás?) y una frase de despedida (¡Un abrazo / Un saludo / Recuerdos desde...)",
             "Repasa y comprueba las descripciones de tu familia y amigos y la forma correcta de los verbos regulares y del verbo \"tener\"..."
           ],
-          "descripcion": "Tarea de escritura guiada en 6 pasos: el alumno responde al correo de Marta escribiendo sobre su propia familia, compañeros y asignaturas; incluye estrategias de planificación y revisión"
+          "descripcion": "Tarea de escritura guiada: el alumno escribe un correo a un amigo español sobre su propia familia, compañeros y asignaturas; incluye estrategias de planificación y revisión."
         }
       ]
     },
     {
       "pagina": 41,
-      "imagen": "datos/imagenes/U03/U03-p41.jpg",
+      "imagen": "datos/imagenes/U03/U3_p08.jpg",
       "seccion": "Destrezas (cont.) — Escuchar / Hablar / Hablar y mediar",
       "actividades": [
         {
@@ -684,8 +907,9 @@
           "contenido_linguistico": ["la hora", "vocabulario de programas de TV: telediario, vuelta ciclista, documental, cine, música clásica, fútbol"],
           "destreza": "comprensión oral + producción escrita",
           "tiene_audio": true,
+          "pista_audio": 41,
           "tiene_imagen": true,
-          "descripcion_imagen": "7 relojes analógicos vacíos (el alumno dibuja las agujas) + 7 relojes digitales de colores: a) 17:30, b) 23:00, c) 15:30, d) 15:00, e) 21:30, f) 19:00, g) 16:30",
+          "descripcion_imagen": "7 relojes analógicos con agujas dibujadas (el alumno debe dibujarlas) + 7 relojes digitales de colores: a) 17:30, b) 23:00, c) 15:30, d) 15:00, e) 21:30, f) 19:00, g) 16:30. Debajo de cada reloj analógico aparece el programa de TV correspondiente.",
           "programas_tv": [
             "1. Telediario 1",
             "2. Vuelta ciclista a España",
@@ -696,30 +920,39 @@
             "7. Fútbol: Real Madrid-Barcelona"
           ],
           "relojes_digitales": ["a) 17:30", "b) 23:00", "c) 15:30", "d) 15:00", "e) 21:30", "f) 19:00", "g) 16:30"],
-          "descripcion": "Doble tarea: 1) escuchar la programación y dibujar la hora en relojes analógicos vacíos; 2) relacionar cada reloj analógico con su equivalente digital"
+          "respuestas": [
+            "1-d: Telediario 1 — 15:00",
+            "2-c: Vuelta ciclista — 15:30",
+            "3-g: Club Megatrix — 16:30",
+            "4-a: Documental — 17:30",
+            "5-f: Cine Superman 2 — 19:00",
+            "6-e: Música clásica — 21:30",
+            "7-b: Fútbol — 23:00"
+          ],
+          "descripcion": "Doble tarea: 1) escuchar la programación y dibujar la hora en relojes analógicos; 2) relacionar cada reloj analógico con su equivalente digital."
         },
         {
           "id": "U03-p41-act05",
           "numero": 5,
           "tipo": "completa relojes",
-          "instruccion_original": "Completa estos relojes con una hora.",
+          "instruccion_original": "Completa estos relojes con una hora. Tu compañero te va a preguntar la hora.",
           "contenido_linguistico": ["la hora (producción libre)"],
           "destreza": "producción escrita",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "4 relojes despertador amarillos vacíos para que el alumno dibuje las agujas",
-          "descripcion": "El alumno elige 4 horas libremente y las dibuja en relojes despertador; preparación para la actividad oral siguiente"
+          "descripcion_imagen": "4 relojes despertador amarillos vacíos para que el alumno dibuje las agujas.",
+          "descripcion": "El alumno elige 4 horas libremente y las dibuja en relojes despertador; preparación para la actividad oral siguiente."
         },
         {
           "id": "U03-p41-act06",
           "numero": 6,
           "tipo": "práctica oral en parejas",
-          "instruccion_original": "Pregunta a tu compañero la hora en tus relojes.",
+          "instruccion_original": "Pregunta a tu compañero la hora en sus relojes.",
           "contenido_linguistico": ["la hora en contexto oral", "interrogativo: ¿Qué hora es?"],
           "destreza": "interacción oral",
           "tiene_audio": false,
           "tiene_imagen": false,
-          "descripcion": "Práctica oral en parejas: el alumno pregunta y responde sobre las horas dibujadas en la act. 5"
+          "descripcion": "Práctica oral en parejas: el alumno pregunta y responde sobre las horas dibujadas en la act. 5."
         },
         {
           "id": "U03-p41-act07",
@@ -736,7 +969,7 @@
             "3. ¿Quién tiene tres tíos?",
             "4. ¿Quién tiene más de diez primos?"
           ],
-          "descripcion": "Encuesta oral en grupos sobre la familia; después comparten resultados con la clase"
+          "descripcion": "Encuesta oral en grupos sobre la familia; después comparten resultados con la clase."
         },
         {
           "id": "U03-p41-act08",
@@ -748,14 +981,14 @@
           "tiene_audio": false,
           "tiene_imagen": false,
           "ejemplo_libro": "Tengo un primo y una prima gemelos. Se llaman Romeo y Julieta...",
-          "descripcion": "Tarea de mediación oral: el alumno cuenta algo especial de su familia al compañero, quien lo transmite a la clase (cambio de perspectiva 1ª → 3ª persona)"
+          "descripcion": "Tarea de mediación oral: el alumno cuenta algo especial de su familia al compañero, quien lo transmite a la clase (cambio de perspectiva 1ª → 3ª persona)."
         }
       ]
     },
     {
       "pagina": 42,
-      "imagen": "datos/imagenes/U03/U03-p42.jpg",
-      "seccion": "Cultura — El cómic y el dibujo animado",
+      "imagen": "datos/imagenes/U03/U3_p09.jpg",
+      "seccion": "Cultura — El cómic y las películas de animación",
       "actividades": [
         {
           "id": "U03-p42-act01",
@@ -765,10 +998,11 @@
           "contenido_linguistico": ["vocabulario: cómic, dibujo animado, película de animación, muda", "profesiones del cine: dibujante, guionista, iluminador, maquillador, actor, decorador", "cultura: Robot Dreams, Pablo Berger", "verbos: necesitar, intervenir, fabricar, separarse"],
           "destreza": "comprensión lectora + comprensión oral",
           "tiene_audio": true,
+          "pista_audio": 42,
           "tiene_imagen": true,
-          "descripcion_imagen": "Foto de dos niños tumbados leyendo un cómic juntos",
-          "texto_completo": "El cómic es una mezcla de dibujo y texto para contar una historia. Nace a finales del siglo XIX con mucho éxito por su sencillez técnica. Para crear un cómic solo se necesita tener una historia, un lápiz y un papel en blanco para dibujar.\nPero para hacer una película de dibujos animados se necesita un desarrollo tecnológico. Una película de animación es un trabajo en equipo donde intervienen muchas personas: dibujantes, guionistas, iluminadores, maquilladores, actores, decoradores, etc.\nRobot Dreams es una película de animación muda, escrita y dirigida por Pablo Berger. Es la historia de Dog, un perro solitario. Vive en Nueva York. Un día fabrica un robot, su amigo inseparable. Pero una noche de verano se separan en la playa, quizás para siempre... Robot Dreams es una película muda, no necesita palabras para hablar de los temas que interesan al público de todas las edades: la amistad, la soledad, el amor... Para los críticos es \"la película más humana de la temporada\", pero entre sus personajes no tiene un solo humano.",
-          "descripcion": "Texto cultural sobre el cómic y las películas de animación, con foco en Robot Dreams de Pablo Berger; pregunta guía sobre el atractivo universal de la película"
+          "descripcion_imagen": "Foto de dos niños tumbados leyendo un cómic juntos. Título en letras grandes: 'El cómic y las películas de animación'.",
+          "texto_completo": "El cómic es una mezcla de dibujo y texto para contar una historia. Nace a finales del siglo XIX con mucho éxito por su sencillez técnica. Para crear un cómic solo se necesita tener una historia, un lápiz y un papel en blanco para dibujar.\nPero para hacer una película de dibujos animados se necesita un gran desarrollo tecnológico. Una película de animación es un trabajo en equipo donde intervienen muchas personas: dibujantes, guionistas, iluminadores, maquilladores, actores, decoradores, etc.\nRobot Dreams es una película de animación muda, escrita y dirigida por Pablo Berger. Es la historia de Dog, un perro solitario. Vive en Nueva York. Un día fabrica un robot, su amigo inseparable. Pero una noche de verano se separan en la playa, quizás para siempre... Robot Dreams es una película muda, no necesita palabras para hablar de los temas que interesan al público de todas las edades: la amistad, la soledad, el amor... Para los críticos es \"la película más humana de la temporada\", pero entre sus personajes no tiene un solo humano.",
+          "descripcion": "Texto cultural sobre el cómic y las películas de animación, con foco en Robot Dreams de Pablo Berger; pregunta guía sobre el atractivo universal de la película."
         },
         {
           "id": "U03-p42-act02",
@@ -788,7 +1022,15 @@
             "5. Realiza los dibujos en una película de animación.",
             "6. Es el / la responsable del maquillaje."
           ],
-          "descripcion": "6 definiciones de profesiones del cine de animación para relacionar con las palabras del recuadro"
+          "respuestas": [
+            "1. guionista",
+            "2. actor / actriz",
+            "3. iluminador(a)",
+            "4. decorador(a)",
+            "5. dibujante",
+            "6. maquillador(a)"
+          ],
+          "descripcion": "6 definiciones de profesiones del cine de animación para relacionar con las palabras del recuadro."
         },
         {
           "id": "U03-p42-act03",
@@ -802,26 +1044,31 @@
           "preguntas_opciones": [
             {
               "pregunta": "1. ¿Qué es el cómic?",
-              "opciones": ["a) Una fotografía", "b) Una novela", "c) Una mezcla de dibujo y texto"]
+              "opciones": ["a) Una fotografía", "b) Una novela", "c) Una mezcla de dibujo y texto"],
+              "respuesta": "c"
             },
             {
               "pregunta": "2. ¿Cuándo nace el cómic?",
-              "opciones": ["a) En 1950", "b) A finales del siglo XIX", "c) Hace 10 años"]
+              "opciones": ["a) En 1950", "b) A finales del siglo XIX", "c) Hace 10 años"],
+              "respuesta": "b"
             },
             {
               "pregunta": "3. ¿Cuántas personas son necesarias para crear una película de animación?",
-              "opciones": ["a) Un escritor con un lápiz y un papel", "b) Un escritor y un gran desarrollo tecnológico", "c) Un equipo con muchos profesionales"]
+              "opciones": ["a) Un escritor con un lápiz y un papel", "b) Un escritor y un gran desarrollo tecnológico", "c) Un equipo con muchos profesionales"],
+              "respuesta": "c"
             },
             {
               "pregunta": "4. ¿Quién es el escritor y director de Robot Dreams?",
-              "opciones": ["a) Pablo Berger", "b) Dog", "c) El robot"]
+              "opciones": ["a) Pablo Berger", "b) Dog", "c) El robot"],
+              "respuesta": "a"
             },
             {
               "pregunta": "5. ¿En qué idioma hablan los personajes?",
-              "opciones": ["a) En inglés", "b) No hablan", "c) En español"]
+              "opciones": ["a) En inglés", "b) No hablan", "c) En español"],
+              "respuesta": "b"
             }
           ],
-          "descripcion": "5 preguntas de opción múltiple (a/b/c) sobre el texto del cómic y Robot Dreams"
+          "descripcion": "5 preguntas de opción múltiple (a/b/c) sobre el texto del cómic y Robot Dreams."
         },
         {
           "id": "U03-p42-act04",
@@ -832,32 +1079,38 @@
           "destreza": "producción oral",
           "tiene_audio": false,
           "tiene_imagen": false,
-          "descripcion": "Pregunta abierta para expresar gustos personales sobre películas de animación y cómics; conexión con la experiencia del alumno"
+          "descripcion": "Pregunta abierta para expresar gustos personales sobre películas de animación y cómics; conexión con la experiencia del alumno."
         },
         {
           "id": "U03-p42-act05",
           "numero": 5,
           "tipo": "búsqueda de información",
-          "instruccion_original": "Busca información sobre el cine de animación.",
+          "instruccion_original": "Busca información sobre el cine de animación. ¿Qué películas conoces? ¿Cuál te gusta más?",
           "contenido_linguistico": ["investigación autónoma", "vocabulario del cine de animación"],
           "destreza": "comprensión lectora + producción escrita",
           "tiene_audio": false,
           "tiene_imagen": false,
-          "descripcion": "Tarea de investigación autónoma sobre el cine de animación; fomenta la autonomía del alumno y la competencia digital"
+          "descripcion": "Tarea de investigación autónoma sobre el cine de animación; fomenta la autonomía del alumno y la competencia digital."
         }
       ]
     },
     {
       "pagina": 43,
-      "imagen": "datos/imagenes/U03/U03-p43.jpg",
+      "imagen": "datos/imagenes/U03/U3_p10.jpg",
       "seccion": "Reflexión y evaluación",
+      "respuestas_recuadro_naranja": [
+        "1 Son las dos y veinte.",
+        "2 Son las cinco y media.",
+        "3 Son las once menos diez.",
+        "4 Son las cuatro y cuarto."
+      ],
       "actividades": [
         {
           "id": "U03-p43-act01",
           "numero": 1,
           "tipo": "completa huecos (conjugación)",
           "instruccion_original": "Completa las frases con la forma correcta del verbo.",
-          "contenido_linguistico": ["presente de indicativo: verbos regulares (-ar, -er, -ir) e irregular tener", "formas: vivimos, estudia, comen, tengo, estudiamos, trabaja, vives, come, tienes, tiene"],
+          "contenido_linguistico": ["presente de indicativo: verbos regulares (-ar, -er, -ir) e irregular tener"],
           "destreza": "producción escrita",
           "tiene_audio": false,
           "tiene_imagen": false,
@@ -873,14 +1126,26 @@
             "9. ¿Cuántos años (tener) ___ tu hermana?",
             "10. Daniel, ¿(tener) ___ un diccionario?"
           ],
-          "descripcion": "10 frases para conjugar verbos regulares (-ar, -er, -ir) e irregular tener en presente; repaso global de la conjugación de la unidad"
+          "respuestas": [
+            "1. vivimos",
+            "2. estudia",
+            "3. comen",
+            "4. tengo",
+            "5. estudiamos",
+            "6. trabaja",
+            "7. vives",
+            "8. come",
+            "9. tiene",
+            "10. tienes"
+          ],
+          "descripcion": "10 frases para conjugar verbos regulares (-ar, -er, -ir) e irregular tener en presente; repaso global."
         },
         {
           "id": "U03-p43-act02",
           "numero": 2,
           "tipo": "escribe preguntas",
           "instruccion_original": "Escribe preguntas para las respuestas.",
-          "contenido_linguistico": ["interrogativos: a qué hora, cómo, dónde, cuántos, quién, cuál", "correspondencia pregunta-respuesta"],
+          "contenido_linguistico": ["interrogativos: a qué hora, cómo, dónde, qué, quién, cuál"],
           "destreza": "producción escrita",
           "tiene_audio": false,
           "tiene_imagen": false,
@@ -892,14 +1157,22 @@
             "5. ¿___? — Mi mejor amigo es Pedro.",
             "6. ¿___? — Mi mes favorito es diciembre. ¡Es mi cumpleaños!"
           ],
-          "descripcion": "6 respuestas dadas; el alumno formula la pregunta adecuada con el interrogativo correcto"
+          "respuestas": [
+            "1. ¿A qué hora acaba la clase?",
+            "2. ¿Cómo se llama tu profesora?",
+            "3. ¿Dónde comes todos los días?",
+            "4. ¿Qué / Cuántos idiomas estudias?",
+            "5. ¿Quién / Cuál es tu mejor amigo?",
+            "6. ¿Cuál es tu mes favorito?"
+          ],
+          "descripcion": "6 respuestas dadas; el alumno formula la pregunta adecuada con el interrogativo correcto."
         },
         {
           "id": "U03-p43-act03",
           "numero": 3,
           "tipo": "opción múltiple (posesivos)",
           "instruccion_original": "Elige la opción correcta.",
-          "contenido_linguistico": ["posesivos: mi/mis, tu/tus, su/sus, nuestro/nuestra", "concordancia posesivo-sustantivo (singular/plural)"],
+          "contenido_linguistico": ["posesivos: mi/mis, tu/tus, su/sus, nuestro/nuestra"],
           "destreza": "producción escrita + reflexión gramatical",
           "tiene_audio": false,
           "tiene_imagen": false,
@@ -911,9 +1184,19 @@
             "5. Rosa come con su / sus padres todos los días.",
             "6. ¿Dónde está tu / tus bolígrafo rojo?",
             "7. Gracias por tu / tus regalo.",
-            "8. Nuestro / Nuestra clase de inglés es los lunes y los miércoles."
+            "8. Nuestro / Nuestra clase de Español es los lunes y los miércoles."
           ],
-          "descripcion": "8 frases de opción binaria para elegir el posesivo correcto; repaso de concordancia singular/plural y masculino/femenino"
+          "respuestas": [
+            "1. tus",
+            "2. mi",
+            "3. mis",
+            "4. mi",
+            "5. sus",
+            "6. tu",
+            "7. tu",
+            "8. Nuestra"
+          ],
+          "descripcion": "8 frases de opción binaria para elegir el posesivo correcto; repaso de concordancia singular/plural y masculino/femenino."
         },
         {
           "id": "U03-p43-act04",
@@ -924,7 +1207,7 @@
           "destreza": "producción escrita",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "Foto familiar de David con sus padres (Alicia y padre), hermana Pilar, tía Carmen e hijos de Carmen",
+          "descripcion_imagen": "Foto familiar de David con su familia.",
           "items": [
             "1. Alicia es mi madre. Yo soy su ___.",
             "2. Pilar es mi hermana. Yo soy su ___.",
@@ -934,7 +1217,16 @@
             "6. El padre de mi madre es mi ___.",
             "7. La madre de mi padre es mi ___."
           ],
-          "descripcion": "7 frases desde la perspectiva de David; el alumno completa con el término de parentesco correcto"
+          "respuestas": [
+            "1. hijo",
+            "2. hermano",
+            "3. marido",
+            "4. tía",
+            "5. primos",
+            "6. abuelo",
+            "7. abuela"
+          ],
+          "descripcion": "7 frases desde la perspectiva de David; el alumno completa con el término de parentesco correcto."
         },
         {
           "id": "U03-p43-act05",
@@ -945,9 +1237,21 @@
           "destreza": "comprensión lectora",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "Cuadrícula de sopa de letras con 6 palabras de familia ocultas",
-          "palabras_ocultas": 6,
-          "descripcion": "Sopa de letras con 6 palabras de miembros de la familia; actividad lúdica de repaso de vocabulario"
+          "descripcion_imagen": "Cuadrícula de sopa de letras. Palabras visibles resaltadas: PRIMO (horizontal, fila 1), HERMANO (horizontal, fila 6, resaltado en verde).",
+          "sopa_de_letras": [
+            "P R I M O A G E H",
+            "O C B A I L J M Z",
+            "S R L D O B K H T",
+            "U J E R C S P I O",
+            "Q F R I S I P V B",
+            "H E R M A N O Y P",
+            "P B T A C D U F Y",
+            "C K A N X U F I G",
+            "L A J P O L B H A",
+            "L A I A J P O I A"
+          ],
+          "respuestas": ["primo", "hermano", "madre", "padre", "abuelo", "sobrina"],
+          "descripcion": "Sopa de letras con 6 palabras de miembros de la familia; actividad lúdica de repaso de vocabulario."
         },
         {
           "id": "U03-p43-act06",
@@ -958,12 +1262,18 @@
           "destreza": "producción escrita",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "4 relojes analógicos con distintas horas",
+          "descripcion_imagen": "4 relojes analógicos de diferentes colores (rosa, verde, azul, morado).",
           "items": [
-            "1. Reloj analógico (hora por determinar)",
-            "2. Reloj analógico (hora por determinar)",
-            "3. Reloj analógico (hora por determinar)",
-            "4. Reloj analógico (hora por determinar)"
+            "1. Reloj analógico",
+            "2. Reloj analógico",
+            "3. Reloj analógico",
+            "4. Reloj analógico"
+          ],
+          "respuestas": [
+            "1. Son las dos y veinte.",
+            "2. Son las cinco y media.",
+            "3. Son las once menos diez.",
+            "4. Son las cuatro y cuarto."
           ],
           "descripcion": "4 relojes analógicos; el alumno escribe la hora en palabras. Repaso final de la hora."
         }
@@ -1016,6 +1326,14 @@
     {
       "fecha": "2025-02-01",
       "cambio": "Añadida página 43 — Reflexión y evaluación: Gramática + Vocabulario + Comunicación (6 actividades, acts 1-6, + autoevaluación). INVENTARIO U03 COMPLETO (páginas 34-43)"
+    },
+    {
+      "fecha": "2026-02-16",
+      "cambio": "Actualizado Vocabulario (p.34-35) para nueva edición del libro: act. 2 cambia de 'relaciona' a 'forma frases'; act. 5 texto modelo corregido (Ana tiene 6 años, no 8); act. 6 texto de Javier actualizado (Getafe = ciudad, no pueblo; añadida edad Alejandra y fútbol); acts. 7-10 reorganizadas (7 = completa frases sobre Javier, 8 = texto de Lucía Alonso de Cantabria en lugar de Leonora arahuaca de Colombia, 9 = preguntas sobre Lucía, 10 = síntesis comparativa Javier/Lucía con 6 frases); reducido de 11 a 10 actividades."
+    },
+    {
+      "fecha": "2026-02-20",
+      "cambio": "Revisión completa del JSON contra imágenes del libro del profesor (U3_p01-p10). Cambios principales: (1) Añadido campo 'respuestas' en todas las actividades que lo tienen en el libro del profesor (acts. 2, 7, 9, 10 de Vocabulario; acts. 1-6 de Gramática; acts. 1-3 de Comunicación; acts. 1-2 de Destrezas Leer; act. 4 de Destrezas Escuchar; acts. 2-3 de Cultura; acts. 1-6 de Reflexión). (2) Añadidas pistas de audio donde faltaban (pistas 31-42). (3) p.38 Comunicación: diálogo corregido — 4 personajes (Pablo, Graciela, Julia, Jorge), no 2; título 'En el recreo'; incluye vídeo; act. 2 cambia a 'completa con nombres'; act. 3 respuestas V/V/F. (4) p.36 Gramática act. 1: tipo cambiado a 'completa conjugación' (no señala forma correcta); act. 2 añadida (completa preguntas con verbos). (5) p.37: act. 5 ampliada de 6 a 9 ítems. (6) Descripciones de imagen actualizadas contra las fotos reales. (7) Respuestas de recuadros naranjas del libro del profesor añadidas como campo separado en páginas 35, 39, 40, 43. (8) p.42 Cultura: título corregido a 'El cómic y las películas de animación'; act. 3 con respuestas por opción. (9) p.43: sopa de letras con cuadrícula completa; act. 6 con respuestas de las horas."
     }
   ]
 }

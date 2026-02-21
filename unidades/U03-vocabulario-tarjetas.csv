@@ -1,19 +1,19 @@
 Palabra;Genero;Color_genero;Silaba_tonica;Regla;Unidad;Campo_semantico;Color_campo;Ejemplo;Frecuencia;Irregularidad;IT;FR;PT_BR;EN;CS;PL
-padre;M;azul;PA-dre;Irregular: raices distintas (padre/madre). Memorizar como par.;U03;Familia;violeta;Mi padre se llama Pedro y es camionero.;3;No sigue -o/-a: raices distintas (padre ≠ padro). Memorizar.;padre;père;pai;father;otec;ojciec
-madre;F;rojo;MA-dre;Irregular: raices distintas (padre/madre). Memorizar como par.;U03;Familia;violeta;Mi madre se llama Maria y es enfermera.;3;No sigue -o/-a: raices distintas (madre ≠ madra). Memorizar.;madre;mère;mãe;mother;matka;matka
-hermano;M;azul;her-MA-no;M termina en -o, F termina en -a: herman-o / herman-a;U03;Familia;violeta;Tengo un hermano. Se llama Daniel.;3;;fratello;frère;irmão;brother;bratr;brat
-hermana;F;rojo;her-MA-na;M termina en -o, F termina en -a: herman-o / herman-a;U03;Familia;violeta;Mi hermana se llama Laura y tiene 12 anos.;3;;sorella;sœur;irmã;sister;sestra;siostra
-hijo;M;azul;HI-jo;M termina en -o, F termina en -a: hij-o / hij-a;U03;Familia;violeta;Pedro es el hijo de Carlos y Ana.;2;;figlio;fils;filho;son;syn;syn
-hija;F;rojo;HI-ja;M termina en -o, F termina en -a: hij-o / hij-a;U03;Familia;violeta;Maria es la hija de Carlos y Ana.;2;;figlia;fille;filha;daughter;dcera;córka
-abuelo;M;azul;a-BUE-lo;M termina en -o, F termina en -a: abuel-o / abuel-a;U03;Familia;violeta;Mi abuelo se llama Carlos y tiene 70 anos.;2;;nonno;grand-père;avô;grandfather;dědeček;dziadek
-abuela;F;rojo;a-BUE-la;M termina en -o, F termina en -a: abuel-o / abuel-a;U03;Familia;violeta;Mi abuela se llama Ana y tiene 68 anos.;2;;nonna;grand-mère;avó;grandmother;babička;babcia
-tío;M;azul;TI-o;M termina en -o, F termina en -a: ti-o / ti-a;U03;Familia;violeta;Mi tio se llama Luis.;2;;zio;oncle;tio;uncle;strýc;wujek
-tía;F;rojo;TI-a;M termina en -o, F termina en -a: ti-o / ti-a;U03;Familia;violeta;Mi tia se llama Elena.;2;;zia;tante;tia;aunt;teta;ciotka
-primo;M;azul;PRI-mo;M termina en -o, F termina en -a: prim-o / prim-a;U03;Familia;violeta;Mi primo se llama Daniel y tiene 14 anos.;2;;cugino;cousin;primo;cousin;bratranec;kuzyn
-prima;F;rojo;PRI-ma;M termina en -o, F termina en -a: prim-o / prim-a;U03;Familia;violeta;Mi prima se llama Sara.;2;;cugina;cousine;prima;cousin;sestřenice;kuzynka
-marido;M;azul;ma-RI-do;Irregular: par marido/mujer (no marido/marida). Memorizar como par.;U03;Familia;violeta;Carlos es el marido de Ana.;2;Par irregular: marido/mujer (no marido/marida).;marito;mari;marido;husband;manžel;mąż
-mujer;F;rojo;mu-JER;Irregular: par marido/mujer. Ademas doble significado (woman / wife).;U03;Familia;violeta;Ana es la mujer de Carlos.;3;Doble significado: mujer = woman (general) y mujer = wife (parentesco). Aqui = wife.;moglie;femme;esposa;wife;manželka;żona
-nieto;M;azul;NIE-to;M termina en -o, F termina en -a: niet-o / niet-a;U03;Familia;violeta;David es el nieto de Carlos y Ana.;1;;nipote;petit-fils;neto;grandson;vnuk;wnuk
-nieta;F;rojo;NIE-ta;M termina en -o, F termina en -a: niet-o / niet-a;U03;Familia;violeta;Lucia es la nieta de Carlos y Ana.;1;;nipote;petite-fille;neta;granddaughter;vnučka;wnuczka
-sobrino;M;azul;so-BRI-no;M termina en -o, F termina en -a: sobrin-o / sobrin-a;U03;Familia;violeta;Daniel es el sobrino de Luis y Elena.;1;;nipote;neveu;sobrinho;nephew;synovec;siostrzeniec
-sobrina;F;rojo;so-BRI-na;M termina en -o, F termina en -a: sobrin-o / sobrin-a;U03;Familia;violeta;Sara es la sobrina de Pedro y Maria.;1;;nipote;nièce;sobrinha;niece;neteř;siostrzenica
+padre;M;azul;PA-dre;Irregular: raices distintas (padre/madre). Memorizar como par.;U03;Familia;violeta;El padre de Javier es camionero.;3;No sigue -o/-a: raices distintas (padre ≠ padro). Memorizar.;padre;père;pai;father;otec;ojciec
+madre;F;rojo;MA-dre;Irregular: raices distintas (padre/madre). Memorizar como par.;U03;Familia;violeta;La madre de Javier se llama Catalina y es enfermera.;3;No sigue -o/-a: raices distintas (madre ≠ madra). Memorizar.;madre;mère;mãe;mother;matka;matka
+hermano;M;azul;her-MA-no;M termina en -o, F termina en -a: herman-o / herman-a;U03;Familia;violeta;Carlos es el hermano mayor de Lucia.;3;;fratello;frère;irmão;brother;bratr;brat
+hermana;F;rojo;her-MA-na;M termina en -o, F termina en -a: herman-o / herman-a;U03;Familia;violeta;Javier tiene una hermana pequena, Alejandra.;3;;sorella;sœur;irmã;sister;sestra;siostra
+hijo;M;azul;HI-jo;M termina en -o, F termina en -a: hij-o / hij-a;U03;Familia;violeta;David es el hijo de Alicia y Luis.;2;;figlio;fils;filho;son;syn;syn
+hija;F;rojo;HI-ja;M termina en -o, F termina en -a: hij-o / hij-a;U03;Familia;violeta;Maria es la hija de Carlos y Carmen.;2;;figlia;fille;filha;daughter;dcera;córka
+abuelo;M;azul;a-BUE-lo;M termina en -o, F termina en -a: abuel-o / abuel-a;U03;Familia;violeta;El abuelo de David se llama Carlos.;2;;nonno;grand-père;avô;grandfather;dědeček;dziadek
+abuela;F;rojo;a-BUE-la;M termina en -o, F termina en -a: abuel-o / abuel-a;U03;Familia;violeta;La abuela de David se llama Carmen.;2;;nonna;grand-mère;avó;grandmother;babička;babcia
+tio;M;azul;TI-o;M termina en -o, F termina en -a: ti-o / ti-a;U03;Familia;violeta;Nacho es el tio de David.;2;;zio;oncle;tio;uncle;strýc;wujek
+tia;F;rojo;TI-a;M termina en -o, F termina en -a: ti-o / ti-a;U03;Familia;violeta;Maria es la tia de David.;2;;zia;tante;tia;aunt;teta;ciotka
+primo;M;azul;PRI-mo;M termina en -o, F termina en -a: prim-o / prim-a;U03;Familia;violeta;Alvaro es el primo de David.;2;;cugino;cousin;primo;cousin;bratranec;kuzyn
+prima;F;rojo;PRI-ma;M termina en -o, F termina en -a: prim-o / prim-a;U03;Familia;violeta;Paloma es la prima de David.;2;;cugina;cousine;prima;cousin;sestřenice;kuzynka
+marido;M;azul;ma-RI-do;Irregular: par marido/mujer (no marido/marida). Memorizar como par.;U03;Familia;violeta;Luis es el marido de Alicia.;2;Par irregular: marido/mujer (no marido/marida).;marito;mari;marido;husband;manžel;mąż
+mujer;F;rojo;mu-JER;Irregular: par marido/mujer. Ademas doble significado (woman / wife).;U03;Familia;violeta;Alicia es la mujer de Luis.;3;Doble significado: mujer = woman (general) y mujer = wife (parentesco). Aqui = wife.;moglie;femme;esposa;wife;manželka;żona
+nieto;M;azul;NIE-to;M termina en -o, F termina en -a: niet-o / niet-a;U03;Familia;violeta;David es el nieto de Carlos y Carmen.;1;;nipote;petit-fils;neto;grandson;vnuk;wnuk
+nieta;F;rojo;NIE-ta;M termina en -o, F termina en -a: niet-o / niet-a;U03;Familia;violeta;Pilar es la nieta de Carlos y Carmen.;1;;nipote;petite-fille;neta;granddaughter;vnučka;wnuczka
+sobrino;M;azul;so-BRI-no;M termina en -o, F termina en -a: sobrin-o / sobrin-a;U03;Familia;violeta;David es el sobrino de Roberto y Carmen.;1;;nipote;neveu;sobrinho;nephew;synovec;siostrzeniec
+sobrina;F;rojo;so-BRI-na;M termina en -o, F termina en -a: sobrin-o / sobrin-a;U03;Familia;violeta;Paloma es la sobrina de Alicia y Luis.;1;;nipote;nièce;sobrinha;niece;neteř;siostrzenica

@@ -200,6 +200,31 @@ Los objetivos de bloque son subsidiarios del objetivo global. No son objetivos i
 
 No esperar que un A1 "analice recursos literarios" o "evalúe la corrección de un texto". Verbos de Bloom 4-6 (Analizar, Evaluar, Crear) no se formulan como objetivos explícitos en A1.1.
 
+### 7.6 Confundir medio de aprendizaje con objetivo + formular a nivel de actividad individual
+
+Dos errores relacionados que suelen aparecer juntos en los objetivos de bloque:
+
+**Error 1 — Incluir el medio o recurso en el objetivo:**
+
+El objetivo describe lo que el alumno APRENDE, no el recurso que usa para aprenderlo. Un árbol genealógico, un audio, una tarjeta o un texto modelo son **medios de aprendizaje** — herramientas que el profesor emplea en las actividades. No forman parte del resultado de aprendizaje.
+
+| Error | Problema | Corrección |
+|-------|----------|------------|
+| "Nombrar los términos de parentesco asociándolos a su posición en el árbol genealógico" | "el árbol genealógico" es un recurso de aula, no un resultado de aprendizaje | "Nombrar los términos de parentesco básicos en español" |
+| "Identificar los verbos regulares completando una tabla de conjugación" | "tabla de conjugación" es un medio, no un objetivo | "Identificar las formas del presente regular" |
+| "Describir su familia usando las tarjetas de vocabulario" | "tarjetas de vocabulario" es un material de aula | "Describir su familia usando frases sencillas" |
+
+**Error 2 — Formular el objetivo como suma de actividades individuales:**
+
+El objetivo de bloque captura el **resultado macro** que el conjunto de actividades logra, no el detalle de cada actividad individual. Si el objetivo describe lo que hace cada actividad por separado (escuchar + repetir + traducir + practicar en parejas), es una descripción de procedimiento, no un objetivo.
+
+| Error | Problema | Corrección |
+|-------|----------|------------|
+| "Escuchar y repetir los términos, formar frases y practicar en parejas" | Es una lista de actividades, no un resultado de aprendizaje | "Reconocer y nombrar los términos de parentesco básicos" |
+| "Leer el texto modelo, extraer vocabulario y escribir un texto paralelo" | Describe 3 actividades, no 1 resultado | "Producir un texto breve describiendo su propia familia" |
+
+**Regla para los agentes:** Al formular un objetivo de bloque, pregúntate: *"¿Qué SABE HACER el alumno al terminar estas actividades que no sabía hacer antes?"* La respuesta a esa pregunta — formulada con un verbo observable — es el objetivo. Los recursos que usó para llegar ahí (árbol, audio, tarjetas, tabla) y las acciones individuales que realizó (escuchar, repetir, traducir) son el camino, no la meta.
+
 ---
 
 ## 8. Objetivos por tipo de sección
@@ -354,3 +379,4 @@ Antes de validar un objetivo, el agente (o el revisor) verifica:
 |-------|--------|
 | 2026-02-16 | Creación inicial — Documento de referencia para formulación de objetivos, basado en MCER A1 + Taxonomía de Bloom (niveles 1-3) |
 | 2026-02-16 | Ampliación mayor: añadidos 3 tipos de objetivos (comunicativo/lingüístico/gramatical), objetivos de procesamiento del input (VanPatten), regla del "no 2 por 1", correspondencia ACTFL-MCER, modelo SMART completo (5 componentes con temporalización), regla del 40% para número de objetivos, errores frecuentes (§7), matiz de Conti sobre Bloom en lenguas. Fuentes ampliadas con PCIC, ACTFL, VanPatten, Canale y Swain, Long, Dörnyei, Deci y Ryan, Vygotsky, Marzano. |
+| 2026-02-16 | Añadida §7.6: dos errores relacionados — (1) confundir medio de aprendizaje (árbol genealógico, audio, tarjetas) con objetivo, (2) formular objetivos como suma de actividades individuales en vez de resultado macro del bloque. Regla para agentes: el objetivo describe qué SABE HACER el alumno al terminar, no los recursos ni las acciones individuales. |
