@@ -244,7 +244,7 @@
           },
           "nota": "* Ud. = usted; Uds. = ustedes",
           "ejemplos_contextualizados": [
-            "¿Dónde estudias vosotros?",
+            "¿Dónde estudiáis vosotros?",
             "Ana y Sebastián comen en el instituto.",
             "Nosotros vivimos en Lima."
           ]
@@ -252,7 +252,7 @@
         {
           "titulo": "Interrogativos",
           "contenido": {
-            "Qué": ["¿Qué comes?", "¿A qué hora comes?"],
+            "Qué": ["¿Qué hora comes?", "¿A qué hora comes?"],
             "Quién / Quiénes": ["¿Quién es esta chica?", "¿Quiénes son estas niñas?"],
             "Cuál": ["¿Cuál es tu número de teléfono?", "¿Cuál es tu asignatura favorita?"],
             "Dónde": ["¿Dónde viven tus abuelos?", "¿De dónde es Óscar?"],
@@ -266,10 +266,10 @@
         {
           "id": "U03-p36-act01",
           "numero": 1,
-          "tipo": "señala la forma correcta",
+          "tipo": "completa huecos (conjugación)",
           "instruccion_original": "Completa con la forma correcta del verbo.",
-          "contenido_linguistico": ["presente regular: estudiar, comer, vivir", "concordancia sujeto-verbo", "todas las personas gramaticales"],
-          "destreza": "comprensión lectora + reflexión gramatical",
+          "contenido_linguistico": ["presente regular: estudiar, comer, vivir, trabajar, hablar, escribir", "concordancia sujeto-verbo", "todas las personas gramaticales"],
+          "destreza": "producción escrita + reflexión gramatical",
           "tiene_audio": false,
           "tiene_imagen": false,
           "ejemplo_libro": "Su hermano (vivir) vive en Buenos Aires.",
@@ -279,11 +279,11 @@
             "3. ¿Dónde (vivir) ___ tú?",
             "4. Jorge (estudiar) ___ música.",
             "5. Mis primos y yo (vivir) ___ en Arévalo.",
-            "6. ¿Dónde (comer, vosotros) ___ ?",
+            "6. ¿Dónde (comer, vosotros) ___?",
             "7. Mi madre (trabajar) ___ en un hospital.",
             "8. María y yo (hablar) ___ mucho por teléfono.",
             "9. Elena (no escribir) ___ en su diario todos los días.",
-            "10. ¿Dónde (vivir, vosotros) ___ ?"
+            "10. ¿Dónde (vivir, vosotros) ___?"
           ],
           "respuestas": [
             "1. estudian",
@@ -294,10 +294,10 @@
             "6. coméis",
             "7. trabaja",
             "8. hablamos",
-            "9. escribe",
+            "9. no escribe",
             "10. vivís"
           ],
-          "descripcion": "10 ítems para conjugar verbos regulares en presente; práctica de concordancia sujeto-verbo."
+          "descripcion": "10 ítems para conjugar verbos regulares en presente; práctica de concordancia sujeto-verbo con las tres conjugaciones."
         },
         {
           "id": "U03-p36-act02",
@@ -309,24 +309,24 @@
           "tiene_audio": false,
           "tiene_imagen": false,
           "items": [
-            "1. ¿Dónde ___ tu padre?",
-            "2. ¿Qué ___ (tú)?",
-            "3. ¿Dónde ___ el profesor?",
-            "4. ¿Dónde ___ María y sus padres?",
-            "5. ¿Qué ___ vosotros?",
-            "6. ¿Qué ___ (tú)?",
-            "7. ¿Qué idiomas ___ tu hermano?",
-            "8. ¿Dónde ___ ellos?"
+            "1. ¿Dónde ___ tu padre? — En un banco.",
+            "2. ¿Qué ___ (tú)? — Un correo electrónico.",
+            "3. ¿Dónde ___ el profesor? — En un restaurante.",
+            "4. ¿Dónde ___ María y sus padres? — En Sevilla.",
+            "5. ¿Qué ___ vosotros? — Matemáticas.",
+            "6. ¿Qué ___ (tú)? — Un bocadillo.",
+            "7. ¿Qué idiomas ___ tu hermano? — Inglés, español y francés.",
+            "8. ¿Dónde ___ ellos? — En un hospital."
           ],
           "respuestas": [
-            "1. trabaja — En un banco.",
-            "2. escribes — Un correo electrónico.",
-            "3. come — En un restaurante.",
-            "4. viven — En Sevilla.",
-            "5. estudiáis — Matemáticas.",
-            "6. comes — Un bocadillo.",
-            "7. habla — Inglés, español y francés.",
-            "8. trabajan — En un hospital."
+            "1. trabaja",
+            "2. escribes",
+            "3. come",
+            "4. viven",
+            "5. estudiáis",
+            "6. comes",
+            "7. habla",
+            "8. trabajan"
           ],
           "descripcion": "8 preguntas para completar con la forma verbal correcta; cada una con su respuesta dada como contexto."
         },
@@ -340,69 +340,35 @@
           "tiene_audio": false,
           "tiene_imagen": false,
           "items": [
-            "1. ¿Dónde / Cuál viven tus abuelos?",
-            "2. ¿Cómo / Cuál os llamáis vosotras?",
-            "3. ¿Qué / Cuál estudia tu hermana mayor?",
-            "4. ¿Cómo / Dónde trabaja tu tío Óscar?",
-            "5. ¿Cuál / Cómo es tu día de la semana favorito?",
-            "6. ¿Qué / Dónde comes?",
-            "7. ¿Quién / Quiénes son estos niños?",
-            "8. ¿Dónde / Qué estudian los hijos de Julia?"
+            "1. ¿Dónde / Cuál viven tus abuelos? — En Marbella.",
+            "2. ¿Cómo / Cuál os llamáis vosotras? — Yo me llamo Rosa y ella, Alicia.",
+            "3. ¿Qué / Cuál estudia tu hermana mayor? — Geografía e Historia.",
+            "4. ¿Dónde / Cuál trabaja tu tío Óscar? — En un banco.",
+            "5. ¿Cuál / Cómo es tu día de la semana favorito? — El jueves.",
+            "6. ¿Qué / Dónde comes? — Patatas fritas.",
+            "7. ¿Quién / Quiénes son estos niños? — Son los hijos de Julia."
           ],
           "respuestas": [
-            "1. Dónde — En Marbella.",
-            "2. Cómo — Yo me llamo Rosa y ella, Alicia.",
-            "3. Qué — Geografía e Historia.",
-            "4. Dónde — En un banco.",
-            "5. Cuál — El jueves.",
-            "6. Qué — Patatas fritas.",
-            "7. Quiénes — Son los hijos de Julia.",
-            "8. Dónde — En la universidad."
+            "1. Dónde",
+            "2. Cómo",
+            "3. Qué",
+            "4. Dónde",
+            "5. Cuál",
+            "6. Qué",
+            "7. Quiénes"
           ],
-          "descripcion": "8 ítems de selección entre dos interrogativos con respuesta incluida; práctica de uso contextualizado."
-        },
-        {
-          "id": "U03-p36-act04",
-          "numero": 4,
-          "tipo": "completa huecos",
-          "instruccion_original": "Completa las frases con cuánto/-a/-os/-as.",
-          "contenido_linguistico": ["interrogativo cuánto con concordancia de género y número"],
-          "destreza": "producción escrita + reflexión gramatical",
-          "tiene_audio": false,
-          "tiene_imagen": true,
-          "descripcion_imagen": "Mano escribiendo en un cuaderno.",
-          "ejemplo_libro": "¿Cuántos bolígrafos tienes?",
-          "items": [
-            "1. ¿___ idiomas hablas?",
-            "2. ¿___ naranjas come María?",
-            "3. ¿___ móviles tiene el profesor?",
-            "4. ¿___ agua bebes en un día?",
-            "5. ¿___ hermanas tiene tu madre?",
-            "6. ¿___ café bebe tu abuelo?",
-            "7. ¿___ horas trabaja la profesora al día?",
-            "8. ¿___ mochilas tienes?"
-          ],
-          "respuestas": [
-            "1. Cuántos",
-            "2. Cuántas",
-            "3. Cuántos",
-            "4. Cuánta",
-            "5. Cuántas",
-            "6. Cuánto",
-            "7. Cuántas",
-            "8. Cuántas"
-          ],
-          "descripcion": "8 frases para completar con cuánto/-a/-os/-as; práctica de concordancia del interrogativo cuantitativo."
+          "descripcion": "7 ítems de selección entre dos interrogativos con respuesta incluida; práctica de uso contextualizado."
         }
       ]
     },
     {
       "pagina": 37,
       "imagen": "datos/imagenes/U03/U3_p04.jpg",
-      "seccion": "Gramática — Posesivos / Para aprender",
+      "seccion": "Gramática — Interrogativos (cont.) / Posesivos / Para aprender",
       "cuadros_gramaticales": [
         {
           "titulo": "Posesivos",
+          "subtitulo": "Adjetivo posesivo",
           "adjetivos_posesivos": {
             "yo": {"singular": ["mi casa", "mi libro"], "plural": ["mis casas", "mis libros"]},
             "tú": {"singular": ["tu mesa", "tu boli"], "plural": ["tus mesas", "tus bolis"]},
@@ -419,11 +385,12 @@
           "numero": 4,
           "tipo": "completa huecos",
           "instruccion_original": "Completa las frases con cuánto/-a/-os/-as.",
-          "nota": "Esta actividad aparece en la parte superior de la p.37 pero pertenece a la sección de interrogativos de p.36.",
+          "nota": "Actividad que empieza en p.36 pero se imprime en p.37. Pertenece al bloque de interrogativos.",
           "contenido_linguistico": ["interrogativo cuánto con concordancia de género y número"],
           "destreza": "producción escrita + reflexión gramatical",
           "tiene_audio": false,
           "tiene_imagen": false,
+          "ejemplo_libro": "¿Cuántos bolígrafos tienes?",
           "items": [
             "1. ¿___ idiomas hablas?",
             "2. ¿___ naranjas come María?",
@@ -431,8 +398,7 @@
             "4. ¿___ agua bebes en un día?",
             "5. ¿___ hermanas tiene tu madre?",
             "6. ¿___ café bebe tu abuelo?",
-            "7. ¿___ horas trabaja la profesora al día?",
-            "8. ¿___ mochilas tienes?"
+            "7. ¿___ mochilas tienes?"
           ],
           "respuestas": [
             "1. Cuántos",
@@ -441,17 +407,16 @@
             "4. Cuánta",
             "5. Cuántas",
             "6. Cuánto",
-            "7. Cuántas",
-            "8. Cuántas"
+            "7. Cuántas"
           ],
-          "descripcion": "8 frases para completar con cuánto/-a/-os/-as."
+          "descripcion": "7 frases para completar con cuánto/-a/-os/-as (más ejemplo resuelto); práctica de concordancia del interrogativo cuantitativo."
         },
         {
           "id": "U03-p37-act05",
           "numero": 5,
           "tipo": "completa huecos",
           "instruccion_original": "Completa los huecos con el posesivo correspondiente.",
-          "contenido_linguistico": ["adjetivos posesivos: mi, tu, su, sus, nuestro/-a, vuestro/-a"],
+          "contenido_linguistico": ["adjetivos posesivos: mi, tu, su, sus, nuestro/-a, vuestro/-a, mis, nuestras"],
           "destreza": "producción escrita + reflexión gramatical",
           "tiene_audio": false,
           "tiene_imagen": false,
@@ -505,7 +470,7 @@
             "5. ¿Cuántos años tienen sus hijos?",
             "6. ¿Cuántos años tiene vuestra madre?"
           ],
-          "descripcion": "6 respuestas dadas; el alumno debe formular la pregunta correspondiente usando interrogativos."
+          "descripcion": "6 respuestas dadas; el alumno debe formular la pregunta correspondiente usando interrogativos y posesivos."
         },
         {
           "id": "U03-p37-act07",
@@ -517,19 +482,19 @@
           "tiene_audio": false,
           "tiene_imagen": false,
           "ejemplo_libro": "¿Cómo se llaman tus padres? — Pepe y Luisa.",
-          "descripcion": "Práctica oral libre en parejas preguntando nombres de familiares."
+          "descripcion": "Práctica oral libre en parejas preguntando nombres de familiares con posesivos."
         },
         {
           "id": "U03-p37-act08",
           "numero": 8,
           "tipo": "producción oral",
           "instruccion_original": "Ahora, dile a toda la clase cómo se llaman los miembros de tu familia y los de tu compañero.",
-          "contenido_linguistico": ["posesivos en 3ª persona", "presentar familia propia y ajena"],
+          "contenido_linguistico": ["posesivos en 3ª persona", "presentar familia propia y ajena", "contraste mis/sus"],
           "destreza": "producción oral",
           "tiene_audio": false,
           "tiene_imagen": false,
           "ejemplo_libro": "Mis padres se llaman Juan y María; sus padres se llaman Pepe y Luisa. Mi hermano se llama Carlos; su hermana se llama Marta...",
-          "descripcion": "Producción oral ante la clase; transición de 2ª a 3ª persona (tu → su)."
+          "descripcion": "Producción oral ante la clase; transición de 2ª a 3ª persona (tu → su). El alumno presenta su familia y la de su compañero."
         },
         {
           "id": "U03-p37-act09",

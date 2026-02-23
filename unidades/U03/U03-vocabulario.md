@@ -24,7 +24,7 @@
 | **Unidad anterior (U02)** | Países hispanohablantes, nacionalidades, *ser* (plural), plural nombres/adjetivos, demostrativos, números 21-100, días de la semana, asignaturas |
 | **Unidad posterior (U04)** | Alimentos, comidas, *querer*, artículos indeterminados, contables/incontables, *hay*, *gustar* |
 
-**Lo que el alumno ya sabe al llegar a U03:**
+**Lo que el estudiante ya sabe al llegar a U03:**
 - Verbo *ser* (singular y plural)
 - Verbo *llamarse*
 - Artículos determinados
@@ -137,7 +137,7 @@ Tiempo estimado total: 50-60 minutos (2 sesiones recomendadas)
 | tío + tía | **tíos** | uncle(s) and aunt(s) |
 | nieto + nieta | **nietos** | grandchildren |
 
-*21 tarjetas nuevas (★): 18 de parentesco + 3 de profesiones. Las tarjetas de repaso (↻) de U01-U02 (números, países, nacionalidades, ser, llamarse) ya están en el banco acumulativo del alumno y se colocan junto a las nuevas en la Estación de servicio.*
+*21 tarjetas nuevas (★): 18 de parentesco + 3 de profesiones. Las tarjetas de repaso (↻) de U01-U02 (números, países, nacionalidades, ser, llamarse) ya están en el banco acumulativo del estudiante y se colocan junto a las nuevas en la Estación de servicio.*
 
 ##### CSV PARA PRODUCCIÓN EN INDESIGN — Caja 1: Vocabulario (U03)
 
@@ -187,7 +187,7 @@ Comente a los estudiantes que al terminar la sección recibirán la insignia "Es
 - Preparar: árbol genealógico ampliado en pizarra/póster con la estructura del libro pero SIN nombres.
 - Tener: libro abierto en p.34.
 - Audio: pistas correspondientes a acts. 1, 2 y 3 listas.
-- Proyector: píldora formativa de género (presentación inductiva, diapositivas 1-4) lista para Fase 3.
+- Proyector: píldora formativa de género (presentación inductiva, diapositivas 1-2) lista para Fase 3.
 - Imprimir: tarjetas de familias ficticias para act. 5 (ver `materiales/U03-tarjetas-familias-ficticias.md`). Recortar y tener listas.
 
 **Tiempo estimado del bloque:** 30-35 minutos
@@ -222,11 +222,11 @@ Diga: *"Mirad el árbol genealógico de la familia de David. Vamos a escuchar lo
 
 Señale brevemente las tres generaciones en el libro: *"Arriba: los abuelos. En el medio: los padres, los tíos. Abajo: los hermanos, los primos."*
 
-Ponga el audio (actividad 1). **Primera escucha — global:** los alumnos solo escuchan y siguen con el dedo en el árbol del libro.
+Ponga el audio (actividad 1). **Primera escucha — global:** los estudiantes solo escuchan y siguen con el dedo en el árbol del libro.
 
 Diga: *"Escuchad otra vez. Ahora, repetid cada palabra en voz alta después de oírla."*
 
-**Segunda escucha — escucha y repite:** los alumnos repiten cada término en voz alta inmediatamente después de oírlo. Haga pausas breves tras cada ítem si es necesario.
+**Segunda escucha — escucha y repite:** los estudiantes repiten cada término en voz alta inmediatamente después de oírlo. Haga pausas breves tras cada ítem si es necesario.
 
 Tras las dos escuchas, refuerce con el árbol de la pizarra. Señale cada persona y nómbrela con su término de parentesco:
 
@@ -244,7 +244,7 @@ Excepciones importantes:
 - padre / madre → raíces distintas (no siguen -o/-a)
 - marido / mujer → raíces distintas
 
-El alumno ya conoce el patrón -o/-a de los adjetivos de nacionalidad (U02: español/española, colombiano/colombiana), por lo que no es completamente nuevo.
+El estudiante ya conoce el patrón -o/-a de los adjetivos de nacionalidad (U02: español/española, colombiano/colombiana), por lo que no es completamente nuevo.
 
 Los nombres propios del árbol también reflejan el género: los masculinos (Carlos, Roberto, Luis, Nacho, Álvaro) corresponden a términos en -o y los femeninos (Juana, Carmen, Alicia, María, Paloma) a términos en -a. En la Fase 3 se aprovecha esta correspondencia como estrategia de comprensión para la escucha de la Actividad 2.
 
@@ -253,7 +253,7 @@ Agrupamiento: grupo-clase | Tiempo: 5-6 min | Material: píldora formativa de g�
 
 **ACTIVE LA CONCIENCIA GRAMATICAL**
 
-Antes de pasar a la Actividad 2, proyecte la píldora formativa de género. Siga la secuencia propuesta en la presentación hasta la diapositiva 4. El enfoque es inductivo: los alumnos observan ejemplos y descubren el patrón, el profesor no enuncia la regla. Finalice preguntando si tienen alguna pregunta.
+Antes de pasar a la Actividad 2, presente el patrón de género -o/-a de los términos de parentesco. Escriba en la pizarra dos columnas (-o / -a) y pida a los estudiantes que coloquen los parentescos del árbol en la columna correcta: abuelo/abuela, tío/tía, hermano/hermana, primo/prima, hijo/hija, nieto/nieta, sobrino/sobrina. Los estudiantes observan y descubren el patrón sin que el profesor lo enuncie. A continuación, pregunte si todos los parentescos siguen este patrón. Presente padre/madre y marido/mujer como excepciones: raíces distintas que hay que memorizar como pares. Finalice preguntando si tienen alguna pregunta. (Versión enriquecida secuencial en píldora formativa 3.1.)
 
 Presente a David y comente que van a escuchar la descripción de su familia. Escriba en la pizarra varias frases con la estructura de ejemplo: *"Su abuelo se llama ___. Su prima se llama ___."*
 
@@ -269,7 +269,7 @@ Dé un ejemplo en la pizarra: *"Su primo se llama… ¿Roberto? ¿Nacho? ¿Luis?
 
 Diga: *"Separad los nombres en masculinos y femeninos. Esta estrategia os ayudará a ubicar mucho más fácil el parentesco cuando escuchéis el audio."*
 
-Dé 2 minutos para que los alumnos trabajen en sus cuadernos. Si lo desea, puede pedir que adivinen qué nombre corresponde a cada parentesco antes de la escucha.
+Dé 2 minutos para que los estudiantes trabajen en sus cuadernos. Si lo desea, puede pedir que adivinen qué nombre corresponde a cada parentesco antes de la escucha.
 
 ---
 
@@ -282,7 +282,7 @@ Agrupamiento: individual → parejas → grupo-clase | Tiempo: 5-6 min | Materia
 
 **PROPICIE LA ESCUCHA ACTIVA Y LA ACTIVACIÓN DEL VOCABULARIO**
 
-Los alumnos ya tienen en sus cuadernos los nombres separados por género (Fase 3). Comente que van a escuchar a David presentar a su familia y que lo harán dos veces.
+Los estudiantes ya tienen en sus cuadernos los nombres separados por género (Fase 3). Comente que van a escuchar a David presentar a su familia y que lo harán dos veces.
 
 Primera escucha (global): solo escuchan. Al terminar, pregunte: *"¿Coincide con lo que habéis adivinado?"* Ponga el audio sin pausas.
 
@@ -314,11 +314,11 @@ Antes de pasar a la actividad 3, reparta entre las mesas las tarjetas de vocabul
 4. Concordancia de género y número en parentescos: el sobrino / la sobrina, los hijos / las hijas, los nietos / las nietas.
 
 **Fase 5 — Amplíe el vocabulario con traducción reflexiva**
-Agrupamiento: individual → parejas → grupo-clase | Tiempo: 8-10 min | Material: libro p.34 + audio pista 33 (act. 3) + píldora formativa (proyector, diapositivas 5 en adelante) + tarjetas de vocabulario (Caja 1)
+Agrupamiento: individual → parejas → grupo-clase | Tiempo: 8-10 min | Material: libro p.34 + audio pista 33 (act. 3) + tarjetas de vocabulario (Caja 1)
 
 **AMPLÍE EL VOCABULARIO CON TRADUCCIÓN REFLEXIVA**
 
-Proyecte las diapositivas 5 en adelante de la píldora formativa. Esta parte se centra en el plural mixto, la concordancia de género y número, el verbo *ser* y el doble significado de *mujer*.
+Antes de poner el audio, presente tres contenidos nuevos. Primero, los plurales mixtos: escriba en la pizarra padre + madre = padres, abuelo + abuela = abuelos. Pregunte por qué se usa el masculino plural cuando el grupo incluye ambos géneros. Segundo, el doble significado de *mujer*: mujer = woman (general) y mujer = wife (esposa). En esta sección se usa como esposa. Tercero, el verbo *ser*: en las presentaciones de parentesco siempre se usa *ser* (*Alicia es la mujer de Luis*, *Carlos y Juana son los abuelos de David*). Pida que lo identifiquen en las frases y que noten además la diferencia es/son. (Versión enriquecida secuencial en píldora formativa 3.1, diapositiva 3.)
 
 Comente que van a escuchar una descripción de la familia de David y que deben prestar atención a la pronunciación de las palabras marcadas. Ponga la audición (pista 33).
 
@@ -339,7 +339,7 @@ Agrupamiento: parejas | Tiempo: 5-6 min | Material: libro p.34
 
 **PRACTIQUE LA INTERACCIÓN ORAL EN PAREJAS**
 
-Los alumnos ya han tenido suficientes muestras de lengua en las fases anteriores para desarrollar esta interacción oral.
+Los estudiantes ya han tenido suficientes muestras de lengua en las fases anteriores para desarrollar esta interacción oral.
 
 Si ve que necesitan más dinamismo, puede conducir la interacción con estas variantes:
 - Una palmada: cambian de rol (quien preguntaba ahora responde).
@@ -383,7 +383,7 @@ Los estudiantes escriben individualmente (4 min). Al finalizar, pida una correcc
 
 **PREPARACIÓN**
 - Audio: pistas 34 (texto de Javier) y 35 (texto de Lucía) listas.
-- Tarjetas de vocabulario (Caja 1) siguen en las mesas de los alumnos desde el Bloque 1.
+- Tarjetas de vocabulario (Caja 1) siguen en las mesas de los estudiantes desde el Bloque 1.
 - Tener preparadas las tarjetas de Pistas de hoy (Caja 2) para repartir al inicio de la Fase 8.
 - Preparar tiras de papel con las preguntas del chat-cotilleo (Fase 9) o tener lista la presentación en línea.
 
@@ -400,7 +400,7 @@ Pida que miren la fotografía de la actividad 6. Mientras tanto, reparta las tar
 
 Proponga una lectura selectiva (*scanning*): buscar los nombres de los miembros de la familia de Javier. Compruebe en plenaria y escríbalos en la pizarra. Ponga la audición 34 para que desarrollen la representación fonética.
 
-Invite a releer el texto marcando el vocabulario de familia. Escriba en la pizarra *es* y *estudia*; pida que identifiquen expresiones del texto con estos verbos (*es enfermera*, *es camionero*). Los alumnos que tengan las tarjetas correspondientes dicen su significado. Pida que lo anoten en el cuaderno.
+Invite a releer el texto marcando el vocabulario de familia. Escriba en la pizarra *es* y *estudia*; pida que identifiquen expresiones del texto con estos verbos (*es enfermera*, *es camionero*). Los estudiantes que tengan las tarjetas correspondientes dicen su significado. Pida que lo anoten en el cuaderno.
 
 Haga que completen la actividad 7, compruebe las respuestas y pida que creen una frase con un parentesco cruzado: *"El padre de Javier es el hijo de Manolo."*
 
@@ -417,7 +417,7 @@ Diga que van a conocer a una chica que se llama Lucía y vive en Cantabria. Si l
 
 Ponga la audición 35 y pida que sigan la lectura con la vista. Aclare las palabras no conocidas con las tarjetas de vocabulario ya repartidas, del mismo modo que en la fase anterior. Pida que respondan en silencio a las preguntas de la actividad 9.
 
-Para comprobar la lectura, proponga el **chat-cotilleo de la clase**. Reparta las tiras de papel por parejas (cuatro o cinco por pareja). El chat contiene errores deliberados que los alumnos deben detectar y corregir. Proyecte o muestre cada pregunta; en parejas escriben la respuesta en una tira y uno de ellos corre a pegarla en la pizarra. Revise cada respuesta antes de pasar a la siguiente.
+Para comprobar la lectura, proponga el **chat-cotilleo de la clase**. Reparta las tiras de papel por parejas (cuatro o cinco por pareja). El chat contiene errores deliberados que los estudiantes deben detectar y corregir. Proyecte o muestre cada pregunta; en parejas escriben la respuesta en una tira y uno de ellos corre a pegarla en la pizarra. Revise cada respuesta antes de pasar a la siguiente.
 
 Preguntas del chat-cotilleo (preparar antes de clase):
 
@@ -466,98 +466,4 @@ Mencione que por completar todas las actividades de vocabulario y saber hablar d
 ---
 
 *Fin de la explotación de §3.1 Vocabulario — Parientes (p.34-35).*
-*Siguiente sección: §3.2 Gramática — generada por el Agente Gramática.*
-
-#### 3.2 GRAMÁTICA — Presente regulares / Interrogativos / Posesivos (p.36-37)
-
-*pendiente — requiere invocación del Agente Gramática por el orquestador*
-
-#### 3.3 COMUNICACIÓN — Presentar a alguien / La hora (p.38-39)
-
-*pendiente — requiere invocación del Agente Comunicación*
-
-#### 3.4 DESTREZAS — Leer / Escribir / Escuchar / Hablar (p.40-41)
-
-*pendiente — requiere invocación del Agente Destrezas*
-
-#### 3.5 CULTURA — El cómic y el dibujo animado (p.42)
-
-*pendiente — requiere invocación del Agente Cultura*
-
-#### 3.6 REFLEXIÓN (p.43)
-
-*pendiente — requiere invocación del Agente Reflexión*
-
-#### 3.7 EVALUACIÓN (p.43)
-
-*pendiente — requiere invocación del Agente Evaluación*
-
-### 4. Atención a la diversidad y errores frecuentes
-*Genera: Agente 2 (Redactor de Explotación)*
-
-#### Adaptaciones
-| Perfil | Estrategia |
-|--------|------------|
-| Alumnos avanzados | *pendiente* |
-| Alumnos con dificultades | *pendiente* |
-
-#### Errores frecuentes por L1
-| L1 | Error típico en esta unidad | Causa | Estrategia correctiva |
-|----|----------------------------|-------|----------------------|
-| *pendiente* |
-
-### 5. Evaluación
-*Genera: Agente 2 (Redactor de Explotación)*
-
-#### Criterios de evaluación
-| Criterio | Indicador de logro ("el alumno puede...") |
-|----------|-------------------------------------------|
-| *pendiente* |
-
-#### Instrumentos sugeridos
-*pendiente*
-
-### 6. Solucionario
-*Genera: Agente 3 (Solucionario)*
-
-| Actividad | Página | Solución |
-|-----------|--------|----------|
-| *pendiente* |
-
-### 7. Transcripciones
-*Genera: Agente 3 (Solucionario)*
-
-| Audio | Transcripción |
-|-------|---------------|
-| *pendiente* |
-
----
-
-## REGISTRO DE ACTUALIZACIONES
-
-| Fecha | Cambio |
-|-------|--------|
-| 2025-01-31 | Creación inicial - Contenidos extraídos del índice |
-| 2025-01-31 | Contexto secuencial detallado (conocimientos previos + nuevos) |
-| 2025-02-01 | Secciones de guía detallada alineadas con sistema de agentes v3.0 |
-| 2025-02-01 | Actualizado a v4.0: 4 agentes (Planificador, Redactor, Solucionario, Revisor) |
-| 2025-02-01 | Eliminada prueba manual — se rehará con sistema de agentes completo |
-| 2025-02-01 | Eliminada explotación §3.1 — se rehará con arquitectura corregida (7 agentes de sección: 1 agente = 1 sección del libro) |
-| 2026-02-01 | Generada explotación completa §3.1 Vocabulario — Parientes (p.34-35) por Agente Vocabulario v5.0. 11 actividades en 3 bloques, 14 fases, 4 notas lingüísticas, insignia GENEALOGISTA, reciclaje 70/30 integrado |
-| 2026-02-16 | Corregidos objetivos que violaban la regla del "no 2 por 1": gamificación (un solo verbo Bloom 3: "describir") y bloque 2 (un solo verbo Bloom 3: "producir"). Aplicados criterios de `referencias/formulacion-objetivos.md` v2. |
-| 2026-02-16 | Revisión de sección de vocabulario: corregido objetivo bloque 3 ("no 2 por 1": "Localizar + comparar" → "Comparar"), corregido número de tarjetas (20 → 18), ajustados puntos de gamificación bloque 3 (6 → 5). |
-| 2026-02-16 | Reescritura completa de §3.1 Vocabulario para ajustar al contenido real de la nueva versión del libro (p.34-35). Cambios principales: 10 actividades (no 11), nombres del árbol corregidos (Carmen, Roberto, Carlos, Alicia, María, Nacho, Juana, Luis, Álvaro, Paloma, Pilar), act. 2 ahora "forma frases" (no solo matching), segundo personaje es Lucía Alonso de Cantabria (no Leonora arahuaca de Colombia), nota intercultural actualizada (contraste urbano/rural dentro de España), bloques redistribuidos (B1: acts. 1-4, B2: acts. 5-7, B3: acts. 8-10), textos del libro transcritos, frases de huecos actualizadas, CSV y tabla de tarjetas actualizados con ejemplos de los personajes reales del libro. |
-| 2026-02-16 | Objetivo Bloque 1 reformulado a nivel macro: "Reconocer y nombrar los términos de parentesco básicos en español" (eliminada referencia al árbol genealógico como medio de aprendizaje). Aplicada nueva regla §7.6 de `formulacion-objetivos.md`. |
-| 2026-02-16 | Gamificación simplificada: insignia renombrada de "GENEALOGISTA" a "Esa es la familia mía". Eliminado sistema de puntos por bloque (15 puntos, 5 por bloque). Obtención descrita en términos generales (completar actividades, ser activo, poner en práctica vocabulario). Eliminados los 3 bloques de "Gamificación — Bloque X" con desglose de puntos. Cierre de sección actualizado sin recuento de puntos. |
-| 2026-02-16 | Gamificación confirmada como UNA por sección. Eliminadas 2 referencias a "Reto GENEALOGISTA" en actividades 4 y 9 — sustituidas por "¡Reto!" genérico (los retos lúdicos dentro de actividades no son gamificación de sección). Justificación de act. 9 actualizada: "gamificación integrada" → "elemento lúdico competitivo integrado". |
-| 2026-02-16 | Fase 1 reescrita: explotación de foto introductoria (p.34 izquierda) como punto de partida obligatorio. Versión limpia instruccional (sin justificaciones teóricas). Preguntas con reciclaje de vocabulario conocido (números U02, países U02). Modelado inicial de padre/madre + hijo/hija señalando la foto. |
-| 2026-02-16 | Doble título añadido a TODAS las fases (1-13) + cierre de sección. Cada fase tiene: (1) título técnico para trazabilidad (Fase N — descripción), (2) TÍTULO FUNCIONAL EN MAYÚSCULAS para el profesor (qué debe hacer). Títulos funcionales: ACTIVE EL CONOCIMIENTO PREVIO, PRESENTE EL VOCABULARIO CON EL ÁRBOL GENEALÓGICO, ACTIVE LA CONCIENCIA GRAMATICAL, ESCUCHE Y FORME FRASES SOBRE LA FAMILIA DE DAVID, AMPLÍE EL VOCABULARIO CON TRADUCCIÓN REFLEXIVA, PRACTIQUE EN PAREJAS CON APOYO DECRECIENTE, LEA EL TEXTO MODELO Y DESCUBRA SU ESTRUCTURA, ESCRIBA UN TEXTO SOBRE SU PROPIA FAMILIA, LEA Y ESCUCHE EL TEXTO DE JAVIER, COMPLETE LAS FRASES SOBRE JAVIER, LEA Y ESCUCHE EL TEXTO DE LUCÍA, RESPONDA A LAS PREGUNTAS SOBRE LUCÍA, COMPARE LAS FAMILIAS DE JAVIER Y LUCÍA. Cierre: ENTREGUE LA INSIGNIA Y REFLEXIONE. |
-| 2026-02-16 | Secuencialidad entre fases: eliminadas instrucciones redundantes (abrir libro cuando ya está abierto, preparar lo que ya está preparado). Eliminadas etiquetas internas del agente del output del profesor: *F1a — Modelling:*, *F1b — Awareness:*, Segmentación léxica (CLT), Reciclaje 70/30, (worked example obligatorio en A1), (CLT §5.7), "fomenta la metacognición". Las acciones se mantienen, solo se eliminan las etiquetas teóricas. |
-| 2026-02-16 | Fase 2 reescrita: "escucha y repite" es ahora el eje central (como pide la act. 1). Secuencia: señalar árbol brevemente → primera escucha global → segunda escucha con repetición oral → refuerzo con árbol de pizarra. Título funcional actualizado: "ESCUCHE Y REPITA LOS TÉRMINOS DE PARENTESCO". Texto corrupto de act. 6 corregido. Etiquetas internas restantes eliminadas: "Weaning off —", "(F4)", "(F5)", "F1a del Ciclo de 5 fases: modelling", "Agente Gramática". Frase 2 de act. 10 corregida (punto espurio). |
-| 2026-02-20 | Fase 3 reescrita: "Active la conciencia gramatical". Patrón -o/-a pasa a píldora formativa inductiva (VanPatten/Conti). Se introduce posesivo "su". Estrategia de nombres por género ANTES de la escucha (Act. 2): alumnos clasifican los 11 nombres en M/F como herramienta de comprensión. Fase 4 ajustada (eliminada pre-escucha redundante, escucha conecta con hipótesis). Eliminado refuerzo post-corrección. |
-| 2026-02-20 | "Nota Lingüística" renombrada a "Píldora Formativa" en toda la sección (4 ocurrencias). Encabezado §2 actualizado. Cambio alineado con nueva arquitectura de píldoras formativas en ag-vocabulario.md (banco de acciones con 6 categorías y ~40 acciones). |
-| 2026-02-20 | Reorganización de bloques: de 3 bloques (B1: 1-4, B2: 5-7, B3: 8-10) a 2 bloques (B1: 1-5, B2: 6-10). Justificación: la act. 5 (producción escrita personal) cierra el ciclo de adquisición del Bloque 1; las acts. 6-10 forman un ciclo de comprensión contrastiva (Javier/Lucía). Objetivo B1 actualizado: "Describir su propia familia usando los términos de parentesco básicos en frases sencillas" (Bloom 3). Objetivo B2: "Comparar las familias de Javier y Lucía identificando semejanzas y diferencias en frases sencillas" (Bloom 2-3). |
-| 2026-02-20 | Bloques 2 reescrito aplicando principios del marco teórico: eliminadas etiquetas internas del agente (§8); añadida diferenciación Basis/Extra/Plus en todas las fases (atención a la diversidad); añadida personalización final en act. 10 (Merrill: Integración, Gagné: Transferencia); píldora de contraste reposicionada ANTES de la comparación (VanPatten); eliminados textos del libro transcritos (el profesor los tiene en el libro) y recuadro naranja (respuestas del profesor van en JSON); tabla comparativa preparada desde inicio del bloque y completada progresivamente; tarjetas de vocabulario integradas como recurso activo en Fase 13 (§11 estación de servicio, MCER aprender a aprender); reciclaje U02 integrado en pre-lectura de Lucía (Cantabria). |
-| 2026-02-21 | Fases 9-10 (acts. 6-7) fusionadas en una sola Fase 8 según propuesta del usuario. Integra: lectura selectiva (scanning) para nombres de familia, audición pista 34 para representación fonética, trabajo con verbos *es* y *estudia* sin formalizar, uso activo de tarjetas Caja 2 (Pistas de hoy) repartidas boca abajo, producción de frase con parentesco cruzado. Fases renumeradas: 11→9, 12→10, 13→11. Preparación actualizada con Caja 2. |
-| 2026-02-21 | Eliminada píldora formativa "CONTRASTE JAVIER / LUCÍA: DOS FAMILIAS, DOS ENTORNOS" — innecesaria (el hecho de que el vocabulario funcione igual en contextos diferentes es evidente y no requiere explicación). |
-| 2026-02-21 | Fases 9, 10 y 11 (acts. 8, 9, 10) reescritas como Fases 9 y 10. Fase 9: fusión de acts. 8-9 con chat-cotilleo. Fase 10: cierre de sección — act. 10 (huecos verbales) + marcado de combinaciones verbales en los tres textos + quién es quién oral + personalización ampliada ("familia de un amigo o conocido"). Eliminada tabla comparativa (no existe en el libro). Cierre de sección reescrito: insignia vinculada a canción de J Balvin "La familia"; eliminadas reflexión -o/-a y anticipación de Gramática (ya integradas en la Fase 10). |
+*Siguiente sección: §3.2 Gramática — ver U03-gramatica.md*
