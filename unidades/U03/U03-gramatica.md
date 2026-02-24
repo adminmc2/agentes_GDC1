@@ -947,65 +947,27 @@ Diapositiva 5 — **CONSTRUID LA FRASE**
 ---
 
 
-**Fase 1 — M+R+A+E: Modelling + Receptive + Awareness + Descubrimiento + Expansion (píldora diapositivas 1-4)**
-Agrupamiento: grupo-clase → parejas → grupo-clase → parejas | Tiempo: 6-7 min | Material: proyector + libro p.36 (cuadro)
+**ACTIVE LO APRENDIDO EN LA SECCIÓN DE VOCABULARIO**
 
-**PRESENTE LA PÍLDORA Y GUÍE EL DESCUBRIMIENTO DE LAS CONJUGACIONES**
+Pida que abran el libro en la página 35 y localicen los verbos en los textos de Javier y Lucía (vive, trabaja, estudia, come, estudian). Lea las frases en voz alta. Relea más lento señalando los verbos. Después lea frases nuevas con dos opciones (ej.: Lucía ______ piano → estudio / estudia; Yo ______ en un pueblo → vivo / vive). Los estudiantes eligen levantando un dedo (1= primera opción, 2= segunda). Confirme sin explicar por qué: el objetivo es que perciban que el sujeto determina la forma.
 
-Proyecte la diapositiva 1 (LEED Y ELEGID). Lea las frases completas (1-5) en voz alta a ritmo natural. Lea una segunda vez más lento, señalando los verbos en negrita.
+Vuelva a las frases, pero cambie la terminación del verbo en dos de ellas (ej.: Ana estudio ingeniería, Lucía estudias piano). Los estudiantes dan un golpe en la mesa cuando detecten el error. Pregunte: ¿Qué ha cambiado? ¿Qué suena mal? No dé la respuesta; deje que la verbalicen. (Versión enriquecida secuencial en píldora formativa 3.2, diapositivas 1-2).
 
-Pase a las frases con hueco (6-10). Lea cada frase y diga las dos opciones. Los estudiantes eligen levantando un dedo (1 = primera opción, 2 = segunda). Confirme la respuesta correcta sin explicar por qué. El objetivo es que el estudiante perciba que el sujeto determina la forma, no que formule la regla.
+**FAVOREZCA LA PRESENTACIÓN DE LOS VERBOS REGULARES EN PRESENTE**
 
-Proyecte la diapositiva 2 (¿QUÉ HA CAMBIADO?). Las mismas frases, pero dos con cambios en la forma verbal, por lo que serán incorrectas. Los estudiantes dan un golpe en la mesa cuando la frase sea incorrecta. Lance al final la pregunta: *"¿Qué ha cambiado? ¿Qué os suena mal?"* No dé la respuesta; deje que la verbalicen.
+Diga solo el verbo conjugado y el complemento sin el sujeto. Pida que identifiquen quién habla a mano alzada. Tras los 5 ítems, escriba los verbos en la pizarra y subraye las terminaciones. Pregunte: ¿Qué pista os da el final del verbo para saber quién habla?
 
-Proyecte la diapositiva 3 (¿QUIÉN HABLA?). Lea las frases con los verbos conjugados y sin pronombre sujeto. Pida que identifiquen quién habla respondiendo a mano alzada. Revise en plenaria. Tras los 5 ítems, muestre las terminaciones marcadas y pregunte: *"¿Qué pista os da el final del verbo para saber quién habla?"* Parejas 20 segundos. Recoja 2-3 respuestas en plenaria. No formalice — solo valide: *"Exacto, el final del verbo cambia. Vamos a descubrir más."*
+Descubrimiento con colores: presente la conjugación en 4 personas (yo, tú, él/ella, ellos/ellas) con gramática visual: raíz en un color y terminación en otro. Tres preguntas inductivas: ¿Qué parte no cambia? Mirad -er e -ir: ¿Qué tienen en común? Comparad él/ella con ellos/ellas. Recoja 2-3 respuestas. Valide sin formalizar: la raíz no cambia, la terminación sí, -er e -ir son casi gemelos. Y el plural es fácil: solo añadís una -n.
 
-Proyecte la diapositiva 4 (DESCUBRID Y COMPROBAD). Esta diapositiva se divide en dos partes interactivas que aparecen de forma progresiva.
+Pida que abran el libro en la página 36 y comprueben que lo descubierto coincide con el cuadro. Pregunte: Ahora mirad nosotros y vosotros. ¿En esas personas -er e -ir siguen siendo iguales? Difieren. Destáquelo. Muestre la conjugación completa con las 6 personas. (Versión enriquecida secuencial en píldora formativa 3.2-diapositivas 3-4-5)
 
-**Parte 1 — Descubrimiento con colores:** Se presenta la conjugación en 4 personas (yo, tú, él/ella, ellos/ellas) con gramática visual: raíz en azul y terminación en rojo. Pida que respondan a las preguntas inductivas prestando atención a los colores. Para la primera (*"¿Qué parte NO cambia?"*), dé 10 segundos. Para la segunda (*"Mirad -ER e -IR. ¿Qué tienen en común?"*), dé 15 segundos — los estudiantes comparan las columnas. Para la tercera (*"Comparad él/ella con ellos/ellas"*), dé 10 segundos — el estudiante nota que el plural es el singular + **n**. Recoja 2-3 respuestas en plenaria. Valide sin formalizar: *"La raíz no cambia, la terminación sí. -ER e -IR son casi gemelos. Y el plural es fácil: solo añadís una -n."*
+La siguiente propuesta requiere de la proyección de la diapositiva 5- píldora 3.2. Proyecte cuatro imágenes con siluetas y un componedor de frases en la parte inferior. Señale la primera escena (1 silueta + instituto). Diga: Mirad la imagen y mirad la tabla. ¿Quién es? ¿Qué hace? Buscad en el componedor y decid la frase completa. El primero que levante la mano lee la frase en voz alta. Si es correcta, haga clic para revelar la imagen real. Si es incorrecta, invite a otro. Repita con las cuatro escenas.
 
-**Parte 2 — Comprobación con el libro (aparece con clic):** Diga: *"Vamos a comprobarlo. Abrid el libro en la página 36."* Los estudiantes verifican que lo descubierto coincide con el cuadro. Pregunte: *"Ahora mirad nosotros y vosotros. ¿En esas personas -ER e -IR siguen siendo iguales?"* Los estudiantes descubren que no: en nosotros (-emos/-imos) y vosotros (-éis/-ís) ya difieren. Destáquelo: *"En 4 de 6 personas son iguales. Solo difieren en nosotros y vosotros."* Tras la comprobación, muestre de nuevo en la diapositiva la conjugación completa con las 6 personas.
-
----
-
-**Fase 2 — S: Structured Production (píldora diapositiva 5)**
-Agrupamiento: grupo-clase | Tiempo: 2 min | Material: proyector
-
-**PRACTIQUE LA PRIMERA PRODUCCIÓN CON EL COMPONEDOR DE FRASES**
-
-Proyecte la diapositiva 5 (CONSTRUID LA FRASE). Aparecen cuatro imágenes con siluetas y un componedor de frases en la parte inferior. Señale la primera escena (1 silueta + instituto). Diga: *"Mirad la imagen y mirad la tabla. ¿Quién es? ¿Qué hace? Buscad en el componedor y decid la frase completa."* Los estudiantes buscan la combinación correcta. El primero que levante la mano lee la frase en voz alta. Si es correcta, haga clic para girar la silueta y revelar la imagen real. Si es incorrecta, invite a otro estudiante a intentarlo. Repita con las cuatro escenas.
-
----
-
-**Actividad 1** — Completa con la forma correcta del verbo. (PE + reflexión gramatical)
-*Repertorio aplicado: §4.2 — Práctica de consolidación*
-*Justificación: primera actividad productiva del bloque. 10 ítems que abarcan las 6 personas + negación. El estudiante ya ha descubierto el patrón (píldora diap. 1-4) y tiene el cuadro gramatical visible.*
-
-**Fase 3 — S: Structured Production (Actividad 1)**
-Agrupamiento: individual → parejas → grupo-clase | Tiempo: 5-6 min | Material: libro p.36 act. 1
-
-**COMPLETE Y CORRIJA**
-
-Invite a realizar la actividad 1 de forma individual. Si necesitan ayuda, pueden consultar las tarjetas de estrategia de las tres conjugaciones y las tarjetas verbales de la caja 3 de la estación de servicio. Corrección en parejas. Puesta en común en plenaria: solo los ítems donde hubo desacuerdo.
+Invite a realizar el ejercicio 1 de forma individual. Si necesitan ayuda, pueden consultar las tarjetas de estrategia de las tres conjugaciones y las tarjetas verbales de la caja 3 de la estación de servicio. Corrección en parejas. Puesta en común en plenaria: solo los ítems donde hubo desacuerdo.
 
 Respuestas: 1. estudian, 2. como, 3. vives, 4. estudia, 5. vivimos, 6. coméis, 7. trabaja, 8. hablamos, 9. no escribe, 10. vivís.
 
----
-
-**Actividad 2** — Completa estas preguntas con los verbos anteriores. (PE + reflexión gramatical)
-*Repertorio aplicado: §4.4B — Con interleaving de contenido anterior*
-*Justificación: la actividad conecta verbos regulares (nuevo) con interrogativos que se formalizarán en el bloque siguiente, y con contenido de U01-U02 (lugares, nacionalidades). Oportunidad de interleaving. Variable: contenido reciclable = alto (conecta con interrogativos + U anteriores).*
-
-**Fase 4 — E: Expansion (Actividad 2)**
-Agrupamiento: grupo-clase → individual → parejas | Tiempo: 5-6 min | Material: libro p.36 act. 2 + pizarra
-
-**INFIERA EL VERBO Y CONJUGUE**
-
-*Estrategia antes de la actividad (1 min):* Dado que no se han introducido los pronombres interrogativos, llame la atención sobre las respuestas. Lea solo las respuestas de los 8 ítems en voz alta, una a una: *"En un banco… Un correo electrónico… En un restaurante… En Sevilla… Matemáticas… Un bocadillo… Inglés, español y francés… En un hospital."* Tras cada una, pregunte: *"¿Qué se hace aquí?"* Los estudiantes dicen el infinitivo a coro. Escríbalos en la pizarra a medida que los dicen.
-
-*Si el grupo necesita más apoyo:* escriba tres infinitivos por ítem y que los estudiantes determinen cuál es el adecuado. Así la actividad se centra en la conjugación.
-
-*Actividad del libro (3-4 min):* Los estudiantes completan individualmente los 8 ítems. Corrija en plenaria.
+Para el ejercicio 2, dado que no se han introducido los pronombres interrogativos, llame la atención sobre las respuestas. Lea las respuestas en voz alta. Tras cada una, pregunte qué indica si un lugar, si algo o pregunte directamente por el infinitivo. Los estudiantes dicen el infinitivo a coro. Escríbalos en la pizarra. Si necesitan más apoyo, escriba tres infinitivos por ítem y que ellos determinen cuál es el adecuado. Invite a realizar el ejercicio de forma individual y corrija en plenaria.
 
 Respuestas: 1. trabaja, 2. escribes, 3. come, 4. viven, 5. estudiáis, 6. comes, 7. habla, 8. trabajan.
 
@@ -1253,58 +1215,23 @@ El profesor cierra: *"¿Veis? La tilde transforma la palabra. Sin tilde no hay p
 
 ---
 
-**Fase 5 — M→A→R→S: Modelling → Awareness → Receptive → Structured Production (píldora diapositivas 1-4)**
-Agrupamiento: grupo-clase | Tiempo: 6-8 min | Material: proyector + libro p.36 (cuadro)
+**PRESENTE LOS INTERROGATIVOS**
 
-**PRESENTE LA PÍLDORA Y GUÍE EL DESCUBRIMIENTO DE LOS INTERROGATIVOS**
+Pida que vuelvan a los textos de la página 35. Haga preguntas sobre ellos usando interrogativos variados: ¿Dónde vive Javier? ¿Cómo se llama su hermana? ¿Quién es Manolo? ¿Cuántos hermanos tiene Lucía? ¿Qué estudia Ana? ¿Dónde trabaja su madre? Lea cada pregunta-respuesta en voz alta señalando el interrogativo. No explique nada todavía: exposición pura (Versión enriquecida secuencial en píldora formativa 3.3, diapositiva 1).
 
-Proyecte la diapositiva 1 (RECORDAD ESTAS PREGUNTAS). Aparecen los textos de Javier y Lucía (p.35) con fragmentos marcados en color. Debajo de cada texto, preguntas-respuesta con el interrogativo y la parte correspondiente de la respuesta en el mismo color, y un icono al lado que indica el tipo de información. Lea cada pregunta-respuesta en voz alta. No explique nada todavía: es exposición pura. Lea dos veces, la segunda más lento.
+Presente frases breves de varios personajes (Javier, Lucía, Carlos) y señale los complementos. Los estudiantes dicen qué interrogativo corresponde a cada complemento (ej.: en Getafe → dónde, Alejandra → cómo, tres hermanos → cuántos). Presente dos frases nuevas (Catalina, Pablo). Los estudiantes dicen qué interrogativo corresponde (mano alzada). Los estudiantes observan que el interrogativo cambia según la información que se busca, no según la persona (Versión enriquecida secuencial en píldora formativa 3.3, diapositiva 2).
 
-Proyecte la diapositiva 2 (¿CÓMO PREGUNTAMOS POR ESTA INFORMACIÓN?). Esta diapositiva se divide en tres partes interactivas. En la primera aparecen textos breves de varios personajes (Javier, Lucía, Carlos) con complementos marcados en color. Mueva cada complemento coloreado hacia el interrogativo correcto de la barra lateral. Al conectar, se forma la pregunta y aparece debajo la etiqueta del concepto (lugar, cantidad, persona, nombre, cosa/actividad). En la segunda parte (aparece con clic) aparecen dos frases nuevas sin color (Catalina, Pablo). Los estudiantes dicen a mano alzada qué interrogativo corresponde a cada complemento. Si aciertan, el interrogativo toma el color. Si fallan, efecto de error e intenta otro estudiante. En la tercera parte (aparece con clic) aparecen tres pares de preguntas lado a lado sobre la misma persona pero con interrogativos diferentes. Los estudiantes observan que el interrogativo cambia según la información que se busca, no según la persona.
+Pida que observen el árbol genealógico de la página 34. Haga preguntas alternando cuántos/cuántas y quién/quiénes: ¿Cuántos primos tiene David? ¿Cuántas tías? ¿Quién es la madre? ¿Quiénes son los abuelos? Pregunte: ¿Qué diferencia hay entre cuántos y cuántas? Los estudiantes notan que cuánto concuerda en género con el nombre y que quién tiene plural (Versión enriquecida secuencial en píldora formativa 3.3, diapositiva 3).
 
-Proyecte la diapositiva 3 (¿CUÁNTOS O CUÁNTAS? ¿QUIÉN O QUIÉNES?). Aparecen 6 viñetas con imágenes del árbol genealógico de David (p.34): preguntas-respuesta donde «cuántos/cuántas» y la palabra que acompaña están en el mismo color ([azul] = masculino, [rosa] = femenino), y «quién/quiénes» en contraste singular/plural. Lea cada pregunta-respuesta señalando la imagen y el color. Haga las preguntas de noticing: *"¿A qué palabra acompaña «cuántos»? ¿Y «cuántas»? ¿Qué diferencia hay?"* Los estudiantes notan que cuánto concuerda en género con el nombre y que quién tiene plural. Al hacer clic aparecen 6 frases nuevas con dos opciones (cuántos/cuántas o quién/quiénes). Los estudiantes eligen a mano alzada. Si fallan, pregunte: *"¿La palabra que acompaña es masculina o femenina? ¿Una persona o más?"*
+Invierta el ejercicio: diga respuestas sueltas (En Getafe, Tres hermanos, Alejandra) y los estudiantes formulan la pregunta completa. Ritmo rápido, máximo 30-40 segundos.
 
-Proyecte la diapositiva 4 (¡GRITAD LA PREGUNTA! + ¿CON TILDE O SIN TILDE?). Esta diapositiva tiene dos partes. En la primera aparecen 10 respuestas sueltas de personajes conocidos con ritmo rápido. Los estudiantes gritan la pregunta completa que produce cada respuesta. Valide con check o X. Sin apoyo de color ni iconos — es producción libre. Máximo 30-40 segundos. En la segunda parte aparecen 4 frases SIN tilde en pantalla. Pregunte: *"¿Esto es una pregunta?"* Los estudiantes responden. Luego aparece la versión CON tilde y se ve que el significado cambia (efecto cómico: "Como como un cerdo" → "¿Cómo como un cerdo?"). Cierre: *"La tilde transforma. Sin tilde no hay pregunta."* Pida que abran el libro en la p.36 y comprueben con el cuadro de interrogativos.
+Escriba en la pizarra una frase sin tilde (Como como un cerdo). Pregunte: ¿Esto es una pregunta? Añada la tilde (¿Cómo como un cerdo?): el significado cambia. Repita con 2-3 ejemplos. Pida que abran la página 36 y comprueben con el cuadro de interrogativos. (Versión completa en píldora formativa 3.3, diapositiva 4).
 
----
-
-**Actividad 3** — Señala la forma correcta. (CL + reflexión gramatical)
-*Repertorio aplicado: §4.2A — Fase receptiva del Ciclo con escalado*
-*Justificación: primera práctica tras presentar el cuadro. 7 ítems de selección binaria (dos interrogativos por ítem). Necesidad de verificar comprensión antes de producción. Variable: posición = primera actividad después del cuadro.*
-
-**Fase 6 — R: Receptive Processing (selección de interrogativos)**
-Agrupamiento: individual → parejas → grupo-clase | Tiempo: 4-5 min | Material: libro p.36 act. 3
-
-**SELECCIONE EL INTERROGATIVO CORRECTO**
-
-Lea el primer ítem como ejemplo resuelto: *"¿Dónde / Cuál viven tus abuelos? — En Marbella."* Verbalice: *"La respuesta dice 'En Marbella', que es un lugar → uso 'dónde'."*
-
-Los estudiantes resuelven los 6 ítems restantes individualmente. Corrección en parejas: si difieren, vuelven al cuadro de interrogativos para verificar.
-
-Puesta en común selectiva: solo los ítems donde hubo desacuerdo.
+Pida que hagan el ejercicio 3. Corrección en parejas: si difieren, vuelven al cuadro de interrogativos para verificar. Puesta en común selectiva: solo los ítems donde hubo desacuerdo.
 
 Respuestas: 1. Dónde, 2. Cómo, 3. Qué, 4. Dónde, 5. Cuál, 6. Qué, 7. Quiénes.
 
----
-
-**Actividad 4** — Completa las frases con cuánto/-a/-os/-as. (PE + reflexión gramatical)
-*Repertorio aplicado: §4.4A — Weaning off progresivo*
-*Justificación: cuánto es el único interrogativo con concordancia de género y número (4 formas). 7 ítems + ejemplo. Necesidad de consolidar con apoyo decreciente. Variable: tipo de contenido = concordancia morfológica nueva.*
-
-**Fase 7 — S: Structured Production (concordancia de cuánto)**
-Agrupamiento: individual → parejas → grupo-clase | Tiempo: 4-5 min | Material: libro p.37 act. 4 + cuadro de interrogativos (p.36)
-
-**PRACTIQUE LA CONCORDANCIA DE CUÁNTO**
-
-Diga: *"'Cuánto' es especial. Es el único interrogativo que cambia. Mirad el ejemplo del libro: '¿Cuántos bolígrafos tienes?' ¿Por qué 'cuántos' y no 'cuánto'?"*
-
-Recoja respuestas. Confirme: *"'Bolígrafos' es masculino y plural → cuántos. Si fuera 'mochilas' → cuántas. Si fuera 'agua' → cuánta."*
-
-Los estudiantes completan los 7 ítems:
-- Ítems 1-3: con el cuadro de interrogativos visible (p.36).
-- Ítems 4-7: cierren el cuadro (pasen la página). De memoria.
-
-Corrección en parejas. Puesta en común.
+Antes de realizar el ejercicio 4 señale que Cuánto es especial. Es el único interrogativo que cambia de género y número. Pida que hagan el ejercicio. Corrección en parejas. Puesta en común.
 
 Respuestas: 1. Cuántos, 2. Cuántas, 3. Cuántos, 4. Cuánta, 5. Cuántas, 6. Cuánto, 7. Cuántas.
 
@@ -1361,197 +1288,132 @@ Lo que el estudiante ya trae: "su" y "mi" aparecieron en los textos de Vocabular
 
 **Píldora proyectable 3.4 (enfoque inductivo — diapositivas para A)**
 
-Diapositiva 1 — **LAS FAMILIAS DE JAVIER Y LUCÍA**
-Muestra 8 frases extraídas de los textos reales que el estudiante ya leyó (p.34-35), con los posesivos en color o negrita. Se presentan organizadas para favorecer el input flooding:
+Diapositiva 1 — **LAS FLECHAS DE POSESIÓN**
+Modelling puro — el profesor lee, los estudiantes miran y escuchan.
 
-| Texto de David/Javier (p.34-35) | Texto modelo / Lucía (p.35) |
-|---|---|
-| ***Su** abuelo se llama Carlos.* | ***Mi** padre se llama Antonio.* |
-| ***Su** padre es camionero.* | ***Mi** madre tiene treinta y cinco años.* |
-| *Javier estudia en el instituto de **su** barrio.* | ***Su** madre trabaja en el hotel del pueblo.* |
-| | *Lucía estudia cerca de **su** casa.* |
+En pantalla aparecen 8 escenas, una a una (clic). Cada escena tiene tres elementos en línea: POSEEDOR → posesivo (en color) → POSEÍDO. La flecha conecta visualmente quién posee con lo que posee/a quién. El posesivo está sobre la flecha en el color del poseedor. Debajo, la frase completa.
 
-Pregunta en pantalla: *"Estas frases ya las conocéis. ¿Qué palabra aparece una y otra vez delante de los nombres de familia?"*
+1. 🧑 Javier (yo) ——**mi**——→ 👧 hermana → *"Mi hermana se llama Alejandra."*
+2. 👩 Lucía (yo) ——**mis**——→ 👦👦👦 hermanos → *"Mis hermanos son tres."*
+3. 🧑 Javier (→ tú) ——**tu**——→ 👩 madre → *"Tu madre es enfermera, ¿verdad?"*
+4. (hablamos de Lucía) ——**su**——→ 👩‍⚕️ madre → *"Su madre trabaja en el hotel."*
+5. (los padres) ——**sus**——→ 👴👵 abuelos → *"Sus abuelos viven en Getafe."*
+6. 🧑👩 Javier y Lucía ——**nuestro**——→ 🏫 instituto → *"Nuestro instituto está en el barrio."*
+7. 🧑👩 Javier y Lucía ——**nuestra**——→ 🏘️ calle → *"Nuestra calle es muy tranquila."*
+8. 👩‍🏫 profe → clase ——**vuestra**——→ 👩‍🏫 profesora → *"Vuestra profesora es muy simpática."*
 
-El estudiante nota que *su* y *mi* se repiten constantemente. Sin esquemas: solo observación sobre frases reales ya procesadas.
+El profesor lee las 8 frases señalando poseedor → flecha → poseído. Dos pasadas. La segunda más despacio, señalando el posesivo en color. No explica nada.
 
-Diapositiva 2 — **¿QUÉ VIAJA JUNTO?**
-Se añaden dos frases más del libro que el estudiante ya conoce, formando pares mínimos reales:
+Diapositiva 2 — **¿QUÉ CAMBIA A LA VEZ?**
+Awareness — el estudiante nota el cambio singular/plural.
 
-1. ***Mi** padre se llama Antonio.* → *Tengo dos hermanas. **Mis** hermanas se llaman Ana y Marta.*
-2. ***Su** madre trabaja en el hotel.* → ***Sus** hermanos se llaman Carlos y Pablo.*
+En pantalla aparecen las mismas flechas de la Diapositiva 1 pero reorganizadas en pares mínimos: la misma persona, el mismo tipo de relación, pero una vez singular y otra plural. El contraste es visual e inmediato.
 
-Tres preguntas de awareness (Conti) en pantalla, una a una:
+**Par 1:**
+🧑 Javier ——**mi**——→ 👨 padre → *"Mi padre es camionero."*
+🧑 Javier ——**mis**——→ 👨👩 padres → *"Mis padres trabajan mucho."*
 
-- **Cambio:** *"Mirad las frases 1 y 2. ¿Qué ha cambiado entre 'mi padre' y 'mis hermanas'?"*
-- **Acompañamiento:** *"¿Qué viaja junto con la -s de 'mis'? Mirad la palabra de al lado."*
-- **Patrón:** *"¿Pasa lo mismo con 'su' y 'sus'? Comprobadlo."*
+**Par 2:**
+(Lucía) ——**su**——→ 👩 madre → *"Su madre trabaja en el hotel."*
+(Lucía) ——**sus**——→ 👦👦👦 hermanos → *"Sus hermanos estudian en el instituto."*
 
-Los estudiantes responden en parejas. Respuesta esperada: cuando la persona de al lado es plural (hermanas, hermanos), el posesivo también lleva -s. El posesivo "copia" el número de lo que viene después.
+**Par 3:**
+🧑👩 ——**nuestro**——→ 🏫 instituto → *"Nuestro instituto está cerca."*
+🧑👩 ——**nuestras**——→ 📚🎒 mochilas → *"Nuestras mochilas están aquí."*
 
-Pregunta adicional para tensión cognitiva: *"¿Y el género? 'Mi padre' (masculino), 'mi madre' (femenino). ¿Ha cambiado 'mi'?"* (No. Solo cambia el número, no el género.)
+El profesor lee cada par señalando la diferencia. Tras los 3 pares, tres preguntas de awareness (aparecen una a una con clic):
 
-Diapositiva 3 — **¿TODOS FUNCIONAN IGUAL?**
-Instrucción: *"Abrid el libro en la página 37. Mirad el cuadro de posesivos. Tenéis 30 segundos."*
+- *"Mirad el par 1. ¿Qué ha cambiado entre «mi padre» y «mis padres»?"*
+- *"¿Qué cambia a la vez que la -s de «mis»? Mirad la palabra de al lado."*
+- *"¿Pasa lo mismo con «su» y «sus»? Comprobadlo en el par 2."*
 
-Pregunta en pantalla:
-- **Patrón:** *"¿Hay algún posesivo que SÍ cambie con el género — que tenga una forma para masculino y otra para femenino?"*
+Los estudiantes responden en parejas (20 seg). Plenaria. Respuesta esperada: cuando lo poseído es plural, el posesivo lleva -s. El posesivo "copia" el número de lo que viene después.
 
-Los estudiantes buscan en el cuadro en parejas. Descubren *nuestro/nuestra, vuestro/vuestra*.
+Pregunta adicional para tensión cognitiva: *"Mirad el par 3: «nuestro» y «nuestras». ¿Solo ha cambiado el número? ¿Qué más ha cambiado?"* (También el género: instituto = masculino, mochilas = femenino.)
 
-Pregunta de profundización: *"Ahora comparad: ¿cuántas formas tiene 'mi'? ¿Y cuántas tiene 'nuestro'?"*
-Respuesta esperada: mi tiene 2 (mi/mis), nuestro tiene 4 (nuestro/nuestra/nuestros/nuestras).
+Diapositiva 3 — **¿TODOS FUNCIONAN IGUAL?** + 🏆 DESAFÍO RELÁMPAGO
+Awareness con cuadro + gamificación.
 
-Diapositiva 4 — **COMPROBAD VUESTRA HIPÓTESIS**
-Muestra 4 frases nuevas (no vistas antes) para que el estudiante verifique lo que ha deducido:
+**Parte 1 — Comprobación con el cuadro (30 seg)**
 
-1. ***Nuestra** clase tiene veinte alumnos.*
-2. ***Nuestro** profesor se llama Ángel.*
-3. ***Vuestros** libros están en la mesa.*
-4. ***Vuestra** profesora es muy simpática.*
+Instrucción en pantalla: *"Abrid el libro en la página 37. Mirad el cuadro de posesivos. Tenéis 30 segundos. Comprobad si lo que habéis descubierto coincide con el cuadro."*
 
-Pregunta en pantalla: *"Sin mirar el cuadro: ¿por qué 'nuestra' en la 1 y 'nuestro' en la 2? ¿Y por qué 'vuestros' en la 3 y 'vuestra' en la 4?"*
+Pregunta en pantalla: *"¿Cuántas formas tiene «mi»? ¿Y cuántas tiene «nuestro»? ¿Por qué esa diferencia?"*
 
-Los estudiantes aplican la regla que acaban de deducir a contexto nuevo: el posesivo copia el género y número de lo que viene después. Si aciertan, la regla está adquirida.
+Los estudiantes verifican en parejas. Respuesta: mi = 2 formas (mi/mis), nuestro = 4 formas (nuestro/nuestra/nuestros/nuestras). La diferencia: nuestro/vuestro cambian con género Y número; los demás solo con número.
 
-Pregunta de contraste interlingüístico: *"En vuestro idioma, ¿el posesivo cambia con la persona que posee o con la cosa poseída?"*
+**Parte 2 — 🏆 DESAFÍO RELÁMPAGO: Actividad 5 (p.37)**
+
+En pantalla aparecen las frases de la actividad 5 del libro con el posesivo oculto y dos o tres opciones. Clase dividida en dos equipos. El profesor lee cada frase. Los estudiantes eligen a mano alzada (dedos: 1, 2, 3). El primero que acierta suma un punto. Ritmo rápido — máximo 5 segundos por frase.
+
+Ejemplo resuelto (el profesor lo hace): *"Daniel estudia con ___ primo los fines de semana."* → su / sus / mi → **su**. Verbaliza: Daniel = él → su; primo = uno → singular → su (no sus).
+
+1. *¿Estudias música en ___ instituto?* → tu / su / mi → **tu**
+2. *Yo vivo con ___ familia.* → mis / mi / su → **mi**
+3. *Ellos tienen ___ ordenador en la habitación.* → sus / su / mi → **su**
+4. *Graciela vive con ___ tíos.* → su / sus / mis → **sus**
+5. *Yo tengo ___ libros en la cartera.* → mi / mis / sus → **mis**
+6. *Pedro tiene ___ bicicleta en la calle.* → sus / su / tu → **su**
+7. *Mi hermano y yo tenemos dos mochilas iguales. ___ mochilas son rojas.* → Nuestro / Nuestras / Sus → **Nuestras**
+8. *La casa de mis tíos es muy grande y ___ jardín es muy bonito.* → sus / su / nuestro → **su**
+9. *Mis compañeros y yo estamos muy contentos. ___ profesor de matemáticas es muy simpático.* → Nuestra / Nuestro / Su → **Nuestro**
+
+Cada acierto suma un punto al equipo. Al completar las 9 frases, el equipo ganador recibe un aplauso. El profesor no corrige con explicación — si fallan, señala quién posee y qué es lo poseído, y otro intenta.
+
+Diapositiva 4 — **🎯 COMPROBAD CON EL LIBRO — Actividad 5 (p.37)**
+Aplicación directa de lo deducido a la actividad del libro.
+
+**Parte 1 — Juntos con opciones (ítems 1-3 + ejemplo)**
+
+El profesor lee el ejemplo resuelto: *"Daniel estudia con **su** primo los fines de semana."* Verbaliza: Daniel = él → su; primo = uno → singular → su (no sus).
+
+En pantalla aparecen los ítems 1, 2 y 3 con dos opciones cada uno. El profesor lee la frase y los estudiantes eligen a mano alzada:
+
+1. *¿Estudias música en ___ instituto?* → **tu** / su
+2. *Yo vivo con ___ familia.* → mis / **mi**
+3. *Ellos tienen ___ ordenador en la habitación.* → sus / **su**
+
+Tras cada acierto, el profesor confirma sin explicar: solo señala quién posee y qué es lo poseído.
+
+**Parte 2 — Solos: ítems 4-9**
+
+En pantalla: *"Ahora completad los ítems 4 a 9 solos. ¡Sin mirar el cuadro!"*
+
+Los estudiantes completan individualmente. Estos ítems son más complejos: incluyen plural (sus, mis), formas de nuestro/-a con concordancia de género, y casos donde el poseedor no es evidente.
+
+Pregunta interlingüística al cerrar: *"En vuestro idioma, ¿el posesivo cambia con la persona que posee o con la cosa poseída?"*
 
 Reparta la tarjeta Gramatips de posesivos (Caja 3).
 
 ---
 
-**Fase 8 — M→A: Modelling → Awareness Raising (píldora diapositivas 1-4)**
-Agrupamiento: grupo-clase → parejas | Tiempo: 5-6 min | Material: proyector + tarjetas de posesivos + libro p.37 (cuadro)
-
 **DESCUBRA LOS POSESIVOS EN CONTEXTO**
 
-Proyecte la diapositiva 1. Los estudiantes reconocen las frases de los textos de Vocabulario. Deje 20 segundos para que las lean. Haga la pregunta en pantalla. El objetivo no es que definan "posesivo" sino que noten la repetición de *su* y *mi* delante de los miembros de la familia. Recoja 2-3 respuestas sin corregir.
+Pida que vuelvan a los textos de la página 35. Lea en voz alta frases de los textos que contienen posesivos y añada otras similares sobre los mismos personajes. Haga dos pasadas: la segunda más despacio subrayando el posesivo con la voz. No explique nada: los estudiantes solo escuchan. Pregunte: ¿Qué palabra aparece una y otra vez delante de los nombres de familia? Recoja 2-3 respuestas sin corregir (Versión enriquecida secuencial en píldora formativa 3.4, diapositiva 1).
 
-Proyecte la diapositiva 2. Aquí es donde ocurre la deducción real. Lea las frases añadidas en voz alta marcando el contraste: *"mi padre… mis hermanas"*. Haga las tres preguntas de awareness una a una, dejando que los estudiantes verbalicen en parejas antes de responder en plenaria. La clave es la pregunta de acompañamiento (*"¿Qué viaja junto?"*): el estudiante debe notar que la -s del posesivo "viaja con" el plural del nombre. No dé la regla — deje que la formulen ellos.
+Escriba en la pizarra pares de frases marcando el contraste singular/plural. Lea cada par señalando la diferencia. Haga tres preguntas de concienciación: ¿Qué ha cambiado entre «mi padre» y «mis padres»? ¿Qué cambia a la vez que la -s de «mis»? ¿Pasa lo mismo con «su» y «sus»? Los estudiantes verbalizan en parejas. Plenaria. La clave: cuando lo poseído es plural, el posesivo lleva -s. Pregunte señalando el tercer par: «nuestro» y «nuestras» — ¿solo ha cambiado el número? ¿Qué más? (También el género) (Versión enriquecida secuencial en píldora formativa 3.4, diapositiva 2).
 
-Proyecte la diapositiva 3. Los estudiantes abren el cuadro del libro (p.37) y buscan en parejas. Dé exactamente 30 segundos. La pregunta de profundización (*"¿cuántas formas tiene mi? ¿Y nuestro?"*) genera la tensión cognitiva: el estudiante descubre que no todos los posesivos funcionan igual.
-
-Proyecte la diapositiva 4. Aquí el estudiante aplica lo que dedujo a frases nuevas sin mirar el cuadro. Si la mayoría acierta, la regla está adquirida implícitamente. La pregunta interlingüística cierra con reflexión metalingüística. Reparta las tarjetas Gramatips de posesivos (Caja 3).
-
----
-
-**Actividad 5** — Completa los huecos con el posesivo correspondiente. (PE + reflexión gramatical)
-*Repertorio aplicado: §4.4A — Weaning off progresivo*
-*Justificación: 9 ítems que abarcan todas las formas posesivas (mi, tu, su, sus, mis, nuestras, nuestro). Necesidad de consolidar con apoyo decreciente tras la formalización del cuadro. Variable: posición = primera actividad productiva del bloque de posesivos.*
-
-**Fase 9 — R→S: Receptive Processing → Structured Production (posesivos con weaning off)**
-Agrupamiento: individual → parejas → grupo-clase | Tiempo: 5-6 min | Material: libro p.37 act. 5 + tarjetas Gramatips (Caja 3)
-
-**PRACTIQUE CON APOYO DECRECIENTE**
-
-Lea el ejemplo resuelto: *"Daniel estudia con su primo los fines de semana."* Verbalice: *"'Daniel' es 'él' → su. 'Primo' es uno → singular → su (no sus)."*
-
-Los estudiantes completan los 9 ítems:
-- Ítems 1-3: con el cuadro del libro visible y las tarjetas Gramatips en la mesa.
-- Ítems 4-6: cierren las tarjetas (boca abajo). Solo el cuadro del libro.
-- Ítems 7-9: cierren también el libro. De memoria.
-
-Corrección en parejas. Puesta en común en plenaria para los ítems donde hubo desacuerdo.
+Pida que abran el libro en la página 37 y miren el cuadro de posesivos. Diga: Comprobad si lo que habéis descubierto coincide con el cuadro. Pregunte: ¿Cuántas formas tiene «mi»? ¿Y «nuestro»? ¿Por qué esa diferencia? Divida la clase en dos equipos. Pida que busquen la actividad 5 y haga con ellos las oraciones 4, 7, 8 y 9 dando dos o tres opciones. Los estudiantes eligen a mano alzada. Los ítems restantes los completan solos. Corrección en parejas. Puesta en común. Señale que si necesitan ayuda pueden consultar la tarjeta Gramatips de posesivos (Caja 3) (Versión enriquecida secuencial en píldora formativa 3.4, diapositivas 3-4).
 
 Respuestas: 1. tu, 2. mi, 3. su, 4. sus, 5. mis, 6. su, 7. Nuestras, 8. su, 9. Nuestro.
 
----
-
-**Actividad 6** — Lee las respuestas y escribe las preguntas. (PE + reflexión gramatical)
-*Repertorio aplicado: §4.5A — Preguntas escalonadas → producción libre*
-*Justificación: integra interrogativos (Bloque 2) + posesivos (Bloque 3). 6 ítems donde el estudiante debe formular la pregunta a partir de la respuesta. Oportunidad de conexión entre bloques. Variable: posición = actividad de integración que cruza dos contenidos gramaticales.*
-
-**Fase 10 — E: Expansion (integración interrogativos + posesivos)**
-Agrupamiento: individual → parejas → grupo-clase | Tiempo: 5-6 min | Material: libro p.37 act. 6
-
-**FORMULE PREGUNTAS A PARTIR DE RESPUESTAS**
-
-Lea el primer ítem como ejemplo resuelto: *"¿___? — Mi familia vive en Buenos Aires."* Verbalice: *"La respuesta dice DÓNDE vive → uso 'dónde'. Y dice 'mi familia' → la pregunta al compañero sería 'tu familia'. Resultado: '¿Dónde vive tu familia?'"*
-
-Señale el doble trabajo: elegir el interrogativo correcto Y cambiar el posesivo (mi → tu, nuestro → vuestro).
-
-Los estudiantes completan individualmente. Corrección en parejas.
-
-Puesta en común: pida a un estudiante que lea la pregunta completa; otro estudiante verifica con la respuesta del libro.
+Pida que realicen el ejercicio 6. Antes de empezar, pregunte: ¿Recordáis las palabras que sirven para preguntar? ¿Y qué pasa con el posesivo cuando hablamos de otra persona? Si se atascan, remita al cuadro de interrogativos (p.36) y a las tarjetas Gramatips. Corrección en parejas. Puesta en común. Tras la corrección, proponga dos preguntas libres usando un interrogativo y un posesivo. Los estudiantes intercambian y responden.
 
 Respuestas: 1. ¿Dónde vive tu familia?, 2. ¿Cómo se llama vuestro gato?, 3. ¿De dónde son tus abuelos?, 4. ¿Cuántos hijos tienen tus tíos?, 5. ¿Cuántos años tienen sus hijos?, 6. ¿Cuántos años tiene vuestra madre?
 
-Tras la corrección, proponga 2 preguntas libres: *"Ahora escribid 2 preguntas para vuestro compañero usando un interrogativo y un posesivo."* Los estudiantes intercambian y responden.
+La idea del ejercicio 7 es que practiquen en parejas lo aprendido. La estructura obligatoria es: ¿Cómo se llama(n) tu(s) [parentesco]?
 
----
-
-**Actividad 7** — En parejas, pregúntale a tu compañero el nombre de los miembros de su familia. (IO)
-*Repertorio aplicado: §4.6B — Role-play con estructura obligatoria*
-*Justificación: oportunidad de fijar la estructura "¿Cómo se llama(n) tu(s) [parentesco]?" + posesivos en contexto oral comunicativo. Conexión personal directa (familia real del estudiante). Variable: conexión personal = sí; tipo de producción = oral.*
-
-**Fase 11 — A: Autonomous use (interacción oral con posesivos)**
-Agrupamiento: parejas → grupo-clase | Tiempo: 4-5 min | Material: libro p.37 act. 7
-
-**PREGUNTE NOMBRES DE FAMILIARES USANDO POSESIVOS**
-
-Diga: *"Ahora vais a practicar en parejas. La estructura obligatoria es: '¿Cómo se llama(n) tu(s) [parentesco]?'"*
-
-Lea el ejemplo del libro: *"¿Cómo se llaman tus padres? — Pepe y Luisa."*
-
-Los estudiantes practican en parejas. Si necesitan más dinamismo:
-- Una palmada: cambian de rol (quien preguntaba ahora responde).
-- Dos palmadas: cambian de pareja.
-
----
-
-**Actividad 8** — Ahora, dile a toda la clase cómo se llaman los miembros de tu familia y los de tu compañero. (PO)
-*Repertorio aplicado: §4.7B — Presentación con cambio de persona*
-*Justificación: oportunidad de practicar la transición posesiva mi → su (1ª persona → 3ª persona). El estudiante presenta SU familia y la de su compañero, lo que obliga al cambio de posesivo. Variable: cambio de persona gramatical = sí (tu → su).*
-
-**Fase 12 — A: Autonomous use (presentación ante la clase)**
-Agrupamiento: parejas → grupo-clase | Tiempo: 4-5 min | Material: libro p.37 act. 8
-
-**PRESENTE SU FAMILIA Y LA DE SU COMPAÑERO**
-
-Diga: *"Ahora vais a contar a toda la clase cómo se llaman los miembros de vuestra familia y los de vuestro compañero."*
-
-Escriba el guion en la pizarra:
-1. *Mis padres se llaman [nombre] y [nombre].*
-2. *Sus padres se llaman [nombre] y [nombre].*
-3. *Mi hermano/a se llama [nombre].*
-4. *Su hermano/a se llama [nombre].*
-
-Pregunte: *"¿Qué cambia cuando hablamos de la familia de OTRO?"* (mis → sus, mi → su).
-
-Los estudiantes preparan en parejas (1 min): repasan lo que saben del compañero. Después, 3-4 voluntarios presentan ante la clase. No obligar a todos — reducir ansiedad.
-
-Corrija con recast si hay errores de posesivo: si un estudiante dice *"mi padres se llaman..."*, reformule: *"Ah, tus padres, ¿tus padres se llaman...?"*
-
----
+Para el ejercicio 8 puede hacer la dinámica ¿De quién hablo? Cada estudiante escribe en un papel tres frases sobre su familia usando los posesivos. Recoge los papeles, baraja y reparte. Cada estudiante lee el papel que le ha tocado pero cambiando a su/sus. La clase adivina de quién es la familia diciendo directamente quién es el estudiante o haciendo preguntas directamente para definir la familia del estudiante. Termine con la sugerencia del apartado "Para aprender".
 
 ##### PARA APRENDER — Actividad 9 (p.37): Cuaderno de vocabulario
 
-**Actividad 9** — Mira el cuaderno de Ronaldo, un brasileño que estudia español. Escribe palabras nuevas y tradúcelas a tu idioma. (PE + mediación)
-*Repertorio aplicado: §4.8A — Reflexión metacognitiva guiada*
-*Justificación: la sección presenta una estrategia de estudio (cuaderno bilingüe). Necesidad de que el estudiante la adopte conscientemente como herramienta de aprendizaje autónomo.*
-
-**Fase 13 — Presente la estrategia del cuaderno de vocabulario**
-Agrupamiento: individual → parejas | Tiempo: 4-5 min | Material: libro p.37 act. 9
-
-**PRESENTE LA ESTRATEGIA DEL CUADERNO DE VOCABULARIO**
-
-Diga: *"Mirad la foto de Ronaldo. Es brasileño y estudia español, como vosotros. Mirad su cuaderno."*
-
-Señale la imagen: Ronaldo ha escrito palabras en español con su equivalente en portugués (Abuelo/-a = Avô/Avó, Hijo/-a = Filho/-a, Vivir = Viver).
-
-Pregunte: *"¿Vosotros hacéis algo parecido? ¿Cómo estudiáis vocabulario nuevo?"* Recoja 2-3 respuestas.
-
-Diga: *"Ahora vais a crear vuestro propio cuaderno de vocabulario con las palabras de esta unidad. Escribid al menos 10 palabras nuevas con su traducción."*
-
-Los estudiantes trabajan individualmente (3 min). Después, comparten en parejas: *"¿Quién ha puesto algo diferente?"*
-
----
+Ejercicio 9: señale la imagen del cuaderno de Ronaldo (brasileño que estudia español): ha escrito palabras en español con su equivalente en portugués. Pregunte: ¿Vosotros hacéis algo parecido? Recoja 2-3 respuestas. Los estudiantes crean su propio cuaderno con al menos 10 palabras nuevas de esta unidad con su traducción. Después comparten en parejas.
 
 ##### CIERRE DE SECCIÓN
 
-**Entrega de insignia — ¡Pregunto, conjugo y poseo!**
+**Entrega de insignia — Bonita la gente que vive el presente.**
 
-Mencione que por completar todas las actividades de gramática y demostrar que saben conjugar, hacer preguntas y usar posesivos, reciben esta insignia.
+Mencione que por completar todas las actividades de gramática y demostrar que saben conjugar, hacer preguntas y usar posesivos, reciben esta insignia. Comente que esta frase viene de una canción de Jarabe de Palo que se titula Bonito. Si desea ponga la canción en clase.
 
 **Consolidación distribuida:**
 - 24h: Tarea cuaderno — escribir 5 frases sobre su familia usando al menos un verbo regular, un interrogativo y un posesivo.
