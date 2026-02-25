@@ -462,10 +462,41 @@ El libro incluye recursos multimedia (audios, vídeos, PowerPoints en la edició
 
 | Principio | Aplicación |
 |-----------|------------|
-| **Fragmentar** | Si el vídeo es largo, dividir en segmentos con pausas |
-| **Sin/con subtítulos** | Primera vez sin; segunda con subtítulos si hay dificultad |
-| **Fichas de trabajo** | Usar las fichas del cuaderno para guiar la visualización |
-| **Conexión cultural** | Aprovechar para comentar aspectos culturales visibles |
+| **Fragmentar** | Si >1 min, dividir en segmentos con tareas intermedias (CLT §5.5 información transitoria) |
+| **Sin/con subtítulos** | 1.º visionado sin subtítulos (comprensión global); 2.º con subtítulos si hay dificultad |
+| **Fichas de trabajo** | Usar las páginas del cuaderno para guiar la visualización |
+| **Conexión cultural** | Explotar elementos culturales visibles (contexto, gestos, registro) |
+| **No leer** | El vídeo apoya; el profesor no repite lo que ya se ve/oye |
+| **Interacción** | Usar el vídeo para provocar respuestas, no solo para mostrar |
+| **Ritmo** | No avanzar demasiado rápido; dar tiempo a procesar |
+
+### Secuencia Pre-Durante-Post para vídeo
+
+Toda explotación de vídeo sigue obligatoriamente la secuencia Pre-Durante-Post:
+
+| Fase | Función | Técnicas disponibles (del banco §7.1) |
+|------|---------|---------------------------------------|
+| **Pre-visionado** (1-2 min) | Activar esquemas, introducir vocabulario clave, generar expectativas, reducir sobrecarga cognitiva | Fotograma misterioso, lluvia de palabras visual, emparejamiento imagen-palabra, encuesta previa, secuencia desordenada, V/F predictivo (12 técnicas — Bloque A) |
+| **Durante — 1.º visionado** | Pregunta guía: "¿Cuántos personajes? ¿De qué hablan?" SIN pausas, SIN escribir | Visionado sin sonido, carrera de datos, semáforo de comprensión, tabla de observación guiada (17 técnicas — Bloque B) |
+| **Durante — 2.º visionado** | Tarea detallada: completar huecos, marcar V/F, anotar datos. CON pausas si necesario | Subtítulos con huecos, ¿quién dice qué?, pausa y predicción, dictado visual, caza del error (Bloque B) |
+| **Post-visionado** (2-3 min) | Comprensión + extracción de funciones + conexión con producción | Recreación de escena, entrevista al personaje, doblaje creativo, role-play con variación, shadowing (32 técnicas — Bloques C y F) |
+
+### §7.1 Banco de técnicas para explotación de vídeo
+
+El documento `referencias/tecnicas-video-clase.md` contiene **89 técnicas detalladas + 31 variantes** (120+ procedimientos) organizadas en 7 bloques funcionales:
+
+| Bloque | Fase | N.º técnicas | Enfoque |
+|--------|------|--------------|---------|
+| A | Pre-visionado | 12 (1-12) | Anticipación, vocabulario, predicción |
+| B | Visionado activo | 17 (13-29) | Procesamiento, comprensión con tarea |
+| C | Post-visionado | 16 (30-45) | Producción oral y escrita |
+| D | Técnicas mixtas | 12 (46-57) | Juegos, gamificación, kinestésico |
+| E | Proyectos de creación | 8 (58-65) | El alumno produce vídeo |
+| F | Post-visionado avanzado | 16 (66-81) | Gramática inductiva, vocabulario, discurso |
+| G | Herramientas digitales | 8 (82-89) | Edpuzzle, H5P, Kahoot, Nearpod |
+| — | Variantes | 31 (90-120) | Modificadores combinables con cualquier técnica |
+
+Cada técnica incluye: fase didáctica, destreza trabajada, nivel, formato de agrupamiento, descripción y procedimiento paso a paso. El agente selecciona técnicas de este banco según la fase del protocolo, el objetivo comunicativo y las variables contextuales (energía del grupo, ansiedad, conexión personal).
 
 ### Principios para el uso de PowerPoints (edición digital)
 
@@ -600,7 +631,7 @@ Antes de pedir que el estudiante "note" algo, debe recibir exposición rica al p
 | Instrucción que el agente genera | Ejemplo |
 |---------------------|---------|
 | Mostrar pares mínimos lado a lado | "El niño alto" vs "La niña alta" |
-| Preguntas CERRADAS y específicas | "¿Qué letra cambia?" / "¿Qué viaja junto?" |
+| Preguntas CERRADAS y específicas | "¿Qué cambia en la frase?" / "¿Qué cambia a la vez?" |
 | Aceptar observaciones | "Veo que cambia -o a -a" |
 | NO dar la regla | Mantener la tensión cognitiva |
 
@@ -610,7 +641,7 @@ Antes de pedir que el estudiante "note" algo, debe recibir exposición rica al p
 |------------------|---------|-----------|
 | **Cambio** | "¿Qué observas que cambió?" | Detectar diferencia |
 | **Posición** | "¿Dónde está el cambio?" | Localizar en la cadena |
-| **Acompañamiento** | "¿Qué viaja junto?" | Notar concordancia |
+| **Acompañamiento** | "¿Qué cambia a la vez?" (2+ elementos) / "¿Qué cambia en la frase?" (1 elemento) | Notar concordancia |
 | **Patrón** | "¿Hay algo que se repite?" | Identificar regularidad |
 
 **Tiempo:** 3-5 minutos (1-2 min modelling + 2-3 min awareness)

@@ -644,7 +644,9 @@
           "pista_audio": 37,
           "tiene_imagen": true,
           "descripcion_imagen": "Reloj analógico grande con todas las expresiones horarias etiquetadas alrededor de la esfera: en punto, y cinco, y diez, y cuarto, y veinte, y veinticinco, y media, menos veinticinco, menos veinte, menos cuarto, menos diez, menos cinco. Nota: cuarto = 1/4.",
-          "descripcion": "Presentación visual y auditiva del sistema horario español completo; el alumno completa las etiquetas, escucha y repite cada expresión."
+          "expresiones_dadas": ["en punto", "y cuarto", "y media", "menos cuarto"],
+          "respuestas": ["y cinco", "y diez", "y veinte", "y veinticinco", "menos veinticinco", "menos veinte", "menos diez", "menos cinco"],
+          "descripcion": "Presentación visual y auditiva del sistema horario español completo; el alumno completa 8 etiquetas (las 4 dadas son: en punto, y cuarto, y media, menos cuarto), escucha y repite cada expresión."
         },
         {
           "id": "U03-p39-act06",

@@ -1,0 +1,656 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+
+\tcbuselibrary{skins,breakable}
+
+\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2cm}
+
+% Colores
+\definecolor{azulprincipal}{HTML}{2980B9}
+\definecolor{azulclaro}{HTML}{D6EAF8}
+\definecolor{azulraiz}{HTML}{2471A3}
+\definecolor{rojofinal}{HTML}{E74C3C}
+\definecolor{gris}{HTML}{F2F2F2}
+\definecolor{grismedio}{HTML}{BDC3C7}
+\definecolor{verde}{HTML}{27AE60}
+\definecolor{naranja}{HTML}{E67E22}
+\definecolor{violeta}{HTML}{7B2D8E}
+\definecolor{amarillo}{HTML}{F1C40F}
+
+% Estilos de tcolorbox
+\newtcolorbox{marsbox}[1]{
+  colback=azulclaro,
+  colframe=azulprincipal,
+  fonttitle=\bfseries\small,
+  title={#1},
+  boxrule=0.8pt,
+  arc=2pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt
+}
+
+\newtcolorbox{notabox}[1][]{
+  colback=gris,
+  colframe=grismedio,
+  fonttitle=\bfseries\small,
+  title={#1},
+  boxrule=0.5pt,
+  arc=2pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt
+}
+
+\newtcolorbox{preguntabox}{
+  colback=amarillo!10,
+  colframe=naranja,
+  boxrule=0.8pt,
+  arc=3pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+\newtcolorbox{estrategiabox}[1][]{
+  colback=verde!8,
+  colframe=verde,
+  fonttitle=\bfseries\small,
+  title={#1},
+  boxrule=0.8pt,
+  arc=2pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt
+}
+
+\newtcolorbox{diapheader}[1]{
+  colback=azulprincipal,
+  colframe=azulprincipal,
+  colupper=white,
+  fontupper=\Large\bfseries,
+  boxrule=0pt,
+  arc=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  halign=left
+}
+
+% Header / Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Nuevo Compañeros 1 — U03: La Familia}}
+\fancyhead[R]{\small\textbf{Píldora formativa 3.2 — Presente regular}}
+\fancyfoot[C]{\thepage}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.3}
+
+% Comandos útiles
+\newcommand{\raiz}[1]{\textcolor{azulraiz}{#1}}
+\newcommand{\termin}[1]{\textcolor{rojofinal}{\textbf{#1}}}
+\newcommand{\respuesta}[1]{{\small\textcolor{verde!70!black}{\textrightarrow\ #1}}}
+
+\begin{document}
+
+%% ============================================================
+%% PÁGINA 1: PORTADA + CONTENIDO PARA EL PROFESOR
+%% ============================================================
+
+\begin{center}
+{\LARGE\textbf{\textcolor{azulprincipal}{PÍLDORA FORMATIVA 3.2}}}\\[0.4cm]
+{\Large\textbf{PRESENTE REGULAR: TRES CONJUGACIONES\\Y SEGMENTACIÓN POR PERSONA}}\\[0.5cm]
+{\large Píldora proyectable — 5 diapositivas — $\sim$8 minutos}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[colback=azulclaro, colframe=azulprincipal, title={\textbf{Resumen de diapositivas}}, fonttitle=\bfseries, boxrule=1pt, arc=3pt]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{c l l X}
+\textbf{Diap.} & \textbf{Título} & \textbf{Fase MARS} & \textbf{Técnica} \\
+\midrule
+1 & LEED Y ELEGID & M+R & Input flooding + discriminación integrada \\
+2 & ¿QUÉ HA CAMBIADO? & M+A & Faulty Echo \\
+3 & ¿QUIÉN HABLA? & R+A & Discriminación receptiva + pregunta Conti \\
+4 & DESCUBRID Y COMPROBAD & A+E & Segmentación visual con colores + cuadro del libro \\
+5 & CONSTRUID LA FRASE & S & Sentence Builder micro con revelación visual \\
+\end{tabularx}
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\noindent\textcolor{azulprincipal}{\rule{\linewidth}{2pt}}
+\section*{\textcolor{azulprincipal}{Contenido para el profesor}}
+
+El presente regular del español tiene tres conjugaciones: \textbf{-ar} (estudiar), \textbf{-er} (comer), \textbf{-ir} (vivir). El paradigma completo presenta 18 formas (6 personas $\times$ 3 conjugaciones). Para A1.1, la segmentación es clave: no presentar las 18 formas de golpe. El libro organiza el paradigma en una tabla que muestra las tres conjugaciones en paralelo, lo cual permite segmentar la presentación persona por persona.
+
+\begin{estrategiabox}[Lo que el estudiante ya trae a esta sección]
+Los estudiantes marcaron combinaciones de verbo + información en los textos de p.35 y las agruparon por verbo en la pizarra (\textit{vive, estudia, trabaja, come, estudian, se llama, se llaman}). Ya saben que los mismos verbos aparecen con formas distintas. Lo que \textbf{NO} saben aún es por qué cambian ni cómo funcionan las demás personas (yo, tú, nosotros, vosotros). El concepto de «persona gramatical» ya está adquirido con \textit{ser} (U01--U02) y \textit{llamarse} (U01).
+\end{estrategiabox}
+
+\vspace{0.3cm}
+
+\begin{notabox}[Clave de diseño]
+-ER e -IR comparten terminaciones en 4 de 6 personas. Si el estudiante lo descubre, la carga cognitiva real se reduce a 2 paradigmas en vez de 3.
+\end{notabox}
+
+\vspace{0.3cm}
+
+\textbf{Errores frecuentes por L1:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+\item \textbf{Hablantes de inglés:} omiten el sujeto pero no ajustan la terminación (\textit{``come''} en vez de \textit{``como''} para yo).
+\item \textbf{Hablantes de francés/italiano:} interferencia de vocales temáticas similares pero no idénticas (\textit{``studia''} por \textit{``estudia''}).
+\item \textbf{Todos:} confusión -er/-ir en la forma \textit{vosotros} (\textit{coméis} vs. \textit{vivís} — la única persona donde las tres conjugaciones difieren completamente).
+\end{itemize}
+
+\newpage
+
+%% ============================================================
+%% PÁGINA 2: TABLA MARS EARS + NOTAS DE DISEÑO
+%% ============================================================
+
+\noindent\textcolor{azulprincipal}{\rule{\linewidth}{2pt}}
+\section*{\textcolor{azulprincipal}{Correspondencia MARS EARS — Bloque 1: Presente regular}}
+
+\vspace{0.2cm}
+
+{\small\textit{La M (Modelling) tuvo una primera capa incidental en Vocabulario (textos p.35, Fase 10). La píldora proyectable aporta la segunda capa: input flooding focalizado + Faulty Echo. El cuadro del libro (p.36) funciona como E (Expansion), no como presentación. Enfoque inductivo: el estudiante deduce, el profesor no enuncia la regla.}}
+
+\vspace{0.3cm}
+
+{\footnotesize
+\renewcommand{\arraystretch}{1.35}
+\begin{longtable}{|>{\bfseries\raggedright\arraybackslash}p{2.4cm}|p{4.5cm}|p{3.2cm}|p{2.8cm}|}
+\hline
+\rowcolor{azulprincipal!15}
+\textbf{MARS EARS} & \textbf{Qué hace el estudiante} & \textbf{Material / recurso} & \textbf{Fase} \\
+\hline
+\endfirsthead
+\hline
+\rowcolor{azulprincipal!15}
+\textbf{MARS EARS} & \textbf{Qué hace el estudiante} & \textbf{Material / recurso} & \textbf{Fase} \\
+\hline
+\endhead
+
+M — Modelling (capa 1) & \textit{(ya ocurrido)} Leyó textos de p.35 con formas de 3.ª persona: \textit{vive, estudia, trabaja, come, estudian}. Agrupó verbos en pizarra (Vocab. Fase 10). Exposición incidental sin focalización. & Textos p.35 & Vocabulario Fase 10 \\
+\hline
+
+M+R — Modelling + Receptive (capa 2) & Ve frases del libro con el patrón en negrita (input flooding): 5 completas + 5 con hueco donde elige entre forma de 1.ª y 3.ª persona. Luego detecta errores deliberados del profesor en Faulty Echo. & Píldora diap. 1--2 & Fase 1 \\
+\hline
+
+A — Awareness Raising (pop-ups) & Pop-up integrado en Faulty Echo («¿Qué cambié?\ ¿Por qué suena raro?») + discriminación receptiva sin pronombre (la terminación es la ÚNICA pista) + pregunta Conti cerrada. & Píldora diap. 2--3 & Fase 1 \\
+\hline
+
+A+E — Awareness + Expansion & Descubrimiento inductivo con colores (raíz azul / terminación roja): segmenta raíz/terminación, descubre que -ER/-IR comparten terminaciones, nota que plural = singular + \textbf{n}. Luego abre el cuadro del libro, COMPRUEBA y completa el paradigma con nosotros/vosotros, descubriendo dónde -ER/-IR difieren. Conjugación completa en diapositiva. & Píldora diap. 4 + cuadro p.36 & Fase 2 \\
+\hline
+
+S — Structured Production (arranque) & Sentence Builder micro con revelación visual: combina sujeto + verbo conjugado + complemento para describir escenas con siluetas. Si acierta, la silueta se gira y revela la imagen. Primera producción como juego. & Píldora diap. 5 & Fase 2 \\
+\hline
+
+S — Structured Production & Completa huecos de la Actividad 1 (10 ítems, 6 personas + negación). & Libro p.36 act. 1 & Fase 3 \\
+\hline
+
+E — Expansion & Completa preguntas de la Actividad 2 integrando verbos regulares con interrogativos y contenido de U01--U02. & Libro p.36 act. 2 & Fase 4 \\
+\hline
+
+A — Autonomous use & Uso autónomo de los verbos regulares en los bloques siguientes (Interrogativos, Posesivos) y en secciones posteriores. & — & Bloques 2--3 + §3.3--§3.5 \\
+\hline
+
+R — Routinisation & Consolidación distribuida: los verbos regulares se reciclan al usarse en los bloques siguientes y en secciones posteriores. & Clases futuras & Bloques 2--3 + secciones siguientes \\
+\hline
+
+S — Spontaneity & Uso espontáneo en secciones posteriores (Comunicación, Destrezas) cuando describe acciones sin apoyo explícito. & — & Secciones §3.3--§3.5 \\
+\hline
+\end{longtable}
+}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=gris, colframe=grismedio, fonttitle=\bfseries\small, title={Nota sobre el formato de la píldora proyectable}, boxrule=0.5pt, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt]
+{\small
+La píldora proyectable aplica la secuencia MARS EARS de Conti (2023) comprimida en 5 diapositivas ($\sim$8 minutos). Esta compresión es deliberada: el profesor de aula trabaja con un libro existente y no dispone de las 4--6 lecciones de una unidad EPI pura. El compromiso adoptado es:
+
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt, topsep=2pt]
+\item \textbf{M (Modelling)} se comprime en 1 diapositiva de input flooding con discriminación integrada + 1 diapositiva de Faulty Echo. No sustituye al modelling incidental previo de Vocabulario — lo complementa.
+\item \textbf{A (Awareness Raising)} tiene dos momentos: (1) pop-ups breves de 30--90\,s durante el Faulty Echo (diap.~2) y la discriminación receptiva (diap.~3), y (2) la parte 1 de la diapositiva 4, con descubrimiento inductivo con colores.
+\item \textbf{R (Receptive Processing)} se implementa como discriminación receptiva sin producción (diap.~3): la forma gramatical es la ÚNICA pista disponible, eliminando redundancia léxica (VanPatten, 1996).
+\item \textbf{S (Structured Production)} arranca en la diapositiva 5 con un componedor de frases con revelación visual. Continúa en las actividades del libro.
+\item \textbf{E (Expansion)} ocurre en la parte 2 de la diapositiva 4, cuando el estudiante abre el cuadro del libro: CONFIRMA lo que ya descubrió y completa el paradigma con nosotros/vosotros.
+\end{itemize}
+
+Las actividades del libro se explotan después de la píldora. La consolidación y rutinización se producen de forma natural al avanzar a los bloques siguientes.
+}
+\end{tcolorbox}
+
+\newpage
+
+%% ============================================================
+%% PÁGINA 3: DIAPOSITIVA 1 — LEED Y ELEGID
+%% ============================================================
+
+\begin{diapheader}{x}
+DIAPOSITIVA 1 — LEED Y ELEGID
+\end{diapheader}
+
+\vspace{0.3cm}
+
+\begin{marsbox}{Fase MARS: M+R (Modelling + Receptive Processing)}
+\textbf{Técnica:} Input flooding con discriminación integrada (Conti, 2023; VanPatten, 1996)
+\end{marsbox}
+
+\vspace{0.2cm}
+
+{\small\textit{Principio subyacente: combina dos fases en una sola diapositiva. Las frases completas aportan input flooding (6+ exposiciones al patrón). Las frases con hueco obligan a procesamiento receptivo: el estudiante debe elegir entre la forma de 1.ª persona (yo) y la de 3.ª persona (él/ella) basándose en el sujeto de la frase. Solo se usan verbos regulares. Todas las frases proceden de los textos reales del libro (p.34--35).}}
+
+\vspace{0.4cm}
+
+\noindent\textcolor{azulprincipal}{\textbf{\large Frases completas — leed y escuchad:}}
+
+\vspace{0.2cm}
+
+\begin{enumerate}[leftmargin=2em, itemsep=4pt]
+\item \textit{Javier \textbf{vive} en Getafe.}
+\item \textit{Su padre \textbf{trabaja} fuera de Madrid.}
+\item \textit{Ana \textbf{estudia} ingeniería.}
+\item \textit{Su madre \textbf{trabaja} en el hotel del pueblo.}
+\item \textit{Javier \textbf{estudia} en el instituto de su barrio.}
+\end{enumerate}
+
+\vspace{0.4cm}
+
+\noindent\textcolor{azulprincipal}{\textbf{\large Frases con hueco — ¿cuál es correcta?}}
+
+\vspace{0.2cm}
+
+{\small\textit{El estudiante elige levantando un dedo (1 = primera opción, 2 = segunda):}}
+
+\vspace{0.2cm}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{c X >{\centering\arraybackslash}p{3.5cm} >{\centering\arraybackslash}p{2cm}}
+\textbf{N.º} & \textbf{Frase} & \textbf{Opciones} & \textbf{Correcta} \\
+\midrule
+6 & \textit{Lucía \_\_\_\_\_\_ piano.} & estudio / estudia & \textbf{estudia} \\
+7 & \textit{Yo \_\_\_\_\_\_ en un pueblo de Cantabria.} & vivo / vive & \textbf{vivo} \\
+8 & \textit{Su padre \_\_\_\_\_\_ fuera de Madrid.} & trabajo / trabaja & \textbf{trabaja} \\
+9 & \textit{Yo \_\_\_\_\_\_ en el instituto.} & estudio / estudia & \textbf{estudio} \\
+10 & \textit{Catalina \_\_\_\_\_\_ en el hospital.} & trabajo / trabaja & \textbf{trabaja} \\
+\end{tabularx}
+
+\vspace{0.4cm}
+
+\begin{notabox}[Instrucción para el profesor]
+{\small El profesor lee las frases completas (1--5) en voz alta 2 veces. Luego lee cada frase con hueco (6--10) y los estudiantes eligen la forma correcta. \textbf{No se explica por qué} — solo se confirma si es correcta o no.}
+\end{notabox}
+
+\newpage
+
+%% ============================================================
+%% PÁGINA 4: DIAPOSITIVA 2 — ¿QUÉ HA CAMBIADO?
+%% ============================================================
+
+\begin{diapheader}{x}
+DIAPOSITIVA 2 — ¿QUÉ HA CAMBIADO?
+\end{diapheader}
+
+\vspace{0.3cm}
+
+\begin{marsbox}{Fase MARS: M+A (Modelling + Awareness pop-up)}
+\textbf{Técnica:} Faulty Echo (Conti, 2023)
+\end{marsbox}
+
+\vspace{0.2cm}
+
+{\small\textit{Principio subyacente: el Faulty Echo integra modelling (el profesor repite input) con awareness (el estudiante detecta que algo ``suena raro''). La awareness no es una lección separada sino un pop-up de 30--90 segundos durante el modelling. Al detectar el error, el estudiante atiende a la forma sin recibir explicación.}}
+
+\vspace{0.4cm}
+
+\noindent\textcolor{azulprincipal}{\textbf{\large El profesor relee 4 frases de la diapositiva 1, pero en 2 de ellas cambia la terminación del verbo:}}
+
+\vspace{0.4cm}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\begin{tabularx}{0.95\textwidth}{c X c >{\raggedright\arraybackslash}p{4cm}}
+\textbf{N.º} & \textbf{Frase original} & \textbf{¿Error?} & \textbf{Lo que dice el profesor} \\
+\midrule
+1 & \textit{Javier \textbf{vive} en Getafe.} & \textcolor{verde}{\textbf{Correcta}} & (sin cambio) \\[4pt]
+2 & \textit{Su padre \textbf{trabaja} fuera de Madrid.} & \textcolor{verde}{\textbf{Correcta}} & (sin cambio) \\[4pt]
+3 & \textit{Ana \textbf{estudia} ingeniería.} & \textcolor{rojofinal}{\textbf{ERROR}} & \textit{``Ana \textbf{estudio} ingeniería.''} \\[4pt]
+4 & \textit{Lucía \textbf{estudia} piano.} & \textcolor{rojofinal}{\textbf{ERROR}} & \textit{``Lucía \textbf{estudias} piano.''} \\
+\end{tabularx}
+\end{center}
+
+\vspace{0.4cm}
+
+\begin{notabox}[Instrucción para el profesor]
+{\small Los estudiantes golpean la mesa o levantan la mano cuando detectan el error.}
+\end{notabox}
+
+\vspace{0.4cm}
+
+\begin{preguntabox}
+\centering\large\textbf{¿Qué he cambiado? ¿Por qué suena raro?}\\[0.2cm]
+{\normalsize\textit{Pregunta pop-up en pantalla — 30--90 segundos}}
+\end{preguntabox}
+
+\newpage
+
+%% ============================================================
+%% PÁGINA 5: DIAPOSITIVA 3 — ¿QUIÉN HABLA?
+%% ============================================================
+
+\begin{diapheader}{x}
+DIAPOSITIVA 3 — ¿QUIÉN HABLA?
+\end{diapheader}
+
+\vspace{0.3cm}
+
+\begin{marsbox}{Fase MARS: R+A (Receptive Processing + Awareness pop-up)}
+\textbf{Técnicas:} Discriminación receptiva sin redundancia léxica (VanPatten, 1996) + Pregunta Conti cerrada (Conti, 2023)
+\end{marsbox}
+
+\vspace{0.2cm}
+
+{\small\textit{Principio subyacente: el estudiante RECONOCE sin producir. La forma gramatical (terminación verbal) es la ÚNICA pista para la respuesta — se elimina el pronombre sujeto para que el estudiante no pueda ignorar la terminación (Principio de Preferencia Léxica de VanPatten: si el pronombre está presente, el estudiante lo usa y no procesa la terminación). Inmediatamente después, una pregunta Conti cerrada fuerza al estudiante a verbalizar lo que acaba de percibir.}}
+
+\vspace{0.4cm}
+
+\noindent\textcolor{azulprincipal}{\textbf{\large 5 frases en pantalla SIN pronombre — los estudiantes responden a mano alzada quién habla:}}
+
+\vspace{0.3cm}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{center}
+\begin{tabular}{c p{7cm} >{\centering\arraybackslash}p{3.5cm}}
+\textbf{N.º} & \textbf{Frase} & \textbf{Respuesta} \\
+\midrule
+1 & \textit{\_\_\_\_\_ \textbf{estudio} español.} & \textbf{yo} \\
+2 & \textit{\_\_\_\_\_ \textbf{trabaja} en un banco.} & \textbf{él/ella} \\
+3 & \textit{\_\_\_\_\_ \textbf{vives} en Madrid.} & \textbf{tú} \\
+4 & \textit{\_\_\_\_\_ \textbf{comemos} en casa.} & \textbf{nosotros} \\
+5 & \textit{\_\_\_\_\_ \textbf{estudian} francés.} & \textbf{ellos/ellas} \\
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{preguntabox}
+\centering\large\textbf{Pregunta Conti:}\\[0.3cm]
+{\Large\textit{«¿Qué pista os da el final del verbo para saber quién habla?»}}\\[0.3cm]
+{\normalsize Parejas 20\,s. Plenaria 25\,s.}
+\end{preguntabox}
+
+\vspace{0.4cm}
+
+\begin{estrategiabox}[Respuesta esperada]
+{\small La terminación cambia según la persona. \textbf{-o} = yo, \textbf{-s} = tú, etc.}
+\end{estrategiabox}
+
+\newpage
+
+%% ============================================================
+%% PÁGINAS 6-7: DIAPOSITIVA 4 — DESCUBRID Y COMPROBAD
+%% ============================================================
+
+\begin{diapheader}{x}
+DIAPOSITIVA 4 — DESCUBRID Y COMPROBAD
+\end{diapheader}
+
+\vspace{0.3cm}
+
+\begin{marsbox}{Fase MARS: A+E (Awareness Raising + Expansion)}
+\textbf{Técnicas:} Segmentación visual con colores (Conti, 2023: inducción guiada) + cuadro del libro como confirmación (Conti, 2023: «la explicación explícita confirma el conocimiento implícito»)
+\end{marsbox}
+
+\vspace{0.2cm}
+
+{\small\textit{Principio subyacente: el estudiante ya ha percibido que la terminación cambia (diap. 2--3), pero no ha descubierto AÚN el sistema: que el verbo tiene una raíz fija + una terminación variable, y que hay 3 conjugaciones con terminaciones propias. Esta diapositiva es interactiva y progresiva: primero aparece la tabla con colores (4 personas) y las preguntas inductivas; el estudiante descubre raíz/terminación, la semejanza -ER/-IR y la regla del plural (singular + n). Después aparece la instrucción de abrir el libro: el cuadro completa el paradigma con nosotros/vosotros y permite un último descubrimiento (dónde difieren -ER e -IR). El cuadro NO es el punto de partida sino el punto de llegada.}}
+
+\vspace{0.4cm}
+
+%% --- PARTE 1: Descubrimiento con colores ---
+
+\noindent\textcolor{azulprincipal}{\textbf{\large PARTE 1 — Descubrimiento con colores}} {\small\textit{(aparece primero)}}
+
+\vspace{0.3cm}
+
+Formas verbales de las 3 conjugaciones con \textbf{segmentación visual por colores}: la \raiz{raíz en azul} y la \termin{terminación en rojo}. Se incluyen 4 personas (yo, tú, él/ella, ellos/ellas) — las que el estudiante ya ha encontrado en los textos del libro:
+
+\vspace{0.3cm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|>{\bfseries}l|c|c|c|}
+\hline
+\rowcolor{azulprincipal!15}
+& \textbf{-AR} & \textbf{-ER} & \textbf{-IR} \\
+\hline
+yo & \raiz{estudi}\termin{o} & \raiz{com}\termin{o} & \raiz{viv}\termin{o} \\
+\hline
+\rowcolor{gris}
+tú & \raiz{estudi}\termin{as} & \raiz{com}\termin{es} & \raiz{viv}\termin{es} \\
+\hline
+él/ella & \raiz{estudi}\termin{a} & \raiz{com}\termin{e} & \raiz{viv}\termin{e} \\
+\hline
+\rowcolor{gris}
+ellos/ellas & \raiz{estudi}\termin{an} & \raiz{com}\termin{en} & \raiz{viv}\termin{en} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+{\small \raiz{Azul} = raíz (no cambia) \hspace{1.5cm} \termin{Rojo} = terminación (cambia según la persona)}
+
+\vspace{0.4cm}
+
+\noindent\textcolor{azulprincipal}{\textbf{Preguntas inductivas}} {\small\textit{(aparecen debajo de la tabla, una a una con clic):}}
+
+\vspace{0.2cm}
+
+\begin{enumerate}[leftmargin=2em, itemsep=6pt]
+\item \begin{preguntabox}
+\textit{«¿Qué parte del verbo NO cambia? ¿Y cuál SÍ cambia?»}
+\end{preguntabox}
+
+\item \begin{preguntabox}
+\textit{«Mirad las terminaciones rojas de -ER y -IR. ¿Qué tienen en común?»}
+\end{preguntabox}
+
+\item \begin{preguntabox}
+\textit{«Comparad él/ella con ellos/ellas. ¿Qué diferencia hay?»}
+\end{preguntabox}
+\end{enumerate}
+
+\vspace{0.2cm}
+
+{\small\textit{Parejas 30\,s. Plenaria 30\,s.}}
+
+\begin{estrategiabox}[Respuestas esperadas]
+{\small
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+\item La raíz (\textcolor{azulraiz}{azul}) no cambia nunca. La terminación (\textcolor{rojofinal}{rojo}) cambia según la persona.
+\item -ER y -IR tienen las mismas terminaciones en las 4 personas visibles.
+\item La tercera persona del plural es igual a la del singular + \textbf{n} (estudia $\rightarrow$ estudia\textbf{n}, come $\rightarrow$ come\textbf{n}, vive $\rightarrow$ vive\textbf{n}).
+\end{itemize}
+}
+\end{estrategiabox}
+
+\newpage
+
+%% --- PARTE 2: Comprobación con el libro ---
+
+\noindent\textcolor{azulprincipal}{\textbf{\large PARTE 2 — Comprobación con el libro}} {\small\textit{(aparece con clic, en la misma diapositiva)}}
+
+\vspace{0.3cm}
+
+\begin{preguntabox}
+\centering\large\textit{«Abrid el libro en la página 36. Mirad el cuadro. ¿Coincide con lo que habéis descubierto?»}
+\end{preguntabox}
+
+\vspace{0.3cm}
+
+\begin{preguntabox}
+\centering\large\textit{«Ahora mirad nosotros y vosotros. ¿En esas personas -ER e -IR siguen siendo iguales?»}
+\end{preguntabox}
+
+\vspace{0.3cm}
+
+\begin{estrategiabox}[Respuesta esperada]
+{\small No — en nosotros (-emos/-imos) y vosotros (-éis/-ís) ya son diferentes. Es la única zona donde las tres conjugaciones difieren completamente. El cuadro confirma lo descubierto y añade este matiz.}
+\end{estrategiabox}
+
+\vspace{0.4cm}
+
+\noindent\textcolor{azulprincipal}{\textbf{Tras la comprobación — conjugación completa (6 personas):}}
+
+\vspace{0.3cm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|>{\bfseries}l|c|c|c|}
+\hline
+\rowcolor{azulprincipal!15}
+& \textbf{-AR (estudiar)} & \textbf{-ER (comer)} & \textbf{-IR (vivir)} \\
+\hline
+yo & \raiz{estudi}\termin{o} & \raiz{com}\termin{o} & \raiz{viv}\termin{o} \\
+\hline
+\rowcolor{gris}
+tú & \raiz{estudi}\termin{as} & \raiz{com}\termin{es} & \raiz{viv}\termin{es} \\
+\hline
+él/ella & \raiz{estudi}\termin{a} & \raiz{com}\termin{e} & \raiz{viv}\termin{e} \\
+\hline
+\rowcolor{gris}
+nosotros/as & \raiz{estudi}\termin{amos} & \raiz{com}\termin{emos} & \raiz{viv}\termin{imos} \\
+\hline
+vosotros/as & \raiz{estudi}\termin{áis} & \raiz{com}\termin{éis} & \raiz{viv}\termin{ís} \\
+\hline
+\rowcolor{gris}
+ellos/ellas & \raiz{estudi}\termin{an} & \raiz{com}\termin{en} & \raiz{viv}\termin{en} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{notabox}[Nota para el profesor]
+{\small Señale que nosotros/vosotros es la zona donde las tres conjugaciones difieren completamente. En las 4 personas restantes, -ER e -IR son idénticas. Este es el matiz que añade el cuadro del libro.}
+\end{notabox}
+
+\newpage
+
+%% ============================================================
+%% PÁGINA 8: DIAPOSITIVA 5 — CONSTRUID LA FRASE
+%% ============================================================
+
+\begin{diapheader}{x}
+DIAPOSITIVA 5 — CONSTRUID LA FRASE
+\end{diapheader}
+
+\vspace{0.3cm}
+
+\begin{marsbox}{Fase MARS: S (Structured Production, arranque)}
+\textbf{Técnica:} Sentence Builder micro con revelación visual (adaptación de Conti, 2023: producción estructurada como juego)
+\end{marsbox}
+
+\vspace{0.2cm}
+
+{\small\textit{Principio subyacente: la primera producción oral ocurre como juego con recompensa visual. El estudiante no conjuga desde cero — selecciona y combina chunks del sentence builder para formar una frase. Esto reduce la carga cognitiva (reconocer + combinar en vez de recuperar + conjugar) y permite una producción exitosa desde el primer intento. Las siluetas de personas y lugares aportan un reto visual: el estudiante construye la frase, la lee en voz alta, y si es correcta se revela la imagen real.}}
+
+\vspace{0.5cm}
+
+%% --- Zona izquierda: Sentence Builder ---
+
+\noindent\textcolor{azulprincipal}{\textbf{\large Zona izquierda — Sentence Builder:}}
+
+\vspace{0.3cm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{4cm}|}
+\hline
+\rowcolor{azulprincipal!15}
+\textbf{QUIÉN} & \textbf{VERBO} & \textbf{QUÉ / DÓNDE} \\
+\hline
+Yo & estudio & español \\
+\hline
+\rowcolor{gris}
+Javier & vive & en Getafe \\
+\hline
+Lucía y Ana & trabaja & piano \\
+\hline
+\rowcolor{gris}
+Nosotros & estudian & en el instituto \\
+\hline
+Su padre & vivimos & en el hospital \\
+\hline
+\rowcolor{gris}
+& estudia & en un pueblo \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.2cm}
+
+{\small\textit{Las columnas están desordenadas a propósito — el estudiante debe combinar correctamente sujeto + verbo conjugado + complemento.}}
+
+\vspace{0.5cm}
+
+%% --- Zona derecha: Imágenes por revelar ---
+
+\noindent\textcolor{azulprincipal}{\textbf{\large Zona derecha — Imágenes por revelar:}}
+
+\vspace{0.2cm}
+
+{\small 4 escenas con siluetas ocultas. Cada escena muestra silueta(s) de persona(s) + silueta de lugar.}
+
+\vspace{0.3cm}
+
+\noindent\textcolor{azulprincipal}{\textbf{Mecánica:}}
+\begin{enumerate}[leftmargin=2em, itemsep=3pt]
+\item El profesor señala una escena (ej: 1 silueta + silueta de instituto).
+\item Los estudiantes buscan en el sentence builder la combinación correcta y la leen en voz alta.
+\item Si es correcta $\rightarrow$ clic: la silueta se gira y revela la imagen real.
+\item Si es incorrecta $\rightarrow$ el profesor dice \textit{«Casi\ldots\ fijaos en el verbo»} y otro estudiante intenta.
+\end{enumerate}
+
+\vspace{0.4cm}
+
+\noindent\textcolor{azulprincipal}{\textbf{\large 4 escenas:}}
+
+\vspace{0.3cm}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\begin{tabular}{|c|p{4cm}|p{6.5cm}|p{2.5cm}|}
+\hline
+\rowcolor{azulprincipal!15}
+\textbf{N.º} & \textbf{Siluetas} & \textbf{Frase correcta} & \textbf{Se revela} \\
+\hline
+1 & 1 silueta + instituto & \textit{«Javier \textbf{estudia} en el instituto.»} & Javier \\
+\hline
+\rowcolor{gris}
+2 & 1 silueta + hospital & \textit{«Su padre \textbf{trabaja} en el hospital.»} & El padre \\
+\hline
+3 & 1 silueta + casa con campo & \textit{«Lucía \textbf{vive} en un pueblo.»} & Lucía \\
+\hline
+\rowcolor{gris}
+4 & Grupo de siluetas + instituto & \textit{«Nosotros \textbf{estudiamos} en el instituto.»} & Los estudiantes \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{notabox}[Duración]
+{\small $\sim$2 minutos (4 rondas de $\sim$30 segundos).}
+\end{notabox}
+
+\end{document}

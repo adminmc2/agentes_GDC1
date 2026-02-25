@@ -87,7 +87,7 @@ F1b AWARENESS (2-3 min)
   Pares mínimos lado a lado. Preguntas cerradas:
   - CAMBIO: "¿Qué observáis que cambió?"
   - POSICIÓN: "¿Dónde está el cambio?"
-  - ACOMPAÑAMIENTO: "¿Qué viaja junto?"
+  - ACOMPAÑAMIENTO: "¿Qué cambia a la vez?" (2+ elementos) / "¿Qué cambia en la frase?" (1 elemento)
   - PATRÓN: "¿Hay algo que se repite?"
   NO dar la regla — mantener tensión cognitiva
 

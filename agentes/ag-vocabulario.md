@@ -285,7 +285,7 @@ El banco contiene acciones organizadas en 6 categorías. Para cada píldora, sel
 |--------|-------------|----------------|
 | Pregunta de cambio | "¿Qué cambia?" | Después de pares mínimos |
 | Pregunta de posición | "¿Dónde está el cambio?" | Localizar en la cadena |
-| Pregunta de acompañamiento | "¿Qué viaja junto?" | Concordancia |
+| Pregunta de acompañamiento | "¿Qué cambia a la vez?" / "¿Qué cambia en la frase?" | Concordancia |
 | Pregunta de patrón | "¿Hay algo que se repite?" | Después de múltiples ejemplos |
 | Pregunta de excepción | "¿Todas siguen el mismo patrón?" | Cuando hay excepciones |
 | Verbalización del alumno | "Explicad con vuestras palabras" | Confirmar comprensión |
