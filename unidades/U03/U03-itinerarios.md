@@ -219,7 +219,7 @@ Material complementario opcional:
 
 ## Cultura (p.42) — 20-25 min en clase (estimado, explotación pendiente)
 
-### Secuencia 13 — acts. 1-2, 4: El cómic y las películas de animación (20-25 min)
+### Secuencia 12 — acts. 1-2, 4: El cómic y las películas de animación (20-25 min)
 
 Texto sobre Robot Dreams (pista 42), 6 profesiones del cine con sus definiciones y comentario en clase sobre películas y cómics favoritos.
 
@@ -242,7 +242,7 @@ DEBERES:
 
 ## Reflexión y evaluación (p.43) — 12-15 min en clase
 
-### Secuencia 14 — acts. 1-6: Repaso autónomo
+### Secuencia 13 — acts. 1-6: Repaso autónomo
 
 Los estudiantes completan en casa 6 ejercicios de repaso: conjugación de verbos regulares + tener, preguntas a partir de respuestas, posesivos, términos de parentesco, sopa de letras y horas en relojes analógicos.
 
@@ -257,7 +257,7 @@ DEBERES:
 | 5 | Sopa de letras: 6 palabras de la familia |
 | 6 | Escribir la hora de 4 relojes analógicos |
 
-### Secuencia 15 — Corrección colectiva (12-15 min)
+### Secuencia 14 — Corrección colectiva (12-15 min)
 
 El profesor corrige en clase las 6 actividades de reflexión, resuelve dudas y los estudiantes completan la autoevaluación de la unidad.
 
@@ -277,14 +277,14 @@ EN CLASE:
 | Vocabulario (p.34-35) | 50-60 min | U03-vocabulario.md |
 | Gramática (p.36-37) | 52-65 min | U03-gramatica.md |
 | Comunicación (p.38-39) | 53-64 min | U03-comunicacion.md |
-| Destrezas (p.40-41) | 35-42 min | U03-destrezas.md |
+| Destrezas (p.40-41) | 50-62 min | U03-destrezas.md |
 | Cultura (p.42) | 20-25 min | Estimación |
 | Reflexión (p.43) | 12-15 min | Estimación |
-| TOTAL | 222-271 min | |
+| TOTAL | 237-291 min | |
 
-Rango medio: ~247 min en clase = ~5,5 sesiones de 45 min.
+Rango medio: ~264 min en clase = ~5,9 sesiones de 45 min.
 
-Distribución sugerida en 7 sesiones:
+Distribución sugerida en 8 sesiones:
 
 | Sesión | Contenido | Tiempo |
 |--------|-----------|--------|
@@ -293,12 +293,13 @@ Distribución sugerida en 7 sesiones:
 | 3 | Gramática — Secuencia 4 + Secuencia 5 | 34-43 min |
 | 4 | Comunicación — Secuencia 6 | 25-30 min |
 | 5 | Comunicación — Secuencia 7 + Secuencia 8 | 28-34 min |
-| 6 | Destrezas — Secuencias 9-12 | 35-42 min |
-| 7 | Cultura + Reflexión — Secuencias 13-15 | 32-40 min |
+| 6 | Destrezas — Secuencia 9 (Leer y escribir, p.40) | 25-32 min |
+| 7 | Destrezas — Secuencias 10-11 (Escuchar, hablar y mediar, p.41) | 25-30 min |
+| 8 | Cultura + Reflexión — Secuencias 12-14 | 32-40 min |
 
 Las sesiones 4 y 5 quedan más ligeras; el margen se puede usar para corregir deberes o incluir material complementario.
 
-Tiempo total de la unidad: ~3,5 semanas (7 sesiones + deberes continuos).
-Si se necesita, la sesión 8 se dedica a la evaluación sumativa con evaluacion3.pdf (30-40 min).
+Tiempo total de la unidad: ~4 semanas (8 sesiones + deberes continuos).
+Si se necesita, la sesión 9 se dedica a la evaluación sumativa con evaluacion3.pdf (30-40 min).
 
-Presupuesto del curso: 60 h / 9 unidades = ~6,6 h por unidad (~400 min). Esta unidad usa ~247 min en clase, dejando ~153 min de margen por unidad para corrección de deberes, material complementario, evaluación e imprevistos.
+Presupuesto del curso: 60 h / 9 unidades = ~6,6 h por unidad (~400 min). Esta unidad usa ~264 min en clase, dejando ~136 min de margen por unidad para corrección de deberes, material complementario, evaluación e imprevistos.
