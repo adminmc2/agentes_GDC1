@@ -924,23 +924,6 @@
         {
           "id": "U03-p41-act07",
           "numero": 7,
-          "tipo": "práctica oral en grupos",
-          "instruccion_original": "En pequeños grupos. Pregunta a tus compañeros y luego comparte la información con el resto de la clase.",
-          "contenido_linguistico": ["vocabulario de familia: hermanos, hermanas, tíos, primos", "interrogativo: quién + tener", "cuantificadores: más de"],
-          "destreza": "interacción oral",
-          "tiene_audio": false,
-          "tiene_imagen": false,
-          "preguntas": [
-            "1. ¿Quién tiene dos hermanos mayores?",
-            "2. ¿Quién tiene hermanas pequeñas?",
-            "3. ¿Quién tiene tres tíos?",
-            "4. ¿Quién tiene más de diez primos?"
-          ],
-          "descripcion": "Encuesta oral en grupos sobre la familia; después comparten resultados con la clase."
-        },
-        {
-          "id": "U03-p41-act08",
-          "numero": 8,
           "tipo": "hablar y mediar",
           "instruccion_original": "Cuéntale a tu compañero una cosa especial de tu familia. Él se lo va a contar al resto de la clase.",
           "contenido_linguistico": ["producción oral libre sobre familia", "mediación: transmitir información de un compañero a la clase", "cambio de persona: yo → él/ella"],
