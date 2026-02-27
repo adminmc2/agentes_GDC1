@@ -341,7 +341,7 @@ El repertorio de 120 técnicas de expresión e interacción oral (`referencias/r
 
 ### Banco de mediación lingüística — Mapeo con Protocolo H (mediación)
 
-El repertorio de 124 técnicas de mediación lingüística (`referencias/mediacion-parte1.md` a `mediacion-parte4.md`) se organiza en 10 bloques por micro-operación cognitiva del mediador. Es el séptimo banco del agente Destrezas, específico para la actividad de mediación del MCER Companion Volume (Protocolo H, tipo §4.8).
+El repertorio de 124 técnicas de mediación lingüística (`referencias/mediacion.md`) se organiza en 10 bloques por micro-operación cognitiva del mediador. Es el séptimo banco del agente Destrezas, específico para la actividad de mediación del MCER Companion Volume (Protocolo H, tipo §4.8).
 
 **Delimitación:** Este banco cubre el proceso de transformar, simplificar, transmitir, adaptar y co-construir significado para un tercero. No duplica comprensión auditiva (banco CA), expresión oral (banco EIO) ni comprensión lectora (banco CL) — cubre lo que ocurre ENTRE la recepción y la producción: la transformación mediadora.
 
@@ -396,7 +396,7 @@ El repertorio de 124 técnicas de mediación lingüística (`referencias/mediaci
 | 4 | H (Habla) | Expresión e interacción oral | `referencias/repertorio-120-tecnicas-EIO.md` | 120 |
 | 5 | C (Comunicación) | Fonética/pronunciación/ortografía | `referencias/tecnicas-fonetica-pronunciacion-ortografia.md` | 120 |
 | 6 | A (Comunicación) | Vídeo | `referencias/tecnicas-video-clase.md` | 89 |
-| 7 | H (Mediación) | Mediación lingüística | `referencias/mediacion-parte1.md` a `parte4.md` | 124 |
+| 7 | H (Mediación) | Mediación lingüística | `referencias/mediacion.md` | 124 |
 | 8 | Transversal | Dinámicas de grupo | `referencias/dinamicas-101-grupo-lenguas.md` | 101 |
 | | | **Total** | | **862** |
 

@@ -30,7 +30,7 @@ Antes de generar cualquier explotación, internalizas los siguientes documentos:
 | **Banco de expresión escrita** | `referencias/analisis-84-estrategias-EE.md` | 84 estrategias para Protocolo E |
 | **Banco de comprensión auditiva** | `referencias/repertorio-124-tecnicas-CA.md` | 124 técnicas para Protocolo CO |
 | **Banco de expresión e interacción oral** | `referencias/repertorio-120-tecnicas-EIO.md` | 120 técnicas para Protocolo H |
-| **Banco de mediación** | `referencias/mediacion-parte1.md` a `parte4.md` | 124 técnicas para mediación (Protocolo H, tipo §3.8) |
+| **Banco de mediación** | `referencias/mediacion.md` | 124 técnicas para mediación (Protocolo H, tipo §3.8) |
 | **Banco de dinámicas de grupo** | `referencias/dinamicas-101-grupo-lenguas.md` | 101 dinámicas transversales (warmers, coolers, movimiento, clima emocional) |
 
 **Relación entre documentos:**

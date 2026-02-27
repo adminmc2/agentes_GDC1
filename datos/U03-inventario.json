@@ -1267,7 +1267,7 @@
     },
     {
       "fecha": "2025-02-01",
-      "cambio": "Añadida página 41 — Destrezas (cont.): Escuchar + Hablar + Hablar y mediar (5 actividades, acts 4-8, programación TV + relojes + encuesta familiar + mediación oral)"
+      "cambio": "Añadida página 41 — Destrezas (cont.): Escuchar + Hablar + Hablar y mediar (4 actividades, acts 4-7, programación TV + relojes + práctica hora en parejas + mediación oral)"
     },
     {
       "fecha": "2025-02-01",
@@ -1280,6 +1280,10 @@
     {
       "fecha": "2026-02-16",
       "cambio": "Actualizado Vocabulario (p.34-35) para nueva edición del libro: act. 2 cambia de 'relaciona' a 'forma frases'; act. 5 texto modelo corregido (Ana tiene 6 años, no 8); act. 6 texto de Javier actualizado (Getafe = ciudad, no pueblo; añadida edad Alejandra y fútbol); acts. 7-10 reorganizadas (7 = completa frases sobre Javier, 8 = texto de Lucía Alonso de Cantabria en lugar de Leonora arahuaca de Colombia, 9 = preguntas sobre Lucía, 10 = síntesis comparativa Javier/Lucía con 6 frases); reducido de 11 a 10 actividades."
+    },
+    {
+      "fecha": "2026-02-27",
+      "cambio": "Destrezas p.41: eliminada actividad 8 fantasma (encuesta familiar que no existe en el libro); corregido changelog de p.41 (4 actividades acts 4-7, no 5 acts 4-8)."
     },
     {
       "fecha": "2026-02-20",

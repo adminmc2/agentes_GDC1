@@ -566,7 +566,7 @@ Dificultades previsibles:
 - No saber qué contar: el banco de 8 historias curiosas resuelve el bloqueo de contenido.
 - Producir en 3.ª persona sin modelo visible: el weaning off (con tabla → sin tabla) gradúa esta dificultad.
 
-Técnicas de mediación aplicadas (ref.: referencias/mediacion-parte1.md a parte4.md):
+Técnicas de mediación aplicadas (ref.: referencias/mediacion.md):
 - T4 (Escucha y extrae para otro), T6 (Cazador de datos clave), T28 (La misma idea, otras palabras), T30 (El mediador en sus palabras), T55 (Resumidor de posiciones), T95 (Repetidor con clarificación), T99 (Verificador de recepción), T116 (Autoevaluación post-mediación), T117 (Monitor de destinatario).
 
 **2. Propuesta de presentación -- Mediación oral (MCER Companion Volume 2020)**
@@ -580,7 +580,7 @@ Técnicas de mediación aplicadas (ref.: referencias/mediacion-parte1.md a parte
 **Diapositiva 1 -- ¿QUÉ CAMBIA CUANDO CUENTAS LO DE OTRO?**
 *Fase: Detección (awareness) -- Técnica: Noticing guiado por contraste visual, pares mínimos de persona gramatical (Schmidt 1990: Noticing Hypothesis; VanPatten: structured input; enfoque inferencial ELÍAS)*
 *Principio subyacente: el estudiante ve dos versiones del mismo mensaje lado a lado y descubre por sí mismo qué cambia. No se da la regla antes del descubrimiento. Las palabras que cambian están resaltadas visualmente para facilitar el noticing. El estudiante verbaliza el patrón antes de recibir la etiqueta (mediar).*
-*Técnicas de mediación: T30 (El mediador en sus palabras), T120 (Comparación de mediaciones), T73 (Pregunta guía en lugar de respuesta). Ref.: referencias/mediacion-parte1.md a parte4.md*
+*Técnicas de mediación: T30 (El mediador en sus palabras), T120 (Comparación de mediaciones), T73 (Pregunta guía en lugar de respuesta). Ref.: referencias/mediacion.md*
 
 En pantalla:
 - Dos columnas lado a lado:
@@ -609,8 +609,8 @@ Instrucciones para el profesor:
 
 **Diapositiva 2 -- LA CAJA DE HERRAMIENTAS DEL MEDIADOR**
 *Fase: Modelado + conexión -- Técnica: Tabla de transformación visual + fórmulas del mediador + plantilla de escucha activa (Merrill: Demostración; CLT: reducir carga extrínseca con tabla; MCER Companion Volume 2020: estrategias de mediación A1)*
-*Principio subyacente: después del descubrimiento (diap. 1), el estudiante recibe las herramientas formalizadas: la tabla de transformación de persona, las fórmulas lingüísticas para transmitir/verificar/reparar, y la plantilla de 4 casillas para la escucha activa. El andamiaje lingüístico es no negociable en A1 (ref.: mediacion-parte4.md, principio 4: sin las fórmulas, el estudiante A1 no puede mediar).*
-*Técnicas de mediación: T6 (Cazador de datos clave -- las 4 casillas), T55 (Resumidor de posiciones -- Dice que...), T99 (Verificador de recepción -- ¿Entendéis?), T95 (Repetidor con clarificación -- Lo que quiere decir es...). Ref.: referencias/mediacion-parte1.md a parte4.md*
+*Principio subyacente: después del descubrimiento (diap. 1), el estudiante recibe las herramientas formalizadas: la tabla de transformación de persona, las fórmulas lingüísticas para transmitir/verificar/reparar, y la plantilla de 4 casillas para la escucha activa. El andamiaje lingüístico es no negociable en A1 (ref.: mediacion.md, principio 4: sin las fórmulas, el estudiante A1 no puede mediar).*
+*Técnicas de mediación: T6 (Cazador de datos clave -- las 4 casillas), T55 (Resumidor de posiciones -- Dice que...), T99 (Verificador de recepción -- ¿Entendéis?), T95 (Repetidor con clarificación -- Lo que quiere decir es...). Ref.: referencias/mediacion.md*
 
 En pantalla:
 - Tabla de transformación (grande, visual, central):
@@ -646,7 +646,7 @@ Instrucciones para el profesor:
 **Diapositiva 3 -- PRACTICA: CUENTA ALGO DE TU FAMILIA**
 *Fase: Aplicación anticipada + verificación + autorregulación -- Técnica: Mediación oral con banco de historias como andamiaje + weaning off explícito + autoevaluación post-mediación (Merrill: Aplicación; MARS EARS fases S + A; Conti: weaning off; Graham & Harris 2005: SRSD)*
 *Principio subyacente: el estudiante practica la mediación con andamiaje máximo (tabla visible + fórmulas + banco de historias) y luego con andamiaje reducido (weaning off). El banco de 8 historias curiosas resuelve el bloqueo de contenido: el estudiante que no sabe qué contar puede adaptar una historia con sus propios datos. Todas las historias usan exclusivamente presente de indicativo y vocabulario disponible hasta la unidad 3. La autoevaluación cierra el ciclo metacognitivo.*
-*Técnicas de mediación: T4 (Escucha y extrae para otro), T6 (Cazador de datos clave), T28 (La misma idea, otras palabras), T30 (El mediador en sus palabras), T55 (Resumidor de posiciones), T95 (Repetidor con clarificación), T99 (Verificador de recepción), T116 (Autoevaluación post-mediación), T117 (Monitor de destinatario). Ref.: referencias/mediacion-parte1.md a parte4.md*
+*Técnicas de mediación: T4 (Escucha y extrae para otro), T6 (Cazador de datos clave), T28 (La misma idea, otras palabras), T30 (El mediador en sus palabras), T55 (Resumidor de posiciones), T95 (Repetidor con clarificación), T99 (Verificador de recepción), T116 (Autoevaluación post-mediación), T117 (Monitor de destinatario). Ref.: referencias/mediacion.md*
 
 En pantalla:
 - Instrucción: Cuéntale a tu compañero una cosa especial de tu familia. Tu compañero se lo va a contar a la clase.

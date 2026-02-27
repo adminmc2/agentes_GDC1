@@ -22,6 +22,8 @@ Total: 56 tarjetas.
 
 ### Secuencia 1 — acts. 1-5: Vocabulario de parentesco y primera producción escrita (30-35 min)
 
+Píldora formativa 3.1 — Vocabulario de parentesco: patrón de género -o/-a y excepciones.
+
 Vocabulario de parentesco con el árbol genealógico de David: patrón de género -o/-a, excepciones, plurales mixtos y práctica oral en parejas.
 
 EN CLASE:
@@ -59,16 +61,18 @@ DEBERES:
 | 9 | Responder a las 4 preguntas sobre el texto de Lucía |
 
 Material complementario opcional:
-- Presentación UNIDAD3NUEVOCOMPANEROS.pptx (10-15 min)
-- Actividad extra 3a — Árbol genealógico en parejas (10-15 min)
-- Actividad extra 3b — Juego de lógica (15-20 min)
-- Juego Ronda familiar — gamificación.pdf p.12-16 (20-30 min)
+- Presentación UNIDAD3NUEVOCOMPANEROS.pptx — después de acts. 1-4 (10-15 min)
+- Actividad extra 3a — Árbol genealógico en parejas — después de acts. 1-4 (10-15 min)
+- Juego Ronda familiar — gamificación.pdf p.12-16 — después de acts. 3-4 (20-30 min)
+- Actividad extra 3b — Juego de lógica — después de act. 10 (15-20 min)
 
 ---
 
 ## Gramática (p.36-37) — 52-65 min en clase
 
 ### Secuencia 3 — acts. 1-2: Presente de verbos regulares (18-22 min)
+
+Píldora formativa 3.2 — Presente regular: tres conjugaciones y segmentación por persona.
 
 Presente regular (-ar, -er, -ir): formalización y práctica de concordancia sujeto-verbo.
 
@@ -87,6 +91,8 @@ DEBERES:
 
 ### Secuencia 4 — acts. 3-4: Interrogativos y cuánto (14-18 min)
 
+Píldora formativa 3.3 — Interrogativos: sistema de 7 partículas y concordancia de cuánto.
+
 Los 7 interrogativos: sistematización y concordancia de cuánto/-a/-os/-as.
 
 EN CLASE:
@@ -98,7 +104,9 @@ EN CLASE:
 
 ### Secuencia 5 — acts. 5, 7-8: Posesivos y producción oral (20-25 min)
 
-nt
+Píldora formativa 3.4 — Posesivos: concordancia con el objeto poseído, no con el poseedor.
+
+Posesivos mi/tu/su/nuestro: formalización, práctica escrita y producción oral sobre la familia del compañero.
 
 EN CLASE:
 
@@ -116,11 +124,16 @@ DEBERES:
 | 6 | Leer respuestas y escribir las preguntas (6 ítems) |
 | 9 | Cuaderno de vocabulario: escribir palabras nuevas y traducir |
 
+Material complementario opcional:
+- Actividad extra 3b — Juego de lógica — después de act. 8 (15-20 min)
+
 ---
 
 ## Comunicación (p.38-39) — 53-64 min en clase
 
 ### Secuencia 6 — acts. 1-4: Diálogo en el recreo (25-30 min)
+
+Píldora formativa 3.5 — Comprensión comunicativa: texto mapeado del diálogo.
 
 Diálogo del recreo (Pablo, Graciela, Julia, Jorge): comprensión, identificación de familias y creación de un diálogo propio sobre la familia.
 
@@ -135,6 +148,8 @@ EN CLASE:
 
 ### Secuencia 7 — acts. 5-7: La hora (18-22 min)
 
+Píldora formativa 3.6 — Función comunicativa: decir la hora.
+
 Sistema de la hora: es/son + y/menos, 12 expresiones horarias, excepción es la una. Práctica con horas digitales y cartelera de Cines Ideales.
 
 EN CLASE:
@@ -146,6 +161,8 @@ EN CLASE:
 | 7 | En parejas: preguntar y responder sobre la cartelera de cine | 5-6 min |
 
 ### Secuencia 8 — acts. 8-10: Pronunciación del sonido /θ/ (10-12 min)
+
+Píldora formativa 3.7 — Fonética: el sonido /θ/.
 
 Sonido /θ/: distribución ortográfica z (ante a, o, u) y c (ante e, i). Práctica con 5 palabras modelo y ortografía de 10 palabras.
 
@@ -163,15 +180,17 @@ DEBERES:
 | 9 | Completar 10 palabras con z o c |
 
 Material complementario opcional:
-- Actividad extra 3c — ¿Qué hora es?, en parejas (10 min)
-- Actividad extra 3d — ¿Quedamos?, en grupos de 4 (15-20 min)
-- Juego Batalla naval — gamificación.pdf p.17-18 (40-50 min)
+- Actividad extra 3c — ¿Qué hora es?, en parejas — después de acts. 5-6 (10 min)
+- Actividad extra 3d — ¿Quedamos?, en grupos de 4 — después de act. 7 (15-20 min)
+- Juego Batalla naval — gamificación.pdf p.17-18 — después de act. 7 (40-50 min)
 
 ---
 
 ## Destrezas (p.40-41) — 50-62 min en clase
 
 ### Secuencia 9 — acts. 1-3: El correo de Marta: lectura, comprensión y producción escrita (25-32 min)
+
+Píldora formativa 3.8 — Comprensión y producción escrita: el correo de Marta.
 
 Pre-lectura con apuesta de vocabulario, lectura global y detallada del correo con corrección de afirmaciones, quiz relámpago de comprensión y análisis del texto modelo con dos colores para preparar la escritura del correo propio.
 
@@ -204,6 +223,8 @@ EN CLASE:
 
 ### Secuencia 11 — act. 7: Mediación oral (10-12 min)
 
+Píldora formativa 3.9 — Mediación oral: de yo a él/ella.
+
 Contraste visual yo/mediador, práctica en parejas con tabla de transformación y fórmulas, puesta en común y weaning off.
 
 EN CLASE:
@@ -213,30 +234,31 @@ EN CLASE:
 | 7 (fase 10) | Presentar la mediación con contraste visual, practicar en parejas y puesta en común | 10-12 min |
 
 Material complementario opcional:
-- Actividad extra 3e — Amigos por correo electrónico (20-30 min)
+- Actividad extra 3e — Amigos por correo electrónico — después de act. 3 (20-30 min)
 
 ---
 
-## Cultura (p.42) — 20-25 min en clase (estimado, explotación pendiente)
+## Cultura (p.42) — 25-30 min en clase
 
-### Secuencia 12 — acts. 1-2, 4: El cómic y las películas de animación (20-25 min)
+### Secuencia 12 — acts. 1-4: El cómic y las películas de animación (25-30 min)
 
-Texto sobre Robot Dreams (pista 42), 6 profesiones del cine con sus definiciones y comentario en clase sobre películas y cómics favoritos.
+Píldora formativa 3.10 — Robot Dreams: del dato cultural a la reflexión intercultural.
+
+Texto como rompecabezas léxico: los estudiantes leen buscando las 6 profesiones del cine, las definen por apuesta, rastrean el texto con colores (verbos regulares + vocabulario conocido), comprensión detallada y producción oral con estrategia intercultural.
 
 EN CLASE:
 
 | Act. | Qué se hace | Tiempo |
 |------|-------------|--------|
-| 1 | Leer y escuchar el texto sobre Robot Dreams (pista 42) | 10-12 min |
-| 2 | Relacionar 6 profesiones del cine con sus definiciones | 5-6 min |
-| 4 | Hablar sobre películas de animación y cómics que te gustan | 5-7 min |
+| 1-2 (fusionadas) | Leer el texto buscando las 6 profesiones (pista 42 como soporte), apuesta de significados y rastreo del texto con colores | 10-12 min |
+| 3 | Releer y elegir la respuesta correcta de las 5 preguntas de opción múltiple. Corrección en parejas | 5-7 min |
+| 4 | Hablar sobre películas de animación y cómics que te gustan (tarjeta Comparar sin jerarquizar, Caja 3) | 7-8 min |
 
 DEBERES:
 
 | Act. | Qué se hace |
 |------|-------------|
-| 3 | Opción múltiple sobre el texto de Robot Dreams (5 preguntas) |
-| 5 | Buscar información sobre el cine de animación |
+| 5 | Buscar información sobre el cine de animación y preparar 1-2 frases |
 
 ---
 
@@ -278,11 +300,11 @@ EN CLASE:
 | Gramática (p.36-37) | 52-65 min | U03-gramatica.md |
 | Comunicación (p.38-39) | 53-64 min | U03-comunicacion.md |
 | Destrezas (p.40-41) | 50-62 min | U03-destrezas.md |
-| Cultura (p.42) | 20-25 min | Estimación |
+| Cultura (p.42) | 25-30 min | U03-cultura.md |
 | Reflexión (p.43) | 12-15 min | Estimación |
-| TOTAL | 237-291 min | |
+| TOTAL | 242-296 min | |
 
-Rango medio: ~264 min en clase = ~5,9 sesiones de 45 min.
+Rango medio: ~269 min en clase = ~6,0 sesiones de 45 min.
 
 Distribución sugerida en 8 sesiones:
 
@@ -295,11 +317,11 @@ Distribución sugerida en 8 sesiones:
 | 5 | Comunicación — Secuencia 7 + Secuencia 8 | 28-34 min |
 | 6 | Destrezas — Secuencia 9 (Leer y escribir, p.40) | 25-32 min |
 | 7 | Destrezas — Secuencias 10-11 (Escuchar, hablar y mediar, p.41) | 25-30 min |
-| 8 | Cultura + Reflexión — Secuencias 12-14 | 32-40 min |
+| 8 | Cultura + Reflexión — Secuencias 12-14 | 37-45 min |
 
 Las sesiones 4 y 5 quedan más ligeras; el margen se puede usar para corregir deberes o incluir material complementario.
 
 Tiempo total de la unidad: ~4 semanas (8 sesiones + deberes continuos).
 Si se necesita, la sesión 9 se dedica a la evaluación sumativa con evaluacion3.pdf (30-40 min).
 
-Presupuesto del curso: 60 h / 9 unidades = ~6,6 h por unidad (~400 min). Esta unidad usa ~264 min en clase, dejando ~136 min de margen por unidad para corrección de deberes, material complementario, evaluación e imprevistos.
+Presupuesto del curso: 60 h / 9 unidades = ~6,6 h por unidad (~400 min). Esta unidad usa ~269 min en clase, dejando ~131 min de margen por unidad para corrección de deberes, material complementario, evaluación e imprevistos.

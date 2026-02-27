@@ -273,7 +273,7 @@ H3 PUESTA EN COMÚN (3-5 min)
 
 **Contexto:** El estudiante cuenta algo especial de su familia a su compañero, y el compañero lo transmite a la clase en 3.ª persona. Trabaja mediación lingüística del MCER Companion Volume: transformar el mensaje cambiando la perspectiva (1.ª → 3.ª persona).
 
-**Banco de técnicas:** Consultar `referencias/mediacion-parte1.md` a `parte4.md`. Seleccionar técnicas específicas para mediación A1.
+**Banco de técnicas:** Consultar `referencias/mediacion.md`. Seleccionar técnicas específicas para mediación A1.
 
 **Opción A — Con tarjetas de estrategia del mediador**
 - Cuándo: Primera actividad de mediación, estudiantes sin experiencia mediadora, necesidad de andamiaje lingüístico.
