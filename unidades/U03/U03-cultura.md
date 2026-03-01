@@ -147,11 +147,11 @@ Expresiones utiles para no generalizar:
 **Imprimir** -- Material 6: Insignia Son mis amigos
 
 **Insignia y obtencion**
-Comente a los estudiantes que al terminar la seccion recibiran la insignia Son mis amigos. Esta expresion viene de la cancion Son mis amigos de Amaral, y conecta con el tema central de Robot Dreams: la amistad. Para obtenerla deberan participar activamente en las cinco actividades: aprender las profesiones del cine, leer y escuchar el texto, responder las preguntas, expresar sus gustos sobre peliculas y comics, e iniciar la investigacion sobre cine de animacion.
+Comente a los estudiantes que al terminar la seccion recibiran la insignia Son mis amigos. Esta expresion viene de la cancion Son mis amigos de Amaral, y conecta con el tema central de Robot Dreams: la amistad. Para obtenerla deberan participar activamente en los cinco ejercicios: aprender las profesiones del cine, leer y escuchar el texto, responder las preguntas, expresar sus gustos sobre peliculas y comics, e iniciar la investigacion sobre cine de animacion.
 
 Insignia: Son mis amigos
 Competencia: Se leer un texto cultural, entender las profesiones del cine y hablar de las peliculas y los comics que me gustan.
-Para obtenerla: participar activamente en las cinco actividades de la seccion de Cultura.
+Para obtenerla: participar activamente en los cinco ejercicios de la seccion de Cultura.
 Compartir: ¡Ya se hablar de cine y comics en español! Son mis amigos...
 
 ---
@@ -161,7 +161,7 @@ Compartir: ¡Ya se hablar de cine y comics en español! Son mis amigos...
 **Objetivo** -- Expresar gustos sobre peliculas y comics conectando el tema cultural del texto con su experiencia personal.
 
 *Repertorio aplicado: Protocolo CU (CU1-CU5)*
-*Justificacion: La seccion de Cultura tiene una unica pagina con un texto divulgativo sobre el comic y las peliculas de animacion, centrado en Robot Dreams (Pablo Berger). El texto funciona como contenedor linguistico (reciclaje visible de presente regular, tener, vocabulario de la unidad) y como vehiculo de contenido cultural especifico (Robot Dreams como punto de entrada a la reflexion intercultural). El protocolo CU reordena las actividades del libro: el vocabulario (act. 2 del libro) se trabaja antes de la lectura (act. 1 del libro).*
+*Justificacion: La seccion de Cultura tiene una unica pagina con un texto divulgativo sobre el comic y las peliculas de animacion, centrado en Robot Dreams (Pablo Berger). El texto funciona como contenedor linguistico (reciclaje visible de presente regular, tener, vocabulario de la unidad) y como vehiculo de contenido cultural especifico (Robot Dreams como punto de entrada a la reflexion intercultural). El protocolo CU reordena los ejercicios del libro: el vocabulario (ej. 2 del libro) se trabaja antes de la lectura (ej. 1 del libro).*
 
 **PREPARACION**
 → Tener: libro abierto en p.42.
@@ -198,7 +198,7 @@ El texto cultural contiene gramatica y vocabulario ya formalizados en las seccio
 - Presente regular: nace (nacer), necesita (necesitar), intervienen (intervenir), interesan (interesar), vive (vivir), fabrica (fabricar), se separan (separarse).
 - Verbo tener: no tiene un solo humano.
 - Vocabulario de la unidad: historia, amigo, familia (no aparece directamente pero el tema conecta con los vinculos afectivos).
-- Estructuras de Comunicacion: expresar gustos esta implicito en la pregunta guia (¿por que gusta a todas las edades?) y explicito en la actividad 4 (¿que peliculas de animacion te gustan?).
+- Estructuras de Comunicacion: expresar gustos esta implicito en la pregunta guia (¿por que gusta a todas las edades?) y explicito en el ejercicio 4 (¿que peliculas de animacion te gustan?).
 
 Vocabulario tematico del texto (6 palabras):
 Las profesiones del cine son vocabulario nuevo, pero se trata de forma receptiva. El estudiante las comprende en el contexto del texto y las relaciona con sus definiciones (act. 2 del libro, anticipada como act. 1 en la guia), pero no se le exige memorizacion activa.
@@ -250,10 +250,10 @@ En pantalla:
 - Debajo del texto: recuento visual: 7 verbos en presente regular + vocabulario de la unidad + 6 profesiones nuevas = el texto esta lleno de cosas que ya sabeis.
 
 Instrucciones para el profesor:
-1. Despues de la primera lectura global (actividad 2, CU2), proyecte o escriba en la pizarra las tres categorias de color.
+1. Despues de la primera lectura global (ejercicio 2, CU2), proyecte o escriba en la pizarra las tres categorias de color.
 2. Pida a los estudiantes que busquen en el texto: ¿Cuantos verbos en presente regular encontrais? Recoja respuestas a mano alzada. Subraye cada verbo en verde.
 3. Señale el vocabulario ya conocido en azul: historia, amigo. Pregunte: ¿Donde habeis visto estas palabras antes?
-4. Señale en rojo las profesiones del cine: estas son las palabras nuevas. Solo 6. Y ya las habeis trabajado en la actividad 1.
+4. Señale en rojo las profesiones del cine: estas son las palabras nuevas. Solo 6. Y ya las habeis trabajado en el ejercicio 1.
 5. Cierre el mapeo: Este texto tiene 7 verbos que ya conoceis, vocabulario de la unidad y solo 6 palabras nuevas. Ya sabeis mucho de lo que dice. Ahora vamos a leer QUE nos cuenta sobre el cine.
 
 **Diapositiva 2 -- ROBOT DREAMS: MAS ALLA DEL DATO**
@@ -305,9 +305,9 @@ Instrucciones para el profesor:
 
 ---
 
-**Actividad 1** -- Relaciona las palabras con sus definiciones. (Actividad 2 del libro, anticipada como pre-lectura)
+**Ejercicio 1** -- Relaciona las palabras con sus definiciones. (Ejercicio 2 del libro, anticipada como pre-lectura)
 *Repertorio aplicado: §3.1 Opcion B -- Apuesta de significados*
-*Justificacion: el vocabulario tematico (profesiones del cine) es parcialmente transparente por cognados (actor, decorador). La apuesta de significados permite que los estudiantes activen la transferencia desde su L1 antes de verificar con las definiciones del libro. Variables: posicion = primera actividad (reordenada); tipo = vocabulario pre-lectura; transparencia = media-alta (cognados parciales). Principio: vocabulario antes de lectura (sin vocabulario no hay comprension); CLT: reducir carga extraña.*
+*Justificacion: el vocabulario tematico (profesiones del cine) es parcialmente transparente por cognados (actor, decorador). La apuesta de significados permite que los estudiantes activen la transferencia desde su L1 antes de verificar con las definiciones del libro. Variables: posicion = primer ejercicio (reordenado); tipo = vocabulario pre-lectura; transparencia = media-alta (cognados parciales). Principio: vocabulario antes de lectura (sin vocabulario no hay comprension); CLT: reducir carga extraña.*
 
 **Fase CU1 -- Active el conocimiento previo y pre-enseñe el vocabulario**
 Agrupamiento: grupo-clase → parejas | Tiempo: 3-5 min | Material: libro p.42 + tarjetas de profesiones del cine (Caja 1)
@@ -322,7 +322,7 @@ Escriba en la pizarra las 6 profesiones: guionista, dibujante, iluminador, decor
 
 Recoja respuestas. Para las mas transparentes (actor, decorador), los estudiantes identificaran el significado rapidamente. Para las menos transparentes (guionista, iluminador), guie con la raiz: guionista viene de guion, la historia escrita de la pelicula. Iluminador viene de iluminar, dar luz.
 
-Pida que abran la actividad 2 del libro (relacionar palabras con definiciones). En parejas, verifican sus apuestas con las definiciones del libro (2 minutos). Reparta las tarjetas de profesiones del cine (Caja 1) como confirmacion.
+Pida que abran el ejercicio 2 del libro (relacionar palabras con definiciones). En parejas, verifican sus apuestas con las definiciones del libro (2 minutos). Reparta las tarjetas de profesiones del cine (Caja 1) como confirmacion.
 
 Respuestas:
 1. guionista -- Escribe el guion de una pelicula.
@@ -334,7 +334,7 @@ Respuestas:
 
 ---
 
-**Actividad 2** -- Lee y escucha el texto. ¿Por que esta pelicula de animacion le gusta al publico de todas las edades? (Actividad 1 del libro)
+**Ejercicio 2** -- Lee y escucha el texto. ¿Por que esta pelicula de animacion le gusta al publico de todas las edades? (Ejercicio 1 del libro)
 *Repertorio aplicado: §3.2 Opcion A -- Lectura guiada + mapeo en pizarra*
 *Justificacion: el grupo necesita apoyo visual para el mapeo del texto como contenedor. El profesor guia en la pizarra la identificacion de verbos en presente regular, vocabulario de la unidad y vocabulario tematico ya trabajado en CU1. Variables: posicion = despues de vocabulario; tipo = lectura global + texto mapeado; audio = pista 42 como soporte. Principio: tarea antes de leer (pregunta guia); texto como contenedor mapeado (reciclaje visible).*
 
@@ -365,7 +365,7 @@ Cierre el mapeo: Este texto tiene 7 verbos en presente regular que ya conoceis y
 
 ---
 
-**Actividad 3** -- Vuelve a leer el texto del ejercicio 1 y elige la respuesta correcta. (Actividad 3 del libro)
+**Ejercicio 3** -- Vuelve a leer el texto del ejercicio 1 y elige la respuesta correcta. (Ejercicio 3 del libro)
 *Repertorio aplicado: §3.3 Opcion A -- Individual + correccion en parejas*
 *Justificacion: procedimiento estandar, funciona en la mayoria de contextos. Las preguntas del libro combinan datos factuales con preguntas que apuntan al significado cultural (¿por que es muda? ¿cuantas personas son necesarias?). Variables: posicion = despues del mapeo; tipo = comprension detallada con opcion multiple; preguntas = 5. Principio: comprension profunda antes de produccion.*
 
@@ -376,7 +376,7 @@ Agrupamiento: individual → parejas → grupo-clase | Tiempo: 5-8 min | Materia
 
 Diga: Ahora vais a leer otra vez el texto, con mas atencion. Hay 5 preguntas con 3 opciones cada una. Leed y elegid la respuesta correcta.
 
-De 3-4 minutos para la actividad individual. Correccion en parejas (2 minutos): si hay desacuerdo, buscan en el texto donde esta la informacion. Puesta en comun selectiva: solo los items con desacuerdo.
+De 3-4 minutos para el trabajo individual. Correccion en parejas (2 minutos): si hay desacuerdo, buscan en el texto donde esta la informacion. Puesta en comun selectiva: solo los items con desacuerdo.
 
 Respuestas:
 1. ¿Que es el comic? -- c) Una mezcla de dibujo y texto.
@@ -389,7 +389,7 @@ Despues de la correccion, señale la pregunta 5: los personajes no hablan. ¿Por
 
 ---
 
-**Actividad 4** -- ¿Que peliculas de animacion te gustan? ¿Que comics conoces? (Actividad 4 del libro)
+**Ejercicio 4** -- ¿Que peliculas de animacion te gustan? ¿Que comics conoces? (Ejercicio 4 del libro)
 *Repertorio aplicado: §3.4 Opcion A -- Circulo de gustos + reflexion cultural*
 *Justificacion: el tema cultural permite expresion directa de gustos personales. Se integra la explotacion del contenido cultural especifico (Robot Dreams) como vehiculo intercultural y la estrategia de la Caja 3 (Comparar sin jerarquizar). Variables: posicion = despues de comprension detallada; tipo = produccion oral + reflexion intercultural; nivel = A1 (expresion sencilla de gustos). Principio: worked example obligatorio antes de produccion; feedback de contenido antes que de forma.*
 
@@ -414,7 +414,7 @@ Conecte con la reflexion intercultural: ¿Hay peliculas de animacion en vuestro 
 
 ---
 
-**Actividad 5** -- Busca informacion sobre el cine de animacion. ¿Que peliculas conoces? ¿Cual te gusta mas? (Actividad 5 del libro)
+**Ejercicio 5** -- Busca informacion sobre el cine de animacion. ¿Que peliculas conoces? ¿Cual te gusta mas? (Ejercicio 5 del libro)
 *Repertorio aplicado: §3.5 Opcion A -- Mini-investigacion guiada*
 *Justificacion: el grupo se beneficia de preguntas concretas que guian la busqueda. La tarea es para fuera del aula (deberes o tarea autonoma). Variables: posicion = cierre de la seccion; tipo = investigacion autonoma; producto = minimo (1-2 frases + 1 imagen o dato). Principio: fomentar autonomia y competencia digital; conectar el tema cultural con la curiosidad personal.*
 
@@ -435,11 +435,11 @@ Producto minimo: en la siguiente clase, cada estudiante comparte lo encontrado e
 
 **ENTREGA DE INSIGNIA**
 
-Mencione que por haber participado activamente en las cinco actividades reciben la insignia SON MIS AMIGOS. Comente que esta expresion viene de la cancion Son mis amigos de Amaral, y conecta con el tema de Robot Dreams: la amistad. Si lo desea, ponga la cancion en clase.
+Mencione que por haber participado activamente en los cinco ejercicios reciben la insignia SON MIS AMIGOS. Comente que esta expresion viene de la cancion Son mis amigos de Amaral, y conecta con el tema de Robot Dreams: la amistad. Si lo desea, ponga la cancion en clase.
 
 ---
 
 **Consolidacion distribuida:**
-- 24h: Tarea de investigacion (actividad 5) -- el estudiante busca informacion y prepara 1-2 frases.
+- 24h: Tarea de investigacion (ejercicio 5) -- el estudiante busca informacion y prepara 1-2 frases.
 - 1 semana: Al empezar una clase, preguntar: ¿Alguien ha visto una pelicula de animacion esta semana? ¿Cual? ¿Os ha gustado? Reutilizar expresion de gustos.
 - 4 semanas: Llevar a clase una imagen de una pelicula de animacion o un comic (de cualquier cultura). Cada estudiante dice 2-3 frases: que es, de donde es, por que le gusta. Reutilizar la estrategia de comparar sin jerarquizar.

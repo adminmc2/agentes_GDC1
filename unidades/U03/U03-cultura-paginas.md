@@ -14,7 +14,7 @@ Expresar gustos sobre películas y cómics conectando el tema cultural del texto
 Imprimir ficha 7 -- Son mis amigos
 
 Insignia y obtención
-Comente a los estudiantes que al terminar la sección recibirán la insignia SON MIS AMIGOS. Para obtenerla deberán participar activamente en las cinco actividades: aprender las profesiones del cine, leer y escuchar el texto, responder las preguntas, expresar sus gustos y comenzar la investigación sobre cine de animación.
+Comente a los estudiantes que al terminar la sección recibirán la insignia SON MIS AMIGOS. Para obtenerla deberán participar activamente en los cinco ejercicios: aprender las profesiones del cine, leer y escuchar el texto, responder las preguntas, expresar sus gustos y comenzar la investigación sobre cine de animación.
 
 Ejercicios 1-5
 
@@ -31,7 +31,7 @@ Pida que abran el libro en la página 42. Señale la foto y el título. Pregunte
 
 Escriba en la pizarra (o anuncie): En este texto hay 6 profesiones del cine. ¿Cuáles son? Pida que lean el texto y las encuentren. Reproduzca el audio 42 como soporte mientras leen. En parejas, localizan las 6 profesiones.
 
-Pida que digan las profesiones encontradas. Escríbalas en la pizarra (o márquelas en el libro digital con la herramienta marcador). Pregunte: ¿Qué creéis que significa cada una? Lance una apuesta rápida en parejas (30 segundos). Para las menos transparentes, guíe con la raíz: guionista viene de guión, iluminador de iluminar. Pida que verifiquen con la actividad 2 del libro. Reparta, si lo considera necesario, las tarjetas de profesiones del cine (Caja 1) como confirmación.
+Pida que digan las profesiones encontradas. Escríbalas en la pizarra (o márquelas en el libro digital con la herramienta marcador). Pregunte: ¿Qué creéis que significa cada una? Lance una apuesta rápida en parejas (30 segundos). Para las menos transparentes, guíe con la raíz: guionista viene de guión, iluminador de iluminar. Pida que verifiquen con el ejercicio 2 del libro. Reparta, si lo considera necesario, las tarjetas de profesiones del cine (Caja 1) como confirmación.
 
 RASTREE EL TEXTO Y CIERRE CON LA PREGUNTA GUÍA
 
@@ -39,7 +39,7 @@ Con el libro digital (herramienta marcador) o con dos colores en la pizarra, ras
 
 COORDINE LA COMPRENSIÓN DETALLADA
 
-Pida que relean el texto y elijan la respuesta correcta de las 5 preguntas de opción múltiple (actividad 3). Dé 3-4 minutos. Corrección en parejas: si hay desacuerdo, buscan en el texto. Puesta en común selectiva.
+Pida que relean el texto y elijan la respuesta correcta de las 5 preguntas de opción múltiple (ejercicio 3). Dé 3-4 minutos. Corrección en parejas: si hay desacuerdo, buscan en el texto. Puesta en común selectiva.
 
 Después de corregir, señale la pregunta 5: los personajes no hablan. ¿Por qué? ¿Qué puede decir una película sin palabras?
 
@@ -51,14 +51,14 @@ En parejas, los estudiantes responden: ¿Qué películas de animación te gustan
 
 PROPONGA LA TAREA DE INVESTIGACIÓN
 
-Presente la actividad 5 como cierre. El estudiante elige una de 3 preguntas: (1) buscar una película de animación española o latinoamericana que no sea Robot Dreams, (2) buscar un cómic famoso en español (Mafalda, Mortadelo y Filemón, Condorito), (3) preparar 2 frases sobre su película de animación favorita. Producto mínimo: 1-2 frases para compartir en la próxima clase.
+Presente el ejercicio 5 como cierre. El estudiante elige una de 3 preguntas: (1) buscar una película de animación española o latinoamericana que no sea Robot Dreams, (2) buscar un cómic famoso en español (Mafalda, Mortadelo y Filemón, Condorito), (3) preparar 2 frases sobre su película de animación favorita. Producto mínimo: 1-2 frases para compartir en la próxima clase.
 
 ENTREGA DE INSIGNIA
 
-Mencione que por haber participado activamente en las cinco actividades reciben la insignia SON MIS AMIGOS que corresponde a una canción del grupo Amaral con el mismo título. Si desea puede poner la canción.
+Mencione que por haber participado activamente en los cinco ejercicios reciben la insignia SON MIS AMIGOS que corresponde a una canción del grupo Amaral con el mismo título. Si desea puede poner la canción.
 
 Consolidación distribuida:
-- 24h: Tarea de investigación (actividad 5) -- buscar información y preparar 1-2 frases.
+- 24h: Tarea de investigación (ejercicio 5) -- buscar información y preparar 1-2 frases.
 - 1 semana: Preguntar al empezar clase: ¿Alguien ha visto una película de animación esta semana? ¿Os ha gustado?
 - 4 semanas: Traer una imagen de una película o cómic. Decir 2-3 frases: qué es, de dónde es, por qué le gusta. Reutilizar la estrategia de comparar sin jerarquizar.
 
@@ -76,7 +76,7 @@ Principios aplicados en la reducción:
 
 Recortes:
 1. Estación de servicio: eliminada la descripción completa de las 3 cajas (solo referencia a cajas 1-2-3). Tarjeta de estrategia intercultural referenciada, no detallada (se imprime aparte).
-2. Actividades 1-2 (vocabulario + lectura): fusionadas en una sola secuencia (Propuesta C -- texto como rompecabezas léxico). El estudiante lee el texto buscando las 6 profesiones, luego las define por apuesta, y finalmente se rastrea el texto completo. La pregunta guía cierra el rastreo.
+2. Ejercicios 1-2 (vocabulario + lectura): fusionadas en una sola secuencia (Propuesta C -- texto como rompecabezas léxico). El estudiante lee el texto buscando las 6 profesiones, luego las define por apuesta, y finalmente se rastrea el texto completo. La pregunta guía cierra el rastreo.
 3. Rastreo del texto: integrado en la secuencia fusionada. Dos colores sin especificar cuáles (un color para verbos, otro para vocabulario).
 4. Comprensión detallada: eliminadas las respuestas explícitas. Mantenida estructura: individual → parejas → puesta en común selectiva.
 5. Producción oral: mantenido el worked example del profesor. Condensada la reflexión intercultural (referencia a Tarjeta de estrategia -- Comparar sin jerarquizar y matización).

@@ -10,11 +10,33 @@ Los tiempos incluyen la explotación didáctica completa (ver guía de cada secc
 
 El profesor imprime todas las tarjetas antes de empezar la unidad.
 
-- Caja 1 — Vocabulario: 30 tarjetas (18 de parentesco + 3 de profesiones + 9 de vocabulario contextual de Destrezas)
-- Caja 2 — Gramática: 19 tarjetas (10 de verbos + 3 de conjugación comparativa + 3 de posesivos + 3 de interrogativos)
-- Caja 3 — Estrategias: 7 tarjetas (2 de comunicación + 1 de pronunciación + 4 de destrezas: lectura, escritura, escucha y mediación)
+Caja 1 — Vocabulario: 36 tarjetas
 
-Total: 56 tarjetas.
+| Componente | Campo semántico | Tarjetas | Detalle |
+|------------|----------------|----------|---------|
+| Vocabulario (p.34-35) | Familia (violeta) | 18 | padre, madre, hermano/a, hijo/a, abuelo/a, tío/a, primo/a, marido, mujer, nieto/a, sobrino/a |
+| Vocabulario (p.34-35) | Profesiones (naranja) | 3 | camionero, enfermera, agricultor |
+| Destrezas (p.40-41) | Lugares (celeste) | 2 | hotel, hospital |
+| Destrezas (p.40-41) | Escuela (verde) | 3 | instituto, curso, deberes |
+| Destrezas (p.40-41) | Televisión (gris) | 2 | telediario, documental |
+| Destrezas (p.40-41) | Edad (amarillo) | 2 | mayor, pequeño |
+| Cultura (p.42) | Cine (por definir) | 6 | guionista, dibujante, iluminador/a, decorador/a, maquillador/a, actor/actriz |
+
+Caja 2 — Gramática: 19 tarjetas
+
+| Componente | Tarjetas | Detalle |
+|------------|----------|---------|
+| Gramática (p.36-37) | 19 | 10 de verbos + 3 de conjugación comparativa + 3 de posesivos + 3 de interrogativos |
+
+Caja 3 — Estrategias: 7 tarjetas
+
+| Componente | Tarjetas | Detalle |
+|------------|----------|---------|
+| Comunicación (p.38-39) | 2 | 2 esquemas comunicativos (hablar de la familia, decir la hora) |
+| Destrezas (p.40-41) | 4 | lectura, escritura, escucha y mediación |
+| Cultura (p.42) | 1 | estrategia intercultural: Comparar sin jerarquizar |
+
+Total: 62 tarjetas (36 + 19 + 7).
 
 ---
 
@@ -61,10 +83,9 @@ DEBERES:
 | 9 | Responder a las 4 preguntas sobre el texto de Lucía |
 
 Material complementario opcional:
-- Presentación UNIDAD3NUEVOCOMPANEROS.pptx — después de acts. 1-4 (10-15 min)
-- Actividad extra 3a — Árbol genealógico en parejas — después de acts. 1-4 (10-15 min)
-- Juego Ronda familiar — gamificación.pdf p.12-16 — después de acts. 3-4 (20-30 min)
-- Actividad extra 3b — Juego de lógica — después de act. 10 (15-20 min)
+- Presentación UNIDAD3NUEVOCOMPANEROS.pptx — después de acts. 1-4 (10-15 min). Árbol genealógico de Julia proyectable + juego V/F interactivo. Alternativa visual al árbol de David del libro.
+- Actividad extra 3a — Árbol genealógico en parejas — después de acts. 1-4 (10-15 min). Vacío de información oral: cada estudiante tiene pistas diferentes sobre la familia de Ángel y completan el árbol juntos.
+- Juego Ronda familiar — gamificación.pdf p.12-16 — después de acts. 3-4 (20-30 min). Juego de cartas en equipos: emparejar definiciones perifrásticas con el término directo (el padre de mi madre = mi abuelo).
 
 ---
 
@@ -125,7 +146,7 @@ DEBERES:
 | 9 | Cuaderno de vocabulario: escribir palabras nuevas y traducir |
 
 Material complementario opcional:
-- Actividad extra 3b — Juego de lógica — después de act. 8 (15-20 min)
+- Actividad extra 3b — Juego de lógica — después de act. 8 (15-20 min). 18 pistas textuales para completar una tabla de 4 personas (estado civil, edad, profesión, hijos, hermanos). Cruza vocabulario de familia + tener + presente regular. Individual o concurso.
 
 ---
 
@@ -244,7 +265,7 @@ Material complementario opcional:
 
 Píldora formativa 3.10 — Robot Dreams: del dato cultural a la reflexión intercultural.
 
-Texto como rompecabezas léxico: los estudiantes leen buscando las 6 profesiones del cine, las definen por apuesta, rastrean el texto con colores (verbos regulares + vocabulario conocido), comprensión detallada y producción oral con estrategia intercultural.
+Lectura del texto sobre Robot Dreams, vocabulario de profesiones del cine, comprensión y producción oral.
 
 EN CLASE:
 
@@ -289,6 +310,9 @@ EN CLASE:
 |-------------|--------|
 | Corrección de las 6 actividades y resolución de dudas | 10-12 min |
 | Autoevaluación | 2-3 min |
+
+Material complementario opcional:
+- Evaluación sumativa evaluacion3.pdf — en sesión separada después de la corrección (30-40 min). 11 ejercicios que cubren vocabulario de parentesco, presente regular, tener, posesivos, interrogativos, orden de palabras, ortografía /θ/, la hora, comprensión lectora y producción escrita.
 
 ---
 

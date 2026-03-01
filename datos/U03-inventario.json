@@ -1165,7 +1165,8 @@
             "4. Carmen es la hermana de mi madre. Es mi ___.",
             "5. Los hijos de Carmen son mis ___.",
             "6. El padre de mi madre es mi ___.",
-            "7. La madre de mi padre es mi ___."
+            "7. La madre de mi padre es mi ___.",
+            "8. Yo soy el ___ de mi abuela."
           ],
           "respuestas": [
             "1. hijo",
@@ -1174,9 +1175,10 @@
             "4. tía",
             "5. primos",
             "6. abuelo",
-            "7. abuela"
+            "7. abuela",
+            "8. nieto"
           ],
-          "descripcion": "7 frases desde la perspectiva de David; el alumno completa con el término de parentesco correcto."
+          "descripcion": "8 frases desde la perspectiva de David; el alumno completa con el término de parentesco correcto."
         },
         {
           "id": "U03-p43-act05",
@@ -1284,6 +1286,10 @@
     {
       "fecha": "2026-02-27",
       "cambio": "Destrezas p.41: eliminada actividad 8 fantasma (encuesta familiar que no existe en el libro); corregido changelog de p.41 (4 actividades acts 4-7, no 5 acts 4-8)."
+    },
+    {
+      "fecha": "2026-02-27",
+      "cambio": "Reflexión p.43 act. 4: añadido ítem 8 (Yo soy el ___ de mi abuela → nieto) que faltaba; corregida descripción de 7 a 8 frases."
     },
     {
       "fecha": "2026-02-20",
