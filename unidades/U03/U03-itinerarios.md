@@ -312,6 +312,7 @@ EN CLASE:
 | Autoevaluación | 2-3 min |
 
 Material complementario opcional:
+- Busco y encuentro — antes o después de la corrección colectiva (15-20 min). 15 tarjetas de personajes ficticios: los estudiantes se mueven por la clase buscando entre sus compañeros a las personas que cumplen las características de su ficha. Repaso oral de vocabulario y estructuras de las tres primeras unidades.
 - Evaluación sumativa evaluacion3.pdf — en sesión separada después de la corrección (30-40 min). 11 ejercicios que cubren vocabulario de parentesco, presente regular, tener, posesivos, interrogativos, orden de palabras, ortografía /θ/, la hora, comprensión lectora y producción escrita.
 
 ---
