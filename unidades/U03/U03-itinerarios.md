@@ -10,23 +10,22 @@ Los tiempos incluyen la explotación didáctica completa (ver guía de cada secc
 
 El profesor imprime todas las tarjetas antes de empezar la unidad.
 
-Caja 1 — Vocabulario: 36 tarjetas
+Caja 1 — Vocabulario: 34 tarjetas
 
 | Componente | Campo semántico | Tarjetas | Detalle |
 |------------|----------------|----------|---------|
 | Vocabulario (p.34-35) | Familia (violeta) | 18 | padre, madre, hermano/a, hijo/a, abuelo/a, tío/a, primo/a, marido, mujer, nieto/a, sobrino/a |
-| Vocabulario (p.34-35) | Profesiones (naranja) | 3 | camionero, enfermera, agricultor |
+| Vocabulario (p.34-35), Cultura (p.42) | Profesiones (naranja) | 9 | camionero, enfermera, agricultor, guionista, dibujante, iluminador/a, decorador/a, maquillador/a, actor/actriz |
 | Destrezas (p.40-41) | Lugares (celeste) | 2 | hotel, hospital |
 | Destrezas (p.40-41) | Escuela (verde) | 3 | instituto, curso, deberes |
 | Destrezas (p.40-41) | Televisión (gris) | 2 | telediario, documental |
-| Destrezas (p.40-41) | Edad (amarillo) | 2 | mayor, pequeño |
-| Cultura (p.42) | Cine (por definir) | 6 | guionista, dibujante, iluminador/a, decorador/a, maquillador/a, actor/actriz |
 
-Caja 2 — Gramática: 19 tarjetas
+Caja 2 — Gramática: 21 tarjetas
 
 | Componente | Tarjetas | Detalle |
 |------------|----------|---------|
 | Gramática (p.36-37) | 19 | 10 de verbos + 3 de conjugación comparativa + 3 de posesivos + 3 de interrogativos |
+| Gramática (p.36-37) | 2 | Grado comparativo del adjetivo: mayor, pequeño |
 
 Caja 3 — Estrategias: 7 tarjetas
 
@@ -36,7 +35,7 @@ Caja 3 — Estrategias: 7 tarjetas
 | Destrezas (p.40-41) | 4 | lectura, escritura, escucha y mediación |
 | Cultura (p.42) | 1 | estrategia intercultural: Comparar sin jerarquizar |
 
-Total: 62 tarjetas (36 + 19 + 7).
+Total: 62 tarjetas (34 + 21 + 7).
 
 ---
 

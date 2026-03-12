@@ -1,6 +1,20 @@
+# macOS
 .DS_Store
+
+# Archivos temporales
+~*
+
+# LaTeX (archivos de compilacion)
 *.aux
 *.log
 *.synctex.gz
+
+# Archivos binarios pesados (diseno, maquetas, comprimidos)
+*.ai
+*.indd
+*.psd
+*.zip
+*.rar
+
+# Word (se trabaja en Markdown)
 *.docx
-~*
