@@ -1,0 +1,13 @@
+.env
+.git
+.claude
+__pycache__
+*.pyc
+datos/fuente/*.pdf
+materiales/**/*.pdf
+material-complementario/
+tarjetas/
+*.indd
+*.ai
+*.psd
+diseno/

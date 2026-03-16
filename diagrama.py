@@ -9,14 +9,31 @@ import http.server
 import json
 import hashlib
 import os
+import subprocess
+import sys
+import threading
+import time
+import uuid
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import psycopg2
 from psycopg2.extras import RealDictCursor
+from dotenv import load_dotenv
+load_dotenv()
 
 PROJECT = Path(__file__).parent
 PORT = 8080
+
+# --- Langfuse client (para API de trazas) ---
+_langfuse_client = None
+if os.environ.get("LANGFUSE_PUBLIC_KEY"):
+    try:
+        from langfuse import Langfuse
+        _langfuse_client = Langfuse()
+        print("[Langfuse] API de trazas disponible")
+    except Exception as e:
+        print(f"[Langfuse] No disponible: {e}")
 DATABASE_URL = os.environ.get(
     "DATABASE_URL",
     "postgresql://neondb_owner:npg_DU3EHycC7KhT@ep-floral-unit-anln8vly.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require",
@@ -96,6 +113,194 @@ def delete_tarjeta(tarjeta_id):
     cur.execute("DELETE FROM tarjetas_vocabulario WHERE id = %s", (tarjeta_id,))
     conn.commit()
     conn.close()
+
+
+def get_evaluaciones(unidad=None):
+    conn = _db()
+    cur = conn.cursor(cursor_factory=RealDictCursor)
+    if unidad:
+        cur.execute("""
+            SELECT id, run_id, unidad, modelo, prompt_version,
+                   total_tarjetas, metricas, duracion_s,
+                   tokens_input, tokens_output, coste_usd, fecha
+            FROM evaluaciones WHERE unidad = %s ORDER BY fecha DESC LIMIT 50
+        """, (unidad,))
+    else:
+        cur.execute("""
+            SELECT id, run_id, unidad, modelo, prompt_version,
+                   total_tarjetas, metricas, duracion_s,
+                   tokens_input, tokens_output, coste_usd, fecha
+            FROM evaluaciones ORDER BY fecha DESC LIMIT 50
+        """)
+    rows = [dict(r) for r in cur.fetchall()]
+    conn.close()
+    return rows
+
+
+def get_trazas(limit=20):
+    """Obtiene las últimas trazas desde Langfuse API."""
+    if not _langfuse_client:
+        return {"error": "Langfuse no configurado", "trazas": []}
+    try:
+        traces = _langfuse_client.api.trace.list(limit=limit)
+        result = []
+        for t in traces.data:
+            result.append({
+                "id": t.id,
+                "name": t.name,
+                "timestamp": str(t.timestamp) if t.timestamp else None,
+                "latency": t.latency,
+                "total_cost": t.total_cost,
+                "input": str(t.input)[:200] if t.input else None,
+                "output": str(t.output)[:500] if t.output else None,
+                "metadata": t.metadata,
+                "tags": t.tags,
+                "observations_count": len(t.observations) if t.observations else 0,
+            })
+        return {"trazas": result, "total": len(result)}
+    except Exception as e:
+        return {"error": str(e), "trazas": []}
+
+
+def get_traza_detalle(trace_id):
+    """Obtiene el detalle de una traza con todas sus observaciones."""
+    if not _langfuse_client:
+        return {"error": "Langfuse no configurado"}
+    try:
+        t = _langfuse_client.api.trace.get(trace_id)
+        observations = []
+        for obs in (t.observations or []):
+            observations.append({
+                "id": obs.id,
+                "type": obs.type,
+                "name": obs.name,
+                "start_time": str(obs.start_time) if obs.start_time else None,
+                "end_time": str(obs.end_time) if obs.end_time else None,
+                "latency": obs.latency,
+                "input": str(obs.input)[:500] if obs.input else None,
+                "output": str(obs.output)[:500] if obs.output else None,
+                "level": obs.level,
+                "status_message": obs.status_message,
+                "usage": obs.usage.model_dump() if obs.usage else None,
+                "total_cost": obs.calculated_total_cost,
+                "parent_id": obs.parent_observation_id,
+            })
+        # Sort by start_time
+        observations.sort(key=lambda x: x["start_time"] or "")
+        return {
+            "id": t.id,
+            "name": t.name,
+            "timestamp": str(t.timestamp) if t.timestamp else None,
+            "latency": t.latency,
+            "total_cost": t.total_cost,
+            "input": str(t.input)[:1000] if t.input else None,
+            "output": str(t.output)[:2000] if t.output else None,
+            "observations": observations,
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+
+# --- Ejecución de agentes en background ---
+_agent_runs = {}  # run_id -> {status, agente, unidad, modelo, output, start_time, end_time}
+
+AGENT_SCRIPTS = {
+    "recurvo": "scripts/crewai/recurvo.py",
+}
+
+AVAILABLE_MODELS = [
+    {"id": "groq/openai/gpt-oss-120b", "name": "GPT-OSS-120B (Groq)", "cost": "gratis"},
+    {"id": "groq/moonshotai/kimi-k2-instruct", "name": "Kimi K2 (Groq)", "cost": "gratis"},
+    {"id": "anthropic/claude-sonnet-4-20250514", "name": "Claude Sonnet 4", "cost": "~$0.13"},
+]
+
+
+def start_agent(agente, unidad, modelo):
+    """Lanza un agente en un subproceso. Devuelve run_id."""
+    script = AGENT_SCRIPTS.get(agente)
+    if not script:
+        return {"error": f"Agente '{agente}' no tiene script asignado"}
+
+    run_id = str(uuid.uuid4())[:8]
+    script_path = (PROJECT / script).resolve()
+    cmd = [sys.executable, str(script_path), str(unidad)]
+    env = os.environ.copy()
+    env["RECURVO_LLM"] = modelo
+    env["PYTHONUNBUFFERED"] = "1"  # forzar output inmediato
+    cwd = str(script_path.parent)  # ejecutar desde el directorio del script
+
+    _agent_runs[run_id] = {
+        "status": "running",
+        "agente": agente,
+        "unidad": unidad,
+        "modelo": modelo,
+        "output": "",
+        "start_time": time.time(),
+        "end_time": None,
+    }
+
+    def _run():
+        try:
+            proc = subprocess.Popen(
+                cmd, env=env, cwd=cwd,
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                text=True, bufsize=1,
+            )
+            deadline = time.time() + 600
+            for line in proc.stdout:
+                _agent_runs[run_id]["output"] += line
+                if time.time() > deadline:
+                    proc.kill()
+                    _agent_runs[run_id]["output"] += "\nTimeout: el agente tardó más de 10 minutos\n"
+                    break
+            proc.wait(timeout=10)
+            _agent_runs[run_id]["status"] = "completed" if proc.returncode == 0 else "error"
+        except Exception as e:
+            _agent_runs[run_id]["output"] += f"\nError: {e}\n"
+            _agent_runs[run_id]["status"] = "error"
+        _agent_runs[run_id]["end_time"] = time.time()
+
+    threading.Thread(target=_run, daemon=True).start()
+    return {"run_id": run_id, "status": "running"}
+
+
+def get_agent_status(run_id=None):
+    """Devuelve estado de una ejecución o todas las recientes."""
+    if run_id:
+        run = _agent_runs.get(run_id)
+        if not run:
+            return {"error": "run_id no encontrado"}
+        elapsed = (run["end_time"] or time.time()) - run["start_time"]
+        return {**run, "run_id": run_id, "elapsed_s": round(elapsed, 1)}
+    # All runs, most recent first
+    runs = []
+    for rid, r in sorted(_agent_runs.items(), key=lambda x: x[1]["start_time"], reverse=True):
+        elapsed = (r["end_time"] or time.time()) - r["start_time"]
+        runs.append({
+            "run_id": rid,
+            "status": r["status"],
+            "agente": r["agente"],
+            "unidad": r["unidad"],
+            "modelo": r["modelo"],
+            "elapsed_s": round(elapsed, 1),
+            "start_time": r["start_time"],
+        })
+    return {"runs": runs[:20]}
+
+
+def run_evaluation(unidad):
+    """Ejecuta evaluación sobre las tarjetas de una unidad y guarda resultado."""
+    # Importar desde eval/
+    eval_dir = os.path.join(str(PROJECT), "eval")
+    sys.path.insert(0, eval_dir)
+    from evaluar_tarjetas import obtener_tarjetas, evaluar_tarjetas, guardar_evaluacion, crear_tabla_evaluaciones
+    crear_tabla_evaluaciones()
+    tarjetas = obtener_tarjetas(unidad)
+    if not tarjetas:
+        return {"error": f"No hay tarjetas para U{unidad:02d}"}
+    metricas = evaluar_tarjetas(tarjetas)
+    eval_id = guardar_evaluacion(unidad, "manual", metricas)
+    return {"id": eval_id, "metricas": metricas}
 
 
 def update_tarjeta_field(tarjeta_id, campo, valor):
@@ -464,7 +669,8 @@ def load_html_template():
 
 class Handler(http.server.BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):
-        pass
+        if os.environ.get("DEBUG"):
+            print(fmt % args)
 
     def _respond(self, code, ctype, body):
         self.send_response(code)
@@ -491,10 +697,36 @@ class Handler(http.server.BaseHTTPRequestHandler):
             unidad = int(unidad) if unidad else None
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(get_correcciones(unidad), ensure_ascii=False, default=str))
+        elif parsed.path == "/api/evaluaciones":
+            unidad = qs.get("unidad", [None])[0]
+            unidad = int(unidad) if unidad else None
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_evaluaciones(unidad), ensure_ascii=False, default=str))
+        elif parsed.path == "/api/agente/status":
+            run_id = qs.get("run_id", [None])[0]
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_agent_status(run_id), ensure_ascii=False, default=str))
+        elif parsed.path == "/api/agente/output":
+            run_id = qs.get("run_id", [""])[0]
+            run = _agent_runs.get(run_id, {})
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps({"output": run.get("output", ""), "status": run.get("status", "unknown")}, default=str))
+        elif parsed.path == "/api/modelos":
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(AVAILABLE_MODELS, ensure_ascii=False))
+        elif parsed.path == "/api/trazas":
+            limit = int(qs.get("limit", [20])[0])
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_trazas(limit), ensure_ascii=False, default=str))
+        elif parsed.path.startswith("/api/trazas/"):
+            trace_id = parsed.path.split("/api/trazas/")[1]
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_traza_detalle(trace_id), ensure_ascii=False, default=str))
+        elif parsed.path == "/favicon.ico":
+            self.send_response(204)
+            self.end_headers()
         elif parsed.path == "/":
             html = load_html_template()
-            html = html.replace("SECTIONS_JSON", json.dumps(SECTIONS))
-            html = html.replace("LABELS_JSON", json.dumps(SECTION_LABELS, ensure_ascii=False))
             self._respond(200, "text/html; charset=utf-8", html)
         else:
             self.send_error(404)
@@ -516,13 +748,27 @@ class Handler(http.server.BaseHTTPRequestHandler):
             ok = update_tarjeta_field(body["id"], body["campo"], body["valor"])
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps({"ok": ok}))
+        elif parsed.path == "/api/evaluaciones/run":
+            unidad = body.get("unidad", 3)
+            result = run_evaluation(unidad)
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(result, ensure_ascii=False, default=str))
+        elif parsed.path == "/api/agente/run":
+            agente = body.get("agente", "recurvo")
+            unidad = body.get("unidad", 3)
+            modelo = body.get("modelo", "groq/openai/gpt-oss-120b")
+            result = start_agent(agente, unidad, modelo)
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(result, ensure_ascii=False, default=str))
         else:
             self.send_error(404)
 
 
 if __name__ == "__main__":
-    server = http.server.HTTPServer(("127.0.0.1", PORT), Handler)
-    print(f"Sistema de gestión: http://127.0.0.1:{PORT}")
+    HOST = os.environ.get("HOST", "0.0.0.0")
+    PORT = int(os.environ.get("PORT", PORT))
+    server = http.server.HTTPServer((HOST, PORT), Handler)
+    print(f"Sistema de gestión: http://{HOST}:{PORT}")
     print("En vivo - se actualiza cada 3 segundos")
     print("Ctrl+C para detener")
     try:

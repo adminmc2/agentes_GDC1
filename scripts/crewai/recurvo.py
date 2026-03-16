@@ -11,9 +11,29 @@ Arquitectura de 2 tareas secuenciales:
 import json
 import os
 import sys
+import time
 
 from dotenv import load_dotenv
 load_dotenv()
+
+# --- Langfuse (trazabilidad) ---
+# Se activa automáticamente si LANGFUSE_PUBLIC_KEY está configurada.
+# Captura todos los spans OTel de CrewAI + spans custom con @observe.
+_langfuse_enabled = bool(os.environ.get("LANGFUSE_PUBLIC_KEY"))
+if _langfuse_enabled:
+    from langfuse import Langfuse, observe
+    langfuse_client = Langfuse()
+    print("[Langfuse] Trazabilidad ACTIVA — trazas visibles en cloud.langfuse.com")
+else:
+    # Stub para que @observe no falle cuando Langfuse no está configurado
+    langfuse_client = None
+    def observe(*args, **kwargs):
+        def decorator(fn):
+            return fn
+        if args and callable(args[0]):
+            return args[0]
+        return decorator
+    print("[Langfuse] No configurado — ejecutando sin trazabilidad")
 
 from crewai import Agent, Task, Crew, Process, LLM
 from tools import (
@@ -55,7 +75,10 @@ generador = Agent(
         "las reglas morfológicas del español (género, número, acentuación) "
         "y el inventario léxico de las unidades previas del curso. "
         "IMPORTANTE: Las tarjetas son material impreso que llega al alumno. "
-        "Tolerancia a errores = CERO."
+        "Tolerancia a errores = CERO. "
+        "ANTES de generar, SIEMPRE consulta correcciones previas con consultar_correcciones. "
+        "Si hay correcciones, aplícalas TODAS: cada corrección indica un error que cometiste "
+        "antes y que NO debes repetir. Esto es PRIORITARIO sobre cualquier otra instrucción."
     ),
     tools=tools_lectura,
     llm=llm,
@@ -157,8 +180,10 @@ Ejemplo: {{"insertadas": 20, "csv": "datos/tarjetas/U{unidad:02d}-vocabulario.cs
     return [tarea_generar, tarea_escribir]
 
 
+@observe(name="recurvo_main")
 def main():
     unidad = int(sys.argv[1]) if len(sys.argv) > 1 else 3
+    t0 = time.time()
 
     print(f"\n{'='*60}")
     print(f"  AGENTE RECURVO — Unidad {unidad}")
@@ -176,6 +201,7 @@ def main():
     )
 
     resultado = crew.kickoff()
+    duracion = time.time() - t0
 
     print(f"\n{'='*60}")
     print("  RESULTADO")
@@ -192,6 +218,12 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(str(resultado))
     print(f"\nOutput guardado en: {output_path}")
+    print(f"Duración: {duracion:.1f}s")
+
+    # Flush Langfuse traces
+    if langfuse_client:
+        langfuse_client.flush()
+        print("[Langfuse] Trazas enviadas — revisa en cloud.langfuse.com")
 
 
 if __name__ == "__main__":

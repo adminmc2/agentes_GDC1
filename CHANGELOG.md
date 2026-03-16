@@ -3,6 +3,73 @@
 
 ---
 
+## [2026-03-16c] — Dashboard con dos vistas (Proyecto + Agentes) + tema claro
+
+### Reescrito — `web/index.html` con navegación sidebar entre dos vistas
+- **Vista Proyecto**: grid de estado 9 unidades × 8 secciones + 5 diagramas Mermaid (arquitectura, flujo, dependencias, estado agentes, BD)
+- **Vista Agentes**: evaluación (score+radar+historial), tarjetas, errores, trazas Langfuse, consola, historial evaluaciones
+- Sidebar: botón "Proyecto" + lista de 6 agentes + controles de ejecución + historial de runs
+- Tema claro (#f5f6fa fondo, #fff tarjetas) — sustituye el tema oscuro
+
+### Añadido — Ejecución de agentes desde la web (`diagrama.py`)
+- `start_agent()`: subprocess.Popen en thread daemon con timeout 600s
+- `get_agent_status()`: polling del estado de ejecución
+- Endpoints: `/api/agente/run` (POST), `/api/agente/status` (GET), `/api/agente/output` (GET), `/api/modelos` (GET)
+- Variable `RECURVO_LLM` para seleccionar modelo desde la web
+
+### Añadido — Trazas Langfuse en la web
+- `get_trazas()` y `get_traza_detalle()`: consultan Langfuse API directamente
+- Endpoints: `/api/trazas` (GET), `/api/trazas/{id}` (GET)
+- Trazas expandibles en el dashboard con observaciones detalladas
+
+### Limpieza
+- Eliminadas sustituciones SECTIONS_JSON/LABELS_JSON en `diagrama.py` (ya no necesarias)
+- El frontend carga toda la configuración de agentes y modelos internamente
+
+---
+
+## [2026-03-16b] — Sistema de evaluación y trazabilidad integrado
+
+### Implementado — Stack de evaluación completo
+- **Langfuse** (v4.0.0): trazabilidad integrada en `recurvo.py` via OTel. Se activa automáticamente al configurar `LANGFUSE_PUBLIC_KEY` en `.env`. Stub transparente cuando no está configurado.
+- **DeepEval** (v3.8.9): métricas automáticas de calidad para tarjetas de vocabulario.
+- **promptfoo** (ya instalado): config YAML para comparar modelos (GPT-OSS-120B vs Kimi K2 vs Claude Sonnet).
+
+### Creado — Script de evaluación (`eval/evaluar_tarjetas.py`)
+- 5 métricas rule-based: plurales, sílaba tónica, combos, traducciones, reglas
+- Score global ponderado (0-100)
+- Detección de errores con detalle por tarjeta
+- Tabla `evaluaciones` en BD para historial
+- Modo terminal con informe visual + modo JSON
+- Integrado con la web via API `/api/evaluaciones`
+
+### Creado — Pestaña "Evaluación" en la web
+- Score global con indicador visual (verde/amarillo/rojo)
+- Gráfico radar con las 5 métricas (Chart.js)
+- Gráfico de línea con historial de scores
+- Lista de errores detectados con badges por tipo
+- Historial de evaluaciones con barras de progreso
+- Botón "Evaluar ahora" (ejecuta evaluación y guarda en BD)
+- Enlace directo a Langfuse cloud
+
+### Creado — Config promptfoo (`eval/promptfoo.yaml`)
+- 2 providers configurados: GPT-OSS-120B y Kimi K2 (Groq, gratis)
+- Claude Sonnet comentado (coste ~$0.13/ejecución)
+- 5 assertions: tarjetas_suficientes, sin_plurales, nivel_1_minimo, traducciones_completas, combos_variados
+- Usa `eval/provider_crewai.py` como wrapper del agente
+
+### Mejorado — Ciclo de feedback
+- Backstory del generador reforzado: prioriza correcciones previas sobre cualquier otra instrucción
+- Ciclo completo: corrección en web → BD → tool consultar_correcciones → agente lee → no repite error
+
+### Infraestructura
+- `.env`: añadidas variables Langfuse (LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, LANGFUSE_BASE_URL)
+- `diagrama.py`: añadidos endpoints `/api/evaluaciones` (GET), `/api/evaluaciones/run` (POST)
+- `web/index.html`: Chart.js CDN añadido, pestaña Evaluación con ~200 líneas de JS
+- Tabla `evaluaciones` creada en BD Neon PostgreSQL
+
+---
+
 ## [2026-03-16] — Primera ejecución exitosa del agente Recurvo + Web de gestión
 
 ### Implementado — Agente Recurvo funcional (CrewAI)

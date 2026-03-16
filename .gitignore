@@ -4,21 +4,6 @@
 # Archivos temporales
 ~*
 
-# LaTeX (archivos de compilacion)
-*.aux
-*.log
-*.synctex.gz
-
-# Archivos binarios pesados (diseno, maquetas, comprimidos)
-*.ai
-*.indd
-*.psd
-*.zip
-*.rar
-
-# Word (se trabaja en Markdown)
-*.docx
-
 # Variables de entorno (API keys)
 .env
 
@@ -27,5 +12,55 @@ __pycache__/
 *.pyc
 *.pkl
 
-# PDFs fuente del libro (binarios pesados, no versionables)
+# Claude Code (local)
+.claude/
+
+# === Contenido editorial (no forma parte del sistema de agentes) ===
+
+# Contenido de unidades (output editorial)
+unidades/
+
+# Material pedagógico de referencia (bancos de técnicas)
+referencias/
+
+# Materiales producidos (LaTeX, PDFs, tarjetas InDesign)
+materiales/
+material-complementario/
+tarjetas/
+
+# Documentos pedagógicos extensos
+00-curso-general.md
+marco-teorico-metodologico.md
+
+# Prompts pedagógicos y repertorios (cambiarán con rediseño CrewAI)
+agentes/
+repertorios/
+
+# Output de agentes (producto, no código)
+datos/tarjetas/
+
+# Resultados de pruebas obsoletas
+scripts/resultados_prueba/
+
+# Documentación interna de diseño (no interviene en deploy)
+diseno/
+
+# Archivos binarios pesados
+*.ai
+*.indd
+*.psd
+*.zip
+*.rar
+*.docx
+*.aux
+*.log
+*.synctex.gz
+
+# PDFs fuente del libro
 datos/fuente/**/*.pdf
+
+# Archivos de planificación local
+CLAUDE.md
+ROADMAP.md
+GITHUB-MANIFEST.md
+.github/

@@ -2,410 +2,805 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Sistema de gestión - Guía Didáctica</title>
+<title>Guia Didactica - Sistema de Gestion</title>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #1a1a2e; color: #eee; }
-header { background: #16213e; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f3460; }
-header h1 { font-size: 18px; }
-header .meta { font-size: 12px; color: #7f8c8d; }
-.live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #2ecc71; margin-right: 6px; animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-nav { display: flex; background: #16213e; border-bottom: 1px solid #0f3460; }
-nav button { background: none; border: none; color: #95a5a6; padding: 12px 20px; cursor: pointer; font-size: 14px; border-bottom: 2px solid transparent; transition: all 0.2s; }
-nav button:hover { color: #fff; }
-nav button.active { color: #3498db; border-bottom-color: #3498db; }
-.tab { display: none; padding: 24px; }
-.tab.active { display: block; }
-.diagram-box { background: #fff; border-radius: 8px; padding: 24px; margin: 16px 0; overflow-x: auto; min-height: 200px; }
-.info { background: #16213e; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-.info h2 { color: #3498db; margin-bottom: 8px; font-size: 16px; }
-.info p { color: #bdc3c7; font-size: 14px; }
-.legend { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
-.legend span { display: flex; align-items: center; gap: 6px; font-size: 13px; }
-.dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
-table { width: 100%; border-collapse: collapse; background: #16213e; border-radius: 8px; overflow: hidden; }
-th, td { padding: 10px 14px; text-align: center; font-size: 13px; border: 1px solid #0f3460; }
-th { background: #0f3460; }
-.st-complete { background: #2ecc71; color: #fff; }
-.st-in-progress { background: #f39c12; color: #fff; }
-.st-structure-only { background: #e67e22; color: #fff; }
-.st-missing { background: #34495e; color: #7f8c8d; }
-.update-flash { animation: flash 0.5s; }
-@keyframes flash { 0% { box-shadow: 0 0 20px #3498db; } 100% { box-shadow: none; } }
-/* Correcciones tab */
-.corr-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
-.corr-controls select, .corr-controls button { padding: 8px 14px; border-radius: 6px; border: 1px solid #0f3460; background: #16213e; color: #eee; font-size: 14px; cursor: pointer; }
-.corr-controls button { background: #3498db; border-color: #3498db; }
-.corr-controls button:hover { background: #2980b9; }
-.corr-controls button.danger { background: #e74c3c; border-color: #e74c3c; }
-.tarjetas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
-.tarjeta-card { background: #16213e; border-radius: 8px; padding: 16px; border: 1px solid #0f3460; position: relative; }
-.tarjeta-card h3 { color: #3498db; margin-bottom: 8px; font-size: 16px; }
-.tarjeta-card .field { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #0f346033; font-size: 13px; }
-.tarjeta-card .field .label { color: #7f8c8d; min-width: 110px; }
-.tarjeta-card .field .value { color: #eee; text-align: right; cursor: pointer; }
-.tarjeta-card .field .value:hover { color: #f39c12; text-decoration: underline; }
-.tarjeta-card .field .value.error { color: #e74c3c; font-weight: bold; }
-.tarjeta-card .actions { margin-top: 12px; display: flex; gap: 8px; }
-.tarjeta-card .actions button { padding: 4px 10px; font-size: 12px; border-radius: 4px; border: none; cursor: pointer; }
-.btn-corregir { background: #f39c12; color: #fff; }
-.btn-eliminar { background: #e74c3c; color: #fff; }
-.btn-aprobar { background: #2ecc71; color: #fff; }
-.modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100; justify-content: center; align-items: center; }
-.modal-overlay.open { display: flex; }
-.modal { background: #1a1a2e; border: 1px solid #0f3460; border-radius: 12px; padding: 24px; width: 480px; max-width: 90vw; }
-.modal h3 { color: #3498db; margin-bottom: 16px; }
-.modal label { display: block; color: #7f8c8d; font-size: 13px; margin-top: 10px; }
-.modal input, .modal select, .modal textarea { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #0f3460; background: #16213e; color: #eee; font-size: 14px; margin-top: 4px; }
-.modal textarea { height: 60px; resize: vertical; }
-.modal .modal-actions { display: flex; gap: 10px; margin-top: 16px; justify-content: flex-end; }
-.corr-history { margin-top: 24px; }
-.corr-history table { font-size: 12px; }
-.corr-history td { text-align: left; }
-.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; }
-.badge-silaba { background: #8e44ad; color: #fff; }
-.badge-traduccion { background: #2980b9; color: #fff; }
-.badge-regla { background: #e67e22; color: #fff; }
-.badge-plural { background: #e74c3c; color: #fff; }
-.badge-otro { background: #7f8c8d; color: #fff; }
-.stats-bar { display: flex; gap: 16px; margin-bottom: 16px; }
-.stat { background: #16213e; border-radius: 8px; padding: 12px 20px; text-align: center; }
-.stat .num { font-size: 24px; font-weight: bold; color: #3498db; }
-.stat .lbl { font-size: 12px; color: #7f8c8d; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #e8e4de; color: #2d3748; display: grid; grid-template-columns: 220px 1fr; grid-template-rows: 50px 1fr; height: 100vh; }
+
+/* Header */
+header { grid-column: 1/-1; background: #3b5068; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: none; box-shadow: 0 2px 8px rgba(0,0,0,.12); z-index: 10; }
+header h1 { font-size: 15px; color: #e8e4de; font-weight: 700; }
+.live { font-size: 11px; color: #a8bcc8; }
+.live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #5cb87a; margin-right: 4px; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* Sidebar */
+.sidebar { background: #3f5572; border-right: none; padding: 12px 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; box-shadow: 2px 0 8px rgba(0,0,0,.08); }
+.sidebar h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8ba0b8; margin-bottom: 4px; padding-left: 4px; }
+.nav-btn { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 6px; border: 1px solid transparent; background: none; color: #b8c9d8; font-size: 13px; cursor: pointer; text-align: left; width: 100%; transition: all .15s; }
+.nav-btn:hover { background: rgba(255,255,255,.08); color: #e0e8f0; }
+.nav-btn.active { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.2); color: #fff; font-weight: 600; }
+.nav-btn.disabled { opacity: .35; cursor: not-allowed; }
+.nav-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.nav-dot.ready { background: #5cb87a; }
+.nav-dot.pending { background: #6b7e94; }
+.nav-dot.project { background: #6ea8e0; }
+
+/* Controls */
+.controls { background: rgba(0,0,0,.12); border-radius: 8px; padding: 10px; border: 1px solid rgba(255,255,255,.08); }
+.controls label { font-size: 10px; color: #8ba0b8; display: block; margin-bottom: 2px; text-transform: uppercase; letter-spacing: .5px; }
+.controls select { width: 100%; padding: 6px 8px; border-radius: 5px; border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.2); color: #d0dce6; font-size: 12px; margin-bottom: 8px; }
+.btn-run { width: 100%; padding: 9px; border-radius: 6px; border: none; font-size: 12px; font-weight: 600; cursor: pointer; transition: all .15s; }
+.btn-run.go { background: #4a90d9; color: #fff; }
+.btn-run.go:hover { background: #3a7cc4; }
+.btn-run.running { background: #d4922a; color: #fff; cursor: wait; }
+.btn-run.done { background: #5cb87a; color: #fff; }
+
+/* Run history */
+.run-item { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; color: #8ba0b8; }
+.run-item:hover { background: rgba(255,255,255,.08); }
+.run-status { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.run-status.completed { background: #5cb87a; }
+.run-status.running { background: #d4922a; }
+.run-status.error { background: #d94f4f; }
+
+/* Main */
+main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+
+/* Section cards */
+.section { background: #f6f4f0; border-radius: 8px; border: 1px solid #d4cfc7; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.section-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; cursor: pointer; user-select: none; }
+.section-header:hover { background: #edeae4; border-radius: 8px 8px 0 0; }
+.section-header h2 { font-size: 14px; color: #2d3748; font-weight: 600; }
+.section-header .count { font-size: 12px; color: #7a8a96; }
+.section-body { padding: 0 16px 16px; }
+.section.collapsed .section-body { display: none; }
+
+/* Status grid (project view) */
+.status-grid { display: grid; grid-template-columns: 80px repeat(8, 1fr); gap: 2px; font-size: 11px; }
+.status-grid .hdr { font-weight: 600; color: #5a6a78; padding: 6px 4px; text-align: center; background: #edeae4; border-radius: 3px; }
+.status-grid .unit-label { font-weight: 600; color: #2d3748; padding: 6px 4px; background: #edeae4; border-radius: 3px; }
+.status-cell { padding: 6px 4px; text-align: center; border-radius: 3px; font-size: 10px; color: #fff; cursor: default; }
+.status-cell.complete { background: #5cb87a; }
+.status-cell.in-progress { background: #d4922a; }
+.status-cell.structure-only { background: #c87d3a; }
+.status-cell.missing { background: #d4cfc7; color: #8a8078; }
+
+/* Mermaid diagrams */
+.diagram-tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+.diagram-tab { padding: 6px 12px; border-radius: 5px; border: 1px solid #d4cfc7; background: #f6f4f0; color: #5a6a78; font-size: 12px; cursor: pointer; transition: all .15s; }
+.diagram-tab:hover { border-color: #8ab4d8; color: #3b6e9e; }
+.diagram-tab.active { background: #dce8f2; border-color: #8ab4d8; color: #2c5a85; font-weight: 600; }
+.diagram-container { background: #faf8f5; border-radius: 6px; padding: 16px; min-height: 200px; overflow-x: auto; border: 1px solid #e5e0d8; }
+.diagram-container svg { max-width: 100%; }
+
+/* Score bar */
+.score-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.score-big { font-size: 42px; font-weight: 700; line-height: 1; }
+.score-big.good { color: #3a9b5a; }
+.score-big.mid { color: #c4820a; }
+.score-big.bad { color: #c43a3a; }
+.metric-bars { flex: 1; min-width: 200px; }
+.metric-bar { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 12px; }
+.metric-bar .label { min-width: 120px; color: #5a6a78; }
+.metric-bar .bar { flex: 1; height: 16px; background: #e5e0d8; border-radius: 3px; position: relative; overflow: hidden; }
+.metric-bar .bar .fill { height: 100%; border-radius: 3px; transition: width .3s; }
+.metric-bar .val { min-width: 40px; text-align: right; font-size: 11px; color: #5a6a78; }
+
+/* Chart area */
+.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.chart-box { background: #faf8f5; border-radius: 6px; padding: 12px; border: 1px solid #e5e0d8; }
+.chart-box h4 { font-size: 12px; color: #5a6a78; margin-bottom: 8px; }
+.chart-box canvas { max-height: 200px; }
+
+/* Tarjetas grid */
+.tarjetas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+.card { background: #faf8f5; border-radius: 6px; padding: 12px; border: 1px solid #e5e0d8; }
+.card h4 { color: #2c5a85; font-size: 14px; margin-bottom: 6px; display: flex; justify-content: space-between; }
+.card h4 .nivel { font-size: 10px; padding: 2px 6px; border-radius: 3px; background: #e5e0d8; color: #5a6a78; }
+.card .row { display: flex; justify-content: space-between; padding: 3px 0; font-size: 12px; border-bottom: 1px solid #edeae4; }
+.card .row .k { color: #7a8a96; }
+.card .row .v { color: #2d3748; cursor: pointer; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card .row .v:hover { color: #c4820a; }
+.card .row .v.err { color: #c43a3a; }
+.card .combos { font-size: 11px; color: #7a8a96; margin-top: 4px; }
+.card .actions { display: flex; gap: 6px; margin-top: 8px; }
+.card .actions button { padding: 3px 8px; font-size: 11px; border-radius: 3px; border: none; cursor: pointer; }
+.btn-fix { background: #d4922a; color: #fff; }
+.btn-del { background: #c43a3a; color: #fff; }
+
+/* Trace steps */
+.trace-step { display: flex; gap: 10px; padding: 6px 10px; margin: 3px 0; background: #faf8f5; border-radius: 4px; font-size: 12px; align-items: flex-start; border: 1px solid #edeae4; }
+.trace-type { min-width: 70px; padding: 1px 6px; border-radius: 3px; font-size: 10px; text-align: center; color: #fff; }
+.trace-type.SPAN { background: #4a90d9; }
+.trace-type.GENERATION { background: #7c5daa; }
+.trace-type.EVENT { background: #5cb87a; }
+.trace-name { color: #2d3748; min-width: 140px; }
+.trace-io { color: #7a8a96; font-size: 11px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trace-io:hover { white-space: normal; word-break: break-all; }
+.trace-cost { color: #c4820a; font-size: 11px; min-width: 60px; text-align: right; }
+
+/* Errors list */
+.error-item { display: flex; gap: 8px; padding: 5px 0; font-size: 12px; border-bottom: 1px solid #edeae4; }
+.badge { padding: 1px 6px; border-radius: 3px; font-size: 10px; color: #fff; }
+.badge-plural { background: #c43a3a; }
+.badge-silaba { background: #7c5daa; }
+.badge-traduccion { background: #4a90d9; }
+.badge-combo { background: #d4922a; color: #fff; }
+.badge-otro { background: #7a8a96; }
+
+/* History table */
+.hist-row { display: grid; grid-template-columns: 60px 50px 140px 80px 1fr 90px; gap: 6px; padding: 5px 8px; font-size: 12px; align-items: center; border-bottom: 1px solid #edeae4; }
+.hist-row.hdr { color: #5a6a78; font-weight: 600; background: #edeae4; border-radius: 4px; }
+.hist-bar { height: 14px; background: #e5e0d8; border-radius: 2px; position: relative; overflow: hidden; }
+.hist-bar .fill { height: 100%; border-radius: 2px; }
+.hist-bar .lbl { position: absolute; right: 4px; top: 0; font-size: 10px; color: #fff; line-height: 14px; }
+
+/* Agent output console */
+.console { background: #2d3748; border-radius: 6px; padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: #a3e635; max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-all; line-height: 1.5; }
+
+/* Modal */
+.modal-bg { display: none; position: fixed; inset: 0; background: rgba(45,55,72,.4); z-index: 100; align-items: center; justify-content: center; }
+.modal-bg.open { display: flex; }
+.modal { background: #f6f4f0; border: 1px solid #d4cfc7; border-radius: 10px; padding: 20px; width: 420px; max-width: 90vw; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+.modal h3 { color: #2c5a85; margin-bottom: 12px; font-size: 15px; }
+.modal label { display: block; font-size: 11px; color: #7a8a96; margin-top: 8px; }
+.modal input, .modal select, .modal textarea { width: 100%; padding: 7px; border-radius: 5px; border: 1px solid #d4cfc7; background: #faf8f5; color: #2d3748; font-size: 13px; margin-top: 3px; }
+.modal textarea { height: 50px; resize: vertical; }
+.modal .btns { display: flex; gap: 8px; margin-top: 14px; justify-content: flex-end; }
+.modal .btns button { padding: 7px 16px; border-radius: 5px; border: none; cursor: pointer; font-size: 13px; }
+
+/* Responsive */
+@media (max-width: 800px) {
+    body { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .chart-row { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
+
 <header>
-    <h1>Sistema de gestión proyecto Guía didáctica</h1>
-    <span class="meta"><span class="live-dot"></span><span id="meta">Conectando...</span></span>
+    <h1>Guia Didactica del Profesor — Sistema de Gestion</h1>
+    <span class="live"><span class="live-dot"></span><span id="status-text">Conectando...</span></span>
 </header>
-<nav id="nav"></nav>
-<div id="content"></div>
 
-<script>
-mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+<div class="sidebar">
+    <div>
+        <h3>Navegacion</h3>
+        <button class="nav-btn active" id="nav-proyecto" onclick="selectView('proyecto')">
+            <span class="nav-dot project"></span>Proyecto
+        </button>
+    </div>
+    <div>
+        <h3>Recursos</h3>
+        <div id="agent-list-recursos"></div>
+    </div>
+    <div>
+        <h3>Secciones</h3>
+        <div id="agent-list-secciones"></div>
+    </div>
+    <div class="controls" id="agent-controls" style="display:none">
+        <label>Unidad</label>
+        <select id="sel-unidad"></select>
+        <label>Modelo</label>
+        <select id="sel-modelo"></select>
+        <button class="btn-run go" id="btn-run" onclick="runAgent()">Ejecutar agente</button>
+    </div>
+    <div id="run-history-section" style="display:none">
+        <h3>Historial</h3>
+        <div id="run-history"></div>
+    </div>
+</div>
 
-const SECTION_NAMES = SECTIONS_JSON;
-const SECTION_LABELS = LABELS_JSON;
-const TABS = [
-    {id: 'estado', label: 'Estado', type: 'table'},
-    {id: 'nivel1', label: 'Arquitectura', type: 'mermaid', key: 'nivel1',
-     title: 'Nivel 1 - Arquitectura general',
-     desc: 'Flujo de datos desde el libro de texto hasta la guía impresa y las guías personalizadas.'},
-    {id: 'nivel2', label: 'Flujo generación', type: 'mermaid', key: 'nivel2',
-     title: 'Nivel 2 - Flujo de generación de una sección',
-     desc: 'Los 3 pasos: preparación del contexto, generación con Claude Code, verificación post-producción.'},
-    {id: 'nivel3', label: 'Dependencias', type: 'mermaid', key: 'nivel3',
-     title: 'Nivel 3 - Dependencias entre secciones',
-     desc: 'Cada sección recicla contenido de las anteriores. La Estación de Servicio acumula tarjetas.'},
-    {id: 'nivel4', label: 'Agentes U03', type: 'mermaid', key: 'nivel4',
-     title: 'Nivel 4 - Agentes y estado de U03',
-     desc: 'Cada agente con su repertorio. El color indica el estado real del archivo generado.'},
-    {id: 'database', label: 'Base de datos', type: 'mermaid', key: 'database',
-     title: 'Esquema de base de datos - Neon PostgreSQL',
-     desc: '9 tablas: estructura del libro, reciclaje entre actividades y personalización de profesores (Layer 3).'},
-    {id: 'correcciones', label: 'Correcciones', type: 'custom'},
-];
-
-let currentTab = 'estado';
-let liveData = null;
-let lastHash = '';
-
-function buildNav() {
-    const nav = document.getElementById('nav');
-    TABS.forEach(t => {
-        const btn = document.createElement('button');
-        btn.textContent = t.label;
-        btn.className = t.id === currentTab ? 'active' : '';
-        btn.onclick = () => showTab(t.id);
-        nav.appendChild(btn);
-    });
-}
-
-async function showTab(id) {
-    currentTab = id;
-    document.querySelectorAll('#nav button').forEach((b, i) => {
-        b.className = TABS[i].id === id ? 'active' : '';
-    });
-    await renderCurrentTab();
-}
-
-async function renderCurrentTab() {
-    const content = document.getElementById('content');
-    const tab = TABS.find(t => t.id === currentTab);
-    if (!liveData) return;
-
-    if (tab.type === 'table') {
-        content.innerHTML = buildStatusHTML(liveData.status);
-    } else if (tab.type === 'custom' && tab.id === 'correcciones') {
-        content.innerHTML = buildCorreccionesHTML();
-        loadTarjetas(corrUnidad);
-        loadCorrecciones(corrUnidad);
-    } else {
-        const code = liveData[tab.key];
-        content.innerHTML = `
-            <div class="tab active">
-                <div class="info"><h2>${tab.title}</h2><p>${tab.desc}</p></div>
-                <div class="diagram-box" id="diagram-box"><pre class="mermaid">${code}</pre></div>
-            </div>`;
-        try {
-            await mermaid.run({ querySelector: '.mermaid' });
-        } catch(e) {
-            console.error('Mermaid error:', e);
-            document.getElementById('diagram-box').innerHTML =
-                '<p style="color:red">Error renderizando diagrama: ' + e.message + '</p>';
-        }
-    }
-}
-
-function buildStatusHTML(status) {
-    const units = Object.keys(status).sort();
-    let tableHTML = '<tr><th></th>';
-    units.forEach(u => tableHTML += '<th>' + u + '</th>');
-    tableHTML += '</tr>';
-    SECTION_NAMES.forEach(s => {
-        tableHTML += '<tr><th>' + (SECTION_LABELS[s] || s) + '</th>';
-        units.forEach(u => {
-            const info = (status[u] && status[u][s]) || {status:'missing', lines:0, pendiente:0};
-            tableHTML += '<td class="st-' + info.status + '" title="' +
-                info.lines + ' líneas, ' + info.pendiente + ' pendiente">' +
-                info.lines + '</td>';
-        });
-        tableHTML += '</tr>';
-    });
-
-    return `<div class="tab active">
-        <div class="info"><h2>Estado actual del proyecto</h2>
-        <p>Cada celda muestra las líneas del archivo. Color según estado real. Se actualiza en tiempo real.</p></div>
-        <div class="legend">
-            <span><span class="dot" style="background:#2ecc71"></span> Completo</span>
-            <span><span class="dot" style="background:#f39c12"></span> En progreso</span>
-            <span><span class="dot" style="background:#e67e22"></span> Solo estructura</span>
-            <span><span class="dot" style="background:#34495e"></span> No existe</span>
+<main id="main">
+    <!-- ==================== PROYECTO VIEW ==================== -->
+    <div id="view-proyecto">
+        <div class="section" id="sec-status">
+            <div class="section-header" onclick="toggleSection('sec-status')">
+                <h2>Estado de unidades</h2>
+                <span class="count" id="status-summary"></span>
+            </div>
+            <div class="section-body">
+                <div class="status-grid" id="status-grid"></div>
+            </div>
         </div>
-        <table>${tableHTML}</table>
-    </div>`;
-}
-
-async function pollData() {
-    try {
-        const res = await fetch('/api/diagrams');
-        const data = await res.json();
-
-        if (data.hash !== lastHash) {
-            liveData = data;
-            lastHash = data.hash;
-            await renderCurrentTab();
-            // Flash visual para indicar actualización
-            const box = document.getElementById('diagram-box');
-            if (box) { box.classList.add('update-flash'); setTimeout(() => box.classList.remove('update-flash'), 600); }
-        }
-
-        document.getElementById('meta').textContent = 'En vivo - ' + new Date().toLocaleTimeString();
-    } catch(e) {
-        document.getElementById('meta').textContent = 'Sin conexión';
-    }
-}
-
-// --- Correcciones tab ---
-let corrUnidad = 3;
-let corrTarjetas = [];
-let corrHistorial = [];
-
-function buildCorreccionesHTML() {
-    return `<div class="tab active">
-        <div class="info"><h2>Correcciones de tarjetas</h2>
-        <p>Revisa las tarjetas generadas por el agente. Corrige errores antes de aprobar. Las correcciones se almacenan en la BD y el agente las consulta en futuras ejecuciones.</p></div>
-        <div class="corr-controls">
-            <label style="color:#7f8c8d">Unidad:</label>
-            <select id="corr-unidad" onchange="corrUnidad=+this.value; loadTarjetas(corrUnidad); loadCorrecciones(corrUnidad);">
-                ${[1,2,3,4,5,6,7,8,9].map(n => `<option value="${n}" ${n===corrUnidad?'selected':''}>U${String(n).padStart(2,'0')}</option>`).join('')}
-            </select>
-            <button onclick="loadTarjetas(corrUnidad); loadCorrecciones(corrUnidad);">Recargar</button>
+        <div class="section" id="sec-diagrams">
+            <div class="section-header" onclick="toggleSection('sec-diagrams')">
+                <h2>Diagramas del proyecto</h2>
+            </div>
+            <div class="section-body">
+                <div class="diagram-tabs" id="diagram-tabs"></div>
+                <div class="diagram-container" id="diagram-container"></div>
+            </div>
         </div>
-        <div class="stats-bar" id="corr-stats"></div>
-        <div class="tarjetas-grid" id="corr-grid">Cargando tarjetas...</div>
-        <div class="corr-history" id="corr-history"></div>
-        <div class="modal-overlay" id="modal-overlay">
-            <div class="modal">
-                <h3 id="modal-title">Corregir campo</h3>
-                <input type="hidden" id="modal-tarjeta-id">
-                <input type="hidden" id="modal-palabra">
-                <input type="hidden" id="modal-campo">
-                <label>Campo</label>
-                <input type="text" id="modal-campo-display" disabled>
-                <label>Valor original</label>
-                <input type="text" id="modal-original" disabled>
-                <label>Valor corregido</label>
-                <input type="text" id="modal-corregido">
-                <label>Tipo de error</label>
-                <select id="modal-tipo">
-                    <option value="silaba_tonica">Silaba tonica</option>
-                    <option value="traduccion">Traduccion</option>
-                    <option value="regla">Regla morfologica</option>
-                    <option value="genero">Genero</option>
-                    <option value="plural_no_deseado">Plural no deseado</option>
-                    <option value="combo">Combo</option>
-                    <option value="ejemplo">Ejemplo</option>
-                    <option value="otro">Otro</option>
-                </select>
-                <div class="modal-actions">
-                    <button onclick="closeModal();" style="background:#7f8c8d;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;">Cancelar</button>
-                    <button onclick="submitCorreccion();" style="background:#f39c12;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;">Guardar correccion</button>
+    </div>
+
+    <!-- ==================== AGENT VIEW ==================== -->
+    <div id="view-agent" style="display:none">
+        <div class="section" id="sec-score">
+            <div class="section-header" onclick="toggleSection('sec-score')">
+                <h2>Evaluacion</h2>
+                <span class="count" id="score-summary">--</span>
+            </div>
+            <div class="section-body">
+                <div class="score-row">
+                    <div class="score-big" id="score-num">--</div>
+                    <div class="metric-bars" id="metric-bars"></div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-box"><h4>Metricas</h4><canvas id="chart-radar"></canvas></div>
+                    <div class="chart-box"><h4>Historial</h4><canvas id="chart-history"></canvas></div>
+                </div>
+                <div style="margin-top:10px">
+                    <button onclick="runEval()" style="padding:6px 14px;border-radius:5px;border:1px solid #d4cfc7;background:#faf8f5;color:#2c5a85;font-size:12px;cursor:pointer;font-weight:600" id="btn-eval">Evaluar ahora</button>
                 </div>
             </div>
         </div>
-    </div>`;
+
+        <div class="section" id="sec-tarjetas">
+            <div class="section-header" onclick="toggleSection('sec-tarjetas')">
+                <h2>Tarjetas</h2>
+                <span class="count" id="tarjetas-count">0</span>
+            </div>
+            <div class="section-body">
+                <div class="tarjetas-grid" id="tarjetas-grid"></div>
+            </div>
+        </div>
+
+        <div class="section" id="sec-errores">
+            <div class="section-header" onclick="toggleSection('sec-errores')">
+                <h2>Errores detectados</h2>
+                <span class="count" id="errores-count">0</span>
+            </div>
+            <div class="section-body">
+                <div id="errores-list"></div>
+            </div>
+        </div>
+
+        <div class="section" id="sec-trazas">
+            <div class="section-header" onclick="toggleSection('sec-trazas')">
+                <h2>Trazas</h2>
+                <span class="count" id="trazas-count">0</span>
+            </div>
+            <div class="section-body">
+                <div id="trazas-list"></div>
+            </div>
+        </div>
+
+        <div class="section collapsed" id="sec-console">
+            <div class="section-header" onclick="toggleSection('sec-console')">
+                <h2>Consola del agente</h2>
+                <span class="count" id="console-status"></span>
+            </div>
+            <div class="section-body">
+                <div class="console" id="console-output">Ejecuta un agente para ver la salida aqui.</div>
+            </div>
+        </div>
+
+        <div class="section collapsed" id="sec-eval-hist">
+            <div class="section-header" onclick="toggleSection('sec-eval-hist')">
+                <h2>Historial de evaluaciones</h2>
+                <span class="count" id="eval-hist-count">0</span>
+            </div>
+            <div class="section-body">
+                <div id="eval-hist-list"></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Modal correcciones -->
+<div class="modal-bg" id="modal-bg">
+    <div class="modal">
+        <h3 id="modal-title">Corregir</h3>
+        <input type="hidden" id="m-id"><input type="hidden" id="m-palabra"><input type="hidden" id="m-campo">
+        <label>Campo</label><input id="m-campo-show" disabled>
+        <label>Original</label><input id="m-original" disabled>
+        <label>Corregido</label><input id="m-corregido">
+        <label>Tipo error</label>
+        <select id="m-tipo">
+            <option value="silaba_tonica">Silaba tonica</option>
+            <option value="traduccion">Traduccion</option>
+            <option value="regla">Regla</option>
+            <option value="genero">Genero</option>
+            <option value="plural_no_deseado">Plural</option>
+            <option value="combo">Combo</option>
+            <option value="ejemplo">Ejemplo</option>
+            <option value="otro">Otro</option>
+        </select>
+        <div class="btns">
+            <button onclick="closeModal()" style="background:#e5e0d8;color:#2d3748">Cancelar</button>
+            <button onclick="submitFix()" style="background:#4a90d9;color:#fff">Guardar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// --- State ---
+let currentView = 'proyecto';
+let currentAgent = 'recurvo';
+let currentUnidad = 3;
+let currentModelo = 'groq/openai/gpt-oss-120b';
+let currentRunId = null;
+let tarjetas = [];
+let correcciones = [];
+let evaluaciones = [];
+let chartRadar = null;
+let chartHist = null;
+let diagramData = null;
+let currentDiagram = 'nivel1';
+
+const AGENTES = [
+    // Agentes de recursos
+    {id:'recurvo', name:'Recurvo', ready:true, tipo:'recurso', desc:'Tarjetas de vocabulario'},
+    // Agentes de seccion
+    {id:'vocabulario', name:'Vocabulario', ready:false, tipo:'seccion'},
+    {id:'gramatica', name:'Gramatica', ready:false, tipo:'seccion'},
+    {id:'comunicacion', name:'Comunicacion', ready:false, tipo:'seccion'},
+    {id:'destrezas', name:'Destrezas', ready:false, tipo:'seccion'},
+    {id:'cultura', name:'Cultura', ready:false, tipo:'seccion'},
+    {id:'evaluacion_ref', name:'Evaluacion', ready:false, tipo:'seccion'},
+];
+
+const DIAGRAM_LABELS = {
+    nivel1: 'Arquitectura',
+    nivel2: 'Flujo de trabajo',
+    nivel3: 'Dependencias',
+    nivel4: 'Estado agentes',
+    database: 'Base de datos',
+};
+
+const SECTION_LABELS = {
+    vocabulario:'Voc', gramatica:'Gram', comunicacion:'Com',
+    destrezas:'Dest', cultura:'Cult', reflexion:'Ref',
+    evaluacion:'Eval', itinerarios:'Itin'
+};
+
+// --- Init ---
+mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+
+function init() {
+    renderAgentList();
+    const us = document.getElementById('sel-unidad');
+    us.innerHTML = [1,2,3,4,5,6,7,8,9].map(n => `<option value="${n}" ${n===currentUnidad?'selected':''}>U${String(n).padStart(2,'0')}</option>`).join('');
+    us.onchange = () => { currentUnidad = +us.value; loadAgentData(); };
+    const ms = document.getElementById('sel-modelo');
+    ms.innerHTML = `
+        <option value="groq/openai/gpt-oss-120b">GPT-OSS-120B (gratis)</option>
+        <option value="groq/moonshotai/kimi-k2-instruct">Kimi K2 (gratis)</option>
+        <option value="anthropic/claude-sonnet-4-20250514">Claude Sonnet (~$0.13)</option>
+    `;
+    ms.onchange = () => { currentModelo = ms.value; };
+    loadProjectData();
+    setInterval(pollRunStatus, 3000);
 }
 
-async function loadTarjetas(unidad) {
-    try {
-        const res = await fetch('/api/tarjetas?unidad=' + unidad);
-        corrTarjetas = await res.json();
-        renderTarjetas();
-    } catch(e) {
-        document.getElementById('corr-grid').innerHTML = '<p style="color:#e74c3c">Error cargando tarjetas</p>';
+function renderAgentList() {
+    const recursos = AGENTES.filter(a => a.tipo === 'recurso');
+    const secciones = AGENTES.filter(a => a.tipo === 'seccion');
+    document.getElementById('agent-list-recursos').innerHTML = recursos.map(a => `<button class="nav-btn ${currentView===a.id?'active':''} ${a.ready?'':'disabled'}" onclick="${a.ready?`selectView('${a.id}')`:''}" ${a.ready?'':'disabled'}>
+        <span class="nav-dot ${a.ready?'ready':'pending'}"></span>${a.name}
+    </button>`).join('');
+    document.getElementById('agent-list-secciones').innerHTML = secciones.map(a => `<button class="nav-btn ${currentView===a.id?'active':''} ${a.ready?'':'disabled'}" onclick="${a.ready?`selectView('${a.id}')`:''}" ${a.ready?'':'disabled'}>
+        <span class="nav-dot ${a.ready?'ready':'pending'}"></span>${a.name}
+    </button>`).join('');
+}
+
+function selectView(id) {
+    currentView = id;
+    document.getElementById('nav-proyecto').classList.toggle('active', id === 'proyecto');
+    renderAgentList();
+    document.getElementById('view-proyecto').style.display = id === 'proyecto' ? '' : 'none';
+    document.getElementById('view-agent').style.display = id !== 'proyecto' ? '' : 'none';
+    document.getElementById('agent-controls').style.display = id !== 'proyecto' ? '' : 'none';
+    document.getElementById('run-history-section').style.display = id !== 'proyecto' ? '' : 'none';
+    if (id === 'proyecto') {
+        loadProjectData();
+    } else {
+        currentAgent = id;
+        loadAgentData();
     }
 }
 
-async function loadCorrecciones(unidad) {
+function toggleSection(id) {
+    document.getElementById(id).classList.toggle('collapsed');
+}
+
+// ==================== PROJECT VIEW ====================
+async function loadProjectData() {
     try {
-        const res = await fetch('/api/correcciones?unidad=' + unidad);
-        corrHistorial = await res.json();
-        renderHistorial();
+        const res = await fetch('/api/diagrams');
+        diagramData = await res.json();
+        renderStatusGrid(diagramData.status);
+        renderDiagramTabs();
+        renderDiagram(currentDiagram);
+        document.getElementById('status-text').textContent = 'En vivo - ' + new Date().toLocaleTimeString();
+    } catch(e) {
+        document.getElementById('status-text').textContent = 'Error de conexion';
+    }
+}
+
+function renderStatusGrid(status) {
+    const sections = ['vocabulario','gramatica','comunicacion','destrezas','cultura','reflexion','evaluacion','itinerarios'];
+    const grid = document.getElementById('status-grid');
+    let complete = 0, total = 0;
+    let html = '<div class="hdr"></div>';
+    sections.forEach(s => { html += `<div class="hdr">${SECTION_LABELS[s]}</div>`; });
+    for (let i = 1; i <= 9; i++) {
+        const u = `U${String(i).padStart(2,'0')}`;
+        html += `<div class="unit-label">${u}</div>`;
+        sections.forEach(s => {
+            const info = (status[u] || {})[s] || {};
+            const st = info.status || 'missing';
+            const lines = info.lines || 0;
+            total++;
+            if (st === 'complete') complete++;
+            html += `<div class="status-cell ${st}" title="${u} ${s}: ${st} (${lines} lineas)">${lines > 0 ? lines : '-'}</div>`;
+        });
+    }
+    grid.innerHTML = html;
+    document.getElementById('status-summary').textContent = `${complete}/${total} completas`;
+}
+
+function renderDiagramTabs() {
+    const el = document.getElementById('diagram-tabs');
+    el.innerHTML = Object.entries(DIAGRAM_LABELS).map(([k,v]) =>
+        `<button class="diagram-tab ${k===currentDiagram?'active':''}" onclick="selectDiagram('${k}')">${v}</button>`
+    ).join('');
+}
+
+function selectDiagram(key) {
+    currentDiagram = key;
+    renderDiagramTabs();
+    renderDiagram(key);
+}
+
+async function renderDiagram(key) {
+    if (!diagramData) return;
+    const code = diagramData[key];
+    if (!code) return;
+    const container = document.getElementById('diagram-container');
+    container.innerHTML = '';
+    try {
+        const id = 'mermaid-' + Date.now();
+        const { svg } = await mermaid.render(id, code);
+        container.innerHTML = svg;
+    } catch(e) {
+        container.innerHTML = `<pre style="color:#c43a3a;font-size:12px">${e.message}</pre>`;
+    }
+}
+
+// ==================== AGENT VIEW ====================
+async function loadAgentData() {
+    await Promise.all([loadTarjetas(), loadEvaluaciones(), loadCorrecciones(), loadTrazas(), loadRunHistory()]);
+    document.getElementById('status-text').textContent = 'En vivo - ' + new Date().toLocaleTimeString();
+}
+
+async function runAgent() {
+    const btn = document.getElementById('btn-run');
+    btn.className = 'btn-run running';
+    btn.textContent = 'Ejecutando...';
+    btn.disabled = true;
+    try {
+        const res = await fetch('/api/agente/run', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({agente: currentAgent, unidad: currentUnidad, modelo: currentModelo})
+        });
+        const data = await res.json();
+        if (data.error) { alert(data.error); btn.className='btn-run go'; btn.textContent='Ejecutar agente'; btn.disabled=false; return; }
+        currentRunId = data.run_id;
+        document.getElementById('console-status').textContent = 'Ejecutando...';
+        document.getElementById('console-output').textContent = 'Agente iniciado (run: ' + data.run_id + ')...\n';
+        document.getElementById('sec-console').classList.remove('collapsed');
+    } catch(e) {
+        alert('Error: ' + e.message);
+        btn.className = 'btn-run go'; btn.textContent = 'Ejecutar agente'; btn.disabled = false;
+    }
+}
+
+async function pollRunStatus() {
+    if (!currentRunId) return;
+    try {
+        const res = await fetch('/api/agente/status?run_id=' + currentRunId);
+        const data = await res.json();
+        const btn = document.getElementById('btn-run');
+
+        // Siempre actualizar la consola con el output parcial (streaming)
+        const ores = await fetch('/api/agente/output?run_id=' + currentRunId);
+        const odata = await ores.json();
+        const consoleEl = document.getElementById('console-output');
+        if (odata.output) {
+            consoleEl.textContent = odata.output;
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        if (data.status === 'running') {
+            document.getElementById('console-status').textContent = `Ejecutando... ${data.elapsed_s}s`;
+        } else {
+            // Terminado
+            btn.className = data.status === 'completed' ? 'btn-run done' : 'btn-run go';
+            btn.textContent = data.status === 'completed' ? 'Completado' : 'Ejecutar agente';
+            btn.disabled = false;
+            document.getElementById('console-status').textContent = data.status + ' (' + data.elapsed_s + 's)';
+            setTimeout(() => { btn.className = 'btn-run go'; btn.textContent = 'Ejecutar agente'; }, 5000);
+            currentRunId = null;
+            // Recargar datos y auto-evaluar
+            await loadAgentData();
+            if (data.status === 'completed') {
+                document.getElementById('console-output').textContent += '\n--- Evaluando tarjetas automaticamente... ---\n';
+                await runEvalSilent();
+            }
+        }
+    } catch(e) {}
+    loadRunHistory();
+}
+
+async function runEvalSilent() {
+    try {
+        await fetch('/api/evaluaciones/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({unidad:currentUnidad})});
+        await loadEvaluaciones();
+        document.getElementById('console-output').textContent += '--- Evaluacion completada ---\n';
     } catch(e) {}
 }
 
+async function loadRunHistory() {
+    try {
+        const res = await fetch('/api/agente/status');
+        const data = await res.json();
+        const el = document.getElementById('run-history');
+        const runs = data.runs || [];
+        el.innerHTML = runs.slice(0, 10).map(r => {
+            const model = (r.modelo||'').split('/').pop();
+            return `<div class="run-item" onclick="loadRunOutput('${r.run_id}')">
+                <span class="run-status ${r.status}"></span>
+                <span>U${String(r.unidad).padStart(2,'0')}</span>
+                <span style="color:#8ba0b8">${model}</span>
+                <span style="color:#8ba0b8">${r.elapsed_s}s</span>
+            </div>`;
+        }).join('') || '<div style="color:#8ba0b8;font-size:11px;padding:8px">Sin ejecuciones</div>';
+    } catch(e) {}
+}
+
+async function loadRunOutput(runId) {
+    const res = await fetch('/api/agente/output?run_id=' + runId);
+    const data = await res.json();
+    document.getElementById('console-output').textContent = data.output || 'Sin salida';
+    document.getElementById('sec-console').classList.remove('collapsed');
+}
+
+// --- Tarjetas ---
+async function loadTarjetas() {
+    const res = await fetch('/api/tarjetas?unidad=' + currentUnidad);
+    tarjetas = await res.json();
+    document.getElementById('tarjetas-count').textContent = tarjetas.length;
+    renderTarjetas();
+}
+
 function renderTarjetas() {
-    const grid = document.getElementById('corr-grid');
-    const stats = document.getElementById('corr-stats');
-    if (!corrTarjetas.length) {
-        grid.innerHTML = '<p style="color:#7f8c8d">No hay tarjetas para esta unidad.</p>';
-        stats.innerHTML = '';
-        return;
-    }
-    stats.innerHTML = `
-        <div class="stat"><div class="num">${corrTarjetas.length}</div><div class="lbl">Tarjetas</div></div>
-        <div class="stat"><div class="num">${corrTarjetas.filter(t=>t.nivel_jerarquia===1).length}</div><div class="lbl">Nivel 1</div></div>
-        <div class="stat"><div class="num">${corrTarjetas.filter(t=>t.nivel_jerarquia===2).length}</div><div class="lbl">Nivel 2</div></div>
-        <div class="stat"><div class="num">${corrTarjetas.filter(t=>t.nivel_jerarquia===3).length}</div><div class="lbl">Nivel 3</div></div>
-        <div class="stat"><div class="num">${corrHistorial.length}</div><div class="lbl">Correcciones</div></div>
-    `;
     const FIELDS = [
-        ['genero','Genero'],['color_genero','Color genero'],['silaba_tonica','Silaba tonica'],
-        ['regla','Regla'],['campo_semantico','Campo semantico'],['ejemplo','Ejemplo'],
-        ['frecuencia','Frecuencia'],['irregularidad','Irregularidad'],
-        ['trad_it','IT'],['trad_fr','FR'],['trad_pt_br','PT-BR'],['trad_en','EN'],
+        ['genero','Gen'],['silaba_tonica','Silaba'],['regla','Regla'],
+        ['campo_semantico','Campo'],['ejemplo','Ejemplo'],['frecuencia','Frec'],
+        ['trad_it','IT'],['trad_fr','FR'],['trad_pt_br','PT'],['trad_en','EN'],
         ['trad_cs','CS'],['trad_pl','PL'],['trad_tr','TR'],
-        ['seccion','Seccion'],['pagina','Pagina'],['nivel_jerarquia','Nivel'],['estado','Estado']
     ];
-    grid.innerHTML = corrTarjetas.map(t => {
-        const combos = (t.combos||[]).join(', ');
-        const fields = FIELDS.map(([k,label]) => {
+    const el = document.getElementById('tarjetas-grid');
+    if (!tarjetas.length) { el.innerHTML = '<div style="color:#7a8a96;padding:20px;text-align:center">Sin tarjetas. Ejecuta el agente.</div>'; return; }
+    el.innerHTML = tarjetas.map(t => {
+        const combos = (t.combos||[]).join(' | ');
+        const rows = FIELDS.map(([k,l]) => {
             const v = t[k] != null ? t[k] : '';
-            const hasCorr = corrHistorial.some(c => c.palabra === t.palabra && c.campo === k);
-            return `<div class="field"><span class="label">${label}</span><span class="value${hasCorr?' error':''}" onclick="openModal(${t.id},'${t.palabra}','${k}','${String(v).replace(/'/g,"\\\\'")}');">${v}</span></div>`;
+            const hasCorr = correcciones.some(c => c.palabra===t.palabra && c.campo===k);
+            return `<div class="row"><span class="k">${l}</span><span class="v${hasCorr?' err':''}" onclick="openModal(${t.id},'${(t.palabra||'').replace(/'/g,"\\'")}','${k}','${String(v).replace(/'/g,"\\'")}')">${v}</span></div>`;
         }).join('');
-        return `<div class="tarjeta-card">
-            <h3>${t.palabra}</h3>
-            <div class="field"><span class="label">Combos</span><span class="value" style="font-size:11px">${combos}</span></div>
-            ${fields}
+        return `<div class="card">
+            <h4>${t.palabra} <span class="nivel">N${t.nivel_jerarquia||1}</span></h4>
+            <div class="combos">${combos}</div>
+            ${rows}
             <div class="actions">
-                <button class="btn-corregir" onclick="openModal(${t.id},'${t.palabra}','','');">Corregir</button>
-                <button class="btn-eliminar" onclick="eliminarTarjeta(${t.id},'${t.palabra}');">Eliminar</button>
+                <button class="btn-fix" onclick="openModal(${t.id},'${(t.palabra||'').replace(/'/g,"\\'")}','','')">Corregir</button>
+                <button class="btn-del" onclick="delCard(${t.id},'${(t.palabra||'').replace(/'/g,"\\'")}')">Eliminar</button>
             </div>
         </div>`;
     }).join('');
 }
 
-function renderHistorial() {
-    const el = document.getElementById('corr-history');
-    if (!corrHistorial.length) { el.innerHTML = ''; return; }
-    const badgeClass = t => ({silaba_tonica:'badge-silaba',traduccion:'badge-traduccion',regla:'badge-regla',plural_no_deseado:'badge-plural'}[t]||'badge-otro');
-    el.innerHTML = `<div class="info"><h2>Historial de correcciones (${corrHistorial.length})</h2></div>
-    <table><tr><th>Palabra</th><th>Campo</th><th>Original</th><th>Corregido</th><th>Tipo</th><th>Fecha</th></tr>
-    ${corrHistorial.map(c => `<tr>
-        <td>${c.palabra||''}</td><td>${c.campo||''}</td>
-        <td style="color:#e74c3c">${c.valor_original||''}</td>
-        <td style="color:#2ecc71">${c.valor_corregido||''}</td>
-        <td><span class="badge ${badgeClass(c.tipo_error)}">${c.tipo_error||''}</span></td>
-        <td>${c.fecha ? new Date(c.fecha).toLocaleDateString() : ''}</td>
-    </tr>`).join('')}</table>`;
+// --- Correcciones ---
+async function loadCorrecciones() {
+    const res = await fetch('/api/correcciones?unidad=' + currentUnidad);
+    correcciones = await res.json();
 }
 
-function openModal(tarjetaId, palabra, campo, valorOriginal) {
-    document.getElementById('modal-tarjeta-id').value = tarjetaId;
-    document.getElementById('modal-palabra').value = palabra;
-    document.getElementById('modal-campo').value = campo;
-    document.getElementById('modal-campo-display').value = campo || '(selecciona un campo arriba)';
-    document.getElementById('modal-original').value = valorOriginal;
-    document.getElementById('modal-corregido').value = '';
+function openModal(id, palabra, campo, original) {
+    document.getElementById('m-id').value = id;
+    document.getElementById('m-palabra').value = palabra;
+    document.getElementById('m-campo').value = campo;
+    document.getElementById('m-campo-show').value = campo || '(selecciona)';
+    document.getElementById('m-original').value = original;
+    document.getElementById('m-corregido').value = '';
     document.getElementById('modal-title').textContent = 'Corregir: ' + palabra + (campo ? ' > ' + campo : '');
-    document.getElementById('modal-overlay').classList.add('open');
+    document.getElementById('modal-bg').classList.add('open');
 }
+function closeModal() { document.getElementById('modal-bg').classList.remove('open'); }
 
-function closeModal() {
-    document.getElementById('modal-overlay').classList.remove('open');
-}
-
-async function submitCorreccion() {
-    const tarjetaId = document.getElementById('modal-tarjeta-id').value;
-    const palabra = document.getElementById('modal-palabra').value;
-    const campo = document.getElementById('modal-campo').value;
-    const original = document.getElementById('modal-original').value;
-    const corregido = document.getElementById('modal-corregido').value;
-    const tipo = document.getElementById('modal-tipo').value;
+async function submitFix() {
+    const id = document.getElementById('m-id').value;
+    const palabra = document.getElementById('m-palabra').value;
+    const campo = document.getElementById('m-campo').value;
+    const original = document.getElementById('m-original').value;
+    const corregido = document.getElementById('m-corregido').value;
+    const tipo = document.getElementById('m-tipo').value;
     if (!corregido && tipo !== 'plural_no_deseado') { alert('Escribe el valor corregido'); return; }
-    // Save correction
-    await fetch('/api/correcciones', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            unidad: corrUnidad, palabra, campo,
-            valor_original: original, valor_corregido: corregido, tipo_error: tipo
-        })
-    });
-    // Update the tarjeta in BD if there's a corrected value
+    await fetch('/api/correcciones', {method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({unidad:currentUnidad, palabra, campo, valor_original:original, valor_corregido:corregido, tipo_error:tipo})});
     if (corregido && campo) {
-        await fetch('/api/tarjetas/update', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ id: +tarjetaId, campo, valor: corregido })
-        });
+        await fetch('/api/tarjetas/update', {method:'POST', headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({id:+id, campo, valor:corregido})});
     }
     closeModal();
-    await loadTarjetas(corrUnidad);
-    await loadCorrecciones(corrUnidad);
+    await loadAgentData();
 }
 
-async function eliminarTarjeta(id, palabra) {
-    if (!confirm('Eliminar tarjeta "' + palabra + '"?')) return;
-    // Register as correction (type: plural or deletion)
-    await fetch('/api/correcciones', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            unidad: corrUnidad, palabra, campo: 'palabra',
-            valor_original: palabra, valor_corregido: null,
-            tipo_error: 'eliminada'
-        })
-    });
-    await fetch('/api/tarjetas/delete', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ id })
-    });
-    await loadTarjetas(corrUnidad);
-    await loadCorrecciones(corrUnidad);
+async function delCard(id, palabra) {
+    if (!confirm('Eliminar "' + palabra + '"?')) return;
+    await fetch('/api/correcciones', {method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({unidad:currentUnidad, palabra, campo:'palabra', valor_original:palabra, valor_corregido:null, tipo_error:'eliminada'})});
+    await fetch('/api/tarjetas/delete', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({id})});
+    await loadAgentData();
 }
 
-buildNav();
-// Primera carga
-pollData();
-// Polling cada 3 segundos
-setInterval(pollData, 3000);
+// --- Evaluaciones ---
+async function loadEvaluaciones() {
+    const res = await fetch('/api/evaluaciones?unidad=' + currentUnidad);
+    evaluaciones = await res.json();
+    renderScore();
+    renderEvalHistory();
+}
+
+async function runEval() {
+    const btn = document.getElementById('btn-eval');
+    btn.textContent = 'Evaluando...'; btn.disabled = true;
+    await fetch('/api/evaluaciones/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({unidad:currentUnidad})});
+    await loadEvaluaciones();
+    btn.textContent = 'Evaluar ahora'; btn.disabled = false;
+}
+
+function renderScore() {
+    if (!evaluaciones.length) {
+        document.getElementById('score-num').textContent = '--';
+        document.getElementById('score-summary').textContent = 'Sin datos';
+        document.getElementById('metric-bars').innerHTML = '';
+        document.getElementById('errores-list').innerHTML = '<div style="color:#7a8a96;font-size:12px">Ejecuta una evaluacion.</div>';
+        document.getElementById('errores-count').textContent = '0';
+        return;
+    }
+    const m = evaluaciones[0].metricas || {};
+    const sc = m.score_global || 0;
+    const scores = m.scores || {};
+    const numEl = document.getElementById('score-num');
+    numEl.textContent = sc;
+    numEl.className = 'score-big ' + (sc >= 80 ? 'good' : sc >= 60 ? 'mid' : 'bad');
+    document.getElementById('score-summary').textContent = `${m.total||0} tarjetas | ${evaluaciones[0].modelo||'?'}`;
+
+    const metrics = [
+        ['Sin plurales', scores.sin_plurales||0],
+        ['Silabas', scores.silabas_correctas||0],
+        ['Combos', scores.combos_correctos||0],
+        ['Traducciones', scores.traducciones_completas||0],
+        ['Reglas', scores.reglas_correctas||0],
+    ];
+    document.getElementById('metric-bars').innerHTML = metrics.map(([l,v]) => {
+        const c = v >= 80 ? '#3a9b5a' : v >= 60 ? '#c4820a' : '#c43a3a';
+        return `<div class="metric-bar"><span class="label">${l}</span><div class="bar"><div class="fill" style="width:${v}%;background:${c}"></div></div><span class="val">${v}%</span></div>`;
+    }).join('');
+
+    // Radar
+    const radarCtx = document.getElementById('chart-radar');
+    if (chartRadar) chartRadar.destroy();
+    chartRadar = new Chart(radarCtx, {
+        type: 'radar',
+        data: {
+            labels: metrics.map(m=>m[0]),
+            datasets: [{label: (evaluaciones[0].modelo||'').split('/').pop(), data: metrics.map(m=>m[1]),
+                backgroundColor:'rgba(74,144,217,.15)', borderColor:'#4a90d9', pointBackgroundColor:'#4a90d9'}]
+        },
+        options: { scales:{r:{min:0,max:100,ticks:{stepSize:20,color:'#7a8a96'},grid:{color:'#d4cfc7'},pointLabels:{color:'#5a6a78',font:{size:11}}}}, plugins:{legend:{labels:{color:'#5a6a78'}}} }
+    });
+
+    // History
+    const histCtx = document.getElementById('chart-history');
+    if (chartHist) chartHist.destroy();
+    const rev = [...evaluaciones].reverse();
+    chartHist = new Chart(histCtx, {
+        type: 'line',
+        data: {
+            labels: rev.map(e => { const d=new Date(e.fecha); return d.toLocaleDateString('es',{day:'2-digit',month:'2-digit'}); }),
+            datasets: [{label:'Score', data: rev.map(e=>(e.metricas||{}).score_global||0), borderColor:'#3a9b5a', backgroundColor:'rgba(58,155,90,.1)', fill:true, tension:.3}]
+        },
+        options: { scales:{y:{min:0,max:100,ticks:{color:'#7a8a96'},grid:{color:'#e5e0d8'}},x:{ticks:{color:'#7a8a96'},grid:{color:'#e5e0d8'}}}, plugins:{legend:{labels:{color:'#5a6a78'}}} }
+    });
+
+    // Errors
+    const errors = m.errores || [];
+    document.getElementById('errores-count').textContent = errors.length;
+    const el = document.getElementById('errores-list');
+    if (!errors.length) { el.innerHTML = '<div style="color:#3a9b5a;font-size:12px">Sin errores</div>'; }
+    else { el.innerHTML = errors.map(e => `<div class="error-item"><span class="badge badge-${e.tipo==='plural'?'plural':e.tipo==='silaba'?'silaba':e.tipo==='traduccion'?'traduccion':e.tipo==='combo'?'combo':'otro'}">${e.tipo}</span><span style="color:#2c5a85">${e.palabra}</span><span style="color:#5a6a78">${e.detalle}</span></div>`).join(''); }
+}
+
+function renderEvalHistory() {
+    document.getElementById('eval-hist-count').textContent = evaluaciones.length;
+    const el = document.getElementById('eval-hist-list');
+    if (!evaluaciones.length) { el.innerHTML = ''; return; }
+    el.innerHTML = `<div class="hist-row hdr"><span>Run</span><span>U</span><span>Modelo</span><span>Score</span><span>Detalle</span><span>Fecha</span></div>` +
+        evaluaciones.map(e => {
+            const em = e.metricas||{};
+            const sc = em.score_global||0;
+            const c = sc>=80?'#3a9b5a':sc>=60?'#c4820a':'#c43a3a';
+            return `<div class="hist-row">
+                <span style="color:#7a8a96">${e.run_id||''}</span>
+                <span>U${String(e.unidad).padStart(2,'0')}</span>
+                <span style="color:#2c5a85">${(e.modelo||'').split('/').pop()}</span>
+                <span><div class="hist-bar"><div class="fill" style="width:${sc}%;background:${c}"></div><div class="lbl">${sc}</div></div></span>
+                <span style="color:#7a8a96;font-size:11px">${em.total||0} tarj</span>
+                <span style="color:#7a8a96">${e.fecha?new Date(e.fecha).toLocaleDateString('es'):''}</span>
+            </div>`;
+        }).join('');
+}
+
+// --- Trazas ---
+async function loadTrazas() {
+    try {
+        const res = await fetch('/api/trazas?limit=10');
+        const data = await res.json();
+        const trazas = data.trazas || [];
+        document.getElementById('trazas-count').textContent = trazas.length;
+        const el = document.getElementById('trazas-list');
+        if (!trazas.length) { el.innerHTML = '<div style="color:#7a8a96;font-size:12px;padding:8px">Sin trazas. Ejecuta el agente.</div>'; return; }
+        el.innerHTML = trazas.map((t,i) => {
+            const lat = t.latency ? (t.latency<1?(t.latency*1000).toFixed(0)+'ms':t.latency.toFixed(1)+'s') : '';
+            const cost = t.total_cost ? '$'+t.total_cost.toFixed(4) : '';
+            const date = t.timestamp ? new Date(t.timestamp).toLocaleString('es') : '';
+            return `<div style="margin-bottom:6px">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;cursor:pointer;border-bottom:1px solid #edeae4" onclick="toggleTraceDetail('${t.id}',${i})">
+                    <span style="color:#2c5a85;font-size:13px;font-weight:600">${t.name||'trace'}</span>
+                    <span style="font-size:11px;color:#7a8a96">${t.observations_count||0} pasos ${lat} ${cost?'<span style=color:#c4820a>'+cost+'</span>':''} ${date}</span>
+                </div>
+                <div id="trace-det-${i}" style="display:none"></div>
+            </div>`;
+        }).join('');
+    } catch(e) {}
+}
+
+async function toggleTraceDetail(traceId, idx) {
+    const el = document.getElementById('trace-det-' + idx);
+    if (el.style.display === 'block') { el.style.display = 'none'; return; }
+    el.style.display = 'block';
+    el.innerHTML = '<div style="color:#7a8a96;font-size:11px">Cargando...</div>';
+    try {
+        const res = await fetch('/api/trazas/' + traceId);
+        const data = await res.json();
+        const obs = data.observations || [];
+        if (!obs.length) { el.innerHTML = '<div style="color:#7a8a96;font-size:11px">Sin detalles</div>'; return; }
+        el.innerHTML = obs.map(o => {
+            const cost = o.total_cost ? '$'+o.total_cost.toFixed(4) : '';
+            const tok = o.usage ? `${(o.usage.input||0)+(o.usage.output||0)} tok` : '';
+            return `<div class="trace-step">
+                <span class="trace-type ${o.type||''}">${o.type||'?'}</span>
+                <span class="trace-name">${o.name||''}</span>
+                <span class="trace-io">${o.input?o.input.substring(0,120):''}</span>
+                <span class="trace-cost">${tok} ${cost}</span>
+            </div>`;
+        }).join('');
+        if (data.output) { el.innerHTML += `<div class="console" style="margin-top:6px;max-height:150px">${data.output}</div>`; }
+    } catch(e) { el.innerHTML = '<div style="color:#c43a3a;font-size:11px">Error</div>'; }
+}
+
+// --- Start ---
+init();
 </script>
 </body>
 </html>
