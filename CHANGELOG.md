@@ -3,6 +3,15 @@
 
 ---
 
+## [2026-03-17b] — Fix: añadir litellm para soporte multi-modelo en CrewAI
+
+### Corregido — `requirements.txt`
+- `crewai==1.9.3` → `crewai[litellm]==1.9.3` — instala litellm como extra para routing de modelos no nativos (Groq, etc.)
+- CrewAI 1.9.3 eliminó litellm de sus dependencias core (ahora es extra opcional). Sin él, el string `groq/openai/gpt-oss-120b` no se resuelve y el agente no arranca
+- Verificado: crewai 1.10.1+ no es instalable (requiere `lancedb>=0.29.2` inexistente en PyPI). 1.9.3 es la última estable funcional
+
+---
+
 ## [2026-03-17] — Dashboard reescrito: navegación por pestañas + tabla tarjetas + comparación
 
 ### Reescrito — `web/index.html` con patrones de mercado (Langfuse/LangSmith)
