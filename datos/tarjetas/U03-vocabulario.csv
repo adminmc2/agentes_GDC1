@@ -1,0 +1,20 @@
+palabra;genero;color_genero;silaba_tonica;regla;campo_semantico;color_campo;ejemplo;frecuencia;irregularidad;combo1;combo2;combo3;combo4;IT;FR;PT_BR;EN;CS;PL;TR
+abuela;F;rojo;aBUEla;F en -a; plural -s;Parientes;violeta;Mi abuela cocina muy bien.;3;;mi abuela;tu abuela;la abuela de;abuela paterna;nonna;grand-mère;avó;grandmother;babička;babcia;büyükanne
+abuelo;M;azul;aBUElo;M en -o; plural -s;Parientes;violeta;Mi abuelo vive en Madrid.;3;;mi abuelo;tu abuelo;el abuelo de;abuelo materno;nonno;grand-père;avô;grandfather;dědeček;dziadek;büyükbaba
+abuelos;M;azul;aBUElos;M en -os; plural -s;Parientes;violeta;Mis abuelos vienen de Perú.;2;;mis abuelos;tus abuelos;los abuelos de;abuelos paternos;nonni;grands-parents;avós;grandparents;prarodiče;dziadkowie i babcie;büyük ebeveynler
+hermana;F;rojo;herMAna;F en -a; plural -s;Parientes;violeta;Mi hermana estudia medicina.;3;;mi hermana;tu hermana;la hermana de;hermana menor;sorella;sœur;irmã;sister;sestra;siostra;kız kardeş
+hermano;M;azul;herMAno;M en -o; plural -s;Parientes;violeta;Mi hermano tiene diez años.;3;;mi hermano;tu hermano;el hermano de;hermano mayor;fratello;frère;irmão;brother;bratr;brat;erkek kardeş
+hija;F;rojo;HIja;F en -a; plural -s;Parientes;violeta;Mi hija estudia en la universidad.;2;;mi hija;tu hija;la hija de;hija menor;figlia;fille;filha;daughter;dcera;córka;kız
+hijo;M;azul;HIjo;M en -o; plural -s;Parientes;violeta;Mi hijo juega al fútbol.;2;;mi hijo;tu hijo;el hijo de;hijo mayor;figlio;fils;filho;son;syn;syn;oğul
+hijos;M;azul;HIjos;M en -os; plural -s;Parientes;violeta;Mis hijos van al colegio.;2;;mis hijos;tus hijos;los hijos de;hijos mayores;figli;enfants (masc);filhos;sons;synowie;synowie;oğullar
+madre;F;rojo;MADre;F en -e; plural -s;Parientes;violeta;Mi madre trabaja en un hospital.;3;;mi madre;tu madre;la madre de;madre soltera;madre;mère;mãe;mother;matka;matka;anne
+marido;M;azul;maRIdo;M en -o; plural -s;Parientes;violeta;Mi marido trabaja en una oficina.;1;;mi marido;tu marido;el marido de;marido joven;marito;mari;marido;husband;manžel;mąż;koca
+mujer;F;rojo;MUJer;F en -er; plural -es;Parientes;violeta;Mi mujer es doctora.;1;;mi mujer;tu mujer;la mujer de;mujer trabajadora;moglie;femme;esposa;wife;manželka;żona;eş
+nietas;F;rojo;nieTAS;F en -as; plural -s;Parientes;violeta;Mis nietas son muy simpáticas.;1;;mis nietas;tus nietas;las nietas de;nietas pequeñas;nipoti (fem);petites-filles;netas;granddaughters;vnucy;wnuczki;torunlar (fem)
+nietos;M;azul;nieTOS;M en -os; plural -s;Parientes;violeta;Mis nietos vienen de visita.;1;;mis nietos;tus nietos;los nietos de;nietos pequeños;nipoti (masc);petits-enfants (masc);netos;grandchildren (male);vnuci;wnuki;torunlar
+padre;M;azul;PADre;M en -e; plural -s;Parientes;violeta;Mi padre es ingeniero.;3;;mi padre;tu padre;el padre de;padre adoptivo;padre;père;pai;father;otec;ojciec;baba
+padres;M;azul;PARes;M en -es; plural -s;Parientes;violeta;Mis padres son muy trabajadores.;3;;mis padres;tus padres;los padres de;padres solteros;genitori;parents;pais;parents;rodiče;rodzice;ebeveynler
+prima;F;rojo;PRÍma;F en -a; plural -s;Parientes;violeta;Mi prima es muy amable.;2;;mi prima;tu prima;la prima de;prima hermana;cugina;cousine (fem);prima;cousin (female);bratranka;kuzynka;kuzen
+primo;M;azul;PRÍmo;M en -o; plural -s;Parientes;violeta;Mi primo vive en Sevilla.;2;;mi primo;tu primo;el primo de;primo segundo;cugino;cousin (masc);primo;cousin (male);bratranec;kuzyn;kuzen
+tía;F;rojo;TÍa;F en -a; plural -s;Parientes;violeta;Mi tía es profesora.;2;;mi tía;tu tía;la tía de;tía abuela;zia;tante;tia;aunt;teta;ciocia;teyze
+tío;M;azul;TÍo;M en -o; plural -s;Parientes;violeta;Mi tío vive en Barcelona.;2;;mi tío;tu tío;el tío de;tío abuelo;zio;oncle;tio;uncle;strýc;wujek;amca

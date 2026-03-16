@@ -1,0 +1,35 @@
+{
+  "claude-sonnet": {
+    "label": "Claude Sonnet 4.6 (referencia de calidad)",
+    "elapsed": 60.28505516052246,
+    "usage": {
+      "input_tokens": 21466,
+      "output_tokens": 4096
+    },
+    "words": 1636,
+    "cost": 0.125838,
+    "file": "/Users/armandocruz/Desktop/guia-didactica-profesor-IA/scripts/resultados_prueba/claude-sonnet.md"
+  },
+  "kimi-k2": {
+    "label": "Kimi K2 (Groq — $1.00/M input)",
+    "elapsed": 29.461671829223633,
+    "usage": {
+      "input_tokens": 20315,
+      "output_tokens": 4096
+    },
+    "words": 1717,
+    "cost": 0.032603,
+    "file": "/Users/armandocruz/Desktop/guia-didactica-profesor-IA/scripts/resultados_prueba/kimi-k2.md"
+  },
+  "qwen3-32b": {
+    "label": "Qwen 3 32B (Groq — $0.29/M input)",
+    "elapsed": 11.705415725708008,
+    "usage": {
+      "input_tokens": 18961,
+      "output_tokens": 4096
+    },
+    "words": 1918,
+    "cost": 0.00791533,
+    "file": "/Users/armandocruz/Desktop/guia-didactica-profesor-IA/scripts/resultados_prueba/qwen3-32b.md"
+  }
+}

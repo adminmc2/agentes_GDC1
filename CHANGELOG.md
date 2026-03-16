@@ -3,6 +3,177 @@
 
 ---
 
+## [2026-03-16] — Primera ejecución exitosa del agente Recurvo + Web de gestión
+
+### Implementado — Agente Recurvo funcional (CrewAI)
+- `scripts/crewai/tools.py`: 5 herramientas custom contra Neon PostgreSQL (consultar_inventario, consultar_tarjetas_previas, consultar_correcciones, escribir_tarjetas, exportar_csv)
+- `scripts/crewai/recurvo.py`: arquitectura de 2 tareas secuenciales (generador + escritor) para resolver que el LLM no llamaba a las tools de escritura
+- Bug corregido: `**kwargs` en las firmas de `_run()` rompía el `args_schema` de CrewAI (las herramientas no exponían parámetros)
+- Primera ejecución completa: 5/5 tools ejecutados, 19 tarjetas escritas en BD, CSV exportado
+- Modelo: GPT-OSS-120B en Groq (gratis). Coste: $0.00
+
+### Creado — Web de gestión del proyecto
+- `diagrama.py`: servidor web con APIs REST para tarjetas y correcciones (GET/POST)
+- `web/index.html`: frontend separado con hot reload (no requiere reiniciar servidor para ver cambios)
+- Título: "Sistema de gestión proyecto Guía didáctica"
+- 7 pestañas: Estado, Arquitectura, Flujo generación, Dependencias, Agentes U03, Base de datos, Correcciones
+- Pestaña Correcciones: visualiza tarjetas de la BD, permite corregir campos individuales, eliminar tarjetas, y registra todo en tabla `correcciones`
+
+### Auditoría — Calidad de las 19 tarjetas U03
+- 5 plurales incorrectos (abuelos, padres, hijos, nietos, nietas) → deben eliminarse
+- 6 errores de sílaba tónica (mujer, padres, nietos, nietas, primo, prima)
+- 19 reglas en formato incorrecto
+- 19 combos repetitivos
+- Faltan: nieto, nieta, sobrino, sobrina, niveles 2 y 3
+- Pendiente de corrección
+
+### Investigación — Feedback y evaluación de agentes
+- Documentado: `crewai train`, Knowledge System, `@human_feedback` en Flows
+- Evaluación: Langfuse (tracing), DeepEval (métricas), promptfoo (comparar modelos)
+- Pendiente de instalar e integrar
+
+### Limpieza
+- `diagrama.py`: eliminado HTML embebido (418 líneas), extraído a `web/index.html`
+- `.gitignore`: añadidos `*.pkl`, `datos/fuente/**/*.pdf`
+- Eliminadas JPGs de `datos/imagenes/U03/` (reemplazadas por PDF embebido)
+- Renombrado `datos/U03-inventario.json` → `datos/inventarios/U03-inventario.json`
+
+---
+
+## [2026-03-15] — Documento de diseño: memoria, aprendizaje y agente Recurvo
+
+### Creado — `diseno/crewai-memoria-aprendizaje.md`
+- Análisis de los 4 tipos de memoria de CrewAI y su aplicabilidad real a este proyecto
+- Definición completa del agente Recurvo (primer agente de Fase 1): identidad, inputs, output JSON, 16+2 campos, tools, modelo, lógica de extracción
+- Plan de construcción corregido (10 fases) con dependencias
+- Preguntas pendientes antes de implementar (7 preguntas en 3 categorías)
+- Conclusiones clave: entity memory de CrewAI no es fiable para vocabulario (usar tool custom con búsqueda exacta), feedback del editor es el mecanismo de aprendizaje más valioso (prioridad alta)
+
+---
+
+## [2026-03-15] — Arquitectura de dos fases: Agentes de Recursos → Agentes de Sección
+
+### Decisión arquitectónica — Agentes de Recursos como preprocesadores
+- Los agentes de material (Tarjetas, Gramatips, Estrategias) trabajan ANTES e independientemente de los agentes de sección
+- Extraen contenido desde la fuente (inventario), no desde la interpretación de otro agente
+- Justificación: Context Engineering (Anthropic), Multi-Agent Framework (Google), reducción de propagación de errores
+- Añadida meta-regla en CLAUDE.md: decisiones justificadas por especialistas, no por criterio personal
+- Actualizada propuesta de diseño en `diseno/sistema-agentes-propuesta.md`
+
+---
+
+## [2026-03-15] — Rediseño sistema de agentes + Prueba comparativa de modelos
+
+### Decisión — Sistema v5.0 descartado como sistema funcional
+- Los 7 prompts .md + orquestador NO eran agentes autónomos: eran instrucciones cargadas manualmente en Claude
+- Sin automatización, memoria, orquestación ni aprendizaje
+- Decisión: rediseño completo con framework de agentes reales
+
+### Seleccionado — CrewAI como framework
+- Alternativas evaluadas y descartadas: n8n (automatización, no agentes), Python custom (riesgo), LangGraph (excesivo)
+- CrewAI ofrece: agentes con herramientas, memoria persistente, orquestación secuencial, soporte multi-modelo
+- Pendiente: diseño detallado de la arquitectura antes de implementar
+
+### Añadido — Prueba comparativa de 3 modelos LLM
+- Script `scripts/probar_modelos.py`: genera misma sección (Vocabulario U03) con 3 modelos
+- Resultados en `scripts/resultados_prueba/` (claude-sonnet.md, kimi-k2.md, qwen3-32b.md)
+- Claude Sonnet 4.6: mejor calidad, español editorial impecable ($0.13/sección)
+- Kimi K2 (Groq): aceptable con revisión, errores menores ortográficos ($0.03/sección)
+- Qwen 3 32B (Groq): descartado — errores factuales en traducciones y sílabas tónicas ($0.008/sección)
+
+### Añadido — APIs y configuración
+- `.env` con API keys de Anthropic y Groq (gitignored)
+- `.gitignore` actualizado: `.env`, `__pycache__/`, `*.pyc`
+- CLAUDE.md actualizado: estado, sistema de agentes, preguntas pendientes 7-8, estructura, restricciones
+
+---
+
+## [2026-03-15] — Contenidos índice en BD + Script importación + Validación inventario U03
+
+### Añadido — `contenidos_indice` JSONB en tabla `unidades`
+- Campo JSONB añadido a la tabla `unidades` con ALTER TABLE
+- Poblado para las 10 unidades (U00-U09) desde el índice general del libro
+- Contiene: vocabulario, gramática, comunicación, cultura por unidad
+- Solución parcial al reciclaje inter-unidad: permite consultar contenidos de cualquier unidad previa
+- **Pendiente:** verificar y completar con detalle real cuando se generen inventarios completos
+- Diagrama ER actualizado en `diagrama.py`
+
+### Añadido — Script de importación JSON → PostgreSQL
+- `scripts/importar_inventario.py`: importa inventario JSON a Neon PostgreSQL
+- Idempotente: borra la unidad existente (CASCADE) y reimporta
+- Diseñado para cualquier unidad (U01-U09), recibe el JSON como argumento
+- U03 importada: 10 páginas, 47 actividades, 184 respuestas, 3 cuadros gramaticales
+- CLAUDE.md actualizado: script marcado como completado, `scripts/` añadido a estructura
+
+### Eliminado — Tabla `dependencias_seccion`
+- Eliminada de Neon PostgreSQL (estaba vacía, nunca se pobló)
+- Motivo: redundante — el orden de secciones y la lógica de reciclaje ya están definidos en los prompts de cada agente
+- Esquema pasa de 10 a 9 tablas
+- Añadida pregunta pendiente 6 en CLAUDE.md: cómo instrumentar el proceso de reciclaje de contenidos
+
+---
+
+## [2026-03-15] — Validación inventario U03 contra PDF + Material fuente
+
+### Corregido — Inventario U03 (validación contra PDF embebido)
+- 6 errores corregidos tras comparación visual página a página (10 páginas, 34-43):
+  1. `contenidos_indice.gramatica`: "Verbo tener" → "Interrogativos"
+  2. p35 act5 texto_modelo: "seis años" → "ocho años"
+  3. p35 act7 respuesta 4: "hermano" → "hermanos" (plural)
+  4. p36 cuadro Interrogativos, ejemplo Qué: "¿Qué hora comes?" → "¿Qué comes?"
+  5. p36 act3 ítem 4: "¿Dónde / Cuál" → "¿Cómo / Dónde"
+  6. p43 act5 sopa de letras: cuadrícula completa reescrita, respuestas "padre, sobrina" → "hijo, tío"
+
+---
+
+## [2026-03-15] — Material fuente PDF y limpieza de JPGs
+
+### Modificado — Material fuente U03
+- PDF embebido generado desde InDesign: `datos/fuente/U03/U03-libro.pdf` (4 MB, texto seleccionable)
+- 10 JPGs eliminadas de `datos/fuente/U03/` (git rm, ya no necesarias)
+- Carpeta residual `datos/imagenes/` eliminada
+- Fichero residual `datos/U03-inventario.json` eliminado (duplicado del que está en `datos/inventarios/`)
+- Referencias en inventario JSON actualizadas: apuntan al PDF en vez de a JPGs individuales
+- CLAUDE.md actualizado: tarea de PDF marcada como completada
+
+---
+
+## [2026-03-14] — Reorganización de datos/, base de datos Neon y diagrama de procesos
+
+### Añadido — Base de datos (Neon PostgreSQL)
+- Esquema creado en Neon (neon.tech) con 10 tablas
+- Tablas de contenido: unidades (con campo curso), paginas, actividades, respuestas, cuadros_gramaticales
+- Tablas de relaciones: reciclaje, dependencias_seccion
+- Tablas Layer 3: profesores (nombre, centro, país, nivel escolar), grupos (cantidad estudiantes, NEE, horas/semana, duración clase, horas/año), personalizaciones (vinculada a grupo, no a profesor)
+- Decisión de diseño: profesores y grupos separados porque un profesor puede tener varios grupos con contextos distintos
+- Índices para consultas frecuentes
+- Diagrama ER añadido como nueva pestaña en diagrama de procesos
+
+### Modificado — Estructura del proyecto
+- `datos/` reorganizado: separación de material fuente (`datos/fuente/`) e inventarios extraídos (`datos/inventarios/`)
+- `datos/imagenes/U03/*.jpg` → `datos/fuente/U03/*.jpg` (git mv, historial preservado)
+- `datos/U03-inventario.json` → `datos/inventarios/U03-inventario.json` (git mv, historial preservado)
+- Todas las referencias actualizadas en: inventario JSON, diagrama.py, unidades U03, audit.md, diseño
+
+### Modificado — CLAUDE.md
+- Estructura del repositorio actualizada con nueva organización de `datos/`
+- Añadida sección "Proceso de generación del inventario": PDF embebido → Claude → JSON → PostgreSQL
+- Añadida sección "Base de datos (Neon PostgreSQL)"
+- Tareas pendientes documentadas: generar PDF embebido U03, script importación JSON → PostgreSQL
+
+### Añadido — Diagrama de procesos (`diagrama.py`)
+- Servidor local (python3, zero deps) en http://127.0.0.1:8080
+- 4 diagramas Mermaid: arquitectura general, flujo de generación, dependencias entre secciones, agentes U03
+- Tabla de estado con escaneo en tiempo real del proyecto (polling cada 3 seg)
+- Arquitectura corregida: Libro → Material fuente → Inventario JSON → Agentes (flujo secuencial)
+
+### Modificado — Diagrama de procesos
+- Tildes corregidas en todos los textos (Gramática, Comunicación, Evaluación, etc.)
+- Labels de tabla con nombres correctos en español
+- Actualización en tiempo real de todos los diagramas (no solo la tabla)
+
+---
+
 ## [2026-02-20] — Píldoras Formativas, mejoras estructurales de agentes y reescritura U03
 
 ### Modificado — Agentes (mejoras estructurales derivadas de la revisión de U03)
@@ -16,7 +187,7 @@
 - `unidades/U01-U09` — Encabezado §2 "Notas lingüísticas para el profesor" → "Píldoras formativas para el profesor" en todos los templates.
 
 ### Modificado — U03 Familia (Bloque 1 Vocabulario)
-- `datos/U03-inventario.json` — Reescritura completa contra imágenes del libro del profesor: añadido campo `respuestas` a todas las actividades, pistas de audio 31-42, corrección p.38 (4 personajes + vídeo), corrección p.36 act.1 tipo y act.2 nueva, p.37 act.5 ampliada a 9 ítems, recuadros naranjas como campos separados.
+- `datos/inventarios/U03-inventario.json` — Reescritura completa contra imágenes del libro del profesor: añadido campo `respuestas` a todas las actividades, pistas de audio 31-42, corrección p.38 (4 personajes + vídeo), corrección p.36 act.1 tipo y act.2 nueva, p.37 act.5 ampliada a 9 ítems, recuadros naranjas como campos separados.
 - `unidades/U03-familia.md` — Fases 4, 5 y 6 reescritas según propuesta del autor: Fase 4 simplificada (escucha activa + transición tarjetas), Fase 5 con píldora proyectada ANTES + alumnos preguntan con libros cerrados + tarjetas como comprobación autónoma, Fase 6 con instrucción marco + 4 dinámicas opcionales (palmada, doble palmada, sí/no, L1→L2).
 
 ---
@@ -24,7 +195,7 @@
 ## [2026-02-16] — Revisión completa, JSON actualizado y "escucha y repite"
 
 ### Modificado
-- `datos/U03-inventario.json` — Actualizado Vocabulario (p.34-35) para nueva edición del libro: act. 2 cambia de "relaciona" a "forma frases"; act. 5 texto modelo corregido (Ana tiene 6 años, no 8); act. 6 texto de Javier actualizado (Getafe = ciudad, no pueblo; añadida edad Alejandra y fútbol); acts. 7-10 reorganizadas (7 = completa frases sobre Javier, 8 = texto de Lucía Alonso de Cantabria en lugar de Leonora arahuaca de Colombia, 9 = preguntas sobre Lucía, 10 = síntesis comparativa Javier/Lucía con 6 frases); reducido de 11 a 10 actividades.
+- `datos/inventarios/U03-inventario.json` — Actualizado Vocabulario (p.34-35) para nueva edición del libro: act. 2 cambia de "relaciona" a "forma frases"; act. 5 texto modelo corregido (Ana tiene 6 años, no 8); act. 6 texto de Javier actualizado (Getafe = ciudad, no pueblo; añadida edad Alejandra y fútbol); acts. 7-10 reorganizadas (7 = completa frases sobre Javier, 8 = texto de Lucía Alonso de Cantabria en lugar de Leonora arahuaca de Colombia, 9 = preguntas sobre Lucía, 10 = síntesis comparativa Javier/Lucía con 6 frases); reducido de 11 a 10 actividades.
 - `unidades/U03-familia.md` — Fase 2 reescrita: "escucha y repite" es ahora el eje central de la fase, como pide la actividad 1 del libro. Secuencia: (1) el profesor señala brevemente las 3 generaciones del árbol, (2) primera escucha global del audio, (3) segunda escucha con repetición oral de cada término, (4) refuerzo con el árbol de la pizarra. Antes: la presentación oral del profesor era el eje y el audio era accesorio al final.
 - `unidades/U03-familia.md` — Título funcional de Fase 2 actualizado: de "PRESENTE EL VOCABULARIO CON EL ÁRBOL GENEALÓGICO" a "ESCUCHE Y REPITA LOS TÉRMINOS DE PARENTESCO".
 - `unidades/U03-familia.md` — Texto corrupto de act. 6 corregido (duplicación "Madrid. La madre, Catalina, estudia..." eliminada).

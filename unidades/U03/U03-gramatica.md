@@ -51,7 +51,7 @@
 
 | Lección | Sección del libro | Páginas | Tiempo estimado |
 |---------|-------------------|---------|-----------------|
-| *pendiente — necesito datos/U03-inventario.json* |
+| *pendiente — necesito datos/inventarios/U03-inventario.json* |
 
 ### 2. Píldoras formativas para el profesor
 *Genera: Agente 1 (Planificador)*

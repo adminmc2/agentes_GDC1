@@ -6,7 +6,7 @@
 
   "contenidos_indice": {
     "vocabulario": "Parientes",
-    "gramatica": "Presente de los verbos regulares. Verbo tener. Posesivos. Hacer un cuaderno de vocabulario",
+    "gramatica": "Presente de los verbos regulares. Interrogativos. Posesivos. Hacer un cuaderno de vocabulario",
     "comunicacion": "Presentar a alguien. Hablar de la familia. La hora. El sonido /θ/",
     "destrezas": "Escribir un correo con información personal, sobre la familia y los compañeros de clase. Escuchar la programación de la televisión",
     "cultura": "El cómic y las películas de animación"
@@ -15,7 +15,7 @@
   "paginas_detalle": [
     {
       "pagina": 34,
-      "imagen": "datos/imagenes/U03/U3_p01.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Vocabulario — Parientes",
       "actividades": [
         {
@@ -100,7 +100,7 @@
     },
     {
       "pagina": 35,
-      "imagen": "datos/imagenes/U03/U3_p02.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Vocabulario — Parientes",
       "respuestas_recuadro_naranja": [
         "Lucía es de un pueblo de Cantabria.",
@@ -118,7 +118,7 @@
           "destreza": "comprensión lectora + producción escrita",
           "tiene_audio": false,
           "tiene_imagen": false,
-          "texto_modelo": "Mi padre se llama Antonio y tiene cuarenta años. Mi madre tiene treinta y cinco y se llama Elena. Tengo dos hermanas, se llaman Ana y Marta. Ana tiene seis años y Marta, cinco. No tengo hermanos.",
+          "texto_modelo": "Mi padre se llama Antonio y tiene cuarenta años. Mi madre tiene treinta y cinco y se llama Elena. Tengo dos hermanas, se llaman Ana y Marta. Ana tiene ocho años y Marta, cinco. No tengo hermanos.",
           "descripcion": "Texto modelo breve de una niña que describe a su familia; el alumno escribe un texto similar sobre la suya."
         },
         {
@@ -154,7 +154,7 @@
             "1. madre",
             "2. hijo",
             "3. nietos",
-            "4. hermano"
+            "4. hermanos"
           ],
           "descripcion": "4 frases con huecos sobre relaciones de parentesco; el alumno completa con información del texto de Javier."
         },
@@ -226,7 +226,7 @@
     },
     {
       "pagina": 36,
-      "imagen": "datos/imagenes/U03/U3_p03.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Gramática — Presente de los verbos regulares / Interrogativos",
       "cuadros_gramaticales": [
         {
@@ -252,7 +252,7 @@
         {
           "titulo": "Interrogativos",
           "contenido": {
-            "Qué": ["¿Qué hora comes?", "¿A qué hora comes?"],
+            "Qué": ["¿Qué comes?", "¿A qué hora comes?"],
             "Quién / Quiénes": ["¿Quién es esta chica?", "¿Quiénes son estas niñas?"],
             "Cuál": ["¿Cuál es tu número de teléfono?", "¿Cuál es tu asignatura favorita?"],
             "Dónde": ["¿Dónde viven tus abuelos?", "¿De dónde es Óscar?"],
@@ -343,7 +343,7 @@
             "1. ¿Dónde / Cuál viven tus abuelos? — En Marbella.",
             "2. ¿Cómo / Cuál os llamáis vosotras? — Yo me llamo Rosa y ella, Alicia.",
             "3. ¿Qué / Cuál estudia tu hermana mayor? — Geografía e Historia.",
-            "4. ¿Dónde / Cuál trabaja tu tío Óscar? — En un banco.",
+            "4. ¿Cómo / Dónde trabaja tu tío Óscar? — En un banco.",
             "5. ¿Cuál / Cómo es tu día de la semana favorito? — El jueves.",
             "6. ¿Qué / Dónde comes? — Patatas fritas.",
             "7. ¿Quién / Quiénes son estos niños? — Son los hijos de Julia."
@@ -363,7 +363,7 @@
     },
     {
       "pagina": 37,
-      "imagen": "datos/imagenes/U03/U3_p04.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Gramática — Interrogativos (cont.) / Posesivos / Para aprender",
       "cuadros_gramaticales": [
         {
@@ -512,7 +512,7 @@
     },
     {
       "pagina": 38,
-      "imagen": "datos/imagenes/U03/U3_p05.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Comunicación — Hablar de la familia / La hora / El sonido /θ/",
       "actividades": [
         {
@@ -624,7 +624,7 @@
     },
     {
       "pagina": 39,
-      "imagen": "datos/imagenes/U03/U3_p06.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Comunicación (cont.) — La hora / Pronunciación y ortografía",
       "respuestas_recuadro_naranja": [
         "1 Son las once y media.",
@@ -754,7 +754,7 @@
     },
     {
       "pagina": 40,
-      "imagen": "datos/imagenes/U03/U3_p07.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Destrezas — Leer / Escribir",
       "respuestas_recuadro_naranja_act1": [
         "1. Su hermano tiene once años y su hermana, seis.",
@@ -863,7 +863,7 @@
     },
     {
       "pagina": 41,
-      "imagen": "datos/imagenes/U03/U3_p08.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Destrezas (cont.) — Escuchar / Hablar / Hablar y mediar",
       "actividades": [
         {
@@ -937,7 +937,7 @@
     },
     {
       "pagina": 42,
-      "imagen": "datos/imagenes/U03/U3_p09.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Cultura — El cómic y las películas de animación",
       "actividades": [
         {
@@ -1046,7 +1046,7 @@
     },
     {
       "pagina": 43,
-      "imagen": "datos/imagenes/U03/U3_p10.jpg",
+      "imagen": "datos/fuente/U03/U03-libro.pdf",
       "seccion": "Reflexión y evaluación",
       "respuestas_recuadro_naranja": [
         "1 Son las dos y veinte.",
@@ -1189,20 +1189,20 @@
           "destreza": "comprensión lectora",
           "tiene_audio": false,
           "tiene_imagen": true,
-          "descripcion_imagen": "Cuadrícula de sopa de letras. Palabras visibles resaltadas: PRIMO (horizontal, fila 1), HERMANO (horizontal, fila 6, resaltado en verde).",
+          "descripcion_imagen": "Cuadrícula de sopa de letras 10×9. Palabras resaltadas: PRIMO (horizontal, fila 1), MADRE (vertical, col 4), HERMANO (horizontal, fila 5), HIJO (diagonal ↘, desde fila 5 col 3), ABUELO (vertical, col 7), TÍO (vertical, col 9).",
           "sopa_de_letras": [
             "P R I M O A G E H",
             "O C B A I L J M Z",
             "S R L D O B K H T",
-            "U J E R C S P I O",
-            "Q F R I S I P V B",
-            "H E R M A N O Y P",
-            "P B T A C D U F Y",
-            "C K A N X U F I G",
-            "L A J P O L B H A",
-            "L A I A J P O I A"
+            "U J E R C I S P Í",
+            "Q R H E R M A N O",
+            "H P B I A C B O U",
+            "Ñ C A N J X U F Y",
+            "G K J A B O E C I",
+            "U Z X V I J L B H",
+            "L A J B A S O R P"
           ],
-          "respuestas": ["primo", "hermano", "madre", "padre", "abuelo", "sobrina"],
+          "respuestas": ["primo", "madre", "hermano", "hijo", "abuelo", "tío"],
           "descripcion": "Sopa de letras con 6 palabras de miembros de la familia; actividad lúdica de repaso de vocabulario."
         },
         {
@@ -1290,6 +1290,10 @@
     {
       "fecha": "2026-02-27",
       "cambio": "Reflexión p.43 act. 4: añadido ítem 8 (Yo soy el ___ de mi abuela → nieto) que faltaba; corregida descripción de 7 a 8 frases."
+    },
+    {
+      "fecha": "2026-03-15",
+      "cambio": "Validación completa contra PDF embebido (U03-libro.pdf). 6 errores corregidos: (1) contenidos_indice.gramatica: 'Verbo tener' → 'Interrogativos'; (2) p.35 act.5 texto_modelo: 'seis años' → 'ocho años'; (3) p.35 act.7 resp.4: 'hermano' → 'hermanos' (plural); (4) p.36 cuadro Interrogativos ejemplo Qué: '¿Qué hora comes?' → '¿Qué comes?'; (5) p.36 act.3 ítem 4: '¿Dónde / Cuál' → '¿Cómo / Dónde'; (6) p.43 act.5 sopa de letras: cuadrícula completa reescrita contra imagen ampliada, respuestas corregidas de 'padre, sobrina' a 'hijo, tío', descripcion_imagen actualizada con ubicación de cada palabra."
     },
     {
       "fecha": "2026-02-20",

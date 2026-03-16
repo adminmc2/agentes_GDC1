@@ -125,7 +125,7 @@ La investigación (CrewAI content pipelines, General Assembly GAIA, EduPlanner) 
 | Campo | Descripción |
 |-------|-------------|
 | **Rol** | Planifica la secuencia didáctica y prepara las notas lingüísticas |
-| **Lee** | `00-curso-general.md` + `datos/U03-inventario.json` + `unidades/U03-familia.md` + unidades adyacentes (U02, U04) + `marco-teorico-metodologico.md` (sección 4: atención adolescente, sección 6: recursividad) |
+| **Lee** | `00-curso-general.md` + `datos/inventarios/U03-inventario.json` + `unidades/U03-familia.md` + unidades adyacentes (U02, U04) + `marco-teorico-metodologico.md` (sección 4: atención adolescente, sección 6: recursividad) |
 | **Herramientas** | Read (archivos), consulta datos estructurados |
 | **Produce** | `output/U03-01-planificacion.md` que contiene: (1) Secuencia de lecciones (distribución en sesiones de 45-55 min) + (2) Notas lingüísticas para el profesor (gramática ampliada, vocabulario nuclear, pronunciación, conexiones con unidades previas/posteriores) |
 | **Rellena en U03** | Secciones 1 + 2 |
@@ -138,7 +138,7 @@ La investigación (CrewAI content pipelines, General Assembly GAIA, EduPlanner) 
 | Campo | Descripción |
 |-------|-------------|
 | **Rol** | Escribe las instrucciones para el profesor, actividad a actividad |
-| **Lee** | `datos/U03-inventario.json` + `output/U03-01-planificacion.md` (aprobada) + `marco-teorico-metodologico.md` (completo — este es el agente que más lo necesita) + `00-curso-general.md` (perfil estudiante, L1s) |
+| **Lee** | `datos/inventarios/U03-inventario.json` + `output/U03-01-planificacion.md` (aprobada) + `marco-teorico-metodologico.md` (completo — este es el agente que más lo necesita) + `00-curso-general.md` (perfil estudiante, L1s) |
 | **Herramientas** | Read, Write |
 | **Produce** | `output/U03-02-explotacion.md` que contiene: (3) Explotación didáctica sección a sección + (4) Atención a la diversidad y errores por L1 + (5) Evaluación (criterios e instrumentos) |
 | **Rellena en U03** | Secciones 3 + 4 + 5 |
@@ -152,7 +152,7 @@ La investigación (CrewAI content pipelines, General Assembly GAIA, EduPlanner) 
 | Campo | Descripción |
 |-------|-------------|
 | **Rol** | Genera respuestas y transcripciones |
-| **Lee** | `datos/U03-inventario.json` (actividades con sus instrucciones exactas) + recurso PDF si necesita verificar visualmente un ejercicio |
+| **Lee** | `datos/inventarios/U03-inventario.json` (actividades con sus instrucciones exactas) + recurso PDF si necesita verificar visualmente un ejercicio |
 | **Herramientas** | Read, PDF vision (puntual), Write |
 | **Produce** | `output/U03-03-solucionario.md` que contiene: (6) Solucionario completo + (7) Transcripciones de audios |
 | **Rellena en U03** | Secciones 6 + 7 |
@@ -176,7 +176,7 @@ La investigación (CrewAI content pipelines, General Assembly GAIA, EduPlanner) 
 
 ```
 FASE 0: INGESTA (una vez por unidad)
-    │   PDF libro del alumno → Extracción → datos/U03-inventario.json
+    │   PDF libro del alumno → Extracción → datos/inventarios/U03-inventario.json
     │   ✓ Editor verifica que el inventario es correcto
     ▼
 FASE 1: PLANIFICACIÓN
@@ -339,6 +339,48 @@ Una vez validada la Fase 1, los agentes se reconvierten en herramienta para el p
 
 ---
 
+---
+
+## ACTUALIZACIÓN 2026-03-15 — Arquitectura de dos fases: Recursos → Secciones
+
+### Decisión arquitectónica
+
+Los agentes de material (Tarjetas, Gramatips, Estrategias) trabajan **antes e independientemente** de los agentes de sección. No son post-procesadores — son **preprocesadores** que extraen, estructuran y condensan información desde la fuente (inventario), y alimentan a los agentes de sección con materiales listos.
+
+### Justificación (por principios establecidos)
+
+1. **Context Engineering (Anthropic, 2025):** "Sub-agent architectures where specialized agents handle focused tasks and return condensed, distilled summaries." Los agentes de recursos condensan vocabulario/gramática en materiales estructurados que reducen el ruido para los agentes downstream.
+
+2. **Multi-Agent Framework (Google, 2025):** "Document processing subgraph includes agents for text extraction, formatting analysis, and content classification, operating independently." Los agentes de recursos operan independientemente sobre el inventario.
+
+3. **Signal-to-noise (Context Engineering):** "Maximize signal-to-noise ratio by treating every token as precious." Los agentes de sección reciben materiales estructurados, no inventario crudo.
+
+4. **Reducción de propagación de errores:** Los agentes de recursos trabajan desde la fuente validada (inventario JSON), no desde la interpretación de otro agente.
+
+### Flujo de dos fases
+
+```
+FASE 1 — AGENTES DE RECURSOS (paralelo, desde inventario)
+  Agente Tarjetas   → extrae TODO el vocabulario → genera tarjetas (nuevo ⭐ / reutilizado ♻️)
+  Agente Gramatips   → extrae TODA la gramática → genera tips (nueva ★ / repaso ↻)
+  Agente Estrategias → identifica TODAS las destrezas → genera/reutiliza estrategias
+
+FASE 2 — AGENTES DE SECCIÓN (secuencial)
+  Vocabulario → Gramática → Comunicación → Destrezas → Cultura → Reflexión
+  Cada uno recibe: inventario + materiales de Fase 1 + output de secciones anteriores
+  Cada uno produce: explotación didáctica (su único foco)
+```
+
+### Ventajas sobre el diseño anterior (cada sección genera sus materiales)
+
+- **Consistencia:** 1 agente genera TODAS las tarjetas con el mismo criterio
+- **Reutilización inter-unidad:** el agente de Tarjetas conoce todas las tarjetas de U01-U09
+- **Foco:** cada agente tiene UNA responsabilidad
+- **Aprendizaje:** correcciones a tarjetas afectan a 1 agente, no a 6
+
+---
+
 *Documento creado: 2025-01-31*
 *Versión: 4.0 — Rediseño completo: 4 agentes reales, base de datos estructurada, marco teórico como backstage, ruta a producción con Claude Agent SDK*
+*Actualización 2026-03-15: Arquitectura de dos fases (Recursos → Secciones), framework CrewAI, estrategia multi-modelo (Groq + Anthropic)*
 *Cambios desde v3.0: De 8 agentes simulados a 4 agentes reales con herramientas; ingesta de datos separada de generación; marco teórico integrado como instrucción interna (no visible al profesor); ruta clara prototipo→producción*

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sistema de gestión - Guía Didáctica</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #1a1a2e; color: #eee; }
+header { background: #16213e; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f3460; }
+header h1 { font-size: 18px; }
+header .meta { font-size: 12px; color: #7f8c8d; }
+.live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #2ecc71; margin-right: 6px; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+nav { display: flex; background: #16213e; border-bottom: 1px solid #0f3460; }
+nav button { background: none; border: none; color: #95a5a6; padding: 12px 20px; cursor: pointer; font-size: 14px; border-bottom: 2px solid transparent; transition: all 0.2s; }
+nav button:hover { color: #fff; }
+nav button.active { color: #3498db; border-bottom-color: #3498db; }
+.tab { display: none; padding: 24px; }
+.tab.active { display: block; }
+.diagram-box { background: #fff; border-radius: 8px; padding: 24px; margin: 16px 0; overflow-x: auto; min-height: 200px; }
+.info { background: #16213e; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+.info h2 { color: #3498db; margin-bottom: 8px; font-size: 16px; }
+.info p { color: #bdc3c7; font-size: 14px; }
+.legend { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+.legend span { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+table { width: 100%; border-collapse: collapse; background: #16213e; border-radius: 8px; overflow: hidden; }
+th, td { padding: 10px 14px; text-align: center; font-size: 13px; border: 1px solid #0f3460; }
+th { background: #0f3460; }
+.st-complete { background: #2ecc71; color: #fff; }
+.st-in-progress { background: #f39c12; color: #fff; }
+.st-structure-only { background: #e67e22; color: #fff; }
+.st-missing { background: #34495e; color: #7f8c8d; }
+.update-flash { animation: flash 0.5s; }
+@keyframes flash { 0% { box-shadow: 0 0 20px #3498db; } 100% { box-shadow: none; } }
+/* Correcciones tab */
+.corr-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+.corr-controls select, .corr-controls button { padding: 8px 14px; border-radius: 6px; border: 1px solid #0f3460; background: #16213e; color: #eee; font-size: 14px; cursor: pointer; }
+.corr-controls button { background: #3498db; border-color: #3498db; }
+.corr-controls button:hover { background: #2980b9; }
+.corr-controls button.danger { background: #e74c3c; border-color: #e74c3c; }
+.tarjetas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+.tarjeta-card { background: #16213e; border-radius: 8px; padding: 16px; border: 1px solid #0f3460; position: relative; }
+.tarjeta-card h3 { color: #3498db; margin-bottom: 8px; font-size: 16px; }
+.tarjeta-card .field { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #0f346033; font-size: 13px; }
+.tarjeta-card .field .label { color: #7f8c8d; min-width: 110px; }
+.tarjeta-card .field .value { color: #eee; text-align: right; cursor: pointer; }
+.tarjeta-card .field .value:hover { color: #f39c12; text-decoration: underline; }
+.tarjeta-card .field .value.error { color: #e74c3c; font-weight: bold; }
+.tarjeta-card .actions { margin-top: 12px; display: flex; gap: 8px; }
+.tarjeta-card .actions button { padding: 4px 10px; font-size: 12px; border-radius: 4px; border: none; cursor: pointer; }
+.btn-corregir { background: #f39c12; color: #fff; }
+.btn-eliminar { background: #e74c3c; color: #fff; }
+.btn-aprobar { background: #2ecc71; color: #fff; }
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100; justify-content: center; align-items: center; }
+.modal-overlay.open { display: flex; }
+.modal { background: #1a1a2e; border: 1px solid #0f3460; border-radius: 12px; padding: 24px; width: 480px; max-width: 90vw; }
+.modal h3 { color: #3498db; margin-bottom: 16px; }
+.modal label { display: block; color: #7f8c8d; font-size: 13px; margin-top: 10px; }
+.modal input, .modal select, .modal textarea { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #0f3460; background: #16213e; color: #eee; font-size: 14px; margin-top: 4px; }
+.modal textarea { height: 60px; resize: vertical; }
+.modal .modal-actions { display: flex; gap: 10px; margin-top: 16px; justify-content: flex-end; }
+.corr-history { margin-top: 24px; }
+.corr-history table { font-size: 12px; }
+.corr-history td { text-align: left; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+.badge-silaba { background: #8e44ad; color: #fff; }
+.badge-traduccion { background: #2980b9; color: #fff; }
+.badge-regla { background: #e67e22; color: #fff; }
+.badge-plural { background: #e74c3c; color: #fff; }
+.badge-otro { background: #7f8c8d; color: #fff; }
+.stats-bar { display: flex; gap: 16px; margin-bottom: 16px; }
+.stat { background: #16213e; border-radius: 8px; padding: 12px 20px; text-align: center; }
+.stat .num { font-size: 24px; font-weight: bold; color: #3498db; }
+.stat .lbl { font-size: 12px; color: #7f8c8d; }
+</style>
+</head>
+<body>
+<header>
+    <h1>Sistema de gestión proyecto Guía didáctica</h1>
+    <span class="meta"><span class="live-dot"></span><span id="meta">Conectando...</span></span>
+</header>
+<nav id="nav"></nav>
+<div id="content"></div>
+
+<script>
+mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+
+const SECTION_NAMES = SECTIONS_JSON;
+const SECTION_LABELS = LABELS_JSON;
+const TABS = [
+    {id: 'estado', label: 'Estado', type: 'table'},
+    {id: 'nivel1', label: 'Arquitectura', type: 'mermaid', key: 'nivel1',
+     title: 'Nivel 1 - Arquitectura general',
+     desc: 'Flujo de datos desde el libro de texto hasta la guía impresa y las guías personalizadas.'},
+    {id: 'nivel2', label: 'Flujo generación', type: 'mermaid', key: 'nivel2',
+     title: 'Nivel 2 - Flujo de generación de una sección',
+     desc: 'Los 3 pasos: preparación del contexto, generación con Claude Code, verificación post-producción.'},
+    {id: 'nivel3', label: 'Dependencias', type: 'mermaid', key: 'nivel3',
+     title: 'Nivel 3 - Dependencias entre secciones',
+     desc: 'Cada sección recicla contenido de las anteriores. La Estación de Servicio acumula tarjetas.'},
+    {id: 'nivel4', label: 'Agentes U03', type: 'mermaid', key: 'nivel4',
+     title: 'Nivel 4 - Agentes y estado de U03',
+     desc: 'Cada agente con su repertorio. El color indica el estado real del archivo generado.'},
+    {id: 'database', label: 'Base de datos', type: 'mermaid', key: 'database',
+     title: 'Esquema de base de datos - Neon PostgreSQL',
+     desc: '9 tablas: estructura del libro, reciclaje entre actividades y personalización de profesores (Layer 3).'},
+    {id: 'correcciones', label: 'Correcciones', type: 'custom'},
+];
+
+let currentTab = 'estado';
+let liveData = null;
+let lastHash = '';
+
+function buildNav() {
+    const nav = document.getElementById('nav');
+    TABS.forEach(t => {
+        const btn = document.createElement('button');
+        btn.textContent = t.label;
+        btn.className = t.id === currentTab ? 'active' : '';
+        btn.onclick = () => showTab(t.id);
+        nav.appendChild(btn);
+    });
+}
+
+async function showTab(id) {
+    currentTab = id;
+    document.querySelectorAll('#nav button').forEach((b, i) => {
+        b.className = TABS[i].id === id ? 'active' : '';
+    });
+    await renderCurrentTab();
+}
+
+async function renderCurrentTab() {
+    const content = document.getElementById('content');
+    const tab = TABS.find(t => t.id === currentTab);
+    if (!liveData) return;
+
+    if (tab.type === 'table') {
+        content.innerHTML = buildStatusHTML(liveData.status);
+    } else if (tab.type === 'custom' && tab.id === 'correcciones') {
+        content.innerHTML = buildCorreccionesHTML();
+        loadTarjetas(corrUnidad);
+        loadCorrecciones(corrUnidad);
+    } else {
+        const code = liveData[tab.key];
+        content.innerHTML = `
+            <div class="tab active">
+                <div class="info"><h2>${tab.title}</h2><p>${tab.desc}</p></div>
+                <div class="diagram-box" id="diagram-box"><pre class="mermaid">${code}</pre></div>
+            </div>`;
+        try {
+            await mermaid.run({ querySelector: '.mermaid' });
+        } catch(e) {
+            console.error('Mermaid error:', e);
+            document.getElementById('diagram-box').innerHTML =
+                '<p style="color:red">Error renderizando diagrama: ' + e.message + '</p>';
+        }
+    }
+}
+
+function buildStatusHTML(status) {
+    const units = Object.keys(status).sort();
+    let tableHTML = '<tr><th></th>';
+    units.forEach(u => tableHTML += '<th>' + u + '</th>');
+    tableHTML += '</tr>';
+    SECTION_NAMES.forEach(s => {
+        tableHTML += '<tr><th>' + (SECTION_LABELS[s] || s) + '</th>';
+        units.forEach(u => {
+            const info = (status[u] && status[u][s]) || {status:'missing', lines:0, pendiente:0};
+            tableHTML += '<td class="st-' + info.status + '" title="' +
+                info.lines + ' líneas, ' + info.pendiente + ' pendiente">' +
+                info.lines + '</td>';
+        });
+        tableHTML += '</tr>';
+    });
+
+    return `<div class="tab active">
+        <div class="info"><h2>Estado actual del proyecto</h2>
+        <p>Cada celda muestra las líneas del archivo. Color según estado real. Se actualiza en tiempo real.</p></div>
+        <div class="legend">
+            <span><span class="dot" style="background:#2ecc71"></span> Completo</span>
+            <span><span class="dot" style="background:#f39c12"></span> En progreso</span>
+            <span><span class="dot" style="background:#e67e22"></span> Solo estructura</span>
+            <span><span class="dot" style="background:#34495e"></span> No existe</span>
+        </div>
+        <table>${tableHTML}</table>
+    </div>`;
+}
+
+async function pollData() {
+    try {
+        const res = await fetch('/api/diagrams');
+        const data = await res.json();
+
+        if (data.hash !== lastHash) {
+            liveData = data;
+            lastHash = data.hash;
+            await renderCurrentTab();
+            // Flash visual para indicar actualización
+            const box = document.getElementById('diagram-box');
+            if (box) { box.classList.add('update-flash'); setTimeout(() => box.classList.remove('update-flash'), 600); }
+        }
+
+        document.getElementById('meta').textContent = 'En vivo - ' + new Date().toLocaleTimeString();
+    } catch(e) {
+        document.getElementById('meta').textContent = 'Sin conexión';
+    }
+}
+
+// --- Correcciones tab ---
+let corrUnidad = 3;
+let corrTarjetas = [];
+let corrHistorial = [];
+
+function buildCorreccionesHTML() {
+    return `<div class="tab active">
+        <div class="info"><h2>Correcciones de tarjetas</h2>
+        <p>Revisa las tarjetas generadas por el agente. Corrige errores antes de aprobar. Las correcciones se almacenan en la BD y el agente las consulta en futuras ejecuciones.</p></div>
+        <div class="corr-controls">
+            <label style="color:#7f8c8d">Unidad:</label>
+            <select id="corr-unidad" onchange="corrUnidad=+this.value; loadTarjetas(corrUnidad); loadCorrecciones(corrUnidad);">
+                ${[1,2,3,4,5,6,7,8,9].map(n => `<option value="${n}" ${n===corrUnidad?'selected':''}>U${String(n).padStart(2,'0')}</option>`).join('')}
+            </select>
+            <button onclick="loadTarjetas(corrUnidad); loadCorrecciones(corrUnidad);">Recargar</button>
+        </div>
+        <div class="stats-bar" id="corr-stats"></div>
+        <div class="tarjetas-grid" id="corr-grid">Cargando tarjetas...</div>
+        <div class="corr-history" id="corr-history"></div>
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal">
+                <h3 id="modal-title">Corregir campo</h3>
+                <input type="hidden" id="modal-tarjeta-id">
+                <input type="hidden" id="modal-palabra">
+                <input type="hidden" id="modal-campo">
+                <label>Campo</label>
+                <input type="text" id="modal-campo-display" disabled>
+                <label>Valor original</label>
+                <input type="text" id="modal-original" disabled>
+                <label>Valor corregido</label>
+                <input type="text" id="modal-corregido">
+                <label>Tipo de error</label>
+                <select id="modal-tipo">
+                    <option value="silaba_tonica">Silaba tonica</option>
+                    <option value="traduccion">Traduccion</option>
+                    <option value="regla">Regla morfologica</option>
+                    <option value="genero">Genero</option>
+                    <option value="plural_no_deseado">Plural no deseado</option>
+                    <option value="combo">Combo</option>
+                    <option value="ejemplo">Ejemplo</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <div class="modal-actions">
+                    <button onclick="closeModal();" style="background:#7f8c8d;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;">Cancelar</button>
+                    <button onclick="submitCorreccion();" style="background:#f39c12;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;">Guardar correccion</button>
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+
+async function loadTarjetas(unidad) {
+    try {
+        const res = await fetch('/api/tarjetas?unidad=' + unidad);
+        corrTarjetas = await res.json();
+        renderTarjetas();
+    } catch(e) {
+        document.getElementById('corr-grid').innerHTML = '<p style="color:#e74c3c">Error cargando tarjetas</p>';
+    }
+}
+
+async function loadCorrecciones(unidad) {
+    try {
+        const res = await fetch('/api/correcciones?unidad=' + unidad);
+        corrHistorial = await res.json();
+        renderHistorial();
+    } catch(e) {}
+}
+
+function renderTarjetas() {
+    const grid = document.getElementById('corr-grid');
+    const stats = document.getElementById('corr-stats');
+    if (!corrTarjetas.length) {
+        grid.innerHTML = '<p style="color:#7f8c8d">No hay tarjetas para esta unidad.</p>';
+        stats.innerHTML = '';
+        return;
+    }
+    stats.innerHTML = `
+        <div class="stat"><div class="num">${corrTarjetas.length}</div><div class="lbl">Tarjetas</div></div>
+        <div class="stat"><div class="num">${corrTarjetas.filter(t=>t.nivel_jerarquia===1).length}</div><div class="lbl">Nivel 1</div></div>
+        <div class="stat"><div class="num">${corrTarjetas.filter(t=>t.nivel_jerarquia===2).length}</div><div class="lbl">Nivel 2</div></div>
+        <div class="stat"><div class="num">${corrTarjetas.filter(t=>t.nivel_jerarquia===3).length}</div><div class="lbl">Nivel 3</div></div>
+        <div class="stat"><div class="num">${corrHistorial.length}</div><div class="lbl">Correcciones</div></div>
+    `;
+    const FIELDS = [
+        ['genero','Genero'],['color_genero','Color genero'],['silaba_tonica','Silaba tonica'],
+        ['regla','Regla'],['campo_semantico','Campo semantico'],['ejemplo','Ejemplo'],
+        ['frecuencia','Frecuencia'],['irregularidad','Irregularidad'],
+        ['trad_it','IT'],['trad_fr','FR'],['trad_pt_br','PT-BR'],['trad_en','EN'],
+        ['trad_cs','CS'],['trad_pl','PL'],['trad_tr','TR'],
+        ['seccion','Seccion'],['pagina','Pagina'],['nivel_jerarquia','Nivel'],['estado','Estado']
+    ];
+    grid.innerHTML = corrTarjetas.map(t => {
+        const combos = (t.combos||[]).join(', ');
+        const fields = FIELDS.map(([k,label]) => {
+            const v = t[k] != null ? t[k] : '';
+            const hasCorr = corrHistorial.some(c => c.palabra === t.palabra && c.campo === k);
+            return `<div class="field"><span class="label">${label}</span><span class="value${hasCorr?' error':''}" onclick="openModal(${t.id},'${t.palabra}','${k}','${String(v).replace(/'/g,"\\\\'")}');">${v}</span></div>`;
+        }).join('');
+        return `<div class="tarjeta-card">
+            <h3>${t.palabra}</h3>
+            <div class="field"><span class="label">Combos</span><span class="value" style="font-size:11px">${combos}</span></div>
+            ${fields}
+            <div class="actions">
+                <button class="btn-corregir" onclick="openModal(${t.id},'${t.palabra}','','');">Corregir</button>
+                <button class="btn-eliminar" onclick="eliminarTarjeta(${t.id},'${t.palabra}');">Eliminar</button>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function renderHistorial() {
+    const el = document.getElementById('corr-history');
+    if (!corrHistorial.length) { el.innerHTML = ''; return; }
+    const badgeClass = t => ({silaba_tonica:'badge-silaba',traduccion:'badge-traduccion',regla:'badge-regla',plural_no_deseado:'badge-plural'}[t]||'badge-otro');
+    el.innerHTML = `<div class="info"><h2>Historial de correcciones (${corrHistorial.length})</h2></div>
+    <table><tr><th>Palabra</th><th>Campo</th><th>Original</th><th>Corregido</th><th>Tipo</th><th>Fecha</th></tr>
+    ${corrHistorial.map(c => `<tr>
+        <td>${c.palabra||''}</td><td>${c.campo||''}</td>
+        <td style="color:#e74c3c">${c.valor_original||''}</td>
+        <td style="color:#2ecc71">${c.valor_corregido||''}</td>
+        <td><span class="badge ${badgeClass(c.tipo_error)}">${c.tipo_error||''}</span></td>
+        <td>${c.fecha ? new Date(c.fecha).toLocaleDateString() : ''}</td>
+    </tr>`).join('')}</table>`;
+}
+
+function openModal(tarjetaId, palabra, campo, valorOriginal) {
+    document.getElementById('modal-tarjeta-id').value = tarjetaId;
+    document.getElementById('modal-palabra').value = palabra;
+    document.getElementById('modal-campo').value = campo;
+    document.getElementById('modal-campo-display').value = campo || '(selecciona un campo arriba)';
+    document.getElementById('modal-original').value = valorOriginal;
+    document.getElementById('modal-corregido').value = '';
+    document.getElementById('modal-title').textContent = 'Corregir: ' + palabra + (campo ? ' > ' + campo : '');
+    document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+}
+
+async function submitCorreccion() {
+    const tarjetaId = document.getElementById('modal-tarjeta-id').value;
+    const palabra = document.getElementById('modal-palabra').value;
+    const campo = document.getElementById('modal-campo').value;
+    const original = document.getElementById('modal-original').value;
+    const corregido = document.getElementById('modal-corregido').value;
+    const tipo = document.getElementById('modal-tipo').value;
+    if (!corregido && tipo !== 'plural_no_deseado') { alert('Escribe el valor corregido'); return; }
+    // Save correction
+    await fetch('/api/correcciones', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            unidad: corrUnidad, palabra, campo,
+            valor_original: original, valor_corregido: corregido, tipo_error: tipo
+        })
+    });
+    // Update the tarjeta in BD if there's a corrected value
+    if (corregido && campo) {
+        await fetch('/api/tarjetas/update', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ id: +tarjetaId, campo, valor: corregido })
+        });
+    }
+    closeModal();
+    await loadTarjetas(corrUnidad);
+    await loadCorrecciones(corrUnidad);
+}
+
+async function eliminarTarjeta(id, palabra) {
+    if (!confirm('Eliminar tarjeta "' + palabra + '"?')) return;
+    // Register as correction (type: plural or deletion)
+    await fetch('/api/correcciones', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            unidad: corrUnidad, palabra, campo: 'palabra',
+            valor_original: palabra, valor_corregido: null,
+            tipo_error: 'eliminada'
+        })
+    });
+    await fetch('/api/tarjetas/delete', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ id })
+    });
+    await loadTarjetas(corrUnidad);
+    await loadCorrecciones(corrUnidad);
+}
+
+buildNav();
+// Primera carga
+pollData();
+// Polling cada 3 segundos
+setInterval(pollData, 3000);
+</script>
+</body>
+</html>

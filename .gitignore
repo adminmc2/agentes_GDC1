@@ -18,3 +18,14 @@
 
 # Word (se trabaja en Markdown)
 *.docx
+
+# Variables de entorno (API keys)
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pkl
+
+# PDFs fuente del libro (binarios pesados, no versionables)
+datos/fuente/**/*.pdf

@@ -4,7 +4,7 @@ Run a full audit of this educational content repository. This is NOT a software 
 
 1. **Orphaned files**: Search for LaTeX artifacts (`.aux`, `.log`, `.synctex.gz`), temp files (`~*`, `.DS_Store`), or any file that should be excluded by `.gitignore` but is still tracked or present on disk.
 
-2. **Broken references**: Check all markdown files for internal links (e.g., `datos/U03-inventario.json`, `repertorios/vocabulario.md`) and verify the referenced files actually exist at those paths.
+2. **Broken references**: Check all markdown files for internal links (e.g., `datos/inventarios/U03-inventario.json`, `repertorios/vocabulario.md`) and verify the referenced files actually exist at those paths.
 
 3. **Pending placeholders**: Find all occurrences of `*pendiente*` across the project. List them grouped by file with line numbers.
 
