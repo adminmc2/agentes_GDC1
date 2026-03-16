@@ -3,6 +3,19 @@
 
 ---
 
+## [2026-03-17c] — Actualizar catálogo de modelos Groq
+
+### Modificado — `diagrama.py` (AVAILABLE_MODELS)
+- 6 modelos Groq (antes 2): GPT-OSS 120B, GPT-OSS 20B, Llama 3.3 70B, Llama 4 Scout 17B, Kimi K2 (nueva versión -0905), Qwen 3 32B
+- Eliminado `kimi-k2-instruct` viejo (131K ctx) — reemplazado por `-0905` (262K ctx)
+- Añadidos campos `ctx` y `nota` a cada modelo para el dashboard
+- Claude Sonnet 4 mantenido como opción de pago
+
+### Modificado — `.env.example`
+- Documentados los 6 modelos Groq con contexto y output máximo
+
+---
+
 ## [2026-03-17b] — Fix: añadir litellm para soporte multi-modelo en CrewAI
 
 ### Corregido — `requirements.txt`

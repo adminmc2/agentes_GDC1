@@ -209,9 +209,13 @@ AGENT_SCRIPTS = {
 }
 
 AVAILABLE_MODELS = [
-    {"id": "groq/openai/gpt-oss-120b", "name": "GPT-OSS-120B (Groq)", "cost": "gratis"},
-    {"id": "groq/moonshotai/kimi-k2-instruct", "name": "Kimi K2 (Groq)", "cost": "gratis"},
-    {"id": "anthropic/claude-sonnet-4-20250514", "name": "Claude Sonnet 4", "cost": "~$0.13"},
+    {"id": "groq/openai/gpt-oss-120b", "name": "GPT-OSS 120B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "Probado — funciona"},
+    {"id": "groq/openai/gpt-oss-20b", "name": "GPT-OSS 20B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "Más rápido, menor calidad"},
+    {"id": "groq/llama-3.3-70b-versatile", "name": "Llama 3.3 70B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "Buen instruction-following"},
+    {"id": "groq/meta-llama/llama-4-scout-17b-16e-instruct", "name": "Llama 4 Scout 17B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "MoE, Llama 4"},
+    {"id": "groq/moonshotai/kimi-k2-instruct-0905", "name": "Kimi K2 (Groq)", "cost": "gratis", "ctx": "262K", "nota": "Versión nueva, preview"},
+    {"id": "groq/qwen/qwen3-32b", "name": "Qwen 3 32B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "Errores factuales en pruebas"},
+    {"id": "anthropic/claude-sonnet-4-20250514", "name": "Claude Sonnet 4", "cost": "~$0.13", "ctx": "200K", "nota": "Mejor calidad"},
 ]
 
 
