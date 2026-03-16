@@ -6,17 +6,18 @@
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <style>
+/* === BASE === */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #e8e4de; color: #2d3748; display: grid; grid-template-columns: 220px 1fr; grid-template-rows: 50px 1fr; height: 100vh; }
 
-/* Header */
-header { grid-column: 1/-1; background: #3b5068; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: none; box-shadow: 0 2px 8px rgba(0,0,0,.12); z-index: 10; }
+/* === HEADER === */
+header { grid-column: 1/-1; background: #3b5068; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.12); z-index: 10; }
 header h1 { font-size: 15px; color: #e8e4de; font-weight: 700; }
 .live { font-size: 11px; color: #a8bcc8; }
 .live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #5cb87a; margin-right: 4px; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-/* Sidebar */
+/* === SIDEBAR === */
 .sidebar { background: #3f5572; border-right: none; padding: 12px 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; box-shadow: 2px 0 8px rgba(0,0,0,.08); }
 .sidebar h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8ba0b8; margin-bottom: 4px; padding-left: 4px; }
 .nav-btn { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 6px; border: 1px solid transparent; background: none; color: #b8c9d8; font-size: 13px; cursor: pointer; text-align: left; width: 100%; transition: all .15s; }
@@ -27,8 +28,6 @@ header h1 { font-size: 15px; color: #e8e4de; font-weight: 700; }
 .nav-dot.ready { background: #5cb87a; }
 .nav-dot.pending { background: #6b7e94; }
 .nav-dot.project { background: #6ea8e0; }
-
-/* Controls */
 .controls { background: rgba(0,0,0,.12); border-radius: 8px; padding: 10px; border: 1px solid rgba(255,255,255,.08); }
 .controls label { font-size: 10px; color: #8ba0b8; display: block; margin-bottom: 2px; text-transform: uppercase; letter-spacing: .5px; }
 .controls select { width: 100%; padding: 6px 8px; border-radius: 5px; border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.2); color: #d0dce6; font-size: 12px; margin-bottom: 8px; }
@@ -37,8 +36,6 @@ header h1 { font-size: 15px; color: #e8e4de; font-weight: 700; }
 .btn-run.go:hover { background: #3a7cc4; }
 .btn-run.running { background: #d4922a; color: #fff; cursor: wait; }
 .btn-run.done { background: #5cb87a; color: #fff; }
-
-/* Run history */
 .run-item { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; color: #8ba0b8; }
 .run-item:hover { background: rgba(255,255,255,.08); }
 .run-status { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
@@ -46,10 +43,10 @@ header h1 { font-size: 15px; color: #e8e4de; font-weight: 700; }
 .run-status.running { background: #d4922a; }
 .run-status.error { background: #d94f4f; }
 
-/* Main */
+/* === MAIN === */
 main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 14px; }
 
-/* Section cards */
+/* === SECTION CARDS === */
 .section { background: #f6f4f0; border-radius: 8px; border: 1px solid #d4cfc7; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
 .section-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; cursor: pointer; user-select: none; }
 .section-header:hover { background: #edeae4; border-radius: 8px 8px 0 0; }
@@ -58,7 +55,23 @@ main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; g
 .section-body { padding: 0 16px 16px; }
 .section.collapsed .section-body { display: none; }
 
-/* Status grid (project view) */
+/* === TABS (agent view) === */
+.tab-bar { display: flex; gap: 2px; background: #d4cfc7; padding: 3px; border-radius: 8px; margin-bottom: 14px; }
+.tab-btn { flex: 1; padding: 9px 8px; border-radius: 6px; border: none; background: transparent; color: #7a8a96; font-size: 12px; font-weight: 500; cursor: pointer; transition: all .15s; white-space: nowrap; }
+.tab-btn:hover { color: #2d3748; background: rgba(255,255,255,.4); }
+.tab-btn.active { background: #f6f4f0; color: #2c5a85; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.tab-btn .badge-num { display: inline-block; min-width: 18px; padding: 1px 5px; border-radius: 9px; background: #d4cfc7; color: #5a6a78; font-size: 10px; margin-left: 4px; }
+.tab-btn.active .badge-num { background: #4a90d9; color: #fff; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* === FILTER BAR === */
+.filter-bar { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+.filter-bar select, .filter-bar input { padding: 6px 10px; border-radius: 5px; border: 1px solid #d4cfc7; background: #f6f4f0; color: #2d3748; font-size: 12px; }
+.filter-bar label { font-size: 11px; color: #7a8a96; }
+.filter-group { display: flex; align-items: center; gap: 4px; }
+
+/* === STATUS GRID (project view) === */
 .status-grid { display: grid; grid-template-columns: 80px repeat(8, 1fr); gap: 2px; font-size: 11px; }
 .status-grid .hdr { font-weight: 600; color: #5a6a78; padding: 6px 4px; text-align: center; background: #edeae4; border-radius: 3px; }
 .status-grid .unit-label { font-weight: 600; color: #2d3748; padding: 6px 4px; background: #edeae4; border-radius: 3px; }
@@ -68,7 +81,7 @@ main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; g
 .status-cell.structure-only { background: #c87d3a; }
 .status-cell.missing { background: #d4cfc7; color: #8a8078; }
 
-/* Mermaid diagrams */
+/* === MERMAID DIAGRAMS === */
 .diagram-tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
 .diagram-tab { padding: 6px 12px; border-radius: 5px; border: 1px solid #d4cfc7; background: #f6f4f0; color: #5a6a78; font-size: 12px; cursor: pointer; transition: all .15s; }
 .diagram-tab:hover { border-color: #8ab4d8; color: #3b6e9e; }
@@ -76,7 +89,7 @@ main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; g
 .diagram-container { background: #faf8f5; border-radius: 6px; padding: 16px; min-height: 200px; overflow-x: auto; border: 1px solid #e5e0d8; }
 .diagram-container svg { max-width: 100%; }
 
-/* Score bar */
+/* === SCORE / EVALUATION === */
 .score-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .score-big { font-size: 42px; font-weight: 700; line-height: 1; }
 .score-big.good { color: #3a9b5a; }
@@ -88,60 +101,79 @@ main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; g
 .metric-bar .bar { flex: 1; height: 16px; background: #e5e0d8; border-radius: 3px; position: relative; overflow: hidden; }
 .metric-bar .bar .fill { height: 100%; border-radius: 3px; transition: width .3s; }
 .metric-bar .val { min-width: 40px; text-align: right; font-size: 11px; color: #5a6a78; }
-
-/* Chart area */
 .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
 .chart-box { background: #faf8f5; border-radius: 6px; padding: 12px; border: 1px solid #e5e0d8; }
 .chart-box h4 { font-size: 12px; color: #5a6a78; margin-bottom: 8px; }
 .chart-box canvas { max-height: 200px; }
 
-/* Tarjetas grid */
-.tarjetas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
-.card { background: #faf8f5; border-radius: 6px; padding: 12px; border: 1px solid #e5e0d8; }
-.card h4 { color: #2c5a85; font-size: 14px; margin-bottom: 6px; display: flex; justify-content: space-between; }
-.card h4 .nivel { font-size: 10px; padding: 2px 6px; border-radius: 3px; background: #e5e0d8; color: #5a6a78; }
-.card .row { display: flex; justify-content: space-between; padding: 3px 0; font-size: 12px; border-bottom: 1px solid #edeae4; }
-.card .row .k { color: #7a8a96; }
-.card .row .v { color: #2d3748; cursor: pointer; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.card .row .v:hover { color: #c4820a; }
-.card .row .v.err { color: #c43a3a; }
-.card .combos { font-size: 11px; color: #7a8a96; margin-top: 4px; }
-.card .actions { display: flex; gap: 6px; margin-top: 8px; }
-.card .actions button { padding: 3px 8px; font-size: 11px; border-radius: 3px; border: none; cursor: pointer; }
-.btn-fix { background: #d4922a; color: #fff; }
-.btn-del { background: #c43a3a; color: #fff; }
+/* === TARJETAS TABLE === */
+.tarjetas-table-wrap { overflow-x: auto; }
+.tarjetas-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tarjetas-table th { position: sticky; top: 0; background: #edeae4; padding: 8px 6px; text-align: left; font-weight: 600; color: #5a6a78; cursor: pointer; user-select: none; white-space: nowrap; border-bottom: 2px solid #d4cfc7; }
+.tarjetas-table th:hover { color: #2c5a85; }
+.tarjetas-table th .sort-icon { font-size: 10px; color: #b0a898; margin-left: 2px; }
+.tarjetas-table th.sorted .sort-icon { color: #4a90d9; }
+.tarjetas-table td { padding: 7px 6px; border-bottom: 1px solid #edeae4; color: #2d3748; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tarjetas-table tr:hover { background: #f0ede6; }
+.tarjetas-table td.clickable { cursor: pointer; }
+.tarjetas-table td.clickable:hover { color: #c4820a; }
+.tarjetas-table td.err { color: #c43a3a; font-weight: 500; }
+.tarjetas-table .actions-cell { white-space: nowrap; }
+.tarjetas-table .actions-cell button { padding: 3px 7px; font-size: 10px; border-radius: 3px; border: none; cursor: pointer; margin-right: 3px; }
+.nivel-badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; background: #e5e0d8; color: #5a6a78; }
+.tarjetas-count-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.tarjetas-count-bar span { font-size: 12px; color: #7a8a96; }
+.tarjetas-search { padding: 6px 10px; border-radius: 5px; border: 1px solid #d4cfc7; background: #faf8f5; font-size: 12px; width: 200px; }
 
-/* Trace steps */
-.trace-step { display: flex; gap: 10px; padding: 6px 10px; margin: 3px 0; background: #faf8f5; border-radius: 4px; font-size: 12px; align-items: flex-start; border: 1px solid #edeae4; }
-.trace-type { min-width: 70px; padding: 1px 6px; border-radius: 3px; font-size: 10px; text-align: center; color: #fff; }
-.trace-type.SPAN { background: #4a90d9; }
-.trace-type.GENERATION { background: #7c5daa; }
-.trace-type.EVENT { background: #5cb87a; }
-.trace-name { color: #2d3748; min-width: 140px; }
-.trace-io { color: #7a8a96; font-size: 11px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.trace-io:hover { white-space: normal; word-break: break-all; }
-.trace-cost { color: #c4820a; font-size: 11px; min-width: 60px; text-align: right; }
-
-/* Errors list */
-.error-item { display: flex; gap: 8px; padding: 5px 0; font-size: 12px; border-bottom: 1px solid #edeae4; }
-.badge { padding: 1px 6px; border-radius: 3px; font-size: 10px; color: #fff; }
+/* === ERRORS === */
+.error-item { display: flex; gap: 8px; padding: 6px 0; font-size: 12px; border-bottom: 1px solid #edeae4; align-items: center; }
+.badge { padding: 2px 7px; border-radius: 3px; font-size: 10px; color: #fff; white-space: nowrap; }
 .badge-plural { background: #c43a3a; }
 .badge-silaba { background: #7c5daa; }
 .badge-traduccion { background: #4a90d9; }
-.badge-combo { background: #d4922a; color: #fff; }
+.badge-combo { background: #d4922a; }
 .badge-otro { background: #7a8a96; }
 
-/* History table */
-.hist-row { display: grid; grid-template-columns: 60px 50px 140px 80px 1fr 90px; gap: 6px; padding: 5px 8px; font-size: 12px; align-items: center; border-bottom: 1px solid #edeae4; }
-.hist-row.hdr { color: #5a6a78; font-weight: 600; background: #edeae4; border-radius: 4px; }
-.hist-bar { height: 14px; background: #e5e0d8; border-radius: 2px; position: relative; overflow: hidden; }
+/* === TRAZAS === */
+.trace-row { display: flex; gap: 10px; padding: 8px 10px; margin: 2px 0; background: #faf8f5; border-radius: 4px; font-size: 12px; align-items: center; border: 1px solid #edeae4; cursor: pointer; transition: background .1s; }
+.trace-row:hover { background: #edeae4; }
+.trace-type { min-width: 70px; padding: 2px 6px; border-radius: 3px; font-size: 10px; text-align: center; color: #fff; }
+.trace-type.SPAN { background: #4a90d9; }
+.trace-type.GENERATION { background: #7c5daa; }
+.trace-type.EVENT { background: #5cb87a; }
+.trace-name { color: #2d3748; min-width: 140px; font-weight: 500; }
+.trace-meta { color: #7a8a96; font-size: 11px; flex: 1; }
+.trace-cost { color: #c4820a; font-size: 11px; min-width: 60px; text-align: right; font-weight: 500; }
+.trace-detail { background: #faf8f5; border: 1px solid #e5e0d8; border-radius: 6px; padding: 12px; margin: 4px 0 8px 0; }
+.trace-step { display: flex; gap: 10px; padding: 6px 8px; margin: 2px 0; background: #f6f4f0; border-radius: 4px; font-size: 12px; align-items: flex-start; border: 1px solid #edeae4; }
+.trace-io { color: #7a8a96; font-size: 11px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trace-io:hover { white-space: normal; word-break: break-all; }
+
+/* === CONSOLE === */
+.console { background: #2d3748; border-radius: 6px; padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: #a3e635; max-height: 400px; overflow-y: auto; white-space: pre-wrap; word-break: break-all; line-height: 1.5; }
+.console-status-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.console-status-bar span { font-size: 12px; color: #7a8a96; }
+
+/* === HISTORIAL TABLE === */
+.hist-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.hist-table th { background: #edeae4; padding: 8px 6px; text-align: left; font-weight: 600; color: #5a6a78; border-bottom: 2px solid #d4cfc7; }
+.hist-table td { padding: 7px 6px; border-bottom: 1px solid #edeae4; }
+.hist-table tr:hover { background: #f0ede6; }
+.hist-bar { height: 16px; background: #e5e0d8; border-radius: 2px; position: relative; overflow: hidden; min-width: 80px; }
 .hist-bar .fill { height: 100%; border-radius: 2px; }
-.hist-bar .lbl { position: absolute; right: 4px; top: 0; font-size: 10px; color: #fff; line-height: 14px; }
+.hist-bar .lbl { position: absolute; right: 4px; top: 0; font-size: 10px; color: #fff; line-height: 16px; }
+.compare-check { width: 14px; height: 14px; cursor: pointer; }
+.btn-compare { padding: 6px 14px; border-radius: 5px; border: 1px solid #4a90d9; background: #dce8f2; color: #2c5a85; font-size: 12px; cursor: pointer; font-weight: 600; }
+.btn-compare:hover { background: #4a90d9; color: #fff; }
+.btn-compare:disabled { opacity: .4; cursor: not-allowed; }
 
-/* Agent output console */
-.console { background: #2d3748; border-radius: 6px; padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: #a3e635; max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-all; line-height: 1.5; }
+/* === COMPARISON VIEW === */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.compare-col { background: #faf8f5; border-radius: 6px; padding: 12px; border: 1px solid #e5e0d8; }
+.compare-col h4 { font-size: 13px; color: #2c5a85; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #e5e0d8; }
+.compare-col .metric-bar { margin: 3px 0; }
 
-/* Modal */
+/* === MODAL === */
 .modal-bg { display: none; position: fixed; inset: 0; background: rgba(45,55,72,.4); z-index: 100; align-items: center; justify-content: center; }
 .modal-bg.open { display: flex; }
 .modal { background: #f6f4f0; border: 1px solid #d4cfc7; border-radius: 10px; padding: 20px; width: 420px; max-width: 90vw; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
@@ -152,11 +184,16 @@ main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; g
 .modal .btns { display: flex; gap: 8px; margin-top: 14px; justify-content: flex-end; }
 .modal .btns button { padding: 7px 16px; border-radius: 5px; border: none; cursor: pointer; font-size: 13px; }
 
-/* Responsive */
+/* === EMPTY STATE === */
+.empty { color: #7a8a96; font-size: 12px; text-align: center; padding: 30px 20px; }
+
+/* === RESPONSIVE === */
 @media (max-width: 800px) {
     body { grid-template-columns: 1fr; }
     .sidebar { display: none; }
     .chart-row { grid-template-columns: 1fr; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .tab-btn { font-size: 11px; padding: 7px 4px; }
 }
 </style>
 </head>
@@ -220,74 +257,112 @@ main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; g
 
     <!-- ==================== AGENT VIEW ==================== -->
     <div id="view-agent" style="display:none">
-        <div class="section" id="sec-score">
-            <div class="section-header" onclick="toggleSection('sec-score')">
-                <h2>Evaluacion</h2>
-                <span class="count" id="score-summary">--</span>
-            </div>
-            <div class="section-body">
-                <div class="score-row">
-                    <div class="score-big" id="score-num">--</div>
-                    <div class="metric-bars" id="metric-bars"></div>
+
+        <!-- Tab bar -->
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="selectTab('evaluacion')" id="tab-btn-evaluacion">Evaluacion</button>
+            <button class="tab-btn" onclick="selectTab('tarjetas')" id="tab-btn-tarjetas">Tarjetas <span class="badge-num" id="tab-count-tarjetas">0</span></button>
+            <button class="tab-btn" onclick="selectTab('trazas')" id="tab-btn-trazas">Trazas <span class="badge-num" id="tab-count-trazas">0</span></button>
+            <button class="tab-btn" onclick="selectTab('consola')" id="tab-btn-consola">Consola</button>
+            <button class="tab-btn" onclick="selectTab('historial')" id="tab-btn-historial">Historial <span class="badge-num" id="tab-count-historial">0</span></button>
+        </div>
+
+        <!-- TAB: Evaluacion -->
+        <div class="tab-content active" id="tab-evaluacion">
+            <div class="section">
+                <div class="section-body" style="padding-top:16px">
+                    <div class="score-row">
+                        <div class="score-big" id="score-num">--</div>
+                        <div class="metric-bars" id="metric-bars"></div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-box"><h4>Metricas</h4><canvas id="chart-radar"></canvas></div>
+                        <div class="chart-box"><h4>Historial de scores</h4><canvas id="chart-history"></canvas></div>
+                    </div>
+                    <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+                        <button onclick="runEval()" style="padding:7px 16px;border-radius:5px;border:1px solid #d4cfc7;background:#faf8f5;color:#2c5a85;font-size:12px;cursor:pointer;font-weight:600" id="btn-eval">Evaluar ahora</button>
+                        <span id="score-summary" style="font-size:12px;color:#7a8a96">--</span>
+                    </div>
                 </div>
-                <div class="chart-row">
-                    <div class="chart-box"><h4>Metricas</h4><canvas id="chart-radar"></canvas></div>
-                    <div class="chart-box"><h4>Historial</h4><canvas id="chart-history"></canvas></div>
+            </div>
+            <div class="section" style="margin-top:14px">
+                <div class="section-header" onclick="toggleSection('sec-errores')">
+                    <h2>Errores detectados</h2>
+                    <span class="count" id="errores-count">0</span>
                 </div>
-                <div style="margin-top:10px">
-                    <button onclick="runEval()" style="padding:6px 14px;border-radius:5px;border:1px solid #d4cfc7;background:#faf8f5;color:#2c5a85;font-size:12px;cursor:pointer;font-weight:600" id="btn-eval">Evaluar ahora</button>
+                <div class="section-body" id="sec-errores-body">
+                    <div id="errores-list"></div>
                 </div>
             </div>
         </div>
 
-        <div class="section" id="sec-tarjetas">
-            <div class="section-header" onclick="toggleSection('sec-tarjetas')">
-                <h2>Tarjetas</h2>
-                <span class="count" id="tarjetas-count">0</span>
+        <!-- TAB: Tarjetas -->
+        <div class="tab-content" id="tab-tarjetas">
+            <div class="tarjetas-count-bar">
+                <span id="tarjetas-info">0 tarjetas</span>
+                <input type="text" class="tarjetas-search" placeholder="Buscar palabra..." id="tarjetas-search" oninput="filterTarjetas()">
             </div>
-            <div class="section-body">
-                <div class="tarjetas-grid" id="tarjetas-grid"></div>
-            </div>
-        </div>
-
-        <div class="section" id="sec-errores">
-            <div class="section-header" onclick="toggleSection('sec-errores')">
-                <h2>Errores detectados</h2>
-                <span class="count" id="errores-count">0</span>
-            </div>
-            <div class="section-body">
-                <div id="errores-list"></div>
-            </div>
-        </div>
-
-        <div class="section" id="sec-trazas">
-            <div class="section-header" onclick="toggleSection('sec-trazas')">
-                <h2>Trazas</h2>
-                <span class="count" id="trazas-count">0</span>
-            </div>
-            <div class="section-body">
-                <div id="trazas-list"></div>
-            </div>
-        </div>
-
-        <div class="section collapsed" id="sec-console">
-            <div class="section-header" onclick="toggleSection('sec-console')">
-                <h2>Consola del agente</h2>
-                <span class="count" id="console-status"></span>
-            </div>
-            <div class="section-body">
-                <div class="console" id="console-output">Ejecuta un agente para ver la salida aqui.</div>
+            <div class="tarjetas-table-wrap">
+                <table class="tarjetas-table">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTarjetas('palabra')">Palabra <span class="sort-icon">↕</span></th>
+                            <th onclick="sortTarjetas('nivel_jerarquia')">Nivel <span class="sort-icon">↕</span></th>
+                            <th onclick="sortTarjetas('genero')">Gen <span class="sort-icon">↕</span></th>
+                            <th>Silaba</th>
+                            <th onclick="sortTarjetas('campo_semantico')">Campo <span class="sort-icon">↕</span></th>
+                            <th>Regla</th>
+                            <th>IT</th>
+                            <th>FR</th>
+                            <th>PT</th>
+                            <th>EN</th>
+                            <th>CS</th>
+                            <th>PL</th>
+                            <th>TR</th>
+                            <th>Combos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tarjetas-tbody"></tbody>
+                </table>
             </div>
         </div>
 
-        <div class="section collapsed" id="sec-eval-hist">
-            <div class="section-header" onclick="toggleSection('sec-eval-hist')">
-                <h2>Historial de evaluaciones</h2>
-                <span class="count" id="eval-hist-count">0</span>
+        <!-- TAB: Trazas -->
+        <div class="tab-content" id="tab-trazas">
+            <div id="trazas-list"></div>
+        </div>
+
+        <!-- TAB: Consola -->
+        <div class="tab-content" id="tab-consola">
+            <div class="console-status-bar">
+                <span id="console-status">Sin ejecucion</span>
+                <span id="console-time"></span>
             </div>
-            <div class="section-body">
-                <div id="eval-hist-list"></div>
+            <div class="console" id="console-output">Ejecuta un agente para ver la salida aqui.</div>
+        </div>
+
+        <!-- TAB: Historial -->
+        <div class="tab-content" id="tab-historial">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                <span style="font-size:12px;color:#7a8a96" id="hist-info">Selecciona 2 para comparar</span>
+                <button class="btn-compare" id="btn-compare" onclick="showComparison()" disabled>Comparar seleccionados</button>
             </div>
+            <div id="comparison-view" style="display:none"></div>
+            <table class="hist-table">
+                <thead>
+                    <tr>
+                        <th style="width:30px"></th>
+                        <th>Run</th>
+                        <th>U</th>
+                        <th>Modelo</th>
+                        <th>Score</th>
+                        <th>Tarjetas</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="eval-hist-tbody"></tbody>
+            </table>
         </div>
     </div>
 </main>
@@ -319,24 +394,27 @@ main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; g
 </div>
 
 <script>
-// --- State ---
+// ===== STATE =====
 let currentView = 'proyecto';
 let currentAgent = 'recurvo';
 let currentUnidad = 3;
 let currentModelo = 'groq/openai/gpt-oss-120b';
 let currentRunId = null;
+let currentTab = 'evaluacion';
 let tarjetas = [];
+let filteredTarjetas = [];
 let correcciones = [];
 let evaluaciones = [];
 let chartRadar = null;
 let chartHist = null;
 let diagramData = null;
 let currentDiagram = 'nivel1';
+let sortCol = 'palabra';
+let sortDir = 1;
+let compareSelected = [];
 
 const AGENTES = [
-    // Agentes de recursos
     {id:'recurvo', name:'Recurvo', ready:true, tipo:'recurso', desc:'Tarjetas de vocabulario'},
-    // Agentes de seccion
     {id:'vocabulario', name:'Vocabulario', ready:false, tipo:'seccion'},
     {id:'gramatica', name:'Gramatica', ready:false, tipo:'seccion'},
     {id:'comunicacion', name:'Comunicacion', ready:false, tipo:'seccion'},
@@ -346,20 +424,16 @@ const AGENTES = [
 ];
 
 const DIAGRAM_LABELS = {
-    nivel1: 'Arquitectura',
-    nivel2: 'Flujo de trabajo',
-    nivel3: 'Dependencias',
-    nivel4: 'Estado agentes',
-    database: 'Base de datos',
+    nivel1: 'Arquitectura', nivel2: 'Flujo de trabajo', nivel3: 'Dependencias',
+    nivel4: 'Estado agentes', database: 'Base de datos',
 };
-
 const SECTION_LABELS = {
     vocabulario:'Voc', gramatica:'Gram', comunicacion:'Com',
     destrezas:'Dest', cultura:'Cult', reflexion:'Ref',
     evaluacion:'Eval', itinerarios:'Itin'
 };
 
-// --- Init ---
+// ===== INIT =====
 mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
 
 function init() {
@@ -378,6 +452,7 @@ function init() {
     setInterval(pollRunStatus, 3000);
 }
 
+// ===== NAVIGATION =====
 function renderAgentList() {
     const recursos = AGENTES.filter(a => a.tipo === 'recurso');
     const secciones = AGENTES.filter(a => a.tipo === 'seccion');
@@ -397,19 +472,23 @@ function selectView(id) {
     document.getElementById('view-agent').style.display = id !== 'proyecto' ? '' : 'none';
     document.getElementById('agent-controls').style.display = id !== 'proyecto' ? '' : 'none';
     document.getElementById('run-history-section').style.display = id !== 'proyecto' ? '' : 'none';
-    if (id === 'proyecto') {
-        loadProjectData();
-    } else {
-        currentAgent = id;
-        loadAgentData();
-    }
+    if (id === 'proyecto') { loadProjectData(); }
+    else { currentAgent = id; loadAgentData(); }
+}
+
+function selectTab(tab) {
+    currentTab = tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-btn-' + tab).classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
 }
 
 function toggleSection(id) {
     document.getElementById(id).classList.toggle('collapsed');
 }
 
-// ==================== PROJECT VIEW ====================
+// ===== PROJECT VIEW =====
 async function loadProjectData() {
     try {
         const res = await fetch('/api/diagrams');
@@ -446,17 +525,12 @@ function renderStatusGrid(status) {
 }
 
 function renderDiagramTabs() {
-    const el = document.getElementById('diagram-tabs');
-    el.innerHTML = Object.entries(DIAGRAM_LABELS).map(([k,v]) =>
+    document.getElementById('diagram-tabs').innerHTML = Object.entries(DIAGRAM_LABELS).map(([k,v]) =>
         `<button class="diagram-tab ${k===currentDiagram?'active':''}" onclick="selectDiagram('${k}')">${v}</button>`
     ).join('');
 }
 
-function selectDiagram(key) {
-    currentDiagram = key;
-    renderDiagramTabs();
-    renderDiagram(key);
-}
+function selectDiagram(key) { currentDiagram = key; renderDiagramTabs(); renderDiagram(key); }
 
 async function renderDiagram(key) {
     if (!diagramData) return;
@@ -473,21 +547,19 @@ async function renderDiagram(key) {
     }
 }
 
-// ==================== AGENT VIEW ====================
+// ===== AGENT DATA =====
 async function loadAgentData() {
     await Promise.all([loadTarjetas(), loadEvaluaciones(), loadCorrecciones(), loadTrazas(), loadRunHistory()]);
     document.getElementById('status-text').textContent = 'En vivo - ' + new Date().toLocaleTimeString();
 }
 
+// ===== AGENT EXECUTION =====
 async function runAgent() {
     const btn = document.getElementById('btn-run');
-    btn.className = 'btn-run running';
-    btn.textContent = 'Ejecutando...';
-    btn.disabled = true;
+    btn.className = 'btn-run running'; btn.textContent = 'Ejecutando...'; btn.disabled = true;
     try {
         const res = await fetch('/api/agente/run', {
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
+            method: 'POST', headers: {'Content-Type':'application/json'},
             body: JSON.stringify({agente: currentAgent, unidad: currentUnidad, modelo: currentModelo})
         });
         const data = await res.json();
@@ -495,7 +567,7 @@ async function runAgent() {
         currentRunId = data.run_id;
         document.getElementById('console-status').textContent = 'Ejecutando...';
         document.getElementById('console-output').textContent = 'Agente iniciado (run: ' + data.run_id + ')...\n';
-        document.getElementById('sec-console').classList.remove('collapsed');
+        selectTab('consola');
     } catch(e) {
         alert('Error: ' + e.message);
         btn.className = 'btn-run go'; btn.textContent = 'Ejecutar agente'; btn.disabled = false;
@@ -508,31 +580,26 @@ async function pollRunStatus() {
         const res = await fetch('/api/agente/status?run_id=' + currentRunId);
         const data = await res.json();
         const btn = document.getElementById('btn-run');
-
-        // Siempre actualizar la consola con el output parcial (streaming)
         const ores = await fetch('/api/agente/output?run_id=' + currentRunId);
         const odata = await ores.json();
         const consoleEl = document.getElementById('console-output');
-        if (odata.output) {
-            consoleEl.textContent = odata.output;
-            consoleEl.scrollTop = consoleEl.scrollHeight;
-        }
-
+        if (odata.output) { consoleEl.textContent = odata.output; consoleEl.scrollTop = consoleEl.scrollHeight; }
         if (data.status === 'running') {
             document.getElementById('console-status').textContent = `Ejecutando... ${data.elapsed_s}s`;
+            document.getElementById('console-time').textContent = data.elapsed_s + 's';
         } else {
-            // Terminado
             btn.className = data.status === 'completed' ? 'btn-run done' : 'btn-run go';
             btn.textContent = data.status === 'completed' ? 'Completado' : 'Ejecutar agente';
             btn.disabled = false;
             document.getElementById('console-status').textContent = data.status + ' (' + data.elapsed_s + 's)';
+            document.getElementById('console-time').textContent = data.elapsed_s + 's';
             setTimeout(() => { btn.className = 'btn-run go'; btn.textContent = 'Ejecutar agente'; }, 5000);
             currentRunId = null;
-            // Recargar datos y auto-evaluar
             await loadAgentData();
             if (data.status === 'completed') {
-                document.getElementById('console-output').textContent += '\n--- Evaluando tarjetas automaticamente... ---\n';
+                consoleEl.textContent += '\n--- Evaluando tarjetas automaticamente... ---\n';
                 await runEvalSilent();
+                selectTab('evaluacion');
             }
         }
     } catch(e) {}
@@ -543,7 +610,6 @@ async function runEvalSilent() {
     try {
         await fetch('/api/evaluaciones/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({unidad:currentUnidad})});
         await loadEvaluaciones();
-        document.getElementById('console-output').textContent += '--- Evaluacion completada ---\n';
     } catch(e) {}
 }
 
@@ -551,9 +617,8 @@ async function loadRunHistory() {
     try {
         const res = await fetch('/api/agente/status');
         const data = await res.json();
-        const el = document.getElementById('run-history');
         const runs = data.runs || [];
-        el.innerHTML = runs.slice(0, 10).map(r => {
+        document.getElementById('run-history').innerHTML = runs.slice(0, 10).map(r => {
             const model = (r.modelo||'').split('/').pop();
             return `<div class="run-item" onclick="loadRunOutput('${r.run_id}')">
                 <span class="run-status ${r.status}"></span>
@@ -569,46 +634,73 @@ async function loadRunOutput(runId) {
     const res = await fetch('/api/agente/output?run_id=' + runId);
     const data = await res.json();
     document.getElementById('console-output').textContent = data.output || 'Sin salida';
-    document.getElementById('sec-console').classList.remove('collapsed');
+    selectTab('consola');
 }
 
-// --- Tarjetas ---
+// ===== TARJETAS (TABLE) =====
 async function loadTarjetas() {
     const res = await fetch('/api/tarjetas?unidad=' + currentUnidad);
     tarjetas = await res.json();
-    document.getElementById('tarjetas-count').textContent = tarjetas.length;
+    filteredTarjetas = [...tarjetas];
+    document.getElementById('tab-count-tarjetas').textContent = tarjetas.length;
+    document.getElementById('tarjetas-info').textContent = tarjetas.length + ' tarjetas';
+    renderTarjetas();
+}
+
+function sortTarjetas(col) {
+    if (sortCol === col) sortDir *= -1;
+    else { sortCol = col; sortDir = 1; }
+    filteredTarjetas.sort((a, b) => {
+        const va = a[col] != null ? a[col] : '';
+        const vb = b[col] != null ? b[col] : '';
+        if (typeof va === 'number' && typeof vb === 'number') return sortDir * (va - vb);
+        return sortDir * String(va).localeCompare(String(vb), 'es');
+    });
+    renderTarjetas();
+}
+
+function filterTarjetas() {
+    const q = document.getElementById('tarjetas-search').value.toLowerCase();
+    filteredTarjetas = q ? tarjetas.filter(t => (t.palabra||'').toLowerCase().includes(q)) : [...tarjetas];
+    document.getElementById('tarjetas-info').textContent = filteredTarjetas.length + ' de ' + tarjetas.length + ' tarjetas';
     renderTarjetas();
 }
 
 function renderTarjetas() {
-    const FIELDS = [
-        ['genero','Gen'],['silaba_tonica','Silaba'],['regla','Regla'],
-        ['campo_semantico','Campo'],['ejemplo','Ejemplo'],['frecuencia','Frec'],
-        ['trad_it','IT'],['trad_fr','FR'],['trad_pt_br','PT'],['trad_en','EN'],
-        ['trad_cs','CS'],['trad_pl','PL'],['trad_tr','TR'],
-    ];
-    const el = document.getElementById('tarjetas-grid');
-    if (!tarjetas.length) { el.innerHTML = '<div style="color:#7a8a96;padding:20px;text-align:center">Sin tarjetas. Ejecuta el agente.</div>'; return; }
-    el.innerHTML = tarjetas.map(t => {
+    const tbody = document.getElementById('tarjetas-tbody');
+    if (!filteredTarjetas.length) {
+        tbody.innerHTML = `<tr><td colspan="15" class="empty">Sin tarjetas. Ejecuta el agente.</td></tr>`;
+        return;
+    }
+    tbody.innerHTML = filteredTarjetas.map(t => {
+        const esc = s => String(s||'').replace(/'/g, "\\'").replace(/"/g, '&quot;');
         const combos = (t.combos||[]).join(' | ');
-        const rows = FIELDS.map(([k,l]) => {
-            const v = t[k] != null ? t[k] : '';
-            const hasCorr = correcciones.some(c => c.palabra===t.palabra && c.campo===k);
-            return `<div class="row"><span class="k">${l}</span><span class="v${hasCorr?' err':''}" onclick="openModal(${t.id},'${(t.palabra||'').replace(/'/g,"\\'")}','${k}','${String(v).replace(/'/g,"\\'")}')">${v}</span></div>`;
-        }).join('');
-        return `<div class="card">
-            <h4>${t.palabra} <span class="nivel">N${t.nivel_jerarquia||1}</span></h4>
-            <div class="combos">${combos}</div>
-            ${rows}
-            <div class="actions">
-                <button class="btn-fix" onclick="openModal(${t.id},'${(t.palabra||'').replace(/'/g,"\\'")}','','')">Corregir</button>
-                <button class="btn-del" onclick="delCard(${t.id},'${(t.palabra||'').replace(/'/g,"\\'")}')">Eliminar</button>
-            </div>
-        </div>`;
+        const hasCorr = f => correcciones.some(c => c.palabra===t.palabra && c.campo===f);
+        const cellClick = (campo, val) => `onclick="openModal(${t.id},'${esc(t.palabra)}','${campo}','${esc(val)}')"`;
+        return `<tr>
+            <td><strong>${t.palabra||''}</strong></td>
+            <td><span class="nivel-badge">N${t.nivel_jerarquia||1}</span></td>
+            <td class="clickable${hasCorr('genero')?' err':''}" ${cellClick('genero',t.genero)}>${t.genero||''}</td>
+            <td class="clickable${hasCorr('silaba_tonica')?' err':''}" ${cellClick('silaba_tonica',t.silaba_tonica)}>${t.silaba_tonica||''}</td>
+            <td class="clickable" ${cellClick('campo_semantico',t.campo_semantico)}>${t.campo_semantico||''}</td>
+            <td class="clickable" ${cellClick('regla',t.regla)} title="${esc(t.regla)}">${t.regla||''}</td>
+            <td class="clickable${hasCorr('trad_it')?' err':''}" ${cellClick('trad_it',t.trad_it)}>${t.trad_it||''}</td>
+            <td class="clickable${hasCorr('trad_fr')?' err':''}" ${cellClick('trad_fr',t.trad_fr)}>${t.trad_fr||''}</td>
+            <td class="clickable${hasCorr('trad_pt_br')?' err':''}" ${cellClick('trad_pt_br',t.trad_pt_br)}>${t.trad_pt_br||''}</td>
+            <td class="clickable${hasCorr('trad_en')?' err':''}" ${cellClick('trad_en',t.trad_en)}>${t.trad_en||''}</td>
+            <td class="clickable${hasCorr('trad_cs')?' err':''}" ${cellClick('trad_cs',t.trad_cs)}>${t.trad_cs||''}</td>
+            <td class="clickable${hasCorr('trad_pl')?' err':''}" ${cellClick('trad_pl',t.trad_pl)}>${t.trad_pl||''}</td>
+            <td class="clickable${hasCorr('trad_tr')?' err':''}" ${cellClick('trad_tr',t.trad_tr)}>${t.trad_tr||''}</td>
+            <td title="${esc(combos)}" style="max-width:100px">${combos}</td>
+            <td class="actions-cell">
+                <button class="btn-fix" onclick="openModal(${t.id},'${esc(t.palabra)}','','')">Corr</button>
+                <button class="btn-del" onclick="delCard(${t.id},'${esc(t.palabra)}')">Elim</button>
+            </td>
+        </tr>`;
     }).join('');
 }
 
-// --- Correcciones ---
+// ===== CORRECTIONS =====
 async function loadCorrecciones() {
     const res = await fetch('/api/correcciones?unidad=' + currentUnidad);
     correcciones = await res.json();
@@ -652,10 +744,11 @@ async function delCard(id, palabra) {
     await loadAgentData();
 }
 
-// --- Evaluaciones ---
+// ===== EVALUATIONS =====
 async function loadEvaluaciones() {
     const res = await fetch('/api/evaluaciones?unidad=' + currentUnidad);
     evaluaciones = await res.json();
+    document.getElementById('tab-count-historial').textContent = evaluaciones.length;
     renderScore();
     renderEvalHistory();
 }
@@ -671,9 +764,9 @@ async function runEval() {
 function renderScore() {
     if (!evaluaciones.length) {
         document.getElementById('score-num').textContent = '--';
-        document.getElementById('score-summary').textContent = 'Sin datos';
+        document.getElementById('score-summary').textContent = 'Sin evaluaciones';
         document.getElementById('metric-bars').innerHTML = '';
-        document.getElementById('errores-list').innerHTML = '<div style="color:#7a8a96;font-size:12px">Ejecuta una evaluacion.</div>';
+        document.getElementById('errores-list').innerHTML = '<div class="empty">Ejecuta una evaluacion.</div>';
         document.getElementById('errores-count').textContent = '0';
         return;
     }
@@ -702,24 +795,19 @@ function renderScore() {
     if (chartRadar) chartRadar.destroy();
     chartRadar = new Chart(radarCtx, {
         type: 'radar',
-        data: {
-            labels: metrics.map(m=>m[0]),
-            datasets: [{label: (evaluaciones[0].modelo||'').split('/').pop(), data: metrics.map(m=>m[1]),
-                backgroundColor:'rgba(74,144,217,.15)', borderColor:'#4a90d9', pointBackgroundColor:'#4a90d9'}]
-        },
+        data: { labels: metrics.map(m=>m[0]), datasets: [{label: (evaluaciones[0].modelo||'').split('/').pop(), data: metrics.map(m=>m[1]),
+            backgroundColor:'rgba(74,144,217,.15)', borderColor:'#4a90d9', pointBackgroundColor:'#4a90d9'}] },
         options: { scales:{r:{min:0,max:100,ticks:{stepSize:20,color:'#7a8a96'},grid:{color:'#d4cfc7'},pointLabels:{color:'#5a6a78',font:{size:11}}}}, plugins:{legend:{labels:{color:'#5a6a78'}}} }
     });
 
-    // History
+    // History line
     const histCtx = document.getElementById('chart-history');
     if (chartHist) chartHist.destroy();
     const rev = [...evaluaciones].reverse();
     chartHist = new Chart(histCtx, {
         type: 'line',
-        data: {
-            labels: rev.map(e => { const d=new Date(e.fecha); return d.toLocaleDateString('es',{day:'2-digit',month:'2-digit'}); }),
-            datasets: [{label:'Score', data: rev.map(e=>(e.metricas||{}).score_global||0), borderColor:'#3a9b5a', backgroundColor:'rgba(58,155,90,.1)', fill:true, tension:.3}]
-        },
+        data: { labels: rev.map(e => { const d=new Date(e.fecha); return d.toLocaleDateString('es',{day:'2-digit',month:'2-digit'}); }),
+            datasets: [{label:'Score', data: rev.map(e=>(e.metricas||{}).score_global||0), borderColor:'#3a9b5a', backgroundColor:'rgba(58,155,90,.1)', fill:true, tension:.3}] },
         options: { scales:{y:{min:0,max:100,ticks:{color:'#7a8a96'},grid:{color:'#e5e0d8'}},x:{ticks:{color:'#7a8a96'},grid:{color:'#e5e0d8'}}}, plugins:{legend:{labels:{color:'#5a6a78'}}} }
     });
 
@@ -728,46 +816,111 @@ function renderScore() {
     document.getElementById('errores-count').textContent = errors.length;
     const el = document.getElementById('errores-list');
     if (!errors.length) { el.innerHTML = '<div style="color:#3a9b5a;font-size:12px">Sin errores</div>'; }
-    else { el.innerHTML = errors.map(e => `<div class="error-item"><span class="badge badge-${e.tipo==='plural'?'plural':e.tipo==='silaba'?'silaba':e.tipo==='traduccion'?'traduccion':e.tipo==='combo'?'combo':'otro'}">${e.tipo}</span><span style="color:#2c5a85">${e.palabra}</span><span style="color:#5a6a78">${e.detalle}</span></div>`).join(''); }
+    else { el.innerHTML = errors.map(e => `<div class="error-item"><span class="badge badge-${e.tipo==='plural'?'plural':e.tipo==='silaba'?'silaba':e.tipo==='traduccion'?'traduccion':e.tipo==='combo'?'combo':'otro'}">${e.tipo}</span><span style="color:#2c5a85;min-width:80px">${e.palabra}</span><span style="color:#5a6a78">${e.detalle}</span></div>`).join(''); }
 }
 
 function renderEvalHistory() {
-    document.getElementById('eval-hist-count').textContent = evaluaciones.length;
-    const el = document.getElementById('eval-hist-list');
-    if (!evaluaciones.length) { el.innerHTML = ''; return; }
-    el.innerHTML = `<div class="hist-row hdr"><span>Run</span><span>U</span><span>Modelo</span><span>Score</span><span>Detalle</span><span>Fecha</span></div>` +
-        evaluaciones.map(e => {
-            const em = e.metricas||{};
-            const sc = em.score_global||0;
-            const c = sc>=80?'#3a9b5a':sc>=60?'#c4820a':'#c43a3a';
-            return `<div class="hist-row">
-                <span style="color:#7a8a96">${e.run_id||''}</span>
-                <span>U${String(e.unidad).padStart(2,'0')}</span>
-                <span style="color:#2c5a85">${(e.modelo||'').split('/').pop()}</span>
-                <span><div class="hist-bar"><div class="fill" style="width:${sc}%;background:${c}"></div><div class="lbl">${sc}</div></div></span>
-                <span style="color:#7a8a96;font-size:11px">${em.total||0} tarj</span>
-                <span style="color:#7a8a96">${e.fecha?new Date(e.fecha).toLocaleDateString('es'):''}</span>
-            </div>`;
-        }).join('');
+    compareSelected = [];
+    updateCompareBtn();
+    const tbody = document.getElementById('eval-hist-tbody');
+    if (!evaluaciones.length) { tbody.innerHTML = `<tr><td colspan="7" class="empty">Sin evaluaciones</td></tr>`; return; }
+    tbody.innerHTML = evaluaciones.map((e, i) => {
+        const em = e.metricas||{};
+        const sc = em.score_global||0;
+        const c = sc>=80?'#3a9b5a':sc>=60?'#c4820a':'#c43a3a';
+        return `<tr>
+            <td><input type="checkbox" class="compare-check" data-idx="${i}" onchange="toggleCompare(${i})"></td>
+            <td style="color:#7a8a96;font-size:11px">${e.run_id||''}</td>
+            <td>U${String(e.unidad).padStart(2,'0')}</td>
+            <td style="color:#2c5a85">${(e.modelo||'').split('/').pop()}</td>
+            <td><div class="hist-bar"><div class="fill" style="width:${sc}%;background:${c}"></div><div class="lbl">${sc}</div></div></td>
+            <td style="color:#7a8a96">${em.total||0}</td>
+            <td style="color:#7a8a96;font-size:11px">${e.fecha?new Date(e.fecha).toLocaleDateString('es'):''}</td>
+        </tr>`;
+    }).join('');
 }
 
-// --- Trazas ---
+// ===== COMPARISON =====
+function toggleCompare(idx) {
+    const pos = compareSelected.indexOf(idx);
+    if (pos >= 0) compareSelected.splice(pos, 1);
+    else if (compareSelected.length < 2) compareSelected.push(idx);
+    else {
+        // Deselect oldest, select new
+        const oldIdx = compareSelected.shift();
+        document.querySelector(`.compare-check[data-idx="${oldIdx}"]`).checked = false;
+        compareSelected.push(idx);
+    }
+    updateCompareBtn();
+}
+
+function updateCompareBtn() {
+    const btn = document.getElementById('btn-compare');
+    btn.disabled = compareSelected.length !== 2;
+    document.getElementById('hist-info').textContent = compareSelected.length === 2
+        ? '2 seleccionados — pulsa Comparar'
+        : 'Selecciona 2 para comparar';
+}
+
+function showComparison() {
+    if (compareSelected.length !== 2) return;
+    const e1 = evaluaciones[compareSelected[0]];
+    const e2 = evaluaciones[compareSelected[1]];
+    const el = document.getElementById('comparison-view');
+    el.style.display = 'block';
+
+    function renderCol(e) {
+        const m = e.metricas || {};
+        const sc = m.score_global || 0;
+        const scores = m.scores || {};
+        const c = sc >= 80 ? '#3a9b5a' : sc >= 60 ? '#c4820a' : '#c43a3a';
+        const metrics = [
+            ['Sin plurales', scores.sin_plurales||0],
+            ['Silabas', scores.silabas_correctas||0],
+            ['Combos', scores.combos_correctos||0],
+            ['Traducciones', scores.traducciones_completas||0],
+            ['Reglas', scores.reglas_correctas||0],
+        ];
+        return `
+            <h4>${(e.modelo||'').split('/').pop()} — U${String(e.unidad).padStart(2,'0')} — <span style="color:${c};font-size:18px;font-weight:700">${sc}</span>/100</h4>
+            <div style="font-size:11px;color:#7a8a96;margin-bottom:8px">${m.total||0} tarjetas | ${e.fecha?new Date(e.fecha).toLocaleDateString('es'):''}</div>
+            ${metrics.map(([l,v]) => {
+                const mc = v >= 80 ? '#3a9b5a' : v >= 60 ? '#c4820a' : '#c43a3a';
+                return `<div class="metric-bar"><span class="label">${l}</span><div class="bar"><div class="fill" style="width:${v}%;background:${mc}"></div></div><span class="val">${v}%</span></div>`;
+            }).join('')}
+            ${(m.errores||[]).length ? `<div style="margin-top:8px;font-size:11px;color:#c43a3a">${(m.errores||[]).length} errores</div>` : '<div style="margin-top:8px;font-size:11px;color:#3a9b5a">Sin errores</div>'}
+        `;
+    }
+
+    el.innerHTML = `
+        <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
+            <button onclick="document.getElementById('comparison-view').style.display='none'" style="padding:4px 12px;border-radius:4px;border:1px solid #d4cfc7;background:#f6f4f0;color:#5a6a78;font-size:11px;cursor:pointer">Cerrar comparacion</button>
+        </div>
+        <div class="compare-grid">
+            <div class="compare-col">${renderCol(e1)}</div>
+            <div class="compare-col">${renderCol(e2)}</div>
+        </div>
+    `;
+}
+
+// ===== TRAZAS =====
 async function loadTrazas() {
     try {
         const res = await fetch('/api/trazas?limit=10');
         const data = await res.json();
         const trazas = data.trazas || [];
-        document.getElementById('trazas-count').textContent = trazas.length;
+        document.getElementById('tab-count-trazas').textContent = trazas.length;
         const el = document.getElementById('trazas-list');
-        if (!trazas.length) { el.innerHTML = '<div style="color:#7a8a96;font-size:12px;padding:8px">Sin trazas. Ejecuta el agente.</div>'; return; }
+        if (!trazas.length) { el.innerHTML = '<div class="empty">Sin trazas. Ejecuta el agente.</div>'; return; }
         el.innerHTML = trazas.map((t,i) => {
             const lat = t.latency ? (t.latency<1?(t.latency*1000).toFixed(0)+'ms':t.latency.toFixed(1)+'s') : '';
             const cost = t.total_cost ? '$'+t.total_cost.toFixed(4) : '';
             const date = t.timestamp ? new Date(t.timestamp).toLocaleString('es') : '';
-            return `<div style="margin-bottom:6px">
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;cursor:pointer;border-bottom:1px solid #edeae4" onclick="toggleTraceDetail('${t.id}',${i})">
-                    <span style="color:#2c5a85;font-size:13px;font-weight:600">${t.name||'trace'}</span>
-                    <span style="font-size:11px;color:#7a8a96">${t.observations_count||0} pasos ${lat} ${cost?'<span style=color:#c4820a>'+cost+'</span>':''} ${date}</span>
+            return `<div>
+                <div class="trace-row" onclick="toggleTraceDetail('${t.id}',${i})">
+                    <span class="trace-name">${t.name||'trace'}</span>
+                    <span class="trace-meta">${t.observations_count||0} pasos ${lat} ${date}</span>
+                    <span class="trace-cost">${cost}</span>
                 </div>
                 <div id="trace-det-${i}" style="display:none"></div>
             </div>`;
@@ -779,13 +932,13 @@ async function toggleTraceDetail(traceId, idx) {
     const el = document.getElementById('trace-det-' + idx);
     if (el.style.display === 'block') { el.style.display = 'none'; return; }
     el.style.display = 'block';
-    el.innerHTML = '<div style="color:#7a8a96;font-size:11px">Cargando...</div>';
+    el.innerHTML = '<div style="color:#7a8a96;font-size:11px;padding:8px">Cargando...</div>';
     try {
         const res = await fetch('/api/trazas/' + traceId);
         const data = await res.json();
         const obs = data.observations || [];
-        if (!obs.length) { el.innerHTML = '<div style="color:#7a8a96;font-size:11px">Sin detalles</div>'; return; }
-        el.innerHTML = obs.map(o => {
+        if (!obs.length) { el.innerHTML = '<div class="trace-detail"><div class="empty">Sin detalles</div></div>'; return; }
+        el.innerHTML = '<div class="trace-detail">' + obs.map(o => {
             const cost = o.total_cost ? '$'+o.total_cost.toFixed(4) : '';
             const tok = o.usage ? `${(o.usage.input||0)+(o.usage.output||0)} tok` : '';
             return `<div class="trace-step">
@@ -794,12 +947,13 @@ async function toggleTraceDetail(traceId, idx) {
                 <span class="trace-io">${o.input?o.input.substring(0,120):''}</span>
                 <span class="trace-cost">${tok} ${cost}</span>
             </div>`;
-        }).join('');
-        if (data.output) { el.innerHTML += `<div class="console" style="margin-top:6px;max-height:150px">${data.output}</div>`; }
-    } catch(e) { el.innerHTML = '<div style="color:#c43a3a;font-size:11px">Error</div>'; }
+        }).join('') +
+        (data.output ? `<div class="console" style="margin-top:8px;max-height:150px">${data.output}</div>` : '') +
+        '</div>';
+    } catch(e) { el.innerHTML = '<div class="trace-detail" style="color:#c43a3a;font-size:11px">Error al cargar</div>'; }
 }
 
-// --- Start ---
+// ===== START =====
 init();
 </script>
 </body>

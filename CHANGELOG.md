@@ -3,6 +3,18 @@
 
 ---
 
+## [2026-03-17] — Dashboard reescrito: navegación por pestañas + tabla tarjetas + comparación
+
+### Reescrito — `web/index.html` con patrones de mercado (Langfuse/LangSmith)
+- Navegación por pestañas: Evaluación, Tarjetas, Trazas, Consola, Historial (sustituye scroll vertical)
+- Tarjetas: tabla ordenable con búsqueda (`sortTarjetas(col)` + `filterTarjetas()`) — columnas: Palabra, Nivel, Gen, Sílaba, Campo, Regla, traducciones (IT/FR/PT/EN/CS/PL/TR), Combos, Acciones
+- Comparación de evaluaciones: selección con checkbox de 2 runs, vista side-by-side de métricas
+- Badges con contadores en pestañas (tarjetas, trazas, historial)
+- Auto-switch: consola al ejecutar agente, evaluación al completar
+- Preservada toda la funcionalidad existente: vista proyecto (grid + Mermaid), sidebar, ejecución con Popen streaming, modal de correcciones, todas las APIs
+
+---
+
 ## [2026-03-16d] — Repo organizado + GitHub + Railway desplegado
 
 ### Reorganización del repositorio para GitHub
