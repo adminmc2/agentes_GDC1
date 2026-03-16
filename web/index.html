@@ -442,11 +442,12 @@ function init() {
     us.innerHTML = [1,2,3,4,5,6,7,8,9].map(n => `<option value="${n}" ${n===currentUnidad?'selected':''}>U${String(n).padStart(2,'0')}</option>`).join('');
     us.onchange = () => { currentUnidad = +us.value; loadAgentData(); };
     const ms = document.getElementById('sel-modelo');
-    ms.innerHTML = `
-        <option value="groq/openai/gpt-oss-120b">GPT-OSS-120B (gratis)</option>
-        <option value="groq/moonshotai/kimi-k2-instruct">Kimi K2 (gratis)</option>
-        <option value="anthropic/claude-sonnet-4-20250514">Claude Sonnet (~$0.13)</option>
-    `;
+    fetch('/api/modelos').then(r=>r.json()).then(models => {
+        ms.innerHTML = models.map(m => `<option value="${m.id}" title="${m.nota||''}">${m.name} (${m.cost})${m.ctx?' — '+m.ctx:''}</option>`).join('');
+        currentModelo = ms.value;
+    }).catch(() => {
+        ms.innerHTML = '<option value="groq/openai/gpt-oss-120b">GPT-OSS 120B (gratis)</option>';
+    });
     ms.onchange = () => { currentModelo = ms.value; };
     loadProjectData();
     setInterval(pollRunStatus, 3000);
