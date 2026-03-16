@@ -3,6 +3,30 @@
 
 ---
 
+## [2026-03-16d] — Repo organizado + GitHub + Railway desplegado
+
+### Reorganización del repositorio para GitHub
+- Repo publicado en https://github.com/adminmc2/agentes_GDC1.git (rama `main`)
+- Solo código funcional del sistema de agentes (18 archivos). Todo el contenido editorial excluido vía `.gitignore`
+- Creado `GITHUB-MANIFEST.md` con lista detallada de archivos incluidos/excluidos y justificación
+- Excluidos por ahora (pendientes de rediseño): `agentes/`, `repertorios/`, `datos/tarjetas/`, `scripts/resultados_prueba/`, `diseno/`
+
+### Deploy en Railway
+- URL pública: https://agentiaelegd.up.railway.app
+- Dashboard y API funcionando en producción
+- Creados: `Dockerfile` (Python 3.12 + Node.js 20), `railway.toml`, `.dockerignore`
+
+### Dependencias añadidas
+- `deepeval==3.8.9` añadido a `requirements.txt`
+- `promptfoo` instalado vía npm global en Dockerfile (Node.js 20)
+- `.env.example` creado con todas las variables documentadas (sin secrets)
+
+### Correcciones
+- Fix GitGuardian: placeholders en `.env.example` cambiados de patrones reales (`sk-ant-...`) a texto genérico
+- Fix: `LANGFUSE_BASE_URL` renombrado a `LANGFUSE_HOST` (nombre correcto para SDK v4)
+
+---
+
 ## [2026-03-16c] — Dashboard con dos vistas (Proyecto + Agentes) + tema claro
 
 ### Reescrito — `web/index.html` con navegación sidebar entre dos vistas

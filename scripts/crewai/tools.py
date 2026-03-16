@@ -13,7 +13,7 @@ from pydantic import Field
 
 DATABASE_URL = os.environ.get(
     "DATABASE_URL",
-    "postgresql://neondb_owner:npg_DU3EHycC7KhT@ep-floral-unit-anln8vly.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require",
+    "",
 )
 
 
