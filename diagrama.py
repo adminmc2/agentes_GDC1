@@ -24,7 +24,7 @@ load_dotenv()
 
 PROJECT = Path(__file__).parent
 PORT = 8080
-SERVER_VERSION = "7.0"  # major.minor — major para cambios grandes, minor para deploys pequeños
+SERVER_VERSION = "8.0"  # major.minor — major para cambios grandes, minor para deploys pequeños
 
 # --- Langfuse client (para API de trazas) ---
 # Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).
@@ -731,9 +731,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
             trace_id = parsed.path.split("/api/trazas/")[1]
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(get_traza_detalle(trace_id), ensure_ascii=False, default=str))
-        elif parsed.path == "/favicon.ico":
-            self.send_response(204)
-            self.end_headers()
+        elif parsed.path in ("/favicon.ico", "/favicon.svg", "/web/favicon.svg"):
+            svg_path = PROJECT / "web" / "favicon.svg"
+            if svg_path.exists():
+                self._respond(200, "image/svg+xml", svg_path.read_text(encoding="utf-8"))
+            else:
+                self.send_response(204)
+                self.end_headers()
         elif parsed.path == "/":
             html = load_html_template()
             self._respond(200, "text/html; charset=utf-8", html)

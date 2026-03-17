@@ -34,7 +34,8 @@ agentes_GDC1/
 │   └── promptfoo.yaml          # Config comparación de modelos
 ├── diagrama.py                 # Servidor web (APIs REST)
 ├── web/
-│   └── index.html              # Dashboard (ejecución, evaluación, trazas)
+│   ├── index.html              # Dashboard Material Design 3 (navegación multi-nivel)
+│   └── favicon.svg             # Logo Agentia ELE
 ├── datos/inventarios/          # Inventarios JSON extraídos del libro
 ├── Dockerfile                  # Python 3.12 + Node.js 20 + promptfoo
 ├── railway.toml                # Config Railway
@@ -71,10 +72,10 @@ python diagrama.py
 
 ### Ejecutar agente desde el dashboard
 1. Abrir http://localhost:8080
-2. Seleccionar agente (Recurvo) en sidebar
-3. Elegir unidad y modelo
-4. Pulsar "Ejecutar" — la consola muestra output en tiempo real
-5. Evaluación automática al terminar
+2. Seleccionar unidad en sidebar y navegar a la sección (ej. "Toda la unidad")
+3. Elegir agente (Recurvo) → "+ Nueva ejecución"
+4. Configurar modelo, temperatura, max tokens → "Ejecutar"
+5. Consola en tiempo real + evaluación automática al terminar
 
 ### Ejecutar agente por terminal
 ```bash

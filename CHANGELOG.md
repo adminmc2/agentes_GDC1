@@ -3,6 +3,43 @@
 
 ---
 
+## [v8.0 — 2026-03-17h] — Rediseño completo: navegación multi-nivel + tema Material Design
+
+### Rediseño completo — `web/index.html`
+- **Navegación multi-nivel**: Unidad → Sección → Agente → Ejecución
+  - Inspirado en LangSmith, Langfuse, Braintrust
+- **Sidebar por secciones** (no por agentes): Toda la unidad, Vocabulario, Gramática, Comunicación, Cultura, Destrezas, Reflexión, Evaluación
+  - Cada sección muestra cuántos agentes tiene asignados
+  - Secciones sin agentes muestran "Sin agentes asignados"
+- **6 vistas**: Proyecto, Sección, Agente (config), Nueva ejecución, Detalle ejecución, Comparar
+- **Vista Agente (config)**: secciones colapsables con prompt (role/goal/backstory), tareas, herramientas, métricas de evaluación, parámetros
+- **Separación agente vs ejecución**: config del agente (prompt, tools, tasks) es estable; parámetros de ejecución (modelo, temperatura, max_tokens, top-p) son variables por run
+- **Vista Ejecución**: consola, evaluación (score + métricas + radar), tarjetas, trazas LLM — todo colapsable
+- **Comparación**: checkbox en lista de ejecuciones → comparar métricas lado a lado
+- **Material Design 3**: fuente Inter (Google Fonts), elevación por sombras, botones pill (border-radius: 20px), focus ring en inputs
+  - Paleta dorado-oliva/crema: primary #7D7432, surface #FFFDF6, surface-variant #F5F0DC
+  - Cards interactivas = elevated (sombra), cards de texto = outlined (borde, sin sombra)
+  - Reemplaza completamente el tema oscuro anterior
+- **Favicon**: logo Agentia ELE (`web/favicon.svg`) servido desde `diagrama.py`
+- **Header y sidebar sin separación**: mismo color, sin sombra en header → bloque sólido
+- **Tildes corregidas**: 19+ instancias en textos visibles (Gramática, Comunicación, Evaluación, Reflexión, ejecución, métricas, parámetros, sílabas, etc.)
+
+### Modificado — `diagrama.py`
+- `SERVER_VERSION = "8.0"`
+- Nuevo endpoint: `/favicon.svg`, `/favicon.ico` → sirve `web/favicon.svg`
+
+### Modelo de datos JS
+- `SECCIONES[]`: 8 secciones con agentes asignados
+- `AGENTES{}`: definición completa de cada agente (Recurvo) con role, goal, backstory, tasks, tools, eval_metrics, params
+- Datos sincronizados con `recurvo.py` real
+
+### Patrón de diseño
+- Todo gira alrededor de la ejecución (run-centric)
+- Agentes se aplican a secciones, no se navegan directamente
+- Modelo LLM pertenece a la ejecución, no al agente (permite comparar modelos)
+
+---
+
 ## [v7.0 — 2026-03-17g] — Fix Langfuse definitivo + versión visible en dashboard
 
 ### Corregido — `requirements.txt`

@@ -2,373 +2,329 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Guía Didáctica - Sistema de Gestión</title>
+<title>Guía Didáctica - Sistema de Agentes</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <style>
-/* === BASE === */
+/* === MATERIAL DESIGN 3 — Paleta dorado-oliva / crema === */
+:root {
+    --md-primary: #7D7432;
+    --md-primary-dark: #6E6528;
+    --md-primary-light: #B5A84C;
+    --md-on-primary: #FFFFFF;
+    --md-primary-container: #F5F0D0;
+    --md-on-primary-container: #3A3510;
+    --md-surface: #FFFDF6;
+    --md-surface-variant: #F5F0DC;
+    --md-on-surface: #1C1B17;
+    --md-on-surface-variant: #5E5C52;
+    --md-outline: #DDD9C8;
+    --md-outline-variant: #EDEADF;
+    --md-success: #2E7D32;
+    --md-error: #C62828;
+    --md-warning: #E65100;
+    --md-elevation-1: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08);
+    --md-elevation-2: 0 3px 6px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
+    --md-elevation-3: 0 6px 12px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.06);
+    --md-elevation-4: 0 10px 24px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.06);
+    --md-radius: 12px;
+    --md-radius-sm: 8px;
+    --md-radius-xs: 6px;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #e8e4de; color: #2d3748; display: grid; grid-template-columns: 220px 1fr; grid-template-rows: 50px 1fr; height: 100vh; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--md-surface-variant); color: var(--md-on-surface); display: grid; grid-template-columns: 256px 1fr; grid-template-rows: 56px 1fr; height: 100vh; font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
 
-/* === HEADER === */
-header { grid-column: 1/-1; background: #3b5068; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,.12); z-index: 10; }
-header h1 { font-size: 15px; color: #e8e4de; font-weight: 700; }
-.live { font-size: 11px; color: #a8bcc8; }
-.live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #5cb87a; margin-right: 4px; animation: pulse 2s infinite; }
+/* === HEADER (top app bar) === */
+header { grid-column: 1/-1; background: var(--md-primary-dark); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; z-index: 10; }
+header h1 { font-size: 18px; color: var(--md-on-primary); font-weight: 600; letter-spacing: .2px; }
+.live { font-size: 14px; color: rgba(255,255,255,.9); font-weight: 500; }
+.live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #81C784; margin-right: 6px; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-/* === SIDEBAR === */
-.sidebar { background: #3f5572; border-right: none; padding: 12px 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; box-shadow: 2px 0 8px rgba(0,0,0,.08); }
-.sidebar h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #8ba0b8; margin-bottom: 4px; padding-left: 4px; }
-.nav-btn { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 6px; border: 1px solid transparent; background: none; color: #b8c9d8; font-size: 13px; cursor: pointer; text-align: left; width: 100%; transition: all .15s; }
-.nav-btn:hover { background: rgba(255,255,255,.08); color: #e0e8f0; }
-.nav-btn.active { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.2); color: #fff; font-weight: 600; }
+/* === SIDEBAR (navigation drawer) === */
+.sidebar { background: var(--md-primary-dark); padding: 16px 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; border-right: none; }
+.sidebar h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,.55); margin-bottom: 4px; padding-left: 8px; font-weight: 600; }
+.sidebar select { width: 100%; padding: 10px 12px; border-radius: var(--md-radius-sm); border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.12); color: #fff; font-size: 14px; font-family: inherit; font-weight: 500; appearance: none; cursor: pointer; }
+.sidebar select option { background: var(--md-primary-dark); color: #fff; }
+.nav-btn { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 24px; border: none; background: none; color: rgba(255,255,255,.8); font-size: 14px; font-family: inherit; font-weight: 500; cursor: pointer; text-align: left; width: 100%; transition: all .2s; }
+.nav-btn:hover { background: rgba(255,255,255,.12); color: #fff; }
+.nav-btn.active { background: rgba(255,255,255,.22); color: #fff; font-weight: 600; }
 .nav-btn.disabled { opacity: .35; cursor: not-allowed; }
 .nav-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.nav-dot.ready { background: #5cb87a; }
-.nav-dot.pending { background: #6b7e94; }
-.nav-dot.project { background: #6ea8e0; }
-.controls { background: rgba(0,0,0,.12); border-radius: 8px; padding: 10px; border: 1px solid rgba(255,255,255,.08); }
-.controls label { font-size: 10px; color: #8ba0b8; display: block; margin-bottom: 2px; text-transform: uppercase; letter-spacing: .5px; }
-.controls select { width: 100%; padding: 6px 8px; border-radius: 5px; border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.2); color: #d0dce6; font-size: 12px; margin-bottom: 8px; }
-.btn-run { width: 100%; padding: 9px; border-radius: 6px; border: none; font-size: 12px; font-weight: 600; cursor: pointer; transition: all .15s; }
-.btn-run.go { background: #4a90d9; color: #fff; }
-.btn-run.go:hover { background: #3a7cc4; }
-.btn-run.running { background: #d4922a; color: #fff; cursor: wait; }
-.btn-run.done { background: #5cb87a; color: #fff; }
-.run-item { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border-radius: 4px; font-size: 11px; cursor: pointer; color: #8ba0b8; }
-.run-item:hover { background: rgba(255,255,255,.08); }
-.run-status { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.run-status.completed { background: #5cb87a; }
-.run-status.running { background: #d4922a; }
-.run-status.error { background: #d94f4f; }
+.nav-dot.has-agents { background: #fff; }
+.nav-dot.no-agents { background: rgba(255,255,255,.3); }
+.nav-dot.project { background: #81C784; }
+.nav-count { margin-left: auto; font-size: 12px; color: rgba(255,255,255,.6); background: rgba(0,0,0,.15); padding: 2px 8px; border-radius: 12px; font-weight: 600; }
 
 /* === MAIN === */
-main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+main { overflow-y: auto; padding: 24px; }
 
-/* === SECTION CARDS === */
-.section { background: #f6f4f0; border-radius: 8px; border: 1px solid #d4cfc7; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-.section-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; cursor: pointer; user-select: none; }
-.section-header:hover { background: #edeae4; border-radius: 8px 8px 0 0; }
-.section-header h2 { font-size: 14px; color: #2d3748; font-weight: 600; }
-.section-header .count { font-size: 12px; color: #7a8a96; }
-.section-body { padding: 0 16px 16px; }
+/* === BREADCRUMB === */
+.breadcrumb { font-size: 14px; color: var(--md-on-surface-variant); margin-bottom: 16px; }
+.breadcrumb a { color: var(--md-primary); text-decoration: none; cursor: pointer; font-weight: 500; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* === PAGE HEADER === */
+.page-header { background: var(--md-surface); border-radius: var(--md-radius); box-shadow: var(--md-elevation-1); padding: 20px 24px; margin-bottom: 16px; }
+.page-title { font-size: 20px; font-weight: 700; color: var(--md-on-surface); }
+.page-subtitle { font-size: 14px; color: var(--md-on-surface-variant); margin-top: 4px; }
+
+/* === SECTIONS (cards) === */
+.section { background: var(--md-surface); border-radius: var(--md-radius); box-shadow: var(--md-elevation-1); margin-bottom: 16px; border: none; }
+.section-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; user-select: none; }
+.section-header h2 { font-size: 16px; color: var(--md-on-surface); font-weight: 600; }
+.sec-badge { font-size: 12px; color: var(--md-on-surface-variant); background: var(--md-surface-variant); padding: 4px 12px; border-radius: 16px; font-weight: 500; }
+.section-body { padding: 0 20px 20px; }
 .section.collapsed .section-body { display: none; }
+.chevron { font-size: 12px; color: var(--md-on-surface-variant); margin-left: 8px; transition: transform .2s; display: inline-block; }
+.section.collapsed .chevron { transform: rotate(-90deg); }
 
-/* === TABS (agent view) === */
-.tab-bar { display: flex; gap: 2px; background: #d4cfc7; padding: 3px; border-radius: 8px; margin-bottom: 14px; }
-.tab-btn { flex: 1; padding: 9px 8px; border-radius: 6px; border: none; background: transparent; color: #7a8a96; font-size: 12px; font-weight: 500; cursor: pointer; transition: all .15s; white-space: nowrap; }
-.tab-btn:hover { color: #2d3748; background: rgba(255,255,255,.4); }
-.tab-btn.active { background: #f6f4f0; color: #2c5a85; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
-.tab-btn .badge-num { display: inline-block; min-width: 18px; padding: 1px 5px; border-radius: 9px; background: #d4cfc7; color: #5a6a78; font-size: 10px; margin-left: 4px; }
-.tab-btn.active .badge-num { background: #4a90d9; color: #fff; }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
+/* === TEXT-ONLY CARD — Material "outlined" variant (read-only, no actions) === */
+.section.text-card { background: var(--md-surface); box-shadow: none; border: 1px solid var(--md-outline); }
+.section.text-card .section-header h2 { font-weight: 500; }
+.section.text-card .config-text { background: var(--md-surface); border: 1px solid var(--md-outline-variant); }
 
-/* === FILTER BAR === */
-.filter-bar { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
-.filter-bar select, .filter-bar input { padding: 6px 10px; border-radius: 5px; border: 1px solid #d4cfc7; background: #f6f4f0; color: #2d3748; font-size: 12px; }
-.filter-bar label { font-size: 11px; color: #7a8a96; }
-.filter-group { display: flex; align-items: center; gap: 4px; }
+/* === AGENT CARD === */
+.agent-card { background: var(--md-surface); border-radius: var(--md-radius); box-shadow: var(--md-elevation-1); padding: 20px; margin-bottom: 16px; border: none; }
+.agent-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.agent-name { font-size: 18px; font-weight: 700; color: var(--md-on-surface); }
+.agent-version { font-size: 12px; color: var(--md-on-surface-variant); background: var(--md-surface-variant); padding: 4px 12px; border-radius: 16px; font-weight: 500; }
+.agent-desc { font-size: 14px; color: var(--md-on-surface-variant); margin-bottom: 12px; line-height: 1.6; }
+.agent-stats { font-size: 13px; color: var(--md-on-surface-variant); margin-bottom: 16px; }
+.agent-actions { display: flex; gap: 10px; margin-bottom: 16px; }
 
-/* === STATUS GRID (project view) === */
-.status-grid { display: grid; grid-template-columns: 80px repeat(8, 1fr); gap: 2px; font-size: 11px; }
-.status-grid .hdr { font-weight: 600; color: #5a6a78; padding: 6px 4px; text-align: center; background: #edeae4; border-radius: 3px; }
-.status-grid .unit-label { font-weight: 600; color: #2d3748; padding: 6px 4px; background: #edeae4; border-radius: 3px; }
-.status-cell { padding: 6px 4px; text-align: center; border-radius: 3px; font-size: 10px; color: #fff; cursor: default; }
-.status-cell.complete { background: #5cb87a; }
-.status-cell.in-progress { background: #d4922a; }
-.status-cell.structure-only { background: #c87d3a; }
-.status-cell.missing { background: #d4cfc7; color: #8a8078; }
+/* === BUTTONS (Material filled + outlined) === */
+.btn { padding: 10px 20px; border-radius: 20px; border: none; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all .2s; letter-spacing: .2px; }
+.btn-primary { background: var(--md-primary); color: var(--md-on-primary); box-shadow: var(--md-elevation-1); }
+.btn-primary:hover { box-shadow: var(--md-elevation-2); filter: brightness(1.1); }
+.btn-secondary { background: transparent; color: var(--md-primary); border: 1px solid var(--md-outline); }
+.btn-secondary:hover { background: var(--md-primary-container); }
+.btn-sm { padding: 6px 14px; font-size: 13px; }
+.btn-success { background: var(--md-success); color: #fff; box-shadow: var(--md-elevation-1); }
+.btn-success:hover { box-shadow: var(--md-elevation-2); filter: brightness(1.05); }
 
-/* === MERMAID DIAGRAMS === */
-.diagram-tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
-.diagram-tab { padding: 6px 12px; border-radius: 5px; border: 1px solid #d4cfc7; background: #f6f4f0; color: #5a6a78; font-size: 12px; cursor: pointer; transition: all .15s; }
-.diagram-tab:hover { border-color: #8ab4d8; color: #3b6e9e; }
-.diagram-tab.active { background: #dce8f2; border-color: #8ab4d8; color: #2c5a85; font-weight: 600; }
-.diagram-container { background: #faf8f5; border-radius: 6px; padding: 16px; min-height: 200px; overflow-x: auto; border: 1px solid #e5e0d8; }
-.diagram-container svg { max-width: 100%; }
+/* === EXECUTION LIST === */
+.exec-list { border-top: 1px solid var(--md-outline); padding-top: 16px; }
+.exec-list-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--md-on-surface-variant); margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; font-weight: 600; }
+.exec-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: var(--md-radius-sm); font-size: 14px; cursor: pointer; transition: background .15s; border: none; margin-bottom: 4px; }
+.exec-row:hover { background: var(--md-surface-variant); }
+.exec-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.exec-dot.completed { background: var(--md-success); }
+.exec-dot.error { background: var(--md-error); }
+.exec-dot.running { background: var(--md-primary); animation: pulse 1s infinite; }
+.exec-id { color: var(--md-on-surface-variant); min-width: 28px; font-weight: 500; }
+.exec-model { color: var(--md-on-surface); flex: 1; font-weight: 500; }
+.exec-score { font-weight: 700; min-width: 44px; text-align: right; }
+.exec-score.good { color: var(--md-success); }
+.exec-score.mid { color: var(--md-warning); }
+.exec-score.bad { color: var(--md-error); }
+.exec-date { color: var(--md-on-surface-variant); font-size: 13px; min-width: 100px; text-align: right; }
+.exec-check { width: 16px; height: 16px; accent-color: var(--md-primary); cursor: pointer; flex-shrink: 0; }
+.exec-arrow { color: var(--md-on-surface-variant); font-size: 12px; }
 
-/* === SCORE / EVALUATION === */
-.score-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.score-big { font-size: 42px; font-weight: 700; line-height: 1; }
-.score-big.good { color: #3a9b5a; }
-.score-big.mid { color: #c4820a; }
-.score-big.bad { color: #c43a3a; }
-.metric-bars { flex: 1; min-width: 200px; }
-.metric-bar { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 12px; }
-.metric-bar .label { min-width: 120px; color: #5a6a78; }
-.metric-bar .bar { flex: 1; height: 16px; background: #e5e0d8; border-radius: 3px; position: relative; overflow: hidden; }
-.metric-bar .bar .fill { height: 100%; border-radius: 3px; transition: width .3s; }
-.metric-bar .val { min-width: 40px; text-align: right; font-size: 11px; color: #5a6a78; }
-.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-.chart-box { background: #faf8f5; border-radius: 6px; padding: 12px; border: 1px solid #e5e0d8; }
-.chart-box h4 { font-size: 12px; color: #5a6a78; margin-bottom: 8px; }
+/* === CONFIG FIELDS === */
+.config-field { margin-bottom: 14px; }
+.config-label { font-size: 12px; text-transform: uppercase; letter-spacing: .8px; color: var(--md-on-surface-variant); margin-bottom: 6px; font-weight: 600; }
+.config-text { background: var(--md-surface-variant); border: none; border-radius: var(--md-radius-sm); padding: 12px 14px; font-size: 14px; color: var(--md-on-surface); line-height: 1.6; white-space: pre-wrap; font-family: inherit; }
+.config-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.config-row .config-field { flex: 1; min-width: 120px; }
+.config-tag { display: inline-block; padding: 4px 12px; border-radius: 16px; font-size: 13px; background: var(--md-primary-container); color: var(--md-on-primary-container); border: none; margin: 3px; font-weight: 500; }
+.metric-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; font-size: 14px; }
+.metric-peso { min-width: 40px; text-align: right; font-weight: 700; color: var(--md-primary); }
+.metric-name { min-width: 150px; color: var(--md-on-surface); font-weight: 500; }
+.metric-desc { color: var(--md-on-surface-variant); }
+
+/* === NEW EXECUTION === */
+.param-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.param-grid label { font-size: 13px; color: var(--md-on-surface-variant); display: block; margin-bottom: 6px; font-weight: 500; }
+.param-grid select, .param-grid input { width: 100%; padding: 10px 12px; border-radius: var(--md-radius-sm); border: 1px solid var(--md-outline); background: var(--md-surface); font-size: 14px; color: var(--md-on-surface); font-family: inherit; transition: border-color .2s; }
+.param-grid select:focus, .param-grid input:focus { border-color: var(--md-primary); outline: 2px solid rgba(181,168,76,.25); }
+.slider-wrap { display: flex; align-items: center; gap: 10px; }
+.slider-wrap input[type=range] { flex: 1; accent-color: var(--md-primary); }
+.slider-val { font-size: 14px; color: var(--md-primary); font-weight: 700; min-width: 34px; }
+
+/* === SCORE === */
+.score-row { display: flex; gap: 24px; align-items: flex-start; }
+.score-big { font-size: 48px; font-weight: 800; min-width: 80px; text-align: center; line-height: 1; }
+.score-big.good { color: var(--md-success); }
+.score-big.mid { color: var(--md-warning); }
+.score-big.bad { color: var(--md-error); }
+.metric-bars { flex: 1; display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
+.metric-bar { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.metric-bar .label { min-width: 120px; color: var(--md-on-surface-variant); font-weight: 500; }
+.metric-bar .bar { flex: 1; height: 8px; background: var(--md-outline-variant); border-radius: 4px; overflow: hidden; }
+.metric-bar .bar .fill { height: 100%; border-radius: 4px; transition: width .3s; }
+.metric-bar .val { min-width: 40px; text-align: right; font-size: 13px; color: var(--md-on-surface-variant); font-weight: 600; }
+.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.chart-box { background: var(--md-surface); border-radius: var(--md-radius); padding: 16px; box-shadow: var(--md-elevation-1); }
+.chart-box h4 { font-size: 14px; color: var(--md-on-surface-variant); margin-bottom: 10px; font-weight: 600; }
 .chart-box canvas { max-height: 200px; }
 
 /* === TARJETAS TABLE === */
 .tarjetas-table-wrap { overflow-x: auto; }
-.tarjetas-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-.tarjetas-table th { position: sticky; top: 0; background: #edeae4; padding: 8px 6px; text-align: left; font-weight: 600; color: #5a6a78; cursor: pointer; user-select: none; white-space: nowrap; border-bottom: 2px solid #d4cfc7; }
-.tarjetas-table th:hover { color: #2c5a85; }
-.tarjetas-table th .sort-icon { font-size: 10px; color: #b0a898; margin-left: 2px; }
-.tarjetas-table th.sorted .sort-icon { color: #4a90d9; }
-.tarjetas-table td { padding: 7px 6px; border-bottom: 1px solid #edeae4; color: #2d3748; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.tarjetas-table tr:hover { background: #f0ede6; }
-.tarjetas-table td.clickable { cursor: pointer; }
-.tarjetas-table td.clickable:hover { color: #c4820a; }
-.tarjetas-table td.err { color: #c43a3a; font-weight: 500; }
-.tarjetas-table .actions-cell { white-space: nowrap; }
-.tarjetas-table .actions-cell button { padding: 3px 7px; font-size: 10px; border-radius: 3px; border: none; cursor: pointer; margin-right: 3px; }
-.nivel-badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; background: #e5e0d8; color: #5a6a78; }
-.tarjetas-count-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.tarjetas-count-bar span { font-size: 12px; color: #7a8a96; }
-.tarjetas-search { padding: 6px 10px; border-radius: 5px; border: 1px solid #d4cfc7; background: #faf8f5; font-size: 12px; width: 200px; }
+.tarjetas-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tarjetas-table th { position: sticky; top: 0; background: var(--md-surface-variant); padding: 10px 10px; text-align: left; font-weight: 600; color: var(--md-on-surface-variant); cursor: pointer; white-space: nowrap; border-bottom: 2px solid var(--md-outline); }
+.tarjetas-table td { padding: 10px 10px; border-bottom: 1px solid var(--md-outline-variant); max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tarjetas-table tr:hover { background: var(--md-surface-variant); }
+.tarjetas-table td.clickable { cursor: pointer; color: var(--md-primary); font-weight: 500; }
+.tarjetas-table td.clickable:hover { text-decoration: underline; }
+.tarjetas-table td.err { color: var(--md-error); font-weight: 500; }
+.tarjetas-search { padding: 10px 14px; border-radius: 24px; border: 1px solid var(--md-outline); background: var(--md-surface); font-size: 14px; font-family: inherit; width: 240px; transition: border-color .2s; }
+.tarjetas-search:focus { border-color: var(--md-primary); outline: 2px solid rgba(181,168,76,.25); }
 
 /* === ERRORS === */
-.error-item { display: flex; gap: 8px; padding: 6px 0; font-size: 12px; border-bottom: 1px solid #edeae4; align-items: center; }
-.badge { padding: 2px 7px; border-radius: 3px; font-size: 10px; color: #fff; white-space: nowrap; }
-.badge-plural { background: #c43a3a; }
-.badge-silaba { background: #7c5daa; }
-.badge-traduccion { background: #4a90d9; }
-.badge-combo { background: #d4922a; }
-.badge-otro { background: #7a8a96; }
+.error-item { display: flex; gap: 10px; padding: 8px 0; font-size: 14px; border-bottom: 1px solid var(--md-outline-variant); align-items: center; }
+.badge { padding: 4px 10px; border-radius: 16px; font-size: 11px; color: #fff; white-space: nowrap; font-weight: 600; }
+.badge-plural { background: var(--md-error); }
+.badge-silaba { background: #7B1FA2; }
+.badge-traduccion { background: #1565C0; }
+.badge-combo { background: var(--md-warning); }
+.badge-otro { background: #757575; }
 
 /* === TRAZAS === */
-.trace-row { display: flex; gap: 10px; padding: 8px 10px; margin: 2px 0; background: #faf8f5; border-radius: 4px; font-size: 12px; align-items: center; border: 1px solid #edeae4; cursor: pointer; transition: background .1s; }
-.trace-row:hover { background: #edeae4; }
-.trace-type { min-width: 70px; padding: 2px 6px; border-radius: 3px; font-size: 10px; text-align: center; color: #fff; }
-.trace-type.SPAN { background: #4a90d9; }
-.trace-type.GENERATION { background: #7c5daa; }
-.trace-type.EVENT { background: #5cb87a; }
-.trace-name { color: #2d3748; min-width: 140px; font-weight: 500; }
-.trace-meta { color: #7a8a96; font-size: 11px; flex: 1; }
-.trace-cost { color: #c4820a; font-size: 11px; min-width: 60px; text-align: right; font-weight: 500; }
-.trace-detail { background: #faf8f5; border: 1px solid #e5e0d8; border-radius: 6px; padding: 12px; margin: 4px 0 8px 0; }
-.trace-step { display: flex; gap: 10px; padding: 6px 8px; margin: 2px 0; background: #f6f4f0; border-radius: 4px; font-size: 12px; align-items: flex-start; border: 1px solid #edeae4; }
-.trace-io { color: #7a8a96; font-size: 11px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trace-row { display: flex; gap: 12px; padding: 10px 14px; margin: 4px 0; background: var(--md-surface); border-radius: var(--md-radius-sm); font-size: 14px; align-items: center; box-shadow: var(--md-elevation-1); cursor: pointer; border: none; transition: box-shadow .2s; }
+.trace-row:hover { box-shadow: var(--md-elevation-2); }
+.trace-name { color: var(--md-on-surface); min-width: 120px; font-weight: 600; }
+.trace-meta { color: var(--md-on-surface-variant); font-size: 13px; flex: 1; }
+.trace-cost { color: var(--md-primary); font-size: 13px; min-width: 60px; text-align: right; font-weight: 600; }
+.trace-detail { background: var(--md-surface); box-shadow: var(--md-elevation-1); border-radius: var(--md-radius); padding: 14px; margin: 6px 0 10px; border: none; }
+.trace-step { display: flex; gap: 12px; padding: 8px 12px; margin: 4px 0; background: var(--md-surface-variant); border-radius: var(--md-radius-xs); font-size: 14px; align-items: flex-start; }
+.trace-type { min-width: 80px; padding: 4px 10px; border-radius: 16px; font-size: 11px; text-align: center; color: #fff; font-weight: 600; }
+.trace-type.GENERATION { background: #7B1FA2; }
+.trace-type.SPAN { background: #1565C0; }
+.trace-io { color: var(--md-on-surface-variant); font-size: 13px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .trace-io:hover { white-space: normal; word-break: break-all; }
 
 /* === CONSOLE === */
-.console { background: #2d3748; border-radius: 6px; padding: 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: #a3e635; max-height: 400px; overflow-y: auto; white-space: pre-wrap; word-break: break-all; line-height: 1.5; }
-.console-status-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.console-status-bar span { font-size: 12px; color: #7a8a96; }
+.console { background: #1E1E1E; border-radius: var(--md-radius); padding: 16px; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 13px; color: #A5D6A7; max-height: 400px; overflow-y: auto; white-space: pre-wrap; word-break: break-all; line-height: 1.7; }
 
-/* === HISTORIAL TABLE === */
-.hist-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-.hist-table th { background: #edeae4; padding: 8px 6px; text-align: left; font-weight: 600; color: #5a6a78; border-bottom: 2px solid #d4cfc7; }
-.hist-table td { padding: 7px 6px; border-bottom: 1px solid #edeae4; }
-.hist-table tr:hover { background: #f0ede6; }
-.hist-bar { height: 16px; background: #e5e0d8; border-radius: 2px; position: relative; overflow: hidden; min-width: 80px; }
-.hist-bar .fill { height: 100%; border-radius: 2px; }
-.hist-bar .lbl { position: absolute; right: 4px; top: 0; font-size: 10px; color: #fff; line-height: 16px; }
-.compare-check { width: 14px; height: 14px; cursor: pointer; }
-.btn-compare { padding: 6px 14px; border-radius: 5px; border: 1px solid #4a90d9; background: #dce8f2; color: #2c5a85; font-size: 12px; cursor: pointer; font-weight: 600; }
-.btn-compare:hover { background: #4a90d9; color: #fff; }
-.btn-compare:disabled { opacity: .4; cursor: not-allowed; }
-
-/* === COMPARISON VIEW === */
+/* === COMPARE === */
 .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.compare-col { background: #faf8f5; border-radius: 6px; padding: 12px; border: 1px solid #e5e0d8; }
-.compare-col h4 { font-size: 13px; color: #2c5a85; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #e5e0d8; }
-.compare-col .metric-bar { margin: 3px 0; }
+.compare-col { background: var(--md-surface); border-radius: var(--md-radius); padding: 16px; box-shadow: var(--md-elevation-1); }
+.compare-col h4 { font-size: 16px; color: var(--md-on-surface); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--md-outline); font-weight: 600; }
 
-/* === MODAL === */
-.modal-bg { display: none; position: fixed; inset: 0; background: rgba(45,55,72,.4); z-index: 100; align-items: center; justify-content: center; }
+/* === MODAL (Material dialog) === */
+.modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 100; align-items: center; justify-content: center; }
 .modal-bg.open { display: flex; }
-.modal { background: #f6f4f0; border: 1px solid #d4cfc7; border-radius: 10px; padding: 20px; width: 420px; max-width: 90vw; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
-.modal h3 { color: #2c5a85; margin-bottom: 12px; font-size: 15px; }
-.modal label { display: block; font-size: 11px; color: #7a8a96; margin-top: 8px; }
-.modal input, .modal select, .modal textarea { width: 100%; padding: 7px; border-radius: 5px; border: 1px solid #d4cfc7; background: #faf8f5; color: #2d3748; font-size: 13px; margin-top: 3px; }
-.modal textarea { height: 50px; resize: vertical; }
-.modal .btns { display: flex; gap: 8px; margin-top: 14px; justify-content: flex-end; }
-.modal .btns button { padding: 7px 16px; border-radius: 5px; border: none; cursor: pointer; font-size: 13px; }
+.modal { background: var(--md-surface); border: none; border-radius: var(--md-radius); padding: 24px; width: 460px; max-width: 90vw; box-shadow: var(--md-elevation-4); }
+.modal-wide { width: 760px; }
+.modal h3 { color: var(--md-on-surface); margin-bottom: 16px; font-size: 18px; font-weight: 700; }
+.modal label { display: block; font-size: 13px; color: var(--md-on-surface-variant); margin-top: 12px; font-weight: 500; }
+.modal input, .modal select, .modal textarea { width: 100%; padding: 10px 12px; border-radius: var(--md-radius-sm); border: 1px solid var(--md-outline); background: var(--md-surface); color: var(--md-on-surface); font-size: 14px; font-family: inherit; margin-top: 4px; }
+.modal input:focus, .modal select:focus, .modal textarea:focus { border-color: var(--md-primary); outline: 2px solid rgba(181,168,76,.25); }
+.modal .btns { display: flex; gap: 10px; margin-top: 20px; justify-content: flex-end; }
+.modal .btns button { padding: 10px 20px; border-radius: 20px; border: none; cursor: pointer; font-size: 14px; font-family: inherit; font-weight: 600; }
 
-/* === EMPTY STATE === */
-.empty { color: #7a8a96; font-size: 12px; text-align: center; padding: 30px 20px; }
+/* === STATUS GRID === */
+.status-grid { display: grid; grid-template-columns: 50px repeat(8, 1fr); gap: 3px; font-size: 13px; }
+.status-grid .hdr { font-weight: 600; color: var(--md-on-surface-variant); text-align: center; padding: 6px; }
+.status-grid .unit-label { font-weight: 600; color: var(--md-primary); padding: 6px 0; }
+.status-cell { text-align: center; padding: 6px; border-radius: var(--md-radius-xs); font-size: 12px; font-weight: 500; }
+.status-cell.complete { background: #E8F5E9; color: #1B5E20; }
+.status-cell.partial { background: #FFF3E0; color: #E65100; }
+.status-cell.missing { background: #FFEBEE; color: #B71C1C; }
+.status-cell.empty { background: var(--md-surface-variant); color: #BDBDBD; }
+.diagram-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.diagram-tab { padding: 8px 16px; border-radius: 20px; border: 1px solid var(--md-outline); background: var(--md-surface); color: var(--md-on-surface-variant); font-size: 13px; font-family: inherit; font-weight: 500; cursor: pointer; transition: all .2s; }
+.diagram-tab.active { background: var(--md-primary); color: var(--md-on-primary); border-color: var(--md-primary); }
+.diagram-container { background: var(--md-surface); border-radius: var(--md-radius); padding: 16px; box-shadow: var(--md-elevation-1); min-height: 200px; overflow-x: auto; }
 
-/* === RESPONSIVE === */
+.empty { color: var(--md-on-surface-variant); font-size: 14px; text-align: center; padding: 40px 24px; }
+
 @media (max-width: 800px) {
     body { grid-template-columns: 1fr; }
     .sidebar { display: none; }
-    .chart-row { grid-template-columns: 1fr; }
-    .compare-grid { grid-template-columns: 1fr; }
-    .tab-btn { font-size: 11px; padding: 7px 4px; }
+    .chart-row, .compare-grid, .param-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Guía Didáctica del Profesor — Sistema de Gestión</h1>
+    <h1>Guía Didáctica del Profesor</h1>
     <span class="live"><span class="live-dot"></span><span id="status-text">Conectando...</span></span>
 </header>
 
 <div class="sidebar">
     <div>
-        <h3>Navegación</h3>
-        <button class="nav-btn active" id="nav-proyecto" onclick="selectView('proyecto')">
+        <h3>Unidad</h3>
+        <select id="sel-unidad"></select>
+    </div>
+    <div>
+        <h3>Contenido</h3>
+        <div id="nav-secciones"></div>
+    </div>
+    <div style="margin-top:auto">
+        <button class="nav-btn" id="nav-proyecto" onclick="goTo('proyecto')">
             <span class="nav-dot project"></span>Proyecto
         </button>
-    </div>
-    <div>
-        <h3>Recursos</h3>
-        <div id="agent-list-recursos"></div>
-    </div>
-    <div>
-        <h3>Secciones</h3>
-        <div id="agent-list-secciones"></div>
-    </div>
-    <div class="controls" id="agent-controls" style="display:none">
-        <label>Unidad</label>
-        <select id="sel-unidad"></select>
-        <label>Modelo</label>
-        <select id="sel-modelo"></select>
-        <button class="btn-run go" id="btn-run" onclick="runAgent()">Ejecutar agente</button>
-    </div>
-    <div id="run-history-section" style="display:none">
-        <h3>Historial</h3>
-        <div id="run-history"></div>
     </div>
 </div>
 
 <main id="main">
-    <!-- ==================== PROYECTO VIEW ==================== -->
-    <div id="view-proyecto">
+
+    <!-- ===== PROYECTO ===== -->
+    <div id="view-proyecto" style="display:none">
+        <div class="page-header"><span class="page-title">Proyecto</span></div>
         <div class="section" id="sec-status">
-            <div class="section-header" onclick="toggleSection('sec-status')">
-                <h2>Estado de unidades</h2>
-                <span class="count" id="status-summary"></span>
-            </div>
-            <div class="section-body">
-                <div class="status-grid" id="status-grid"></div>
-            </div>
+            <div class="section-header" onclick="toggleSection('sec-status')"><h2>Estado de unidades</h2><div><span class="sec-badge" id="status-summary"></span><span class="chevron">&#9660;</span></div></div>
+            <div class="section-body"><div class="status-grid" id="status-grid"></div></div>
         </div>
         <div class="section" id="sec-diagrams">
-            <div class="section-header" onclick="toggleSection('sec-diagrams')">
-                <h2>Diagramas del proyecto</h2>
-            </div>
-            <div class="section-body">
-                <div class="diagram-tabs" id="diagram-tabs"></div>
-                <div class="diagram-container" id="diagram-container"></div>
-            </div>
+            <div class="section-header" onclick="toggleSection('sec-diagrams')"><h2>Diagramas</h2><span class="chevron">&#9660;</span></div>
+            <div class="section-body"><div class="diagram-tabs" id="diagram-tabs"></div><div class="diagram-container" id="diagram-container"></div></div>
         </div>
     </div>
 
-    <!-- ==================== AGENT VIEW ==================== -->
-    <div id="view-agent" style="display:none">
-
-        <!-- Tab bar -->
-        <div class="tab-bar">
-            <button class="tab-btn active" onclick="selectTab('evaluacion')" id="tab-btn-evaluacion">Evaluación</button>
-            <button class="tab-btn" onclick="selectTab('tarjetas')" id="tab-btn-tarjetas">Tarjetas <span class="badge-num" id="tab-count-tarjetas">0</span></button>
-            <button class="tab-btn" onclick="selectTab('trazas')" id="tab-btn-trazas">Trazas <span class="badge-num" id="tab-count-trazas">0</span></button>
-            <button class="tab-btn" onclick="selectTab('consola')" id="tab-btn-consola">Consola</button>
-            <button class="tab-btn" onclick="selectTab('historial')" id="tab-btn-historial">Historial <span class="badge-num" id="tab-count-historial">0</span></button>
+    <!-- ===== SECCION (agentes + ejecuciones) ===== -->
+    <div id="view-seccion" style="display:none">
+        <div class="page-header">
+            <span class="page-title" id="seccion-title">-</span>
+            <div class="page-subtitle" id="seccion-subtitle"></div>
         </div>
-
-        <!-- TAB: Evaluación -->
-        <div class="tab-content active" id="tab-evaluacion">
-            <div class="section">
-                <div class="section-body" style="padding-top:16px">
-                    <div class="score-row">
-                        <div class="score-big" id="score-num">--</div>
-                        <div class="metric-bars" id="metric-bars"></div>
-                    </div>
-                    <div class="chart-row">
-                        <div class="chart-box"><h4>Metricas</h4><canvas id="chart-radar"></canvas></div>
-                        <div class="chart-box"><h4>Historial de scores</h4><canvas id="chart-history"></canvas></div>
-                    </div>
-                    <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
-                        <button onclick="runEval()" style="padding:7px 16px;border-radius:5px;border:1px solid #d4cfc7;background:#faf8f5;color:#2c5a85;font-size:12px;cursor:pointer;font-weight:600" id="btn-eval">Evaluar ahora</button>
-                        <span id="score-summary" style="font-size:12px;color:#7a8a96">--</span>
-                    </div>
-                </div>
-            </div>
-            <div class="section" style="margin-top:14px">
-                <div class="section-header" onclick="toggleSection('sec-errores')">
-                    <h2>Errores detectados</h2>
-                    <span class="count" id="errores-count">0</span>
-                </div>
-                <div class="section-body" id="sec-errores-body">
-                    <div id="errores-list"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB: Tarjetas -->
-        <div class="tab-content" id="tab-tarjetas">
-            <div class="tarjetas-count-bar">
-                <span id="tarjetas-info">0 tarjetas</span>
-                <input type="text" class="tarjetas-search" placeholder="Buscar palabra..." id="tarjetas-search" oninput="filterTarjetas()">
-            </div>
-            <div class="tarjetas-table-wrap">
-                <table class="tarjetas-table">
-                    <thead>
-                        <tr>
-                            <th onclick="sortTarjetas('palabra')">Palabra <span class="sort-icon">↕</span></th>
-                            <th onclick="sortTarjetas('nivel_jerarquia')">Nivel <span class="sort-icon">↕</span></th>
-                            <th onclick="sortTarjetas('genero')">Gen <span class="sort-icon">↕</span></th>
-                            <th>Silaba</th>
-                            <th onclick="sortTarjetas('campo_semantico')">Campo <span class="sort-icon">↕</span></th>
-                            <th>Regla</th>
-                            <th>IT</th>
-                            <th>FR</th>
-                            <th>PT</th>
-                            <th>EN</th>
-                            <th>CS</th>
-                            <th>PL</th>
-                            <th>TR</th>
-                            <th>Combos</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tarjetas-tbody"></tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- TAB: Trazas -->
-        <div class="tab-content" id="tab-trazas">
-            <div id="trazas-list"></div>
-        </div>
-
-        <!-- TAB: Consola -->
-        <div class="tab-content" id="tab-consola">
-            <div class="console-status-bar">
-                <span id="console-status">Sin ejecución</span>
-                <span id="console-time"></span>
-            </div>
-            <div class="console" id="console-output">Ejecuta un agente para ver la salida aquí.</div>
-        </div>
-
-        <!-- TAB: Historial -->
-        <div class="tab-content" id="tab-historial">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-                <span style="font-size:12px;color:#7a8a96" id="hist-info">Selecciona 2 para comparar</span>
-                <button class="btn-compare" id="btn-compare" onclick="showComparison()" disabled>Comparar seleccionados</button>
-            </div>
-            <div id="comparison-view" style="display:none"></div>
-            <table class="hist-table">
-                <thead>
-                    <tr>
-                        <th style="width:30px"></th>
-                        <th>Run</th>
-                        <th>U</th>
-                        <th>Modelo</th>
-                        <th>Score</th>
-                        <th>Tarjetas</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
-                <tbody id="eval-hist-tbody"></tbody>
-            </table>
-        </div>
+        <div id="seccion-content"></div>
     </div>
+
+    <!-- ===== AGENTE (config) ===== -->
+    <div id="view-agente" style="display:none">
+        <div class="breadcrumb"><a onclick="goToSeccion()">&#8592; Volver</a></div>
+        <div class="page-header">
+            <span class="page-title" id="agente-title">-</span>
+            <div class="page-subtitle" id="agente-subtitle"></div>
+        </div>
+        <div id="agente-content"></div>
+    </div>
+
+    <!-- ===== NUEVA EJECUCION ===== -->
+    <div id="view-nueva" style="display:none">
+        <div class="breadcrumb"><a onclick="goToSeccion()">&#8592; Volver</a></div>
+        <div class="page-header">
+            <span class="page-title" id="nueva-title">Nueva ejecución</span>
+            <div class="page-subtitle" id="nueva-subtitle"></div>
+        </div>
+        <div id="nueva-content"></div>
+    </div>
+
+    <!-- ===== EJECUCION (detalle) ===== -->
+    <div id="view-ejecucion" style="display:none">
+        <div class="breadcrumb"><a onclick="goToSeccion()">&#8592; Volver</a></div>
+        <div class="page-header" id="ejec-header"></div>
+        <div id="ejec-sections"></div>
+    </div>
+
+    <!-- ===== COMPARAR ===== -->
+    <div id="view-comparar" style="display:none">
+        <div class="breadcrumb"><a onclick="goToSeccion()">&#8592; Volver</a></div>
+        <div class="page-header"><span class="page-title" id="compare-title">Comparar</span></div>
+        <div id="compare-content"></div>
+    </div>
+
 </main>
 
 <!-- Modal correcciones -->
-<div class="modal-bg" id="modal-bg">
+<div class="modal-bg" id="modal-corr">
     <div class="modal">
         <h3 id="modal-title">Corregir</h3>
         <input type="hidden" id="m-id"><input type="hidden" id="m-palabra"><input type="hidden" id="m-campo">
@@ -376,584 +332,465 @@ main { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; g
         <label>Original</label><input id="m-original" disabled>
         <label>Corregido</label><input id="m-corregido">
         <label>Tipo error</label>
-        <select id="m-tipo">
-            <option value="silaba_tonica">Silaba tonica</option>
-            <option value="traduccion">Traduccion</option>
-            <option value="regla">Regla</option>
-            <option value="genero">Genero</option>
-            <option value="plural_no_deseado">Plural</option>
-            <option value="combo">Combo</option>
-            <option value="ejemplo">Ejemplo</option>
-            <option value="otro">Otro</option>
-        </select>
+        <select id="m-tipo"><option value="silaba_tonica">Silaba tonica</option><option value="traduccion">Traduccion</option><option value="regla">Regla</option><option value="genero">Genero</option><option value="plural_no_deseado">Plural</option><option value="combo">Combo</option><option value="ejemplo">Ejemplo</option><option value="otro">Otro</option></select>
         <div class="btns">
-            <button onclick="closeModal()" style="background:#e5e0d8;color:#2d3748">Cancelar</button>
-            <button onclick="submitFix()" style="background:#4a90d9;color:#fff">Guardar</button>
+            <button onclick="closeModal()" style="background:var(--md-surface-variant);color:var(--md-on-surface)">Cancelar</button>
+            <button onclick="submitFix()" style="background:var(--md-primary);color:#fff">Guardar</button>
         </div>
     </div>
 </div>
 
 <script>
-// ===== STATE =====
-let currentView = 'proyecto';
-let currentAgent = 'recurvo';
-let currentUnidad = 3;
-let currentModelo = 'groq/openai/gpt-oss-120b';
-let currentRunId = null;
-let currentTab = 'evaluacion';
-let tarjetas = [];
-let filteredTarjetas = [];
-let correcciones = [];
-let evaluaciones = [];
-let chartRadar = null;
-let chartHist = null;
-let diagramData = null;
-let currentDiagram = 'nivel1';
-let sortCol = 'palabra';
-let sortDir = 1;
-let compareSelected = [];
-
-const AGENTES = [
-    {id:'recurvo', name:'Recurvo', ready:true, tipo:'recurso', desc:'Tarjetas de vocabulario'},
-    {id:'vocabulario', name:'Vocabulario', ready:false, tipo:'seccion'},
-    {id:'gramatica', name:'Gramática', ready:false, tipo:'seccion'},
-    {id:'comunicacion', name:'Comunicación', ready:false, tipo:'seccion'},
-    {id:'destrezas', name:'Destrezas', ready:false, tipo:'seccion'},
-    {id:'cultura', name:'Cultura', ready:false, tipo:'seccion'},
-    {id:'evaluacion_ref', name:'Evaluación', ready:false, tipo:'seccion'},
+// ===== DATA MODEL =====
+const SECCIONES = [
+    {id:'toda', name:'Toda la unidad', agentes:['recurvo']},
+    {id:'vocabulario', name:'Vocabulario', agentes:[]},
+    {id:'gramatica', name:'Gramática', agentes:[]},
+    {id:'comunicacion', name:'Comunicación', agentes:[]},
+    {id:'destrezas', name:'Destrezas', agentes:[]},
+    {id:'cultura', name:'Cultura', agentes:[]},
+    {id:'reflexion', name:'Reflexión', agentes:[]},
+    {id:'evaluacion_sec', name:'Evaluación', agentes:[]},
 ];
 
-const DIAGRAM_LABELS = {
-    nivel1: 'Arquitectura', nivel2: 'Flujo de trabajo', nivel3: 'Dependencias',
-    nivel4: 'Estado agentes', database: 'Base de datos',
+const AGENTES = {
+    recurvo: {
+        name: 'Recurvo', version: '1.0', script: 'recurvo',
+        desc: 'Genera tarjetas de vocabulario',
+        ambito: 'Toda la unidad',
+        role: 'Extractor y generador de tarjetas de vocabulario',
+        goal: 'Consultar la base de datos, extraer vocabulario de la unidad indicada y generar tarjetas estandarizadas con todos los campos requeridos.',
+        backstory: 'Eres un especialista en lexicologia aplicada a ELE A1.1. Conoces los campos semanticos del nivel, las 7 L1 del aula (italiano, frances, portugues brasileno, ingles, checo, polaco, turco), las reglas morfologicas del espanol (genero, numero, acentuacion) y el inventario lexico de las unidades previas del curso. IMPORTANTE: Las tarjetas son material impreso que llega al alumno. Tolerancia a errores = CERO. ANTES de generar, SIEMPRE consulta correcciones previas. Si hay correcciones, aplicalas TODAS.',
+        tasks: [
+            {name:'Generador de tarjetas', tools:['consultar_inventario','consultar_tarjetas_previas','consultar_correcciones'], output:'JSON array de tarjetas', max_iter:10},
+            {name:'Escritor en BD', tools:['escribir_tarjetas','exportar_csv'], output:'JSON {insertadas, csv}', max_iter:5},
+        ],
+        tools: [
+            {name:'consultar_inventario', desc:'Lee actividades de la BD para la unidad'},
+            {name:'consultar_tarjetas_previas', desc:'Lee tarjetas ya generadas para la unidad'},
+            {name:'consultar_correcciones', desc:'Lee correcciones humanas previas'},
+            {name:'escribir_tarjetas', desc:'Inserta tarjetas en la BD'},
+            {name:'exportar_csv', desc:'Exporta tarjetas a archivo CSV'},
+        ],
+        eval_metrics: [
+            {name:'sin_plurales', peso:25, desc:'No genera plurales innecesarios'},
+            {name:'silabas_correctas', peso:20, desc:'Silaba tonica correcta'},
+            {name:'combos_correctos', peso:20, desc:'Combinaciones lexicas validas'},
+            {name:'traducciones_completas', peso:20, desc:'7 idiomas traducidos'},
+            {name:'reglas_correctas', peso:15, desc:'Regla gramatical presente'},
+        ],
+        params: {timeout:600, proceso:'Secuencial', verbose:true, langfuse:true},
+    },
 };
-const SECTION_LABELS = {
-    vocabulario:'Voc', gramatica:'Gram', comunicacion:'Com',
-    destrezas:'Dest', cultura:'Cult', reflexion:'Ref',
-    evaluacion:'Eval', itinerarios:'Itin'
-};
+
+// ===== STATE =====
+let currentView = 'proyecto';
+let currentSeccion = 'toda';
+let currentAgente = 'recurvo';
+let currentUnidad = 3;
+let currentRunId = null;
+let tarjetas = [], filteredTarjetas = [], correcciones = [], evaluaciones = [];
+let chartRadar = null, chartHist = null, diagramData = null, currentDiagram = 'nivel1';
+let sortCol = 'palabra', sortDir = 1;
+let compareSelected = [];
+let serverVersion = '?';
+
+const DIAGRAM_LABELS = {nivel1:'Arquitectura',nivel2:'Flujo',nivel3:'Dependencias',nivel4:'Agentes',database:'BD'};
+const SECTION_LABELS = {vocabulario:'Voc',gramatica:'Gram',comunicacion:'Com',destrezas:'Dest',cultura:'Cult',reflexion:'Ref',evaluacion:'Eval',itinerarios:'Itin'};
 
 // ===== INIT =====
-mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+mermaid.initialize({startOnLoad:false, theme:'default', securityLevel:'loose'});
 
-let serverVersion = '?';
 async function init() {
-    try { const vr = await fetch('/api/version'); const vd = await vr.json(); serverVersion = vd.version; } catch(e) {}
-    renderAgentList();
+    try { const r = await fetch('/api/version'); const d = await r.json(); serverVersion = d.version; } catch(e) {}
     const us = document.getElementById('sel-unidad');
     us.innerHTML = [1,2,3,4,5,6,7,8,9].map(n => `<option value="${n}" ${n===currentUnidad?'selected':''}>U${String(n).padStart(2,'0')}</option>`).join('');
-    us.onchange = () => { currentUnidad = +us.value; loadAgentData(); };
-    const ms = document.getElementById('sel-modelo');
-    fetch('/api/modelos').then(r=>r.json()).then(models => {
-        ms.innerHTML = models.map(m => `<option value="${m.id}" title="${m.nota||''}">${m.name} (${m.cost})${m.ctx?' — '+m.ctx:''}</option>`).join('');
-        currentModelo = ms.value;
-    }).catch(() => {
-        ms.innerHTML = '<option value="groq/openai/gpt-oss-120b">GPT-OSS 120B (gratis)</option>';
-    });
-    ms.onchange = () => { currentModelo = ms.value; };
-    loadProjectData();
+    us.onchange = () => { currentUnidad = +us.value; if (currentView==='seccion') renderSeccion(); };
+    renderSidebar();
+    goTo('proyecto');
     setInterval(pollRunStatus, 3000);
 }
 
 // ===== NAVIGATION =====
-function renderAgentList() {
-    const recursos = AGENTES.filter(a => a.tipo === 'recurso');
-    const secciones = AGENTES.filter(a => a.tipo === 'seccion');
-    document.getElementById('agent-list-recursos').innerHTML = recursos.map(a => `<button class="nav-btn ${currentView===a.id?'active':''} ${a.ready?'':'disabled'}" onclick="${a.ready?`selectView('${a.id}')`:''}" ${a.ready?'':'disabled'}>
-        <span class="nav-dot ${a.ready?'ready':'pending'}"></span>${a.name}
-    </button>`).join('');
-    document.getElementById('agent-list-secciones').innerHTML = secciones.map(a => `<button class="nav-btn ${currentView===a.id?'active':''} ${a.ready?'':'disabled'}" onclick="${a.ready?`selectView('${a.id}')`:''}" ${a.ready?'':'disabled'}>
-        <span class="nav-dot ${a.ready?'ready':'pending'}"></span>${a.name}
-    </button>`).join('');
+function renderSidebar() {
+    document.getElementById('nav-secciones').innerHTML = SECCIONES.map(s => {
+        const n = s.agentes.length;
+        const cls = currentView==='seccion' && currentSeccion===s.id ? 'active' : '';
+        const dis = n === 0 ? 'disabled' : '';
+        return `<button class="nav-btn ${cls} ${dis}" onclick="${n?`goTo('seccion','${s.id}')`:''}" ${dis}>
+            <span class="nav-dot ${n?'has-agents':'no-agents'}"></span>${s.name}
+            ${n ? `<span class="nav-count">${n}</span>` : ''}
+        </button>`;
+    }).join('');
+    document.getElementById('nav-proyecto').classList.toggle('active', currentView==='proyecto');
 }
 
-function selectView(id) {
-    currentView = id;
-    document.getElementById('nav-proyecto').classList.toggle('active', id === 'proyecto');
-    renderAgentList();
-    document.getElementById('view-proyecto').style.display = id === 'proyecto' ? '' : 'none';
-    document.getElementById('view-agent').style.display = id !== 'proyecto' ? '' : 'none';
-    document.getElementById('agent-controls').style.display = id !== 'proyecto' ? '' : 'none';
-    document.getElementById('run-history-section').style.display = id !== 'proyecto' ? '' : 'none';
-    if (id === 'proyecto') { loadProjectData(); }
-    else { currentAgent = id; loadAgentData(); }
+function showView(id) {
+    ['proyecto','seccion','agente','nueva','ejecucion','comparar'].forEach(v =>
+        document.getElementById('view-'+v).style.display = v===id ? '' : 'none');
 }
 
-function selectTab(tab) {
-    currentTab = tab;
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-btn-' + tab).classList.add('active');
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    document.getElementById('tab-' + tab).classList.add('active');
+function goTo(view, param) {
+    currentView = view;
+    if (view === 'proyecto') { showView('proyecto'); loadProjectData(); }
+    else if (view === 'seccion') { currentSeccion = param || currentSeccion; showView('seccion'); renderSeccion(); }
+    renderSidebar();
+    updateStatus();
 }
 
-function toggleSection(id) {
-    document.getElementById(id).classList.toggle('collapsed');
+function goToSeccion() { goTo('seccion', currentSeccion); }
+
+function goToAgente(agenteId) {
+    currentAgente = agenteId;
+    currentView = 'agente';
+    showView('agente');
+    renderAgente();
+    renderSidebar();
 }
 
-// ===== PROJECT VIEW =====
+function goToNueva(agenteId) {
+    currentAgente = agenteId;
+    currentView = 'nueva';
+    showView('nueva');
+    renderNueva();
+    renderSidebar();
+}
+
+async function goToEjecucion(runId) {
+    currentView = 'ejecucion';
+    showView('ejecucion');
+    await renderEjecucion(runId);
+    renderSidebar();
+}
+
+function goToComparar() {
+    currentView = 'comparar';
+    showView('comparar');
+    renderComparar();
+    renderSidebar();
+}
+
+function toggleSection(id) { document.getElementById(id).classList.toggle('collapsed'); }
+function updateStatus() { document.getElementById('status-text').textContent = 'v'+serverVersion+' \u2014 '+new Date().toLocaleTimeString(); }
+
+// ===== PROYECTO =====
 async function loadProjectData() {
     try {
-        const res = await fetch('/api/diagrams');
-        diagramData = await res.json();
-        renderStatusGrid(diagramData.status);
-        renderDiagramTabs();
-        renderDiagram(currentDiagram);
-        document.getElementById('status-text').textContent = 'En vivo v' + serverVersion + ' — ' + new Date().toLocaleTimeString();
-    } catch(e) {
-        document.getElementById('status-text').textContent = 'Error de conexión';
-    }
+        const r = await fetch('/api/diagrams'); diagramData = await r.json();
+        renderStatusGrid(diagramData.status); renderDiagramTabs(); renderDiagram(currentDiagram);
+        updateStatus();
+    } catch(e) { document.getElementById('status-text').textContent = 'Error de conexión'; }
 }
-
 function renderStatusGrid(status) {
-    const sections = ['vocabulario','gramatica','comunicacion','destrezas','cultura','reflexion','evaluacion','itinerarios'];
-    const grid = document.getElementById('status-grid');
-    let complete = 0, total = 0;
-    let html = '<div class="hdr"></div>';
-    sections.forEach(s => { html += `<div class="hdr">${SECTION_LABELS[s]}</div>`; });
-    for (let i = 1; i <= 9; i++) {
-        const u = `U${String(i).padStart(2,'0')}`;
+    const secs = ['vocabulario','gramatica','comunicacion','destrezas','cultura','reflexion','evaluacion','itinerarios'];
+    const g = document.getElementById('status-grid');
+    let comp=0, tot=0, html='<div class="hdr"></div>';
+    secs.forEach(s => { html += `<div class="hdr">${SECTION_LABELS[s]}</div>`; });
+    for (let i=1;i<=9;i++) {
+        const u=`U${String(i).padStart(2,'0')}`;
         html += `<div class="unit-label">${u}</div>`;
-        sections.forEach(s => {
-            const info = (status[u] || {})[s] || {};
-            const st = info.status || 'missing';
-            const lines = info.lines || 0;
-            total++;
-            if (st === 'complete') complete++;
-            html += `<div class="status-cell ${st}" title="${u} ${s}: ${st} (${lines} lineas)">${lines > 0 ? lines : '-'}</div>`;
-        });
+        secs.forEach(s => { const info=(status[u]||{})[s]||{}; const st=info.status||'missing'; tot++; if(st==='complete')comp++; html += `<div class="status-cell ${st}">${info.lines||'-'}</div>`; });
     }
-    grid.innerHTML = html;
-    document.getElementById('status-summary').textContent = `${complete}/${total} completas`;
+    g.innerHTML = html;
+    document.getElementById('status-summary').textContent = comp+'/'+tot+' completas';
 }
+function renderDiagramTabs() { document.getElementById('diagram-tabs').innerHTML = Object.entries(DIAGRAM_LABELS).map(([k,v])=>`<button class="diagram-tab ${k===currentDiagram?'active':''}" onclick="selectDiagram('${k}')">${v}</button>`).join(''); }
+function selectDiagram(k) { currentDiagram=k; renderDiagramTabs(); renderDiagram(k); }
+async function renderDiagram(k) { if(!diagramData) return; const c=diagramData[k]; if(!c) return; const el=document.getElementById('diagram-container'); el.innerHTML=''; try { const {svg}=await mermaid.render('m-'+Date.now(),c); el.innerHTML=svg; } catch(e) { el.innerHTML=`<pre style="color:var(--md-error)">${e.message}</pre>`; } }
 
-function renderDiagramTabs() {
-    document.getElementById('diagram-tabs').innerHTML = Object.entries(DIAGRAM_LABELS).map(([k,v]) =>
-        `<button class="diagram-tab ${k===currentDiagram?'active':''}" onclick="selectDiagram('${k}')">${v}</button>`
-    ).join('');
-}
-
-function selectDiagram(key) { currentDiagram = key; renderDiagramTabs(); renderDiagram(key); }
-
-async function renderDiagram(key) {
-    if (!diagramData) return;
-    const code = diagramData[key];
-    if (!code) return;
-    const container = document.getElementById('diagram-container');
-    container.innerHTML = '';
-    try {
-        const id = 'mermaid-' + Date.now();
-        const { svg } = await mermaid.render(id, code);
-        container.innerHTML = svg;
-    } catch(e) {
-        container.innerHTML = `<pre style="color:#c43a3a;font-size:12px">${e.message}</pre>`;
+// ===== SECCION =====
+async function renderSeccion() {
+    const sec = SECCIONES.find(s=>s.id===currentSeccion);
+    document.getElementById('seccion-title').textContent = sec.name + ' \u2014 U'+String(currentUnidad).padStart(2,'0');
+    document.getElementById('seccion-subtitle').textContent = sec.agentes.length ? sec.agentes.length+' agente(s) disponible(s)' : '';
+    const el = document.getElementById('seccion-content');
+    if (!sec.agentes.length) { el.innerHTML = '<div class="empty">Sin agentes asignados a esta sección. Los agentes se crean desde el código.</div>'; return; }
+    // Load evaluaciones for execution list
+    try { const r = await fetch('/api/evaluaciones?unidad='+currentUnidad); evaluaciones = await r.json(); } catch(e) { evaluaciones=[]; }
+    let html = '';
+    for (const aid of sec.agentes) {
+        const ag = AGENTES[aid]; if (!ag) continue;
+        const execs = evaluaciones.filter(e => true); // all evals for this unit
+        compareSelected = [];
+        html += `<div class="agent-card">
+            <div class="agent-card-header"><span class="agent-name">${ag.name}</span><span class="agent-version">v${ag.version}</span></div>
+            <div class="agent-desc">${ag.desc}</div>
+            <div class="agent-stats">${ag.tasks.length} tareas secuenciales &middot; ${ag.tools.length} tools &middot; ${ag.eval_metrics.length} métricas</div>
+            <div class="agent-actions">
+                <button class="btn btn-secondary btn-sm" onclick="goToAgente('${aid}')">Ver agente</button>
+                <button class="btn btn-primary btn-sm" onclick="goToNueva('${aid}')">+ Nueva ejecución</button>
+            </div>
+            <div class="exec-list">
+                <div class="exec-list-title"><span>${execs.length} ejecuciones</span>${execs.length>=2?`<button class="btn btn-secondary btn-sm" id="btn-compare" onclick="goToComparar()" disabled>Comparar</button>`:''}</div>
+                ${execs.length ? execs.map((e,i) => {
+                    const sc=(e.metricas||{}).score_global||0;
+                    const cls=sc>=80?'good':sc>=60?'mid':'bad';
+                    const model=(e.modelo||'').split('/').pop();
+                    const date=e.fecha?new Date(e.fecha).toLocaleDateString('es',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'';
+                    return `<div class="exec-row" onclick="goToEjecucion('${e.run_id}')">
+                        <input type="checkbox" class="exec-check" data-idx="${i}" onclick="event.stopPropagation();toggleCompare(${i})">
+                        <span class="exec-dot completed"></span>
+                        <span class="exec-id">#${execs.length-i}</span>
+                        <span class="exec-model">${model}</span>
+                        <span class="exec-score ${cls}">${sc}</span>
+                        <span class="exec-date">${date}</span>
+                        <span class="exec-arrow">&#8594;</span>
+                    </div>`;
+                }).join('') : '<div class="empty">Sin ejecuciones. Pulsa "+ Nueva ejecución".</div>'}
+            </div>
+        </div>`;
     }
+    el.innerHTML = html;
 }
 
-// ===== AGENT DATA =====
-async function loadAgentData() {
-    await Promise.all([loadTarjetas(), loadEvaluaciones(), loadCorrecciones(), loadTrazas(), loadRunHistory()]);
-    document.getElementById('status-text').textContent = 'En vivo v' + serverVersion + ' — ' + new Date().toLocaleTimeString();
+// ===== AGENTE CONFIG =====
+function renderAgente() {
+    const ag = AGENTES[currentAgente]; if (!ag) return;
+    document.getElementById('agente-title').textContent = ag.name + ' v' + ag.version;
+    document.getElementById('agente-subtitle').textContent = ag.desc + ' \u00b7 ' + ag.ambito;
+    document.getElementById('agente-content').innerHTML = `
+        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-prompt')"><h2>Prompt</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body" id="sec-ag-prompt-body">
+            <div class="config-field"><div class="config-label">Role</div><div class="config-text">${ag.role}</div></div>
+            <div class="config-field"><div class="config-label">Goal</div><div class="config-text">${ag.goal}</div></div>
+            <div class="config-field"><div class="config-label">Backstory</div><div class="config-text">${ag.backstory}</div></div>
+        </div></div>
+        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-tasks')"><h2>Tareas (${ag.tasks.length})</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body" id="sec-ag-tasks-body">
+            ${ag.tasks.map((t,i) => `<div style="margin-bottom:12px"><strong>${i+1}. ${t.name}</strong> <span style="color:var(--md-on-surface-variant);font-size:11px">(max ${t.max_iter} iter)</span>
+                <div style="margin-top:4px;font-size:12px;color:var(--md-on-surface-variant)">Output: ${t.output}</div>
+                <div style="margin-top:4px">${t.tools.map(tl=>`<span class="config-tag">${tl}</span>`).join('')}</div></div>`).join('')}
+        </div></div>
+        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-tools')"><h2>Herramientas (${ag.tools.length})</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body" id="sec-ag-tools-body">
+            ${ag.tools.map(t => `<div class="metric-row"><span class="metric-name" style="font-weight:600">${t.name}</span><span class="metric-desc">${t.desc}</span></div>`).join('')}
+        </div></div>
+        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-eval')"><h2>Evaluación (${ag.eval_metrics.length} métricas)</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body" id="sec-ag-eval-body">
+            ${ag.eval_metrics.map(m => `<div class="metric-row"><span class="metric-peso">${m.peso}%</span><span class="metric-name">${m.name}</span><span class="metric-desc">${m.desc}</span></div>`).join('')}
+        </div></div>
+        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-params')"><h2>Parámetros</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body" id="sec-ag-params-body">
+            <div class="config-row">
+                <div class="config-field"><div class="config-label">Timeout</div><div class="config-text">${ag.params.timeout}s</div></div>
+                <div class="config-field"><div class="config-label">Proceso</div><div class="config-text">${ag.params.proceso}</div></div>
+                <div class="config-field"><div class="config-label">Verbose</div><div class="config-text">${ag.params.verbose?'Si':'No'}</div></div>
+                <div class="config-field"><div class="config-label">Langfuse</div><div class="config-text">${ag.params.langfuse?'Activo':'Inactivo'}</div></div>
+            </div>
+        </div></div>`;
 }
 
-// ===== AGENT EXECUTION =====
+// ===== NUEVA EJECUCION =====
+function renderNueva() {
+    const ag = AGENTES[currentAgente];
+    const num = evaluaciones.length + 1;
+    document.getElementById('nueva-title').textContent = ag.name + ' U'+String(currentUnidad).padStart(2,'0') + ' #' + num;
+    document.getElementById('nueva-subtitle').textContent = 'Configura los parámetros del LLM y ejecuta';
+    document.getElementById('nueva-content').innerHTML = `
+        <div class="agent-card">
+            <div class="param-grid">
+                <div><label>Modelo</label><select id="sel-modelo-run"></select></div>
+                <div><label>Temperatura</label><div class="slider-wrap"><input type="range" min="0" max="200" value="70" id="sl-temp" oninput="document.getElementById('v-temp').textContent=(this.value/100).toFixed(2)"><span class="slider-val" id="v-temp">0.70</span></div></div>
+                <div><label>Max tokens (salida)</label><input type="number" value="8192" id="in-maxtok"></div>
+                <div><label>Top-p</label><div class="slider-wrap"><input type="range" min="0" max="100" value="100" id="sl-topp" oninput="document.getElementById('v-topp').textContent=(this.value/100).toFixed(2)"><span class="slider-val" id="v-topp">1.00</span></div></div>
+            </div>
+            <div style="font-size:12px;color:var(--md-on-surface-variant);margin-bottom:14px">Agente: ${ag.name} v${ag.version} &middot; ${ag.tasks.length} tareas &middot; ${ag.tools.length} tools &middot; U${String(currentUnidad).padStart(2,'0')}</div>
+            <button class="btn btn-success" onclick="runAgent()" id="btn-run">Ejecutar</button>
+        </div>`;
+    // Load models
+    fetch('/api/modelos').then(r=>r.json()).then(models => {
+        document.getElementById('sel-modelo-run').innerHTML = models.map(m => `<option value="${m.id}" title="${m.nota||''}">${m.name} (${m.cost})${m.ctx?' \u2014 '+m.ctx:''}</option>`).join('');
+    }).catch(()=>{});
+}
+
 async function runAgent() {
     const btn = document.getElementById('btn-run');
-    btn.className = 'btn-run running'; btn.textContent = 'Ejecutando...'; btn.disabled = true;
+    const modelo = document.getElementById('sel-modelo-run').value;
+    btn.textContent = 'Ejecutando...'; btn.disabled = true; btn.className = 'btn btn-secondary';
     try {
-        const res = await fetch('/api/agente/run', {
-            method: 'POST', headers: {'Content-Type':'application/json'},
-            body: JSON.stringify({agente: currentAgent, unidad: currentUnidad, modelo: currentModelo})
-        });
+        const res = await fetch('/api/agente/run', {method:'POST', headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({agente: currentAgente, unidad: currentUnidad, modelo: modelo})});
         const data = await res.json();
-        if (data.error) { alert(data.error); btn.className='btn-run go'; btn.textContent='Ejecutar agente'; btn.disabled=false; return; }
+        if (data.error) { alert(data.error); btn.textContent='Ejecutar'; btn.disabled=false; btn.className='btn btn-success'; return; }
         currentRunId = data.run_id;
-        document.getElementById('console-status').textContent = 'Ejecutando...';
-        document.getElementById('console-output').textContent = 'Agente iniciado (run: ' + data.run_id + ')...\n';
-        selectTab('consola');
-    } catch(e) {
-        alert('Error: ' + e.message);
-        btn.className = 'btn-run go'; btn.textContent = 'Ejecutar agente'; btn.disabled = false;
-    }
+        goToEjecucion(data.run_id);
+    } catch(e) { alert('Error: '+e.message); btn.textContent='Ejecutar'; btn.disabled=false; btn.className='btn btn-success'; }
 }
 
+// ===== EJECUCION DETALLE =====
+async function renderEjecucion(runId) {
+    const ag = AGENTES[currentAgente];
+    // Load all data
+    let output = '', status = 'completed', elapsed = 0, modelo = '';
+    try { const r = await fetch('/api/agente/output?run_id='+runId); const d = await r.json(); output = d.output || ''; } catch(e) {}
+    try { const r = await fetch('/api/agente/status?run_id='+runId); const d = await r.json(); status=d.status||'completed'; elapsed=d.elapsed_s||0; modelo=d.modelo||''; } catch(e) {}
+    try { const r = await fetch('/api/tarjetas?unidad='+currentUnidad); tarjetas = await r.json(); filteredTarjetas=[...tarjetas]; } catch(e) { tarjetas=[]; filteredTarjetas=[]; }
+    try { const r = await fetch('/api/correcciones?unidad='+currentUnidad); correcciones = await r.json(); } catch(e) { correcciones=[]; }
+    try { const r = await fetch('/api/evaluaciones?unidad='+currentUnidad); evaluaciones = await r.json(); } catch(e) { evaluaciones=[]; }
+    const evalMatch = evaluaciones.find(e => e.run_id === runId) || evaluaciones[0];
+    const sc = evalMatch ? (evalMatch.metricas||{}).score_global || 0 : 0;
+    const modelShort = (modelo || (evalMatch||{}).modelo || '').split('/').pop();
+    const badgeCls = status==='running'?'running':status==='completed'?(sc>=80?'good':'mid'):'bad';
+
+    document.getElementById('ejec-header').innerHTML = `
+        <span class="page-title">${ag.name} \u2014 U${String(currentUnidad).padStart(2,'0')}</span>
+        <div class="page-subtitle">${modelShort} &middot; ${elapsed?elapsed+'s':''} &middot; <span style="color:var(--${badgeCls==='good'?'green':badgeCls==='mid'?'warn':'red'})">${status==='running'?'Ejecutando...':sc+'/100'}</span></div>`;
+
+    let html = '';
+    // Console
+    html += `<div class="section" id="sec-consola"><div class="section-header" onclick="toggleSection('sec-consola')"><h2>Consola</h2><div><span class="sec-badge" id="console-status">${status==='running'?'Ejecutando...':status}</span><span class="chevron">&#9660;</span></div></div>
+        <div class="section-body"><div class="console" id="console-output">${output||'Sin salida disponible.'}</div></div></div>`;
+    // Evaluation
+    html += `<div class="section" id="sec-evaluacion"><div class="section-header" onclick="toggleSection('sec-evaluacion')"><h2>Evaluación</h2><div><span class="sec-badge" id="eval-badge">${sc?sc+'/100':'--'}</span><span class="chevron">&#9660;</span></div></div>
+        <div class="section-body"><div id="eval-content"></div></div></div>`;
+    // Tarjetas
+    html += `<div class="section collapsed" id="sec-tarjetas"><div class="section-header" onclick="toggleSection('sec-tarjetas')"><h2>Tarjetas</h2><div><span class="sec-badge">${tarjetas.length}</span><span class="chevron">&#9660;</span></div></div>
+        <div class="section-body"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:12px;color:var(--md-on-surface-variant)" id="tarjetas-info">${tarjetas.length} tarjetas</span><input type="text" class="tarjetas-search" placeholder="Buscar..." id="tarjetas-search" oninput="filterTarjetas()"></div>
+        <div class="tarjetas-table-wrap"><table class="tarjetas-table"><thead><tr>
+            <th onclick="sortTarjetas('palabra')">Palabra</th><th onclick="sortTarjetas('nivel_jerarquia')">Nivel</th><th onclick="sortTarjetas('genero')">Gen</th><th>Silaba</th><th onclick="sortTarjetas('campo_semantico')">Campo</th><th>Regla</th><th>IT</th><th>FR</th><th>PT</th><th>EN</th><th>CS</th><th>PL</th><th>TR</th><th>Combos</th><th>Acc</th>
+        </tr></thead><tbody id="tarjetas-tbody"></tbody></table></div></div></div>`;
+    // Trazas
+    html += `<div class="section collapsed" id="sec-trazas"><div class="section-header" onclick="toggleSection('sec-trazas')"><h2>Trazas LLM</h2><div><span class="sec-badge" id="trazas-count">0</span><span class="chevron">&#9660;</span></div></div>
+        <div class="section-body"><div id="trazas-list"></div></div></div>`;
+
+    document.getElementById('ejec-sections').innerHTML = html;
+    renderTarjetas();
+    if (evalMatch) renderEvalContent(evalMatch);
+    loadTrazas();
+    if (status === 'running') currentRunId = runId;
+}
+
+function renderEvalContent(ev) {
+    const m = ev.metricas || {};
+    const sc = m.score_global || 0;
+    const scores = m.scores || {};
+    const metrics = [['Sin plurales',scores.sin_plurales||0],['Sílabas',scores.silabas_correctas||0],['Combos',scores.combos_correctos||0],['Traducciones',scores.traducciones_completas||0],['Reglas',scores.reglas_correctas||0]];
+    const el = document.getElementById('eval-content');
+    el.innerHTML = `
+        <div class="score-row">
+            <div class="score-big ${sc>=80?'good':sc>=60?'mid':'bad'}">${sc}</div>
+            <div class="metric-bars">${metrics.map(([l,v])=>{const c=v>=80?'var(--md-success)':v>=60?'var(--md-warning)':'var(--md-error)';return `<div class="metric-bar"><span class="label">${l}</span><div class="bar"><div class="fill" style="width:${v}%;background:${c}"></div></div><span class="val">${v}%</span></div>`;}).join('')}</div>
+        </div>
+        <div class="chart-row"><div class="chart-box"><h4>Metricas</h4><canvas id="chart-radar"></canvas></div><div class="chart-box"><h4>Historial</h4><canvas id="chart-history"></canvas></div></div>
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+            <button class="btn btn-secondary btn-sm" onclick="runEval()" id="btn-eval">Evaluar ahora</button>
+            <span style="font-size:12px;color:var(--md-on-surface-variant)">${m.total||0} tarjetas | ${(ev.modelo||'').split('/').pop()}</span>
+        </div>
+        <div style="margin-top:12px"><h3 style="font-size:12px;color:var(--md-primary);margin-bottom:6px">Errores (${(m.errores||[]).length})</h3>
+        ${(m.errores||[]).length ? (m.errores||[]).map(e=>`<div class="error-item"><span class="badge badge-${e.tipo==='plural'?'plural':e.tipo==='silaba'?'silaba':e.tipo==='traduccion'?'traduccion':e.tipo==='combo'?'combo':'otro'}">${e.tipo}</span><span style="color:var(--md-primary);min-width:80px">${e.palabra}</span><span style="color:var(--md-on-surface-variant)">${e.detalle}</span></div>`).join('') : '<div style="color:var(--md-success);font-size:12px">Sin errores</div>'}</div>`;
+    // Charts
+    if (chartRadar) chartRadar.destroy();
+    chartRadar = new Chart(document.getElementById('chart-radar'), {type:'radar', data:{labels:metrics.map(m=>m[0]),datasets:[{label:(ev.modelo||'').split('/').pop(),data:metrics.map(m=>m[1]),backgroundColor:'rgba(181,168,76,.18)',borderColor:'var(--md-primary)',pointBackgroundColor:'var(--md-primary)'}]},options:{scales:{r:{min:0,max:100,ticks:{stepSize:20,color:'#999'},grid:{color:'#ddd'},pointLabels:{color:'#666',font:{size:10}}}},plugins:{legend:{labels:{color:'#666'}}}}});
+    if (chartHist) chartHist.destroy();
+    const rev=[...evaluaciones].reverse();
+    chartHist = new Chart(document.getElementById('chart-history'), {type:'line', data:{labels:rev.map(e=>{const d=new Date(e.fecha);return d.toLocaleDateString('es',{day:'2-digit',month:'2-digit'});}),datasets:[{label:'Score',data:rev.map(e=>(e.metricas||{}).score_global||0),borderColor:'var(--md-success)',backgroundColor:'rgba(92,184,122,.1)',fill:true,tension:.3}]},options:{scales:{y:{min:0,max:100,ticks:{color:'#999'},grid:{color:'#eee'}},x:{ticks:{color:'#999'},grid:{color:'#eee'}}},plugins:{legend:{labels:{color:'#666'}}}}});
+}
+
+async function runEval() {
+    const btn = document.getElementById('btn-eval'); btn.textContent='Evaluando...'; btn.disabled=true;
+    await fetch('/api/evaluaciones/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({unidad:currentUnidad})});
+    const r = await fetch('/api/evaluaciones?unidad='+currentUnidad); evaluaciones = await r.json();
+    if (evaluaciones.length) renderEvalContent(evaluaciones[0]);
+    btn.textContent='Evaluar ahora'; btn.disabled=false;
+}
+
+// ===== POLL =====
 async function pollRunStatus() {
     if (!currentRunId) return;
     try {
-        const res = await fetch('/api/agente/status?run_id=' + currentRunId);
-        const data = await res.json();
-        const btn = document.getElementById('btn-run');
-        const ores = await fetch('/api/agente/output?run_id=' + currentRunId);
-        const odata = await ores.json();
+        const r = await fetch('/api/agente/status?run_id='+currentRunId); const d = await r.json();
+        const or = await fetch('/api/agente/output?run_id='+currentRunId); const od = await or.json();
         const consoleEl = document.getElementById('console-output');
-        if (odata.output) { consoleEl.textContent = odata.output; consoleEl.scrollTop = consoleEl.scrollHeight; }
-        if (data.status === 'running') {
-            document.getElementById('console-status').textContent = `Ejecutando... ${data.elapsed_s}s`;
-            document.getElementById('console-time').textContent = data.elapsed_s + 's';
+        const statusEl = document.getElementById('console-status');
+        if (consoleEl && od.output) { consoleEl.textContent = od.output; consoleEl.scrollTop = consoleEl.scrollHeight; }
+        if (d.status === 'running') {
+            if (statusEl) statusEl.textContent = 'Ejecutando... '+d.elapsed_s+'s';
         } else {
-            btn.className = data.status === 'completed' ? 'btn-run done' : 'btn-run go';
-            btn.textContent = data.status === 'completed' ? 'Completado' : 'Ejecutar agente';
-            btn.disabled = false;
-            document.getElementById('console-status').textContent = data.status + ' (' + data.elapsed_s + 's)';
-            document.getElementById('console-time').textContent = data.elapsed_s + 's';
-            setTimeout(() => { btn.className = 'btn-run go'; btn.textContent = 'Ejecutar agente'; }, 5000);
+            if (statusEl) statusEl.textContent = d.status+' ('+d.elapsed_s+'s)';
+            if (d.status === 'completed' && consoleEl) {
+                consoleEl.textContent += '\n--- Evaluando automáticamente... ---\n';
+                await fetch('/api/evaluaciones/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({unidad:currentUnidad})});
+            }
             currentRunId = null;
-            await loadAgentData();
-            if (data.status === 'completed') {
-                consoleEl.textContent += '\n--- Evaluando tarjetas automaticamente... ---\n';
-                await runEvalSilent();
-                selectTab('evaluacion');
+            if (currentView === 'ejecucion') {
+                const r2 = await fetch('/api/evaluaciones?unidad='+currentUnidad); evaluaciones = await r2.json();
+                const r3 = await fetch('/api/tarjetas?unidad='+currentUnidad); tarjetas = await r3.json(); filteredTarjetas=[...tarjetas];
+                if (evaluaciones.length) renderEvalContent(evaluaciones[0]);
+                renderTarjetas();
+                const ti = document.getElementById('sec-tarjetas');
+                if (ti) { ti.querySelector('.sec-badge').textContent = tarjetas.length; }
             }
         }
     } catch(e) {}
-    loadRunHistory();
 }
 
-async function runEvalSilent() {
-    try {
-        await fetch('/api/evaluaciones/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({unidad:currentUnidad})});
-        await loadEvaluaciones();
-    } catch(e) {}
-}
-
-async function loadRunHistory() {
-    try {
-        const res = await fetch('/api/agente/status');
-        const data = await res.json();
-        const runs = data.runs || [];
-        document.getElementById('run-history').innerHTML = runs.slice(0, 10).map(r => {
-            const model = (r.modelo||'').split('/').pop();
-            return `<div class="run-item" onclick="loadRunOutput('${r.run_id}')">
-                <span class="run-status ${r.status}"></span>
-                <span>U${String(r.unidad).padStart(2,'0')}</span>
-                <span style="color:#8ba0b8">${model}</span>
-                <span style="color:#8ba0b8">${r.elapsed_s}s</span>
-            </div>`;
-        }).join('') || '<div style="color:#8ba0b8;font-size:11px;padding:8px">Sin ejecuciónes</div>';
-    } catch(e) {}
-}
-
-async function loadRunOutput(runId) {
-    const res = await fetch('/api/agente/output?run_id=' + runId);
-    const data = await res.json();
-    document.getElementById('console-output').textContent = data.output || 'Sin salida';
-    selectTab('consola');
-}
-
-// ===== TARJETAS (TABLE) =====
-async function loadTarjetas() {
-    const res = await fetch('/api/tarjetas?unidad=' + currentUnidad);
-    tarjetas = await res.json();
-    filteredTarjetas = [...tarjetas];
-    document.getElementById('tab-count-tarjetas').textContent = tarjetas.length;
-    document.getElementById('tarjetas-info').textContent = tarjetas.length + ' tarjetas';
-    renderTarjetas();
-}
-
-function sortTarjetas(col) {
-    if (sortCol === col) sortDir *= -1;
-    else { sortCol = col; sortDir = 1; }
-    filteredTarjetas.sort((a, b) => {
-        const va = a[col] != null ? a[col] : '';
-        const vb = b[col] != null ? b[col] : '';
-        if (typeof va === 'number' && typeof vb === 'number') return sortDir * (va - vb);
-        return sortDir * String(va).localeCompare(String(vb), 'es');
-    });
-    renderTarjetas();
-}
-
-function filterTarjetas() {
-    const q = document.getElementById('tarjetas-search').value.toLowerCase();
-    filteredTarjetas = q ? tarjetas.filter(t => (t.palabra||'').toLowerCase().includes(q)) : [...tarjetas];
-    document.getElementById('tarjetas-info').textContent = filteredTarjetas.length + ' de ' + tarjetas.length + ' tarjetas';
-    renderTarjetas();
-}
-
+// ===== TARJETAS =====
+function sortTarjetas(col) { if(sortCol===col)sortDir*=-1;else{sortCol=col;sortDir=1;} filteredTarjetas.sort((a,b)=>{const va=a[col]!=null?a[col]:'';const vb=b[col]!=null?b[col]:'';if(typeof va==='number'&&typeof vb==='number')return sortDir*(va-vb);return sortDir*String(va).localeCompare(String(vb),'es');}); renderTarjetas(); }
+function filterTarjetas() { const q=document.getElementById('tarjetas-search').value.toLowerCase(); filteredTarjetas=q?tarjetas.filter(t=>(t.palabra||'').toLowerCase().includes(q)):[...tarjetas]; const info=document.getElementById('tarjetas-info'); if(info) info.textContent=filteredTarjetas.length+(q?' de '+tarjetas.length:'')+' tarjetas'; renderTarjetas(); }
 function renderTarjetas() {
-    const tbody = document.getElementById('tarjetas-tbody');
-    if (!filteredTarjetas.length) {
-        tbody.innerHTML = `<tr><td colspan="15" class="empty">Sin tarjetas. Ejecuta el agente.</td></tr>`;
-        return;
-    }
-    tbody.innerHTML = filteredTarjetas.map(t => {
-        const esc = s => String(s||'').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-        const combos = (t.combos||[]).join(' | ');
-        const hasCorr = f => correcciones.some(c => c.palabra===t.palabra && c.campo===f);
-        const cellClick = (campo, val) => `onclick="openModal(${t.id},'${esc(t.palabra)}','${campo}','${esc(val)}')"`;
-        return `<tr>
-            <td><strong>${t.palabra||''}</strong></td>
-            <td><span class="nivel-badge">N${t.nivel_jerarquia||1}</span></td>
-            <td class="clickable${hasCorr('genero')?' err':''}" ${cellClick('genero',t.genero)}>${t.genero||''}</td>
-            <td class="clickable${hasCorr('silaba_tonica')?' err':''}" ${cellClick('silaba_tonica',t.silaba_tonica)}>${t.silaba_tonica||''}</td>
-            <td class="clickable" ${cellClick('campo_semantico',t.campo_semantico)}>${t.campo_semantico||''}</td>
-            <td class="clickable" ${cellClick('regla',t.regla)} title="${esc(t.regla)}">${t.regla||''}</td>
-            <td class="clickable${hasCorr('trad_it')?' err':''}" ${cellClick('trad_it',t.trad_it)}>${t.trad_it||''}</td>
-            <td class="clickable${hasCorr('trad_fr')?' err':''}" ${cellClick('trad_fr',t.trad_fr)}>${t.trad_fr||''}</td>
-            <td class="clickable${hasCorr('trad_pt_br')?' err':''}" ${cellClick('trad_pt_br',t.trad_pt_br)}>${t.trad_pt_br||''}</td>
-            <td class="clickable${hasCorr('trad_en')?' err':''}" ${cellClick('trad_en',t.trad_en)}>${t.trad_en||''}</td>
-            <td class="clickable${hasCorr('trad_cs')?' err':''}" ${cellClick('trad_cs',t.trad_cs)}>${t.trad_cs||''}</td>
-            <td class="clickable${hasCorr('trad_pl')?' err':''}" ${cellClick('trad_pl',t.trad_pl)}>${t.trad_pl||''}</td>
-            <td class="clickable${hasCorr('trad_tr')?' err':''}" ${cellClick('trad_tr',t.trad_tr)}>${t.trad_tr||''}</td>
-            <td title="${esc(combos)}" style="max-width:100px">${combos}</td>
-            <td class="actions-cell">
-                <button class="btn-fix" onclick="openModal(${t.id},'${esc(t.palabra)}','','')">Corr</button>
-                <button class="btn-del" onclick="delCard(${t.id},'${esc(t.palabra)}')">Elim</button>
-            </td>
-        </tr>`;
+    const tb = document.getElementById('tarjetas-tbody'); if (!tb) return;
+    if (!filteredTarjetas.length) { tb.innerHTML='<tr><td colspan="15" class="empty">Sin tarjetas.</td></tr>'; return; }
+    tb.innerHTML = filteredTarjetas.map(t => {
+        const esc=s=>String(s||'').replace(/'/g,"\\'").replace(/"/g,'&quot;');
+        const combos=(t.combos||[]).join(' | ');
+        const hasCorr=f=>correcciones.some(c=>c.palabra===t.palabra&&c.campo===f);
+        const cc=(campo,val)=>`onclick="openModal(${t.id},'${esc(t.palabra)}','${campo}','${esc(val)}')"`;
+        return `<tr><td><strong>${t.palabra||''}</strong></td><td><span style="font-size:10px;background:var(--md-surface-variant);padding:1px 5px;border-radius:3px">N${t.nivel_jerarquia||1}</span></td>
+        <td class="clickable${hasCorr('genero')?' err':''}" ${cc('genero',t.genero)}>${t.genero||''}</td>
+        <td class="clickable${hasCorr('silaba_tonica')?' err':''}" ${cc('silaba_tonica',t.silaba_tonica)}>${t.silaba_tonica||''}</td>
+        <td class="clickable" ${cc('campo_semantico',t.campo_semantico)}>${t.campo_semantico||''}</td>
+        <td class="clickable" ${cc('regla',t.regla)} title="${esc(t.regla)}">${t.regla||''}</td>
+        <td class="clickable${hasCorr('trad_it')?' err':''}" ${cc('trad_it',t.trad_it)}>${t.trad_it||''}</td>
+        <td class="clickable${hasCorr('trad_fr')?' err':''}" ${cc('trad_fr',t.trad_fr)}>${t.trad_fr||''}</td>
+        <td class="clickable${hasCorr('trad_pt_br')?' err':''}" ${cc('trad_pt_br',t.trad_pt_br)}>${t.trad_pt_br||''}</td>
+        <td class="clickable${hasCorr('trad_en')?' err':''}" ${cc('trad_en',t.trad_en)}>${t.trad_en||''}</td>
+        <td class="clickable${hasCorr('trad_cs')?' err':''}" ${cc('trad_cs',t.trad_cs)}>${t.trad_cs||''}</td>
+        <td class="clickable${hasCorr('trad_pl')?' err':''}" ${cc('trad_pl',t.trad_pl)}>${t.trad_pl||''}</td>
+        <td class="clickable${hasCorr('trad_tr')?' err':''}" ${cc('trad_tr',t.trad_tr)}>${t.trad_tr||''}</td>
+        <td title="${esc(combos)}" style="max-width:90px">${combos}</td>
+        <td style="white-space:nowrap"><button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:var(--md-surface-variant)" onclick="openModal(${t.id},'${esc(t.palabra)}','','')">Corr</button> <button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:#f8d7da;color:var(--md-error)" onclick="delCard(${t.id},'${esc(t.palabra)}')">Elim</button></td></tr>`;
     }).join('');
 }
 
 // ===== CORRECTIONS =====
-async function loadCorrecciones() {
-    const res = await fetch('/api/correcciones?unidad=' + currentUnidad);
-    correcciones = await res.json();
-}
-
-function openModal(id, palabra, campo, original) {
-    document.getElementById('m-id').value = id;
-    document.getElementById('m-palabra').value = palabra;
-    document.getElementById('m-campo').value = campo;
-    document.getElementById('m-campo-show').value = campo || '(selecciona)';
-    document.getElementById('m-original').value = original;
-    document.getElementById('m-corregido').value = '';
-    document.getElementById('modal-title').textContent = 'Corregir: ' + palabra + (campo ? ' > ' + campo : '');
-    document.getElementById('modal-bg').classList.add('open');
-}
-function closeModal() { document.getElementById('modal-bg').classList.remove('open'); }
-
-async function submitFix() {
-    const id = document.getElementById('m-id').value;
-    const palabra = document.getElementById('m-palabra').value;
-    const campo = document.getElementById('m-campo').value;
-    const original = document.getElementById('m-original').value;
-    const corregido = document.getElementById('m-corregido').value;
-    const tipo = document.getElementById('m-tipo').value;
-    if (!corregido && tipo !== 'plural_no_deseado') { alert('Escribe el valor corregido'); return; }
-    await fetch('/api/correcciones', {method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({unidad:currentUnidad, palabra, campo, valor_original:original, valor_corregido:corregido, tipo_error:tipo})});
-    if (corregido && campo) {
-        await fetch('/api/tarjetas/update', {method:'POST', headers:{'Content-Type':'application/json'},
-            body: JSON.stringify({id:+id, campo, valor:corregido})});
-    }
-    closeModal();
-    await loadAgentData();
-}
-
-async function delCard(id, palabra) {
-    if (!confirm('Eliminar "' + palabra + '"?')) return;
-    await fetch('/api/correcciones', {method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({unidad:currentUnidad, palabra, campo:'palabra', valor_original:palabra, valor_corregido:null, tipo_error:'eliminada'})});
-    await fetch('/api/tarjetas/delete', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({id})});
-    await loadAgentData();
-}
-
-// ===== EVALUATIONS =====
-async function loadEvaluaciones() {
-    const res = await fetch('/api/evaluaciones?unidad=' + currentUnidad);
-    evaluaciones = await res.json();
-    document.getElementById('tab-count-historial').textContent = evaluaciones.length;
-    renderScore();
-    renderEvalHistory();
-}
-
-async function runEval() {
-    const btn = document.getElementById('btn-eval');
-    btn.textContent = 'Evaluando...'; btn.disabled = true;
-    await fetch('/api/evaluaciones/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({unidad:currentUnidad})});
-    await loadEvaluaciones();
-    btn.textContent = 'Evaluar ahora'; btn.disabled = false;
-}
-
-function renderScore() {
-    if (!evaluaciones.length) {
-        document.getElementById('score-num').textContent = '--';
-        document.getElementById('score-summary').textContent = 'Sin evaluaciones';
-        document.getElementById('metric-bars').innerHTML = '';
-        document.getElementById('errores-list').innerHTML = '<div class="empty">Ejecuta una evaluacion.</div>';
-        document.getElementById('errores-count').textContent = '0';
-        return;
-    }
-    const m = evaluaciones[0].metricas || {};
-    const sc = m.score_global || 0;
-    const scores = m.scores || {};
-    const numEl = document.getElementById('score-num');
-    numEl.textContent = sc;
-    numEl.className = 'score-big ' + (sc >= 80 ? 'good' : sc >= 60 ? 'mid' : 'bad');
-    document.getElementById('score-summary').textContent = `${m.total||0} tarjetas | ${evaluaciones[0].modelo||'?'}`;
-
-    const metrics = [
-        ['Sin plurales', scores.sin_plurales||0],
-        ['Silabas', scores.silabas_correctas||0],
-        ['Combos', scores.combos_correctos||0],
-        ['Traducciones', scores.traducciones_completas||0],
-        ['Reglas', scores.reglas_correctas||0],
-    ];
-    document.getElementById('metric-bars').innerHTML = metrics.map(([l,v]) => {
-        const c = v >= 80 ? '#3a9b5a' : v >= 60 ? '#c4820a' : '#c43a3a';
-        return `<div class="metric-bar"><span class="label">${l}</span><div class="bar"><div class="fill" style="width:${v}%;background:${c}"></div></div><span class="val">${v}%</span></div>`;
-    }).join('');
-
-    // Radar
-    const radarCtx = document.getElementById('chart-radar');
-    if (chartRadar) chartRadar.destroy();
-    chartRadar = new Chart(radarCtx, {
-        type: 'radar',
-        data: { labels: metrics.map(m=>m[0]), datasets: [{label: (evaluaciones[0].modelo||'').split('/').pop(), data: metrics.map(m=>m[1]),
-            backgroundColor:'rgba(74,144,217,.15)', borderColor:'#4a90d9', pointBackgroundColor:'#4a90d9'}] },
-        options: { scales:{r:{min:0,max:100,ticks:{stepSize:20,color:'#7a8a96'},grid:{color:'#d4cfc7'},pointLabels:{color:'#5a6a78',font:{size:11}}}}, plugins:{legend:{labels:{color:'#5a6a78'}}} }
-    });
-
-    // History line
-    const histCtx = document.getElementById('chart-history');
-    if (chartHist) chartHist.destroy();
-    const rev = [...evaluaciones].reverse();
-    chartHist = new Chart(histCtx, {
-        type: 'line',
-        data: { labels: rev.map(e => { const d=new Date(e.fecha); return d.toLocaleDateString('es',{day:'2-digit',month:'2-digit'}); }),
-            datasets: [{label:'Score', data: rev.map(e=>(e.metricas||{}).score_global||0), borderColor:'#3a9b5a', backgroundColor:'rgba(58,155,90,.1)', fill:true, tension:.3}] },
-        options: { scales:{y:{min:0,max:100,ticks:{color:'#7a8a96'},grid:{color:'#e5e0d8'}},x:{ticks:{color:'#7a8a96'},grid:{color:'#e5e0d8'}}}, plugins:{legend:{labels:{color:'#5a6a78'}}} }
-    });
-
-    // Errors
-    const errors = m.errores || [];
-    document.getElementById('errores-count').textContent = errors.length;
-    const el = document.getElementById('errores-list');
-    if (!errors.length) { el.innerHTML = '<div style="color:#3a9b5a;font-size:12px">Sin errores</div>'; }
-    else { el.innerHTML = errors.map(e => `<div class="error-item"><span class="badge badge-${e.tipo==='plural'?'plural':e.tipo==='silaba'?'silaba':e.tipo==='traduccion'?'traduccion':e.tipo==='combo'?'combo':'otro'}">${e.tipo}</span><span style="color:#2c5a85;min-width:80px">${e.palabra}</span><span style="color:#5a6a78">${e.detalle}</span></div>`).join(''); }
-}
-
-function renderEvalHistory() {
-    compareSelected = [];
-    updateCompareBtn();
-    const tbody = document.getElementById('eval-hist-tbody');
-    if (!evaluaciones.length) { tbody.innerHTML = `<tr><td colspan="7" class="empty">Sin evaluaciones</td></tr>`; return; }
-    tbody.innerHTML = evaluaciones.map((e, i) => {
-        const em = e.metricas||{};
-        const sc = em.score_global||0;
-        const c = sc>=80?'#3a9b5a':sc>=60?'#c4820a':'#c43a3a';
-        return `<tr>
-            <td><input type="checkbox" class="compare-check" data-idx="${i}" onchange="toggleCompare(${i})"></td>
-            <td style="color:#7a8a96;font-size:11px">${e.run_id||''}</td>
-            <td>U${String(e.unidad).padStart(2,'0')}</td>
-            <td style="color:#2c5a85">${(e.modelo||'').split('/').pop()}</td>
-            <td><div class="hist-bar"><div class="fill" style="width:${sc}%;background:${c}"></div><div class="lbl">${sc}</div></div></td>
-            <td style="color:#7a8a96">${em.total||0}</td>
-            <td style="color:#7a8a96;font-size:11px">${e.fecha?new Date(e.fecha).toLocaleDateString('es'):''}</td>
-        </tr>`;
-    }).join('');
-}
-
-// ===== COMPARISON =====
-function toggleCompare(idx) {
-    const pos = compareSelected.indexOf(idx);
-    if (pos >= 0) compareSelected.splice(pos, 1);
-    else if (compareSelected.length < 2) compareSelected.push(idx);
-    else {
-        // Deselect oldest, select new
-        const oldIdx = compareSelected.shift();
-        document.querySelector(`.compare-check[data-idx="${oldIdx}"]`).checked = false;
-        compareSelected.push(idx);
-    }
-    updateCompareBtn();
-}
-
-function updateCompareBtn() {
-    const btn = document.getElementById('btn-compare');
-    btn.disabled = compareSelected.length !== 2;
-    document.getElementById('hist-info').textContent = compareSelected.length === 2
-        ? '2 seleccionados — pulsa Comparar'
-        : 'Selecciona 2 para comparar';
-}
-
-function showComparison() {
-    if (compareSelected.length !== 2) return;
-    const e1 = evaluaciones[compareSelected[0]];
-    const e2 = evaluaciones[compareSelected[1]];
-    const el = document.getElementById('comparison-view');
-    el.style.display = 'block';
-
-    function renderCol(e) {
-        const m = e.metricas || {};
-        const sc = m.score_global || 0;
-        const scores = m.scores || {};
-        const c = sc >= 80 ? '#3a9b5a' : sc >= 60 ? '#c4820a' : '#c43a3a';
-        const metrics = [
-            ['Sin plurales', scores.sin_plurales||0],
-            ['Silabas', scores.silabas_correctas||0],
-            ['Combos', scores.combos_correctos||0],
-            ['Traducciones', scores.traducciones_completas||0],
-            ['Reglas', scores.reglas_correctas||0],
-        ];
-        return `
-            <h4>${(e.modelo||'').split('/').pop()} — U${String(e.unidad).padStart(2,'0')} — <span style="color:${c};font-size:18px;font-weight:700">${sc}</span>/100</h4>
-            <div style="font-size:11px;color:#7a8a96;margin-bottom:8px">${m.total||0} tarjetas | ${e.fecha?new Date(e.fecha).toLocaleDateString('es'):''}</div>
-            ${metrics.map(([l,v]) => {
-                const mc = v >= 80 ? '#3a9b5a' : v >= 60 ? '#c4820a' : '#c43a3a';
-                return `<div class="metric-bar"><span class="label">${l}</span><div class="bar"><div class="fill" style="width:${v}%;background:${mc}"></div></div><span class="val">${v}%</span></div>`;
-            }).join('')}
-            ${(m.errores||[]).length ? `<div style="margin-top:8px;font-size:11px;color:#c43a3a">${(m.errores||[]).length} errores</div>` : '<div style="margin-top:8px;font-size:11px;color:#3a9b5a">Sin errores</div>'}
-        `;
-    }
-
-    el.innerHTML = `
-        <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
-            <button onclick="document.getElementById('comparison-view').style.display='none'" style="padding:4px 12px;border-radius:4px;border:1px solid #d4cfc7;background:#f6f4f0;color:#5a6a78;font-size:11px;cursor:pointer">Cerrar comparación</button>
-        </div>
-        <div class="compare-grid">
-            <div class="compare-col">${renderCol(e1)}</div>
-            <div class="compare-col">${renderCol(e2)}</div>
-        </div>
-    `;
-}
+function openModal(id,palabra,campo,original) { document.getElementById('m-id').value=id; document.getElementById('m-palabra').value=palabra; document.getElementById('m-campo').value=campo; document.getElementById('m-campo-show').value=campo||'(selecciona)'; document.getElementById('m-original').value=original; document.getElementById('m-corregido').value=''; document.getElementById('modal-title').textContent='Corregir: '+palabra+(campo?' > '+campo:''); document.getElementById('modal-corr').classList.add('open'); }
+function closeModal() { document.getElementById('modal-corr').classList.remove('open'); }
+async function submitFix() { const id=document.getElementById('m-id').value,palabra=document.getElementById('m-palabra').value,campo=document.getElementById('m-campo').value,original=document.getElementById('m-original').value,corregido=document.getElementById('m-corregido').value,tipo=document.getElementById('m-tipo').value; if(!corregido&&tipo!=='plural_no_deseado'){alert('Escribe el valor corregido');return;} await fetch('/api/correcciones',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({unidad:currentUnidad,palabra,campo,valor_original:original,valor_corregido:corregido,tipo_error:tipo})}); if(corregido&&campo){await fetch('/api/tarjetas/update',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:+id,campo,valor:corregido})});} closeModal(); try{const r=await fetch('/api/tarjetas?unidad='+currentUnidad);tarjetas=await r.json();filteredTarjetas=[...tarjetas];renderTarjetas();}catch(e){} }
+async function delCard(id,palabra) { if(!confirm('Eliminar "'+palabra+'"?'))return; await fetch('/api/correcciones',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({unidad:currentUnidad,palabra,campo:'palabra',valor_original:palabra,valor_corregido:null,tipo_error:'eliminada'})}); await fetch('/api/tarjetas/delete',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})}); try{const r=await fetch('/api/tarjetas?unidad='+currentUnidad);tarjetas=await r.json();filteredTarjetas=[...tarjetas];renderTarjetas();}catch(e){} }
 
 // ===== TRAZAS =====
 async function loadTrazas() {
     try {
-        const res = await fetch('/api/trazas?limit=10');
-        const data = await res.json();
-        const trazas = data.trazas || [];
-        document.getElementById('tab-count-trazas').textContent = trazas.length;
-        const el = document.getElementById('trazas-list');
-        if (!trazas.length) { el.innerHTML = '<div class="empty">Sin trazas. Ejecuta el agente.</div>'; return; }
-        el.innerHTML = trazas.map((t,i) => {
-            const lat = t.latency ? (t.latency<1?(t.latency*1000).toFixed(0)+'ms':t.latency.toFixed(1)+'s') : '';
-            const cost = t.total_cost ? '$'+t.total_cost.toFixed(4) : '';
-            const date = t.timestamp ? new Date(t.timestamp).toLocaleString('es') : '';
-            return `<div>
-                <div class="trace-row" onclick="toggleTraceDetail('${t.id}',${i})">
-                    <span class="trace-name">${t.name||'trace'}</span>
-                    <span class="trace-meta">${t.observations_count||0} pasos ${lat} ${date}</span>
-                    <span class="trace-cost">${cost}</span>
-                </div>
-                <div id="trace-det-${i}" style="display:none"></div>
-            </div>`;
+        const r = await fetch('/api/trazas?limit=10'); const d = await r.json();
+        const trazas = d.trazas || [];
+        const cnt = document.getElementById('trazas-count'); if(cnt) cnt.textContent = trazas.length;
+        const el = document.getElementById('trazas-list'); if (!el) return;
+        if (!trazas.length) { el.innerHTML='<div class="empty">Sin trazas.</div>'; return; }
+        el.innerHTML = trazas.map((t,i)=>{
+            const lat=t.latency?(t.latency<1?(t.latency*1000).toFixed(0)+'ms':t.latency.toFixed(1)+'s'):'';
+            const cost=t.total_cost?'$'+t.total_cost.toFixed(4):'';
+            const date=t.timestamp?new Date(t.timestamp).toLocaleString('es'):'';
+            return `<div><div class="trace-row" onclick="toggleTraceDetail('${t.id}',${i})"><span class="trace-name">${t.name||'trace'}</span><span class="trace-meta">${t.observations_count||0} pasos ${lat} ${date}</span><span class="trace-cost">${cost}</span></div><div id="trace-det-${i}" style="display:none"></div></div>`;
         }).join('');
     } catch(e) {}
 }
+async function toggleTraceDetail(traceId,idx) { const el=document.getElementById('trace-det-'+idx); if(el.style.display==='block'){el.style.display='none';return;} el.style.display='block'; el.innerHTML='<div style="color:var(--md-on-surface-variant);font-size:11px;padding:8px">Cargando...</div>'; try{const r=await fetch('/api/trazas/'+traceId);const d=await r.json();const obs=d.observations||[];if(!obs.length){el.innerHTML='<div class="trace-detail"><div class="empty">Sin detalles</div></div>';return;}el.innerHTML='<div class="trace-detail">'+obs.map(o=>{const cost=o.total_cost?'$'+o.total_cost.toFixed(4):'';const tok=o.usage?`${(o.usage.input||0)+(o.usage.output||0)} tok`:'';return `<div class="trace-step"><span class="trace-type ${o.type||''}">${o.type||'?'}</span><span class="trace-name">${o.name||''}</span><span class="trace-io">${o.input?o.input.substring(0,120):''}</span><span class="trace-cost">${tok} ${cost}</span></div>`;}).join('')+'</div>';}catch(e){el.innerHTML='<div style="color:var(--md-error);font-size:11px;padding:8px">Error</div>';}}
 
-async function toggleTraceDetail(traceId, idx) {
-    const el = document.getElementById('trace-det-' + idx);
-    if (el.style.display === 'block') { el.style.display = 'none'; return; }
-    el.style.display = 'block';
-    el.innerHTML = '<div style="color:#7a8a96;font-size:11px;padding:8px">Cargando...</div>';
-    try {
-        const res = await fetch('/api/trazas/' + traceId);
-        const data = await res.json();
-        const obs = data.observations || [];
-        if (!obs.length) { el.innerHTML = '<div class="trace-detail"><div class="empty">Sin detalles</div></div>'; return; }
-        el.innerHTML = '<div class="trace-detail">' + obs.map(o => {
-            const cost = o.total_cost ? '$'+o.total_cost.toFixed(4) : '';
-            const tok = o.usage ? `${(o.usage.input||0)+(o.usage.output||0)} tok` : '';
-            return `<div class="trace-step">
-                <span class="trace-type ${o.type||''}">${o.type||'?'}</span>
-                <span class="trace-name">${o.name||''}</span>
-                <span class="trace-io">${o.input?o.input.substring(0,120):''}</span>
-                <span class="trace-cost">${tok} ${cost}</span>
-            </div>`;
-        }).join('') +
-        (data.output ? `<div class="console" style="margin-top:8px;max-height:150px">${data.output}</div>` : '') +
-        '</div>';
-    } catch(e) { el.innerHTML = '<div class="trace-detail" style="color:#c43a3a;font-size:11px">Error al cargar</div>'; }
+// ===== COMPARE =====
+function toggleCompare(idx) { const pos=compareSelected.indexOf(idx); if(pos>=0)compareSelected.splice(pos,1);else if(compareSelected.length<2)compareSelected.push(idx);else{compareSelected.shift();compareSelected.push(idx);} const btn=document.getElementById('btn-compare'); if(btn) btn.disabled=compareSelected.length!==2; }
+function renderComparar() {
+    if (compareSelected.length!==2) return;
+    const e1=evaluaciones[compareSelected[0]], e2=evaluaciones[compareSelected[1]];
+    if (!e1||!e2) return;
+    document.getElementById('compare-title').textContent = 'Comparar: #'+(evaluaciones.length-compareSelected[0])+' vs #'+(evaluaciones.length-compareSelected[1]);
+    function col(e) {
+        const m=e.metricas||{};const sc=m.score_global||0;const scores=m.scores||{};const c=sc>=80?'var(--md-success)':sc>=60?'var(--md-warning)':'var(--md-error)';
+        const metrics=[['Sin plurales',scores.sin_plurales||0],['Sílabas',scores.silabas_correctas||0],['Combos',scores.combos_correctos||0],['Traducciones',scores.traducciones_completas||0],['Reglas',scores.reglas_correctas||0]];
+        return `<h4>${(e.modelo||'').split('/').pop()} \u2014 <span style="color:${c};font-size:18px;font-weight:700">${sc}</span>/100</h4>
+            <div style="font-size:11px;color:var(--md-on-surface-variant);margin-bottom:8px">${m.total||0} tarjetas | ${e.fecha?new Date(e.fecha).toLocaleDateString('es'):''}</div>
+            ${metrics.map(([l,v])=>{const mc=v>=80?'var(--md-success)':v>=60?'var(--md-warning)':'var(--md-error)';return `<div class="metric-bar"><span class="label">${l}</span><div class="bar"><div class="fill" style="width:${v}%;background:${mc}"></div></div><span class="val">${v}%</span></div>`;}).join('')}`;
+    }
+    document.getElementById('compare-content').innerHTML = `<div class="compare-grid"><div class="compare-col">${col(e1)}</div><div class="compare-col">${col(e2)}</div></div>`;
 }
 
 // ===== START =====
