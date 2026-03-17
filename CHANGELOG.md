@@ -3,6 +3,45 @@
 
 ---
 
+## [v8.4b — 2026-03-17] — CLAUDE.md condensado (334 → 171 líneas)
+
+### Modificado — CLAUDE.md
+- Reducido de 334 a 171 líneas (−49%)
+- **Eliminado:** Preguntas resueltas (1, 3, 4, 9), esquema SQL crew_agents (ya en BD), árbol local completo (derivable del filesystem), sección "GitHub y Railway" duplicada, nota redundante "Paso 6"
+- **Condensado:** Preguntas pendientes (59→15 líneas), tabla CrewAI (20→10 filas), ciclo de trabajo, flujo de producción
+- **Actualizado:** crew_agents de "pendiente" a "implementado" (4 sitios), dashboard v8.3→v8.4, tabla BD 9→10 tablas, checkbox crew_agents marcado como completado
+- **Eliminado:** "No hay build/test" de restricciones (hay agentes ejecutables)
+
+---
+
+## [v8.4 — 2026-03-17] — crew_agents en BD: config de agentes editable y persistente
+
+### Nuevo — tabla `crew_agents` (Neon PostgreSQL)
+- Tabla creada con esquema: id, crew, agent_key, agent_order, role, goal, backstory, task_description, task_expected_output, max_iter, updated_at
+- Poblada con los 3 agentes de Recurvo (generador, verificador, escritor)
+- Script de creación: `scripts/crear_crew_agents.py` (idempotente, ON CONFLICT DO UPDATE)
+
+### Modificado — `scripts/crewai/recurvo.py`
+- **Lee config de agentes desde BD** en lugar de tenerla hardcodeada
+- Nueva función `cargar_config_bd("recurvo")`: consulta crew_agents y devuelve lista de configs
+- Nueva función `crear_crew(unidad)`: construye agentes, tareas y Crew dinámicamente desde BD
+- `_render()`: reemplaza placeholders `{unidad}` y `{unidad:02d}` en templates de BD
+- Tools y LLM params siguen en código/env vars (TOOLS_MAP, LLM_KEY_MAP, LLM_CFG)
+
+### Modificado — `diagrama.py`
+- `SERVER_VERSION = "8.4"`
+- Nuevas funciones: `get_crew_agents(crew)`, `update_crew_agent(id, data)`
+- Nuevos endpoints: `GET /api/crew_agents?crew=X`, `POST /api/crew_agents/update`
+
+### Modificado — `web/index.html`
+- **Nueva sección Pipeline**: reemplaza las secciones separadas de Prompt y Tareas
+- Pipeline carga datos desde `/api/crew_agents` (BD) — muestra role, goal, backstory, task_description, task_expected_output, max_iter por agente
+- Editar/Guardar persiste cambios en BD via `/api/crew_agents/update`
+- Eliminado role/goal/backstory hardcodeado del objeto AGENTES JS
+- Nueva variable global `crewAgents` para cache de datos de BD
+
+---
+
 ## [v8.2 — 2026-03-17j] — Pulido: tildes restantes + logo header + botones legibles
 
 ### Corregido — `web/index.html`

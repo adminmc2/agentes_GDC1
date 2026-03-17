@@ -24,7 +24,7 @@ load_dotenv()
 
 PROJECT = Path(__file__).parent
 PORT = 8080
-SERVER_VERSION = "8.3"  # major.minor — major para cambios grandes, minor para deploys pequeños
+SERVER_VERSION = "8.4"  # major.minor — major para cambios grandes, minor para deploys pequeños
 
 # --- Langfuse client (para API de trazas) ---
 # Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).
@@ -353,6 +353,43 @@ def run_evaluation(unidad):
     metricas = evaluar_tarjetas(tarjetas)
     eval_id = guardar_evaluacion(unidad, "manual", metricas)
     return {"id": eval_id, "metricas": metricas}
+
+
+def get_crew_agents(crew_name):
+    """Devuelve todos los agentes de un crew, ordenados por pipeline."""
+    conn = _db()
+    cur = conn.cursor(cursor_factory=RealDictCursor)
+    cur.execute("""
+        SELECT id, crew, agent_key, agent_order, role, goal, backstory,
+               task_description, task_expected_output, max_iter, updated_at
+        FROM crew_agents
+        WHERE crew = %s
+        ORDER BY agent_order
+    """, (crew_name,))
+    rows = [dict(r) for r in cur.fetchall()]
+    conn.close()
+    return rows
+
+
+def update_crew_agent(agent_id, data):
+    """Actualiza campos mutables de un agente. Devuelve True si actualizó."""
+    allowed = {"role", "goal", "backstory", "task_description",
+               "task_expected_output", "max_iter"}
+    fields = {k: v for k, v in data.items() if k in allowed}
+    if not fields:
+        return False
+    conn = _db()
+    cur = conn.cursor()
+    set_clause = ", ".join(f"{k} = %s" for k in fields)
+    values = list(fields.values()) + [agent_id]
+    cur.execute(
+        f"UPDATE crew_agents SET {set_clause}, updated_at = NOW() WHERE id = %s",
+        values,
+    )
+    ok = cur.rowcount > 0
+    conn.commit()
+    conn.close()
+    return ok
 
 
 def update_tarjeta_field(tarjeta_id, campo, valor):
@@ -766,6 +803,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
             run = _agent_runs.get(run_id, {})
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps({"output": run.get("output", ""), "status": run.get("status", "unknown")}, default=str))
+        elif parsed.path == "/api/crew_agents":
+            crew = qs.get("crew", ["recurvo"])[0]
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_crew_agents(crew), ensure_ascii=False, default=str))
         elif parsed.path == "/api/modelos":
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(AVAILABLE_MODELS, ensure_ascii=False))
@@ -812,6 +853,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
             result = run_evaluation(unidad)
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(result, ensure_ascii=False, default=str))
+        elif parsed.path == "/api/crew_agents/update":
+            agent_id = body.get("id")
+            ok = update_crew_agent(agent_id, body)
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps({"ok": ok}))
         elif parsed.path == "/api/agente/run":
             agente = body.get("agente", "recurvo")
             unidad = body.get("unidad", 3)

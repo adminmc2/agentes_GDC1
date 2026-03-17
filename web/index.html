@@ -369,13 +369,10 @@ const AGENTES = {
         name: 'Recurvo', version: '2.0', script: 'recurvo',
         desc: 'Genera tarjetas de vocabulario (pipeline de 3 agentes)',
         ambito: 'Toda la unidad',
-        role: 'Vocabulary card extractor and generator',
-        goal: 'Generate accurate, error-free vocabulary cards from activity inventories, incorporating prior human corrections to avoid repeating mistakes.',
-        backstory: 'You have deep expertise in applied linguistics for vocabulary instruction in ELE (Spanish as a Foreign Language), specifically at A1.1 level for adolescent learners (12-15 years). You understand semantic field theory and how vocabulary organizes into thematic networks — you classify words by their primary semantic field (from the unit index) and identify secondary fields by analyzing word frequency across activities. You have working knowledge of the Spanish linguistic system relevant to A1 vocabulary: gender and number rules, stress patterns, word formation, and how words combine in frequent collocations. Cards are printed editorial material distributed to students — errors cannot be corrected after printing. You improve through a human correction feedback loop: each run incorporates lessons from previously corrected errors to prevent recurrence.',
         tasks: [
-            {name:'Generador', tools:['consultar_inventario','consultar_tarjetas_previas','consultar_correcciones'], output:'JSON array de tarjetas', max_iter:10, llm_env:'RECURVO_LLM_GEN'},
-            {name:'Verificador', tools:['consultar_inventario'], output:'JSON array corregido + _verificacion', max_iter:8, llm_env:'RECURVO_LLM_VER'},
-            {name:'Escritor', tools:['escribir_tarjetas','exportar_csv'], output:'JSON {insertadas, csv}', max_iter:5, llm_env:'RECURVO_LLM_WR'},
+            {name:'Generador', tools:['consultar_inventario','consultar_tarjetas_previas','consultar_correcciones'], llm_env:'RECURVO_LLM_GEN'},
+            {name:'Verificador', tools:['consultar_inventario'], llm_env:'RECURVO_LLM_VER'},
+            {name:'Escritor', tools:['escribir_tarjetas','exportar_csv'], llm_env:'RECURVO_LLM_WR'},
         ],
         tools: [
             {name:'consultar_inventario', desc:'Lee actividades de la BD para la unidad'},
@@ -406,6 +403,7 @@ let chartRadar = null, chartHist = null, diagramData = null, currentDiagram = 'n
 let sortCol = 'palabra', sortDir = 1;
 let compareSelected = [];
 let serverVersion = '?';
+let crewAgents = []; // loaded from /api/crew_agents
 
 const DIAGRAM_LABELS = {nivel1:'Arquitectura',nivel2:'Flujo',nivel3:'Dependencias',nivel4:'Agentes',database:'BD'};
 const SECTION_LABELS = {vocabulario:'Voc',gramatica:'Gram',comunicacion:'Com',destrezas:'Dest',cultura:'Cult',reflexion:'Ref',evaluacion:'Eval',itinerarios:'Itin'};
@@ -577,22 +575,35 @@ function toggleCfgEdit(section, editing) {
     if (btnEdit) btnEdit.style.display = editing ? 'none' : '';
     if (btnSave) btnSave.style.display = editing ? '' : 'none';
 }
-function savePrompt() {
-    saveAgentField('role', document.getElementById('ed-role').value);
-    saveAgentField('goal', document.getElementById('ed-goal').value);
-    saveAgentField('backstory', document.getElementById('ed-backstory').value);
-    showSaved('saved-prompt');
+async function loadCrewAgents(crew) {
+    try {
+        const r = await fetch('/api/crew_agents?crew=' + encodeURIComponent(crew));
+        crewAgents = await r.json();
+    } catch(e) { crewAgents = []; }
 }
-function saveTask(i) {
-    const ag = AGENTES[currentAgente];
-    ag.tasks[i].name = document.getElementById('ed-task-name-'+i).value;
-    ag.tasks[i].output = document.getElementById('ed-task-output-'+i).value;
-    ag.tasks[i].max_iter = +document.getElementById('ed-task-iter-'+i).value;
-}
-function saveTasks() {
-    const ag = AGENTES[currentAgente];
-    ag.tasks.forEach((t,i) => saveTask(i));
-    showSaved('saved-tasks');
+async function savePipeline() {
+    let ok = true;
+    for (let i = 0; i < crewAgents.length; i++) {
+        const a = crewAgents[i];
+        const data = {
+            id: a.id,
+            role: document.getElementById('ed-pipe-role-'+i).value,
+            goal: document.getElementById('ed-pipe-goal-'+i).value,
+            backstory: document.getElementById('ed-pipe-backstory-'+i).value,
+            task_description: document.getElementById('ed-pipe-taskdesc-'+i).value,
+            task_expected_output: document.getElementById('ed-pipe-taskout-'+i).value,
+            max_iter: +document.getElementById('ed-pipe-maxiter-'+i).value,
+        };
+        try {
+            const r = await fetch('/api/crew_agents/update', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)});
+            const d = await r.json();
+            if (!d.ok) ok = false;
+            // Update local cache
+            Object.assign(a, data);
+        } catch(e) { ok = false; }
+    }
+    if (ok) showSaved('saved-pipeline');
+    else alert('Error al guardar algún agente');
 }
 function saveTool(i) {
     const ag = AGENTES[currentAgente];
@@ -620,37 +631,32 @@ function saveParams() {
     saveAgentField('params.langfuse', document.getElementById('ed-langfuse').checked);
     showSaved('saved-params');
 }
-function renderAgente() {
+async function renderAgente() {
     const ag = AGENTES[currentAgente]; if (!ag) return;
     document.getElementById('agente-title').textContent = ag.name + ' v' + ag.version;
     document.getElementById('agente-subtitle').textContent = ag.desc + ' \u00b7 ' + ag.ambito;
     const esc = s => (s||'').replace(/</g,'&lt;');
-    document.getElementById('agente-content').innerHTML = `
-        <div class="section text-card" id="sec-ag-prompt"><div class="section-header" onclick="toggleSection('sec-ag-prompt')"><h2>Prompt</h2><span class="chevron">&#9660;</span></div>
-        <div class="section-body">
-            <div class="config-field"><div class="config-label">Role</div><textarea class="config-edit config-edit-sm cfg-prompt" disabled id="ed-role">${esc(ag.role)}</textarea></div>
-            <div class="config-field"><div class="config-label">Goal</div><textarea class="config-edit cfg-prompt" disabled id="ed-goal">${esc(ag.goal)}</textarea></div>
-            <div class="config-field"><div class="config-label">Backstory</div><textarea class="config-edit cfg-prompt" disabled id="ed-backstory" style="min-height:120px">${esc(ag.backstory)}</textarea></div>
-            <div class="save-bar">
-                <span class="saved-toast" id="saved-prompt">Guardado</span>
-                <button class="btn btn-secondary btn-sm" id="btn-edit-prompt" onclick="toggleCfgEdit('prompt',true)">Editar</button>
-                <button class="btn btn-primary btn-sm" id="btn-save-prompt" onclick="savePrompt();toggleCfgEdit('prompt',false)" style="display:none">Guardar</button>
+    await loadCrewAgents(currentAgente);
+    const pipelineHtml = crewAgents.length ? crewAgents.map((a,i) => `
+        <div style="margin-bottom:20px;padding:14px;border:1px solid var(--md-outline-variant);border-radius:12px;background:var(--md-surface)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+                <div style="font-weight:600;font-size:14px">${a.agent_order}. ${a.agent_key}</div>
+                <span style="font-size:11px;color:var(--md-on-surface-variant)">max_iter: <input type="number" class="config-input cfg-pipeline" disabled id="ed-pipe-maxiter-${i}" value="${a.max_iter}" style="width:60px;display:inline;padding:2px 6px;font-size:12px"></span>
             </div>
-        </div></div>
-        <div class="section text-card" id="sec-ag-tasks"><div class="section-header" onclick="toggleSection('sec-ag-tasks')"><h2>Tareas (${ag.tasks.length})</h2><span class="chevron">&#9660;</span></div>
+            <div class="config-field"><div class="config-label">Role</div><textarea class="config-edit config-edit-sm cfg-pipeline" disabled id="ed-pipe-role-${i}">${esc(a.role)}</textarea></div>
+            <div class="config-field"><div class="config-label">Goal</div><textarea class="config-edit cfg-pipeline" disabled id="ed-pipe-goal-${i}">${esc(a.goal)}</textarea></div>
+            <div class="config-field"><div class="config-label">Backstory</div><textarea class="config-edit cfg-pipeline" disabled id="ed-pipe-backstory-${i}" style="min-height:100px">${esc(a.backstory)}</textarea></div>
+            <div class="config-field"><div class="config-label">Task description</div><textarea class="config-edit cfg-pipeline" disabled id="ed-pipe-taskdesc-${i}" style="min-height:120px">${esc(a.task_description)}</textarea></div>
+            <div class="config-field"><div class="config-label">Expected output</div><textarea class="config-edit cfg-pipeline" disabled id="ed-pipe-taskout-${i}" style="min-height:60px">${esc(a.task_expected_output)}</textarea></div>
+        </div>`).join('') : '<p style="color:var(--md-on-surface-variant)">No se encontraron agentes en BD para este crew.</p>';
+    document.getElementById('agente-content').innerHTML = `
+        <div class="section text-card" id="sec-ag-pipeline"><div class="section-header" onclick="toggleSection('sec-ag-pipeline')"><h2>Pipeline (${crewAgents.length} agentes)</h2><span class="chevron">&#9660;</span></div>
         <div class="section-body">
-            ${ag.tasks.map((t,i) => `<div style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--md-outline-variant)">
-                <div class="config-field"><div class="config-label">Nombre tarea ${i+1}</div><input class="config-input cfg-tasks" disabled id="ed-task-name-${i}" value="${esc(t.name)}"></div>
-                <div class="config-row">
-                    <div class="config-field"><div class="config-label">Output</div><input class="config-input cfg-tasks" disabled id="ed-task-output-${i}" value="${esc(t.output)}"></div>
-                    <div class="config-field" style="max-width:100px"><div class="config-label">Max iter</div><input type="number" class="config-input cfg-tasks" disabled id="ed-task-iter-${i}" value="${t.max_iter}"></div>
-                </div>
-                <div style="margin-top:6px"><div class="config-label">Tools</div>${t.tools.map(tl=>`<span class="config-tag">${tl}</span>`).join('')}</div>
-            </div>`).join('')}
+            ${pipelineHtml}
             <div class="save-bar">
-                <span class="saved-toast" id="saved-tasks">Guardado</span>
-                <button class="btn btn-secondary btn-sm" id="btn-edit-tasks" onclick="toggleCfgEdit('tasks',true)">Editar</button>
-                <button class="btn btn-primary btn-sm" id="btn-save-tasks" onclick="saveTasks();toggleCfgEdit('tasks',false)" style="display:none">Guardar</button>
+                <span class="saved-toast" id="saved-pipeline">Guardado en BD</span>
+                <button class="btn btn-secondary btn-sm" id="btn-edit-pipeline" onclick="toggleCfgEdit('pipeline',true)">Editar</button>
+                <button class="btn btn-primary btn-sm" id="btn-save-pipeline" onclick="savePipeline();toggleCfgEdit('pipeline',false)" style="display:none">Guardar</button>
             </div>
         </div></div>
         <div class="section text-card" id="sec-ag-tools"><div class="section-header" onclick="toggleSection('sec-ag-tools')"><h2>Herramientas (${ag.tools.length})</h2><span class="chevron">&#9660;</span></div>
