@@ -16,7 +16,6 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
-# --- CrewAI (importar ANTES que Langfuse para que registre su TracerProvider) ---
 from crewai import Agent, Task, Crew, Process, LLM
 from tools import (
     ConsultarInventario,
@@ -26,23 +25,15 @@ from tools import (
     ExportarCSV,
 )
 
-# --- Langfuse (trazabilidad) ---
-# Se activa si LANGFUSE_PUBLIC_KEY está configurada.
-# Usa el TracerProvider que CrewAI ya registró para evitar conflicto OTel.
-_langfuse_enabled = bool(os.environ.get("LANGFUSE_PUBLIC_KEY"))
-if _langfuse_enabled:
-    from opentelemetry import trace as _otel_trace
-    from langfuse import Langfuse, observe
-    langfuse_client = Langfuse(tracer_provider=_otel_trace.get_tracer_provider())
-    print("[Langfuse] Trazabilidad ACTIVA — trazas visibles en cloud.langfuse.com")
+# --- Langfuse (trazabilidad via litellm callback) ---
+# litellm intercepta cada llamada LLM que CrewAI hace y la envía a Langfuse.
+# Se activa automáticamente si LANGFUSE_PUBLIC_KEY está en .env.
+if os.environ.get("LANGFUSE_PUBLIC_KEY"):
+    import litellm
+    litellm.success_callback = ["langfuse"]
+    litellm.failure_callback = ["langfuse"]
+    print("[Langfuse] Trazabilidad ACTIVA — cada llamada LLM se registra en cloud.langfuse.com")
 else:
-    langfuse_client = None
-    def observe(*args, **kwargs):
-        def decorator(fn):
-            return fn
-        if args and callable(args[0]):
-            return args[0]
-        return decorator
     print("[Langfuse] No configurado — ejecutando sin trazabilidad")
 
 # --- LLM ---
@@ -181,7 +172,6 @@ Ejemplo: {{"insertadas": 20, "csv": "datos/tarjetas/U{unidad:02d}-vocabulario.cs
     return [tarea_generar, tarea_escribir]
 
 
-@observe(name="recurvo_main")
 def main():
     unidad = int(sys.argv[1]) if len(sys.argv) > 1 else 3
     t0 = time.time()
@@ -221,10 +211,7 @@ def main():
     print(f"\nOutput guardado en: {output_path}")
     print(f"Duración: {duracion:.1f}s")
 
-    # Flush Langfuse traces
-    if langfuse_client:
-        langfuse_client.flush()
-        print("[Langfuse] Trazas enviadas — revisa en cloud.langfuse.com")
+    print("[Langfuse] Trazas enviadas automáticamente via litellm callback")
 
 
 if __name__ == "__main__":
