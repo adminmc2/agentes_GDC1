@@ -24,7 +24,7 @@ load_dotenv()
 
 PROJECT = Path(__file__).parent
 PORT = 8080
-SERVER_VERSION = "8.2"  # major.minor — major para cambios grandes, minor para deploys pequeños
+SERVER_VERSION = "8.3"  # major.minor — major para cambios grandes, minor para deploys pequeños
 
 # --- Langfuse client (para API de trazas) ---
 # Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).
@@ -211,18 +211,29 @@ AGENT_SCRIPTS = {
 }
 
 AVAILABLE_MODELS = [
-    {"id": "groq/openai/gpt-oss-120b", "name": "GPT-OSS 120B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "Probado — funciona"},
-    {"id": "groq/openai/gpt-oss-20b", "name": "GPT-OSS 20B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "Más rápido, menor calidad"},
-    {"id": "groq/llama-3.3-70b-versatile", "name": "Llama 3.3 70B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "Buen instruction-following"},
-    {"id": "groq/meta-llama/llama-4-scout-17b-16e-instruct", "name": "Llama 4 Scout 17B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "MoE, Llama 4"},
-    {"id": "groq/moonshotai/kimi-k2-instruct-0905", "name": "Kimi K2 (Groq)", "cost": "gratis", "ctx": "262K", "nota": "Versión nueva, preview"},
-    {"id": "groq/qwen/qwen3-32b", "name": "Qwen 3 32B (Groq)", "cost": "gratis", "ctx": "131K", "nota": "Errores factuales en pruebas"},
-    {"id": "anthropic/claude-sonnet-4-20250514", "name": "Claude Sonnet 4", "cost": "~$0.13", "ctx": "200K", "nota": "Mejor calidad"},
+    # --- Groq (gratis) ---
+    {"id": "groq/openai/gpt-oss-120b", "name": "GPT-OSS 120B (Groq)", "provider": "groq", "cost": "gratis", "ctx": "131K", "nota": "Probado — funciona"},
+    {"id": "groq/openai/gpt-oss-20b", "name": "GPT-OSS 20B (Groq)", "provider": "groq", "cost": "gratis", "ctx": "131K", "nota": "Más rápido, menor calidad"},
+    {"id": "groq/llama-3.3-70b-versatile", "name": "Llama 3.3 70B (Groq)", "provider": "groq", "cost": "gratis", "ctx": "131K", "nota": "Buen instruction-following"},
+    {"id": "groq/llama-3.1-8b-instant", "name": "Llama 3.1 8B (Groq)", "provider": "groq", "cost": "gratis", "ctx": "131K", "nota": "Ultra-rápido, ideal para tools"},
+    {"id": "groq/meta-llama/llama-4-scout-17b-16e-instruct", "name": "Llama 4 Scout 17B (Groq)", "provider": "groq", "cost": "gratis", "ctx": "131K", "nota": "MoE, Llama 4"},
+    {"id": "groq/moonshotai/kimi-k2-instruct-0905", "name": "Kimi K2 (Groq)", "provider": "groq", "cost": "gratis", "ctx": "262K", "nota": "Versión nueva, preview"},
+    {"id": "groq/qwen/qwen3-32b", "name": "Qwen 3 32B (Groq)", "provider": "groq", "cost": "gratis", "ctx": "131K", "nota": "Errores factuales en pruebas"},
+    # --- Anthropic (Claude) ---
+    {"id": "anthropic/claude-opus-4-20250514", "name": "Claude Opus 4", "provider": "anthropic", "cost": "$15/$75", "ctx": "200K", "nota": "Máxima capacidad, costoso"},
+    {"id": "anthropic/claude-sonnet-4-20250514", "name": "Claude Sonnet 4", "provider": "anthropic", "cost": "$3/$15", "ctx": "200K", "nota": "Mejor equilibrio calidad/precio"},
+    {"id": "anthropic/claude-haiku-3-5-20241022", "name": "Claude Haiku 3.5", "provider": "anthropic", "cost": "$0.80/$4", "ctx": "200K", "nota": "Rápido y barato"},
+    # --- DeepSeek ---
+    {"id": "deepseek/deepseek-chat", "name": "DeepSeek V3", "provider": "deepseek", "cost": "$0.27/$1.10", "ctx": "64K", "nota": "Buena calidad, muy económico"},
+    {"id": "deepseek/deepseek-reasoner", "name": "DeepSeek R1", "provider": "deepseek", "cost": "$0.55/$2.19", "ctx": "64K", "nota": "Razonamiento avanzado (CoT)"},
 ]
 
 
-def start_agent(agente, unidad, modelo):
-    """Lanza un agente en un subproceso. Devuelve run_id."""
+def start_agent(agente, unidad, agents_cfg):
+    """Lanza un agente en un subproceso. Devuelve run_id.
+    agents_cfg: dict con claves "0","1","2" → {model, temperature, max_tokens, top_p} por agente.
+    Acepta también string simple (retrocompatible: se usa como RECURVO_LLM).
+    """
     script = AGENT_SCRIPTS.get(agente)
     if not script:
         return {"error": f"Agente '{agente}' no tiene script asignado"}
@@ -231,15 +242,50 @@ def start_agent(agente, unidad, modelo):
     script_path = (PROJECT / script).resolve()
     cmd = [sys.executable, str(script_path), str(unidad)]
     env = os.environ.copy()
-    env["RECURVO_LLM"] = modelo
     env["PYTHONUNBUFFERED"] = "1"  # forzar output inmediato
+
+    # Map per-agent config to env vars
+    ENV_MAP = {
+        "0": {"model": "RECURVO_LLM_GEN", "temperature": "RECURVO_TEMP_GEN",
+              "max_tokens": "RECURVO_MAXTOK_GEN", "top_p": "RECURVO_TOPP_GEN"},
+        "1": {"model": "RECURVO_LLM_VER", "temperature": "RECURVO_TEMP_VER",
+              "max_tokens": "RECURVO_MAXTOK_VER", "top_p": "RECURVO_TOPP_VER"},
+        "2": {"model": "RECURVO_LLM_WR", "temperature": "RECURVO_TEMP_WR",
+              "max_tokens": "RECURVO_MAXTOK_WR", "top_p": "RECURVO_TOPP_WR"},
+    }
+
+    if isinstance(agents_cfg, dict) and any(isinstance(v, dict) for v in agents_cfg.values()):
+        for idx, mapping in ENV_MAP.items():
+            cfg = agents_cfg.get(idx, {})
+            if isinstance(cfg, dict):
+                for param, env_var in mapping.items():
+                    if param in cfg:
+                        env[env_var] = str(cfg[param])
+        modelo_display = " | ".join(
+            f"{['Gen','Ver','Wr'][int(i)]}:{agents_cfg.get(i,{}).get('model','default').split('/')[-1]}"
+            for i in ["0","1","2"] if i in agents_cfg
+        )
+    elif isinstance(agents_cfg, dict):
+        # Old format: {0: "model_id", ...}
+        for idx, mapping in ENV_MAP.items():
+            if idx in agents_cfg:
+                env[mapping["model"]] = str(agents_cfg[idx])
+        modelo_display = " | ".join(
+            f"{['Gen','Ver','Wr'][int(i)]}:{str(agents_cfg.get(i,'')).split('/')[-1]}"
+            for i in ["0","1","2"] if i in agents_cfg
+        )
+    else:
+        env["RECURVO_LLM"] = str(agents_cfg)
+        modelo_display = str(agents_cfg)
+
     cwd = str(script_path.parent)  # ejecutar desde el directorio del script
 
     _agent_runs[run_id] = {
         "status": "running",
         "agente": agente,
         "unidad": unidad,
-        "modelo": modelo,
+        "modelo": modelo_display,
+        "agents_cfg": agents_cfg if isinstance(agents_cfg, dict) else {"0": {"model": str(agents_cfg)}},
         "output": "",
         "start_time": time.time(),
         "end_time": None,
@@ -769,8 +815,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif parsed.path == "/api/agente/run":
             agente = body.get("agente", "recurvo")
             unidad = body.get("unidad", 3)
-            modelo = body.get("modelo", "groq/openai/gpt-oss-120b")
-            result = start_agent(agente, unidad, modelo)
+            agents_cfg = body.get("agents", body.get("modelos", body.get("modelo", "groq/openai/gpt-oss-120b")))
+            result = start_agent(agente, unidad, agents_cfg)
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(result, ensure_ascii=False, default=str))
         else:
