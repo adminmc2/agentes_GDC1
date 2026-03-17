@@ -3,6 +3,15 @@
 
 ---
 
+## [v8.2 — 2026-03-17j] — Pulido: tildes restantes + logo header + botones legibles
+
+### Corregido — `web/index.html`
+- **Tildes**: Sílaba tónica, Traducción, Género (select de correcciones), Sílaba (tabla tarjetas), Métricas (título gráfico)
+- **Logo inline**: favicon Agentia ELE visible en header junto al título
+- **Botones tabla tarjetas**: "Corr"/"Elim" → "Corregir"/"Eliminar" con tooltips
+
+---
+
 ## [v8.0 — 2026-03-17h] — Rediseño completo: navegación multi-nivel + tema Material Design
 
 ### Rediseño completo — `web/index.html`

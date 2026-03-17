@@ -253,7 +253,7 @@ main { overflow-y: auto; padding: 24px; }
 <body>
 
 <header>
-    <h1>Guía Didáctica del Profesor</h1>
+    <h1><img src="/favicon.svg" alt="" style="height:28px;vertical-align:-4px;margin-right:8px">Guía Didáctica del Profesor</h1>
     <span class="live"><span class="live-dot"></span><span id="status-text">Conectando...</span></span>
 </header>
 
@@ -342,7 +342,7 @@ main { overflow-y: auto; padding: 24px; }
         <label>Original</label><input id="m-original" disabled>
         <label>Corregido</label><input id="m-corregido">
         <label>Tipo error</label>
-        <select id="m-tipo"><option value="silaba_tonica">Silaba tonica</option><option value="traduccion">Traduccion</option><option value="regla">Regla</option><option value="genero">Genero</option><option value="plural_no_deseado">Plural</option><option value="combo">Combo</option><option value="ejemplo">Ejemplo</option><option value="otro">Otro</option></select>
+        <select id="m-tipo"><option value="silaba_tonica">Sílaba tónica</option><option value="traduccion">Traducción</option><option value="regla">Regla</option><option value="genero">Género</option><option value="plural_no_deseado">Plural</option><option value="combo">Combo</option><option value="ejemplo">Ejemplo</option><option value="otro">Otro</option></select>
         <div class="btns">
             <button onclick="closeModal()" style="background:var(--md-surface-variant);color:var(--md-on-surface)">Cancelar</button>
             <button onclick="submitFix()" style="background:var(--md-primary);color:#fff">Guardar</button>
@@ -720,7 +720,7 @@ async function renderEjecucion(runId) {
     html += `<div class="section collapsed" id="sec-tarjetas"><div class="section-header" onclick="toggleSection('sec-tarjetas')"><h2>Tarjetas</h2><div><span class="sec-badge">${tarjetas.length}</span><span class="chevron">&#9660;</span></div></div>
         <div class="section-body"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span style="font-size:12px;color:var(--md-on-surface-variant)" id="tarjetas-info">${tarjetas.length} tarjetas</span><input type="text" class="tarjetas-search" placeholder="Buscar..." id="tarjetas-search" oninput="filterTarjetas()"></div>
         <div class="tarjetas-table-wrap"><table class="tarjetas-table"><thead><tr>
-            <th onclick="sortTarjetas('palabra')">Palabra</th><th onclick="sortTarjetas('nivel_jerarquia')">Nivel</th><th onclick="sortTarjetas('genero')">Gen</th><th>Silaba</th><th onclick="sortTarjetas('campo_semantico')">Campo</th><th>Regla</th><th>IT</th><th>FR</th><th>PT</th><th>EN</th><th>CS</th><th>PL</th><th>TR</th><th>Combos</th><th>Acc</th>
+            <th onclick="sortTarjetas('palabra')">Palabra</th><th onclick="sortTarjetas('nivel_jerarquia')">Nivel</th><th onclick="sortTarjetas('genero')">Gen</th><th>Sílaba</th><th onclick="sortTarjetas('campo_semantico')">Campo</th><th>Regla</th><th>IT</th><th>FR</th><th>PT</th><th>EN</th><th>CS</th><th>PL</th><th>TR</th><th>Combos</th><th>Acc</th>
         </tr></thead><tbody id="tarjetas-tbody"></tbody></table></div></div></div>`;
     // Trazas
     html += `<div class="section collapsed" id="sec-trazas"><div class="section-header" onclick="toggleSection('sec-trazas')"><h2>Trazas LLM</h2><div><span class="sec-badge" id="trazas-count">0</span><span class="chevron">&#9660;</span></div></div>
@@ -744,7 +744,7 @@ function renderEvalContent(ev) {
             <div class="score-big ${sc>=80?'good':sc>=60?'mid':'bad'}">${sc}</div>
             <div class="metric-bars">${metrics.map(([l,v])=>{const c=v>=80?'var(--md-success)':v>=60?'var(--md-warning)':'var(--md-error)';return `<div class="metric-bar"><span class="label">${l}</span><div class="bar"><div class="fill" style="width:${v}%;background:${c}"></div></div><span class="val">${v}%</span></div>`;}).join('')}</div>
         </div>
-        <div class="chart-row"><div class="chart-box"><h4>Metricas</h4><canvas id="chart-radar"></canvas></div><div class="chart-box"><h4>Historial</h4><canvas id="chart-history"></canvas></div></div>
+        <div class="chart-row"><div class="chart-box"><h4>Métricas</h4><canvas id="chart-radar"></canvas></div><div class="chart-box"><h4>Historial</h4><canvas id="chart-history"></canvas></div></div>
         <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
             <button class="btn btn-secondary btn-sm" onclick="runEval()" id="btn-eval">Evaluar ahora</button>
             <span style="font-size:12px;color:var(--md-on-surface-variant)">${m.total||0} tarjetas | ${(ev.modelo||'').split('/').pop()}</span>
@@ -821,7 +821,7 @@ function renderTarjetas() {
         <td class="clickable${hasCorr('trad_pl')?' err':''}" ${cc('trad_pl',t.trad_pl)}>${t.trad_pl||''}</td>
         <td class="clickable${hasCorr('trad_tr')?' err':''}" ${cc('trad_tr',t.trad_tr)}>${t.trad_tr||''}</td>
         <td title="${esc(combos)}" style="max-width:90px">${combos}</td>
-        <td style="white-space:nowrap"><button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:var(--md-surface-variant)" onclick="openModal(${t.id},'${esc(t.palabra)}','','')">Corr</button> <button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:#f8d7da;color:var(--md-error)" onclick="delCard(${t.id},'${esc(t.palabra)}')">Elim</button></td></tr>`;
+        <td style="white-space:nowrap"><button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:var(--md-surface-variant)" onclick="openModal(${t.id},'${esc(t.palabra)}','','')}" title="Corregir tarjeta">Corregir</button> <button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:#f8d7da;color:var(--md-error)" onclick="delCard(${t.id},'${esc(t.palabra)}')" title="Eliminar tarjeta">Eliminar</button></td></tr>`;
     }).join('');
 }
 
