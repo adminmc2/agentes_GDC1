@@ -16,25 +16,7 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
-# --- Langfuse (trazabilidad) ---
-# Se activa automáticamente si LANGFUSE_PUBLIC_KEY está configurada.
-# Captura todos los spans OTel de CrewAI + spans custom con @observe.
-_langfuse_enabled = bool(os.environ.get("LANGFUSE_PUBLIC_KEY"))
-if _langfuse_enabled:
-    from langfuse import Langfuse, observe
-    langfuse_client = Langfuse()
-    print("[Langfuse] Trazabilidad ACTIVA — trazas visibles en cloud.langfuse.com")
-else:
-    # Stub para que @observe no falle cuando Langfuse no está configurado
-    langfuse_client = None
-    def observe(*args, **kwargs):
-        def decorator(fn):
-            return fn
-        if args and callable(args[0]):
-            return args[0]
-        return decorator
-    print("[Langfuse] No configurado — ejecutando sin trazabilidad")
-
+# --- CrewAI (importar ANTES que Langfuse para que registre su TracerProvider) ---
 from crewai import Agent, Task, Crew, Process, LLM
 from tools import (
     ConsultarInventario,
@@ -43,6 +25,25 @@ from tools import (
     EscribirTarjetas,
     ExportarCSV,
 )
+
+# --- Langfuse (trazabilidad) ---
+# Se activa si LANGFUSE_PUBLIC_KEY está configurada.
+# Usa el TracerProvider que CrewAI ya registró para evitar conflicto OTel.
+_langfuse_enabled = bool(os.environ.get("LANGFUSE_PUBLIC_KEY"))
+if _langfuse_enabled:
+    from opentelemetry import trace as _otel_trace
+    from langfuse import Langfuse, observe
+    langfuse_client = Langfuse(tracer_provider=_otel_trace.get_tracer_provider())
+    print("[Langfuse] Trazabilidad ACTIVA — trazas visibles en cloud.langfuse.com")
+else:
+    langfuse_client = None
+    def observe(*args, **kwargs):
+        def decorator(fn):
+            return fn
+        if args and callable(args[0]):
+            return args[0]
+        return decorator
+    print("[Langfuse] No configurado — ejecutando sin trazabilidad")
 
 # --- LLM ---
 LLM_MODEL = os.environ.get("RECURVO_LLM", "groq/openai/gpt-oss-120b")

@@ -3,6 +3,16 @@
 
 ---
 
+## [2026-03-17d] — Fix: conflicto TracerProvider entre CrewAI y Langfuse
+
+### Corregido — `scripts/crewai/recurvo.py`
+- Reordenadas las importaciones: CrewAI se importa ANTES que Langfuse
+- CrewAI registra su TracerProvider de OpenTelemetry al importarse
+- Langfuse ahora recibe ese TracerProvider existente via `tracer_provider=_otel_trace.get_tracer_provider()` en vez de crear uno nuevo
+- Elimina el warning "Overriding of current TracerProvider is not allowed"
+
+---
+
 ## [2026-03-17c] — Actualizar catálogo de modelos Groq
 
 ### Modificado — `diagrama.py` (AVAILABLE_MODELS)
