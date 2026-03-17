@@ -24,7 +24,7 @@ load_dotenv()
 
 PROJECT = Path(__file__).parent
 PORT = 8080
-SERVER_VERSION = "8.0"  # major.minor — major para cambios grandes, minor para deploys pequeños
+SERVER_VERSION = "8.2"  # major.minor — major para cambios grandes, minor para deploys pequeños
 
 # --- Langfuse client (para API de trazas) ---
 # Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).
