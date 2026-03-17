@@ -626,8 +626,8 @@ function renderAgente() {
     document.getElementById('agente-subtitle').textContent = ag.desc + ' \u00b7 ' + ag.ambito;
     const esc = s => (s||'').replace(/</g,'&lt;');
     document.getElementById('agente-content').innerHTML = `
-        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-prompt')"><h2>Prompt</h2><span class="chevron">&#9660;</span></div>
-        <div class="section-body" id="sec-ag-prompt-body">
+        <div class="section text-card" id="sec-ag-prompt"><div class="section-header" onclick="toggleSection('sec-ag-prompt')"><h2>Prompt</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body">
             <div class="config-field"><div class="config-label">Role</div><textarea class="config-edit config-edit-sm cfg-prompt" disabled id="ed-role">${esc(ag.role)}</textarea></div>
             <div class="config-field"><div class="config-label">Goal</div><textarea class="config-edit cfg-prompt" disabled id="ed-goal">${esc(ag.goal)}</textarea></div>
             <div class="config-field"><div class="config-label">Backstory</div><textarea class="config-edit cfg-prompt" disabled id="ed-backstory" style="min-height:120px">${esc(ag.backstory)}</textarea></div>
@@ -637,8 +637,8 @@ function renderAgente() {
                 <button class="btn btn-primary btn-sm" id="btn-save-prompt" onclick="savePrompt();toggleCfgEdit('prompt',false)" style="display:none">Guardar</button>
             </div>
         </div></div>
-        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-tasks')"><h2>Tareas (${ag.tasks.length})</h2><span class="chevron">&#9660;</span></div>
-        <div class="section-body" id="sec-ag-tasks-body">
+        <div class="section text-card" id="sec-ag-tasks"><div class="section-header" onclick="toggleSection('sec-ag-tasks')"><h2>Tareas (${ag.tasks.length})</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body">
             ${ag.tasks.map((t,i) => `<div style="margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--md-outline-variant)">
                 <div class="config-field"><div class="config-label">Nombre tarea ${i+1}</div><input class="config-input cfg-tasks" disabled id="ed-task-name-${i}" value="${esc(t.name)}"></div>
                 <div class="config-row">
@@ -653,8 +653,8 @@ function renderAgente() {
                 <button class="btn btn-primary btn-sm" id="btn-save-tasks" onclick="saveTasks();toggleCfgEdit('tasks',false)" style="display:none">Guardar</button>
             </div>
         </div></div>
-        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-tools')"><h2>Herramientas (${ag.tools.length})</h2><span class="chevron">&#9660;</span></div>
-        <div class="section-body" id="sec-ag-tools-body">
+        <div class="section text-card" id="sec-ag-tools"><div class="section-header" onclick="toggleSection('sec-ag-tools')"><h2>Herramientas (${ag.tools.length})</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body">
             ${ag.tools.map((t,i) => `<div class="config-row" style="margin-bottom:8px;align-items:center">
                 <div style="min-width:180px"><strong>${t.name}</strong></div>
                 <div style="flex:1"><input class="config-input cfg-tools" disabled id="ed-tool-desc-${i}" value="${esc(t.desc)}"></div>
@@ -665,8 +665,8 @@ function renderAgente() {
                 <button class="btn btn-primary btn-sm" id="btn-save-tools" onclick="saveAllTools();toggleCfgEdit('tools',false)" style="display:none">Guardar</button>
             </div>
         </div></div>
-        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-eval')"><h2>Evaluación (${ag.eval_metrics.length} métricas)</h2><span class="chevron">&#9660;</span></div>
-        <div class="section-body" id="sec-ag-eval-body">
+        <div class="section text-card" id="sec-ag-eval"><div class="section-header" onclick="toggleSection('sec-ag-eval')"><h2>Evaluación (${ag.eval_metrics.length} métricas)</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body">
             ${ag.eval_metrics.map((m,i) => `<div class="config-row" style="margin-bottom:8px;align-items:center">
                 <div style="min-width:100px"><strong>${m.name}</strong></div>
                 <div style="width:70px"><input type="number" class="config-input cfg-eval" disabled id="ed-metric-peso-${i}" value="${m.peso}" min="0" max="100" style="text-align:center"></div>
@@ -678,8 +678,8 @@ function renderAgente() {
                 <button class="btn btn-primary btn-sm" id="btn-save-eval" onclick="saveAllMetrics();toggleCfgEdit('eval',false)" style="display:none">Guardar</button>
             </div>
         </div></div>
-        <div class="section text-card"><div class="section-header" onclick="toggleSection('sec-ag-params')"><h2>Parámetros</h2><span class="chevron">&#9660;</span></div>
-        <div class="section-body" id="sec-ag-params-body">
+        <div class="section text-card" id="sec-ag-params"><div class="section-header" onclick="toggleSection('sec-ag-params')"><h2>Parámetros</h2><span class="chevron">&#9660;</span></div>
+        <div class="section-body">
             <div class="config-row">
                 <div class="config-field"><div class="config-label">Timeout (s)</div><input type="number" class="config-input cfg-params" disabled id="ed-timeout" value="${ag.params.timeout}"></div>
                 <div class="config-field"><div class="config-label">Proceso</div><select class="config-input cfg-params" disabled id="ed-proceso"><option ${ag.params.proceso==='Secuencial'?'selected':''}>Secuencial</option><option ${ag.params.proceso==='Jerárquico'?'selected':''}>Jerárquico</option></select></div>
