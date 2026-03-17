@@ -3,6 +3,21 @@
 
 ---
 
+## [v7.0 — 2026-03-17g] — Fix Langfuse definitivo + versión visible en dashboard
+
+### Corregido — `requirements.txt`
+- `langfuse==3.14.5` → `langfuse==2.60.10` — única versión compatible con litellm 1.82.2 (bundled en crewai 1.9.3)
+- langfuse 3.x/4.x eliminaron `.trace()` y `sdk_integration` que litellm necesita
+- Probado localmente: 0 errores Langfuse, trazas enviadas correctamente
+
+### Añadido — Versión del servidor en dashboard
+- `SERVER_VERSION = "7.0"` en `diagrama.py` — formato `major.minor`
+- Endpoint `/api/version` para consultar versión
+- Dashboard muestra "En vivo v7.0 — HH:MM:SS" junto al indicador de estado
+- major se incrementa en cambios sustanciales, minor en deploys pequeños
+
+---
+
 ## [2026-03-17f] — Fix: langfuse 4.0 incompatible con litellm, bajar a 3.14.5
 
 ### Corregido — `requirements.txt`

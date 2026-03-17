@@ -24,6 +24,7 @@ load_dotenv()
 
 PROJECT = Path(__file__).parent
 PORT = 8080
+SERVER_VERSION = "7.0"  # major.minor — major para cambios grandes, minor para deploys pequeños
 
 # --- Langfuse client (para API de trazas) ---
 # Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).
@@ -687,7 +688,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
         qs = parse_qs(parsed.query)
-        if parsed.path == "/api/status":
+        if parsed.path == "/api/version":
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps({"version": SERVER_VERSION}))
+        elif parsed.path == "/api/status":
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(scan_all(), ensure_ascii=False))
         elif parsed.path == "/api/diagrams":

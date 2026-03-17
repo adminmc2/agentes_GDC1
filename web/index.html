@@ -436,7 +436,9 @@ const SECTION_LABELS = {
 // ===== INIT =====
 mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
 
-function init() {
+let serverVersion = '?';
+async function init() {
+    try { const vr = await fetch('/api/version'); const vd = await vr.json(); serverVersion = vd.version; } catch(e) {}
     renderAgentList();
     const us = document.getElementById('sel-unidad');
     us.innerHTML = [1,2,3,4,5,6,7,8,9].map(n => `<option value="${n}" ${n===currentUnidad?'selected':''}>U${String(n).padStart(2,'0')}</option>`).join('');
@@ -497,7 +499,7 @@ async function loadProjectData() {
         renderStatusGrid(diagramData.status);
         renderDiagramTabs();
         renderDiagram(currentDiagram);
-        document.getElementById('status-text').textContent = 'En vivo - ' + new Date().toLocaleTimeString();
+        document.getElementById('status-text').textContent = 'En vivo v' + serverVersion + ' — ' + new Date().toLocaleTimeString();
     } catch(e) {
         document.getElementById('status-text').textContent = 'Error de conexión';
     }
@@ -551,7 +553,7 @@ async function renderDiagram(key) {
 // ===== AGENT DATA =====
 async function loadAgentData() {
     await Promise.all([loadTarjetas(), loadEvaluaciones(), loadCorrecciones(), loadTrazas(), loadRunHistory()]);
-    document.getElementById('status-text').textContent = 'En vivo - ' + new Date().toLocaleTimeString();
+    document.getElementById('status-text').textContent = 'En vivo v' + serverVersion + ' — ' + new Date().toLocaleTimeString();
 }
 
 // ===== AGENT EXECUTION =====
