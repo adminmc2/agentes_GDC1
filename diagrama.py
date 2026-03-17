@@ -26,6 +26,7 @@ PROJECT = Path(__file__).parent
 PORT = 8080
 
 # --- Langfuse client (para API de trazas) ---
+# Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).
 _langfuse_client = None
 if os.environ.get("LANGFUSE_PUBLIC_KEY"):
     try:

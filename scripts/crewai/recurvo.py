@@ -28,6 +28,7 @@ from tools import (
 # --- Langfuse (trazabilidad via litellm callback) ---
 # litellm intercepta cada llamada LLM que CrewAI hace y la envía a Langfuse.
 # Se activa automáticamente si LANGFUSE_PUBLIC_KEY está en .env.
+# Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).
 if os.environ.get("LANGFUSE_PUBLIC_KEY"):
     import litellm
     litellm.success_callback = ["langfuse"]
