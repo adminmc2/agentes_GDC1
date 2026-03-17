@@ -3,6 +3,14 @@
 
 ---
 
+## [2026-03-17f] — Fix: langfuse 4.0 incompatible con litellm, bajar a 3.14.5
+
+### Corregido — `requirements.txt`
+- `langfuse==4.0.0` → `langfuse==3.14.5` — litellm pasa `sdk_integration` a `Langfuse()`, que v4.0 eliminó
+- Con v3.14.5, `litellm.success_callback = ["langfuse"]` funciona correctamente
+
+---
+
 ## [2026-03-17e] — Langfuse: reemplazar integración rota por litellm callback
 
 ### Corregido — `scripts/crewai/recurvo.py`

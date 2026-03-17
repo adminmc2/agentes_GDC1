@@ -1,5 +1,5 @@
 crewai[litellm]==1.9.3
 psycopg2-binary==2.9.11
 python-dotenv==1.1.1
-langfuse==4.0.0
+langfuse==3.14.5
 deepeval==3.8.9
