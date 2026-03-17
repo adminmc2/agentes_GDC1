@@ -707,7 +707,7 @@ async function renderEjecucion(runId) {
 
     document.getElementById('ejec-header').innerHTML = `
         <span class="page-title">${ag.name} \u2014 U${String(currentUnidad).padStart(2,'0')}</span>
-        <div class="page-subtitle">${modelShort} &middot; ${elapsed?elapsed+'s':''} &middot; <span style="color:var(--${badgeCls==='good'?'green':badgeCls==='mid'?'warn':'red'})">${status==='running'?'Ejecutando...':sc+'/100'}</span></div>`;
+        <div class="page-subtitle">${modelShort} &middot; ${elapsed?elapsed+'s':''} &middot; <span style="color:var(--${badgeCls==='good'?'md-success':badgeCls==='mid'?'md-warning':'md-error'})">${status==='running'?'Ejecutando...':sc+'/100'}</span></div>`;
 
     let html = '';
     // Console
@@ -821,7 +821,7 @@ function renderTarjetas() {
         <td class="clickable${hasCorr('trad_pl')?' err':''}" ${cc('trad_pl',t.trad_pl)}>${t.trad_pl||''}</td>
         <td class="clickable${hasCorr('trad_tr')?' err':''}" ${cc('trad_tr',t.trad_tr)}>${t.trad_tr||''}</td>
         <td title="${esc(combos)}" style="max-width:90px">${combos}</td>
-        <td style="white-space:nowrap"><button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:var(--md-surface-variant)" onclick="openModal(${t.id},'${esc(t.palabra)}','','')}" title="Corregir tarjeta">Corregir</button> <button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:#f8d7da;color:var(--md-error)" onclick="delCard(${t.id},'${esc(t.palabra)}')" title="Eliminar tarjeta">Eliminar</button></td></tr>`;
+        <td style="white-space:nowrap"><button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:var(--md-surface-variant)" onclick="openModal(${t.id},'${esc(t.palabra)}','','')" title="Corregir tarjeta">Corregir</button> <button style="padding:2px 6px;font-size:10px;border:none;border-radius:3px;cursor:pointer;background:#f8d7da;color:var(--md-error)" onclick="delCard(${t.id},'${esc(t.palabra)}')" title="Eliminar tarjeta">Eliminar</button></td></tr>`;
     }).join('');
 }
 
