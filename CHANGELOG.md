@@ -3,6 +3,25 @@
 
 ---
 
+## [v8.5c — 2026-03-18] — UX ciclo de aprendizaje: reglas, revisión y patrones
+
+### Nuevo — BD
+- Columna `estado_revision` (sin_revisar/revisada) en `tarjetas_vocabulario`
+
+### Nuevo — Backend (diagrama.py)
+- Endpoint `GET /api/correcciones/stats` — correcciones agrupadas por tipo_error
+- `estado_revision` añadido a SELECT y allowed fields
+
+### Nuevo — Dashboard (web/index.html)
+- **Sección Revisión**: barra de progreso, contador, panel de patrones
+- **Badge de revisión por tarjeta** + botón "marcar como revisada"
+- **Modal corrección**: checkbox "Crear regla general" con campos regla + ejemplos
+- **Modal regla independiente**: crear/editar reglas con tipo, regla, ejemplos, activa
+- **Sección Reglas aprendidas**: CRUD completo de reglas desde la interfaz
+- **Panel de patrones**: correcciones agrupadas, botón "Crear regla" cuando 3+ correcciones
+
+---
+
 ## [v8.5b — 2026-03-18] — Rediseño verificador + consultar_reglas
 
 ### Modificado — BD crew_agents (verificador)

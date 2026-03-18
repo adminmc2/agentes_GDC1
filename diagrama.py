@@ -55,7 +55,8 @@ def get_tarjetas(unidad):
                t.frecuencia, t.combos,
                t.trad_it, t.trad_fr, t.trad_pt_br, t.trad_en,
                t.trad_cs, t.trad_pl, t.trad_tr,
-               t.seccion, t.pagina, t.nivel_jerarquia, t.estado, t.unidad_origen
+               t.seccion, t.pagina, t.nivel_jerarquia, t.estado, t.unidad_origen,
+               t.estado_revision
         FROM tarjetas_vocabulario t
         JOIN unidades u ON t.unidad_id = u.id
         WHERE u.numero = %s
@@ -159,6 +160,28 @@ def delete_regla(regla_id):
     cur.execute("DELETE FROM reglas_aprendidas WHERE id = %s", (regla_id,))
     conn.commit()
     conn.close()
+
+
+def get_correcciones_stats(unidad=None):
+    conn = _db()
+    cur = conn.cursor(cursor_factory=RealDictCursor)
+    if unidad:
+        cur.execute("""
+            SELECT tipo_error, COUNT(*) as total,
+                   array_agg(DISTINCT palabra) as palabras
+            FROM correcciones WHERE unidad = %s
+            GROUP BY tipo_error ORDER BY total DESC
+        """, (unidad,))
+    else:
+        cur.execute("""
+            SELECT tipo_error, COUNT(*) as total,
+                   array_agg(DISTINCT palabra) as palabras
+            FROM correcciones
+            GROUP BY tipo_error ORDER BY total DESC
+        """)
+    rows = [dict(r) for r in cur.fetchall()]
+    conn.close()
+    return rows
 
 
 def delete_tarjeta(tarjeta_id):
@@ -450,7 +473,7 @@ def update_tarjeta_field(tarjeta_id, campo, valor):
         "campo_semantico", "color_campo", "ejemplo", "frecuencia",
         "trad_it", "trad_fr", "trad_pt_br", "trad_en",
         "trad_cs", "trad_pl", "trad_tr", "seccion", "pagina",
-        "nivel_jerarquia", "estado", "unidad_origen",
+        "nivel_jerarquia", "estado", "unidad_origen", "estado_revision",
     }
     if campo not in allowed:
         return False
@@ -841,6 +864,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
             unidad = int(unidad) if unidad else None
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(get_correcciones(unidad), ensure_ascii=False, default=str))
+        elif parsed.path == "/api/correcciones/stats":
+            unidad = qs.get("unidad", [None])[0]
+            unidad = int(unidad) if unidad else None
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_correcciones_stats(unidad), ensure_ascii=False, default=str))
         elif parsed.path == "/api/reglas":
             crew = qs.get("crew", ["recurvo"])[0]
             self._respond(200, "application/json; charset=utf-8",
