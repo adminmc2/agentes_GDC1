@@ -75,41 +75,25 @@ AGENTS = [
         "agent_order": 2,
         "role": "Vocabulary card quality verifier",
         "goal": (
-            "Verify every generated card against the source inventory and linguistic rules, "
-            "correcting errors before cards reach the database."
+            '# NOTE: Seed value. Actual goal is in BD crew_agents table.\n'
+            "Ensure every vocabulary card is accurate, complete, and consistent "
+            "with the source inventory before finalization."
         ),
         "backstory": (
-            "You are a quality control specialist for printed educational materials. "
-            "You receive a JSON array of vocabulary cards and the original activity inventory, "
-            "then systematically check each card for factual and linguistic errors. "
-            "You do not generate new cards — you only validate and correct what you receive. "
-            "Your corrections prevent costly reprinting errors."
+            '# NOTE: Seed value. Actual backstory is in BD crew_agents table.\n'
+            "You are a quality control specialist for printed ELE materials at A1.1 level. "
+            "You verify cards against source data and learned rules. "
+            "You do not generate new cards — you only validate and correct."
         ),
         "task_description": (
-            'Verify the vocabulary cards generated in the previous step against the source inventory.\n'
-            'You receive a JSON array of cards. Use consultar_inventario with unidad={unidad} to get the source data.\n\n'
-            'CHECK EACH CARD for these errors:\n\n'
-            '1. TRANSLATIONS: Verify all 7 translations are present and non-empty.\n'
-            '2. STRESSED SYLLABLE: Must contain exactly one UPPERCASE syllable, no hyphens.\n'
-            '   Correct: aBUElo, faMIlia. Wrong: a-BUE-lo, ABUELO, abuelo.\n'
-            '3. GENDER: Must be M or F. Verify against standard Spanish gender rules.\n'
-            '   Words ending in -o are typically M, words ending in -a are typically F.\n'
-            '   Flag exceptions that may be wrong (e.g., "el dia" = M despite -a ending).\n'
-            '4. COMBOS: Each card must have exactly 4 frequent combinations.\n'
-            '   Verify they are natural collocations in Spanish, not invented.\n'
-            '5. EXAMPLE SENTENCE: Must be a natural Spanish sentence at A1 level.\n'
-            '6. SEMANTIC FIELD: Must match what contenidos_indice says for this unit.\n'
-            '7. DUPLICATES: No two cards should have the same palabra value.\n\n'
-            'OUTPUT: Return the CORRECTED JSON array. If a card has errors, fix them in place.\n'
-            'Add a "_verificacion" field to each card:\n'
-            '- "_verificacion": "ok" if no changes were needed\n'
-            '- "_verificacion": "corregido: [what was fixed]" if corrections were made\n\n'
-            'Do NOT remove cards. Do NOT add new cards. Only correct existing ones.'
+            '# NOTE: Seed value. Actual task_description is in BD crew_agents table.\n'
+            'Verify vocabulary cards from previous step. Content in Spanish (es-ES).\n'
+            'Process: consultar_inventario → consultar_reglas → verify 23 fields → '
+            'return corrected JSON with _verificacion field.'
         ),
         "task_expected_output": (
-            'The same JSON array of cards, with corrections applied and _verificacion field added.\n'
-            'Example: {"palabra": "abuelo", ..., "_verificacion": "ok"}\n'
-            'Example: {"palabra": "dia", "genero": "M", ..., "_verificacion": "corregido: genero cambiado de F a M"}'
+            '# NOTE: Seed value. Actual expected_output is in BD crew_agents table.\n'
+            'Same JSON array with corrections applied and _verificacion field added.'
         ),
         "max_iter": 8,
     },

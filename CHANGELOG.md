@@ -3,6 +3,25 @@
 
 ---
 
+## [v8.5b — 2026-03-18] — Rediseño verificador + consultar_reglas
+
+### Modificado — BD crew_agents (verificador)
+- **goal** reescrito: outcome-oriented, sin referencia a "database"
+- **backstory** reestructurado: 4 partes (dominio ELE/A1.1, pipeline secuencial, tolerancia cero, verificar contra datos)
+- **task_description** reescrito: consultar_inventario + consultar_reglas, checks con WHY y ejemplos ✓/✗, terminología actualizada (construcciones gramaticales, tildes preservadas, 23 campos)
+- **expected_output** mejorado: ejemplos completos de tarjeta ok y corregida
+
+### Modificado — Código
+- `scripts/crewai/recurvo.py`: añadido `ConsultarReglas()` a tools del verificador
+- `scripts/crear_crew_agents.py`: verificador simplificado a referencia BD (seed script)
+- `.claude/rules/agent-prompt-design.md`: verificador goal y backstory actualizados
+
+### Documentado — CLAUDE.md
+- Pendiente UX ciclo de aprendizaje (5 mejoras para facilitar escritura de reglas y revisión)
+- `reglas_aprendidas`: distingue tipo 1 (especificaciones de producto) vs tipo 2 (patrones aprendidos, futuro)
+
+---
+
 ## [v8.5 — 2026-03-18] — Rediseño task_description generador + eliminación irregularidad
 
 ### Modificado — BD crew_agents (generador)

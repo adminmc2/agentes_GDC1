@@ -26,6 +26,7 @@ from tools import (
     ConsultarInventario,
     ConsultarTarjetasPrevias,
     ConsultarCorrecciones,
+    ConsultarReglas,
     EscribirTarjetas,
     ExportarCSV,
 )
@@ -68,9 +69,11 @@ TOOLS_MAP = {
         ConsultarInventario(),
         ConsultarTarjetasPrevias(),
         ConsultarCorrecciones(),
+        ConsultarReglas(),
     ],
     "verificador": [
         ConsultarInventario(),
+        ConsultarReglas(),
     ],
     "escritor": [
         EscribirTarjetas(),
