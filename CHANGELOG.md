@@ -3,6 +3,19 @@
 
 ---
 
+## [v8.5d — 2026-03-18] — Rediseño escritor (goal, backstory, task)
+
+### Modificado — BD crew_agents (escritor)
+- **goal** reescrito: de proceso ("persist and export") a resultado ("safely stored and available")
+- **backstory** reestructurado: 4 partes (data persistence specialist, pipeline secuencial con input trusted, reliability crítica, ejecutar sin modificar)
+- **task_description** reescrito: 3 steps explícitos con WHY, limpieza _verificacion, error handling (reportar sin intentar arreglar), instrucción "writer not creator"
+- **task_expected_output** mejorado: JSON con resultados de ambas tools + array de errores
+
+### Modificado — Documentación
+- `.claude/rules/agent-prompt-design.md`: escritor goal y backstory actualizados en sección de referencia
+
+---
+
 ## [v8.5c — 2026-03-18] — UX ciclo de aprendizaje: reglas, revisión y patrones
 
 ### Nuevo — BD
