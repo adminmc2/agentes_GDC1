@@ -3,13 +3,23 @@
 
 ---
 
-## [v8.5d — 2026-03-18] — Rediseño escritor (goal, backstory, task)
+## [v8.5d — 2026-03-18] — Rediseño escritor + fix UPSERT
 
 ### Modificado — BD crew_agents (escritor)
 - **goal** reescrito: de proceso ("persist and export") a resultado ("safely stored and available")
 - **backstory** reestructurado: 4 partes (data persistence specialist, pipeline secuencial con input trusted, reliability crítica, ejecutar sin modificar)
-- **task_description** reescrito: 3 steps explícitos con WHY, limpieza _verificacion, error handling (reportar sin intentar arreglar), instrucción "writer not creator"
-- **task_expected_output** mejorado: JSON con resultados de ambas tools + array de errores
+- **task_description** reescrito aplicando 8 principios:
+  - Eliminado STEP 1 innecesario (limpiar `_verificacion`): la tool ya ignora campos desconocidos (P3)
+  - Añadido INPUT FORMAT con ejemplo del JSON que recibe del verificador (P4)
+  - Añadidos ejemplos de tool calls: `escribir_tarjetas(tarjetas_json=...)` y `exportar_csv(unidad=...)` (P3, P4)
+  - Error handling ampliado: cubre fallo de `exportar_csv` además de `escribir_tarjetas` (P3)
+  - 2 steps (no 3), cada uno con WHY (P5)
+- **task_expected_output** mejorado: ejemplo success + ejemplo partial failure con array de errores (P4)
+
+### Corregido — Bug UPSERT en `escribir_tarjetas` (tools.py)
+- **Antes:** `ON CONFLICT` solo actualizaba `frecuencia` → correcciones del verificador se perdían al re-ejecutar
+- **Ahora:** actualiza los 18 campos editables (genero, silaba_tonica, regla, combos, traducciones, etc.)
+- Impacto: sin este fix, el pipeline verificador→escritor no tenía efecto real sobre tarjetas existentes
 
 ### Modificado — Documentación
 - `.claude/rules/agent-prompt-design.md`: escritor goal y backstory actualizados en sección de referencia

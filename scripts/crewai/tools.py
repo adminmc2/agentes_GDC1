@@ -224,7 +224,24 @@ class EscribirTarjetas(BaseTool):
                     %s, %s, %s
                 )
                 ON CONFLICT (palabra, unidad_origen) DO UPDATE SET
+                    genero = EXCLUDED.genero,
+                    color_genero = EXCLUDED.color_genero,
+                    silaba_tonica = EXCLUDED.silaba_tonica,
+                    regla = EXCLUDED.regla,
+                    campo_semantico = EXCLUDED.campo_semantico,
+                    color_campo = EXCLUDED.color_campo,
+                    ejemplo = EXCLUDED.ejemplo,
                     frecuencia = EXCLUDED.frecuencia,
+                    combos = EXCLUDED.combos,
+                    trad_it = EXCLUDED.trad_it,
+                    trad_fr = EXCLUDED.trad_fr,
+                    trad_pt_br = EXCLUDED.trad_pt_br,
+                    trad_en = EXCLUDED.trad_en,
+                    trad_cs = EXCLUDED.trad_cs,
+                    trad_pl = EXCLUDED.trad_pl,
+                    trad_tr = EXCLUDED.trad_tr,
+                    nivel_jerarquia = EXCLUDED.nivel_jerarquia,
+                    estado = EXCLUDED.estado,
                     fecha_modificacion = NOW()
                 """,
                 (
