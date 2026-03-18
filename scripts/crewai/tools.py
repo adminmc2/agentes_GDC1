@@ -145,13 +145,42 @@ class ConsultarCorrecciones(BaseTool):
         )
 
 
+class ConsultarReglas(BaseTool):
+    name: str = "consultar_reglas"
+    description: str = (
+        "Retrieves learned rules distilled from accumulated editorial corrections. "
+        "These are general patterns (not specific words) that MUST be applied to ALL cards. "
+        "Rules take priority over any default behavior."
+    )
+
+    def _run(self, crew: str = "recurvo") -> str:
+        conn = _get_conn()
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        cur.execute(
+            """
+            SELECT tipo_error, regla, ejemplos, n_correcciones
+            FROM reglas_aprendidas
+            WHERE crew = %s AND activa = true
+            ORDER BY n_correcciones DESC
+            """,
+            (crew,),
+        )
+        reglas = [dict(r) for r in cur.fetchall()]
+        conn.close()
+        return json.dumps(
+            {"reglas": reglas, "total": len(reglas)},
+            ensure_ascii=False,
+            default=str,
+        )
+
+
 class EscribirTarjetas(BaseTool):
     name: str = "escribir_tarjetas"
     description: str = (
         "Escribe tarjetas de vocabulario validadas en la BD. "
         "Parámetro: JSON string con array de tarjetas. "
         "Cada tarjeta debe tener: palabra, genero, color_genero, silaba_tonica, "
-        "regla, campo_semantico, color_campo, ejemplo, frecuencia, irregularidad, "
+        "regla, campo_semantico, color_campo, ejemplo, frecuencia, "
         "combos (array de 4 strings), trad_it, trad_fr, trad_pt_br, trad_en, "
         "trad_cs, trad_pl, trad_tr, seccion, pagina, nivel_jerarquia, estado, "
         "unidad_origen, unidad."
@@ -182,13 +211,13 @@ class EscribirTarjetas(BaseTool):
                 INSERT INTO tarjetas_vocabulario (
                     unidad_id, seccion, pagina, palabra, genero, color_genero,
                     silaba_tonica, regla, campo_semantico, color_campo,
-                    ejemplo, frecuencia, irregularidad, combos,
+                    ejemplo, frecuencia, combos,
                     trad_it, trad_fr, trad_pt_br, trad_en,
                     trad_cs, trad_pl, trad_tr,
                     nivel_jerarquia, estado, unidad_origen
                 ) VALUES (
                     %s, %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s,
+                    %s, %s, %s,
                     %s, %s, %s, %s,
                     %s, %s, %s, %s,
                     %s, %s, %s,
@@ -211,7 +240,6 @@ class EscribirTarjetas(BaseTool):
                     t.get("color_campo"),
                     t.get("ejemplo"),
                     t.get("frecuencia"),
-                    t.get("irregularidad", ""),
                     Json(t.get("combos", [])),
                     t.get("trad_it"),
                     t.get("trad_fr"),
@@ -248,7 +276,7 @@ class ExportarCSV(BaseTool):
             """
             SELECT palabra, genero, color_genero, silaba_tonica, regla,
                    campo_semantico, color_campo, ejemplo, frecuencia,
-                   irregularidad, combos,
+                   combos,
                    trad_it, trad_fr, trad_pt_br, trad_en,
                    trad_cs, trad_pl, trad_tr
             FROM tarjetas_vocabulario
@@ -267,7 +295,7 @@ class ExportarCSV(BaseTool):
         headers = [
             "palabra", "genero", "color_genero", "silaba_tonica", "regla",
             "campo_semantico", "color_campo", "ejemplo", "frecuencia",
-            "irregularidad", "combo1", "combo2", "combo3", "combo4",
+            "combo1", "combo2", "combo3", "combo4",
             "IT", "FR", "PT_BR", "EN", "CS", "PL", "TR",
         ]
 
@@ -286,7 +314,6 @@ class ExportarCSV(BaseTool):
                 t["color_campo"] or "",
                 t["ejemplo"] or "",
                 str(t["frecuencia"] or ""),
-                t["irregularidad"] or "",
                 combos[0], combos[1], combos[2], combos[3],
                 t["trad_it"] or "",
                 t["trad_fr"] or "",

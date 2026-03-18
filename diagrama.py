@@ -52,7 +52,7 @@ def get_tarjetas(unidad):
     cur.execute("""
         SELECT t.id, t.palabra, t.genero, t.color_genero, t.silaba_tonica,
                t.regla, t.campo_semantico, t.color_campo, t.ejemplo,
-               t.frecuencia, t.irregularidad, t.combos,
+               t.frecuencia, t.combos,
                t.trad_it, t.trad_fr, t.trad_pt_br, t.trad_en,
                t.trad_cs, t.trad_pl, t.trad_tr,
                t.seccion, t.pagina, t.nivel_jerarquia, t.estado, t.unidad_origen
@@ -107,6 +107,58 @@ def insert_correccion(data):
     conn.commit()
     conn.close()
     return new_id
+
+
+def get_reglas(crew="recurvo"):
+    conn = _db()
+    cur = conn.cursor(cursor_factory=RealDictCursor)
+    cur.execute("""
+        SELECT id, crew, tipo_error, regla, ejemplos, n_correcciones, activa,
+               created_at, updated_at
+        FROM reglas_aprendidas
+        WHERE crew = %s
+        ORDER BY activa DESC, n_correcciones DESC
+    """, (crew,))
+    rows = [dict(r) for r in cur.fetchall()]
+    conn.close()
+    return rows
+
+
+def upsert_regla(data):
+    conn = _db()
+    cur = conn.cursor()
+    regla_id = data.get("id")
+    if regla_id:
+        cur.execute("""
+            UPDATE reglas_aprendidas
+            SET tipo_error = %s, regla = %s, ejemplos = %s,
+                n_correcciones = %s, activa = %s, updated_at = NOW()
+            WHERE id = %s RETURNING id
+        """, (
+            data["tipo_error"], data["regla"], data.get("ejemplos", ""),
+            data.get("n_correcciones", 0), data.get("activa", True), regla_id
+        ))
+    else:
+        cur.execute("""
+            INSERT INTO reglas_aprendidas (crew, tipo_error, regla, ejemplos, n_correcciones, activa)
+            VALUES (%s, %s, %s, %s, %s, %s) RETURNING id
+        """, (
+            data.get("crew", "recurvo"), data["tipo_error"], data["regla"],
+            data.get("ejemplos", ""), data.get("n_correcciones", 0),
+            data.get("activa", True)
+        ))
+    regla_id = cur.fetchone()[0]
+    conn.commit()
+    conn.close()
+    return regla_id
+
+
+def delete_regla(regla_id):
+    conn = _db()
+    cur = conn.cursor()
+    cur.execute("DELETE FROM reglas_aprendidas WHERE id = %s", (regla_id,))
+    conn.commit()
+    conn.close()
 
 
 def delete_tarjeta(tarjeta_id):
@@ -396,7 +448,7 @@ def update_tarjeta_field(tarjeta_id, campo, valor):
     allowed = {
         "palabra", "genero", "color_genero", "silaba_tonica", "regla",
         "campo_semantico", "color_campo", "ejemplo", "frecuencia",
-        "irregularidad", "trad_it", "trad_fr", "trad_pt_br", "trad_en",
+        "trad_it", "trad_fr", "trad_pt_br", "trad_en",
         "trad_cs", "trad_pl", "trad_tr", "seccion", "pagina",
         "nivel_jerarquia", "estado", "unidad_origen",
     }
@@ -789,6 +841,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
             unidad = int(unidad) if unidad else None
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(get_correcciones(unidad), ensure_ascii=False, default=str))
+        elif parsed.path == "/api/reglas":
+            crew = qs.get("crew", ["recurvo"])[0]
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_reglas(crew), ensure_ascii=False, default=str))
         elif parsed.path == "/api/evaluaciones":
             unidad = qs.get("unidad", [None])[0]
             unidad = int(unidad) if unidad else None
@@ -858,6 +914,14 @@ class Handler(http.server.BaseHTTPRequestHandler):
             ok = update_crew_agent(agent_id, body)
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps({"ok": ok}))
+        elif parsed.path == "/api/reglas":
+            regla_id = upsert_regla(body)
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps({"id": regla_id, "ok": True}))
+        elif parsed.path == "/api/reglas/delete":
+            delete_regla(body["id"])
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps({"ok": True}))
         elif parsed.path == "/api/agente/run":
             agente = body.get("agente", "recurvo")
             unidad = body.get("unidad", 3)

@@ -127,10 +127,9 @@ def ejecutar_agente(model, prompt_text, unidad=3):
     tarea_generar = Task(
         description=f"""Genera tarjetas de vocabulario para la Unidad {unidad}.
 PROCESO: 1) consultar_inventario unidad={unidad} 2) consultar_tarjetas_previas unidad={unidad}
-3) consultar_correcciones 4) Clasificar en niveles 1/2/3 5) Generar tarjetas con 24 campos.
-REGLAS: Solo formas genéricas (singular M y F), nunca plurales. Sílaba tónica en MAYÚSCULAS sin guiones ni tildes inventadas.
-Regla formato: "M en -o, F en -a: abuel-o / abuel-a". Combos: 4 chunks léxicos variados (no solo posesivos).""",
-        expected_output="JSON array con tarjetas generadas, cada una con 24 campos.",
+3) consultar_correcciones 4) consultar_reglas 5) Clasificar en niveles 1/2/3 6) Generar tarjetas con 23 campos.
+Cada forma = 1 tarjeta. Plurales colectivos (padres, abuelos) = entrada propia. Sílaba tónica en MAYÚSCULAS preservando tildes. Combos: 4 construcciones gramaticales (estructura → ejemplo).""",
+        expected_output="JSON array con tarjetas generadas, cada una con 23 campos.",
         agent=generador,
     )
 

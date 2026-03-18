@@ -3,6 +3,31 @@
 
 ---
 
+## [v8.5 — 2026-03-18] — Rediseño task_description generador + eliminación irregularidad
+
+### Modificado — BD crew_agents (generador)
+- **task_description** reescrito completo: definiciones de campos con ejemplos, formato combo (estructura → ejemplo), política plurales colectivos, cada forma = 1 tarjeta, preservar tildes en sílaba tónica
+- **task_expected_output** actualizado: 23 campos (sin irregularidad), ejemplo con nuevos combos y regla
+- Eliminada referencia a "Nuevo Compañeros 1" (agente no atado a libro específico)
+- Eliminada sección CRITICAL RULES (duplicaba reglas_aprendidas, P7)
+
+### Modificado — BD reglas_aprendidas
+- Regla id=1 (silaba_tonica): añadido "preserve accent marks" → maMÁ, paPÁ
+- Regla id=2 (combo): redefinido como construcciones gramaticales (estructura → ejemplo)
+- Regla id=3 (genero): cada forma = 1 tarjeta (profesor ≠ profesora), regla solo describe la palabra
+
+### Modificado — Código (eliminación de irregularidad)
+- `diagrama.py`: eliminado de SELECT y allowed fields
+- `scripts/crewai/tools.py`: eliminado de tool description, INSERT, CSV SELECT, headers y row builder
+- `scripts/crear_crew_agents.py`: simplificado a referencia a BD (seed script)
+- `eval/provider_crewai.py`: actualizado a 23 campos y nueva terminología
+
+### Modificado — Documentación
+- `materiales/especificaciones-diseno-tarjetas.md`: combos redefinidos como construcciones gramaticales con formato estructura → ejemplo
+- `.claude/rules/agent-prompt-design.md`: terminología combos actualizada, referencia a especificaciones actualizada
+
+---
+
 ## [v8.4b — 2026-03-17] — CLAUDE.md condensado (334 → 171 líneas)
 
 ### Modificado — CLAUDE.md
