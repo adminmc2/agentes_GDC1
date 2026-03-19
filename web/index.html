@@ -106,6 +106,11 @@ main { overflow-y: auto; padding: 24px; }
 .agent-stats { font-size: 13px; color: var(--md-on-surface-variant); margin-bottom: 16px; }
 .agent-actions { display: flex; gap: 10px; margin-bottom: 16px; }
 
+/* === TOOL SOURCE VIEWER === */
+.tool-chevron { font-size: 10px; color: var(--md-on-surface-variant); transition: transform .2s; display: inline-block; transform: rotate(-90deg); }
+.tool-chevron.tool-open { transform: rotate(0deg); }
+.tool-source { display: none; margin: 4px 0 12px 24px; padding: 12px 16px; background: var(--md-surface-variant); border: 1px solid var(--md-outline-variant); border-radius: 8px; font-size: 12px; line-height: 1.5; overflow-x: auto; white-space: pre; font-family: 'SF Mono', Consolas, 'Courier New', monospace; max-height: 400px; overflow-y: auto; color: var(--md-on-surface); }
+
 /* === BUTTONS (Material filled + outlined) === */
 .btn { padding: 10px 20px; border-radius: 20px; border: none; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all .2s; letter-spacing: .2px; }
 .btn-primary { background: var(--md-primary); color: var(--md-on-primary); box-shadow: var(--md-elevation-1); }
@@ -637,6 +642,11 @@ async function loadCrewAgents(crew) {
         crewAgents = await r.json();
     } catch(e) { crewAgents = []; }
 }
+let toolSources = {};
+async function loadToolSources() {
+    try { const r = await fetch('/api/tool_sources'); toolSources = await r.json(); }
+    catch(e) { toolSources = {}; }
+}
 async function savePipeline() {
     let ok = true;
     for (let i = 0; i < crewAgents.length; i++) {
@@ -693,6 +703,7 @@ async function renderAgente() {
     document.getElementById('agente-subtitle').textContent = ag.desc + ' \u00b7 ' + ag.ambito;
     const esc = s => (s||'').replace(/</g,'&lt;');
     await loadCrewAgents(currentAgente);
+    await loadToolSources();
     const pipelineHtml = crewAgents.length ? crewAgents.map((a,i) => `
         <div style="margin-bottom:20px;padding:14px;border:1px solid var(--md-outline-variant);border-radius:12px;background:var(--md-surface)">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
@@ -717,9 +728,15 @@ async function renderAgente() {
         </div></div>
         <div class="section text-card" id="sec-ag-tools"><div class="section-header" onclick="toggleSection('sec-ag-tools')"><h2>Herramientas (${ag.tools.length})</h2><span class="chevron">&#9660;</span></div>
         <div class="section-body">
-            ${ag.tools.map((t,i) => `<div class="config-row" style="margin-bottom:8px;align-items:center">
-                <div style="min-width:180px"><strong>${t.name}</strong></div>
-                <div style="flex:1"><input class="config-input cfg-tools" disabled id="ed-tool-desc-${i}" value="${esc(t.desc)}"></div>
+            ${ag.tools.map((t,i) => `<div style="margin-bottom:8px">
+                <div class="config-row" style="align-items:center;cursor:pointer" onclick="const s=document.getElementById('tool-src-${i}');s.style.display=s.style.display==='none'?'block':'none';this.querySelector('.tool-chevron').classList.toggle('tool-open')">
+                    <div style="min-width:180px;display:flex;align-items:center;gap:6px">
+                        <span class="tool-chevron">&#9660;</span>
+                        <strong>${t.name}</strong>
+                    </div>
+                    <div style="flex:1"><input class="config-input cfg-tools" disabled id="ed-tool-desc-${i}" value="${esc(t.desc)}" onclick="event.stopPropagation()"></div>
+                </div>
+                <pre class="tool-source" id="tool-src-${i}"><code>${esc(toolSources[t.name] || 'Código no disponible')}</code></pre>
             </div>`).join('')}
             <div class="save-bar">
                 <span class="saved-toast" id="saved-tools">Guardado</span>

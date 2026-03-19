@@ -9,6 +9,7 @@ import http.server
 import json
 import hashlib
 import os
+import re
 import subprocess
 import sys
 import threading
@@ -24,7 +25,7 @@ load_dotenv()
 
 PROJECT = Path(__file__).parent
 PORT = 8080
-SERVER_VERSION = "8.4"  # major.minor — major para cambios grandes, minor para deploys pequeños
+SERVER_VERSION = "8.5"  # major.minor — major para cambios grandes, minor para deploys pequeños
 
 # --- Langfuse client (para API de trazas) ---
 # Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).
@@ -831,6 +832,21 @@ def load_html_template():
     return HTML_FILE.read_text(encoding="utf-8")
 
 
+def get_tool_sources():
+    """Lee tools.py y extrae el código fuente de cada clase tool."""
+    tools_file = PROJECT / "scripts" / "crewai" / "tools.py"
+    if not tools_file.exists():
+        return {}
+    text = tools_file.read_text(encoding="utf-8")
+    parts = re.split(r"(?=^class \w+\(BaseTool\))", text, flags=re.MULTILINE)
+    result = {}
+    for part in parts:
+        m = re.search(r'name:\s*str\s*=\s*["\'](\w+)["\']', part)
+        if m:
+            result[m.group(1)] = part.strip()
+    return result
+
+
 class Handler(http.server.BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):
         if os.environ.get("DEBUG"):
@@ -894,6 +910,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif parsed.path == "/api/modelos":
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(AVAILABLE_MODELS, ensure_ascii=False))
+        elif parsed.path == "/api/tool_sources":
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_tool_sources(), ensure_ascii=False))
         elif parsed.path == "/api/trazas":
             limit = int(qs.get("limit", [20])[0])
             self._respond(200, "application/json; charset=utf-8",

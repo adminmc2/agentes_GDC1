@@ -3,6 +3,20 @@
 
 ---
 
+## [v8.5f — 2026-03-19] — Visor de código fuente de herramientas
+
+### Nuevo — Backend (diagrama.py)
+- Función `get_tool_sources()`: parsea `scripts/crewai/tools.py`, extrae cada clase `BaseTool` indexada por `name`
+- Endpoint `GET /api/tool_sources` → JSON con el código fuente de cada herramienta
+- `SERVER_VERSION` → `"8.5"`
+
+### Modificado — Dashboard (web/index.html)
+- Sección Herramientas rediseñada: cada tool es clicable con chevron colapsable
+- Al expandir, muestra el código fuente completo de la herramienta en bloque monoespaciado
+- CSS: `.tool-chevron`, `.tool-source` (Material Design 3, max-height 400px con scroll)
+
+---
+
 ## [v8.5d — 2026-03-18] — Rediseño escritor + fix UPSERT
 
 ### Modificado — BD crew_agents (escritor)
