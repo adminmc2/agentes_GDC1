@@ -1,0 +1,26 @@
+{
+  "consultar_inventario": {
+    "version": 1,
+    "updated_at": null
+  },
+  "consultar_tarjetas_previas": {
+    "version": 1,
+    "updated_at": null
+  },
+  "consultar_correcciones": {
+    "version": 1,
+    "updated_at": null
+  },
+  "consultar_reglas": {
+    "version": 1,
+    "updated_at": null
+  },
+  "escribir_tarjetas": {
+    "version": 1,
+    "updated_at": null
+  },
+  "exportar_csv": {
+    "version": 1,
+    "updated_at": null
+  }
+}

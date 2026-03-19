@@ -3,6 +3,31 @@
 
 ---
 
+## [v8.5g — 2026-03-19] — Editor de código fuente de herramientas + versionado
+
+### Nuevo — Backend (diagrama.py)
+- Función `get_tool_versions()`: lee/inicializa versiones por tool desde sidecar JSON
+- Función `save_tool_source()`: edita una clase en `tools.py` con validación de sintaxis (`compile()`), backup automático y verificación de estructura
+- Endpoint `POST /api/tool_sources/update` → guarda código editado, incrementa versión
+- Constantes `TOOL_VERSIONS_FILE`, `TOOLS_BACKUP`
+
+### Modificado — Backend (diagrama.py)
+- `GET /api/tool_sources` ahora retorna `{name: {source, version, updated_at}}` en vez de `{name: source_string}`
+
+### Nuevo — Dashboard (web/index.html)
+- **Editor de código por tool**: textarea monoespaciado con botones "Editar código" / "Guardar" / "Cancelar"
+- **Badge de versión** (`vN`) visible junto al nombre de cada herramienta, se actualiza al guardar
+- **Mensajes de error**: errores de sintaxis del backend se muestran en rojo bajo el editor
+- CSS: `.tool-source-edit`, `.tool-version-badge`, `.tool-error-msg`
+- JS: `toggleToolView()`, `startToolEdit()`, `cancelToolEdit()`, `saveToolSource()`
+
+### Seguridad
+- Validación de sintaxis Python (`compile()`) antes de escribir al disco
+- Backup automático (`tools.py.backup`) antes de cada escritura
+- Verificación de que el nº de clases no cambia tras la reconstrucción
+
+---
+
 ## [v8.5f — 2026-03-19] — Visor de código fuente de herramientas
 
 ### Nuevo — Backend (diagrama.py)

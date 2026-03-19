@@ -5,11 +5,13 @@ Genera diagramas Mermaid desde el estado real del proyecto.
 Uso: python3 diagrama.py -> http://127.0.0.1:8080
 """
 
+import datetime
 import http.server
 import json
 import hashlib
 import os
 import re
+import shutil
 import subprocess
 import sys
 import threading
@@ -832,12 +834,16 @@ def load_html_template():
     return HTML_FILE.read_text(encoding="utf-8")
 
 
+TOOLS_FILE = PROJECT / "scripts" / "crewai" / "tools.py"
+TOOL_VERSIONS_FILE = PROJECT / "scripts" / "crewai" / "tool_versions.json"
+TOOLS_BACKUP = PROJECT / "scripts" / "crewai" / "tools.py.backup"
+
+
 def get_tool_sources():
     """Lee tools.py y extrae el código fuente de cada clase tool."""
-    tools_file = PROJECT / "scripts" / "crewai" / "tools.py"
-    if not tools_file.exists():
+    if not TOOLS_FILE.exists():
         return {}
-    text = tools_file.read_text(encoding="utf-8")
+    text = TOOLS_FILE.read_text(encoding="utf-8")
     parts = re.split(r"(?=^class \w+\(BaseTool\))", text, flags=re.MULTILINE)
     result = {}
     for part in parts:
@@ -845,6 +851,70 @@ def get_tool_sources():
         if m:
             result[m.group(1)] = part.strip()
     return result
+
+
+def get_tool_versions():
+    """Lee versiones por tool del sidecar JSON. Inicializa si no existe."""
+    if TOOL_VERSIONS_FILE.exists():
+        return json.loads(TOOL_VERSIONS_FILE.read_text(encoding="utf-8"))
+    sources = get_tool_sources()
+    versions = {}
+    for name in sources:
+        versions[name] = {"version": 1, "updated_at": None}
+    TOOL_VERSIONS_FILE.write_text(
+        json.dumps(versions, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return versions
+
+
+def save_tool_source(tool_name, new_source):
+    """Guarda código editado de un tool. Retorna (ok, version_o_error)."""
+    if not TOOLS_FILE.exists():
+        return False, "tools.py not found"
+
+    text = TOOLS_FILE.read_text(encoding="utf-8")
+    parts = re.split(r"(?=^class \w+\(BaseTool\))", text, flags=re.MULTILINE)
+
+    preamble = parts[0]
+    classes = parts[1:]
+
+    target_idx = None
+    for i, part in enumerate(classes):
+        m = re.search(r'name:\s*str\s*=\s*["\'](\w+)["\']', part)
+        if m and m.group(1) == tool_name:
+            target_idx = i
+            break
+
+    if target_idx is None:
+        return False, f"Tool '{tool_name}' not found in tools.py"
+
+    classes[target_idx] = new_source.strip()
+
+    reconstructed = preamble.rstrip("\n") + "\n\n\n" + "\n\n\n".join(
+        c.strip() for c in classes
+    ) + "\n"
+
+    try:
+        compile(reconstructed, "tools.py", "exec")
+    except SyntaxError as e:
+        return False, f"Error de sintaxis: {e.msg} (línea {e.lineno})"
+
+    recheck = re.split(r"(?=^class \w+\(BaseTool\))", reconstructed, flags=re.MULTILINE)
+    if len(recheck) - 1 != len(classes):
+        return False, "La estructura de clases cambió — operación cancelada"
+
+    shutil.copy2(TOOLS_FILE, TOOLS_BACKUP)
+    TOOLS_FILE.write_text(reconstructed, encoding="utf-8")
+
+    versions = get_tool_versions()
+    tv = versions.get(tool_name, {"version": 0, "updated_at": None})
+    tv["version"] += 1
+    tv["updated_at"] = datetime.datetime.now().isoformat()
+    versions[tool_name] = tv
+    TOOL_VERSIONS_FILE.write_text(
+        json.dumps(versions, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return True, tv["version"]
 
 
 class Handler(http.server.BaseHTTPRequestHandler):
@@ -911,8 +981,15 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(AVAILABLE_MODELS, ensure_ascii=False))
         elif parsed.path == "/api/tool_sources":
+            sources = get_tool_sources()
+            versions = get_tool_versions()
+            merged = {}
+            for name, src in sources.items():
+                v = versions.get(name, {"version": 1, "updated_at": None})
+                merged[name] = {"source": src, "version": v["version"],
+                                "updated_at": v["updated_at"]}
             self._respond(200, "application/json; charset=utf-8",
-                          json.dumps(get_tool_sources(), ensure_ascii=False))
+                          json.dumps(merged, ensure_ascii=False))
         elif parsed.path == "/api/trazas":
             limit = int(qs.get("limit", [20])[0])
             self._respond(200, "application/json; charset=utf-8",
@@ -969,6 +1046,16 @@ class Handler(http.server.BaseHTTPRequestHandler):
             delete_regla(body["id"])
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps({"ok": True}))
+        elif parsed.path == "/api/tool_sources/update":
+            tool_name = body.get("tool_name", "")
+            source = body.get("source", "")
+            ok, result = save_tool_source(tool_name, source)
+            if ok:
+                self._respond(200, "application/json; charset=utf-8",
+                              json.dumps({"ok": True, "version": result}))
+            else:
+                self._respond(400, "application/json; charset=utf-8",
+                              json.dumps({"ok": False, "error": result}, ensure_ascii=False))
         elif parsed.path == "/api/agente/run":
             agente = body.get("agente", "recurvo")
             unidad = body.get("unidad", 3)

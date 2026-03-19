@@ -110,6 +110,10 @@ main { overflow-y: auto; padding: 24px; }
 .tool-chevron { font-size: 10px; color: var(--md-on-surface-variant); transition: transform .2s; display: inline-block; transform: rotate(-90deg); }
 .tool-chevron.tool-open { transform: rotate(0deg); }
 .tool-source { display: none; margin: 4px 0 12px 24px; padding: 12px 16px; background: var(--md-surface-variant); border: 1px solid var(--md-outline-variant); border-radius: 8px; font-size: 12px; line-height: 1.5; overflow-x: auto; white-space: pre; font-family: 'SF Mono', Consolas, 'Courier New', monospace; max-height: 400px; overflow-y: auto; color: var(--md-on-surface); }
+.tool-source-edit { display: none; margin: 4px 0 12px 24px; width: calc(100% - 24px); min-height: 300px; max-height: 500px; padding: 12px 16px; background: var(--md-surface); border: 1px solid var(--md-outline); border-radius: 8px; font-size: 12px; line-height: 1.5; resize: vertical; font-family: 'SF Mono', Consolas, 'Courier New', monospace; color: var(--md-on-surface); tab-size: 4; }
+.tool-source-edit:focus { border-color: var(--md-primary); outline: 2px solid rgba(125,116,50,.25); }
+.tool-version-badge { font-size: 11px; color: var(--md-on-primary); background: var(--md-primary); padding: 2px 8px; border-radius: 12px; font-weight: 600; margin-left: 6px; }
+.tool-error-msg { font-size: 12px; color: var(--md-error); margin-top: 4px; display: none; margin-left: 24px; }
 
 /* === BUTTONS (Material filled + outlined) === */
 .btn { padding: 10px 20px; border-radius: 20px; border: none; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all .2s; letter-spacing: .2px; }
@@ -647,6 +651,64 @@ async function loadToolSources() {
     try { const r = await fetch('/api/tool_sources'); toolSources = await r.json(); }
     catch(e) { toolSources = {}; }
 }
+function toggleToolView(i) {
+    const src = document.getElementById('tool-src-'+i);
+    const edit = document.getElementById('tool-edit-'+i);
+    const actions = document.getElementById('tool-actions-'+i);
+    const chev = document.getElementById('tool-chev-'+i);
+    const isOpen = src.style.display==='block' || edit.style.display==='block';
+    if (isOpen) {
+        src.style.display='none'; edit.style.display='none'; actions.style.display='none';
+        chev.classList.remove('tool-open');
+    } else {
+        src.style.display='block'; actions.style.display='block';
+        chev.classList.add('tool-open');
+    }
+}
+function startToolEdit(i, toolName) {
+    document.getElementById('tool-src-'+i).style.display='none';
+    document.getElementById('tool-edit-'+i).style.display='block';
+    document.getElementById('btn-edit-tool-'+i).style.display='none';
+    document.getElementById('btn-save-tool-'+i).style.display='';
+    document.getElementById('btn-cancel-tool-'+i).style.display='';
+    document.getElementById('tool-error-'+i).style.display='none';
+}
+function cancelToolEdit(i, toolName) {
+    const ts = toolSources[toolName] || {};
+    document.getElementById('tool-edit-'+i).value = ts.source || '';
+    document.getElementById('tool-edit-'+i).style.display='none';
+    document.getElementById('tool-src-'+i).style.display='block';
+    document.getElementById('btn-edit-tool-'+i).style.display='';
+    document.getElementById('btn-save-tool-'+i).style.display='none';
+    document.getElementById('btn-cancel-tool-'+i).style.display='none';
+    document.getElementById('tool-error-'+i).style.display='none';
+}
+async function saveToolSource(i, toolName) {
+    const source = document.getElementById('tool-edit-'+i).value;
+    const errorEl = document.getElementById('tool-error-'+i);
+    errorEl.style.display='none';
+    try {
+        const r = await fetch('/api/tool_sources/update', {
+            method:'POST', headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({tool_name: toolName, source: source})
+        });
+        const d = await r.json();
+        if (d.ok) {
+            toolSources[toolName].source = source;
+            toolSources[toolName].version = d.version;
+            document.getElementById('tool-src-'+i).innerHTML = '<code>'+source.replace(/</g,'&lt;')+'</code>';
+            document.getElementById('tool-ver-'+i).textContent = 'v'+d.version;
+            cancelToolEdit(i, toolName);
+            showSaved('saved-tool-'+i);
+        } else {
+            errorEl.textContent = d.error || 'Error al guardar';
+            errorEl.style.display='block';
+        }
+    } catch(e) {
+        errorEl.textContent = 'Error de conexión';
+        errorEl.style.display='block';
+    }
+}
 async function savePipeline() {
     let ok = true;
     for (let i = 0; i < crewAgents.length; i++) {
@@ -728,16 +790,30 @@ async function renderAgente() {
         </div></div>
         <div class="section text-card" id="sec-ag-tools"><div class="section-header" onclick="toggleSection('sec-ag-tools')"><h2>Herramientas (${ag.tools.length})</h2><span class="chevron">&#9660;</span></div>
         <div class="section-body">
-            ${ag.tools.map((t,i) => `<div style="margin-bottom:8px">
-                <div class="config-row" style="align-items:center;cursor:pointer" onclick="const s=document.getElementById('tool-src-${i}');s.style.display=s.style.display==='none'?'block':'none';this.querySelector('.tool-chevron').classList.toggle('tool-open')">
+            ${ag.tools.map((t,i) => {
+                const ts = toolSources[t.name] || {};
+                const src = ts.source || 'Código no disponible';
+                const ver = ts.version || 1;
+                return `<div style="margin-bottom:12px" id="tool-container-${i}">
+                <div class="config-row" style="align-items:center;cursor:pointer" onclick="toggleToolView(${i})">
                     <div style="min-width:180px;display:flex;align-items:center;gap:6px">
-                        <span class="tool-chevron">&#9660;</span>
+                        <span class="tool-chevron" id="tool-chev-${i}">&#9660;</span>
                         <strong>${t.name}</strong>
+                        <span class="tool-version-badge" id="tool-ver-${i}">v${ver}</span>
                     </div>
                     <div style="flex:1"><input class="config-input cfg-tools" disabled id="ed-tool-desc-${i}" value="${esc(t.desc)}" onclick="event.stopPropagation()"></div>
                 </div>
-                <pre class="tool-source" id="tool-src-${i}"><code>${esc(toolSources[t.name] || 'Código no disponible')}</code></pre>
-            </div>`).join('')}
+                <pre class="tool-source" id="tool-src-${i}"><code>${esc(src)}</code></pre>
+                <textarea class="tool-source-edit" id="tool-edit-${i}" onclick="event.stopPropagation()">${esc(src)}</textarea>
+                <div id="tool-error-${i}" class="tool-error-msg"></div>
+                <div id="tool-actions-${i}" style="display:none;margin:4px 0 0 24px;padding:8px 0;display:none">
+                    <button class="btn btn-secondary btn-sm" id="btn-edit-tool-${i}" onclick="event.stopPropagation();startToolEdit(${i},'${t.name}')">Editar código</button>
+                    <button class="btn btn-primary btn-sm" id="btn-save-tool-${i}" onclick="event.stopPropagation();saveToolSource(${i},'${t.name}')" style="display:none">Guardar</button>
+                    <button class="btn btn-secondary btn-sm" id="btn-cancel-tool-${i}" onclick="event.stopPropagation();cancelToolEdit(${i},'${t.name}')" style="display:none">Cancelar</button>
+                    <span class="saved-toast" id="saved-tool-${i}">Guardado</span>
+                </div>
+            </div>`;
+            }).join('')}
             <div class="save-bar">
                 <span class="saved-toast" id="saved-tools">Guardado</span>
                 <button class="btn btn-secondary btn-sm" id="btn-edit-tools" onclick="toggleCfgEdit('tools',true)">Editar</button>
