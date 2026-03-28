@@ -22,8 +22,8 @@ prompts:
       REGLAS CRÍTICAS:
       - Solo formas genéricas: singular masculino/femenino, NUNCA plurales.
       - Sílaba tónica: sin guiones, tónica en MAYÚSCULAS (aBUElo, no a-BUE-lo).
-      - Combos: exactamente 4, variados (no solo posesivos).
-      - Traducciones: las 7 lenguas obligatorias.
+      - Combos: exactamente 3, variados (no solo posesivos).
+      - Traducciones: las 9 lenguas obligatorias (EN, FR, PT, AL, PL, NL, GR, TR, CZ).
 
 providers:
   - id: "script:python3 provider_crewai.py"

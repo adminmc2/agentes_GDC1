@@ -121,7 +121,7 @@ def evaluar_silaba_tonica(silaba):
 
 def evaluar_combos(combos):
     """Evalúa los combos de una tarjeta.
-    Reglas: exactamente 4, sin repetidos, no vacíos.
+    Reglas: exactamente 3, sin repetidos, no vacíos.
     """
     if not combos or not isinstance(combos, list):
         return {"ok": False, "count": 0, "repetidos": 0, "vacios": 0}
@@ -129,7 +129,7 @@ def evaluar_combos(combos):
     unicos = set(c.lower().strip() for c in combos if c)
     repetidos = len([c for c in combos if c]) - len(unicos)
     return {
-        "ok": len(combos) == 4 and vacios == 0 and repetidos == 0,
+        "ok": len(combos) == 3 and vacios == 0 and repetidos == 0,
         "count": len(combos),
         "repetidos": repetidos,
         "vacios": vacios,
@@ -179,7 +179,7 @@ def evaluar_tarjetas(tarjetas):
     silabas_con_guiones = 0
     silabas_vacias = 0
     combos_ok = 0
-    combos_no_4 = 0
+    combos_no_3 = 0
     combos_repetidos = 0
     traducciones_completas = 0
     traducciones_parciales = 0
@@ -213,8 +213,8 @@ def evaluar_tarjetas(tarjetas):
         if combo_eval["ok"]:
             combos_ok += 1
         else:
-            if combo_eval["count"] != 4:
-                combos_no_4 += 1
+            if combo_eval["count"] != 3:
+                combos_no_3 += 1
             if combo_eval["repetidos"] > 0:
                 combos_repetidos += 1
             errores_detalle.append({"palabra": palabra, "tipo": "combo", "detalle": f"combos={combo_eval['count']}, rep={combo_eval['repetidos']}"})
@@ -276,7 +276,7 @@ def evaluar_tarjetas(tarjetas):
             "silabas_con_guiones": silabas_con_guiones,
             "silabas_vacias": silabas_vacias,
             "combos_ok": combos_ok,
-            "combos_no_4": combos_no_4,
+            "combos_no_3": combos_no_3,
             "combos_repetidos": combos_repetidos,
             "traducciones_completas": traducciones_completas,
             "traducciones_parciales": traducciones_parciales,
@@ -358,7 +358,7 @@ def print_report(metricas):
     print(f"\n  Detalle:")
     print(f"    Plurales no deseados:     {cont['plurales']}")
     print(f"    Sílabas con guiones:      {cont['silabas_con_guiones']}")
-    print(f"    Combos ≠ 4:               {cont['combos_no_4']}")
+    print(f"    Combos ≠ 3:               {cont['combos_no_3']}")
     print(f"    Combos repetidos:         {cont['combos_repetidos']}")
     print(f"    Traducciones incompletas: {cont['traducciones_parciales']}")
     print(f"    Reglas vacías:            {cont['reglas_vacias']}")

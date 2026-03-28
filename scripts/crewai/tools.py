@@ -24,8 +24,9 @@ def _get_conn():
 class ConsultarInventario(BaseTool):
     name: str = "consultar_inventario"
     description: str = (
-        "Consulta el inventario completo de una unidad en la BD: "
-        "páginas, actividades, respuestas y contenidos del índice. "
+        "Consulta el inventario de una unidad en la BD: "
+        "páginas, sección, contenido lingüístico, texto de actividades, "
+        "respuestas y contenidos del índice. "
         "Parámetro: número de unidad (ej: 3)."
     )
 
@@ -42,29 +43,23 @@ class ConsultarInventario(BaseTool):
         row = cur.fetchone()
         indice = row["contenidos_indice"] if row else {}
 
-        # Páginas + actividades + respuestas
+        # Páginas + actividades + respuestas (solo campos relevantes para vocabulario)
         cur.execute(
             """
             SELECT
                 p.numero AS numero_pagina,
                 p.seccion,
-                a.numero AS numero_actividad,
-                a.tipo,
-                a.destreza,
                 a.contenido_linguistico,
-                a.instruccion,
                 a.texto_completo,
-                a.ejemplo_libro,
                 array_agg(r.texto ORDER BY r.orden)
                     FILTER (WHERE r.id IS NOT NULL) AS respuestas
             FROM paginas p
             JOIN actividades a ON a.pagina_id = p.id
             LEFT JOIN respuestas r ON r.actividad_id = a.id
             WHERE p.unidad_id = (SELECT id FROM unidades WHERE numero = %s)
-            GROUP BY p.numero, p.seccion, a.numero,
-                     a.tipo, a.destreza, a.contenido_linguistico,
-                     a.instruccion, a.texto_completo, a.ejemplo_libro
-            ORDER BY p.numero, a.numero
+            GROUP BY p.numero, p.seccion,
+                     a.contenido_linguistico, a.texto_completo
+            ORDER BY p.numero
             """,
             (unidad,),
         )
@@ -95,10 +90,10 @@ class ConsultarTarjetasPrevias(BaseTool):
         cur = conn.cursor(cursor_factory=RealDictCursor)
         cur.execute(
             """
-            SELECT palabra, genero, campo_semantico, silaba_tonica,
-                   regla, ejemplo, frecuencia, combos,
-                   trad_it, trad_fr, trad_pt_br, trad_en,
-                   trad_cs, trad_pl, trad_tr,
+            SELECT articulo, palabra, campo_semantico, silaba_tonica,
+                   gramapop, ejemplo, combos,
+                   trad_en, trad_fr, trad_pt, trad_al,
+                   trad_pl, trad_nl, trad_gr, trad_tr, trad_cz,
                    unidad_origen
             FROM tarjetas_vocabulario
             WHERE unidad_origen < %s
@@ -179,10 +174,10 @@ class EscribirTarjetas(BaseTool):
     description: str = (
         "Escribe tarjetas de vocabulario validadas en la BD. "
         "Parámetro: JSON string con array de tarjetas. "
-        "Cada tarjeta debe tener: palabra, genero, color_genero, silaba_tonica, "
-        "regla, campo_semantico, color_campo, ejemplo, frecuencia, "
-        "combos (array de 4 strings), trad_it, trad_fr, trad_pt_br, trad_en, "
-        "trad_cs, trad_pl, trad_tr, seccion, pagina, nivel_jerarquia, estado, "
+        "Cada tarjeta debe tener: articulo, palabra, silaba_tonica, "
+        "gramapop, campo_semantico, color_campo, ejemplo, "
+        "combos (array de 3 strings), trad_en, trad_fr, trad_pt, trad_al, "
+        "trad_pl, trad_nl, trad_gr, trad_tr, trad_cz, seccion, pagina, nivel_jerarquia, estado, "
         "unidad_origen, unidad."
     )
 
@@ -209,37 +204,37 @@ class EscribirTarjetas(BaseTool):
             cur.execute(
                 """
                 INSERT INTO tarjetas_vocabulario (
-                    unidad_id, seccion, pagina, palabra, genero, color_genero,
-                    silaba_tonica, regla, campo_semantico, color_campo,
-                    ejemplo, frecuencia, combos,
-                    trad_it, trad_fr, trad_pt_br, trad_en,
-                    trad_cs, trad_pl, trad_tr,
+                    unidad_id, seccion, pagina, articulo, palabra,
+                    silaba_tonica, gramapop, campo_semantico, color_campo,
+                    ejemplo, combos,
+                    trad_en, trad_fr, trad_pt, trad_al,
+                    trad_pl, trad_nl, trad_gr, trad_tr, trad_cz,
                     nivel_jerarquia, estado, unidad_origen
                 ) VALUES (
-                    %s, %s, %s, %s, %s, %s,
-                    %s, %s, %s,
+                    %s, %s, %s, %s, %s,
                     %s, %s, %s, %s,
+                    %s, %s,
                     %s, %s, %s, %s,
-                    %s, %s, %s,
+                    %s, %s, %s, %s, %s,
                     %s, %s, %s
                 )
                 ON CONFLICT (palabra, unidad_origen) DO UPDATE SET
-                    genero = EXCLUDED.genero,
-                    color_genero = EXCLUDED.color_genero,
+                    articulo = EXCLUDED.articulo,
                     silaba_tonica = EXCLUDED.silaba_tonica,
-                    regla = EXCLUDED.regla,
+                    gramapop = EXCLUDED.gramapop,
                     campo_semantico = EXCLUDED.campo_semantico,
                     color_campo = EXCLUDED.color_campo,
                     ejemplo = EXCLUDED.ejemplo,
-                    frecuencia = EXCLUDED.frecuencia,
                     combos = EXCLUDED.combos,
-                    trad_it = EXCLUDED.trad_it,
-                    trad_fr = EXCLUDED.trad_fr,
-                    trad_pt_br = EXCLUDED.trad_pt_br,
                     trad_en = EXCLUDED.trad_en,
-                    trad_cs = EXCLUDED.trad_cs,
+                    trad_fr = EXCLUDED.trad_fr,
+                    trad_pt = EXCLUDED.trad_pt,
+                    trad_al = EXCLUDED.trad_al,
                     trad_pl = EXCLUDED.trad_pl,
+                    trad_nl = EXCLUDED.trad_nl,
+                    trad_gr = EXCLUDED.trad_gr,
                     trad_tr = EXCLUDED.trad_tr,
+                    trad_cz = EXCLUDED.trad_cz,
                     nivel_jerarquia = EXCLUDED.nivel_jerarquia,
                     estado = EXCLUDED.estado,
                     fecha_modificacion = NOW()
@@ -248,23 +243,23 @@ class EscribirTarjetas(BaseTool):
                     unidad_id,
                     t.get("seccion", "vocabulario"),
                     t.get("pagina"),
+                    t.get("articulo"),
                     t["palabra"],
-                    t.get("genero"),
-                    t.get("color_genero"),
                     t.get("silaba_tonica"),
-                    t.get("regla"),
+                    t.get("gramapop"),
                     t.get("campo_semantico"),
                     t.get("color_campo"),
                     t.get("ejemplo"),
-                    t.get("frecuencia"),
                     Json(t.get("combos", [])),
-                    t.get("trad_it"),
-                    t.get("trad_fr"),
-                    t.get("trad_pt_br"),
                     t.get("trad_en"),
-                    t.get("trad_cs"),
+                    t.get("trad_fr"),
+                    t.get("trad_pt"),
+                    t.get("trad_al"),
                     t.get("trad_pl"),
+                    t.get("trad_nl"),
+                    t.get("trad_gr"),
                     t.get("trad_tr"),
+                    t.get("trad_cz"),
                     t.get("nivel_jerarquia", 1),
                     t.get("estado", "nueva"),
                     t.get("unidad_origen", unidad_num),
@@ -291,11 +286,11 @@ class ExportarCSV(BaseTool):
         cur = conn.cursor(cursor_factory=RealDictCursor)
         cur.execute(
             """
-            SELECT palabra, genero, color_genero, silaba_tonica, regla,
-                   campo_semantico, color_campo, ejemplo, frecuencia,
+            SELECT articulo, palabra, silaba_tonica,
+                   campo_semantico, color_campo, ejemplo, gramapop,
                    combos,
-                   trad_it, trad_fr, trad_pt_br, trad_en,
-                   trad_cs, trad_pl, trad_tr
+                   trad_en, trad_fr, trad_pt, trad_al,
+                   trad_pl, trad_nl, trad_gr, trad_tr, trad_cz
             FROM tarjetas_vocabulario
             WHERE unidad_id = (SELECT id FROM unidades WHERE numero = %s)
             ORDER BY campo_semantico, palabra
@@ -310,35 +305,37 @@ class ExportarCSV(BaseTool):
 
         # Build CSV
         headers = [
-            "palabra", "genero", "color_genero", "silaba_tonica", "regla",
-            "campo_semantico", "color_campo", "ejemplo", "frecuencia",
-            "combo1", "combo2", "combo3", "combo4",
-            "IT", "FR", "PT_BR", "EN", "CS", "PL", "TR",
+            "articulo", "palabra", "silaba_tonica",
+            "campo_semantico", "color_campo", "ejemplo", "gramapop",
+            "combo1_estructura", "combo1_ejemplo",
+            "combo2_estructura", "combo2_ejemplo",
+            "combo3_estructura", "combo3_ejemplo",
+            "EN", "FR", "PT", "AL", "PL", "NL", "GR", "TR", "CZ",
         ]
 
         lines = [";".join(headers)]
         for t in tarjetas:
             combos = t["combos"] or []
-            while len(combos) < 4:
+            while len(combos) < 3:
                 combos.append("")
             row = [
+                t.get("articulo") or "",
                 t["palabra"] or "",
-                t["genero"] or "",
-                t["color_genero"] or "",
                 t["silaba_tonica"] or "",
-                t["regla"] or "",
                 t["campo_semantico"] or "",
                 t["color_campo"] or "",
                 t["ejemplo"] or "",
-                str(t["frecuencia"] or ""),
-                combos[0], combos[1], combos[2], combos[3],
-                t["trad_it"] or "",
-                t["trad_fr"] or "",
-                t["trad_pt_br"] or "",
-                t["trad_en"] or "",
-                t["trad_cs"] or "",
-                t["trad_pl"] or "",
-                t["trad_tr"] or "",
+                t.get("gramapop") or t.get("regla") or "",
+                combos[0], "", combos[1], "", combos[2], "",
+                t.get("trad_en") or "",
+                t.get("trad_fr") or "",
+                t.get("trad_pt") or t.get("trad_pt_br") or "",
+                t.get("trad_al") or "",
+                t.get("trad_pl") or "",
+                t.get("trad_nl") or "",
+                t.get("trad_gr") or "",
+                t.get("trad_tr") or "",
+                t.get("trad_cz") or t.get("trad_cs") or "",
             ]
             lines.append(";".join(row))
 

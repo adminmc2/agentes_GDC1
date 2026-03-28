@@ -3,6 +3,19 @@
 
 ---
 
+## [v8.5h — 2026-03-19] — Optimización consultar_inventario para vocabulario
+
+### Modificado — Tool `consultar_inventario` (tools.py)
+- **Campos eliminados del SELECT:** `tipo`, `destreza`, `instruccion`, `ejemplo_libro`, `numero_actividad`
+- **Campos que se mantienen:** `numero_pagina`, `seccion`, `contenido_linguistico`, `texto_completo`, `respuestas`, `contenidos_indice`
+- **Justificación:** Los campos eliminados son metadatos pedagógicos (formato de ejercicio, habilidad, instrucciones al alumno) que no contienen vocabulario extraíble. El vocabulario está en `texto_completo` y `respuestas`; la clasificación semántica viene de `contenido_linguistico` y `contenidos_indice`
+- **GROUP BY simplificado:** solo 4 campos en vez de 9
+- **description actualizada:** refleja los campos que realmente devuelve
+- **Reducción estimada:** ~60% menos tokens por ejecución del inventario
+- **Nota:** Este cambio aplica solo al crew Recurvo (vocabulario). Crews futuros tendrán sus propias herramientas
+
+---
+
 ## [v8.5g — 2026-03-19] — Editor de código fuente de herramientas + versionado
 
 ### Nuevo — Backend (diagrama.py)
