@@ -3,6 +3,350 @@
 
 ---
 
+## [v8.21 — 2026-04-15] — Rediseño esquema comunicativo Decir la hora (U03)
+
+### Modificado — Tarjeta "Decir la hora" (U03-comunicacion.md, Caja 2)
+- **Rediseñado completo** del esquema comunicativo. Formato anterior: diagrama de reloj ASCII + fórmulas con metalenguaje (`Es la una (+ y/menos + fracción)`). Formato nuevo: tarjeta de 2 caras coherente con "Hablar de la familia"
+- **CARA A:** modelo de frases completas + reglas mínimas (Propuesta 3 de las 3 presentadas). Incluye explicación visual de las dos zonas del reloj (Y / MENOS), regla Es/Son, 6 ejemplos de horas reales y lista de opciones con bullets
+- **CARA B:** estructura integrada con diálogo modelo + 3 momentos de interacción con sus bullets de opciones propios:
+  1. Decir la hora actual (con opciones de números y fracciones)
+  2. Preguntar por un evento (con opciones de eventos: recreo, clase, película, comida, partido, concierto)
+  3. Quedar con un amigo (con respuestas alternativas)
+  Cierre con bloque "¡Atención!" que ataja la dificultad previsible documentada (distinción Es/Son + A la/A las)
+- **Añadidos metadatos técnicos** en cursiva: colores (fondo verde pastel, recuadro azul acero Tiempo, badge teal Interacción oral), base teórica (Sentence Builder Conti/EPI, Protocolo A C1-C5, worked example, weaning off)
+- **Base pedagógica:** Píldora formativa 3.6 (diapositivas 1-5), especialmente diapositivas 2 (contraste es/son), 3 (Sentence Builder) y 4 (¿A qué hora es...?)
+
+---
+
+## [v8.20 — 2026-04-11] — Revertido lila como decisión + restaurada sección 7 (decisión pendiente) en el PDF
+
+### Corrección de un error de la v8.14 y v8.18
+En versiones anteriores se integró el color lila claro `#D4B5E0` como solución única para las profesiones con moción de género, eliminando la sección 7 "Decisión pendiente" del PDF. Eso fue un error: la elección del color es una **decisión editorial pendiente** con dos propuestas (A: lila / B: banda lateral), no una decisión tomada.
+
+### Cambios
+
+**1. En los archivos de datos y documentación: color marcado como `PENDIENTE`**
+- `datos/tarjetas/U03-profesiones.csv` + espejo: campo `color_fondo` de las 7 profesiones con moción (camionero, enfermero, agricultor, iluminador, decorador, maquillador, actor) cambiado de `#D4B5E0` a `PENDIENTE`.
+- `unidades/U03/U03-vocabulario.md`: columna "Género" de las 3 profesiones con moción ahora dice `M (moción — color PENDIENTE)` en lugar de `M (lila)`.
+- `.claude/rules/criterios-generacion-tarjetas.md`: sección 4 "Profesiones con moción de género" indica que el color está pendiente de decisión editorial y que el campo `color_fondo` aparece como `PENDIENTE` en las CSVs hasta que se tome la decisión.
+
+**2. En el PDF editorial: restaurada sección 7 con las dos propuestas**
+- **Sección 6.4** rediseñada: la fila de "Moción de género" ya no muestra lila como color asignado, sino "PENDIENTE" con referencia a la sección 7.
+- **Sección 6.5** (aplicación a tarjetas de U03): las 7 profesiones con moción tienen fondo marcado como "PENDIENTE".
+- **Sección 7 restaurada:** decisión pendiente entre Propuesta A (lila `#D4B5E0`) y Propuesta B (color principal + banda lateral del género opuesto). Incluye ventajas, desventajas y tabla comparativa.
+- **Portada actualizada:** 4 acciones a realizar (contenido, nomenclatura, sistema de colores, decisión de color para moción).
+- **Caja de validación final:** añadida la pregunta de decisión entre propuesta A o B con casillas de verificación.
+- **PDF regenerado:** 19 páginas (incluye la sección 7 de nuevo).
+
+### Sin cambios
+- La estructura del gramapop con 4 filas para profesiones con moción (v8.18) se mantiene: está decidida y es correcta.
+- La asignación de colores de las demás tarjetas (azul celeste solo M, salmón cálido solo F, gris azulado género común, verde menta verbos) también se mantiene.
+
+---
+
+## [v8.19 — 2026-04-11] — Etiquetas abreviadas del gramapop con marca de género
+
+### Cambio — Propuesta A: etiquetas abreviadas con marca de género
+Las etiquetas de las filas del gramapop se abrevian para ocupar menos espacio en la tarjeta. Las filas de caso 1 (Familia) y caso 3 (sin moción) ahora incluyen la marca de género (M/F) que antes faltaba.
+
+**Moción de género (profesiones con 4 filas):**
+| Antes | Ahora |
+|---|---|
+| `Masculino singular:` | `M. sing.:` |
+| `Masculino plural:` | `M. pl.:` |
+| `Femenino singular:` | `F. sing.:` |
+| `Femenino plural:` | `F. pl.:` |
+
+**Sin moción (Familia y resto), con indicación de género:**
+| Antes | Ahora |
+|---|---|
+| `Singular: el/un X` | `Sing. M: el/un X` |
+| `Plural: los/unos X` | `Pl. M: los/unos X` |
+| `Singular: la/una X` | `Sing. F: la/una X` |
+| `Plural: las/unas X` | `Pl. F: las/unas X` |
+
+**Género común (-ista, -ante), sin marca de género:**
+| Antes | Ahora |
+|---|---|
+| `Singular: el/la/un/una X` | `Sing.: el/la/un/una X` |
+| `Plural: los/las/unos/unas X` | `Pl.: los/las/unos/unas X` |
+
+### Archivos actualizados
+- Los 5 CSV de `datos/tarjetas/` y sus espejos `*-indesign.txt`
+- `unidades/U03/U03-vocabulario.md`
+- `.claude/rules/criterios-generacion-tarjetas.md`
+- `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex` + PDF regenerado
+
+---
+
+## [v8.18 — 2026-04-11] — Rediseño del gramapop: Contrario solo en Familia + 4 filas de moción en Profesiones + eliminación total de "Nota:"
+
+### Cambios estructurales
+
+**1. La fila `Contrario` es ahora exclusiva del campo semántico Familia**
+Solo las tarjetas de parentesco (padre/madre, hermano/hermana, hija única/hijo único, gemelas/gemelos, etc.) la usan. En Profesiones, Lugares, Escuela y Acciones cotidianas se elimina completamente.
+
+**2. Profesiones con moción de género: 4 filas fijas en lugar de Contrario**
+Las 7 profesiones con moción (camionero, enfermero, agricultor, iluminador, decorador, maquillador, actor) ahora tienen 4 filas en el orden fijo:
+- `Masculino singular` → `Masculino plural` → `Femenino singular` → `Femenino plural`
+- El color de fondo interior es lila claro `#D4B5E0` (moción de género).
+- Siempre empieza por la forma masculina, aunque la tarjeta principal sea femenina.
+
+**3. `enfermera` renombrada a `enfermero`**
+La tarjeta ahora es masculina como las demás profesiones con moción. El campo `articulo` pasa de `la` a `el`, `silaba_tonica` de `en-fer-ME-ra` a `en-fer-ME-ro`, `color_fondo` de `#EAA095` (salmón) a `#D4B5E0` (lila). El ejemplo contextualizado mantiene `"La madre de Javier es enfermera."` porque así aparece en el libro.
+
+**4. La palabra "Nota:" desaparece del gramapop**
+Ya no hay etiqueta `Nota:` en ningún lugar del campo `gramapop`. La observación final va como texto libre al final del campo, separada por `|`, empezando con mayúscula y sin punto final. Solo aparece la palabra "Nota" en la descripción del principio en el PDF editorial.
+
+**5. El contenido del texto libre final se centra en lo llamativo morfológico u ortográfico**
+Ejemplos:
+- `actor`: `El femenino es irregular: actriz · En el plural, la z cambia a c: actrices`
+- `agricultor`: `Plural masculino en -es`
+- `deberes`: `Usado siempre en plural · singular raro`
+- `curso`: `Aquí significa año escolar` (sin `= course` en inglés)
+
+Las notas en inglés residuales se eliminaron:
+- `hotel`: antes `Plural en -es · ≠ hospital` → ahora `Plural en -es`
+- `hospital`: antes `Plural en -es · ≠ hotel` → ahora `Plural en -es`
+- `curso`: antes `aquí = año escolar (también = course)` → ahora `Aquí significa año escolar`
+
+### Archivos actualizados
+- **`.claude/rules/criterios-generacion-tarjetas.md`:** toda la sección "Reglas de Gramapop" reescrita (nuevas reglas 1-8 con 8 casos cubiertos, orden fijo masculino primero, Contrario solo en Familia, 4 filas en profesiones con moción)
+- **`datos/tarjetas/U03-profesiones.csv`:** 9 tarjetas con el nuevo formato. `enfermera` → `enfermero`. Color `color_fondo` cambiado a `#D4B5E0` en las 7 profesiones con moción
+- **`datos/tarjetas/U03-familia.csv`:** se elimina "Nota:" en todas las notas, capitalizando la primera letra (`"Padres" también = padre + madre`, etc.)
+- **`datos/tarjetas/U03-lugares.csv`:** hotel y hospital sin advertencia `≠`
+- **`datos/tarjetas/U03-escuela.csv`:** curso sin `(también = course)`, deberes sin `Nota:`
+- **Archivos `*-indesign.txt`:** regenerados desde las CSVs
+- **`unidades/U03/U03-vocabulario.md`:** tabla de tarjetas actualizada con las 3 profesiones de moción (4 filas, color lila), enfermero en vez de enfermera. Tabla de plurales mixtos sin columna "Significado" en inglés. Corrección del texto explicativo al profesor que mencionaba "woman/wife"
+- **`datos/tarjetas/U03-vocabulario.csv`:** archivo antiguo marcado como DEPRECATED (usaba esquema obsoleto con columnas Frecuencia/Irregularidad/4 combos y contenía inglés residual)
+- **`materiales/U03-tarjetas-vocabulario-validacion-editorial.tex`:** sección 1 reescrita con 3 ejemplos (Familia con Contrario, Profesiones con 4 filas, sin moción). Las 9 tarjetas de profesiones actualizadas. Hotel/hospital sin `≠`. Curso sin inglés
+- **PDF regenerado con xelatex:** 19 páginas (antes 17)
+
+---
+
+## [v8.17 — 2026-04-11] — Eliminación de todo texto en inglés en notas del gramapop de familia
+
+### Cambio — Nota de la tarjeta `mujer`
+Última nota en inglés en las tarjetas de familia. Cambiada a descripción en español:
+
+| Antes | Ahora |
+|---|---|
+| `Nota: también = woman` | `Nota: también significa mujer adulta (no solo esposa)` |
+
+Con este cambio, ninguna nota del gramapop en el campo semántico Familia contiene texto en inglés. Los 6 plurales mixtos (v8.15) y la nota de doble significado de mujer (v8.17) están todos en español.
+
+### Archivos actualizados
+- `datos/tarjetas/U03-familia.csv` + espejo `-indesign.txt`
+- `unidades/U03/U03-vocabulario.md`
+- `.claude/rules/criterios-generacion-tarjetas.md`
+- `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex` + PDF regenerado (17 páginas)
+
+---
+
+## [v8.16 — 2026-04-11] — Slot de parentesco diferenciado por género en combos de familia
+
+### Cambio — Combos 1 y 3 de las tarjetas de familia
+En los combos que empiezan con artículo definido, el slot `[parentesco]` se sustituye por `[parentesco masculino]` o `[parentesco femenino]` según el género del artículo:
+
+| Antes | Ahora |
+|---|---|
+| `el [parentesco] de [nombre]` | `el [parentesco masculino] de [nombre]` |
+| `la [parentesco] de [nombre]` | `la [parentesco femenino] de [nombre]` |
+| `[nombre] es el [parentesco] de [nombre]` | `[nombre] es el [parentesco masculino] de [nombre]` |
+| `[nombre] es la [parentesco] de [nombre]` | `[nombre] es la [parentesco femenino] de [nombre]` |
+
+El combo 2 `mi/tu/su [parentesco]` no cambia: los posesivos son neutros en género.
+
+### Archivos actualizados
+- `datos/tarjetas/U03-familia.csv` + espejo `-indesign.txt`
+- `.claude/rules/criterios-generacion-tarjetas.md` (sección "Por campo semántico — Familia")
+- `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex` + PDF regenerado (17 páginas)
+
+---
+
+## [v8.15 — 2026-04-11] — Traducciones en español y renombrado de slot [persona] → [nombre]
+
+### Cambio 1 — Notas del gramapop: plurales mixtos en español en vez de inglés
+Los plurales mixtos de términos de parentesco se expresaban con su equivalente en inglés. Ahora se expresan en español usando el patrón `X + Y`:
+
+| Antes | Ahora |
+|---|---|
+| `"padres" también = parents` | `"padres" también = padre + madre` |
+| `"hermanos" también = brothers + sisters` | `"hermanos" también = hermano + hermana` |
+| `"hijos" también = children` | `"hijos" también = hijo + hija` |
+| `"abuelos" también = grandparents` | `"abuelos" también = abuelo + abuela` |
+| `"tíos" también = uncle(s) and aunt(s)` | `"tíos" también = tío + tía` |
+| `"nietos" también = grandchildren` | `"nietos" también = nieto + nieta` |
+
+### Cambio 2 — Renombrado del slot `[persona]` a `[nombre]`
+En la nomenclatura de combos, el slot `[persona]` se renombra a `[nombre]` (más claro: se refiere a un nombre propio, no a "una persona" como categoría).
+
+### Archivos actualizados
+- `datos/tarjetas/U03-familia.csv` + espejo `-indesign.txt` (ambos cambios)
+- `unidades/U03/U03-vocabulario.md` (ambos cambios)
+- `.claude/rules/criterios-generacion-tarjetas.md` (nomenclatura de combos y reglas de gramapop por tipo)
+- `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex` (ambos cambios)
+- PDF regenerado con xelatex (17 páginas)
+
+Los archivos de profesiones, lugares, escuela y acciones cotidianas no requerían cambios: no usaban `[persona]` (siempre usaban nombres propios directamente en los ejemplos) ni plurales mixtos en inglés.
+
+---
+
+## [v8.14 — 2026-04-10] — Sistema de colores unificado en PDF de validación editorial
+
+### Modificado — `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex`
+- **Portada:** "Se pide al director editorial" → "Acciones a realizar" (3 puntos: validar contenido lingüístico, nomenclatura de combos y sistema de colores)
+- **Sección 6 rediseñada como "Sistema de colores propuesto":** presenta el sistema completo con los 4 niveles de color de forma unificada en lugar de dos propuestas en conflicto:
+  - 6.1. Fondo de la tarjeta según caja (3 colores: Caja 1 rosa, Caja 2 verde, Caja 3 amarillo)
+  - 6.2. Badge de campo semántico (6 colores: Familia, Profesiones, Lugares, Escuela, Acciones cotidianas, Tiempo)
+  - 6.3. Badge de destreza (6 colores: las 6 destrezas del MCER)
+  - 6.4. Fondo interior según género (6 colores: masculino, femenino, género común, moción de género, verbos, invariables)
+  - 6.5. Aplicación a las tarjetas de U03
+- **Color lila claro \#D4B5E0** integrado como solución única para sustantivos con moción de género. Eliminadas las dos propuestas en conflicto (A/B) y la comparativa
+- **Sección 7 eliminada** (era "Decisión pendiente"): el sistema de colores ya no presenta alternativas, es una propuesta única
+- **Caja de validación final** reescrita con checklists de 3 acciones (contenido lingüístico / nomenclatura de combos / sistema de colores) en vez de decisión entre propuestas
+- **PDF regenerado:** 17 páginas con xelatex
+
+---
+
+## [v8.13 — 2026-04-10] — Nomenclatura genérica de combos de vocabulario
+
+### Nuevo — Sistema de notación para combos
+- **Introducida nomenclatura específica** para el campo `combo_estructura`:
+  - `[ ]` = slot sustituible por cualquier palabra de la categoría (`[profesión]`, `[persona]`, `[lugar]`)
+  - `( )` = elemento opcional (`(+ [parentesco])`, `(mi/tu/su)`)
+  - `/` = alternativas cerradas dentro de la misma categoría (`de/como`, `mi/tu/su`)
+  - `+` = concatenación obligatoria entre elementos (`ser + [profesión]`)
+- **Categorías de slot:** `[persona]`, `[parentesco]`, `[profesión]`, `[lugar]`, `[evento]`, `[materia]`, `[ordinal]`, `[verbo]`, `[número]`, `[hora]`
+
+### Modificado — Los combos ahora son genéricos, no específicos
+- **Antes:** `ser + camionero`, `el padre de [nombre]`, `ir a + instituto`
+- **Ahora:** `ser + [profesión]`, `el [parentesco] de [persona]`, `ir a + [lugar]`
+- El campo `combo_ejemplo` sigue siendo una frase real con palabras concretas; solo la `combo_estructura` es ahora genérica
+
+### Modificado — Archivos actualizados
+- **`.claude/rules/criterios-generacion-tarjetas.md`:** nueva sección "Nomenclatura de combos" con la tabla de símbolos, categorías de slot y patrones genéricos por campo semántico
+- **`datos/tarjetas/U03-familia.csv`:** 20 tarjetas con combos genéricos (`el [parentesco] de [persona]`, etc.)
+- **`datos/tarjetas/U03-profesiones.csv`:** 9 tarjetas con `ser + [profesión]`, `trabajar en + [lugar]`, `trabajar de/como + [profesión]`
+- **`datos/tarjetas/U03-lugares.csv`:** 2 tarjetas con `estar en + [lugar]`, `ir a + [lugar]`, `hay + un/una + [lugar]`
+- **`datos/tarjetas/U03-escuela.csv`:** 4 tarjetas con patrones genéricos diferenciados (`[lugar]`, `[materia]`, `[ordinal]`, `[evento]`)
+- **`datos/tarjetas/U03-acciones-cotidianas.csv`:** merendar con `[verbo] + a las + [hora]`, etc.
+- **Archivos `*-indesign.txt`:** regenerados automáticamente desde las CSVs
+
+### Modificado — PDF de validación editorial
+- **`materiales/U03-tarjetas-vocabulario-validacion-editorial.tex`:**
+  - Nueva sección 2 "Nomenclatura de combos" con tabla de símbolos, categorías y ejemplos antes/después
+  - Nuevo comando LaTeX `\tarjetacombos` que muestra los 3 combos de cada tarjeta (estructura genérica + ejemplo concreto)
+  - Todas las tarjetas del PDF actualizadas al nuevo formato con combos visibles
+  - Secciones renumeradas: Familia (3), Profesiones (4), Otros campos (5), Sistema de colores (6), Decisión pendiente (7)
+  - Eliminada columna "Frec." del header de cada tarjeta (coherente con v8.12)
+- **PDF regenerado** con xelatex: 17 páginas (antes 13)
+
+---
+
+## [v8.12 — 2026-04-10] — Eliminación del campo Frecuencia en tarjetas de vocabulario
+
+### Modificado — Se elimina el campo "Frecuencia" / "Frec." del esquema de tarjetas de vocabulario
+- **`unidades/U03/U03-vocabulario.md`:** columna "Frec." eliminada de la tabla markdown. El CSV embebido obsoleto se reemplazó por una referencia al CSV canónico en `datos/tarjetas/`
+- **`unidades/U03/U03-destrezas.md`:** columna "Frec." eliminada. CSV embebido reemplazado por referencia
+- **`agentes/ag-vocabulario.md`:** eliminadas las referencias a Frecuencia en tabla template, instrucciones y formato CSV. Sustituida columna "Regla" por "Gramapop" en el template
+- **`agentes/ag-destrezas.md`:** actualizada la descripción del template para quitar Frecuencia/Irregularidad y añadir Gramapop
+- **`agentes/ag-cultura.md`:** misma actualización
+- **`diseno/crewai-memoria-aprendizaje.md`:** tabla de campos actualizada (eliminado campo Frecuencia y sección "Criterios de cálculo de frecuencia" completa). Tabla de campos actualizada al esquema canónico con articulo, palabra, silaba_tonica, gramapop, combos y 9 traducciones
+- **`unidades/U03/U03-vocabulario-tarjetas.csv`:** archivo antiguo marcado como DEPRECATED con comentario apuntando a los CSVs canónicos en `datos/tarjetas/`
+- **`materiales/U03-tarjetas-vocabulario.tex`:** eliminada la nota "Frec: 3=alta, 2=media, 1=baja" del título de sección. Corregido conteo de tarjetas (18 → 20)
+- **`materiales/U03-tarjetas-vocabulario-poker.tex`:** añadido comentario de DEPRECATED (usa el sistema antiguo con barras de frecuencia)
+
+### Sin cambios
+- Las CSVs canónicas en `datos/tarjetas/*.csv` no tenían columna Frecuencia, así que no requirieron cambios
+- El LaTeX de validación editorial (`materiales/U03-tarjetas-vocabulario-validacion-editorial.tex`) NO se ha tocado por petición del usuario. Se actualizará cuando se hayan hecho todos los cambios al sistema
+- `repertorios/evaluacion.md` mantiene su uso del término "Frecuencia" porque ahí se refiere a frecuencia de errores en actividades, no a tarjetas
+
+---
+
+## [v8.11 — 2026-04-10] — Nueva estructura del gramapop de sustantivos (U03)
+
+### Modificado — Reglas de gramapop (`.claude/rules/criterios-generacion-tarjetas.md`)
+- **Reemplazada la sección "Reglas de Gramapop"** completa. Estructura nueva:
+  - Gramapop de sustantivos con **filas etiquetadas separadas por `|`** dentro del mismo campo de la CSV
+  - 4 etiquetas posibles: `Singular`, `Plural`, `Contrario`, `Nota`
+  - **Reglas de omisión:** si el sustantivo no tiene contrario, la fila se omite completamente (no se pone `—`); si no hay nota, se omite; si es solo plural, se omite la fila Singular
+  - **Artículos determinados + indeterminados** visibles siempre: `el/un hermano`, `los/unos hermanos`, `la/una hermana`, `las/unas hermanas`
+  - **Género común** (-ista, -ante): `el/la/un/una guionista`
+  - **Sin metalenguaje** ("Masculino terminado en -o" eliminado)
+- **Gramapop de verbos simplificado:** la terminación ya está en el infinitivo, así que no se repite. Solo queda tipo de verbo + conjugación + irregularidad
+  - Regular: `Verbo regular · 1.ª conjugación`
+  - Irregular: `Verbo irregular · 1.ª conjugación | Cambio: e → ie (meriendo)`
+- **Reglas por tipo de sustantivo:** 9 casos cubiertos (regulares -o/-a, heterónimos, doble significado, -tor/-dor, género común, consonante, sin par, expresiones compuestas, solo plural)
+- **No aplica a adjetivos todavía** — pendiente de definir en futura versión
+
+### Modificado — Datos de tarjetas (datos/tarjetas/)
+- **`U03-familia.csv`:** 20 tarjetas actualizadas con el nuevo gramapop
+- **`U03-profesiones.csv`:** 9 tarjetas actualizadas
+- **`U03-lugares.csv`:** 2 tarjetas actualizadas (hotel, hospital)
+- **`U03-escuela.csv`:** 4 tarjetas actualizadas (instituto, curso, deberes, recreo)
+- **`U03-acciones-cotidianas.csv`:** 1 tarjeta actualizada (merendar, nuevo formato de verbo)
+- **Espejos InDesign (`*-indesign.txt`):** los 5 archivos actualizados en paralelo
+
+### Modificado — Documentación (unidades/U03/)
+- **`U03-vocabulario.md`:** tabla de 21 tarjetas reestructurada. Eliminadas columnas "Regla" e "Irregularidad", sustituidas por una sola columna "Gramapop" con el nuevo formato. Eliminadas traducciones de la tabla (siguen en el CSV de producción)
+- **`U03-destrezas.md`:** tabla de 9 tarjetas contextuales actualizada. Las tarjetas de adjetivos (mayor, pequeño) mantienen el formato antiguo con nota explicativa "formato de adjetivos pendiente de definir — v8.11 aplica solo a sustantivos"
+
+---
+
+## [v8.10 — 2026-04-09] — Rediseño esquema comunicativo Hablar de la familia (U03)
+
+### Modificado — Tarjeta B: HABLAR DE LA FAMILIA (U03-comunicacion.md, Caja 2)
+- **Rediseñado completo** del esquema comunicativo. Formato anterior: diagrama de flujo PREGUNTAR→RESPONDER con metalenguaje (+ número, + nombre, + adjetivo / profesión). Formato nuevo: líneas de flujo con slots sustituibles marcados como listas de opciones con bullet (·)
+- **Ampliado de 4 a 10 parentescos:** El esquema anterior solo cubría hermanos. Ahora incluye padre, madre, hermano, hermana, abuelo, abuela, tío, tía, primo, prima — todos los parentescos trabajados en Vocabulario (p.34-35)
+- **Eliminado metalenguaje:** "Tiene(n) + número + años", "Se llama(n) + nombre", "Es + adjetivo / profesión" sustituidos por slots vacíos con opciones concretas
+- **Eliminada sección Invitar/Aceptar/Rechazar:** No es "hablar de la familia". Contenía además "poder" (irregular no enseñado)
+- **CARA A:** Describir familia (se llama, tiene años, es/trabaja en, tengo hermanos, vive en) con bullets de opciones
+- **CARA B:** Preguntar (5 preguntas con interrogativos conocidos) + Presentar (Este/Esta es mi...)
+- **Añadidos metadatos técnicos** en cursiva: colores (fondo verde pastel, recuadro violeta Familia, badge teal Interacción oral), base teórica (sentence builder Conti/EPI, worked example, weaning off)
+
+---
+
+## [v8.9 — 2026-04-08] — Reglas de color por tipo de tarjeta + esquema comunicativo Hablar de la familia
+
+### Nuevo — Especificaciones de diseño (especificaciones-diseno-tarjetas.md)
+- **Añadida sección "Reglas de color por tipo de tarjeta"** que documenta el sistema completo de colores para los 4 tipos de tarjeta: vocabulario (Caja 1), gramática (Caja 2), esquema comunicativo (Caja 2) y estrategia (Caja 3)
+- **Tarjetas de esquema comunicativo:** fondo verde pastel #D4EDDA (Caja 2), recuadro superior = color del campo semántico del vocabulario que trata, badge/icono = Interacción oral Teal #1A7A7A (fijo)
+
+---
+
+## [v8.8 — 2026-04-08] — Rediseño tarjeta de estrategia de mediación (U03)
+
+### Modificado — Tarjeta D: CUENTA LO QUE OYES (antes "Cuenta lo que dice otra persona") (U03-destrezas.md)
+- **Renombrada** de "Cuenta lo que dice otra persona" a "Cuenta lo que oyes" — más corto, cabe en tarjeta de 63×88mm
+- **Reorganizada en CARA A / CARA B** para formato de tarjeta física
+- **CARA A:** Introducción + instrucciones de anotación en cuaderno (no en tarjeta — la tarjeta es reutilizable) + tabla de cambio de persona ampliada de 6 a 7 pares (añadidos: Me llamo→Se llama, Tengo ___ años→Tiene ___ años, Estoy en→Está en; agrupados verbos regulares en una fila)
+- **CARA B:** Fórmulas del mediador reescritas para nivel A1.1 real. Eliminadas: "Dice que..." (verbo irregular no enseñado), "Básicamente..." (no A1), "Lo más importante es..." (superlativo no enseñado), "Quiere decir que..." (querer irregular no enseñado), "¿Puedes repetir?" (poder irregular no enseñado), sección "Para simplificar" (un A1.1 ya está en el nivel más simple), sección "Para expandir" (demasiado compleja). Sustituidas por fórmulas con verbos y estructuras que el estudiante ya conoce
+- **Eliminadas 7 citas académicas** del cuerpo de la tarjeta
+- **Eliminado el "Truco del traductor de personas"** — redundante con la tabla y la introducción
+- **Eliminada la autoevaluación de 3 preguntas** — es momento del profesor, no cabe en tarjeta
+- **Añadidos metadatos técnicos** en cursiva (badge, color, base teórica) separados del contenido del alumno
+- **Actualizadas todas las referencias** en U03-destrezas.md (fase 10, instrucciones del profesor), U03-destrezas-paginas.md y U03-itinerarios.md
+- **Base teórica preservada:** MCER Companion Volume 2020, Piccardo & North (2019), Stathopoulou (2015), Nied Curcio & Katelhön (2020), Long (1996), Pica (1994), repertorio de mediación (124 técnicas, principios-guía 3 y 4)
+
+---
+
+## [v8.7 — 2026-04-06] — Rediseño tarjeta de estrategia de comprensión auditiva (U03)
+
+### Modificado — Tarjeta C: ESCUCHA EN TRES MODOS (U03-destrezas.md)
+- **Eliminadas 7 citas académicas** del cuerpo de la tarjeta (material del profesor, no del alumno)
+- **Eliminada la columna "Ejemplo"** de la tabla de modos — redundante con las instrucciones
+- **Añadida frase introductoria** antes de la tabla: el estudiante entiende para qué sirve la tarjeta antes de ver los modos
+- **Reorganizada en CARA A / CARA B** para formato de tarjeta física (63 × 88 mm)
+- **CARA A:** Introducción + 3 modos (Express, Rastreador, Detective) + ANTES de escuchar + MIENTRAS escuchas
+- **CARA B:** ENTRE ESCUCHAS — ciclo de verificación y focalización (basado en la Secuencia Pedagógica Metacognitiva de Vandergrift): revisar notas → comparar con compañero → identificar laguna → escucha focalizada. Cierre: "El audio desaparece. Tu nota se queda."
+- **Eliminado el Truco del rastreador** como sección independiente — solo funcionaba para un modo; la cara B ahora cubre los tres modos
+- **Añadidos metadatos técnicos** en cursiva (badge, color, base teórica) separados del contenido del alumno
+- **Justificación:** Coherencia con los criterios de diseño aplicados a las tarjetas B (ESCRIBE UN EMAIL) y D (CUENTA LO QUE OYES): sin citas, sin metalenguaje, lenguaje directo para A1, formato de dos caras, transferible
+- **Base teórica preservada:** Solmecke (1993) tres Hörstile, Protocolo CO (CO1-CO3), Vandergrift & Goh (2012) MPS, O'Malley & Chamot (1990), Field (2008)
+
+---
+
 ## [v8.5h — 2026-03-19] — Optimización consultar_inventario para vocabulario
 
 ### Modificado — Tool `consultar_inventario` (tools.py)
