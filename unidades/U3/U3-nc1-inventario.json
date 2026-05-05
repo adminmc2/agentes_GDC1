@@ -565,7 +565,7 @@
         {
           "id": "U3-p37-act09",
           "numero": 9,
-          "tipo": "expresion_escrita_libre",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Mira el cuaderno de Ronaldo, un brasileño que estudia español. Escribe palabras nuevas y tradúcelas a tu idioma.",
           "contenido_linguistico": ["estrategia de aprendizaje: cuaderno de vocabulario bilingüe"],
@@ -812,7 +812,7 @@
         {
           "id": "U3-p39-act09",
           "numero": 9,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa las siguientes palabras con z/c.",
           "contenido_linguistico": ["ortografía z/c con sonido /θ/"],
@@ -1127,7 +1127,7 @@
         {
           "id": "U3-p43-act01",
           "numero": 1,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa las frases con la forma correcta del verbo.",
           "contenido_linguistico": ["presente verbos regulares + verbo tener"],

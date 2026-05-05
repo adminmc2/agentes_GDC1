@@ -185,7 +185,7 @@
         {
           "id": "U1-p13-act7",
           "numero": 7,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "comprension_oral+produccion_escrita",
           "instruccion_original": "Escucha y completa.",
           "contenido_linguistico": ["preguntar nombre", "deletreo letras g/j, b/v, h"],

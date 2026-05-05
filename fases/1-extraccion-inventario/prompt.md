@@ -182,7 +182,12 @@ tarea_final
 juego
 ```
 
-Ver la sección "Taxonomía cerrada de tipos de actividad" más abajo para la terminología ELE correcta y la distinción entre `completa_huecos` y `produccion_escrita_guiada`.
+Ver la sección "Taxonomía cerrada de tipos de actividad" más abajo para la terminología ELE correcta.
+
+**Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`:**
+- **`produccion_escrita_guiada`:** el alumno **escribe texto nuevo** (palabras, formas verbales, letras, frases) guiado por una estructura. Ejemplos: completar con la forma verbal correcta, escribir la letra que falta (b/v, c/z), construir una frase a partir de un modelo.
+- **`completa_huecos`:** el alumno **selecciona o encaja** elementos dados sin producir texto nuevo. Reservado para actividades de identificación/selección sin escritura.
+- **Regla práctica:** si el alumno tiene que escribir algo que no está ya en el enunciado → `produccion_escrita_guiada`.
 
 ---
 
@@ -431,7 +436,9 @@ Las siguientes cajas visuales del libro **NO son cuadros gramaticales** aunque a
 
 1. **¿Tiene número de actividad** (1, 2, 3...) **y pide producción del alumno** (escuchar, repetir, escribir, relacionar...)? → **Actividad** con `tipo` de la taxonomía cerrada.
 2. **¿Es "Para aprender"?** → Siempre **actividad** (`tipo: produccion_escrita_guiada`, `datos.subtipo: "para_aprender"`), aunque no tenga número. Excepción explícita a la regla general.
-3. **¿Es "Observa"?** → Siempre **nota** en `datos._nota`, aunque use el imperativo "Observa". Excepción explícita: "Observa" no pide producción del alumno; llama la atención sobre información de referencia. Nunca se convierte en actividad.
+3. **¿Es "Observa"?** → Siempre **nota**, aunque use el imperativo "Observa". Excepción explícita: "Observa" no pide producción del alumno; llama la atención sobre información de referencia. Nunca se convierte en actividad. **Dónde va según su contexto:**
+   - Si acompaña a una **actividad**: en `datos._nota` de esa actividad.
+   - Si acompaña a un **cuadro gramatical**: en `cuadro.observaciones` (ver "Esquema por cuadro gramatical").
 4. **¿Es una tabla de referencia sin número ni instrucción de producción?** → `cuadro_gramatical`.
 
 > **Precedencia:** las excepciones explícitas (reglas 2 y 3) tienen prioridad sobre la regla general (regla 1). La regla general solo aplica cuando ninguna excepción encaja.
