@@ -3,6 +3,20 @@
 
 ---
 
+## [v10.22 — 2026-05-05] — Regla "Para aprender" vs cuadros_gramaticales en prompt fase 1
+
+Error detectado en extracción real de otra unidad: la caja "Para aprender" de páginas de Gramática fue clasificada como `cuadros_gramaticales`. Corregido en `fases/1-extraccion-inventario/prompt.md` y `CLAUDE.md` con distinción explícita: cuadros gramaticales = tablas de referencia sin número ni instrucción; "Para aprender" y "Observa" = actividades.
+
+---
+
+## [v10.21 — 2026-05-05] — Cierre Bloque A + decisiones Bloque B
+
+- **A1 cerrado:** autor validó 47 actividades de U3 sin errores.
+- **A3 cerrado** con 4 decisiones: B1 pospuesto (CrewAI bloqueado), B2 aceptado (viejo sin trackear), B3 resuelto (v10.15), B4 sin acción (cosmético).
+- **Bloque B parcializado:** tarjetas espera fase 2, píldoras espera U3 vocabulario, `nc1-reciclaje.json` en diseño.
+
+---
+
 ## [v10.17 — 2026-05-05] — Dashboard refinado: sidebar reorganizado + zoom diagramas + diagrama activo sin caja viejo
 
 > **Honestidad sobre el alcance:** este commit limpia el **diagrama mermaid_level1 (Arquitectura activa)** quitándole la caja `viejo/`. NO es una "arquitectura limpia" general: el código sigue conteniendo referencias legacy a `viejo/repertorios/*.md` en `diagrama.py:550-557` (dict `AGENTS`), usadas por el flujo de agentes que está bloqueado pero no eliminado. La migración completa de esas referencias está documentada como pendiente en `PROCESO-MAESTRO.md` Parte 5 (estructura física) y bug B2.
