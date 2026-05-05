@@ -18,7 +18,7 @@ Regla de precedencia oral añadida: 2+ personas → `interaccion_oral`; alumno s
 
 ## [v10.22 — 2026-05-05] — Regla "Para aprender" vs cuadros_gramaticales en prompt fase 1
 
-Error detectado en extracción real de otra unidad: la caja "Para aprender" de páginas de Gramática fue clasificada como `cuadros_gramaticales`. Corregido en `fases/1-extraccion-inventario/prompt.md` y `CLAUDE.md` con distinción explícita: cuadros gramaticales = tablas de referencia sin número ni instrucción; "Para aprender" y "Observa" = actividades.
+Error detectado en extracción real de otra unidad: la caja "Para aprender" de páginas de Gramática fue clasificada como `cuadros_gramaticales`. Corregido en `fases/1-extraccion-inventario/prompt.md` y `CLAUDE.md` con distinción explícita: cuadros gramaticales = tablas de referencia sin número ni instrucción; **"Para aprender" = actividad**; **"Observa" = nota** (en `datos._nota` si acompaña actividad, o en `cuadro.observaciones` si acompaña cuadro gramatical).
 
 ---
 

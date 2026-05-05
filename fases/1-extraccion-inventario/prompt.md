@@ -151,7 +151,8 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
     "tipo": <str — tabla_conjugacion | tabla_interrogativos | tabla_posesivos | ...>,
     // estructura libre según el cuadro, capturando TODO el contenido visible
     "ejemplos": [str]
-  }
+  },
+  "observaciones": <str, opcional> // texto literal de la caja "Observa" si acompaña al cuadro
 }
 ```
 
@@ -422,7 +423,9 @@ Las siguientes cajas visuales del libro **NO son cuadros gramaticales** aunque a
 }
 ```
 
-**"Observa"** — Notas que llaman la atención sobre algún aspecto del idioma (variantes en Hispanoamérica, combinaciones de letras...). Son **notas**, no actividades ni cuadros gramaticales. Se capturan en `datos._nota` de la actividad o cuadro adyacente.
+**"Observa"** — Notas que llaman la atención sobre algún aspecto del idioma (variantes en Hispanoamérica, combinaciones de letras...). Son **notas**, no actividades ni cuadros gramaticales. Se capturan así según su contexto:
+- Si acompaña a una **actividad**: en `datos._nota` de esa actividad.
+- Si acompaña a un **cuadro gramatical**: en `cuadro.observaciones` (campo opcional del schema del cuadro, ver "Esquema por cuadro gramatical").
 
 **Regla práctica (con precedencia):** para distinguir cuadro gramatical / actividad / nota:
 
