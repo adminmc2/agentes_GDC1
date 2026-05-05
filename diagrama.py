@@ -27,7 +27,20 @@ load_dotenv()
 
 PROJECT = Path(__file__).parent
 PORT = 8080
-SERVER_VERSION = "10.17"  # alineado con CHANGELOG. Actualizar en cada cambio relevante de UI/backend.
+
+def _read_version():
+    """Lee la versión más reciente del CHANGELOG.md. Siempre actualizado sin intervención manual."""
+    try:
+        for line in (PROJECT / "CHANGELOG.md").read_text(encoding="utf-8").splitlines():
+            if line.startswith("## [v"):
+                m = re.search(r'\[v([\d.]+)', line)
+                if m:
+                    return m.group(1)
+    except Exception:
+        pass
+    return "unknown"
+
+SERVER_VERSION = _read_version()
 
 # --- Langfuse client (para API de trazas) ---
 # Requiere langfuse 2.x (litellm 1.82.2 no es compatible con langfuse 3.x/4.x).

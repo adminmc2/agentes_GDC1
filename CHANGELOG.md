@@ -3,6 +3,22 @@
 
 ---
 
+## [v10.27 — 2026-05-05] — Schema cuadro_gramatical + campo observaciones
+
+- Campo opcional `observaciones` añadido al schema de cuadro gramatical para representar la caja "Observa" cuando acompaña a un cuadro (no a una actividad).
+- Regla "Observa" ahora distingue dos casos: actividad → `datos._nota`; cuadro → `cuadro.observaciones`.
+- CHANGELOG v10.22 actualizado para distinguir correctamente "Para aprender" (actividad) de "Observa" (nota).
+
+---
+
+## [v10.26 — 2026-05-05] — Terminología ELE completa — U1 + docs actualizados
+
+- Completar v10.25: U1 faltaba. 6x `interaccion_oral`, 3x `expresion_oral_libre`, 2x `expresion_escrita_libre` en U1.
+- CLAUDE.md fase 1: "Para aprender" tipo corregido a `produccion_escrita_guiada`.
+- PROCESO-MAESTRO, REVIEW, CHANGELOG actualizados.
+
+---
+
 ## [v10.25 — 2026-05-05] — Terminología ELE correcta en taxonomía de tipos
 
 Renombres en los 3 JSONs (U0, U1, U3), validador, prompt y CLAUDE.md de fase 1:
