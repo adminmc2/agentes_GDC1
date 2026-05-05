@@ -145,7 +145,7 @@ La carpeta `viejo/` conserva el sistema CrewAI v5 que existía antes del redise�
 
 ## Estado actual
 
-- **Fase 1 operativa** — U3 extraída y validada (47 actividades, schema canónico).
+- **Fase 1 operativa** — extraídas y validadas: U3 (47 actividades, regular) y U0 (10 actividades, "Punto de partida" — unidad introductoria atípica).
 - **U1, U2, U4-U9 pendientes** de extracción cuando lleguen sus PDFs.
 - **Fases 2-8 pendientes** de definir prompt y construir.
-- **Plan detallado:** ver [`REVIEW.md`](REVIEW.md).
+- **Plan detallado y gates pendientes:** ver [`REVIEW.md`](REVIEW.md).

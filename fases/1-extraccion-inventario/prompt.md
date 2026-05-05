@@ -26,11 +26,13 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 
 ## Pasos de la extracción
 
-1. Leer las 10 páginas del PDF (`unidades/UX/fuente/UX-nc1.pdf`).
+1. Leer todas las páginas del PDF (`unidades/UX/fuente/UX-nc1.pdf`). Las unidades regulares tienen ~10 páginas; **las unidades introductorias atípicas son más cortas** (U0 "Punto de partida" tiene 4 páginas).
 2. Identificar el rango de páginas del libro (ej: 34-43), título, nivel.
-3. Identificar las 5 secciones del índice de contenidos (vocabulario, gramática, comunicación, destrezas, cultura).
+3. Identificar las **secciones del índice de contenidos**:
+   - **Caso normal** (U1-U9): 5 secciones canónicas — vocabulario, gramática, comunicación, destrezas, cultura.
+   - **Caso atípico** (U0 y otras unidades introductorias): el índice no sigue las 5 secciones canónicas. Aplicar la sección "**Reglas para unidades atípicas (introductorias)**" de este prompt antes de continuar.
 4. Para cada página: identificar la sección, las actividades (numeradas), los cuadros gramaticales si los hay.
-5. Para cada actividad: extraer todos los campos del esquema (ver abajo).
+5. Para cada actividad: extraer todos los campos del esquema (ver abajo). En U0-U3, observar la convención editorial de sílaba tónica subrayada (ver sección dedicada). Detectar el patrón de "primer ítem resuelto como ejemplo" (ver sección dedicada).
 6. Construir `vocabulario_consolidado` con los 3 bloques.
 7. Construir el índice top-level `secciones`.
 8. Validar JSON.

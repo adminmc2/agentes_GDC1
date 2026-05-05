@@ -81,15 +81,16 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 - Verificar que el JSON pasa el validador.
 - Verificar que CHANGELOG tiene la entrada correspondiente.
 
-**Bloquea a:** A2 (no se prueba con U4 hasta que U3 esté cerrado).
+**Bloquea a:** ~~A2~~ — A2 ya cerrado en paralelo con U0 cuando llegó el PDF antes que A1 estuviera completo (decisión explícita de paralelismo del autor el 2026-05-05). A1 sigue pendiente como tarea independiente.
 
 ---
 
-### A2. Probar el sistema con una unidad nueva (cuando llegue PDF de U1, U2 o U4)
+### A2. Probar el sistema con una unidad nueva — ✅ CERRADO 2026-05-05 con U0
 
 **Objetivo:** validar que el prompt funciona en escala (no solo con U3).
 
-**Pre-condición:** A1 cerrado (gate cumplido) + autor entrega un PDF nuevo.
+**Pre-condición original:** A1 cerrado + autor entrega un PDF nuevo.
+**Pre-condición real ejecutada:** autor entregó PDF de U0 antes de cerrar A1; **decisión explícita de paralelismo** — A2 se ejecutó sin esperar a A1.
 
 **Archivos a crear:**
 - `unidades/UX/fuente/UX-nc1.pdf` — lo aporta el autor (gitignored).
@@ -104,14 +105,14 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 - `CHANGELOG.md` — entrada con commit.
 - `CLAUDE.md` — solo si una nueva regla de oro emerge.
 
-**Gate de cierre:**
-1. ✅ Inventario UX generado y validado con `python3 scripts/validar_inventario.py X`.
-2. ✅ Autor revisa visualmente UX en el dashboard y declara conformidad.
-3. ✅ Si surgieron casos nuevos: prompt actualizado.
-4. ✅ Reproducibilidad confirmada: una segunda ejecución del prompt da resultado equivalente (varianza mínima del LLM aceptada).
-5. ✅ Commit + CHANGELOG.
+**Gate de cierre (cumplido con U0 el 2026-05-05):**
+1. ✅ Inventario U0 generado y validado con `python3 scripts/validar_inventario.py 0` (1 aviso intencional sobre `_nota_unidad_atipica`).
+2. ✅ Autor revisó visualmente U0 en el dashboard y declaró conformidad.
+3. ✅ Surgieron 4 casos nuevos: prompt actualizado en `fases/1-extraccion-inventario/prompt.md` (commit `3a169ca`) con secciones "unidades atípicas", "sílaba tónica subrayada hasta U3", "primer ítem resuelto como ejemplo".
+4. ⚠ Reproducibilidad: pendiente verificar con segunda extracción de la misma unidad. Diferida (no bloqueante; la varianza del LLM se considera aceptable a priori).
+5. ✅ Commits `4de266f` (v10.12) y `3a169ca` (v10.13). CHANGELOG actualizado en `5a5d6e7` para v10.11 y posteriores en commits sucesivos.
 
-**Bloquea a:** B1 y siguientes — sin validar con 2 unidades, escalar es prematuro.
+**Bloquea a:** ya nada operativo. B1 y siguientes desbloqueados.
 
 ---
 

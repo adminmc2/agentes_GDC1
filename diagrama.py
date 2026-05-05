@@ -533,7 +533,7 @@ def update_tarjeta_field(tarjeta_id, campo, valor):
     conn.close()
     return True
 
-UNITS = [f"U{i:02d}" for i in range(1, 10)]
+UNITS = [f"U{i}" for i in range(0, 10)]
 SECTIONS = ["vocabulario", "gramatica", "comunicacion", "destrezas",
             "cultura", "reflexion", "evaluacion", "itinerarios"]
 SECTION_LABELS = {

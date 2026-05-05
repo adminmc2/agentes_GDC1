@@ -3,6 +3,44 @@
 
 ---
 
+## [v10.13 — 2026-05-05] — Convención U0 en docs + 3 reglas nuevas en prompt fase 1
+
+Tras validación del autor de v10.12, se aplican las mejoras detectadas durante la primera extracción de una unidad nueva (U0):
+- **CLAUDE.md, README.md, PROCESO-MAESTRO.md:** convención de naming actualizada a `U0/, U1/, U2/...U9/` (U0 reservado a unidad introductoria atípica "Punto de partida").
+- **`fases/1-extraccion-inventario/prompt.md`:** 3 secciones nuevas — (1) "Reglas para unidades atípicas (introductorias)"; (2) "Convención editorial: sílaba tónica subrayada hasta U3"; (3) "Patrón primer ítem resuelto como ejemplo".
+- **REVIEW.md:** A2 marcado cerrado (Fase 1 operativa con U3 y U0).
+- Bitácoras de PROCESO-MAESTRO y REVIEW actualizadas.
+
+Pendiente del autor: confirmar con la editora si "limón" duplicado en U0 p.11 act.8 (items 7 y 8) es errata real del libro.
+
+---
+
+## [v10.12 — 2026-05-05] — Extracción de U0 (Punto de partida) + fix renderer dashboard
+
+Cierra el gate **A2** del REVIEW (probar el sistema con una unidad nueva) — primer test del prompt versionado de fase 1 con un PDF distinto a U3.
+
+### Movimientos físicos
+- `unidades/U0/U0-nc1-inventario.json` (10 actividades, 4 páginas).
+- `unidades/U0/fuente/U0-nc1.pdf` (gitignored).
+
+### Convención unificada
+- Sin cero a la izquierda incluyendo U0 (no U00). El dígito 0 en U0 NO es cero a la izquierda, es el número.
+
+### Fix de bug
+- `web/index.html` renderInventario: distingue cuadrícula (sopa de letras, celdas de ≤1 char) vs tabla de pares (letras_y_ejemplos del abecedario). Antes superponía letra y ejemplo.
+
+### Casos nuevos detectados (aplicados en v10.13)
+1. Convención U0 explícita en docs.
+2. Unidades atípicas sin las 5 secciones canónicas.
+3. Convención editorial: sílaba tónica subrayada hasta U3.
+4. Patrón "primer ítem resuelto como ejemplo".
+
+### Verificación
+- `python3 scripts/validar_inventario.py 0` → ✅ JSON válido, 1 aviso intencional.
+- Autor validó visualmente.
+
+---
+
 ## [v10.3 — 2026-05-05] — Disolución de `nuevo/`: el sistema activo vive en raíz
 
 ### Motivo
