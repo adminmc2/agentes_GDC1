@@ -496,7 +496,7 @@ mermaid.initialize({startOnLoad:false, theme:'default', securityLevel:'loose'});
 async function init() {
     try { const r = await fetch('/api/version'); const d = await r.json(); serverVersion = d.version; } catch(e) {}
     const us = document.getElementById('sel-unidad');
-    us.innerHTML = [1,2,3,4,5,6,7,8,9].map(n => `<option value="${n}" ${n===currentUnidad?'selected':''}>U${String(n).padStart(2,'0')}</option>`).join('');
+    us.innerHTML = [0,1,2,3,4,5,6,7,8,9].map(n => `<option value="${n}" ${n===currentUnidad?'selected':''}>U${n}</option>`).join('');
     us.onchange = () => { currentUnidad = +us.value; if (currentView==='seccion') renderSeccion(); };
     renderSidebar();
     goTo('proyecto');
@@ -788,8 +788,8 @@ function renderStatusGrid(status) {
     const g = document.getElementById('status-grid');
     let comp=0, tot=0, html='<div class="hdr"></div>';
     secs.forEach(s => { html += `<div class="hdr">${SECTION_LABELS[s]}</div>`; });
-    for (let i=1;i<=9;i++) {
-        const u=`U${String(i).padStart(2,'0')}`;
+    for (let i=0;i<=9;i++) {
+        const u=`U${i}`;
         html += `<div class="unit-label">${u}</div>`;
         secs.forEach(s => { const info=(status[u]||{})[s]||{}; const st=info.status||'missing'; tot++; if(st==='complete')comp++; html += `<div class="status-cell ${st}">${info.lines||'-'}</div>`; });
     }
@@ -803,7 +803,7 @@ async function renderDiagram(k) { if(!diagramData) return; const c=diagramData[k
 // ===== SECCION =====
 async function renderSeccion() {
     const sec = SECCIONES.find(s=>s.id===currentSeccion);
-    document.getElementById('seccion-title').textContent = sec.name + ' \u2014 U'+String(currentUnidad).padStart(2,'0');
+    document.getElementById('seccion-title').textContent = sec.name + ' \u2014 U'+currentUnidad;
     document.getElementById('seccion-subtitle').textContent = sec.agentes.length ? sec.agentes.length+' agente(s) disponible(s)' : '';
     const el = document.getElementById('seccion-content');
     if (!sec.agentes.length) { el.innerHTML = '<div class="empty">Sin agentes asignados a esta sección. Los agentes se crean desde el código.</div>'; return; }

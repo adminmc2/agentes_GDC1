@@ -85,7 +85,9 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 ---
 
-### A2. Probar el sistema con una unidad nueva — ✅ CERRADO 2026-05-05 con U0
+### A2. Probar el sistema con una unidad nueva — ✅ CERRADO CON RESERVA 2026-05-05 con U0
+
+**Reserva pendiente:** ítem 4 del gate (reproducibilidad por segunda extracción) está diferida, no verificada. El cierre se considera operativo bajo la asunción de que la varianza del LLM con prompt detallado es aceptable. Si en el futuro se observa varianza problemática, A2 se reabre.
 
 **Objetivo:** validar que el prompt funciona en escala (no solo con U3).
 

@@ -746,7 +746,9 @@ def mermaid_level3():
 def mermaid_level4(status):
     lines = ["graph LR"]
     for sid, info in AGENTS.items():
-        s = status.get("U03", {}).get(sid, {})
+        # NOTE: el diagrama mermaid muestra status agregado a partir de U3 (única unidad regular poblada).
+        # Cuando haya más unidades, considerar mostrar status por unidad seleccionada.
+        s = status.get("U3", {}).get(sid, {})
         st = s.get("status", "missing")
         c = color_for(st)
         n = s.get("lines", 0)
@@ -755,7 +757,7 @@ def mermaid_level4(status):
         lines.append(f'    REP_{sid}["{info["rep"]}"]')
         lines.append(f"    REP_{sid} --> AG_{sid}")
         lines.append(f"    style AG_{sid} fill:{c},color:#fff")
-    lines.append('    INV["viejo/unidades/U03/inventario.json"] --> AG_vocabulario')
+    lines.append('    INV["unidades/U3/U3-nc1-inventario.json"] --> AG_vocabulario')
     lines.append("    INV --> AG_gramatica")
     lines.append("    INV --> AG_comunicacion")
     lines.append("    INV --> AG_destrezas")
