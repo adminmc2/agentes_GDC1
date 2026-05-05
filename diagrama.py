@@ -598,172 +598,128 @@ def color_for(status):
 
 
 def mermaid_level1():
+    """Arquitectura del sistema activo. Solo lo que existe y está verificado."""
     return """graph TD
-    LIBRO["Libro de texto - Nuevo Compañeros 1"]
-    FUENTE["Material fuente - viejo/unidades/UXX/fuente/ - PDF embebido por unidad"]
-    INV["Inventario JSON - viejo/unidades/UXX/inventario.json"]
-    BD[("Neon PostgreSQL - Base de datos - Fuente de verdad")]
+    LIBRO["Libro NC1 - Nuevo Companeros 1"]
+    PDF["PDF embebido - unidades/UX/fuente/UX-nc1.pdf"]
+    PROMPT["Prompt versionado - fases/1-extraccion-inventario/prompt.md"]
+    CLAUDE["Claude Code - extraccion en chat"]
+    INV["Inventario JSON - unidades/UX/UX-nc1-inventario.json"]
+    VAL["Validador Python - scripts/validar_inventario.py - cero LLM"]
+    DASH["Dashboard - web/index.html + diagrama.py"]
+    AUTOR["Autor - revision visual"]
 
-    subgraph INFRA["Infraestructura pedagógica"]
-        MT["Marco teórico - 72 KB"]
-        CG["Curso general - 50 KB"]
-        REF["10 bancos de técnicas - 800+ técnicas"]
+    subgraph ACTIVO["Sistema activo - en raiz"]
+        PDF
+        PROMPT
+        CLAUDE
+        INV
+        VAL
+        DASH
     end
 
-    subgraph REPS["Repertorios - opciones de explotación"]
-        R_V["rep/vocabulario"]
-        R_G["rep/gramática"]
-        R_C["rep/comunicación"]
-        R_D["rep/destrezas"]
-        R_CU["rep/cultura"]
-        R_E["rep/evaluación"]
+    subgraph VIEJO["viejo/ - archivo intocable"]
+        VOLD["Sistema CrewAI v5 anterior"]
     end
 
-    subgraph AGENTES["Sistema de agentes - prompts v5.0"]
-        AG_V["Vocabulario"]
-        AG_G["Gramática"]
-        AG_C["Comunicación"]
-        AG_D["Destrezas"]
-        AG_CU["Cultura"]
-        AG_E["Evaluación"]
-    end
-
-    subgraph OUTPUT["Output por unidad"]
-        EXP["Explotación didáctica - 7 secciones"]
-        PIL["Píldoras formativas - 10 por unidad"]
-        TAR["Tarjetas - vocabulario + gramática"]
-        ITI["Itinerarios - 8 sesiones"]
-    end
-
-    LIBRO --> FUENTE
-    FUENTE --> INV
-    INV -->|"importación"| BD
-    BD --> AGENTES
-    INFRA --> AGENTES
-    REPS --> AGENTES
-    AGENTES --> OUTPUT
-
-    OUTPUT --> GUIA["CAPA 1 - Guía impresa SGEL"]
-    BD -.->|"consultas"| PERS["CAPA 3 - Guías personalizadas - futuro"]
-    OUTPUT -.-> PERS
+    LIBRO --> PDF
+    PDF --> CLAUDE
+    PROMPT --> CLAUDE
+    CLAUDE --> INV
+    INV --> VAL
+    INV --> DASH
+    DASH --> AUTOR
+    VAL --> AUTOR
 
     style LIBRO fill:#3498db,color:#fff
-    style FUENTE fill:#2980b9,color:#fff
-    style INV fill:#8e44ad,color:#fff
-    style BD fill:#e74c3c,color:#fff
-    style GUIA fill:#2ecc71,color:#fff
-    style PERS fill:#95a5a6,color:#fff,stroke-dasharray: 5 5
-    style INFRA fill:#e8eaf6
-    style AGENTES fill:#fff3e0
-    style REPS fill:#e8f5e9
-    style OUTPUT fill:#fce4ec"""
+    style PDF fill:#2980b9,color:#fff
+    style CLAUDE fill:#8e44ad,color:#fff
+    style INV fill:#27ae60,color:#fff
+    style VAL fill:#16a085,color:#fff
+    style DASH fill:#e67e22,color:#fff
+    style AUTOR fill:#34495e,color:#fff
+    style ACTIVO fill:#eafaf1
+    style VIEJO fill:#ecf0f1,stroke-dasharray: 5 5
+    style VOLD fill:#95a5a6,color:#fff"""
 
 
 def mermaid_level2():
+    """Flujo operativo de la fase 1 - Extraccion del inventario."""
     return """graph LR
-    subgraph PREP["1 - Preparación manual"]
-        P1["Extraer actividades del inventario"]
-        P2["Filtrar repertorio aplicable"]
-        P3["Compilar reciclaje previo"]
-        P4["Compilar contexto lingüístico"]
-        P1 --> P2 --> P3 --> P4
-    end
+    P1["1 - Autor exporta PDF embebido a unidades/UX/fuente/"]
+    P2["2 - Autor invoca a Claude Code en chat"]
+    P3["3 - Claude Code lee prompt + CLAUDE.md de fase + PDF"]
+    P4["4 - Claude Code genera UX-nc1-inventario.json"]
+    P5["5 - Validacion automatica - validar_inventario.py"]
+    P6["6 - Validacion visual del autor en dashboard"]
+    P7["7 - Si OK, fase 1 cerrada para esa unidad"]
+    P8["8 - Si surgen casos nuevos, se anaden al prompt"]
 
-    subgraph GEN["2 - Generación con Claude Code"]
-        G1["Cargar prompt del agente"]
-        G2["Proporcionar inputs"]
-        G3["Generar explotación + píldoras"]
-        G1 --> G2 --> G3
-    end
+    P1 --> P2 --> P3 --> P4 --> P5 --> P6
+    P6 -->|OK| P7
+    P6 -->|Errores| P4
+    P4 -.->|Aprendizaje continuo| P8
+    P8 -.-> P3
 
-    subgraph POST["3 - Post-producción"]
-        V1["Horas total máx. 7h"]
-        V2["Variedad de opciones"]
-        V3["Reciclaje mín. 30%"]
-        V4["Ritmo máx. 15 min"]
-        V5["Coherencia inter-sección"]
-        V1 --- V2 --- V3 --- V4 --- V5
-    end
-
-    PREP --> GEN --> POST
-    POST -->|OK| DONE["Sección validada"]
-    POST -->|Falla| GEN
-
-    style PREP fill:#e3f2fd
-    style GEN fill:#fff3e0
-    style POST fill:#f3e5f5
-    style DONE fill:#2ecc71,color:#fff"""
+    style P1 fill:#3498db,color:#fff
+    style P2 fill:#3498db,color:#fff
+    style P3 fill:#8e44ad,color:#fff
+    style P4 fill:#27ae60,color:#fff
+    style P5 fill:#16a085,color:#fff
+    style P6 fill:#e67e22,color:#fff
+    style P7 fill:#2ecc71,color:#fff
+    style P8 fill:#f39c12,color:#fff"""
 
 
 def mermaid_level3():
+    """Las 8 fases del proceso editorial con su estado actual."""
     return """graph TD
-    VOC["S1 Vocabulario - Ciclo 5 fases"]
-    GRA["S2 Gramática - Ciclo 5 fases"]
-    COM["S3 Comunicación - Protocolo A/C"]
-    DES["S4 Destrezas - Protocolos L/E/CO/H"]
-    CUL["S5 Cultura - Protocolo CU"]
-    EVA["S7 Reflexión y Evaluación - Protocolo RE"]
+    F1["F1 - Extraccion inventario JSON - OPERATIVA"]
+    F2["F2 - Analisis de vocabulario - PENDIENTE"]
+    F3["F3 - Tarjetas de vocabulario - PENDIENTE"]
+    F4["F4 - Tarjetas de estrategia - PENDIENTE"]
+    F5["F5 - Pildoras formativas - PENDIENTE"]
+    F6["F6 - Generacion seccion por seccion - PENDIENTE"]
+    F7["F7 - Doble version completa+resumida - PENDIENTE"]
+    F8["F8 - Principios + repertorios - PENDIENTE"]
 
-    VOC -->|"exposición incidental"| GRA
-    VOC -->|"vocabulario formalizado"| COM
-    GRA -->|"gramática formalizada"| COM
-    VOC -->|"reciclaje"| DES
-    GRA -->|"reciclaje"| DES
-    COM -->|"funciones comunicativas"| DES
-    VOC -->|"contenedor mapeado"| CUL
-    GRA -->|"contenedor mapeado"| CUL
-    COM -->|"contenedor mapeado"| CUL
-    DES -->|"estrategias"| CUL
-    VOC -->|"100% reciclaje"| EVA
-    GRA -->|"100% reciclaje"| EVA
-    COM -->|"100% reciclaje"| EVA
-    DES -->|"100% reciclaje"| EVA
-    CUL -->|"100% reciclaje"| EVA
+    F1 --> F2
+    F2 --> F3
+    F2 --> F5
+    F3 --> F6
+    F4 --> F6
+    F5 --> F6
+    F6 --> F7
+    F8 -.->|apoyo transversal| F6
 
-    subgraph CAJA["Estación de Servicio - tarjetas acumulativas"]
-        C1["Caja 1 Vocabulario"]
-        C2["Caja 2 Tips y esquemas"]
-        C3["Caja 3 Gramatips"]
-        C4["Caja 4 Estrategias destreza"]
-        C5["Caja 5 Estrategia intercultural"]
-    end
-
-    VOC -.-> C1
-    COM -.-> C2
-    GRA -.-> C3
-    DES -.-> C4
-    CUL -.-> C5
-
-    style VOC fill:#3498db,color:#fff
-    style GRA fill:#2ecc71,color:#fff
-    style COM fill:#e74c3c,color:#fff
-    style DES fill:#9b59b6,color:#fff
-    style CUL fill:#f39c12,color:#fff
-    style EVA fill:#1abc9c,color:#fff
-    style CAJA fill:#f5f5f5"""
+    style F1 fill:#27ae60,color:#fff
+    style F2 fill:#bdc3c7,color:#000
+    style F3 fill:#bdc3c7,color:#000
+    style F4 fill:#bdc3c7,color:#000
+    style F5 fill:#bdc3c7,color:#000
+    style F6 fill:#bdc3c7,color:#000
+    style F7 fill:#bdc3c7,color:#000
+    style F8 fill:#bdc3c7,color:#000"""
 
 
 def mermaid_level4(status):
+    """Estado actual por unidad - inventario extraido o pendiente."""
     lines = ["graph LR"]
-    for sid, info in AGENTS.items():
-        # NOTE: el diagrama mermaid muestra status agregado a partir de U3 (única unidad regular poblada).
-        # Cuando haya más unidades, considerar mostrar status por unidad seleccionada.
-        s = status.get("U3", {}).get(sid, {})
-        st = s.get("status", "missing")
-        c = color_for(st)
-        n = s.get("lines", 0)
-        label = f'{info["name"]} - {n} líneas - {st}'
-        lines.append(f'    AG_{sid}["{label}"]')
-        lines.append(f'    REP_{sid}["{info["rep"]}"]')
-        lines.append(f"    REP_{sid} --> AG_{sid}")
-        lines.append(f"    style AG_{sid} fill:{c},color:#fff")
-    lines.append('    INV["unidades/U3/U3-nc1-inventario.json"] --> AG_vocabulario')
-    lines.append("    INV --> AG_gramatica")
-    lines.append("    INV --> AG_comunicacion")
-    lines.append("    INV --> AG_destrezas")
-    lines.append("    INV --> AG_cultura")
-    lines.append("    INV --> AG_evaluacion")
-    lines.append("    style INV fill:#3498db,color:#fff")
+    lines.append('    LIBRO["Libro NC1"]')
+    for n in range(0, 10):
+        u = f"U{n}"
+        info = status.get(u, {})
+        # info no tiene "inventario" hoy; usamos presencia del archivo
+        inv_path = PROJECT / "unidades" / u / f"{u}-nc1-inventario.json"
+        existe = inv_path.exists()
+        st = "OPERATIVO" if existe else "pendiente"
+        color = "#27ae60" if existe else "#bdc3c7"
+        text_color = "#fff" if existe else "#000"
+        label = f"{u} - inventario {st}"
+        lines.append(f'    {u}["{label}"]')
+        lines.append(f"    LIBRO --> {u}")
+        lines.append(f"    style {u} fill:{color},color:{text_color}")
+    lines.append('    style LIBRO fill:#3498db,color:#fff')
     return "\n".join(lines)
 
 
