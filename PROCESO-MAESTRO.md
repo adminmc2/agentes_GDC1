@@ -247,18 +247,18 @@ Estructura por cuadro gramatical:
 **Qué pasa:** se identifica qué vocabulario será materializado en tarjetas. Criterio doble: vocabulario declarado por el libro + campos semánticos más frecuentes.
 
 **Definido:**
-- Criterios editoriales completos en `.claude/rules/criterios-generacion-tarjetas.md` (estructura de campos, gramapop, moción de género, profesiones regulares vs irregulares, género común, verbos).
-- Configuración del Agente Vocabulario en `agentes/ag-vocabulario.md` (35 KB) — incluye reglas CLT, Ciclo de 5 fases (Conti), 12 decisiones documentadas, criterios pedagógicos de selección.
-- Marco metodológico de 5 fases en `00-curso-general.md` (Conti, EPI/MARS EARS).
+- Criterios editoriales completos en `.claude/rules/criterios-generacion-tarjetas.md` (raíz, regla protegida): estructura de campos, gramapop, moción de género, profesiones regulares vs irregulares, género común, verbos.
+- Configuración del Agente Vocabulario del sistema antiguo en `viejo/agentes/ag-vocabulario.md` (35 KB) — incluye reglas CLT, Ciclo de 5 fases (Conti), 12 decisiones documentadas, criterios pedagógicos de selección.
+- Marco metodológico de 5 fases en `viejo/00-curso-general.md` (Conti, EPI/MARS EARS).
 
 **Por definir / por verificar:**
-- Protocolo explícito de selección de **campos semánticos** (qué incluir, qué excluir, criterio de frecuencia mínima). El autor cree que está; está implícito en `ag-vocabulario.md` pero no formalizado como protocolo aislado.
+- Protocolo explícito de selección de **campos semánticos** (qué incluir, qué excluir, criterio de frecuencia mínima). El autor cree que está; está implícito en `viejo/agentes/ag-vocabulario.md` pero no formalizado como protocolo aislado.
 - Cómo se documenta el análisis previo a generar las tarjetas.
 
 **Archivos clave:**
-- `.claude/rules/criterios-generacion-tarjetas.md`
-- `agentes/ag-vocabulario.md` ← contiene buena parte del protocolo operativo
-- `00-curso-general.md`
+- `.claude/rules/criterios-generacion-tarjetas.md` (raíz, regla protegida)
+- `viejo/agentes/ag-vocabulario.md` ← contiene buena parte del protocolo operativo (sistema antiguo)
+- `viejo/00-curso-general.md`
 
 ---
 
@@ -271,7 +271,7 @@ Estructura por cuadro gramatical:
 - Especificaciones de diseño visual en `viejo/materiales/especificaciones-diseno-tarjetas.md` (162 líneas: tamaño 63×88 mm, colores, tipografía Proxima Nova, Data Merge).
 - Pipeline de evaluación: `eval/evaluar_tarjetas.py` (DeepEval + promptfoo).
 - Agente generador del sistema antiguo: Crew Recurvo v2.0 (3 agentes secuenciales) en `viejo/scripts/crewai/`.
-- Caso real completo del sistema antiguo: `viejo/unidades/U03/tarjetas/csv/` (familia, profesiones, lugares, escuela, acciones cotidianas) + `diseno/vocabulario/` (PSDs, PNGs, INDD) + `validacion/` (PDFs editoriales).
+- Caso real completo del sistema antiguo, todo bajo `viejo/unidades/U03/tarjetas/`: subcarpetas `csv/` (familia, profesiones, lugares, escuela, acciones cotidianas), `diseno/vocabulario/` (PSDs, PNGs, INDD), `validacion/` (PDFs editoriales).
 
 **Por definir:**
 - El archivo de diseño visual está **desactualizado** (última edición v8.9 abril; hoy v8.26). No refleja decisiones nuevas: nomenclatura combos, profesiones moción regular/irregular, color real de fondo (= color de género), verbos.
@@ -405,35 +405,36 @@ Estructura por cuadro gramatical:
 
 **Qué pasa:** todo el material editorial debe aplicar principios teóricos y técnicas de los repertorios. Hay mucho material y se aplica de forma distinta según la sección.
 
-**Definido:**
+**Definido (todo en `viejo/`, archivo del sistema CrewAI v5 anterior):**
 - Principios teóricos:
-  - `marco-teorico-metodologico.md` (100+ líneas: Merrill, Gagné, Ciclo 5 fases, EPI/MARS EARS).
-  - `00-curso-general.md` (12 secciones: enfoque, temporalización, marcos teóricos, diferenciación, neurodidáctica).
+  - `viejo/marco-teorico-metodologico.md` (100+ líneas: Merrill, Gagné, Ciclo 5 fases, EPI/MARS EARS).
+  - `viejo/00-curso-general.md` (12 secciones: enfoque, temporalización, marcos teóricos, diferenciación, neurodidáctica).
 - Repertorios por sección:
-  - `repertorios/vocabulario.md`
-  - `repertorios/gramatica.md`
-  - `repertorios/comunicacion.md`
-  - `repertorios/destrezas.md`
-  - `repertorios/cultura.md`
-  - `repertorios/evaluacion.md`
+  - `viejo/repertorios/vocabulario.md`
+  - `viejo/repertorios/gramatica.md`
+  - `viejo/repertorios/comunicacion.md`
+  - `viejo/repertorios/destrezas.md`
+  - `viejo/repertorios/cultura.md`
+  - `viejo/repertorios/evaluacion.md`
 - Bancos de técnicas externas (más detallados):
-  - `referencias/repertorio-120-tecnicas-EIO.md` (Expresión Interacción Oral)
-  - `referencias/repertorio-124-tecnicas-CA.md` (Comprensión Auditiva)
-  - `referencias/analisis-100-tecnicas-CL.md` (Comprensión Lectora)
-  - `referencias/analisis-84-estrategias-EE.md` (Expresión Escrita)
-  - Más archivos en `referencias/`.
+  - `viejo/referencias/repertorio-120-tecnicas-EIO.md` (Expresión Interacción Oral)
+  - `viejo/referencias/repertorio-124-tecnicas-CA.md` (Comprensión Auditiva)
+  - `viejo/referencias/analisis-100-tecnicas-CL.md` (Comprensión Lectora)
+  - `viejo/referencias/analisis-84-estrategias-EE.md` (Expresión Escrita)
+  - Más archivos en `viejo/referencias/`.
 
 **Por definir:**
 - Mapeo claro de qué material teórico aplica a qué sección (hoy hay que rastrear).
 - Mapeo claro de qué repertorio aplica a qué sección.
-- Diferencia entre `repertorios/` y `referencias/`: solapan parcialmente, falta jerarquía.
+- Diferencia entre `viejo/repertorios/` y `viejo/referencias/`: solapan parcialmente, falta jerarquía.
 - Cómo se decide qué técnicas usar en una sección concreta (criterios de selección).
+- **Decidir qué de este material se promociona al sistema activo en raíz** y bajo qué estructura.
 
-**Archivos clave:**
-- `marco-teorico-metodologico.md`
-- `00-curso-general.md`
-- `repertorios/*.md`
-- `referencias/*.md`
+**Archivos clave (todos en `viejo/`):**
+- `viejo/marco-teorico-metodologico.md`
+- `viejo/00-curso-general.md`
+- `viejo/repertorios/*.md`
+- `viejo/referencias/*.md`
 
 ---
 
