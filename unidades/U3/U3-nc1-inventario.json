@@ -185,7 +185,7 @@
         {
           "id": "U3-p35-act07",
           "numero": 7,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "comprension_lectora + produccion_escrita",
           "instruccion_original": "Completa las frases con la información del texto.",
           "contenido_linguistico": ["vocabulario familia"],
@@ -253,7 +253,7 @@
         {
           "id": "U3-p35-act10",
           "numero": 10,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "comprension_lectora + produccion_escrita",
           "instruccion_original": "Completa las frases con la información de los textos de los ejercicios 6 y 8.",
           "contenido_linguistico": ["verbos: vivir, llamarse, ser, tener, estudiar"],
@@ -289,7 +289,7 @@
         {
           "id": "U3-p36-act01",
           "numero": 1,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa con la forma correcta del verbo.",
           "contenido_linguistico": ["presente verbos regulares: estudiar, comer, vivir, hablar, escribir, trabajar"],
@@ -328,7 +328,7 @@
         {
           "id": "U3-p36-act02",
           "numero": 2,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa estas preguntas con los verbos anteriores.",
           "contenido_linguistico": ["presente verbos regulares en preguntas"],
@@ -435,7 +435,7 @@
         {
           "id": "U3-p37-act04",
           "numero": 4,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa las frases con cuánto/-a/-os/-as.",
           "contenido_linguistico": ["interrogativo cuánto y sus formas"],
@@ -466,7 +466,7 @@
         {
           "id": "U3-p37-act05",
           "numero": 5,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa los huecos con el posesivo correspondiente.",
           "contenido_linguistico": ["adjetivos posesivos: mi, tu, su, nuestro/-a, vuestro/-a; mis, tus, sus, nuestros/-as, vuestros/-as"],
@@ -645,7 +645,7 @@
         {
           "id": "U3-p38-act02",
           "numero": 2,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "comprension_lectora + produccion_escrita",
           "instruccion_original": "Completa las frases con los nombres.",
           "contenido_linguistico": ["nombres propios del diálogo"],
@@ -1225,7 +1225,7 @@
         {
           "id": "U3-p43-act04",
           "numero": 4,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa las frases de David.",
           "contenido_linguistico": ["vocabulario familia"],

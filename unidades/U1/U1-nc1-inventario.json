@@ -328,7 +328,7 @@
         {
           "id": "U1-p14-act2",
           "numero": 2,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa los huecos con la forma correspondiente del verbo tener.",
           "contenido_linguistico": ["verbo tener singular"],
@@ -372,7 +372,7 @@
         {
           "id": "U1-p14-act4",
           "numero": 4,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa la tabla con el femenino o el masculino.",
           "contenido_linguistico": ["formación de género en nacionalidades y profesiones"],
@@ -1041,7 +1041,7 @@
         {
           "id": "U1-p21-act1",
           "numero": 1,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa las frases con la forma correspondiente del verbo ser.",
           "contenido_linguistico": ["verbo ser singular"],
@@ -1065,7 +1065,7 @@
         {
           "id": "U1-p21-act2",
           "numero": 2,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Coloca el artículo correspondiente (el / la) a los siguientes nombres.",
           "contenido_linguistico": ["artículos determinados singulares masculino/femenino"],
@@ -1093,7 +1093,7 @@
         {
           "id": "U1-p21-act3",
           "numero": 3,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa la tabla.",
           "contenido_linguistico": ["formación de género en sustantivos animados"],
@@ -1115,7 +1115,7 @@
         {
           "id": "U1-p21-act4",
           "numero": 4,
-          "tipo": "completa_huecos",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "produccion_escrita",
           "instruccion_original": "Completa con una forma del verbo ser, llamarse o tener.",
           "contenido_linguistico": ["verbos ser, llamarse, tener (formas singulares)"],
