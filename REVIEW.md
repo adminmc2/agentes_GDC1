@@ -42,7 +42,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 | Bloque | Estado |
 |---|---|
-| Fase 1 — Extracción de inventario | ✅ Operativa con U3 y U0 (gates A1, A3 pendientes; A2 ✅ cerrado con U0) |
+| Fase 1 — Extracción de inventario | ✅ Operativa con U3 y U0 (A1 ✅, A2 ✅ con reserva, A3 ✅ cerrado) |
 | Infraestructura (dashboard, validador) | ✅ Activa |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
 | Bloque B (cerrar infraestructura fase 1) | 📋 Pendiente |
@@ -118,33 +118,22 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 ---
 
-### A3. Resolver bugs conocidos B1, B2, B3, B4
+### A3. Resolver bugs conocidos B1, B2, B3, B4 — ✅ CERRADO 2026-05-05
 
-**Objetivo:** dejar la infraestructura limpia antes de seguir construyendo.
-
-**Pre-condición:** ninguna (puede hacerse en paralelo con A1).
-
-**Archivos a verificar/modificar:**
-- `diagrama.py` línea ~715 (B3) — verificar que ya apunta a `unidades/U3/U3-nc1-inventario.json` tras la disolución de `nuevo/`.
-- `viejo/scripts/crewai/tools.py` línea ~346 (B1) — decisión: arreglar / postergar / eliminar al borrar viejo.
-- `viejo/repertorios/` (B2) — decisión: trackear / desactivar lectura en producción / mover.
-- `web/index.html` — `_normSeccion` (B4) — solo aplica a JSON viejo; en JSON nuevo las claves ya están normalizadas. **Posiblemente ya resuelto.**
-
-**Actualizaciones meta requeridas:**
-- `PROCESO-MAESTRO.md` — actualizar Parte 5 marcando bugs resueltos o cerrados con decisión.
-- `REVIEW.md` — marcar como ✅.
-- `CHANGELOG.md` — solo si hay cambio de código.
-
-**Gate de cierre:**
-1. ✅ B1: decisión documentada en PROCESO-MAESTRO (arreglar / postergar / eliminar).
-2. ✅ B2: decisión documentada.
-3. ✅ B3: verificado en código (línea actualizada o constada como ya correcta).
-4. ✅ B4: verificado (resuelto al cambiar al schema normalizado).
-5. ✅ Si se hizo cambio de código: commit + CHANGELOG.
+**Gate cumplido:**
+1. ✅ **B1** (`viejo/scripts/crewai/tools.py:346` path muerto a `datos/tarjetas/`): **Pospuesto indefinidamente.** El flujo CrewAI está bloqueado (AGENTES = BLOQUEADO en sidebar). Bug inerte hasta que se reactive.
+2. ✅ **B2** (`viejo/repertorios/` no rastreable en Railway): **Aceptado.** Está en `viejo/` donde toca. Se queda sin trackear. El flujo de agentes está bloqueado y no lo usa activamente.
+3. ✅ **B3** (`diagrama.py` ref hardcoded a `U03`): **Resuelto en v10.15.** Verificado: apunta a `unidades/U3/U3-nc1-inventario.json`.
+4. ✅ **B4** (`_normSeccion` no fusiona pestañas "(cont.)"): **No requiere acción.** El bug era cosmético y aplica solo al JSON viejo. El nuevo schema usa claves normalizadas (vocabulario, gramatica...) — el problema desaparece automáticamente al migrar.
 
 ---
 
-## Bloque B — Cerrar la infraestructura de fase 1
+## Bloque B — Cerrar la infraestructura de fase 1 (parcial)
+
+> **Decisiones del autor (2026-05-05):** el bloque B se ejecuta en partes:
+> - **`nc1-tarjetas.json`**: requiere fase 2 primero. Sin tarjetas generadas, el global está vacío. Pendiente hasta cerrar fase 2.
+> - **`nc1-pildoras.json`**: pendiente hasta trabajar U3 vocabulario (fase 5).
+> - **`nc1-reciclaje.json`**: se puede discutir y diseñar ahora. El autor quiere definir cómo construirlo antes de implementar.
 
 ### B1. Escribir scripts Python para los JSONs globales del curso
 
@@ -448,6 +437,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-05 22:00** — A1 validado por el autor (47 actividades de U3 correctas). A3 cerrado: B1 pospuesto (CrewAI bloqueado), B2 aceptado (en viejo sin trackear), B3 resuelto en v10.15, B4 no requiere acción (cosmético, se resuelve con nuevo schema). Bloque B parcializado: tarjetas necesita fase 2 primero, píldoras en su momento, reciclaje próximo a discutir. Próximo paso: diseñar `nc1-reciclaje.json` y su visualización en dashboard.
 - **2026-05-05 21:30** — Rebajada afirmación "arquitectura limpia" en CHANGELOG v10.17 (revisor): se limpió solo el diagrama, no el código (referencias legacy a `viejo/repertorios/` siguen en `diagrama.py:550-557` para el flujo de agentes bloqueado).
 - **2026-05-05 21:00** — Dashboard saneado: sidebar con INVENTARIOS/PROYECTO/AGENTES en mayúsculas (AGENTES bloqueado), arquitectura mermaid sin caja `viejo/`, zoom +/- en diagramas, eliminadas 3 referencias residuales a `padStart(2,'0')`. Cero referencias hardcoded a U01-U09 en la UI.
 - **2026-05-05 20:00** — A2 cerrado (U0 extraído como prueba). Prompt de fase 1 ampliado con 3 secciones nuevas (unidades atípicas, sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo"). Convención de naming extendida a U0 en docs.
