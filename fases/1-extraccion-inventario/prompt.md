@@ -31,7 +31,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 3. Identificar las **secciones del índice de contenidos**:
    - **Caso normal** (U1-U9): 5 secciones canónicas — vocabulario, gramática, comunicación, destrezas, cultura.
    - **Caso atípico** (U0 y otras unidades introductorias): el índice no sigue las 5 secciones canónicas. Aplicar la sección "**Reglas para unidades atípicas (introductorias)**" de este prompt antes de continuar.
-4. Para cada página: identificar la sección, las actividades (numeradas), los cuadros gramaticales si los hay.
+4. Para cada página: identificar la sección, las actividades (numeradas o identificadas como tales — ver sección "Reglas para cuadros gramaticales"), los cuadros gramaticales y las notas "Observa" si los hay.
 5. Para cada actividad: extraer todos los campos del esquema (ver abajo). En U0-U3, observar la convención editorial de sílaba tónica subrayada (ver sección dedicada). Detectar el patrón de "primer ítem resuelto como ejemplo" (ver sección dedicada).
 6. Construir `vocabulario_consolidado` con los 3 bloques.
 7. Construir el índice top-level `secciones`.
@@ -422,9 +422,16 @@ Las siguientes cajas visuales del libro **NO son cuadros gramaticales** aunque a
 }
 ```
 
-**"Observa"** — Notas que llaman la atención sobre algún aspecto (variantes en Hispanoamérica, combinaciones de letras...). Son **notas dentro de actividades** o `datos._nota`, no cuadros gramaticales.
+**"Observa"** — Notas que llaman la atención sobre algún aspecto del idioma (variantes en Hispanoamérica, combinaciones de letras...). Son **notas**, no actividades ni cuadros gramaticales. Se capturan en `datos._nota` de la actividad o cuadro adyacente.
 
-**Regla práctica:** si el elemento tiene un **número de actividad** (1, 2, 3...) o una **instrucción directa al alumno** ("Escucha y repite", "Mira", "Escribe"...), es una **actividad**, no un cuadro. Si es una tabla de referencia sin número ni instrucción, es un `cuadro_gramatical`.
+**Regla práctica (con precedencia):** para distinguir cuadro gramatical / actividad / nota:
+
+1. **¿Tiene número de actividad** (1, 2, 3...) **y pide producción del alumno** (escuchar, repetir, escribir, relacionar...)? → **Actividad** con `tipo` de la taxonomía cerrada.
+2. **¿Es "Para aprender"?** → Siempre **actividad** (`tipo: produccion_escrita_libre`, `datos.subtipo: "para_aprender"`), aunque no tenga número. Excepción explícita a la regla general.
+3. **¿Es "Observa"?** → Siempre **nota** en `datos._nota`, aunque use el imperativo "Observa". Excepción explícita: "Observa" no pide producción del alumno; llama la atención sobre información de referencia. Nunca se convierte en actividad.
+4. **¿Es una tabla de referencia sin número ni instrucción de producción?** → `cuadro_gramatical`.
+
+> **Precedencia:** las excepciones explícitas (reglas 2 y 3) tienen prioridad sobre la regla general (regla 1). La regla general solo aplica cuando ninguna excepción encaja.
 
 ---
 

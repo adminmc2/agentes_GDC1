@@ -54,7 +54,10 @@ Después, validación visual: el autor abre el dashboard (`python3 diagrama.py` 
 
 ## Reglas operativas críticas (resumen — detalle en `prompt.md`)
 
-> **Error detectado en extracción real:** confundir el contenido de "Para aprender" con `cuadros_gramaticales`. Las cajas "Para aprender" y "Observa" son **actividades**, no cuadros gramaticales, aunque aparezcan en páginas de Gramática. Ver detalle completo en `prompt.md` → "Reglas para cuadros gramaticales".
+> **Error detectado en extracción real:** confundir el contenido de "Para aprender" con `cuadros_gramaticales`.
+> - **"Para aprender"** → es una **actividad** (tipo `produccion_escrita_libre`, datos.subtipo `para_aprender`), no un cuadro gramatical.
+> - **"Observa"** → NO es una actividad independiente. Es una **nota** que acompaña a otra actividad o cuadro; se captura en `datos._nota`. Aunque "Observa" es un imperativo, no debe tratarse como actividad: carece de número de actividad y no pide producción del alumno.
+> Ver detalle completo y precedencia en `prompt.md` → "Reglas para cuadros gramaticales".
 
 1. **Texto verbatim del libro.** El JSON debe contener el contenido de cada actividad **exactamente como aparece en el libro**. Para cloze, huecos como `_____`. Para textos, completos. Para diálogos, con marcadores `[1]`, `[2]`. **Nunca** poner solo respuestas como sustituto del enunciado.
 2. **Taxonomía cerrada de tipos.** 17 valores posibles en `tipo`. Cualquier otro valor falla la validación. Lista en `prompt.md`.
