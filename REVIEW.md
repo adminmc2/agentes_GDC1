@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-05 21:30
+> **Última actualización:** 2026-05-05 22:00
 
 ---
 
@@ -45,7 +45,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 | Fase 1 — Extracción de inventario | ✅ Operativa con U3 y U0 (A1 ✅, A2 ✅ con reserva, A3 ✅ cerrado) |
 | Infraestructura (dashboard, validador) | ✅ Activa |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
-| Bloque B (cerrar infraestructura fase 1) | 📋 Pendiente |
+| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — reciclaje en diseño; tarjetas espera fase 2; píldoras espera fase 5 |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
 | Bloque E (limpieza final) | 📋 Pendiente |
@@ -54,34 +54,15 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 ## Bloque A — Estabilizar la fase 1
 
-### A1. Validar U3 con el autor revisando actividad por actividad
+### A1. Validar U3 con el autor revisando actividad por actividad — ✅ CERRADO 2026-05-05
 
-**Objetivo:** que el JSON U3 quede sin errores y que el prompt incorpore TODAS las reglas/casos detectados.
-
-**Archivos a modificar (trabajo principal):**
-- `unidades/U3/U3-nc1-inventario.json` — corregir errores detectados.
-- `fases/1-extraccion-inventario/prompt.md` — añadir cada caso/regla aprendido.
-
-**Actualizaciones meta requeridas:**
-- `REVIEW.md` — bitácora con cada error corregido.
-- `PROCESO-MAESTRO.md` — bitácora de la sesión de revisión.
-- `CHANGELOG.md` — al hacer commit, entrada que liste los cambios.
-- `CLAUDE.md` — solo si el caso revela una NUEVA regla de oro global.
-
-**Gate de cierre (TODAS deben cumplirse):**
-1. ✅ Autor ha revisado las 47 actividades de U3 y declara: "no encuentro más errores".
-2. ✅ Cada error encontrado tiene su corrección en el JSON.
-3. ✅ Cada error encontrado tiene su regla añadida al prompt.
-4. ✅ `python3 scripts/validar_inventario.py 3` → ✅ JSON válido, 0 avisos.
-5. ✅ Bitácora del REVIEW actualizada con el resumen de la sesión.
-6. ✅ Commit hecho con CHANGELOG actualizado.
-
-**Validación del revisor:**
-- Verificar que el prompt contiene una sección "Casos resueltos en U3" actualizada.
-- Verificar que el JSON pasa el validador.
-- Verificar que CHANGELOG tiene la entrada correspondiente.
-
-**Bloquea a:** ~~A2~~ — A2 ya cerrado en paralelo con U0 cuando llegó el PDF antes que A1 estuviera completo (decisión explícita de paralelismo del autor el 2026-05-05). A1 sigue pendiente como tarea independiente.
+**Gate de cierre (cumplido el 2026-05-05 22:00):**
+1. ✅ Autor revisó las 47 actividades de U3 y declaró: "son correctas".
+2. ✅ Sin errores detectados — no hubo correcciones al JSON.
+3. ✅ Prompt contiene sección "Casos resueltos en U3" (v10.13).
+4. ✅ `python3 scripts/validar_inventario.py 3` → JSON válido, 0 avisos.
+5. ✅ Bitácora actualizada.
+6. ✅ Commits v10.21 + v10.22 documentan el estado.
 
 ---
 

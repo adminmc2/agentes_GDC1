@@ -746,17 +746,17 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 - Criterios de la versión resumida vs completa (Fase 7).
 - Mapeo material teórico ↔ sección (Fase 8).
 
-### Bugs conocidos / deuda técnica (bloqueantes del paso C, no del paso B)
+### Bugs conocidos / deuda técnica — ✅ CERRADOS 2026-05-05
 
-Detectados por revisor el 2026-05-05. Decisión del autor: **NO arreglar ahora**, abordar todos juntos al inicio del paso C cuando los paths definitivos estén fijados.
+Detectados por revisor el 2026-05-05. Decisiones tomadas por el autor el 2026-05-05 22:00 (cierre A3):
 
-- **B1 — `tools.py:346` escribe a path inexistente.** La tool `exportar_csv` (en `viejo/scripts/crewai/tools.py`) intenta escribir en `datos/tarjetas/U{XX}-vocabulario.csv`. Esa carpeta no existe en el repo. Bug preexistente desde v9.0. **Funcionalmente: `exportar_csv` está rota en producción.** Como el sistema activo no usa esta tool (vive en `viejo/`), el bug es inerte. Requiere decisión cuando se evalúe si reactivar parte de CrewAI.
+- **B1 — `tools.py:346` escribe a path inexistente.** ✅ **Pospuesto indefinidamente.** CrewAI bloqueado (AGENTES = BLOQUEADO en sidebar). Bug inerte hasta que se reactive el flujo CrewAI.
 
-- **B2 — Railway: `viejo/repertorios/` no existe en el repo remoto.** `repertorios/` está gitignored. El dashboard (`diagrama.py`) lee `viejo/repertorios/X.md` para mostrar líneas en algunos diagramas. En Railway no funciona. Decisión pendiente: trackear los repertorios en git, desactivar esa lectura en producción, o migrar al sistema activo en raíz.
+- **B2 — Railway: `viejo/repertorios/` no existe en el repo remoto.** ✅ **Aceptado.** Está en `viejo/` sin trackear. El flujo de agentes está bloqueado. Decisión: se queda así.
 
-- **B3 — `diagrama.py:715` tiene path hardcoded.** Verificar tras disolución de `nuevo/`: la línea debería apuntar a `unidades/U3/U3-nc1-inventario.json` (raíz). Si todavía apunta a `viejo/unidades/U03/inventario.json`, actualizar.
+- **B3 — `diagrama.py` path hardcoded a inventario viejo.** ✅ **Resuelto en v10.15.** Verificado: apunta a `unidades/U3/U3-nc1-inventario.json`.
 
-- **B4 — `_normSeccion` en `web/index.html` no fusiona secciones `(cont.)`.** La función parte por "—" y toma la primera parte. Con strings como "Comunicación (cont.) — La hora", el "(cont.)" va antes del separador, así que se genera una pestaña aparte de "Comunicación". Resultado: 7 pestañas en lugar de 5 para U3, con "Comunicación" / "Comunicación (cont.)" y "Destrezas" / "Destrezas (cont.)" separadas. **Cosmético, no bloqueante.** Se resuelve solo en paso C cuando las secciones pasan a claves normalizadas (`vocabulario`, `gramatica`, `comunicacion`...) en el nuevo schema y `_normSeccion` se elimina.
+- **B4 — `_normSeccion` no fusiona pestañas `(cont.)`.** ✅ **Sin acción.** Cosmético. Se resuelve automáticamente cuando U3 migre al nuevo schema con claves normalizadas (`vocabulario`, `gramatica`...) y `_normSeccion` se elimine.
 
 ### Sobre la implementación (a escribir cuando lleguemos)
 - (Eliminado: el prompt `fases/1-extraccion-inventario/prompt.md` ya está escrito y operativo.)
