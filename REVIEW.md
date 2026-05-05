@@ -448,6 +448,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-05 21:30** — Rebajada afirmación "arquitectura limpia" en CHANGELOG v10.17 (revisor): se limpió solo el diagrama, no el código (referencias legacy a `viejo/repertorios/` siguen en `diagrama.py:550-557` para el flujo de agentes bloqueado).
 - **2026-05-05 21:00** — Dashboard saneado: sidebar con INVENTARIOS/PROYECTO/AGENTES en mayúsculas (AGENTES bloqueado), arquitectura mermaid sin caja `viejo/`, zoom +/- en diagramas, eliminadas 3 referencias residuales a `padStart(2,'0')`. Cero referencias hardcoded a U01-U09 en la UI.
 - **2026-05-05 20:00** — A2 cerrado (U0 extraído como prueba). Prompt de fase 1 ampliado con 3 secciones nuevas (unidades atípicas, sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo"). Convención de naming extendida a U0 en docs.
 - **2026-05-05 18:30** — CLAUDE.md raíz reducido a 85 líneas (Anthropic best practices). Movida historia/estado/planes a PROCESO-MAESTRO/README/REVIEW según corresponda.

@@ -3,7 +3,9 @@
 
 ---
 
-## [v10.17 — 2026-05-05] — Dashboard refinado: sidebar reorganizado + zoom diagramas + arquitectura limpia
+## [v10.17 — 2026-05-05] — Dashboard refinado: sidebar reorganizado + zoom diagramas + diagrama activo sin caja viejo
+
+> **Honestidad sobre el alcance:** este commit limpia el **diagrama mermaid_level1 (Arquitectura activa)** quitándole la caja `viejo/`. NO es una "arquitectura limpia" general: el código sigue conteniendo referencias legacy a `viejo/repertorios/*.md` en `diagrama.py:550-557` (dict `AGENTS`), usadas por el flujo de agentes que está bloqueado pero no eliminado. La migración completa de esas referencias está documentada como pendiente en `PROCESO-MAESTRO.md` Parte 5 (estructura física) y bug B2.
 
 ### Sidebar
 - 3 botones top-level en MAYÚSCULAS: **INVENTARIOS**, **PROYECTO**, **AGENTES**.
