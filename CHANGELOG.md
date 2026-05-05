@@ -3,6 +3,39 @@
 
 ---
 
+## [v9.0 — 2026-05-05] — Reorganización: todo el contenido por unidad bajo `unidades/UXX/`
+
+### Motivo
+Hasta hoy, el contenido de una misma unidad estaba disperso en seis raíces (`unidades/`, `datos/fuente/`, `datos/inventarios/`, `datos/tarjetas/`, `tarjetas/unidadX/`, `materiales/U03-*`). Para tocar U03 había que saltar entre seis carpetas. Se consolida todo en `unidades/UXX/` para que cada unidad tenga un único hogar.
+
+### Movimientos (U03)
+- `datos/inventarios/U03-inventario.json` → `unidades/U03/inventario.json`
+- `datos/fuente/U03/U03-libro.pdf` → `unidades/U03/fuente/U03-libro.pdf`
+- `datos/tarjetas/U03-*.csv` y `*-indesign.txt` → `unidades/U03/tarjetas/csv/` (sin prefijo `U03-`)
+- `datos/tarjetas/U03-recurvo-output.json` → `unidades/U03/tarjetas/csv/recurvo-output.json`
+- `tarjetas/unidad3/vocabulario/` (PSDs, PNGs, INDD) → `unidades/U03/tarjetas/diseno/vocabulario/`
+- `materiales/U03-tarjetas-vocabulario-validacion-editorial.*` → `unidades/U03/tarjetas/validacion/`
+- `materiales/U03-tarjetas-vocabulario-poker.*` → `unidades/U03/tarjetas/validacion/`
+- `materiales/U03-tarjetas-vocabulario.tex`, `U03-tarjetas-gramatica.tex`, `U03-tarjetas-familias-ficticias.md` → `unidades/U03/tarjetas/validacion/`
+- `materiales/U03-pildora-3.*.{pdf,tex}` → `unidades/U03/pildoras/` (sin prefijo `U03-`)
+- `unidades/U03/U03-vocabulario-tarjetas.csv` → `unidades/U03/tarjetas/csv/vocabulario-tarjetas.csv`
+- Eliminadas carpetas vacías: `datos/`, `tarjetas/`
+
+### Actualización de referencias
+- `unidades/U03/inventario.json`: 10 ocurrencias de `datos/fuente/U03/U03-libro.pdf` → `unidades/U03/fuente/U03-libro.pdf`
+- `scripts/importar_inventario.py`: ejemplo de uso en docstring
+- `scripts/crear_crew_agents.py`: ejemplo en `task_expected_output` del agente Escritor
+- `diagrama.py`: nodos `FUENTE` e `INV` del Mermaid
+- `.gitignore`, `.dockerignore`: rutas viejas reemplazadas (`unidades/` ya cubre todo)
+- `README.md`: árbol de carpetas
+- `CLAUDE.md`: bloque "Estructura por unidad", proceso de generación, flujo de producción
+
+### Pendiente
+- Aplicar la misma reorganización a U01-U02 y U04-U09 cuando tengan contenido real (hoy son plantillas vacías).
+- `materiales/` queda como carpeta para especificaciones generales (`especificaciones-diseno-tarjetas.md`) que no son de ninguna unidad.
+
+---
+
 ## [v8.26 — 2026-05-04] — Actor/actriz: desdoblamiento en dos tarjetas (moción irregular)
 
 ### Modificado — Tratamiento editorial de actor/actriz

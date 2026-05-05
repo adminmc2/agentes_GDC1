@@ -36,7 +36,7 @@ agentes_GDC1/
 ├── web/
 │   ├── index.html              # Dashboard Material Design 3 (navegación multi-nivel)
 │   └── favicon.svg             # Logo Agentia ELE
-├── datos/inventarios/          # Inventarios JSON extraídos del libro
+├── unidades/UXX/               # Contenido por unidad: inventario.json, fuente/, tarjetas/, pildoras/, *.md
 ├── Dockerfile                  # Python 3.12 + Node.js 20 + promptfoo
 ├── railway.toml                # Config Railway
 ├── requirements.txt            # Deps Python (crewai, deepeval, langfuse...)

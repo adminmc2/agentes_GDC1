@@ -26,7 +26,6 @@ referencias/
 # Materiales producidos (LaTeX, PDFs, tarjetas InDesign)
 materiales/
 material-complementario/
-tarjetas/
 
 # Documentos pedagógicos extensos
 00-curso-general.md
@@ -36,8 +35,7 @@ marco-teorico-metodologico.md
 agentes/
 repertorios/
 
-# Output de agentes (producto, no código)
-datos/tarjetas/
+# Output de agentes: ahora en unidades/UXX/tarjetas/csv/ (ya cubierto por unidades/)
 
 # Resultados de pruebas obsoletas
 scripts/resultados_prueba/
@@ -56,8 +54,7 @@ diseno/
 *.log
 *.synctex.gz
 
-# PDFs fuente del libro
-datos/fuente/**/*.pdf
+# PDFs fuente del libro: ahora en unidades/UXX/fuente/ (ya cubierto por unidades/)
 
 # Archivos de planificación local
 CLAUDE.md

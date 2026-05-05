@@ -3,10 +3,12 @@
 .claude
 __pycache__
 *.pyc
-datos/fuente/*.pdf
+unidades/**/fuente/*.pdf
+unidades/**/tarjetas/diseno/
+unidades/**/tarjetas/validacion/
+unidades/**/pildoras/
 materiales/**/*.pdf
 material-complementario/
-tarjetas/
 *.indd
 *.ai
 *.psd

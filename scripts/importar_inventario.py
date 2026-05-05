@@ -3,7 +3,7 @@
 Importa un inventario JSON de unidad a Neon PostgreSQL.
 
 Uso:
-    python scripts/importar_inventario.py datos/inventarios/U03-inventario.json
+    python scripts/importar_inventario.py unidades/U03/inventario.json
 
 Idempotente: si la unidad ya existe, la borra (CASCADE) y la reimporta.
 Diseñado para funcionar con cualquier unidad (U01-U09).
