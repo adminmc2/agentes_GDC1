@@ -382,7 +382,7 @@ Estructura por cuadro gramatical:
 
 **Definido:**
 - Convención de naming: `UXX-seccion.md` (completa) y `UXX-seccion-paginas.md` (resumida).
-- Caso real para U03:
+- Caso real para U03 en el sistema antiguo (`viejo/unidades/U03/`):
   - `U03-vocabulario-paginas.md` (8.6 KB, ~1.700 palabras)
   - `U03-gramatica-paginas.md` (8.7 KB, ~2.550 palabras)
   - `U03-comunicacion-paginas.md` (9 KB, ~1.700 palabras)
@@ -484,7 +484,7 @@ guia-didactica-profesor-IA/
 guia-didactica-profesor-IA/
 │
 ├── viejo/                                       ← contenido editorial actual sin tocar
-│   ├── unidades/U03/                            (única poblada — pendiente migrar a nuevo/U3/)
+│   ├── unidades/U03/                            (única poblada en aquel momento)
 │   ├── materiales/                              (1 archivo: especificaciones-diseno-tarjetas.md)
 │   ├── agentes/                                 (7 ag-*.md + 4 resumen-configuracion-*.md)
 │   ├── repertorios/                             (6 bancos por sección)
