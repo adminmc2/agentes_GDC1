@@ -29,14 +29,15 @@ guia-didactica-profesor-IA/
 
 ---
 
-## Reglas de oro (no negociables)
+## Reglas de oro (no negociables, globales)
 
-1. **Texto verbatim del libro.** El contenido editorial extraído del libro debe reproducir el texto exactamente como aparece, no como referencia ni interpretación.
-2. **No transformar sin razón.** Si una decisión editorial no requiere cambio, no se cambia. Cualquier transformación se documenta.
-3. **Validar antes de cerrar.** Cada artefacto producido pasa por validación (script, revisión visual o ambas) antes de declararse cerrado.
-4. **No inventar.** Si una palabra, fecha o dato no está en la fuente original, no se añade. Marcar como "verificación pendiente" y consultar al autor.
-5. **Una fuente única.** Cada criterio editorial vive en un único archivo. La duplicación lleva a desincronización.
-6. **No tocar `viejo/`.** Contiene el sistema anterior, intocable hasta su eliminación final autorizada por el autor.
+Aplican a **cualquier** trabajo en el repositorio. Reglas específicas de cada fase viven en `fases/<N>-<nombre>/CLAUDE.md`.
+
+1. **No transformar sin razón.** Si una decisión editorial no requiere cambio, no se cambia. Cualquier transformación se documenta.
+2. **Validar antes de cerrar.** Cada artefacto producido pasa por validación (script, revisión visual o ambas) antes de declararse cerrado.
+3. **No inventar.** Si una palabra, fecha o dato no está en la fuente original, no se añade. Marcar como "verificación pendiente" y consultar al autor.
+4. **Una fuente única.** Cada criterio editorial vive en un único archivo. La duplicación lleva a desincronización.
+5. **No tocar `viejo/`.** Contiene el sistema anterior, intocable hasta su eliminación final autorizada por el autor.
 
 ---
 
