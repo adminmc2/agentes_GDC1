@@ -170,10 +170,10 @@ ordena
 clasifica
 seleccion_multiple
 verdadero_falso
-produccion_oral_pareja
-produccion_oral_libre
+interaccion_oral
+expresion_oral_libre
 produccion_escrita_guiada
-produccion_escrita_libre
+expresion_escrita_libre
 comprension_lectora
 comprension_auditiva
 busqueda_informacion
@@ -181,7 +181,7 @@ tarea_final
 juego
 ```
 
-**Ojo:** no existe `produccion_escrita` "a secas". Si la actividad da pista (relojes, esquema), es `produccion_escrita_guiada`. Si pide texto totalmente libre, `produccion_escrita_libre`.
+Ver la sección "Taxonomía cerrada de tipos de actividad" más abajo para la terminología ELE correcta y la distinción entre `completa_huecos` y `produccion_escrita_guiada`.
 
 ---
 
@@ -417,7 +417,7 @@ Las siguientes cajas visuales del libro **NO son cuadros gramaticales** aunque a
 ```jsonc
 {
   "id": "UX-pYY-actNN",
-  "tipo": "produccion_escrita_libre",
+  "tipo": "produccion_escrita_guiada",
   "datos": { "subtipo": "para_aprender", ... }
 }
 ```
@@ -427,7 +427,7 @@ Las siguientes cajas visuales del libro **NO son cuadros gramaticales** aunque a
 **Regla práctica (con precedencia):** para distinguir cuadro gramatical / actividad / nota:
 
 1. **¿Tiene número de actividad** (1, 2, 3...) **y pide producción del alumno** (escuchar, repetir, escribir, relacionar...)? → **Actividad** con `tipo` de la taxonomía cerrada.
-2. **¿Es "Para aprender"?** → Siempre **actividad** (`tipo: produccion_escrita_libre`, `datos.subtipo: "para_aprender"`), aunque no tenga número. Excepción explícita a la regla general.
+2. **¿Es "Para aprender"?** → Siempre **actividad** (`tipo: produccion_escrita_guiada`, `datos.subtipo: "para_aprender"`), aunque no tenga número. Excepción explícita a la regla general.
 3. **¿Es "Observa"?** → Siempre **nota** en `datos._nota`, aunque use el imperativo "Observa". Excepción explícita: "Observa" no pide producción del alumno; llama la atención sobre información de referencia. Nunca se convierte en actividad.
 4. **¿Es una tabla de referencia sin número ni instrucción de producción?** → `cuadro_gramatical`.
 
