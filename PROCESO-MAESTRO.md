@@ -133,7 +133,7 @@ unidades/
 
 **Esquema canónico del `UX-nc1-inventario.json` (CERRADO en chat 2026-05-05):**
 
-Estructura top-level (8 claves):
+Estructura top-level (10 claves):
 - `unidad` (int): número de unidad, sin cero. Ej: 3.
 - `curso` (str): identificador del curso. Ej: "nc1".
 - `titulo` (str): título de la unidad. Ej: "La Familia".
@@ -153,6 +153,8 @@ Estructura por página:
 - `seccion` (str): clave normalizada (vocabulario, gramatica, comunicacion, destrezas, cultura, evaluacion, reflexion).
 - `actividades` (array).
 - `cuadros_gramaticales` (array, opcional).
+
+**REGLA DURA — Literalidad del contenido visible al alumno.** Cada actividad debe contener el **texto exacto** que el alumno lee en el libro, no resúmenes ni referencias. La instrucción va en `instruccion_original` (literal). Todo el contenido visible adicional (frases con huecos, listas de items, opciones múltiples, diálogos completos, textos de lectura, definiciones, palabras dadas en recuadro, ejemplos del libro) va en `datos` con campos descriptivos (`items_libro`, `frases`, `dialogo_completo`, `texto_completo`, `opciones`, `palabras_recuadro`, etc.). **Nunca reemplazar texto del libro por una descripción** ("el alumno lee 4 frases"); siempre incluir las 4 frases literales. Si la actividad presenta huecos, marcarlos con `_____`. Razón: la fidelidad al libro es la base de toda explotación didáctica posterior; sin ella, el agente no puede generar contenido coherente.
 
 Estructura por actividad:
 - `id` (str): único, formato `UX-pYY-actNN`.
@@ -708,6 +710,8 @@ Detectados por revisor el 2026-05-05. Decisión del autor: **NO arreglar ahora**
 
 - **B3 — `diagrama.py:715` tiene path hardcoded.** La línea `INV["viejo/unidades/U03/inventario.json"] --> AG_vocabulario` apunta al inventario antiguo. Cuando U3 migre a `nuevo/unidades/U3/U3-nc1-inventario.json` (paso C), esta línea queda rota. Fix trivial cuando se haga la migración.
 
+- **B4 — `_normSeccion` en `web/index.html` no fusiona secciones `(cont.)`.** La función parte por "—" y toma la primera parte. Con strings como "Comunicación (cont.) — La hora", el "(cont.)" va antes del separador, así que se genera una pestaña aparte de "Comunicación". Resultado: 7 pestañas en lugar de 5 para U3, con "Comunicación" / "Comunicación (cont.)" y "Destrezas" / "Destrezas (cont.)" separadas. **Cosmético, no bloqueante.** Se resuelve solo en paso C cuando las secciones pasan a claves normalizadas (`vocabulario`, `gramatica`, `comunicacion`...) en el nuevo schema y `_normSeccion` se elimina.
+
 ### Sobre la implementación (a escribir cuando lleguemos)
 - Prompt `nuevo/scripts/prompts/extraccion-inventario.md`.
 - Scripts Python: `validar_inventario.py`, `regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`.
@@ -795,5 +799,6 @@ Los esquemas están cerrados en Parte 4 (decisiones 18, 19, 20).
 - **2026-05-05** — Esquemas de los 3 JSONs globales cerrados. Cambios respecto a borradores iniciales: `nc1-tarjetas.json` solo vocabulario y estrategia (sin gramática); `nc1-pildoras.json` con categorías marcadas como `null` para definir cuando se trabajen píldoras nuevas; `nc1-reciclaje.json` rediseñado como modelo acumulativo-secuencial, limitado a 5-6 elementos clave por unidad, basado en contenido (no en actividades), con tipos cerrados (vocabulario, estrategia, contenido_gramatical, forma_verbal, estrategia_comunicativa) y niveles de impacto. Anotado: el dashboard debe mostrar todos los JSON y permitir revisar/editar propuestas de reciclaje.
 - **2026-05-05 12:15** — **Split físico ejecutado.** Todo el contenido editorial actual movido a `viejo/` (unidades, materiales, agentes, repertorios, referencias, diseno, material-complementario, _template, marco-teorico-metodologico.md, 00-curso-general.md). En raíz quedan: código (scripts, web, eval, diagrama.py), docs (README, CLAUDE, CHANGELOG, ROADMAP, GITHUB-MANIFEST, PROCESO-MAESTRO), config (Dockerfile, railway.toml, requirements.txt, .env.example), y la zona `nuevo/` (en construcción). Eliminada basura técnica: `texput.log`, `__pycache__/`, `.DS_Store`. Actualizadas referencias a paths nuevos en: `.gitignore`, `.dockerignore`, `scripts/importar_inventario.py`, `scripts/crear_crew_agents.py`, `diagrama.py` (8 referencias a repertorios), `README.md`, `CLAUDE.md`.
 - **2026-05-05 12:30** — Commit `c5e08e9` "v10.0: split repo en zonas viejo/ y nuevo/ + PROCESO-MAESTRO" pusheado a `main`.
+- **2026-05-05 14:00** — Dictamen del revisor sobre paso B (commit `67db6a4`): implementación correcta y completa, sin bloqueantes. Hallazgo cosmético registrado como B4 (`_normSeccion` no fusiona pestañas `(cont.)`); se resuelve en paso C sin acción separada.
 - **2026-05-05 13:30** — Hallazgos del revisor sobre el split aceptados. Documentados como bugs conocidos B1 (`tools.py:346` escribe a path inexistente), B2 (Railway: `repertorios/` ya estaba gitignored antes del split, dashboard llevaba roto), B3 (`diagrama.py:715` con path hardcoded a inventario antiguo). Decisión: NO arreglar ahora, abordar los 3 al inicio del paso C cuando los paths en `nuevo/` estén fijados.
 - **2026-05-05 13:00** — Auditoría y actualización del documento. Correcciones: (1) entrada de bitácora con "12 tipos" → "17 tipos" (consistencia interna); (2) Parte 4 reescrita con las **26 decisiones cerradas** organizadas por categoría (modelo, organización, naming, JSONs, generación, dashboard); (3) Parte 5 (pendientes) limpiada — eliminados los esquemas JSON que ya estaban cerrados, añadida sección de "implementación pendiente"; (4) Parte 5.bis reescrita reflejando que el split YA está ejecutado (no es plan futuro); (5) Parte 6 reescrita con estado real de cada paso (A hecho, B próximo, C-F pendientes); (6) árbol "antes del split" marcado como histórico para evitar confusión.

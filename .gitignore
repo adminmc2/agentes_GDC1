@@ -54,7 +54,9 @@ viejo/diseno/
 *.log
 *.synctex.gz
 
-# PDFs fuente del libro: ahora en viejo/unidades/UXX/fuente/ (ya cubierto por unidades/)
+# PDFs fuente del libro (copyright SGEL, solo local)
+viejo/unidades/**/fuente/*.pdf
+nuevo/unidades/**/fuente/*.pdf
 
 # Archivos de planificación local
 CLAUDE.md

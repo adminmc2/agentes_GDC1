@@ -6,6 +6,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <style>
 /* === MATERIAL DESIGN 3 — Paleta dorado-oliva / crema === */
@@ -339,7 +340,7 @@ main { overflow-y: auto; padding: 24px; }
 
     <!-- ===== INVENTARIOS (lista) ===== -->
     <div id="view-inventarios" style="display:none">
-        <div class="page-header"><span class="page-title">Inventarios</span><div class="page-subtitle">Vista del JSON extraído de cada unidad. Schema-aware: muestra solo los bloques presentes.</div></div>
+        <div class="page-header"><span class="page-title">Inventarios</span><div class="page-subtitle">Vista del JSON extraído de cada unidad. Solo se muestran los bloques presentes en el inventario.</div></div>
         <div id="inv-list"></div>
     </div>
 
@@ -576,15 +577,22 @@ async function loadInventarios() {
             el.innerHTML = '<div class="section"><div class="section-body" style="padding:20px">No hay inventarios disponibles. Coloca un <code>inventario.json</code> en <code>viejo/unidades/UXX/</code>.</div></div>';
             return;
         }
-        el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">' + data.map(u =>
-            `<div class="section" style="cursor:pointer" onclick="goTo('inventario', ${u.unidad})">
+        el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">' + data.map(u => {
+            const tag = u.zona === 'nuevo'
+                ? '<span style="font-size:10px;background:#1B5E20;color:#fff;padding:2px 8px;border-radius:10px;font-weight:700;letter-spacing:0.5px">NUEVO</span>'
+                : '<span style="font-size:10px;background:#90A4AE;color:#fff;padding:2px 8px;border-radius:10px;font-weight:700;letter-spacing:0.5px">VIEJO</span>';
+            return `<div class="section" style="cursor:pointer" onclick="goTo('inventario', '${u.unidad}|${u.zona}')">
                 <div class="section-body" style="padding:16px">
-                    <div style="font-size:11px;color:var(--md-primary-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">U${u.unidad} &middot; ${u.nivel}</div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                        <div style="font-size:11px;color:var(--md-primary-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase">U${u.unidad} &middot; ${u.nivel}</div>
+                        ${tag}
+                    </div>
                     <div style="font-size:18px;font-weight:600;margin-bottom:4px">${u.titulo || '(sin título)'}</div>
-                    <div style="font-size:13px;color:var(--md-on-surface-variant)">páginas ${u.paginas}</div>
+                    <div style="font-size:12px;color:var(--md-on-surface-variant);margin-bottom:4px">páginas ${u.paginas}</div>
+                    <div style="font-size:11px;color:var(--md-on-surface-variant);font-family:monospace">${u.archivo}</div>
                 </div>
-            </div>`
-        ).join('') + '</div>';
+            </div>`;
+        }).join('') + '</div>';
     } catch(e) {
         el.innerHTML = `<div class="section"><div class="section-body" style="padding:20px;color:var(--md-error)">Error: ${e.message}</div></div>`;
     }
@@ -592,14 +600,16 @@ async function loadInventarios() {
 
 let _invTab = 'resumen';
 
-async function loadInventario(unidad) {
+async function loadInventario(param) {
     renderSidebar();
     const header = document.getElementById('inv-header');
     const content = document.getElementById('inv-content');
     header.innerHTML = '<span class="page-title">Cargando...</span>';
     content.innerHTML = '';
+    // param viene como "3|viejo" o "3|nuevo" o solo "3"
+    const [unidad, zona] = String(param).includes('|') ? String(param).split('|') : [param, 'viejo'];
     try {
-        const r = await fetch('/api/inventario?unidad=' + unidad);
+        const r = await fetch(`/api/inventario?unidad=${unidad}&zona=${zona}`);
         const inv = await r.json();
         if (inv.error) { content.innerHTML = `<div style="color:var(--md-error);padding:20px">${inv.error}</div>`; return; }
         renderInventario(inv);
@@ -614,6 +624,35 @@ function _normSeccion(s) {
 }
 
 function _esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+// Etiquetas legibles (con tildes y mayúsculas) para claves técnicas del JSON
+const _LABELS = {
+    // secciones
+    vocabulario: 'Vocabulario', gramatica: 'Gramática', comunicacion: 'Comunicación',
+    destrezas: 'Destrezas', cultura: 'Cultura', evaluacion: 'Evaluación', reflexion: 'Reflexión',
+    // bloques vocabulario_consolidado
+    principal: 'Principal', recurrente: 'Recurrente', comprension: 'Comprensión',
+    // datos / campos por actividad
+    items_libro: 'Items del libro', texto_completo: 'Texto completo',
+    dialogo_completo: 'Diálogo completo', frases: 'Frases', preguntas: 'Preguntas',
+    preguntas_opciones: 'Preguntas con opciones', pasos: 'Pasos',
+    ejemplo_libro: 'Ejemplo del libro', texto_modelo: 'Texto modelo',
+    nombres_dados: 'Nombres dados', palabras_recuadro: 'Palabras del recuadro',
+    horarios_digitales: 'Horarios digitales', programas_tv: 'Programas de TV',
+    peliculas_cartelera: 'Películas de la cartelera', personajes: 'Personajes',
+    titulo_dialogo: 'Título del diálogo', reglas_foneticas: 'Reglas fonéticas',
+    palabras_modelo: 'Palabras modelo', expresiones_dadas: 'Expresiones dadas',
+    afirmaciones_a_corregir: 'Afirmaciones a corregir', texto_correo: 'Texto del correo',
+    ejemplos_modelo: 'Ejemplos modelo', objetivo_palabras: 'Objetivo (nº palabras)',
+    cuadricula: 'Cuadrícula', subtipo: 'Subtipo', nota_lateral: 'Nota lateral',
+    palabras_subrayadas: 'Palabras subrayadas', dialogos_modelo: 'Diálogos modelo',
+    relojes_digitales: 'Relojes digitales', _nota: 'Nota', _descripcion: 'Descripción'
+};
+function _label(k) {
+    if (_LABELS[k]) return _LABELS[k];
+    // Fallback: snake_case → Capitalizado con espacios
+    return String(k).replace(/^_/, '').replace(/_/g, ' ').replace(/^./, c => c.toUpperCase());
+}
 
 function renderInventario(inv) {
     const header = document.getElementById('inv-header');
@@ -637,7 +676,7 @@ function renderInventario(inv) {
         vocBlock = `<div class="section"><div class="section-header"><h2>Vocabulario consolidado</h2></div><div class="section-body">
             ${['principal','recurrente','comprension'].filter(k=>v[k]).map(k=>{
                 const groups = v[k];
-                return `<div style="margin-bottom:18px"><div style="font-weight:600;text-transform:capitalize;margin-bottom:8px">${k}</div>
+                return `<div style="margin-bottom:18px"><div style="font-weight:600;margin-bottom:8px">${_label(k)}</div>
                     ${Object.entries(groups).filter(([n])=>!n.startsWith('_')).map(([nombre, palabras])=>
                         `<div style="margin-bottom:6px"><span style="font-weight:500">${_esc(nombre)}:</span> ${(palabras||[]).map(p=>`<span style="display:inline-block;background:var(--md-primary-container);color:var(--md-on-primary-container);padding:2px 8px;border-radius:12px;margin:2px 4px 2px 0;font-size:13px">${_esc(p)}</span>`).join('')}</div>`
                     ).join('')}</div>`;
@@ -649,14 +688,14 @@ function renderInventario(inv) {
     if (inv.contenidos_indice) {
         idxBlock = `<div class="section"><div class="section-header"><h2>Índice de contenidos</h2></div><div class="section-body">
             ${Object.entries(inv.contenidos_indice).map(([k,v])=>
-                `<div style="margin-bottom:8px"><span style="font-weight:600;text-transform:capitalize">${k}:</span> ${_esc(v)}</div>`
+                `<div style="margin-bottom:8px"><span style="font-weight:600">${_esc(_label(k))}:</span> ${_esc(v)}</div>`
             ).join('')}
         </div></div>`;
     }
 
     const tabsBlock = `<div class="section"><div class="section-header"><h2>Páginas y actividades</h2><span class="sec-badge">${(inv.paginas_detalle||[]).length} páginas &middot; ${seccionKeys.reduce((a,k)=>a+seccionesMap[k].actividades.length,0)} actividades</span></div><div class="section-body">
         <div class="diagram-tabs">
-            ${seccionKeys.map(k=>`<button class="diagram-tab ${k===_invTab?'active':''}" onclick="_invTab='${_esc(k)}';renderInventario(window._lastInv)">${_esc(k)}</button>`).join('')}
+            ${seccionKeys.map(k=>`<button class="diagram-tab ${k===_invTab?'active':''}" onclick="_invTab='${_esc(k)}';renderInventario(window._lastInv)">${_esc(_label(k))}</button>`).join('')}
         </div>
         <div id="inv-seccion-content"></div>
     </div></div>`;
@@ -669,22 +708,70 @@ function renderInventario(inv) {
     const sc = document.getElementById('inv-seccion-content');
     const sec = seccionesMap[_invTab];
     if (!sec) { sc.innerHTML = '<div style="padding:12px;color:var(--md-on-surface-variant)">Sin contenido</div>'; return; }
-    sc.innerHTML = sec.actividades.map(a => `
-        <div style="border:1px solid var(--md-outline-variant);border-radius:8px;padding:12px 14px;margin-bottom:10px">
-            <div style="display:flex;gap:10px;align-items:baseline;margin-bottom:6px">
-                <span style="font-weight:700;color:var(--md-primary-dark)">p.${a._pagina} &middot; act.${a.numero}</span>
-                <span style="font-size:12px;background:var(--md-surface-variant);padding:2px 8px;border-radius:10px">${_esc(a.tipo || '')}</span>
-                ${a.tiene_audio?`<span style="font-size:12px;background:#E3F2FD;padding:2px 8px;border-radius:10px">🔊 ${a.pista_audio||''}</span>`:''}
-                ${a.tiene_imagen?`<span style="font-size:12px;background:#FFF3E0;padding:2px 8px;border-radius:10px">🖼</span>`:''}
-                ${a.tiene_video?`<span style="font-size:12px;background:#FCE4EC;padding:2px 8px;border-radius:10px">🎬</span>`:''}
+    sc.innerHTML = sec.actividades.map(a => {
+        // Soporte schema viejo y nuevo
+        const audio = a.audio || { presente: a.tiene_audio, pista: a.pista_audio };
+        const imagen = a.imagen || { presente: a.tiene_imagen, descripcion: a.descripcion_imagen };
+        const video = a.video || { presente: a.tiene_video };
+        const datos = a.datos || {};
+        const cs = a.campo_semantico;
+
+        // Renderizar cualquier valor dentro de datos como bloque visible
+        const renderDato = (clave, valor) => {
+            if (clave === 'subtipo' || clave === '_nota' || clave === 'objetivo_palabras' || clave === 'nota_lateral') {
+                return `<div style="font-size:12px;color:var(--md-on-surface-variant);margin:4px 0"><b>${_esc(_label(clave))}:</b> ${_esc(valor)}</div>`;
+            }
+            if (typeof valor === 'string') {
+                return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-size:13px;background:#FAFAFA;padding:8px 10px;border-radius:6px;border-left:3px solid var(--md-primary-light);white-space:pre-wrap">${_esc(valor)}</div></div>`;
+            }
+            if (Array.isArray(valor)) {
+                if (!valor.length) return '';
+                if (typeof valor[0] === 'string') {
+                    return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><ol style="font-size:13px;background:#FAFAFA;padding:8px 10px 8px 28px;border-radius:6px;border-left:3px solid var(--md-primary-light);margin:0">${valor.map(v=>`<li style="margin:2px 0">${_esc(v)}</li>`).join('')}</ol></div>`;
+                }
+                if (Array.isArray(valor[0])) {
+                    // Cuadrícula (sopa de letras)
+                    return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-family:monospace;font-size:14px;background:#FAFAFA;padding:8px;border-radius:6px;border-left:3px solid var(--md-primary-light);display:inline-block">${valor.map(row=>row.map(c=>`<span style="display:inline-block;width:20px;text-align:center">${_esc(c)}</span>`).join('')).join('<br>')}</div></div>`;
+                }
+                // Lista de objetos (preguntas_opciones, etc.)
+                return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-size:13px;background:#FAFAFA;padding:8px 10px;border-radius:6px;border-left:3px solid var(--md-primary-light)">${valor.map(o=>`<div style="margin:4px 0">${_esc(JSON.stringify(o))}</div>`).join('')}</div></div>`;
+            }
+            if (typeof valor === 'object' && valor !== null) {
+                return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-size:13px;background:#FAFAFA;padding:8px 10px;border-radius:6px;border-left:3px solid var(--md-primary-light);font-family:monospace">${_esc(JSON.stringify(valor, null, 2))}</div></div>`;
+            }
+            return '';
+        };
+
+        const datosHtml = Object.entries(datos).map(([k,v]) => renderDato(k,v)).join('');
+
+        return `
+        <div style="border:1px solid var(--md-outline-variant);border-radius:8px;padding:14px 16px;margin-bottom:14px;background:#fff">
+            <div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px">
+                <span style="font-weight:700;color:var(--md-primary-dark);font-size:15px">p.${a._pagina} &middot; act.${a.numero}</span>
+                <span style="font-size:12px;background:var(--md-surface-variant);padding:2px 8px;border-radius:10px;font-weight:600">${_esc(a.tipo || '')}</span>
+                ${cs?`<span style="font-size:12px;background:#F3E5F5;color:#4A148C;padding:2px 8px;border-radius:10px">${_esc(cs)}</span>`:''}
+                ${audio.presente?`<span style="font-size:12px;background:#E3F2FD;padding:3px 8px;border-radius:10px;display:inline-flex;align-items:center;gap:4px"><i class="ph ph-speaker-high" style="font-size:14px"></i>${audio.pista?` ${audio.pista}`:''}</span>`:''}
+                ${imagen.presente?`<span style="font-size:12px;background:#FFF3E0;padding:3px 8px;border-radius:10px;display:inline-flex;align-items:center"><i class="ph ph-image" style="font-size:14px"></i></span>`:''}
+                ${video.presente?`<span style="font-size:12px;background:#FCE4EC;padding:3px 8px;border-radius:10px;display:inline-flex;align-items:center"><i class="ph ph-video-camera" style="font-size:14px"></i></span>`:''}
             </div>
-            <div style="font-size:14px;margin-bottom:6px"><em>${_esc(a.instruccion_original || a.instruccion || '')}</em></div>
-            ${a.contenido_linguistico?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Contenido:</b> ${(Array.isArray(a.contenido_linguistico)?a.contenido_linguistico:[a.contenido_linguistico]).map(_esc).join(' &middot; ')}</div>`:''}
+            <div style="font-size:14px;margin-bottom:8px;font-style:italic;color:#37474F"><b>Instrucción:</b> ${_esc(a.instruccion_original || a.instruccion || '')}</div>
+            ${a.contenido_linguistico?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Contenido lingüístico:</b> ${(Array.isArray(a.contenido_linguistico)?a.contenido_linguistico:[a.contenido_linguistico]).map(_esc).join(' &middot; ')}</div>`:''}
             ${a.destreza?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Destreza:</b> ${_esc(a.destreza)}</div>`:''}
-            ${a.descripcion_imagen?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Imagen:</b> ${_esc(a.descripcion_imagen)}</div>`:''}
-            ${a.respuestas&&a.respuestas.length?`<details style="margin-top:6px"><summary style="cursor:pointer;font-size:13px;color:var(--md-primary-dark)">Respuestas (${a.respuestas.length})</summary><ul style="font-size:13px;margin:4px 0 0 16px">${a.respuestas.map(r=>`<li>${_esc(r)}</li>`).join('')}</ul></details>`:''}
-        </div>
-    `).join('');
+            ${imagen.presente && imagen.descripcion?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Imagen:</b> ${_esc(imagen.descripcion)}</div>`:''}
+            ${datosHtml}
+            ${a.respuestas&&a.respuestas.length?`<details style="margin-top:8px" open><summary style="cursor:pointer;font-size:13px;color:var(--md-primary-dark);font-weight:600">Respuestas (${a.respuestas.length})</summary><ol style="font-size:13px;margin:6px 0 0 24px;background:#E8F5E9;padding:8px 10px 8px 28px;border-radius:6px;border-left:3px solid #2E7D32">${a.respuestas.map(r=>`<li style="margin:2px 0">${_esc(r)}</li>`).join('')}</ol></details>`:''}
+        </div>`;
+    }).join('');
+
+    // Renderizar cuadros gramaticales si los hay en la sección
+    const cuadros = sec.paginas.flatMap(p => p.cuadros_gramaticales || []);
+    if (cuadros.length) {
+        sc.innerHTML += '<div style="margin-top:20px"><h3 style="font-size:14px;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Cuadros gramaticales</h3>' +
+            cuadros.map(c => `<div style="border:1px solid var(--md-outline-variant);border-radius:8px;padding:14px;margin-bottom:10px;background:#FFF8E1">
+                <div style="font-weight:700;margin-bottom:8px;color:#5D4037">${_esc(c.titulo)}</div>
+                <pre style="font-size:12px;background:#fff;padding:10px;border-radius:6px;overflow-x:auto;margin:0">${_esc(JSON.stringify(c.contenido, null, 2))}</pre>
+            </div>`).join('') + '</div>';
+    }
 }
 
 function toggleSection(id) { document.getElementById(id).classList.toggle('collapsed'); }
