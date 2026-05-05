@@ -3,6 +3,101 @@
 
 ---
 
+## [v8.26 — 2026-05-04] — Actor/actriz: desdoblamiento en dos tarjetas (moción irregular)
+
+### Modificado — Tratamiento editorial de actor/actriz
+- **Motivo:** la moción de actor → actriz es **irregular** (cambio de raíz + plural irregular *actrices* con z→c). A diferencia de las profesiones con moción regular (camionero, enfermero, agricultor, iluminador, decorador, maquillador), donde una sola tarjeta enseña el patrón económicamente, la moción irregular es léxica (la palabra hay que aprenderla, no se deduce). Se desdobla en **dos tarjetas independientes**, igual que los pares de Familia (padre/madre, hermano/hermana). También coherente con la decisión visual: actor y actriz se ilustran en imágenes separadas porque no son una "pareja profesional".
+- **Cambios estructurales:**
+  - 1 tarjeta única `actor` (4 formas) → **2 tarjetas separadas**: `actor` (M) y `actriz` (F)
+  - Color de fondo: actor → azul celeste `#95CDEA` · actriz → salmón cálido `#EAA095` (mismos colores que padre/madre, hermano/hermana)
+  - Salen del grupo "moción de género PENDIENTE": ya no esperan decisión de color
+  - Total tarjetas profesiones: 9 → 10
+  - Total tarjetas U03 (todas): 32 → 33
+- **Gramapops:**
+  - actor: `el/un actor | los/unos actores | Femenino: actriz | El femenino es irregular: actriz`
+  - actriz: `la/una actriz | las/unas actrices | Masculino: actor | Plural irregular: actrices (la z cambia a c)`
+- **Ejemplos:**
+  - actor: *"Javier Bardem es actor."*
+  - actriz: *"Penélope Cruz es actriz."*
+- **Aplicado en:**
+  - `datos/tarjetas/U03-profesiones.csv` + `-indesign.txt` (línea 10 desdoblada en 10+11)
+  - `unidades/U03/U03-itinerarios.md` (count 9 → 10)
+  - `unidades/U03/U03-cultura.md` (count 6 → 7 + nota sobre desdoblamiento)
+  - `.claude/rules/criterios-generacion-tarjetas.md` sección 4 reestructurada en 4.1 (moción regular: 1 tarjeta) y 4.2 (moción irregular: 2 tarjetas) con razonamiento pedagógico
+  - `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex`: tarjeta actor desdoblada + tabla colores 6.4 y 6.5 actualizadas + sección 4 (10 tarjetas) + sección 7 (actor/actriz fuera de la decisión PENDIENTE)
+  - PDF recompilado (21 pp., +1 por la tarjeta nueva)
+
+---
+
+## [v8.25 — 2026-05-04] — Corrección lingüística: lema "gemelo" (singular), no "gemelos"
+
+### Modificado — Lema de la tarjeta de gemelos
+- **Motivo:** revisión en RAE/WordReference confirma que **`gemelo, -la`** es un sustantivo regular con par -o/-a, NO un sustantivo plural-only. El singular es uso natural y normativo: *"Tengo un hermano gemelo"*, *"Mi hermano es gemelo"*. La tarjeta anterior con lema *gemelos* + nota *"Usado siempre en plural"* era lingüísticamente errónea.
+- **Cambios:**
+  - Lema: `gemelos` → **`gemelo`** (artículo `el`, sílaba tónica `ge-ME-lo`)
+  - Gramapop: `el/un gemelo | los/unos gemelos | Femenino: gemela` (sin nota de "plural-only")
+  - Ejemplo: *"Mi hermano es gemelo."* (sustituye al ejemplo plural anterior)
+  - Combos: `ser gemelo / gemela`, `mi/tu/su [parentesco] es gemelo/gemela`, `[nombre] y [nombre] son gemelos / gemelas` (este último mantiene plural por concordancia natural)
+  - Traducciones a 9 idiomas en singular: twin, jumeau, gêmeo, Zwilling, bliźniak, tweelingbroer, δίδυμος, ikiz, dvojče
+- **Recategorización en `criterios-generacion-tarjetas.md`:**
+  - Movido de sección 8 (sustantivos plural-only) a sección 1 (regulares con par -o/-a)
+  - Añadida nota explicativa al final de sección 8 documentando la decisión
+- **Aplicado en:**
+  - `datos/tarjetas/U03-familia.csv` + `-indesign.txt` (línea 21 completa)
+  - `unidades/U03/U03-itinerarios.md` (lista de vocab: `gemelos` → `gemelo/a`)
+  - `.claude/rules/criterios-generacion-tarjetas.md` (sec 1, sec 8, principio de género no marcado)
+  - `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex` (tarjeta + tablas + principio) + PDF recompilado (20 pp.)
+
+---
+
+## [v8.24 — 2026-05-04] — Principio de género no marcado: hijo único / gemelos como tarjeta principal
+
+### Modificado — Inversión de género en pares con moción
+- **Motivo:** la tarjeta principal de un par con moción debe construirse siempre sobre la **forma masculina** (género no marcado en español), también en expresiones compuestas y plurales-only. Se invierten los dos casos donde la femenina era la principal:
+  - `hija única` → **`hijo único`** (tarjeta principal, color azul celeste #95CDEA, ejemplo "Jorge es hijo único")
+  - `gemelas` → **`gemelos`** (tarjeta principal, color azul celeste #95CDEA, ejemplo "Los hijos de Carlos son gemelos")
+- La forma femenina queda en la fila `Femenino:` del gramapop y como variante en los combos
+- **Aplicado en:**
+  - `datos/tarjetas/U03-familia.csv` + `-indesign.txt` (líneas 20-21: artículo, palabra, sílaba tónica, color de fondo, ejemplo, gramapop, 3 combos, 9 traducciones)
+  - `unidades/U03/U03-itinerarios.md` (lista de vocabulario)
+  - `.claude/rules/criterios-generacion-tarjetas.md` (nueva regla "Principio de género no marcado" + ejemplos sec. 7 y 8 invertidos)
+  - `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex` (tarjetas + tabla colores 6.4/6.5 + nuevo principio en sección 2) + PDF recompilado (20 pp.)
+- **No tocado:** las citas literales del libro SGEL en `U03-comunicacion.md`, `U03-pildora-3.5.tex`, `U03-destrezas.md` y `U03-pildora-3.9.tex` mantienen "hija única" y "gemelas" porque son contenido pedagógico que reproduce el libro impreso, no tarjetas
+
+---
+
+## [v8.23 — 2026-05-04] — Simplificación de etiquetas del gramapop (sin Sing./Pl., "Femenino:"/"Masculino:")
+
+### Modificado — Etiquetas del gramapop en todas las tarjetas
+- **Motivo:** las etiquetas `Sing. M:`, `Pl. M:`, `Sing. F:`, `Pl. F:`, `Sing.:`, `Pl.:`, `M. sing.:`, `M. pl.:`, `F. sing.:`, `F. pl.:` no aportaban información (el artículo ya marca género y número) y saturaban el espacio. Se eliminan todas. Ejemplo: `Sing. M: el/un padre | Pl. M: los/unos padres` → `el/un padre | los/unos padres`
+- **Etiqueta del par del otro género:** `Forma F:` → `Femenino:` y `Forma M:` → `Masculino:` (más natural, sin metalenguaje)
+- **Formato final del gramapop de Familia:** `el/un padre | los/unos padres | Femenino: madre | "Padres" también = padre + madre`
+- **Formato final del gramapop de Profesiones con moción:** `el/un camionero | los/unos camioneros | la/una camionera | las/unas camioneras` (4 formas con artículo, sin etiquetas)
+- **Aplicado en:**
+  - `datos/tarjetas/U03-familia.csv` + `-indesign.txt` (20 tarjetas)
+  - `datos/tarjetas/U03-profesiones.csv` + `-indesign.txt` (9 tarjetas)
+  - `datos/tarjetas/U03-lugares.csv` + `-indesign.txt`
+  - `datos/tarjetas/U03-escuela.csv` + `-indesign.txt`
+  - `unidades/U03/U03-vocabulario.md` (gramapops + texto explicativo)
+  - `.claude/rules/criterios-generacion-tarjetas.md` (principios + reglas + ejemplos)
+  - `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex` + PDF recompilado (20 pp.)
+
+---
+
+## [v8.22 — 2026-05-04] — Sustitución "Contrario" por "Forma F"/"Forma M" (U03 Familia)
+
+### Modificado — Etiqueta del par de género en tarjetas de Familia
+- **Motivo:** "Contrario" es semánticamente impreciso (padre y madre no son contrarios; son las dos formas del mismo término). Tras presentar 3 propuestas, se elige la **Propuesta 3**: etiqueta dependiente del género de la tarjeta
+  - Tarjeta masculina → `Forma F: [femenino]`
+  - Tarjeta femenina → `Forma M: [masculino]`
+- **Aplicado en:**
+  - `datos/tarjetas/U03-familia.csv` y `U03-familia-indesign.txt` (20 tarjetas)
+  - `unidades/U03/U03-vocabulario.md` (gramapops + texto explicativo)
+  - `.claude/rules/criterios-generacion-tarjetas.md` (reglas + ejemplos)
+  - `materiales/U03-tarjetas-vocabulario-validacion-editorial.tex` + PDF recompilado (20 pp.)
+
+---
+
 ## [v8.21 — 2026-04-15] — Rediseño esquema comunicativo Decir la hora (U03)
 
 ### Modificado — Tarjeta "Decir la hora" (U03-comunicacion.md, Caja 2)
