@@ -91,7 +91,7 @@ python3 scripts/validar_inventario.py unidades/U3/U3-nc1-inventario.json
 
 ## Convenciones de naming
 
-- Carpetas de unidad: `U1/`, `U2/`...`U9/` (sin cero a la izquierda).
+- Carpetas de unidad: `U0/`, `U1/`, `U2/`...`U9/` (sin cero a la izquierda; U0 es la unidad introductoria atípica "Punto de partida").
 - Archivos por unidad: prefijo `UX-nc1-`. Ejemplo: `U3-nc1-inventario.json`.
 - Archivos globales del curso: prefijo `nc1-`. Ejemplo: `nc1-tarjetas.json`.
 - Curso: `nc1` = "Nuevo Compañeros 1".

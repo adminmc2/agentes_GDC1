@@ -344,6 +344,55 @@ Sopa de letras:
 
 ---
 
+## Reglas para unidades atípicas (introductorias)
+
+Algunas unidades NO tienen las 5 secciones canónicas (vocabulario / gramática / comunicación / destrezas / cultura). Caso típico: la unidad introductoria **U0 "Punto de partida"** que es pre-A1.
+
+Cuando ocurra:
+1. Mapear todo el contenido a la sección que más se ajuste (en U0: `vocabulario`, porque todo el contenido es léxico-fonético).
+2. Las demás secciones canónicas quedan vacías: `{ "paginas": [], "actividades_ids": [] }`.
+3. Añadir clave top-level `_nota_unidad_atipica` con explicación de por qué es atípica y cómo se mapeó.
+4. En `contenidos_indice`, las secciones que no aplican llevan el valor `"(no aplica en esta unidad introductoria)"`.
+
+Ejemplo (U0):
+```jsonc
+"_nota_unidad_atipica": "Punto de partida (U0) es introductoria pre-A1.1. No sigue la estructura canónica de 5 secciones. Su contenido (países, abecedario, ortografía, números, saludos, instrucciones de aula) se mapea íntegramente a la sección 'vocabulario' por ser principalmente léxico."
+```
+
+---
+
+## Convención editorial: sílaba tónica subrayada hasta U3
+
+El libro indica explícitamente (nota a pie en U0 p.9): *"Para facilitar el aprendizaje de la pronunciación, se subraya la sílaba tónica de las palabras de la sección Vocabulario hasta la unidad 3."*
+
+Esto significa:
+- **U0, U1, U2, U3:** las palabras de las actividades de vocabulario aparecen con la sílaba tónica subrayada en el libro (ej: `<u>be</u>`, `bo<u>lí</u>grafo`).
+- **U4, U5...U9:** sin subrayado en las actividades.
+
+Cuando aparezca esta marca tipográfica en el libro:
+- En `datos.items_libro`, marcar la sílaba subrayada con guiones bajos: `_palabra_`. Ejemplo: `"_be_ bolígrafo"` o `"bo_lí_grafo"`.
+- Añadir clave `datos._nota` aclarando: `"Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."`
+
+Nota separada: en las **tarjetas de vocabulario** (output de fase 3), la sílaba tónica está marcada en TODO el libro, no solo hasta U3. Esa convención aplica a fase 3, no a esta fase.
+
+---
+
+## Patrón "primer ítem resuelto como ejemplo"
+
+Muy frecuente en el libro: en actividades numeradas, el libro da el **primer ítem ya resuelto** como modelo, después comienzan los items numerados que el alumno debe resolver.
+
+Ejemplos en U0:
+- Act 3 (relacionar): `banco — h` (dado), después `1. león — k`, etc.
+- Act 7 (deletrear): `Colombia: ce–o–ele–o–eme–be–i–a` (dado), después `1. España`...
+- Act 8 (escucha y escribe): `1. F-ú-t-b-o-l` (dado), después `2. _____`...
+
+Cuando aparezca este patrón:
+- El ítem resuelto va a `datos.ejemplo_libro` (string) — el alumno lo ve resuelto, no lo tiene que hacer.
+- Los items numerados restantes van a `datos.items_libro` (lista) — el alumno los resuelve.
+- Las soluciones de los items numerados van a `respuestas`.
+
+---
+
 ## Reglas para cuadros gramaticales
 
 Cuando una página tiene cuadros (tablas de conjugación, posesivos, interrogativos), van en `cuadros_gramaticales` de la página, **no** dentro de actividades.

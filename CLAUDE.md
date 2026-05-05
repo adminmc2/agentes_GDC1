@@ -43,7 +43,7 @@ Aplican a **cualquier** trabajo en el repositorio. Reglas específicas de cada f
 
 ## Convenciones de naming
 
-- Carpetas de unidad: `U1/`, `U2/`...`U9/` (sin cero a la izquierda, válido para cursos ≤9 unidades).
+- Carpetas de unidad: `U0/`, `U1/`, `U2/`...`U9/` (sin cero a la izquierda; válido para cursos ≤9 unidades, con U0 reservado a la unidad introductoria atípica "Punto de partida").
 - Archivos por unidad: prefijo `UX-nc1-`. Ejemplo: `U3-nc1-inventario.json`.
 - Archivos globales del curso: prefijo `nc1-`. Ejemplo: `nc1-tarjetas.json`.
 - Curso: `nc1` = "Nuevo Compañeros 1".
