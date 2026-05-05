@@ -3,6 +3,20 @@
 
 ---
 
+## [v10.30 — 2026-05-05] — Pasada exhaustiva completa_huecos → produccion_escrita_guiada
+
+**18 actividades recategorizadas en total:** 4 en v10.29 y 14 en este commit (6 en U1, 8 en U3).
+
+Criterio aplicado:
+- El alumno **escribe aplicando una regla** (conjugar, aplicar género/posesivo, recordar info del texto) → `produccion_escrita_guiada`.
+- El alumno **selecciona de un banco dado** ("palabras del recuadro") → `completa_huecos`.
+
+Quedan **3 casos legítimos como `completa_huecos`** en U1/U3: U1-p13-act8, U1-p18-act2, U3-p38-act01 (todos con banco de palabras dado).
+
+Los JSON tocados en esta pasada (U1 y U3) validan con 0 avisos. U0 sigue con 1 aviso intencional (`_nota_unidad_atipica`).
+
+---
+
 ## [v10.27 — 2026-05-05] — Schema cuadro_gramatical + campo observaciones
 
 - Campo opcional `observaciones` añadido al schema de cuadro gramatical para representar la caja "Observa" cuando acompaña a un cuadro (no a una actividad).
