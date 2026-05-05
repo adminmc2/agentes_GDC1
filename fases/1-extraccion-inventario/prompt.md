@@ -2,8 +2,8 @@
 
 > **Quién lo usa:** Claude Code en chat, cada vez que se extrae el inventario de una unidad nueva del libro.
 > **Quién lo mantiene:** el autor + Claude Code (entre los dos, conforme aparecen casos nuevos o errores).
-> **Cómo se invoca:** `Extrae el inventario de UX siguiendo nuevo/scripts/prompts/extraccion-inventario.md.`
-> **Output:** un único archivo `nuevo/unidades/UX/UX-nc1-inventario.json`.
+> **Cómo se invoca:** `Extrae el inventario de UX siguiendo fases/1-extraccion-inventario/prompt.md.`
+> **Output:** un único archivo `unidades/UX/UX-nc1-inventario.json`.
 
 ---
 
@@ -26,7 +26,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 
 ## Pasos de la extracción
 
-1. Leer las 10 páginas del PDF (`nuevo/unidades/UX/fuente/UX-nc1.pdf`).
+1. Leer las 10 páginas del PDF (`unidades/UX/fuente/UX-nc1.pdf`).
 2. Identificar el rango de páginas del libro (ej: 34-43), título, nivel.
 3. Identificar las 5 secciones del índice de contenidos (vocabulario, gramática, comunicación, destrezas, cultura).
 4. Para cada página: identificar la sección, las actividades (numeradas), los cuadros gramaticales si los hay.
@@ -34,7 +34,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 6. Construir `vocabulario_consolidado` con los 3 bloques.
 7. Construir el índice top-level `secciones`.
 8. Validar JSON.
-9. Escribir a `nuevo/unidades/UX/UX-nc1-inventario.json`.
+9. Escribir a `unidades/UX/UX-nc1-inventario.json`.
 10. Avisar al autor para validación visual de 2-3 páginas al azar.
 
 ---
@@ -49,7 +49,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
   "paginas_libro": <str, ej: "34-43">,
   "nivel": <str, ej: "A1.1">,
   "fuente": {
-    "archivo": "nuevo/unidades/UX/fuente/UX-nc1.pdf",
+    "archivo": "unidades/UX/fuente/UX-nc1.pdf",
     "version_extraccion": "<YYYY-MM-DD>"
   },
   "contenidos_indice": {
@@ -366,15 +366,15 @@ Antes de dar el JSON por bueno:
 8. **`descripcion` de imagen** obligatoria si `imagen.presente=true`.
 9. **JSON parseable** (validar con Python: `json.loads(open(...).read())`).
 
-Cuando exista, ejecutar `python nuevo/scripts/validar_inventario.py UX`.
+Cuando exista, ejecutar `python scripts/validar_inventario.py UX`.
 
 ---
 
 ## Salida
 
-Escribir el JSON en `nuevo/unidades/UX/UX-nc1-inventario.json`.
+Escribir el JSON en `unidades/UX/UX-nc1-inventario.json`.
 
-Si la carpeta `nuevo/unidades/UX/` no existe, crearla. Si `nuevo/unidades/UX/fuente/` no contiene el PDF, abortar y avisar al autor.
+Si la carpeta `unidades/UX/` no existe, crearla. Si `unidades/UX/fuente/` no contiene el PDF, abortar y avisar al autor.
 
 ---
 

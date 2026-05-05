@@ -439,9 +439,43 @@ Estructura por cuadro gramatical:
 
 ## Parte 3 — Estado del repositorio
 
-> **NOTA:** esta sección es una **vista viva** del árbol del repositorio. Se actualiza con cada cambio físico. Última actualización: 2026-05-05 (post-split `viejo/` + `nuevo/`).
+> **NOTA:** esta sección es una **vista viva** del árbol del repositorio. Se actualiza con cada cambio físico. Última actualización: 2026-05-05 (disolución de `nuevo/`: el sistema activo vive en raíz).
 
 ### Árbol actual (estado físico real, hoy)
+
+```
+guia-didactica-profesor-IA/
+│
+├── unidades/                                ← SISTEMA ACTIVO (nuevo)
+│   └── U3/                                  (única poblada)
+│       ├── U3-nc1-inventario.json           (47 actividades, schema canónico)
+│       ├── fuente/U3-nc1.pdf                (gitignored)
+│       └── (resto pendiente de migrar de viejo si procede)
+│
+├── scripts/                                 ← código activo (nuevo)
+│   ├── prompts/extraccion-inventario.md     (prompt versionado fase 1)
+│   └── validar_inventario.py                (validación estructural)
+│
+├── eval/                                    ← evaluación (heredado, en uso)
+├── web/                                     ← dashboard (heredado, en uso)
+├── diagrama.py                              ← servidor (heredado, en uso)
+│
+├── viejo/                                   ← ARCHIVO CrewAI v5.0 (intocable)
+│   ├── unidades/U03/                        (contenido editorial original)
+│   ├── materiales/, agentes/, repertorios/, referencias/, diseno/, _template/
+│   ├── scripts/                             (importar_inventario.py, crewai/, etc.)
+│   ├── CLAUDE-anterior.md                   (CLAUDE.md anterior)
+│   ├── marco-teorico-metodologico.md, 00-curso-general.md
+│   └── material-complementario/             (gitignored)
+│
+├── .claude/rules/                           (meta-reglas técnicas: agent-prompt-design, tool-design, etc.)
+├── README.md, CHANGELOG.md, ROADMAP.md, GITHUB-MANIFEST.md
+├── PROCESO-MAESTRO.md                       ← este documento (temporal)
+├── Dockerfile, railway.toml, requirements.txt, .env.example
+└── .gitignore, .dockerignore
+```
+
+### Árbol intermedio (estado anterior — pre-disolución de `nuevo/`)
 
 ```
 guia-didactica-profesor-IA/
@@ -745,11 +779,18 @@ Cuando `nuevo/` contenga U3 migrada y validada, los pasos serán:
 
 ## Parte 6 — Pasos siguientes (estado y plan)
 
-### Estado actual (2026-05-05 13:00)
+### Estado actual (2026-05-05 16:30)
 - ✅ Validación inicial del documento con el autor.
 - ✅ Cierre de Fase 1 (esquemas JSON + estrategia de generación).
 - ✅ Split físico `viejo/` + `nuevo/` ejecutado.
 - ✅ Commit y push (`c5e08e9`) con el split.
+- ✅ Vista HTML del informe integrada en el dashboard (paso B).
+- ✅ Extracción real de U3 desde el PDF con el nuevo schema.
+- ✅ Prompt versionado de la fase 1 escrito (`scripts/prompts/extraccion-inventario.md`).
+- ✅ Validador estructural escrito y funcionando (`scripts/validar_inventario.py`).
+- ✅ Disolución de `nuevo/` — sistema activo en raíz, `viejo/` como archivo.
+- ✅ CLAUDE.md global creado.
+- 📋 REVIEW.md — plan detallado paso a paso de lo que queda (ver documento separado).
 
 ### Plan de trabajo (paso por paso, en chat)
 
@@ -799,6 +840,10 @@ Los esquemas están cerrados en Parte 4 (decisiones 18, 19, 20).
 - **2026-05-05** — Esquemas de los 3 JSONs globales cerrados. Cambios respecto a borradores iniciales: `nc1-tarjetas.json` solo vocabulario y estrategia (sin gramática); `nc1-pildoras.json` con categorías marcadas como `null` para definir cuando se trabajen píldoras nuevas; `nc1-reciclaje.json` rediseñado como modelo acumulativo-secuencial, limitado a 5-6 elementos clave por unidad, basado en contenido (no en actividades), con tipos cerrados (vocabulario, estrategia, contenido_gramatical, forma_verbal, estrategia_comunicativa) y niveles de impacto. Anotado: el dashboard debe mostrar todos los JSON y permitir revisar/editar propuestas de reciclaje.
 - **2026-05-05 12:15** — **Split físico ejecutado.** Todo el contenido editorial actual movido a `viejo/` (unidades, materiales, agentes, repertorios, referencias, diseno, material-complementario, _template, marco-teorico-metodologico.md, 00-curso-general.md). En raíz quedan: código (scripts, web, eval, diagrama.py), docs (README, CLAUDE, CHANGELOG, ROADMAP, GITHUB-MANIFEST, PROCESO-MAESTRO), config (Dockerfile, railway.toml, requirements.txt, .env.example), y la zona `nuevo/` (en construcción). Eliminada basura técnica: `texput.log`, `__pycache__/`, `.DS_Store`. Actualizadas referencias a paths nuevos en: `.gitignore`, `.dockerignore`, `scripts/importar_inventario.py`, `scripts/crear_crew_agents.py`, `diagrama.py` (8 referencias a repertorios), `README.md`, `CLAUDE.md`.
 - **2026-05-05 12:30** — Commit `c5e08e9` "v10.0: split repo en zonas viejo/ y nuevo/ + PROCESO-MAESTRO" pusheado a `main`.
+- **2026-05-05 14:00** — Dictamen del revisor sobre paso B (commit `67db6a4`): implementación correcta y completa, sin bloqueantes. Hallazgo cosmético registrado como B4 (`_normSeccion` no fusiona pestañas `(cont.)`); se resuelve en paso C sin acción separada.
+- **2026-05-05 16:30** — **CLAUDE.md global creado** en raíz. 196 líneas. Cubre: qué es el proyecto, estructura del repo, modelo conceptual, las 8 fases con estado, 6 reglas de oro (texto verbatim, no transformar, validar, no inventar, fuente única, no tocar viejo), convenciones de naming, esquema canónico del JSON resumido, taxonomía cerrada de 17 tipos, comandos útiles, cómo invocar la extracción, mejora continua, lo que NO se hace, estado actual. Sin referencias a viejo (solo para decir que no se toca).
+- **2026-05-05 16:15** — **Validador funcionando desde raíz**: `python3 scripts/validar_inventario.py 3` → ✅ JSON válido. CONTENIDOS_VISIBLES ampliado con `expresiones_dadas` y `definiciones`. Dashboard limpio: una sola tarjeta U3 (sin tag ACTIVO/VIEJO, leyendo solo de `unidades/`).
+- **2026-05-05 16:00** — **Disolución de `nuevo/`.** El contenido pasa a raíz directamente (decisión del autor: evitar futuros renombrados de path). Movimientos: `nuevo/unidades/U3/` → `unidades/U3/`; `nuevo/scripts/prompts/` → `scripts/prompts/`; `nuevo/scripts/validar_inventario.py` → `scripts/validar_inventario.py`. CLAUDE.md anterior movido a `viejo/CLAUDE-anterior.md`. Scripts antiguos del CrewAI v5 movidos a `viejo/scripts/` (`importar_inventario.py`, `crear_crew_agents.py`, `probar_modelos.py`, `crewai/`, `resultados_prueba/`). Dashboard (`diagrama.py`, `web/`, `eval/`) se mantiene en raíz como infraestructura activa que sirve a ambas zonas. Renombrada la zona "nuevo" a "activo" en el dashboard. Paths internos actualizados en JSON, scripts, .gitignore, .dockerignore, README.md.
 - **2026-05-05 14:00** — Dictamen del revisor sobre paso B (commit `67db6a4`): implementación correcta y completa, sin bloqueantes. Hallazgo cosmético registrado como B4 (`_normSeccion` no fusiona pestañas `(cont.)`); se resuelve en paso C sin acción separada.
 - **2026-05-05 13:30** — Hallazgos del revisor sobre el split aceptados. Documentados como bugs conocidos B1 (`tools.py:346` escribe a path inexistente), B2 (Railway: `repertorios/` ya estaba gitignored antes del split, dashboard llevaba roto), B3 (`diagrama.py:715` con path hardcoded a inventario antiguo). Decisión: NO arreglar ahora, abordar los 3 al inicio del paso C cuando los paths en `nuevo/` estén fijados.
 - **2026-05-05 13:00** — Auditoría y actualización del documento. Correcciones: (1) entrada de bitácora con "12 tipos" → "17 tipos" (consistencia interna); (2) Parte 4 reescrita con las **26 decisiones cerradas** organizadas por categoría (modelo, organización, naming, JSONs, generación, dashboard); (3) Parte 5 (pendientes) limpiada — eliminados los esquemas JSON que ya estaban cerrados, añadida sección de "implementación pendiente"; (4) Parte 5.bis reescrita reflejando que el split YA está ejecutado (no es plan futuro); (5) Parte 6 reescrita con estado real de cada paso (A hecho, B próximo, C-F pendientes); (6) árbol "antes del split" marcado como histórico para evitar confusión.

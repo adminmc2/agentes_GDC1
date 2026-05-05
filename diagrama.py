@@ -225,22 +225,16 @@ def _scan_zona(base, pattern_carpeta, pattern_archivo, zona):
 
 
 def list_inventarios():
-    """Lista unidades con inventario disponible. Devuelve viejo y nuevo."""
-    return (
-        _scan_zona(PROJECT / "viejo" / "unidades", None, None, "viejo")
-        + _scan_zona(PROJECT / "nuevo" / "unidades", None, None, "nuevo")
-    )
+    """Lista unidades con inventario disponible en unidades/."""
+    return _scan_zona(PROJECT / "unidades", None, None, "")
 
 
-def get_inventario(unidad, zona="viejo"):
-    """Lee inventario de la zona indicada. Sin transformar."""
-    if zona == "nuevo":
-        folder = PROJECT / "nuevo" / "unidades" / f"U{int(unidad)}"
-    else:
-        folder = PROJECT / "viejo" / "unidades" / f"U{int(unidad):02d}"
+def get_inventario(unidad, zona=""):
+    """Lee inventario de unidades/U{N}/U{N}-nc1-inventario.json."""
+    folder = PROJECT / "unidades" / f"U{int(unidad)}"
     candidates = list(folder.glob("*inventario.json")) if folder.exists() else []
     if not candidates:
-        return {"error": f"No hay inventario para U{unidad} en zona '{zona}'"}
+        return {"error": f"No hay inventario para U{unidad}"}
     return json.loads(candidates[0].read_text(encoding="utf-8"))
 
 
@@ -1013,7 +1007,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
                           json.dumps(list_inventarios(), ensure_ascii=False))
         elif parsed.path == "/api/inventario":
             unidad = int(qs.get("unidad", [3])[0])
-            zona = qs.get("zona", ["viejo"])[0]
+            zona = qs.get("zona", ["activo"])[0]
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(get_inventario(unidad, zona), ensure_ascii=False))
         elif parsed.path == "/api/evaluaciones":

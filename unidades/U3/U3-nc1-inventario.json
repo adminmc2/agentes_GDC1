@@ -5,7 +5,7 @@
   "paginas_libro": "34-43",
   "nivel": "A1.1",
   "fuente": {
-    "archivo": "nuevo/unidades/U3/fuente/U3-nc1.pdf",
+    "archivo": "unidades/U3/fuente/U3-nc1.pdf",
     "version_extraccion": "2026-05-05"
   },
 
@@ -511,14 +511,24 @@
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [
-            "1. ¿Dónde vive tu familia? — Mi familia vive en Buenos Aires.",
-            "2. ¿Cómo se llama vuestro gato? — Nuestro gato se llama Tom.",
-            "3. ¿De dónde son tus abuelos? — Mis abuelos son mexicanos.",
-            "4. ¿Cuántos hijos tienen tus tíos? — Mis tíos tienen dos hijos.",
-            "5. ¿Cuántos años tienen sus hijos? — Sus hijos tienen 10 y 11 años.",
-            "6. ¿Cuántos años tiene vuestra madre? — Nuestra madre tiene 45 años."
+            "1. ¿Dónde vive tu familia?",
+            "2. ¿Cómo se llama vuestro gato?",
+            "3. ¿De dónde son tus abuelos?",
+            "4. ¿Cuántos hijos tienen tus tíos?",
+            "5. ¿Cuántos años tienen sus hijos?",
+            "6. ¿Cuántos años tiene vuestra madre?"
           ],
-          "datos": {}
+          "datos": {
+            "respuestas_libro": [
+              "1. _____ — Mi familia vive en Buenos Aires.",
+              "2. _____ — Nuestro gato se llama Tom.",
+              "3. _____ — Mis abuelos son mexicanos.",
+              "4. _____ — Mis tíos tienen dos hijos.",
+              "5. _____ — Sus hijos tienen 10 y 11 años.",
+              "6. _____ — Nuestra madre tiene 45 años."
+            ],
+            "_nota": "El libro muestra las respuestas (después del guion). El alumno escribe las preguntas. Las respuestas reales (en respuestas) son las preguntas que el alumno produce."
+          }
         },
         {
           "id": "U3-p37-act07",
@@ -672,11 +682,17 @@
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [
-            "1. Los gemelos son dos hermanos que nacen el mismo día. — V",
-            "2. Los gemelos son dos hermanos iguales. — V",
-            "3. Los gemelos son siempre del mismo sexo: dos chicos o dos chicas. — F"
+            "1. V",
+            "2. V",
+            "3. F"
           ],
-          "datos": {}
+          "datos": {
+            "frases_libro": [
+              "1. Los gemelos son dos hermanos que nacen el mismo día.",
+              "2. Los gemelos son dos hermanos iguales.",
+              "3. Los gemelos son siempre del mismo sexo: dos chicos o dos chicas."
+            ]
+          }
         },
         {
           "id": "U3-p38-act04",

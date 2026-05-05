@@ -1,107 +1,151 @@
-# Agentes GDC1 — Sistema de generación con IA
+# Guía Didáctica del Profesor — Nuevo Compañeros 1
 
-> Sistema de agentes para generar la guía del profesor del curso de español A1.1 "Nuevo Compañeros 1" (SGEL).
+Sistema editorial asistido por IA para producir la **guía didáctica del profesor** del libro de texto *Nuevo Compañeros 1* (NC1, ELE A1.1, SGEL).
 
-## Qué es
+El contenido editorial se genera siguiendo un **proceso de 8 fases**, partiendo del PDF del libro original.
 
-Agentes CrewAI que generan explotaciones didácticas a partir del inventario de actividades del libro del alumno. El sistema lee el inventario de cada unidad (JSON en BD), aplica criterios pedagógicos y genera contenido estructurado.
+---
 
-## Stack
+## Estado del proyecto
+
+| Fase | Descripción | Estado |
+|------|-------------|--------|
+| 1 | Input PDF → inventario JSON | ✅ Operativa con U3 |
+| 2 | Análisis de vocabulario | 📋 Pendiente |
+| 3 | Tarjetas de vocabulario | 📋 Pendiente |
+| 4 | Tarjetas de estrategia | 📋 Pendiente |
+| 5 | Píldoras formativas | 📋 Pendiente |
+| 6 | Generación sección por sección | 📋 Pendiente |
+| 7 | Doble versión (completa / 2 páginas) | 📋 Pendiente |
+| 8 | Principios teórico-metodológicos + repertorios | 📋 Pendiente |
+
+---
+
+## Estructura del repositorio
+
+```
+guia-didactica-profesor-IA/
+├── unidades/                        ← contenido editorial por unidad (sistema activo)
+│   └── UX/
+│       ├── UX-nc1-inventario.json   ← inventario extraído del PDF
+│       ├── fuente/UX-nc1.pdf        ← PDF del libro (gitignored)
+│       └── tarjetas/, pildoras/, *.md
+├── fases/                           ← una carpeta por fase con su CLAUDE.md + prompt
+│   └── 1-extraccion-inventario/
+│       ├── CLAUDE.md                ← contexto operativo de la fase
+│       └── prompt.md                ← instrucciones detalladas para extracción
+├── scripts/
+│   └── validar_inventario.py        ← validación estructural sin LLM
+├── web/                             ← frontend del dashboard
+├── eval/                            ← evaluación (DeepEval + promptfoo)
+├── diagrama.py                      ← servidor del dashboard (HTTP + APIs)
+│
+├── viejo/                           ← archivo del sistema CrewAI v5 anterior
+│                                       (intocable hasta su eliminación final)
+│
+├── CLAUDE.md                        ← contexto auto-cargado por Claude Code
+├── PROCESO-MAESTRO.md               ← decisiones acumuladas + bitácora
+├── REVIEW.md                        ← plan de trabajo con gates de validación
+├── CHANGELOG.md                     ← historial técnico de cambios
+├── ROADMAP.md, GITHUB-MANIFEST.md
+│
+├── Dockerfile, railway.toml, requirements.txt, .env.example
+└── .gitignore, .dockerignore
+```
+
+---
+
+## Cómo se trabaja con el sistema
+
+### 1. Extraer el inventario de una unidad nueva
+
+Cuando el autor entrega el PDF de una unidad (ej. U4):
+
+```
+1. Colocar el PDF en unidades/U4/fuente/U4-nc1.pdf
+2. En chat con Claude Code:
+   "Extrae el inventario de U4 siguiendo fases/1-extraccion-inventario/prompt.md."
+3. Claude Code lee el prompt → lee el PDF → escribe unidades/U4/U4-nc1-inventario.json
+4. Validar:
+   python3 scripts/validar_inventario.py 4
+5. Revisar visualmente en el dashboard.
+```
+
+### 2. Arrancar el dashboard
+
+```bash
+python3 diagrama.py
+# → http://localhost:8080
+# Click en "Inventarios" en el sidebar para ver el JSON renderizado.
+```
+
+### 3. Validar un inventario
+
+```bash
+python3 scripts/validar_inventario.py 3
+# o por path:
+python3 scripts/validar_inventario.py unidades/U3/U3-nc1-inventario.json
+```
+
+---
+
+## Convenciones de naming
+
+- Carpetas de unidad: `U1/`, `U2/`...`U9/` (sin cero a la izquierda).
+- Archivos por unidad: prefijo `UX-nc1-`. Ejemplo: `U3-nc1-inventario.json`.
+- Archivos globales del curso: prefijo `nc1-`. Ejemplo: `nc1-tarjetas.json`.
+- Curso: `nc1` = "Nuevo Compañeros 1".
+
+> La convención sin cero solo es válida para cursos de ≤9 unidades. Para 10+ habría que reintroducir el cero.
+
+---
+
+## Reglas de oro (no negociables)
+
+1. **Texto verbatim del libro** en el JSON.
+2. **No transformar sin razón.**
+3. **Validar antes de cerrar.**
+4. **No inventar contenido.**
+5. **Una fuente única** por criterio editorial.
+6. **No tocar `viejo/`.**
+
+Detalle completo: [`CLAUDE.md`](CLAUDE.md).
+
+---
+
+## Documentos clave
+
+| Documento | Para qué |
+|---|---|
+| [`CLAUDE.md`](CLAUDE.md) | Contexto y reglas que Claude Code carga en cada sesión |
+| [`PROCESO-MAESTRO.md`](PROCESO-MAESTRO.md) | Decisiones cerradas, esquemas, bitácora |
+| [`REVIEW.md`](REVIEW.md) | Plan ejecutable: pasos pendientes, gates, validaciones |
+| [`CHANGELOG.md`](CHANGELOG.md) | Historial técnico de cambios |
+| [`fases/1-extraccion-inventario/prompt.md`](fases/1-extraccion-inventario/prompt.md) | Prompt versionado de la fase 1 |
+
+---
+
+## Stack técnico
 
 | Componente | Tecnología |
 |---|---|
-| Agentes | CrewAI 1.9.3 |
-| LLMs | Anthropic (Claude) + Groq (GPT-OSS-120B, Kimi K2) |
-| Base de datos | Neon PostgreSQL |
-| Evaluación | DeepEval (métricas rule-based) + promptfoo (comparar LLMs) |
-| Trazabilidad | Langfuse (cloud, opcional) |
-| Servidor | Python http.server (migración a FastAPI pendiente) |
-| Deploy | Railway (Docker) |
+| Extracción de inventario | Claude Code en chat con prompt versionado |
+| Validación estructural | Python (cero LLM) |
+| Dashboard | Python `http.server` + HTML/CSS/JS (Material Design 3, Phosphor icons, Mermaid) |
+| Persistencia de datos | JSON en filesystem (BD Neon PostgreSQL solo en el sistema viejo, no usada en activo) |
+| Despliegue | Local por ahora; Railway disponible si se reactiva |
 
-## Estructura
+---
 
-```
-agentes_GDC1/
-├── scripts/crewai/
-│   ├── recurvo.py              # Agente Recurvo (vocabulario) — 2 tareas secuenciales
-│   └── tools.py                # 5 tools custom contra BD Neon
-├── scripts/
-│   ├── importar_inventario.py  # JSON → PostgreSQL
-│   └── probar_modelos.py       # Prueba comparativa de LLMs
-├── eval/
-│   ├── evaluar_tarjetas.py     # 5 métricas rule-based + score global
-│   ├── provider_crewai.py      # Wrapper para promptfoo
-│   └── promptfoo.yaml          # Config comparación de modelos
-├── diagrama.py                 # Servidor web (APIs REST)
-├── web/
-│   ├── index.html              # Dashboard Material Design 3 (navegación multi-nivel)
-│   └── favicon.svg             # Logo Agentia ELE
-├── viejo/unidades/UXX/         # Contenido por unidad (estado actual): inventario.json, fuente/, tarjetas/, pildoras/, *.md
-├── nuevo/                      # Estructura definitiva en construcción (ver PROCESO-MAESTRO.md)
-├── Dockerfile                  # Python 3.12 + Node.js 20 + promptfoo
-├── railway.toml                # Config Railway
-├── requirements.txt            # Deps Python (crewai, deepeval, langfuse...)
-└── .env.example                # Variables de entorno necesarias
-```
+## Sobre el sistema anterior (`viejo/`)
 
-## Instalación local
+La carpeta `viejo/` conserva el sistema CrewAI v5 que existía antes del rediseño. **No se toca, no se ejecuta, no se importa desde el sistema activo.** Se conserva como archivo de referencia hasta que todas las fases nuevas estén operativas y se haya migrado lo aprovechable. Más detalle en `PROCESO-MAESTRO.md`.
 
-```bash
-# Clonar
-git clone https://github.com/adminmc2/agentes_GDC1.git
-cd agentes_GDC1
+---
 
-# Entorno virtual
-python -m venv venv && source venv/bin/activate
+## Estado actual
 
-# Dependencias Python
-pip install -r requirements.txt
-
-# promptfoo (requiere Node.js)
-npm install -g promptfoo
-
-# Configurar variables
-cp .env.example .env
-# Editar .env con tus API keys y DATABASE_URL
-
-# Arrancar servidor
-python diagrama.py
-# Dashboard en http://localhost:8080
-```
-
-## Uso
-
-### Ejecutar agente desde el dashboard
-1. Abrir http://localhost:8080
-2. Seleccionar unidad en sidebar y navegar a la sección (ej. "Toda la unidad")
-3. Elegir agente (Recurvo) → "+ Nueva ejecución"
-4. Configurar modelo, temperatura, max tokens → "Ejecutar"
-5. Consola en tiempo real + evaluación automática al terminar
-
-### Ejecutar agente por terminal
-```bash
-python scripts/crewai/recurvo.py 3  # Unidad 3
-```
-
-### Evaluar tarjetas
-```bash
-python eval/evaluar_tarjetas.py --unidad 3
-```
-
-### Comparar modelos con promptfoo
-```bash
-cd eval && promptfoo eval && promptfoo view
-```
-
-## Deploy (Railway)
-
-El repo está conectado a Railway. Cada push a `main` redespliega automáticamente.
-
-- URL: https://agentiaelegd.up.railway.app
-- Variables de entorno: configurar en Railway Settings > Variables (ver `.env.example`)
-
-## Estado
-
-- **Funcional:** Agente Recurvo (vocabulario), 5 tools, evaluación, dashboard, deploy
-- **Pendiente:** 6 agentes más (Vocabulario sección, Gramática, Comunicación, Destrezas, Cultura, Evaluación)
-- **En rediseño:** Prompts pedagógicos, repertorios, arquitectura multi-agente
+- **Fase 1 operativa** — U3 extraída y validada (47 actividades, schema canónico).
+- **U1, U2, U4-U9 pendientes** de extracción cuando lleguen sus PDFs.
+- **Fases 2-8 pendientes** de definir prompt y construir.
+- **Plan detallado:** ver [`REVIEW.md`](REVIEW.md).

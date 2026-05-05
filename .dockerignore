@@ -3,7 +3,8 @@
 .claude
 __pycache__
 *.pyc
-viejo/unidades/**/fuente/*.pdf
+viejo/
+unidades/**/fuente/*.pdf
 viejo/unidades/**/tarjetas/diseno/
 viejo/unidades/**/tarjetas/validacion/
 viejo/unidades/**/pildoras/

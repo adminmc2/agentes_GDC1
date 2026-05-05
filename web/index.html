@@ -577,22 +577,16 @@ async function loadInventarios() {
             el.innerHTML = '<div class="section"><div class="section-body" style="padding:20px">No hay inventarios disponibles. Coloca un <code>inventario.json</code> en <code>viejo/unidades/UXX/</code>.</div></div>';
             return;
         }
-        el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">' + data.map(u => {
-            const tag = u.zona === 'nuevo'
-                ? '<span style="font-size:10px;background:#1B5E20;color:#fff;padding:2px 8px;border-radius:10px;font-weight:700;letter-spacing:0.5px">NUEVO</span>'
-                : '<span style="font-size:10px;background:#90A4AE;color:#fff;padding:2px 8px;border-radius:10px;font-weight:700;letter-spacing:0.5px">VIEJO</span>';
-            return `<div class="section" style="cursor:pointer" onclick="goTo('inventario', '${u.unidad}|${u.zona}')">
+        el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">' + data.map(u =>
+            `<div class="section" style="cursor:pointer" onclick="goTo('inventario', ${u.unidad})">
                 <div class="section-body" style="padding:16px">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-                        <div style="font-size:11px;color:var(--md-primary-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase">U${u.unidad} &middot; ${u.nivel}</div>
-                        ${tag}
-                    </div>
+                    <div style="font-size:11px;color:var(--md-primary-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">U${u.unidad} &middot; ${u.nivel}</div>
                     <div style="font-size:18px;font-weight:600;margin-bottom:4px">${u.titulo || '(sin título)'}</div>
                     <div style="font-size:12px;color:var(--md-on-surface-variant);margin-bottom:4px">páginas ${u.paginas}</div>
                     <div style="font-size:11px;color:var(--md-on-surface-variant);font-family:monospace">${u.archivo}</div>
                 </div>
-            </div>`;
-        }).join('') + '</div>';
+            </div>`
+        ).join('') + '</div>';
     } catch(e) {
         el.innerHTML = `<div class="section"><div class="section-body" style="padding:20px;color:var(--md-error)">Error: ${e.message}</div></div>`;
     }
@@ -600,16 +594,14 @@ async function loadInventarios() {
 
 let _invTab = 'resumen';
 
-async function loadInventario(param) {
+async function loadInventario(unidad) {
     renderSidebar();
     const header = document.getElementById('inv-header');
     const content = document.getElementById('inv-content');
     header.innerHTML = '<span class="page-title">Cargando...</span>';
     content.innerHTML = '';
-    // param viene como "3|viejo" o "3|nuevo" o solo "3"
-    const [unidad, zona] = String(param).includes('|') ? String(param).split('|') : [param, 'viejo'];
     try {
-        const r = await fetch(`/api/inventario?unidad=${unidad}&zona=${zona}`);
+        const r = await fetch(`/api/inventario?unidad=${unidad}`);
         const inv = await r.json();
         if (inv.error) { content.innerHTML = `<div style="color:var(--md-error);padding:20px">${inv.error}</div>`; return; }
         renderInventario(inv);

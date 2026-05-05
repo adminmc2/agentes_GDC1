@@ -3,6 +3,42 @@
 
 ---
 
+## [v10.3 — 2026-05-05] — Disolución de `nuevo/`: el sistema activo vive en raíz
+
+### Motivo
+Tras validar la fase 1 (extracción del JSON con el nuevo schema), el autor decide promocionar directamente el contenido de `nuevo/` a la raíz. Esto evita futuros renombrados de paths cuando el sistema esté maduro: el "sistema activo" ES el repositorio, y `viejo/` queda como archivo de referencia hasta su eliminación final.
+
+### Movimientos físicos
+- `nuevo/unidades/U3/` → `unidades/U3/`
+- `nuevo/scripts/prompts/` → `scripts/prompts/`
+- `nuevo/scripts/validar_inventario.py` → `scripts/validar_inventario.py`
+- Carpeta `nuevo/` eliminada.
+- `CLAUDE.md` (raíz, CrewAI v5 antiguo) → `viejo/CLAUDE-anterior.md`.
+- `scripts/importar_inventario.py`, `scripts/crear_crew_agents.py`, `scripts/probar_modelos.py`, `scripts/crewai/`, `scripts/resultados_prueba/` → `viejo/scripts/`.
+
+### Lo que se queda en raíz
+- `unidades/`, `scripts/` (con solo lo nuevo).
+- `web/`, `diagrama.py`, `eval/` — infraestructura activa que sirve a ambas zonas.
+- `PROCESO-MAESTRO.md`, `README.md`, `CHANGELOG.md`, `ROADMAP.md`, `GITHUB-MANIFEST.md`.
+- `Dockerfile`, `railway.toml`, `requirements.txt`, `.env.example`.
+- `.gitignore`, `.dockerignore`.
+
+### Actualización de referencias
+- `unidades/U3/U3-nc1-inventario.json`: `fuente.archivo` actualizado a `unidades/U3/fuente/U3-nc1.pdf`.
+- `scripts/prompts/extraccion-inventario.md`: paths internos actualizados (sin `nuevo/`).
+- `scripts/validar_inventario.py`: `PROJECT` recalculado, paths actualizados.
+- `diagrama.py`: zona "nuevo" renombrada a "activo", lee de `unidades/` (raíz) en vez de `nuevo/unidades/`.
+- `web/index.html`: tag `NUEVO` → `ACTIVO`.
+- `.gitignore`, `.dockerignore`: paths actualizados.
+- `README.md`: árbol del proyecto actualizado.
+- `PROCESO-MAESTRO.md`: vista del árbol actualizada, bitácora.
+
+### Estado de validación
+- `python3 scripts/validar_inventario.py 3` → ✅ JSON válido, 0 avisos.
+- Dashboard (http://localhost:8080) → tarjeta U3 ACTIVO + tarjeta U3 VIEJO visibles.
+
+---
+
 ## [v9.0 — 2026-05-05] — Reorganización: todo el contenido por unidad bajo `unidades/UXX/`
 
 ### Motivo

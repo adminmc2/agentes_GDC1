@@ -37,8 +37,8 @@ viejo/repertorios/
 
 # Output de agentes: ahora en viejo/unidades/UXX/tarjetas/csv/ (ya cubierto por unidades/)
 
-# Resultados de pruebas obsoletas
-scripts/resultados_prueba/
+# Resultados de pruebas obsoletas (ahora en viejo/scripts/)
+viejo/scripts/resultados_prueba/
 
 # Documentación interna de diseño (no interviene en deploy)
 viejo/diseno/
@@ -56,10 +56,9 @@ viejo/diseno/
 
 # PDFs fuente del libro (copyright SGEL, solo local)
 viejo/unidades/**/fuente/*.pdf
-nuevo/unidades/**/fuente/*.pdf
+unidades/**/fuente/*.pdf
 
 # Archivos de planificación local
-CLAUDE.md
 ROADMAP.md
 GITHUB-MANIFEST.md
 .github/
