@@ -232,11 +232,11 @@ Estructura por cuadro gramatical:
   - **Estado:** abierta, sin empezar.
 - **Categorías de píldoras formativas:** definir cuando se trabaje en las primeras píldoras nuevas. Pendiente de revisión en este documento.
 
-**Cambios físicos pendientes** (para ejecutar cuando se autorice la migración):
-- Renombrar `unidades/U03/` → `unidades/U3/` (y lo mismo para U01, U02, U04-U09).
-- Renombrar `unidades/U3/inventario.json` → `unidades/U3/U3-nc1-inventario.json`.
-- Renombrar `unidades/U3/fuente/U03-libro.pdf` → `unidades/U3/fuente/U3-nc1.pdf`.
-- Actualizar 10 referencias internas en el JSON.
+**Cambios físicos** (HISTÓRICO — ya ejecutados):
+- ✅ Inventario de U03 promocionado a `unidades/U3/U3-nc1-inventario.json` (raíz). El `viejo/unidades/U03/inventario.json` se conserva como archivo.
+- ✅ PDF promocionado a `unidades/U3/fuente/U3-nc1.pdf` (raíz, gitignored).
+- ✅ Las 10 referencias internas del JSON ya apuntan a la nueva ruta.
+- 📋 PENDIENTE (cuando proceda): el resto del contenido editorial de U03 (tarjetas/, pildoras/, secciones MD) sigue solo en `viejo/unidades/U03/` y se evaluará migrar al sistema activo cuando se construyan las fases 3-7.
 - Actualizar referencias en scripts (`importar_inventario.py`, `crear_crew_agents.py`, `diagrama.py`), CLAUDE.md, README.md, .gitignore, .dockerignore.
 - Crear los 3 JSONs globales vacíos en `unidades/` (con esquema mínimo cuando esté definido).
 
@@ -268,21 +268,21 @@ Estructura por cuadro gramatical:
 
 **Definido:**
 - Criterios lingüísticos y editoriales completos (mismo archivo que Fase 2): 22 columnas en CSV, gramapop, combos con nomenclatura `[ ] ( ) / +`, traducciones a 9 idiomas.
-- Especificaciones de diseño visual en `materiales/especificaciones-diseno-tarjetas.md` (162 líneas: tamaño 63×88 mm, colores, tipografía Proxima Nova, Data Merge).
+- Especificaciones de diseño visual en `viejo/materiales/especificaciones-diseno-tarjetas.md` (162 líneas: tamaño 63×88 mm, colores, tipografía Proxima Nova, Data Merge).
 - Pipeline de evaluación: `eval/evaluar_tarjetas.py` (DeepEval + promptfoo).
-- Agente generador: Crew Recurvo v2.0 (3 agentes secuenciales).
-- Caso real completo: `unidades/U03/tarjetas/csv/` (familia, profesiones, lugares, escuela, acciones cotidianas) + `diseno/vocabulario/` (PSDs, PNGs, INDD) + `validacion/` (PDFs editoriales).
+- Agente generador del sistema antiguo: Crew Recurvo v2.0 (3 agentes secuenciales) en `viejo/scripts/crewai/`.
+- Caso real completo del sistema antiguo: `viejo/unidades/U03/tarjetas/csv/` (familia, profesiones, lugares, escuela, acciones cotidianas) + `diseno/vocabulario/` (PSDs, PNGs, INDD) + `validacion/` (PDFs editoriales).
 
 **Por definir:**
 - El archivo de diseño visual está **desactualizado** (última edición v8.9 abril; hoy v8.26). No refleja decisiones nuevas: nomenclatura combos, profesiones moción regular/irregular, color real de fondo (= color de género), verbos.
 - Color de texto sobre fondo salmón (sigue marcado "Pendiente de definir").
 
-**Archivos clave:**
-- `.claude/rules/criterios-generacion-tarjetas.md`
-- `materiales/especificaciones-diseno-tarjetas.md` ⚠ desactualizado
-- `unidades/U03/tarjetas/`
-- `scripts/crewai/recurvo.py` + `tools.py`
-- `eval/evaluar_tarjetas.py`
+**Archivos clave** (los del sistema antiguo en `viejo/`; el activo aún no produce tarjetas):
+- `.claude/rules/criterios-generacion-tarjetas.md` (raíz, regla protegida)
+- `viejo/materiales/especificaciones-diseno-tarjetas.md` ⚠ desactualizado
+- `viejo/unidades/U03/tarjetas/`
+- `viejo/scripts/crewai/recurvo.py` + `tools.py`
+- `eval/evaluar_tarjetas.py` (raíz, heredado pero en uso)
 
 ---
 
@@ -291,9 +291,9 @@ Estructura por cuadro gramatical:
 **Qué pasa:** se definen 3 a 5 tarjetas de estrategia por unidad. Se analiza la unidad actual + lo que ya se ha hecho en unidades anteriores. **Regla: no repetir estrategias entre unidades.**
 
 **Definido:**
-- Sistema de colores por destreza: 6 destrezas (CO, CL, PO, PE, IO, MED) con un color cada una. En `materiales/especificaciones-diseno-tarjetas.md` (líneas 49-61).
-- Caso real en U03: tarjetas de estrategia documentadas en `unidades/U03/U03-destrezas.md`, `U03-comunicacion.md` y `U03-cultura.md`.
-- Tarjetas concretas de U03 ya creadas: "Esquema comunicativo: Hablar de la familia" (Caja 2), "Escribir un correo" + Truco del semáforo (Caja 3), "Mediación oral: de yo a él/ella", "Comparar sin jerarquizar" (intercultural), "LEE EN TRES PASOS" (estrategia de lectura, reutilizable), "ESCUCHA EN TRES MODOS", "CUENTA LO QUE OYES", "Tres conjugaciones".
+- Sistema de colores por destreza: 6 destrezas (CO, CL, PO, PE, IO, MED) con un color cada una. En `viejo/materiales/especificaciones-diseno-tarjetas.md` (líneas 49-61).
+- Caso real en U03 (sistema CrewAI v5 anterior, en `viejo/`): tarjetas de estrategia documentadas en `viejo/unidades/U03/U03-destrezas.md`, `U03-comunicacion.md` y `U03-cultura.md`.
+- Tarjetas concretas de U03 ya creadas en el sistema antiguo: "Esquema comunicativo: Hablar de la familia" (Caja 2), "Escribir un correo" + Truco del semáforo (Caja 3), "Mediación oral: de yo a él/ella", "Comparar sin jerarquizar" (intercultural), "LEE EN TRES PASOS" (estrategia de lectura, reutilizable), "ESCUCHA EN TRES MODOS", "CUENTA LO QUE OYES", "Tres conjugaciones".
 - Cantidad: 3-5 por unidad.
 
 **Por definir:**
@@ -303,11 +303,11 @@ Estructura por cuadro gramatical:
 - Formato de archivo donde vivirán las tarjetas de estrategia (¿CSV como vocabulario?, ¿markdown?, ¿qué relación con la sección destrezas?).
 - Si las tarjetas de esquema comunicativo (Caja 2) cuentan como tarjetas de estrategia o son otro producto.
 
-**Archivos clave:**
-- `materiales/especificaciones-diseno-tarjetas.md` (sección destrezas)
-- `agentes/ag-destrezas.md` (30 KB, contiene parte del protocolo)
-- `agentes/ag-comunicacion.md` (29 KB)
-- `unidades/U03/U03-destrezas.md`, `U03-comunicacion.md`, `U03-cultura.md`
+**Archivos clave** (todos en `viejo/`, archivo del sistema CrewAI v5 anterior):
+- `viejo/materiales/especificaciones-diseno-tarjetas.md` (sección destrezas)
+- `viejo/agentes/ag-destrezas.md` (30 KB, contiene parte del protocolo)
+- `viejo/agentes/ag-comunicacion.md` (29 KB)
+- `viejo/unidades/U03/U03-destrezas.md`, `U03-comunicacion.md`, `U03-cultura.md`
 
 ---
 
@@ -315,33 +315,33 @@ Estructura por cuadro gramatical:
 
 **Qué pasa:** se identifica dónde aplicar píldoras formativas en la unidad. Criterios: temáticas gramaticales más problemáticas o estrategias específicas. **El protocolo está distribuido en los archivos de agentes y construido en las distintas secciones de la unidad.**
 
-**Definido:**
-- **Protocolo y banco de acciones en `agentes/ag-vocabulario.md`** (líneas 210-317): banco de 40+ acciones organizadas en 6 categorías:
+**Definido (todo en `viejo/`, archivo del sistema CrewAI v5 anterior):**
+- **Protocolo y banco de acciones en `viejo/agentes/ag-vocabulario.md`** (líneas 210-317): banco de 40+ acciones organizadas en 6 categorías:
   1. **DETECCIÓN** — pares mínimos, input saturado, realce.
   2. **MODELADO** — Sentence Builder, Read Aloud, TPR.
   3. **CONEXIÓN** — puentes con unidades anteriores.
   4. **APLICACIÓN ANTICIPADA** — predicción, estrategia de comprensión.
   5. **VERIFICACIÓN** — preguntas de cambio/patrón.
   6. **PROCESAMIENTO RECEPTIVO** — matching, discriminación auditiva.
-- **Sección "PÍLDORAS FORMATIVAS" en `agentes/ag-gramatica.md`** (líneas 215-231): protocolo equivalente para gramática.
-- Estructura editorial: MARS EARS + secuencia de Gagné. Documentada en `brief-pildora-3.1-desarrollo.md`.
+- **Sección "PÍLDORAS FORMATIVAS" en `viejo/agentes/ag-gramatica.md`** (líneas 215-231): protocolo equivalente para gramática.
+- Estructura editorial: MARS EARS + secuencia de Gagné. Documentada en `viejo/unidades/U03/brief-pildora-3.1-desarrollo.md`.
 - Marca tipográfica: `**PÍLDORA FORMATIVA — [TÍTULO EN MAYÚSCULAS]**`.
 - Componentes: (1) contenido para profesor + (2) propuesta de presentación.
-- 10 píldoras producidas para U03 (PDF + TEX) en `unidades/U03/pildoras/`.
+- 10 píldoras producidas para U03 (PDF + TEX) en `viejo/unidades/U03/pildoras/`.
 - Las píldoras se construyen **embebidas en las secciones** (vocabulario, gramática, comunicación) de cada unidad, no en un archivo aparte.
 
 **Por definir:**
 - Protocolo explícito de **selección temática** formalizado fuera de los archivos de agente (qué decide "problemático" vs "estrategia específica" como variable cuantificable).
 - Plantilla canónica reutilizable del brief (hoy solo el 3.1 está desarrollado en formato extendido).
 - Convenciones de naming consolidadas (pildora-X.Y.pdf donde X=unidad, Y=orden).
-- Si los protocolos de píldora deben extraerse de los `ag-*.md` a un archivo único o quedarse distribuidos por sección.
+- Si los protocolos de píldora deben extraerse de los `viejo/agentes/ag-*.md` a un archivo único en raíz o quedarse distribuidos por sección.
 
-**Archivos clave:**
-- `agentes/ag-vocabulario.md` ← banco de píldoras de vocabulario
-- `agentes/ag-gramatica.md` ← banco de píldoras de gramática
-- `agentes/ag-comunicacion.md`, `ag-destrezas.md`, `ag-cultura.md`, `ag-evaluacion.md` ← posibles bancos por sección (revisión pendiente)
-- `unidades/U03/brief-pildora-3.1-desarrollo.md`
-- `unidades/U03/pildoras/`
+**Archivos clave (todos en `viejo/`):**
+- `viejo/agentes/ag-vocabulario.md` ← banco de píldoras de vocabulario
+- `viejo/agentes/ag-gramatica.md` ← banco de píldoras de gramática
+- `viejo/agentes/ag-comunicacion.md`, `ag-destrezas.md`, `ag-cultura.md`, `ag-evaluacion.md` ← posibles bancos por sección (revisión pendiente)
+- `viejo/unidades/U03/brief-pildora-3.1-desarrollo.md`
+- `viejo/unidades/U03/pildoras/`
 
 ---
 
@@ -350,7 +350,7 @@ Estructura por cuadro gramatical:
 **Qué pasa:** se trabaja sección por sección de la guía: **vocabulario, gramática, comunicación, destrezas, cultura, evaluación, reflexión, itinerarios**. Cada sección tiene su lógica, criterios y repertorios específicos.
 
 **Definido:**
-- Listado completo de secciones (visible en `unidades/U03/`):
+- Listado completo de secciones (visible en `viejo/unidades/U03/`, sistema CrewAI v5 anterior):
   - `U03-vocabulario.md` (30 KB)
   - `U03-gramatica.md` (91 KB)
   - `U03-comunicacion.md` (89 KB)
@@ -360,7 +360,7 @@ Estructura por cuadro gramatical:
   - `U03-itinerarios.md` (14 KB)
   - `U03-reflexion.md` (2 KB)
   - `U03-familia.md` (5 KB) — sección específica de U03 (no aplica a todas)
-- Caso real completo solo para U03.
+- Caso real completo solo para U03 en el sistema antiguo. **En el sistema activo (raíz)**, `unidades/U3/` tiene de momento solo `inventario.json` + `fuente/`.
 - U01-U02, U04-U09: solo placeholders con `*pendiente*`.
 
 **Por definir:**
@@ -369,8 +369,8 @@ Estructura por cuadro gramatical:
 - Para cada sección, qué principios teórico-metodológicos aplican.
 - Protocolo de orden: ¿se generan en este orden u otro? ¿Se pueden generar en paralelo? ¿Hay dependencias?
 
-**Archivos clave:**
-- `unidades/U03/*.md` (caso real)
+**Archivos clave** (caso real del sistema antiguo, en `viejo/`):
+- `viejo/unidades/U03/*.md`
 
 ---
 
@@ -396,8 +396,8 @@ Estructura por cuadro gramatical:
 - Cómo se garantiza coherencia entre las dos versiones cuando se actualiza una.
 - Tope de palabras / extensión exacta para "2 páginas" (varía por sección, según ejemplos: 850–2.550).
 
-**Archivos clave:**
-- `unidades/U03/U03-*-paginas.md` (todas)
+**Archivos clave** (caso real del sistema antiguo, en `viejo/`):
+- `viejo/unidades/U03/U03-*-paginas.md` (todas)
 
 ---
 
@@ -452,9 +452,12 @@ guia-didactica-profesor-IA/
 │       ├── fuente/U3-nc1.pdf                (gitignored)
 │       └── (resto pendiente de migrar de viejo si procede)
 │
-├── scripts/                                 ← código activo (nuevo)
-│   ├── prompts/extraccion-inventario.md     (prompt versionado fase 1)
-│   └── validar_inventario.py                (validación estructural)
+├── fases/                                   ← una carpeta por fase con CLAUDE.md + prompt
+│   └── 1-extraccion-inventario/
+│       ├── CLAUDE.md                        (contexto operativo de la fase)
+│       └── prompt.md                        (instrucciones detalladas)
+├── scripts/                                 ← código activo
+│   └── validar_inventario.py                (validación estructural sin LLM)
 │
 ├── eval/                                    ← evaluación (heredado, en uso)
 ├── web/                                     ← dashboard (heredado, en uso)
@@ -812,7 +815,6 @@ Ver bloque E del `REVIEW.md`. En resumen:
 - 📋 **Bloque E pendiente** (al cierre del curso): limpieza final, eliminar `viejo/`, eliminar `PROCESO-MAESTRO.md` y `REVIEW.md`.
 
 Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
-- Eliminar `viejo/` y `PROCESO-MAESTRO.md`.
 
 ---
 
@@ -829,6 +831,7 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 - **2026-05-05 12:15** — **Split físico ejecutado.** Todo el contenido editorial actual movido a `viejo/` (unidades, materiales, agentes, repertorios, referencias, diseno, material-complementario, _template, marco-teorico-metodologico.md, 00-curso-general.md). En raíz quedan: código (scripts, web, eval, diagrama.py), docs (README, CLAUDE, CHANGELOG, ROADMAP, GITHUB-MANIFEST, PROCESO-MAESTRO), config (Dockerfile, railway.toml, requirements.txt, .env.example), y la zona `nuevo/` (en construcción). Eliminada basura técnica: `texput.log`, `__pycache__/`, `.DS_Store`. Actualizadas referencias a paths nuevos en: `.gitignore`, `.dockerignore`, `scripts/importar_inventario.py`, `scripts/crear_crew_agents.py`, `diagrama.py` (8 referencias a repertorios), `README.md`, `CLAUDE.md`.
 - **2026-05-05 12:30** — Commit `c5e08e9` "v10.0: split repo en zonas viejo/ y nuevo/ + PROCESO-MAESTRO" pusheado a `main`.
 - **2026-05-05 14:00** — Dictamen del revisor sobre paso B (commit `67db6a4`): implementación correcta y completa, sin bloqueantes. Hallazgo cosmético registrado como B4 (`_normSeccion` no fusiona pestañas `(cont.)`); se resuelve en paso C sin acción separada.
+- **2026-05-05 19:30** — **Segunda pasada de saneamiento tras dictamen del revisor del v10.6.** (1) Vista viva del árbol (línea 456) corregida: el prompt activo es `fases/1-extraccion-inventario/prompt.md`, no `scripts/prompts/...`. (2) Referencias operativas a `unidades/U03/` y archivos `U03-*.md` en Fases 4, 5 y 6 reescritas para reflejar que ese contenido vive en `viejo/unidades/U03/` (sistema antiguo); el sistema activo en raíz tiene `unidades/U3/` con solo inventario + fuente. (3) Línea colgante eliminada al final de Parte 6 (`- Eliminar viejo/ y PROCESO-MAESTRO.md.` que quedó tras simplificar). (4) "Cambios físicos pendientes" reescritos como histórico (los renombrados ya están hechos). El maestro ahora sí refleja el estado real del repositorio.
 - **2026-05-05 19:00** — **Limpieza de contradicciones en PROCESO-MAESTRO.md tras dictamen del revisor.** Actualizadas referencias stale a `nuevo/` y a `scripts/prompts/extraccion-inventario.md` en Partes 4, 5, 5.bis y 6 (las que describen estado actual). Mantenidas las referencias en bitácora (cronológicas). Parte 5.bis reescrita reflejando que `nuevo/` se disolvió. Parte 6 simplificada: el plan vivo está en REVIEW.md, evitar duplicación. REVIEW.md timestamp actualizado a 18:30. Maestro vuelve a ser fuente de verdad operativa coherente.
 - **2026-05-05 18:30** — **CLAUDE.md raíz reducido a 85 líneas (luego 99 con sección "Cómo invocar una fase").** Aplicado estrictamente Anthropic best practices: CLAUDE.md solo contiene reglas/convenciones/comandos para trabajar HOY en el repo. Eliminado: modelo conceptual abstracto (vive en PROCESO-MAESTRO Parte 1), tabla de 8 fases con estado (vive en README.md y PROCESO-MAESTRO Parte 2), "estado actual" (vive en REVIEW.md). Añadida regla explícita en "Lo que NO se hace": no añadir historia/estado/planes/meta-decisiones a CLAUDE.md.
 - **2026-05-05 18:00** — **Arquitectura confirmada (datos centralizados + instrucciones modulares).** El autor pregunta si conviene duplicar datos por fase para ahorrar tokens. Se descarta basándose en buenas prácticas: viola la Regla de Oro #5 (una fuente única) y no aporta ahorro real (CLAUDE.md modular ya carga solo el contexto relevante; los datos no se cargan automáticamente, solo cuando Claude Code los lee explícitamente). Estructura confirmada: datos en `unidades/UX/` (única ubicación), instrucciones en `fases/N-X/CLAUDE.md` + `prompt.md` (modulares por fase). Optimizaciones reales de tokens disponibles: prompts compactos con ejemplos, `Read` con offset/limit en JSONs grandes, sesiones limpias por fase (Ctrl+L).
