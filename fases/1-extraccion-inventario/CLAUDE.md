@@ -26,7 +26,9 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 
 El autor abre chat con Claude Code y dice:
 
-> **Extrae el inventario de UX siguiendo `fases/1-extraccion-inventario/prompt.md`.**
+> **Extrae el inventario de UX siguiendo `fases/1-extraccion-inventario/CLAUDE.md` y `fases/1-extraccion-inventario/prompt.md`.**
+
+(Si ya estás trabajando dentro de `fases/1-extraccion-inventario/`, este CLAUDE.md ya está auto-cargado y basta con citar el prompt.)
 
 Claude Code:
 1. Lee `prompt.md` (instrucciones detalladas + esquema + taxonomía + casos resueltos).

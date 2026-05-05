@@ -64,7 +64,7 @@ Cuando el autor entrega el PDF de una unidad (ej. U4):
 ```
 1. Colocar el PDF en unidades/U4/fuente/U4-nc1.pdf
 2. En chat con Claude Code:
-   "Extrae el inventario de U4 siguiendo fases/1-extraccion-inventario/prompt.md."
+   "Extrae el inventario de U4 siguiendo fases/1-extraccion-inventario/CLAUDE.md y fases/1-extraccion-inventario/prompt.md."
 3. Claude Code lee el prompt → lee el PDF → escribe unidades/U4/U4-nc1-inventario.json
 4. Validar:
    python3 scripts/validar_inventario.py 4
