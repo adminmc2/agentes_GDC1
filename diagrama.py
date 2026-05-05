@@ -942,7 +942,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         qs = parse_qs(parsed.query)
         if parsed.path == "/api/version":
             self._respond(200, "application/json; charset=utf-8",
-                          json.dumps({"version": SERVER_VERSION}))
+                          json.dumps({"version": "v" + SERVER_VERSION}))
         elif parsed.path == "/api/status":
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(scan_all(), ensure_ascii=False))
