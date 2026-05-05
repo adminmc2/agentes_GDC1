@@ -72,7 +72,7 @@
         {
           "id": "U0-p8-act02",
           "numero": 2,
-          "tipo": "produccion_oral_pareja",
+          "tipo": "interaccion_oral",
           "destreza": "produccion_escrita + interaccion_oral",
           "instruccion_original": "Cierra el libro y escribe una lista de países donde se habla español. Compara tus respuestas con tu compañero. ¿Quién tiene más países?",
           "contenido_linguistico": ["nombres de países hispanohablantes (recuperación de memoria)"],
@@ -225,7 +225,7 @@
         {
           "id": "U0-p11-act07",
           "numero": 7,
-          "tipo": "produccion_oral_libre",
+          "tipo": "expresion_oral_libre",
           "destreza": "produccion_oral",
           "instruccion_original": "Deletrea en voz alta.",
           "contenido_linguistico": ["nombres de las letras + nombres de países"],
@@ -310,7 +310,7 @@
         {
           "id": "U0-p11-act10",
           "numero": 10,
-          "tipo": "produccion_oral_libre",
+          "tipo": "expresion_oral_libre",
           "destreza": "mediacion + produccion_oral",
           "instruccion_original": "Para la clase. ¿Cómo se dice en tu lengua?",
           "contenido_linguistico": ["frases-instrucciones de aula básicas"],

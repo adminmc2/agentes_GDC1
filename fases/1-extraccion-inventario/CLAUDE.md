@@ -60,7 +60,11 @@ Después, validación visual: el autor abre el dashboard (`python3 diagrama.py` 
 > Ver detalle completo y precedencia en `prompt.md` → "Reglas para cuadros gramaticales".
 
 1. **Texto verbatim del libro.** El JSON debe contener el contenido de cada actividad **exactamente como aparece en el libro**. Para cloze, huecos como `_____`. Para textos, completos. Para diálogos, con marcadores `[1]`, `[2]`. **Nunca** poner solo respuestas como sustituto del enunciado.
-2. **Taxonomía cerrada de tipos.** 17 valores posibles en `tipo`. Cualquier otro valor falla la validación. Lista en `prompt.md`.
+2. **Taxonomía cerrada de tipos.** 17 valores posibles en `tipo`. Cualquier otro valor falla la validación. Lista en `prompt.md`. **Términos ELE clave:**
+   - Parejas/grupos → `interaccion_oral` (NO `produccion_oral_pareja`).
+   - Oral individual → `expresion_oral_libre` (NO `produccion_oral_libre`).
+   - Escrita libre → `expresion_escrita_libre` (NO `produccion_escrita_libre`).
+   - Completa huecos **escribiendo** → `produccion_escrita_guiada` (NO `completa_huecos`).
 3. **`respuestas` siempre presente** como lista (vacía si no aplica).
 4. **`audio`/`imagen`/`video` siempre presentes** como sub-objetos con `presente: bool`.
 5. **`imagen.descripcion` obligatoria** cuando `imagen.presente=true`.

@@ -128,7 +128,7 @@
         {
           "id": "U3-p34-act04",
           "numero": 4,
-          "tipo": "produccion_oral_pareja",
+          "tipo": "interaccion_oral",
           "destreza": "interaccion_oral",
           "instruccion_original": "En parejas, practica la siguiente conversación. Pregunta y responde sobre otros miembros de la familia de David.",
           "contenido_linguistico": ["preguntas con quién/cómo", "vocabulario familia", "estructuras: ¿Quién es X? ¿Cómo se llama Y?"],
@@ -533,7 +533,7 @@
         {
           "id": "U3-p37-act07",
           "numero": 7,
-          "tipo": "produccion_oral_pareja",
+          "tipo": "interaccion_oral",
           "destreza": "interaccion_oral",
           "instruccion_original": "En parejas, pregúntale a tu compañero el nombre de los miembros de su familia.",
           "contenido_linguistico": ["¿Cómo se llaman tus padres?", "vocabulario familia"],
@@ -549,7 +549,7 @@
         {
           "id": "U3-p37-act08",
           "numero": 8,
-          "tipo": "produccion_oral_libre",
+          "tipo": "expresion_oral_libre",
           "destreza": "produccion_oral",
           "instruccion_original": "Ahora, dile a toda la clase cómo se llaman los miembros de tu familia y los de tu compañero.",
           "contenido_linguistico": ["posesivos mis/sus", "vocabulario familia"],
@@ -565,7 +565,7 @@
         {
           "id": "U3-p37-act09",
           "numero": 9,
-          "tipo": "produccion_escrita_libre",
+          "tipo": "expresion_escrita_libre",
           "destreza": "produccion_escrita",
           "instruccion_original": "Mira el cuaderno de Ronaldo, un brasileño que estudia español. Escribe palabras nuevas y tradúcelas a tu idioma.",
           "contenido_linguistico": ["estrategia de aprendizaje: cuaderno de vocabulario bilingüe"],
@@ -776,7 +776,7 @@
         {
           "id": "U3-p39-act07",
           "numero": 7,
-          "tipo": "produccion_oral_pareja",
+          "tipo": "interaccion_oral",
           "destreza": "interaccion_oral",
           "instruccion_original": "Pregunta y contesta a tu compañero sobre la cartelera de cine.",
           "contenido_linguistico": ["¿A qué hora es...?", "horas en contextos reales"],
@@ -994,7 +994,7 @@
         {
           "id": "U3-p41-act06",
           "numero": 6,
-          "tipo": "produccion_oral_pareja",
+          "tipo": "interaccion_oral",
           "destreza": "interaccion_oral",
           "instruccion_original": "Pregunta a tu compañero la hora en sus relojes.",
           "contenido_linguistico": ["¿Qué hora es?", "expresiones de hora"],
@@ -1007,7 +1007,7 @@
         {
           "id": "U3-p41-act07",
           "numero": 7,
-          "tipo": "produccion_oral_libre",
+          "tipo": "expresion_oral_libre",
           "destreza": "produccion_oral + mediacion",
           "instruccion_original": "Cuéntale a tu compañero una cosa especial de tu familia. Él se lo va a contar al resto de la clase.",
           "contenido_linguistico": ["mediación oral entre compañeros", "vocabulario familia"],
@@ -1095,7 +1095,7 @@
         {
           "id": "U3-p42-act04",
           "numero": 4,
-          "tipo": "produccion_oral_libre",
+          "tipo": "expresion_oral_libre",
           "destreza": "produccion_oral + interaccion_oral",
           "instruccion_original": "¿Qué películas de animación te gustan? ¿Qué cómics conoces?",
           "contenido_linguistico": ["expresiones de gusto", "léxico cine y cómic"],

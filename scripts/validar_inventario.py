@@ -25,8 +25,10 @@ SECCIONES_CANONICAS = {"vocabulario", "gramatica", "comunicacion", "destrezas",
 TIPOS_VALIDOS = {
     "escucha_y_repite", "escucha_y_responde", "completa_huecos", "relaciona",
     "ordena", "clasifica", "seleccion_multiple", "verdadero_falso",
-    "produccion_oral_pareja", "produccion_oral_libre",
-    "produccion_escrita_guiada", "produccion_escrita_libre",
+    "interaccion_oral",           # parejas / grupos (antes: produccion_oral_pareja)
+    "expresion_oral_libre",       # producción oral sin guía (antes: produccion_oral_libre)
+    "produccion_escrita_guiada",  # escribir frases guiadas, rellenar huecos escribiendo
+    "expresion_escrita_libre",    # producción escrita sin guía (antes: produccion_escrita_libre)
     "comprension_lectora", "comprension_auditiva", "busqueda_informacion",
     "tarea_final", "juego",
 }
