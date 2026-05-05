@@ -1,0 +1,349 @@
+{
+  "unidad": 0,
+  "curso": "nc1",
+  "titulo": "Punto de partida",
+  "paginas_libro": "8-11",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U0/fuente/U0-nc1.pdf",
+    "version_extraccion": "2026-05-05"
+  },
+
+  "contenidos_indice": {
+    "vocabulario": "Países que hablan español. Abecedario español. Números 0-10. Para la clase.",
+    "gramatica": "(no aplica en esta unidad introductoria)",
+    "comunicacion": "(no aplica en esta unidad introductoria)",
+    "destrezas": "(no aplica en esta unidad introductoria)",
+    "cultura": "(no aplica en esta unidad introductoria)"
+  },
+
+  "_nota_unidad_atipica": "Punto de partida (U0) es una unidad introductoria pre-A1.1 que NO sigue la estructura canónica de 5 secciones. Su contenido es léxico-fonético: países hispanohablantes, vocabulario internacional cognado, abecedario, ortografía c/qu, j/g, g/gu, z/c, números 0-10, saludos básicos, e instrucciones de aula. Todo el contenido se mapea a la sección 'vocabulario' por ser principalmente léxico. Las demás secciones canónicas quedan vacías.",
+
+  "vocabulario_consolidado": {
+    "principal": {
+      "_descripcion": "Vocabulario declarado en el índice de la unidad (Países, Abecedario, Números 0-10, Para la clase).",
+      "Países hispanohablantes": ["España", "México", "Cuba", "República Dominicana", "Puerto Rico", "Guatemala", "El Salvador", "Honduras", "Nicaragua", "Costa Rica", "Panamá", "Venezuela", "Colombia", "Ecuador", "Perú", "Bolivia", "Paraguay", "Chile", "Argentina", "Uruguay"],
+      "Abecedario": ["a", "be", "ce", "de", "e", "efe", "ge", "hache", "i", "jota", "ka", "ele", "eme", "ene", "eñe", "o", "pe", "cu", "erre", "ese", "te", "u", "uve", "uve doble", "equis", "ye/i griega", "zeta"],
+      "Números": ["cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez"],
+      "Saludos": ["Buenos días", "Buenas tardes", "Buenas noches"],
+      "Instrucciones de aula": ["Escucha", "Lee", "Escribe", "Repite", "Pregunta a tu compañero", "¿Puedes repetir?", "¿Cómo se dice en español...?", "¿Cómo se escribe en español...?"]
+    },
+    "recurrente": {
+      "_descripcion": "Vocabulario internacional / cognados que se introduce para que el alumno reconozca palabras conocidas en español.",
+      "Vocabulario internacional (cognados)": ["banco", "león", "fútbol", "gato", "flamenco", "museo", "metro", "playa", "hospital", "hotel", "televisión", "tenis", "limón", "moto", "judo", "euro"]
+    },
+    "comprension": {
+      "_descripcion": "Combinaciones ortográficas presentadas para asociar grafema-fonema básico.",
+      "Combinaciones ortográficas (c/qu, j/g, g/gu, z/c)": ["casa", "cómo", "cuatro", "qué", "química", "jamón", "jefe", "jirafa", "jota", "julio", "gente", "giga", "gato", "goma", "agua", "guepardo", "guitarra", "zapato", "zona", "azul", "cero", "cine"]
+    }
+  },
+
+  "secciones": {
+    "vocabulario":  { "paginas": [8, 9, 10, 11], "actividades_ids": ["U0-p8-act01","U0-p8-act02","U0-p9-act03","U0-p9-act04","U0-p10-act05","U0-p11-act06","U0-p11-act07","U0-p11-act08","U0-p11-act09","U0-p11-act10"] },
+    "gramatica":    { "paginas": [], "actividades_ids": [] },
+    "comunicacion": { "paginas": [], "actividades_ids": [] },
+    "destrezas":    { "paginas": [], "actividades_ids": [] },
+    "cultura":      { "paginas": [], "actividades_ids": [] },
+    "evaluacion":   { "paginas": [], "actividades_ids": [] },
+    "reflexion":    { "paginas": [], "actividades_ids": [] }
+  },
+
+  "paginas_detalle": [
+    {
+      "pagina": 8,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U0-p8-act01",
+          "numero": 1,
+          "tipo": "escucha_y_repite",
+          "destreza": "comprension_oral",
+          "instruccion_original": "¿Dónde se habla español? Mira el mapa y escucha el nombre de los países. Observa la pronunciación.",
+          "contenido_linguistico": ["nombres de los 20 países hispanohablantes"],
+          "campo_semantico": "Países hispanohablantes",
+          "audio": { "presente": true, "pista": 1 },
+          "imagen": { "presente": true, "descripcion": "Mapa de América (México, América Central, Caribe y Sudamérica) + España y Guinea Ecuatorial, con los nombres de los 20 países hispanohablantes etiquetados sobre el territorio: España, México, Cuba, República Dominicana, Puerto Rico, Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, Panamá, Venezuela, Colombia, Ecuador, Perú, Bolivia, Paraguay, Chile, Argentina, Uruguay. A la izquierda, ilustración de cubos de letras de colores (alusión al abecedario que se trabajará en la unidad)." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "items_libro": ["España", "México", "Cuba", "República Dominicana", "Puerto Rico", "Guatemala", "El Salvador", "Honduras", "Nicaragua", "Costa Rica", "Panamá", "Venezuela", "Colombia", "Ecuador", "Perú", "Bolivia", "Paraguay", "Chile", "Argentina", "Uruguay"]
+          }
+        },
+        {
+          "id": "U0-p8-act02",
+          "numero": 2,
+          "tipo": "produccion_oral_pareja",
+          "destreza": "produccion_escrita + interaccion_oral",
+          "instruccion_original": "Cierra el libro y escribe una lista de países donde se habla español. Compara tus respuestas con tu compañero. ¿Quién tiene más países?",
+          "contenido_linguistico": ["nombres de países hispanohablantes (recuperación de memoria)"],
+          "campo_semantico": "Países hispanohablantes",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {}
+        }
+      ]
+    },
+    {
+      "pagina": 9,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U0-p9-act03",
+          "numero": 3,
+          "tipo": "relaciona",
+          "destreza": "comprension_lectora",
+          "instruccion_original": "¿Cuántas palabras conoces en español? Relaciona los nombres con su imagen.",
+          "contenido_linguistico": ["vocabulario internacional / cognados"],
+          "campo_semantico": "Vocabulario internacional",
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "15 fotografías etiquetadas con letras (a–o) que ilustran las 16 palabras del enunciado: a) tenis (chica jugando), b) flamenco (bailaora), c) metro (estación), d) euro (billetes y monedas), e) moto, f) fútbol (partido), g) gato, h) banco (mano con billetes), i) hospital (sanitarios con paciente), j) hotel (recepción), k) león, l) televisión, m) limón (fruta partida), n) museo (sala con cuadros), ñ) judo (niños practicando), o) playa (con sombrillas)." },
+          "video": { "presente": false },
+          "respuestas": [
+            "banco — h",
+            "1. león — k",
+            "2. fútbol — f",
+            "3. gato — g",
+            "4. flamenco — b",
+            "5. museo — n",
+            "6. metro — c",
+            "7. playa — o",
+            "8. hospital — i",
+            "9. hotel — j",
+            "10. televisión — m",
+            "11. tenis — a",
+            "12. limón — l",
+            "13. moto — e",
+            "14. judo — ñ",
+            "15. euro — d"
+          ],
+          "datos": {
+            "items_libro": ["banco", "1. león", "2. fútbol", "3. gato", "4. flamenco", "5. museo", "6. metro", "7. playa", "8. hospital", "9. hotel", "10. televisión", "11. tenis", "12. limón", "13. moto", "14. judo", "15. euro"],
+            "_nota": "Las palabras aparecen con la sílaba tónica subrayada en el libro. Convención válida hasta U3 (ver nota al pie del libro). El primer ítem 'banco' se da como ejemplo (relacionado con la imagen 'h')."
+          }
+        },
+        {
+          "id": "U0-p9-act04",
+          "numero": 4,
+          "tipo": "escucha_y_repite",
+          "destreza": "comprension_oral + produccion_oral",
+          "instruccion_original": "Escucha y repite las palabras anteriores.",
+          "contenido_linguistico": ["las 16 palabras del ejercicio 3"],
+          "campo_semantico": "Vocabulario internacional",
+          "audio": { "presente": true, "pista": 2 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {}
+        }
+      ]
+    },
+    {
+      "pagina": 10,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U0-p10-act05",
+          "numero": 5,
+          "tipo": "escucha_y_repite",
+          "destreza": "comprension_oral + produccion_oral",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": ["abecedario español: nombres de las 27 letras + palabra ejemplo de cada una"],
+          "campo_semantico": "Abecedario",
+          "audio": { "presente": true, "pista": 3 },
+          "imagen": { "presente": true, "descripcion": "Tarjetas ilustradas tipo libro/dado con cada letra del abecedario (mayúscula y minúscula) en colores variados, acompañadas del nombre de la letra y una palabra ejemplo. Título: ABECEDARIO ESPAÑOL." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "subtipo": "abecedario",
+            "letras_y_ejemplos": [
+              ["a", "adiós"],
+              ["be", "bolígrafo"],
+              ["ce", "casa"],
+              ["de", "dos"],
+              ["e", "elefante"],
+              ["efe", "foto"],
+              ["ge", "gato"],
+              ["hache", "hoja"],
+              ["i", "isla"],
+              ["jota", "julio"],
+              ["ka", "kilo"],
+              ["ele", "lápiz"],
+              ["eme", "mesa"],
+              ["ene", "número"],
+              ["eñe", "mañana"],
+              ["o", "oso"],
+              ["pe", "padre"],
+              ["cu", "queso"],
+              ["erre", "reloj"],
+              ["ese", "silla"],
+              ["te", "tomate"],
+              ["u", "uva"],
+              ["uve", "vaso"],
+              ["uve doble", "waterpolo"],
+              ["equis", "examen"],
+              ["ye/i griega", "yogur"],
+              ["zeta", "zoo"]
+            ],
+            "observaciones_libro": [
+              "Algunas letras tienen otro nombre en Hispanoamérica:",
+              "- b (be larga, be grande, be alta)",
+              "- v (ve corta, ve chica, ve baja)",
+              "- w (ve doble, doble uve, doble ve, doble u)",
+              "En español estas combinaciones de letras representan un único sonido: ch / ll / gu / qu / rr."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 11,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U0-p11-act06",
+          "numero": 6,
+          "tipo": "escucha_y_repite",
+          "destreza": "comprension_oral + produccion_oral",
+          "instruccion_original": "Escucha y practica.",
+          "contenido_linguistico": ["combinaciones ortográficas: c/qu, j/g, g/gu, z/c"],
+          "audio": { "presente": true, "pista": 4 },
+          "imagen": { "presente": true, "descripcion": "Cuatro recuadros de colores, cada uno con un par de combinaciones ortográficas y palabras ejemplo." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "subtipo": "pronunciacion_y_ortografia",
+            "grupos": {
+              "c/qu": ["casa", "cómo", "cuatro", "qué", "química"],
+              "j/g": ["jamón", "jefe", "jirafa", "jota", "julio", "gente", "giga"],
+              "g/gu": ["gato", "goma", "agua", "guepardo", "guitarra"],
+              "z/c": ["zapato", "zona", "azul", "cero", "cine"]
+            }
+          }
+        },
+        {
+          "id": "U0-p11-act07",
+          "numero": 7,
+          "tipo": "produccion_oral_libre",
+          "destreza": "produccion_oral",
+          "instruccion_original": "Deletrea en voz alta.",
+          "contenido_linguistico": ["nombres de las letras + nombres de países"],
+          "campo_semantico": "Países hispanohablantes",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "Colombia: ce–o–ele–o–eme–be–i–a (ejemplo)",
+            "1. España: e-ese-pe-a-eñe-a",
+            "2. México: eme-e-equis-i-ce-o",
+            "3. Perú: pe-e-erre-u",
+            "4. Venezuela: uve-e-ene-e-zeta-u-e-ele-a",
+            "5. Chile: ce-hache-i-ele-e",
+            "6. Argentina: a-erre-ge-e-ene-te-i-ene-a",
+            "7. Ecuador: e-ce-u-a-de-o-erre",
+            "8. Uruguay: u-erre-u-ge-u-a-ye",
+            "9. Guatemala: ge-u-a-te-e-eme-a-ele-a",
+            "10. Bolivia: be-o-ele-i-uve-i-a"
+          ],
+          "datos": {
+            "ejemplo_libro": "Colombia → ce–o–ele–o–eme–be–i–a",
+            "items_libro": ["1. España", "2. México", "3. Perú", "4. Venezuela", "5. Chile", "6. Argentina", "7. Ecuador", "8. Uruguay", "9. Guatemala", "10. Bolivia"]
+          }
+        },
+        {
+          "id": "U0-p11-act08",
+          "numero": 8,
+          "tipo": "escucha_y_responde",
+          "destreza": "comprension_oral + produccion_escrita",
+          "instruccion_original": "Escucha y escribe.",
+          "contenido_linguistico": ["dictado deletreado: el alumno escucha letras y reconstruye palabras"],
+          "audio": { "presente": true, "pista": 5 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. F-ú-t-b-o-l → Fútbol",
+            "2. me-e-ese-a → mesa",
+            "3. e-ele-e-efe-a-ene-te-e → elefante",
+            "4. jota-i-ere-a-efe-a → jirafa",
+            "5. ge-a-te-o → gato",
+            "6. ele-e-o-ene → león",
+            "7. ele-i-eme-o-ene → limón",
+            "8. ele-i-eme-o-ene → limón (repetido en libro)",
+            "9. hache-o-ese-pe-i-te-a-ele → hospital",
+            "10. u-uve-a → uva"
+          ],
+          "datos": {
+            "ejemplo_libro": "1. F-ú-t-b-o-l",
+            "items_libro": ["1. F-ú-t-b-o-l", "2. _____", "3. _____", "4. _____", "5. _____", "6. _____", "7. _____", "8. _____", "9. _____", "10. _____"],
+            "_nota": "El primer ítem se da resuelto como ejemplo. Los items 7 y 8 muestran la misma respuesta en el libro ('limón'); puede ser un error tipográfico del libro o una repetición intencional."
+          }
+        },
+        {
+          "id": "U0-p11-act09",
+          "numero": 9,
+          "tipo": "escucha_y_responde",
+          "destreza": "comprension_oral + produccion_escrita",
+          "instruccion_original": "Escucha y escribe los números del 0 al 10.",
+          "contenido_linguistico": ["números cardinales 0-10"],
+          "campo_semantico": "Números",
+          "audio": { "presente": true, "pista": 6 },
+          "imagen": { "presente": true, "descripcion": "Lista numerada del 0 al 10 con espacio para escribir el nombre de cada número junto a su cifra." },
+          "video": { "presente": false },
+          "respuestas": [
+            "0 → cero",
+            "1 → uno",
+            "2 → dos",
+            "3 → tres",
+            "4 → cuatro",
+            "5 → cinco",
+            "6 → seis",
+            "7 → siete",
+            "8 → ocho",
+            "9 → nueve",
+            "10 → diez"
+          ],
+          "datos": {
+            "items_libro": ["0 _____", "1 _____", "2 _____", "3 _____", "4 _____", "5 _____", "6 _____", "7 _____", "8 _____", "9 _____", "10 _____"]
+          }
+        },
+        {
+          "id": "U0-p11-act10",
+          "numero": 10,
+          "tipo": "produccion_oral_libre",
+          "destreza": "mediacion + produccion_oral",
+          "instruccion_original": "Para la clase. ¿Cómo se dice en tu lengua?",
+          "contenido_linguistico": ["frases-instrucciones de aula básicas"],
+          "campo_semantico": "Instrucciones de aula",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "subtipo": "para_la_clase",
+            "items_libro": [
+              "1. Escucha",
+              "2. Lee",
+              "3. Escribe",
+              "4. Repite",
+              "5. Pregunta a tu compañero",
+              "6. ¿Puedes repetir?",
+              "7. ¿Cómo se dice en español hello?",
+              "8. ¿Cómo se escribe en español hola?"
+            ]
+          }
+        }
+      ],
+      "cuadros_gramaticales": [
+        {
+          "titulo": "Saludos",
+          "contenido": {
+            "tipo": "lista_ilustrada",
+            "items": ["Buenos días", "Buenas tardes", "Buenas noches"],
+            "ejemplos_visuales": "Tres viñetas: una mujer joven en clase de mañana saludando 'Buenos días'; un hombre saludando por la tarde 'Buenas tardes'; pareja paseando un perro de noche 'Buenas noches'."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -722,8 +722,14 @@ function renderInventario(inv) {
                     return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><ol style="font-size:13px;background:#FAFAFA;padding:8px 10px 8px 28px;border-radius:6px;border-left:3px solid var(--md-primary-light);margin:0">${valor.map(v=>`<li style="margin:2px 0">${_esc(v)}</li>`).join('')}</ol></div>`;
                 }
                 if (Array.isArray(valor[0])) {
-                    // Cuadrícula (sopa de letras)
-                    return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-family:monospace;font-size:14px;background:#FAFAFA;padding:8px;border-radius:6px;border-left:3px solid var(--md-primary-light);display:inline-block">${valor.map(row=>row.map(c=>`<span style="display:inline-block;width:20px;text-align:center">${_esc(c)}</span>`).join('')).join('<br>')}</div></div>`;
+                    // Distinguir cuadrícula (celdas de 1 char) vs tabla de pares
+                    const allSingleChar = valor.every(row => row.every(c => typeof c === 'string' && c.length <= 1));
+                    if (allSingleChar) {
+                        // Cuadrícula (sopa de letras)
+                        return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-family:monospace;font-size:14px;background:#FAFAFA;padding:8px;border-radius:6px;border-left:3px solid var(--md-primary-light);display:inline-block">${valor.map(row=>row.map(c=>`<span style="display:inline-block;width:20px;text-align:center">${_esc(c)}</span>`).join('')).join('<br>')}</div></div>`;
+                    }
+                    // Tabla de pares/tuplas (ej: letras_y_ejemplos)
+                    return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><table style="font-size:13px;background:#FAFAFA;padding:6px;border-radius:6px;border-left:3px solid var(--md-primary-light);border-collapse:separate;border-spacing:8px 2px">${valor.map(row=>`<tr>${row.map(c=>`<td style="padding:1px 6px"><span style="font-weight:600;color:var(--md-primary-dark)">${_esc(c)}</span></td>`).join('')}</tr>`).join('')}</table></div>`;
                 }
                 // Lista de objetos (preguntas_opciones, etc.)
                 return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-size:13px;background:#FAFAFA;padding:8px 10px;border-radius:6px;border-left:3px solid var(--md-primary-light)">${valor.map(o=>`<div style="margin:4px 0">${_esc(JSON.stringify(o))}</div>`).join('')}</div></div>`;
