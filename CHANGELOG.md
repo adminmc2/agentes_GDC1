@@ -3,6 +3,51 @@
 
 ---
 
+## [v10.17 — 2026-05-05] — Dashboard refinado: sidebar reorganizado + zoom diagramas + arquitectura limpia
+
+### Sidebar
+- 3 botones top-level en MAYÚSCULAS: **INVENTARIOS**, **PROYECTO**, **AGENTES**.
+- AGENTES marcado como **BLOQUEADO** (visible pero deshabilitado, no se usa por ahora).
+- Selector "Unidad" y lista de secciones del flujo viejo de agentes ocultos (`display:none`), no eliminados, por si se reactivan en el futuro.
+
+### Diagramas
+- Diagrama "Arquitectura activa": eliminada la caja `viejo/`. El diagrama ahora refleja solo el sistema activo.
+- Añadidos botones **−** / **+** / **100%** + indicador de porcentaje sobre cualquier diagrama Mermaid (transform scale). Resuelve diagramas que se veían pequeños.
+
+### Limpieza UI
+- Eliminadas 3 referencias residuales a `padStart(2,'0')` en vistas del flujo de agentes (líneas 1089, 1119, 1182). Aunque AGENTES está bloqueado, el código queda consistente con la convención sin cero. **Cero referencias hardcoded a U01-U09 en la UI.**
+
+---
+
+## [v10.16 — 2026-05-05] — Arquitectura del dashboard refleja solo lo verificado
+
+Reescritos los 5 diagramas Mermaid del panel "Proyecto":
+- **mermaid_level1 (Arquitectura activa):** Libro → PDF → Claude Code (con prompt) → JSON → Validador/Dashboard → Autor.
+- **mermaid_level2 (Flujo fase 1):** 8 pasos del pipeline real con bucle de aprendizaje.
+- **mermaid_level3 (8 fases con estado):** F1 OPERATIVA (verde), F2-F8 PENDIENTE (gris).
+- **mermaid_level4 (Estado por unidad):** U0..U9, verde si JSON existe, gris si no.
+- DIAGRAM_LABELS actualizadas.
+
+---
+
+## [v10.15 — 2026-05-05] — Dashboard real con U0-U9 + A2 cerrado con reserva
+
+- `web/index.html`: selector línea 499, status grid línea 791, título sección línea 808 — todos sin `padStart(2,'0')`.
+- `diagrama.py`: línea 749 hardcoded `U03` → `U3`. Línea 758 path corregido.
+- REVIEW.md: A2 reformulado como "CERRADO CON RESERVA" (reproducibilidad pendiente).
+
+---
+
+## [v10.14 — 2026-05-05] — Cierre real de A2 (5 ajustes tras dictamen del revisor)
+
+- REVIEW: A1/A2 sin contradicciones, paralelismo documentado.
+- CHANGELOG: añadidas v10.12, v10.13.
+- Prompt fase 1: excepción U0 integrada en flujo principal (pasos 1, 3, 5).
+- README: estado actual menciona U0.
+- diagrama.py: UNITS = U0..U9.
+
+---
+
 ## [v10.13 — 2026-05-05] — Convención U0 en docs + 3 reglas nuevas en prompt fase 1
 
 Tras validación del autor de v10.12, se aplican las mejoras detectadas durante la primera extracción de una unidad nueva (U0):

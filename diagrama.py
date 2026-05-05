@@ -618,10 +618,6 @@ def mermaid_level1():
         DASH
     end
 
-    subgraph VIEJO["viejo/ - archivo intocable"]
-        VOLD["Sistema CrewAI v5 anterior"]
-    end
-
     LIBRO --> PDF
     PDF --> CLAUDE
     PROMPT --> CLAUDE
@@ -638,9 +634,7 @@ def mermaid_level1():
     style VAL fill:#16a085,color:#fff
     style DASH fill:#e67e22,color:#fff
     style AUTOR fill:#34495e,color:#fff
-    style ACTIVO fill:#eafaf1
-    style VIEJO fill:#ecf0f1,stroke-dasharray: 5 5
-    style VOLD fill:#95a5a6,color:#fff"""
+    style ACTIVO fill:#eafaf1"""
 
 
 def mermaid_level2():
