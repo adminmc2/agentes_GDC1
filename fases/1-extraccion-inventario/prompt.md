@@ -401,6 +401,31 @@ Cuando una página tiene cuadros (tablas de conjugación, posesivos, interrogati
 
 Capturar **todo el contenido del cuadro** (filas, columnas, celdas, ejemplos al pie).
 
+### ⚠ Qué SÍ es un cuadro gramatical
+
+Solo van en `cuadros_gramaticales` los **esquemas de referencia lingüística**:
+- Tablas de conjugación (presente, futuro...).
+- Tablas de posesivos, interrogativos, demostrativos.
+- Cuadros de reglas ortográficas (c/qu, z/c, g/gu...).
+- Paradigmas morfológicos (géneros, plurales).
+
+### ⚠ Qué NO es un cuadro gramatical — va como ACTIVIDAD
+
+Las siguientes cajas visuales del libro **NO son cuadros gramaticales** aunque aparezcan en páginas de Gramática:
+
+**"Para aprender"** — Cajas con consejos o estrategias pedagógicas para el alumno (cómo llevar un cuaderno de vocabulario, cómo estudiar...). Son **actividades**, no cuadros. Usar:
+```jsonc
+{
+  "id": "UX-pYY-actNN",
+  "tipo": "produccion_escrita_libre",
+  "datos": { "subtipo": "para_aprender", ... }
+}
+```
+
+**"Observa"** — Notas que llaman la atención sobre algún aspecto (variantes en Hispanoamérica, combinaciones de letras...). Son **notas dentro de actividades** o `datos._nota`, no cuadros gramaticales.
+
+**Regla práctica:** si el elemento tiene un **número de actividad** (1, 2, 3...) o una **instrucción directa al alumno** ("Escucha y repite", "Mira", "Escribe"...), es una **actividad**, no un cuadro. Si es una tabla de referencia sin número ni instrucción, es un `cuadro_gramatical`.
+
 ---
 
 ## Validación post-extracción
@@ -429,7 +454,12 @@ Si la carpeta `unidades/UX/` no existe, crearla. Si `unidades/UX/fuente/` no con
 
 ---
 
-## Casos resueltos en U3 (referencia para la extracción)
+## Casos resueltos en extracción real
+
+### Error detectado: "Para aprender" confundido con cuadro gramatical
+En extracción real de una unidad, la caja "Para aprender" de la sección de Gramática fue clasificada como `cuadros_gramaticales`. **Es incorrecto.** "Para aprender" es una **actividad** (ver sección anterior). Esta es la corrección que diferencia los dos elementos.
+
+### Casos resueltos en U3
 
 - **Sopa de letras (p.43 act.5):** cuadrícula 10x9, palabras a buscar como respuestas.
 - **Diálogo con video y huecos (p.38 act.1):** dialogo_completo con marcadores `[1]`...`[7]`, palabras_recuadro con la lista, respuestas con `"[1] tienes"`.
