@@ -195,6 +195,40 @@ def delete_tarjeta(tarjeta_id):
     conn.close()
 
 
+def list_inventarios():
+    """Lista unidades con inventario.json disponible en viejo/unidades/."""
+    base = PROJECT / "viejo" / "unidades"
+    if not base.exists():
+        return []
+    out = []
+    for d in sorted(base.iterdir()):
+        if not d.is_dir() or not d.name.startswith("U"):
+            continue
+        f = d / "inventario.json"
+        if f.exists():
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+                out.append({
+                    "unidad": data.get("unidad"),
+                    "carpeta": d.name,
+                    "titulo": data.get("titulo", ""),
+                    "paginas": data.get("paginas", ""),
+                    "nivel": data.get("nivel", ""),
+                })
+            except Exception:
+                pass
+    return out
+
+
+def get_inventario(unidad):
+    """Lee viejo/unidades/UXX/inventario.json tal cual. Sin transformar."""
+    folder = PROJECT / "viejo" / "unidades" / f"U{int(unidad):02d}"
+    f = folder / "inventario.json"
+    if not f.exists():
+        return {"error": f"No hay inventario.json para U{int(unidad):02d}"}
+    return json.loads(f.read_text(encoding="utf-8"))
+
+
 def get_evaluaciones(unidad=None):
     conn = _db()
     cur = conn.cursor(cursor_factory=RealDictCursor)
@@ -959,6 +993,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
             crew = qs.get("crew", ["recurvo"])[0]
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(get_reglas(crew), ensure_ascii=False, default=str))
+        elif parsed.path == "/api/inventarios":
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(list_inventarios(), ensure_ascii=False))
+        elif parsed.path == "/api/inventario":
+            unidad = int(qs.get("unidad", [3])[0])
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_inventario(unidad), ensure_ascii=False))
         elif parsed.path == "/api/evaluaciones":
             unidad = qs.get("unidad", [None])[0]
             unidad = int(unidad) if unidad else None

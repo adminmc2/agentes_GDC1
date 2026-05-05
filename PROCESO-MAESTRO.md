@@ -487,7 +487,7 @@ guia-didactica-profesor-IA/
 └── .gitignore, .dockerignore
 ```
 
-### Árbol antes del split (referencia histórica, anterior a 2026-05-05 12:15)
+### Árbol antes del split (referencia histórica — anterior a 2026-05-05 12:15, NO ES EL ESTADO ACTUAL)
 
 ```
 guia-didactica-profesor-IA/
@@ -568,7 +568,9 @@ guia-didactica-profesor-IA/
 └── BASURA TÉCNICA: texput.log, __pycache__/, .DS_Store, eval/__pycache__/
 ```
 
-### Estructura actual (post-migración U03)
+### Notas históricas adicionales (anteriores al split)
+
+> Lo siguiente describe cambios previos al split de zonas `viejo/` + `nuevo/`. Ya está reflejado en el árbol actual de arriba. Se conserva como contexto.
 
 ```
 guia-didactica-profesor-IA/
@@ -622,25 +624,57 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 
 ## Parte 4 — Decisiones cerradas en conversación
 
-1. **Tres tipos de contenido**: producto editorial, sistema técnico, especificaciones. (cerrada)
-2. **Fuente única para criterios editoriales**: archivo MD; BD se rellena por script. La BD no se puebla ahora pero el diseño debe contemplarla. (cerrada)
-3. **Forma de captura de lecciones**: bidireccional — Claude Code propone cuando lo ve claro y el autor puede dictar manualmente. (cerrada)
-4. **Estructura por sección**: las especificaciones, repertorios y lecciones deben organizarse por sección de trabajo (vocabulario, gramática, comunicación, destrezas, cultura, etc.), no solo por tipo de producto. (cerrada conceptualmente, falta detalle)
-5. **No ejecutar nada hasta validar todo en chat**. (cerrada)
+### Sobre el modelo conceptual
+1. **Tres tipos de contenido**: producto editorial, sistema técnico, especificaciones.
+2. **Fuente única para criterios editoriales**: archivo MD; BD se rellena por script. La BD no se puebla ahora pero el diseño debe contemplarla.
+3. **Forma de captura de lecciones**: bidireccional — Claude Code propone cuando lo ve claro y el autor puede dictar manualmente.
+4. **Estructura por sección**: las especificaciones, repertorios y lecciones deben organizarse por sección de trabajo (vocabulario, gramática, comunicación, destrezas, cultura, etc.), no solo por tipo de producto. *(Cerrada conceptualmente, falta diseñar carpetas concretas.)*
+5. **No ejecutar nada hasta validar todo en chat** (excepto tareas explícitamente autorizadas como el split).
+
+### Sobre la organización física del repositorio
+6. **Split físico en `viejo/` + `nuevo/`** ejecutado el 2026-05-05 12:15. `viejo/` contiene todo el contenido editorial actual sin cambios; `nuevo/` es la zona de construcción de la estructura definitiva.
+7. **Código (`scripts/`, `web/`, `eval/`), dashboard (`diagrama.py`) y documentos (`README.md`, `CLAUDE.md`, etc.) se quedan en raíz**, NO se mueven a `viejo/`.
+8. **El dashboard `web/` no se duplica.** La integración del informe HTML por unidad se hace como sección nueva del dashboard existente.
+
+### Sobre las convenciones de naming
+9. **Carpetas de unidad sin cero**: `U1/`, `U2/`...`U9/`. (Caveat: válido para cursos de ≤9 unidades. Para 10+ habría que reintroducir el cero o usar otro esquema.)
+10. **Prefijo de archivo por unidad**: `UX-nc1-` (X = nº unidad, NC1 = curso "Nuevo Compañeros 1"). Ejemplo: `U3-nc1-inventario.json`.
+11. **Prefijo de archivo global del curso**: `nc1-`. Ejemplo: `nc1-reciclaje.json`.
+
+### Sobre los 4 JSONs (Fase 1 del proceso)
+12. **Material fuente** por ahora limitado a PDF del libro del alumno. Si cambia, se versiona y se registra en CHANGELOG.
+13. **Salidas por unidad**: 1 archivo (`UX-nc1-inventario.json`).
+14. **Salidas globales del curso**: 3 archivos (`nc1-reciclaje.json`, `nc1-tarjetas.json`, `nc1-pildoras.json`).
+15. **Modelo de los globales: A — índice/proyección.** El dato vive en su unidad; los globales se regeneran. NO se editan a mano (excepto reciclaje).
+16. **Ubicación de los globales**: en `unidades/`, junto a las carpetas de unidad.
+17. **Esquema del inventario JSON cerrado**: `vocabulario_consolidado` con 3 bloques (principal/recurrente/comprensión), `secciones` como índice top-level, `tipo` con taxonomía cerrada de 17 valores (provisional, revisable cada unidad), `datos` como saco genérico, `respuestas` siempre presente, sub-objetos consistentes para audio/imagen/video, `registro` eliminado (va a CHANGELOG).
+18. **Esquema de `nc1-tarjetas.json`**: solo vocabulario y estrategia (no gramática). `por_unidad` + `indice_palabras` + `indice_estrategias`.
+19. **Esquema de `nc1-pildoras.json`**: `por_unidad` + `indice_global`. Categorías como `null` por ahora — se definen cuando se trabajen píldoras nuevas.
+20. **Esquema de `nc1-reciclaje.json`**: acumulativo y secuencial; limitado a 5-6 elementos clave por unidad; basado en contenido (vocabulario, estrategia, contenido_gramatical, forma_verbal, estrategia_comunicativa); con niveles de impacto (alto/medio/bajo); revisable y editable desde el dashboard.
+
+### Sobre la generación de los JSONs
+21. **`UX-nc1-inventario.json`**: lo genera **Claude Code** en chat con un **prompt versionado** (`scripts/prompts/extraccion-inventario.md`, a escribir). NO Python autónomo.
+22. **`nc1-tarjetas.json`** y **`nc1-pildoras.json`**: scripts Python deterministas (`regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`, a escribir). Cero tokens.
+23. **`nc1-reciclaje.json`**: **manual con Claude Code** en chat al cerrar cada unidad. NO automático, NO inferido por script. Acumulativo.
+24. **Validación post-extracción** del inventario: script Python `validar_inventario.py` (a escribir).
+
+### Sobre el dashboard y el informe HTML
+25. **Cada extracción de inventario genera además un informe HTML visual** integrado como sección nueva del dashboard existente (`web/index.html`).
+26. **El dashboard debe mostrar** todos los JSON (inventario por unidad + 3 globales) y permitir revisar/editar las propuestas de reciclaje al cerrar cada unidad.
 
 ---
 
 ## Parte 5 — Decisiones pendientes
 
-### Sobre la estructura física del repo
+### Sobre la estructura física del repo (dentro de `nuevo/`)
 - Carpeta para las especificaciones por sección: nombre, ubicación, jerarquía interna.
-- **Qué hacer con `agentes/*.md`** (DECISIÓN NUEVA): cada archivo mezcla "especificación operativa de la sección" + "configuración del agente CrewAI". Hay que separar las dos partes. Posibilidades:
-  - A) Extraer la parte de especificación operativa a `especificaciones/SECCION/` y dejar en `agentes/` (o `scripts/crewai/`) solo la config del agente.
-  - B) Dejar `agentes/*.md` como están (fuente única) y que `especificaciones/SECCION/` los referencie.
-  - C) Cada `ag-X.md` se renombra `especificaciones/X/protocolo-operativo.md` y la config CrewAI se extrae a un YAML/JSON técnico aparte.
-- Qué hacer con `repertorios/`, `referencias/`, `marco-teorico-*`, `00-curso-general.md`: ¿se agrupan bajo `pedagogia/`? ¿bajo otra estructura?
-- Qué hacer con `materiales/` (queda vacía).
-- Qué hacer con `_template/` (propósito desconocido).
+- **Qué hacer con `viejo/agentes/*.md`** cuando se migren a `nuevo/`: cada archivo mezcla "especificación operativa de la sección" + "configuración del agente CrewAI". Hay que separar las dos partes. Posibilidades:
+  - A) Extraer la parte de especificación operativa a `nuevo/especificaciones/SECCION/` y dejar la config del agente aparte.
+  - B) Dejar los archivos como están y referenciarlos desde la nueva estructura.
+  - C) Renombrar a `nuevo/especificaciones/X/protocolo-operativo.md` y extraer la config CrewAI a un YAML/JSON técnico aparte.
+- Qué hacer con `viejo/repertorios/`, `viejo/referencias/`, `viejo/marco-teorico-*`, `viejo/00-curso-general.md` al migrar.
+- Qué hacer con `viejo/materiales/` (1 archivo: `especificaciones-diseno-tarjetas.md` — desactualizado desde abril, hay que reescribir).
+- **Qué es `viejo/_template/`** (16 archivos sin trackear, parece scaffold de proyecto). Decisión: confirmar propósito o eliminar.
 - Renombrar `diagrama.py` → `web/server.py` (o similar).
 
 ### Sobre el sistema de lecciones de Claude Code
@@ -653,67 +687,99 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 - Qué archivos de criterios son "sincronizables" y cuáles son solo para Claude Code.
 
 ### Sobre las protecciones (qué archivos no se modifican sin autorización)
-- Lista vigente: `agent-prompt-design.md`, `tool-design.md`, `criterios-generacion-tarjetas.md`, `tools.py`.
-- Tras reorganizar: la lista cambia (paths nuevos) y posiblemente se amplía (¿criterios por sección también protegidos?).
+- Lista vigente: `viejo/.claude/rules/agent-prompt-design.md`, `tool-design.md`, `criterios-generacion-tarjetas.md`, `scripts/crewai/tools.py`.
+- Tras reorganizar a `nuevo/`: la lista cambia (paths nuevos) y posiblemente se amplía (¿criterios por sección también protegidos?).
 
 ### Sobre el contenido (huecos editoriales)
-- **Esquema canónico del `UX-nc1-inventario.json`** (próxima decisión inmediata, pertenece a Fase 1).
-- **Esquemas canónicos de los 3 JSONs globales** (`nc1-reciclaje.json`, `nc1-tarjetas.json`, `nc1-pildoras.json`).
 - Protocolo de selección de campos semánticos (Fase 2).
 - Protocolo de selección de tarjetas de estrategia y validación de no-repetición (Fase 4).
 - Protocolo de selección temática para píldoras (Fase 5).
+- **Categorías de píldoras formativas**: definir cuando se trabaje en píldoras nuevas. Hoy está como `null` en `nc1-pildoras.json`.
 - Criterios de la versión resumida vs completa (Fase 7).
 - Mapeo material teórico ↔ sección (Fase 8).
 
----
+### Bugs conocidos / deuda técnica (bloqueantes del paso C, no del paso B)
+
+Detectados por revisor el 2026-05-05. Decisión del autor: **NO arreglar ahora**, abordar todos juntos al inicio del paso C cuando los paths definitivos estén fijados en `nuevo/`.
+
+- **B1 — `tools.py:346` escribe a path inexistente.** La tool `exportar_csv` intenta escribir en `datos/tarjetas/U{XX}-vocabulario.csv`. Esa carpeta no existe en el repo (no en raíz ni en `viejo/`). Bug preexistente desde v9.0; el split lo dejó en evidencia. **Funcionalmente: `exportar_csv` está rota en producción.** Requiere autorización para tocar `tools.py` (archivo protegido). Path correcto al arreglar dependerá de si U3 ya migró a `nuevo/`.
+
+- **B2 — Railway: `viejo/repertorios/` no existe en el repo remoto.** `repertorios/` ya estaba gitignored antes del split (verificado con `git ls-tree -r main --name-only`). El split solo cambió el path local; en Railway la carpeta sigue inexistente. La función `mermaid_level1` de `diagrama.py` lee `viejo/repertorios/X.md` para mostrar líneas — ya no funcionaba antes, sigue sin funcionar. Decisión: o trackear los repertorios en git, o desactivar esa lectura en producción, o migrarlos a `nuevo/` y tomar decisión allí.
+
+- **B3 — `diagrama.py:715` tiene path hardcoded.** La línea `INV["viejo/unidades/U03/inventario.json"] --> AG_vocabulario` apunta al inventario antiguo. Cuando U3 migre a `nuevo/unidades/U3/U3-nc1-inventario.json` (paso C), esta línea queda rota. Fix trivial cuando se haga la migración.
+
+### Sobre la implementación (a escribir cuando lleguemos)
+- Prompt `nuevo/scripts/prompts/extraccion-inventario.md`.
+- Scripts Python: `validar_inventario.py`, `regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`.
+- Plantilla HTML del informe por unidad e integración en dashboard (paso B del plan).
+- Migración de U3 a `nuevo/unidades/U3/` con el nuevo schema (paso C del plan).
+- Protocolo formal de validación visual PDF vs JSON.
 
 ---
 
-## Parte 5.bis — Estrategia de migración: zonas `nuevo/` y `viejo/`
+---
 
-**Decisión cerrada en chat 2026-05-05.** Para evitar romper el repo durante la reorganización, se trabaja con dos zonas en paralelo:
+## Parte 5.bis — Estrategia de migración: zonas `viejo/` y `nuevo/` (EJECUTADA)
 
-### Zona `nuevo/`
-- Carpeta nueva en la raíz del repo: `nuevo/`.
-- Contiene la estructura definitiva en construcción.
-- Se va poblando conforme cerramos decisiones en chat.
-- **U3 es el caso piloto.** Todo lo nuevo se prueba primero con U3.
-- El día que esté validada, `nuevo/` se promueve a raíz (renombrando lo que hace falta).
+**Decisión cerrada y ejecutada el 2026-05-05 12:15.**
 
-### Zona "viejo" (todo lo demás)
-- El repo actual tal como está hoy. Sin cambios bruscos.
-- Sirve de fuente: cuando se necesite, se extraen materiales y se mueven o adaptan a `nuevo/`.
-- Lo que no se necesite se elimina o se archiva al final.
+### Estado actual
+- **`viejo/`** existe en la raíz. Contiene todo el contenido editorial sin cambios: `unidades/`, `materiales/`, `agentes/`, `repertorios/`, `referencias/`, `diseno/`, `material-complementario/`, `_template/`, `marco-teorico-metodologico.md`, `00-curso-general.md`. Solo local — su contenido sigue gitignored.
+- **`nuevo/`** existe en la raíz. Contiene `README.md` + estructura inicial vacía (`unidades/U3/` y `scripts/prompts/`). Se va poblando conforme cerramos decisiones.
+- **Código y dashboard se quedan en raíz**: `scripts/`, `web/`, `eval/`, `diagrama.py`. Todas sus referencias internas a `unidades/`, `materiales/`, etc. se actualizaron a `viejo/...`.
+- **Documentos en raíz**: `README.md`, `CLAUDE.md`, `CHANGELOG.md`, `ROADMAP.md`, `GITHUB-MANIFEST.md`, `PROCESO-MAESTRO.md`.
+- **Config en raíz**: `Dockerfile`, `railway.toml`, `requirements.txt`, `.env.example`, `.gitignore`, `.dockerignore`.
 
-### El dashboard (`web/`) NO se duplica
-El dashboard existente en `web/index.html` (90 KB, Material Design 3, navegación por secciones y unidades) **se mantiene en su sitio**. NO se construye uno nuevo. La integración del informe HTML por unidad se hace **como sección nueva del dashboard actual**.
-
-### Estructura inicial de `nuevo/` (a poblar conforme avancemos)
-
-```
-nuevo/
-├── unidades/
-│   └── U3/                          ← caso piloto (a poblar con copia limpia + nuevo schema)
-│       ├── U3-nc1-inventario.json
-│       ├── fuente/U3-nc1.pdf
-│       └── ...
-├── scripts/
-│   └── prompts/
-│       └── extraccion-inventario.md ← prompt versionado (a escribir)
-└── README.md                        ← qué es esta zona y cómo se usa
-```
+### Promoción a raíz (cuando todo esté validado)
+Cuando `nuevo/` contenga U3 migrada y validada, los pasos serán:
+1. Extraer de `viejo/` los materiales que se necesiten (copiar a `nuevo/` lo que aún quede por integrar).
+2. Eliminar `viejo/` (todo su contenido es local y reproducible o ya integrado).
+3. Promover `nuevo/` a raíz (renombrando o moviendo carpetas).
+4. Eliminar `PROCESO-MAESTRO.md` (su contenido pasa a `CLAUDE.md`, `README.md` y READMEs por sección).
 
 ---
 
-## Parte 6 — Pasos siguientes (no ejecutar todavía)
+## Parte 6 — Pasos siguientes (estado y plan)
 
-1. Validar este documento con el autor.
-2. Decidir punto por punto las pendientes de la Parte 5.
-3. Diseñar la nueva estructura física del repo.
-4. Escribir un plan de migración detallado.
-5. Ejecutar la migración paso a paso.
-6. Actualizar CLAUDE.md, README.md, CHANGELOG.md y crear los READMEs de cada sección con la información consolidada.
-7. **Eliminar este documento.**
+### Estado actual (2026-05-05 13:00)
+- ✅ Validación inicial del documento con el autor.
+- ✅ Cierre de Fase 1 (esquemas JSON + estrategia de generación).
+- ✅ Split físico `viejo/` + `nuevo/` ejecutado.
+- ✅ Commit y push (`c5e08e9`) con el split.
+
+### Plan de trabajo (paso por paso, en chat)
+
+**Paso A — Esquemas de los 3 JSONs globales** ✅ HECHO
+Los esquemas están cerrados en Parte 4 (decisiones 18, 19, 20).
+
+**Paso B — Plantilla HTML del informe por unidad** ⏳ PRÓXIMO
+- Definir estructura de la vista (secciones, colores, qué muestra de cada JSON).
+- Integrar como sección nueva del dashboard existente (`web/index.html`).
+- Mostrar primero el inventario de U3 (que vive en `viejo/unidades/U03/inventario.json`) como prueba.
+
+**Paso C — Migración de U3 a `nuevo/`** 📋 PENDIENTE
+- **Antes de migrar contenido**: arreglar los 3 bugs conocidos (B1, B2, B3 en Parte 5).
+- Copiar el contenido de `viejo/unidades/U03/` a `nuevo/unidades/U3/`.
+- Renombrar archivos según convención (`U3-nc1-inventario.json`, `U3-nc1.pdf`).
+- Transformar el JSON al nuevo schema (añadir `vocabulario_consolidado`, `secciones`, normalizar tipos).
+- Actualizar paths internos.
+
+**Paso D — Escritura del prompt de extracción** 📋 PENDIENTE
+- Escribir `nuevo/scripts/prompts/extraccion-inventario.md` basado en el aprendizaje de la migración de U3.
+- Incluir esquema, casos especiales, ejemplos.
+
+**Paso E — Validación con segunda unidad** 📋 PENDIENTE
+- Cuando el autor exporte el PDF de otra unidad (U1, U2, U4...), aplicar el prompt y validar reproducibilidad.
+
+**Paso F — Decisiones pendientes restantes** 📋 PENDIENTE
+- Estructura interna de `nuevo/` (especificaciones, repertorios, agentes).
+- Sistema de lecciones de Claude Code.
+- Protocolos pendientes de Fases 2, 4, 5, 7, 8.
+- Categorías de píldoras.
+
+**Paso final — Promoción `nuevo/` a raíz y eliminación de este documento** 📋 PENDIENTE
+- Una vez todo validado, integrar el contenido de PROCESO-MAESTRO.md en `CLAUDE.md`, `README.md` y READMEs por sección.
+- Eliminar `viejo/` y `PROCESO-MAESTRO.md`.
 
 ---
 
@@ -723,8 +789,11 @@ nuevo/
 - **2026-05-05** — Actualización con hallazgos del repaso del repositorio: los archivos `agentes/*.md` son especificaciones operativas vivas (no prompts a archivar). Protocolo de píldoras (Fase 5) localizado en `ag-vocabulario.md` y `ag-gramatica.md`. Confirmado que NO existe registro de no-repetición de tarjetas de estrategia (Fase 4).
 - **2026-05-05** — Cierre de Fase 1: convención de naming (`UX-nc1-`, `nc1-` para globales, carpetas sin cero), material fuente reducido al PDF del libro del alumno, salidas (1 inventario por unidad + 3 globales del curso), modelo de globales = índice/proyección. Pendiente: esquema canónico del inventario y de los globales.
 - **2026-05-05** — Añadida vista viva del árbol del repositorio (Parte 3). Definida estrategia de generación de los 4 JSONs: inventario por Claude Code con prompt versionado (no Python autónomo); tarjetas y píldoras globales por scripts Python deterministas; **reciclaje manual con Claude Code, NO automático**. Validación post-extracción por script Python.
-- **2026-05-05** — Esquema canónico del `UX-nc1-inventario.json` cerrado. Cambios principales: `vocabulario_consolidado` con 3 bloques (principal/recurrente/comprensión), `secciones` como índice top-level, `tipo` con taxonomía cerrada de 12 valores (provisional, revisable), `datos` como saco genérico para datos específicos por actividad, `respuestas` siempre presente, eliminado `registro`. Cada extracción genera además un **informe HTML visual** integrado en el dashboard existente (`web/index.html`).
+- **2026-05-05** — Esquema canónico del `UX-nc1-inventario.json` cerrado. Cambios principales: `vocabulario_consolidado` con 3 bloques (principal/recurrente/comprensión), `secciones` como índice top-level, `tipo` con taxonomía cerrada de 17 valores (provisional, revisable), `datos` como saco genérico para datos específicos por actividad, `respuestas` siempre presente, eliminado `registro`. Cada extracción genera además un **informe HTML visual** integrado en el dashboard existente (`web/index.html`).
 - **2026-05-05** — Estrategia de migración cerrada: zonas `nuevo/` (estructura definitiva en construcción, U3 como piloto) y "viejo" (resto del repo intacto). El dashboard NO se duplica.
 - **2026-05-05** — Correcciones del revisor: (1) número de tipos de actividad corregido de "12" a "17" (lista real); (2) añadido caveat sobre la convención `UX` sin cero (válida solo para cursos de ≤9 unidades); (3) tarea HTML del informe anclada formalmente como pendiente abierta con responsable.
 - **2026-05-05** — Esquemas de los 3 JSONs globales cerrados. Cambios respecto a borradores iniciales: `nc1-tarjetas.json` solo vocabulario y estrategia (sin gramática); `nc1-pildoras.json` con categorías marcadas como `null` para definir cuando se trabajen píldoras nuevas; `nc1-reciclaje.json` rediseñado como modelo acumulativo-secuencial, limitado a 5-6 elementos clave por unidad, basado en contenido (no en actividades), con tipos cerrados (vocabulario, estrategia, contenido_gramatical, forma_verbal, estrategia_comunicativa) y niveles de impacto. Anotado: el dashboard debe mostrar todos los JSON y permitir revisar/editar propuestas de reciclaje.
 - **2026-05-05 12:15** — **Split físico ejecutado.** Todo el contenido editorial actual movido a `viejo/` (unidades, materiales, agentes, repertorios, referencias, diseno, material-complementario, _template, marco-teorico-metodologico.md, 00-curso-general.md). En raíz quedan: código (scripts, web, eval, diagrama.py), docs (README, CLAUDE, CHANGELOG, ROADMAP, GITHUB-MANIFEST, PROCESO-MAESTRO), config (Dockerfile, railway.toml, requirements.txt, .env.example), y la zona `nuevo/` (en construcción). Eliminada basura técnica: `texput.log`, `__pycache__/`, `.DS_Store`. Actualizadas referencias a paths nuevos en: `.gitignore`, `.dockerignore`, `scripts/importar_inventario.py`, `scripts/crear_crew_agents.py`, `diagrama.py` (8 referencias a repertorios), `README.md`, `CLAUDE.md`.
+- **2026-05-05 12:30** — Commit `c5e08e9` "v10.0: split repo en zonas viejo/ y nuevo/ + PROCESO-MAESTRO" pusheado a `main`.
+- **2026-05-05 13:30** — Hallazgos del revisor sobre el split aceptados. Documentados como bugs conocidos B1 (`tools.py:346` escribe a path inexistente), B2 (Railway: `repertorios/` ya estaba gitignored antes del split, dashboard llevaba roto), B3 (`diagrama.py:715` con path hardcoded a inventario antiguo). Decisión: NO arreglar ahora, abordar los 3 al inicio del paso C cuando los paths en `nuevo/` estén fijados.
+- **2026-05-05 13:00** — Auditoría y actualización del documento. Correcciones: (1) entrada de bitácora con "12 tipos" → "17 tipos" (consistencia interna); (2) Parte 4 reescrita con las **26 decisiones cerradas** organizadas por categoría (modelo, organización, naming, JSONs, generación, dashboard); (3) Parte 5 (pendientes) limpiada — eliminados los esquemas JSON que ya estaban cerrados, añadida sección de "implementación pendiente"; (4) Parte 5.bis reescrita reflejando que el split YA está ejecutado (no es plan futuro); (5) Parte 6 reescrita con estado real de cada paso (A hecho, B próximo, C-F pendientes); (6) árbol "antes del split" marcado como histórico para evitar confusión.
