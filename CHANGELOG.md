@@ -8,12 +8,33 @@
 **18 actividades recategorizadas en total:** 4 en v10.29 y 14 en este commit (6 en U1, 8 en U3).
 
 Criterio aplicado:
-- El alumno **escribe aplicando una regla** (conjugar, aplicar género/posesivo, recordar info del texto) → `produccion_escrita_guiada`.
+- El alumno **escribe aplicando una regla** → `produccion_escrita_guiada`.
 - El alumno **selecciona de un banco dado** ("palabras del recuadro") → `completa_huecos`.
 
-Quedan **3 casos legítimos como `completa_huecos`** en U1/U3: U1-p13-act8, U1-p18-act2, U3-p38-act01 (todos con banco de palabras dado).
+Quedan **3 casos legítimos como `completa_huecos`**: U1-p13-act8, U1-p18-act2, U3-p38-act01.
+Los JSON tocados en esta pasada (U1 y U3) validan con 0 avisos. U0 conserva 1 aviso intencional (`_nota_unidad_atipica`).
 
-Los JSON tocados en esta pasada (U1 y U3) validan con 0 avisos. U0 sigue con 1 aviso intencional (`_nota_unidad_atipica`).
+---
+
+## [v10.29 — 2026-05-05] — Recategorizar escritura guiada + alinear regla Observa (commit fbcf523)
+
+4 actividades recategorizadas a `produccion_escrita_guiada`:
+- U1-p13-act7: escucha y escribe letras (g/j, b/v, h).
+- U3-p39-act09: completar palabras con z/c.
+- U3-p43-act01: completar formas verbales.
+- U3-p37-act09: "Para aprender" — de `expresion_escrita_libre` a `produccion_escrita_guiada`.
+
+Regla "Observa" alineada en prompt.md y CLAUDE.md con split actividad/cuadro.
+Distinción explícita `completa_huecos` vs `produccion_escrita_guiada` añadida en prompt.md con regla práctica.
+
+---
+
+## [v10.28 — 2026-05-05] — SERVER_VERSION automático desde CHANGELOG + prefijo v (commit 56fd923)
+
+- `SERVER_VERSION` ya no está hardcodeado en `diagrama.py`. Se lee automáticamente de la primera línea `## [vX.Y...]` del `CHANGELOG.md` al arrancar el servidor.
+- Cada nuevo commit con entrada en CHANGELOG actualiza la versión del dashboard sin intervención manual.
+- `/api/version` devuelve el número de versión sin prefijo "v" (el JS del dashboard lo añade).
+- CHANGELOG: añadidas entradas v10.26 y v10.27 que faltaban al inicio.
 
 ---
 
