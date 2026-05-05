@@ -123,7 +123,7 @@ AGENTS = [
         ),
         "task_expected_output": (
             'Confirmation with the number of cards inserted and CSV path.\n'
-            'Example: {"insertadas": 20, "csv": "unidades/U{unidad:02d}/tarjetas/csv/vocabulario.csv"}'
+            'Example: {"insertadas": 20, "csv": "viejo/unidades/U{unidad:02d}/tarjetas/csv/vocabulario.csv"}'
         ),
         "max_iter": 5,
     },

@@ -1,0 +1,730 @@
+# Proceso Maestro — Documento de trabajo
+
+> **Estado:** documento temporal. Consolida el proceso completo de producción de una unidad didáctica, lo que está definido y lo que falta por definir. Sirve de fuente para reorganizar el repositorio y, una vez integrada esta información en CLAUDE.md, README.md y los documentos de cada sección, **se eliminará**.
+>
+> **Origen:** conversación con el autor el 2026-05-05 para evitar perder el proceso completo descrito en chat.
+>
+> **Cómo se usa:** lectura obligada antes de cualquier reorganización del repo. Se actualiza conforme se rellenan huecos o se cierran decisiones.
+
+---
+
+## Parte 1 — Modelo conceptual del repositorio
+
+### Tres tipos de contenido (no mezclar)
+
+1. **Producto editorial** — la guía, las tarjetas, los textos, las píldoras. Lo que recibe el lector final.
+2. **Sistema técnico** — código Python, agentes CrewAI, dashboard, BD.
+3. **Especificaciones** — los criterios y reglas que conectan a 1 y 2: cómo debe ser el producto, qué reglas siguen los agentes, qué reglas sigue Claude Code.
+
+### Dos audiencias para las especificaciones (tipo 3)
+
+- **Claude Code** (presente operativo) — yo, leyendo archivos `.md` en chat.
+- **Agentes CrewAI** (futuro automatizado) — leyendo desde la BD (tabla `reglas_aprendidas`).
+
+**Decisión cerrada:** fuente única. Las reglas viven una sola vez (en archivo MD) y la BD se rellena automáticamente desde ahí con un script de sincronización (`sincronizar-reglas.py`, aún no escrito). No se escribe directamente en BD.
+
+**Nota del autor:** la BD no se puebla ahora; los agentes se configuran después. Pero el diseño actual debe pensarse ya con los agentes en mente para evitar errores futuros.
+
+### El ciclo de aprendizaje de Claude Code
+
+Hoy, cuando el autor corrige a Claude Code en chat, esa lección se pierde al cerrar la sesión. **Falta** un mecanismo para capturar errores y correcciones, y que las siguientes sesiones de Claude Code los respeten.
+
+**Decisión cerrada:** las lecciones serán **específicas por sección**, no un único archivo global. Cada sección de trabajo (vocabulario, gramática, comunicación, etc.) tiene su propio archivo de lecciones porque la forma de trabajo en cada sección es distinta.
+
+**Pendiente:** definir el formato exacto de las lecciones y el mecanismo de activación (ver Parte 4).
+
+---
+
+## Parte 2 — Las 8 fases del proceso de producción de una unidad
+
+### Fase 1 — Input del PDF y creación del inventario
+
+**Qué pasa:** el autor exporta el PDF embebido del libro de texto. Claude Code lee el PDF y extrae las actividades a un JSON estructurado (`UX-nc1-inventario.json`). El JSON se importa a BD con `scripts/importar_inventario.py`. Al cerrar la unidad se actualizan los JSONs globales del curso.
+
+**Definido (Fase 1 — CERRADA en chat 2026-05-05):**
+
+**Convención de naming:**
+- Carpetas de unidad sin cero: `U1/`, `U2/`, `U3/` ... `U9/`. (Hoy: `U01/...U09/` — pendiente renombrar).
+- Prefijo de archivo por unidad: `UX-nc1-` (donde X = número de unidad sin cero, NC1 = "Nuevo Compañeros 1"). Ejemplo: `U3-nc1-inventario.json`.
+- Prefijo de archivo global del curso: `nc1-`. Ejemplo: `nc1-reciclaje.json`.
+- **⚠ Restricción de la convención sin cero:** válida para cursos de exactamente 9 unidades o menos (Nuevo Compañeros 1 tiene 9). Si en el futuro se trabaja con un curso de 10+ unidades, los nombres `U10/` ordenarían **antes** que `U2/` en cualquier sistema de archivos. Para esos cursos habría que reintroducir el cero (`U01`...`U10`) o usar otro esquema (`U-1`, `U-10`). Decisión revisable cuando aplique.
+
+**Material fuente (entrada):**
+- Por ahora **solo el PDF del libro del alumno**: `unidades/UX/fuente/UX-nc1.pdf`.
+- Requisito: PDF con texto embebido (no escaneado). El autor lo garantiza.
+- Versionado: si el PDF se actualiza, se genera una **versión nueva** y se registra el cambio en CHANGELOG.md.
+- Otras fuentes (cuaderno de ejercicios, libro del profesor original, audios) **descartadas por ahora**.
+
+**Salidas (outputs):**
+
+*Por unidad* (en `unidades/UX/`):
+- `UX-nc1-inventario.json` — extracción del PDF de la unidad.
+
+*Globales del curso* (en `unidades/`, junto a las carpetas de unidad):
+- `nc1-reciclaje.json` — mapping de reciclaje cross-unidad. Se va completando conforme se desarrolla cada unidad.
+- `nc1-tarjetas.json` — índice global de todas las tarjetas del curso. Se actualiza al cerrar cada unidad.
+- `nc1-pildoras.json` — índice global de todas las píldoras del curso. Se actualiza al cerrar cada unidad.
+
+**Modelo de los globales: A — el global es ÍNDICE / PROYECCIÓN.** El dato vive en su unidad (CSVs de tarjetas, archivos de píldoras). Un script `regenerar-globales.py` (aún no escrito) lee todas las unidades y regenera los JSONs globales. **No se editan a mano** — si se editan, se pierde al regenerar.
+
+**Estructura física resultante:**
+```
+unidades/
+├── nc1-reciclaje.json              ← global (regenerado)
+├── nc1-tarjetas.json               ← global (regenerado)
+├── nc1-pildoras.json               ← global (regenerado)
+├── U3/
+│   ├── U3-nc1-inventario.json
+│   ├── fuente/U3-nc1.pdf
+│   ├── tarjetas/...
+│   ├── pildoras/...
+│   └── U3-{seccion}.md (varios)
+└── (U1, U2, U4-U9 con la misma estructura)
+```
+
+**Pipeline definido:**
+1. Autor exporta PDF embebido → `unidades/UX/fuente/UX-nc1.pdf`.
+2. **Extracción del inventario por Claude Code en chat con prompt versionado** (ver bloque "Estrategia de generación" abajo) → genera `UX-nc1-inventario.json`.
+3. Validación automática del JSON con `scripts/validar_inventario.py` (a escribir).
+4. Validación visual fuente vs JSON (revisión de 2-3 páginas al azar).
+5. `python scripts/importar_inventario.py unidades/UX/UX-nc1-inventario.json` → carga a BD (idempotente, DELETE CASCADE).
+6. Tras desarrollar la unidad, regenerar `nc1-tarjetas.json` y `nc1-pildoras.json` con scripts Python deterministas.
+7. Cierre de unidad: actualizar `nc1-reciclaje.json` manualmente con ayuda de Claude Code en chat (no automático).
+8. Si el PDF cambia, repetir desde el paso 1 con versión nueva + entrada en CHANGELOG.
+
+---
+
+**Estrategia de generación de los 4 JSONs (CERRADA en chat 2026-05-05):**
+
+**A) `UX-nc1-inventario.json` — extracción del PDF de la unidad**
+- **Quién:** Claude Code en chat. NO Python autónomo (no se confía en scripts disfuncionales para PDFs irregulares).
+- **Cómo:** mediante un prompt versionado en `scripts/prompts/extraccion-inventario.md` (a escribir). El prompt contiene esquema JSON exacto, reglas de extracción detalladas, casos especiales resueltos y ejemplos basados en U03.
+- **Reproducibilidad:** el prompt fijo asegura resultados prácticamente idénticos entre extracciones. La varianza propia del LLM se minimiza con prompt detallado y temp=0.
+- **Coste estimado:** ~25.000 tokens por unidad (10 páginas). Se hace una sola vez por unidad. Para las 9 unidades restantes: ~225.000 tokens totales.
+- **Mejora continua:** cada caso raro encontrado se añade al prompt. Para la siguiente unidad, ya no es raro.
+
+**B) `nc1-tarjetas.json` — índice global de tarjetas del curso**
+- **Quién:** script Python determinista `scripts/regenerar_tarjetas_globales.py` (a escribir).
+- **Cómo:** lee todos los CSVs en `unidades/U*/tarjetas/csv/*.csv` (estructura fija con cabecera conocida), agrupa por unidad y campo semántico, escribe el JSON.
+- **Coste:** cero tokens.
+- **Cuándo se ejecuta:** al cerrar cada unidad o cuando se modifican los CSVs.
+
+**C) `nc1-pildoras.json` — índice global de píldoras del curso**
+- **Quién:** script Python determinista `scripts/regenerar_pildoras_globales.py` (a escribir).
+- **Cómo:** lista los archivos PDF en `unidades/U*/pildoras/`, parsea el TEX correspondiente para extraer el título (regex sobre `\title{...}`), escribe el JSON.
+- **Coste:** cero tokens.
+- **Cuándo se ejecuta:** al cerrar cada unidad.
+
+**D) `nc1-reciclaje.json` — mapping de reciclaje cross-unidad** ⚠ **IMPORTANTE: manual, no automático**
+- **Quién:** Claude Code en chat, ayudando al autor. **NO se genera con script Python**, **NO se infiere automáticamente, NO se "regenera"**.
+- **Cómo:** el autor abre chat al cerrar cada unidad y dice "añade los reciclajes de UX". Claude Code pregunta qué contenido se reutiliza, lo añade a las entradas existentes del JSON. El archivo es **acumulativo**: cada cierre de unidad lo amplía.
+- **Por qué manual:** el reciclaje es un mapping editorial (qué contenido de una unidad se reutiliza en otra) que requiere criterio humano. Un script no puede inferirlo de forma fiable.
+- **Coste:** mínimo, ~5.000 tokens por unidad.
+- **Futuro:** cuando los agentes CrewAI estén configurados, se podrá evaluar si un agente propone reciclajes (que el autor valida). Hoy: solo manual con Claude Code.
+
+---
+
+**Validación post-generación:**
+- Después de cada extracción, `scripts/validar_inventario.py` (a escribir) verifica estructura: campos obligatorios, tipos, códigos de actividad únicos, JSON parseable. Esto SÍ es trabajo de Python (validación estructural pura, sin riesgo de fallar).
+
+---
+
+---
+
+**Esquema canónico del `UX-nc1-inventario.json` (CERRADO en chat 2026-05-05):**
+
+Estructura top-level (8 claves):
+- `unidad` (int): número de unidad, sin cero. Ej: 3.
+- `curso` (str): identificador del curso. Ej: "nc1".
+- `titulo` (str): título de la unidad. Ej: "La Familia".
+- `paginas_libro` (str): rango de páginas en el libro. Ej: "34-43".
+- `nivel` (str): nivel MCER. Ej: "A1.1".
+- `fuente` (object): `{ archivo, version_extraccion }`.
+- `contenidos_indice` (object): las 5 secciones canónicas — vocabulario, gramatica, comunicacion, destrezas, cultura. Texto descriptivo de cada una.
+- `vocabulario_consolidado` (object): vista agregada del vocabulario de toda la unidad, organizada en **3 bloques**:
+  - **`principal`** — Vocabulario declarado en el índice de la unidad. La sección Vocabulario lo trabaja explícitamente. Agrupado por campo semántico.
+  - **`recurrente`** — Vocabulario que aparece en varias secciones de la unidad, no solo en la sección Vocabulario. Agrupado por categoría temática.
+  - **`comprension`** — Léxico que aparece y afecta la comprensión del estudiante aunque no se trabaje explícitamente. Agrupado por categoría.
+- `secciones` (object): índice top-level con 7 claves fijas (vocabulario, gramatica, comunicacion, destrezas, cultura, evaluacion, reflexion). Cada una: `{ paginas, actividades_ids }`. Mapea de sección a páginas y a IDs de actividad. Permite acceso directo sin recorrer todo.
+- `paginas_detalle` (array): lista de páginas con su detalle.
+
+Estructura por página:
+- `pagina` (int).
+- `seccion` (str): clave normalizada (vocabulario, gramatica, comunicacion, destrezas, cultura, evaluacion, reflexion).
+- `actividades` (array).
+- `cuadros_gramaticales` (array, opcional).
+
+Estructura por actividad:
+- `id` (str): único, formato `UX-pYY-actNN`.
+- `numero` (int): orden en la unidad.
+- `tipo` (str): de la **taxonomía cerrada de 17 tipos** (lista provisional, se revisa al cerrar cada unidad nueva):
+  ```
+  escucha_y_repite, escucha_y_responde, completa_huecos, relaciona, ordena, clasifica,
+  seleccion_multiple, verdadero_falso, produccion_oral_pareja, produccion_oral_libre,
+  produccion_escrita_guiada, produccion_escrita_libre, comprension_lectora,
+  comprension_auditiva, busqueda_informacion, tarea_final, juego
+  ```
+- `destreza` (str): destreza(s) trabajada(s).
+- `instruccion_original` (str): texto literal del libro.
+- `contenido_linguistico` (array de strings).
+- `campo_semantico` (str, opcional): cuando aplica (actividades de vocabulario).
+- `audio` (object): `{ presente: bool, pista: int (opcional) }`.
+- `imagen` (object): `{ presente: bool, descripcion: str (obligatoria si presente=true) }`.
+- `video` (object): `{ presente: bool }`.
+- `respuestas` (array): **siempre presente**. Lista vacía si no aplica. Importante para la mayoría de actividades.
+- `datos` (object abierto): saco genérico para datos específicos por tipo de actividad. Aquí caben subtipos (sopa_de_letras, programacion_tv, dialogo, etc.) sin inventar campos top-level por actividad.
+
+Estructura por cuadro gramatical:
+- `titulo` (str).
+- `contenido` (object): estructura libre según el cuadro.
+
+**Eliminado:** el campo `registro` que llevaba bitácora de cambios. Ahora va a CHANGELOG.md.
+
+---
+
+---
+
+**Esquemas de los 3 JSONs globales (CERRADOS en chat 2026-05-05):**
+
+**`nc1-tarjetas.json`** — índice global de tarjetas del curso.
+- Solo dos tipos: **vocabulario** y **estrategia**. (No habrá tarjetas de gramática.)
+- Top-level: `curso`, `actualizado`, `totales`, `por_unidad`, `indice_palabras`, `indice_estrategias`.
+- Por unidad:
+  - `vocabulario`: total, agrupación por campo semántico (lista de palabras), referencia al CSV origen.
+  - `estrategia`: lista de objetos con `id`, `titulo`, `destreza`, `caja`, `archivo_origen`.
+- Índices invertidos para búsqueda rápida (palabras y estrategias por unidad).
+- Generación: script Python determinista que lee CSVs y archivos de sección.
+
+**`nc1-pildoras.json`** — índice global de píldoras del curso.
+- Top-level: `curso`, `actualizado`, `total_pildoras`, `por_unidad`, `indice_global`.
+- Por píldora: `id`, `titulo`, `tematica`, `ubicacion_en_unidad`, archivos PDF/TEX/brief, `categoria`.
+- **`categoria` queda como `null` por ahora.** Las categorías de píldoras se definirán cuando se trabaje en píldoras nuevas (no se reusa la lista de 6 categorías de `ag-vocabulario.md` porque su aplicación a píldoras está por validar).
+  - **Pendiente revisar posteriormente** en este documento maestro cuando se aborden las píldoras.
+- Generación: script Python determinista que lista PDFs y parsea TEX.
+
+**`nc1-reciclaje.json`** — mapping editorial de reciclaje cross-unidad.
+- **Acumulativo y secuencial:** cada unidad analiza qué reutiliza de las anteriores, NO se recicla todo, **solo 5-6 elementos clave** de mayor impacto.
+- **Basado en contenido**, no en actividades.
+- **Se decide al cerrar cada unidad** (al final). Manual con Claude Code en chat.
+- **Revisable y editable desde el dashboard.**
+- Top-level: `curso`, `actualizado`, `reciclajes_por_unidad`, `indice_por_tipo`.
+- Por unidad: `_meta` (fecha cierre, total) + `elementos` (lista de objetos con `id`, `tipo`, `origen`, `uso_en_unidad_actual`, `impacto`).
+- Tipos cerrados (provisionales, ampliables):
+  - `vocabulario`
+  - `estrategia` (de aprendizaje)
+  - `contenido_gramatical`
+  - `forma_verbal`
+  - `estrategia_comunicativa`
+- Niveles de impacto: `alto` / `medio` / `bajo`.
+
+---
+
+**Por definir todavía:**
+- Contenido del prompt `scripts/prompts/extraccion-inventario.md` (se escribirá tras tener el primer caso de prueba con U3 en zona nueva).
+- Scripts Python: `validar_inventario.py`, `regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`.
+- Protocolo formal de validación visual PDF vs JSON.
+- **Plantilla HTML del informe por unidad** y su integración en el dashboard.
+  - **Tarea formal pendiente:** definir la plantilla HTML (estructura, secciones, colores, qué muestra). Integrar como sección nueva del dashboard (`web/index.html`). Se aborda en el paso B del plan de trabajo (después de cerrar los esquemas de los 3 JSONs globales).
+  - **Debe mostrar:** JSON de cada unidad (vocabulario consolidado, secciones, actividades) + los 3 JSON globales (tarjetas, píldoras, reciclaje) + propuestas de reciclaje al cerrar una unidad (revisables y editables).
+  - **Responsable:** Claude Code en chat con el autor.
+  - **Estado:** abierta, sin empezar.
+- **Categorías de píldoras formativas:** definir cuando se trabaje en las primeras píldoras nuevas. Pendiente de revisión en este documento.
+
+**Cambios físicos pendientes** (para ejecutar cuando se autorice la migración):
+- Renombrar `unidades/U03/` → `unidades/U3/` (y lo mismo para U01, U02, U04-U09).
+- Renombrar `unidades/U3/inventario.json` → `unidades/U3/U3-nc1-inventario.json`.
+- Renombrar `unidades/U3/fuente/U03-libro.pdf` → `unidades/U3/fuente/U3-nc1.pdf`.
+- Actualizar 10 referencias internas en el JSON.
+- Actualizar referencias en scripts (`importar_inventario.py`, `crear_crew_agents.py`, `diagrama.py`), CLAUDE.md, README.md, .gitignore, .dockerignore.
+- Crear los 3 JSONs globales vacíos en `unidades/` (con esquema mínimo cuando esté definido).
+
+---
+
+### Fase 2 — Análisis de vocabulario de la unidad
+
+**Qué pasa:** se identifica qué vocabulario será materializado en tarjetas. Criterio doble: vocabulario declarado por el libro + campos semánticos más frecuentes.
+
+**Definido:**
+- Criterios editoriales completos en `.claude/rules/criterios-generacion-tarjetas.md` (estructura de campos, gramapop, moción de género, profesiones regulares vs irregulares, género común, verbos).
+- Configuración del Agente Vocabulario en `agentes/ag-vocabulario.md` (35 KB) — incluye reglas CLT, Ciclo de 5 fases (Conti), 12 decisiones documentadas, criterios pedagógicos de selección.
+- Marco metodológico de 5 fases en `00-curso-general.md` (Conti, EPI/MARS EARS).
+
+**Por definir / por verificar:**
+- Protocolo explícito de selección de **campos semánticos** (qué incluir, qué excluir, criterio de frecuencia mínima). El autor cree que está; está implícito en `ag-vocabulario.md` pero no formalizado como protocolo aislado.
+- Cómo se documenta el análisis previo a generar las tarjetas.
+
+**Archivos clave:**
+- `.claude/rules/criterios-generacion-tarjetas.md`
+- `agentes/ag-vocabulario.md` ← contiene buena parte del protocolo operativo
+- `00-curso-general.md`
+
+---
+
+### Fase 3 — Tarjetas de vocabulario
+
+**Qué pasa:** con el vocabulario seleccionado, se generan los CSVs de tarjetas (un CSV por campo semántico). Luego se construyen visualmente en InDesign con Data Merge + imágenes en Photoshop.
+
+**Definido:**
+- Criterios lingüísticos y editoriales completos (mismo archivo que Fase 2): 22 columnas en CSV, gramapop, combos con nomenclatura `[ ] ( ) / +`, traducciones a 9 idiomas.
+- Especificaciones de diseño visual en `materiales/especificaciones-diseno-tarjetas.md` (162 líneas: tamaño 63×88 mm, colores, tipografía Proxima Nova, Data Merge).
+- Pipeline de evaluación: `eval/evaluar_tarjetas.py` (DeepEval + promptfoo).
+- Agente generador: Crew Recurvo v2.0 (3 agentes secuenciales).
+- Caso real completo: `unidades/U03/tarjetas/csv/` (familia, profesiones, lugares, escuela, acciones cotidianas) + `diseno/vocabulario/` (PSDs, PNGs, INDD) + `validacion/` (PDFs editoriales).
+
+**Por definir:**
+- El archivo de diseño visual está **desactualizado** (última edición v8.9 abril; hoy v8.26). No refleja decisiones nuevas: nomenclatura combos, profesiones moción regular/irregular, color real de fondo (= color de género), verbos.
+- Color de texto sobre fondo salmón (sigue marcado "Pendiente de definir").
+
+**Archivos clave:**
+- `.claude/rules/criterios-generacion-tarjetas.md`
+- `materiales/especificaciones-diseno-tarjetas.md` ⚠ desactualizado
+- `unidades/U03/tarjetas/`
+- `scripts/crewai/recurvo.py` + `tools.py`
+- `eval/evaluar_tarjetas.py`
+
+---
+
+### Fase 4 — Tarjetas de estrategia
+
+**Qué pasa:** se definen 3 a 5 tarjetas de estrategia por unidad. Se analiza la unidad actual + lo que ya se ha hecho en unidades anteriores. **Regla: no repetir estrategias entre unidades.**
+
+**Definido:**
+- Sistema de colores por destreza: 6 destrezas (CO, CL, PO, PE, IO, MED) con un color cada una. En `materiales/especificaciones-diseno-tarjetas.md` (líneas 49-61).
+- Caso real en U03: tarjetas de estrategia documentadas en `unidades/U03/U03-destrezas.md`, `U03-comunicacion.md` y `U03-cultura.md`.
+- Tarjetas concretas de U03 ya creadas: "Esquema comunicativo: Hablar de la familia" (Caja 2), "Escribir un correo" + Truco del semáforo (Caja 3), "Mediación oral: de yo a él/ella", "Comparar sin jerarquizar" (intercultural), "LEE EN TRES PASOS" (estrategia de lectura, reutilizable), "ESCUCHA EN TRES MODOS", "CUENTA LO QUE OYES", "Tres conjugaciones".
+- Cantidad: 3-5 por unidad.
+
+**Por definir:**
+- **Protocolo de selección:** cómo se decide cuáles 3-5, cómo se valida la no-repetición con unidades anteriores.
+- **Registro de no-repetición:** NO existe un índice/registro indexado (JSON, BD o markdown maestro) que liste qué estrategias se han usado en cada unidad. Hoy solo se sabe leyendo unidad por unidad.
+- Validación de ortogonalidad (que no se solapen entre sí).
+- Formato de archivo donde vivirán las tarjetas de estrategia (¿CSV como vocabulario?, ¿markdown?, ¿qué relación con la sección destrezas?).
+- Si las tarjetas de esquema comunicativo (Caja 2) cuentan como tarjetas de estrategia o son otro producto.
+
+**Archivos clave:**
+- `materiales/especificaciones-diseno-tarjetas.md` (sección destrezas)
+- `agentes/ag-destrezas.md` (30 KB, contiene parte del protocolo)
+- `agentes/ag-comunicacion.md` (29 KB)
+- `unidades/U03/U03-destrezas.md`, `U03-comunicacion.md`, `U03-cultura.md`
+
+---
+
+### Fase 5 — Píldoras formativas
+
+**Qué pasa:** se identifica dónde aplicar píldoras formativas en la unidad. Criterios: temáticas gramaticales más problemáticas o estrategias específicas. **El protocolo está distribuido en los archivos de agentes y construido en las distintas secciones de la unidad.**
+
+**Definido:**
+- **Protocolo y banco de acciones en `agentes/ag-vocabulario.md`** (líneas 210-317): banco de 40+ acciones organizadas en 6 categorías:
+  1. **DETECCIÓN** — pares mínimos, input saturado, realce.
+  2. **MODELADO** — Sentence Builder, Read Aloud, TPR.
+  3. **CONEXIÓN** — puentes con unidades anteriores.
+  4. **APLICACIÓN ANTICIPADA** — predicción, estrategia de comprensión.
+  5. **VERIFICACIÓN** — preguntas de cambio/patrón.
+  6. **PROCESAMIENTO RECEPTIVO** — matching, discriminación auditiva.
+- **Sección "PÍLDORAS FORMATIVAS" en `agentes/ag-gramatica.md`** (líneas 215-231): protocolo equivalente para gramática.
+- Estructura editorial: MARS EARS + secuencia de Gagné. Documentada en `brief-pildora-3.1-desarrollo.md`.
+- Marca tipográfica: `**PÍLDORA FORMATIVA — [TÍTULO EN MAYÚSCULAS]**`.
+- Componentes: (1) contenido para profesor + (2) propuesta de presentación.
+- 10 píldoras producidas para U03 (PDF + TEX) en `unidades/U03/pildoras/`.
+- Las píldoras se construyen **embebidas en las secciones** (vocabulario, gramática, comunicación) de cada unidad, no en un archivo aparte.
+
+**Por definir:**
+- Protocolo explícito de **selección temática** formalizado fuera de los archivos de agente (qué decide "problemático" vs "estrategia específica" como variable cuantificable).
+- Plantilla canónica reutilizable del brief (hoy solo el 3.1 está desarrollado en formato extendido).
+- Convenciones de naming consolidadas (pildora-X.Y.pdf donde X=unidad, Y=orden).
+- Si los protocolos de píldora deben extraerse de los `ag-*.md` a un archivo único o quedarse distribuidos por sección.
+
+**Archivos clave:**
+- `agentes/ag-vocabulario.md` ← banco de píldoras de vocabulario
+- `agentes/ag-gramatica.md` ← banco de píldoras de gramática
+- `agentes/ag-comunicacion.md`, `ag-destrezas.md`, `ag-cultura.md`, `ag-evaluacion.md` ← posibles bancos por sección (revisión pendiente)
+- `unidades/U03/brief-pildora-3.1-desarrollo.md`
+- `unidades/U03/pildoras/`
+
+---
+
+### Fase 6 — Generación sección por sección
+
+**Qué pasa:** se trabaja sección por sección de la guía: **vocabulario, gramática, comunicación, destrezas, cultura, evaluación, reflexión, itinerarios**. Cada sección tiene su lógica, criterios y repertorios específicos.
+
+**Definido:**
+- Listado completo de secciones (visible en `unidades/U03/`):
+  - `U03-vocabulario.md` (30 KB)
+  - `U03-gramatica.md` (91 KB)
+  - `U03-comunicacion.md` (89 KB)
+  - `U03-destrezas.md` (58 KB)
+  - `U03-cultura.md` (33 KB)
+  - `U03-evaluacion.md` (16 KB)
+  - `U03-itinerarios.md` (14 KB)
+  - `U03-reflexion.md` (2 KB)
+  - `U03-familia.md` (5 KB) — sección específica de U03 (no aplica a todas)
+- Caso real completo solo para U03.
+- U01-U02, U04-U09: solo placeholders con `*pendiente*`.
+
+**Por definir:**
+- Para cada sección, qué criterios editoriales aplican (más allá de los de tarjetas, que solo cubren vocabulario).
+- Para cada sección, qué repertorios técnicos aplican.
+- Para cada sección, qué principios teórico-metodológicos aplican.
+- Protocolo de orden: ¿se generan en este orden u otro? ¿Se pueden generar en paralelo? ¿Hay dependencias?
+
+**Archivos clave:**
+- `unidades/U03/*.md` (caso real)
+
+---
+
+### Fase 7 — Doble versión por sección
+
+**Qué pasa:** cada sección tiene **dos versiones**:
+- **Versión completa y detallada** — incluye análisis de todo lo aplicado en la unidad.
+- **Versión resumida** — cabe en 2 páginas.
+
+**Definido:**
+- Convención de naming: `UXX-seccion.md` (completa) y `UXX-seccion-paginas.md` (resumida).
+- Caso real para U03:
+  - `U03-vocabulario-paginas.md` (8.6 KB, ~1.700 palabras)
+  - `U03-gramatica-paginas.md` (8.7 KB, ~2.550 palabras)
+  - `U03-comunicacion-paginas.md` (9 KB, ~1.700 palabras)
+  - `U03-destrezas-paginas.md` (9.1 KB, ~1.700 palabras)
+  - `U03-cultura-paginas.md` (3.8 KB, ~850 palabras)
+  - `U03-evaluacion-paginas.md` (0.7 KB, 1 página)
+
+**Por definir:**
+- Criterios editoriales explícitos para la versión resumida: qué se conserva, qué se omite, cómo se prioriza.
+- Si las dos versiones se generan en paralelo o la resumida se deriva de la completa.
+- Cómo se garantiza coherencia entre las dos versiones cuando se actualiza una.
+- Tope de palabras / extensión exacta para "2 páginas" (varía por sección, según ejemplos: 850–2.550).
+
+**Archivos clave:**
+- `unidades/U03/U03-*-paginas.md` (todas)
+
+---
+
+### Fase 8 — Principios teórico-metodológicos + repertorios específicos por sección
+
+**Qué pasa:** todo el material editorial debe aplicar principios teóricos y técnicas de los repertorios. Hay mucho material y se aplica de forma distinta según la sección.
+
+**Definido:**
+- Principios teóricos:
+  - `marco-teorico-metodologico.md` (100+ líneas: Merrill, Gagné, Ciclo 5 fases, EPI/MARS EARS).
+  - `00-curso-general.md` (12 secciones: enfoque, temporalización, marcos teóricos, diferenciación, neurodidáctica).
+- Repertorios por sección:
+  - `repertorios/vocabulario.md`
+  - `repertorios/gramatica.md`
+  - `repertorios/comunicacion.md`
+  - `repertorios/destrezas.md`
+  - `repertorios/cultura.md`
+  - `repertorios/evaluacion.md`
+- Bancos de técnicas externas (más detallados):
+  - `referencias/repertorio-120-tecnicas-EIO.md` (Expresión Interacción Oral)
+  - `referencias/repertorio-124-tecnicas-CA.md` (Comprensión Auditiva)
+  - `referencias/analisis-100-tecnicas-CL.md` (Comprensión Lectora)
+  - `referencias/analisis-84-estrategias-EE.md` (Expresión Escrita)
+  - Más archivos en `referencias/`.
+
+**Por definir:**
+- Mapeo claro de qué material teórico aplica a qué sección (hoy hay que rastrear).
+- Mapeo claro de qué repertorio aplica a qué sección.
+- Diferencia entre `repertorios/` y `referencias/`: solapan parcialmente, falta jerarquía.
+- Cómo se decide qué técnicas usar en una sección concreta (criterios de selección).
+
+**Archivos clave:**
+- `marco-teorico-metodologico.md`
+- `00-curso-general.md`
+- `repertorios/*.md`
+- `referencias/*.md`
+
+---
+
+## Parte 3 — Estado del repositorio
+
+> **NOTA:** esta sección es una **vista viva** del árbol del repositorio. Se actualiza con cada cambio físico. Última actualización: 2026-05-05 (post-split `viejo/` + `nuevo/`).
+
+### Árbol actual (estado físico real, hoy)
+
+```
+guia-didactica-profesor-IA/
+│
+├── viejo/                                       ← contenido editorial actual sin tocar
+│   ├── unidades/U03/                            (única poblada — pendiente migrar a nuevo/U3/)
+│   ├── materiales/                              (1 archivo: especificaciones-diseno-tarjetas.md)
+│   ├── agentes/                                 (7 ag-*.md + 4 resumen-configuracion-*.md)
+│   ├── repertorios/                             (6 bancos por sección)
+│   ├── referencias/                             (12 documentos de técnicas)
+│   ├── diseno/                                  (propuestas con versiones)
+│   ├── material-complementario/                 (gitignored, ~21 MB)
+│   ├── _template/                               (origen desconocido)
+│   ├── marco-teorico-metodologico.md
+│   └── 00-curso-general.md
+│
+├── nuevo/                                       ← estructura definitiva en construcción
+│   ├── README.md
+│   ├── unidades/U3/                             (vacía, esperando migración)
+│   └── scripts/prompts/                         (vacía, pendiente extraccion-inventario.md)
+│
+├── scripts/                                     ← código activo (raíz)
+│   ├── importar_inventario.py
+│   ├── crear_crew_agents.py
+│   ├── probar_modelos.py
+│   └── crewai/{recurvo.py, tools.py, tool_versions.json}
+│
+├── web/                                         ← dashboard activo (raíz)
+│   ├── index.html (90 KB)
+│   └── favicon.svg
+├── diagrama.py                                  ← servidor del dashboard (raíz, mal nombrado)
+│
+├── eval/                                        ← evaluación (raíz)
+│   ├── evaluar_tarjetas.py
+│   ├── provider_crewai.py
+│   └── promptfoo.yaml
+│
+├── .claude/
+│   ├── rules/{agent-prompt-design.md, tool-design.md, criterios-generacion-tarjetas.md, criterios-generacion-texto.md}
+│   └── settings.json
+│
+├── README.md, CLAUDE.md, CHANGELOG.md, ROADMAP.md, GITHUB-MANIFEST.md
+├── PROCESO-MAESTRO.md                           ← este documento (temporal)
+├── Dockerfile, railway.toml, requirements.txt, .env.example
+└── .gitignore, .dockerignore
+```
+
+### Árbol antes del split (referencia histórica, anterior a 2026-05-05 12:15)
+
+```
+guia-didactica-profesor-IA/
+├── unidades/
+│   ├── U03/                                    ← única unidad poblada
+│   │   ├── inventario.json                     (pendiente renombrar a U3-nc1-inventario.json)
+│   │   ├── fuente/
+│   │   │   └── U03-libro.pdf                   (pendiente renombrar a U3-nc1.pdf)
+│   │   ├── tarjetas/{csv,diseno,validacion}/
+│   │   ├── pildoras/                           (10 PDFs + 10 TEX)
+│   │   └── U03-{vocabulario,gramatica,...}.md  (16 MDs por sección + variantes)
+│   ├── U01/, U02/                              (solo placeholder MD; carpetas internas creadas)
+│   └── U04/, U05/, ... U09/                    (solo placeholder MD; carpetas internas creadas)
+│
+├── .claude/
+│   ├── rules/
+│   │   ├── agent-prompt-design.md              (meta-regla técnica, protegida)
+│   │   ├── tool-design.md                      (meta-regla técnica, protegida)
+│   │   ├── criterios-generacion-tarjetas.md    (criterio editorial — mezcla mal con meta-reglas)
+│   │   └── criterios-generacion-texto.md       (criterio editorial — mezcla mal con meta-reglas)
+│   └── settings.json
+│
+├── agentes/                                     ← 7 archivos: especificaciones operativas vivas
+│   ├── ag-vocabulario.md                       (35 KB — incluye banco de píldoras)
+│   ├── ag-gramatica.md                         (18 KB — incluye banco de píldoras)
+│   ├── ag-comunicacion.md                      (29 KB)
+│   ├── ag-destrezas.md                         (30 KB)
+│   ├── ag-cultura.md                           (22 KB)
+│   ├── ag-evaluacion.md                        (16 KB)
+│   ├── orquestador.md                          (7.5 KB)
+│   └── resumen-configuracion-*.md              (4 archivos, 24-31 KB cada uno)
+│
+├── repertorios/                                 ← 6 bancos de técnicas por sección
+│   ├── vocabulario.md, gramatica.md, comunicacion.md
+│   ├── destrezas.md, cultura.md, evaluacion.md
+│
+├── referencias/                                 ← 12 documentos de técnicas detalladas
+│   ├── repertorio-120-tecnicas-EIO.md
+│   ├── repertorio-124-tecnicas-CA.md
+│   ├── analisis-100-tecnicas-CL.md
+│   ├── analisis-84-estrategias-EE.md
+│   └── ... (8 más)
+│
+├── materiales/                                  ← solo 1 archivo (queda casi vacía)
+│   └── especificaciones-diseno-tarjetas.md     (162 líneas, desactualizado desde abril)
+│
+├── scripts/
+│   ├── importar_inventario.py                  (JSON → BD)
+│   ├── crear_crew_agents.py
+│   ├── probar_modelos.py
+│   ├── crewai/
+│   │   ├── recurvo.py                          (orquestador CrewAI)
+│   │   ├── tools.py                            (6 tools, protegida)
+│   │   └── tool_versions.json
+│   └── resultados_prueba/                      (basura: salidas viejas)
+│
+├── web/
+│   ├── index.html                              (dashboard Material Design 3)
+│   └── favicon.svg
+├── diagrama.py                                  ← servidor web mal nombrado, suelto en raíz
+│
+├── eval/
+│   ├── evaluar_tarjetas.py                     (5 métricas DeepEval)
+│   ├── provider_crewai.py                      (wrapper promptfoo)
+│   └── promptfoo.yaml
+│
+├── diseno/                                      ← propuestas con versiones (poco claro qué es vigente)
+│
+├── material-complementario/                     (gitignored, solo local, ~21 MB)
+├── _template/                                   (sin trackear, propósito desconocido)
+│
+├── marco-teorico-metodologico.md                ← suelto en raíz
+├── 00-curso-general.md                          ← suelto en raíz
+├── README.md, CLAUDE.md, CHANGELOG.md, ROADMAP.md, GITHUB-MANIFEST.md
+├── PROCESO-MAESTRO.md                           ← este documento (temporal)
+├── Dockerfile, railway.toml, requirements.txt, .env.example
+├── .gitignore, .dockerignore
+└── BASURA TÉCNICA: texput.log, __pycache__/, .DS_Store, eval/__pycache__/
+```
+
+### Estructura actual (post-migración U03)
+
+```
+guia-didactica-profesor-IA/
+├── unidades/                       ← contenido editorial (U03 migrado, resto placeholders)
+├── .claude/rules/                  ← 4 archivos: 2 meta-reglas + 2 criterios editoriales (mezcla)
+├── materiales/                     ← solo 1 archivo (especificaciones-diseno-tarjetas.md)
+├── scripts/                        ← código Python
+├── web/                            ← dashboard
+├── eval/                           ← evaluación
+├── repertorios/                    ← 6 repertorios por sección
+├── referencias/                    ← 12 documentos de técnicas
+├── agentes/                        ← 11 prompts MD de agentes (referencia, no ejecutable)
+├── diseno/                         ← documentos de diseño con versiones
+├── pedagogia/                      ← (no existe todavía)
+├── _template/                      ← carpeta sin trackear, propósito desconocido
+├── material-complementario/        ← solo local (gitignored)
+├── marco-teorico-metodologico.md   ← suelto en raíz
+├── 00-curso-general.md             ← suelto en raíz
+├── diagrama.py                     ← servidor web suelto en raíz (mal nombrado)
+├── README.md, CLAUDE.md, CHANGELOG.md, ROADMAP.md, GITHUB-MANIFEST.md
+└── Dockerfile, railway.toml, requirements.txt, .env.example
+```
+
+### Problemas conocidos
+
+- `.claude/rules/` mezcla meta-reglas técnicas con criterios editoriales.
+- `materiales/` quedó casi vacía (1 archivo).
+- `repertorios/` y `referencias/` solapan parcialmente sin jerarquía.
+- **`agentes/*.md` son especificaciones operativas vivas, no "prompts viejos".** Contienen protocolos por sección (banco de píldoras, criterios de selección, ciclo de fases). Son referencia activa para Claude Code, no material a archivar. Esto invalida la idea anterior de moverlos a `pedagogia/agentes-prompts-referencia/`.
+- Marco teórico y curso general están sueltos en raíz.
+- `diagrama.py` es realmente el servidor web (mal nombrado).
+- Hay basura técnica: `texput.log`, `__pycache__/`, `.DS_Store`, `scripts/resultados_prueba/`.
+- `_template/` sin trackear, propósito por confirmar.
+
+### Hallazgo importante sobre los archivos `agentes/*.md`
+
+Tras revisar contenido, los 7 archivos `ag-*.md` (vocabulario, gramática, comunicación, destrezas, cultura, evaluación, orquestador) **son los documentos más densos del proyecto en cuanto a protocolo operativo**. Cada uno mezcla:
+
+- Configuración de un agente CrewAI (rol, objetivo, tarea).
+- Criterios pedagógicos de su sección (qué hacer, en qué orden, con qué técnicas).
+- Bancos de acciones reutilizables (la Fase 5 vive aquí, dispersa).
+- Referencias a marcos teóricos (Conti, MARS EARS, Gagné, VanPatten).
+
+Esto significa que la **especificación por sección** que estábamos buscando ya existe parcialmente: está dentro de `ag-*.md`. La reorganización debe **separar dos cosas mezcladas en cada archivo**:
+- La parte que es **especificación operativa de la sección** (criterios, protocolos, bancos) → debe ir a `especificaciones/SECCION/`.
+- La parte que es **configuración del agente CrewAI** (rol, prompt, tools) → debe ir a `scripts/crewai/` o a la BD `crew_agents`.
+
+Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendiente nueva.
+
+---
+
+## Parte 4 — Decisiones cerradas en conversación
+
+1. **Tres tipos de contenido**: producto editorial, sistema técnico, especificaciones. (cerrada)
+2. **Fuente única para criterios editoriales**: archivo MD; BD se rellena por script. La BD no se puebla ahora pero el diseño debe contemplarla. (cerrada)
+3. **Forma de captura de lecciones**: bidireccional — Claude Code propone cuando lo ve claro y el autor puede dictar manualmente. (cerrada)
+4. **Estructura por sección**: las especificaciones, repertorios y lecciones deben organizarse por sección de trabajo (vocabulario, gramática, comunicación, destrezas, cultura, etc.), no solo por tipo de producto. (cerrada conceptualmente, falta detalle)
+5. **No ejecutar nada hasta validar todo en chat**. (cerrada)
+
+---
+
+## Parte 5 — Decisiones pendientes
+
+### Sobre la estructura física del repo
+- Carpeta para las especificaciones por sección: nombre, ubicación, jerarquía interna.
+- **Qué hacer con `agentes/*.md`** (DECISIÓN NUEVA): cada archivo mezcla "especificación operativa de la sección" + "configuración del agente CrewAI". Hay que separar las dos partes. Posibilidades:
+  - A) Extraer la parte de especificación operativa a `especificaciones/SECCION/` y dejar en `agentes/` (o `scripts/crewai/`) solo la config del agente.
+  - B) Dejar `agentes/*.md` como están (fuente única) y que `especificaciones/SECCION/` los referencie.
+  - C) Cada `ag-X.md` se renombra `especificaciones/X/protocolo-operativo.md` y la config CrewAI se extrae a un YAML/JSON técnico aparte.
+- Qué hacer con `repertorios/`, `referencias/`, `marco-teorico-*`, `00-curso-general.md`: ¿se agrupan bajo `pedagogia/`? ¿bajo otra estructura?
+- Qué hacer con `materiales/` (queda vacía).
+- Qué hacer con `_template/` (propósito desconocido).
+- Renombrar `diagrama.py` → `web/server.py` (o similar).
+
+### Sobre el sistema de lecciones de Claude Code
+- Formato exacto de cada lección.
+- Mecanismo de activación: ¿README de cada sección las nombra? ¿CLAUDE.md tiene una regla global?
+- Convención de naming de archivos.
+
+### Sobre el sistema de sincronización con BD
+- Cuándo se escribe el script `sincronizar-reglas.py` (no urgente, pero diseño actual debe contemplar).
+- Qué archivos de criterios son "sincronizables" y cuáles son solo para Claude Code.
+
+### Sobre las protecciones (qué archivos no se modifican sin autorización)
+- Lista vigente: `agent-prompt-design.md`, `tool-design.md`, `criterios-generacion-tarjetas.md`, `tools.py`.
+- Tras reorganizar: la lista cambia (paths nuevos) y posiblemente se amplía (¿criterios por sección también protegidos?).
+
+### Sobre el contenido (huecos editoriales)
+- **Esquema canónico del `UX-nc1-inventario.json`** (próxima decisión inmediata, pertenece a Fase 1).
+- **Esquemas canónicos de los 3 JSONs globales** (`nc1-reciclaje.json`, `nc1-tarjetas.json`, `nc1-pildoras.json`).
+- Protocolo de selección de campos semánticos (Fase 2).
+- Protocolo de selección de tarjetas de estrategia y validación de no-repetición (Fase 4).
+- Protocolo de selección temática para píldoras (Fase 5).
+- Criterios de la versión resumida vs completa (Fase 7).
+- Mapeo material teórico ↔ sección (Fase 8).
+
+---
+
+---
+
+## Parte 5.bis — Estrategia de migración: zonas `nuevo/` y `viejo/`
+
+**Decisión cerrada en chat 2026-05-05.** Para evitar romper el repo durante la reorganización, se trabaja con dos zonas en paralelo:
+
+### Zona `nuevo/`
+- Carpeta nueva en la raíz del repo: `nuevo/`.
+- Contiene la estructura definitiva en construcción.
+- Se va poblando conforme cerramos decisiones en chat.
+- **U3 es el caso piloto.** Todo lo nuevo se prueba primero con U3.
+- El día que esté validada, `nuevo/` se promueve a raíz (renombrando lo que hace falta).
+
+### Zona "viejo" (todo lo demás)
+- El repo actual tal como está hoy. Sin cambios bruscos.
+- Sirve de fuente: cuando se necesite, se extraen materiales y se mueven o adaptan a `nuevo/`.
+- Lo que no se necesite se elimina o se archiva al final.
+
+### El dashboard (`web/`) NO se duplica
+El dashboard existente en `web/index.html` (90 KB, Material Design 3, navegación por secciones y unidades) **se mantiene en su sitio**. NO se construye uno nuevo. La integración del informe HTML por unidad se hace **como sección nueva del dashboard actual**.
+
+### Estructura inicial de `nuevo/` (a poblar conforme avancemos)
+
+```
+nuevo/
+├── unidades/
+│   └── U3/                          ← caso piloto (a poblar con copia limpia + nuevo schema)
+│       ├── U3-nc1-inventario.json
+│       ├── fuente/U3-nc1.pdf
+│       └── ...
+├── scripts/
+│   └── prompts/
+│       └── extraccion-inventario.md ← prompt versionado (a escribir)
+└── README.md                        ← qué es esta zona y cómo se usa
+```
+
+---
+
+## Parte 6 — Pasos siguientes (no ejecutar todavía)
+
+1. Validar este documento con el autor.
+2. Decidir punto por punto las pendientes de la Parte 5.
+3. Diseñar la nueva estructura física del repo.
+4. Escribir un plan de migración detallado.
+5. Ejecutar la migración paso a paso.
+6. Actualizar CLAUDE.md, README.md, CHANGELOG.md y crear los READMEs de cada sección con la información consolidada.
+7. **Eliminar este documento.**
+
+---
+
+## Bitácora del documento
+
+- **2026-05-05** — Creación inicial. Consolida la conversación sobre el proceso de producción y el estado del repositorio.
+- **2026-05-05** — Actualización con hallazgos del repaso del repositorio: los archivos `agentes/*.md` son especificaciones operativas vivas (no prompts a archivar). Protocolo de píldoras (Fase 5) localizado en `ag-vocabulario.md` y `ag-gramatica.md`. Confirmado que NO existe registro de no-repetición de tarjetas de estrategia (Fase 4).
+- **2026-05-05** — Cierre de Fase 1: convención de naming (`UX-nc1-`, `nc1-` para globales, carpetas sin cero), material fuente reducido al PDF del libro del alumno, salidas (1 inventario por unidad + 3 globales del curso), modelo de globales = índice/proyección. Pendiente: esquema canónico del inventario y de los globales.
+- **2026-05-05** — Añadida vista viva del árbol del repositorio (Parte 3). Definida estrategia de generación de los 4 JSONs: inventario por Claude Code con prompt versionado (no Python autónomo); tarjetas y píldoras globales por scripts Python deterministas; **reciclaje manual con Claude Code, NO automático**. Validación post-extracción por script Python.
+- **2026-05-05** — Esquema canónico del `UX-nc1-inventario.json` cerrado. Cambios principales: `vocabulario_consolidado` con 3 bloques (principal/recurrente/comprensión), `secciones` como índice top-level, `tipo` con taxonomía cerrada de 12 valores (provisional, revisable), `datos` como saco genérico para datos específicos por actividad, `respuestas` siempre presente, eliminado `registro`. Cada extracción genera además un **informe HTML visual** integrado en el dashboard existente (`web/index.html`).
+- **2026-05-05** — Estrategia de migración cerrada: zonas `nuevo/` (estructura definitiva en construcción, U3 como piloto) y "viejo" (resto del repo intacto). El dashboard NO se duplica.
+- **2026-05-05** — Correcciones del revisor: (1) número de tipos de actividad corregido de "12" a "17" (lista real); (2) añadido caveat sobre la convención `UX` sin cero (válida solo para cursos de ≤9 unidades); (3) tarea HTML del informe anclada formalmente como pendiente abierta con responsable.
+- **2026-05-05** — Esquemas de los 3 JSONs globales cerrados. Cambios respecto a borradores iniciales: `nc1-tarjetas.json` solo vocabulario y estrategia (sin gramática); `nc1-pildoras.json` con categorías marcadas como `null` para definir cuando se trabajen píldoras nuevas; `nc1-reciclaje.json` rediseñado como modelo acumulativo-secuencial, limitado a 5-6 elementos clave por unidad, basado en contenido (no en actividades), con tipos cerrados (vocabulario, estrategia, contenido_gramatical, forma_verbal, estrategia_comunicativa) y niveles de impacto. Anotado: el dashboard debe mostrar todos los JSON y permitir revisar/editar propuestas de reciclaje.
+- **2026-05-05 12:15** — **Split físico ejecutado.** Todo el contenido editorial actual movido a `viejo/` (unidades, materiales, agentes, repertorios, referencias, diseno, material-complementario, _template, marco-teorico-metodologico.md, 00-curso-general.md). En raíz quedan: código (scripts, web, eval, diagrama.py), docs (README, CLAUDE, CHANGELOG, ROADMAP, GITHUB-MANIFEST, PROCESO-MAESTRO), config (Dockerfile, railway.toml, requirements.txt, .env.example), y la zona `nuevo/` (en construcción). Eliminada basura técnica: `texput.log`, `__pycache__/`, `.DS_Store`. Actualizadas referencias a paths nuevos en: `.gitignore`, `.dockerignore`, `scripts/importar_inventario.py`, `scripts/crear_crew_agents.py`, `diagrama.py` (8 referencias a repertorios), `README.md`, `CLAUDE.md`.

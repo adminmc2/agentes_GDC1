@@ -505,12 +505,12 @@ SECTION_LABELS = {
 }
 
 AGENTS = {
-    "vocabulario": {"name": "Vocabulario", "rep": "repertorios/vocabulario.md"},
-    "gramatica": {"name": "Gramática", "rep": "repertorios/gramatica.md"},
-    "comunicacion": {"name": "Comunicación", "rep": "repertorios/comunicacion.md"},
-    "destrezas": {"name": "Destrezas", "rep": "repertorios/destrezas.md"},
-    "cultura": {"name": "Cultura", "rep": "repertorios/cultura.md"},
-    "evaluacion": {"name": "Evaluación", "rep": "repertorios/evaluacion.md"},
+    "vocabulario": {"name": "Vocabulario", "rep": "viejo/repertorios/vocabulario.md"},
+    "gramatica": {"name": "Gramática", "rep": "viejo/repertorios/gramatica.md"},
+    "comunicacion": {"name": "Comunicación", "rep": "viejo/repertorios/comunicacion.md"},
+    "destrezas": {"name": "Destrezas", "rep": "viejo/repertorios/destrezas.md"},
+    "cultura": {"name": "Cultura", "rep": "viejo/repertorios/cultura.md"},
+    "evaluacion": {"name": "Evaluación", "rep": "viejo/repertorios/evaluacion.md"},
 }
 
 
@@ -557,8 +557,8 @@ def color_for(status):
 def mermaid_level1():
     return """graph TD
     LIBRO["Libro de texto - Nuevo Compañeros 1"]
-    FUENTE["Material fuente - unidades/UXX/fuente/ - PDF embebido por unidad"]
-    INV["Inventario JSON - unidades/UXX/inventario.json"]
+    FUENTE["Material fuente - viejo/unidades/UXX/fuente/ - PDF embebido por unidad"]
+    INV["Inventario JSON - viejo/unidades/UXX/inventario.json"]
     BD[("Neon PostgreSQL - Base de datos - Fuente de verdad")]
 
     subgraph INFRA["Infraestructura pedagógica"]
@@ -712,7 +712,7 @@ def mermaid_level4(status):
         lines.append(f'    REP_{sid}["{info["rep"]}"]')
         lines.append(f"    REP_{sid} --> AG_{sid}")
         lines.append(f"    style AG_{sid} fill:{c},color:#fff")
-    lines.append('    INV["unidades/U03/inventario.json"] --> AG_vocabulario')
+    lines.append('    INV["viejo/unidades/U03/inventario.json"] --> AG_vocabulario')
     lines.append("    INV --> AG_gramatica")
     lines.append("    INV --> AG_comunicacion")
     lines.append("    INV --> AG_destrezas")

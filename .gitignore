@@ -18,30 +18,30 @@ __pycache__/
 # === Contenido editorial (no forma parte del sistema de agentes) ===
 
 # Contenido de unidades (output editorial)
-unidades/
+viejo/unidades/
 
 # Material pedagógico de referencia (bancos de técnicas)
-referencias/
+viejo/referencias/
 
 # Materiales producidos (LaTeX, PDFs, tarjetas InDesign)
-materiales/
-material-complementario/
+viejo/materiales/
+viejo/material-complementario/
 
 # Documentos pedagógicos extensos
-00-curso-general.md
-marco-teorico-metodologico.md
+viejo/00-curso-general.md
+viejo/marco-teorico-metodologico.md
 
 # Prompts pedagógicos y repertorios (cambiarán con rediseño CrewAI)
-agentes/
-repertorios/
+viejo/agentes/
+viejo/repertorios/
 
-# Output de agentes: ahora en unidades/UXX/tarjetas/csv/ (ya cubierto por unidades/)
+# Output de agentes: ahora en viejo/unidades/UXX/tarjetas/csv/ (ya cubierto por unidades/)
 
 # Resultados de pruebas obsoletas
 scripts/resultados_prueba/
 
 # Documentación interna de diseño (no interviene en deploy)
-diseno/
+viejo/diseno/
 
 # Archivos binarios pesados
 *.ai
@@ -54,7 +54,7 @@ diseno/
 *.log
 *.synctex.gz
 
-# PDFs fuente del libro: ahora en unidades/UXX/fuente/ (ya cubierto por unidades/)
+# PDFs fuente del libro: ahora en viejo/unidades/UXX/fuente/ (ya cubierto por unidades/)
 
 # Archivos de planificación local
 CLAUDE.md
