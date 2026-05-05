@@ -98,7 +98,7 @@ unidades/
 
 **A) `UX-nc1-inventario.json` — extracción del PDF de la unidad**
 - **Quién:** Claude Code en chat. NO Python autónomo (no se confía en scripts disfuncionales para PDFs irregulares).
-- **Cómo:** mediante un prompt versionado en `scripts/prompts/extraccion-inventario.md` (a escribir). El prompt contiene esquema JSON exacto, reglas de extracción detalladas, casos especiales resueltos y ejemplos basados en U03.
+- **Cómo:** mediante un prompt versionado en `fases/1-extraccion-inventario/prompt.md`. El prompt contiene esquema JSON exacto, reglas de extracción detalladas, casos especiales resueltos y ejemplos basados en U03.
 - **Reproducibilidad:** el prompt fijo asegura resultados prácticamente idénticos entre extracciones. La varianza propia del LLM se minimiza con prompt detallado y temp=0.
 - **Coste estimado:** ~25.000 tokens por unidad (10 páginas). Se hace una sola vez por unidad. Para las 9 unidades restantes: ~225.000 tokens totales.
 - **Mejora continua:** cada caso raro encontrado se añade al prompt. Para la siguiente unidad, ya no es raro.
@@ -222,7 +222,7 @@ Estructura por cuadro gramatical:
 ---
 
 **Por definir todavía:**
-- Contenido del prompt `scripts/prompts/extraccion-inventario.md` (se escribirá tras tener el primer caso de prueba con U3 en zona nueva).
+- Contenido del prompt `fases/1-extraccion-inventario/prompt.md` (escrito y operativo).
 - Scripts Python: `validar_inventario.py`, `regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`.
 - Protocolo formal de validación visual PDF vs JSON.
 - **Plantilla HTML del informe por unidad** y su integración en el dashboard.
@@ -668,7 +668,7 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 5. **No ejecutar nada hasta validar todo en chat** (excepto tareas explícitamente autorizadas como el split).
 
 ### Sobre la organización física del repositorio
-6. **Split físico en `viejo/` + `nuevo/`** ejecutado el 2026-05-05 12:15. `viejo/` contiene todo el contenido editorial actual sin cambios; `nuevo/` es la zona de construcción de la estructura definitiva.
+6. **Split físico en `viejo/` + `nuevo/`** ejecutado el 2026-05-05 12:15 y **`nuevo/` posteriormente disuelto** el 2026-05-05 16:00. Estado actual: `viejo/` contiene el archivo del CrewAI v5 y el sistema activo vive directamente en raíz (`unidades/`, `scripts/`, `fases/`, `web/`, etc.).
 7. **Código (`scripts/`, `web/`, `eval/`), dashboard (`diagrama.py`) y documentos (`README.md`, `CLAUDE.md`, etc.) se quedan en raíz**, NO se mueven a `viejo/`.
 8. **El dashboard `web/` no se duplica.** La integración del informe HTML por unidad se hace como sección nueva del dashboard existente.
 
@@ -689,7 +689,7 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 20. **Esquema de `nc1-reciclaje.json`**: acumulativo y secuencial; limitado a 5-6 elementos clave por unidad; basado en contenido (vocabulario, estrategia, contenido_gramatical, forma_verbal, estrategia_comunicativa); con niveles de impacto (alto/medio/bajo); revisable y editable desde el dashboard.
 
 ### Sobre la generación de los JSONs
-21. **`UX-nc1-inventario.json`**: lo genera **Claude Code** en chat con un **prompt versionado** (`scripts/prompts/extraccion-inventario.md`, a escribir). NO Python autónomo.
+21. **`UX-nc1-inventario.json`**: lo genera **Claude Code** en chat con un **prompt versionado** (`fases/1-extraccion-inventario/prompt.md`, operativo). NO Python autónomo.
 22. **`nc1-tarjetas.json`** y **`nc1-pildoras.json`**: scripts Python deterministas (`regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`, a escribir). Cero tokens.
 23. **`nc1-reciclaje.json`**: **manual con Claude Code** en chat al cerrar cada unidad. NO automático, NO inferido por script. Acumulativo.
 24. **Validación post-extracción** del inventario: script Python `validar_inventario.py` (a escribir).
@@ -702,13 +702,13 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 
 ## Parte 5 — Decisiones pendientes
 
-### Sobre la estructura física del repo (dentro de `nuevo/`)
-- Carpeta para las especificaciones por sección: nombre, ubicación, jerarquía interna.
-- **Qué hacer con `viejo/agentes/*.md`** cuando se migren a `nuevo/`: cada archivo mezcla "especificación operativa de la sección" + "configuración del agente CrewAI". Hay que separar las dos partes. Posibilidades:
-  - A) Extraer la parte de especificación operativa a `nuevo/especificaciones/SECCION/` y dejar la config del agente aparte.
-  - B) Dejar los archivos como están y referenciarlos desde la nueva estructura.
-  - C) Renombrar a `nuevo/especificaciones/X/protocolo-operativo.md` y extraer la config CrewAI a un YAML/JSON técnico aparte.
-- Qué hacer con `viejo/repertorios/`, `viejo/referencias/`, `viejo/marco-teorico-*`, `viejo/00-curso-general.md` al migrar.
+### Sobre la estructura física del repo
+- Carpeta para las especificaciones por sección en raíz (probablemente `especificaciones/SECCION/`): nombre, ubicación, jerarquía interna.
+- **Qué hacer con `viejo/agentes/*.md`** cuando se migren a raíz: cada archivo mezcla "especificación operativa de la sección" + "configuración del agente CrewAI". Hay que separar las dos partes. Posibilidades:
+  - A) Extraer la parte de especificación operativa a `especificaciones/SECCION/` (raíz) y dejar la config del agente aparte.
+  - B) Dejar los archivos como están en `viejo/` y referenciarlos desde la nueva estructura.
+  - C) Renombrar a `especificaciones/X/protocolo-operativo.md` (raíz) y extraer la config CrewAI a un YAML/JSON técnico aparte.
+- Qué hacer con `viejo/repertorios/`, `viejo/referencias/`, `viejo/marco-teorico-*`, `viejo/00-curso-general.md` al migrar a raíz.
 - Qué hacer con `viejo/materiales/` (1 archivo: `especificaciones-diseno-tarjetas.md` — desactualizado desde abril, hay que reescribir).
 - **Qué es `viejo/_template/`** (16 archivos sin trackear, parece scaffold de proyecto). Decisión: confirmar propósito o eliminar.
 - Renombrar `diagrama.py` → `web/server.py` (o similar).
@@ -732,7 +732,7 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 
 ### Sobre las protecciones (qué archivos no se modifican sin autorización)
 - Lista vigente: `viejo/.claude/rules/agent-prompt-design.md`, `tool-design.md`, `criterios-generacion-tarjetas.md`, `scripts/crewai/tools.py`.
-- Tras reorganizar a `nuevo/`: la lista cambia (paths nuevos) y posiblemente se amplía (¿criterios por sección también protegidos?).
+- Tras la reorganización en raíz: la lista cambia (paths nuevos) y posiblemente se amplía (¿criterios por sección también protegidos?).
 
 ### Sobre el contenido (huecos editoriales)
 - Protocolo de selección de campos semánticos (Fase 2).
@@ -744,94 +744,74 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 
 ### Bugs conocidos / deuda técnica (bloqueantes del paso C, no del paso B)
 
-Detectados por revisor el 2026-05-05. Decisión del autor: **NO arreglar ahora**, abordar todos juntos al inicio del paso C cuando los paths definitivos estén fijados en `nuevo/`.
+Detectados por revisor el 2026-05-05. Decisión del autor: **NO arreglar ahora**, abordar todos juntos al inicio del paso C cuando los paths definitivos estén fijados.
 
-- **B1 — `tools.py:346` escribe a path inexistente.** La tool `exportar_csv` intenta escribir en `datos/tarjetas/U{XX}-vocabulario.csv`. Esa carpeta no existe en el repo (no en raíz ni en `viejo/`). Bug preexistente desde v9.0; el split lo dejó en evidencia. **Funcionalmente: `exportar_csv` está rota en producción.** Requiere autorización para tocar `tools.py` (archivo protegido). Path correcto al arreglar dependerá de si U3 ya migró a `nuevo/`.
+- **B1 — `tools.py:346` escribe a path inexistente.** La tool `exportar_csv` (en `viejo/scripts/crewai/tools.py`) intenta escribir en `datos/tarjetas/U{XX}-vocabulario.csv`. Esa carpeta no existe en el repo. Bug preexistente desde v9.0. **Funcionalmente: `exportar_csv` está rota en producción.** Como el sistema activo no usa esta tool (vive en `viejo/`), el bug es inerte. Requiere decisión cuando se evalúe si reactivar parte de CrewAI.
 
-- **B2 — Railway: `viejo/repertorios/` no existe en el repo remoto.** `repertorios/` ya estaba gitignored antes del split (verificado con `git ls-tree -r main --name-only`). El split solo cambió el path local; en Railway la carpeta sigue inexistente. La función `mermaid_level1` de `diagrama.py` lee `viejo/repertorios/X.md` para mostrar líneas — ya no funcionaba antes, sigue sin funcionar. Decisión: o trackear los repertorios en git, o desactivar esa lectura en producción, o migrarlos a `nuevo/` y tomar decisión allí.
+- **B2 — Railway: `viejo/repertorios/` no existe en el repo remoto.** `repertorios/` está gitignored. El dashboard (`diagrama.py`) lee `viejo/repertorios/X.md` para mostrar líneas en algunos diagramas. En Railway no funciona. Decisión pendiente: trackear los repertorios en git, desactivar esa lectura en producción, o migrar al sistema activo en raíz.
 
-- **B3 — `diagrama.py:715` tiene path hardcoded.** La línea `INV["viejo/unidades/U03/inventario.json"] --> AG_vocabulario` apunta al inventario antiguo. Cuando U3 migre a `nuevo/unidades/U3/U3-nc1-inventario.json` (paso C), esta línea queda rota. Fix trivial cuando se haga la migración.
+- **B3 — `diagrama.py:715` tiene path hardcoded.** Verificar tras disolución de `nuevo/`: la línea debería apuntar a `unidades/U3/U3-nc1-inventario.json` (raíz). Si todavía apunta a `viejo/unidades/U03/inventario.json`, actualizar.
 
 - **B4 — `_normSeccion` en `web/index.html` no fusiona secciones `(cont.)`.** La función parte por "—" y toma la primera parte. Con strings como "Comunicación (cont.) — La hora", el "(cont.)" va antes del separador, así que se genera una pestaña aparte de "Comunicación". Resultado: 7 pestañas en lugar de 5 para U3, con "Comunicación" / "Comunicación (cont.)" y "Destrezas" / "Destrezas (cont.)" separadas. **Cosmético, no bloqueante.** Se resuelve solo en paso C cuando las secciones pasan a claves normalizadas (`vocabulario`, `gramatica`, `comunicacion`...) en el nuevo schema y `_normSeccion` se elimina.
 
 ### Sobre la implementación (a escribir cuando lleguemos)
-- Prompt `nuevo/scripts/prompts/extraccion-inventario.md`.
+- (Eliminado: el prompt `fases/1-extraccion-inventario/prompt.md` ya está escrito y operativo.)
 - Scripts Python: `validar_inventario.py`, `regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`.
 - Plantilla HTML del informe por unidad e integración en dashboard (paso B del plan).
-- Migración de U3 a `nuevo/unidades/U3/` con el nuevo schema (paso C del plan).
+- (Eliminado: la migración de U3 al nuevo schema ya se hizo en raíz; no aplica).
 - Protocolo formal de validación visual PDF vs JSON.
 
 ---
 
 ---
 
-## Parte 5.bis — Estrategia de migración: zonas `viejo/` y `nuevo/` (EJECUTADA)
+## Parte 5.bis — Histórico de la estrategia de migración (CERRADA)
 
-**Decisión cerrada y ejecutada el 2026-05-05 12:15.**
+**Cronología:**
+- **2026-05-05 12:15** — Split ejecutado: contenido editorial movido a `viejo/`; carpeta `nuevo/` creada como zona de construcción.
+- **2026-05-05 16:00** — `nuevo/` **disuelta**: su contenido se promocionó a raíz directamente (decisión del autor para evitar futuros renombrados).
 
-### Estado actual
-- **`viejo/`** existe en la raíz. Contiene todo el contenido editorial sin cambios: `unidades/`, `materiales/`, `agentes/`, `repertorios/`, `referencias/`, `diseno/`, `material-complementario/`, `_template/`, `marco-teorico-metodologico.md`, `00-curso-general.md`. Solo local — su contenido sigue gitignored.
-- **`nuevo/`** existe en la raíz. Contiene `README.md` + estructura inicial vacía (`unidades/U3/` y `scripts/prompts/`). Se va poblando conforme cerramos decisiones.
-- **Código y dashboard se quedan en raíz**: `scripts/`, `web/`, `eval/`, `diagrama.py`. Todas sus referencias internas a `unidades/`, `materiales/`, etc. se actualizaron a `viejo/...`.
-- **Documentos en raíz**: `README.md`, `CLAUDE.md`, `CHANGELOG.md`, `ROADMAP.md`, `GITHUB-MANIFEST.md`, `PROCESO-MAESTRO.md`.
+### Estado actual del repositorio (post-disolución)
+- **`viejo/`** existe en la raíz. Contiene el sistema CrewAI v5 anterior y materiales editoriales originales. Solo local (gitignored). Intocable hasta su eliminación final.
+- **El sistema activo vive en raíz**: `unidades/`, `scripts/`, `fases/`, `web/`, `diagrama.py`, `eval/`.
+- **Documentos en raíz**: `CLAUDE.md`, `README.md`, `CHANGELOG.md`, `PROCESO-MAESTRO.md`, `REVIEW.md`, `ROADMAP.md`, `GITHUB-MANIFEST.md`.
 - **Config en raíz**: `Dockerfile`, `railway.toml`, `requirements.txt`, `.env.example`, `.gitignore`, `.dockerignore`.
 
-### Promoción a raíz (cuando todo esté validado)
-Cuando `nuevo/` contenga U3 migrada y validada, los pasos serán:
-1. Extraer de `viejo/` los materiales que se necesiten (copiar a `nuevo/` lo que aún quede por integrar).
-2. Eliminar `viejo/` (todo su contenido es local y reproducible o ya integrado).
-3. Promover `nuevo/` a raíz (renombrando o moviendo carpetas).
-4. Eliminar `PROCESO-MAESTRO.md` (su contenido pasa a `CLAUDE.md`, `README.md` y READMEs por sección).
+### Limpieza final pendiente (cuando todas las fases estén operativas)
+Ver bloque E del `REVIEW.md`. En resumen:
+1. Migrar de `viejo/` lo aprovechable (criterio caso por caso).
+2. Eliminar `viejo/`.
+3. Eliminar `PROCESO-MAESTRO.md` y `REVIEW.md` (integrar su contenido en `CLAUDE.md`, `README.md` y CLAUDE.md por fase).
 
 ---
 
 ## Parte 6 — Pasos siguientes (estado y plan)
 
-### Estado actual (2026-05-05 16:30)
+### Hitos cerrados (cronológico — actualizado 2026-05-05 19:00)
 - ✅ Validación inicial del documento con el autor.
 - ✅ Cierre de Fase 1 (esquemas JSON + estrategia de generación).
 - ✅ Split físico `viejo/` + `nuevo/` ejecutado.
 - ✅ Commit y push (`c5e08e9`) con el split.
 - ✅ Vista HTML del informe integrada en el dashboard (paso B).
 - ✅ Extracción real de U3 desde el PDF con el nuevo schema.
-- ✅ Prompt versionado de la fase 1 escrito (`scripts/prompts/extraccion-inventario.md`).
+- ✅ Prompt versionado de la fase 1 escrito (`fases/1-extraccion-inventario/prompt.md`).
 - ✅ Validador estructural escrito y funcionando (`scripts/validar_inventario.py`).
 - ✅ Disolución de `nuevo/` — sistema activo en raíz, `viejo/` como archivo.
 - ✅ CLAUDE.md global creado.
 - 📋 REVIEW.md — plan detallado paso a paso de lo que queda (ver documento separado).
 
-### Plan de trabajo (paso por paso, en chat)
+### Plan de trabajo
 
-**Paso A — Esquemas de los 3 JSONs globales** ✅ HECHO
-Los esquemas están cerrados en Parte 4 (decisiones 18, 19, 20).
+**El plan operativo vivo está en `REVIEW.md`** (bloques A–E con gates explícitos). Esta parte ya no se mantiene aquí para evitar duplicación. Resumen del estado:
 
-**Paso B — Plantilla HTML del informe por unidad** ⏳ PRÓXIMO
-- Definir estructura de la vista (secciones, colores, qué muestra de cada JSON).
-- Integrar como sección nueva del dashboard existente (`web/index.html`).
-- Mostrar primero el inventario de U3 (que vive en `viejo/unidades/U03/inventario.json`) como prueba.
+- ✅ **Bloques operativos cerrados:** esquemas JSON, vista HTML, extracción de U3 con nuevo schema, prompt versionado, validador, disolución de `nuevo/`, CLAUDE.md modular.
+- 📋 **Bloque A pendiente** (REVIEW): estabilizar fase 1 (validar U3, probar U4, resolver bugs B1-B4).
+- 📋 **Bloque B pendiente:** infraestructura JSONs globales del curso.
+- 📋 **Bloque C pendiente:** construir fases 2-8 (una a una).
+- 📋 **Bloque D pendiente:** sistema de lecciones de Claude Code.
+- 📋 **Bloque E pendiente** (al cierre del curso): limpieza final, eliminar `viejo/`, eliminar `PROCESO-MAESTRO.md` y `REVIEW.md`.
 
-**Paso C — Migración de U3 a `nuevo/`** 📋 PENDIENTE
-- **Antes de migrar contenido**: arreglar los 3 bugs conocidos (B1, B2, B3 en Parte 5).
-- Copiar el contenido de `viejo/unidades/U03/` a `nuevo/unidades/U3/`.
-- Renombrar archivos según convención (`U3-nc1-inventario.json`, `U3-nc1.pdf`).
-- Transformar el JSON al nuevo schema (añadir `vocabulario_consolidado`, `secciones`, normalizar tipos).
-- Actualizar paths internos.
-
-**Paso D — Escritura del prompt de extracción** 📋 PENDIENTE
-- Escribir `nuevo/scripts/prompts/extraccion-inventario.md` basado en el aprendizaje de la migración de U3.
-- Incluir esquema, casos especiales, ejemplos.
-
-**Paso E — Validación con segunda unidad** 📋 PENDIENTE
-- Cuando el autor exporte el PDF de otra unidad (U1, U2, U4...), aplicar el prompt y validar reproducibilidad.
-
-**Paso F — Decisiones pendientes restantes** 📋 PENDIENTE
-- Estructura interna de `nuevo/` (especificaciones, repertorios, agentes).
-- Sistema de lecciones de Claude Code.
-- Protocolos pendientes de Fases 2, 4, 5, 7, 8.
-- Categorías de píldoras.
-
-**Paso final — Promoción `nuevo/` a raíz y eliminación de este documento** 📋 PENDIENTE
-- Una vez todo validado, integrar el contenido de PROCESO-MAESTRO.md en `CLAUDE.md`, `README.md` y READMEs por sección.
+Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 - Eliminar `viejo/` y `PROCESO-MAESTRO.md`.
 
 ---
@@ -849,7 +829,8 @@ Los esquemas están cerrados en Parte 4 (decisiones 18, 19, 20).
 - **2026-05-05 12:15** — **Split físico ejecutado.** Todo el contenido editorial actual movido a `viejo/` (unidades, materiales, agentes, repertorios, referencias, diseno, material-complementario, _template, marco-teorico-metodologico.md, 00-curso-general.md). En raíz quedan: código (scripts, web, eval, diagrama.py), docs (README, CLAUDE, CHANGELOG, ROADMAP, GITHUB-MANIFEST, PROCESO-MAESTRO), config (Dockerfile, railway.toml, requirements.txt, .env.example), y la zona `nuevo/` (en construcción). Eliminada basura técnica: `texput.log`, `__pycache__/`, `.DS_Store`. Actualizadas referencias a paths nuevos en: `.gitignore`, `.dockerignore`, `scripts/importar_inventario.py`, `scripts/crear_crew_agents.py`, `diagrama.py` (8 referencias a repertorios), `README.md`, `CLAUDE.md`.
 - **2026-05-05 12:30** — Commit `c5e08e9` "v10.0: split repo en zonas viejo/ y nuevo/ + PROCESO-MAESTRO" pusheado a `main`.
 - **2026-05-05 14:00** — Dictamen del revisor sobre paso B (commit `67db6a4`): implementación correcta y completa, sin bloqueantes. Hallazgo cosmético registrado como B4 (`_normSeccion` no fusiona pestañas `(cont.)`); se resuelve en paso C sin acción separada.
-- **2026-05-05 18:30** — **CLAUDE.md raíz reducido a 85 líneas.** Aplicado estrictamente Anthropic best practices: CLAUDE.md solo contiene reglas/convenciones/comandos para trabajar HOY en el repo. Eliminado: modelo conceptual abstracto (vive en PROCESO-MAESTRO Parte 1), tabla de 8 fases con estado (vive en README.md y PROCESO-MAESTRO Parte 2), "estado actual" (vive en REVIEW.md). Añadida regla explícita en "Lo que NO se hace": no añadir historia/estado/planes/meta-decisiones a CLAUDE.md.
+- **2026-05-05 19:00** — **Limpieza de contradicciones en PROCESO-MAESTRO.md tras dictamen del revisor.** Actualizadas referencias stale a `nuevo/` y a `scripts/prompts/extraccion-inventario.md` en Partes 4, 5, 5.bis y 6 (las que describen estado actual). Mantenidas las referencias en bitácora (cronológicas). Parte 5.bis reescrita reflejando que `nuevo/` se disolvió. Parte 6 simplificada: el plan vivo está en REVIEW.md, evitar duplicación. REVIEW.md timestamp actualizado a 18:30. Maestro vuelve a ser fuente de verdad operativa coherente.
+- **2026-05-05 18:30** — **CLAUDE.md raíz reducido a 85 líneas (luego 99 con sección "Cómo invocar una fase").** Aplicado estrictamente Anthropic best practices: CLAUDE.md solo contiene reglas/convenciones/comandos para trabajar HOY en el repo. Eliminado: modelo conceptual abstracto (vive en PROCESO-MAESTRO Parte 1), tabla de 8 fases con estado (vive en README.md y PROCESO-MAESTRO Parte 2), "estado actual" (vive en REVIEW.md). Añadida regla explícita en "Lo que NO se hace": no añadir historia/estado/planes/meta-decisiones a CLAUDE.md.
 - **2026-05-05 18:00** — **Arquitectura confirmada (datos centralizados + instrucciones modulares).** El autor pregunta si conviene duplicar datos por fase para ahorrar tokens. Se descarta basándose en buenas prácticas: viola la Regla de Oro #5 (una fuente única) y no aporta ahorro real (CLAUDE.md modular ya carga solo el contexto relevante; los datos no se cargan automáticamente, solo cuando Claude Code los lee explícitamente). Estructura confirmada: datos en `unidades/UX/` (única ubicación), instrucciones en `fases/N-X/CLAUDE.md` + `prompt.md` (modulares por fase). Optimizaciones reales de tokens disponibles: prompts compactos con ejemplos, `Read` con offset/limit en JSONs grandes, sesiones limpias por fase (Ctrl+L).
 - **2026-05-05 16:30** — **CLAUDE.md global creado** en raíz. 196 líneas. Cubre: qué es el proyecto, estructura del repo, modelo conceptual, las 8 fases con estado, 6 reglas de oro (texto verbatim, no transformar, validar, no inventar, fuente única, no tocar viejo), convenciones de naming, esquema canónico del JSON resumido, taxonomía cerrada de 17 tipos, comandos útiles, cómo invocar la extracción, mejora continua, lo que NO se hace, estado actual. Sin referencias a viejo (solo para decir que no se toca).
 - **2026-05-05 16:15** — **Validador funcionando desde raíz**: `python3 scripts/validar_inventario.py 3` → ✅ JSON válido. CONTENIDOS_VISIBLES ampliado con `expresiones_dadas` y `definiciones`. Dashboard limpio: una sola tarjeta U3 (sin tag ACTIVO/VIEJO, leyendo solo de `unidades/`).
