@@ -10,6 +10,17 @@
 
 ---
 
+## Principio arquitectónico (no negociable)
+
+**Datos centralizados + instrucciones modulares.**
+
+- Los datos de cada unidad viven una sola vez: `unidades/UX/...`. Nunca se duplican por fase.
+- Las instrucciones de cada fase viven en su carpeta: `fases/N-X/CLAUDE.md` + `fases/N-X/prompt.md`. Estas SÍ son modulares por fase.
+- Razón: viola la Regla de Oro #5 (una fuente única) duplicar datos. CLAUDE.md modular ya carga solo el contexto relevante; los datos solo se cargan cuando Claude Code los lee con `Read`.
+- Optimización de tokens cuando aplique: leer secciones específicas con offset/limit en lugar del archivo entero; sesiones limpias por fase (`Ctrl+L`).
+
+---
+
 ## Reglas globales del proceso (aplican a TODOS los pasos)
 
 Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actualizaciones meta se hayan ejecutado:
@@ -434,5 +445,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-05 18:30** — CLAUDE.md raíz reducido a 85 líneas (Anthropic best practices). Movida historia/estado/planes a PROCESO-MAESTRO/README/REVIEW según corresponda.
+- **2026-05-05 18:00** — Confirmada arquitectura datos centralizados + instrucciones modulares. Añadido al inicio del documento como principio arquitectónico no negociable. Sin cambios estructurales en los pasos.
 - **2026-05-05 17:00** — Reescrito con gates explícitos. Cada paso ahora declara: archivos involucrados + actualizaciones meta requeridas + gate de cierre con condiciones numeradas + validación del revisor + dependencias hacia adelante. Añadidas reglas globales del proceso (qué meta-archivo se actualiza cuándo) y sección "cómo el revisor analiza este documento".
 - **2026-05-05 16:30** — Creación inicial.
