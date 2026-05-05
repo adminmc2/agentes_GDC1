@@ -162,9 +162,11 @@ Estructura por actividad:
 - `tipo` (str): de la **taxonomía cerrada de 17 tipos** (lista provisional, se revisa al cerrar cada unidad nueva):
   ```
   escucha_y_repite, escucha_y_responde, completa_huecos, relaciona, ordena, clasifica,
-  seleccion_multiple, verdadero_falso, produccion_oral_pareja, produccion_oral_libre,
-  produccion_escrita_guiada, produccion_escrita_libre, comprension_lectora,
-  comprension_auditiva, busqueda_informacion, tarea_final, juego
+  seleccion_multiple, verdadero_falso,
+  interaccion_oral, expresion_oral_libre,
+  produccion_escrita_guiada, expresion_escrita_libre,
+  comprension_lectora, comprension_auditiva, busqueda_informacion, tarea_final, juego
+  (v10.25: terminología ELE — interaccion_oral, expresion_oral_libre, expresion_escrita_libre)
   ```
 - `destreza` (str): destreza(s) trabajada(s).
 - `instruccion_original` (str): texto literal del libro.
@@ -832,6 +834,7 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 - **2026-05-05 12:15** — **Split físico ejecutado.** Todo el contenido editorial actual movido a `viejo/` (unidades, materiales, agentes, repertorios, referencias, diseno, material-complementario, _template, marco-teorico-metodologico.md, 00-curso-general.md). En raíz quedan: código (scripts, web, eval, diagrama.py), docs (README, CLAUDE, CHANGELOG, ROADMAP, GITHUB-MANIFEST, PROCESO-MAESTRO), config (Dockerfile, railway.toml, requirements.txt, .env.example), y la zona `nuevo/` (en construcción). Eliminada basura técnica: `texput.log`, `__pycache__/`, `.DS_Store`. Actualizadas referencias a paths nuevos en: `.gitignore`, `.dockerignore`, `scripts/importar_inventario.py`, `scripts/crear_crew_agents.py`, `diagrama.py` (8 referencias a repertorios), `README.md`, `CLAUDE.md`.
 - **2026-05-05 12:30** — Commit `c5e08e9` "v10.0: split repo en zonas viejo/ y nuevo/ + PROCESO-MAESTRO" pusheado a `main`.
 - **2026-05-05 14:00** — Dictamen del revisor sobre paso B (commit `67db6a4`): implementación correcta y completa, sin bloqueantes. Hallazgo cosmético registrado como B4 (`_normSeccion` no fusiona pestañas `(cont.)`); se resuelve en paso C sin acción separada.
+- **2026-05-05 23:00** — **Terminología ELE aplicada en taxonomía de tipos (v10.25).** Renombrados 3 tipos en los 3 JSONs existentes (U0, U1, U3), el validador, el prompt y el CLAUDE.md de fase 1: `produccion_oral_pareja` → `interaccion_oral`, `produccion_oral_libre` → `expresion_oral_libre`, `produccion_escrita_libre` → `expresion_escrita_libre`. `produccion_escrita_guiada` se mantiene (correcto). Añadida regla de precedencia oral y distinción `completa_huecos` vs `produccion_escrita_guiada`.
 - **2026-05-05 22:00** — **Bloque A cerrado. Decisiones sobre Bloque B.** A1 validado por el autor (U3 correcta). A3 cerrado: B1 pospuesto (inerte con CrewAI bloqueado), B2 aceptado (viejo sin trackear), B3 resuelto, B4 sin acción (cosmético). Bloque B parcializado: tarjetas espera fase 2, píldoras espera U3 vocabulario, reciclaje se diseña antes de implementar. Próximo paso: definir nc1-reciclaje.json y su visualización en dashboard.
 - **2026-05-05 21:30** — **Rebajada la afirmación "arquitectura limpia" en CHANGELOG v10.17 tras dictamen del revisor.** El título original "arquitectura limpia" era demasiado fuerte: solo se limpió el diagrama mermaid_level1 (eliminada la caja `viejo/`), pero el código de `diagrama.py:550-557` sigue conteniendo referencias legacy a `viejo/repertorios/*.md` en el dict `AGENTS` usado por el flujo de agentes (ahora bloqueado). Título corregido a "diagrama activo sin caja viejo" + nota explícita sobre el alcance honesto.
 - **2026-05-05 21:00** — **Dashboard refinado y arquitectura saneada.** Cambios visuales y conceptuales del dashboard: (1) sidebar reorganizado con 3 botones top-level en MAYÚSCULAS (INVENTARIOS, PROYECTO, AGENTES); el botón AGENTES queda BLOQUEADO (no en uso por ahora); el selector "Unidad" y la lista de secciones del flujo viejo de agentes quedan ocultos (`display:none`, no eliminados, por si se reactivan). (2) Diagrama "Arquitectura activa" — eliminada la caja `viejo/` para que el diagrama refleje solo el sistema activo. (3) Botones zoom +/- y "100%" añadidos sobre cualquier diagrama Mermaid (resuelve que algunos diagramas se vean pequeños). (4) Eliminadas 3 referencias residuales a `padStart(2,'0')` en vistas del flujo de agentes (líneas 1089, 1119, 1182) — aunque AGENTES está bloqueado, el código queda consistente con la convención sin cero. Cero `padStart` restantes en web/index.html.

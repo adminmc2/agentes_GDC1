@@ -3,6 +3,19 @@
 
 ---
 
+## [v10.25 — 2026-05-05] — Terminología ELE correcta en taxonomía de tipos
+
+Renombres en los 3 JSONs (U0, U1, U3), validador, prompt y CLAUDE.md de fase 1:
+- `produccion_oral_pareja` → **`interaccion_oral`** (parejas/grupos = interacción)
+- `produccion_oral_libre` → **`expresion_oral_libre`**
+- `produccion_escrita_libre` → **`expresion_escrita_libre`**
+- `produccion_escrita_guiada` se mantiene (correcto para escribir con guía)
+
+Nueva regla: `completa_huecos` cuando el alumno ESCRIBE → `produccion_escrita_guiada`. `completa_huecos` queda para seleccionar/encajar sin producir texto.
+Regla de precedencia oral añadida: 2+ personas → `interaccion_oral`; alumno solo → `expresion_oral_libre`.
+
+---
+
 ## [v10.22 — 2026-05-05] — Regla "Para aprender" vs cuadros_gramaticales en prompt fase 1
 
 Error detectado en extracción real de otra unidad: la caja "Para aprender" de páginas de Gramática fue clasificada como `cuadros_gramaticales`. Corregido en `fases/1-extraccion-inventario/prompt.md` y `CLAUDE.md` con distinción explícita: cuadros gramaticales = tablas de referencia sin número ni instrucción; "Para aprender" y "Observa" = actividades.

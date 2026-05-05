@@ -418,6 +418,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-05 23:00** — Terminología ELE aplicada (v10.25): 3 tipos renombrados en los 3 JSONs + validador + prompt + CLAUDE.md de fase 1. CHANGELOG v10.25 añadido.
 - **2026-05-05 22:00** — A1 validado por el autor (47 actividades de U3 correctas). A3 cerrado: B1 pospuesto (CrewAI bloqueado), B2 aceptado (en viejo sin trackear), B3 resuelto en v10.15, B4 no requiere acción (cosmético, se resuelve con nuevo schema). Bloque B parcializado: tarjetas necesita fase 2 primero, píldoras en su momento, reciclaje próximo a discutir. Próximo paso: diseñar `nc1-reciclaje.json` y su visualización en dashboard.
 - **2026-05-05 21:30** — Rebajada afirmación "arquitectura limpia" en CHANGELOG v10.17 (revisor): se limpió solo el diagrama, no el código (referencias legacy a `viejo/repertorios/` siguen en `diagrama.py:550-557` para el flujo de agentes bloqueado).
 - **2026-05-05 21:00** — Dashboard saneado: sidebar con INVENTARIOS/PROYECTO/AGENTES en mayúsculas (AGENTES bloqueado), arquitectura mermaid sin caja `viejo/`, zoom +/- en diagramas, eliminadas 3 referencias residuales a `padStart(2,'0')`. Cero referencias hardcoded a U01-U09 en la UI.

@@ -1,0 +1,1180 @@
+{
+  "unidad": 1,
+  "curso": "nc1",
+  "titulo": "¡Hola!",
+  "paginas_libro": "12-21",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U1/fuente/U1-nc1.pdf",
+    "version_extraccion": "2026-05-05"
+  },
+  "contenidos_indice": {
+    "vocabulario": "Objetos de clase. Nombres de las letras",
+    "gramatica": "Verbos ser, llamarse y tener (formas singulares). Artículos determinados (el, la, los, las). Masculino y femenino. Colores. Interrogativos. Recursos para la clase",
+    "comunicacion": "Saludar. Pedir y dar información personal. Números del 1 al 20",
+    "destrezas": "Mis compañeros de clase",
+    "cultura": "Saludos y despedidas. Tú y usted"
+  },
+  "vocabulario_consolidado": {
+    "principal": {
+      "_descripcion": "Vocabulario declarado en el índice de la unidad: objetos de clase y nombres de las letras del abecedario.",
+      "Objetos de clase": ["portátil", "mochila", "cuaderno", "lápiz", "pizarra", "silla", "bolígrafo", "libro", "mesa", "tableta"],
+      "Abecedario": ["a", "be", "ce", "de", "e", "efe", "ge", "hache", "i", "jota", "ka", "ele", "eme", "ene", "eñe", "o", "pe", "cu", "erre", "ese", "te", "u", "uve", "uve doble", "equis", "i griega", "zeta"]
+    },
+    "recurrente": {
+      "_descripcion": "Vocabulario que aparece en varias secciones de la unidad (gramática, comunicación, destrezas, cultura, evaluación).",
+      "Verbos básicos (formas singulares)": ["soy", "eres", "es", "me llamo", "te llamas", "se llama", "tengo", "tienes", "tiene"],
+      "Nacionalidades": ["español", "española", "francés", "francesa", "inglés", "inglesa", "brasileño", "brasileña", "colombiano", "colombiana", "mexicano", "mexicana", "japonés", "japonesa", "argentino", "argentina", "peruano", "peruana", "italiano", "italiana", "marroquí", "cubano", "cubana", "polaco", "polaca", "coreano", "coreana", "alemán", "alemana", "griego", "griega", "campeón", "campeona"],
+      "Países y ciudades": ["España", "Madrid", "Argentina", "Buenos Aires", "Brasil", "Colombia", "París", "Londres", "Barcelona", "Valencia", "Sevilla", "México", "Marruecos", "Rabat", "Cuba", "Perú"],
+      "Números 1-20": ["uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve", "veinte"],
+      "Colores": ["blanco", "negro", "rojo", "amarillo", "azul", "marrón", "verde", "rosa"],
+      "Saludos y despedidas": ["hola", "qué tal", "buenos días", "buenas tardes", "buenas noches", "adiós", "hasta luego", "hasta mañana", "cómo estás", "cómo está usted", "encantada"],
+      "Interrogativos": ["cómo", "qué", "cuántos", "de dónde", "cuál"],
+      "Pronombres": ["yo", "tú", "él", "ella", "usted", "vosotros", "ustedes"]
+    },
+    "comprension": {
+      "_descripcion": "Léxico que aparece y afecta la comprensión sin trabajarse explícitamente como objetivo léxico de la unidad.",
+      "Profesiones": ["profesor", "profesora", "profesor de judo", "profesora de baile", "doctor", "doctora", "camarero", "camarera", "cantante", "estudiante", "alumno", "alumna"],
+      "Personas y relaciones": ["amigo", "amiga", "compañero", "compañera", "hermano", "hermana", "hijo", "hija", "padres", "señor", "señora", "profe"],
+      "Animales": ["león", "leona", "gato", "gata", "mono", "mona", "pantera"],
+      "Objetos varios": ["puerta", "ventana", "sol", "coche", "móvil", "teléfono", "moto", "casa", "hotel", "helado", "avión", "piano", "balón", "manzana", "pizza", "hoja", "autobús", "diccionario"],
+      "Aficiones / asignaturas": ["música", "música moderna", "fútbol", "baile", "judo", "leer", "ver vídeos"],
+      "Adjetivos": ["bonito", "africano", "africana", "inteligente", "favorita"],
+      "Conectores y partículas": ["y", "o", "también", "no", "sí", "más", "muy", "mañana"]
+    }
+  },
+  "secciones": {
+    "vocabulario": { "paginas": [12, 13], "actividades_ids": ["U1-p12-act1", "U1-p12-act2", "U1-p12-act3", "U1-p13-act4", "U1-p13-act5", "U1-p13-act6", "U1-p13-act7", "U1-p13-act8", "U1-p13-act9"] },
+    "gramatica": { "paginas": [14, 15], "actividades_ids": ["U1-p14-act1", "U1-p14-act2", "U1-p14-act3", "U1-p14-act4", "U1-p14-act5", "U1-p15-act6", "U1-p15-act7", "U1-p15-act8", "U1-p15-act9", "U1-p15-act10"] },
+    "comunicacion": { "paginas": [16, 17], "actividades_ids": ["U1-p16-act1", "U1-p16-act2", "U1-p16-act3", "U1-p16-act4", "U1-p17-act5", "U1-p17-act6", "U1-p17-act7", "U1-p17-act8"] },
+    "destrezas": { "paginas": [18, 19], "actividades_ids": ["U1-p18-act1", "U1-p18-act2", "U1-p19-act3", "U1-p19-act4", "U1-p19-act5", "U1-p19-act6", "U1-p19-act7", "U1-p19-act8"] },
+    "cultura": { "paginas": [20], "actividades_ids": ["U1-p20-act1"] },
+    "evaluacion": { "paginas": [21], "actividades_ids": ["U1-p21-act1", "U1-p21-act2", "U1-p21-act3", "U1-p21-act4", "U1-p21-act5", "U1-p21-act6"] },
+    "reflexion": { "paginas": [], "actividades_ids": [] }
+  },
+  "paginas_detalle": [
+    {
+      "pagina": 12,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U1-p12-act1",
+          "numero": 1,
+          "tipo": "comprension_lectora",
+          "destreza": "comprension_lectora+comprension_oral",
+          "instruccion_original": "Lee y escucha.",
+          "contenido_linguistico": ["presentación personal: nombre, nacionalidad, edad"],
+          "audio": { "presente": true, "pista": 7 },
+          "imagen": { "presente": true, "descripcion": "Dos fotos tipo carnet de adolescentes: una chica rubia con gafas (Katrina) y un chico moreno con mochila (Rafa)." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "ejemplos_modelo": [
+              "¡Hola! Me llamo Katrina y tengo trece años. Soy madrileña, de Madrid.",
+              "¡Hola! Me llamo Rafa y soy argentino, de Buenos Aires. Tengo doce años."
+            ]
+          }
+        },
+        {
+          "id": "U1-p12-act2",
+          "numero": 2,
+          "tipo": "expresion_oral_libre",
+          "destreza": "produccion_oral",
+          "instruccion_original": "Preséntate tú ahora.",
+          "contenido_linguistico": ["presentación personal con plantilla"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "texto_modelo": "¡Hola!, me llamo… Soy de… Tengo… años."
+          }
+        },
+        {
+          "id": "U1-p12-act3",
+          "numero": 3,
+          "tipo": "escucha_y_repite",
+          "destreza": "comprension_oral+produccion_oral",
+          "instruccion_original": "Escucha y repite el siguiente vocabulario de la clase. Después, vuelve a escuchar y escribe el número que corresponde a cada imagen.",
+          "contenido_linguistico": ["objetos de clase con artículo determinado"],
+          "campo_semantico": "Objetos de clase",
+          "audio": { "presente": true, "pista": 8 },
+          "imagen": { "presente": true, "descripcion": "Diez fotos de objetos de clase etiquetados de a a j: lápiz (a), bolígrafo (b), cuaderno (c), libro (d), mesa (e), mochila (f), pizarra (g), portátil (h), silla (i), tableta (j)." },
+          "video": { "presente": false },
+          "respuestas": ["a → 4 (el lápiz)", "b → 7 (el bolígrafo)", "c → 3 (el cuaderno)", "d → 8 (el libro)", "e → 9 (la mesa)", "f → 2 (la mochila)", "g → 5 (la pizarra)", "h → 1 (el portátil)", "i → 6 (la silla)", "j → 10 (la tableta)"],
+          "datos": {
+            "items_libro": [
+              "1 el por_tá_til",
+              "2 la mo_chi_la",
+              "3 el cua_der_no",
+              "4 el _lá_piz",
+              "5 la pi_za_rra",
+              "6 la _si_lla",
+              "7 el bo_lí_grafo",
+              "8 el _li_bro",
+              "9 la _me_sa",
+              "10 la ta_ble_ta"
+            ],
+            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 13,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U1-p13-act4",
+          "numero": 4,
+          "tipo": "interaccion_oral",
+          "destreza": "produccion_oral",
+          "instruccion_original": "En parejas. Juega al \"veo, veo\" con tu compañero.",
+          "contenido_linguistico": ["objetos de clase", "abecedario", "fórmula veo veo"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Ilustración de dos chicos jugando al veo veo con varios objetos visibles: coche, lápiz, manzana, libro, regla, taza, móvil." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "dialogo_completo": [
+              "— Veo, veo",
+              "— ¿Qué ves?",
+              "— Una cosita.",
+              "— ¿Con qué letra está escrita?",
+              "— Con la ele.",
+              "— ¡Libro!",
+              "— Sí. Ahora tú."
+            ]
+          }
+        },
+        {
+          "id": "U1-p13-act5",
+          "numero": 5,
+          "tipo": "escucha_y_repite",
+          "destreza": "comprension_oral+produccion_oral",
+          "instruccion_original": "Recuerda el abecedario. Escucha y repite.",
+          "contenido_linguistico": ["abecedario español 27 letras"],
+          "audio": { "presente": true, "pista": 9 },
+          "imagen": { "presente": true, "descripcion": "Disposición decorativa de las 27 letras del abecedario español sobre fondo de color." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "items_libro": ["A B C D E F G H I J K L M N Ñ O P Q R S T U V W X Y Z"]
+          }
+        },
+        {
+          "id": "U1-p13-act6",
+          "numero": 6,
+          "tipo": "interaccion_oral",
+          "destreza": "produccion_oral",
+          "instruccion_original": "Pregunta y contesta a tu compañero, como en el ejemplo.",
+          "contenido_linguistico": ["preguntar nombre y deletreo"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "dialogo_completo": [
+              "— ¿Cómo te llamas?",
+              "— Patricia.",
+              "— ¿Cómo se escribe?",
+              "— Pe-a-te-erre-i-ce-i-a."
+            ]
+          }
+        },
+        {
+          "id": "U1-p13-act7",
+          "numero": 7,
+          "tipo": "completa_huecos",
+          "destreza": "comprension_oral+produccion_escrita",
+          "instruccion_original": "Escucha y completa.",
+          "contenido_linguistico": ["preguntar nombre", "deletreo letras g/j, b/v, h"],
+          "audio": { "presente": true, "pista": 10 },
+          "imagen": { "presente": true, "descripcion": "Tres viñetas con personas conversando, cada una mostrando un mini-diálogo con huecos numerados [1] a [6]." },
+          "video": { "presente": false },
+          "respuestas": ["[1] J", "[2] j", "[3] v", "[4] v", "[5] H", "[6] Con h"],
+          "datos": {
+            "items_libro": [
+              "— ¿Cómo te llamas? — Jesús [1] _____ iménez. — ¿Con g o con j? — Con [2] _____.",
+              "— ¿Cómo te llamas? — Pedro Ál[3] _____ arez. — ¿Con b o con v? — Con [4] _____.",
+              "— ¿Cómo te llamas? — Elena [5] _____ aro. — ¿Con h o sin ella? — [6] _____."
+            ]
+          }
+        },
+        {
+          "id": "U1-p13-act8",
+          "numero": 8,
+          "tipo": "completa_huecos",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Completa con las palabras del recuadro.",
+          "contenido_linguistico": ["nacionalidades en masculino y femenino"],
+          "campo_semantico": "Nacionalidades",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. brasileña", "2. colombiana", "3. francés", "4. inglesa", "5. española"],
+          "datos": {
+            "ejemplo_libro": "Me llamo Pedro y soy de España, soy español.",
+            "palabras_recuadro": ["francés", "español", "colombiana", "española", "inglesa", "brasileña"],
+            "items_libro": [
+              "1 Me llamo Rita y soy de Brasil, soy _____.",
+              "2 La profesora se llama Rosa y es de Colombia, es _____.",
+              "3 El profesor se llama Alan y es de París, es _____.",
+              "4 Ella se llama Elisabeth y es de Londres, es _____.",
+              "5 Rosalía es de Barcelona, es _____."
+            ],
+            "_nota": "En el libro, español aparece tachado en el recuadro porque ya está usado en el ejemplo."
+          }
+        },
+        {
+          "id": "U1-p13-act9",
+          "numero": 9,
+          "tipo": "comprension_lectora",
+          "destreza": "comprension_lectora+produccion_escrita",
+          "instruccion_original": "Lee a Daniel y a Beatriz y contesta a las preguntas.",
+          "contenido_linguistico": ["presentación personal", "preguntas con qué/quién/cuántos"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Dos fotos de adolescentes (Daniel y Beatriz) cada una con un bocadillo con su presentación personal." },
+          "video": { "presente": false },
+          "respuestas": ["1. Daniel", "2. Beatriz", "3. Trece"],
+          "datos": {
+            "texto_completo": "DANIEL: ¡Hola! Me llamo Daniel y tengo doce años. Soy de Valencia.\nBEATRIZ: ¡Hola! ¿Qué tal? Me lllamo Beatriz y tengo trece años. Soy de Barcelona.",
+            "preguntas": [
+              "1 ¿Quien tiene doce años?",
+              "2 ¿Quien es de Barcelona?",
+              "3 ¿Cuántos años tiene Beatriz?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 14,
+      "seccion": "gramatica",
+      "cuadros_gramaticales": [
+        {
+          "titulo": "Presente de los verbos ser, llamarse y tener (Formas singulares)",
+          "contenido": {
+            "tipo": "tabla_conjugacion",
+            "encabezados": ["", "ser", "llamarse", "tener"],
+            "filas": [
+              ["yo", "soy", "me llamo", "tengo"],
+              ["tú", "eres", "te llamas", "tienes"],
+              ["él / ella / usted", "es", "se llama", "tiene"]
+            ],
+            "ejemplos": ["Yo soy de Sevilla y me llamo Jonathan."]
+          }
+        },
+        {
+          "titulo": "Artículos determinados",
+          "contenido": {
+            "tipo": "tabla_articulos",
+            "encabezados": ["", "masculino", "femenino"],
+            "filas": [
+              ["singular", "el niño", "la niña"],
+              ["plural", "los niños", "las niñas"]
+            ]
+          }
+        },
+        {
+          "titulo": "Masculino y femenino",
+          "contenido": {
+            "tipo": "tabla_genero",
+            "encabezados": ["", "masculino", "femenino"],
+            "filas": [
+              ["Nombres de las cosas", "el libro / el cuaderno / el lápiz", "la casa / la mesa / la pizarra"],
+              ["Nombres de personas y animales", "el amigo / el profesor / el león", "la amiga / la profesora / la leona"]
+            ]
+          }
+        },
+        {
+          "titulo": "Nacionalidad",
+          "contenido": {
+            "tipo": "tabla_genero",
+            "encabezados": ["masculino", "femenino"],
+            "filas": [
+              ["mexicano", "mexicana"],
+              ["español", "española"],
+              ["japonés", "japonesa"]
+            ],
+            "_nota": "Las terminaciones -o/-a y la marca -a tras consonante están resaltadas tipográficamente."
+          }
+        }
+      ],
+      "actividades": [
+        {
+          "id": "U1-p14-act1",
+          "numero": 1,
+          "tipo": "seleccion_multiple",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Subraya el verbo correcto.",
+          "contenido_linguistico": ["verbo ser singular"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. eres", "2. es", "3. es", "4. es", "5. eres", "6. soy"],
+          "datos": {
+            "ejemplo_libro": "Yo soy / es profesora.",
+            "items_libro": [
+              "1 ¿Tú eres / es francesa?",
+              "2 María soy / es mi amiga.",
+              "3 Juan no soy / es profesor",
+              "4 Paola es / soy italiana",
+              "5 Pierre, ¿eres / soy francés?",
+              "6 Yo soy / es estudiante."
+            ]
+          }
+        },
+        {
+          "id": "U1-p14-act2",
+          "numero": 2,
+          "tipo": "completa_huecos",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Completa los huecos con la forma correspondiente del verbo tener.",
+          "contenido_linguistico": ["verbo tener singular"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. tiene", "2. tiene", "3. tengo", "4. tiene", "5. tiene", "6. tiene"],
+          "datos": {
+            "ejemplo_libro": "Yo no tengo móvil.",
+            "items_libro": [
+              "1 Iván _____ 12 años.",
+              "2 María _____ un gato.",
+              "3 Yo _____ 9 años.",
+              "4 Él no _____ 10 años.",
+              "5 Charlie _____ una moto.",
+              "6 ¿Cuántos años _____ Julia?"
+            ]
+          }
+        },
+        {
+          "id": "U1-p14-act3",
+          "numero": 3,
+          "tipo": "relaciona",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Forma frases tomando un elemento de cada columna. Hay más de una opción.",
+          "contenido_linguistico": ["combinación pronombre + verbo + complemento"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["Yo soy profesor.", "Me llamo Luis.", "¿Tú eres española?", "Él / Ella es estudiante."],
+          "datos": {
+            "items_libro": [
+              "Columna 1: ¿Te | Yo | Me | ¿Tú | Él / Ella",
+              "Columna 2: soy | llamas | eres | es | llamo",
+              "Columna 3: Luis. | estudiante. | Ana? | profesor. | española?"
+            ],
+            "ejemplo_libro": "¿Te — llamas (línea de muestra que une columnas 1 y 2)",
+            "_nota": "Hay más de una combinación válida. El libro muestra una línea de ejemplo conectando ¿Te — llamas."
+          }
+        },
+        {
+          "id": "U1-p14-act4",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Completa la tabla con el femenino o el masculino.",
+          "contenido_linguistico": ["formación de género en nacionalidades y profesiones"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. profesora", "2. niña", "3. amigo", "4. campeona", "5. griego", "6. alemana", "7. brasileña"],
+          "datos": {
+            "items_libro": [
+              "1 profesor — _____",
+              "2 niño — _____",
+              "3 _____ — amiga",
+              "4 campeón — _____",
+              "5 _____ — griega",
+              "6 alemán — _____",
+              "7 brasileño — _____"
+            ]
+          }
+        },
+        {
+          "id": "U1-p14-act5",
+          "numero": 5,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Forma el femenino de las siguientes palabras.",
+          "contenido_linguistico": ["formación del femenino con artículo"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Dos fotos en paralelo: un león macho (modelo masculino) y una leona (modelo femenino)." },
+          "video": { "presente": false },
+          "respuestas": ["1. la alumna", "2. la gata", "3. la hija", "4. la doctora", "5. la compañera", "6. la hermana", "7. la camarera", "8. la mona", "9. la estudiante", "10. la cantante"],
+          "datos": {
+            "ejemplo_libro": "el león — la leona",
+            "items_libro": [
+              "1 el alumno",
+              "2 el gato",
+              "3 el hijo",
+              "4 el doctor",
+              "5 el compañero",
+              "6 el hermano",
+              "7 el camarero",
+              "8 el mono",
+              "9 el estudiante",
+              "10 el cantante"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 15,
+      "seccion": "gramatica",
+      "cuadros_gramaticales": [
+        {
+          "titulo": "Los colores",
+          "contenido": {
+            "tipo": "tabla_colores",
+            "colores": ["blanco", "negro", "rojo", "amarillo", "azul", "marrón", "verde", "rosa"],
+            "ejemplos": ["El coche es rojo.", "La mochila es roja."],
+            "_nota": "Cada color aparece como palabra rotulada con su tono. Se muestra concordancia masculino/femenino con el ejemplo coche/mochila."
+          }
+        },
+        {
+          "titulo": "Pronunciación y ortografía — Interrogativos",
+          "contenido": {
+            "tipo": "lista_interrogativos",
+            "ejemplos": ["¿Cómo te llamas?", "¿Qué tal?", "¿Cuántos años tienes?", "¿De dónde eres?", "¿Eres coreana?", "¿Eres estudiante?", "¿Tienes móvil?", "¿Tienes un bolígrafo rojo?"]
+          }
+        }
+      ],
+      "actividades": [
+        {
+          "id": "U1-p15-act6",
+          "numero": 6,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Escribe frases con el verbo ser.",
+          "contenido_linguistico": ["verbo ser", "concordancia género y número"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1 Elaine es brasileña",
+            "2 Yo soy profesora",
+            "3 La leona es africana",
+            "4 El profesor es inteligente",
+            "5 Los gatos son negros",
+            "6 La pasta es italiana",
+            "7 Las profesoras son mexicanas",
+            "8 Yo no soy española",
+            "9 ¿Tú eres japonés?",
+            "10 ¿Tú eres peruana?",
+            "11 ¿Tú eres estudiante?",
+            "12 ¿Tú eres profesor?"
+          ],
+          "datos": {
+            "ejemplo_libro": "mochila / roja → La mochila es roja",
+            "items_libro": [
+              "1 Elaine / brasileña",
+              "2 yo / profesora",
+              "3 leona / africana",
+              "4 profesor / inteligente",
+              "5 gatos / negros",
+              "6 pasta / italiana",
+              "7 profesoras / mexicanas",
+              "8 yo no / española",
+              "9 ¿tú / japonés?",
+              "10 ¿tú / peruana?",
+              "11 ¿tú / estudiante?",
+              "12 ¿tú / profesor?"
+            ]
+          }
+        },
+        {
+          "id": "U1-p15-act7",
+          "numero": 7,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Describe estos objetos con sus colores.",
+          "contenido_linguistico": ["verbo ser + adjetivo de color con concordancia"],
+          "campo_semantico": "Colores",
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Siete imágenes numeradas: una silla azul (1), una ventana verde (2), un sol amarillo (3), una pizarra negra (4), una mochila marrón (5), la pantera rosa (6), un bolígrafo rojo (7)." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1 La silla es azul",
+            "2 La ventana es verde",
+            "3 El sol es amarillo",
+            "4 La pizarra es negra",
+            "5 La mochila es marrón",
+            "6 La pantera es rosa",
+            "7 El bolígrafo es rojo"
+          ],
+          "datos": {
+            "ejemplo_libro": "La puerta es blanca.",
+            "palabras_recuadro": ["azul", "marrón", "verde", "rojo/-a", "amarillo/-a", "blanco/-a", "negro/-a", "rosa"],
+            "items_libro": ["1 silla", "2 ventana", "3 sol", "4 pizarra", "5 mochila", "6 pantera", "7 bolígrafo"]
+          }
+        },
+        {
+          "id": "U1-p15-act8",
+          "numero": 8,
+          "tipo": "escucha_y_repite",
+          "destreza": "comprension_oral+produccion_oral",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": ["pronunciación de interrogativos"],
+          "audio": { "presente": true, "pista": 11 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "- ¿Cómo te llamas?",
+              "- ¿Qué tal?",
+              "- ¿Cuántos años tienes?",
+              "- ¿De dónde eres?",
+              "- ¿Eres coreana?",
+              "- ¿Eres estudiante?",
+              "- ¿Tienes móvil?",
+              "- ¿Tienes un bolígrafo rojo?"
+            ]
+          }
+        },
+        {
+          "id": "U1-p15-act9",
+          "numero": 9,
+          "tipo": "escucha_y_repite",
+          "destreza": "comprension_oral+produccion_oral",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": ["recursos para la clase: cómo se escribe / qué significa / cómo se dice"],
+          "audio": { "presente": true, "pista": 12 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "- ¿Cómo se escribe \"hola\"?",
+              "- ¿Qué significa \"gracias\"?",
+              "- ¿Cómo se dice en español \"hello\"?"
+            ]
+          }
+        },
+        {
+          "id": "U1-p15-act10",
+          "numero": 10,
+          "tipo": "expresion_oral_libre",
+          "destreza": "produccion_oral",
+          "instruccion_original": "Haz a tu profesor las preguntas anteriores y practica con otras palabras.",
+          "contenido_linguistico": ["uso interactivo de recursos para la clase"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {}
+        }
+      ]
+    },
+    {
+      "pagina": 16,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U1-p16-act1",
+          "numero": 1,
+          "tipo": "comprension_auditiva",
+          "destreza": "comprension_oral+comprension_lectora",
+          "instruccion_original": "Mira el vídeo o lee y escucha el diálogo.",
+          "contenido_linguistico": ["saludar", "presentarse", "intercambiar nombre, edad, nacionalidad y teléfono"],
+          "audio": { "presente": true, "pista": 13 },
+          "imagen": { "presente": true, "descripcion": "Tres fotogramas del vídeo mostrando a cuatro adolescentes (Graciela, Pablo, Julia, Jorge) charlando en la fila del colegio." },
+          "video": { "presente": true },
+          "respuestas": [],
+          "datos": {
+            "subtipo": "dialogo_video",
+            "titulo_dialogo": "En la fila del cole",
+            "dialogo_completo": [
+              "GRACIELA: Hola. ¿Qué tal?",
+              "PABLO: Muy bien, ¿y tú? ¿Cómo te llamas?",
+              "GRACIELA: Me llamo Graciela y tengo doce años.",
+              "PABLO: Hola, soy Pablo, también tengo doce años.",
+              "JULIA: Yo me llamo Julia y tengo trece años, un año más que vosotros.",
+              "JORGE: Hola, yo soy Jorge y soy amigo de Pablo.",
+              "JULIA: Encantada, Jorge. No eres español, ¿eres argentino?",
+              "JORGE: Sí, de Buenos Aires.",
+              "JULIA: Encantada, Jorge.",
+              "GRACIELA: ¿Cuántos años tienes?",
+              "JORGE: Tengo doce años.",
+              "JULIA: Tu acento es muy bonito, Jorge.",
+              "JORGE: Ey, ¿hacemos un grupo de WhatsApp? Mi teléfono es el 555 675 903.",
+              "JULIA: Genial, mi teléfono es el 555 315 867.",
+              "PABLO: Y mi número es el 555 051 342.",
+              "GRACIELA: Yo no tengo teléfono, pero mañana es mi cumpleaños y seguro que mis padres me regalan uno.",
+              "PABLO: ¿Entramos al cole? ¡Vamos!",
+              "***",
+              "PABLO: Cuidado, Jorge, tu mochila."
+            ],
+            "personajes": ["GRACIELA", "PABLO", "JULIA", "JORGE"]
+          }
+        },
+        {
+          "id": "U1-p16-act2",
+          "numero": 2,
+          "tipo": "interaccion_oral",
+          "destreza": "produccion_oral",
+          "instruccion_original": "Di tu nombre y pregunta a tu compañero, como en el ejemplo.",
+          "contenido_linguistico": ["preguntar y dar el nombre"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Foto de adolescentes en clase con un chico levantando la mano." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "Me llamo Carlos. Y tú, ¿cómo te llamas?"
+          }
+        },
+        {
+          "id": "U1-p16-act3",
+          "numero": 3,
+          "tipo": "interaccion_oral",
+          "destreza": "produccion_oral",
+          "instruccion_original": "Saluda a tu compañero, como en el ejemplo.",
+          "contenido_linguistico": ["saludar informalmente"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "dialogo_completo": ["— Hola, ¿qué tal?", "— Bien, ¿y tú?"]
+          }
+        },
+        {
+          "id": "U1-p16-act4",
+          "numero": 4,
+          "tipo": "relaciona",
+          "destreza": "comprension_oral+produccion_escrita",
+          "instruccion_original": "Escucha y repite los números del 1 al 20. Después, relaciona los números con las palabras.",
+          "contenido_linguistico": ["números cardinales 1-20"],
+          "campo_semantico": "Números",
+          "audio": { "presente": true, "pista": 14 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1 → uno",
+            "2 → dos",
+            "3 → tres",
+            "4 → cuatro",
+            "5 → cinco",
+            "6 → seis",
+            "7 → siete",
+            "8 → ocho",
+            "9 → nueve",
+            "10 → diez",
+            "11 → once",
+            "12 → doce",
+            "13 → trece",
+            "14 → catorce",
+            "15 → quince",
+            "16 → dieciséis",
+            "17 → diecisiete",
+            "18 → dieciocho",
+            "19 → diecinueve",
+            "20 → veinte"
+          ],
+          "datos": {
+            "items_libro": [
+              "Bloque 1-10 — números: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+              "Bloque 1-10 — palabras desordenadas: tres, siete, nueve, ocho, uno, seis, cuatro, dos, diez, cinco",
+              "Bloque 11-20 — números: 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+              "Bloque 11-20 — palabras desordenadas: trece, quince, dieciséis, once, dieciocho, doce, diecinueve, diecisiete, veinte, catorce"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 17,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U1-p17-act5",
+          "numero": 5,
+          "tipo": "interaccion_oral",
+          "destreza": "produccion_oral",
+          "instruccion_original": "¿Cuántos años tienes? Pregunta y contesta a tres compañeros, como en el ejemplo.",
+          "contenido_linguistico": ["preguntar y dar la edad"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "dialogo_completo": ["— ¿Cuántos años tienes?", "— Once."]
+          }
+        },
+        {
+          "id": "U1-p17-act6",
+          "numero": 6,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": "produccion_escrita+produccion_oral",
+          "instruccion_original": "Realiza las sumas y comprueba el resultado con tu compañero.",
+          "contenido_linguistico": ["operaciones aritméticas con números 1-20", "expresión cuánto es X más Y"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Foto de una profesora escribiendo sumas en la pizarra; debajo un mosaico decorativo de cifras de colores." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1 quince",
+            "2 diecinueve",
+            "3 catorce",
+            "4 dieciocho",
+            "5 nueve",
+            "6 cinco",
+            "7 once",
+            "8 veinte",
+            "9 dieciséis",
+            "10 cuatro"
+          ],
+          "datos": {
+            "ejemplo_libro": "tres + cinco = ocho — ¿Cuánto es tres más cinco? — Ocho.",
+            "items_libro": [
+              "1 siete + ocho = _____",
+              "2 diez + nueve = _____",
+              "3 dos + doce = _____",
+              "4 quince + tres = _____",
+              "5 tres + seis = _____",
+              "6 uno + cuatro = _____",
+              "7 seis + cinco = _____",
+              "8 trece + siete = _____",
+              "9 nueve + siete = _____",
+              "10 dos + dos = _____"
+            ]
+          }
+        },
+        {
+          "id": "U1-p17-act7",
+          "numero": 7,
+          "tipo": "comprension_auditiva",
+          "destreza": "comprension_oral+produccion_escrita",
+          "instruccion_original": "Escucha y completa las fichas.",
+          "contenido_linguistico": ["nombre, edad, número de teléfono"],
+          "audio": { "presente": true, "pista": 15 },
+          "imagen": { "presente": true, "descripcion": "Tres fotos de adolescentes (chica, chico, chico) cada una con una ficha en blanco a su lado." },
+          "video": { "presente": false },
+          "respuestas": [
+            "Ficha 1: Nombre Rocío / Edad 12 años / N.º de teléfono 645 98 34 21",
+            "Ficha 2: Nombre Augusto / Edad 13 años / N.º de teléfono 91 856 49 21",
+            "Ficha 3: Nombre Iván / Edad 14 años / N.º de teléfono 91 577 64 32"
+          ],
+          "datos": {
+            "items_libro": [
+              "Ficha 1: Nombre _____ / Edad _____ / N.º de teléfono _____",
+              "Ficha 2: Nombre _____ / Edad _____ / N.º de teléfono _____",
+              "Ficha 3: Nombre _____ / Edad _____ / N.º de teléfono _____"
+            ]
+          }
+        },
+        {
+          "id": "U1-p17-act8",
+          "numero": 8,
+          "tipo": "tarea_final",
+          "destreza": "produccion_oral",
+          "instruccion_original": "En grupos de cuatro cread vuestro propio diálogo siguiendo estos pasos:",
+          "contenido_linguistico": ["saludar", "presentarse", "dar nombre, edad y teléfono"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Utiliza las frases para saludar: ¡Hola! ¿Qué tal?",
+              "Informa a tus compañeros de tu nombre, edad y número de teléfono.",
+              "Practica el diálogo con tus compañeros.",
+              "Representa el diálogo delante de la clase."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 18,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U1-p18-act1",
+          "numero": 1,
+          "tipo": "comprension_lectora",
+          "destreza": "comprension_lectora+produccion_escrita",
+          "instruccion_original": "Lee y luego completa las fichas.",
+          "contenido_linguistico": ["nombre, edad, profesión, nacionalidad, afición"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Dos fotos de adultos jóvenes con sus textos de presentación: un hombre con kimono blanco de judo (Luis) y una mujer en pose de baile con chaqueta azul (Paloma)." },
+          "video": { "presente": false },
+          "respuestas": [
+            "Ficha A: Nombre Luis Rodríguez / Edad 20 años / Profesión profesor de judo / Nacionalidad argentino / Afición la música moderna",
+            "Ficha B: Nombre Paloma Sandoval / Edad 19 años / Profesión profesora de baile / Nacionalidad española / Afición el fútbol y la música"
+          ],
+          "datos": {
+            "texto_completo": "TEXTO A: Me llamo Luis Rodríguez. Soy profesor de judo. Tengo veinte años. Me gusta la música moderna. Soy argentino.\n\nTEXTO B: Se llama Paloma Sandoval. Es profesora de baile. Tiene diecinueve años. Es española. Le gusta el fútbol y la música.",
+            "items_libro": [
+              "Ficha A — Nombre: _____ / Edad: _____ / Profesión: _____ / Nacionalidad: _____ / Afición: _____",
+              "Ficha B — Nombre: _____ / Edad: _____ / Profesión: _____ / Nacionalidad: _____ / Afición: _____"
+            ]
+          }
+        },
+        {
+          "id": "U1-p18-act2",
+          "numero": 2,
+          "tipo": "completa_huecos",
+          "destreza": "comprension_lectora+produccion_escrita",
+          "instruccion_original": "Lee y completa con los verbos del recuadro.",
+          "contenido_linguistico": ["verbos ser, llamarse, tener (formas singulares) en contexto"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Foto de dos adolescentes (Alba y Jasmín) sentadas en un sofá conversando." },
+          "video": { "presente": false },
+          "respuestas": ["[1] me llamo", "[2] tengo", "[3] Soy", "[4] se llama", "[5] es", "[6] tiene"],
+          "datos": {
+            "palabras_recuadro": ["tiene", "soy", "me llamo", "es", "tengo", "se llama"],
+            "texto_completo": "Hola, yo [1] _____ Alba y [2] _____ doce años. [3] _____ española, de Madrid. Me gusta mucho ver vídeos en el móvil. Mi compañera [4] _____ Jasmín y [5] _____ marroquí, de Rabat. Ella [6] _____ doce años. Le gusta mucho leer."
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 19,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U1-p19-act3",
+          "numero": 3,
+          "tipo": "comprension_auditiva",
+          "destreza": "comprension_oral+produccion_escrita",
+          "instruccion_original": "Escucha y completa la tabla.",
+          "contenido_linguistico": ["nombre, edad, país"],
+          "audio": { "presente": true, "pista": 16 },
+          "imagen": { "presente": true, "descripcion": "Ilustración de cartones de bingo y bombo con bolas de colores." },
+          "video": { "presente": false },
+          "respuestas": [
+            "Daniela — 19 años — Argentina",
+            "Paula — 16 años — España",
+            "Carlos — 17 años — México"
+          ],
+          "datos": {
+            "items_libro": [
+              "NOMBRE | EDAD | PAÍS",
+              "Daniela | _____ | _____",
+              "Paula | _____ | _____",
+              "Carlos | _____ | _____"
+            ]
+          }
+        },
+        {
+          "id": "U1-p19-act4",
+          "numero": 4,
+          "tipo": "comprension_auditiva",
+          "destreza": "comprension_oral",
+          "instruccion_original": "Escucha y marca.",
+          "contenido_linguistico": ["números 1-20"],
+          "audio": { "presente": true, "pista": 17 },
+          "imagen": { "presente": true, "descripcion": "Cartón tipo bingo con celdas que contienen números (algunos celdas decorativas con dibujo de bombo)." },
+          "video": { "presente": false },
+          "respuestas": ["Números marcados (con círculo morado en el libro): 20, 11, 10, 1, 4, 19, 5"],
+          "datos": {
+            "cuadricula": [
+              ["2", "[bombo]", "20", "[bombo]", "[bombo]", "3", "[bombo]", "7", "6"],
+              ["[bombo]", "8", "[bombo]", "[bombo]", "11", "10", "[bombo]", "13", "9"],
+              ["12", "[bombo]", "[bombo]", "1", "14", "[bombo]", "4", "15", "[bombo]"],
+              ["[bombo]", "19", "18", "[bombo]", "5", "16", "[bombo]", "[bombo]", "17"]
+            ]
+          }
+        },
+        {
+          "id": "U1-p19-act5",
+          "numero": 5,
+          "tipo": "relaciona",
+          "destreza": "comprension_lectora",
+          "instruccion_original": "Relaciona estas preguntas y respuestas.",
+          "contenido_linguistico": ["preguntas y respuestas para información personal"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": true },
+          "respuestas": ["1 → d", "2 → a", "3 → e", "4 → b", "5 → c"],
+          "datos": {
+            "preguntas": [
+              "1 ¿Cómo te llamas?",
+              "2 ¿Qué tal estás?",
+              "3 ¿Cuántos años tienes?",
+              "4 ¿Cuál es tu número de teléfono?",
+              "5 ¿De dónde eres?"
+            ],
+            "opciones_respuesta": {
+              "a": "Muy bien, ¿y tú?",
+              "b": "Mi número de teléfono es el 646 34 54 22.",
+              "c": "Soy de Brasil.",
+              "d": "Me llamo Aída.",
+              "e": "Tengo 12 años."
+            }
+          }
+        },
+        {
+          "id": "U1-p19-act6",
+          "numero": 6,
+          "tipo": "interaccion_oral",
+          "destreza": "produccion_oral+produccion_escrita",
+          "instruccion_original": "Pregunta a tu compañero y toma nota de sus respuestas.",
+          "contenido_linguistico": ["preguntas información personal", "asignatura favorita"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "1 ¿Cómo te llamas?",
+              "2 ¿Qué tal estás?",
+              "3 ¿Cuántos años tienes?",
+              "4 ¿Cuál es tu número de teléfono?",
+              "5 ¿Cuál es tu asignatura favorita?"
+            ]
+          }
+        },
+        {
+          "id": "U1-p19-act7",
+          "numero": 7,
+          "tipo": "expresion_oral_libre",
+          "destreza": "produccion_oral",
+          "instruccion_original": "Utiliza las notas del ejercicio anterior para presentar a tu compañero al resto de la clase.",
+          "contenido_linguistico": ["presentar a otra persona en tercera persona"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {}
+        },
+        {
+          "id": "U1-p19-act8",
+          "numero": 8,
+          "tipo": "expresion_escrita_libre",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Escribe a tu mejor amigo sobre un compañero de clase.",
+          "contenido_linguistico": ["escribir presentación de tercera persona"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "texto_modelo": "Mi compañero se llama…"
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 20,
+      "seccion": "cultura",
+      "cuadros_gramaticales": [
+        {
+          "titulo": "Saludos y despedidas",
+          "contenido": {
+            "tipo": "tabla_saludos",
+            "saludos": ["Hola, ¿qué tal?", "¿Cómo está(s)?", "Buenos días", "Buenas tardes", "Buenas noches"],
+            "despedidas": ["Adiós", "Hasta luego", "Hasta mañana"]
+          }
+        },
+        {
+          "titulo": "Mini-diálogos ilustrados",
+          "contenido": {
+            "tipo": "dialogos_ilustrados",
+            "ejemplos": [
+              "— ¡Hola, Manu! / — Hola, Paula, ¿qué tal? / — Bien.",
+              "— ¿Cómo está usted, señora Ramos? / — Muy bien, gracias. ¿Y usted?",
+              "— Hasta luego, Paula. / — Adiós, Manu.",
+              "— Dígame, ¿de dónde es usted? / — Soy cubana.",
+              "— ¡Buenas tardes! ¿Es usted Manuel Rivera? / — No, señor, yo me llamo Jorge Rivero."
+            ]
+          }
+        },
+        {
+          "titulo": "¿Tú o usted?",
+          "contenido": {
+            "tipo": "explicacion_pragmatica",
+            "texto": "En español tenemos dos formas de tratamiento, formal e informal. De manera informal usamos tú (vosotros en plural) para hablar con amigos, conocidos y la familia. De manera formal usamos usted (ustedes en plural) para hablar con personas desconocidas, personas mayores o autoridades. En Hispanoamérica es más frecuente el estilo formal, con usted, ustedes o vos (una forma especial de algunos países). En España es muy frecuente el estilo informal, con tú o vosotros."
+          }
+        },
+        {
+          "titulo": "Estilo informal / estilo formal",
+          "contenido": {
+            "tipo": "tabla_pares_tu_usted",
+            "pares": [
+              ["¿Cómo te llamas?", "¿Cómo se llama usted?"],
+              ["¿De dónde eres?", "¿De dónde es usted?"],
+              ["¿Cómo estás?", "¿Cómo está usted?"],
+              ["¿Cuántos años tienes?", "¿Cuántos años tiene usted?"]
+            ]
+          }
+        }
+      ],
+      "actividades": [
+        {
+          "id": "U1-p20-act1",
+          "numero": 1,
+          "tipo": "relaciona",
+          "destreza": "comprension_lectora",
+          "instruccion_original": "Relaciona.",
+          "contenido_linguistico": ["saludos, despedidas, tratamiento tú/usted"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1 → c", "2 → b", "3 → e", "4 → a", "5 → d"],
+          "datos": {
+            "preguntas": [
+              "1 Carla, ¿qué tal estás?",
+              "2 Hasta mañana.",
+              "3 Buenas tardes.",
+              "4 ¿Es usted Roberto?",
+              "5 ¿Cómo está usted?"
+            ],
+            "opciones_respuesta": {
+              "a": "No, yo me llamo Pedro.",
+              "b": "Hasta mañana, profe.",
+              "c": "Bien, ¿y tú?",
+              "d": "Bien, gracias, ¿y usted?",
+              "e": "Buenas tardes."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 21,
+      "seccion": "evaluacion",
+      "actividades": [
+        {
+          "id": "U1-p21-act1",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Completa las frases con la forma correspondiente del verbo ser.",
+          "contenido_linguistico": ["verbo ser singular"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. es", "2. soy", "3. es", "4. eres", "5. es", "6. eres", "7. soy", "8. eres"],
+          "datos": {
+            "items_libro": [
+              "1 La manzana _____ roja.",
+              "2 Yo _____ tu compañera.",
+              "3 Mi profesora _____ española.",
+              "4 Tú _____ mi amigo.",
+              "5 La casa _____ blanca.",
+              "6 ¿Tú _____ hermana de Pablo?",
+              "7 Yo _____ española.",
+              "8 ¿Tú _____ profesor?"
+            ]
+          }
+        },
+        {
+          "id": "U1-p21-act2",
+          "numero": 2,
+          "tipo": "completa_huecos",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Coloca el artículo correspondiente (el / la) a los siguientes nombres.",
+          "contenido_linguistico": ["artículos determinados singulares masculino/femenino"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. el", "2. la", "3. el", "4. la", "5. el", "6. el", "7. el", "8. el", "9. el", "10. la", "11. el", "12. el"],
+          "datos": {
+            "items_libro": [
+              "1 _____ helado",
+              "2 _____ pizarra",
+              "3 _____ avión",
+              "4 _____ profesora",
+              "5 _____ piano",
+              "6 _____ camarero",
+              "7 _____ hotel",
+              "8 _____ profesor",
+              "9 _____ bolígrafo",
+              "10 _____ ventana",
+              "11 _____ coche",
+              "12 _____ balón"
+            ]
+          }
+        },
+        {
+          "id": "U1-p21-act3",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Completa la tabla.",
+          "contenido_linguistico": ["formación de género en sustantivos animados"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. la niña", "2. la gata", "3. el león", "4. el director", "5. el compañero"],
+          "datos": {
+            "items_libro": [
+              "1 el niño — _____",
+              "2 el gato — _____",
+              "3 _____ — la leona",
+              "4 _____ — la directora",
+              "5 _____ — la compañera"
+            ],
+            "_nota": "En las respuestas del libro, el ítem 2 muestra «el gato» como femenino, lo que parece errata editorial (lo correcto sería «la gata»)."
+          }
+        },
+        {
+          "id": "U1-p21-act4",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Completa con una forma del verbo ser, llamarse o tener.",
+          "contenido_linguistico": ["verbos ser, llamarse, tener (formas singulares)"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. es", "2. tiene", "3. tienes", "4. soy", "5. se llama", "6. es / tiene", "7. es", "8. eres / te llamas"],
+          "datos": {
+            "items_libro": [
+              "1 Paula no _____ española, es mexicana.",
+              "2 Raúl _____ 13 años.",
+              "3 ¿Cuántos años _____ tú?",
+              "4 Yo _____ polaco.",
+              "5 Mi profesora _____ Julia.",
+              "6 Mi compañera _____ peruana y _____ 10 años.",
+              "7 ¿De dónde _____ Diego?",
+              "8 ¿Tú _____ Ricardo?"
+            ],
+            "_nota": "En el libro la respuesta del ítem 4 aparece como «eres», lo que parece errata; la forma correcta para «yo» es «soy»."
+          }
+        },
+        {
+          "id": "U1-p21-act5",
+          "numero": 5,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Escribe el nombre de estos objetos de la clase.",
+          "contenido_linguistico": ["objetos de clase"],
+          "campo_semantico": "Objetos de clase",
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Cinco fotos numeradas: una pizarra blanca (1), una tableta (2), una silla de madera (3), una mesa pupitre (4), un estante con diccionarios de varios idiomas (5)." },
+          "video": { "presente": false },
+          "respuestas": ["1 pizarra", "2 tableta", "3 silla", "4 mesa", "5 diccionario"],
+          "datos": {
+            "items_libro": ["1 _____", "2 _____", "3 _____", "4 _____", "5 _____"]
+          }
+        },
+        {
+          "id": "U1-p21-act6",
+          "numero": 6,
+          "tipo": "expresion_escrita_libre",
+          "destreza": "produccion_escrita",
+          "instruccion_original": "Contesta a las preguntas.",
+          "contenido_linguistico": ["responder a preguntas de información personal"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "1 ¿Cómo te llamas?",
+              "2 ¿Cuántos años tienes?",
+              "3 ¿Cuál es tu número de teléfono?",
+              "4 ¿De dónde eres?"
+            ],
+            "_nota": "Al pie de página aparece el bloque «Autoevaluación: Mis resultados en esta unidad son: MUY BUENOS / BUENOS / NO MUY BUENOS» con tres emoticonos. Es la parte de reflexión del cierre de unidad."
+          }
+        }
+      ]
+    }
+  ]
+}
