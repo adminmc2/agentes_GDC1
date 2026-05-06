@@ -3,6 +3,21 @@
 
 ---
 
+## [v10.42 — 2026-05-06] — Limpieza grep: anotaciones inline en entradas históricas con rango "27-33"
+
+Hallazgo bajo no bloqueante del revisor: tras v10.41 (renumeración 27-33 → 28-34), dos entradas históricas seguían siendo grep-ables con el rango viejo "27-33" sin que el contexto del fix apareciera en la misma línea:
+
+- `REVIEW.md` bitácora del 14:30 v10.40.
+- `CHANGELOG.md` v10.40 sección "1. PROCESO-MAESTRO".
+
+**Decisión:** anotación inline (opción B, propuesta al autor). Se mantiene el texto histórico porque describe lo que hizo v10.40 en su momento (fidelidad histórica), pero se le pega un inciso del tipo *"renumeradas a 28-34 en v10.41 por colisión con la Decisión 27 preexistente"*. Así, una búsqueda textual de "27-33" siempre encuentra a la vez la nota de cierre.
+
+**Lo que NO se hace:** reescribir las entradas históricas para que digan "28-34". Eso sería revisionismo del CHANGELOG y de la bitácora — describirían lo que NO se hizo en v10.40.
+
+**Sin cambios de código.** Todo en working tree antes de A4.0.
+
+---
+
 ## [v10.41 — 2026-05-06] — Fix de coherencia documental: numeración duplicada en PROCESO-MAESTRO + cabecera REVIEW
 
 Dos defectos detectados por el revisor en el commit anterior (v10.40, `e2fbfa2`).
@@ -30,7 +45,7 @@ Decía `2026-05-06 12:00` cuando la bitácora ya tenía entradas a las 14:30. Si
 
 Antes de empezar la ejecución del refactor (v10.35-v10.39 cerraron solo la propuesta), trazo el plan en los dos artefactos canónicos para evitar el patrón "trabajo solo en bitácora, no en plan" que el revisor ya señaló con Railway.
 
-**1. `PROCESO-MAESTRO.md` — Parte 4 ampliada con 7 decisiones cerradas (27-33)**
+**1. `PROCESO-MAESTRO.md` — Parte 4 ampliada con 7 decisiones cerradas (27-33, *renumeradas a 28-34 en v10.41 por colisión con la Decisión 27 preexistente — ver entrada v10.41*)**
 
 Nueva subsección "Sobre la arquitectura documental de las fases (refactor de fase 1, decidido 2026-05-06)":
 - Decisión 27: refactor aprobado tras 6 rondas.
