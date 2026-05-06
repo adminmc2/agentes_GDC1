@@ -3,6 +3,38 @@
 
 ---
 
+## [v10.44 — 2026-05-06] — A4.0 refinado: migración a worktree dedicado
+
+Tras dictamen del revisor con lente Anthropic-first: la rama `refactor/prompt-fase-1` se mueve de "checked out en el directorio original" a un **worktree dedicado** en `/Users/armandocruz/Desktop/guia-didactica-refactor/`. El directorio original vuelve a `main`.
+
+**Por qué esto es relevante (no es ceremonia):** la docs oficial de git establece que `git worktree add` crea un **checkout fresco** que **NO copia los archivos sin trackear** del checkout originante. En este repo eso se traduce en un beneficio concreto:
+
+- En el directorio original quedan los untracked de carriles paralelos: `unidades/U2/` y `viejo/_template/`.
+- En el worktree del refactor **no existen físicamente esos paths** (verificado con `ls`).
+- El trabajo de A4.1-A4.6 sucede en un árbol limpio, sin riesgo de mezcla accidental con esos untracked.
+
+Esto está alineado con la guía de Anthropic sobre Claude Code, que recomienda worktrees como mecanismo de aislamiento cuando el árbol principal acumula ruido.
+
+**Operaciones git ejecutadas:**
+- `git -C guia-didactica-profesor-IA checkout main` (devuelve el directorio original a `main`).
+- `git worktree add /Users/armandocruz/Desktop/guia-didactica-refactor refactor/prompt-fase-1` (crea el directorio del refactor en hermano).
+- Verificación: `git worktree list` muestra dos entradas; `ls` confirma ausencia de los untracked en el worktree.
+
+**Estado tras la migración:**
+
+| Directorio | Branch | HEAD | Untracked |
+|---|---|---|---|
+| `guia-didactica-profesor-IA/` | `main` | `cc1f18b` | `unidades/U2/`, `viejo/_template/` |
+| `guia-didactica-refactor/` | `refactor/prompt-fase-1` | `e3ed91d` | (ninguno) |
+
+**Documentación nueva:** `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` explica el setup paso a paso para que el autor pueda recuperar contexto si vuelve más tarde — incluye reglas de uso, comandos de verificación, procedimiento de cierre (merge + `git worktree remove`) y procedimiento de aborto.
+
+**Política operativa a partir de ahora:** todos los commits de A4.1 → A4.6 se hacen en el worktree (`guia-didactica-refactor/`). El directorio original solo se toca para inspeccionar `main` o trabajar en otros frentes (Bloque B, etc.).
+
+**Sin cambios en archivos editoriales del refactor.** Solo metadata git + documentación del setup.
+
+---
+
 ## [v10.43 — 2026-05-06] — A4.0: tag pre-refactor + rama refactor/prompt-fase-1
 
 Primer sub-paso del refactor documental de fase 1 (ver paso A4 en `REVIEW.md` y `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` sección 5 paso 0).
