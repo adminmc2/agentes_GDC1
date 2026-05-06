@@ -15,7 +15,7 @@
 | Archivo | Líneas | Secciones (`##`) | Headings totales (`#` a `######`) |
 |---|---|---|---|
 | `fases/1-extraccion-inventario/prompt.md` | **547** | **27** | **37** |
-| `fases/1-extraccion-inventario/CLAUDE.md` | 111 | 7 | 11 |
+| `fases/1-extraccion-inventario/CLAUDE.md` | 111 | 9 | 10 |
 
 > Verificable con `grep -cE "^## " <archivo>` y `grep -cE "^#{1,6} " <archivo>`. Cifras a fecha del commit que introduce este documento; pueden envejecer si el archivo se edita.
 

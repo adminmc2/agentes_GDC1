@@ -3,6 +3,21 @@
 
 ---
 
+## [v10.37 — 2026-05-06] — REFACTOR-PROPUESTA: fix completo de la tabla "Estado medido"
+
+La corrección de v10.36 fue **parcial**: arregló la fila de `prompt.md` (34→27/37) pero dejó intacta la fila de `fases/1-extraccion-inventario/CLAUDE.md`, que decía `7 | 11` cuando el conteo real es **9 | 10** (`grep -cE "^## "` y `grep -cE "^#{1,6} "`). El error de origen viene de cuando creé la primera tabla mezclando `^## ` y `^### ` en un grep combinado.
+
+Ahora la tabla "Estado medido (no opinión)" es íntegramente reproducible contra el filesystem.
+
+**Verificación cruzada del resto de cifras del documento** (no se han modificado, todas correctas hoy):
+- `TIPOS_VALIDOS` (17), `TIPOS_CUADRO_VALIDOS` (5), `SECCIONES_CANONICAS` (7), `NC1_OPCIONES` (3) — confirmadas contra `scripts/validar_inventario.py`.
+- `prompt.md`: 547 líneas, 27 `##`, 37 totales.
+- `CLAUDE.md` fase: 111 líneas, 9 `##`, 10 totales.
+
+**Aviso de proceso:** la afirmación de cierre del CHANGELOG v10.36 ("la cifra 34 era un cálculo intermedio mal etiquetado, tabla reescrita") era demasiado fuerte: solo se había corregido una fila. Esta entrada cierra el conteo entero. La lección queda: cuando una tabla es "evidencia dura", verificar **todas** sus filas, no solo la que motiva la revisión.
+
+---
+
 ## [v10.36 — 2026-05-06] — REFACTOR-PROPUESTA: dos correcciones tras dictamen del revisor
 
 Dos defectos detectados en `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` justo después de commitear v10.35. Ambos corregidos ahora, sin tocar el código de producción.
