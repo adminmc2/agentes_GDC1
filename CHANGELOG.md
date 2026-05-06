@@ -3,6 +3,24 @@
 
 ---
 
+## [v10.36 — 2026-05-06] — REFACTOR-PROPUESTA: dos correcciones tras dictamen del revisor
+
+Dos defectos detectados en `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` justo después de commitear v10.35. Ambos corregidos ahora, sin tocar el código de producción.
+
+**1. Conteo de secciones de `prompt.md` incorrecto.** La tabla "Estado medido (no opinión)" afirmaba 34 secciones top-level. La medición real es **27 secciones `##`** (37 si se cuentan todos los headings `#` a `######`). La cifra 34 era un cálculo intermedio mal etiquetado. Tabla reescrita con dos columnas claras (`##` vs total) + nota sobre cómo se reproduce el conteo (`grep -cE "^## "`). Cuando un dato se presenta como "evidencia dura", debe ser exactamente reproducible.
+
+**2. Contradicción interna sobre el validador.** Las secciones 3.3, 5.5 y 6 reconocían una divergencia presente entre `schema-inventario.md` y `validar_inventario.py` (la clave `_nota_unidad_atipica` declarada opcional contractual en el schema vs. tratada como no-canónica por el validador) y exigían alinear el validador antes del merge. Pero la sección 8 (scope) afirmaba "No se toca `scripts/validar_inventario.py`" y hablaba de "si en el futuro se detecta divergencia", como si la divergencia fuese hipotética. Sec. 8 reescrita para eliminar la ambigüedad:
+
+- El refactor nominal es documental (no toca el validador en sus commits propios).
+- La divergencia conocida hoy (no futura) será detectada por el paso 5.5.
+- La alineación del validador se hace en **commit aparte antes del merge**, técnicamente fuera del refactor nominal pero **prerequisito ineludible del merge a `main`**.
+
+Lo que aclara la frontera: "fuera del scope nominal" no equivale a "opcional o aplazable"; es prerequisito del cierre del refactor.
+
+**Aviso de proceso:** estos dos defectos estaban en `REFACTOR-PROPUESTA.md` cuando se commiteó en v10.35 (commit `d15a0dd`). El commit anterior fijó la contradicción en `main` antes de cazarla. Esta entrada cierra el ciclo.
+
+---
+
 ## [v10.35 — 2026-05-06] — Sincronización REVIEW con trabajo real + propuesta de refactor de fase 1
 
 Dos cambios documentales que cierran inconsistencias de larga data, sin tocar código de producción.

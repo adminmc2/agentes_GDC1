@@ -12,10 +12,12 @@
 
 ### Estado medido (no opinión)
 
-| Archivo | Líneas | Secciones top-level |
-|---|---|---|
-| `fases/1-extraccion-inventario/prompt.md` | **547** | **34** |
-| `fases/1-extraccion-inventario/CLAUDE.md` | 111 | 7 |
+| Archivo | Líneas | Secciones (`##`) | Headings totales (`#` a `######`) |
+|---|---|---|---|
+| `fases/1-extraccion-inventario/prompt.md` | **547** | **27** | **37** |
+| `fases/1-extraccion-inventario/CLAUDE.md` | 111 | 7 | 11 |
+
+> Verificable con `grep -cE "^## " <archivo>` y `grep -cE "^#{1,6} " <archivo>`. Cifras a fecha del commit que introduce este documento; pueden envejecer si el archivo se edita.
 
 `prompt.md` actualmente lleva en una sola pieza:
 - Regla de oro
@@ -367,7 +369,13 @@ Para evitar que el refactor crezca:
 - No se renombra ningún campo del JSON. El schema se mueve de archivo, no se modifica.
 - No se modifican los inventarios U0, U1, U3. Solo se verifica que siguen siendo legítimamente generables con los nuevos artefactos.
 - No se aborda la disciplina de cierre de commits (CHANGELOG/versión obligatorios) — frente paralelo distinto.
-- **No se toca `scripts/validar_inventario.py`.** Pero queda escrita la regla de scope: `schema-inventario.md` y el validador son **contratos paralelos del mismo shape**. Cualquier cambio en uno requiere revisión cruzada del otro. Si en el futuro se detecta divergencia, se trata como bug, no como diferencia legítima.
+- **`scripts/validar_inventario.py` no se modifica dentro de los commits nominales del refactor.** El refactor en sí es estrictamente documental: mover y reorganizar archivos `.md`. **Pero** la regla "`schema-inventario.md` y el validador son contratos paralelos del mismo shape, no pueden divergir en el merge" (sec. 3.3, sec. 6, paso 5.5) es estricta y aplica al cierre. **No es una regla sobre divergencia futura, es una regla sobre el estado del repo al mergear.**
+
+  **Divergencia ya conocida hoy:** el schema declara `_nota_unidad_atipica` como opcional contractual (sec. 3.3); el validador actual la trata como no-canónica y emite aviso. Esta divergencia presente, no hipotética, será obligatoriamente detectada por el paso 5.5.
+
+  **Resolución:** la alineación del validador (al menos: añadir `_nota_unidad_atipica` a `CLAVES_TOP_OPCIONALES`, igual que ya se hizo con `autoevaluacion`) se realiza en **commit aparte, antes del merge**. Técnicamente fuera del refactor nominal, pero **prerequisito ineludible del merge a `main`**. El refactor no se mergea sin esa alineación previa o simultánea.
+
+  Cualquier divergencia adicional que el paso 5.5 detecte sigue la misma regla: se resuelve antes del merge, sin excepciones (ver paso 5.5).
 
 ---
 
