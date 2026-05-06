@@ -45,7 +45,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 
 > **Movido a `schema-inventario.md` en A4.2a.** Forma del JSON, schema top-level (10 claves obligatorias + 1 opcional), schema por página, por actividad, por cuadro, schema del bloque de autoevaluación, schema de `_nota_unidad_atipica`, taxonomía cerrada de 17 tipos, enumeración de 5 valores de `tipo_cuadro`, enumeración de 7 secciones canónicas, estructura de `vocabulario_consolidado`, estructura de `respuestas` / `campo_semantico` / `audio`/`imagen`/`video`, estructura de `datos.items_libro`. Single source of truth con `scripts/validar_inventario.py`.
 >
-> Las **reglas de población semántica** (cuándo aplica `campo_semantico`, qué cuenta como `principal/recurrente/comprension`, contenido de `respuestas`, cuándo marcar `presente=true`, distinción `completa_huecos` vs `produccion_escrita_guiada`) viven en `reglas-operativas.md` (se migran en A4.2b).
+> Las **reglas de población semántica** (cuándo aplica `campo_semantico`, qué cuenta como `principal/recurrente/comprension`, contenido de `respuestas`, cuándo marcar `presente=true`, distinción `completa_huecos` vs `produccion_escrita_guiada`, criterios canónicos para asignar cada uno de los 17 tipos) **siguen viviendo provisionalmente en este `prompt.md`** y **se migrarán a `reglas-operativas.md` en A4.2b**. Hasta que A4.2b cierre, el source of truth de esas reglas decisionales es este archivo, no `reglas-operativas.md` (que solo contiene los 3 fragmentos absorbidos en v10.49).
 
 ---
 

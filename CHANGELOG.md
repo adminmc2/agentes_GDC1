@@ -3,6 +3,40 @@
 
 ---
 
+## [v10.50 — 2026-05-06] — Cleanup pre-A4.2b: dos correcciones del revisor antes de arrancar
+
+Dos hallazgos del revisor sobre el commit anterior `40e123c` (v10.49). Ambos resueltos antes de tocar A4.2b para que el sub-paso arranque sin inconsistencias.
+
+**1 (Medio) — Doble verdad sobre source of truth de la taxonomía.**
+
+Tras v10.49, el placeholder de `prompt.md` decía:
+> *"Las reglas de población semántica (...distinción completa_huecos vs produccion_escrita_guiada) viven en reglas-operativas.md (se migran en A4.2b)."*
+
+Mientras `reglas-operativas.md` decía:
+> *"El criterio canónico para cada uno de los 17 tipos vive aún en prompt.md y se moverá aquí en el siguiente sub-paso."*
+
+Los dos archivos hablaban del mismo contenido en sentidos opuestos. La realidad: el contenido decisional canónico **sigue en `prompt.md`** hasta que A4.2b lo migre.
+
+**Resolución:** ambos archivos alineados a la verdad operativa. `prompt.md` ahora dice *"siguen viviendo provisionalmente en este `prompt.md` y se migrarán a `reglas-operativas.md` en A4.2b. Hasta que A4.2b cierre, el source of truth de esas reglas decisionales es este archivo"*. `reglas-operativas.md` confirma simétricamente *"vive provisionalmente en `prompt.md`... source of truth = `prompt.md`"*.
+
+**2 (Bajo) — Tabla de mapeo de secciones no alineada con la práctica.**
+
+En el adelanto parcial de v10.49, escribí en `reglas-operativas.md` la fila *"Reflexión / Autoevaluación / cierre → reflexion"*. Verificado contra los inventarios reales: las páginas de cierre con bloque `autoevaluacion` (U1-p21, U3-p43) usan `seccion: evaluacion`, no `reflexion`. Mi fila era una regla inventada sin avalar.
+
+Verificación programática:
+```
+U1 p21 (con bloque autoevaluacion top-level): seccion=evaluacion
+U3 p43 (con bloque autoevaluacion top-level): seccion=evaluacion
+```
+
+**Resolución:** tabla reescrita con una columna nueva "Avalado en" que cita los inventarios oráculo. La fila inventada se sustituye por *"Página de cierre de unidad con bloque `autoevaluacion` (U1-p21, U3-p43) → `evaluacion`"*. Sobre `reflexion` (que está en el enum del schema pero ningún inventario actual lo usa), se añade nota explícita: decisión diferida hasta primer caso real o hasta que A4.2b traiga la regla canónica desde el `prompt.md` actual. Mientras tanto, "usar `evaluacion` por consistencia con el oráculo".
+
+**Por qué se hace antes de A4.2b:** ambos defectos contaminan el sub-paso siguiente. La doble verdad sobre la taxonomía es exactamente el contenido que A4.2b va a migrar — arrancar sin alinear primero significaría arrastrar la inconsistencia. La regla inventada de `reflexion` se vería confirmada al ejecutar el smoke test post-A4.4 si no se corrige ahora.
+
+**Sin cambios de código.** Solo coherencia documental + alineación con el oráculo.
+
+---
+
 ## [v10.49 — 2026-05-06] — Cleanup de A4.2a: 3 fugas decisionales retiradas de schema + métrica corregida
 
 Dos hallazgos del revisor sobre el commit `668572f` (v10.47, cierre de A4.2a). Ambos se aceptan:

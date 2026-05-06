@@ -30,17 +30,20 @@
 
 **Procedimiento:**
 1. Identificar el header visible en la página (encabezado o pestaña del libro).
-2. Mapear el header al valor normalizado correspondiente:
+2. Mapear el header al valor normalizado correspondiente.
 
-| Header del libro | Valor normalizado |
-|---|---|
-| Vocabulario | `vocabulario` |
-| Gramática | `gramatica` |
-| Comunicación | `comunicacion` |
-| Destrezas | `destrezas` |
-| Cultura | `cultura` |
-| Evaluación / Practica lo aprendido | `evaluacion` |
-| Reflexión / Autoevaluación / cierre | `reflexion` |
+**Mapeo canónico avalado por la práctica actual** (oráculo: inventarios trackeados U0, U1, U3):
+
+| Header del libro | Valor normalizado | Avalado en |
+|---|---|---|
+| Vocabulario | `vocabulario` | U1, U3 |
+| Gramática | `gramatica` | U1, U3 |
+| Comunicación | `comunicacion` | U1, U3 |
+| Destrezas | `destrezas` | U1, U3 |
+| Cultura | `cultura` | U1, U3 |
+| Página de cierre de unidad con bloque `autoevaluacion` (U1-p21, U3-p43) | `evaluacion` | U1-p21, U3-p43 |
+
+**Sobre `reflexion`:** está incluido en la enumeración cerrada de `seccion` (`schema-inventario.md` §8) pero **no tiene uso documentado en los inventarios actuales** (U0, U1, U3 no asignan `reflexion` a ninguna página). El criterio para distinguir `evaluacion` vs `reflexion` se documentará cuando aparezca el primer caso real, o cuando A4.2b traiga la regla canónica desde el `prompt.md` actual. Hasta entonces, **usar `evaluacion` por consistencia con el oráculo**.
 
 **Páginas que continúan una sección anterior** (típicamente con etiqueta visual tipo "(cont.)"): se les asigna **la misma clave normalizada** que la página origen. La etiqueta "(cont.)" del libro NO va al JSON; la sección sigue siendo la misma.
 
@@ -52,9 +55,9 @@
 
 Enumeración cerrada en `schema-inventario.md` §5.
 
-**Pendiente de migración completa en A4.2b.** El criterio canónico para cada uno de los 17 tipos vive aún en `prompt.md` y se moverá aquí en el siguiente sub-paso.
+**El criterio canónico para asignar cada uno de los 17 tipos** (qué cuenta como `escucha_y_repite`, cómo distinguir `completa_huecos` de `produccion_escrita_guiada`, etc.) **vive provisionalmente en `prompt.md`** hasta que A4.2b complete la migración. Hasta entonces, source of truth = `prompt.md`.
 
-**Ya documentado** (absorbido en v10.49 desde la fuga workflow de schema):
+**Ya documentado aquí** (absorbido en v10.49 desde la fuga workflow de schema):
 - La enumeración de 17 valores es **provisional y revisable a nivel global del proyecto**. No se amplía ni se cambia ad hoc por unidad. Cualquier modificación del set requiere decisión cerrada en PROCESO-MAESTRO antes de aplicarse en `schema-inventario.md` y en `validar_inventario.py`.
 - Ante casos ambiguos durante la extracción (un contenido del libro que no encaja claro en ningún tipo): marcar como TODO y consultar al autor antes de cerrar el inventario.
 
