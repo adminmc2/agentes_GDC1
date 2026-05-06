@@ -3,6 +3,26 @@
 
 ---
 
+## [v10.46 — 2026-05-06] — A4.1: tres archivos auxiliares creados con headers de identidad
+
+Segundo sub-paso del refactor documental de fase 1 (ver paso A4 en `REVIEW.md` y `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` sección 5 paso 1).
+
+**Archivos creados** en `fases/1-extraccion-inventario/`:
+
+- `schema-inventario.md` (8 líneas) — Contrato de datos puro. Forma del JSON, tipos, obligatoriedad, restricciones validables sin contexto editorial. Contrato paralelo con `scripts/validar_inventario.py`.
+- `reglas-operativas.md` (8 líneas) — Decisión, clasificación, población y unidades atípicas. **Single source of truth de precedencias.**
+- `convenciones-y-casos.md` (10 líneas) — Transcripción del libro al JSON + casebook de casos resueltos.
+
+Cada archivo lleva solo el header de responsabilidad: qué SÍ contiene, qué NO contiene, y referencia al mapeo de la sección 4 de `REFACTOR-PROPUESTA.md` para identificar qué se moverá en A4.2.
+
+**Ningún contenido editorial movido todavía.** `prompt.md` sigue intacto en 547 líneas. Eso es A4.2.
+
+**Verificación:** los 3 archivos existen físicamente (`ls fases/1-extraccion-inventario/`), tienen identidad clara y citan su origen. El `prompt.md` actual no se ha tocado — la migración fila por fila es el próximo sub-paso.
+
+**Próximo:** A4.2 (migrar contenido del `prompt.md` actual a los 3 destinos según el mapeo de la sección 4, aplicando split por capa, con verificación de anclas semánticas tras cada movimiento).
+
+---
+
 ## [v10.45 — 2026-05-06] — Limpieza cosmética del setup de worktree
 
 Dos residuos bajos detectados por el revisor en el commit v10.44 (`a9f710e`). Ninguno bloqueante.
