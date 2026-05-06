@@ -3,6 +3,69 @@
 
 ---
 
+## [v10.56 — 2026-05-07] — A4.4: reescritura de `CLAUDE.md` de fase en modo contrato corto
+
+Séptimo sub-paso del refactor. `CLAUDE.md` de fase reescrito según `REFACTOR-PROPUESTA.md` §3.1: contrato corto, no manual.
+
+**Estructura final** (57 líneas, 7 secciones — dentro del norte 40-60):
+
+1. Qué produce esta fase (1 párrafo).
+2. Input y output (2 bullets).
+3. Cómo se invoca (1 línea).
+4. Cómo validar (validador automático + revisión visual del autor).
+5. **Reglas críticas (las que un humano nunca debe olvidar al trabajar en esta fase)** — 5 reglas en 1 línea cada una:
+   - Texto verbatim del libro (la regla de oro como recordatorio breve).
+   - No inventar contenido editorial.
+   - Single source of truth por capa.
+   - Validar antes de cerrar.
+   - Schema documental ↔ validador no divergen.
+6. **Tabla "Para qué consultar qué archivo"** — 7 preguntas mapeadas a su archivo: prompt, schema, reglas-operativas, convenciones-y-casos. Mapa de navegación operativo.
+7. Documentos relacionados (lista breve).
+
+**Eliminados respecto al pre-refactor (cc1f18b: 111 líneas, 9 secciones):**
+
+- **Sección "Reglas operativas críticas (resumen — detalle en `prompt.md`)"** de 22 líneas que reescribía contenido ahora migrado a `reglas-operativas.md` y `schema-inventario.md`. Violaba single source of truth: las mismas reglas vivían en CLAUDE como "resumen" y en los archivos de soporte como "fuente". Sustituida por 5 reglas críticas en 1 línea cada una (las que el humano debe recordar, no las que el modelo consulta para ejecutar).
+- **"Coste estimado"** (no operativo, ya eliminado del prompt en A4.3).
+- **"Mejora continua"** (vive ahora en `convenciones-y-casos.md` §5).
+- **"Contexto futuro (cuando esta fase sea un agente CrewAI)"** — especulación sobre el futuro, no contrato operativo. CrewAI sigue bloqueado en este proyecto; reabrir solo cuando aplique.
+- Sub-bloque "Lo que hace Claude Code" (4 pasos numerados duplicaban los pasos del prompt).
+- Sub-sección "Errores detectados en extracción real" (4 bullets que duplican casos resueltos en `convenciones-y-casos.md` §4 + reglas decisionales en `reglas-operativas.md` §1, §3, §4, §6).
+
+**Verificación:**
+
+```
+grep "Texto verbatim del libro|10 claves obligatorias|Taxonomía cerrada de tipos|Mis resultados en esta unidad son|produccion_escrita_guiada"
+→ ningún match duplicado entre CLAUDE.md y prompt.md.
+```
+
+La única regla que aparece en CLAUDE como recordatorio ("Texto verbatim del libro") está formulada distinto del prompt ("El JSON debe contener el contenido EXACTAMENTE COMO APARECE EN EL LIBRO"). El detalle operativo de la regla vive en `prompt.md` Regla de oro; el CLAUDE solo la nombra. Es la jerarquía correcta según el plan: CLAUDE marca **lo que un humano debe recordar**, prompt expande para **ejecutar**.
+
+**Métricas:**
+
+| Versión | Líneas | Secciones |
+|---|---|---|
+| Pre-refactor (`cc1f18b`) | 111 | 9 |
+| Post-A4.4 (este commit) | **57** | **7** |
+
+Reducción 49% sobre el CLAUDE de fase pre-refactor.
+
+**Métricas globales del refactor tras A4.4:**
+
+| Archivo | Pre-refactor | Post-A4.4 |
+|---|---|---|
+| `prompt.md` | 547 | 107 |
+| `CLAUDE.md` (fase) | 111 | 57 |
+| `schema-inventario.md` | — | 308 |
+| `reglas-operativas.md` | — | 208 |
+| `convenciones-y-casos.md` | — | 165 |
+| Total operativo | 658 | 845 |
+
+El total crece (+187 líneas) porque ahora hay 5 archivos en lugar de 2, **pero cada uno tiene una responsabilidad única y no se duplican entre sí**. El prompt y el CLAUDE — los archivos que se leen en cada extracción — han bajado de 658 a 164 líneas (–75%). Los 681 líneas adicionales viven en archivos de soporte que solo se consultan cuando hace falta.
+
+**Próximo:** A4.5 — **primera prueba funcional oficial.** Reextracción empírica de 3 casos seleccionados (página rica + U0 completa + U1-p21) usando solo los nuevos artefactos. Diff vs JSON existente. Validador con 0 errores y 0 avisos. Es el primer test de que los nuevos archivos sirven realmente para extraer.
+
+---
+
 ## [v10.55 — 2026-05-07] — A4.3: reescritura desde cero de `prompt.md` core
 
 Sexto sub-paso del refactor. `prompt.md` reescrito íntegramente según `REFACTOR-PROPUESTA.md` §5 paso 3, no solo consolidación.
