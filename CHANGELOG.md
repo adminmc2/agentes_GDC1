@@ -3,6 +3,32 @@
 
 ---
 
+## [v10.49 — 2026-05-06] — Cleanup de A4.2a: 3 fugas decisionales retiradas de schema + métrica corregida
+
+Dos hallazgos del revisor sobre el commit `668572f` (v10.47, cierre de A4.2a). Ambos se aceptan:
+
+**1 (Medio) — Frontera schema/reglas no quedó limpia.** El revisor identificó 3 fragmentos decisionales que se habían colado en `schema-inventario.md` violando el principio "split por capa, no por campo":
+
+- **Fuga 1, §6 (autoevaluación):** "se omite en unidades atípicas que no tienen bloque (ej. U0)". El "cuándo se omite" es decisional según el mapeo de la sección 4 de `REFACTOR-PROPUESTA.md`. La forma "el bloque es opcional a nivel top-level" sí pertenece a schema.
+- **Fuga 2, §8 (enumeración seccion):** "Las páginas que continúan una sección usan la misma clave normalizada". Es regla de cómo determinar la sección, no parte de la enumeración cerrada.
+- **Fuga 3, §5 (taxonomía):** la nota "Provisional y revisable... Si aparece un caso que no encaja, se marca y se consulta al autor". Workflow editorial, no contrato de datos puro.
+
+**Resolución:** los 3 fragmentos se retiran de `schema-inventario.md` y se absorben en `reglas-operativas.md` como adelanto parcial de A4.2b. Donde antes había contenido decisional en schema queda ahora solo:
+- La forma estructural correspondiente.
+- Una **línea-puente** explícita del estilo "Cuándo / Cómo … → `reglas-operativas.md`".
+
+Verificación: grep del contenido decisional concreto → `reglas=1, schema=0` en cada uno de los 3 casos. La línea-puente sí aparece en schema, pero es referencia al destino, no contenido decisional.
+
+**2 (Bajo) — Métrica desalineada.** El CHANGELOG v10.47 y la bitácora REVIEW dijeron "300 líneas" para `schema-inventario.md` cuando el dato real era **302**. Repetición del patrón "cifras duras por aproximación" que ya se había marcado antes (v10.37). Métrica corregida en esta entrada con el valor exacto del momento de cierre de v10.49: `schema-inventario.md` 308 líneas (creció con las líneas-puente), `prompt.md` 290 (no cambia), `reglas-operativas.md` 75 (antes 8).
+
+**Cómo se documentó honestamente A4.2a:** el "cerrado limpio" de A4.2a queda matizado retroactivamente. La fila de la tabla de sub-pasos en REVIEW.md ahora dice "(a) ✅ schema migrado + 3 fugas decisionales absorbidas en v10.49"; refleja que A4.2a fue sustancialmente correcto pero requirió este cleanup para sostener la frontera. La lección recurrente: el revisor pidió en v10.37 verificar todas las filas de cualquier "evidencia dura"; aplicado aquí significa verificar también que la frontera por capas se respetó en todo el archivo, no solo en las anclas semánticas.
+
+**Estado A4.2 tras este commit:** (a) ✅ schema migrado + frontera limpia · (b) 📋 reglas-operativas con adelanto parcial ya hecho · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2b — continuar la migración de `reglas-operativas.md` con el resto del contenido decisional del prompt (ya enumerado al final del propio archivo en sección "Pendiente de A4.2b").
+
+---
+
 ## [v10.48 — 2026-05-06] — Regla de tipología de verificaciones por sub-paso
 
 Antes de arrancar A4.2b, se documenta de forma explícita qué tipo de verificación corresponde a cada sub-paso del refactor. Sin esta regla, cabía la ambigüedad de tratar las verificaciones de anclas (locales, documentales) como si fueran pruebas funcionales, lo cual debilita el gate real de A4.5.

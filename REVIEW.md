@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-06 19:45
+> **Última actualización:** 2026-05-06 20:30
 
 ---
 
@@ -123,7 +123,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 |---|---|---|
 | **A4.0** | Tag `pre-refactor-prompt-fase1` + rama `refactor/prompt-fase-1` (+ worktree dedicado, ver REFACTOR-WORKTREE.md) | ✅ 2026-05-06 16:30 (tag y rama → `cc1f18b`; worktree en `../guia-didactica-refactor/`) |
 | **A4.1** | Crear los 3 archivos auxiliares vacíos con headers | ✅ 2026-05-06 18:45 (`schema-inventario.md` 8 líneas, `reglas-operativas.md` 8, `convenciones-y-casos.md` 10) |
-| **A4.2** | Migrar contenido fila por fila aplicando split por capa + verificación de anclas | 🔄 (a) ✅ schema migrado · (b) 📋 reglas-operativas · (c) 📋 convenciones-y-casos |
+| **A4.2** | Migrar contenido fila por fila aplicando split por capa + verificación de anclas | 🔄 (a) ✅ schema migrado + 3 fugas decisionales absorbidas en v10.49 · (b) 📋 reglas-operativas (con adelanto parcial ya hecho) · (c) 📋 convenciones-y-casos |
 | **A4.3** | Reescribir `prompt.md` core desde cero (incluye sección "Cierre y validación") | 📋 |
 | **A4.4** | Reescribir `CLAUDE.md` de fase en modo contrato corto | 📋 |
 | **A4.5** | Prueba empírica de reextracción (3 casos: página rica + U0 completa + U1-p21) | 📋 |
@@ -518,6 +518,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-06 20:30** — **Cleanup de A4.2a tras dictamen del revisor** (v10.49). El cierre de A4.2a se había sobredeclarado: 3 fugas decisionales se habían colado en `schema-inventario.md` violando la frontera "split por capa": (1) "se omite en unidades atípicas" (cuándo, no forma); (2) "Las páginas que continúan una sección usan la misma clave normalizada" (cómo determinar, no enumeración); (3) workflow "se consulta al autor" en taxonomía (no contrato de datos puro). Los 3 fragmentos retirados de schema y absorbidos en `reglas-operativas.md` como adelanto parcial de A4.2b. Schema ahora contiene solo formas + enumeraciones + restricciones validables + líneas-puente a reglas-operativas. Verificación: grep del contenido decisional → reglas=1, schema=0 en cada caso. Métrica corregida: schema-inventario.md tiene **308 líneas** (no "300" como dijo v10.47 por aproximación), `prompt.md` 290 (correcto), `reglas-operativas.md` ahora 75 líneas (antes 8). Próximo: A4.2b (continuar la migración de reglas-operativas con el resto del contenido decisional del prompt).
 - **2026-05-06 19:45** — Regla de tipología de verificaciones añadida (v10.48): A4.2-A4.4 = checks locales de integridad documental (no pruebas funcionales). A4.5 = primera prueba funcional oficial (reextracción empírica). A4.5.5 = cross-check schema↔validador antes del cierre. Smoke test opcional tras A4.4 permitido pero no es gate formal. Insertado en `REFACTOR-PROPUESTA.md` §5 como nota destacada al inicio del plan; eco breve en este REVIEW tras la tabla de sub-pasos. Próximo: A4.2b.
 - **2026-05-06 19:30** — **A4.2a cerrado** (v10.47): contenido estructural migrado del `prompt.md` a `schema-inventario.md`. El nuevo schema-inventario.md (300 líneas, 13 secciones numeradas) contiene: estructura top-level (10+1 claves), schema por página/actividad/cuadro, schema del bloque autoevaluación, taxonomía cerrada de 17 tipos, enumeraciones de `tipo_cuadro` (5) y `seccion` (7), estructura de `vocabulario_consolidado` y demás campos, restricciones condicionales validables (ej. `imagen.descripcion` obligatoria si `presente=true`), y la nota de source-of-truth con `validar_inventario.py`. En `prompt.md` las 9 secciones movidas se reemplazaron por un único placeholder con enlace al schema. Verificación de anclas semánticas: 4 frases canónicas verificadas (`Taxonomía cerrada de tipos de actividad`, `tipo_cuadro describe la categoría pedagógica`, `Mis resultados en esta unidad son`, `MUY BUENOS / BUENOS / NO MUY BUENOS`) — todas presentes en schema, ausentes de prompt. `prompt.md` pasó de 547 a 290 líneas; el resto de migraciones bajará el tamaño hasta el norte ~80-120 líneas tras A4.3. Próximo: A4.2b (migrar a `reglas-operativas.md`).
 - **2026-05-06 18:45** — **A4.1 cerrado** (v10.46): tres archivos auxiliares creados en `fases/1-extraccion-inventario/` con headers de identidad solo (sin contenido editorial todavía): `schema-inventario.md` (responsabilidad: contrato de datos puro, contrato paralelo con `validar_inventario.py`), `reglas-operativas.md` (responsabilidad: decisión + clasificación + población + unidades atípicas, single source of truth de precedencias), `convenciones-y-casos.md` (responsabilidad: transcripción + casebook). Cada header incluye qué SÍ contiene, qué NO contiene y referencia al mapeo de la sección 4 de `REFACTOR-PROPUESTA.md` para A4.2. `prompt.md` sigue intacto en 547 líneas — la migración de contenido es A4.2. Próximo: A4.2 (mover contenido fila por fila + verificación de anclas semánticas).

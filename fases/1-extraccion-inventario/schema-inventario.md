@@ -156,7 +156,9 @@ tarea_final
 juego
 ```
 
-> **Provisional y revisable** unidad por unidad. Si aparece un caso que no encaja, se marca y se consulta al autor (ver `reglas-operativas.md` para los criterios de elección entre tipos).
+> Enumeración provisional y revisable a nivel global del proyecto. Cualquier ampliación o cambio del set entra como decisión cerrada en PROCESO-MAESTRO antes de aplicarse aquí y en el validador.
+
+> Criterios de cuándo asignar cada tipo (incluida la distinción `completa_huecos` vs `produccion_escrita_guiada`) y workflow ante casos ambiguos → `reglas-operativas.md`.
 
 ---
 
@@ -174,7 +176,9 @@ juego
 **Restricciones estructurales:**
 - Los 4 sub-campos (`pagina`, `instruccion_original`, `opciones`, `emoticonos`) son obligatorios cuando el bloque está presente.
 - `opciones` debe ser exactamente una lista de 3 strings.
-- El bloque entero es **opcional a nivel top-level**: se omite en unidades atípicas que no tienen bloque (ej. U0).
+- El bloque entero es **opcional a nivel top-level**.
+
+> Cuándo se omite el bloque y cuándo está presente → `reglas-operativas.md`.
 
 **Valores fijos en NC1** (validables mecánicamente cuando `curso == "nc1"`):
 - `instruccion_original`: `"Mis resultados en esta unidad son:"`.
@@ -211,7 +215,9 @@ evaluacion
 reflexion
 ```
 
-> Valor normalizado. **NO** se admite texto libre tipo "Vocabulario — Parientes" ni "Comunicación (cont.)". Las páginas que continúan una sección usan la misma clave normalizada.
+> Valor normalizado. **NO** se admite texto libre. Solo uno de los 7 valores listados arriba.
+
+> Cómo determinar la sección de una página dada (incluido el caso de páginas que continúan una sección) → `reglas-operativas.md`.
 
 ---
 
