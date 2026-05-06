@@ -63,7 +63,7 @@ En este proyecto ya se aplicó al CLAUDE.md raíz (ver bitácora `REVIEW.md`, 18
 
 ### 2.2. Skills (`.claude/skills/<nombre>/SKILL.md`) están diseñadas para workflows especializados que no deben cargarse persistentemente
 
-Cita literal de la docs de Claude Code: *"skills encapsulate domain knowledge as on-demand instructions"*. La extracción de inventario es un workflow concreto, no contexto que deba pesar en cada sesión. Pero con 9 ejecuciones en NC1, el coste de mantener una skill no compensa frente al beneficio. **Skill queda fuera de v1.**
+Cita literal de la docs de Claude Code: *"skills encapsulate domain knowledge as on-demand instructions"*. La extracción de inventario es un workflow concreto, no contexto que deba pesar en cada sesión. Pero el scope de NC1 es 10 unidades (U0-U9: U0 atípica + U1-U9 regulares), por lo que la fase se ejecuta una decena de veces, no centenares. El coste de mantener una skill no compensa frente al beneficio en una curva de uso tan corta. **Skill queda fuera de v1.**
 
 ### 2.3. Best practices: be explicit + separate concerns
 
@@ -206,7 +206,7 @@ Este es probablemente el artefacto más importante después del prompt core, por
 
 ### Skill (`.claude/skills/...`) — fuera del alcance de v1
 
-Razón: la fase se ejecuta ~9 veces (una por unidad NC1). El coste de mantener una skill no compensa frente al beneficio en una única curva de uso. Reabrir solo si tras v1 se observa un patrón de uso repetido que justifique la encapsulación.
+Razón: la fase se ejecuta ~10 veces en NC1 (U0-U9). El coste de mantener una skill no compensa frente al beneficio en una curva de uso tan corta. Reabrir solo si tras v1 se observa un patrón de uso repetido que justifique la encapsulación.
 
 ---
 
@@ -243,7 +243,7 @@ Muchas filas se parten en dos destinos (capa estructural + capa decisional). Es 
 | 355-360 | Reglas para textos de lectura | `convenciones-y-casos.md` |
 | 361-376 | Reglas para diálogos | `convenciones-y-casos.md` |
 | 377-394 | Reglas para sopas de letras y juegos | `convenciones-y-casos.md` |
-| 395-411 | Reglas para unidades atípicas | `reglas-operativas.md` |
+| 395-411 | Reglas para unidades atípicas | declaración de `_nota_unidad_atipica` como clave opcional contractual → `schema-inventario.md` · cuándo añadirla, mapeo de secciones vacías, valor especial de `contenidos_indice` para secciones inaplicables → `reglas-operativas.md` · ejemplo JSON canónico de U0 → `convenciones-y-casos.md` |
 | 412-427 | Sílaba tónica subrayada hasta U3 | `convenciones-y-casos.md` |
 | 428-443 | Patrón "primer ítem resuelto como ejemplo" | `convenciones-y-casos.md` |
 | 444-489 | Reglas para cuadros (`tipo_cuadro`, qué NO es cuadro) | enum 5 valores → `schema-inventario.md` · precedencia + cómo asignar → `reglas-operativas.md` |
@@ -275,8 +275,8 @@ Muchas filas se parten en dos destinos (capa estructural + capa decisional). Es 
 - Por cada fila del mapeo (sección 4), copiar la sección al archivo destino. Cuando la fila se parte en dos destinos (estructural + decisional), marcar **explícitamente** en cada destino qué parte le corresponde.
 - En `prompt.md` dejar **placeholders con enlace** *("Schema: ver `schema-inventario.md`")* para que no quede roto durante el proceso.
 - **Verificación tras cada archivo (semántica, no por conteo):**
-  - Marcar la fila correspondiente en el mapeo de la sección 4 como hecha (checklist).
-  - **Búsqueda de anclas semánticas:** identificar 2-3 frases canónicas únicas por sección antes de moverla (ej. "principio de género no marcado", "literalidad del contenido visible al alumno"). Después del movimiento, `grep` cada ancla: debe aparecer en exactamente un archivo nuevo.
+  - Recorrer la tabla de la sección 4 fila por fila como referencia inmutable (no se modifica) y llevar un marcador externo de progreso — en la descripción del PR de la rama del refactor o en un comentario fijado de la sesión de trabajo. Cada fila migrada se anota como completada antes de pasar a la siguiente. La regla de cierre del paso 2 es que todas las filas estén anotadas.
+  - **Búsqueda de anclas semánticas:** identificar 2-3 frases canónicas únicas por sección **antes** de moverla, verificadas con `grep` en el `prompt.md` actual. Ejemplos válidos extraídos del prompt vigente: *"Taxonomía cerrada de tipos de actividad"* (debería terminar en `schema-inventario.md`); *"tipo_cuadro describe la categoría pedagógica"* (`schema-inventario.md`); *"primer ítem resuelto como ejemplo"* (`convenciones-y-casos.md`). Después del movimiento, `grep` cada ancla: debe aparecer en exactamente un archivo nuevo y desaparecer del prompt core.
 - `wc -l` queda como sanity check informal, **no como gate**.
 
 ### Paso 3 — Reescribir `prompt.md` core desde cero
@@ -303,7 +303,7 @@ Muchas filas se parten en dos destinos (capa estructural + capa decisional). Es 
 
 - **Selección obligatoria — 3 casos:**
   1. **Una página rica:** U3-p36 (cuadros gramaticales + actividades de varios tipos + ejemplos resueltos) **o** U1-p20 (cuadros culturales + comunicativos + diferentes registros). Cubre clasificación general y `tipo_cuadro`.
-  2. **U0 completa** (no una página suelta — la unidad atípica entera). Cubre las reglas de unidades atípicas y `_nota_unidad_atipica` que se acaban de mover a `reglas-operativas.md`. **U0 también cubre el caso "autoevaluación ausente"** (atípica sin bloque).
+  2. **U0 completa** (no una página suelta — la unidad atípica entera). Cubre el bloque de unidades atípicas, que se reparte entre los tres archivos según capa: la declaración de `_nota_unidad_atipica` como opcional contractual vive en `schema-inventario.md`; las reglas de cuándo añadirla y cómo mapear las secciones vacías viven en `reglas-operativas.md`; el ejemplo JSON canónico vive en `convenciones-y-casos.md`. **U0 también cubre el caso "autoevaluación ausente"** (atípica sin bloque).
   3. **U1-p21** (cierre de unidad con bloque `autoevaluacion` presente). Cubre la regla de autoevaluación top-level y su precedencia, también recién movidas.
 - **Procedimiento:**
   - Abrir sesión limpia de Claude Code.

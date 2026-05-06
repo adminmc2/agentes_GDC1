@@ -3,6 +3,27 @@
 
 ---
 
+## [v10.38 — 2026-05-06] — REFACTOR-PROPUESTA: cuatro correcciones de coherencia interna
+
+Cuatro defectos detectados por el revisor en la propuesta de refactor (tres bajos + uno medio). Todos eran defectos del propio documento, no del trabajo subyacente.
+
+**1 (Medio) — Mapeo de unidades atípicas violaba la frontera por capas.** El propio documento declara "split por capa, no por campo" (sección 4 cabecera + sección 3.3 + sección 3.4), pero la fila del mapeo "395-411 Reglas para unidades atípicas" mandaba el bloque entero a `reglas-operativas.md`, ignorando que el bloque del prompt mezcla:
+- *Forma:* declaración de `_nota_unidad_atipica` como clave opcional contractual del top-level → debe ir a `schema-inventario.md`.
+- *Decisión:* cuándo añadirla, cómo mapear secciones vacías, valor especial de `contenidos_indice` → `reglas-operativas.md`.
+- *Ejemplo canónico:* el JSON literal de U0 → `convenciones-y-casos.md`.
+
+Fila reescrita con los tres destinos. Línea de paso 5 sobre el caso U0 también corregida (decía "se acaban de mover a reglas-operativas.md", lo cual era impreciso).
+
+**2 (Bajo) — Subpaso de "checklist" no era ejecutable literalmente.** El paso 2 decía "marcar la fila correspondiente en el mapeo de la sección 4 como hecha (checklist)", pero la sección 4 es una tabla simple, no un checklist con casillas. Reformulado para describir una mecánica realmente ejecutable: la tabla queda como referencia inmutable, el progreso se anota en un marcador externo (descripción del PR de la rama o comentario fijado de la sesión).
+
+**3 (Bajo) — Anclas semánticas inventadas.** Los ejemplos de anclas que cito ("principio de género no marcado", "literalidad del contenido visible al alumno") **no aparecen en `prompt.md` actual**. La primera está en otro artefacto del proyecto; la segunda en `PROCESO-MAESTRO.md`. Sustituidas por frases que sí están en el prompt y son distintivas: *"Taxonomía cerrada de tipos de actividad"*, *"tipo_cuadro describe la categoría pedagógica"*, *"primer ítem resuelto como ejemplo"*.
+
+**4 (Bajo) — Cifra de ejecuciones inexacta.** El argumento contra encapsular la fase como skill se apoyaba en "9 ejecuciones en NC1". El scope real es **10 unidades (U0-U9)**: U0 atípica + U1-U9 regulares (verificado contra `CLAUDE.md` raíz y `README.md`). La conclusión (skill fuera de v1) no cambia, pero la cifra ahora es exacta. Aplicado en las dos referencias del documento (cabecera de sección sobre skill + sección 3.5 final).
+
+Los datos cuantitativos restantes (547/27/37 para `prompt.md`, 111/9/10 para `CLAUDE.md` fase, conjuntos 17/5/7/3 del validador, casos U3-p36 y U1-p21) ya estaban correctos y no cambian.
+
+---
+
 ## [v10.37 — 2026-05-06] — REFACTOR-PROPUESTA: fix completo de la tabla "Estado medido"
 
 La corrección de v10.36 fue **parcial**: arregló la fila de `prompt.md` (34→27/37) pero dejó intacta la fila de `fases/1-extraccion-inventario/CLAUDE.md`, que decía `7 | 11` cuando el conteo real es **9 | 10** (`grep -cE "^## "` y `grep -cE "^#{1,6} "`). El error de origen viene de cuando creé la primera tabla mezclando `^## ` y `^### ` en un grep combinado.
