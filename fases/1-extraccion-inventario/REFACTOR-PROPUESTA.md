@@ -276,7 +276,12 @@ Muchas filas se parten en dos destinos (capa estructural + capa decisional). Es 
 - En `prompt.md` dejar **placeholders con enlace** *("Schema: ver `schema-inventario.md`")* para que no quede roto durante el proceso.
 - **Verificación tras cada archivo (semántica, no por conteo):**
   - Recorrer la tabla de la sección 4 fila por fila como referencia inmutable (no se modifica) y llevar un marcador externo de progreso — en la descripción del PR de la rama del refactor o en un comentario fijado de la sesión de trabajo. Cada fila migrada se anota como completada antes de pasar a la siguiente. La regla de cierre del paso 2 es que todas las filas estén anotadas.
-  - **Búsqueda de anclas semánticas:** identificar 2-3 frases canónicas únicas por sección **antes** de moverla, verificadas con `grep` en el `prompt.md` actual. Ejemplos válidos extraídos del prompt vigente: *"Taxonomía cerrada de tipos de actividad"* (debería terminar en `schema-inventario.md`); *"tipo_cuadro describe la categoría pedagógica"* (`schema-inventario.md`); *"primer ítem resuelto como ejemplo"* (`convenciones-y-casos.md`). Después del movimiento, `grep` cada ancla: debe aparecer en exactamente un archivo nuevo y desaparecer del prompt core.
+  - **Búsqueda de anclas semánticas:** identificar 2-3 frases canónicas únicas por sección **antes** de moverla, verificadas con `grep` en el `prompt.md` actual. Ejemplos válidos extraídos del prompt vigente: *"Taxonomía cerrada de tipos de actividad"* (debería terminar en `schema-inventario.md`); *"tipo_cuadro describe la categoría pedagógica"* (`schema-inventario.md`); *"primer ítem resuelto como ejemplo"* (`convenciones-y-casos.md`). Después del movimiento de cada sección, `grep` de cada ancla:
+    - **debe aparecer** en el archivo destino al que se movió.
+    - **NO debe aparecer** en la zona del `prompt.md` que se sustituyó por placeholder (esa zona contiene ahora solo el enlace al destino, no el contenido original).
+    - **puede seguir apareciendo** en otras zonas de `prompt.md` aún no migradas; cada una se verificará al procesar su fila correspondiente.
+
+    La comprobación final "ancla solo en un sitio" se completa al cerrar el **paso 3** (reescritura de `prompt.md` core desde cero): ahí el prompt ya no contiene ningún contenido editorial original, solo el flujo operativo más referencias cortas.
 - `wc -l` queda como sanity check informal, **no como gate**.
 
 ### Paso 3 — Reescribir `prompt.md` core desde cero
@@ -343,7 +348,7 @@ La afirmación "contratos paralelos del mismo shape" (secciones 3.3 y 8) requier
 
 | Riesgo | Mitigación |
 |---|---|
-| Pérdida silenciosa de contenido en la migración | Mapeo explícito como checklist + búsqueda de anclas semánticas + prueba empírica del paso 5 |
+| Pérdida silenciosa de contenido en la migración | Mapeo de la sección 4 como referencia inmutable + marcador externo de progreso (PR description o comentario fijado de sesión) + búsqueda de anclas semánticas + prueba empírica del paso 5 |
 | Contradicciones entre archivos nuevos | Single source of truth: cada regla solo en su capa (forma o decisión). `CLAUDE.md` y `prompt.md` *referencian*, no copian |
 | Inconsistencia transitoria (medio prompt nuevo, medio viejo) | Refactor en rama; `main` sigue funcionando con el prompt actual hasta que el merge esté limpio |
 | Inventarios ya generados (U0/U1/U3) podrían no encajar con un schema reinterpretado | El paso 5 (prueba empírica) los toma como caso de regresión. Si el nuevo schema dice algo distinto del JSON validado, hay un error en el refactor |

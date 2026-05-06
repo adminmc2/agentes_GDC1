@@ -3,6 +3,23 @@
 
 ---
 
+## [v10.39 — 2026-05-06] — REFACTOR-PROPUESTA: dos rastros residuales tras v10.38
+
+Dos hallazgos bajos del revisor, ambos consecuencia incompleta de las correcciones de v10.38.
+
+**1. Tabla de riesgos seguía hablando de "checklist".** En v10.38 reformulé el paso 2 para no exigir un checklist (la sección 4 es una tabla simple) y sustituirlo por marcador externo de progreso. Pero la mitigación correspondiente en la tabla de riesgos seguía diciendo "Mapeo explícito como checklist". Sustituido por la formulación coherente con paso 2: "Mapeo de la sección 4 como referencia inmutable + marcador externo de progreso (PR description o comentario fijado de sesión) + búsqueda de anclas semánticas + prueba empírica del paso 5".
+
+**2. Verificación de anclas asumía un estado que no existe en paso 2.** El subpaso decía que tras mover una sección, el `grep` del ancla "debe aparecer en exactamente un archivo nuevo y **desaparecer del prompt core**". El problema: el prompt core como tal no existe hasta el **paso 3** (reescritura desde cero). Durante el paso 2, `prompt.md` contiene una mezcla de placeholders (donde ya se movió contenido) y secciones aún no migradas. Reformulado para respetar la secuencia:
+
+- Tras mover la sección S → archivo destino D, `grep` de cada ancla debe aparecer en D.
+- `grep` en la zona de `prompt.md` que se sustituyó por placeholder NO debe encontrarla.
+- En otras zonas de `prompt.md` aún no migradas, el ancla puede seguir apareciendo (se verifica al procesar su fila).
+- La comprobación final "ancla solo en un sitio" se completa al cerrar el **paso 3**, no el paso 2.
+
+Estos dos defectos son del mismo tipo que ya señalamos en v10.37: cuando una corrección toca una zona del documento, hay que verificar las **referencias cruzadas** que pudieran haber quedado obsoletas. Lección registrada también en v10.37.
+
+---
+
 ## [v10.38 — 2026-05-06] — REFACTOR-PROPUESTA: cuatro correcciones de coherencia interna
 
 Cuatro defectos detectados por el revisor en la propuesta de refactor (tres bajos + uno medio). Todos eran defectos del propio documento, no del trabajo subyacente.
