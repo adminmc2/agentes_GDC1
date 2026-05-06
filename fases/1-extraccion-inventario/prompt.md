@@ -31,7 +31,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 3. Identificar las **secciones del índice de contenidos**:
    - **Caso normal** (U1-U9): 5 secciones canónicas — vocabulario, gramática, comunicación, destrezas, cultura.
    - **Caso atípico** (U0 y otras unidades introductorias): el índice no sigue las 5 secciones canónicas. Aplicar la sección "**Reglas para unidades atípicas (introductorias)**" de este prompt antes de continuar.
-4. Para cada página: identificar la sección, las actividades (numeradas o identificadas como tales — ver sección "Reglas para cuadros gramaticales"), los cuadros gramaticales y las notas "Observa" si los hay.
+4. Para cada página: identificar la sección, las actividades (numeradas o identificadas como tales — ver sección "Reglas para cuadros"), los cuadros (con `tipo_cuadro`) y las notas "Observa" si los hay.
 5. Para cada actividad: extraer todos los campos del esquema (ver abajo). En U0-U3, observar la convención editorial de sílaba tónica subrayada (ver sección dedicada). Detectar el patrón de "primer ítem resuelto como ejemplo" (ver sección dedicada).
 6. Construir `vocabulario_consolidado` con los 3 bloques.
 7. Construir el índice top-level `secciones`.
@@ -88,7 +88,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
   "pagina": <int>,
   "seccion": <clave normalizada: vocabulario|gramatica|comunicacion|destrezas|cultura|evaluacion|reflexion>,
   "actividades": [<actividad>, ...],
-  "cuadros_gramaticales": [<cuadro>, ...]   // opcional
+  "cuadros": [<cuadro>, ...]   // opcional
 }
 ```
 
@@ -142,19 +142,29 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 
 ---
 
-## Esquema por cuadro gramatical
+## Esquema por cuadro
 
 ```jsonc
 {
+  "tipo_cuadro": <str — gramatical | lexical | cultural | comunicativo | fonetico>,
   "titulo": <str>,
   "contenido": {
-    "tipo": <str — tabla_conjugacion | tabla_interrogativos | tabla_posesivos | ...>,
+    "tipo": <str — tabla_conjugacion | tabla_interrogativos | tabla_posesivos | lista_ilustrada | tabla_colores | ...>,
     // estructura libre según el cuadro, capturando TODO el contenido visible
     "ejemplos": [str]
   },
   "observaciones": <str, opcional> // texto literal de la caja "Observa" si acompaña al cuadro
 }
 ```
+
+**Valores de `tipo_cuadro`:**
+- `gramatical` — tablas de conjugación, paradigmas morfológicos (artículos, género, posesivos, interrogativos, demostrativos).
+- `lexical` — tablas de vocabulario, listas ilustradas de palabras, campos semánticos, colores, etc.
+- `fonetico` — cuadros de reglas de pronunciación u ortografía (c/qu, z/c, g/gu, entonación...).
+- `cultural` — cuadros con información sociocultural (saludos, costumbres, tradiciones, diálogos culturales).
+- `comunicativo` — cuadros de uso pragmático de la lengua (registro, formalidad, turnos de conversación).
+
+> **Nota:** `tipo_cuadro` describe la categoría pedagógica del cuadro. `contenido.tipo` describe su estructura interna (cómo está maquetado). Son complementarios, no redundantes.
 
 ---
 
@@ -401,23 +411,25 @@ Cuando aparezca este patrón:
 
 ---
 
-## Reglas para cuadros gramaticales
+## Reglas para cuadros
 
-Cuando una página tiene cuadros (tablas de conjugación, posesivos, interrogativos), van en `cuadros_gramaticales` de la página, **no** dentro de actividades.
+Cuando una página tiene cuadros de referencia (tablas, listas ilustradas, cuadros culturales...), van en `cuadros` de la página, **no** dentro de actividades. Cada cuadro lleva obligatoriamente el campo `tipo_cuadro`.
 
 Capturar **todo el contenido del cuadro** (filas, columnas, celdas, ejemplos al pie).
 
-### ⚠ Qué SÍ es un cuadro gramatical
+### Valores de tipo_cuadro
 
-Solo van en `cuadros_gramaticales` los **esquemas de referencia lingüística**:
-- Tablas de conjugación (presente, futuro...).
-- Tablas de posesivos, interrogativos, demostrativos.
-- Cuadros de reglas ortográficas (c/qu, z/c, g/gu...).
-- Paradigmas morfológicos (géneros, plurales).
+- `gramatical` — tablas de conjugación, paradigmas morfológicos (artículos, género, posesivos, interrogativos, demostrativos), reglas ortográficas de uso gramatical.
+- `lexical` — listas ilustradas de vocabulario, tablas de campos semánticos, colores, familias de palabras.
+- `fonetico` — cuadros de pronunciación u ortografía fonética (c/qu, z/c, g/gu, entonación, acento...).
+- `cultural` — cuadros con información sociocultural (saludos, costumbres, diálogos en contexto cultural, fórmulas sociales).
+- `comunicativo` — cuadros de uso pragmático (registro, formalidad/informalidad, turnos de conversación, cortesía).
 
-### ⚠ Qué NO es un cuadro gramatical — va como ACTIVIDAD
+> **Nota:** `seccion` de la página y `tipo_cuadro` son ortogonales. Un cuadro fonético puede aparecer en la sección `gramatica`; un cuadro léxico puede estar en `vocabulario`. No forzar que coincidan.
 
-Las siguientes cajas visuales del libro **NO son cuadros gramaticales** aunque aparezcan en páginas de Gramática:
+### ⚠ Qué NO es un cuadro — va como ACTIVIDAD o NOTA
+
+Las siguientes cajas visuales del libro **NO son cuadros** aunque aparezcan visualmente como recuadros:
 
 **"Para aprender"** — Cajas con consejos o estrategias pedagógicas para el alumno (cómo llevar un cuaderno de vocabulario, cómo estudiar...). Son **actividades**, no cuadros. Usar:
 ```jsonc
@@ -428,18 +440,18 @@ Las siguientes cajas visuales del libro **NO son cuadros gramaticales** aunque a
 }
 ```
 
-**"Observa"** — Notas que llaman la atención sobre algún aspecto del idioma (variantes en Hispanoamérica, combinaciones de letras...). Son **notas**, no actividades ni cuadros gramaticales. Se capturan así según su contexto:
+**"Observa"** — Notas que llaman la atención sobre algún aspecto del idioma (variantes en Hispanoamérica, combinaciones de letras...). Son **notas**, no actividades ni cuadros. Se capturan así según su contexto:
 - Si acompaña a una **actividad**: en `datos._nota` de esa actividad.
-- Si acompaña a un **cuadro gramatical**: en `cuadro.observaciones` (campo opcional del schema del cuadro, ver "Esquema por cuadro gramatical").
+- Si acompaña a un **cuadro**: en `cuadro.observaciones` (campo opcional del schema del cuadro, ver "Esquema por cuadro").
 
-**Regla práctica (con precedencia):** para distinguir cuadro gramatical / actividad / nota:
+**Regla práctica (con precedencia):** para distinguir cuadro / actividad / nota:
 
 1. **¿Tiene número de actividad** (1, 2, 3...) **y pide producción del alumno** (escuchar, repetir, escribir, relacionar...)? → **Actividad** con `tipo` de la taxonomía cerrada.
 2. **¿Es "Para aprender"?** → Siempre **actividad** (`tipo: produccion_escrita_guiada`, `datos.subtipo: "para_aprender"`), aunque no tenga número. Excepción explícita a la regla general.
 3. **¿Es "Observa"?** → Siempre **nota**, aunque use el imperativo "Observa". Excepción explícita: "Observa" no pide producción del alumno; llama la atención sobre información de referencia. Nunca se convierte en actividad. **Dónde va según su contexto:**
    - Si acompaña a una **actividad**: en `datos._nota` de esa actividad.
-   - Si acompaña a un **cuadro gramatical**: en `cuadro.observaciones` (ver "Esquema por cuadro gramatical").
-4. **¿Es una tabla de referencia sin número ni instrucción de producción?** → `cuadro_gramatical`.
+   - Si acompaña a un **cuadro**: en `cuadro.observaciones` (ver "Esquema por cuadro").
+4. **¿Es una tabla o recuadro de referencia sin número ni instrucción de producción?** → `cuadro` con `tipo_cuadro` apropiado (ver valores arriba).
 
 > **Precedencia:** las excepciones explícitas (reglas 2 y 3) tienen prioridad sobre la regla general (regla 1). La regla general solo aplica cuando ninguna excepción encaja.
 
@@ -474,7 +486,7 @@ Si la carpeta `unidades/UX/` no existe, crearla. Si `unidades/UX/fuente/` no con
 ## Casos resueltos en extracción real
 
 ### Error detectado: "Para aprender" confundido con cuadro gramatical
-En extracción real de una unidad, la caja "Para aprender" de la sección de Gramática fue clasificada como `cuadros_gramaticales`. **Es incorrecto.** "Para aprender" es una **actividad** (ver sección anterior). Esta es la corrección que diferencia los dos elementos.
+En extracción real de una unidad, la caja "Para aprender" de la sección de Gramática fue clasificada como `cuadros` con `tipo_cuadro: gramatical`. **Es incorrecto.** "Para aprender" es una **actividad** (ver sección anterior). Esta es la corrección que diferencia los dos elementos.
 
 ### Casos resueltos en U3
 

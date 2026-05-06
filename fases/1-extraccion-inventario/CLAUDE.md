@@ -54,10 +54,11 @@ Después, validación visual: el autor abre el dashboard (`python3 diagrama.py` 
 
 ## Reglas operativas críticas (resumen — detalle en `prompt.md`)
 
-> **Error detectado en extracción real:** confundir el contenido de "Para aprender" con `cuadros_gramaticales`.
-> - **"Para aprender"** → es una **actividad** (tipo `produccion_escrita_guiada`, datos.subtipo `para_aprender`), no un cuadro gramatical.
-> - **"Observa"** → NO es una actividad independiente. Es una **nota** que acompaña a otra actividad o cuadro. Aunque "Observa" es un imperativo, no pide producción del alumno. Capturar según contexto: si acompaña **actividad** → `datos._nota`; si acompaña **cuadro gramatical** → `cuadro.observaciones`.
-> Ver detalle completo y precedencia en `prompt.md` → "Reglas para cuadros gramaticales".
+> **Errores detectados en extracción real:**
+> - **"Para aprender"** → es una **actividad** (tipo `produccion_escrita_guiada`, datos.subtipo `para_aprender`), nunca un cuadro.
+> - **"Observa"** → NO es una actividad. Es una **nota**: si acompaña **actividad** → `datos._nota`; si acompaña **cuadro** → `cuadro.observaciones`.
+> - **Cuadros no gramaticales** → No todos los cuadros son `tipo_cuadro: gramatical`. Un cuadro de vocabulario es `lexical`; uno de pronunciación es `fonetico`; uno de cultura es `cultural`; uno pragmático es `comunicativo`. Asignar siempre `tipo_cuadro` correcto.
+> Ver detalle y precedencia en `prompt.md` → "Reglas para cuadros".
 
 1. **Texto verbatim del libro.** El JSON debe contener el contenido de cada actividad **exactamente como aparece en el libro**. Para cloze, huecos como `_____`. Para textos, completos. Para diálogos, con marcadores `[1]`, `[2]`. **Nunca** poner solo respuestas como sustituto del enunciado.
 2. **Taxonomía cerrada de tipos.** 17 valores posibles en `tipo`. Cualquier otro valor falla la validación. Lista en `prompt.md`. **Términos ELE clave:**

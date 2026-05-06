@@ -152,7 +152,7 @@ Estructura por página:
 - `pagina` (int).
 - `seccion` (str): clave normalizada (vocabulario, gramatica, comunicacion, destrezas, cultura, evaluacion, reflexion).
 - `actividades` (array).
-- `cuadros_gramaticales` (array, opcional).
+- `cuadros` (array, opcional) — cada cuadro lleva `tipo_cuadro`: `gramatical | lexical | fonetico | cultural | comunicativo`.
 
 **REGLA DURA — Literalidad del contenido visible al alumno.** Cada actividad debe contener el **texto exacto** que el alumno lee en el libro, no resúmenes ni referencias. La instrucción va en `instruccion_original` (literal). Todo el contenido visible adicional (frases con huecos, listas de items, opciones múltiples, diálogos completos, textos de lectura, definiciones, palabras dadas en recuadro, ejemplos del libro) va en `datos` con campos descriptivos (`items_libro`, `frases`, `dialogo_completo`, `texto_completo`, `opciones`, `palabras_recuadro`, etc.). **Nunca reemplazar texto del libro por una descripción** ("el alumno lee 4 frases"); siempre incluir las 4 frases literales. Si la actividad presenta huecos, marcarlos con `_____`. Razón: la fidelidad al libro es la base de toda explotación didáctica posterior; sin ella, el agente no puede generar contenido coherente.
 

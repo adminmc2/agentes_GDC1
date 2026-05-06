@@ -3,6 +3,27 @@
 
 ---
 
+## [v10.31 — 2026-05-05] — Schema cuadros: cuadros_gramaticales → cuadros + tipo_cuadro
+
+**Decisión de diseño:** los cuadros de referencia de una página no son siempre gramaticales. La clave `cuadros_gramaticales` se reemplaza por `cuadros` con discriminador `tipo_cuadro`.
+
+**Valores de `tipo_cuadro`:** `gramatical | lexical | fonetico | cultural | comunicativo`.
+
+**Archivos modificados:**
+- `unidades/U0/U0-nc1-inventario.json` — 1 cuadro migrado (Saludos → `cultural`, fórmulas sociales según taxonomía).
+- `unidades/U1/U1-nc1-inventario.json` — 10 cuadros migrados: 4 `gramatical` (p14), 1 `lexical` (Los colores, p15), 1 `fonetico` (Pronunciación y ortografía, p15), 2 `cultural` (Saludos y despedidas + Mini-diálogos ilustrados, p20), 2 `comunicativo` (¿Tú o usted? + Estilo informal/formal, p20).
+- `unidades/U3/U3-nc1-inventario.json` — 3 cuadros migrados (todos `gramatical`).
+- `scripts/validar_inventario.py` — `TIPOS_CUADRO_VALIDOS` + validación de `tipo_cuadro` + detector de clave obsoleta.
+- `fases/1-extraccion-inventario/prompt.md` — schema de página, schema de cuadro (renombrado), sección de reglas reescrita con 5 valores y nota de ortogonalidad sec/tipo.
+- `fases/1-extraccion-inventario/CLAUDE.md` — reglas operativas: añadida la regla de cuadros no gramaticales.
+- `diagrama.py` — ERD: entidad `cuadros_gramaticales` → `cuadros` con campo `tipo_cuadro`.
+- `web/index.html` — clave `.cuadros`, título "Cuadros", badge `tipo_cuadro` visible.
+- `PROCESO-MAESTRO.md` — esquema por página actualizado.
+
+**Validación post-migración:** `python3 scripts/validar_inventario.py 0/1/3` → U0: 1 aviso intencional; U1: 0 avisos; U3: 0 avisos.
+
+---
+
 ## [v10.30 — 2026-05-05] — Pasada exhaustiva completa_huecos → produccion_escrita_guiada
 
 **18 actividades recategorizadas en total:** 4 en v10.29 y 14 en este commit (6 en U1, 8 en U3).
@@ -67,6 +88,27 @@ Regla de precedencia oral añadida: 2+ personas → `interaccion_oral`; alumno s
 
 ---
 
+## [v10.24 — 2026-05-05] — Alinear Observa/Para aprender — dictamen del revisor (commit 183a151)
+
+3 correcciones de coherencia documental tras dictamen:
+
+1. `fases/1-extraccion-inventario/CLAUDE.md` resumen operativo: corregido. "Observa" y "Para aprender" no son ambas actividades — "Observa" es nota, no actividad aunque use imperativo.
+2. `prompt.md` regla práctica: precedencia explícita entre los 4 casos. Las excepciones "Para aprender" (actividad) y "Observa" (nota) tienen prioridad sobre la regla general de numeración.
+3. `prompt.md` paso 4 flujo principal: "actividades (numeradas)" → "actividades (numeradas o identificadas como tales — ver reglas)".
+
+---
+
+## [v10.23 — 2026-05-05] — Coherencia documental A1/A3 — dictamen del revisor (commit 411ac8b)
+
+3 correcciones de coherencia documental tras dictamen:
+
+- `PROCESO-MAESTRO.md` bugs B1-B4: sección reescrita de "bloqueantes del paso C pendientes" a "CERRADOS 2026-05-05" con las 4 decisiones explícitas del autor.
+- `REVIEW.md` A1: paso reescrito de "pendiente como tarea independiente" a "CERRADO 2026-05-05" (47 actividades validadas por el autor, validador OK, prompt con casos resueltos en U3).
+- `REVIEW.md` cabecera: 21:30 → 22:00; estado global Bloque B: "Pendiente" → "Parcial — reciclaje en diseño; tarjetas espera fase 2; píldoras espera fase 5".
+- CHANGELOG: añadidas entradas v10.21 y v10.22 que faltaban.
+
+---
+
 ## [v10.22 — 2026-05-05] — Regla "Para aprender" vs cuadros_gramaticales en prompt fase 1
 
 Error detectado en extracción real de otra unidad: la caja "Para aprender" de páginas de Gramática fue clasificada como `cuadros_gramaticales`. Corregido en `fases/1-extraccion-inventario/prompt.md` y `CLAUDE.md` con distinción explícita: cuadros gramaticales = tablas de referencia sin número ni instrucción; **"Para aprender" = actividad**; **"Observa" = nota** (en `datos._nota` si acompaña actividad, o en `cuadro.observaciones` si acompaña cuadro gramatical).
@@ -78,6 +120,31 @@ Error detectado en extracción real de otra unidad: la caja "Para aprender" de p
 - **A1 cerrado:** autor validó 47 actividades de U3 sin errores.
 - **A3 cerrado** con 4 decisiones: B1 pospuesto (CrewAI bloqueado), B2 aceptado (viejo sin trackear), B3 resuelto (v10.15), B4 sin acción (cosmético).
 - **Bloque B parcializado:** tarjetas espera fase 2, píldoras espera U3 vocabulario, `nc1-reciclaje.json` en diseño.
+
+---
+
+## [v10.20 — 2026-05-05] — REVIEW cabecera fecha sincronizada (commit ccb19ee)
+
+- `REVIEW.md` cabecera "Última actualización": 18:30 → 21:30. La bitácora ya tenía entradas a 21:00 y 21:30 pero la cabecera seguía en 18:30. Sincronizada.
+
+---
+
+## [v10.19 — 2026-05-05] — Rebajar afirmación "arquitectura limpia" en CHANGELOG v10.17 (commit 569b775)
+
+Hallazgo del revisor: el título "arquitectura limpia" era demasiado fuerte. Lo que se limpió fue solo el diagrama mermaid_level1 (eliminada caja `viejo/`). El código sigue conteniendo referencias legacy a `viejo/repertorios/*.md` en `diagrama.py:550-557` (dict `AGENTS`).
+
+- `CHANGELOG.md` v10.17 título: "arquitectura limpia" → "diagrama activo sin caja viejo".
+- Nota explícita de alcance añadida en la entrada v10.17.
+- `PROCESO-MAESTRO.md` y `REVIEW.md`: bitácoras actualizadas con la rebaja documentada.
+
+Lo que el revisor sí valida: cero hardcoded U01-U09 en la UI, sidebar con AGENTES bloqueado, zoom mermaid implementado, A2 cerrado con reserva (reproducibilidad pendiente explícita).
+
+---
+
+## [v10.18 — 2026-05-05] — Actualizar SERVER_VERSION a 10.17 (commit aac85bf)
+
+- `diagrama.py` `SERVER_VERSION`: corregido de `"8.5"` (congelado desde hace varios commits) a `"10.17"`.
+- Verificación: `/api/version` devuelve `{"version": "10.17"}`.
 
 ---
 

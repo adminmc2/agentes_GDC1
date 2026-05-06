@@ -767,9 +767,10 @@ def mermaid_database():
         int orden
         text texto
     }
-    cuadros_gramaticales {
+    cuadros {
         int id PK
         int pagina_id FK
+        text tipo_cuadro
         text titulo
         jsonb contenido
     }
@@ -810,7 +811,7 @@ def mermaid_database():
 
     unidades ||--o{ paginas : "tiene"
     paginas ||--o{ actividades : "contiene"
-    paginas ||--o{ cuadros_gramaticales : "incluye"
+    paginas ||--o{ cuadros : "incluye"
     actividades ||--o{ respuestas : "tiene"
     actividades ||--o{ reciclaje : "origen"
     actividades ||--o{ reciclaje : "destino"

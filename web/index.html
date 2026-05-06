@@ -759,12 +759,13 @@ function renderInventario(inv) {
         </div>`;
     }).join('');
 
-    // Renderizar cuadros gramaticales si los hay en la sección
-    const cuadros = sec.paginas.flatMap(p => p.cuadros_gramaticales || []);
+    // Renderizar cuadros (gramatical/lexical/fonetico/cultural/comunicativo) si los hay en la sección
+    const cuadros = sec.paginas.flatMap(p => p.cuadros || []);
     if (cuadros.length) {
-        sc.innerHTML += '<div style="margin-top:20px"><h3 style="font-size:14px;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Cuadros gramaticales</h3>' +
+        sc.innerHTML += '<div style="margin-top:20px"><h3 style="font-size:14px;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Cuadros</h3>' +
             cuadros.map(c => `<div style="border:1px solid var(--md-outline-variant);border-radius:8px;padding:14px;margin-bottom:10px;background:#FFF8E1">
-                <div style="font-weight:700;margin-bottom:8px;color:#5D4037">${_esc(c.titulo)}</div>
+                <div style="font-weight:700;margin-bottom:4px;color:#5D4037">${_esc(c.titulo)}</div>
+                <div style="font-size:11px;color:#888;margin-bottom:8px">${_esc(c.tipo_cuadro||'')}</div>
                 <pre style="font-size:12px;background:#fff;padding:10px;border-radius:6px;overflow-x:auto;margin:0">${_esc(JSON.stringify(c.contenido, null, 2))}</pre>
             </div>`).join('') + '</div>';
     }

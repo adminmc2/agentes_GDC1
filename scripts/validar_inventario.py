@@ -22,6 +22,10 @@ CLAVES_TOP = {"unidad", "curso", "titulo", "paginas_libro", "nivel", "fuente",
 SECCIONES_CANONICAS = {"vocabulario", "gramatica", "comunicacion", "destrezas",
                        "cultura", "evaluacion", "reflexion"}
 
+TIPOS_CUADRO_VALIDOS = {
+    "gramatical", "lexical", "cultural", "comunicativo", "fonetico",
+}
+
 TIPOS_VALIDOS = {
     "escucha_y_repite", "escucha_y_responde", "completa_huecos", "relaciona",
     "ordena", "clasifica", "seleccion_multiple", "verdadero_falso",
@@ -110,6 +114,16 @@ def validar(path):
                     errores.append(f"❌ {pref}: falta 'seccion'")
                 elif p["seccion"] not in SECCIONES_CANONICAS:
                     errores.append(f"❌ {pref}: seccion '{p['seccion']}' no canónica")
+                if "cuadros_gramaticales" in p:
+                    errores.append(f"❌ {pref}: clave obsoleta 'cuadros_gramaticales' — usar 'cuadros' con campo 'tipo_cuadro'")
+
+                for ci, c in enumerate(p.get("cuadros", [])):
+                    cpref = f"{pref}.cuadros[{ci}]"
+                    if "tipo_cuadro" not in c:
+                        errores.append(f"❌ {cpref}: falta 'tipo_cuadro'")
+                    elif c["tipo_cuadro"] not in TIPOS_CUADRO_VALIDOS:
+                        errores.append(f"❌ {cpref}: tipo_cuadro '{c['tipo_cuadro']}' no válido (valores: {sorted(TIPOS_CUADRO_VALIDOS)})")
+
                 if "actividades" not in p or not isinstance(p["actividades"], list):
                     errores.append(f"❌ {pref}: 'actividades' debe ser lista")
                     continue

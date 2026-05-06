@@ -418,6 +418,8 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-06 00:15** — Correcciones tras dictamen del revisor (v10.31): U0 cuadro "Saludos" reclasificado de `lexical` a `cultural` (según definición del prompt: fórmulas sociales = cultural). CHANGELOG v10.31 desglose corregido (eran 10 cuadros = 4+1+1+2+2, antes sumaba 11). Limpiadas 2 referencias antiguas restantes: prompt.md paso 4 ("Reglas para cuadros gramaticales" → "Reglas para cuadros") y comentario en web/index.html ("Renderizar cuadros gramaticales" → con los 5 tipos).
+- **2026-05-05 23:30** — Schema cuadros migrado (v10.31): `cuadros_gramaticales` → `cuadros` + `tipo_cuadro` en U0, U1, U3. Validador actualizado. Prompt, CLAUDE.md fase 1, diagrama.py, web/index.html y PROCESO-MAESTRO sincronizados. Validación: U0 1 aviso intencional, U1/U3 limpios.
 - **2026-05-05 23:00** — Terminología ELE aplicada (v10.25): 3 tipos renombrados en los 3 JSONs + validador + prompt + CLAUDE.md de fase 1. CHANGELOG v10.25 añadido.
 - **2026-05-05 22:00** — A1 validado por el autor (47 actividades de U3 correctas). A3 cerrado: B1 pospuesto (CrewAI bloqueado), B2 aceptado (en viejo sin trackear), B3 resuelto en v10.15, B4 no requiere acción (cosmético, se resuelve con nuevo schema). Bloque B parcializado: tarjetas necesita fase 2 primero, píldoras en su momento, reciclaje próximo a discutir. Próximo paso: diseñar `nc1-reciclaje.json` y su visualización en dashboard.
 - **2026-05-05 21:30** — Rebajada afirmación "arquitectura limpia" en CHANGELOG v10.17 (revisor): se limpió solo el diagrama, no el código (referencias legacy a `viejo/repertorios/` siguen en `diagrama.py:550-557` para el flujo de agentes bloqueado).
