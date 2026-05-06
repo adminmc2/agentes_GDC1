@@ -3,6 +3,18 @@
 
 ---
 
+## [v10.33 — 2026-05-06] — Tildes y eñes en etiquetas de los diagramas Mermaid
+
+Corregida la ortografía en las etiquetas visibles de los 3 diagramas Mermaid del dashboard (commit `5024914`, pusheado antes de bumpear versión — entrada retroactiva del CHANGELOG):
+
+- **Nivel 1 (Arquitectura activa):** Compañeros, extracción, revisión, raíz.
+- **Nivel 2 (Flujo de fase 1):** Validación (×2), añaden.
+- **Nivel 3 (8 fases):** Extracción, Análisis, Píldoras, Generación, sección, versión.
+
+El ERD no se toca (nombres de tablas/columnas en convención SQL sin acentos). Las rutas de archivo reales (`fases/1-extraccion-inventario/`) tampoco se acentúan porque son paths del filesystem.
+
+---
+
 ## [v10.32 — 2026-05-05] — Bloque de autoevaluación como campo top-level
 
 **Decisión de diseño:** el bloque "Mis resultados en esta unidad son: MUY BUENOS / BUENOS / NO MUY BUENOS" del cierre de unidad NO es actividad ni cuadro ni nota. Es un elemento estructural recurrente y va como campo top-level `autoevaluacion` del JSON. Opcional (omitir en unidades atípicas).
