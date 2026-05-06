@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-06 12:00
+> **Última actualización:** 2026-05-06 15:00
 
 ---
 
@@ -512,6 +512,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-06 15:00** — Fix de coherencia documental tras dictamen del revisor (v10.41): (a) PROCESO-MAESTRO Parte 4 — eliminada numeración duplicada de "Decisión 27"; el bloque "Arquitectura datos+instrucciones" se ha movido de Parte 5 a Parte 4 (donde corresponde por estar cerrada) preservando su número 27 por antigüedad; las decisiones del refactor de fase 1 (v10.40) se renumeran de 27-33 a 28-34. Eliminado el subheader "Decisiones cerradas adicionales (post-creación inicial)" de Parte 5 (contradecía el título "Decisiones pendientes" de la propia parte). (b) Cabecera "Última actualización" de REVIEW sincronizada con la bitácora.
 - **2026-05-06 14:30** — Refactor de fase 1 documentado como plan ejecutable (v10.40). Antes de empezar la ejecución, plan trazado en los dos artefactos canónicos: PROCESO-MAESTRO Parte 4 ampliada con 7 decisiones cerradas (27-33: arquitectura, frontera de capas, source of truth, skill fuera, contrato schema↔validador, delegación operativa a REFACTOR-PROPUESTA.md); REVIEW bloque A con paso A4 nuevo y 8 sub-pasos enumerados (A4.0-A4.6 + A4.5.5 cross-check obligatorio). Estado global bloque A actualizado a "🔄 A4 en curso". Cero código tocado: solo documentación del plan ejecutable. Próximo: A4.0 (tag + rama).
 - **2026-05-06 14:00** — REFACTOR-PROPUESTA: 2 rastros residuales tras v10.38 (v10.39). (a) Tabla de riesgos seguía hablando de "checklist" cuando el paso 2 ya usa marcador externo — mitigación reescrita en consonancia. (b) Verificación de anclas en paso 2 decía "desaparecer del prompt core" pero el prompt core no existe hasta el paso 3 — reformulado para respetar la secuencia: durante paso 2 se verifica que el ancla esté en destino y NO en la zona reemplazada por placeholder; la comprobación "ancla solo en un sitio" se cierra al terminar el paso 3.
 - **2026-05-06 13:30** — REFACTOR-PROPUESTA: 4 correcciones de coherencia interna tras nuevo dictamen del revisor (v10.38). Fix Medio: mapeo de unidades atípicas (línea 246) repartido entre los 3 destinos según capa, en lugar de monolíticamente a `reglas-operativas.md` — coherente con el principio "split por capa" que el propio documento declara. Fix Bajos: (a) subpaso de "checklist" reformulado para no asumir un formato que la tabla no tiene; (b) anclas semánticas sustituidas por frases que sí existen en `prompt.md` actual ("Taxonomía cerrada de tipos de actividad", "tipo_cuadro describe la categoría pedagógica", "primer ítem resuelto como ejemplo"); (c) cifra "9 ejecuciones" corregida a "10 (U0-U9)" en las dos referencias del documento.

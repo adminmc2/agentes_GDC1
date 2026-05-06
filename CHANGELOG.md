@@ -3,6 +3,29 @@
 
 ---
 
+## [v10.41 — 2026-05-06] — Fix de coherencia documental: numeración duplicada en PROCESO-MAESTRO + cabecera REVIEW
+
+Dos defectos detectados por el revisor en el commit anterior (v10.40, `e2fbfa2`).
+
+**1 (Medio) — Numeración duplicada de "Decisión 27" en PROCESO-MAESTRO.md.**
+
+Cuando v10.40 amplió Parte 4 con decisiones nuevas, las numeré 27-33 sin verificar que ya existía una "Decisión 27 — Arquitectura datos+instrucciones" en Parte 5 (bajo un subheader "Decisiones cerradas adicionales (post-creación inicial)" que paradójicamente vivía dentro de la sección "Decisiones pendientes"). Quedaban dos defectos:
+- "Decisión 27" pasaba a ser referencia ambigua.
+- Una decisión cerrada vivía bajo "Decisiones pendientes".
+
+Resolución:
+- El bloque "Arquitectura datos+instrucciones" se mueve de Parte 5 a Parte 4 (donde corresponde por estar cerrada) como nueva subsección "Sobre la arquitectura datos + instrucciones (decidida 2026-05-05)", **preservando su número 27 por antigüedad**.
+- Las 7 decisiones del refactor de fase 1 que v10.40 había numerado 27-33 se **renumeran a 28-34**. La nota del CHANGELOG v10.40 que decía "decisiones 27-33" queda obsoleta como dato de cierre — la entrada actual la corrige.
+- El subheader "Decisiones cerradas adicionales (post-creación inicial)" se elimina (era el síntoma de no haber consolidado en su momento).
+
+**2 (Bajo) — Cabecera "Última actualización" de REVIEW.md desactualizada.**
+
+Decía `2026-05-06 12:00` cuando la bitácora ya tenía entradas a las 14:30. Sincronizada a `15:00` (timestamp de este fix).
+
+**Por qué corrección antes de A4.0:** el revisor lo trató como bloqueante ligero del paso siguiente porque PROCESO-MAESTRO se usa como ancla canónica del plan; arrancar el refactor sobre numeración ambigua propaga la ambigüedad a todos los commits del refactor.
+
+---
+
 ## [v10.40 — 2026-05-06] — Refactor de fase 1 documentado como plan ejecutable
 
 Antes de empezar la ejecución del refactor (v10.35-v10.39 cerraron solo la propuesta), trazo el plan en los dos artefactos canónicos para evitar el patrón "trabajo solo en bitácora, no en plan" que el revisor ya señaló con Railway.

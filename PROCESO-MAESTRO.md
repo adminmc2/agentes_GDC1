@@ -705,19 +705,26 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 25. **Cada extracción de inventario genera además un informe HTML visual** integrado como sección nueva del dashboard existente (`web/index.html`).
 26. **El dashboard debe mostrar** todos los JSON (inventario por unidad + 3 globales) y permitir revisar/editar las propuestas de reciclaje al cerrar cada unidad.
 
+### Sobre la arquitectura datos + instrucciones (decidida 2026-05-05)
+
+27. **Datos centralizados** en `unidades/UX/` — única ubicación canónica de inventario, tarjetas, píldoras, secciones de cada unidad.
+    - **Instrucciones modulares** en `fases/N-X/` — cada fase tiene su `CLAUDE.md` (contexto operativo) + `prompt.md` (instrucciones detalladas).
+    - **NO se duplican datos por fase**, aunque se busque ahorro de tokens. Razones: (1) viola Regla de Oro #5 (una fuente única); (2) CLAUDE.md modular ya carga solo el contexto relevante; (3) los datos no se cargan automáticamente, solo cuando Claude Code los lee explícitamente con `Read`.
+    - **Optimizaciones de tokens reales:** prompts compactos con ejemplos, `Read` con offset/limit en JSONs grandes, sesiones limpias por fase.
+
 ### Sobre la arquitectura documental de las fases (refactor de fase 1, decidido 2026-05-06)
-27. **Refactor documental de fase 1 aprobado** tras 6 rondas de revisión (v10.35 → v10.39). El `prompt.md` actual mezcla siete funciones distintas (prompt de ejecución, schema, casebook, mantenimiento, etc.) en un único archivo de 547 líneas / 27 secciones. Va contra Anthropic best practices sobre instrucciones modulares y concisas, y crea contradicciones por falta de single source of truth.
-28. **Arquitectura objetivo: 5 archivos** en `fases/1-extraccion-inventario/`:
+28. **Refactor documental de fase 1 aprobado** tras 6 rondas de revisión (v10.35 → v10.39). El `prompt.md` actual mezcla siete funciones distintas (prompt de ejecución, schema, casebook, mantenimiento, etc.) en un único archivo de 547 líneas / 27 secciones. Va contra Anthropic best practices sobre instrucciones modulares y concisas, y crea contradicciones por falta de single source of truth.
+29. **Arquitectura objetivo: 5 archivos** en `fases/1-extraccion-inventario/`:
     - `CLAUDE.md` — contrato de fase (40-60 líneas como norte).
     - `prompt.md` — prompt core de ejecución (80-120 líneas como norte).
     - `schema-inventario.md` — contrato de datos puro (forma del JSON, tipos, obligatoriedad).
     - `reglas-operativas.md` — decisión, clasificación, población, unidades atípicas.
     - `convenciones-y-casos.md` — transcripción del libro + casebook histórico.
-29. **Frontera de capas (no negociable):** split por capa, no por campo. Forma → schema; decisión → reglas-operativas; transcripción/casos → convenciones-y-casos.
-30. **Source of truth de precedencias:** vive exclusivamente en `reglas-operativas.md`. Otros archivos invocan por referencia, no copian.
-31. **Skill de Claude Code (`.claude/skills/...`) fuera de v1.** Reabrir solo si tras v1 el patrón de uso justifica encapsular (≈10 ejecuciones en NC1 no compensan).
-32. **Schema documental y validador (`scripts/validar_inventario.py`):** contratos paralelos del mismo shape. **No pueden divergir en el momento del merge.** Cualquier divergencia detectada por el cross-check del paso 5.5 se resuelve antes del merge en commit aparte (técnicamente fuera del refactor nominal, pero prerequisito ineludible).
-33. **Source of truth operativa del plan ejecutable:** `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md`. PROCESO-MAESTRO no duplica el detalle; lo invoca. REVIEW.md lleva el progreso por sub-paso.
+30. **Frontera de capas (no negociable):** split por capa, no por campo. Forma → schema; decisión → reglas-operativas; transcripción/casos → convenciones-y-casos.
+31. **Source of truth de precedencias:** vive exclusivamente en `reglas-operativas.md`. Otros archivos invocan por referencia, no copian.
+32. **Skill de Claude Code (`.claude/skills/...`) fuera de v1.** Reabrir solo si tras v1 el patrón de uso justifica encapsular (≈10 ejecuciones en NC1 no compensan).
+33. **Schema documental y validador (`scripts/validar_inventario.py`):** contratos paralelos del mismo shape. **No pueden divergir en el momento del merge.** Cualquier divergencia detectada por el cross-check del paso 5.5 se resuelve antes del merge en commit aparte (técnicamente fuera del refactor nominal, pero prerequisito ineludible).
+34. **Source of truth operativa del plan ejecutable:** `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md`. PROCESO-MAESTRO no duplica el detalle; lo invoca. REVIEW.md lleva el progreso por sub-paso.
 
 ---
 
@@ -742,14 +749,6 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 ### Sobre el sistema de sincronización con BD
 - Cuándo se escribe el script `sincronizar-reglas.py` (no urgente, pero diseño actual debe contemplar).
 - Qué archivos de criterios son "sincronizables" y cuáles son solo para Claude Code.
-
-### Decisiones cerradas adicionales (post-creación inicial)
-
-**Decisión 27 — Arquitectura datos+instrucciones (cerrada 2026-05-05).**
-- **Datos centralizados** en `unidades/UX/` — única ubicación canónica de inventario, tarjetas, píldoras, secciones de cada unidad.
-- **Instrucciones modulares** en `fases/N-X/` — cada fase tiene su `CLAUDE.md` (contexto operativo) + `prompt.md` (instrucciones detalladas).
-- **NO se duplican datos por fase**, aunque se busque ahorro de tokens. Razones: (1) viola Regla de Oro #5 (una fuente única); (2) CLAUDE.md modular ya carga solo el contexto relevante; (3) los datos no se cargan automáticamente, solo cuando Claude Code los lee explícitamente con `Read`.
-- **Optimizaciones de tokens reales:** prompts compactos con ejemplos, `Read` con offset/limit en JSONs grandes, sesiones limpias por fase.
 
 ### Sobre las protecciones (qué archivos no se modifican sin autorización)
 - Lista vigente: `viejo/.claude/rules/agent-prompt-design.md`, `tool-design.md`, `criterios-generacion-tarjetas.md`, `scripts/crewai/tools.py`.
@@ -864,4 +863,5 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 - **2026-05-05 14:00** — Dictamen del revisor sobre paso B (commit `67db6a4`): implementación correcta y completa, sin bloqueantes. Hallazgo cosmético registrado como B4 (`_normSeccion` no fusiona pestañas `(cont.)`); se resuelve en paso C sin acción separada.
 - **2026-05-05 13:30** — Hallazgos del revisor sobre el split aceptados. Documentados como bugs conocidos B1 (`tools.py:346` escribe a path inexistente), B2 (Railway: `repertorios/` ya estaba gitignored antes del split, dashboard llevaba roto), B3 (`diagrama.py:715` con path hardcoded a inventario antiguo). Decisión: NO arreglar ahora, abordar los 3 al inicio del paso C cuando los paths en `nuevo/` estén fijados.
 - **2026-05-05 13:00** — Auditoría y actualización del documento. Correcciones: (1) entrada de bitácora con "12 tipos" → "17 tipos" (consistencia interna); (2) Parte 4 reescrita con las **26 decisiones cerradas** organizadas por categoría (modelo, organización, naming, JSONs, generación, dashboard); (3) Parte 5 (pendientes) limpiada — eliminados los esquemas JSON que ya estaban cerrados, añadida sección de "implementación pendiente"; (4) Parte 5.bis reescrita reflejando que el split YA está ejecutado (no es plan futuro); (5) Parte 6 reescrita con estado real de cada paso (A hecho, B próximo, C-F pendientes); (6) árbol "antes del split" marcado como histórico para evitar confusión.
-- **2026-05-06 14:30** — **Refactor documental de fase 1 aprobado** tras 6 rondas de revisión sobre `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` (v10.35→v10.39). Parte 4 ampliada con 7 nuevas decisiones cerradas (27-33) que fijan: arquitectura objetivo de 5 archivos, frontera de capas no negociable (forma vs decisión), single source of truth de precedencias en `reglas-operativas.md`, skill fuera de v1, contrato paralelo schema↔validador con prerequisito de no divergencia en el merge, y delegación del plan ejecutable a REFACTOR-PROPUESTA.md como source of truth operativa. La ejecución se trackea en REVIEW como paso A4 con sub-pasos A4.0→A4.6 (incluido A4.5.5 cross-check obligatorio). No se ha tocado código todavía.
+- **2026-05-06 14:30** — **Refactor documental de fase 1 aprobado** tras 6 rondas de revisión sobre `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` (v10.35→v10.39). Parte 4 ampliada con 7 nuevas decisiones cerradas (28-34) que fijan: arquitectura objetivo de 5 archivos, frontera de capas no negociable (forma vs decisión), single source of truth de precedencias en `reglas-operativas.md`, skill fuera de v1, contrato paralelo schema↔validador con prerequisito de no divergencia en el merge, y delegación del plan ejecutable a REFACTOR-PROPUESTA.md como source of truth operativa. La ejecución se trackea en REVIEW como paso A4 con sub-pasos A4.0→A4.6 (incluido A4.5.5 cross-check obligatorio). No se ha tocado código todavía.
+- **2026-05-06 15:00** — **Fix de coherencia documental** tras dictamen del revisor: eliminada numeración duplicada de "Decisión 27" (existía una en Parte 4 nueva y otra en Parte 5 bajo "Decisiones cerradas adicionales (post-creación inicial)"). El bloque Arquitectura datos+instrucciones se ha movido a Parte 4 como subsección propia (donde corresponde por estar cerrada) preservando su número 27 por antigüedad; las decisiones del refactor de fase 1 se renumeran de 27-33 a 28-34. Eliminado el subheader "Decisiones cerradas adicionales (post-creación inicial)" de Parte 5 porque era contradictorio con el título "Decisiones pendientes" de la propia Parte 5.
