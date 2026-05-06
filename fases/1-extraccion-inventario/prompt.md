@@ -45,7 +45,23 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 
 > **Movido a `schema-inventario.md` en A4.2a.** Forma del JSON, schema top-level (10 claves obligatorias + 1 opcional), schema por página, por actividad, por cuadro, schema del bloque de autoevaluación, schema de `_nota_unidad_atipica`, taxonomía cerrada de 17 tipos, enumeración de 5 valores de `tipo_cuadro`, enumeración de 7 secciones canónicas, estructura de `vocabulario_consolidado`, estructura de `respuestas` / `campo_semantico` / `audio`/`imagen`/`video`, estructura de `datos.items_libro`. Single source of truth con `scripts/validar_inventario.py`.
 >
-> Las **reglas de población semántica** (cuándo aplica `campo_semantico`, qué cuenta como `principal/recurrente/comprension`, contenido de `respuestas`, cuándo marcar `presente=true`, distinción `completa_huecos` vs `produccion_escrita_guiada`, criterios canónicos para asignar cada uno de los 17 tipos) **siguen viviendo provisionalmente en este `prompt.md`** y **se migrarán a `reglas-operativas.md` en A4.2b**. Hasta que A4.2b cierre, el source of truth de esas reglas decisionales es este archivo, no `reglas-operativas.md` (que solo contiene los 3 fragmentos absorbidos en v10.49).
+> Las **reglas de población semántica** (cuándo aplica `campo_semantico`, qué cuenta como `principal/recurrente/comprension`, contenido de `respuestas`, cuándo marcar `presente=true`, criterios canónicos para asignar cada uno de los 17 tipos de actividad) se **migrarán a `reglas-operativas.md` en A4.2b**. Hasta entonces, el estado real de cada bloque decisional es:
+>
+> - **Distinción `completa_huecos` vs `produccion_escrita_guiada`:** el único bloque decisional **explícito** que vive en este `prompt.md` (ver sección "Reglas decisionales provisionales" más abajo, restaurada en v10.51 tras detectarse pérdida en A4.2a). Mientras viva aquí, **este es su source of truth**.
+> - **Resto de criterios para los 17 tipos** (qué cuenta como `escucha_y_repite`, `clasifica`, `tarea_final`, etc.): **implícitos del dominio editorial**, no canonizados todavía en ningún archivo del repo. Se documentarán por primera vez al construir `reglas-operativas.md` en A4.2b. Hasta entonces, el oráculo de facto son los inventarios trackeados (U0/U1/U3) — qué tipo se asignó a qué actividad allí.
+> - **Reglas de población de `vocabulario_consolidado`, `respuestas`, `campo_semantico`, `audio/imagen/video`:** los 3 fragmentos absorbidos en v10.49 viven en `reglas-operativas.md`; el resto vive provisionalmente en este `prompt.md` en sus secciones específicas (más abajo).
+
+---
+
+## Reglas decisionales provisionales (a migrar en A4.2b)
+
+> **Restaurado en v10.51 tras detectarse pérdida en A4.2a.** Este bloque era el único contenido decisional explícito sobre la taxonomía en el `prompt.md` pre-refactor (`cc1f18b`). El placeholder grande de A4.2a lo absorbió por error de scope. Restaurado aquí como source of truth provisional hasta que A4.2b lo migre a `reglas-operativas.md` junto con el resto de criterios.
+
+### Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`
+
+- **`produccion_escrita_guiada`:** el alumno **escribe texto nuevo** (palabras, formas verbales, letras, frases) guiado por una estructura. Ejemplos: completar con la forma verbal correcta, escribir la letra que falta (b/v, c/z), construir una frase a partir de un modelo.
+- **`completa_huecos`:** el alumno **selecciona o encaja** elementos dados sin producir texto nuevo. Reservado para actividades de identificación/selección sin escritura.
+- **Regla práctica:** si el alumno tiene que escribir algo que no está ya en el enunciado → `produccion_escrita_guiada`.
 
 ---
 

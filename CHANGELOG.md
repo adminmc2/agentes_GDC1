@@ -3,6 +3,38 @@
 
 ---
 
+## [v10.51 — 2026-05-06] — Cleanup pre-A4.2b parte 2: restaurar bloque decisional perdido en A4.2a
+
+El revisor sobre `68799b6` (v10.50): el hallazgo del source of truth de la taxonomía no quedó cerrado, solo reformulado. v10.50 alineó `prompt.md` y `reglas-operativas.md` para decir lo mismo, pero **lo que decían era falso**: ambos afirmaban "el contenido decisional canónico vive provisionalmente en `prompt.md`" cuando en el archivo real ese contenido **ya no estaba**. Verdad única alineada, pero sobre una premisa que el repo no sostenía.
+
+**Causa raíz:** el placeholder grande que metí en A4.2a (commit `668572f`, v10.47) absorbió por error de scope el bloque "Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`" del prompt pre-refactor (`cc1f18b:227-230`). Ese bloque era el **único contenido decisional explícito** sobre la taxonomía que tenía el prompt. Al sustituirlo por placeholder, dejé el archivo afirmando un source of truth que ya no existía físicamente.
+
+**Resolución (opción A del revisor):** restaurar la verdad para que la declaración sea verdadera.
+
+- **Bloque "Distinción crítica" recuperado** del commit pre-refactor `cc1f18b` y reinsertado en `prompt.md` como nueva sección **"Reglas decisionales provisionales (a migrar en A4.2b)"**. Texto idéntico al original, sin reescritura.
+- **Placeholder grande reformulado con honestidad sobre el estado real:**
+  - Distinción `completa_huecos` vs `produccion_escrita_guiada`: source of truth = `prompt.md` (sección restaurada).
+  - Resto de criterios para los 17 tipos: **no canonizados todavía en ningún archivo**, implícitos del dominio editorial; oráculo de facto = inventarios trackeados U0/U1/U3. Se canonizarán al construir `reglas-operativas.md` en A4.2b.
+  - 3 fragmentos absorbidos en v10.49 (autoevaluación opcional, mapeo de secciones, taxonomía revisable) viven en `reglas-operativas.md`.
+- **`reglas-operativas.md` alineado simétricamente** con la misma descripción del estado.
+
+**Verificación:**
+- `grep "Distinción crítica.*completa_huecos.*produccion_escrita_guiada" prompt.md` → línea 60 (presente).
+- `grep "escribe texto nuevo" prompt.md` → línea 62.
+- `grep "Regla práctica.*alumno tiene que escribir" prompt.md` → línea 64.
+
+El bloque restaurado coincide caracter por caracter con `cc1f18b`.
+
+**Por qué se hace ahora:** A4.2b va a migrar exactamente este contenido. Si arranca con la afirmación falsa de "ya está aquí" cuando no está, el sub-paso pierde su anclaje. Restaurar la verdad antes de migrar es prerequisito para que la migración signifique algo.
+
+**Lección registrada:** los placeholders de A4.2a fueron demasiado amplios. En A4.2b habrá que ser más quirúrgico al sustituir bloques por enlaces — verificar siempre que cada parte del bloque viejo tiene destino antes de borrarla del origen.
+
+**Sin cambios de código.** Solo restauración de contenido editorial perdido + alineación de redacciones.
+
+**Estado A4.2 tras este commit:** (a) ✅ schema migrado + frontera limpia · (b) 📋 reglas-operativas con adelanto parcial + bloque "Distinción crítica" pendiente de migrar desde prompt · (c) 📋 convenciones-y-casos.
+
+---
+
 ## [v10.50 — 2026-05-06] — Cleanup pre-A4.2b: dos correcciones del revisor antes de arrancar
 
 Dos hallazgos del revisor sobre el commit anterior `40e123c` (v10.49). Ambos resueltos antes de tocar A4.2b para que el sub-paso arranque sin inconsistencias.

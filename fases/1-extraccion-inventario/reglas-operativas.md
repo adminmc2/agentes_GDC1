@@ -55,7 +55,10 @@
 
 Enumeración cerrada en `schema-inventario.md` §5.
 
-**El criterio canónico para asignar cada uno de los 17 tipos** (qué cuenta como `escucha_y_repite`, cómo distinguir `completa_huecos` de `produccion_escrita_guiada`, etc.) **vive provisionalmente en `prompt.md`** hasta que A4.2b complete la migración. Hasta entonces, source of truth = `prompt.md`.
+**Estado real del source of truth de los criterios decisionales de los 17 tipos:**
+
+- **Distinción `completa_huecos` vs `produccion_escrita_guiada`:** vive **explícitamente** en `prompt.md` (sección "Reglas decisionales provisionales", restaurada en v10.51). Mientras viva allí, ese archivo es su source of truth.
+- **Resto de criterios para los 17 tipos** (qué cuenta como `escucha_y_repite`, `clasifica`, `tarea_final`, etc.): **no canonizados todavía en ningún archivo del repo**. Implícitos del dominio editorial. El oráculo de facto son los inventarios trackeados (U0/U1/U3) — qué tipo se asignó a qué actividad allí. Se canonizarán por primera vez al construir esta sección de `reglas-operativas.md` en A4.2b.
 
 **Ya documentado aquí** (absorbido en v10.49 desde la fuga workflow de schema):
 - La enumeración de 17 valores es **provisional y revisable a nivel global del proyecto**. No se amplía ni se cambia ad hoc por unidad. Cualquier modificación del set requiere decisión cerrada en PROCESO-MAESTRO antes de aplicarse en `schema-inventario.md` y en `validar_inventario.py`.
