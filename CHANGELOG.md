@@ -3,6 +3,45 @@
 
 ---
 
+## [v10.47 — 2026-05-06] — A4.2a: migración del contenido estructural a `schema-inventario.md`
+
+Tercer sub-paso del refactor (parte (a) de A4.2). Movido al nuevo `schema-inventario.md` todo el contenido del `prompt.md` actual cuya capa es **estructural** (forma del JSON, tipos, obligatoriedad, enumeraciones, restricciones validables sin contexto editorial).
+
+**Contenido migrado a `schema-inventario.md`** (300 líneas, 13 secciones):
+
+1. Estructura top-level (10 claves obligatorias + 1 opcional `_nota_unidad_atipica`).
+2. Schema por página.
+3. Schema por actividad (incluye declaración del saco `datos`).
+4. Schema por cuadro + nota canónica `tipo_cuadro` (categoría pedagógica) vs `contenido.tipo` (estructura interna).
+5. Taxonomía cerrada de 17 tipos de actividad.
+6. Schema del bloque de autoevaluación (top-level opcional) con valores fijos NC1.
+7. Enumeración cerrada de `tipo_cuadro` (5 valores).
+8. Enumeración cerrada de `seccion` (7 valores).
+9. Estructura de `vocabulario_consolidado` (3 sub-bloques con `_descripcion`).
+10. Estructura de `respuestas`, `campo_semantico`, `audio`/`imagen`/`video` con la restricción condicional `imagen.descripcion` obligatoria si `presente=true`.
+11. Schema de `_nota_unidad_atipica` como clave opcional contractual.
+12. Estructura de `datos.items_libro` (lista de strings, obligatoriedad por tipo de actividad — contrato paralelo con `validar_inventario.py:TIPOS_QUE_REQUIEREN_ITEMS`).
+13. Source of truth con `scripts/validar_inventario.py` (regla de no-divergencia explícita).
+
+**Frontera respetada:** todo el contenido de cuándo aplicar / cómo elegir / cómo poblar permaneció en su zona del prompt para migrar en A4.2b a `reglas-operativas.md`. Ej: la enumeración de los 17 tipos vive ahora en schema, pero la "Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`" sigue en prompt esperando A4.2b.
+
+**Cambios en `prompt.md`:** 9 secciones consecutivas (Esquema canónico, Esquema por página, por actividad, por cuadro, Bloque de autoevaluación, Taxonomía 17 tipos, Reglas para `vocabulario_consolidado`, `secciones`, `seccion`, `respuestas`, `audio/imagen/video`, `campo_semantico`) reemplazadas por **un único placeholder con enlace** al schema. `prompt.md` pasa de 547 → 290 líneas.
+
+**Verificación de anclas semánticas** (todas pasan):
+
+| Ancla | schema | prompt |
+|---|---|---|
+| `Taxonomía cerrada de tipos de actividad` | 1 | 0 |
+| `tipo_cuadro describe la categoría pedagógica` | 1 | 0 |
+| `Mis resultados en esta unidad son` | 2 | 0 |
+| `MUY BUENOS / BUENOS / NO MUY BUENOS` | 1 | 0 |
+
+**Estado del paso A4.2:** 🔄 (a) ✅ schema · (b) 📋 reglas-operativas · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2b — migrar a `reglas-operativas.md` (precedencias entre actividad/cuadro/nota/autoevaluación, reglas de población, distinción `completa_huecos` vs `produccion_escrita_guiada`, unidades atípicas, literalidad de `items_libro`).
+
+---
+
 ## [v10.46 — 2026-05-06] — A4.1: tres archivos auxiliares creados con headers de identidad
 
 Segundo sub-paso del refactor documental de fase 1 (ver paso A4 en `REVIEW.md` y `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` sección 5 paso 1).
