@@ -3,6 +3,43 @@
 
 ---
 
+## [v10.53 — 2026-05-07] — Cierre real de A4.2b: reescritura de la cabecera transicional residual
+
+El revisor sobre `ddd9879` (v10.52, "A4.2b cerrado"): el cierre **no era válido**. Tres hallazgos.
+
+**1 (Bloqueante) — Cabecera transicional residual reabría la contradicción.**
+
+`prompt.md` líneas 44-52 (cabecera "Esquema y schema del JSON") seguían describiendo literalmente el estado **pre-A4.2b**:
+
+> *"Las reglas de población semántica (...) se migrarán a `reglas-operativas.md` en A4.2b. Hasta entonces, el estado real de cada bloque decisional es: (...) Distinción crítica vive provisionalmente en este `prompt.md`... Resto de criterios... se documentarán por primera vez al construir `reglas-operativas.md` en A4.2b... Reglas de población... el resto vive provisionalmente en este `prompt.md`..."*
+
+Mientras el resto del prompt y `reglas-operativas.md` ya describían el estado **post-A4.2b** (todo migrado y vivo en reglas-operativas). Tres afirmaciones falsas convivían con la realidad migrada en el mismo archivo. Eso reabre exactamente la contradicción de source of truth que v10.50/v10.51 cerraron.
+
+Causa raíz: la cabecera había sido escrita en v10.51 como puente provisional pre-A4.2b. v10.52 (A4.2b) corrigió las secciones específicas pero **olvidó reescribir esta cabecera global**. Quedó "viva" describiendo un estado anterior.
+
+**2 (Medio) — Verificación de anclas sobredeclarada.**
+
+v10.52 verificó que 7 frases canónicas movidas estaban en `reglas-operativas.md` y ausentes de `prompt.md`. Pero el criterio real del paso 2 del plan (`REFACTOR-PROPUESTA.md` §5 paso 2) es más fuerte: **la zona reemplazada del prompt debe quedar reducida a un enlace limpio**, no solo libre de las frases concretas movidas. Esa cabecera transicional incumplía el criterio aunque ninguna frase individual exacta apareciera duplicada.
+
+**3 (Bajo) — Cabecera REVIEW desincronizada.**
+
+REVIEW decía "Última actualización: 2026-05-06 22:30" pero el commit `ddd9879` fue a las 23:58 (1.5 h de retraso documental).
+
+---
+
+**Resolución (todo en este commit):**
+
+- **Cabecera transicional reescrita** como puente corto y verdadero (3 bullets, alineada con el estado actual): schema → `schema-inventario.md`; reglas decisionales → `reglas-operativas.md`; convenciones → `convenciones-y-casos.md` (en construcción, A4.2c).
+- **Verificación reforzada con el criterio del plan:** `grep` de afirmaciones pre-A4.2b en `prompt.md` (`"se migrarán a reglas-operativas"`, `"Hasta entonces"`, `"vive provisionalmente en este .prompt"`, `"el único bloque decisional explícito"`, `"oráculo de facto"`) → todos 0. Las 3 referencias residuales a "A4.2c" son legítimas (esperan ese sub-paso, cuyas migraciones todavía no se han hecho).
+- **Cabecera REVIEW** sincronizada al timestamp de este commit.
+- **A4.2b vuelve a ✅ pero como "cerrado limpio en v10.53"** — el CHANGELOG y la bitácora REVIEW reconocen que v10.52 había declarado el cierre prematuramente.
+
+**Lección aplicada (lente Anthropic-first):** la regla "cada placeholder debe ser enlace limpio" requiere verificar **toda la zona reemplazada**, no solo las frases nominalmente movidas. Cuando una cabecera describe un proceso transicional, hay que reescribirla en cuanto la transición se completa — si no, el archivo entero queda contradiciéndose. La causa raíz es la misma de A4.2a: tratar la verificación como "buscar lo que sí debería estar fuera" en vez de "comprobar que la zona está limpia y solo es enlace".
+
+**Sin cambios de código.**
+
+---
+
 ## [v10.52 — 2026-05-06] — A4.2b: migración del contenido decisional a `reglas-operativas.md`
 
 Cuarto sub-paso del refactor (parte b de A4.2). Movido a `reglas-operativas.md` todo el contenido decisional del prompt: precedencias entre tipos de elemento, criterios de asignación, reglas de población de cada campo, unidades atípicas.

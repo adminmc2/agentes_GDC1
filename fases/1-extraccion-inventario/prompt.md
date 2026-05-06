@@ -41,15 +41,13 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 
 ---
 
-## Esquema y schema del JSON
+## Schema, reglas y convenciones — archivos externos
 
-> **Movido a `schema-inventario.md` en A4.2a.** Forma del JSON, schema top-level (10 claves obligatorias + 1 opcional), schema por página, por actividad, por cuadro, schema del bloque de autoevaluación, schema de `_nota_unidad_atipica`, taxonomía cerrada de 17 tipos, enumeración de 5 valores de `tipo_cuadro`, enumeración de 7 secciones canónicas, estructura de `vocabulario_consolidado`, estructura de `respuestas` / `campo_semantico` / `audio`/`imagen`/`video`, estructura de `datos.items_libro`. Single source of truth con `scripts/validar_inventario.py`.
+> **Schema del JSON** (forma, tipos, enumeraciones cerradas, restricciones validables sin contexto editorial): `schema-inventario.md`. Single source of truth con `scripts/validar_inventario.py`.
 >
-> Las **reglas de población semántica** (cuándo aplica `campo_semantico`, qué cuenta como `principal/recurrente/comprension`, contenido de `respuestas`, cuándo marcar `presente=true`, criterios canónicos para asignar cada uno de los 17 tipos de actividad) se **migrarán a `reglas-operativas.md` en A4.2b**. Hasta entonces, el estado real de cada bloque decisional es:
+> **Reglas decisionales** (precedencias actividad/cuadro/nota/autoevaluación, criterios de `tipo` y `tipo_cuadro`, "Para aprender" → actividad / "Observa" → nota, reglas de población de cada campo, bloque `autoevaluacion` cuándo presente/omitido, unidades atípicas): `reglas-operativas.md`.
 >
-> - **Distinción `completa_huecos` vs `produccion_escrita_guiada`:** el único bloque decisional **explícito** que vive en este `prompt.md` (ver sección "Reglas decisionales provisionales" más abajo, restaurada en v10.51 tras detectarse pérdida en A4.2a). Mientras viva aquí, **este es su source of truth**.
-> - **Resto de criterios para los 17 tipos** (qué cuenta como `escucha_y_repite`, `clasifica`, `tarea_final`, etc.): **implícitos del dominio editorial**, no canonizados todavía en ningún archivo del repo. Se documentarán por primera vez al construir `reglas-operativas.md` en A4.2b. Hasta entonces, el oráculo de facto son los inventarios trackeados (U0/U1/U3) — qué tipo se asignó a qué actividad allí.
-> - **Reglas de población de `vocabulario_consolidado`, `respuestas`, `campo_semantico`, `audio/imagen/video`:** los 3 fragmentos absorbidos en v10.49 viven en `reglas-operativas.md`; el resto vive provisionalmente en este `prompt.md` en sus secciones específicas (más abajo).
+> **Convenciones de transcripción y casebook** (sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", ejemplos correctos/incorrectos de `items_libro`, formato de diálogos y sopas de letras, casos resueltos en U3, política de mejora continua): `convenciones-y-casos.md` — **en construcción**. Lo pendiente sigue en secciones específicas más abajo de este prompt y se migrará en A4.2c.
 
 ---
 
