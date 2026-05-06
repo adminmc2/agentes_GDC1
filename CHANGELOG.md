@@ -3,6 +3,17 @@
 
 ---
 
+## [v10.34 — 2026-05-06] — Build slim para Railway: quitadas deps no usadas
+
+Preparación del despliegue del dashboard en Railway. Eliminadas las dependencias que el dashboard no usa:
+
+- **`requirements.txt`:** quitados `crewai[litellm]==1.9.3`, `langfuse==2.60.10` y `deepeval==3.8.9`. Quedan solo `psycopg2-binary` (BD lazy) y `python-dotenv` (.env). Verificado que ningún módulo activo (fuera de `viejo/`) los importa.
+- **`Dockerfile`:** quitada la instalación de `curl`, `nodejs` y `promptfoo` (CLI no usada por el dashboard). Mantengo `gcc` y `libpq-dev` para que `psycopg2-binary` compile en Debian slim.
+
+Impacto esperado: build de Railway ~3× más rápido y ~5× menos RAM en el contenedor. Las páginas del dashboard que dependen de BD (tarjetas, correcciones, reglas, agentes, trazas) seguirán sin BD configurada — los endpoints fallarán cuando se invoquen, pero las vistas de Inventarios y Proyecto, que es lo que se va a compartir con el equipo, funcionan sin BD ni Langfuse.
+
+---
+
 ## [v10.33 — 2026-05-06] — Tildes y eñes en etiquetas de los diagramas Mermaid
 
 Corregida la ortografía en las etiquetas visibles de los 3 diagramas Mermaid del dashboard (commit `5024914`, pusheado antes de bumpear versión — entrada retroactiva del CHANGELOG):
