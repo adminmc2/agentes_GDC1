@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-05 22:00
+> **Última actualización:** 2026-05-06 12:00
 
 ---
 
@@ -42,10 +42,10 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 | Bloque | Estado |
 |---|---|
-| Fase 1 — Extracción de inventario | ✅ Operativa con U3 y U0 (A1 ✅, A2 ✅ con reserva, A3 ✅ cerrado) |
-| Infraestructura (dashboard, validador) | ✅ Activa |
+| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1 y U3 trackeados y validando (A1 ✅, A2 ✅ con reserva, A3 ✅ cerrado). U2 en working tree, no validado |
+| Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
-| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — reciclaje en diseño; tarjetas espera fase 2; píldoras espera fase 5 |
+| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 (reciclaje) en diseño · B1+B2 esperan dependencias · B5 (despliegue público) ✅ cerrado fuera de orden · tarjetas dependen de fase 2 · píldoras dependen de fase 5 |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
 | Bloque E (limpieza final) | 📋 Pendiente |
@@ -114,7 +114,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 > **Decisiones del autor (2026-05-05):** el bloque B se ejecuta en partes:
 > - **`nc1-tarjetas.json`**: requiere fase 2 primero. Sin tarjetas generadas, el global está vacío. Pendiente hasta cerrar fase 2.
 > - **`nc1-pildoras.json`**: pendiente hasta trabajar U3 vocabulario (fase 5).
-> - **`nc1-reciclaje.json`**: se puede discutir y diseñar ahora. El autor quiere definir cómo construirlo antes de implementar.
+> - **`nc1-reciclaje.json`**: se puede discutir y diseñar ahora. El autor quiere definir cómo construirlo antes de implementar — formalizado como **B1.5** (gate de diseño previo a B2).
 
 ### B1. Escribir scripts Python para los JSONs globales del curso
 
@@ -145,7 +145,37 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 5. ✅ Documentados en CLAUDE.md.
 6. ✅ Commit + CHANGELOG.
 
-**Bloquea a:** B2.
+**Bloquea a:** B2 (parte tarjetas + píldoras).
+
+---
+
+### B1.5. Diseño de `nc1-reciclaje.json` — definir contrato antes de generar
+
+**Objetivo:** cerrar formalmente cómo se construye `nc1-reciclaje.json`. La nota del bloque B (líneas iniciales) declara que el autor quiere "definir antes de implementar"; este paso lo materializa con gate propio.
+
+**Pre-condición:** ninguna (decisión del autor). En paralelo con B1; no depende de B1.
+
+**Preguntas que cierra el paso:**
+- ¿Qué dispara una entrada de reciclaje (qué actividad de qué unidad recicla qué de qué unidad anterior)?
+- ¿Formato de cada entrada individual? (campos mínimos, IDs de actividad origen/destino, tipo de reciclaje, contenido).
+- ¿Política de mantenimiento: manual por Claude Code en chat, automático por script, o mixto?
+- ¿Confirmar o ajustar el esqueleto top-level que B2 hoy presupone (`curso`, `actualizado`, `reciclajes_por_unidad: {}`, `indice_por_tipo: {...}`)?
+
+**Archivos a modificar:**
+- `PROCESO-MAESTRO.md` — Parte 4: registrar la decisión (esquema cerrado de nc1-reciclaje).
+
+**Actualizaciones meta requeridas:**
+- `PROCESO-MAESTRO.md` — entrada en Parte 4.
+- `REVIEW.md` — gate marcado, B2 actualizado para depender de B1.5.
+- `CHANGELOG.md` — entrada del cierre de decisión.
+
+**Gate de cierre:**
+1. ✅ Decisión sobre disparadores, formato per-entrada, política de mantenimiento y esqueleto top-level cerrada con el autor.
+2. ✅ Decisión registrada en PROCESO-MAESTRO.md Parte 4.
+3. ✅ Si el esqueleto resulta distinto del que asume hoy B2, B2 se ajusta antes de ejecutarse.
+4. ✅ Commit + CHANGELOG.
+
+**Bloquea a:** B2 (parte reciclaje).
 
 ---
 
@@ -153,7 +183,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 **Objetivo:** tener archivos `nc1-tarjetas.json`, `nc1-pildoras.json`, `nc1-reciclaje.json` en `unidades/`.
 
-**Pre-condición:** B1 cerrado. B3 (migración de contenido) decidido.
+**Pre-condición:** B1 cerrado (para tarjetas+píldoras) + **B1.5 cerrado** (para reciclaje). B3 (migración de contenido) decidido.
 
 **Archivos a crear:**
 - `unidades/nc1-tarjetas.json` — generado por script.
@@ -222,6 +252,31 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 2. ✅ La vista en el dashboard muestra los 3 globales legibles.
 3. ✅ Schema-aware: si un global está vacío, se ve "vacío" sin errores.
 4. ✅ Commit + CHANGELOG.
+
+---
+
+### B5. Despliegue público del dashboard — ✅ CERRADO 2026-05-06 (carril paralelo)
+
+> **Contexto:** este paso se ejecutó **fuera del orden B1-B4**, como carril paralelo, a petición del autor para compartir el dashboard con el equipo editorial. Se documenta retroactivamente para que el plan refleje el trabajo real y se elimine la doble verdad operativa entre bitácora y plan.
+
+**Objetivo:** dashboard accesible públicamente para el equipo editorial (consultar Inventarios + Proyecto), sin BD ni Langfuse.
+
+**Decisión de scope (autor):** los módulos con BD (tarjetas, correcciones, reglas, agentes, trazas) se quedan inactivos en el despliegue porque corresponden a flujos no operativos hoy.
+
+**Archivos involucrados:**
+- `requirements.txt` — quitadas deps no usadas (`crewai`, `langfuse`, `deepeval`).
+- `Dockerfile` — quitado nodejs y promptfoo CLI no usados.
+- `diagrama.py` — fixes ortográficos en etiquetas Mermaid (Compañeros, Validación, Píldoras, etc.).
+- `railway.toml` — sin cambios, ya existente.
+
+**Gate cumplido:**
+1. ✅ URL pública responde HTTP 200: `https://entornoeditorial.up.railway.app`.
+2. ✅ `/api/version` devuelve la versión del CHANGELOG (auto-leída).
+3. ✅ Build slim funcional (deps mínimas: `psycopg2-binary` + `python-dotenv`).
+4. ✅ Diagramas Mermaid con ortografía corregida (tildes y eñes).
+5. ✅ Commits referenciados: `5024914` (fix ortográfico v10.33), `3611bd7` (build slim v10.34), `b3b07e2` (CHANGELOG retroactivo). Pusheados a `origin/main`.
+
+**Bloquea a:** ya nada operativo. Pendiente de decisión externa: si en el futuro se quiere control de acceso (basic auth o Cloudflare Access), se abre paso aparte.
 
 ---
 
@@ -360,7 +415,7 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 ### Archivos del sistema (raíz, en uso)
 | Archivo | Estado | Próxima modificación esperada |
 |---|---|---|
-| `CLAUDE.md` | ✅ Creado (196 líneas) | Cada cierre de fase, cada cambio en estructura/comandos/reglas |
+| `CLAUDE.md` | ✅ Activo, conciso (Anthropic best practices) | Cada cierre de fase, cada cambio en estructura/comandos/reglas |
 | `PROCESO-MAESTRO.md` | ✅ Activo | Cada decisión nueva o cierre de pendiente |
 | `REVIEW.md` | ✅ Activo | Continuamente: cada paso completado, nuevos pasos detectados |
 | `README.md` | ✅ Actualizado | Cuando cambia estructura raíz, comandos, instalación |
@@ -373,7 +428,7 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 ### Código activo (raíz)
 | Archivo | Estado | Próxima modificación esperada |
 |---|---|---|
-| `diagrama.py` | ✅ Activo (zona simplificada) | B4 (vista globales), A3 (verificar bug B3) |
+| `diagrama.py` | ✅ Activo, sirviendo en producción (Railway) | B4 (vista globales), nuevos endpoints si surgen |
 | `web/index.html` | ✅ Vista Inventarios funcional | B4, mejoras estéticas |
 | `eval/` | ⚠ Heredado | Bloque C cuando aplique |
 | `fases/1-extraccion-inventario/prompt.md` | ✅ Operativo | A1 (con cada error nuevo en U3), A2 (con casos nuevos en otras unidades) |
@@ -384,13 +439,16 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 ### Contenido editorial (raíz)
 | Carpeta/Archivo | Estado | Próxima modificación |
 |---|---|---|
-| `unidades/U3/U3-nc1-inventario.json` | ✅ Validado | A1 (correcciones), B3 (decidir si migrar más contenido) |
+| `unidades/U0/U0-nc1-inventario.json` | ✅ Validado · trackeado · unidad atípica (1 aviso intencional por `_nota_unidad_atipica`) | Ninguna prevista |
+| `unidades/U1/U1-nc1-inventario.json` | ✅ Validado · trackeado | Ninguna prevista |
+| `unidades/U2/U2-nc1-inventario.json` | ⚠ **Solo working tree, no trackeado** · falla validación con 2 errores (`autoevaluacion.emoticonos` ausente). No usable hoy | Decisión pendiente: completar autoevaluación + trackear, o descartar |
+| `unidades/U3/U3-nc1-inventario.json` | ✅ Validado · trackeado | B3 (decidir si migrar más contenido) |
 | `unidades/U3/fuente/U3-nc1.pdf` | ✅ En su sitio (gitignored) | — |
 | `unidades/U3/tarjetas/`, `pildoras/`, MDs | 📋 No migrados | B3 |
-| `unidades/U1/`...`U9/` | 📋 No existen | A2 cuando lleguen PDFs |
+| `unidades/U4/`...`U9/` | 📋 Carpetas vacías, sin inventario | Nuevas extracciones cuando lleguen PDFs |
 | `unidades/nc1-tarjetas.json` | 📋 No existe | B2 |
 | `unidades/nc1-pildoras.json` | 📋 No existe | B2 |
-| `unidades/nc1-reciclaje.json` | 📋 No existe | B2 |
+| `unidades/nc1-reciclaje.json` | 📋 No existe | Diseño en B1.5, generación en B2 |
 
 ### Archivo (`viejo/`, intocable hasta E)
 | Carpeta | Estado |
@@ -418,7 +476,8 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
-- **2026-05-06 11:00** — Build slim para Railway (v10.34): quitadas `crewai`, `langfuse`, `deepeval` de requirements.txt y `node`+`promptfoo` del Dockerfile. Solo queda lo que el dashboard necesita en runtime. Próximo paso: crear proyecto Railway, conectar el repo y desplegar (sin BD ni Langfuse — el equipo solo verá Inventarios + Proyecto).
+- **2026-05-06 12:00** — Sincronización del plan con el trabajo real + propuesta de refactor de fase 1 (v10.35): insertado **B1.5** (diseño de `nc1-reciclaje.json` con gate propio, resuelve la doble verdad entre nota del bloque B y B2); insertado **B5** (despliegue público del dashboard como ✅ cerrado, marcado explícitamente como carril paralelo fuera del orden B1-B4); tabla de Contenido editorial reestructurada con estado real verificado contra filesystem (U0/U1/U3 trackeados y validan; **U2 solo working tree, no trackeado, no valida**: 2 errores de `autoevaluacion.emoticonos` ausente; U4-U9 carpetas vacías); cabecera "Última actualización" corregida; conteo de líneas obsoleto de `CLAUDE.md` eliminado; "A3 (verificar bug B3)" como próxima modificación de `diagrama.py` retirada (A3/B3 ya cerrados). Adicional: creado `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` tras 4 rondas de revisión (propuesta aprobable, sin ejecutar todavía — ver CHANGELOG v10.35).
+- **2026-05-06 11:00** — Build slim para Railway (v10.34): quitadas `crewai`, `langfuse`, `deepeval` de requirements.txt y `node`+`promptfoo` del Dockerfile. Solo queda lo que el dashboard necesita en runtime. **Documentado retroactivamente en B5 como cerrado**; el dashboard sirve v10.34 en `https://entornoeditorial.up.railway.app`.
 - **2026-05-06 09:30** — Tildes/eñes corregidas en los 3 diagramas Mermaid del dashboard (v10.33). Niveles 1, 2 y 3. ERD y rutas de filesystem sin tocar. Entrada CHANGELOG retroactiva: el commit `5024914` se pusheó antes de bumpear versión, lo que viola la regla "cada commit bumpea versión" — esta entrada lo regulariza.
 - **2026-05-06 00:30** — Correcciones tras 2.º dictamen del revisor (v10.32): validador endurecido — añadidas validaciones de presencia de `emoticonos`, tipos de sub-campos (int/str/bool/list-of-str), y valores fijos NC1 (instrucción literal, opciones canónicas, emoticonos=true) cuando `curso == "nc1"`. PROCESO-MAESTRO encabezado: "10 claves" → "10 claves obligatorias + 1 opcional". CHANGELOG v10.32 nota del validador actualizada.
 - **2026-05-06 00:15** — Correcciones tras dictamen del revisor (v10.31/v10.32): U0 cuadro "Saludos" reclasificado de `lexical` a `cultural` (según definición del prompt: fórmulas sociales = cultural). CHANGELOG v10.31 desglose corregido (eran 10 cuadros = 4+1+1+2+2, antes sumaba 11). Limpiadas 2 referencias antiguas restantes: prompt.md paso 4 ("Reglas para cuadros gramaticales" → "Reglas para cuadros") y comentario en web/index.html ("Renderizar cuadros gramaticales" → con los 5 tipos).

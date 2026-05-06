@@ -3,6 +3,44 @@
 
 ---
 
+## [v10.35 — 2026-05-06] — Sincronización REVIEW con trabajo real + propuesta de refactor de fase 1
+
+Dos cambios documentales que cierran inconsistencias de larga data, sin tocar código de producción.
+
+**1. `REVIEW.md` — sincronización del plan con el trabajo realmente ejecutado**
+
+Tras dictamen del revisor, el documento tenía doble verdad operativa: la bitácora apuntaba a Railway como "próximo paso" pero el plan no contenía paso/gate para ese trabajo (que ya estaba hecho). Y la nota del bloque B decía que `nc1-reciclaje.json` requería "definir antes de implementar" pero B2 lo asumía diseñado. Aplicado:
+
+- Insertado **B1.5** (diseño formal de `nc1-reciclaje.json` con gate propio, ubicado entre B1 y B2 porque B1 no depende del reciclaje). B2 declara pre-condición explícita "B1 cerrado + B1.5 cerrado".
+- Insertado **B5** como ✅ CERRADO 2026-05-06, marcado explícitamente como carril paralelo ejecutado fuera del orden B1-B4. Documenta retroactivamente Railway + build slim + fix ortográfico Mermaid (commits `5024914`, `3611bd7`, `b3b07e2`).
+- Tabla de Contenido editorial reestructurada (formato híbrido: U0/U1/U3 individuales con estado real verificado contra filesystem; **U2 con estado real reportado** — solo working tree, no trackeado, no valida con 2 errores de `autoevaluacion.emoticonos`; U4-U9 agrupadas como carpetas vacías).
+- Cabecera "Última actualización" corregida (estaba 22h atrás respecto a la bitácora real).
+- Conteo "(196 líneas)" de `CLAUDE.md` retirado por volátil — ahora son 100 líneas.
+- "A3 (verificar bug B3)" como próxima modificación de `diagrama.py` retirada (A3/B3 cerrados desde hace tiempo).
+- Bitácora del 11:00 reescrita: ya no afirma "Próximo paso: crear proyecto Railway..." (contradecía el estado real).
+- Estado global del bloque B refleja el nuevo árbol de pasos (B1.5 en diseño, B5 cerrado fuera de orden).
+
+**2. `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` — propuesta aprobable**
+
+Documento autocontenido de 5 archivos como objetivo (CLAUDE.md fase, prompt.md core, schema-inventario.md puro, reglas-operativas.md, convenciones-y-casos.md). Skill fuera de v1. Tras 4 rondas de revisión, incorpora:
+
+- Split por capa (estructural vs decisional), no por campo, para no reconstruir el monolito con piel nueva.
+- Mapeo línea-a-línea del prompt.md actual a destinos.
+- Rollback no destructivo (tag + rama, sin `git reset --hard`).
+- Verificación semántica (anclas + checklist) en vez de `wc -l`.
+- Prueba empírica de reextracción de 3 casos (página rica + U0 completa + U1-p21), no simulacro mental.
+- Cross-check schema ↔ validador como gate obligatorio antes del merge (paso 5.5).
+- Tratamiento estricto de `_nota_unidad_atipica` como opcional contractual (implica alineación del validador en commit aparte antes del merge).
+- Oráculo de regresión por caso (0 errores + 0 avisos en estado pre-merge).
+- Single source of truth de precedencias en `reglas-operativas.md`.
+- Merge gate enumerado explícitamente (pasos 0-5.5 sin excepciones).
+
+La propuesta queda **aprobada documentalmente** pero **no ejecutada todavía**. La ejecución del refactor se hará en rama propia cuando el autor dé luz verde.
+
+**Nota sobre commits previos sin bumpeo de versión:** la entrada v10.33 (commit `b3b07e2`) ya regularizó el commit `5024914` que no había bumpeado. Esta entrada v10.35 es de cierre limpio: cubre exactamente el trabajo aplicado en este commit.
+
+---
+
 ## [v10.34 — 2026-05-06] — Build slim para Railway: quitadas deps no usadas
 
 Preparación del despliegue del dashboard en Railway. Eliminadas las dependencias que el dashboard no usa:
