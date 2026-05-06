@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-06 15:30
+> **Última actualización:** 2026-05-06 16:00
 
 ---
 
@@ -121,7 +121,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 | Sub-paso | Descripción breve | Estado |
 |---|---|---|
-| **A4.0** | Tag `pre-refactor-prompt-fase1` + rama `refactor/prompt-fase-1` | 📋 |
+| **A4.0** | Tag `pre-refactor-prompt-fase1` + rama `refactor/prompt-fase-1` | ✅ 2026-05-06 16:00 (tag y rama → `cc1f18b`) |
 | **A4.1** | Crear los 3 archivos auxiliares vacíos con headers | 📋 |
 | **A4.2** | Migrar contenido fila por fila aplicando split por capa + verificación de anclas | 📋 |
 | **A4.3** | Reescribir `prompt.md` core desde cero (incluye sección "Cierre y validación") | 📋 |
@@ -512,6 +512,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-06 16:00** — **A4.0 cerrado** (v10.43): tag `pre-refactor-prompt-fase1` creado sobre HEAD del main pre-refactor (`cc1f18b`); rama `refactor/prompt-fase-1` creada y checkout activo. `main` queda intacto en `cc1f18b` durante todo el refactor. Si rollback: `git checkout main` (sin reset destructivo). Próximo: A4.1 (crear los 3 archivos auxiliares vacíos: `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`).
 - **2026-05-06 15:30** — Limpieza grep tras dictamen del revisor (v10.42, hallazgo bajo no bloqueante): anotación inline *"(renumeradas a 28-34 en v10.41)"* añadida a las dos entradas históricas que seguían siendo grep-ables con el rango viejo "27-33" sin contexto en la misma línea (bitácora del 14:30 + CHANGELOG v10.40 sección 1). El texto histórico se mantiene íntegro (no se reescribe lo que sí hizo v10.40); solo se contextualiza inline. Próximo: A4.0 (tag + rama).
 - **2026-05-06 15:00** — Fix de coherencia documental tras dictamen del revisor (v10.41): (a) PROCESO-MAESTRO Parte 4 — eliminada numeración duplicada de "Decisión 27"; el bloque "Arquitectura datos+instrucciones" se ha movido de Parte 5 a Parte 4 (donde corresponde por estar cerrada) preservando su número 27 por antigüedad; las decisiones del refactor de fase 1 (v10.40) se renumeran de 27-33 a 28-34. Eliminado el subheader "Decisiones cerradas adicionales (post-creación inicial)" de Parte 5 (contradecía el título "Decisiones pendientes" de la propia parte). (b) Cabecera "Última actualización" de REVIEW sincronizada con la bitácora.
 - **2026-05-06 14:30** — Refactor de fase 1 documentado como plan ejecutable (v10.40). Antes de empezar la ejecución, plan trazado en los dos artefactos canónicos: PROCESO-MAESTRO Parte 4 ampliada con 7 decisiones cerradas (27-33 *— renumeradas a 28-34 en v10.41 por colisión con la "Decisión 27" preexistente; ver entrada del 15:00*: arquitectura, frontera de capas, source of truth, skill fuera, contrato schema↔validador, delegación operativa a REFACTOR-PROPUESTA.md); REVIEW bloque A con paso A4 nuevo y 8 sub-pasos enumerados (A4.0-A4.6 + A4.5.5 cross-check obligatorio). Estado global bloque A actualizado a "🔄 A4 en curso". Cero código tocado: solo documentación del plan ejecutable. Próximo: A4.0 (tag + rama).

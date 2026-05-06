@@ -3,6 +3,26 @@
 
 ---
 
+## [v10.43 — 2026-05-06] — A4.0: tag pre-refactor + rama refactor/prompt-fase-1
+
+Primer sub-paso del refactor documental de fase 1 (ver paso A4 en `REVIEW.md` y `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` sección 5 paso 0).
+
+**Operaciones ejecutadas:**
+- `git tag pre-refactor-prompt-fase1` sobre HEAD del `main` (`cc1f18b`). Marcador inmutable de la base pre-refactor.
+- `git checkout -b refactor/prompt-fase-1`. Rama de trabajo creada y activa.
+- Verificación: `git rev-parse pre-refactor-prompt-fase1` y `git rev-parse HEAD` coinciden en `cc1f18b` (rama aún sin commits propios, parten del mismo punto).
+
+**Política de aislamiento:**
+- Todos los commits del refactor (A4.1 → A4.6) se hacen en `refactor/prompt-fase-1`, no en `main`.
+- `main` queda intacto en `cc1f18b` durante todo el refactor; el dashboard en producción (Railway) y el sistema activo siguen funcionando con el `prompt.md` viejo hasta que se mergee.
+- Si rollback: `git checkout main` (sin operaciones destructivas). La rama puede descartarse con `git branch -D refactor/prompt-fase-1` si no llegamos a mergear.
+
+**No hay cambios en archivos editoriales** todavía. Solo metadata git (tag + rama) + actualización de bitácoras.
+
+**Próximo:** A4.1 (crear los 3 archivos auxiliares vacíos con headers: `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`).
+
+---
+
 ## [v10.42 — 2026-05-06] — Limpieza grep: anotaciones inline en entradas históricas con rango "27-33"
 
 Hallazgo bajo no bloqueante del revisor: tras v10.41 (renumeración 27-33 → 28-34), dos entradas históricas seguían siendo grep-ables con el rango viejo "27-33" sin que el contexto del fix apareciera en la misma línea:
