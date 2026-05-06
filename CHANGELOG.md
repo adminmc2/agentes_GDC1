@@ -3,6 +3,28 @@
 
 ---
 
+## [v10.48 — 2026-05-06] — Regla de tipología de verificaciones por sub-paso
+
+Antes de arrancar A4.2b, se documenta de forma explícita qué tipo de verificación corresponde a cada sub-paso del refactor. Sin esta regla, cabía la ambigüedad de tratar las verificaciones de anclas (locales, documentales) como si fueran pruebas funcionales, lo cual debilita el gate real de A4.5.
+
+**La regla, no negociable:**
+
+- **A4.2 → A4.4:** **solo checks locales de integridad documental.** Anclas semánticas, mapeo como checklist externo, ausencia de contenido movido en el origen, presencia en el destino, no-duplicación entre archivos. NO son pruebas funcionales — el inventario no se reextrae todavía. Estos checks atrapan errores de migración (perder texto, duplicarlo, mal asignar capa) pero no validan que los nuevos artefactos sirvan para extraer.
+- **A4.5:** **primera prueba funcional oficial.** Reextracción empírica de los 3 casos seleccionados (página rica + U0 completa + U1-p21) usando solo los nuevos artefactos. Diff vs JSON existente. Validador con 0 errores y 0 avisos.
+- **A4.5.5:** cross-check `schema-inventario.md` ↔ `scripts/validar_inventario.py`. Gate obligatorio antes del merge.
+
+**Smoke test opcional tras A4.4:** se permite hacer una comprobación temprana en chat para atrapar roturas obvias antes de A4.5 (archivo que no se carga, sección huérfana, referencia muerta). **NO cuenta como gate formal ni sustituye la prueba funcional de A4.5.**
+
+**Aplicado en:**
+- `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` §5: nota destacada al inicio del plan, antes del paso 0.
+- `REVIEW.md` bloque A4: eco breve tras la tabla de sub-pasos, con referencia al detalle en REFACTOR-PROPUESTA.md.
+
+**Por qué se documenta ahora:** la regla no es nueva en sustancia (ya estaba implícita en el diseño del paso A4.5 como prueba empírica), pero hacerla explícita evita que en sub-pasos posteriores alguien (incluido el ejecutor) confunda un check de ancla con un OK funcional. Es exactamente el patrón que el revisor pidió blindar con la "lente Anthropic-first": cada artefacto debe declarar qué tipo de validación lo respalda.
+
+Sin cambios de código.
+
+---
+
 ## [v10.47 — 2026-05-06] — A4.2a: migración del contenido estructural a `schema-inventario.md`
 
 Tercer sub-paso del refactor (parte (a) de A4.2). Movido al nuevo `schema-inventario.md` todo el contenido del `prompt.md` actual cuya capa es **estructural** (forma del JSON, tipos, obligatoriedad, enumeraciones, restricciones validables sin contexto editorial).
