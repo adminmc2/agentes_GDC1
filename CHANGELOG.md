@@ -3,6 +3,35 @@
 
 ---
 
+## [v10.32 — 2026-05-05] — Bloque de autoevaluación como campo top-level
+
+**Decisión de diseño:** el bloque "Mis resultados en esta unidad son: MUY BUENOS / BUENOS / NO MUY BUENOS" del cierre de unidad NO es actividad ni cuadro ni nota. Es un elemento estructural recurrente y va como campo top-level `autoevaluacion` del JSON. Opcional (omitir en unidades atípicas).
+
+**Schema:**
+```jsonc
+"autoevaluacion": {
+  "pagina": <int>,
+  "instruccion_original": "Mis resultados en esta unidad son:",
+  "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
+  "emoticonos": true
+}
+```
+
+**Archivos modificados:**
+- `unidades/U1/U1-nc1-inventario.json` — añadido top-level `autoevaluacion` (p21); eliminado `_nota` redundante de p21-act6 que solo describía el bloque.
+- `unidades/U3/U3-nc1-inventario.json` — añadido top-level `autoevaluacion` (p43), antes no estaba capturado.
+- `unidades/U0/U0-nc1-inventario.json` — sin cambios (unidad atípica, no tiene bloque).
+- `scripts/validar_inventario.py` — `CLAVES_TOP_OPCIONALES` + validación estricta del campo si existe: presencia de los 4 sub-campos (`pagina`, `instruccion_original`, `opciones`, `emoticonos`), tipos correctos, lista de 3 strings, y valores fijos NC1 cuando `curso == "nc1"` (instrucción literal, opciones canónicas, emoticonos=true).
+- `fases/1-extraccion-inventario/prompt.md` — schema top-level + sección dedicada "Bloque de autoevaluación".
+- `fases/1-extraccion-inventario/CLAUDE.md` — regla añadida al resumen operativo.
+- `diagrama.py` — ERD: nueva entidad `autoevaluaciones(unidad_id, pagina, instruccion_original, opciones, emoticonos)`.
+- `web/index.html` — bloque renderizado en el dashboard entre el índice y las pestañas de páginas.
+- `PROCESO-MAESTRO.md` — schema top-level documentado.
+
+**Validación post-migración:** U0 → 1 aviso intencional; U1, U3 → 0 avisos.
+
+---
+
 ## [v10.31 — 2026-05-05] — Schema cuadros: cuadros_gramaticales → cuadros + tipo_cuadro
 
 **Decisión de diseño:** los cuadros de referencia de una página no son siempre gramaticales. La clave `cuadros_gramaticales` se reemplaza por `cuadros` con discriminador `tipo_cuadro`.

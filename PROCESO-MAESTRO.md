@@ -133,7 +133,7 @@ unidades/
 
 **Esquema canónico del `UX-nc1-inventario.json` (CERRADO en chat 2026-05-05):**
 
-Estructura top-level (10 claves):
+Estructura top-level (10 claves obligatorias + 1 opcional):
 - `unidad` (int): número de unidad, sin cero. Ej: 3.
 - `curso` (str): identificador del curso. Ej: "nc1".
 - `titulo` (str): título de la unidad. Ej: "La Familia".
@@ -146,6 +146,7 @@ Estructura top-level (10 claves):
   - **`recurrente`** — Vocabulario que aparece en varias secciones de la unidad, no solo en la sección Vocabulario. Agrupado por categoría temática.
   - **`comprension`** — Léxico que aparece y afecta la comprensión del estudiante aunque no se trabaje explícitamente. Agrupado por categoría.
 - `secciones` (object): índice top-level con 7 claves fijas (vocabulario, gramatica, comunicacion, destrezas, cultura, evaluacion, reflexion). Cada una: `{ paginas, actividades_ids }`. Mapea de sección a páginas y a IDs de actividad. Permite acceso directo sin recorrer todo.
+- `autoevaluacion` (object, opcional): bloque estructural de cierre de unidad. `{ pagina, instruccion_original, opciones (3 fijas), emoticonos }`. Se omite en unidades atípicas (ej. U0). En NC1: `["MUY BUENOS", "BUENOS", "NO MUY BUENOS"]` con emoticonos.
 - `paginas_detalle` (array): lista de páginas con su detalle.
 
 Estructura por página:

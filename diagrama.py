@@ -774,6 +774,14 @@ def mermaid_database():
         text titulo
         jsonb contenido
     }
+    autoevaluaciones {
+        int id PK
+        int unidad_id FK
+        int pagina
+        text instruccion_original
+        jsonb opciones
+        boolean emoticonos
+    }
     reciclaje {
         int id PK
         int actividad_origen_id FK
@@ -812,6 +820,7 @@ def mermaid_database():
     unidades ||--o{ paginas : "tiene"
     paginas ||--o{ actividades : "contiene"
     paginas ||--o{ cuadros : "incluye"
+    unidades ||--o| autoevaluaciones : "tiene (opcional)"
     actividades ||--o{ respuestas : "tiene"
     actividades ||--o{ reciclaje : "origen"
     actividades ||--o{ reciclaje : "destino"

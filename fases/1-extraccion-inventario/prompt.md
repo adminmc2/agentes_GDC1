@@ -75,6 +75,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
     "evaluacion":   { "paginas": [int], "actividades_ids": [str] },
     "reflexion":    { "paginas": [int], "actividades_ids": [str] }
   },
+  "autoevaluacion": <bloque, opcional — ver sección dedicada>,
   "paginas_detalle": [<página>, ...]
 }
 ```
@@ -165,6 +166,35 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 - `comunicativo` — cuadros de uso pragmático de la lengua (registro, formalidad, turnos de conversación).
 
 > **Nota:** `tipo_cuadro` describe la categoría pedagógica del cuadro. `contenido.tipo` describe su estructura interna (cómo está maquetado). Son complementarios, no redundantes.
+
+---
+
+## Bloque de autoevaluación
+
+Al final de cada unidad (excepto unidades atípicas como U0 "Punto de partida"), aparece al pie de la última página un bloque visual con tres opciones de autoevaluación y emoticonos. Es un **elemento estructural recurrente**, no una actividad ni un cuadro ni una nota.
+
+**Schema (top-level del JSON, opcional):**
+
+```jsonc
+"autoevaluacion": {
+  "pagina": <int>,                          // página donde aparece el bloque
+  "instruccion_original": <str literal>,    // ej: "Mis resultados en esta unidad son:"
+  "opciones": [str, str, str],              // exactamente 3
+  "emoticonos": <bool>                      // true si van acompañadas de emoticonos
+}
+```
+
+**Reglas:**
+- **No es actividad** (no tiene número, no pide producción del alumno).
+- **No es cuadro** (no es referencia lingüística).
+- **No es nota** (no acompaña a otro elemento; es estructural de cierre de unidad).
+- **No va dentro de `paginas_detalle.actividades` ni en `_nota`**. Va siempre como campo top-level del JSON.
+- **Opcional**: si la unidad es atípica y no tiene bloque (ej. U0), se omite el campo.
+
+**Valores fijos en NC1:**
+- `opciones`: `["MUY BUENOS", "BUENOS", "NO MUY BUENOS"]` (las tres siempre, en este orden).
+- `instruccion_original`: `"Mis resultados en esta unidad son:"`.
+- `emoticonos`: `true`.
 
 ---
 

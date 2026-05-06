@@ -683,6 +683,16 @@ function renderInventario(inv) {
         </div></div>`;
     }
 
+    let autoevalBlock = '';
+    if (inv.autoevaluacion) {
+        const ae = inv.autoevaluacion;
+        autoevalBlock = `<div class="section"><div class="section-header"><h2>Autoevaluación de cierre</h2><span class="sec-badge">página ${ae.pagina}</span></div><div class="section-body">
+            <div style="font-style:italic;margin-bottom:10px;color:var(--md-on-surface-variant)">${_esc(ae.instruccion_original||'')}</div>
+            <div>${(ae.opciones||[]).map(o=>`<span style="display:inline-block;background:var(--md-primary-container);color:var(--md-on-primary-container);padding:4px 12px;border-radius:12px;margin:2px 6px 2px 0;font-size:13px;font-weight:600">${_esc(o)}</span>`).join('')}</div>
+            ${ae.emoticonos?'<div style="font-size:11px;color:#888;margin-top:8px">Acompañado de tres emoticonos en el libro</div>':''}
+        </div></div>`;
+    }
+
     const tabsBlock = `<div class="section"><div class="section-header"><h2>Páginas y actividades</h2><span class="sec-badge">${(inv.paginas_detalle||[]).length} páginas &middot; ${seccionKeys.reduce((a,k)=>a+seccionesMap[k].actividades.length,0)} actividades</span></div><div class="section-body">
         <div class="diagram-tabs">
             ${seccionKeys.map(k=>`<button class="diagram-tab ${k===_invTab?'active':''}" onclick="_invTab='${_esc(k)}';renderInventario(window._lastInv)">${_esc(_label(k))}</button>`).join('')}
@@ -693,7 +703,7 @@ function renderInventario(inv) {
     window._lastInv = inv;
     if (!seccionKeys.includes(_invTab)) _invTab = seccionKeys[0] || 'resumen';
 
-    content.innerHTML = vocBlock + idxBlock + tabsBlock;
+    content.innerHTML = vocBlock + idxBlock + autoevalBlock + tabsBlock;
 
     const sc = document.getElementById('inv-seccion-content');
     const sec = seccionesMap[_invTab];

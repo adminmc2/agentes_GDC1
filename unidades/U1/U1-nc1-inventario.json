@@ -369,6 +369,16 @@
       "actividades_ids": []
     }
   },
+  "autoevaluacion": {
+    "pagina": 21,
+    "instruccion_original": "Mis resultados en esta unidad son:",
+    "opciones": [
+      "MUY BUENOS",
+      "BUENOS",
+      "NO MUY BUENOS"
+    ],
+    "emoticonos": true
+  },
   "paginas_detalle": [
     {
       "pagina": 12,
@@ -2191,8 +2201,7 @@
               "2 ¿Cuántos años tienes?",
               "3 ¿Cuál es tu número de teléfono?",
               "4 ¿De dónde eres?"
-            ],
-            "_nota": "Al pie de página aparece el bloque «Autoevaluación: Mis resultados en esta unidad son: MUY BUENOS / BUENOS / NO MUY BUENOS» con tres emoticonos. Es la parte de reflexión del cierre de unidad."
+            ]
           }
         }
       ]

@@ -233,6 +233,16 @@
       "actividades_ids": []
     }
   },
+  "autoevaluacion": {
+    "pagina": 43,
+    "instruccion_original": "Mis resultados en esta unidad son:",
+    "opciones": [
+      "MUY BUENOS",
+      "BUENOS",
+      "NO MUY BUENOS"
+    ],
+    "emoticonos": true
+  },
   "paginas_detalle": [
     {
       "pagina": 34,

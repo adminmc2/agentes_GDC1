@@ -19,6 +19,8 @@ CLAVES_TOP = {"unidad", "curso", "titulo", "paginas_libro", "nivel", "fuente",
               "contenidos_indice", "vocabulario_consolidado", "secciones",
               "paginas_detalle"}
 
+CLAVES_TOP_OPCIONALES = {"autoevaluacion"}
+
 SECCIONES_CANONICAS = {"vocabulario", "gramatica", "comunicacion", "destrezas",
                        "cultura", "evaluacion", "reflexion"}
 
@@ -67,9 +69,41 @@ def validar(path):
     if faltan:
         errores.append(f"❌ Faltan claves top-level: {sorted(faltan)}")
 
-    sobra = set(d.keys()) - CLAVES_TOP - {"registro"}  # registro tolerado
+    sobra = set(d.keys()) - CLAVES_TOP - CLAVES_TOP_OPCIONALES - {"registro"}  # registro tolerado
     if sobra:
         avisos.append(f"⚠ Claves top-level no canónicas: {sorted(sobra)}")
+
+    # autoevaluacion (opcional): si existe, validar estructura completa
+    if "autoevaluacion" in d:
+        ae = d["autoevaluacion"]
+        if not isinstance(ae, dict):
+            errores.append("❌ autoevaluacion debe ser dict")
+        else:
+            for k in ("pagina", "instruccion_original", "opciones", "emoticonos"):
+                if k not in ae:
+                    errores.append(f"❌ autoevaluacion: falta '{k}'")
+            if "pagina" in ae and not isinstance(ae["pagina"], int):
+                errores.append("❌ autoevaluacion.pagina debe ser int")
+            if "instruccion_original" in ae and not isinstance(ae["instruccion_original"], str):
+                errores.append("❌ autoevaluacion.instruccion_original debe ser str")
+            if "emoticonos" in ae and not isinstance(ae["emoticonos"], bool):
+                errores.append("❌ autoevaluacion.emoticonos debe ser bool")
+            if "opciones" in ae:
+                if not isinstance(ae["opciones"], list) or len(ae["opciones"]) != 3:
+                    errores.append("❌ autoevaluacion.opciones debe ser lista de 3 elementos")
+                elif not all(isinstance(o, str) for o in ae["opciones"]):
+                    errores.append("❌ autoevaluacion.opciones debe contener strings")
+
+            # Valores fijos para curso NC1 (ver prompt fase 1, sección "Bloque de autoevaluación")
+            if d.get("curso") == "nc1":
+                NC1_INSTRUCCION = "Mis resultados en esta unidad son:"
+                NC1_OPCIONES = ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"]
+                if ae.get("instruccion_original") != NC1_INSTRUCCION:
+                    errores.append(f"❌ autoevaluacion.instruccion_original NC1 fijo: '{NC1_INSTRUCCION}'")
+                if ae.get("opciones") != NC1_OPCIONES:
+                    errores.append(f"❌ autoevaluacion.opciones NC1 fijo: {NC1_OPCIONES}")
+                if ae.get("emoticonos") is not True:
+                    errores.append("❌ autoevaluacion.emoticonos NC1 fijo: true")
 
     # 2. fuente, contenidos_indice, secciones tienen estructura esperada
     if "fuente" in d:
