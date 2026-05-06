@@ -3,6 +3,18 @@
 
 ---
 
+## [v10.45 — 2026-05-06] — Limpieza cosmética del setup de worktree
+
+Dos residuos bajos detectados por el revisor en el commit v10.44 (`a9f710e`). Ninguno bloqueante.
+
+**1. Tabla de estado del CHANGELOG con HEAD desfasado.** La tabla decía `guia-didactica-refactor/ ... e3ed91d` como HEAD del worktree, pero el propio commit v10.44 lo elevó a `a9f710e`. Es el problema clásico de documentar en un commit el estado tras ese mismo commit. Actualizado a `a9f710e` y añadida aclaración explícita: ese SHA es el HEAD "al cerrar v10.44"; el HEAD vivo cambia con cada commit del refactor — referencia a `git worktree list` para el estado actual del momento.
+
+**2. `REFACTOR-WORKTREE.md` con redacción residual.** Cerraba con "commit posterior bumpeará la versión a v10.44", redactado en futuro cuando ese commit ya había ocurrido. Reescrito como referencia retrospectiva al commit `a9f710e`/v10.44.
+
+Sin cambios operativos. Solo coherencia documental.
+
+---
+
 ## [v10.44 — 2026-05-06] — A4.0 refinado: migración a worktree dedicado
 
 Tras dictamen del revisor con lente Anthropic-first: la rama `refactor/prompt-fase-1` se mueve de "checked out en el directorio original" a un **worktree dedicado** en `/Users/armandocruz/Desktop/guia-didactica-refactor/`. El directorio original vuelve a `main`.
@@ -25,7 +37,7 @@ Esto está alineado con la guía de Anthropic sobre Claude Code, que recomienda 
 | Directorio | Branch | HEAD | Untracked |
 |---|---|---|---|
 | `guia-didactica-profesor-IA/` | `main` | `cc1f18b` | `unidades/U2/`, `viejo/_template/` |
-| `guia-didactica-refactor/` | `refactor/prompt-fase-1` | `e3ed91d` | (ninguno) |
+| `guia-didactica-refactor/` | `refactor/prompt-fase-1` | `a9f710e` (HEAD al cerrar v10.44; vivo cambia con cada commit del refactor — ver `git worktree list`) | (ninguno) |
 
 **Documentación nueva:** `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` explica el setup paso a paso para que el autor pueda recuperar contexto si vuelve más tarde — incluye reglas de uso, comandos de verificación, procedimiento de cierre (merge + `git worktree remove`) y procedimiento de aborto.
 

@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-06 16:30
+> **Última actualización:** 2026-05-06 17:00
 
 ---
 
@@ -512,6 +512,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-06 17:00** — Limpieza de dos residuos cosméticos del commit v10.44 (v10.45). (a) Tabla de estado del CHANGELOG decía `e3ed91d` como HEAD del worktree, pero el propio commit v10.44 lo elevó a `a9f710e`; actualizado a `a9f710e` y aclarado que es el SHA "al cerrar v10.44" — el HEAD vivo cambia con cada commit del refactor (referencia a `git worktree list` para el estado actual). (b) `REFACTOR-WORKTREE.md` cerraba con "commit posterior bumpeará la versión a v10.44" cuando ese commit ya había ocurrido; reescrito como referencia retrospectiva al commit `a9f710e`/v10.44.
 - **2026-05-06 16:30** — **Migración a worktree dedicado** (v10.44, refinamiento de A4.0). Tras dictamen del revisor con lente Anthropic-first: la rama `refactor/prompt-fase-1` se mueve a un worktree propio en `/Users/armandocruz/Desktop/guia-didactica-refactor/`. El directorio original (`/Users/armandocruz/Desktop/guia-didactica-profesor-IA/`) vuelve a `main`. **Verificación clave:** los untracked `unidades/U2/` y `viejo/_template/` NO existen físicamente en el worktree del refactor — git worktree crea checkout fresco que no copia untracked del checkout originante. Esto elimina ruido durante A4.1-A4.6. Documentado paso a paso en `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` (incluye comandos de verificación, cierre y aborto). El estado de A4.0 queda como ✅ cerrado con el sub-detalle del worktree. Próximo: A4.1 (crear los 3 archivos auxiliares vacíos: `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`).
 - **2026-05-06 16:00** — **A4.0 cerrado** (v10.43): tag `pre-refactor-prompt-fase1` creado sobre HEAD del main pre-refactor (`cc1f18b`); rama `refactor/prompt-fase-1` creada y checkout activo. `main` queda intacto en `cc1f18b` durante todo el refactor. Si rollback: `git checkout main` (sin reset destructivo). Próximo: A4.1 (crear los 3 archivos auxiliares vacíos: `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`).
 - **2026-05-06 15:30** — Limpieza grep tras dictamen del revisor (v10.42, hallazgo bajo no bloqueante): anotación inline *"(renumeradas a 28-34 en v10.41)"* añadida a las dos entradas históricas que seguían siendo grep-ables con el rango viejo "27-33" sin contexto en la misma línea (bitácora del 14:30 + CHANGELOG v10.40 sección 1). El texto histórico se mantiene íntegro (no se reescribe lo que sí hizo v10.40); solo se contextualiza inline. Próximo: A4.0 (tag + rama).

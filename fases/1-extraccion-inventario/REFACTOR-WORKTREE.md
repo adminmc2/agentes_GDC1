@@ -155,4 +155,4 @@ git rev-parse pre-refactor-prompt-fase1
 - **Cierre del refactor:** merge desde el directorio original, luego `git worktree remove`.
 - **Si abortas:** `git worktree remove --force` + borrar rama. `main` está intacto en `cc1f18b`.
 
-Documentado por Claude Code el 2026-05-06 16:30 al ejecutar la migración a worktree (commit posterior bumpeará la versión a v10.44).
+Documentado por Claude Code el 2026-05-06 16:30 al ejecutar la migración a worktree. Migración registrada en el commit `a9f710e` (v10.44) sobre la rama `refactor/prompt-fase-1`.
