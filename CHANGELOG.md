@@ -3,6 +3,58 @@
 
 ---
 
+## [v10.52 — 2026-05-06] — A4.2b: migración del contenido decisional a `reglas-operativas.md`
+
+Cuarto sub-paso del refactor (parte b de A4.2). Movido a `reglas-operativas.md` todo el contenido decisional del prompt: precedencias entre tipos de elemento, criterios de asignación, reglas de población de cada campo, unidades atípicas.
+
+**Estructura final de `reglas-operativas.md`** (8 secciones, 208 líneas):
+
+1. Precedencia entre actividad / cuadro / nota / autoevaluación.
+2. Cómo asignar `tipo` (Distinción crítica `completa_huecos` vs `produccion_escrita_guiada` + nota sobre criterios implícitos del resto + política de la enumeración).
+3. Cómo asignar `tipo_cuadro` (5 valores con criterios + nota de ortogonalidad seccion/tipo_cuadro).
+4. Qué NO es un cuadro: "Para aprender" → actividad; "Observa" → nota.
+5. Reglas de población de cada campo: `vocabulario_consolidado` (criterios para los 3 bloques), `secciones` top-level (construcción del índice), `seccion` por página (tabla con oráculo), `respuestas` (contenido y formato), `audio/imagen/video` (cuándo `presente=true`), `campo_semantico` (cuándo aplica), `items_libro` (literalidad obligatoria).
+6. Cuándo se incluye u omite `autoevaluacion`.
+7. Reglas para unidades atípicas (procedimiento de 4 pasos).
+8. Estado del source of truth de las reglas decisionales tras A4.2b.
+
+**Hallazgo importante durante la ejecución:** A4.2a fue **más extensiva en pérdidas** de lo identificado en v10.51. Además de la "Distinción crítica" (la única que v10.51 detectó), el placeholder grande de A4.2a había absorbido también:
+
+- Reglas decisionales de `vocabulario_consolidado` (qué cuenta como `principal` / `recurrente` / `comprension`).
+- Reglas decisionales de `respuestas` (formatos para selección múltiple, V/F, cloze).
+- Reglas decisionales de `campo_semantico` (cuándo aplica + nota "liberal por ahora").
+- Reglas decisionales de `secciones` top-level (construcción del índice, secciones inexistentes vacías, `actividades_ids` en orden).
+
+Verificado con `grep` cruzado: estas frases existían en `cc1f18b` y no estaban en el prompt actual. **A4.2b las recupera todas** tomando como fuente `cc1f18b` (estado pre-refactor) y las migra directamente a `reglas-operativas.md`.
+
+**Cambios en `prompt.md`:** sección "Reglas decisionales provisionales" (Distinción crítica) reemplazada por línea-puente. Sección "Reglas para `datos.items_libro`" pierde solo la regla de literalidad (línea-puente a §5.7) — los ejemplos correctos/incorrectos siguen aquí provisionalmente, esperando A4.2c. Sección "Reglas para unidades atípicas" pierde los 4 pasos (línea-puente a §7) — el ejemplo JSON sigue, esperando A4.2c. Sección "Reglas para cuadros" entera reemplazada por línea-puente (todo era decisional). Total: prompt pasa de 290 → 260 líneas.
+
+**Verificación de anclas semánticas** (7 frases canónicas, todas pasan):
+
+| Ancla | reglas-operativas | prompt |
+|---|---|---|
+| Distinción crítica `completa_huecos` | 1 | 0 |
+| escribe texto nuevo | 1 | 0 |
+| vocabulario que aparece en varias secciones | 1 | 0 |
+| Selección múltiple, indicar la opción correcta | 1 | 0 |
+| campo semántico identificable | 1 | 0 |
+| "Para aprender" Cajas con consejos | 1 | 0 |
+| "Observa" Notas que llaman la atención | 1 | 0 |
+
+**Métricas finales A4.2b:**
+- `prompt.md`: 290 → 260 líneas (−30, total desde inicio del refactor: −287).
+- `schema-inventario.md`: 308 (sin cambios desde A4.2a).
+- `reglas-operativas.md`: 81 → 208 líneas (recibió todo el contenido decisional + recuperación).
+- `convenciones-y-casos.md`: 10 (esperando A4.2c).
+
+**Lección aplicada del riesgo operativo señalado por el revisor:** A4.2b incluye **canonización por primera vez** de criterios que estaban implícitos antes del refactor. Pero **no he inventado criterios nuevos**: solo he migrado lo que ya estaba explícito (en prompt actual o en `cc1f18b`) o he marcado como "no canonizado todavía, oráculo de facto en U0/U1/U3" lo que sigue implícito (resto de criterios para los 17 tipos más allá de `completa_huecos` vs `produccion_escrita_guiada`). La canonización progresiva ocurre por el flujo del paso A4.5 + casos editoriales nuevos, no aquí.
+
+**Estado del paso A4.2:** (a) ✅ schema · (b) ✅ reglas-operativas · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2c — migrar a `convenciones-y-casos.md` los ejemplos correctos/incorrectos de `items_libro`, las convenciones de transcripción (textos de lectura, diálogos, sopas de letras), sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", casos resueltos en U3, política de mejora continua, y el ejemplo JSON canónico de unidades atípicas.
+
+---
+
 ## [v10.51 — 2026-05-06] — Cleanup pre-A4.2b parte 2: restaurar bloque decisional perdido en A4.2a
 
 El revisor sobre `68799b6` (v10.50): el hallazgo del source of truth de la taxonomía no quedó cerrado, solo reformulado. v10.50 alineó `prompt.md` y `reglas-operativas.md` para decir lo mismo, pero **lo que decían era falso**: ambos afirmaban "el contenido decisional canónico vive provisionalmente en `prompt.md`" cuando en el archivo real ese contenido **ya no estaba**. Verdad única alineada, pero sobre una premisa que el repo no sostenía.

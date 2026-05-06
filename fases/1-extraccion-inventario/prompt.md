@@ -53,21 +53,17 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 
 ---
 
-## Reglas decisionales provisionales (a migrar en A4.2b)
+## Reglas decisionales
 
-> **Restaurado en v10.51 tras detectarse pérdida en A4.2a.** Este bloque era el único contenido decisional explícito sobre la taxonomía en el `prompt.md` pre-refactor (`cc1f18b`). El placeholder grande de A4.2a lo absorbió por error de scope. Restaurado aquí como source of truth provisional hasta que A4.2b lo migre a `reglas-operativas.md` junto con el resto de criterios.
-
-### Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`
-
-- **`produccion_escrita_guiada`:** el alumno **escribe texto nuevo** (palabras, formas verbales, letras, frases) guiado por una estructura. Ejemplos: completar con la forma verbal correcta, escribir la letra que falta (b/v, c/z), construir una frase a partir de un modelo.
-- **`completa_huecos`:** el alumno **selecciona o encaja** elementos dados sin producir texto nuevo. Reservado para actividades de identificación/selección sin escritura.
-- **Regla práctica:** si el alumno tiene que escribir algo que no está ya en el enunciado → `produccion_escrita_guiada`.
+> **Migradas a `reglas-operativas.md` en A4.2b.** Allí viven ahora: precedencias entre actividad/cuadro/nota/autoevaluación, criterios de asignación de `tipo` y `tipo_cuadro`, "Para aprender" / "Observa", reglas de población de cada campo, cuándo se incluye el bloque `autoevaluacion`, y reglas para unidades atípicas. Single source of truth de precedencias.
 
 ---
 
-## Reglas para `datos.items_libro` (LO MÁS IMPORTANTE)
+## Reglas para `datos.items_libro`
 
-Para actividades de **completar huecos, opción múltiple, ordenar, clasificar, relacionar y similares**, `items_libro` es **obligatorio** y debe contener **el texto literal del libro**, con los huecos marcados como `_____` (5 guiones bajos).
+> **Regla de literalidad migrada a `reglas-operativas.md` §5.7.** La obligatoriedad de incluir `items_libro` con el texto literal del libro (no las respuestas) vive ahora en reglas-operativas.
+>
+> Los ejemplos correctos e incorrectos siguen aquí abajo provisionalmente — se migrarán a `convenciones-y-casos.md` en A4.2c.
 
 ### Ejemplos correctos
 
@@ -153,13 +149,9 @@ Sopa de letras:
 
 ## Reglas para unidades atípicas (introductorias)
 
-Algunas unidades NO tienen las 5 secciones canónicas (vocabulario / gramática / comunicación / destrezas / cultura). Caso típico: la unidad introductoria **U0 "Punto de partida"** que es pre-A1.
-
-Cuando ocurra:
-1. Mapear todo el contenido a la sección que más se ajuste (en U0: `vocabulario`, porque todo el contenido es léxico-fonético).
-2. Las demás secciones canónicas quedan vacías: `{ "paginas": [], "actividades_ids": [] }`.
-3. Añadir clave top-level `_nota_unidad_atipica` con explicación de por qué es atípica y cómo se mapeó.
-4. En `contenidos_indice`, las secciones que no aplican llevan el valor `"(no aplica en esta unidad introductoria)"`.
+> **Reglas migradas a `reglas-operativas.md` §7.** Allí vive el procedimiento de 4 pasos (mapear contenido a sección que se ajuste, secciones inaplicables vacías, añadir `_nota_unidad_atipica`, valor especial en `contenidos_indice`).
+>
+> El ejemplo JSON canónico de U0 sigue aquí abajo provisionalmente — se migrará a `convenciones-y-casos.md` en A4.2c.
 
 Ejemplo (U0):
 ```jsonc
@@ -202,47 +194,9 @@ Cuando aparezca este patrón:
 
 ## Reglas para cuadros
 
-Cuando una página tiene cuadros de referencia (tablas, listas ilustradas, cuadros culturales...), van en `cuadros` de la página, **no** dentro de actividades. Cada cuadro lleva obligatoriamente el campo `tipo_cuadro`.
-
-Capturar **todo el contenido del cuadro** (filas, columnas, celdas, ejemplos al pie).
-
-### Valores de tipo_cuadro
-
-- `gramatical` — tablas de conjugación, paradigmas morfológicos (artículos, género, posesivos, interrogativos, demostrativos), reglas ortográficas de uso gramatical.
-- `lexical` — listas ilustradas de vocabulario, tablas de campos semánticos, colores, familias de palabras.
-- `fonetico` — cuadros de pronunciación u ortografía fonética (c/qu, z/c, g/gu, entonación, acento...).
-- `cultural` — cuadros con información sociocultural (saludos, costumbres, diálogos en contexto cultural, fórmulas sociales).
-- `comunicativo` — cuadros de uso pragmático (registro, formalidad/informalidad, turnos de conversación, cortesía).
-
-> **Nota:** `seccion` de la página y `tipo_cuadro` son ortogonales. Un cuadro fonético puede aparecer en la sección `gramatica`; un cuadro léxico puede estar en `vocabulario`. No forzar que coincidan.
-
-### ⚠ Qué NO es un cuadro — va como ACTIVIDAD o NOTA
-
-Las siguientes cajas visuales del libro **NO son cuadros** aunque aparezcan visualmente como recuadros:
-
-**"Para aprender"** — Cajas con consejos o estrategias pedagógicas para el alumno (cómo llevar un cuaderno de vocabulario, cómo estudiar...). Son **actividades**, no cuadros. Usar:
-```jsonc
-{
-  "id": "UX-pYY-actNN",
-  "tipo": "produccion_escrita_guiada",
-  "datos": { "subtipo": "para_aprender", ... }
-}
-```
-
-**"Observa"** — Notas que llaman la atención sobre algún aspecto del idioma (variantes en Hispanoamérica, combinaciones de letras...). Son **notas**, no actividades ni cuadros. Se capturan así según su contexto:
-- Si acompaña a una **actividad**: en `datos._nota` de esa actividad.
-- Si acompaña a un **cuadro**: en `cuadro.observaciones` (campo opcional del schema del cuadro, ver "Esquema por cuadro").
-
-**Regla práctica (con precedencia):** para distinguir cuadro / actividad / nota:
-
-1. **¿Tiene número de actividad** (1, 2, 3...) **y pide producción del alumno** (escuchar, repetir, escribir, relacionar...)? → **Actividad** con `tipo` de la taxonomía cerrada.
-2. **¿Es "Para aprender"?** → Siempre **actividad** (`tipo: produccion_escrita_guiada`, `datos.subtipo: "para_aprender"`), aunque no tenga número. Excepción explícita a la regla general.
-3. **¿Es "Observa"?** → Siempre **nota**, aunque use el imperativo "Observa". Excepción explícita: "Observa" no pide producción del alumno; llama la atención sobre información de referencia. Nunca se convierte en actividad. **Dónde va según su contexto:**
-   - Si acompaña a una **actividad**: en `datos._nota` de esa actividad.
-   - Si acompaña a un **cuadro**: en `cuadro.observaciones` (ver "Esquema por cuadro").
-4. **¿Es una tabla o recuadro de referencia sin número ni instrucción de producción?** → `cuadro` con `tipo_cuadro` apropiado (ver valores arriba).
-
-> **Precedencia:** las excepciones explícitas (reglas 2 y 3) tienen prioridad sobre la regla general (regla 1). La regla general solo aplica cuando ninguna excepción encaja.
+> **Migrado a `reglas-operativas.md` en A4.2b.** Allí vive todo lo decisional sobre cuadros: cómo asignar `tipo_cuadro` (§3 — los 5 valores con sus criterios), qué NO es un cuadro ("Para aprender" → actividad, "Observa" → nota; §4) y la precedencia general entre actividad/cuadro/nota/autoevaluación (§1).
+>
+> La enumeración cerrada de los 5 valores de `tipo_cuadro` vive en `schema-inventario.md` §7.
 
 ---
 
