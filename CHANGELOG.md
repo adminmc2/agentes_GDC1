@@ -3,6 +3,60 @@
 
 ---
 
+## [v10.54 — 2026-05-07] — A4.2c: migración a `convenciones-y-casos.md` + cierre completo de A4.2
+
+Quinto sub-paso del refactor (parte c de A4.2). Movido a `convenciones-y-casos.md` todo el contenido editorial residual del prompt: convenciones de transcripción, ejemplos canónicos por tipo de actividad, ejemplo JSON de unidad atípica, casebook de extracciones reales, política de mejora continua.
+
+**Estructura final de `convenciones-y-casos.md`** (5 secciones, 165 líneas):
+
+1. Convenciones de transcripción del libro al JSON (sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", textos de lectura, diálogos con marcadores `[1]`/`[2]`, sopas de letras y juegos).
+2. Ejemplos canónicos de `items_libro` por tipo de actividad (cloze, selección múltiple, cuestionario con opciones) + ejemplos INCORRECTOS.
+3. Ejemplo canónico de unidad atípica (U0 con `_nota_unidad_atipica` literal).
+4. Casebook — casos resueltos en extracciones reales ("Para aprender" confundido con cuadro + 6 casos resueltos en U3).
+5. Política de mejora continua (cómo se añade un caso nuevo y a qué archivo según su tipo: schema, reglas-operativas o convenciones-y-casos).
+
+**Cambios en `prompt.md`:**
+- 4 secciones movidas reemplazadas por placeholders cortos.
+- Sección "Coste estimado" eliminada (no aporta valor operativo).
+- Cabecera "Schema, reglas y convenciones — archivos externos" actualizada: ya no dice "convenciones-y-casos.md — en construcción".
+
+**Lección de v10.53 aplicada proactivamente** (verificar la zona reemplazada como enlace limpio, no solo anclas movidas): detectadas y corregidas **3 referencias huérfanas** en los pasos de la extracción que apuntaban a secciones eliminadas:
+
+- Paso 3: *"Aplicar la sección 'Reglas para unidades atípicas' de este prompt"* → `reglas-operativas.md` §7.
+- Paso 4: *"ver sección 'Reglas para cuadros'"* → `reglas-operativas.md` §1 / §3 / §4.
+- Paso 5: *"(ver sección dedicada)"* (sílaba tónica + primer ítem resuelto) → `convenciones-y-casos.md` §1.1 / §1.2.
+
+Esto demuestra que la lección de "verificar zona limpia, no solo grep de anclas" está internalizada — se aplicó **antes** de que el revisor lo señalara.
+
+**Verificación de anclas semánticas** (8 frases canónicas):
+
+| Ancla | convenciones | prompt |
+|---|---|---|
+| `Pablo y Jorge (estudiar)` | 1 | 0 |
+| `PABLO: Son las once` | 1 | 0 |
+| `PRIMO` | 1 | 0 |
+| `Punto de partida... introductoria pre-A1` | 1 | 0 |
+| `se subraya la sílaba tónica` | 1 | 0 |
+| `primer ítem resuelto` | 1 | 4 (referencias legítimas en pasos + cabeceras) |
+| `Pronunciación con z/c` | 1 | 0 |
+| `Lecturas Javier/Lucía` | 1 | 0 |
+
+La única ancla con cuenta > 0 en prompt es "primer ítem resuelto", y todas sus apariciones son **referencias legítimas** (paso 5 + cabecera + placeholder) — no contenido editorial duplicado.
+
+**Métricas finales A4.2c:**
+- `prompt.md`: 260 → 108 líneas (–58% solo en este sub-paso; –80% desde el inicio del refactor en v10.42).
+- `schema-inventario.md`: 308 (sin cambios desde A4.2a).
+- `reglas-operativas.md`: 208 (sin cambios desde A4.2b).
+- `convenciones-y-casos.md`: 10 → 165 líneas (recibió todo el contenido editorial residual).
+
+**Estado del paso A4.2:** ✅ **cerrado al 100%** — (a) ✅ schema · (b) ✅ reglas-operativas · (c) ✅ convenciones-y-casos.
+
+**Sobre A4.3:** el prompt actual de 108 líneas ya está dentro del norte de tamaño 80-120 que define la propuesta. A4.3 ("reescribir prompt.md core desde cero") podrá enfocarse más en consolidar la estructura (fusionar placeholders contiguos, ajustar la cabecera del archivo, añadir la sección "Cierre y validación" absorbida) que en reducir tamaño.
+
+**Próximo:** A4.3.
+
+---
+
 ## [v10.53 — 2026-05-07] — Cierre real de A4.2b: reescritura de la cabecera transicional residual
 
 El revisor sobre `ddd9879` (v10.52, "A4.2b cerrado"): el cierre **no era válido**. Tres hallazgos.
