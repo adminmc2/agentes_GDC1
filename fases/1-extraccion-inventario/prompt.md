@@ -3,7 +3,29 @@
 > **Quién lo usa:** Claude Code en chat, cada vez que se extrae el inventario de una unidad nueva del libro.
 > **Quién lo mantiene:** el autor + Claude Code (entre los dos, conforme aparecen casos nuevos o errores).
 > **Cómo se invoca:** `Extrae el inventario de UX siguiendo fases/1-extraccion-inventario/prompt.md.`
-> **Output:** un único archivo `unidades/UX/UX-nc1-inventario.json`.
+
+---
+
+## Objetivo
+
+A partir del PDF del libro de una unidad concreta, generar un único archivo JSON estructurado que capture todo el contenido editorial visible al alumno (actividades, cuadros de referencia, vocabulario, bloque de autoevaluación) según el contrato de datos del proyecto.
+
+## Input
+
+`unidades/UX/fuente/UX-nc1.pdf` — PDF del libro del alumno con texto embebido.
+
+## Output
+
+`unidades/UX/UX-nc1-inventario.json` — un único archivo, formato JSON.
+
+## Definición de éxito
+
+Tras la extracción, las 4 condiciones se cumplen a la vez:
+
+1. `python3 scripts/validar_inventario.py X` devuelve **0 errores y 0 avisos** (o 1 aviso intencional si la unidad es atípica con `_nota_unidad_atipica`).
+2. Cada actividad contiene el contenido visible al alumno **exactamente como aparece en el libro**, no como referencia ni como interpretación.
+3. El autor revisa visualmente 2-3 páginas al azar en el dashboard y confirma conformidad.
+4. Cualquier caso no contemplado en los archivos de soporte (`schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`) se ha consultado al autor antes de cerrar el JSON.
 
 ---
 
@@ -24,6 +46,20 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 
 ---
 
+## Artefactos de soporte consultados durante la extracción
+
+Este prompt no contiene el schema ni las reglas decisionales ni las convenciones de transcripción. Esos viven en archivos hermanos en esta misma carpeta:
+
+- **`schema-inventario.md`** — Forma del JSON (estructura, tipos, enumeraciones cerradas, restricciones validables sin contexto editorial). Single source of truth con `scripts/validar_inventario.py`.
+- **`reglas-operativas.md`** — Reglas decisionales (precedencias actividad/cuadro/nota/autoevaluación, criterios de `tipo` y `tipo_cuadro`, "Para aprender" → actividad / "Observa" → nota, reglas de población de cada campo, bloque `autoevaluacion` cuándo presente/omitido, unidades atípicas). Single source of truth de precedencias.
+- **`convenciones-y-casos.md`** — Convenciones de transcripción del libro al JSON (sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto", textos de lectura, diálogos con marcadores, sopas de letras), ejemplos canónicos de `items_libro` por tipo de actividad, ejemplos INCORRECTOS, ejemplo JSON de unidad atípica U0, casebook de extracciones reales, política de mejora continua.
+
+Y un cuarto archivo, no en esta carpeta:
+
+- **`scripts/validar_inventario.py`** — Validador estructural ejecutable. Contrato paralelo del schema; no debe divergir.
+
+---
+
 ## Pasos de la extracción
 
 1. Leer todas las páginas del PDF (`unidades/UX/fuente/UX-nc1.pdf`). Las unidades regulares tienen ~10 páginas; **las unidades introductorias atípicas son más cortas** (U0 "Punto de partida" tiene 4 páginas).
@@ -33,57 +69,24 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
    - **Caso atípico** (U0 y otras unidades introductorias): el índice no sigue las 5 secciones canónicas. Aplicar `reglas-operativas.md` §7 (unidades atípicas) antes de continuar.
 4. Para cada página: identificar la sección, las actividades (numeradas o identificadas como tales — ver `reglas-operativas.md` §1 precedencia), los cuadros (con `tipo_cuadro`, ver `reglas-operativas.md` §3) y las notas "Observa" si las hay (`reglas-operativas.md` §4).
 5. Para cada actividad: extraer todos los campos del esquema (ver `schema-inventario.md` §3). En U0-U3, observar la convención editorial de sílaba tónica subrayada (`convenciones-y-casos.md` §1.1). Detectar el patrón "primer ítem resuelto como ejemplo" (`convenciones-y-casos.md` §1.2).
-6. Construir `vocabulario_consolidado` con los 3 bloques.
-7. Construir el índice top-level `secciones`.
-8. Validar JSON.
-9. Escribir a `unidades/UX/UX-nc1-inventario.json`.
-10. Avisar al autor para validación visual de 2-3 páginas al azar.
+6. Construir `vocabulario_consolidado` con los 3 bloques (criterios en `reglas-operativas.md` §5.1).
+7. Construir el índice top-level `secciones` (`reglas-operativas.md` §5.2).
+8. Si la unidad tiene bloque de autoevaluación al pie de la última página, capturarlo como campo top-level `autoevaluacion` (`reglas-operativas.md` §6).
+9. Validar JSON (ver "Cierre y validación" abajo).
+10. Escribir a `unidades/UX/UX-nc1-inventario.json`.
+11. Avisar al autor para validación visual de 2-3 páginas al azar.
 
 ---
 
-## Schema, reglas y convenciones — archivos externos
+## Cierre y validación
 
-> **Schema del JSON** (forma, tipos, enumeraciones cerradas, restricciones validables sin contexto editorial): `schema-inventario.md`. Single source of truth con `scripts/validar_inventario.py`.
->
-> **Reglas decisionales** (precedencias actividad/cuadro/nota/autoevaluación, criterios de `tipo` y `tipo_cuadro`, "Para aprender" → actividad / "Observa" → nota, reglas de población de cada campo, bloque `autoevaluacion` cuándo presente/omitido, unidades atípicas): `reglas-operativas.md`.
->
-> **Convenciones de transcripción y casebook** (sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", ejemplos canónicos de `items_libro` por tipo de actividad, ejemplos INCORRECTOS, formato de diálogos y sopas de letras, ejemplo JSON de unidad atípica U0, casos resueltos en U3, política de mejora continua): `convenciones-y-casos.md`.
+Antes de dar el JSON por bueno, comprobar manualmente y con el validador.
 
----
+### Comprobaciones manuales
 
-## Reglas decisionales
-
-> **Migradas a `reglas-operativas.md` en A4.2b.** Allí viven ahora: precedencias entre actividad/cuadro/nota/autoevaluación, criterios de asignación de `tipo` y `tipo_cuadro`, "Para aprender" / "Observa", reglas de población de cada campo, cuándo se incluye el bloque `autoevaluacion`, y reglas para unidades atípicas. Single source of truth de precedencias.
-
----
-
-## Convenciones de transcripción y ejemplos canónicos
-
-> **Migrados a `convenciones-y-casos.md` en A4.2c.** Allí viven: convenciones de transcripción (sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", textos de lectura, diálogos con marcadores `[1]`/`[2]`, sopas de letras y juegos), ejemplos canónicos de `items_libro` por tipo de actividad (cloze, selección múltiple, cuestionario con opciones), y ejemplos INCORRECTOS de qué no hacer.
-
----
-
-## Convenciones específicas y ejemplo canónico de unidad atípica
-
-> **Migrados a `convenciones-y-casos.md` en A4.2c.** Allí viven: ejemplo JSON canónico de U0 (§3), convención de sílaba tónica subrayada hasta U3 (§1.1), patrón "primer ítem resuelto como ejemplo" (§1.2). Las reglas decisionales asociadas (cuándo añadir `_nota_unidad_atipica`, qué hacer con secciones vacías) viven en `reglas-operativas.md` §7.
-
----
-
-## Reglas para cuadros
-
-> **Migrado a `reglas-operativas.md` en A4.2b.** Allí vive todo lo decisional sobre cuadros: cómo asignar `tipo_cuadro` (§3 — los 5 valores con sus criterios), qué NO es un cuadro ("Para aprender" → actividad, "Observa" → nota; §4) y la precedencia general entre actividad/cuadro/nota/autoevaluación (§1).
->
-> La enumeración cerrada de los 5 valores de `tipo_cuadro` vive en `schema-inventario.md` §7.
-
----
-
-## Validación post-extracción
-
-Antes de dar el JSON por bueno:
-
-1. **Esquema:** todas las claves obligatorias presentes (10 top-level + por página + por actividad).
+1. **Esquema:** todas las claves obligatorias presentes (10 top-level + por página + por actividad). Ver `schema-inventario.md` §1-4.
 2. **IDs únicos:** ningún `id` de actividad repetido.
-3. **Tipos válidos:** todos los `tipo` de la taxonomía cerrada (17 valores).
+3. **Tipos válidos:** todos los `tipo` de la taxonomía cerrada (17 valores). Ver `schema-inventario.md` §5.
 4. **Secciones:** valor de `seccion` en cada página es una de las 7 claves normalizadas.
 5. **`respuestas` siempre presente** en cada actividad (lista, aunque vacía).
 6. **`audio`/`imagen`/`video` siempre presentes** como sub-objetos.
@@ -91,18 +94,14 @@ Antes de dar el JSON por bueno:
 8. **`descripcion` de imagen** obligatoria si `imagen.presente=true`.
 9. **JSON parseable** (validar con Python: `json.loads(open(...).read())`).
 
-Cuando exista, ejecutar `python scripts/validar_inventario.py UX`.
+### Validador automático
 
----
+```bash
+python3 scripts/validar_inventario.py X
+```
 
-## Salida
+Esperado: 0 errores y 0 avisos. Si la unidad es atípica con `_nota_unidad_atipica`, 1 aviso intencional es aceptable.
 
-Escribir el JSON en `unidades/UX/UX-nc1-inventario.json`.
+### Salida
 
-Si la carpeta `unidades/UX/` no existe, crearla. Si `unidades/UX/fuente/` no contiene el PDF, abortar y avisar al autor.
-
----
-
-## Casos resueltos y mejora continua
-
-> **Migrados a `convenciones-y-casos.md` en A4.2c.** Allí vive el casebook (errores detectados como "Para aprender" confundido con cuadro, casos resueltos en U3) y la política de mejora continua del sistema (cómo se añade un caso nuevo y a qué archivo según su tipo).
+Escribir el JSON en `unidades/UX/UX-nc1-inventario.json`. Si la carpeta `unidades/UX/` no existe, crearla. Si `unidades/UX/fuente/` no contiene el PDF, abortar y avisar al autor.

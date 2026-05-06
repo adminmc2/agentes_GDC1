@@ -3,6 +3,54 @@
 
 ---
 
+## [v10.55 — 2026-05-07] — A4.3: reescritura desde cero de `prompt.md` core
+
+Sexto sub-paso del refactor. `prompt.md` reescrito íntegramente según `REFACTOR-PROPUESTA.md` §5 paso 3, no solo consolidación.
+
+**Estructura final del prompt core** (107 líneas, 9 secciones):
+
+1. Header con quién/output/invocación.
+2. Objetivo (1 párrafo describiendo qué produce la fase).
+3. Input (PDF en `unidades/UX/fuente/`).
+4. Output (1 archivo JSON).
+5. Definición de éxito — **sección nueva**, no existía en pre-refactor. 4 condiciones explícitas (validador 0/0, contenido literal del libro, revisión visual del autor, casos no contemplados consultados al autor).
+6. Regla de oro (no negociable) — sin cambios respecto al pre-refactor.
+7. Artefactos de soporte consultados durante la extracción — cabecera global con 1 bullet por archivo hermano (`schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`, y el validador como contrato paralelo). Reemplaza los 4-5 placeholders intermedios redundantes que tenía la versión anterior.
+8. Pasos de la extracción — 11 pasos numerados (10 del pre-refactor + 1 nuevo paso 8 que captura el bloque `autoevaluacion` explícitamente). Cada paso con referencias cortas a los archivos de soporte.
+9. Cierre y validación — absorbe la antigua "Validación post-extracción" + "Salida" en una sola sección con sub-encabezados (comprobaciones manuales, validador automático, salida).
+
+**Cambios respecto a la versión post-A4.2c (108 líneas, 10 placeholders dispersos):**
+
+- **Eliminados los 5 placeholders intermedios redundantes** que decían "Migrado a X" en zonas específicas: ya no había contenido editorial allí, solo etiquetas que la cabecera global ya cubría. Eran ruido para el lector y para el modelo.
+- **Definición de éxito añadida** como sección nueva, alineada con el lenguaje del plan ("Objetivo", "Definición de éxito" en `REFACTOR-PROPUESTA.md` §3.2 y §5 paso 3).
+- **Pasos enriquecidos** con un nuevo paso 8 explícito sobre el bloque `autoevaluacion` (antes implícito).
+- **"Cierre y validación" absorbe Salida** en una sola sección, como pide el plan.
+- **Norte de tamaño cumplido:** 107 líneas (rango 80-120 según REFACTOR-PROPUESTA §3.2).
+
+**Verificación:**
+
+```
+grep -E "Migrado a |Migradas a |migrar a |migrarán a |migrará a |en construcción|A4.2[abc]" prompt.md
+→ 0 (ningún marcador transitorio residual)
+
+grep -E "ver sección \"|sección dedicada|de este prompt antes" prompt.md
+→ 0 (ninguna referencia interna huérfana)
+```
+
+**Métricas finales del prompt core:**
+
+| Versión | Líneas | Secciones | Estado |
+|---|---|---|---|
+| Pre-refactor (`cc1f18b`) | 547 | 34 | monolito mezclando 7 funciones |
+| Post-A4.2c | 108 | 10 | contenido editorial migrado pero con placeholders intermedios |
+| **Post-A4.3 (este commit)** | **107** | **9** | **prompt core mínimo, sin placeholders, alineado con el plan** |
+
+**Reducción total desde inicio del refactor:** 547 → 107 líneas (–80%). Las 9 secciones del prompt core son ahora estrictamente operativas: cómo invocar, qué produce, qué condiciones de éxito, regla de oro inviolable, dónde están los artefactos de soporte, qué pasos seguir, cómo cerrar y validar.
+
+**Próximo:** A4.4 — reescribir `CLAUDE.md` de fase en modo contrato corto. Hoy tiene 111 líneas con duplicación de reglas que ya viven en `prompt.md` y en los archivos de soporte. Objetivo: 40-60 líneas según REFACTOR-PROPUESTA.md §3.1.
+
+---
+
 ## [v10.54 — 2026-05-07] — A4.2c: migración a `convenciones-y-casos.md` + cierre completo de A4.2
 
 Quinto sub-paso del refactor (parte c de A4.2). Movido a `convenciones-y-casos.md` todo el contenido editorial residual del prompt: convenciones de transcripción, ejemplos canónicos por tipo de actividad, ejemplo JSON de unidad atípica, casebook de extracciones reales, política de mejora continua.
