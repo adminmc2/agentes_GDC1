@@ -42,7 +42,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 | Bloque | Estado |
 |---|---|
-| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1 y U3 trackeados y validando (A1 ✅, A2 ✅ con reserva, A3 ✅ cerrado). U2 en working tree, no validado |
+| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1 y U3 trackeados y validando (A1 ✅, A2 ✅ con reserva, A3 ✅ cerrado) · 🔄 **A4 refactor documental en curso** (5 archivos objetivo). U2 en working tree, no validado |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
 | Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 (reciclaje) en diseño · B1+B2 esperan dependencias · B5 (despliegue público) ✅ cerrado fuera de orden · tarjetas dependen de fase 2 · píldoras dependen de fase 5 |
@@ -106,6 +106,42 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 2. ✅ **B2** (`viejo/repertorios/` no rastreable en Railway): **Aceptado.** Está en `viejo/` donde toca. Se queda sin trackear. El flujo de agentes está bloqueado y no lo usa activamente.
 3. ✅ **B3** (`diagrama.py` ref hardcoded a `U03`): **Resuelto en v10.15.** Verificado: apunta a `unidades/U3/U3-nc1-inventario.json`.
 4. ✅ **B4** (`_normSeccion` no fusiona pestañas "(cont.)"): **No requiere acción.** El bug era cosmético y aplica solo al JSON viejo. El nuevo schema usa claves normalizadas (vocabulario, gramatica...) — el problema desaparece automáticamente al migrar.
+
+---
+
+### A4. Refactor documental de fase 1 — 🔄 EN CURSO (decidido 2026-05-06)
+
+**Objetivo:** separar `fases/1-extraccion-inventario/prompt.md` (hoy 547 líneas mezclando schema + reglas + casos + mantenimiento) en **5 archivos por responsabilidad** (CLAUDE.md fase, prompt.md core, schema-inventario.md, reglas-operativas.md, convenciones-y-casos.md). NO reabre decisiones editoriales. NO modifica los inventarios U0/U1/U3.
+
+**Pre-condición:** ninguna (la propuesta está cerrada en v10.39).
+
+**Source of truth operativa:** `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md`. Este paso A4 NO duplica el plan; lo invoca y lleva el progreso por sub-paso.
+
+**Sub-pasos** (según REFACTOR-PROPUESTA.md sección 5):
+
+| Sub-paso | Descripción breve | Estado |
+|---|---|---|
+| **A4.0** | Tag `pre-refactor-prompt-fase1` + rama `refactor/prompt-fase-1` | 📋 |
+| **A4.1** | Crear los 3 archivos auxiliares vacíos con headers | 📋 |
+| **A4.2** | Migrar contenido fila por fila aplicando split por capa + verificación de anclas | 📋 |
+| **A4.3** | Reescribir `prompt.md` core desde cero (incluye sección "Cierre y validación") | 📋 |
+| **A4.4** | Reescribir `CLAUDE.md` de fase en modo contrato corto | 📋 |
+| **A4.5** | Prueba empírica de reextracción (3 casos: página rica + U0 completa + U1-p21) | 📋 |
+| **A4.5.5** | **Cross-check obligatorio** schema-inventario.md ↔ validar_inventario.py — gate ineludible antes del merge | 📋 |
+| **A4.6** | Sincronizar CHANGELOG/REVIEW/PROCESO-MAESTRO + merge a `main` | 📋 |
+
+**Marcador externo de progreso:** cada commit del refactor cita su sub-paso en el mensaje (ej. `A4.2: schema-inventario migrado`). El estado de cada fila de la tabla anterior se actualiza al cerrar el sub-paso correspondiente.
+
+**Gate de cierre de A4 entero:**
+1. ✅ Sub-pasos A4.0 → A4.6 cerrados según los gates detallados en REFACTOR-PROPUESTA.md.
+2. ✅ Acta del paso A4.5.5 con **0 divergencias** schema↔validador (puede implicar commit aparte de alineación del validador antes del merge — prerequisito ineludible, no opcional).
+3. ✅ Prueba empírica del paso A4.5: los 3 casos validan con 0 errores y 0 avisos en estado pre-merge, sin pérdida de decisiones semánticas cerradas.
+4. ✅ Merge `refactor/prompt-fase-1` → `main` ejecutado.
+5. ✅ Bitácoras de REVIEW + CHANGELOG + PROCESO-MAESTRO actualizadas con el cierre.
+
+**Bloquea a:** ninguna fase activa. El refactor mejora mantenibilidad de fase 1 sin alterar su funcionamiento.
+
+**Riesgos y mitigaciones:** ver REFACTOR-PROPUESTA.md sección 6.
 
 ---
 
@@ -476,6 +512,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-06 14:30** — Refactor de fase 1 documentado como plan ejecutable (v10.40). Antes de empezar la ejecución, plan trazado en los dos artefactos canónicos: PROCESO-MAESTRO Parte 4 ampliada con 7 decisiones cerradas (27-33: arquitectura, frontera de capas, source of truth, skill fuera, contrato schema↔validador, delegación operativa a REFACTOR-PROPUESTA.md); REVIEW bloque A con paso A4 nuevo y 8 sub-pasos enumerados (A4.0-A4.6 + A4.5.5 cross-check obligatorio). Estado global bloque A actualizado a "🔄 A4 en curso". Cero código tocado: solo documentación del plan ejecutable. Próximo: A4.0 (tag + rama).
 - **2026-05-06 14:00** — REFACTOR-PROPUESTA: 2 rastros residuales tras v10.38 (v10.39). (a) Tabla de riesgos seguía hablando de "checklist" cuando el paso 2 ya usa marcador externo — mitigación reescrita en consonancia. (b) Verificación de anclas en paso 2 decía "desaparecer del prompt core" pero el prompt core no existe hasta el paso 3 — reformulado para respetar la secuencia: durante paso 2 se verifica que el ancla esté en destino y NO en la zona reemplazada por placeholder; la comprobación "ancla solo en un sitio" se cierra al terminar el paso 3.
 - **2026-05-06 13:30** — REFACTOR-PROPUESTA: 4 correcciones de coherencia interna tras nuevo dictamen del revisor (v10.38). Fix Medio: mapeo de unidades atípicas (línea 246) repartido entre los 3 destinos según capa, en lugar de monolíticamente a `reglas-operativas.md` — coherente con el principio "split por capa" que el propio documento declara. Fix Bajos: (a) subpaso de "checklist" reformulado para no asumir un formato que la tabla no tiene; (b) anclas semánticas sustituidas por frases que sí existen en `prompt.md` actual ("Taxonomía cerrada de tipos de actividad", "tipo_cuadro describe la categoría pedagógica", "primer ítem resuelto como ejemplo"); (c) cifra "9 ejecuciones" corregida a "10 (U0-U9)" en las dos referencias del documento.
 - **2026-05-06 13:00** — REFACTOR-PROPUESTA: fix completo de la tabla "Estado medido" (v10.37). El fix de v10.36 había sido parcial: solo corrigió la fila de `prompt.md` pero dejó la fila de `CLAUDE.md` fase con datos viejos (`7|11` cuando el real es `9|10`). Ahora íntegramente reproducible. Verificación cruzada del resto de cifras del documento (17 tipos, 5 tipo_cuadro, 7 secciones, 3 opciones, líneas de los dos archivos) — todas correctas. Lección registrada: cuando una tabla es "evidencia dura", verificar todas sus filas, no solo la que motiva la revisión.

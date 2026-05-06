@@ -705,6 +705,20 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 25. **Cada extracción de inventario genera además un informe HTML visual** integrado como sección nueva del dashboard existente (`web/index.html`).
 26. **El dashboard debe mostrar** todos los JSON (inventario por unidad + 3 globales) y permitir revisar/editar las propuestas de reciclaje al cerrar cada unidad.
 
+### Sobre la arquitectura documental de las fases (refactor de fase 1, decidido 2026-05-06)
+27. **Refactor documental de fase 1 aprobado** tras 6 rondas de revisión (v10.35 → v10.39). El `prompt.md` actual mezcla siete funciones distintas (prompt de ejecución, schema, casebook, mantenimiento, etc.) en un único archivo de 547 líneas / 27 secciones. Va contra Anthropic best practices sobre instrucciones modulares y concisas, y crea contradicciones por falta de single source of truth.
+28. **Arquitectura objetivo: 5 archivos** en `fases/1-extraccion-inventario/`:
+    - `CLAUDE.md` — contrato de fase (40-60 líneas como norte).
+    - `prompt.md` — prompt core de ejecución (80-120 líneas como norte).
+    - `schema-inventario.md` — contrato de datos puro (forma del JSON, tipos, obligatoriedad).
+    - `reglas-operativas.md` — decisión, clasificación, población, unidades atípicas.
+    - `convenciones-y-casos.md` — transcripción del libro + casebook histórico.
+29. **Frontera de capas (no negociable):** split por capa, no por campo. Forma → schema; decisión → reglas-operativas; transcripción/casos → convenciones-y-casos.
+30. **Source of truth de precedencias:** vive exclusivamente en `reglas-operativas.md`. Otros archivos invocan por referencia, no copian.
+31. **Skill de Claude Code (`.claude/skills/...`) fuera de v1.** Reabrir solo si tras v1 el patrón de uso justifica encapsular (≈10 ejecuciones en NC1 no compensan).
+32. **Schema documental y validador (`scripts/validar_inventario.py`):** contratos paralelos del mismo shape. **No pueden divergir en el momento del merge.** Cualquier divergencia detectada por el cross-check del paso 5.5 se resuelve antes del merge en commit aparte (técnicamente fuera del refactor nominal, pero prerequisito ineludible).
+33. **Source of truth operativa del plan ejecutable:** `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md`. PROCESO-MAESTRO no duplica el detalle; lo invoca. REVIEW.md lleva el progreso por sub-paso.
+
 ---
 
 ## Parte 5 — Decisiones pendientes
@@ -850,3 +864,4 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 - **2026-05-05 14:00** — Dictamen del revisor sobre paso B (commit `67db6a4`): implementación correcta y completa, sin bloqueantes. Hallazgo cosmético registrado como B4 (`_normSeccion` no fusiona pestañas `(cont.)`); se resuelve en paso C sin acción separada.
 - **2026-05-05 13:30** — Hallazgos del revisor sobre el split aceptados. Documentados como bugs conocidos B1 (`tools.py:346` escribe a path inexistente), B2 (Railway: `repertorios/` ya estaba gitignored antes del split, dashboard llevaba roto), B3 (`diagrama.py:715` con path hardcoded a inventario antiguo). Decisión: NO arreglar ahora, abordar los 3 al inicio del paso C cuando los paths en `nuevo/` estén fijados.
 - **2026-05-05 13:00** — Auditoría y actualización del documento. Correcciones: (1) entrada de bitácora con "12 tipos" → "17 tipos" (consistencia interna); (2) Parte 4 reescrita con las **26 decisiones cerradas** organizadas por categoría (modelo, organización, naming, JSONs, generación, dashboard); (3) Parte 5 (pendientes) limpiada — eliminados los esquemas JSON que ya estaban cerrados, añadida sección de "implementación pendiente"; (4) Parte 5.bis reescrita reflejando que el split YA está ejecutado (no es plan futuro); (5) Parte 6 reescrita con estado real de cada paso (A hecho, B próximo, C-F pendientes); (6) árbol "antes del split" marcado como histórico para evitar confusión.
+- **2026-05-06 14:30** — **Refactor documental de fase 1 aprobado** tras 6 rondas de revisión sobre `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` (v10.35→v10.39). Parte 4 ampliada con 7 nuevas decisiones cerradas (27-33) que fijan: arquitectura objetivo de 5 archivos, frontera de capas no negociable (forma vs decisión), single source of truth de precedencias en `reglas-operativas.md`, skill fuera de v1, contrato paralelo schema↔validador con prerequisito de no divergencia en el merge, y delegación del plan ejecutable a REFACTOR-PROPUESTA.md como source of truth operativa. La ejecución se trackea en REVIEW como paso A4 con sub-pasos A4.0→A4.6 (incluido A4.5.5 cross-check obligatorio). No se ha tocado código todavía.

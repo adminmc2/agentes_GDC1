@@ -3,6 +3,35 @@
 
 ---
 
+## [v10.40 — 2026-05-06] — Refactor de fase 1 documentado como plan ejecutable
+
+Antes de empezar la ejecución del refactor (v10.35-v10.39 cerraron solo la propuesta), trazo el plan en los dos artefactos canónicos para evitar el patrón "trabajo solo en bitácora, no en plan" que el revisor ya señaló con Railway.
+
+**1. `PROCESO-MAESTRO.md` — Parte 4 ampliada con 7 decisiones cerradas (27-33)**
+
+Nueva subsección "Sobre la arquitectura documental de las fases (refactor de fase 1, decidido 2026-05-06)":
+- Decisión 27: refactor aprobado tras 6 rondas.
+- Decisión 28: arquitectura objetivo de 5 archivos.
+- Decisión 29: frontera de capas no negociable (forma vs decisión).
+- Decisión 30: single source of truth de precedencias en `reglas-operativas.md`.
+- Decisión 31: skill fuera de v1.
+- Decisión 32: schema y validador como contratos paralelos sin divergencia en el merge.
+- Decisión 33: REFACTOR-PROPUESTA.md como source of truth operativa; PROCESO-MAESTRO no duplica detalle.
+
+Bitácora del documento actualizada con la entrada de cierre de propuesta.
+
+**2. `REVIEW.md` — Paso A4 insertado en bloque A**
+
+Nuevo paso A4 "Refactor documental de fase 1" con 8 sub-pasos enumerados (A4.0 → A4.6 + A4.5.5 cross-check obligatorio). Tabla de sub-pasos como marcador interno; cada commit del refactor citará su sub-paso en el mensaje. Gate de cierre con 5 condiciones explícitas (incluida cero divergencia schema↔validador).
+
+Estado global del bloque A actualizado: `🔄 A4 refactor documental en curso`.
+
+**Por qué este commit antes de tocar código:** sin paso formal en REVIEW + decisión registrada en PROCESO-MAESTRO, cada commit del refactor no tendría dónde anclarse en el plan, repitiendo el patrón Railway / fix Mermaid / build slim que el revisor ya criticó. Esto se hace una vez, antes de empezar.
+
+**No hay cambios de código.** Solo documentación del plan ejecutable.
+
+---
+
 ## [v10.39 — 2026-05-06] — REFACTOR-PROPUESTA: dos rastros residuales tras v10.38
 
 Dos hallazgos bajos del revisor, ambos consecuencia incompleta de las correcciones de v10.38.
