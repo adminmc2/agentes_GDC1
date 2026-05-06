@@ -613,16 +613,16 @@ def color_for(status):
 def mermaid_level1():
     """Arquitectura del sistema activo. Solo lo que existe y está verificado."""
     return """graph TD
-    LIBRO["Libro NC1 - Nuevo Companeros 1"]
+    LIBRO["Libro NC1 - Nuevo Compañeros 1"]
     PDF["PDF embebido - unidades/UX/fuente/UX-nc1.pdf"]
     PROMPT["Prompt versionado - fases/1-extraccion-inventario/prompt.md"]
-    CLAUDE["Claude Code - extraccion en chat"]
+    CLAUDE["Claude Code - extracción en chat"]
     INV["Inventario JSON - unidades/UX/UX-nc1-inventario.json"]
     VAL["Validador Python - scripts/validar_inventario.py - cero LLM"]
     DASH["Dashboard - web/index.html + diagrama.py"]
-    AUTOR["Autor - revision visual"]
+    AUTOR["Autor - revisión visual"]
 
-    subgraph ACTIVO["Sistema activo - en raiz"]
+    subgraph ACTIVO["Sistema activo - en raíz"]
         PDF
         PROMPT
         CLAUDE
@@ -657,10 +657,10 @@ def mermaid_level2():
     P2["2 - Autor invoca a Claude Code en chat"]
     P3["3 - Claude Code lee prompt + CLAUDE.md de fase + PDF"]
     P4["4 - Claude Code genera UX-nc1-inventario.json"]
-    P5["5 - Validacion automatica - validar_inventario.py"]
-    P6["6 - Validacion visual del autor en dashboard"]
+    P5["5 - Validación automática - validar_inventario.py"]
+    P6["6 - Validación visual del autor en dashboard"]
     P7["7 - Si OK, fase 1 cerrada para esa unidad"]
-    P8["8 - Si surgen casos nuevos, se anaden al prompt"]
+    P8["8 - Si surgen casos nuevos, se añaden al prompt"]
 
     P1 --> P2 --> P3 --> P4 --> P5 --> P6
     P6 -->|OK| P7
@@ -681,13 +681,13 @@ def mermaid_level2():
 def mermaid_level3():
     """Las 8 fases del proceso editorial con su estado actual."""
     return """graph TD
-    F1["F1 - Extraccion inventario JSON - OPERATIVA"]
-    F2["F2 - Analisis de vocabulario - PENDIENTE"]
+    F1["F1 - Extracción inventario JSON - OPERATIVA"]
+    F2["F2 - Análisis de vocabulario - PENDIENTE"]
     F3["F3 - Tarjetas de vocabulario - PENDIENTE"]
     F4["F4 - Tarjetas de estrategia - PENDIENTE"]
-    F5["F5 - Pildoras formativas - PENDIENTE"]
-    F6["F6 - Generacion seccion por seccion - PENDIENTE"]
-    F7["F7 - Doble version completa+resumida - PENDIENTE"]
+    F5["F5 - Píldoras formativas - PENDIENTE"]
+    F6["F6 - Generación sección por sección - PENDIENTE"]
+    F7["F7 - Doble versión completa+resumida - PENDIENTE"]
     F8["F8 - Principios + repertorios - PENDIENTE"]
 
     F1 --> F2
