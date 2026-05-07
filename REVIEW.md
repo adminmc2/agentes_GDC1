@@ -42,7 +42,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 | Bloque | Estado |
 |---|---|
-| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1 y U3 trackeados y validando (A1 ✅, A2 ✅ con reserva, A3 ✅ cerrado) · 🔄 **A4 refactor documental en curso** (5 archivos objetivo). U2 en working tree, no validado |
+| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1 y U3 trackeados y validando 0/0 con el contrato actualizado (A1 ✅, A2 ✅ con reserva, A3 ✅ cerrado, **A4 ✅ cerrado 2026-05-07** con merge `110e722`/v10.69 y cierres post-merge v10.70-v10.73). 5 archivos operativos en `fases/1-extraccion-inventario/`. U2 pendiente de re-extracción con el contrato actual en rama propia |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
 | Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 (reciclaje) en diseño · B1+B2 esperan dependencias · B5 (despliegue público) ✅ cerrado fuera de orden · tarjetas dependen de fase 2 · píldoras dependen de fase 5 |
@@ -109,7 +109,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 ---
 
-### A4. Refactor documental de fase 1 — 🔄 EN CURSO (decidido 2026-05-06)
+### A4. Refactor documental de fase 1 — ✅ CERRADO 2026-05-07 (merge `110e722`, v10.69; cierres post-merge v10.70-v10.73)
 
 **Objetivo:** separar `fases/1-extraccion-inventario/prompt.md` (hoy 547 líneas mezclando schema + reglas + casos + mantenimiento) en **5 archivos por responsabilidad** (CLAUDE.md fase, prompt.md core, schema-inventario.md, reglas-operativas.md, convenciones-y-casos.md). NO reabre decisiones editoriales. NO modifica los inventarios U0/U1/U3.
 
@@ -518,6 +518,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-07 12:00** — **Pase de coherencia documental** (v10.74). Bloqueante para la limpieza/compactación posterior y para la apertura de chats paralelos de extracción. Drift identificado en 7 sitios de PROCESO-MAESTRO (líneas 88, 128, 163, 231, 701) y REVIEW (líneas 45, 112): "validar_inventario.py a escribir" cuando es operativo, "taxonomía cerrada de 17 tipos" cuando son 20, "Plantilla HTML por unidad / tarea pendiente" cuando es vista dinámica del dashboard, A4 marcado como "EN CURSO" cuando cerró en v10.69. Todos corregidos a estado real. Parte 2 de Fase 1 actualizada a estado real, NO reducida a puntero (eso es paso futuro). Hits residuales legítimos confirmados: scripts globales (`regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`) que siguen pendientes y bitácora histórica intocable. Validador U0/U1/U3 → 0/0 sin cambios. Próximo: v10.75 (archivar CHANGELOG pre-v10.40) en worktree `docs/cleanup`. Paralelización de extracciones autorizada tras push de v10.74.
 - **2026-05-07 11:30** — Cierre de referencias rotas en `schema-inventario.md` tras v10.72 (v10.73). Hallazgo del revisor: el archivado de v10.72 dejó 2 refs rotas en líneas 7 y 377 del schema apuntando a `REFACTOR-PROPUESTA.md` ya archivado. Decisión: formulación estable y atemporal (no re-apuntar al nuevo path) porque el schema describe contrato vigente del producto, no debería encadenarse a artefactos del proceso de refactor. Fix quirúrgico de 2 líneas. Validador U0/U1/U3 → 0/0. Sin más refs vivas a REFACTOR-*.md fuera de docs/historico. Próximo: push autorizado + re-extracción de U2 en rama nueva.
 - **2026-05-07 11:00** — Archivado de documentos del refactor cerrado (v10.72). Los 2 artefactos del proceso (REFACTOR-PROPUESTA.md, REFACTOR-WORKTREE.md) movidos con `git mv` a `docs/historico/refactor-prompt-fase1/`, conservando historial. La carpeta `fases/1-extraccion-inventario/` queda solo con los 5 archivos operativos vivos (CLAUDE.md, prompt.md, schema, reglas, convenciones). Cross-references vivas actualizadas en PROCESO-MAESTRO.md decisión 34 y REVIEW.md sección A4 (líneas 118-150). Bitácora histórica y CHANGELOG anteriores NO se reescriben (mencionan los paths originales en su momento, no es revisionismo). Validador U0/U1/U3 → 0/0 post-archivado. `viejo/` sin tocar (regla del proyecto).
 - **2026-05-07 10:30** — Ajuste de redacción en PROCESO-MAESTRO sobre informe HTML (v10.71). Drift detectado: la decisión 25 (línea 705) y la bitácora 2026-05-05 (línea 845) hablaban de "generar además un informe HTML visual" como si la fase 1 produjera un segundo artefacto. Implementación real (verificada en `diagrama.py` y `web/index.html`): el JSON es el único output de la fase; la "vista HTML" es renderización dinámica del dashboard al vuelo. Fix quirúrgico de 2 líneas en PROCESO-MAESTRO. Archivos de fase 1 sin tocar (ya correctos). Sin cambios funcionales.

@@ -85,7 +85,7 @@ unidades/
 **Pipeline definido:**
 1. Autor exporta PDF embebido → `unidades/UX/fuente/UX-nc1.pdf`.
 2. **Extracción del inventario por Claude Code en chat con prompt versionado** (ver bloque "Estrategia de generación" abajo) → genera `UX-nc1-inventario.json`.
-3. Validación automática del JSON con `scripts/validar_inventario.py` (a escribir).
+3. Validación automática del JSON con `scripts/validar_inventario.py` (operativo; alineado con `fases/1-extraccion-inventario/schema-inventario.md` en el cross-check A4.5.5 cerrado en v10.62).
 4. Validación visual fuente vs JSON (revisión de 2-3 páginas al azar).
 5. `python scripts/importar_inventario.py unidades/UX/UX-nc1-inventario.json` → carga a BD (idempotente, DELETE CASCADE).
 6. Tras desarrollar la unidad, regenerar `nc1-tarjetas.json` y `nc1-pildoras.json` con scripts Python deterministas.
@@ -125,7 +125,7 @@ unidades/
 ---
 
 **Validación post-generación:**
-- Después de cada extracción, `scripts/validar_inventario.py` (a escribir) verifica estructura: campos obligatorios, tipos, códigos de actividad únicos, JSON parseable. Esto SÍ es trabajo de Python (validación estructural pura, sin riesgo de fallar).
+- Después de cada extracción, `scripts/validar_inventario.py` (operativo) verifica estructura: campos obligatorios, tipos, destreza (lista alfabética del enum cerrado), enfoque, códigos de actividad únicos, JSON parseable. Esto SÍ es trabajo de Python (validación estructural pura, sin riesgo de fallar).
 
 ---
 
@@ -160,7 +160,7 @@ Estructura por página:
 Estructura por actividad:
 - `id` (str): único, formato `UX-pYY-actNN`.
 - `numero` (int): orden en la unidad.
-- `tipo` (str): de la **taxonomía cerrada de 17 tipos** (lista provisional, se revisa al cerrar cada unidad nueva):
+- `tipo` (str): de la **taxonomía cerrada de 20 tipos** (lista provisional, se revisa al cerrar cada unidad nueva; ver `fases/1-extraccion-inventario/schema-inventario.md` §5):
   ```
   escucha_y_repite, escucha_y_responde, completa_huecos, relaciona, ordena, clasifica,
   seleccion_multiple, verdadero_falso,
@@ -228,11 +228,10 @@ Estructura por cuadro gramatical:
 - Contenido del prompt `fases/1-extraccion-inventario/prompt.md` (escrito y operativo).
 - Scripts Python: `validar_inventario.py`, `regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`.
 - Protocolo formal de validación visual PDF vs JSON.
-- **Plantilla HTML del informe por unidad** y su integración en el dashboard.
-  - **Tarea formal pendiente:** definir la plantilla HTML (estructura, secciones, colores, qué muestra). Integrar como sección nueva del dashboard (`web/index.html`). Se aborda en el paso B del plan de trabajo (después de cerrar los esquemas de los 3 JSONs globales).
-  - **Debe mostrar:** JSON de cada unidad (vocabulario consolidado, secciones, actividades) + los 3 JSON globales (tarjetas, píldoras, reciclaje) + propuestas de reciclaje al cerrar una unidad (revisables y editables).
+- **Vista HTML dinámica del inventario por unidad** integrada en el dashboard (`web/index.html`).
+  - **Estado:** operativa. El servidor (`diagrama.py`) lee el JSON de cada unidad y el frontend lo renderiza al vuelo (no se genera artefacto HTML estático). Ver decisión 25 (Parte 4) y bitácora del 2026-05-07 sobre la aclaración de redacción en v10.71.
+  - **Lo que sigue pendiente** (refinamiento, no implementación inicial): afinar la plantilla visual (estructura de secciones, colores, qué se muestra primero) y extender la vista a los 3 JSON globales (tarjetas, píldoras, reciclaje) cuando esos esquemas estén poblados. Se aborda en el paso B del plan de trabajo.
   - **Responsable:** Claude Code en chat con el autor.
-  - **Estado:** abierta, sin empezar.
 - **Categorías de píldoras formativas:** definir cuando se trabaje en las primeras píldoras nuevas. Pendiente de revisión en este documento.
 
 **Cambios físicos** (HISTÓRICO — ya ejecutados):
@@ -699,7 +698,7 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 21. **`UX-nc1-inventario.json`**: lo genera **Claude Code** en chat con un **prompt versionado** (`fases/1-extraccion-inventario/prompt.md`, operativo). NO Python autónomo.
 22. **`nc1-tarjetas.json`** y **`nc1-pildoras.json`**: scripts Python deterministas (`regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`, a escribir). Cero tokens.
 23. **`nc1-reciclaje.json`**: **manual con Claude Code** en chat al cerrar cada unidad. NO automático, NO inferido por script. Acumulativo.
-24. **Validación post-extracción** del inventario: script Python `validar_inventario.py` (a escribir).
+24. **Validación post-extracción** del inventario: script Python `scripts/validar_inventario.py` (operativo desde antes del refactor; alineado con `fases/1-extraccion-inventario/schema-inventario.md` en el cross-check A4.5.5 cerrado en v10.62).
 
 ### Sobre el dashboard y el informe HTML
 25. **Cada extracción de inventario produce un JSON por unidad.** Ese JSON queda además disponible como vista HTML dinámica integrada en el dashboard existente (`web/index.html`), sin generar por ahora un archivo HTML independiente.

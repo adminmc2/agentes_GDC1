@@ -3,6 +3,35 @@
 
 ---
 
+## [v10.74 — 2026-05-07] — Pase de coherencia documental: drift en PROCESO-MAESTRO + REVIEW
+
+Bloqueante para la limpieza/compactación posterior (v10.75-77) y para la apertura de chats paralelos de extracción. Mientras los archivos vivos describan el sistema con datos obsoletos, cualquier compactación consolida información incorrecta y los chats nuevos heredan drift.
+
+**Drift identificado por el revisor + auditoría propia:**
+
+- `PROCESO-MAESTRO.md` línea 88: `validar_inventario.py` "a escribir" — el validador es operativo desde antes del refactor.
+- `PROCESO-MAESTRO.md` línea 128: misma redacción "a escribir".
+- `PROCESO-MAESTRO.md` línea 163: "taxonomía cerrada de **17 tipos**" — son **20** desde v10.64 (+ `escucha`).
+- `PROCESO-MAESTRO.md` línea 231: "Plantilla HTML del informe por unidad" como tarea pendiente — v10.71 cerró que es vista HTML dinámica del dashboard, no plantilla estática.
+- `PROCESO-MAESTRO.md` línea 701 (Parte 4, decisión 24): mismo "validar_inventario.py (a escribir)".
+- `REVIEW.md` línea 45 (fila estado global Fase 1): "🔄 A4 refactor documental en curso" — A4 cerrado en v10.69.
+- `REVIEW.md` línea 112 (encabezado bloque A4): "🔄 EN CURSO" — idem.
+
+**Cambios aplicados:**
+
+- 5 actualizaciones a estado real en `PROCESO-MAESTRO.md` (líneas 88, 128, 163, 231, 701). Parte 2 de Fase 1 actualizada a estado real, **NO reducida a puntero** — la reducción a puntero pertenece a un paso de compactación estructural posterior.
+- 2 correcciones de estado en `REVIEW.md` (línea 45 fila tabla y línea 112 encabezado bloque).
+
+**Lo que NO se toca** (legítimo, no es drift):
+- Líneas 107 y 113 de `PROCESO-MAESTRO.md`: `regenerar_tarjetas_globales.py` y `regenerar_pildoras_globales.py` siguen siendo tareas pendientes reales (verificado: solo `validar_inventario.py` existe en `scripts/`).
+- Bitácora histórica de `PROCESO-MAESTRO.md` (líneas 860, 865) que mencionan "17 tipos" — describen estado en el momento del commit, no se reescriben.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0 post-cambios.
+
+**Próximo:** v10.75 (archivar CHANGELOG pre-v10.40), ya en worktree `docs/cleanup`. La paralelización de chats de extracción se puede abrir tras el push de v10.74.
+
+---
+
 ## [v10.73 — 2026-05-07] — Cierre de referencias rotas en `schema-inventario.md` tras v10.72
 
 Hallazgo del revisor sobre v10.72: el archivado de `REFACTOR-PROPUESTA.md` a `docs/historico/` dejó dos referencias rotas en `fases/1-extraccion-inventario/schema-inventario.md` (líneas 7 y 377). Ambas decían *"ver REFACTOR-PROPUESTA.md paso 5.5"* en un archivo vivo del producto operativo.
