@@ -80,6 +80,8 @@ Y un cuarto archivo, no en esta carpeta:
 
 ## Cierre y validación
 
+> **Convención de comandos:** todos los comandos en esta sección son **root-relative** — se ejecutan desde la raíz del repo, no desde la carpeta de fase.
+
 Antes de dar el JSON por bueno, comprobar manualmente y con el validador.
 
 ### Comprobaciones manuales

@@ -3,6 +3,38 @@
 
 ---
 
+## [v10.57 — 2026-05-07] — Cierre limpio de A4.4: convención root-relative explícita antes de A4.5
+
+Hallazgo Medio del revisor sobre `278144a` (v10.56, A4.4): los comandos en `CLAUDE.md` de fase no son ejecutables tal como están escritos en el contexto que el propio archivo declara.
+
+**El defecto:** `CLAUDE.md` de fase se auto-carga al trabajar dentro de `fases/1-extraccion-inventario/`. Pero los comandos `python3 scripts/validar_inventario.py X` y `python3 diagrama.py` son rutas root-relative — ejecutados literalmente desde la carpeta de fase, fallan con "No such file or directory" porque `scripts/` y `diagrama.py` solo existen desde la raíz del repo.
+
+La convención implícita del proyecto sí es root-relative (el `CLAUDE.md` raíz también prescribe `python3 scripts/validar_inventario.py 3` así). Pero el CLAUDE de fase, al auto-cargarse en otro `cwd`, sugiere otro contexto. Ambigüedad documental real, no funcional.
+
+**Por qué se resuelve antes de A4.5:** A4.5 es la primera prueba funcional oficial del refactor. El procedimiento incluye ejecutar el validador. Si el documento que se carga a la sesión (CLAUDE de fase) describe comandos que no funcionan literalmente, el sub-paso arranca con confusión innecesaria.
+
+**Resolución:** nota explícita "Convención de comandos: root-relative — se ejecutan desde la raíz del repo, no desde la carpeta de fase" añadida al inicio de:
+
+- `CLAUDE.md` de fase, sección "Cómo validar".
+- `prompt.md`, sección "Cierre y validación".
+
+La nota del CLAUDE es más extensa (incluye el matiz de que aunque se auto-cargue en la fase, los comandos asumen `cwd = raíz`). La nota del prompt es más breve porque el prompt no se auto-carga.
+
+**Métricas:**
+
+| Archivo | Pre-v10.57 | Post-v10.57 |
+|---|---|---|
+| `CLAUDE.md` fase | 57 | 59 |
+| `prompt.md` | 107 | 109 |
+
+Ambos siguen dentro de su norte de tamaño respectivo (40-60 y 80-120).
+
+**Sin cambios en otros archivos.** Sin cambios de código.
+
+**Próximo:** A4.5 — primera prueba funcional oficial del refactor.
+
+---
+
 ## [v10.56 — 2026-05-07] — A4.4: reescritura de `CLAUDE.md` de fase en modo contrato corto
 
 Séptimo sub-paso del refactor. `CLAUDE.md` de fase reescrito según `REFACTOR-PROPUESTA.md` §3.1: contrato corto, no manual.
