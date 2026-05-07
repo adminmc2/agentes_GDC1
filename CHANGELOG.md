@@ -5,6 +5,30 @@
 
 ---
 
+## [v10.77c — 2026-05-07] — Cierre administrativo: corrección recursiva de meta-drift en v10.77b
+
+Hallazgo del revisor sobre v10.77b: el propio micro-fix de v10.77b reprodujo el problema que estaba arreglando. El commit real de v10.77b fue `2026-05-07 19:55:26 +0200`, pero las nuevas referencias ancladas a `19:25 / commit 40c8a4c` quedaron desactualizadas el momento mismo del commit.
+
+**Causa estructural:** cualquier acta que pretenda capturar "el momento real de su propio commit" entra en bucle: el commit aún no existe cuando se redacta el acta.
+
+**Convención explicitada en este commit (v10.77c):**
+
+> El campo *"Última actualización"* en cabeceras de archivos vivos apunta al **último commit consolidado de cierre de serie**, no al commit en curso. Las entradas de bitácora describen el commit que las introduce con timestamp aproximado al momento real del commit.
+
+**Fixes aplicados:**
+
+- `REVIEW.md:9`: cabecera ahora apunta a `becaa69` (v10.77b) como cierre real de la serie de limpieza, con timestamp `19:55`.
+- `REVIEW.md:434`: entrada de v10.77b corregida a `19:55` con commit `becaa69` citado.
+- `PROCESO-MAESTRO.md:661`: entrada de v10.77b corregida a `19:55`, citando ambos commits relevantes (commit principal `40c8a4c` y commit final `becaa69`).
+
+**Decisión consciente:** este commit v10.77c **NO se auto-documenta como nueva "última actualización"** porque eso reabriría el bucle. La cabecera de REVIEW.md sigue apuntando a `becaa69`. Si en el futuro se introduce una nueva edición sustantiva, esa edición será la que actualice la cabecera.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Cierre administrativo de la serie v10.72-v10.77c.** A partir de aquí, base documental coherente y autorizado el carril de extracciones paralelas en otros chats.
+
+---
+
 ## [v10.77b — 2026-05-07] — Micro-fix de 2 imprecisiones tras dictamen del revisor sobre v10.77
 
 Hallazgos del revisor sobre v10.77 (`40c8a4c`):
