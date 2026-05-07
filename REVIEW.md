@@ -115,13 +115,13 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 **Pre-condición:** ninguna (la propuesta está cerrada en v10.39).
 
-**Source of truth operativa:** `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md`. Este paso A4 NO duplica el plan; lo invoca y lleva el progreso por sub-paso.
+**Source of truth operativa:** `docs/historico/refactor-prompt-fase1/REFACTOR-PROPUESTA.md` (archivado tras el cierre del refactor; durante la ejecución vivió en `fases/1-extraccion-inventario/`). Este paso A4 NUNCA duplicó el plan; lo invocó y llevó el progreso por sub-paso.
 
-**Sub-pasos** (según REFACTOR-PROPUESTA.md sección 5):
+**Sub-pasos** (según `REFACTOR-PROPUESTA.md` sección 5, ahora archivado):
 
 | Sub-paso | Descripción breve | Estado |
 |---|---|---|
-| **A4.0** | Tag `pre-refactor-prompt-fase1` + rama `refactor/prompt-fase-1` (+ worktree dedicado, ver REFACTOR-WORKTREE.md) | ✅ 2026-05-06 16:30 (tag y rama → `cc1f18b`; worktree en `../guia-didactica-refactor/`) |
+| **A4.0** | Tag `pre-refactor-prompt-fase1` + rama `refactor/prompt-fase-1` (+ worktree dedicado, ver `docs/historico/refactor-prompt-fase1/REFACTOR-WORKTREE.md`) | ✅ 2026-05-06 16:30 (tag y rama → `cc1f18b`; worktree en `../guia-didactica-refactor/`) |
 | **A4.1** | Crear los 3 archivos auxiliares vacíos con headers | ✅ 2026-05-06 18:45 (`schema-inventario.md` 8 líneas, `reglas-operativas.md` 8, `convenciones-y-casos.md` 10) |
 | **A4.2** | Migrar contenido fila por fila aplicando split por capa + verificación de anclas | ✅ (a) schema · (b) reglas-operativas · (c) convenciones-y-casos. prompt.md: 547 → 108 líneas (–80%). 4 archivos en su sitio sin contenido editorial residual |
 | **A4.3** | Reescribir `prompt.md` core desde cero (incluye sección "Cierre y validación") | ✅ 2026-05-07 02:00 (107 líneas, 9 secciones; cero placeholders intermedios; "Cierre y validación" absorbida; norte 80-120 cumplido) |
@@ -132,14 +132,14 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 **Marcador externo de progreso:** cada commit del refactor cita su sub-paso en el mensaje (ej. `A4.2: schema-inventario migrado`). El estado de cada fila de la tabla anterior se actualiza al cerrar el sub-paso correspondiente.
 
-**Tipología de verificaciones por sub-paso** (regla operativa, ver detalle en `REFACTOR-PROPUESTA.md` §5):
+**Tipología de verificaciones por sub-paso** (regla operativa, ver detalle en `docs/historico/refactor-prompt-fase1/REFACTOR-PROPUESTA.md` §5):
 - **A4.2 → A4.4:** solo checks locales de integridad documental (anclas semánticas, mapeo como checklist externo, no-duplicación entre archivos). NO pruebas funcionales.
 - **A4.5:** primera prueba funcional oficial (reextracción empírica de los 3 casos).
 - **A4.5.5:** cross-check schema ↔ validador antes del merge (gate obligatorio).
 - **Smoke test opcional tras A4.4:** permitido en chat para detectar roturas obvias antes de A4.5. NO es gate formal ni sustituye la prueba funcional de A4.5.
 
 **Gate de cierre de A4 entero:**
-1. ✅ Sub-pasos A4.0 → A4.6 cerrados según los gates detallados en REFACTOR-PROPUESTA.md.
+1. ✅ Sub-pasos A4.0 → A4.6 cerrados según los gates detallados en `docs/historico/refactor-prompt-fase1/REFACTOR-PROPUESTA.md`.
 2. ✅ Acta del paso A4.5.5 con **0 divergencias** schema↔validador (puede implicar commit aparte de alineación del validador antes del merge — prerequisito ineludible, no opcional).
 3. ✅ Prueba empírica del paso A4.5: los 3 casos validan con 0 errores y 0 avisos en estado pre-merge, sin pérdida de decisiones semánticas cerradas.
 4. ✅ Merge `refactor/prompt-fase-1` → `main` ejecutado.
@@ -147,7 +147,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 **Bloquea a:** ninguna fase activa. El refactor mejora mantenibilidad de fase 1 sin alterar su funcionamiento.
 
-**Riesgos y mitigaciones:** ver REFACTOR-PROPUESTA.md sección 6.
+**Riesgos y mitigaciones:** ver `docs/historico/refactor-prompt-fase1/REFACTOR-PROPUESTA.md` sección 6.
 
 ---
 
@@ -518,6 +518,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-07 11:00** — Archivado de documentos del refactor cerrado (v10.72). Los 2 artefactos del proceso (REFACTOR-PROPUESTA.md, REFACTOR-WORKTREE.md) movidos con `git mv` a `docs/historico/refactor-prompt-fase1/`, conservando historial. La carpeta `fases/1-extraccion-inventario/` queda solo con los 5 archivos operativos vivos (CLAUDE.md, prompt.md, schema, reglas, convenciones). Cross-references vivas actualizadas en PROCESO-MAESTRO.md decisión 34 y REVIEW.md sección A4 (líneas 118-150). Bitácora histórica y CHANGELOG anteriores NO se reescriben (mencionan los paths originales en su momento, no es revisionismo). Validador U0/U1/U3 → 0/0 post-archivado. `viejo/` sin tocar (regla del proyecto).
 - **2026-05-07 10:30** — Ajuste de redacción en PROCESO-MAESTRO sobre informe HTML (v10.71). Drift detectado: la decisión 25 (línea 705) y la bitácora 2026-05-05 (línea 845) hablaban de "generar además un informe HTML visual" como si la fase 1 produjera un segundo artefacto. Implementación real (verificada en `diagrama.py` y `web/index.html`): el JSON es el único output de la fase; la "vista HTML" es renderización dinámica del dashboard al vuelo. Fix quirúrgico de 2 líneas en PROCESO-MAESTRO. Archivos de fase 1 sin tocar (ya correctos). Sin cambios funcionales.
 - **2026-05-07 10:00** — Regla 3 de `CLAUDE.md` de fase reformulada (v10.70) tras observación post-merge del revisor sobre duplicación contractual entre entry points. La regla original prohibía duplicación entre `prompt.md`/schema/reglas/convenciones pero excluía tácitamente al propio `CLAUDE.md`. Auditoría previa: 7 bloques contractuales aceptables (Grupo A) + 0 hallazgos operativos (Grupo B). Fix quirúrgico de 1 línea: regla 3 reescrita según formulación del revisor (entry points pueden repetir hechos y reglas mínimas de contrato; lógica operativa duplicada fuera del archivo canónico sigue siendo bug). Sin tocar prompt.md ni archivos de soporte. Refactor totalmente cerrado.
 - **2026-05-07 09:30** — **A4.6 cerrado: merge `refactor/prompt-fase-1` → `main` ejecutado** (commit `110e722`). Receta confirmada con el revisor: `git merge --no-ff` para preservar el rastro completo del refactor. Diff del merge: 14 archivos, +2555/–838 líneas. Archivos creados en `main`: `fases/1-extraccion-inventario/{schema-inventario,reglas-operativas,convenciones-y-casos}.md` + `REFACTOR-WORKTREE.md`. Archivos modificados: `prompt.md`, `CLAUDE.md` de fase, `validar_inventario.py`, los 3 oráculos U0/U1/U3, CHANGELOG, REVIEW, PROCESO-MAESTRO. **Validador en `main` post-merge:** U0 ✅, U1 ✅, U3 ✅, todos 0/0. **Gate A4 entero cerrado** (los 5 sub-gates del bloque "Gate de cierre de A4 entero" ya en ✅). Sin push automático — la decisión de empujar a remoto queda al autor. Branch `refactor/prompt-fase-1` y worktree `../guia-didactica-refactor/` se mantienen intactos por si hace falta inspeccionar el rastro. **Refactor de fase 1 cerrado.**

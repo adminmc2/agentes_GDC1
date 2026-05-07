@@ -3,6 +3,29 @@
 
 ---
 
+## [v10.72 — 2026-05-07] — Archivado de documentos del refactor cerrado en `docs/historico/`
+
+Limpieza post-refactor: los dos artefactos del **proceso** del refactor de fase 1 (no del producto vivo) se archivan en `docs/historico/refactor-prompt-fase1/` para que `fases/1-extraccion-inventario/` contenga solo lo operativo (CLAUDE.md, prompt.md, schema, reglas, convenciones).
+
+**Movidos con `git mv` (preserva historial):**
+- `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` → `docs/historico/refactor-prompt-fase1/REFACTOR-PROPUESTA.md` — plan ejecutable del refactor, cerrado al 100% en v10.69.
+- `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` → `docs/historico/refactor-prompt-fase1/REFACTOR-WORKTREE.md` — documentación del worktree dedicado usado durante la ejecución.
+
+**Creado:**
+- `docs/historico/refactor-prompt-fase1/README.md` — explica qué hay archivado, por qué se movió fuera de la carpeta de fase, y cuándo conviene consultar el archivo (planificación de futuros refactores, reapertura de decisiones, plantilla de proceso).
+
+**Cross-references vivas actualizadas:**
+- `PROCESO-MAESTRO.md` decisión 34 (línea 727).
+- `REVIEW.md` paso A4 sección viva (líneas 118, 120, 124, 135, 142, 150).
+
+**Cross-references históricas NO tocadas** (entradas de bitácora en REVIEW.md y CHANGELOG.md anteriores que mencionan los paths originales): describen el estado del repo en el momento del commit; reescribirlas sería revisionismo.
+
+**`viejo/` no se toca** (regla del proyecto: intocable hasta autorización explícita del autor).
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0 post-archivado (sanity check).
+
+---
+
 ## [v10.71 — 2026-05-07] — Ajuste de redacción en PROCESO-MAESTRO sobre informe HTML / vista dinámica del dashboard
 
 Observación post-merge: la decisión 25 de `PROCESO-MAESTRO.md` (línea 705) y la entrada de bitácora del 2026-05-05 (línea 845) hablaban de "**generar además un informe HTML visual**" como si la fase 1 produjera un segundo artefacto HTML estático. La implementación real (verificada por el revisor en `diagrama.py:245/980/983` y `web/index.html:341/595/647`) confirma que **el JSON es el único output de la fase**, y que la "vista HTML" es una **renderización dinámica** que el dashboard genera al vuelo desde el JSON. No existe ningún paso de generación de HTML estático por unidad.

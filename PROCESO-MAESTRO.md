@@ -724,7 +724,7 @@ Esto es una decisión de diseño todavía no tomada. Va a la Parte 5 como pendie
 31. **Source of truth de precedencias:** vive exclusivamente en `reglas-operativas.md`. Otros archivos invocan por referencia, no copian.
 32. **Skill de Claude Code (`.claude/skills/...`) fuera de v1.** Reabrir solo si tras v1 el patrón de uso justifica encapsular (≈10 ejecuciones en NC1 no compensan).
 33. **Schema documental y validador (`scripts/validar_inventario.py`):** contratos paralelos del mismo shape. **No pueden divergir en el momento del merge.** Cualquier divergencia detectada por el cross-check del paso 5.5 se resuelve antes del merge en commit aparte (técnicamente fuera del refactor nominal, pero prerequisito ineludible).
-34. **Source of truth operativa del plan ejecutable:** `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md`. PROCESO-MAESTRO no duplica el detalle; lo invoca. REVIEW.md lleva el progreso por sub-paso.
+34. **Source of truth operativa del plan ejecutable** (durante el refactor de fase 1, ahora cerrado): el plan vivió en `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` y se ejecutó al 100% con el merge del 2026-05-07 (v10.69). El archivo se conserva en `docs/historico/refactor-prompt-fase1/` como referencia histórica. PROCESO-MAESTRO nunca duplicó el detalle del plan; lo invocaba. REVIEW.md llevó el progreso por sub-paso.
 
 ---
 
