@@ -3,6 +3,22 @@
 
 ---
 
+## [v10.61 — 2026-05-07] — Fix de drift documental post-v10.60 en `prompt.md`
+
+Hallazgo del revisor durante la revisión componente-a-componente del refactor: tras v10.60 el contrato exige `destreza` y `enfoque` obligatorios en cada actividad, pero el `prompt.md` no los reflejaba. El paso 5 de "Pasos de la extracción" solo mencionaba "extraer todos los campos del esquema" genéricamente, y el checklist manual de "Cierre y validación" listaba `tipo` entre los enums cerrados pero omitía los dos ejes nuevos.
+
+**Cambios quirúrgicos:**
+- Paso 5 ampliado con recordatorio explícito de los **3 ejes ortogonales obligatorios** (`tipo`/`destreza`/`enfoque`) con punteros al schema (§5b/§5c) y a `reglas-operativas.md` §2.3.
+- Checklist manual de 9 → 11 items: insertados "Destrezas válidas" e "Enfoque válido" después de "Tipos válidos".
+
+**Métrica:** prompt.md 109 → 111 líneas (sigue dentro del norte 80-120).
+
+**Sin cambios en otros archivos.** Componente 1 (CLAUDE.md de fase) aprobado por el revisor sin findings materiales antes de este commit.
+
+**Próximo:** revisión del componente 3 — `schema-inventario.md`.
+
+---
+
 ## [v10.60 — 2026-05-07] — Contrato `destreza`/`enfoque`: separación de ejes habilidad ↔ dominio (commit intermedio rompedor de contrato)
 
 > ⚠️ **Estado intermedio:** este commit deja el branch en rojo intencionadamente. El validador rechaza U0/U1/U3 (~250 errores: `destreza` en formato string legacy + ausencia del nuevo campo `enfoque`). La reclasificación per-unidad de las 97 actividades a destreza-lista-canónica + enfoque se hará en otro chat antes de A4.5.
