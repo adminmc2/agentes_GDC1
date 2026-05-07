@@ -5,6 +5,28 @@
 
 ---
 
+## [v10.77b — 2026-05-07] — Micro-fix de 2 imprecisiones tras dictamen del revisor sobre v10.77
+
+Hallazgos del revisor sobre v10.77 (`40c8a4c`):
+
+**1. Timestamp ficticio en cabeceras y actas.** El acta v10.77 declaraba que los timestamps se pusieron "al momento real del commit", pero usé `14:00` cuando el commit real fue `2026-05-07 19:20 +0200` (verificado con `git log -1 --format='%ci'`). 14:00 era hora estimada de cierre de trabajo, no del commit. Imprecisión factual en 4 sitios:
+- `REVIEW.md:9`
+- `REVIEW.md:434` (entrada de bitácora del commit)
+- `PROCESO-MAESTRO.md:660` (entrada de bitácora del documento)
+- `CHANGELOG.md:24` (texto del acta)
+
+**Fix:** sustituido `14:00` por `19:20` en los 4 sitios con referencia al commit `40c8a4c` para trazabilidad. La cabecera de REVIEW conserva ahora `19:20 (commit 40c8a4c, v10.77)`.
+
+**2. Árbol vivo incompleto.** En `PROCESO-MAESTRO.md:472` (vista viva del árbol del repo) el bloque `docs/historico/` no listaba el archivo nuevo `REVIEW-bloque-A-cerrado.md` creado en el mismo commit v10.77.
+
+**Fix:** añadida la entrada al árbol con su descripción.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Cierre real de la serie v10.72-v10.77.** Tras este micro-fix, las cabeceras y bitácoras describen fielmente lo que dicen describir (momento real del commit anterior + estado físico real del repo).
+
+---
+
 ## [v10.77 — 2026-05-07] — Compactación del Bloque A cerrado de REVIEW + 3 cabeceras desincronizadas
 
 Última pieza de la limpieza documental tras v10.74-v10.76b. El Bloque A de REVIEW.md ("Estabilizar la fase 1") está totalmente cerrado desde 2026-05-07 (A1, A2, A3, A4 todos en ✅). Su detalle ejecutable (sub-pasos A4.0-A4.6, gates, riesgos, plan completo) ya solo aporta valor histórico; mantenerlo en REVIEW vivo cargaba ~8K chars sin contrapartida operativa.
@@ -21,7 +43,7 @@
 - **Extracción literal del Bloque A** (líneas con `## Bloque A` hasta antes de `## Bloque B`, 99 líneas, 8.022 chars) a `docs/historico/REVIEW-bloque-A-cerrado.md` (111 líneas con cabecera explicativa). Sin reescribir.
 - **Sustitución en REVIEW vivo** por resumen de 12 líneas con: estado de los 4 sub-pasos, resultado vivo (U0/U1/U3 0/0, 5 archivos operativos, validador alineado), referencia al archivo histórico, mención del merge `110e722` y aclaración de que la bitácora cronológica general permanece viva.
 - **Cabeceras desincronizadas absorbidas en este commit** (condición pragmática del revisor):
-  - `REVIEW.md:9`: "Última actualización: 2026-05-07 03:15" → "2026-05-07 14:00".
+  - `REVIEW.md:9`: "Última actualización: 2026-05-07 03:15" → momento del commit (corregido a `19:20` en v10.77b tras detectar imprecisión).
   - `PROCESO-MAESTRO.md:448`: "Última actualización: 2026-05-05" → "2026-05-07 (limpieza documental v10.72-v10.77...)".
   - `PROCESO-MAESTRO.md:630`: "actualizado 2026-05-05 19:00" → "actualizado 2026-05-07".
 - **Reformulación de `PROCESO-MAESTRO.md:648`** ("Detalle vivo y bitácora en REVIEW.md" → "Resumen vivo en REVIEW sección Bloque A; detalle íntegro archivado en docs/historico/...; bitácora cronológica general permanece viva en REVIEW.md").
