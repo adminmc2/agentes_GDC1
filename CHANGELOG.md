@@ -3,6 +3,33 @@
 
 ---
 
+## [v10.68 — 2026-05-07] — Cierre formal de A4.5 (acta empírica) y A4.5.5 (cross-check schema↔validador)
+
+Actas formales de los dos gates pre-merge tras el dictamen positivo del revisor sobre v10.67:
+
+**A4.5 — Acta de prueba empírica:** los 3 oráculos U0/U1/U3 reclasificados al contrato actualizado (3 ejes ortogonales `tipo`/`destreza`/`enfoque`) en 4 commits iterativos con dictamen del revisor:
+- v10.64 — U0 piloto (10 actividades) + ampliación taxonomía 19→20 (`escucha`).
+- v10.65 — U1 (42 actividades) + 3 fixes A1/A2/A3 del revisor + regla nueva de desempate §2.2 punto 5 (`completa_huecos` vs `produccion_escrita_guiada`).
+- v10.66 — U3 (47 actividades) + 3 refinamientos de §2.2 (puntos 1, 2 y 3: video sin manipulación posterior, manipulación manda en cualquier punto, criterio explícito destreza para `responder_preguntas_*`).
+- v10.67 — cierre de bloqueante sobre `escucha_y_responde` (3 reclasificaciones).
+
+Validador U0/U1/U3 → 0/0. Sin pérdida de decisiones semánticas. Conteos coherentes (10 + 42 + 47 = 99 actividades).
+
+**A4.5.5 — Acta de cross-check schema↔validador:** script de paridad ejecutado sobre las 5 enumeraciones cerradas → **5/5 idénticas, 0 divergencias**:
+- `tipo`: 20 valores (`busqueda_informacion`, `clasifica`, `completa_huecos`, `escucha`, `escucha_y_repite`, `escucha_y_responde`, `expresion_escrita_libre`, `expresion_oral_libre`, `interaccion_oral`, `juego`, `lee_y_escucha`, `ordena`, `produccion_escrita_guiada`, `relaciona`, `responder_preguntas_abiertas`, `responder_preguntas_cerradas`, `seleccion_multiple`, `tarea_final`, `ver_video`, `verdadero_falso`).
+- `destreza`: 6 valores (`comprension_auditiva`, `comprension_lectora`, `expresion_escrita`, `expresion_oral`, `interaccion_oral`, `mediacion`).
+- `enfoque`: 6 valores (`comunicacion`, `cultura`, `fonetica`, `gramatica`, `transversal`, `vocabulario`).
+- `tipo_cuadro`: 5 valores (`comunicativo`, `cultural`, `fonetico`, `gramatical`, `lexical`).
+- `seccion`: 7 valores (`comunicacion`, `cultura`, `destrezas`, `evaluacion`, `gramatica`, `reflexion`, `vocabulario`).
+
+El gate ineludible de no-divergencia schema↔validador queda cumplido.
+
+**Sin cambios funcionales en este commit.** Solo cierre documental de actas en REVIEW.md (tabla de sub-pasos A4.5 y A4.5.5 marcadas ✅) y CHANGELOG.
+
+**Próximo:** A4.6 — merge `refactor/prompt-fase-1` → `main` (pendiente de confirmación explícita del autor por ser acción visible y hard-to-reverse).
+
+---
+
 ## [v10.67 — 2026-05-07] — Cierre de bloqueante del revisor: `escucha_y_responde` mal usado en 3 oráculos
 
 Hallazgo bloqueante del revisor sobre v10.66: la definición de `escucha_y_responde` en `reglas-operativas.md` §2.2 ("Escucha y responde oralmente, sin texto delante") no se alineaba con el uso real en los oráculos. Tres actividades estaban clasificadas con ese tipo cuando en realidad encajan en mecánicas más específicas:
