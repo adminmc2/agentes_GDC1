@@ -5,6 +5,43 @@
 
 ---
 
+## [v10.77 — 2026-05-07] — Compactación del Bloque A cerrado de REVIEW + 3 cabeceras desincronizadas
+
+Última pieza de la limpieza documental tras v10.74-v10.76b. El Bloque A de REVIEW.md ("Estabilizar la fase 1") está totalmente cerrado desde 2026-05-07 (A1, A2, A3, A4 todos en ✅). Su detalle ejecutable (sub-pasos A4.0-A4.6, gates, riesgos, plan completo) ya solo aporta valor histórico; mantenerlo en REVIEW vivo cargaba ~8K chars sin contrapartida operativa.
+
+**Decisión informada según receta del revisor** (4 ajustes sobre el plan inicial):
+
+1. Corte por encabezado, no por número de línea (robustez ante reescrituras superiores).
+2. Timestamps en cabeceras al momento real del commit, no al de la última bitácora previa.
+3. Reformular `PROCESO-MAESTRO.md:648` para no afirmar que el detalle vive en REVIEW (ya no lo hace).
+4. En el archivo histórico, no decir "bitácora completa archivada": la bitácora cronológica general del documento sigue viva en REVIEW.
+
+**Cambios aplicados:**
+
+- **Extracción literal del Bloque A** (líneas con `## Bloque A` hasta antes de `## Bloque B`, 99 líneas, 8.022 chars) a `docs/historico/REVIEW-bloque-A-cerrado.md` (111 líneas con cabecera explicativa). Sin reescribir.
+- **Sustitución en REVIEW vivo** por resumen de 12 líneas con: estado de los 4 sub-pasos, resultado vivo (U0/U1/U3 0/0, 5 archivos operativos, validador alineado), referencia al archivo histórico, mención del merge `110e722` y aclaración de que la bitácora cronológica general permanece viva.
+- **Cabeceras desincronizadas absorbidas en este commit** (condición pragmática del revisor):
+  - `REVIEW.md:9`: "Última actualización: 2026-05-07 03:15" → "2026-05-07 14:00".
+  - `PROCESO-MAESTRO.md:448`: "Última actualización: 2026-05-05" → "2026-05-07 (limpieza documental v10.72-v10.77...)".
+  - `PROCESO-MAESTRO.md:630`: "actualizado 2026-05-05 19:00" → "actualizado 2026-05-07".
+- **Reformulación de `PROCESO-MAESTRO.md:648`** ("Detalle vivo y bitácora en REVIEW.md" → "Resumen vivo en REVIEW sección Bloque A; detalle íntegro archivado en docs/historico/...; bitácora cronológica general permanece viva en REVIEW.md").
+
+**Resultado medido:**
+- REVIEW.md: 580 → 493 líneas (-15%, ~2K tokens menos en la parte viva).
+- Detalle del Bloque A preservado íntegro en histórico (111 líneas).
+
+**No se toca:**
+- Bloques B-E vivos en REVIEW.
+- Bitácora cronológica general de REVIEW (línea 521+).
+- Bitácora del documento de PROCESO-MAESTRO.
+- Referencias históricas a líneas o a "17 tipos" en bitácoras y actas anteriores (intocables, revisionismo prohibido).
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Cierre de la serie de limpieza documental.** Ahorro acumulado v10.72-v10.77: ~32K tokens (-37%) sobre el peso documental original. Base limpia para abrir extracciones paralelas (`extract/U2`, `extract/U4`, etc.) en chats nuevos con worktrees dedicados.
+
+---
+
 ## [v10.76b — 2026-05-07] — Cierre de drift vivo en PROCESO-MAESTRO tras dictamen del revisor sobre v10.76
 
 Hallazgos del revisor sobre v10.76: el archivado fue correcto, pero el documento vivo seguía arrastrando 3 zonas con drift activo que la limpieza no había tocado. Sin corregirlas, compactar más documentación habría consolidado incoherencias.

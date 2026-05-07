@@ -445,7 +445,7 @@ Estructura por cuadro gramatical:
 
 ## Parte 3 — Estado del repositorio
 
-> **NOTA:** esta sección es una **vista viva** del árbol del repositorio. Se actualiza con cada cambio físico. Última actualización: 2026-05-05 (disolución de `nuevo/`: el sistema activo vive en raíz).
+> **NOTA:** esta sección es una **vista viva** del árbol del repositorio. Se actualiza con cada cambio físico. Última actualización: 2026-05-07 (limpieza documental v10.72-v10.77: `docs/historico/` poblado, árboles archivados, drift cerrado, Bloque A REVIEW compactado).
 
 ### Árbol actual (estado físico real, hoy)
 
@@ -627,7 +627,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-parte5bis-migracion.md`. La migraci
 
 ## Parte 6 — Pasos siguientes (estado y plan)
 
-### Hitos cerrados (cronológico — actualizado 2026-05-05 19:00)
+### Hitos cerrados (cronológico — actualizado 2026-05-07)
 - ✅ Validación inicial del documento con el autor.
 - ✅ Cierre de Fase 1 (esquemas JSON + estrategia de generación).
 - ✅ Split físico `viejo/` + `nuevo/` ejecutado.
@@ -645,7 +645,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-parte5bis-migracion.md`. La migraci
 **El plan operativo vivo está en `REVIEW.md`** (bloques A–E con gates explícitos). Esta parte ya no se mantiene aquí para evitar duplicación. Resumen del estado:
 
 - ✅ **Bloques operativos cerrados:** esquemas JSON cerrados, vista HTML dinámica del dashboard operativa, extracciones de U0/U1/U3 con contrato post-refactor (taxonomía 20 + destreza/enfoque) validando 0/0, prompt versionado, validador alineado con schema en cross-check A4.5.5, disolución de `nuevo/`, CLAUDE.md modular, refactor del prompt de fase 1 cerrado en v10.69.
-- ✅ **Bloque A cerrado** (ver REVIEW): A1 (validar U3 con autor), A2 (probar con U0), A3 (bugs B1-B4), A4 (refactor documental de fase 1) — todos en ✅. Detalle vivo y bitácora en `REVIEW.md`.
+- ✅ **Bloque A cerrado** (ver REVIEW): A1 (validar U3 con autor), A2 (probar con U0), A3 (bugs B1-B4), A4 (refactor documental de fase 1) — todos en ✅. Resumen vivo en `REVIEW.md` sección "Bloque A"; detalle íntegro (sub-pasos A4.0-A4.6, gates, riesgos) archivado en `docs/historico/REVIEW-bloque-A-cerrado.md`; bitácora cronológica general permanece viva en `REVIEW.md`.
 - 🔄 **Bloque B parcial** (REVIEW): infraestructura JSONs globales del curso. B5 (despliegue público) ✅ cerrado fuera de orden; B1.5 (reciclaje) en diseño; B1+B2 esperan dependencias; tarjetas dependen de fase 2; píldoras dependen de fase 5.
 - 📋 **Bloque C pendiente:** construir fases 2-8 (una a una).
 - 📋 **Bloque D pendiente:** sistema de lecciones de Claude Code.
@@ -657,6 +657,7 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 
 ## Bitácora del documento
 
+- **2026-05-07 14:00** — **Limpieza documental v10.72-v10.77 cerrada** (ver detalle en `CHANGELOG.md`). Serie de commits que reduce el peso documental vivo del repo en ~32K tokens (-37%) sin perder trazabilidad: archivado del CHANGELOG pre-v10.40 a `docs/historico/`, traslado de árboles históricos y Parte 5.bis a `docs/historico/`, cierre de drift vivo en Parte 4 (taxonomía 17→20), Parte 3 (árbol actualizado), Parte 6 (Bloque A cerrado), reformulación de `PROCESO-MAESTRO:648` y compactación del Bloque A vivo de REVIEW. Cabeceras de fecha actualizadas. Bitácora cronológica intocada.
 - **2026-05-07** — **Taxonomía de `tipo` ampliada de 19 a 20 valores: añadido `escucha`** (decisión cerrada en cumplimiento de la regla §2.4 de `reglas-operativas.md`: cualquier ampliación del set requiere decisión cerrada antes de aplicarse en schema y validador). Caso disparador detectado durante la prueba empírica con U0: la actividad U0-p8-act01 ("Mira el mapa y escucha el nombre de los países. Observa la pronunciación.") es input puro auditivo sin lectura de texto extenso ni acción posterior. La taxonomía de 19 no tenía un tipo limpio: `escucha_y_repite` exige repetición que el enunciado no pide; `lee_y_escucha` está pensado para diálogos (input combinado lectura+audio). Decisión: añadir `escucha` para input puro auditivo con apoyo visual no textual admisible (mapa, imagen, foto). Diferencia con `lee_y_escucha`: `escucha` no implica leer texto extenso. Aplicado en `schema-inventario.md` §5, `validar_inventario.py:TIPOS_VALIDOS`, `reglas-operativas.md` §2.2 (tabla canónica), todas las cross-references "19 → 20". U0-p8-act01 reclasificada `escucha_y_repite` → `escucha`. Validador U0 → 0/0.
 - **2026-05-05** — Creación inicial. Consolida la conversación sobre el proceso de producción y el estado del repositorio.
 - **2026-05-05** — Actualización con hallazgos del repaso del repositorio: los archivos `agentes/*.md` son especificaciones operativas vivas (no prompts a archivar). Protocolo de píldoras (Fase 5) localizado en `ag-vocabulario.md` y `ag-gramatica.md`. Confirmado que NO existe registro de no-repetición de tarjetas de estrategia (Fase 4).
