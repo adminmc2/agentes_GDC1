@@ -3,6 +3,37 @@
 
 ---
 
+## [v10.69 — 2026-05-07] — A4.6 cerrado: merge `refactor/prompt-fase-1` → `main` (cierre del refactor de fase 1)
+
+Merge ejecutado con `git merge --no-ff` (commit `110e722`) para preservar el rastro completo del refactor de fase 1 (v10.40 → v10.68, 29 commits intermedios).
+
+**Diff del merge:** 14 archivos, +2555 / –838 líneas.
+
+**Archivos creados en `main`:**
+- `fases/1-extraccion-inventario/schema-inventario.md` (contrato de datos puro).
+- `fases/1-extraccion-inventario/reglas-operativas.md` (reglas decisionales — single source of truth de precedencias).
+- `fases/1-extraccion-inventario/convenciones-y-casos.md` (transcripción + casebook).
+- `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` (documentación del worktree dedicado).
+
+**Archivos modificados:**
+- `fases/1-extraccion-inventario/prompt.md` (547 → 111 líneas, –80%).
+- `fases/1-extraccion-inventario/CLAUDE.md` (de fase, modo contrato corto, 60 líneas).
+- `scripts/validar_inventario.py` (validador estructural, contrato paralelo del schema).
+- `unidades/U0/U0-nc1-inventario.json`, `unidades/U1/U1-nc1-inventario.json`, `unidades/U3/U3-nc1-inventario.json` (los 3 oráculos reclasificados al contrato actualizado).
+- `CHANGELOG.md`, `REVIEW.md`, `PROCESO-MAESTRO.md` (bitácoras).
+
+**Validador en `main` post-merge:** U0 ✅, U1 ✅, U3 ✅, todos 0 errores y 0 avisos.
+
+**Gate A4 entero cerrado:** los 5 sub-gates del bloque "Gate de cierre de A4 entero" en `REVIEW.md` ya en ✅ (sub-pasos cerrados, A4.5 acta empírica, A4.5.5 0 divergencias, merge ejecutado, bitácoras sincronizadas).
+
+**Sin push automático.** Push a remoto queda como decisión del autor.
+
+**Branch `refactor/prompt-fase-1` y worktree** `/Users/armandocruz/Desktop/guia-didactica-refactor/` **se mantienen intactos** por si se necesita inspeccionar el rastro del refactor.
+
+**Refactor de fase 1 cerrado.**
+
+---
+
 ## [v10.68 — 2026-05-07] — Cierre formal de A4.5 (acta empírica) y A4.5.5 (cross-check schema↔validador)
 
 Actas formales de los dos gates pre-merge tras el dictamen positivo del revisor sobre v10.67:
