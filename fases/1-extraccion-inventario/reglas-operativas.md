@@ -67,6 +67,9 @@ Enumeración cerrada en `schema-inventario.md` §5.
    - Respuesta concreta del input → `responder_preguntas_cerradas`.
    - Respuesta personal/libre → `responder_preguntas_abiertas`.
 4. **Si el enunciado solo pide input** (leer, escuchar, mirar) sin acción posterior → `lee_y_escucha` o `ver_video` según el medio.
+5. **`completa_huecos` vs `produccion_escrita_guiada`** (frontera frecuente):
+   - Si el ejercicio presenta **huecos, celdas o slots predefinidos** que el alumno rellena (frase con `_____`, tabla con celdas vacías, ficha con campos a completar) → `completa_huecos`. Ejemplos: "Completa las frases con la forma del verbo ser", "Completa la tabla con el masculino/femenino", "Escucha y completa la ficha".
+   - Si el ejercicio NO tiene huecos predefinidos y el alumno **construye** frases o etiquetas a partir de un modelo, una imagen o una regla → `produccion_escrita_guiada`. Ejemplos: "Coloca el artículo el/la a estos nombres" (no hay hueco, el alumno escribe el artículo delante), "Forma frases tomando un elemento de cada columna", "Escribe frases con el verbo ser", "Describe estos objetos con sus colores", "Escribe el nombre de estos objetos".
 
 ### 2.3 Sobre `destreza` y `enfoque` (dos ejes independientes de `tipo`)
 

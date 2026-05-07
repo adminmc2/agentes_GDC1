@@ -3,6 +3,42 @@
 
 ---
 
+## [v10.65 — 2026-05-07] — U1 reclasificada + 3 fixes del revisor + regla nueva de desempate `completa_huecos` vs `produccion_escrita_guiada`
+
+Reclasificación de U1 (42 actividades) tras prueba empírica de v10.64. Validación del revisor sobre la primera pasada detectó 3 desajustes contractuales reales:
+
+**A1 (Bloqueante) — U1-p12-act3:** la actividad encadenaba "Escucha y repite vocabulario / Después, escucha y escribe" — el contrato (§2.2 regla de desempate 2: "última acción que pide producción concreta") obliga a clasificar por la fase final (asignación numérica), no por la primera (repetición). Tampoco corresponde `expresion_escrita` (escribir un número es transcripción/manipulación). **Fix:** tipo `escucha_y_repite` → `relaciona`; destreza `[comprension_auditiva, comprension_lectora, expresion_oral]` (sin `expresion_escrita`).
+
+**A2 (Alto) — Frontera ambigua `completa_huecos` vs `produccion_escrita_guiada`:** la primera pasada congeló 4 actividades en `produccion_escrita_guiada` por solapamiento de descripciones en §2.2 (ambos tipos ejemplificaban "Coloca el artículo / Completa la tabla"). El revisor señaló que la ambigüedad existe pero no justifica el congelamiento — y propuso una **regla de desempate explícita**:
+> Con huecos/celdas/slots predefinidos → `completa_huecos`. Sin huecos predefinidos, el alumno construye frases/etiquetas a partir de modelo/imagen/regla → `produccion_escrita_guiada`.
+
+**Fix de regla:** §2.2 punto 5 nuevo en `reglas-operativas.md` con la formulación.
+
+**Fix de JSON:** 5 actividades cambian de tipo siguiendo la nueva regla:
+- U1-p14-act2 "Completa los huecos con la forma del verbo tener" → `completa_huecos`
+- U1-p14-act4 "Completa la tabla con el masculino/femenino" → `completa_huecos`
+- U1-p21-act1 "Completa las frases con el verbo ser" → `completa_huecos`
+- U1-p21-act3 "Completa la tabla [género]" → `completa_huecos`
+- U1-p21-act4 "Completa con el verbo ser/llamarse/tener" → `completa_huecos`
+
+Mantienen `produccion_escrita_guiada` (sin huecos predefinidos): U1-p21-act2 "Coloca el artículo", U1-p14-act5 "Forma el femenino", U1-p15-act6/7, U1-p17-act6, U1-p21-act5.
+
+**A3 (Alto) — U1-p14-act3 "Forma frases tomando un elemento de cada columna":** el contrato (§2.2 ejemplo explícito de `produccion_escrita_guiada`: "Forma frases") obliga a clasificarlo como producción guiada. La primera pasada lo dejó en `relaciona`, lo cual además entraba en conflicto con asignar `expresion_escrita` a una mecánica de relación (regla anti-sobreasignación). **Fix:** tipo `relaciona` → `produccion_escrita_guiada`; destreza `[comprension_lectora, expresion_escrita]` mantenida.
+
+**Resumen del commit:**
+- 7 actividades de U1 con `tipo` corregido (1 por A1, 5 por A2 incl. consistencia, 1 por A3).
+- 1 regla nueva en `reglas-operativas.md` §2.2 punto 5.
+- Validador U1 → 0/0.
+
+**Estado del branch:**
+- U0: ✅ verde
+- U1: ✅ verde (tras estos fixes)
+- U3: ❌ rojo (legacy, pendiente — siguiente)
+
+**Próximo:** reclasificar U3 con la regla de desempate ya cerrada y aplicada.
+
+---
+
 ## [v10.64 — 2026-05-07] — U0 reclasificada (piloto) + taxonomía `tipo` 19→20 (añadido `escucha`) + refinamiento §2.3
 
 **Prueba empírica del nuevo contrato `destreza`/`enfoque`** con U0 como piloto. El sistema funciona: 10 actividades reclasificadas, validador 0/0.
