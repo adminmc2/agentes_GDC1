@@ -3,6 +3,24 @@
 
 ---
 
+## [v10.73 — 2026-05-07] — Cierre de referencias rotas en `schema-inventario.md` tras v10.72
+
+Hallazgo del revisor sobre v10.72: el archivado de `REFACTOR-PROPUESTA.md` a `docs/historico/` dejó dos referencias rotas en `fases/1-extraccion-inventario/schema-inventario.md` (líneas 7 y 377). Ambas decían *"ver REFACTOR-PROPUESTA.md paso 5.5"* en un archivo vivo del producto operativo.
+
+**Decisión:** en lugar de re-apuntar al nuevo path histórico, el revisor sugirió formulación estable y atemporal — el schema describe contrato vigente del JSON, no debería encadenarse a un artefacto del proceso de refactor que ya cumplió su función.
+
+**Fix quirúrgico (2 líneas):**
+- Línea 7: *"...se resuelve antes del merge en commit aparte (ver REFACTOR-PROPUESTA.md paso 5.5)."* → *"...se resuelve antes del merge en commit aparte."*
+- Línea 377: *"La divergencia no es un estado válido de cierre del refactor (ver REFACTOR-PROPUESTA.md paso 5.5)."* → *"La divergencia no es un estado válido de cierre."*
+
+**Verificación:** sin más referencias vivas a `REFACTOR-*.md` fuera de `docs/historico/`. Las menciones que quedan en CHANGELOG y bitácora REVIEW siguen siendo históricas (no se reescriben).
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** push de `main` a `origin` con autorización del autor + reextracción de U2 en rama nueva (no directamente sobre main).
+
+---
+
 ## [v10.72 — 2026-05-07] — Archivado de documentos del refactor cerrado en `docs/historico/`
 
 Limpieza post-refactor: los dos artefactos del **proceso** del refactor de fase 1 (no del producto vivo) se archivan en `docs/historico/refactor-prompt-fase1/` para que `fases/1-extraccion-inventario/` contenga solo lo operativo (CLAUDE.md, prompt.md, schema, reglas, convenciones).

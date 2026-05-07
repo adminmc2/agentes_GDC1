@@ -4,7 +4,7 @@
 >
 > **No contiene:** cuándo aplica cada campo, cómo elegir el valor, reglas de población semántica, workflow de extracción, ejemplos pedagógicos ni casos históricos. Esos viven en `reglas-operativas.md` o `convenciones-y-casos.md`.
 >
-> **Source of truth con el validador:** este archivo y `scripts/validar_inventario.py` son contratos paralelos del mismo shape. **No pueden divergir en el momento del merge a `main`.** Cualquier divergencia se resuelve antes del merge en commit aparte (ver `REFACTOR-PROPUESTA.md` paso 5.5).
+> **Source of truth con el validador:** este archivo y `scripts/validar_inventario.py` son contratos paralelos del mismo shape. **No pueden divergir en el momento del merge a `main`.** Cualquier divergencia se resuelve antes del merge en commit aparte.
 
 ---
 
@@ -374,4 +374,4 @@ Este archivo y `scripts/validar_inventario.py` son **contratos paralelos del mis
   - `destreza` en orden alfabético, sin duplicados (§5b).
 - Cada **clave opcional declarada** (`autoevaluacion`, `_nota_unidad_atipica`) debe estar en `CLAVES_TOP_OPCIONALES` del validador para que no emita aviso.
 
-**Si se detecta divergencia,** se resuelve **antes del merge** alineando uno de los dos artefactos en commit aparte. La divergencia no es un estado válido de cierre del refactor (ver `REFACTOR-PROPUESTA.md` paso 5.5).
+**Si se detecta divergencia,** se resuelve **antes del merge** alineando uno de los dos artefactos en commit aparte. La divergencia no es un estado válido de cierre.
