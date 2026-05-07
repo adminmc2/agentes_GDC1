@@ -5,6 +5,37 @@
 
 ---
 
+## [v10.76 — 2026-05-07] — Archivado de árboles históricos y Parte 5.bis de PROCESO-MAESTRO
+
+Continuación de la limpieza documental tras v10.75. Tres bloques de PROCESO-MAESTRO.md auto-etiquetados como históricos en su propio contenido se trasladan a `docs/historico/`, dejando punteros cortos donde estaban.
+
+**Bloques movidos:**
+
+1. **Árbol intermedio del repositorio** (líneas 487-533, ~2.161 chars). Etiqueta original: *"estado anterior — pre-disolución de `nuevo/`"*. Útil para entender la fase de migración cuando `nuevo/` y `viejo/` coexistían.
+2. **Árbol antes del split** (líneas 535-668, ~3.960 chars). Etiqueta original: *"referencia histórica — anterior a 2026-05-05 12:15, NO ES EL ESTADO ACTUAL"*. Estructura del repo cuando todo el contenido editorial vivía en raíz.
+3. **Parte 5.bis: Histórico de la estrategia de migración (CERRADA)** (líneas 788-806, ~1.301 chars). Cronología y plan de la migración que produjo la estructura actual; declarada cerrada en su propio título.
+
+**Destinos:**
+- `docs/historico/PROCESO-MAESTRO-arboles-historicos.md` (196 líneas, 11.324 chars): los 2 árboles con cabecera explicando qué archiva y diferencia con el árbol vivo.
+- `docs/historico/PROCESO-MAESTRO-parte5bis-migracion.md` (27 líneas, 1.807 chars): Parte 5.bis con cabecera.
+
+**En PROCESO-MAESTRO vivo:** los 3 bloques quedan reemplazados por punteros cortos (3 líneas cada uno) que mantienen el encabezado original de la sección + 1 línea referenciando el histórico. La numeración y secuencia de Partes (1, 2, 3, 4, 5, 5.bis, 6, Bitácora) queda intacta.
+
+**Lo que NO se toca:**
+- Árbol actual (Parte 3, línea 450): es el estado vivo, queda íntegro.
+- Bitácora del documento (Parte final): histórica pero parte de la trazabilidad viva del propio PROCESO-MAESTRO.
+- Decisiones cerradas (Parte 4) y pendientes (Parte 5): vivos.
+
+**Resultado medido:**
+- PROCESO-MAESTRO.md: 868 → 677 líneas (-22%, ~190 líneas archivadas).
+- Peso documental reducido en ~7K chars de partes vivas, preservados en archivos históricos referenciables.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.77 (compactar bloque A cerrado de REVIEW.md, **decisión condicional** tras evaluar si tras v10.75-76 sigue compensando).
+
+---
+
 ## [v10.75b — 2026-05-07] — Corrección de 2 inexactitudes menores en el acta de v10.75
 
 Hallazgo del revisor sobre v10.75 (ambos en el acta del propio commit, no en el archivado):
