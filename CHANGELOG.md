@@ -5,6 +5,31 @@
 
 ---
 
+## [v10.76b — 2026-05-07] — Cierre de drift vivo en PROCESO-MAESTRO tras dictamen del revisor sobre v10.76
+
+Hallazgos del revisor sobre v10.76: el archivado fue correcto, pero el documento vivo seguía arrastrando 3 zonas con drift activo que la limpieza no había tocado. Sin corregirlas, compactar más documentación habría consolidado incoherencias.
+
+**1. Decisión 17 (Parte 4, línea 520):** decía "taxonomía cerrada de **17 valores**" en una decisión cerrada viva. Real: 20 valores desde v10.64. Tampoco mencionaba `destreza` (lista MCER de 6) ni `enfoque` (string del enum de 6) introducidos en v10.60.
+
+**Fix:** decisión 17 reescrita con "taxonomía cerrada de **20 valores**" + referencia a schema §5 + mención de los 3 ejes ortogonales (`tipo`/`destreza`/`enfoque`) con sus enumeraciones cerradas y referencia a schema §5b/§5c.
+
+**2. Árbol actual (Parte 3, líneas 450-486):** describía a U3 como "única poblada" cuando el repo ya tenía U0, U1 y U3 todas pobladas y validando 0/0; no mencionaba los 5 archivos vivos de `fases/1-extraccion-inventario/` post-refactor (solo CLAUDE.md y prompt.md); no incluía `docs/historico/` que existe desde v10.72 y se pobló más en v10.75 y v10.76.
+
+**Fix:** árbol vivo reescrito al estado real: 3 unidades extraídas con conteo de actividades; los 5 archivos operativos de fase 1 listados (CLAUDE, prompt, schema-inventario, reglas-operativas, convenciones-y-casos); `docs/historico/` con sus 3 sub-rutas/archivos archivados; CLAUDE.md raíz mencionado como contrato global.
+
+**3. Síntesis Parte 6 (líneas 637-642):** decía "📋 **Bloque A pendiente** (REVIEW): estabilizar fase 1 (validar U3, probar U4, resolver bugs B1-B4)". Real: A1, A2, A3, A4 todos ✅ cerrados; el bloque A entero está cerrado (REVIEW.md líneas 45 y 112).
+
+**Fix:** Bloque A actualizado a ✅ cerrado con detalle de los 4 sub-pasos y referencia a REVIEW.md. Bloque B refinado al estado real (parcial: B5 cerrado, B1.5 en diseño, B1+B2 esperan dependencias).
+
+**Lo que NO se toca** (legítimo, no es drift vivo):
+- Bitácora del documento (Parte final): menciones a "17 tipos" en entradas del 2026-05-05 son históricas, describen el estado en su momento. Revisionismo prohibido.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.77 (compactar bloque A REVIEW, decisión condicional) ahora con base documental viva limpia.
+
+---
+
 ## [v10.76 — 2026-05-07] — Archivado de árboles históricos y Parte 5.bis de PROCESO-MAESTRO
 
 Continuación de la limpieza documental tras v10.75. Tres bloques de PROCESO-MAESTRO.md auto-etiquetados como históricos en su propio contenido se trasladan a `docs/historico/`, dejando punteros cortos donde estaban.

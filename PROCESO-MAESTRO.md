@@ -452,33 +452,44 @@ Estructura por cuadro gramatical:
 ```
 guia-didactica-profesor-IA/
 │
-├── unidades/                                ← SISTEMA ACTIVO (nuevo)
-│   └── U3/                                  (única poblada)
-│       ├── U3-nc1-inventario.json           (47 actividades, schema canónico)
-│       ├── fuente/U3-nc1.pdf                (gitignored)
-│       └── (resto pendiente de migrar de viejo si procede)
+├── unidades/                                ← SISTEMA ACTIVO
+│   ├── U0/U0-nc1-inventario.json            (10 actividades, valida 0/0)
+│   ├── U1/U1-nc1-inventario.json            (42 actividades, valida 0/0)
+│   ├── U3/U3-nc1-inventario.json            (47 actividades, valida 0/0)
+│   └── U[X]/fuente/U[X]-nc1.pdf             (gitignored, input local del autor)
 │
-├── fases/                                   ← una carpeta por fase con CLAUDE.md + prompt
-│   └── 1-extraccion-inventario/
-│       ├── CLAUDE.md                        (contexto operativo de la fase)
-│       └── prompt.md                        (instrucciones detalladas)
+├── fases/                                   ← una carpeta por fase con sus archivos operativos
+│   └── 1-extraccion-inventario/             (post-refactor v10.69, 5 archivos vivos)
+│       ├── CLAUDE.md                        (contrato corto de fase, auto-cargado)
+│       ├── prompt.md                        (instrucciones ejecutables)
+│       ├── schema-inventario.md             (contrato de datos puro)
+│       ├── reglas-operativas.md             (decisiones, precedencias, criterios)
+│       └── convenciones-y-casos.md          (transcripción + casebook)
+│
 ├── scripts/                                 ← código activo
-│   └── validar_inventario.py                (validación estructural sin LLM)
+│   └── validar_inventario.py                (validador estructural, contrato paralelo del schema)
+│
+├── docs/historico/                          ← archivado de artefactos cerrados
+│   ├── refactor-prompt-fase1/               (REFACTOR-PROPUESTA, REFACTOR-WORKTREE, README)
+│   ├── CHANGELOG-pre-refactor.md            (entradas pre-v10.40, archivadas en v10.75)
+│   ├── PROCESO-MAESTRO-arboles-historicos.md (árbol intermedio + antes del split, v10.76)
+│   └── PROCESO-MAESTRO-parte5bis-migracion.md (Parte 5.bis CERRADA, v10.76)
 │
 ├── eval/                                    ← evaluación (heredado, en uso)
 ├── web/                                     ← dashboard (heredado, en uso)
-├── diagrama.py                              ← servidor (heredado, en uso)
+├── diagrama.py                              ← servidor del dashboard (heredado, en uso)
 │
-├── viejo/                                   ← ARCHIVO CrewAI v5.0 (intocable)
+├── viejo/                                   ← ARCHIVO CrewAI v5.0 (intocable hasta autorización)
 │   ├── unidades/U03/                        (contenido editorial original)
 │   ├── materiales/, agentes/, repertorios/, referencias/, diseno/, _template/
 │   ├── scripts/                             (importar_inventario.py, crewai/, etc.)
-│   ├── CLAUDE-anterior.md                   (CLAUDE.md anterior)
+│   ├── CLAUDE-anterior.md
 │   ├── marco-teorico-metodologico.md, 00-curso-general.md
 │   └── material-complementario/             (gitignored)
 │
 ├── .claude/rules/                           (meta-reglas técnicas: agent-prompt-design, tool-design, etc.)
-├── README.md, CHANGELOG.md, ROADMAP.md, GITHUB-MANIFEST.md
+├── README.md, CHANGELOG.md, REVIEW.md, ROADMAP.md, GITHUB-MANIFEST.md
+├── CLAUDE.md                                ← contrato global del proyecto (auto-cargado)
 ├── PROCESO-MAESTRO.md                       ← este documento (temporal)
 ├── Dockerfile, railway.toml, requirements.txt, .env.example
 └── .gitignore, .dockerignore
@@ -517,7 +528,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-arboles-historicos.md`. Estado del 
 14. **Salidas globales del curso**: 3 archivos (`nc1-reciclaje.json`, `nc1-tarjetas.json`, `nc1-pildoras.json`).
 15. **Modelo de los globales: A — índice/proyección.** El dato vive en su unidad; los globales se regeneran. NO se editan a mano (excepto reciclaje).
 16. **Ubicación de los globales**: en `unidades/`, junto a las carpetas de unidad.
-17. **Esquema del inventario JSON cerrado**: `vocabulario_consolidado` con 3 bloques (principal/recurrente/comprensión), `secciones` como índice top-level, `tipo` con taxonomía cerrada de 17 valores (provisional, revisable cada unidad), `datos` como saco genérico, `respuestas` siempre presente, sub-objetos consistentes para audio/imagen/video, `registro` eliminado (va a CHANGELOG).
+17. **Esquema del inventario JSON cerrado**: `vocabulario_consolidado` con 3 bloques (principal/recurrente/comprensión), `secciones` como índice top-level, `tipo` con taxonomía cerrada de **20 valores** (source of truth: `fases/1-extraccion-inventario/schema-inventario.md` §5; provisional y revisable según regla §2.4 de `reglas-operativas.md`), `destreza` (lista MCER de 6 valores con orden alfabético, schema §5b) y `enfoque` (string del enum de 6, schema §5c) como ejes ortogonales independientes, `datos` como saco genérico, `respuestas` siempre presente, sub-objetos consistentes para audio/imagen/video, `registro` eliminado (va a CHANGELOG).
 18. **Esquema de `nc1-tarjetas.json`**: solo vocabulario y estrategia (no gramática). `por_unidad` + `indice_palabras` + `indice_estrategias`.
 19. **Esquema de `nc1-pildoras.json`**: `por_unidad` + `indice_global`. Categorías como `null` por ahora — se definen cuando se trabajen píldoras nuevas.
 20. **Esquema de `nc1-reciclaje.json`**: acumulativo y secuencial; limitado a 5-6 elementos clave por unidad; basado en contenido (vocabulario, estrategia, contenido_gramatical, forma_verbal, estrategia_comunicativa); con niveles de impacto (alto/medio/bajo); revisable y editable desde el dashboard.
@@ -633,9 +644,9 @@ Archivado en `docs/historico/PROCESO-MAESTRO-parte5bis-migracion.md`. La migraci
 
 **El plan operativo vivo está en `REVIEW.md`** (bloques A–E con gates explícitos). Esta parte ya no se mantiene aquí para evitar duplicación. Resumen del estado:
 
-- ✅ **Bloques operativos cerrados:** esquemas JSON, vista HTML, extracción de U3 con nuevo schema, prompt versionado, validador, disolución de `nuevo/`, CLAUDE.md modular.
-- 📋 **Bloque A pendiente** (REVIEW): estabilizar fase 1 (validar U3, probar U4, resolver bugs B1-B4).
-- 📋 **Bloque B pendiente:** infraestructura JSONs globales del curso.
+- ✅ **Bloques operativos cerrados:** esquemas JSON cerrados, vista HTML dinámica del dashboard operativa, extracciones de U0/U1/U3 con contrato post-refactor (taxonomía 20 + destreza/enfoque) validando 0/0, prompt versionado, validador alineado con schema en cross-check A4.5.5, disolución de `nuevo/`, CLAUDE.md modular, refactor del prompt de fase 1 cerrado en v10.69.
+- ✅ **Bloque A cerrado** (ver REVIEW): A1 (validar U3 con autor), A2 (probar con U0), A3 (bugs B1-B4), A4 (refactor documental de fase 1) — todos en ✅. Detalle vivo y bitácora en `REVIEW.md`.
+- 🔄 **Bloque B parcial** (REVIEW): infraestructura JSONs globales del curso. B5 (despliegue público) ✅ cerrado fuera de orden; B1.5 (reciclaje) en diseño; B1+B2 esperan dependencias; tarjetas dependen de fase 2; píldoras dependen de fase 5.
 - 📋 **Bloque C pendiente:** construir fases 2-8 (una a una).
 - 📋 **Bloque D pendiente:** sistema de lecciones de Claude Code.
 - 📋 **Bloque E pendiente** (al cierre del curso): limpieza final, eliminar `viejo/`, eliminar `PROCESO-MAESTRO.md` y `REVIEW.md`.
