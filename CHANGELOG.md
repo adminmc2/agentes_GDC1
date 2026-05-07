@@ -3,6 +3,24 @@
 
 ---
 
+## [v10.70 — 2026-05-07] — Regla 3 de `CLAUDE.md` de fase reformulada para que describa la realidad del sistema
+
+Observación post-merge del revisor: la regla 3 ("Single source of truth por capa") prohibía duplicación entre `prompt.md`, `schema-inventario.md`, `reglas-operativas.md` y `convenciones-y-casos.md` — pero **excluía tácitamente al propio `CLAUDE.md` de fase**. La duplicación contractual real entre `CLAUDE.md` y `prompt.md` (objetivo, input/output, invocación, validación mínima, literalidad, convención root-relative, framing SSoT) sobrevivía al refactor sin estar contemplada en la regla.
+
+**Auditoría previa (sin cambios de código):**
+- **Grupo A — duplicación contractual aceptable** entre los 2 entry points: 7 bloques (objetivo, paths, invocación, validación, literalidad, convención root-relative, framing SSoT). Todos contractuales, ninguno operativo.
+- **Grupo B — duplicación operativa peligrosa**: 0 hallazgos. Verificado que NO aparecen valores concretos de `tipo`, `destreza`, `tipo_cuadro`, opciones fijas NC1, categorías de `vocabulario_consolidado` ni reglas de desempate fuera de su archivo canónico. La lógica decisional vive solo en `reglas-operativas.md`; el shape solo en `schema-inventario.md`; las convenciones solo en `convenciones-y-casos.md`.
+
+**Fix quirúrgico (1 línea):** regla 3 reescrita según la formulación del revisor:
+
+> "Single source of truth por capa — las reglas estructurales, decisionales y convenciones viven una sola vez en los archivos de soporte (`schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`). `CLAUDE.md` y `prompt.md` pueden repetir hechos y reglas mínimas de contrato de fase (objetivo, input/output, invocación, validación, literalidad) por ser entry points complementarios. Si lógica operativa o reglas de clasificación aparecen duplicadas fuera de su archivo canónico, es un bug."
+
+**Sin tocar `prompt.md` ni los archivos de soporte ni el validador.** No es problema arquitectónico profundo: la regla mal formulada simplemente no describía la realidad ya implementada.
+
+**Próximo:** ninguno por ahora. Refactor cerrado y revisor sin bloqueantes pendientes.
+
+---
+
 ## [v10.69 — 2026-05-07] — A4.6 cerrado: merge `refactor/prompt-fase-1` → `main` (cierre del refactor de fase 1)
 
 Merge ejecutado con `git merge --no-ff` (commit `110e722`) para preservar el rastro completo del refactor de fase 1 (v10.40 → v10.68, 29 commits intermedios).
