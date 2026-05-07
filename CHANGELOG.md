@@ -3,6 +3,20 @@
 
 ---
 
+## [v10.58 — 2026-05-07] — Sincronización de fila-resumen A4.4 con la bitácora
+
+Hallazgo Bajo del revisor sobre `590fd96` (v10.57): la fila-resumen de A4.4 en la tabla de sub-pasos de `REVIEW.md` se quedó desactualizada. Decía *"✅ 2026-05-07 02:30 (57 líneas, 7 secciones)"* mientras que CHANGELOG v10.57 y la propia bitácora REVIEW ya reflejaban el cierre limpio a las 03:00 con **59 líneas** (tras añadir la convención root-relative). Doble verdad menor entre tabla y bitácora.
+
+**Resolución:** fila reescrita a *"✅ cerrado limpio 2026-05-07 03:00 en v10.57 (59 líneas tras añadir convención root-relative explícita; 7 secciones; norte 40-60 cumplido; cero duplicaciones literales con prompt.md)"*. Tabla y bitácora ahora dicen lo mismo.
+
+**Adicional registrado:** el revisor confirma que ejecutó el validador desde la raíz del repo con la convención root-relative ahora explícita y devuelve JSON válido y 0 avisos para U1. Es una **primera verificación funcional informal externa al ejecutor**, no sustituye A4.5 (la prueba funcional oficial sigue pendiente como reextracción de los 3 casos seleccionados, ver REFACTOR-PROPUESTA §5 paso 5).
+
+**Sin cambios de código.** Solo coherencia documental.
+
+**Próximo:** A4.5.
+
+---
+
 ## [v10.57 — 2026-05-07] — Cierre limpio de A4.4: convención root-relative explícita antes de A4.5
 
 Hallazgo Medio del revisor sobre `278144a` (v10.56, A4.4): los comandos en `CLAUDE.md` de fase no son ejecutables tal como están escritos en el contexto que el propio archivo declara.
