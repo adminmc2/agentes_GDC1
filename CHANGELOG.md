@@ -3,6 +3,20 @@
 
 ---
 
+## [v10.66 — 2026-05-07] — Cierre de U3 y refinamiento de desempates en §2.2
+
+- U3 reclasificada: 47 actividades con destrezas normalizadas en listas alfabéticas y enfoque completo.
+- 11 cambios de tipo: 10 casos "Completa..." pasan de `produccion_escrita_guiada` a `completa_huecos`, y U3-p39-act05 pasa de `escucha_y_repite` a `completa_huecos`.
+- U3-p41-act05 se mantiene en `produccion_escrita_guiada` por tratarse de producción propia sobre relojes vacíos (sin `items_libro`).
+- §2.2 se refina en tres puntos:
+  - **Regla 1 (`ver_video`)**: solo cuando no hay manipulación posterior. "Mira el vídeo y completa" → `completa_huecos`, no `ver_video`.
+  - **Regla 2 (manipulación manda)**: la manipulación domina **en cualquier punto** del enunciado, no solo "posterior". "Completa, escucha y repite" → `completa_huecos` aunque le siga "repite".
+  - **Regla 3 (`responder_preguntas_*`)**: distingue explícitamente destreza con texto-fuente (`comprension_lectora` o `comprension_auditiva`, sin `expresion_escrita`) frente a respuesta libre del alumno sin texto-fuente (`expresion_escrita`).
+
+**Estado del branch:** U0 ✅, U1 ✅, U3 ✅. Los 3 oráculos validan 0/0 con el contrato completo. Branch listo para A4.5 (acta) / A4.5.5 (cross-check) / merge a `main`.
+
+---
+
 ## [v10.65 — 2026-05-07] — U1 reclasificada + 3 fixes del revisor + regla nueva de desempate `completa_huecos` vs `produccion_escrita_guiada`
 
 Reclasificación de U1 (42 actividades) tras prueba empírica de v10.64. Validación del revisor sobre la primera pasada detectó 3 desajustes contractuales reales:
