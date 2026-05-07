@@ -29,20 +29,41 @@ TIPOS_CUADRO_VALIDOS = {
 }
 
 TIPOS_VALIDOS = {
-    "escucha_y_repite", "escucha_y_responde", "completa_huecos", "relaciona",
-    "ordena", "clasifica", "seleccion_multiple", "verdadero_falso",
-    "interaccion_oral",           # parejas / grupos (antes: produccion_oral_pareja)
-    "expresion_oral_libre",       # producción oral sin guía (antes: produccion_oral_libre)
-    "produccion_escrita_guiada",  # escribir frases guiadas, rellenar huecos escribiendo
-    "expresion_escrita_libre",    # producción escrita sin guía (antes: produccion_escrita_libre)
-    "comprension_lectora", "comprension_auditiva", "busqueda_informacion",
-    "tarea_final", "juego",
+    # Taxonomía v10.59 — basada en la acción específica del enunciado del libro.
+    # input sin acción específica posterior
+    "lee_y_escucha",              # "Lee y escucha" / "Lee y escucha el diálogo"
+    "ver_video",                  # "Mira el vídeo"
+    # acciones orales reproductivas/responsivas
+    "escucha_y_repite",
+    "escucha_y_responde",
+    # mecánicas de manipulación de elementos dados
+    "completa_huecos",            # "Completa", "Lee y completa", "Escucha y completa"
+    "relaciona",
+    "ordena",
+    "clasifica",
+    "seleccion_multiple",         # "Subraya", "Marca", "Escucha y marca"
+    "verdadero_falso",
+    # responder preguntas (separados por tipo de respuesta)
+    "responder_preguntas_cerradas",  # respuesta concreta que sale del input
+    "responder_preguntas_abiertas",  # respuesta personal/libre
+    # producción oral
+    "interaccion_oral",           # parejas / grupos
+    "expresion_oral_libre",
+    # producción escrita
+    "produccion_escrita_guiada",  # "Escribe frases con", "Forma frases", "Coloca el artículo"
+    "expresion_escrita_libre",    # "Escribe a tu amigo", "Escribe un correo"
+    # otros
+    "busqueda_informacion",
+    "tarea_final",
+    "juego",
 }
 
 # Tipos de actividad que deben llevar items_libro u otro contenido visible
 TIPOS_QUE_REQUIEREN_ITEMS = {
     "completa_huecos", "relaciona", "ordena", "clasifica",
     "seleccion_multiple", "verdadero_falso",
+    "responder_preguntas_cerradas", "responder_preguntas_abiertas",
+    "lee_y_escucha", "ver_video",
 }
 
 CONTENIDOS_VISIBLES = {
@@ -51,6 +72,7 @@ CONTENIDOS_VISIBLES = {
     "palabras_recuadro", "cuadricula", "afirmaciones_a_corregir",
     "texto_correo", "frases_libro", "respuestas_libro",
     "expresiones_dadas", "definiciones",
+    "ejemplos_modelo", "programas_tv", "horarios_digitales",
 }
 
 

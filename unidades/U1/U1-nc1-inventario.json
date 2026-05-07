@@ -387,7 +387,7 @@
         {
           "id": "U1-p12-act1",
           "numero": 1,
-          "tipo": "comprension_lectora",
+          "tipo": "lee_y_escucha",
           "destreza": "comprension_lectora+comprension_oral",
           "instruccion_original": "Lee y escucha.",
           "contenido_linguistico": [
@@ -582,7 +582,7 @@
         {
           "id": "U1-p13-act7",
           "numero": 7,
-          "tipo": "produccion_escrita_guiada",
+          "tipo": "completa_huecos",
           "destreza": "comprension_oral+produccion_escrita",
           "instruccion_original": "Escucha y completa.",
           "contenido_linguistico": [
@@ -665,7 +665,7 @@
         {
           "id": "U1-p13-act9",
           "numero": 9,
-          "tipo": "comprension_lectora",
+          "tipo": "responder_preguntas_cerradas",
           "destreza": "comprension_lectora+produccion_escrita",
           "instruccion_original": "Lee a Daniel y a Beatriz y contesta a las preguntas.",
           "contenido_linguistico": [
@@ -1251,7 +1251,7 @@
         {
           "id": "U1-p16-act1",
           "numero": 1,
-          "tipo": "comprension_auditiva",
+          "tipo": "ver_video",
           "destreza": "comprension_oral+comprension_lectora",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo.",
           "contenido_linguistico": [
@@ -1487,7 +1487,7 @@
         {
           "id": "U1-p17-act7",
           "numero": 7,
-          "tipo": "comprension_auditiva",
+          "tipo": "completa_huecos",
           "destreza": "comprension_oral+produccion_escrita",
           "instruccion_original": "Escucha y completa las fichas.",
           "contenido_linguistico": [
@@ -1556,7 +1556,7 @@
         {
           "id": "U1-p18-act1",
           "numero": 1,
-          "tipo": "comprension_lectora",
+          "tipo": "completa_huecos",
           "destreza": "comprension_lectora+produccion_escrita",
           "instruccion_original": "Lee y luego completa las fichas.",
           "contenido_linguistico": [
@@ -1632,7 +1632,7 @@
         {
           "id": "U1-p19-act3",
           "numero": 3,
-          "tipo": "comprension_auditiva",
+          "tipo": "completa_huecos",
           "destreza": "comprension_oral+produccion_escrita",
           "instruccion_original": "Escucha y completa la tabla.",
           "contenido_linguistico": [
@@ -1666,7 +1666,7 @@
         {
           "id": "U1-p19-act4",
           "numero": 4,
-          "tipo": "comprension_auditiva",
+          "tipo": "seleccion_multiple",
           "destreza": "comprension_oral",
           "instruccion_original": "Escucha y marca.",
           "contenido_linguistico": [
@@ -2179,7 +2179,7 @@
         {
           "id": "U1-p21-act6",
           "numero": 6,
-          "tipo": "expresion_escrita_libre",
+          "tipo": "responder_preguntas_abiertas",
           "destreza": "produccion_escrita",
           "instruccion_original": "Contesta a las preguntas.",
           "contenido_linguistico": [

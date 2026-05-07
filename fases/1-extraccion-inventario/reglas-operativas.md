@@ -24,27 +24,67 @@ Para cada elemento visible en una página del libro, determinar en este orden qu
 
 ---
 
-## 2. Cómo asignar `tipo` a una actividad (taxonomía cerrada de 17 valores)
+## 2. Cómo asignar `tipo` a una actividad (taxonomía cerrada de 19 valores)
 
-Enumeración cerrada en `schema-inventario.md` §5 (los 17 valores válidos).
+Enumeración cerrada en `schema-inventario.md` §5.
 
-### 2.1 Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`
+### 2.1 Regla operativa: `tipo` = la acción específica del enunciado
 
-- **`produccion_escrita_guiada`:** el alumno **escribe texto nuevo** (palabras, formas verbales, letras, frases) guiado por una estructura. Ejemplos: completar con la forma verbal correcta, escribir la letra que falta (b/v, c/z), construir una frase a partir de un modelo.
-- **`completa_huecos`:** el alumno **selecciona o encaja** elementos dados sin producir texto nuevo. Reservado para actividades de identificación/selección sin escritura.
-- **Regla práctica:** si el alumno tiene que escribir algo que no está ya en el enunciado → `produccion_escrita_guiada`.
+> **El `tipo` describe la acción que el enunciado del libro pide al alumno.** Si el enunciado encadena varias acciones, el tipo lo determina **la última acción que pide producción concreta**. Si el enunciado solo pide absorber input (leer, escuchar, mirar) sin acción posterior, el tipo refleja literalmente esa absorción.
+>
+> El `tipo` es independiente de la `destreza`. La `destreza` describe **qué destrezas lingüísticas ejercita el alumno** (ver §2.3); puede combinar varias con `+`. Una misma mecánica puede ejercitar destrezas distintas; no se confunden.
 
-### 2.2 Resto de criterios para los 17 tipos
+### 2.2 Tabla canónica de los 19 tipos
 
-**Estado provisional:** los criterios canónicos para distinguir cada uno de los 17 tipos (qué cuenta como `escucha_y_repite`, `clasifica`, `tarea_final`, etc.) **no están canonizados todavía en este archivo**. Implícitos del dominio editorial.
+| `tipo` | Acción del enunciado | Ejemplos del libro |
+|---|---|---|
+| `lee_y_escucha` | "Lee y escucha" / "Lee y escucha el diálogo" — solo input, sin acción posterior | "Lee y escucha." (fichas de presentación) |
+| `ver_video` | "Mira el vídeo" — input con video, con o sin texto/audio acompañante | "Mira el vídeo o lee y escucha el diálogo." |
+| `escucha_y_repite` | "Escucha y repite" | vocabulario, abecedario, interrogativos |
+| `escucha_y_responde` | "Escucha y responde" oralmente, sin texto delante | (genérico) |
+| `completa_huecos` | "Completa", "Completa con palabras del recuadro", "Lee y completa", "Escucha y completa la tabla/ficha" | rellenar huecos en frases, fichas, tablas |
+| `relaciona` | "Relaciona X con Y" (típicamente con líneas conectoras) | números↔palabras, preguntas↔respuestas |
+| `ordena` | "Ordena estos elementos" | (genérico) |
+| `clasifica` | "Clasifica X en categorías" | (genérico) |
+| `seleccion_multiple` | "Subraya el verbo correcto", "Marca", "Elige", "Escucha y marca" | subrayar entre alternativas, marcar bingo |
+| `verdadero_falso` | "Marca verdadero o falso" | (genérico) |
+| `responder_preguntas_cerradas` | "Contesta a las preguntas" cuando la respuesta es **concreta y sale del input** (texto leído, audio, video) | "Lee y contesta a las preguntas" sobre un texto |
+| `responder_preguntas_abiertas` | "Contesta a las preguntas" cuando la respuesta es **personal/libre del alumno** | "Contesta: ¿Cómo te llamas? ¿De dónde eres?" |
+| `interaccion_oral` | "En parejas", "Pregunta y contesta a tu compañero", "Saluda a tu compañero" | diálogo en parejas con estructura |
+| `expresion_oral_libre` | "Preséntate", "Practica con palabras nuevas", "Presenta a tu compañero a la clase" | producción oral sin guion cerrado |
+| `produccion_escrita_guiada` | "Escribe frases con…", "Forma frases", "Coloca el artículo", "Realiza las sumas y escribe", "Describe X con sus colores" | producción escrita siguiendo modelo/regla, sin huecos predefinidos |
+| `expresion_escrita_libre` | "Escribe a tu amigo sobre…", "Escribe un correo", "Escribe un texto sobre…" | redacción libre sobre un tema |
+| `busqueda_informacion` | "Busca información sobre…" | (genérico) |
+| `tarea_final` | "Cread vuestro propio diálogo" + pasos en grupo (tarea colaborativa final) | crear y representar un diálogo |
+| `juego` | "Juega a…" | "Juega al veo, veo" (cuando la actividad es jugar como tal, no como interacción genérica) |
 
-**Oráculo de facto:** los inventarios trackeados (U0, U1, U3) — qué `tipo` se asignó a qué actividad allí actúa como respuesta a cada caso visto hasta ahora.
+**Reglas de desempate cuando el enunciado encadena varias acciones:**
 
-**Política operativa:** ante un caso ambiguo durante una extracción nueva, marcar como TODO en el JSON y consultar al autor antes de cerrar el inventario. Cada decisión consultada se documenta aquí progresivamente.
+1. **Si hay video** → `ver_video` (aunque también haya audio o texto).
+2. **Si el enunciado pide una acción de manipulación posterior** (completa, marca, relaciona, subraya, ordena, clasifica) → el tipo es esa acción, no el input. Ej.: "Lee y completa" → `completa_huecos`; "Escucha y marca" → `seleccion_multiple`.
+3. **Si el enunciado pide responder preguntas:**
+   - Respuesta concreta del input → `responder_preguntas_cerradas`.
+   - Respuesta personal/libre → `responder_preguntas_abiertas`.
+4. **Si el enunciado solo pide input** (leer, escuchar, mirar) sin acción posterior → `lee_y_escucha` o `ver_video` según el medio.
 
-### 2.3 Política de la enumeración
+### 2.3 Sobre la `destreza` (campo separado)
 
-- La enumeración de 17 valores es **provisional y revisable a nivel global del proyecto**. No se amplía ni se cambia ad hoc por unidad. Cualquier modificación del set requiere decisión cerrada en PROCESO-MAESTRO antes de aplicarse en `schema-inventario.md` y en `validar_inventario.py`.
+`destreza` es un string independiente de `tipo`. Combina con `+` las destrezas lingüísticas que el alumno ejercita en la actividad. Valores típicos:
+- `comprension_lectora` (leer)
+- `comprension_oral` (escuchar)
+- `produccion_escrita` (escribir)
+- `produccion_oral` (hablar)
+- `interaccion` (interactuar oralmente)
+
+Ejemplos de combinaciones del oráculo:
+- "Escucha y completa las fichas" → `tipo: completa_huecos` + `destreza: comprension_oral+produccion_escrita`.
+- "Lee y contesta preguntas" → `tipo: responder_preguntas_cerradas` + `destreza: comprension_lectora+produccion_escrita`.
+- "Mira el vídeo o lee y escucha" → `tipo: ver_video` + `destreza: comprension_oral+comprension_lectora`.
+
+### 2.4 Política de la enumeración
+
+- La enumeración de 19 valores es **provisional y revisable a nivel global del proyecto**. No se amplía ni se cambia ad hoc por unidad. Cualquier modificación del set requiere decisión cerrada en PROCESO-MAESTRO antes de aplicarse en `schema-inventario.md` y en `validar_inventario.py` (regla de no-divergencia).
+- Ante un caso ambiguo durante una extracción nueva: marcar como TODO en el JSON y consultar al autor antes de cerrar el inventario.
 
 ---
 
@@ -197,7 +237,7 @@ Tras A4.2b, el reparto entre archivos queda así:
 | Forma del JSON (estructura, tipos, enumeraciones, restricciones validables) | `schema-inventario.md` |
 | Precedencias entre actividad/cuadro/nota/autoevaluación | **este archivo** (§1) |
 | Distinción `completa_huecos` vs `produccion_escrita_guiada` | **este archivo** (§2.1) — antes en `prompt.md`, restaurado en v10.51, migrado aquí en A4.2b |
-| Resto de criterios para los 17 tipos | **no canonizado todavía** (§2.2). Oráculo de facto = inventarios trackeados. Se documentarán según aparezcan casos |
+| Criterios para asignar cada uno de los 19 tipos | **canonizados en §2** (regla operativa: el `tipo` = la acción específica del enunciado del libro) |
 | Cómo asignar `tipo_cuadro` | **este archivo** (§3) |
 | "Para aprender" / "Observa" | **este archivo** (§4) |
 | Reglas de población de cada campo | **este archivo** (§5) |

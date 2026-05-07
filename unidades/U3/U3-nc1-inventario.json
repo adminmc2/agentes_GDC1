@@ -457,7 +457,7 @@
         {
           "id": "U3-p35-act06",
           "numero": 6,
-          "tipo": "comprension_lectora",
+          "tipo": "lee_y_escucha",
           "destreza": "comprension_lectora + comprension_auditiva",
           "instruccion_original": "Lee y escucha.",
           "contenido_linguistico": [
@@ -521,7 +521,7 @@
         {
           "id": "U3-p35-act08",
           "numero": 8,
-          "tipo": "comprension_lectora",
+          "tipo": "lee_y_escucha",
           "destreza": "comprension_lectora + comprension_auditiva",
           "instruccion_original": "Lee y escucha.",
           "contenido_linguistico": [
@@ -552,7 +552,7 @@
         {
           "id": "U3-p35-act09",
           "numero": 9,
-          "tipo": "comprension_lectora",
+          "tipo": "responder_preguntas_cerradas",
           "destreza": "comprension_lectora + produccion_escrita",
           "instruccion_original": "Responde a las preguntas.",
           "contenido_linguistico": [
@@ -1505,7 +1505,7 @@
         {
           "id": "U3-p40-act01",
           "numero": 1,
-          "tipo": "comprension_lectora",
+          "tipo": "produccion_escrita_guiada",
           "destreza": "comprension_lectora + produccion_escrita",
           "instruccion_original": "Lee el segundo mensaje que le manda Marta a su amigo Pierre y corrige las afirmaciones.",
           "contenido_linguistico": [
@@ -1551,7 +1551,7 @@
         {
           "id": "U3-p40-act02",
           "numero": 2,
-          "tipo": "comprension_lectora",
+          "tipo": "responder_preguntas_cerradas",
           "destreza": "comprension_lectora + produccion_escrita",
           "instruccion_original": "Vuelve a leer el mensaje anterior y contesta a las siguientes preguntas.",
           "contenido_linguistico": [
@@ -1626,7 +1626,7 @@
         {
           "id": "U3-p41-act04",
           "numero": 4,
-          "tipo": "comprension_auditiva",
+          "tipo": "relaciona",
           "destreza": "comprension_oral + comprension_lectora",
           "instruccion_original": "Escucha la programación de televisión para hoy y dibuja la hora. Después, relaciona los relojes (del 1 al 7) con los digitales (del A al G).",
           "contenido_linguistico": [
@@ -1754,7 +1754,7 @@
         {
           "id": "U3-p42-act01",
           "numero": 1,
-          "tipo": "comprension_lectora",
+          "tipo": "lee_y_escucha",
           "destreza": "comprension_lectora + comprension_oral",
           "instruccion_original": "Lee y escucha el texto. ¿Por qué esta película de animación le gusta al público de todas las edades?",
           "contenido_linguistico": [

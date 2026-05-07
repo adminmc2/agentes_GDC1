@@ -3,6 +3,27 @@
 
 ---
 
+## [v10.59 — 2026-05-07] — Taxonomía de `tipo` rediseñada (17 → 19) por acción imperativa del enunciado
+
+Hallazgo durante el inicio de A4.5 (reextracción empírica de U1 con oráculo): la taxonomía de 17 tipos mezclaba `tipo` (formato/mecánica que pide el enunciado) con `destreza` (habilidad ejercitada). Tipos como `comprension_lectora` o `comprension_auditiva` describían destrezas, no acciones; provocaban ambigüedad real (una actividad "Lee y escucha el diálogo. Después, marca verdadero o falso" podía clasificarse como `comprension_lectora`, `comprension_auditiva` o `verdadero_falso`).
+
+**Decisión:** `tipo` y `destreza` son dimensiones independientes. `tipo` = la acción específica que pide el enunciado (cómo se manipulan los elementos). `destreza` = qué habilidad ejercita el alumno (campo separado, próximo trabajo).
+
+**Cambios:**
+
+- **Schema (§5):** taxonomía cerrada reescrita a 19 valores, agrupados en 7 familias por acción: input puro (`lee_y_escucha`, `ver_video`); orales reproductivas/responsivas (`escucha_y_repite`, `escucha_y_responde`); manipulación de elementos dados (`completa_huecos`, `relaciona`, `ordena`, `clasifica`, `seleccion_multiple`, `verdadero_falso`); responder preguntas (`responder_preguntas_cerradas`, `responder_preguntas_abiertas`); producción oral (`interaccion_oral`, `expresion_oral_libre`); producción escrita (`produccion_escrita_guiada`, `expresion_escrita_libre`); otros (`busqueda_informacion`, `tarea_final`, `juego`).
+- **Eliminados:** `comprension_lectora`, `comprension_auditiva` (eran destrezas, no acciones).
+- **Validador:** `TIPOS_VALIDOS` y `TIPOS_QUE_REQUIEREN_ITEMS` actualizados. Añadidas `ejemplos_modelo`, `programas_tv`, `horarios_digitales` a `CONTENIDOS_VISIBLES` (claves ya documentadas en schema pero ausentes del validador — divergencia schema↔validador detectada y cerrada como adelanto parcial de A4.5.5).
+- **`reglas-operativas.md` §2:** reescrita íntegra. §2.1 regla operativa "tipo = la acción específica del enunciado". §2.2 tabla canónica de los 19 tipos con disparadores de enunciado y ejemplo de oráculo. §2.3 nota sobre la separación `tipo` vs `destreza` (campo separado, no tocado en este commit).
+- **Reasignaciones aplicadas:** 16 actividades reclasificadas en U1 (9) y U3 (7); U0 sin cambios. Mapeo completo registrado en la bitácora del REVIEW.
+- **Validación:** `python3 scripts/validar_inventario.py 0/1/3` → 0 errores en los tres (U0 con 1 aviso intencional `_nota_unidad_atipica`).
+
+**Efecto sobre A4.5:** las divergencias detectadas en la primera pasada empírica de U1 (7 tipos no coincidentes con el oráculo + análogas en U3) eran reales pero la causa raíz no era una mala clasificación — era ambigüedad de la propia taxonomía. Resuelto el origen, las clasificaciones convergen.
+
+**Próximo:** trabajar la dimensión `destreza` como campo separado (segundo eje pedagógico, no afecta a `tipo`).
+
+---
+
 ## [v10.58 — 2026-05-07] — Sincronización de fila-resumen A4.4 con la bitácora
 
 Hallazgo Bajo del revisor sobre `590fd96` (v10.57): la fila-resumen de A4.4 en la tabla de sub-pasos de `REVIEW.md` se quedó desactualizada. Decía *"✅ 2026-05-07 02:30 (57 líneas, 7 secciones)"* mientras que CHANGELOG v10.57 y la propia bitácora REVIEW ya reflejaban el cierre limpio a las 03:00 con **59 líneas** (tras añadir la convención root-relative). Doble verdad menor entre tabla y bitácora.

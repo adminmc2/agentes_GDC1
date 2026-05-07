@@ -88,7 +88,7 @@ Antes de dar el JSON por bueno, comprobar manualmente y con el validador.
 
 1. **Esquema:** todas las claves obligatorias presentes (10 top-level + por página + por actividad). Ver `schema-inventario.md` §1-4.
 2. **IDs únicos:** ningún `id` de actividad repetido.
-3. **Tipos válidos:** todos los `tipo` de la taxonomía cerrada (17 valores). Ver `schema-inventario.md` §5.
+3. **Tipos válidos:** todos los `tipo` de la taxonomía cerrada (19 valores). Ver `schema-inventario.md` §5.
 4. **Secciones:** valor de `seccion` en cada página es una de las 7 claves normalizadas.
 5. **`respuestas` siempre presente** en cada actividad (lista, aunque vacía).
 6. **`audio`/`imagen`/`video` siempre presentes** como sub-objetos.

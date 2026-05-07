@@ -132,25 +132,27 @@
 
 ---
 
-## 5. Taxonomía cerrada de tipos de actividad (17 valores)
+## 5. Taxonomía cerrada de tipos de actividad (19 valores)
 
 Enumeración. Usar EXACTAMENTE uno de estos valores en `actividad.tipo`. Cualquier otro valor falla la validación.
 
 ```
 escucha_y_repite
 escucha_y_responde
+lee_y_escucha
+ver_video
 completa_huecos
 relaciona
 ordena
 clasifica
 seleccion_multiple
 verdadero_falso
+responder_preguntas_cerradas
+responder_preguntas_abiertas
 interaccion_oral
 expresion_oral_libre
 produccion_escrita_guiada
 expresion_escrita_libre
-comprension_lectora
-comprension_auditiva
 busqueda_informacion
 tarea_final
 juego
@@ -158,7 +160,7 @@ juego
 
 > Enumeración provisional y revisable a nivel global del proyecto. Cualquier ampliación o cambio del set entra como decisión cerrada en PROCESO-MAESTRO antes de aplicarse aquí y en el validador.
 
-> Criterios de cuándo asignar cada tipo (incluida la distinción `completa_huecos` vs `produccion_escrita_guiada`) y workflow ante casos ambiguos → `reglas-operativas.md`.
+> Criterios de cuándo asignar cada tipo (basados en la **acción específica que pide el enunciado del libro**) → `reglas-operativas.md` §2.
 
 ---
 
@@ -301,7 +303,7 @@ Objeto con exactamente 3 sub-bloques nombrados, cada uno con la misma estructura
 Este archivo y `scripts/validar_inventario.py` son **contratos paralelos del mismo shape**. La regla de no-divergencia es estricta:
 
 - Cada clave declarada **obligatoria** aquí debe ser chequeada como obligatoria por el validador.
-- Cada **enumeración cerrada** (17 tipos de actividad, 5 valores de `tipo_cuadro`, 7 secciones canónicas, 3 opciones canónicas de autoevaluación NC1) debe ser rechazada por el validador si aparece un valor fuera del set.
+- Cada **enumeración cerrada** (19 tipos de actividad, 5 valores de `tipo_cuadro`, 7 secciones canónicas, 3 opciones canónicas de autoevaluación NC1) debe ser rechazada por el validador si aparece un valor fuera del set.
 - Cada **restricción condicional** (ej. `imagen.descripcion` obligatoria si `imagen.presente=true`, `autoevaluacion` con valores fijos NC1 cuando `curso=="nc1"`) debe ser aplicada por el validador.
 - Cada **clave opcional declarada** (`autoevaluacion`, `_nota_unidad_atipica`) debe estar en `CLAVES_TOP_OPCIONALES` del validador para que no emita aviso.
 
