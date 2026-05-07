@@ -3,6 +3,36 @@
 
 ---
 
+## [v10.60 — 2026-05-07] — Contrato `destreza`/`enfoque`: separación de ejes habilidad ↔ dominio (commit intermedio rompedor de contrato)
+
+> ⚠️ **Estado intermedio:** este commit deja el branch en rojo intencionadamente. El validador rechaza U0/U1/U3 (~250 errores: `destreza` en formato string legacy + ausencia del nuevo campo `enfoque`). La reclasificación per-unidad de las 97 actividades a destreza-lista-canónica + enfoque se hará en otro chat antes de A4.5.
+
+Hallazgo en revisión durante la primera pasada del rediseño de `destreza`: la versión inicial (lista de 8 valores incluyendo `gramatica`/`vocabulario`) mezclaba dos ejes — habilidad lingüística (MCER) y dominio de contenido (gramática, léxico, etc.). El revisor lo señaló como bloqueante. Decisión: separar en dos campos ortogonales.
+
+**Cambios:**
+
+- **Nuevo eje `destreza` (eje habilidad MCER pura, schema §5b):** lista de strings, enum cerrado de 6 valores: `comprension_auditiva`, `comprension_lectora`, `expresion_escrita`, `expresion_oral`, `interaccion_oral`, `mediacion`. Orden alfabético obligatorio (validable mecánicamente, evita variantes equivalentes con orden distinto). Mínimo 1 elemento, sin duplicados.
+- **Nuevo campo `enfoque` (eje dominio de contenido, schema §5c):** string único, enum cerrado de 6 valores: `gramatica`, `vocabulario`, `comunicacion`, `fonetica`, `cultura`, `transversal`. Obligatorio en cada actividad. Independiente de `seccion` (que clasifica la página entera según el índice editorial); `enfoque` clasifica la actividad concreta según su foco pedagógico real. El valor `transversal` reemplaza la propuesta inicial `destrezas` (que reutilizaba el nombre de una sección editorial y pegaba el eje al layout de página, justo lo que la separación intentaba evitar).
+- **Validador:** nuevas constantes `DESTREZAS_VALIDAS` (6) y `ENFOQUES_VALIDOS` (6). Bloque de validación por actividad: `destreza` debe existir, ser lista no vacía, valores del enum, orden alfabético, sin duplicados; `enfoque` debe existir, ser string, valor del enum.
+- **`reglas-operativas.md` §2.3 reescrita íntegra:** tabla de los 3 ejes ortogonales (`tipo`/`destreza`/`enfoque`), definición de cada valor en ambos ejes, reglas de asignación, relación `enfoque` vs `seccion`, **regla anti-sobreasignación de `expresion_escrita`** (las mecánicas de manipulación de elementos dados — completar, relacionar, ordenar, marcar — NO añaden por sí mismas `expresion_escrita`; solo se añade cuando el alumno produce texto lingüístico propio), 9 ejemplos canónicos con los 3 ejes.
+- **Decisiones semánticas registradas:**
+  - `comprension_auditiva` es el nombre canónico (no alias). `comprension_oral` y `comprension_auditiva` se consideran sinónimos en este proyecto; en la migración per-unidad, `comprension_oral` legacy se normaliza a `comprension_auditiva`.
+  - `produccion_*` → `expresion_*` (terminología MCER moderna).
+  - `gramatica`/`vocabulario` salen del eje `destreza` (no son habilidades) y entran como valores de `enfoque` (dominios).
+  - `interaccion_escrita` queda fuera del enum (no aparece en NC1 A1.1; ampliación futura como decisión cerrada en PROCESO-MAESTRO si surge un caso).
+- **Referencia colgada `§2b` corregida:** el schema apuntaba a `reglas-operativas.md §2b` que no existía; ahora apunta a §2.3 (donde realmente vive el contenido).
+
+**Impacto sobre los oráculos:** U0/U1/U3 quedan en formato legacy (string con `+`) y sin `enfoque`. El validador los rechaza sistemáticamente — estado intermedio aceptado y documentado, no estado de cierre.
+
+**Gates pendientes (en orden):**
+1. Reclasificación per-unidad de U0/U1/U3 (otro chat, una unidad por sesión). Asignar `destreza` (lista canónica) y `enfoque` (string) a las 97 actividades. Validador 0/0 al cierre de cada unidad.
+2. A4.5 — prueba empírica de reextracción (solo después de gate 1).
+3. A4.5.5 — cross-check schema↔validador (antes del merge).
+
+**Próximo:** revisión componente-a-componente del refactor (en curso) + reclasificación per-unidad.
+
+---
+
 ## [v10.59 — 2026-05-07] — Taxonomía de `tipo` rediseñada (17 → 19) por acción imperativa del enunciado
 
 Hallazgo durante el inicio de A4.5 (reextracción empírica de U1 con oráculo): la taxonomía de 17 tipos mezclaba `tipo` (formato/mecánica que pide el enunciado) con `destreza` (habilidad ejercitada). Tipos como `comprension_lectora` o `comprension_auditiva` describían destrezas, no acciones; provocaban ambigüedad real (una actividad "Lee y escucha el diálogo. Después, marca verdadero o falso" podía clasificarse como `comprension_lectora`, `comprension_auditiva` o `verdadero_falso`).

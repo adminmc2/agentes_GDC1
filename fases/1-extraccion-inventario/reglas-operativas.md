@@ -32,7 +32,7 @@ Enumeración cerrada en `schema-inventario.md` §5.
 
 > **El `tipo` describe la acción que el enunciado del libro pide al alumno.** Si el enunciado encadena varias acciones, el tipo lo determina **la última acción que pide producción concreta**. Si el enunciado solo pide absorber input (leer, escuchar, mirar) sin acción posterior, el tipo refleja literalmente esa absorción.
 >
-> El `tipo` es independiente de la `destreza`. La `destreza` describe **qué destrezas lingüísticas ejercita el alumno** (ver §2.3); puede combinar varias con `+`. Una misma mecánica puede ejercitar destrezas distintas; no se confunden.
+> El `tipo` es independiente de `destreza` y `enfoque`. `destreza` describe **qué habilidad lingüística ejercita el alumno** (lista de valores MCER); `enfoque` describe **qué dominio de contenido pedagógico** trabaja (string). Ver §2.3 para los tres ejes.
 
 ### 2.2 Tabla canónica de los 19 tipos
 
@@ -67,19 +67,66 @@ Enumeración cerrada en `schema-inventario.md` §5.
    - Respuesta personal/libre → `responder_preguntas_abiertas`.
 4. **Si el enunciado solo pide input** (leer, escuchar, mirar) sin acción posterior → `lee_y_escucha` o `ver_video` según el medio.
 
-### 2.3 Sobre la `destreza` (campo separado)
+### 2.3 Sobre `destreza` y `enfoque` (dos ejes independientes de `tipo`)
 
-`destreza` es un string independiente de `tipo`. Combina con `+` las destrezas lingüísticas que el alumno ejercita en la actividad. Valores típicos:
-- `comprension_lectora` (leer)
-- `comprension_oral` (escuchar)
-- `produccion_escrita` (escribir)
-- `produccion_oral` (hablar)
-- `interaccion` (interactuar oralmente)
+Toda actividad se clasifica en **tres ejes ortogonales**:
 
-Ejemplos de combinaciones del oráculo:
-- "Escucha y completa las fichas" → `tipo: completa_huecos` + `destreza: comprension_oral+produccion_escrita`.
-- "Lee y contesta preguntas" → `tipo: responder_preguntas_cerradas` + `destreza: comprension_lectora+produccion_escrita`.
-- "Mira el vídeo o lee y escucha" → `tipo: ver_video` + `destreza: comprension_oral+comprension_lectora`.
+| Eje | Pregunta que responde | Forma | Schema |
+|---|---|---|---|
+| `tipo` | ¿Qué acción pide el enunciado? (mecánica) | string (1 valor de 19) | §5 |
+| `destreza` | ¿Qué habilidad lingüística ejercita el alumno? | lista (≥1 valores de 6, orden alfabético) | §5b |
+| `enfoque` | ¿Cuál es el dominio de contenido pedagógico? | string (1 valor de 6) | §5c |
+
+Los tres ejes son independientes. Una misma `tipo: completa_huecos` puede tener distintas combinaciones `destreza`/`enfoque` según qué ejercicio sea.
+
+#### `destreza` — eje habilidad MCER pura (lista, 6 valores, orden alfabético)
+
+- `comprension_auditiva` — escuchar (audio o video).
+- `comprension_lectora` — leer un texto/diálogo/preguntas/items.
+- `expresion_escrita` — producir texto propio.
+- `expresion_oral` — producir habla propia (turno solo, monólogo, descripción oral).
+- `interaccion_oral` — intercambio oral con compañero.
+- `mediacion` — reformular, resumir, traducir, explicar a otro lo entendido.
+
+**Regla de asignación:**
+
+1. **Inputs presentes → siempre se declaran.** Si hay texto que leer → `comprension_lectora`. Si hay audio o video que escuchar → `comprension_auditiva`. Pueden coexistir.
+2. **Output del alumno → la destreza correspondiente.** Si escribe → `expresion_escrita`. Si habla solo → `expresion_oral`. Si intercambia con compañero → `interaccion_oral`. Si reformula/resume/traduce → `mediacion`.
+3. **Cero "destrezas de contenido".** `gramatica` y `vocabulario` no son destrezas; son `enfoque` (ver siguiente bloque).
+
+#### `enfoque` — eje dominio de contenido (string, 6 valores)
+
+- `gramatica` — manipulación de formas gramaticales (artículos, conjugación, género/número, concordancia, orden de palabras).
+- `vocabulario` — manipulación de léxico (banco temático, palabra-imagen, sopa de letras, clasificar por campo semántico, definiciones).
+- `comunicacion` — funciones comunicativas / fórmulas pragmáticas (saludos, presentarse, preguntar la hora, pedir información).
+- `fonetica` — pronunciación, ortografía fonética, acento, entonación.
+- `cultura` — contenido sociocultural (ciudades, costumbres, gastronomía, calendarios, personajes culturales).
+- `transversal` — actividad sin foco de dominio específico, solo ejercita habilidades (lectura/escucha de comprensión genérica, tarea final que cruza dominios). Nombre intencionalmente distinto del valor `destrezas` de `seccion` para evitar pegar el eje a la clasificación editorial de la página.
+
+**Regla de asignación:** un único `enfoque` por actividad — el dominante. Si una actividad mezcla varios (ej. completar diálogo + repasar léxico), elegir el que el enunciado prioriza. Ante duda real, consultar al autor.
+
+**Relación con `seccion` (nivel página):** `seccion` clasifica la página según el índice editorial; `enfoque` clasifica la actividad concreta. Pueden divergir: una página `seccion: gramatica` puede contener una actividad `enfoque: transversal` (lectura comprensiva sin foco gramatical) y otra `enfoque: gramatica` (cloze de artículos). Capturar el foco real, no el de la página.
+
+#### Regla anti-sobreasignación de `expresion_escrita`
+
+Las **mecánicas de manipulación de elementos dados** (`completa_huecos`, `relaciona`, `ordena`, `clasifica`, `seleccion_multiple`, `verdadero_falso`, marcar, subrayar, unir con flechas) **NO añaden por sí mismas `expresion_escrita`**. La destreza dominante es la **comprensión** (lectora o auditiva) que permite hacer la elección correcta. `expresion_escrita` solo se añade cuando el alumno produce **texto lingüístico propio**: frase elaborada, párrafo, correo, presentación, respuesta abierta con elaboración.
+
+Casos límite:
+- Completar con un artículo (`el`/`la`) o una palabra del banco → solo manipulación, NO `expresion_escrita`.
+- Responder preguntas cerradas con palabra del texto → solo `comprension_lectora`, NO `expresion_escrita`.
+- Responder preguntas abiertas con frase propia elaborada → SÍ `expresion_escrita`.
+
+#### Ejemplos canónicos (tres ejes a la vez)
+
+- "Lee y escucha el diálogo" → `tipo: lee_y_escucha` + `destreza: [comprension_auditiva, comprension_lectora]` + `enfoque: transversal`.
+- "Completa con el artículo el/la/los/las" → `tipo: completa_huecos` + `destreza: [comprension_lectora]` + `enfoque: gramatica`.
+- "Escucha y completa con la palabra adecuada del recuadro" → `tipo: completa_huecos` + `destreza: [comprension_auditiva, comprension_lectora]` + `enfoque: vocabulario`.
+- "Escribe un correo a tu amigo" → `tipo: expresion_escrita_libre` + `destreza: [expresion_escrita]` + `enfoque: comunicacion`.
+- "Lee el texto y contesta a las preguntas" (cerradas, respuesta del texto) → `tipo: responder_preguntas_cerradas` + `destreza: [comprension_lectora]` + `enfoque: transversal`.
+- "Escribe sobre tu rutina diaria" (respuesta abierta elaborada) → `tipo: responder_preguntas_abiertas` + `destreza: [expresion_escrita]` + `enfoque: comunicacion`.
+- "Escucha y repite" → `tipo: escucha_y_repite` + `destreza: [comprension_auditiva, expresion_oral]` + `enfoque: fonetica`.
+- "Pregunta a tu compañero por su familia" → `tipo: interaccion_oral` + `destreza: [interaccion_oral]` + `enfoque: comunicacion`.
+- "Relaciona los relojes con los horarios digitales" (con escucha previa) → `tipo: relaciona` + `destreza: [comprension_auditiva, comprension_lectora]` + `enfoque: vocabulario`.
 
 ### 2.4 Política de la enumeración
 

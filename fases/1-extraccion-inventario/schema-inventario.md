@@ -70,7 +70,8 @@
   "id": "UX-pYY-actNN",
   "numero": <int>,
   "tipo": <de la taxonomía cerrada — ver §5>,
-  "destreza": <str: comprension_oral | produccion_oral | ... combinables con +>,
+  "destreza": [<de la enumeración cerrada — ver §5b>],
+  "enfoque": <de la enumeración cerrada — ver §5c>,
   "instruccion_original": <str literal del libro>,
   "contenido_linguistico": [str],
   "campo_semantico": <str opcional — ver §10>,
@@ -161,6 +162,56 @@ juego
 > Enumeración provisional y revisable a nivel global del proyecto. Cualquier ampliación o cambio del set entra como decisión cerrada en PROCESO-MAESTRO antes de aplicarse aquí y en el validador.
 
 > Criterios de cuándo asignar cada tipo (basados en la **acción específica que pide el enunciado del libro**) → `reglas-operativas.md` §2.
+
+---
+
+## 5b. Enumeración cerrada de `destreza` (6 valores — eje habilidad MCER)
+
+`destreza` es una **lista** de strings. Eje **habilidad lingüística pura** según MCER. Independiente tanto de `tipo` (mecánica del enunciado) como de `enfoque` (dominio de contenido).
+
+```
+comprension_auditiva
+comprension_lectora
+expresion_escrita
+expresion_oral
+interaccion_oral
+mediacion
+```
+
+**Restricciones estructurales:**
+- Tipo: lista de strings (no string suelto, no separador `+`).
+- Obligatorio en cada actividad. Mínimo 1 elemento, sin máximo formal.
+- Cada elemento debe pertenecer al enum cerrado de 6.
+- **Orden canónico obligatorio: alfabético** (la lista debe estar ordenada `sorted()`). Esto evita variantes equivalentes con orden distinto.
+- Cero duplicados dentro de la lista.
+
+> Criterios de cuándo asignar cada destreza → `reglas-operativas.md` §2.3.
+
+---
+
+## 5c. Enumeración cerrada de `enfoque` (6 valores — eje dominio de contenido)
+
+`enfoque` es un **string** (no lista). Eje **dominio de contenido pedagógico** de la actividad. Complementa a `destreza` (qué habilidad) y a `seccion` (qué clasificación de página): describe el foco de aprendizaje real de la actividad.
+
+```
+gramatica
+vocabulario
+comunicacion
+fonetica
+cultura
+transversal
+```
+
+**Restricciones estructurales:**
+- Tipo: string.
+- Obligatorio en cada actividad.
+- Valor único, debe pertenecer al enum cerrado de 6.
+
+**Sobre `transversal`:** valor para actividades sin dominio de contenido específico — solo ejercitan habilidades (lecturas/escuchas comprensivas genéricas, tareas finales que cruzan dominios). Nombre intencionalmente distinto del valor `destrezas` de `seccion` (§8) para evitar pegar el eje a la clasificación editorial de la página.
+
+**Relación con `seccion` (nivel página):** `seccion` clasifica la página entera según el índice editorial del libro; `enfoque` clasifica la actividad concreta según su foco pedagógico real. Pueden divergir: una actividad con `enfoque: transversal` (lectura comprensiva) puede vivir en una página `seccion: gramatica`.
+
+> Criterios de cuándo asignar cada enfoque → `reglas-operativas.md` §2.3.
 
 ---
 

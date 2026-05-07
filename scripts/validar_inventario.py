@@ -58,6 +58,24 @@ TIPOS_VALIDOS = {
     "juego",
 }
 
+DESTREZAS_VALIDAS = {
+    "comprension_auditiva",
+    "comprension_lectora",
+    "expresion_escrita",
+    "expresion_oral",
+    "interaccion_oral",
+    "mediacion",
+}
+
+ENFOQUES_VALIDOS = {
+    "gramatica",
+    "vocabulario",
+    "comunicacion",
+    "fonetica",
+    "cultura",
+    "transversal",
+}
+
 # Tipos de actividad que deben llevar items_libro u otro contenido visible
 TIPOS_QUE_REQUIEREN_ITEMS = {
     "completa_huecos", "relaciona", "ordena", "clasifica",
@@ -202,6 +220,30 @@ def validar(path):
                         errores.append(f"❌ {apref}: falta 'tipo'")
                     elif tipo not in TIPOS_VALIDOS:
                         errores.append(f"❌ {apref}: tipo '{tipo}' no es de la taxonomía cerrada")
+
+                    # destreza: lista no vacía, valores del enum cerrado, orden alfabético, sin duplicados
+                    if "destreza" not in a:
+                        errores.append(f"❌ {apref}: falta 'destreza' (lista de valores del enum cerrado)")
+                    elif not isinstance(a["destreza"], list):
+                        errores.append(f"❌ {apref}: 'destreza' debe ser lista (no string)")
+                    elif len(a["destreza"]) == 0:
+                        errores.append(f"❌ {apref}: 'destreza' no puede ser lista vacía")
+                    else:
+                        for d in a["destreza"]:
+                            if d not in DESTREZAS_VALIDAS:
+                                errores.append(f"❌ {apref}: destreza '{d}' no válida (enum: {sorted(DESTREZAS_VALIDAS)})")
+                        if len(set(a["destreza"])) != len(a["destreza"]):
+                            errores.append(f"❌ {apref}: 'destreza' contiene duplicados")
+                        if a["destreza"] != sorted(a["destreza"]):
+                            errores.append(f"❌ {apref}: 'destreza' debe estar en orden alfabético — actual {a['destreza']}, esperado {sorted(a['destreza'])}")
+
+                    # enfoque: string obligatorio del enum cerrado
+                    if "enfoque" not in a:
+                        errores.append(f"❌ {apref}: falta 'enfoque' (string del enum cerrado)")
+                    elif not isinstance(a["enfoque"], str):
+                        errores.append(f"❌ {apref}: 'enfoque' debe ser string")
+                    elif a["enfoque"] not in ENFOQUES_VALIDOS:
+                        errores.append(f"❌ {apref}: enfoque '{a['enfoque']}' no válido (enum: {sorted(ENFOQUES_VALIDOS)})")
 
                     # respuestas siempre presente como lista
                     if "respuestas" not in a:
