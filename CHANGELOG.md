@@ -25,7 +25,7 @@ Hallazgo del revisor sobre v10.77b: el propio micro-fix de v10.77b reprodujo el 
 
 **Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
 
-**Cierre administrativo de la serie v10.72-v10.77c.** A partir de aquí, base documental coherente y autorizado el carril de extracciones paralelas en otros chats.
+**Cierre administrativo de la serie v10.72-v10.77c.** Base documental coherente; cierre de la serie y apertura del carril de extracciones paralelas sujetos a validación final del revisor.
 
 ---
 
