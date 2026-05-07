@@ -68,7 +68,7 @@ Y un cuarto archivo, no en esta carpeta:
    - **Caso normal** (U1-U9): 5 secciones canónicas — vocabulario, gramática, comunicación, destrezas, cultura.
    - **Caso atípico** (U0 y otras unidades introductorias): el índice no sigue las 5 secciones canónicas. Aplicar `reglas-operativas.md` §7 (unidades atípicas) antes de continuar.
 4. Para cada página: identificar la sección, las actividades (numeradas o identificadas como tales — ver `reglas-operativas.md` §1 precedencia), los cuadros (con `tipo_cuadro`, ver `reglas-operativas.md` §3) y las notas "Observa" si las hay (`reglas-operativas.md` §4).
-5. Para cada actividad: extraer todos los campos del esquema (ver `schema-inventario.md` §3). Cada actividad sale con los **3 ejes ortogonales obligatorios**: `tipo` (string, taxonomía de 19), `destreza` (lista de valores MCER, orden alfabético, sin duplicados — schema §5b), `enfoque` (string del enum de 6 — schema §5c). Criterios de asignación en `reglas-operativas.md` §2.3. En U0-U3, observar la convención editorial de sílaba tónica subrayada (`convenciones-y-casos.md` §1.1). Detectar el patrón "primer ítem resuelto como ejemplo" (`convenciones-y-casos.md` §1.2).
+5. Para cada actividad: extraer todos los campos del esquema (ver `schema-inventario.md` §3). Cada actividad sale con los **3 ejes ortogonales obligatorios**: `tipo` (string, taxonomía de 20), `destreza` (lista de valores MCER, orden alfabético, sin duplicados — schema §5b), `enfoque` (string del enum de 6 — schema §5c). Criterios de asignación en `reglas-operativas.md` §2.3. En U0-U3, observar la convención editorial de sílaba tónica subrayada (`convenciones-y-casos.md` §1.1). Detectar el patrón "primer ítem resuelto como ejemplo" (`convenciones-y-casos.md` §1.2).
 6. Construir `vocabulario_consolidado` con los 3 bloques (criterios en `reglas-operativas.md` §5.1).
 7. Construir el índice top-level `secciones` (`reglas-operativas.md` §5.2).
 8. Si la unidad tiene bloque de autoevaluación al pie de la última página, capturarlo como campo top-level `autoevaluacion` (`reglas-operativas.md` §6).
@@ -88,7 +88,7 @@ Antes de dar el JSON por bueno, comprobar manualmente y con el validador.
 
 1. **Esquema:** todas las claves obligatorias presentes (10 top-level + por página + por actividad). Ver `schema-inventario.md` §1-4.
 2. **IDs únicos:** ningún `id` de actividad repetido.
-3. **Tipos válidos:** todos los `tipo` de la taxonomía cerrada (19 valores). Ver `schema-inventario.md` §5.
+3. **Tipos válidos:** todos los `tipo` de la taxonomía cerrada (20 valores). Ver `schema-inventario.md` §5.
 4. **Destrezas válidas:** `destreza` es lista, valores del enum cerrado de 6 (schema §5b), orden alfabético, sin duplicados, mínimo 1 elemento — en cada actividad.
 5. **Enfoque válido:** `enfoque` es string del enum cerrado de 6 (schema §5c) — en cada actividad.
 6. **Secciones:** valor de `seccion` en cada página es una de las 7 claves normalizadas.

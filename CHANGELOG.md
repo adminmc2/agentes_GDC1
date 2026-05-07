@@ -3,6 +3,28 @@
 
 ---
 
+## [v10.64 — 2026-05-07] — U0 reclasificada (piloto) + taxonomía `tipo` 19→20 (añadido `escucha`) + refinamiento §2.3
+
+**Prueba empírica del nuevo contrato `destreza`/`enfoque`** con U0 como piloto. El sistema funciona: 10 actividades reclasificadas, validador 0/0.
+
+**Decisiones tomadas durante la prueba:**
+
+1. **Taxonomía `tipo` ampliada de 19 → 20:** añadido valor `escucha` (input puro auditivo sin lectura de texto extenso ni acción posterior; apoyo visual no textual admisible: mapa, imagen, foto). Caso disparador: U0-p8-act01 ("Mira el mapa y escucha el nombre de los países. Observa la pronunciación.") no encajaba en `escucha_y_repite` (no pide repetir) ni en `lee_y_escucha` (no hay texto extenso para leer). Decisión cerrada en PROCESO-MAESTRO bitácora cumpliendo la regla §2.4 de `reglas-operativas.md`. Aplicado en schema §5, validador `TIPOS_VALIDOS`, reglas-operativas §2.2 (nueva fila + descripciones afinadas de `lee_y_escucha` y `escucha_y_repite`), todas las cross-references `19 → 20` (4 archivos).
+
+2. **Regla `expresion_escrita` reformulada (§2.3):** la versión inicial de v10.60 era estricta ("solo si produce texto lingüístico propio: frase elaborada, párrafo, correo, presentación"). Tras prueba con U0 se decide ampliarla a "produce contenido escrito propio" — incluye tanto textos elaborados como **listas de palabras evocadas** (ej. "escribe los países que recuerdas"). Distinción honesta entre **contenido propio** (memoria/criterio/conocimiento → `expresion_escrita`) y **transcripción/aplicación de regla** (dictado, completar artículo, completar palabra del banco → NO `expresion_escrita`).
+
+3. **Heurística `vocabulario` vs `fonetica` documentada (§2.3):** para "escucha y repite" / "escucha y escribe" — agrupación por campo léxico → `vocabulario`; agrupación por dificultad fonética → `fonetica`; deletrear → siempre `fonetica`; **dictado** → siempre `fonetica` (incluso si el contenido dictado es léxico, ej. dictado de números).
+
+4. **U0 reclasificada en bloque (10 actividades):** asignados `destreza` (lista alfabética) y `enfoque` (string) según las reglas refinadas. U0-p8-act01 cambia de `escucha_y_repite` → `escucha` (nuevo tipo). Validador U0 → 0/0.
+
+**Estado actual del branch:**
+- U0: ✅ verde (formato nuevo + taxonomía nueva)
+- U1, U3: ❌ rojos (formato legacy de destreza, sin enfoque, posibles tipos a revisar) — pendientes de reclasificar siguiendo el mismo patrón.
+
+**Próximo:** reclasificar U1 (~33 actividades) con el mismo procedimiento.
+
+---
+
 ## [v10.63 — 2026-05-07] — Fix de drift post-v10.60 en CLAUDE.md de fase
 
 Hallazgo durante la re-revisión del componente 1: la tabla "Para qué consultar qué archivo" (línea 45) listaba las decisiones que viven en `reglas-operativas.md` mencionando solo `tipo` y `tipo_cuadro`. Tras v10.60 hay 4 ejes decisionales (`tipo`/`destreza`/`enfoque`/`tipo_cuadro`); un usuario que llegaba buscando "¿cómo decido la destreza?" no encontraba puntero claro.

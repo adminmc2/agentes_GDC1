@@ -31,6 +31,7 @@ TIPOS_CUADRO_VALIDOS = {
 TIPOS_VALIDOS = {
     # Taxonomía v10.59 — basada en la acción específica del enunciado del libro.
     # input sin acción específica posterior
+    "escucha",                    # "Escucha" / "Mira X y escucha" — input puro auditivo, sin lectura de texto
     "lee_y_escucha",              # "Lee y escucha" / "Lee y escucha el diálogo"
     "ver_video",                  # "Mira el vídeo"
     # acciones orales reproductivas/responsivas

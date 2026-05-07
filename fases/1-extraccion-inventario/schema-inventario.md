@@ -139,11 +139,12 @@ El campo `numero` es **opcional**. La mayoría de actividades del libro están n
 
 ---
 
-## 5. Taxonomía cerrada de tipos de actividad (19 valores)
+## 5. Taxonomía cerrada de tipos de actividad (20 valores)
 
 Enumeración. Usar EXACTAMENTE uno de estos valores en `actividad.tipo`. Cualquier otro valor falla la validación.
 
 ```
+escucha
 escucha_y_repite
 escucha_y_responde
 lee_y_escucha
@@ -361,7 +362,7 @@ Este archivo y `scripts/validar_inventario.py` son **contratos paralelos del mis
 
 - Cada clave declarada **obligatoria** aquí debe ser chequeada como obligatoria por el validador. En particular, los 3 ejes obligatorios por actividad (`tipo`, `destreza`, `enfoque`) y los sub-objetos `audio`/`imagen`/`video` con su clave `presente`.
 - Cada **enumeración cerrada** debe ser rechazada por el validador si aparece un valor fuera del set:
-  - `tipo`: 19 valores (§5)
+  - `tipo`: 20 valores (§5)
   - `destreza`: 6 valores (§5b)
   - `enfoque`: 6 valores (§5c)
   - `tipo_cuadro`: 5 valores (§7)

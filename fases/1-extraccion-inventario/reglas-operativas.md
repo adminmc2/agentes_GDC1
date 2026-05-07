@@ -24,7 +24,7 @@ Para cada elemento visible en una página del libro, determinar en este orden qu
 
 ---
 
-## 2. Cómo asignar `tipo` a una actividad (taxonomía cerrada de 19 valores)
+## 2. Cómo asignar `tipo` a una actividad (taxonomía cerrada de 20 valores)
 
 Enumeración cerrada en `schema-inventario.md` §5.
 
@@ -34,13 +34,14 @@ Enumeración cerrada en `schema-inventario.md` §5.
 >
 > El `tipo` es independiente de `destreza` y `enfoque`. `destreza` describe **qué habilidad lingüística ejercita el alumno** (lista de valores MCER); `enfoque` describe **qué dominio de contenido pedagógico** trabaja (string). Ver §2.3 para los tres ejes.
 
-### 2.2 Tabla canónica de los 19 tipos
+### 2.2 Tabla canónica de los 20 tipos
 
 | `tipo` | Acción del enunciado | Ejemplos del libro |
 |---|---|---|
-| `lee_y_escucha` | "Lee y escucha" / "Lee y escucha el diálogo" — solo input, sin acción posterior | "Lee y escucha." (fichas de presentación) |
+| `escucha` | "Escucha" / "Mira X y escucha" — input puro auditivo, sin lectura de texto extenso ni acción posterior. Apoyo visual no textual (mapa, imagen, foto) admisible | "Mira el mapa y escucha el nombre de los países. Observa la pronunciación." |
+| `lee_y_escucha` | "Lee y escucha" / "Lee y escucha el diálogo" — input combinado lectura + audio, sin acción posterior | "Lee y escucha." (fichas de presentación, diálogos) |
 | `ver_video` | "Mira el vídeo" — input con video, con o sin texto/audio acompañante | "Mira el vídeo o lee y escucha el diálogo." |
-| `escucha_y_repite` | "Escucha y repite" | vocabulario, abecedario, interrogativos |
+| `escucha_y_repite` | "Escucha y repite" — input auditivo + producción oral repetitiva | vocabulario, abecedario, interrogativos |
 | `escucha_y_responde` | "Escucha y responde" oralmente, sin texto delante | (genérico) |
 | `completa_huecos` | "Completa", "Completa con palabras del recuadro", "Lee y completa", "Escucha y completa la tabla/ficha" | rellenar huecos en frases, fichas, tablas |
 | `relaciona` | "Relaciona X con Y" (típicamente con líneas conectoras) | números↔palabras, preguntas↔respuestas |
@@ -73,7 +74,7 @@ Toda actividad se clasifica en **tres ejes ortogonales**:
 
 | Eje | Pregunta que responde | Forma | Schema |
 |---|---|---|---|
-| `tipo` | ¿Qué acción pide el enunciado? (mecánica) | string (1 valor de 19) | §5 |
+| `tipo` | ¿Qué acción pide el enunciado? (mecánica) | string (1 valor de 20) | §5 |
 | `destreza` | ¿Qué habilidad lingüística ejercita el alumno? | lista (≥1 valores de 6, orden alfabético) | §5b |
 | `enfoque` | ¿Cuál es el dominio de contenido pedagógico? | string (1 valor de 6) | §5c |
 
@@ -107,14 +108,25 @@ Los tres ejes son independientes. Una misma `tipo: completa_huecos` puede tener 
 
 **Relación con `seccion` (nivel página):** `seccion` clasifica la página según el índice editorial; `enfoque` clasifica la actividad concreta. Pueden divergir: una página `seccion: gramatica` puede contener una actividad `enfoque: transversal` (lectura comprensiva sin foco gramatical) y otra `enfoque: gramatica` (cloze de artículos). Capturar el foco real, no el de la página.
 
-#### Regla anti-sobreasignación de `expresion_escrita`
+#### Regla de asignación de `expresion_escrita`
 
-Las **mecánicas de manipulación de elementos dados** (`completa_huecos`, `relaciona`, `ordena`, `clasifica`, `seleccion_multiple`, `verdadero_falso`, marcar, subrayar, unir con flechas) **NO añaden por sí mismas `expresion_escrita`**. La destreza dominante es la **comprensión** (lectora o auditiva) que permite hacer la elección correcta. `expresion_escrita` solo se añade cuando el alumno produce **texto lingüístico propio**: frase elaborada, párrafo, correo, presentación, respuesta abierta con elaboración.
+`expresion_escrita` se asigna cuando el alumno **produce contenido escrito propio** — es decir, cuando lo que escribe sale de su memoria, conocimiento o criterio, no de un input dictado o de un banco dado. Aplica tanto a textos elaborados (frase, párrafo, correo, presentación, respuesta abierta) como a **listas de palabras evocadas** (ej. "escribe los países que recuerdas").
 
-Casos límite:
-- Completar con un artículo (`el`/`la`) o una palabra del banco → solo manipulación, NO `expresion_escrita`.
-- Responder preguntas cerradas con palabra del texto → solo `comprension_lectora`, NO `expresion_escrita`.
-- Responder preguntas abiertas con frase propia elaborada → SÍ `expresion_escrita`.
+`expresion_escrita` **NO** se asigna en:
+- **Mecánicas de manipulación de elementos dados** (`completa_huecos`, `relaciona`, `ordena`, `clasifica`, `seleccion_multiple`, `verdadero_falso`, marcar, subrayar, unir con flechas): la destreza es la **comprensión** que permite hacer la elección correcta. Aplica también a "Completa con el artículo" (dada la frase, el alumno deduce el artículo: aplica regla, no produce contenido propio) y a "Completa con la palabra del recuadro" (transcribe del banco).
+- **Transcripciones de input** (dictado, "Escucha y escribe"): el alumno transcribe lo escuchado, no produce contenido propio. La destreza dominante es `comprension_auditiva`.
+- **Respuestas cerradas con palabra del texto**: el alumno copia/extrae del input. Solo `comprension_lectora`.
+
+Resumen del criterio: **¿el alumno está produciendo contenido propio o transcribiendo/aplicando reglas a partir de un input dado?** Si es lo primero, `expresion_escrita`. Si es lo segundo, no.
+
+#### Heurística `vocabulario` vs `fonetica` para "escucha y repite" / "escucha y escribe"
+
+Casos donde el alumno trabaja palabras pero también pronunciación:
+
+- Si las palabras están agrupadas por **campo léxico** (cognados, países, profesiones, números como léxico) y el aprendizaje es saber qué significan o reconocerlas → `enfoque: vocabulario`.
+- Si las palabras o sonidos están agrupados por **dificultad fonética** (alfabeto, combinaciones c/qu, j/g, z/c) y el aprendizaje es la pronunciación o la ortografía fonética → `enfoque: fonetica`.
+- **Deletrear** (en voz alta o por escrito) → siempre `fonetica` (es ortografía fonética).
+- **Dictado** ("escucha y escribe") → siempre `fonetica` (la habilidad ejercitada es reconstruir la grafía a partir del sonido), incluso si el contenido dictado es léxico (ej. dictado de números).
 
 #### Ejemplos canónicos (tres ejes a la vez)
 
@@ -130,7 +142,7 @@ Casos límite:
 
 ### 2.4 Política de la enumeración
 
-- La enumeración de 19 valores es **provisional y revisable a nivel global del proyecto**. No se amplía ni se cambia ad hoc por unidad. Cualquier modificación del set requiere decisión cerrada en PROCESO-MAESTRO antes de aplicarse en `schema-inventario.md` y en `validar_inventario.py` (regla de no-divergencia).
+- La enumeración de 20 valores es **provisional y revisable a nivel global del proyecto**. No se amplía ni se cambia ad hoc por unidad. Cualquier modificación del set requiere decisión cerrada en PROCESO-MAESTRO antes de aplicarse en `schema-inventario.md` y en `validar_inventario.py` (regla de no-divergencia).
 - Ante un caso ambiguo durante una extracción nueva: marcar como TODO en el JSON y consultar al autor antes de cerrar el inventario.
 
 ---
@@ -284,7 +296,7 @@ Tras A4.2b, el reparto entre archivos queda así:
 | Forma del JSON (estructura, tipos, enumeraciones, restricciones validables) | `schema-inventario.md` |
 | Precedencias entre actividad/cuadro/nota/autoevaluación | **este archivo** (§1) |
 | Distinción `completa_huecos` vs `produccion_escrita_guiada` | **este archivo** (§2.1) — antes en `prompt.md`, restaurado en v10.51, migrado aquí en A4.2b |
-| Criterios para asignar cada uno de los 19 tipos | **canonizados en §2** (regla operativa: el `tipo` = la acción específica del enunciado del libro) |
+| Criterios para asignar cada uno de los 20 tipos | **canonizados en §2** (regla operativa: el `tipo` = la acción específica del enunciado del libro) |
 | Cómo asignar `tipo_cuadro` | **este archivo** (§3) |
 | "Para aprender" / "Observa" | **este archivo** (§4) |
 | Reglas de población de cada campo | **este archivo** (§5) |
