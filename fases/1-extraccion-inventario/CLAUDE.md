@@ -1,111 +1,59 @@
 # Fase 1 — Extracción de inventario
 
-> Auto-cargado por Claude Code cuando se trabaja dentro de `fases/1-extraccion-inventario/` o cuando el autor lo invoca explícitamente.
->
-> Este CLAUDE.md + `prompt.md` constituyen el contexto operativo de esta fase. **Cuando esta fase se convierta en un agente CrewAI**, ambos archivos formarán su system prompt.
+> Auto-cargado por Claude Code al trabajar dentro de `fases/1-extraccion-inventario/`. **Contrato corto de la fase**: qué produce, dónde input/output, cómo validar, reglas críticas, navegación. El detalle operativo vive en los archivos hermanos.
 
 ---
 
-## Objetivo de la fase
+## Qué produce esta fase
 
-Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-inventario.json`) que captura toda la información editorial necesaria para las fases siguientes.
+Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-inventario.json`) que captura todo el contenido editorial visible al alumno (actividades, cuadros, vocabulario consolidado, bloque de autoevaluación) según el contrato de datos del proyecto.
 
----
+## Input y output
 
-## Inputs y outputs
-
-**Input:**
-- `unidades/UX/fuente/UX-nc1.pdf` — PDF del libro del alumno con texto embebido (lo aporta el autor; gitignored).
-
-**Output:**
-- `unidades/UX/UX-nc1-inventario.json` — inventario estructurado siguiendo el esquema canónico definido en `prompt.md`.
-
----
+- **Input:** `unidades/UX/fuente/UX-nc1.pdf` — PDF del libro del alumno con texto embebido (lo aporta el autor; gitignored).
+- **Output:** `unidades/UX/UX-nc1-inventario.json` — un único archivo.
 
 ## Cómo se invoca
 
-El autor abre chat con Claude Code y dice:
+> Extrae el inventario de UX siguiendo `fases/1-extraccion-inventario/prompt.md`.
 
-> **Extrae el inventario de UX siguiendo `fases/1-extraccion-inventario/CLAUDE.md` y `fases/1-extraccion-inventario/prompt.md`.**
+## Cómo validar
 
-(Si ya estás trabajando dentro de `fases/1-extraccion-inventario/`, este CLAUDE.md ya está auto-cargado y basta con citar el prompt.)
+> **Convención de comandos:** todos los comandos en este archivo y en `prompt.md` son **root-relative** — se ejecutan desde la raíz del repo (`/guia-didactica-profesor-IA/` o el worktree equivalente), no desde esta carpeta de fase. Aunque este CLAUDE.md se auto-cargue al trabajar dentro de `fases/1-extraccion-inventario/`, los comandos asumen `cwd = raíz del repo`.
 
-Claude Code:
-1. Lee `prompt.md` (instrucciones detalladas + esquema + taxonomía + casos resueltos).
-2. Lee el PDF de `unidades/UX/fuente/UX-nc1.pdf`.
-3. Genera el JSON aplicando todas las reglas del prompt.
-4. Escribe a `unidades/UX/UX-nc1-inventario.json`.
+1. **Validador automático:** `python3 scripts/validar_inventario.py X` → debe dar **0 errores y 0 avisos** (1 aviso intencional aceptable si la unidad es atípica con `_nota_unidad_atipica`).
+2. **Validación visual del autor:** `python3 diagrama.py` → `http://localhost:8080` → Inventarios → revisar 2-3 páginas al azar contrastando con el PDF.
 
 ---
 
-## Validación post-extracción
+## Reglas críticas (las que un humano nunca debe olvidar al trabajar en esta fase)
 
-Después de generar el JSON, ejecutar:
-
-```bash
-python3 scripts/validar_inventario.py X
-```
-
-Si falla, corregir antes de seguir.
-
-Después, validación visual: el autor abre el dashboard (`python3 diagrama.py` → `http://localhost:8080` → Inventarios) y revisa 2-3 páginas al azar contrastando con el PDF.
+1. **Texto verbatim del libro** — el JSON debe contener el contenido visible al alumno **exactamente como aparece en el libro**, no como referencia ni interpretación. Para cloze, huecos como `_____`. Para textos, íntegros. Nunca sustituir el enunciado por la respuesta.
+2. **No inventar contenido editorial** — si una palabra, fecha, dato o regla no está en la fuente original, no se añade. Caso ambiguo durante la extracción: marcar como TODO en el JSON y consultar al autor antes de cerrar el inventario.
+3. **Single source of truth por capa** — cada regla vive en un único archivo. Si una regla aparece duplicada entre `prompt.md`, `schema-inventario.md`, `reglas-operativas.md` o `convenciones-y-casos.md`, es un bug.
+4. **Validar antes de cerrar** — el JSON pasa el validador con 0 errores y la revisión visual antes de declararse cerrado.
+5. **Schema documental ↔ validador no divergen** — `schema-inventario.md` y `scripts/validar_inventario.py` son contratos paralelos. Cualquier divergencia entre ambos es un bug que se resuelve antes del cierre.
 
 ---
 
-## Reglas operativas críticas (resumen — detalle en `prompt.md`)
+## Para qué consultar qué archivo
 
-> **Errores detectados en extracción real:**
-> - **"Para aprender"** → es una **actividad** (tipo `produccion_escrita_guiada`, datos.subtipo `para_aprender`), nunca un cuadro.
-> - **"Observa"** → NO es una actividad. Es una **nota**: si acompaña **actividad** → `datos._nota`; si acompaña **cuadro** → `cuadro.observaciones`.
-> - **Cuadros no gramaticales** → No todos los cuadros son `tipo_cuadro: gramatical`. Un cuadro de vocabulario es `lexical`; uno de pronunciación es `fonetico`; uno de cultura es `cultural`; uno pragmático es `comunicativo`. Asignar siempre `tipo_cuadro` correcto.
-> - **Bloque de autoevaluación** → El bloque "Mis resultados en esta unidad son: MUY BUENOS / BUENOS / NO MUY BUENOS" del cierre de unidad NO es actividad ni cuadro ni nota. Va como campo top-level `autoevaluacion` del JSON. Opcional (omitir en unidades atípicas).
-> Ver detalle y precedencia en `prompt.md` → "Reglas para cuadros" y "Bloque de autoevaluación".
-
-1. **Texto verbatim del libro.** El JSON debe contener el contenido de cada actividad **exactamente como aparece en el libro**. Para cloze, huecos como `_____`. Para textos, completos. Para diálogos, con marcadores `[1]`, `[2]`. **Nunca** poner solo respuestas como sustituto del enunciado.
-2. **Taxonomía cerrada de tipos.** 17 valores posibles en `tipo`. Cualquier otro valor falla la validación. Lista en `prompt.md`. **Términos ELE clave:**
-   - Parejas/grupos → `interaccion_oral` (NO `produccion_oral_pareja`).
-   - Oral individual → `expresion_oral_libre` (NO `produccion_oral_libre`).
-   - Escrita libre → `expresion_escrita_libre` (NO `produccion_escrita_libre`).
-   - Completa huecos **escribiendo** → `produccion_escrita_guiada` (NO `completa_huecos`).
-3. **`respuestas` siempre presente** como lista (vacía si no aplica).
-4. **`audio`/`imagen`/`video` siempre presentes** como sub-objetos con `presente: bool`.
-5. **`imagen.descripcion` obligatoria** cuando `imagen.presente=true`.
-6. **`vocabulario_consolidado`** con 3 bloques: `principal`, `recurrente`, `comprension`.
-7. **`secciones`** como índice top-level con 7 claves normalizadas (vocabulario, gramatica, comunicacion, destrezas, cultura, evaluacion, reflexion).
-
----
-
-## Coste estimado
-
-~25-30k tokens por unidad (10 páginas + esquema + JSON resultante).
-Una sola vez por unidad. Para las 9 unidades del curso: ~225-270k tokens.
-
----
-
-## Mejora continua
-
-Cuando aparezca un caso no contemplado en `prompt.md`:
-
-1. El autor lo señala.
-2. Se añade el caso/regla a `prompt.md` (en "Casos resueltos en U3" o creando una sección nueva).
-3. La siguiente extracción ya lo cubre sin volver a fallar.
-
-`prompt.md` es una fuente viva. Cada error documentado mejora el sistema.
-
----
-
-## Contexto futuro (cuando esta fase sea un agente CrewAI)
-
-- Este `CLAUDE.md` + `prompt.md` se cargan como system prompt del agente.
-- El agente recibe la unidad `X` como parámetro de tarea.
-- El agente devuelve el JSON.
-- Las reglas de oro siguen siendo no negociables.
+| Pregunta | Archivo |
+|---|---|
+| ¿Cuál es el flujo operativo de la extracción? ¿Qué pasos sigo? | `prompt.md` |
+| ¿Cuál es el shape del JSON? ¿Qué tipos, qué claves, qué enumeraciones? | `schema-inventario.md` |
+| ¿Cómo decido X? (precedencias actividad/cuadro/nota/autoevaluación, asignación de `tipo`/`destreza`/`enfoque`/`tipo_cuadro`, "Para aprender" / "Observa", reglas de población de campos, unidades atípicas) | `reglas-operativas.md` |
+| ¿Cómo transcribo X del libro al JSON? (sílaba tónica subrayada, primer ítem resuelto, textos de lectura, diálogos, sopas de letras) | `convenciones-y-casos.md` §1 |
+| ¿Cómo se ve un cloze, una selección múltiple, un cuestionario en el JSON? | `convenciones-y-casos.md` §2-3 |
+| ¿Hubo un caso similar antes en una extracción real? | `convenciones-y-casos.md` §4 (casebook) |
+| ¿Cómo se añade un caso nuevo al sistema? | `convenciones-y-casos.md` §5 |
 
 ---
 
 ## Documentos relacionados
 
-- `prompt.md` (en esta carpeta) — instrucciones operativas detalladas + esquema completo + casos resueltos.
+- `prompt.md` (en esta carpeta) — prompt core ejecutable.
+- `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md` (en esta carpeta) — artefactos de soporte.
+- `../../scripts/validar_inventario.py` — validador estructural ejecutable, contrato paralelo del schema.
 - `../../CLAUDE.md` (raíz) — contexto global del proyecto y reglas de oro globales.
-- `../../scripts/validar_inventario.py` — validador estructural del JSON.
-- `../../PROCESO-MAESTRO.md` — decisiones acumuladas.
+- `../../PROCESO-MAESTRO.md` — decisiones cerradas a nivel de proyecto.

@@ -3,6 +3,755 @@
 
 ---
 
+## [v10.68 — 2026-05-07] — Cierre formal de A4.5 (acta empírica) y A4.5.5 (cross-check schema↔validador)
+
+Actas formales de los dos gates pre-merge tras el dictamen positivo del revisor sobre v10.67:
+
+**A4.5 — Acta de prueba empírica:** los 3 oráculos U0/U1/U3 reclasificados al contrato actualizado (3 ejes ortogonales `tipo`/`destreza`/`enfoque`) en 4 commits iterativos con dictamen del revisor:
+- v10.64 — U0 piloto (10 actividades) + ampliación taxonomía 19→20 (`escucha`).
+- v10.65 — U1 (42 actividades) + 3 fixes A1/A2/A3 del revisor + regla nueva de desempate §2.2 punto 5 (`completa_huecos` vs `produccion_escrita_guiada`).
+- v10.66 — U3 (47 actividades) + 3 refinamientos de §2.2 (puntos 1, 2 y 3: video sin manipulación posterior, manipulación manda en cualquier punto, criterio explícito destreza para `responder_preguntas_*`).
+- v10.67 — cierre de bloqueante sobre `escucha_y_responde` (3 reclasificaciones).
+
+Validador U0/U1/U3 → 0/0. Sin pérdida de decisiones semánticas. Conteos coherentes (10 + 42 + 47 = 99 actividades).
+
+**A4.5.5 — Acta de cross-check schema↔validador:** script de paridad ejecutado sobre las 5 enumeraciones cerradas → **5/5 idénticas, 0 divergencias**:
+- `tipo`: 20 valores (`busqueda_informacion`, `clasifica`, `completa_huecos`, `escucha`, `escucha_y_repite`, `escucha_y_responde`, `expresion_escrita_libre`, `expresion_oral_libre`, `interaccion_oral`, `juego`, `lee_y_escucha`, `ordena`, `produccion_escrita_guiada`, `relaciona`, `responder_preguntas_abiertas`, `responder_preguntas_cerradas`, `seleccion_multiple`, `tarea_final`, `ver_video`, `verdadero_falso`).
+- `destreza`: 6 valores (`comprension_auditiva`, `comprension_lectora`, `expresion_escrita`, `expresion_oral`, `interaccion_oral`, `mediacion`).
+- `enfoque`: 6 valores (`comunicacion`, `cultura`, `fonetica`, `gramatica`, `transversal`, `vocabulario`).
+- `tipo_cuadro`: 5 valores (`comunicativo`, `cultural`, `fonetico`, `gramatical`, `lexical`).
+- `seccion`: 7 valores (`comunicacion`, `cultura`, `destrezas`, `evaluacion`, `gramatica`, `reflexion`, `vocabulario`).
+
+El gate ineludible de no-divergencia schema↔validador queda cumplido.
+
+**Sin cambios funcionales en este commit.** Solo cierre documental de actas en REVIEW.md (tabla de sub-pasos A4.5 y A4.5.5 marcadas ✅) y CHANGELOG.
+
+**Próximo:** A4.6 — merge `refactor/prompt-fase-1` → `main` (pendiente de confirmación explícita del autor por ser acción visible y hard-to-reverse).
+
+---
+
+## [v10.67 — 2026-05-07] — Cierre de bloqueante del revisor: `escucha_y_responde` mal usado en 3 oráculos
+
+Hallazgo bloqueante del revisor sobre v10.66: la definición de `escucha_y_responde` en `reglas-operativas.md` §2.2 ("Escucha y responde oralmente, sin texto delante") no se alineaba con el uso real en los oráculos. Tres actividades estaban clasificadas con ese tipo cuando en realidad encajan en mecánicas más específicas:
+
+- **U0-p11-act08** "Escucha y escribe" (dictado deletreado, items_libro con slots `_____`): conflicto con regla 5 nueva (con slots predefinidos → `completa_huecos`). **Fix:** `escucha_y_responde` → `completa_huecos`.
+- **U0-p11-act09** "Escucha y escribe los números 0-10" (items_libro con slots `_____`): mismo conflicto. **Fix:** `escucha_y_responde` → `completa_huecos`.
+- **U3-p39-act06** "Escribe las horas y, después, escucha y comprueba": no es respuesta a estímulo auditivo (el alumno escribe ANTES de escuchar; el audio es comprobación). Tampoco hay slots predefinidos (relojes digitales como estímulo visual). **Fix:** `escucha_y_responde` → `produccion_escrita_guiada`.
+
+**Definición de `escucha_y_responde` se mantiene intacta** — es un nicho legítimo para respuesta oral genuina sin manipulación de slots ni producción escrita.
+
+**Estado del branch:** U0 ✅, U1 ✅, U3 ✅. Cross-check informal del revisor para A4.5.5 confirma alineación schema↔validador en 20 tipos / 6 destrezas / 6 enfoques. Sin otros hallazgos bloqueantes.
+
+**Próximo:** A4.5 (acta) + A4.5.5 (cross-check formal) + A4.6 (merge a `main`).
+
+---
+
+## [v10.66 — 2026-05-07] — Cierre de U3 y refinamiento de desempates en §2.2
+
+- U3 reclasificada: 47 actividades con destrezas normalizadas en listas alfabéticas y enfoque completo.
+- 11 cambios de tipo: 10 casos "Completa..." pasan de `produccion_escrita_guiada` a `completa_huecos`, y U3-p39-act05 pasa de `escucha_y_repite` a `completa_huecos`.
+- U3-p41-act05 se mantiene en `produccion_escrita_guiada` por tratarse de producción propia sobre relojes vacíos (sin `items_libro`).
+- §2.2 se refina en tres puntos:
+  - **Regla 1 (`ver_video`)**: solo cuando no hay manipulación posterior. "Mira el vídeo y completa" → `completa_huecos`, no `ver_video`.
+  - **Regla 2 (manipulación manda)**: la manipulación domina **en cualquier punto** del enunciado, no solo "posterior". "Completa, escucha y repite" → `completa_huecos` aunque le siga "repite".
+  - **Regla 3 (`responder_preguntas_*`)**: distingue explícitamente destreza con texto-fuente (`comprension_lectora` o `comprension_auditiva`, sin `expresion_escrita`) frente a respuesta libre del alumno sin texto-fuente (`expresion_escrita`).
+
+**Estado del branch:** U0 ✅, U1 ✅, U3 ✅. Los 3 oráculos validan 0/0 con el contrato completo. Branch listo para A4.5 (acta) / A4.5.5 (cross-check) / merge a `main`.
+
+---
+
+## [v10.65 — 2026-05-07] — U1 reclasificada + 3 fixes del revisor + regla nueva de desempate `completa_huecos` vs `produccion_escrita_guiada`
+
+Reclasificación de U1 (42 actividades) tras prueba empírica de v10.64. Validación del revisor sobre la primera pasada detectó 3 desajustes contractuales reales:
+
+**A1 (Bloqueante) — U1-p12-act3:** la actividad encadenaba "Escucha y repite vocabulario / Después, escucha y escribe" — el contrato (§2.2 regla de desempate 2: "última acción que pide producción concreta") obliga a clasificar por la fase final (asignación numérica), no por la primera (repetición). Tampoco corresponde `expresion_escrita` (escribir un número es transcripción/manipulación). **Fix:** tipo `escucha_y_repite` → `relaciona`; destreza `[comprension_auditiva, comprension_lectora, expresion_oral]` (sin `expresion_escrita`).
+
+**A2 (Alto) — Frontera ambigua `completa_huecos` vs `produccion_escrita_guiada`:** la primera pasada congeló 4 actividades en `produccion_escrita_guiada` por solapamiento de descripciones en §2.2 (ambos tipos ejemplificaban "Coloca el artículo / Completa la tabla"). El revisor señaló que la ambigüedad existe pero no justifica el congelamiento — y propuso una **regla de desempate explícita**:
+> Con huecos/celdas/slots predefinidos → `completa_huecos`. Sin huecos predefinidos, el alumno construye frases/etiquetas a partir de modelo/imagen/regla → `produccion_escrita_guiada`.
+
+**Fix de regla:** §2.2 punto 5 nuevo en `reglas-operativas.md` con la formulación.
+
+**Fix de JSON:** 5 actividades cambian de tipo siguiendo la nueva regla:
+- U1-p14-act2 "Completa los huecos con la forma del verbo tener" → `completa_huecos`
+- U1-p14-act4 "Completa la tabla con el masculino/femenino" → `completa_huecos`
+- U1-p21-act1 "Completa las frases con el verbo ser" → `completa_huecos`
+- U1-p21-act3 "Completa la tabla [género]" → `completa_huecos`
+- U1-p21-act4 "Completa con el verbo ser/llamarse/tener" → `completa_huecos`
+
+Mantienen `produccion_escrita_guiada` (sin huecos predefinidos): U1-p21-act2 "Coloca el artículo", U1-p14-act5 "Forma el femenino", U1-p15-act6/7, U1-p17-act6, U1-p21-act5.
+
+**A3 (Alto) — U1-p14-act3 "Forma frases tomando un elemento de cada columna":** el contrato (§2.2 ejemplo explícito de `produccion_escrita_guiada`: "Forma frases") obliga a clasificarlo como producción guiada. La primera pasada lo dejó en `relaciona`, lo cual además entraba en conflicto con asignar `expresion_escrita` a una mecánica de relación (regla anti-sobreasignación). **Fix:** tipo `relaciona` → `produccion_escrita_guiada`; destreza `[comprension_lectora, expresion_escrita]` mantenida.
+
+**Resumen del commit:**
+- 7 actividades de U1 con `tipo` corregido (1 por A1, 5 por A2 incl. consistencia, 1 por A3).
+- 1 regla nueva en `reglas-operativas.md` §2.2 punto 5.
+- Validador U1 → 0/0.
+
+**Estado del branch:**
+- U0: ✅ verde
+- U1: ✅ verde (tras estos fixes)
+- U3: ❌ rojo (legacy, pendiente — siguiente)
+
+**Próximo:** reclasificar U3 con la regla de desempate ya cerrada y aplicada.
+
+---
+
+## [v10.64 — 2026-05-07] — U0 reclasificada (piloto) + taxonomía `tipo` 19→20 (añadido `escucha`) + refinamiento §2.3
+
+**Prueba empírica del nuevo contrato `destreza`/`enfoque`** con U0 como piloto. El sistema funciona: 10 actividades reclasificadas, validador 0/0.
+
+**Decisiones tomadas durante la prueba:**
+
+1. **Taxonomía `tipo` ampliada de 19 → 20:** añadido valor `escucha` (input puro auditivo sin lectura de texto extenso ni acción posterior; apoyo visual no textual admisible: mapa, imagen, foto). Caso disparador: U0-p8-act01 ("Mira el mapa y escucha el nombre de los países. Observa la pronunciación.") no encajaba en `escucha_y_repite` (no pide repetir) ni en `lee_y_escucha` (no hay texto extenso para leer). Decisión cerrada en PROCESO-MAESTRO bitácora cumpliendo la regla §2.4 de `reglas-operativas.md`. Aplicado en schema §5, validador `TIPOS_VALIDOS`, reglas-operativas §2.2 (nueva fila + descripciones afinadas de `lee_y_escucha` y `escucha_y_repite`), todas las cross-references `19 → 20` (4 archivos).
+
+2. **Regla `expresion_escrita` reformulada (§2.3):** la versión inicial de v10.60 era estricta ("solo si produce texto lingüístico propio: frase elaborada, párrafo, correo, presentación"). Tras prueba con U0 se decide ampliarla a "produce contenido escrito propio" — incluye tanto textos elaborados como **listas de palabras evocadas** (ej. "escribe los países que recuerdas"). Distinción honesta entre **contenido propio** (memoria/criterio/conocimiento → `expresion_escrita`) y **transcripción/aplicación de regla** (dictado, completar artículo, completar palabra del banco → NO `expresion_escrita`).
+
+3. **Heurística `vocabulario` vs `fonetica` documentada (§2.3):** para "escucha y repite" / "escucha y escribe" — agrupación por campo léxico → `vocabulario`; agrupación por dificultad fonética → `fonetica`; deletrear → siempre `fonetica`; **dictado** → siempre `fonetica` (incluso si el contenido dictado es léxico, ej. dictado de números).
+
+4. **U0 reclasificada en bloque (10 actividades):** asignados `destreza` (lista alfabética) y `enfoque` (string) según las reglas refinadas. U0-p8-act01 cambia de `escucha_y_repite` → `escucha` (nuevo tipo). Validador U0 → 0/0.
+
+**Estado actual del branch:**
+- U0: ✅ verde (formato nuevo + taxonomía nueva)
+- U1, U3: ❌ rojos (formato legacy de destreza, sin enfoque, posibles tipos a revisar) — pendientes de reclasificar siguiendo el mismo patrón.
+
+**Próximo:** reclasificar U1 (~33 actividades) con el mismo procedimiento.
+
+---
+
+## [v10.63 — 2026-05-07] — Fix de drift post-v10.60 en CLAUDE.md de fase
+
+Hallazgo durante la re-revisión del componente 1: la tabla "Para qué consultar qué archivo" (línea 45) listaba las decisiones que viven en `reglas-operativas.md` mencionando solo `tipo` y `tipo_cuadro`. Tras v10.60 hay 4 ejes decisionales (`tipo`/`destreza`/`enfoque`/`tipo_cuadro`); un usuario que llegaba buscando "¿cómo decido la destreza?" no encontraba puntero claro.
+
+**Fix quirúrgico:** una línea — añadidos `destreza` y `enfoque` a la enumeración de decisiones que el archivo `reglas-operativas.md` cubre.
+
+**Las 5 "Reglas críticas" del CLAUDE de fase (líneas 29-35) NO se tocan.** Verificadas como reglas de contrato (no operativas) tanto por el revisor como por re-revisión propia: literalidad del libro, no inventar, single source of truth, validar antes de cerrar, no divergencia schema/validador. Pasan ambos tests (Anthropic + decisión de proyecto sobre single source of truth).
+
+**Sin cambios en otros archivos.** CLAUDE.md de fase: 60 líneas (norte 40-60 cumplido).
+
+**Próximo:** componente 4 — `reglas-operativas.md`.
+
+---
+
+## [v10.62 — 2026-05-07] — Cierre del componente 3 (schema-inventario.md): 3 fixes accionables del revisor
+
+Revisión del componente 3 con 3 hallazgos accionables cerrados en este commit.
+
+**F0 (Bloqueante) — Divergencia real schema↔validador en `_nota_unidad_atipica`.** El schema §11 declara la clave como contractual y opcional, y exige que el validador la incluya en `CLAVES_TOP_OPCIONALES`. El validador solo tenía `{"autoevaluacion"}`, por lo que U0 emitía aviso "Claves top-level no canónicas: ['_nota_unidad_atipica']" — divergencia real con el schema. **Fix:** añadido `_nota_unidad_atipica` a `CLAVES_TOP_OPCIONALES`. U0 ahora valida sin avisos espurios. Schema y validador alineados.
+
+**F1 (Medio) — §13 desactualizada tras v10.60.** La sección "Source of truth con validar_inventario.py" listaba las enumeraciones cerradas (19 tipos / 5 tipo_cuadro / 7 secciones / 3 opciones autoevaluación) pero no mencionaba `destreza` (6 valores) ni `enfoque` (6 valores) introducidos en v10.60. Tampoco listaba la restricción condicional de orden alfabético de `destreza`. **Fix:** §13 reescrita con las 6 enumeraciones cerradas explícitas, los 3 ejes obligatorios por actividad nombrados, y la restricción de orden alfabético añadida a la lista de restricciones condicionales validables.
+
+**F3 (Bajo) — Ambigüedad contractual de `numero`.** El schema §3 declaraba `"numero": <int>` sin especificar obligatoriedad. El validador no lo chequeaba. Algunas actividades del libro NO tienen número visible (ej. "Para aprender", cuadros clasificados como actividad por reglas §1, autoevaluación a pie de página). **Decisión:** `numero` es **opcional**. **Fixes:** schema §3 actualizado a `<int opcional — ver §3.1>` con nueva sub-sección §3.1 explicando cuándo se omite y puntero a `reglas-operativas.md` §1. Validador añade check: si `numero` está presente, debe ser int (no chequea presencia, alineado con la decisión opcional).
+
+**Sin cambios en otros archivos del refactor.** Branch sigue rojo por la migración pendiente de destreza/enfoque per-unidad (gate v10.60).
+
+**Próximo:** revisión del componente 4 — `reglas-operativas.md`.
+
+---
+
+## [v10.61 — 2026-05-07] — Fix de drift documental post-v10.60 en `prompt.md`
+
+Hallazgo del revisor durante la revisión componente-a-componente del refactor: tras v10.60 el contrato exige `destreza` y `enfoque` obligatorios en cada actividad, pero el `prompt.md` no los reflejaba. El paso 5 de "Pasos de la extracción" solo mencionaba "extraer todos los campos del esquema" genéricamente, y el checklist manual de "Cierre y validación" listaba `tipo` entre los enums cerrados pero omitía los dos ejes nuevos.
+
+**Cambios quirúrgicos:**
+- Paso 5 ampliado con recordatorio explícito de los **3 ejes ortogonales obligatorios** (`tipo`/`destreza`/`enfoque`) con punteros al schema (§5b/§5c) y a `reglas-operativas.md` §2.3.
+- Checklist manual de 9 → 11 items: insertados "Destrezas válidas" e "Enfoque válido" después de "Tipos válidos".
+
+**Métrica:** prompt.md 109 → 111 líneas (sigue dentro del norte 80-120).
+
+**Sin cambios en otros archivos.** Componente 1 (CLAUDE.md de fase) aprobado por el revisor sin findings materiales antes de este commit.
+
+**Próximo:** revisión del componente 3 — `schema-inventario.md`.
+
+---
+
+## [v10.60 — 2026-05-07] — Contrato `destreza`/`enfoque`: separación de ejes habilidad ↔ dominio (commit intermedio rompedor de contrato)
+
+> ⚠️ **Estado intermedio:** este commit deja el branch en rojo intencionadamente. El validador rechaza U0/U1/U3 (~250 errores: `destreza` en formato string legacy + ausencia del nuevo campo `enfoque`). La reclasificación per-unidad de las 97 actividades a destreza-lista-canónica + enfoque se hará en otro chat antes de A4.5.
+
+Hallazgo en revisión durante la primera pasada del rediseño de `destreza`: la versión inicial (lista de 8 valores incluyendo `gramatica`/`vocabulario`) mezclaba dos ejes — habilidad lingüística (MCER) y dominio de contenido (gramática, léxico, etc.). El revisor lo señaló como bloqueante. Decisión: separar en dos campos ortogonales.
+
+**Cambios:**
+
+- **Nuevo eje `destreza` (eje habilidad MCER pura, schema §5b):** lista de strings, enum cerrado de 6 valores: `comprension_auditiva`, `comprension_lectora`, `expresion_escrita`, `expresion_oral`, `interaccion_oral`, `mediacion`. Orden alfabético obligatorio (validable mecánicamente, evita variantes equivalentes con orden distinto). Mínimo 1 elemento, sin duplicados.
+- **Nuevo campo `enfoque` (eje dominio de contenido, schema §5c):** string único, enum cerrado de 6 valores: `gramatica`, `vocabulario`, `comunicacion`, `fonetica`, `cultura`, `transversal`. Obligatorio en cada actividad. Independiente de `seccion` (que clasifica la página entera según el índice editorial); `enfoque` clasifica la actividad concreta según su foco pedagógico real. El valor `transversal` reemplaza la propuesta inicial `destrezas` (que reutilizaba el nombre de una sección editorial y pegaba el eje al layout de página, justo lo que la separación intentaba evitar).
+- **Validador:** nuevas constantes `DESTREZAS_VALIDAS` (6) y `ENFOQUES_VALIDOS` (6). Bloque de validación por actividad: `destreza` debe existir, ser lista no vacía, valores del enum, orden alfabético, sin duplicados; `enfoque` debe existir, ser string, valor del enum.
+- **`reglas-operativas.md` §2.3 reescrita íntegra:** tabla de los 3 ejes ortogonales (`tipo`/`destreza`/`enfoque`), definición de cada valor en ambos ejes, reglas de asignación, relación `enfoque` vs `seccion`, **regla anti-sobreasignación de `expresion_escrita`** (las mecánicas de manipulación de elementos dados — completar, relacionar, ordenar, marcar — NO añaden por sí mismas `expresion_escrita`; solo se añade cuando el alumno produce texto lingüístico propio), 9 ejemplos canónicos con los 3 ejes.
+- **Decisiones semánticas registradas:**
+  - `comprension_auditiva` es el nombre canónico (no alias). `comprension_oral` y `comprension_auditiva` se consideran sinónimos en este proyecto; en la migración per-unidad, `comprension_oral` legacy se normaliza a `comprension_auditiva`.
+  - `produccion_*` → `expresion_*` (terminología MCER moderna).
+  - `gramatica`/`vocabulario` salen del eje `destreza` (no son habilidades) y entran como valores de `enfoque` (dominios).
+  - `interaccion_escrita` queda fuera del enum (no aparece en NC1 A1.1; ampliación futura como decisión cerrada en PROCESO-MAESTRO si surge un caso).
+- **Referencia colgada `§2b` corregida:** el schema apuntaba a `reglas-operativas.md §2b` que no existía; ahora apunta a §2.3 (donde realmente vive el contenido).
+
+**Impacto sobre los oráculos:** U0/U1/U3 quedan en formato legacy (string con `+`) y sin `enfoque`. El validador los rechaza sistemáticamente — estado intermedio aceptado y documentado, no estado de cierre.
+
+**Gates pendientes (en orden):**
+1. Reclasificación per-unidad de U0/U1/U3 (otro chat, una unidad por sesión). Asignar `destreza` (lista canónica) y `enfoque` (string) a las 97 actividades. Validador 0/0 al cierre de cada unidad.
+2. A4.5 — prueba empírica de reextracción (solo después de gate 1).
+3. A4.5.5 — cross-check schema↔validador (antes del merge).
+
+**Próximo:** revisión componente-a-componente del refactor (en curso) + reclasificación per-unidad.
+
+---
+
+## [v10.59 — 2026-05-07] — Taxonomía de `tipo` rediseñada (17 → 19) por acción imperativa del enunciado
+
+Hallazgo durante el inicio de A4.5 (reextracción empírica de U1 con oráculo): la taxonomía de 17 tipos mezclaba `tipo` (formato/mecánica que pide el enunciado) con `destreza` (habilidad ejercitada). Tipos como `comprension_lectora` o `comprension_auditiva` describían destrezas, no acciones; provocaban ambigüedad real (una actividad "Lee y escucha el diálogo. Después, marca verdadero o falso" podía clasificarse como `comprension_lectora`, `comprension_auditiva` o `verdadero_falso`).
+
+**Decisión:** `tipo` y `destreza` son dimensiones independientes. `tipo` = la acción específica que pide el enunciado (cómo se manipulan los elementos). `destreza` = qué habilidad ejercita el alumno (campo separado, próximo trabajo).
+
+**Cambios:**
+
+- **Schema (§5):** taxonomía cerrada reescrita a 19 valores, agrupados en 7 familias por acción: input puro (`lee_y_escucha`, `ver_video`); orales reproductivas/responsivas (`escucha_y_repite`, `escucha_y_responde`); manipulación de elementos dados (`completa_huecos`, `relaciona`, `ordena`, `clasifica`, `seleccion_multiple`, `verdadero_falso`); responder preguntas (`responder_preguntas_cerradas`, `responder_preguntas_abiertas`); producción oral (`interaccion_oral`, `expresion_oral_libre`); producción escrita (`produccion_escrita_guiada`, `expresion_escrita_libre`); otros (`busqueda_informacion`, `tarea_final`, `juego`).
+- **Eliminados:** `comprension_lectora`, `comprension_auditiva` (eran destrezas, no acciones).
+- **Validador:** `TIPOS_VALIDOS` y `TIPOS_QUE_REQUIEREN_ITEMS` actualizados. Añadidas `ejemplos_modelo`, `programas_tv`, `horarios_digitales` a `CONTENIDOS_VISIBLES` (claves ya documentadas en schema pero ausentes del validador — divergencia schema↔validador detectada y cerrada como adelanto parcial de A4.5.5).
+- **`reglas-operativas.md` §2:** reescrita íntegra. §2.1 regla operativa "tipo = la acción específica del enunciado". §2.2 tabla canónica de los 19 tipos con disparadores de enunciado y ejemplo de oráculo. §2.3 nota sobre la separación `tipo` vs `destreza` (campo separado, no tocado en este commit).
+- **Reasignaciones aplicadas:** 16 actividades reclasificadas en U1 (9) y U3 (7); U0 sin cambios. Mapeo completo registrado en la bitácora del REVIEW.
+- **Validación:** `python3 scripts/validar_inventario.py 0/1/3` → 0 errores en los tres (U0 con 1 aviso intencional `_nota_unidad_atipica`).
+
+**Efecto sobre A4.5:** las divergencias detectadas en la primera pasada empírica de U1 (7 tipos no coincidentes con el oráculo + análogas en U3) eran reales pero la causa raíz no era una mala clasificación — era ambigüedad de la propia taxonomía. Resuelto el origen, las clasificaciones convergen.
+
+**Próximo:** trabajar la dimensión `destreza` como campo separado (segundo eje pedagógico, no afecta a `tipo`).
+
+---
+
+## [v10.58 — 2026-05-07] — Sincronización de fila-resumen A4.4 con la bitácora
+
+Hallazgo Bajo del revisor sobre `590fd96` (v10.57): la fila-resumen de A4.4 en la tabla de sub-pasos de `REVIEW.md` se quedó desactualizada. Decía *"✅ 2026-05-07 02:30 (57 líneas, 7 secciones)"* mientras que CHANGELOG v10.57 y la propia bitácora REVIEW ya reflejaban el cierre limpio a las 03:00 con **59 líneas** (tras añadir la convención root-relative). Doble verdad menor entre tabla y bitácora.
+
+**Resolución:** fila reescrita a *"✅ cerrado limpio 2026-05-07 03:00 en v10.57 (59 líneas tras añadir convención root-relative explícita; 7 secciones; norte 40-60 cumplido; cero duplicaciones literales con prompt.md)"*. Tabla y bitácora ahora dicen lo mismo.
+
+**Adicional registrado:** el revisor confirma que ejecutó el validador desde la raíz del repo con la convención root-relative ahora explícita y devuelve JSON válido y 0 avisos para U1. Es una **primera verificación funcional informal externa al ejecutor**, no sustituye A4.5 (la prueba funcional oficial sigue pendiente como reextracción de los 3 casos seleccionados, ver REFACTOR-PROPUESTA §5 paso 5).
+
+**Sin cambios de código.** Solo coherencia documental.
+
+**Próximo:** A4.5.
+
+---
+
+## [v10.57 — 2026-05-07] — Cierre limpio de A4.4: convención root-relative explícita antes de A4.5
+
+Hallazgo Medio del revisor sobre `278144a` (v10.56, A4.4): los comandos en `CLAUDE.md` de fase no son ejecutables tal como están escritos en el contexto que el propio archivo declara.
+
+**El defecto:** `CLAUDE.md` de fase se auto-carga al trabajar dentro de `fases/1-extraccion-inventario/`. Pero los comandos `python3 scripts/validar_inventario.py X` y `python3 diagrama.py` son rutas root-relative — ejecutados literalmente desde la carpeta de fase, fallan con "No such file or directory" porque `scripts/` y `diagrama.py` solo existen desde la raíz del repo.
+
+La convención implícita del proyecto sí es root-relative (el `CLAUDE.md` raíz también prescribe `python3 scripts/validar_inventario.py 3` así). Pero el CLAUDE de fase, al auto-cargarse en otro `cwd`, sugiere otro contexto. Ambigüedad documental real, no funcional.
+
+**Por qué se resuelve antes de A4.5:** A4.5 es la primera prueba funcional oficial del refactor. El procedimiento incluye ejecutar el validador. Si el documento que se carga a la sesión (CLAUDE de fase) describe comandos que no funcionan literalmente, el sub-paso arranca con confusión innecesaria.
+
+**Resolución:** nota explícita "Convención de comandos: root-relative — se ejecutan desde la raíz del repo, no desde la carpeta de fase" añadida al inicio de:
+
+- `CLAUDE.md` de fase, sección "Cómo validar".
+- `prompt.md`, sección "Cierre y validación".
+
+La nota del CLAUDE es más extensa (incluye el matiz de que aunque se auto-cargue en la fase, los comandos asumen `cwd = raíz`). La nota del prompt es más breve porque el prompt no se auto-carga.
+
+**Métricas:**
+
+| Archivo | Pre-v10.57 | Post-v10.57 |
+|---|---|---|
+| `CLAUDE.md` fase | 57 | 59 |
+| `prompt.md` | 107 | 109 |
+
+Ambos siguen dentro de su norte de tamaño respectivo (40-60 y 80-120).
+
+**Sin cambios en otros archivos.** Sin cambios de código.
+
+**Próximo:** A4.5 — primera prueba funcional oficial del refactor.
+
+---
+
+## [v10.56 — 2026-05-07] — A4.4: reescritura de `CLAUDE.md` de fase en modo contrato corto
+
+Séptimo sub-paso del refactor. `CLAUDE.md` de fase reescrito según `REFACTOR-PROPUESTA.md` §3.1: contrato corto, no manual.
+
+**Estructura final** (57 líneas, 7 secciones — dentro del norte 40-60):
+
+1. Qué produce esta fase (1 párrafo).
+2. Input y output (2 bullets).
+3. Cómo se invoca (1 línea).
+4. Cómo validar (validador automático + revisión visual del autor).
+5. **Reglas críticas (las que un humano nunca debe olvidar al trabajar en esta fase)** — 5 reglas en 1 línea cada una:
+   - Texto verbatim del libro (la regla de oro como recordatorio breve).
+   - No inventar contenido editorial.
+   - Single source of truth por capa.
+   - Validar antes de cerrar.
+   - Schema documental ↔ validador no divergen.
+6. **Tabla "Para qué consultar qué archivo"** — 7 preguntas mapeadas a su archivo: prompt, schema, reglas-operativas, convenciones-y-casos. Mapa de navegación operativo.
+7. Documentos relacionados (lista breve).
+
+**Eliminados respecto al pre-refactor (cc1f18b: 111 líneas, 9 secciones):**
+
+- **Sección "Reglas operativas críticas (resumen — detalle en `prompt.md`)"** de 22 líneas que reescribía contenido ahora migrado a `reglas-operativas.md` y `schema-inventario.md`. Violaba single source of truth: las mismas reglas vivían en CLAUDE como "resumen" y en los archivos de soporte como "fuente". Sustituida por 5 reglas críticas en 1 línea cada una (las que el humano debe recordar, no las que el modelo consulta para ejecutar).
+- **"Coste estimado"** (no operativo, ya eliminado del prompt en A4.3).
+- **"Mejora continua"** (vive ahora en `convenciones-y-casos.md` §5).
+- **"Contexto futuro (cuando esta fase sea un agente CrewAI)"** — especulación sobre el futuro, no contrato operativo. CrewAI sigue bloqueado en este proyecto; reabrir solo cuando aplique.
+- Sub-bloque "Lo que hace Claude Code" (4 pasos numerados duplicaban los pasos del prompt).
+- Sub-sección "Errores detectados en extracción real" (4 bullets que duplican casos resueltos en `convenciones-y-casos.md` §4 + reglas decisionales en `reglas-operativas.md` §1, §3, §4, §6).
+
+**Verificación:**
+
+```
+grep "Texto verbatim del libro|10 claves obligatorias|Taxonomía cerrada de tipos|Mis resultados en esta unidad son|produccion_escrita_guiada"
+→ ningún match duplicado entre CLAUDE.md y prompt.md.
+```
+
+La única regla que aparece en CLAUDE como recordatorio ("Texto verbatim del libro") está formulada distinto del prompt ("El JSON debe contener el contenido EXACTAMENTE COMO APARECE EN EL LIBRO"). El detalle operativo de la regla vive en `prompt.md` Regla de oro; el CLAUDE solo la nombra. Es la jerarquía correcta según el plan: CLAUDE marca **lo que un humano debe recordar**, prompt expande para **ejecutar**.
+
+**Métricas:**
+
+| Versión | Líneas | Secciones |
+|---|---|---|
+| Pre-refactor (`cc1f18b`) | 111 | 9 |
+| Post-A4.4 (este commit) | **57** | **7** |
+
+Reducción 49% sobre el CLAUDE de fase pre-refactor.
+
+**Métricas globales del refactor tras A4.4:**
+
+| Archivo | Pre-refactor | Post-A4.4 |
+|---|---|---|
+| `prompt.md` | 547 | 107 |
+| `CLAUDE.md` (fase) | 111 | 57 |
+| `schema-inventario.md` | — | 308 |
+| `reglas-operativas.md` | — | 208 |
+| `convenciones-y-casos.md` | — | 165 |
+| Total operativo | 658 | 845 |
+
+El total crece (+187 líneas) porque ahora hay 5 archivos en lugar de 2, **pero cada uno tiene una responsabilidad única y no se duplican entre sí**. El prompt y el CLAUDE — los archivos que se leen en cada extracción — han bajado de 658 a 164 líneas (–75%). Los 681 líneas adicionales viven en archivos de soporte que solo se consultan cuando hace falta.
+
+**Próximo:** A4.5 — **primera prueba funcional oficial.** Reextracción empírica de 3 casos seleccionados (página rica + U0 completa + U1-p21) usando solo los nuevos artefactos. Diff vs JSON existente. Validador con 0 errores y 0 avisos. Es el primer test de que los nuevos archivos sirven realmente para extraer.
+
+---
+
+## [v10.55 — 2026-05-07] — A4.3: reescritura desde cero de `prompt.md` core
+
+Sexto sub-paso del refactor. `prompt.md` reescrito íntegramente según `REFACTOR-PROPUESTA.md` §5 paso 3, no solo consolidación.
+
+**Estructura final del prompt core** (107 líneas, 9 secciones):
+
+1. Header con quién/output/invocación.
+2. Objetivo (1 párrafo describiendo qué produce la fase).
+3. Input (PDF en `unidades/UX/fuente/`).
+4. Output (1 archivo JSON).
+5. Definición de éxito — **sección nueva**, no existía en pre-refactor. 4 condiciones explícitas (validador 0/0, contenido literal del libro, revisión visual del autor, casos no contemplados consultados al autor).
+6. Regla de oro (no negociable) — sin cambios respecto al pre-refactor.
+7. Artefactos de soporte consultados durante la extracción — cabecera global con 1 bullet por archivo hermano (`schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`, y el validador como contrato paralelo). Reemplaza los 4-5 placeholders intermedios redundantes que tenía la versión anterior.
+8. Pasos de la extracción — 11 pasos numerados (10 del pre-refactor + 1 nuevo paso 8 que captura el bloque `autoevaluacion` explícitamente). Cada paso con referencias cortas a los archivos de soporte.
+9. Cierre y validación — absorbe la antigua "Validación post-extracción" + "Salida" en una sola sección con sub-encabezados (comprobaciones manuales, validador automático, salida).
+
+**Cambios respecto a la versión post-A4.2c (108 líneas, 10 placeholders dispersos):**
+
+- **Eliminados los 5 placeholders intermedios redundantes** que decían "Migrado a X" en zonas específicas: ya no había contenido editorial allí, solo etiquetas que la cabecera global ya cubría. Eran ruido para el lector y para el modelo.
+- **Definición de éxito añadida** como sección nueva, alineada con el lenguaje del plan ("Objetivo", "Definición de éxito" en `REFACTOR-PROPUESTA.md` §3.2 y §5 paso 3).
+- **Pasos enriquecidos** con un nuevo paso 8 explícito sobre el bloque `autoevaluacion` (antes implícito).
+- **"Cierre y validación" absorbe Salida** en una sola sección, como pide el plan.
+- **Norte de tamaño cumplido:** 107 líneas (rango 80-120 según REFACTOR-PROPUESTA §3.2).
+
+**Verificación:**
+
+```
+grep -E "Migrado a |Migradas a |migrar a |migrarán a |migrará a |en construcción|A4.2[abc]" prompt.md
+→ 0 (ningún marcador transitorio residual)
+
+grep -E "ver sección \"|sección dedicada|de este prompt antes" prompt.md
+→ 0 (ninguna referencia interna huérfana)
+```
+
+**Métricas finales del prompt core:**
+
+| Versión | Líneas | Secciones | Estado |
+|---|---|---|---|
+| Pre-refactor (`cc1f18b`) | 547 | 34 | monolito mezclando 7 funciones |
+| Post-A4.2c | 108 | 10 | contenido editorial migrado pero con placeholders intermedios |
+| **Post-A4.3 (este commit)** | **107** | **9** | **prompt core mínimo, sin placeholders, alineado con el plan** |
+
+**Reducción total desde inicio del refactor:** 547 → 107 líneas (–80%). Las 9 secciones del prompt core son ahora estrictamente operativas: cómo invocar, qué produce, qué condiciones de éxito, regla de oro inviolable, dónde están los artefactos de soporte, qué pasos seguir, cómo cerrar y validar.
+
+**Próximo:** A4.4 — reescribir `CLAUDE.md` de fase en modo contrato corto. Hoy tiene 111 líneas con duplicación de reglas que ya viven en `prompt.md` y en los archivos de soporte. Objetivo: 40-60 líneas según REFACTOR-PROPUESTA.md §3.1.
+
+---
+
+## [v10.54 — 2026-05-07] — A4.2c: migración a `convenciones-y-casos.md` + cierre completo de A4.2
+
+Quinto sub-paso del refactor (parte c de A4.2). Movido a `convenciones-y-casos.md` todo el contenido editorial residual del prompt: convenciones de transcripción, ejemplos canónicos por tipo de actividad, ejemplo JSON de unidad atípica, casebook de extracciones reales, política de mejora continua.
+
+**Estructura final de `convenciones-y-casos.md`** (5 secciones, 165 líneas):
+
+1. Convenciones de transcripción del libro al JSON (sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", textos de lectura, diálogos con marcadores `[1]`/`[2]`, sopas de letras y juegos).
+2. Ejemplos canónicos de `items_libro` por tipo de actividad (cloze, selección múltiple, cuestionario con opciones) + ejemplos INCORRECTOS.
+3. Ejemplo canónico de unidad atípica (U0 con `_nota_unidad_atipica` literal).
+4. Casebook — casos resueltos en extracciones reales ("Para aprender" confundido con cuadro + 6 casos resueltos en U3).
+5. Política de mejora continua (cómo se añade un caso nuevo y a qué archivo según su tipo: schema, reglas-operativas o convenciones-y-casos).
+
+**Cambios en `prompt.md`:**
+- 4 secciones movidas reemplazadas por placeholders cortos.
+- Sección "Coste estimado" eliminada (no aporta valor operativo).
+- Cabecera "Schema, reglas y convenciones — archivos externos" actualizada: ya no dice "convenciones-y-casos.md — en construcción".
+
+**Lección de v10.53 aplicada proactivamente** (verificar la zona reemplazada como enlace limpio, no solo anclas movidas): detectadas y corregidas **3 referencias huérfanas** en los pasos de la extracción que apuntaban a secciones eliminadas:
+
+- Paso 3: *"Aplicar la sección 'Reglas para unidades atípicas' de este prompt"* → `reglas-operativas.md` §7.
+- Paso 4: *"ver sección 'Reglas para cuadros'"* → `reglas-operativas.md` §1 / §3 / §4.
+- Paso 5: *"(ver sección dedicada)"* (sílaba tónica + primer ítem resuelto) → `convenciones-y-casos.md` §1.1 / §1.2.
+
+Esto demuestra que la lección de "verificar zona limpia, no solo grep de anclas" está internalizada — se aplicó **antes** de que el revisor lo señalara.
+
+**Verificación de anclas semánticas** (8 frases canónicas):
+
+| Ancla | convenciones | prompt |
+|---|---|---|
+| `Pablo y Jorge (estudiar)` | 1 | 0 |
+| `PABLO: Son las once` | 1 | 0 |
+| `PRIMO` | 1 | 0 |
+| `Punto de partida... introductoria pre-A1` | 1 | 0 |
+| `se subraya la sílaba tónica` | 1 | 0 |
+| `primer ítem resuelto` | 1 | 4 (referencias legítimas en pasos + cabeceras) |
+| `Pronunciación con z/c` | 1 | 0 |
+| `Lecturas Javier/Lucía` | 1 | 0 |
+
+La única ancla con cuenta > 0 en prompt es "primer ítem resuelto", y todas sus apariciones son **referencias legítimas** (paso 5 + cabecera + placeholder) — no contenido editorial duplicado.
+
+**Métricas finales A4.2c:**
+- `prompt.md`: 260 → 108 líneas (–58% solo en este sub-paso; –80% desde el inicio del refactor en v10.42).
+- `schema-inventario.md`: 308 (sin cambios desde A4.2a).
+- `reglas-operativas.md`: 208 (sin cambios desde A4.2b).
+- `convenciones-y-casos.md`: 10 → 165 líneas (recibió todo el contenido editorial residual).
+
+**Estado del paso A4.2:** ✅ **cerrado al 100%** — (a) ✅ schema · (b) ✅ reglas-operativas · (c) ✅ convenciones-y-casos.
+
+**Sobre A4.3:** el prompt actual de 108 líneas ya está dentro del norte de tamaño 80-120 que define la propuesta. A4.3 ("reescribir prompt.md core desde cero") podrá enfocarse más en consolidar la estructura (fusionar placeholders contiguos, ajustar la cabecera del archivo, añadir la sección "Cierre y validación" absorbida) que en reducir tamaño.
+
+**Próximo:** A4.3.
+
+---
+
+## [v10.53 — 2026-05-07] — Cierre real de A4.2b: reescritura de la cabecera transicional residual
+
+El revisor sobre `ddd9879` (v10.52, "A4.2b cerrado"): el cierre **no era válido**. Tres hallazgos.
+
+**1 (Bloqueante) — Cabecera transicional residual reabría la contradicción.**
+
+`prompt.md` líneas 44-52 (cabecera "Esquema y schema del JSON") seguían describiendo literalmente el estado **pre-A4.2b**:
+
+> *"Las reglas de población semántica (...) se migrarán a `reglas-operativas.md` en A4.2b. Hasta entonces, el estado real de cada bloque decisional es: (...) Distinción crítica vive provisionalmente en este `prompt.md`... Resto de criterios... se documentarán por primera vez al construir `reglas-operativas.md` en A4.2b... Reglas de población... el resto vive provisionalmente en este `prompt.md`..."*
+
+Mientras el resto del prompt y `reglas-operativas.md` ya describían el estado **post-A4.2b** (todo migrado y vivo en reglas-operativas). Tres afirmaciones falsas convivían con la realidad migrada en el mismo archivo. Eso reabre exactamente la contradicción de source of truth que v10.50/v10.51 cerraron.
+
+Causa raíz: la cabecera había sido escrita en v10.51 como puente provisional pre-A4.2b. v10.52 (A4.2b) corrigió las secciones específicas pero **olvidó reescribir esta cabecera global**. Quedó "viva" describiendo un estado anterior.
+
+**2 (Medio) — Verificación de anclas sobredeclarada.**
+
+v10.52 verificó que 7 frases canónicas movidas estaban en `reglas-operativas.md` y ausentes de `prompt.md`. Pero el criterio real del paso 2 del plan (`REFACTOR-PROPUESTA.md` §5 paso 2) es más fuerte: **la zona reemplazada del prompt debe quedar reducida a un enlace limpio**, no solo libre de las frases concretas movidas. Esa cabecera transicional incumplía el criterio aunque ninguna frase individual exacta apareciera duplicada.
+
+**3 (Bajo) — Cabecera REVIEW desincronizada.**
+
+REVIEW decía "Última actualización: 2026-05-06 22:30" pero el commit `ddd9879` fue a las 23:58 (1.5 h de retraso documental).
+
+---
+
+**Resolución (todo en este commit):**
+
+- **Cabecera transicional reescrita** como puente corto y verdadero (3 bullets, alineada con el estado actual): schema → `schema-inventario.md`; reglas decisionales → `reglas-operativas.md`; convenciones → `convenciones-y-casos.md` (en construcción, A4.2c).
+- **Verificación reforzada con el criterio del plan:** `grep` de afirmaciones pre-A4.2b en `prompt.md` (`"se migrarán a reglas-operativas"`, `"Hasta entonces"`, `"vive provisionalmente en este .prompt"`, `"el único bloque decisional explícito"`, `"oráculo de facto"`) → todos 0. Las 3 referencias residuales a "A4.2c" son legítimas (esperan ese sub-paso, cuyas migraciones todavía no se han hecho).
+- **Cabecera REVIEW** sincronizada al timestamp de este commit.
+- **A4.2b vuelve a ✅ pero como "cerrado limpio en v10.53"** — el CHANGELOG y la bitácora REVIEW reconocen que v10.52 había declarado el cierre prematuramente.
+
+**Lección aplicada (lente Anthropic-first):** la regla "cada placeholder debe ser enlace limpio" requiere verificar **toda la zona reemplazada**, no solo las frases nominalmente movidas. Cuando una cabecera describe un proceso transicional, hay que reescribirla en cuanto la transición se completa — si no, el archivo entero queda contradiciéndose. La causa raíz es la misma de A4.2a: tratar la verificación como "buscar lo que sí debería estar fuera" en vez de "comprobar que la zona está limpia y solo es enlace".
+
+**Sin cambios de código.**
+
+---
+
+## [v10.52 — 2026-05-06] — A4.2b: migración del contenido decisional a `reglas-operativas.md`
+
+Cuarto sub-paso del refactor (parte b de A4.2). Movido a `reglas-operativas.md` todo el contenido decisional del prompt: precedencias entre tipos de elemento, criterios de asignación, reglas de población de cada campo, unidades atípicas.
+
+**Estructura final de `reglas-operativas.md`** (8 secciones, 208 líneas):
+
+1. Precedencia entre actividad / cuadro / nota / autoevaluación.
+2. Cómo asignar `tipo` (Distinción crítica `completa_huecos` vs `produccion_escrita_guiada` + nota sobre criterios implícitos del resto + política de la enumeración).
+3. Cómo asignar `tipo_cuadro` (5 valores con criterios + nota de ortogonalidad seccion/tipo_cuadro).
+4. Qué NO es un cuadro: "Para aprender" → actividad; "Observa" → nota.
+5. Reglas de población de cada campo: `vocabulario_consolidado` (criterios para los 3 bloques), `secciones` top-level (construcción del índice), `seccion` por página (tabla con oráculo), `respuestas` (contenido y formato), `audio/imagen/video` (cuándo `presente=true`), `campo_semantico` (cuándo aplica), `items_libro` (literalidad obligatoria).
+6. Cuándo se incluye u omite `autoevaluacion`.
+7. Reglas para unidades atípicas (procedimiento de 4 pasos).
+8. Estado del source of truth de las reglas decisionales tras A4.2b.
+
+**Hallazgo importante durante la ejecución:** A4.2a fue **más extensiva en pérdidas** de lo identificado en v10.51. Además de la "Distinción crítica" (la única que v10.51 detectó), el placeholder grande de A4.2a había absorbido también:
+
+- Reglas decisionales de `vocabulario_consolidado` (qué cuenta como `principal` / `recurrente` / `comprension`).
+- Reglas decisionales de `respuestas` (formatos para selección múltiple, V/F, cloze).
+- Reglas decisionales de `campo_semantico` (cuándo aplica + nota "liberal por ahora").
+- Reglas decisionales de `secciones` top-level (construcción del índice, secciones inexistentes vacías, `actividades_ids` en orden).
+
+Verificado con `grep` cruzado: estas frases existían en `cc1f18b` y no estaban en el prompt actual. **A4.2b las recupera todas** tomando como fuente `cc1f18b` (estado pre-refactor) y las migra directamente a `reglas-operativas.md`.
+
+**Cambios en `prompt.md`:** sección "Reglas decisionales provisionales" (Distinción crítica) reemplazada por línea-puente. Sección "Reglas para `datos.items_libro`" pierde solo la regla de literalidad (línea-puente a §5.7) — los ejemplos correctos/incorrectos siguen aquí provisionalmente, esperando A4.2c. Sección "Reglas para unidades atípicas" pierde los 4 pasos (línea-puente a §7) — el ejemplo JSON sigue, esperando A4.2c. Sección "Reglas para cuadros" entera reemplazada por línea-puente (todo era decisional). Total: prompt pasa de 290 → 260 líneas.
+
+**Verificación de anclas semánticas** (7 frases canónicas, todas pasan):
+
+| Ancla | reglas-operativas | prompt |
+|---|---|---|
+| Distinción crítica `completa_huecos` | 1 | 0 |
+| escribe texto nuevo | 1 | 0 |
+| vocabulario que aparece en varias secciones | 1 | 0 |
+| Selección múltiple, indicar la opción correcta | 1 | 0 |
+| campo semántico identificable | 1 | 0 |
+| "Para aprender" Cajas con consejos | 1 | 0 |
+| "Observa" Notas que llaman la atención | 1 | 0 |
+
+**Métricas finales A4.2b:**
+- `prompt.md`: 290 → 260 líneas (−30, total desde inicio del refactor: −287).
+- `schema-inventario.md`: 308 (sin cambios desde A4.2a).
+- `reglas-operativas.md`: 81 → 208 líneas (recibió todo el contenido decisional + recuperación).
+- `convenciones-y-casos.md`: 10 (esperando A4.2c).
+
+**Lección aplicada del riesgo operativo señalado por el revisor:** A4.2b incluye **canonización por primera vez** de criterios que estaban implícitos antes del refactor. Pero **no he inventado criterios nuevos**: solo he migrado lo que ya estaba explícito (en prompt actual o en `cc1f18b`) o he marcado como "no canonizado todavía, oráculo de facto en U0/U1/U3" lo que sigue implícito (resto de criterios para los 17 tipos más allá de `completa_huecos` vs `produccion_escrita_guiada`). La canonización progresiva ocurre por el flujo del paso A4.5 + casos editoriales nuevos, no aquí.
+
+**Estado del paso A4.2:** (a) ✅ schema · (b) ✅ reglas-operativas · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2c — migrar a `convenciones-y-casos.md` los ejemplos correctos/incorrectos de `items_libro`, las convenciones de transcripción (textos de lectura, diálogos, sopas de letras), sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", casos resueltos en U3, política de mejora continua, y el ejemplo JSON canónico de unidades atípicas.
+
+---
+
+## [v10.51 — 2026-05-06] — Cleanup pre-A4.2b parte 2: restaurar bloque decisional perdido en A4.2a
+
+El revisor sobre `68799b6` (v10.50): el hallazgo del source of truth de la taxonomía no quedó cerrado, solo reformulado. v10.50 alineó `prompt.md` y `reglas-operativas.md` para decir lo mismo, pero **lo que decían era falso**: ambos afirmaban "el contenido decisional canónico vive provisionalmente en `prompt.md`" cuando en el archivo real ese contenido **ya no estaba**. Verdad única alineada, pero sobre una premisa que el repo no sostenía.
+
+**Causa raíz:** el placeholder grande que metí en A4.2a (commit `668572f`, v10.47) absorbió por error de scope el bloque "Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`" del prompt pre-refactor (`cc1f18b:227-230`). Ese bloque era el **único contenido decisional explícito** sobre la taxonomía que tenía el prompt. Al sustituirlo por placeholder, dejé el archivo afirmando un source of truth que ya no existía físicamente.
+
+**Resolución (opción A del revisor):** restaurar la verdad para que la declaración sea verdadera.
+
+- **Bloque "Distinción crítica" recuperado** del commit pre-refactor `cc1f18b` y reinsertado en `prompt.md` como nueva sección **"Reglas decisionales provisionales (a migrar en A4.2b)"**. Texto idéntico al original, sin reescritura.
+- **Placeholder grande reformulado con honestidad sobre el estado real:**
+  - Distinción `completa_huecos` vs `produccion_escrita_guiada`: source of truth = `prompt.md` (sección restaurada).
+  - Resto de criterios para los 17 tipos: **no canonizados todavía en ningún archivo**, implícitos del dominio editorial; oráculo de facto = inventarios trackeados U0/U1/U3. Se canonizarán al construir `reglas-operativas.md` en A4.2b.
+  - 3 fragmentos absorbidos en v10.49 (autoevaluación opcional, mapeo de secciones, taxonomía revisable) viven en `reglas-operativas.md`.
+- **`reglas-operativas.md` alineado simétricamente** con la misma descripción del estado.
+
+**Verificación:**
+- `grep "Distinción crítica.*completa_huecos.*produccion_escrita_guiada" prompt.md` → línea 60 (presente).
+- `grep "escribe texto nuevo" prompt.md` → línea 62.
+- `grep "Regla práctica.*alumno tiene que escribir" prompt.md` → línea 64.
+
+El bloque restaurado coincide caracter por caracter con `cc1f18b`.
+
+**Por qué se hace ahora:** A4.2b va a migrar exactamente este contenido. Si arranca con la afirmación falsa de "ya está aquí" cuando no está, el sub-paso pierde su anclaje. Restaurar la verdad antes de migrar es prerequisito para que la migración signifique algo.
+
+**Lección registrada:** los placeholders de A4.2a fueron demasiado amplios. En A4.2b habrá que ser más quirúrgico al sustituir bloques por enlaces — verificar siempre que cada parte del bloque viejo tiene destino antes de borrarla del origen.
+
+**Sin cambios de código.** Solo restauración de contenido editorial perdido + alineación de redacciones.
+
+**Estado A4.2 tras este commit:** (a) ✅ schema migrado + frontera limpia · (b) 📋 reglas-operativas con adelanto parcial + bloque "Distinción crítica" pendiente de migrar desde prompt · (c) 📋 convenciones-y-casos.
+
+---
+
+## [v10.50 — 2026-05-06] — Cleanup pre-A4.2b: dos correcciones del revisor antes de arrancar
+
+Dos hallazgos del revisor sobre el commit anterior `40e123c` (v10.49). Ambos resueltos antes de tocar A4.2b para que el sub-paso arranque sin inconsistencias.
+
+**1 (Medio) — Doble verdad sobre source of truth de la taxonomía.**
+
+Tras v10.49, el placeholder de `prompt.md` decía:
+> *"Las reglas de población semántica (...distinción completa_huecos vs produccion_escrita_guiada) viven en reglas-operativas.md (se migran en A4.2b)."*
+
+Mientras `reglas-operativas.md` decía:
+> *"El criterio canónico para cada uno de los 17 tipos vive aún en prompt.md y se moverá aquí en el siguiente sub-paso."*
+
+Los dos archivos hablaban del mismo contenido en sentidos opuestos. La realidad: el contenido decisional canónico **sigue en `prompt.md`** hasta que A4.2b lo migre.
+
+**Resolución:** ambos archivos alineados a la verdad operativa. `prompt.md` ahora dice *"siguen viviendo provisionalmente en este `prompt.md` y se migrarán a `reglas-operativas.md` en A4.2b. Hasta que A4.2b cierre, el source of truth de esas reglas decisionales es este archivo"*. `reglas-operativas.md` confirma simétricamente *"vive provisionalmente en `prompt.md`... source of truth = `prompt.md`"*.
+
+**2 (Bajo) — Tabla de mapeo de secciones no alineada con la práctica.**
+
+En el adelanto parcial de v10.49, escribí en `reglas-operativas.md` la fila *"Reflexión / Autoevaluación / cierre → reflexion"*. Verificado contra los inventarios reales: las páginas de cierre con bloque `autoevaluacion` (U1-p21, U3-p43) usan `seccion: evaluacion`, no `reflexion`. Mi fila era una regla inventada sin avalar.
+
+Verificación programática:
+```
+U1 p21 (con bloque autoevaluacion top-level): seccion=evaluacion
+U3 p43 (con bloque autoevaluacion top-level): seccion=evaluacion
+```
+
+**Resolución:** tabla reescrita con una columna nueva "Avalado en" que cita los inventarios oráculo. La fila inventada se sustituye por *"Página de cierre de unidad con bloque `autoevaluacion` (U1-p21, U3-p43) → `evaluacion`"*. Sobre `reflexion` (que está en el enum del schema pero ningún inventario actual lo usa), se añade nota explícita: decisión diferida hasta primer caso real o hasta que A4.2b traiga la regla canónica desde el `prompt.md` actual. Mientras tanto, "usar `evaluacion` por consistencia con el oráculo".
+
+**Por qué se hace antes de A4.2b:** ambos defectos contaminan el sub-paso siguiente. La doble verdad sobre la taxonomía es exactamente el contenido que A4.2b va a migrar — arrancar sin alinear primero significaría arrastrar la inconsistencia. La regla inventada de `reflexion` se vería confirmada al ejecutar el smoke test post-A4.4 si no se corrige ahora.
+
+**Sin cambios de código.** Solo coherencia documental + alineación con el oráculo.
+
+---
+
+## [v10.49 — 2026-05-06] — Cleanup de A4.2a: 3 fugas decisionales retiradas de schema + métrica corregida
+
+Dos hallazgos del revisor sobre el commit `668572f` (v10.47, cierre de A4.2a). Ambos se aceptan:
+
+**1 (Medio) — Frontera schema/reglas no quedó limpia.** El revisor identificó 3 fragmentos decisionales que se habían colado en `schema-inventario.md` violando el principio "split por capa, no por campo":
+
+- **Fuga 1, §6 (autoevaluación):** "se omite en unidades atípicas que no tienen bloque (ej. U0)". El "cuándo se omite" es decisional según el mapeo de la sección 4 de `REFACTOR-PROPUESTA.md`. La forma "el bloque es opcional a nivel top-level" sí pertenece a schema.
+- **Fuga 2, §8 (enumeración seccion):** "Las páginas que continúan una sección usan la misma clave normalizada". Es regla de cómo determinar la sección, no parte de la enumeración cerrada.
+- **Fuga 3, §5 (taxonomía):** la nota "Provisional y revisable... Si aparece un caso que no encaja, se marca y se consulta al autor". Workflow editorial, no contrato de datos puro.
+
+**Resolución:** los 3 fragmentos se retiran de `schema-inventario.md` y se absorben en `reglas-operativas.md` como adelanto parcial de A4.2b. Donde antes había contenido decisional en schema queda ahora solo:
+- La forma estructural correspondiente.
+- Una **línea-puente** explícita del estilo "Cuándo / Cómo … → `reglas-operativas.md`".
+
+Verificación: grep del contenido decisional concreto → `reglas=1, schema=0` en cada uno de los 3 casos. La línea-puente sí aparece en schema, pero es referencia al destino, no contenido decisional.
+
+**2 (Bajo) — Métrica desalineada.** El CHANGELOG v10.47 y la bitácora REVIEW dijeron "300 líneas" para `schema-inventario.md` cuando el dato real era **302**. Repetición del patrón "cifras duras por aproximación" que ya se había marcado antes (v10.37). Métrica corregida en esta entrada con el valor exacto del momento de cierre de v10.49: `schema-inventario.md` 308 líneas (creció con las líneas-puente), `prompt.md` 290 (no cambia), `reglas-operativas.md` 75 (antes 8).
+
+**Cómo se documentó honestamente A4.2a:** el "cerrado limpio" de A4.2a queda matizado retroactivamente. La fila de la tabla de sub-pasos en REVIEW.md ahora dice "(a) ✅ schema migrado + 3 fugas decisionales absorbidas en v10.49"; refleja que A4.2a fue sustancialmente correcto pero requirió este cleanup para sostener la frontera. La lección recurrente: el revisor pidió en v10.37 verificar todas las filas de cualquier "evidencia dura"; aplicado aquí significa verificar también que la frontera por capas se respetó en todo el archivo, no solo en las anclas semánticas.
+
+**Estado A4.2 tras este commit:** (a) ✅ schema migrado + frontera limpia · (b) 📋 reglas-operativas con adelanto parcial ya hecho · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2b — continuar la migración de `reglas-operativas.md` con el resto del contenido decisional del prompt (ya enumerado al final del propio archivo en sección "Pendiente de A4.2b").
+
+---
+
+## [v10.48 — 2026-05-06] — Regla de tipología de verificaciones por sub-paso
+
+Antes de arrancar A4.2b, se documenta de forma explícita qué tipo de verificación corresponde a cada sub-paso del refactor. Sin esta regla, cabía la ambigüedad de tratar las verificaciones de anclas (locales, documentales) como si fueran pruebas funcionales, lo cual debilita el gate real de A4.5.
+
+**La regla, no negociable:**
+
+- **A4.2 → A4.4:** **solo checks locales de integridad documental.** Anclas semánticas, mapeo como checklist externo, ausencia de contenido movido en el origen, presencia en el destino, no-duplicación entre archivos. NO son pruebas funcionales — el inventario no se reextrae todavía. Estos checks atrapan errores de migración (perder texto, duplicarlo, mal asignar capa) pero no validan que los nuevos artefactos sirvan para extraer.
+- **A4.5:** **primera prueba funcional oficial.** Reextracción empírica de los 3 casos seleccionados (página rica + U0 completa + U1-p21) usando solo los nuevos artefactos. Diff vs JSON existente. Validador con 0 errores y 0 avisos.
+- **A4.5.5:** cross-check `schema-inventario.md` ↔ `scripts/validar_inventario.py`. Gate obligatorio antes del merge.
+
+**Smoke test opcional tras A4.4:** se permite hacer una comprobación temprana en chat para atrapar roturas obvias antes de A4.5 (archivo que no se carga, sección huérfana, referencia muerta). **NO cuenta como gate formal ni sustituye la prueba funcional de A4.5.**
+
+**Aplicado en:**
+- `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` §5: nota destacada al inicio del plan, antes del paso 0.
+- `REVIEW.md` bloque A4: eco breve tras la tabla de sub-pasos, con referencia al detalle en REFACTOR-PROPUESTA.md.
+
+**Por qué se documenta ahora:** la regla no es nueva en sustancia (ya estaba implícita en el diseño del paso A4.5 como prueba empírica), pero hacerla explícita evita que en sub-pasos posteriores alguien (incluido el ejecutor) confunda un check de ancla con un OK funcional. Es exactamente el patrón que el revisor pidió blindar con la "lente Anthropic-first": cada artefacto debe declarar qué tipo de validación lo respalda.
+
+Sin cambios de código.
+
+---
+
+## [v10.47 — 2026-05-06] — A4.2a: migración del contenido estructural a `schema-inventario.md`
+
+Tercer sub-paso del refactor (parte (a) de A4.2). Movido al nuevo `schema-inventario.md` todo el contenido del `prompt.md` actual cuya capa es **estructural** (forma del JSON, tipos, obligatoriedad, enumeraciones, restricciones validables sin contexto editorial).
+
+**Contenido migrado a `schema-inventario.md`** (300 líneas, 13 secciones):
+
+1. Estructura top-level (10 claves obligatorias + 1 opcional `_nota_unidad_atipica`).
+2. Schema por página.
+3. Schema por actividad (incluye declaración del saco `datos`).
+4. Schema por cuadro + nota canónica `tipo_cuadro` (categoría pedagógica) vs `contenido.tipo` (estructura interna).
+5. Taxonomía cerrada de 17 tipos de actividad.
+6. Schema del bloque de autoevaluación (top-level opcional) con valores fijos NC1.
+7. Enumeración cerrada de `tipo_cuadro` (5 valores).
+8. Enumeración cerrada de `seccion` (7 valores).
+9. Estructura de `vocabulario_consolidado` (3 sub-bloques con `_descripcion`).
+10. Estructura de `respuestas`, `campo_semantico`, `audio`/`imagen`/`video` con la restricción condicional `imagen.descripcion` obligatoria si `presente=true`.
+11. Schema de `_nota_unidad_atipica` como clave opcional contractual.
+12. Estructura de `datos.items_libro` (lista de strings, obligatoriedad por tipo de actividad — contrato paralelo con `validar_inventario.py:TIPOS_QUE_REQUIEREN_ITEMS`).
+13. Source of truth con `scripts/validar_inventario.py` (regla de no-divergencia explícita).
+
+**Frontera respetada:** todo el contenido de cuándo aplicar / cómo elegir / cómo poblar permaneció en su zona del prompt para migrar en A4.2b a `reglas-operativas.md`. Ej: la enumeración de los 17 tipos vive ahora en schema, pero la "Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`" sigue en prompt esperando A4.2b.
+
+**Cambios en `prompt.md`:** 9 secciones consecutivas (Esquema canónico, Esquema por página, por actividad, por cuadro, Bloque de autoevaluación, Taxonomía 17 tipos, Reglas para `vocabulario_consolidado`, `secciones`, `seccion`, `respuestas`, `audio/imagen/video`, `campo_semantico`) reemplazadas por **un único placeholder con enlace** al schema. `prompt.md` pasa de 547 → 290 líneas.
+
+**Verificación de anclas semánticas** (todas pasan):
+
+| Ancla | schema | prompt |
+|---|---|---|
+| `Taxonomía cerrada de tipos de actividad` | 1 | 0 |
+| `tipo_cuadro describe la categoría pedagógica` | 1 | 0 |
+| `Mis resultados en esta unidad son` | 2 | 0 |
+| `MUY BUENOS / BUENOS / NO MUY BUENOS` | 1 | 0 |
+
+**Estado del paso A4.2:** 🔄 (a) ✅ schema · (b) 📋 reglas-operativas · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2b — migrar a `reglas-operativas.md` (precedencias entre actividad/cuadro/nota/autoevaluación, reglas de población, distinción `completa_huecos` vs `produccion_escrita_guiada`, unidades atípicas, literalidad de `items_libro`).
+
+---
+
+## [v10.46 — 2026-05-06] — A4.1: tres archivos auxiliares creados con headers de identidad
+
+Segundo sub-paso del refactor documental de fase 1 (ver paso A4 en `REVIEW.md` y `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` sección 5 paso 1).
+
+**Archivos creados** en `fases/1-extraccion-inventario/`:
+
+- `schema-inventario.md` (8 líneas) — Contrato de datos puro. Forma del JSON, tipos, obligatoriedad, restricciones validables sin contexto editorial. Contrato paralelo con `scripts/validar_inventario.py`.
+- `reglas-operativas.md` (8 líneas) — Decisión, clasificación, población y unidades atípicas. **Single source of truth de precedencias.**
+- `convenciones-y-casos.md` (10 líneas) — Transcripción del libro al JSON + casebook de casos resueltos.
+
+Cada archivo lleva solo el header de responsabilidad: qué SÍ contiene, qué NO contiene, y referencia al mapeo de la sección 4 de `REFACTOR-PROPUESTA.md` para identificar qué se moverá en A4.2.
+
+**Ningún contenido editorial movido todavía.** `prompt.md` sigue intacto en 547 líneas. Eso es A4.2.
+
+**Verificación:** los 3 archivos existen físicamente (`ls fases/1-extraccion-inventario/`), tienen identidad clara y citan su origen. El `prompt.md` actual no se ha tocado — la migración fila por fila es el próximo sub-paso.
+
+**Próximo:** A4.2 (migrar contenido del `prompt.md` actual a los 3 destinos según el mapeo de la sección 4, aplicando split por capa, con verificación de anclas semánticas tras cada movimiento).
+
+---
+
+## [v10.45 — 2026-05-06] — Limpieza cosmética del setup de worktree
+
+Dos residuos bajos detectados por el revisor en el commit v10.44 (`a9f710e`). Ninguno bloqueante.
+
+**1. Tabla de estado del CHANGELOG con HEAD desfasado.** La tabla decía `guia-didactica-refactor/ ... e3ed91d` como HEAD del worktree, pero el propio commit v10.44 lo elevó a `a9f710e`. Es el problema clásico de documentar en un commit el estado tras ese mismo commit. Actualizado a `a9f710e` y añadida aclaración explícita: ese SHA es el HEAD "al cerrar v10.44"; el HEAD vivo cambia con cada commit del refactor — referencia a `git worktree list` para el estado actual del momento.
+
+**2. `REFACTOR-WORKTREE.md` con redacción residual.** Cerraba con "commit posterior bumpeará la versión a v10.44", redactado en futuro cuando ese commit ya había ocurrido. Reescrito como referencia retrospectiva al commit `a9f710e`/v10.44.
+
+Sin cambios operativos. Solo coherencia documental.
+
+---
+
+## [v10.44 — 2026-05-06] — A4.0 refinado: migración a worktree dedicado
+
+Tras dictamen del revisor con lente Anthropic-first: la rama `refactor/prompt-fase-1` se mueve de "checked out en el directorio original" a un **worktree dedicado** en `/Users/armandocruz/Desktop/guia-didactica-refactor/`. El directorio original vuelve a `main`.
+
+**Por qué esto es relevante (no es ceremonia):** la docs oficial de git establece que `git worktree add` crea un **checkout fresco** que **NO copia los archivos sin trackear** del checkout originante. En este repo eso se traduce en un beneficio concreto:
+
+- En el directorio original quedan los untracked de carriles paralelos: `unidades/U2/` y `viejo/_template/`.
+- En el worktree del refactor **no existen físicamente esos paths** (verificado con `ls`).
+- El trabajo de A4.1-A4.6 sucede en un árbol limpio, sin riesgo de mezcla accidental con esos untracked.
+
+Esto está alineado con la guía de Anthropic sobre Claude Code, que recomienda worktrees como mecanismo de aislamiento cuando el árbol principal acumula ruido.
+
+**Operaciones git ejecutadas:**
+- `git -C guia-didactica-profesor-IA checkout main` (devuelve el directorio original a `main`).
+- `git worktree add /Users/armandocruz/Desktop/guia-didactica-refactor refactor/prompt-fase-1` (crea el directorio del refactor en hermano).
+- Verificación: `git worktree list` muestra dos entradas; `ls` confirma ausencia de los untracked en el worktree.
+
+**Estado tras la migración:**
+
+| Directorio | Branch | HEAD | Untracked |
+|---|---|---|---|
+| `guia-didactica-profesor-IA/` | `main` | `cc1f18b` | `unidades/U2/`, `viejo/_template/` |
+| `guia-didactica-refactor/` | `refactor/prompt-fase-1` | `a9f710e` (HEAD al cerrar v10.44; vivo cambia con cada commit del refactor — ver `git worktree list`) | (ninguno) |
+
+**Documentación nueva:** `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` explica el setup paso a paso para que el autor pueda recuperar contexto si vuelve más tarde — incluye reglas de uso, comandos de verificación, procedimiento de cierre (merge + `git worktree remove`) y procedimiento de aborto.
+
+**Política operativa a partir de ahora:** todos los commits de A4.1 → A4.6 se hacen en el worktree (`guia-didactica-refactor/`). El directorio original solo se toca para inspeccionar `main` o trabajar en otros frentes (Bloque B, etc.).
+
+**Sin cambios en archivos editoriales del refactor.** Solo metadata git + documentación del setup.
+
+---
+
+## [v10.43 — 2026-05-06] — A4.0: tag pre-refactor + rama refactor/prompt-fase-1
+
+Primer sub-paso del refactor documental de fase 1 (ver paso A4 en `REVIEW.md` y `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` sección 5 paso 0).
+
+**Operaciones ejecutadas:**
+- `git tag pre-refactor-prompt-fase1` sobre HEAD del `main` (`cc1f18b`). Marcador inmutable de la base pre-refactor.
+- `git checkout -b refactor/prompt-fase-1`. Rama de trabajo creada y activa.
+- Verificación: `git rev-parse pre-refactor-prompt-fase1` y `git rev-parse HEAD` coinciden en `cc1f18b` (rama aún sin commits propios, parten del mismo punto).
+
+**Política de aislamiento:**
+- Todos los commits del refactor (A4.1 → A4.6) se hacen en `refactor/prompt-fase-1`, no en `main`.
+- `main` queda intacto en `cc1f18b` durante todo el refactor; el dashboard en producción (Railway) y el sistema activo siguen funcionando con el `prompt.md` viejo hasta que se mergee.
+- Si rollback: `git checkout main` (sin operaciones destructivas). La rama puede descartarse con `git branch -D refactor/prompt-fase-1` si no llegamos a mergear.
+
+**No hay cambios en archivos editoriales** todavía. Solo metadata git (tag + rama) + actualización de bitácoras.
+
+**Próximo:** A4.1 (crear los 3 archivos auxiliares vacíos con headers: `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`).
+
+---
+
 ## [v10.42 — 2026-05-06] — Limpieza grep: anotaciones inline en entradas históricas con rango "27-33"
 
 Hallazgo bajo no bloqueante del revisor: tras v10.41 (renumeración 27-33 → 28-34), dos entradas históricas seguían siendo grep-ables con el rango viejo "27-33" sin que el contexto del fix apareciera en la misma línea:

@@ -202,8 +202,11 @@
         {
           "id": "U0-p8-act01",
           "numero": 1,
-          "tipo": "escucha_y_repite",
-          "destreza": "comprension_oral",
+          "tipo": "escucha",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
           "instruccion_original": "¿Dónde se habla español? Mira el mapa y escucha el nombre de los países. Observa la pronunciación.",
           "contenido_linguistico": [
             "nombres de los 20 países hispanohablantes"
@@ -244,13 +247,17 @@
               "Argentina",
               "Uruguay"
             ]
-          }
+          },
+          "enfoque": "vocabulario"
         },
         {
           "id": "U0-p8-act02",
           "numero": 2,
           "tipo": "interaccion_oral",
-          "destreza": "produccion_escrita + interaccion_oral",
+          "destreza": [
+            "expresion_escrita",
+            "interaccion_oral"
+          ],
           "instruccion_original": "Cierra el libro y escribe una lista de países donde se habla español. Compara tus respuestas con tu compañero. ¿Quién tiene más países?",
           "contenido_linguistico": [
             "nombres de países hispanohablantes (recuperación de memoria)"
@@ -266,7 +273,8 @@
             "presente": false
           },
           "respuestas": [],
-          "datos": {}
+          "datos": {},
+          "enfoque": "vocabulario"
         }
       ]
     },
@@ -278,7 +286,9 @@
           "id": "U0-p9-act03",
           "numero": 3,
           "tipo": "relaciona",
-          "destreza": "comprension_lectora",
+          "destreza": [
+            "comprension_lectora"
+          ],
           "instruccion_original": "¿Cuántas palabras conoces en español? Relaciona los nombres con su imagen.",
           "contenido_linguistico": [
             "vocabulario internacional / cognados"
@@ -332,13 +342,17 @@
               "15. euro"
             ],
             "_nota": "Las palabras aparecen con la sílaba tónica subrayada en el libro. Convención válida hasta U3 (ver nota al pie del libro). El primer ítem 'banco' se da como ejemplo (relacionado con la imagen 'h')."
-          }
+          },
+          "enfoque": "vocabulario"
         },
         {
           "id": "U0-p9-act04",
           "numero": 4,
           "tipo": "escucha_y_repite",
-          "destreza": "comprension_oral + produccion_oral",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
           "instruccion_original": "Escucha y repite las palabras anteriores.",
           "contenido_linguistico": [
             "las 16 palabras del ejercicio 3"
@@ -355,7 +369,8 @@
             "presente": false
           },
           "respuestas": [],
-          "datos": {}
+          "datos": {},
+          "enfoque": "vocabulario"
         }
       ]
     },
@@ -367,7 +382,10 @@
           "id": "U0-p10-act05",
           "numero": 5,
           "tipo": "escucha_y_repite",
-          "destreza": "comprension_oral + produccion_oral",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
           "instruccion_original": "Escucha y repite.",
           "contenido_linguistico": [
             "abecedario español: nombres de las 27 letras + palabra ejemplo de cada una"
@@ -504,7 +522,8 @@
               "- w (ve doble, doble uve, doble ve, doble u)",
               "En español estas combinaciones de letras representan un único sonido: ch / ll / gu / qu / rr."
             ]
-          }
+          },
+          "enfoque": "fonetica"
         }
       ]
     },
@@ -516,7 +535,10 @@
           "id": "U0-p11-act06",
           "numero": 6,
           "tipo": "escucha_y_repite",
-          "destreza": "comprension_oral + produccion_oral",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
           "instruccion_original": "Escucha y practica.",
           "contenido_linguistico": [
             "combinaciones ortográficas: c/qu, j/g, g/gu, z/c"
@@ -567,13 +589,16 @@
                 "cine"
               ]
             }
-          }
+          },
+          "enfoque": "fonetica"
         },
         {
           "id": "U0-p11-act07",
           "numero": 7,
           "tipo": "expresion_oral_libre",
-          "destreza": "produccion_oral",
+          "destreza": [
+            "expresion_oral"
+          ],
           "instruccion_original": "Deletrea en voz alta.",
           "contenido_linguistico": [
             "nombres de las letras + nombres de países"
@@ -615,13 +640,16 @@
               "9. Guatemala",
               "10. Bolivia"
             ]
-          }
+          },
+          "enfoque": "fonetica"
         },
         {
           "id": "U0-p11-act08",
           "numero": 8,
-          "tipo": "escucha_y_responde",
-          "destreza": "comprension_oral + produccion_escrita",
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva"
+          ],
           "instruccion_original": "Escucha y escribe.",
           "contenido_linguistico": [
             "dictado deletreado: el alumno escucha letras y reconstruye palabras"
@@ -663,13 +691,16 @@
               "10. _____"
             ],
             "_nota": "El primer ítem se da resuelto como ejemplo. Los items 7 y 8 muestran la misma respuesta en el libro ('limón'); puede ser un error tipográfico del libro o una repetición intencional."
-          }
+          },
+          "enfoque": "fonetica"
         },
         {
           "id": "U0-p11-act09",
           "numero": 9,
-          "tipo": "escucha_y_responde",
-          "destreza": "comprension_oral + produccion_escrita",
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva"
+          ],
           "instruccion_original": "Escucha y escribe los números del 0 al 10.",
           "contenido_linguistico": [
             "números cardinales 0-10"
@@ -713,13 +744,17 @@
               "9 _____",
               "10 _____"
             ]
-          }
+          },
+          "enfoque": "fonetica"
         },
         {
           "id": "U0-p11-act10",
           "numero": 10,
           "tipo": "expresion_oral_libre",
-          "destreza": "mediacion + produccion_oral",
+          "destreza": [
+            "expresion_oral",
+            "mediacion"
+          ],
           "instruccion_original": "Para la clase. ¿Cómo se dice en tu lengua?",
           "contenido_linguistico": [
             "frases-instrucciones de aula básicas"
@@ -747,7 +782,8 @@
               "7. ¿Cómo se dice en español hello?",
               "8. ¿Cómo se escribe en español hola?"
             ]
-          }
+          },
+          "enfoque": "comunicacion"
         }
       ],
       "cuadros": [

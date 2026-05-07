@@ -19,7 +19,7 @@ CLAVES_TOP = {"unidad", "curso", "titulo", "paginas_libro", "nivel", "fuente",
               "contenidos_indice", "vocabulario_consolidado", "secciones",
               "paginas_detalle"}
 
-CLAVES_TOP_OPCIONALES = {"autoevaluacion"}
+CLAVES_TOP_OPCIONALES = {"autoevaluacion", "_nota_unidad_atipica"}
 
 SECCIONES_CANONICAS = {"vocabulario", "gramatica", "comunicacion", "destrezas",
                        "cultura", "evaluacion", "reflexion"}
@@ -29,20 +29,60 @@ TIPOS_CUADRO_VALIDOS = {
 }
 
 TIPOS_VALIDOS = {
-    "escucha_y_repite", "escucha_y_responde", "completa_huecos", "relaciona",
-    "ordena", "clasifica", "seleccion_multiple", "verdadero_falso",
-    "interaccion_oral",           # parejas / grupos (antes: produccion_oral_pareja)
-    "expresion_oral_libre",       # producción oral sin guía (antes: produccion_oral_libre)
-    "produccion_escrita_guiada",  # escribir frases guiadas, rellenar huecos escribiendo
-    "expresion_escrita_libre",    # producción escrita sin guía (antes: produccion_escrita_libre)
-    "comprension_lectora", "comprension_auditiva", "busqueda_informacion",
-    "tarea_final", "juego",
+    # Taxonomía v10.59 — basada en la acción específica del enunciado del libro.
+    # input sin acción específica posterior
+    "escucha",                    # "Escucha" / "Mira X y escucha" — input puro auditivo, sin lectura de texto
+    "lee_y_escucha",              # "Lee y escucha" / "Lee y escucha el diálogo"
+    "ver_video",                  # "Mira el vídeo"
+    # acciones orales reproductivas/responsivas
+    "escucha_y_repite",
+    "escucha_y_responde",
+    # mecánicas de manipulación de elementos dados
+    "completa_huecos",            # "Completa", "Lee y completa", "Escucha y completa"
+    "relaciona",
+    "ordena",
+    "clasifica",
+    "seleccion_multiple",         # "Subraya", "Marca", "Escucha y marca"
+    "verdadero_falso",
+    # responder preguntas (separados por tipo de respuesta)
+    "responder_preguntas_cerradas",  # respuesta concreta que sale del input
+    "responder_preguntas_abiertas",  # respuesta personal/libre
+    # producción oral
+    "interaccion_oral",           # parejas / grupos
+    "expresion_oral_libre",
+    # producción escrita
+    "produccion_escrita_guiada",  # "Escribe frases con", "Forma frases", "Coloca el artículo"
+    "expresion_escrita_libre",    # "Escribe a tu amigo", "Escribe un correo"
+    # otros
+    "busqueda_informacion",
+    "tarea_final",
+    "juego",
+}
+
+DESTREZAS_VALIDAS = {
+    "comprension_auditiva",
+    "comprension_lectora",
+    "expresion_escrita",
+    "expresion_oral",
+    "interaccion_oral",
+    "mediacion",
+}
+
+ENFOQUES_VALIDOS = {
+    "gramatica",
+    "vocabulario",
+    "comunicacion",
+    "fonetica",
+    "cultura",
+    "transversal",
 }
 
 # Tipos de actividad que deben llevar items_libro u otro contenido visible
 TIPOS_QUE_REQUIEREN_ITEMS = {
     "completa_huecos", "relaciona", "ordena", "clasifica",
     "seleccion_multiple", "verdadero_falso",
+    "responder_preguntas_cerradas", "responder_preguntas_abiertas",
+    "lee_y_escucha", "ver_video",
 }
 
 CONTENIDOS_VISIBLES = {
@@ -51,6 +91,7 @@ CONTENIDOS_VISIBLES = {
     "palabras_recuadro", "cuadricula", "afirmaciones_a_corregir",
     "texto_correo", "frases_libro", "respuestas_libro",
     "expresiones_dadas", "definiciones",
+    "ejemplos_modelo", "programas_tv", "horarios_digitales",
 }
 
 
@@ -174,12 +215,40 @@ def validar(path):
                     else:
                         ids_vistos.add(aid)
 
+                    # numero: opcional, pero si está presente debe ser int (schema §3.1)
+                    if "numero" in a and not isinstance(a["numero"], int):
+                        errores.append(f"❌ {apref}: 'numero' debe ser int si está presente")
+
                     # tipo válido
                     tipo = a.get("tipo")
                     if not tipo:
                         errores.append(f"❌ {apref}: falta 'tipo'")
                     elif tipo not in TIPOS_VALIDOS:
                         errores.append(f"❌ {apref}: tipo '{tipo}' no es de la taxonomía cerrada")
+
+                    # destreza: lista no vacía, valores del enum cerrado, orden alfabético, sin duplicados
+                    if "destreza" not in a:
+                        errores.append(f"❌ {apref}: falta 'destreza' (lista de valores del enum cerrado)")
+                    elif not isinstance(a["destreza"], list):
+                        errores.append(f"❌ {apref}: 'destreza' debe ser lista (no string)")
+                    elif len(a["destreza"]) == 0:
+                        errores.append(f"❌ {apref}: 'destreza' no puede ser lista vacía")
+                    else:
+                        for d in a["destreza"]:
+                            if d not in DESTREZAS_VALIDAS:
+                                errores.append(f"❌ {apref}: destreza '{d}' no válida (enum: {sorted(DESTREZAS_VALIDAS)})")
+                        if len(set(a["destreza"])) != len(a["destreza"]):
+                            errores.append(f"❌ {apref}: 'destreza' contiene duplicados")
+                        if a["destreza"] != sorted(a["destreza"]):
+                            errores.append(f"❌ {apref}: 'destreza' debe estar en orden alfabético — actual {a['destreza']}, esperado {sorted(a['destreza'])}")
+
+                    # enfoque: string obligatorio del enum cerrado
+                    if "enfoque" not in a:
+                        errores.append(f"❌ {apref}: falta 'enfoque' (string del enum cerrado)")
+                    elif not isinstance(a["enfoque"], str):
+                        errores.append(f"❌ {apref}: 'enfoque' debe ser string")
+                    elif a["enfoque"] not in ENFOQUES_VALIDOS:
+                        errores.append(f"❌ {apref}: enfoque '{a['enfoque']}' no válido (enum: {sorted(ENFOQUES_VALIDOS)})")
 
                     # respuestas siempre presente como lista
                     if "respuestas" not in a:

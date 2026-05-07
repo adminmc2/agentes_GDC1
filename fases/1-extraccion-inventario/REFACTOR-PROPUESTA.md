@@ -259,6 +259,14 @@ Muchas filas se parten en dos destinos (capa estructural + capa decisional). Es 
 
 ## 5. Plan de ejecución paso a paso
 
+> **Tipología de verificaciones por sub-paso (no negociable):**
+>
+> - **A4.2 → A4.4** = **checks locales de integridad documental.** Verificación de anclas semánticas (cada frase canónica aparece en exactamente un destino y desaparece de la zona reemplazada por placeholder en `prompt.md`), recorrido del mapeo de la sección 4 como checklist externo, comprobación de no-duplicación entre archivos. **NO son pruebas funcionales** — el inventario no se reextrae todavía.
+> - **A4.5** = **primera prueba funcional oficial.** Reextracción empírica de los 3 casos seleccionados (página rica + U0 completa + U1-p21) usando solo los nuevos artefactos. Diff vs JSON existente. Pasa el validador con 0 errores y 0 avisos.
+> - **A4.5.5** = **cross-check `schema-inventario.md` ↔ `scripts/validar_inventario.py`** antes de considerar el cierre seguro. Gate obligatorio antes del merge.
+>
+> **Smoke test opcional tras A4.4:** se permite hacer una comprobación temprana en chat para detectar roturas obvias antes de entrar en A4.5. **NO cuenta como gate formal ni como prueba funcional definitiva.** Sirve solo para atrapar regresiones evidentes (ej. archivo que no se carga, sección huérfana). La validación real sigue siendo la reextracción empírica del paso A4.5.
+
 ### Paso 0 — Congelar la base y trabajar en rama
 - Crear tag git `pre-refactor-prompt-fase1` sobre HEAD actual (marcador inmutable).
 - Crear rama `refactor/prompt-fase-1` y trabajar en ella.
