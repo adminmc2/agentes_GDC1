@@ -3,6 +3,20 @@
 
 ---
 
+## [v10.63 — 2026-05-07] — Fix de drift post-v10.60 en CLAUDE.md de fase
+
+Hallazgo durante la re-revisión del componente 1: la tabla "Para qué consultar qué archivo" (línea 45) listaba las decisiones que viven en `reglas-operativas.md` mencionando solo `tipo` y `tipo_cuadro`. Tras v10.60 hay 4 ejes decisionales (`tipo`/`destreza`/`enfoque`/`tipo_cuadro`); un usuario que llegaba buscando "¿cómo decido la destreza?" no encontraba puntero claro.
+
+**Fix quirúrgico:** una línea — añadidos `destreza` y `enfoque` a la enumeración de decisiones que el archivo `reglas-operativas.md` cubre.
+
+**Las 5 "Reglas críticas" del CLAUDE de fase (líneas 29-35) NO se tocan.** Verificadas como reglas de contrato (no operativas) tanto por el revisor como por re-revisión propia: literalidad del libro, no inventar, single source of truth, validar antes de cerrar, no divergencia schema/validador. Pasan ambos tests (Anthropic + decisión de proyecto sobre single source of truth).
+
+**Sin cambios en otros archivos.** CLAUDE.md de fase: 60 líneas (norte 40-60 cumplido).
+
+**Próximo:** componente 4 — `reglas-operativas.md`.
+
+---
+
 ## [v10.62 — 2026-05-07] — Cierre del componente 3 (schema-inventario.md): 3 fixes accionables del revisor
 
 Revisión del componente 3 con 3 hallazgos accionables cerrados en este commit.

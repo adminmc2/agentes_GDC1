@@ -42,7 +42,7 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 |---|---|
 | ¿Cuál es el flujo operativo de la extracción? ¿Qué pasos sigo? | `prompt.md` |
 | ¿Cuál es el shape del JSON? ¿Qué tipos, qué claves, qué enumeraciones? | `schema-inventario.md` |
-| ¿Cómo decido X? (precedencias actividad/cuadro/nota/autoevaluación, asignación de `tipo` y `tipo_cuadro`, "Para aprender" / "Observa", reglas de población de campos, unidades atípicas) | `reglas-operativas.md` |
+| ¿Cómo decido X? (precedencias actividad/cuadro/nota/autoevaluación, asignación de `tipo`/`destreza`/`enfoque`/`tipo_cuadro`, "Para aprender" / "Observa", reglas de población de campos, unidades atípicas) | `reglas-operativas.md` |
 | ¿Cómo transcribo X del libro al JSON? (sílaba tónica subrayada, primer ítem resuelto, textos de lectura, diálogos, sopas de letras) | `convenciones-y-casos.md` §1 |
 | ¿Cómo se ve un cloze, una selección múltiple, un cuestionario en el JSON? | `convenciones-y-casos.md` §2-3 |
 | ¿Hubo un caso similar antes en una extracción real? | `convenciones-y-casos.md` §4 (casebook) |
