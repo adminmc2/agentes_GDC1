@@ -160,16 +160,19 @@ Estructura por página:
 Estructura por actividad:
 - `id` (str): único, formato `UX-pYY-actNN`.
 - `numero` (int): orden en la unidad.
-- `tipo` (str): de la **taxonomía cerrada de 20 tipos** (lista provisional, se revisa al cerrar cada unidad nueva; ver `fases/1-extraccion-inventario/schema-inventario.md` §5):
+- `tipo` (str): de la **taxonomía cerrada de 20 tipos** (lista provisional, se revisa al cerrar cada unidad nueva; source of truth: `fases/1-extraccion-inventario/schema-inventario.md` §5):
   ```
-  escucha_y_repite, escucha_y_responde, completa_huecos, relaciona, ordena, clasifica,
+  escucha, escucha_y_repite, escucha_y_responde, lee_y_escucha, ver_video,
+  completa_huecos, relaciona, ordena, clasifica,
   seleccion_multiple, verdadero_falso,
+  responder_preguntas_cerradas, responder_preguntas_abiertas,
   interaccion_oral, expresion_oral_libre,
   produccion_escrita_guiada, expresion_escrita_libre,
-  comprension_lectora, comprension_auditiva, busqueda_informacion, tarea_final, juego
-  (v10.25: terminología ELE — interaccion_oral, expresion_oral_libre, expresion_escrita_libre)
+  busqueda_informacion, tarea_final, juego
   ```
-- `destreza` (str): destreza(s) trabajada(s).
+  Cambios desde v10.25: terminología ELE (`interaccion_oral`, `expresion_oral_libre`, `expresion_escrita_libre`); v10.59 reescribió taxonomía con regla "tipo = acción específica del enunciado" y separó `responder_preguntas_cerradas`/`abiertas`; v10.64 añadió `escucha` (input puro auditivo, ampliación 19→20).
+- `destreza` (lista de strings, alfabética, sin duplicados): habilidad(es) MCER puras de la enumeración cerrada de 6 valores (`comprension_auditiva`, `comprension_lectora`, `expresion_escrita`, `expresion_oral`, `interaccion_oral`, `mediacion`). Ver `schema-inventario.md` §5b. Reformulada en v10.60 (separación habilidad/dominio) y refinada en v10.64.
+- `enfoque` (str): dominio de contenido pedagógico de la enumeración cerrada de 6 valores (`gramatica`, `vocabulario`, `comunicacion`, `fonetica`, `cultura`, `transversal`). Eje ortogonal a `destreza` y a `seccion`. Ver `schema-inventario.md` §5c. Introducido en v10.60 con la separación de ejes.
 - `instruccion_original` (str): texto literal del libro.
 - `contenido_linguistico` (array de strings).
 - `campo_semantico` (str, opcional): cuando aplica (actividades de vocabulario).
@@ -773,11 +776,9 @@ Detectados por revisor el 2026-05-05. Decisiones tomadas por el autor el 2026-05
 
 - **B4 — `_normSeccion` no fusiona pestañas `(cont.)`.** ✅ **Sin acción.** Cosmético. Se resuelve automáticamente cuando U3 migre al nuevo schema con claves normalizadas (`vocabulario`, `gramatica`...) y `_normSeccion` se elimine.
 
-### Sobre la implementación (a escribir cuando lleguemos)
-- (Eliminado: el prompt `fases/1-extraccion-inventario/prompt.md` ya está escrito y operativo.)
-- Scripts Python: `validar_inventario.py`, `regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`.
-- Plantilla HTML del informe por unidad e integración en dashboard (paso B del plan).
-- (Eliminado: la migración de U3 al nuevo schema ya se hizo en raíz; no aplica).
+### Sobre la implementación pendiente
+- Scripts Python: `regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py` (a escribir; `validar_inventario.py` ya operativo).
+- Refinamiento visual de la **vista HTML dinámica** del inventario en el dashboard (paso B del plan): afinar plantilla (estructura de secciones, colores, qué muestra primero) y extender la vista a los 3 JSON globales cuando esos esquemas estén poblados. La vista existe y funciona; lo pendiente es refinamiento, no implementación inicial. Ver decisión 25 (Parte 4) y la aclaración de redacción cerrada en v10.71.
 - Protocolo formal de validación visual PDF vs JSON.
 
 ---

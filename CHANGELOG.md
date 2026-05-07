@@ -3,6 +3,26 @@
 
 ---
 
+## [v10.74b — 2026-05-07] — Cierre del pase de coherencia tras dictamen del revisor sobre v10.74
+
+Hallazgos del revisor sobre v10.74: la actualización fue parcial en 2 sitios:
+
+**1. PROCESO-MAESTRO.md líneas 163-180 (estructura por actividad).** v10.74 actualizó el titular a "20 tipos" pero la enumeración debajo seguía listando 17 valores (faltaban `escucha`, `lee_y_escucha`, `ver_video`, `responder_preguntas_cerradas`, `responder_preguntas_abiertas`); además el shape de actividad seguía describiendo `destreza` como string sin mencionar el nuevo campo `enfoque` introducido en v10.60. Drift incompleto del corazón del contrato.
+
+**Fix:** enumeración real de 20 tipos completa; `destreza` reescrita como "lista de strings, alfabética, sin duplicados" con enum cerrado de 6 valores y referencia a schema §5b; **`enfoque` añadido** como nuevo bullet con su enum cerrado de 6 y referencia a schema §5c. Cita de qué cambió en cada versión (v10.25, v10.59, v10.60, v10.64).
+
+**2. PROCESO-MAESTRO.md línea 779 ("Sobre la implementación a escribir cuando lleguemos").** Seguía diciendo "Plantilla HTML del informe por unidad e integración en dashboard (paso B del plan)", reabriendo el modelo viejo de informe estático que v10.71 había cerrado.
+
+**Fix:** sección renombrada a "Sobre la implementación pendiente" (sin "a escribir" que sugería que nada está hecho); el bullet del informe HTML reescrito a "Refinamiento visual de la **vista HTML dinámica**" — la vista existe y funciona, lo pendiente es refinamiento visual y extensión a los 3 JSON globales.
+
+**Efecto:** v10.74 ahora cerrada limpia. Archivos vivos sin drift sobre Fase 1 ni sobre la vista HTML.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.75 (archivar CHANGELOG pre-v10.40). Paralelización de extracciones autorizada con base documental ya limpia.
+
+---
+
 ## [v10.74 — 2026-05-07] — Pase de coherencia documental: drift en PROCESO-MAESTRO + REVIEW
 
 Bloqueante para la limpieza/compactación posterior (v10.75-77) y para la apertura de chats paralelos de extracción. Mientras los archivos vivos describan el sistema con datos obsoletos, cualquier compactación consolida información incorrecta y los chats nuevos heredan drift.
