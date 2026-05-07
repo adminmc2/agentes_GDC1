@@ -3,6 +3,23 @@
 
 ---
 
+## [v10.71 — 2026-05-07] — Ajuste de redacción en PROCESO-MAESTRO sobre informe HTML / vista dinámica del dashboard
+
+Observación post-merge: la decisión 25 de `PROCESO-MAESTRO.md` (línea 705) y la entrada de bitácora del 2026-05-05 (línea 845) hablaban de "**generar además un informe HTML visual**" como si la fase 1 produjera un segundo artefacto HTML estático. La implementación real (verificada por el revisor en `diagrama.py:245/980/983` y `web/index.html:341/595/647`) confirma que **el JSON es el único output de la fase**, y que la "vista HTML" es una **renderización dinámica** que el dashboard genera al vuelo desde el JSON. No existe ningún paso de generación de HTML estático por unidad.
+
+**Drift detectado:** el lenguaje "genera además" en PROCESO-MAESTRO sugería un segundo artefacto que en realidad nunca existió como archivo. Los archivos de fase 1 (CLAUDE.md, prompt.md) ya estaban correctos declarando un único output JSON.
+
+**Fix quirúrgico (2 líneas en PROCESO-MAESTRO.md):**
+
+- **Decisión 25 (línea 705)** — reescrita: *"Cada extracción de inventario produce un JSON por unidad. Ese JSON queda además disponible como vista HTML dinámica integrada en el dashboard existente (`web/index.html`), sin generar por ahora un archivo HTML independiente."*
+- **Bitácora 2026-05-05 (línea 845)** — final reescrito: *"El dashboard ofrece una vista HTML dinámica integrada del inventario JSON (`web/index.html`); no existe actualmente un artefacto HTML estático adicional por unidad."*
+
+**Sin tocar:** archivos de fase 1 (ya fieles al sistema real), líneas 232/680/815 de PROCESO-MAESTRO (coherentes con la nueva redacción).
+
+**Sin cambios funcionales en código.** Solo coherencia documental.
+
+---
+
 ## [v10.70 — 2026-05-07] — Regla 3 de `CLAUDE.md` de fase reformulada para que describa la realidad del sistema
 
 Observación post-merge del revisor: la regla 3 ("Single source of truth por capa") prohibía duplicación entre `prompt.md`, `schema-inventario.md`, `reglas-operativas.md` y `convenciones-y-casos.md` — pero **excluía tácitamente al propio `CLAUDE.md` de fase**. La duplicación contractual real entre `CLAUDE.md` y `prompt.md` (objetivo, input/output, invocación, validación mínima, literalidad, convención root-relative, framing SSoT) sobrevivía al refactor sin estar contemplada en la regla.
