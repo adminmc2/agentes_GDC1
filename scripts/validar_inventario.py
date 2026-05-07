@@ -19,7 +19,7 @@ CLAVES_TOP = {"unidad", "curso", "titulo", "paginas_libro", "nivel", "fuente",
               "contenidos_indice", "vocabulario_consolidado", "secciones",
               "paginas_detalle"}
 
-CLAVES_TOP_OPCIONALES = {"autoevaluacion"}
+CLAVES_TOP_OPCIONALES = {"autoevaluacion", "_nota_unidad_atipica"}
 
 SECCIONES_CANONICAS = {"vocabulario", "gramatica", "comunicacion", "destrezas",
                        "cultura", "evaluacion", "reflexion"}
@@ -213,6 +213,10 @@ def validar(path):
                         errores.append(f"❌ {apref}: id duplicado")
                     else:
                         ids_vistos.add(aid)
+
+                    # numero: opcional, pero si está presente debe ser int (schema §3.1)
+                    if "numero" in a and not isinstance(a["numero"], int):
+                        errores.append(f"❌ {apref}: 'numero' debe ser int si está presente")
 
                     # tipo válido
                     tipo = a.get("tipo")

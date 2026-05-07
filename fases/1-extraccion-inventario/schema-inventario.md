@@ -68,7 +68,7 @@
 ```jsonc
 {
   "id": "UX-pYY-actNN",
-  "numero": <int>,
+  "numero": <int opcional — ver nota §3.1>,
   "tipo": <de la taxonomía cerrada — ver §5>,
   "destreza": [<de la enumeración cerrada — ver §5b>],
   "enfoque": <de la enumeración cerrada — ver §5c>,
@@ -111,6 +111,12 @@
 ```
 
 > **Política de extensibilidad de `datos`:** saco abierto. Cualquier campo nuevo que no esté en la lista anterior se documenta y se añade al schema con la regla de población correspondiente en `reglas-operativas.md`.
+
+### 3.1 Nota sobre `numero`
+
+El campo `numero` es **opcional**. La mayoría de actividades del libro están numeradas (1, 2, 3...) y en ese caso `numero` se rellena con el entero del libro. Algunas actividades NO llevan número visible (ej. "Para aprender", cuadros que se clasifican como actividad por reglas-operativas §1, autoevaluación a pie de página): en esos casos `numero` se omite del JSON. El validador acepta su ausencia. Si está presente, debe ser entero.
+
+> Cuándo numerar y cuándo omitir → `reglas-operativas.md` §1.
 
 ---
 
@@ -353,9 +359,18 @@ Objeto con exactamente 3 sub-bloques nombrados, cada uno con la misma estructura
 
 Este archivo y `scripts/validar_inventario.py` son **contratos paralelos del mismo shape**. La regla de no-divergencia es estricta:
 
-- Cada clave declarada **obligatoria** aquí debe ser chequeada como obligatoria por el validador.
-- Cada **enumeración cerrada** (19 tipos de actividad, 5 valores de `tipo_cuadro`, 7 secciones canónicas, 3 opciones canónicas de autoevaluación NC1) debe ser rechazada por el validador si aparece un valor fuera del set.
-- Cada **restricción condicional** (ej. `imagen.descripcion` obligatoria si `imagen.presente=true`, `autoevaluacion` con valores fijos NC1 cuando `curso=="nc1"`) debe ser aplicada por el validador.
+- Cada clave declarada **obligatoria** aquí debe ser chequeada como obligatoria por el validador. En particular, los 3 ejes obligatorios por actividad (`tipo`, `destreza`, `enfoque`) y los sub-objetos `audio`/`imagen`/`video` con su clave `presente`.
+- Cada **enumeración cerrada** debe ser rechazada por el validador si aparece un valor fuera del set:
+  - `tipo`: 19 valores (§5)
+  - `destreza`: 6 valores (§5b)
+  - `enfoque`: 6 valores (§5c)
+  - `tipo_cuadro`: 5 valores (§7)
+  - `seccion`: 7 valores (§8)
+  - `autoevaluacion.opciones` NC1: 3 valores fijos (§6)
+- Cada **restricción condicional** debe ser aplicada por el validador:
+  - `imagen.descripcion` obligatoria si `imagen.presente=true` (§10).
+  - `autoevaluacion` con valores fijos NC1 cuando `curso=="nc1"` (§6).
+  - `destreza` en orden alfabético, sin duplicados (§5b).
 - Cada **clave opcional declarada** (`autoevaluacion`, `_nota_unidad_atipica`) debe estar en `CLAVES_TOP_OPCIONALES` del validador para que no emita aviso.
 
 **Si se detecta divergencia,** se resuelve **antes del merge** alineando uno de los dos artefactos en commit aparte. La divergencia no es un estado válido de cierre del refactor (ver `REFACTOR-PROPUESTA.md` paso 5.5).

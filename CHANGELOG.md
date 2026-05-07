@@ -3,6 +3,22 @@
 
 ---
 
+## [v10.62 — 2026-05-07] — Cierre del componente 3 (schema-inventario.md): 3 fixes accionables del revisor
+
+Revisión del componente 3 con 3 hallazgos accionables cerrados en este commit.
+
+**F0 (Bloqueante) — Divergencia real schema↔validador en `_nota_unidad_atipica`.** El schema §11 declara la clave como contractual y opcional, y exige que el validador la incluya en `CLAVES_TOP_OPCIONALES`. El validador solo tenía `{"autoevaluacion"}`, por lo que U0 emitía aviso "Claves top-level no canónicas: ['_nota_unidad_atipica']" — divergencia real con el schema. **Fix:** añadido `_nota_unidad_atipica` a `CLAVES_TOP_OPCIONALES`. U0 ahora valida sin avisos espurios. Schema y validador alineados.
+
+**F1 (Medio) — §13 desactualizada tras v10.60.** La sección "Source of truth con validar_inventario.py" listaba las enumeraciones cerradas (19 tipos / 5 tipo_cuadro / 7 secciones / 3 opciones autoevaluación) pero no mencionaba `destreza` (6 valores) ni `enfoque` (6 valores) introducidos en v10.60. Tampoco listaba la restricción condicional de orden alfabético de `destreza`. **Fix:** §13 reescrita con las 6 enumeraciones cerradas explícitas, los 3 ejes obligatorios por actividad nombrados, y la restricción de orden alfabético añadida a la lista de restricciones condicionales validables.
+
+**F3 (Bajo) — Ambigüedad contractual de `numero`.** El schema §3 declaraba `"numero": <int>` sin especificar obligatoriedad. El validador no lo chequeaba. Algunas actividades del libro NO tienen número visible (ej. "Para aprender", cuadros clasificados como actividad por reglas §1, autoevaluación a pie de página). **Decisión:** `numero` es **opcional**. **Fixes:** schema §3 actualizado a `<int opcional — ver §3.1>` con nueva sub-sección §3.1 explicando cuándo se omite y puntero a `reglas-operativas.md` §1. Validador añade check: si `numero` está presente, debe ser int (no chequea presencia, alineado con la decisión opcional).
+
+**Sin cambios en otros archivos del refactor.** Branch sigue rojo por la migración pendiente de destreza/enfoque per-unidad (gate v10.60).
+
+**Próximo:** revisión del componente 4 — `reglas-operativas.md`.
+
+---
+
 ## [v10.61 — 2026-05-07] — Fix de drift documental post-v10.60 en `prompt.md`
 
 Hallazgo del revisor durante la revisión componente-a-componente del refactor: tras v10.60 el contrato exige `destreza` y `enfoque` obligatorios en cada actividad, pero el `prompt.md` no los reflejaba. El paso 5 de "Pasos de la extracción" solo mencionaba "extraer todos los campos del esquema" genéricamente, y el checklist manual de "Cierre y validación" listaba `tipo` entre los enums cerrados pero omitía los dos ejes nuevos.
