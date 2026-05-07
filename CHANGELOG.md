@@ -3,6 +3,22 @@
 
 ---
 
+## [v10.67 — 2026-05-07] — Cierre de bloqueante del revisor: `escucha_y_responde` mal usado en 3 oráculos
+
+Hallazgo bloqueante del revisor sobre v10.66: la definición de `escucha_y_responde` en `reglas-operativas.md` §2.2 ("Escucha y responde oralmente, sin texto delante") no se alineaba con el uso real en los oráculos. Tres actividades estaban clasificadas con ese tipo cuando en realidad encajan en mecánicas más específicas:
+
+- **U0-p11-act08** "Escucha y escribe" (dictado deletreado, items_libro con slots `_____`): conflicto con regla 5 nueva (con slots predefinidos → `completa_huecos`). **Fix:** `escucha_y_responde` → `completa_huecos`.
+- **U0-p11-act09** "Escucha y escribe los números 0-10" (items_libro con slots `_____`): mismo conflicto. **Fix:** `escucha_y_responde` → `completa_huecos`.
+- **U3-p39-act06** "Escribe las horas y, después, escucha y comprueba": no es respuesta a estímulo auditivo (el alumno escribe ANTES de escuchar; el audio es comprobación). Tampoco hay slots predefinidos (relojes digitales como estímulo visual). **Fix:** `escucha_y_responde` → `produccion_escrita_guiada`.
+
+**Definición de `escucha_y_responde` se mantiene intacta** — es un nicho legítimo para respuesta oral genuina sin manipulación de slots ni producción escrita.
+
+**Estado del branch:** U0 ✅, U1 ✅, U3 ✅. Cross-check informal del revisor para A4.5.5 confirma alineación schema↔validador en 20 tipos / 6 destrezas / 6 enfoques. Sin otros hallazgos bloqueantes.
+
+**Próximo:** A4.5 (acta) + A4.5.5 (cross-check formal) + A4.6 (merge a `main`).
+
+---
+
 ## [v10.66 — 2026-05-07] — Cierre de U3 y refinamiento de desempates en §2.2
 
 - U3 reclasificada: 47 actividades con destrezas normalizadas en listas alfabéticas y enfoque completo.
