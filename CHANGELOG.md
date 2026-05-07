@@ -5,6 +5,23 @@
 
 ---
 
+## [v10.75b — 2026-05-07] — Corrección de 2 inexactitudes menores en el acta de v10.75
+
+Hallazgo del revisor sobre v10.75 (ambos en el acta del propio commit, no en el archivado):
+
+1. La verificación post-archivado decía *"`diagrama._read_version()` devuelve `10.74`"*. La lógica real (lee primer `## [v...]`) devuelve `10.75` tras el commit, porque la primera entrada del CHANGELOG vivo pasa a ser v10.75.
+2. La métrica final decía *"977 líneas (-61%)"*. Tras añadir la entrada v10.75 + puntero al histórico, el archivo resultó en **1.004 líneas (-60%)**.
+
+Ninguna afecta a la funcionalidad ni al archivado en sí (que está bien hecho); solo precisión del acta.
+
+**Fix:** ambas líneas del acta v10.75 actualizadas a los valores reales (CHANGELOG.md líneas 23 y 25; REVIEW.md bitácora del 2026-05-07 13:00).
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.76 (mover árboles históricos embebidos + Parte 5.bis de PROCESO-MAESTRO), ya con la serie documental cerrada limpia.
+
+---
+
 ## [v10.75 — 2026-05-07] — Archivado del CHANGELOG pre-v10.40 a `docs/historico/`
 
 Limpieza documental autorizada por el revisor tras el pase de coherencia (v10.74/v10.74b). El CHANGELOG vivo crecía sin límite y representaba el 56% del peso documental total del repo. Las entradas anteriores a v10.40 (refactor del prompt de fase 1) son histórico inmutable; trasladarlas reduce contaminación de contexto sin perder trazabilidad.
@@ -20,9 +37,9 @@ Limpieza documental autorizada por el revisor tras el pase de coherencia (v10.74
 - Puntero corto al histórico añadido bajo el título y antes del primer `---`.
 
 **Verificaciones post-archivado:**
-- `diagrama._read_version()` devuelve `10.74` (primera entrada viva, comportamiento idéntico al previo).
+- `diagrama._read_version()` devuelve `10.75` tras el commit (primera entrada viva, comportamiento idéntico al previo).
 - Validador U0/U1/U3 → 0/0 (control de sanidad lateral).
-- Tamaño: CHANGELOG vivo 2.512 → 977 líneas (-61%); peso documental del archivo reducido aproximadamente 28K tokens.
+- Tamaño: CHANGELOG vivo pasa de 2.512 a 1.004 líneas tras añadir esta entrada y el puntero al histórico (-60%); peso documental del archivo reducido aproximadamente 28K tokens.
 
 **No se reescriben** entradas históricas (revisionismo prohibido). El traslado es texto-a-texto sin edición.
 
