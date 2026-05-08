@@ -5,6 +5,14 @@
 
 ---
 
+## [v10.78 — 2026-05-08] — Dashboard: enfoque visible en inventarios + badge de versión
+
+- `web/index.html`: campo `enfoque` ahora se muestra en cada actividad de la vista Inventarios (debajo de Destreza).
+- `web/index.html`: `destreza` renderiza correctamente cuando es array (valores separados por `·`).
+- `web/index.html`: badge de versión `v10.78` visible en el header del dashboard.
+
+---
+
 ## [v10.77c — 2026-05-07] — Cierre administrativo: corrección recursiva de meta-drift en v10.77b
 
 Hallazgo del revisor sobre v10.77b: el propio micro-fix de v10.77b reprodujo el problema que estaba arreglando. El commit real de v10.77b fue `2026-05-07 19:55:26 +0200`, pero las nuevas referencias ancladas a `19:25 / commit 40c8a4c` quedaron desactualizadas el momento mismo del commit.
