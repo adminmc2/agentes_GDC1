@@ -5,6 +5,38 @@
 
 ---
 
+## [v10.82b — 2026-05-08] — Refinamiento de B1.4 tras dictamen del revisor
+
+**2 hallazgos del revisor sobre v10.82:**
+
+**1. Schema documentado ≠ JSON real.** La decisión 35 y la sección B1.4 de REVIEW describían el apéndice como `título + página inicio` y un top-level cerrado, pero el archivo real usa `seccion` (no `titulo`) y añade un `_nota` top-level no documentado.
+
+**Fix:**
+- Decisión 35 (Parte 4) reescrita para reflejar el schema real: `seccion` en apéndice, `_nota` documentado como campo top-level opcional.
+- B1.4 en REVIEW.md actualizado en consonancia.
+
+**2. Cierre de B1.4 contradice su propia regla de source of truth.** La decisión 35 decía que cualquier divergencia entre `nc1-curso.json` y los inventarios per-unidad es bug "antes del cierre", pero el repo cerró con divergencias conocidas:
+- U3 paginación: nc1-curso.json dice 32-41 (Scope and Sequence); inventario de U3 dice 34-43.
+- U1 y U3 mezclan "PARA APRENDER" en `contenidos_indice.gramatica`.
+
+**Causa identificada** (input del autor): el PDF actual de U3 tiene errores; la unidad se re-extraerá por el ejecutor 2 en un worktree paralelo cuando el autor proporcione un PDF correcto.
+
+**Fix:** decisión 35 reformulada en su cláusula de source of truth:
+> *`nc1-curso.json` es canónico para el índice editorial del curso. Los `paginas_libro` y `contenidos_indice` per-unidad pueden divergir legítimamente cuando el libro tiene portadas/separadores no extraídos o el PDF disponible no coincide con la edición oficial. Las divergencias se anotan como deuda técnica conocida en `_nota` y no bloquean el cierre de B1.4 ni de B1.5; se resuelven cuando se actualice el inventario afectado.*
+
+**Cambios aplicados:**
+- `PROCESO-MAESTRO.md` decisión 35: schema real documentado + regla source of truth refinada.
+- `REVIEW.md` B1.4: schema real documentado + hallazgo U3 ampliado con causa y plan.
+- `unidades/nc1-curso.json` `_nota` ampliado para listar las 2 deudas técnicas conocidas (U3 paginación, U1/U3 mezcla "PARA APRENDER").
+
+**No se toca el JSON de U3 ni su PDF.** El autor los reemplazará después y el ejecutor 2 re-extraerá la unidad en un worktree paralelo.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** B1.5 (diseño de `nc1-reciclaje.json`) con base documental ahora coherente.
+
+---
+
 ## [v10.82 — 2026-05-08] — B1.4 cerrado: creado `unidades/nc1-curso.json` (índice editorial global del curso)
 
 **Objetivo del paso:** disponer del índice editorial canónico del curso "Nuevo Compañeros 1" como artefacto JSON consultable, antes de diseñar `nc1-reciclaje.json` (B1.5). Sin un mapa global de "qué enseña cada unidad", el reciclaje no se puede mapear con trazabilidad.

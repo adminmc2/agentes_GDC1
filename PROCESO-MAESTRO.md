@@ -565,7 +565,27 @@ Archivado en `docs/historico/PROCESO-MAESTRO-arboles-historicos.md`. Estado del 
 33. **Schema documental y validador (`scripts/validar_inventario.py`):** contratos paralelos del mismo shape. **No pueden divergir en el momento del merge.** Cualquier divergencia detectada por el cross-check del paso 5.5 se resuelve antes del merge en commit aparte (técnicamente fuera del refactor nominal, pero prerequisito ineludible).
 34. **Source of truth operativa del plan ejecutable** (durante el refactor de fase 1, ahora cerrado): el plan vivió en `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` y se ejecutó al 100% con el merge del 2026-05-07 (v10.69). El archivo se conserva en `docs/historico/refactor-prompt-fase1/` como referencia histórica. PROCESO-MAESTRO nunca duplicó el detalle del plan; lo invocaba. REVIEW.md llevó el progreso por sub-paso.
 
-35. **Esquema de `nc1-curso.json` cerrado** (2026-05-08, v10.82, B1.4): índice editorial global del curso, derivado del **índice oficial del libro impreso (Scope and Sequence, páginas 6-7)**, no de meta-documentación pedagógica. Estructura top-level: `curso` ("nc1"), `titulo`, `editorial`, `nivel` ("A1.1"), `fuente`, `estructura_libro`, array `unidades` (un objeto por unidad incluyendo U0=Punto de partida), array `apendice` con metadatos. **Por unidad regular (U1-U9)** los campos canónicos son top-level: `vocabulario` (lista), `gramatica` (lista), `para_aprender` (string o `null`), `pronunciacion_ortografia` (string), `comunicacion` (lista), `destrezas` (lista), `cultura` (lista), más `pagina_inicio` y `paginas_libro`. **Para U0** (atípica): solo `contenido_general` (lista). **Apéndice**: solo metadatos (título + página de inicio); contenido detallado fuera de alcance. Contenido de las celdas: **literal del índice del libro**, sin expansión MCER ni interpretación pedagógica. Path canónico: `unidades/nc1-curso.json`. Single source of truth con los `contenidos_indice` per-unidad de los inventarios JSON: cualquier divergencia entre `nc1-curso.json` y un `UX-nc1-inventario.json` es bug, se resuelve antes del cierre. Sin validador estructural propio todavía (futuro: añadir checks a `validar_inventario.py` cuando se considere necesario).
+35. **Esquema de `nc1-curso.json` cerrado** (2026-05-08, v10.82, B1.4; refinada en v10.82b tras dictamen del revisor): índice editorial global del curso, derivado del **índice oficial del libro impreso (Scope and Sequence, páginas 6-7)**, no de meta-documentación pedagógica. Path canónico: `unidades/nc1-curso.json`.
+
+  **Estructura top-level:**
+  - `curso` ("nc1"), `titulo`, `editorial`, `nivel` ("A1.1")
+  - `fuente` (objeto: descripción + páginas origen)
+  - `estructura_libro` (objeto: totales)
+  - `unidades` (array)
+  - `apendice` (array)
+  - `_nota` (string opcional para anotaciones contractuales y deuda técnica conocida)
+
+  **Por unidad regular (U1-U9):** campos top-level `vocabulario` (lista), `gramatica` (lista), `para_aprender` (string o `null`), `pronunciacion_ortografia` (string), `comunicacion` (lista), `destrezas` (lista), `cultura` (lista), más `pagina_inicio` (int) y `paginas_libro` (string).
+
+  **Por U0** (Punto de partida, atípica): solo `contenido_general` (lista).
+
+  **Apéndice:** array de objetos con campos `seccion` (string) y `pagina_inicio` (int). Sin contenido detallado.
+
+  **Contenido de las celdas:** literal del índice del libro, sin expansión MCER ni interpretación pedagógica.
+
+  **Source of truth (regla refinada en v10.82b):** `nc1-curso.json` es **canónico para el índice editorial del curso** (qué se enseña en cada unidad). Los campos `paginas_libro` y `contenidos_indice` de cada inventario per-unidad reflejan lo extraído del PDF concreto y **pueden divergir legítimamente** cuando el libro tiene portadas/separadores no extraídos o cuando el PDF disponible no coincide exactamente con la edición oficial. Las divergencias detectadas se anotan como **deuda técnica conocida** en el campo `_nota` del propio JSON, **no bloquean el cierre** de B1.4 ni de B1.5. Se resuelven cuando se actualice el inventario afectado (re-extracción en su worktree paralelo).
+
+  **Validador estructural:** sin checks propios todavía. Se decidirá si añadir a `validar_inventario.py` cuando aparezca el primer caso real de bug de schema.
 
 ---
 

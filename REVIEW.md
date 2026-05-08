@@ -110,17 +110,19 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 **Fuente:** índice oficial del libro impreso (Scope and Sequence, páginas 6-7). NO se usa `viejo/00-curso-general.md`, que contenía datos imprecisos en páginas y mezclaba dato editorial con metadocumentación pedagógica.
 
-**Decisiones de schema** (registradas como decisión 35 en PROCESO-MAESTRO Parte 4):
+**Decisiones de schema** (registradas como decisión 35 en PROCESO-MAESTRO Parte 4, refinada en v10.82b):
 - Path: `unidades/nc1-curso.json`.
-- Top-level: `curso`, `titulo`, `editorial`, `nivel`, `fuente`, `estructura_libro`, `unidades`, `apendice`.
-- Por unidad regular (U1-U9): campos top-level `vocabulario`, `gramatica`, `para_aprender`, `pronunciacion_ortografia`, `comunicacion`, `destrezas`, `cultura`, `pagina_inicio`, `paginas_libro`.
+- Top-level: `curso`, `titulo`, `editorial`, `nivel`, `fuente`, `estructura_libro`, `unidades`, `apendice`, `_nota` (opcional).
+- Por unidad regular (U1-U9): campos top-level `vocabulario`, `gramatica`, `para_aprender` (string o `null`), `pronunciacion_ortografia`, `comunicacion`, `destrezas`, `cultura`, `pagina_inicio`, `paginas_libro`.
 - Por U0 (atípica): solo `contenido_general`.
-- Apéndice: metadatos (título + página inicio), sin contenido detallado.
+- Apéndice: array de objetos con `seccion` y `pagina_inicio`, sin contenido detallado.
 - Contenido de las celdas: **literal del índice del libro**, sin interpretación MCER añadida.
+- **Source of truth refinada (v10.82b):** `nc1-curso.json` es canónico para el índice editorial; los inventarios per-unidad pueden divergir legítimamente y la divergencia se anota como deuda técnica en `_nota`, **no bloquea cierre**.
 
 **Hallazgos durante la extracción del índice del libro:**
-- Las páginas en `viejo/00-curso-general.md` estaban mal: U1=10-23 y U2=14-33 se solapaban. Las correctas son U1=12-21, U2=22-31, ..., U9=92-101 (10 páginas exactas por unidad).
-- Los `contenidos_indice` ya extraídos de U1 y U3 mezclan "PARA APRENDER" (estrategia metacognitiva) dentro del campo `gramatica` (ej. U3 "Hacer un cuaderno de vocabulario"). Anotado como fix futuro de los inventarios; **no bloquea B1.4 ni B1.5**.
+- Las páginas en `viejo/00-curso-general.md` estaban mal: U1=10-23 y U2=14-33 se solapaban. Las correctas según Scope and Sequence son U1=12-21, U2=22-31, ..., U9=92-101.
+- **U3 paginación divergente:** Scope dice 32-41; el inventario actual de U3 dice 34-43. **Causa identificada por el autor:** el PDF actual de U3 tiene errores; la unidad se re-extraerá por el ejecutor 2 en un worktree paralelo cuando el autor proporcione un PDF correcto. Anotado en `_nota` de `nc1-curso.json`.
+- Los `contenidos_indice` ya extraídos de U1 y U3 mezclan "PARA APRENDER" (estrategia metacognitiva) dentro del campo `gramatica` (ej. U3 "Hacer un cuaderno de vocabulario"). Anotado como fix futuro de los inventarios.
 
 **Gate cerrado:**
 1. ✅ `unidades/nc1-curso.json` creado con datos literales de las 10 unidades + apéndice.
@@ -459,6 +461,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-08** — **Refinamiento de B1.4 tras dictamen del revisor** (v10.82b). 2 hallazgos cerrados: (1) schema documentado vs JSON real no coincidían (`apendice` usa `seccion` no `titulo`; `_nota` top-level no estaba documentado) → decisión 35 y B1.4 actualizados al schema real; (2) la regla "no divergencia antes de cerrar" contradecía el repo (U3 paginación 32-41 vs 34-43; U1/U3 mezclan PARA APRENDER en gramática) → regla refinada para hacer `nc1-curso.json` canónico y permitir divergencias legítimas anotadas como deuda técnica en `_nota`. Causa identificada del U3 paginación: PDF actual tiene errores, será re-extraído por ejecutor 2. No se toca JSON ni PDF de U3 ahora. Sin cambios funcionales. Validador 0/0.
 - **2026-05-08** — **B1.4 cerrado**: creado `unidades/nc1-curso.json` (v10.82, decisión 35 en PROCESO-MAESTRO Parte 4). Índice editorial global del curso, derivado del Scope and Sequence oficial del libro impreso (no de meta-documentación). 10 unidades + apéndice. Contenido literal sin expansión MCER. Schema cerrado. Hallazgos anotados (no bloqueantes): páginas en `viejo/00-curso-general.md` eran imprecisas; `contenidos_indice` de U1/U3 mezclan "PARA APRENDER" con gramática (fix futuro). Próximo: B1.5 (diseño de `nc1-reciclaje.json`) con `nc1-curso.json` ya disponible para mapear flujos de reciclaje.
 - **2026-05-08** — Dashboard: badge "extracción en curso" para unidades de worktrees paralelos (v10.81). Las unidades servidas vía `EXTRA_UNIDADES_PATHS` (`zona: "extra"`) ahora muestran un badge ámbar *"🔄 Extracción en curso (worktree paralelo)"* en lugar del path absoluto. Para unidades de main (`zona: ""`) se mantiene el path relativo. Al integrar una unidad a main, el cambio es automático: main gana sobre extras y el badge desaparece. Validador 0/0.
 - **2026-05-08** — Dashboard: eliminado el badge de versión (v10.80b). v10.80 había hecho el badge dinámico, pero seguían apareciendo 2 indicadores en el header. Decisión del autor: dejar solo el indicador derecho que ya muestra versión + hora viva. Eliminados el span del badge y el JS que lo actualizaba. Una sola fuente visible de versión. Validador 0/0.
