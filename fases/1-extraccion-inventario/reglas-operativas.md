@@ -13,7 +13,7 @@
 Para cada elemento visible en una página del libro, determinar en este orden qué es:
 
 1. **¿Tiene número de actividad** (1, 2, 3...) **y pide producción del alumno** (escuchar, repetir, escribir, relacionar...)? → **Actividad** con `tipo` de la taxonomía cerrada (§2).
-2. **¿Es "Para aprender"?** → Siempre **actividad** (`tipo: produccion_escrita_guiada`, `datos.subtipo: "para_aprender"`), aunque no tenga número. Excepción explícita a la regla general.
+2. **¿Es "Para aprender"?** → Es **actividad** solo si pide producción al alumno (verbo imperativo); si es **puramente informativo** (lista de reglas o referencia, sin instrucción), es **cuadro**. Ver §4 para la bifurcación con criterio decisional.
 3. **¿Es "Observa"?** → Siempre **nota**, aunque use el imperativo "Observa". Excepción explícita: "Observa" no pide producción del alumno; llama la atención sobre información de referencia. Nunca se convierte en actividad. **Dónde va según su contexto:**
    - Si acompaña a una **actividad**: en `datos._nota` de esa actividad.
    - Si acompaña a un **cuadro**: en `cuadro.observaciones` (campo opcional del schema del cuadro, ver `schema-inventario.md` §4).
@@ -168,22 +168,20 @@ Cuando una página tiene un cuadro de referencia (clasificado según §1 regla 4
 
 ---
 
-## 4. Qué NO es un cuadro: "Para aprender" y "Observa"
+## 4. Casos límite: "Para aprender" y "Observa"
 
-Las siguientes cajas visuales del libro **NO son cuadros** aunque aparezcan visualmente como recuadros (ver §1 reglas 2 y 3):
+**"Para aprender"** — Cajas que el libro destaca con esa etiqueta. Pueden ser de dos naturalezas:
 
-**"Para aprender"** — Cajas con consejos o estrategias pedagógicas para el alumno (cómo llevar un cuaderno de vocabulario, cómo estudiar...). Son **actividades**, no cuadros. Usar:
-```jsonc
-{
-  "id": "UX-pYY-actNN",
-  "tipo": "produccion_escrita_guiada",
-  "datos": { "subtipo": "para_aprender", ... }
-}
-```
+| Naturaleza | Ejemplo | Clasificación |
+|---|---|---|
+| **Con tarea** (verbo imperativo dirigido al alumno: "haz", "escribe", "completa") | U3-p37 "Hacer un cuaderno de vocabulario" — *"Mira el cuaderno de Ronaldo... Escribe palabras nuevas y tradúcelas"* | **Actividad** con `tipo: produccion_escrita_guiada`, `datos.subtipo: "para_aprender"` |
+| **Solo informativa** (lista de reglas o referencia, sin verbo imperativo) | U2-p25 "Uso de las mayúsculas" — solo lista de reglas con ejemplos, sin instrucción al alumno | **Cuadro** con `tipo_cuadro` apropiado según contenido (`gramatical`, `lexical`, etc.) |
 
-**"Observa"** — Notas que llaman la atención sobre algún aspecto del idioma (variantes en Hispanoamérica, combinaciones de letras...). Son **notas**, no actividades ni cuadros:
-- Si acompaña a una **actividad**: en `datos._nota` de esa actividad.
-- Si acompaña a un **cuadro**: en `cuadro.observaciones`.
+**Criterio decisional:** ¿el bloque contiene verbo imperativo dirigido al alumno? Si sí → actividad. Si solo es información de referencia → cuadro.
+
+**"Observa"** — Notas que llaman la atención sobre aspectos del idioma. Son **notas**, no actividades ni cuadros:
+- Si acompaña a una **actividad** → `datos._nota`.
+- Si acompaña a un **cuadro** → `cuadro.observaciones`.
 
 ---
 

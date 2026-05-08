@@ -5,6 +5,32 @@
 
 ---
 
+## [v10.83 — 2026-05-08] — Refinamiento de regla "Para aprender" tras dictamen del ejecutor 2 en U2
+
+**Caso disparador** (extracción de U2 por ejecutor 2): el bloque "Para aprender — Uso de las mayúsculas" en U2-p25 es **puramente informativo** (lista de reglas con ejemplos, sin instrucción al alumno). La regla §1 regla 2 + §4 actuales decían "siempre actividad", lo que forzaba clasificación incorrecta.
+
+**Decisión cerrada con autor:** bifurcar "Para aprender" según naturaleza:
+- **Con tarea** (verbo imperativo al alumno): actividad (`tipo: produccion_escrita_guiada`, `datos.subtipo: "para_aprender"`).
+- **Solo informativa** (sin verbo imperativo): cuadro con `tipo_cuadro` apropiado.
+
+**Cambios en `reglas-operativas.md`** (reformulación, no añadido — respeta principio del autor de no engordar docs):
+
+- **§1 regla 2 reescrita** como índice corto + puntero a §4 (mismo tamaño que antes; antes redirigía a "siempre actividad" sin matizar).
+- **§4 reescrita** absorbiendo la bifurcación en una tabla con criterio decisional explícito + ejemplos canónicos de cada caso (con tarea: U3-p37 "Hacer un cuaderno de vocabulario"; solo informativa: U2-p25 "Uso de las mayúsculas"). Eliminada la duplicación previa entre §1 y §4. **§4 ahora es source of truth única**; §1 es índice.
+
+**Auditoría aplicada a U0/U1/U3** antes de aplicar la regla:
+- U0: sin "Para aprender" extraídos (atípica). Sin cambios.
+- U1: sin "Para aprender" extraídos como actividad/cuadro, aunque el índice del libro tiene "Recursos para la clase" — gap del inventario, fix futuro de extracción de U1, no afecta a esta serie.
+- U3: 1 caso (`U3-p37-act09 "Mira el cuaderno de Ronaldo... Escribe palabras nuevas y tradúcelas"`) con verbos imperativos al alumno → actividad legítima con tarea. **Sin cambios** necesarios.
+
+**Sin reclasificaciones aplicadas**: la regla nueva confirma las clasificaciones existentes. La aplicación efectiva ocurre en U2 (en su worktree) que ya implementa la bifurcación.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.84 (schema §4: documentar `texto_intro` + `titulo` nullable + `lista_reglas`).
+
+---
+
 ## [v10.82b — 2026-05-08] — Refinamiento de B1.4 tras dictamen del revisor
 
 **2 hallazgos del revisor sobre v10.82:**
