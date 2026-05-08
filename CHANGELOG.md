@@ -5,6 +5,21 @@
 
 ---
 
+## [v10.81 — 2026-05-08] — Dashboard: badge "extracción en curso" en lugar de path absoluto para unidades de worktrees paralelos
+
+**Problema visual tras v10.79:** las tarjetas de inventarios mostraban el path del JSON. Para unidades en main, el path era relativo y corto (`unidades/U2/U2-nc1-inventario.json`). Para unidades de worktrees paralelos (vía `EXTRA_UNIDADES_PATHS`), el path absoluto largo aparecía sin contexto, dando una apariencia de error visual cuando en realidad indicaba un estado válido (extracción no integrada todavía).
+
+**Fix:** en la lista de inventarios, si `zona === "extra"`, se muestra un badge informativo *"🔄 Extracción en curso (worktree paralelo)"* en lugar del path. Para unidades en main (`zona === ""`), se mantiene el path relativo como antes.
+
+**Comportamiento al integrar una unidad a main:** automático. La API empieza a devolver `zona: ""` para esa unidad (main gana sobre extras), el badge desaparece y la tarjeta vuelve a mostrar el path relativo. Sin tocar código.
+
+**Cambios en `web/index.html`:**
+- `loadInventarios()`: render condicional según `u.zona`. Badge ámbar para extras, path monoespaciado para main.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+---
+
 ## [v10.80b — 2026-05-08] — Dashboard: eliminado el badge de versión (uno solo, el de la derecha)
 
 **Decisión del autor tras v10.80:** v10.80 había hecho el badge dinámico para resolver el desfase, pero seguían apareciendo **dos indicadores de versión** (badge verde a la izquierda + indicador `vX — hh:mm:ss` a la derecha). Decisión: dejar solo el indicador derecho, que ya muestra versión + hora viva. El badge era redundante.

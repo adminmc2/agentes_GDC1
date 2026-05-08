@@ -575,16 +575,20 @@ async function loadInventarios() {
             el.innerHTML = '<div class="section"><div class="section-body" style="padding:20px">No hay inventarios disponibles. Coloca un <code>inventario.json</code> en <code>viejo/unidades/UXX/</code>.</div></div>';
             return;
         }
-        el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">' + data.map(u =>
-            `<div class="section" style="cursor:pointer" onclick="goTo('inventario', ${u.unidad})">
+        el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">' + data.map(u => {
+            const esExtra = u.zona === 'extra';
+            const fuente = esExtra
+                ? `<div style="font-size:11px;color:#B45309;background:#FEF3C7;padding:4px 8px;border-radius:6px;font-weight:600;display:inline-block">🔄 Extracción en curso (worktree paralelo)</div>`
+                : `<div style="font-size:11px;color:var(--md-on-surface-variant);font-family:monospace">${u.archivo}</div>`;
+            return `<div class="section" style="cursor:pointer" onclick="goTo('inventario', ${u.unidad})">
                 <div class="section-body" style="padding:16px">
                     <div style="font-size:11px;color:var(--md-primary-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">U${u.unidad} &middot; ${u.nivel}</div>
                     <div style="font-size:18px;font-weight:600;margin-bottom:4px">${u.titulo || '(sin título)'}</div>
                     <div style="font-size:12px;color:var(--md-on-surface-variant);margin-bottom:4px">páginas ${u.paginas}</div>
-                    <div style="font-size:11px;color:var(--md-on-surface-variant);font-family:monospace">${u.archivo}</div>
+                    ${fuente}
                 </div>
-            </div>`
-        ).join('') + '</div>';
+            </div>`;
+        }).join('') + '</div>';
     } catch(e) {
         el.innerHTML = `<div class="section"><div class="section-body" style="padding:20px;color:var(--md-error)">Error: ${e.message}</div></div>`;
     }
