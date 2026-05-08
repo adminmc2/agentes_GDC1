@@ -5,6 +5,22 @@
 
 ---
 
+## [v10.88 — 2026-05-08] — Borrado de `unidades/U3/U3-nc1-inventario.json` (PDF erróneo, pendiente de re-extracción)
+
+**Decisión cerrada con autor:** el PDF de U3 que se había usado para la extracción inicial contenía errores (paginación divergente con el Scope and Sequence oficial: Scope dice U3=32-41; el inventario decía 34-43; ver decisión 35 en PROCESO-MAESTRO Parte 4 y deuda técnica anotada en `nc1-curso.json:_nota`).
+
+**Acción:** el autor proporciona el PDF correcto y borra el JSON viejo. Main queda temporalmente sin inventario de U3 hasta la re-extracción.
+
+**Estado:**
+- `unidades/U3/U3-nc1-inventario.json` → borrado (esta versión).
+- `unidades/U3/fuente/U3-nc1.pdf` → reemplazado por el correcto (gitignored, no entra al commit).
+
+**Próximo:** worktree `extract/U3` + chat nuevo para que el ejecutor 2 re-extraiga la unidad con el contrato post-refactor (taxonomía 20, destreza/enfoque, schema cuadros con `texto_intro`/nullable, etc.).
+
+**Sin cambios funcionales en código.** Validador sobre U0/U1/U2 → 0/0; U3 ahora "no existe" hasta la re-extracción.
+
+---
+
 ## [v10.87 — 2026-05-08] — Integración de U2 a main (merge `extract/U2`)
 
 **Primera integración del carril paralelo de extracciones** desde la apertura del modelo de worktrees (post v10.79). Sigue la receta acordada con el revisor (`git merge --no-ff --no-commit` + edición de archivos vivos compartidos + commit único).
