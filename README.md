@@ -74,9 +74,17 @@ Cuando el autor entrega el PDF de una unidad (ej. U4):
 ### 2. Arrancar el dashboard
 
 ```bash
+# Solo main:
+source .venv/bin/activate
 python3 diagrama.py
 # → http://localhost:8080
-# Click en "Inventarios" en el sidebar para ver el JSON renderizado.
+
+# Con worktrees paralelos (extract/U3, extract/U4…):
+source .venv/bin/activate
+EXTRA_UNIDADES_PATHS=/Users/armandocruz/Desktop/guia-didactica-extract-U3/unidades:/Users/armandocruz/Desktop/guia-didactica-extract-U4/unidades \
+  python3 diagrama.py
+# Las unidades en worktree aparecen con badge ámbar "🔄 Extracción en curso".
+# Main tiene prioridad: si la unidad se integra, el badge desaparece automáticamente.
 ```
 
 ### 3. Validar un inventario

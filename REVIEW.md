@@ -45,7 +45,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 | Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1, **U2** trackeados y validando 0/0. U3 borrada en v10.88 (PDF erróneo); pendiente de re-extracción por ejecutor 2 en worktree `extract/U3` (PDF correcto ya en disco). A1 ✅, A2 ✅, A3 ✅, A4 ✅ cerrado 2026-05-07. 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
-| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 (reciclaje) en diseño · B1+B2 esperan dependencias · B5 (despliegue público) ✅ cerrado fuera de orden · tarjetas dependen de fase 2 · píldoras dependen de fase 5 |
+| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ cerrado (v10.89) · `nc1-reciclaje.json` existe vacío · B2 desbloqueado para reciclaje (primera población con U1/U2) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 (despliegue público) ✅ cerrado fuera de orden |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
 | Bloque E (limpieza final) | 📋 Pendiente |
@@ -149,27 +149,37 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 ---
 
-### B2. Generar los 3 JSONs globales con datos de U3
+### B2. Completar los 3 JSONs globales del curso
 
-**Objetivo:** tener archivos `nc1-tarjetas.json`, `nc1-pildoras.json`, `nc1-reciclaje.json` en `unidades/`.
+**Objetivo:** tener `nc1-tarjetas.json`, `nc1-pildoras.json` y `nc1-reciclaje.json` en `unidades/` con contenido real. **U3 no ancla este paso.**
 
-**Pre-condición:** B1 cerrado (para tarjetas+píldoras) + **B1.5 cerrado** (para reciclaje). B3 (migración de contenido) decidido.
+**Estado actual:**
+- `nc1-reciclaje.json` — ✅ existe (esqueleto vacío, v10.89). Desbloquea la primera población.
+- `nc1-tarjetas.json` — 📋 no existe. Bloqueado por B1 (script) + fase 2 (vocabulario analizado).
+- `nc1-pildoras.json` — 📋 no existe. Bloqueado por fase 5 (píldoras por unidad).
 
-**Archivos a crear:**
-- `unidades/nc1-tarjetas.json` — generado por script.
-- `unidades/nc1-pildoras.json` — generado por script.
-- `unidades/nc1-reciclaje.json` — escrito a mano por Claude Code en chat con autor (vacío hasta que haya 2+ unidades).
+**Sub-pasos desacoplados:**
 
-**Actualizaciones meta requeridas:**
+**B2a — Primera población de `nc1-reciclaje.json`** (desbloqueado)
+- Pre-condición: B1.5 ✅.
+- Acción: Claude Code en chat analiza U1 y U2 con `nc1-curso.json` como mapa y registra los reciclajes.
+- Gate: `reciclajes_por_unidad` con entradas de U1 y U2; `indice_por_tipo` actualizado.
+
+**B2b — Crear `nc1-tarjetas.json`** (bloqueado)
+- Pre-condición: B1 (script `regenerar_tarjetas_globales.py`) + al menos una unidad con vocabulario analizado (fase 2).
+
+**B2c — Crear `nc1-pildoras.json`** (bloqueado)
+- Pre-condición: fase 5 (primera unidad con píldoras).
+
+**Actualizaciones meta requeridas (por sub-paso):**
 - `PROCESO-MAESTRO.md` — bitácora.
 - `REVIEW.md` — gate.
 - `CHANGELOG.md` — commit.
 
-**Gate de cierre:**
-1. ✅ Los 3 archivos existen en `unidades/`.
-2. ✅ Cada uno tiene estructura conforme al esquema (validable visualmente).
-3. ✅ `nc1-reciclaje.json` tiene al menos el esqueleto top-level (`curso`, `actualizado`, `reciclajes_por_unidad: {}`, `indice_por_tipo: {...}`).
-4. ✅ Commit + CHANGELOG.
+**Gate de cierre de B2 completo:**
+1. ✅ Los 3 archivos existen y tienen contenido real.
+2. ✅ Cada uno cumple su esquema (validable visualmente).
+3. ✅ Commit + CHANGELOG.
 
 **Bloquea a:** B4.
 
@@ -412,13 +422,13 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 | `unidades/U0/U0-nc1-inventario.json` | ✅ Validado · trackeado · unidad atípica (1 aviso intencional por `_nota_unidad_atipica`) | Ninguna prevista |
 | `unidades/U1/U1-nc1-inventario.json` | ✅ Validado · trackeado | Ninguna prevista |
 | `unidades/U2/U2-nc1-inventario.json` | ⚠ **Solo working tree, no trackeado** · falla validación con 2 errores (`autoevaluacion.emoticonos` ausente). No usable hoy | Decisión pendiente: completar autoevaluación + trackear, o descartar |
-| `unidades/U3/U3-nc1-inventario.json` | ✅ Validado · trackeado | B3 (decidir si migrar más contenido) |
-| `unidades/U3/fuente/U3-nc1.pdf` | ✅ En su sitio (gitignored) | — |
+| `unidades/U3/U3-nc1-inventario.json` | ❌ Borrado en v10.88 — PDF erróneo. Re-extracción en worktree `extract/U3` (ejecutor 2) | — |
+| `unidades/U3/fuente/U3-nc1.pdf` | ✅ Reemplazado por PDF correcto (gitignored) | — |
 | `unidades/U3/tarjetas/`, `pildoras/`, MDs | 📋 No migrados | B3 |
 | `unidades/U4/`...`U9/` | 📋 Carpetas vacías, sin inventario | Nuevas extracciones cuando lleguen PDFs |
 | `unidades/nc1-tarjetas.json` | 📋 No existe | B2 |
 | `unidades/nc1-pildoras.json` | 📋 No existe | B2 |
-| `unidades/nc1-reciclaje.json` | 📋 No existe | Diseño en B1.5, generación en B2 |
+| `unidades/nc1-reciclaje.json` | ✅ Existe (esqueleto vacío, v10.89) | B2 — primera población con U1/U2 |
 
 ### Archivo (`viejo/`, intocable hasta E)
 | Carpeta | Estado |

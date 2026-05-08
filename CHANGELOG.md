@@ -5,6 +5,24 @@
 
 ---
 
+## [v10.90 — 2026-05-08] — Saneo documental post-v10.89: REVIEW alineado, protocolo ejecutor 2, comando dashboard
+
+**6 frentes corregidos:**
+
+1. **REVIEW.md estado vivo (línea 48):** B1.5 ya no figura "en diseño" — marcado ✅ cerrado con referencia a v10.89. `nc1-reciclaje.json` ya no aparece como pendiente en la tabla de artefactos.
+2. **REVIEW.md bloque B2 reescrito:** desacoplado de U3. Dividido en B2a (reciclaje, desbloqueado), B2b (tarjetas, bloqueado) y B2c (píldoras, bloqueado). U3 queda explícitamente fuera de main hasta nueva integración.
+3. **REVIEW.md tabla artefactos:** U3 reflejada como borrada (v10.88, PDF erróneo, re-extracción en worktree `extract/U3`).
+4. **PROCESO-MAESTRO.md resumen vivo (línea 676):** B1.5 marcado ✅; B2a desbloqueado.
+5. **PROCESO-MAESTRO.md protocolo ejecutor 2 añadido** (zona operativa, antes de §27): worktree dedicado, validación con venv principal, revisión en dashboard con `EXTRA_UNIDADES_PATHS`, sin tocar main, integración posterior con receta `--no-ff --no-commit`.
+6. **README.md §2 "Arrancar el dashboard":** comando oficial documentado para main solo y para worktrees paralelos con `EXTRA_UNIDADES_PATHS` (U3+U4 como ejemplo).
+7. **web/index.html línea 575:** ruta obsoleta `viejo/unidades/UXX/` corregida a `unidades/UX/`.
+
+**Sin cambios en JSONs de inventario. Validador U0/U1/U2 → 0/0. U3 en worktree paralelo.**
+
+**Próximo:** B2a — primera población de `nc1-reciclaje.json` con reciclajes de U1 y U2.
+
+---
+
 ## [v10.89 — 2026-05-08] — B1.5 cerrado: contrato de `nc1-reciclaje.json` + esqueleto vacío creado
 
 **Decisión cerrada con autor:** schema completo de `nc1-reciclaje.json` cerrado en B1.5. Las 4 preguntas abiertas se resolvieron:

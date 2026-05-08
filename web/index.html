@@ -572,7 +572,7 @@ async function loadInventarios() {
         const r = await fetch('/api/inventarios');
         const data = await r.json();
         if (!data.length) {
-            el.innerHTML = '<div class="section"><div class="section-body" style="padding:20px">No hay inventarios disponibles. Coloca un <code>inventario.json</code> en <code>viejo/unidades/UXX/</code>.</div></div>';
+            el.innerHTML = '<div class="section"><div class="section-body" style="padding:20px">No hay inventarios disponibles. Coloca un <code>UX-nc1-inventario.json</code> en <code>unidades/UX/</code>.</div></div>';
             return;
         }
         el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">' + data.map(u => {

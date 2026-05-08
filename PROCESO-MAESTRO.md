@@ -548,6 +548,29 @@ Archivado en `docs/historico/PROCESO-MAESTRO-arboles-historicos.md`. Estado del 
 25. **Cada extracción de inventario produce un JSON por unidad.** Ese JSON queda además disponible como vista HTML dinámica integrada en el dashboard existente (`web/index.html`), sin generar por ahora un archivo HTML independiente.
 26. **El dashboard debe mostrar** todos los JSON (inventario por unidad + 3 globales) y permitir revisar/editar las propuestas de reciclaje al cerrar cada unidad.
 
+### Protocolo operativo del ejecutor 2 — extracciones en worktree paralelo (cerrado 2026-05-08, v10.90)
+
+Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado, nunca en main.
+
+**Pasos:**
+1. Crear worktree desde main: `git worktree add ../guia-didactica-extract-U4 -b extract/U4`
+2. Trabajar solo en ese worktree: extraer, corregir, iterar.
+3. Validar con el venv y el validador del repo principal:
+   ```bash
+   cd /Users/armandocruz/Desktop/guia-didactica-profesor-IA
+   source .venv/bin/activate
+   python3 scripts/validar_inventario.py 4 --path ../guia-didactica-extract-U4/unidades/U4/U4-nc1-inventario.json
+   ```
+4. Revisar visualmente en el dashboard local arrancado desde main con `EXTRA_UNIDADES_PATHS` (ver README §"Arrancar el dashboard con worktrees paralelos").
+5. No integrar a main. La integración va en paso posterior separado con receta `git merge --no-ff --no-commit`.
+
+**Invariantes:**
+- Nunca commitear en main desde el worktree de extracción.
+- Los refinamientos de regla que dispare la extracción se registran en main (ejecutor 1), no en el worktree.
+- U3 sigue este mismo protocolo: worktree `extract/U3`, sin anclar el avance de main.
+
+---
+
 ### Sobre la arquitectura datos + instrucciones (decidida 2026-05-05)
 
 27. **Datos centralizados** en `unidades/UX/` — única ubicación canónica de inventario, tarjetas, píldoras, secciones de cada unidad.
@@ -673,7 +696,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-parte5bis-migracion.md`. La migraci
 
 - ✅ **Bloques operativos cerrados:** esquemas JSON cerrados, vista HTML dinámica del dashboard operativa, extracciones de U0/U1/U3 con contrato post-refactor (taxonomía 20 + destreza/enfoque) validando 0/0, prompt versionado, validador alineado con schema en cross-check A4.5.5, disolución de `nuevo/`, CLAUDE.md modular, refactor del prompt de fase 1 cerrado en v10.69.
 - ✅ **Bloque A cerrado** (ver REVIEW): A1 (validar U3 con autor), A2 (probar con U0), A3 (bugs B1-B4), A4 (refactor documental de fase 1) — todos en ✅. Resumen vivo en `REVIEW.md` sección "Bloque A"; detalle íntegro (sub-pasos A4.0-A4.6, gates, riesgos) archivado en `docs/historico/REVIEW-bloque-A-cerrado.md`; bitácora cronológica general permanece viva en `REVIEW.md`.
-- 🔄 **Bloque B parcial** (REVIEW): infraestructura JSONs globales del curso. B5 (despliegue público) ✅ cerrado fuera de orden; B1.5 (reciclaje) en diseño; B1+B2 esperan dependencias; tarjetas dependen de fase 2; píldoras dependen de fase 5.
+- 🔄 **Bloque B parcial** (REVIEW): infraestructura JSONs globales del curso. B5 ✅ cerrado; B1.5 ✅ cerrado (v10.89) — `nc1-reciclaje.json` existe vacío, primera población con U1/U2 en B2a; tarjetas bloqueadas por B1+fase 2; píldoras bloqueadas por fase 5.
 - 📋 **Bloque C pendiente:** construir fases 2-8 (una a una).
 - 📋 **Bloque D pendiente:** sistema de lecciones de Claude Code.
 - 📋 **Bloque E pendiente** (al cierre del curso): limpieza final, eliminar `viejo/`, eliminar `PROCESO-MAESTRO.md` y `REVIEW.md`.
