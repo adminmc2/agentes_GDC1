@@ -5,6 +5,26 @@
 
 ---
 
+## [v10.85 — 2026-05-08] — Refinamiento §2.3: `responder_preguntas_abiertas` con destreza condicional al enunciado del libro
+
+**Caso disparador** (hallazgo C en U2-p29-act04 durante revisión del worktree de U2): la regla §2.3 decía que `responder_preguntas_abiertas` con respuesta personal/libre → `expresion_escrita` por defecto. Pero en algunos casos del libro la respuesta es oral (en parejas, en clase). Asumir `expresion_escrita` siempre es impreciso.
+
+**Decisión cerrada con autor:** la destreza depende de lo que pida el enunciado real del libro:
+- Si el libro pide escribir → `expresion_escrita`.
+- Si el libro pide responder oralmente → `expresion_oral`.
+
+**Cambio quirúrgico en `reglas-operativas.md` §2.3** (1 línea modificada, 0 párrafos añadidos):
+
+Línea 68:
+- **Antes:** *"Respuesta personal/libre del alumno, sin texto-fuente → `responder_preguntas_abiertas`. Destreza: `expresion_escrita` (es contenido propio)."*
+- **Después:** *"Respuesta personal/libre del alumno, sin texto-fuente → `responder_preguntas_abiertas`. Destreza: `expresion_escrita` si el libro pide escribir; `expresion_oral` si el libro pide responder oralmente. Verificar contra el enunciado real."*
+
+**Sin cambios en JSONs.** La aplicación a U2-p29-act04 concreta queda pendiente de verificación contra PDF (worktree de U2). U0/U1/U3 siguen validando 0/0; sus actividades de `responder_preguntas_abiertas` ya cumplen con el criterio (escritura).
+
+**Próximo:** verificar PDF de U2-p29-act04 y aplicar el cambio si procede; integrar U2 a main.
+
+---
+
 ## [v10.83b — 2026-05-08] — Cierre limpio de v10.83: alineación de 2 referencias vivas
 
 Hallazgo del revisor sobre v10.83: la regla nueva quedó bien en `reglas-operativas.md` §1+§4, pero 2 referencias vivas seguían diciendo "Para aprender → siempre actividad" sin la bifurcación, contradiciendo v10.83 desde otros entry points.
