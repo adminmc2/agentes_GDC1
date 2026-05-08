@@ -223,11 +223,17 @@ def _scan_zona(base, pattern_carpeta, pattern_archivo, zona):
         f = candidates[0]
         try:
             data = json.loads(f.read_text(encoding="utf-8"))
+            try:
+                archivo = str(f.relative_to(PROJECT))
+            except ValueError:
+                # Path fuera de PROJECT (caso típico: worktree paralelo
+                # via EXTRA_UNIDADES_PATHS). Usar absoluto.
+                archivo = str(f)
             out.append({
                 "unidad": data.get("unidad"),
                 "carpeta": d.name,
                 "zona": zona,
-                "archivo": str(f.relative_to(PROJECT)),
+                "archivo": archivo,
                 "titulo": data.get("titulo", ""),
                 "paginas": data.get("paginas", "") or data.get("paginas_libro", ""),
                 "nivel": data.get("nivel", ""),
@@ -237,18 +243,60 @@ def _scan_zona(base, pattern_carpeta, pattern_archivo, zona):
     return out
 
 
+def _extra_unidades_paths():
+    """Paths adicionales a escanear, desde la env var EXTRA_UNIDADES_PATHS.
+
+    Permite ver inventarios en working-tree de worktrees paralelos
+    (ej. extracciones en curso) sin tener que commitearlos a main.
+    Separador: ':' (estilo PATH).
+    Ejemplo: EXTRA_UNIDADES_PATHS=/Users/.../guia-didactica-extract-U2/unidades
+    """
+    raw = os.environ.get("EXTRA_UNIDADES_PATHS", "")
+    paths = []
+    from pathlib import Path
+    for p in raw.split(":"):
+        p = p.strip()
+        if not p:
+            continue
+        path = Path(p).resolve()
+        if path.exists() and path.is_dir():
+            paths.append(path)
+    return paths
+
+
 def list_inventarios():
-    """Lista unidades con inventario disponible en unidades/."""
-    return _scan_zona(PROJECT / "unidades", None, None, "")
+    """Lista unidades con inventario en unidades/ + paths extra (env var).
+
+    Main tiene prioridad: si una unidad existe en main, no se añade
+    desde un path extra aunque también esté allí. Las unidades que solo
+    están en paths extra (working tree de un worktree paralelo) se
+    marcan con zona='extra' para distinguirlas en la UI.
+    """
+    seen = set()
+    out = []
+    for inv in _scan_zona(PROJECT / "unidades", None, None, ""):
+        out.append(inv)
+        seen.add(inv["unidad"])
+    for ep in _extra_unidades_paths():
+        for inv in _scan_zona(ep, None, None, "extra"):
+            if inv["unidad"] not in seen:
+                out.append(inv)
+                seen.add(inv["unidad"])
+    return sorted(out, key=lambda x: (x["unidad"] is None, x["unidad"]))
 
 
 def get_inventario(unidad, zona=""):
-    """Lee inventario de unidades/U{N}/U{N}-nc1-inventario.json."""
+    """Lee inventario de main o de paths extra (main tiene prioridad)."""
     folder = PROJECT / "unidades" / f"U{int(unidad)}"
     candidates = list(folder.glob("*inventario.json")) if folder.exists() else []
-    if not candidates:
-        return {"error": f"No hay inventario para U{unidad}"}
-    return json.loads(candidates[0].read_text(encoding="utf-8"))
+    if candidates:
+        return json.loads(candidates[0].read_text(encoding="utf-8"))
+    for ep in _extra_unidades_paths():
+        folder = ep / f"U{int(unidad)}"
+        candidates = list(folder.glob("*inventario.json")) if folder.exists() else []
+        if candidates:
+            return json.loads(candidates[0].read_text(encoding="utf-8"))
+    return {"error": f"No hay inventario para U{unidad}"}
 
 
 def get_evaluaciones(unidad=None):

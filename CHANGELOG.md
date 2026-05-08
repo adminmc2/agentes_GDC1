@@ -5,6 +5,34 @@
 
 ---
 
+## [v10.79 — 2026-05-08] — Dashboard: variable `EXTRA_UNIDADES_PATHS` para servir worktrees paralelos
+
+**Problema resuelto:** durante extracciones paralelas, el JSON de la unidad en curso vive en un worktree separado (ej. `extract/U2`), no en `main`. El dashboard de main no veía esos JSONs porque solo escaneaba su propia carpeta `unidades/`.
+
+**Solución:** variable de entorno `EXTRA_UNIDADES_PATHS` con paths adicionales a escanear (separador `:` estilo PATH). El dashboard fusiona inventarios de `unidades/` + paths extra. **Main tiene prioridad**: si una unidad existe en main, no se sobreescribe desde un path extra. Las unidades que solo están en paths extra se marcan con `zona='extra'`.
+
+**Uso:**
+
+```bash
+EXTRA_UNIDADES_PATHS=/Users/.../guia-didactica-extract-U2/unidades python3 diagrama.py
+```
+
+**Cambios en `diagrama.py`:**
+- Nueva función `_extra_unidades_paths()` (lee env var, valida existencia).
+- `list_inventarios()` fusiona main + extras (main gana ante colisión).
+- `get_inventario()` busca en main → extras como fallback.
+- `_scan_zona()` tolera paths fuera de `PROJECT` usando absoluto cuando `relative_to(PROJECT)` falla.
+
+**Ventajas:**
+- Una sola URL (`localhost:8080`), una sola instancia.
+- Refrescar el navegador muestra cambios del worktree paralelo en tiempo real.
+- Cuando la unidad se integra a main, automáticamente pasa a verse desde main.
+- Sirve para cualquier worktree de extracción futuro.
+
+**Sin cambios en código de fase 1, schema, validador ni archivos de extracción.** Validador U0/U1/U3 → 0/0.
+
+---
+
 ## [v10.78 — 2026-05-08] — Dashboard: enfoque visible en inventarios + badge de versión
 
 - `web/index.html`: campo `enfoque` ahora se muestra en cada actividad de la vista Inventarios (debajo de Destreza).
