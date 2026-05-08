@@ -5,6 +5,16 @@
 
 ---
 
+## [v10.80 — 2026-05-08] — Dashboard: badge de versión dinámico (fix doble visualización)
+
+**Problema detectado tras v10.79:** el header del dashboard mostraba dos versiones distintas. El badge verde (`v10.78`, hardcoded en `web/index.html` desde v10.78) y el indicador `v10.79 — hh:mm:ss` (dinámico desde `/api/version`). Origen: el badge se añadió como string literal, no como elemento dinámico.
+
+**Fix:** badge convertido a `id="version-badge"` con texto inicial `v?.??` que se rellena en `init()` desde la respuesta de `/api/version`. Una sola fuente de verdad (`CHANGELOG.md` → `_read_version()` → `/api/version`).
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+---
+
 ## [v10.79 — 2026-05-08] — Dashboard: variable `EXTRA_UNIDADES_PATHS` para servir worktrees paralelos
 
 **Problema resuelto:** durante extracciones paralelas, el JSON de la unidad en curso vive en un worktree separado (ej. `extract/U2`), no en `main`. El dashboard de main no veía esos JSONs porque solo escaneaba su propia carpeta `unidades/`.
