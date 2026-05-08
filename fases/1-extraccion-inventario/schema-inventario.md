@@ -125,9 +125,10 @@ El campo `numero` es **opcional**. La mayoría de actividades del libro están n
 ```jsonc
 {
   "tipo_cuadro": <enum de 5 valores — ver §7>,
-  "titulo": <str>,
+  "titulo": <str | null>,                                                                  // null si el libro no le pone título
   "contenido": {
-    "tipo": <str — tabla_conjugacion | tabla_interrogativos | tabla_posesivos | lista_ilustrada | tabla_colores | ...>,
+    "tipo": <str — tabla_conjugacion | tabla_interrogativos | tabla_posesivos | lista_ilustrada | tabla_colores | lista_reglas | ...>,
+    "texto_intro": <str opcional — encabezado introductorio antes de listas o tablas>,
     // estructura libre según el cuadro, capturando TODO el contenido visible
     "ejemplos": [str]
   },

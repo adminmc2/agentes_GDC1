@@ -5,6 +5,29 @@
 
 ---
 
+## [v10.84 — 2026-05-08] — Schema §4 (cuadros): `texto_intro` documentado + `titulo` nullable + `lista_reglas`
+
+**Hallazgos del ejecutor 2 en U2 que motivan este cambio:**
+1. Cuadros tipo lista de reglas (U2-p25 mayúsculas, U2-p29 mayúsculas) tienen un encabezado verbatim antes de la lista que el ejecutor 2 capturó como `texto_intro`. El schema lo permitía implícitamente (`contenido` es estructura libre), pero no lo documentaba como campo canónico — riesgo de divergencia entre extractores futuros.
+2. El cuadro de U2-p29 no tiene título visible en el libro. El schema decía `"titulo": <str>` sin marcar nullable, dejando ambiguo el caso real.
+3. El tipo `lista_reglas` aparecía implícitamente en U2 pero no estaba en la lista de ejemplos del schema.
+
+**Cambios quirúrgicos en `schema-inventario.md` §4** (3 líneas modificadas, 1 nueva, 0 párrafos añadidos):
+- `"titulo": <str>` → `"titulo": <str | null>` con comentario aclarando cuándo es null.
+- En `"tipo"`: añadido `lista_reglas` a la lista de ejemplos.
+- **Línea nueva**: `"texto_intro": <str opcional — encabezado introductorio antes de listas o tablas>`.
+
+**Resuelve 3 cosas en un commit:**
+- Documenta `texto_intro` como campo canónico.
+- Cierra el hallazgo A previo (cuadro p29 sin título → `null` legítimo).
+- Documenta `lista_reglas` como tipo válido (ya en uso de facto).
+
+**Sin cambios funcionales en código** (`contenido` es estructura libre, el validador no chequea esos campos). Validador U0/U1/U3 → 0/0.
+
+**Próximo:** decidir hallazgos C-D (oral vs escrita en U2-p29-act04, tipo busqueda_informacion en U2-p29-act07) e integrar U2 a main.
+
+---
+
 ## [v10.83 — 2026-05-08] — Refinamiento de regla "Para aprender" tras dictamen del ejecutor 2 en U2
 
 **Caso disparador** (extracción de U2 por ejecutor 2): el bloque "Para aprender — Uso de las mayúsculas" en U2-p25 es **puramente informativo** (lista de reglas con ejemplos, sin instrucción al alumno). La regla §1 regla 2 + §4 actuales decían "siempre actividad", lo que forzaba clasificación incorrecta.
