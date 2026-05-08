@@ -5,6 +5,31 @@
 
 ---
 
+## [v10.87 — 2026-05-08] — Integración de U2 a main (merge `extract/U2`)
+
+**Primera integración del carril paralelo de extracciones** desde la apertura del modelo de worktrees (post v10.79). Sigue la receta acordada con el revisor (`git merge --no-ff --no-commit` + edición de archivos vivos compartidos + commit único).
+
+**Contenido integrado:** `unidades/U2/U2-nc1-inventario.json` extraído por el ejecutor 2 en su worktree paralelo (`extract/U2`), validando 0/0 con el contrato post-refactor (taxonomía 20 + destreza/enfoque, schema §4 con `texto_intro`/`titulo` nullable/`lista_reglas`).
+
+**Datos de U2:**
+- 10 páginas (22-31), 52 actividades, 6 cuadros.
+- Contenido: vocabulario de países hispanohablantes, ser/tener plurales, demostrativos, los números 21-100, las vocales fonéticas, ESO en España, etc.
+- Inventario se ajusta al índice oficial del libro (`nc1-curso.json`).
+
+**Hallazgos cerrados antes de la integración:**
+- 7 correcciones del extractor original aplicadas (horario, cuadro ordinales eliminado, "tenemos" en p24-act02, Pierre Curso completo, cuadro mayúsculas con `texto_intro`, palabras_recuadro en p30-act03 eliminado, globo 3 con 11 letras corregido).
+- 5 refinamientos de regla derivados (v10.83-v10.86): bifurcación "Para aprender", schema cuadros con `texto_intro`/`titulo` nullable/`lista_reglas`, `responder_preguntas_abiertas` con destreza condicional, distinción individual vs parejas.
+- 1 verificación final aplicada en worktree (commit `155838f`): U2-p29-act04 destreza corregida a `[expresion_escrita]` tras confirmar contra PDF (escribe individual, no oral).
+
+**Estado de main post-integración:**
+- Unidades trackeadas validando 0/0: U0, U1, U2 (nuevo), U3.
+- Worktree `extract/U2` y rama `extract/U2` se mantienen intactos hasta que el autor decida limpiarlos.
+- Variable `EXTRA_UNIDADES_PATHS` del dashboard puede retirarse o dejarse (la lógica `main gana sobre extras` hace que U2 ahora se sirva desde main).
+
+**Próximo:** B1.5 (diseño de `nc1-reciclaje.json`) en este chat (ejecutor 1); re-extracción de U3 cuando el autor proporcione PDF correcto (ejecutor 2 en nuevo worktree).
+
+---
+
 ## [v10.86 — 2026-05-08] — Refinamiento §2.2 regla 3: distinción individual vs parejas en respuesta a preguntas
 
 **Caso disparador** (riesgo residual del revisor sobre v10.85): si U2-p29-act04 resulta ser intercambio en parejas, no solo cambia la destreza, sino también el `tipo` (de `responder_preguntas_abiertas` a `interaccion_oral`). La regla §2.2 punto 3 actual no hacía explícita la distinción individual vs parejas.

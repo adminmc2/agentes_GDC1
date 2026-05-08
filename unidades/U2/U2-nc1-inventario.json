@@ -1,0 +1,2437 @@
+{
+  "unidad": 2,
+  "curso": "nc1",
+  "titulo": "Países de habla hispana",
+  "paginas_libro": "22-31",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U2/fuente/U2-nc1.pdf",
+    "version_extraccion": "2026-05-07"
+  },
+  "contenidos_indice": {
+    "vocabulario": "Países hispanohablantes. Adjetivos de nacionalidad. Días de la semana. Números ordinales. Asignaturas",
+    "gramatica": "Verbos ser y tener (formas plurales). Plural de nombres y adjetivos. Demostrativos. Uso de las mayúsculas",
+    "comunicacion": "Saludar. Pedir y dar información personal. Números del 21 al 100. Hacer sugerencias. Las vocales",
+    "destrezas": "Una carta de presentación personal. Pedir y dar datos personales",
+    "cultura": "La ESO en España"
+  },
+  "vocabulario_consolidado": {
+    "principal": {
+      "_descripcion": "Vocabulario declarado en el índice de vocabulario de la unidad",
+      "Países hispanohablantes": [
+        "Argentina",
+        "Bolivia",
+        "Colombia",
+        "Ecuador",
+        "España",
+        "México",
+        "Perú"
+      ],
+      "Adjetivos de nacionalidad": [
+        "argentino/-a",
+        "boliviano/-a",
+        "colombiano/-a",
+        "ecuatoriano/-a",
+        "español/-a",
+        "mexicano/-a",
+        "peruano/-a"
+      ],
+      "Días de la semana": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo"
+      ],
+      "Números ordinales": [
+        "primero/-a",
+        "segundo/-a",
+        "tercero/-a",
+        "cuarto/-a",
+        "quinto/-a",
+        "sexto/-a",
+        "séptimo/-a",
+        "octavo/-a",
+        "noveno/-a",
+        "décimo/-a"
+      ],
+      "Asignaturas": [
+        "Ciencias Naturales",
+        "Ciencias Sociales",
+        "Educación Física",
+        "Educación Plástica",
+        "Español",
+        "Francés",
+        "Informática",
+        "Lengua",
+        "Matemáticas",
+        "Música"
+      ]
+    },
+    "recurrente": {
+      "_descripcion": "Vocabulario que aparece en varias secciones de la unidad",
+      "Adjetivos de nacionalidad": [
+        "argentino/-a",
+        "colombiano/-a",
+        "ecuatoriano/-a",
+        "español/-a",
+        "mexicano/-a",
+        "peruano/-a"
+      ],
+      "Asignaturas": [
+        "Educación Física",
+        "Historia",
+        "Informática",
+        "Lengua",
+        "Matemáticas",
+        "Música"
+      ],
+      "Números 21-100": [
+        "veintiuno",
+        "veintidós",
+        "treinta",
+        "cuarenta",
+        "cincuenta",
+        "sesenta",
+        "setenta",
+        "ochenta",
+        "noventa",
+        "cien"
+      ]
+    },
+    "comprension": {
+      "_descripcion": "Léxico que aparece y afecta la comprensión aunque no se trabaje explícitamente",
+      "Vocabulario del texto cultural": [
+        "descanso",
+        "distintas",
+        "alrededor de",
+        "extraescolares",
+        "optativas",
+        "obligatorias"
+      ],
+      "Vocabulario de los mensajes escritos": [
+        "afición",
+        "gimnasia",
+        "ciclismo",
+        "tenis"
+      ],
+      "Vocabulario del diálogo": [
+        "tutora",
+        "bienvenido",
+        "presentarnos"
+      ],
+      "Elementos culturales": [
+        "baile",
+        "poncho",
+        "tacos",
+        "tango",
+        "Machu Picchu",
+        "Don Quijote",
+        "ESO",
+        "recreo",
+        "bocadillo"
+      ]
+    }
+  },
+  "secciones": {
+    "vocabulario": {
+      "paginas": [
+        22,
+        23
+      ],
+      "actividades_ids": [
+        "U2-p22-act01",
+        "U2-p22-act02",
+        "U2-p22-act03",
+        "U2-p23-act04",
+        "U2-p23-act05",
+        "U2-p23-act06",
+        "U2-p23-act07",
+        "U2-p23-act08",
+        "U2-p23-act09",
+        "U2-p23-act10",
+        "U2-p23-act11",
+        "U2-p23-act12",
+        "U2-p23-act13"
+      ]
+    },
+    "gramatica": {
+      "paginas": [
+        24,
+        25
+      ],
+      "actividades_ids": [
+        "U2-p24-act01",
+        "U2-p24-act02",
+        "U2-p24-act03",
+        "U2-p25-act04",
+        "U2-p25-act05",
+        "U2-p25-act06",
+        "U2-p25-act07"
+      ]
+    },
+    "comunicacion": {
+      "paginas": [
+        26,
+        27
+      ],
+      "actividades_ids": [
+        "U2-p26-act01",
+        "U2-p26-act02",
+        "U2-p26-act03",
+        "U2-p26-act04",
+        "U2-p26-act05",
+        "U2-p27-act06",
+        "U2-p27-act07",
+        "U2-p27-act08",
+        "U2-p27-act09",
+        "U2-p27-act10",
+        "U2-p27-act11",
+        "U2-p27-act12"
+      ]
+    },
+    "destrezas": {
+      "paginas": [
+        28,
+        29
+      ],
+      "actividades_ids": [
+        "U2-p28-act01",
+        "U2-p28-act02",
+        "U2-p29-act03",
+        "U2-p29-act04",
+        "U2-p29-act05",
+        "U2-p29-act06",
+        "U2-p29-act07",
+        "U2-p29-act08"
+      ]
+    },
+    "cultura": {
+      "paginas": [
+        30
+      ],
+      "actividades_ids": [
+        "U2-p30-act01",
+        "U2-p30-act02",
+        "U2-p30-act03",
+        "U2-p30-act04"
+      ]
+    },
+    "evaluacion": {
+      "paginas": [
+        31
+      ],
+      "actividades_ids": [
+        "U2-p31-act01",
+        "U2-p31-act02",
+        "U2-p31-act03",
+        "U2-p31-act04",
+        "U2-p31-act05",
+        "U2-p31-act06",
+        "U2-p31-act07",
+        "U2-p31-act08"
+      ]
+    },
+    "reflexion": {
+      "paginas": [],
+      "actividades_ids": []
+    }
+  },
+  "autoevaluacion": {
+    "pagina": 31,
+    "instruccion_original": "Mis resultados en esta unidad son:",
+    "opciones": [
+      "MUY BUENOS",
+      "BUENOS",
+      "NO MUY BUENOS"
+    ],
+    "emoticonos": true
+  },
+  "paginas_detalle": [
+    {
+      "pagina": 22,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U2-p22-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Mira las imágenes y completa las frases con los países del recuadro. Después, escucha y comprueba.",
+          "contenido_linguistico": [
+            "países hispanohablantes",
+            "verbo ser"
+          ],
+          "campo_semantico": "Países",
+          "audio": {
+            "presente": true,
+            "pista": 18
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "7 imágenes que representan elementos típicos de países hispanohablantes: tango (Argentina), tacos (México), café (Colombia), banana (Ecuador), Don Quijote (España), poncho (Bolivia), Machu Picchu (Perú)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Argentina",
+            "2 México",
+            "3 Colombia",
+            "4 Ecuador",
+            "5 España",
+            "6 Bolivia",
+            "7 Perú"
+          ],
+          "datos": {
+            "palabras_recuadro": [
+              "Colombia",
+              "Ecuador",
+              "Perú",
+              "Argentina",
+              "Bolivia",
+              "España",
+              "México"
+            ],
+            "items_libro": [
+              "1 El tango es el baile típico de _____.",
+              "2 Los tacos son la comida típica de _____.",
+              "3 El café es un producto típico de _____.",
+              "4 La banana es la fruta típica de _____.",
+              "5 Don Quijote es de _____.",
+              "6 El poncho es una prenda de vestir típica de _____.",
+              "7 Machu Picchu es una antigua ciudad inca del _____."
+            ]
+          }
+        },
+        {
+          "id": "U2-p22-act02",
+          "numero": 2,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escribe la nacionalidad de los países del ejercicio 1.",
+          "contenido_linguistico": [
+            "adjetivos de nacionalidad",
+            "género"
+          ],
+          "campo_semantico": "Nacionalidades",
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Argentina — argentino / argentina",
+            "2 Colombia — colombiano / colombiana",
+            "3 Ecuador — ecuatoriano / ecuatoriana",
+            "4 Bolivia — boliviano / boliviana",
+            "5 Perú — peruano / peruana",
+            "6 España — español / española"
+          ],
+          "datos": {
+            "ejemplo_libro": "México — mexicano / mexicana",
+            "items_libro": [
+              "1 Argentina",
+              "2 Colombia",
+              "3 Ecuador",
+              "4 Bolivia",
+              "5 Perú",
+              "6 España"
+            ]
+          }
+        },
+        {
+          "id": "U2-p22-act03",
+          "numero": 3,
+          "tipo": "responder_preguntas_abiertas",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "¿De dónde eres tú? Señala o completa tu nacionalidad.",
+          "contenido_linguistico": [
+            "adjetivos de nacionalidad",
+            "verbo ser"
+          ],
+          "campo_semantico": "Nacionalidades",
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "Soy alemán/-ana.",
+              "Soy polaco/-a.",
+              "Soy griego/-a.",
+              "Soy japonés/-esa.",
+              "Soy inglés/-esa.",
+              "Soy _____."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 23,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U2-p23-act04",
+          "numero": 4,
+          "tipo": "lee_y_escucha",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee y escucha.",
+          "contenido_linguistico": [
+            "el español en el mundo",
+            "números ordinales"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 19
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "texto_completo": "El español es una lengua muy importante internacionalmente. Es la lengua oficial de España, México, los países de América Central y la mayoría de los países de América del Sur y de Guinea Ecuatorial. Es la tercera* lengua más hablada del mundo: la hablan más de 580 millones de personas. En Estados Unidos es el segundo** idioma y se usa frecuentemente en la radio y la televisión. El español también se llama \"castellano\".\n* tercera = 3.ª\n* segundo = 2.º"
+          }
+        },
+        {
+          "id": "U2-p23-act05",
+          "numero": 5,
+          "tipo": "verdadero_falso",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "¿Verdadero (V) o falso (F)?",
+          "contenido_linguistico": [
+            "el español en el mundo"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 F",
+            "2 V",
+            "3 F"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 El español es la segunda lengua más hablada del mundo.",
+              "2 El español es la lengua oficial de la mayoría de los países de América del Sur.",
+              "3 El español es la lengua oficial de EE. UU."
+            ]
+          }
+        },
+        {
+          "id": "U2-p23-act06",
+          "numero": 6,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral",
+            "interaccion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y repite los días de la semana. Después, pregunta a tu compañero, como en el ejemplo.",
+          "contenido_linguistico": [
+            "días de la semana"
+          ],
+          "campo_semantico": "Días de la semana",
+          "audio": {
+            "presente": true,
+            "pista": 20
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "_lu_nes",
+              "_mar_tes",
+              "_miér_coles",
+              "_jué_ves",
+              "_vier_nes",
+              "_sá_bado",
+              "do_min_go"
+            ],
+            "ejemplo_libro": "¿Cuál es tu día favorito de la semana? / Mi día favorito de la semana es el viernes.",
+            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+          }
+        },
+        {
+          "id": "U2-p23-act07",
+          "numero": 7,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y repite los números ordinales.",
+          "contenido_linguistico": [
+            "números ordinales"
+          ],
+          "campo_semantico": "Números ordinales",
+          "audio": {
+            "presente": true,
+            "pista": 21
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "pri_me_ro / pri_me_ra",
+              "se_gun_do / se_gun_da",
+              "ter_ce_ro / ter_ce_ra",
+              "_cuar_to / _cuar_ta",
+              "_quin_to / _quin_ta",
+              "_sex_to / _sex_ta",
+              "sép_ti_mo / sép_ti_ma",
+              "oc_ta_vo / oc_ta_va",
+              "no_ve_no / no_ve_na",
+              "_dé_cimo / _dé_cima"
+            ],
+            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+          }
+        },
+        {
+          "id": "U2-p23-act08",
+          "numero": 8,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escribe los siguientes números ordinales.",
+          "contenido_linguistico": [
+            "números ordinales",
+            "género"
+          ],
+          "campo_semantico": "Números ordinales",
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1.ª primera",
+            "1.º primero",
+            "6.º sexto",
+            "2.º segundo",
+            "5.ª quinta",
+            "4.ª cuarta",
+            "2.ª segunda",
+            "6.ª sexta",
+            "8.º octavo",
+            "9.ª novena",
+            "7.ª séptima",
+            "10.º décimo"
+          ],
+          "datos": {
+            "ejemplo_libro": "3.º tercero / 3.ª tercera",
+            "items_libro": [
+              "1.ª",
+              "1.º",
+              "6.º",
+              "2.º",
+              "5.ª",
+              "4.ª",
+              "2.ª",
+              "6.ª",
+              "8.º",
+              "9.ª",
+              "7.ª",
+              "10.º"
+            ]
+          }
+        },
+        {
+          "id": "U2-p23-act09",
+          "numero": 9,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y repite los nombres de las asignaturas. Después, relaciona cada asignatura con su dibujo.",
+          "contenido_linguistico": [
+            "asignaturas"
+          ],
+          "campo_semantico": "Asignaturas",
+          "audio": {
+            "presente": true,
+            "pista": 22
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "10 dibujos numerados del 1 al 10 representando asignaturas: 1 Educación Física, 2 Lengua, 3 Educación Plástica, 4 Ciencias Sociales, 5 Ciencias Naturales, 6 Música, 7 Español, 8 Matemáticas, 9 Informática, 10 Francés."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "Ciencias Naturales → 5",
+            "Ciencias Sociales → 4",
+            "Educación Física → 1",
+            "Francés → 10",
+            "Lengua → 2",
+            "Español → 7",
+            "Matemáticas → 8",
+            "Música → 6",
+            "Educación Plástica → 3",
+            "Informática → 9"
+          ],
+          "datos": {
+            "items_libro": [
+              "Ciencias Naturales",
+              "Ciencias Sociales",
+              "Educación Física",
+              "Francés",
+              "Lengua",
+              "Español",
+              "Matemáticas",
+              "Música",
+              "Educación Plástica",
+              "Informática"
+            ],
+            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+          }
+        },
+        {
+          "id": "U2-p23-act10",
+          "numero": 10,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "interaccion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Habla con tu compañero como en el ejemplo.",
+          "contenido_linguistico": [
+            "asignaturas",
+            "verbo ser"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "¿Cuál es tu asignatura favorita? / Mi asignatura favorita es la Educación Física."
+          }
+        },
+        {
+          "id": "U2-p23-act11",
+          "numero": 11,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y completa el horario.",
+          "contenido_linguistico": [
+            "asignaturas",
+            "números ordinales",
+            "días de la semana"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 23
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1.ª Lunes=Español, Martes=Lengua, Miércoles=C. Naturales, Jueves=Matemáticas",
+            "2.ª Lunes=Matemáticas, Miércoles=Lengua, Jueves=Español, Viernes=C. Naturales",
+            "3.ª Lunes=Lengua, Jueves=Lengua, Viernes=Español",
+            "4.ª Lunes=C. Naturales, Martes=Informática, Viernes=Matemáticas",
+            "5.ª Lunes=C. Sociales, Miércoles=C. Sociales, Jueves=C. Sociales, Viernes=Lengua",
+            "6.ª Lunes=Informática, Jueves=Informática"
+          ],
+          "datos": {
+            "items_libro": [
+              "Tabla horario semanal completamente en blanco: filas 1.ª–6.ª hora + RECREO, columnas Lunes–Viernes."
+            ],
+            "_nota": "Todas las respuestas visibles en el libro están en violeta/cursiva. Las celdas marcadas (audio) no aparecen en el libro impreso; se completan exclusivamente con la pista 23."
+          }
+        },
+        {
+          "id": "U2-p23-act12",
+          "numero": 12,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "interaccion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Termina de completar el horario del ejercicio anterior con las demás asignaturas. Después, pregunta a tu compañero, como en el ejemplo.",
+          "contenido_linguistico": [
+            "asignaturas",
+            "números ordinales",
+            "días de la semana"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "¿Qué tienes a segunda hora el martes?"
+          }
+        },
+        {
+          "id": "U2-p23-act13",
+          "numero": 13,
+          "tipo": "expresion_escrita_libre",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Ahora escribe tu horario real y colorea las casillas con diferentes colores para cada asignatura.",
+          "contenido_linguistico": [
+            "asignaturas",
+            "números ordinales",
+            "días de la semana"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": []
+        }
+      ],
+      "cuadros": []
+    },
+    {
+      "pagina": 24,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U2-p24-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa los huecos con la forma correcta del verbo ser.",
+          "contenido_linguistico": [
+            "verbo ser (presente plural)"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 sois",
+            "2 son",
+            "3 es",
+            "4 son",
+            "5 es",
+            "6 son",
+            "7 es"
+          ],
+          "datos": {
+            "ejemplo_libro": "Mi compañera Verónica y yo no somos españolas.",
+            "items_libro": [
+              "1 ¿De dónde _____ vosotros?",
+              "2 Gabriela y su familia _____ argentinos.",
+              "3 Esta mujer _____ la madre de Tom.",
+              "4 Estos niños _____ franceses.",
+              "5 Andrés _____ profesor de matemáticas.",
+              "6 ¿Ellas _____ japonesas?",
+              "7 ¿Cuál _____ tu asignatura favorita?"
+            ]
+          }
+        },
+        {
+          "id": "U2-p24-act02",
+          "numero": 2,
+          "tipo": "seleccion_multiple",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Subraya la forma correcta.",
+          "contenido_linguistico": [
+            "verbo tener (presente plural)"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "tenemos",
+            "1 tiene",
+            "2 tienen",
+            "3 tenéis",
+            "4 tenemos",
+            "5 tienen",
+            "6 tienen",
+            "7 tiene"
+          ],
+          "datos": {
+            "ejemplo_libro": "Mi compañera y yo hoy no tengo / tenemos clase de francés.",
+            "items_libro": [
+              "1 Elisabeth tiene / tienes clase de informática a segunda hora los lunes.",
+              "2 Estos chicos tienen / tenemos doce años.",
+              "3 ¿Cuántos años tenéis / tienen vosotros?",
+              "4 ¿A qué hora tenemos / tenéis nosotras clase de música?",
+              "5 Lucía y María tienen / tenemos unas mochilas negras.",
+              "6 Ellos tienen / tenemos un profesor alemán.",
+              "7 Peter tiene / tienes 20 años."
+            ]
+          }
+        },
+        {
+          "id": "U2-p24-act03",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa el mensaje de Cristina con las formas del recuadro.",
+          "contenido_linguistico": [
+            "verbo ser",
+            "verbo tener",
+            "demostrativos"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Foto de una chica joven (Cristina) junto a un mensaje de texto en pantalla con huecos numerados [1]-[5]."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "[1] Tengo",
+            "[2] soy",
+            "[3] Estos",
+            "[4] son",
+            "[5] somos"
+          ],
+          "datos": {
+            "palabras_recuadro": [
+              "somos",
+              "soy",
+              "tengo",
+              "estos",
+              "son"
+            ],
+            "texto_completo": "Me llamo Cristina, [1] _____ 13 años y [2] _____ de Madrid. [3] _____ de la foto [4] _____ mis amigos, Rosa y Dani. Nosotros [5] _____ compañeros de clase. Un saludo, Cristina"
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Presente de los verbos ser y tener",
+          "contenido": {
+            "tipo": "tabla_conjugacion",
+            "verbos": [
+              "ser",
+              "tener"
+            ],
+            "formas": {
+              "yo": [
+                "soy",
+                "tengo"
+              ],
+              "tú": [
+                "eres",
+                "tienes"
+              ],
+              "él / ella / usted": [
+                "es",
+                "tiene"
+              ],
+              "nosotros/-as": [
+                "somos",
+                "tenemos"
+              ],
+              "vosotros/-as": [
+                "sois",
+                "tenéis"
+              ],
+              "ellos / ellas / ustedes": [
+                "son",
+                "tienen"
+              ]
+            }
+          }
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Plural de nombres y adjetivos",
+          "contenido": {
+            "tipo": "tabla_plural",
+            "nombres": {
+              "reglas": [
+                "singular: coche → plural: coches",
+                "singular: camión → plural: camiones"
+              ]
+            },
+            "adjetivos": {
+              "singular_masculino": "el gato blanco / el gato grande",
+              "singular_femenino": "la gata blanca / la gata grande",
+              "plural_masculino": "los gatos blancos / los gatos grandes",
+              "plural_femenino": "las gatas blancas / las gatas grandes"
+            }
+          }
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Demostrativos",
+          "contenido": {
+            "tipo": "tabla_demostrativos",
+            "tabla": {
+              "singular_masculino": "este libro",
+              "singular_femenino": "esta casa",
+              "plural_masculino": "estos libros",
+              "plural_femenino": "estas casas"
+            },
+            "ejemplos": [
+              "Este es Juan.",
+              "Esta es Lola.",
+              "Estos son Andrés y Lucía.",
+              "Estas son Laura y Rosa."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 25,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U2-p25-act04",
+          "numero": 4,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Forma el plural de los siguientes grupos de nombre + adjetivo",
+          "contenido_linguistico": [
+            "plural de nombres y adjetivos",
+            "género y número"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 las pizarras blancas",
+            "2 los profesores chinos",
+            "3 las directoras peruanas",
+            "4 las ventanas pequeñas",
+            "5 los estudiantes inteligentes",
+            "6 los compañeros alemanes",
+            "7 las amigas españolas",
+            "8 las puertas grandes"
+          ],
+          "datos": {
+            "ejemplo_libro": "la mochila roja → las mochilas rojas",
+            "items_libro": [
+              "1 la pizarra blanca",
+              "2 el profesor chino",
+              "3 la directora peruana",
+              "4 la ventana pequeña",
+              "5 el estudiante inteligente",
+              "6 el compañero alemán",
+              "7 la amiga española",
+              "8 la puerta grande"
+            ]
+          }
+        },
+        {
+          "id": "U2-p25-act05",
+          "numero": 5,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Ahora escribe el plural de las frases, como en el ejemplo.",
+          "contenido_linguistico": [
+            "plural de nombres y adjetivos",
+            "demostrativos"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Tabla SINGULAR / PLURAL con imagen de una flor amarilla (singular) y varias flores amarillas (plural) como ejemplo visual."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Estos bolígrafos son rojos.",
+            "2 Estos libros son azules.",
+            "3 Estas sillas son verdes.",
+            "4 Estas casas son blancas.",
+            "5 Estas pizarras son grises.",
+            "6 Estos lápices son marrones.",
+            "7 Estas niñas son altas.",
+            "8 Estos chicos son españoles."
+          ],
+          "datos": {
+            "ejemplo_libro": "Esta flor es amarilla. → Estas flores son amarillas.",
+            "items_libro": [
+              "1 Este bolígrafo es rojo.",
+              "2 Este libro es azul.",
+              "3 Esta silla es verde.",
+              "4 Esta casa es blanca.",
+              "5 Esta pizarra es gris.",
+              "6 Este lápiz es marrón.",
+              "7 Esta niña es alta.",
+              "8 Este chico es español."
+            ]
+          }
+        },
+        {
+          "id": "U2-p25-act06",
+          "numero": 6,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "En parejas, pregunta y responde a tu compañero sobre estos personajes, como en el ejemplo.",
+          "contenido_linguistico": [
+            "verbo ser",
+            "adjetivos de nacionalidad",
+            "demostrativos",
+            "interrogativos"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "5 fotos de jóvenes con nombre y país: Pedro (Perú), 1 María (Colombia), 2 Carlos (España), 3 Alberto y Rosario (Ecuador), 4 Elena y Alicia (Nicaragua)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "¿Quién es este? / Es Pedro. / ¿De dónde es? / Es peruano.",
+            "1 ¿Quién es esta? / Es María. / ¿De dónde es? / Es colombiana.",
+            "2 ¿Quién es este? / Es Carlos. / ¿De dónde es? / Es español.",
+            "3 ¿Quiénes son estos? / Son Alberto y Rosario. / ¿De dónde son? / Son ecuatorianos.",
+            "4 ¿Quiénes son estas? / Son Elena y Alicia. / ¿De dónde son? / Son nicaragüenses."
+          ],
+          "datos": {
+            "ejemplo_libro": "¿Quién es este? / Es Pedro. / ¿De dónde es? / Es peruano. / ¿Quiénes son estos? / ¿Quiénes son estas?",
+            "personajes": [
+              "Pedro, Perú",
+              "María, Colombia",
+              "Carlos, España",
+              "Alberto y Rosario, Ecuador",
+              "Elena y Alicia, Nicaragua"
+            ]
+          }
+        },
+        {
+          "id": "U2-p25-act07",
+          "numero": 7,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Escribe las frases correctamente.",
+          "contenido_linguistico": [
+            "uso de las mayúsculas"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "Graciela y Pablo son compañeros de clase.",
+            "1 Luis vive en Buenos Aires.",
+            "2 El río Nilo es muy largo.",
+            "3 Mi padre se llama Luis Rodríguez.",
+            "4 La capital de Perú es Lima.",
+            "5 Fernando es mexicano, de Puebla.",
+            "6 A Juan le gusta Batman."
+          ],
+          "datos": {
+            "ejemplo_libro": "graciela y pablo son compañeros de clase. → Graciela y Pablo son compañeros de clase.",
+            "items_libro": [
+              "1 luis vive en buenos aires.",
+              "2 el río nilo es muy largo.",
+              "3 mi padre se llama luis rodríguez.",
+              "4 la capital de perú es lima.",
+              "5 fernando es mexicano, de puebla.",
+              "6 a juan le gusta batman."
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Para aprender — Uso de las mayúsculas",
+          "contenido": {
+            "tipo": "lista_reglas",
+            "texto_intro": "En español se escribe con letra mayúscula:",
+            "reglas": [
+              "la primera palabra de una frase: Hola, me llamo Ricardo.",
+              "los nombres y apellidos de personas, países, ríos, montañas…: Laura López, Francia, Amazonas, Everest…",
+              "los títulos de películas, libros…: El rey león, Parque Jurásico…"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 26,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U2-p26-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
+          "contenido_linguistico": [
+            "presentarse",
+            "saludar",
+            "verbo ser",
+            "verbo tener",
+            "información personal"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 24
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Tres fotografías de un aula con estudiantes y una profesora en distintos momentos de presentación."
+          },
+          "video": {
+            "presente": true
+          },
+          "respuestas": [
+            "[1] me llamo",
+            "[2] cómo te llamas",
+            "[3] ¿Cuántos años tienes?",
+            "[4] de dónde eres",
+            "[5] Tengo",
+            "[6] Soy",
+            "[7] soy"
+          ],
+          "datos": {
+            "palabras_recuadro": [
+              "de dónde eres",
+              "Tengo",
+              "¿Cuántos años tienes?",
+              "me llamo",
+              "cómo te llamas",
+              "soy (x2)"
+            ],
+            "dialogo_completo": [
+              "PROFESORA: Hola, buenos días. Yo [1] _____ Natalia y soy la tutora de este curso.",
+              "TODOS: Buenos días, Natalia.",
+              "PROFESORA: Vamos a presentarnos. Por ejemplo… Tú, ¿[2] _____?",
+              "PABLO: Me llamo Pablo.",
+              "PROFESORA: ¿[3] _____?",
+              "PABLO: Tengo 12 años.",
+              "PROFESORA: ¿Y [4] _____?",
+              "PABLO: Soy de Madrid.",
+              "GRACIELA: Yo soy Graciela. [5] _____ 12 años y mañana cumplo 13. [6] _____ de Barcelona, pero vivo aquí, en Madrid.",
+              "PROFESORA: ¿Y tu compañera?",
+              "JULIA: Yo [7] _____ Julia, soy también de Madrid y tengo 13 años.",
+              "PROFESORA: Y tú, ¿cómo te llamas?",
+              "JORGE: Me llamo Jorge.",
+              "PROFESORA: Bienvenido, Jorge. ¿Cuántos años tienes?",
+              "JORGE: Tengo 12 años y soy argentino, de Buenos Aires. Mi padre es español y mi madre también es argentina. Es mi primer año en España.",
+              "PROFESORA: Pues yo soy de Málaga, una ciudad que está en Andalucía, al sur de España.",
+              "GRACIELA: ¡Mi amiga Lola también vive en Málaga!"
+            ]
+          }
+        },
+        {
+          "id": "U2-p26-act02",
+          "numero": 2,
+          "tipo": "escucha",
+          "destreza": [
+            "comprension_auditiva"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Escucha de nuevo y comprueba.",
+          "contenido_linguistico": [
+            "presentarse",
+            "información personal"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 24
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": []
+        },
+        {
+          "id": "U2-p26-act03",
+          "numero": 3,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Contesta a las preguntas.",
+          "contenido_linguistico": [
+            "información personal",
+            "verbo ser",
+            "verbo tener"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Jorge",
+            "2 No",
+            "3 Es argentino",
+            "4 12 años"
+          ],
+          "datos": {
+            "preguntas": [
+              "1 ¿Cómo se llama el nuevo compañero?",
+              "2 ¿Es español?",
+              "3 ¿De dónde es?",
+              "4 ¿Cuántos años tiene?"
+            ]
+          }
+        },
+        {
+          "id": "U2-p26-act04",
+          "numero": 4,
+          "tipo": "verdadero_falso",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "¿Verdadero (V) o falso (F)?",
+          "contenido_linguistico": [
+            "información personal",
+            "verbo ser"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 F",
+            "2 V",
+            "3 V",
+            "4 F"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Jorge es francés.",
+              "2 Buenos Aires es una ciudad argentina.",
+              "3 Pablo y Graciela son compañeros de clase.",
+              "4 Pablo vive en Buenos Aires."
+            ]
+          }
+        },
+        {
+          "id": "U2-p26-act05",
+          "numero": 5,
+          "tipo": "tarea_final",
+          "destreza": [
+            "expresion_escrita",
+            "expresion_oral",
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Crea tu propio diálogo siguiendo estos pasos:",
+          "contenido_linguistico": [
+            "presentarse",
+            "información personal",
+            "verbo ser",
+            "verbo tener"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Invéntate una nueva identidad: nombre, nacionalidad, ciudad, edad…",
+              "Conoces a un estudiante de tu clase. Prepara el diálogo con tu nueva identidad…",
+              "Practica el diálogo con tu compañero.",
+              "Representa el diálogo delante de la clase."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 27,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U2-p27-act06",
+          "numero": 6,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y repite los números.",
+          "contenido_linguistico": [
+            "números 21-100"
+          ],
+          "campo_semantico": "Números",
+          "audio": {
+            "presente": true,
+            "pista": 25
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "21 veintiuno",
+              "22 veintidós",
+              "23 veintitrés",
+              "24 veinticuatro",
+              "25 veinticinco",
+              "26 veintiséis",
+              "27 veintisiete",
+              "28 veintiocho",
+              "29 veintinueve",
+              "30 treinta",
+              "31 treinta y uno",
+              "32 treinta y dos",
+              "33 treinta y tres",
+              "40 cuarenta",
+              "50 cincuenta",
+              "60 sesenta",
+              "70 setenta",
+              "80 ochenta",
+              "90 noventa",
+              "100 cien"
+            ]
+          }
+        },
+        {
+          "id": "U2-p27-act07",
+          "numero": 7,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escribe los números que escuchas.",
+          "contenido_linguistico": [
+            "números 21-100"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 26
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "a 13",
+            "b 75",
+            "c 22",
+            "d 37",
+            "e 84",
+            "f 41",
+            "g 60",
+            "h 15"
+          ],
+          "datos": {
+            "items_libro": [
+              "a) 3 / 13",
+              "b) 65 / 75",
+              "c) 12 / 22",
+              "d) 23 / 37",
+              "e) 84 / 94",
+              "f) 31 / 41",
+              "g) 60 / 70",
+              "h) 14 / 15"
+            ]
+          }
+        },
+        {
+          "id": "U2-p27-act08",
+          "numero": 8,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "En parejas, pregúntale a tu compañero su dirección, como en el ejemplo.",
+          "contenido_linguistico": [
+            "pedir y dar información personal",
+            "números 21-100"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "¿Dónde vives? / En la calle de Cervantes, cuarenta y tres."
+          }
+        },
+        {
+          "id": "U2-p27-act09",
+          "numero": 9,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": [
+            "hacer sugerencias",
+            "vamos a"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 27
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "dialogo_completo": [
+              "¿Vamos al parque?",
+              "No, al parque no.",
+              "¿Vamos al cine?",
+              "Vale, vamos."
+            ]
+          }
+        },
+        {
+          "id": "U2-p27-act10",
+          "numero": 10,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Ahora haz las siguientes sugerencias a tu compañero, como en el ejercicio anterior.",
+          "contenido_linguistico": [
+            "hacer sugerencias",
+            "vamos a"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "6 fotografías de lugares: 1 parque, 2 zoo, 3 piscina, 4 casa de Julia, 5 recreo escolar, 6 biblioteca."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "nombres_dados": [
+              "1 Al parque",
+              "2 Al zoo",
+              "3 A la piscina",
+              "4 A casa de Julia",
+              "5 Al recreo",
+              "6 A la biblioteca"
+            ]
+          }
+        },
+        {
+          "id": "U2-p27-act11",
+          "numero": 11,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escucha y repite las vocales españolas.",
+          "contenido_linguistico": [
+            "vocales",
+            "pronunciación"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 28
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "a • e • i • o • u"
+            ]
+          }
+        },
+        {
+          "id": "U2-p27-act12",
+          "numero": 12,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": [
+            "vocales en palabras",
+            "pronunciación"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 29
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "azul • casa • mesa • policía • escribir",
+              "matemáticas • lápiz • Pepe • Pili",
+              "mamá • beber • vivir • tonto • uno"
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "lexical",
+          "titulo": "21 al 100",
+          "contenido": {
+            "tipo": "lista_numerica",
+            "numeros": {
+              "21": "veintiuno",
+              "22": "veintidós",
+              "23": "veintitrés",
+              "24": "veinticuatro",
+              "25": "veinticinco",
+              "26": "veintiséis",
+              "27": "veintisiete",
+              "28": "veintiocho",
+              "29": "veintinueve",
+              "30": "treinta",
+              "31": "treinta y uno",
+              "32": "treinta y dos",
+              "33": "treinta y tres",
+              "40": "cuarenta",
+              "50": "cincuenta",
+              "60": "sesenta",
+              "70": "setenta",
+              "80": "ochenta",
+              "90": "noventa",
+              "100": "cien"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 28,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U2-p28-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Marta escribe a su nuevo amigo, Pierre, por primera vez y él contesta. Lee sus mensajes. Después, completa las fichas.",
+          "contenido_linguistico": [
+            "presentación personal",
+            "información personal",
+            "verbo ser",
+            "verbo tener",
+            "estudiar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Dos fotos de estudiantes: una chica joven con tablet (Marta) y un chico joven con ordenador (Pierre)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "Marta: Nombre=Marta, Apellido=Rodríguez, Ciudad=Cádiz, Edad=14 años, Curso=3.º de Educación Secundaria Obligatoria, Nombre del colegio=Instituto Miguel de Unamuno, Asignatura favorita=Historia",
+            "Pierre: Nombre=Pierre, Apellido=Dubois, Ciudad=París, Edad=13 años, Curso=2.º de Educación Secundaria Obligatoria, Nombre del colegio=Instituto Marie Curie, Asignatura favorita=Música y Educación Física"
+          ],
+          "datos": {
+            "texto_completo": "CARTA DE MARTA:\nQuerido Pierre:\n¿Cómo estás? Me llamo Marta Rodríguez y vivo en Cádiz, en España. Tengo catorce años y estudio tercero de Educación Secundaria Obligatoria en el instituto Miguel de Unamuno.\nEn mi clase somos treinta estudiantes.\nMi asignatura favorita es Historia y mi afición favorita es el deporte, especialmente la gimnasia. ¿Cuál es tu deporte favorito?\nUn saludo,\nMarta\n\nCARTA DE PIERRE:\n¡Hola!, ¿qué tal?\nMe llamo Pierre Dubois y vivo en París, en Francia. Tengo trece años y estudio segundo curso de Educación Secundaria en el instituto Marie Curie.\nEste año estudiamos español tres días a la semana, pero mis asignaturas favoritas son la Música y la Educación Física. Mis deportes favoritos son el tenis y el ciclismo.\n¡Un saludo desde Francia!\nPierre",
+            "items_libro": [
+              "Ficha Marta: Nombre=_____, Apellido=_____, Ciudad=_____, Edad=_____, Curso=_____, Nombre del colegio=_____, Asignatura favorita=_____",
+              "Ficha Pierre: Nombre=_____, Apellido=_____, Ciudad=_____, Edad=_____, Curso=_____, Nombre del colegio=_____, Asignatura favorita=_____"
+            ]
+          }
+        },
+        {
+          "id": "U2-p28-act02",
+          "numero": 2,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee los mensajes otra vez y contesta a las preguntas.",
+          "contenido_linguistico": [
+            "información personal",
+            "verbo ser",
+            "verbo tener"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Marta es española y Pierre es francés",
+            "2 Marta es de Cádiz",
+            "3 Pierre es de París",
+            "4 Son 30 alumnos",
+            "5 Español"
+          ],
+          "datos": {
+            "preguntas": [
+              "1 ¿Cuáles son las nacionalidades de Marta y Pierre?",
+              "2 ¿De qué ciudad es Marta?",
+              "3 ¿De qué ciudad es Pierre?",
+              "4 ¿Cuántos alumnos son en la clase de Marta?",
+              "5 ¿Qué idioma estudia Pierre en su instituto?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 29,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U2-p29-act03",
+          "numero": 3,
+          "tipo": "verdadero_falso",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Escucha a Frida hablar de unos amigos. Después, lee las frases y señala verdadero (V) o falso (F).",
+          "contenido_linguistico": [
+            "información personal",
+            "verbo ser",
+            "verbo tener",
+            "asignaturas"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 30
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Fotos de dos jóvenes: Violeta (chica) y Rubén (chico) con sus nombres en carteles."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 V",
+            "2 V",
+            "3 F",
+            "4 F",
+            "5 V",
+            "6 F",
+            "7 F"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Rubén y Violeta son mexicanos.",
+              "2 Estudian en el mismo instituto.",
+              "3 Rubén tiene trece años.",
+              "4 Violeta tiene doce años.",
+              "5 La asignatura favorita de Rubén es la Historia.",
+              "6 La asignatura favorita de Violeta son las Matemáticas.",
+              "7 Los viernes van a jugar al fútbol con Frida."
+            ]
+          }
+        },
+        {
+          "id": "U2-p29-act04",
+          "numero": 4,
+          "tipo": "responder_preguntas_abiertas",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Imagina que eres de un país hispano. Responde a las siguientes preguntas.",
+          "contenido_linguistico": [
+            "información personal",
+            "verbo ser",
+            "verbo tener",
+            "llamarse",
+            "vivir",
+            "estudiar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "1 ¿Cómo te llamas?",
+              "2 ¿Cuántos años tienes?",
+              "3 ¿De dónde eres?",
+              "4 ¿Dónde vives?",
+              "5 ¿Qué estudias?",
+              "6 ¿Cuántos alumnos sois en tu clase?",
+              "7 ¿Cuál es tu asignatura favorita?",
+              "8 ¿Cuál es tu deporte favorito?"
+            ]
+          }
+        },
+        {
+          "id": "U2-p29-act05",
+          "numero": 5,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "expresion_escrita",
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Ahora, pregunta y responde a un compañero. Escribe las respuestas de tu compañero.",
+          "contenido_linguistico": [
+            "información personal",
+            "verbo ser",
+            "verbo tener",
+            "llamarse"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": []
+        },
+        {
+          "id": "U2-p29-act06",
+          "numero": 6,
+          "tipo": "expresion_oral_libre",
+          "destreza": [
+            "mediacion"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Con las respuestas de tu compañero informa a la clase sobre todo lo que ahora sabes de él: su nombre, su edad, su nacionalidad, su domicilio, sus aficiones… Los compañeros de clase pueden hacerte preguntas para completar la información.",
+          "contenido_linguistico": [
+            "información personal",
+            "verbo ser",
+            "verbo tener",
+            "llamarse",
+            "vivir",
+            "gustar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "frases": [
+              "Mi compañera se llama…",
+              "Tiene…",
+              "Es de…",
+              "Vive en…",
+              "Estudia…",
+              "Su afición favorita…",
+              "Le gusta…"
+            ]
+          }
+        },
+        {
+          "id": "U2-p29-act07",
+          "numero": 7,
+          "tipo": "busqueda_informacion",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Mira las reglas de uso de las letras mayúsculas y busca ejemplos en los mensajes del ejercicio 1 de Marta y Pierre.",
+          "contenido_linguistico": [
+            "uso de las mayúsculas"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "Al principio de un texto: Querido…",
+            "Después de un punto: … España. Tengo…",
+            "Con los nombres y apellidos de personas: Me llamo Marta Rodríguez…",
+            "Con los nombres de lugares: … vivo en Cádiz,",
+            "Con los nombres de países: … en España.",
+            "Con los nombres de asignaturas: Mi asignatura favorita es Historia."
+          ]
+        },
+        {
+          "id": "U2-p29-act08",
+          "numero": 8,
+          "tipo": "expresion_escrita_libre",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escribe un mensaje a un nuevo amigo siguiendo estos pasos:",
+          "contenido_linguistico": [
+            "presentación personal",
+            "información personal",
+            "uso de las mayúsculas"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Completa una ficha como las del ejercicio 1 con tu propia información.",
+              "Complétala con notas sobre tus actividades favoritas: deportes, música, días de la semana…",
+              "No te olvides de escribir: una frase de saludo para empezar tu mensaje, toda la información sobre ti, tu colegio, tus actividades favoritas y una frase de despedida.",
+              "Comprueba la forma correcta de los verbos y el uso de las mayúsculas."
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "contenido": {
+            "tipo": "lista_reglas",
+            "texto_intro": "Siempre usamos letras mayúsculas en los siguientes casos:",
+            "reglas": [
+              "al principio de un texto",
+              "después de un punto",
+              "con los nombres y apellidos de personas",
+              "con los nombres de lugares",
+              "con los nombres de países",
+              "con los nombres de asignaturas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 30,
+      "seccion": "cultura",
+      "actividades": [
+        {
+          "id": "U2-p30-act01",
+          "numero": 1,
+          "tipo": "expresion_oral_libre",
+          "destreza": [
+            "expresion_oral"
+          ],
+          "enfoque": "cultura",
+          "instruccion_original": "Mira la foto. Compárala con tu clase. ¿Tienen uniforme los alumnos de la foto? ¿Y vosotros?",
+          "contenido_linguistico": [
+            "verbo tener",
+            "descripción",
+            "comparación"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Fotografía de una clase de instituto español con alumnos y una profesora, los alumnos no llevan uniforme."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": []
+        },
+        {
+          "id": "U2-p30-act02",
+          "numero": 2,
+          "tipo": "verdadero_falso",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "cultura",
+          "instruccion_original": "Lee el texto y responde si las frases son verdaderas (V) o falsas (F).",
+          "contenido_linguistico": [
+            "el sistema educativo español",
+            "vocabulario del texto cultural"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 F",
+            "2 F",
+            "3 V",
+            "4 V",
+            "5 F"
+          ],
+          "datos": {
+            "texto_completo": "Los alumnos de Educación Secundaria Obligatoria (ESO) en España tienen distintas asignaturas: Matemáticas, Lengua española, Inglés, Historia, Biología, Educación Física, por ejemplo, son obligatorias; Francés, Música, Informática y otras son optativas. En cada curso, un alumno tiene nueve o diez asignaturas diferentes. Las clases son de ocho a tres o de cinco a nueve y cada grupo tiene alrededor de treinta estudiantes. En algunos institutos, los alumnos tienen distintas aulas para cada asignatura. El profesor está en su clase y recibe a los alumnos.\nA las once de la mañana, los alumnos y los profesores tienen un descanso de treinta minutos, que se llama recreo. En la cafetería del instituto tienen bocadillos, dulces, zumos… para la hora del recreo.\nDespués de las clases, por la tarde, algunos alumnos tienen actividades extraescolares: deportes, música, idiomas, danza, teatro…",
+            "items_libro": [
+              "1 La asignatura de Matemáticas no es obligatoria en la ESO en España.",
+              "2 Las clases tienen nueve o diez estudiantes.",
+              "3 Los alumnos de un mismo grupo están siempre en la misma clase.",
+              "4 Todos los días, los estudiantes tienen un descanso de treinta minutos.",
+              "5 Todos los alumnos tienen actividades extraescolares por la tarde."
+            ]
+          }
+        },
+        {
+          "id": "U2-p30-act03",
+          "numero": 3,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "cultura",
+          "instruccion_original": "Relaciona las palabras subrayadas en el texto con las siguientes definiciones.",
+          "contenido_linguistico": [
+            "vocabulario del texto cultural"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 descanso",
+            "2 distintas",
+            "3 alrededor de",
+            "4 extraescolares",
+            "5 optativas"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 tiempo de relajación",
+              "2 diferentes",
+              "3 aproximadamente",
+              "4 fuera del horario escolar",
+              "5 que no son obligatorias"
+            ]
+          }
+        },
+        {
+          "id": "U2-p30-act04",
+          "numero": 4,
+          "tipo": "expresion_oral_libre",
+          "destreza": [
+            "expresion_oral"
+          ],
+          "enfoque": "cultura",
+          "instruccion_original": "Habla sobre tu colegio.",
+          "contenido_linguistico": [
+            "sistema educativo",
+            "asignaturas",
+            "verbo ser",
+            "verbo tener"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "1 ¿Qué cosas son similares en los institutos españoles y en tu colegio?",
+              "2 ¿Qué cosas son diferentes?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 31,
+      "seccion": "evaluacion",
+      "actividades": [
+        {
+          "id": "U2-p31-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con la forma correspondiente del verbo ser.",
+          "contenido_linguistico": [
+            "verbo ser (presente)"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 son",
+            "2 es",
+            "3 somos",
+            "4 eres",
+            "5 soy",
+            "6 somos",
+            "7 son",
+            "8 es"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Alberto y Juan _____ colombianos.",
+              "2 María _____ la primera de la lista.",
+              "3 Carlos y yo _____ hermanos.",
+              "4 ¿Tú _____ peruana?",
+              "5 Yo _____ el capitán del equipo.",
+              "6 Nosotras _____ profesoras.",
+              "7 Ellos no _____ españoles.",
+              "8 Luisa _____ mi hermana."
+            ]
+          }
+        },
+        {
+          "id": "U2-p31-act02",
+          "numero": 2,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con la forma correcta del verbo tener.",
+          "contenido_linguistico": [
+            "verbo tener (presente)"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 tiene",
+            "2 tenemos",
+            "3 tengo",
+            "4 tiene",
+            "5 tienen",
+            "6 tienes"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Mi madre _____ cuarenta años.",
+              "2 Nosotros _____ muchos amigos.",
+              "3 Yo _____ dos libros de español.",
+              "4 Mi hermano _____ un amigo argentino.",
+              "5 Mis amigos no _____ clase de francés.",
+              "6 ¿Tú _____ bicicleta?"
+            ]
+          }
+        },
+        {
+          "id": "U2-p31-act03",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa la tabla.",
+          "contenido_linguistico": [
+            "adjetivos de nacionalidad",
+            "género y número"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "Perú: peruana / peruano / peruanas / peruanos",
+            "España: española / español / españolas / españoles",
+            "México: mexicana / mexicano / mexicanas / mexicanos",
+            "Chile: chilena / chileno / chilenas / chilenos"
+          ],
+          "datos": {
+            "ejemplo_libro": "Cuba: cubana / cubano / cubanas / cubanos",
+            "items_libro": [
+              "Perú: _____ / _____ / _____ / _____",
+              "España: _____ / _____ / _____ / _____",
+              "México: _____ / _____ / _____ / _____",
+              "Chile: _____ / _____ / _____ / _____"
+            ]
+          }
+        },
+        {
+          "id": "U2-p31-act04",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa con demostrativos como en el ejemplo.",
+          "contenido_linguistico": [
+            "demostrativos",
+            "verbo tener",
+            "género y número"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "4 fotos de niños y niñas: una niña (12 años, ejemplo dado), dos niñas (13 años), dos niños (11 años), un niño (14 años)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Estas",
+            "2 Estos",
+            "3 Este"
+          ],
+          "datos": {
+            "ejemplo_libro": "Esta niña tiene 12 años.",
+            "items_libro": [
+              "1 _____ niñas tienen 13 años.",
+              "2 _____ niños tienen 11 años.",
+              "3 _____ niño tiene 14 años."
+            ]
+          }
+        },
+        {
+          "id": "U2-p31-act05",
+          "numero": 5,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Continúa la serie de los días de la semana.",
+          "contenido_linguistico": [
+            "días de la semana"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "miércoles, jueves, viernes, sábado, domingo"
+          ],
+          "datos": {
+            "items_libro": [
+              "lunes, martes, _____, _____, _____, _____, _____."
+            ]
+          }
+        },
+        {
+          "id": "U2-p31-act06",
+          "numero": 6,
+          "tipo": "ordena",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Ordena las letras de cada globo para formar el nombre de algunas asignaturas.",
+          "contenido_linguistico": [
+            "asignaturas"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "5 globos de colores con letras desordenadas: globo 1 (c-s-a-F-é-n-r), globo 2 (M-a-c-s-e-a-t-t-i-á-m), globo 3 (á-n-t-a-r-I-c-f-o-m-i), globo 4 (s-a-ú-c-M-i), globo 5 (a-e-L-u-g-n)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Francés",
+            "2 Matemáticas",
+            "3 Informática",
+            "4 Música",
+            "5 Lengua"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 c-s-a-F-é-n-r",
+              "2 M-a-c-s-e-a-t-t-i-á-m",
+              "3 á-n-t-a-r-I-c-f-o-m-i",
+              "4 s-a-ú-c-M-i",
+              "5 a-e-L-u-g-n"
+            ]
+          }
+        },
+        {
+          "id": "U2-p31-act07",
+          "numero": 7,
+          "tipo": "expresion_escrita_libre",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "¿Cuántas nacionalidades de países de habla hispana puedes escribir correctamente sin consultar el libro?",
+          "contenido_linguistico": [
+            "adjetivos de nacionalidad"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": []
+        },
+        {
+          "id": "U2-p31-act08",
+          "numero": 8,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Piensa en un personaje famoso. Tus compañeros te hacen preguntas para adivinar quién es.",
+          "contenido_linguistico": [
+            "verbo ser",
+            "adjetivos de nacionalidad",
+            "verbo tener",
+            "información personal"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "¿Es hombre o mujer? / ¿De qué nacionalidad es? / ¿Dónde vive? / ¿Cuántos años tiene? / ¿Es cantante? / (…)"
+          }
+        }
+      ]
+    }
+  ]
+}
