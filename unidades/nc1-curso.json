@@ -1,0 +1,293 @@
+{
+  "curso": "nc1",
+  "titulo": "Nuevo Compañeros 1",
+  "editorial": "SGEL",
+  "nivel": "A1.1",
+  "fuente": {
+    "descripcion": "Índice de contenidos oficial del libro impreso (Scope and Sequence)",
+    "paginas_origen": "6-7"
+  },
+  "estructura_libro": {
+    "unidades_total": 9,
+    "punto_partida": true,
+    "paginas_por_unidad": 10
+  },
+  "unidades": [
+    {
+      "unidad": 0,
+      "titulo": "Punto de partida",
+      "pagina_inicio": 8,
+      "paginas_libro": "8-11",
+      "contenido_general": [
+        "Países que hablan español",
+        "Abecedario español",
+        "Números 0-10",
+        "Para la clase"
+      ]
+    },
+    {
+      "unidad": 1,
+      "titulo": "¡Hola!",
+      "pagina_inicio": 12,
+      "paginas_libro": "12-21",
+      "vocabulario": [
+        "Objetos de clase",
+        "Nombres de las letras"
+      ],
+      "gramatica": [
+        "Verbos ser, llamarse y tener (formas singulares)",
+        "Artículos determinados (el, la, los, las)",
+        "Masculino y femenino",
+        "Colores"
+      ],
+      "para_aprender": "Recursos para la clase",
+      "pronunciacion_ortografia": "Interrogativos",
+      "comunicacion": [
+        "Saludar: Hola, ¿qué tal?",
+        "Pedir y dar información personal: ¿Cómo te llamas? / ¿Cuántos años tienes? / ¿Cuál es tu número de teléfono?",
+        "Números del 1 al 20"
+      ],
+      "destrezas": [
+        "Mis compañeros de clase"
+      ],
+      "cultura": [
+        "Saludos y despedidas",
+        "Tú y usted"
+      ]
+    },
+    {
+      "unidad": 2,
+      "titulo": "Países de habla hispana",
+      "pagina_inicio": 22,
+      "paginas_libro": "22-31",
+      "vocabulario": [
+        "Países hispanohablantes",
+        "Adjetivos de nacionalidad",
+        "Días de la semana",
+        "Números ordinales",
+        "Asignaturas"
+      ],
+      "gramatica": [
+        "Verbos ser y tener (formas plurales)",
+        "Plural de nombres y adjetivos",
+        "Demostrativos",
+        "Uso de las mayúsculas"
+      ],
+      "para_aprender": null,
+      "pronunciacion_ortografia": "Las vocales (a, e, i, o, u)",
+      "comunicacion": [
+        "Saludar: Buenos días / Buenas tardes",
+        "Pedir y dar información personal: ¿De dónde eres? / ¿Dónde vives?",
+        "Números del 21 al 100",
+        "Hacer sugerencias: ¿Vamos a...?"
+      ],
+      "destrezas": [
+        "Una carta de presentación personal",
+        "Pedir y dar datos personales"
+      ],
+      "cultura": [
+        "La ESO en España"
+      ]
+    },
+    {
+      "unidad": 3,
+      "titulo": "La Familia",
+      "pagina_inicio": 32,
+      "paginas_libro": "32-41",
+      "vocabulario": [
+        "Parientes"
+      ],
+      "gramatica": [
+        "Presente de los verbos regulares",
+        "Interrogativos",
+        "Posesivos"
+      ],
+      "para_aprender": "Hacer un cuaderno de vocabulario",
+      "pronunciacion_ortografia": "El sonido /θ/ (za, zo, zu, ce, ci)",
+      "comunicacion": [
+        "Presentar a alguien",
+        "Hablar de la familia",
+        "La hora"
+      ],
+      "destrezas": [
+        "Escribir un correo con información personal, sobre la familia y los compañeros de clase",
+        "Escuchar la programación de la televisión"
+      ],
+      "cultura": [
+        "El cómic y las películas de animación"
+      ]
+    },
+    {
+      "unidad": 4,
+      "titulo": "Comidas y bebidas",
+      "pagina_inicio": 42,
+      "paginas_libro": "42-51",
+      "vocabulario": [
+        "Alimentos",
+        "Comidas preparadas"
+      ],
+      "gramatica": [
+        "Verbo gustar",
+        "Artículos indeterminados (un, una, unos, unas)",
+        "Nombres contables e incontables",
+        "Hay",
+        "Verbo querer"
+      ],
+      "para_aprender": "Organizar el léxico",
+      "pronunciacion_ortografia": "El sonido /r/ y el sonido /rr/",
+      "comunicacion": [
+        "Ofrecer: ¿Quieres...?",
+        "Las cosas que nos gustan y las que no nos gustan"
+      ],
+      "destrezas": [
+        "Comer en España: primer plato, segundo plato, postre"
+      ],
+      "cultura": [
+        "Comer por la calle"
+      ]
+    },
+    {
+      "unidad": 5,
+      "titulo": "¿Dónde están las llaves?",
+      "pagina_inicio": 52,
+      "paginas_libro": "52-61",
+      "vocabulario": [
+        "Tipos de vivienda",
+        "Partes de la casa",
+        "Mobiliario",
+        "Adjetivos descriptivos"
+      ],
+      "gramatica": [
+        "Verbo estar",
+        "Posición: encima, debajo, detrás, delante, al lado",
+        "Oposición ser / estar"
+      ],
+      "para_aprender": "Serie de palabras",
+      "pronunciacion_ortografia": "El sonido /x/ (ja, je, ji, jo, ju, ge, gi)",
+      "comunicacion": [
+        "Ubicación de objetos y personas: ¿Dónde está...?",
+        "Descripción de la casa y de objetos: ¿Cómo es...?"
+      ],
+      "destrezas": [
+        "¿Cómo es la casa de tus sueños?"
+      ],
+      "cultura": [
+        "Vivienda ecológica"
+      ]
+    },
+    {
+      "unidad": 6,
+      "titulo": "¿A dónde vas?",
+      "pagina_inicio": 62,
+      "paginas_libro": "62-71",
+      "vocabulario": [
+        "Establecimientos: cine, restaurante, farmacia...",
+        "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
+        "Profesiones y lugares de trabajo"
+      ],
+      "gramatica": [
+        "Presente de verbos irregulares: cerrar, ir, venir, hacer, jugar, dormir",
+        "Imperativo (tú)"
+      ],
+      "para_aprender": "Análisis de errores",
+      "pronunciacion_ortografia": "La b = v",
+      "comunicacion": [
+        "Preguntar por acciones de otros: ¿A dónde vas? / ¿Cómo vas a clase?",
+        "Horarios: ¿A qué hora...?"
+      ],
+      "destrezas": [
+        "Madrid",
+        "El barrio de mis sueños"
+      ],
+      "cultura": [
+        "Una ciudad colombiana"
+      ]
+    },
+    {
+      "unidad": 7,
+      "titulo": "Hábitos",
+      "pagina_inicio": 72,
+      "paginas_libro": "72-81",
+      "vocabulario": [
+        "Meses del año",
+        "Animales domésticos y salvajes"
+      ],
+      "gramatica": [
+        "Verbos reflexivos: ducharse, acostarse, sentarse, ponerse, vestirse",
+        "Oposición salir / volver",
+        "Preposiciones: a, de, por, con, en"
+      ],
+      "para_aprender": "Signos de puntuación",
+      "pronunciacion_ortografia": "Entonación interrogativa y exclamativa",
+      "comunicacion": [
+        "Hablar de hábitos diarios"
+      ],
+      "destrezas": [
+        "La rutina del cuidador de zoo",
+        "La historia de Budi"
+      ],
+      "cultura": [
+        "El Zoo-Aquarium de Madrid"
+      ]
+    },
+    {
+      "unidad": 8,
+      "titulo": "Descripciones",
+      "pagina_inicio": 82,
+      "paginas_libro": "82-91",
+      "vocabulario": [
+        "El cuerpo humano",
+        "Práctica del surf"
+      ],
+      "gramatica": [
+        "Verbo doler: Me duele la cabeza / Me duelen los pies",
+        "Verbos doler y gustar",
+        "Adverbios de cantidad",
+        "Muy, mucho/-a/-os/-as"
+      ],
+      "para_aprender": "Abreviaturas de los diccionarios",
+      "pronunciacion_ortografia": "El sonido /k/ (ca, co, cu, que, qui)",
+      "comunicacion": [
+        "Descripción de personas: ¿Cómo es...?",
+        "Expresar identidad: muy, bastante, poco"
+      ],
+      "destrezas": [
+        "La pandilla de Marta"
+      ],
+      "cultura": [
+        "La semana azul"
+      ]
+    },
+    {
+      "unidad": 9,
+      "titulo": "Ropa",
+      "pagina_inicio": 92,
+      "paginas_libro": "92-101",
+      "vocabulario": [
+        "Ropa"
+      ],
+      "gramatica": [
+        "Pretérito indefinido de ir y estar",
+        "Marcadores temporales del pasado: ayer por la mañana, el año pasado, hace una...",
+        "Interrogativos: dónde, qué, cuándo, quién, con quién"
+      ],
+      "para_aprender": "Análisis de errores",
+      "pronunciacion_ortografia": "Acentuación: agudas, llanas, esdrújulas",
+      "comunicacion": [
+        "Preguntar por acciones en el pasado: ¿Dónde estuviste? / ¿Con quién fuiste?"
+      ],
+      "destrezas": [
+        "Segovia: Patrimonio de la Humanidad"
+      ],
+      "cultura": [
+        "Trajes tradicionales de España"
+      ]
+    }
+  ],
+  "apendice": [
+    {"seccion": "Glosario", "pagina_inicio": 102},
+    {"seccion": "Resumen Gramatical", "pagina_inicio": 107},
+    {"seccion": "Transcripciones", "pagina_inicio": 112}
+  ],
+  "_nota": "Cada unidad regular (1-9) cierra con la sección 'Reflexión y Evaluación' (no listada como contenido en el índice oficial; es estructura fija). U0 (Punto de partida) es atípica y no sigue las 5 secciones canónicas."
+}

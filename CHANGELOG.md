@@ -5,6 +5,35 @@
 
 ---
 
+## [v10.82 — 2026-05-08] — B1.4 cerrado: creado `unidades/nc1-curso.json` (índice editorial global del curso)
+
+**Objetivo del paso:** disponer del índice editorial canónico del curso "Nuevo Compañeros 1" como artefacto JSON consultable, antes de diseñar `nc1-reciclaje.json` (B1.5). Sin un mapa global de "qué enseña cada unidad", el reciclaje no se puede mapear con trazabilidad.
+
+**Fuente:** índice oficial del libro impreso (Scope and Sequence, páginas 6-7), facilitado por el autor como imágenes en chat. **No se usa** `viejo/00-curso-general.md` como fuente — ese archivo tenía datos imprecisos en páginas (U1=10-23 y U2=14-33 se solapaban) y mezclaba dato editorial con metadocumentación pedagógica.
+
+**Schema cerrado** (registrado como **decisión 35** en `PROCESO-MAESTRO.md` Parte 4):
+- Path canónico: `unidades/nc1-curso.json`.
+- Top-level: `curso` ("nc1"), `titulo`, `editorial`, `nivel` ("A1.1"), `fuente`, `estructura_libro`, `unidades` (array), `apendice` (array).
+- **Por unidad regular** (U1-U9): campos top-level `vocabulario` (lista), `gramatica` (lista), `para_aprender` (string o `null`), `pronunciacion_ortografia` (string), `comunicacion` (lista), `destrezas` (lista), `cultura` (lista), más `pagina_inicio` y `paginas_libro`.
+- **Por U0** (Punto de partida, atípica): solo `contenido_general` (lista).
+- **Apéndice**: solo metadatos (título + `pagina_inicio`); contenido detallado fuera de alcance por ahora.
+- **Contenido de las celdas**: **literal del índice del libro**, sin expansión MCER ni interpretación pedagógica añadida.
+
+**Datos extraídos** del índice oficial:
+- 10 unidades (U0 + U1-U9) con todos sus campos.
+- Páginas correctas: U1=12-21, U2=22-31, U3=32-41, U4=42-51, U5=52-61, U6=62-71, U7=72-81, U8=82-91, U9=92-101 (10 páginas exactas por unidad regular).
+- Apéndice: Glosario (102), Resumen Gramatical (107), Transcripciones (112).
+
+**Hallazgos anotados (no bloqueantes):**
+- Los `contenidos_indice` ya extraídos en `unidades/U1/...inventario.json` y `unidades/U3/...inventario.json` mezclan "PARA APRENDER" dentro del campo `gramatica` (ej. U3: "Hacer un cuaderno de vocabulario" aparece en gramática cuando es una estrategia metacognitiva separada). Anotado como **fix futuro de los inventarios**; no bloquea B1.4 ni B1.5.
+- Single source of truth con `nc1-curso.json` y los `contenidos_indice` per-unidad: cualquier divergencia futura es bug que se resuelve antes del cierre.
+
+**Sin validador estructural propio** todavía. Se decidirá si añadir checks a `scripts/validar_inventario.py` cuando aparezca el primer caso real de divergencia.
+
+**Próximo:** B1.5 (diseño de `nc1-reciclaje.json`) ahora con `nc1-curso.json` ya disponible para mapear los flujos de reciclaje entre unidades.
+
+---
+
 ## [v10.81 — 2026-05-08] — Dashboard: badge "extracción en curso" en lugar de path absoluto para unidades de worktrees paralelos
 
 **Problema visual tras v10.79:** las tarjetas de inventarios mostraban el path del JSON. Para unidades en main, el path era relativo y corto (`unidades/U2/U2-nc1-inventario.json`). Para unidades de worktrees paralelos (vía `EXTRA_UNIDADES_PATHS`), el path absoluto largo aparecía sin contexto, dando una apariencia de error visual cuando en realidad indicaba un estado válido (extracción no integrada todavía).
