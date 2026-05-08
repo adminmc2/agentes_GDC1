@@ -5,6 +5,24 @@
 
 ---
 
+## [v10.83b — 2026-05-08] — Cierre limpio de v10.83: alineación de 2 referencias vivas
+
+Hallazgo del revisor sobre v10.83: la regla nueva quedó bien en `reglas-operativas.md` §1+§4, pero 2 referencias vivas seguían diciendo "Para aprender → siempre actividad" sin la bifurcación, contradiciendo v10.83 desde otros entry points.
+
+**Sitios alineados:**
+
+1. **`prompt.md:54`** (descripción de qué contiene `reglas-operativas.md`): decía *"...criterios de tipo y tipo_cuadro, 'Para aprender' → actividad / 'Observa' → nota, reglas de población..."*. Reescrito a *"...criterios de tipo y tipo_cuadro, criterios para 'Para aprender' y 'Observa', reglas de población..."*. La descripción **nombra** los criterios sin reducirlos a una formulación; la regla canónica vive en `reglas-operativas.md` §4.
+
+2. **`convenciones-y-casos.md:141`** (sección 4.1, caso histórico): decía *"'Para aprender' es una actividad. Esta es la corrección que diferencia los dos elementos."* Reescrito para reflejar que el caso histórico citado tenía verbo imperativo (con tarea), y que la regla actual bifurca: *"con verbo imperativo → actividad; solo informativa → cuadro"*.
+
+**Single source of truth restablecida**: la regla "Para aprender" tiene una sola definición canónica en `reglas-operativas.md` §4. Los demás archivos solo apuntan a ella, sin reformularla ni contradecirla.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** decidir hallazgos C-D del worktree de U2 e integrar U2 a main.
+
+---
+
 ## [v10.84 — 2026-05-08] — Schema §4 (cuadros): `texto_intro` documentado + `titulo` nullable + `lista_reglas`
 
 **Hallazgos del ejecutor 2 en U2 que motivan este cambio:**

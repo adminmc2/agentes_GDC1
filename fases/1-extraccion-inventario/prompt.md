@@ -51,7 +51,7 @@ Si en el libro hay un texto, el JSON debe poder regenerar el texto. Si en el lib
 Este prompt no contiene el schema ni las reglas decisionales ni las convenciones de transcripción. Esos viven en archivos hermanos en esta misma carpeta:
 
 - **`schema-inventario.md`** — Forma del JSON (estructura, tipos, enumeraciones cerradas, restricciones validables sin contexto editorial). Single source of truth con `scripts/validar_inventario.py`.
-- **`reglas-operativas.md`** — Reglas decisionales (precedencias actividad/cuadro/nota/autoevaluación, criterios de `tipo` y `tipo_cuadro`, "Para aprender" → actividad / "Observa" → nota, reglas de población de cada campo, bloque `autoevaluacion` cuándo presente/omitido, unidades atípicas). Single source of truth de precedencias.
+- **`reglas-operativas.md`** — Reglas decisionales (precedencias actividad/cuadro/nota/autoevaluación, criterios de `tipo` y `tipo_cuadro`, criterios para "Para aprender" y "Observa", reglas de población de cada campo, bloque `autoevaluacion` cuándo presente/omitido, unidades atípicas). Single source of truth de precedencias.
 - **`convenciones-y-casos.md`** — Convenciones de transcripción del libro al JSON (sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto", textos de lectura, diálogos con marcadores, sopas de letras), ejemplos canónicos de `items_libro` por tipo de actividad, ejemplos INCORRECTOS, ejemplo JSON de unidad atípica U0, casebook de extracciones reales, política de mejora continua.
 
 Y un cuarto archivo, no en esta carpeta:

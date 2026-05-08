@@ -138,7 +138,7 @@ Sopa de letras:
 
 ### 4.1 Errores detectados y corregidos
 
-**"Para aprender" confundido con cuadro gramatical.** En extracción real de una unidad, la caja "Para aprender" de la sección de Gramática fue clasificada como `cuadros` con `tipo_cuadro: gramatical`. **Es incorrecto.** "Para aprender" es una **actividad** (ver `reglas-operativas.md` §4). Esta es la corrección que diferencia los dos elementos.
+**"Para aprender" confundido con cuadro gramatical.** En extracción real de una unidad, la caja "Para aprender" de la sección de Gramática (con verbo imperativo dirigido al alumno) fue clasificada inicialmente como `cuadros` con `tipo_cuadro: gramatical`. **Era incorrecto en ese caso** porque tenía tarea: se reclasificó como actividad. La regla bifurca por naturaleza (ver `reglas-operativas.md` §4): con verbo imperativo → actividad; solo informativa → cuadro.
 
 ### 4.2 Casos resueltos en U3
 
