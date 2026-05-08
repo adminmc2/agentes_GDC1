@@ -5,6 +5,21 @@
 
 ---
 
+## [v10.80b — 2026-05-08] — Dashboard: eliminado el badge de versión (uno solo, el de la derecha)
+
+**Decisión del autor tras v10.80:** v10.80 había hecho el badge dinámico para resolver el desfase, pero seguían apareciendo **dos indicadores de versión** (badge verde a la izquierda + indicador `vX — hh:mm:ss` a la derecha). Decisión: dejar solo el indicador derecho, que ya muestra versión + hora viva. El badge era redundante.
+
+**Cambios en `web/index.html`:**
+- Eliminado el `<span id="version-badge">` del header.
+- Eliminada la línea JS que actualizaba `version-badge.textContent` en `init()`.
+- `serverVersion` se sigue cargando desde `/api/version` y se sigue mostrando en el indicador derecho via `updateStatus()`.
+
+**Resultado:** una sola fuente visible de versión en el dashboard, sin posibilidad de desfase entre dos elementos.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+---
+
 ## [v10.80 — 2026-05-08] — Dashboard: badge de versión dinámico (fix doble visualización)
 
 **Problema detectado tras v10.79:** el header del dashboard mostraba dos versiones distintas. El badge verde (`v10.78`, hardcoded en `web/index.html` desde v10.78) y el indicador `v10.79 — hh:mm:ss` (dinámico desde `/api/version`). Origen: el badge se añadió como string literal, no como elemento dinámico.
