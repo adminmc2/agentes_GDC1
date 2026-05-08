@@ -5,6 +5,34 @@
 
 ---
 
+## [v10.86 — 2026-05-08] — Refinamiento §2.2 regla 3: distinción individual vs parejas en respuesta a preguntas
+
+**Caso disparador** (riesgo residual del revisor sobre v10.85): si U2-p29-act04 resulta ser intercambio en parejas, no solo cambia la destreza, sino también el `tipo` (de `responder_preguntas_abiertas` a `interaccion_oral`). La regla §2.2 punto 3 actual no hacía explícita la distinción individual vs parejas.
+
+**Decisión cerrada con autor:** refinar §2.2 regla 3 para que distinga 3 casos en lugar de 2:
+- Respuesta concreta del input → `responder_preguntas_cerradas`.
+- Respuesta personal/libre **individual** → `responder_preguntas_abiertas`.
+- Respuesta personal/libre **en parejas** → `interaccion_oral` (la interacción con compañero prevalece).
+
+**Cambio quirúrgico** (1 bullet añadido, 1 modificado, 0 párrafos nuevos):
+
+```
+- Respuesta personal/libre del alumno, individual (sin compañero) → responder_preguntas_abiertas.
+- Respuesta personal/libre en parejas → interaccion_oral. Destreza: [interaccion_oral].
+```
+
+**Por qué refinar la regla en lugar de documentar un árbol de decisión aparte:** la regla precisa hace innecesaria la documentación adicional. Respeta el principio del autor de no engordar docs. Single source of truth de la decisión sigue en `reglas-operativas.md` §2.2.
+
+**Sin cambios en JSONs.** La aplicación a U2-p29-act04 sigue pendiente de verificación contra PDF (worktree de U2). Las preguntas a verificar ahora son **dos**:
+- ¿Solo o en parejas? (Si parejas → tipo `interaccion_oral`)
+- ¿Escribe o habla? (Solo aplica si individual, decide la destreza)
+
+**Validador U0/U1/U3 → 0/0.**
+
+**Próximo:** verificar U2-p29-act04 contra PDF e integrar U2 a main.
+
+---
+
 ## [v10.85 — 2026-05-08] — Refinamiento §2.3: `responder_preguntas_abiertas` con destreza condicional al enunciado del libro
 
 **Caso disparador** (hallazgo C en U2-p29-act04 durante revisión del worktree de U2): la regla §2.3 decía que `responder_preguntas_abiertas` con respuesta personal/libre → `expresion_escrita` por defecto. Pero en algunos casos del libro la respuesta es oral (en parejas, en clase). Asumir `expresion_escrita` siempre es impreciso.
