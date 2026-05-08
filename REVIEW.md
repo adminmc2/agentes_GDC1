@@ -134,31 +134,16 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 ---
 
-### B1.5. Diseño de `nc1-reciclaje.json` — definir contrato antes de generar
+### B1.5. Diseño de `nc1-reciclaje.json` — definir contrato antes de generar ✅ CERRADO (v10.89, 2026-05-08)
 
-**Objetivo:** cerrar formalmente cómo se construye `nc1-reciclaje.json`. La nota del bloque B (líneas iniciales) declara que el autor quiere "definir antes de implementar"; este paso lo materializa con gate propio.
-
-**Pre-condición:** ninguna (decisión del autor). En paralelo con B1; no depende de B1.
-
-**Preguntas que cierra el paso:**
-- ¿Qué dispara una entrada de reciclaje (qué actividad de qué unidad recicla qué de qué unidad anterior)?
-- ¿Formato de cada entrada individual? (campos mínimos, IDs de actividad origen/destino, tipo de reciclaje, contenido).
-- ¿Política de mantenimiento: manual por Claude Code en chat, automático por script, o mixto?
-- ¿Confirmar o ajustar el esqueleto top-level que B2 hoy presupone (`curso`, `actualizado`, `reciclajes_por_unidad: {}`, `indice_por_tipo: {...}`)?
-
-**Archivos a modificar:**
-- `PROCESO-MAESTRO.md` — Parte 4: registrar la decisión (esquema cerrado de nc1-reciclaje).
-
-**Actualizaciones meta requeridas:**
-- `PROCESO-MAESTRO.md` — entrada en Parte 4.
-- `REVIEW.md` — gate marcado, B2 actualizado para depender de B1.5.
-- `CHANGELOG.md` — entrada del cierre de decisión.
+**Objetivo:** cerrar formalmente cómo se construye `nc1-reciclaje.json`.
 
 **Gate de cierre:**
-1. ✅ Decisión sobre disparadores, formato per-entrada, política de mantenimiento y esqueleto top-level cerrada con el autor.
-2. ✅ Decisión registrada en PROCESO-MAESTRO.md Parte 4.
-3. ✅ Si el esqueleto resulta distinto del que asume hoy B2, B2 se ajusta antes de ejecutarse.
-4. ✅ Commit + CHANGELOG.
+1. ✅ Disparadores, formato per-entrada, política de mantenimiento y esqueleto top-level cerrados con el autor.
+2. ✅ Decisión registrada en PROCESO-MAESTRO.md (bloque `nc1-reciclaje.json`).
+3. ✅ Esqueleto top-level confirmado — igual al que asume B2. Sin ajustes en B2.
+4. ✅ `unidades/nc1-reciclaje.json` creado vacío.
+5. ✅ Commit + CHANGELOG.
 
 **Bloquea a:** B2 (parte reciclaje).
 

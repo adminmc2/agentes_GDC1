@@ -210,7 +210,7 @@ Estructura por cuadro gramatical:
   - **Pendiente revisar posteriormente** en este documento maestro cuando se aborden las píldoras.
 - Generación: script Python determinista que lista PDFs y parsea TEX.
 
-**`nc1-reciclaje.json`** — mapping editorial de reciclaje cross-unidad.
+**`nc1-reciclaje.json`** — mapping editorial de reciclaje cross-unidad. **Schema cerrado en B1.5 (2026-05-08, v10.89).**
 - **Acumulativo y secuencial:** cada unidad analiza qué reutiliza de las anteriores, NO se recicla todo, **solo 5-6 elementos clave** de mayor impacto.
 - **Basado en contenido**, no en actividades.
 - **Se decide al cerrar cada unidad** (al final). Manual con Claude Code en chat.
@@ -224,6 +224,10 @@ Estructura por cuadro gramatical:
   - `forma_verbal`
   - `estrategia_comunicativa`
 - Niveles de impacto: `alto` / `medio` / `bajo`.
+- **`origen`**: objeto `{ "unidad": N, "seccion": "..." }`. Secciones válidas: `vocabulario`, `gramatica`, `comunicacion`, `destrezas`, `cultura`, `pronunciacion_ortografia`, `para_aprender`.
+- **`indice_por_tipo`**: objeto con tipo como clave, valores = lista de IDs de entradas. Ej: `{ "vocabulario": ["U2-rec-01"], ... }`.
+- **Criterio de disparador** (adoptado de `viejo/marco-teorico-metodologico.md` §6): entra un contenido si tiene conexión natural con el contenido nuevo y lo refuerza o es requisito. Proceso: (1) inventariar contenido nuevo; (2) detectar conexión en unidades anteriores; (3) seleccionar los más relevantes; (4) registrar con tipo/origen/impacto.
+- **Archivo arranca vacío** (`reciclajes_por_unidad: {}`) y se puebla al cerrar cada unidad desde U1 en adelante. Creado en B1.5; primera población en B2.
 
 ---
 

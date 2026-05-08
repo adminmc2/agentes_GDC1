@@ -5,6 +5,27 @@
 
 ---
 
+## [v10.89 — 2026-05-08] — B1.5 cerrado: contrato de `nc1-reciclaje.json` + esqueleto vacío creado
+
+**Decisión cerrada con autor:** schema completo de `nc1-reciclaje.json` cerrado en B1.5. Las 4 preguntas abiertas se resolvieron:
+
+- **Disparadores:** criterio de conexión natural adoptado de `viejo/marco-teorico-metodologico.md` §6 — entra un contenido si refuerza o es requisito del contenido nuevo. Proceso de análisis de 4 pasos. No se recicla todo; máximo 5-6 elementos de mayor impacto por unidad.
+- **Campo `origen`:** objeto `{ "unidad": N, "seccion": "..." }` — unidad + sección canónica del libro (vocabulario, gramatica, comunicacion, destrezas, cultura, pronunciacion_ortografia, para_aprender).
+- **`indice_por_tipo`:** objeto con tipo como clave, valores = lista de IDs de entradas. Los 5 tipos cerrados arrancan con lista vacía.
+- **Estado inicial:** archivo creado vacío en B1.5; primera población en B2 con U1 y U2.
+
+**Archivos modificados:**
+- `unidades/nc1-reciclaje.json` — creado (esqueleto vacío).
+- `PROCESO-MAESTRO.md` — bloque `nc1-reciclaje.json` ampliado con decisiones de origen, indice_por_tipo y criterio de disparador.
+- `REVIEW.md` — B1.5 marcado ✅ cerrado.
+- `docs/actual/B1.5-contrato-reciclaje.md` — documento de trabajo (se mueve a historico).
+
+**Sin cambios en JSONs de inventario.** Validador U0/U1/U2 → 0/0; U3 pendiente de re-extracción.
+
+**Próximo:** B2 (primera población de `nc1-reciclaje.json` con U1 y U2).
+
+---
+
 ## [v10.88 — 2026-05-08] — Borrado de `unidades/U3/U3-nc1-inventario.json` (PDF erróneo, pendiente de re-extracción)
 
 **Decisión cerrada con autor:** el PDF de U3 que se había usado para la extracción inicial contenía errores (paginación divergente con el Scope and Sequence oficial: Scope dice U3=32-41; el inventario decía 34-43; ver decisión 35 en PROCESO-MAESTRO Parte 4 y deuda técnica anotada en `nc1-curso.json:_nota`).
