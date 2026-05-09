@@ -5,6 +5,23 @@
 
 ---
 
+## [v10.91 — 2026-05-09] — Integración de U3 a main (worktree extract/U3)
+
+**Segunda integración del carril paralelo de extracciones** tras U2 (v10.87). El JSON fue re-extraído en el worktree `extract/U3` con el PDF correcto (páginas 32-41) tras el borrado del JSON erróneo en v10.88.
+
+**Datos de U3:**
+- 10 páginas (32-41), 47 actividades, 4 cuadros.
+- Título: "La Familia". Contrato post-refactor (taxonomía 20 + destreza/enfoque, schema cuadros).
+- Validador: 0 errores / 0 avisos.
+
+**Estado de main post-integración:**
+- Unidades trackeadas validando 0/0: U0, U1, U2, U3 (reintegrada).
+- La deuda técnica de paginación anotada en `nc1-curso.json:_nota` queda saldada.
+
+**Próximo:** B2a (primera población de `nc1-reciclaje.json` con U1/U2/U3).
+
+---
+
 ## [v10.90 — 2026-05-08] — Saneo documental post-v10.89: REVIEW alineado, protocolo ejecutor 2, comando dashboard
 
 **6 frentes corregidos:**
