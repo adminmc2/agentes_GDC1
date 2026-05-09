@@ -688,13 +688,16 @@ function renderRecTimeline() {
         const tColor = REC_COLOR_TIPO[tipo] || '#607D8B';
         const lineas = grupos[tipo].map(h => {
             const eventosByU = {};
-            (h.eventos || []).forEach(ev => { eventosByU[ev.unidad] = ev; });
+            (h.eventos || []).forEach(ev => { (eventosByU[ev.unidad] = eventosByU[ev.unidad] || []).push(ev); });
             const puntos = REC_UNIDADES.map(u => {
-                const ev = eventosByU[u];
-                if (!ev) return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px"><div style="width:10px;height:10px;border-radius:50%;background:#ECEFF1;border:1px solid #CFD8DC"></div></div>`;
-                const aColor = REC_COLOR_ACCION[ev.accion] || '#607D8B';
-                const tip = `${ev.accion.toUpperCase()} · ${ev.descripcion.replace(/"/g,'&quot;')}`;
-                return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px"><div onclick="openRecDrawer('${h.id}')" title="${tip}" style="width:22px;height:22px;border-radius:50%;background:${aColor};cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px ${aColor};display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700">${ev.accion[0].toUpperCase()}</div></div>`;
+                const evs = eventosByU[u];
+                if (!evs || !evs.length) return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px"><div style="width:10px;height:10px;border-radius:50%;background:#ECEFF1;border:1px solid #CFD8DC"></div></div>`;
+                const dots = evs.map(ev => {
+                    const aColor = REC_COLOR_ACCION[ev.accion] || '#607D8B';
+                    const tip = `${ev.accion.toUpperCase()} · ${ev.descripcion.replace(/"/g,'&quot;')}`;
+                    return `<div onclick="openRecDrawer('${h.id}')" title="${tip}" style="width:22px;height:22px;border-radius:50%;background:${aColor};cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px ${aColor};display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700">${ev.accion[0].toUpperCase()}</div>`;
+                }).join('');
+                return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px;gap:2px;flex-wrap:wrap">${dots}</div>`;
             }).join('');
             return `<div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;align-items:center">
                 <div onclick="openRecDrawer('${h.id}')" style="cursor:pointer;font-size:13px;font-weight:600;color:#263238;padding-right:8px;border-right:3px solid ${tColor}">${h.titulo}</div>

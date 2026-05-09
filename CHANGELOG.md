@@ -5,6 +5,21 @@
 
 ---
 
+## [v10.92b — 2026-05-09] — Saneo post-v10.92: contrato de hilos en docs vivas + multiplicidad de eventos
+
+Hallazgos del revisor sobre v10.92: la migración funcional al modelo de hilos era correcta, pero el contrato vivo seguía describiendo el modelo punto-a-punto, y la timeline colapsaba silenciosamente múltiples eventos del mismo hilo en una unidad.
+
+**Cambios:**
+1. **`PROCESO-MAESTRO.md` bloque `nc1-reciclaje.json`** reescrito al modelo de hilos: top-level `hilos[]`, schema por hilo y por evento, acciones válidas (introduce/amplia/aplica/sistematiza/contrasta), multiplicidad permitida (varios eventos del mismo hilo en una unidad), endpoint `/api/reciclaje`.
+2. **`REVIEW.md` B2a + tabla de artefactos** alineados con el estado real: B2a.1 (pase 1) ✅ cerrado v10.92; B2a.2 (pase 2 contra inventarios) abierto. Tabla de artefactos refleja "9 hilos / 23 eventos" en lugar de "esqueleto vacío".
+3. **`REVIEW.md` referencias a endpoints** corregidas: `/api/global/<tipo>` (que no existe) → `/api/reciclaje` ya operativo; `/api/tarjetas` y `/api/pildoras` quedan pendientes.
+4. **Decisión schema:** se permiten múltiples eventos del mismo hilo en la misma unidad (ej. una unidad puede `amplia` y `aplica` un mismo hilo simultáneamente). Documentado en PROCESO-MAESTRO.
+5. **`web/index.html` timeline** corregida: indexa eventos por unidad como **lista**, no como dato único. Si una unidad tiene N eventos del mismo hilo, se renderizan los N puntos uno al lado del otro en su columna. Sin colapso silencioso.
+
+**Sin cambios en datos.** 9 hilos / 23 eventos siguen igual; el JSON pase 1 ya cumple "máximo 1 evento por hilo+unidad" pero el schema y la viz ya soportan más para el pase 2.
+
+---
+
 ## [v10.92 — 2026-05-09] — B2a (pase 1): primera población de `nc1-reciclaje.json` con modelo de hilos + vista en dashboard
 
 **Refinamiento del schema cerrado en B1.5.** El modelo punto-a-punto (`reciclajes_por_unidad` con entradas `origen → destino`) era insuficiente para representar dos realidades editoriales:

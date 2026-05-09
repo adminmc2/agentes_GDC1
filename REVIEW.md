@@ -154,16 +154,16 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 **Objetivo:** tener `nc1-tarjetas.json`, `nc1-pildoras.json` y `nc1-reciclaje.json` en `unidades/` con contenido real. **U3 no ancla este paso.**
 
 **Estado actual:**
-- `nc1-reciclaje.json` — ✅ existe (esqueleto vacío, v10.89). Desbloquea la primera población.
+- `nc1-reciclaje.json` — ✅ poblado pase 1 (v10.92): 9 hilos / 23 eventos cubriendo U0/U1/U2/U3 desde `nc1-curso.json`. Schema refinado a modelo de hilos.
 - `nc1-tarjetas.json` — 📋 no existe. Bloqueado por B1 (script) + fase 2 (vocabulario analizado).
 - `nc1-pildoras.json` — 📋 no existe. Bloqueado por fase 5 (píldoras por unidad).
 
 **Sub-pasos desacoplados:**
 
-**B2a — Primera población de `nc1-reciclaje.json`** (desbloqueado)
-- Pre-condición: B1.5 ✅.
-- Acción: Claude Code en chat analiza U1, U2 y U3 con `nc1-curso.json` como mapa y registra los reciclajes.
-- Gate: `reciclajes_por_unidad` con entradas de U1, U2 y U3; `indice_por_tipo` actualizado.
+**B2a — Primera población de `nc1-reciclaje.json`**
+- **B2a.1 — Pase 1 (mapa)** ✅ cerrado v10.92. Hilos detectados desde `nc1-curso.json` sin abrir inventarios (9 hilos, 23 eventos, marcados `nivel_analisis: "mapa"`).
+- **B2a.2 — Pase 2 (detalle)** 📋 pendiente. Validación de cada hilo contra los inventarios reales de U1/U2/U3 + adición de hilos que solo afloran al abrir el inventario (vocabulario complementario de frecuencia que el índice oficial no captura). Promueve eventos a `nivel_analisis: "detalle"`.
+- Gate B2a: `hilos[]` con cobertura U1/U2/U3 validada en pase 2.
 
 **B2b — Crear `nc1-tarjetas.json`** (bloqueado)
 - Pre-condición: B1 (script `regenerar_tarjetas_globales.py`) + al menos una unidad con vocabulario analizado (fase 2).
@@ -218,8 +218,8 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 **Pre-condición:** B2 cerrado.
 
 **Archivos a modificar:**
-- `diagrama.py` — endpoints `/api/global/<tipo>` (tarjetas/pildoras/reciclaje).
-- `web/index.html` — sección o pestañas en "Inventarios" para los globales.
+- `diagrama.py` — endpoint `/api/reciclaje` ya existe (v10.92); pendientes `/api/tarjetas` y `/api/pildoras` cuando se generen los JSONs respectivos.
+- `web/index.html` — vista RECICLAJE ya operativa (v10.92); pendientes vistas para tarjetas y píldoras.
 
 **Actualizaciones meta requeridas:**
 - `CLAUDE.md` — solo si introduce cambio en cómo invocar dashboard.
@@ -428,7 +428,7 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 | `unidades/U4/`...`U9/` | 📋 Carpetas vacías, sin inventario | Nuevas extracciones cuando lleguen PDFs |
 | `unidades/nc1-tarjetas.json` | 📋 No existe | B2 |
 | `unidades/nc1-pildoras.json` | 📋 No existe | B2 |
-| `unidades/nc1-reciclaje.json` | ✅ Existe (esqueleto vacío, v10.89) | B2a — primera población con U1/U2/U3 |
+| `unidades/nc1-reciclaje.json` | ✅ Poblado pase 1 (v10.92): 9 hilos / 23 eventos · modelo de hilos | B2a.2 — pase 2 contra inventarios |
 
 ### Archivo (`viejo/`, intocable hasta E)
 | Carpeta | Estado |

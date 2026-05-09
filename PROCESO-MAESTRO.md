@@ -210,24 +210,22 @@ Estructura por cuadro gramatical:
   - **Pendiente revisar posteriormente** en este documento maestro cuando se aborden las píldoras.
 - Generación: script Python determinista que lista PDFs y parsea TEX.
 
-**`nc1-reciclaje.json`** — mapping editorial de reciclaje cross-unidad. **Schema cerrado en B1.5 (2026-05-08, v10.89).**
-- **Acumulativo y secuencial:** cada unidad analiza qué reutiliza de las anteriores, NO se recicla todo, **solo 5-6 elementos clave** de mayor impacto.
+**`nc1-reciclaje.json`** — mapping editorial de reciclaje cross-unidad. **Schema cerrado en B1.5 (v10.89), refinado a modelo de hilos en v10.92 (2026-05-09)** para soportar fan-out y cascada que el modelo punto-a-punto original no representaba.
+- **Acumulativo y secuencial:** cada unidad analiza qué reutiliza de las anteriores, NO se recicla todo, **solo los hilos clave** de mayor impacto.
 - **Basado en contenido**, no en actividades.
-- **Se decide al cerrar cada unidad** (al final). Manual con Claude Code en chat.
-- **Revisable y editable desde el dashboard.**
-- Top-level: `curso`, `actualizado`, `reciclajes_por_unidad`, `indice_por_tipo`.
-- Por unidad: `_meta` (fecha cierre, total) + `elementos` (lista de objetos con `id`, `tipo`, `origen`, `uso_en_unidad_actual`, `impacto`).
-- Tipos cerrados (provisionales, ampliables):
-  - `vocabulario`
-  - `estrategia` (de aprendizaje)
-  - `contenido_gramatical`
-  - `forma_verbal`
-  - `estrategia_comunicativa`
-- Niveles de impacto: `alto` / `medio` / `bajo`.
-- **`origen`**: objeto `{ "unidad": N, "seccion": "..." }`. Secciones válidas: `vocabulario`, `gramatica`, `comunicacion`, `destrezas`, `cultura`, `pronunciacion_ortografia`, `para_aprender`.
-- **`indice_por_tipo`**: objeto con tipo como clave, valores = lista de IDs de entradas. Ej: `{ "vocabulario": ["U2-rec-01"], ... }`.
-- **Criterio de disparador** (adoptado de `viejo/marco-teorico-metodologico.md` §6): entra un contenido si tiene conexión natural con el contenido nuevo y lo refuerza o es requisito. Proceso: (1) inventariar contenido nuevo; (2) detectar conexión en unidades anteriores; (3) seleccionar los más relevantes; (4) registrar con tipo/origen/impacto.
-- **Archivo arranca vacío** (`reciclajes_por_unidad: {}`) y se puebla al cerrar cada unidad desde U1 en adelante. Creado en B1.5; primera población en B2.
+- **Manual con Claude Code en chat**, revisable y editable desde el dashboard.
+- **Top-level:** `curso`, `actualizado`, `_nota`, `_acciones_validas`, `hilos[]`.
+- **Por hilo:** `id` (slug, ej. `hilo-numeros`), `titulo`, `tipo`, `nivel_analisis` (`mapa` | `detalle`), `eventos[]`.
+- **Por evento:** `unidad` (int), `seccion` (string), `accion`, `descripcion`, `impacto`.
+- **Acciones válidas:** `introduce` · `amplia` · `aplica` · `sistematiza` · `contrasta`.
+- **Tipos cerrados:** `vocabulario` · `forma_verbal` · `contenido_gramatical` · `estrategia` · `estrategia_comunicativa`.
+- **Niveles de impacto:** `alto` / `medio` / `bajo`.
+- **Secciones válidas para `seccion`:** `vocabulario`, `gramatica`, `comunicacion`, `destrezas`, `cultura`, `pronunciacion_ortografia`, `para_aprender`, `contenido_general` (solo U0).
+- **Multiplicidad:** se permiten múltiples eventos del mismo hilo en la misma unidad (ej. una unidad puede `amplia` y `aplica` el mismo hilo). El dashboard renderiza todos.
+- **Criterio de disparador** (adoptado de `viejo/marco-teorico-metodologico.md` §6): entra un hilo si tiene conexión natural con el contenido nuevo y lo refuerza o es requisito.
+- **Pase 1 (mapa):** hilos detectados desde `nc1-curso.json` sin abrir inventarios. **Pase 2 (detalle):** validación contra inventarios + vocabulario complementario de frecuencia.
+- **Estado actual (v10.92):** archivo poblado con pase 1 — 9 hilos / 23 eventos cubriendo U0/U1/U2/U3.
+- **Endpoint runtime:** `/api/reciclaje` (`diagrama.py:get_reciclaje`).
 
 ---
 
