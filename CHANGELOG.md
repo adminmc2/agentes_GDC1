@@ -5,6 +5,24 @@
 
 ---
 
+## [v10.93 — 2026-05-09] — Integración de U4 a main (worktree extract/U4)
+
+**Tercera integración del carril paralelo de extracciones** tras U2 (v10.87) y U3 (v10.91).
+
+**Datos de U4:**
+- 10 páginas (42-51), 49 actividades, 6 cuadros.
+- Título: "Comidas y bebidas". Contrato post-refactor (taxonomía 20 + destreza/enfoque, schema cuadros).
+- Validador: 0 errores / 0 avisos.
+
+**Verificación del revisor (pre-merge):** todas las respuestas verificadas contra el solucionario del libro página por página. Ningún error de contenido (pronombres, conjugaciones, clasificaciones incluyendo queso como incontable, V/F, ordenaciones). El caso pescado/atún en p43-act01 es ambigüedad del propio libro, no del extractor.
+
+**Estado de main post-integración:**
+- Unidades trackeadas validando 0/0: U0, U1, U2, U3, U4.
+
+**Próximo:** B2a.2 (pase 2 de reciclaje contra inventarios) y/o extracción de U5 en nuevo worktree por ejecutor 2.
+
+---
+
 ## [v10.92b — 2026-05-09] — Saneo post-v10.92: contrato de hilos en docs vivas + multiplicidad de eventos
 
 Hallazgos del revisor sobre v10.92: la migración funcional al modelo de hilos era correcta, pero el contrato vivo seguía describiendo el modelo punto-a-punto, y la timeline colapsaba silenciosamente múltiples eventos del mismo hilo en una unidad.
