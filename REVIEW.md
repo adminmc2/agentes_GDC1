@@ -45,7 +45,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 | Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1, U2, U3 trackeados y validando 0/0 (U3 reintegrada en v10.91 con PDF correcto). U4 en extracción por ejecutor 2 en worktree `extract/U4`. A1 ✅, A2 ✅, A3 ✅, A4 ✅ cerrado 2026-05-07. 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
-| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ cerrado (v10.89) · `nc1-reciclaje.json` existe vacío · B2 desbloqueado para reciclaje (primera población con U1/U2) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 (despliegue público) ✅ cerrado fuera de orden |
+| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ cerrado (v10.89) · `nc1-reciclaje.json` existe vacío · B2 desbloqueado para reciclaje (primera población con U1/U2/U3) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 (despliegue público) ✅ cerrado fuera de orden |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
 | Bloque E (limpieza final) | 📋 Pendiente |
@@ -162,8 +162,8 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 **B2a — Primera población de `nc1-reciclaje.json`** (desbloqueado)
 - Pre-condición: B1.5 ✅.
-- Acción: Claude Code en chat analiza U1 y U2 con `nc1-curso.json` como mapa y registra los reciclajes.
-- Gate: `reciclajes_por_unidad` con entradas de U1 y U2; `indice_por_tipo` actualizado.
+- Acción: Claude Code en chat analiza U1, U2 y U3 con `nc1-curso.json` como mapa y registra los reciclajes.
+- Gate: `reciclajes_por_unidad` con entradas de U1, U2 y U3; `indice_por_tipo` actualizado.
 
 **B2b — Crear `nc1-tarjetas.json`** (bloqueado)
 - Pre-condición: B1 (script `regenerar_tarjetas_globales.py`) + al menos una unidad con vocabulario analizado (fase 2).
@@ -428,7 +428,7 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 | `unidades/U4/`...`U9/` | 📋 Carpetas vacías, sin inventario | Nuevas extracciones cuando lleguen PDFs |
 | `unidades/nc1-tarjetas.json` | 📋 No existe | B2 |
 | `unidades/nc1-pildoras.json` | 📋 No existe | B2 |
-| `unidades/nc1-reciclaje.json` | ✅ Existe (esqueleto vacío, v10.89) | B2 — primera población con U1/U2 |
+| `unidades/nc1-reciclaje.json` | ✅ Existe (esqueleto vacío, v10.89) | B2a — primera población con U1/U2/U3 |
 
 ### Archivo (`viejo/`, intocable hasta E)
 | Carpeta | Estado |

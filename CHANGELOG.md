@@ -5,6 +5,20 @@
 
 ---
 
+## [v10.91c — 2026-05-09] — Alineación operativa de B2a: U1/U2/U3 como scope unificado
+
+Hallazgo del revisor sobre v10.91/v10.91b: el CHANGELOG anunciaba B2a con scope "U1/U2/U3" pero `REVIEW.md` (B2a + tabla de artefactos) y `PROCESO-MAESTRO.md` (resumen vivo) seguían diciendo "U1 y U2". Doble verdad operativa.
+
+**Decisión cerrada con autor:** B2a (primera población de `nc1-reciclaje.json`) cubre U1, U2 y U3 — las 3 unidades trackeadas en main. U0 queda fuera por ser unidad atípica sin unidades anteriores que reciclar.
+
+**Cambios:**
+- `REVIEW.md` línea 48 (estado vivo bloque B), líneas 165-166 (B2a acción + gate), línea 431 (tabla artefactos).
+- `PROCESO-MAESTRO.md` línea 699 (resumen vivo bloque B).
+
+**Sin cambios funcionales.** Validador 0/0.
+
+---
+
 ## [v10.91b — 2026-05-09] — Saneo documental post-v10.91: alineación de 3 referencias vivas
 
 Hallazgos del revisor sobre v10.91: la integración funcional de U3 era correcta, pero 3 referencias vivas seguían en el escenario previo y contradecían el estado real:

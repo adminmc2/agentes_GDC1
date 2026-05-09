@@ -696,7 +696,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-parte5bis-migracion.md`. La migraci
 
 - ✅ **Bloques operativos cerrados:** esquemas JSON cerrados, vista HTML dinámica del dashboard operativa, extracciones de U0/U1/U3 con contrato post-refactor (taxonomía 20 + destreza/enfoque) validando 0/0, prompt versionado, validador alineado con schema en cross-check A4.5.5, disolución de `nuevo/`, CLAUDE.md modular, refactor del prompt de fase 1 cerrado en v10.69.
 - ✅ **Bloque A cerrado** (ver REVIEW): A1 (validar U3 con autor), A2 (probar con U0), A3 (bugs B1-B4), A4 (refactor documental de fase 1) — todos en ✅. Resumen vivo en `REVIEW.md` sección "Bloque A"; detalle íntegro (sub-pasos A4.0-A4.6, gates, riesgos) archivado en `docs/historico/REVIEW-bloque-A-cerrado.md`; bitácora cronológica general permanece viva en `REVIEW.md`.
-- 🔄 **Bloque B parcial** (REVIEW): infraestructura JSONs globales del curso. B5 ✅ cerrado; B1.5 ✅ cerrado (v10.89) — `nc1-reciclaje.json` existe vacío, primera población con U1/U2 en B2a; tarjetas bloqueadas por B1+fase 2; píldoras bloqueadas por fase 5.
+- 🔄 **Bloque B parcial** (REVIEW): infraestructura JSONs globales del curso. B5 ✅ cerrado; B1.5 ✅ cerrado (v10.89) — `nc1-reciclaje.json` existe vacío, primera población con U1/U2/U3 en B2a; tarjetas bloqueadas por B1+fase 2; píldoras bloqueadas por fase 5.
 - 📋 **Bloque C pendiente:** construir fases 2-8 (una a una).
 - 📋 **Bloque D pendiente:** sistema de lecciones de Claude Code.
 - 📋 **Bloque E pendiente** (al cierre del curso): limpieza final, eliminar `viejo/`, eliminar `PROCESO-MAESTRO.md` y `REVIEW.md`.
