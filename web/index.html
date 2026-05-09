@@ -302,6 +302,9 @@ main { overflow-y: auto; padding: 24px; }
         <button class="nav-btn" id="nav-inventarios" onclick="goTo('inventarios')">
             <span class="nav-dot project" style="background:#81D4FA"></span>INVENTARIOS
         </button>
+        <button class="nav-btn" id="nav-reciclaje" onclick="goTo('reciclaje')">
+            <span class="nav-dot project" style="background:#A5D6A7"></span>RECICLAJE
+        </button>
         <button class="nav-btn" id="nav-proyecto" onclick="goTo('proyecto')">
             <span class="nav-dot project"></span>PROYECTO
         </button>
@@ -340,6 +343,14 @@ main { overflow-y: auto; padding: 24px; }
     <div id="view-inventarios" style="display:none">
         <div class="page-header"><span class="page-title">Inventarios</span><div class="page-subtitle">Vista del JSON extraído de cada unidad. Solo se muestran los bloques presentes en el inventario.</div></div>
         <div id="inv-list"></div>
+    </div>
+
+    <!-- ===== RECICLAJE (índice global cross-unidad) ===== -->
+    <div id="view-reciclaje" style="display:none">
+        <div class="page-header"><span class="page-title">Reciclaje cross-unidad</span><div class="page-subtitle" id="rec-subtitle">Índice editorial de contenido reutilizado entre unidades.</div></div>
+        <div id="rec-list"></div>
+        <div id="rec-drawer" style="display:none;position:fixed;top:0;right:0;width:480px;max-width:90vw;height:100vh;background:#fff;box-shadow:-4px 0 16px rgba(0,0,0,0.2);overflow-y:auto;z-index:1000;padding:24px"></div>
+        <div id="rec-drawer-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:999" onclick="closeRecDrawer()"></div>
     </div>
 
     <!-- ===== INVENTARIO (detalle de unidad) ===== -->
@@ -517,7 +528,7 @@ function renderSidebar() {
 }
 
 function showView(id) {
-    ['proyecto','seccion','agente','nueva','ejecucion','comparar','inventarios','inventario'].forEach(v =>
+    ['proyecto','seccion','agente','nueva','ejecucion','comparar','inventarios','inventario','reciclaje'].forEach(v =>
         document.getElementById('view-'+v).style.display = v===id ? '' : 'none');
 }
 
@@ -525,6 +536,7 @@ function goTo(view, param) {
     currentView = view;
     if (view === 'proyecto') { showView('proyecto'); loadProjectData(); }
     else if (view === 'inventarios') { showView('inventarios'); loadInventarios(); }
+    else if (view === 'reciclaje') { showView('reciclaje'); loadReciclaje(); }
     else if (view === 'inventario') { showView('inventario'); loadInventario(param); }
     else if (view === 'seccion') { currentSeccion = param || currentSeccion; showView('seccion'); renderSeccion(); }
     renderSidebar();
@@ -592,6 +604,138 @@ async function loadInventarios() {
     } catch(e) {
         el.innerHTML = `<div class="section"><div class="section-body" style="padding:20px;color:var(--md-error)">Error: ${e.message}</div></div>`;
     }
+}
+
+// ===== RECICLAJE (modelo de hilos · vista línea de tiempo) =====
+let recData = null;
+const REC_COLOR_TIPO = {
+    vocabulario: '#0288D1',
+    forma_verbal: '#E64A19',
+    contenido_gramatical: '#7B1FA2',
+    estrategia: '#F57C00',
+    estrategia_comunicativa: '#388E3C'
+};
+const REC_COLOR_ACCION = {
+    introduce: '#1976D2',
+    amplia: '#388E3C',
+    aplica: '#F57C00',
+    sistematiza: '#7B1FA2',
+    contrasta: '#C2185B'
+};
+const REC_COLOR_IMPACTO = { alto: '#C62828', medio: '#EF6C00', bajo: '#558B2F' };
+const REC_UNIDADES = [0,1,2,3,4,5,6,7,8,9];
+
+async function loadReciclaje() {
+    renderSidebar();
+    const el = document.getElementById('rec-list');
+    el.innerHTML = '<div style="padding:20px;color:var(--md-on-surface-variant)">Cargando...</div>';
+    try {
+        const r = await fetch('/api/reciclaje');
+        recData = await r.json();
+        if (recData.error) {
+            el.innerHTML = `<div class="section"><div class="section-body" style="padding:20px">${recData.error}</div></div>`;
+            return;
+        }
+        const hilos = recData.hilos || [];
+        const totalEventos = hilos.reduce((a, h) => a + (h.eventos || []).length, 0);
+        const sub = document.getElementById('rec-subtitle');
+        if (sub) sub.textContent = `${hilos.length} hilos · ${totalEventos} eventos · actualizado ${recData.actualizado || '-'}`;
+        renderRec();
+    } catch(e) {
+        el.innerHTML = `<div class="section"><div class="section-body" style="padding:20px;color:var(--md-error)">Error: ${e.message}</div></div>`;
+    }
+}
+
+function renderRec() {
+    if (!recData) return;
+    document.getElementById('rec-list').innerHTML = renderRecTimeline();
+}
+
+function hilosPorTipo() {
+    const hilos = (recData.hilos || []).slice();
+    const orden = ['vocabulario','forma_verbal','contenido_gramatical','estrategia','estrategia_comunicativa'];
+    const grupos = {};
+    hilos.forEach(h => { (grupos[h.tipo] = grupos[h.tipo] || []).push(h); });
+    const tipos = orden.filter(t => grupos[t]).concat(Object.keys(grupos).filter(t => !orden.includes(t)));
+    return { grupos, tipos };
+}
+
+function unidadesDeHilo(h) {
+    return Array.from(new Set((h.eventos || []).map(e => e.unidad))).sort((a,b) => a-b);
+}
+
+function eventosDetalleHTML(h) {
+    return (h.eventos || []).map(ev => {
+        const aColor = REC_COLOR_ACCION[ev.accion] || '#607D8B';
+        const iColor = REC_COLOR_IMPACTO[ev.impacto] || '#9E9E9E';
+        return `<div style="display:grid;grid-template-columns:60px 110px 1fr 60px;gap:10px;padding:10px 12px;border-bottom:1px solid #ECEFF1;align-items:center">
+            <div style="font-weight:700;color:#0D47A1;font-size:14px">U${ev.unidad}</div>
+            <div><span style="font-size:10px;background:${aColor};color:#fff;padding:3px 8px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">${ev.accion}</span></div>
+            <div style="font-size:13px;color:#37474F;line-height:1.4">${ev.descripcion}<div style="font-size:11px;color:#90A4AE;margin-top:2px">${ev.seccion}</div></div>
+            <div><span style="font-size:10px;background:${iColor};color:#fff;padding:2px 6px;border-radius:8px;font-weight:600">${(ev.impacto||'').toUpperCase()}</span></div>
+        </div>`;
+    }).join('');
+}
+
+// === LÍNEA DE TIEMPO ===
+function renderRecTimeline() {
+    const { grupos, tipos } = hilosPorTipo();
+    const leyenda = `<div style="display:flex;gap:14px;flex-wrap:wrap;padding:12px 16px;background:#F5F5F5;border-radius:8px;margin-bottom:20px;font-size:12px">
+        <strong style="color:#37474F">Acción:</strong>
+        ${Object.keys(REC_COLOR_ACCION).map(a => `<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:50%;background:${REC_COLOR_ACCION[a]};display:inline-block"></span>${a}</span>`).join('')}
+    </div>`;
+    const bloques = tipos.map(tipo => {
+        const tColor = REC_COLOR_TIPO[tipo] || '#607D8B';
+        const lineas = grupos[tipo].map(h => {
+            const eventosByU = {};
+            (h.eventos || []).forEach(ev => { eventosByU[ev.unidad] = ev; });
+            const puntos = REC_UNIDADES.map(u => {
+                const ev = eventosByU[u];
+                if (!ev) return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px"><div style="width:10px;height:10px;border-radius:50%;background:#ECEFF1;border:1px solid #CFD8DC"></div></div>`;
+                const aColor = REC_COLOR_ACCION[ev.accion] || '#607D8B';
+                const tip = `${ev.accion.toUpperCase()} · ${ev.descripcion.replace(/"/g,'&quot;')}`;
+                return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px"><div onclick="openRecDrawer('${h.id}')" title="${tip}" style="width:22px;height:22px;border-radius:50%;background:${aColor};cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px ${aColor};display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700">${ev.accion[0].toUpperCase()}</div></div>`;
+            }).join('');
+            return `<div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;align-items:center">
+                <div onclick="openRecDrawer('${h.id}')" style="cursor:pointer;font-size:13px;font-weight:600;color:#263238;padding-right:8px;border-right:3px solid ${tColor}">${h.titulo}</div>
+                <div style="display:flex;align-items:center;position:relative">
+                    <div style="position:absolute;left:0;right:0;top:50%;height:2px;background:#ECEFF1"></div>
+                    <div style="display:flex;flex:1;position:relative;z-index:1">${puntos}</div>
+                </div>
+            </div>`;
+        }).join('');
+        const headerU = `<div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;border-bottom:2px solid #ECEFF1;font-weight:700;font-size:11px;color:#90A4AE"><div></div><div style="display:flex">${REC_UNIDADES.map(u => `<div style="flex:1;text-align:center">U${u}</div>`).join('')}</div></div>`;
+        return `<div class="section" style="margin-bottom:20px;border-left:4px solid ${tColor}">
+            <div class="section-header" style="background:${tColor};color:#fff"><h2 style="color:#fff;margin:0">${tipo.replace(/_/g,' ').toUpperCase()}</h2></div>
+            <div class="section-body" style="padding:16px">${headerU}${lineas}</div>
+        </div>`;
+    }).join('');
+    return leyenda + bloques;
+}
+
+function openRecDrawer(hiloId) {
+    const h = (recData.hilos || []).find(x => x.id === hiloId);
+    if (!h) return;
+    const tColor = REC_COLOR_TIPO[h.tipo] || '#607D8B';
+    const drawer = document.getElementById('rec-drawer');
+    drawer.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:16px">
+        <div>
+            <div style="font-size:11px;color:${tColor};font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${h.tipo.replace(/_/g,' ')}</div>
+            <div style="font-size:20px;font-weight:700;color:#263238">${h.titulo}</div>
+            <div style="font-size:11px;color:#90A4AE;font-family:monospace;margin-top:4px">${h.id}</div>
+        </div>
+        <button onclick="closeRecDrawer()" style="background:none;border:none;font-size:24px;cursor:pointer;color:#90A4AE;padding:0 8px">×</button>
+    </div>
+    <div style="border-top:3px solid ${tColor};margin-bottom:8px"></div>
+    <div style="font-size:13px;color:#37474F;margin-bottom:12px"><strong>Trayectoria:</strong> ${(h.eventos||[]).length} eventos en U${unidadesDeHilo(h).join(', U')}</div>
+    <div style="background:#FAFAFA;border-radius:8px;overflow:hidden">${eventosDetalleHTML(h)}</div>`;
+    document.getElementById('rec-drawer-overlay').style.display = '';
+    drawer.style.display = '';
+}
+
+function closeRecDrawer() {
+    document.getElementById('rec-drawer').style.display = 'none';
+    document.getElementById('rec-drawer-overlay').style.display = 'none';
 }
 
 let _invTab = 'resumen';

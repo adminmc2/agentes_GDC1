@@ -5,6 +5,31 @@
 
 ---
 
+## [v10.92 — 2026-05-09] — B2a (pase 1): primera población de `nc1-reciclaje.json` con modelo de hilos + vista en dashboard
+
+**Refinamiento del schema cerrado en B1.5.** El modelo punto-a-punto (`reciclajes_por_unidad` con entradas `origen → destino`) era insuficiente para representar dos realidades editoriales:
+1. **Fan-out:** un mismo contenido se ramifica en varias unidades (ej. números: U0→U1→U2→U3 como un único hilo, no 3 reciclajes sueltos).
+2. **Cascada:** las ramificaciones se acumulan; lo que U3 recicla "de U1" en realidad ya pasó por U2.
+
+**Schema nuevo:** `hilos[]` reemplaza `reciclajes_por_unidad`. Cada hilo es un contenido con identidad propia (`id`, `titulo`, `tipo`) y una secuencia de `eventos` por unidad con `accion` (introduce | amplia | aplica | sistematiza | contrasta), `seccion`, `descripcion`, `impacto`.
+
+**Pase 1 generado** cruzando `nc1-curso.json` (sin abrir inventarios todavía):
+- 9 hilos detectados: números, alfabeto, léxico de aula, países hispanohablantes, presente de indicativo, género/número, info personal, saludos, interrogativos.
+- 23 eventos repartidos en U0/U1/U2/U3.
+- Cada hilo lleva `nivel_analisis: "mapa"` para distinguirlo del pase 2 (que validará contra inventarios y añadirá vocabulario complementario de frecuencia).
+
+**Dashboard:**
+- Nueva ruta `/api/reciclaje` en `diagrama.py` (función `get_reciclaje`).
+- Nuevo botón **RECICLAJE** en sidebar de `web/index.html`.
+- Vista **línea de tiempo**: cada hilo es una barra horizontal con puntos en U0..U9 coloreados por acción (azul=introduce, verde=amplia, naranja=aplica, morado=sistematiza, rosa=contrasta). Click en punto o título abre drawer lateral con la trayectoria completa del hilo.
+- Agrupación por tipo (vocabulario, forma_verbal, contenido_gramatical, estrategia_comunicativa) con border de color.
+
+**Pendiente (pase 2):** validación de cada hilo contra los inventarios reales de U1/U2/U3 + adición del vocabulario complementario de frecuencia que el índice oficial no captura.
+
+**Sin cambios funcionales en JSONs de inventario.** Validador U0/U1/U2/U3 → 0/0.
+
+---
+
 ## [v10.91c — 2026-05-09] — Alineación operativa de B2a: U1/U2/U3 como scope unificado
 
 Hallazgo del revisor sobre v10.91/v10.91b: el CHANGELOG anunciaba B2a con scope "U1/U2/U3" pero `REVIEW.md` (B2a + tabla de artefactos) y `PROCESO-MAESTRO.md` (resumen vivo) seguían diciendo "U1 y U2". Doble verdad operativa.

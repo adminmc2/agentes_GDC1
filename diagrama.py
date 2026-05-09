@@ -299,6 +299,14 @@ def get_inventario(unidad, zona=""):
     return {"error": f"No hay inventario para U{unidad}"}
 
 
+def get_reciclaje():
+    """Lee unidades/nc1-reciclaje.json (índice global de reciclaje cross-unidad)."""
+    path = PROJECT / "unidades" / "nc1-reciclaje.json"
+    if not path.exists():
+        return {"error": "nc1-reciclaje.json no existe"}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def get_evaluaciones(unidad=None):
     conn = _db()
     cur = conn.cursor(cursor_factory=RealDictCursor)
@@ -1033,6 +1041,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
             zona = qs.get("zona", ["activo"])[0]
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(get_inventario(unidad, zona), ensure_ascii=False))
+        elif parsed.path == "/api/reciclaje":
+            self._respond(200, "application/json; charset=utf-8",
+                          json.dumps(get_reciclaje(), ensure_ascii=False))
         elif parsed.path == "/api/evaluaciones":
             unidad = qs.get("unidad", [None])[0]
             unidad = int(unidad) if unidad else None
