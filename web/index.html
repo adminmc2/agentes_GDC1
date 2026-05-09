@@ -612,7 +612,6 @@ const REC_COLOR_TIPO = {
     vocabulario: '#0288D1',
     forma_verbal: '#E64A19',
     contenido_gramatical: '#7B1FA2',
-    estrategia: '#F57C00',
     estrategia: '#388E3C'
 };
 const REC_COLOR_ACCION = {
@@ -653,7 +652,7 @@ function renderRec() {
 
 function hilosPorTipo() {
     const hilos = (recData.hilos || []).slice();
-    const orden = ['vocabulario','forma_verbal','contenido_gramatical','estrategia','estrategia'];
+    const orden = ['vocabulario','forma_verbal','contenido_gramatical','estrategia'];
     const grupos = {};
     hilos.forEach(h => { (grupos[h.tipo] = grupos[h.tipo] || []).push(h); });
     const tipos = orden.filter(t => grupos[t]).concat(Object.keys(grupos).filter(t => !orden.includes(t)));

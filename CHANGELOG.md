@@ -5,6 +5,18 @@
 
 ---
 
+## [v10.94b — 2026-05-09] — Saneo post-v10.94: duplicado `estrategia` en frontend + 6 referencias vivas
+
+Hallazgos del revisor sobre v10.94 (en dos rondas):
+
+1. **`web/index.html`** — `REC_COLOR_TIPO` tenía la clave `estrategia` duplicada y el array `orden` repetía el mismo tipo, con lo que la vista RECICLAJE pintaba dos bloques ESTRATEGIA. Limpiado.
+2. **`PROCESO-MAESTRO.md`** snapshot operativo (línea 227) y resumen vivo del bloque B (línea 697) actualizados al estado real (23 hilos / 70 eventos / U0-U9).
+3. **`REVIEW.md`** estado vivo (líneas 45, 48, 157, 163) y tabla de artefactos (línea 428): U4 separada como trackeada (v10.93), B2a.1 cerrado v10.94, B2a.2 menciona inventarios disponibles + script automático pendiente.
+
+**Sin cambios funcionales en datos.** Validador U0-U4 → 0/0.
+
+---
+
 ## [v10.94 — 2026-05-09] — B2a pase 1 ampliado a U0-U9 + taxonomía unificada (4 tipos)
 
 **Dos correcciones del autor sobre el alcance del pase 1:**

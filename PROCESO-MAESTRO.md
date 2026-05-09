@@ -224,7 +224,7 @@ Estructura por cuadro gramatical:
 - **Multiplicidad:** se permiten múltiples eventos del mismo hilo en la misma unidad (ej. una unidad puede `amplia` y `aplica` el mismo hilo). El dashboard renderiza todos.
 - **Criterio de disparador** (adoptado de `viejo/marco-teorico-metodologico.md` §6): entra un hilo si tiene conexión natural con el contenido nuevo y lo refuerza o es requisito.
 - **Pase 1 (mapa):** hilos detectados desde `nc1-curso.json` sin abrir inventarios. **Pase 2 (detalle):** validación contra inventarios + vocabulario complementario de frecuencia.
-- **Estado actual (v10.92):** archivo poblado con pase 1 — 9 hilos / 23 eventos cubriendo U0/U1/U2/U3.
+- **Estado actual (v10.94):** archivo poblado con pase 1 — 23 hilos / 70 eventos cubriendo U0-U9 (índice completo).
 - **Endpoint runtime:** `/api/reciclaje` (`diagrama.py:get_reciclaje`).
 
 ---
@@ -694,7 +694,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-parte5bis-migracion.md`. La migraci
 
 - ✅ **Bloques operativos cerrados:** esquemas JSON cerrados, vista HTML dinámica del dashboard operativa, extracciones de U0/U1/U3 con contrato post-refactor (taxonomía 20 + destreza/enfoque) validando 0/0, prompt versionado, validador alineado con schema en cross-check A4.5.5, disolución de `nuevo/`, CLAUDE.md modular, refactor del prompt de fase 1 cerrado en v10.69.
 - ✅ **Bloque A cerrado** (ver REVIEW): A1 (validar U3 con autor), A2 (probar con U0), A3 (bugs B1-B4), A4 (refactor documental de fase 1) — todos en ✅. Resumen vivo en `REVIEW.md` sección "Bloque A"; detalle íntegro (sub-pasos A4.0-A4.6, gates, riesgos) archivado en `docs/historico/REVIEW-bloque-A-cerrado.md`; bitácora cronológica general permanece viva en `REVIEW.md`.
-- 🔄 **Bloque B parcial** (REVIEW): infraestructura JSONs globales del curso. B5 ✅ cerrado; B1.5 ✅ cerrado (v10.89) — `nc1-reciclaje.json` existe vacío, primera población con U1/U2/U3 en B2a; tarjetas bloqueadas por B1+fase 2; píldoras bloqueadas por fase 5.
+- 🔄 **Bloque B parcial** (REVIEW): infraestructura JSONs globales del curso. B5 ✅ cerrado; B1.5 ✅ cerrado (v10.89); B2a.1 (pase 1) ✅ cerrado (v10.94) — `nc1-reciclaje.json` poblado con 23 hilos / 70 eventos cubriendo U0-U9, taxonomía 4 tipos; B2a.2 (pase 2 contra inventarios) pendiente; tarjetas bloqueadas por B1+fase 2; píldoras bloqueadas por fase 5.
 - 📋 **Bloque C pendiente:** construir fases 2-8 (una a una).
 - 📋 **Bloque D pendiente:** sistema de lecciones de Claude Code.
 - 📋 **Bloque E pendiente** (al cierre del curso): limpieza final, eliminar `viejo/`, eliminar `PROCESO-MAESTRO.md` y `REVIEW.md`.

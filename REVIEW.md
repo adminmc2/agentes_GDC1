@@ -42,10 +42,10 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 | Bloque | Estado |
 |---|---|
-| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1, U2, U3 trackeados y validando 0/0 (U3 reintegrada en v10.91 con PDF correcto). U4 en extracción por ejecutor 2 en worktree `extract/U4`. A1 ✅, A2 ✅, A3 ✅, A4 ✅ cerrado 2026-05-07. 5 archivos operativos en `fases/1-extraccion-inventario/` |
+| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1, U2, U3, U4 trackeados y validando 0/0 (U3 reintegrada v10.91 con PDF correcto; U4 integrada v10.93). U5 pendiente — extraerá ejecutor 2 en worktree `extract/U5`. A1 ✅, A2 ✅, A3 ✅, A4 ✅ cerrado 2026-05-07. 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
-| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ cerrado (v10.89) · `nc1-reciclaje.json` existe vacío · B2 desbloqueado para reciclaje (primera población con U1/U2/U3) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 (despliegue público) ✅ cerrado fuera de orden |
+| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ cerrado (v10.89) · B2a.1 (pase 1) ✅ cerrado (v10.94): `nc1-reciclaje.json` poblado con 23 hilos / 70 eventos cubriendo U0-U9, taxonomía 4 tipos · B2a.2 (pase 2 contra inventarios) pendiente · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 (despliegue público) ✅ cerrado fuera de orden |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
 | Bloque E (limpieza final) | 📋 Pendiente |
@@ -154,16 +154,16 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 **Objetivo:** tener `nc1-tarjetas.json`, `nc1-pildoras.json` y `nc1-reciclaje.json` en `unidades/` con contenido real. **U3 no ancla este paso.**
 
 **Estado actual:**
-- `nc1-reciclaje.json` — ✅ poblado pase 1 (v10.92): 9 hilos / 23 eventos cubriendo U0/U1/U2/U3 desde `nc1-curso.json`. Schema refinado a modelo de hilos.
+- `nc1-reciclaje.json` — ✅ poblado pase 1 (v10.94): 23 hilos / 70 eventos cubriendo U0-U9 desde `nc1-curso.json`. Schema modelo de hilos, taxonomía 4 tipos (vocabulario, forma_verbal, contenido_gramatical, estrategia).
 - `nc1-tarjetas.json` — 📋 no existe. Bloqueado por B1 (script) + fase 2 (vocabulario analizado).
 - `nc1-pildoras.json` — 📋 no existe. Bloqueado por fase 5 (píldoras por unidad).
 
 **Sub-pasos desacoplados:**
 
 **B2a — Primera población de `nc1-reciclaje.json`**
-- **B2a.1 — Pase 1 (mapa)** ✅ cerrado v10.92. Hilos detectados desde `nc1-curso.json` sin abrir inventarios (9 hilos, 23 eventos, marcados `nivel_analisis: "mapa"`).
-- **B2a.2 — Pase 2 (detalle)** 📋 pendiente. Validación de cada hilo contra los inventarios reales de U1/U2/U3 + adición de hilos que solo afloran al abrir el inventario (vocabulario complementario de frecuencia que el índice oficial no captura). Promueve eventos a `nivel_analisis: "detalle"`.
-- Gate B2a: `hilos[]` con cobertura U1/U2/U3 validada en pase 2.
+- **B2a.1 — Pase 1 (mapa)** ✅ cerrado v10.94. Hilos detectados desde `nc1-curso.json` sin abrir inventarios (23 hilos, 70 eventos, U0-U9, marcados `nivel_analisis: "mapa"`).
+- **B2a.2 — Pase 2 (detalle)** 📋 pendiente. Validación de cada hilo contra los inventarios reales (U1-U4 disponibles hoy) + adición de hilos que solo afloran al abrir el inventario (vocabulario complementario de frecuencia que el índice oficial no captura). Promueve eventos a `nivel_analisis: "detalle"`. Pendiente también: script automático de proyección de vocabulario por campo semántico desde inventarios.
+- Gate B2a: `hilos[]` con cobertura validada contra inventarios disponibles en pase 2.
 
 **B2b — Crear `nc1-tarjetas.json`** (bloqueado)
 - Pre-condición: B1 (script `regenerar_tarjetas_globales.py`) + al menos una unidad con vocabulario analizado (fase 2).
@@ -425,10 +425,11 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 | `unidades/U3/U3-nc1-inventario.json` | ✅ Validado · trackeado (reintegrado en v10.91 con PDF correcto, 47 actividades, 32-41) | Ninguna prevista |
 | `unidades/U3/fuente/U3-nc1.pdf` | ✅ PDF correcto (gitignored) | — |
 | `unidades/U3/tarjetas/`, `pildoras/`, MDs | 📋 No migrados | B3 |
-| `unidades/U4/`...`U9/` | 📋 Carpetas vacías, sin inventario | Nuevas extracciones cuando lleguen PDFs |
+| `unidades/U4/U4-nc1-inventario.json` | ✅ Validado · trackeado (integrado v10.93, 49 actividades, 6 cuadros, 42-51) | Ninguna prevista |
+| `unidades/U5/`...`U9/` | 📋 Carpetas vacías, sin inventario | Nuevas extracciones (U5 → ejecutor 2 en `extract/U5`) |
 | `unidades/nc1-tarjetas.json` | 📋 No existe | B2 |
 | `unidades/nc1-pildoras.json` | 📋 No existe | B2 |
-| `unidades/nc1-reciclaje.json` | ✅ Poblado pase 1 (v10.92): 9 hilos / 23 eventos · modelo de hilos | B2a.2 — pase 2 contra inventarios |
+| `unidades/nc1-reciclaje.json` | ✅ Poblado pase 1 (v10.94): 23 hilos / 70 eventos · U0-U9 · modelo de hilos · 4 tipos | B2a.2 — pase 2 contra inventarios |
 
 ### Archivo (`viejo/`, intocable hasta E)
 | Carpeta | Estado |
