@@ -1,9 +1,20 @@
 {
   "curso": "nc1",
   "actualizado": "2026-05-09",
-  "_nota": "Modelo de hilos: cada hilo es un contenido con identidad propia que cruza múltiples unidades a través de eventos secuenciales (introduce, amplia, aplica, sistematiza, contrasta). Pase 1 (mapa) cubre U0-U9 completas desde nc1-curso.json sin abrir inventarios. Pase 2 (detalle) validará contra inventarios + vocabulario complementario. Tipos: 4 (vocabulario, forma_verbal, contenido_gramatical, estrategia). El tipo 'estrategia' cubre cualquier tipo asociado a destrezas de la lengua.",
-  "_acciones_validas": ["introduce", "amplia", "aplica", "sistematiza", "contrasta"],
-  "_tipos_validos": ["vocabulario", "forma_verbal", "contenido_gramatical", "estrategia"],
+  "_nota": "Modelo de hilos. Tipos (4): vocabulario, tiempos_y_verbos, contenido_gramatical, estrategia. Hilos de tiempos_y_verbos: cada hilo es un tiempo verbal con usos[]; cada uso tiene tipos_verbo[]; cada tipo tiene verbos[] con formas_trabajadas. Cada tipo termina con incoherencias[] (sección al final del bloque en el dashboard).",
+  "_acciones_validas": [
+    "introduce",
+    "amplia",
+    "aplica",
+    "sistematiza",
+    "contrasta"
+  ],
+  "_tipos_validos": [
+    "vocabulario",
+    "tiempos_y_verbos",
+    "contenido_gramatical",
+    "estrategia"
+  ],
   "hilos": [
     {
       "id": "hilo-numeros",
@@ -11,10 +22,34 @@
       "tipo": "vocabulario",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 0, "seccion": "contenido_general", "accion": "introduce", "descripcion": "Números 0-10", "impacto": "alto" },
-        { "unidad": 1, "seccion": "comunicacion", "accion": "amplia", "descripcion": "Números 1-20 + aplicación a edad y número de teléfono", "impacto": "alto" },
-        { "unidad": 2, "seccion": "comunicacion", "accion": "amplia", "descripcion": "Números 21-100 + ordinales (primer, segundo, tercer)", "impacto": "alto" },
-        { "unidad": 3, "seccion": "comunicacion", "accion": "aplica", "descripcion": "Aplicación a la expresión de la hora", "impacto": "alto" }
+        {
+          "unidad": 0,
+          "seccion": "contenido_general",
+          "accion": "introduce",
+          "descripcion": "Números 0-10",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 1,
+          "seccion": "comunicacion",
+          "accion": "amplia",
+          "descripcion": "Números 1-20 + aplicación a edad y número de teléfono",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 2,
+          "seccion": "comunicacion",
+          "accion": "amplia",
+          "descripcion": "Números 21-100 + ordinales (primer, segundo, tercer)",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 3,
+          "seccion": "comunicacion",
+          "accion": "aplica",
+          "descripcion": "Aplicación a la expresión de la hora",
+          "impacto": "alto"
+        }
       ]
     },
     {
@@ -23,8 +58,20 @@
       "tipo": "vocabulario",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 0, "seccion": "contenido_general", "accion": "introduce", "descripcion": "Abecedario español (recitado)", "impacto": "alto" },
-        { "unidad": 1, "seccion": "vocabulario", "accion": "sistematiza", "descripcion": "Nombres de las letras como léxico activo", "impacto": "alto" }
+        {
+          "unidad": 0,
+          "seccion": "contenido_general",
+          "accion": "introduce",
+          "descripcion": "Abecedario español (recitado)",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "sistematiza",
+          "descripcion": "Nombres de las letras como léxico activo",
+          "impacto": "alto"
+        }
       ]
     },
     {
@@ -33,8 +80,20 @@
       "tipo": "vocabulario",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 0, "seccion": "contenido_general", "accion": "introduce", "descripcion": "Para la clase (instrucciones básicas)", "impacto": "medio" },
-        { "unidad": 1, "seccion": "vocabulario", "accion": "amplia", "descripcion": "Objetos de clase como bloque léxico", "impacto": "medio" }
+        {
+          "unidad": 0,
+          "seccion": "contenido_general",
+          "accion": "introduce",
+          "descripcion": "Para la clase (instrucciones básicas)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "amplia",
+          "descripcion": "Objetos de clase como bloque léxico",
+          "impacto": "medio"
+        }
       ]
     },
     {
@@ -43,25 +102,139 @@
       "tipo": "vocabulario",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 0, "seccion": "contenido_general", "accion": "introduce", "descripcion": "Países que hablan español (mapa)", "impacto": "alto" },
-        { "unidad": 2, "seccion": "vocabulario", "accion": "amplia", "descripcion": "Países hispanohablantes + adjetivos de nacionalidad", "impacto": "alto" }
+        {
+          "unidad": 0,
+          "seccion": "contenido_general",
+          "accion": "introduce",
+          "descripcion": "Países que hablan español (mapa)",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "amplia",
+          "descripcion": "Países hispanohablantes + adjetivos de nacionalidad",
+          "impacto": "alto"
+        }
       ]
     },
     {
-      "id": "hilo-verbos-presente",
-      "titulo": "Presente de indicativo",
-      "tipo": "forma_verbal",
-      "nivel_analisis": "mapa",
+      "id": "hilo-voc-paises-hispanohablantes",
+      "titulo": "Países hispanohablantes",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
       "eventos": [
-        { "unidad": 1, "seccion": "gramatica", "accion": "introduce", "descripcion": "ser, llamarse, tener (formas singulares)", "impacto": "alto" },
-        { "unidad": 2, "seccion": "gramatica", "accion": "amplia", "descripcion": "ser y tener en formas plurales", "impacto": "alto" },
-        { "unidad": 3, "seccion": "gramatica", "accion": "sistematiza", "descripcion": "Presente de los verbos regulares (todas las personas)", "impacto": "alto" },
-        { "unidad": 4, "seccion": "gramatica", "accion": "amplia", "descripcion": "Verbos gustar y querer (irregulares pedagógicos)", "impacto": "alto" },
-        { "unidad": 5, "seccion": "gramatica", "accion": "amplia", "descripcion": "Verbo estar y oposición ser/estar", "impacto": "alto" },
-        { "unidad": 6, "seccion": "gramatica", "accion": "amplia", "descripcion": "Presente de irregulares: cerrar, ir, venir, hacer, jugar, dormir + imperativo (tú)", "impacto": "alto" },
-        { "unidad": 7, "seccion": "gramatica", "accion": "amplia", "descripcion": "Verbos reflexivos: ducharse, acostarse, sentarse, ponerse, vestirse + oposición salir/volver", "impacto": "alto" },
-        { "unidad": 8, "seccion": "gramatica", "accion": "amplia", "descripcion": "Verbo doler (estructura me duele/n) y comparación con gustar", "impacto": "alto" },
-        { "unidad": 9, "seccion": "gramatica", "accion": "amplia", "descripcion": "Pretérito indefinido de ir y estar (primer pasado)", "impacto": "alto" }
+        {
+          "unidad": 0,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 20 entradas",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "amplia",
+          "descripcion": "[principal] 7 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-abecedario",
+      "titulo": "Abecedario",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 0,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 27 entradas",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "amplia",
+          "descripcion": "[principal] 27 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-numeros",
+      "titulo": "Números",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 0,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 11 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-saludos",
+      "titulo": "Saludos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 0,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 3 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-instrucciones-de-aula",
+      "titulo": "Instrucciones de aula",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 0,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 8 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-vocabulario-internacional-cognados",
+      "titulo": "Vocabulario internacional (cognados)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 0,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 16 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-combinaciones-ortograficas-c-qu-j-g-g-gu-z-c",
+      "titulo": "Combinaciones ortográficas (c/qu, j/g, g/gu, z/c)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 0,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 22 entradas",
+          "impacto": "bajo"
+        }
       ]
     },
     {
@@ -70,11 +243,41 @@
       "tipo": "contenido_gramatical",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 1, "seccion": "gramatica", "accion": "introduce", "descripcion": "Masculino/femenino + artículos determinados (el, la, los, las)", "impacto": "alto" },
-        { "unidad": 2, "seccion": "gramatica", "accion": "amplia", "descripcion": "Plural de nombres y adjetivos", "impacto": "alto" },
-        { "unidad": 3, "seccion": "gramatica", "accion": "aplica", "descripcion": "Posesivos (mi/tu/su) y vocabulario de parientes", "impacto": "medio" },
-        { "unidad": 4, "seccion": "gramatica", "accion": "amplia", "descripcion": "Artículos indeterminados (un, una, unos, unas) + contables/incontables", "impacto": "alto" },
-        { "unidad": 8, "seccion": "gramatica", "accion": "aplica", "descripcion": "muy / mucho/-a/-os/-as como adverbios y adjetivos de cantidad", "impacto": "medio" }
+        {
+          "unidad": 1,
+          "seccion": "gramatica",
+          "accion": "introduce",
+          "descripcion": "Masculino/femenino + artículos determinados (el, la, los, las)",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 2,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "Plural de nombres y adjetivos",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 3,
+          "seccion": "gramatica",
+          "accion": "aplica",
+          "descripcion": "Posesivos (mi/tu/su) y vocabulario de parientes",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 4,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "Artículos indeterminados (un, una, unos, unas) + contables/incontables",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 8,
+          "seccion": "gramatica",
+          "accion": "aplica",
+          "descripcion": "muy / mucho/-a/-os/-as como adverbios y adjetivos de cantidad",
+          "impacto": "medio"
+        }
       ]
     },
     {
@@ -83,9 +286,27 @@
       "tipo": "estrategia",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 1, "seccion": "comunicacion", "accion": "introduce", "descripcion": "¿Cómo te llamas? / ¿Cuántos años tienes? / ¿Cuál es tu número de teléfono?", "impacto": "alto" },
-        { "unidad": 2, "seccion": "comunicacion", "accion": "amplia", "descripcion": "¿De dónde eres? / ¿Dónde vives?", "impacto": "alto" },
-        { "unidad": 3, "seccion": "comunicacion", "accion": "aplica", "descripcion": "Presentar a alguien (3.ª persona) y hablar de la familia", "impacto": "alto" }
+        {
+          "unidad": 1,
+          "seccion": "comunicacion",
+          "accion": "introduce",
+          "descripcion": "¿Cómo te llamas? / ¿Cuántos años tienes? / ¿Cuál es tu número de teléfono?",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 2,
+          "seccion": "comunicacion",
+          "accion": "amplia",
+          "descripcion": "¿De dónde eres? / ¿Dónde vives?",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 3,
+          "seccion": "comunicacion",
+          "accion": "aplica",
+          "descripcion": "Presentar a alguien (3.ª persona) y hablar de la familia",
+          "impacto": "alto"
+        }
       ]
     },
     {
@@ -94,8 +315,20 @@
       "tipo": "estrategia",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 1, "seccion": "comunicacion", "accion": "introduce", "descripcion": "Hola, ¿qué tal? (registro informal)", "impacto": "medio" },
-        { "unidad": 2, "seccion": "comunicacion", "accion": "contrasta", "descripcion": "Buenos días / Buenas tardes (registro formal)", "impacto": "medio" }
+        {
+          "unidad": 1,
+          "seccion": "comunicacion",
+          "accion": "introduce",
+          "descripcion": "Hola, ¿qué tal? (registro informal)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 2,
+          "seccion": "comunicacion",
+          "accion": "contrasta",
+          "descripcion": "Buenos días / Buenas tardes (registro formal)",
+          "impacto": "medio"
+        }
       ]
     },
     {
@@ -104,106 +337,27 @@
       "tipo": "contenido_gramatical",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 1, "seccion": "pronunciacion_ortografia", "accion": "introduce", "descripcion": "Interrogativos (entonación + signos)", "impacto": "medio" },
-        { "unidad": 3, "seccion": "gramatica", "accion": "sistematiza", "descripcion": "Interrogativos como contenido gramatical explícito", "impacto": "medio" },
-        { "unidad": 9, "seccion": "gramatica", "accion": "amplia", "descripcion": "Interrogativos: dónde, qué, cuándo, quién, con quién (aplicados a pasado)", "impacto": "alto" }
-      ]
-    },
-    {
-      "id": "hilo-gustos-preferencias",
-      "titulo": "Expresar gustos y preferencias",
-      "tipo": "estrategia",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 4, "seccion": "comunicacion", "accion": "introduce", "descripcion": "Las cosas que nos gustan y las que no nos gustan + ofrecer (¿Quieres...?)", "impacto": "alto" },
-        { "unidad": 8, "seccion": "comunicacion", "accion": "amplia", "descripcion": "Expresar identidad con muy/bastante/poco; estructura me duele/n análoga", "impacto": "alto" }
-      ]
-    },
-    {
-      "id": "hilo-vocabulario-comida",
-      "titulo": "Comidas y bebidas",
-      "tipo": "vocabulario",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 4, "seccion": "vocabulario", "accion": "introduce", "descripcion": "Alimentos y comidas preparadas", "impacto": "alto" },
-        { "unidad": 4, "seccion": "destrezas", "accion": "aplica", "descripcion": "Comer en España: primer plato, segundo plato, postre", "impacto": "medio" }
-      ]
-    },
-    {
-      "id": "hilo-vocabulario-vivienda",
-      "titulo": "Vivienda y mobiliario",
-      "tipo": "vocabulario",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 5, "seccion": "vocabulario", "accion": "introduce", "descripcion": "Tipos de vivienda, partes de la casa, mobiliario, adjetivos descriptivos", "impacto": "alto" }
-      ]
-    },
-    {
-      "id": "hilo-ubicacion-espacial",
-      "titulo": "Ubicación espacial",
-      "tipo": "contenido_gramatical",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 5, "seccion": "gramatica", "accion": "introduce", "descripcion": "Posición: encima, debajo, detrás, delante, al lado + verbo estar", "impacto": "alto" },
-        { "unidad": 6, "seccion": "vocabulario", "accion": "amplia", "descripcion": "Marcadores de lugar: a la izquierda, a la derecha, enfrente, entre, lejos, cerca", "impacto": "alto" }
-      ]
-    },
-    {
-      "id": "hilo-descripcion",
-      "titulo": "Descripción de objetos, lugares y personas",
-      "tipo": "estrategia",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 5, "seccion": "comunicacion", "accion": "introduce", "descripcion": "Descripción de la casa y de objetos: ¿Cómo es...?", "impacto": "alto" },
-        { "unidad": 8, "seccion": "comunicacion", "accion": "amplia", "descripcion": "Descripción de personas: ¿Cómo es...? + cuerpo humano", "impacto": "alto" }
-      ]
-    },
-    {
-      "id": "hilo-vocabulario-establecimientos",
-      "titulo": "Establecimientos y profesiones",
-      "tipo": "vocabulario",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 6, "seccion": "vocabulario", "accion": "introduce", "descripcion": "Establecimientos (cine, restaurante, farmacia…) + profesiones y lugares de trabajo", "impacto": "alto" }
-      ]
-    },
-    {
-      "id": "hilo-horarios-tiempo",
-      "titulo": "Tiempo y horarios",
-      "tipo": "estrategia",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 3, "seccion": "comunicacion", "accion": "introduce", "descripcion": "La hora", "impacto": "alto" },
-        { "unidad": 6, "seccion": "comunicacion", "accion": "aplica", "descripcion": "Horarios: ¿A qué hora...?", "impacto": "alto" },
-        { "unidad": 7, "seccion": "comunicacion", "accion": "aplica", "descripcion": "Hablar de hábitos diarios (rutina + horarios)", "impacto": "alto" },
-        { "unidad": 9, "seccion": "gramatica", "accion": "contrasta", "descripcion": "Marcadores temporales del pasado: ayer por la mañana, el año pasado, hace una…", "impacto": "alto" }
-      ]
-    },
-    {
-      "id": "hilo-vocabulario-meses-animales",
-      "titulo": "Meses y animales",
-      "tipo": "vocabulario",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 7, "seccion": "vocabulario", "accion": "introduce", "descripcion": "Meses del año + animales domésticos y salvajes", "impacto": "medio" }
-      ]
-    },
-    {
-      "id": "hilo-vocabulario-cuerpo",
-      "titulo": "Cuerpo humano",
-      "tipo": "vocabulario",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 8, "seccion": "vocabulario", "accion": "introduce", "descripcion": "El cuerpo humano + práctica del surf", "impacto": "alto" }
-      ]
-    },
-    {
-      "id": "hilo-vocabulario-ropa",
-      "titulo": "Ropa",
-      "tipo": "vocabulario",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        { "unidad": 9, "seccion": "vocabulario", "accion": "introduce", "descripcion": "Ropa", "impacto": "alto" }
+        {
+          "unidad": 1,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "introduce",
+          "descripcion": "Interrogativos (entonación + signos)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 3,
+          "seccion": "gramatica",
+          "accion": "sistematiza",
+          "descripcion": "Interrogativos como contenido gramatical explícito",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 9,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "Interrogativos: dónde, qué, cuándo, quién, con quién (aplicados a pasado)",
+          "impacto": "alto"
+        }
       ]
     },
     {
@@ -212,15 +366,69 @@
       "tipo": "contenido_gramatical",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 1, "seccion": "pronunciacion_ortografia", "accion": "introduce", "descripcion": "Interrogativos (entonación)", "impacto": "medio" },
-        { "unidad": 2, "seccion": "pronunciacion_ortografia", "accion": "amplia", "descripcion": "Las vocales (a, e, i, o, u)", "impacto": "medio" },
-        { "unidad": 3, "seccion": "pronunciacion_ortografia", "accion": "amplia", "descripcion": "Sonido /θ/ (za, zo, zu, ce, ci)", "impacto": "medio" },
-        { "unidad": 4, "seccion": "pronunciacion_ortografia", "accion": "amplia", "descripcion": "Sonidos /r/ y /rr/", "impacto": "medio" },
-        { "unidad": 5, "seccion": "pronunciacion_ortografia", "accion": "amplia", "descripcion": "Sonido /x/ (ja, je, ji, jo, ju, ge, gi)", "impacto": "medio" },
-        { "unidad": 6, "seccion": "pronunciacion_ortografia", "accion": "amplia", "descripcion": "La b = v (ortografía)", "impacto": "medio" },
-        { "unidad": 7, "seccion": "pronunciacion_ortografia", "accion": "amplia", "descripcion": "Entonación interrogativa y exclamativa", "impacto": "medio" },
-        { "unidad": 8, "seccion": "pronunciacion_ortografia", "accion": "amplia", "descripcion": "Sonido /k/ (ca, co, cu, que, qui)", "impacto": "medio" },
-        { "unidad": 9, "seccion": "pronunciacion_ortografia", "accion": "sistematiza", "descripcion": "Acentuación: agudas, llanas, esdrújulas", "impacto": "alto" }
+        {
+          "unidad": 1,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "introduce",
+          "descripcion": "Interrogativos (entonación)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 2,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "amplia",
+          "descripcion": "Las vocales (a, e, i, o, u)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 3,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "amplia",
+          "descripcion": "Sonido /θ/ (za, zo, zu, ce, ci)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 4,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "amplia",
+          "descripcion": "Sonidos /r/ y /rr/",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 5,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "amplia",
+          "descripcion": "Sonido /x/ (ja, je, ji, jo, ju, ge, gi)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 6,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "amplia",
+          "descripcion": "La b = v (ortografía)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 7,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "amplia",
+          "descripcion": "Entonación interrogativa y exclamativa",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 8,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "amplia",
+          "descripcion": "Sonido /k/ (ca, co, cu, que, qui)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 9,
+          "seccion": "pronunciacion_ortografia",
+          "accion": "sistematiza",
+          "descripcion": "Acentuación: agudas, llanas, esdrújulas",
+          "impacto": "alto"
+        }
       ]
     },
     {
@@ -229,23 +437,820 @@
       "tipo": "estrategia",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 1, "seccion": "para_aprender", "accion": "introduce", "descripcion": "Recursos para la clase", "impacto": "medio" },
-        { "unidad": 3, "seccion": "para_aprender", "accion": "amplia", "descripcion": "Hacer un cuaderno de vocabulario", "impacto": "alto" },
-        { "unidad": 4, "seccion": "para_aprender", "accion": "amplia", "descripcion": "Organizar el léxico", "impacto": "alto" },
-        { "unidad": 5, "seccion": "para_aprender", "accion": "amplia", "descripcion": "Series de palabras", "impacto": "medio" },
-        { "unidad": 6, "seccion": "para_aprender", "accion": "amplia", "descripcion": "Análisis de errores", "impacto": "alto" },
-        { "unidad": 7, "seccion": "para_aprender", "accion": "amplia", "descripcion": "Signos de puntuación", "impacto": "medio" },
-        { "unidad": 8, "seccion": "para_aprender", "accion": "amplia", "descripcion": "Abreviaturas de los diccionarios", "impacto": "medio" },
-        { "unidad": 9, "seccion": "para_aprender", "accion": "sistematiza", "descripcion": "Análisis de errores (segunda iteración)", "impacto": "alto" }
+        {
+          "unidad": 1,
+          "seccion": "para_aprender",
+          "accion": "introduce",
+          "descripcion": "Recursos para la clase",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 3,
+          "seccion": "para_aprender",
+          "accion": "amplia",
+          "descripcion": "Hacer un cuaderno de vocabulario",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 4,
+          "seccion": "para_aprender",
+          "accion": "amplia",
+          "descripcion": "Organizar el léxico",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 5,
+          "seccion": "para_aprender",
+          "accion": "amplia",
+          "descripcion": "Series de palabras",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 6,
+          "seccion": "para_aprender",
+          "accion": "amplia",
+          "descripcion": "Análisis de errores",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 7,
+          "seccion": "para_aprender",
+          "accion": "amplia",
+          "descripcion": "Signos de puntuación",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 8,
+          "seccion": "para_aprender",
+          "accion": "amplia",
+          "descripcion": "Abreviaturas de los diccionarios",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 9,
+          "seccion": "para_aprender",
+          "accion": "sistematiza",
+          "descripcion": "Análisis de errores (segunda iteración)",
+          "impacto": "alto"
+        }
       ]
     },
     {
-      "id": "hilo-preposiciones",
-      "titulo": "Preposiciones",
-      "tipo": "contenido_gramatical",
+      "id": "hilo-voc-objetos-de-clase",
+      "titulo": "Objetos de clase",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 10 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-verbos-basicos-formas-singulares",
+      "titulo": "Verbos básicos (formas singulares)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 9 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-nacionalidades",
+      "titulo": "Nacionalidades",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 33 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-paises-y-ciudades",
+      "titulo": "Países y ciudades",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 16 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-numeros-1-20",
+      "titulo": "Números 1-20",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 20 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-colores",
+      "titulo": "Colores",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 8 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-saludos-y-despedidas",
+      "titulo": "Saludos y despedidas",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 11 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-interrogativos",
+      "titulo": "Interrogativos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 5 entradas",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "amplia",
+          "descripcion": "[recurrente] 7 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-pronombres",
+      "titulo": "Pronombres",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 7 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-profesiones",
+      "titulo": "Profesiones",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 12 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-personas-y-relaciones",
+      "titulo": "Personas y relaciones",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 12 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-animales",
+      "titulo": "Animales",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 7 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-objetos-varios",
+      "titulo": "Objetos varios",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 18 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-aficiones-asignaturas",
+      "titulo": "Aficiones / asignaturas",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 7 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-adjetivos",
+      "titulo": "Adjetivos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 5 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-conectores-y-particulas",
+      "titulo": "Conectores y partículas",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 8 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-presente-indicativo",
+      "titulo": "Presente de indicativo",
+      "tipo": "tiempos_y_verbos",
+      "nivel_analisis": "mapa",
+      "usos": [
+        {
+          "id": "uso-acciones-momento",
+          "titulo": "Acciones en el momento actual",
+          "ejemplo": "Ahora estudio español.",
+          "tipos_verbo": [
+            {
+              "id": "totalmente-irregulares",
+              "titulo": "Verbos totalmente irregulares",
+              "verbos": [
+                {
+                  "verbo": "estar",
+                  "unidad": 5,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas; oposición ser/estar"
+                }
+              ]
+            },
+            {
+              "id": "tipo-gustar",
+              "titulo": "Verbos del tipo gustar",
+              "verbos": [
+                {
+                  "verbo": "doler",
+                  "unidad": 8,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "3.ª persona sing/plur con pronombres OI: me duele / me duelen"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uso-habitos-rutinas",
+          "titulo": "Hábitos y rutinas",
+          "ejemplo": "Todos los días desayuno tostadas.",
+          "tipos_verbo": [
+            {
+              "id": "cambio-vocalico",
+              "titulo": "Verbos con cambio vocálico (e→ie, o→ue, u→ue, e→i)",
+              "verbos": [
+                {
+                  "verbo": "dormir",
+                  "unidad": 6,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (cambio o→ue salvo nosotros/vosotros)"
+                },
+                {
+                  "verbo": "jugar",
+                  "unidad": 6,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (cambio u→ue salvo nosotros/vosotros)"
+                }
+              ]
+            },
+            {
+              "id": "pronominales",
+              "titulo": "Verbos pronominales",
+              "verbos": [
+                {
+                  "verbo": "ducharse",
+                  "unidad": 7,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas con pronombres reflexivos"
+                },
+                {
+                  "verbo": "acostarse",
+                  "unidad": 7,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (cambio o→ue) con pronombres reflexivos"
+                },
+                {
+                  "verbo": "sentarse",
+                  "unidad": 7,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (cambio e→ie) con pronombres reflexivos"
+                },
+                {
+                  "verbo": "ponerse",
+                  "unidad": 7,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (yo me pongo) con pronombres reflexivos"
+                },
+                {
+                  "verbo": "vestirse",
+                  "unidad": 7,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (cambio e→i) con pronombres reflexivos"
+                }
+              ]
+            },
+            {
+              "id": "regulares",
+              "titulo": "Verbos regulares (-ar / -er / -ir)",
+              "verbos": [
+                {
+                  "verbo": "salir",
+                  "unidad": 7,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (yo salgo, irregular en yo)"
+                },
+                {
+                  "verbo": "volver",
+                  "unidad": 7,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (cambio o→ue)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uso-informacion-personal",
+          "titulo": "Información personal y verdades permanentes",
+          "ejemplo": "Soy estudiante y vivo en Madrid.",
+          "tipos_verbo": [
+            {
+              "id": "totalmente-irregulares",
+              "titulo": "Verbos totalmente irregulares (ser, tener, ir, venir)",
+              "verbos": [
+                {
+                  "verbo": "ser",
+                  "unidad": 1,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "singular (soy, eres, es)"
+                },
+                {
+                  "verbo": "ser",
+                  "unidad": 2,
+                  "seccion": "gramatica",
+                  "accion": "amplia",
+                  "formas_trabajadas": "plural (somos, sois, son)"
+                },
+                {
+                  "verbo": "tener",
+                  "unidad": 1,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "singular (tengo, tienes, tiene)"
+                },
+                {
+                  "verbo": "tener",
+                  "unidad": 2,
+                  "seccion": "gramatica",
+                  "accion": "amplia",
+                  "formas_trabajadas": "plural (tenemos, tenéis, tienen)"
+                },
+                {
+                  "verbo": "ir",
+                  "unidad": 6,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (voy, vas, va, vamos, vais, van)"
+                },
+                {
+                  "verbo": "venir",
+                  "unidad": 6,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (vengo, vienes, viene…)"
+                }
+              ]
+            },
+            {
+              "id": "pronominales",
+              "titulo": "Verbos pronominales",
+              "verbos": [
+                {
+                  "verbo": "llamarse",
+                  "unidad": 1,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "singular (me llamo, te llamas, se llama)"
+                }
+              ]
+            },
+            {
+              "id": "cambio-vocalico",
+              "titulo": "Verbos con cambio vocálico (e→ie, o→ue, u→ue, e→i)",
+              "verbos": [
+                {
+                  "verbo": "querer",
+                  "unidad": 4,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (cambio e→ie salvo nosotros/vosotros)"
+                },
+                {
+                  "verbo": "cerrar",
+                  "unidad": 6,
+                  "seccion": "gramatica",
+                  "accion": "amplia",
+                  "formas_trabajadas": "todas las personas (cambio e→ie salvo nosotros/vosotros)"
+                }
+              ]
+            },
+            {
+              "id": "irregularidad-1a-persona",
+              "titulo": "Verbos con irregularidad en la 1.ª persona del singular",
+              "verbos": [
+                {
+                  "verbo": "hacer",
+                  "unidad": 6,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas (yo hago, irregular solo en yo)"
+                }
+              ]
+            },
+            {
+              "id": "tipo-gustar",
+              "titulo": "Verbos del tipo gustar",
+              "verbos": [
+                {
+                  "verbo": "gustar",
+                  "unidad": 4,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "3.ª persona sing/plur con pronombres OI: me gusta / me gustan"
+                }
+              ]
+            },
+            {
+              "id": "regulares",
+              "titulo": "Verbos regulares (-ar / -er / -ir)",
+              "verbos": [
+                {
+                  "verbo": "(verbos regulares como sistema)",
+                  "unidad": 3,
+                  "seccion": "gramatica",
+                  "accion": "sistematiza",
+                  "formas_trabajadas": "todas las personas; modelos -ar / -er / -ir"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uso-verdades-universales",
+          "titulo": "Verdades universales o hechos científicos",
+          "ejemplo": "La Tierra gira alrededor del Sol.",
+          "tipos_verbo": []
+        },
+        {
+          "id": "uso-futuro-proximo",
+          "titulo": "Futuro próximo",
+          "ejemplo": "Mañana voy al médico.",
+          "tipos_verbo": []
+        }
+      ],
+      "eventos": [
+        {
+          "unidad": 1,
+          "seccion": "gramatica",
+          "accion": "introduce",
+          "descripcion": "ser, llamarse, tener (singular)",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 2,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "ser y tener en plural",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 3,
+          "seccion": "gramatica",
+          "accion": "sistematiza",
+          "descripcion": "Presente de los verbos regulares",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 4,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "gustar y querer",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 5,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "estar + oposición ser/estar",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 6,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "Irregulares: cerrar, ir, venir, hacer, jugar, dormir",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 7,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "Reflexivos + salir/volver",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 8,
+          "seccion": "gramatica",
+          "accion": "amplia",
+          "descripcion": "doler + comparación con gustar",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-adjetivos-de-nacionalidad",
+      "titulo": "Adjetivos de nacionalidad",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 7 entradas",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "amplia",
+          "descripcion": "[recurrente] 6 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-dias-de-la-semana",
+      "titulo": "Días de la semana",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 7 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-numeros-ordinales",
+      "titulo": "Números ordinales",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 10 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-asignaturas",
+      "titulo": "Asignaturas",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 10 entradas",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "amplia",
+          "descripcion": "[recurrente] 6 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-numeros-21-100",
+      "titulo": "Números 21-100",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 10 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-vocabulario-del-texto-cultural",
+      "titulo": "Vocabulario del texto cultural",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 6 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-vocabulario-de-los-mensajes-escritos",
+      "titulo": "Vocabulario de los mensajes escritos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 4 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-vocabulario-del-dialogo",
+      "titulo": "Vocabulario del diálogo",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 3 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-elementos-culturales",
+      "titulo": "Elementos culturales",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 2,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 9 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-horarios-tiempo",
+      "titulo": "Tiempo y horarios",
+      "tipo": "estrategia",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 7, "seccion": "gramatica", "accion": "introduce", "descripcion": "Preposiciones: a, de, por, con, en", "impacto": "alto" }
+        {
+          "unidad": 3,
+          "seccion": "comunicacion",
+          "accion": "introduce",
+          "descripcion": "La hora",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 6,
+          "seccion": "comunicacion",
+          "accion": "aplica",
+          "descripcion": "Horarios: ¿A qué hora...?",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 7,
+          "seccion": "comunicacion",
+          "accion": "aplica",
+          "descripcion": "Hablar de hábitos diarios (rutina + horarios)",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 9,
+          "seccion": "gramatica",
+          "accion": "contrasta",
+          "descripcion": "Marcadores temporales del pasado: ayer por la mañana, el año pasado, hace una…",
+          "impacto": "alto"
+        }
       ]
     },
     {
@@ -254,10 +1259,579 @@
       "tipo": "estrategia",
       "nivel_analisis": "mapa",
       "eventos": [
-        { "unidad": 3, "seccion": "comunicacion", "accion": "introduce", "descripcion": "Hablar de la familia (presente personal)", "impacto": "medio" },
-        { "unidad": 7, "seccion": "comunicacion", "accion": "sistematiza", "descripcion": "Hablar de hábitos diarios (verbos reflexivos + marcadores)", "impacto": "alto" },
-        { "unidad": 9, "seccion": "comunicacion", "accion": "contrasta", "descripcion": "Preguntar por acciones en el pasado: ¿Dónde estuviste? / ¿Con quién fuiste?", "impacto": "alto" }
+        {
+          "unidad": 3,
+          "seccion": "comunicacion",
+          "accion": "introduce",
+          "descripcion": "Hablar de la familia (presente personal)",
+          "impacto": "medio"
+        },
+        {
+          "unidad": 7,
+          "seccion": "comunicacion",
+          "accion": "sistematiza",
+          "descripcion": "Hablar de hábitos diarios (verbos reflexivos + marcadores)",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 9,
+          "seccion": "comunicacion",
+          "accion": "contrasta",
+          "descripcion": "Preguntar por acciones en el pasado: ¿Dónde estuviste? / ¿Con quién fuiste?",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-parientes",
+      "titulo": "Parientes",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 11 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-parientes-formas-trabajadas",
+      "titulo": "Parientes (formas trabajadas)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 18 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-verbos-regulares-presente",
+      "titulo": "Verbos regulares (presente)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 6 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-posesivos",
+      "titulo": "Posesivos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 5 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-la-hora",
+      "titulo": "La hora",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 12 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-vocabulario-de-los-textos-de-javier-y-lucia",
+      "titulo": "Vocabulario de los textos de Javier y Lucía",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 10 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-vocabulario-del-texto-cultural-cine-y-comic",
+      "titulo": "Vocabulario del texto cultural (cine y cómic)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 11 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-programacion-de-television",
+      "titulo": "Programación de televisión",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 6 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-otros",
+      "titulo": "Otros",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 6 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-gustos-preferencias",
+      "titulo": "Expresar gustos y preferencias",
+      "tipo": "estrategia",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "comunicacion",
+          "accion": "introduce",
+          "descripcion": "Las cosas que nos gustan y las que no nos gustan + ofrecer (¿Quieres...?)",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 8,
+          "seccion": "comunicacion",
+          "accion": "amplia",
+          "descripcion": "Expresar identidad con muy/bastante/poco; estructura me duele/n análoga",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-vocabulario-comida",
+      "titulo": "Comidas y bebidas",
+      "tipo": "vocabulario",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "Alimentos y comidas preparadas",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 4,
+          "seccion": "destrezas",
+          "accion": "aplica",
+          "descripcion": "Comer en España: primer plato, segundo plato, postre",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-alimentos",
+      "titulo": "Alimentos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 18 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-categorias-de-alimentos",
+      "titulo": "Categorías de alimentos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 6 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-comidas-preparadas",
+      "titulo": "Comidas preparadas",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 7 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-envases-y-recipientes",
+      "titulo": "Envases y recipientes",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 9 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-expresiones-de-gusto",
+      "titulo": "Expresiones de gusto",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 5 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-nombres-incontables-sin-articulo-indeterminado",
+      "titulo": "Nombres incontables (sin artículo indeterminado)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 8 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-menu-del-restaurante",
+      "titulo": "Menú del restaurante",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 12 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-comida-por-la-calle-seccion-cultura",
+      "titulo": "Comida por la calle (sección Cultura)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 9 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-otros-alimentos-de-contexto",
+      "titulo": "Otros alimentos de contexto",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 6 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-vocabulario-vivienda",
+      "titulo": "Vivienda y mobiliario",
+      "tipo": "vocabulario",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 5,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "Tipos de vivienda, partes de la casa, mobiliario, adjetivos descriptivos",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-ubicacion-espacial",
+      "titulo": "Ubicación espacial",
+      "tipo": "contenido_gramatical",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 5,
+          "seccion": "gramatica",
+          "accion": "introduce",
+          "descripcion": "Posición: encima, debajo, detrás, delante, al lado + verbo estar",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "amplia",
+          "descripcion": "Marcadores de lugar: a la izquierda, a la derecha, enfrente, entre, lejos, cerca",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-descripcion",
+      "titulo": "Descripción de objetos, lugares y personas",
+      "tipo": "estrategia",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 5,
+          "seccion": "comunicacion",
+          "accion": "introduce",
+          "descripcion": "Descripción de la casa y de objetos: ¿Cómo es...?",
+          "impacto": "alto"
+        },
+        {
+          "unidad": 8,
+          "seccion": "comunicacion",
+          "accion": "amplia",
+          "descripcion": "Descripción de personas: ¿Cómo es...? + cuerpo humano",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-vocabulario-establecimientos",
+      "titulo": "Establecimientos y profesiones",
+      "tipo": "vocabulario",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "Establecimientos (cine, restaurante, farmacia…) + profesiones y lugares de trabajo",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-imperativo",
+      "titulo": "Imperativo",
+      "tipo": "tiempos_y_verbos",
+      "nivel_analisis": "mapa",
+      "usos": [
+        {
+          "id": "uso-instrucciones",
+          "titulo": "Dar instrucciones",
+          "ejemplo": "Mira la foto. Escucha el audio.",
+          "tipos_verbo": [
+            {
+              "id": "imperativo-tu-regular",
+              "titulo": "Imperativo afirmativo (tú)",
+              "verbos": []
+            }
+          ]
+        },
+        {
+          "id": "uso-direcciones",
+          "titulo": "Dar indicaciones de dirección",
+          "ejemplo": "Gira a la derecha. Sigue recto.",
+          "tipos_verbo": [
+            {
+              "id": "imperativo-tu-regular",
+              "titulo": "Imperativo afirmativo (tú)",
+              "verbos": []
+            }
+          ]
+        }
+      ],
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "gramatica",
+          "accion": "introduce",
+          "descripcion": "Imperativo (tú)",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-vocabulario-meses-animales",
+      "titulo": "Meses y animales",
+      "tipo": "vocabulario",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "Meses del año + animales domésticos y salvajes",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-preposiciones",
+      "titulo": "Preposiciones",
+      "tipo": "contenido_gramatical",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "gramatica",
+          "accion": "introduce",
+          "descripcion": "Preposiciones: a, de, por, con, en",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-vocabulario-cuerpo",
+      "titulo": "Cuerpo humano",
+      "tipo": "vocabulario",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "El cuerpo humano + práctica del surf",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-vocabulario-ropa",
+      "titulo": "Ropa",
+      "tipo": "vocabulario",
+      "nivel_analisis": "mapa",
+      "eventos": [
+        {
+          "unidad": 9,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "Ropa",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-preterito-indefinido",
+      "titulo": "Pretérito indefinido",
+      "tipo": "tiempos_y_verbos",
+      "nivel_analisis": "mapa",
+      "usos": [
+        {
+          "id": "uso-acciones-pasadas",
+          "titulo": "Hablar de acciones puntuales en el pasado con marcador temporal",
+          "ejemplo": "Ayer fui al cine.",
+          "tipos_verbo": [
+            {
+              "id": "totalmente-irregulares",
+              "titulo": "Verbos totalmente irregulares (ir, estar)",
+              "verbos": [
+                {
+                  "verbo": "ir",
+                  "unidad": 9,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas: fui, fuiste, fue, fuimos, fuisteis, fueron"
+                },
+                {
+                  "verbo": "estar",
+                  "unidad": 9,
+                  "seccion": "gramatica",
+                  "accion": "introduce",
+                  "formas_trabajadas": "todas las personas: estuve, estuviste, estuvo, estuvimos, estuvisteis, estuvieron"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "uso-preguntar-pasado",
+          "titulo": "Preguntar y responder sobre experiencias pasadas concretas",
+          "ejemplo": "¿Dónde estuviste el verano pasado?",
+          "tipos_verbo": [
+            {
+              "id": "totalmente-irregulares",
+              "titulo": "Verbos totalmente irregulares (ir, estar)",
+              "verbos": []
+            }
+          ]
+        }
+      ],
+      "eventos": [
+        {
+          "unidad": 9,
+          "seccion": "gramatica",
+          "accion": "introduce",
+          "descripcion": "Pretérito indefinido de ir y estar (primer pasado)",
+          "impacto": "alto"
+        }
       ]
     }
-  ]
+  ],
+  "incoherencias_por_tipo": {
+    "vocabulario": [],
+    "tiempos_y_verbos": [],
+    "contenido_gramatical": [],
+    "estrategia": []
+  }
 }

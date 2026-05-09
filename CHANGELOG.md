@@ -5,6 +5,56 @@
 
 ---
 
+## [v10.95 — 2026-05-09] — Modelo de hilos verbales: jerarquía uso → tipo de verbo → verbos + script auto vocabulario + categorías PCIC
+
+**Bloque grande de cambios sobre `nc1-reciclaje.json` y la vista RECICLAJE del dashboard. Múltiples iteraciones con autor.**
+
+**1. Taxonomía y rename:**
+- `forma_verbal` → `tiempos_y_verbos` (cubre tiempos + tipos + verbos concretos).
+
+**2. Schema de hilos verbales — 3 niveles de profundidad:**
+- Cada hilo de `tiempos_y_verbos` (Presente, Imperativo, Pretérito indefinido) tiene `usos[]`.
+- Cada `uso` tiene `id`, `titulo`, `ejemplo`, `tipos_verbo[]`.
+- Cada `tipo_verbo` tiene `verbos[]` con `verbo`, `unidad`, `seccion`, `accion`, `formas_trabajadas`.
+- Usos del presente derivados del estándar A1 (Universo Dele): acciones en el momento actual, hábitos y rutinas, información personal y verdades permanentes, verdades universales, futuro próximo.
+
+**3. Categorías de verbos según PCIC del Cervantes / ELE canónico:**
+- Verbos regulares (-ar / -er / -ir)
+- Verbos con cambio vocálico (e→ie, o→ue, u→ue, e→i)
+- Verbos con irregularidad en la 1.ª persona del singular
+- Verbos totalmente irregulares
+- Verbos pronominales
+- Verbos del tipo *gustar*
+
+(Antes había términos inventados: "defectivos pedagógicos", "súper irregulares", "irregulares yo (-go)" — corregidos.)
+
+**4. Pase 1 ampliado a U0-U9 + reorden por aparición:**
+- Pase 1 (mapa) cubre las 9 unidades (antes U0-U3).
+- Hilos ordenados por unidad de primera aparición (U0 arriba, U9 abajo) — timeline más fluida.
+
+**5. Script automático de vocabulario:**
+- `scripts/regenerar_reciclaje_vocabulario.py` proyecta `vocabulario_consolidado` de cada inventario a hilos `vocabulario` con `nivel_analisis: "auto"`. 50 campos semánticos extraídos de U0-U4. Preserva hilos manuales (mapa).
+
+**6. Vista RECICLAJE rediseñada — acordeón en la tabla:**
+- Click en hilo verbal → expande inline con sub-filas por uso (cada uso con su mini-timeline).
+- Click en uso → expande tipos de verbo y verbos concretos.
+- Verbos del mismo nombre con múltiples eventos (ej. *ser* en U1+U2) se muestran en **una sola fila** con dots en cada unidad.
+- Click en verbo (leaf) → drawer con secuencia de trabajo + ejemplo del uso.
+- Texto agrandado, sin cursivas en verbos.
+
+**7. Sección de incoherencias:**
+- Componente al final de cada bloque de tipo (vocabulario, tiempos_y_verbos, contenido_gramatical, estrategia).
+- Hoy vacío (verde "✓ Sin incoherencias detectadas") porque se anotarán manualmente cuando se detecten.
+
+**Estado de datos:**
+- 75 hilos: 23 manuales (mapa) + 52 auto (vocabulario por campo semántico).
+- 3 hilos verbales con 9 usos totales, 25 verbos únicos, 50+ formas trabajadas anotadas.
+- Inventarios sin tocar. Validador U0/U1/U2/U3/U4 → 0/0.
+
+**Pendiente declarado por autor:** quedan más correcciones por iterar.
+
+---
+
 ## [v10.94b — 2026-05-09] — Saneo post-v10.94: duplicado `estrategia` en frontend + 6 referencias vivas
 
 Hallazgos del revisor sobre v10.94 (en dos rondas):

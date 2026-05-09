@@ -608,9 +608,11 @@ async function loadInventarios() {
 
 // ===== RECICLAJE (modelo de hilos · vista línea de tiempo) =====
 let recData = null;
+let recExpandedHilos = new Set();
+let recExpandedUsos = new Set();
 const REC_COLOR_TIPO = {
     vocabulario: '#0288D1',
-    forma_verbal: '#E64A19',
+    tiempos_y_verbos: '#E64A19',
     contenido_gramatical: '#7B1FA2',
     estrategia: '#388E3C'
 };
@@ -652,7 +654,7 @@ function renderRec() {
 
 function hilosPorTipo() {
     const hilos = (recData.hilos || []).slice();
-    const orden = ['vocabulario','forma_verbal','contenido_gramatical','estrategia'];
+    const orden = ['vocabulario','tiempos_y_verbos','contenido_gramatical','estrategia'];
     const grupos = {};
     hilos.forEach(h => { (grupos[h.tipo] = grupos[h.tipo] || []).push(h); });
     const tipos = orden.filter(t => grupos[t]).concat(Object.keys(grupos).filter(t => !orden.includes(t)));
@@ -676,6 +678,179 @@ function eventosDetalleHTML(h) {
     }).join('');
 }
 
+// --- helpers de fila para timeline ---
+function renderRecDots(eventosByU, hId) {
+    return REC_UNIDADES.map(u => {
+        const evs = eventosByU[u];
+        if (!evs || !evs.length) return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px"><div style="width:10px;height:10px;border-radius:50%;background:#ECEFF1;border:1px solid #CFD8DC"></div></div>`;
+        const dots = evs.map(ev => {
+            const aColor = REC_COLOR_ACCION[ev.accion] || '#607D8B';
+            const tip = `${(ev.accion||'').toUpperCase()}${ev.descripcion ? ' · ' + ev.descripcion.replace(/"/g,'&quot;') : ''}`;
+            return `<div onclick="openRecDrawer('${hId}')" title="${tip}" style="width:18px;height:18px;border-radius:50%;background:${aColor};cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px ${aColor};display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px;font-weight:700">${(ev.accion||'?')[0].toUpperCase()}</div>`;
+        }).join('');
+        return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px;gap:2px;flex-wrap:wrap">${dots}</div>`;
+    }).join('');
+}
+
+function renderRecHiloRow(h, tColor) {
+    const eventosByU = {};
+    (h.eventos || []).forEach(ev => { (eventosByU[ev.unidad] = eventosByU[ev.unidad] || []).push(ev); });
+    const puntos = renderRecDots(eventosByU, h.id);
+    const tieneUsos = Array.isArray(h.usos) && h.usos.length && typeof h.usos[0] === 'object';
+    const expanded = recExpandedHilos.has(h.id);
+    const chevron = tieneUsos
+        ? `<span style="display:inline-block;width:16px;color:${tColor};transform:rotate(${expanded?'90':'0'}deg);transition:transform 0.15s;font-size:11px">▶</span>`
+        : `<span style="display:inline-block;width:16px"></span>`;
+    let sub = '';
+    if (expanded && tieneUsos) {
+        sub = h.usos.map(u => renderRecUsoRow(h.id, u, tColor)).join('');
+    }
+    const tituloAction = tieneUsos
+        ? `onclick="toggleRecHilo('${h.id}')"`
+        : `onclick="openRecDrawer('${h.id}')"`;
+    return `<div style="border-bottom:1px solid #F5F5F5">
+        <div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;align-items:center">
+            <div style="display:flex;align-items:center;gap:6px;padding-right:8px;border-right:3px solid ${tColor};cursor:pointer" ${tituloAction}>
+                ${chevron}
+                <span style="font-size:13px;font-weight:600;color:#263238">${h.titulo}</span>
+            </div>
+            <div style="display:flex;align-items:center;position:relative">
+                <div style="position:absolute;left:0;right:0;top:50%;height:2px;background:#ECEFF1"></div>
+                <div style="display:flex;flex:1;position:relative;z-index:1">${puntos}</div>
+            </div>
+        </div>
+        ${sub}
+    </div>`;
+}
+
+function renderRecUsoRow(hId, u, tColor) {
+    const usoKey = `${hId}::${u.id}`;
+    const expanded = recExpandedUsos.has(usoKey);
+    const totalVerbos = (u.tipos_verbo || []).reduce((acc, tv) => acc + (tv.verbos || []).length, 0);
+    // Recolectar todos los eventos (verbos) de este uso para los dots de la barra del uso
+    const evByU = {};
+    (u.tipos_verbo || []).forEach(tv => {
+        (tv.verbos || []).forEach(v => {
+            (evByU[v.unidad] = evByU[v.unidad] || []).push({ accion: v.accion, descripcion: v.verbo });
+        });
+    });
+    const puntos = renderRecDots(evByU, hId);
+    const tieneContenido = totalVerbos > 0;
+    const chevron = tieneContenido
+        ? `<span style="display:inline-block;width:14px;color:${tColor};transform:rotate(${expanded?'90':'0'}deg);transition:transform 0.15s;font-size:10px">▸</span>`
+        : `<span style="display:inline-block;width:14px;color:#CFD8DC;font-size:10px">·</span>`;
+    let sub = '';
+    if (expanded) {
+        sub = (u.tipos_verbo || []).map(tv => {
+            if (!(tv.verbos || []).length) return '';
+            // Agrupar por nombre de verbo: cada verbo único tiene múltiples eventos
+            const grupos = {};
+            tv.verbos.forEach(v => {
+                if (!grupos[v.verbo]) grupos[v.verbo] = { verbo: v.verbo, eventos: [] };
+                grupos[v.verbo].eventos.push(v);
+            });
+            const verbosUnicos = Object.values(grupos);
+            const verbosFilas = verbosUnicos.map(g => {
+                const evByU = {};
+                g.eventos.forEach(v => {
+                    (evByU[v.unidad] = evByU[v.unidad] || []).push({ accion: v.accion, descripcion: v.verbo });
+                });
+                const dots = renderRecDots(evByU, hId);
+                const primera = g.eventos[0];
+                return `<div onclick="openRecVerbDrawer('${hId}','${u.id}','${tv.id}','${encodeURIComponent(g.verbo)}','${primera.unidad}')" style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0 8px 110px;align-items:center;background:#FAFAFA;cursor:pointer;border-top:1px solid #F5F5F5" title="Ver detalle del verbo">
+                    <div style="font-size:14px;color:#263238;font-weight:500">${g.verbo}</div>
+                    <div style="display:flex;align-items:center;position:relative">
+                        <div style="position:absolute;left:0;right:0;top:50%;height:1px;background:#ECEFF1"></div>
+                        <div style="display:flex;flex:1;position:relative;z-index:1">${dots}</div>
+                    </div>
+                </div>`;
+            }).join('');
+            return `<div>
+                <div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:6px 0 6px 80px;align-items:center;background:#EEF1F4">
+                    <div style="font-size:13px;font-weight:600;color:#37474F">› ${tv.titulo} <span style="font-size:11px;color:#90A4AE">(${verbosUnicos.length})</span></div>
+                    <div></div>
+                </div>
+                ${verbosFilas}
+            </div>`;
+        }).join('');
+    }
+    return `<div>
+        <div onclick="toggleRecUso('${hId}','${u.id}')" style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:6px 0 6px 36px;align-items:center;background:#F5F5F5;cursor:${tieneContenido?'pointer':'default'}">
+            <div style="display:flex;align-items:center;gap:6px">
+                ${chevron}
+                <span style="font-size:13px;font-weight:600;color:#37474F">${u.titulo}</span>
+                <span style="font-size:11px;color:#90A4AE">(${totalVerbos})</span>
+            </div>
+            <div style="display:flex;align-items:center;position:relative">
+                <div style="position:absolute;left:0;right:0;top:50%;height:1px;background:#ECEFF1"></div>
+                <div style="display:flex;flex:1;position:relative;z-index:1">${puntos}</div>
+            </div>
+        </div>
+        ${sub}
+    </div>`;
+}
+
+function toggleRecHilo(id) {
+    if (recExpandedHilos.has(id)) recExpandedHilos.delete(id);
+    else recExpandedHilos.add(id);
+    renderRec();
+}
+function toggleRecUso(hId, uId) {
+    const k = `${hId}::${uId}`;
+    if (recExpandedUsos.has(k)) recExpandedUsos.delete(k);
+    else recExpandedUsos.add(k);
+    renderRec();
+}
+
+// drawer para verbo individual
+function openRecVerbDrawer(hId, uId, tvId, verboEnc, unidad) {
+    const verbo = decodeURIComponent(verboEnc);
+    const h = (recData.hilos || []).find(x => x.id === hId);
+    if (!h) return;
+    const u = (h.usos || []).find(x => x.id === uId);
+    const tv = (u && u.tipos_verbo || []).find(x => x.id === tvId);
+    const v = (tv && tv.verbos || []).find(x => x.verbo === verbo && String(x.unidad) === String(unidad));
+    if (!v) return;
+    const tColor = REC_COLOR_TIPO[h.tipo] || '#607D8B';
+    const aColor = REC_COLOR_ACCION[v.accion] || '#607D8B';
+    const drawer = document.getElementById('rec-drawer');
+    // Recolectar todas las apariciones de este verbo para construir la secuencia
+    const apariciones = [];
+    (h.usos || []).forEach(uu => {
+        (uu.tipos_verbo || []).forEach(ttv => {
+            (ttv.verbos || []).forEach(vv => {
+                if (vv.verbo === v.verbo) apariciones.push({ ...vv, _uso: uu.titulo });
+            });
+        });
+    });
+    apariciones.sort((a,b) => a.unidad - b.unidad);
+    const secuencia = apariciones.map(a => {
+        const aColorS = REC_COLOR_ACCION[a.accion] || '#607D8B';
+        return `<div style="display:grid;grid-template-columns:50px 1fr;gap:10px;padding:10px 0;border-top:1px solid #ECEFF1;align-items:start">
+            <div style="font-weight:700;color:#0D47A1;font-size:14px">U${a.unidad}</div>
+            <div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="background:${aColorS};color:#fff;padding:2px 10px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">${a.accion}</span><span style="font-size:11px;color:#90A4AE">${a._uso}</span></div>
+                <div style="font-size:13px;color:#37474F;line-height:1.5">${a.formas_trabajadas || ''}</div>
+            </div>
+        </div>`;
+    }).join('');
+    drawer.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:16px">
+        <div>
+            <div style="font-size:11px;color:${tColor};font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${h.titulo}</div>
+            <div style="font-size:28px;font-weight:700;color:#263238">${v.verbo}</div>
+            <div style="font-size:12px;color:#90A4AE;margin-top:4px">${tv.titulo}</div>
+        </div>
+        <button onclick="closeRecDrawer()" style="background:none;border:none;font-size:24px;cursor:pointer;color:#90A4AE;padding:0 8px">×</button>
+    </div>
+    <div style="border-top:3px solid ${tColor};margin-bottom:14px"></div>
+    <div style="font-size:12px;color:${tColor};font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Secuencia de trabajo</div>
+    <div>${secuencia}</div>
+    <div style="font-size:12px;color:${tColor};font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:20px 0 8px">Ejemplo del uso</div>
+    <div style="background:#FAFAFA;padding:12px 14px;border-radius:6px;font-size:13px;color:#37474F;font-style:italic">"${u.ejemplo || ''}"</div>`;
+    document.getElementById('rec-drawer-overlay').style.display = '';
+    drawer.style.display = '';
+}
+
 // === LÍNEA DE TIEMPO ===
 function renderRecTimeline() {
     const { grupos, tipos } = hilosPorTipo();
@@ -685,31 +860,15 @@ function renderRecTimeline() {
     </div>`;
     const bloques = tipos.map(tipo => {
         const tColor = REC_COLOR_TIPO[tipo] || '#607D8B';
-        const lineas = grupos[tipo].map(h => {
-            const eventosByU = {};
-            (h.eventos || []).forEach(ev => { (eventosByU[ev.unidad] = eventosByU[ev.unidad] || []).push(ev); });
-            const puntos = REC_UNIDADES.map(u => {
-                const evs = eventosByU[u];
-                if (!evs || !evs.length) return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px"><div style="width:10px;height:10px;border-radius:50%;background:#ECEFF1;border:1px solid #CFD8DC"></div></div>`;
-                const dots = evs.map(ev => {
-                    const aColor = REC_COLOR_ACCION[ev.accion] || '#607D8B';
-                    const tip = `${ev.accion.toUpperCase()} · ${ev.descripcion.replace(/"/g,'&quot;')}`;
-                    return `<div onclick="openRecDrawer('${h.id}')" title="${tip}" style="width:22px;height:22px;border-radius:50%;background:${aColor};cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px ${aColor};display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700">${ev.accion[0].toUpperCase()}</div>`;
-                }).join('');
-                return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px;gap:2px;flex-wrap:wrap">${dots}</div>`;
-            }).join('');
-            return `<div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;align-items:center">
-                <div onclick="openRecDrawer('${h.id}')" style="cursor:pointer;font-size:13px;font-weight:600;color:#263238;padding-right:8px;border-right:3px solid ${tColor}">${h.titulo}</div>
-                <div style="display:flex;align-items:center;position:relative">
-                    <div style="position:absolute;left:0;right:0;top:50%;height:2px;background:#ECEFF1"></div>
-                    <div style="display:flex;flex:1;position:relative;z-index:1">${puntos}</div>
-                </div>
-            </div>`;
-        }).join('');
+        const lineas = grupos[tipo].map(h => renderRecHiloRow(h, tColor)).join('');
         const headerU = `<div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;border-bottom:2px solid #ECEFF1;font-weight:700;font-size:11px;color:#90A4AE"><div></div><div style="display:flex">${REC_UNIDADES.map(u => `<div style="flex:1;text-align:center">U${u}</div>`).join('')}</div></div>`;
+        const incoh = ((recData.incoherencias_por_tipo || {})[tipo]) || [];
+        const incohBlock = incoh.length
+            ? `<div style="margin:16px 0 0;padding:12px 14px;background:#FFF3E0;border-left:4px solid #EF6C00;border-radius:6px"><div style="font-size:11px;font-weight:700;color:#EF6C00;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">⚠ Incoherencias detectadas</div><ul style="margin:0;padding-left:18px;font-size:13px;color:#37474F;line-height:1.5">${incoh.map(i => `<li>${i.descripcion || i}</li>`).join('')}</ul></div>`
+            : `<div style="margin:16px 0 0;padding:10px 14px;background:#F1F8E9;border-left:4px solid #689F38;border-radius:6px;font-size:12px;color:#33691E">✓ Sin incoherencias detectadas en este apartado</div>`;
         return `<div class="section" style="margin-bottom:20px;border-left:4px solid ${tColor}">
             <div class="section-header" style="background:${tColor};color:#fff"><h2 style="color:#fff;margin:0">${tipo.replace(/_/g,' ').toUpperCase()}</h2></div>
-            <div class="section-body" style="padding:16px">${headerU}${lineas}</div>
+            <div class="section-body" style="padding:16px">${headerU}${lineas}${incohBlock}</div>
         </div>`;
     }).join('');
     return leyenda + bloques;
@@ -720,6 +879,22 @@ function openRecDrawer(hiloId) {
     if (!h) return;
     const tColor = REC_COLOR_TIPO[h.tipo] || '#607D8B';
     const drawer = document.getElementById('rec-drawer');
+    let extra = '';
+    // Sub-bloque A: usos del tiempo verbal
+    if (Array.isArray(h.usos) && h.usos.length) {
+        extra += `<div style="margin-top:18px"><div style="font-size:12px;font-weight:700;color:${tColor};text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">A · Usos del tiempo verbal</div><ul style="margin:0;padding-left:18px;font-size:13px;color:#37474F;line-height:1.6">${h.usos.map(u => `<li>${u}</li>`).join('')}</ul></div>`;
+    }
+    // Sub-bloque B: tipos de verbo (acordeón)
+    if (Array.isArray(h.tipos_verbo) && h.tipos_verbo.length) {
+        const tipos = h.tipos_verbo.map(tv => {
+            const verbos = (tv.verbos || []).map(v => {
+                const aColor = REC_COLOR_ACCION[v.accion] || '#607D8B';
+                return `<div style="display:grid;grid-template-columns:50px 100px 1fr;gap:8px;padding:6px 10px;border-top:1px solid #ECEFF1;align-items:center;font-size:12px"><strong style="color:#0D47A1">U${v.unidad}</strong><span style="font-size:9px;background:${aColor};color:#fff;padding:2px 6px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;text-align:center">${v.accion}</span><span style="color:#37474F">${v.verbo}</span></div>`;
+            }).join('');
+            return `<details style="margin-bottom:6px;border:1px solid #ECEFF1;border-radius:6px"><summary style="padding:8px 12px;cursor:pointer;font-weight:600;font-size:13px;color:#263238;background:#FAFAFA">${tv.titulo} <span style="font-size:11px;color:#90A4AE;font-weight:400">(${(tv.verbos||[]).length})</span></summary><div>${verbos}</div></details>`;
+        }).join('');
+        extra += `<div style="margin-top:20px"><div style="font-size:12px;font-weight:700;color:${tColor};text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">B · Tipos de verbo</div>${tipos}</div>`;
+    }
     drawer.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:16px">
         <div>
             <div style="font-size:11px;color:${tColor};font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${h.tipo.replace(/_/g,' ')}</div>
@@ -730,7 +905,8 @@ function openRecDrawer(hiloId) {
     </div>
     <div style="border-top:3px solid ${tColor};margin-bottom:8px"></div>
     <div style="font-size:13px;color:#37474F;margin-bottom:12px"><strong>Trayectoria:</strong> ${(h.eventos||[]).length} eventos en U${unidadesDeHilo(h).join(', U')}</div>
-    <div style="background:#FAFAFA;border-radius:8px;overflow:hidden">${eventosDetalleHTML(h)}</div>`;
+    <div style="background:#FAFAFA;border-radius:8px;overflow:hidden">${eventosDetalleHTML(h)}</div>
+    ${extra}`;
     document.getElementById('rec-drawer-overlay').style.display = '';
     drawer.style.display = '';
 }
