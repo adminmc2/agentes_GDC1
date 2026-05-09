@@ -5,6 +5,18 @@
 
 ---
 
+## [v10.91b — 2026-05-09] — Saneo documental post-v10.91: alineación de 3 referencias vivas
+
+Hallazgos del revisor sobre v10.91: la integración funcional de U3 era correcta, pero 3 referencias vivas seguían en el escenario previo y contradecían el estado real:
+
+1. **`nc1-curso.json:_nota`** — declaraba la divergencia 32-41 vs 34-43 como deuda técnica abierta. Actualizada: deuda saldada en v10.91.
+2. **`REVIEW.md` estado vivo + tabla de artefactos** — U3 figuraba como borrada y U2 como solo working tree con errores. Ambas corregidas: U2 trackeada (v10.87), U3 reintegrada (v10.91), U4 como nueva extracción en worktree.
+3. **`PROCESO-MAESTRO.md` protocolo ejecutor 2** — anclaba U3 como ejemplo de unidad fuera de main. Generalizado a U4/U5; U3 anotada como caso ya cerrado siguiendo el mismo protocolo.
+
+**Sin cambios en JSONs de inventario.** Validador 0/0 sobre U0/U1/U2/U3.
+
+---
+
 ## [v10.91 — 2026-05-09] — Integración de U3 a main (worktree extract/U3)
 
 **Segunda integración del carril paralelo de extracciones** tras U2 (v10.87). El JSON fue re-extraído en el worktree `extract/U3` con el PDF correcto (páginas 32-41) tras el borrado del JSON erróneo en v10.88.

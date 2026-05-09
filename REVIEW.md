@@ -42,7 +42,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 | Bloque | Estado |
 |---|---|
-| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1, **U2** trackeados y validando 0/0. U3 borrada en v10.88 (PDF erróneo); pendiente de re-extracción por ejecutor 2 en worktree `extract/U3` (PDF correcto ya en disco). A1 ✅, A2 ✅, A3 ✅, A4 ✅ cerrado 2026-05-07. 5 archivos operativos en `fases/1-extraccion-inventario/` |
+| Fase 1 — Extracción de inventario | ✅ Operativa con U0, U1, U2, U3 trackeados y validando 0/0 (U3 reintegrada en v10.91 con PDF correcto). U4 en extracción por ejecutor 2 en worktree `extract/U4`. A1 ✅, A2 ✅, A3 ✅, A4 ✅ cerrado 2026-05-07. 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Actualizada |
 | Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ cerrado (v10.89) · `nc1-reciclaje.json` existe vacío · B2 desbloqueado para reciclaje (primera población con U1/U2) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 (despliegue público) ✅ cerrado fuera de orden |
@@ -421,9 +421,9 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 |---|---|---|
 | `unidades/U0/U0-nc1-inventario.json` | ✅ Validado · trackeado · unidad atípica (1 aviso intencional por `_nota_unidad_atipica`) | Ninguna prevista |
 | `unidades/U1/U1-nc1-inventario.json` | ✅ Validado · trackeado | Ninguna prevista |
-| `unidades/U2/U2-nc1-inventario.json` | ⚠ **Solo working tree, no trackeado** · falla validación con 2 errores (`autoevaluacion.emoticonos` ausente). No usable hoy | Decisión pendiente: completar autoevaluación + trackear, o descartar |
-| `unidades/U3/U3-nc1-inventario.json` | ❌ Borrado en v10.88 — PDF erróneo. Re-extracción en worktree `extract/U3` (ejecutor 2) | — |
-| `unidades/U3/fuente/U3-nc1.pdf` | ✅ Reemplazado por PDF correcto (gitignored) | — |
+| `unidades/U2/U2-nc1-inventario.json` | ✅ Validado · trackeado (integrado en v10.87) | Ninguna prevista |
+| `unidades/U3/U3-nc1-inventario.json` | ✅ Validado · trackeado (reintegrado en v10.91 con PDF correcto, 47 actividades, 32-41) | Ninguna prevista |
+| `unidades/U3/fuente/U3-nc1.pdf` | ✅ PDF correcto (gitignored) | — |
 | `unidades/U3/tarjetas/`, `pildoras/`, MDs | 📋 No migrados | B3 |
 | `unidades/U4/`...`U9/` | 📋 Carpetas vacías, sin inventario | Nuevas extracciones cuando lleguen PDFs |
 | `unidades/nc1-tarjetas.json` | 📋 No existe | B2 |

@@ -567,7 +567,7 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
 **Invariantes:**
 - Nunca commitear en main desde el worktree de extracción.
 - Los refinamientos de regla que dispare la extracción se registran en main (ejecutor 1), no en el worktree.
-- U3 sigue este mismo protocolo: worktree `extract/U3`, sin anclar el avance de main.
+- Aplica a cualquier unidad nueva (U4, U5…). U3 ya integrada en v10.91 siguiendo este mismo protocolo.
 
 ---
 
