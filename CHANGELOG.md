@@ -5,6 +5,27 @@
 
 ---
 
+## [v10.94 — 2026-05-09] — B2a pase 1 ampliado a U0-U9 + taxonomía unificada (4 tipos)
+
+**Dos correcciones del autor sobre el alcance del pase 1:**
+
+1. **Cobertura completa del índice.** El pase 1 anterior (v10.92) limitaba arbitrariamente a U0-U3 porque eran las únicas unidades integradas. Pero el pase 1 se basa en `nc1-curso.json` (índice oficial del libro), que ya contiene las 9 unidades. Las unidades aún no extraídas igualmente entran porque su contenido está declarado en el índice. Pase 1 regenerado cubriendo **U0-U9 completas**.
+2. **Taxonomía unificada a 4 tipos.** El tipo `estrategia_comunicativa` se elimina; `estrategia` cubre cualquier tipo de estrategia (comunicativa, de aprendizaje, metacognitiva…) asociada a las destrezas de la lengua. El matiz va en la descripción del hilo, no en el tipo.
+
+**Resultado del pase 1 ampliado:**
+- 23 hilos, 70 eventos, todas las unidades del curso (U0-U9).
+- Distribución por tipo: vocabulario 10, forma_verbal 1 (presente con 9 eventos), contenido_gramatical 5, estrategia 7.
+- Hilos nuevos identificados al cubrir el resto del libro: comidas, vivienda, ubicación espacial, descripción, establecimientos, horarios, meses/animales, cuerpo, ropa, pronunciación (transversal), Para aprender (transversal), preposiciones, rutinas/hábitos.
+
+**Cambios técnicos:**
+- `unidades/nc1-reciclaje.json` — regenerado con 4 tipos válidos declarados en `_tipos_validos`.
+- `PROCESO-MAESTRO.md` — bloque schema y decisión 20 actualizadas a 4 tipos.
+- `web/index.html` — color map actualizado (estrategia_comunicativa eliminada).
+
+**Próximo:** B2a.2 (pase 2 contra inventarios) + script automático de proyección de vocabulario por campo semántico.
+
+---
+
 ## [v10.93 — 2026-05-09] — Integración de U4 a main (worktree extract/U4)
 
 **Tercera integración del carril paralelo de extracciones** tras U2 (v10.87) y U3 (v10.91).

@@ -218,7 +218,7 @@ Estructura por cuadro gramatical:
 - **Por hilo:** `id` (slug, ej. `hilo-numeros`), `titulo`, `tipo`, `nivel_analisis` (`mapa` | `detalle`), `eventos[]`.
 - **Por evento:** `unidad` (int), `seccion` (string), `accion`, `descripcion`, `impacto`.
 - **Acciones válidas:** `introduce` · `amplia` · `aplica` · `sistematiza` · `contrasta`.
-- **Tipos cerrados:** `vocabulario` · `forma_verbal` · `contenido_gramatical` · `estrategia` · `estrategia_comunicativa`.
+- **Tipos cerrados (4):** `vocabulario` · `forma_verbal` · `contenido_gramatical` · `estrategia`. El tipo `estrategia` cubre cualquier tipo de estrategia (comunicativa, de aprendizaje, metacognitiva…) asociada a las destrezas de la lengua. El matiz va en la descripción del hilo, no en el tipo.
 - **Niveles de impacto:** `alto` / `medio` / `bajo`.
 - **Secciones válidas para `seccion`:** `vocabulario`, `gramatica`, `comunicacion`, `destrezas`, `cultura`, `pronunciacion_ortografia`, `para_aprender`, `contenido_general` (solo U0).
 - **Multiplicidad:** se permiten múltiples eventos del mismo hilo en la misma unidad (ej. una unidad puede `amplia` y `aplica` el mismo hilo). El dashboard renderiza todos.
@@ -534,7 +534,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-arboles-historicos.md`. Estado del 
 17. **Esquema del inventario JSON cerrado**: `vocabulario_consolidado` con 3 bloques (principal/recurrente/comprensión), `secciones` como índice top-level, `tipo` con taxonomía cerrada de **20 valores** (source of truth: `fases/1-extraccion-inventario/schema-inventario.md` §5; provisional y revisable según regla §2.4 de `reglas-operativas.md`), `destreza` (lista MCER de 6 valores con orden alfabético, schema §5b) y `enfoque` (string del enum de 6, schema §5c) como ejes ortogonales independientes, `datos` como saco genérico, `respuestas` siempre presente, sub-objetos consistentes para audio/imagen/video, `registro` eliminado (va a CHANGELOG).
 18. **Esquema de `nc1-tarjetas.json`**: solo vocabulario y estrategia (no gramática). `por_unidad` + `indice_palabras` + `indice_estrategias`.
 19. **Esquema de `nc1-pildoras.json`**: `por_unidad` + `indice_global`. Categorías como `null` por ahora — se definen cuando se trabajen píldoras nuevas.
-20. **Esquema de `nc1-reciclaje.json`**: acumulativo y secuencial; limitado a 5-6 elementos clave por unidad; basado en contenido (vocabulario, estrategia, contenido_gramatical, forma_verbal, estrategia_comunicativa); con niveles de impacto (alto/medio/bajo); revisable y editable desde el dashboard.
+20. **Esquema de `nc1-reciclaje.json`**: modelo de hilos (refinado v10.92, taxonomía unificada v10.94). Tipos cerrados (4): `vocabulario`, `forma_verbal`, `contenido_gramatical`, `estrategia` (cubre cualquier tipo de estrategia asociada a las destrezas de la lengua). Niveles de impacto: alto/medio/bajo. Revisable y editable desde el dashboard.
 
 ### Sobre la generación de los JSONs
 21. **`UX-nc1-inventario.json`**: lo genera **Claude Code** en chat con un **prompt versionado** (`fases/1-extraccion-inventario/prompt.md`, operativo). NO Python autónomo.
