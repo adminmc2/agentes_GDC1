@@ -101,8 +101,11 @@ def main():
         f"integración {unit_id} a main (worktree extract/{unit_id}, "
         f"{acts} actividades, {cuadros} cuadros, 0/{avisos})"
     )
-    # git commit -m <msg> -- <paths>: -m está antes de --, es una opción válida.
-    # Commitea solo esos paths desde el working tree, aislado del índice actual.
+    # git add primero para que funcione tanto con archivos nuevos (U6, primera integración)
+    # como con archivos ya trackeados (unidades ya integradas previamente).
+    run(["git", "add", "--", inventario_rel, reciclaje_rel])
+    # git commit -m <msg> -- <paths>: -m antes de --, es opción válida.
+    # Limita el commit exactamente a esos dos paths.
     code, out = run(["git", "commit", "-m", msg, "--", inventario_rel, reciclaje_rel])
     print(out)
     if code != 0:
