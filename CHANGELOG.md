@@ -5,11 +5,25 @@
 
 ---
 
+## [v10.99g — 2026-05-10] — Cierre de regresión doc: v10.99e/f autodocumentadas
+
+Doble cierre para detener la regresión "cada commit doc abre una brecha nueva":
+- Entrada de v10.99e corregida: decía "Tres correcciones" enumerando cuatro bullets, y uno (separación v10.99b/c) no fue cambio de v10.99e — esas entradas ya estaban separadas en v10.99d. Atribución falsa eliminada.
+- Entrada formal de v10.99f añadida.
+- Esta misma entrada (v10.99g) cierra el ciclo en el mismo commit que documenta a sus predecesoras, evitando otra brecha.
+
+---
+
+## [v10.99f — 2026-05-10] — Cierre trazabilidad: v10.99e documentado
+
+Tras hallazgo del revisor: v10.99e era un commit doc pero no estaba reflejado en CHANGELOG/REVIEW/PROCESO-MAESTRO. Añadidas entradas formales en los tres documentos.
+
+---
+
 ## [v10.99e — 2026-05-10] — Fix doc: cronología honesta v10.99 + estado sincronización
 
 Tres correcciones tras hallazgos del revisor sobre v10.99d:
 - CHANGELOG v10.99: la entrada original atribuía retroactivamente a v10.99 garantías que no entraron hasta v10.99b/c. Reescrita para reflejar solo lo que entró en ese commit.
-- CHANGELOG: entradas v10.99b y v10.99c separadas con su propio scope (estaban fusionadas en la entrada de v10.99).
 - CHANGELOG: añadida entrada formal de v10.99d.
 - REVIEW: estado de documentación marcado como ✅ sincronizada.
 
