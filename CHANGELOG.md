@@ -5,21 +5,29 @@
 
 ---
 
-## [v10.99c — 2026-05-10] — Fix integrar_unidad: snapshot de nc1-reciclaje.json antes de regenerar
+## [v10.99d — 2026-05-10] — Sincronización documental CHANGELOG/REVIEW/PROCESO-MAESTRO
 
-Si `regenerar_reciclaje_vocabulario.py` falla, ahora se restauran ambos archivos: el inventario de la unidad y `nc1-reciclaje.json`. Antes solo se restauraba el inventario.
+Actualización obligatoria de los tres documentos canónicos tras los commits v10.97-v10.99c que habían quedado sin reflejarse. Sin cambios de código ni datos.
 
 ---
 
-## [v10.99b — 2026-05-10] — Fix integrar_unidad: git add antes del commit para archivos nuevos
+## [v10.99c — 2026-05-10] — Fix integrar_unidad: snapshot de nc1-reciclaje.json antes de regenerar
 
-Sin `git add` previo, `git commit -- path` falla para archivos no trackeados (caso real: primera integración de U6). Añadido `git add` explícito antes del commit.
+Si `regenerar_reciclaje_vocabulario.py` falla, ahora se restauran ambos archivos: el inventario de la unidad y `nc1-reciclaje.json`. Antes solo se restauraba el inventario, dejando el reciclaje potencialmente inconsistente.
+
+---
+
+## [v10.99b — 2026-05-10] — Fix integrar_unidad: git add antes del commit + corrección de sintaxis
+
+Dos defectos del v10.99 cerrados tras hallazgos del revisor:
+- Sintaxis de commit corregida: `git commit --only -- <paths> -m <msg>` era inválida (después de `--` todo es pathspec) → `git commit -m <msg> -- <paths>` con `-m` antes de `--`.
+- `git add` explícito añadido antes del commit para que funcione con archivos nuevos (caso real: primera integración de U6).
 
 ---
 
 ## [v10.99 — 2026-05-10] — Script integrar_unidad.py + fase 2 CLAUDE.md actualizado
 
-`scripts/integrar_unidad.py` — nuevo script que automatiza la integración de una unidad en un solo comando: copia el inventario desde el worktree guardando versión previa en memoria, valida (0 errores), actualiza `nc1-reciclaje.json`, y hace commit aislado (solo los dos archivos esperados). En cualquier fallo, restaura main al estado anterior.
+`scripts/integrar_unidad.py` — nuevo script que encadena los pasos de integración de una unidad: copia, valida, actualiza reciclaje, commit. Primera versión del flujo automatizado. **Defectos corregidos en commits posteriores:** sintaxis de commit inválida (v10.99b), restauración incompleta de main si fallaba el reciclaje (v10.99c).
 
 `CLAUDE.md` raíz — añadido `integrar_unidad.py` a comandos básicos.
 

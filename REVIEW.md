@@ -44,7 +44,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 |---|---|
 | Fase 1 — Extracción de inventario | ✅ U0-U5 integradas y validando 0/0 (U5 integrada v10.97). `columnas_relaciona` añadido como campo canónico (v10.98). U6 en extracción — ejecutor 2 en worktree `extract/U6`. 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
-| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | 🔄 CLAUDE.md actualizado · PROCESO-MAESTRO pendiente de bitácora |
+| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.99d) |
 | Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje ✅ base automatizada (v10.97-v10.99c): scripts mapa+auto+integración operativos · `nc1-reciclaje.json` 92 mapa + 59 auto = 151 hilos · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
