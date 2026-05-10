@@ -5,6 +5,53 @@
 
 ---
 
+## [v10.99c — 2026-05-10] — Fix integrar_unidad: snapshot de nc1-reciclaje.json antes de regenerar
+
+Si `regenerar_reciclaje_vocabulario.py` falla, ahora se restauran ambos archivos: el inventario de la unidad y `nc1-reciclaje.json`. Antes solo se restauraba el inventario.
+
+---
+
+## [v10.99b — 2026-05-10] — Fix integrar_unidad: git add antes del commit para archivos nuevos
+
+Sin `git add` previo, `git commit -- path` falla para archivos no trackeados (caso real: primera integración de U6). Añadido `git add` explícito antes del commit.
+
+---
+
+## [v10.99 — 2026-05-10] — Script integrar_unidad.py + fase 2 CLAUDE.md actualizado
+
+`scripts/integrar_unidad.py` — nuevo script que automatiza la integración de una unidad en un solo comando: copia el inventario desde el worktree guardando versión previa en memoria, valida (0 errores), actualiza `nc1-reciclaje.json`, y hace commit aislado (solo los dos archivos esperados). En cualquier fallo, restaura main al estado anterior.
+
+`CLAUDE.md` raíz — añadido `integrar_unidad.py` a comandos básicos.
+
+`fases/2-reciclaje/CLAUDE.md` y `reglas-reciclaje.md §4` — nivel auto documentado como parte del flujo de integración automática, no invocación manual.
+
+---
+
+## [v10.98 — 2026-05-10] — Campo canónico columnas_relaciona + migración U1/U5
+
+Nuevo campo canónico `datos.columnas_relaciona` para actividades `relaciona` con dos columnas explícitas en el libro (`{izquierda: [str], derecha: [str]}`).
+
+- `schema-inventario.md`: campo añadido al saco `datos`; §12 actualizado con excepción para `relaciona` columnar; ref a `TIPOS_QUE_REQUIEREN_CONTENIDO_VISIBLE`.
+- `reglas-operativas.md §5.7`: excepción explícita para `relaciona` con dos columnas.
+- `convenciones-y-casos.md §1.8`: convención nueva con ejemplo canónico y caso disparador.
+- `validar_inventario.py`: `columnas_relaciona` en `CONTENIDOS_VISIBLES` + validación estructural; `TIPOS_QUE_REQUIEREN_ITEMS` renombrado a `TIPOS_QUE_REQUIEREN_CONTENIDO_VISIBLE`; mensaje de error actualizado.
+
+Migración: `U1-p16-act4` (números↔palabras), `U5-p53-act01` (adjetivos↔contrarios), `U5-p55-act04` (preguntas↔respuestas). U6 pendiente para el ejecutor 2.
+
+---
+
+## [v10.97 — 2026-05-10] — Integración U5 + fase 2 reciclaje automatizada
+
+Integración U5 a main (worktree `extract/U5`, 46 actividades, 4 cuadros, 0/0). Fix: `textos_personajes` de `U5-p58-act01` convertido de objeto a lista canónica `[{personaje, texto}]`.
+
+Fase 2 reciclaje — base automatizada:
+- `fases/2-reciclaje/CLAUDE.md`: contrato de fase con orden obligatorio de scripts.
+- `fases/2-reciclaje/reglas-reciclaje.md`: criterios de agrupación, tabla de acciones, casebook.
+- `scripts/regenerar_reciclaje_mapa.py`: genera hilos mapa desde `nc1-curso.json`; preserva auto/detalle. Procesa U0 (`contenido_general`) y campos estándar.
+- `nc1-reciclaje.json` regenerado: 92 hilos mapa + 59 auto = 151 hilos. "Países hispanohablantes y nacionalidades" separado en dos hilos. "Léxico de aula" eliminado.
+
+---
+
 ## [v10.96b — 2026-05-09] — Cierre v10.96: framing general del antipatrón `enfoque` ≠ `seccion` + corrección U5-p61-act04
 
 Hallazgos del revisor sobre v10.96: la regla #3 hablaba solo de Cultura/Comunicación cuando el antipatrón aplica a cualquier sección, y el caso U5-p61-act04 estaba mal etiquetado (era sección Evaluación, no Comunicación).
