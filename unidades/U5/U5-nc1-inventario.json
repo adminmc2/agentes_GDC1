@@ -1,0 +1,2296 @@
+{
+  "unidad": 5,
+  "curso": "nc1",
+  "titulo": "¿Dónde están las llaves?",
+  "paginas_libro": "52-61",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U5/fuente/U5-nc1.pdf",
+    "version_extraccion": "2026-05-09"
+  },
+  "contenidos_indice": {
+    "vocabulario": "Tipos de vivienda. Partes de la casa. Mobiliario. Adjetivos descriptivos. Serie de palabras",
+    "gramatica": "Verbo estar. Posición. Oposición ser / estar",
+    "comunicacion": "Ubicación de objetos y personas. Descripción de la casa y de objetos. El sonido /x/",
+    "destrezas": "¿Cómo es la casa de tus sueños?",
+    "cultura": "Vivienda ecológica"
+  },
+  "vocabulario_consolidado": {
+    "principal": {
+      "_descripcion": "Vocabulario explícitamente introducido en la sección Vocabulario de U5 (partes de la casa, mobiliario, tipos de vivienda, adjetivos descriptivos).",
+      "partes_de_la_casa": [
+        "cocina",
+        "cuarto de baño",
+        "dormitorio",
+        "recibidor",
+        "salón-comedor",
+        "terraza"
+      ],
+      "mobiliario": [
+        "alfombra",
+        "armario",
+        "bañera",
+        "cama",
+        "cocina",
+        "cuadro",
+        "ducha",
+        "espejo",
+        "estantería",
+        "fregadero",
+        "frigorífico",
+        "lámpara",
+        "lavabo",
+        "lavadora",
+        "mesa",
+        "ordenador",
+        "póster",
+        "silla",
+        "sillón",
+        "sofá",
+        "teléfono",
+        "televisión"
+      ],
+      "tipos_de_vivienda": [
+        "albergue juvenil",
+        "apartamento",
+        "camping",
+        "caravana",
+        "casa rural",
+        "crucero",
+        "granja",
+        "hotel"
+      ],
+      "adjetivos_descriptivos": [
+        "antiguo/-a",
+        "bonito/-a",
+        "cómodo/-a",
+        "feo/-a",
+        "grande",
+        "incómodo/-a",
+        "lento/-a",
+        "moderno/-a",
+        "nuevo/-a",
+        "pequeño/-a",
+        "rápido/-a",
+        "rojo/-a",
+        "viejo/-a"
+      ]
+    },
+    "recurrente": {
+      "_descripcion": "Vocabulario de unidades anteriores reutilizado activamente en actividades de U5.",
+      "lugares_publicos": [
+        "biblioteca",
+        "bolera",
+        "cafetería",
+        "campo de fútbol",
+        "centro cultural",
+        "circo",
+        "cine",
+        "gimnasio",
+        "parque",
+        "polideportivo",
+        "restaurante"
+      ],
+      "expresiones_de_lugar": [
+        "al lado de",
+        "debajo de",
+        "delante de",
+        "detrás de",
+        "encima de"
+      ],
+      "verbos": [
+        "estar",
+        "ser"
+      ]
+    },
+    "comprension": {
+      "_descripcion": "Vocabulario introducido en textos de lectura y cultura para comprensión, no como léxico activo de la unidad.",
+      "vivienda_ecologica": [
+        "ahorrar",
+        "aire acondicionado",
+        "avances",
+        "calefacción",
+        "contaminar",
+        "depósito",
+        "electrodomésticos",
+        "iluminación",
+        "placas solares",
+        "riego"
+      ],
+      "descripcion_habitaciones": [
+        "baúl",
+        "chimenea",
+        "consola",
+        "escritorio",
+        "garaje",
+        "jaula",
+        "microondas",
+        "piscina"
+      ]
+    }
+  },
+  "secciones": {
+    "vocabulario": {
+      "paginas": [
+        52,
+        53
+      ],
+      "actividades_ids": [
+        "U5-p52-act01",
+        "U5-p52-act02",
+        "U5-p52-act03",
+        "U5-p52-act04",
+        "U5-p52-act05",
+        "U5-p53-act01",
+        "U5-p53-act02",
+        "U5-p53-act03",
+        "U5-p53-act04",
+        "U5-p53-act05",
+        "U5-p53-act06",
+        "U5-p53-act07"
+      ]
+    },
+    "gramatica": {
+      "paginas": [
+        54,
+        55
+      ],
+      "actividades_ids": [
+        "U5-p54-act01",
+        "U5-p54-act02",
+        "U5-p54-act03",
+        "U5-p55-act01",
+        "U5-p55-act02",
+        "U5-p55-act03",
+        "U5-p55-act04",
+        "U5-p55-act05"
+      ]
+    },
+    "comunicacion": {
+      "paginas": [
+        56,
+        57
+      ],
+      "actividades_ids": [
+        "U5-p56-act01",
+        "U5-p56-act02",
+        "U5-p56-act03",
+        "U5-p56-act04",
+        "U5-p57-act01",
+        "U5-p57-act02",
+        "U5-p57-act03",
+        "U5-p57-act04",
+        "U5-p57-act05"
+      ]
+    },
+    "destrezas": {
+      "paginas": [
+        58,
+        59
+      ],
+      "actividades_ids": [
+        "U5-p58-act01",
+        "U5-p58-act02",
+        "U5-p58-act03",
+        "U5-p59-act01",
+        "U5-p59-act02",
+        "U5-p59-act03",
+        "U5-p59-act04",
+        "U5-p59-act05"
+      ]
+    },
+    "cultura": {
+      "paginas": [
+        60
+      ],
+      "actividades_ids": [
+        "U5-p60-act01",
+        "U5-p60-act02",
+        "U5-p60-act03",
+        "U5-p60-act04"
+      ]
+    },
+    "evaluacion": {
+      "paginas": [
+        61
+      ],
+      "actividades_ids": [
+        "U5-p61-act01",
+        "U5-p61-act02",
+        "U5-p61-act03",
+        "U5-p61-act04",
+        "U5-p61-act05"
+      ]
+    },
+    "reflexion": {
+      "paginas": [],
+      "actividades_ids": []
+    }
+  },
+  "autoevaluacion": {
+    "pagina": 61,
+    "instruccion_original": "Mis resultados en esta unidad son:",
+    "opciones": [
+      "MUY BUENOS",
+      "BUENOS",
+      "NO MUY BUENOS"
+    ],
+    "emoticonos": true
+  },
+  "paginas_detalle": [
+    {
+      "pagina": 52,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U5-p52-act01",
+          "numero": 1,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Fíjate en el dibujo y relaciona las palabras con las habitaciones del piso. Después, escucha y comprueba.",
+          "contenido_linguistico": [
+            "partes de la casa"
+          ],
+          "campo_semantico": "partes_de_la_casa",
+          "audio": {
+            "presente": true,
+            "pista": 51
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Plano en perspectiva 3D de un piso con 6 habitaciones numeradas del 1 al 6: 1 recibidor, 2 salón-comedor, 3 cocina, 4 cuarto de baño, 5 dormitorio, 6 terraza."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "terraza 6",
+            "recibidor 1",
+            "cuarto de baño 4",
+            "dormitorio 5",
+            "cocina 3",
+            "salón-comedor 2"
+          ],
+          "datos": {
+            "items_libro": [
+              "terraza",
+              "recibidor",
+              "cuarto de baño",
+              "dormitorio",
+              "cocina",
+              "salón-comedor"
+            ]
+          }
+        },
+        {
+          "id": "U5-p52-act02",
+          "numero": 2,
+          "tipo": "escucha_y_responde",
+          "destreza": [
+            "comprension_auditiva"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha los sonidos. ¿Dónde está Guillermo?",
+          "contenido_linguistico": [
+            "ubicación",
+            "partes de la casa"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 52
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 En el dormitorio.",
+            "2 En el cuarto de baño.",
+            "3 En la cocina.",
+            "4 En el salón-comedor o en la cocina.",
+            "5 En la terraza."
+          ]
+        },
+        {
+          "id": "U5-p52-act03",
+          "numero": 3,
+          "tipo": "clasifica",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Clasifica las siguientes palabras en las diferentes habitaciones. Después, escucha, comprueba y repite.",
+          "contenido_linguistico": [
+            "mobiliario",
+            "partes de la casa"
+          ],
+          "campo_semantico": "mobiliario",
+          "audio": {
+            "presente": true,
+            "pista": 53
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "Comedor: mesa, lámpara, alfombra, silla, sillón, cuadro, televisión, sofá, teléfono",
+            "Cocina: fregadero, armario, lavadora, frigorífico, cocina",
+            "Cuarto de baño: espejo, lavabo, ducha, bañera",
+            "Dormitorio: cama, estantería, ordenador, póster"
+          ],
+          "datos": {
+            "palabras_recuadro": [
+              "mesa",
+              "fregadero",
+              "espejo",
+              "cama",
+              "armario",
+              "lámpara",
+              "estantería",
+              "lavabo",
+              "lavadora",
+              "alfombra",
+              "frigorífico",
+              "ducha",
+              "ordenador",
+              "silla",
+              "sillón",
+              "cuadro",
+              "cocina",
+              "bañera",
+              "televisión",
+              "sofá"
+            ],
+            "items_libro": [
+              "Comedor",
+              "Cocina",
+              "Cuarto de baño",
+              "Dormitorio"
+            ],
+            "_nota_revision": "Las palabras 'teléfono' y 'póster' aparecen en las respuestas del libro pero NO están en el recuadro de palabras de la actividad; están etiquetadas en el dibujo del plano de la actividad 1. El alumno las identifica visualmente del dibujo, no del recuadro."
+          }
+        },
+        {
+          "id": "U5-p52-act04",
+          "numero": 4,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escribe seis frases verdaderas sobre el piso del ejercicio 1, como en el ejemplo.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "ubicación",
+            "mobiliario"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "La televisión está en el salón."
+          }
+        },
+        {
+          "id": "U5-p52-act05",
+          "numero": 5,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Contesta a las preguntas.",
+          "contenido_linguistico": [
+            "hay",
+            "verbo estar",
+            "partes de la casa",
+            "mobiliario"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Hay una silla.",
+            "2 El ordenador está en el dormitorio.",
+            "3 Hay un espejo.",
+            "4 En la cocina hay una lavadora, un fregadero, un frigorífico, una cocina y armarios.",
+            "5 El lavabo está en el cuarto de baño.",
+            "6 Hay cinco cuadros en el salón."
+          ],
+          "datos": {
+            "preguntas": [
+              "1 ¿Cuántas sillas hay en el dormitorio?",
+              "2 ¿Dónde está el ordenador?",
+              "3 ¿Cuántos espejos hay en la casa?",
+              "4 ¿Qué hay en la cocina?",
+              "5 ¿Dónde está el lavabo?",
+              "6 ¿Cuántos cuadros hay en el salón?"
+            ]
+          }
+        }
+      ],
+      "cuadros": []
+    },
+    {
+      "pagina": 53,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U5-p53-act01",
+          "numero": 6,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Relaciona los adjetivos con sus contrarios.",
+          "contenido_linguistico": [
+            "adjetivos descriptivos",
+            "antónimos"
+          ],
+          "campo_semantico": "adjetivos_descriptivos",
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Actividad de relacionar con líneas: columna izquierda con 5 adjetivos ilustrados (grande, nuevo, cómodo, moderno, bonito), columna derecha con sus antónimos ilustrados (antiguo, feo, incómodo, pequeño, viejo)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 → d",
+            "2 → e",
+            "3 → c",
+            "4 → a",
+            "5 → b"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 grande — a antiguo",
+              "2 nuevo — b feo",
+              "3 cómodo — c incómodo",
+              "4 moderno — d pequeño",
+              "5 bonito — e viejo"
+            ]
+          }
+        },
+        {
+          "id": "U5-p53-act02",
+          "numero": 7,
+          "tipo": "seleccion_multiple",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Tacha la palabra que no corresponde en cada serie, como en el ejemplo.",
+          "contenido_linguistico": [
+            "series de palabras",
+            "campo semántico",
+            "mobiliario",
+            "adjetivos",
+            "tipos de vivienda",
+            "partes de la casa"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 frigorífico",
+            "2 pueblo",
+            "3 fregadero",
+            "4 cocina",
+            "5 ventana",
+            "6 ciudad"
+          ],
+          "datos": {
+            "subtipo": "para_aprender",
+            "ejemplo_libro": "grande, terraza, bonita, pequeña",
+            "items_libro": [
+              "1 cama, armario, frigorífico, espejo",
+              "2 mesa, sofá, sillas, pueblo",
+              "3 cómodo, nuevo, fregadero, moderno",
+              "4 estantería, alfombra, lámpara, cocina",
+              "5 ventana, salón, cocina, dormitorio",
+              "6 lámpara, ciudad, televisión, ordenador"
+            ]
+          }
+        },
+        {
+          "id": "U5-p53-act03",
+          "numero": 8,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Mira esta página web. Escucha y repite las palabras.",
+          "contenido_linguistico": [
+            "tipos de alojamiento",
+            "tipos de vivienda"
+          ],
+          "campo_semantico": "tipos_de_vivienda",
+          "audio": {
+            "presente": true,
+            "pista": 54
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Página web 'Alojamientos para las vacaciones' con 8 fotografías etiquetadas: Hotel, Albergue juvenil, Crucero, Casa rural, Apartamento, Caravana, Camping, Granja. Subtítulo: 'Elige dónde te quieres alojar, en qué fechas y en qué país'."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "nombres_dados": [
+              "Hotel",
+              "Albergue juvenil",
+              "Crucero",
+              "Casa rural",
+              "Apartamento",
+              "Caravana",
+              "Camping",
+              "Granja"
+            ]
+          }
+        },
+        {
+          "id": "U5-p53-act04",
+          "numero": 9,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Relaciona algunas palabras del ejercicio anterior con sus definiciones.",
+          "contenido_linguistico": [
+            "tipos de alojamiento"
+          ],
+          "campo_semantico": "tipos_de_vivienda",
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 caravana",
+            "2 albergue juvenil",
+            "3 granja",
+            "4 casa rural",
+            "5 crucero"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Alojamiento con ruedas que permite dormir y viajar en él.",
+              "2 Espacio donde los jóvenes y los estudiantes suelen alojarse.",
+              "3 Lugar donde se cultivan alimentos y se crían animales.",
+              "4 Alojamiento normalmente en un pueblo pequeño.",
+              "5 Barco grande para realizar viajes de vacaciones."
+            ],
+            "palabras_recuadro": [
+              "albergue juvenil",
+              "caravana",
+              "casa rural",
+              "crucero",
+              "granja"
+            ]
+          }
+        },
+        {
+          "id": "U5-p53-act05",
+          "numero": 10,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "En parejas. ¿Qué alojamiento preferís? Ponedlos en orden de menor a mayor.",
+          "contenido_linguistico": [
+            "tipos de alojamiento",
+            "preferencias"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": []
+        },
+        {
+          "id": "U5-p53-act06",
+          "numero": 11,
+          "tipo": "escucha_y_responde",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha a una familia hablando sobre sus vacaciones y contesta a las preguntas.",
+          "contenido_linguistico": [
+            "tipos de alojamiento",
+            "destinos de viaje"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 55
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 A Santander.",
+            "2 En un hotel."
+          ],
+          "datos": {
+            "preguntas": [
+              "1 ¿Dónde deciden ir?",
+              "2 ¿Dónde deciden alojarse?"
+            ]
+          }
+        },
+        {
+          "id": "U5-p53-act07",
+          "numero": 12,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha otra vez y escribe dónde prefiere ir cada uno.",
+          "contenido_linguistico": [
+            "tipos de alojamiento",
+            "destinos de viaje"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 55
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "Padre: Camping en el norte.",
+            "Madre: Camping en el norte.",
+            "Pedro: Canadá.",
+            "Ana: Granja en Inglaterra."
+          ],
+          "datos": {
+            "items_libro": [
+              "Padre _____",
+              "Madre _____",
+              "Pedro _____",
+              "Ana _____"
+            ]
+          }
+        }
+      ],
+      "cuadros": []
+    },
+    {
+      "pagina": 54,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U5-p54-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con la forma correspondiente del verbo estar.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "presente de indicativo"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 están",
+            "2 está",
+            "3 está",
+            "4 estoy",
+            "5 estamos",
+            "6 estáis",
+            "7 está",
+            "8 está",
+            "9 están",
+            "10 estamos"
+          ],
+          "datos": {
+            "ejemplo_libro": "Alfredo está en el gimnasio.",
+            "items_libro": [
+              "1 Pedro y Elisa no _____ en casa.",
+              "2 Juan _____ en la biblioteca.",
+              "3 ¿Dónde _____ tú por las mañanas?",
+              "4 Yo no _____ en casa a la hora de comer.",
+              "5 Mis amigos y yo _____ en el equipo del colegio.",
+              "6 Vosotros no _____ en la lista.",
+              "7 Laura _____ en su dormitorio.",
+              "8 El profesor no _____ en su clase.",
+              "9 Las naranjas _____ en la cocina.",
+              "10 Nosotras _____ en la escuela."
+            ]
+          }
+        },
+        {
+          "id": "U5-p54-act02",
+          "numero": 2,
+          "tipo": "seleccion_multiple",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Subraya el verbo correcto.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "presente de indicativo"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "[1] estamos",
+            "[2] está",
+            "[3] está",
+            "[4] estoy",
+            "[5] estás"
+          ],
+          "datos": {
+            "titulo_dialogo": "Correo electrónico de Mario a Ana",
+            "items_libro": [
+              "¡Hola, Ana! Mis padres y yo [1] estoy / estamos en la playa. La casa [2] estás / está al lado del mar y es muy grande. Mi amiga Clara [3] estás / está en la casa de sus abuelos, en el mismo pueblo. Yo [4] estoy / está en el equipo de fútbol de la urbanización. Jugamos todas las tardes. Y tú ¿dónde [5] estáis / estás de vacaciones? Espero tus noticias. Mario"
+            ]
+          }
+        },
+        {
+          "id": "U5-p54-act03",
+          "numero": 3,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Observa la habitación de Mario. Después, contesta a las preguntas utilizando el marcador de lugar correspondiente.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "marcadores de lugar",
+            "posición"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Ilustración de la habitación de Mario: habitación con cama, mesa con ordenador encima, estantería, silla. Objetos etiquetados: pelota (encima de la cama), reloj (encima de la mesilla), ordenador (encima de la mesa), ratón (al lado del ordenador), móvil (delante de la pelota), zapatos (detrás de la silla), libros (debajo de la silla)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Los libros están debajo de la silla.",
+            "2 La pelota está encima de la cama.",
+            "3 El ratón está al lado del ordenador.",
+            "4 Los zapatos están detrás de la silla.",
+            "5 El móvil está delante de la pelota.",
+            "6 El reloj está encima de la mesilla.",
+            "7 La lámpara está al lado del reloj.",
+            "8 La silla está al lado de la cama."
+          ],
+          "datos": {
+            "ejemplo_libro": "¿Dónde está el ordenador? → El ordenador está encima de la mesa.",
+            "preguntas": [
+              "1 ¿Dónde están los libros?",
+              "2 ¿Dónde está la pelota?",
+              "3 ¿Dónde está el ratón?",
+              "4 ¿Dónde están los zapatos?",
+              "5 ¿Dónde está el móvil?",
+              "6 ¿Dónde está el reloj?",
+              "7 ¿Dónde está la lámpara?",
+              "8 ¿Dónde está la silla?"
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Presente del verbo estar",
+          "contenido": {
+            "tipo": "tabla_conjugacion",
+            "filas": [
+              {
+                "pronombre": "yo",
+                "forma": "estoy"
+              },
+              {
+                "pronombre": "tú",
+                "forma": "estás"
+              },
+              {
+                "pronombre": "él / ella / Ud.",
+                "forma": "está"
+              },
+              {
+                "pronombre": "nosotros/-as",
+                "forma": "estamos"
+              },
+              {
+                "pronombre": "vosotros/-as",
+                "forma": "estáis"
+              },
+              {
+                "pronombre": "ellos / ellas / Uds.",
+                "forma": "están"
+              }
+            ],
+            "ejemplos": [
+              "• ¿Dónde están tus amigos?",
+              "■ Mis compañeros y yo estamos en el gimnasio.",
+              "• ¡Hola! ¿Dónde estás?",
+              "■ Estoy en mi casa, con mi hermano."
+            ]
+          }
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Posición",
+          "contenido": {
+            "tipo": "lista_ilustrada",
+            "texto_intro": "¿Dónde está el perro?",
+            "expresiones": [
+              "El perro está encima del cubo.",
+              "El perro está debajo del cubo.",
+              "El perro está detrás del cubo.",
+              "El perro está delante del cubo.",
+              "El perro está al lado del cubo."
+            ],
+            "ejemplos": []
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 55,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U5-p55-act01",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Ahora escucha a la madre de Mario y completa la tabla colocando cada cosa en su lugar.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "marcadores de lugar",
+            "posición"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 56
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "libros: encima de la mesa",
+            "chaqueta: detrás de la puerta, en la percha",
+            "zapatos: al lado de la cama",
+            "coche: debajo de la mesa",
+            "pelota: delante de la cartera."
+          ],
+          "datos": {
+            "items_libro": [
+              "libros | _____",
+              "chaqueta | _____",
+              "zapatos | _____",
+              "coche | _____",
+              "pelota | _____"
+            ]
+          }
+        },
+        {
+          "id": "U5-p55-act02",
+          "numero": 5,
+          "tipo": "seleccion_multiple",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Señala la forma correcta.",
+          "contenido_linguistico": [
+            "verbo ser",
+            "verbo estar",
+            "oposición ser/estar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 está",
+            "2 es",
+            "3 es / está",
+            "4 está",
+            "5 es",
+            "6 está",
+            "7 está",
+            "8 es",
+            "9 es"
+          ],
+          "datos": {
+            "ejemplo_libro": "Las llaves son / están encima de la mesa.",
+            "items_libro": [
+              "1 Su familia es / está en la playa.",
+              "2 La mesa de mi abuelo es / está muy antigua.",
+              "3 Él no es / está japonés, pero ahora es / está en Japón.",
+              "4 La gata es / está en el cuarto de baño.",
+              "5 Mi madre es / está profesora.",
+              "6 Mi ordenador es / está en mi dormitorio.",
+              "7 ¿Dónde es / está tu móvil?",
+              "8 ¿De dónde es / está Naoru?",
+              "9 Mi casa no es / está grande."
+            ]
+          }
+        },
+        {
+          "id": "U5-p55-act03",
+          "numero": 6,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Escribe frases utilizando los verbos ser y estar, a partir de los siguientes pares de palabras.",
+          "contenido_linguistico": [
+            "verbo ser",
+            "verbo estar",
+            "oposición ser/estar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Las camas están en los dormitorios.",
+            "2 La niña es pequeña.",
+            "3 Los ordenadores son nuevos.",
+            "4 La comida está en la mesa.",
+            "5 Mis amigos están en la discoteca.",
+            "6 El baúl es antiguo."
+          ],
+          "datos": {
+            "ejemplo_libro": "televisión / salón → La televisión está en el salón.",
+            "items_libro": [
+              "1 camas / dormitorios",
+              "2 niña / pequeña",
+              "3 ordenadores / nuevos",
+              "4 comida / mesa",
+              "5 amigos / discoteca",
+              "6 baúl / antiguo"
+            ]
+          }
+        },
+        {
+          "id": "U5-p55-act04",
+          "numero": 7,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Relaciona las preguntas y sus respuestas.",
+          "contenido_linguistico": [
+            "verbo ser",
+            "verbo estar",
+            "oposición ser/estar",
+            "marcadores de lugar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 → b",
+            "2 → e / f / g",
+            "3 → c",
+            "4 → a",
+            "5 → d",
+            "6 → e / f / g",
+            "7 → e / f / g"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Hola, ¿cómo estás?",
+              "2 ¿Dónde está mi mochila?",
+              "3 ¿Cómo es tu casa?",
+              "4 ¿De dónde eres?",
+              "5 ¿Cómo es tu perro?",
+              "6 ¿Dónde están tus deportivas?",
+              "7 ¿Dónde están tus abuelos?",
+              "a De Madrid.",
+              "b Bien, gracias.",
+              "c Muy bonita.",
+              "d Pequeño, de color marrón.",
+              "e En el comedor.",
+              "f En la casa de la playa.",
+              "g En el gimnasio."
+            ]
+          }
+        },
+        {
+          "id": "U5-p55-act05",
+          "numero": 8,
+          "tipo": "expresion_escrita_libre",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee la descripción del salón de Guillermo. Después, describe el salón de tu casa y dibújalo.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "verbo hay",
+            "marcadores de lugar",
+            "mobiliario",
+            "adjetivos descriptivos"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Ilustración isométrica de un salón moderno con sofá azul al lado de la ventana, tres cuadros en la pared encima del sofá, mesa pequeña delante del sofá, alfombra debajo de la mesa, sillón pequeño al lado de la mesa y lámpara encima de la mesa."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "texto_modelo": "Esta es la casa de Guillermo. En el salón hay un sofá grande y cómodo al lado de la ventana. Hay tres cuadros muy bonitos en la pared, encima del sofá. Delante del sofá hay una mesa pequeña con una alfombra antigua debajo. Al lado de la mesa, hay un sillón pequeño y encima de la mesa, una lámpara moderna."
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Reglas verbos ser y estar",
+          "contenido": {
+            "tipo": "lista_reglas",
+            "reglas": [
+              "El verbo ser expresa: cualidades / características: origen, profesión, identidad: Mis deportivas son nuevas / Mis padres son colombianos / Mi hermana es abogada / Esta es María. propiedad: Esta bicicleta no es mía.",
+              "El verbo estar se usa: para expresar lugar o posición: María está en el colegio. / Mis padres están en Colombia. / Yo estoy en el equipo de fútbol. para hablar de estados temporales o transitorios."
+            ],
+            "ejemplos": [
+              "• Hola, ¿cómo estás?",
+              "■ Bien, ¿y tú?",
+              "Marcelo está enfermo."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 56,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U5-p56-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "marcadores de lugar",
+            "ubicación de objetos",
+            "la hora"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 57
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Fotograma del vídeo: dos chicas jóvenes (Julia y Graciela) en una habitación, listas para salir."
+          },
+          "video": {
+            "presente": true
+          },
+          "respuestas": [
+            "[1] a las cinco",
+            "[2] qué hora es",
+            "[3] menos diez",
+            "[4] está",
+            "[5] debajo",
+            "[6] encima",
+            "[7] Dónde están",
+            "[8] Vamos",
+            "[9] Estáis"
+          ],
+          "datos": {
+            "palabras_recuadro": [
+              "qué hora es",
+              "a las cinco",
+              "Dónde están",
+              "menos diez",
+              "debajo",
+              "encima",
+              "Estáis",
+              "Vamos",
+              "está"
+            ],
+            "titulo_dialogo": "En casa de Julia",
+            "dialogo_completo": [
+              "JULIA: Hoy jugamos un partido de baloncesto con Pablo y con Jorge [1] _____ .",
+              "GRACIELA: ¿Y [2] _____ ?",
+              "JULIA: ¡Las cinco [3] _____ !",
+              "GRACIELA: ¡Tenemos que salir de tu casa ya!",
+              "JULIA: Graciela, no sé dónde [4] _____ el balón de baloncesto.",
+              "GRACIELA: ¿No está [5] _____ de la cama?",
+              "JULIA: No, no está aquí. Mira en la terraza, por favor.",
+              "GRACIELA: Sí, está aquí. Perfecto, ¿y mi mochila? No sé dónde está…",
+              "JULIA: Graciela, está aquí, [6] _____ de mi cama.",
+              "GRACIELA: ¡Gracias!",
+              "JULIA: Vale, busco mis llaves y salimos. ¡Uy! ¿[7] _____ mis llaves? Madre mía, Graciela, al final no jugamos.",
+              "GRACIELA: ¡Están en el sofá, debajo del cojín!",
+              "JULIA: Ay, gracias. [...] Bueno, ¡por fin! ¿[8] _____ ?",
+              "***",
+              "JULIA: ¿Jorge? Sí, ahora salimos de casa. ¿[9] _____ en el polideportivo? Vale, ¡hasta ahora!"
+            ]
+          }
+        },
+        {
+          "id": "U5-p56-act02",
+          "numero": 2,
+          "tipo": "verdadero_falso",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "¿Verdadero (V) o falso (F)?",
+          "contenido_linguistico": [
+            "verbo estar",
+            "ubicación"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 F",
+            "2 V",
+            "3 F",
+            "4 V",
+            "5 V"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Julia y Graciela están en el instituto.",
+              "2 Tienen poco tiempo para llegar al polideportivo.",
+              "3 El balón de baloncesto está debajo de la cama.",
+              "4 La mochila está encima de la cama.",
+              "5 Jorge y Pablo están en el polideportivo."
+            ]
+          }
+        },
+        {
+          "id": "U5-p56-act03",
+          "numero": 3,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "ubicación de personas"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 58
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "frases": [
+              "• ¿Dónde está mi madre?",
+              "■ Está en la cocina.",
+              "• ¿Dónde están mis hermanos?",
+              "■ Están en el colegio."
+            ]
+          }
+        },
+        {
+          "id": "U5-p56-act04",
+          "numero": 4,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Ahora, pregunta y contesta a tu compañero, como en el ejercicio anterior. Utiliza las siguientes palabras.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "ubicación de personas",
+            "preguntar por localización"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Diez fotografías numeradas del 1 al 10 con personas en distintos contextos: 1 Alberto, 2 Los niños, 3 La abuela y sus amigos, 4 Juan y su perro, 5 Sofía, 6 Mi primo Enrique, 7 Mis padres, 8 Javier y Ana, 9 Mis amigos y yo, 10 Tú y tus compañeros."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 ¿Dónde está Alberto? / Está en el cine.",
+            "2 ¿Dónde están los niños? / Están en el circo.",
+            "3 ¿Dónde están la abuela y sus amigos? / Están en la cafetería.",
+            "4 ¿Dónde están Juan y su perro? / Están en el parque.",
+            "5 ¿Dónde está Sofía? / Está en la biblioteca.",
+            "6 ¿Dónde está mi primo Enrique? / Está en el gimnasio.",
+            "7 ¿Dónde están mis padres? / Están en el centro cultural.",
+            "8 ¿Dónde están Javier y Ana? / Están en el restaurante.",
+            "9 ¿Dónde estamos mis amigos y yo? / Estamos en el campo de fútbol.",
+            "10 ¿Dónde estáis tú y tus compañeros? / Estamos en la bolera."
+          ],
+          "datos": {
+            "palabras_recuadro": [
+              "parque",
+              "gimnasio",
+              "cafetería",
+              "biblioteca",
+              "centro cultural",
+              "campo de fútbol",
+              "restaurante",
+              "circo",
+              "bolera",
+              "cine"
+            ],
+            "personajes": [
+              "1 Alberto",
+              "2 Los niños",
+              "3 La abuela y sus amigos",
+              "4 Juan y su perro",
+              "5 Sofía",
+              "6 Mi primo Enrique",
+              "7 Mis padres",
+              "8 Javier y Ana",
+              "9 Mis amigos y yo",
+              "10 Tú y tus compañeros"
+            ]
+          }
+        }
+      ],
+      "cuadros": []
+    },
+    {
+      "pagina": 57,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U5-p57-act01",
+          "numero": 5,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "En parejas, cread un diálogo similar al diálogo del ejercicio 1. Seguid estos pasos:",
+          "contenido_linguistico": [
+            "ubicación de personas y objetos",
+            "la hora",
+            "saludos y despedidas"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Piensa en la persona que vais a ir a buscar: ¿Quién es? / ¿Dónde está? / ¿A qué hora sale?",
+              "Prepara el diálogo con otro compañero. No te olvides de saludar y despedirte… Hola / ¡Hasta luego!",
+              "Practicad el diálogo, intercambiando los papeles.",
+              "Representad el diálogo delante de la clase."
+            ]
+          }
+        },
+        {
+          "id": "U5-p57-act02",
+          "numero": 6,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": [
+            "descripción de la casa",
+            "verbo ser",
+            "adjetivos descriptivos"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 59
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "frases": [
+              "• ¿Cómo es tu casa?",
+              "■ Mi casa es grande y moderna."
+            ]
+          }
+        },
+        {
+          "id": "U5-p57-act03",
+          "numero": 7,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Ahora, pregunta y contesta a tu compañero, como en el ejemplo. Utiliza los siguientes adjetivos.",
+          "contenido_linguistico": [
+            "descripción de objetos",
+            "verbo ser",
+            "adjetivos descriptivos"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Seis fotografías numeradas del 1 al 6 con objetos/seres: 1 coche (blanco, antiguo), 2 libros (apilados), 3 perros (varios), 4 moto (roja, moderna), 5 jugador de baloncesto, 6 perro (negro)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "¿Cómo es el coche? Es antiguo y...",
+            "palabras_recuadro": [
+              "alto/-a",
+              "antiguo/-a",
+              "grande",
+              "pequeño/-a",
+              "rojo/-a",
+              "rápido/-a",
+              "lento/-a"
+            ],
+            "personajes": [
+              "1 coche",
+              "2 libros",
+              "3 perros",
+              "4 moto",
+              "5 jugador de baloncesto",
+              "6 perro"
+            ]
+          }
+        },
+        {
+          "id": "U5-p57-act04",
+          "numero": 8,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": [
+            "sonido /x/",
+            "grafías j y g ante e/i"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 60
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "frases": [
+              "ja • je • ji • jo • ju",
+              "ge • gi"
+            ]
+          }
+        },
+        {
+          "id": "U5-p57-act05",
+          "numero": 9,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": [
+            "sonido /x/",
+            "palabras con j y g"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 61
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "palabras_modelo": [
+              "julio",
+              "jugar",
+              "Japón",
+              "jirafa",
+              "jamón",
+              "giro",
+              "gema",
+              "rojo",
+              "jefe",
+              "página"
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "fonetico",
+          "titulo": "Pronunciación y ortografía",
+          "contenido": {
+            "tipo": "lista_fonetica",
+            "texto_intro": "El sonido /x/ se escribe con j (ja, je, ji, jo, ju) y con g ante e e i (ge, gi).",
+            "ejemplos": [
+              "ja • je • ji • jo • ju",
+              "ge • gi",
+              "julio • jugar • Japón • jirafa • jamón",
+              "giro • gema • rojo • jefe • página"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 58,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U5-p58-act01",
+          "numero": 1,
+          "tipo": "lee_y_escucha",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "¿Cómo es su habitación ideal? Lee estas cuatro descripciones.",
+          "contenido_linguistico": [
+            "descripción de habitaciones",
+            "verbo hay",
+            "verbo estar",
+            "verbo ser",
+            "mobiliario",
+            "adjetivos descriptivos"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Cuatro fotografías de los personajes: Carlos (chico joven con pelo rizado), Elisa (chica joven), Antonio (chico joven con pelo largo), Lucía (chica joven con pelo rosa)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "texto_completo": "Carlos: En las paredes de mi habitación tengo muchas fotografías de mis deportistas favoritos y en el escritorio tengo un ordenador para navegar por internet. Al lado del escritorio hay dos sofás para sentarme con mis amigos y jugar con los juegos de la consola. | Elisa: Mi habitación tiene una ventana muy grande con vistas a mi piscina. Desde la cama veo el jardín y oigo cantar a los pájaros. Mi perro duerme en mi habitación conmigo. Está toda la noche al lado de mi cama. | Antonio: En mi habitación tengo una cama grande y cómoda. En la pared hay una televisión enorme para ver películas. Al lado de mi cama hay un frigorífico con bebidas frías. También tengo un microondas para hacer palomitas. Encima de la estantería está la jaula de mi hámster. | Lucía: Mi habitación tiene las paredes pintadas de rosa y un sillón donde me siento por la mañana para escribir mi diario. Siempre escucho música con mi ordenador o con mi móvil. Y mi gato se tumba a mi lado encima de los cojines.",
+            "personajes": [
+              "Carlos",
+              "Elisa",
+              "Antonio",
+              "Lucía"
+            ],
+            "textos_personajes": [
+              {
+                "personaje": "Carlos",
+                "texto": "En las paredes de mi habitación tengo muchas fotografías de mis deportistas favoritos y en el escritorio tengo un ordenador para navegar por internet. Al lado del escritorio hay dos sofás para sentarme con mis amigos y jugar con los juegos de la consola."
+              },
+              {
+                "personaje": "Elisa",
+                "texto": "Mi habitación tiene una ventana muy grande con vistas a mi piscina. Desde la cama veo el jardín y oigo cantar a los pájaros. Mi perro duerme en mi habitación conmigo. Está toda la noche al lado de mi cama."
+              },
+              {
+                "personaje": "Antonio",
+                "texto": "En mi habitación tengo una cama grande y cómoda. En la pared hay una televisión enorme para ver películas. Al lado de mi cama hay un frigorífico con bebidas frías. También tengo un microondas para hacer palomitas. Encima de la estantería está la jaula de mi hámster."
+              },
+              {
+                "personaje": "Lucía",
+                "texto": "Mi habitación tiene las paredes pintadas de rosa y un sillón donde me siento por la mañana para escribir mi diario. Siempre escucho música con mi ordenador o con mi móvil. Y mi gato se tumba a mi lado encima de los cojines."
+              }
+            ]
+          }
+        },
+        {
+          "id": "U5-p58-act02",
+          "numero": 2,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Corrige las siguientes afirmaciones.",
+          "contenido_linguistico": [
+            "verbo ser",
+            "verbo estar",
+            "descripción de personas y viviendas"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Elisa vive en un chalé.",
+            "2 El dormitorio de Carlos es grande.",
+            "3 Lucía tiene un ordenador en su habitación.",
+            "4 A Antonio le gusta mucho el cine.",
+            "5 Elisa, Antonio y Lucía tienen mascota."
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Elisa vive en un apartamento.",
+              "2 El dormitorio de Carlos es pequeño.",
+              "3 Lucía tiene una televisión en su habitación.",
+              "4 A Antonio no le gusta el cine.",
+              "5 Todos los personajes anteriores tienen mascota.",
+              "6 Todos tienen ordenadores y pantallas en sus habitaciones."
+            ],
+            "_nota_revision": "El libro proporciona solo 5 respuestas en la clave para 6 afirmaciones. La afirmación 6 no tiene respuesta publicada en la clave del libro."
+          }
+        },
+        {
+          "id": "U5-p58-act03",
+          "numero": 3,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Contesta a las preguntas.",
+          "contenido_linguistico": [
+            "descripción de habitaciones",
+            "comprensión lectora"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Antonio.",
+            "2 En la habitación de Elisa.",
+            "3 En un frigorífico que hay en su habitación.",
+            "4 Carlos.",
+            "5 De color rosa.",
+            "6 Respuesta libre."
+          ],
+          "datos": {
+            "preguntas": [
+              "1 ¿Quién tiene una televisión en su habitación?",
+              "2 ¿Dónde duerme el perro de Elisa?",
+              "3 ¿Dónde guarda Antonio las bebidas?",
+              "4 ¿Quién tiene fotografías en sus paredes?",
+              "5 ¿De qué color son las paredes de Lucía?",
+              "6 ¿Qué habitación te gusta más? ¿Por qué?"
+            ]
+          }
+        }
+      ],
+      "cuadros": []
+    },
+    {
+      "pagina": 59,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U5-p59-act01",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_escrita"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Escucha a Celia haciendo la descripción de su casa perfecta y completa el texto.",
+          "contenido_linguistico": [
+            "partes de la casa",
+            "verbo estar",
+            "verbo hay",
+            "descripción de viviendas"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 62
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Fotografía de una casa moderna y luminosa con salón-comedor amplio con gran ventanal, bajo el título 'Mi casa perfecta'."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "[1] salón-comedor",
+            "[2] chimenea",
+            "[3] jardín",
+            "[4] cocina",
+            "[5] escaleras",
+            "[6] dormitorios",
+            "[7] baño",
+            "[8] piscina",
+            "[9] terraza",
+            "[10] garaje"
+          ],
+          "datos": {
+            "items_libro": [
+              "Mi casa tiene tres pisos. Al entrar, en el primer piso, hay un [1] _____ muy grande, con una [2] _____ y una puerta de cristal para salir al [3] _____. La [4] _____ también es muy grande y moderna. Por las [5] _____ subimos al segundo piso. Hay cuatro [6] _____: uno para mis padres, otro para mí, y dos para mis hermanos. Cada dormitorio tiene un [7] _____ privado. En el jardín hay una [8] _____ y muchos árboles. En el tercer piso hay una [9] _____ muy bonita para tomar el sol y poder ver las montañas. Detrás de la casa está el [10] _____. Allí metemos las bicicletas, el coche y la leña para la chimenea."
+            ]
+          }
+        },
+        {
+          "id": "U5-p59-act02",
+          "numero": 5,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_escrita"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Escucha a Pedro, Elena y Luis hablar de sus casas. Los tres viven en Valencia, una provincia cerca del mar. Completa la tabla.",
+          "contenido_linguistico": [
+            "tipos de vivienda",
+            "descripción de viviendas",
+            "partes de la casa"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 63
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": true
+          },
+          "respuestas": [
+            "Pedro — Tipo: Piso, Dormitorios: 3, Terraza: Sí, Jardín: No, Garaje: No",
+            "Elena — Tipo: Casa, Dormitorios: 4, Terraza: No, Jardín: No, Garaje: Sí",
+            "Luis — Tipo: Chalé adosado, Dormitorios: 4, Terraza: No, Jardín: Sí, Garaje: Sí"
+          ],
+          "datos": {
+            "items_libro": [
+              "Pedro | Tipo: _____ | Dormitorios: 3 | Terraza: Sí | Jardín: _____ | Garaje: _____",
+              "Elena | Tipo: _____ | Dormitorios: _____ | Terraza: _____ | Jardín: _____ | Garaje: _____",
+              "Luis | Tipo: _____ | Dormitorios: _____ | Terraza: _____ | Jardín: _____ | Garaje: _____"
+            ]
+          }
+        },
+        {
+          "id": "U5-p59-act03",
+          "numero": 6,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "En parejas. A explica cómo es su dormitorio y B dibuja un plano con las explicaciones que le da A.",
+          "contenido_linguistico": [
+            "descripción de habitaciones",
+            "marcadores de lugar",
+            "verbo hay",
+            "verbo estar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": []
+        },
+        {
+          "id": "U5-p59-act04",
+          "numero": 7,
+          "tipo": "expresion_escrita_libre",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "En grupos de cuatro: cada uno describe su casa ideal. Seguid los siguientes pasos:",
+          "contenido_linguistico": [
+            "descripción de viviendas",
+            "verbo hay",
+            "verbo estar",
+            "verbo ser",
+            "adjetivos descriptivos",
+            "concordancia género y número"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Antes de empezar a escribir contestad a estas preguntas: ¿Dónde está? (cerca de la playa, en un pueblo, en una gran ciudad…) / ¿Cuántas habitaciones tiene? / ¿Tiene jardín, terraza, patio…? / Utilizad adjetivos como: grande, pequeña, moderna",
+              "No os olvidéis de revisar la concordancia de género y número entre el nombre y el adjetivo: cocina pequeña / dormitorio pequeño — terrazas pequeñas / baños pequeños"
+            ]
+          }
+        },
+        {
+          "id": "U5-p59-act05",
+          "numero": 8,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral",
+            "mediacion"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "En grupos de cuatro, leed el texto sobre la familia González. Decidid entre los cuatro cuál de vuestras \"casas ideales\" del ejercicio anterior es la más apropiada para esta familia. Y explicad por qué.",
+          "contenido_linguistico": [
+            "descripción de personas y familias",
+            "descripción de viviendas",
+            "argumentación oral"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Fotografía de una familia (la familia González): padre (Tomás), madre (Celia), cuatro hijos (Nico y las niñas Elena, Ana, Andrea) y un perro grande (Tigre)."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "texto_completo": "Esta es la familia González. El padre de los niños se llama Tomás y su mujer se llama Celia. Tienen cuatro hijos. El niño se llama Nico y tiene 4 años. Las niñas se llaman Elena, Ana y Andrea. Tienen 6, 9 y 12 años. También tienen un perro muy grande. Se llama Tigre. Les gusta mucho pasear con su perro y hacer deporte. Y están buscando una casa para pasar las vacaciones."
+          }
+        }
+      ],
+      "cuadros": []
+    },
+    {
+      "pagina": 60,
+      "seccion": "cultura",
+      "actividades": [
+        {
+          "id": "U5-p60-act01",
+          "numero": 1,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "cultura",
+          "instruccion_original": "Lee el texto y relaciona cada punto con la imagen correspondiente.",
+          "contenido_linguistico": [
+            "vivienda ecológica",
+            "vocabulario medioambiental"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Artículo 'La vivienda verde' con 4 imágenes etiquetadas a-d: a) placas solares en un tejado, b) instalación de ventanas de doble cristal, c) materiales de construcción naturales (maderas), d) depósito de agua de lluvia. Imagen central: casa con paneles solares y coche eléctrico."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 → c",
+            "2 → a",
+            "3 → d",
+            "4 → b"
+          ],
+          "datos": {
+            "texto_completo": "La vivienda ecológica ya es posible: los avances científicos y los nuevos sistemas de construcción posibilitan la existencia de viviendas ecológicas en cualquier lugar del mundo. ¿Qué elementos son los más importantes en una vivienda ecológica?\n1 Uso de materiales naturales: evitar los materiales contaminantes (plásticos, PVC…) en mobiliario, decoración, pinturas…\n2 Ahorro energético: la vivienda debe generar su propia energía (placas solares), consumir la menor cantidad posible de energía (luces y electrodomésticos de bajo consumo) y tener una correcta orientación solar para ahorrar energía en iluminación y calefacción.\n3 Ahorro de agua: depósitos de agua de lluvia, reutilización del agua para el riego…\n4 Puertas y ventanas: la vivienda tiene que estar bien aislada (ventanas con doble cristal y puertas bien cerradas) para no consumir mucha energía en calefacción en invierno ni en aire acondicionado en verano."
+          }
+        },
+        {
+          "id": "U5-p60-act02",
+          "numero": 2,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "cultura",
+          "instruccion_original": "Relaciona las siguientes palabras con las definiciones.",
+          "contenido_linguistico": [
+            "vocabulario medioambiental",
+            "vivienda ecológica"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 ahorrar",
+            "2 avances",
+            "3 depósito",
+            "4 calefacción",
+            "5 contaminar"
+          ],
+          "datos": {
+            "palabras_recuadro": [
+              "avances",
+              "contaminar",
+              "ahorrar",
+              "depósito",
+              "calefacción"
+            ],
+            "items_libro": [
+              "1 No gastar más de lo necesario.",
+              "2 Desarrollos tecnológicos.",
+              "3 Recipiente grande para almacenar.",
+              "4 Sistema para calentar una vivienda.",
+              "5 Hacer daño a la naturaleza con sustancias como el plástico o el petróleo."
+            ]
+          }
+        },
+        {
+          "id": "U5-p60-act03",
+          "numero": 3,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee el texto otra vez y contesta a las preguntas.",
+          "contenido_linguistico": [
+            "vivienda ecológica",
+            "comprensión lectora"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Por los avances científicos y los nuevos sistemas de construcción.",
+            "2 Porque son materiales contaminantes.",
+            "3 Para ahorrar energía en iluminación y calefacción.",
+            "4 Para el riego.",
+            "5 Con un buen aislamiento: ventanas con doble cristal y puertas bien cerradas."
+          ],
+          "datos": {
+            "preguntas": [
+              "1 ¿Por qué ahora es más fácil construir viviendas ecológicas?",
+              "2 ¿Por qué hay que evitar los plásticos en la decoración de la casa?",
+              "3 ¿Por qué las casas deben tener placas solares?",
+              "4 ¿Para qué se puede utilizar el agua de la lluvia?",
+              "5 ¿Cómo conseguimos ahorrar en calefacción y en aire acondicionado?"
+            ]
+          }
+        },
+        {
+          "id": "U5-p60-act04",
+          "numero": 4,
+          "tipo": "expresion_oral_libre",
+          "destreza": [
+            "expresion_oral"
+          ],
+          "enfoque": "cultura",
+          "instruccion_original": "¿Y tú qué piensas? ¿Crees que las casas ecológicas son una buena idea? ¿Por qué?",
+          "contenido_linguistico": [
+            "opinión",
+            "vivienda ecológica"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": []
+        }
+      ],
+      "cuadros": []
+    },
+    {
+      "pagina": 61,
+      "seccion": "evaluacion",
+      "actividades": [
+        {
+          "id": "U5-p61-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con la forma correspondiente de los verbos ser y estar.",
+          "contenido_linguistico": [
+            "verbo ser",
+            "verbo estar",
+            "oposición ser/estar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 está",
+            "2 es",
+            "3 están",
+            "4 son",
+            "5 estamos",
+            "6 estoy",
+            "7 es",
+            "8 está",
+            "9 están",
+            "10 es"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 El lavabo _____ en el cuarto de baño.",
+              "2 Mi casa _____ grande y nueva.",
+              "3 Las palabras _____ en el diccionario.",
+              "4 Tus muebles _____ modernos.",
+              "5 Mi padre y yo _____ en la terraza.",
+              "6 Yo _____ en mi habitación.",
+              "7 Mi pelota _____ roja y amarilla.",
+              "8 Lucía no _____ en casa.",
+              "9 ¿Dónde _____ los gatos?",
+              "10 ¿Cómo _____ tu casa?"
+            ]
+          }
+        },
+        {
+          "id": "U5-p61-act02",
+          "numero": 2,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Contesta a las preguntas, fijándote en los dibujos.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "marcadores de lugar",
+            "posición"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Seis ilustraciones simples: ejemplo con mesa y llaves encima; 1 cama con gato encima; 2 sofá con alfombra debajo; 3 ventana con cuadro al lado; 4 casa con coche delante; 5 silla con pelota detrás."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 Encima de la cama.",
+            "2 Debajo del sofá.",
+            "3 Al lado de la ventana.",
+            "4 Delante de la casa.",
+            "5 Detrás de la silla."
+          ],
+          "datos": {
+            "ejemplo_libro": "¿Dónde están las llaves? → Encima de la mesa.",
+            "preguntas": [
+              "1 ¿Dónde está el gato?",
+              "2 ¿Dónde está la alfombra?",
+              "3 ¿Dónde está el cuadro?",
+              "4 ¿Dónde está el coche?",
+              "5 ¿Dónde está la pelota?"
+            ]
+          }
+        },
+        {
+          "id": "U5-p61-act03",
+          "numero": 3,
+          "tipo": "relaciona",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "¿En qué habitación están estos objetos?",
+          "contenido_linguistico": [
+            "mobiliario",
+            "partes de la casa",
+            "verbo estar"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "La cama está en el dormitorio.",
+            "La bañera está en el cuarto de baño.",
+            "El lavabo está en el cuarto de baño.",
+            "El sofá está en el salón-comedor.",
+            "El frigorífico está en la cocina."
+          ],
+          "datos": {
+            "items_libro": [
+              "la cama",
+              "la bañera",
+              "el sofá",
+              "el lavabo",
+              "el frigorífico"
+            ]
+          }
+        },
+        {
+          "id": "U5-p61-act04",
+          "numero": 4,
+          "tipo": "ordena",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "transversal",
+          "instruccion_original": "Ordena las conversaciones.",
+          "contenido_linguistico": [
+            "verbo estar",
+            "verbo ser",
+            "ubicación",
+            "descripción"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "¿Dónde está mi abuela? / Está en el jardín.",
+            "¿Cómo es tu dormitorio? / Es grande y cómodo.",
+            "¿Cómo es tu gata? / Mi gata es negra y blanca."
+          ],
+          "datos": {
+            "items_libro": [
+              "¿ / mi / está / abuela / dónde / ?",
+              "el / está / jardín / en",
+              "¿ / dormitorio / es / tu / cómo / ?",
+              "grande / es / cómodo / y",
+              "¿ / gata / tu / es / cómo / ?",
+              "negra / blanca / es / y / gata / mi"
+            ]
+          }
+        },
+        {
+          "id": "U5-p61-act05",
+          "numero": 5,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral"
+          ],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Conversa con tu compañero.",
+          "contenido_linguistico": [
+            "hay",
+            "verbo estar",
+            "lugares de la ciudad"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "frases": [
+              "En tu ciudad… ¿hay un mercado? ¿hay hoteles? ¿hay universidad? ¿hay jardines grandes? ¿hay museos? ¿hay monumentos? ¿Y dónde está(n)?",
+              "A: Sí, hay uno. Se llama… / Está… / No, no hay. / Sí hay."
+            ]
+          }
+        }
+      ],
+      "cuadros": []
+    }
+  ]
+}
