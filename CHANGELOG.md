@@ -5,6 +5,18 @@
 
 ---
 
+## [v10.104d — 2026-05-11] — Fix CHANGELOG: entrada formal de v10.104c
+
+Hallazgo bajo del revisor sobre `05ddacb`: el fix de v10.104c reescribió la entrada de v10.104b pero no se autodocumentó como hito propio en el changelog. Añadida entrada formal de v10.104c. Esta entrada de v10.104d se autodocumenta en el mismo commit para no reabrir la brecha.
+
+---
+
+## [v10.104c — 2026-05-11] — Fix CHANGELOG: retira referencia a artefacto local untracked
+
+Hallazgo bajo del revisor sobre v10.104b: la entrada de CHANGELOG mencionaba `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` como ubicación de los refinamientos pendientes, pero ese archivo es local untracked. Reformulada la frase para no comprometer una referencia que no existe en clon limpio.
+
+---
+
 ## [v10.104b — 2026-05-11] — Doc canónica de integración U9 + curso completo extraído
 
 Sincroniza CHANGELOG/REVIEW/PROCESO-MAESTRO/README con la integración U9 (v10.104) y refleja que U0-U9 están integradas y validando 0/0. No incluye `REDISEÑO-EN-CURSO.md` (artefacto local untracked).
