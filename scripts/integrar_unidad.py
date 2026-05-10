@@ -81,11 +81,14 @@ def main():
     avisos = sum(1 for l in out.splitlines() if l.strip().startswith("⚠"))
     print(f"✓ Validación: 0 errores · {avisos} avisos")
 
-    # 4. Actualizar hilos auto del reciclaje — si falla, restaura main
+    # 4. Actualizar hilos auto del reciclaje — snapshot previo para restaurar si falla
+    reciclaje_path = PROJECT / "unidades" / "nc1-reciclaje.json"
+    reciclaje_prev = reciclaje_path.read_bytes() if reciclaje_path.exists() else None
     code, out = run(["python3", "scripts/regenerar_reciclaje_vocabulario.py"])
     print(out)
     if code != 0:
         restaurar(dst, dst_prev)
+        restaurar(reciclaje_path, reciclaje_prev)
         print("❌ Error al regenerar reciclaje. Main restaurado al estado anterior.")
         sys.exit(1)
     print("✓ Reciclaje actualizado")
