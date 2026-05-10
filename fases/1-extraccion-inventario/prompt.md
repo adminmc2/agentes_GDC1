@@ -96,7 +96,9 @@ Antes de dar el JSON por bueno, comprobar manualmente y con el validador.
 8. **`audio`/`imagen`/`video` siempre presentes** como sub-objetos.
 9. **`items_libro` o equivalente** en toda actividad de completar/elegir/relacionar.
 10. **`descripcion` de imagen** obligatoria si `imagen.presente=true`.
-11. **JSON parseable** (validar con Python: `json.loads(open(...).read())`).
+11. **`datos.ejemplo_libro` no duplicado en `respuestas`** — el ejemplo del libro va solo en `datos.ejemplo_libro`, nunca como ítem de `respuestas`. Ver `convenciones-y-casos.md` §1.6.
+12. **Cardinalidad literal de `items_libro`** — el número de ítems debe coincidir exactamente con los del PDF. No inventar ni completar la serie. Ver `reglas-operativas.md` §5.7.
+13. **JSON parseable** (validar con Python: `json.loads(open(...).read())`).
 
 ### Validador automático
 

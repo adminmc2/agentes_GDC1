@@ -5,6 +5,18 @@
 
 ---
 
+## [v10.101 — 2026-05-10] — Refuerzo del checklist de cierre del extractor (prompt.md)
+
+Tras auditar los tres fixes del ejecutor 2 en U6 (ejemplo duplicado en respuestas + ítem inventado), análisis: las reglas canónicas existen y son suficientes (§1.6 y §5.7), pero son fallos invisibles al validador estructural. La fricción está en el cierre — el ejecutor no estaba comprobándolos antes de dar el JSON por bueno.
+
+Añadidos 2 ítems al checklist de "Comprobaciones manuales" en `prompt.md` (no nueva sección, no bloat):
+- Ítem 11: `datos.ejemplo_libro` no duplicado en `respuestas` (ref §1.6).
+- Ítem 12: cardinalidad literal de `items_libro` igual a la del PDF, sin invención (ref §5.7).
+
+No se modifican reglas. Solo se hace explícito en el prompt lo que ya era obligatorio.
+
+---
+
 ## [v10.100 — 2026-05-10] — Integración U6 a main (44 actividades, 4 cuadros, 0/0)
 
 Primera integración con el flujo automatizado `integrar_unidad.py`. Inventario U6 final auditado por el ejecutor 2 + actualización automática de `nc1-reciclaje.json` (161 hilos: 92 mapa + 69 auto).
