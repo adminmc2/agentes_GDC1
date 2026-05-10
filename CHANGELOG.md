@@ -26,7 +26,7 @@ Tres fixes de auditoría incluidos en el inventario final:
 - Ejemplo duplicado eliminado en `respuestas` de U6-p64-act02.
 - Ítem inventado #9 eliminado en U6-p65-act04.
 
-U6 usa el campo canónico `columnas_relaciona` en U6-p63-act05 y U6-p63-act08 (campo introducido en v10.98).
+U6 usa el campo canónico `columnas_relaciona` en U6-p63-act05, U6-p63-act08, U6-p68-act02 y U6-p71-act05 (campo introducido en v10.98).
 
 ---
 
