@@ -125,29 +125,27 @@ Cuando el solucionario o el enunciado del libro precede al contenido con un marc
 
 **Casos disparadores:** U5-p54-act03 ("Posibles respuestas:" coló como ítem), U5-p55-act02 ("ejemplo: están" duplicó `datos.ejemplo_libro`), U5-p61-act02 ("ejemplo: Encima de la mesa." idem).
 
-### 1.7 `enfoque` no se hereda de la sección de la página
+### 1.7 `enfoque` no se hereda de la sección de la página (proximidad editorial)
 
-Antipatrón recurrente: asumir que una actividad alojada en página `seccion: cultura` lleva `enfoque: cultura`, o que una en `seccion: comunicacion` lleva `enfoque: comunicacion`. La regla está en `reglas-operativas.md` §2.3: `enfoque` describe el **foco pedagógico real de la actividad**, no la sección editorial donde aparece.
+Antipatrón recurrente: asumir que una actividad alojada en página `seccion: X` lleva `enfoque: X`. La regla está en `reglas-operativas.md` §2.3: `enfoque` describe el **foco pedagógico real de la actividad**, no la sección editorial que la aloja. Aplica a cualquier sección (`gramatica`, `vocabulario`, `comunicacion`, `cultura`, `destrezas`, `evaluacion`).
 
-**Caso típico — comprensión lectora genérica en página de Cultura/Comunicación:**
+**Caso típico — comprensión lectora/auditiva genérica en cualquier sección:**
 
 ```jsonc
-// Actividad: leer un texto sobre vivienda ecológica y responder preguntas cerradas.
-// Página: U5-p60, seccion: cultura.
+// Actividad: leer un texto y responder preguntas cerradas, en una página de Cultura.
 // ❌ INCORRECTO
-"enfoque": "cultura"   // copia el enfoque de la sección
+"enfoque": "cultura"        // copia el enfoque de la sección por proximidad
 // ✅ CORRECTO
-"enfoque": "transversal"   // comprensión lectora sin foco de dominio específico
+"enfoque": "transversal"    // comprensión lectora sin foco de dominio específico
 ```
 
-**Cuándo SÍ aplica `cultura` o `comunicacion` como `enfoque`:**
-- `cultura`: la actividad pide reflexionar, comparar o producir contenido sociocultural (ej. "¿cómo es esto en tu país?", clasificar elementos culturales).
-- `comunicacion`: la actividad pide aplicar una función comunicativa (saludar, presentar, pedir información) con producción del alumno.
+**Cuándo SÍ aplica un enfoque de dominio (`cultura`, `comunicacion`, `gramatica`, `vocabulario`, `fonetica`):**
+- La actividad pide **producir o reflexionar** sobre el dominio: comparar costumbres, aplicar una función comunicativa con producción propia, hacer un cloze gramatical, clasificar léxico, repetir un sonido específico.
 
 **Cuándo NO:**
-- Comprensión lectora/auditiva sobre un input dado, aunque el input sea cultural o comunicativo. La actividad ejercita la destreza, no el dominio de contenido. → `transversal`.
+- Comprensión lectora/auditiva sobre un input dado, aunque el input sea cultural, comunicativo, gramatical o léxico. La actividad ejercita la destreza, no el dominio. → `transversal`.
 
-**Casos disparadores:** U5-p60-act03 (asignó `cultura`, era `transversal`), U5-p61-act04 (asignó `comunicacion`, era `transversal`).
+**Casos disparadores:** U5-p60-act03 (sección Cultura, asignó `cultura`, era `transversal`), U5-p61-act04 (sección Evaluación, asignó `comunicacion`, era `transversal`).
 
 ---
 

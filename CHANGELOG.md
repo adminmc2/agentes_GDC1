@@ -5,6 +5,18 @@
 
 ---
 
+## [v10.96b — 2026-05-09] — Cierre v10.96: framing general del antipatrón `enfoque` ≠ `seccion` + corrección U5-p61-act04
+
+Hallazgos del revisor sobre v10.96: la regla #3 hablaba solo de Cultura/Comunicación cuando el antipatrón aplica a cualquier sección, y el caso U5-p61-act04 estaba mal etiquetado (era sección Evaluación, no Comunicación).
+
+**Cambios:**
+- `reglas-operativas.md` §2.3 — bloque "Antipatrón frecuente" reformulado a proximidad editorial general: enumera las 6 secciones (`gramatica`, `vocabulario`, `comunicacion`, `cultura`, `destrezas`, `evaluacion`) y aclara que el antipatrón aplica sea cual sea la sección. U5-p61-act04 corregido a sección Evaluación.
+- `convenciones-y-casos.md` §1.7 — título y ejemplo reformulados ("seccion: X → enfoque: X"). El bloque "cuándo SÍ aplica enfoque de dominio" ya cubre los 5 dominios (cultura, comunicacion, gramatica, vocabulario, fonetica), no solo dos. U5-p61-act04 corregido.
+
+**Sin cambios funcionales en datos.** Validador U0-U4 → 0/0.
+
+---
+
 ## [v10.96 — 2026-05-09] — Fixes de fase 1 a partir de hallazgos de extracción U5
 
 Tres problemas detectados durante la revisión de U5 (ejecutor 2, sin integrar todavía a main) corregidos en el contrato de fase 1. El cuarto problema (palabras-respuesta de imágenes) se descartó tras revisión: era error del ejecutor, no gap del schema.
