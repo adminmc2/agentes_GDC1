@@ -5,6 +5,19 @@
 
 ---
 
+## [v10.100 — 2026-05-10] — Integración U6 a main (44 actividades, 4 cuadros, 0/0)
+
+Primera integración con el flujo automatizado `integrar_unidad.py`. Inventario U6 final auditado por el ejecutor 2 + actualización automática de `nc1-reciclaje.json` (161 hilos: 92 mapa + 69 auto).
+
+Tres fixes de auditoría incluidos en el inventario final:
+- Ejemplo duplicado eliminado en `respuestas` de U6-p64-act01.
+- Ejemplo duplicado eliminado en `respuestas` de U6-p64-act02.
+- Ítem inventado #9 eliminado en U6-p65-act04.
+
+U6 usa el campo canónico `columnas_relaciona` en U6-p63-act05 y U6-p63-act08 (campo introducido en v10.98).
+
+---
+
 ## [v10.99g — 2026-05-10] — Cierre de regresión doc: v10.99e/f autodocumentadas
 
 Doble cierre para detener la regresión "cada commit doc abre una brecha nueva":
