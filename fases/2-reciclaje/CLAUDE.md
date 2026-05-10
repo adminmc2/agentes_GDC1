@@ -24,21 +24,25 @@ El archivo tiene tres niveles de análisis que se generan por separado:
 
 ## Cómo se invoca
 
+**Nivel mapa — una sola vez** (o cuando cambia `nc1-curso.json`):
 ```bash
-# 1. Primero: regenerar hilos mapa (crea o actualiza nc1-reciclaje.json)
 python3 scripts/regenerar_reciclaje_mapa.py
-
-# 2. Después: regenerar hilos auto (requiere que el archivo ya exista)
-python3 scripts/regenerar_reciclaje_vocabulario.py
 ```
+Este script crea `nc1-reciclaje.json` si no existe. Debe ejecutarse antes que el de auto.
 
-El orden es obligatorio: el script de mapa crea el archivo si no existe; el de auto requiere que ya exista. Cada script preserva los hilos del otro nivel.
+**Nivel auto — se ejecuta automáticamente al integrar cada unidad:**
+
+No se invoca manualmente. Lo encadena `scripts/integrar_unidad.py` como parte del flujo de integración: valida el inventario aprobado, lo copia a main, actualiza el reciclaje y hace commit. Las correcciones que el humano haya hecho al inventario se propagan al reciclaje en ese mismo paso.
+
+```bash
+# Integrar una unidad (valida + actualiza reciclaje + commit)
+python3 scripts/integrar_unidad.py 6
+```
 
 ## Cómo validar
 
 1. `python3 scripts/regenerar_reciclaje_mapa.py` → sin errores.
-2. `python3 scripts/regenerar_reciclaje_vocabulario.py` → sin errores.
-3. `python3 diagrama.py` → `http://localhost:8080` → vista RECICLAJE → revisar timeline.
+2. `python3 diagrama.py` → `http://localhost:8080` → vista RECICLAJE → revisar timeline.
 
 ---
 

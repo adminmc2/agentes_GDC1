@@ -96,9 +96,11 @@ Para cada contenido en cada unidad:
 
 ## 4. Lógica del script `regenerar_reciclaje_vocabulario.py`
 
-El script lee los inventarios y genera hilos `nivel_analisis: "auto"` por cada `campo_semantico` único.
+El script lee los inventarios aprobados en main y genera hilos `nivel_analisis: "auto"` por cada `campo_semantico` único.
 
-Ver código en `scripts/regenerar_reciclaje_vocabulario.py` — la lógica es: primer aparición → `introduce`, siguientes → `amplia` (si principal/recurrente) o `aplica` (si solo comprensión).
+**No se invoca manualmente.** Lo encadena `scripts/integrar_unidad.py` al integrar una unidad. El reciclaje refleja siempre el estado aprobado: si el humano corrigió el inventario antes de la integración, esas correcciones se propagan aquí.
+
+Lógica: primer aparición → `introduce`, siguientes → `amplia` (si principal/recurrente) o `aplica` (si solo comprensión). Ver código en `scripts/regenerar_reciclaje_vocabulario.py`.
 
 ---
 
