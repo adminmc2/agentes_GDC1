@@ -1,6 +1,6 @@
 {
   "curso": "nc1",
-  "actualizado": "2026-05-10",
+  "actualizado": "2026-05-11",
   "_nota": "Modelo de hilos. Tipos (4): vocabulario, tiempos_y_verbos, contenido_gramatical, estrategia. Hilos de tiempos_y_verbos: cada hilo es un tiempo verbal con usos[]; cada uso tiene tipos_verbo[]; cada tipo tiene verbos[] con formas_trabajadas. Cada tipo termina con incoherencias[] (sección al final del bloque en el dashboard).",
   "_acciones_validas": [
     "introduce",
