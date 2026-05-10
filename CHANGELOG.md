@@ -5,6 +5,12 @@
 
 ---
 
+## [v10.102 — 2026-05-10] — Integración U7 a main (46 actividades, 4 cuadros, 0/0)
+
+Integración limpia de U7 desde worktree `extract/U7` vía `integrar_unidad.py`. Reciclaje actualizado: 171 hilos (92 mapa + 79 auto). Sin desviaciones del flujo automatizado.
+
+---
+
 ## [v10.101 — 2026-05-10] — Refuerzo del checklist de cierre del extractor (prompt.md)
 
 Tras auditar los tres fixes del ejecutor 2 en U6 (ejemplo duplicado en respuestas + ítem inventado), análisis: las reglas canónicas existen y son suficientes (§1.6 y §5.7), pero son fallos invisibles al validador estructural. La fricción está en el cierre — el ejecutor no estaba comprobándolos antes de dar el JSON por bueno.
