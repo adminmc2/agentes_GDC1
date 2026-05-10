@@ -2541,6 +2541,156 @@
       ]
     },
     {
+      "id": "hilo-voc-cuerpo-humano-cuerpo",
+      "titulo": "Cuerpo humano (cuerpo)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 10 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-cuerpo-humano-cabeza",
+      "titulo": "Cuerpo humano (cabeza)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 9 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-adjetivos-descriptivos-fisico",
+      "titulo": "Adjetivos descriptivos (físico)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 17 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-adjetivos-descriptivos-caracter",
+      "titulo": "Adjetivos descriptivos (carácter)",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 9 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-verbos-doler-y-gustar",
+      "titulo": "Verbos doler y gustar",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 2 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-adverbios-de-cantidad",
+      "titulo": "Adverbios de cantidad",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 5 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-texto-practica-del-surf",
+      "titulo": "Texto Práctica del surf",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 6 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-texto-la-pandilla-de-marta",
+      "titulo": "Texto La pandilla de Marta",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 5 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-texto-la-semana-azul",
+      "titulo": "Texto La semana azul",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 6 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-abreviaturas-del-diccionario",
+      "titulo": "Abreviaturas del diccionario",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 7 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
       "id": "hilo-ropa",
       "titulo": "Ropa",
       "tipo": "vocabulario",

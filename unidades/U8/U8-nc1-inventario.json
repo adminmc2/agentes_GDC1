@@ -1,0 +1,1253 @@
+{
+  "unidad": 8,
+  "curso": "nc1",
+  "titulo": "Descripciones",
+  "paginas_libro": "82-91",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U8/fuente/U8-nc1.pdf",
+    "version_extraccion": "2026-05-10"
+  },
+  "contenidos_indice": {
+    "vocabulario": "El cuerpo humano. Práctica del surf",
+    "gramatica": "Verbo doler. Verbos doler y gustar. Adverbios de cantidad. Muy, mucho/-a/-os/-as. Abreviaturas de los diccionarios",
+    "comunicacion": "Descripción de personas. Expresar identidad. El sonido /k/",
+    "destrezas": "La pandilla de Marta",
+    "cultura": "La semana azul"
+  },
+  "vocabulario_consolidado": {
+    "principal": {
+      "_descripcion": "Vocabulario declarado en el índice de la unidad y trabajado en la sección Vocabulario.",
+      "Cuerpo humano (cuerpo)": ["cabeza", "cuello", "pecho", "mano", "dedos", "pie", "pierna", "estómago", "espalda", "brazo"],
+      "Cuerpo humano (cabeza)": ["pelo", "ojo", "oreja", "nariz", "dientes", "muelas", "labios", "boca", "cara"],
+      "Adjetivos descriptivos (físico)": ["alto/-a", "bajo/-a", "guapo/-a", "feo/-a", "delgado/-a", "gordo/-a", "joven", "mayor", "moreno/-a", "rubio/-a", "calvo", "castaño/-a", "rizado/-a", "liso/-a", "ondulado/-a", "pelirrojo/-a", "canoso/-a"],
+      "Adjetivos descriptivos (carácter)": ["simpático/-a", "antipático/-a", "divertido/-a", "aburrido/-a", "trabajador(a)", "inteligente", "sociable", "cariñoso/-a", "serio/-a"]
+    },
+    "recurrente": {
+      "_descripcion": "Vocabulario que aparece en varias secciones de la unidad.",
+      "Verbos doler y gustar": ["doler", "gustar"],
+      "Adverbios de cantidad": ["mucho", "bastante", "un poco", "nada", "muy"]
+    },
+    "comprension": {
+      "_descripcion": "Léxico que aparece en los textos de la unidad y afecta la comprensión, aunque no se trabaje explícitamente.",
+      "Texto Práctica del surf": ["surfista", "tabla", "ola", "correa", "Cantábrico", "deslizarse"],
+      "Texto La pandilla de Marta": ["pandilla", "liso", "pecas", "barba", "bigote"],
+      "Texto La semana azul": ["piragüismo", "senderismo", "náutico", "estancia", "monitor", "convivencia"],
+      "Abreviaturas del diccionario": ["adj.", "pron.", "s.m.", "s.f.", "v.", "adv.", "prep."]
+    }
+  },
+  "secciones": {
+    "vocabulario":  { "paginas": [82, 83], "actividades_ids": ["U8-p82-act01", "U8-p82-act02", "U8-p82-act03", "U8-p83-act04", "U8-p83-act05", "U8-p83-act06", "U8-p83-act07", "U8-p83-act08"] },
+    "gramatica":    { "paginas": [84, 85], "actividades_ids": ["U8-p84-act01", "U8-p84-act02", "U8-p84-act03", "U8-p84-act04", "U8-p85-act05", "U8-p85-act06", "U8-p85-act07", "U8-p85-act08"] },
+    "comunicacion": { "paginas": [86, 87], "actividades_ids": ["U8-p86-act01", "U8-p86-act02", "U8-p86-act03", "U8-p86-act04", "U8-p87-act05", "U8-p87-act06", "U8-p87-act07", "U8-p87-act08", "U8-p87-act09", "U8-p87-act10", "U8-p87-act11", "U8-p87-act12"] },
+    "destrezas":    { "paginas": [88, 89], "actividades_ids": ["U8-p88-act01", "U8-p88-act02", "U8-p88-act03", "U8-p88-act04", "U8-p88-act05", "U8-p89-act06", "U8-p89-act07", "U8-p89-act08", "U8-p89-act09"] },
+    "cultura":      { "paginas": [90], "actividades_ids": ["U8-p90-act01", "U8-p90-act02"] },
+    "evaluacion":   { "paginas": [91], "actividades_ids": ["U8-p91-act01", "U8-p91-act02", "U8-p91-act03", "U8-p91-act04", "U8-p91-act05", "U8-p91-act06", "U8-p91-act07"] },
+    "reflexion":    { "paginas": [], "actividades_ids": [] }
+  },
+  "autoevaluacion": {
+    "pagina": 91,
+    "instruccion_original": "Mis resultados en esta unidad son:",
+    "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
+    "emoticonos": true
+  },
+  "paginas_detalle": [
+    {
+      "pagina": 82,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U8-p82-act01",
+          "numero": 1,
+          "tipo": "relaciona",
+          "destreza": ["comprension_auditiva", "comprension_lectora", "expresion_oral"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y repite. A continuación, relaciona las palabras con las partes del cuerpo de Ana.",
+          "contenido_linguistico": ["Cuerpo humano"],
+          "campo_semantico": "Cuerpo humano",
+          "audio": { "presente": true, "pista": 83 },
+          "imagen": { "presente": true, "descripcion": "Figura de Ana (chica) con 10 flechas numeradas del 1 al 10 señalando partes del cuerpo." },
+          "video": { "presente": false },
+          "respuestas": ["1 → cabeza", "2 → cuello", "3 → pecho", "4 → mano", "5 → dedos", "6 → pie", "7 → pierna", "8 → estómago", "9 → espalda", "10 → brazo"],
+          "datos": {
+            "palabras_recuadro": ["cabeza", "brazo", "pecho", "mano", "estómago", "dedos", "pierna", "pie", "cuello", "espalda"]
+          }
+        },
+        {
+          "id": "U8-p82-act02",
+          "numero": 2,
+          "tipo": "relaciona",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Relaciona las siguientes palabras con las distintas partes de la cabeza de Andrés. Después, escucha y comprueba.",
+          "contenido_linguistico": ["Cuerpo humano: cabeza"],
+          "campo_semantico": "Cuerpo humano",
+          "audio": { "presente": true, "pista": 84 },
+          "imagen": { "presente": true, "descripcion": "Cabeza de Andrés (chico) con 9 flechas numeradas del 1 al 9 señalando partes de la cabeza." },
+          "video": { "presente": false },
+          "respuestas": ["1 → pelo", "2 → ojo", "3 → oreja", "4 → nariz", "5 → dientes", "6 → muelas", "7 → labios", "8 → boca", "9 → cara"],
+          "datos": {
+            "palabras_recuadro": ["oreja", "dientes", "cara", "pelo", "nariz", "labios", "ojo", "muelas", "boca"]
+          }
+        },
+        {
+          "id": "U8-p82-act03",
+          "numero": 3,
+          "tipo": "verdadero_falso",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Mira las imágenes de los ejercicios 1 y 2 y señala si las siguientes afirmaciones son verdaderas (V) o falsas (F).",
+          "contenido_linguistico": ["Cuerpo humano", "Descripción física"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. V", "2. F", "3. F", "4. F", "5. V", "6. V"],
+          "datos": {
+            "items_libro": [
+              "1 Ana tiene el pelo rizado.",
+              "2 Ana tiene los ojos azules.",
+              "3 Ana tiene los brazos muy cortos.",
+              "4 Andrés tiene el pelo largo y los ojos azules.",
+              "5 Andrés tiene la boca grande.",
+              "6 Andrés tiene el pelo corto y la nariz pequeña."
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Recuerda",
+          "contenido": {
+            "tipo": "tabla_concordancia",
+            "tabla": {
+              "encabezados": ["", "masculino", "femenino"],
+              "filas": [
+                ["singular", "pelo negro", "boca pequeña"],
+                ["plural", "ojos negros", "orejas pequeñas"]
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 83,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U8-p83-act04",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Completa las siguientes frases con partes del cuerpo.",
+          "contenido_linguistico": ["Cuerpo humano"],
+          "campo_semantico": "Cuerpo humano",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. pie", "2. dedos", "3. dientes", "4. orejas", "5. ojos", "6. mano", "7. dedos", "8. estómago"],
+          "datos": {
+            "items_libro": [
+              "1 Al final de tu pierna está el _____.",
+              "2 Al final de tu pie están los _____.",
+              "3 Los adultos, normalmente, tienen treinta y dos _____.",
+              "4 Utilizas tus _____ para oír.",
+              "5 Utilizas tus _____ para ver.",
+              "6 Al final de tu brazo está la _____.",
+              "7 Tu mano tiene cinco _____.",
+              "8 Cuando comes, la comida va a tu _____."
+            ]
+          }
+        },
+        {
+          "id": "U8-p83-act05",
+          "numero": 5,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Lee la descripción y dibuja el monstruo.",
+          "contenido_linguistico": ["Cuerpo humano", "Descripción física"],
+          "campo_semantico": "Cuerpo humano",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "texto_completo": "El monstruo tiene una cabeza enorme con el pelo largo. Tiene dos orejas pequeñas, un ojo grande y rojo y dos narices. Su boca es grande y tiene tres dientes y cuatro muelas y unos labios verdes.\n\nTiene dos brazos largos con las manos muy pequeñas. Tiene tres piernas largas con sus tres pies. Cada pie tiene dos dedos."
+          }
+        },
+        {
+          "id": "U8-p83-act06",
+          "numero": 6,
+          "tipo": "lee_y_escucha",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee y escucha el siguiente texto.",
+          "contenido_linguistico": ["Comprensión lectora/auditiva: Práctica del surf"],
+          "audio": { "presente": true, "pista": 85 },
+          "imagen": { "presente": true, "descripcion": "Fotografía de un surfista sobre una ola." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "texto_completo": "El mar Cantábrico, en el norte de España, es un lugar ideal para la práctica del surf por la altura de sus olas y sus playas magníficas.\n\nLos surfistas utilizan la energía de las olas para deslizarse sobre una tabla.\n\nLas tablas de surf miden unos dos metros y pesan alrededor de tres kilos. El surfista lleva el pie atado a la tabla con una correa. Así, si se cae, no pierde la tabla."
+          }
+        },
+        {
+          "id": "U8-p83-act07",
+          "numero": 7,
+          "tipo": "verdadero_falso",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "¿Verdadero (V) o falso (F)?",
+          "contenido_linguistico": ["Comprensión lectora: Práctica del surf"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. V", "2. V", "3. F", "4. F"],
+          "datos": {
+            "items_libro": [
+              "1 El mar Cantábrico es bueno para practicar surf.",
+              "2 El norte de España tiene playas muy bonitas.",
+              "3 Las olas del Cantábrico son bajas.",
+              "4 El surfista lleva una mano atada a la tabla."
+            ]
+          }
+        },
+        {
+          "id": "U8-p83-act08",
+          "numero": 8,
+          "tipo": "relaciona",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Mira los dibujos de los surfistas. Observa las siguientes descripciones y relaciónalas con cada uno de ellos.",
+          "contenido_linguistico": ["Descripción física"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Seis dibujos de surfistas etiquetados a, b, c, d, e, f." },
+          "video": { "presente": false },
+          "respuestas": ["1 → c", "2 → a", "3 → b", "4 → d", "5 → e", "6 → f"],
+          "datos": {
+            "items_libro": [
+              "1 Tiene una tabla muy pequeña y sus orejas son muy grandes.",
+              "2 Tiene el pelo corto y rubio. Sus gafas de sol son amarillas.",
+              "3 Tiene el pelo largo y castaño y el bañador verde.",
+              "4 Tiene una tabla muy larga y una nariz grande.",
+              "5 Tiene el pelo rubio y largo y sus gafas de sol son negras.",
+              "6 Tiene el pelo negro y rizado y no lleva gafas de sol."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 84,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U8-p84-act01",
+          "numero": 1,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "¿Qué les duele? Haz frases como en el ejemplo.",
+          "contenido_linguistico": ["Verbo doler", "Pronombres de objeto indirecto"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Imágenes de personas (Carlos, Mónica, Paco, Pilar) señalando distintas partes del cuerpo." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. A Carlos le duele la espalda.",
+            "2. A Mónica le duele la rodilla.",
+            "3. A Paco le duele el brazo.",
+            "4. A Pilar le duelen las muelas."
+          ],
+          "datos": {
+            "ejemplo_libro": "Juan / la cabeza → A Juan le duele la cabeza.",
+            "items_libro": [
+              "1 Carlos / la espalda",
+              "2 Mónica / la rodilla",
+              "3 Paco / el brazo",
+              "4 Pilar / las muelas"
+            ]
+          }
+        },
+        {
+          "id": "U8-p84-act02",
+          "numero": 2,
+          "tipo": "seleccion_multiple",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Señala el pronombre correcto.",
+          "contenido_linguistico": ["Verbos doler y gustar", "Pronombres de objeto indirecto"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. le", "2. le", "3. le", "4. os"],
+          "datos": {
+            "ejemplo_libro": "Sergio, ¿te / me gusta mi móvil nuevo?",
+            "items_libro": [
+              "1 A Lucía no le / les gustan nada las series de televisión.",
+              "2 A mi madre no nos / le gustan mucho los animales.",
+              "3 A Rocío le / se gusta mucho mi patinete nuevo.",
+              "4 Niños, ¿os / nos gustan las patatas fritas?"
+            ]
+          }
+        },
+        {
+          "id": "U8-p84-act03",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa los huecos con el pronombre correspondiente.",
+          "contenido_linguistico": ["Verbo doler", "Pronombres de objeto indirecto"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. le", "2. te", "3. os", "4. le", "5. le"],
+          "datos": {
+            "ejemplo_libro": "Al profe de mates hoy le duele bastante la cabeza.",
+            "items_libro": [
+              "1 A Rocío ya no _____ duelen nada las rodillas.",
+              "2 ¿A ti _____ duele alguna vez la espalda?",
+              "3 ¿A vosotros no _____ duelen los brazos?",
+              "4 Julia dice que _____ duele la pierna derecha.",
+              "5 Clara dice que a ella no _____ duele nada."
+            ]
+          }
+        },
+        {
+          "id": "U8-p84-act04",
+          "numero": 4,
+          "tipo": "ordena",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Ordena las palabras para formar frases correctas.",
+          "contenido_linguistico": ["Verbos doler y gustar", "Adverbios de cantidad"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. A Jorge le gustan mucho los videojuegos.",
+            "2. A Rosalía no le gusta mucho la película.",
+            "3. A mi hermana no le gustan nada los espaguetis.",
+            "4. A Manu le duelen mucho las piernas.",
+            "5. A Rocío le duele un poco el estómago.",
+            "6. A nosotras no nos duele nada.",
+            "7. ¿A ti te duele mucho el brazo?",
+            "8. A mí me gustan mucho las series de televisión.",
+            "9. A ellas no les gustan nada los bombones.",
+            "10. A los españoles les gusta mucho el fútbol.",
+            "11. A mi padre le duele un poco la cabeza."
+          ],
+          "datos": {
+            "ejemplo_libro": "el / me / bastante / fútbol / gusta / a mí → A mí me gusta bastante el fútbol.",
+            "items_libro": [
+              "1 videojuegos / gustan / los / mucho / Jorge / le / a",
+              "2 no / la / mucho / película / gusta / a / le / Rosalía",
+              "3 espaguetis / no / nada / a / los / hermana / gustan / le / mi",
+              "4 mucho / duelen / a / piernas / le / Manu / las",
+              "5 duele / un / estómago / el / poco / a / le / Rocío",
+              "6 nada / a / duele / nosotras / no / nos",
+              "7 ¿brazo / el / duele / ti / a / mucho / te?",
+              "8 televisión / series / gustan / de / me / mucho / mí / a / las",
+              "9 nada / los / gustan / ellas / a / bombones / no / les",
+              "10 españoles / fútbol / gusta / el / los / mucho / a / les",
+              "11 padre / duele / la / un / mi / a / le / cabeza / poco"
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Verbo doler",
+          "contenido": {
+            "tipo": "tabla_pronombres",
+            "texto_intro": "El verbo doler funciona igual que el verbo gustar.",
+            "filas": [
+              "(a mí) me → duele el estómago (singular)",
+              "(a ti) te",
+              "(a él / a ella / a Ud.) le → duelen las rodillas (plural)",
+              "(a nosotros/-as) nos",
+              "(a vosotros/-as) os",
+              "(a ellos / a ellas / a Uds.) les"
+            ],
+            "ejemplos": [
+              "● Hola, ¿qué tal?  ■ No muy bien.",
+              "● ¿Qué te pasa?  ■ Me duele mucho la cabeza."
+            ]
+          }
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Adverbios de cantidad",
+          "contenido": {
+            "tipo": "lista_reglas",
+            "reglas": ["mucho — bastante — un poco / no mucho — nada"],
+            "ejemplos": [
+              "Me duele mucho el estómago.",
+              "Me duele bastante la espalda.",
+              "A mí me duele un poco la cabeza / No me duele mucho la cabeza.",
+              "¿Las piernas? No, no me duelen nada."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 85,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U8-p85-act05",
+          "numero": 5,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con muy / mucho/-a/-os/-as.",
+          "contenido_linguistico": ["Muy / mucho/-a/-os/-as"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. mucho", "2. muy", "3. mucha", "4. muy", "5. mucha",
+            "6. Muchos", "7. muy", "8. muchas", "9. mucho", "10. muy",
+            "11. muy", "12. Muchos", "13. mucho", "14. muy"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Me gusta _____ la fruta.",
+              "2 Este ejercicio me parece _____ difícil.",
+              "3 Mi gato bebe _____ leche.",
+              "4 El abuelo es _____ mayor.",
+              "5 Su moto gasta _____ gasolina.",
+              "6 A _____ niños les gusta el fútbol.",
+              "7 Siempre llegáis _____ tarde.",
+              "8 Hay _____ sillas rotas.",
+              "9 ¿Te cansas _____ cuando corres?",
+              "10 Yo tengo un móvil _____ nuevo.",
+              "11 Este sofá no es _____ cómodo.",
+              "12 _____ españoles van de vacaciones a la playa.",
+              "13 A Óscar no le gusta _____ su trabajo.",
+              "14 Estamos _____ contentos con la profe."
+            ]
+          }
+        },
+        {
+          "id": "U8-p85-act06",
+          "numero": 6,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa con muy / mucho/-a/-os/-as.",
+          "contenido_linguistico": ["Muy / mucho/-a/-os/-as"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["[1] muchas", "[2] mucha", "[3] muy", "[4] mucho", "[5] muy", "[6] muchas"],
+          "datos": {
+            "items_libro": ["En la costa este española hay [1] playas. En verano, [2] gente se baña en ellas. Sus aguas son [3] cálidas y limpias. Durante el día, hace [4] calor. Por la noche corre una brisa [5] agradable y [6] familias salen de paseo."]
+          }
+        },
+        {
+          "id": "U8-p85-act07",
+          "numero": 7,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Observa cómo aparecen las palabras en el diccionario. ¿Sabes qué significan las abreviaturas? Escribe la palabra completa.",
+          "contenido_linguistico": ["Abreviaturas de los diccionarios"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["adj. → adjetivo", "pron. → pronombre", "s.m. → sustantivo masculino", "s.f. → sustantivo femenino", "v. → verbo", "adv. → adverbio", "prep. → preposición"],
+          "datos": {
+            "subtipo": "para_aprender",
+            "items_libro": ["adj.", "pron.", "s.m.", "s.f.", "v.", "adv.", "prep."]
+          }
+        },
+        {
+          "id": "U8-p85-act08",
+          "numero": 8,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa estas definiciones del diccionario con la abreviatura adecuada.",
+          "contenido_linguistico": ["Abreviaturas de los diccionarios"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["en → prep.", "cerca → adv.", "libro → s.m.", "mesa → s.f.", "largo/-a → adj.", "ellas → pron.", "tener → v."],
+          "datos": {
+            "subtipo": "para_aprender",
+            "items_libro": [
+              "en _____ Indica el lugar…",
+              "cerca _____ A poca distancia…",
+              "libro _____ Conjunto de hojas impresas.",
+              "mesa _____ Mueble que…",
+              "largo/-a _____ Que tiene mucha longitud.",
+              "ellas _____ Designa a las personas de las que se habla.",
+              "tener _____ Poseer."
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Muy, mucho/-a/-os/-as",
+          "contenido": {
+            "tipo": "lista_reglas",
+            "reglas": [
+              "Muy + adjetivo: Tiene el pelo muy largo. / Vive en una casa muy antigua. / Los deberes son muy difíciles.",
+              "Muy + adverbio: Llego a casa muy tarde. / La casa de mi tía está muy lejos. / Mi padre se levanta muy pronto.",
+              "Mucho/-a/-os/-as + nombre: Roberto no tiene mucho dinero. / Los niños beben mucha leche. / Tengo muchos animales. / En mi clase no hay muchas chicas.",
+              "Verbo + mucho: Veo mucho la televisión. / Me duele mucho la cabeza. / A mis amigos les gusta mucho el teatro. / Salgo mucho con mis amigos."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 86,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U8-p86-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
+          "contenido_linguistico": ["Descripción de personas", "Adjetivos descriptivos"],
+          "audio": { "presente": true, "pista": 86 },
+          "imagen": { "presente": false },
+          "video": { "presente": true },
+          "respuestas": ["[1] favorito", "[2] simpático", "[3] corto", "[4] alta", "[5] tiene", "[6] le gusta", "[7] pelo", "[8] lleva"],
+          "datos": {
+            "titulo_dialogo": "¿Quién es?",
+            "palabras_recuadro": ["favorito", "simpático", "pelo", "corto", "alta", "le gusta", "tiene", "lleva"],
+            "dialogo_completo": [
+              "JORGE: Ey, ¿jugamos a algo?",
+              "PABLO: ¿Al fútbol?",
+              "JULIA: Uf, ahora no tengo ganas de correr. ¿Jugamos a adivinar? Cada uno tiene que describir a su profesor [1] y los demás tenemos que adivinar de quién hablamos… ¡Empiezo yo! Mi profesor es muy [2]. Siempre sonríe y explica muy bien. Es alto y tiene el pelo [3] y negro. ¿Quién es?",
+              "JORGE: ¡Es Martín, el profesor de Matemáticas!",
+              "JULIA: ¡Sí, correcto! Te toca…",
+              "JORGE: Bueno, mi profesora favorita es joven, fuerte y [4]. Tiene el pelo rizado y los ojos oscuros. Es muy simpática y es muy divertida.",
+              "GRACIELA: ¿Es la profesora de Educación Física, Laura?",
+              "JORGE: ¡Sí, es ella!",
+              "GRACIELA: Ahora, yo. Mi profesor [5] barba, también lleva gafas, no es muy alto, tiene el pelo castaño. ¿Quién es?",
+              "PABLO: ¿Es Andrés? ¿El profe de Historia?",
+              "GRACIELA: ¡Exacto!",
+              "PABLO: Pues a mi profesora [6] cantar canciones en clase. Tiene el [7] largo y rubio y siempre [8] gafas. ¿Quién es?",
+              "JORGE, JULIA Y GRACIELA: ¡Ana! ¡La profe de Inglés!",
+              "PABLO: ¡Sí!"
+            ]
+          }
+        },
+        {
+          "id": "U8-p86-act02",
+          "numero": 2,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Contesta a las siguientes preguntas.",
+          "contenido_linguistico": ["Comprensión del diálogo"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. Corto y negro.",
+            "2. En la de Inglés.",
+            "3. Andrés.",
+            "4. Educación Física.",
+            "5. Ana."
+          ],
+          "datos": {
+            "preguntas": [
+              "1. ¿Cómo tiene el pelo el profesor de Matemáticas?",
+              "2. ¿En qué clase practican con canciones?",
+              "3. ¿Qué profesor tiene barba y lleva gafas?",
+              "4. ¿Qué clase tiene una profesora muy divertida?",
+              "5. ¿Quién es la profesora favorita de Pablo?"
+            ]
+          }
+        },
+        {
+          "id": "U8-p86-act03",
+          "numero": 3,
+          "tipo": "interaccion_oral",
+          "destreza": ["expresion_oral", "interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "En grupos de cuatro, preparad las descripciones para que vuestros compañeros adivinen quién es vuestro profesor favorito.",
+          "contenido_linguistico": ["Descripción de personas", "Concordancia adjetivo-nombre"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Decide a quién quieres describir.",
+              "No te olvides de describir: su aspecto físico (altura, aspecto general, pelo, ojos…) y su carácter y personalidad (simpático, divertido, seria…).",
+              "No te olvides de revisar la concordancia entre el nombre y el adjetivo: profesor simpático, profesora simpática / pelo oscuro, ojos oscuros.",
+              "Practica el diálogo con tus compañeros.",
+              "Representad el diálogo delante de la clase."
+            ]
+          }
+        },
+        {
+          "id": "U8-p86-act04",
+          "numero": 4,
+          "tipo": "relaciona",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Relaciona las siguientes palabras con su contrario.",
+          "contenido_linguistico": ["Adjetivos descriptivos: antónimos"],
+          "campo_semantico": "Adjetivos descriptivos",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1 → b (bajo/-a)",
+            "2 → d (feo/-a)",
+            "3 → a (gordo/-a)",
+            "4 → c (mayor)",
+            "5 → f (antipático/-a)",
+            "6 → h (aburrido/-a)",
+            "7 → g (rubio/-a)",
+            "8 → e (corto/-a)"
+          ],
+          "datos": {
+            "columnas_relaciona": {
+              "izquierda": ["1 alto/-a", "2 guapo/-a", "3 delgado/-a", "4 joven", "5 simpático/-a", "6 divertido/-a", "7 moreno/-a", "8 largo/-a"],
+              "derecha": ["a gordo/-a", "b bajo/-a", "c mayor", "d feo/-a", "e corto/-a", "f antipático/-a", "g rubio/-a", "h aburrido/-a"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 87,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U8-p87-act05",
+          "numero": 5,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Mira a los personajes de los dibujos y completa sus descripciones con las siguientes palabras.",
+          "contenido_linguistico": ["Descripción física", "Adjetivos descriptivos"],
+          "campo_semantico": "Adjetivos descriptivos",
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Seis personajes dibujados etiquetados: Carlos, Pedro, Ana, Inés, Juan, Rosa." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. mayor / gordo / calvo",
+            "2. grande / castaño",
+            "3. alta / ojos / pelo",
+            "4. baja / corto",
+            "5. moreno / delgado",
+            "6. rubio / simpática"
+          ],
+          "datos": {
+            "palabras_recuadro": ["alto/-a", "delgado/-a", "mayor", "corto", "castaño", "pelo", "gordo/-a", "grande", "bajo/-a", "calvo", "moreno", "rubio", "ojos"],
+            "items_libro": [
+              "1 Carlos es muy _____ y está un poco _____. Es _____, no tiene pelo.",
+              "2 Pedro tiene la nariz bastante _____ y tiene el pelo _____.",
+              "3 Ana no es muy _____, tiene los _____ azules y el _____ rizado.",
+              "4 Inés es bastante _____ y tiene el pelo _____.",
+              "5 Juan tiene el pelo _____. Es alto y _____.",
+              "6 Rosa es joven, tiene el pelo _____ y es muy _____."
+            ]
+          }
+        },
+        {
+          "id": "U8-p87-act06",
+          "numero": 6,
+          "tipo": "expresion_escrita_libre",
+          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escribe la descripción de un chico y de una chica de tu clase. Léeselas a tu compañero para que adivine quiénes son.",
+          "contenido_linguistico": ["Descripción física"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": []
+        },
+        {
+          "id": "U8-p87-act07",
+          "numero": 7,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "transversal",
+          "instruccion_original": "Escucha a David hablando de sí mismo y de su familia. Completa la tabla con los datos de la descripción.",
+          "contenido_linguistico": ["Descripción física: edad, pelo, ojos"],
+          "audio": { "presente": true, "pista": 87 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "David → 12 años / pelo moreno / ojos negros",
+            "Madre → 38 años / pelo rubio / ojos azules",
+            "Padre → 38 años / pelo moreno / ojos negros",
+            "Hermano → 7 años / pelo rubio / ojos azules"
+          ],
+          "datos": {
+            "items_libro": ["David", "Madre", "Padre", "Hermano"],
+            "columnas_tabla": ["Edad", "Pelo", "Ojos"]
+          }
+        },
+        {
+          "id": "U8-p87-act08",
+          "numero": 8,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Pregunta a tu compañero por los miembros de su familia. Copia sus respuestas y escribe una pequeña descripción sobre uno de ellos.",
+          "contenido_linguistico": ["Descripción física", "Familia"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "1. ¿Cómo se llama tu…?",
+              "2. ¿Cuántos años tiene?",
+              "3. ¿Cómo tiene el pelo?",
+              "4. ¿Cómo tiene los ojos?",
+              "5. ¿Es alto o bajo, delgado o gordo…?"
+            ]
+          }
+        },
+        {
+          "id": "U8-p87-act09",
+          "numero": 9,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": ["El sonido /k/"],
+          "audio": { "presente": true, "pista": 88 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "palabras_modelo": ["cuatro", "casa", "comer", "queso", "quiero"]
+          }
+        },
+        {
+          "id": "U8-p87-act10",
+          "numero": 10,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "fonetica",
+          "instruccion_original": "¿Qué sonido se repite en todas las palabras?",
+          "contenido_linguistico": ["El sonido /k/"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["El sonido /k/."],
+          "datos": {
+            "items_libro": ["cuatro", "casa", "comer", "queso", "quiero"],
+            "reglas_foneticas": ["El sonido /k/ se escribe qu delante de e, i y se escribe c delante de a, o, u."]
+          }
+        },
+        {
+          "id": "U8-p87-act11",
+          "numero": 11,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "fonetica",
+          "instruccion_original": "Completa con qu / c.",
+          "contenido_linguistico": ["El sonido /k/: ortografía qu/c"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. c (cuando)", "2. qu (pequeño)", "3. c (poco)", "4. qu (química)", "5. qu (quinientos)", "6. c (simpática)", "7. c (Ecuador)", "8. c (calle)"],
+          "datos": {
+            "items_libro": [
+              "1 ___uando",
+              "2 pe___eño",
+              "3 po___o",
+              "4 ___ímica",
+              "5 ___inientos",
+              "6 simpáti___a",
+              "7 E___uador",
+              "8 ___alle"
+            ]
+          }
+        },
+        {
+          "id": "U8-p87-act12",
+          "numero": 12,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "fonetica",
+          "instruccion_original": "Ahora, escucha y repite.",
+          "contenido_linguistico": ["El sonido /k/"],
+          "audio": { "presente": true, "pista": 89 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "palabras_modelo": ["Carlos", "Pedro", "Ana", "Inés", "Juan", "Rosa"]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Muy / Bastante / Un poco",
+          "contenido": {
+            "tipo": "escala_gradacion",
+            "escala": ["Muy ★★★★", "Bastante ★★★", "Un poco ★"],
+            "ejemplos": [
+              "Tiene una nariz muy grande.",
+              "Tiene una nariz bastante grande.",
+              "Tiene una nariz un poco grande."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 88,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U8-p88-act01",
+          "numero": 1,
+          "tipo": "responder_preguntas_abiertas",
+          "destreza": ["comprension_lectora", "expresion_oral"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Mira esta clase y observa los adjetivos para describir la personalidad de algunos alumnos. ¿Cómo eres tú?",
+          "contenido_linguistico": ["Adjetivos de carácter y personalidad"],
+          "campo_semantico": "Adjetivos descriptivos",
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Ilustración de una clase con etiquetas de adjetivos de personalidad superpuestas sobre los alumnos: divertido, cariñosa, antipática, simpático, sociable, inteligente, trabajador, serio." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "palabras_recuadro": ["trabajador(a)", "inteligente", "simpático/a", "sociable", "cariñoso/a", "serio/-a", "antipático/-a", "divertido/-a"]
+          }
+        },
+        {
+          "id": "U8-p88-act02",
+          "numero": 2,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Comenta con tu compañero si los adjetivos de carácter anteriores son positivos o negativos.",
+          "contenido_linguistico": ["Adjetivos de carácter y personalidad"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "Para mí, ser trabajador es positivo."
+          }
+        },
+        {
+          "id": "U8-p88-act03",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Marta escribe a Pierre, su amigo francés. Lee el correo electrónico y escribe el nombre de los amigos de Marta en la foto.",
+          "contenido_linguistico": ["Comprensión lectora: descripción de personas"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Foto grupal de 5 jóvenes numerados del 1 al 5." },
+          "video": { "presente": false },
+          "respuestas": ["1. Ángela", "2. Carla", "3. Juan", "4. Marta", "5. Luis"],
+          "datos": {
+            "texto_completo": "Hola, Pierre:\n\nHoy te voy a presentar a los amigos de mi pandilla y por eso te mando esta foto. Luis es el más alto y tiene el pelo muy corto. Es muy trabajador. Carla es la chica con el pelo más largo y liso. Yo soy morena, tengo los ojos marrones y soy la más baja. Ángela es la chica más alta. Es muy inteligente y simpática y tiene el pelo rubio. Por último, Juan es rubio y con los ojos azules. Tiene el pelo más largo que Luis. Es muy cariñoso, pero a veces tiene problemas con los profesores. Bueno, estos son mis mejores amigos. Salimos juntos todos los fines de semana. A todos nos gusta ir al cine, hacer deporte y la música moderna.\n\n¿Por qué no me cuentas cómo son tus amigos?\n\nEscríbeme pronto.\n\nUn saludo,\nMarta"
+          }
+        },
+        {
+          "id": "U8-p88-act04",
+          "numero": 4,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Contesta a las preguntas.",
+          "contenido_linguistico": ["Comprensión lectora: descripción de personas"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. Luis.",
+            "2. Ángela.",
+            "3. Juan.",
+            "4. Salen juntos todos los fines de semana.",
+            "5. Ir al cine, hacer deporte y la música moderna."
+          ],
+          "datos": {
+            "preguntas": [
+              "1. ¿Cuál de los amigos de Marta es muy trabajador?",
+              "2. ¿Y quién es muy inteligente?",
+              "3. ¿Quién tiene a veces problemas con los profesores?",
+              "4. ¿Qué hace Marta con sus amigos los fines de semana?",
+              "5. ¿Cuáles son las actividades que les gusta hacer juntos?"
+            ]
+          }
+        },
+        {
+          "id": "U8-p88-act05",
+          "numero": 5,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Completa la tabla con los datos que encuentres en el texto.",
+          "contenido_linguistico": ["Descripción física"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "Luis → Estatura: alto / Pelo: corto",
+            "Carla → Pelo: largo y liso",
+            "Marta → Estatura: baja / Pelo: morena / Ojos: marrones",
+            "Ángela → Estatura: alta / Pelo: rubio",
+            "Juan → Pelo: rubio / Ojos: azules"
+          ],
+          "datos": {
+            "items_libro": ["Luis", "Carla", "Marta", "Ángela", "Juan"],
+            "columnas_tabla": ["Estatura", "Pelo", "Ojos"]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 89,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U8-p89-act06",
+          "numero": 6,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "transversal",
+          "instruccion_original": "Escucha a Marta describiendo a su nueva profesora de gimnasia. Completa con los datos correctos.",
+          "contenido_linguistico": ["Descripción física"],
+          "audio": { "presente": true, "pista": 90 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "Nombre: Ana",
+            "Edad: unos 40 años",
+            "Estatura: bastante alta",
+            "Pelo: moreno, largo y liso",
+            "Nariz: un poco grande",
+            "¿Le gusta a Marta? sí",
+            "¿Le gusta a Juan? no le gusta nada"
+          ],
+          "datos": {
+            "items_libro": ["Nombre:", "Edad:", "Estatura:", "Pelo:", "Nariz:", "¿Le gusta a Marta?", "¿Le gusta a Juan?"]
+          }
+        },
+        {
+          "id": "U8-p89-act07",
+          "numero": 7,
+          "tipo": "interaccion_oral",
+          "destreza": ["expresion_oral", "interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "¿Conoces a estos personajes famosos? Si no es así, pide ayuda a tu profesor y busca información sobre ellos. Después, en parejas, A describe a uno de estos famosos y B adivina quién es.",
+          "contenido_linguistico": ["Descripción física", "Personajes famosos"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "5 fotografías de personajes famosos: Aitana Bonmatí, Rosalía, Carlos Alcaraz, Shakira, Pedro Pascal." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "personajes": ["Aitana Bonmatí", "Rosalía", "Carlos Alcaraz", "Shakira", "Pedro Pascal"],
+            "ejemplo_libro": "Es una cantante muy famosa. Tiene el pelo largo y negro. ¿Quién es?"
+          }
+        },
+        {
+          "id": "U8-p89-act08",
+          "numero": 8,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "En parejas, tenéis que escribir una descripción de un compañero de clase.",
+          "contenido_linguistico": ["Descripción física y de carácter"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Usad las palabras de la tabla.",
+              "Además de hablar sobre su aspecto físico, podéis añadir algún dato sobre su personalidad.",
+              "Después, presentad la descripción de vuestro compañero al resto de la clase, sin decir su nombre.",
+              "La clase tiene que descubrir quién es.",
+              "Los compañeros pueden haceros preguntas."
+            ],
+            "ejemplo_libro": "Es bastante alto / alta, tiene el pelo rizado y lleva gafas.",
+            "vocabulario_tabla": {
+              "Aspecto general": ["alto/-a", "bajo/-a", "guapo/-a", "gordo/-a", "delgado/-a", "joven", "mayor"],
+              "Tipo de pelo": ["largo", "corto", "rizado", "liso", "ondulado"],
+              "Color de pelo": ["moreno", "rubio", "pelirrojo", "canoso", "blanco"],
+              "Ojos": ["grandes", "pequeños", "azules", "negros", "verdes", "marrones", "grises"],
+              "Otros detalles": ["barba", "bigote", "gafas", "pecas"],
+              "Personalidad": ["simpático/-a", "divertido/-a", "serio/-a", "antipático/-a", "trabajador(a)", "inteligente", "cariñoso/-a"]
+            }
+          }
+        },
+        {
+          "id": "U8-p89-act09",
+          "numero": 9,
+          "tipo": "expresion_escrita_libre",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escribe un correo electrónico a un amigo o a una amiga con la que te escribes para practicar tu español. Cuéntale quiénes son tus mejores amigos.",
+          "contenido_linguistico": ["Descripción física y de carácter", "Correo electrónico"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Primero saluda: ¡Hola!",
+              "Escribe una descripción corta de tus amigos: ¿Cómo se llaman? / ¿Qué aspecto físico tienen? — Lola tiene … años. Es alta / baja…, tiene el pelo…, los ojos…",
+              "Utiliza correctamente los verbos que necesitas para las descripciones: ser, tener, llevar…",
+              "Despídete."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 90,
+      "seccion": "cultura",
+      "actividades": [
+        {
+          "id": "U8-p90-act01",
+          "numero": 1,
+          "tipo": "verdadero_falso",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee el texto \"La semana azul\" y di si las siguientes afirmaciones son verdaderas (V) o falsas (F). Corrige las falsas.",
+          "contenido_linguistico": ["Comprensión lectora: La semana azul"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Fotografía de un grupo de jóvenes alrededor de una fogata." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. F → Los padres no pueden participar en la semana azul: solo grupos escolares de primaria y secundaria, profesores y alumnos.",
+            "2. V",
+            "3. V",
+            "4. F → Algunas actividades de la semana azul son en el mar; también se realizan actividades fuera del agua como el senderismo y rutas en bicicleta.",
+            "5. F → No todas las actividades son físicas; por las mañanas tienen clases teóricas sobre distintos deportes en el mar con monitores especializados."
+          ],
+          "datos": {
+            "texto_completo": "Las semanas azules son semanas activas junto al mar para grupos escolares de primaria y secundaria e incluyen todo lo necesario para hacer de este viaje una gran experiencia para profesores y alumnos.\n\nLos deportes en el mar y en la naturaleza son unas actividades extraescolares muy enriquecedoras. Pasar unos días aprendiendo a navegar a vela y en piragua o practicando otros deportes náuticos como surf y pádel surf es una oportunidad única para entrar en contacto con el mar y aprender los valores medioambientales. También se realizan actividades fuera del agua como senderismo y rutas en bicicleta.\n\nPor las mañanas, antes de empezar las actividades, los participantes tienen clases teóricas sobre distintos deportes en el mar con monitores especializados.\n\nAdemás, estas estancias de cinco días y cuatro noches promueven una intensa convivencia en contacto con la naturaleza. Las semanas azules pueden hacerse en los meses de abril, mayo y junio, pero el calendario varía en función de los destinos.",
+            "items_libro": [
+              "1 Los padres también pueden participar en la semana azul.",
+              "2 En la semana azul podemos practicar piragüismo.",
+              "3 Los participantes en la semana azul aprenden a valorar el medioambiente.",
+              "4 Todas las actividades de la semana azul son en el mar.",
+              "5 Todas las actividades son físicas."
+            ]
+          }
+        },
+        {
+          "id": "U8-p90-act02",
+          "numero": 2,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "cultura",
+          "instruccion_original": "Intercambia información con tu compañero.",
+          "contenido_linguistico": ["Actividades extraescolares", "Semanas activas"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "¿Se organizan «semanas azules» o similares en tu centro de estudios? ¿Cómo son?",
+              "Diseña con tu compañero vuestra semana azul ideal."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 91,
+      "seccion": "evaluacion",
+      "actividades": [
+        {
+          "id": "U8-p91-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con la forma correcta del verbo correspondiente y el pronombre adecuado.",
+          "contenido_linguistico": ["Verbos doler y gustar", "Pronombres de objeto indirecto"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. no me gustan",
+            "2. Os gusta",
+            "3. les duele",
+            "4. te gusta",
+            "5. nos gustan",
+            "6. le gusta",
+            "7. os gusta",
+            "8. te duele"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 A mí no (gustar) _____ los juegos de cartas.",
+              "2 ¿(A vosotros, gustar) _____ el nuevo profesor?",
+              "3 A mis abuelos (doler) _____ la espalda.",
+              "4 ¿A ti (gustar) _____ la comida china?",
+              "5 Estas fiestas (a nosotros, gustar) _____ bastante.",
+              "6 A Clara (gustar) _____ la gimnasia rítmica.",
+              "7 ¿(A vosotros, gustar) _____ el tenis?",
+              "8 ¿(A ti, doler) _____ la cabeza?"
+            ]
+          }
+        },
+        {
+          "id": "U8-p91-act02",
+          "numero": 2,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Construye frases correctas, como en el ejemplo.",
+          "contenido_linguistico": ["Verbos doler y gustar", "Pronombres de objeto indirecto"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. A mí me gustan los chicos simpáticos.",
+            "2. ¿A ustedes les gusta la paella?",
+            "3. A Ana le duele un poco el estómago.",
+            "4. A ellos no les gusta el fútbol.",
+            "5. Este juego nos gusta bastante.",
+            "6. Hoy no me duelen las muelas.",
+            "7. ¿Te gusta el surf?",
+            "8. A mi padre le duele la espalda.",
+            "9. A mis hermanos no les gusta la comida del colegio."
+          ],
+          "datos": {
+            "ejemplo_libro": "A Pedro / no gustar / el baloncesto. → A Pedro no le gusta el baloncesto.",
+            "items_libro": [
+              "1 A mí / gustar / los chicos simpáticos.",
+              "2 ¿A ustedes / gustar / la paella?",
+              "3 A Ana / doler / un poco el estómago.",
+              "4 A ellos / no gustar / el fútbol.",
+              "5 Este juego / (a nosotros) gustar / bastante.",
+              "6 Hoy / (a mí) no doler / las muelas.",
+              "7 ¿(A ti) gustar / el surf?",
+              "8 A mi padre / doler / la espalda.",
+              "9 A mis hermanos / no gustar / la comida del colegio."
+            ]
+          }
+        },
+        {
+          "id": "U8-p91-act03",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las siguientes frases con muy / mucho/-a/-os/-as.",
+          "contenido_linguistico": ["Muy / mucho/-a/-os/-as"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. muy", "2. mucho", "3. muy", "4. mucho",
+            "5. mucha", "6. muchos", "7. mucho", "8. muy",
+            "9. mucho", "10. muchos"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Tiene el pelo _____ largo.",
+              "2 Mis hermanos ven _____ la televisión.",
+              "3 Llego al colegio _____ temprano.",
+              "4 ¿Vais _____ al cine?",
+              "5 Hay _____ gente en esta playa.",
+              "6 Los niños tienen _____ juguetes.",
+              "7 Mi hermano come _____.",
+              "8 La comida de mi madre está _____ buena.",
+              "9 Roberto practica _____ deporte.",
+              "10 Esta semana tenemos _____ exámenes."
+            ]
+          }
+        },
+        {
+          "id": "U8-p91-act04",
+          "numero": 4,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Nombra las siguientes partes del cuerpo.",
+          "contenido_linguistico": ["Cuerpo humano"],
+          "campo_semantico": "Cuerpo humano",
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "7 fotografías de primer plano de partes del cuerpo numeradas del 1 al 7." },
+          "video": { "presente": false },
+          "respuestas": ["1. ojo", "2. nariz", "3. brazo", "4. cuello", "5. dedo", "6. oreja", "7. pie"]
+        },
+        {
+          "id": "U8-p91-act05",
+          "numero": 5,
+          "tipo": "expresion_escrita_libre",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Dibuja tu propio monstruo inventado y descríbelo.",
+          "contenido_linguistico": ["Cuerpo humano", "Descripción física"],
+          "campo_semantico": "Cuerpo humano",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": []
+        },
+        {
+          "id": "U8-p91-act06",
+          "numero": 6,
+          "tipo": "ordena",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Ordena las conversaciones.",
+          "contenido_linguistico": ["Descripción de personas: preguntar y responder"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "¿Cómo se llama tu hermano? / Se llama Alejandro.",
+            "¿Cómo tiene los ojos? / Tiene los ojos verdes.",
+            "¿De qué color es su pelo? / Tiene el pelo negro.",
+            "¿Cómo es tu hermano pequeño? / Es moreno y tiene los ojos verdes."
+          ],
+          "datos": {
+            "items_libro": [
+              "¿ / llama / cómo / tu / se / hermano / ?",
+              "se / Alejandro / llama",
+              "¿ / los / tiene / cómo / ojos / ?",
+              "ojos / los / verdes / tiene",
+              "¿ / su / color / es / qué / pelo / de / ?",
+              "pelo / el / negro / tiene",
+              "¿ / pequeño / es / tu / hermano / cómo / ?",
+              "moreno / es / verdes / tiene / los / y / ojos"
+            ]
+          }
+        },
+        {
+          "id": "U8-p91-act07",
+          "numero": 7,
+          "tipo": "expresion_oral_libre",
+          "destreza": ["expresion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Lleva una foto de tu mejor amigo/-a a clase y descríbela. ¿Cómo se llama? ¿Cómo es? ¿Dónde está?",
+          "contenido_linguistico": ["Descripción de personas"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": []
+        }
+      ]
+    }
+  ]
+}
