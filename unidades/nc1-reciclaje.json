@@ -1971,6 +1971,156 @@
       ]
     },
     {
+      "id": "hilo-voc-establecimientos",
+      "titulo": "Establecimientos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 14 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-marcadores-de-lugar",
+      "titulo": "Marcadores de lugar",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 9 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-profesiones-y-lugares-de-trabajo",
+      "titulo": "Profesiones y lugares de trabajo",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 9 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-verbos-irregulares",
+      "titulo": "Verbos irregulares",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 6 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-medios-de-transporte",
+      "titulo": "Medios de transporte",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 7 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-madrid",
+      "titulo": "Madrid",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 8 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-illan-de-vacas",
+      "titulo": "Illán de Vacas",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 4 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-cartagena-de-indias",
+      "titulo": "Cartagena de Indias",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 9 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-formas-geometricas",
+      "titulo": "Formas geométricas",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 4 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-otras-palabras",
+      "titulo": "Otras palabras",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 3 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
       "id": "hilo-meses-del-ano",
       "titulo": "Meses del año",
       "tipo": "vocabulario",
