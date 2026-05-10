@@ -5,6 +5,16 @@
 
 ---
 
+## [v10.99e — 2026-05-10] — Fix doc: cronología honesta v10.99 + estado sincronización
+
+Tres correcciones tras hallazgos del revisor sobre v10.99d:
+- CHANGELOG v10.99: la entrada original atribuía retroactivamente a v10.99 garantías que no entraron hasta v10.99b/c. Reescrita para reflejar solo lo que entró en ese commit.
+- CHANGELOG: entradas v10.99b y v10.99c separadas con su propio scope (estaban fusionadas en la entrada de v10.99).
+- CHANGELOG: añadida entrada formal de v10.99d.
+- REVIEW: estado de documentación marcado como ✅ sincronizada.
+
+---
+
 ## [v10.99d — 2026-05-10] — Sincronización documental CHANGELOG/REVIEW/PROCESO-MAESTRO
 
 Actualización obligatoria de los tres documentos canónicos tras los commits v10.97-v10.99c que habían quedado sin reflejarse. Sin cambios de código ni datos.
