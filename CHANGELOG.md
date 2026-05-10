@@ -11,7 +11,7 @@ Sincroniza CHANGELOG/REVIEW/PROCESO-MAESTRO/README con la integración U9 (v10.1
 
 Esta entrada se autodocumenta en el mismo commit junto a la de v10.104, evitando reabrir la brecha de trazabilidad del patrón doc-comenta-pero-no-se-comenta.
 
-**Estado tras este commit:** curso completo extraído (10 unidades). Fase 1 con todos los inventarios integrados; refinamientos del extractor identificados pendientes (canon semántico, doble superficie del validador, refuerzo del prompt) documentados en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` (local).
+**Estado tras este commit:** curso completo extraído (10 unidades). Fase 1 con todos los inventarios integrados; refinamientos del extractor identificados pendientes (canon semántico, doble superficie del validador, refuerzo del prompt) — su documentación operativa entrará en main cuando se cierre la decisión.
 
 ---
 
