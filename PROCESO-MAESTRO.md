@@ -705,6 +705,7 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 
 ## Bitácora del documento
 
+- **2026-05-10** — Sincronización documental U8 (v10.103b) + autodocumentación + retirada de referencia a `REDISEÑO-EN-CURSO.md` (artefacto local untracked) del estado comprometido del bloque B (v10.103c).
 - **2026-05-10** — **U8 integrada a main** (v10.103) vía `integrar_unidad.py` (commit `3f3e626`). 46 actividades, 5 cuadros, validador 0/0. Reciclaje actualizado: 181 hilos (92 mapa + 89 auto). U0-U8 integradas y validando 0/0.
 - **2026-05-10** — **U7 integrada a main** (v10.102) vía `integrar_unidad.py` (commit `590c9f3`). 46 actividades, 4 cuadros, validador 0/0. Reciclaje actualizado: 171 hilos (92 mapa + 79 auto). Segunda integración con el flujo automatizado, sin desviaciones del protocolo. U0-U7 integradas y validando 0/0.
 - **2026-05-10** — Refuerzo del checklist de cierre en `prompt.md` de fase 1 (v10.101). Tras auditar U6: las reglas existen, los fallos eran invisibles al validador. Añadidos 2 ítems explícitos al checklist (ejemplo no duplicado en respuestas; cardinalidad literal). Sin cambios en reglas canónicas.

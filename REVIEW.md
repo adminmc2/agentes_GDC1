@@ -44,8 +44,8 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 |---|---|
 | Fase 1 — Extracción de inventario | ✅ U0-U8 integradas y validando 0/0 (U8 integrada 2026-05-10 vía `integrar_unidad.py`). Próxima: U9. 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
-| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.103) |
-| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje ✅ base automatizada (v10.97-v10.99c) en rediseño activo (REDISEÑO-EN-CURSO.md) · `nc1-reciclaje.json` 92 mapa + 89 auto = 181 hilos (post-U8) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
+| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.103c) |
+| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje ✅ base automatizada (v10.97-v10.99c) · `nc1-reciclaje.json` 92 mapa + 89 auto = 181 hilos (post-U8) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
 | Bloque E (limpieza final) | 📋 Pendiente |
@@ -469,6 +469,7 @@ En cada iteración:
 - **2026-05-08** — Dashboard: badge "extracción en curso" para unidades de worktrees paralelos (v10.81). Las unidades servidas vía `EXTRA_UNIDADES_PATHS` (`zona: "extra"`) ahora muestran un badge ámbar *"🔄 Extracción en curso (worktree paralelo)"* en lugar del path absoluto. Para unidades de main (`zona: ""`) se mantiene el path relativo. Al integrar una unidad a main, el cambio es automático: main gana sobre extras y el badge desaparece. Validador 0/0.
 - **2026-05-08** — Dashboard: eliminado el badge de versión (v10.80b). v10.80 había hecho el badge dinámico, pero seguían apareciendo 2 indicadores en el header. Decisión del autor: dejar solo el indicador derecho que ya muestra versión + hora viva. Eliminados el span del badge y el JS que lo actualizaba. Una sola fuente visible de versión. Validador 0/0.
 - **2026-05-08** — Dashboard: badge de versión dinámico (v10.80). Tras v10.79 el header mostraba dos versiones distintas: badge verde con `v10.78` hardcoded (desde v10.78) y el indicador derecho dinámico `v10.79 — hh:mm:ss`. Fix: badge ahora con `id="version-badge"` que se rellena en `init()` desde `/api/version`. Una sola fuente de verdad. Sin cambios funcionales. Validador 0/0.
+- **2026-05-10** — Sincronización documental U8 (v10.103b) + autodocumentación + retirada de referencia a artefacto local (v10.103c).
 - **2026-05-10** — **U8 integrada a main** (v10.103) vía `integrar_unidad.py` (commit `3f3e626`). 46 actividades, 5 cuadros, validador 0/0. Reciclaje actualizado: 181 hilos (92 mapa + 89 auto). Tercera integración limpia con el flujo automatizado.
 - **2026-05-10** — **U7 integrada a main** (v10.102) vía `integrar_unidad.py` (commit `590c9f3`). 46 actividades, 4 cuadros, validador 0/0. Reciclaje actualizado: 171 hilos (92 mapa + 79 auto). Segunda integración limpia con el flujo automatizado, sin desviaciones.
 - **2026-05-10** — Refuerzo del checklist de cierre en `fases/1-extraccion-inventario/prompt.md` (v10.101). Tras auditar los tres fixes de U6, análisis: reglas canónicas existen y son suficientes, fallos invisibles al validador. Añadidos 2 ítems al checklist (ejemplo no duplicado en respuestas; cardinalidad literal de items_libro). Sin cambios de reglas.

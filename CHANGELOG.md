@@ -5,6 +5,21 @@
 
 ---
 
+## [v10.103c — 2026-05-10] — Fix doc: autodocumenta v10.103b + retira referencia a artefacto local
+
+Dos correcciones tras hallazgos del revisor sobre b887984:
+- CHANGELOG/REVIEW/PROCESO-MAESTRO: añadida entrada formal de v10.103b (que sincronizaba la integración U8 pero no se autodocumentaba).
+- REVIEW: retirada la referencia a `REDISEÑO-EN-CURSO.md` del estado comprometido del bloque B. Ese artefacto sigue local (untracked); no debe figurar como referencia activa en main.
+- Esta entrada (v10.103c) se autodocumenta en el mismo commit, evitando reabrir la brecha de trazabilidad.
+
+---
+
+## [v10.103b — 2026-05-10] — Doc canónica de integración U8
+
+Sincroniza CHANGELOG/REVIEW/PROCESO-MAESTRO con la integración U8 (v10.103). 46 actividades, 5 cuadros, 0/0, reciclaje a 181 hilos (92 mapa + 89 auto).
+
+---
+
 ## [v10.103 — 2026-05-10] — Integración U8 a main (46 actividades, 5 cuadros, 0/0)
 
 Integración limpia de U8 desde worktree `extract/U8` vía `integrar_unidad.py`. Reciclaje actualizado: 181 hilos (92 mapa + 89 auto). Sin desviaciones del flujo automatizado.
