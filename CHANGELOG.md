@@ -5,6 +5,12 @@
 
 ---
 
+## [v10.103 — 2026-05-10] — Integración U8 a main (46 actividades, 5 cuadros, 0/0)
+
+Integración limpia de U8 desde worktree `extract/U8` vía `integrar_unidad.py`. Reciclaje actualizado: 181 hilos (92 mapa + 89 auto). Sin desviaciones del flujo automatizado.
+
+---
+
 ## [v10.102 — 2026-05-10] — Integración U7 a main (46 actividades, 4 cuadros, 0/0)
 
 Integración limpia de U7 desde worktree `extract/U7` vía `integrar_unidad.py`. Reciclaje actualizado: 171 hilos (92 mapa + 79 auto). Sin desviaciones del flujo automatizado.
