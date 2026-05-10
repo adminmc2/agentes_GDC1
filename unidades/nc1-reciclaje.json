@@ -2241,6 +2241,156 @@
       ]
     },
     {
+      "id": "hilo-voc-meses-del-ano",
+      "titulo": "Meses del año",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 12 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-animales-domesticos",
+      "titulo": "Animales domésticos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 5 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-animales-salvajes",
+      "titulo": "Animales salvajes",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[principal] 6 entradas",
+          "impacto": "alto"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-verbos-reflexivos",
+      "titulo": "Verbos reflexivos",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 11 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-verbos-de-movimiento-y-rutina",
+      "titulo": "Verbos de movimiento y rutina",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 7 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-preposiciones",
+      "titulo": "Preposiciones",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "introduce",
+          "descripcion": "[recurrente] 5 entradas",
+          "impacto": "medio"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-texto-el-nacimiento-de-un-potro",
+      "titulo": "Texto El nacimiento de un potro",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 6 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-texto-un-dia-en-el-zoo",
+      "titulo": "Texto Un día en el zoo",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 7 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-texto-zoo-aquarium-de-madrid",
+      "titulo": "Texto Zoo-Aquarium de Madrid",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 6 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
+      "id": "hilo-voc-texto-la-historia-de-budi",
+      "titulo": "Texto La historia de Budi",
+      "tipo": "vocabulario",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "seccion": "vocabulario",
+          "accion": "aplica",
+          "descripcion": "[comprension] 3 entradas",
+          "impacto": "bajo"
+        }
+      ]
+    },
+    {
       "id": "hilo-el-cuerpo-humano",
       "titulo": "El cuerpo humano",
       "tipo": "vocabulario",

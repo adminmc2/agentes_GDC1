@@ -1,0 +1,1380 @@
+{
+  "unidad": 7,
+  "curso": "nc1",
+  "titulo": "Hábitos",
+  "paginas_libro": "72-81",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U7/fuente/U7-nc1.pdf",
+    "version_extraccion": "2026-05-10"
+  },
+  "contenidos_indice": {
+    "vocabulario": "Meses del año. Animales domésticos y salvajes",
+    "gramatica": "Verbos reflexivos. Oposición salir / volver. Preposiciones (a, de, por, con, en). Signos de puntuación",
+    "comunicacion": "Hablar de hábitos diarios. Entonación interrogativa y exclamativa",
+    "destrezas": "La rutina del cuidador de zoo. La historia de Budi",
+    "cultura": "El Zoo-Aquarium de Madrid"
+  },
+  "vocabulario_consolidado": {
+    "principal": {
+      "_descripcion": "Vocabulario declarado en el índice de la unidad y trabajado en la sección Vocabulario.",
+      "Meses del año": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+      "Animales domésticos": ["vaca", "oveja", "gallina", "cerdo", "caballo"],
+      "Animales salvajes": ["león", "elefante", "serpiente", "delfín", "mono", "tiburón"]
+    },
+    "recurrente": {
+      "_descripcion": "Vocabulario que aparece en varias secciones de la unidad.",
+      "Verbos reflexivos": ["ducharse", "acostarse", "levantarse", "lavarse", "vestirse", "ponerse", "sentarse", "bañarse", "afeitarse", "quedarse", "despertarse"],
+      "Verbos de movimiento y rutina": ["salir", "volver", "llegar", "llamar", "jugar", "ir", "venir"],
+      "Preposiciones": ["a", "al", "de", "en", "por"]
+    },
+    "comprension": {
+      "_descripcion": "Léxico que aparece en los textos de la unidad y afecta la comprensión, aunque no se trabaje explícitamente.",
+      "Texto El nacimiento de un potro": ["potro", "yegua", "patas", "pradera", "hierba", "champú"],
+      "Texto Un día en el zoo": ["cuidador", "terrario", "anfibios", "reptiles", "aves", "jaula", "veterinario"],
+      "Texto Zoo-Aquarium de Madrid": ["educativa", "investigadora", "conservadora", "medioambiental", "biodiversidad", "ecosistema"],
+      "Texto La historia de Budi": ["orangután", "leche condensada", "anemia"]
+    }
+  },
+  "secciones": {
+    "vocabulario":  { "paginas": [72, 73], "actividades_ids": ["U7-p72-act01", "U7-p72-act02", "U7-p73-act03", "U7-p73-act04", "U7-p73-act05", "U7-p73-act06", "U7-p73-act07", "U7-p73-act08"] },
+    "gramatica":    { "paginas": [74, 75], "actividades_ids": ["U7-p74-act01", "U7-p74-act02", "U7-p74-act03", "U7-p75-act04", "U7-p75-act05", "U7-p75-act06", "U7-p75-act07", "U7-p75-act08", "U7-p75-act09"] },
+    "comunicacion": { "paginas": [76, 77], "actividades_ids": ["U7-p76-act01", "U7-p76-act02", "U7-p76-act03", "U7-p76-act04", "U7-p77-act05", "U7-p77-act06", "U7-p77-act07", "U7-p77-act08", "U7-p77-act09", "U7-p77-act10", "U7-p77-act11", "U7-p77-act12", "U7-p77-act13"] },
+    "destrezas":    { "paginas": [78, 79], "actividades_ids": ["U7-p78-act01", "U7-p78-act02", "U7-p78-act03", "U7-p78-act04", "U7-p79-act05", "U7-p79-act06", "U7-p79-act07", "U7-p79-act08"] },
+    "cultura":      { "paginas": [80], "actividades_ids": ["U7-p80-act01", "U7-p80-act02"] },
+    "evaluacion":   { "paginas": [81], "actividades_ids": ["U7-p81-act01", "U7-p81-act02", "U7-p81-act03", "U7-p81-act04", "U7-p81-act05", "U7-p81-act06"] },
+    "reflexion":    { "paginas": [], "actividades_ids": [] }
+  },
+  "autoevaluacion": {
+    "pagina": 81,
+    "instruccion_original": "Mis resultados en esta unidad son:",
+    "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
+    "emoticonos": true
+  },
+  "paginas_detalle": [
+    {
+      "pagina": 72,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U7-p72-act01",
+          "numero": 1,
+          "tipo": "ordena",
+          "destreza": ["comprension_auditiva", "expresion_escrita", "expresion_oral"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escribe los meses del año en el orden correcto. Después, escucha, comprueba y repite.",
+          "contenido_linguistico": ["Meses del año"],
+          "campo_semantico": "Meses del año",
+          "audio": { "presente": true, "pista": 72 },
+          "imagen": { "presente": true, "descripcion": "12 calendarios mensuales con fotografías de paisajes estacionales, numerados del 1 al 12, con cuadrícula L M X J V S D." },
+          "video": { "presente": false },
+          "respuestas": ["1. enero", "2. febrero", "3. marzo", "4. abril", "5. mayo", "6. junio", "7. julio", "8. agosto", "9. septiembre", "10. octubre", "11. noviembre", "12. diciembre"],
+          "datos": {
+            "palabras_recuadro": ["abril", "julio", "octubre", "enero", "noviembre", "mayo", "febrero", "diciembre", "junio", "septiembre", "marzo", "agosto"]
+          }
+        },
+        {
+          "id": "U7-p72-act02",
+          "numero": 2,
+          "tipo": "responder_preguntas_abiertas",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "¿En qué meses son las diferentes estaciones en tu país?",
+          "contenido_linguistico": ["Meses del año", "Estaciones"],
+          "campo_semantico": "Meses del año",
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "4 fotografías de paisajes con etiquetas: primavera, verano, otoño, invierno." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "Los meses de verano son…"
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "lexical",
+          "titulo": "Recuerda",
+          "contenido": {
+            "tipo": "lista_abreviaciones",
+            "filas": [
+              "L > lunes",
+              "M > martes",
+              "X > miércoles",
+              "J > jueves",
+              "V > viernes",
+              "S > sábado",
+              "D > domingo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 73,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U7-p73-act03",
+          "numero": 3,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Pregúntale a cuatro compañeros, como en el ejemplo, y completa la tabla.",
+          "contenido_linguistico": ["Meses del año", "Cumpleaños"],
+          "campo_semantico": "Meses del año",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "— ¿Cuándo es tu cumpleaños, Laura?\n— Mi cumpleaños es en diciembre.",
+            "columnas_tabla": ["Nombre", "Cumpleaños"]
+          }
+        },
+        {
+          "id": "U7-p73-act04",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha a Elena hablando de las fiestas españolas y escribe las fechas que oyes.",
+          "contenido_linguistico": ["Meses del año", "Fechas", "Fiestas españolas"],
+          "campo_semantico": "Meses del año",
+          "audio": { "presente": true, "pista": 73 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "Año Nuevo: 1 de enero",
+            "Reyes Magos: 6 de enero",
+            "Día del Padre: 19 de marzo",
+            "Día de la Madre: el primer domingo de mayo",
+            "Fiesta Nacional: 12 de octubre",
+            "Navidad: 25 de diciembre",
+            "Cumpleaños de Elena: 12 de diciembre"
+          ],
+          "datos": {
+            "items_libro": [
+              "Año Nuevo",
+              "Reyes Magos",
+              "Día del Padre",
+              "Día de la Madre",
+              "Fiesta Nacional",
+              "Navidad",
+              "Cumpleaños de Elena"
+            ]
+          }
+        },
+        {
+          "id": "U7-p73-act05",
+          "numero": 5,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y repite los nombres de los siguientes animales.",
+          "contenido_linguistico": ["Animales domésticos y salvajes"],
+          "campo_semantico": "Animales",
+          "audio": { "presente": true, "pista": 74 },
+          "imagen": { "presente": true, "descripcion": "11 fotografías numeradas de animales: 1 vaca, 2 oveja, 3 león, 4 elefante, 5 serpiente, 6 delfín, 7 gallina, 8 cerdo, 9 mono, 10 tiburón, 11 caballo." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "palabras_modelo": ["vaca", "oveja", "león", "elefante", "serpiente", "delfín", "gallina", "cerdo", "mono", "tiburón", "caballo"]
+          }
+        },
+        {
+          "id": "U7-p73-act06",
+          "numero": 6,
+          "tipo": "clasifica",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Completa la tabla con los animales del ejercicio anterior. Después, añade otros animales que tú conozcas.",
+          "contenido_linguistico": ["Animales domésticos y salvajes"],
+          "campo_semantico": "Animales",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "Animales domésticos: vaca, oveja, gallina, cerdo, caballo",
+            "Animales salvajes: león, elefante, serpiente, delfín, mono, tiburón"
+          ],
+          "datos": {
+            "items_libro": ["vaca", "oveja", "león", "elefante", "serpiente", "delfín", "gallina", "cerdo", "mono", "tiburón", "caballo"],
+            "categorias": ["Animales domésticos", "Animales salvajes"],
+            "ejemplo_libro": "Animales domésticos: vaca / Animales salvajes: león"
+          }
+        },
+        {
+          "id": "U7-p73-act07",
+          "numero": 7,
+          "tipo": "escucha",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "¿Qué animales escuchas?",
+          "contenido_linguistico": ["Animales domésticos y salvajes"],
+          "campo_semantico": "Animales",
+          "audio": { "presente": true, "pista": 75 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. vaca", "2. oveja", "3. cerdo", "4. gallina"]
+        },
+        {
+          "id": "U7-p73-act08",
+          "numero": 8,
+          "tipo": "seleccion_multiple",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee y escucha el texto. Después, contesta a las preguntas del test.",
+          "contenido_linguistico": ["Comprensión lectora: El nacimiento de un potro"],
+          "audio": { "presente": true, "pista": 76 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. c", "2. c", "3. a", "4. b", "5. b", "6. a"],
+          "datos": {
+            "texto_completo": "Rayo acaba de nacer. Su madre, la yegua, lava al potro de los pies a la cabeza. Rayo se despierta y respira con más fuerza. Una hora después se pone de pie. ¡Qué largas y delgadas son sus patas!\n\nEl primer día, el potro duerme, mama y se vuelve a dormir.\n\nDurante los primeros meses, el potro mama veinte litros de leche al día. También come un poco de hierba. Engorda un kilo cada día. Juega con su madre en la pradera.\n\nDetrás de su simpática y tranquila mirada tal vez se esconde un futuro gran campeón.",
+            "preguntas_opciones": [
+              {
+                "pregunta": "El potro se pone de pie:",
+                "opciones": {
+                  "a": "media hora después de nacer.",
+                  "b": "dos horas después de nacer.",
+                  "c": "una hora después de nacer."
+                }
+              },
+              {
+                "pregunta": "Sus patas son:",
+                "opciones": {
+                  "a": "gruesas y cortas.",
+                  "b": "largas y gruesas.",
+                  "c": "delgadas y largas."
+                }
+              },
+              {
+                "pregunta": "El primer día de su vida, el potro:",
+                "opciones": {
+                  "a": "mama y duerme.",
+                  "b": "mama y corre.",
+                  "c": "come y salta."
+                }
+              },
+              {
+                "pregunta": "Al principio, el potro mama:",
+                "opciones": {
+                  "a": "10 litros de leche diarios.",
+                  "b": "20 litros de leche diarios.",
+                  "c": "5 litros de leche diarios."
+                }
+              },
+              {
+                "pregunta": "Los primeros meses, el potro come:",
+                "opciones": {
+                  "a": "solo leche.",
+                  "b": "leche y hierba.",
+                  "c": "solo hierba."
+                }
+              },
+              {
+                "pregunta": "Rayo juega en la pradera con:",
+                "opciones": {
+                  "a": "la yegua.",
+                  "b": "otros potros.",
+                  "c": "su padre."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 74,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U7-p74-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa con la forma correcta del verbo.",
+          "contenido_linguistico": ["Verbos reflexivos: presente"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. se ducha",
+            "2. se levantan",
+            "3. me lavo",
+            "4. te duchas",
+            "5. se ducha",
+            "6. os acostáis",
+            "7. nos lavamos",
+            "8. te pones",
+            "9. te levantas",
+            "10. se viste"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Juan (ducharse) _____ todas las mañanas.",
+              "2 Mis hermanos (levantarse) _____ muy temprano.",
+              "3 Yo (lavarse) _____ la cabeza con champú de avena.",
+              "4 ¿Tú (ducharse) _____ todos los días?",
+              "5 Mi tío Luis (ducharse) _____ con agua fría.",
+              "6 ¿Vosotros (acostarse) _____ antes de las once?",
+              "7 Nosotros (lavarse) _____ las manos antes de comer.",
+              "8 Pablito, ¿por qué no (ponerse) _____ el pijama para dormir?",
+              "9 ¿A qué hora (levantarse, tú) _____?",
+              "10 Carlitos (vestirse) _____ solo."
+            ]
+          }
+        },
+        {
+          "id": "U7-p74-act02",
+          "numero": 2,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa los huecos con uno de los verbos del recuadro.",
+          "contenido_linguistico": ["Verbos reflexivos: presente"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. me baño",
+            "2. Te lavas",
+            "3. os levantáis",
+            "4. se sienta",
+            "5. nos duchamos",
+            "6. se acuestan",
+            "7. se viste",
+            "8. me pongo",
+            "9. se lava",
+            "10. se bañan"
+          ],
+          "datos": {
+            "palabras_recuadro": ["levantarse", "lavarse (x2)", "acostarse", "sentarse", "ponerse", "ducharse", "bañarse (x2)", "vestirse"],
+            "items_libro": [
+              "1 En verano yo _____ en el mar.",
+              "2 ¿(Tú) _____ la cabeza todos los días?",
+              "3 ¿A qué hora _____ vosotros por la mañana?",
+              "4 Mi padre siempre _____ en el mismo sillón.",
+              "5 En invierno (nosotros) _____ con agua caliente.",
+              "6 Mis primos _____ muy tarde.",
+              "7 Mi hermano pequeño siempre _____ a la moda.",
+              "8 Cuando voy a la playa, _____ unas chanclas.",
+              "9 Mi abuela Rosa _____ las manos con jabón.",
+              "10 Rafa y Mayte no _____ en la playa."
+            ]
+          }
+        },
+        {
+          "id": "U7-p74-act03",
+          "numero": 3,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Escribe lo que hacen estas personas.",
+          "contenido_linguistico": ["Verbos reflexivos: presente"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Fotografías de personas realizando acciones cotidianas con pie de foto indicando el sujeto y el verbo reflexivo." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. El niño se viste.",
+            "2. Mi padre se afeita.",
+            "3. Ellos se levantan a las ocho.",
+            "4. Nosotros nos lavamos las manos.",
+            "5. Yo me acuesto tarde."
+          ],
+          "datos": {
+            "ejemplo_libro": "mi madre / ducharse → Mi madre se ducha.",
+            "items_libro": [
+              "1 el niño / vestirse",
+              "2 mi padre / afeitarse",
+              "3 ellos / levantarse / a las ocho",
+              "4 nosotros / lavarse / las manos",
+              "5 yo / acostarse / tarde"
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Verbos reflexivos: presente",
+          "contenido": {
+            "tipo": "tabla_conjugacion",
+            "verbos": ["ducharse", "acostarse", "sentarse", "ponerse", "vestirse"],
+            "conjugacion": {
+              "yo":               ["me ducho",    "me acuesto",    "me siento",    "me pongo",    "me visto"],
+              "tú":               ["te duchas",   "te acuestas",   "te sientas",   "te pones",    "te vistes"],
+              "él/ella/Ud.":      ["se ducha",    "se acuesta",    "se sienta",    "se pone",     "se viste"],
+              "nosotros/-as":     ["nos duchamos","nos acostamos", "nos sentamos", "nos ponemos", "nos vestimos"],
+              "vosotros/-as":     ["os ducháis",  "os acostáis",   "os sentáis",   "os ponéis",   "os vestís"],
+              "ellos/ellas/Uds.": ["se duchan",   "se acuestan",   "se sientan",   "se ponen",    "se visten"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 75,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U7-p75-act04",
+          "numero": 4,
+          "tipo": "seleccion_multiple",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Señala la preposición adecuada.",
+          "contenido_linguistico": ["Preposiciones: a, de, por, en"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. a / de",
+            "2. por",
+            "3. por",
+            "4. por",
+            "5. al",
+            "6. A",
+            "7. A",
+            "8. De"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Julieta se levanta a / de las seis de / a la mañana.",
+              "2 Mi padre se afeita de / por la mañana.",
+              "3 Los bancos no abren a / por la tarde.",
+              "4 No me gusta salir de casa a / por la noche.",
+              "5 Los sábados voy al / en gimnasio.",
+              "6 ¿A / De qué hora te levantas?",
+              "7 ¿A / De dónde vas los domingos?",
+              "8 ¿A / De dónde vienes?"
+            ]
+          }
+        },
+        {
+          "id": "U7-p75-act05",
+          "numero": 5,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa los huecos con la palabra correcta.",
+          "contenido_linguistico": ["Preposiciones: a, al, de, en, por"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "[1] a",
+            "[2] al",
+            "[3] a",
+            "[4] de",
+            "[5] al",
+            "[6] a",
+            "[7] a",
+            "[8] Por",
+            "[9] a",
+            "[10] a",
+            "[11] Por",
+            "[12] en"
+          ],
+          "datos": {
+            "palabras_recuadro": ["a", "al", "de", "en", "por"],
+            "items_libro": ["Los sábados me levanto pronto, llamo [1] mis amigos y voy [2] campo de fútbol. Llegamos allí [3] las once [4] la mañana y jugamos con el equipo del colegio. Después vamos [5] parque y vemos a otros amigos. Vuelvo [6] casa [7] las dos para comer con mi familia. [8] la tarde estudio dos o tres horas. Y [9] las 8 salgo para pasear a mi perro, Sam. Los domingos vienen [10] mi casa mis abuelos para comer. [11] la tarde toda la familia estamos [12] casa."]
+          }
+        },
+        {
+          "id": "U7-p75-act06",
+          "numero": 6,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Escribe a qué infinitivos pertenecen las siguientes formas verbales.",
+          "contenido_linguistico": ["Verbos reflexivos y de movimiento: infinitivo"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. llegar", "2. venir", "3. jugar", "4. ir", "5. volver", "6. llamar"],
+          "datos": {
+            "ejemplo_libro": "salimos → salir",
+            "items_libro": ["1 llego", "2 viene", "3 jugamos", "4 voy", "5 vuelvo", "6 llamas"]
+          }
+        },
+        {
+          "id": "U7-p75-act07",
+          "numero": 7,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Construye frases, como en el ejemplo.",
+          "contenido_linguistico": ["Verbos reflexivos", "Verbos salir, volver, llegar, jugar"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. Mi hermano se ducha por la noche.",
+            "2. Nosotros salimos del colegio a las dos y media.",
+            "3. ¿Vosotros os laváis con agua fría?",
+            "4. Yo me acuesto antes de las once.",
+            "5. Elena y Marisa llegan a casa antes de comer.",
+            "6. ¿Tú juegas al fútbol los domingos por la tarde?",
+            "7. ¿A qué hora vuelves del colegio?"
+          ],
+          "datos": {
+            "ejemplo_libro": "Teresa / levantarse / a las ocho. → Teresa se levanta a las ocho.",
+            "items_libro": [
+              "1 Mi hermano / ducharse / por la noche.",
+              "2 Nosotros / salir / del colegio a las dos y media.",
+              "3 ¿Vosotros / lavarse / con agua fría?",
+              "4 Yo / acostarse / antes de las once.",
+              "5 Elena y Marisa / llegar / a casa antes de comer.",
+              "6 ¿Tú / jugar / al fútbol los domingos por la tarde?",
+              "7 ¿A qué hora / volver (tú) / del colegio?"
+            ]
+          }
+        },
+        {
+          "id": "U7-p75-act08",
+          "numero": 8,
+          "tipo": "relaciona",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "fonetica",
+          "instruccion_original": "Relaciona los signos de puntuación con su nombre.",
+          "contenido_linguistico": ["Signos de puntuación"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1 → d (Interrogación)",
+            "2 → c (Mayúscula)",
+            "3 → e (Admiración)",
+            "4 → b (Coma)",
+            "5 → a (Punto)",
+            "6 → f (Tilde / Acento)"
+          ],
+          "datos": {
+            "subtipo": "para_aprender",
+            "columnas_relaciona": {
+              "izquierda": [
+                "1. ¿Dónde vives?",
+                "2. A mí me gustan las tortugas.",
+                "3. ¡Qué gato tan bonito!",
+                "4. Pablo, ven aquí.",
+                "5. Todos los días veo la tele.",
+                "6. ¿Cómo te llamas?"
+              ],
+              "derecha": [
+                "a) Punto",
+                "b) Coma",
+                "c) Mayúscula",
+                "d) Interrogación",
+                "e) Admiración",
+                "f) Tilde / Acento"
+              ]
+            }
+          }
+        },
+        {
+          "id": "U7-p75-act09",
+          "numero": 9,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escribe los signos de puntuación que faltan en las siguientes frases.",
+          "contenido_linguistico": ["Signos de puntuación"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. ¡Estupendo!",
+            "2. ¿A qué hora sales de casa?",
+            "3. Hoy no quiero más helado.",
+            "4. ¿Qué tal?",
+            "5. Cristina, cierra la ventana.",
+            "6. ¿Cómo vas a clase?"
+          ],
+          "datos": {
+            "subtipo": "para_aprender",
+            "items_libro": [
+              "1 Estupendo",
+              "2 A qué hora sales de casa",
+              "3 Hoy no quiero más helado",
+              "4 Qué tal",
+              "5 Cristina cierra la ventana",
+              "6 Cómo vas a clase"
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Verbos salir y volver",
+          "contenido": {
+            "tipo": "tabla_conjugacion",
+            "verbos": ["salir", "volver"],
+            "conjugacion": {
+              "yo":               ["salgo",   "vuelvo"],
+              "tú":               ["sales",   "vuelves"],
+              "él/ella/Ud.":      ["sale",    "vuelve"],
+              "nosotros/-as":     ["salimos", "volvemos"],
+              "vosotros/-as":     ["salís",   "volvéis"],
+              "ellos/ellas/Uds.": ["salen",   "vuelven"]
+            }
+          }
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Uso de las preposiciones",
+          "contenido": {
+            "tipo": "lista_reglas",
+            "reglas": [
+              "- A: Lucía va a clase todos los días. / Lucía se levanta a las siete y media.",
+              "- En: Lucía juega en el polideportivo. / Lucía va en bicicleta al cole.",
+              "- De: Lucía sale de su casa. / Lucía viene de la piscina. / Lucía desayuna a las ocho de la mañana.",
+              "- Por: Lucía va a la biblioteca por la tarde."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 76,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U7-p76-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
+          "contenido_linguistico": ["Hablar de hábitos diarios", "Verbos reflexivos", "Salir / volver"],
+          "audio": { "presente": true, "pista": 77 },
+          "imagen": { "presente": false },
+          "video": { "presente": true },
+          "respuestas": [
+            "[1] tenemos",
+            "[2] tengo",
+            "[3] salgo",
+            "[4] a qué hora te acuestas",
+            "[5] me acuesto",
+            "[6] de la semana",
+            "[7] me levanto",
+            "[8] duermo"
+          ],
+          "datos": {
+            "titulo_dialogo": "Por teléfono",
+            "palabras_recuadro": ["a qué hora te acuestas", "tenemos", "duermo", "salgo", "de la semana", "me acuesto", "tengo", "me levanto"],
+            "dialogo_completo": [
+              "PABLO: Hola, Jorge.",
+              "JORGE: Hola, Pablo. Te llamo porque [1] que hacer el trabajo para el lunes.",
+              "PABLO: Sí, ¿lo hacemos mañana por la tarde?",
+              "JORGE: Yo mañana [2] baloncesto a las cinco y [3] a las siete. Después voy a casa, me ducho, me visto… Hasta las ocho, más o menos, no estoy listo.",
+              "PABLO: Uf, eso es muy tarde. En mi casa cenamos a las nueve. ¿Y el sábado, a qué hora te levantas?",
+              "JORGE: Yo, a las diez.",
+              "PABLO: ¿A las diez? ¿Pero [4]?",
+              "JORGE: Los viernes [5] más tarde, a las once y media o a las doce…",
+              "PABLO: ¿Y te levantas a las diez? ¡Jorge, tú duermes mucho!",
+              "JORGE: Sí, los fines de semana me gusta dormir.",
+              "PABLO: Yo me acuesto todos los días [6] a la misma hora, a las once y [7] a las siete. Y los fines de semana [8] un poco más y me despierto a las ocho.",
+              "JORGE: ¡Qué temprano! Bueno, entonces, ¿nos vemos el sábado a las once en mi casa?",
+              "PABLO: Perfecto, Jorge. Es lo mejor. Nos vemos el sábado.",
+              "JORGE: ¡Hasta el sábado!"
+            ]
+          }
+        },
+        {
+          "id": "U7-p76-act02",
+          "numero": 2,
+          "tipo": "verdadero_falso",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "¿Verdadero (V) o falso (F)?",
+          "contenido_linguistico": ["Comprensión del diálogo"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. F", "2. V", "3. F"],
+          "datos": {
+            "items_libro": [
+              "1 Jorge y Pablo juegan al baloncesto.",
+              "2 Jorge duerme muchas horas.",
+              "3 Pablo se acuesta más tarde los fines de semana."
+            ]
+          }
+        },
+        {
+          "id": "U7-p76-act03",
+          "numero": 3,
+          "tipo": "ordena",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Ordena las siguientes palabras para formar frases.",
+          "contenido_linguistico": ["Verbos reflexivos", "Orden de palabras"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. Tenemos que hacer el trabajo para el lunes.",
+            "2. Yo mañana tengo baloncesto a las cinco.",
+            "3. ¿A qué hora te acuestas?",
+            "4. Los viernes me acuesto más tarde."
+          ],
+          "datos": {
+            "items_libro": [
+              "1 trabajo / hacer / para / el / que / tenemos / lunes / el",
+              "2 cinco / a / baloncesto / yo / tengo / las / mañana",
+              "3 ¿ / hora / a / te / qué / acuestas / ?",
+              "4 tarde / más / acuesto / me / los / viernes"
+            ]
+          }
+        },
+        {
+          "id": "U7-p76-act04",
+          "numero": 4,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Pregúntale a tu compañero, como en el ejemplo. Utiliza los siguientes verbos.",
+          "contenido_linguistico": ["Hablar de hábitos diarios: horas y actividades"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "— ¿A qué hora te levantas?\n— Me levanto a las ocho de la mañana.",
+            "palabras_recuadro": ["salir de casa", "llegar a casa", "hacer los deberes", "comer", "acostarse"]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 77,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U7-p77-act05",
+          "numero": 5,
+          "tipo": "interaccion_oral",
+          "destreza": ["expresion_oral", "interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Trabaja con un compañero.",
+          "contenido_linguistico": ["Hablar de hábitos diarios", "Verbos reflexivos", "Salir / volver"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Decidid a quién queréis entrevistar: a un estudiante de un curso superior / al director del colegio / a vuestro profesor favorito…",
+              "Decidid qué preguntas queréis hacer.",
+              "No olvidéis utilizar los verbos reflexivos: levantarse, vestirse, acostarse… y los irregulares salir y volver.",
+              "Practica el diálogo con tu compañero.",
+              "Representad el diálogo delante de la clase."
+            ]
+          }
+        },
+        {
+          "id": "U7-p77-act06",
+          "numero": 6,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Pregunta a tu compañero sobre su vida diaria.",
+          "contenido_linguistico": ["Preguntas sobre hábitos diarios", "Verbos reflexivos y de movimiento"],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "7 viñetas ilustradas con prompts de pregunta parcial (sujeto + verbo en infinitivo)." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. ¿Qué desayunas?",
+            "2. ¿A qué hora sales de casa?",
+            "3. ¿Dónde comes?",
+            "4. ¿Qué haces después de clase?",
+            "5. ¿A qué hora vuelves a casa?",
+            "6. ¿A qué hora ves la televisión?",
+            "7. ¿A qué hora te acuestas?"
+          ],
+          "datos": {
+            "ejemplo_libro": "¿A qué hora / levantarse? → ¿A qué hora te levantas?",
+            "items_libro": [
+              "1 ¿Qué / desayunar?",
+              "2 ¿A qué hora / salir / de casa?",
+              "3 ¿Dónde / comer?",
+              "4 ¿Qué / hacer / después de clase?",
+              "5 ¿A qué hora / volver / a casa?",
+              "6 ¿A qué hora / ver / la televisión?",
+              "7 ¿A qué hora / acostarse?"
+            ]
+          }
+        },
+        {
+          "id": "U7-p77-act07",
+          "numero": 7,
+          "tipo": "expresion_escrita_libre",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escribe un texto con la información que te ha dado tu compañero.",
+          "contenido_linguistico": ["Hablar de hábitos diarios", "Verbos reflexivos"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "texto_modelo": "Mi compañero se levanta…"
+          }
+        },
+        {
+          "id": "U7-p77-act08",
+          "numero": 8,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "transversal",
+          "instruccion_original": "Escucha una entrevista con Enrique, un alumno de secundaria en un colegio interno, y completa la información sobre cómo es su vida normalmente.",
+          "contenido_linguistico": ["Hablar de hábitos diarios", "Horas"],
+          "audio": { "presente": true, "pista": 78 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "6:45 → se levanta",
+            "a) 7:00 – 7:45 → desayuna",
+            "b) 8:00 – 17:00 → tiene clases",
+            "c) 14:00 → come",
+            "d) 17:30 – 19:00 → tiene actividades deportivas y talleres",
+            "e) 21:00 → cena",
+            "f) 22:30 → se acuesta"
+          ],
+          "datos": {
+            "items_libro": [
+              "6:45 →",
+              "a) 7:00 – 7:45 →",
+              "b) 8:00 – 17:00 →",
+              "c) 14:00 →",
+              "d) 17:30 – 19:00 →",
+              "e) 21:00 →",
+              "f) 22:30 →"
+            ]
+          }
+        },
+        {
+          "id": "U7-p77-act09",
+          "numero": 9,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "transversal",
+          "instruccion_original": "Vuelve a escuchar la entrevista y contesta a las preguntas.",
+          "contenido_linguistico": ["Hablar de hábitos diarios"],
+          "audio": { "presente": true, "pista": 78 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. Juega al fútbol y al baloncesto, va a un taller de música y está en un grupo de teatro.",
+            "2. Tiene clases los sábados y por la tarde tiene tiempo libre o actividades deportivas. A veces va al centro comercial o al cine."
+          ],
+          "datos": {
+            "preguntas": [
+              "1. ¿Qué actividades hace Enrique después de las clases?",
+              "2. ¿Qué hace los fines de semana?"
+            ]
+          }
+        },
+        {
+          "id": "U7-p77-act10",
+          "numero": 10,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escribe qué haces los domingos. Utiliza los siguientes verbos.",
+          "contenido_linguistico": ["Hablar de hábitos diarios", "Verbos reflexivos y de movimiento"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": true },
+          "respuestas": [],
+          "datos": {
+            "palabras_recuadro": ["levantarse", "ir", "jugar", "ver", "comer", "llegar", "ducharse", "cenar"]
+          }
+        },
+        {
+          "id": "U7-p77-act11",
+          "numero": 11,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escucha y repite.",
+          "contenido_linguistico": ["Entonación interrogativa y exclamativa"],
+          "audio": { "presente": true, "pista": 79 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "palabras_modelo": ["¡Mira, un león!", "¡Vamos!", "¿A qué hora te levantas?"]
+          }
+        },
+        {
+          "id": "U7-p77-act12",
+          "numero": 12,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escucha y escribe los signos adecuados: ¿ ? / ¡ !",
+          "contenido_linguistico": ["Entonación interrogativa y exclamativa", "Signos de puntuación"],
+          "audio": { "presente": true, "pista": 80 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. ¿Qué comes?",
+            "2. ¿Qué grande es?",
+            "3. ¡Estupendo!",
+            "4. ¡Cierra la ventana!",
+            "5. ¿A dónde vas?",
+            "6. ¿Qué dice Luis?"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Qué comes",
+              "2 Qué grande es",
+              "3 Estupendo",
+              "4 Cierra la ventana",
+              "5 A dónde vas",
+              "6 Qué dice Luis"
+            ]
+          }
+        },
+        {
+          "id": "U7-p77-act13",
+          "numero": 13,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "fonetica",
+          "instruccion_original": "Escucha otra vez y repite.",
+          "contenido_linguistico": ["Entonación interrogativa y exclamativa"],
+          "audio": { "presente": true, "pista": 80 },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": []
+        }
+      ]
+    },
+    {
+      "pagina": 78,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U7-p78-act01",
+          "numero": 1,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee el texto y contesta a las preguntas.",
+          "contenido_linguistico": ["Comprensión lectora: rutina del cuidador de zoo"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. Los mamíferos: leones, ciervos y cebras.",
+            "2. Limpia las jaulas y las camas de los animales que tiene a su cargo.",
+            "3. El veterinario.",
+            "4. Una hora."
+          ],
+          "datos": {
+            "texto_completo": "Pedro Martínez es cuidador del zoo de Madrid. Su trabajo empieza muy temprano, a las ocho. Primero da de comer a los mamíferos (leones, ciervos, cebras…). Luego va al terrario, donde viven los anfibios y reptiles, grandes y pequeños (ranas, tortugas, cocodrilos…, y varias especies de serpientes: víboras, pitones, boas…). Por último, desayunan las aves (palomas, loros, cacatúas…), que se despiertan más tarde.\n\nDespués del desayuno, Pedro limpia las jaulas y camas de los animales que tiene a su cargo. Si hay algún animal enfermo, Pedro llama al veterinario y lo ayuda. Así pasa la mañana, hasta las dos de la tarde: para una hora para comer y hablar con los compañeros del zoo. Por la tarde, Pedro recorre el zoo para controlar y vigilar a sus amigos. A todos los conoce por su nombre. A las cinco de la tarde termina su trabajo.",
+            "preguntas": [
+              "1. ¿Qué animales desayunan primero?",
+              "2. ¿Qué hace Pedro después de dar el desayuno a sus animales?",
+              "3. ¿Quién visita a los animales enfermos?",
+              "4. ¿Cuánto tiempo tiene Pedro Martínez para comer?"
+            ]
+          }
+        },
+        {
+          "id": "U7-p78-act02",
+          "numero": 2,
+          "tipo": "clasifica",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Completa la tabla con los distintos tipos de animales que aparecen en el ejercicio anterior.",
+          "contenido_linguistico": ["Animales: mamíferos, anfibios, reptiles, aves"],
+          "campo_semantico": "Animales",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "Mamíferos: leones, ciervos, cebras",
+            "Anfibios: ranas",
+            "Reptiles: tortugas, cocodrilos, víboras, pitones, boas",
+            "Aves: palomas, loros, cacatúas"
+          ],
+          "datos": {
+            "items_libro": ["Mamíferos", "Anfibios", "Reptiles", "Aves"]
+          }
+        },
+        {
+          "id": "U7-p78-act03",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee el texto otra vez y completa las frases.",
+          "contenido_linguistico": ["Comprensión lectora: rutina del cuidador de zoo"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. dar de comer a los mamíferos",
+            "2. anfibios y reptiles",
+            "3. se despiertan más tarde",
+            "4. hay algún animal enfermo",
+            "5. recorrer el zoo para controlar y vigilar a sus amigos"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Lo primero que hace Pedro cuando llega a su trabajo es…",
+              "2 Luego va a visitar a los…",
+              "3 Las aves desayunan las últimas porque…",
+              "4 Pedro llama al veterinario cuando…",
+              "5 El trabajo de Pedro por la tarde es…"
+            ]
+          }
+        },
+        {
+          "id": "U7-p78-act04",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Completa las frases con las palabras subrayadas en el texto.",
+          "contenido_linguistico": ["Vocabulario: cuidador, terrario, temprano, conoce"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. terrario",
+            "2. cuidador",
+            "3. temprano",
+            "4. conoce"
+          ],
+          "datos": {
+            "palabras_recuadro": ["cuidador", "temprano", "terrario", "conoce"],
+            "items_libro": [
+              "1 Los reptiles y los anfibios viven en el _____ del zoo.",
+              "2 Pedro trabaja en el zoo como _____.",
+              "3 Mi padre sale de casa muy pronto porque, igual que Pedro, empieza a trabajar muy _____.",
+              "4 Pedro _____ el nombre de todos los animales."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 79,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U7-p79-act05",
+          "numero": 5,
+          "tipo": "verdadero_falso",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "transversal",
+          "instruccion_original": "Escucha la historia sobre Budi, un orangután, y di si las siguientes afirmaciones son verdaderas (V) o falsas (F). Corrige las respuestas falsas.",
+          "contenido_linguistico": ["Comprensión auditiva: la historia de Budi"],
+          "audio": { "presente": true, "pista": 81 },
+          "imagen": { "presente": true, "descripcion": "Fotografía de un orangután bebé con etiqueta BUDI." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. V",
+            "2. F → Durante diez meses Budi se alimenta con leche condensada.",
+            "3. F → Ahora Budi tiene anemia y no puede moverse.",
+            "4. F → Actualmente Budi vive en Reino Unido.",
+            "5. V"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Durante sus primeros meses de vida, Budi vive en una jaula.",
+              "2 Durante solo tres meses Budi se alimenta con leche condensada.",
+              "3 Ahora, Budi tiene anemia, pero puede moverse.",
+              "4 Actualmente Budi vive en Indonesia.",
+              "5 Veterinarios británicos ayudan a Budi a recuperarse."
+            ]
+          }
+        },
+        {
+          "id": "U7-p79-act06",
+          "numero": 6,
+          "tipo": "expresion_escrita_libre",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "transversal",
+          "instruccion_original": "¿Cuál es tu mascota favorita? Imagina que tienes ese animal en casa. Escribe un texto con su descripción. Sigue los siguientes pasos:",
+          "contenido_linguistico": ["Descripción de animales", "Verbos reflexivos y de rutina"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Antes de empezar a escribir contesta a estas preguntas: ¿Cómo se llama? / ¿Cuántos años tiene? / ¿Es grande o pequeño? / ¿Qué come? / ¿Dónde duerme? / ¿Cuántas horas duerme? / ¿Qué le gusta hacer?",
+              "Utiliza los verbos de la unidad para hablar de sus rutinas diarias: correr, saltar, sentarse, dormir, acostarse, ir, salir, comer, jugar."
+            ],
+            "texto_modelo": "Mi mascota es un… Se llama… Tiene… años…"
+          }
+        },
+        {
+          "id": "U7-p79-act07",
+          "numero": 7,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral", "mediacion"],
+          "enfoque": "transversal",
+          "instruccion_original": "En grupos de cuatro, hablad sobre animales. El secretario toma nota, escribe las conclusiones y las lee al resto de la clase. Piensa en las siguientes preguntas.",
+          "contenido_linguistico": ["Hablar de animales", "Gustos y preferencias"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "¿Te gustan los animales?",
+              "¿Cuáles te gustan más: los salvajes, o los domésticos?",
+              "¿Tienes un animal en casa? ¿Cómo es? ¿Qué hace?",
+              "¿Qué animales te dan miedo?"
+            ]
+          }
+        },
+        {
+          "id": "U7-p79-act08",
+          "numero": 8,
+          "tipo": "busqueda_informacion",
+          "destreza": ["expresion_oral", "interaccion_oral", "mediacion"],
+          "enfoque": "transversal",
+          "instruccion_original": "En grupos de cuatro, vamos a preparar una visita a un parque zoológico cercano. Buscad información sobre horarios, medios de transporte para llegar allí y qué animales o tipos de animales podéis conocer. Después, haced la propuesta a la clase.",
+          "contenido_linguistico": ["Animales", "Horarios", "Medios de transporte"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": []
+        }
+      ]
+    },
+    {
+      "pagina": 80,
+      "seccion": "cultura",
+      "actividades": [
+        {
+          "id": "U7-p80-act01",
+          "numero": 1,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee y escucha el texto anterior. Después, contesta a las preguntas.",
+          "contenido_linguistico": ["Comprensión lectora/auditiva: Zoo-Aquarium de Madrid"],
+          "audio": { "presente": true, "pista": 82 },
+          "imagen": { "presente": true, "descripcion": "Fotografías de delfines en espectáculo acuático, flamingos y cabras en el Zoo-Aquarium de Madrid." },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. La educación.",
+            "2. No, todas las actividades están dirigidas por un educador medioambiental.",
+            "3. Conocer, apreciar, respetar y entender la naturaleza.",
+            "4. Los cambios que la acción del hombre provoca en los animales.",
+            "5. Divertirse aprendiendo durante las vacaciones escolares; tener contacto directo con los animales, sus cuidadores y todo el personal del Zoo."
+          ],
+          "datos": {
+            "texto_completo": "El Zoo-Aquarium de Madrid es uno de los más interesantes del mundo, no solo por su extraordinaria colección de animales, sino por su labor educativa, investigadora y conservadora.\n\nLa educación es uno de los objetivos principales de todos los zoos y acuarios modernos, ya que ayudan a la sociedad a CONOCER, APRECIAR, RESPETAR y a ENTENDER la naturaleza. El Departamento de Educación del Zoo-Aquarium de Madrid tiene como objetivo concienciar y formar medioambientalmente a todos los que lo visitan y ofrece visitas adaptadas a todas las etapas y ciclos educativos: todas sus actividades están dirigidas por un educador medioambiental.\n\nDescubriendo a los animales\nEl objetivo es que los estudiantes descubran la variedad del mundo animal, así como desarrollar en ellos valores de respeto y cuidado de la naturaleza.\n\nBiodiversidad\nCon esta actividad los alumnos toman conciencia de la diversidad de seres vivos que existe en nuestro planeta y aprenden la importancia de conservarla.\n\nConservación\nConcienciar a los alumnos de la importancia de mantener una actitud respetuosa con la naturaleza. Ellos mismos identifican los problemas y encuentran las soluciones.\n\nEcosistemas\nEl objetivo es conocer los principales ecosistemas, sus características más importantes, así como los animales que habitan en ellos; también los cambios que la acción del hombre provoca en ellos.\n\nCampamentos de Navidad / Semana Santa / verano\nEl departamento de Educación del Zoo-Aquarium de Madrid ofrece la posibilidad de divertirse aprendiendo durante las vacaciones escolares: Navidad, Semana Santa y verano. Una posibilidad única de tener un contacto directo con los animales, sus cuidadores y todo el personal del Zoo.",
+            "preguntas": [
+              "1. ¿Qué objetivo común tienen los zoos modernos?",
+              "2. ¿Trabajan los alumnos solos cuando realizan una actividad?",
+              "3. Cita al menos tres cosas sobre las que los alumnos que realizan estas actividades deben tomar conciencia.",
+              "4. ¿Cuál es la causa principal que provoca variaciones en un ecosistema?",
+              "5. ¿Qué ventajas tiene la realización de estas actividades fuera del horario escolar?"
+            ]
+          }
+        },
+        {
+          "id": "U7-p80-act02",
+          "numero": 2,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "cultura",
+          "instruccion_original": "Comenta con tu compañero.",
+          "contenido_linguistico": ["Zoo: comparación cultural"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "¿Hay un zoo en tu ciudad? ¿Cómo es?",
+              "¿Participas en alguna de sus actividades?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 81,
+      "seccion": "evaluacion",
+      "actividades": [
+        {
+          "id": "U7-p81-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las siguientes frases con la forma correcta del verbo.",
+          "contenido_linguistico": ["Verbos reflexivos: presente"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. me acuesto",
+            "2. te duchas",
+            "3. se acuesta",
+            "4. nos lavamos",
+            "5. os bañáis",
+            "6. se afeita",
+            "7. se acuestan",
+            "8. te lavas"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Yo (acostarse) _____ temprano.",
+              "2 ¿A qué hora (ducharse) _____ tú?",
+              "3 Alicia no (acostarse) _____ antes de las once.",
+              "4 Cuando nos levantamos, (lavarse) _____ la cara.",
+              "5 ¿En verano (bañarse, vosotros) _____ en la piscina?",
+              "6 Mi hermano (afeitarse) _____ por la mañana.",
+              "7 ¿A qué hora (acostarse) _____ ellos?",
+              "8 ¿Cuándo (lavarse, tú) _____ el pelo?"
+            ]
+          }
+        },
+        {
+          "id": "U7-p81-act02",
+          "numero": 2,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Construye frases, como en el ejemplo.",
+          "contenido_linguistico": ["Verbos reflexivos: cambio de sujeto y pronombre"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. ¿Tú te duchas por la mañana?",
+            "2. Alfonso se levanta temprano.",
+            "3. Los domingos nos quedamos en casa.",
+            "4. Mis hermanos se afeitan todos los días.",
+            "5. Vosotros os acostáis a las once de la noche."
+          ],
+          "datos": {
+            "ejemplo_libro": "Elena se baña. → Yo me baño.",
+            "items_libro": [
+              "1 ¿Vosotros os ducháis por la mañana? → ¿Tú _____?",
+              "2 Nosotros nos levantamos temprano. → Alfonso _____.",
+              "3 Los domingos me quedo en casa. → (Nosotros) _____.",
+              "4 Juan se afeita todos los días. → Mis hermanos _____.",
+              "5 Yo me acuesto a las once de la noche. → Vosotros _____."
+            ]
+          }
+        },
+        {
+          "id": "U7-p81-act03",
+          "numero": 3,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Construye frases con las siguientes palabras.",
+          "contenido_linguistico": ["Verbos de movimiento y rutina: ir, salir, volver, llegar, jugar, venir"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [
+            "1. Yo voy al cine los domingos.",
+            "2. ¿A qué hora sales de casa?",
+            "3. Mi compañero llega tarde al instituto.",
+            "4. ¿Jugamos con tus hermanos?",
+            "5. Juan y Pedro van a casa de sus abuelos.",
+            "6. ¿A qué hora vuelven los domingos?",
+            "7. ¿Vienes al cine conmigo?",
+            "8. Ella sale tarde de casa.",
+            "9. ¿Vosotros vais al colegio por las tardes?",
+            "10. Yo vuelvo del instituto con mis amigos."
+          ],
+          "datos": {
+            "ejemplo_libro": "Mi padre / volver / ocho de la tarde. → Mi padre vuelve a las ocho de la tarde.",
+            "items_libro": [
+              "1 Yo / ir / cine los domingos.",
+              "2 ¿A qué hora / salir (tú) / casa?",
+              "3 Mi compañero / llegar / tarde / instituto.",
+              "4 ¿(Nosotros) jugar / tus hermanos?",
+              "5 Juan y Pedro / ir / casa de sus abuelos.",
+              "6 ¿A qué hora / volver (ustedes) / los domingos?",
+              "7 ¿Venir (tú) / cine / conmigo?",
+              "8 Ella / salir / tarde / casa.",
+              "9 ¿Vosotros / ir / colegio / las tardes?",
+              "10 Yo / volver / instituto / mis amigos."
+            ]
+          }
+        },
+        {
+          "id": "U7-p81-act04",
+          "numero": 4,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "¿Qué mes es?",
+          "contenido_linguistico": ["Meses del año"],
+          "campo_semantico": "Meses del año",
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1. junio", "2. febrero", "3. mayo", "4. enero", "5. octubre", "6. julio"],
+          "datos": {
+            "items_libro": [
+              "1 Soy el sexto mes del año.",
+              "2 Tengo solo 28 días.",
+              "3 Mi nombre solo tiene cuatro letras.",
+              "4 Soy el primero del año.",
+              "5 Voy antes que noviembre.",
+              "6 Voy después de junio."
+            ]
+          }
+        },
+        {
+          "id": "U7-p81-act05",
+          "numero": 5,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Nombra los siguientes animales.",
+          "contenido_linguistico": ["Animales domésticos y salvajes"],
+          "campo_semantico": "Animales",
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "4 fotografías numeradas de animales (1–4) sin etiqueta." },
+          "video": { "presente": false },
+          "respuestas": ["1. elefante", "2. león", "3. oveja", "4. gallina"]
+        },
+        {
+          "id": "U7-p81-act06",
+          "numero": 6,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Pregunta a tu compañero cuándo hace las siguientes actividades.",
+          "contenido_linguistico": ["Hablar de hábitos diarios"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "Hacer deporte",
+              "Navegar por internet",
+              "Ver la tele",
+              "Ir al cine",
+              "Viajar"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
