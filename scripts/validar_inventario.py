@@ -86,7 +86,8 @@ TIPOS_QUE_REQUIEREN_ITEMS = {
 }
 
 CONTENIDOS_VISIBLES = {
-    "items_libro", "texto_completo", "dialogo_completo", "frases", "preguntas",
+    "items_libro", "texto_completo", "dialogo_completo", "textos_personajes",
+    "frases", "preguntas",
     "preguntas_opciones", "ejemplo_libro", "texto_modelo", "nombres_dados",
     "palabras_recuadro", "cuadricula", "afirmaciones_a_corregir",
     "texto_correo", "frases_libro", "respuestas_libro",
@@ -276,6 +277,24 @@ def validar(path):
                                 f"❌ {apref}: tipo '{tipo}' requiere contenido visible "
                                 f"(uno de: items_libro, frases_libro, preguntas_opciones, etc.)"
                             )
+
+                    # validación estructural de textos_personajes
+                    # (schema-inventario.md §3 + reglas-operativas.md §2.5)
+                    datos = a.get("datos", {})
+                    if "textos_personajes" in datos:
+                        tp = datos["textos_personajes"]
+                        if not isinstance(tp, list):
+                            errores.append(f"❌ {apref}: datos.textos_personajes debe ser lista de objetos {{personaje, texto}}")
+                        else:
+                            for i, item in enumerate(tp):
+                                ipref = f"{apref}.datos.textos_personajes[{i}]"
+                                if not isinstance(item, dict):
+                                    errores.append(f"❌ {ipref}: cada elemento debe ser objeto con claves 'personaje' y 'texto'")
+                                    continue
+                                if not isinstance(item.get("personaje"), str) or not item.get("personaje", "").strip():
+                                    errores.append(f"❌ {ipref}: falta 'personaje' (string no vacío)")
+                                if not isinstance(item.get("texto"), str) or not item.get("texto", "").strip():
+                                    errores.append(f"❌ {ipref}: falta 'texto' (string no vacío)")
 
             # IDs en secciones coinciden con IDs reales
             sobra_sec = ids_secciones - ids_vistos

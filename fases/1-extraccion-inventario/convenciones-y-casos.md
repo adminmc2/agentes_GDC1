@@ -56,6 +56,30 @@ Cuando hay un diálogo (de video, audio o lectura), va en `datos.dialogo_complet
 
 Los huecos van como `[1]`, `[2]`... (números) y la lista de palabras del recuadro va en `datos.palabras_recuadro`.
 
+### 1.4-bis Textos atribuidos a personajes (autorretratos, fichas, presentaciones múltiples)
+
+Cuando el libro presenta **varios textos cortos, cada uno atribuido a un personaje distinto** (típico de actividades de presentación, fichas de personajes, autorretratos paralelos), no se unifican en `texto_completo` ni se transcriben como diálogo. Se usa `datos.textos_personajes` preservando la atribución:
+
+```jsonc
+"textos_personajes": [
+  { "personaje": "Carmen", "texto": "Hola, me llamo Carmen. Tengo 15 años y vivo en Madrid…" },
+  { "personaje": "Luis",   "texto": "Yo soy Luis, soy de Sevilla y tengo 14 años…" },
+  { "personaje": "María",  "texto": "¡Hola! Soy María. Vivo en Barcelona con mi familia…" }
+]
+```
+
+Los nombres se preservan tal cual aparecen en el libro (sin normalizar mayúsculas). El orden refleja el orden visual.
+
+**Decisión entre los 3 campos canónicos de texto:**
+
+| Patrón del libro | Campo |
+|---|---|
+| Un texto seguido (carta, artículo, descripción) | `texto_completo` |
+| Diálogo con turnos (— A: hola — B: hola) | `dialogo_completo` |
+| N textos cortos, cada uno atribuido a un personaje | `textos_personajes` |
+
+**Caso disparador:** U5-p58-act01 (4 descripciones breves en Destrezas, una por personaje).
+
 ### 1.5 Sopas de letras y juegos
 
 Sopa de letras:
@@ -72,6 +96,58 @@ Sopa de letras:
 }
 "respuestas": ["PRIMO", "HIJO", "TÍO", "HERMANO", "ABUELO", "PADRE"]
 ```
+
+### 1.6 Marcadores editoriales del libro: NO van en `respuestas`
+
+Cuando el solucionario o el enunciado del libro precede al contenido con un marcador editorial como **`Posibles respuestas:`**, **`Ejemplo:`**, **`Modelo:`**, **`Solución:`**, ese marcador NO se transcribe como ítem de `respuestas`. La regla es:
+
+- **El marcador en sí** (`Posibles respuestas:`, `Ejemplo:`...) **se descarta**. Es metalengua del libro, no contenido del alumno.
+- **El contenido que sigue al marcador**:
+  - Si es **un ejemplo modelo del libro** (típicamente la primera respuesta dada como muestra) → va a `datos.ejemplo_libro` (string) o `datos.ejemplos_modelo` (lista). Ver §1.2 sobre "primer ítem resuelto como ejemplo".
+  - Si son **respuestas reales** (ej. una lista de "posibles respuestas" que el solucionario sugiere) → van a `respuestas` **sin el marcador**.
+
+**Ejemplos correctos:**
+```jsonc
+// ❌ INCORRECTO — el marcador entra como respuesta
+"respuestas": ["Posibles respuestas:", "Está en la cocina", "Está encima de la mesa"]
+
+// ✅ CORRECTO — solo las respuestas reales
+"respuestas": ["Está en la cocina", "Está encima de la mesa"]
+
+// ❌ INCORRECTO — duplica un ejemplo que ya está en datos.ejemplo_libro
+"datos": { "ejemplo_libro": "están" }
+"respuestas": ["ejemplo: están", "estamos", "estoy"]
+
+// ✅ CORRECTO — el ejemplo vive solo en datos.ejemplo_libro
+"datos": { "ejemplo_libro": "están" }
+"respuestas": ["estamos", "estoy"]
+```
+
+**Casos disparadores:** U5-p54-act03 ("Posibles respuestas:" coló como ítem), U5-p55-act02 ("ejemplo: están" duplicó `datos.ejemplo_libro`), U5-p61-act02 ("ejemplo: Encima de la mesa." idem).
+
+### 1.7 `enfoque` no se hereda de la sección de la página
+
+Antipatrón recurrente: asumir que una actividad alojada en página `seccion: cultura` lleva `enfoque: cultura`, o que una en `seccion: comunicacion` lleva `enfoque: comunicacion`. La regla está en `reglas-operativas.md` §2.3: `enfoque` describe el **foco pedagógico real de la actividad**, no la sección editorial donde aparece.
+
+**Caso típico — comprensión lectora genérica en página de Cultura/Comunicación:**
+
+```jsonc
+// Actividad: leer un texto sobre vivienda ecológica y responder preguntas cerradas.
+// Página: U5-p60, seccion: cultura.
+// ❌ INCORRECTO
+"enfoque": "cultura"   // copia el enfoque de la sección
+// ✅ CORRECTO
+"enfoque": "transversal"   // comprensión lectora sin foco de dominio específico
+```
+
+**Cuándo SÍ aplica `cultura` o `comunicacion` como `enfoque`:**
+- `cultura`: la actividad pide reflexionar, comparar o producir contenido sociocultural (ej. "¿cómo es esto en tu país?", clasificar elementos culturales).
+- `comunicacion`: la actividad pide aplicar una función comunicativa (saludar, presentar, pedir información) con producción del alumno.
+
+**Cuándo NO:**
+- Comprensión lectora/auditiva sobre un input dado, aunque el input sea cultural o comunicativo. La actividad ejercita la destreza, no el dominio de contenido. → `transversal`.
+
+**Casos disparadores:** U5-p60-act03 (asignó `cultura`, era `transversal`), U5-p61-act04 (asignó `comunicacion`, era `transversal`).
 
 ---
 

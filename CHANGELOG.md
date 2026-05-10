@@ -5,6 +5,30 @@
 
 ---
 
+## [v10.96 — 2026-05-09] — Fixes de fase 1 a partir de hallazgos de extracción U5
+
+Tres problemas detectados durante la revisión de U5 (ejecutor 2, sin integrar todavía a main) corregidos en el contrato de fase 1. El cuarto problema (palabras-respuesta de imágenes) se descartó tras revisión: era error del ejecutor, no gap del schema.
+
+**Problema 1 — `textos_personajes` no reconocido por validador:**
+- `schema-inventario.md` §3: campo nuevo `textos_personajes: [{personaje, texto}]` en saco `datos`, para N textos cortos atribuidos a N personajes (autorretratos, fichas, presentaciones múltiples). Distinto de `texto_completo` (texto seguido) y `dialogo_completo` (turnos).
+- `validar_inventario.py`: añadido a `CONTENIDOS_VISIBLES` + validación estructural — debe ser lista de objetos con `personaje` y `texto` (strings no vacíos). Probado: detecta tipos mal formados.
+- `convenciones-y-casos.md` §1.4-bis: regla con ejemplo, tabla de decisión entre los 3 campos canónicos, caso disparador U5-p58-act01 (4 descripciones en Destrezas).
+- `reglas-operativas.md` §2.5: tabla de elección entre `texto_completo` / `dialogo_completo` / `textos_personajes` con principio "no fusionar para forzar `texto_completo` cuando hay atribución por personaje".
+
+**Problema 2 — Etiquetas editoriales coladas en `respuestas`:**
+- `convenciones-y-casos.md` §1.6: regla "marcadores editoriales no van en `respuestas`". `Posibles respuestas:`, `Ejemplo:`, `Modelo:`, `Solución:` se descartan; el contenido tras el marcador va a `datos.ejemplo_libro` / `datos.ejemplos_modelo` o a `respuestas` sin el marcador. Ejemplos correcto/incorrecto + casos disparadores U5-p54-act03, U5-p55-act02, U5-p61-act02.
+
+**Problema 3 — `enfoque` heredado por proximidad editorial:**
+- La regla ya existía en `reglas-operativas.md` §2.3 ("`enfoque` clasifica la actividad concreta, no la sección"). Lo que faltaba era refuerzo + caso visible.
+- `reglas-operativas.md` §2.3: bloque "Antipatrón frecuente — copiar `enfoque` de `seccion`" con casos disparadores reales (U5-p60-act03, U5-p61-act04).
+- `convenciones-y-casos.md` §1.7: ejemplo correcto/incorrecto + cuándo SÍ y cuándo NO usar `cultura`/`comunicacion` como enfoque (frente a `transversal`).
+
+**Problema 4 — Palabras de imagen en respuestas:** descartado tras revisión con autor (error del ejecutor, no gap del schema).
+
+**Verificado:** validador U0/U1/U2/U3/U4 → 0/0 tras los cambios.
+
+---
+
 ## [v10.95 — 2026-05-09] — Modelo de hilos verbales: jerarquía uso → tipo de verbo → verbos + script auto vocabulario + categorías PCIC
 
 **Bloque grande de cambios sobre `nc1-reciclaje.json` y la vista RECICLAJE del dashboard. Múltiples iteraciones con autor.**

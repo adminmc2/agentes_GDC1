@@ -82,8 +82,9 @@
   "datos": {             // saco abierto para CONTENIDO LITERAL DEL LIBRO
     "subtipo": <str opcional — sopa_de_letras, dialogo_video, programacion_tv, ...>,
     "items_libro": [str],          // contenido tal cual con _____ donde haya huecos
-    "texto_completo": <str>,       // texto de lectura completo
+    "texto_completo": <str>,       // texto de lectura completo (un solo texto seguido)
     "dialogo_completo": [str],     // líneas del diálogo con [1], [2] en huecos
+    "textos_personajes": [{"personaje": <str>, "texto": <str>}],  // N textos cortos atribuidos a N personajes (autorretratos, fichas, presentaciones múltiples)
     "preguntas": [str],            // lista literal de preguntas
     "preguntas_opciones": [{...}], // selección múltiple
     "cuadricula": [[str]],         // sopa de letras

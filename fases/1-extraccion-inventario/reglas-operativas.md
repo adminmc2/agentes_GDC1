@@ -112,6 +112,8 @@ Los tres ejes son independientes. Una misma `tipo: completa_huecos` puede tener 
 
 **Relación con `seccion` (nivel página):** `seccion` clasifica la página según el índice editorial; `enfoque` clasifica la actividad concreta. Pueden divergir: una página `seccion: gramatica` puede contener una actividad `enfoque: transversal` (lectura comprensiva sin foco gramatical) y otra `enfoque: gramatica` (cloze de artículos). Capturar el foco real, no el de la página.
 
+> **Antipatrón frecuente — copiar `enfoque` de `seccion`.** Heredar el `enfoque` de la sección donde vive la página es un error recurrente. Una actividad de comprensión lectora **genérica** (responder preguntas sobre un texto, V/F sobre un input) NO toma el `enfoque` de la sección que la aloja; es `transversal` salvo que el ejercicio fuerce un foco específico (cloze gramatical, repaso léxico). Casos disparadores reales: U5-p60-act03 (sección Cultura, asignó `enfoque: cultura` cuando era comprensión lectora `transversal`) y U5-p61-act04 (sección Comunicación, asignó `enfoque: comunicacion` cuando también era `transversal`). Verificar siempre el foco pedagógico real del ejercicio, no la sección de la página.
+
 #### Regla de asignación de `expresion_escrita`
 
 `expresion_escrita` se asigna cuando el alumno **produce contenido escrito propio** — es decir, cuando lo que escribe sale de su memoria, conocimiento o criterio, no de un input dictado o de un banco dado. Aplica tanto a textos elaborados (frase, párrafo, correo, presentación, respuesta abierta) como a **listas de palabras evocadas** (ej. "escribe los países que recuerdas").
@@ -148,6 +150,18 @@ Casos donde el alumno trabaja palabras pero también pronunciación:
 
 - La enumeración de 20 valores es **provisional y revisable a nivel global del proyecto**. No se amplía ni se cambia ad hoc por unidad. Cualquier modificación del set requiere decisión cerrada en PROCESO-MAESTRO antes de aplicarse en `schema-inventario.md` y en `validar_inventario.py` (regla de no-divergencia).
 - Ante un caso ambiguo durante una extracción nueva: marcar como TODO en el JSON y consultar al autor antes de cerrar el inventario.
+
+### 2.5 Cómo elegir entre los 3 campos canónicos de texto (`texto_completo`, `dialogo_completo`, `textos_personajes`)
+
+Tres patrones, tres campos. No mezclar:
+
+| Patrón del libro | Campo |
+|---|---|
+| Un texto seguido (carta, artículo, descripción, narración) | `datos.texto_completo` (string único) |
+| Diálogo con turnos atribuidos a hablantes (A: …, B: …) | `datos.dialogo_completo` (lista de strings, una por turno) |
+| N textos cortos, cada uno atribuido a un personaje distinto (autorretratos, fichas, presentaciones múltiples) | `datos.textos_personajes` (lista de objetos `{personaje, texto}`) |
+
+> **No fusionar para forzar `texto_completo` cuando hay atribución por personaje.** La atribución es información estructural y debe preservarse. Ver `convenciones-y-casos.md` §1.4-bis.
 
 ---
 
