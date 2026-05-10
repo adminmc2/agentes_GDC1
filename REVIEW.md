@@ -44,7 +44,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 |---|---|
 | Fase 1 — Extracción de inventario | ✅ U0-U6 integradas y validando 0/0 (U6 integrada 2026-05-10 vía `integrar_unidad.py`). Próxima: U7. 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
-| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.99g) |
+| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.101b) |
 | Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje ✅ base automatizada (v10.97-v10.99c): scripts mapa+auto+integración operativos · `nc1-reciclaje.json` 92 mapa + 69 auto = 161 hilos (post-U6) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
