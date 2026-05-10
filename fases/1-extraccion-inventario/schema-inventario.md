@@ -91,6 +91,10 @@
     "frases": [str],               // listado de frases
     "ejemplo_libro": <str>,        // ejemplo entre comillas/cursiva
     "texto_modelo": <str>,         // texto que el alumno toma como modelo
+    "columnas_relaciona": {         // dos columnas explícitas en actividad tipo relaciona
+      "izquierda": [str],           //   columna izquierda (ej. nombres, frases, números)
+      "derecha": [str]              //   columna derecha (ej. lugares, respuestas, letras)
+    },
     "nombres_dados": [str],        // listado de nombres/palabras del recuadro
     "palabras_recuadro": [str],
     "horarios_digitales": {<id>: <hora>},
@@ -352,7 +356,8 @@ Objeto con exactamente 3 sub-bloques nombrados, cada uno con la misma estructura
 
 - Tipo: lista de strings.
 - Presente dentro de `actividad.datos`.
-- Obligatoria en actividades de tipo `completa_huecos`, `relaciona`, `ordena`, `clasifica`, `seleccion_multiple`, `verdadero_falso` (la lista canónica vive en `validar_inventario.py:TIPOS_QUE_REQUIEREN_ITEMS`, contrato paralelo).
+- Obligatoria en actividades de tipo `completa_huecos`, `ordena`, `clasifica`, `seleccion_multiple`, `verdadero_falso` (la lista canónica vive en `validar_inventario.py:TIPOS_QUE_REQUIEREN_CONTENIDO_VISIBLE`, contrato paralelo).
+- En `relaciona`: obligatoria **salvo** que el libro presente dos columnas explícitas, en cuyo caso se usa `datos.columnas_relaciona` en su lugar (ver `convenciones-y-casos.md` §1.8).
 
 > La regla de **literalidad obligatoria** del contenido (texto exacto del libro, huecos como `_____`, no inventar enunciados) → `reglas-operativas.md`. Ejemplos correctos e incorrectos → `convenciones-y-casos.md`.
 

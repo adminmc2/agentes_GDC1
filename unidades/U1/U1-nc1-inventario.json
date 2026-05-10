@@ -1473,12 +1473,52 @@
             "20 → veinte"
           ],
           "datos": {
-            "items_libro": [
-              "Bloque 1-10 — números: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-              "Bloque 1-10 — palabras desordenadas: tres, siete, nueve, ocho, uno, seis, cuatro, dos, diez, cinco",
-              "Bloque 11-20 — números: 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
-              "Bloque 11-20 — palabras desordenadas: trece, quince, dieciséis, once, dieciocho, doce, diecinueve, diecisiete, veinte, catorce"
-            ]
+            "columnas_relaciona": {
+              "izquierda": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20"
+              ],
+              "derecha": [
+                "tres",
+                "siete",
+                "nueve",
+                "ocho",
+                "uno",
+                "seis",
+                "cuatro",
+                "dos",
+                "diez",
+                "cinco",
+                "trece",
+                "quince",
+                "dieciséis",
+                "once",
+                "dieciocho",
+                "doce",
+                "diecinueve",
+                "diecisiete",
+                "veinte",
+                "catorce"
+              ]
+            }
           },
           "enfoque": "vocabulario"
         }

@@ -147,6 +147,31 @@ Antipatrón recurrente: asumir que una actividad alojada en página `seccion: X`
 
 **Casos disparadores:** U5-p60-act03 (sección Cultura, asignó `cultura`, era `transversal`), U5-p61-act04 (sección Evaluación, asignó `comunicacion`, era `transversal`).
 
+### 1.8 Actividades `relaciona` con dos columnas explícitas del libro
+
+Cuando el libro presenta una actividad de relacionar con **dos columnas visuales separadas** (columna A y columna B con elementos a unir), usar `datos.columnas_relaciona` en lugar de `datos.items_libro`.
+
+```jsonc
+// ❌ INCORRECTO — pierde la estructura columnar del libro
+"items_libro": ["1 Juan", "2 Ángel", "a parque", "b museo"]
+
+// ✅ CORRECTO — preserva las dos columnas tal como aparecen
+"datos": {
+  "columnas_relaciona": {
+    "izquierda": ["1 Juan", "2 Ángel", "3 Roberto", "4 Alba"],
+    "derecha": ["a parque", "b museo", "c polideportivo", "d biblioteca"]
+  }
+}
+```
+
+**Cuándo aplica:** el libro muestra visualmente dos listas paralelas con elementos a unir mediante flechas, líneas o letras/números. Cada columna tiene sus propios marcadores (números 1-N en la izquierda, letras a-N en la derecha, o similar).
+
+**Cuándo NO aplica:** si el libro da una lista única de ítems sin distinción columnar (aunque la actividad sea de relacionar) → usar `items_libro` como siempre.
+
+**`respuestas`:** lista de pares en formato `"1→a"`, `"2→c"`, etc.
+
+**Caso disparador:** U6-p63-act05 y U6-p63-act08 (personas → lugares de trabajo).
+
 ---
 
 ## 2. Ejemplos canónicos de `items_libro` por tipo de actividad

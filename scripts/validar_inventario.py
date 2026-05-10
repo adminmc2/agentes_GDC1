@@ -78,7 +78,7 @@ ENFOQUES_VALIDOS = {
 }
 
 # Tipos de actividad que deben llevar items_libro u otro contenido visible
-TIPOS_QUE_REQUIEREN_ITEMS = {
+TIPOS_QUE_REQUIEREN_CONTENIDO_VISIBLE = {
     "completa_huecos", "relaciona", "ordena", "clasifica",
     "seleccion_multiple", "verdadero_falso",
     "responder_preguntas_cerradas", "responder_preguntas_abiertas",
@@ -87,6 +87,7 @@ TIPOS_QUE_REQUIEREN_ITEMS = {
 
 CONTENIDOS_VISIBLES = {
     "items_libro", "texto_completo", "dialogo_completo", "textos_personajes",
+    "columnas_relaciona",
     "frases", "preguntas",
     "preguntas_opciones", "ejemplo_libro", "texto_modelo", "nombres_dados",
     "palabras_recuadro", "cuadricula", "afirmaciones_a_corregir",
@@ -269,18 +270,31 @@ def validar(path):
                     if img.get("presente") and not img.get("descripcion"):
                         errores.append(f"❌ {apref}: imagen.presente=true requiere 'descripcion'")
 
-                    # tipos que requieren items_libro o equivalente
-                    if tipo in TIPOS_QUE_REQUIEREN_ITEMS:
+                    # tipos que requieren contenido visible (items_libro, columnas_relaciona u otro canónico)
+                    if tipo in TIPOS_QUE_REQUIEREN_CONTENIDO_VISIBLE:
                         datos = a.get("datos", {})
                         if not any(k in datos for k in CONTENIDOS_VISIBLES):
                             errores.append(
                                 f"❌ {apref}: tipo '{tipo}' requiere contenido visible "
-                                f"(uno de: items_libro, frases_libro, preguntas_opciones, etc.)"
+                                f"(items_libro, columnas_relaciona, preguntas_opciones u otro canónico)"
                             )
 
-                    # validación estructural de textos_personajes
+                    # validación estructural de textos_personajes y columnas_relaciona
                     # (schema-inventario.md §3 + reglas-operativas.md §2.5)
                     datos = a.get("datos", {})
+
+                    # columnas_relaciona: objeto {izquierda: [str], derecha: [str]}
+                    if "columnas_relaciona" in datos:
+                        cr = datos["columnas_relaciona"]
+                        if not isinstance(cr, dict):
+                            errores.append(f"❌ {apref}: datos.columnas_relaciona debe ser objeto {{izquierda, derecha}}")
+                        else:
+                            for lado in ("izquierda", "derecha"):
+                                col = cr.get(lado)
+                                if not isinstance(col, list) or not col:
+                                    errores.append(f"❌ {apref}: datos.columnas_relaciona.{lado} debe ser lista no vacía de strings")
+                                elif not all(isinstance(s, str) and s.strip() for s in col):
+                                    errores.append(f"❌ {apref}: datos.columnas_relaciona.{lado} debe contener solo strings no vacíos")
                     if "textos_personajes" in datos:
                         tp = datos["textos_personajes"]
                         if not isinstance(tp, list):

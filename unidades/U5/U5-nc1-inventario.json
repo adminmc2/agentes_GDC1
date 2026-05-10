@@ -490,13 +490,22 @@
             "5 → b"
           ],
           "datos": {
-            "items_libro": [
-              "1 grande — a antiguo",
-              "2 nuevo — b feo",
-              "3 cómodo — c incómodo",
-              "4 moderno — d pequeño",
-              "5 bonito — e viejo"
-            ]
+            "columnas_relaciona": {
+              "izquierda": [
+                "1 grande",
+                "2 nuevo",
+                "3 cómodo",
+                "4 moderno",
+                "5 bonito"
+              ],
+              "derecha": [
+                "a antiguo",
+                "b feo",
+                "c incómodo",
+                "d pequeño",
+                "e viejo"
+              ]
+            }
           }
         },
         {
@@ -1105,22 +1114,26 @@
             "7 → e / f / g"
           ],
           "datos": {
-            "items_libro": [
-              "1 Hola, ¿cómo estás?",
-              "2 ¿Dónde está mi mochila?",
-              "3 ¿Cómo es tu casa?",
-              "4 ¿De dónde eres?",
-              "5 ¿Cómo es tu perro?",
-              "6 ¿Dónde están tus deportivas?",
-              "7 ¿Dónde están tus abuelos?",
-              "a De Madrid.",
-              "b Bien, gracias.",
-              "c Muy bonita.",
-              "d Pequeño, de color marrón.",
-              "e En el comedor.",
-              "f En la casa de la playa.",
-              "g En el gimnasio."
-            ]
+            "columnas_relaciona": {
+              "izquierda": [
+                "1 Hola, ¿cómo estás?",
+                "2 ¿Dónde está mi mochila?",
+                "3 ¿Cómo es tu casa?",
+                "4 ¿De dónde eres?",
+                "5 ¿Cómo es tu perro?",
+                "6 ¿Dónde están tus deportivas?",
+                "7 ¿Dónde están tus abuelos?"
+              ],
+              "derecha": [
+                "a De Madrid.",
+                "b Bien, gracias.",
+                "c Muy bonita.",
+                "d Pequeño, de color marrón.",
+                "e En el comedor.",
+                "f En la casa de la playa.",
+                "g En el gimnasio."
+              ]
+            }
           }
         },
         {

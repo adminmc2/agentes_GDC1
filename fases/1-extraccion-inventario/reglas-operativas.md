@@ -269,7 +269,9 @@ Estructural en schema (`schema-inventario.md` §12): lista de strings, obligator
 
 **Regla de literalidad (la más importante):** `items_libro` debe contener **el texto literal del libro**, con los huecos marcados como `_____` (5 guiones bajos). Nunca sustituir el enunciado por la respuesta. Nunca inventar el enunciado.
 
-**Para qué tipos aplica:** completar huecos, opción múltiple, ordenar, clasificar, relacionar, verdadero/falso, y similares.
+**Para qué tipos aplica:** completar huecos, opción múltiple, ordenar, clasificar, verdadero/falso, y similares.
+
+**Excepción para `relaciona` con dos columnas explícitas:** si el libro presenta dos columnas visuales separadas (columna A y columna B con elementos a unir), usar `datos.columnas_relaciona` en lugar de `items_libro`. Ver `convenciones-y-casos.md` §1.8.
 
 > Ejemplos correctos e incorrectos → `convenciones-y-casos.md` (a migrar en A4.2c).
 
