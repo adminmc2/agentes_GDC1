@@ -705,6 +705,8 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 
 ## Bitácora del documento
 
+- **2026-05-11** — **U9 integrada a main** (v10.104) vía `integrar_unidad.py` (commit `ea4cb51`). 41 actividades, 6 cuadros, autoevaluación presente, validador 0/0. Reciclaje sin cambios respecto a post-U8 (92 mapa + 89 auto = 181 hilos): U9 no introduce campos semánticos nuevos. **Curso completo extraído — U0-U9 integradas y validando 0/0**. Refinamientos del extractor pendientes (canon semántico + doble superficie del validador) documentados localmente.
+- **2026-05-11** — Sincronización documental v10.104b: CHANGELOG/REVIEW/PROCESO-MAESTRO/README actualizados al cierre extractivo de fase 1; entrada autodocumentada en el mismo commit para no reabrir la regresión de trazabilidad.
 - **2026-05-10** — Sincronización documental U8 (v10.103b) + autodocumentación + retirada de referencia a `REDISEÑO-EN-CURSO.md` (artefacto local untracked) del estado comprometido del bloque B (v10.103c).
 - **2026-05-10** — **U8 integrada a main** (v10.103) vía `integrar_unidad.py` (commit `3f3e626`). 46 actividades, 5 cuadros, validador 0/0. Reciclaje actualizado: 181 hilos (92 mapa + 89 auto). U0-U8 integradas y validando 0/0.
 - **2026-05-10** — **U7 integrada a main** (v10.102) vía `integrar_unidad.py` (commit `590c9f3`). 46 actividades, 4 cuadros, validador 0/0. Reciclaje actualizado: 171 hilos (92 mapa + 79 auto). Segunda integración con el flujo automatizado, sin desviaciones del protocolo. U0-U7 integradas y validando 0/0.

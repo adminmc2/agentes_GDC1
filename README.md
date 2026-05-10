@@ -10,7 +10,7 @@ El contenido editorial se genera siguiendo un **proceso de 8 fases**, partiendo 
 
 | Fase | Descripción | Estado |
 |------|-------------|--------|
-| 1 | Input PDF → inventario JSON | ✅ Operativa con U3 |
+| 1 | Input PDF → inventario JSON | ✅ U0-U9 integradas y validando 0/0 |
 | 2 | Análisis de vocabulario | 📋 Pendiente |
 | 3 | Tarjetas de vocabulario | 📋 Pendiente |
 | 4 | Tarjetas de estrategia | 📋 Pendiente |
@@ -153,7 +153,6 @@ La carpeta `viejo/` conserva el sistema CrewAI v5 que existía antes del redise�
 
 ## Estado actual
 
-- **Fase 1 operativa** — extraídas y validadas: U3 (47 actividades, regular) y U0 (10 actividades, "Punto de partida" — unidad introductoria atípica).
-- **U1, U2, U4-U9 pendientes** de extracción cuando lleguen sus PDFs.
+- **Fase 1 — curso completo extraído.** U0-U9 integradas y validando 0/0. Refinamientos del extractor pendientes (canon semántico + doble superficie del validador).
 - **Fases 2-8 pendientes** de definir prompt y construir.
 - **Plan detallado y gates pendientes:** ver [`REVIEW.md`](REVIEW.md).

@@ -5,6 +5,26 @@
 
 ---
 
+## [v10.104b — 2026-05-11] — Doc canónica de integración U9 + curso completo extraído
+
+Sincroniza CHANGELOG/REVIEW/PROCESO-MAESTRO/README con la integración U9 (v10.104) y refleja que U0-U9 están integradas y validando 0/0. No incluye `REDISEÑO-EN-CURSO.md` (artefacto local untracked).
+
+Esta entrada se autodocumenta en el mismo commit junto a la de v10.104, evitando reabrir la brecha de trazabilidad del patrón doc-comenta-pero-no-se-comenta.
+
+**Estado tras este commit:** curso completo extraído (10 unidades). Fase 1 con todos los inventarios integrados; refinamientos del extractor identificados pendientes (canon semántico, doble superficie del validador, refuerzo del prompt) documentados en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` (local).
+
+---
+
+## [v10.104 — 2026-05-11] — Integración U9 a main (41 actividades, 6 cuadros, 0/0)
+
+Integración limpia de U9 desde worktree `extract/U9` vía `integrar_unidad.py`. Última unidad del curso.
+
+- **Stats:** 41 actividades, 6 cuadros, autoevaluación presente, validador 0/0.
+- **Reciclaje:** se mantiene en 181 hilos (92 mapa + 89 auto) — U9 no introduce campos semánticos nuevos respecto a U0-U8; sus contenidos caen sobre hilos ya existentes.
+- **Sin desviaciones** del flujo automatizado.
+
+---
+
 ## [v10.103c — 2026-05-10] — Fix doc: autodocumenta v10.103b + retira referencia a artefacto local
 
 Dos correcciones tras hallazgos del revisor sobre b887984:
