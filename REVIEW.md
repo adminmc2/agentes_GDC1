@@ -44,7 +44,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 |---|---|
 | Fase 1 — Extracción de inventario | ✅ U0-U9 extraídas e integradas (0/0). Curso completo. **Canon semántico activado** en rollout R1 (v10.108): validador con 3 canales (errores, avisos, auditoría legacy). U0-U9 generan auditoría legacy informativa pendiente de saneamiento; sin bloqueo. 5 archivos operativos + canon JSON + módulo `canon.py` en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
-| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.108e) |
+| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.108f) |
 | Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje **PAUSADA** hasta cerrar canon semántico de fase 1. `nc1-reciclaje.json` actual (181 hilos) congelado. `integrar_unidad.py` no regenera reciclaje por defecto (flag `--regenerar-reciclaje` opcional desde v10.108d) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |

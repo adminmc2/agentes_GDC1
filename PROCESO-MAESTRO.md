@@ -89,7 +89,7 @@ unidades/
 4. Validación visual fuente vs JSON (revisión de 2-3 páginas al azar).
 5. `python scripts/importar_inventario.py unidades/UX/UX-nc1-inventario.json` → carga a BD (idempotente, DELETE CASCADE).
 6. Tras desarrollar la unidad, regenerar `nc1-tarjetas.json` y `nc1-pildoras.json` con scripts Python deterministas.
-7. Cierre de unidad: actualizar `nc1-reciclaje.json` manualmente con ayuda de Claude Code en chat (no automático).
+7. Cierre de unidad: actualización de `nc1-reciclaje.json`. *(Histórico: en el pipeline original era manual con Claude Code en chat. Estado vigente desde v10.108d: fase 2 pausada; `integrar_unidad.py` no regenera reciclaje por defecto, requiere el flag explícito `--regenerar-reciclaje` cuando se justifique. Ver decisión 36.)*
 8. Si el PDF cambia, repetir desde el paso 1 con versión nueva + entrada en CHANGELOG.
 
 ---
