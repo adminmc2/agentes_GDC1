@@ -5,6 +5,21 @@
 
 ---
 
+## [v10.105 — 2026-05-11] — Decisión de diseño cerrada: canon semántico en fase 1 (E-final)
+
+Tras 5 iteraciones revisor↔ejecutor sobre cómo gobernar los nombres de `campo_semantico` y de las claves de `vocabulario_consolidado` en los inventarios:
+
+**Propuesta E-final aprobada por el revisor:** el canon vive dentro de fase 1, integrado en sus documentos existentes sin crear archivos de doc nuevos. Artefactos nuevos solo son datos y código (`campos-semanticos-canonicos.json`, `scripts/canon.py`, `scripts/inicializar_canon_semantico.py`). Modificaciones quirúrgicas a `CLAUDE.md`/`prompt.md`/`reglas-operativas.md`/`schema-inventario.md` de fase 1. Validador endurecido con 3 canales (errores, avisos, auditoría legacy con contador propio). Rollout R1 (auditoría para U0-U9, error duro para nuevas) → R2 (legacy vaciada) → R3 (endurecimiento final). Dos carriles complementarios: extracción canónica desde origen (prompt) + saneamiento retrospectivo. Marca `_pendiente_canon` transitoria con triple defensa que bloquea cierre. Dashboard solo lectura. **Fase 2 pausada** hasta cierre de canon; modelo viejo del reciclaje (mapa+auto+detalle paralelo) anulado.
+
+**Sincronización documental:**
+- `REVIEW.md`: estado bloque B reformulado; B2a marcado como anulado; bitácora con entrada de la decisión.
+- `PROCESO-MAESTRO.md`: decisión 36 nueva con detalle completo; anotación de anulación en la descripción del modelo viejo de `nc1-reciclaje.json` (línea 213); bitácora.
+- `README.md`: estado actual de fase 1 y fase 2 actualizados.
+
+No incluye `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` (artefacto local untracked, sigue siendo el documento de trabajo de la reformulación de fase 2 cuando llegue su turno).
+
+---
+
 ## [v10.104d — 2026-05-11] — Fix CHANGELOG: entrada formal de v10.104c
 
 Hallazgo bajo del revisor sobre `05ddacb`: el fix de v10.104c reescribió la entrada de v10.104b pero no se autodocumentó como hito propio en el changelog. Añadida entrada formal de v10.104c. Esta entrada de v10.104d se autodocumenta en el mismo commit para no reabrir la brecha.

@@ -210,7 +210,11 @@ Estructura por cuadro gramatical:
   - **Pendiente revisar posteriormente** en este documento maestro cuando se aborden las píldoras.
 - Generación: script Python determinista que lista PDFs y parsea TEX.
 
-**`nc1-reciclaje.json`** — mapping editorial de reciclaje cross-unidad. **Schema cerrado en B1.5 (v10.89), refinado a modelo de hilos en v10.92 (2026-05-09)** para soportar fan-out y cascada que el modelo punto-a-punto original no representaba.
+**`nc1-reciclaje.json`** — mapping editorial de reciclaje cross-unidad.
+
+> ⚠ **Modelo descrito a continuación ANULADO el 2026-05-11.** Reformulación pendiente tras cierre de canon semántico de fase 1 (propuesta E-final). Ver decisión 36 (Parte 4) y bitácora 2026-05-11. La descripción que sigue se conserva como referencia histórica del modelo viejo (mapa+auto paralelos + pase 1/2 + niveles jerárquicos).
+
+**Schema cerrado en B1.5 (v10.89), refinado a modelo de hilos en v10.92 (2026-05-09)** para soportar fan-out y cascada que el modelo punto-a-punto original no representaba.
 - **Acumulativo y secuencial:** cada unidad analiza qué reutiliza de las anteriores, NO se recicla todo, **solo los hilos clave** de mayor impacto.
 - **Basado en contenido**, no en actividades.
 - **Manual con Claude Code en chat**, revisable y editable desde el dashboard.
@@ -614,6 +618,47 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
 
 ---
 
+### Sobre el canon semántico de fase 1 (decidido 2026-05-11)
+
+36. **Canon semántico vive dentro de fase 1 — propuesta E-final** (cerrada tras 5 iteraciones revisor↔ejecutor). El universo cerrado de nombres válidos para `actividad.campo_semantico` y para las claves de `vocabulario_consolidado.{principal,recurrente,comprension}` se gobierna desde fase 1, sin crear archivos de documentación nuevos. Sustituye la decisión "liberal" antigua de `reglas-operativas.md` §5.6.
+
+   **Artefactos nuevos (solo datos y código, no doc):**
+   - `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` — fuente única de verdad. Estructura: `version`, `actualizado`, `_politica` (rollout R1/R2/R3, reglas de uso, legacy_unidades), `campos[]` con entradas `{canonico, origen, [nota], aliases_indice, aliases_auto}`.
+   - `scripts/canon.py` — módulo compartido con 4 funciones: `cargar_canon()`, `validar_canon()`, `escribir_canon()` (atómico, con backup y lock), `detectar_pendientes()`.
+   - `scripts/inicializar_canon_semantico.py` — one-off que pobla el JSON inicial desde `nc1-curso.json` (`origen: "indice"`) + subset PCIC A1 curado (`origen: "pcic_a1"`).
+
+   **Modificaciones a documentos de fase 1 (sin archivos doc nuevos):** `CLAUDE.md` (regla crítica + tabla de navegación), `prompt.md` (paso de extracción canónica desde origen + 2 ítems al checklist), `reglas-operativas.md` (sustituir §5.6 por política de canon + árbol de decisión + rollout), `schema-inventario.md` (§9 y §10 con restricción de naming + marca `_pendiente_canon`).
+
+   **Endurecimiento del validador:** `scripts/validar_inventario.py` gana 3 canales de salida (errores, avisos, **auditoría legacy con contador propio**). Rollout R1 (auditoría legacy para U0-U9, error duro para nuevas) → R2 (legacy vaciada, error duro toda unidad) → R3 (endurecimiento final). Marca `_pendiente_canon` → error duro siempre.
+
+   **Origen de las entradas:**
+   - `indice`: viene de `nc1-curso.json`. El canónico (literal o vía alias en `aliases_indice`) debe existir en `vocabulario[]` o `contenido_general[]`.
+   - `pcic_a1`: subcategoría curada del PCIC A1 Cervantes. Sin casos híbridos con índice.
+   - `excepcion`: caso fuera de A1 con `nota` obligatoria.
+
+   **Árbol de decisión** (vive una sola vez en `reglas-operativas.md`):
+   ```
+   ¿Canónico ya existe en el canon (literal o alias)?
+   ├── SÍ → añadir alias si no estaba + renombrar en el inventario
+   └── NO → ¿viene del índice del libro?
+       ├── SÍ → crear entrada con origen: "indice"
+       └── NO → ¿cubierto por PCIC A1?
+           ├── SÍ → crear entrada con origen: "pcic_a1"
+           └── NO → ¿ruido del extractor / parche contextual?
+               ├── SÍ → no se amplía canon, solo se sanea inventario
+               └── NO → caso excepción justificada (origen: "excepcion" + nota)
+   ```
+
+   **Dos carriles complementarios:**
+   - **Carril A** — extracción canónica desde origen: el prompt de fase 1 instruye al extractor a agrupar `vocabulario_consolidado` directamente en nombres canónicos. Si no encuentra categoría segura, marca `_pendiente_canon: true` (estado transitorio de worktree, bloquea cierre).
+   - **Carril B** — saneamiento retrospectivo de U0-U9: el validador en R1 lista los campos no canónicos como auditoría legacy; el dashboard los muestra; el humano resuelve uno a uno con Claude Code aplicando el árbol de decisión.
+
+   **Dashboard:** solo lectura. Endpoint `GET /api/canon/pendientes` + vista UI mínima de cola. NO escribe en el canon. La edición la hace Claude Code (carril operativo del sistema).
+
+   **Fase 2 pausada** hasta cierre del canon. El `nc1-reciclaje.json` actual queda congelado. La reformulación del reciclaje (modelo de hilos) entra como trabajo posterior.
+
+---
+
 ## Parte 5 — Decisiones pendientes
 
 ### Sobre la estructura física del repo
@@ -705,6 +750,7 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 
 ## Bitácora del documento
 
+- **2026-05-11** — **Decisión 36 cerrada: canon semántico en fase 1 (E-final).** Tras 5 iteraciones revisor↔ejecutor: el universo de `campo_semantico` y claves de `vocabulario_consolidado` se gobierna mediante canon JSON dentro de fase 1, sin archivos doc nuevos. Artefactos nuevos: JSON canónico + `scripts/canon.py` + script de inicialización. Modificaciones quirúrgicas en docs de fase 1. Validador endurecido con 3 canales (errores, avisos, auditoría legacy) + rollout R1/R2/R3. Dos carriles: extracción canónica desde origen + saneamiento retrospectivo U0-U9. Marca `_pendiente_canon` transitoria que bloquea cierre. Fase 2 pausada hasta canon limpio; modelo viejo (mapa+auto+detalle) anulado en línea 213 con anotación. Implementación pendiente.
 - **2026-05-11** — **U9 integrada a main** (v10.104) vía `integrar_unidad.py` (commit `ea4cb51`). 41 actividades, 6 cuadros, autoevaluación presente, validador 0/0. Reciclaje sin cambios respecto a post-U8 (92 mapa + 89 auto = 181 hilos): U9 no introduce campos semánticos nuevos. **Curso completo extraído — U0-U9 integradas y validando 0/0**. Refinamientos del extractor pendientes (canon semántico + doble superficie del validador) documentados localmente.
 - **2026-05-11** — Sincronización documental v10.104b: CHANGELOG/REVIEW/PROCESO-MAESTRO/README actualizados al cierre extractivo de fase 1; entrada autodocumentada en el mismo commit para no reabrir la regresión de trazabilidad.
 - **2026-05-10** — Sincronización documental U8 (v10.103b) + autodocumentación + retirada de referencia a `REDISEÑO-EN-CURSO.md` (artefacto local untracked) del estado comprometido del bloque B (v10.103c).

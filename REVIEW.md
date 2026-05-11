@@ -45,7 +45,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 | Fase 1 — Extracción de inventario | ✅ U0-U9 extraídas e integradas (0/0). Curso completo. Refinamientos del extractor pendientes (canon semántico + doble superficie del validador). 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.104b) |
-| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje ✅ base automatizada (v10.97-v10.99c) · `nc1-reciclaje.json` 92 mapa + 89 auto = 181 hilos (post-U9, curso completo) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
+| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje **PAUSADA** hasta cerrar canon semántico de fase 1 (propuesta E-final aprobada por revisor 2026-05-11, pendiente de implementación). `nc1-reciclaje.json` actual (181 hilos) congelado · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
 | Bloque E (limpieza final) | 📋 Pendiente |
@@ -160,10 +160,12 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 
 **Sub-pasos desacoplados:**
 
-**B2a — Primera población de `nc1-reciclaje.json`**
-- **B2a.1 — Pase 1 (mapa)** ✅ cerrado v10.94. Hilos detectados desde `nc1-curso.json` sin abrir inventarios (23 hilos, 70 eventos, U0-U9, marcados `nivel_analisis: "mapa"`).
-- **B2a.2 — Pase 2 (detalle)** 📋 pendiente. Validación de cada hilo contra los inventarios reales (U1-U4 disponibles hoy) + adición de hilos que solo afloran al abrir el inventario (vocabulario complementario de frecuencia que el índice oficial no captura). Promueve eventos a `nivel_analisis: "detalle"`. Pendiente también: script automático de proyección de vocabulario por campo semántico desde inventarios.
-- Gate B2a: `hilos[]` con cobertura validada contra inventarios disponibles en pase 2.
+**B2a — Primera población de `nc1-reciclaje.json`** ⚠ **ANULADO (replanteamiento 2026-05-11)**
+
+El modelo de hilos jerárquicos (mapa/auto/detalle, pase 1/pase 2) queda anulado por la propuesta E-final, que mueve la autoridad de naming de fase 2 a fase 1 mediante un canon semántico. Los hilos del `nc1-reciclaje.json` actual quedan **congelados** hasta que el canon esté limpio. La reformulación de fase 2 entra como trabajo posterior al cierre del canon.
+
+- ~~B2a.1 — Pase 1 (mapa)~~: estado histórico (v10.94 cubría 23 hilos / 70 eventos). Se reformula tras canon.
+- ~~B2a.2 — Pase 2 (detalle)~~: no se ejecutará en su forma original.
 
 **B2b — Crear `nc1-tarjetas.json`** (bloqueado)
 - Pre-condición: B1 (script `regenerar_tarjetas_globales.py`) + al menos una unidad con vocabulario analizado (fase 2).
@@ -469,6 +471,7 @@ En cada iteración:
 - **2026-05-08** — Dashboard: badge "extracción en curso" para unidades de worktrees paralelos (v10.81). Las unidades servidas vía `EXTRA_UNIDADES_PATHS` (`zona: "extra"`) ahora muestran un badge ámbar *"🔄 Extracción en curso (worktree paralelo)"* en lugar del path absoluto. Para unidades de main (`zona: ""`) se mantiene el path relativo. Al integrar una unidad a main, el cambio es automático: main gana sobre extras y el badge desaparece. Validador 0/0.
 - **2026-05-08** — Dashboard: eliminado el badge de versión (v10.80b). v10.80 había hecho el badge dinámico, pero seguían apareciendo 2 indicadores en el header. Decisión del autor: dejar solo el indicador derecho que ya muestra versión + hora viva. Eliminados el span del badge y el JS que lo actualizaba. Una sola fuente visible de versión. Validador 0/0.
 - **2026-05-08** — Dashboard: badge de versión dinámico (v10.80). Tras v10.79 el header mostraba dos versiones distintas: badge verde con `v10.78` hardcoded (desde v10.78) y el indicador derecho dinámico `v10.79 — hh:mm:ss`. Fix: badge ahora con `id="version-badge"` que se rellena en `init()` desde `/api/version`. Una sola fuente de verdad. Sin cambios funcionales. Validador 0/0.
+- **2026-05-11** — **Decisión de diseño cerrada: canon semántico en fase 1 (propuesta E-final).** Tras 5 iteraciones revisor↔ejecutor y un giro arquitectónico, el canon de nombres permitidos para `campo_semantico` y claves de `vocabulario_consolidado` vive dentro de fase 1, integrado en sus documentos existentes sin crear archivos doc nuevos. Artefactos nuevos: `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` (SoT de datos), `scripts/canon.py` (módulo compartido con 4 funciones: cargar, validar, escribir atómico, detectar pendientes), `scripts/inicializar_canon_semantico.py` (one-off poblando desde `nc1-curso.json` + subset PCIC A1). Modificaciones quirúrgicas en `CLAUDE.md`/`prompt.md`/`reglas-operativas.md`/`schema-inventario.md` de fase 1 + endurecimiento del validador con 3 canales (errores, avisos, **auditoría legacy**) + rollout R1/R2/R3 + carril A (extracción canónica desde origen) + carril B (saneamiento retrospectivo U0-U9). Dashboard solo lectura para cola de pendientes. Marca `_pendiente_canon` transitoria de worktree con triple defensa (schema, regla, validador) que bloquea cierre del inventario. Fase 2 **pausada** hasta cerrar canon. Implementación pendiente.
 - **2026-05-11** — **U9 integrada a main** (v10.104) vía `integrar_unidad.py` (commit `ea4cb51`). 41 actividades, 6 cuadros, validador 0/0. Reciclaje sin cambios (92 mapa + 89 auto = 181) — U9 no introduce campos semánticos nuevos. **Curso completo extraído (U0-U9 integradas)**. Sincronización documental + autodocumentación en v10.104b.
 - **2026-05-10** — Sincronización documental U8 (v10.103b) + autodocumentación + retirada de referencia a artefacto local (v10.103c).
 - **2026-05-10** — **U8 integrada a main** (v10.103) vía `integrar_unidad.py` (commit `3f3e626`). 46 actividades, 5 cuadros, validador 0/0. Reciclaje actualizado: 181 hilos (92 mapa + 89 auto). Tercera integración limpia con el flujo automatizado.
