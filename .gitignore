@@ -62,3 +62,8 @@ unidades/**/fuente/*.pdf
 ROADMAP.md
 GITHUB-MANIFEST.md
 .github/
+
+# Transitorios del canon semántico (backup y lock que crea scripts/canon.py
+# en cada escritura atómica — no deben entrar al repo)
+fases/1-extraccion-inventario/campos-semanticos-canonicos.json.bak
+fases/1-extraccion-inventario/campos-semanticos-canonicos.json.lock

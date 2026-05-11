@@ -1,0 +1,594 @@
+{
+  "version": "1.0",
+  "actualizado": "2026-05-11",
+  "campos": [
+    {
+      "canonico": "Países que hablan español",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Abecedario español",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Números 0-10",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Para la clase",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Objetos de clase",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Nombres de las letras",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Países hispanohablantes",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Adjetivos de nacionalidad",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Días de la semana",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Números ordinales",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Asignaturas",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Parientes",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Alimentos",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Comidas preparadas",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Tipos de vivienda",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Partes de la casa",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Mobiliario",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Adjetivos descriptivos",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Establecimientos: cine, restaurante, farmacia...",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Profesiones y lugares de trabajo",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Meses del año",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Animales domésticos y salvajes",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "El cuerpo humano",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Práctica del surf",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Ropa",
+      "origen": "indice",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Partes del cuerpo",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Características físicas",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Acciones y posiciones que se realizan con el cuerpo",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Carácter y personalidad",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Nombre",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Dirección",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Número de teléfono",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Lugar y fecha de nacimiento",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Nacionalidad",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Edad",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Sexo",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Profesión",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Documentación",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Objetos personales",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Relaciones familiares",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Relaciones sociales",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Celebraciones y actos familiares, sociales y religiosos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Dieta y nutrición",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Bebida",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Platos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Restaurante",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Centros e instituciones educativas",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Profesorado y alumnado",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Sistema educativo",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Aprendizaje y enseñanza",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Exámenes y calificaciones",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Lenguaje de aula",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Material educativo y mobiliario de aula",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Profesiones y cargos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Lugares, herramientas y ropa de trabajo",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Actividad laboral",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Tiempo libre y entretenimiento",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Espectáculos y exposiciones",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Deportes",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Correspondencia escrita",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Teléfono",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Prensa escrita",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Televisión y radio",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Internet",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Acciones relacionadas con la vivienda - Ocupación",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Características de la vivienda - Tipos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Características de la vivienda - Partes",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Objetos domésticos - Muebles y objetos domésticos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Objetos domésticos - Electrodomésticos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Servicios sanitarios",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Servicios sociales",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Lugares, personas y actividades",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Ropa, calzado y complementos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Pagos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Salud y enfermedades",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Síntomas",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Centros de asistencia sanitaria",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Higiene",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Tipos de viajes",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "La playa",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "La montaña",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Alojamiento",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Sistema de transporte - Tipos de transporte por tierra",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Sistema de transporte - Tipos de transporte aéreo",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Cuestiones generales",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Matemáticas",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Informática y nuevas tecnologías",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Música y danza",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Cine y teatro",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Universo y espacio",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Geografía física, humana y política",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Paisaje y accidentes geográficos",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Ciudad",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Campo",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Clima y tiempo atmosférico",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Fauna",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    },
+    {
+      "canonico": "Flora",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": []
+    }
+  ]
+}
