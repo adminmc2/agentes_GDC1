@@ -98,7 +98,7 @@ Antes de dar el JSON por bueno, comprobar manualmente y con el validador.
 10. **`descripcion` de imagen** obligatoria si `imagen.presente=true`.
 11. **`datos.ejemplo_libro` no duplicado en `respuestas`** — el ejemplo del libro va solo en `datos.ejemplo_libro`, nunca como ítem de `respuestas`. Ver `convenciones-y-casos.md` §1.6.
 12. **Cardinalidad literal de `items_libro`** — el número de ítems debe coincidir exactamente con los del PDF. No inventar ni completar la serie. Ver `reglas-operativas.md` §5.7.
-13. **`campo_semantico` y claves de `vocabulario_consolidado` son canónicos** — todos los nombres usados existen en `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` o son aliases conocidos. Ver `reglas-operativas.md` §5.6.
+13. **`campo_semantico` y claves de `vocabulario_consolidado` son canónicos literales** — todos los nombres usados son un `canonico` de `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` (no aliases). Para extracción nueva esto es obligatorio; aliases solo se reconocen para diagnóstico de legacy. Ver `reglas-operativas.md` §5.6.
 14. **Cero marcas `_pendiente_canon` en el JSON final** — esa marca es estado transitorio de worktree y bloquea cierre. Antes de declarar el inventario listo, resolver cada marca aplicando el árbol de decisión de §5.6 (vía Claude Code) y reemplazarla por el canónico correspondiente.
 15. **JSON parseable** (validar con Python: `json.loads(open(...).read())`).
 
