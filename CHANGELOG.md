@@ -5,6 +5,50 @@
 
 ---
 
+## [v10.108c — 2026-05-11] — Sincronización documental del batch canon (REVIEW + PROCESO-MAESTRO + CHANGELOG)
+
+Cierre documental de la activación del canon semántico en fase 1
+(v10.108 + v10.108b). Sin cambios funcionales: solo trazabilidad.
+
+- CHANGELOG: entradas formales de v10.108, v10.108b y esta misma v10.108c (autodocumentada para no reabrir la regresión doc).
+- REVIEW: estado de fase 1 actualizado con canon activado en rollout R1; etiqueta de sincronización → v10.108c; bitácora con el cierre del batch.
+- PROCESO-MAESTRO: bitácora con la implementación cerrada de la decisión 36.
+
+---
+
+## [v10.108b — 2026-05-11] — Fix prompt: ítem 13 del checklist alineado al contrato del canon
+
+Hallazgo bajo del revisor sobre v10.108: el ítem 13 del checklist de cierre del entrypoint decía "existen en el canon o son aliases conocidos", pero el resto del contrato exige canónicos literales para extracción nueva. Reformulado a "canónicos literales (no aliases)". Aliases solo se reconocen para diagnóstico de legacy. Sin cambios funcionales.
+
+---
+
+## [v10.108 — 2026-05-11] — Canon semántico activado en fase 1 (batch único)
+
+Batch único que cierra la coherencia del canon en fase 1 sin romper main en ningún punto. Combina los pasos 3-7 del plan de implementación de la decisión 36 (E-final).
+
+**6 archivos modificados, 0 archivos doc nuevos:**
+
+- `schema-inventario.md`: §9, §10, §13 con restricciones canon + marca `_pendiente_canon`. Ejemplo top-level alineado a `<canonico>`.
+- `reglas-operativas.md` §5.6: reescrita por completo. Sustituye la decisión "liberal" antigua. Define universo válido, frontera `aliases_indice` vs `aliases_auto` por procedencia, árbol de decisión, rollout R1/R2/R3 con matriz por tipo de match.
+- `scripts/validar_inventario.py`: tercer canal `auditoria_legacy` con contador propio. Constantes `ROLLOUT_CANON_ITERACION = "R1"` y `LEGACY_UNIDADES_R1 = [0..9]`. Función `_validar_canon_inventario` recorre dos superficies (campo_semantico + claves de vocabulario_consolidado). Dos fixes: control de canon malformado (vía `canon.validar_canon`) y distinción real `aliases_indice` vs `aliases_auto` por iteración. `_pendiente_canon` → error duro siempre. Bug latente de shadowing `d`→`dx` en loop de destreza arreglado.
+- `prompt.md`: pasos 5 y 6 del flujo instruyen agrupación canónica directa y `_pendiente_canon` como vía honesta. Checklist con 2 ítems nuevos (13 canon, 14 ausencia de marca).
+- `CLAUDE.md` de fase 1: regla crítica 6 (canon como autoridad de naming) + entrada en tabla de navegación.
+- `PROCESO-MAESTRO.md`: decisión 36 — `_pendiente_canon` aclarado como marca literal (no booleano).
+
+**Comportamiento del validador (matriz documentada y aplicada):**
+
+| Caso | R1 legacy | R1 no-legacy | R2 | R3 |
+|---|---|---|---|---|
+| canónico literal | OK | OK | OK | OK |
+| `aliases_indice` | auditoría legacy | error duro | OK silencioso | error duro |
+| `aliases_auto` | auditoría legacy | error duro | aviso | error duro |
+| sin match | auditoría legacy | error duro | error duro | error duro |
+| `_pendiente_canon` | error duro | error duro | error duro | error duro |
+
+**Verificación:** U0-U9 siguen validando 0/0 con auditoría legacy informativa (11, 19, 9, 13, 9, 14, 16, 14, 16, 0 entradas respectivamente). Caso negativo controlado (U10 simulada) produce los errores duros esperados. Canon íntegro (98 entradas).
+
+---
+
 ## [v10.105b — 2026-05-11] — Fix doc v10.105: ambigüedad de SoT + trazabilidad + tabla README
 
 Tres correcciones tras hallazgos del revisor sobre v10.105:
