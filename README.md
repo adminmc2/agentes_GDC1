@@ -154,6 +154,6 @@ La carpeta `viejo/` conserva el sistema CrewAI v5 que existía antes del redise�
 ## Estado actual
 
 - **Fase 1 — curso completo extraído.** U0-U9 integradas y validando 0/0. Refinamiento abierto: canon semántico en construcción para gobernar nombres de `campo_semantico` y `vocabulario_consolidado` desde fase 1 (propuesta E-final aprobada por revisor 2026-05-11, implementación pendiente).
-- **Fase 2 (reciclaje) pausada** hasta cierre del canon de fase 1. El `nc1-reciclaje.json` actual queda congelado.
+- **Fase 2 (reciclaje) pausada** hasta cierre del canon de fase 1. El `nc1-reciclaje.json` actual queda congelado. Las integraciones ordinarias no regeneran reciclaje por defecto; reactivar con flag `--regenerar-reciclaje` en `integrar_unidad.py` solo si se justifica.
 - **Fases 3-8 pendientes** de definir prompt y construir.
 - **Plan detallado y gates pendientes:** ver [`REVIEW.md`](REVIEW.md).

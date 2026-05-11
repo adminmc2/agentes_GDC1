@@ -655,7 +655,7 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
 
    **Dashboard:** solo lectura. Endpoint `GET /api/canon/pendientes` + vista UI mínima de cola. NO escribe en el canon. La edición la hace Claude Code (carril operativo del sistema).
 
-   **Fase 2 pausada** hasta cierre del canon. El `nc1-reciclaje.json` actual queda congelado. La reformulación del reciclaje (modelo de hilos) entra como trabajo posterior.
+   **Fase 2 pausada** hasta cierre del canon. El `nc1-reciclaje.json` actual queda congelado. La reformulación del reciclaje (modelo de hilos) entra como trabajo posterior. **`integrar_unidad.py` no regenera reciclaje por defecto** desde v10.108d: la llamada al regenerador está detrás del flag explícito `--regenerar-reciclaje` para que el comportamiento por defecto respete la pausa. Cuando fase 2 se reactive, ese flag puede dejar de ser necesario.
 
 ---
 

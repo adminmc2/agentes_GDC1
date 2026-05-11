@@ -6,18 +6,22 @@ Pasos reales (en este orden):
 1. Localiza el inventario en el worktree extract/UN.
 2. Copia el inventario a unidades/UN/ guardando en memoria la versión previa si existe.
 3. Valida. Si falla, restaura la versión previa (o borra si no había) y aborta.
-4. Actualiza nc1-reciclaje.json. Si falla, restaura la versión previa y aborta.
-5. Hace commit aislado: solo los dos archivos esperados, ignorando el índice.
+4. [Opcional, OFF por defecto] Regenera nc1-reciclaje.json. Solo se ejecuta
+   si se pasa --regenerar-reciclaje. Mientras fase 2 esté pausada (decisión
+   36 de PROCESO-MAESTRO), el reciclaje no se toca en integraciones
+   ordinarias.
+5. Hace commit aislado: solo el inventario (más reciclaje si se regeneró).
 
 Uso:
     python3 scripts/integrar_unidad.py <N>
     python3 scripts/integrar_unidad.py 6
+    python3 scripts/integrar_unidad.py 6 --regenerar-reciclaje
+    python3 scripts/integrar_unidad.py 6 /ruta/al/worktree/unidades
 
-El worktree se busca en:
+El worktree se busca por defecto en:
     ~/Desktop/guia-didactica-extract-U<N>/unidades/U<N>/
 
-Si está en otra ruta, pásala como segundo argumento:
-    python3 scripts/integrar_unidad.py 6 /ruta/al/worktree/unidades
+Si está en otra ruta, pásala como argumento posicional.
 """
 import json
 import subprocess
@@ -27,6 +31,11 @@ from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parent.parent
 DESKTOP = Path.home() / "Desktop"
+
+# Flag de guardia para la regeneración de reciclaje. Cuando fase 2 se
+# reactive, este flag puede dejar de ser necesario y la llamada volverá
+# a ser parte del flujo por defecto. Ver decisión 36 de PROCESO-MAESTRO.
+FLAG_REGENERAR_RECICLAJE = "--regenerar-reciclaje"
 
 
 def run(cmd: list, cwd=None) -> tuple[int, str]:
@@ -42,17 +51,26 @@ def restaurar(dst: Path, dst_prev: bytes | None):
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Uso: python3 scripts/integrar_unidad.py <N> [ruta_worktree_unidades]")
+    # Parsear args: 1 obligatorio (N), 1 opcional posicional (ruta worktree), 1 flag (--regenerar-reciclaje)
+    args = sys.argv[1:]
+    regenerar = FLAG_REGENERAR_RECICLAJE in args
+    args = [a for a in args if a != FLAG_REGENERAR_RECICLAJE]
+
+    if len(args) < 1:
+        print(
+            "Uso: python3 scripts/integrar_unidad.py <N> [ruta_worktree_unidades] "
+            f"[{FLAG_REGENERAR_RECICLAJE}]\n"
+            "  Sin --regenerar-reciclaje, el reciclaje queda congelado (fase 2 pausada)."
+        )
         sys.exit(1)
 
-    n = sys.argv[1]
+    n = args[0]
     unit_id = f"U{n}"
     inventario_nombre = f"{unit_id}-nc1-inventario.json"
 
     # Localizar worktree
-    if len(sys.argv) >= 3:
-        worktree_unidades = Path(sys.argv[2])
+    if len(args) >= 2:
+        worktree_unidades = Path(args[1])
     else:
         worktree_unidades = DESKTOP / f"guia-didactica-extract-U{n}" / "unidades"
 
@@ -81,35 +99,40 @@ def main():
     avisos = sum(1 for l in out.splitlines() if l.strip().startswith("⚠"))
     print(f"✓ Validación: 0 errores · {avisos} avisos")
 
-    # 4. Actualizar hilos auto del reciclaje — snapshot previo para restaurar si falla
+    # 4. Regenerar reciclaje — OPCIONAL, off por defecto mientras fase 2 esté pausada
     reciclaje_path = PROJECT / "unidades" / "nc1-reciclaje.json"
-    reciclaje_prev = reciclaje_path.read_bytes() if reciclaje_path.exists() else None
-    code, out = run(["python3", "scripts/regenerar_reciclaje_vocabulario.py"])
-    print(out)
-    if code != 0:
-        restaurar(dst, dst_prev)
-        restaurar(reciclaje_path, reciclaje_prev)
-        print("❌ Error al regenerar reciclaje. Main restaurado al estado anterior.")
-        sys.exit(1)
-    print("✓ Reciclaje actualizado")
+    if regenerar:
+        reciclaje_prev = reciclaje_path.read_bytes() if reciclaje_path.exists() else None
+        code, out = run(["python3", "scripts/regenerar_reciclaje_vocabulario.py"])
+        print(out)
+        if code != 0:
+            restaurar(dst, dst_prev)
+            restaurar(reciclaje_path, reciclaje_prev)
+            print("❌ Error al regenerar reciclaje. Main restaurado al estado anterior.")
+            sys.exit(1)
+        print("✓ Reciclaje actualizado")
+    else:
+        print("⏸ Reciclaje no regenerado (fase 2 pausada — usa --regenerar-reciclaje para forzar).")
 
-    # 5. Commit aislado — solo los dos archivos, sin tocar el resto del índice
+    # 5. Commit aislado — solo el inventario, y reciclaje si se regeneró
     d = json.loads(dst.read_text(encoding="utf-8"))
     acts = sum(len(p.get("actividades", [])) for p in d.get("paginas_detalle", []))
     cuadros = sum(len(p.get("cuadros", [])) for p in d.get("paginas_detalle", []))
 
     inventario_rel = str(dst.relative_to(PROJECT))
     reciclaje_rel = "unidades/nc1-reciclaje.json"
+    paths_commit = [inventario_rel]
+    if regenerar:
+        paths_commit.append(reciclaje_rel)
+
     msg = (
         f"integración {unit_id} a main (worktree extract/{unit_id}, "
         f"{acts} actividades, {cuadros} cuadros, 0/{avisos})"
     )
-    # git add primero para que funcione tanto con archivos nuevos (U6, primera integración)
-    # como con archivos ya trackeados (unidades ya integradas previamente).
-    run(["git", "add", "--", inventario_rel, reciclaje_rel])
-    # git commit -m <msg> -- <paths>: -m antes de --, es opción válida.
-    # Limita el commit exactamente a esos dos paths.
-    code, out = run(["git", "commit", "-m", msg, "--", inventario_rel, reciclaje_rel])
+    # git add primero para que funcione tanto con archivos nuevos como con ya trackeados.
+    run(["git", "add", "--"] + paths_commit)
+    # git commit -m <msg> -- <paths>: limita el commit exactamente a esos paths.
+    code, out = run(["git", "commit", "-m", msg, "--"] + paths_commit)
     print(out)
     if code != 0:
         print("❌ Error al hacer commit.")

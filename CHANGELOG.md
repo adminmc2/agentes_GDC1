@@ -5,6 +5,20 @@
 
 ---
 
+## [v10.108d — 2026-05-11] — Desacoplar regeneración de reciclaje del flujo de integración (fase 2 pausada)
+
+Hallazgo medio del revisor: `integrar_unidad.py` ejecutaba `regenerar_reciclaje_vocabulario.py` automáticamente en cada integración, contradiciendo la pausa declarada de fase 2 en REVIEW/README/PROCESO-MAESTRO y las decisiones antiguas que describían el reciclaje como manual.
+
+**Opción A disciplinada** aplicada:
+- `scripts/integrar_unidad.py`: la llamada al regenerador queda detrás de un flag explícito `--regenerar-reciclaje`. Por defecto, el reciclaje no se toca. El docstring y el paso 4 reflejan el cambio. El commit final solo incluye el inventario por defecto, y el reciclaje solo si se regeneró.
+- README.md, REVIEW.md y PROCESO-MAESTRO §36: nota corta que explica el comportamiento por defecto durante la pausa de fase 2 y la existencia del flag opcional.
+- REVIEW etiqueta de sincronización → v10.108d.
+- Eliminado el `.bak` local del canon (transitorio, gitignored).
+
+Esta entrada se autodocumenta en el mismo commit para no reabrir la regresión de trazabilidad.
+
+---
+
 ## [v10.108c — 2026-05-11] — Sincronización documental del batch canon (REVIEW + PROCESO-MAESTRO + CHANGELOG)
 
 Cierre documental de la activación del canon semántico en fase 1
