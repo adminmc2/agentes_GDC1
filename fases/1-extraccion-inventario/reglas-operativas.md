@@ -2,7 +2,7 @@
 
 > **Responsabilidad:** guía de decisión compacta y priorizada. Reúne lo que el modelo necesita decidir durante la extracción: qué tipo asignar, qué clasificar como cuadro/actividad/nota, cómo poblar campos cuyo shape ya está fijado en `schema-inventario.md`, cómo tratar unidades atípicas.
 >
-> **No contiene:** forma del JSON (vive en `schema-inventario.md`), convenciones de transcripción específicas (sílaba tónica, "primer ítem resuelto", marcadores de diálogos, formato de sopas de letras), ni casos históricos resueltos. Esos viven en `convenciones-y-casos.md` (a poblar en A4.2c).
+> **No contiene:** forma del JSON (vive en `schema-inventario.md`), convenciones de transcripción específicas (sílaba tónica, "primer ítem resuelto", marcadores de diálogos, formato de sopas de letras), ni casos históricos resueltos. Esos viven en `convenciones-y-casos.md`.
 >
 > **Single source of truth de precedencias:** las reglas de precedencia (qué clasificar como actividad / cuadro / nota / autoevaluación, en qué orden, con qué excepciones) viven **exclusivamente aquí**. Cualquier otro archivo que necesite invocarlas lo hace por referencia, no por copia. Si una precedencia aparece reescrita en `prompt.md`, `CLAUDE.md` o cualquier otro artefacto, es un bug del refactor.
 
@@ -338,7 +338,7 @@ Estructural en schema (`schema-inventario.md` §12): lista de strings, obligator
 
 **Excepción para `relaciona` con dos columnas explícitas:** si el libro presenta dos columnas visuales separadas (columna A y columna B con elementos a unir), usar `datos.columnas_relaciona` en lugar de `items_libro`. Ver `convenciones-y-casos.md` §1.8.
 
-> Ejemplos correctos e incorrectos → `convenciones-y-casos.md` (a migrar en A4.2c).
+> Ejemplos correctos e incorrectos → `convenciones-y-casos.md`.
 
 ---
 
@@ -366,7 +366,7 @@ Algunas unidades NO tienen las 5 secciones canónicas (vocabulario / gramática 
 3. Añadir clave top-level `_nota_unidad_atipica` con explicación de por qué es atípica y cómo se mapeó (forma de la clave en `schema-inventario.md` §11).
 4. En `contenidos_indice`, las secciones que no aplican llevan el valor `"(no aplica en esta unidad introductoria)"`.
 
-> Ejemplo JSON canónico de U0 → `convenciones-y-casos.md` (a migrar en A4.2c).
+> Ejemplo JSON canónico de U0 → `convenciones-y-casos.md`.
 
 ---
 
@@ -385,6 +385,6 @@ Tras A4.2b, el reparto entre archivos queda así:
 | Reglas de población de cada campo | **este archivo** (§5) |
 | Bloque `autoevaluacion`: cuándo presente/omitido | **este archivo** (§6) |
 | Unidades atípicas: cuándo y cómo aplicar | **este archivo** (§7) |
-| Convenciones de transcripción del libro al JSON (sílaba tónica, primer ítem resuelto, marcadores de diálogos, formato de sopas de letras) | `convenciones-y-casos.md` (a poblar en A4.2c) |
-| Ejemplos correctos/incorrectos de `items_libro` | `convenciones-y-casos.md` (a poblar en A4.2c) |
-| Casos históricos resueltos | `convenciones-y-casos.md` (a poblar en A4.2c) |
+| Convenciones de transcripción del libro al JSON (sílaba tónica, primer ítem resuelto, marcadores de diálogos, formato de sopas de letras) | `convenciones-y-casos.md` |
+| Ejemplos correctos/incorrectos de `items_libro` | `convenciones-y-casos.md` |
+| Casos históricos resueltos | `convenciones-y-casos.md` |
