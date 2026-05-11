@@ -9,7 +9,7 @@
 
 Hallazgo medio del revisor sobre v10.108e: quedaba una línea viva en PROCESO-MAESTRO §3 (pipeline definido, paso 7) que decía *"actualizar `nc1-reciclaje.json` manualmente con ayuda de Claude Code en chat (no automático)"* y contradecía el comportamiento vigente desde v10.108d.
 
-Reformulada como histórico, apuntando a la decisión 36 y al comportamiento actual (fase 2 pausada + flag `--regenerar-reciclaje` opcional). Grep cruzado confirma que no quedan referencias residuales al modelo viejo automático fuera de las anotaciones explícitamente marcadas como históricas.
+Reformulada como histórico, apuntando a la decisión 36 y al comportamiento actual (fase 2 pausada + flag `--regenerar-reciclaje` opcional). Grep cruzado confirma cero referencias residuales al modelo viejo automático en docs operativas / contrato vigente; las entradas cronológicas en bitácoras (REVIEW y PROCESO-MAESTRO) se conservan literales como historia.
 
 REVIEW etiqueta de sincronización → v10.108f. Esta entrada se autodocumenta.
 
