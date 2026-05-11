@@ -44,7 +44,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 |---|---|
 | Fase 1 — Extracción de inventario | ✅ U0-U9 extraídas e integradas (0/0). Curso completo. Refinamientos del extractor pendientes (canon semántico + doble superficie del validador). 5 archivos operativos en `fases/1-extraccion-inventario/` |
 | Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
-| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.104b) |
+| Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.105b) |
 | Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje **PAUSADA** hasta cerrar canon semántico de fase 1 (propuesta E-final aprobada por revisor 2026-05-11, pendiente de implementación). `nc1-reciclaje.json` actual (181 hilos) congelado · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |

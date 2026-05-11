@@ -623,7 +623,7 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
 36. **Canon semántico vive dentro de fase 1 — propuesta E-final** (cerrada tras 5 iteraciones revisor↔ejecutor). El universo cerrado de nombres válidos para `actividad.campo_semantico` y para las claves de `vocabulario_consolidado.{principal,recurrente,comprension}` se gobierna desde fase 1, sin crear archivos de documentación nuevos. Sustituye la decisión "liberal" antigua de `reglas-operativas.md` §5.6.
 
    **Artefactos nuevos (solo datos y código, no doc):**
-   - `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` — fuente única de verdad. Estructura: `version`, `actualizado`, `_politica` (rollout R1/R2/R3, reglas de uso, legacy_unidades), `campos[]` con entradas `{canonico, origen, [nota], aliases_indice, aliases_auto}`.
+   - `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` — fuente única de verdad **solo de datos**. Estructura: `version`, `actualizado`, `campos[]` con entradas `{canonico, origen, [nota], aliases_indice, aliases_auto}`. La política (rollout R1/R2/R3, reglas de uso, árbol de decisión) NO vive embebida en el JSON; vive en `fases/1-extraccion-inventario/reglas-operativas.md`. La constante `LEGACY_UNIDADES_R1` vive en `scripts/validar_inventario.py` (es estado operativo del validador, no del canon).
    - `scripts/canon.py` — módulo compartido con 4 funciones: `cargar_canon()`, `validar_canon()`, `escribir_canon()` (atómico, con backup y lock), `detectar_pendientes()`.
    - `scripts/inicializar_canon_semantico.py` — one-off que pobla el JSON inicial desde `nc1-curso.json` (`origen: "indice"`) + subset PCIC A1 curado (`origen: "pcic_a1"`).
 

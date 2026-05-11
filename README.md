@@ -11,7 +11,7 @@ El contenido editorial se genera siguiendo un **proceso de 8 fases**, partiendo 
 | Fase | Descripción | Estado |
 |------|-------------|--------|
 | 1 | Input PDF → inventario JSON | ✅ U0-U9 integradas y validando 0/0 |
-| 2 | Análisis de vocabulario | 📋 Pendiente |
+| 2 | Análisis de vocabulario | ⏸ Pausada hasta cierre del canon de fase 1 |
 | 3 | Tarjetas de vocabulario | 📋 Pendiente |
 | 4 | Tarjetas de estrategia | 📋 Pendiente |
 | 5 | Píldoras formativas | 📋 Pendiente |

@@ -5,6 +5,17 @@
 
 ---
 
+## [v10.105b — 2026-05-11] — Fix doc v10.105: ambigüedad de SoT + trazabilidad + tabla README
+
+Tres correcciones tras hallazgos del revisor sobre v10.105:
+- PROCESO-MAESTRO decisión 36: se quita la mención a `_politica` embebida en el JSON canónico (contradecía la versión aprobada "JSON solo de datos, política en `reglas-operativas.md`"). La política y `LEGACY_UNIDADES_R1` se ubican explícitamente en sus archivos correctos.
+- REVIEW etiqueta de sincronización: v10.104b → v10.105b (estaba un commit por detrás).
+- README tabla de estado: fase 2 marcada como "⏸ Pausada hasta cierre del canon de fase 1" para alinear con la sección Estado actual.
+
+Esta entrada se autodocumenta en este commit para no reabrir la regresión de trazabilidad.
+
+---
+
 ## [v10.105 — 2026-05-11] — Decisión de diseño cerrada: canon semántico en fase 1 (E-final)
 
 Tras 5 iteraciones revisor↔ejecutor sobre cómo gobernar los nombres de `campo_semantico` y de las claves de `vocabulario_consolidado` en los inventarios:
