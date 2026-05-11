@@ -255,13 +255,78 @@ Estructural en schema (`schema-inventario.md` §10): siempre presentes como sub-
 
 **`imagen.descripcion`:** obligatoria si `imagen.presente=true` (la restricción la aplica el validador). Suficientemente detallada para que un agente que no ve la imagen pueda entender qué muestra.
 
-### 5.6 `campo_semantico`: cuándo aplica
+### 5.6 `campo_semantico` y claves de `vocabulario_consolidado`: canon semántico
 
-Estructural en schema (`schema-inventario.md` §10): str opcional.
+Estructural en schema (`schema-inventario.md` §9, §10).
 
-**Cuándo se usa:** cuando el contenido lingüístico de la actividad pertenece a un campo semántico identificable (Familia, Profesiones, Lugares, etc.).
+**Universo válido — canon semántico.** Los nombres permitidos para `actividad.campo_semantico` y para las claves de `vocabulario_consolidado.{principal,recurrente,comprension}` viven en `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` (fuente única de datos del canon). Esto sustituye la decisión "liberal" anterior.
 
-**Decisión pendiente del autor:** ¿solo en sección vocabulario o en cualquier sección que toque vocabulario? Por ahora, **liberal**: cualquier actividad cuyo contenido pertenezca a un campo semántico lo lleva.
+**Cuándo se usa `campo_semantico`:** cuando el contenido lingüístico de la actividad pertenece a una categoría léxica identificable. Aplica a cualquier sección (no solo vocabulario).
+
+#### Regla de naming
+
+Al construir `vocabulario_consolidado` o asignar `campo_semantico`, los nombres deben ser **canónicos del canon**, no inventados ni en `snake_case`:
+
+- ✅ `"Objetos de clase"`, `"Establecimientos"`, `"Higiene"`.
+- ❌ `"objetos_de_clase"`, `"lugares_publicos"`, `"vivienda_ecologica"`, `"verbos"` (minúscula sin contexto).
+
+#### Frontera entre `aliases_indice` y `aliases_auto`
+
+Procedencia estricta. No son intercambiables:
+
+- **`aliases_indice`** → literales que aparecen en `nc1-curso.json` (`vocabulario[]` o `contenido_general[]`). Solo entradas con `origen: "indice"` pueden tener esta lista poblada. Sirve a las herramientas para reconocer el contenido del índice editorial cuando se referencia con su nombre largo (ej. `"Establecimientos: cine, restaurante, farmacia..."` → canónico `"Establecimientos"`).
+- **`aliases_auto`** → variantes detectadas en inventarios (codificaciones legacy del extractor, normalizaciones diferentes, formas con `snake_case` halladas en saneamiento). Aplica a cualquier `origen`. Nunca se usan para reconocer contenido del índice.
+
+#### Árbol de decisión cuando aparece un campo léxico
+
+```
+¿El canónico ya existe en el canon (literal o alias)?
+├── SÍ → usar el canónico literal en el inventario.
+│         Si la forma hallada era un alias, registrarla en el canon:
+│           · si proviene de nc1-curso.json → aliases_indice
+│           · si proviene de un inventario o codificación del extractor → aliases_auto
+│         (edición del canon vía Claude Code).
+└── NO →
+    ¿El contenido viene del índice del libro (vocabulario[] / contenido_general[] de nc1-curso.json)?
+    ├── SÍ → crear entrada nueva en el canon con origen: "indice".
+    │        El texto literal del índice queda como aliases_indice
+    │        si el canonico se normalizó.
+    └── NO →
+        ¿Está cubierto por subcategoría PCIC A1 aprobada?
+        ├── SÍ → crear entrada con origen: "pcic_a1". aliases_indice vacía.
+        └── NO →
+            ¿Es ruido del extractor (snake_case, "_descripcion", etc.)
+            o parche contextual ("Vocabulario del diálogo", "Otros", "Texto X")?
+            ├── SÍ → no se amplía canon. Sanear el inventario:
+            │        decidir el canónico real (humano), renombrar el campo en el JSON.
+            │        La forma errónea no se conserva como alias (es ruido, no semántica útil).
+            └── NO → caso de excepción justificada:
+                     crear entrada con origen: "excepcion" + nota obligatoria.
+```
+
+#### Marca transitoria `_pendiente_canon`
+
+Si durante extracción el agente no puede asignar un canónico con seguridad razonable, debe escribir literalmente `"_pendiente_canon"` (como `campo_semantico` o como clave de `vocabulario_consolidado`) y dejar el contenido provisional. **Nunca inventar un nombre nuevo en caliente.**
+
+`_pendiente_canon` es estado transitorio de worktree. **Bloquea cierre del inventario.** Antes de la integración, el humano resuelve cada marca aplicando el árbol de decisión (vía Claude Code en chat) y la marca desaparece.
+
+#### Rollout del endurecimiento (canales del validador)
+
+El validador (`scripts/validar_inventario.py`) tiene tres canales de salida: **errores** (bloquean cierre), **avisos** (no bloquean), **auditoría legacy** (informativos, contador propio). La iteración activa se controla con la constante `ROLLOUT_CANON_ITERACION`:
+
+- **R1 (entrada en vigor)** — para unidades en `LEGACY_UNIDADES_R1` del validador, los valores fuera de canon (cualquier alias o desconocidos) se reportan como **auditoría legacy** (no bloquean). Para unidades nuevas o re-extracciones explícitas (no en la lista), cualquier valor que no sea canónico literal es **error duro**.
+- **R2 (tras saneamiento de legacy U0-U9)** — `LEGACY_UNIDADES_R1` queda vacía. Comportamiento por tipo de match:
+  - canónico literal → OK silencioso.
+  - coincide con `aliases_indice` → OK silencioso (es nomenclatura editorial legítima del libro).
+  - coincide con `aliases_auto` → **aviso** (deuda: actualizar a canónico).
+  - sin match → **error duro**.
+- **R3 (endurecimiento final)** — solo el canónico literal es OK. Cualquier alias (indice o auto) → **error duro**. `aliases_auto` y `aliases_indice` quedan como referencia histórica para herramientas, ya no aceptables como valor.
+
+El paso de iteración es decisión explícita del autor, registrada en `PROCESO-MAESTRO.md`.
+
+**`_pendiente_canon` → error duro siempre, en todas las iteraciones.** No se puede cerrar un inventario con la marca presente.
+
+> Procedimiento operativo de resolución (humano + Claude Code editando canon + inventario): ver decisión 36 de `PROCESO-MAESTRO.md`.
 
 ### 5.7 `datos.items_libro`: literalidad obligatoria
 

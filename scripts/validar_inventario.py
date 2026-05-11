@@ -5,8 +5,18 @@ Uso:
     python3 scripts/validar_inventario.py 3
     python3 scripts/validar_inventario.py unidades/U3/U3-nc1-inventario.json
 
-Sale con código 0 si todo OK, 1 si hay errores. Reporta avisos sin fallar.
-Sin LLM, cero tokens.
+Sale con código 0 si todo OK, 1 si hay errores. Reporta avisos y auditoría
+legacy sin fallar. Sin LLM, cero tokens.
+
+Tres canales de salida:
+    - errores: bloquean cierre (exit 1).
+    - avisos: no bloquean, indican deuda formal.
+    - auditoría legacy: no bloquean, informativos durante el rollout R1 del
+      canon semántico (campos no canónicos en unidades pre-canon).
+
+Canon semántico (`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`):
+    Política completa en `fases/1-extraccion-inventario/reglas-operativas.md` §5.6.
+    Iteración activa controlada por ROLLOUT_CANON_ITERACION abajo.
 """
 
 import json
@@ -14,6 +24,19 @@ import sys
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
+
+# Importar el módulo del canon (vive en scripts/canon.py)
+sys.path.insert(0, str(PROJECT))
+from scripts import canon  # noqa: E402
+
+# === Rollout del endurecimiento del canon ===
+# Cambiar entre R1 → R2 → R3 requiere commit explícito + entrada en
+# PROCESO-MAESTRO.md. Ver reglas-operativas.md §5.6.
+ROLLOUT_CANON_ITERACION = "R1"  # R1 | R2 | R3
+
+# Unidades ya integradas al entrar en vigor R1. En R1 estas reciben auditoría
+# legacy (no error) cuando un campo no es canónico. Vaciar para pasar a R2.
+LEGACY_UNIDADES_R1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 CLAVES_TOP = {"unidad", "curso", "titulo", "paginas_libro", "nivel", "fuente",
               "contenidos_indice", "vocabulario_consolidado", "secciones",
@@ -97,15 +120,148 @@ CONTENIDOS_VISIBLES = {
 }
 
 
+def _validar_canon_inventario(d: dict) -> tuple[list[str], list[str], list[str]]:
+    """Valida `actividad.campo_semantico` y claves de `vocabulario_consolidado`
+    contra el canon semántico de fase 1.
+
+    Devuelve (errores, avisos, auditoria_legacy). Marca '_pendiente_canon'
+    es siempre error duro. El comportamiento ante valores no canónicos
+    depende de ROLLOUT_CANON_ITERACION y de si la unidad está en
+    LEGACY_UNIDADES_R1. Ver `reglas-operativas.md` §5.6.
+    """
+    errores: list[str] = []
+    avisos: list[str] = []
+    auditoria: list[str] = []
+
+    # Cargar canon (si falla, reportar como error y abortar este bloque)
+    try:
+        canon_data = canon.cargar_canon()
+    except FileNotFoundError:
+        errores.append(
+            "❌ canon: no se puede leer "
+            f"{canon.CANON_PATH.relative_to(PROJECT)} "
+            "(¿ejecutaste scripts/inicializar_canon_semantico.py?)"
+        )
+        return errores, avisos, auditoria
+    except json.JSONDecodeError as e:
+        errores.append(f"❌ canon: JSON no parseable: {e}")
+        return errores, avisos, auditoria
+
+    # Validar estructura del canon antes de usarlo. Si el canon está
+    # corrupto, no podemos validar el inventario de forma fiable: reportamos
+    # error controlado y abortamos.
+    canon_errores = canon.validar_canon(canon_data)
+    if canon_errores:
+        errores.append(
+            f"❌ canon: estructura inválida ({len(canon_errores)} errores). "
+            f"Imposible validar este inventario contra canon hasta que se sanee."
+        )
+        for ce in canon_errores[:3]:
+            errores.append(f"   · {ce}")
+        if len(canon_errores) > 3:
+            errores.append(f"   · ... ({len(canon_errores) - 3} más)")
+        return errores, avisos, auditoria
+
+    canonicos: set[str] = {e["canonico"] for e in canon_data["campos"]}
+    aliases_indice_map: dict[str, str] = {}  # alias_indice → canonico
+    aliases_auto_map: dict[str, str] = {}    # alias_auto → canonico
+    for e in canon_data["campos"]:
+        for a in e.get("aliases_indice") or []:
+            aliases_indice_map[a] = e["canonico"]
+        for a in e.get("aliases_auto") or []:
+            aliases_auto_map[a] = e["canonico"]
+
+    unidad = d.get("unidad")
+    es_legacy_r1 = (
+        ROLLOUT_CANON_ITERACION == "R1"
+        and isinstance(unidad, int)
+        and unidad in LEGACY_UNIDADES_R1
+    )
+
+    def evaluar(valor: str, ubicacion: str) -> None:
+        # Marca transitoria — error duro siempre, en todas las iteraciones
+        if valor == "_pendiente_canon":
+            errores.append(
+                f"❌ {ubicacion}: marca '_pendiente_canon' presente "
+                f"(estado transitorio de worktree, bloquea cierre — "
+                f"resolver vía árbol de decisión §5.6 antes de integrar)"
+            )
+            return
+
+        if valor in canonicos:
+            return  # OK silencioso
+
+        if valor in aliases_indice_map:
+            sugerido = aliases_indice_map[valor]
+            msg = f"{ubicacion}: '{valor}' es alias_indice de '{sugerido}'"
+            if ROLLOUT_CANON_ITERACION == "R3":
+                errores.append(f"❌ {msg} (R3 exige canónico literal)")
+            elif ROLLOUT_CANON_ITERACION == "R2":
+                # aliases_indice = nomenclatura editorial legítima del libro.
+                # En R2 se acepta silenciosamente. La normalización al canónico
+                # es trabajo del flujo editorial, no del validador.
+                return
+            elif es_legacy_r1:
+                auditoria.append(f"📋 {msg}")
+            else:  # R1, unidad no legacy
+                errores.append(f"❌ {msg} (canon R1 exige canónico literal para unidades nuevas)")
+            return
+
+        if valor in aliases_auto_map:
+            sugerido = aliases_auto_map[valor]
+            msg = f"{ubicacion}: '{valor}' es alias_auto de '{sugerido}'"
+            if ROLLOUT_CANON_ITERACION == "R3":
+                errores.append(f"❌ {msg} (R3 exige canónico literal)")
+            elif ROLLOUT_CANON_ITERACION == "R2":
+                avisos.append(f"⚠ {msg} (deuda: actualizar a canónico)")
+            elif es_legacy_r1:
+                auditoria.append(f"📋 {msg}")
+            else:  # R1, unidad no legacy
+                errores.append(f"❌ {msg} (canon R1 exige canónico literal para unidades nuevas)")
+            return
+
+        # No coincide con canon ni con alias
+        msg = f"{ubicacion}: '{valor}' no está en el canon"
+        if es_legacy_r1:
+            auditoria.append(f"📋 {msg}")
+        else:
+            errores.append(f"❌ {msg}")
+
+    # Superficie 1: claves de vocabulario_consolidado.{principal,recurrente,comprension}
+    voc = d.get("vocabulario_consolidado")
+    if isinstance(voc, dict):
+        for bloque in ("principal", "recurrente", "comprension"):
+            bloq = voc.get(bloque)
+            if isinstance(bloq, dict):
+                for clave in bloq.keys():
+                    if clave == "_descripcion":
+                        continue  # clave reservada del schema (§9)
+                    evaluar(clave, f"vocabulario_consolidado.{bloque}.<{clave}>")
+
+    # Superficie 2: actividad.campo_semantico
+    for p in d.get("paginas_detalle", []) or []:
+        if not isinstance(p, dict):
+            continue
+        for a in p.get("actividades", []) or []:
+            if not isinstance(a, dict):
+                continue
+            cs = a.get("campo_semantico")
+            if isinstance(cs, str):
+                aid = a.get("id", "?")
+                evaluar(cs, f"actividad[{aid}].campo_semantico")
+
+    return errores, avisos, auditoria
+
+
 def validar(path):
-    errores, avisos = [], []
+    errores, avisos, auditoria_legacy = [], [], []
     if not path.exists():
-        return [f"❌ Archivo no existe: {path}"], []
+        return [f"❌ Archivo no existe: {path}"], [], []
 
     try:
         d = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as e:
-        return [f"❌ JSON no parseable: {e}"], []
+        return [f"❌ JSON no parseable: {e}"], [], []
 
     # 1. Claves top-level
     faltan = CLAVES_TOP - set(d.keys())
@@ -236,9 +392,9 @@ def validar(path):
                     elif len(a["destreza"]) == 0:
                         errores.append(f"❌ {apref}: 'destreza' no puede ser lista vacía")
                     else:
-                        for d in a["destreza"]:
-                            if d not in DESTREZAS_VALIDAS:
-                                errores.append(f"❌ {apref}: destreza '{d}' no válida (enum: {sorted(DESTREZAS_VALIDAS)})")
+                        for dx in a["destreza"]:
+                            if dx not in DESTREZAS_VALIDAS:
+                                errores.append(f"❌ {apref}: destreza '{dx}' no válida (enum: {sorted(DESTREZAS_VALIDAS)})")
                         if len(set(a["destreza"])) != len(a["destreza"]):
                             errores.append(f"❌ {apref}: 'destreza' contiene duplicados")
                         if a["destreza"] != sorted(a["destreza"]):
@@ -322,7 +478,13 @@ def validar(path):
             if paginas_orden != sorted(paginas_orden):
                 avisos.append(f"⚠ Páginas no en orden ascendente: {paginas_orden}")
 
-    return errores, avisos
+    # Validación contra canon semántico (siempre se ejecuta)
+    err_canon, avi_canon, audit_canon = _validar_canon_inventario(d)
+    errores.extend(err_canon)
+    avisos.extend(avi_canon)
+    auditoria_legacy.extend(audit_canon)
+
+    return errores, avisos, auditoria_legacy
 
 
 def main():
@@ -338,17 +500,30 @@ def main():
         path = Path(arg).resolve()
 
     print(f"Validando: {path.relative_to(PROJECT) if path.is_relative_to(PROJECT) else path}")
-    errores, avisos = validar(path)
+    print(f"Canon rollout: {ROLLOUT_CANON_ITERACION} "
+          f"(legacy R1: {len(LEGACY_UNIDADES_R1)} unidades)")
+    errores, avisos, auditoria_legacy = validar(path)
 
     for a in avisos:
         print(a)
     for e in errores:
         print(e)
 
+    if auditoria_legacy:
+        print(f"\n— Auditoría legacy ({len(auditoria_legacy)}) —")
+        for entry in auditoria_legacy:
+            print(entry)
+
     if errores:
-        print(f"\n❌ {len(errores)} errores · {len(avisos)} avisos")
+        print(
+            f"\n❌ {len(errores)} errores · {len(avisos)} avisos · "
+            f"{len(auditoria_legacy)} legacy"
+        )
         sys.exit(1)
-    print(f"\n✅ JSON válido · {len(avisos)} avisos")
+    print(
+        f"\n✅ JSON válido · {len(avisos)} avisos · "
+        f"{len(auditoria_legacy)} legacy"
+    )
     sys.exit(0)
 
 

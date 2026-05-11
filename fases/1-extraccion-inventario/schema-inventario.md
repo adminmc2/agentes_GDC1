@@ -29,9 +29,9 @@
     "cultura": <str>
   },
   "vocabulario_consolidado": {
-    "principal": { "_descripcion": "...", "<Campo>": [palabras] },
-    "recurrente": { "_descripcion": "...", "<Categoria>": [palabras] },
-    "comprension": { "_descripcion": "...", "<Categoria>": [palabras] }
+    "principal": { "_descripcion": "...", "<canonico>": [palabras] },
+    "recurrente": { "_descripcion": "...", "<canonico>": [palabras] },
+    "comprension": { "_descripcion": "...", "<canonico>": [palabras] }
   },
   "secciones": {
     "vocabulario":  { "paginas": [int], "actividades_ids": [str] },
@@ -293,16 +293,20 @@ Objeto con exactamente 3 sub-bloques nombrados, cada uno con la misma estructura
 
 ```jsonc
 "vocabulario_consolidado": {
-  "principal":   { "_descripcion": <str>, "<categoria>": [str], ... },
-  "recurrente":  { "_descripcion": <str>, "<categoria>": [str], ... },
-  "comprension": { "_descripcion": <str>, "<categoria>": [str], ... }
+  "principal":   { "_descripcion": <str>, "<canonico>": [str], ... },
+  "recurrente":  { "_descripcion": <str>, "<canonico>": [str], ... },
+  "comprension": { "_descripcion": <str>, "<canonico>": [str], ... }
 }
 ```
 
-- Cada sub-bloque es un objeto cuyas claves son nombres de categoría (campo semántico, categoría temática, etc.) y los valores son listas de strings (palabras).
-- La clave `_descripcion` (con guion bajo, no es categoría) explica de qué va cada bloque.
+- Cada sub-bloque es un objeto cuyas claves son **nombres canónicos del canon semántico** (`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`) y los valores son listas de strings (palabras).
+- La clave `_descripcion` (con guion bajo, no es categoría) explica de qué va cada bloque y queda reservada — no entra en validación de canon.
 
-> Los criterios de **qué palabras cuentan como `principal` / `recurrente` / `comprension`** viven en `reglas-operativas.md`. Aquí solo está la forma del objeto.
+**Restricción de naming (canon):** las claves de categoría no son libres. Deben coincidir con un `canonico` del canon, sin underscores ni snake_case, en estilo del libro. Los aliases conocidos del canon se aceptan transitoriamente durante el rollout (ver `reglas-operativas.md` §5.6 sobre rollout R1/R2/R3 y árbol de decisión).
+
+**Marca transitoria `_pendiente_canon`:** durante extracción en worktree, si el agente no encuentra una categoría canónica segura para un bloque, puede emitirlo bajo `"_pendiente_canon"` con el contenido provisional, en lugar de inventar un nombre. Esta marca es **estado transitorio de worktree**: cualquier inventario que la conserve **no pasa validación y no se puede integrar**. Antes del cierre el humano resuelve la categoría (vía Claude Code aplicando el árbol de decisión de `reglas-operativas.md` §5.6) y la marca desaparece.
+
+> Los criterios de **qué palabras cuentan como `principal` / `recurrente` / `comprension`**, el árbol de decisión del canon, el rollout y la resolución de pendientes viven en `reglas-operativas.md`. Aquí solo está la forma del objeto.
 
 ---
 
@@ -318,8 +322,10 @@ Objeto con exactamente 3 sub-bloques nombrados, cada uno con la misma estructura
 ### `campo_semantico`
 - Opcional a nivel de actividad.
 - Tipo: string.
+- **Si presente, debe coincidir con un `canonico` del canon semántico** (`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`). Aliases conocidos del canon se aceptan transitoriamente durante el rollout.
+- **Marca transitoria `_pendiente_canon`:** si durante extracción el agente no puede asignar un `canonico` con seguridad, escribe `campo_semantico: "_pendiente_canon"`. Es estado transitorio de worktree; bloquea cierre del inventario. La resolución sigue el árbol de decisión de `reglas-operativas.md` §5.6.
 
-> Cuándo aplica y cómo elegir el valor → `reglas-operativas.md`.
+> Cuándo aplica, cómo elegir el `canonico` y árbol de decisión completo → `reglas-operativas.md` §5.6.
 
 ### `audio`, `imagen`, `video`
 - **Siempre presentes como sub-objetos** en cada actividad.
@@ -379,6 +385,8 @@ Este archivo y `scripts/validar_inventario.py` son **contratos paralelos del mis
   - `imagen.descripcion` obligatoria si `imagen.presente=true` (§10).
   - `autoevaluacion` con valores fijos NC1 cuando `curso=="nc1"` (§6).
   - `destreza` en orden alfabético, sin duplicados (§5b).
+  - `actividad.campo_semantico` y claves de `vocabulario_consolidado.{principal,recurrente,comprension}` (§9, §10): deben pertenecer al canon (`campos-semanticos-canonicos.json`), según la iteración del rollout activa (`ROLLOUT_CANON_ITERACION` en el validador).
+  - Marca `_pendiente_canon` en cualquier sitio (§9, §10): error duro siempre, en todas las iteraciones. No se puede cerrar un inventario con la marca presente.
 - Cada **clave opcional declarada** (`autoevaluacion`, `_nota_unidad_atipica`) debe estar en `CLAVES_TOP_OPCIONALES` del validador para que no emita aviso.
 
 **Si se detecta divergencia,** se resuelve **antes del merge** alineando uno de los dos artefactos en commit aparte. La divergencia no es un estado válido de cierre.

@@ -650,7 +650,7 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
    ```
 
    **Dos carriles complementarios:**
-   - **Carril A** — extracción canónica desde origen: el prompt de fase 1 instruye al extractor a agrupar `vocabulario_consolidado` directamente en nombres canónicos. Si no encuentra categoría segura, marca `_pendiente_canon: true` (estado transitorio de worktree, bloquea cierre).
+   - **Carril A** — extracción canónica desde origen: el prompt de fase 1 instruye al extractor a agrupar `vocabulario_consolidado` directamente en nombres canónicos. Si no encuentra categoría segura, usa la marca literal `"_pendiente_canon"` (como clave de bloque o como valor de `campo_semantico`) en lugar de inventar un nombre. Estado transitorio de worktree, bloquea cierre.
    - **Carril B** — saneamiento retrospectivo de U0-U9: el validador en R1 lista los campos no canónicos como auditoría legacy; el dashboard los muestra; el humano resuelve uno a uno con Claude Code aplicando el árbol de decisión.
 
    **Dashboard:** solo lectura. Endpoint `GET /api/canon/pendientes` + vista UI mínima de cola. NO escribe en el canon. La edición la hace Claude Code (carril operativo del sistema).

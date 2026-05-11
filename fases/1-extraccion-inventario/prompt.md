@@ -68,8 +68,8 @@ Y un cuarto archivo, no en esta carpeta:
    - **Caso normal** (U1-U9): 5 secciones canónicas — vocabulario, gramática, comunicación, destrezas, cultura.
    - **Caso atípico** (U0 y otras unidades introductorias): el índice no sigue las 5 secciones canónicas. Aplicar `reglas-operativas.md` §7 (unidades atípicas) antes de continuar.
 4. Para cada página: identificar la sección, las actividades (numeradas o identificadas como tales — ver `reglas-operativas.md` §1 precedencia), los cuadros (con `tipo_cuadro`, ver `reglas-operativas.md` §3) y las notas "Observa" si las hay (`reglas-operativas.md` §4).
-5. Para cada actividad: extraer todos los campos del esquema (ver `schema-inventario.md` §3). Cada actividad sale con los **3 ejes ortogonales obligatorios**: `tipo` (string, taxonomía de 20), `destreza` (lista de valores MCER, orden alfabético, sin duplicados — schema §5b), `enfoque` (string del enum de 6 — schema §5c). Criterios de asignación en `reglas-operativas.md` §2.3. En U0-U3, observar la convención editorial de sílaba tónica subrayada (`convenciones-y-casos.md` §1.1). Detectar el patrón "primer ítem resuelto como ejemplo" (`convenciones-y-casos.md` §1.2).
-6. Construir `vocabulario_consolidado` con los 3 bloques (criterios en `reglas-operativas.md` §5.1).
+5. Para cada actividad: extraer todos los campos del esquema (ver `schema-inventario.md` §3). Cada actividad sale con los **3 ejes ortogonales obligatorios**: `tipo` (string, taxonomía de 20), `destreza` (lista de valores MCER, orden alfabético, sin duplicados — schema §5b), `enfoque` (string del enum de 6 — schema §5c). Criterios de asignación en `reglas-operativas.md` §2.3. En U0-U3, observar la convención editorial de sílaba tónica subrayada (`convenciones-y-casos.md` §1.1). Detectar el patrón "primer ítem resuelto como ejemplo" (`convenciones-y-casos.md` §1.2). Al asignar `campo_semantico`, usar siempre un canónico del canon (`campos-semanticos-canonicos.json`) — si no hay canónico seguro, escribir literalmente `"_pendiente_canon"` (no inventar nombres, ver `reglas-operativas.md` §5.6).
+6. Construir `vocabulario_consolidado` con los 3 bloques (criterios en `reglas-operativas.md` §5.1). **Las claves de cada bloque (`principal`/`recurrente`/`comprension`) deben ser canónicos del canon semántico** (`campos-semanticos-canonicos.json`). Aplicar el árbol de decisión de `reglas-operativas.md` §5.6: si un contenido no encaja en ningún canónico seguro, emitirlo bajo la clave literal `"_pendiente_canon"` y escalarlo al autor antes del cierre. Nunca inventar nombres en `snake_case`.
 7. Construir el índice top-level `secciones` (`reglas-operativas.md` §5.2).
 8. Si la unidad tiene bloque de autoevaluación al pie de la última página, capturarlo como campo top-level `autoevaluacion` (`reglas-operativas.md` §6).
 9. Validar JSON (ver "Cierre y validación" abajo).
@@ -98,7 +98,9 @@ Antes de dar el JSON por bueno, comprobar manualmente y con el validador.
 10. **`descripcion` de imagen** obligatoria si `imagen.presente=true`.
 11. **`datos.ejemplo_libro` no duplicado en `respuestas`** — el ejemplo del libro va solo en `datos.ejemplo_libro`, nunca como ítem de `respuestas`. Ver `convenciones-y-casos.md` §1.6.
 12. **Cardinalidad literal de `items_libro`** — el número de ítems debe coincidir exactamente con los del PDF. No inventar ni completar la serie. Ver `reglas-operativas.md` §5.7.
-13. **JSON parseable** (validar con Python: `json.loads(open(...).read())`).
+13. **`campo_semantico` y claves de `vocabulario_consolidado` son canónicos** — todos los nombres usados existen en `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` o son aliases conocidos. Ver `reglas-operativas.md` §5.6.
+14. **Cero marcas `_pendiente_canon` en el JSON final** — esa marca es estado transitorio de worktree y bloquea cierre. Antes de declarar el inventario listo, resolver cada marca aplicando el árbol de decisión de §5.6 (vía Claude Code) y reemplazarla por el canónico correspondiente.
+15. **JSON parseable** (validar con Python: `json.loads(open(...).read())`).
 
 ### Validador automático
 
@@ -107,6 +109,8 @@ python3 scripts/validar_inventario.py X
 ```
 
 Esperado: 0 errores y 0 avisos. Si la unidad es atípica con `_nota_unidad_atipica`, 1 aviso intencional es aceptable.
+
+El validador puede emitir un tercer bloque informativo de **auditoría legacy** durante el rollout R1 del canon semántico (`reglas-operativas.md` §5.6). Ese contador no bloquea el cierre — refleja deuda histórica de unidades pre-canon. Para unidades nuevas o re-extracciones explícitas, cualquier campo no canónico produce error duro.
 
 ### Salida
 

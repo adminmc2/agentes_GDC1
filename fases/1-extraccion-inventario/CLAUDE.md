@@ -33,6 +33,7 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 3. **Single source of truth por capa** — las reglas estructurales, decisionales y convenciones viven una sola vez en los archivos de soporte (`schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`). `CLAUDE.md` y `prompt.md` pueden repetir hechos y reglas mínimas de contrato de fase (objetivo, input/output, invocación, validación, literalidad) por ser entry points complementarios. Si lógica operativa o reglas de clasificación aparecen duplicadas fuera de su archivo canónico, es un bug.
 4. **Validar antes de cerrar** — el JSON pasa el validador con 0 errores y la revisión visual antes de declararse cerrado.
 5. **Schema documental ↔ validador no divergen** — `schema-inventario.md` y `scripts/validar_inventario.py` son contratos paralelos. Cualquier divergencia entre ambos es un bug que se resuelve antes del cierre.
+6. **Canon semántico es autoridad de naming** — los valores de `actividad.campo_semantico` y las claves de `vocabulario_consolidado.{principal,recurrente,comprension}` deben ser canónicos del canon (`campos-semanticos-canonicos.json`). Si no hay canónico seguro, usar la marca literal `"_pendiente_canon"` y resolver antes del cierre. Política, árbol de decisión y rollout en `reglas-operativas.md` §5.6.
 
 ---
 
@@ -47,6 +48,7 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 | ¿Cómo se ve un cloze, una selección múltiple, un cuestionario en el JSON? | `convenciones-y-casos.md` §2-3 |
 | ¿Hubo un caso similar antes en una extracción real? | `convenciones-y-casos.md` §4 (casebook) |
 | ¿Cómo se añade un caso nuevo al sistema? | `convenciones-y-casos.md` §5 |
+| ¿Qué nombres de `campo_semantico` y de claves de `vocabulario_consolidado` son válidos? | `campos-semanticos-canonicos.json` (fuente de datos) + `reglas-operativas.md` §5.6 (política, árbol de decisión, rollout) |
 
 ---
 
