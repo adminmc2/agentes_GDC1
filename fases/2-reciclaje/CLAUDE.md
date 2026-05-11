@@ -30,14 +30,21 @@ python3 scripts/regenerar_reciclaje_mapa.py
 ```
 Este script crea `nc1-reciclaje.json` si no existe. Debe ejecutarse antes que el de auto.
 
-**Nivel auto — se ejecuta automáticamente al integrar cada unidad:**
+**Nivel auto — fase 2 PAUSADA actualmente (decisión 36, v10.108):**
 
-No se invoca manualmente. Lo encadena `scripts/integrar_unidad.py` como parte del flujo de integración: valida el inventario aprobado, lo copia a main, actualiza el reciclaje y hace commit. Las correcciones que el humano haya hecho al inventario se propagan al reciclaje en ese mismo paso.
+Mientras dure la pausa de fase 2 (canon semántico de fase 1 en desarrollo), `scripts/integrar_unidad.py` **no regenera reciclaje por defecto**. La integración de una unidad copia el inventario, valida y hace commit del inventario, pero deja `nc1-reciclaje.json` congelado.
+
+Para forzar la regeneración en una integración concreta (excepción consciente), usar el flag explícito `--regenerar-reciclaje`:
 
 ```bash
-# Integrar una unidad (valida + actualiza reciclaje + commit)
+# Comportamiento por defecto: NO regenera reciclaje
 python3 scripts/integrar_unidad.py 6
+
+# Excepción consciente: SÍ regenera (commit incluye reciclaje)
+python3 scripts/integrar_unidad.py 6 --regenerar-reciclaje
 ```
+
+Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 
 ## Cómo validar
 

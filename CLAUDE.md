@@ -60,7 +60,8 @@ python3 diagrama.py
 # Validar inventario de una unidad
 python3 scripts/validar_inventario.py 3
 
-# Integrar una unidad desde su worktree a main (valida + actualiza reciclaje + commit)
+# Integrar una unidad desde su worktree a main (copia + valida + commit del inventario)
+# Por defecto NO regenera reciclaje (fase 2 pausada). Flag --regenerar-reciclaje para forzar.
 python3 scripts/integrar_unidad.py 6
 ```
 

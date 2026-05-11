@@ -98,7 +98,7 @@ Para cada contenido en cada unidad:
 
 El script lee los inventarios aprobados en main y genera hilos `nivel_analisis: "auto"` por cada `campo_semantico` único.
 
-**No se invoca manualmente.** Lo encadena `scripts/integrar_unidad.py` al integrar una unidad. El reciclaje refleja siempre el estado aprobado: si el humano corrigió el inventario antes de la integración, esas correcciones se propagan aquí.
+**Estado actual:** fase 2 pausada (decisión 36, v10.108). `scripts/integrar_unidad.py` no regenera reciclaje por defecto desde v10.108d; la regeneración queda detrás del flag explícito `--regenerar-reciclaje`. Cuando fase 2 se reactive, la invocación volverá a ser parte del flujo por defecto o se replanteará según el modelo nuevo.
 
 Lógica: primer aparición → `introduce`, siguientes → `amplia` (si principal/recurrente) o `aplica` (si solo comprensión). Ver código en `scripts/regenerar_reciclaje_vocabulario.py`.
 

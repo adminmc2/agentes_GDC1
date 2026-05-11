@@ -5,6 +5,18 @@
 
 ---
 
+## [v10.108e — 2026-05-11] — Cierre de coherencia documental tras v10.108d
+
+Tres correcciones tras hallazgos del revisor sobre v10.108d:
+
+- **Medio:** `fases/2-reciclaje/CLAUDE.md` y `reglas-reciclaje.md` decían que el nivel auto "se ejecuta automáticamente al integrar cada unidad". Actualizados al comportamiento real: fase 2 pausada, integración no regenera por defecto, flag `--regenerar-reciclaje` opcional.
+- **Bajo:** `CLAUDE.md` raíz tenía en el comentario del comando `integrar_unidad.py` el wording "valida + actualiza reciclaje + commit". Reformulado a "copia + valida + commit del inventario" con nota sobre el flag opcional.
+- **Bajo:** `PROCESO-MAESTRO.md` líneas 118 (Parte 3, descripción D) y 546 (decisión 23) contaban dos modelos antiguos del reciclaje distintos del vigente. Anotadas como histórico/superado por la decisión 36; trazabilidad de evolución preservada (v10.97 introdujo scripts, v10.108 pausó fase 2, v10.108d desacopló).
+
+REVIEW etiqueta de sincronización → v10.108e. Esta entrada se autodocumenta.
+
+---
+
 ## [v10.108d — 2026-05-11] — Desacoplar regeneración de reciclaje del flujo de integración (fase 2 pausada)
 
 Hallazgo medio del revisor: `integrar_unidad.py` ejecutaba `regenerar_reciclaje_vocabulario.py` automáticamente en cada integración, contradiciendo la pausa declarada de fase 2 en REVIEW/README/PROCESO-MAESTRO y las decisiones antiguas que describían el reciclaje como manual.

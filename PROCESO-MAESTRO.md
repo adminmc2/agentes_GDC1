@@ -115,12 +115,15 @@ unidades/
 - **Coste:** cero tokens.
 - **Cuándo se ejecuta:** al cerrar cada unidad.
 
-**D) `nc1-reciclaje.json` — mapping de reciclaje cross-unidad** ⚠ **IMPORTANTE: manual, no automático**
-- **Quién:** Claude Code en chat, ayudando al autor. **NO se genera con script Python**, **NO se infiere automáticamente, NO se "regenera"**.
-- **Cómo:** el autor abre chat al cerrar cada unidad y dice "añade los reciclajes de UX". Claude Code pregunta qué contenido se reutiliza, lo añade a las entradas existentes del JSON. El archivo es **acumulativo**: cada cierre de unidad lo amplía.
-- **Por qué manual:** el reciclaje es un mapping editorial (qué contenido de una unidad se reutiliza en otra) que requiere criterio humano. Un script no puede inferirlo de forma fiable.
+**D) `nc1-reciclaje.json` — mapping de reciclaje cross-unidad**
+
+> ⚠ **Modelo descrito a continuación SUPERADO.** Esta entrada se conserva como referencia histórica del modelo manual original (decisión 23). Estado vigente: ver decisión 36 (fase 2 pausada hasta cierre de canon de fase 1; `integrar_unidad.py` no regenera reciclaje por defecto desde v10.108d; flag `--regenerar-reciclaje` para forzar).
+
+- **Quién (modelo histórico):** Claude Code en chat, ayudando al autor. **NO se generaba con script Python**, **NO se infería automáticamente, NO se "regeneraba"**.
+- **Cómo (modelo histórico):** el autor abría chat al cerrar cada unidad y decía "añade los reciclajes de UX". Claude Code preguntaba qué contenido se reutiliza, lo añadía a las entradas existentes del JSON. El archivo era **acumulativo**.
+- **Por qué manual (motivación original):** el reciclaje es un mapping editorial que requería criterio humano. Un script no podía inferirlo de forma fiable en aquella fase.
 - **Coste:** mínimo, ~5.000 tokens por unidad.
-- **Futuro:** cuando los agentes CrewAI estén configurados, se podrá evaluar si un agente propone reciclajes (que el autor valida). Hoy: solo manual con Claude Code.
+- **Evolución:** v10.97 introdujo scripts de regeneración automatizada (mapa + auto); v10.108 pausó fase 2 y v10.108d desacopló la regeneración del flujo de integración por defecto.
 
 ---
 
@@ -543,7 +546,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-arboles-historicos.md`. Estado del 
 ### Sobre la generación de los JSONs
 21. **`UX-nc1-inventario.json`**: lo genera **Claude Code** en chat con un **prompt versionado** (`fases/1-extraccion-inventario/prompt.md`, operativo). NO Python autónomo.
 22. **`nc1-tarjetas.json`** y **`nc1-pildoras.json`**: scripts Python deterministas (`regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`, a escribir). Cero tokens.
-23. **`nc1-reciclaje.json`**: **manual con Claude Code** en chat al cerrar cada unidad. NO automático, NO inferido por script. Acumulativo.
+23. **`nc1-reciclaje.json`** (decisión histórica): originalmente **manual con Claude Code** en chat al cerrar cada unidad, NO automático, NO inferido por script, acumulativo. **Superada por la decisión 36** (v10.108): scripts de regeneración existen, fase 2 actualmente pausada, `integrar_unidad.py` no regenera por defecto.
 24. **Validación post-extracción** del inventario: script Python `scripts/validar_inventario.py` (operativo desde antes del refactor; alineado con `fases/1-extraccion-inventario/schema-inventario.md` en el cross-check A4.5.5 cerrado en v10.62).
 
 ### Sobre el dashboard y el informe HTML
