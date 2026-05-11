@@ -259,16 +259,12 @@ Estructural en schema (`schema-inventario.md` §10): siempre presentes como sub-
 
 Estructural en schema (`schema-inventario.md` §9, §10).
 
-**Universo válido — canon semántico.** Los nombres permitidos para `actividad.campo_semantico` y para las claves de `vocabulario_consolidado.{principal,recurrente,comprension}` viven en `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` (fuente única de datos del canon). Esto sustituye la decisión "liberal" anterior.
+**Universo válido.** Los nombres permitidos para `actividad.campo_semantico` y para las claves de `vocabulario_consolidado.{principal,recurrente,comprension}` viven en `campos-semanticos-canonicos.json` (fuente única). Aplica a cualquier sección, no solo vocabulario. Sustituye la decisión "liberal" anterior.
 
-**Cuándo se usa `campo_semantico`:** cuando el contenido lingüístico de la actividad pertenece a una categoría léxica identificable. Aplica a cualquier sección (no solo vocabulario).
-
-#### Regla de naming
-
-Al construir `vocabulario_consolidado` o asignar `campo_semantico`, los nombres deben ser **canónicos del canon**, no inventados ni en `snake_case`:
+**Naming:** canónico literal del canon, no `snake_case` ni invenciones.
 
 - ✅ `"Objetos de clase"`, `"Establecimientos"`, `"Higiene"`.
-- ❌ `"objetos_de_clase"`, `"lugares_publicos"`, `"vivienda_ecologica"`, `"verbos"` (minúscula sin contexto).
+- ❌ `"objetos_de_clase"`, `"lugares_publicos"`, `"verbos"`.
 
 #### Frontera entre `aliases_indice` y `aliases_auto`
 
@@ -312,21 +308,25 @@ Si durante extracción el agente no puede asignar un canónico con seguridad raz
 
 #### Rollout del endurecimiento (canales del validador)
 
-El validador (`scripts/validar_inventario.py`) tiene tres canales de salida: **errores** (bloquean cierre), **avisos** (no bloquean), **auditoría legacy** (informativos, contador propio). La iteración activa se controla con la constante `ROLLOUT_CANON_ITERACION`:
+El validador (`scripts/validar_inventario.py`) tiene tres canales: **errores** (bloquean cierre), **avisos** (no bloquean), **auditoría legacy** (informativos, contador propio). Iteración activa en la constante `ROLLOUT_CANON_ITERACION`. Paso de iteración: decisión explícita del autor, registrada en `PROCESO-MAESTRO.md`.
 
-- **R1 (entrada en vigor)** — para unidades en `LEGACY_UNIDADES_R1` del validador, los valores fuera de canon (cualquier alias o desconocidos) se reportan como **auditoría legacy** (no bloquean). Para unidades nuevas o re-extracciones explícitas (no en la lista), cualquier valor que no sea canónico literal es **error duro**.
-- **R2 (tras saneamiento de legacy U0-U9)** — `LEGACY_UNIDADES_R1` queda vacía. Comportamiento por tipo de match:
-  - canónico literal → OK silencioso.
-  - coincide con `aliases_indice` → OK silencioso (es nomenclatura editorial legítima del libro).
-  - coincide con `aliases_auto` → **aviso** (deuda: actualizar a canónico).
-  - sin match → **error duro**.
-- **R3 (endurecimiento final)** — solo el canónico literal es OK. Cualquier alias (indice o auto) → **error duro**. `aliases_auto` y `aliases_indice` quedan como referencia histórica para herramientas, ya no aceptables como valor.
+**R1 — entrada en vigor.** Unidades en `LEGACY_UNIDADES_R1`:
+- cualquier valor fuera de canon (alias o desconocido) → auditoría legacy (no bloquea).
 
-El paso de iteración es decisión explícita del autor, registrada en `PROCESO-MAESTRO.md`.
+Unidades nuevas o re-extracciones explícitas:
+- cualquier valor que no sea canónico literal → error duro.
 
-**`_pendiente_canon` → error duro siempre, en todas las iteraciones.** No se puede cerrar un inventario con la marca presente.
+**R2 — tras saneamiento de U0-U9** (`LEGACY_UNIDADES_R1` vacía):
+- canónico literal → OK silencioso.
+- `aliases_indice` → OK silencioso (nomenclatura editorial legítima del libro).
+- `aliases_auto` → aviso (deuda de actualización).
+- sin match → error duro.
 
-> Procedimiento operativo de resolución (humano + Claude Code editando canon + inventario): ver decisión 36 de `PROCESO-MAESTRO.md`.
+**R3 — endurecimiento final:**
+- solo canónico literal → OK.
+- cualquier alias → error duro. `aliases_*` queda como referencia histórica.
+
+**`_pendiente_canon` → error duro siempre, en todas las iteraciones.** Bloquea cierre del inventario.
 
 ### 5.7 `datos.items_libro`: literalidad obligatoria
 
