@@ -1,0 +1,9 @@
+{
+  "_meta": {
+    "estado": "esqueleto-rediseno",
+    "creado": "2026-05-12",
+    "descripcion": "Registry de categorías canónicas de gramatica_consolidada. Esqueleto vacío creado durante el rediseño de fase 1; el contenido editorial se poblará al ejecutar la migración (Paso 2/3). El insumo de referencia es pcic-a1-gramatica.json.",
+    "version": "0.0"
+  },
+  "categorias": []
+}

@@ -1,0 +1,1004 @@
+{
+  "fuente": "PCIC A1 — Plan Curricular del Instituto Cervantes",
+  "nivel": "A1",
+  "fecha_copia": "2026-05-13",
+  "pronunciacion": {
+    "origen": "https://cvc.cervantes.es/ensenanza/biblioteca_ele/plan_curricular/niveles/03_pronunciacion_inventario_a1-a2.htm",
+    "categorias": {
+      "1. La base de articulación": {
+        "1.1. Caracterización general del español": [
+          {
+            "descripcion": "Modo normal de fonación"
+          },
+          {
+            "descripcion": "Grado de tensión menor que el francés y superior al inglés"
+          },
+          {
+            "descripcion": "Pureza vocálica sin vocales anteriores redondeadas"
+          },
+          {
+            "descripcion": "Ausencia de africación consonántica"
+          },
+          {
+            "descripcion": "Mantenimiento del timbre en vocales inacentuadas"
+          },
+          {
+            "descripcion": "Movimiento marcado de labios"
+          },
+          {
+            "descripcion": "Base articulatoria con tendencia a sílaba abierta"
+          },
+          {
+            "descripcion": "Predominio de articulaciones alveolares y palatales"
+          },
+          {
+            "descripcion": "Concepto de acento como conjunto de hábitos articulatorios"
+          }
+        ]
+      },
+      "2. La entonación": {
+        "2.1. Segmentación del discurso en unidades melódicas": [
+          {
+            "descripcion": "Correspondencia con la puntuación: punto, coma, signos interrogativos y exclamativos"
+          },
+          {
+            "descripcion": "Extensión de la unidad melódica: mínima de una sílaba; predominio de 5-10 sílabas (especialmente 7-8); escasez por debajo de 5 o por encima de 15",
+            "ejemplo": "Yo / Trabaja en un banco"
+          },
+          {
+            "descripcion": "Contraste multilingüe: francés con unidades más cortas; italiano más largas y musicales; inglés similar al español"
+          },
+          {
+            "descripcion": "Correspondencias sintácticas: vocativo como unidad propia",
+            "ejemplo": "Sara, ¿me dejas tus ejercicios?"
+          },
+          {
+            "descripcion": "Oraciones simples de ≤7-8 sílabas: una sola unidad",
+            "ejemplo": "Me llamo Pedro"
+          },
+          {
+            "descripcion": "Oraciones largas de ≥15 sílabas: mínimo dos unidades"
+          },
+          {
+            "descripcion": "Enumeraciones: cada miembro es una unidad",
+            "ejemplo": "Tengo un lápiz, un cuaderno, un libro"
+          },
+          {
+            "descripcion": "Coordinadas: unidades distintas",
+            "ejemplo": "Quiero ir // pero no puedo"
+          }
+        ],
+        "2.2. Patrones melódicos enunciativos": [
+          {
+            "descripcion": "Inicio con tono grave en sílabas átonas iniciales",
+            "ejemplo": "Escribo pocas palabras"
+          },
+          {
+            "descripcion": "Inicio con tono medio si la primera sílaba es tónica",
+            "ejemplo": "Tengo dos hermanos"
+          },
+          {
+            "descripcion": "Diferencia con francés: ascenso gradual en francés vs. ascenso súbito en español"
+          },
+          {
+            "descripcion": "En el cuerpo: entonación uniforme, carácter sobrio (frente a elevación del francés, descenso del inglés, patrones quebrados del alemán)"
+          },
+          {
+            "descripcion": "Zona de máxima relevancia al final del enunciado",
+            "ejemplo": "No te gusta el cine"
+          },
+          {
+            "descripcion": "Palabra aguda: ámbito final en 1 sílaba",
+            "ejemplo": "Es malo para mi corazón"
+          },
+          {
+            "descripcion": "Palabra llana: ámbito final en 2 sílabas",
+            "ejemplo": "Hace mucho que llegué a casa"
+          },
+          {
+            "descripcion": "Palabra esdrújula: ámbito final en 3 sílabas",
+            "ejemplo": "Ese es su comportamiento típico"
+          },
+          {
+            "descripcion": "Tonema de cadencia: terminación absoluta, tono grave"
+          },
+          {
+            "descripcion": "Valor expresivo: diferencia entre aseveración categórica y dubitativa"
+          }
+        ],
+        "2.3. Patrones melódicos interrogativos": [
+          {
+            "descripcion": "Sensibilización hacia la variedad de interrogativas españolas"
+          },
+          {
+            "descripcion": "Interrogativa absoluta vs. relativa"
+          },
+          {
+            "descripcion": "Interrogativa con pronombre interrogativo",
+            "ejemplo": "¿Quién es tu profesor?"
+          },
+          {
+            "descripcion": "Similitud con la primera parte de la enunciativa",
+            "ejemplo": "¿Están estudiando? vs. Están estudiando // desde las tres"
+          }
+        ],
+        "2.4. Patrones melódicos en actos de habla": [
+          {
+            "descripcion": "Entonación como exponente de actos asertivos, exclamativos, expresivos, interrogativos e imperativos"
+          },
+          {
+            "descripcion": "Saludos y fórmulas de cortesía",
+            "ejemplo": "Muchas gracias / Buenas tardes / Adiós / ¿Qué tal?"
+          }
+        ]
+      },
+      "3. La sílaba y el acento": {
+        "3.1. Estructura silábica": [
+          {
+            "descripcion": "Sílabas abiertas: terminadas en vocal",
+            "ejemplo": "ho-la"
+          },
+          {
+            "descripcion": "Sílabas cerradas: terminadas en consonante",
+            "ejemplo": "nom-bre"
+          },
+          {
+            "descripcion": "Tendencia del español a la sílaba abierta"
+          },
+          {
+            "descripcion": "Incapacidad consonántica para ser núcleo silábico"
+          },
+          {
+            "descripcion": "Fonemas vocálicos: núcleo simple y núcleo complejo (diptongos y triptongos)"
+          },
+          {
+            "descripcion": "Estructuras silábicas predominantes: CV, CVC, CCV, VC",
+            "ejemplo": "ca-sa / can-tar / nom-bre / al-to"
+          },
+          {
+            "descripcion": "Cantidad silábica inexistente en español (no hay sílabas largas/breves)"
+          },
+          {
+            "descripcion": "Resilabeo: principio de delimitación silábica en habla encadenada",
+            "ejemplo": "to.má.rál.go (tomar algo) / dó.sa.mí.gos (dos amigos)"
+          }
+        ],
+        "3.2. Reconocimiento y producción del acento": [
+          {
+            "descripcion": "Naturaleza multifactorial del acento: tónico, durativo e intensivo"
+          },
+          {
+            "descripcion": "Lengua de acento relativamente libre"
+          },
+          {
+            "descripcion": "Variabilidad según región",
+            "ejemplo": "reúma / reuma, omoplato / omóplato"
+          },
+          {
+            "descripcion": "Valor fonológico: cambios significativos en pares mínimos",
+            "ejemplo": "caso / casó"
+          },
+          {
+            "descripcion": "Agudas: acento en la última sílaba",
+            "ejemplo": "tra-ba-jar"
+          },
+          {
+            "descripcion": "Llanas: acento en la penúltima sílaba",
+            "ejemplo": "ni-ño"
+          },
+          {
+            "descripcion": "Esdrújulas: acento en la antepenúltima sílaba",
+            "ejemplo": "rá-pi-do"
+          },
+          {
+            "descripcion": "Sobresdrújulas: acento anterior a la antepenúltima",
+            "ejemplo": "pre-gún-ta-se-lo"
+          },
+          {
+            "descripcion": "Adverbios en -mente: dos acentos",
+            "ejemplo": "rápidamente"
+          },
+          {
+            "descripcion": "Esquemas acentuales verbales: acento penúltimo en presente excepto 2ª plural",
+            "ejemplo": "tra-BA-jo / tra-ba-JÁIS"
+          },
+          {
+            "descripcion": "Acento morfológico en otros tiempos",
+            "ejemplo": "trabaj-É / trabaj-A-ba"
+          },
+          {
+            "descripcion": "Esquemas acentuales no verbales: bisílabos, trisílabos, tetrasílabos y pentasílabos en patrones llanos, agudos y esdrújulos"
+          }
+        ]
+      },
+      "4. Ritmo, pausas y tiempo": {
+        "4.1. Percepción y producción del ritmo": [
+          {
+            "descripcion": "Lengua con tendencia al compás silábico"
+          },
+          {
+            "descripcion": "Ni enteramente silábica ni acentual"
+          },
+          {
+            "descripcion": "Contraste: francés e italiano silábicamente acompasadas; portugués, inglés y alemán acentualmente acompasadas"
+          }
+        ],
+        "4.2. Pausas y grupo fónico": [
+          {
+            "descripcion": "Pausas obligatorias: mantienen significado o estructura",
+            "ejemplo": "No tenemos que seguir vs. No, tenemos que seguir"
+          },
+          {
+            "descripcion": "Pausas obligatorias enumerativas",
+            "ejemplo": "Era alto, rubio, guapo"
+          },
+          {
+            "descripcion": "Pausas virtuales",
+            "ejemplo": "Vivo en Madrid // con su hijo"
+          },
+          {
+            "descripcion": "Pausas llenas con vocales de duda",
+            "ejemplo": "eeee..."
+          },
+          {
+            "descripcion": "Pausas llenas con consonante nasal",
+            "ejemplo": "mmm..."
+          },
+          {
+            "descripcion": "Pausas llenas con demostrativos desemantizados",
+            "ejemplo": "esto: / este:"
+          },
+          {
+            "descripcion": "Pausas llenas con marcadores discursivos",
+            "ejemplo": "pues / bueno"
+          },
+          {
+            "descripcion": "Pausas llenas con interjecciones leves",
+            "ejemplo": "¡a:!"
+          },
+          {
+            "descripcion": "Concepto de grupo fónico"
+          }
+        ]
+      },
+      "5. Los fonemas y sus variantes": {
+        "5.1. Identificación y producción de fonemas vocálicos": [
+          {
+            "descripcion": "Sistema de 5 fonemas vocálicos: /a, e, i, o, u/"
+          },
+          {
+            "descripcion": "Claridad y precisión como características fundamentales"
+          },
+          {
+            "descripcion": "Uniformidad de timbre, ausencia de relajación (a diferencia del inglés)"
+          },
+          {
+            "descripcion": "Sin vocales anteriores redondeadas (como ö, ü del francés o alemán)"
+          },
+          {
+            "descripcion": "Sin vocales mixtas ni diptongadas"
+          },
+          {
+            "descripcion": "Escasa nasalización"
+          },
+          {
+            "descripcion": "Posición de lengua: /a/ central horizontal; /e, i/ mitad anterior, lengua elevada hacia adelante; /o, u/ mitad posterior, lengua retraída"
+          },
+          {
+            "descripcion": "Apertura de mandíbulas: /a/ más abierta; /e, o/ medias; /i, u/ cerradas"
+          },
+          {
+            "descripcion": "/a/: central",
+            "ejemplo": "caro, rápido, despacio"
+          },
+          {
+            "descripcion": "/i/: menos cerrada y tensa que en francés o inglés",
+            "ejemplo": "silla, chico, vida"
+          },
+          {
+            "descripcion": "/e/: no tan cerrada como en francés, sin diptongar",
+            "ejemplo": "ejemplo, mes, beber"
+          },
+          {
+            "descripcion": "/o/: menos cerrada que en francés, nunca diptongada"
+          },
+          {
+            "descripcion": "/u/: semejante al francés y al alemán"
+          },
+          {
+            "descripcion": "Diptongos: grupo fonético formado por unión de i o u con otra vocal",
+            "ejemplo": "diente, peine, después, guapo"
+          },
+          {
+            "descripcion": "Diptongos crecientes: semiconsonante + vocal",
+            "ejemplo": "fiasco, viejo, guante, cuerda"
+          },
+          {
+            "descripcion": "Diptongos decrecientes: vocal + semivocal",
+            "ejemplo": "bailar, aula, ley, voy"
+          },
+          {
+            "descripcion": "Triptongos: tres vocales con a/e central",
+            "ejemplo": "limpiáis"
+          },
+          {
+            "descripcion": "Hiatos",
+            "ejemplo": "confi-áis"
+          },
+          {
+            "descripcion": "Tendencia del español a reducir vocales agrupadas a una sola sílaba"
+          },
+          {
+            "descripcion": "Transición gradual sin interrupción de sonoridad (diptongación)"
+          },
+          {
+            "descripcion": "Tendencia antihiática en habla coloquial",
+            "ejemplo": "golp[i̯á]r, acord[i̯ó]n"
+          }
+        ],
+        "5.2. Identificación y producción de fonemas consonánticos": [
+          {
+            "descripcion": "Oclusivas y fricativas, sordas y sonoras",
+            "ejemplo": "poca/boca, te/de, casa/gasa"
+          },
+          {
+            "descripcion": "Nasal palatal /ñ/",
+            "ejemplo": "niño vs. mano"
+          },
+          {
+            "descripcion": "Africada palatal sorda /ch/",
+            "ejemplo": "nicho vs. niño"
+          },
+          {
+            "descripcion": "Palatal /y/ y lateral palatal /ll/",
+            "ejemplo": "poyo / pollo"
+          },
+          {
+            "descripcion": "Yeísmo generalizado en Hispanoamérica"
+          },
+          {
+            "descripcion": "Distinción ll/y conservada en zonas: Colombia, Ecuador, Perú, Bolivia, Paraguay, Chile, Uruguay y partes de Argentina"
+          },
+          {
+            "descripcion": "Líquidas /l/ y /r/",
+            "ejemplo": "pelo / pero"
+          },
+          {
+            "descripcion": "Vibrante simple vs. múltiple",
+            "ejemplo": "pero / perro"
+          },
+          {
+            "descripcion": "Interdental /z/: más enérgica que la th inglesa"
+          },
+          {
+            "descripcion": "Seseo (z→s) en Hispanoamérica y sur-centro de España"
+          },
+          {
+            "descripcion": "Fricativa /x/ (grafías g, j)",
+            "ejemplo": "gente, jefe"
+          },
+          {
+            "descripcion": "Relación sonidos–grafías"
+          }
+        ],
+        "5.3. Sonidos agrupados: enlace en grupo fónico": [
+          {
+            "descripcion": "Enlace de vocales en misma palabra: sinéresis y reducción",
+            "ejemplo": "Raúl → Rául, alcohol → al-col"
+          },
+          {
+            "descripcion": "Enlace de vocales en secuencia: sinalefa y reducción",
+            "ejemplo": "vivo en Málaga → vi-voen-Má-la-ga"
+          },
+          {
+            "descripcion": "Sirrema: ausencia de pausa interior. Facilidad de unión fonética entre vocablos"
+          },
+          {
+            "descripcion": "Artículo + sustantivo",
+            "ejemplo": "el amor → elamor, la casa → lacasa"
+          },
+          {
+            "descripcion": "Adjetivo + sustantivo",
+            "ejemplo": "el hombre bueno → elhombrebueno"
+          },
+          {
+            "descripcion": "Sustantivo + complemento",
+            "ejemplo": "casa de Paco → casadepaco"
+          },
+          {
+            "descripcion": "Tiempos compuestos",
+            "ejemplo": "ha salido → hasalido"
+          },
+          {
+            "descripcion": "Pronombre + elemento",
+            "ejemplo": "la vi ayer → lavi ayer"
+          },
+          {
+            "descripcion": "Adverbio + palabra",
+            "ejemplo": "que lo pases bien → que lopasesbien"
+          },
+          {
+            "descripcion": "Preposición + término",
+            "ejemplo": "estoy con gente → estoy congente"
+          },
+          {
+            "descripcion": "Conjunción + discurso",
+            "ejemplo": "ella y tú → ella ytú"
+          },
+          {
+            "descripcion": "Perífrasis y locuciones",
+            "ejemplo": "voy a estudiar → voyaestudiar"
+          }
+        ]
+      }
+    }
+  },
+  "ortografia": {
+    "origen": "caes complete system/references/plan_curricular/by_level/a1/a1_ortografia_completo.json",
+    "categorias": {
+      "Ortografía De Letras Y Palabras": {
+        "Abecedario": [
+          {
+            "contenido": "Abecedario",
+            "descripcion": "Nombre de las letras del abecedario o alfabeto",
+            "ejemplo": "a, be, ce, de, e, efe, ge, hache, i, jota, ka, ele, eme, ene, eñe, o, pe, cu, erre, ese, te, u, uve, uve doble, equis, ye, zeta"
+          },
+          {
+            "contenido": "Abecedario",
+            "descripcion": "Letras con varios nombres en español",
+            "ejemplo": "b: be, be alta, be larga; r/rr: ere, erre; v: uve, ve, ve baja, ve corta; w: uve doble, ve doble, doble ve; [México y algunos países de Centroamérica] doble u; y: i griega, ye; z: zeta"
+          },
+          {
+            "contenido": "Abecedario",
+            "descripcion": "Plural de las letras del abecedario o alfabeto",
+            "ejemplo": "aes, bes, ces... Esta palabra tiene dos les."
+          },
+          {
+            "contenido": "Abecedario",
+            "descripcion": "Correspondencia de más de una letra para un sonido",
+            "ejemplo": "b/v - /b/; g+e, i/j - /x/; k/qu/c+a, o, u - /k/"
+          },
+          {
+            "contenido": "Abecedario",
+            "descripcion": "Correspondencia de una letra para más de un sonido",
+            "ejemplo": "w - /u/, /b/; y - /y/, /i/"
+          },
+          {
+            "contenido": "Abecedario",
+            "descripcion": "Dígrafos ch y ll",
+            "ejemplo": "chocolate, llamar, muchacho, calle"
+          },
+          {
+            "contenido": "Abecedario",
+            "descripcion": "Deletreo",
+            "ejemplo": "¿Cómo se escribe tu nombre? - A-N-A; ¿Puedes deletrear tu apellido?"
+          },
+          {
+            "contenido": "Abecedario",
+            "descripcion": "Escasa frecuencia de aparición de consonantes idénticas contiguas en español",
+            "ejemplo": "innecesario, innovación, acceso (casos excepcionales)"
+          }
+        ],
+        "Vocales": [
+          {
+            "contenido": "Vocales",
+            "descripcion": "Letras a, e, i, o, u. Representación gráfica de los fonemas",
+            "ejemplo": "/a/, /e/, /i/, /o/, /u/"
+          },
+          {
+            "contenido": "Vocales",
+            "descripcion": "Susceptibles de llevar tilde [en oposición a las consonantes]",
+            "ejemplo": "á, é, í, ó, ú (café, mamá, así, sofá, menú)"
+          },
+          {
+            "contenido": "Vocales",
+            "descripcion": "Formas contractas al y del",
+            "ejemplo": "Voy al cine (a + el). El libro del profesor (de + el)"
+          },
+          {
+            "contenido": "Vocales",
+            "descripcion": "Conjunción e / y",
+            "ejemplo": "Hablo español e inglés. / *Hablo español y inglés."
+          },
+          {
+            "contenido": "Vocales",
+            "descripcion": "En oraciones interrogativas se mantiene y ante i",
+            "ejemplo": "¿Y Inmaculada?"
+          },
+          {
+            "contenido": "Vocales",
+            "descripcion": "Conjunción o / u",
+            "ejemplo": "siete u ocho"
+          }
+        ],
+        "Letras Minúsculas Iniciales": [
+          {
+            "contenido": "Según El Significado",
+            "descripcion": "Nombres propios: apellidos que comienzan con artículo, preposición o ambos",
+            "ejemplo": "Teresa la Cruz, Miguel de Cervantes, Enrique de la Rosa"
+          },
+          {
+            "contenido": "Según El Significado",
+            "descripcion": "Tratamientos",
+            "ejemplo": "Perdón, ¿cómo se llama usted?"
+          },
+          {
+            "contenido": "Según El Significado",
+            "descripcion": "Cargos, profesiones, títulos",
+            "ejemplo": "el presidente, el médico, el doctor García"
+          },
+          {
+            "contenido": "Según El Significado",
+            "descripcion": "Nombres comunes y adjetivos en nombres de festividades",
+            "ejemplo": "día de la Madre, Nochebuena"
+          },
+          {
+            "contenido": "Según La Puntuación",
+            "descripcion": "Después de signos de cierre de interrogación y exclamación, con interposición de coma, punto y coma, dos puntos",
+            "ejemplo": "¿Cómo te llamas?, ¿de dónde eres? ¡Hola!, buenos días."
+          }
+        ],
+        "Tipos De Letra": [
+          {
+            "contenido": "Letras Voladas",
+            "descripcion": "Abreviaturas de uso frecuente",
+            "ejemplo": "D.ª, n.º, 1.º"
+          }
+        ],
+        "Consonantes": [
+          {
+            "contenido": "Letras B, V",
+            "descripcion": "Representación gráfica del fonema bilabial sonoro /b/",
+            "ejemplo": "bonito, vivir"
+          },
+          {
+            "contenido": "Letras C, K, Qu",
+            "descripcion": "Representación gráfica del fonema velar sordo /k/",
+            "ejemplo": "casa, kilo, queso"
+          },
+          {
+            "contenido": "Letras G, J",
+            "descripcion": "Representación gráfica del fonema fricativo velar sordo /x/",
+            "ejemplo": "gente, joven"
+          },
+          {
+            "contenido": "Letras G, J",
+            "descripcion": "Representación gráfica del fonema velar sonoro /g/",
+            "ejemplo": "gato, guerra"
+          },
+          {
+            "contenido": "Letra H",
+            "descripcion": "Correspondencia de la h con ausencia de sonido",
+            "ejemplo": "hermano, hoy"
+          },
+          {
+            "contenido": "Letra H",
+            "descripcion": "Posición de la letra h: inicio de palabra",
+            "ejemplo": "hermano, hoy"
+          },
+          {
+            "contenido": "Letra H",
+            "descripcion": "Palabras que proceden de voces latinas con f inicial",
+            "ejemplo": "hacer, hijo"
+          },
+          {
+            "contenido": "Letra Y, Dígrafo Ll",
+            "descripcion": "Letra y - Representación gráfica del fonema vocálico /i/: diptongos y triptongos, conjunción y",
+            "ejemplo": "hay, soy, Uruguay"
+          },
+          {
+            "contenido": "Letra Y, Dígrafo Ll",
+            "descripcion": "Letra y - Representación gráfica del fonema palatal sonoro /y/ delante de vocal",
+            "ejemplo": "yo, ayer, desayuno"
+          },
+          {
+            "contenido": "Letra Y, Dígrafo Ll",
+            "descripcion": "Conjunción y. Sustitución de y por e + palabra con fonema /i/ inicial",
+            "ejemplo": "Pedro e Inés"
+          },
+          {
+            "contenido": "Letra Y, Dígrafo Ll",
+            "descripcion": "Dígrafo ll - Representación gráfica del fonema palatal lateral sonoro /λ/",
+            "ejemplo": "billete, llevar"
+          },
+          {
+            "contenido": "Letras M, N, Ñ",
+            "descripcion": "Letra m - Representación del fonema labial nasal /m/ en inicial de palabra o sílaba",
+            "ejemplo": "madre, número"
+          },
+          {
+            "contenido": "Letras M, N, Ñ",
+            "descripcion": "Letra m - Delante de b y p",
+            "ejemplo": "hombre, campo"
+          },
+          {
+            "contenido": "Letras M, N, Ñ",
+            "descripcion": "Letra n - Representación del fonema alveolar nasal /n/ en inicial de palabra o sílaba",
+            "ejemplo": "nombre, nene"
+          },
+          {
+            "contenido": "Letras M, N, Ñ",
+            "descripcion": "Letra ñ - Representación gráfica del fonema palatal nasal /ñ/",
+            "ejemplo": "niño, España"
+          },
+          {
+            "contenido": "Letras R, Rr",
+            "descripcion": "Letra r - Representación gráfica del fonema vibrante simple /r/",
+            "ejemplo": "caro, para"
+          },
+          {
+            "contenido": "Letras R, Rr",
+            "descripcion": "Dígrafo rr - Representación gráfica del fonema vibrante múltiple /rr/",
+            "ejemplo": "carro, perro"
+          },
+          {
+            "contenido": "Letras R, Rr",
+            "descripcion": "Representación de r en inicio de palabra",
+            "ejemplo": "ratón, rojo"
+          },
+          {
+            "contenido": "Letras R, Rr",
+            "descripcion": "Representación de r tras consonante n, l, s",
+            "ejemplo": "Enrique, alrededor, israelí"
+          },
+          {
+            "contenido": "Letras C, Z",
+            "descripcion": "Representación gráfica del fonema fricativo interdental sordo /θ/",
+            "ejemplo": "cena, zapato"
+          },
+          {
+            "contenido": "Letras S, X",
+            "descripcion": "Letra s - Representación gráfica del fonema fricativo alveolar sordo /s/",
+            "ejemplo": "casa, mesa"
+          },
+          {
+            "contenido": "Letras S, X",
+            "descripcion": "Letra x - Representación gráfica del grupo consonántico /ks/",
+            "ejemplo": "examen, taxi"
+          }
+        ],
+        "Letras Mayúsculas": [
+          {
+            "contenido": "Usos Generales",
+            "descripcion": "Letras mayúsculas: vocales y consonantes",
+            "ejemplo": "A, B, C, D, E... (todas las letras del alfabeto)"
+          },
+          {
+            "contenido": "Usos Generales",
+            "descripcion": "Mayúsculas en palabras que empiezan con dígrafo",
+            "ejemplo": "China / *CHina, Lluvia / *LLuvia"
+          },
+          {
+            "contenido": "Usos Generales",
+            "descripcion": "Vocales con tilde",
+            "ejemplo": "Ángel, Íñigo"
+          },
+          {
+            "contenido": "Mayúsculas Iniciales Según El Significado",
+            "descripcion": "Nombres propios de persona",
+            "ejemplo": "Ana, Pedro, María"
+          },
+          {
+            "contenido": "Mayúsculas Iniciales Según El Significado",
+            "descripcion": "Nombres propios geográficos",
+            "ejemplo": "España, Madrid, Guadalquivir"
+          },
+          {
+            "contenido": "Mayúsculas Iniciales Según El Significado",
+            "descripcion": "Nombres de instituciones",
+            "ejemplo": "Universidad Complutense, Instituto Cervantes"
+          },
+          {
+            "contenido": "Mayúsculas Iniciales Según El Significado",
+            "descripcion": "Días de la semana, meses del año, estaciones",
+            "ejemplo": "lunes, enero, primavera (con minúscula inicial)"
+          },
+          {
+            "contenido": "Mayúsculas Iniciales Según El Significado",
+            "descripcion": "Idiomas, gentilicios",
+            "ejemplo": "español, francés, mexicano (con minúscula inicial)"
+          },
+          {
+            "contenido": "Mayúsculas Iniciales Según La Puntuación",
+            "descripcion": "Después de punto",
+            "ejemplo": "Buenos días. ¿Cómo está usted?"
+          },
+          {
+            "contenido": "Mayúsculas Iniciales Según La Puntuación",
+            "descripcion": "Al comienzo de escrito",
+            "ejemplo": "Estimado señor García:"
+          },
+          {
+            "contenido": "Mayúsculas Iniciales Según La Puntuación",
+            "descripcion": "Después de signos de cierre de interrogación y exclamación",
+            "ejemplo": "¿Cómo te llamas? Me llamo Ana."
+          }
+        ]
+      },
+      "Acentuación Gráfica": {
+        "Reglas Generales De Acentuación": [
+          {
+            "contenido": "Interrogativos Y Exclamativos",
+            "descripcion": "Interrogativos y exclamativos",
+            "ejemplo": "¿Cómo te llamas?, ¿Dónde vives?, ¡Qué bien!"
+          },
+          {
+            "contenido": "Obligatoriedad De Tilde En Mayúscula",
+            "descripcion": "Obligatoriedad de tilde en mayúscula",
+            "ejemplo": "INÉS / *INES, Ángel / *Angel"
+          }
+        ],
+        "Tilde Diacrítica": [
+          {
+            "contenido": "Contraste Interrogativo Y Exclamativo Qué / Relativo Que",
+            "descripcion": "Contraste interrogativo y exclamativo qué / relativo que",
+            "ejemplo": "¿Qué lees? / el libro que leo. ¡Qué bien!"
+          },
+          {
+            "contenido": "Contraste Pronombre Él / Artículo El",
+            "descripcion": "Contraste pronombre él / artículo el",
+            "ejemplo": "Es él / el libro"
+          },
+          {
+            "contenido": "Contraste Pronombre Te / Sustantivo Té",
+            "descripcion": "Contraste pronombre te / sustantivo té",
+            "ejemplo": "¿Cómo te llamas? / Bebo té."
+          },
+          {
+            "contenido": "Contraste Pronombre Se / 3.ª Persona De Singular Del Presente De Indicativo Del Verbo Saber",
+            "descripcion": "Contraste pronombre se / 3.ª persona de singular del presente de indicativo del verbo saber",
+            "ejemplo": "Se llama Sofía. / No sé."
+          },
+          {
+            "contenido": "Contraste Posesivo Tu / Pronombre Personal Tú",
+            "descripcion": "Contraste posesivo tu / pronombre personal tú",
+            "ejemplo": "¿Cómo es tu casa? / Soy inglesa, ¿y tú?"
+          }
+        ]
+      },
+      "Puntuación": {
+        "Punto ( . )": [
+          {
+            "contenido": "Tipos De Punto",
+            "descripcion": "Punto y seguido, punto y aparte, punto final",
+            "ejemplo": "Punto y seguido. Punto y aparte. Punto final."
+          },
+          {
+            "contenido": "Punto Y Seguido",
+            "descripcion": "Convenciones de distribución y organización del texto (continuidad en el mismo renglón)",
+            "ejemplo": "Me llamo Ana. Soy española y vivo en Madrid."
+          },
+          {
+            "contenido": "Abreviaturas, Siglas Y Acrónimos",
+            "descripcion": "Abreviaturas, siglas y acrónimos",
+            "ejemplo": "D.ª, tfno."
+          },
+          {
+            "contenido": "Ausencia De Punto En Números De Teléfono",
+            "descripcion": "Ausencia de punto en números de teléfono",
+            "ejemplo": "Mi número es el 91 578 84 67."
+          },
+          {
+            "contenido": "Ausencia De Punto En Concurrencia Con Signos De Cierre De Interrogación Y Exclamación",
+            "descripcion": "Ausencia de punto en concurrencia con signos de cierre de interrogación y exclamación",
+            "ejemplo": "¿Dónde vivo? En... / *¿Dónde vivo?. En..."
+          },
+          {
+            "contenido": "Expresión De Fracciones De La Hora",
+            "descripcion": "Expresión de fracciones de la hora",
+            "ejemplo": "La clase comienza a las 11.30."
+          },
+          {
+            "contenido": "Direcciones De Correo Electrónico",
+            "descripcion": "Direcciones de correo electrónico",
+            "ejemplo": "cervantes@cervantes.es"
+          },
+          {
+            "contenido": "Lectura De Direcciones De Páginas Web",
+            "descripcion": "Lectura de direcciones de páginas web",
+            "ejemplo": "www.cervantes.es"
+          }
+        ],
+        "Guión ( - )": [
+          {
+            "contenido": "Nombres De Pila Y Apellidos Compuestos",
+            "descripcion": "Nombres de pila y apellidos compuestos",
+            "ejemplo": "Se llama Ana Torres-Vega García."
+          }
+        ],
+        "Raya ( — )": [
+          {
+            "contenido": "Intervenciones En Diálogos, Sin Mención De Nombre O Personaje",
+            "descripcion": "Intervenciones en diálogos, sin mención de nombre o personaje",
+            "ejemplo": "—¿Cómo te llamas? —Me llamo Carolina."
+          }
+        ],
+        "Barra ( / )": [
+          {
+            "contenido": "Abreviaturas",
+            "ejemplo": "c/ [v. Ortografía 4.1.]"
+          },
+          {
+            "contenido": "Indicador De Dos O Más Opciones",
+            "descripcion": "Indicador de dos o más opciones",
+            "ejemplo": "profesor/a, señor/a"
+          }
+        ],
+        "Coma ( , )": [
+          {
+            "contenido": "Enumeraciones Con Y, O",
+            "descripcion": "Enumeraciones con y, o",
+            "ejemplo": "Hablo ruso, inglés y alemán. Estudio español para trabajar en Argentina, Paraguay o Uruguay."
+          },
+          {
+            "contenido": "Enumeraciones Con E, U",
+            "descripcion": "Enumeraciones con e, u",
+            "ejemplo": "Hablo ruso, alemán e inglés. No podemos visitar todas las ciudades, tienes que elegir: Santander, Bilbao u Oviedo."
+          },
+          {
+            "contenido": "Ausencia De Coma Entre Sujeto Y Verbo",
+            "descripcion": "Ausencia de coma entre sujeto y verbo",
+            "ejemplo": "*La hija de mi hermano, se llama Marta. / La hija de mi hermano se llama Marta."
+          },
+          {
+            "contenido": "Separación De Unidades Y Decimales",
+            "descripcion": "Separación de unidades y decimales",
+            "ejemplo": "5,25 euros, 5'25 euros"
+          }
+        ],
+        "Dos Puntos ( : )": [
+          {
+            "contenido": "Enumeración Anunciada",
+            "descripcion": "Enumeración anunciada",
+            "ejemplo": "Los días de la semana son: lunes, martes..."
+          },
+          {
+            "contenido": "Convenciones De Distribución Y Organización Del Texto En Ejemplificaciones Y Numeraciones",
+            "descripcion": "Continuidad en el mismo renglón",
+            "ejemplo": "Los colores primarios son: rojo, azul y amarillo."
+          },
+          {
+            "contenido": "Expresión De Fracciones De La Hora",
+            "descripcion": "Expresión de fracciones de la hora",
+            "ejemplo": "La clase empieza a las 11:30."
+          }
+        ],
+        "Signos De Interrogación ( ¿ ? ) Y Exclamación ( ¡ ! )": [
+          {
+            "contenido": "Obligatoriedad De Apertura Y Cierre De Interrogación Y Exclamación",
+            "descripcion": "Obligatoriedad de apertura y cierre de interrogación y exclamación",
+            "ejemplo": "¿Cómo te llamas? / *Cómo te llamas?, ¡Hola! / *Hola!"
+          },
+          {
+            "contenido": "En Concurrencia Con Otros Signos, Excepto Punto",
+            "descripcion": "En concurrencia con otros signos, excepto punto",
+            "ejemplo": "*¿Dónde vives?. *¡Buenas tardes!."
+          }
+        ],
+        "Paréntesis ( )": [
+          {
+            "contenido": "Complementos E Incisos",
+            "descripcion": "Complementos e incisos",
+            "ejemplo": "Pedraza (España) es un pueblo muy bonito."
+          }
+        ],
+        "Comillas ( « » )": [
+          {
+            "contenido": "Discriminador En El Enunciado",
+            "descripcion": "Voces extranjeras",
+            "ejemplo": "¿Cómo se dice «good bye» en español?"
+          }
+        ]
+      },
+      "Abreviaturas Y Siglas": {
+        "Abreviaturas": [
+          {
+            "contenido": "Formas De Tratamiento Más Frecuentes",
+            "descripcion": "Formas de tratamiento más frecuentes",
+            "ejemplo": "D., Sr., Ud., Vd."
+          },
+          {
+            "contenido": "Uso De Punto",
+            "descripcion": "Uso de punto",
+            "ejemplo": "tfno., c/ [v. Ortografía 3.1.]"
+          },
+          {
+            "contenido": "Uso De La Barra",
+            "descripcion": "Uso de la barra",
+            "ejemplo": "c/ [v. Ortografía 3.12.]"
+          },
+          {
+            "contenido": "Género De Las Abreviaturas",
+            "descripcion": "Género de las abreviaturas",
+            "ejemplo": "Sra. / Sr.ª"
+          },
+          {
+            "contenido": "Mayúscula Y Minúscula Inicial (En Función De La Palabra Representada)",
+            "descripcion": "Mayúscula y minúscula inicial (en función de la palabra representada)",
+            "ejemplo": "pág., D. [en tratamientos]"
+          }
+        ],
+        "Siglas Y Acrónimos": [
+          {
+            "contenido": "Uso De Mayúsculas",
+            "descripcion": "Uso de mayúsculas",
+            "ejemplo": "IC, RAE"
+          }
+        ]
+      },
+      "Símbolos": {
+        "Símbolos Alfabetizables": [
+          {
+            "contenido": "Monedas",
+            "ejemplo": "ARS [peso argentino], CLP [peso chileno], UYU [peso uruguayo]"
+          },
+          {
+            "contenido": "Puntos Cardinales",
+            "descripcion": "Puntos cardinales",
+            "ejemplo": "N, S, E, O"
+          }
+        ],
+        "Símbolos No Alfabetizables": [
+          {
+            "contenido": "Monedas Y Arroba",
+            "descripcion": "Monedas y arroba",
+            "ejemplo": "$, €, ¢ [monedas], @ [arroba]"
+          }
+        ]
+      },
+      "Ortografía De Las Palabras": {
+        "Usos Generales": [
+          {
+            "contenido": "Grupos Consonánticos Inseparables",
+            "descripcion": "Grupos consonánticos inseparables",
+            "ejemplo": "pro-fe-sor, li-bro, bo-lí-gra-fo / cuer-po, ár-bol, lar-go"
+          }
+        ],
+        "Palabras De Doble Escritura": [
+          {
+            "contenido": "Escritura Condicionada",
+            "descripcion": "Por qué / Porque",
+            "ejemplo": "¿Por qué estudias español? —Porque quiero trabajar en Chile."
+          }
+        ],
+        "Expresión De Cifras Y Números": [
+          {
+            "contenido": "Formas De Los Números Cardinales",
+            "descripcion": "Palabra simple",
+            "ejemplo": "uno, doce, noventa, quinientos"
+          },
+          {
+            "contenido": "Formas De Los Números Cardinales",
+            "descripcion": "Palabra compuesta",
+            "ejemplo": "dieciséis, veintiocho, trescientos"
+          },
+          {
+            "contenido": "Formas De Los Números Cardinales",
+            "descripcion": "Combinación de palabras",
+            "ejemplo": "cuarenta y siete, sesenta y dos, trescientos ochenta y cinco"
+          },
+          {
+            "contenido": "Expresión De Decimales",
+            "descripcion": "Expresión de decimales",
+            "ejemplo": "1,5 / *1.5"
+          },
+          {
+            "contenido": "Expresión De La Fecha",
+            "descripcion": "Orden de los componentes. Alternancia de cifras y palabras. Ausencia de punto en números de años. Uso de minúsculas en días de la semana y meses del año",
+            "ejemplo": "9 de julio de 2005. Hoy es sábado, 9 de julio de 2005."
+          },
+          {
+            "contenido": "Expresión De La Hora: Uso Cotidiano",
+            "descripcion": "Formato de 12 horas",
+            "ejemplo": "Las tiendas abren a las diez y media de la mañana. / *Las tiendas abren a las 10:30 de la mañana."
+          },
+          {
+            "contenido": "Expresión De La Hora: Uso Cotidiano",
+            "descripcion": "Formato de 24 horas",
+            "ejemplo": "Las tiendas cierran a las 21:30 / *Las tiendas cierran a las veintiuna treinta."
+          }
+        ]
+      }
+    }
+  }
+}

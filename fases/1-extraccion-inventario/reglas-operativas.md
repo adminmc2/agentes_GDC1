@@ -1,5 +1,18 @@
 # Reglas operativas — Decisión, clasificación, población y unidades atípicas
 
+> ⚠️ **CONTENIDO VIEJO — v1 pre-rediseño (2026-05-12).**
+> Describe el modelo anterior al rediseño de fase 1. Pendiente de migración (Paso 2 del plan de corrección) para absorber las reglas nuevas que hoy viven en `docs/historico/prompt-v2-monolitico-NO-USAR.md`. Hasta el cierre de la migración, las decisiones refinadas (lógica de `recurrente` en 3 pasos, protocolo §7bis, ciclo de vida de marcas internas, tabla de campos válidos, política PCIC, doble dimensión, descripción por categoría) **no viven aquí todavía**. No usar como autoridad única durante una corrida.
+
+> 🔖 **Follow-ups que la migración debe absorber explícitamente** (lista viva, se completa al cerrar Paso 2/3):
+> - **Regla del sufijo `@R` en fuentes.** Cuando se redacte la regla operativa sobre cuándo una palabra lleva sufijo `@R` (palabra que solo aparece en `respuestas` de actividad de producción), usar **exactamente los 6 tipos productivos** declarados en `schema-inventario.md` §9.5: `produccion_escrita_guiada`, `produccion_escrita_libre`, `expresion_oral_libre`, `expresion_escrita_libre`, `tarea_final`, `interaccion_oral`. Cualquier otra lista es divergencia con el schema.
+> - **Regla 11 sobre `audio.transcripcion`.** Cuando se redacte la regla 11 (o su equivalente), debe declarar que el audio cuenta como fuente válida para los bloques consolidados **solo si** `audio.transcripcion` está presente. Alineado con `schema-inventario.md` §10.
+> - **Input incidental vs contenido enseñado.** El léxico que aparece como contenido del input pero no es lo que la actividad enseña no entra en la lista `vocabulario` de esa actividad. Criterio: entra solo si coincide con un campo declarado en `nc1-curso.json.unidades[N].vocabulario`, o si la actividad lo trabaja explícitamente (relacionar, definir, clasificar). Detectado en fixture U2-propuesta (p24-act1: *Matemáticas*, *madre*, *profesor* son input incidental, no contenido enseñado).
+> - **Anticipación vs recurrente.** Un término que aparece como input incidental en una unidad N pero que es **canónico en una unidad posterior** N+k (declarado en `nc1-curso.json.unidades[N+k].vocabulario`) NO se codifica como `recurrente` en U(N). En la migración real se anota en `_migracion_rediseno.anticipaciones_detectadas_para_fase_2`; en fixtures se anota en `_fixture_exploratoria.hallazgos.anticipaciones_detectadas_para_fase_2`. Para entrar como `recurrente`, el término debe cumplir los 3 criterios (frecuencia, posición, valor pedagógico) y **no ser canónico en una unidad posterior**.
+> - **Heterogeneidad semántica dentro de un mismo ejercicio.** Cuando una actividad reúne léxico semánticamente heterogéneo (POS distintos, campos distintos), no se fuerza un campo único artificial. Se marca con `_pendiente_canon` (en la lista) y `_funcion_ambigua: true` (en la actividad) para escalar al autor. Detectado en fixture U2-propuesta (p30-act3: *descanso*, *distintas*, *alrededor de*, *extraescolares*, *optativas*).
+> - **Suite automatizada de verificación global de integridad.** Construir un script (ampliando `scripts/validar_inventario.py` o creando `scripts/verificar_integridad.py`) que verifique automáticamente, contra TODOS los JSONs del proyecto: (1) cumplimiento del schema por cada inventario; (2) existencia de toda referencia canónica en su registry; (3) formato canónico de fuentes (regex §9.5); (4) coincidencia cabecera↔`nc1-curso.json`; (5) coherencia interna (secciones derivables, consolidados derivables, normalización formas_trabajadas); (6) integridad de PCIC y registries contra su propio shape; (7) detección de marcas bloqueantes en inventarios canónicos; (8) detección de claves `_fixture_*` o `unidad` no entero en inventarios canónicos. Debe ejecutarse en cada cierre y antes de declarar inventario canónico. Detalle de la deuda equivalente en `schema-inventario.md` §A.3.
+>
+> **Reglas ya integradas en el cuerpo (no migración pendiente):** *Verbo soporte vs paradigma trabajado* → §5.10. *Normalización de `formas_trabajadas` en consolidado* → §5.11.
+
 > **Responsabilidad:** guía de decisión compacta y priorizada. Reúne lo que el modelo necesita decidir durante la extracción: qué tipo asignar, qué clasificar como cuadro/actividad/nota, cómo poblar campos cuyo shape ya está fijado en `schema-inventario.md`, cómo tratar unidades atípicas.
 >
 > **No contiene:** forma del JSON (vive en `schema-inventario.md`), convenciones de transcripción específicas (sílaba tónica, "primer ítem resuelto", marcadores de diálogos, formato de sopas de letras), ni casos históricos resueltos. Esos viven en `convenciones-y-casos.md`.
@@ -104,7 +117,7 @@ Los tres ejes son independientes. Una misma `tipo: completa_huecos` puede tener 
 - `gramatica` — manipulación de formas gramaticales (artículos, conjugación, género/número, concordancia, orden de palabras).
 - `vocabulario` — manipulación de léxico (banco temático, palabra-imagen, sopa de letras, clasificar por campo semántico, definiciones).
 - `comunicacion` — funciones comunicativas / fórmulas pragmáticas (saludos, presentarse, preguntar la hora, pedir información).
-- `fonetica` — pronunciación, ortografía fonética, acento, entonación.
+- `pronunciacion_ortografia` — pronunciación, ortografía relacionada con sonido, acento, entonación, deletreo, dictado.
 - `cultura` — contenido sociocultural (ciudades, costumbres, gastronomía, calendarios, personajes culturales).
 - `transversal` — actividad sin foco de dominio específico, solo ejercita habilidades (lectura/escucha de comprensión genérica, tarea final que cruza dominios). Nombre intencionalmente distinto del valor `destrezas` de `seccion` para evitar pegar el eje a la clasificación editorial de la página.
 
@@ -125,14 +138,14 @@ Los tres ejes son independientes. Una misma `tipo: completa_huecos` puede tener 
 
 Resumen del criterio: **¿el alumno está produciendo contenido propio o transcribiendo/aplicando reglas a partir de un input dado?** Si es lo primero, `expresion_escrita`. Si es lo segundo, no.
 
-#### Heurística `vocabulario` vs `fonetica` para "escucha y repite" / "escucha y escribe"
+#### Heurística `vocabulario` vs `pronunciacion_ortografia` para "escucha y repite" / "escucha y escribe"
 
 Casos donde el alumno trabaja palabras pero también pronunciación:
 
 - Si las palabras están agrupadas por **campo léxico** (cognados, países, profesiones, números como léxico) y el aprendizaje es saber qué significan o reconocerlas → `enfoque: vocabulario`.
-- Si las palabras o sonidos están agrupados por **dificultad fonética** (alfabeto, combinaciones c/qu, j/g, z/c) y el aprendizaje es la pronunciación o la ortografía fonética → `enfoque: fonetica`.
-- **Deletrear** (en voz alta o por escrito) → siempre `fonetica` (es ortografía fonética).
-- **Dictado** ("escucha y escribe") → siempre `fonetica` (la habilidad ejercitada es reconstruir la grafía a partir del sonido), incluso si el contenido dictado es léxico (ej. dictado de números).
+- Si las palabras o sonidos están agrupados por **dificultad fonética** (alfabeto, combinaciones c/qu, j/g, z/c) y el aprendizaje es la pronunciación o la ortografía relacionada con sonido → `enfoque: pronunciacion_ortografia`.
+- **Deletrear** (en voz alta o por escrito) → siempre `pronunciacion_ortografia`.
+- **Dictado** ("escucha y escribe") → siempre `pronunciacion_ortografia` (la habilidad ejercitada es reconstruir la grafía a partir del sonido), incluso si el contenido dictado es léxico (ej. dictado de números).
 
 #### Ejemplos canónicos (tres ejes a la vez)
 
@@ -142,7 +155,7 @@ Casos donde el alumno trabaja palabras pero también pronunciación:
 - "Escribe un correo a tu amigo" → `tipo: expresion_escrita_libre` + `destreza: [expresion_escrita]` + `enfoque: comunicacion`.
 - "Lee el texto y contesta a las preguntas" (cerradas, respuesta del texto) → `tipo: responder_preguntas_cerradas` + `destreza: [comprension_lectora]` + `enfoque: transversal`.
 - "Escribe sobre tu rutina diaria" (respuesta abierta elaborada) → `tipo: responder_preguntas_abiertas` + `destreza: [expresion_escrita]` + `enfoque: comunicacion`.
-- "Escucha y repite" → `tipo: escucha_y_repite` + `destreza: [comprension_auditiva, expresion_oral]` + `enfoque: fonetica`.
+- "Escucha y repite" → `tipo: escucha_y_repite` + `destreza: [comprension_auditiva, expresion_oral]` + `enfoque: pronunciacion_ortografia`.
 - "Pregunta a tu compañero por su familia" → `tipo: interaccion_oral` + `destreza: [interaccion_oral]` + `enfoque: comunicacion`.
 - "Relaciona los relojes con los horarios digitales" (con escucha previa) → `tipo: relaciona` + `destreza: [comprension_auditiva, comprension_lectora]` + `enfoque: vocabulario`.
 
@@ -173,7 +186,7 @@ Cuando una página tiene un cuadro de referencia (clasificado según §1 regla 4
 
 - **`gramatical`** — tablas de conjugación, paradigmas morfológicos (artículos, género, posesivos, interrogativos, demostrativos), reglas ortográficas de uso gramatical.
 - **`lexical`** — listas ilustradas de vocabulario, tablas de campos semánticos, colores, familias de palabras.
-- **`fonetico`** — cuadros de pronunciación u ortografía fonética (c/qu, z/c, g/gu, entonación, acento...).
+- **`pronunciacion_ortografia`** — cuadros de pronunciación u ortografía relacionada con sonido (c/qu, z/c, g/gu, entonación, acento...).
 - **`cultural`** — cuadros con información sociocultural (saludos, costumbres, diálogos en contexto cultural, fórmulas sociales).
 - **`comunicativo`** — cuadros de uso pragmático (registro, formalidad/informalidad, turnos de conversación, cortesía).
 
@@ -257,7 +270,7 @@ Estructural en schema (`schema-inventario.md` §10): siempre presentes como sub-
 
 ### 5.6 `campo_semantico` y claves de `vocabulario_consolidado`: canon semántico
 
-Estructural en schema (`schema-inventario.md` §9, §10).
+Estructural en schema (`schema-inventario.md` §9.1, §10).
 
 **Universo válido.** Los nombres permitidos para `actividad.campo_semantico` y para las claves de `vocabulario_consolidado.{principal,recurrente,comprension}` viven en `campos-semanticos-canonicos.json` (fuente única). Aplica a cualquier sección, no solo vocabulario. Sustituye la decisión "liberal" anterior.
 
@@ -388,3 +401,170 @@ Tras A4.2b, el reparto entre archivos queda así:
 | Convenciones de transcripción del libro al JSON (sílaba tónica, primer ítem resuelto, marcadores de diálogos, formato de sopas de letras) | `convenciones-y-casos.md` |
 | Ejemplos correctos/incorrectos de `items_libro` | `convenciones-y-casos.md` |
 | Casos históricos resueltos | `convenciones-y-casos.md` |
+
+---
+
+## 5.10. Verbos en `actividad.tiempos_y_verbos` y `cuadro.tiempos_y_verbos` *(integrada del rediseño 2026-05-13)*
+
+> **Aplica a:** poblar `actividad.tiempos_y_verbos` y `cuadro.tiempos_y_verbos` (shape §3.2 del schema).
+
+**Regla operativa:** un verbo entra en `tiempos_y_verbos` cuando **sus formas concretas aparecen** en la actividad o cuadro, **independientemente de que su paradigma sea el foco principal pedagógico**. La aparición de formas conjugadas — aunque sea como soporte sintáctico de otro contenido — es suficiente para registrar el verbo.
+
+**Único caso en que NO entra:**
+- El verbo se menciona **solo como infinitivo léxico** en una lista de palabras (sin conjugación trabajada y sin formas en frases): esa mención léxica va a `vocabulario`, no a `tiempos_y_verbos`. Ver §5d del schema (enum `tiempo`) para los criterios de cuándo cabe `Infinitivo` aquí.
+
+**Ejemplo de inclusión (caso real U2 p24#3):** el cuadro de **Demostrativos** trae ejemplos como *"Este **es** Juan"* o *"Estas **son** Laura y Rosa"*. Aunque el paradigma de foco son los demostrativos, las formas `es` y `son` están presentes y se registran en `cuadro@p24#3.tiempos_y_verbos` como `{ "lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"] }`. El consolidado top-level acumula estas fuentes en la entrada de `ser`.
+
+**Implicación operativa:** el consolidado `tiempos_y_verbos_consolidado` recoge la **distribución real de formas** del libro, no solo el paradigma trabajado. La distinción "foco principal vs soporte" se conserva en el campo `descripcion` por unidad: la descripción explica qué fuentes son foco y cuáles son soporte.
+
+> **Cuándo escalar al autor:** si el verbo no aparece literalmente con formas conjugadas pero la actividad lo evoca de forma indirecta (ej. paráfrasis), marcar `_funcion_ambigua: true` y escalar.
+
+---
+
+## 5.11. Normalización de `formas_trabajadas` en el consolidado *(integrada del rediseño 2026-05-13)*
+
+> **Aplica a:** derivación del bloque top-level `tiempos_y_verbos_consolidado` (shape §9.2 del schema).
+
+**Regla operativa:** las formas conjugadas concretas se almacenan con **dos políticas distintas según el nivel**:
+
+- **En actividad y cuadro** (`actividad.tiempos_y_verbos[].formas_trabajadas`, `cuadro.tiempos_y_verbos[].formas_trabajadas`): **literalidad estricta del libro**. Si el libro escribe *"Tengo 13 años..."* en una frase de mensaje, la forma se transcribe como `"Tengo"` (con mayúscula inicial). La actividad/cuadro es transcripción.
+- **En el bloque consolidado** (`tiempos_y_verbos_consolidado[].formas_trabajadas`): **minúscula** al agregar. La forma `"Tengo"` de la actividad se acumula como `"tengo"` en el consolidado. El consolidado es derivado canónico, no transcripción.
+
+**Razón:** evitar duplicados artificiales entre `["Tengo", "tengo"]` que serían la misma forma con distinta capitalización accidental.
+
+**Ejemplo discriminativo (caso real U2 p24-act3):** la actividad presenta *"Me llamo Cristina, [1] _____ 13 años..."* con respuesta `"Tengo"`. La actividad guarda `"formas_trabajadas": ["Tengo"]`. El consolidado, al agregar este lema con las apariciones de otros sitios, guarda `"formas_trabajadas": ["tengo", "tienes", "tiene", ...]` — sin duplicar `"Tengo"` y `"tengo"`.
+
+**Política de conservación de mayúsculas en consolidado:** la única excepción serían nombres propios o siglas dentro de una forma compleja (raro en verbos A1). Por defecto, **todo lo del consolidado va en minúscula**.
+
+> **Cuándo escalar al autor:** si una forma del libro tiene mayúscula NO por inicio de frase sino por razón distinta (nombre propio dentro, sigla), marcar y consultar antes de normalizar.
+
+
+---
+
+## 5.12. Procedimiento OBLIGATORIO de poblado de `recurrente` *(añadida tras error 2026-05-13)*
+
+> **Aplica a:** poblar los sub-bloques `recurrente` de `vocabulario_consolidado`, `gramatica_consolidada` y `pronunciacion_ortografia_consolidada`. El procedimiento es **el mismo en estructura** para las tres dimensiones; la **detección** y el **cruce** son específicos por dimensión (§5.12.A, §5.12.B, §5.12.C).
+
+**Regla obligatoria.** Antes de declarar un sub-bloque `recurrente` vacío o casi vacío en cualquiera de las tres dimensiones, el operador **DEBE** ejecutar el procedimiento sistemático. Ningún paso es opcional.
+
+### Procedimiento sistemático (8 pasos, comunes a las 3 dimensiones)
+
+1. **Identificar el foco principal** de la actividad/cuadro y rellenar el sub-bloque `principal` correspondiente.
+2. **Identificar los verbos trabajados** (rama propia: van a `tiempos_y_verbos`, no a las otras listas).
+3. **Barrer el input verbatim** de la actividad/cuadro buscando elementos de cada dimensión (ver §5.12.A para léxico, §5.12.B para gramática, §5.12.C para pronunciación/ortografía).
+4. **Cruzar los elementos detectados** contra los registries canónicos y los índices de unidades anteriores (ver §5.12.A/B/C para los archivos concretos).
+5. **Listar TODOS los matches** encontrados. No omitir ninguno por sesgo de "foco pedagógico".
+6. **Aplicar los 3 criterios de recurrente** a cada match:
+   - Frecuencia (agregada en la página o unidad).
+   - Posición (canónico en unidad anterior, o no canónico en posterior pero relevante).
+   - Valor pedagógico (consolidación, ampliación, contraste, apoyo a la comprensión).
+7. **Surgir en chat los candidatos** que cumplen los criterios. PROHIBIDO asumir silenciosamente que un candidato no entra. La decisión la toma el autor; el operador propone.
+8. **Aplicar la decisión del autor** al JSON. Anotar la decisión en `_decisiones_ia` con suficiente detalle.
+
+### §5.12.A — Detección y cruce para `vocabulario_consolidado.recurrente` (léxico)
+
+**Detección (paso 3):** barrer texto verbatim de TODOS los campos `datos.*` de cada actividad: `items_libro`, `ejemplo_libro`, `texto_completo`, `dialogo_completo`, `textos_personajes`, `palabras_recuadro`, `preguntas`, `texto_modelo`, `nombres_dados`, `frases`, `expresiones_dadas`, `afirmaciones_a_corregir`, `texto_correo`, `ejemplos_modelo`. Extraer las palabras léxicas (sustantivos, adjetivos, adverbios léxicos, expresiones léxicas).
+
+**Cruce (paso 4):**
+- `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` (catálogo de campos canónicos disponibles).
+- `unidades/nc1-curso.json` → `unidades[N].vocabulario[]` para cada N ≠ unidad actual (qué campos son canónicos en otras unidades).
+- `fases/1-extraccion-inventario/pcic-a1-vocabulario.json` como apoyo de naming si el match exige refinamiento PCIC.
+
+### §5.12.B — Detección y cruce para `gramatica_consolidada.recurrente` (estructuras gramaticales)
+
+**Detección (paso 3):** barrer el input buscando **estructuras gramaticales** (no palabras sueltas):
+- **Marcadores morfológicos**: artículos (el/la/los/las/un/una/unos/unas), posesivos (mi/tu/su/nuestro...), demostrativos (este/ese/aquel...), interrogativos (qué/quién/cuál/dónde...), preposiciones de uso gramatical.
+- **Concordancias visibles**: art+sust en género y número, adj+sust, sujeto+verbo (cuando reaparece tras introducirse en unidad anterior).
+- **Paradigmas reapareciendo**: si un paradigma verbal o pronominal ya canónico en otra unidad aparece aplicado en la unidad actual.
+- **Estructuras sintácticas marcadas**: orden de palabras específico, negación, oraciones interrogativas/exclamativas, comparativos, perífrasis, etc.
+
+**Cruce (paso 4):**
+- `fases/1-extraccion-inventario/gramatica-canonica.json` (registry; hoy esqueleto, pero debe consultarse).
+- `unidades/nc1-curso.json` → `unidades[N].gramatica[]` para cada N ≠ unidad actual.
+- `fases/1-extraccion-inventario/pcic-a1-gramatica.json` para confirmar respaldo PCIC del fenómeno y para construir el nombre canónico de candidatos sintéticos (ver §5.14).
+
+**Cuándo proponer síntesis** (combinado con §5.14): si dos o más categorías canónicas de unidades anteriores se presentan **integradas e indistinguibles** en la actividad/cuadro (ej. art+sust+adj concordando), proponer una categoría sintética + las categorías separadas como opciones, no decidir silenciosamente.
+
+### §5.12.C — Detección y cruce para `pronunciacion_ortografia_consolidada.recurrente`
+
+**Detección (paso 3):** barrer el input buscando **marcas explícitas** de fenómenos fonético-ortográficos. La pronunciación/ortografía rara vez se infiere del texto puro; suele venir señalada por convenciones tipográficas o por el tipo de actividad:
+- **Convenciones tipográficas del libro**: sílaba tónica subrayada/marcada, letras destacadas, transcripciones fonéticas, ortografía con resalte.
+- **Tipos de actividad indicadores**: `escucha_y_repite` con foco fonético, deletreo, dictado (escucha y escribe), ejercicios de identificación de sonidos.
+- **Cuadros con `tipo_cuadro: pronunciacion_ortografia`**: contenido sistemático sobre acento, entonación, ortografía, correspondencia sonido-grafía.
+- **Campos `datos.*` específicos**: si existen campos como `transcripcion` en audio, ejercicios de letras/sílabas, etc.
+
+**Cruce (paso 4):**
+- `fases/1-extraccion-inventario/pronunciacion-ortografia-canonica.json` (registry; hoy esqueleto, pero debe consultarse).
+- `unidades/nc1-curso.json` → `unidades[N].pronunciacion_ortografia` para cada N ≠ unidad actual.
+- `fases/1-extraccion-inventario/pcic-a1-pronunciacion-ortografia.json` (sub-bloques `pronunciacion` y `ortografia`) para confirmar respaldo PCIC.
+
+**Nota sobre convenciones del libro**: la sílaba tónica marcada con subrayado en NC1 es **convención de transcripción** del libro, no contenido enseñado por sí mismo. Solo entra como recurrente si una unidad anterior la introdujo formalmente como categoría enseñada (no por mera aparición tipográfica).
+
+### Errores prohibidos (los que motivaron esta regla)
+
+- **PROHIBIDO** asumir que una página de gramática no aporta a `vocabulario_consolidado`, o que una página de vocabulario no aporta a `gramatica_consolidada`. El input lleva elementos de las tres dimensiones independientemente del foco pedagógico.
+- **PROHIBIDO** recortar el análisis para que la fixture "salga cerrable". Una prueba diseñada para no fallar pierde valor diagnóstico. El análisis debe ser completo; lo que el contenido dé, eso es lo que entra.
+- **PROHIBIDO** aplicar la regla "Input incidental vs contenido enseñado" solo a la primera mitad (matches con el principal de la unidad actual). La segunda mitad — matches con campos canónicos de otras unidades — es la que más se omite y la que esta regla obliga a cubrir.
+- **PROHIBIDO** declarar `pronunciacion_ortografia_consolidada.recurrente` vacío sin haber inspeccionado convenciones tipográficas del input ni tipo de actividad. La detección fonética es no-evidente y exige un paso explícito.
+
+> **Resultado esperado del paso 7:** una lista de candidatos a recurrente con su justificación (campo canónico, fuentes, criterios cumplidos, dimensión a la que pertenece), pegada en el chat. El autor decide cuáles entran. Solo entonces el operador aplica al JSON.
+
+---
+
+## 5.13. Política de propuesta-en-chat ante toda decisión no clara *(añadida tras error 2026-05-13)*
+
+> **Aplica a:** todo el flujo de poblado de inventario y fixture, no solo a `recurrente`.
+
+**Regla obligatoria.** Dudas, marcas bloqueantes y decisiones no triviales **DEBEN manifestarse en el chat ANTES de escribirse en el JSON**. PROHIBIDO dejarlas silenciosas dentro de marcas internas, comentarios o decisiones implícitas.
+
+### Casos cubiertos por la regla
+
+- Toda **marca `_pendiente_canon`** que el operador esté tentado de escribir → primero plantear en chat la duda concreta (qué campo canónico falta, qué opciones tiene el autor).
+- Toda **marca `_funcion_ambigua`** → primero plantear en chat qué ambigüedad encuentra el operador y qué opciones de desambiguación tiene el autor.
+- Toda **decisión de inclusión/exclusión** que requiera criterio (qué entra en `recurrente`, qué se considera "trabajado" vs "soporte", qué nombre canónico aplicar) → primero plantear en chat con opciones razonables.
+- Toda **anticipación detectada** (léxico que apunta a unidad posterior) → plantear en chat antes de anotarla en `_migracion_rediseno.anticipaciones_detectadas_para_fase_2` o en `_fixture_exploratoria.hallazgos`.
+
+### Cómo formular la pregunta en chat
+
+Una pregunta correcta tiene tres partes:
+1. **Contexto**: dónde aparece la duda (página, actividad, cuadro, campo).
+2. **Hallazgo concreto**: qué léxico/categoría/forma motiva la duda.
+3. **Opciones razonables**: 2-4 alternativas etiquetadas (a), (b), (c) con sus implicaciones operativas.
+
+### Errores prohibidos
+
+- **PROHIBIDO** escribir `_pendiente_canon` en el JSON antes de haber preguntado al autor.
+- **PROHIBIDO** escribir `_funcion_ambigua: true` antes de exponer la ambigüedad en chat.
+- **PROHIBIDO** "asumir lo más probable" sin consultar cuando el contrato no fija el caso.
+- **PROHIBIDO** confiar en que el autor revisará el JSON crudo para detectar decisiones silenciosas. La corrección se hace desde el dashboard; el JSON no debe ser bandeja silenciosa de pendientes.
+
+---
+
+## 5.14. Construcción iterativa de `recurrente`: propuesta de Claude + decisión del autor *(añadida tras error 2026-05-13)*
+
+> **Aplica a:** construcción de categorías de `recurrente` en cada unidad.
+
+**Regla obligatoria.** Las categorías de `recurrente` no se sacan automáticamente de reglas duras. Se construyen iterativamente: Claude **propone**, el autor **decide**, los agentes **aprenden con el uso**.
+
+### Procedimiento (combinado con §5.12)
+
+1. Claude ejecuta el barrido sistemático (§5.12) y lista candidatos.
+2. Claude propone en chat el nombre canónico tentativo, items, fuentes y justificación de cada candidato.
+3. Para candidatos que son **síntesis de varias categorías** de unidades anteriores (ej. "Concordancia artículo-sustantivo en género y número" sintetizando "Artículos determinados" + "Masculino y femenino" de U1), Claude debe explicitar:
+   - Qué categorías de qué unidades se sintetizan.
+   - Si la síntesis sustituye o coexiste con las categorías originales.
+   - Respaldo PCIC si aplica.
+4. El autor decide: aceptar tal cual, modificar nombre/items, rechazar, o convertir en categorías separadas.
+5. Claude aplica al JSON únicamente tras decisión explícita.
+6. La decisión queda registrada en `_decisiones_ia` con suficiente detalle para que sesiones futuras puedan reconocer el patrón.
+
+### Por qué no hay regla dura de síntesis
+
+La síntesis de categorías es un fenómeno editorial cualitativo que depende del libro concreto. Codificar reglas duras antes de tener varios casos crea reglas frágiles. El patrón propuesta→decisión→aprendizaje permite que la regla emerja de los datos.
+
+### Errores prohibidos
+
+- **PROHIBIDO** aplicar síntesis silenciosamente sin proponerla en chat primero.
+- **PROHIBIDO** rechazar síntesis sin proponer las categorías separadas que la sustituyen.
+- **PROHIBIDO** suponer que una categoría que era principal en U(n-1) entra automáticamente como recurrente en U(n) sin verificar los 3 criterios.
+

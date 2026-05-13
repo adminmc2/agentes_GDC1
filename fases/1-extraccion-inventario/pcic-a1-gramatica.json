@@ -1,0 +1,1079 @@
+{
+  "fuente": "PCIC A1 — Plan Curricular del Instituto Cervantes, sección Gramática",
+  "nivel": "A1",
+  "origen": "caes complete system/references/plan_curricular/processed/gramatica_a1_a2.json",
+  "fecha_copia": "2026-05-12",
+  "categorias": {
+    "1. El sustantivo": {
+      "1.1. Clases de sustantivos": {
+        "1.1.1. Nombres propios": [
+          {
+            "tipo": "Antropónimos",
+            "descripcion": "Nombres de pila que se usan sin artículo determinado en español",
+            "ejemplo": "María, Antonio"
+          },
+          {
+            "tipo": "Antropónimos",
+            "descripcion": "Hipocorísticos y diminutivos - formas familiares o afectivas de nombres propios",
+            "ejemplo": "Pepe (José), Paco (Francisco), Chelo (Consuelo), Lola (Dolores), Chayo (Rosario), Chava (Isabel), Güicho (Luis), Pancho (Francisco)"
+          },
+          {
+            "tipo": "Antropónimos",
+            "descripcion": "Apellidos sin artículo",
+            "ejemplo": "Fernández, González"
+          },
+          {
+            "tipo": "Topónimos",
+            "descripcion": "Nombres de países que se usan sin artículo determinado",
+            "ejemplo": "España, Italia"
+          },
+          {
+            "tipo": "Topónimos",
+            "descripcion": "Nombres de países que llevan el artículo determinado como parte integral del nombre",
+            "ejemplo": "El Salvador"
+          },
+          {
+            "tipo": "Topónimos",
+            "descripcion": "Ciudades y localidades",
+            "ejemplo": "Madrid, París, Alcalá de Henares"
+          }
+        ],
+        "1.1.2. Nombres comunes": [
+          {
+            "tipo": "Nombres de periodos temporales",
+            "descripcion": "Sustantivos que designan momentos o periodos del día",
+            "ejemplo": "mediodía, tarde, noche"
+          }
+        ]
+      },
+      "1.2. El género de los sustantivos": {
+        "": [
+          {
+            "tipo": "Masculino en -o y femenino en -a",
+            "descripcion": "",
+            "ejemplo": "amigo, vecino, libro, amiga, vecina, casa"
+          },
+          {
+            "tipo": "Masculino / femenino",
+            "descripcion": "Vocales que no sean -o/-a",
+            "ejemplo": "el peine, la muerte"
+          },
+          {
+            "tipo": "Masculino / femenino",
+            "descripcion": "Sustantivos terminados en consonante",
+            "ejemplo": "el árbol, la catedral, la solución, el corazón"
+          },
+          {
+            "tipo": "Femenino en -a",
+            "descripcion": "Palabras femeninas procedentes de abreviación",
+            "ejemplo": "la moto / motocicleta, la foto / fotografía, la radio / radiodifusión"
+          },
+          {
+            "tipo": "Heteronimia",
+            "descripcion": "Palabras con raíz diferente para expresar género (no derivadas)",
+            "ejemplo": "el padre / la madre, el hombre / la mujer"
+          }
+        ]
+      },
+      "1.3. El número de los sustantivos": {
+        "": [
+          {
+            "tipo": "Terminación en vocal: plural",
+            "descripcion": "Formación del plural añadiendo -s",
+            "ejemplo": "mesa / mesas, libro / libros, estudiante / estudiantes"
+          },
+          {
+            "tipo": "Terminación en consonante: plural",
+            "descripcion": "Formación del plural añadiendo -es",
+            "ejemplo": "árbol / árboles, pared / paredes, tenedor / tenedores"
+          },
+          {
+            "tipo": "Terminación en -s. Monosílabos o sustantivos de acentuación aguda: plural -es",
+            "descripcion": "",
+            "ejemplo": "país / países, mes / meses, autobús / autobuses"
+          },
+          {
+            "tipo": "Significado del plural",
+            "descripcion": "Plural como suma de elementos individuales",
+            "ejemplo": "el coche / los coches"
+          }
+        ]
+      }
+    },
+    "10. El sintagma nominal": {
+      "10.2. Complementos y modificadores": {
+        "": [
+          {
+            "tipo": "Complementos adjuntos o modificadores de carácter restrictivo",
+            "descripcion": "Adjetivos no relacionales",
+            "ejemplo": "casa grande, libro nuevo, persona amable"
+          },
+          {
+            "tipo": "Complementos adjuntos o modificadores de carácter restrictivo",
+            "descripcion": "Complemento preposicional con de y otras preposiciones",
+            "ejemplo": "el libro de español, la hora de comer, la clase\n                    de hoy, la página del libro, la vecina del tercero, casa con jardín"
+          },
+          {
+            "tipo": "Modificadores oracionales Oraciones relativas especificativas en indicativo",
+            "descripcion": "",
+            "ejemplo": "la chica que lleva gafas, La casa que tiene jardín, Los estudiantes que aprobaron"
+          }
+        ]
+      },
+      "10.3. Concordancia interna alSN": {
+        "": [
+          {
+            "tipo": "Regla general: determinante -núcleo -adjetivo",
+            "descripcion": "Regla general: determinante - núcleo - adjetivo",
+            "ejemplo": "la casa blanca, los libros nuevos, unas flores bonitas"
+          }
+        ]
+      },
+      "10.4. Concordancia del SN con el verbo": {
+        "": [
+          {
+            "tipo": "Regla general",
+            "descripcion": "",
+            "ejemplo": "El niño juega, Los niños juegan, La casa es grande, Las casas son grandes"
+          }
+        ]
+      },
+      "10.5. El vocativo": {
+        "": [
+          {
+            "tipo": "En posición inicial y final",
+            "descripcion": "",
+            "ejemplo": "Juan, ¿vienes?, ¿Vienes, Juan?, Perdone, señor"
+          }
+        ]
+      }
+    },
+    "11. El sintagma adjetival": {
+      "11.2. Complementos y modificadores": {
+        "": [
+          {
+            "tipo": "Modificadores",
+            "descripcion": "Adverbios de cantidad con adjetivos",
+            "ejemplo": "muy alto, poco interesante, bastante difícil"
+          }
+        ]
+      }
+    },
+    "12. El sintagma verbal": {
+      "12.1. El núcleo": {
+        "": [
+          {
+            "tipo": "Verbos predicativos",
+            "descripcion": "Verbos psicológicos con estructura invertida",
+            "ejemplo": "Me gusta el café, Te gustan los libros, Le gusta viajar"
+          },
+          {
+            "tipo": "Verbos copulativos o atributivos",
+            "descripcion": "Ser identificativo: une sujeto con identidad",
+            "ejemplo": "Soy profesor, Es mi hermano, Somos españoles"
+          },
+          {
+            "tipo": "Verbos copulativos o atributivos",
+            "descripcion": "Ser + sustantivo: clasificación (origen, profesión)",
+            "ejemplo": "Soy español, Es médico, Somos estudiantes, Son de Madrid"
+          },
+          {
+            "tipo": "Verbos copulativos o atributivos",
+            "descripcion": "Ser para tiempo: día, fecha, hora",
+            "ejemplo": "Es lunes, Son las tres, Es primavera, Es 15 de mayo"
+          },
+          {
+            "tipo": "Verbos copulativos o atributivos",
+            "descripcion": "Ser para identificar personas",
+            "ejemplo": "Es él, Soy yo, Es María, Son ellos"
+          },
+          {
+            "tipo": "Verbos copulativos o atributivos",
+            "descripcion": "Estar para localización espacial",
+            "ejemplo": "Está aquí, Estamos en casa, El libro está en la mesa"
+          },
+          {
+            "tipo": "Verbos copulativos o atributivos",
+            "descripcion": "Estar + bien/mal: estado o valoración",
+            "ejemplo": "Está bien, Estoy mal, La comida está bien"
+          }
+        ]
+      },
+      "12.2. Complementos": {
+        "12.2.1. Atributo": [
+          {
+            "tipo": "Concordancia atributo-sujeto",
+            "descripcion": "",
+            "ejemplo": "Mi hermana es alta, Los niños están cansados, Las casas son grandes"
+          },
+          {
+            "tipo": "El atributo es un sustantivo",
+            "descripcion": "",
+            "ejemplo": "Es médico, Son estudiantes, Soy profesor"
+          },
+          {
+            "tipo": "El atributo es un adjetivo",
+            "descripcion": "",
+            "ejemplo": "La casa es grande, Los libros están nuevos, El café está frío"
+          }
+        ],
+        "12.2.2. Objeto directo": [
+          {
+            "tipo": "OD de persona sin preposición",
+            "descripcion": "OD de persona sin 'a' con tener y hay",
+            "ejemplo": "Tengo dos hermanos, Hay muchos estudiantes"
+          },
+          {
+            "tipo": "OD de cosa",
+            "descripcion": "OD de cosa: siempre sin preposición",
+            "ejemplo": "Como pan, Leo libros, Veo la televisión"
+          }
+        ],
+        "12.2.2. Objeto directo (OD)": [
+          {
+            "tipo": "El OD directo es una preposición subordinada",
+            "descripcion": "OD oracional con 'que",
+            "ejemplo": "Creo que Barcelona es una ciudad muy bonita"
+          }
+        ],
+        "12.2.3. Objeto indirecto (OI)": [
+          {
+            "tipo": "Pronombre de OI de 1ra persona de singular gustar",
+            "descripcion": "",
+            "ejemplo": "Me gusta el café, Te interesa el arte, Le encanta viajar"
+          }
+        ]
+      }
+    },
+    "13. La oración simple": {
+      "13.1. Concordancia": {
+        "": [
+          {
+            "tipo": "Entre constituyentes o sintagmas",
+            "descripcion": "Concordancia sujeto-verbo",
+            "ejemplo": "El niño lee, Los niños leen, La niña escribe"
+          },
+          {
+            "tipo": "Entre constituyentes o sintagmas",
+            "descripcion": "Concordancia sujeto-atributo",
+            "ejemplo": "La niña es alta, Los libros son nuevos, Las casas están vacías"
+          }
+        ]
+      },
+      "13.2. Constituyentes": {
+        "": [
+          {
+            "tipo": "Orden neutro o canónico:",
+            "descripcion": "SVO: Sujeto-Verbo-Objeto",
+            "ejemplo": "Juan come pan, María estudia español, Los niños juegan fútbol"
+          }
+        ]
+      },
+      "13.3. Tipos de oraciones simples": {
+        "": [
+          {
+            "tipo": "Según la actitud del hablante",
+            "descripcion": "Enunciativas: afirmativas y negativas",
+            "ejemplo": "Trabajo aquí, No tengo tiempo, Vive en Madrid"
+          },
+          {
+            "tipo": "Según la actitud del hablante",
+            "descripcion": "Interrogativas totales: respuesta sí/no",
+            "ejemplo": "¿Tienes hermanos?, ¿Vives aquí?, ¿Hablas inglés?"
+          },
+          {
+            "tipo": "Según la actitud del hablante",
+            "descripcion": "Interrogativas parciales: con palabra interrogativa",
+            "ejemplo": "¿Dónde vives?, ¿Qué estudias?, ¿Cómo te llamas?"
+          },
+          {
+            "tipo": "Según la naturaleza del predicado",
+            "descripcion": "Oraciones impersonales con haber",
+            "ejemplo": "Hay mucha gente, No hay problema"
+          },
+          {
+            "tipo": "Según la naturaleza del predicado",
+            "descripcion": "Copulativas o atributivas",
+            "ejemplo": "Es médico, Está cansado, Son españoles"
+          },
+          {
+            "tipo": "Según la naturaleza del predicado",
+            "descripcion": "Transitivas e intransitivas",
+            "ejemplo": "Estudio español, Vivo en Italia"
+          }
+        ]
+      }
+    },
+    "14. Oraciones compuestas por coordinación": {
+      "14.1. Copulativas": {
+        "": [
+          {
+            "tipo": "Con la conjunción y",
+            "descripcion": "",
+            "ejemplo": "Como y bebo, Estudia y trabaja"
+          },
+          {
+            "tipo": "Negativas con la conjunción ni",
+            "descripcion": "",
+            "ejemplo": "No como carne ni pescado, No tiene tiempo ni dinero"
+          }
+        ]
+      },
+      "14.2. Disyuntivas": {
+        "": [
+          {
+            "tipo": "Con la conjunción o",
+            "descripcion": "",
+            "ejemplo": "¿Vienes o te quedas?, ¿Café o té?, ¿Estudias o trabajas?"
+          }
+        ]
+      },
+      "14.3. Adversativas": {
+        "": [
+          {
+            "tipo": "Con la conjunción pero",
+            "descripcion": "",
+            "ejemplo": "Es caro pero bueno, Llueve pero hace calor, Estudia pero no aprueba"
+          }
+        ]
+      },
+      "14.4. Distributivas": {
+        "": [
+          {
+            "tipo": "Con uno... otro",
+            "descripcion": "",
+            "ejemplo": "Unos ríen, otros lloran; Una cosa es decir, otra hacer; Uno estudia, otro trabaja"
+          }
+        ]
+      }
+    },
+    "15. Oraciones compuestas por subordinación": {
+      "15.1. Oraciones subordinadas sustantivas": {
+        "15.1.1. De infinitivo": [
+          {
+            "tipo": "En función de sujeto",
+            "descripcion": "Infinitivo sujeto + ser + atributo",
+            "ejemplo": "Estudiar es importante, Viajar es divertido"
+          },
+          {
+            "tipo": "En función de sujeto",
+            "descripcion": "Infinitivo sujeto con verbos psicológicos",
+            "ejemplo": "Me gusta cantar, Te gusta bailar"
+          },
+          {
+            "tipo": "En función de OD",
+            "descripcion": "Verbos volitivos + infinitivo OD",
+            "ejemplo": "Quiero estudiar, Deseo viajar"
+          }
+        ],
+        "15.1.2. Flexionadas": [
+          {
+            "tipo": "En función de OD",
+            "descripcion": "Verbo creer + que + oración",
+            "ejemplo": "Creo que viene, Cree que es fácil"
+          }
+        ]
+      },
+      "15.2. Oraciones subordinadas adjetivas o de relativo": {
+        "": [
+          {
+            "tipo": "Tipos (en relación con el antecedente)",
+            "descripcion": "Especificativas con antecedente expreso",
+            "ejemplo": "El libro que leo es interesante, La casa que compré es grande, Los amigos que tengo son fieles"
+          },
+          {
+            "tipo": "Pronombres relativos",
+            "descripcion": "QUE: función sujeto y OD",
+            "ejemplo": "El niño que estudia (sujeto), El coche que compré (OD), La película que vimos (OD)"
+          },
+          {
+            "tipo": "Modo",
+            "descripcion": "Indicativo presente en relativas",
+            "ejemplo": "La chica que trabaja aquí, El profesor que enseña bien"
+          }
+        ]
+      },
+      "15.3. Oraciones subordinadas adverbiales": {
+        "15.3.4. Causales": [
+          {
+            "tipo": "Tipos",
+            "descripcion": "Causales pospuestas del enunciado",
+            "ejemplo": "Como pan porque tengo hambre, Duermo porque estoy cansado, Estudio porque quiero aprender"
+          },
+          {
+            "tipo": "Tipos",
+            "descripcion": "Causales de motivación",
+            "ejemplo": "Viajo porque me gusta conocer, Leo porque me entretiene"
+          },
+          {
+            "tipo": "Nexos y conectores de causalidad",
+            "descripcion": "PORQUE en posición pospuesta",
+            "ejemplo": "No voy porque llueve, Estudio porque es importante, Como porque tengo apetito"
+          },
+          {
+            "tipo": "Nexos y conectores de causalidad",
+            "descripcion": "POR QUÉ (interrogativo) vs PORQUE (causal)",
+            "ejemplo": "¿Por qué estudias? - Porque quiero aprender, ¿Por qué lloras? - Porque estoy triste"
+          },
+          {
+            "tipo": "Modo",
+            "descripcion": "Modo indicativo en causales",
+            "ejemplo": "Voy porque puedo, Como porque tengo hambre, Duermo porque estoy cansado"
+          }
+        ],
+        "15.3.5. Finales": [
+          {
+            "tipo": "Tipos",
+            "descripcion": "Finales con PARA + infinitivo",
+            "ejemplo": "Estudio para aprender, Trabajo para ganar dinero, Leo para entretenerme"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Finalidad con sujeto agentivo",
+            "ejemplo": "Como para vivir, Ahorro para viajar"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Finalidad con sujeto no agentivo",
+            "ejemplo": "El libro es para leer, La silla es para sentarse"
+          },
+          {
+            "tipo": "Nexos y conectores finales",
+            "descripcion": "Para+ infinitivo",
+            "ejemplo": "Vengo para ayudarte, Llamo para preguntar, Escribo para informar"
+          }
+        ]
+      }
+    },
+    "2. El adjetivo": {
+      "2.1. Clases de adjetivos": {
+        "2.1.1. Adjetivos calificativos": [
+          {
+            "tipo": "Función de complemento del nombre",
+            "descripcion": "",
+            "ejemplo": "el chico guapo, la casa grande, un libro interesante"
+          },
+          {
+            "tipo": "Función de atributo",
+            "descripcion": "",
+            "ejemplo": "El chico es guapo, La casa está limpia"
+          },
+          {
+            "tipo": "Incompatibilidad con posesivos",
+            "descripcion": "",
+            "ejemplo": "*mi guapo (incorrecto) → mi hijo guapo (correcto)"
+          }
+        ],
+        "2.1.2. Adjetivos relacionales": [
+          {
+            "tipo": "Gentilicios muy frecuentes",
+            "descripcion": "",
+            "ejemplo": "español, francés, japonés, alemán, italiano"
+          }
+        ]
+      },
+      "2.2. El género del adjetivo": {
+        "": [
+          {
+            "tipo": "Masculino en -o y femenino en -a",
+            "descripcion": "",
+            "ejemplo": "alto / alta, bonito / bonita, pequeño / pequeña"
+          },
+          {
+            "tipo": "Masculino terminado en consonante y femenino terminado en -a: gentilicios",
+            "descripcion": "",
+            "ejemplo": "español / española, francés / francesa, inglés / inglesa"
+          },
+          {
+            "tipo": "Terminados en consonante",
+            "descripcion": "Adjetivos invariables en género",
+            "ejemplo": "difícil, fácil, útil, azul"
+          },
+          {
+            "tipo": "Gentilicios",
+            "descripcion": "Gentilicios invariables en género",
+            "ejemplo": "marroquí, hindú, israelí, iraní"
+          }
+        ]
+      },
+      "2.3. El número del adjetivo": {
+        "": [
+          {
+            "tipo": "Terminados en vocal: plural",
+            "descripcion": "",
+            "ejemplo": "alto / altos, española / españolas, verde / verdes"
+          },
+          {
+            "tipo": "Terminados en consonante: plural",
+            "descripcion": "",
+            "ejemplo": "fácil / fáciles, útil / útiles, azul / azules"
+          }
+        ]
+      },
+      "2.4. Posición del adjetivo": {
+        "": [
+          {
+            "tipo": "Posición postnominal",
+            "descripcion": "Adjetivos especificativos o restrictivos",
+            "ejemplo": "un chico guapo, una casa blanca, el coche nuevo"
+          }
+        ]
+      },
+      "2.5. Grados del adjetivo": {
+        "": [
+          {
+            "tipo": "Positivo",
+            "descripcion": "Grado neutro sin modificación",
+            "ejemplo": "guapo, alto, inteligente"
+          },
+          {
+            "tipo": "Superlativo",
+            "descripcion": "Superlativo absoluto con adverbio",
+            "ejemplo": "muy guapo, muy alto, muy inteligente"
+          }
+        ]
+      }
+    },
+    "3. El artículo": {
+      "3.1. El artículo definido": {
+        "": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Paradigma regular: el, la, los, las",
+            "ejemplo": "el libro, la casa, los niños, las mesas"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Formas contractas: al, del",
+            "ejemplo": "Voy al cine, Vengo del trabajo"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Uso obligatorio del artículo con sustantivos comunes y títulos + apellido",
+            "ejemplo": "el libro, el Señor Pérez"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Ausencia con nombre propio de persona: regla general",
+            "ejemplo": "Carlos, Miguel"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Artículo obligatorio en primera posición antes de otros determinantes. Primera posición del SN",
+            "ejemplo": "la otra chica / *otra la chica"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Incompatibilidad del artículo con posesivos y demostrativos",
+            "ejemplo": "*el este libro / *la mi hermana"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Incompatibilidad del artículo definido con el verbo haber",
+            "ejemplo": "Hay (*la) mesa"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Compatibilidad del artículo definido con el verbo estar",
+            "ejemplo": "Ahí está la mesa"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Incompatibilidad del artículo definido con el verbo saber",
+            "ejemplo": "Sabe (*el) ruso / Sabe (*la) filosofía"
+          }
+        ]
+      },
+      "3.2. El artículo indefinido": {
+        "": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Paradigma regular: un, una, unos, unas",
+            "ejemplo": "un libro, una casa, unos niños, unas mesas"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Primera mención: introducción de referentes nuevos",
+            "ejemplo": "Tengo un libro"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Incompatibilidad con nombres propios",
+            "ejemplo": "*un Javier, *una España, *unos Correos"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Incompatibilidad con demostrativos, posesivos y otros indefinidos",
+            "ejemplo": "*este un amigo, *un otro amigo, *mi un libro"
+          }
+        ]
+      },
+      "3.3. Ausencia de determinación: los nombres escuetos": {
+        "": [
+          {
+            "tipo": "Incompatibilidad con el verbo gustar",
+            "descripcion": "",
+            "ejemplo": "Me gusta paella (correcto: Me gusta la paella)"
+          },
+          {
+            "tipo": "Compatibilidad general con el verbo haber impersonal",
+            "descripcion": "",
+            "ejemplo": "Hay árboles en la plaza, No hay leche en la nevera"
+          }
+        ]
+      }
+    },
+    "4. Los demostrativos": {
+      "4. Los demostrativos": {
+        "": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Paradigma del masculino y del femenino singular y plural",
+            "ejemplo": "este, esta, estos, estas, ese, esa, esos, esas, aquel, aquella, aquellos, aquellas"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Formas neutras del demostrativo",
+            "ejemplo": "esto, eso, aquello"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Posición inicial. Uso del neutro con verbos copulativos para identificar",
+            "ejemplo": "Esto es un problema, Eso es interesante"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Deixis espacial: este (cerca del hablante)",
+            "ejemplo": "este libro (aquí), esta mesa"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Deixis espacial: ese (cerca del oyente), aquel (lejos de ambos)",
+            "ejemplo": "ese libro, aquel árbol"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Uso del neutro para referentes desconocidos o no identificados",
+            "ejemplo": "¿Qué es eso?, ¿Qué es esto que hay aquí?"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Posición del demostrativo: delante del sustantivo",
+            "ejemplo": "este libro"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Incompatibilidad con el artículo",
+            "ejemplo": "*el este libro, *la esa casa"
+          }
+        ]
+      }
+    },
+    "5. Los posesivos": {
+      "5. Los posesivos": {
+        "": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Formas átonas de un poseedor: mi/mis, tu/tus, su/sus",
+            "ejemplo": "mi, mis, tu, tus, su, sus, mi libro / mis libros"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Formas de varios poseedores: nuestro/a/os/as, vuestro/a/os/as, su/sus",
+            "ejemplo": "nuestro/a/os/as, vuestro/a/os/as, su/sus"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Ambigüedad de su/sus: puede referir a él, ella, ellos, ellas, usted, ustedes",
+            "ejemplo": "su casa [de él / de ella / de ellos / de ellas]"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Concordancia de género y número en formas de varios poseedores",
+            "ejemplo": "nuestro libro / nuestros libros, nuestra llave\n                        / nuestras llaves, su casa"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Posición obligatoria prenominal de las formas átonas",
+            "ejemplo": "mi libro / *libro mi, mi camisa roja"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Las formas átonas no pueden aparecer sin sustantivo",
+            "ejemplo": "¿De quién es este libro? - *Mi (correcto: Mío)"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Incompatibilidad de formas átonas con artículos y otros determinantes",
+            "ejemplo": "*la mi amiga, *este mi libro"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Incompatibilidad con el verbo haber",
+            "ejemplo": "Hay mis amigos (correcto: Están mis amigos)"
+          }
+        ]
+      }
+    },
+    "6. Los cuantificadores": {
+      "6.1. Cuantificadores propios": {
+        "": [
+          {
+            "tipo": "Numerales",
+            "descripcion": "Cardinales",
+            "ejemplo": "uno, dos, catorce, cien, mil, un millón"
+          },
+          {
+            "tipo": "Numerales",
+            "descripcion": "Numerales cardinales con variación de género en centenas",
+            "ejemplo": "doscientas personas, doscientos euros"
+          },
+          {
+            "tipo": "Numerales",
+            "descripcion": "Ordinales hasta 10º con variación de género",
+            "ejemplo": "el primer día, la primera vez, el décimo piso"
+          },
+          {
+            "tipo": "No universales",
+            "descripcion": "Cuantificadores indefinidos: poco, mucho",
+            "ejemplo": "poco dinero, mucha gente"
+          },
+          {
+            "tipo": "No universales",
+            "descripcion": "Variación de género y número: mucho/a/os/as",
+            "ejemplo": "Hace mucho calor, Tengo muchos amigos"
+          },
+          {
+            "tipo": "No universales",
+            "descripcion": "Bastante/s: invariable en género, variable en número",
+            "ejemplo": "Hay bastante dinero, Tenemos bastantes problemas"
+          }
+        ]
+      },
+      "6.2. Cuantificadores focales o presuposicionales": {
+        "": [
+          {
+            "tipo": "Incluyentes",
+            "descripcion": "También (afirmativo) / tampoco (negativo)",
+            "ejemplo": "Yo también soy alemán, Yo tampoco voy"
+          }
+        ]
+      }
+    },
+    "7. El pronombre": {
+      "7.1. El pronombre personal": {
+        "7.1.1. Pronombre sujeto": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Paradigma de las tres personas gramaticales",
+            "ejemplo": "yo, tú, él/ella, nosotros/as, vosotros/as, ellos/ellas"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Variación de género: 3.ª persona de singular y de plural; 1.ª y 2.ª personas de plural",
+            "ejemplo": "él / ella, ellos / ellas, nosotros / nosotras, vosotros / vosotras"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "[Zonas voseantes de Hispanoamérica] Forma vos para 2.ª persona del singular. Coexistencia del tuteo con mayor o menor alternancia de formas con el voseo",
+            "ejemplo": "vos sos, vos tenés (Argentina, Uruguay)"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "[México, excepto Chiapas, y El Caribe] Uso exclusivo del tuteo",
+            "ejemplo": "tú eres, tú tienes"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "La forma usted / ustedes[Hispanoamérica, España: variedades meridionales y Canarias] Uso exclusivo de la forma ustedes para la 2.ª persona del plural. Ausencia de las formas vosotros / as",
+            "ejemplo": "ustedes son (en lugar de vosotros sois)"
+          },
+          {
+            "tipo": "Presencia / ausencia",
+            "descripcion": "Sujeto tácito como norma general en español",
+            "ejemplo": "Estudio español, Yo estudio español"
+          },
+          {
+            "tipo": "Presencia / ausencia",
+            "descripcion": "Pronombre explícito para contraste o énfasis",
+            "ejemplo": "Yo soy Clara, ¿y tú?"
+          },
+          {
+            "tipo": "Presencia / ausencia",
+            "descripcion": "Ausencia obligatoria con verbos impersonales (haber)",
+            "ejemplo": "Hay mucha gente (*Ella hay mucha gente)"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Restricción de él/ella para referentes humanos. Uso del demostrativo para referirse a cosas",
+            "ejemplo": "Hay una ventana. Esta (ventana) es grande, *Hay una ventana. Ella es grande"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Deixis personal: yo (hablante), tú (oyente)",
+            "ejemplo": "yo hablo, tú escuchas"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Nosotros inclusivo: yo + tú (+ otros)",
+            "ejemplo": "Nosotros vamos al cine (tú y yo)"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Nosotros exclusivo: yo + otros (sin incluir al oyente)",
+            "ejemplo": "Nosotros vamos al cine (yo y ellos, no tú)"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Vosotros: referencia a múltiples oyentes",
+            "ejemplo": "Vosotros estudiáis español"
+          }
+        ],
+        "7.1.2. Pronombres átonos de OD": [
+          {
+            "tipo": "Presencia / ausencia",
+            "descripcion": "Ausencia obligatoria de pronombre con el verbo haber impersonal (hay)",
+            "ejemplo": "¿Hay parques en tu barrio? - Sí, hay (*los hay)"
+          },
+          {
+            "tipo": "Presencia / ausencia",
+            "descripcion": "Ausencia con referentes inespecíficos sin determinante",
+            "ejemplo": "¿Tienes coche? - No, no tengo"
+          }
+        ],
+        "7.1.3. Pronombres átonos de OI: serie me,te,le": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Formas del pronombre de objeto indirecto",
+            "ejemplo": "me, te, le, nos, os, les"
+          },
+          {
+            "tipo": "Valores /significado",
+            "descripcion": "Experimentante con verbos psicológicos como gustar",
+            "ejemplo": "Me gustan los coches"
+          }
+        ],
+        "7.1.4. Valores de se": [
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Pronombre reflexivo",
+            "ejemplo": "Levantarse, peinarse"
+          }
+        ]
+      },
+      "7.2. Los relativos": {
+        "": [
+          {
+            "tipo": "Pronombre relativo que",
+            "descripcion": "En relativas especificativas con antecedente expreso",
+            "ejemplo": "El libro que lee es muy interesante"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Que: invariable en género y número",
+            "ejemplo": "la profesora que tengo, las casas que veo"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Antecedente: personas o cosas",
+            "ejemplo": "El libro que lee, La profesora que tengo"
+          },
+          {
+            "tipo": "Distribución sintáctica",
+            "descripcion": "Que: funciona como sujeto o objeto directo",
+            "ejemplo": "La profesora que tengo me gusta mucho, Vivo en una casa que tiene tres habitaciones"
+          }
+        ]
+      },
+      "7.3. Los interrogativos": {
+        "": [
+          {
+            "tipo": "Qué",
+            "descripcion": "Forma: invariable, siempre con tilde",
+            "ejemplo": "¿Qué?, ¿Qué es?"
+          },
+          {
+            "tipo": "Qué",
+            "descripcion": "Distribución: solo o con sustantivo",
+            "ejemplo": "¿Qué estudias?, ¿Qué libro lees?"
+          },
+          {
+            "tipo": "Qué",
+            "descripcion": "Pregunta por cosas o acciones (no personas)",
+            "ejemplo": "¿Qué es eso?, ¿Qué haces?"
+          },
+          {
+            "tipo": "Quién/quiénes",
+            "descripcion": "Forma: singular/plural, siempre con tilde y siempre al principio",
+            "ejemplo": "¿Quién es?, ¿Quiénes son?"
+          },
+          {
+            "tipo": "Quién/quiénes",
+            "descripcion": "Distribución sintáctica, seguido de verbo",
+            "ejemplo": "¿Quién es?"
+          },
+          {
+            "tipo": "Quién/quiénes",
+            "descripcion": "Pregunta exclusivamente por personas",
+            "ejemplo": "¿Quién es?, ¿Quiénes vienen?"
+          },
+          {
+            "tipo": "Cuánto / cuanta / cuántos / cuántas",
+            "descripcion": "Variable en género y número, siempre con tilde",
+            "ejemplo": "¿Cuántos años tienes?, ¿Cuántas hermanas tienes?"
+          },
+          {
+            "tipo": "Adverbios interrogativos",
+            "descripcion": "Por qué: pregunta por causa o motivo",
+            "ejemplo": "¿Por qué estudias español?, ¿Por qué no vienes?"
+          },
+          {
+            "tipo": "Locuciones",
+            "descripcion": "De dónde: pregunta por origen o procedencia",
+            "ejemplo": "¿De dónde eres?, ¿De dónde viene?"
+          }
+        ]
+      }
+    },
+    "8. El adverbio y las locuciones adverbiales": {
+      "8.2. Adverbios nucleares o de predicado": {
+        "": [
+          {
+            "tipo": "Circunstanciales facultativos",
+            "descripcion": "Adverbios de lugar deícticos: aquí (cerca), ahí (medio), allí (lejos)",
+            "ejemplo": "aquí, ahí, allí; acá, allá (Hispanoamérica)"
+          },
+          {
+            "tipo": "Circunstanciales facultativos",
+            "descripcion": "Adverbios de lugar con intensificación: muy + lejos/cerca",
+            "ejemplo": "lejos, cerca, muy lejos, muy cerca"
+          },
+          {
+            "tipo": "Circunstanciales facultativos",
+            "descripcion": "Adverbios de tiempo deícticos",
+            "ejemplo": "ahora, hoy, mañana, ayer"
+          },
+          {
+            "tipo": "Circunstanciales facultativos",
+            "descripcion": "Adverbios de cantidad: posición después del verbo",
+            "ejemplo": "Poco, mucho, bastante, Duermo poco, Estudio mucho"
+          },
+          {
+            "tipo": "Circunstanciales facultativos",
+            "descripcion": "Mucho (con verbos) / muy (con adjetivos y adverbios)",
+            "ejemplo": "Trabaja mucho, Es muy alto, Canta muy bien"
+          },
+          {
+            "tipo": "Circunstanciales facultativos",
+            "descripcion": "Adverbios de modo: bien/mal después del verbo",
+            "ejemplo": "Canta bien, Escribe mal, Está bien"
+          },
+          {
+            "tipo": "Otros tipos de adverbios nucleares",
+            "descripcion": "Adverbios de afirmación y negación: sí, no",
+            "ejemplo": "Sí, quiero / No, gracias / No tengo hermanos"
+          },
+          {
+            "tipo": "Otros tipos de adverbios nucleares",
+            "descripcion": "Adverbios de inclusión: también (afirmativo) / tampoco (negativo)",
+            "ejemplo": "Yo también voy, Yo tampoco tengo\""
+          }
+        ]
+      },
+      "8.5. Adverbios conjuntivos": {
+        "": [
+          {
+            "tipo": "8.5. Adverbios conjuntivos",
+            "descripcion": "Conectores: entonces (consecuencia), también (afirmativo), tampoco (negativo)",
+            "ejemplo": "\"Llueve, entonces no salgo; Yo también voy; Yo tampoco como carne"
+          }
+        ]
+      },
+      "8.8. Adverbios relativos e interrogativos": {
+        "": [
+          {
+            "tipo": "Interrogativos",
+            "descripcion": "Dónde (lugar) y cómo (modo): siempre con tilde",
+            "ejemplo": "¿Dónde vives?, ¿Cómo estás?"
+          }
+        ]
+      },
+      "8.9. Locuciones adverbiales": {
+        "": [
+          {
+            "tipo": "8.9. Locuciones adverbiales",
+            "descripcion": "Por qué (interrogativo) vs porque (causal)",
+            "ejemplo": "¿Por qué estudias? - Porque me gusta"
+          }
+        ]
+      }
+    },
+    "9. El verbo": {
+      "9.1. Tiempos verbales de indicativo": {
+        "9.1.1. Presente": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Paradigma de verbos regulares",
+            "ejemplo": "-AR: hablo, hablas, habla, hablamos, habláis, hablan; -ER: como, comes, come, comemos, coméis, comen; -IR: vivo, vives, vive, vivimos, vivís, viven"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Formas voseantes del presente en Hispanoamérica",
+            "ejemplo": "vos amás, vos comés, vos vivís"
+          },
+          {
+            "tipo": "Forma",
+            "descripcion": "Verbos irregulares básicos: ser, estar, haber, ir",
+            "ejemplo": "SER: soy, eres, es, somos, sois, son; ESTAR: estoy, estás, está, estamos, estáis, están; HABER: he, has, ha, hemos, habéis, han; IR: voy, vas, va,  vamos, vais, van"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Perífrasis ir a + infinitivo para presente inmediato",
+            "ejemplo": "Voy a comer (= como ahora)"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Presente actual: acción en el momento de hablar",
+            "ejemplo": "Estamos en clase de español"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Presente durativo: estados y situaciones permanentes",
+            "ejemplo": "Vivo en Madrid"
+          }
+        ]
+      },
+      "9.4. Formas no personales del verbo": {
+        "9.4.1. Infinitivo": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Infinitivo simple en las tres conjugaciones",
+            "ejemplo": "-ar (hablar), -er (comer), -ir (vivir)"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Infinitivo como respuesta a preguntas",
+            "ejemplo": "¿Qué haces? - Estudiar. ¿Qué te gusta? - Leer"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Infinitivo como sujeto y objeto directo",
+            "ejemplo": "Estudiar español es divertido, Me gusta estudiar español, Quiero ir a España"
+          }
+        ],
+        "9.4.3. Participio": [
+          {
+            "tipo": "Forma",
+            "descripcion": "Participios regulares de las tres conjugaciones. Variación de género y número. Concordancia con el sustantivo",
+            "ejemplo": "-ado: cansado/a/os/as; -ido: aburrido/a/os/as"
+          },
+          {
+            "tipo": "Valores / significado",
+            "descripcion": "Valor adjetival",
+            "ejemplo": "Estoy cansado, La puerta está cerrada, Los niños están dormidos"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,964 @@
+{
+  "verbos": {
+    "abrir": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ir",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "acostarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica o→ue"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "afeitarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "ahorrar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U5": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "bañarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "cerrar": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica e→ie"
+      },
+      "apariciones": {
+        "U6": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "comer": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -er"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "completar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "contaminar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U5": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "contestar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "decir": {
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular",
+        "Imperativo": "irregular (di)"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "deslizarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U8": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "despertarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica e→ie"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "doler": {
+      "rasgo_por_tiempo": {
+        "Presente": "tipo gustar + irregularidad vocálica o→ue"
+      },
+      "apariciones": {
+        "U8": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "tipo gustar",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "dormir": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica o→ue"
+      },
+      "apariciones": {
+        "U6": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "ducharse": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "escribir": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ir",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ],
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "escuchar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "estar": {
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular",
+        "Pretérito indefinido": "raíz irregular"
+      },
+      "apariciones": {
+        "U5": [
+          "PRE"
+        ],
+        "U9": [
+          "IND"
+        ]
+      },
+      "tipo_de_verbo": [
+        "copulativo",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Pretérito indefinido"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "estudiar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "gustar": {
+      "rasgo_por_tiempo": {
+        "Presente": "tipo gustar"
+      },
+      "apariciones": {
+        "U4": [
+          "PRE"
+        ],
+        "U8": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "tipo gustar",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "hablar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ],
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "hacer": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad 1ª persona",
+        "Pretérito indefinido": "raíz irregular",
+        "Imperativo": "irregular (haz)"
+      },
+      "apariciones": {
+        "U6": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Pretérito indefinido",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "ir": {
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular",
+        "Pretérito indefinido": "totalmente irregular (mismo paradigma que ser)",
+        "Imperativo": "irregular (ve)"
+      },
+      "apariciones": {
+        "U6": [
+          "PRE"
+        ],
+        "U7": [
+          "PRE"
+        ],
+        "U9": [
+          "IND"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Pretérito indefinido",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "jugar": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica u→ue"
+      },
+      "apariciones": {
+        "U6": [
+          "PRE"
+        ],
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "lavarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "leer": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -er",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U1": [
+          "PRE"
+        ],
+        "U3": [
+          "PRE"
+        ],
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "levantarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "llamar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "llamarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U1": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "pronominal"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "llegar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "merendar": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica e→ie"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "mirar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "ponerse": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad 1ª persona"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo",
+        "pronominal"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "preguntar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "quedarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo",
+        "pronominal"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "querer": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica e→ie"
+      },
+      "apariciones": {
+        "U4": [
+          "PRE",
+          "PER"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "repetir": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica e→i",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "responder": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -er",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "salir": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad 1ª persona",
+        "Imperativo": "irregular (sal)"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "sentarse": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica e→ie"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "ser": {
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular",
+        "Pretérito indefinido": "totalmente irregular (mismo paradigma que ir)"
+      },
+      "apariciones": {
+        "U1": [
+          "PRE"
+        ],
+        "U2": [
+          "PRE"
+        ],
+        "U3": [
+          "PRE"
+        ],
+        "U5": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "copulativo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Pretérito indefinido"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "tener": {
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular"
+      },
+      "apariciones": {
+        "U1": [
+          "PRE"
+        ],
+        "U2": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "trabajar": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "venir": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad 1ª persona + cambio vocálico e→ie",
+        "Imperativo": "irregular (ven)"
+      },
+      "apariciones": {
+        "U6": [
+          "PRE"
+        ],
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "vestirse": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica e→i"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "reflexivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "vivir": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ir"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "volver": {
+      "rasgo_por_tiempo": {
+        "Presente": "irregularidad vocálica o→ue"
+      },
+      "apariciones": {
+        "U7": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    }
+  },
+  "tiempos_verbales": [
+    "Presente",
+    "Pretérito indefinido",
+    "Imperativo"
+  ],
+  "perifrasis": {
+    "ir a + infinitivo": "Expresar futuro próximo o inmediato",
+    "querer + infinitivo": "Expresar deseo o intención",
+    "poder + infinitivo": "Expresar posibilidad o permiso"
+  },
+  "usos_por_tiempo": {
+    "Presente": {
+      "U1": [
+        "Presente caracterizador o descriptivo"
+      ],
+      "U2": [
+        "Presente caracterizador o descriptivo"
+      ],
+      "U3": [
+        "Presente habitual",
+        "Presente actual"
+      ],
+      "U4": [
+        "Presente caracterizador o descriptivo"
+      ],
+      "U5": [
+        "Presente caracterizador o descriptivo",
+        "Presente actual"
+      ],
+      "U6": [
+        "Presente habitual"
+      ],
+      "U7": [
+        "Presente habitual"
+      ],
+      "U8": [
+        "Presente caracterizador o descriptivo"
+      ]
+    },
+    "Pretérito indefinido": {
+      "U9": [
+        "Acciones puntuales y terminadas en el pasado"
+      ]
+    },
+    "Imperativo": {
+      "U6": [
+        "Dar instrucciones",
+        "Dar consejos"
+      ]
+    }
+  }
+}

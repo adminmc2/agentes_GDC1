@@ -1,5 +1,8 @@
 # Convenciones editoriales y casos resueltos
 
+> ⚠️ **CONTENIDO VIEJO — v1 pre-rediseño (2026-05-12).**
+> Describe convenciones del modelo anterior. Pendiente de ampliación con los casos nuevos del rediseño: paréntesis-anotación, desambiguación funcional (`o` letra vs conjunción, `te` clítico vs letra, `más` matemático vs comparativo), respuestas de producción con sufijo `@R`, exclusión de campos directivos en `datos.*`. Hasta el cierre de la migración (Paso 2 del plan), estas convenciones reflejan el modelo viejo.
+
 > **Responsabilidad:** convenciones de transcripción del libro al JSON + memoria editorial de casos resueltos en extracciones reales + política de mejora continua del sistema de extracción.
 >
 > **No contiene:** schema (vive en `schema-inventario.md`) ni reglas estables de clasificación o decisión (viven en `reglas-operativas.md`).
@@ -139,7 +142,7 @@ Antipatrón recurrente: asumir que una actividad alojada en página `seccion: X`
 "enfoque": "transversal"    // comprensión lectora sin foco de dominio específico
 ```
 
-**Cuándo SÍ aplica un enfoque de dominio (`cultura`, `comunicacion`, `gramatica`, `vocabulario`, `fonetica`):**
+**Cuándo SÍ aplica un enfoque de dominio (`cultura`, `comunicacion`, `gramatica`, `vocabulario`, `pronunciacion_ortografia`):**
 - La actividad pide **producir o reflexionar** sobre el dominio: comparar costumbres, aplicar una función comunicativa con producción propia, hacer un cloze gramatical, clasificar léxico, repetir un sonido específico.
 
 **Cuándo NO:**

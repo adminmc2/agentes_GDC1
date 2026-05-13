@@ -5,6 +5,29 @@
 
 ---
 
+## [v10.112 — 2026-05-13] — Rediseño fase 1: dashboard adaptado + fixtures exploratorias
+
+Segundo commit del hito transitorio (continuación de v10.111).
+
+- `diagrama.py`: mapping genérico `Np` → `UN-propuesta` (antes solo `U1p` hardcodeado).
+- `web/index.html`: 3 bugs del renderer ante el shape nuevo corregidos. (1) `vocBlock` ahora lee `g.items || g.palabras` (compatibilidad shape nuevo + viejo). (2) `verbosBlock` lee `v.lo_que_se_trabaja || v.descripcion` (registry o schema). (3) `renderConsolidatedWithSubs` ahora pinta sub-bloques vacíos como "(vacío)" atenuado, en lugar de ocultarlos.
+- Fixtures exploratorias en `unidades/`: `U1-propuesta` (preexistente, ahora trackeada), `U2-propuesta` (pp.24+30, cerrable tras decisiones D1-D3 en chat: Escuela canónico para léxico cultural, ser entra en cuadro Demostrativos, clases optativas/obligatorias renombrados; metadata coherente con contenido), `U3-propuesta` (pp.32+34, prueba discriminativa que reveló error sistémico de proceso al omitir vocabulario_consolidado.recurrente; motivó §5.12-§5.14 en reglas-operativas).
+- Convención `_fixture_exploratoria` consolidada: visibles en dashboard como `Up`, declaradas extracontractuales en schema §A.5 y glosario.
+
+## [v10.111 — 2026-05-13] — Rediseño fase 1: contrato documental consolidado (hito transitorio)
+
+Primer commit del hito transitorio del rediseño de fase 1. **Schema NC1 cerrado en cuerpo; rediseño fase 1 completo NO cerrado** (deuda viva catalogada en Apéndice transitorio).
+
+- `fases/1-extraccion-inventario/schema-inventario.md`: cuerpo §1-§14 cerrado para NC1 (top-level, página, actividad, cuadro, 4 enumeraciones cerradas, 4 bloques consolidados con fuentes y descripcion compartidas en §9.5/§9.6, respuestas y multimedia, marcas internas §14). Apéndice transitorio §A.1-§A.5 cataloga deuda externa: alineación validador (§A.1), clave transitoria `_migracion_rediseno` (§A.2), 11 ítems específicos para validador (§A.3 — renombrados de enums, ampliación tiempo, normalización formas_trabajadas, suite de verificación automatizada, etc.), condiciones de retirada del apéndice (§A.4), metadata extracontractual `_fixture_*` (§A.5).
+- `fases/1-extraccion-inventario/glosario.md`: creado. Diccionario operativo de todos los términos del schema, alineado con `schema-inventario.md` punto por punto.
+- `fases/1-extraccion-inventario/reglas-operativas.md`: 5 reglas del rediseño integradas en cuerpo con carácter OBLIGATORIO. §5.10 (verbo soporte: entra si sus formas aparecen, independientemente del foco), §5.11 (normalización formas_trabajadas), §5.12 con sub-A/B/C (procedimiento obligatorio de poblado de `recurrente` para las tres dimensiones), §5.13 (propuesta-en-chat ante toda decisión no clara), §5.14 (construcción iterativa de `recurrente`). Banner de follow-ups conserva la deuda residual: sufijo `@R`, regla 11 audio, input incidental, anticipación, heterogeneidad semántica, suite de verificación.
+- `fases/1-extraccion-inventario/CLAUDE.md`: header reescrito con semáforo de estado real (🟢 schema, 🟡 reglas-operativas, 🟡 convenciones-y-casos). Regla de precedencia: en conflicto schema↔reglas-operativas, gana schema. Convención de fixtures `UNp` documentada.
+- `fases/1-extraccion-inventario/prompt.md`: nota transitoria cubre validador + reglas-operativas con regla de precedencia; pasos 3a/3b explícitos (clasificar y derivar consolidados); lookup bajo demanda incluye los 4 archivos PCIC.
+- `fases/1-extraccion-inventario/convenciones-y-casos.md`: renombrado `fonetica` → `pronunciacion_ortografia`.
+- Registries esqueleto: `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`. `verbos-canonicos.json` ya poblado.
+- 4 archivos PCIC A1 fuente: `pcic-a1-vocabulario.json` (417 entradas), `pcic-a1-gramatica.json`, `pcic-a1-pronunciacion-ortografia.json` (sub-bloques pronunciación + ortografía, pronunciación extraída de Cervantes web), `pcic-a1-comunicacion.json` (fuera de las 4 dimensiones, recurso disponible).
+- Documentos archivados: `docs/historico/prompt-v1-antiguo.md`, `docs/historico/prompt-v2-monolitico-NO-USAR.md`. Documentos de transición arquitectónica: `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`, `PROPUESTA-PIEZA-2-IA-FIRST.md`, `schema-inventario-viejo.md`, `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`.
+
 ## [v10.108f — 2026-05-11] — Cierre residual de coherencia: PROCESO-MAESTRO paso 7 del pipeline
 
 Hallazgo medio del revisor sobre v10.108e: quedaba una línea viva en PROCESO-MAESTRO §3 (pipeline definido, paso 7) que decía *"actualizar `nc1-reciclaje.json` manualmente con ayuda de Claude Code en chat (no automático)"* y contradecía el comportamiento vigente desde v10.108d.

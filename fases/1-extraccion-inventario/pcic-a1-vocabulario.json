@@ -1,0 +1,1505 @@
+{
+  "fuente": "PCIC A1 — Plan Curricular del Instituto Cervantes, Nociones específicas",
+  "nivel": "A1",
+  "origen": "caes complete system/references/plan_curricular/by_level/a1/a1_nociones_especificas_completo.json",
+  "fecha_copia": "2026-05-13",
+  "categorias": {
+    "Individuo: Dimensión Física": {
+      "Partes del Cuerpo": [
+        {
+          "contenido": "pelo"
+        },
+        {
+          "contenido": "ojo"
+        },
+        {
+          "contenido": "nariz"
+        }
+      ],
+      "Características Físicas": [
+        {
+          "contenido": "ser ~ alto/bajo/gordo/delgado/guapo/feo"
+        },
+        {
+          "contenido": "ser ~ rubio/moreno"
+        },
+        {
+          "contenido": "tener el pelo ~ rubio/moreno/blanco"
+        },
+        {
+          "contenido": "llevar/tener ~ barba/bigote/galas"
+        },
+        {
+          "contenido": "tener los ojos ~ claros/oscuros/azules/verdes/negros/marrones"
+        },
+        {
+          "contenido": "tener los ojos ~ grandes/pequeños"
+        }
+      ],
+      "Acciones y Posiciones que se Realizan con el Cuerpo": [
+        {
+          "contenido": "levantarse"
+        },
+        {
+          "contenido": "ducharse"
+        },
+        {
+          "contenido": "escuchar"
+        }
+      ]
+    },
+    "Individuo: Dimensión Perceptiva y Anímica": {
+      "Carácter y Personalidad": [
+        {
+          "contenido": "simpático"
+        },
+        {
+          "contenido": "antipático"
+        },
+        {
+          "contenido": "inteligente"
+        },
+        {
+          "contenido": "trabajador"
+        },
+        {
+          "contenido": "alegre"
+        },
+        {
+          "contenido": "serio"
+        },
+        {
+          "contenido": "tímido"
+        },
+        {
+          "contenido": "sociable"
+        }
+      ]
+    },
+    "Identidad Personal": {
+      "Nombre": [
+        {
+          "contenido": "nombre"
+        },
+        {
+          "contenido": "(primer/segundo) ~ apellido"
+        },
+        {
+          "contenido": "señor"
+        },
+        {
+          "contenido": "señora"
+        },
+        {
+          "contenido": "señores"
+        },
+        {
+          "contenido": "firmar"
+        },
+        {
+          "contenido": "llamarse"
+        }
+      ],
+      "Documentación": [
+        {
+          "contenido": "pasaporte"
+        },
+        {
+          "contenido": "carné ~ de identidad/de conducir"
+        }
+      ],
+      "Objetos Personales": [
+        {
+          "contenido": "llaves"
+        },
+        {
+          "contenido": "cartera"
+        },
+        {
+          "contenido": "bolso"
+        },
+        {
+          "contenido": "maleta"
+        },
+        {
+          "contenido": "reloj"
+        },
+        {
+          "contenido": "móvil"
+        },
+        {
+          "contenido": "gafas"
+        },
+        {
+          "contenido": "ordenador"
+        },
+        {
+          "contenido": "tarjeta de crédito"
+        }
+      ],
+      "Dirección": [
+        {
+          "contenido": "dirección"
+        },
+        {
+          "contenido": "correo electrónico"
+        },
+        {
+          "contenido": "calle"
+        },
+        {
+          "contenido": "avenida"
+        },
+        {
+          "contenido": "paseo"
+        },
+        {
+          "contenido": "plaza"
+        },
+        {
+          "contenido": "piso"
+        },
+        {
+          "contenido": "número"
+        },
+        {
+          "contenido": "código postal"
+        },
+        {
+          "contenido": "casa"
+        },
+        {
+          "contenido": "habitación"
+        }
+      ],
+      "Número de Teléfono": [
+        {
+          "contenido": "número de teléfono"
+        },
+        {
+          "contenido": "número de teléfono móvil"
+        }
+      ],
+      "Lugar y Fecha de Nacimiento": [
+        {
+          "contenido": "lugar de nacimiento"
+        },
+        {
+          "contenido": "fecha de nacimiento"
+        }
+      ],
+      "Nacionalidad": [
+        {
+          "contenido": "nacionalidad"
+        },
+        {
+          "contenido": "extranjero"
+        },
+        {
+          "contenido": "español"
+        },
+        {
+          "contenido": "alemán"
+        },
+        {
+          "contenido": "mexicano"
+        },
+        {
+          "contenido": "japonés"
+        },
+        {
+          "contenido": "marroquí"
+        },
+        {
+          "contenido": "ser ~ de Laos/de Bali/de Mozambique"
+        }
+      ],
+      "Edad": [
+        {
+          "contenido": "edad"
+        },
+        {
+          "contenido": "niño"
+        },
+        {
+          "contenido": "chico"
+        },
+        {
+          "contenido": "joven"
+        },
+        {
+          "contenido": "viejo"
+        },
+        {
+          "contenido": "tener ~ [número cardinal]/muchos/pocos ~ años"
+        }
+      ],
+      "Sexo": [
+        {
+          "contenido": "hombre"
+        },
+        {
+          "contenido": "mujer"
+        },
+        {
+          "contenido": "niño"
+        },
+        {
+          "contenido": "niña"
+        },
+        {
+          "contenido": "chico"
+        },
+        {
+          "contenido": "chica"
+        },
+        {
+          "contenido": "señor"
+        },
+        {
+          "contenido": "señora"
+        }
+      ],
+      "Estado Civil": [
+        {
+          "contenido": "estado civil"
+        },
+        {
+          "contenido": "soltero"
+        },
+        {
+          "contenido": "casado"
+        },
+        {
+          "contenido": "viudo"
+        },
+        {
+          "contenido": "separado"
+        },
+        {
+          "contenido": "divorciado"
+        },
+        {
+          "contenido": "marido"
+        },
+        {
+          "contenido": "mujer"
+        }
+      ],
+      "Profesión": [
+        {
+          "contenido": "profesión"
+        }
+      ]
+    },
+    "Relaciones Personales": {
+      "Relaciones Familiares": [
+        {
+          "contenido": "familia"
+        },
+        {
+          "contenido": "padres"
+        },
+        {
+          "contenido": "padre"
+        },
+        {
+          "contenido": "madre"
+        },
+        {
+          "contenido": "hijo"
+        },
+        {
+          "contenido": "hermano"
+        },
+        {
+          "contenido": "tío"
+        },
+        {
+          "contenido": "sobrino"
+        },
+        {
+          "contenido": "abuelo"
+        },
+        {
+          "contenido": "nieto"
+        },
+        {
+          "contenido": "primo"
+        },
+        {
+          "contenido": "marido"
+        },
+        {
+          "contenido": "mujer"
+        },
+        {
+          "contenido": "pareja"
+        },
+        {
+          "contenido": "novio"
+        }
+      ],
+      "Relaciones Sociales": [
+        {
+          "contenido": "amigo"
+        },
+        {
+          "contenido": "jefe"
+        },
+        {
+          "contenido": "compañero"
+        }
+      ],
+      "Celebraciones y Actos Familiares, Sociales y Religiosos": [
+        {
+          "contenido": "fiesta"
+        }
+      ]
+    },
+    "Alimentación": {
+      "Dieta y Nutrición": [
+        {
+          "contenido": "desayuno"
+        },
+        {
+          "contenido": "comida"
+        },
+        {
+          "contenido": "merienda"
+        },
+        {
+          "contenido": "cena"
+        },
+        {
+          "contenido": "desayunar"
+        },
+        {
+          "contenido": "comer"
+        },
+        {
+          "contenido": "merendar"
+        },
+        {
+          "contenido": "cenar"
+        }
+      ],
+      "Bebida": [
+        {
+          "contenido": "agua (mineral) ~ con gas/sin gas"
+        },
+        {
+          "contenido": "leche"
+        },
+        {
+          "contenido": "té"
+        },
+        {
+          "contenido": "café ~ solo/con leche/cortado"
+        },
+        {
+          "contenido": "cerveza"
+        },
+        {
+          "contenido": "vino ~ blanco/tinto"
+        },
+        {
+          "contenido": "beber"
+        }
+      ],
+      "Alimentos": [
+        {
+          "contenido": "carne"
+        },
+        {
+          "contenido": "pescado"
+        },
+        {
+          "contenido": "fruta"
+        },
+        {
+          "contenido": "verdura"
+        },
+        {
+          "contenido": "leche"
+        },
+        {
+          "contenido": "huevos"
+        },
+        {
+          "contenido": "pan"
+        },
+        {
+          "contenido": "bocadillo"
+        },
+        {
+          "contenido": "sándwich"
+        },
+        {
+          "contenido": "hamburguesa"
+        }
+      ],
+      "Platos": [
+        {
+          "contenido": "primer/segundo ~ plato"
+        },
+        {
+          "contenido": "postre"
+        },
+        {
+          "contenido": "sopa"
+        },
+        {
+          "contenido": "ensalada"
+        },
+        {
+          "contenido": "paella"
+        },
+        {
+          "contenido": "tortilla"
+        }
+      ],
+      "Restaurante": [
+        {
+          "contenido": "bar"
+        },
+        {
+          "contenido": "restaurante"
+        },
+        {
+          "contenido": "camarero"
+        },
+        {
+          "contenido": "mesa"
+        },
+        {
+          "contenido": "primer/segundo ~ plato"
+        },
+        {
+          "contenido": "postre"
+        },
+        {
+          "contenido": "el menú"
+        },
+        {
+          "contenido": "la cuenta"
+        }
+      ]
+    },
+    "Educación": {
+      "Centros E Instituciones Educativas": [
+        {
+          "contenido": "instituto"
+        },
+        {
+          "contenido": "universidad"
+        },
+        {
+          "contenido": "clase"
+        },
+        {
+          "contenido": "biblioteca"
+        }
+      ],
+      "Profesorado y Alumnado": [
+        {
+          "contenido": "profesor"
+        },
+        {
+          "contenido": "estudiante"
+        },
+        {
+          "contenido": "director"
+        },
+        {
+          "contenido": "compañero"
+        }
+      ],
+      "Sistema Educativo": [
+        {
+          "contenido": "clase ~ de español/de matemáticas/de historia"
+        },
+        {
+          "contenido": "horario"
+        },
+        {
+          "contenido": "examen"
+        }
+      ],
+      "Aprendizaje y Enseñanza": [
+        {
+          "contenido": "aprender"
+        },
+        {
+          "contenido": "estudiar"
+        },
+        {
+          "contenido": "ir a clase"
+        }
+      ],
+      "Exámenes y Calificaciones": [
+        {
+          "contenido": "hacer/tener ~ un examen"
+        }
+      ],
+      "Lenguaje de Aula": [
+        {
+          "contenido": "ejercicio"
+        },
+        {
+          "contenido": "actividad"
+        },
+        {
+          "contenido": "lección"
+        },
+        {
+          "contenido": "unidad"
+        },
+        {
+          "contenido": "página"
+        },
+        {
+          "contenido": "pregunta"
+        },
+        {
+          "contenido": "profesor"
+        },
+        {
+          "contenido": "compañero"
+        },
+        {
+          "contenido": "en parejas"
+        },
+        {
+          "contenido": "en grupos"
+        },
+        {
+          "contenido": "hablar"
+        },
+        {
+          "contenido": "escuchar"
+        },
+        {
+          "contenido": "leer"
+        },
+        {
+          "contenido": "escribir"
+        },
+        {
+          "contenido": "entender"
+        },
+        {
+          "contenido": "comprender"
+        },
+        {
+          "contenido": "saber"
+        },
+        {
+          "contenido": "aprender"
+        },
+        {
+          "contenido": "estudiar"
+        },
+        {
+          "contenido": "repetir"
+        },
+        {
+          "contenido": "practicar"
+        },
+        {
+          "contenido": "hacer ~ los deberes/un ejercicio/una actividad/un examen"
+        }
+      ],
+      "Material Educativo y Mobiliario de Aula": [
+        {
+          "contenido": "Internet"
+        },
+        {
+          "contenido": "libro"
+        },
+        {
+          "contenido": "diccionario"
+        },
+        {
+          "contenido": "papel"
+        },
+        {
+          "contenido": "bolígrafo"
+        },
+        {
+          "contenido": "lápiz"
+        },
+        {
+          "contenido": "goma"
+        },
+        {
+          "contenido": "fotocopia"
+        },
+        {
+          "contenido": "mesa"
+        },
+        {
+          "contenido": "silla"
+        },
+        {
+          "contenido": "armario"
+        },
+        {
+          "contenido": "estantería"
+        },
+        {
+          "contenido": "pizarra"
+        },
+        {
+          "contenido": "ordenador"
+        },
+        {
+          "contenido": "mapa"
+        }
+      ]
+    },
+    "Trabajo": {
+      "Profesiones y Cargos": [
+        {
+          "contenido": "abogado"
+        },
+        {
+          "contenido": "médico"
+        },
+        {
+          "contenido": "profesor"
+        },
+        {
+          "contenido": "taxista"
+        },
+        {
+          "contenido": "ama de casa"
+        },
+        {
+          "contenido": "jefe"
+        },
+        {
+          "contenido": "director"
+        },
+        {
+          "contenido": "ser ~ camarero/ingeniero"
+        },
+        {
+          "contenido": "trabajar (en)"
+        },
+        {
+          "contenido": "dedicarse a"
+        }
+      ],
+      "Lugares, Herramientas y Ropa de Trabajo": [
+        {
+          "contenido": "Lugares de trabajo — empresa"
+        },
+        {
+          "contenido": "oficina"
+        },
+        {
+          "contenido": "tienda"
+        },
+        {
+          "contenido": "Herramientas de un auxiliar administrativo [ejemplo propuesto] — Internet"
+        },
+        {
+          "contenido": "ordenador"
+        },
+        {
+          "contenido": "teléfono"
+        },
+        {
+          "contenido": "fax"
+        }
+      ],
+      "Actividad Laboral": [
+        {
+          "contenido": "trabajo"
+        },
+        {
+          "contenido": "profesión"
+        },
+        {
+          "contenido": "trabajar"
+        },
+        {
+          "contenido": "dedicarse a"
+        },
+        {
+          "contenido": "comprar"
+        },
+        {
+          "contenido": "vender"
+        }
+      ],
+      "Desempleo y Búsqueda de Trabajo": [
+        {
+          "contenido": "estar en paro"
+        },
+        {
+          "contenido": "tener trabajo"
+        }
+      ],
+      "Derechos y Obligaciones Laborales": [
+        {
+          "contenido": "trabajo"
+        },
+        {
+          "contenido": "vacaciones"
+        },
+        {
+          "contenido": "trabajar"
+        },
+        {
+          "contenido": "tener vacaciones"
+        }
+      ],
+      "Características de Un Trabajador": [
+        {
+          "contenido": "ser trabajador"
+        }
+      ]
+    },
+    "Ocio": {
+      "Tiempo Libre y Entretenimiento": [
+        {
+          "contenido": "vacaciones"
+        },
+        {
+          "contenido": "turista"
+        },
+        {
+          "contenido": "oficina de ~ información/turismo"
+        },
+        {
+          "contenido": "viajar"
+        },
+        {
+          "contenido": "leer ~ el periódico/un libro/una revista"
+        },
+        {
+          "contenido": "ver ~ la televisión/una película"
+        },
+        {
+          "contenido": "escuchar ~ música/la radio/una canción"
+        },
+        {
+          "contenido": "ir ~ a un bar/a una discoteca/a un café/a un restaurante/a un museo"
+        },
+        {
+          "contenido": "ir ~ al cine/al teatro/al parque"
+        },
+        {
+          "contenido": "cantar"
+        },
+        {
+          "contenido": "bailar"
+        }
+      ],
+      "Espectáculos y Exposiciones": [
+        {
+          "contenido": "película"
+        },
+        {
+          "contenido": "concierto"
+        },
+        {
+          "contenido": "ir ~ al teatro/al cine/al circo"
+        },
+        {
+          "contenido": "ir a un concierto"
+        }
+      ],
+      "Deportes": [
+        {
+          "contenido": "correr"
+        },
+        {
+          "contenido": "nadar"
+        },
+        {
+          "contenido": "esquiar"
+        },
+        {
+          "contenido": "hacer ~ deporte/ejercicio/gimnasia"
+        },
+        {
+          "contenido": "jugar ~ al fútbol/al baloncesto/al tenis"
+        }
+      ]
+    },
+    "Información y Medios de Comunicación": {
+      "Información y Comunicación": [
+        {
+          "contenido": "televisión"
+        },
+        {
+          "contenido": "radio"
+        },
+        {
+          "contenido": "correo electrónico"
+        },
+        {
+          "contenido": "teléfono"
+        }
+      ],
+      "Correspondencia Escrita": [
+        {
+          "contenido": "sobre"
+        },
+        {
+          "contenido": "sello"
+        },
+        {
+          "contenido": "papel"
+        },
+        {
+          "contenido": "escribir ~ una postal/una carta/un mensaje electrónico"
+        },
+        {
+          "contenido": "enviar, recibir, responder"
+        }
+      ],
+      "Teléfono": [
+        {
+          "contenido": "número de teléfono"
+        },
+        {
+          "contenido": "teléfono ~ fijo/móvil"
+        },
+        {
+          "contenido": "tarjeta telefónica"
+        },
+        {
+          "contenido": "cabina"
+        },
+        {
+          "contenido": "llamar/hablar ~ por teléfono"
+        }
+      ],
+      "Prensa Escrita": [
+        {
+          "contenido": "quiosco"
+        },
+        {
+          "contenido": "leer ~ un periódico/una revista"
+        }
+      ],
+      "Televisión y Radio": [
+        {
+          "contenido": "ver la televisión"
+        },
+        {
+          "contenido": "escuchar la radio"
+        },
+        {
+          "contenido": "programa"
+        }
+      ],
+      "Internet": [
+        {
+          "contenido": "Internet"
+        },
+        {
+          "contenido": "arroba, guión, guión bajo, punto"
+        },
+        {
+          "contenido": "página web"
+        },
+        {
+          "contenido": "correo electrónico"
+        }
+      ]
+    },
+    "Servicios": {
+      "Servicio Postal": [
+        {
+          "contenido": "carta"
+        },
+        {
+          "contenido": "postal"
+        },
+        {
+          "contenido": "sobre"
+        },
+        {
+          "contenido": "sello"
+        },
+        {
+          "contenido": "papel"
+        },
+        {
+          "contenido": "código postal"
+        },
+        {
+          "contenido": "(oficina de) correos"
+        },
+        {
+          "contenido": "enviar/recibir ~ una carta/una postal"
+        },
+        {
+          "contenido": "ir a Correos"
+        }
+      ],
+      "Servicios Financieros": [
+        {
+          "contenido": "banco"
+        },
+        {
+          "contenido": "dinero"
+        },
+        {
+          "contenido": "euro"
+        },
+        {
+          "contenido": "céntimo (de euro)"
+        },
+        {
+          "contenido": "tarjeta (de crédito)"
+        },
+        {
+          "contenido": "cambiar dinero"
+        }
+      ],
+      "Servicios Sanitarios": [
+        {
+          "contenido": "hospital"
+        },
+        {
+          "contenido": "médico"
+        },
+        {
+          "contenido": "enfermera"
+        }
+      ],
+      "Servicios de Protección y Seguridad": [
+        {
+          "contenido": "policía"
+        },
+        {
+          "contenido": "bombero"
+        }
+      ],
+      "Servicios Sociales": [
+        {
+          "contenido": "teléfono de emergencia"
+        }
+      ]
+    },
+    "Compras, Tiendas y Establecimientos": {
+      "Lugares, Personas y Actividades": [
+        {
+          "contenido": "(super)mercado"
+        },
+        {
+          "contenido": "tienda"
+        },
+        {
+          "contenido": "salida"
+        },
+        {
+          "contenido": "información"
+        },
+        {
+          "contenido": "comprador, vendedor"
+        },
+        {
+          "contenido": "comprar, vender"
+        }
+      ],
+      "Ropa, Calzado y Complementos": [
+        {
+          "contenido": "pantalones, (pantalones) vaqueros, falda, camisa, jersey, zapatos, bolso"
+        }
+      ],
+      "Pagos": [
+        {
+          "contenido": "precio"
+        },
+        {
+          "contenido": "dinero, billete, euro, céntimo (de euro), tarjeta"
+        },
+        {
+          "contenido": "pagar con tarjeta"
+        }
+      ]
+    },
+    "Salud E Higiene": {
+      "Salud y Enfermedades": [
+        {
+          "contenido": "estar ~ enfermo/malo"
+        }
+      ],
+      "Síntomas": [
+        {
+          "contenido": "tener dolor ~ de cabeza/de espalda/de estómago"
+        },
+        {
+          "contenido": "tener ~ tos/fiebre"
+        },
+        {
+          "contenido": "doler"
+        },
+        {
+          "contenido": "estar cansado"
+        }
+      ],
+      "Centros de Asistencia Sanitaria": [
+        {
+          "contenido": "médico, enfermero"
+        },
+        {
+          "contenido": "ir ~ al hospital/al médico"
+        }
+      ],
+      "Medicina y Medicamentos": [
+        {
+          "contenido": "farmacia"
+        }
+      ],
+      "Higiene": [
+        {
+          "contenido": "agua, jabón"
+        },
+        {
+          "contenido": "lavarse ~ la cara/las manos/el pelo/los dientes"
+        },
+        {
+          "contenido": "ducharse, bañarse"
+        },
+        {
+          "contenido": "ducha, bañera, toalla"
+        }
+      ],
+      "Estética": [
+        {
+          "contenido": "tener/llevar ~ el pelo largo/corto/rizado/liso"
+        }
+      ]
+    },
+    "Viajes, Alojamiento y Transporte": {
+      "Alojamiento": [
+        {
+          "contenido": "hotel, habitación, camping"
+        }
+      ],
+      "Objetos y Documentos Relacionados con los Viajes": [
+        {
+          "contenido": "carné de identidad, pasaporte"
+        },
+        {
+          "contenido": "maleta, bolso"
+        },
+        {
+          "contenido": "plano, mapa"
+        },
+        {
+          "contenido": "información, publicidad"
+        },
+        {
+          "contenido": "comprar un billete ~ de ida/de ida y vuelta"
+        }
+      ],
+      "Tipos de Viajes": [
+        {
+          "contenido": "vacaciones"
+        },
+        {
+          "contenido": "turista"
+        },
+        {
+          "contenido": "horario"
+        },
+        {
+          "contenido": "oficina de información y turismo"
+        },
+        {
+          "contenido": "ir ~ a Madrid/a la playa/a la montaña/al campo"
+        }
+      ],
+      "La Playa": [
+        {
+          "contenido": "ir a la playa"
+        }
+      ],
+      "La Montaña": [
+        {
+          "contenido": "ir a la montaña"
+        }
+      ],
+      "Sistema de Transporte - Red de Transportes": [
+        {
+          "contenido": "calle, carretera"
+        },
+        {
+          "contenido": "aeropuerto, puerto, estación ~ de tren/de metro"
+        },
+        {
+          "contenido": "parada ~ de autobús/de taxi/de metro"
+        },
+        {
+          "contenido": "ir ~ andando/en coche/en taxi/en tren/en metro/en autobús/en avión/en barco"
+        }
+      ],
+      "Sistema de Transporte - Tipos de Transporte Por Tierra": [
+        {
+          "contenido": "coche, metro, tren, autobús, taxi"
+        },
+        {
+          "contenido": "conductor, taxista"
+        },
+        {
+          "contenido": "aparcamiento, garaje"
+        },
+        {
+          "contenido": "estación ~ de tren/de metro/de autobuses"
+        },
+        {
+          "contenido": "ir ~ en metro/en coche/en autobús"
+        }
+      ],
+      "Sistema de Transporte - Tipos de Transporte Marítimo y Fluvial": [
+        {
+          "contenido": "puerto"
+        },
+        {
+          "contenido": "ir/viajar ~ en barco"
+        }
+      ],
+      "Sistema de Transporte - Tipos de Transporte Aéreo": [
+        {
+          "contenido": "avión, aeropuerto"
+        },
+        {
+          "contenido": "ir/viajar ~ en avión"
+        }
+      ],
+      "Sistema de Transporte - la Conducción - Normas": [
+        {
+          "contenido": "carné de conducir"
+        },
+        {
+          "contenido": "policía"
+        }
+      ]
+    },
+    "Ciencia y Tecnología": {
+      "Cuestiones Generales": [
+        {
+          "contenido": "ciencia, tecnología"
+        }
+      ],
+      "Matemáticas": [
+        {
+          "contenido": "número"
+        }
+      ],
+      "Informática y Nuevas Tecnologías": [
+        {
+          "contenido": "ordenador"
+        },
+        {
+          "contenido": "Internet"
+        },
+        {
+          "contenido": "correo electrónico"
+        },
+        {
+          "contenido": "página web"
+        }
+      ]
+    },
+    "Gobierno, Política y Sociedad": {
+      "Ley y Justicia": [
+        {
+          "contenido": "abogado"
+        }
+      ],
+      "Ejército": [
+        {
+          "contenido": "ejército"
+        },
+        {
+          "contenido": "guerra, paz"
+        }
+      ],
+      "Vida en Comunidad": [
+        {
+          "contenido": "vecino"
+        }
+      ],
+      "Conducta Social": [
+        {
+          "contenido": "amable, agradable, generoso"
+        },
+        {
+          "contenido": "egoísta"
+        },
+        {
+          "contenido": "educación"
+        }
+      ],
+      "Instituciones Políticas y Órganos de Gobierno": [
+        {
+          "contenido": "país, capital"
+        },
+        {
+          "contenido": "presidente"
+        },
+        {
+          "contenido": "rey, reina"
+        }
+      ]
+    },
+    "Actividades Artísticas": {
+      "Disciplinas y Cualidades Artísticas": [
+        {
+          "contenido": "cine, teatro, música"
+        },
+        {
+          "contenido": "película, concierto, foto"
+        },
+        {
+          "contenido": "museo, exposición"
+        },
+        {
+          "contenido": "ser ~ interesante/bonito/feo"
+        }
+      ],
+      "Música y Danza": [
+        {
+          "contenido": "música"
+        },
+        {
+          "contenido": "cantante"
+        },
+        {
+          "contenido": "cantar, bailar"
+        },
+        {
+          "contenido": "escuchar música"
+        },
+        {
+          "contenido": "ir a un concierto"
+        }
+      ],
+      "Arquitectura, Escultura y Pintura": [
+        {
+          "contenido": "museo, exposición"
+        },
+        {
+          "contenido": "edificio, monumento"
+        },
+        {
+          "contenido": "catedral, iglesia"
+        }
+      ],
+      "Literatura": [
+        {
+          "contenido": "libro"
+        },
+        {
+          "contenido": "escribir, leer"
+        }
+      ],
+      "Fotografía": [
+        {
+          "contenido": "foto"
+        }
+      ],
+      "Cine y Teatro": [
+        {
+          "contenido": "cine, teatro"
+        },
+        {
+          "contenido": "película, actor, actriz"
+        },
+        {
+          "contenido": "ir ~ al cine/al teatro"
+        }
+      ]
+    },
+    "Religión y Filosofía": {
+      "Religión": [
+        {
+          "contenido": "religión"
+        },
+        {
+          "contenido": "cristiano, judío, musulmán, budista"
+        },
+        {
+          "contenido": "ir ~ a la iglesia/a la mezquita/a la sinagoga"
+        }
+      ]
+    },
+    "Geografía y Naturaleza": {
+      "Universo y Espacio": [
+        {
+          "contenido": "sol"
+        }
+      ],
+      "Clima y Tiempo Atmosférico": [
+        {
+          "contenido": "primavera, verano, otoño, invierno"
+        },
+        {
+          "contenido": "llover, nevar"
+        },
+        {
+          "contenido": "hacer ~ frío/calor/sol/viento"
+        },
+        {
+          "contenido": "hacer ~ buen/mal ~ tiempo"
+        }
+      ],
+      "Fauna": [
+        {
+          "contenido": "animal"
+        }
+      ],
+      "Flora": [
+        {
+          "contenido": "planta, flor, árbol"
+        }
+      ],
+      "Geografía Física, Humana y Política": [
+        {
+          "contenido": "mapa, lugar"
+        },
+        {
+          "contenido": "país, pueblo, ciudad, capital"
+        },
+        {
+          "contenido": "Norte, Sur, Este, Oeste"
+        }
+      ],
+      "Paisaje y Accidentes Geográficos": [
+        {
+          "contenido": "montaña, mar, río, playa"
+        }
+      ],
+      "Ciudad": [
+        {
+          "contenido": "(el) centro"
+        },
+        {
+          "contenido": "casa, calle, plaza, parque, restaurante, tienda, centro comercial, hospital, iglesia, colegio, escuela, museo"
+        },
+        {
+          "contenido": "oficina de ~ información/turismo"
+        },
+        {
+          "contenido": "parada ~ de autobús/de taxis/de metro, estación ~ de tren/de autobuses/de metro"
+        }
+      ],
+      "Campo": [
+        {
+          "contenido": "campo, pueblo"
+        }
+      ]
+    },
+    "Vivienda": {
+      "Acciones Relacionadas con la Vivienda - Compra y Alquiler": [
+        {
+          "contenido": "comprar/vender/alquilar ~ un piso/un apartamento"
+        }
+      ],
+      "Acciones Relacionadas con la Vivienda - Ocupación": [
+        {
+          "contenido": "vivir ~ en una casa/en un apartamento/en un piso"
+        }
+      ],
+      "Características de la Vivienda - Tipos": [
+        {
+          "contenido": "casa, piso, apartamento, estudio"
+        }
+      ],
+      "Características de la Vivienda - Partes": [
+        {
+          "contenido": "habitación"
+        },
+        {
+          "contenido": "ascensor, escalera"
+        },
+        {
+          "contenido": "terraza, jardín"
+        },
+        {
+          "contenido": "ventana, puerta"
+        },
+        {
+          "contenido": "sala de estar, dormitorio, cocina, (cuarto de) baño, salón, garaje"
+        }
+      ],
+      "Características de la Vivienda - Condiciones": [
+        {
+          "contenido": "viejo, nuevo"
+        },
+        {
+          "contenido": "piso ~ exterior/interior/céntrico"
+        },
+        {
+          "contenido": "bien/mal ~ comunicado"
+        },
+        {
+          "contenido": "tener ~ ascensor/teléfono/aire acondicionado/calefacción (central/individual)"
+        }
+      ],
+      "Objetos Domésticos - Muebles y Objetos Domésticos": [
+        {
+          "contenido": "mesa, silla, cama, sofá"
+        },
+        {
+          "contenido": "sillón, armario, estantería"
+        },
+        {
+          "contenido": "ducha, lavabo"
+        }
+      ],
+      "Objetos Domésticos - Electrodomésticos": [
+        {
+          "contenido": "radio, televisión (TV), vídeo, DVD"
+        }
+      ]
+    },
+    "Economía E Industria": {
+      "Economía y Dinero": [
+        {
+          "contenido": "dinero, tarjeta"
+        },
+        {
+          "contenido": "caro, barato"
+        },
+        {
+          "contenido": "cambiar dinero"
+        }
+      ],
+      "Transacciones Comerciales y Mercados": [
+        {
+          "contenido": "vendedor, comprador"
+        },
+        {
+          "contenido": "comprar, vender"
+        },
+        {
+          "contenido": "pagar con tarjeta"
+        }
+      ],
+      "Tipos de Empresa y Organización": [
+        {
+          "contenido": "empresa, oficina, tienda"
+        },
+        {
+          "contenido": "jefe, director"
+        }
+      ],
+      "Pesca": [
+        {
+          "contenido": "pescado"
+        }
+      ]
+    }
+  }
+}

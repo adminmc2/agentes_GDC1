@@ -1,0 +1,746 @@
+{
+  "fuente": "PCIC A1 — Plan Curricular del Instituto Cervantes, Funciones comunicativas",
+  "nivel": "A1",
+  "origen": "caes complete system/references/plan_curricular/by_level/a1/a1_funciones_comunicativas_completo.json",
+  "fecha_copia": "2026-05-13",
+  "categorias": {
+    "Dar y Pedir Información": {
+      "Identificar": [
+        {
+          "contenido": "Yo...",
+          "ejemplo": "Yo soy Laura, ¿y tú? Nosotros vivimos en Italia."
+        },
+        {
+          "contenido": "... yo",
+          "ejemplo": "[-¿María Sánchez?] -(Sí, soy) yo. [-¿María Sánchez?] -(Sí, es) ella."
+        },
+        {
+          "contenido": "Mi + sust.",
+          "ejemplo": "Mi teléfono es el 699 705 388. Tu hermana es muy simpática. Sus amigos hablan español."
+        },
+        {
+          "contenido": "Este/Ese/Aquel + sust.",
+          "ejemplo": "[-¿Cuál quiere?] -Esta. [señalando con un gesto]"
+        },
+        {
+          "contenido": "Este/Ese/Aquel + es + SN",
+          "ejemplo": "Estos son mis padres y esta, mi hermana Carlota. [mostrando una fotografía]"
+        },
+        {
+          "contenido": "Esto",
+          "ejemplo": "Esto, por favor [señalando con un gesto]. Esto es Venezuela. [señalando un mapa]"
+        },
+        {
+          "contenido": "Nombre propio",
+          "ejemplo": "Daniel trabaja en un hospital. Barcelona está cerca del mar."
+        }
+      ],
+      "Pedir Información": [
+        {
+          "contenido": "Persona",
+          "ejemplo": "¿Quién es? [señalando con un gesto]"
+        },
+        {
+          "contenido": "Persona",
+          "ejemplo": "¿Cómo te llamas? ¿Cómo se llama tu hermano?"
+        },
+        {
+          "contenido": "Cosa",
+          "ejemplo": "¿Qué es esto? [señalando con un gesto]"
+        },
+        {
+          "contenido": "Lugar",
+          "ejemplo": "¿Dónde vives? ¿Dónde trabajas?"
+        },
+        {
+          "contenido": "Nacionalidad",
+          "ejemplo": "¿De dónde eres?"
+        },
+        {
+          "contenido": "Actividad",
+          "ejemplo": "¿Qué haces? ¿A qué te dedicas? ¿Cuál es tu profesión?"
+        },
+        {
+          "contenido": "Cantidad",
+          "ejemplo": "¿Cuántos años tienes? ¿Cuántas lenguas hablas?"
+        },
+        {
+          "contenido": "Hora",
+          "ejemplo": "¿Qué hora es?"
+        },
+        {
+          "contenido": "Razón, causa",
+          "ejemplo": "¿Por qué estudias español?"
+        },
+        {
+          "contenido": "Cosa: ¿... o...?",
+          "ejemplo": "¿Té o café?"
+        }
+      ],
+      "Dar Información": [
+        {
+          "contenido": "Datos personales - Enunciado declarativo",
+          "ejemplo": "[-¿Cómo te llamas?] -Mikel. [-¿Cuántos años tienes?] -Quince. [-¿De dónde eres?] -(Soy) senegalés. [-¿A qué te dedicas?] -Soy profesor de francés."
+        },
+        {
+          "contenido": "Cosa - Enunciado declarativo",
+          "ejemplo": "[-¿Qué es eso?] -Mi móvil."
+        },
+        {
+          "contenido": "Lugar - Adv. lugar, locución preposicional",
+          "ejemplo": "[-¿Dónde está el diccionario?] -Aquí. -En la mesa."
+        },
+        {
+          "contenido": "Hora, tiempo - Adv. tiempo, locución preposicional",
+          "ejemplo": "[-¿Qué hora es?] -Son las seis. [-¿A qué hora te levantas?] -Temprano. [-¿A qué hora tienes clase de español?] -Ahora."
+        },
+        {
+          "contenido": "Finalidad - Para + inf.",
+          "ejemplo": "Voy a clase para aprender español. Estudio español para trabajar en Chile."
+        },
+        {
+          "contenido": "Razón, causa - Porque...",
+          "ejemplo": "[-¿Por qué estudias español?] -Porque quiero trabajar en Chile."
+        }
+      ],
+      "Pedir Confirmación": [
+        {
+          "contenido": "..., ¿no?",
+          "ejemplo": "Eres Julián, ¿no?"
+        }
+      ],
+      "Confirmar la Información Previa": [
+        {
+          "contenido": "No + enunciado negativo previo",
+          "ejemplo": "[-Juan no habla italiano, ¿no?] -No, no habla italiano."
+        },
+        {
+          "contenido": "Sí + enunciado afirmativo previo",
+          "ejemplo": "[-Eres alemana, ¿no?] -Sí, soy alemana, de Múnich."
+        }
+      ],
+      "Corrigiendo Otra Información Previa": [
+        {
+          "contenido": "En respuesta a un enunciado afirmativo - No + enunciado previo, negado",
+          "ejemplo": "[-Katrin es alemana.] -No, no es alemana."
+        },
+        {
+          "contenido": "En respuesta a un enunciado afirmativo - No + nuevo enunciado",
+          "ejemplo": "[-Katrin es alemana.] -No, es austriaca."
+        },
+        {
+          "contenido": "En respuesta a un enunciado negativo - Sí + enunciado previo, negado",
+          "ejemplo": "[-Katrin no es austriaca.] -Sí, es austriaca."
+        }
+      ]
+    },
+    "Expresar Opiniones, Actitudes y Conocimientos": {
+      "Pedir Opinión": [
+        {
+          "contenido": "Opinión + ¿Y tú?",
+          "ejemplo": "Yo creo que el francés es fácil. ¿Y tú?"
+        },
+        {
+          "contenido": "Opinión + ¿no?",
+          "ejemplo": "Creo que esto es muy caro, ¿no?"
+        }
+      ],
+      "Expresar Desacuerdo": [
+        {
+          "contenido": "No, + negación de una opinión / valoración previa afirmativa",
+          "ejemplo": "[-Yo creo que el francés es muy fácil.] -No, no es fácil."
+        }
+      ],
+      "Mostrar Escepticismo": [
+        {
+          "contenido": "No sé",
+          "ejemplo": "No sé"
+        }
+      ],
+      "Presentar Un Contraargumento": [
+        {
+          "contenido": "Sí, pero.",
+          "ejemplo": "[-Es muy difícil.] -Sí, pero es muy interesante."
+        },
+        {
+          "contenido": "Repetición de la opinión / valoración + pero...",
+          "ejemplo": "[-Es muy bonito.] -Es muy bonito, pero muy caro."
+        }
+      ],
+      "Expresar Certeza y Evidencia": [
+        {
+          "contenido": "Oración declarativa",
+          "ejemplo": "Mi hermana se llama Luisa."
+        }
+      ],
+      "Expresar Falta de Certeza y Evidencia": [
+        {
+          "contenido": "Creo que...",
+          "ejemplo": "Creo que la profesora se llama Carmen."
+        }
+      ],
+      "Expresar Posibilidad": [
+        {
+          "contenido": "Es posible",
+          "ejemplo": "[-Creo que hay un aeropuerto cerca de la ciudad.] -Sí, es posible."
+        },
+        {
+          "contenido": "Quizá(s)...",
+          "ejemplo": "Está un poco triste, quizá ha recibido una mala noticia. [-Creo que esa es la hermana de John.] -¿Sí? Quizá."
+        }
+      ],
+      "Preguntar Por el Conocimiento de Algo": [
+        {
+          "contenido": "¿Sabes + SN / infinitivo?",
+          "ejemplo": "¿Sabes los números en español? ¿Sabes decir «hola» en alemán?"
+        },
+        {
+          "contenido": "¿Conoces + SN?",
+          "ejemplo": "¿Conoces Bolivia?"
+        }
+      ],
+      "Dar Una Opinión": [
+        {
+          "contenido": "(Yo) creo que...",
+          "ejemplo": "Yo creo que Santiago es una ciudad muy bonita."
+        }
+      ],
+      "Expresar Conocimiento": [
+        {
+          "contenido": "Sé...",
+          "ejemplo": "Sé los números en español. Nuria sabe griego clásico."
+        },
+        {
+          "contenido": "Sé + infinitivo",
+          "ejemplo": "Sé decir «hola» en alemán."
+        },
+        {
+          "contenido": "Conozco + SN",
+          "ejemplo": "Conozco Bolivia. Conozco a Leticia."
+        }
+      ],
+      "Expresar Desconocimiento": [
+        {
+          "contenido": "No sé + SN",
+          "ejemplo": "No sé los verbos irregulares."
+        },
+        {
+          "contenido": "No sé + infinitivo",
+          "ejemplo": "No sé pronunciar «perro»."
+        },
+        {
+          "contenido": "No conozco + SN",
+          "ejemplo": "No conozco Granada. No conozco a Sonia."
+        }
+      ],
+      "Preguntar Por la Habilidad para Hacer Algo": [
+        {
+          "contenido": "¿Sabes + SN?",
+          "ejemplo": "¿Sabes griego?"
+        },
+        {
+          "contenido": "¿Sabes + infinitivo?",
+          "ejemplo": "¿Sabes tocar la guitarra?"
+        }
+      ],
+      "Expresar Habilidad para Hacer Algo": [
+        {
+          "contenido": "Sé + SN",
+          "ejemplo": "Pepa no sabe alemán."
+        },
+        {
+          "contenido": "Sé + infinitivo",
+          "ejemplo": "Sé nadar."
+        }
+      ],
+      "Preguntar Si se Recuerda O se Ha Olvidado": [
+        {
+          "contenido": "Declaración + ¿Te acuerdas?",
+          "ejemplo": "Lo hemos visto esta mañana, ¿te acuerdas?"
+        }
+      ],
+      "Expresar que se Recuerda": [
+        {
+          "contenido": "Me acuerdo (bien / muy bien)",
+          "ejemplo": "[-La semana pasada empezamos una nueva lección.] -Sí, me acuerdo."
+        }
+      ],
+      "Expresar que No se Recuerda": [
+        {
+          "contenido": "No me acuerdo (bien / muy bien)",
+          "ejemplo": "[-¿Dónde está el coche?] -No me acuerdo."
+        }
+      ],
+      "Pedir Valoración": [
+        {
+          "contenido": "¿Está bien?",
+          "ejemplo": "¿Está bien?"
+        }
+      ],
+      "Valorar": [
+        {
+          "contenido": "(Muy/Bastante) bien/mal/regular",
+          "ejemplo": "(Muy/Bastante) bien/mal/regular"
+        },
+        {
+          "contenido": "Así, así",
+          "ejemplo": "[acompañado de movimientos rotatorios con la mano o encogimiento de hombros]"
+        },
+        {
+          "contenido": "Es (muy/bastante/un poco) + adj.",
+          "ejemplo": "El Museo del Prado es muy interesante. Esta camisa es bastante fea. El ejercicio es un poco difícil."
+        },
+        {
+          "contenido": "Movimientos de asentimiento/laterales con la cabeza",
+          "ejemplo": "[con significado equivalente a «valoración positiva/negativa»]"
+        }
+      ],
+      "Expresar Aprobación y Desaprobación": [
+        {
+          "contenido": "¡(Muy) mal/bien!",
+          "ejemplo": "¡(Muy) mal/bien!"
+        },
+        {
+          "contenido": "Gestos de aprobación/desaprobación",
+          "ejemplo": "Pequeños movimientos de arriba abajo con la cabeza. Movimientos de izquierda a derecha con la cabeza o el dedo índice."
+        }
+      ],
+      "Posicionarse a Favor O en Contra": [
+        {
+          "contenido": "(No) estoy de acuerdo",
+          "ejemplo": "[-Entonces, ¿cambiamos la hora de la clase del viernes?] -Sí, yo estoy de acuerdo."
+        }
+      ],
+      "Invitar al Acuerdo": [
+        {
+          "contenido": "Declaración + ¿verdad / no?",
+          "ejemplo": "Marta es muy simpática, ¿verdad?"
+        }
+      ],
+      "Expresar Acuerdo": [
+        {
+          "contenido": "Sí, + repetición de una opinión / valoración afirmativa",
+          "ejemplo": "[-Este parque es muy bonito.] -Sí, muy bonito."
+        },
+        {
+          "contenido": "Yo, también / tampoco",
+          "ejemplo": "[-Yo creo que hablar idiomas es importante.] -Yo, también."
+        },
+        {
+          "contenido": "No, + repetición de una opinión / valoración negativa",
+          "ejemplo": "[-El español no es difícil.] -No, no es difícil."
+        }
+      ]
+    },
+    "Expresar Gustos, Deseos y Sentimientos": {
+      "Expresar Planes E Intenciones": [
+        {
+          "contenido": "Marcador temporal referido al futuro + pres. ind.",
+          "ejemplo": "Esta noche hago los deberes. El domingo voy de excursión."
+        }
+      ],
+      "Preguntar Por el Estado de Ánimo": [
+        {
+          "contenido": "¿Qué tal estás?",
+          "ejemplo": "¿Cómo estás? ¿Estás bien?"
+        }
+      ],
+      "Expresar Alegría y Satisfacción": [
+        {
+          "contenido": "¡Muy bien!",
+          "ejemplo": "¡Muy bien!"
+        },
+        {
+          "contenido": "Estoy contento",
+          "ejemplo": "Estoy contento"
+        }
+      ],
+      "Expresar Tristeza y Aflicción": [
+        {
+          "contenido": "Estoy triste",
+          "ejemplo": "Estoy triste"
+        }
+      ],
+      "Expresar Placer y Diversión": [
+        {
+          "contenido": "¡Qué divertido!",
+          "ejemplo": "¡Qué divertido!"
+        }
+      ],
+      "Expresar Aburrimiento": [
+        {
+          "contenido": "¡Qué aburrido!",
+          "ejemplo": "¡Qué aburrido!"
+        }
+      ],
+      "Expresar Enfado E Indignación": [
+        {
+          "contenido": "Estoy (bastante / muy) enfadado",
+          "ejemplo": "Estoy (bastante / muy) enfadado"
+        }
+      ],
+      "Expresar Miedo, Ansiedad y Preocupación": [
+        {
+          "contenido": "Estoy preocupado",
+          "ejemplo": "Estoy preocupado"
+        },
+        {
+          "contenido": "Tengo miedo",
+          "ejemplo": "Tengo miedo"
+        }
+      ],
+      "Expresar Nerviosismo": [
+        {
+          "contenido": "Estoy nervioso",
+          "ejemplo": "Estoy nervioso"
+        }
+      ],
+      "Expresar Gustos E Intereses": [
+        {
+          "contenido": "(No) me gusta (mucho) + SN",
+          "ejemplo": "No me gustan las discotecas."
+        },
+        {
+          "contenido": "(No) me gusta (mucho) + infinitivo",
+          "ejemplo": "Me gusta mucho bailar."
+        }
+      ],
+      "Expresar Alivio": [
+        {
+          "contenido": "¡Uf!",
+          "ejemplo": "¡Uf!"
+        }
+      ],
+      "Expresar Sorpresa y Extrañeza": [
+        {
+          "contenido": "¡Increíble!",
+          "ejemplo": "¡Increíble!"
+        }
+      ],
+      "Expresar Afecto": [
+        {
+          "contenido": "Te quiero",
+          "ejemplo": "Te quiero"
+        }
+      ],
+      "Expresar Aversión": [
+        {
+          "contenido": "Odio + SN / infinitivo",
+          "ejemplo": "Odio la música pop. Odia levantarse pronto."
+        }
+      ],
+      "Preguntar Por Preferencias": [
+        {
+          "contenido": "SN o SN",
+          "ejemplo": "¿Té o café?"
+        }
+      ],
+      "Expresar Preferencia": [
+        {
+          "contenido": "Prefiero...",
+          "ejemplo": "Prefiero un café. Prefiero bailar."
+        }
+      ],
+      "Expresar Deseos": [
+        {
+          "contenido": "Quiero + SN / infinitivo",
+          "ejemplo": "Quiero una bicicleta nueva. Quiero aprender español."
+        }
+      ],
+      "Preguntar Por Planes E Intenciones": [
+        {
+          "contenido": "Pres. indic. + marcador temporal referido al futuro",
+          "ejemplo": "¿Trabajas mañana?"
+        }
+      ]
+    },
+    "Influir en el Interlocutor": {
+      "Dar Una Orden O Instrucción": [
+        {
+          "contenido": "De forma directa",
+          "ejemplo": "Shsss [= ¡Silencio!]"
+        },
+        {
+          "contenido": "De forma atenuada",
+          "ejemplo": "¡Silencio, por favor! Más despacio / alto, por favor. ¿Puedes repetir?"
+        }
+      ],
+      "Denegar Permiso": [
+        {
+          "contenido": "No",
+          "ejemplo": "No"
+        },
+        {
+          "contenido": "No + atenuador",
+          "ejemplo": "[-¿Puedo fumar?] -No, lo siento. -No. Perdón."
+        }
+      ],
+      "Proponer y Sugerir": [
+        {
+          "contenido": "Enunciado interrogativo",
+          "ejemplo": "¿Tomamos algo? ¿Comemos mañana?"
+        }
+      ],
+      "Ofrecer E Invitar": [
+        {
+          "contenido": "¿(Quieres) un / una...?",
+          "ejemplo": "¿Quieres una copa?"
+        },
+        {
+          "contenido": "¿SN?",
+          "ejemplo": "¿Un café? ¿Una cerveza? ¿Un cigarrillo?"
+        }
+      ],
+      "Aceptar Una Propuesta, Ofrecimiento O Invitación": [
+        {
+          "contenido": "Sin reservas",
+          "ejemplo": "Sí, gracias."
+        }
+      ],
+      "Rechazar Una Propuesta, Ofrecimiento O Invitación": [
+        {
+          "contenido": "No, (muchas) gracias",
+          "ejemplo": "No, (muchas) gracias."
+        }
+      ],
+      "Pedir Objetos": [
+        {
+          "contenido": "De forma atenuada",
+          "ejemplo": "Un café, por favor."
+        }
+      ],
+      "Pedir Ayuda": [
+        {
+          "contenido": "De forma atenuada",
+          "ejemplo": "Por favor [indicando con un gesto la acción que se quiere realizar]"
+        }
+      ],
+      "Responder a Una Orden, Petición O Ruego (Accediendo a Su Cumplimiento)": [
+        {
+          "contenido": "Sí, sí",
+          "ejemplo": "[-¿Puedes dejarme tu bolígrafo un momento, por favor?] -Sí, sí."
+        }
+      ],
+      "Responder a Una Orden, Petición O Ruego (Negándose a Su Cumplimiento)": [
+        {
+          "contenido": "No",
+          "ejemplo": "No"
+        }
+      ],
+      "Dar Permiso": [
+        {
+          "contenido": "Sin objeciones, Sí",
+          "ejemplo": "Sí. [-¿Se puede?] -Sí."
+        }
+      ]
+    },
+    "Relacionarse Socialmente": {
+      "Saludar": [
+        {
+          "contenido": "Hola",
+          "ejemplo": "Hola"
+        },
+        {
+          "contenido": "Buenos / as días / tardes / noches",
+          "ejemplo": "Buenos días"
+        }
+      ],
+      "Disculparse": [
+        {
+          "contenido": "Perdón",
+          "ejemplo": "Perdón"
+        }
+      ],
+      "Responder a Una Disculpa": [
+        {
+          "contenido": "Vale",
+          "ejemplo": "Vale"
+        }
+      ],
+      "Agradecer": [
+        {
+          "contenido": "(Muchas) gracias",
+          "ejemplo": "(Muchas) gracias"
+        }
+      ],
+      "Responder a Un Agradecimiento": [
+        {
+          "contenido": "De nada",
+          "ejemplo": "De nada"
+        }
+      ],
+      "Proponer Un Brindis": [
+        {
+          "contenido": "¡Salud!",
+          "ejemplo": "¡Salud!"
+        }
+      ],
+      "Felicitar": [
+        {
+          "contenido": "¡Felicidades! ¡Muy bien!",
+          "ejemplo": "¡Felicidades! ¡Muy bien!"
+        },
+        {
+          "contenido": "¡Felicidades! ¡Muy bien!",
+          "ejemplo": "¡Felicidades! ¡Muy bien!"
+        }
+      ],
+      "Formular Buenos Deseos": [
+        {
+          "contenido": "Desear éxito o suerte",
+          "ejemplo": "Suerte"
+        }
+      ],
+      "Responder a Un Saludo": [
+        {
+          "contenido": "Hola",
+          "ejemplo": "Hola"
+        },
+        {
+          "contenido": "Buenos / as días / tardes / noches",
+          "ejemplo": "Buenos días"
+        }
+      ],
+      "Despedirse": [
+        {
+          "contenido": "¡Adiós!",
+          "ejemplo": "¡Adiós!"
+        }
+      ],
+      "Dirigirse a Alguien": [
+        {
+          "contenido": "Hola",
+          "ejemplo": "Hola"
+        },
+        {
+          "contenido": "Hola + nombre de pila",
+          "ejemplo": "Hola, Maite."
+        },
+        {
+          "contenido": "Señor/Señora + apellido",
+          "ejemplo": "Sr. López"
+        },
+        {
+          "contenido": "Por favor",
+          "ejemplo": "Por favor"
+        }
+      ],
+      "Presentar a Alguien (Presentaciones Informales)": [
+        {
+          "contenido": "Este es + nombre de pila",
+          "ejemplo": "Esta es Ana."
+        }
+      ],
+      "Presentar a Alguien (Presentarse Uno Mismo)": [
+        {
+          "contenido": "Saludo + Soy/Me llamo + nombre de pila + profesión",
+          "ejemplo": "Hola, soy Pedro, ¿qué tal? Buenas tardes, me llamo Julio López Arganda; soy estudiante de informática."
+        }
+      ],
+      "Responder a Una Presentación": [
+        {
+          "contenido": "Encantado",
+          "ejemplo": "Encantado"
+        },
+        {
+          "contenido": "Hola",
+          "ejemplo": "Hola"
+        },
+        {
+          "contenido": "Hola, ¿qué tal?",
+          "ejemplo": "Hola, ¿qué tal?"
+        }
+      ],
+      "Dar la Bienvenida a Alguien": [
+        {
+          "contenido": "Bienvenido",
+          "ejemplo": "Bienvenido"
+        }
+      ],
+      "Responder a Una Bienvenida": [
+        {
+          "contenido": "(Muchas) gracias",
+          "ejemplo": "(Muchas) gracias"
+        }
+      ]
+    },
+    "Estructurar el Discurso": {
+      "Pedir a Alguien que Guarde Silencio": [
+        {
+          "contenido": "[conversaciones cara a cara]",
+          "ejemplo": "Shhhh"
+        },
+        {
+          "contenido": "[conversaciones cara a cara]",
+          "ejemplo": "Silencio, por favor"
+        },
+        {
+          "contenido": "[conversaciones cara a cara]",
+          "ejemplo": "Shhhh, silencio, por favor"
+        }
+      ],
+      "Indicar que se Sigue el Relato con Interés": [
+        {
+          "contenido": "[conversaciones cara a cara y telefónicas]",
+          "ejemplo": "Sí"
+        }
+      ],
+      "Establecer la Comunicación": [
+        {
+          "contenido": "[conversación cara a cara] Llamada de atención verbal",
+          "ejemplo": "¡Eh!"
+        },
+        {
+          "contenido": "[conversación cara a cara]",
+          "ejemplo": "Por favor"
+        },
+        {
+          "contenido": "[conversación cara a cara] Nombre",
+          "ejemplo": "María"
+        }
+      ],
+      "Reaccionar": [
+        {
+          "contenido": "[conversación cara a cara]",
+          "ejemplo": "Hola"
+        },
+        {
+          "contenido": "[conversación cara a cara]",
+          "ejemplo": "¿Sí?"
+        }
+      ],
+      "Saludar": [
+        {
+          "contenido": "Hola",
+          "ejemplo": "Hola"
+        },
+        {
+          "contenido": "Buenos/as días/tardes/noches",
+          "ejemplo": "Buenos/as días/tardes/noches"
+        }
+      ],
+      "Responder a Un Saludo": [
+        {
+          "contenido": "Hola",
+          "ejemplo": "Hola"
+        },
+        {
+          "contenido": "Buenos/as días/tardes/noches",
+          "ejemplo": "Buenos/as días/tardes/noches"
+        }
+      ],
+      "Preguntar Por Una Persona": [
+        {
+          "contenido": "[conversación cara a cara] ¿El Sr. + apellido + por favor?",
+          "ejemplo": "¿El Sr. González, por favor?"
+        }
+      ],
+      "Responder (Identificándose)": [
+        {
+          "contenido": "[conversación cara a cara]",
+          "ejemplo": "[-Hola, ¿eres Antonio?] -Sí, soy yo."
+        }
+      ]
+    }
+  }
+}

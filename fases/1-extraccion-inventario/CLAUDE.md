@@ -2,6 +2,17 @@
 
 > Auto-cargado por Claude Code al trabajar dentro de `fases/1-extraccion-inventario/`. **Contrato corto de la fase**: qué produce, dónde input/output, cómo validar, reglas críticas, navegación. El detalle operativo vive en los archivos hermanos.
 
+> ⚠️ **FASE 1 EN MIGRACIÓN.** Estado real de cada contrato a fecha actual:
+>
+> - ✅ **`prompt.md`** — entry point operativo nuevo, alineado con el modelo IA-first.
+> - 🟢 **`schema-inventario.md`** — cuerpo alineado con el modelo nuevo (4 bloques top-level consolidados, 4 listas tipadas por actividad y cuadro, sufijo `@R`, marcas internas declaradas, normalización de formas_trabajadas). Deuda específica de migración aún pendiente, catalogada en el **Apéndice transitorio §A.3** del propio schema (renombrados de enums, alineación con el validador y con el registry verbal).
+> - 🟡 **`reglas-operativas.md`** — cuerpo mixto. La mayoría de §1-§9 conserva contenido v1 pre-rediseño (pendiente migración Paso 2). Pero **ya hay reglas del rediseño integradas en cuerpo con carácter obligatorio**: §5.10 (verbo soporte vs paradigma trabajado), §5.11 (normalización de `formas_trabajadas` en consolidado), §5.12 (procedimiento OBLIGATORIO de poblado de `recurrente`, con detección por dimensión §5.12.A/B/C), §5.13 (propuesta-en-chat ante toda decisión no clara), §5.14 (construcción iterativa de `recurrente`). El **banner de follow-ups** al inicio del archivo conserva las reglas aún no integradas: sufijo `@R`, regla 11 sobre `audio.transcripcion`, input incidental vs contenido enseñado, anticipación vs recurrente, heterogeneidad semántica.
+> - 🟡 **`convenciones-y-casos.md`** — ajustes parciales aplicados durante el rediseño (renombrado `fonetica → pronunciacion_ortografia`). Migración completa pendiente.
+> - 🚫 `docs/historico/prompt-v1-antiguo.md`, `docs/historico/prompt-v2-monolitico-NO-USAR.md` — versiones antiguas archivadas, no usar.
+> - 📑 `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`, `PROPUESTA-PIEZA-2-IA-FIRST.md` — documentos de discusión arquitectónica, no input de corridas.
+>
+> **Regla de precedencia durante la transición:** cuando una regla concreta de `reglas-operativas.md` entra en conflicto con `schema-inventario.md`, **prevalece el schema**. Detalle de la transición operativa en la nota transitoria del `prompt.md`.
+
 ---
 
 ## Qué produce esta fase
@@ -49,6 +60,19 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 | ¿Hubo un caso similar antes en una extracción real? | `convenciones-y-casos.md` §4 (casebook) |
 | ¿Cómo se añade un caso nuevo al sistema? | `convenciones-y-casos.md` §5 |
 | ¿Qué nombres de `campo_semantico` y de claves de `vocabulario_consolidado` son válidos? | `campos-semanticos-canonicos.json` (fuente de datos) + `reglas-operativas.md` §5.6 (política, árbol de decisión, rollout) |
+| ¿Qué fuente PCIC apoya cada dimensión? Glosario "Fuentes PCIC y registries canónicos" (tabla resumen) + archivos `pcic-a1-vocabulario.json`, `pcic-a1-gramatica.json`, `pcic-a1-pronunciacion-ortografia.json`, `pcic-a1-comunicacion.json` |
+
+---
+
+## Fixtures exploratorias (`UNp`)
+
+Carpetas tipo `unidades/UN-propuesta/` con inventarios `UN-propuesta-nc1-inventario.json` cuyo campo `unidad` es la cadena `"Np"` (no entero). **No son inventarios canónicos del curso.** Su propósito es servir como muestra para revisar el shape nuevo, estresar el contrato y exponer ambigüedades operativas durante el rediseño.
+
+**Reglas:**
+- Una fixture lleva siempre un bloque top-level `_fixture_exploratoria` con `tipo`, `fecha`, `proposito` y `no_es_inventario_canonico: true`.
+- Puede contener marcas bloqueantes (`_pendiente_canon`, `_funcion_ambigua`) — la fixture **no es cerrable**.
+- Un inventario candidato a cierre debe usar `unidad: N` (entero) y cabecera coincidente con `unidades/nc1-curso.json`.
+- El dashboard tolera fixtures `Np` y las muestra junto a los inventarios oficiales para facilitar revisión humana.
 
 ---
 
