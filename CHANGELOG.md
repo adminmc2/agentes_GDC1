@@ -5,6 +5,15 @@
 
 ---
 
+## [v10.114 — 2026-05-13] — Archivo de documentos absorbidos a `docs/historico/`
+
+Dos documentos de fase 1 cuyo contenido ya está absorbido en los contratos vivos pasan a histórico:
+
+- `fases/1-extraccion-inventario/schema-inventario-viejo.md` → `docs/historico/schema-inventario-viejo.md`. Su propio header lo declaraba histórico; sus decisiones viven ahora en `schema-inventario.md` cuerpo §1-§14.
+- `fases/1-extraccion-inventario/PROPUESTA-PIEZA-2-IA-FIRST.md` → `docs/historico/PROPUESTA-PIEZA-2-IA-FIRST.md`. Propuesta arquitectónica del rediseño IA-first, absorbida en `prompt.md`, `schema-inventario.md`, `glosario.md` y `reglas-operativas.md`.
+
+`fases/1-extraccion-inventario/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md` se mantiene en su ubicación actual por decisión del autor (sigue siendo referencia de discusión activa). Referencias actualizadas en `CLAUDE.md` de fase 1.
+
 ## [v10.113 — 2026-05-13] — Retirada de fixtures exploratorias U2p y U3p tras prueba
 
 Las fixtures `U2-propuesta` y `U3-propuesta` introducidas en v10.112 cumplieron su función (prueba mínima discriminativa + segunda prueba cerrable que reveló el error de proceso motivador de `reglas-operativas.md` §5.12-§5.14). Eliminadas del repositorio tras consolidar las lecciones en contrato vivo. `U1-propuesta` se mantiene intacta con su shape original (`_propuesta_rediseno` + `_migracion_rediseno`) y su banner especial en el dashboard, reservada como muestra de la arquitectura nueva para revisión futura. Sin cambios en el contrato documental ni en el dashboard.

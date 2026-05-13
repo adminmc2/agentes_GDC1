@@ -9,7 +9,8 @@
 > - 🟡 **`reglas-operativas.md`** — cuerpo mixto. La mayoría de §1-§9 conserva contenido v1 pre-rediseño (pendiente migración Paso 2). Pero **ya hay reglas del rediseño integradas en cuerpo con carácter obligatorio**: §5.10 (verbo soporte vs paradigma trabajado), §5.11 (normalización de `formas_trabajadas` en consolidado), §5.12 (procedimiento OBLIGATORIO de poblado de `recurrente`, con detección por dimensión §5.12.A/B/C), §5.13 (propuesta-en-chat ante toda decisión no clara), §5.14 (construcción iterativa de `recurrente`). El **banner de follow-ups** al inicio del archivo conserva las reglas aún no integradas: sufijo `@R`, regla 11 sobre `audio.transcripcion`, input incidental vs contenido enseñado, anticipación vs recurrente, heterogeneidad semántica.
 > - 🟡 **`convenciones-y-casos.md`** — ajustes parciales aplicados durante el rediseño (renombrado `fonetica → pronunciacion_ortografia`). Migración completa pendiente.
 > - 🚫 `docs/historico/prompt-v1-antiguo.md`, `docs/historico/prompt-v2-monolitico-NO-USAR.md` — versiones antiguas archivadas, no usar.
-> - 📑 `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`, `PROPUESTA-PIEZA-2-IA-FIRST.md` — documentos de discusión arquitectónica, no input de corridas.
+> - 📑 `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md` (en esta carpeta) — documento de discusión arquitectónica, no input de corridas.
+> - 🗄️ `docs/historico/PROPUESTA-PIEZA-2-IA-FIRST.md`, `docs/historico/schema-inventario-viejo.md` — archivados en histórico el 2026-05-13; ya absorbidos en los contratos vivos.
 >
 > **Regla de precedencia durante la transición:** cuando una regla concreta de `reglas-operativas.md` entra en conflicto con `schema-inventario.md`, **prevalece el schema**. Detalle de la transición operativa en la nota transitoria del `prompt.md`.
 
