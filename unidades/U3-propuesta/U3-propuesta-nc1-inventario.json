@@ -1,0 +1,1301 @@
+{
+  "_fixture_exploratoria": {
+    "tipo": "prueba_minima_cerrable",
+    "fecha": "2026-05-13",
+    "proposito": "Segunda fixture exploratoria diseñada para CERRAR sin marcas bloqueantes. Páginas elegidas (p32 vocabulario familiar puro + p34 gramática regular pura) evitan ambigüedades por diseño. Las decisiones operativas se han traído al chat antes de poblar (política feedback_dudas_en_chat).",
+    "no_es_inventario_canonico": true,
+    "convencion_naming": "Los inventarios `Np` (donde N es entero) son fixtures exploratorias visibles en el dashboard, no inventarios oficiales del curso.",
+    "hallazgos": {
+      "anticipaciones_detectadas_para_fase_2": [],
+      "categorias_recurrentes_propuestas_y_validadas": [
+        "Síntesis 'Concordancia artículo-sustantivo en género y número' (decisión D2a, validada 2026-05-13)",
+        "Categorías separadas 'Artículos determinados' y 'Masculino y femenino' coexisten con la síntesis (decisión D2b, validada 2026-05-13)"
+      ]
+    }
+  },
+  "unidad": "3p",
+  "curso": "nc1",
+  "titulo": "La Familia (propuesta — pp. 32 y 34, prueba mínima cerrable)",
+  "paginas_libro": "32-41",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U3/fuente/U3-nc1.pdf",
+    "version_extraccion": "2026-05-13"
+  },
+  "contenidos_indice": {
+    "vocabulario": "Parientes",
+    "gramatica": "Presente de los verbos regulares. Interrogativos. Posesivos",
+    "comunicacion": "Presentar a alguien. Hablar de la familia. La hora",
+    "destrezas": "Escribir un correo con información personal, sobre la familia y los compañeros de clase. Escuchar la programación de la televisión",
+    "cultura": "El cómic y las películas de animación"
+  },
+  "vocabulario_consolidado": {
+    "principal": {
+      "Parientes": {
+        "items": [
+          {
+            "palabra": "abuelo",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "abuela",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "abuelos",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "madre",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "padre",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "padres",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "tío",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "tía",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "hermano",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "hermana",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "primo",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "prima",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "mujer",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "marido",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "hija",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "hijos",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "nietos",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "nietas",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "sobrino",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "sobrina",
+            "fuentes": [
+              "p32-act3"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p32-act1",
+          "p32-act3"
+        ],
+        "descripcion": {
+          "U3": "PCIC A1 — vocabulario de relaciones familiares (parientes): tres generaciones presentadas en el árbol genealógico de David, con singulares (act1) y plurales + extensión léxica (act3: mujer/marido, hijos/hija, nietos/nietas, sobrino/sobrina)."
+        }
+      }
+    },
+    "recurrente": {}
+  },
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "ser",
+      "tipo_de_verbo": [
+        "copulativo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "es",
+        "son"
+      ],
+      "fuentes": [
+        "p32-act3",
+        "p32-act4"
+      ],
+      "descripcion": {
+        "U3": "Reaparece como soporte de las descripciones familiares (Carlos y Juana son los abuelos de David; Alicia es la mujer de Luis). Paradigma ya consolidado en U1 (singular) y U2 (plural)."
+      }
+    },
+    {
+      "lema": "tener",
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "tienen"
+      ],
+      "fuentes": [
+        "p32-act3"
+      ],
+      "descripcion": {
+        "U3": "Reaparece en el texto del árbol genealógico (Carlos y Juana tienen cinco nietos). Paradigma ya consolidado en U1 y U2."
+      }
+    },
+    {
+      "lema": "llamarse",
+      "tipo_de_verbo": [
+        "pronominal"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "se llama"
+      ],
+      "fuentes": [
+        "p32-act2",
+        "p32-act4"
+      ],
+      "descripcion": {
+        "U3": "Reaparece sistemáticamente en p32-act2 con la estructura 'Su X se llama Y' (10 frases) y en la interacción oral. Paradigma de presente ya consolidado en U1."
+      }
+    },
+    {
+      "lema": "estudiar",
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "estudio",
+        "estudias",
+        "estudia",
+        "estudiamos",
+        "estudiáis",
+        "estudian"
+      ],
+      "fuentes": [
+        "cuadro@p34",
+        "p34-act1",
+        "p34-act2"
+      ],
+      "descripcion": {
+        "U3": "Verbo modelo de la primera conjugación (-ar) en el cuadro de presente regular. Trabajado en todas las personas tanto en cuadro como en actividades."
+      }
+    },
+    {
+      "lema": "comer",
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "regular -er"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "como",
+        "comes",
+        "come",
+        "comemos",
+        "coméis",
+        "comen"
+      ],
+      "fuentes": [
+        "cuadro@p34",
+        "p34-act1",
+        "p34-act2"
+      ],
+      "descripcion": {
+        "U3": "Verbo modelo de la segunda conjugación (-er) en el cuadro de presente regular. Trabajado en todas las personas."
+      }
+    },
+    {
+      "lema": "vivir",
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ir"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "vivo",
+        "vives",
+        "vive",
+        "vivimos",
+        "vivís",
+        "viven"
+      ],
+      "fuentes": [
+        "cuadro@p34",
+        "p34-act1",
+        "p34-act2"
+      ],
+      "descripcion": {
+        "U3": "Verbo modelo de la tercera conjugación (-ir) en el cuadro de presente regular. Trabajado en todas las personas."
+      }
+    },
+    {
+      "lema": "trabajar",
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "trabaja"
+      ],
+      "fuentes": [
+        "p34-act1",
+        "p34-act2"
+      ],
+      "descripcion": {
+        "U3": "Verbo regular -ar usado en actividades como aplicación del paradigma de presente regular."
+      }
+    },
+    {
+      "lema": "hablar",
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "hablamos",
+        "habla"
+      ],
+      "fuentes": [
+        "p34-act1",
+        "p34-act2"
+      ],
+      "descripcion": {
+        "U3": "Verbo regular -ar usado en actividades del cuadro de presente regular."
+      }
+    },
+    {
+      "lema": "escribir",
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ir"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "escribe",
+        "escribes"
+      ],
+      "fuentes": [
+        "p34-act1",
+        "p34-act2"
+      ],
+      "descripcion": {
+        "U3": "Verbo regular -ir usado en actividades del cuadro de presente regular."
+      }
+    }
+  ],
+  "gramatica_consolidada": {
+    "principal": {
+      "Presente de los verbos regulares": {
+        "items": [
+          {
+            "palabra": "-ar: estudiar (modelo)",
+            "fuentes": [
+              "cuadro@p34"
+            ]
+          },
+          {
+            "palabra": "-er: comer (modelo)",
+            "fuentes": [
+              "cuadro@p34"
+            ]
+          },
+          {
+            "palabra": "-ir: vivir (modelo)",
+            "fuentes": [
+              "cuadro@p34"
+            ]
+          },
+          {
+            "palabra": "yo / tú / él-ella-Ud. / nosotros / vosotros / ellos-ellas-Uds.",
+            "fuentes": [
+              "cuadro@p34"
+            ]
+          }
+        ],
+        "fuentes": [
+          "cuadro@p34",
+          "p34-act1",
+          "p34-act2"
+        ],
+        "descripcion": {
+          "U3": "PCIC A1 — flexión personal del presente de indicativo de los verbos regulares de las tres conjugaciones (-ar, -er, -ir). Verbos modelo: estudiar, comer, vivir."
+        }
+      },
+      "Interrogativos": {
+        "items": [
+          {
+            "palabra": "Qué",
+            "fuentes": [
+              "cuadro@p34#2",
+              "p34-act3"
+            ]
+          },
+          {
+            "palabra": "Quién / Quiénes",
+            "fuentes": [
+              "cuadro@p34#2",
+              "p34-act3"
+            ]
+          },
+          {
+            "palabra": "Cuál",
+            "fuentes": [
+              "cuadro@p34#2",
+              "p34-act3"
+            ]
+          },
+          {
+            "palabra": "Dónde",
+            "fuentes": [
+              "cuadro@p34#2",
+              "p34-act3"
+            ]
+          },
+          {
+            "palabra": "Cómo",
+            "fuentes": [
+              "cuadro@p34#2",
+              "p34-act3"
+            ]
+          },
+          {
+            "palabra": "Cuándo",
+            "fuentes": [
+              "cuadro@p34#2"
+            ]
+          },
+          {
+            "palabra": "Cuánto/-a/-os/-as",
+            "fuentes": [
+              "cuadro@p34#2"
+            ]
+          }
+        ],
+        "fuentes": [
+          "cuadro@p34#2",
+          "p34-act3"
+        ],
+        "destacar_si_es_obvio": false,
+        "descripcion": {
+          "U3": "PCIC A1 — pronombres interrogativos en preguntas directas: qué, quién/quiénes, cuál, dónde, cómo, cuándo, cuánto/-a/-os/-as. Inventario sistematizado en el cuadro y aplicado en la actividad de selección."
+        }
+      },
+      "Posesivos": {
+        "items": [
+          {
+            "palabra": "su (3ª persona singular)",
+            "fuentes": [
+              "p32-act2"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p32-act2"
+        ],
+        "descripcion": {
+          "U3": "Primera aparición sistemática del posesivo 'su' en la unidad (10 frases del tipo 'Su X se llama Y'). El paradigma completo de posesivos se trabajará formalmente en p35 (fuera del alcance de esta fixture)."
+        }
+      }
+    },
+    "recurrente": {
+      "Concordancia artículo-sustantivo en género y número": {
+        "items": [
+          {
+            "palabra": "el abuelo / la abuela",
+            "fuentes": [
+              "p32-act1",
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "el padre / la madre",
+            "fuentes": [
+              "p32-act1",
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "los abuelos / los padres",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "el tío / la tía",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "el hermano / la hermana",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "el primo / la prima",
+            "fuentes": [
+              "p32-act1"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p32-act1",
+          "p32-act3"
+        ],
+        "descripcion": {
+          "U3": "Categoría sintética (decisión D2a, validada 2026-05-13): integra 'Artículos determinados' y 'Masculino y femenino' (canónicos por separado en U1) cuando se presentan integrados en la concordancia art+sust. Reaparece en U3 a través del vocabulario de parientes que sistemáticamente cruza género y número."
+        }
+      },
+      "Artículos determinados": {
+        "items": [
+          {
+            "palabra": "el",
+            "fuentes": [
+              "p32-act1",
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "la",
+            "fuentes": [
+              "p32-act1",
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "los",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "las",
+            "fuentes": [
+              "p32-act3"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p32-act1",
+          "p32-act3"
+        ],
+        "descripcion": {
+          "U3": "Reaparece de U1 (canónico principal allí). Coexiste con la síntesis 'Concordancia...' (decisión D2b, validada 2026-05-13): la categoría separada se conserva para que fase 2 pueda rastrear el reciclaje del artículo determinado de forma independiente del fenómeno integrado."
+        }
+      },
+      "Masculino y femenino": {
+        "items": [
+          {
+            "palabra": "abuelo/abuela",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "padre/madre",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "tío/tía",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "hermano/hermana",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "primo/prima",
+            "fuentes": [
+              "p32-act1"
+            ]
+          },
+          {
+            "palabra": "marido/mujer",
+            "fuentes": [
+              "p32-act3"
+            ]
+          },
+          {
+            "palabra": "sobrino/sobrina",
+            "fuentes": [
+              "p32-act3"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p32-act1",
+          "p32-act3"
+        ],
+        "descripcion": {
+          "U3": "Reaparece de U1 (canónico principal allí). Coexiste con la síntesis 'Concordancia...' (decisión D2b, validada 2026-05-13): los pares de género del vocabulario de parientes hacen recurrente esta categoría con frecuencia alta y valor pedagógico de consolidación."
+        }
+      }
+    }
+  },
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {},
+    "recurrente": {}
+  },
+  "secciones": {
+    "vocabulario": {
+      "paginas": [
+        32
+      ],
+      "actividades_ids": [
+        "U3-p32-act01",
+        "U3-p32-act02",
+        "U3-p32-act03",
+        "U3-p32-act04"
+      ]
+    },
+    "gramatica": {
+      "paginas": [
+        34
+      ],
+      "actividades_ids": [
+        "U3-p34-act01",
+        "U3-p34-act02",
+        "U3-p34-act03"
+      ]
+    },
+    "comunicacion": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "destrezas": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "cultura": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "evaluacion": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "reflexion": {
+      "paginas": [],
+      "actividades_ids": []
+    }
+  },
+  "_decisiones_ia": [
+    "p32-act2 (Su X se llama Y): añadido 'Posesivos' a actividad.gramatica. Propuesta de Claude y validada por autor el 2026-05-13 (decisión D1a). Aunque el foco aparente sea léxico, el uso sistemático de 'su' en 10 frases consecutivas trabaja el posesivo como contenido secundario reconocible.",
+    "gramatica_consolidada.recurrente con tres entradas: la categoría sintética 'Concordancia artículo-sustantivo en género y número' (D2a) coexiste con las categorías separadas 'Artículos determinados' y 'Masculino y femenino' (D2b). Validado por autor el 2026-05-13. La doble representación permite a fase 2 rastrear tanto el reciclaje de cada categoría individual como el fenómeno integrado.",
+    "Sílaba tónica subrayada en p32-act1 NO se codifica como recurrente en pronunciacion_ortografia_consolidada (decisión D3b). Es convención de transcripción del libro hasta U3, no contenido enseñado en estas páginas. Queda registrada en datos._nota de la actividad.",
+    "Demostrativos no entran como recurrente: aparecen solo 1 vez ('estos niños' en cuadro@p34#2 como ejemplo de Quiénes), insuficiente para criterio de frecuencia.",
+    "Audio de p32 (pistas 31, 32, 33) sin transcripción: por regla 11 (banner follow-ups), el contenido del audio no aporta como fuente válida a los bloques consolidados. Las formas extraídas en tiempos_y_verbos vienen del texto verbatim de items_libro (texto del libro), no del audio."
+  ],
+  "paginas_detalle": [
+    {
+      "pagina": 32,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U3-p32-act01",
+          "numero": 1,
+          "tipo": "escucha_y_repite",
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora",
+            "expresion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Mira el árbol genealógico de la familia de David. Después, escucha y repite.",
+          "vocabulario": [
+            "Parientes"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 31
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Árbol genealógico de la familia de David con 3 generaciones: arriba 1 abuelo y 2 abuela; en medio 3 madre, 4 padre, 5 tío, 6 tía, 7 tía; abajo 8 hermano, DAVID, 9 hermana, 10 primo, 11 prima."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "1 a_bue_lo",
+              "2 a_bue_la",
+              "3 _ma_dre",
+              "4 _pa_dre",
+              "5 _tí_o",
+              "6 _tí_a",
+              "7 _tí_a",
+              "8 her_ma_no",
+              "9 her_ma_na",
+              "10 _pri_mo",
+              "11 _pri_ma"
+            ],
+            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+          }
+        },
+        {
+          "id": "U3-p32-act02",
+          "numero": 2,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_escrita"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha a David. Mira el árbol genealógico anterior y forma frases con los siguientes nombres como en el ejemplo.",
+          "vocabulario": [
+            "Parientes"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "llamarse",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "se llama"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Posesivos"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 32
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "2 Su abuela se llama Juana.",
+            "3 Su madre se llama Alicia.",
+            "4 Su padre se llama Luis.",
+            "5 Su tío se llama Roberto.",
+            "6 Su tía se llama Pilar.",
+            "7 Su tía se llama Carmen.",
+            "8 Su hermano se llama Nacho.",
+            "9 Su hermana se llama María.",
+            "10 Su primo se llama Álvaro.",
+            "11 Su prima se llama Paloma."
+          ],
+          "datos": {
+            "ejemplo_libro": "1. Su abuelo se llama Carlos.",
+            "palabras_recuadro": [
+              "Carmen",
+              "Roberto",
+              "Carlos (tachado, ya usado en el ejemplo)",
+              "Alicia",
+              "María",
+              "Nacho",
+              "Juana",
+              "Luis",
+              "Álvaro",
+              "Paloma",
+              "Pilar"
+            ]
+          }
+        },
+        {
+          "id": "U3-p32-act03",
+          "numero": 3,
+          "tipo": "escucha_y_responde",
+          "destreza": [
+            "comprension_auditiva",
+            "mediacion"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha las frases. ¿Cómo se dicen las palabras subrayadas en tu idioma?",
+          "vocabulario": [
+            "Parientes"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ser",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "son",
+                "es"
+              ]
+            },
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "tienen"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 33
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "items_libro": [
+              "1 Carlos y Juana son los _abuelos_ de David.",
+              "2 Alicia y Luis son los _padres_ de David, María y Nacho.",
+              "3 Alicia es la _mujer_ de Luis.",
+              "4 Luis es el _marido_ de Alicia.",
+              "5 David y Nacho son sus _hijos_.",
+              "6 María es su _hija_.",
+              "7 Carlos y Juana tienen cinco _nietos_: dos _nietas_ y tres _nietos_.",
+              "8 David es el _sobrino_ de Roberto y Carmen.",
+              "9 Paloma es la _sobrina_ de Alicia."
+            ],
+            "_nota": "Las palabras a traducir aparecen subrayadas en el libro (marcadas con _palabra_)."
+          }
+        },
+        {
+          "id": "U3-p32-act04",
+          "numero": 4,
+          "tipo": "interaccion_oral",
+          "destreza": [
+            "interaccion_oral"
+          ],
+          "enfoque": "vocabulario",
+          "instruccion_original": "En parejas, practica la siguiente conversación. Pregunta y responde sobre otros miembros de la familia de David.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ser",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "es"
+              ]
+            },
+            {
+              "lema": "llamarse",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "se llama"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {
+            "ejemplo_libro": "¿Quién es Carlos? / Es el abuelo de David. / ¿Cómo se llama la madre de David? / Alicia."
+          }
+        }
+      ],
+      "cuadros": []
+    },
+    {
+      "pagina": 34,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U3-p34-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa con la forma correcta del verbo.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "estudiar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "estudian",
+                "estudia"
+              ]
+            },
+            {
+              "lema": "comer",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "como",
+                "coméis"
+              ]
+            },
+            {
+              "lema": "vivir",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "vives",
+                "vivimos",
+                "vivís"
+              ]
+            },
+            {
+              "lema": "trabajar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "trabaja"
+              ]
+            },
+            {
+              "lema": "hablar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "hablamos"
+              ]
+            },
+            {
+              "lema": "escribir",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "escribe"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Presente de los verbos regulares"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 estudian",
+            "2 como",
+            "3 vives",
+            "4 estudia",
+            "5 vivimos",
+            "6 coméis",
+            "7 trabaja",
+            "8 hablamos",
+            "9 escribe",
+            "10 vivís"
+          ],
+          "datos": {
+            "ejemplo_libro": "Su hermano (vivir) vive en Buenos Aires",
+            "items_libro": [
+              "1 Pablo y Jorge (estudiar) _____ en el mismo colegio.",
+              "2 Yo (comer) _____ a las dos y veinte.",
+              "3 ¿Dónde (vivir) _____ tú?",
+              "4 Jorge (estudiar) _____ música.",
+              "5 Mis primos y yo (vivir) _____ en Arévalo.",
+              "6 ¿Dónde (comer, vosotros) _____?",
+              "7 Mi madre (trabajar) _____ en un hospital.",
+              "8 María y yo no (hablar) _____ mucho por teléfono.",
+              "9 Elena no (escribir) _____ en su diario todos los días.",
+              "10 ¿Dónde (vivir, vosotros) _____?"
+            ]
+          }
+        },
+        {
+          "id": "U3-p34-act02",
+          "numero": 2,
+          "tipo": "completa_huecos",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa estas preguntas con los verbos anteriores.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "trabajar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "trabaja",
+                "trabajan"
+              ]
+            },
+            {
+              "lema": "escribir",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "escribes"
+              ]
+            },
+            {
+              "lema": "comer",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "come",
+                "comes"
+              ]
+            },
+            {
+              "lema": "vivir",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "viven"
+              ]
+            },
+            {
+              "lema": "estudiar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "estudiáis"
+              ]
+            },
+            {
+              "lema": "hablar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "habla"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Presente de los verbos regulares",
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 trabaja",
+            "2 escribes",
+            "3 come",
+            "4 viven",
+            "5 estudiáis",
+            "6 comes",
+            "7 habla",
+            "8 trabajan"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 ¿Dónde _____ tu padre? / En un banco.",
+              "2 ¿Qué _____ (tú)? / Un correo electrónico.",
+              "3 ¿Dónde _____ el profesor? / En un restaurante.",
+              "4 ¿Dónde _____ María y sus padres? / En Sevilla.",
+              "5 ¿Qué _____ vosotros? / Matemáticas.",
+              "6 ¿Qué _____ (tú)? / Un bocadillo.",
+              "7 ¿Qué idiomas _____ tu hermano? / Inglés, español y francés.",
+              "8 ¿Dónde _____ ellos? / En un hospital."
+            ]
+          }
+        },
+        {
+          "id": "U3-p34-act03",
+          "numero": 3,
+          "tipo": "seleccion_multiple",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "gramatica",
+          "instruccion_original": "Señala la forma correcta.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "ejemplo Dónde",
+            "1 Cómo",
+            "2 Qué",
+            "3 Dónde",
+            "4 Cuál",
+            "5 Qué",
+            "6 Quiénes"
+          ],
+          "datos": {
+            "ejemplo_libro": "¿Dónde / Cuál viven tus abuelos? / En Marbella.",
+            "items_libro": [
+              "1 ¿Cómo / Cuál os llamáis vosotras? / Yo me llamo Rosa y ella, Alicia.",
+              "2 ¿Qué / Cuál estudia tu hermana mayor? / Geografía e Historia.",
+              "3 ¿Cómo / Dónde trabaja tu tío Óscar? / En un banco.",
+              "4 ¿Cuál / Cómo es tu día de la semana favorito? / El jueves.",
+              "5 ¿Qué / Dónde comes? / Patatas fritas.",
+              "6 ¿Quién / Quiénes son estos niños? / Son los hijos de Julia."
+            ]
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Presente de los verbos regulares",
+          "contenido": {
+            "tipo": "tabla_conjugacion",
+            "verbos": [
+              "estudiar",
+              "comer",
+              "vivir"
+            ],
+            "formas": {
+              "yo": [
+                "estudio",
+                "como",
+                "vivo"
+              ],
+              "tú": [
+                "estudias",
+                "comes",
+                "vives"
+              ],
+              "él / ella / Ud.": [
+                "estudia",
+                "come",
+                "vive"
+              ],
+              "nosotros/-as": [
+                "estudiamos",
+                "comemos",
+                "vivimos"
+              ],
+              "vosotros/-as": [
+                "estudiáis",
+                "coméis",
+                "vivís"
+              ],
+              "ellos / ellas / Uds.": [
+                "estudian",
+                "comen",
+                "viven"
+              ]
+            },
+            "nota": "* Ud. = usted; Uds. = ustedes",
+            "ejemplos": [
+              "¿Dónde estudiáis vosotros?",
+              "Ana y Sebastián comen en el instituto.",
+              "Nosotros vivimos en Lima."
+            ]
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "estudiar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "estudio",
+                "estudias",
+                "estudia",
+                "estudiamos",
+                "estudiáis",
+                "estudian"
+              ]
+            },
+            {
+              "lema": "comer",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "como",
+                "comes",
+                "come",
+                "comemos",
+                "coméis",
+                "comen"
+              ]
+            },
+            {
+              "lema": "vivir",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "vivo",
+                "vives",
+                "vive",
+                "vivimos",
+                "vivís",
+                "viven"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Presente de los verbos regulares"
+          ],
+          "pronunciacion_ortografia": []
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Interrogativos",
+          "contenido": {
+            "tipo": "tabla_interrogativos",
+            "filas": {
+              "Qué": [
+                "¿Qué comes?",
+                "¿A qué hora comes?"
+              ],
+              "Quién / Quiénes": [
+                "¿Quién es esta chica?",
+                "¿Quiénes son estas niñas?"
+              ],
+              "Cuál": [
+                "¿Cuál es tu número de teléfono?",
+                "¿Cuál es tu asignatura favorita?"
+              ],
+              "Dónde": [
+                "¿Dónde viven tus abuelos?",
+                "¿De dónde es Óscar?"
+              ],
+              "Cómo": [
+                "¿Cómo se llama tu abuela?"
+              ],
+              "Cuándo": [
+                "¿Cuándo tenemos el examen?"
+              ],
+              "Cuánto/-a/-os/-as": [
+                "¿Cuánto es uno más uno?",
+                "¿Cuánta agua bebes al día?",
+                "¿Cuántos hermanos tienes?",
+                "¿Cuántas mochilas tienes?"
+              ]
+            }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": []
+        }
+      ]
+    }
+  ]
+}

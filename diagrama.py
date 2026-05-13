@@ -282,17 +282,28 @@ def list_inventarios():
             if inv["unidad"] not in seen:
                 out.append(inv)
                 seen.add(inv["unidad"])
-    return sorted(out, key=lambda x: (x["unidad"] is None, x["unidad"]))
+    return sorted(out, key=lambda x: (x["unidad"] is None, str(x["unidad"])))
 
 
 def get_inventario(unidad, zona=""):
-    """Lee inventario de main o de paths extra (main tiene prioridad)."""
-    folder = PROJECT / "unidades" / f"U{int(unidad)}"
+    """Lee inventario de main o de paths extra (main tiene prioridad).
+
+    `unidad` puede ser int (U0-U9) o str (variantes tipo "1p" para propuestas).
+    """
+    try:
+        folder_name = f"U{int(unidad)}"
+    except (TypeError, ValueError):
+        # Variantes tipo "Np" (propuestas): U1p → U1-propuesta, U2p → U2-propuesta, etc.
+        import re as _re
+        s = f"U{unidad}"
+        m = _re.match(r"^U(\d+)p$", s)
+        folder_name = f"U{m.group(1)}-propuesta" if m else s
+    folder = PROJECT / "unidades" / folder_name
     candidates = list(folder.glob("*inventario.json")) if folder.exists() else []
     if candidates:
         return json.loads(candidates[0].read_text(encoding="utf-8"))
     for ep in _extra_unidades_paths():
-        folder = ep / f"U{int(unidad)}"
+        folder = ep / folder_name
         candidates = list(folder.glob("*inventario.json")) if folder.exists() else []
         if candidates:
             return json.loads(candidates[0].read_text(encoding="utf-8"))
@@ -1037,7 +1048,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(list_inventarios(), ensure_ascii=False))
         elif parsed.path == "/api/inventario":
-            unidad = int(qs.get("unidad", [3])[0])
+            raw_u = qs.get("unidad", ["3"])[0]
+            try:
+                unidad = int(raw_u)
+            except ValueError:
+                unidad = raw_u  # variante string (ej. "1p" para propuesta de rediseño)
             zona = qs.get("zona", ["activo"])[0]
             self._respond(200, "application/json; charset=utf-8",
                           json.dumps(get_inventario(unidad, zona), ensure_ascii=False))

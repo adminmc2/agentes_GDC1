@@ -1,0 +1,466 @@
+{
+  "_fixture_exploratoria": {
+    "tipo": "prueba_minima_discriminativa",
+    "fecha": "2026-05-13",
+    "proposito": "Estresar puntos del schema (B.2 listas vacías, B.3 cuadros, agregación verbal cross-source, anticipación U2→U3, categoría sintética en gramatica.recurrente). Originalmente generó marcas bloqueantes (_pendiente_canon, _funcion_ambigua) que motivaron las decisiones D1-D3 (Escuela canónico para léxico cultural; ser entra en cuadro Demostrativos; clases optativas/obligatorias). Tras aplicar esas decisiones la fixture YA NO LLEVA marcas bloqueantes. No es candidato a cierre contractual por su convención de naming Np (reservada para fixtures) y por cubrir solo 2 páginas de las 10 de U2.",
+    "no_es_inventario_canonico": true,
+    "convencion_naming": "Los inventarios `Np` (donde N es entero) son fixtures exploratorias visibles en el dashboard, no inventarios oficiales del curso. Un inventario candidato a cierre debe usar `unidad: N` (entero) y cabecera coincidente con `unidades/nc1-curso.json`.",
+    "hallazgos": {
+      "anticipaciones_detectadas_para_fase_2": [
+        { "palabra": "madre",    "campo_semantico_destino": "Familia",     "unidad_destino": "U3", "fuente_en_U2": "p24-act1" },
+        { "palabra": "profesor", "campo_semantico_destino": "Profesiones", "unidad_destino": "U3", "fuente_en_U2": "p24-act1" }
+      ],
+      "nota": "Las anticipaciones aquí registradas son hallazgos derivados de la prueba de fixture (léxico de input que apunta a campos canónicos de unidades posteriores). NO son metadata de migración (esta fixture no es una migración del modelo viejo)."
+    }
+  },
+
+  "unidad": "2p",
+  "curso": "nc1",
+  "titulo": "Países de habla hispana (propuesta — pp. 24 y 30, prueba mínima discriminativa)",
+  "paginas_libro": "22-31",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U2/fuente/U2-nc1.pdf",
+    "version_extraccion": "2026-05-13"
+  },
+  "contenidos_indice": {
+    "vocabulario": "Países hispanohablantes. Adjetivos de nacionalidad. Días de la semana. Números ordinales. Asignaturas",
+    "gramatica": "Verbos ser y tener (formas plurales). Plural de nombres y adjetivos. Demostrativos. Uso de las mayúsculas",
+    "comunicacion": "Saludar. Pedir y dar información personal. Números del 21 al 100. Hacer sugerencias. Las vocales",
+    "destrezas": "Una carta de presentación personal. Pedir y dar datos personales",
+    "cultura": "La ESO en España"
+  },
+
+  "vocabulario_consolidado": {
+    "principal": {
+      "Adjetivos de nacionalidad": {
+        "items": [
+          { "palabra": "argentinos",  "fuentes": ["p24-act1"] },
+          { "palabra": "franceses",   "fuentes": ["p24-act1"] },
+          { "palabra": "japonesas",   "fuentes": ["p24-act1"] }
+        ],
+        "fuentes": ["p24-act1"],
+        "descripcion": {
+          "U2": "Adjetivos de nacionalidad en plural usados como atributo con verbo ser; sirven para introducir el contraste singular/plural y para apoyar la lección sobre ser plural."
+        }
+      },
+      "Asignaturas": {
+        "items": [
+          { "palabra": "Matemáticas",      "fuentes": ["p30-act2"] },
+          { "palabra": "Lengua española",  "fuentes": ["p30-act2"] },
+          { "palabra": "Inglés",           "fuentes": ["p30-act2"] },
+          { "palabra": "Historia",         "fuentes": ["p30-act2"] },
+          { "palabra": "Biología",         "fuentes": ["p30-act2"] },
+          { "palabra": "Educación Física", "fuentes": ["p30-act2"] },
+          { "palabra": "Francés",          "fuentes": ["p30-act2"] },
+          { "palabra": "Música",           "fuentes": ["p30-act2"] },
+          { "palabra": "Informática",      "fuentes": ["p30-act2"] }
+        ],
+        "fuentes": ["p30-act2"],
+        "descripcion": {
+          "U2": "Inventario de asignaturas del sistema educativo español, presentadas como input léxico del texto cultural sobre la ESO."
+        }
+      }
+    },
+    "recurrente": {
+      "Escuela": {
+        "items": [
+          { "palabra": "descanso",                  "fuentes": ["p30-act2", "p30-act3"] },
+          { "palabra": "recreo",                    "fuentes": ["p30-act2"] },
+          { "palabra": "alumnos",                   "fuentes": ["p30-act2"] },
+          { "palabra": "instituto",                 "fuentes": ["p30-act2"] },
+          { "palabra": "aulas",                     "fuentes": ["p30-act2"] },
+          { "palabra": "actividades extraescolares", "fuentes": ["p30-act2", "p30-act3"] },
+          { "palabra": "clases optativas",          "fuentes": ["p30-act2", "p30-act3"] },
+          { "palabra": "clases obligatorias",       "fuentes": ["p30-act2"] }
+        ],
+        "fuentes": ["p30-act2", "p30-act3"],
+        "descripcion": {
+          "U2": "Léxico escolar recurrente que reaparece en el texto cultural sobre la ESO. Apoya la comprensión del input sin ser contenido nuevo introducido por U2 (el campo Escuela ya se trabajó en U1)."
+        }
+      }
+    }
+  },
+
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "ser",
+      "tipo_de_verbo": ["copulativo"],
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular"
+      },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["soy", "eres", "es", "somos", "sois", "son"],
+      "fuentes": ["cuadro@p24", "cuadro@p24#3", "p24-act1", "p24-act3"],
+      "descripcion": {
+        "U2": "Paradigma completo del Presente. Foco de unidad en formas plurales (somos, sois, son), apoyadas por la tabla del cuadro y por las dos actividades de poblar huecos. Las formas singulares (es, son) reaparecen en el cuadro de Demostrativos como soporte sintáctico."
+      }
+    },
+    {
+      "lema": "tener",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular"
+      },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"],
+      "fuentes": ["cuadro@p24", "p24-act2", "p24-act3"],
+      "descripcion": {
+        "U2": "Paradigma completo del Presente. Foco de unidad en formas plurales (tenemos, tenéis, tienen), apoyadas por la tabla del cuadro y la actividad de selección múltiple."
+      }
+    }
+  ],
+
+  "gramatica_consolidada": {
+    "recurrente": {
+      "Concordancia artículo-sustantivo en género y número": {
+        "items": [
+          { "palabra": "la madre",            "fuentes": ["p24-act1"] },
+          { "palabra": "el profesor",         "fuentes": ["p24-act1", "p24-act2"] },
+          { "palabra": "los chicos",          "fuentes": ["p24-act2"] },
+          { "palabra": "los lunes",           "fuentes": ["p24-act2"] },
+          { "palabra": "las mochilas negras", "fuentes": ["p24-act2"] },
+          { "palabra": "el verbo",            "fuentes": ["p24-act1", "p24-act2"] },
+          { "palabra": "los gatos blancos",   "fuentes": ["cuadro@p24#2"] },
+          { "palabra": "las gatas blancas",   "fuentes": ["cuadro@p24#2"] }
+        ],
+        "fuentes": ["p24-act1", "p24-act2", "cuadro@p24#2"],
+        "descripcion": {
+          "U2": "Categoría sintética: integra 'Artículos determinados' y 'Masculino y femenino' (canónicos por separado en U1) cuando se presentan de forma integrada en la concordancia art+sust+adj. El cuadro de plural (cuadro@p24#2) presenta la concordancia de forma sistemática; las actividades de p24 la aplican. Respaldo PCIC: A1 §2.2 'Concordancia adjetivo-sustantivo'. Propuesta de Claude validada por autor el 2026-05-13."
+        }
+      }
+    },
+    "principal": {
+      "Verbos ser y tener (formas plurales)": {
+        "items": [
+          { "palabra": "somos",   "fuentes": ["cuadro@p24", "p24-act3"] },
+          { "palabra": "sois",    "fuentes": ["cuadro@p24", "p24-act1"] },
+          { "palabra": "son",     "fuentes": ["cuadro@p24", "p24-act1"] },
+          { "palabra": "tenemos", "fuentes": ["cuadro@p24", "p24-act2"] },
+          { "palabra": "tenéis",  "fuentes": ["cuadro@p24", "p24-act2"] },
+          { "palabra": "tienen",  "fuentes": ["cuadro@p24", "p24-act2"] }
+        ],
+        "fuentes": ["cuadro@p24", "p24-act1", "p24-act2", "p24-act3"],
+        "descripcion": {
+          "U2": "PCIC A1 — flexión personal del presente de indicativo de ser y tener. Foco específico en las formas plurales (nosotros, vosotros, ellos) presentadas como ampliación tras el singular trabajado en U1."
+        }
+      },
+      "Plural de nombres y adjetivos": {
+        "items": [
+          { "palabra": "+ s (vocal)",      "fuentes": ["cuadro@p24#2"] },
+          { "palabra": "+ es (consonante)", "fuentes": ["cuadro@p24#2"] },
+          { "palabra": "concordancia adjetivo-sustantivo en género y número", "fuentes": ["cuadro@p24#2"] }
+        ],
+        "fuentes": ["cuadro@p24#2"],
+        "descripcion": {
+          "U2": "PCIC A1 — reglas básicas de formación del plural en nombres y adjetivos: añadir -s tras vocal, -es tras consonante. Concordancia de género y número entre nombre y adjetivo."
+        }
+      },
+      "Demostrativos": {
+        "items": [
+          { "palabra": "este",  "fuentes": ["cuadro@p24#3"] },
+          { "palabra": "esta",  "fuentes": ["cuadro@p24#3"] },
+          { "palabra": "estos", "fuentes": ["cuadro@p24#3", "p24-act3"] },
+          { "palabra": "estas", "fuentes": ["cuadro@p24#3"] }
+        ],
+        "fuentes": ["cuadro@p24#3", "p24-act3"],
+        "descripcion": {
+          "U2": "PCIC A1 — demostrativos de proximidad (este, esta, estos, estas) en función de pronombre y de determinante."
+        }
+      }
+    }
+  },
+
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {},
+    "recurrente": {}
+  },
+
+  "secciones": {
+    "vocabulario":  { "paginas": [],   "actividades_ids": [] },
+    "gramatica":    { "paginas": [24], "actividades_ids": ["U2-p24-act01", "U2-p24-act02", "U2-p24-act03"] },
+    "comunicacion": { "paginas": [],   "actividades_ids": [] },
+    "destrezas":    { "paginas": [],   "actividades_ids": [] },
+    "cultura":      { "paginas": [30], "actividades_ids": ["U2-p30-act01", "U2-p30-act02", "U2-p30-act03", "U2-p30-act04"] },
+    "evaluacion":   { "paginas": [],   "actividades_ids": [] },
+    "reflexion":    { "paginas": [],   "actividades_ids": [] }
+  },
+
+  "_nota_unidad_atipica": "Inventario PARCIAL — solo pp.24 y 30, generado como prueba mínima discriminativa del schema nuevo. No es una migración completa de U2.",
+
+  "_decisiones_ia": [
+    "p24-cuadro3 (Demostrativos): se incluye ser en tiempos_y_verbos del cuadro porque las formas (es, son) aparecen aunque el paradigma de foco sea demostrativos. Decisión confirmada por el autor el 2026-05-13; revierte la versión inicial de la regla §5.10 (verbo soporte vs paradigma). Regla actualizada: el verbo entra cuando sus formas concretas aparecen en la actividad/cuadro, independientemente de que su paradigma sea el foco principal.",
+    "p24-act1: léxico de input (madre, profesor, Matemáticas) NO se incluye en vocabulario porque la actividad trabaja gramática (ser plural), no campos semánticos. Solo se incluyen los adjetivos de nacionalidad porque coinciden con un campo del índice U2.",
+    "p30-act2 y p30-act3: léxico cultural (descanso, recreo, instituto, aulas, actividades extraescolares, clases optativas, clases obligatorias) clasificado en el campo canónico Escuela como recurrente. Decisión del autor 2026-05-13: Escuela ya es canónico desde U1; este léxico reaparece como apoyo a la comprensión del texto cultural, no como contenido nuevo. Renombrados: optativas → clases optativas, obligatorias → clases obligatorias para que sean términos léxicos más precisos. distintas y alrededor de no entran (glosa auxiliar, no léxico Escuela).",
+    "p30-act1 y p30-act4: actividades de expresion_oral_libre clasificadas con las 4 listas tipadas VACÍAS. Razón: son output libre del alumno sin contenido lingüístico tipado específico que la actividad trabaje. Aplica convención B.2 del schema §3.",
+    "Anticipaciones detectadas para fase 2: 'madre' (campo Familia, canónico en U3) y 'profesor' (campo Profesiones, canónico en U3) aparecen como input incidental en p24-act1. Por regla operativa, no se codifican como recurrente en U2 (anticipación, detectada en fase 2). Anotadas en _fixture_exploratoria.hallazgos.",
+    "gramatica_consolidada.recurrente: añadida categoría sintética 'Concordancia artículo-sustantivo en género y número'. Propuesta de Claude (síntesis de 'Artículos determinados' + 'Masculino y femenino' de U1 cuando el fenómeno se presenta integrado en concordancia art+sust+adj). Validada por autor 2026-05-13. Respaldo PCIC: A1 §2.2."
+  ],
+
+  "paginas_detalle": [
+    {
+      "pagina": 24,
+      "seccion": "gramatica",
+      "actividades": [
+        {
+          "id": "U2-p24-act01",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa los huecos con la forma correcta del verbo ser.",
+          "vocabulario": ["Adjetivos de nacionalidad"],
+          "tiempos_y_verbos": [
+            { "lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["sois", "son", "es"] }
+          ],
+          "gramatica": ["Verbos ser y tener (formas plurales)"],
+          "pronunciacion_ortografia": [],
+          "audio":  { "presente": false },
+          "imagen": { "presente": false },
+          "video":  { "presente": false },
+          "respuestas": ["1 sois", "2 son", "3 es", "4 son", "5 es", "6 son", "7 es"],
+          "datos": {
+            "ejemplo_libro": "Mi compañera Verónica y yo no somos españolas.",
+            "items_libro": [
+              "1 ¿De dónde _____ vosotros?",
+              "2 Gabriela y su familia _____ argentinos.",
+              "3 Esta mujer _____ la madre de Tom.",
+              "4 Estos niños _____ franceses.",
+              "5 Andrés _____ profesor de matemáticas.",
+              "6 ¿Ellas _____ japonesas?",
+              "7 ¿Cuál _____ tu asignatura favorita?"
+            ]
+          }
+        },
+        {
+          "id": "U2-p24-act02",
+          "numero": 2,
+          "tipo": "seleccion_multiple",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Subraya la forma correcta.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            { "lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienen", "tenéis", "tenemos"] }
+          ],
+          "gramatica": ["Verbos ser y tener (formas plurales)"],
+          "pronunciacion_ortografia": [],
+          "audio":  { "presente": false },
+          "imagen": { "presente": false },
+          "video":  { "presente": false },
+          "respuestas": ["tenemos", "1 tiene", "2 tienen", "3 tenéis", "4 tenemos", "5 tienen", "6 tienen", "7 tiene"],
+          "datos": {
+            "ejemplo_libro": "Mi compañera y yo hoy no tengo / tenemos clase de francés.",
+            "items_libro": [
+              "1 Elisabeth tiene / tienes clase de informática a segunda hora los lunes.",
+              "2 Estos chicos tienen / tenemos doce años.",
+              "3 ¿Cuántos años tenéis / tienen vosotros?",
+              "4 ¿A qué hora tenemos / tenéis nosotras clase de música?",
+              "5 Lucía y María tienen / tenemos unas mochilas negras.",
+              "6 Ellos tienen / tenemos un profesor alemán.",
+              "7 Peter tiene / tienes 20 años."
+            ]
+          }
+        },
+        {
+          "id": "U2-p24-act03",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa el mensaje de Cristina con las formas del recuadro.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            { "lema": "ser",   "tiempo": "Presente", "formas_trabajadas": ["soy", "son", "somos"] },
+            { "lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo"] }
+          ],
+          "gramatica": ["Demostrativos", "Verbos ser y tener (formas plurales)"],
+          "pronunciacion_ortografia": [],
+          "audio":  { "presente": false },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Foto de una chica joven (Cristina) junto a un mensaje de texto en pantalla con huecos numerados [1]-[5]."
+          },
+          "video":  { "presente": false },
+          "respuestas": ["[1] Tengo", "[2] soy", "[3] Estos", "[4] son", "[5] somos"],
+          "datos": {
+            "palabras_recuadro": ["somos", "soy", "tengo", "estos", "son"],
+            "texto_completo": "Me llamo Cristina, [1] _____ 13 años y [2] _____ de Madrid. [3] _____ de la foto [4] _____ mis amigos, Rosa y Dani. Nosotros [5] _____ compañeros de clase. Un saludo, Cristina"
+          }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Presente de los verbos ser y tener",
+          "contenido": {
+            "tipo": "tabla_conjugacion",
+            "verbos": ["ser", "tener"],
+            "formas": {
+              "yo": ["soy", "tengo"],
+              "tú": ["eres", "tienes"],
+              "él / ella / usted": ["es", "tiene"],
+              "nosotros/-as": ["somos", "tenemos"],
+              "vosotros/-as": ["sois", "tenéis"],
+              "ellos / ellas / ustedes": ["son", "tienen"]
+            }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            { "lema": "ser",   "tiempo": "Presente", "formas_trabajadas": ["soy", "eres", "es", "somos", "sois", "son"] },
+            { "lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"] }
+          ],
+          "gramatica": ["Verbos ser y tener (formas plurales)"],
+          "pronunciacion_ortografia": []
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Plural de nombres y adjetivos",
+          "contenido": {
+            "tipo": "tabla_plural",
+            "nombres": {
+              "reglas": [
+                "singular: coche → plural: coches",
+                "singular: camión → plural: camiones"
+              ]
+            },
+            "adjetivos": {
+              "singular_masculino": "el gato blanco / el gato grande",
+              "singular_femenino": "la gata blanca / la gata grande",
+              "plural_masculino": "los gatos blancos / los gatos grandes",
+              "plural_femenino": "las gatas blancas / las gatas grandes"
+            }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Plural de nombres y adjetivos"],
+          "pronunciacion_ortografia": []
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Demostrativos",
+          "contenido": {
+            "tipo": "tabla_demostrativos",
+            "tabla": {
+              "singular_masculino": "este libro",
+              "singular_femenino": "esta casa",
+              "plural_masculino": "estos libros",
+              "plural_femenino": "estas casas"
+            },
+            "ejemplos": [
+              "Este es Juan.",
+              "Esta es Lola.",
+              "Estos son Andrés y Lucía.",
+              "Estas son Laura y Rosa."
+            ]
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            { "lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"] }
+          ],
+          "gramatica": ["Demostrativos"],
+          "pronunciacion_ortografia": []
+        }
+      ]
+    },
+    {
+      "pagina": 30,
+      "seccion": "cultura",
+      "actividades": [
+        {
+          "id": "U2-p30-act01",
+          "numero": 1,
+          "tipo": "expresion_oral_libre",
+          "destreza": ["expresion_oral"],
+          "enfoque": "cultura",
+          "instruccion_original": "Mira la foto. Compárala con tu clase. ¿Tienen uniforme los alumnos de la foto? ¿Y vosotros?",
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio":  { "presente": false },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Fotografía de una clase de instituto español con alumnos y una profesora, los alumnos no llevan uniforme."
+          },
+          "video":  { "presente": false },
+          "respuestas": [],
+          "datos": {}
+        },
+        {
+          "id": "U2-p30-act02",
+          "numero": 2,
+          "tipo": "verdadero_falso",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "cultura",
+          "instruccion_original": "Lee el texto y responde si las frases son verdaderas (V) o falsas (F).",
+          "vocabulario": ["Asignaturas", "Escuela"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio":  { "presente": false },
+          "imagen": { "presente": false },
+          "video":  { "presente": false },
+          "respuestas": ["1 F", "2 F", "3 V", "4 V", "5 F"],
+          "datos": {
+            "texto_completo": "Los alumnos de Educación Secundaria Obligatoria (ESO) en España tienen distintas asignaturas: Matemáticas, Lengua española, Inglés, Historia, Biología, Educación Física, por ejemplo, son obligatorias; Francés, Música, Informática y otras son optativas. En cada curso, un alumno tiene nueve o diez asignaturas diferentes. Las clases son de ocho a tres o de cinco a nueve y cada grupo tiene alrededor de treinta estudiantes. En algunos institutos, los alumnos tienen distintas aulas para cada asignatura. El profesor está en su clase y recibe a los alumnos.\nA las once de la mañana, los alumnos y los profesores tienen un descanso de treinta minutos, que se llama recreo. En la cafetería del instituto tienen bocadillos, dulces, zumos… para la hora del recreo.\nDespués de las clases, por la tarde, algunos alumnos tienen actividades extraescolares: deportes, música, idiomas, danza, teatro…",
+            "items_libro": [
+              "1 La asignatura de Matemáticas no es obligatoria en la ESO en España.",
+              "2 Las clases tienen nueve o diez estudiantes.",
+              "3 Los alumnos de un mismo grupo están siempre en la misma clase.",
+              "4 Todos los días, los estudiantes tienen un descanso de treinta minutos.",
+              "5 Todos los alumnos tienen actividades extraescolares por la tarde."
+            ]
+          }
+        },
+        {
+          "id": "U2-p30-act03",
+          "numero": 3,
+          "tipo": "relaciona",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "cultura",
+          "instruccion_original": "Relaciona las palabras subrayadas en el texto con las siguientes definiciones.",
+          "vocabulario": ["Escuela"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio":  { "presente": false },
+          "imagen": { "presente": false },
+          "video":  { "presente": false },
+          "respuestas": ["1 descanso", "2 distintas", "3 alrededor de", "4 extraescolares", "5 optativas"],
+          "datos": {
+            "items_libro": [
+              "1 tiempo de relajación",
+              "2 diferentes",
+              "3 aproximadamente",
+              "4 fuera del horario escolar",
+              "5 que no son obligatorias"
+            ]
+          }
+        },
+        {
+          "id": "U2-p30-act04",
+          "numero": 4,
+          "tipo": "expresion_oral_libre",
+          "destreza": ["expresion_oral"],
+          "enfoque": "cultura",
+          "instruccion_original": "Habla sobre tu colegio.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio":  { "presente": false },
+          "imagen": { "presente": false },
+          "video":  { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "1 ¿Qué cosas son similares en los institutos españoles y en tu colegio?",
+              "2 ¿Qué cosas son diferentes?"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

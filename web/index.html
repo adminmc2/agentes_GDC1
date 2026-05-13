@@ -116,6 +116,102 @@ main { overflow-y: auto; padding: 24px; }
 .tool-version-badge { font-size: 11px; color: var(--md-on-primary); background: var(--md-primary); padding: 2px 8px; border-radius: 12px; font-weight: 600; margin-left: 6px; }
 .tool-error-msg { font-size: 12px; color: var(--md-error); margin-top: 4px; display: none; margin-left: 24px; }
 
+/* === Acordeones genéricos (details/summary) === */
+details summary::-webkit-details-marker { display: none; }
+details summary { outline: none; }
+details[open] > summary .acc-chevron { transform: rotate(180deg); }
+details:not([open]) > summary .acc-chevron { transform: rotate(0deg); }
+
+/* === Jerarquía de cajas de categoría === */
+/* Nivel 1: sub-bloque (PRINCIPAL, RECURRENTE) — el más grande */
+.cat-tag-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: var(--md-radius-sm);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    line-height: 1.2;
+}
+/* Nivel 2: categoría dentro del sub-bloque (Colores, Saludos…) — mediano */
+.cat-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: var(--md-radius-xs);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    border: 1px solid transparent;
+    line-height: 1.2;
+}
+.cat-tag .cat-count { font-weight: 600; opacity: 0.65; font-size: 11px; }
+.cat-tag.p-azul    { background: #E3F2FD; color: #1A4F7A; border-color: #BBDEFB; }
+.cat-tag.p-verde   { background: #E8F5E9; color: #2E5A33; border-color: #C8E6C9; }
+.cat-tag.p-amarillo{ background: #FFF8E1; color: #7A5D00; border-color: #FFECB3; }
+.cat-tag.p-rosa    { background: #FCE4EC; color: #7A2148; border-color: #F8BBD0; }
+.cat-tag.p-lila    { background: #F3E5F5; color: #5A3170; border-color: #E1BEE7; }
+.cat-tag.p-melocoton { background: #FFF3E0; color: #7A3F12; border-color: #FFE0B2; }
+.cat-tag.p-menta   { background: #E0F2F1; color: #1F5751; border-color: #B2DFDB; }
+.cat-tag.p-gris    { background: #ECEFF1; color: #455A64; border-color: #CFD8DC; }
+
+/* Caja blanca uniforme para palabras/ítems */
+.item-card {
+    background: var(--md-surface);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-radius-sm);
+    padding: 6px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.item-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+}
+.item-card-name { font-weight: 600; font-size: 13px; color: var(--md-on-surface); }
+.item-card-count {
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--md-primary-dark);
+    color: #FFFFFF;
+    padding: 1px 7px;
+    border-radius: 8px;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+}
+.item-card-sources { display: flex; flex-wrap: wrap; gap: 3px; }
+.item-card-source {
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+    padding: 2px 7px;
+    border-radius: var(--md-radius-xs);
+    font-family: 'SF Mono', Consolas, monospace;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    border: 1px solid #DDD9C8;
+}
+/* Fuente que viene de RESPUESTAS (no de input/contenido directo) */
+.item-card-source.source-respuesta {
+    background: #E1F5FE;
+    color: #01579B;
+    border-color: #B3E5FC;
+}
+.item-card-source.source-respuesta::after { content: " ·R"; opacity: 0.7; }
+
+/* Grid de tarjetas dentro de categorías */
+.item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px; }
+
 /* === BUTTONS (Material filled + outlined) === */
 .btn { padding: 10px 20px; border-radius: 20px; border: none; font-size: 14px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all .2s; letter-spacing: .2px; }
 .btn-primary { background: var(--md-primary); color: var(--md-on-primary); box-shadow: var(--md-elevation-1); }
@@ -355,7 +451,16 @@ main { overflow-y: auto; padding: 24px; }
 
     <!-- ===== INVENTARIO (detalle de unidad) ===== -->
     <div id="view-inventario" style="display:none">
-        <div class="breadcrumb"><a onclick="goTo('inventarios')">&#8592; Volver</a></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div class="breadcrumb"><a onclick="goTo('inventarios')">&#8592; Volver</a></div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--md-on-surface-variant)">
+                <span>Zoom</span>
+                <button onclick="adjustZoom(-1)" style="border:1px solid var(--md-outline);background:var(--md-surface);padding:2px 10px;border-radius:var(--md-radius-xs);cursor:pointer;font-weight:700">−</button>
+                <span id="zoom-level" style="min-width:42px;text-align:center;font-weight:600;color:var(--md-on-surface)">100%</span>
+                <button onclick="adjustZoom(1)" style="border:1px solid var(--md-outline);background:var(--md-surface);padding:2px 10px;border-radius:var(--md-radius-xs);cursor:pointer;font-weight:700">+</button>
+                <button onclick="resetZoom()" style="border:1px solid var(--md-outline);background:var(--md-surface);padding:2px 8px;border-radius:var(--md-radius-xs);cursor:pointer;font-size:11px">reset</button>
+            </div>
+        </div>
         <div class="page-header" id="inv-header"></div>
         <div id="inv-content"></div>
     </div>
@@ -592,7 +697,7 @@ async function loadInventarios() {
             const fuente = esExtra
                 ? `<div style="font-size:11px;color:#B45309;background:#FEF3C7;padding:4px 8px;border-radius:6px;font-weight:600;display:inline-block">🔄 Extracción en curso (worktree paralelo)</div>`
                 : `<div style="font-size:11px;color:var(--md-on-surface-variant);font-family:monospace">${u.archivo}</div>`;
-            return `<div class="section" style="cursor:pointer" onclick="goTo('inventario', ${u.unidad})">
+            return `<div class="section" style="cursor:pointer" onclick="goTo('inventario', '${u.unidad}')">
                 <div class="section-body" style="padding:16px">
                     <div style="font-size:11px;color:var(--md-primary-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">U${u.unidad} &middot; ${u.nivel}</div>
                     <div style="font-size:18px;font-weight:600;margin-bottom:4px">${u.titulo || '(sin título)'}</div>
@@ -918,6 +1023,45 @@ function closeRecDrawer() {
 
 let _invTab = 'resumen';
 
+// === Asignación pastel determinista para categorías ===
+const PASTEL_PALETTE = ['p-azul','p-verde','p-amarillo','p-rosa','p-lila','p-melocoton','p-menta','p-gris'];
+const _pastelCache = {};
+function pastelFor(name) {
+    if (_pastelCache[name]) return _pastelCache[name];
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    const c = PASTEL_PALETTE[h % PASTEL_PALETTE.length];
+    _pastelCache[name] = c;
+    return c;
+}
+// Asignación semántica explícita para tipos de verbo (que son enum cerrado)
+const TIPO_VERBO_PASTEL = {
+    'reflexivo': 'p-azul',
+    'pronominal': 'p-lila',
+    'transitivo': 'p-verde',
+    'intransitivo': 'p-amarillo',
+    'copulativo': 'p-rosa',
+    'impersonal': 'p-gris',
+    'tipo gustar': 'p-melocoton'
+};
+
+// === Zoom para vista inventario ===
+let _zoomLevel = parseFloat(localStorage.getItem('inv_zoom') || '1');
+function applyZoom() {
+    const content = document.getElementById('inv-content');
+    if (content) { content.style.fontSize = (_zoomLevel * 100) + '%'; }
+    const ind = document.getElementById('zoom-level');
+    if (ind) ind.textContent = Math.round(_zoomLevel * 100) + '%';
+    localStorage.setItem('inv_zoom', _zoomLevel);
+}
+function adjustZoom(delta) {
+    _zoomLevel = Math.max(0.7, Math.min(1.6, _zoomLevel + delta * 0.1));
+    applyZoom();
+}
+function resetZoom() { _zoomLevel = 1; applyZoom(); }
+window.adjustZoom = adjustZoom;
+window.resetZoom = resetZoom;
+
 async function loadInventario(unidad) {
     renderSidebar();
     const header = document.getElementById('inv-header');
@@ -989,16 +1133,213 @@ function renderInventario(inv) {
     let vocBlock = '';
     if (inv.vocabulario_consolidado) {
         const v = inv.vocabulario_consolidado;
+        const subBlockStyles = {
+            principal:  { pastel:'p-verde',     label:'PRINCIPAL',  desc:'declarado en el índice editorial' },
+            recurrente: { pastel:'p-melocoton', label:'RECURRENTE', desc:'frecuente en actividades, no canónico de la unidad' }
+        };
         vocBlock = `<div class="section"><div class="section-header"><h2>Vocabulario consolidado</h2></div><div class="section-body">
-            ${['principal','recurrente','comprension'].filter(k=>v[k]).map(k=>{
+            ${['principal','recurrente'].filter(k=>v[k]).map(k=>{
                 const groups = v[k];
-                return `<div style="margin-bottom:18px"><div style="font-weight:600;margin-bottom:8px">${_label(k)}</div>
-                    ${Object.entries(groups).filter(([n])=>!n.startsWith('_')).map(([nombre, palabras])=>
-                        `<div style="margin-bottom:6px"><span style="font-weight:500">${_esc(nombre)}:</span> ${(palabras||[]).map(p=>`<span style="display:inline-block;background:var(--md-primary-container);color:var(--md-on-primary-container);padding:2px 8px;border-radius:12px;margin:2px 4px 2px 0;font-size:13px">${_esc(p)}</span>`).join('')}</div>`
-                    ).join('')}</div>`;
+                const totalItems = Object.values(groups).filter(g => !(typeof g === 'object' && Object.keys(g).some(kk => kk.startsWith('_')))).reduce((acc, g) => {
+                    const arr = Array.isArray(g) ? g : (g && (g.items || g.palabras)) || [];
+                    return acc + arr.length;
+                }, 0);
+                const nCats = Object.keys(groups).filter(n=>!n.startsWith('_')).length;
+                const st = subBlockStyles[k] || {pastel:'p-gris',label:k.toUpperCase(),desc:''};
+                return `<details open style="margin-bottom:12px;border:1px solid var(--md-outline-variant);border-radius:var(--md-radius-sm);overflow:hidden;background:var(--md-surface)">
+                    <summary style="cursor:pointer;padding:10px 14px;font-weight:600;color:var(--md-on-surface);display:flex;align-items:center;gap:10px;list-style:none;user-select:none">
+                        <span class="cat-tag-lg ${st.pastel}">${st.label}</span>
+                        <span style="font-size:12px;color:var(--md-on-surface-variant);font-weight:400">${st.desc}</span>
+                        <span style="margin-left:auto;font-size:12px;color:var(--md-on-surface-variant)">${nCats} ${nCats===1?'categoría':'categorías'} · ${totalItems} ${totalItems===1?'ítem':'ítems'}</span>
+                        <span class="acc-chevron" style="transition:transform 0.2s;font-size:10px;color:var(--md-on-surface-variant)">▼</span>
+                    </summary>
+                    <div style="padding:12px 14px;border-top:1px solid var(--md-outline-variant)">
+                    ${Object.entries(groups).filter(([n])=>!n.startsWith('_')).map(([nombre, valor])=>{
+                        const palabras = Array.isArray(valor) ? valor : (valor && (valor.items || valor.palabras)) || [];
+                        // Pastel del sub-bloque (principal/recurrente), no aleatorio
+                        const subPastel = st.pastel;
+                        return `<div style="margin-bottom:18px">
+                            <div style="margin-bottom:10px"><span class="cat-tag ${subPastel}">${_esc(nombre)} <span class="cat-count">· ${palabras.length} ${palabras.length===1?'ítem':'ítems'}</span></span></div>
+                            <div class="item-grid">
+                                ${palabras.map(p=>{
+                                    const texto = (typeof p === 'string') ? p : (p && p.palabra) || '';
+                                    const fuentes = (typeof p === 'object' && p && Array.isArray(p.fuentes)) ? p.fuentes : [];
+                                    const count = fuentes.length;
+                                    return `<div class="item-card">
+                                        <div class="item-card-head">
+                                            <span class="item-card-name">${_esc(texto)}</span>
+                                            ${count>=2?`<span class="item-card-count">×${count}</span>`:''}
+                                        </div>
+                                        ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}">${_esc(lab)}</span>`; }).join('')}</div>`:''}
+                                    </div>`;
+                                }).join('')}
+                            </div>
+                        </div>`;
+                    }).join('')}</div></details>`;
             }).join('')}
         </div></div>`;
     }
+
+    // ===== Bloques top-level nuevos (propuesta de rediseño) =====
+    let propBanner = '';
+    if (inv._propuesta_rediseno) {
+        propBanner = `<div class="section" style="border-left:4px solid #FF6F00;background:#FFF8E1">
+            <div class="section-body" style="padding:14px 16px">
+                <div style="font-weight:700;color:#E65100;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Propuesta de rediseño · vista experimental</div>
+                <div style="font-size:13px;color:#5D4037">Esta unidad es una copia de U1 modificada para visualizar la arquitectura nueva: 4 bloques consolidados top-level + listas tipadas por actividad. Las actividades aparecen con las 4 listas vacías (marcadas <code>_pendiente_e15</code>) — su análisis se hará en el spike E1.5.</div>
+            </div>
+        </div>`;
+    }
+
+    let verbosBlock = '';
+    if (Array.isArray(inv.tiempos_y_verbos_consolidado) && inv.tiempos_y_verbos_consolidado.length) {
+        // Mapeo tiempo → código corto
+        const tCode = { 'Presente':'PRE', 'Pretérito indefinido':'IND', 'Imperativo':'IMP', 'Perífrasis':'PER' };
+        const toCode = t => tCode[t] || (t||'').toUpperCase().slice(0,3);
+        // Unidad activa del inventario (para no repetirla en cada fila)
+        const uActiva = `U${inv.unidad}`.replace('U1p','U1');
+        verbosBlock = `<div class="section"><div class="section-header"><h2>Tiempos y verbos consolidado</h2><span class="sec-badge">${inv.tiempos_y_verbos_consolidado.length} lemas · ${uActiva}</span></div><div class="section-body">
+            <table style="width:100%;border-collapse:collapse;font-size:13px">
+                <thead><tr style="text-align:left;color:var(--md-on-surface-variant);font-size:11px;text-transform:uppercase;letter-spacing:0.8px">
+                    <th style="padding:10px 12px;border-bottom:1px solid var(--md-outline);font-weight:600;width:100px">Verbo</th>
+                    <th style="padding:10px 12px;border-bottom:1px solid var(--md-outline);font-weight:600;width:160px">Tipo de verbo</th>
+                    <th style="padding:10px 12px;border-bottom:1px solid var(--md-outline);font-weight:600;width:90px">Tiempos</th>
+                    <th style="padding:10px 12px;border-bottom:1px solid var(--md-outline);font-weight:600;width:200px">Comportamiento</th>
+                    <th style="padding:10px 12px;border-bottom:1px solid var(--md-outline);font-weight:600">Lo que se trabaja</th>
+                </tr></thead>
+                <tbody>
+                ${inv.tiempos_y_verbos_consolidado.map(v => {
+                    const tiempos = v.tiempos || Object.keys(v.rasgo_por_tiempo||{});
+                    const tipos = Array.isArray(v.tipo_de_verbo) ? v.tipo_de_verbo : (v.tipo_de_verbo ? [v.tipo_de_verbo] : []);
+                    const ltrabaja = v.lo_que_se_trabaja || v.descripcion || {};
+                    // Si solo hay una entrada y es la unidad activa, mostrar solo descripción
+                    const trabajaEntries = Object.entries(ltrabaja);
+                    return `<tr style="transition:background 0.15s" onmouseover="this.style.background='var(--md-surface-variant)'" onmouseout="this.style.background='transparent'">
+                        <td style="padding:10px 12px;border-bottom:1px solid var(--md-outline-variant);font-weight:700;font-size:15px;color:var(--md-on-surface)">${_esc(v.lema||'')}</td>
+                        <td style="padding:10px 12px;border-bottom:1px solid var(--md-outline-variant)">${tipos.map(t=>`<span class="cat-tag p-melocoton" style="margin:1px 3px 1px 0">${_esc(t)}</span>`).join('')}</td>
+                        <td style="padding:10px 12px;border-bottom:1px solid var(--md-outline-variant)">${tiempos.map(t=>`<span class="item-card-source" style="margin:1px 2px;font-weight:700">${_esc(toCode(t))}</span>`).join('')}</td>
+                        <td style="padding:10px 12px;border-bottom:1px solid var(--md-outline-variant);font-size:12px;color:var(--md-on-surface)">${Object.entries(v.rasgo_por_tiempo||{}).map(([t,r])=>`<div style="margin:2px 0">${_esc(r)}</div>`).join('')}</td>
+                        <td style="padding:10px 12px;border-bottom:1px solid var(--md-outline-variant);font-size:12px;color:var(--md-on-surface)">${trabajaEntries.length ? trabajaEntries.map(([u,desc])=>{
+                            // Si la unidad coincide con la activa Y solo hay una entrada, mostrar sin prefijo
+                            const showPrefix = !(trabajaEntries.length === 1 && u === uActiva);
+                            return `<div style="margin:2px 0">${showPrefix?`<span class="item-card-source" style="font-weight:700;margin-right:6px">${_esc(u)}</span>`:''}${_esc(desc)}</div>`;
+                        }).join('') : '<span style="color:var(--md-on-surface-variant)">—</span>'}</td>
+                    </tr>`;
+                }).join('')}
+                </tbody>
+            </table>
+        </div></div>`;
+    }
+
+    // Render helper coherente — usa las clases CSS globales (.cat-tag, .item-card, .item-grid)
+    // pastelFijo: pastel asignado al bloque top-level entero (no aleatorio)
+    const renderCatBlock = (cat, val, pastelFijo) => {
+        const items = Array.isArray(val) ? val : (val.items || val.palabras || []);
+        const detalle = (val && val.detalle_por_palabra) || null;
+        return `<div style="margin-bottom:18px">
+            <div style="margin-bottom:10px"><span class="cat-tag ${pastelFijo}">${_esc(cat)} <span class="cat-count">· ${items.length} ${items.length===1?'ítem':'ítems'}</span></span></div>
+            <div class="item-grid">
+                ${items.map((it,idx)=>{
+                    const texto = (typeof it==='string') ? it : (it.palabra || it.item || '');
+                    const fuentes = detalle && detalle[idx] ? (detalle[idx].fuentes||[]) : (typeof it==='object' && it.fuentes ? it.fuentes : []);
+                    const count = fuentes.length;
+                    return `<div class="item-card">
+                        <div class="item-card-head">
+                            <span class="item-card-name">${_esc(texto)}</span>
+                            ${count>=2?`<span class="item-card-count">×${count}</span>`:''}
+                        </div>
+                        ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}">${_esc(lab)}</span>`; }).join('')}</div>`:''}
+                    </div>`;
+                }).join('')}
+            </div>
+        </div>`;
+    };
+
+    // Helper: render bloque consolidado con sub-bloques principal/recurrente (acordeón)
+    const renderConsolidatedWithSubs = (titulo, data) => {
+        if (!data) return '';
+        // Si tiene principal/recurrente como sub-bloques, rendear como acordeones
+        const hasSubBlocks = data.principal || data.recurrente;
+        if (!hasSubBlocks) {
+            // Compatibilidad: estructura plana antigua
+            const cats = Object.entries(data).filter(([k])=>!k.startsWith('_'));
+            if (!cats.length) return '';
+            return `<div class="section"><div class="section-header"><h2>${titulo}</h2><span class="sec-badge">${cats.length} categorías</span></div><div class="section-body">
+                ${cats.map(([cat, val]) => renderCatBlock(cat, val, 'p-lila')).join('')}
+            </div></div>`;
+        }
+        const subStyles = {
+            principal:  { pastel:'p-verde',     label:'PRINCIPAL',  desc:'declarado en el índice editorial' },
+            recurrente: { pastel:'p-melocoton', label:'RECURRENTE', desc:'frecuente en actividades, no canónico de la unidad' }
+        };
+        return `<div class="section"><div class="section-header"><h2>${titulo}</h2></div><div class="section-body">
+            ${['principal','recurrente'].filter(k => data[k] !== undefined).map(k => {
+                const subEmpty = !data[k] || !Object.keys(data[k]).filter(x=>!x.startsWith('_')).length;
+                if (subEmpty) {
+                    const st = subStyles[k];
+                    return `<details style="margin-bottom:12px;border:1px solid var(--md-outline-variant);border-radius:var(--md-radius-sm);overflow:hidden;background:var(--md-surface);opacity:0.6">
+                        <summary style="cursor:pointer;padding:10px 14px;font-weight:600;color:var(--md-on-surface);display:flex;align-items:center;gap:10px;list-style:none;user-select:none">
+                            <span class="cat-tag-lg ${st.pastel}">${st.label}</span>
+                            <span style="font-size:12px;color:var(--md-on-surface-variant);font-weight:400">${st.desc}</span>
+                            <span style="margin-left:auto;font-size:12px;color:var(--md-on-surface-variant);font-style:italic">(vacío)</span>
+                        </summary>
+                    </details>`;
+                }
+                const subData = data[k];
+                const cats = Object.entries(subData).filter(([n])=>!n.startsWith('_'));
+                const totalItems = cats.reduce((acc,[_,v]) => {
+                    const arr = Array.isArray(v) ? v : (v && (v.items || v.palabras)) || [];
+                    return acc + arr.length;
+                }, 0);
+                const st = subStyles[k];
+                return `<details open style="margin-bottom:12px;border:1px solid var(--md-outline-variant);border-radius:var(--md-radius-sm);overflow:hidden;background:var(--md-surface)">
+                    <summary style="cursor:pointer;padding:10px 14px;font-weight:600;color:var(--md-on-surface);display:flex;align-items:center;gap:10px;list-style:none;user-select:none">
+                        <span class="cat-tag-lg ${st.pastel}">${st.label}</span>
+                        <span style="font-size:12px;color:var(--md-on-surface-variant);font-weight:400">${st.desc}</span>
+                        <span style="margin-left:auto;font-size:12px;color:var(--md-on-surface-variant)">${cats.length} ${cats.length===1?'categoría':'categorías'} · ${totalItems} ${totalItems===1?'ítem':'ítems'}</span>
+                        <span class="acc-chevron" style="transition:transform 0.2s;font-size:10px;color:var(--md-on-surface-variant)">▼</span>
+                    </summary>
+                    <div style="padding:12px 14px;border-top:1px solid var(--md-outline-variant)">
+                        ${cats.map(([cat, val]) => {
+                            // Renderiza categoría con descripcion (si la tiene) + items
+                            const items = Array.isArray(val) ? val : ((val && (val.items || val.palabras)) || []);
+                            const descripcion = (typeof val === 'object' && val.descripcion) ? val.descripcion : '';
+                            const reasignado = (typeof val === 'object' && val._reasignacion) ? val._reasignacion : null;
+                            const detalle = (val && val.detalle_por_palabra) || null;
+                            return `<div style="margin-bottom:18px">
+                                <div style="margin-bottom:8px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+                                    <span class="cat-tag ${st.pastel}">${_esc(cat)} <span class="cat-count">· ${items.length} ${items.length===1?'ítem':'ítems'}</span></span>
+                                    ${reasignado ? `<span style="font-size:10px;color:var(--md-warning);font-weight:600;background:#FFF3E0;padding:2px 7px;border-radius:var(--md-radius-xs)" title="${_esc(reasignado.motivo||'')}">reasignado desde ${_esc(reasignado.campo_indice)}</span>` : ''}
+                                </div>
+                                ${descripcion ? `<div style="margin-bottom:8px">${
+                                    (typeof descripcion === 'string')
+                                        ? `<div style="font-size:12px;color:var(--md-on-surface);line-height:1.5;padding:6px 10px;background:var(--md-surface-variant);border-radius:var(--md-radius-xs);border-left:3px solid var(--md-primary-light)">${_esc(descripcion)}</div>`
+                                        : Object.entries(descripcion).map(([u,txt]) => `<div style="margin:2px 0;display:flex;gap:6px;align-items:baseline;padding:6px 10px;background:transparent;border-left:3px solid var(--md-primary-light);font-size:12px;color:var(--md-on-surface);line-height:1.5"><span class="item-card-source" style="font-weight:700;flex-shrink:0">${_esc(u)}</span><span>${_esc(txt)}</span></div>`).join('')
+                                }</div>` : ''}
+                                <div class="item-grid">
+                                    ${items.map((it,idx) => {
+                                        const texto = (typeof it==='string') ? it : (it.palabra || it.item || '');
+                                        const fuentes = (detalle && detalle[idx]) ? (detalle[idx].fuentes||[]) : ((typeof it==='object' && it.fuentes) ? it.fuentes : []);
+                                        const count = fuentes.length;
+                                        return `<div class="item-card">
+                                            <div class="item-card-head">
+                                                <span class="item-card-name">${_esc(texto)}</span>
+                                                ${count>=2?`<span class="item-card-count">×${count}</span>`:''}
+                                            </div>
+                                            ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}">${_esc(lab)}</span>`; }).join('')}</div>`:''}
+                                        </div>`;
+                                    }).join('')}
+                                </div>
+                            </div>`;
+                        }).join('')}
+                    </div>
+                </details>`;
+            }).join('')}
+        </div></div>`;
+    };
+
+    let gramBlock = renderConsolidatedWithSubs('Gramática consolidada', inv.gramatica_consolidada);
+    let ortoBlock = renderConsolidatedWithSubs('Pronunciación y ortografía consolidada', inv.pronunciacion_ortografia_consolidada);
 
     let idxBlock = '';
     if (inv.contenidos_indice) {
@@ -1029,7 +1370,8 @@ function renderInventario(inv) {
     window._lastInv = inv;
     if (!seccionKeys.includes(_invTab)) _invTab = seccionKeys[0] || 'resumen';
 
-    content.innerHTML = vocBlock + idxBlock + autoevalBlock + tabsBlock;
+    content.innerHTML = propBanner + vocBlock + verbosBlock + gramBlock + ortoBlock + idxBlock + autoevalBlock + tabsBlock;
+    applyZoom();
 
     const sc = document.getElementById('inv-seccion-content');
     const sec = seccionesMap[_invTab];
@@ -1088,6 +1430,14 @@ function renderInventario(inv) {
             </div>
             <div style="font-size:14px;margin-bottom:8px;font-style:italic;color:#37474F"><b>Instrucción:</b> ${_esc(a.instruccion_original || a.instruccion || '')}</div>
             ${a.contenido_linguistico?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Contenido lingüístico:</b> ${(Array.isArray(a.contenido_linguistico)?a.contenido_linguistico:[a.contenido_linguistico]).map(_esc).join(' &middot; ')}</div>`:''}
+            ${(a.vocabulario||a.tiempos_y_verbos||a.gramatica||a.pronunciacion_ortografia) ? `
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 8px 0;padding:6px 10px;background:transparent;border-left:3px solid var(--md-primary-light)">
+                    ${(a.vocabulario||[]).length?`<div style="font-size:12px"><b style="color:#5D4037">Vocabulario:</b> ${a.vocabulario.map(x=>`<span style="display:inline-block;background:var(--md-primary-container);color:var(--md-on-primary-container);padding:1px 8px;border-radius:10px;margin:1px 2px;font-size:12px">${_esc(x)}</span>`).join('')}</div>`:''}
+                    ${(a.tiempos_y_verbos||[]).length?`<div style="font-size:12px"><b style="color:#5D4037">Verbos:</b> ${a.tiempos_y_verbos.map(x=>`<span style="display:inline-block;background:#FFCCBC;color:#BF360C;padding:1px 8px;border-radius:10px;margin:1px 2px;font-size:12px">${_esc(typeof x==='string'?x:(x.lema||JSON.stringify(x)))}</span>`).join('')}</div>`:''}
+                    ${(a.gramatica||[]).length?`<div style="font-size:12px"><b style="color:#5D4037">Gramática:</b> ${a.gramatica.map(x=>`<span style="display:inline-block;background:#E8F5E9;color:#1B5E20;padding:1px 8px;border-radius:10px;margin:1px 2px;font-size:12px">${_esc(x)}</span>`).join('')}</div>`:''}
+                    ${(a.pronunciacion_ortografia||[]).length?`<div style="font-size:12px"><b style="color:#5D4037">Pron/Orto:</b> ${a.pronunciacion_ortografia.map(x=>`<span style="display:inline-block;background:#F3E5F5;color:#4A148C;padding:1px 8px;border-radius:10px;margin:1px 2px;font-size:12px">${_esc(x)}</span>`).join('')}</div>`:''}
+                </div>
+            ` : ''}
             ${a.destreza?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Destreza:</b> ${_esc(Array.isArray(a.destreza)?a.destreza.join(' · '):a.destreza)}</div>`:''}
             ${a.enfoque?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Enfoque:</b> ${_esc(a.enfoque)}</div>`:''}
             ${imagen.presente && imagen.descripcion?`<div style="font-size:13px;color:var(--md-on-surface-variant);margin-bottom:4px"><b>Imagen:</b> ${_esc(imagen.descripcion)}</div>`:''}
