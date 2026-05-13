@@ -5,6 +5,10 @@
 
 ---
 
+## [v10.113 — 2026-05-13] — Retirada de fixtures exploratorias U2p y U3p tras prueba
+
+Las fixtures `U2-propuesta` y `U3-propuesta` introducidas en v10.112 cumplieron su función (prueba mínima discriminativa + segunda prueba cerrable que reveló el error de proceso motivador de `reglas-operativas.md` §5.12-§5.14). Eliminadas del repositorio tras consolidar las lecciones en contrato vivo. `U1-propuesta` se mantiene intacta con su shape original (`_propuesta_rediseno` + `_migracion_rediseno`) y su banner especial en el dashboard, reservada como muestra de la arquitectura nueva para revisión futura. Sin cambios en el contrato documental ni en el dashboard.
+
 ## [v10.112 — 2026-05-13] — Rediseño fase 1: dashboard adaptado + fixtures exploratorias
 
 Segundo commit del hito transitorio (continuación de v10.111).
