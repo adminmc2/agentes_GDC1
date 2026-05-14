@@ -1,14 +1,14 @@
 # Reglas operativas — Decisión, clasificación, población y unidades atípicas
 
-> 🗄️ **ARCHIVO HISTÓRICO — NO USAR OPERATIVAMENTE (cerrado 2026-05-13).**
+> 🗄️ **ARCHIVO HISTÓRICO — NO USAR OPERATIVAMENTE (cerrado 2026-05-13, movido a `docs/historico/` el 2026-05-15 con v10.116).**
 >
-> Este documento es el **reservorio histórico** del modelo anterior al rediseño IA-first de fase 1. **No es autoridad operativa.** La autoridad operativa vigente vive en `reglas-operativas.md` (reescrita desde cero el 2026-05-13 bajo el modelo IA-first, con el shape del schema nuevo y los 4 bloques consolidados).
+> Este documento es el **reservorio histórico** del modelo anterior al rediseño IA-first de fase 1. **No es autoridad operativa.** La autoridad operativa vigente vive en `fases/1-extraccion-inventario/reglas-operativas.md` (reescrita desde cero el 2026-05-13 bajo el modelo IA-first, con el shape del schema nuevo y los 4 bloques consolidados).
 >
 > **Reglas para este archivo:**
-> - **No consultar** durante una corrida de extracción. Consultar `reglas-operativas.md`.
+> - **No consultar** durante una corrida de extracción. Consultar el archivo vivo.
 > - **No editar** salvo para corregir referencias claramente rotas o para extraer contenido que se vaya a absorber en el archivo vivo (en cuyo caso el cambio se hace allí, no aquí).
 > - **No referenciar desde docs vivos.** Si un doc vivo (schema, glosario, prompt, CLAUDE) cita una sección de este archivo, es bug: la cita debe redirigirse a la sección equivalente del archivo nuevo.
-> - **Conservación:** se mantiene como referencia histórica para auditar la migración y rastrear decisiones del modelo anterior. Su eliminación definitiva queda diferida hasta que `convenciones-y-casos.md` también esté reescrito (lote siguiente).
+> - **Archivado a `docs/historico/`** el 2026-05-15 tras cierre del lote v10.116 (reset de `convenciones-y-casos.md`), que era la condición de archivado diferida.
 >
 > ⚠️ **Aviso original (pre-cierre, conservado por trazabilidad):** contenido del modelo v1 pre-rediseño. Las decisiones refinadas (lógica de `recurrente` en 3 pasos, ciclo de vida de marcas internas, política PCIC, etc.) **no viven aquí**.
 

@@ -403,6 +403,7 @@ Lista de strings con las **respuestas esperadas** de la actividad.
 - **Por qué es saco abierto:** distintos tipos de actividad requieren distintos campos. En lugar de fijar un shape único, se admite cualquier campo necesario.
 - **Política de extensibilidad:** cualquier campo nuevo se documenta y se añade al schema con la regla de población correspondiente en `reglas-operativas.md`.
 - **Origen del valor:** transcripción literal del PDF.
+- **Cómo decidir entre los 3 campos canónicos de texto** (`texto_completo` / `dialogo_completo` / `textos_personajes`) → `convenciones-y-casos.md` §1.4 (tabla decisional + sub-secciones §1.4.1, §1.4.2, §1.4.3).
 
 #### `datos.items_libro`
 

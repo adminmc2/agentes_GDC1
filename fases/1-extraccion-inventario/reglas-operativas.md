@@ -9,8 +9,8 @@
 > **Principio IA-first.** La IA decide, el código comprueba, el humano cierra. Cada regla se redacta como instrucción operativa: verbo imperativo + condición + acción + cuándo escalar. Casos frontera como ejemplos concretos, no como narrativa.
 >
 > **Single source de precedencias.** Las reglas de precedencia (qué clasificar como actividad / cuadro / nota / autoevaluación, en qué orden, con qué excepciones) viven **exclusivamente aquí**. Cualquier otro archivo que las invoque lo hace por referencia, no por copia.
-
-> ⚠️ **Deuda transitoria pendiente:** `convenciones-y-casos.md` ha sido reescrito y queda como `convenciones-y-casos-viejo.md` mientras se construye el nuevo. Las referencias a §X.Y de `convenciones-y-casos.md` desde otros docs vivos pueden estar rotas hasta el lote siguiente.
+>
+> **Precedencia entre contratos vivos en caso de conflicto:** `schema-inventario.md` > `reglas-operativas.md` > `convenciones-y-casos.md`.
 
 ---
 

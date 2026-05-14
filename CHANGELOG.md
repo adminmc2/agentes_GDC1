@@ -5,6 +5,33 @@
 
 ---
 
+## [v10.116 — 2026-05-15] — Fase 1: reset de `convenciones-y-casos.md` bajo modelo IA-first
+
+Cierre del lote de rediseño de fase 1. Tras el reset de `reglas-operativas.md` (v10.115), esta versión cierra la tercera capa viva de soporte: `convenciones-y-casos.md` se reescribe bajo modelo IA-first como **lookup puntual** durante la corrida, con precedencia explícita **schema > reglas > convenciones**.
+
+- **`fases/1-extraccion-inventario/convenciones-y-casos.md`** reescrito completo desde cero. Estructura nueva: §0 naturaleza del archivo + precedencia explícita; §1 convenciones de transcripción (§1.1 literalidad, §1.2 primer ítem resuelto, §1.3 textos con tabla decisional y sub-secciones §1.3.1/2/3 para `texto_completo`/`dialogo_completo`/`textos_personajes`, §1.4 sopas de letras, §1.5 marcadores editoriales que no van en `respuestas`); §2 ejemplos canónicos por tipo de actividad (cloze, selección múltiple, cuestionario, ejemplos incorrectos); §3 ejemplo canónico de unidad atípica con autoridad decisional en reglas §7; §4 casebook (§4.1 errores, §4.2 casos resueltos por unidad, §4.3 casos pendientes de confirmación con shape v10.115); §5 puntero a `reglas-operativas.md` §10.
+- **Cambios sobre el modelo viejo:**
+  - §1.7 vieja (`enfoque` no se hereda de sección) → absorbida en `reglas-operativas.md` §2.3, retirada de convenciones.
+  - §5 vieja (política de mejora continua) → absorbida en `reglas-operativas.md` §10, retirada.
+  - §1.1 vieja (sílaba tónica subrayada hasta U3 con marcado `_palabra_` + `datos._nota`) → **eliminada por decisión del autor** (no relevante en el modelo IA-first). Los inventarios canónicos U0/U1/U3 que documentaron la convención con `datos._nota` quedan como deuda heredada no contractual.
+  - §1.4 y §1.4-bis viejas (textos seguidos y textos atribuidos a personajes) → fusionadas en §1.3 con tabla decisional al frente y sub-secciones §1.3.1/2/3.
+  - §1.8 vieja (`columnas_relaciona`) → reubicada en §4.3.1 como caso pendiente de confirmación con shape v10.115 (anclaje único en U6, no extraído con shape nuevo).
+  - Tono reescrito IA-first: "la IA aplica esta convención al transcribir X" en lugar de "se transcribe X".
+- **Regla decisional única para `respuestas` con huecos** (§1.3.2): si el input usa `[N]` (típico de `dialogo_completo`), cada entrada de `respuestas` lleva formato `"[N] valor"`; si el input usa ítems numerados (`"1. …"`, típico de `items_libro`), cada entrada va solo con el valor. No mezclar variantes.
+- **Precedencia explícita schema > reglas > convenciones** propagada a:
+  - `prompt.md`: eliminado el bloque de "Deuda transitoria"; lectura mínima limitada a schema + reglas + PDF; nueva sección "Lookup puntual durante la corrida" para `convenciones-y-casos.md`; nota final con jerarquía explícita.
+  - `CLAUDE.md` fase 1: banner de estado actualizado (sin "EN MIGRACIÓN", `convenciones-y-casos.md` 🟢); regla 3 (single source of truth) reformulada con jerarquía explícita en conflicto; tabla "Para qué consultar qué archivo" redirigida al archivo vivo; documentos relacionados consolidados.
+  - `reglas-operativas.md`: cláusula transitoria del header retirada; añadida nota de precedencia entre contratos vivos.
+  - `schema-inventario.md`: aviso transitorio acotado a `validar_inventario.py` (reglas y convenciones declaradas alineadas); añadida nota de precedencia.
+- **Archivado en `docs/historico/`** de los dos reservorios históricos:
+  - `convenciones-y-casos-viejo.md` con header de archivo histórico que mapea cada §X.Y vieja al destino vivo (o a "absorbida en reglas-operativas.md" / "eliminada").
+  - `reglas-operativas-viejo.md` con su header existente actualizado: la condición de archivado diferida (cierre de convenciones) se cumple ahora.
+- **Coherencia con `glosario.md`** (Paso 5): cobertura verificada de campos `datos.*` vía el principio "saco abierto" declarado (sin enumerar campo por campo, sin abrir deuda de mantenimiento cruzado); añadido **un único puntero selectivo** desde la entrada `datos` del glosario hacia `convenciones-y-casos.md §1.3` (tabla decisional entre los 3 campos canónicos de texto).
+- **Verificación atómica de referencias** (Paso 4): cero referencias operativas vivas a los dos `-viejo` desde docs operativos en `fases/` o desde raíz. Las menciones residuales en `CHANGELOG.md` son bitácora histórica preservada por anti-revisionismo. Referencias `§X.Y` desde `CLAUDE.md` fase 1 hacia `convenciones-y-casos.md` (§1, §2, §4) resuelven correctamente contra el archivo vivo.
+- **Validación material** (Paso 6) por convención promovida a §1: §1.1 literalidad transversal; §1.2 primer ítem resuelto verificado en U0 (Colombia, F-ú-t-b-o-l, ejemplos_modelo); §1.3.1 `texto_completo` en U1 y U3 (lecturas Javier/Lucía); §1.3.2 `dialogo_completo` en U1, U3 y fixture U4-propuesta; §1.3.3 `textos_personajes` y §1.5 marcadores editoriales conservadas en §1 sin caso material verificable en shape v10.115 (anclaje histórico U5) por valor preventivo (en particular §1.5 previene el bug real de desplazamiento de numeración cuando el modelo entra como primera opción); §1.4 sopa de letras con caso disparador U3 documentado y transcripción material `cuadricula` en U1.
+
+Sin commit/rerun funcional (decisión: el cambio es absorción y limpieza, no introducción de patrón decisional nuevo).
+
 ## [v10.115 — 2026-05-14] — Fase 1: reset de `reglas-operativas.md` bajo modelo IA-first
 
 Hito de cierre del lote de rediseño operativo de fase 1. `reglas-operativas.md` deja de ser parche evolutivo del modelo viejo y pasa a ser **autoridad operativa única reescrita desde cero bajo el modelo IA-first**. La capa de convenciones queda en deuda transitoria declarada explícitamente.

@@ -1,13 +1,30 @@
 # Convenciones editoriales y casos resueltos
 
-> ⚠️ **CONTENIDO VIEJO — v1 pre-rediseño (2026-05-12).**
-> Describe convenciones del modelo anterior. Pendiente de ampliación con los casos nuevos del rediseño: paréntesis-anotación, desambiguación funcional (`o` letra vs conjunción, `te` clítico vs letra, `más` matemático vs comparativo), respuestas de producción con sufijo `@R`, exclusión de campos directivos en `datos.*`. Hasta el cierre de la migración (Paso 2 del plan), estas convenciones reflejan el modelo viejo.
+> 🗄️ **ARCHIVO HISTÓRICO — NO USAR OPERATIVAMENTE (archivado 2026-05-15, v10.116).**
+>
+> Reservorio histórico del modelo pre-rediseño IA-first. **No es autoridad operativa.** La autoridad vigente vive en `fases/1-extraccion-inventario/convenciones-y-casos.md` (reescrito 2026-05-15 bajo modelo IA-first, como tercera capa viva de soporte tras schema y reglas).
+>
+> **Absorciones de secciones de este archivo en los contratos vivos:**
+> - §1.1 (sílaba tónica subrayada hasta U3) → **eliminada** del archivo nuevo (decisión del autor 2026-05-15: convención no relevante en el modelo IA-first; los inventarios canónicos U0/U1/U3 que la documentaron con `datos._nota` quedan como deuda heredada no contractual).
+> - §1.2 (primer ítem resuelto como ejemplo) → `convenciones-y-casos.md` §1.2.
+> - §1.3 (textos de lectura → `texto_completo`) → `convenciones-y-casos.md` §1.3.1.
+> - §1.4 (diálogos → `dialogo_completo`) → `convenciones-y-casos.md` §1.3.2.
+> - §1.4-bis (textos atribuidos a personajes) → `convenciones-y-casos.md` §1.3.3.
+> - §1.5 (sopas de letras) → `convenciones-y-casos.md` §1.4.
+> - §1.6 (marcadores editoriales no van en respuestas) → `convenciones-y-casos.md` §1.5.
+> - §1.7 (`enfoque` no se hereda de la sección) → **absorbido en `reglas-operativas.md` §2.3**, no en convenciones.
+> - §1.8 (`columnas_relaciona`) → `convenciones-y-casos.md` §4.3.1 (caso pendiente de confirmación con shape v10.115).
+> - §2 (ejemplos canónicos por tipo) → `convenciones-y-casos.md` §2.
+> - §3 (ejemplo de unidad atípica) → `convenciones-y-casos.md` §3 (autoridad decisional en reglas §7).
+> - §4 (casebook) → `convenciones-y-casos.md` §4.
+> - §5 (política mejora continua) → **absorbido en `reglas-operativas.md` §10**, no en convenciones.
+>
+> **Reglas para este archivo:**
+> - **No consultar** durante una corrida; consultar el archivo vivo.
+> - **No editar** salvo para corregir referencias claramente rotas.
+> - **No referenciar desde docs vivos.**
 
-> **Responsabilidad:** convenciones de transcripción del libro al JSON + memoria editorial de casos resueltos en extracciones reales + política de mejora continua del sistema de extracción.
->
-> **No contiene:** schema (vive en `schema-inventario.md`) ni reglas estables de clasificación o decisión (viven en `reglas-operativas.md`).
->
-> **Nota de mantenimiento:** este archivo mezcla deliberadamente convenciones estables con casebook append-only. Si en el futuro el casebook crece y empieza a competir con las convenciones por visibilidad, se separarán entonces.
+> **Aviso original (pre-cierre, conservado por trazabilidad):** contenido del modelo v1 pre-rediseño. Mezclaba deliberadamente convenciones estables con casebook append-only.
 
 ---
 

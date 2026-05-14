@@ -4,7 +4,9 @@
 >
 > **No contiene:** cuándo aplica cada campo, cómo elegir el valor, reglas de población semántica, workflow de extracción, ejemplos pedagógicos ni casos históricos. Esos viven en `reglas-operativas.md` o `convenciones-y-casos.md`.
 
-> ⚠️ **Aviso transitorio:** `validar_inventario.py` y `reglas-operativas.md` aún no están alineados con este schema; la validación contra este shape es manual. Detalle, implicaciones y criterios de retirada → **Apéndice transitorio** al final del documento.
+> ⚠️ **Aviso transitorio:** `validar_inventario.py` aún no está alineado con este schema; la validación contra este shape es manual. `reglas-operativas.md` y `convenciones-y-casos.md` sí están alineados. Detalle, implicaciones y criterios de retirada → **Apéndice transitorio** al final del documento.
+>
+> **Precedencia entre contratos vivos en caso de conflicto:** `schema-inventario.md` > `reglas-operativas.md` > `convenciones-y-casos.md`.
 
 > **Naturaleza del contrato.** El **shape base** (top-level, schema por página/actividad/cuadro, las 4 listas tipadas, los 4 bloques consolidados y las marcas internas declaradas en §14) es el contrato canónico estable del sistema. Se mantiene entre cursos salvo decisión formal de rediseño del contrato. Las **enumeraciones cerradas** (`tipo`, `destreza`, `enfoque`, `tiempo`, `tipo_cuadro`, `seccion`, `autoevaluacion.opciones`) son igualmente canónicas, pero **versionables por expansión controlada**: pueden ampliarse cuando el alcance real del curso lo exija. La ampliación no es libre: requiere documentación explícita del cambio y actualización paralela del schema, del validador y, cuando corresponda, de `reglas-operativas.md`. Mientras no se amplíe, cada enumeración es estricta y rechaza valores fuera del set.
 
