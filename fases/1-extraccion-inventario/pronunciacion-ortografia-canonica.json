@@ -1,9 +1,87 @@
 {
   "_meta": {
-    "estado": "esqueleto-rediseno",
+    "estado": "poblado",
     "creado": "2026-05-12",
-    "descripcion": "Registry de categorías canónicas de pronunciacion_ortografia_consolidada. Esqueleto vacío creado durante el rediseño de fase 1; el contenido editorial se poblará al ejecutar la migración (Paso 2/3). Fuente PCIC paralela: pcic-a1-pronunciacion-ortografia.json.",
-    "version": "0.0"
+    "poblado": "2026-05-15",
+    "version": "1.0",
+    "descripcion": "Registry de categorías canónicas de pronunciacion_ortografia_consolidada. Lista cerrada en pieza 4 del rediseño (2026-05-11) con matriz de cobertura cruzada contra las 9 entradas de pronunciacion_ortografia[] de nc1-curso.json + entrada de mayúsculas reasignada de pieza 3 (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §16). Materializado el 2026-05-15 (v10.117). Apoyo PCIC A1: fases/1-extraccion-inventario/pcic-a1-pronunciacion-ortografia.json.",
+    "estructura": "Diccionario de dos niveles: {categoría → subcategoría → [items]}. Las 7 categorías son canónicas y cerradas; ampliables por expansión controlada si NC2 lo exige."
   },
-  "categorias": []
+  "categorias": {
+    "Sonidos y correspondencias ortográficas": {
+      "_apariciones": {
+        "U3": ["/θ/"],
+        "U4": ["/r/", "/rr/"],
+        "U5": ["/x/"],
+        "U8": ["/k/"]
+      },
+      "subcategorias": {
+        "/θ/": ["za", "zo", "zu", "ce", "ci"],
+        "/r/": ["r-"],
+        "/rr/": ["rr", "r-"],
+        "/x/": ["ja", "je", "ji", "jo", "ju", "ge", "gi"],
+        "/k/": ["ca", "co", "cu", "que", "qui"]
+      }
+    },
+    "Letras homófonas": {
+      "_apariciones": {
+        "U6": ["b = v"]
+      },
+      "subcategorias": {
+        "b = v": ["b", "v"]
+      }
+    },
+    "Vocales": {
+      "_apariciones": {
+        "U2": ["vocales españolas"]
+      },
+      "subcategorias": {
+        "vocales españolas": ["a", "e", "i", "o", "u"]
+      }
+    },
+    "Entonación": {
+      "_apariciones": {
+        "U1": ["interrogativa"],
+        "U7": ["interrogativa", "exclamativa"]
+      },
+      "subcategorias": {
+        "interrogativa": ["entonación ascendente al final"],
+        "exclamativa": ["entonación enfática"]
+      }
+    },
+    "Acentuación": {
+      "_apariciones": {
+        "U9": ["tipos según sílaba tónica"]
+      },
+      "subcategorias": {
+        "tipos según sílaba tónica": ["agudas", "llanas", "esdrújulas"]
+      }
+    },
+    "Signos de puntuación": {
+      "_apariciones": {
+        "U1": ["interrogación (apertura y cierre obligatorios)"],
+        "U7": ["exclamación (apertura y cierre obligatorios)"]
+      },
+      "subcategorias": {
+        "interrogación (apertura y cierre obligatorios)": ["¿", "?"],
+        "exclamación (apertura y cierre obligatorios)": ["¡", "!"]
+      }
+    },
+    "Mayúsculas": {
+      "_apariciones": {
+        "U2": ["uso general"]
+      },
+      "subcategorias": {
+        "uso general": [
+          "inicial de oración",
+          "después de punto",
+          "inicio de párrafo",
+          "nombres propios de persona",
+          "nombres propios de lugar",
+          "nombres propios de instituciones",
+          "siglas"
+        ]
+      }
+    }
+  }
 }

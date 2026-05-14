@@ -1,9 +1,99 @@
 {
   "_meta": {
-    "estado": "esqueleto-rediseno",
+    "estado": "poblado",
     "creado": "2026-05-12",
-    "descripcion": "Registry de categorías canónicas de gramatica_consolidada. Esqueleto vacío creado durante el rediseño de fase 1; el contenido editorial se poblará al ejecutar la migración (Paso 2/3). El insumo de referencia es pcic-a1-gramatica.json.",
-    "version": "0.0"
+    "poblado": "2026-05-15",
+    "version": "1.0",
+    "descripcion": "Registry de categorías canónicas de gramatica_consolidada. Materializado el 2026-05-15 (v10.117) aplicando la estrategia híbrida de pieza 3 §14.0 del rediseño (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §14): scaffold conceptual de §14.2 + resolución específica con PCIC A1 (fuente vinculante: fases/1-extraccion-inventario/pcic-a1-gramatica.json) + naming PCIC adaptado mínimamente para legibilidad. Cubre la matriz §14.1 de las 32 entradas gramaticales de gramatica[] de nc1-curso.json + 2 categorías PCIC adicionales con anclaje material fuerte (Pronombre sujeto en cuadros verbales, Pronombres átonos de OI en construcción gustar/doler).",
+    "estructura": "Diccionario {categoría → {_pcic_ref, _apariciones, items}}. Ampliable por expansión controlada si una extracción real surfacea una categoría PCIC A1 no contemplada.",
+    "regla_fallback": "Si una extracción detecta contenido gramatical que no encaja en ninguna categoría aquí, marcar _pendiente_canon y escalar al autor (regla §0.1 de reglas-operativas.md).",
+    "siempre_presentes_no_indexados": "Componentes que aparecen sistemáticamente en el corpus pero NC1 no los enseña como contenido (conjunciones copulativas y/e, conjunciones disyuntivas o/u, adverbios de afirmación y negación sí/no/también/tampoco) NO se canonizan aquí. Su tratamiento canónico es responsabilidad de fase 2 (analítica): propondrá al autor si deben codificarse como categorías cross-unidad cuando detecte el patrón de presencia sistemática. Detalle en fases/2-reciclaje/REDISEÑO-EN-CURSO.md."
   },
-  "categorias": []
+  "categorias": {
+    "Artículos determinados": {
+      "_pcic_ref": "PCIC A1 §3.1 El artículo definido",
+      "_apariciones": { "U1": "principal" },
+      "items": ["el", "la", "los", "las"]
+    },
+    "Artículos indeterminados": {
+      "_pcic_ref": "PCIC A1 §3.2 El artículo indefinido",
+      "_apariciones": { "U4": "principal" },
+      "items": ["un", "una", "unos", "unas"]
+    },
+    "Demostrativos": {
+      "_pcic_ref": "PCIC A1 §4 Los demostrativos",
+      "_apariciones": { "U2": "principal (serie este)" },
+      "items": ["este", "esta", "estos", "estas"]
+    },
+    "Posesivos": {
+      "_pcic_ref": "PCIC A1 §5 Los posesivos",
+      "_apariciones": { "U3": "principal" },
+      "items": ["mi", "tu", "su", "nuestro/-a", "vuestro/-a", "mis", "tus", "sus", "nuestros/-as", "vuestros/-as"]
+    },
+    "Pronombre sujeto": {
+      "_pcic_ref": "PCIC A1 §7.1.1 Pronombre sujeto",
+      "_apariciones": { "U1": "introducción (singulares con ser/llamarse/tener)", "U2": "ampliación a plurales", "U4-U9": "recurrente como soporte sintáctico" },
+      "items": ["yo", "tú", "él", "ella", "usted", "nosotros", "nosotras", "vosotros", "vosotras", "ellos", "ellas", "ustedes"]
+    },
+    "Pronombres átonos de OI": {
+      "_pcic_ref": "PCIC A1 §7.1.3 Pronombres átonos de OI (serie completa: me, te, le, nos, os, les)",
+      "_apariciones": { "U4": "principal (paradigma gustar)", "U8": "ampliación (paradigma doler)" },
+      "items": ["me", "te", "le", "nos", "os", "les"]
+    },
+    "Interrogativos": {
+      "_pcic_ref": "PCIC A1 §7.3 Los interrogativos + §8.8 Adverbios relativos e interrogativos",
+      "_apariciones": { "U3": "principal", "U9": "ampliación (añade 'con quién')" },
+      "items": ["qué", "quién", "quiénes", "dónde", "cuándo", "cómo", "cuánto/-a/-os/-as", "cuál", "cuáles", "con quién", "por qué"]
+    },
+    "Concordancia de género": {
+      "_pcic_ref": "PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN",
+      "_apariciones": { "U1": "principal (sustantivos y adjetivos)" },
+      "items": ["masculino", "femenino"]
+    },
+    "Concordancia de número": {
+      "_pcic_ref": "PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3",
+      "_apariciones": { "U2": "principal (plural de nombres y adjetivos)" },
+      "items": ["singular", "plural"]
+    },
+    "Nombres contables e incontables": {
+      "_pcic_ref": "PCIC A1 §1.1 Clases de sustantivos",
+      "_apariciones": { "U4": "principal (aplicado al léxico de alimentos)" },
+      "items": ["contable", "incontable"]
+    },
+    "Hay": {
+      "_pcic_ref": "PCIC A1 §9 El verbo (forma impersonal de haber, 3.ª persona singular invariable)",
+      "_apariciones": { "U4": "principal (expresar existencia)" },
+      "items": ["hay"]
+    },
+    "Construcción gustar/doler": {
+      "_pcic_ref": "PCIC A1 §12.2.3 Objeto indirecto + §10.4 Concordancia SN-verbo",
+      "_apariciones": { "U4": "principal con gustar", "U8": "amplía con doler" },
+      "items": ["me/te/le/nos/os/les + gusta(n)", "me/te/le/nos/os/les + duele(n)"]
+    },
+    "Oposición ser / estar": {
+      "_pcic_ref": "PCIC A1 §12.2.1 Atributo",
+      "_apariciones": { "U5": "principal" },
+      "items": ["ser (identidad, características)", "estar (ubicación, estado)"]
+    },
+    "Posición": {
+      "_pcic_ref": "PCIC A1 §8.2 Adverbios nucleares o de predicado + §8.9 Locuciones adverbiales",
+      "_apariciones": { "U5": "principal (adverbios y locuciones locativas)" },
+      "items": ["encima", "debajo", "detrás", "delante", "al lado"]
+    },
+    "Preposiciones": {
+      "_pcic_ref": "PCIC A1 (preposiciones simples; entran en sintagmas preposicionales del SV §12.2)",
+      "_apariciones": { "U7": "principal" },
+      "items": ["a", "de", "por", "con", "en"]
+    },
+    "Adverbios de cantidad": {
+      "_pcic_ref": "PCIC A1 §6.1 Cuantificadores propios + §8.2 Adverbios de predicado",
+      "_apariciones": { "U8": "principal (incluye muy, mucho/-a/-os/-as fusionados)" },
+      "items": ["muy", "mucho", "bastante", "un poco", "nada"]
+    },
+    "Marcadores temporales del pasado": {
+      "_pcic_ref": "PCIC A1 §8 El adverbio + §8.9 Locuciones adverbiales (temporales)",
+      "_apariciones": { "U9": "principal (apoyo al pretérito indefinido)" },
+      "items": ["ayer", "ayer por la mañana", "el año pasado", "hace + tiempo"]
+    }
+  }
 }

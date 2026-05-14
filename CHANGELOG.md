@@ -5,6 +5,21 @@
 
 ---
 
+## [v10.117 — 2026-05-15] — Fase 1: materialización de registries gramatical y pronunciación/ortografía
+
+Cierre de deuda heredada desde v10.111 (los registries `gramatica-canonica.json` y `pronunciacion-ortografia-canonica.json` permanecían como esqueletos vacíos `{ "categorias": [] }` con `_meta.estado: "esqueleto-rediseno"`). El bloqueo lo había destapado la fixture U4-propuesta del lote v10.115 (no podía poblar `recurrente` en gramática y pron/orto). Ambos registries se materializan aplicando los diseños cerrados en pieza 3 §14 y pieza 4 §16 de `docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`, con criterio de inclusión depurado por dictamen del revisor.
+
+- **`fases/1-extraccion-inventario/pronunciacion-ortografia-canonica.json`** poblado con 7 categorías canónicas (lista cerrada de pieza 4 §16.2): Sonidos y correspondencias ortográficas (/θ/, /r/, /rr/, /x/, /k/), Letras homófonas (b = v), Vocales, Entonación (interrogativa, exclamativa), Acentuación, Signos de puntuación (interrogación, exclamación), Mayúsculas. Estructura `{categoría → {_apariciones, subcategorias}}`. Cobertura 9/9 entradas de `pronunciacion_ortografia[]` de `nc1-curso.json` + entrada de mayúsculas reasignada desde `gramatica[]`. `_meta.estado` pasa de `esqueleto-rediseno` a `poblado`.
+- **`fases/1-extraccion-inventario/gramatica-canonica.json`** poblado con 17 categorías canónicas aplicando estrategia híbrida de pieza 3 §14.0 (scaffold + PCIC A1):
+  - 15 categorías de la matriz §14.1 (entradas gramaticales puras de `gramatica[]` de `nc1-curso.json`): Artículos determinados, Artículos indeterminados, Demostrativos, Posesivos, Interrogativos, Concordancia de género, Concordancia de número, Nombres contables e incontables, Hay, Construcción gustar/doler, Oposición ser/estar, Posición, Preposiciones, Adverbios de cantidad, Marcadores temporales del pasado.
+  - 2 categorías PCIC adicionales con anclaje material fuerte: Pronombre sujeto (PCIC §7.1.1, presente en cuadros verbales de U1 en adelante), Pronombres átonos de OI (PCIC §7.1.3 serie completa me/te/le/nos/os/les, presente en construcción gustar/doler).
+  - Estructura por categoría: `{_pcic_ref, _apariciones, items}`. Cada `_pcic_ref` apunta a la sección PCIC A1 exacta (`pcic-a1-gramatica.json`).
+- **Criterio de inclusión depurado.** Versión inicial tenía 20 categorías; tras dictamen del revisor sobre el criterio del canon ampliado ("materialmente presente y analíticamente necesario", no "universo lógico potencial"), se retiraron 3 sobreextensiones: Conjunciones copulativas (y/e), Conjunciones disyuntivas (o/u), Adverbios de afirmación y negación (sí/no/también/tampoco). Son uso pragmático del corpus, no contenido enseñado por NC1.
+- **Responsabilidad analítica de fase 2** documentada en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` §8 (nueva sección). Política: componentes "siempre presentes pero no indexados" (las 3 sobreextensiones retiradas y futuros candidatos) **no se canonizan automáticamente en fase 1**; fase 2 detecta el patrón cross-unidad y propone al autor el tratamiento canónico (canonizar, modelar como fenómeno transversal o ignorar). Lista inicial de 3 candidatos + 4 reglas operativas + criterio de ampliación.
+- **Coherencia interna corregida** tras hallazgo del revisor en `Pronombres átonos de OI`: el `_pcic_ref` original citaba la sección PCIC con naming literal ("serie me, te, le") mientras los `items` incluían el paradigma completo. Naming ajustado a "serie completa: me, te, le, nos, os, les" para reflejar la cobertura material real sin perder la referencia PCIC.
+
+Sin cambios en docs operativos (schema, reglas, glosario, convenciones, prompt, CLAUDE): los registries ya estaban declarados como referencias en sus respectivos lugares; lo único que cambia es que ahora están poblados.
+
 ## [v10.116 — 2026-05-15] — Fase 1: reset de `convenciones-y-casos.md` bajo modelo IA-first
 
 Cierre del lote de rediseño de fase 1. Tras el reset de `reglas-operativas.md` (v10.115), esta versión cierra la tercera capa viva de soporte: `convenciones-y-casos.md` se reescribe bajo modelo IA-first como **lookup puntual** durante la corrida, con precedencia explícita **schema > reglas > convenciones**.

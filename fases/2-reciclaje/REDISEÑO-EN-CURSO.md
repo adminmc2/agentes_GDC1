@@ -306,3 +306,45 @@ La coherencia bidireccional entre `actividad.X` y `top-level.X.fuentes` la chequ
 
 - Diseño de las reglas: ✅ cerrado el 2026-05-12.
 - Implementación en `validar_inventarios_cross.py`: pendiente de E4a del rediseño de fase 1.
+
+---
+
+## 8. Componentes "siempre presentes no indexados" — responsabilidad analítica de fase 2 (registrado 2026-05-15, v10.117)
+
+### Definición
+
+Componentes lingüísticos que **aparecen sistemáticamente en el corpus de NC1** pero **el libro NO los enseña como contenido en el índice editorial** (`gramatica[]` / `vocabulario[]` / etc. de `nc1-curso.json`). Su omnipresencia es un fenómeno cross-unidad detectable; su tratamiento canónico no es trivial.
+
+### Por qué no se canonizan en fase 1
+
+El registry de fase 1 (`gramatica-canonica.json`, `campos-semanticos-canonicos.json`, etc.) se ancla al criterio **"materialmente presente y analíticamente necesario"** (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §14, criterio aclarado 2026-05-15). Eso excluye material que aparece como **input pragmático del corpus** pero no se trabaja como contenido enseñado. Si fase 1 los canonizase automáticamente, el registry se inflaría con material que NC1 no codifica como aprendizaje.
+
+### Responsabilidad de fase 2
+
+**Fase 2 debe proponer al autor el tratamiento canónico** de estos componentes cuando detecte el patrón de presencia sistemática cross-unidad. La propuesta puede ser:
+- Canonizar como categoría cross-unidad en el registry correspondiente.
+- Tratarlos como fenómeno transversal modelado en un bloque analítico nuevo de `nc1-reciclaje.json`.
+- Ignorarlos si no aportan valor de análisis.
+
+La decisión la toma el autor; fase 2 hace la propuesta lógica basada en evidencia (frecuencia, distribución por unidades, función pragmática vs gramatical).
+
+### Lista inicial de candidatos (detectados durante v10.117)
+
+Identificados al materializar `gramatica-canonica.json` y comparar con el corpus disponible:
+
+| Candidato | Estado actual | Evidencia | Pregunta para fase 2 |
+|---|---|---|---|
+| Conjunciones copulativas (`y`, `e`) | NO canonizadas en fase 1 | Aparición omnipresente en todas las unidades como coordinador de constituyentes | ¿Se modela como categoría gramatical cross-unidad, o queda como input pragmático? |
+| Conjunciones disyuntivas (`o`, `u`) | NO canonizadas | Aparición frecuente, especialmente en cuestionarios y opciones | Idem |
+| Adverbios de afirmación y negación (`sí`, `no`, `también`, `tampoco`) | NO canonizadas | "sí"/"no" omnipresente desde U1; "también"/"tampoco" tardío (U6+ probablemente) | ¿Se separan por momento de aparición? ¿"también"/"tampoco" sí se codifican y "sí"/"no" no? |
+
+### Política operativa
+
+1. **Fase 1 no los canoniza automáticamente.** Si una extracción surfacea uno de estos componentes con anclaje material claro (cuadro explícito, actividad de contenido enseñado), se escala al autor por §0.1 de `reglas-operativas.md`.
+2. **Fase 2 los detecta como patrón** cuando agrega inventarios cross-unidad. La detección produce un `hallazgo` en la corrida de fase 2, no una modificación silenciosa del registry.
+3. **El autor decide** caso por caso. La decisión se documenta aquí (§8) cuando se cierra cada candidato.
+4. **Si el autor canoniza**, se añade al registry correspondiente de fase 1 con `_pcic_ref` y `_apariciones` documentados, y se actualiza `_meta.siempre_presentes_no_indexados` del registry para retirar el candidato.
+
+### Criterio de ampliación
+
+Esta lista se amplía cuando una corrida real de fase 1 o fase 2 detecta un nuevo componente "siempre presente pero no indexado" que merezca consideración. No es lista cerrada.
