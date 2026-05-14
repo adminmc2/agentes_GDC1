@@ -5,6 +5,21 @@
 
 ---
 
+## [v10.115 — 2026-05-14] — Fase 1: reset de `reglas-operativas.md` bajo modelo IA-first
+
+Hito de cierre del lote de rediseño operativo de fase 1. `reglas-operativas.md` deja de ser parche evolutivo del modelo viejo y pasa a ser **autoridad operativa única reescrita desde cero bajo el modelo IA-first**. La capa de convenciones queda en deuda transitoria declarada explícitamente.
+
+- **`fases/1-extraccion-inventario/reglas-operativas.md`** reescrito completo desde cero. Estructura nueva: §0 política transversal (§0.1 propuesta-en-chat, §0.2 construcción iterativa de `recurrente`, §0.3 procedimiento obligatorio A/B/C de poblado), §1 precedencia actividad/cuadro/nota/autoevaluación, §2 asignación de `tipo` (taxonomía de 20) + §2.3 destreza/enfoque, §3 `tipo_cuadro`, §4 "Para aprender" / "Observa", §5 población de campos (§5.1 criterios paraguas con §5.1.1-§5.1.3, §5.2 verbo soporte vs paradigma, §5.6 canon semántico léxico, §5.9 ciclo de vida de marcas internas), §6 derivación de los 4 bloques consolidados (incluye §6.3 anticipación, §6.4 normalización formas_trabajadas, §6.5 sufijo `@R` con 5 tipos productivos, §6.6 Regla 11 audio.transcripcion), §7 unidades atípicas, §9 política PCIC, §10 mejora continua. Banner de follow-ups vivos reducido a 2: heterogeneidad semántica y suite automatizada de verificación global.
+- **Familia `@R` alineada a 5 tipos productivos** (no 6) en `reglas-operativas.md` §6.5, `schema-inventario.md` §9.5 y §A.3, `glosario.md` l.124. Eliminado `produccion_escrita_libre` por no existir en la taxonomía de 20.
+- **§5.6 acotado a campos semánticos léxicos** con exclusiones explícitas para `tiempos_y_verbos_consolidado`, `gramatica_consolidada` y `pronunciacion_ortografia_consolidada` (cada uno tiene política propia en su registry).
+- **`reglas-operativas-viejo.md`** congelado como reservorio histórico: header "ARCHIVO HISTÓRICO" prohíbe consulta operativa y edición; bloque de follow-ups reescrito como "CERRADOS" con punteros a la sección viva donde cada uno resolvió (`@R` → §6.5, Regla 11 → §6.6, input incidental → §5.1.1+§5.6, anticipación → §6.3, verbo soporte → §5.2, normalización formas_trabajadas → §6.4); boilerplate heredado neutralizado por nota única que declara desactivada toda autoridad operativa del archivo.
+- **Apéndice §A.3 del schema** depurado: retirado el falso pendiente sobre Regla 11 (ya cerrada en §6.6 del archivo vivo).
+- **`prompt.md`** saneado de inconsistencias con la deuda transitoria de convenciones: lectura mínima, "otros artefactos si hay conflicto" y lista de contratos vivos reformuladas para que `convenciones-y-casos.md` deje de aparecer como consultable durante una corrida; queda solo `convenciones-y-casos-viejo.md` con alcance acotado a transcripción concreta + casebook y cláusula explícita de no-prevalencia sobre schema/reglas. Bloque de deuda transitoria de convenciones añadido al header del archivo.
+- **`fases/1-extraccion-inventario/CLAUDE.md`** alineado: regla 3 (single source of truth por capa) reformulada para reflejar que la capa de convenciones está en deuda transitoria; tabla "Para qué consultar qué archivo" y "Documentos relacionados" redirigidos a `-viejo.md` con caveat de no-prevalencia. Banner de estado ya declaraba 🟡 deuda para `convenciones-y-casos.md` desde v10.111; ahora todo el archivo es coherente.
+- **Verificación atómica de referencias `§X.Y`** cruzadas desde schema, glosario, prompt y CLAUDE de fase 1 hacia `reglas-operativas.md`: cero referencias rotas tras la reescritura.
+
+Lote siguiente (no incluido en este commit): reset de `convenciones-y-casos.md` bajo modelo IA-first.
+
 ## [v10.114 — 2026-05-13] — Archivo de documentos absorbidos a `docs/historico/`
 
 Dos documentos de fase 1 cuyo contenido ya está absorbido en los contratos vivos pasan a histórico:

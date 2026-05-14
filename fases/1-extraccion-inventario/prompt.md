@@ -23,13 +23,18 @@
 >
 > Puntos de divergencia conocidos y condiciones de retirada → Apéndice transitorio del schema (§A.1, §A.3).
 
+> **Deuda transitoria — `convenciones-y-casos.md`.** El archivo vivo de convenciones todavía no ha sido reescrito bajo el modelo IA-first (lote siguiente). Mientras tanto:
+> - `convenciones-y-casos.md` puede estar desalineado o ausente; las referencias desde otros docs pueden quedar rotas temporalmente.
+> - El contenido histórico vigente vive en `convenciones-y-casos-viejo.md` como reservorio consultable solo para localizar convenciones de transcripción concretas (sílaba tónica, primer ítem resuelto, marcadores de diálogos, sopas de letras, casebook).
+> - Si una convención del viejo entra en conflicto con `schema-inventario.md` o `reglas-operativas.md`, **prevalecen schema y reglas vivos**.
+
 ---
 
 ## Lectura mínima obligatoria
 
 - `schema-inventario.md` — shape del JSON.
 - `reglas-operativas.md` — autoridad operativa (reglas, protocolos, marcas, política PCIC).
-- `convenciones-y-casos.md` — transcripción al JSON + casebook.
+- `convenciones-y-casos-viejo.md` — **solo durante la deuda transitoria** (ver nota arriba): consulta puntual para convenciones de transcripción concretas (sílaba tónica, primer ítem resuelto, marcadores de diálogos, sopas de letras) y casebook histórico. Nunca prevalece sobre schema o reglas vivos.
 - El PDF de la unidad.
 
 ## Lookup bajo demanda
@@ -40,9 +45,9 @@
 
 ## Otros artefactos si hay conflicto
 
-`scripts/validar_inventario.py`, `CLAUDE.md` raíz, `convenciones-y-casos.md` casebook.
+`scripts/validar_inventario.py`, `CLAUDE.md` raíz, `convenciones-y-casos-viejo.md` casebook (consulta puntual durante la deuda transitoria).
 
-> **No leer durante la corrida:** `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`. Es discusión arquitectónica, no contrato. Contratos vivos: `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`. Desfases temporales entre ellos → Apéndice transitorio del schema.
+> **No leer durante la corrida:** `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`. Es discusión arquitectónica, no contrato. Contratos vivos: `schema-inventario.md` y `reglas-operativas.md`. `convenciones-y-casos.md` aún no está reescrito bajo el modelo IA-first (deuda transitoria declarada arriba); su contenido histórico se consulta en `convenciones-y-casos-viejo.md` solo para convenciones concretas de transcripción, y nunca prevalece sobre schema o reglas vivos. Desfases temporales entre contratos vivos → Apéndice transitorio del schema.
 
 ---
 

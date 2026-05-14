@@ -121,7 +121,7 @@ Tres tipos de fuente:
 
 Se añade al final de una fuente **de actividad** para indicar que la palabra aparece **únicamente en el campo `respuestas`** de una actividad de **producción** del alumno, no en el input del libro. Las fuentes de cuadro nunca lo llevan.
 
-- **Tipos de actividad de producción donde aplica:** `produccion_escrita_guiada`, `produccion_escrita_libre`, `expresion_oral_libre`, `expresion_escrita_libre`, `tarea_final`, `interaccion_oral`.
+- **Tipos de actividad de producción donde aplica (5 valores de la taxonomía cerrada §5 del schema):** `produccion_escrita_guiada`, `expresion_escrita_libre`, `expresion_oral_libre`, `tarea_final`, `interaccion_oral`.
 - **Significado:** la palabra es **output esperado del alumno**, no contenido leído del libro. La distinción es importante para análisis posteriores (ej. saber qué léxico el alumno produce vs. qué léxico recibe como input).
 
 ### Ejemplos válidos
