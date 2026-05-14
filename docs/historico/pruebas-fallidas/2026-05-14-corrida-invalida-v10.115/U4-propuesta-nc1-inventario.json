@@ -1,0 +1,1967 @@
+{
+  "unidad": "4p",
+  "curso": "nc1",
+  "titulo": "Comidas y bebidas  ·  PROPUESTA REDISEÑO (fixture exploratoria)",
+  "paginas_libro": "42-51",
+  "nivel": "A1.1",
+  "fuente": {
+    "archivo": "unidades/U4/fuente/U4-nc1.pdf",
+    "version_extraccion": "2026-05-14"
+  },
+  "_fixture_exploratoria": {
+    "tipo": "exploratoria_rediseno_fase_1",
+    "fecha": "2026-05-14",
+    "proposito": "Estresar el shape nuevo del schema sobre la U4 (gustar, querer, hay, contables/incontables, /r/-/rr/) y registrar ambigüedades operativas para escalado al autor.",
+    "no_es_inventario_canonico": true,
+    "hallazgos": {
+      "anticipaciones_detectadas_para_fase_2": []
+    }
+  },
+  "contenidos_indice": {
+    "vocabulario": "Alimentos. Comidas preparadas",
+    "gramatica": "Verbo gustar. Artículos indeterminados (un, una, unos, unas). Nombres contables e incontables. Hay. Verbo querer. Organizar el léxico",
+    "comunicacion": "Ofrecer. Las cosas que nos gustan y las que no nos gustan. El sonido /r/ y el sonido /rr/",
+    "destrezas": "Comer en España",
+    "cultura": "Comer por la calle"
+  },
+  "_decisiones_ia": [
+    "U4-p44-cuadro@p44 (Verbo gustar): se incluye 'gustar' en cuadro.tiempos_y_verbos con todas las formas del paradigma presentadas (gusta, gustan); el rasgo 'tipo gustar' se refleja en consolidado (§5.10).",
+    "U4-p45 (Verbo querer): el cuadro de paradigma vive en p45 junto a 'Hay'. Se separa en dos cuadros lógicos (cuadro@p45#1 = Hay, cuadro@p45#2 = querer) por categorías distintas (§4 reglas-operativas: ambos son cuadros de referencia).",
+    "U4-p43-act7 ('Me gusta mucho / Me gusta / No me gusta / No como nunca'): tabla personal sin respuestas marcadas; enfoque comunicacion porque el foco es expresar gustos (no la conjugación). Decisión provisional: enfoque=comunicacion, destreza=[expresion_escrita].",
+    "U4-p46-act6 (clasificación de envases): vocabulario clasificado por tipo de recipiente (un cartón de…, una botella de…). No hay campo canónico 'Envases/recipientes' en campos-semanticos-canonicos.json — se marca _pendiente_canon. Propuesta en chat: crear campo 'Envases y recipientes' con origen pcic_a1.",
+    "U4-p46-act10/11/12 (/r/ y /rr/): cuadro de pronunciación + escucha_y_repite + completa_huecos. Sin registry pron-ortografía aún canónico para este fenómeno; se anota como _pendiente_canon en la entrada consolidada y se propone categoría 'Vibrante simple /r/ vs múltiple /rr/'.",
+    "U4-p44-act3 (interrogativos '¿Tú/Ella/Ustedes...?'): los pronombres sujeto/tónicos en interrogativa son recurrentes (canónico en U1), pero su aparición aquí es soporte sintáctico, no foco. Se registra en gramatica_consolidada.recurrente.",
+    "U4-p43-act5 (diálogo Rosa-Alberto): aparecen formas conjugadas de querer/gustar/tener/comer/beber/poder. 'beber' no está en verbos-canonicos.json → se marca _pendiente_canon en la entrada del consolidado verbal. Propuesta: añadir 'beber' al registry.",
+    "U4-p47 cuadro 'Para aprender' (act9 'Organiza el vocabulario por temas'): tiene verbo imperativo dirigido al alumno ('Organiza', 'Añade') → es ACTIVIDAD con tipo=produccion_escrita_guiada, subtipo='para_aprender' (§4 reglas-operativas).",
+    "U4-p48 (Destrezas - 'Comer en España'): el texto Leer es seccion=destrezas, no cultura, según índice editorial. La p50 'Comer por la calle' es seccion=cultura.",
+    "U4-p49-act5 (Escuchar y escribir preguntas/respuestas): es dictado-comprensivo. destreza=[comprension_auditiva, expresion_escrita]. Se asume expresion_escrita porque el alumno reconstruye texto a partir de input oral (frontera con transcripción pura; el libro pide reconstruir Preguntas y Respuestas, no copia literal). Decisión provisional revisable."
+  ],
+  "vocabulario_consolidado": {
+    "principal": {
+      "Alimentos": {
+        "items": [
+          {"palabra": "pan", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p46-act6@R", "cuadro@p51"]},
+          {"palabra": "galletas", "fuentes": ["p42-act1", "p42-act2", "p43-act3", "p43-act4", "p46-act5", "p46-act6@R", "p47-act8", "p51-act2"]},
+          {"palabra": "pasta", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p43-act5", "p45-act6", "p46-act1"]},
+          {"palabra": "filetes", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p51-act2"]},
+          {"palabra": "pollo", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p48-act1", "p49-act9@R", "p51-act5"]},
+          {"palabra": "jamón", "fuentes": ["p42-act1", "p42-act2", "p43-act4"]},
+          {"palabra": "frutos secos", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p46-act6@R"]},
+          {"palabra": "queso", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p43-act5", "p48-act1", "p50-act2", "p51-act2"]},
+          {"palabra": "zanahorias", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p46-act11", "p48-act1", "p51-act5"]},
+          {"palabra": "huevos", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p48-act1", "p50-act2", "p51-act5"]},
+          {"palabra": "tomates", "fuentes": ["p42-act1", "p42-act2", "p43-act3", "p43-act4", "p43-act5", "p45-act7", "p47-act7", "p48-act1"]},
+          {"palabra": "manzanas", "fuentes": ["p42-act1", "p42-act2", "p43-act3", "p43-act4", "p43-act5", "p46-act7", "p47-act5", "p47-act8", "p48-act1", "p49-act5@R", "p51-act5"]},
+          {"palabra": "plátanos", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p43-act5", "p44-cuadro@p44#1@R", "p45-cuadro@p45#1", "p45-act7", "p45-act8", "p47-act7", "p48-act1"]},
+          {"palabra": "atún", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p46-act6", "p48-act1", "p49-act5@R"]},
+          {"palabra": "naranjas", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p46-cuadro@p46", "p47-cuadro@p47#1", "p47-act9@R"]},
+          {"palabra": "yogur", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p45-cuadro@p45#1", "p48-act1"]},
+          {"palabra": "leche", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p45-act6", "p45-cuadro@p45#1", "p45-act7", "p46-act6", "p51-act1", "p51-act2"]},
+          {"palabra": "zumo", "fuentes": ["p42-act1", "p42-act2", "p43-act3", "p43-act4", "p43-act5", "p44-act4", "p46-act6", "p46-act1"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Léxico nuclear de alimentos y bebidas declarado en el índice editorial de U4 (`vocabulario[]`). Sustantivos comunes que articulan la unidad (PCIC A1 §3 — alimentación y bebidas). Categorizables en sub-tipos (pescado, carne, fruta, verdura, lácteos, otros) según la clasificación que el propio libro propone en p42-act2."
+        }
+      },
+      "Comidas preparadas": {
+        "items": [
+          {"palabra": "pizza", "fuentes": ["p43-act8", "p44-cuadro@p44#1@R", "p45-act5", "p46-act6", "p47-act3", "p50-act2"]},
+          {"palabra": "ensalada", "fuentes": ["p43-act8", "p44-cuadro@p44#1@R", "p47-act7@R", "p48-act1", "p49-act4"]},
+          {"palabra": "ensaladas", "fuentes": ["p43-act8", "p44-cuadro@p44#1@R"]},
+          {"palabra": "paella", "fuentes": ["p44-act3", "p44-act5", "p45-act5"]},
+          {"palabra": "macarrones", "fuentes": ["p44-act1", "p44-act5", "p48-act1"]},
+          {"palabra": "macarrones de Bolonia", "fuentes": ["p48-act1"]},
+          {"palabra": "sopa", "fuentes": ["p48-act1", "p48-act2"]},
+          {"palabra": "sopa de cocido madrileño", "fuentes": ["p48-act1"]},
+          {"palabra": "arroz", "fuentes": ["p44-cuadro@p44#1@R", "p45-act6", "p46-act6", "p47-act7@R", "p48-act1", "p48-act2", "p51-act2"]},
+          {"palabra": "arroz a la cubana", "fuentes": ["p45-act5", "p45-act3@R"]},
+          {"palabra": "arroz chino", "fuentes": ["p48-act1"]},
+          {"palabra": "arroz con tomate", "fuentes": ["p45-act3@R", "p45-act5"]},
+          {"palabra": "atún con tomate", "fuentes": ["p48-act1", "p49-act5@R"]},
+          {"palabra": "pollo a la catalana", "fuentes": ["p48-act1"]},
+          {"palabra": "filete a la plancha", "fuentes": ["p48-act1"]},
+          {"palabra": "hamburguesa", "fuentes": ["p45-act5", "p46-act8", "p47-act6@R"]},
+          {"palabra": "hamburguesas", "fuentes": ["p45-act5", "p47-act6@R", "p50-act2"]},
+          {"palabra": "Hamburguesa Brookling", "fuentes": ["p48-act1"]},
+          {"palabra": "bocadillo", "fuentes": ["p45-act7", "p45-cuadro@p45#1@R", "p45-act5", "p51-act2"]},
+          {"palabra": "bocadillos", "fuentes": ["p45-act5"]},
+          {"palabra": "huevo frito", "fuentes": ["p45-act5", "p51-act2"]},
+          {"palabra": "tarta", "fuentes": ["p43-act8", "p45-act5", "p46-act6@R", "p46-act5"]},
+          {"palabra": "tarta de plátano", "fuentes": ["p43-act8"]},
+          {"palabra": "tarta de chocolate", "fuentes": ["p45-act5"]},
+          {"palabra": "flan", "fuentes": ["p44-act4", "p48-act1"]},
+          {"palabra": "helado", "fuentes": ["p44-act4", "p45-act5", "p46-act6", "p48-act1", "p50-act2"]},
+          {"palabra": "churros", "fuentes": ["p50-act2"]},
+          {"palabra": "chocolate (bebida)", "fuentes": ["p50-act2"]},
+          {"palabra": "arepas", "fuentes": ["p50-act2"]},
+          {"palabra": "tamales", "fuentes": ["p50-act2"]},
+          {"palabra": "tacos", "fuentes": ["p50-act2"]},
+          {"palabra": "burritos", "fuentes": ["p43-act8", "p50-act2"]},
+          {"palabra": "perritos calientes", "fuentes": ["p50-act2"]},
+          {"palabra": "batidos", "fuentes": ["p50-act2"]},
+          {"palabra": "limonada", "fuentes": ["p46-act6"]},
+          {"palabra": "té", "fuentes": ["p46-act6"]},
+          {"palabra": "agua", "fuentes": ["p45-act7@R", "p45-act6", "p45-cuadro@p45#1@R", "p46-act5", "p46-act6", "p49-act5@R", "p51-act2"]},
+          {"palabra": "cola", "fuentes": ["p46-act5"]},
+          {"palabra": "café", "fuentes": ["p45-act6", "p46-act5", "p48-act1", "p51-act2"]},
+          {"palabra": "azúcar", "fuentes": ["p45-act6", "p51-act2"]},
+          {"palabra": "tomate frito", "fuentes": ["p46-act6"]},
+          {"palabra": "maíz", "fuentes": ["p46-act6", "p48-act1"]},
+          {"palabra": "pera", "fuentes": ["p44-act3@R", "p45-act3", "p45-act4", "p51-act2"]},
+          {"palabra": "peras", "fuentes": ["p44-act3@R", "p45-act4@R", "p45-act3"]},
+          {"palabra": "melocotón", "fuentes": ["p45-act4"]},
+          {"palabra": "patatas", "fuentes": ["p46-act5", "p47-act6@R", "p48-act1", "p51-act2"]},
+          {"palabra": "patatas fritas", "fuentes": ["p48-act1"]},
+          {"palabra": "garbanzos", "fuentes": ["p46-act5", "p48-act1"]},
+          {"palabra": "cebolla", "fuentes": ["p45-act6", "p48-act1", "p51-act2"]},
+          {"palabra": "lechuga", "fuentes": ["p48-act1"]},
+          {"palabra": "ternera", "fuentes": ["p48-act1"]},
+          {"palabra": "verdura", "fuentes": ["p43-act5", "p48-act1", "p48-act2", "p49-act4"]},
+          {"palabra": "verduras", "fuentes": ["p43-act5", "p48-act1", "p49-act4"]},
+          {"palabra": "fruta", "fuentes": ["p43-act5", "p44-act3@R", "p48-act1", "p48-act2", "p49-act4"]},
+          {"palabra": "carne", "fuentes": ["p43-act3", "p43-act5", "p43-act6", "p48-act1", "p49-act4", "p49-act8@R", "p50-act2"]},
+          {"palabra": "carnes", "fuentes": ["p43-act8"]},
+          {"palabra": "pescado", "fuentes": ["p43-act3", "p44-act1", "p48-act1", "p48-act2", "p49-act4", "p50-act2"]},
+          {"palabra": "lácteos", "fuentes": ["p42-act2"]},
+          {"palabra": "postre", "fuentes": ["p43-act5", "p44-act3@R", "p44-act4", "p45-act5", "p48-act1", "p49-act6", "p51-act1"]},
+          {"palabra": "postres", "fuentes": ["p44-act4"]},
+          {"palabra": "primer plato", "fuentes": ["p48-act1", "p49-act6"]},
+          {"palabra": "segundo plato", "fuentes": ["p48-act1", "p49-act6"]},
+          {"palabra": "plato", "fuentes": ["p44-act1", "p44-act5"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Léxico declarado en el índice editorial de U4 (`vocabulario[]`) referido a platos preparados, bebidas elaboradas y categorías de comida (primer plato, segundo plato, postre) trabajadas en las secciones de Gramática, Comunicación, Destrezas y Cultura. PCIC A1 §3."
+        }
+      },
+      "_pendiente_canon": {
+        "_propuesta_canonico": "Envases y recipientes",
+        "items": [
+          {"palabra": "cartón", "fuentes": ["p46-act5", "p46-act6"]},
+          {"palabra": "botella", "fuentes": ["p46-act5", "p46-act6"]},
+          {"palabra": "bolsa", "fuentes": ["p46-act5", "p46-act6"]},
+          {"palabra": "vaso", "fuentes": ["p46-act5", "p46-act6"]},
+          {"palabra": "lata", "fuentes": ["p46-act5", "p46-act6"]},
+          {"palabra": "paquete", "fuentes": ["p46-act5", "p46-act6"]},
+          {"palabra": "taza", "fuentes": ["p46-act5", "p46-act6"]},
+          {"palabra": "bote", "fuentes": ["p46-act5", "p46-act6"]},
+          {"palabra": "trozo", "fuentes": ["p46-act5", "p46-act6"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Léxico de envases/recipientes para alimentos (p46-act5/6 'una botella de agua', 'un cartón de leche'). Sin canónico en campos-semanticos-canonicos.json — escalado al autor (decisión provisional: crear campo 'Envases y recipientes', origen pcic_a1, respaldo PCIC §3.2 cuantificación de alimentos)."
+        }
+      }
+    },
+    "recurrente": {
+      "Familia": {
+        "items": [
+          {"palabra": "padres", "fuentes": ["p44-act1", "p44-act2", "p51-act1"]},
+          {"palabra": "hermano", "fuentes": ["p44-act1", "p51-act1"]},
+          {"palabra": "hermana", "fuentes": ["p44-act2"]},
+          {"palabra": "madre", "fuentes": ["p45-act7"]},
+          {"palabra": "niños", "fuentes": ["p44-act3", "p48-act1", "p48-act2", "p49-act9"]},
+          {"palabra": "amigos", "fuentes": ["p43-act5", "p51-act6"]},
+          {"palabra": "amigo", "fuentes": ["p49-act6"]},
+          {"palabra": "compañero", "fuentes": ["p45-act4", "p47-act7", "p47-act8", "p47-act9", "p47-act10", "p49-act7", "p49-act8", "p50-act4"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Términos de parentesco canónicos en U3 (`vocabulario[]` de U3 = Familia) reaparecen como sujetos típicos de las frases de gustos y deseos en p44 y p51. Función recurrente: consolidación de léxico de Familia bajo el nuevo paradigma 'A [parentesco] (no) le gusta…'."
+        }
+      },
+      "Colores": {
+        "items": [
+          {"palabra": "rojas", "fuentes": ["p42-act3"]},
+          {"palabra": "amarillas", "fuentes": ["p42-act3"]},
+          {"palabra": "verdes", "fuentes": ["p42-act3"]},
+          {"palabra": "roja", "fuentes": ["p42-act3"]},
+          {"palabra": "azul", "fuentes": ["p47-act9"]},
+          {"palabra": "negro", "fuentes": ["p51-act3"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Colores son canónicos en U1; reaparecen aquí como apoyo descriptivo en p42-act3 (descripción de frutas por color) y como tarjeta léxica en p47-act9 ('Para aprender'). Función recurrente: aplicación en contexto léxico nuevo."
+        }
+      }
+    }
+  },
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "gustar",
+      "tipo_de_verbo": ["tipo gustar", "intransitivo"],
+      "rasgo_por_tiempo": {"Presente": "tipo gustar"},
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["gusta", "gustan"],
+      "fuentes": ["p43-act7", "p43-act5", "p43-act6", "p44-act1", "p44-act2", "p44-act3", "p46-act7", "p46-act8", "p46-act9", "cuadro@p44", "p49-act4", "p49-act8", "p49-act9", "p51-act4", "p51-act6"],
+      "descripcion": {
+        "U4": "Paradigma completo de presente del verbo gustar (formas 'gusta' y 'gustan') con sus pronombres de OI obligatorios (me/te/le/nos/os/les). Foco principal de la sección Gramática (cuadro@p44 + actividades p44-act1/2/3 + reflexión p51-act4) y eje pragmático de la sección Comunicación."
+      }
+    },
+    {
+      "lema": "querer",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": {"Presente": "irregularidad vocálica e→ie"},
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["quiero", "quieres", "quiere", "queremos", "queréis", "quieren"],
+      "fuentes": ["cuadro@p45#2", "p45-act5", "p45-act7", "p45-act8", "p46-act1", "p46-act4", "p47-act6", "p47-act7", "p51-act1", "p51-act6"],
+      "descripcion": {
+        "U4": "Paradigma completo del Presente del verbo querer, con irregularidad vocálica e→ie en las 4 personas singulares y 3ª plural. Trabajado morfológicamente en el cuadro de p45 y aplicado en ofrecer/pedir comida (sección Comunicación)."
+      }
+    },
+    {
+      "lema": "comer",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": {"Presente": "regular -er"},
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["come", "comen", "comemos", "comer", "comes"],
+      "fuentes": ["p43-act5", "p43-act6", "p45-act4", "p46-act6", "p48-act1", "p48-act2", "p49-act5", "p49-act6", "p49-act8", "p49-act9", "p50-act1", "p50-act2", "p50-act3"],
+      "descripcion": {
+        "U4": "Verbo soporte de la sección Destrezas y Cultura (p48-50). Formas conjugadas distribuidas en textos y preguntas. No es foco morfológico explícito en U4 — el paradigma se asume desde U3."
+      }
+    },
+    {
+      "lema": "ser",
+      "tipo_de_verbo": ["copulativo"],
+      "rasgo_por_tiempo": {"Presente": "totalmente irregular"},
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["es", "son"],
+      "fuentes": ["p42-act3", "p43-act8", "p44-act3", "p44-act5", "p45-act7", "p48-act1", "p50-act2"],
+      "descripcion": {
+        "U4": "Verbo soporte (canónico en U1) reaparece como cópula en definiciones de alimentos y atribuciones de nacionalidad de cocina ('La cocina de La Fábrica es española')."
+      }
+    },
+    {
+      "lema": "tener",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": {"Presente": "totalmente irregular"},
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["tienen", "tenemos", "tengo", "tienes", "tiene"],
+      "fuentes": ["p43-act5", "p43-act8", "p45-act5", "p45-act7", "p47-act7", "p51-act3"],
+      "descripcion": {
+        "U4": "Verbo soporte (canónico en U1) reaparece en p43-act5 ('También tenemos manzanas') y p43-act8 ('¿Qué tienen en el restaurante…?')."
+      }
+    },
+    {
+      "lema": "hablar",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": {"Presente": "regular -ar"},
+      "tiempos": ["Presente", "Imperativo"],
+      "formas_trabajadas": ["habla", "hablar"],
+      "fuentes": ["p46-cuadro@p46", "p49-act4", "p49-act8", "p49-act9", "p50-act4"],
+      "descripcion": {
+        "U4": "Forma 'habla(r)' aparece como ejemplo léxico del sonido /r/ en el cuadro de Pronunciación (p46) y como verbo de instrucción de actividades de interacción oral ('Habla con tu compañero')."
+      }
+    },
+    {
+      "lema": "_pendiente_canon",
+      "_propuesta_lema": "beber",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": {"Presente": "regular -er"},
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["beber", "beben", "bebo"],
+      "fuentes": ["p43-act5", "p44-act4", "p45-act8", "p51-act3"],
+      "descripcion": {
+        "U4": "Verbo aparece en el diálogo Rosa-Alberto (p43-act5: '¿Y qué quieres beber?'), en p44-act4 preguntas ('¿Quién bebe agua?'), en p51-act3 ('Yo no bebo leche'). No está en verbos-canonicos.json. Escalado al autor (decisión provisional: añadir lema 'beber' al registry, rasgo Presente regular -er, transitivo)."
+      }
+    },
+    {
+      "lema": "_pendiente_canon",
+      "_propuesta_lema": "tomar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": {"Presente": "regular -ar"},
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["toman", "tomamos"],
+      "fuentes": ["p44-act3", "p48-act1", "p49-act3", "p50-act3"],
+      "descripcion": {
+        "U4": "Verbo aparece en preguntas sobre alimentación ('¿Todos toman fruta?', '¿Qué bebida es la mejor para tomar con los churros…?', 'casi todos comen fruta de postre' → variante). No está en verbos-canonicos.json. Escalado al autor."
+      }
+    },
+    {
+      "lema": "_pendiente_canon",
+      "_propuesta_lema": "haber",
+      "tipo_de_verbo": ["impersonal"],
+      "rasgo_por_tiempo": {"Presente": "forma única 'hay'"},
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["hay"],
+      "fuentes": ["cuadro@p45#1", "p43-act4", "p43-act5", "p44-act4", "p45-act7", "p45-act8", "p48-act1", "p51-act1"],
+      "descripcion": {
+        "U4": "Existencial 'hay' (3ª pers. sing. impersonal del verbo haber). Foco principal en cuadro@p45#1 y en actividades de Gramática (p45-act7 'Señala la opción correcta', p45-act8 'Completa con querer o hay', p51-act1). No está en verbos-canonicos.json. Escalado al autor: tratamiento como lema 'haber' con uso 'existencial' impersonal o como categoría aparte del registry verbal."
+      }
+    }
+  ],
+  "gramatica_consolidada": {
+    "principal": {
+      "Verbo gustar": {
+        "items": [
+          {"palabra": "(a mí) me gusta/gustan", "fuentes": ["cuadro@p44", "p43-act7", "p44-act1", "p44-act3", "p46-act7", "p46-act8", "p46-act9", "p49-act4", "p49-act8", "p49-act9", "p51-act4"]},
+          {"palabra": "(a ti) te gusta/gustan", "fuentes": ["cuadro@p44", "p44-act1", "p44-act3", "p46-act7", "p46-act8", "p49-act7", "p51-act4", "p51-act6"]},
+          {"palabra": "(a él/ella/Ud.) le gusta/gustan", "fuentes": ["cuadro@p44", "p44-act1", "p44-act3", "p51-act4"]},
+          {"palabra": "(a nosotros/-as) nos gusta/gustan", "fuentes": ["cuadro@p44", "p44-act1", "p51-act4"]},
+          {"palabra": "(a vosotros/-as) os gusta/gustan", "fuentes": ["cuadro@p44", "p44-act1", "p51-act4"]},
+          {"palabra": "(a ellos/ellas/Uds.) les gusta/gustan", "fuentes": ["cuadro@p44", "p44-act1", "p44-act3", "p51-act4"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "PCIC A1 §7.2 — Pronombres átonos de OI (me/te/le/nos/os/les) en estructura del verbo 'gustar' con concordancia número del sujeto pospuesto (gusta + sing / gustan + plural). Eje gramatical principal de U4."
+        }
+      },
+      "Artículos indeterminados": {
+        "items": [
+          {"palabra": "un", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p46-act5", "p46-act6", "p51-act3"]},
+          {"palabra": "una", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p46-act5", "p46-act6", "p51-act3"]},
+          {"palabra": "unos", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p51-act3"]},
+          {"palabra": "unas", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p51-act3"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "PCIC A1 §2.3 — Artículo indeterminado. Paradigma completo (un/una/unos/unas) en concordancia de género y número con sustantivos contables."
+        }
+      },
+      "Nombres contables e incontables": {
+        "items": [
+          {"palabra": "contables (singular/plural)", "fuentes": ["cuadro@p44#3", "p45-act6", "p51-act2"]},
+          {"palabra": "incontables (solo singular, sin art. indet.)", "fuentes": ["cuadro@p44#3", "p45-act6", "p51-act2"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "PCIC A1 §1.5 — Distinción contable/incontable; los incontables son siempre singulares y no llevan artículo indeterminado (azúcar, leche, pasta, arroz, dinero, café)."
+        }
+      },
+      "Hay (existencial)": {
+        "items": [
+          {"palabra": "hay + sustantivo (sin/con art. indeterminado, sin/con numeral)", "fuentes": ["cuadro@p45#1", "p43-act4", "p45-act7", "p45-act8", "p51-act1"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "PCIC A1 §7.3 — Forma impersonal 'hay' (3ª pers. sing. de haber) para expresar existencia. Solo 3ª singular, válida con sujetos singulares y plurales."
+        }
+      },
+      "Verbo querer (Presente irregular)": {
+        "items": [
+          {"palabra": "querer + sustantivo (deseo, petición, oferta)", "fuentes": ["cuadro@p45#2", "p45-act7", "p45-act8", "p46-act1", "p47-act6", "p51-act1", "p51-act6"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "PCIC A1 §7.1 — Verbo querer en Presente con irregularidad vocálica e→ie. Paradigma trabajado completo (querer + SN o querer + infinitivo, aunque la perífrasis no es foco aquí)."
+        }
+      }
+    },
+    "recurrente": {
+      "Pronombre sujeto / pronombres tónicos": {
+        "items": [
+          {"palabra": "yo", "fuentes": ["cuadro@p45#2", "p43-act5", "p46-act1"]},
+          {"palabra": "tú", "fuentes": ["cuadro@p45#2", "p44-act3", "p45-act7", "p46-act1", "p47-act6"]},
+          {"palabra": "él/ella/Ud.", "fuentes": ["cuadro@p45#2", "p44-act3"]},
+          {"palabra": "nosotros/-as", "fuentes": ["cuadro@p45#2"]},
+          {"palabra": "vosotros/-as", "fuentes": ["cuadro@p45#2"]},
+          {"palabra": "ellos/ellas/Uds.", "fuentes": ["cuadro@p45#2", "p44-act3"]},
+          {"palabra": "a mí / a ti / a él / a ella / a Ud. / a nosotros / a vosotros / a ellos / a ellas / a Uds.", "fuentes": ["cuadro@p44", "p44-act1", "p44-act3", "p51-act4"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Pronombres sujeto y tónicos con preposición a (canónicos en U1) reaparecen como soporte sintáctico de la estructura del verbo gustar y del paradigma de querer."
+        }
+      },
+      "Artículos determinados (el/la/los/las)": {
+        "items": [
+          {"palabra": "el", "fuentes": ["p43-act3", "p43-act5", "p44-act1", "p44-act3", "p46-act1", "p48-act1", "p51-act4", "p51-act6"]},
+          {"palabra": "la", "fuentes": ["p43-act5", "p44-act1", "p44-act3", "p46-act1", "p48-act1", "p49-act7", "p51-act4"]},
+          {"palabra": "los", "fuentes": ["p44-act1", "p44-act3", "p48-act1", "p48-act2", "p49-act4", "p51-act4"]},
+          {"palabra": "las", "fuentes": ["p44-act1", "p44-act3", "p48-act1", "p48-act2", "p49-act4", "p51-act4"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Artículos determinados (canónicos en U1) reaparecen como elemento obligatorio del sujeto pospuesto en estructuras con gustar ('me gusta la carne', 'me gustan los plátanos')."
+        }
+      },
+      "Negación (no + verbo)": {
+        "items": [
+          {"palabra": "no", "fuentes": ["p43-act5", "p44-act1", "p44-act3", "p45-act3", "p45-act7", "p47-act7", "p47-act8", "p49-act4", "p49-act6", "p49-act9", "p51-act1", "p51-act3", "p51-act4", "p51-act6"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Negación con adverbio 'no' antepuesto al verbo (canónica desde U1) consolidada en U4 con todas las personas de gustar y querer ('A mí no me gusta', 'No quiero pan')."
+        }
+      },
+      "Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)": {
+        "items": [
+          {"palabra": "qué", "fuentes": ["p43-act6", "p43-act8", "p44-act3", "p45-act7", "p45-act3", "p46-act1", "p47-act7", "p48-act1", "p49-act4", "p50-act2", "p50-act3"]},
+          {"palabra": "cuál", "fuentes": ["p44-act3", "p49-act6", "p49-act8"]},
+          {"palabra": "quién", "fuentes": ["p43-act6", "p44-act4"]},
+          {"palabra": "dónde", "fuentes": ["p43-act8", "p48-act2"]},
+          {"palabra": "cómo", "fuentes": ["p43-act8", "p46-act6"]},
+          {"palabra": "cuántas", "fuentes": ["p45-act8"]},
+          {"palabra": "a qué hora", "fuentes": ["p48-act2", "p50-act3"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "Pronombres interrogativos (canónicos en U1-U3) reaparecen articulando las baterías de preguntas en p43, p44, p48-50 sobre comida y restaurantes."
+        }
+      }
+    }
+  },
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {
+      "_pendiente_canon": {
+        "_propuesta_canonico": "Vibrante simple /r/ vs vibrante múltiple /rr/",
+        "items": [
+          {"palabra": "/r/ → -r-, -r (intervocálica y final): pera, naranja, hablar", "fuentes": ["cuadro@p46", "p46-act10", "p46-act11", "p46-act12"]},
+          {"palabra": "/rr/ → -rr- (intervocálica), r- (inicial): perro, pizarra, arroz, Rosa, Ramón", "fuentes": ["cuadro@p46", "p46-act10", "p46-act11", "p46-act12"]}
+        ],
+        "fuentes": [],
+        "descripcion": {
+          "U4": "PCIC A1 §1 (fonética) — Contraste entre vibrante simple /r/ y vibrante múltiple /rr/, con sus correspondencias ortográficas: -r-/-r para la simple (intervocálica/final); -rr- entre vocales y r- en posición inicial absoluta para la múltiple. Sin registry canónico actual — escalado al autor (decisión provisional: crear categoría 'Vibrante simple /r/ vs vibrante múltiple /rr/' en pronunciacion-ortografia-canonica.json)."
+        }
+      }
+    },
+    "recurrente": {}
+  },
+  "secciones": {
+    "vocabulario":  { "paginas": [42, 43], "actividades_ids": ["U4-p42-act1", "U4-p42-act2", "U4-p43-act3", "U4-p43-act4", "U4-p43-act5", "U4-p43-act6", "U4-p43-act7", "U4-p43-act8"] },
+    "gramatica":    { "paginas": [44, 45], "actividades_ids": ["U4-p44-act1", "U4-p44-act2", "U4-p44-act3", "U4-p44-act4", "U4-p44-act5", "U4-p45-act6", "U4-p45-act7", "U4-p45-act8", "U4-p45-act9", "U4-p45-act10"] },
+    "comunicacion": { "paginas": [46, 47], "actividades_ids": ["U4-p46-act1", "U4-p46-act2", "U4-p46-act3", "U4-p47-act4", "U4-p46-act5", "U4-p46-act6", "U4-p47-act7", "U4-p47-act8", "U4-p47-act9", "U4-p46-act10", "U4-p46-act11", "U4-p46-act12"] },
+    "destrezas":    { "paginas": [48, 49], "actividades_ids": ["U4-p48-act1", "U4-p48-act2", "U4-p48-act3", "U4-p49-act4", "U4-p49-act5", "U4-p49-act6", "U4-p49-act7", "U4-p49-act8", "U4-p49-act9"] },
+    "cultura":      { "paginas": [50], "actividades_ids": ["U4-p50-act1", "U4-p50-act2", "U4-p50-act3", "U4-p50-act4"] },
+    "evaluacion":   { "paginas": [51], "actividades_ids": ["U4-p51-act1", "U4-p51-act2", "U4-p51-act3", "U4-p51-act4", "U4-p51-act5", "U4-p51-act6"] },
+    "reflexion":    { "paginas": [], "actividades_ids": [] }
+  },
+  "autoevaluacion": {
+    "pagina": 51,
+    "instruccion_original": "Mis resultados en esta unidad son:",
+    "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
+    "emoticonos": true
+  },
+  "paginas_detalle": [
+    {
+      "pagina": 42,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U4-p42-act1",
+          "numero": 1,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y repite.",
+          "vocabulario": ["pan", "galletas", "pasta", "filetes", "pollo", "jamón", "frutos secos", "queso", "zanahorias", "huevos", "tomates", "manzanas", "plátanos", "atún", "naranjas", "yogur", "leche", "zumo"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": true, "pista": 43},
+          "imagen": {"presente": true, "descripcion": "Tablero con 18 fotografías de alimentos etiquetadas con su nombre: pan, galletas, pasta, filetes, pollo, jamón, frutos secos, queso, zanahorias, huevos, tomates, manzanas, plátanos, atún, naranjas, yogur, leche, zumo."},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "items_libro": ["pan", "galletas", "pasta", "filetes", "pollo", "jamón", "frutos secos", "queso", "zanahorias", "huevos", "tomates", "manzanas", "plátanos", "atún", "naranjas", "yogur", "leche", "zumo"]
+          }
+        },
+        {
+          "id": "U4-p42-act2",
+          "numero": 2,
+          "tipo": "clasifica",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Clasifica los alimentos anteriores en las siguientes tablas.",
+          "vocabulario": ["pescado", "carne", "fruta", "verdura", "lácteos"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Tabla de dos columnas. Columna 'Comidas' con filas categoría/ejemplos (pescado, carne, fruta, verdura, lácteos, otros). Columna 'Bebidas'."},
+          "video": {"presente": false},
+          "respuestas": [
+            "Comidas — pescado: atún",
+            "Comidas — carne: filetes, pollo, jamón",
+            "Comidas — fruta: manzanas, plátanos, naranjas",
+            "Comidas — verdura: zanahorias, tomates",
+            "Comidas — lácteos: yogur, queso",
+            "Comidas — otros: pan, galletas, huevos, pasta, frutos secos",
+            "Bebidas: zumo, leche"
+          ],
+          "datos": {
+            "items_libro": ["pescado", "carne", "fruta", "verdura", "lácteos", "otros", "Bebidas"]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 43,
+      "seccion": "vocabulario",
+      "actividades": [
+        {
+          "id": "U4-p43-act3",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Lee las frases y encuentra las palabras en el ejercicio 1.",
+          "vocabulario": ["zumo", "manzanas", "tomate", "galletas", "huevos"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "Son"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["Comemos", "comemos"]}
+          ],
+          "gramatica": ["Artículos determinados (el/la/los/las)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["zumo", "manzanas", "tomate", "galletas", "huevos"],
+          "datos": {
+            "items_libro": [
+              "1 Es una bebida que tiene fruta: _____.",
+              "2 Son rojas, amarillas o verdes: _____.",
+              "3 Comemos esta fruta roja en las ensaladas: _____.",
+              "4 En el desayuno a veces comemos leche con _____.",
+              "5 Las gallinas ponen _____."
+            ]
+          }
+        },
+        {
+          "id": "U4-p43-act4",
+          "numero": 4,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Mira el dibujo e indica qué alimentos del ejercicio 1 hay en la nevera y cuáles no hay.",
+          "vocabulario": ["tomates", "pescado", "queso", "plátanos", "pollo", "filetes", "huevos", "leche", "zanahorias", "atún", "naranjas", "yogur", "pan", "pasta", "galletas", "frutos secos", "zumo", "manzanas"],
+          "tiempos_y_verbos": [{"lema": "_pendiente_canon", "_propuesta_lema": "haber", "tiempo": "Presente", "formas_trabajadas": ["Hay", "hay", "No hay"]}],
+          "gramatica": ["Hay (existencial)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Dibujo de una nevera abierta con varios alimentos en su interior. Junto al dibujo dos bocadillos modelo: 'Hay tomates.' y 'No hay zanahorias.'"},
+          "video": {"presente": false},
+          "respuestas": [
+            "Hay tomates, pescado, queso, plátanos, pollo, filetes, huevos y leche.",
+            "No hay zanahorias, atún, naranjas, yogur, pan, pasta, galletas, frutos secos, zumo y manzanas."
+          ],
+          "datos": {
+            "ejemplos_modelo": ["Hay tomates.", "No hay zanahorias."]
+          }
+        },
+        {
+          "id": "U4-p43-act5",
+          "numero": 5,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escucha y completa los huecos.",
+          "vocabulario": ["carne", "pasta", "tomate", "verduras", "plátano", "manzanas", "zumo", "agua", "fruta", "queso", "vitaminas", "postre"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["Quieres", "quiero", "quieres"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "haber", "tiempo": "Presente", "formas_trabajadas": ["hacemos", "hacemos"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "beber", "tiempo": "Presente", "formas_trabajadas": ["beber"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tenemos", "tienen"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comer", "tomamos"]}
+          ],
+          "gramatica": ["Artículos determinados (el/la/los/las)", "Negación (no + verbo)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": true, "pista": 44},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["carne", "pasta", "tomate", "verduras", "plátano", "manzanas", "zumo", "agua"],
+          "datos": {
+            "subtipo": "dialogo_con_huecos",
+            "dialogo_completo": [
+              "ROSA: Vamos a preparar la comida. ¿Quieres comer [1] _____?",
+              "ALBERTO: No, a mí no me gusta la carne. Mejor hacemos [2] _____.",
+              "ROSA: ¿Con tomate?",
+              "ALBERTO: Vale, a mí me gusta mucho la pasta con queso y [3] _____, como a los italianos.",
+              "ROSA: A mí también me gusta con [4] _____.",
+              "ALBERTO: Y de postre, ¿tomamos fruta?",
+              "ROSA: Sí, tenemos [5] _____. ¡Ah! Y también tenemos [6] _____.",
+              "ALBERTO: Para mí una manzana. Son muy ricas y tienen muchas vitaminas.",
+              "ROSA: ¿Y qué quieres beber?",
+              "ALBERTO: Yo quiero [7] _____.",
+              "ROSA: Yo, [8] _____ como siempre."
+            ],
+            "items_libro": ["[1] _____", "[2] _____", "[3] _____", "[4] _____", "[5] _____", "[6] _____", "[7] _____", "[8] _____"]
+          }
+        },
+        {
+          "id": "U4-p43-act6",
+          "numero": 6,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Ahora, lee el diálogo anterior y contesta a las preguntas.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["come", "comen"]}
+          ],
+          "gramatica": ["Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["1 A Alberto", "2 Alberto", "3 A Rosa", "4 Plátano y manzanas", "5 Rosa"],
+          "datos": {
+            "preguntas": [
+              "1 ¿A quién no le gusta la carne?",
+              "2 ¿Quién come la pasta con queso y tomate?",
+              "3 ¿A quién le gusta con verduras?",
+              "4 ¿Qué comen de postre?",
+              "5 ¿Quién come con agua?"
+            ]
+          }
+        },
+        {
+          "id": "U4-p43-act7",
+          "numero": 7,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Mira los alimentos del ejercicio 1 y completa la tabla.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["como"]}
+          ],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Tabla de 4 filas con etiquetas a la izquierda: 'Me gusta mucho', 'Me gusta', 'No me gusta', 'No como nunca'. Columna derecha vacía para que el alumno escriba."},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "items_libro": ["Me gusta mucho", "Me gusta", "No me gusta", "No como nunca"]
+          },
+          "_funcion_ambigua": true,
+          "_decisiones_ia": ["Frontera tipo: la tabla pide producir contenido propio (qué te gusta), pero los slots están predefinidos por cuatro categorías de frecuencia/gusto. Decisión provisional: produccion_escrita_guiada (no hay huecos en frase, sino casillas a llenar con léxico propio). El autor puede preferir completa_huecos."]
+        },
+        {
+          "id": "U4-p43-act8",
+          "numero": 8,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Observa la selección de restaurantes con distintos tipos de cocina y contesta a las preguntas.",
+          "vocabulario": ["ensaladas", "pasta", "pizzas", "restaurante", "restaurante peruano", "restaurante brasileño", "restaurante vegetariano"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienen", "tienen"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "se"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes"]}
+          ],
+          "gramatica": ["Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Seis tarjetas de restaurantes con nombre y tipo de cocina: LA BARBACOA (argentino, parrillada 40€), MONTEVIDEO (uruguayo, menú 12€), ROMA (italiana, pasta/pizzas/carpaccios), EL RANCHO (mexicano, guacamole/enchilada/burritos/tarta de plátano), EL CARIOCA (brasileño, churrasquería rodízio), EL GRAN SOL (peruano), EL GRANERO (vegetariano, ensaladas), LA FÁBRICA (cocina tradicional española)."},
+          "video": {"presente": false},
+          "respuestas": [
+            "Ensaladas.",
+            "1 El Gran Sol",
+            "2 En el restaurante Roma",
+            "3 El Carioca",
+            "4 En el restaurante Montevideo",
+            "5 Española"
+          ],
+          "datos": {
+            "preguntas": [
+              "¿Qué tienen en el restaurante vegetariano?",
+              "1 ¿Cómo se llama el restaurante peruano?",
+              "2 ¿En qué restaurante tienen pasta y pizzas?",
+              "3 ¿Cómo se llama el restaurante brasileño?",
+              "4 ¿Dónde comes por 12€?",
+              "5 ¿De qué nacionalidad es la cocina de La Fábrica?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 44,
+      "seccion": "gramatica",
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Verbo gustar",
+          "contenido": {
+            "tipo": "tabla_verbo_gustar",
+            "paradigma_oi": [
+              {"tonico": "(a mí)", "atono": "me"},
+              {"tonico": "(a ti)", "atono": "te"},
+              {"tonico": "(a él / a ella / a Ud.)", "atono": "le"},
+              {"tonico": "(a nosotros/-as)", "atono": "nos"},
+              {"tonico": "(a vosotros/-as)", "atono": "os"},
+              {"tonico": "(a ellos / a ellas / a Uds.)", "atono": "les"}
+            ],
+            "ejemplos": [
+              "gusta la fruta (singular)",
+              "gustan las manzanas (plural)",
+              "Rosa, ¿a ti te gusta la fruta?",
+              "Sí, a mí me gustan mucho las manzanas y los plátanos."
+            ]
+          },
+          "vocabulario": ["fruta", "manzanas", "plátanos"],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "gustan"]}
+          ],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": []
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Artículos indeterminados",
+          "contenido": {
+            "tipo": "tabla_articulos_indeterminados",
+            "filas": [
+              {"numero": "singular", "masculino": "un gato", "femenino": "una gata"},
+              {"numero": "plural", "masculino": "unos gatos", "femenino": "unas gatas"}
+            ]
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Artículos indeterminados"],
+          "pronunciacion_ortografia": []
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Nombres contables e incontables",
+          "contenido": {
+            "tipo": "texto_explicativo",
+            "texto_intro": "Los nombres contables pueden ser singulares (un plátano) o plurales (unos plátanos): Quiero un plátano. Quiero unos plátanos.\nLos nombres incontables son siempre singulares (azúcar) y no llevan artículo indeterminado: azúcar / arroz / dinero / leche / pasta / café. Quiero azúcar / leche.",
+            "ejemplos": ["un plátano", "unos plátanos", "azúcar", "leche", "pasta", "arroz", "dinero", "café", "Quiero un plátano.", "Quiero unos plátanos.", "Quiero azúcar / leche."]
+          },
+          "vocabulario": ["plátano", "plátanos", "azúcar", "arroz", "dinero", "leche", "pasta", "café"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["Quiero"]}
+          ],
+          "gramatica": ["Nombres contables e incontables", "Artículos indeterminados"],
+          "pronunciacion_ortografia": []
+        }
+      ],
+      "actividades": [
+        {
+          "id": "U4-p44-act1",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con el pronombre adecuado (me, te, le, nos, os, les).",
+          "vocabulario": ["hermano", "padres", "fútbol", "rap", "animales", "macarrones", "pescado", "chocolate", "carne"],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gustan", "gusta"]}],
+          "gramatica": ["Verbo gustar", "Pronombre sujeto / pronombres tónicos"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["le", "les", "nos", "te", "te", "os", "les"],
+          "datos": {
+            "items_libro": [
+              "A mí no me gustan las motos.",
+              "1 A mi hermano _____ gusta el fútbol.",
+              "2 A mis padres no _____ gusta el rap.",
+              "3 A nosotros _____ gustan los animales.",
+              "4 ¿A ti _____ gustan los macarrones?",
+              "5 ¿A ti _____ gusta el pescado?",
+              "6 ¿A vosotras _____ gusta el chocolate?",
+              "7 A ellas no _____ gusta la carne."
+            ]
+          }
+        },
+        {
+          "id": "U4-p44-act2",
+          "numero": 2,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa con gusta / gustan.",
+          "vocabulario": ["plátanos", "chocolate", "hermana", "música clásica", "animales", "manzanas", "padres", "macarrones", "Lucía", "leche", "pasta", "carne", "fútbol"],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "gustan"]}],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["gustan", "gusta", "gustan", "gustan", "gustan", "gusta", "gusta", "gusta", "gusta"],
+          "datos": {
+            "items_libro": [
+              "A mí no me gustan los plátanos.",
+              "1 A ellas les _____ mucho el chocolate.",
+              "2 A mi hermana le _____ la música clásica.",
+              "3 ¿A vosotros os _____ los animales?",
+              "4 ¿A ti te _____ las manzanas?",
+              "5 A mis padres no les _____ los macarrones.",
+              "6 A Lucía no le _____ la leche.",
+              "7 A la gente le _____ mucho la pasta.",
+              "8 A ustedes no les _____ la carne.",
+              "9 A ellos no les _____ el fútbol."
+            ]
+          }
+        },
+        {
+          "id": "U4-p44-act3",
+          "numero": 3,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Construye frases correctas con las palabras, como en el ejemplo.",
+          "vocabulario": ["niños", "pescado", "gatos", "paella", "carne", "España", "fútbol", "peras", "animales"],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "gustan"]}],
+          "gramatica": ["Verbo gustar", "Pronombre sujeto / pronombres tónicos", "Negación (no + verbo)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 A los niños no les gusta el pescado",
+            "2 ¿Te gustan (a ti) los gatos?",
+            "3 ¿Le gusta (a ella) la paella?",
+            "4 No me gusta (a mí) la carne",
+            "5 ¿Les gusta (a ustedes) España?",
+            "6 A María no le gusta el fútbol",
+            "7 A Javier no le gustan las peras",
+            "8 ¿A ti te gustan los animales?"
+          ],
+          "datos": {
+            "ejemplo_libro": "Mis amigos / no gustar / el baloncesto. → A mis amigos no les gusta el baloncesto.",
+            "items_libro": [
+              "1 Los niños / no gustar / el pescado.",
+              "2 ¿(Tú) / gustar / los gatos?",
+              "3 ¿(Ella) / gustar / la paella?",
+              "4 (Yo) / no gustar / la carne.",
+              "5 ¿(Ustedes) / gustar / España?",
+              "6 María / no gustar / el fútbol.",
+              "7 Javier / no gustar / las peras.",
+              "8 ¿Tú / gustar / los animales?"
+            ]
+          }
+        },
+        {
+          "id": "U4-p44-act4",
+          "numero": 4,
+          "tipo": "expresion_escrita_libre",
+          "destreza": ["expresion_escrita", "expresion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escribe tres cosas que te gustan y tres que no. Léeselas a tu compañero.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gustan", "gusta"]}],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {}
+        },
+        {
+          "id": "U4-p44-act5",
+          "numero": 5,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa con un / una / unos / unas.",
+          "vocabulario": ["manzana", "patines", "hamburguesa", "pizza", "postales", "balón", "baloncesto", "helado"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["Quiero", "quieres", "quieren"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "Tengo"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Son"]}
+          ],
+          "gramatica": ["Artículos indeterminados"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["unos", "una", "una", "unas", "un", "un"],
+          "datos": {
+            "items_libro": [
+              "Quiero una manzana.",
+              "1 Juan tiene _____ patines nuevos.",
+              "2 Mis amigos quieren _____ hamburguesa.",
+              "3 Tengo _____ pizza en la nevera.",
+              "4 Son _____ postales muy bonitas.",
+              "5 Quiero _____ balón de baloncesto.",
+              "6 ¿Tú no quieres _____ helado?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 45,
+      "seccion": "gramatica",
+      "cuadros": [
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Hay",
+          "contenido": {
+            "tipo": "tabla_existencial",
+            "texto_intro": "Se utiliza para expresar existencia. Solo se usa la 3.ª persona del singular.",
+            "ejemplos": ["hay una naranja", "hay unos plátanos", "hay tres yogures", "hay leche", "hay pasta"]
+          },
+          "vocabulario": ["naranja", "plátanos", "yogures", "leche", "pasta"],
+          "tiempos_y_verbos": [{"lema": "_pendiente_canon", "_propuesta_lema": "haber", "tiempo": "Presente", "formas_trabajadas": ["hay"]}],
+          "gramatica": ["Hay (existencial)"],
+          "pronunciacion_ortografia": []
+        },
+        {
+          "tipo_cuadro": "gramatical",
+          "titulo": "Presente del verbo querer",
+          "contenido": {
+            "tipo": "tabla_conjugacion",
+            "filas": [
+              {"persona": "yo", "forma": "quiero"},
+              {"persona": "tú", "forma": "quieres"},
+              {"persona": "él / ella / Ud.", "forma": "quiere"},
+              {"persona": "nosotros/-as", "forma": "queremos"},
+              {"persona": "vosotros/-as", "forma": "queréis"},
+              {"persona": "ellos / ellas / Uds.", "forma": "quieren"}
+            ]
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [{"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quiero", "quieres", "quiere", "queremos", "queréis", "quieren"]}],
+          "gramatica": ["Verbo querer (Presente irregular)", "Pronombre sujeto / pronombres tónicos"],
+          "pronunciacion_ortografia": []
+        }
+      ],
+      "actividades": [
+        {
+          "id": "U4-p45-act6",
+          "numero": 6,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa la tabla con los siguientes nombres, contables e incontables, poniendo el artículo indeterminado cuando corresponda.",
+          "vocabulario": ["cebolla", "leche", "patatas", "naranja", "mantequilla", "agua", "hamburguesa", "bocadillos", "café", "azúcar"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Nombres contables e incontables", "Artículos indeterminados"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "Contables singular: una cebolla, una naranja, una hamburguesa",
+            "Contables plural: unas patatas, unos bocadillos",
+            "Incontables solo singular: leche, mantequilla, agua, café, azúcar"
+          ],
+          "datos": {
+            "palabras_recuadro": ["cebolla", "leche", "patatas", "naranja", "mantequilla", "agua", "hamburguesa", "bocadillos", "café", "azúcar"],
+            "items_libro": ["Contables — singular: _____", "Contables — plural: _____", "Incontables — solo singular: _____"]
+          }
+        },
+        {
+          "id": "U4-p45-act7",
+          "numero": 7,
+          "tipo": "seleccion_multiple",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Señala la opción correcta.",
+          "vocabulario": ["helado", "casa", "leche", "nevera", "tomates", "tarta", "chocolate", "cocina", "zumo", "bocadillo"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quiere", "quieren", "quiero", "Quiero", "quieres"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "haber", "tiempo": "Presente", "formas_trabajadas": ["hay", "Hay"]}
+          ],
+          "gramatica": ["Hay (existencial)", "Verbo querer (Presente irregular)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["quiere", "quieren", "hay", "quiere", "quieres", "Quiero", "Quieres"],
+          "datos": {
+            "items_libro": [
+              "1 Clara no hay / quiere más helado.",
+              "2 Elena y Emilio hay / quieren una casa nueva.",
+              "3 Mamá, no hay / quiero leche en la nevera.",
+              "4 Mi madre no hay / quiere tomates.",
+              "5 ¿Juan, hay / quieres tarta de chocolate en la cocina?",
+              "6 Hay / Quiero más zumo.",
+              "7 ¿Hay / Quieres un bocadillo?"
+            ]
+          }
+        },
+        {
+          "id": "U4-p45-act8",
+          "numero": 8,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa los huecos con la forma correspondiente del verbo querer o hay.",
+          "vocabulario": ["manzanas", "kilos", "uvas", "plátanos"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quiere", "Quiero", "quiero"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "haber", "tiempo": "Presente", "formas_trabajadas": ["Hay", "hay"]}
+          ],
+          "gramatica": ["Hay (existencial)", "Verbo querer (Presente irregular)", "Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Ilustración: comprador y vendedor en un puesto de fruta, con bananas y uvas a la vista."},
+          "video": {"presente": false},
+          "respuestas": ["Hay", "hay", "quiere", "Quiero", "hay", "quiero"],
+          "datos": {
+            "subtipo": "dialogo_con_huecos",
+            "dialogo_completo": [
+              "COMPRADOR: ¿[1] _____ manzanas?",
+              "VENDEDOR: Sí [2] _____. ¿Cuántas [3] _____ usted?",
+              "COMPRADOR: [4] _____ dos kilos, y medio kilo de uvas.",
+              "VENDEDOR: También [5] _____ unos plátanos muy ricos.",
+              "COMPRADOR: No, hoy no [6] _____ plátanos."
+            ],
+            "items_libro": ["[1] _____", "[2] _____", "[3] _____", "[4] _____", "[5] _____", "[6] _____"]
+          }
+        },
+        {
+          "id": "U4-p45-act9",
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Organiza el vocabulario por temas. Añade tres palabras o más en cada columna.",
+          "vocabulario": ["familia", "colores", "frutas", "deportes", "hermano", "azul", "naranja", "fútbol"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Tabla 'Para aprender' con cuatro columnas (Familia, Colores, Frutas, Deportes) y un ejemplo en cada una (hermano, azul, naranja, fútbol)."},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "subtipo": "para_aprender",
+            "items_libro": ["Familia: hermano, _____, _____, _____", "Colores: azul, _____, _____, _____", "Frutas: naranja, _____, _____, _____", "Deportes: fútbol, _____, _____, _____"]
+          }
+        },
+        {
+          "id": "U4-p45-act10",
+          "numero": 10,
+          "tipo": "interaccion_oral",
+          "destreza": ["comprension_lectora", "interaccion_oral"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Mira la lista de tu compañero y copia también sus palabras. Apréndelas de memoria.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {}
+        }
+      ]
+    },
+    {
+      "pagina": 46,
+      "seccion": "comunicacion",
+      "cuadros": [
+        {
+          "tipo_cuadro": "pronunciacion_ortografia",
+          "titulo": "Pronunciación y ortografía",
+          "contenido": {
+            "tipo": "tabla_correspondencia_sonido_grafia",
+            "filas": [
+              {"sonido": "/r/", "grafia": "-r-, -r", "ejemplos": ["pera", "naranja", "hablar"]},
+              {"sonido": "/rr/", "grafia": "-rr-, r-", "ejemplos": ["perro", "pizarra", "arroz", "Rosa", "Ramón"]}
+            ]
+          },
+          "vocabulario": ["pera", "naranja", "perro", "pizarra", "arroz"],
+          "tiempos_y_verbos": [{"lema": "hablar", "tiempo": "Infinitivo", "formas_trabajadas": ["hablar"]}],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["_pendiente_canon"]
+        }
+      ],
+      "actividades": [
+        {
+          "id": "U4-p46-act1",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
+          "vocabulario": ["pasta con tomate", "plato favorito", "paella", "arroz", "huevo frito", "manzana", "plátano", "zumo", "agua", "comida favorita", "pizza"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["queréis", "quiero", "Quiero", "Queréis"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "Me gusta mucho", "me gusta mucho"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comer"]}
+          ],
+          "gramatica": ["Verbo gustar", "Verbo querer (Presente irregular)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": true, "pista": 45},
+          "imagen": {"presente": true, "descripcion": "Foto de comedor escolar con una cocinera y cuatro alumnos (Julia, Pablo, Jorge, Graciela) alrededor de una mesa."},
+          "video": {"presente": true},
+          "respuestas": ["queréis", "quiero", "A mí no", "favorito", "también", "Me gusta mucho"],
+          "datos": {
+            "subtipo": "dialogo_con_huecos",
+            "titulo_dialogo": "¡A comer!",
+            "palabras_recuadro": ["A mí no", "también", "quiero", "queréis", "favorito", "Me gusta mucho"],
+            "dialogo_completo": [
+              "COCINERA: Hola, chicos. Buenos días.",
+              "JULIA: Hola.",
+              "COCINERA: ¿Qué [1] _____ comer hoy?",
+              "PABLO: Yo [2] _____ un plato de pasta con tomate, por favor.",
+              "COCINERA: Muy bien, enseguida lo tienes.",
+              "PABLO: Gracias, Lara.",
+              "COCINERA: ¿Y tú, Julia?",
+              "JULIA: [3] _____ me gusta la pasta. Yo quiero paella.",
+              "COCINERA: Estupendo. ¿Y tú, Jorge?",
+              "JORGE: Yo quiero arroz con tomate y un huevo frito, por favor.",
+              "COCINERA: Arroz a la cubana, mi plato [4] _____.",
+              "GRACIELA: Yo quiero paella, pero poca.",
+              "COCINERA: De acuerdo. Y de beber, ¿queréis agua o zumo?",
+              "GRACIELA: Yo quiero agua.",
+              "PABLO: Yo, zumo.",
+              "JULIA: Yo, agua.",
+              "JORGE: Yo [5] _____ quiero agua.",
+              "COCINERA: ¿Queréis postre?",
+              "PABLO: Yo, un plátano, por favor, Lara.",
+              "JULIA: Yo quiero una naranja.",
+              "GRACIELA: Yo, también naranja.",
+              "JORGE: Yo, una manzana.",
+              "COCINERA: Muy bien, chicos.",
+              "***",
+              "COCINERA: ¡Buen provecho!",
+              "TODOS: Gracias, Lara.",
+              "JULIA: [6] _____ la paella, es mi comida favorita. ¿Cuál es vuestra comida favorita?",
+              "PABLO: Mi comida favorita es la pizza, pero también me gusta mucho la pasta.",
+              "GRACIELA: ¡El arroz a la cubana!",
+              "JORGE: ¡La parrillada argentina!"
+            ],
+            "items_libro": ["[1] _____", "[2] _____", "[3] _____", "[4] _____", "[5] _____", "[6] _____"]
+          }
+        },
+        {
+          "id": "U4-p46-act2",
+          "numero": 2,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Contesta a las preguntas.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quiere"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "haber", "tiempo": "Presente", "formas_trabajadas": ["hay"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comer"]}
+          ],
+          "gramatica": ["Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 Pasta con tomate, paella y arroz a la cubana.",
+            "2 A Julia",
+            "3 Arroz con tomate y un huevo frito",
+            "4 Pablo",
+            "5 Fruta (plátano, naranja y manzana)",
+            "6 La pizza."
+          ],
+          "datos": {
+            "preguntas": [
+              "1 ¿Qué van a comer hoy?",
+              "2 ¿A quién no le gusta la pasta?",
+              "3 ¿Qué es el arroz a la cubana?",
+              "4 ¿Quién quiere un zumo?",
+              "5 ¿Qué hay de postre?",
+              "6 ¿Cuál es la comida favorita de Pablo?"
+            ]
+          }
+        },
+        {
+          "id": "U4-p46-act3",
+          "numero": 3,
+          "tipo": "verdadero_falso",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "¿Verdadero (V) o falso (F)?",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["come", "Come"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "tomar", "tiempo": "Presente", "formas_trabajadas": ["toman"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "beber", "tiempo": "Presente", "formas_trabajadas": ["beben"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["1 F", "2 F", "3 F", "4 V", "5 V", "6 F"],
+          "datos": {
+            "items_libro": [
+              "1 Graciela come arroz con tomate.",
+              "2 Julia come pasta.",
+              "3 Pablo come su comida favorita.",
+              "4 Graciela come fruta de postre.",
+              "5 Todos toman fruta.",
+              "6 Todos beben agua."
+            ]
+          }
+        },
+        {
+          "id": "U4-p46-act5",
+          "numero": 5,
+          "tipo": "relaciona",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Trabaja con tu compañero y relaciona las siguientes palabras con las imágenes.",
+          "vocabulario": ["botella de agua", "lata de cola", "cartón de leche", "bolsa de patatas", "vaso de zumo", "paquete de galletas", "trozo de tarta", "bote de garbanzos", "taza de café"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Artículos indeterminados"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Ocho fotografías numeradas de envases de comida: 1 paquete de galletas, 2 trozo de tarta, 3 vaso de zumo, 4 cartón de leche, 5 taza de café, 6 lata de cola, 7 bote de garbanzos, 8 bolsa de patatas. Además 'una botella de agua' como ejemplo modelo."},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 un paquete de galletas",
+            "2 un trozo de tarta",
+            "3 un vaso de zumo",
+            "4 un cartón de leche",
+            "5 una taza de café",
+            "6 una lata de cola",
+            "7 un bote de garbanzos",
+            "8 una bolsa de patatas"
+          ],
+          "datos": {
+            "ejemplo_libro": "una botella de agua",
+            "palabras_recuadro": ["una botella de agua", "una lata de cola", "un cartón de leche", "una bolsa de patatas", "un vaso de zumo", "un paquete de galletas", "un trozo de tarta", "un bote de garbanzos", "una taza de café"]
+          }
+        },
+        {
+          "id": "U4-p46-act6",
+          "numero": 6,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "¿Cómo puedes comprar o consumir estos alimentos? Hay varias opciones.",
+          "vocabulario": ["pizza", "limonada", "té", "agua", "frutos secos", "arroz", "zumo de naranja", "atún", "tomate frito", "maíz"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Artículos indeterminados"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 limonada, zumo de naranja, tomate frito",
+            "2 limonada, té, agua, zumo de naranja",
+            "3 té, frutos secos, arroz, maíz",
+            "4 limonada, té, agua, zumo de naranja",
+            "5 atún, tomate frito, maíz",
+            "6 frutos secos, arroz, maíz",
+            "7 té",
+            "8 té, arroz, frutos secos, maíz",
+            "9 pizza"
+          ],
+          "datos": {
+            "palabras_recuadro": ["pizza", "limonada", "té", "agua", "frutos secos", "arroz", "zumo de naranja", "atún", "tomate frito", "maíz"],
+            "items_libro": [
+              "1 un cartón de…",
+              "2 una botella de…",
+              "3 una bolsa de…",
+              "4 un vaso de…",
+              "5 una lata de…",
+              "6 un bote de…",
+              "7 una taza de…",
+              "8 un paquete de…",
+              "9 un trozo de…"
+            ]
+          }
+        },
+        {
+          "id": "U4-p46-act10",
+          "numero": 10,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "pronunciacion_ortografia",
+          "instruccion_original": "Escucha y repite.",
+          "vocabulario": ["pera", "naranja", "perro", "pizarra", "arroz", "Rosa", "Ramón"],
+          "tiempos_y_verbos": [{"lema": "hablar", "tiempo": "Infinitivo", "formas_trabajadas": ["hablar"]}],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["_pendiente_canon"],
+          "audio": {"presente": true, "pista": 47},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "items_libro": ["/r/ → -r-, -r: pera, naranja, hablar", "/rr/ → -rr-, r-: perro, pizarra, arroz, Rosa, Ramón"]
+          }
+        },
+        {
+          "id": "U4-p46-act11",
+          "numero": 11,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "pronunciacion_ortografia",
+          "instruccion_original": "Escucha y completa con r/rr.",
+          "vocabulario": ["toro", "reloj", "rueda", "radio", "zanahorias", "jirafa", "macarrones", "compañera", "regla", "amarillo"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["_pendiente_canon"],
+          "audio": {"presente": true, "pista": 48},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["1 toro (r)", "2 reloj (r)", "3 rueda (r)", "4 radio (r)", "5 zanahorias (r)", "6 jirafa (r)", "7 macarrones (rr)", "8 compañera (r)", "9 regla (r)", "10 amarillo (r)"],
+          "datos": {
+            "items_libro": [
+              "1 to__o",
+              "2 __eloj",
+              "3 __ueda",
+              "4 __adio",
+              "5 zanaho__ias",
+              "6 ji__afa",
+              "7 maca__ones",
+              "8 compañe__a",
+              "9 __egla",
+              "10 ama__illo"
+            ]
+          }
+        },
+        {
+          "id": "U4-p46-act12",
+          "numero": 12,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "pronunciacion_ortografia",
+          "instruccion_original": "Escucha otra vez y repite.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["_pendiente_canon"],
+          "audio": {"presente": true, "pista": 48},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {}
+        }
+      ]
+    },
+    {
+      "pagina": 47,
+      "seccion": "comunicacion",
+      "actividades": [
+        {
+          "id": "U4-p47-act4",
+          "numero": 4,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "En parejas, ofrécele a tu compañero uno de los siguientes postres.",
+          "vocabulario": ["manzana", "flan", "naranja", "melocotón", "helado", "pera", "tarta"],
+          "tiempos_y_verbos": [{"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["Quieres"]}],
+          "gramatica": ["Verbo querer (Presente irregular)", "Artículos indeterminados"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Siete fotografías de postres con etiqueta: manzana, flan, naranja, melocotón, helado, pera, tarta. Bocadillos modelo: '¿Quieres una manzana?' / 'Sí, gracias. / No, gracias; mejor una pera.'"},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "ejemplos_modelo": ["¿Quieres una manzana?", "Sí, gracias.", "No, gracias; mejor una pera."]
+          }
+        },
+        {
+          "id": "U4-p47-act7",
+          "numero": 7,
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escucha y repite.",
+          "vocabulario": ["paella", "plátanos"],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "gustan"]}],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": true, "pista": 46},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "dialogo_completo": [
+              "● ¿Te gusta la paella?",
+              "■ Sí, me gusta mucho. / No, no me gusta mucho.",
+              "● ¿Te gustan los plátanos?",
+              "■ No, no me gustan nada."
+            ]
+          }
+        },
+        {
+          "id": "U4-p47-act8",
+          "numero": 8,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral", "expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Pregunta a tu compañero como en el ejercicio anterior y completa la tabla.",
+          "vocabulario": ["zumo de piña", "hamburguesas", "ensalada", "leche", "galletas", "carne", "pescado"],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "gustan"]}],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Tabla con filas (zumo de piña, hamburguesas, ensalada, leche, galletas, carne, pescado) y columnas (Mucho, No mucho, Nada)."},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "items_libro": ["zumo de piña", "hamburguesas", "ensalada", "leche", "galletas", "carne", "pescado"]
+          }
+        },
+        {
+          "id": "U4-p47-act9",
+          "numero": 9,
+          "tipo": "expresion_oral_libre",
+          "destreza": ["expresion_oral", "expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escribe las cosas que le gustan a tu compañero y las que no y coméntalo con la clase.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gustan", "gusta"]}],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {}
+        }
+      ]
+    },
+    {
+      "pagina": 48,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U4-p48-act1",
+          "numero": 1,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee el menú de La taberna del abuelo y contesta a las preguntas.",
+          "vocabulario": ["menú del día", "primer plato", "macarrones de Bolonia", "salsa de tomate", "ensalada mediterránea", "lechuga", "tomate", "zanahoria", "atún", "sopa de cocido madrileño", "pasta", "garbanzos", "arroz chino", "maíz", "cebolla", "segundo plato", "pollo a la catalana", "patatas fritas", "ensalada", "atún con tomate", "verduras", "filete a la plancha", "ternera", "Hamburguesa Brookling", "queso", "postre", "flan", "plátano", "manzana", "helado", "bebida", "pan", "café"],
+          "tiempos_y_verbos": [
+            {"lema": "_pendiente_canon", "_propuesta_lema": "costar", "tiempo": "Presente", "formas_trabajadas": ["cuesta"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comer", "comen"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "haber", "tiempo": "Presente", "formas_trabajadas": ["hay", "Hay"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "elegir", "tiempo": "Infinitivo", "formas_trabajadas": ["elegir"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "pedir", "tiempo": "Presente", "formas_trabajadas": ["pides"]}
+          ],
+          "gramatica": ["Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)", "Artículos determinados (el/la/los/las)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Carta del 'Restaurante La taberna del abuelo' con menú del día (16€): Primer plato (Macarrones de Bolonia, Ensalada Mediterránea, Sopa de cocido madrileño, Arroz chino), Segundo plato (Pollo a la catalana, Atún con tomate, Filete a la plancha, Hamburguesa Brookling), Postre (Flan, Plátano, Manzana, Helado). 'Dos platos, bebida, pan y postre o café 16 €.'"},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 16 €",
+            "2 Macarrones de Bolonia, sopa de cocido, arroz chino",
+            "3 Atún con tomate",
+            "4 Plátano y manzana",
+            "5 Sí, flan y helado",
+            "6 Respuesta libre."
+          ],
+          "datos": {
+            "texto_completo": "RESTAURANTE LA TABERNA DEL ABUELO. MENÚ DEL DÍA. Primer plato: Macarrones de Bolonia (Pasta italiana con salsa de tomate casera). Ensalada Mediterránea (lechuga, tomate, zanahoria y atún). Sopa de cocido madrileño (pasta y garbanzos). Arroz chino (zanahoria, tomate, maíz y cebolla). Segundo plato: Pollo a la catalana (pollo asado con patatas fritas o ensalada). Atún con tomate (con patatas o verduras). Filete a la plancha (filete de ternera, con patatas fritas o ensalada). Hamburguesa Brookling (carne de ternera con cebolla, lechuga y queso). Postre: Flan • Plátano • Manzana • Helado. Dos platos, bebida, pan y postre o café — 16 €.",
+            "preguntas": [
+              "1 ¿Cuánto cuesta el menú del día?",
+              "2 ¿Qué platos pueden comer los vegetarianos?",
+              "3 ¿Qué plato de pescado hay hoy?",
+              "4 ¿Qué frutas diferentes puedes elegir?",
+              "5 ¿Hay otros postres además de la fruta?",
+              "6 ¿Qué platos pides tú?"
+            ]
+          }
+        },
+        {
+          "id": "U4-p48-act2",
+          "numero": 2,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "Lee y contesta a las preguntas.",
+          "vocabulario": ["mediodía", "comedor escolar", "primer plato", "sopa", "ensalada", "verdura", "arroz", "pasta", "segundo plato", "carne", "pescado", "huevo", "postre", "fruta", "flan", "yogur", "helado", "verduras"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comen", "Come"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "tomar", "tiempo": "Presente", "formas_trabajadas": ["toman"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "gustan"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
+          ],
+          "gramatica": ["Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)", "Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Foto de una familia (abuelo, niños) comiendo en una mesa."},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 Entre la una y las tres de la tarde",
+            "2 En casa, en un restaurante o en el comedor escolar",
+            "3 Fruta, flan, yogur o helado",
+            "4 Las verduras."
+          ],
+          "datos": {
+            "texto_completo": "Comer en España. En España, la comida más importante es la de mediodía. Los españoles comen entre la una y las tres de la tarde. La gente come en su casa, en un restaurante o en el comedor escolar. El menú tiene tres platos. Normalmente el primer plato es una sopa, una ensalada, verdura, arroz o pasta. El segundo tiene carne, pescado o huevo. Y el postre es fruta, flan, yogur o helado. A los niños españoles les gusta mucho la pasta con tomate, pero no les gustan mucho las verduras. De postre, casi todos comen fruta.",
+            "preguntas": [
+              "1 ¿A qué hora comen los españoles?",
+              "2 ¿Dónde comen los españoles?",
+              "3 ¿Qué comen de postre los españoles?",
+              "4 ¿Qué no les gusta en general a los niños?"
+            ]
+          }
+        },
+        {
+          "id": "U4-p48-act3",
+          "numero": 3,
+          "tipo": "verdadero_falso",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "transversal",
+          "instruccion_original": "¿Verdadero (V) o falso (F)? Corrige las frases falsas.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comen"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "tomar", "tiempo": "Presente", "formas_trabajadas": ["toman"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 F — Los españoles a mediodía comen tres platos",
+            "2 F — El menú normalmente tiene un primer plato, un segundo plato y un postre",
+            "3 F — El segundo plato tiene carne, pescado o huevo",
+            "4 F — A los niños españoles les gusta mucho la pasta con tomate",
+            "5 F — Casi todos comen fruta de postre"
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Los españoles a mediodía comen algo ligero. — F",
+              "2 El menú normalmente tiene un plato principal y un postre. — F",
+              "3 El plato principal siempre es vegetariano. — F",
+              "4 La pasta con tomate es el plato favorito de todos los españoles. — F",
+              "5 Todos los niños en España toman fruta de postre. — F"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 49,
+      "seccion": "destrezas",
+      "actividades": [
+        {
+          "id": "U4-p49-act4",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escucha a Celia y Ramón hablar de sus gustos y completa la tabla.",
+          "vocabulario": ["carne", "patatas", "pasta", "fruta", "verdura", "pescado"],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "gustan"]}],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": true, "pista": 49},
+          "imagen": {"presente": true, "descripcion": "Tabla 6×4 con filas (carne, patatas, pasta, fruta, verdura, pescado) y columnas (Celia sí, Celia no, Ramón sí, Ramón no)."},
+          "video": {"presente": false},
+          "respuestas": [
+            "Celia: sí carne, sí patatas, sí pasta, sí fruta, no verdura, sí pescado",
+            "Ramón: sí carne, sí patatas, sí pasta, sí fruta, sí verdura, no pescado"
+          ],
+          "datos": {
+            "items_libro": ["carne", "patatas", "pasta", "fruta", "verdura", "pescado"]
+          }
+        },
+        {
+          "id": "U4-p49-act5",
+          "numero": 5,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_auditiva", "expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Hoy María come en un restaurante. Escucha y escribe en la columna izquierda las preguntas del camarero y en la columna derecha, las respuestas de María.",
+          "vocabulario": ["primero", "segundo", "postre", "manzana", "agua", "atún con tomate"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quiere", "quiero"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comer"]}
+          ],
+          "gramatica": ["Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)", "Verbo querer (Presente irregular)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": true, "pista": 50},
+          "imagen": {"presente": true, "descripcion": "Foto de una camarera con tableta en un restaurante."},
+          "video": {"presente": false},
+          "respuestas": [
+            "Preguntas: ¿Qué quiere comer? · ¿Y de segundo? · ¿Y de postre? · ¿Y para beber?",
+            "Respuestas: De primero, quiero ensalada · De segundo, atún con tomate · Una manzana · Agua, por favor"
+          ],
+          "datos": {
+            "subtipo": "tabla_preguntas_respuestas",
+            "items_libro": ["Preguntas | Respuestas", "¿Qué quiere comer? | De primero, quiero ensalada", "¿Y de segundo? | De segundo, atún con tomate", "¿Y de postre? | Una manzana", "¿Y para beber? | Agua, por favor"]
+          }
+        },
+        {
+          "id": "U4-p49-act6",
+          "numero": 6,
+          "tipo": "expresion_escrita_libre",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Escribe con tu compañero un menú de restaurante con vuestros platos favoritos. Después escribid una pequeña reseña para cada uno de los platos: ingredientes, cuándo comes ese plato (desayuno, comida, merienda o cena) y de qué país o zona de tu país es típico. Fíjate en el menú de La taberna del abuelo (ejercicio 1). Sigue los siguientes pasos: Elige cuatro platos para cada apartado: primer plato, segundo plato, postre... Prepara notas sobre los ingredientes, de dónde es típico y cuándo comes ese plato. Utiliza expresiones como: - Es un postre... / plato de pasta... / tipo de carne... - Lleva arroz / tomate / patatas... - Comemos con ensalada / patatas fritas / helado... - Normalmente comemos este plato en el desayuno / al mediodía / en la cena... Presentad vuestros menús a la clase y entre todos votad vuestros menús preferidos.",
+          "vocabulario": ["menú", "primer plato", "segundo plato", "postre", "desayuno", "comida", "merienda", "cena", "ingredientes", "arroz", "tomate", "patatas", "ensalada", "patatas fritas", "helado"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes", "Comemos", "comemos"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "pasos": [
+              "Elige cuatro platos para cada apartado: primer plato, segundo plato, postre...",
+              "Prepara notas sobre los ingredientes, de dónde es típico y cuándo comes ese plato",
+              "Utiliza expresiones como: - Es un postre... / plato de pasta... / tipo de carne... - Lleva arroz / tomate / patatas... - Comemos con ensalada / patatas fritas / helado... - Normalmente comemos este plato en el desayuno / al mediodía / en la cena...",
+              "Presentad vuestros menús a la clase y entre todos votad vuestros menús preferidos."
+            ]
+          }
+        },
+        {
+          "id": "U4-p49-act7",
+          "numero": 7,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "En parejas. En el restaurante La taberna del abuelo A es el camarero y B es el cliente. Mira el menú del día del ejercicio 1.",
+          "vocabulario": [],
+          "tiempos_y_verbos": [{"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quiere", "quiero"]}],
+          "gramatica": ["Verbo querer (Presente irregular)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "dialogo_completo": [
+              "A ¿Qué quiere de primero?",
+              "B De primero quiero _____.",
+              "A ¿Qué quiere de segundo plato?",
+              "B De segundo quiero _____.",
+              "A ¿Y de postre?",
+              "B _____."
+            ]
+          }
+        },
+        {
+          "id": "U4-p49-act8",
+          "numero": 8,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "¿Cuál es tu comida favorita? ¿Y la que te gusta menos? Habla con el compañero.",
+          "vocabulario": ["comida favorita", "pasta", "carne"],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]}],
+          "gramatica": ["Verbo gustar", "Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "ejemplos_modelo": [
+              "¿Cuál es tu comida favorita?",
+              "Mi comida favorita es la pasta.",
+              "¿Y cuál es la comida que menos te gusta?",
+              "La comida que menos me gusta es la carne."
+            ]
+          }
+        },
+        {
+          "id": "U4-p49-act9",
+          "numero": 9,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral", "mediacion"],
+          "enfoque": "cultura",
+          "instruccion_original": "En parejas, cada uno tenéis que buscar información sobre uno de estos dos temas: A Horarios de comidas en España: desayuno, almuerzo, comida, merienda y cena. B ¿Qué comen los niños en España: desayuno, almuerzo, comida, merienda y cena? Cuéntale a tu compañero lo que has descubierto sobre tu tema.",
+          "vocabulario": ["horarios", "desayuno", "almuerzo", "comida", "merienda", "cena", "niños", "leche", "cacao", "galletas", "cereales", "bocadillo", "fruta", "ensaladas", "verdura", "pasta", "arroz", "carne", "pescado", "pollo", "verdura"],
+          "tiempos_y_verbos": [{"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comen"]}],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "Horarios: Desayuno entre las 7 y las 8; Almuerzo entre las 10 y las 11; Comida entre la 1:30 y las 2:30; Merienda entre las 5 y las 6; Cena entre las 9 y las 10.",
+            "Qué comen los niños: Desayuno: leche (con cacao), galletas, cereales y tostadas; Almuerzo: fruta, un bocadillo; Comida: ensaladas, verdura, pasta, arroz, carne y/o pescado y fruta; Merienda: fruta, un bocadillo; Cena: verdura, pollo, leche…"
+          ],
+          "datos": {}
+        }
+      ]
+    },
+    {
+      "pagina": 50,
+      "seccion": "cultura",
+      "actividades": [
+        {
+          "id": "U4-p50-act1",
+          "numero": 1,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "cultura",
+          "instruccion_original": "Lee el texto con atención. ¿Qué países aparecen?",
+          "vocabulario": ["España", "Colombia", "Venezuela", "México", "Italia", "Estados Unidos"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Foto de un puesto de comida callejera 'BRATWURST FRANKFURTS' con gente alrededor."},
+          "video": {"presente": false},
+          "respuestas": ["España, Colombia, Venezuela, México, Italia y Estados Unidos."],
+          "datos": {}
+        },
+        {
+          "id": "U4-p50-act2",
+          "numero": 2,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "cultura",
+          "instruccion_original": "¿Qué ingredientes tienen los siguientes productos?",
+          "vocabulario": ["arepas colombianas", "tamales mexicanos", "queso", "carne", "huevos", "pescado", "pollo", "cerdo"],
+          "tiempos_y_verbos": [{"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienen"]}],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Fotografías de churros, arepas, pizza callejera, perritos calientes, tacos."},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 queso, carne, huevos, pescado…",
+            "2 pollo o cerdo."
+          ],
+          "datos": {
+            "items_libro": [
+              "1 Las arepas colombianas _____.",
+              "2 Los tamales mexicanos _____."
+            ]
+          }
+        },
+        {
+          "id": "U4-p50-act3",
+          "numero": 3,
+          "tipo": "responder_preguntas_cerradas",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "cultura",
+          "instruccion_original": "Lee el texto otra vez y contesta a las preguntas.",
+          "vocabulario": ["chocolate", "churros", "arepas", "pizza", "tacos", "burritos", "tortillas", "tamales", "hamburguesas", "batidos", "quiosco"],
+          "tiempos_y_verbos": [
+            {"lema": "_pendiente_canon", "_propuesta_lema": "tomar", "tiempo": "Infinitivo", "formas_trabajadas": ["tomar"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comer", "comemos"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "vender", "tiempo": "Presente", "formas_trabajadas": ["venden", "vende"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "comprar", "tiempo": "Infinitivo", "formas_trabajadas": ["comprar"]}
+          ],
+          "gramatica": ["Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "1 El chocolate",
+            "2 Desde el desayuno hasta la cena",
+            "3 Tacos, burritos, tortillas y tamales",
+            "4 En porciones triangulares",
+            "5 En los quioscos que hay en la calle."
+          ],
+          "datos": {
+            "preguntas": [
+              "1 ¿Qué bebida es la mejor para tomar con los churros en invierno?",
+              "2 ¿A qué hora del día podemos comer arepas en Colombia o Venezuela?",
+              "3 ¿Qué especialidades de la comida mexicana aparecen en el texto?",
+              "4 ¿Cómo se vende la pizza en las calles de Roma?",
+              "5 ¿Dónde podemos comprar hamburguesas y batidos si vas a Estados Unidos?"
+            ]
+          }
+        },
+        {
+          "id": "U4-p50-act4",
+          "numero": 4,
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "cultura",
+          "instruccion_original": "Habla con tu compañero. ¿Qué comida conoces de las que aparecen en el texto? ¿Cuál te gusta más?",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "conocer", "tiempo": "Presente", "formas_trabajadas": ["conoces"]}
+          ],
+          "gramatica": ["Verbo gustar"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [],
+          "datos": {
+            "preguntas": [
+              "¿Qué comida conoces de las que aparecen en el texto?",
+              "¿Cuál te gusta más?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "pagina": 51,
+      "seccion": "evaluacion",
+      "actividades": [
+        {
+          "id": "U4-p51-act1",
+          "numero": 1,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con la forma correspondiente del verbo querer o con hay.",
+          "vocabulario": ["coche", "frigorífico", "leche", "huevo frito", "postre", "pan", "mesa", "bocadillo", "ordenadores", "clase", "agua", "botella"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quieren", "quieres", "queremos", "quiere", "quiero", "queremos", "quiere"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "haber", "tiempo": "Presente", "formas_trabajadas": ["hay"]}
+          ],
+          "gramatica": ["Hay (existencial)", "Verbo querer (Presente irregular)", "Negación (no + verbo)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["quieren", "hay", "quieres", "queremos", "hay", "quiere", "quiero", "queremos", "hay", "quiero"],
+          "datos": {
+            "items_libro": [
+              "1 Mis padres _____ un coche nuevo.",
+              "2 En el frigorífico _____ leche.",
+              "3 María, ¿_____ un huevo frito?",
+              "4 Pedro y yo no _____ postre.",
+              "5 No _____ pan en la mesa.",
+              "6 Nicolás no _____ un bocadillo.",
+              "7 Yo no _____ pan.",
+              "8 Nosotros _____ ordenadores en la clase.",
+              "9 Lo siento, no _____ agua en la botella.",
+              "10 Mamá, ahora no _____ el bocadillo."
+            ]
+          }
+        },
+        {
+          "id": "U4-p51-act2",
+          "numero": 2,
+          "tipo": "clasifica",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Clasifica los siguientes nombres en dos grupos, contables e incontables, con su correspondiente artículo indeterminado cuando sea necesario.",
+          "vocabulario": ["galletas", "pan", "patatas", "agua", "pera", "cebolla", "plátano", "azúcar", "filetes", "arroz", "queso"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Nombres contables e incontables", "Artículos indeterminados"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "Contables singular: una pera, una cebolla, un plátano",
+            "Contables plural: unas galletas, unas patatas, unos filetes",
+            "Incontables solo singular: pan, agua, azúcar, arroz, queso"
+          ],
+          "datos": {
+            "palabras_recuadro": ["galletas", "pan", "patatas", "agua", "pera", "cebolla", "plátano", "azúcar", "filetes", "arroz", "queso"]
+          }
+        },
+        {
+          "id": "U4-p51-act3",
+          "numero": 3,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa con un / una / unos / unas si es necesario.",
+          "vocabulario": ["manzana", "pantalones", "azúcar", "leche", "dinero", "postre", "hermano", "perro"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["Quiero", "Queréis", "queremos"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "Tienes", "tienen"]},
+            {"lema": "_pendiente_canon", "_propuesta_lema": "beber", "tiempo": "Presente", "formas_trabajadas": ["bebo"]}
+          ],
+          "gramatica": ["Artículos indeterminados", "Nombres contables e incontables"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["una", "unos", "(nada)", "(nada)", "(nada)", "(nada)", "un", "(nada)", "(nada)", "un"],
+          "datos": {
+            "items_libro": [
+              "Quiero _____ manzana.",
+              "1 Juan tiene _____ pantalones nuevos.",
+              "2 ¿Queréis _____ azúcar?",
+              "3 ¿Tienes _____ leche?",
+              "4 ¿Tienes _____ dinero?",
+              "5 No queremos _____ postre.",
+              "6 Ellos tienen _____ hermano más.",
+              "7 Yo no bebo _____ leche por la noche.",
+              "8 ¿Queréis _____ pan?",
+              "9 Mi hermano tiene _____ perro negro."
+            ]
+          }
+        },
+        {
+          "id": "U4-p51-act4",
+          "numero": 4,
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "gramatica",
+          "instruccion_original": "Completa las frases con el pronombre (me, te...) y gusta / gustan.",
+          "vocabulario": ["flamenco", "padres", "México", "animales", "español", "música clásica"],
+          "tiempos_y_verbos": [{"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "gustan"]}],
+          "gramatica": ["Verbo gustar", "Pronombre sujeto / pronombres tónicos", "Negación (no + verbo)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": ["te gusta", "les gusta", "os gustan", "me gusta", "nos gusta"],
+          "datos": {
+            "items_libro": [
+              "1 ¿A ti _____ el flamenco?",
+              "2 A mis padres _____ México.",
+              "3 ¿A vosotros _____ los animales?",
+              "4 A mí _____ el español.",
+              "5 A nosotros no _____ la música clásica."
+            ]
+          }
+        },
+        {
+          "id": "U4-p51-act5",
+          "numero": 5,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "vocabulario",
+          "instruccion_original": "Escribe el nombre los siguientes alimentos.",
+          "vocabulario": ["pollo", "patatas", "huevos", "zanahorias", "manzanas"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": true, "descripcion": "Cinco fotografías numeradas de alimentos: 1 pollo, 2 patatas, 3 huevos, 4 zanahorias, 5 manzanas."},
+          "video": {"presente": false},
+          "respuestas": ["1 pollo", "2 patatas", "3 huevos", "4 zanahorias", "5 manzanas"],
+          "datos": {
+            "items_libro": ["1 _____", "2 _____", "3 _____", "4 _____", "5 _____"]
+          }
+        },
+        {
+          "id": "U4-p51-act6",
+          "numero": 6,
+          "tipo": "ordena",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Ordena las palabras en las siguientes frases de las conversaciones entre dos amigos.",
+          "vocabulario": ["música clásica", "música pop", "baloncesto", "arroz"],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quieres", "quiero"]}
+          ],
+          "gramatica": ["Verbo gustar", "Verbo querer (Presente irregular)", "Interrogativos (qué / cuál / quién / dónde / cómo / cuánto / a qué)"],
+          "pronunciacion_ortografia": [],
+          "audio": {"presente": false},
+          "imagen": {"presente": false},
+          "video": {"presente": false},
+          "respuestas": [
+            "¿Te gusta la música clásica? / A mí no me gusta la música 'pop'.",
+            "¿Te gusta jugar al baloncesto? / Sí, me gusta mucho.",
+            "¿Tú quieres más arroz? / No, gracias, no quiero más."
+          ],
+          "datos": {
+            "items_libro": [
+              "● ¿ / música / te / clásica / gusta / la / ?",
+              "■ me / música / no, / mí / a / gusta / pop / la",
+              "● ¿ / jugar / te / al / gusta / baloncesto / ?",
+              "■ gusta / sí, / mucho / me",
+              "● ¿ / tú / más / quieres / arroz / ?",
+              "■ no, / gracias, / más / no / quiero"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
