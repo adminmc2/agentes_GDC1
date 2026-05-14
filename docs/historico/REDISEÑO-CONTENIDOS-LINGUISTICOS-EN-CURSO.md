@@ -1,6 +1,8 @@
 # Propuesta arquitectónica — contenidos lingüísticos en fase 1 y rol activo de fase 2
 
-> **Estado:** EN CONSTRUCCIÓN. Documento de trabajo local (no trackeado). Se elimina cuando la propuesta se cierre y las decisiones vivan en los documentos canónicos de fase 1 y fase 2.
+> 🗄️ **ARCHIVADO 2026-05-14 (v10.115).** Todas las piezas de esta propuesta están absorbidas en los contratos vivos: shape y enumeraciones en `fases/1-extraccion-inventario/schema-inventario.md`, política operativa en `fases/1-extraccion-inventario/reglas-operativas.md` (procedimiento §0.3 A/B/C, anticipación §6.3, opción B perífrasis en §5.2 + schema §3.2), terminología en `fases/1-extraccion-inventario/glosario.md`, registries materializados en `fases/1-extraccion-inventario/{verbos,gramatica,pronunciacion-ortografia}-canonica.json` y `campos-semanticos-canonicos.json`, PCIC vinculante en `fases/1-extraccion-inventario/pcic-a1-*.json`. Este documento se conserva como referencia histórica de discusión arquitectónica; no es contrato vivo y no debe consultarse durante una corrida de extracción.
+
+> **Estado original (preservado por trazabilidad):** EN CONSTRUCCIÓN. Documento de trabajo local (no trackeado). Se elimina cuando la propuesta se cierre y las decisiones vivan en los documentos canónicos de fase 1 y fase 2.
 >
 > **Progreso de cierre por cuestión:**
 > - ✅ **Cuestión 1 — Arquitectura de contenidos lingüísticos de fase 1: VALIDADA POR REVISOR 2026-05-11.** Cerrada a nivel arquitectónico. Partes A–J coherentes internamente. Detalle del cierre en §13.

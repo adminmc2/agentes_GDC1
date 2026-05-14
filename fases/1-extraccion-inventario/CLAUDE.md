@@ -9,8 +9,8 @@
 > - 🟢 **`reglas-operativas.md`** — autoridad operativa de decisión reescrita desde cero bajo modelo IA-first. Contiene política transversal (propuesta-en-chat, construcción iterativa de recurrente, procedimiento sistemático con A/B/C), precedencia actividad/cuadro/nota/autoevaluación, asignación de tipo/destreza/enfoque/tipo_cuadro, casos "Para aprender" y "Observa", criterios pedagógicos paraguas de población de listas tipadas, canon semántico léxico, ciclo de vida de marcas internas, derivación de los 4 bloques consolidados, unidades atípicas, política PCIC, política de mejora continua. `reglas-operativas-viejo.md` queda como reservorio histórico no consultable operativamente.
 > - 🟡 **`convenciones-y-casos.md`** — **deuda pendiente.** Renombrado a `convenciones-y-casos-viejo.md` durante el rediseño; el nuevo archivo se construirá en lote siguiente. Mientras tanto, las referencias a `convenciones-y-casos.md` desde otros docs pueden estar rotas. Contenido vigente vive en `-viejo`.
 > - 🚫 `docs/historico/prompt-v1-antiguo.md`, `docs/historico/prompt-v2-monolitico-NO-USAR.md` — versiones antiguas archivadas, no usar.
-> - 📑 `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md` (en esta carpeta) — documento de discusión arquitectónica, no input de corridas.
 > - 🗄️ `docs/historico/PROPUESTA-PIEZA-2-IA-FIRST.md`, `docs/historico/schema-inventario-viejo.md` — archivados en histórico el 2026-05-13; ya absorbidos en los contratos vivos.
+> - 🗄️ `docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md` — discusión arquitectónica del rediseño de fase 1. Archivado el 2026-05-14 tras absorberse todas sus piezas en los contratos vivos (schema, reglas, glosario, registries).
 >
 > **Regla de precedencia durante la transición:** cuando una regla concreta de `reglas-operativas.md` entra en conflicto con `schema-inventario.md`, **prevalece el schema**. Detalle de la transición operativa en la nota transitoria del `prompt.md`.
 

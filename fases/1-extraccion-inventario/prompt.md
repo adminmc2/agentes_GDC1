@@ -47,7 +47,7 @@
 
 `scripts/validar_inventario.py`, `CLAUDE.md` raíz, `convenciones-y-casos-viejo.md` casebook (consulta puntual durante la deuda transitoria).
 
-> **No leer durante la corrida:** `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`. Es discusión arquitectónica, no contrato. Contratos vivos: `schema-inventario.md` y `reglas-operativas.md`. `convenciones-y-casos.md` aún no está reescrito bajo el modelo IA-first (deuda transitoria declarada arriba); su contenido histórico se consulta en `convenciones-y-casos-viejo.md` solo para convenciones concretas de transcripción, y nunca prevalece sobre schema o reglas vivos. Desfases temporales entre contratos vivos → Apéndice transitorio del schema.
+> **Contratos vivos:** `schema-inventario.md` y `reglas-operativas.md`. `convenciones-y-casos.md` aún no está reescrito bajo el modelo IA-first (deuda transitoria declarada arriba); su contenido histórico se consulta en `convenciones-y-casos-viejo.md` solo para convenciones concretas de transcripción, y nunca prevalece sobre schema o reglas vivos. Desfases temporales entre contratos vivos → Apéndice transitorio del schema.
 
 ---
 

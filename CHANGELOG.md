@@ -22,6 +22,8 @@ Hito de cierre del lote de rediseño operativo de fase 1. `reglas-operativas.md`
 - **§5.2 reformulada con regla de anticipación por lema.** Un verbo entra en `tiempos_y_verbos` solo si su lema es canónico de la unidad actual o anterior. Si es canónico de unidad posterior, sus formas que aparezcan son input incidental y NO se registran, aunque la forma sea visible. Aplica por igual a formas conjugadas aisladas, auxiliares de perífrasis e infinitivos sueltos. Resuelve la asimetría `ir`/`hacer` detectada en la fixture.
 - **Endurecimiento de §6.5 con chequeo previo obligatorio del `tipo`** antes de aplicar `@R`. Si el `tipo` no pertenece exactamente a la lista cerrada de 5 productivos, no se aplica el sufijo aunque la palabra "parezca" producida. Aplicar `@R` sobre tipo no productivo o sobre cuadro es bug.
 
+- **Archivado de `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`** a `docs/historico/`. Todas sus piezas arquitectónicas están absorbidas en los contratos vivos (schema, reglas, glosario, registries, PCIC). Header de archivo histórico añadido; referencias en `fases/1-extraccion-inventario/CLAUDE.md`, `prompt.md` y `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` actualizadas.
+
 Lote siguiente (no incluido en este commit): reset de `convenciones-y-casos.md` bajo modelo IA-first.
 
 ## [v10.114 — 2026-05-13] — Archivo de documentos absorbidos a `docs/historico/`

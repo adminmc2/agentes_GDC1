@@ -264,7 +264,7 @@ La lista de D2 puede ampliarse con el tiempo conforme aparezcan necesidades real
 
 ## 7. Capa 1 — Validación cruzada cross-unidad (post-rediseño cuestión 1, 2026-05-12)
 
-> **Origen:** decisiones derivadas del rediseño de fase 1 que requieren chequeos cross-unidad. Estas reglas viven en el validador `scripts/validar_inventarios_cross.py` (capa 1 del pipeline de fase 2 redefinida, ver `fases/1-extraccion-inventario/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md` §6).
+> **Origen:** decisiones derivadas del rediseño de fase 1 que requieren chequeos cross-unidad. Estas reglas viven en el validador `scripts/validar_inventarios_cross.py` (capa 1 del pipeline de fase 2 redefinida, ver `docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md` §6 — archivado 2026-05-14).
 >
 > **Nota:** este bloque sustituye conceptualmente al viejo modelo "mapa + auto" en lo relativo a coherencia cross-unidad. La materialización (código del validador) se hace en E4a del plan del rediseño de fase 1, no aquí.
 
