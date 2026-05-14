@@ -292,13 +292,14 @@ Si un término no cumple los tres criterios, NO entra como recurrente. En partic
 
 #### §5.1.2. Criterios pedagógicos por tiempo verbal
 
-El campo `tiempo` del enum cerrado (`Presente`, `Pretérito indefinido`, `Imperativo`, `Perífrasis`, `Infinitivo`) se asigna según qué use el libro en la actividad/cuadro:
+El campo `tiempo` del enum cerrado (`Presente`, `Pretérito indefinido`, `Imperativo`, `Infinitivo`) se asigna según qué use el libro en la actividad/cuadro:
 
 - **`Presente`** — formas conjugadas en presente de indicativo. Es el tiempo dominante en NC1.
 - **`Pretérito indefinido`** — formas en pretérito perfecto simple. Si aparece, va aquí.
 - **`Imperativo`** — formas imperativas (afirmativo y/o negativo).
-- **`Perífrasis`** — construcciones `ir a + infinitivo`, `tener que + infinitivo`, `querer + infinitivo`, etc. La perífrasis cuenta como una unidad propia, no se desglosa por verbo conjugado.
 - **`Infinitivo`** — forma no personal del verbo cuando se trabaja pedagógicamente **fuera de perífrasis** (listas de verbos en infinitivo, ejercicios de identificación de la forma léxica). En NC1, único representante no personal real.
+
+`Perífrasis` **no es valor del enum** (las perífrasis no son tiempos verbales). Cuando un verbo aparece como auxiliar de una perífrasis (`ir a + inf.`, `querer + inf.`, `tener que + inf.`, etc.), se codifica con su **tiempo real** en `tiempo` (típicamente `Presente`) y la estructura perifrástica se declara en el campo opcional `estructura_perifrastica` del objeto verbal (ver schema §3.2). El infinitivo complemento NO se registra como entrada verbal separada. Detalle de la codificación en §5.2.
 
 **Regla de cierre operativa:** un verbo entra en `tiempos_y_verbos` solo si la actividad/cuadro hace que sus formas concretas aparezcan (ver §5.2). Mera mención léxica del infinitivo en una lista de palabras va a `vocabulario`, no a `tiempos_y_verbos`.
 
@@ -316,12 +317,21 @@ Cada entrada de los bloques consolidados lleva un campo `descripcion: { "U<n>": 
 
 **Aplica a:** poblar `actividad.tiempos_y_verbos` y `cuadro.tiempos_y_verbos`.
 
-**Regla operativa.** Un verbo entra en `tiempos_y_verbos` cuando **sus formas concretas aparecen** en la actividad/cuadro, **independientemente de que su paradigma sea el foco principal**. El único caso de no-inclusión es la mención puramente léxica del infinitivo en una lista de palabras (va a `vocabulario`).
+**Regla operativa.** Un verbo entra en `tiempos_y_verbos` cuando **sus formas concretas aparecen** en la actividad/cuadro **Y** el lema está canonizado en la unidad actual o en una unidad anterior del curso (según `verbos-canonicos.json` y/o `nc1-curso.json`).
 
-Casos típicos:
+**Regla de anticipación (no se registra hacia adelante).** Si el lema es canónico de una unidad **posterior**, sus formas que aparezcan en la unidad actual son **input incidental** y NO se registran como entrada verbal en `tiempos_y_verbos`. Su trabajo pedagógico ocurre después; no se anticipa en el inventario. La decisión se toma siempre **por el lema**, no por la forma concreta visible. Esto aplica por igual a:
+- Formas conjugadas aisladas (`hacemos pasta` en U4, con `hacer` canónico de U6 PRE → no entra).
+- Formas auxiliares de perífrasis (`vamos a preparar` en U4, con `ir` canónico de U6+ → no entra).
+- Infinitivos sueltos cuyo lema es canónico de unidad posterior.
+
+Casos típicos cuando el lema SÍ pertenece a la unidad actual o anterior:
 - Verbo cuya conjugación se trabaja explícitamente (completar formas, transformar, conjugar) → entra. Foco directo.
-- Verbo que aparece en frases del input para ilustrar OTRO contenido (demostrativos, posesivos, vocabulario) → entra igualmente porque sus formas son visibles. Refuerza el paradigma.
+- Verbo recurrente que aparece en frases del input para ilustrar OTRO contenido (demostrativos, posesivos, vocabulario) → entra. Refuerza paradigma ya conocido.
 - Verbo en infinitivo dentro de una lista de palabras a aprender léxicamente (sin conjugación posterior) → NO entra en `tiempos_y_verbos`. Va a `vocabulario`.
+
+**Codificación de perífrasis (alineado con schema §3.2 y §5d).** Cuando el verbo entra y aparece como **auxiliar de una perífrasis** (`ir a + inf.`, `querer + inf.`, `tener que + inf.`...), se codifica con su **tiempo real** (típicamente `Presente`) en el campo `tiempo` y la estructura se declara en el campo opcional `estructura_perifrastica`. **El infinitivo complemento NO se registra como entrada verbal separada**: queda implícito en `estructura_perifrastica`. `Perífrasis` no es valor del enum `tiempo`.
+
+Ejemplo: en *"Quieres comer carne"*, `querer` entra con `tiempo: "Presente"`, `formas_trabajadas: ["Quieres"]`, `estructura_perifrastica: "querer + infinitivo"`. `comer` **no** se registra como entrada separada en esa actividad (queda implícito); si `comer` tiene apariciones conjugadas propias en otras actividades de la unidad, esas sí entran con su `tiempo: "Presente"` correspondiente.
 
 **Cuándo escalar al autor:** si una forma aparece pero el contexto no deja claro si es verbo soporte trabajado o mención léxica suelta, escalar por §0.1.
 

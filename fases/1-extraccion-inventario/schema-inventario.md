@@ -142,17 +142,25 @@ El campo `numero` es **opcional**. La mayoría de actividades del libro están n
 
 ### 3.2 Shape exacto de `actividad.tiempos_y_verbos`
 
-Cada elemento de la lista es un objeto con **exactamente 3 campos obligatorios**:
+Cada elemento de la lista es un objeto con **3 campos obligatorios + 1 opcional**:
 
 ```jsonc
 {
   "lema":              <str>,         // canónico de verbos-canonicos.json (validable)
   "tiempo":            <str>,         // del enum cerrado — ver §5d
-  "formas_trabajadas": [str]          // formas conjugadas concretas presentes en
+  "formas_trabajadas": [str],         // formas conjugadas concretas presentes en
                                       // ESTA actividad. Literales del libro, no canónicas.
                                       // Lista no vacía. El validador chequea que pertenezcan
                                       // al paradigma del lema declarado (validación
                                       // estructural; el detalle vive en reglas-operativas.md).
+
+  "estructura_perifrastica": <str>    // opcional. Solo si el verbo aparece como auxiliar de
+                                      // perífrasis (ej. "ir a + infinitivo", "querer + infinitivo").
+                                      // El verbo se sigue codificando en su tiempo REAL
+                                      // (Presente, Pretérito, etc.) en el campo `tiempo`; este
+                                      // campo describe la estructura perifrástica en la que
+                                      // aparece. El infinitivo complemento NO se registra
+                                      // como entrada verbal separada — queda implícito aquí.
 }
 ```
 
@@ -167,8 +175,8 @@ Cada elemento de la lista es un objeto con **exactamente 3 campos obligatorios**
 
 **Casos especiales:**
 
-- **Perífrasis** (ej. `ir a + infinitivo`): se declara con `"tiempo": "Perífrasis"` y `formas_trabajadas` reflejando las apariciones concretas (`["voy a", "vas a", ...]`).
-- **Forma no personal del verbo trabajada pedagógicamente fuera de perífrasis** (infinitivo aislado, listas de verbos en infinitivo, ejercicios de identificación...): se declara con `"tiempo": "Infinitivo"` y `formas_trabajadas` reflejando la forma del libro (`["cantar"]`).
+- **Perífrasis** (ej. `ir a + infinitivo`, `querer + infinitivo`, `tener que + infinitivo`): el verbo auxiliar se codifica con su **tiempo real** (típicamente `"Presente"`) en `tiempo` y las formas conjugadas reales en `formas_trabajadas` (ej. `["vamos a", "van a"]`). La estructura perifrástica se declara aparte en `estructura_perifrastica` (ej. `"ir a + infinitivo"`). **El infinitivo complemento NO se registra como entrada verbal separada** — queda implícito en `estructura_perifrastica`. (`Perífrasis` no es valor del enum `tiempo`: las perífrasis no son tiempos, son estructuras sintácticas.)
+- **Forma no personal del verbo trabajada pedagógicamente fuera de perífrasis** (infinitivo aislado, listas de verbos en infinitivo, ejercicios de identificación...): se declara con `"tiempo": "Infinitivo"` y `formas_trabajadas` reflejando la forma del libro (`["cantar"]`). No se rellena `estructura_perifrastica` en este caso.
 - **Si el verbo aparece sin paradigma trabajado** (mención léxica suelta): no se añade a esta lista; va a `vocabulario` si procede.
 
 **Coherencia con top-level y registry:**
@@ -270,15 +278,16 @@ transversal
 
 ---
 
-## 5d. Enumeración cerrada de `tiempo` verbal (5 valores)
+## 5d. Enumeración cerrada de `tiempo` verbal (4 valores)
 
 Usado en `actividad.tiempos_y_verbos[].tiempo` y en el agregado top-level. Cubre tanto **tiempos finitos** (formas conjugadas en persona y número) como la categoría **forma no personal del verbo**, cuando esta se trabaja pedagógicamente fuera de perífrasis. En NC1 la única forma no personal con presencia real es el **infinitivo**; `Participio` y `Gerundio` no aparecen en el corpus y por tanto no entran en el enum. Si NC2 los introduce, se amplían por expansión controlada (regla "Naturaleza del contrato").
+
+`Perífrasis` **no es valor del enum** porque las perífrasis no son tiempos verbales sino estructuras sintácticas. Se codifican aparte en el campo opcional `estructura_perifrastica` del objeto verbal (ver §3.2); el verbo auxiliar conserva su tiempo real (típicamente `Presente`).
 
 ```
 Presente
 Pretérito indefinido
 Imperativo
-Perífrasis
 Infinitivo
 ```
 

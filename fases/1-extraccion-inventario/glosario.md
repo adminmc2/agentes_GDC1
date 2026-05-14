@@ -145,7 +145,7 @@ Cada entrada del bloque tiene los siguientes campos:
 - **`lema`** — la forma de diccionario del verbo (ej. `ser`, `llamarse`). Debe existir en el registry `verbos-canonicos.json`.
 - **`tipo_de_verbo`** — lista de strings con la **categoría sintáctico-semántica** del verbo (`copulativo`, `transitivo`, `pronominal`, `reflexivo`...). Marca ortogonal a la morfología: un verbo puede ser a la vez transitivo y reflexivo, p. ej.
 - **`rasgo_por_tiempo`** — objeto que describe el comportamiento morfológico del verbo en cada tiempo en el que aparece (`regular -ar`, `regular -er`, `regular -ir`, `irregularidad vocálica o→ue`, `totalmente irregular`, `regular 2ª persona singular`, etc.). Claves opcionales según el tiempo: `Presente`, `Pretérito indefinido`, `Imperativo`, `Infinitivo` (cubre la categoría "forma no personal del verbo" trabajada fuera de perífrasis).
-- **`tiempos`** — lista de los tiempos en los que el lema se conjuga **en el curso**. Valores del enum cerrado de 5: `Presente`, `Pretérito indefinido`, `Imperativo`, `Perífrasis`, `Infinitivo`. `Participio` y `Gerundio` no entran (no aparecen en NC1).
+- **`tiempos`** — lista de los tiempos en los que el lema se conjuga **en el curso**. Valores del enum cerrado de 4: `Presente`, `Pretérito indefinido`, `Imperativo`, `Infinitivo`. `Perífrasis` no es valor del enum (las perífrasis no son tiempos; ver schema §5d y §3.2 sobre `estructura_perifrastica`). `Participio` y `Gerundio` no entran (no aparecen en NC1).
 - **`formas_trabajadas`** — lista plana con la **unión agregada** de todas las formas conjugadas concretas que aparecen en cualquier actividad o cuadro de la unidad (literales del libro, no canónicas).
 - **`fuentes`** — lista de fuentes (formato canónico de §9.5) que indican de qué actividades y cuadros procede el lema.
 - **`descripcion`** — diccionario `{ "U<n>": <texto> }` con texto libre por unidad, paralelo al de los otros tres bloques consolidados.
@@ -346,8 +346,9 @@ Cuatro listas que declaran, para esta actividad concreta, qué contenidos lingü
 A diferencia de las otras tres listas tipadas (que son listas de strings), `tiempos_y_verbos` es **lista de objetos**. Cada objeto declara que en esta actividad se trabaja un verbo concreto en un tiempo concreto, con unas formas concretas. Tres campos obligatorios:
 
 - **`lema`** — la forma de diccionario del verbo (ej. `ser`, `llamarse`). Debe existir en el registry `verbos-canonicos.json`.
-- **`tiempo`** — el tiempo o forma verbal trabajado. Valor del enum cerrado de §5d del schema (5 valores): `Presente`, `Pretérito indefinido`, `Imperativo`, `Perífrasis`, `Infinitivo`. `Infinitivo` cubre la categoría "forma no personal del verbo" cuando se trabaja pedagógicamente fuera de perífrasis. `Participio` y `Gerundio` no aparecen en NC1 y no entran en el enum.
+- **`tiempo`** — el tiempo o forma verbal trabajado. Valor del enum cerrado de §5d del schema (4 valores): `Presente`, `Pretérito indefinido`, `Imperativo`, `Infinitivo`. `Infinitivo` cubre la categoría "forma no personal del verbo" cuando se trabaja pedagógicamente fuera de perífrasis. `Perífrasis` no está en el enum (las perífrasis no son tiempos; ver schema §5d). `Participio` y `Gerundio` no aparecen en NC1 y no entran en el enum.
 - **`formas_trabajadas`** — las formas conjugadas concretas que aparecen **en esta actividad**, transcritas **literalmente del libro** (no se canonizan). Lista no vacía. Ejemplo: `["soy", "eres", "es"]`.
+- **`estructura_perifrastica`** *(opcional)* — string que describe la perífrasis cuando el verbo aparece como auxiliar de una (`"ir a + infinitivo"`, `"querer + infinitivo"`, etc.). El verbo conserva su `tiempo` real (típicamente `Presente`). El infinitivo complemento NO se registra como entrada verbal separada en `tiempos_y_verbos`; queda implícito aquí. Detalle normativo en reglas-operativas §5.2.
 
 **Ejemplo completo:**
 ```jsonc
@@ -358,7 +359,7 @@ A diferencia de las otras tres listas tipadas (que son listas de strings), `tiem
 ```
 
 **Casos especiales:**
-- **Perífrasis** (`ir a + infinitivo`, `tener que + infinitivo`, etc.): se declara con `"tiempo": "Perífrasis"` y `formas_trabajadas` reflejando las apariciones concretas (`["voy a", "vas a", ...]`).
+- **Perífrasis** (`ir a + infinitivo`, `tener que + infinitivo`, `querer + infinitivo`, etc.): el verbo auxiliar se codifica con su **tiempo real** (típicamente `"Presente"`) en `tiempo` y las formas conjugadas reales en `formas_trabajadas` (ej. `["vamos a", "van a"]`); la estructura se declara aparte en `estructura_perifrastica` (ej. `"ir a + infinitivo"`). El infinitivo complemento NO se registra como entrada verbal separada. `Perífrasis` no es valor del enum `tiempo`.
 - **Forma no personal del verbo trabajada pedagógicamente fuera de perífrasis**: se declara con `"tiempo": "Infinitivo"` y `formas_trabajadas` reflejando la forma del libro (ej. `["cantar"]`). Aplica a listas de verbos en infinitivo, ejercicios de identificación, etc.
 - **Verbo sin paradigma trabajado** (mención léxica suelta del verbo, sin que la actividad pida nada sobre su conjugación o sobre la forma no personal): **no entra aquí**. Si procede, va a la lista `vocabulario`.
 
@@ -557,21 +558,24 @@ Las 7 secciones derivan de la estructura editorial del libro impreso. `contenido
 
 ---
 
-## Enumeración de `tiempo` (5 valores — eje verbal)
+## Enumeración de `tiempo` (4 valores — eje verbal)
 
-> **Ubicación en el schema:** `schema-inventario.md` → §5d. **Criterios pedagógicos:** `reglas-operativas.md` → §5.1.
+> **Ubicación en el schema:** `schema-inventario.md` → §5d. **Criterios pedagógicos:** `reglas-operativas.md` → §5.1 y §5.2.
 
 Enumeración cerrada de los valores válidos para el campo `tiempo` dentro de `actividad.tiempos_y_verbos[]` (y de `cuadro.tiempos_y_verbos[]`). Cubre tanto **tiempos finitos** (formas conjugadas en persona y número) como la categoría **forma no personal del verbo**, cuando esta se trabaja pedagógicamente fuera de perífrasis.
 
-### Los 5 valores
+### Los 4 valores
 
 - **`Presente`** — paradigma del presente de indicativo.
 - **`Pretérito indefinido`** — paradigma del pretérito indefinido (perfecto simple).
 - **`Imperativo`** — paradigma del imperativo (afirmativo y/o negativo según se trabaje).
-- **`Perífrasis`** — construcciones del tipo `ir a + infinitivo`, `tener que + infinitivo`, `querer + infinitivo`, etc. Se trata como una unidad con su propio tiempo en el enum.
 - **`Infinitivo`** — cubre la categoría "forma no personal del verbo" cuando se trabaja pedagógicamente fuera de perífrasis (listas de verbos en infinitivo, ejercicios de identificación, etc.).
 
-### Por qué solo cinco valores
+### Por qué `Perífrasis` no está en el enum
+
+Las perífrasis (`ir a + infinitivo`, `tener que + infinitivo`, `querer + infinitivo`, etc.) **no son tiempos verbales**: son estructuras sintácticas donde un verbo auxiliar (conjugado en un tiempo real, típicamente Presente) se combina con un infinitivo. El verbo auxiliar conserva su tiempo real en `tiempo`, y la estructura se declara aparte en el campo opcional `estructura_perifrastica` del objeto verbal (ver schema §3.2). El infinitivo complemento NO se registra como entrada verbal separada — queda implícito en `estructura_perifrastica`.
+
+### Por qué solo cuatro valores
 
 `Participio` y `Gerundio` **no entran** en el enum: no aparecen en el corpus NC1. La enumeración es **canónica pero versionable por expansión controlada**: si NC2 los introduce, se amplían con documentación explícita y actualización paralela del schema, del validador y de `reglas-operativas.md`.
 
