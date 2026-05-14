@@ -442,6 +442,8 @@ Cualquier otra lista divergente de la taxonomía es bug.
 
 **Cuándo NO aplica:** las fuentes de cuadro (`cuadro@pNN` o `cuadro@pNN#K`) nunca llevan `@R`. Los cuadros no tienen campo `respuestas`.
 
+**Chequeo previo OBLIGATORIO antes de poner `@R`.** Antes de añadir el sufijo a cualquier fuente, leer el campo `tipo` de la actividad y verificar que pertenece **exactamente** a la lista cerrada de 5 tipos productivos enumerada arriba. Si el `tipo` es cualquier otro (`completa_huecos`, `seleccion_multiple`, `escucha_y_repite`, `relaciona`, `clasifica`, etc.), **no se aplica `@R`** aunque la palabra "parezca" producida por el alumno. El criterio no es la intuición sobre producción, es el `tipo`. Aplicar `@R` sobre un tipo no productivo es bug.
+
 **Ejemplo:** una palabra que el alumno produce como respuesta esperada en un correo (`expresion_escrita_libre`) y no aparece previamente en el input → fuente `"pNN-actMM@R"`. La misma palabra si aparece también en el input previo → fuente `"pNN-actMM"` sin sufijo.
 
 ### §6.6. Regla 11 — `audio.transcripcion` como condición de fuente válida
