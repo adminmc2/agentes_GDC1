@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-15 (v10.135c — U4 fusión de compuestos léxicos al lema base).
+> **Última actualización:** 2026-05-15 (v10.136 — REDISEÑO fase 2 §4 cerrado: modelo recursivo del hilo `mapa → auto → detalle` + función catálogo acumulativo + nivel `detalle` como justificación lingüístico-pedagógica visualizada en modal a página completa).
 
 ---
 

@@ -5,6 +5,18 @@
 
 ---
 
+## [v10.136 — 2026-05-15] — REDISEÑO fase 2 §4: modelo recursivo del hilo + nivel `detalle`
+
+Cierre del paso 4 del rediseño de fase 2. Recupera doctrina dispersa entre `REDISEÑO-EN-CURSO-viejo.md §2`, `viejo/marco-teorico-metodologico.md §6` y `docs/historico/B1.5-contrato-reciclaje.md`, e incorpora la decisión editorial sobre cómo se visualiza `detalle` en el dashboard.
+
+**Cambios en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`:**
+
+- **§4.1 Dos ejes distintos**: distingue **Capa 1 / Capa 2** (quién procesa: script vs IA) de **`mapa` / `auto` / `detalle`** (grado de población del mismo hilo). El rediseño activo no separaba estos ejes; ahora explícitos.
+- **§4.2 Modelo recursivo de capas**: `mapa` (esqueleto desde `nc1-curso.json`) → `auto` (enriquecimiento desde inventario) → `detalle` (justificación lingüístico-pedagógica). Un solo hilo por contenido, acumulativo. `nivel_analisis` deja de ser tipo de hilo y pasa a ser grado de población.
+- **§4.3 Función del reciclaje como catálogo acumulativo**: criterios documentados — conexión natural + refuerzo/requisito, 5-6 elementos de mayor impacto por unidad, dosificación 70/30, análisis contextual (no tabla fija).
+- **§4.4 Nivel `detalle`**: no añade más contenido al hilo; añade **explicación del procedimiento didáctico** fundamentada en lógica lingüística. Expone cadena de prerrequisitos lingüísticos, justificación y relaciones. Representación interna como **grafo de nodos-enlaces** (cada evento = nodo con análisis lingüístico-pedagógico; enlaces materializan "introduce → recupera → amplía → contrasta"). Representación en dashboard: la tabla actual se mantiene para mapa/auto; `detalle` se abre como **modal a página completa**, no como columna lateral.
+- **§4.5 Quién pobla cada capa**: `mapa` y `auto` por Capa 1 (script) + Capa 2 IA para etiquetas; `detalle` íntegramente por Capa 2 IA. Procedimiento concreto pendiente de pasos siguientes.
+
 ## [v10.135c — 2026-05-15] — Fase 1: U4 — fusión de compuestos léxicos al lema base
 
 Continuación del saneamiento léxico de U4 tras v10.135b. Por dictamen del autor: los compuestos del tipo `X de Y`, `X + adj`, `X + marca` no aportan valor pedagógico separados de su base léxica cuando esta ya está atestada en la unidad. *"No es lo mismo pero en términos de vocabulario valen como X."*

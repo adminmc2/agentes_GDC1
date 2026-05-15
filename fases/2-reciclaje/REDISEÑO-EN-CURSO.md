@@ -160,6 +160,80 @@ Política de tratamiento por marca:
 
 **Marcas propias de fase 2:** la Capa 2 IA puede generar marcas análogas (`_decisiones_ia_fase2`, etc.) para registrar sus propias decisiones editoriales. En la práctica, sin embargo, **lo deseable es cerrar cada decisión con el humano** antes de persistirla, no acumular marcas sin resolver. Las marcas de fase 2 son excepción, no flujo normal.
 
+### §3.5. Sufijo `@R` en evidencias
+
+El sufijo `@R` (referencias que solo aparecen en respuestas de actividades productivas; schema F1 §9.5, reglas §6.5) **no genera tratamiento diferencial** en fase 2: el hilo registra el evento igual, ya que el alumno trabaja ese contenido al producir la respuesta. Regla operativa única: **al copiar la referencia al evento del hilo, se preserva el sufijo `@R` tal cual aparece en el inventario**, como metadato de trazabilidad para el revisor. Sin etiqueta especial, sin filtrado.
+
+### §3.6. `principal` vs `recurrente` (clasificación de F1) en fase 2
+
+`principal` / `recurrente` es una clasificación interna de fase 1 (organiza los bloques consolidados del inventario), **no dicta la etiqueta del evento en fase 2**.
+
+- La etiqueta del evento la decide la **Capa 2 IA** leyendo el contexto real (descripciones detalladas del inventario, referencias en actividades/cuadros, comparativa cross-unidad).
+- **Prior fuerte**: aproximadamente el 90% de los contenidos clasificados como `recurrente` en el inventario reciben en el hilo etiquetas de repetición (`aplica`, `amplia`, `sistematiza`, `contrasta`). `introduce` sobre un `recurrente` es la excepción legítima — corresponde a contenido nuevo que no está declarado en el índice del curso pero que sí se introduce realmente en la unidad.
+- La IA se apoya en las **descripciones detalladas** del bloque consolidado (no solo en la clasificación `principal`/`recurrente`) para asignar etiqueta.
+- **Dashboard**: `principal`/`recurrente` se conserva como metadato auxiliar del evento, no como eje único de clasificación ni filtro destacado.
+
+### §3.7. Sub-bloque `comprension` (modelo viejo) — eliminado
+
+El sub-bloque `vocabulario_consolidado.comprension` existía en el schema F1 v10.114 (pre-rediseño). Fue **eliminado en v10.115** del schema de fase 1: el `vocabulario_consolidado` solo tiene `principal` y `recurrente`.
+
+**Decisión para fase 2:** **eliminar toda referencia a `comprension`**. No se conserva el concepto bajo otro nombre, no se introduce una etiqueta `comprende` ni equivalente. Cuando se reescriban los scripts y `reglas-reciclaje.md` al shape nuevo, se retira sin sustituto.
+
+---
+
+## §4. Modelo recursivo del hilo y nivel `detalle` (paso 4 — definido 2026-05-15)
+
+Doctrina recuperada del viejo (§2) + `viejo/marco-teorico-metodologico.md §6` + `docs/historico/B1.5-contrato-reciclaje.md`. Distingue dos ejes que el rediseño activo no había separado.
+
+### §4.1. Dos ejes distintos: capa de procesamiento vs capa de población
+
+- **Capa 1 / Capa 2** (§1.3) = quién procesa: script determinista vs sesión IA enriquecedora.
+- **`mapa` / `auto` / `detalle`** = grado de **población del mismo hilo**.
+
+No son lo mismo. Un único hilo por contenido editorial atraviesa los tres grados de población.
+
+### §4.2. Modelo recursivo de capas del hilo
+
+Un único hilo por contenido editorial, con tres capas progresivas y acumulativas:
+
+| Capa | Origen | Información que añade |
+|---|---|---|
+| `mapa` | `nc1-curso.json` (índice editorial) | Esqueleto: identidad del hilo (id, título, tipo) + eventos básicos `(unidad, sección)`. Nombres inmutables. |
+| `auto` | Inventarios fase 1 (4 bloques top-level consolidados + 4 listas tipadas por actividad/cuadro) | Enriquece los eventos: contenidos concretos por unidad, etiquetas (§2.3 + `discrimina` en pron/orto), referencias canónicas. |
+| `detalle` | Análisis lingüístico-pedagógico cross-unidad sobre el inventario | Justifica el procedimiento didáctico (§4.4). |
+
+El campo `nivel_analisis` **no clasifica el hilo** en tres tipos paralelos — indica el **grado de población** que ese hilo ya tiene. El hilo nace en `mapa`, se enriquece a `auto`, se completa a `detalle`. Recursivo y acumulativo, no paralelo.
+
+### §4.3. Función del reciclaje: catálogo acumulativo
+
+`nc1-reciclaje.json` es un **catálogo acumulativo** de contenidos reciclados a lo largo del curso. Criterios documentados (no inventados):
+
+- **Conexión natural con el contenido nuevo** (`B1.5-contrato-reciclaje.md`).
+- **Refuerzo o requisito** para aprender lo nuevo (idem).
+- **No se recicla todo**: solo los **5-6 elementos de mayor impacto** por unidad (idem).
+- **Dosificación 70/30**: ~70% contenido nuevo de la unidad + ~30% reciclaje (`marco-teorico-metodologico.md §6`).
+- **Análisis contextual, no tabla fija**: "lo que se recicla depende de lo que se va a enseñar" (idem).
+
+### §4.4. Nivel `detalle`: justificación lingüístico-pedagógica
+
+`detalle` **no añade más contenido** al hilo. Añade **explicación del procedimiento didáctico** fundamentada en la **lógica lingüística** del proceso de enseñanza.
+
+**Qué expone para cada evento:**
+
+- **Cadena de prerrequisitos lingüísticos**: para enseñar X aquí, antes hizo falta enseñar A, B, C. Justificado en la lógica lingüística, no en intuición editorial.
+- **Justificación**: por qué esos prerrequisitos son condición (qué estructura, regla o léxico los hace necesarios).
+- **Relaciones**: cómo el contenido se conecta con otros del curso — no solo "antes/después", sino qué dependencia lingüística los vincula.
+
+**Representación interna**: nodos enlazados. Cada evento del hilo = un nodo con su análisis lingüístico-pedagógico asociado. Los enlaces entre nodos materializan el procedimiento: "en U[n] introduce X · en U[m] recupera X · en U[k] amplía X · en U[p] contrasta X con Y" — siempre con la justificación lingüística detrás de cada paso.
+
+**Representación en el dashboard**: la tabla actual del reciclaje **se mantiene** (es adecuada para mapa/auto). El nivel `detalle` **no se intenta hacer navegable dentro de la tabla** (sería inviable). Se abre como **modal a página completa** desde el hilo: una apertura sobre toda la página, no una columna lateral. El editor entra en el modal, navega el grafo de nodos-enlaces lingüísticos, y vuelve a la tabla.
+
+### §4.5. Quién pobla cada capa
+
+- `mapa` → Capa 1 (script determinista, desde `nc1-curso.json`).
+- `auto` → Capa 1 (script determinista, desde los 4 bloques consolidados del inventario) + Capa 2 IA para asignar etiquetas según §2.3 y §3.
+- `detalle` → Capa 2 IA. Procedimiento concreto (qué prompt, qué inputs, cómo se persiste) pendiente de definir en pasos siguientes.
+
 ---
 
 ## §N. Apéndice — Qué se aprovecha del REDISEÑO-EN-CURSO-viejo.md
@@ -183,4 +257,5 @@ Tabla de seguimiento de qué piezas de la versión vieja se importan al document
 
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
-- **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica).
+- **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-15 (v10.136)** — §4 cerrado: modelo recursivo del hilo (`mapa → auto → detalle` como capas acumulativas, no paralelas; distinción con Capa 1/Capa 2 de procesamiento) + función del reciclaje como catálogo acumulativo con criterios documentados (5-6 por unidad, 70/30, análisis contextual) + nivel `detalle` como justificación lingüístico-pedagógica representada como grafo de nodos-enlaces y visualizada como modal a página completa en el dashboard.
