@@ -5,6 +5,34 @@
 
 ---
 
+## [v10.128 — 2026-05-15] — Fase 1: U2 migrada a shape v10.117 + ampliación "Nombres propios" a topónimos + U2 en apariciones verbales
+
+Tercera unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U2/`, rama `proc-u2-wip`, agente dry-run en chat limpio, commit candidato `dd6f8af`, integración a main por copia controlada + reformateo canónico + actualización coordinada de dos registries).
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U2/U2-nc1-inventario.json`**: shape v10.117 completo. 10 páginas (22-31), 52 actividades, 4 cuadros. Vocab principal con 6 canónicos (Países hispanohablantes, Adjetivos de nacionalidad, Días de la semana, Números ordinales, Asignaturas, Números cardinales) + 4 recurrentes (Nacionalidad, Edad, Saludos y despedidas, Centros e instituciones educativas). Gramática principal con 3 canónicos (Concordancia de número, Demostrativos, Nombres propios) + 4 recurrentes (Pronombre sujeto, Concordancia de género, Interrogativos, Artículos determinados). Pron/orto principal con Vocales y Mayúsculas. Nueve lemas verbales (ser/tener/llamarse/vivir/estudiar/ir/estar/gustar/hablar). 8 entradas en `_decisiones_ia`. Reformateado canónico vía `scripts/format_inventario.py` (v10.125).
+
+- **`fases/1-extraccion-inventario/gramatica-canonica.json`** — cierre de P3: `Nombres propios` ampliado.
+  - `items: ["antropónimos"]` → `["antropónimos", "topónimos"]`.
+  - `_pcic_ref` actualizado a "PCIC A1 §1.1.1 Nombres propios (cubre antropónimos y topónimos)" — retirada la cláusula diferidora introducida en v10.123b.
+  - `_apariciones.U2: "principal (topónimos: países hispanohablantes sin artículo · El Salvador con artículo integral)"`.
+  - `_nota` reescrita: documenta la materialización de topónimos en v10.128 y el ancla pedagógico común (regla sin-artículo) con sus dos anclas estructurales (antropónimos con `llamarse`, topónimos con `ser + de + topónimo` cruzado con el canónico léxico `Países hispanohablantes`).
+  - `_meta.version` 1.1 → 1.2.
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`** — cierre de P4: 7 lemmas con `apariciones.U2: ["PRE"]` añadido (`llamarse`, `vivir`, `estudiar`, `ir`, `estar`, `gustar`, `hablar`). El agente reportó 6; el coordinador añadió también `llamarse` (registry solo tenía U1 y materialmente aparece en U2). `_meta.version` 1.0 → 1.1.
+
+**Notas operativas:**
+
+- Audio 30 (p29-act3) sin transcripción → registrado conforme a §6.6, sin acción.
+- p30-act3 con léxico heterogéneo intraejercicio → gestionado por §5.7 (heterogeneidad semántica), sin marca bloqueante.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U2/` y rama `proc-u2-wip` se conservan tras la integración para auditoría — pendiente eliminarlos cuando el autor lo autorice.
+
+**Deuda restante en el bloque de re-extracción:** U3-U9 con shape legacy todavía pendientes de migración mediante el mismo flujo.
+
 ## [v10.127 — 2026-05-15] — Dashboard: diagramas auto-actualizados desde filesystem + paleta cat-tag + leyenda HTML
 
 Saneamiento del dashboard tras dictamen del autor: los mermaids antiguos (1) usaban paleta brillante saturada (#3498db azul Twitter, #27ae60 verde, etc.) que chocaba con el estilo MD3 oliva-crema del resto del UI; (2) tenían contenido hardcoded desincronizado de la realidad del proyecto (8 fases con nombres genéricos, BD aspiracional que no es la actual); (3) tras un primer rediseño minimalista sin pastel quedaron sin información explicativa y con leyenda como `subgraph` interno que rompía el layout.

@@ -4,10 +4,7 @@
   "titulo": "Países de habla hispana",
   "paginas_libro": "22-31",
   "nivel": "A1.1",
-  "fuente": {
-    "archivo": "unidades/U2/fuente/U2-nc1.pdf",
-    "version_extraccion": "2026-05-07"
-  },
+  "fuente": { "archivo": "unidades/U2/fuente/U2-nc1.pdf", "version_extraccion": "2026-05-15" },
   "contenidos_indice": {
     "vocabulario": "Países hispanohablantes. Adjetivos de nacionalidad. Días de la semana. Números ordinales. Asignaturas",
     "gramatica": "Verbos ser y tener (formas plurales). Plural de nombres y adjetivos. Demostrativos. Uso de las mayúsculas",
@@ -17,123 +14,619 @@
   },
   "vocabulario_consolidado": {
     "principal": {
-      "_descripcion": "Vocabulario declarado en el índice de vocabulario de la unidad",
-      "Países hispanohablantes": [
-        "Argentina",
-        "Bolivia",
-        "Colombia",
-        "Ecuador",
-        "España",
-        "México",
-        "Perú"
-      ],
-      "Adjetivos de nacionalidad": [
-        "argentino/-a",
-        "boliviano/-a",
-        "colombiano/-a",
-        "ecuatoriano/-a",
-        "español/-a",
-        "mexicano/-a",
-        "peruano/-a"
-      ],
-      "Días de la semana": [
-        "lunes",
-        "martes",
-        "miércoles",
-        "jueves",
-        "viernes",
-        "sábado",
-        "domingo"
-      ],
-      "Números ordinales": [
-        "primero/-a",
-        "segundo/-a",
-        "tercero/-a",
-        "cuarto/-a",
-        "quinto/-a",
-        "sexto/-a",
-        "séptimo/-a",
-        "octavo/-a",
-        "noveno/-a",
-        "décimo/-a"
-      ],
-      "Asignaturas": [
-        "Ciencias Naturales",
-        "Ciencias Sociales",
-        "Educación Física",
-        "Educación Plástica",
-        "Español",
-        "Francés",
-        "Informática",
-        "Lengua",
-        "Matemáticas",
-        "Música"
-      ]
+      "Países hispanohablantes": {
+        "items": [
+          {"palabra": "Argentina", "fuentes": ["p22-act1", "p25-act6", "p29-act3"]},
+          {"palabra": "Bolivia", "fuentes": ["p22-act1"]},
+          {"palabra": "Chile", "fuentes": ["p31-act3"]},
+          {"palabra": "Colombia", "fuentes": ["p22-act1", "p25-act6"]},
+          {"palabra": "Cuba", "fuentes": ["p31-act3"]},
+          {"palabra": "Ecuador", "fuentes": ["p22-act1", "p25-act6"]},
+          {"palabra": "España", "fuentes": ["p22-act1", "p23-act4", "p25-act6", "p25-act7@R", "p26-act1", "p28-act1", "p30-act2", "p31-act3"]},
+          {"palabra": "Guinea Ecuatorial", "fuentes": ["p23-act4"]},
+          {"palabra": "México", "fuentes": ["p22-act1", "p23-act4", "p31-act3"]},
+          {"palabra": "Nicaragua", "fuentes": ["p25-act6"]},
+          {"palabra": "Perú", "fuentes": ["p22-act1", "p25-act6", "p25-act7@R", "p31-act3"]}
+        ],
+        "fuentes": ["p22-act1", "p23-act4", "p25-act6", "p25-act7@R", "p26-act1", "p28-act1", "p29-act3", "p30-act2", "p31-act3"],
+        "descripcion": {
+          "U2": "PCIC A1 §18 Geografía física, humana y política — Primer cierre canónico del campo: U2 presenta el bloque de países donde el español es lengua oficial (Argentina, Bolivia, Colombia, Cuba, Chile, Ecuador, España, Guinea Ecuatorial, México, Nicaragua, Perú) asociándolos a productos culturales típicos y a la práctica de gentilicios."
+        }
+      },
+      "Adjetivos de nacionalidad": {
+        "items": [
+          {"palabra": "alemán/-ana", "fuentes": ["p22-act3"]},
+          {"palabra": "argentino/-a", "fuentes": ["p22-act2", "p24-act1", "p26-act1", "p31-act2"]},
+          {"palabra": "boliviano/-a", "fuentes": ["p22-act2"]},
+          {"palabra": "chileno/-a", "fuentes": ["p31-act3"]},
+          {"palabra": "chino/-a", "fuentes": ["p25-act4"]},
+          {"palabra": "colombiano/-a", "fuentes": ["p22-act2", "p25-act6@R", "p31-act1"]},
+          {"palabra": "cubano/-a", "fuentes": ["p31-act3"]},
+          {"palabra": "ecuatoriano/-a", "fuentes": ["p22-act2", "p25-act6@R"]},
+          {"palabra": "español/-a", "fuentes": ["p22-act2", "p24-act1", "p25-act4", "p25-act5", "p25-act6@R", "p26-act1", "p28-act1@R", "p31-act1"]},
+          {"palabra": "francés/-esa", "fuentes": ["p24-act2", "p26-act1", "p28-act1@R"]},
+          {"palabra": "griego/-a", "fuentes": ["p22-act3"]},
+          {"palabra": "inglés/-esa", "fuentes": ["p22-act3"]},
+          {"palabra": "japonés/-esa", "fuentes": ["p22-act3", "p24-act1"]},
+          {"palabra": "mexicano/-a", "fuentes": ["p22-act2", "p25-act7@R", "p29-act3", "p31-act3"]},
+          {"palabra": "nicaragüense", "fuentes": ["p25-act6@R"]},
+          {"palabra": "peruano/-a", "fuentes": ["p22-act2", "p25-act4", "p25-act6", "p31-act3"]},
+          {"palabra": "polaco/-a", "fuentes": ["p22-act3"]}
+        ],
+        "fuentes": ["p22-act2", "p22-act3", "p24-act1", "p24-act2", "p25-act4", "p25-act5", "p25-act6", "p25-act6@R", "p25-act7@R", "p26-act1", "p28-act1@R", "p29-act3", "p31-act1", "p31-act2", "p31-act3"],
+        "descripcion": {
+          "U2": "PCIC A1 §1.7 Información personal: Nacionalidad — Primer cierre canónico de gentilicios de país: moción de género masculino/femenino y plural. U2 presenta el paradigma con países hispanohablantes y refuerza con gentilicios europeos y asiáticos."
+        }
+      },
+      "Días de la semana": {
+        "items": [
+          {"palabra": "lunes", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p24-act2", "p29-act3", "p31-act5"]},
+          {"palabra": "martes", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p31-act5"]},
+          {"palabra": "miércoles", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p31-act5@R"]},
+          {"palabra": "jueves", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p31-act5@R"]},
+          {"palabra": "viernes", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p29-act3", "p31-act5@R"]},
+          {"palabra": "sábado", "fuentes": ["p23-act6", "p31-act5@R"]},
+          {"palabra": "domingo", "fuentes": ["p23-act6", "p31-act5@R"]}
+        ],
+        "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p24-act2", "p29-act3", "p31-act5", "p31-act5@R"],
+        "descripcion": { "U2": "PCIC A1 §3.2 Unidades de tiempo: días de la semana — Primer cierre canónico de la serie completa (lunes–domingo), trabajada con foco fonético (sílaba tónica marcada en el cuadro) y operacionalizada en un horario escolar." }
+      },
+      "Números ordinales": {
+        "items": [
+          {"palabra": "primero/-a", "fuentes": ["p23-act7", "p23-act8", "p23-act8@R", "p23-act11", "p24-act3", "p26-act1", "p31-act1"]},
+          {"palabra": "segundo/-a", "fuentes": ["p23-act4", "p23-act7", "p23-act8@R", "p23-act11", "p23-act12", "p28-act1"]},
+          {"palabra": "tercero/-a", "fuentes": ["p23-act4", "p23-act7", "p23-act8", "p23-act11", "p28-act1"]},
+          {"palabra": "cuarto/-a", "fuentes": ["p23-act7", "p23-act8@R", "p23-act11"]},
+          {"palabra": "quinto/-a", "fuentes": ["p23-act7", "p23-act8@R", "p23-act11"]},
+          {"palabra": "sexto/-a", "fuentes": ["p23-act7", "p23-act8@R", "p23-act11"]},
+          {"palabra": "séptimo/-a", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "octavo/-a", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "noveno/-a", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "décimo/-a", "fuentes": ["p23-act7", "p23-act8@R"]}
+        ],
+        "fuentes": ["p23-act4", "p23-act7", "p23-act8", "p23-act8@R", "p23-act11", "p23-act12", "p24-act3", "p26-act1", "p28-act1", "p31-act1"],
+        "descripcion": {
+          "U2": "PCIC A1 §3.5 Cantidades y números: números ordinales — Primer cierre canónico de la serie 1.º–10.º con moción de género (masculino/femenino) y apocopación de primero/tercero. U2 los aplica al horario escolar y a la descripción de cursos."
+        }
+      },
+      "Asignaturas": {
+        "items": [
+          {"palabra": "Biología", "fuentes": ["p30-act2"]},
+          {"palabra": "Ciencias Naturales", "fuentes": ["p23-act9", "p23-act11", "p23-act12"]},
+          {"palabra": "Ciencias Sociales", "fuentes": ["p23-act9", "p23-act11"]},
+          {"palabra": "Educación Física", "fuentes": ["p23-act9", "p23-act10", "p28-act1", "p30-act2"]},
+          {"palabra": "Educación Plástica", "fuentes": ["p23-act9"]},
+          {"palabra": "Español", "fuentes": ["p23-act9", "p23-act11", "p31-act6@R"]},
+          {"palabra": "Francés", "fuentes": ["p23-act9", "p24-act2", "p30-act2", "p31-act2", "p31-act6@R"]},
+          {"palabra": "Historia", "fuentes": ["p28-act1", "p29-act3", "p30-act2"]},
+          {"palabra": "Informática", "fuentes": ["p23-act9", "p23-act11", "p24-act2", "p30-act2", "p31-act6@R"]},
+          {"palabra": "Inglés", "fuentes": ["p30-act2"]},
+          {"palabra": "Lengua", "fuentes": ["p23-act9", "p23-act11", "p31-act6@R"]},
+          {"palabra": "Lengua española", "fuentes": ["p30-act2"]},
+          {"palabra": "Matemáticas", "fuentes": ["p23-act9", "p23-act11", "p24-act1", "p29-act3", "p30-act2", "p31-act6@R"]},
+          {"palabra": "Música", "fuentes": ["p23-act9", "p24-act2", "p28-act1", "p30-act2", "p31-act6@R"]}
+        ],
+        "fuentes": ["p23-act9", "p23-act10", "p23-act11", "p23-act12", "p24-act1", "p24-act2", "p28-act1", "p29-act3", "p30-act2", "p31-act2", "p31-act6@R"],
+        "descripcion": {
+          "U2": "PCIC A1 §6.1 Centros e instituciones educativas — Primer cierre canónico del catálogo de asignaturas de Secundaria: Matemáticas, Lengua, Español, Historia, Música, Educación Física, Ciencias Naturales/Sociales, Informática, Francés/Inglés, Biología, Educación Plástica. Operacionalizadas en horario semanal."
+        }
+      },
+      "Números cardinales": {
+        "items": [
+          {"palabra": "veintiuno (21)", "fuentes": ["p27-act6"]},
+          {"palabra": "veintidós (22)", "fuentes": ["p27-act6", "p27-act7"]},
+          {"palabra": "veintitrés (23)", "fuentes": ["p27-act6", "p27-act7"]},
+          {"palabra": "veinticuatro (24)", "fuentes": ["p27-act6"]},
+          {"palabra": "veinticinco (25)", "fuentes": ["p27-act6"]},
+          {"palabra": "veintiséis (26)", "fuentes": ["p27-act6"]},
+          {"palabra": "veintisiete (27)", "fuentes": ["p27-act6"]},
+          {"palabra": "veintiocho (28)", "fuentes": ["p27-act6"]},
+          {"palabra": "veintinueve (29)", "fuentes": ["p27-act6"]},
+          {"palabra": "treinta (30)", "fuentes": ["p27-act6", "p28-act1", "p28-act2@R", "p30-act2"]},
+          {"palabra": "treinta y uno (31)", "fuentes": ["p27-act6", "p27-act7"]},
+          {"palabra": "treinta y dos (32)", "fuentes": ["p27-act6"]},
+          {"palabra": "treinta y tres (33)", "fuentes": ["p27-act6"]},
+          {"palabra": "treinta y siete (37)", "fuentes": ["p27-act7@R"]},
+          {"palabra": "cuarenta (40)", "fuentes": ["p27-act6", "p31-act2"]},
+          {"palabra": "cuarenta y uno (41)", "fuentes": ["p27-act7"]},
+          {"palabra": "cuarenta y tres (43)", "fuentes": ["p27-act8"]},
+          {"palabra": "cincuenta (50)", "fuentes": ["p27-act6"]},
+          {"palabra": "sesenta (60)", "fuentes": ["p27-act6", "p27-act7@R"]},
+          {"palabra": "sesenta y cinco (65)", "fuentes": ["p27-act7"]},
+          {"palabra": "setenta (70)", "fuentes": ["p27-act6", "p27-act7"]},
+          {"palabra": "setenta y cinco (75)", "fuentes": ["p27-act7@R"]},
+          {"palabra": "ochenta (80)", "fuentes": ["p27-act6"]},
+          {"palabra": "ochenta y cuatro (84)", "fuentes": ["p27-act7@R"]},
+          {"palabra": "noventa (90)", "fuentes": ["p27-act6"]},
+          {"palabra": "noventa y cuatro (94)", "fuentes": ["p27-act7"]},
+          {"palabra": "cien (100)", "fuentes": ["p27-act6"]}
+        ],
+        "fuentes": ["p27-act6", "p27-act7", "p27-act7@R", "p27-act8", "p28-act1", "p28-act2@R", "p30-act2", "p31-act2"],
+        "descripcion": {
+          "U2": "PCIC A1 §3.5 Cantidades y números: números cardinales — Continuación del paradigma (U0: 0–10; U1: 11–20). U2 cierra el tramo 21–100 incluyendo decenas (veinte, treinta, cuarenta...) y composición decena-y-unidad (treinta y uno, cuarenta y tres, etc.). Aplicado al léxico de dirección y de edad. Rótulo del libro 'Números del 21 al 100' canonizado bajo 'Números cardinales' (aliases_indice)."
+        }
+      }
     },
     "recurrente": {
-      "_descripcion": "Vocabulario que aparece en varias secciones de la unidad",
-      "Adjetivos de nacionalidad": [
-        "argentino/-a",
-        "colombiano/-a",
-        "ecuatoriano/-a",
-        "español/-a",
-        "mexicano/-a",
-        "peruano/-a"
-      ],
-      "Asignaturas": [
-        "Educación Física",
-        "Historia",
-        "Informática",
-        "Lengua",
-        "Matemáticas",
-        "Música"
-      ],
-      "Números 21-100": [
-        "veintiuno",
-        "veintidós",
-        "treinta",
-        "cuarenta",
-        "cincuenta",
-        "sesenta",
-        "setenta",
-        "ochenta",
-        "noventa",
-        "cien"
-      ]
-    },
-    "comprension": {
-      "_descripcion": "Léxico que aparece y afecta la comprensión aunque no se trabaje explícitamente",
-      "Vocabulario del texto cultural": [
-        "descanso",
-        "distintas",
-        "alrededor de",
-        "extraescolares",
-        "optativas",
-        "obligatorias"
-      ],
-      "Vocabulario de los mensajes escritos": [
-        "afición",
-        "gimnasia",
-        "ciclismo",
-        "tenis"
-      ],
-      "Vocabulario del diálogo": [
-        "tutora",
-        "bienvenido",
-        "presentarnos"
-      ],
-      "Elementos culturales": [
-        "baile",
-        "poncho",
-        "tacos",
-        "tango",
-        "Machu Picchu",
-        "Don Quijote",
-        "ESO",
-        "recreo",
-        "bocadillo"
-      ]
+      "Nacionalidad": {
+        "items": [
+          {"palabra": "soy argentino", "fuentes": ["p26-act1"]},
+          {"palabra": "soy española", "fuentes": ["p28-act1@R"]},
+          {"palabra": "es argentina", "fuentes": ["p26-act1@R"]},
+          {"palabra": "Pierre es francés", "fuentes": ["p28-act1@R"]},
+          {"palabra": "¿De qué nacionalidad es?", "fuentes": ["p31-act8"]}
+        ],
+        "fuentes": ["p26-act1", "p26-act1@R", "p28-act1@R", "p31-act8"],
+        "descripcion": { "U2": "PCIC A1 §1.7 Nacionalidad — Recurrente: ya canónica en U1 (PCIC). U2 la reactiva en el contexto comunicativo del diálogo de presentación (¿De dónde eres? — Soy argentino) y de la carta personal." }
+      },
+      "Edad": {
+        "items": [
+          {"palabra": "Tengo 13 años", "fuentes": ["p24-act3@R", "p26-act1"]},
+          {"palabra": "Tengo 12 años", "fuentes": ["p26-act1"]},
+          {"palabra": "Tengo catorce años", "fuentes": ["p28-act1"]},
+          {"palabra": "Tengo trece años", "fuentes": ["p28-act1"]},
+          {"palabra": "tiene 14 años", "fuentes": ["p31-act4"]},
+          {"palabra": "tienen 13 años", "fuentes": ["p31-act4"]}
+        ],
+        "fuentes": ["p24-act3@R", "p26-act1", "p28-act1", "p31-act4"],
+        "descripcion": { "U2": "PCIC A1 §1.5 Edad — Recurrente: ya canónica en U1. U2 la reactiva intensivamente con tener+años en presentaciones personales y descripciones de personas en imágenes." }
+      },
+      "Saludos y despedidas": {
+        "items": [
+          {"palabra": "Hola", "fuentes": ["p25-act7@R", "p26-act1"]},
+          {"palabra": "Buenos días", "fuentes": ["p26-act1"]},
+          {"palabra": "Bienvenido", "fuentes": ["p26-act1"]},
+          {"palabra": "Querido", "fuentes": ["p28-act1"]},
+          {"palabra": "Un saludo", "fuentes": ["p24-act3", "p28-act1"]},
+          {"palabra": "¡Un saludo desde Francia!", "fuentes": ["p28-act1"]},
+          {"palabra": "¡Hola!, ¿qué tal?", "fuentes": ["p28-act1"]},
+          {"palabra": "¿Cómo estás?", "fuentes": ["p28-act1"]}
+        ],
+        "fuentes": ["p24-act3", "p25-act7@R", "p26-act1", "p28-act1"],
+        "descripcion": { "U2": "Recurrente: ya canónica en U0/U1. U2 amplía el inventario añadiendo fórmulas de apertura/cierre de carta (Querido, Un saludo) y de bienvenida (Bienvenido)." }
+      },
+      "Centros e instituciones educativas": {
+        "items": [
+          {"palabra": "instituto", "fuentes": ["p28-act1", "p30-act2"]},
+          {"palabra": "colegio", "fuentes": ["p29-act7", "p29-act8", "p30-act4"]},
+          {"palabra": "clase", "fuentes": ["p23-act10@R", "p24-act1", "p24-act2", "p24-act3@R", "p26-act1", "p28-act1", "p29-act6", "p30-act2"]},
+          {"palabra": "curso", "fuentes": ["p26-act1", "p28-act1", "p30-act2"]},
+          {"palabra": "Educación Secundaria Obligatoria (ESO)", "fuentes": ["p28-act1", "p30-act2"]},
+          {"palabra": "recreo", "fuentes": ["p23-act11", "p27-act10", "p30-act2"]},
+          {"palabra": "cafetería", "fuentes": ["p30-act2"]},
+          {"palabra": "aulas", "fuentes": ["p30-act2"]},
+          {"palabra": "estudiantes", "fuentes": ["p25-act4@R", "p28-act1", "p30-act2"]},
+          {"palabra": "alumnos", "fuentes": ["p28-act2@R", "p29-act4", "p30-act2"]},
+          {"palabra": "asignaturas obligatorias", "fuentes": ["p30-act2"]},
+          {"palabra": "(asignaturas) optativas", "fuentes": ["p30-act2", "p30-act3"]},
+          {"palabra": "actividades extraescolares", "fuentes": ["p30-act2", "p30-act3"]},
+          {"palabra": "profesor", "fuentes": ["p24-act1", "p24-act2", "p25-act4@R", "p30-act2"]},
+          {"palabra": "tutora", "fuentes": ["p26-act1"]},
+          {"palabra": "directora", "fuentes": ["p25-act4"]},
+          {"palabra": "compañero/-a de clase", "fuentes": ["p24-act3@R", "p25-act7@R"]},
+          {"palabra": "horario", "fuentes": ["p23-act11", "p23-act12", "p23-act13"]},
+          {"palabra": "biblioteca", "fuentes": ["p27-act10"]}
+        ],
+        "fuentes": [
+          "p23-act10@R",
+          "p23-act11",
+          "p23-act12",
+          "p23-act13",
+          "p24-act1",
+          "p24-act2",
+          "p24-act3@R",
+          "p25-act4",
+          "p25-act4@R",
+          "p25-act7@R",
+          "p26-act1",
+          "p27-act10",
+          "p28-act1",
+          "p28-act2@R",
+          "p29-act4",
+          "p29-act6",
+          "p29-act7",
+          "p29-act8",
+          "p30-act2",
+          "p30-act3",
+          "p30-act4"
+        ],
+        "descripcion": {
+          "U2": "PCIC A1 §6 Educación: centros e instituciones — Recurrente: U2 introduce intensivamente el campo léxico escolar (instituto, ESO, recreo, aula, asignaturas obligatorias/optativas, actividades extraescolares, profesor, tutora, alumnos) como contexto del bloque cultural 'La ESO en España' y del horario. No declarado en el índice editorial pero pedagógicamente central."
+        }
+      }
     }
+  },
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "ser",
+      "tipo_de_verbo": ["copulativo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["soy", "eres", "es", "somos", "sois", "son"],
+      "fuentes": [
+        "p22-act1",
+        "p22-act2",
+        "p22-act3",
+        "p23-act4",
+        "p23-act5",
+        "p23-act6",
+        "p23-act10@R",
+        "p24-act1",
+        "p24-act3",
+        "cuadro@p24#1",
+        "p25-act5",
+        "p25-act6",
+        "p25-act6@R",
+        "p25-act7",
+        "p26-act1",
+        "p26-act3@R",
+        "p26-act4",
+        "p28-act1",
+        "p28-act2@R",
+        "p29-act3",
+        "p29-act4",
+        "p29-act6",
+        "p30-act2",
+        "p31-act1",
+        "p31-act1@R",
+        "p31-act8"
+      ],
+      "descripcion": {
+        "U2": "PCIC A1 §6.4 — U2 completa el paradigma plural del Presente (somos, sois, son) sobre la base singular ya trabajada en U1. Se ejercita con identidad, nacionalidad, edad, profesión y descripción (acts p24-1, p24-3, p25-5, p25-6, p31-1)."
+      }
+    },
+    {
+      "lema": "tener",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"],
+      "fuentes": ["p23-act12", "p24-act2", "p24-act3", "p24-act3@R", "cuadro@p24#1", "p26-act1", "p26-act3@R", "p28-act1", "p29-act4", "p30-act1", "p30-act2", "p31-act2", "p31-act2@R", "p31-act4", "p31-act8"],
+      "descripcion": {
+        "U2": "PCIC A1 §6.4 — U2 completa el paradigma plural del Presente (tenemos, tenéis, tienen) sobre la base singular de U1. Foco en la expresión de edad (Tengo X años), posesión (tener mochilas, libros) y disponibilidad de actividad (tener clase de...). Acts clave: p24-2, p24-3, p31-2."
+      }
+    },
+    {
+      "lema": "llamarse",
+      "tipo_de_verbo": ["pronominal"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["me llamo", "te llamas", "se llama"],
+      "fuentes": ["p23-act4", "p25-act7", "p25-act7@R", "cuadro@p25", "p26-act1", "p26-act3@R", "p28-act1", "p29-act6@R", "p29-act7@R", "p30-act2"],
+      "descripcion": { "U2": "Recurrente: ya canónica en U1. U2 la reactiva en el diálogo de presentación de la sección Comunicación (¿Cómo te llamas? — Me llamo X) y en mediación (Mi compañera se llama...)." }
+    },
+    {
+      "lema": "vivir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ir" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["vivo", "vives", "vive"],
+      "fuentes": ["p25-act7", "p25-act7@R", "p26-act1", "p26-act4", "p27-act8", "p27-act8@R", "p28-act1", "p29-act4", "p29-act6@R", "p29-act7@R", "p31-act8"],
+      "descripcion": {
+        "U2": "Anticipación: lema canónico de U3 (PCIC §1.2 Dirección). Incluido por decisión del autor para cubrir las formas que aparecen en el contenido de los diálogos y cartas (vivo en Madrid/Cádiz/París, ¿Dónde vives?, Lola vive en Málaga)."
+      }
+    },
+    {
+      "lema": "estudiar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["estudio", "estudias", "estudia", "estudiamos", "estudian"],
+      "fuentes": ["p28-act1", "p28-act2@R", "p29-act3", "p29-act4", "p29-act6@R"],
+      "descripcion": { "U2": "Anticipación: lema canónico de U3. Incluido por decisión del autor; aparece en la carta personal (Tengo trece años y estudio segundo curso, estudiamos español tres días a la semana) y en la mediación oral (Estudia...)." }
+    },
+    {
+      "lema": "ir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["vamos", "van"],
+      "estructura_perifrastica": "ir a + infinitivo",
+      "fuentes": ["p26-act1", "p27-act9", "p27-act10", "p29-act3"],
+      "descripcion": {
+        "U2": "Anticipación: lema canónico de U6 (PRE). Incluido por decisión del autor. Aparece en (a) Presente pleno con sentido de movimiento en sugerencias '¿Vamos al parque/al cine?' (p27 act9-10), y (b) perífrasis ir a + infinitivo: 'Vamos a presentarnos' (p26), 'Los viernes van a jugar al fútbol' (p29 act3)."
+      }
+    },
+    {
+      "lema": "estar",
+      "tipo_de_verbo": ["copulativo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["estás", "está", "están"],
+      "fuentes": ["p26-act1", "p28-act1", "p30-act2"],
+      "descripcion": {
+        "U2": "Anticipación: lema canónico de U5 (PRE). Incluido por decisión del autor. Aparece en localización geográfica ('una ciudad que está en Andalucía', p26), saludo informal ('¿Cómo estás?', p28) y descripción ('los alumnos están siempre en la misma clase', p30)."
+      }
+    },
+    {
+      "lema": "gustar",
+      "tipo_de_verbo": ["tipo gustar", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "tipo gustar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["le gusta"],
+      "fuentes": ["p25-act7", "p25-act7@R", "p29-act6@R"],
+      "descripcion": { "U2": "Anticipación: lema canónico de U4. Incluido por decisión del autor. Aparición incidental en frase de uso de mayúsculas ('A Juan le gusta Batman', p25-act7) y en mediación oral ('Le gusta...', p29-act6)." }
+    },
+    {
+      "lema": "hablar",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["hablan"],
+      "fuentes": ["p23-act4"],
+      "descripcion": { "U2": "Anticipación: lema canónico de U3 (PRE). Incluido por decisión del autor. Aparece en el texto cultural sobre el español ('la hablan más de 580 millones de personas', p23-act4)." }
+    }
+  ],
+  "gramatica_consolidada": {
+    "principal": {
+      "Concordancia de número": {
+        "items": [
+          {"palabra": "coche/coches", "fuentes": ["cuadro@p24#2"]},
+          {"palabra": "camión/camiones", "fuentes": ["cuadro@p24#2"]},
+          {"palabra": "el gato blanco / los gatos blancos", "fuentes": ["cuadro@p24#2"]},
+          {"palabra": "la gata blanca / las gatas blancas", "fuentes": ["cuadro@p24#2"]},
+          {"palabra": "el gato grande / los gatos grandes", "fuentes": ["cuadro@p24#2"]},
+          {"palabra": "la pizarra blanca / las pizarras blancas", "fuentes": ["p25-act4@R"]},
+          {"palabra": "el profesor chino / los profesores chinos", "fuentes": ["p25-act4@R"]},
+          {"palabra": "el compañero alemán / los compañeros alemanes", "fuentes": ["p25-act4@R"]},
+          {"palabra": "Esta flor amarilla / Estas flores amarillas", "fuentes": ["p25-act5"]},
+          {"palabra": "Este lápiz marrón / Estos lápices marrones", "fuentes": ["p25-act5@R"]},
+          {"palabra": "Este chico español / Estos chicos españoles", "fuentes": ["p25-act5@R"]}
+        ],
+        "fuentes": ["cuadro@p24#2", "p25-act4", "p25-act4@R", "p25-act5", "p25-act5@R", "p31-act3", "p31-act3@R"],
+        "descripcion": {
+          "U2": "PCIC A1 §2.1.2 Plural — Primer cierre canónico de la formación del plural en nombres y adjetivos: +s tras vocal, +es tras consonante, alternancias ortográficas (z→c, lápiz→lápices) y ajustes de acento (alemán→alemanes, camión→camiones). Trabajada en cuadro p24, acts p25-4/5 y consolidada en evaluación p31-3."
+        }
+      },
+      "Demostrativos": {
+        "items": [
+          {"palabra": "este libro", "fuentes": ["cuadro@p24#3"]},
+          {"palabra": "esta casa", "fuentes": ["cuadro@p24#3"]},
+          {"palabra": "estos libros", "fuentes": ["cuadro@p24#3"]},
+          {"palabra": "estas casas", "fuentes": ["cuadro@p24#3"]},
+          {"palabra": "Este es Juan", "fuentes": ["cuadro@p24#3"]},
+          {"palabra": "Esta es Lola", "fuentes": ["cuadro@p24#3"]},
+          {"palabra": "Estos son Andrés y Lucía", "fuentes": ["cuadro@p24#3"]},
+          {"palabra": "Estas son Laura y Rosa", "fuentes": ["cuadro@p24#3"]},
+          {"palabra": "Estos de la foto son mis amigos", "fuentes": ["p24-act3@R"]},
+          {"palabra": "Esta mujer", "fuentes": ["p24-act1"]},
+          {"palabra": "Estos niños", "fuentes": ["p24-act1", "p31-act4@R"]},
+          {"palabra": "Estos chicos", "fuentes": ["p24-act2"]},
+          {"palabra": "¿Quién es este/esta?", "fuentes": ["p25-act6"]},
+          {"palabra": "¿Quiénes son estos/estas?", "fuentes": ["p25-act6"]},
+          {"palabra": "Esta niña", "fuentes": ["p31-act4"]},
+          {"palabra": "Estas niñas", "fuentes": ["p31-act4@R"]},
+          {"palabra": "Este niño", "fuentes": ["p31-act4@R"]}
+        ],
+        "fuentes": ["cuadro@p24#3", "p24-act1", "p24-act2", "p24-act3", "p24-act3@R", "p25-act6", "p25-act6@R", "p31-act4", "p31-act4@R"],
+        "descripcion": {
+          "U2": "PCIC A1 §7.3 Demostrativos — Primer cierre canónico del paradigma de proximidad (este/esta/estos/estas) en función adjetiva y pronominal, con concordancia de género y número con el referente. Trabajado en cuadro p24 y aplicado en p25-6, p31-4."
+        }
+      },
+      "Nombres propios": {
+        "items": [
+          {"palabra": "Cristina", "fuentes": ["p24-act3"]},
+          {"palabra": "Verónica", "fuentes": ["p24-act1"]},
+          {"palabra": "Tom", "fuentes": ["p24-act1"]},
+          {"palabra": "Andrés", "fuentes": ["p24-act1", "cuadro@p24#3"]},
+          {"palabra": "Gabriela", "fuentes": ["p24-act1"]},
+          {"palabra": "Lucía", "fuentes": ["p24-act2", "cuadro@p24#3"]},
+          {"palabra": "María", "fuentes": ["p24-act2", "p25-act6", "p25-act6@R", "p31-act1"]},
+          {"palabra": "Peter", "fuentes": ["p24-act2"]},
+          {"palabra": "Elisabeth", "fuentes": ["p24-act2"]},
+          {"palabra": "Juan", "fuentes": ["cuadro@p24#3", "p25-act7", "p31-act1"]},
+          {"palabra": "Lola", "fuentes": ["cuadro@p24#3", "p26-act1"]},
+          {"palabra": "Laura", "fuentes": ["cuadro@p24#3", "cuadro@p25"]},
+          {"palabra": "Rosa", "fuentes": ["cuadro@p24#3", "p24-act3"]},
+          {"palabra": "Dani", "fuentes": ["p24-act3"]},
+          {"palabra": "Pedro", "fuentes": ["p25-act4@R", "p25-act6"]},
+          {"palabra": "Graciela", "fuentes": ["p25-act7", "p25-act7@R", "p26-act1"]},
+          {"palabra": "Pablo", "fuentes": ["p25-act7@R", "p26-act1"]},
+          {"palabra": "Carlos", "fuentes": ["p25-act6", "p25-act6@R", "p31-act1"]},
+          {"palabra": "Alberto", "fuentes": ["p25-act6", "p25-act6@R", "p31-act1"]},
+          {"palabra": "Rosario", "fuentes": ["p25-act6", "p25-act6@R"]},
+          {"palabra": "Elena", "fuentes": ["p25-act6", "p25-act6@R"]},
+          {"palabra": "Alicia", "fuentes": ["p25-act6", "p25-act6@R"]},
+          {"palabra": "Luis Rodríguez", "fuentes": ["p25-act7", "p25-act7@R"]},
+          {"palabra": "Fernando", "fuentes": ["p25-act7", "p25-act7@R"]},
+          {"palabra": "Ricardo", "fuentes": ["cuadro@p25"]},
+          {"palabra": "Laura López", "fuentes": ["cuadro@p25"]},
+          {"palabra": "Natalia", "fuentes": ["p26-act1"]},
+          {"palabra": "Julia", "fuentes": ["p26-act1", "p27-act10"]},
+          {"palabra": "Jorge", "fuentes": ["p26-act1", "p26-act3@R", "p26-act4"]},
+          {"palabra": "Cervantes", "fuentes": ["p27-act8@R"]},
+          {"palabra": "Pepe", "fuentes": ["p27-act12"]},
+          {"palabra": "Pili", "fuentes": ["p27-act12"]},
+          {"palabra": "Marta Rodríguez", "fuentes": ["p28-act1"]},
+          {"palabra": "Pierre Dubois", "fuentes": ["p28-act1"]},
+          {"palabra": "Frida", "fuentes": ["p29-act3"]},
+          {"palabra": "Rubén", "fuentes": ["p29-act3"]},
+          {"palabra": "Violeta", "fuentes": ["p29-act3"]},
+          {"palabra": "Luisa", "fuentes": ["p31-act1"]},
+          {"palabra": "Don Quijote", "fuentes": ["p22-act1", "p22-act1@R"]},
+          {"palabra": "Batman", "fuentes": ["p25-act7", "p25-act7@R"]},
+          {"palabra": "El rey león", "fuentes": ["cuadro@p25"]},
+          {"palabra": "Parque Jurásico", "fuentes": ["cuadro@p25"]},
+          {"palabra": "Instituto Miguel de Unamuno", "fuentes": ["p28-act1", "p28-act1@R"]},
+          {"palabra": "Instituto Marie Curie", "fuentes": ["p28-act1", "p28-act1@R"]},
+          {"palabra": "Madrid", "fuentes": ["p24-act3", "p26-act1"]},
+          {"palabra": "Barcelona", "fuentes": ["p26-act1"]},
+          {"palabra": "Buenos Aires", "fuentes": ["p25-act7@R", "p26-act1", "p26-act4"]},
+          {"palabra": "Málaga", "fuentes": ["p26-act1"]},
+          {"palabra": "Andalucía", "fuentes": ["p26-act1"]},
+          {"palabra": "Cádiz", "fuentes": ["p28-act1", "p28-act2@R"]},
+          {"palabra": "París", "fuentes": ["p28-act1", "p28-act2@R"]},
+          {"palabra": "Francia", "fuentes": ["p28-act1", "cuadro@p25"]},
+          {"palabra": "Lima", "fuentes": ["p25-act7@R"]},
+          {"palabra": "Puebla", "fuentes": ["p25-act7@R"]},
+          {"palabra": "Estados Unidos", "fuentes": ["p23-act4"]},
+          {"palabra": "EE. UU.", "fuentes": ["p23-act5"]},
+          {"palabra": "América Central", "fuentes": ["p23-act4"]},
+          {"palabra": "América del Sur", "fuentes": ["p23-act4", "p23-act5"]},
+          {"palabra": "Nilo", "fuentes": ["p25-act7@R"]},
+          {"palabra": "Amazonas", "fuentes": ["cuadro@p25"]},
+          {"palabra": "Everest", "fuentes": ["cuadro@p25"]},
+          {"palabra": "Machu Picchu", "fuentes": ["p22-act1"]}
+        ],
+        "fuentes": [
+          "p22-act1",
+          "p22-act1@R",
+          "p23-act4",
+          "p23-act5",
+          "p24-act1",
+          "p24-act2",
+          "p24-act3",
+          "p24-act3@R",
+          "p25-act4@R",
+          "p25-act6",
+          "p25-act6@R",
+          "p25-act7",
+          "p25-act7@R",
+          "cuadro@p24#3",
+          "cuadro@p25",
+          "p26-act1",
+          "p26-act3@R",
+          "p26-act4",
+          "p27-act8@R",
+          "p27-act10",
+          "p27-act12",
+          "p28-act1",
+          "p28-act1@R",
+          "p28-act2@R",
+          "p29-act3",
+          "p31-act1"
+        ],
+        "descripcion": {
+          "U2": "PCIC A1 §3.3.1 — Primer cierre canónico expandido a antropónimos Y topónimos: U2 trabaja explícitamente la regla 'nombres propios → mayúscula inicial' aplicada a personas (Laura López), países (Francia), ciudades (Buenos Aires, Lima), ríos (Nilo, Amazonas), montañas (Everest) y títulos de obras (El rey león, Parque Jurásico, Don Quijote, Batman). Categoría ampliada por decisión editorial U2 (ver _decisiones_ia P3)."
+        }
+      }
+    },
+    "recurrente": {
+      "Pronombre sujeto": {
+        "items": [
+          {"palabra": "yo", "fuentes": ["cuadro@p24#1", "p24-act1", "p26-act1"]},
+          {"palabra": "tú", "fuentes": ["cuadro@p24#1", "p22-act3", "p24-act1", "p24-act2", "p26-act1", "p27-act8", "p29-act4"]},
+          {"palabra": "él / ella / usted", "fuentes": ["cuadro@p24#1"]},
+          {"palabra": "ella", "fuentes": ["p24-act1"]},
+          {"palabra": "ellas", "fuentes": ["p24-act1"]},
+          {"palabra": "ellos", "fuentes": ["p24-act2", "p31-act1"]},
+          {"palabra": "nosotros/-as", "fuentes": ["cuadro@p24#1", "p24-act2", "p24-act3@R", "p31-act1"]},
+          {"palabra": "nosotras", "fuentes": ["p24-act2"]},
+          {"palabra": "vosotros/-as", "fuentes": ["cuadro@p24#1", "p24-act1", "p24-act2", "p29-act4"]},
+          {"palabra": "ellos / ellas / ustedes", "fuentes": ["cuadro@p24#1"]}
+        ],
+        "fuentes": ["cuadro@p24#1", "p22-act3", "p24-act1", "p24-act2", "p24-act3@R", "p26-act1", "p27-act8", "p29-act4", "p31-act1"],
+        "descripcion": { "U2": "Recurrente: ya canónico en U1 (PCIC A1 §7.1.1). U2 lo refuerza intensivamente en el cuadro de conjugación de ser/tener (paradigma completo de 6 personas) y en ejercicios de selección de la forma verbal según pronombre sujeto." }
+      },
+      "Concordancia de género": {
+        "items": [
+          {"palabra": "mexicano/mexicana", "fuentes": ["p22-act2", "p31-act3"]},
+          {"palabra": "argentino/argentina", "fuentes": ["p22-act2", "p31-act3"]},
+          {"palabra": "español/española", "fuentes": ["p22-act2", "p31-act3"]},
+          {"palabra": "el gato/la gata", "fuentes": ["cuadro@p24#2"]},
+          {"palabra": "blanco/blanca", "fuentes": ["cuadro@p24#2"]},
+          {"palabra": "Esta flor amarilla / Este bolígrafo rojo", "fuentes": ["p25-act5"]},
+          {"palabra": "Este es Juan / Esta es Lola", "fuentes": ["cuadro@p24#3"]}
+        ],
+        "fuentes": ["p22-act2", "cuadro@p24#2", "cuadro@p24#3", "p25-act4", "p25-act5", "p25-act5@R", "p31-act3", "p31-act3@R"],
+        "descripcion": { "U2": "Recurrente: ya canónico en U1. U2 lo reactiva en la moción de género de gentilicios (-o/-a, -és/-esa, -e invariable) y en la concordancia de demostrativos y adjetivos descriptivos con el sustantivo." }
+      },
+      "Interrogativos": {
+        "items": [
+          {"palabra": "¿De dónde...?", "fuentes": ["p22-act3", "p24-act1", "p25-act6", "p25-act6@R", "p26-act1", "p29-act4"]},
+          {"palabra": "¿Cuál...?", "fuentes": ["p23-act6", "p23-act10", "p23-act10@R", "p24-act1", "p28-act1", "p29-act4"]},
+          {"palabra": "¿Cuántos/-as...?", "fuentes": ["p24-act2", "p26-act1", "p28-act1@R", "p29-act4", "p31-act7", "p31-act8"]},
+          {"palabra": "¿Cómo...?", "fuentes": ["p26-act1", "p28-act1", "p29-act4", "p31-act8"]},
+          {"palabra": "¿Qué...?", "fuentes": ["p23-act12", "p28-act1@R", "p29-act4"]},
+          {"palabra": "¿Quién...?", "fuentes": ["p25-act6", "p25-act6@R", "p31-act8"]},
+          {"palabra": "¿Quiénes...?", "fuentes": ["p25-act6", "p25-act6@R"]},
+          {"palabra": "¿Dónde...?", "fuentes": ["p27-act8", "p29-act4", "p31-act8"]},
+          {"palabra": "¿A qué hora...?", "fuentes": ["p24-act2"]},
+          {"palabra": "¿De qué (ciudad/nacionalidad)...?", "fuentes": ["p28-act2", "p31-act8"]}
+        ],
+        "fuentes": [
+          "p22-act3",
+          "p23-act6",
+          "p23-act10",
+          "p23-act10@R",
+          "p23-act12",
+          "p24-act1",
+          "p24-act2",
+          "p25-act6",
+          "p25-act6@R",
+          "p26-act1",
+          "p27-act8",
+          "p28-act1",
+          "p28-act1@R",
+          "p28-act2",
+          "p29-act4",
+          "p30-act1",
+          "p30-act4",
+          "p31-act7",
+          "p31-act8"
+        ],
+        "descripcion": {
+          "U2": "Recurrente: ya canónico en U1. U2 lo amplía al servicio del bloque comunicativo 'pedir y dar información personal' (¿Cómo te llamas?, ¿De dónde eres?, ¿Cuántos años tienes?, ¿Dónde vives?, ¿Qué estudias?, ¿Cuál es tu asignatura/deporte/día favorito?)."
+        }
+      },
+      "Artículos determinados": {
+        "items": [
+          {"palabra": "el / la", "fuentes": ["p22-act1", "p23-act4", "cuadro@p24#2", "p27-act8"]},
+          {"palabra": "los / las", "fuentes": ["cuadro@p24#2", "p23-act4", "p29-act7", "p30-act2"]}
+        ],
+        "fuentes": ["p22-act1", "p23-act4", "cuadro@p24#2", "p25-act4", "p27-act8", "p29-act7", "p30-act2"],
+        "descripcion": { "U2": "Recurrente: ya canónico en U1. U2 lo reactiva como soporte de la concordancia de género/número del cuadro de adjetivos (el gato blanco / la gata blanca / los gatos blancos / las gatas blancas)." }
+      }
+    }
+  },
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {
+      "Vocales": {
+        "items": [
+          {"palabra": "a", "fuentes": ["p27-act11", "p27-act12"]},
+          {"palabra": "e", "fuentes": ["p27-act11", "p27-act12"]},
+          {"palabra": "i", "fuentes": ["p27-act11", "p27-act12"]},
+          {"palabra": "o", "fuentes": ["p27-act11", "p27-act12"]},
+          {"palabra": "u", "fuentes": ["p27-act11", "p27-act12"]},
+          {"palabra": "azul", "fuentes": ["p27-act12"]},
+          {"palabra": "casa", "fuentes": ["p27-act12"]},
+          {"palabra": "mesa", "fuentes": ["p27-act12"]},
+          {"palabra": "policía", "fuentes": ["p27-act12"]},
+          {"palabra": "escribir", "fuentes": ["p27-act12"]},
+          {"palabra": "matemáticas", "fuentes": ["p27-act12"]},
+          {"palabra": "lápiz", "fuentes": ["p27-act12"]},
+          {"palabra": "Pepe", "fuentes": ["p27-act12"]},
+          {"palabra": "Pili", "fuentes": ["p27-act12"]},
+          {"palabra": "mamá", "fuentes": ["p27-act12"]},
+          {"palabra": "beber", "fuentes": ["p27-act12"]},
+          {"palabra": "vivir", "fuentes": ["p27-act12"]},
+          {"palabra": "tonto", "fuentes": ["p27-act12"]},
+          {"palabra": "uno", "fuentes": ["p27-act12"]}
+        ],
+        "fuentes": ["p27-act11", "p27-act12"],
+        "descripcion": {
+          "U2": "PCIC A1 Fonética §1 — Primer cierre canónico del sistema vocálico español: las 5 vocales (a, e, i, o, u) presentadas como sistema cerrado simétrico. Ejercitadas en palabras-muestra que cubren las 5 vocales tónicas y átonas en posición inicial, medial y final."
+        }
+      },
+      "Mayúsculas": {
+        "items": [
+          {"palabra": "primera palabra de una frase (Hola, me llamo Ricardo)", "fuentes": ["cuadro@p25", "p25-act7@R", "p29-act7@R"]},
+          {"palabra": "nombres y apellidos de personas (Laura López)", "fuentes": ["cuadro@p25", "p25-act7@R", "p29-act7@R"]},
+          {"palabra": "países (Francia, España, Perú)", "fuentes": ["cuadro@p25", "p25-act7@R", "p29-act7@R"]},
+          {"palabra": "ciudades (Buenos Aires, Lima, Puebla)", "fuentes": ["p25-act7@R", "p29-act7@R"]},
+          {"palabra": "ríos (Amazonas, Nilo)", "fuentes": ["cuadro@p25", "p25-act7@R"]},
+          {"palabra": "montañas (Everest)", "fuentes": ["cuadro@p25"]},
+          {"palabra": "títulos de películas/libros (El rey león, Parque Jurásico)", "fuentes": ["cuadro@p25"]},
+          {"palabra": "tras un punto", "fuentes": ["p29-act7@R"]},
+          {"palabra": "nombres de asignaturas (Historia)", "fuentes": ["p29-act7@R"]}
+        ],
+        "fuentes": ["cuadro@p25", "p25-act7", "p25-act7@R", "p29-act7", "p29-act7@R", "p29-act8"],
+        "descripcion": {
+          "U2": "PCIC A1 Ortografía §3 Uso de mayúsculas — Primer cierre canónico de las reglas de mayúscula inicial: principio de frase, después de punto, nombres propios de persona, topónimos (países, ciudades, ríos, montañas), títulos de obras y nombres de asignaturas. Trabajado en cuadro p25 (Para aprender), aplicado en p25-act7 y consolidado en p29-act7."
+        }
+      }
+    },
+    "recurrente": {}
   },
   "secciones": {
     "vocabulario": {
@@ -141,164 +634,96 @@
         22,
         23
       ],
-      "actividades_ids": [
-        "U2-p22-act01",
-        "U2-p22-act02",
-        "U2-p22-act03",
-        "U2-p23-act04",
-        "U2-p23-act05",
-        "U2-p23-act06",
-        "U2-p23-act07",
-        "U2-p23-act08",
-        "U2-p23-act09",
-        "U2-p23-act10",
-        "U2-p23-act11",
-        "U2-p23-act12",
-        "U2-p23-act13"
-      ]
+      "actividades_ids": ["U2-p22-act1", "U2-p22-act2", "U2-p22-act3", "U2-p23-act4", "U2-p23-act5", "U2-p23-act6", "U2-p23-act7", "U2-p23-act8", "U2-p23-act9", "U2-p23-act10", "U2-p23-act11", "U2-p23-act12", "U2-p23-act13"]
     },
     "gramatica": {
       "paginas": [
         24,
         25
       ],
-      "actividades_ids": [
-        "U2-p24-act01",
-        "U2-p24-act02",
-        "U2-p24-act03",
-        "U2-p25-act04",
-        "U2-p25-act05",
-        "U2-p25-act06",
-        "U2-p25-act07"
-      ]
+      "actividades_ids": ["U2-p24-act1", "U2-p24-act2", "U2-p24-act3", "U2-p25-act4", "U2-p25-act5", "U2-p25-act6", "U2-p25-act7"]
     },
     "comunicacion": {
       "paginas": [
         26,
         27
       ],
-      "actividades_ids": [
-        "U2-p26-act01",
-        "U2-p26-act02",
-        "U2-p26-act03",
-        "U2-p26-act04",
-        "U2-p26-act05",
-        "U2-p27-act06",
-        "U2-p27-act07",
-        "U2-p27-act08",
-        "U2-p27-act09",
-        "U2-p27-act10",
-        "U2-p27-act11",
-        "U2-p27-act12"
-      ]
+      "actividades_ids": ["U2-p26-act1", "U2-p26-act2", "U2-p26-act3", "U2-p26-act4", "U2-p26-act5", "U2-p27-act6", "U2-p27-act7", "U2-p27-act8", "U2-p27-act9", "U2-p27-act10", "U2-p27-act11", "U2-p27-act12"]
     },
     "destrezas": {
       "paginas": [
         28,
         29
       ],
-      "actividades_ids": [
-        "U2-p28-act01",
-        "U2-p28-act02",
-        "U2-p29-act03",
-        "U2-p29-act04",
-        "U2-p29-act05",
-        "U2-p29-act06",
-        "U2-p29-act07",
-        "U2-p29-act08"
-      ]
+      "actividades_ids": ["U2-p28-act1", "U2-p28-act2", "U2-p29-act3", "U2-p29-act4", "U2-p29-act5", "U2-p29-act6", "U2-p29-act7", "U2-p29-act8"]
     },
     "cultura": {
       "paginas": [
         30
       ],
-      "actividades_ids": [
-        "U2-p30-act01",
-        "U2-p30-act02",
-        "U2-p30-act03",
-        "U2-p30-act04"
-      ]
+      "actividades_ids": ["U2-p30-act1", "U2-p30-act2", "U2-p30-act3", "U2-p30-act4"]
     },
     "evaluacion": {
       "paginas": [
         31
       ],
-      "actividades_ids": [
-        "U2-p31-act01",
-        "U2-p31-act02",
-        "U2-p31-act03",
-        "U2-p31-act04",
-        "U2-p31-act05",
-        "U2-p31-act06",
-        "U2-p31-act07",
-        "U2-p31-act08"
-      ]
+      "actividades_ids": ["U2-p31-act1", "U2-p31-act2", "U2-p31-act3", "U2-p31-act4", "U2-p31-act5", "U2-p31-act6", "U2-p31-act7", "U2-p31-act8"]
     },
     "reflexion": {
-      "paginas": [],
+      "paginas": [
+        31
+      ],
       "actividades_ids": []
     }
   },
   "autoevaluacion": {
     "pagina": 31,
     "instruccion_original": "Mis resultados en esta unidad son:",
-    "opciones": [
-      "MUY BUENOS",
-      "BUENOS",
-      "NO MUY BUENOS"
-    ],
+    "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
     "emoticonos": true
   },
+  "_decisiones_ia": [
+    "P1: 'Uso de las mayúsculas' codificado en pronunciacion_ortografia_consolidada.principal['Mayúsculas'] (canónico literal del registry pron/orto) a pesar de que el índice editorial U2 lo coloca en GRAMÁTICA[]. Decisión autor 2026-05-15.",
+    "P2: 'Números del 21 al 100' codificado en vocabulario_consolidado.principal['Números cardinales'] (canónico literal con aliases_indice 'Números 21-100') a pesar de aparecer en COMUNICACIÓN[] del índice editorial. Decisión autor 2026-05-15.",
+    "P3: Categoría gramatical 'Nombres propios' ampliada en U2 para cubrir antropónimos Y topónimos (países, ciudades, ríos, montañas) y títulos de obras. Decisión autor 2026-05-15. PENDIENTE actualización del registry gramatica-canonica.json con nota de extensión (v10.126).",
+    "P4: Anticipación de §5.2 sobreescrita por decisión del autor. Se registran en tiempos_y_verbos todos los lemas cuyas formas conjugadas aparecen en el contenido de las actividades, incluidos vivir/estudiar/gustar/ir/estar/hablar (canónicos de U3-U6). Excluida metalengua imperativa de enunciados (Lee, Mira, Escucha, Repite, Escribe, Completa, Subraya, Marca, Relaciona, Ordena, Contesta, Responde, Pregunta, Continúa, Imagina, Crea, Habla, Piensa, Comprueba, Busca, Forma).",
+    "Audio 30 (p29-act3) presente sin transcripción visible en la página; per §6.6 su contenido NO cuenta como fuente para los bloques consolidados — las listas tipadas de esa actividad se pueblan solo desde texto verbatim (las 7 afirmaciones V/F).",
+    "p30-act3 (Relaciona definiciones de palabras subrayadas): léxico heterogéneo intra-ejercicio (descanso=sustantivo, distintas=adjetivo, alrededor de=locución, extraescolares=adjetivo, optativas=adjetivo). Per §5.7, vocabulario de la actividad queda como [] sin forzar canónico único; los items relevantes quedan capturados en la categoría recurrente 'Centros e instituciones educativas'.",
+    "Acts p27-act11 y p27-act12 ('Escucha y repite las vocales españolas' / 'Escucha y repite' palabras-muestra): enfoque=pronunciacion_ortografia. El cuadro lateral 'Pronunciación y ortografía' es un rótulo de sección, no un cuadro independiente con contenido propio; sus actividades se modelan directamente.",
+    "p27-act7 ('Escribe los números que escuchas' con pares numéricos): enfoque=pronunciacion_ortografia per §2.3 heurística de dictado, no vocabulario. La fuente queda registrada en 'Números cardinales' como uso léxico secundario."
+  ],
   "paginas_detalle": [
     {
       "pagina": 22,
       "seccion": "vocabulario",
       "actividades": [
         {
-          "id": "U2-p22-act01",
+          "id": "U2-p22-act1",
           "numero": 1,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_auditiva",
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira las imágenes y completa las frases con los países del recuadro. Después, escucha y comprueba.",
-          "contenido_linguistico": [
-            "países hispanohablantes",
-            "verbo ser"
+          "vocabulario": ["Países hispanohablantes"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "campo_semantico": "Países",
-          "audio": {
-            "presente": true,
-            "pista": 18
-          },
-          "imagen": {
-            "presente": true,
-            "descripcion": "7 imágenes que representan elementos típicos de países hispanohablantes: tango (Argentina), tacos (México), café (Colombia), banana (Ecuador), Don Quijote (España), poncho (Bolivia), Machu Picchu (Perú)."
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 18, "transcripcion": "Colombia, Ecuador, Perú, Argentina, Bolivia, España, México" },
+          "imagen": { "presente": true, "descripcion": "7 fotografías numeradas: 1 pareja bailando tango, 2 plato de tacos, 3 granos de café, 4 racimo de bananas, 5 silueta de Don Quijote sobre fondo naranja, 6 poncho colorido, 7 vista de Machu Picchu." },
+          "video": { "presente": false },
           "respuestas": [
-            "1 Argentina",
-            "2 México",
-            "3 Colombia",
-            "4 Ecuador",
-            "5 España",
-            "6 Bolivia",
-            "7 Perú"
+            "1 El tango es el baile típico de Argentina.",
+            "2 Los tacos son la comida típica de México.",
+            "3 El café es un producto típico de Colombia.",
+            "4 La banana es la fruta típica de Ecuador.",
+            "5 Don Quijote es de España.",
+            "6 El poncho es una prenda de vestir típica de Bolivia.",
+            "7 Machu Picchu es una antigua ciudad inca del Perú."
           ],
           "datos": {
-            "palabras_recuadro": [
-              "Colombia",
-              "Ecuador",
-              "Perú",
-              "Argentina",
-              "Bolivia",
-              "España",
-              "México"
-            ],
+            "palabras_recuadro": ["Colombia", "Ecuador", "Perú", "Argentina", "Bolivia", "España", "México"],
             "items_libro": [
               "1 El tango es el baile típico de _____.",
               "2 Los tacos son la comida típica de _____.",
@@ -311,81 +736,60 @@
           }
         },
         {
-          "id": "U2-p22-act02",
+          "id": "U2-p22-act2",
           "numero": 2,
-          "tipo": "produccion_escrita_guiada",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escribe la nacionalidad de los países del ejercicio 1.",
-          "contenido_linguistico": [
-            "adjetivos de nacionalidad",
-            "género"
-          ],
-          "campo_semantico": "Nacionalidades",
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "vocabulario": ["Adjetivos de nacionalidad"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Concordancia de género"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [
-            "1 Argentina — argentino / argentina",
-            "2 Colombia — colombiano / colombiana",
-            "3 Ecuador — ecuatoriano / ecuatoriana",
-            "4 Bolivia — boliviano / boliviana",
-            "5 Perú — peruano / peruana",
-            "6 España — español / española"
+            "México: mexicano / mexicana",
+            "1 Argentina: argentino / argentina",
+            "2 Colombia: colombiano / colombiana",
+            "3 Ecuador: ecuatoriano / ecuatoriana",
+            "4 Bolivia: boliviano / boliviana",
+            "5 Perú: peruano / peruana",
+            "6 España: español / española"
           ],
           "datos": {
-            "ejemplo_libro": "México — mexicano / mexicana",
-            "items_libro": [
-              "1 Argentina",
-              "2 Colombia",
-              "3 Ecuador",
-              "4 Bolivia",
-              "5 Perú",
-              "6 España"
+            "cuadricula": [
+              ["PAÍS", "Nacionalidad (masculino)", "Nacionalidad (femenino)"],
+              ["México", "mexicano", "mexicana"],
+              ["1 Argentina", "_____", "_____"],
+              ["2 Colombia", "_____", "_____"],
+              ["3 Ecuador", "_____", "_____"],
+              ["4 Bolivia", "_____", "_____"],
+              ["5 Perú", "_____", "_____"],
+              ["6 España", "_____", "_____"]
             ]
           }
         },
         {
-          "id": "U2-p22-act03",
+          "id": "U2-p22-act3",
           "numero": 3,
-          "tipo": "responder_preguntas_abiertas",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "tipo": "seleccion_multiple",
+          "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿De dónde eres tú? Señala o completa tu nacionalidad.",
-          "contenido_linguistico": [
-            "adjetivos de nacionalidad",
-            "verbo ser"
+          "vocabulario": ["Adjetivos de nacionalidad", "Nacionalidad"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Soy", "eres"]}
           ],
-          "campo_semantico": "Nacionalidades",
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Interrogativos", "Pronombre sujeto"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "items_libro": [
-              "Soy alemán/-ana.",
-              "Soy polaco/-a.",
-              "Soy griego/-a.",
-              "Soy japonés/-esa.",
-              "Soy inglés/-esa.",
-              "Soy _____."
-            ]
+            "items_libro": ["Soy alemán/-ana.", "Soy polaco/-a.", "Soy griego/-a.", "Soy japonés/-esa.", "Soy inglés/-esa.", "Soy _____."]
           }
         }
       ]
@@ -395,413 +799,263 @@
       "seccion": "vocabulario",
       "actividades": [
         {
-          "id": "U2-p23-act04",
+          "id": "U2-p23-act4",
           "numero": 4,
           "tipo": "lee_y_escucha",
-          "destreza": [
-            "comprension_auditiva",
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Lee y escucha.",
-          "contenido_linguistico": [
-            "el español en el mundo",
-            "números ordinales"
+          "vocabulario": ["Países hispanohablantes", "Números ordinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es"]},
+            {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablan"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
           ],
+          "gramatica": ["Artículos determinados", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
-            "pista": 19
+            "pista": 19,
+            "transcripcion": "El español es una lengua muy importante internacionalmente. Es la lengua oficial de España, México, los países de América Central y la mayoría de los países de América del Sur y de Guinea Ecuatorial. Es la tercera lengua más hablada del mundo: la hablan más de 580 millones de personas. En Estados Unidos es el segundo idioma y se usa frecuentemente en la radio y la televisión. El español también se llama «castellano»."
           },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "texto_completo": "El español es una lengua muy importante internacionalmente. Es la lengua oficial de España, México, los países de América Central y la mayoría de los países de América del Sur y de Guinea Ecuatorial. Es la tercera* lengua más hablada del mundo: la hablan más de 580 millones de personas. En Estados Unidos es el segundo** idioma y se usa frecuentemente en la radio y la televisión. El español también se llama \"castellano\".\n* tercera = 3.ª\n* segundo = 2.º"
+            "texto_completo": "El español es una lengua muy importante internacionalmente. Es la lengua oficial de España, México, los países de América Central y la mayoría de los países de América del Sur y de Guinea Ecuatorial. Es la tercera* lengua más hablada del mundo: la hablan más de 580 millones de personas. En Estados Unidos es el segundo** idioma y se usa frecuentemente en la radio y la televisión. El español también se llama «castellano».\n* tercera = 3.ª\n** segundo = 2.º"
           }
         },
         {
-          "id": "U2-p23-act05",
+          "id": "U2-p23-act5",
           "numero": 5,
           "tipo": "verdadero_falso",
-          "destreza": [
-            "comprension_lectora"
-          ],
-          "enfoque": "transversal",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "cultura",
           "instruccion_original": "¿Verdadero (V) o falso (F)?",
-          "contenido_linguistico": [
-            "el español en el mundo"
+          "vocabulario": ["Números ordinales", "Países hispanohablantes"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 F",
-            "2 V",
-            "3 F"
-          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["F", "V", "F"],
           "datos": {
-            "items_libro": [
-              "1 El español es la segunda lengua más hablada del mundo.",
-              "2 El español es la lengua oficial de la mayoría de los países de América del Sur.",
-              "3 El español es la lengua oficial de EE. UU."
-            ]
+            "afirmaciones_a_corregir": ["1 El español es la segunda lengua más hablada del mundo.", "2 El español es la lengua oficial de la mayoría de los países de América del Sur.", "3 El español es la lengua oficial de EE. UU."]
           }
         },
         {
-          "id": "U2-p23-act06",
+          "id": "U2-p23-act6",
           "numero": 6,
           "tipo": "escucha_y_repite",
-          "destreza": [
-            "comprension_auditiva",
-            "expresion_oral",
-            "interaccion_oral"
-          ],
+          "destreza": ["comprension_auditiva", "expresion_oral", "interaccion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y repite los días de la semana. Después, pregunta a tu compañero, como en el ejemplo.",
-          "contenido_linguistico": [
-            "días de la semana"
+          "vocabulario": ["Días de la semana"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "campo_semantico": "Días de la semana",
-          "audio": {
-            "presente": true,
-            "pista": 20
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 20, "transcripcion": "lunes, martes, miércoles, jueves, viernes, sábado, domingo" },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "items_libro": [
-              "_lu_nes",
-              "_mar_tes",
-              "_miér_coles",
-              "_jué_ves",
-              "_vier_nes",
-              "_sá_bado",
-              "do_min_go"
-            ],
-            "ejemplo_libro": "¿Cuál es tu día favorito de la semana? / Mi día favorito de la semana es el viernes.",
-            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+            "items_libro": ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"],
+            "ejemplo_libro": "• ¿Cuál es tu día favorito de la semana?\n■ Mi día favorito de la semana es el viernes."
           }
         },
         {
-          "id": "U2-p23-act07",
+          "id": "U2-p23-act7",
           "numero": 7,
           "tipo": "escucha_y_repite",
-          "destreza": [
-            "comprension_auditiva",
-            "expresion_oral"
-          ],
+          "destreza": ["comprension_auditiva", "expresion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y repite los números ordinales.",
-          "contenido_linguistico": [
-            "números ordinales"
-          ],
-          "campo_semantico": "Números ordinales",
-          "audio": {
-            "presente": true,
-            "pista": 21
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "vocabulario": ["Números ordinales"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Concordancia de género"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 21, "transcripcion": "primero / primera, segundo / segunda, tercero / tercera, cuarto / cuarta, quinto / quinta, sexto / sexta, séptimo / séptima, octavo / octava, noveno / novena, décimo / décima" },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "items_libro": [
-              "pri_me_ro / pri_me_ra",
-              "se_gun_do / se_gun_da",
-              "ter_ce_ro / ter_ce_ra",
-              "_cuar_to / _cuar_ta",
-              "_quin_to / _quin_ta",
-              "_sex_to / _sex_ta",
-              "sép_ti_mo / sép_ti_ma",
-              "oc_ta_vo / oc_ta_va",
-              "no_ve_no / no_ve_na",
-              "_dé_cimo / _dé_cima"
-            ],
-            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+            "items_libro": ["primero / primera", "segundo / segunda", "tercero / tercera", "cuarto / cuarta", "quinto / quinta", "sexto / sexta", "séptimo / séptima", "octavo / octava", "noveno / novena", "décimo / décima"]
           }
         },
         {
-          "id": "U2-p23-act08",
+          "id": "U2-p23-act8",
           "numero": 8,
-          "tipo": "produccion_escrita_guiada",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escribe los siguientes números ordinales.",
-          "contenido_linguistico": [
-            "números ordinales",
-            "género"
-          ],
-          "campo_semantico": "Números ordinales",
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1.ª primera",
-            "1.º primero",
-            "6.º sexto",
-            "2.º segundo",
-            "5.ª quinta",
-            "4.ª cuarta",
-            "2.ª segunda",
-            "6.ª sexta",
-            "8.º octavo",
-            "9.ª novena",
-            "7.ª séptima",
-            "10.º décimo"
-          ],
+          "vocabulario": ["Números ordinales"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Concordancia de género"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1.ª primera", "1.º primero", "6.º sexto", "2.º segundo", "5.ª quinta", "4.ª cuarta", "2.ª segunda", "6.ª sexta", "8.º octavo", "9.ª novena", "7.ª séptima", "10.º décimo"],
           "datos": {
-            "ejemplo_libro": "3.º tercero / 3.ª tercera",
-            "items_libro": [
-              "1.ª",
-              "1.º",
-              "6.º",
-              "2.º",
-              "5.ª",
-              "4.ª",
-              "2.ª",
-              "6.ª",
-              "8.º",
-              "9.ª",
-              "7.ª",
-              "10.º"
-            ]
+            "ejemplo_libro": "3.º tercero    3.ª tercera",
+            "items_libro": ["1.ª _____", "1.º _____", "6.º _____", "2.º _____", "5.ª _____", "4.ª _____", "2.ª _____", "6.ª _____", "8.º _____", "9.ª _____", "7.ª _____", "10.º _____"]
           }
         },
         {
-          "id": "U2-p23-act09",
+          "id": "U2-p23-act9",
           "numero": 9,
           "tipo": "relaciona",
-          "destreza": [
-            "comprension_auditiva",
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y repite los nombres de las asignaturas. Después, relaciona cada asignatura con su dibujo.",
-          "contenido_linguistico": [
-            "asignaturas"
-          ],
-          "campo_semantico": "Asignaturas",
-          "audio": {
-            "presente": true,
-            "pista": 22
-          },
+          "vocabulario": ["Asignaturas"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 22, "transcripcion": "Ciencias Naturales, Ciencias Sociales, Educación Física, Francés, Lengua, Español, Matemáticas, Música, Educación Plástica, Informática" },
           "imagen": {
             "presente": true,
-            "descripcion": "10 dibujos numerados del 1 al 10 representando asignaturas: 1 Educación Física, 2 Lengua, 3 Educación Plástica, 4 Ciencias Sociales, 5 Ciencias Naturales, 6 Música, 7 Español, 8 Matemáticas, 9 Informática, 10 Francés."
+            "descripcion": "10 iconos circulares numerados (1-10): 1 raquetas y pelotas, 2 diccionario A-Z, 3 paleta de pintor, 4 globo terráqueo, 5 tubos de ensayo (química/biología), 6 piano, 7 bandera española, 8 calculadora, 9 ordenador, 10 bandera francesa."
           },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "Ciencias Naturales → 5",
-            "Ciencias Sociales → 4",
-            "Educación Física → 1",
-            "Francés → 10",
-            "Lengua → 2",
-            "Español → 7",
-            "Matemáticas → 8",
-            "Música → 6",
-            "Educación Plástica → 3",
-            "Informática → 9"
-          ],
+          "video": { "presente": false },
+          "respuestas": ["Ciencias Naturales – 5", "Ciencias Sociales – 4", "Educación Física – 1", "Francés – 10", "Lengua – 2", "Español – 7", "Matemáticas – 8", "Música – 6", "Educación Plástica – 3", "Informática – 9"],
           "datos": {
-            "items_libro": [
-              "Ciencias Naturales",
-              "Ciencias Sociales",
-              "Educación Física",
-              "Francés",
-              "Lengua",
-              "Español",
-              "Matemáticas",
-              "Música",
-              "Educación Plástica",
-              "Informática"
-            ],
-            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+            "columnas_relaciona": {
+              "izquierda": ["Ciencias Naturales", "Ciencias Sociales", "Educación Física", "Francés", "Lengua", "Español", "Matemáticas", "Música", "Educación Plástica", "Informática"],
+              "derecha": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+            }
           }
         },
         {
           "id": "U2-p23-act10",
           "numero": 10,
           "tipo": "interaccion_oral",
-          "destreza": [
-            "interaccion_oral"
-          ],
-          "enfoque": "vocabulario",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "comunicacion",
           "instruccion_original": "Habla con tu compañero como en el ejemplo.",
-          "contenido_linguistico": [
-            "asignaturas",
-            "verbo ser"
+          "vocabulario": ["Asignaturas"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "¿Cuál es tu asignatura favorita? / Mi asignatura favorita es la Educación Física."
-          }
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["¿Cuál es tu asignatura favorita?", "Mi asignatura favorita es la Educación Física."],
+          "datos": { "ejemplo_libro": "• ¿Cuál es tu asignatura favorita?\n■ Mi asignatura favorita es la Educación Física." }
         },
         {
           "id": "U2-p23-act11",
           "numero": 11,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_auditiva"
-          ],
+          "destreza": ["comprension_auditiva"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y completa el horario.",
-          "contenido_linguistico": [
-            "asignaturas",
-            "números ordinales",
-            "días de la semana"
-          ],
+          "vocabulario": ["Asignaturas", "Días de la semana", "Números ordinales"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
-            "pista": 23
+            "pista": 23,
+            "transcripcion": "(audio dicta las celdas del horario: 1.ª lunes Español, 1.ª miércoles C. Naturales, 1.ª jueves Matemáticas, 2.ª lunes Matemáticas, 2.ª miércoles Lengua, 2.ª jueves Español, 3.ª lunes Lengua, 3.ª miércoles Lengua, 4.ª lunes C. Naturales, 5.ª lunes C. Sociales, 5.ª miércoles C. Sociales, 6.ª lunes Informática, 6.ª miércoles Informática)"
           },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [
-            "1.ª Lunes=Español, Martes=Lengua, Miércoles=C. Naturales, Jueves=Matemáticas",
-            "2.ª Lunes=Matemáticas, Miércoles=Lengua, Jueves=Español, Viernes=C. Naturales",
-            "3.ª Lunes=Lengua, Jueves=Lengua, Viernes=Español",
-            "4.ª Lunes=C. Naturales, Martes=Informática, Viernes=Matemáticas",
-            "5.ª Lunes=C. Sociales, Miércoles=C. Sociales, Jueves=C. Sociales, Viernes=Lengua",
-            "6.ª Lunes=Informática, Jueves=Informática"
+            "1.ª Lunes: Español",
+            "1.ª Miércoles: C. Naturales",
+            "1.ª Jueves: Matemáticas",
+            "2.ª Lunes: Matemáticas",
+            "2.ª Miércoles: Lengua",
+            "2.ª Jueves: Español",
+            "3.ª Lunes: Lengua",
+            "3.ª Miércoles: Lengua",
+            "4.ª Lunes: C. Naturales",
+            "5.ª Lunes: C. Sociales",
+            "5.ª Miércoles: C. Sociales",
+            "6.ª Lunes: Informática",
+            "6.ª Miércoles: Informática"
           ],
           "datos": {
-            "items_libro": [
-              "Tabla horario semanal completamente en blanco: filas 1.ª–6.ª hora + RECREO, columnas Lunes–Viernes."
-            ],
-            "_nota": "Todas las respuestas visibles en el libro están en violeta/cursiva. Las celdas marcadas (audio) no aparecen en el libro impreso; se completan exclusivamente con la pista 23."
+            "cuadricula": [
+              ["", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+              ["1.ª", "_____", "Lengua", "_____", "_____", ""],
+              ["2.ª", "_____", "", "_____", "_____", "C. Naturales"],
+              ["3.ª", "_____", "", "_____", "Lengua", "Español"],
+              ["RECREO", "", "", "", "", ""],
+              ["4.ª", "_____", "Informática", "", "", "Matemáticas"],
+              ["5.ª", "_____", "", "_____", "_____", "Lengua"],
+              ["6.ª", "_____", "", "_____", "", "Informática"]
+            ]
           }
         },
         {
           "id": "U2-p23-act12",
           "numero": 12,
-          "tipo": "interaccion_oral",
-          "destreza": [
-            "interaccion_oral"
-          ],
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora", "interaccion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Termina de completar el horario del ejercicio anterior con las demás asignaturas. Después, pregunta a tu compañero, como en el ejemplo.",
-          "contenido_linguistico": [
-            "asignaturas",
-            "números ordinales",
-            "días de la semana"
+          "vocabulario": ["Asignaturas", "Días de la semana", "Números ordinales"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "¿Qué tienes a segunda hora el martes?"
-          }
+          "datos": { "ejemplo_libro": "¿Qué tienes a segunda hora el martes?" }
         },
         {
           "id": "U2-p23-act13",
           "numero": 13,
-          "tipo": "expresion_escrita_libre",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "Ahora escribe tu horario real y colorea las casillas con diferentes colores para cada asignatura.",
-          "contenido_linguistico": [
-            "asignaturas",
-            "números ordinales",
-            "días de la semana"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": []
+          "vocabulario": ["Asignaturas", "Días de la semana", "Números ordinales"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {}
         }
-      ],
-      "cuadros": []
+      ]
     },
     {
       "pagina": 24,
       "seccion": "gramatica",
       "actividades": [
         {
-          "id": "U2-p24-act01",
+          "id": "U2-p24-act1",
           "numero": 1,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa los huecos con la forma correcta del verbo ser.",
-          "contenido_linguistico": [
-            "verbo ser (presente plural)"
+          "vocabulario": ["Adjetivos de nacionalidad"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["somos", "sois", "son", "es"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 sois",
-            "2 son",
-            "3 es",
-            "4 son",
-            "5 es",
-            "6 son",
-            "7 es"
-          ],
+          "gramatica": ["Pronombre sujeto", "Demostrativos", "Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["somos", "sois", "son", "es", "son", "es", "son", "es"],
           "datos": {
             "ejemplo_libro": "Mi compañera Verónica y yo no somos españolas.",
             "items_libro": [
@@ -816,36 +1070,22 @@
           }
         },
         {
-          "id": "U2-p24-act02",
+          "id": "U2-p24-act2",
           "numero": 2,
           "tipo": "seleccion_multiple",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Subraya la forma correcta.",
-          "contenido_linguistico": [
-            "verbo tener (presente plural)"
+          "vocabulario": ["Asignaturas", "Adjetivos de nacionalidad", "Edad"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tenemos", "tiene", "tienen", "tenéis"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "tenemos",
-            "1 tiene",
-            "2 tienen",
-            "3 tenéis",
-            "4 tenemos",
-            "5 tienen",
-            "6 tienen",
-            "7 tiene"
-          ],
+          "gramatica": ["Pronombre sujeto", "Demostrativos", "Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["tenemos", "tiene", "tienen", "tenéis", "tenemos", "tienen", "tienen", "tiene"],
           "datos": {
             "ejemplo_libro": "Mi compañera y yo hoy no tengo / tenemos clase de francés.",
             "items_libro": [
@@ -860,45 +1100,27 @@
           }
         },
         {
-          "id": "U2-p24-act03",
+          "id": "U2-p24-act3",
           "numero": 3,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa el mensaje de Cristina con las formas del recuadro.",
-          "contenido_linguistico": [
-            "verbo ser",
-            "verbo tener",
-            "demostrativos"
+          "vocabulario": ["Edad", "Saludos y despedidas", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "son", "somos"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": true,
-            "descripcion": "Foto de una chica joven (Cristina) junto a un mensaje de texto en pantalla con huecos numerados [1]-[5]."
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "[1] Tengo",
-            "[2] soy",
-            "[3] Estos",
-            "[4] son",
-            "[5] somos"
-          ],
+          "gramatica": ["Demostrativos", "Pronombre sujeto", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Marco de mensaje tipo email con foto de dos chicas (Rosa y Dani) inclinadas sonriendo." },
+          "video": { "presente": false },
+          "respuestas": ["Tengo", "soy", "Estos", "son", "somos"],
           "datos": {
-            "palabras_recuadro": [
-              "somos",
-              "soy",
-              "tengo",
-              "estos",
-              "son"
-            ],
-            "texto_completo": "Me llamo Cristina, [1] _____ 13 años y [2] _____ de Madrid. [3] _____ de la foto [4] _____ mis amigos, Rosa y Dani. Nosotros [5] _____ compañeros de clase. Un saludo, Cristina"
+            "palabras_recuadro": ["somos", "soy", "tengo", "estos", "son"],
+            "texto_completo": "Me llamo Cristina, [1] _____ 13 años y [2] _____ de Madrid. [3] _____ de la foto [4] _____ mis amigos, Rosa y Dani. Nosotros [5] _____ compañeros de clase.\nUn saludo,\nCristina"
           }
         }
       ],
@@ -908,75 +1130,63 @@
           "titulo": "Presente de los verbos ser y tener",
           "contenido": {
             "tipo": "tabla_conjugacion",
-            "verbos": [
-              "ser",
-              "tener"
-            ],
-            "formas": {
-              "yo": [
-                "soy",
-                "tengo"
-              ],
-              "tú": [
-                "eres",
-                "tienes"
-              ],
-              "él / ella / usted": [
-                "es",
-                "tiene"
-              ],
-              "nosotros/-as": [
-                "somos",
-                "tenemos"
-              ],
-              "vosotros/-as": [
-                "sois",
-                "tenéis"
-              ],
-              "ellos / ellas / ustedes": [
-                "son",
-                "tienen"
-              ]
-            }
-          }
+            "tabla": [
+              ["", "ser", "tener"],
+              ["yo", "soy", "tengo"],
+              ["tú", "eres", "tienes"],
+              ["él / ella / usted", "es", "tiene"],
+              ["nosotros/-as", "somos", "tenemos"],
+              ["vosotros/-as", "sois", "tenéis"],
+              ["ellos / ellas / ustedes", "son", "tienen"]
+            ]
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "eres", "es", "somos", "sois", "son"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"]}
+          ],
+          "gramatica": ["Pronombre sujeto"],
+          "pronunciacion_ortografia": []
         },
         {
           "tipo_cuadro": "gramatical",
           "titulo": "Plural de nombres y adjetivos",
           "contenido": {
-            "tipo": "tabla_plural",
-            "nombres": {
-              "reglas": [
-                "singular: coche → plural: coches",
-                "singular: camión → plural: camiones"
-              ]
-            },
-            "adjetivos": {
-              "singular_masculino": "el gato blanco / el gato grande",
-              "singular_femenino": "la gata blanca / la gata grande",
-              "plural_masculino": "los gatos blancos / los gatos grandes",
-              "plural_femenino": "las gatas blancas / las gatas grandes"
-            }
-          }
+            "tipo": "tabla_concordancia",
+            "subbloque_nombres": [
+              ["singular", "plural"],
+              ["coche", "coches"],
+              ["camión", "camiones"]
+            ],
+            "subbloque_adjetivos": [
+              ["", "masculino", "femenino"],
+              ["singular", "el gato blanco / el gato grande", "la gata blanca / la gata grande"],
+              ["plural", "los gatos blancos / los gatos grandes", "las gatas blancas / las gatas grandes"]
+            ]
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Concordancia de número", "Concordancia de género", "Artículos determinados"],
+          "pronunciacion_ortografia": []
         },
         {
           "tipo_cuadro": "gramatical",
           "titulo": "Demostrativos",
           "contenido": {
             "tipo": "tabla_demostrativos",
-            "tabla": {
-              "singular_masculino": "este libro",
-              "singular_femenino": "esta casa",
-              "plural_masculino": "estos libros",
-              "plural_femenino": "estas casas"
-            },
-            "ejemplos": [
-              "Este es Juan.",
-              "Esta es Lola.",
-              "Estos son Andrés y Lucía.",
-              "Estas son Laura y Rosa."
-            ]
-          }
+            "tabla": [
+              ["", "masculino", "femenino"],
+              ["singular", "este libro", "esta casa"],
+              ["plural", "estos libros", "estas casas"]
+            ],
+            "ejemplos": ["Este es Juan.", "Esta es Lola.", "Estos son Andrés y Lucía.", "Estas son Laura y Rosa."]
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]}
+          ],
+          "gramatica": ["Demostrativos", "Nombres propios"],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -985,27 +1195,19 @@
       "seccion": "gramatica",
       "actividades": [
         {
-          "id": "U2-p25-act04",
+          "id": "U2-p25-act4",
           "numero": 4,
-          "tipo": "produccion_escrita_guiada",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Forma el plural de los siguientes grupos de nombre + adjetivo",
-          "contenido_linguistico": [
-            "plural de nombres y adjetivos",
-            "género y número"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "vocabulario": ["Adjetivos de nacionalidad", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Concordancia de número", "Concordancia de género", "Artículos determinados"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [
             "1 las pizarras blancas",
             "2 los profesores chinos",
@@ -1019,40 +1221,33 @@
           "datos": {
             "ejemplo_libro": "la mochila roja → las mochilas rojas",
             "items_libro": [
-              "1 la pizarra blanca",
-              "2 el profesor chino",
-              "3 la directora peruana",
-              "4 la ventana pequeña",
-              "5 el estudiante inteligente",
-              "6 el compañero alemán",
-              "7 la amiga española",
-              "8 la puerta grande"
+              "1 la pizarra blanca → _____",
+              "2 el profesor chino → _____",
+              "3 la directora peruana → _____",
+              "4 la ventana pequeña → _____",
+              "5 el estudiante inteligente → _____",
+              "6 el compañero alemán → _____",
+              "7 la amiga española → _____",
+              "8 la puerta grande → _____"
             ]
           }
         },
         {
-          "id": "U2-p25-act05",
+          "id": "U2-p25-act5",
           "numero": 5,
-          "tipo": "produccion_escrita_guiada",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Ahora escribe el plural de las frases, como en el ejemplo.",
-          "contenido_linguistico": [
-            "plural de nombres y adjetivos",
-            "demostrativos"
+          "vocabulario": ["Adjetivos de nacionalidad"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": true,
-            "descripcion": "Tabla SINGULAR / PLURAL con imagen de una flor amarilla (singular) y varias flores amarillas (plural) como ejemplo visual."
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Concordancia de número", "Concordancia de género", "Demostrativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Dos fotos: SINGULAR (una mano señalando una flor amarilla) / PLURAL (una mano sosteniendo un ramo de flores amarillas)." },
+          "video": { "presente": false },
           "respuestas": [
             "1 Estos bolígrafos son rojos.",
             "2 Estos libros son azules.",
@@ -1066,81 +1261,64 @@
           "datos": {
             "ejemplo_libro": "Esta flor es amarilla. → Estas flores son amarillas.",
             "items_libro": [
-              "1 Este bolígrafo es rojo.",
-              "2 Este libro es azul.",
-              "3 Esta silla es verde.",
-              "4 Esta casa es blanca.",
-              "5 Esta pizarra es gris.",
-              "6 Este lápiz es marrón.",
-              "7 Esta niña es alta.",
-              "8 Este chico es español."
+              "1 Este bolígrafo es rojo. → _____",
+              "2 Este libro es azul. → _____",
+              "3 Esta silla es verde. → _____",
+              "4 Esta casa es blanca. → _____",
+              "5 Esta pizarra es gris. → _____",
+              "6 Este lápiz es marrón. → _____",
+              "7 Esta niña es alta. → _____",
+              "8 Este chico es español. → _____"
             ]
           }
         },
         {
-          "id": "U2-p25-act06",
+          "id": "U2-p25-act6",
           "numero": 6,
           "tipo": "interaccion_oral",
-          "destreza": [
-            "interaccion_oral"
-          ],
-          "enfoque": "comunicacion",
+          "destreza": ["interaccion_oral"],
+          "enfoque": "gramatica",
           "instruccion_original": "En parejas, pregunta y responde a tu compañero sobre estos personajes, como en el ejemplo.",
-          "contenido_linguistico": [
-            "verbo ser",
-            "adjetivos de nacionalidad",
-            "demostrativos",
-            "interrogativos"
+          "vocabulario": ["Adjetivos de nacionalidad", "Países hispanohablantes", "Nacionalidad"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son", "Es", "Son"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": true,
-            "descripcion": "5 fotos de jóvenes con nombre y país: Pedro (Perú), 1 María (Colombia), 2 Carlos (España), 3 Alberto y Rosario (Ecuador), 4 Elena y Alicia (Nicaragua)."
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Demostrativos", "Interrogativos", "Nombres propios", "Concordancia de género"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "5 fotos de personajes con etiqueta: Pedro/Perú (chico), 1 María/Colombia (chica), 2 Carlos/España (chico), 3 Alberto y Rosario/Ecuador (pareja), 4 Elena y Alicia/Nicaragua (pareja)." },
+          "video": { "presente": false },
           "respuestas": [
-            "¿Quién es este? / Es Pedro. / ¿De dónde es? / Es peruano.",
+            "¿Quién es este? — Es Pedro. ¿De dónde es? — Es peruano.",
             "1 ¿Quién es esta? / Es María. / ¿De dónde es? / Es colombiana.",
             "2 ¿Quién es este? / Es Carlos. / ¿De dónde es? / Es español.",
             "3 ¿Quiénes son estos? / Son Alberto y Rosario. / ¿De dónde son? / Son ecuatorianos.",
             "4 ¿Quiénes son estas? / Son Elena y Alicia. / ¿De dónde son? / Son nicaragüenses."
           ],
           "datos": {
-            "ejemplo_libro": "¿Quién es este? / Es Pedro. / ¿De dónde es? / Es peruano. / ¿Quiénes son estos? / ¿Quiénes son estas?",
-            "personajes": [
-              "Pedro, Perú",
-              "María, Colombia",
-              "Carlos, España",
-              "Alberto y Rosario, Ecuador",
-              "Elena y Alicia, Nicaragua"
-            ]
+            "ejemplo_libro": "¿Quién es este? — Es Pedro. ¿De dónde es? — Es peruano. ¿Quiénes son estos? ¿Quiénes son estas?",
+            "personajes": ["Pedro, Perú", "1 María, Colombia", "2 Carlos, España", "3 Alberto y Rosario, Ecuador", "4 Elena y Alicia, Nicaragua"]
           }
         },
         {
-          "id": "U2-p25-act07",
+          "id": "U2-p25-act7",
           "numero": 7,
           "tipo": "produccion_escrita_guiada",
-          "destreza": [
-            "expresion_escrita"
-          ],
-          "enfoque": "gramatica",
+          "destreza": ["expresion_escrita"],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escribe las frases correctamente.",
-          "contenido_linguistico": [
-            "uso de las mayúsculas"
+          "vocabulario": ["Países hispanohablantes", "Adjetivos de nacionalidad", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["le gusta"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": ["Mayúsculas"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [
             "Graciela y Pablo son compañeros de clase.",
             "1 Luis vive en Buenos Aires.",
@@ -1152,20 +1330,13 @@
           ],
           "datos": {
             "ejemplo_libro": "graciela y pablo son compañeros de clase. → Graciela y Pablo son compañeros de clase.",
-            "items_libro": [
-              "1 luis vive en buenos aires.",
-              "2 el río nilo es muy largo.",
-              "3 mi padre se llama luis rodríguez.",
-              "4 la capital de perú es lima.",
-              "5 fernando es mexicano, de puebla.",
-              "6 a juan le gusta batman."
-            ]
+            "frases": ["1 luis vive en buenos aires.", "2 el río nilo es muy largo.", "3 mi padre se llama luis rodríguez.", "4 la capital de perú es lima.", "5 fernando es mexicano, de puebla.", "6 a juan le gusta batman."]
           }
         }
       ],
       "cuadros": [
         {
-          "tipo_cuadro": "gramatical",
+          "tipo_cuadro": "pronunciacion_ortografia",
           "titulo": "Para aprender — Uso de las mayúsculas",
           "contenido": {
             "tipo": "lista_reglas",
@@ -1175,7 +1346,13 @@
               "los nombres y apellidos de personas, países, ríos, montañas…: Laura López, Francia, Amazonas, Everest…",
               "los títulos de películas, libros…: El rey león, Parque Jurásico…"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]}
+          ],
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": ["Mayúsculas"]
         }
       ]
     },
@@ -1184,198 +1361,131 @@
       "seccion": "comunicacion",
       "actividades": [
         {
-          "id": "U2-p26-act01",
+          "id": "U2-p26-act1",
           "numero": 1,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_auditiva",
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "contenido_linguistico": [
-            "presentarse",
-            "saludar",
-            "verbo ser",
-            "verbo tener",
-            "información personal"
+          "vocabulario": ["Adjetivos de nacionalidad", "Saludos y despedidas", "Edad", "Nacionalidad", "Países hispanohablantes", "Centros e instituciones educativas", "Números ordinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "Soy", "eres", "es", "Es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo", "tienes", "tiene"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo", "Me llamo", "te llamas"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vivo", "vive"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Vamos"], "estructura_perifrastica": "ir a + infinitivo"},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
           ],
+          "gramatica": ["Interrogativos", "Pronombre sujeto", "Nombres propios", "Demostrativos"],
+          "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
-            "pista": 24
+            "pista": 24,
+            "transcripcion": "PROFESORA: Hola, buenos días. Yo me llamo Natalia y soy la tutora de este curso. TODOS: Buenos días, Natalia. PROFESORA: Vamos a presentarnos. Por ejemplo… Tú, ¿cómo te llamas? PABLO: Me llamo Pablo. PROFESORA: ¿Cuántos años tienes? PABLO: Tengo 12 años. PROFESORA: ¿Y de dónde eres? PABLO: Soy de Madrid. GRACIELA: Yo soy Graciela. Tengo 12 años y mañana cumplo 13. Soy de Barcelona, pero vivo aquí, en Madrid. PROFESORA: ¿Y tu compañera? JULIA: Yo soy Julia, soy también de Madrid y tengo 13 años. PROFESORA: Y tú, ¿cómo te llamas? JORGE: Me llamo Jorge. PROFESORA: Bienvenido, Jorge. ¿Cuántos años tienes? JORGE: Tengo 12 años y soy argentino, de Buenos Aires. Mi padre es español y mi madre también es argentina. Es mi primer año en España. PROFESORA: Pues yo soy de Málaga, una ciudad que está en Andalucía, al sur de España. GRACIELA: ¡Mi amiga Lola también vive en Málaga!"
           },
-          "imagen": {
-            "presente": true,
-            "descripcion": "Tres fotografías de un aula con estudiantes y una profesora en distintos momentos de presentación."
-          },
-          "video": {
-            "presente": true
-          },
-          "respuestas": [
-            "[1] me llamo",
-            "[2] cómo te llamas",
-            "[3] ¿Cuántos años tienes?",
-            "[4] de dónde eres",
-            "[5] Tengo",
-            "[6] Soy",
-            "[7] soy"
-          ],
+          "imagen": { "presente": true, "descripcion": "Tres fotos del aula: profesora explicando frente a la pizarra; grupo de alumnos sentados escuchando; primer plano de un chico con sudadera azul." },
+          "video": { "presente": true },
+          "respuestas": ["[1] me llamo", "[2] cómo te llamas", "[3] Cuántos años tienes?", "[4] de dónde eres", "[5] Tengo", "[6] Soy", "[7] soy"],
           "datos": {
-            "palabras_recuadro": [
-              "de dónde eres",
-              "Tengo",
-              "¿Cuántos años tienes?",
-              "me llamo",
-              "cómo te llamas",
-              "soy (x2)"
-            ],
-            "dialogo_completo": [
-              "PROFESORA: Hola, buenos días. Yo [1] _____ Natalia y soy la tutora de este curso.",
-              "TODOS: Buenos días, Natalia.",
-              "PROFESORA: Vamos a presentarnos. Por ejemplo… Tú, ¿[2] _____?",
-              "PABLO: Me llamo Pablo.",
-              "PROFESORA: ¿[3] _____?",
-              "PABLO: Tengo 12 años.",
-              "PROFESORA: ¿Y [4] _____?",
-              "PABLO: Soy de Madrid.",
-              "GRACIELA: Yo soy Graciela. [5] _____ 12 años y mañana cumplo 13. [6] _____ de Barcelona, pero vivo aquí, en Madrid.",
-              "PROFESORA: ¿Y tu compañera?",
-              "JULIA: Yo [7] _____ Julia, soy también de Madrid y tengo 13 años.",
-              "PROFESORA: Y tú, ¿cómo te llamas?",
-              "JORGE: Me llamo Jorge.",
-              "PROFESORA: Bienvenido, Jorge. ¿Cuántos años tienes?",
-              "JORGE: Tengo 12 años y soy argentino, de Buenos Aires. Mi padre es español y mi madre también es argentina. Es mi primer año en España.",
-              "PROFESORA: Pues yo soy de Málaga, una ciudad que está en Andalucía, al sur de España.",
-              "GRACIELA: ¡Mi amiga Lola también vive en Málaga!"
+            "titulo_dialogo": "En clase",
+            "palabras_recuadro": ["de dónde eres", "Tengo", "¿Cuántos años tienes?", "me llamo", "cómo te llamas", "soy (x2)"],
+            "textos_personajes": [
+              { "personaje": "PROFESORA", "texto": "Hola, buenos días. Yo [1] _____ Natalia y soy la tutora de este curso." },
+              { "personaje": "TODOS", "texto": "Buenos días, Natalia." },
+              { "personaje": "PROFESORA", "texto": "Vamos a presentarnos. Por ejemplo… Tú, ¿[2] _____?" },
+              { "personaje": "PABLO", "texto": "Me llamo Pablo." },
+              { "personaje": "PROFESORA", "texto": "¿[3] _____?" },
+              { "personaje": "PABLO", "texto": "Tengo 12 años." },
+              { "personaje": "PROFESORA", "texto": "¿Y [4] _____?" },
+              { "personaje": "PABLO", "texto": "Soy de Madrid." },
+              { "personaje": "GRACIELA", "texto": "Yo soy Graciela. [5] _____ 12 años y mañana cumplo 13. [6] _____ de Barcelona, pero vivo aquí, en Madrid." },
+              { "personaje": "PROFESORA", "texto": "¿Y tu compañera?" },
+              { "personaje": "JULIA", "texto": "Yo [7] _____ Julia, soy también de Madrid y tengo 13 años." },
+              { "personaje": "PROFESORA", "texto": "Y tú, ¿cómo te llamas?" },
+              { "personaje": "JORGE", "texto": "Me llamo Jorge." },
+              { "personaje": "PROFESORA", "texto": "Bienvenido, Jorge. ¿Cuántos años tienes?" },
+              { "personaje": "JORGE", "texto": "Tengo 12 años y soy argentino, de Buenos Aires. Mi padre es español y mi madre también es argentina. Es mi primer año en España." },
+              { "personaje": "PROFESORA", "texto": "Pues yo soy de Málaga, una ciudad que está en Andalucía, al sur de España." },
+              { "personaje": "GRACIELA", "texto": "¡Mi amiga Lola también vive en Málaga!" }
             ]
           }
         },
         {
-          "id": "U2-p26-act02",
+          "id": "U2-p26-act2",
           "numero": 2,
           "tipo": "escucha",
-          "destreza": [
-            "comprension_auditiva"
-          ],
-          "enfoque": "transversal",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "comunicacion",
           "instruccion_original": "Escucha de nuevo y comprueba.",
-          "contenido_linguistico": [
-            "presentarse",
-            "información personal"
-          ],
-          "audio": {
-            "presente": true,
-            "pista": 24
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": []
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 24, "transcripcion": "(mismo audio que p26-act1)" },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {}
         },
         {
-          "id": "U2-p26-act03",
+          "id": "U2-p26-act3",
           "numero": 3,
           "tipo": "responder_preguntas_cerradas",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Contesta a las preguntas.",
-          "contenido_linguistico": [
-            "información personal",
-            "verbo ser",
-            "verbo tener"
+          "vocabulario": ["Adjetivos de nacionalidad", "Edad"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 Jorge",
-            "2 No",
-            "3 Es argentino",
-            "4 12 años"
-          ],
+          "gramatica": ["Interrogativos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["Jorge", "No", "Es argentino", "12 años"],
           "datos": {
-            "preguntas": [
-              "1 ¿Cómo se llama el nuevo compañero?",
-              "2 ¿Es español?",
-              "3 ¿De dónde es?",
-              "4 ¿Cuántos años tiene?"
-            ]
+            "preguntas": ["1 ¿Cómo se llama el nuevo compañero?", "2 ¿Es español?", "3 ¿De dónde es?", "4 ¿Cuántos años tiene?"]
           }
         },
         {
-          "id": "U2-p26-act04",
+          "id": "U2-p26-act4",
           "numero": 4,
           "tipo": "verdadero_falso",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "¿Verdadero (V) o falso (F)?",
-          "contenido_linguistico": [
-            "información personal",
-            "verbo ser"
+          "vocabulario": ["Adjetivos de nacionalidad", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 F",
-            "2 V",
-            "3 V",
-            "4 F"
-          ],
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["F", "V", "V", "F"],
           "datos": {
-            "items_libro": [
-              "1 Jorge es francés.",
-              "2 Buenos Aires es una ciudad argentina.",
-              "3 Pablo y Graciela son compañeros de clase.",
-              "4 Pablo vive en Buenos Aires."
-            ]
+            "afirmaciones_a_corregir": ["1 Jorge es francés.", "2 Buenos Aires es una ciudad argentina.", "3 Pablo y Graciela son compañeros de clase.", "4 Pablo vive en Buenos Aires."]
           }
         },
         {
-          "id": "U2-p26-act05",
+          "id": "U2-p26-act5",
           "numero": 5,
-          "tipo": "tarea_final",
-          "destreza": [
-            "expresion_escrita",
-            "expresion_oral",
-            "interaccion_oral"
-          ],
+          "tipo": "interaccion_oral",
+          "destreza": ["expresion_escrita", "expresion_oral", "interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Crea tu propio diálogo siguiendo estos pasos:",
-          "contenido_linguistico": [
-            "presentarse",
-            "información personal",
-            "verbo ser",
-            "verbo tener"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "vocabulario": ["Nacionalidad", "Edad", "Saludos y despedidas"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
             "pasos": [
@@ -1393,29 +1503,23 @@
       "seccion": "comunicacion",
       "actividades": [
         {
-          "id": "U2-p27-act06",
+          "id": "U2-p27-act6",
           "numero": 6,
           "tipo": "escucha_y_repite",
-          "destreza": [
-            "comprension_auditiva",
-            "expresion_oral"
-          ],
+          "destreza": ["comprension_auditiva", "expresion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y repite los números.",
-          "contenido_linguistico": [
-            "números 21-100"
-          ],
-          "campo_semantico": "Números",
+          "vocabulario": ["Números cardinales"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
-            "pista": 25
+            "pista": 25,
+            "transcripcion": "21 veintiuno, 22 veintidós, 23 veintitrés, 24 veinticuatro, 25 veinticinco, 26 veintiséis, 27 veintisiete, 28 veintiocho, 29 veintinueve, 30 treinta, 31 treinta y uno, 32 treinta y dos, 33 treinta y tres, 40 cuarenta, 50 cincuenta, 60 sesenta, 70 setenta, 80 ochenta, 90 noventa, 100 cien"
           },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
             "items_libro": [
@@ -1443,239 +1547,124 @@
           }
         },
         {
-          "id": "U2-p27-act07",
+          "id": "U2-p27-act7",
           "numero": 7,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_auditiva"
-          ],
-          "enfoque": "vocabulario",
+          "destreza": ["comprension_auditiva"],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escribe los números que escuchas.",
-          "contenido_linguistico": [
-            "números 21-100"
-          ],
-          "audio": {
-            "presente": true,
-            "pista": 26
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "a 13",
-            "b 75",
-            "c 22",
-            "d 37",
-            "e 84",
-            "f 41",
-            "g 60",
-            "h 15"
-          ],
+          "vocabulario": ["Números cardinales"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 26, "transcripcion": "13, 75, 22, 37, 84, 41, 60, 15" },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["a 13", "b 75", "c 22", "d 37", "e 84", "f 41", "g 60", "h 15"],
           "datos": {
-            "items_libro": [
-              "a) 3 / 13",
-              "b) 65 / 75",
-              "c) 12 / 22",
-              "d) 23 / 37",
-              "e) 84 / 94",
-              "f) 31 / 41",
-              "g) 60 / 70",
-              "h) 14 / 15"
-            ]
+            "items_libro": ["a 3 / 13", "b 65 / 75", "c 12 / 22", "d 23 / 37", "e 84 / 94", "f 31 / 41", "g 60 / 70", "h 14 / 15"]
           }
         },
         {
-          "id": "U2-p27-act08",
+          "id": "U2-p27-act8",
           "numero": 8,
           "tipo": "interaccion_oral",
-          "destreza": [
-            "interaccion_oral"
-          ],
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "En parejas, pregúntale a tu compañero su dirección, como en el ejemplo.",
-          "contenido_linguistico": [
-            "pedir y dar información personal",
-            "números 21-100"
+          "vocabulario": ["Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vives"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "¿Dónde vives? / En la calle de Cervantes, cuarenta y tres."
-          }
+          "gramatica": ["Interrogativos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["¿Dónde vives?", "En la calle de Cervantes, cuarenta y tres."],
+          "datos": { "ejemplo_libro": "• ¿Dónde vives?\n■ En la calle de Cervantes, cuarenta y tres." }
         },
         {
-          "id": "U2-p27-act09",
+          "id": "U2-p27-act9",
           "numero": 9,
           "tipo": "escucha_y_repite",
-          "destreza": [
-            "comprension_auditiva",
-            "expresion_oral"
-          ],
+          "destreza": ["comprension_auditiva", "expresion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Escucha y repite.",
-          "contenido_linguistico": [
-            "hacer sugerencias",
-            "vamos a"
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Vamos", "vamos"]}
           ],
-          "audio": {
-            "presente": true,
-            "pista": 27
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 27, "transcripcion": "¿Vamos al parque? — No, al parque no. ¿Vamos al cine? — Vale, vamos." },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "dialogo_completo": [
-              "¿Vamos al parque?",
-              "No, al parque no.",
-              "¿Vamos al cine?",
-              "Vale, vamos."
-            ]
+            "items_libro": ["• ¿Vamos al parque?", "■ No, al parque no.", "• ¿Vamos al cine?", "■ Vale, vamos."]
           }
         },
         {
           "id": "U2-p27-act10",
           "numero": 10,
           "tipo": "interaccion_oral",
-          "destreza": [
-            "interaccion_oral"
-          ],
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Ahora haz las siguientes sugerencias a tu compañero, como en el ejercicio anterior.",
-          "contenido_linguistico": [
-            "hacer sugerencias",
-            "vamos a"
+          "vocabulario": ["Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Vamos"]}
           ],
-          "audio": {
-            "presente": false
-          },
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
           "imagen": {
             "presente": true,
-            "descripcion": "6 fotografías de lugares: 1 parque, 2 zoo, 3 piscina, 4 casa de Julia, 5 recreo escolar, 6 biblioteca."
+            "descripcion": "6 fotos numeradas: 1 parque infantil con árboles, 2 niña dando de comer a un elefante en un zoo, 3 piscina cubierta con calles, 4 casa unifamiliar con verja, 5 niños corriendo en el recreo, 6 chicas leyendo en una biblioteca."
           },
-          "video": {
-            "presente": false
-          },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "nombres_dados": [
-              "1 Al parque",
-              "2 Al zoo",
-              "3 A la piscina",
-              "4 A casa de Julia",
-              "5 Al recreo",
-              "6 A la biblioteca"
-            ]
+            "items_libro": ["1 Al parque", "2 Al zoo", "3 A la piscina", "4 A casa de Julia", "5 Al recreo", "6 A la biblioteca"]
           }
         },
         {
           "id": "U2-p27-act11",
           "numero": 11,
           "tipo": "escucha_y_repite",
-          "destreza": [
-            "comprension_auditiva",
-            "expresion_oral"
-          ],
-          "enfoque": "fonetica",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y repite las vocales españolas.",
-          "contenido_linguistico": [
-            "vocales",
-            "pronunciación"
-          ],
-          "audio": {
-            "presente": true,
-            "pista": 28
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Vocales"],
+          "audio": { "presente": true, "pista": 28, "transcripcion": "a, e, i, o, u" },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "items_libro": [
-              "a • e • i • o • u"
-            ]
+            "items_libro": ["a", "e", "i", "o", "u"]
           }
         },
         {
           "id": "U2-p27-act12",
           "numero": 12,
           "tipo": "escucha_y_repite",
-          "destreza": [
-            "comprension_auditiva",
-            "expresion_oral"
-          ],
-          "enfoque": "fonetica",
+          "destreza": ["comprension_auditiva", "expresion_oral"],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y repite.",
-          "contenido_linguistico": [
-            "vocales en palabras",
-            "pronunciación"
-          ],
-          "audio": {
-            "presente": true,
-            "pista": 29
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": ["Vocales"],
+          "audio": { "presente": true, "pista": 29, "transcripcion": "azul, casa, mesa, policía, escribir, matemáticas, lápiz, Pepe, Pili, mamá, beber, vivir, tonto, uno" },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "items_libro": [
-              "azul • casa • mesa • policía • escribir",
-              "matemáticas • lápiz • Pepe • Pili",
-              "mamá • beber • vivir • tonto • uno"
-            ]
-          }
-        }
-      ],
-      "cuadros": [
-        {
-          "tipo_cuadro": "lexical",
-          "titulo": "21 al 100",
-          "contenido": {
-            "tipo": "lista_numerica",
-            "numeros": {
-              "21": "veintiuno",
-              "22": "veintidós",
-              "23": "veintitrés",
-              "24": "veinticuatro",
-              "25": "veinticinco",
-              "26": "veintiséis",
-              "27": "veintisiete",
-              "28": "veintiocho",
-              "29": "veintinueve",
-              "30": "treinta",
-              "31": "treinta y uno",
-              "32": "treinta y dos",
-              "33": "treinta y tres",
-              "40": "cuarenta",
-              "50": "cincuenta",
-              "60": "sesenta",
-              "70": "setenta",
-              "80": "ochenta",
-              "90": "noventa",
-              "100": "cien"
-            }
+            "items_libro": ["azul", "casa", "mesa", "policía", "escribir", "matemáticas", "lápiz", "Pepe", "Pili", "mamá", "beber", "vivir", "tonto", "uno"]
           }
         }
       ]
@@ -1685,81 +1674,66 @@
       "seccion": "destrezas",
       "actividades": [
         {
-          "id": "U2-p28-act01",
+          "id": "U2-p28-act1",
           "numero": 1,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Marta escribe a su nuevo amigo, Pierre, por primera vez y él contesta. Lee sus mensajes. Después, completa las fichas.",
-          "contenido_linguistico": [
-            "presentación personal",
-            "información personal",
-            "verbo ser",
-            "verbo tener",
-            "estudiar"
+          "vocabulario": ["Saludos y despedidas", "Edad", "Adjetivos de nacionalidad", "Asignaturas", "Centros e instituciones educativas", "Números cardinales", "Números ordinales"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vivo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudio", "estudiamos"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son", "somos"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estás"]}
           ],
-          "audio": {
-            "presente": false
-          },
+          "gramatica": ["Nombres propios", "Pronombre sujeto", "Interrogativos"],
+          "pronunciacion_ortografia": ["Mayúsculas"],
+          "audio": { "presente": false },
           "imagen": {
             "presente": true,
-            "descripcion": "Dos fotos de estudiantes: una chica joven con tablet (Marta) y un chico joven con ordenador (Pierre)."
+            "descripcion": "Foto de Marta (chica, pelo oscuro, sonriendo con tablet) y foto de Pierre (chico, camiseta azul, frente a un ordenador). Dos sobres-icono junto a sus mensajes y dos fichas adhesivas con campos personales."
           },
-          "video": {
-            "presente": false
-          },
+          "video": { "presente": false },
           "respuestas": [
-            "Marta: Nombre=Marta, Apellido=Rodríguez, Ciudad=Cádiz, Edad=14 años, Curso=3.º de Educación Secundaria Obligatoria, Nombre del colegio=Instituto Miguel de Unamuno, Asignatura favorita=Historia",
-            "Pierre: Nombre=Pierre, Apellido=Dubois, Ciudad=París, Edad=13 años, Curso=2.º de Educación Secundaria Obligatoria, Nombre del colegio=Instituto Marie Curie, Asignatura favorita=Música y Educación Física"
+            "Ficha Marta: Nombre: Marta; Apellido: Rodríguez; Ciudad: Cádiz; Edad: 14 años; Curso: 3.º de Educación Secundaria Obligatoria; Nombre del colegio: Instituto Miguel de Unamuno; Asignatura favorita: Historia.",
+            "Ficha Pierre: Nombre: Pierre; Apellido: Dubois; Ciudad: París; Edad: 13 años; Curso: 2.º de Educación Secundaria Obligatoria; Nombre del colegio: Instituto Marie Curie; Asignatura favorita: Música y Educación Física."
           ],
           "datos": {
-            "texto_completo": "CARTA DE MARTA:\nQuerido Pierre:\n¿Cómo estás? Me llamo Marta Rodríguez y vivo en Cádiz, en España. Tengo catorce años y estudio tercero de Educación Secundaria Obligatoria en el instituto Miguel de Unamuno.\nEn mi clase somos treinta estudiantes.\nMi asignatura favorita es Historia y mi afición favorita es el deporte, especialmente la gimnasia. ¿Cuál es tu deporte favorito?\nUn saludo,\nMarta\n\nCARTA DE PIERRE:\n¡Hola!, ¿qué tal?\nMe llamo Pierre Dubois y vivo en París, en Francia. Tengo trece años y estudio segundo curso de Educación Secundaria en el instituto Marie Curie.\nEste año estudiamos español tres días a la semana, pero mis asignaturas favoritas son la Música y la Educación Física. Mis deportes favoritos son el tenis y el ciclismo.\n¡Un saludo desde Francia!\nPierre",
-            "items_libro": [
-              "Ficha Marta: Nombre=_____, Apellido=_____, Ciudad=_____, Edad=_____, Curso=_____, Nombre del colegio=_____, Asignatura favorita=_____",
-              "Ficha Pierre: Nombre=_____, Apellido=_____, Ciudad=_____, Edad=_____, Curso=_____, Nombre del colegio=_____, Asignatura favorita=_____"
+            "textos_personajes": [
+              {
+                "personaje": "Marta",
+                "texto": "Querido Pierre:\n¿Cómo estás? Me llamo Marta Rodríguez y vivo en Cádiz, en España. Tengo catorce años y estudio tercero de Educación Secundaria Obligatoria en el instituto Miguel de Unamuno.\nEn mi clase somos treinta estudiantes.\nMi asignatura favorita es Historia y mi afición favorita es el deporte, especialmente la gimnasia. ¿Cuál es tu deporte favorito?\nUn saludo,\nMarta"
+              },
+              {
+                "personaje": "Pierre",
+                "texto": "¡Hola!, ¿qué tal?\nMe llamo Pierre Dubois y vivo en París, en Francia. Tengo trece años y estudio segundo curso de Educación Secundaria en el instituto Marie Curie.\nEste año estudiamos español tres días a la semana, pero mis asignaturas favoritas son la Música y la Educación Física. Mis deportes favoritos son el tenis y el ciclismo.\n¡Un saludo desde Francia!\nPierre"
+              }
             ]
           }
         },
         {
-          "id": "U2-p28-act02",
+          "id": "U2-p28-act2",
           "numero": 2,
           "tipo": "responder_preguntas_cerradas",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Lee los mensajes otra vez y contesta a las preguntas.",
-          "contenido_linguistico": [
-            "información personal",
-            "verbo ser",
-            "verbo tener"
+          "vocabulario": ["Adjetivos de nacionalidad", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es", "Son", "son"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 Marta es española y Pierre es francés",
-            "2 Marta es de Cádiz",
-            "3 Pierre es de París",
-            "4 Son 30 alumnos",
-            "5 Español"
-          ],
+          "gramatica": ["Interrogativos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1 Marta es española y Pierre es francés.", "2 Marta es de Cádiz.", "3 Pierre es de París.", "4 Son 30 alumnos.", "5 Español."],
           "datos": {
-            "preguntas": [
-              "1 ¿Cuáles son las nacionalidades de Marta y Pierre?",
-              "2 ¿De qué ciudad es Marta?",
-              "3 ¿De qué ciudad es Pierre?",
-              "4 ¿Cuántos alumnos son en la clase de Marta?",
-              "5 ¿Qué idioma estudia Pierre en su instituto?"
-            ]
+            "preguntas": ["1 ¿Cuáles son las nacionalidades de Marta y Pierre?", "2 ¿De qué ciudad es Marta?", "3 ¿De qué ciudad es Pierre?", "4 ¿Cuántos alumnos son en la clase de Marta?", "5 ¿Qué idioma estudia Pierre en su instituto?"]
           }
         }
       ]
@@ -1769,43 +1743,27 @@
       "seccion": "destrezas",
       "actividades": [
         {
-          "id": "U2-p29-act03",
+          "id": "U2-p29-act3",
           "numero": 3,
           "tipo": "verdadero_falso",
-          "destreza": [
-            "comprension_auditiva",
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Escucha a Frida hablar de unos amigos. Después, lee las frases y señala verdadero (V) o falso (F).",
-          "contenido_linguistico": [
-            "información personal",
-            "verbo ser",
-            "verbo tener",
-            "asignaturas"
+          "vocabulario": ["Adjetivos de nacionalidad", "Edad", "Asignaturas", "Días de la semana"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["Estudian"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["van"], "estructura_perifrastica": "ir a + infinitivo"}
           ],
-          "audio": {
-            "presente": true,
-            "pista": 30
-          },
-          "imagen": {
-            "presente": true,
-            "descripcion": "Fotos de dos jóvenes: Violeta (chica) y Rubén (chico) con sus nombres en carteles."
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 V",
-            "2 V",
-            "3 F",
-            "4 F",
-            "5 V",
-            "6 F",
-            "7 F"
-          ],
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 30 },
+          "imagen": { "presente": true, "descripcion": "Dos retratos tipo carné con nombres: VIOLETA (chica, camiseta negra) y RUBÉN (chico, camiseta verde)." },
+          "video": { "presente": false },
+          "respuestas": ["V", "V", "F", "F", "V", "F", "F"],
           "datos": {
-            "items_libro": [
+            "afirmaciones_a_corregir": [
               "1 Rubén y Violeta son mexicanos.",
               "2 Estudian en el mismo instituto.",
               "3 Rubén tiene trece años.",
@@ -1817,31 +1775,25 @@
           }
         },
         {
-          "id": "U2-p29-act04",
+          "id": "U2-p29-act4",
           "numero": 4,
           "tipo": "responder_preguntas_abiertas",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "destreza": ["expresion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Imagina que eres de un país hispano. Responde a las siguientes preguntas.",
-          "contenido_linguistico": [
-            "información personal",
-            "verbo ser",
-            "verbo tener",
-            "llamarse",
-            "vivir",
-            "estudiar"
+          "vocabulario": ["Países hispanohablantes", "Adjetivos de nacionalidad", "Edad", "Centros e instituciones educativas", "Asignaturas"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["eres", "sois", "es"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vives"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudias"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Interrogativos", "Pronombre sujeto"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
             "preguntas": [
@@ -1857,92 +1809,67 @@
           }
         },
         {
-          "id": "U2-p29-act05",
+          "id": "U2-p29-act5",
           "numero": 5,
           "tipo": "interaccion_oral",
-          "destreza": [
-            "expresion_escrita",
-            "interaccion_oral"
-          ],
+          "destreza": ["expresion_escrita", "interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Ahora, pregunta y responde a un compañero. Escribe las respuestas de tu compañero.",
-          "contenido_linguistico": [
-            "información personal",
-            "verbo ser",
-            "verbo tener",
-            "llamarse"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": []
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {}
         },
         {
-          "id": "U2-p29-act06",
+          "id": "U2-p29-act6",
           "numero": 6,
           "tipo": "expresion_oral_libre",
-          "destreza": [
-            "mediacion"
-          ],
+          "destreza": ["expresion_oral", "mediacion"],
           "enfoque": "comunicacion",
           "instruccion_original": "Con las respuestas de tu compañero informa a la clase sobre todo lo que ahora sabes de él: su nombre, su edad, su nacionalidad, su domicilio, sus aficiones… Los compañeros de clase pueden hacerte preguntas para completar la información.",
-          "contenido_linguistico": [
-            "información personal",
-            "verbo ser",
-            "verbo tener",
-            "llamarse",
-            "vivir",
-            "gustar"
+          "vocabulario": ["Nacionalidad", "Edad", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tiene"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["Vive"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["Estudia"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["Le gusta"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "frases": [
-              "Mi compañera se llama…",
-              "Tiene…",
-              "Es de…",
-              "Vive en…",
-              "Estudia…",
-              "Su afición favorita…",
-              "Le gusta…"
-            ]
+            "ejemplos_modelo": ["Mi compañera se llama…", "Tiene…", "Es de…", "Vive en…", "Estudia…", "Su afición favorita…", "Le gusta…"]
           }
         },
         {
-          "id": "U2-p29-act07",
+          "id": "U2-p29-act7",
           "numero": 7,
-          "tipo": "busqueda_informacion",
-          "destreza": [
-            "comprension_lectora"
-          ],
-          "enfoque": "gramatica",
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Mira las reglas de uso de las letras mayúsculas y busca ejemplos en los mensajes del ejercicio 1 de Marta y Pierre.",
-          "contenido_linguistico": [
-            "uso de las mayúsculas"
+          "vocabulario": ["Asignaturas", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vivo"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": ["Mayúsculas"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [
             "Al principio de un texto: Querido…",
             "Después de un punto: … España. Tengo…",
@@ -1950,31 +1877,33 @@
             "Con los nombres de lugares: … vivo en Cádiz,",
             "Con los nombres de países: … en España.",
             "Con los nombres de asignaturas: Mi asignatura favorita es Historia."
-          ]
+          ],
+          "datos": {
+            "frases": [
+              "Siempre usamos letras mayúsculas en los siguientes casos:",
+              "• al principio de un texto",
+              "• después de un punto",
+              "• con los nombres y apellidos de personas",
+              "• con los nombres de lugares",
+              "• con los nombres de países",
+              "• con los nombres de asignaturas"
+            ]
+          }
         },
         {
-          "id": "U2-p29-act08",
+          "id": "U2-p29-act8",
           "numero": 8,
           "tipo": "expresion_escrita_libre",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "destreza": ["expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Escribe un mensaje a un nuevo amigo siguiendo estos pasos:",
-          "contenido_linguistico": [
-            "presentación personal",
-            "información personal",
-            "uso de las mayúsculas"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "vocabulario": ["Saludos y despedidas", "Centros e instituciones educativas", "Días de la semana"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Mayúsculas"],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
             "pasos": [
@@ -1985,23 +1914,6 @@
             ]
           }
         }
-      ],
-      "cuadros": [
-        {
-          "tipo_cuadro": "gramatical",
-          "contenido": {
-            "tipo": "lista_reglas",
-            "texto_intro": "Siempre usamos letras mayúsculas en los siguientes casos:",
-            "reglas": [
-              "al principio de un texto",
-              "después de un punto",
-              "con los nombres y apellidos de personas",
-              "con los nombres de lugares",
-              "con los nombres de países",
-              "con los nombres de asignaturas"
-            ]
-          }
-        }
       ]
     },
     {
@@ -2009,63 +1921,49 @@
       "seccion": "cultura",
       "actividades": [
         {
-          "id": "U2-p30-act01",
+          "id": "U2-p30-act1",
           "numero": 1,
-          "tipo": "expresion_oral_libre",
-          "destreza": [
-            "expresion_oral"
-          ],
+          "tipo": "responder_preguntas_abiertas",
+          "destreza": ["expresion_oral"],
           "enfoque": "cultura",
           "instruccion_original": "Mira la foto. Compárala con tu clase. ¿Tienen uniforme los alumnos de la foto? ¿Y vosotros?",
-          "contenido_linguistico": [
-            "verbo tener",
-            "descripción",
-            "comparación"
+          "vocabulario": ["Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tienen"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": true,
-            "descripcion": "Fotografía de una clase de instituto español con alumnos y una profesora, los alumnos no llevan uniforme."
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": []
+          "gramatica": ["Interrogativos", "Pronombre sujeto"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Aula con tres adolescentes en primer plano (chica con gafas tomando apuntes, chico escribiendo, chica concentrada) y otros estudiantes al fondo. Mural colorido en la pared." },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {
+            "preguntas": ["¿Tienen uniforme los alumnos de la foto?", "¿Y vosotros?"]
+          }
         },
         {
-          "id": "U2-p30-act02",
+          "id": "U2-p30-act2",
           "numero": 2,
           "tipo": "verdadero_falso",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "cultura",
           "instruccion_original": "Lee el texto y responde si las frases son verdaderas (V) o falsas (F).",
-          "contenido_linguistico": [
-            "el sistema educativo español",
-            "vocabulario del texto cultural"
+          "vocabulario": ["Asignaturas", "Centros e instituciones educativas", "Números cardinales", "Países hispanohablantes"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienen", "tiene"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 F",
-            "2 F",
-            "3 V",
-            "4 V",
-            "5 F"
-          ],
+          "gramatica": ["Artículos determinados", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["F", "F", "V", "V", "F"],
           "datos": {
             "texto_completo": "Los alumnos de Educación Secundaria Obligatoria (ESO) en España tienen distintas asignaturas: Matemáticas, Lengua española, Inglés, Historia, Biología, Educación Física, por ejemplo, son obligatorias; Francés, Música, Informática y otras son optativas. En cada curso, un alumno tiene nueve o diez asignaturas diferentes. Las clases son de ocho a tres o de cinco a nueve y cada grupo tiene alrededor de treinta estudiantes. En algunos institutos, los alumnos tienen distintas aulas para cada asignatura. El profesor está en su clase y recibe a los alumnos.\nA las once de la mañana, los alumnos y los profesores tienen un descanso de treinta minutos, que se llama recreo. En la cafetería del instituto tienen bocadillos, dulces, zumos… para la hora del recreo.\nDespués de las clases, por la tarde, algunos alumnos tienen actividades extraescolares: deportes, música, idiomas, danza, teatro…",
-            "items_libro": [
+            "afirmaciones_a_corregir": [
               "1 La asignatura de Matemáticas no es obligatoria en la ESO en España.",
               "2 Las clases tienen nueve o diez estudiantes.",
               "3 Los alumnos de un mismo grupo están siempre en la misma clase.",
@@ -2075,73 +1973,44 @@
           }
         },
         {
-          "id": "U2-p30-act03",
+          "id": "U2-p30-act3",
           "numero": 3,
           "tipo": "relaciona",
-          "destreza": [
-            "comprension_lectora"
-          ],
-          "enfoque": "cultura",
+          "destreza": ["comprension_lectora"],
+          "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las palabras subrayadas en el texto con las siguientes definiciones.",
-          "contenido_linguistico": [
-            "vocabulario del texto cultural"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 descanso",
-            "2 distintas",
-            "3 alrededor de",
-            "4 extraescolares",
-            "5 optativas"
-          ],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["1 descanso → tiempo de relajación", "2 distintas → diferentes", "3 alrededor de → aproximadamente", "4 extraescolares → fuera del horario escolar", "5 optativas → que no son obligatorias"],
           "datos": {
-            "items_libro": [
-              "1 tiempo de relajación",
-              "2 diferentes",
-              "3 aproximadamente",
-              "4 fuera del horario escolar",
-              "5 que no son obligatorias"
-            ]
+            "columnas_relaciona": {
+              "izquierda": ["1 descanso", "2 distintas", "3 alrededor de", "4 extraescolares", "5 optativas"],
+              "derecha": ["tiempo de relajación", "diferentes", "aproximadamente", "fuera del horario escolar", "que no son obligatorias"]
+            }
           }
         },
         {
-          "id": "U2-p30-act04",
+          "id": "U2-p30-act4",
           "numero": 4,
           "tipo": "expresion_oral_libre",
-          "destreza": [
-            "expresion_oral"
-          ],
+          "destreza": ["expresion_oral"],
           "enfoque": "cultura",
           "instruccion_original": "Habla sobre tu colegio.",
-          "contenido_linguistico": [
-            "sistema educativo",
-            "asignaturas",
-            "verbo ser",
-            "verbo tener"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "vocabulario": ["Centros e instituciones educativas"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "preguntas": [
-              "1 ¿Qué cosas son similares en los institutos españoles y en tu colegio?",
-              "2 ¿Qué cosas son diferentes?"
-            ]
+            "preguntas": ["1 ¿Qué cosas son similares en los institutos españoles y en tu colegio?", "2 ¿Qué cosas son diferentes?"]
           }
         }
       ]
@@ -2151,36 +2020,22 @@
       "seccion": "evaluacion",
       "actividades": [
         {
-          "id": "U2-p31-act01",
+          "id": "U2-p31-act1",
           "numero": 1,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con la forma correspondiente del verbo ser.",
-          "contenido_linguistico": [
-            "verbo ser (presente)"
+          "vocabulario": ["Adjetivos de nacionalidad", "Números ordinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es", "somos", "eres", "soy"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 son",
-            "2 es",
-            "3 somos",
-            "4 eres",
-            "5 soy",
-            "6 somos",
-            "7 son",
-            "8 es"
-          ],
+          "gramatica": ["Pronombre sujeto", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["son", "es", "somos", "eres", "soy", "somos", "son", "es"],
           "datos": {
             "items_libro": [
               "1 Alberto y Juan _____ colombianos.",
@@ -2195,240 +2050,150 @@
           }
         },
         {
-          "id": "U2-p31-act02",
+          "id": "U2-p31-act2",
           "numero": 2,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con la forma correcta del verbo tener.",
-          "contenido_linguistico": [
-            "verbo tener (presente)"
+          "vocabulario": ["Edad", "Adjetivos de nacionalidad", "Asignaturas", "Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tenemos", "tengo", "tienen", "tienes"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 tiene",
-            "2 tenemos",
-            "3 tengo",
-            "4 tiene",
-            "5 tienen",
-            "6 tienes"
-          ],
+          "gramatica": ["Pronombre sujeto", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["tiene", "tenemos", "tengo", "tiene", "tienen", "tienes"],
           "datos": {
-            "items_libro": [
-              "1 Mi madre _____ cuarenta años.",
-              "2 Nosotros _____ muchos amigos.",
-              "3 Yo _____ dos libros de español.",
-              "4 Mi hermano _____ un amigo argentino.",
-              "5 Mis amigos no _____ clase de francés.",
-              "6 ¿Tú _____ bicicleta?"
-            ]
+            "items_libro": ["1 Mi madre _____ cuarenta años.", "2 Nosotros _____ muchos amigos.", "3 Yo _____ dos libros de español.", "4 Mi hermano _____ un amigo argentino.", "5 Mis amigos no _____ clase de francés.", "6 ¿Tú _____ bicicleta?"]
           }
         },
         {
-          "id": "U2-p31-act03",
+          "id": "U2-p31-act3",
           "numero": 3,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa la tabla.",
-          "contenido_linguistico": [
-            "adjetivos de nacionalidad",
-            "género y número"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "Perú: peruana / peruano / peruanas / peruanos",
-            "España: española / español / españolas / españoles",
-            "México: mexicana / mexicano / mexicanas / mexicanos",
-            "Chile: chilena / chileno / chilenas / chilenos"
-          ],
+          "vocabulario": ["Adjetivos de nacionalidad", "Países hispanohablantes"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Concordancia de género", "Concordancia de número", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["Perú: peruano, peruanas, peruanos", "España: español, españolas, españoles", "México: mexicano, mexicanos", "Chile: chileno, chilenas, chilenos", "Cuba: cubana, cubano, cubanas, cubanos"],
           "datos": {
-            "ejemplo_libro": "Cuba: cubana / cubano / cubanas / cubanos",
-            "items_libro": [
-              "Perú: _____ / _____ / _____ / _____",
-              "España: _____ / _____ / _____ / _____",
-              "México: _____ / _____ / _____ / _____",
-              "Chile: _____ / _____ / _____ / _____"
+            "cuadricula": [
+              ["PAÍS", "femenino sg", "masculino sg", "femenino pl", "masculino pl"],
+              ["Cuba", "cubana", "_____", "cubanas", "cubanos"],
+              ["Perú", "peruana", "_____", "_____", "_____"],
+              ["España", "española", "_____", "_____", "_____"],
+              ["México", "mexicana", "_____", "mexicanas", "_____"],
+              ["Chile", "chilena", "_____", "_____", "_____"]
             ]
           }
         },
         {
-          "id": "U2-p31-act04",
+          "id": "U2-p31-act4",
           "numero": 4,
           "tipo": "completa_huecos",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa con demostrativos como en el ejemplo.",
-          "contenido_linguistico": [
-            "demostrativos",
-            "verbo tener",
-            "género y número"
+          "vocabulario": ["Edad"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienen"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": true,
-            "descripcion": "4 fotos de niños y niñas: una niña (12 años, ejemplo dado), dos niñas (13 años), dos niños (11 años), un niño (14 años)."
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 Estas",
-            "2 Estos",
-            "3 Este"
-          ],
+          "gramatica": ["Demostrativos", "Concordancia de género", "Concordancia de número"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "4 fotos numeradas: niña con coleta, 1 dos chicas adolescentes sonriendo, 2 dos chicos pequeños con camiseta naranja, 3 chico adolescente con balón en silla de ruedas." },
+          "video": { "presente": false },
+          "respuestas": ["Esta niña tiene 12 años.", "1 Estas niñas tienen 13 años.", "2 Estos niños tienen 11 años.", "3 Este niño tiene 14 años."],
           "datos": {
             "ejemplo_libro": "Esta niña tiene 12 años.",
-            "items_libro": [
-              "1 _____ niñas tienen 13 años.",
-              "2 _____ niños tienen 11 años.",
-              "3 _____ niño tiene 14 años."
-            ]
+            "items_libro": ["1 _____ niñas tienen 13 años.", "2 _____ niños tienen 11 años.", "3 _____ niño tiene 14 años."]
           }
         },
         {
-          "id": "U2-p31-act05",
+          "id": "U2-p31-act5",
           "numero": 5,
-          "tipo": "produccion_escrita_guiada",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "tipo": "completa_huecos",
+          "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Continúa la serie de los días de la semana.",
-          "contenido_linguistico": [
-            "días de la semana"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "miércoles, jueves, viernes, sábado, domingo"
-          ],
+          "vocabulario": ["Días de la semana"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["miércoles", "jueves", "viernes", "sábado", "domingo"],
           "datos": {
-            "items_libro": [
-              "lunes, martes, _____, _____, _____, _____, _____."
-            ]
+            "items_libro": ["lunes, martes, _____, _____, _____, _____, _____."]
           }
         },
         {
-          "id": "U2-p31-act06",
+          "id": "U2-p31-act6",
           "numero": 6,
           "tipo": "ordena",
-          "destreza": [
-            "comprension_lectora"
-          ],
+          "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Ordena las letras de cada globo para formar el nombre de algunas asignaturas.",
-          "contenido_linguistico": [
-            "asignaturas"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": true,
-            "descripcion": "5 globos de colores con letras desordenadas: globo 1 (c-s-a-F-é-n-r), globo 2 (M-a-c-s-e-a-t-t-i-á-m), globo 3 (á-n-t-a-r-I-c-f-o-m-i), globo 4 (s-a-ú-c-M-i), globo 5 (a-e-L-u-g-n)."
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": [
-            "1 Francés",
-            "2 Matemáticas",
-            "3 Informática",
-            "4 Música",
-            "5 Lengua"
-          ],
+          "vocabulario": ["Asignaturas"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "5 globos de colores con letras desordenadas dentro, numerados 1-5." },
+          "video": { "presente": false },
+          "respuestas": ["1 Francés", "2 Matemáticas", "3 Informática", "4 Música", "5 Lengua"],
           "datos": {
-            "items_libro": [
-              "1 c-s-a-F-é-n-r",
-              "2 M-a-c-s-e-a-t-t-i-á-m",
-              "3 á-n-t-a-r-I-c-f-o-m-i",
-              "4 s-a-ú-c-M-i",
-              "5 a-e-L-u-g-n"
-            ]
+            "items_libro": ["1 globo: c, s, a, F, é, n, r", "2 globo: M, a, c, s, e, a, t, t, i, á, m", "3 globo: á, n, t, a, r, I, c, f, o, i, m", "4 globo: s, c, a, ú, M, i", "5 globo: a, e, L, u, g, n"]
           }
         },
         {
-          "id": "U2-p31-act07",
+          "id": "U2-p31-act7",
           "numero": 7,
-          "tipo": "expresion_escrita_libre",
-          "destreza": [
-            "expresion_escrita"
-          ],
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿Cuántas nacionalidades de países de habla hispana puedes escribir correctamente sin consultar el libro?",
-          "contenido_linguistico": [
-            "adjetivos de nacionalidad"
-          ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
-          "respuestas": []
+          "vocabulario": ["Adjetivos de nacionalidad", "Países hispanohablantes"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": [],
+          "datos": {}
         },
         {
-          "id": "U2-p31-act08",
+          "id": "U2-p31-act8",
           "numero": 8,
-          "tipo": "interaccion_oral",
-          "destreza": [
-            "interaccion_oral"
-          ],
+          "tipo": "juego",
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Piensa en un personaje famoso. Tus compañeros te hacen preguntas para adivinar quién es.",
-          "contenido_linguistico": [
-            "verbo ser",
-            "adjetivos de nacionalidad",
-            "verbo tener",
-            "información personal"
+          "vocabulario": ["Nacionalidad", "Edad"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]}
           ],
-          "audio": {
-            "presente": false
-          },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          },
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "ejemplo_libro": "¿Es hombre o mujer? / ¿De qué nacionalidad es? / ¿Dónde vive? / ¿Cuántos años tiene? / ¿Es cantante? / (…)"
+            "preguntas": ["¿Es hombre o mujer?", "¿Cuántos años tiene?", "¿De qué nacionalidad es?", "¿Es cantante?", "¿Dónde vive?", "(…)"]
           }
         }
       ]
