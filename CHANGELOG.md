@@ -5,6 +5,17 @@
 
 ---
 
+## [v10.133 — 2026-05-15] — REDISEÑO fase 2 §3: cobertura por bloque y marcas internas
+
+Cierre del paso 3 del rediseño de fase 2. Resuelve cuatro gaps de fase 1 identificados en la auditoría F1↔F2: pronunciación/ortografía, tiempos y verbos, perífrasis y marcas internas.
+
+**Cambios en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`:**
+
+- **§3.1 Pronunciación/ortografía**: granularidad por categoría canónica; etiquetas = 6 genéricas + `discrimina` (específica del bloque, para discriminación auditiva/ortográfica); evidencias desde `actividad.pronunciacion_ortografia[]` + `cuadro.pronunciacion_ortografia[]` + `pronunciacion_ortografia_consolidada`; las categorías `recurrente` no reciben etiqueta automática (análisis IA + cierre humano).
+- **§3.2 Tiempos y verbos**: granularidad por lema; evento por **lema-tiempo** (un mismo lema en presente y en indefinido = dos eventos); 6 etiquetas genéricas; evidencias desde el inventario + atributo `apariciones` del registry verbal.
+- **§3.3 Perífrasis verbales**: **hilo aparte** del lema. `ir a + infinitivo` genera un hilo propio independiente del hilo `ir`; fuente = `estructura_perifrastica`.
+- **§3.4 Marcas internas**: política de tratamiento. `_pendiente_canon` no bloquea fase 2; `_funcion_ambigua` se lleva a chat con el autor; `_decisiones_ia` se leen, cuestionan y proponen ajustes (no se aceptan a ciegas). Fase 2 puede generar marcas propias, pero el flujo normal es cerrar con humano.
+
 ## [v10.132 — 2026-05-15] — Glosario + REDISEÑO fase 2 §2 (corrección de versionado)
 
 Lote acumulado que recoge dos commits anteriores cuyos mensajes contienen versiones erróneas (v10.118 y v10.119, números ya consumidos en estados anteriores del proyecto). Se documentan aquí bajo la versión correcta v10.132. Los commits previos quedan en el histórico técnico pero la versión canónica del trabajo es esta.

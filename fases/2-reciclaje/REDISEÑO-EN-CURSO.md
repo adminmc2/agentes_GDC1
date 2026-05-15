@@ -123,9 +123,42 @@ El detalle del shape (campos exactos, evidencias, persistencia de notas IA) se c
 
 ---
 
-## §3. (paso 3 — pendiente)
+## §3. Cobertura por bloque y tratamiento de marcas (paso 3 — definido 2026-05-15)
 
-*(Placeholder.)*
+Resuelve cuatro gaps de fase 1 que el modelo §2 dejaba implícitos: pron/orto, verbal, perífrasis y marcas internas.
+
+### §3.1. Pronunciación / ortografía
+
+- **Granularidad del hilo:** una categoría canónica de `pronunciacion-ortografia-canonica.json` = un hilo (ej. "Acento gráfico", "Letra h muda", "Diptongos").
+- **Etiquetas aplicables:** las 6 genéricas de §2.3 + **`discrimina`** (específica del bloque): actividades de discriminación auditiva/ortográfica donde el alumno opone formas sin que el contenido se introduzca, amplíe ni sistematice.
+- **Fuente de evidencias:** referencias en `actividad.pronunciacion_ortografia[]` + `cuadro.pronunciacion_ortografia[]` + el bloque `pronunciacion_ortografia_consolidada.{principal,recurrente}` del inventario.
+- **Recurrencia:** una categoría que aparece como `recurrente` en el consolidado **no** recibe etiqueta automática. La Capa 2 IA analiza el contexto y propone la(s) etiqueta(s) razonadas; el humano cierra.
+
+### §3.2. Tiempos y verbos
+
+- **Granularidad del hilo:** un lema canónico de `verbos-canonicos.json` = un hilo.
+- **Granularidad del evento:** un evento por **lema-tiempo**. Si en una unidad el lema `comer` aparece en presente y en indefinido, se generan dos eventos distintos en ese hilo, no uno fusionado.
+- **Etiquetas aplicables:** las 6 genéricas de §2.3 sin añadidos.
+- **Fuente de evidencias:** `actividad.tiempos_y_verbos[]` + `cuadro.tiempos_y_verbos[]` + `tiempos_y_verbos_consolidado[]` del inventario + atributo `apariciones` del registry `verbos-canonicos.json` (rol canónico por unidad).
+
+### §3.3. Perífrasis verbales
+
+- **Modelado:** **hilo aparte** del lema. La perífrasis `ir a + infinitivo` genera un hilo propio (`bloque: "perifrasis"`, `titulo: "ir a + infinitivo"`), independiente del hilo del lema `ir`.
+- **Fuente de evidencias:** campo `estructura_perifrastica` en `actividad.tiempos_y_verbos[]` (schema §3.2; reglas §5.1.2, §5.2).
+- **Etiquetas aplicables:** las 6 genéricas de §2.3.
+- **Relación con el hilo del auxiliar:** ortogonal. El auxiliar (ej. `ir`) puede tener eventos propios como lema-objeto en otras unidades; la perífrasis tiene su propio recorrido.
+
+### §3.4. Marcas internas (entrada de fase 1)
+
+Política de tratamiento por marca:
+
+| Marca | Bloquea fase 1 | Tratamiento en fase 2 |
+|---|---|---|
+| `_pendiente_canon` | Sí | **No bloquea fase 2.** Fase 2 puede empezar y procesa el inventario con la marca presente. Se trata como hallazgo pendiente que el autor cerrará en su momento. |
+| `_funcion_ambigua` | Sí | Fase 2 lo **analiza** y lo lleva a chat con el autor como caso a cerrar. No se asume resolución automática. |
+| `_decisiones_ia` | No | Fase 2 las **lee** como contexto editorial previo, las **cuestiona** si entran en conflicto con el análisis cross-unidad, y **propone** ajustes razonados. No se aceptan a ciegas ni se reescriben silenciosamente. |
+
+**Marcas propias de fase 2:** la Capa 2 IA puede generar marcas análogas (`_decisiones_ia_fase2`, etc.) para registrar sus propias decisiones editoriales. En la práctica, sin embargo, **lo deseable es cerrar cada decisión con el humano** antes de persistirla, no acumular marcas sin resolver. Las marcas de fase 2 son excepción, no flujo normal.
 
 ---
 
@@ -150,3 +183,4 @@ Tabla de seguimiento de qué piezas de la versión vieja se importan al document
 
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
+- **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica).

@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-15 (v10.132 — glosario: anticipación verbal por lema + atributos de registries; REDISEÑO fase 2 §2 cerrado: 3 momentos de análisis + 6 etiquetas coexistentes; trabajo de diseño de fase 2 pasa a worktree dedicado).
+> **Última actualización:** 2026-05-15 (v10.133 — REDISEÑO fase 2 §3 cerrado: cobertura por bloque (pron/orto con `discrimina`, verbal con evento lema-tiempo, perífrasis como hilo aparte) + política de marcas internas).
 
 ---
 
