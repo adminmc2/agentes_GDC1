@@ -4,10 +4,7 @@
   "titulo": "Punto de partida",
   "paginas_libro": "8-11",
   "nivel": "A1.1",
-  "fuente": {
-    "archivo": "unidades/U0/fuente/U0-nc1.pdf",
-    "version_extraccion": "2026-05-15"
-  },
+  "fuente": { "archivo": "unidades/U0/fuente/U0-nc1.pdf", "version_extraccion": "2026-05-15" },
   "contenidos_indice": {
     "vocabulario": "Países que hablan español. Abecedario español. Números 0-10. Para la clase.",
     "gramatica": "(no aplica en esta unidad introductoria)",
@@ -15,112 +12,103 @@
     "destrezas": "(no aplica en esta unidad introductoria)",
     "cultura": "(no aplica en esta unidad introductoria)"
   },
-
   "vocabulario_consolidado": {
     "principal": {
       "Países que hablan español": {
         "items": [
-          { "palabra": "España", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "México", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Cuba", "fuentes": ["p8-act1"] },
-          { "palabra": "República Dominicana", "fuentes": ["p8-act1"] },
-          { "palabra": "Puerto Rico", "fuentes": ["p8-act1"] },
-          { "palabra": "Guatemala", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Nicaragua", "fuentes": ["p8-act1"] },
-          { "palabra": "Costa Rica", "fuentes": ["p8-act1"] },
-          { "palabra": "Panamá", "fuentes": ["p8-act1"] },
-          { "palabra": "Venezuela", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Colombia", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Ecuador", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Perú", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Bolivia", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Paraguay", "fuentes": ["p8-act1"] },
-          { "palabra": "Chile", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Argentina", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Uruguay", "fuentes": ["p8-act1", "p11-act7"] },
-          { "palabra": "Honduras", "fuentes": ["p8-act1"] },
-          { "palabra": "El Salvador", "fuentes": ["p8-act1"] }
+          {"palabra": "España", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "México", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Cuba", "fuentes": ["p8-act1"]},
+          {"palabra": "República Dominicana", "fuentes": ["p8-act1"]},
+          {"palabra": "Puerto Rico", "fuentes": ["p8-act1"]},
+          {"palabra": "Guatemala", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Nicaragua", "fuentes": ["p8-act1"]},
+          {"palabra": "Costa Rica", "fuentes": ["p8-act1"]},
+          {"palabra": "Panamá", "fuentes": ["p8-act1"]},
+          {"palabra": "Venezuela", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Colombia", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Ecuador", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Perú", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Bolivia", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Paraguay", "fuentes": ["p8-act1"]},
+          {"palabra": "Chile", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Argentina", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Uruguay", "fuentes": ["p8-act1", "p11-act7"]},
+          {"palabra": "Honduras", "fuentes": ["p8-act1"]},
+          {"palabra": "El Salvador", "fuentes": ["p8-act1"]}
         ],
         "fuentes": ["p8-act1", "p11-act7"],
-        "descripcion": {
-          "U0": "Punto de partida pre-A1.1: introducción a los 20 países hispanohablantes presentes en el mapa del libro (España + 19 de Hispanoamérica). Reconocimiento del nombre escrito y pronunciación inicial."
-        }
+        "descripcion": { "U0": "Punto de partida pre-A1.1: introducción a los 20 países hispanohablantes presentes en el mapa del libro (España + 19 de Hispanoamérica). Reconocimiento del nombre escrito y pronunciación inicial." }
       },
       "Abecedario español": {
         "items": [
-          { "palabra": "a — adiós", "fuentes": ["p10-act5"] },
-          { "palabra": "be — bolígrafo", "fuentes": ["p10-act5"] },
-          { "palabra": "ce — casa", "fuentes": ["p10-act5", "p11-act6"] },
-          { "palabra": "de — dos", "fuentes": ["p10-act5"] },
-          { "palabra": "e — elefante", "fuentes": ["p10-act5"] },
-          { "palabra": "efe — foto", "fuentes": ["p10-act5"] },
-          { "palabra": "ge — gato", "fuentes": ["p10-act5", "p11-act6"] },
-          { "palabra": "hache — hoja", "fuentes": ["p10-act5"] },
-          { "palabra": "i — isla", "fuentes": ["p10-act5"] },
-          { "palabra": "jota — julio", "fuentes": ["p10-act5", "p11-act6"] },
-          { "palabra": "ka — kilo", "fuentes": ["p10-act5"] },
-          { "palabra": "ele — lápiz", "fuentes": ["p10-act5"] },
-          { "palabra": "eme — mesa", "fuentes": ["p10-act5"] },
-          { "palabra": "ene — número", "fuentes": ["p10-act5"] },
-          { "palabra": "eñe — mañana", "fuentes": ["p10-act5"] },
-          { "palabra": "o — oso", "fuentes": ["p10-act5"] },
-          { "palabra": "pe — padre", "fuentes": ["p10-act5"] },
-          { "palabra": "cu — queso", "fuentes": ["p10-act5", "p11-act6"] },
-          { "palabra": "erre — reloj", "fuentes": ["p10-act5"] },
-          { "palabra": "ese — silla", "fuentes": ["p10-act5"] },
-          { "palabra": "te — tomate", "fuentes": ["p10-act5"] },
-          { "palabra": "u — uva", "fuentes": ["p10-act5"] },
-          { "palabra": "uve — vaso", "fuentes": ["p10-act5"] },
-          { "palabra": "uve doble — waterpolo", "fuentes": ["p10-act5"] },
-          { "palabra": "equis — examen", "fuentes": ["p10-act5"] },
-          { "palabra": "ye / i griega — yogur", "fuentes": ["p10-act5"] },
-          { "palabra": "zeta — zoo", "fuentes": ["p10-act5", "p11-act6"] }
+          {"palabra": "a — adiós", "fuentes": ["p10-act5"]},
+          {"palabra": "be — bolígrafo", "fuentes": ["p10-act5"]},
+          {"palabra": "ce — casa", "fuentes": ["p10-act5", "p11-act6"]},
+          {"palabra": "de — dos", "fuentes": ["p10-act5"]},
+          {"palabra": "e — elefante", "fuentes": ["p10-act5"]},
+          {"palabra": "efe — foto", "fuentes": ["p10-act5"]},
+          {"palabra": "ge — gato", "fuentes": ["p10-act5", "p11-act6"]},
+          {"palabra": "hache — hoja", "fuentes": ["p10-act5"]},
+          {"palabra": "i — isla", "fuentes": ["p10-act5"]},
+          {"palabra": "jota — julio", "fuentes": ["p10-act5", "p11-act6"]},
+          {"palabra": "ka — kilo", "fuentes": ["p10-act5"]},
+          {"palabra": "ele — lápiz", "fuentes": ["p10-act5"]},
+          {"palabra": "eme — mesa", "fuentes": ["p10-act5"]},
+          {"palabra": "ene — número", "fuentes": ["p10-act5"]},
+          {"palabra": "eñe — mañana", "fuentes": ["p10-act5"]},
+          {"palabra": "o — oso", "fuentes": ["p10-act5"]},
+          {"palabra": "pe — padre", "fuentes": ["p10-act5"]},
+          {"palabra": "cu — queso", "fuentes": ["p10-act5", "p11-act6"]},
+          {"palabra": "erre — reloj", "fuentes": ["p10-act5"]},
+          {"palabra": "ese — silla", "fuentes": ["p10-act5"]},
+          {"palabra": "te — tomate", "fuentes": ["p10-act5"]},
+          {"palabra": "u — uva", "fuentes": ["p10-act5"]},
+          {"palabra": "uve — vaso", "fuentes": ["p10-act5"]},
+          {"palabra": "uve doble — waterpolo", "fuentes": ["p10-act5"]},
+          {"palabra": "equis — examen", "fuentes": ["p10-act5"]},
+          {"palabra": "ye / i griega — yogur", "fuentes": ["p10-act5"]},
+          {"palabra": "zeta — zoo", "fuentes": ["p10-act5", "p11-act6"]}
         ],
         "fuentes": ["p10-act5", "p11-act6"],
-        "descripcion": {
-          "U0": "Punto de partida pre-A1.1: presentación del abecedario español como inventario léxico-fonético (27 letras con nombre canónico y palabra-ejemplo). Base para el deletreo (act7) y el dictado fonético (act8)."
-        }
+        "descripcion": { "U0": "Punto de partida pre-A1.1: presentación del abecedario español como inventario léxico-fonético (27 letras con nombre canónico y palabra-ejemplo). Base para el deletreo (act7) y el dictado fonético (act8)." }
       },
       "Números cardinales": {
         "items": [
-          { "palabra": "cero",   "fuentes": ["p11-act9@R"] },
-          { "palabra": "uno",    "fuentes": ["p11-act9@R"] },
-          { "palabra": "dos",    "fuentes": ["p11-act9@R"] },
-          { "palabra": "tres",   "fuentes": ["p11-act9@R"] },
-          { "palabra": "cuatro", "fuentes": ["p11-act9@R"] },
-          { "palabra": "cinco",  "fuentes": ["p11-act9@R"] },
-          { "palabra": "seis",   "fuentes": ["p11-act9@R"] },
-          { "palabra": "siete",  "fuentes": ["p11-act9@R"] },
-          { "palabra": "ocho",   "fuentes": ["p11-act9@R"] },
-          { "palabra": "nueve",  "fuentes": ["p11-act9@R"] },
-          { "palabra": "diez",   "fuentes": ["p11-act9@R"] }
+          {"palabra": "cero", "fuentes": ["p11-act9@R"]},
+          {"palabra": "uno", "fuentes": ["p11-act9@R"]},
+          {"palabra": "dos", "fuentes": ["p11-act9@R"]},
+          {"palabra": "tres", "fuentes": ["p11-act9@R"]},
+          {"palabra": "cuatro", "fuentes": ["p11-act9@R"]},
+          {"palabra": "cinco", "fuentes": ["p11-act9@R"]},
+          {"palabra": "seis", "fuentes": ["p11-act9@R"]},
+          {"palabra": "siete", "fuentes": ["p11-act9@R"]},
+          {"palabra": "ocho", "fuentes": ["p11-act9@R"]},
+          {"palabra": "nueve", "fuentes": ["p11-act9@R"]},
+          {"palabra": "diez", "fuentes": ["p11-act9@R"]}
         ],
         "fuentes": ["p11-act9@R"],
-        "descripcion": {
-          "U0": "Punto de partida pre-A1.1: introducción al léxico de los números 0-10 trabajado mediante dictado (escucha y escritura)."
-        }
+        "descripcion": { "U0": "Punto de partida pre-A1.1: introducción al léxico de los números 0-10 trabajado mediante dictado (escucha y escritura)." }
       },
       "Para la clase": {
         "items": [
-          { "palabra": "Escucha",                          "fuentes": ["p11-act10"] },
-          { "palabra": "Lee",                              "fuentes": ["p11-act10"] },
-          { "palabra": "Escribe",                          "fuentes": ["p11-act10"] },
-          { "palabra": "Repite",                           "fuentes": ["p11-act10"] },
-          { "palabra": "Pregunta a tu compañero",          "fuentes": ["p11-act10"] },
-          { "palabra": "¿Puedes repetir?",                 "fuentes": ["p11-act10"] },
-          { "palabra": "¿Cómo se dice en español hello?",  "fuentes": ["p11-act10"] },
-          { "palabra": "¿Cómo se escribe en español hola?","fuentes": ["p11-act10"] }
+          {"palabra": "Escucha", "fuentes": ["p11-act10"]},
+          {"palabra": "Lee", "fuentes": ["p11-act10"]},
+          {"palabra": "Escribe", "fuentes": ["p11-act10"]},
+          {"palabra": "Repite", "fuentes": ["p11-act10"]},
+          {"palabra": "Pregunta a tu compañero", "fuentes": ["p11-act10"]},
+          {"palabra": "¿Puedes repetir?", "fuentes": ["p11-act10"]},
+          {"palabra": "¿Cómo se dice en español hello?", "fuentes": ["p11-act10"]},
+          {"palabra": "¿Cómo se escribe en español hola?", "fuentes": ["p11-act10"]}
         ],
         "fuentes": ["p11-act10"],
-        "descripcion": {
-          "U0": "Punto de partida pre-A1.1: léxico funcional de aula (instrucciones del profesor en imperativo + fórmulas para pedir repetición y traducción). Base metalingüística para el resto del curso."
-        }
+        "descripcion": { "U0": "Punto de partida pre-A1.1: léxico funcional de aula (instrucciones del profesor en imperativo + fórmulas para pedir repetición y traducción). Base metalingüística para el resto del curso." }
       },
       "Saludos y despedidas": {
         "items": [
-          { "palabra": "Buenos días",   "fuentes": ["cuadro@p11"] },
-          { "palabra": "Buenas tardes", "fuentes": ["cuadro@p11"] },
-          { "palabra": "Buenas noches", "fuentes": ["cuadro@p11"] }
+          {"palabra": "Buenos días", "fuentes": ["cuadro@p11"]},
+          {"palabra": "Buenas tardes", "fuentes": ["cuadro@p11"]},
+          {"palabra": "Buenas noches", "fuentes": ["cuadro@p11"]}
         ],
         "fuentes": ["cuadro@p11"],
         "descripcion": {
@@ -130,27 +118,24 @@
     },
     "recurrente": {}
   },
-
   "tiempos_y_verbos_consolidado": [],
-
   "gramatica_consolidada": {
     "principal": {},
     "recurrente": {}
   },
-
   "pronunciacion_ortografia_consolidada": {
     "principal": {
       "Sonidos y correspondencias ortográficas": {
         "items": [
-          { "palabra": "Abecedario español (27 letras con nombre y ejemplo)", "fuentes": ["p10-act5"] },
-          { "palabra": "Grupo c/qu (casa, cómo, cuatro, qué, química)",        "fuentes": ["p11-act6"] },
-          { "palabra": "Grupo j/g (jamón, jefe, jirafa, jota, julio, gente, giga)", "fuentes": ["p11-act6"] },
-          { "palabra": "Grupo g/gu (gato, goma, agua, guepardo, guitarra)",   "fuentes": ["p11-act6"] },
-          { "palabra": "Grupo z/c (zapato, zona, azul, cero, cine)",          "fuentes": ["p11-act6"] },
-          { "palabra": "Dígrafos ch / ll / gu / qu / rr (un único sonido)",   "fuentes": ["p10-act5"] },
-          { "palabra": "Nombres alternativos en Hispanoamérica de b, v, w",   "fuentes": ["p10-act5"] },
-          { "palabra": "Deletreo de nombres propios (países)",                "fuentes": ["p11-act7"] },
-          { "palabra": "Dictado por deletreo de palabras",                    "fuentes": ["p11-act8"] }
+          {"palabra": "Abecedario español (27 letras con nombre y ejemplo)", "fuentes": ["p10-act5"]},
+          {"palabra": "Grupo c/qu (casa, cómo, cuatro, qué, química)", "fuentes": ["p11-act6"]},
+          {"palabra": "Grupo j/g (jamón, jefe, jirafa, jota, julio, gente, giga)", "fuentes": ["p11-act6"]},
+          {"palabra": "Grupo g/gu (gato, goma, agua, guepardo, guitarra)", "fuentes": ["p11-act6"]},
+          {"palabra": "Grupo z/c (zapato, zona, azul, cero, cine)", "fuentes": ["p11-act6"]},
+          {"palabra": "Dígrafos ch / ll / gu / qu / rr (un único sonido)", "fuentes": ["p10-act5"]},
+          {"palabra": "Nombres alternativos en Hispanoamérica de b, v, w", "fuentes": ["p10-act5"]},
+          {"palabra": "Deletreo de nombres propios (países)", "fuentes": ["p11-act7"]},
+          {"palabra": "Dictado por deletreo de palabras", "fuentes": ["p11-act8"]}
         ],
         "fuentes": ["p10-act5", "p11-act6", "p11-act7", "p11-act8"],
         "descripcion": {
@@ -160,19 +145,42 @@
     },
     "recurrente": {}
   },
-
   "secciones": {
-    "vocabulario":  { "paginas": [8, 9, 10, 11], "actividades_ids": ["U0-p8-act1","U0-p8-act2","U0-p9-act3","U0-p9-act4","U0-p10-act5","U0-p11-act6","U0-p11-act7","U0-p11-act8","U0-p11-act9","U0-p11-act10"] },
-    "gramatica":    { "paginas": [], "actividades_ids": [] },
-    "comunicacion": { "paginas": [], "actividades_ids": [] },
-    "destrezas":    { "paginas": [], "actividades_ids": [] },
-    "cultura":      { "paginas": [], "actividades_ids": [] },
-    "evaluacion":   { "paginas": [], "actividades_ids": [] },
-    "reflexion":    { "paginas": [], "actividades_ids": [] }
+    "vocabulario": {
+      "paginas": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "actividades_ids": ["U0-p8-act1", "U0-p8-act2", "U0-p9-act3", "U0-p9-act4", "U0-p10-act5", "U0-p11-act6", "U0-p11-act7", "U0-p11-act8", "U0-p11-act9", "U0-p11-act10"]
+    },
+    "gramatica": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "comunicacion": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "destrezas": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "cultura": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "evaluacion": {
+      "paginas": [],
+      "actividades_ids": []
+    },
+    "reflexion": {
+      "paginas": [],
+      "actividades_ids": []
+    }
   },
-
   "_nota_unidad_atipica": "Punto de partida (U0) es una unidad introductoria pre-A1.1 que NO sigue la estructura canónica de 5 secciones del curso. Su contenido es léxico-fonético (países hispanohablantes, abecedario, correspondencias ortográficas, números 0-10, fórmulas de saludo, lenguaje de aula) y se mapea íntegramente a la sección 'vocabulario' por §7 de reglas-operativas. No se trabaja gramática ni paradigmas verbales; los verbos visibles son metalengua de instrucción o léxico funcional de aula bajo 'Para la clase'.",
-
   "_decisiones_ia": [
     "P1(b) resuelta por dictamen editorial del autor (v10.119): canónico final 'Saludos y despedidas' (origen: excepcion) añadido al registry campos-semanticos-canonicos.json con aliases_indice: ['Saludos'] para preservar el rótulo verbatim del cuadro p11. En este JSON, la clave de vocabulario_consolidado.principal y la referencia en cuadro@p11.vocabulario usan 'Saludos y despedidas'; el campo titulo del cuadro mantiene 'Saludos' como texto literal del libro.",
     "P2(a) resuelta: las 15 palabras cognadas de p9-act3 (banco, león, fútbol, gato, flamenco, museo, metro, playa, hospital, hotel, televisión, tenis, limón, moto, judo, euro) NO se canonizan en vocabulario_consolidado. Son input léxico semánticamente heterogéneo (§5.7) cuyo foco pedagógico real es fonético-ortográfico (sílaba tónica subrayada + escucha y repite). Se preservan literales en act3.datos.items_libro y act4 referencia 'palabras anteriores'.",
@@ -186,7 +194,6 @@
     "P10 resuelta: el bloque 'Observa' de p10 codificado como nota dentro de p10-act5.datos._nota (no como cuadro). Conforme §4: 'Observa' siempre es nota, nunca actividad ni cuadro.",
     "Anticipaciones detectadas para fase 2: (a) 'Nombres de las letras' (canónico léxico) — primera aparición canónica U1 vocabulario; aparece como input en U0-p10-act5 (nombres canónicos de las 27 letras). (b) 'Países hispanohablantes' (canónico léxico) — primera aparición canónica U2 vocabulario; sinónimo/refinamiento del canónico U0 'Países que hablan español' (que el índice U0 declara). (c) Lemas verbales escuchar (U6 IMP), leer (U1 PRE), escribir (U3 PRE), repetir, preguntar, decir (U6 IMP) — aparecen en formas imperativas en U0-p11-act10 'Para la clase' como input metalingüístico, no como paradigma trabajado."
   ],
-
   "paginas_detalle": [
     {
       "pagina": 8,
@@ -204,11 +211,35 @@
           "gramatica": [],
           "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
           "audio": { "presente": true, "pista": 1 },
-          "imagen": { "presente": true, "descripcion": "Mapa político de España y América Latina con 20 países hispanohablantes etiquetados: España, México, Cuba, República Dominicana, Puerto Rico, Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, Panamá, Venezuela, Colombia, Ecuador, Perú, Bolivia, Paraguay, Chile, Argentina, Uruguay. Junto al mapa una ilustración de tres personas señalando el mapa." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Mapa político de España y América Latina con 20 países hispanohablantes etiquetados: España, México, Cuba, República Dominicana, Puerto Rico, Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, Panamá, Venezuela, Colombia, Ecuador, Perú, Bolivia, Paraguay, Chile, Argentina, Uruguay. Junto al mapa una ilustración de tres personas señalando el mapa."
+          },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "paises_etiquetados": ["España","México","Cuba","República Dominicana","Puerto Rico","Guatemala","El Salvador","Honduras","Nicaragua","Costa Rica","Panamá","Venezuela","Colombia","Ecuador","Perú","Bolivia","Paraguay","Chile","Argentina","Uruguay"]
+            "paises_etiquetados": [
+              "España",
+              "México",
+              "Cuba",
+              "República Dominicana",
+              "Puerto Rico",
+              "Guatemala",
+              "El Salvador",
+              "Honduras",
+              "Nicaragua",
+              "Costa Rica",
+              "Panamá",
+              "Venezuela",
+              "Colombia",
+              "Ecuador",
+              "Perú",
+              "Bolivia",
+              "Paraguay",
+              "Chile",
+              "Argentina",
+              "Uruguay"
+            ]
           }
         },
         {
@@ -246,7 +277,10 @@
           "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "15 fotografías etiquetadas a-o que ilustran las 15 palabras del ejercicio: a tenis, b flamenco, c metro, d euro, e moto, f fútbol, g gato, h banco, i hospital, j hotel, k león, l televisión, m limón, n museo, ñ judo, o playa." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "15 fotografías etiquetadas a-o que ilustran las 15 palabras del ejercicio: a tenis, b flamenco, c metro, d euro, e moto, f fútbol, g gato, h banco, i hospital, j hotel, k león, l televisión, m limón, n museo, ñ judo, o playa."
+          },
           "video": { "presente": false },
           "respuestas": [
             "banco — h",
@@ -268,12 +302,10 @@
           ],
           "datos": {
             "subtipo": "relaciona_palabra_imagen",
-            "items_libro": [
-              "banco","1 león","2 fútbol","3 gato","4 flamenco","5 museo","6 metro","7 playa","8 hospital","9 hotel","10 televisión","11 tenis","11 limón","13 moto","14 judo","15 euro"
-            ],
+            "items_libro": ["banco", "1 león", "2 fútbol", "3 gato", "4 flamenco", "5 museo", "6 metro", "7 playa", "8 hospital", "9 hotel", "10 televisión", "11 tenis", "11 limón", "13 moto", "14 judo", "15 euro"],
             "columnas_relaciona": {
-              "izquierda": ["banco","león","fútbol","gato","flamenco","museo","metro","playa","hospital","hotel","televisión","tenis","limón","moto","judo","euro"],
-              "derecha": ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o"]
+              "izquierda": ["banco", "león", "fútbol", "gato", "flamenco", "museo", "metro", "playa", "hospital", "hotel", "televisión", "tenis", "limón", "moto", "judo", "euro"],
+              "derecha": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o"]
             },
             "_nota": "Para facilitar el aprendizaje de la pronunciación, se subraya la sílaba tónica de las palabras de la sección Vocabulario hasta la unidad 3."
           }
@@ -313,19 +345,43 @@
           "gramatica": [],
           "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
           "audio": { "presente": true, "pista": 3 },
-          "imagen": { "presente": true, "descripcion": "27 ilustraciones tipo libro coloreado, cada una con una letra mayúscula y minúscula (A-Z + Ñ) en distintos colores y disposiciones; bajo cada ilustración aparece el nombre canónico de la letra y una palabra-ejemplo." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "27 ilustraciones tipo libro coloreado, cada una con una letra mayúscula y minúscula (A-Z + Ñ) en distintos colores y disposiciones; bajo cada ilustración aparece el nombre canónico de la letra y una palabra-ejemplo."
+          },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
             "subtipo": "abecedario",
             "titulo": "ABECEDARIO ESPAÑOL",
             "items_libro": [
-              "a — adiós","be — bolígrafo","ce — casa","de — dos","e — elefante",
-              "efe — foto","ge — gato","hache — hoja","i — isla","jota — julio",
-              "ka — kilo","ele — lápiz","eme — mesa","ene — número","eñe — mañana",
-              "o — oso","pe — padre","cu — queso","erre — reloj","ese — silla",
-              "te — tomate","u — uva","uve — vaso","uve doble — waterpolo","equis — examen",
-              "ye / i griega — yogur","zeta — zoo"
+              "a — adiós",
+              "be — bolígrafo",
+              "ce — casa",
+              "de — dos",
+              "e — elefante",
+              "efe — foto",
+              "ge — gato",
+              "hache — hoja",
+              "i — isla",
+              "jota — julio",
+              "ka — kilo",
+              "ele — lápiz",
+              "eme — mesa",
+              "ene — número",
+              "eñe — mañana",
+              "o — oso",
+              "pe — padre",
+              "cu — queso",
+              "erre — reloj",
+              "ese — silla",
+              "te — tomate",
+              "u — uva",
+              "uve — vaso",
+              "uve doble — waterpolo",
+              "equis — examen",
+              "ye / i griega — yogur",
+              "zeta — zoo"
             ],
             "_nota": "Observa: Algunas letras tienen otro nombre en Hispanoamérica: - b (be larga, be grande, be alta) - v (ve corta, ve chica, ve baja) - w (ve doble, doble uve, doble ve, doble u). En español estas combinaciones de letras representan un único sonido: ch / ll / gu / qu / rr."
           }
@@ -354,10 +410,10 @@
           "datos": {
             "subtipo": "grupos_ortograficos",
             "grupos": {
-              "c/qu": ["casa","cómo","cuatro","qué","química"],
-              "j/g":  ["jamón","jefe","jirafa","jota","julio","gente","giga"],
-              "g/gu": ["gato","goma","agua","guepardo","guitarra"],
-              "z/c":  ["zapato","zona","azul","cero","cine"]
+              "c/qu": ["casa", "cómo", "cuatro", "qué", "química"],
+              "j/g": ["jamón", "jefe", "jirafa", "jota", "julio", "gente", "giga"],
+              "g/gu": ["gato", "goma", "agua", "guepardo", "guitarra"],
+              "z/c": ["zapato", "zona", "azul", "cero", "cine"]
             }
           }
         },
@@ -390,7 +446,7 @@
           "datos": {
             "subtipo": "deletreo",
             "ejemplo_libro": "Colombia ce-o-ele-o-eme-be-i-a",
-            "items_libro": ["1 España","2 México","3 Perú","4 Venezuela","5 Chile","6 Argentina","7 Ecuador","8 Uruguay","9 Guatemala","10 Bolivia"]
+            "items_libro": ["1 España", "2 México", "3 Perú", "4 Venezuela", "5 Chile", "6 Argentina", "7 Ecuador", "8 Uruguay", "9 Guatemala", "10 Bolivia"]
           }
         },
         {
@@ -407,22 +463,11 @@
           "audio": { "presente": true, "pista": 5 },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 F-ú-t-b-o-l",
-            "2 me-e-ese-a",
-            "3 e-ele-e-efe-a-ene-te-e",
-            "4 jota-i-ere-a-efe-a",
-            "5 ge-a-te-o",
-            "6 ele-e-o-ene",
-            "7 ele-i-eme-o-ene",
-            "8 ele-i-eme-o-ene",
-            "9 hache-o-ese-pe-i-te-a-ele",
-            "10 u-uve-a"
-          ],
+          "respuestas": ["1 F-ú-t-b-o-l", "2 me-e-ese-a", "3 e-ele-e-efe-a-ene-te-e", "4 jota-i-ere-a-efe-a", "5 ge-a-te-o", "6 ele-e-o-ene", "7 ele-i-eme-o-ene", "8 ele-i-eme-o-ene", "9 hache-o-ese-pe-i-te-a-ele", "10 u-uve-a"],
           "datos": {
             "subtipo": "dictado_deletreo",
             "ejemplo_libro": "1 F-ú-t-b-o-l",
-            "items_libro": ["1 F-ú-t-b-o-l","2 _____","3 _____","4 _____","5 _____","6 _____","7 _____","8 _____","9 _____","10 _____"]
+            "items_libro": ["1 F-ú-t-b-o-l", "2 _____", "3 _____", "4 _____", "5 _____", "6 _____", "7 _____", "8 _____", "9 _____", "10 _____"]
           }
         },
         {
@@ -439,13 +484,10 @@
           "audio": { "presente": true, "pista": 6 },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "0 cero","1 uno","2 dos","3 tres","4 cuatro","5 cinco",
-            "6 seis","7 siete","8 ocho","9 nueve","10 diez"
-          ],
+          "respuestas": ["0 cero", "1 uno", "2 dos", "3 tres", "4 cuatro", "5 cinco", "6 seis", "7 siete", "8 ocho", "9 nueve", "10 diez"],
           "datos": {
             "subtipo": "dictado_numeros",
-            "items_libro": ["0 _____","1 _____","2 _____","3 _____","4 _____","5 _____","6 _____","7 _____","8 _____","9 _____","10 _____"]
+            "items_libro": ["0 _____", "1 _____", "2 _____", "3 _____", "4 _____", "5 _____", "6 _____", "7 _____", "8 _____", "9 _____", "10 _____"]
           }
         },
         {
@@ -465,16 +507,7 @@
           "respuestas": [],
           "datos": {
             "subtipo": "mediacion_expresiones_aula",
-            "items_libro": [
-              "1 Escucha",
-              "2 Lee",
-              "3 Escribe",
-              "4 Repite",
-              "5 Pregunta a tu compañero",
-              "6 ¿Puedes repetir?",
-              "7 ¿Cómo se dice en español hello?",
-              "8 ¿Cómo se escribe en español hola?"
-            ]
+            "items_libro": ["1 Escucha", "2 Lee", "3 Escribe", "4 Repite", "5 Pregunta a tu compañero", "6 ¿Puedes repetir?", "7 ¿Cómo se dice en español hello?", "8 ¿Cómo se escribe en español hola?"]
           }
         }
       ],

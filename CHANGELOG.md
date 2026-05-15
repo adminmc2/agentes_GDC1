@@ -5,6 +5,27 @@
 
 ---
 
+## [v10.125 — 2026-05-15] — Fase 1: blindaje del serializador de inventarios + reformateo canónico de U0/U1
+
+Cierre de deuda técnica detectada por el revisor tras v10.124b: el enfoque "post-regex" usado en los scripts ad-hoc de v10.123 y v10.124 para preservar el estilo editorial (items inline `{palabra, fuentes}` uno por línea) tenía un bug latente — cuando varios items consecutivos se colapsaban en secuencia, el patrón no preservaba el newline entre ellos y terminaban pegados en una sola línea con `},          {` consecutivos. La regresión se manifestó dos veces y se cerró ad-hoc en v10.123b y v10.124b. Con U2-U9 por procesar, mantener el bug latente garantizaba ensuciar todos los diffs futuros.
+
+**Cambios:**
+
+- **Nuevo: `scripts/format_inventario.py`** — serializador canónico reutilizable. Reemplaza el enfoque post-regex por una **serialización recursiva tree-aware** que decide formato inline vs multi-línea según el shape del nodo, no por regex. Reglas explícitas:
+  - Items con shape `{palabra, fuentes}` → inline en una sola línea, uno por línea.
+  - Items con shape `{lema, tiempo, formas_trabajadas, ...}` de `tiempos_y_verbos` → inline en una sola línea si caben.
+  - Arrays de strings cortos (≤ 220 chars) → inline.
+  - Objetos pequeños con valores primitivos (≤ 240 chars) → inline.
+  - Resto → indent estándar de 2 espacios.
+  - Incluye sanity check de **round-trip estructural** (el JSON re-parseado debe coincidir con el original) antes de escribir, para detectar regresiones de contenido.
+  - Modo CLI: `python3 scripts/format_inventario.py <ruta1> [<ruta2> ...]`.
+
+- **Reformateado canónico aplicado a `unidades/U0/U0-nc1-inventario.json` y `unidades/U1/U1-nc1-inventario.json`**. U0 no había sido tocado desde v10.121 y heredaba inconsistencias menores del serializador antiguo; ahora ambos archivos comparten estilo. Diff cosmético, contenido idéntico (round-trip verificado).
+
+**Convención operativa a partir de aquí (U2-U9):** cualquier script que modifique inventarios debe usar `format_inventory_json` de `scripts/format_inventario.py` para escribir el output. El enfoque post-regex queda **deprecado**.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
 ## [v10.124b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.124 (descripción + P3 sincronizadas con reclasificación de p14-act4 + regresión de formato resuelta)
 
 Dos hallazgos del revisor sobre v10.124:

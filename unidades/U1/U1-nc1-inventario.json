@@ -529,7 +529,8 @@
     "principal": {
       "Entonación": {
         "items": [
-          {"palabra": "entonación interrogativa (ascendente al final)", "fuentes": ["p15-act8", "p15-act9"]}        ],
+          {"palabra": "entonación interrogativa (ascendente al final)", "fuentes": ["p15-act8", "p15-act9"]}
+        ],
         "fuentes": ["p15-act8", "p15-act9"],
         "descripcion": {
           "U1": "PCIC A1 pronunciación §2.3 patrones melódicos interrogativos. Principal U1 (registry pronunciacion-ortografia-canonica.json declara U1: ['interrogativa']). Trabajado en p15-act8 (Escucha y repite: 8 preguntas con entonación interrogativa) y p15-act9 (Escucha y repite: 3 preguntas funcionales bajo 'Para aprender')."
@@ -644,21 +645,9 @@
           "instruccion_original": "Lee y escucha.",
           "vocabulario": ["Edad", "Adjetivos de nacionalidad", "Gentilicios"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Soy", "soy"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Me llamo"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Tengo", "tengo"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Soy", "soy"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo", "tengo"]}
           ],
           "gramatica": ["Nombres propios"],
           "pronunciacion_ortografia": [],
@@ -686,21 +675,9 @@
           "instruccion_original": "Preséntate tú ahora.",
           "vocabulario": ["Edad", "Adjetivos de nacionalidad", "Gentilicios"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Soy"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["me llamo"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Tengo"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Soy"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo"]}
           ],
           "gramatica": ["Nombres propios"],
           "pronunciacion_ortografia": [],
@@ -785,11 +762,7 @@
           "instruccion_original": "Escucha y completa.",
           "vocabulario": [],
           "tiempos_y_verbos": [
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["te llamas"]
-            }
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
@@ -824,11 +797,7 @@
           "instruccion_original": "Pregunta y contesta a tu compañero, como en el ejemplo.",
           "vocabulario": ["Nombres de las letras"],
           "tiempos_y_verbos": [
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["te llamas"]
-            }
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
@@ -850,16 +819,8 @@
           "instruccion_original": "Completa con las palabras del recuadro.",
           "vocabulario": ["Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["soy", "es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Me llamo", "se llama"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "se llama"]}
           ],
           "gramatica": ["Nombres propios", "Concordancia de género"],
           "pronunciacion_ortografia": [],
@@ -889,21 +850,9 @@
           "instruccion_original": "Lee a Daniel y a Beatriz y contesta a las preguntas.",
           "vocabulario": ["Edad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Soy", "es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Me llamo", "Me lllamo"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tengo", "tiene"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Soy", "es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "Me lllamo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -939,11 +888,7 @@
           "instruccion_original": "Subraya el verbo correcto.",
           "vocabulario": ["Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["soy", "eres", "es"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "eres", "es"]}
           ],
           "gramatica": ["Nombres propios", "Pronombre sujeto"],
           "pronunciacion_ortografia": [],
@@ -966,11 +911,7 @@
           "instruccion_original": "Completa los huecos con la forma correspondiente del verbo tener.",
           "vocabulario": ["Edad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tengo", "tiene"]
-            }
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -993,16 +934,8 @@
           "instruccion_original": "Forma frases tomando un elemento de cada columna. Hay más de una opción.",
           "vocabulario": ["Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["soy", "eres", "es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["llamas", "llamo"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "eres", "es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["llamas", "llamo"]}
           ],
           "gramatica": ["Nombres propios", "Pronombre sujeto"],
           "pronunciacion_ortografia": [],
@@ -1081,21 +1014,9 @@
           },
           "vocabulario": [],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["soy", "eres", "es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["me llamo", "te llamas", "se llama"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tengo", "tienes", "tiene"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "eres", "es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo", "te llamas", "se llama"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tienes", "tiene"]}
           ],
           "gramatica": ["Nombres propios", "Pronombre sujeto"],
           "pronunciacion_ortografia": []
@@ -1164,11 +1085,7 @@
           "instruccion_original": "Escribe frases con el verbo ser.",
           "vocabulario": ["Adjetivos de nacionalidad", "Gentilicios", "Colores"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es", "soy", "son", "eres"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "soy", "son", "eres"]}
           ],
           "gramatica": ["Concordancia de género", "Concordancia de número"],
           "pronunciacion_ortografia": [],
@@ -1217,11 +1134,7 @@
           "instruccion_original": "Describe estos objetos con sus colores.",
           "vocabulario": ["Colores", "Objetos de clase"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
           "gramatica": ["Concordancia de género", "Artículos determinados"],
           "pronunciacion_ortografia": [],
@@ -1249,21 +1162,9 @@
           "instruccion_original": "Escucha y repite.",
           "vocabulario": ["Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["eres"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tienes"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["te llamas"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["eres"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]}
           ],
           "gramatica": ["Interrogativos", "Pronombre sujeto"],
           "pronunciacion_ortografia": ["Entonación", "Signos de puntuación"],
@@ -1295,11 +1196,7 @@
           "datos": {
             "subtipo": "para_aprender_formulas_aula",
             "_rotulo_libro": "Para aprender",
-            "items_libro": [
-              "¿Cómo se escribe \"hola\"?",
-              "¿Qué significa \"gracias\"?",
-              "¿Cómo se dice en español \"hello\"?"
-            ]
+            "items_libro": ["¿Cómo se escribe \"hola\"?", "¿Qué significa \"gracias\"?", "¿Cómo se dice en español \"hello\"?"]
           }
         },
         {
@@ -1338,11 +1235,7 @@
           },
           "vocabulario": ["Colores"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
           "gramatica": ["Concordancia de género"],
           "pronunciacion_ortografia": []
@@ -1362,21 +1255,9 @@
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo.",
           "vocabulario": ["Edad", "Número de teléfono", "Adjetivos de nacionalidad", "Saludos y despedidas"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["soy", "eres"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Me llamo", "me llamo"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tengo", "tienes", "Tengo"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "eres"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "me llamo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tienes", "Tengo"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos", "Pronombre sujeto"],
           "pronunciacion_ortografia": [],
@@ -1426,11 +1307,7 @@
           "instruccion_original": "Di tu nombre y pregunta a tu compañero, como en el ejemplo.",
           "vocabulario": [],
           "tiempos_y_verbos": [
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Me llamo", "te llamas"]
-            }
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "te llamas"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -1523,11 +1400,7 @@
           "instruccion_original": "¿Cuántos años tienes? Pregunta y contesta a tres compañeros, como en el ejemplo.",
           "vocabulario": ["Edad", "Números cardinales"],
           "tiempos_y_verbos": [
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tienes"]
-            }
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes"]}
           ],
           "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -1619,21 +1492,9 @@
           "instruccion_original": "En grupos de cuatro cread vuestro propio diálogo siguiendo estos pasos:",
           "vocabulario": ["Edad", "Número de teléfono", "Saludos y despedidas"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["soy"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["me llamo"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tengo"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -1661,21 +1522,9 @@
           "instruccion_original": "Lee y luego completa las fichas.",
           "vocabulario": ["Edad", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Soy", "soy", "Es", "es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Me llamo", "Se llama"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Tengo", "Tiene"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Soy", "soy", "Es", "es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "Se llama"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo", "Tiene"]}
           ],
           "gramatica": ["Nombres propios"],
           "pronunciacion_ortografia": [],
@@ -1725,21 +1574,9 @@
           "instruccion_original": "Lee y completa con los verbos del recuadro.",
           "vocabulario": ["Edad", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Soy", "es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["me llamo", "se llama"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tengo", "tiene"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Soy", "es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo", "se llama"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]}
           ],
           "gramatica": ["Nombres propios", "Pronombre sujeto"],
           "pronunciacion_ortografia": [],
@@ -1826,21 +1663,9 @@
           "instruccion_original": "Relaciona estas preguntas y respuestas.",
           "vocabulario": ["Edad", "Número de teléfono"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["eres", "Soy"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["te llamas", "Me llamo"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tienes", "Tengo"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["eres", "Soy"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas", "Me llamo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes", "Tengo"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -1869,16 +1694,8 @@
           "instruccion_original": "Pregunta a tu compañero y toma nota de sus respuestas.",
           "vocabulario": ["Edad", "Número de teléfono"],
           "tiempos_y_verbos": [
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["te llamas"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tienes"]
-            }
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -1901,21 +1718,9 @@
           "instruccion_original": "Utiliza las notas del ejercicio anterior para presentar a tu compañero al resto de la clase.",
           "vocabulario": ["Edad", "Número de teléfono"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["se llama"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tiene"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
           ],
           "gramatica": ["Nombres propios"],
           "pronunciacion_ortografia": [],
@@ -1934,21 +1739,9 @@
           "instruccion_original": "Escribe a tu mejor amigo sobre un compañero de clase.",
           "vocabulario": ["Edad", "Número de teléfono", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["se llama"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tiene"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
           ],
           "gramatica": ["Nombres propios"],
           "pronunciacion_ortografia": [],
@@ -1973,16 +1766,8 @@
           "instruccion_original": "Relaciona.",
           "vocabulario": ["Saludos y despedidas"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["Es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["me llamo"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]}
           ],
           "gramatica": ["Nombres propios", "Pronombre sujeto", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -2032,16 +1817,8 @@
           },
           "vocabulario": ["Saludos y despedidas", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es", "Soy", "Es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["me llamo"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Soy", "Es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]}
           ],
           "gramatica": ["Nombres propios", "Pronombre sujeto", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -2073,21 +1850,9 @@
           },
           "vocabulario": [],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["eres", "es"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["te llamas", "se llama"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tienes", "tiene"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["eres", "es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas", "se llama"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes", "tiene"]}
           ],
           "gramatica": ["Pronombre sujeto", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -2108,11 +1873,7 @@
           "instruccion_original": "Completa las frases con la forma correspondiente del verbo ser.",
           "vocabulario": ["Adjetivos de nacionalidad", "Colores"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es", "soy", "eres"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "soy", "eres"]}
           ],
           "gramatica": ["Nombres propios", "Pronombre sujeto", "Concordancia de género"],
           "pronunciacion_ortografia": [],
@@ -2198,21 +1959,9 @@
           "instruccion_original": "Completa con una forma del verbo ser, llamarse o tener.",
           "vocabulario": ["Adjetivos de nacionalidad", "Edad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es", "eres"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["se llama", "te llamas"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tiene", "tienes"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "eres"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama", "te llamas"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienes"]}
           ],
           "gramatica": ["Nombres propios", "Pronombre sujeto", "Interrogativos"],
           "pronunciacion_ortografia": [],
@@ -2261,21 +2010,9 @@
           "instruccion_original": "Contesta a las preguntas.",
           "vocabulario": ["Edad", "Número de teléfono", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
-            {
-              "lema": "ser",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["es", "eres"]
-            },
-            {
-              "lema": "llamarse",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["te llamas"]
-            },
-            {
-              "lema": "tener",
-              "tiempo": "Presente",
-              "formas_trabajadas": ["tienes"]
-            }
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "eres"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes"]}
           ],
           "gramatica": ["Nombres propios", "Interrogativos"],
           "pronunciacion_ortografia": [],
