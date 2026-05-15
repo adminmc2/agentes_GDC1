@@ -5,6 +5,15 @@
 
 ---
 
+## [v10.130 — 2026-05-15] — Dashboard: respuestas sin numeración duplicada cuando el libro ya las numera
+
+Hallazgo del autor revisando inventarios: en `respuestas` con prefijo numérico del libro (`"1 brasileña"`, `"2 colombiana"`...), el `<ol>` del dashboard añadía su propia numeración → render duplicado `"1. 1 brasileña / 2. 2 colombiana"`.
+
+**Cambio en `web/index.html`** (render del bloque `Respuestas` en `renderInventario`):
+
+- Detección heurística: si ≥50% de respuestas empiezan con `^\d+[\s.)]` (número del libro), se renderiza como lista plana (`<div>` por respuesta) sin numeración automática. Si no, se mantiene `<ol>` con numeración auto.
+- El JSON no se toca: respuestas verbatim del libro intactas (regla crítica 1).
+
 ## [v10.129 — 2026-05-15] — Fase 1: U3 migrada a shape v10.117 + canonización "La hora" + nuevo lema "interesar" + propagación U3 a 7 lemas verbales
 
 Cuarta unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U3/`, rama `proc-u3-wip`, agente dry-run en chat limpio, commit candidato `98b68d4`, integración a main por copia controlada + reformateo canónico + actualización coordinada de dos registries).
