@@ -3,7 +3,7 @@
 Regenera los hilos de nivel `mapa` en `unidades/nc1-reciclaje.json`
 a partir de `unidades/nc1-curso.json`.
 
-⚠️ ESTADO TRANSITORIO (2026-05-15, v10.119):
+⚠️ ESTADO TRANSITORIO (2026-05-15, v10.120):
    Este script lee `nc1-curso.json`, que no cambió de shape entre v10.114 y v10.117.
    En principio sigue siendo operativo aunque fase 2 esté pausada (decisión 36, v10.108).
    PERO: el output que genera (hilos `nivel_analisis: "mapa"` en `nc1-reciclaje.json`)

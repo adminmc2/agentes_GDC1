@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-15 (v10.119 — U0 migrada a shape v10.117 + nuevo canónico "Saludos y despedidas").
+> **Última actualización:** 2026-05-15 (v10.120 — limpieza documental de fase 2 tras rediseño de fase 1; drift de `campo_semantico`/`comprension`/`fonetica` declarado explícitamente en docs y scripts de fase 2).
 
 ---
 

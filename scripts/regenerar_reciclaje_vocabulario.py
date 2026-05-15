@@ -3,7 +3,7 @@
 Regenera los hilos automáticos de vocabulario en `unidades/nc1-reciclaje.json`
 a partir de `vocabulario_consolidado` de cada inventario.
 
-⚠️ ESTADO TRANSITORIO (2026-05-15, v10.119):
+⚠️ ESTADO TRANSITORIO (2026-05-15, v10.120):
    Este script asume SHAPE v10.114 (pre-rediseño de fase 1):
      - actividad.campo_semantico presente
      - vocabulario_consolidado con 3 sub-bloques: principal/recurrente/comprension
@@ -16,7 +16,8 @@ a partir de `vocabulario_consolidado` de cada inventario.
      - 4 listas tipadas por actividad
    Este script FALLARÁ si se ejecuta contra inventarios en shape v10.117.
    Pendiente de adaptación cuando se reactive fase 2 (decisión 36, v10.108).
-   Fase 2 actualmente PAUSADA por el procesamiento pendiente de U0-U9 al shape nuevo.
+   Fase 2 actualmente PAUSADA por el procesamiento pendiente de U1-U9 al shape nuevo
+   (U0 ya migrada en v10.119).
 
 Comportamiento (modelo v10.114):
 - Lee todos los inventarios `unidades/U*/U*-nc1-inventario.json` disponibles.
