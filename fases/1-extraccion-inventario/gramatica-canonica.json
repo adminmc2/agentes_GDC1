@@ -3,7 +3,7 @@
     "estado": "poblado",
     "creado": "2026-05-12",
     "poblado": "2026-05-15",
-    "version": "1.0",
+    "version": "1.1",
     "descripcion": "Registry de categorías canónicas de gramatica_consolidada. Materializado el 2026-05-15 (v10.117) aplicando la estrategia híbrida de pieza 3 §14.0 del rediseño (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §14): scaffold conceptual de §14.2 + resolución específica con PCIC A1 (fuente vinculante: fases/1-extraccion-inventario/pcic-a1-gramatica.json) + naming PCIC adaptado mínimamente para legibilidad. Cubre la matriz §14.1 de las 31 entradas gramaticales de gramatica[] de nc1-curso.json en U1-U9 (conteo real verificado el 2026-05-15; la matriz histórica del REDISEÑO §14.1 declaraba 32, discrepancia explicada por consolidación editorial entre el cierre de pieza 3 y la versión vigente del curso) + 2 categorías PCIC adicionales con anclaje material fuerte (Pronombre sujeto en cuadros verbales, Pronombres átonos de OI en construcción gustar/doler).",
     "estructura": "Diccionario {categoría → {_pcic_ref, _apariciones, items}}. Ampliable por expansión controlada si una extracción real surfacea una categoría PCIC A1 no contemplada.",
     "regla_fallback": "Si una extracción detecta contenido gramatical que no encaja en ninguna categoría aquí, marcar _pendiente_canon y escalar al autor (regla §0.1 de reglas-operativas.md).",
@@ -49,6 +49,12 @@
       "_pcic_ref": "PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN",
       "_apariciones": { "U1": "principal (sustantivos y adjetivos)" },
       "items": ["masculino", "femenino"]
+    },
+    "Nombres propios": {
+      "_pcic_ref": "PCIC A1 §1.1.1 Nombres propios (antropónimos y topónimos)",
+      "_apariciones": { "U1": "principal (antropónimos en presentaciones: regla sin-artículo + estructura con llamarse)" },
+      "items": ["antropónimos", "topónimos"],
+      "_nota": "Añadido en v10.123 al reasignar la entrada \"Nombre\" de vocabulario_consolidado a gramatica_consolidada en U1. El valor pedagógico de los nombres propios en U1 no es léxico (los items concretos: David, Javier, María...) sino gramatical: en español los nombres propios se usan SIN artículo determinado, contraste con lenguas que admiten el artículo en uso coloquial."
     },
     "Concordancia de número": {
       "_pcic_ref": "PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3",

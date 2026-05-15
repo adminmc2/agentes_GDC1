@@ -5,6 +5,28 @@
 
 ---
 
+## [v10.123 — 2026-05-15] — Fase 1: reasignación editorial de "Nombre" en U1 (vocabulario → gramática "Nombres propios")
+
+Corrección editorial sobre U1 (post-v10.121) por dictamen del autor: la entrada `Nombre` que el agente de extracción había colocado en `vocabulario_consolidado.principal` no es un campo semántico léxico (no aporta items léxicos enseñables — los nombres propios concretos como *David, Javier, María* son antropónimos, no vocabulario aprendible uno a uno). Su valor pedagógico real es **gramatical**: en español los nombres propios de persona se usan SIN artículo determinado (*Me llamo María*, no *Me llamo la María*), contraste útil con lenguas que admiten el artículo en uso coloquial.
+
+**Decisión:** mover a `gramatica_consolidada.principal` bajo nuevo canónico `Nombres propios` con uso específico definido. Edad y Número de teléfono **se mantienen en vocabulario** (sí tienen contenido léxico rastreable: rangos numéricos, formato de teléfono).
+
+**Cambios en main (un solo commit):**
+
+- **`fases/1-extraccion-inventario/gramatica-canonica.json`**: nueva entrada `Nombres propios` con `_pcic_ref: "PCIC A1 §1.1.1 Nombres propios (antropónimos y topónimos)"`, `_apariciones.U1: "principal (antropónimos en presentaciones: regla sin-artículo + estructura con llamarse)"`, `items: ["antropónimos", "topónimos"]` y `_nota` explicativa. Total categorías 17 → 18. `_meta.version` 1.0 → 1.1.
+- **`unidades/U1/U1-nc1-inventario.json`**:
+  - `vocabulario_consolidado.principal."Nombre"` eliminado.
+  - `gramatica_consolidada.principal."Nombres propios"` añadido (preservando los items reales — antropónimos visibles en pp.12-21 — como evidencia de aparición; `descripcion.U1` reescrita para explicar el uso gramatical específico: regla sin-artículo + estructura con verbo `llamarse` anclada en cuadros@p14#1 y @p20#1 con contraste tú/usted).
+  - 15 actividades + 2 cuadros con referencia `vocabulario: [..., "Nombre", ...]` actualizados: `Nombre` retirado de vocabulario, `Nombres propios` añadido al inicio de `gramatica`. Las referencias literales `"Nombre"` que aparecen como `campos` dentro de `datos.fichas_modelo[*].campos` (rótulos verbatim del libro en fichas de información personal) **se conservan intactas** por ser texto literal del libro, no referencias canónicas.
+
+**Decisión de fundamentación:** búsqueda en PCIC A1 confirmó que `§1.1.1 Nombres propios` existe explícitamente (antropónimos: nombres de pila sin artículo, hipocorísticos, apellidos; topónimos: países con o sin artículo). En nuestro registry `gramatica-canonica.json` la categoría no existía aún — se añade con `origen: pcic_a1` (vía `_pcic_ref`).
+
+**Reformat colateral del JSON de U1:** la edición se aplicó vía script de Python (load/modify/dump con serializador custom para preservar el estilo de items inline del agente). El diff resultante es grande (≈ 757 insertions / 803 deletions sobre 2138 líneas) por el reformat, pero el contenido editorial es idéntico al de v10.121 salvo la reasignación Nombre → Nombres propios. Esto **NO cambia el shape canónico** ni el contenido visible al alumno.
+
+**Validador final desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+**Anticipaciones para fase 2 ya documentadas en U1:** topónimos (países hispanohablantes, etc.) tienen presencia material puntual en U1 pero no se añaden a `Nombres propios.items` en este lote — quedan a discreción del agente de U2 que trabaja `Adjetivos de nacionalidad` como principal.
+
 ## [v10.122 — 2026-05-15] — Fase 1: retirada de la fixture `unidades/U1-propuesta/`
 
 Cumplió su función diagnóstica durante el rediseño v10.111-v10.114 (estresar el shape nuevo antes de tener inventarios canónicos en shape v10.117). Con U1 canónica ya migrada en v10.121 con validador 0/0/0, la fixture queda obsoleta. Además estaba en shape pre-v10.115 (sin `_fixture_exploratoria`, sin los 3 bloques top-level consolidados nuevos), por lo que mantenerla requeriría re-migración sin valor pedagógico ni técnico.
