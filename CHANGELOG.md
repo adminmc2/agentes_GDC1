@@ -5,6 +5,42 @@
 
 ---
 
+## [v10.119 — 2026-05-15] — Fase 1: U0 migrada a shape v10.117 + canonización "Saludos y despedidas"
+
+Primera unidad re-procesada con el flujo de worktree aislado introducido en v10.118c (`prompt-dry-run.md`): `../guia-proc-U0/` con rama `proc-u0-wip`, agente dry-run en chat limpio, commit candidato 485f9e5 en el worktree, integración a main por copia controlada del JSON + alta del nuevo canónico en el registry léxico.
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U0/U0-nc1-inventario.json`** reemplazado wholesale por el candidato del worktree. Sustituye el JSON legacy (shape v10.114: faltaban los 3 bloques top-level consolidados, faltaban las 4 listas tipadas por actividad, `enfoque: "fonetica"` ya no en enum vigente) por el nuevo (shape v10.117 completo: cabecera + `paginas_libro` + `secciones` + 4 bloques top-level consolidados + `paginas_detalle` con 4 páginas/10 actividades/1 cuadro + `_nota_unidad_atipica` justificando el mapeo íntegro a sección `vocabulario` por §7 de `reglas-operativas.md` + 11 entradas de `_decisiones_ia` con P1-P10 marcadas resueltas y anticipaciones detectadas para fase 2).
+- **`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`**: nueva entrada **`Saludos y despedidas`** (origen: `excepcion`, `aliases_indice: ["Saludos"]`) con `nota` explicando que no aparece en índice editorial de U0 ni en PCIC A1 vocabulario (el contenido pragmático vive en PCIC A1 comunicación), canonizado por hallazgo de extracción en el cuadro p11 ("Buenos días / Buenas tardes / Buenas noches"). Total entradas 99 → 100. `_meta.version` 1.0 → 1.1.
+
+**Cierre de las 5 deudas legacy de U0:**
+
+| Legacy en main | Resolución |
+|---|---|
+| `Abecedario` | Remapeo del agente del worktree → `Abecedario español` (ya canónico) |
+| `Números` | Remapeo del agente del worktree → `Números 0-10` (ya canónico) |
+| `Instrucciones de aula` | Remapeo del agente del worktree → `Para la clase` (ya canónico) |
+| `Vocabulario internacional (cognados)` (recurrente) | Absorbido por el shape nuevo (recurrente vacío en U0 atípica) |
+| `Saludos` | Canonizado como `Saludos y despedidas` por dictamen del autor; `Saludos` queda como alias del rótulo verbatim del libro |
+
+**Detalle de edición sobre el candidato copiado:**
+
+- Clave de `vocabulario_consolidado.principal`: `Saludos` → `Saludos y despedidas`.
+- Referencia `cuadro@p11.vocabulario`: `["Saludos"]` → `["Saludos y despedidas"]`.
+- Campo `titulo: "Saludos"` del cuadro p11: **conservado** (texto verbatim del libro).
+- `descripcion.U0` del bloque consolidado y entrada P1(b) de `_decisiones_ia` reescritas para reflejar el canónico final y el dictamen editorial del autor.
+
+**Validador final desde main:** `python3 scripts/validar_inventario.py 0` → **0 errores · 0 avisos · 0 legacy**.
+
+**Trazabilidad operativa:**
+
+- Worktree `../guia-proc-U0/` y rama `proc-u0-wip` se conservan tras la integración para auditoría/comparación; pendiente eliminarlos cuando el autor lo autorice.
+- Inventario legacy anterior queda en el historial git (commit previo en main).
+- Anticipaciones para fase 2 registradas dentro del JSON de U0 (`_decisiones_ia` última entrada): "Nombres de las letras" (U1), "Países hispanohablantes" (U2), lemas verbales escuchar/leer/escribir/repetir/preguntar/decir (U1/U3/U6).
+
+**Deuda restante en el bloque de re-extracción:** U1-U9 con shape legacy todavía pendientes de migración mediante el mismo flujo de worktree (input esperado para próximos lotes).
+
 ## [v10.118 — 2026-05-15] — Fase 1: auditoría completa de fase 1 + cierre de las 3 deudas activas
 
 Auditoría sistemática de coherencia interna y cruzada de fase 1 tras los lotes v10.115/116/117 (11 pasos: baseline → coherencia estructural → refs §X.Y + single source of truth → docs vivos ↔ registries → registries ↔ PCIC → registries ↔ nc1-curso.json → CHANGELOG/REVIEW → docs raíz → gaps funcionales). Saneamiento de drift documental en zonas vivas. Cierre de las 3 deudas activas que quedaban declaradas tras v10.117.

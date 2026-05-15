@@ -1,12 +1,12 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.0",
+    "version": "1.1",
     "actualizado": "2026-05-15",
     "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.",
     "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
   },
-  "version": "1.0",
+  "version": "1.1",
   "actualizado": "2026-05-15",
   "campos": [
     {
@@ -603,6 +603,13 @@
       "aliases_indice": [],
       "aliases_auto": [],
       "nota": "Aparece en gramatica[] de U1 del índice editorial (Colores junto a género/concordancia) pero su destino canónico es léxico según REDISEÑO §14.1. Añadido en v10.118 al detectar gap de cobertura inversa."
+    },
+    {
+      "canonico": "Saludos y despedidas",
+      "origen": "excepcion",
+      "aliases_indice": ["Saludos"],
+      "aliases_auto": [],
+      "nota": "No aparece en el índice editorial de U0 ni en PCIC A1 vocabulario (el contenido pragmático vive en PCIC A1 comunicación). Canonizado en v10.119 por hallazgo de extracción de U0: cuadro p11 con fórmulas 'Buenos días / Buenas tardes / Buenas noches'. El rótulo verbatim del libro 'Saludos' queda registrado como aliases_indice."
     }
   ]
 }
