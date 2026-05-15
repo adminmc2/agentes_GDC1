@@ -5,6 +5,18 @@
 
 ---
 
+## [v10.134 — 2026-05-15] — Fase 1: sincronización de P-decisiones tras retirada de "Nombres propios"
+
+Hallazgo del revisor: tras v10.131 (retirada del canon `Nombres propios`), las entradas antiguas de `_decisiones_ia` en U1 y U2 quedaron materialmente falsas — afirmaban que Nombre/topónimos se habían reasignado a la categoría gramatical, cosa que ya no es cierta. El JSON sostenía simultáneamente la ampliación/reasignación y la retirada de la misma categoría.
+
+**Cambios:**
+
+- **U1 P4** (línea 544): reescrita. Antes decía que `Nombre` fue "reasignado a gramatica_consolidada.principal bajo el nuevo canónico Nombres propios". Ahora aclara: `Nombre` no se codifica en U1 ni en vocabulario_consolidado (la eliminación v10.123 se mantiene) ni en gramatica_consolidada (la reasignación intermedia quedó invalidada por v10.131 con la retirada total del canónico). Cruce explícito a P-Nombres-propios-retirada.
+
+- **U2 P3** (línea 580): reescrita. Antes decía "categoría gramatical 'Nombres propios' ampliada en U2 para cubrir antropónimos Y topónimos... PENDIENTE actualización del registry". Ahora la marca como **invalidada por v10.131**: la decisión queda sin efecto tras la retirada completa del canónico; antropónimos y topónimos quedan verbatim en los textos pero no se consolidan en ningún bloque canónico. Cruce explícito a P-Nombres-propios-retirada.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0.
+
 ## [v10.133 — 2026-05-15] — REDISEÑO fase 2 §3: cobertura por bloque y marcas internas
 
 Cierre del paso 3 del rediseño de fase 2. Resuelve cuatro gaps de fase 1 identificados en la auditoría F1↔F2: pronunciación/ortografía, tiempos y verbos, perífrasis y marcas internas.
