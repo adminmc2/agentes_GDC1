@@ -597,7 +597,7 @@ Listado vivo de cambios canonizados en este schema que el validador aún no cont
 
 - **Enum `enfoque` (§5c)** — renombrado `fonetica` → `pronunciacion_ortografia`.
 - **Enum `tipo_cuadro` (§7)** — renombrado `fonetico` → `pronunciacion_ortografia`.
-- **Enum `tiempo` (§5d)** — ampliado de 4 a 5 valores: añadido `Infinitivo` para cubrir la categoría "forma no personal del verbo" trabajada fuera de perífrasis. `Participio` y `Gerundio` se descartan en NC1 por inexistencia en el corpus.
+- **Enum `tiempo` (§5d)** — estado actual: 4 valores (`Presente`, `Pretérito indefinido`, `Imperativo`, `Infinitivo`). Cambios acumulados respecto al modelo viejo: (1) añadido `Infinitivo` para cubrir la categoría "forma no personal del verbo" trabajada fuera de perífrasis; (2) retirado `Perífrasis` por opción B (v10.115): las perífrasis no son tiempos verbales sino estructuras sintácticas — se codifican aparte en `actividad.tiempos_y_verbos[].estructura_perifrastica` (ver §3.2). El auxiliar conserva su tiempo real (típicamente `Presente`). `Participio` y `Gerundio` se descartan en NC1 por inexistencia en el corpus.
 - **Top-level** — claves obligatorias nuevas (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`) y claves opcionales declaradas (`_decisiones_ia`, `_migracion_rediseno`).
 - **Schema por actividad** — eliminados `contenido_linguistico` y `campo_semantico`; añadidas las 4 listas tipadas y las marcas internas `_funcion_ambigua`, `_decisiones_ia`.
 - **`vocabulario_consolidado`** — sub-bloque `comprension` eliminado del modelo.
@@ -618,17 +618,6 @@ Listado vivo de cambios canonizados en este schema que el validador aún no cont
   9. Rechazo de claves `_fixture_*` o `unidad` no entero en inventarios canónicos.
   La suite debe ejecutarse en cada cierre de unidad, en cada commit relevante y antes de declarar cualquier inventario como canónico/cerrado. Resultado esperado: 0 errores y 0 avisos para inventarios canónicos; los fixtures `Np` quedan tolerados pero reportados aparte.
 
-### A.5 Metadata extracontractual: claves `_fixture_*`
-
-Las claves cuyo nombre empieza por `_fixture_` (típicamente `_fixture_exploratoria`) son **metadata extracontractual** del JSON: el dashboard las tolera y las pinta para revisión humana, pero **no forman parte del contrato canónico** y el validador debe **ignorarlas** (ni rechazarlas ni emitir aviso).
-
-Convención completa:
-- Solo se usan en artefactos exploratorios (fixtures) cuyo `unidad` es la cadena `"Np"` (no entero).
-- Un inventario canónico (`unidad: N` entero) **no debe** llevar ninguna clave `_fixture_*`.
-- El validador, al alinearse en Paso 3, debe implementar la doble regla: (a) ignorar `_fixture_*` en cualquier nivel del JSON; (b) rechazar la presencia de `_fixture_*` cuando `unidad` es entero.
-
-> Esta lista es operativa: cualquier nueva decisión que afecte al validador se añade aquí en el momento de cerrarla.
-
 ### A.4 Condiciones de retirada del apéndice
 
 Este apéndice se elimina, y con él la clave `_migracion_rediseno` y el aviso transitorio del header, cuando se cumplen **todas** estas condiciones:
@@ -639,3 +628,14 @@ Este apéndice se elimina, y con él la clave `_migracion_rediseno` y el aviso t
 4. Ningún inventario conserva `_migracion_rediseno`.
 5. La validación manual deja de ser mecanismo sustitutivo del validador.
 6. Se registra el cierre en `CHANGELOG.md`.
+
+### A.5 Metadata extracontractual: claves `_fixture_*`
+
+Las claves cuyo nombre empieza por `_fixture_` (típicamente `_fixture_exploratoria`) son **metadata extracontractual** del JSON: el dashboard las tolera y las pinta para revisión humana, pero **no forman parte del contrato canónico** y el validador debe **ignorarlas** (ni rechazarlas ni emitir aviso).
+
+Convención completa:
+- Solo se usan en artefactos exploratorios (fixtures) cuyo `unidad` es la cadena `"Np"` (no entero).
+- Un inventario canónico (`unidad: N` entero) **no debe** llevar ninguna clave `_fixture_*`.
+- El validador, al alinearse en Paso 3, debe implementar la doble regla: (a) ignorar `_fixture_*` en cualquier nivel del JSON; (b) rechazar la presencia de `_fixture_*` cuando `unidad` es entero.
+
+> Esta lista es operativa: cualquier nueva decisión que afecte al validador se añade aquí en el momento de cerrarla.

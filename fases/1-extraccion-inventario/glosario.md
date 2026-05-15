@@ -66,7 +66,7 @@ Internamente se divide en dos sub-bloques:
 
 > **Ubicación en el schema:** `schema-inventario.md` → §9.1.
 
-Dentro de `principal` y de `recurrente`, **la clave es el nombre canónico del campo semántico** (`"Familia"`, `"Profesiones"`, `"Lugares"`...). El valor es un objeto con tres campos:
+Dentro de `principal` y de `recurrente`, **la clave es el nombre canónico del campo semántico** (`"Parientes"`, `"Profesiones y cargos"`, `"Asignaturas"`... — canónicos literales declarados en `campos-semanticos-canonicos.json`). El valor es un objeto con tres campos:
 
 - **`items`** — lista de objetos `{ palabra, fuentes }`, una entrada por palabra léxica del campo. `palabra` es el término tal como aparece trabajado en la unidad; `fuentes` indica de qué actividad o cuadro proviene esa palabra.
 - **`fuentes`** — lista agregada con la **unión de todas las fuentes** de los `items` del campo. Permite responder rápido "¿en qué actividades de esta unidad se trabaja Familia?" sin recorrer item por item.
@@ -177,7 +177,7 @@ Internamente se divide en dos sub-bloques `principal` y `recurrente`, con la mis
 
 > **Ubicación en el schema:** `schema-inventario.md` → §9.3.
 
-Dentro de `principal` y de `recurrente`, **la clave es el nombre canónico de la categoría gramatical** (`"Pronombre sujeto"`, `"Artículo determinado"`, `"Masculino y femenino"`...). El valor es un objeto con la misma forma que en `vocabulario_consolidado`:
+Dentro de `principal` y de `recurrente`, **la clave es el nombre canónico de la categoría gramatical** (`"Pronombre sujeto"`, `"Artículos determinados"`, `"Concordancia de género"`... — canónicos literales declarados en `gramatica-canonica.json`). El valor es un objeto con la misma forma que en `vocabulario_consolidado`:
 
 - **`items`** — lista de objetos `{ palabra, fuentes }` con cada elemento gramatical concreto que aparece (cada forma o ejemplo trabajado en la unidad).
 - **`fuentes`** — lista agregada de fuentes de todos los `items` de la categoría.
@@ -196,7 +196,7 @@ Internamente se divide en dos sub-bloques `principal` y `recurrente`, con la mis
 
 > **Ubicación en el schema:** `schema-inventario.md` → §9.4.
 
-Dentro de `principal` y de `recurrente`, **la clave es el nombre canónico de la categoría de pronunciación u ortografía** (`"Sílaba tónica"`, `"Entonación interrogativa"`, `"Abecedario"`...). El valor es un objeto con la misma forma que en `vocabulario_consolidado`:
+Dentro de `principal` y de `recurrente`, **la clave es el nombre canónico de la categoría de pronunciación u ortografía** (`"Sonidos y correspondencias ortográficas"`, `"Entonación"`, `"Acentuación"`... — canónicos literales declarados en `pronunciacion-ortografia-canonica.json`). El valor es un objeto con la misma forma que en `vocabulario_consolidado`:
 
 - **`items`** — lista de objetos `{ palabra, fuentes }` con cada elemento concreto que aparece (forma trabajada, regla aplicada, ejemplo del libro).
 - **`fuentes`** — lista agregada de fuentes de todos los `items` de la categoría.
@@ -403,7 +403,7 @@ Lista de strings con las **respuestas esperadas** de la actividad.
 - **Por qué es saco abierto:** distintos tipos de actividad requieren distintos campos. En lugar de fijar un shape único, se admite cualquier campo necesario.
 - **Política de extensibilidad:** cualquier campo nuevo se documenta y se añade al schema con la regla de población correspondiente en `reglas-operativas.md`.
 - **Origen del valor:** transcripción literal del PDF.
-- **Cómo decidir entre los 3 campos canónicos de texto** (`texto_completo` / `dialogo_completo` / `textos_personajes`) → `convenciones-y-casos.md` §1.4 (tabla decisional + sub-secciones §1.4.1, §1.4.2, §1.4.3).
+- **Cómo decidir entre los 3 campos canónicos de texto** (`texto_completo` / `dialogo_completo` / `textos_personajes`) → `convenciones-y-casos.md` §1.3 (tabla decisional + sub-secciones §1.3.1, §1.3.2, §1.3.3).
 
 #### `datos.items_libro`
 
@@ -679,7 +679,7 @@ Para cada enumeración, el validador rechaza todo valor fuera del set. Las enume
 - `tipo` — taxonomía de 20 valores (§5).
 - `destreza` — 6 habilidades MCER (§5b).
 - `enfoque` — 6 dominios de contenido (§5c).
-- `tiempo` — 5 valores verbales (§5d).
+- `tiempo` — 4 valores verbales (§5d). `Perífrasis` no es valor del enum (las perífrasis no son tiempos verbales sino estructuras sintácticas; ver §5d del schema y schema §3.2 sobre `estructura_perifrastica`).
 - `tipo_cuadro` — 5 categorías pedagógicas de cuadro (§7).
 - `seccion` — 7 secciones pedagógicas normalizadas (§8).
 - `autoevaluacion.opciones` — 3 valores fijos en NC1 (§6).

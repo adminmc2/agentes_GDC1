@@ -5,6 +5,43 @@
 
 ---
 
+## [v10.118 — 2026-05-15] — Fase 1: auditoría completa de fase 1 + cierre de las 3 deudas activas
+
+Auditoría sistemática de coherencia interna y cruzada de fase 1 tras los lotes v10.115/116/117 (11 pasos: baseline → coherencia estructural → refs §X.Y + single source of truth → docs vivos ↔ registries → registries ↔ PCIC → registries ↔ nc1-curso.json → CHANGELOG/REVIEW → docs raíz → gaps funcionales). Saneamiento de drift documental en zonas vivas. Cierre de las 3 deudas activas que quedaban declaradas tras v10.117.
+
+**Saneamientos de coherencia (Pasos 1-8):**
+
+- `prompt.md` saneado: nota transitoria acotada a `validar_inventario.py`; paso 4 con cláusula transitoria; "Contratos vivos en orden de precedencia" reformulado.
+- `CLAUDE.md` fase 1 saneado: regla crítica 4 con cláusula transitoria del validador; regla crítica 5 reconoce divergencia declarada en §A.1; regla crítica 6 ampliada a los 4 registries + convención de auditoría (cita canónica vs mención temática); tabla de navegación ajustada (retirada "sílaba tónica subrayada" obsoleta tras v10.116); banner de archivados actualizado.
+- `reglas-operativas.md`: nota explícita de huecos de numeración (§5.3-§5.5, §5.7-§5.8, §8 conservados por estabilidad de refs); cita §0.0 (principio de literalidad) formalizada como sección propia (antes ancla imprecisa); §5.7 nueva "Heterogeneidad semántica intraejercicio".
+- `schema-inventario.md`: Apéndice A.4 reordenado antes de A.5; A.3 item de enum `tiempo` reformulado para reflejar estado acumulado (4 valores, `Perífrasis` retirado por opción B).
+- `glosario.md`: ejemplos de naming canónico corregidos (Parientes/Profesiones y cargos/Asignaturas en lugar de Familia/Profesiones/Lugares); puntero §1.4→§1.3 actualizado tras renumeración v10.116; ref obsoleta a "5 valores" del enum tiempo corregida a 4.
+- `convenciones-y-casos.md`: cita "principio de literalidad" actualizada a §0.0 explícito (en §1.1 y §2).
+- `campos-semanticos-canonicos.json` y `verbos-canonicos.json`: añadido bloque `_meta` con `estado: poblado` (paridad con los otros 2 registries).
+- `gramatica-canonica.json`: clave `_apariciones` de "Pronombre sujeto" desglosada de "U4-U9" comprimido a U3-U9 individuales.
+- `pronunciacion-ortografia-canonica.json`: añadido `_pcic_ref` por categoría (las 7), paridad con `gramatica-canonica.json`.
+- `campos-semanticos-canonicos.json`: añadida entrada "Colores" (origen: excepcion + nota explicativa) — gap detectado en cobertura inversa de `gramatica[]` de U1.
+- **PROCESO-MAESTRO.md** sincronizado en zonas vivas: 4 desincronizaciones corregidas (validador "alineado" → con cláusula transitoria; 5 archivos vivos → 6; 3 bloques `vocabulario_consolidado` → 2; `campo_semantico` contextualizado como eliminado en v10.115; árbol vivo Parte 3 expandido con U0-U9, U1-propuesta, 4 registries, 4 PCIC, archivados de `docs/historico/`).
+- **REVIEW.md** sincronizado: cabecera "Última actualización" 2026-05-07 → 2026-05-15; tabla Bloque "5 archivos operativos + canon.py" → "6 archivos + 4 registries + 4 PCIC"; "Resultado vivo" del Bloque A con cláusula transitoria del validador.
+
+**Las 3 deudas activas cerradas (Paso 10):**
+
+1. **Heterogeneidad semántica intraejercicio** → integrada como `reglas-operativas.md` §5.7. Procedimiento operativo (propuesta-en-chat → distribución / canónico nuevo / marca ambigua), errores prohibidos y caso histórico U2-propuesta documentado.
+2. **`scripts/validar_inventario.py` alineado con schema v10.117**. Cambios: `CLAVES_TOP` incluye los 4 bloques top-level consolidados; `CLAVES_TOP_OPCIONALES` incluye `_decisiones_ia` y `_migracion_rediseno`; enum `tiempo` con 4 valores (`Perífrasis` retirado por opción B); enum `tipo_cuadro` y `enfoque` renombrados (`fonetico/fonetica` → `pronunciacion_ortografia`); validación de las 4 listas tipadas por actividad (siempre presentes); validación del shape `tiempos_y_verbos[]` (lema/tiempo/formas_trabajadas + `estructura_perifrastica` opcional); validación de los 4 bloques top-level consolidados (sub-bloques principal/recurrente + shape de `tiempos_y_verbos_consolidado` lista plana); tolerancia de `_fixture_*` cuando `_fixture_exploratoria` está presente; rechazo de `_fixture_*` en inventarios canónicos (unidad: int); chequeo previo del sufijo `@R` por tipo productivo; validación de marcas internas (`_funcion_ambigua`, `_decisiones_ia`); canon semántico actualizado (`campo_semantico` eliminado, sub-bloque `comprension` eliminado, validación expandida a referencias léxicas en `actividad.vocabulario` y `cuadro.vocabulario`). Conserva los 3 canales (errores, avisos, auditoría legacy R1).
+3. **`scripts/verificar_integridad.py` nuevo** con los 9 chequeos declarados en `schema-inventario.md` §A.3: schema por inventario (delega a validar_inventario, propaga auditoría legacy como avisos); refs canónicas en los 4 registries; regex de fuentes (§9.5); coincidencia cabecera ↔ `nc1-curso.json`; coherencia interna (minúsculas en `formas_trabajadas` del consolidado); integridad PCIC; integridad de registries; detección de marcas bloqueantes en inventarios canónicos; rechazo de `_fixture_*` / unidad no entero en canónicos. Modos `--json` y `--solo N`.
+
+**Verificaciones materiales del lote:**
+
+- Validador refactorizado pasa sintaxis y ejecución contra fixture U4-propuesta archivada (detecta correctamente los 3 errores `Perífrasis` esperados, pre-opción-B).
+- Suite global pasa sintaxis y ejecución; chequeos 6 y 7 (PCIC + registries) limpios; chequeo 1 contra U0 detecta los gaps esperados de shape v10.114 (1811 errores estructurales + 5 entradas de auditoría legacy R1 propagadas como avisos `📋 legacy:`).
+
+**Estado post-lote:**
+
+- 6 docs vivos en fase 1 coherentes entre sí y con los 4 registries poblados.
+- Validador y suite global operativos sobre el shape v10.117.
+- 4 hallazgos diferidos al lote anterior (PROCESO-MAESTRO desincronizaciones) absorbidos en este lote.
+- Deuda restante única: re-extracción de U0-U9 con shape v10.117 — el validador alineado rechaza correctamente las versiones pre-rediseño y eso es input esperado para el próximo lote de procesamiento.
+
 ## [v10.117 — 2026-05-15] — Fase 1: materialización de registries gramatical y pronunciación/ortografía
 
 Cierre de deuda heredada desde v10.111 (los registries `gramatica-canonica.json` y `pronunciacion-ortografia-canonica.json` permanecían como esqueletos vacíos `{ "categorias": [] }` con `_meta.estado: "esqueleto-rediseno"`). El bloqueo lo había destapado la fixture U4-propuesta del lote v10.115 (no podía poblar `recurrente` en gramática y pron/orto). Ambos registries se materializan aplicando los diseños cerrados en pieza 3 §14 y pieza 4 §16 de `docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`, con criterio de inclusión depurado por dictamen del revisor.

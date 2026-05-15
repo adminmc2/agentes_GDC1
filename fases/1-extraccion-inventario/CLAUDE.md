@@ -34,7 +34,7 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 
 > **Convención de comandos:** todos los comandos en este archivo y en `prompt.md` son **root-relative** — se ejecutan desde la raíz del repo (`/guia-didactica-profesor-IA/` o el worktree equivalente), no desde esta carpeta de fase. Aunque este CLAUDE.md se auto-cargue al trabajar dentro de `fases/1-extraccion-inventario/`, los comandos asumen `cwd = raíz del repo`.
 
-1. **Validador automático:** `python3 scripts/validar_inventario.py X` → debe dar **0 errores y 0 avisos** (1 aviso intencional aceptable si la unidad es atípica con `_nota_unidad_atipica`).
+1. **Validador automático:** `python3 scripts/validar_inventario.py X` → debe dar **0 errores y 0 avisos** (1 aviso intencional aceptable si la unidad es atípica con `_nota_unidad_atipica`). **Estado transitorio:** mientras `scripts/validar_inventario.py` no esté alineado con `schema-inventario.md` (ver Apéndice transitorio §A.1 / §A.3 del schema y nota transitoria del `prompt.md`), este gate queda sustituido por validación manual contra el schema + revisión visual.
 2. **Validación visual del autor:** `python3 diagrama.py` → `http://localhost:8080` → Inventarios → revisar 2-3 páginas al azar contrastando con el PDF.
 
 ---
@@ -44,9 +44,15 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 1. **Texto verbatim del libro** — el JSON debe contener el contenido visible al alumno **exactamente como aparece en el libro**, no como referencia ni interpretación. Para cloze, huecos como `_____`. Para textos, íntegros. Nunca sustituir el enunciado por la respuesta.
 2. **No inventar contenido editorial** — si una palabra, fecha, dato o regla no está en la fuente original, no se añade. Caso ambiguo durante la extracción: surgir la duda **en chat** con opciones razonables (regla §0.1 de `reglas-operativas.md`), no marcar silenciosamente. Solo si el autor lo autoriza explícitamente se escribe `_pendiente_canon` o `_funcion_ambigua` (ciclo de vida en `reglas-operativas.md` §5.9).
 3. **Single source of truth por capa** — las reglas estructurales viven en `schema-inventario.md`, las decisionales y de población en `reglas-operativas.md`, las convenciones de transcripción y casebook en `convenciones-y-casos.md`. **Precedencia en conflicto: schema > reglas > convenciones.** `CLAUDE.md` y `prompt.md` pueden repetir hechos y reglas mínimas de contrato de fase (objetivo, input/output, invocación, validación, literalidad) por ser entry points complementarios. Si lógica operativa o reglas de clasificación aparecen duplicadas fuera de su archivo canónico, es un bug.
-4. **Validar antes de cerrar** — el JSON pasa el validador con 0 errores y la revisión visual antes de declararse cerrado.
-5. **Schema documental ↔ validador no divergen** — `schema-inventario.md` y `scripts/validar_inventario.py` son contratos paralelos. Cualquier divergencia entre ambos es un bug que se resuelve antes del cierre.
-6. **Canon semántico léxico es autoridad de naming** — las claves de `vocabulario_consolidado.{principal,recurrente}` (2 sub-bloques, no 3) y las referencias léxicas en `actividad.vocabulario` / `cuadro.vocabulario` deben ser canónicas del registry (`campos-semanticos-canonicos.json`). Si no hay canónico seguro, escalar en chat (regla §0.1 de `reglas-operativas.md`); solo si el autor lo autoriza se marca `_pendiente_canon`. Política y árbol de decisión: `reglas-operativas.md` §5.6.
+4. **Validar antes de cerrar** — el JSON pasa el validador con 0 errores y la revisión visual antes de declararse cerrado. **Estado transitorio:** mientras `scripts/validar_inventario.py` no esté alineado con `schema-inventario.md` (ver Apéndice transitorio §A.1 / §A.3 del schema), el gate del validador se sustituye por validación manual contra el schema + revisión visual del autor; la revisión visual sigue siendo obligatoria.
+5. **Schema documental ↔ validador no divergen como principio canónico** — `schema-inventario.md` y `scripts/validar_inventario.py` son contratos paralelos; cualquier divergencia es bug a resolver. **Estado transitorio:** hoy existe divergencia conocida y declarada en el Apéndice transitorio §A.1 / §A.3 del schema, con criterios de retirada (§A.4) y deuda concreta listada para Paso 3 del cierre. Hasta que el apéndice se retire, la divergencia es admitida pero gestionada; cero deuda silenciosa.
+6. **Canon canónico literal es autoridad de naming** — toda referencia que entra al JSON como clave o valor canónico (referencias léxicas en `actividad.vocabulario` / `cuadro.vocabulario`, claves de `vocabulario_consolidado.{principal,recurrente}`, claves de `gramatica_consolidada.{principal,recurrente}`, claves de `pronunciacion_ortografia_consolidada.{principal,recurrente}`, `lema` en `tiempos_y_verbos`) debe ser literal del registry correspondiente (`campos-semanticos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`, `verbos-canonicos.json`). Si no hay canónico seguro, escalar en chat (regla §0.1 de `reglas-operativas.md`); solo si el autor lo autoriza se marca `_pendiente_canon`. Política y árbol de decisión: `reglas-operativas.md` §5.6.
+
+   **Convención de auditoría — cita canónica vs mención temática.** Para auditar cualquier documento operativo de fase 1, aplicar la prueba de coincidencia literal con el registry **solo** cuando:
+   - El doc dice "la clave es", "nombre canónico", "categoría canónica", "lema canónico", o equivalente.
+   - El doc pone ejemplos entre comillas presentados como **valores de clave** del registry.
+
+   **NO aplicar** la prueba de naming literal cuando el doc usa la palabra como **descripción del dominio en lenguaje natural** (ej. "acento, sílaba tónica, entonación, reglas ortográficas..."). La mención temática es libre; la cita canónica está sujeta a coincidencia exacta. Esta distinción se mantiene estable entre versiones para que auditorías sucesivas apliquen el mismo criterio.
 
 ---
 
@@ -57,11 +63,11 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 | ¿Cuál es el flujo operativo de la extracción? ¿Qué pasos sigo? | `prompt.md` |
 | ¿Cuál es el shape del JSON? ¿Qué tipos, qué claves, qué enumeraciones? | `schema-inventario.md` |
 | ¿Cómo decido X? (precedencias actividad/cuadro/nota/autoevaluación, asignación de `tipo`/`destreza`/`enfoque`/`tipo_cuadro`, "Para aprender" / "Observa", reglas de población de campos, unidades atípicas) | `reglas-operativas.md` |
-| ¿Cómo transcribo X del libro al JSON? (sílaba tónica subrayada, primer ítem resuelto, textos de lectura, diálogos, sopas de letras, marcadores editoriales) | `convenciones-y-casos.md` §1 |
+| ¿Cómo transcribo X del libro al JSON? (primer ítem resuelto, textos de lectura, diálogos con huecos, textos atribuidos a personajes, sopas de letras, marcadores editoriales) | `convenciones-y-casos.md` §1 |
 | ¿Cómo se ve un cloze, una selección múltiple, un cuestionario en el JSON? | `convenciones-y-casos.md` §2 |
 | ¿Hubo un caso similar antes en una extracción real? | `convenciones-y-casos.md` §4 (casebook) |
 | ¿Cómo se añade un caso nuevo al sistema? | `reglas-operativas.md` §10 (política de mejora continua) |
-| ¿Qué nombres canónicos léxicos puedo usar como clave de `vocabulario_consolidado.{principal,recurrente}` o en `actividad.vocabulario`? | `campos-semanticos-canonicos.json` (fuente de datos) + `reglas-operativas.md` §5.6 (política y árbol de decisión) |
+| ¿Qué nombres canónicos puedo usar como clave de los bloques consolidados o como referencia en las 4 listas tipadas de actividad/cuadro? | Cada dimensión tiene su registry: léxico → `campos-semanticos-canonicos.json`; gramatical → `gramatica-canonica.json`; pron/orto → `pronunciacion-ortografia-canonica.json`; verbal → `verbos-canonicos.json`. Política y árbol de decisión léxico → `reglas-operativas.md` §5.6. Política análoga aplica a los demás registries (regla crítica 6). |
 | ¿Qué fuente PCIC apoya cada dimensión? Glosario "Fuentes PCIC y registries canónicos" (tabla resumen) + archivos `pcic-a1-vocabulario.json`, `pcic-a1-gramatica.json`, `pcic-a1-pronunciacion-ortografia.json`, `pcic-a1-comunicacion.json` |
 
 ---

@@ -1,6 +1,13 @@
 {
+  "_meta": {
+    "estado": "poblado",
+    "version": "1.0",
+    "actualizado": "2026-05-15",
+    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.",
+    "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
+  },
   "version": "1.0",
-  "actualizado": "2026-05-11",
+  "actualizado": "2026-05-15",
   "campos": [
     {
       "canonico": "Países que hablan español",
@@ -589,6 +596,13 @@
       "origen": "pcic_a1",
       "aliases_indice": [],
       "aliases_auto": []
+    },
+    {
+      "canonico": "Colores",
+      "origen": "excepcion",
+      "aliases_indice": [],
+      "aliases_auto": [],
+      "nota": "Aparece en gramatica[] de U1 del índice editorial (Colores junto a género/concordancia) pero su destino canónico es léxico según REDISEÑO §14.1. Añadido en v10.118 al detectar gap de cobertura inversa."
     }
   ]
 }

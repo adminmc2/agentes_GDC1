@@ -53,7 +53,7 @@
 2. Extrae según `schema-inventario.md` (§2-§4): texto verbatim + estructura física + IDs estables. `tipo`, `destreza`, `enfoque` y las 4 listas tipadas son parte del shape final; su población se difiere al paso 3.
 3a. Clasifica y puebla actividades y cuadros según `reglas-operativas.md` (3 ejes + 4 listas tipadas + datos literales).
 3b. Deriva los 4 bloques top-level consolidados (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`) a partir de las listas tipadas de actividades y cuadros.
-4. Valida con `python3 scripts/validar_inventario.py X`. Si emite errores, vuelve al paso 3.
+4. Valida: si el validador automático está alineado con el schema, ejecuta `python3 scripts/validar_inventario.py X` y vuelve al paso 3 si emite errores. **Estado transitorio (ver nota arriba):** mientras `scripts/validar_inventario.py` no esté alineado con `schema-inventario.md`, la validación es manual contra el schema + revisión visual del autor.
 5. Escribe el JSON en `unidades/UX/UX-nc1-inventario.json`.
 6. Avisa al autor para revisión visual.
 

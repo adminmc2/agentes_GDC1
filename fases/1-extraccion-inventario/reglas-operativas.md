@@ -11,10 +11,30 @@
 > **Single source de precedencias.** Las reglas de precedencia (qué clasificar como actividad / cuadro / nota / autoevaluación, en qué orden, con qué excepciones) viven **exclusivamente aquí**. Cualquier otro archivo que las invoque lo hace por referencia, no por copia.
 >
 > **Precedencia entre contratos vivos en caso de conflicto:** `schema-inventario.md` > `reglas-operativas.md` > `convenciones-y-casos.md`.
+>
+> **Numeración con huecos por estabilidad de referencias.** §5 conserva la numeración `§5.1`, `§5.2`, `§5.6`, `§5.9` (sin `§5.3`–`§5.5`, `§5.7`–`§5.8`); §8 no existe (se salta de §7 a §9). Los huecos se mantienen porque docs vivos externos referencian directamente las secciones presentes (`§5.6`, `§5.9`, `§9`, `§10`); renumerar consecutivo rompería esas refs sin aportar valor. No es descuido; es conservación deliberada.
 
 ---
 
 ## §0. Política operativa transversal
+
+### §0.0. Principio de literalidad
+
+**Aplica a:** toda transcripción del libro al JSON.
+
+**Regla obligatoria.** La IA transcribe el contenido visible al alumno **verbatim** del libro: enunciados, ítems, textos, diálogos, opciones, ejemplos, respuestas dadas, formas verbales conjugadas. No parafrasea, no resume, no normaliza, no traduce, no completa. Conserva puntuación, mayúsculas/minúsculas, nombres propios, huecos (`_____`) y marcas tipográficas tal cual aparecen impresos.
+
+**Aplicaciones operativas en este archivo:**
+- `formas_trabajadas` en actividad/cuadro: literalidad estricta del libro (incluida la mayúscula inicial cuando la forma abre frase). Ver §6.4 para la normalización opuesta en el consolidado (minúscula).
+- Barrido del input para detección léxica/gramatical/pron-orto: se hace sobre texto verbatim de `datos.*`. Ver §0.3.A/B/C.
+- `instruccion_original`, `dialogo_completo`, `texto_completo`, `items_libro`: transcripción literal. Las convenciones de transcripción concretas (primer ítem resuelto, marcadores editoriales, textos atribuidos a personajes, etc.) viven en `convenciones-y-casos.md` §1.
+
+**Errores prohibidos:**
+- PROHIBIDO sustituir el enunciado original por la respuesta esperada.
+- PROHIBIDO transcribir lo que la IA "interpreta" en lugar de lo que el libro escribe.
+- PROHIBIDO normalizar mayúsculas/puntuación/ortografía en `actividad.tiempos_y_verbos[].formas_trabajadas`, `instruccion_original`, `datos.*` (la normalización aplica solo al agregar en consolidado: §6.4).
+
+**Cuándo escalar:** si la transcripción literal produce ambigüedad operativa (¿es esto un ítem o un ejemplo modelo?, ¿este marcador es respuesta o metalengua?), aplicar §0.1 (propuesta-en-chat) consultando `convenciones-y-casos.md` §1 para los patrones conocidos.
 
 ### §0.1. Propuesta-en-chat ante toda decisión no clara
 
@@ -47,7 +67,7 @@
 **Procedimiento:**
 1. Ejecutar el barrido sistemático de §0.3.
 2. Proponer en chat el nombre canónico tentativo, items, fuentes y justificación de cada candidato.
-3. Para candidatos que sean **síntesis** de varias categorías de unidades anteriores (ej. "Concordancia artículo-sustantivo en género y número" sintetizando "Artículos determinados" + "Masculino y femenino" de U1), explicitar qué categorías se sintetizan, si la síntesis sustituye o coexiste con las originales, y el respaldo PCIC si aplica.
+3. Para candidatos que sean **síntesis** de varias categorías de unidades anteriores (ej. "Concordancia artículo-sustantivo en género y número" sintetizando "Artículos determinados" + "Concordancia de género" de U1), explicitar qué categorías se sintetizan, si la síntesis sustituye o coexiste con las originales, y el respaldo PCIC si aplica.
 4. Esperar decisión del autor.
 5. Aplicar al JSON solo tras decisión explícita.
 6. Registrar la decisión en `_decisiones_ia` con detalle suficiente para reconocer el patrón en sesiones futuras.
@@ -347,8 +367,8 @@ Ejemplo: en *"Quieres comer carne"*, `querer` entra con `tiempo: "Presente"`, `f
 
 **Universo válido para léxico.** `campos-semanticos-canonicos.json` (fuente única). Naming canónico literal, no `snake_case` ni invenciones.
 
-- ✅ `"Parientes"`, `"Profesiones"`, `"Asignaturas"`.
-- ❌ `"parientes"`, `"campo_familia"`, `"vocabulario_familiar"`.
+- ✅ `"Parientes"`, `"Profesiones y cargos"`, `"Asignaturas"` (canónicos literales del registry).
+- ❌ `"parientes"`, `"campo_familia"`, `"vocabulario_familiar"`, `"Profesiones"` (variantes con minúscula, snake_case o canónicos no literales).
 
 **Árbol de decisión cuando aparece un campo léxico:**
 
@@ -365,6 +385,24 @@ Ejemplo: en *"Quieres comer carne"*, `querer` entra con `tiempo: "Presente"`, `f
 ```
 
 **Regla de cierre operativa:** PROHIBIDO inventar un nombre canónico en caliente. Si no hay canónico seguro, primero escalar en chat. Solo si la decisión queda explícitamente bloqueada, escribir `_pendiente_canon` (su ciclo de vida está en §5.9).
+
+### §5.7. Heterogeneidad semántica intraejercicio
+
+**Aplica a:** actividades que reúnen léxico semánticamente heterogéneo en un mismo ejercicio (POS distintos, campos semánticos distintos, dominios no homogéneos).
+
+**Regla operativa.** Cuando una sola actividad contiene léxico que **no encaja bajo un único campo canónico**, NO forzar agrupación artificial en un campo único. Tampoco inventar un campo paraguas que no exista en el registry.
+
+**Procedimiento:**
+1. Aplicar §0.1 (propuesta-en-chat): plantear al autor la naturaleza heterogénea con los términos concretos detectados y 2-3 opciones razonables (ej. (a) distribuir entre campos existentes; (b) abrir un canónico nuevo en el registry; (c) marcar como ambigua).
+2. Si tras la propuesta el autor decide distribuir el léxico entre varios campos canónicos existentes, la actividad referencia múltiples campos en `actividad.vocabulario`. Cero contradicción.
+3. Si la heterogeneidad es estructural y el autor no autoriza canónico nuevo, marcar la actividad con `_funcion_ambigua: true` Y declarar `_pendiente_canon` en las claves de los campos semánticos no resueltos. Ambas marcas bloquean cierre (§5.9.1/§5.9.2).
+
+**Errores prohibidos:**
+- PROHIBIDO forzar todo el léxico bajo un campo canónico que solo cubre parte real.
+- PROHIBIDO inventar un canónico paraguas ad hoc ("Léxico mixto", "Vocabulario diverso", etc.).
+- PROHIBIDO codificar la heterogeneidad silenciosamente como `_pendiente_canon` sin propuesta-en-chat previa.
+
+**Ejemplo histórico (fixture U2-propuesta p30-act3):** *descanso, distintas, alrededor de, extraescolares, optativas* — POS distintos (sustantivo, adjetivo, locución), campos distintos. Resolución: la actividad se marca `_funcion_ambigua: true` y los términos no resueltos quedan como `_pendiente_canon` en sus respectivas referencias; el autor escala caso por caso.
 
 ### §5.9. Ciclo de vida de marcas internas
 
@@ -525,5 +563,5 @@ Cuando una extracción real revela un caso no contemplado por el sistema:
 
 Reglas operativas detectadas durante el rediseño que aún esperan integración formal en el cuerpo:
 
-- **Heterogeneidad semántica dentro de un mismo ejercicio.** Cuando una actividad reúne léxico semánticamente heterogéneo (POS distintos, campos distintos), no forzar campo único artificial. Marcar con `_pendiente_canon` y `_funcion_ambigua: true` para escalar al autor.
-- **Suite automatizada de verificación global de integridad.** Construir script (`scripts/verificar_integridad.py` o ampliación de `validar_inventario.py`) que verifique contra TODOS los JSONs del proyecto: cumplimiento del schema, existencia de referencias canónicas en registries, formato de fuentes, coincidencia cabecera↔`nc1-curso.json`, coherencia interna, integridad PCIC y registries, detección de marcas bloqueantes en canónicos, rechazo de `_fixture_*` en canónicos. Detalle en `schema-inventario.md` §A.3.
+- ~~**Heterogeneidad semántica dentro de un mismo ejercicio.**~~ → **integrada en §5.7** (2026-05-15, v10.118).
+- ~~**Suite automatizada de verificación global de integridad.**~~ → **implementada en `scripts/verificar_integridad.py`** (2026-05-15, v10.118). Alcance original detallado en `schema-inventario.md` §A.3.

@@ -85,7 +85,7 @@ unidades/
 **Pipeline definido:**
 1. Autor exporta PDF embebido → `unidades/UX/fuente/UX-nc1.pdf`.
 2. **Extracción del inventario por Claude Code en chat con prompt versionado** (ver bloque "Estrategia de generación" abajo) → genera `UX-nc1-inventario.json`.
-3. Validación automática del JSON con `scripts/validar_inventario.py` (operativo; alineado con `fases/1-extraccion-inventario/schema-inventario.md` en el cross-check A4.5.5 cerrado en v10.62).
+3. Validación automática del JSON con `scripts/validar_inventario.py` (operativo; alineado con `fases/1-extraccion-inventario/schema-inventario.md` hasta v10.62 — cross-check A4.5.5; tras el rediseño v10.115-117 la alineación queda transitoriamente declarada como deuda en el Apéndice §A.1 del schema, con validación manual sustitutiva mientras dure).
 4. Validación visual fuente vs JSON (revisión de 2-3 páginas al azar).
 5. `python scripts/importar_inventario.py unidades/UX/UX-nc1-inventario.json` → carga a BD (idempotente, DELETE CASCADE).
 6. Tras desarrollar la unidad, regenerar `nc1-tarjetas.json` y `nc1-pildoras.json` con scripts Python deterministas.
@@ -175,10 +175,9 @@ Estructura por actividad:
   ```
   Cambios desde v10.25: terminología ELE (`interaccion_oral`, `expresion_oral_libre`, `expresion_escrita_libre`); v10.59 reescribió taxonomía con regla "tipo = acción específica del enunciado" y separó `responder_preguntas_cerradas`/`abiertas`; v10.64 añadió `escucha` (input puro auditivo, ampliación 19→20).
 - `destreza` (lista de strings, alfabética, sin duplicados): habilidad(es) MCER puras de la enumeración cerrada de 6 valores (`comprension_auditiva`, `comprension_lectora`, `expresion_escrita`, `expresion_oral`, `interaccion_oral`, `mediacion`). Ver `schema-inventario.md` §5b. Reformulada en v10.60 (separación habilidad/dominio) y refinada en v10.64.
-- `enfoque` (str): dominio de contenido pedagógico de la enumeración cerrada de 6 valores (`gramatica`, `vocabulario`, `comunicacion`, `fonetica`, `cultura`, `transversal`). Eje ortogonal a `destreza` y a `seccion`. Ver `schema-inventario.md` §5c. Introducido en v10.60 con la separación de ejes.
+- `enfoque` (str): dominio de contenido pedagógico de la enumeración cerrada de 6 valores (`gramatica`, `vocabulario`, `comunicacion`, `pronunciacion_ortografia`, `cultura`, `transversal`). Eje ortogonal a `destreza` y a `seccion`. Ver `schema-inventario.md` §5c. Introducido en v10.60 con la separación de ejes. (En v10.115 el valor `fonetica` se renombró a `pronunciacion_ortografia`.)
 - `instruccion_original` (str): texto literal del libro.
-- `contenido_linguistico` (array de strings).
-- `campo_semantico` (str, opcional): cuando aplica (actividades de vocabulario).
+- **4 listas tipadas** (añadidas v10.111, siempre presentes; lista vacía si la actividad no trabaja la dimensión): `vocabulario` (array de strings con referencias canónicas léxicas), `tiempos_y_verbos` (array de objetos `{lema, tiempo, formas_trabajadas, estructura_perifrastica?}`), `gramatica` (array de strings con referencias canónicas gramaticales), `pronunciacion_ortografia` (array de strings con referencias canónicas pron-orto). Sustituyen al antiguo `contenido_linguistico` + `campo_semantico` eliminados en v10.115. Ver `schema-inventario.md` §3.
 - `audio` (object): `{ presente: bool, pista: int (opcional) }`.
 - `imagen` (object): `{ presente: bool, descripcion: str (obligatoria si presente=true) }`.
 - `video` (object): `{ presente: bool }`.
@@ -454,7 +453,7 @@ Estructura por cuadro gramatical:
 
 ## Parte 3 — Estado del repositorio
 
-> **NOTA:** esta sección es una **vista viva** del árbol del repositorio. Se actualiza con cada cambio físico. Última actualización: 2026-05-07 (limpieza documental v10.72-v10.77: `docs/historico/` poblado, árboles archivados, drift cerrado, Bloque A REVIEW compactado).
+> **NOTA:** esta sección es una **vista viva** del árbol del repositorio. Se actualiza con cada cambio físico. Última actualización: 2026-05-15 (rediseño operativo de fase 1 cerrado v10.115-117: reglas IA-first + convenciones reseteadas + 4 registries canónicos poblados + archivado de los `-viejo` a `docs/historico/`).
 
 ### Árbol actual (estado físico real, hoy)
 
@@ -464,26 +463,53 @@ guia-didactica-profesor-IA/
 ├── unidades/                                ← SISTEMA ACTIVO
 │   ├── U0/U0-nc1-inventario.json            (10 actividades, valida 0/0)
 │   ├── U1/U1-nc1-inventario.json            (42 actividades, valida 0/0)
+│   ├── U2/U2-nc1-inventario.json            (extraído)
 │   ├── U3/U3-nc1-inventario.json            (47 actividades, valida 0/0)
+│   ├── U4/U4-nc1-inventario.json            (extraído pre-rediseño v10.115)
+│   ├── U5/U5-nc1-inventario.json            (extraído pre-rediseño v10.115)
+│   ├── U6/U6-nc1-inventario.json            (extraído pre-rediseño v10.115)
+│   ├── U7/U7-nc1-inventario.json            (extraído pre-rediseño v10.115)
+│   ├── U8/U8-nc1-inventario.json            (extraído pre-rediseño v10.115)
+│   ├── U9/U9-nc1-inventario.json            (extraído pre-rediseño v10.115)
+│   ├── U1-propuesta/                        (fixture exploratoria del rediseño, unidad: "1p")
+│   ├── nc1-curso.json                       (índice editorial global del curso)
+│   ├── nc1-reciclaje.json                   (mapa de reciclaje cross-unidad, fase 2 pausada)
 │   └── U[X]/fuente/U[X]-nc1.pdf             (gitignored, input local del autor)
 │
 ├── fases/                                   ← una carpeta por fase con sus archivos operativos
-│   └── 1-extraccion-inventario/             (post-refactor v10.69, 5 archivos vivos)
-│       ├── CLAUDE.md                        (contrato corto de fase, auto-cargado)
-│       ├── prompt.md                        (instrucciones ejecutables)
-│       ├── schema-inventario.md             (contrato de datos puro)
-│       ├── reglas-operativas.md             (decisiones, precedencias, criterios)
-│       └── convenciones-y-casos.md          (transcripción + casebook)
+│   ├── 1-extraccion-inventario/             (post-refactor v10.69 + rediseño v10.111-v10.117)
+│   │   ├── CLAUDE.md                        (contrato corto de fase, auto-cargado)
+│   │   ├── prompt.md                        (instrucciones ejecutables)
+│   │   ├── schema-inventario.md             (contrato de datos puro)
+│   │   ├── reglas-operativas.md             (decisiones, precedencias, criterios IA-first)
+│   │   ├── glosario.md                      (diccionario operativo, añadido v10.111)
+│   │   ├── convenciones-y-casos.md          (transcripción + casebook, reseteado v10.116)
+│   │   ├── campos-semanticos-canonicos.json (registry léxico, 99 categorías canónicas)
+│   │   ├── verbos-canonicos.json            (registry verbal, 48 lemas)
+│   │   ├── gramatica-canonica.json          (registry gramatical, 17 categorías, poblado v10.117)
+│   │   ├── pronunciacion-ortografia-canonica.json (registry pron-orto, 7 categorías, poblado v10.117)
+│   │   └── pcic-a1-{vocabulario,gramatica,pronunciacion-ortografia,comunicacion}.json (4 PCIC A1)
+│   └── 2-reciclaje/                         (fase 2 pausada, REDISEÑO-EN-CURSO.md documenta diseño)
 │
 ├── scripts/                                 ← código activo
-│   └── validar_inventario.py                (validador estructural, contrato paralelo del schema)
+│   └── validar_inventario.py                (validador; alineación post-rediseño en deuda — §A.1 schema)
 │
 ├── docs/historico/                          ← archivado de artefactos cerrados
-│   ├── refactor-prompt-fase1/               (REFACTOR-PROPUESTA, REFACTOR-WORKTREE, README)
-│   ├── CHANGELOG-pre-refactor.md            (entradas pre-v10.40, archivadas en v10.75)
-│   ├── PROCESO-MAESTRO-arboles-historicos.md (árbol intermedio + antes del split, v10.76)
+│   ├── refactor-prompt-fase1/               (REFACTOR-PROPUESTA, REFACTOR-WORKTREE, README; v10.72)
+│   ├── pruebas/                             (corrida U4-propuesta aprobada v10.115)
+│   ├── pruebas-fallidas/                    (corrida U4-propuesta sobre v10.114 invalidada)
+│   ├── CHANGELOG-pre-refactor.md            (entradas pre-v10.40, archivadas v10.75)
+│   ├── PROCESO-MAESTRO-arboles-historicos.md (árboles antiguos, v10.76)
 │   ├── PROCESO-MAESTRO-parte5bis-migracion.md (Parte 5.bis CERRADA, v10.76)
-│   └── REVIEW-bloque-A-cerrado.md           (detalle íntegro del Bloque A cerrado, v10.77)
+│   ├── REVIEW-bloque-A-cerrado.md           (detalle Bloque A cerrado, v10.77)
+│   ├── B1.5-contrato-reciclaje.md           (contrato histórico de reciclaje)
+│   ├── schema-inventario-viejo.md           (archivado v10.114)
+│   ├── PROPUESTA-PIEZA-2-IA-FIRST.md        (archivado v10.114, absorbido en contratos vivos)
+│   ├── REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md (archivado v10.115, todas piezas absorbidas)
+│   ├── convenciones-y-casos-viejo.md        (archivado v10.116, reseteo cerrado)
+│   ├── reglas-operativas-viejo.md           (archivado v10.116, reseteo cerrado)
+│   ├── prompt-v1-antiguo.md                 (versión antigua, no usar)
+│   └── prompt-v2-monolitico-NO-USAR.md      (versión antigua, no usar)
 │
 ├── eval/                                    ← evaluación (heredado, en uso)
 ├── web/                                     ← dashboard (heredado, en uso)
@@ -538,7 +564,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-arboles-historicos.md`. Estado del 
 14. **Salidas globales del curso**: 3 archivos (`nc1-reciclaje.json`, `nc1-tarjetas.json`, `nc1-pildoras.json`).
 15. **Modelo de los globales: A — índice/proyección.** El dato vive en su unidad; los globales se regeneran. NO se editan a mano (excepto reciclaje).
 16. **Ubicación de los globales**: en `unidades/`, junto a las carpetas de unidad.
-17. **Esquema del inventario JSON cerrado**: `vocabulario_consolidado` con 3 bloques (principal/recurrente/comprensión), `secciones` como índice top-level, `tipo` con taxonomía cerrada de **20 valores** (source of truth: `fases/1-extraccion-inventario/schema-inventario.md` §5; provisional y revisable según regla §2.4 de `reglas-operativas.md`), `destreza` (lista MCER de 6 valores con orden alfabético, schema §5b) y `enfoque` (string del enum de 6, schema §5c) como ejes ortogonales independientes, `datos` como saco genérico, `respuestas` siempre presente, sub-objetos consistentes para audio/imagen/video, `registro` eliminado (va a CHANGELOG).
+17. **Esquema del inventario JSON cerrado**: `vocabulario_consolidado` con **2 bloques** (principal/recurrente; el bloque `comprensión` se eliminó en v10.115), más los otros 3 bloques top-level consolidados `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada` (añadidos en v10.111), `secciones` como índice top-level, `tipo` con taxonomía cerrada de **20 valores** (source of truth: `fases/1-extraccion-inventario/schema-inventario.md` §5), `destreza` (lista MCER de 6 valores con orden alfabético, schema §5b) y `enfoque` (string del enum de 6, schema §5c) como ejes ortogonales independientes, `datos` como saco genérico, `respuestas` siempre presente, sub-objetos consistentes para audio/imagen/video, `registro` eliminado (va a CHANGELOG).
 18. **Esquema de `nc1-tarjetas.json`**: solo vocabulario y estrategia (no gramática). `por_unidad` + `indice_palabras` + `indice_estrategias`.
 19. **Esquema de `nc1-pildoras.json`**: `por_unidad` + `indice_global`. Categorías como `null` por ahora — se definen cuando se trabajen píldoras nuevas.
 20. **Esquema de `nc1-reciclaje.json`**: modelo de hilos (refinado v10.92, taxonomía unificada v10.94). Tipos cerrados (4): `vocabulario`, `tiempos_y_verbos`, `contenido_gramatical`, `estrategia` (cubre cualquier tipo de estrategia asociada a las destrezas de la lengua). Niveles de impacto: alto/medio/bajo. Revisable y editable desde el dashboard.
@@ -547,7 +573,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-arboles-historicos.md`. Estado del 
 21. **`UX-nc1-inventario.json`**: lo genera **Claude Code** en chat con un **prompt versionado** (`fases/1-extraccion-inventario/prompt.md`, operativo). NO Python autónomo.
 22. **`nc1-tarjetas.json`** y **`nc1-pildoras.json`**: scripts Python deterministas (`regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`, a escribir). Cero tokens.
 23. **`nc1-reciclaje.json`** (decisión histórica): originalmente **manual con Claude Code** en chat al cerrar cada unidad, NO automático, NO inferido por script, acumulativo. **Superada por la decisión 36** (v10.108): scripts de regeneración existen, fase 2 actualmente pausada, `integrar_unidad.py` no regenera por defecto.
-24. **Validación post-extracción** del inventario: script Python `scripts/validar_inventario.py` (operativo desde antes del refactor; alineado con `fases/1-extraccion-inventario/schema-inventario.md` en el cross-check A4.5.5 cerrado en v10.62).
+24. **Validación post-extracción** del inventario: script Python `scripts/validar_inventario.py` (operativo desde antes del refactor; alineado con `fases/1-extraccion-inventario/schema-inventario.md` hasta v10.62 — cross-check A4.5.5; tras el rediseño v10.115-117 la alineación queda transitoriamente declarada como deuda en el Apéndice §A.1 del schema, con validación manual sustitutiva mientras dure).
 
 ### Sobre el dashboard y el informe HTML
 25. **Cada extracción de inventario produce un JSON por unidad.** Ese JSON queda además disponible como vista HTML dinámica integrada en el dashboard existente (`web/index.html`), sin generar por ahora un archivo HTML independiente.
@@ -653,7 +679,7 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
    ```
 
    **Dos carriles complementarios:**
-   - **Carril A** — extracción canónica desde origen: el prompt de fase 1 instruye al extractor a agrupar `vocabulario_consolidado` directamente en nombres canónicos. Si no encuentra categoría segura, usa la marca literal `"_pendiente_canon"` (como clave de bloque o como valor de `campo_semantico`) en lugar de inventar un nombre. Estado transitorio de worktree, bloquea cierre.
+   - **Carril A** — extracción canónica desde origen: el prompt de fase 1 instruye al extractor a agrupar `vocabulario_consolidado` directamente en nombres canónicos. Si no encuentra categoría segura, usa la marca literal `"_pendiente_canon"` como clave dentro del sub-bloque `principal`/`recurrente`. (La clave `campo_semantico` por actividad fue eliminada del schema en v10.115 junto con `contenido_linguistico`; el canon léxico se aplica ahora directamente sobre las referencias en `actividad.vocabulario` y sobre las claves de `vocabulario_consolidado`.) Estado transitorio de worktree, bloquea cierre.
    - **Carril B** — saneamiento retrospectivo de U0-U9: el validador en R1 lista los campos no canónicos como auditoría legacy; el dashboard los muestra; el humano resuelve uno a uno con Claude Code aplicando el árbol de decisión.
 
    **Dashboard:** solo lectura. Endpoint `GET /api/canon/pendientes` + vista UI mínima de cola. NO escribe en el canon. La edición la hace Claude Code (carril operativo del sistema).

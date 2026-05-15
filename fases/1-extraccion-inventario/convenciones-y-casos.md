@@ -29,7 +29,7 @@ Si una convención de este archivo contradice schema o reglas, **prevalecen ella
 
 La IA transcribe el contenido del libro **verbatim** al JSON: enunciados, ítems, textos, diálogos, opciones, respuestas dadas. No parafrasea, no resume, no normaliza. Conserva puntuación, mayúsculas, nombres propios y huecos tal cual aparecen.
 
-> Regla operativa anclada en `reglas-operativas.md` (principio de literalidad). Esta sección concentra los casos prácticos de transcripción.
+> Regla operativa anclada en `reglas-operativas.md` §0.0 (principio de literalidad). Esta sección concentra los casos prácticos de transcripción.
 
 ### §1.2 Patrón "primer ítem resuelto como ejemplo"
 
@@ -151,7 +151,7 @@ Casos disparadores históricos: U5-p54-act03 (`Posibles respuestas:` coló como 
 
 ## §2. Ejemplos canónicos de `items_libro` por tipo de actividad
 
-> Regla de literalidad obligatoria: ver §1.1 + `reglas-operativas.md`. Aquí van los ejemplos concretos por tipo.
+> Regla de literalidad obligatoria: ver §1.1 + `reglas-operativas.md` §0.0. Aquí van los ejemplos concretos por tipo.
 
 ### §2.1 Cloze (completa_huecos)
 

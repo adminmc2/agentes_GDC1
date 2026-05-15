@@ -9,6 +9,7 @@
   },
   "categorias": {
     "Sonidos y correspondencias ortográficas": {
+      "_pcic_ref": "PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)",
       "_apariciones": {
         "U3": ["/θ/"],
         "U4": ["/r/", "/rr/"],
@@ -24,6 +25,7 @@
       }
     },
     "Letras homófonas": {
+      "_pcic_ref": "PCIC A1 ortografía (Ortografía De Las Palabras: pares de letras con misma realización fonética)",
       "_apariciones": {
         "U6": ["b = v"]
       },
@@ -32,6 +34,7 @@
       }
     },
     "Vocales": {
+      "_pcic_ref": "PCIC A1 pronunciación §5.1 Identificación y producción de fonemas vocálicos",
       "_apariciones": {
         "U2": ["vocales españolas"]
       },
@@ -40,6 +43,7 @@
       }
     },
     "Entonación": {
+      "_pcic_ref": "PCIC A1 pronunciación §2 La entonación (§2.3 patrones melódicos interrogativos + §2.4 patrones en actos de habla)",
       "_apariciones": {
         "U1": ["interrogativa"],
         "U7": ["interrogativa", "exclamativa"]
@@ -50,6 +54,7 @@
       }
     },
     "Acentuación": {
+      "_pcic_ref": "PCIC A1 pronunciación §3 La sílaba y el acento (§3.2 reconocimiento y producción del acento) + ortografía (acentuación gráfica de agudas, llanas, esdrújulas)",
       "_apariciones": {
         "U9": ["tipos según sílaba tónica"]
       },
@@ -58,6 +63,7 @@
       }
     },
     "Signos de puntuación": {
+      "_pcic_ref": "PCIC A1 ortografía (Puntuación: signos de apertura y cierre obligatorios en interrogación y exclamación)",
       "_apariciones": {
         "U1": ["interrogación (apertura y cierre obligatorios)"],
         "U7": ["exclamación (apertura y cierre obligatorios)"]
@@ -68,6 +74,7 @@
       }
     },
     "Mayúsculas": {
+      "_pcic_ref": "PCIC A1 ortografía (Ortografía De Letras Y Palabras: uso de mayúsculas — inicial de oración, después de punto, nombres propios, siglas)",
       "_apariciones": {
         "U2": ["uso general"]
       },

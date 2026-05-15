@@ -32,7 +32,7 @@
     },
     "Pronombre sujeto": {
       "_pcic_ref": "PCIC A1 §7.1.1 Pronombre sujeto",
-      "_apariciones": { "U1": "introducción (singulares con ser/llamarse/tener)", "U2": "ampliación a plurales", "U4-U9": "recurrente como soporte sintáctico" },
+      "_apariciones": { "U1": "introducción (singulares con ser/llamarse/tener)", "U2": "ampliación a plurales", "U3": "recurrente como soporte sintáctico", "U4": "recurrente como soporte sintáctico", "U5": "recurrente como soporte sintáctico", "U6": "recurrente como soporte sintáctico", "U7": "recurrente como soporte sintáctico", "U8": "recurrente como soporte sintáctico", "U9": "recurrente como soporte sintáctico" },
       "items": ["yo", "tú", "él", "ella", "usted", "nosotros", "nosotras", "vosotros", "vosotras", "ellos", "ellas", "ustedes"]
     },
     "Pronombres átonos de OI": {

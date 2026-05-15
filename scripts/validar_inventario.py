@@ -39,17 +39,36 @@ ROLLOUT_CANON_ITERACION = "R1"  # R1 | R2 | R3
 LEGACY_UNIDADES_R1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 CLAVES_TOP = {"unidad", "curso", "titulo", "paginas_libro", "nivel", "fuente",
-              "contenidos_indice", "vocabulario_consolidado", "secciones",
-              "paginas_detalle"}
+              "contenidos_indice",
+              # 4 bloques top-level consolidados (v10.111+)
+              "vocabulario_consolidado", "tiempos_y_verbos_consolidado",
+              "gramatica_consolidada", "pronunciacion_ortografia_consolidada",
+              "secciones", "paginas_detalle"}
 
-CLAVES_TOP_OPCIONALES = {"autoevaluacion", "_nota_unidad_atipica"}
+CLAVES_TOP_OPCIONALES = {"autoevaluacion", "_nota_unidad_atipica",
+                         "_decisiones_ia",         # marca interna §14 schema
+                         "_migracion_rediseno"}    # clave transitoria §A.2 schema
 
 SECCIONES_CANONICAS = {"vocabulario", "gramatica", "comunicacion", "destrezas",
                        "cultura", "evaluacion", "reflexion"}
 
 TIPOS_CUADRO_VALIDOS = {
-    "gramatical", "lexical", "cultural", "comunicativo", "fonetico",
+    "gramatical", "lexical", "cultural", "comunicativo", "pronunciacion_ortografia",
 }
+
+# Enum cerrado de tiempo verbal (§5d schema, v10.115 — 4 valores)
+# Perífrasis retirado por opción B; estructura sintáctica, no tiempo.
+TIEMPOS_VALIDOS = {"Presente", "Pretérito indefinido", "Imperativo", "Infinitivo"}
+
+# Los 5 tipos productivos que admiten sufijo @R en fuentes (§6.5 reglas, §9.5 schema)
+TIPOS_PRODUCTIVOS_AR = {
+    "produccion_escrita_guiada", "expresion_escrita_libre", "expresion_oral_libre",
+    "tarea_final", "interaccion_oral",
+}
+
+# Regex de fuentes (§9.5 schema): pNN-actMM(@R)? | cuadro@pNN(#K)?
+import re
+FUENTE_REGEX = re.compile(r"^(p\d+-act\d+(@R)?|cuadro@p\d+(#\d+)?)$")
 
 TIPOS_VALIDOS = {
     # Taxonomía v10.59 — basada en la acción específica del enunciado del libro.
@@ -95,7 +114,7 @@ ENFOQUES_VALIDOS = {
     "gramatica",
     "vocabulario",
     "comunicacion",
-    "fonetica",
+    "pronunciacion_ortografia",  # renombrado de 'fonetica' en v10.115
     "cultura",
     "transversal",
 }
@@ -227,28 +246,41 @@ def _validar_canon_inventario(d: dict) -> tuple[list[str], list[str], list[str]]
         else:
             errores.append(f"❌ {msg}")
 
-    # Superficie 1: claves de vocabulario_consolidado.{principal,recurrente,comprension}
+    # Superficie 1: claves de vocabulario_consolidado.{principal,recurrente}
+    # (v10.115: sub-bloque 'comprension' eliminado del modelo)
     voc = d.get("vocabulario_consolidado")
     if isinstance(voc, dict):
-        for bloque in ("principal", "recurrente", "comprension"):
+        for bloque in ("principal", "recurrente"):
             bloq = voc.get(bloque)
             if isinstance(bloq, dict):
                 for clave in bloq.keys():
-                    if clave == "_descripcion":
-                        continue  # clave reservada del schema (§9)
+                    if clave.startswith("_"):
+                        continue  # claves reservadas (_descripcion, _pendiente_canon como clave)
                     evaluar(clave, f"vocabulario_consolidado.{bloque}.<{clave}>")
 
-    # Superficie 2: actividad.campo_semantico
+    # Superficie 2: referencias léxicas en actividad.vocabulario y cuadro.vocabulario
+    # (v10.115: actividad.campo_semantico eliminado; reemplazado por lista actividad.vocabulario)
     for p in d.get("paginas_detalle", []) or []:
         if not isinstance(p, dict):
             continue
         for a in p.get("actividades", []) or []:
             if not isinstance(a, dict):
                 continue
-            cs = a.get("campo_semantico")
-            if isinstance(cs, str):
+            voc_ref = a.get("vocabulario", [])
+            if isinstance(voc_ref, list):
                 aid = a.get("id", "?")
-                evaluar(cs, f"actividad[{aid}].campo_semantico")
+                for ref in voc_ref:
+                    if isinstance(ref, str):
+                        evaluar(ref, f"actividad[{aid}].vocabulario")
+        for c in p.get("cuadros", []) or []:
+            if not isinstance(c, dict):
+                continue
+            voc_ref = c.get("vocabulario", [])
+            if isinstance(voc_ref, list):
+                pag = p.get("pagina", "?")
+                for ref in voc_ref:
+                    if isinstance(ref, str):
+                        evaluar(ref, f"cuadro@p{pag}.vocabulario")
 
     return errores, avisos, auditoria
 
@@ -264,13 +296,64 @@ def validar(path):
         return [f"❌ JSON no parseable: {e}"], [], []
 
     # 1. Claves top-level
+    # Tolerancia de fixtures exploratorias (schema §A.5):
+    # si _fixture_exploratoria está presente, se admiten claves _fixture_*.
+    es_fixture = "_fixture_exploratoria" in d
+    if es_fixture and not isinstance(d.get("unidad"), str):
+        avisos.append("⚠ _fixture_exploratoria presente pero 'unidad' no es string ('Np')")
+
     faltan = CLAVES_TOP - set(d.keys())
     if faltan:
         errores.append(f"❌ Faltan claves top-level: {sorted(faltan)}")
 
     sobra = set(d.keys()) - CLAVES_TOP - CLAVES_TOP_OPCIONALES - {"registro"}  # registro tolerado
+    # Filtrar claves _fixture_* en fixtures (metadata extracontractual §A.5)
+    if es_fixture:
+        sobra = {k for k in sobra if not k.startswith("_fixture_")}
     if sobra:
         avisos.append(f"⚠ Claves top-level no canónicas: {sorted(sobra)}")
+
+    # _migracion_rediseno y _decisiones_ia opcionales canónicas
+    if "_decisiones_ia" in d and not isinstance(d["_decisiones_ia"], list):
+        errores.append("❌ _decisiones_ia (top-level) debe ser lista de strings")
+    if "_migracion_rediseno" in d and not isinstance(d["_migracion_rediseno"], dict):
+        errores.append("❌ _migracion_rediseno debe ser objeto (clave transitoria §A.2)")
+
+    # Rechazo de _fixture_* en inventarios canónicos (schema §A.5)
+    if not es_fixture and isinstance(d.get("unidad"), int):
+        fixture_keys = [k for k in d.keys() if k.startswith("_fixture_")]
+        if fixture_keys:
+            errores.append(f"❌ Inventario canónico (unidad entero) con claves _fixture_*: {fixture_keys} — prohibidas por §A.5")
+
+    # 1bis. Shape de los 4 bloques top-level consolidados (schema §9, v10.111+)
+    # vocabulario_consolidado, gramatica_consolidada, pronunciacion_ortografia_consolidada → 2 sub-bloques principal/recurrente
+    for bloque_name in ("vocabulario_consolidado", "gramatica_consolidada", "pronunciacion_ortografia_consolidada"):
+        if bloque_name in d:
+            bloque = d[bloque_name]
+            if not isinstance(bloque, dict):
+                errores.append(f"❌ {bloque_name} debe ser objeto con sub-bloques principal/recurrente")
+                continue
+            for subbloque in ("principal", "recurrente"):
+                if subbloque not in bloque:
+                    avisos.append(f"⚠ {bloque_name}: falta sub-bloque '{subbloque}' (puede ser objeto vacío)")
+                elif not isinstance(bloque[subbloque], dict):
+                    errores.append(f"❌ {bloque_name}.{subbloque} debe ser objeto")
+    # tiempos_y_verbos_consolidado → lista plana de objetos
+    if "tiempos_y_verbos_consolidado" in d:
+        tvc = d["tiempos_y_verbos_consolidado"]
+        if not isinstance(tvc, list):
+            errores.append("❌ tiempos_y_verbos_consolidado debe ser lista plana de objetos verbales")
+        else:
+            for i, entry in enumerate(tvc):
+                if not isinstance(entry, dict):
+                    errores.append(f"❌ tiempos_y_verbos_consolidado[{i}] debe ser objeto")
+                    continue
+                if "lema" not in entry:
+                    errores.append(f"❌ tiempos_y_verbos_consolidado[{i}]: falta 'lema'")
+                if "tiempos" in entry and isinstance(entry["tiempos"], list):
+                    for t in entry["tiempos"]:
+                        if t not in TIEMPOS_VALIDOS:
+                            errores.append(f"❌ tiempos_y_verbos_consolidado[{i}]: tiempo '{t}' no válido (enum §5d: {sorted(TIEMPOS_VALIDOS)})")
 
     # autoevaluacion (opcional): si existe, validar estructura completa
     if "autoevaluacion" in d:
@@ -425,6 +508,48 @@ def validar(path):
                     img = a.get("imagen", {})
                     if img.get("presente") and not img.get("descripcion"):
                         errores.append(f"❌ {apref}: imagen.presente=true requiere 'descripcion'")
+
+                    # 4 listas tipadas siempre presentes (schema §3, v10.111+)
+                    for lista_tipada in ("vocabulario", "tiempos_y_verbos", "gramatica", "pronunciacion_ortografia"):
+                        if lista_tipada not in a:
+                            errores.append(f"❌ {apref}: falta lista tipada '{lista_tipada}' (debe estar siempre, lista vacía si no aplica)")
+                        elif not isinstance(a[lista_tipada], list):
+                            errores.append(f"❌ {apref}: '{lista_tipada}' debe ser lista")
+
+                    # tiempos_y_verbos[] shape (schema §3.2)
+                    for vi, v_obj in enumerate(a.get("tiempos_y_verbos", [])):
+                        vpref = f"{apref}.tiempos_y_verbos[{vi}]"
+                        if not isinstance(v_obj, dict):
+                            errores.append(f"❌ {vpref}: debe ser objeto {{lema, tiempo, formas_trabajadas[, estructura_perifrastica]}}")
+                            continue
+                        for campo in ("lema", "tiempo", "formas_trabajadas"):
+                            if campo not in v_obj:
+                                errores.append(f"❌ {vpref}: falta '{campo}'")
+                        if "tiempo" in v_obj and v_obj["tiempo"] not in TIEMPOS_VALIDOS:
+                            errores.append(f"❌ {vpref}: tiempo '{v_obj['tiempo']}' no válido (enum: {sorted(TIEMPOS_VALIDOS)})")
+                        if "formas_trabajadas" in v_obj:
+                            ft = v_obj["formas_trabajadas"]
+                            if not isinstance(ft, list) or len(ft) == 0:
+                                errores.append(f"❌ {vpref}: 'formas_trabajadas' debe ser lista no vacía")
+                            elif not all(isinstance(s, str) and s.strip() for s in ft):
+                                errores.append(f"❌ {vpref}: 'formas_trabajadas' debe contener strings no vacíos")
+                        # estructura_perifrastica opcional (opción B v10.115)
+                        if "estructura_perifrastica" in v_obj and not isinstance(v_obj["estructura_perifrastica"], str):
+                            errores.append(f"❌ {vpref}: 'estructura_perifrastica' debe ser string si está presente")
+
+                    # @R en fuentes: solo si tipo está en los 5 productivos (§6.5 reglas)
+                    if tipo and tipo not in TIPOS_PRODUCTIVOS_AR:
+                        for v_obj in a.get("tiempos_y_verbos", []):
+                            for fuente in v_obj.get("fuentes", []) if isinstance(v_obj, dict) else []:
+                                if isinstance(fuente, str) and fuente.endswith("@R"):
+                                    errores.append(f"❌ {apref}: fuente con sufijo @R '{fuente}' en tipo no productivo '{tipo}' (§6.5: solo {sorted(TIPOS_PRODUCTIVOS_AR)})")
+
+                    # Marcas internas (schema §14)
+                    if "_funcion_ambigua" in a and not isinstance(a["_funcion_ambigua"], bool):
+                        errores.append(f"❌ {apref}: '_funcion_ambigua' debe ser bool")
+                    if "_decisiones_ia" in a:
+                        if not isinstance(a["_decisiones_ia"], list):
+                            errores.append(f"❌ {apref}: '_decisiones_ia' (en actividad) debe ser lista de strings")
 
                     # tipos que requieren contenido visible (items_libro, columnas_relaciona u otro canónico)
                     if tipo in TIPOS_QUE_REQUIEREN_CONTENIDO_VISIBLE:
