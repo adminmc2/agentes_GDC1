@@ -461,19 +461,32 @@ Estructura por cuadro gramatical:
 guia-didactica-profesor-IA/
 │
 ├── unidades/                                ← SISTEMA ACTIVO
-│   ├── U0/U0-nc1-inventario.json            (10 actividades, valida 0/0)
-│   ├── U1/U1-nc1-inventario.json            (42 actividades, valida 0/0)
-│   ├── U2/U2-nc1-inventario.json            (extraído)
-│   ├── U3/U3-nc1-inventario.json            (47 actividades, valida 0/0)
-│   ├── U4/U4-nc1-inventario.json            (extraído pre-rediseño v10.115)
-│   ├── U5/U5-nc1-inventario.json            (extraído pre-rediseño v10.115)
-│   ├── U6/U6-nc1-inventario.json            (extraído pre-rediseño v10.115)
-│   ├── U7/U7-nc1-inventario.json            (extraído pre-rediseño v10.115)
-│   ├── U8/U8-nc1-inventario.json            (extraído pre-rediseño v10.115)
-│   ├── U9/U9-nc1-inventario.json            (extraído pre-rediseño v10.115)
+│   ├── U[N]/                                (estructura por unidad — Opción B, v10.127)
+│   │   ├── U[N]-nc1-inventario.json         (extracción fase 1, top-level)
+│   │   ├── fuente/U[N]-nc1.pdf              (PDF embedido, gitignored)
+│   │   ├── propuesta/                       (material editorial elaborado por sección)
+│   │   │   ├── vocabulario.md               (sección Vocabulario)
+│   │   │   ├── gramatica.md                 (sección Gramática)
+│   │   │   ├── comunicacion.md              (sección Comunicación)
+│   │   │   ├── destrezas.md                 (sección Destrezas)
+│   │   │   ├── cultura.md                   (sección Cultura)
+│   │   │   └── evaluacion.md                (sección Evaluación)
+│   │   └── recursos/                        (CSVs de tarjetas, audios, imágenes, etc.)
+│   │       └── tarjetas/*.csv
+│   │
+│   ├── U0  ├── inventario v10.117 (migrado v10.119)              + propuesta/ recursos/ (estructura creada v10.127, contenido pendiente)
+│   ├── U1  ├── inventario v10.117 (migrado v10.121)              + propuesta/ recursos/ (idem)
+│   ├── U2  ├── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
+│   ├── U3  ├── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
+│   ├── U4  ├── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
+│   ├── U5  ├── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
+│   ├── U6  ├── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
+│   ├── U7  ├── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
+│   ├── U8  ├── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
+│   ├── U9  └── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
+│   │
 │   ├── nc1-curso.json                       (índice editorial global del curso)
-│   ├── nc1-reciclaje.json                   (mapa de reciclaje cross-unidad, fase 2 pausada)
-│   └── U[X]/fuente/U[X]-nc1.pdf             (gitignored, input local del autor)
+│   └── nc1-reciclaje.json                   (mapa de reciclaje cross-unidad, fase 2 pausada)
 │
 ├── fases/                                   ← una carpeta por fase con sus archivos operativos
 │   ├── 1-extraccion-inventario/             (post-refactor v10.69 + rediseño v10.111-v10.117)
