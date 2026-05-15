@@ -4,10 +4,7 @@
   "titulo": "La Familia",
   "paginas_libro": "32-41",
   "nivel": "A1.1",
-  "fuente": {
-    "archivo": "unidades/U3/fuente/U3-nc1.pdf",
-    "version_extraccion": "2026-05-08"
-  },
+  "fuente": { "archivo": "unidades/U3/fuente/U3-nc1.pdf", "version_extraccion": "2026-05-15" },
   "contenidos_indice": {
     "vocabulario": "Parientes",
     "gramatica": "Presente de los verbos regulares. Interrogativos. Posesivos. Hacer un cuaderno de vocabulario",
@@ -17,88 +14,773 @@
   },
   "vocabulario_consolidado": {
     "principal": {
-      "_descripcion": "Vocabulario declarado en el índice de vocabulario de la unidad",
-      "Parientes": [
-        "abuelo/-a", "padre", "madre", "hijo/-a", "hermano/-a", "tío/-a", "primo/-a", "nieto/-a", "sobrino/-a", "marido", "mujer"
-      ]
+      "Parientes": {
+        "items": [
+          {"palabra": "abuelo", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act6", "p35-act6@R", "p36-act1", "p41-act4@R"]},
+          {"palabra": "abuela", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p41-act4@R"]},
+          {"palabra": "padre", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act5", "p33-act6", "p33-act9", "p33-act10", "p35-act6@R", "p35-act8", "p38-act1", "p38-act2@R"]},
+          {"palabra": "madre", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act5", "p33-act6", "p33-act7@R", "p33-act8", "p33-act9", "p33-act10", "p35-act4@R", "p35-act6@R", "p38-act1", "p38-act2@R", "p41-act4"]},
+          {"palabra": "hijo", "fuentes": ["p32-act3", "p35-act6@R", "p41-act4@R"]},
+          {"palabra": "hija", "fuentes": ["p32-act3", "p36-act1", "p41-act4"]},
+          {"palabra": "hermano", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act5", "p33-act6", "p33-act7@R", "p33-act10", "p35-act8", "p36-act1", "p38-act1", "p38-act2@R", "p41-act4@R"]},
+          {"palabra": "hermana", "fuentes": ["p32-act1", "p32-act2@R", "p33-act5", "p33-act7", "p33-act8", "p33-act10", "p35-act8", "p36-act1", "p38-act1", "p38-act2@R", "p41-act4"]},
+          {"palabra": "tío", "fuentes": ["p32-act1", "p32-act2@R", "p34-act3", "p35-act5"]},
+          {"palabra": "tía", "fuentes": ["p32-act1", "p32-act2@R", "p35-act5", "p41-act4@R"]},
+          {"palabra": "primo", "fuentes": ["p32-act1", "p32-act2@R", "p35-act5", "p36-act1", "p39-act7", "p41-act4@R"]},
+          {"palabra": "prima", "fuentes": ["p32-act1", "p32-act2@R", "p39-act7"]},
+          {"palabra": "marido", "fuentes": ["p32-act3", "p41-act4@R"]},
+          {"palabra": "mujer", "fuentes": ["p32-act3"]},
+          {"palabra": "nieto", "fuentes": ["p32-act3", "p33-act7@R", "p41-act4@R"]},
+          {"palabra": "nieta", "fuentes": ["p32-act3"]},
+          {"palabra": "sobrino", "fuentes": ["p32-act3"]},
+          {"palabra": "sobrina", "fuentes": ["p32-act3"]},
+          {"palabra": "gemelos", "fuentes": ["p36-act1", "p36-act2@R", "p36-act3", "p39-act7@R"]},
+          {"palabra": "gemelas", "fuentes": ["p36-act1", "p36-act2@R"]},
+          {"palabra": "familia", "fuentes": ["p33-act5", "p35-act6", "p35-act6@R", "p35-act7", "p36-act4", "p38-act1", "p38-act3", "p39-act7"]},
+          {"palabra": "hija única", "fuentes": ["p36-act1", "p36-act2@R"]}
+        ],
+        "fuentes": [
+          "p32-act1",
+          "p32-act2@R",
+          "p32-act3",
+          "p32-act4",
+          "p33-act5",
+          "p33-act6",
+          "p33-act7",
+          "p33-act7@R",
+          "p33-act8",
+          "p33-act9",
+          "p33-act10",
+          "p34-act3",
+          "p35-act4@R",
+          "p35-act5",
+          "p35-act6",
+          "p35-act6@R",
+          "p35-act7",
+          "p35-act8",
+          "p36-act1",
+          "p36-act2@R",
+          "p36-act3",
+          "p36-act4",
+          "p38-act1",
+          "p38-act2@R",
+          "p38-act3",
+          "p39-act7",
+          "p39-act7@R",
+          "p41-act4",
+          "p41-act4@R"
+        ],
+        "descripcion": {
+          "U3": "PCIC A1 §1.6 Familia (Parientes) — Primer cierre canónico del campo. U3 presenta el árbol genealógico de tres generaciones con los términos abuelo/-a, padre/madre, hijo/-a, hermano/-a, tío/-a, primo/-a, sobrino/-a, nieto/-a, marido/mujer. Añade hija única y gemelos/-as. Operacionalizado en la presentación de la familia de David (p32), las descripciones de Javier y Lucía (p33), el diálogo del recreo (p36) y la sopa de letras de la evaluación (p41)."
+        }
+      }
     },
     "recurrente": {
-      "_descripcion": "Vocabulario que aparece en varias secciones de la unidad",
-      "Parientes (formas trabajadas)": [
-        "abuelo", "abuela", "padre", "madre", "tío", "tía", "hermano", "hermana", "primo", "prima", "hijo", "hija", "nieto", "nieta", "sobrino", "sobrina", "marido", "mujer"
-      ],
-      "Verbos regulares (presente)": [
-        "estudiar", "comer", "vivir", "trabajar", "hablar", "escribir"
-      ],
-      "Interrogativos": [
-        "qué", "quién/quiénes", "cuál", "dónde", "cómo", "cuándo", "cuánto/-a/-os/-as"
-      ],
-      "Posesivos": [
-        "mi/mis", "tu/tus", "su/sus", "nuestro/-a/-os/-as", "vuestro/-a/-os/-as"
-      ],
-      "La hora": [
-        "en punto", "y media", "y cuarto", "menos cuarto", "y cinco", "y diez", "y veinte", "y veinticinco", "menos cinco", "menos diez", "menos veinte", "menos veinticinco"
-      ]
-    },
-    "comprension": {
-      "_descripcion": "Léxico que aparece y afecta la comprensión aunque no se trabaje explícitamente",
-      "Vocabulario de los textos de Javier y Lucía": [
-        "camionero", "enfermera", "agricultor", "ingeniería", "instituto", "barrio", "fútbol", "piano", "vacas", "hotel"
-      ],
-      "Vocabulario del texto cultural (cine y cómic)": [
-        "guionista", "iluminador(a)", "decorador(a)", "maquillador(a)", "dibujante", "actor/actriz", "amistad", "soledad", "amor", "muda", "personajes"
-      ],
-      "Programación de televisión": [
-        "telediario", "vuelta ciclista", "documental", "cine", "música clásica", "fútbol"
-      ],
-      "Otros": [
-        "gemelos/-as", "recreo", "merendar", "cumpleaños", "cartelera", "cuaderno"
-      ]
+      "Profesiones y lugares de trabajo": {
+        "items": [
+          {"palabra": "camionero", "fuentes": ["p33-act6", "p33-act10"]},
+          {"palabra": "enfermera", "fuentes": ["p33-act6", "p33-act10"]},
+          {"palabra": "agricultor", "fuentes": ["p33-act8", "p33-act10"]},
+          {"palabra": "profesor", "fuentes": ["p34-act2", "p35-act5"]},
+          {"palabra": "guionista", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
+          {"palabra": "iluminador(a)", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
+          {"palabra": "decorador(a)", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
+          {"palabra": "maquillador(a)", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
+          {"palabra": "dibujante", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
+          {"palabra": "actor / actriz", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
+          {"palabra": "escritor", "fuentes": ["p40-act3"]},
+          {"palabra": "director", "fuentes": ["p40-act3"]},
+          {"palabra": "hospital", "fuentes": ["p34-act1", "p34-act2", "p38-act1", "p38-act2@R", "p41-act1"]},
+          {"palabra": "hotel", "fuentes": ["p33-act8", "p33-act10", "p38-act1", "p38-act2@R"]},
+          {"palabra": "banco", "fuentes": ["p34-act2", "p34-act3"]},
+          {"palabra": "restaurante", "fuentes": ["p34-act2"]}
+        ],
+        "fuentes": ["p33-act6", "p33-act8", "p33-act10", "p34-act1", "p34-act2", "p34-act3", "p35-act5", "p38-act1", "p38-act2@R", "p40-act1", "p40-act2", "p40-act2@R", "p40-act3", "p41-act1"],
+        "descripcion": {
+          "U3": "PCIC A1 §6.5 Profesiones y lugares de trabajo — Recurrente por §5.1.1 criterio (b): no es vocabulario canónico principal del índice editorial U3 (que solo declara Parientes), pero es léxico imprescindible para los textos descriptivos de las familias (Javier Rodríguez: padre camionero / madre enfermera; Lucía Alonso: padre agricultor / madre trabaja en el hotel) y para el bloque cultural sobre cine de animación (guionista, dibujante, iluminador, maquillador, decorador, actor/actriz)."
+        }
+      },
+      "Centros e instituciones educativas": {
+        "items": [
+          {"palabra": "instituto", "fuentes": ["p33-act6", "p33-act8", "p34-act2", "p34-act3", "p35-act5", "p38-act1"]},
+          {"palabra": "Educación Secundaria Obligatoria (ESO)", "fuentes": ["p33-act6", "p33-act8", "p33-act10"]},
+          {"palabra": "curso", "fuentes": ["p33-act6", "p33-act8", "p38-act1", "p38-act3"]},
+          {"palabra": "colegio", "fuentes": ["p34-act1"]},
+          {"palabra": "clase", "fuentes": ["p35-act7", "p35-act8", "p36-act1", "p36-act4", "p38-act1", "p38-act3", "p39-act7"]},
+          {"palabra": "recreo", "fuentes": ["p36-act1"]},
+          {"palabra": "compañero", "fuentes": ["p35-act7", "p35-act8", "p36-act4", "p38-act3", "p39-act5", "p39-act6", "p39-act7"]},
+          {"palabra": "compañera", "fuentes": ["p38-act1"]},
+          {"palabra": "amigo", "fuentes": ["p36-act4", "p38-act1", "p38-act3"]}
+        ],
+        "fuentes": ["p33-act6", "p33-act8", "p33-act10", "p34-act1", "p34-act2", "p34-act3", "p35-act5", "p35-act7", "p35-act8", "p36-act1", "p36-act4", "p38-act1", "p38-act3", "p39-act5", "p39-act6", "p39-act7"],
+        "descripcion": { "U3": "Recurrente: ya canónica en U2 por criterio (b). U3 la reactiva como soporte de los textos descriptivos de las familias (Javier/Lucía estudian ESO en el instituto/pueblo) y del diálogo del recreo entre compañeros de clase (p36)." }
+      },
+      "Asignaturas": {
+        "items": [
+          {"palabra": "Tecnología", "fuentes": ["p38-act1", "p38-act2@R"]},
+          {"palabra": "Matemáticas", "fuentes": ["p35-act5", "p38-act1", "p38-act2@R"]},
+          {"palabra": "Historia", "fuentes": ["p38-act1", "p38-act2@R"]},
+          {"palabra": "Geografía e Historia", "fuentes": ["p34-act3"]},
+          {"palabra": "Música", "fuentes": ["p34-act1", "p35-act5@R"]},
+          {"palabra": "Español", "fuentes": ["p35-act9", "p41-act3"]},
+          {"palabra": "Francés", "fuentes": ["p41-act2@R"]},
+          {"palabra": "Inglés", "fuentes": ["p41-act1", "p41-act2@R"]}
+        ],
+        "fuentes": ["p34-act1", "p34-act3", "p35-act5", "p35-act5@R", "p35-act9", "p38-act1", "p38-act2@R", "p41-act1", "p41-act2@R", "p41-act3"],
+        "descripcion": { "U3": "Recurrente: ya canónica en U2. U3 la reactiva incidentalmente en los ejercicios de gramática (estudia Geografía e Historia, Música) y en el correo de Marta a Pierre (deberes de Tecnología, Matemáticas; le gusta la Historia)." }
+      },
+      "Días de la semana": {
+        "items": [
+          {"palabra": "lunes", "fuentes": ["p33-act6", "p41-act3"]},
+          {"palabra": "viernes", "fuentes": ["p33-act6"]},
+          {"palabra": "jueves", "fuentes": ["p34-act3@R"]},
+          {"palabra": "miércoles", "fuentes": ["p41-act3"]},
+          {"palabra": "fines de semana", "fuentes": ["p35-act5", "p41-act3"]}
+        ],
+        "fuentes": ["p33-act6", "p34-act3@R", "p35-act5", "p41-act3"],
+        "descripcion": { "U3": "Recurrente: ya canónica en U2. U3 la reactiva en los textos descriptivos (de lunes a viernes trabaja fuera de Madrid) y en los ejercicios de posesivos (los fines de semana, los lunes y los miércoles)." }
+      },
+      "Números cardinales": {
+        "items": [
+          {"palabra": "cinco (5)", "fuentes": ["p33-act5", "p33-act6", "p36-act4@R"]},
+          {"palabra": "ocho (8)", "fuentes": ["p33-act5", "p36-act1", "p36-act2"]},
+          {"palabra": "nueve (9)", "fuentes": ["p33-act8"]},
+          {"palabra": "diez (10)", "fuentes": ["p35-act6@R"]},
+          {"palabra": "once (11)", "fuentes": ["p35-act6@R", "p36-act1", "p38-act1", "p38-act2@R"]},
+          {"palabra": "dieciséis (16)", "fuentes": ["p33-act8"]},
+          {"palabra": "veinte (20)", "fuentes": ["p37-act5", "p37-act6", "p37-act7"]},
+          {"palabra": "veinticinco (25)", "fuentes": ["p37-act5"]},
+          {"palabra": "treinta (30)", "fuentes": ["p33-act5"]},
+          {"palabra": "treinta y cinco (35)", "fuentes": ["p33-act5"]},
+          {"palabra": "cuarenta (40)", "fuentes": ["p33-act5"]},
+          {"palabra": "cuarenta y cinco (45)", "fuentes": ["p35-act6@R"]}
+        ],
+        "fuentes": ["p33-act5", "p33-act6", "p33-act8", "p35-act6", "p35-act6@R", "p36-act1", "p36-act2", "p36-act4@R", "p37-act5", "p37-act6", "p37-act7", "p38-act1", "p38-act2@R"],
+        "descripcion": { "U3": "Recurrente: ya canónica en U0–U2. U3 la reactiva intensivamente en las edades de los miembros de la familia (40, 35, 8, 5, 9, 16, 11, 45 años) y en las expresiones horarias (las cinco y veinte, las diez, las once)." }
+      },
+      "Edad": {
+        "items": [
+          {"palabra": "tiene cuarenta años", "fuentes": ["p33-act5"]},
+          {"palabra": "tiene treinta y cinco", "fuentes": ["p33-act5"]},
+          {"palabra": "tiene ocho años", "fuentes": ["p33-act5"]},
+          {"palabra": "tiene 5 años", "fuentes": ["p33-act6"]},
+          {"palabra": "tiene 16 años", "fuentes": ["p33-act8"]},
+          {"palabra": "tiene 9 años", "fuentes": ["p33-act8"]},
+          {"palabra": "Tienen 8 años", "fuentes": ["p36-act1"]},
+          {"palabra": "Tiene once años", "fuentes": ["p38-act1"]},
+          {"palabra": "tiene seis", "fuentes": ["p38-act1"]},
+          {"palabra": "Tengo dos hermanas", "fuentes": ["p33-act5"]},
+          {"palabra": "tiene un año más", "fuentes": ["p33-act10"]},
+          {"palabra": "tiene 45 años", "fuentes": ["p35-act6@R"]},
+          {"palabra": "dos años mayor", "fuentes": ["p36-act1", "p36-act2"]}
+        ],
+        "fuentes": ["p33-act5", "p33-act6", "p33-act8", "p33-act10", "p35-act6@R", "p36-act1", "p36-act2", "p38-act1", "p38-act2@R"],
+        "descripcion": { "U3": "Recurrente: ya canónica en U1/U2. U3 la reactiva con la construcción tener + número + años aplicada a la presentación de cada miembro de la familia en los textos descriptivos (Javier, Lucía, Marta, hermanos)." }
+      },
+      "Saludos y despedidas": {
+        "items": [
+          {"palabra": "¡Hola!", "fuentes": ["p38-act1"]},
+          {"palabra": "¿Qué tal estás?", "fuentes": ["p38-act1", "p38-act3"]},
+          {"palabra": "¡Un saludo desde Cádiz!", "fuentes": ["p38-act1"]},
+          {"palabra": "Un saludo", "fuentes": ["p38-act3"]},
+          {"palabra": "Un abrazo", "fuentes": ["p38-act3"]},
+          {"palabra": "Recuerdos desde…", "fuentes": ["p38-act3"]}
+        ],
+        "fuentes": ["p38-act1", "p38-act3"],
+        "descripcion": {
+          "U3": "Recurrente: ya canónica en U0–U2. U3 la reactiva en el correo de Marta a Pierre (¡Hola, Pierre! ¿Qué tal estás? / ¡Un saludo desde Cádiz!) y en la guía de escritura del propio correo del alumno (¡Un abrazo / Un saludo / Recuerdos desde…)."
+        }
+      },
+      "Cine y teatro": {
+        "items": [
+          {"palabra": "cómic", "fuentes": ["p40-act1", "p40-act3", "p40-act4"]},
+          {"palabra": "película", "fuentes": ["p40-act1", "p40-act2", "p40-act3", "p40-act3@R", "p40-act4", "p40-act5"]},
+          {"palabra": "película de animación", "fuentes": ["p40-act1", "p40-act3", "p40-act4"]},
+          {"palabra": "dibujos animados", "fuentes": ["p40-act1"]},
+          {"palabra": "cine", "fuentes": ["p37-act7", "p39-act4", "p40-act5"]},
+          {"palabra": "cine de animación", "fuentes": ["p40-act5"]},
+          {"palabra": "personajes", "fuentes": ["p40-act1"]},
+          {"palabra": "obra", "fuentes": ["p40-act2"]},
+          {"palabra": "guion", "fuentes": ["p40-act2"]},
+          {"palabra": "decorados", "fuentes": ["p40-act2"]},
+          {"palabra": "dibujos", "fuentes": ["p40-act2"]},
+          {"palabra": "iluminación", "fuentes": ["p40-act2"]},
+          {"palabra": "maquillaje", "fuentes": ["p40-act2"]},
+          {"palabra": "Robot Dreams", "fuentes": ["p37-act7", "p40-act1", "p40-act3", "p40-act3@R"]},
+          {"palabra": "Padre no hay más que uno 5", "fuentes": ["p37-act7"]},
+          {"palabra": "Sin instrucciones", "fuentes": ["p37-act7"]},
+          {"palabra": "Flow, un mundo que salvar", "fuentes": ["p37-act7"]},
+          {"palabra": "Cómo entrenar a tu dragón", "fuentes": ["p37-act7"]},
+          {"palabra": "Avatar", "fuentes": ["p39-act4"]},
+          {"palabra": "muda", "fuentes": ["p40-act1"]},
+          {"palabra": "cartelera", "fuentes": ["p37-act7"]}
+        ],
+        "fuentes": ["p37-act7", "p39-act4", "p40-act1", "p40-act2", "p40-act2@R", "p40-act3", "p40-act3@R", "p40-act4", "p40-act5"],
+        "descripcion": {
+          "U3": "Recurrente por §5.1.1 criterio (b): no es vocabulario canónico principal del índice editorial U3, pero es léxico imprescindible para la sección 'Cultura' (El cómic y las películas de animación, p40) y para la actividad de la cartelera de cine (p37-act7). Material: cómic, película, película de animación, dibujos animados, personajes, guion, decorados, dibujos, iluminación, maquillaje, cartelera, muda; títulos de películas Robot Dreams, Avatar, etc."
+        }
+      },
+      "Televisión y radio": {
+        "items": [
+          {"palabra": "telediario", "fuentes": ["p39-act4"]},
+          {"palabra": "documental", "fuentes": ["p39-act4"]},
+          {"palabra": "vuelta ciclista", "fuentes": ["p39-act4"]},
+          {"palabra": "música clásica", "fuentes": ["p39-act4"]},
+          {"palabra": "fútbol (Real Madrid-Barcelona)", "fuentes": ["p39-act4"]},
+          {"palabra": "Saber y ganar", "fuentes": ["p39-act4"]},
+          {"palabra": "programación de televisión", "fuentes": ["p39-act4"]},
+          {"palabra": "radio", "fuentes": ["p40-act1"]}
+        ],
+        "fuentes": ["p39-act4", "p40-act1"],
+        "descripcion": {
+          "U3": "Recurrente por §5.1.1 criterio (b): no es vocabulario canónico principal del índice editorial, pero es léxico imprescindible para la actividad de comprensión auditiva 'Escucha la programación de televisión para hoy' (p39-act4) declarada explícitamente en el índice de DESTREZAS: telediario, documental, vuelta ciclista, música clásica, fútbol, Saber y ganar."
+        }
+      }
     }
+  },
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "estudiar",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["estudio", "estudias", "estudia", "estudiamos", "estudiáis", "estudian"],
+      "fuentes": ["cuadro@p34#1", "p33-act10", "p34-act1", "p34-act2", "p34-act3", "p35-act5", "p38-act1", "p38-act3", "p41-act1", "p41-act2@R"],
+      "descripcion": {
+        "U3": "PCIC A1 §6.4 — Primer cierre canónico del paradigma completo del Presente de estudiar (6 personas) como modelo de verbos regulares en -ar. Presentado en el cuadro de conjugación de p34 junto a comer/vivir y operacionalizado intensivamente en los ejercicios gramaticales (p34-act1/2/3) y en los textos descriptivos de Javier y Lucía (estudia ESO, estudia ingeniería, estudia piano). En U2 ya aparecía como anticipación."
+      }
+    },
+    {
+      "lema": "comer",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -er" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["como", "comes", "come", "comemos", "coméis", "comen"],
+      "fuentes": ["cuadro@p34#1", "p34-act1", "p34-act2", "p34-act3", "p41-act1", "p41-act2@R"],
+      "descripcion": {
+        "U3": "PCIC A1 §6.4 — Primer cierre canónico del paradigma completo del Presente de comer (6 personas) como modelo único de verbos regulares en -er. Presentado en el cuadro de conjugación de p34 y aplicado en los ejercicios gramaticales (¿Dónde come el profesor?, Yo como a las dos y veinte, Elena y sus amigos comen a las dos)."
+      }
+    },
+    {
+      "lema": "vivir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ir" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["vivo", "vives", "vive", "vivimos", "vivís", "viven"],
+      "fuentes": ["cuadro@p34#1", "p33-act6", "p33-act9", "p33-act10", "p34-act1", "p34-act2", "p34-act3", "p35-act5", "p35-act6@R", "p36-act1", "p38-act1", "p41-act1", "p41-act3"],
+      "descripcion": {
+        "U3": "PCIC A1 §6.4 — Primer cierre canónico del paradigma completo del Presente de vivir (6 personas) como modelo único de verbos regulares en -ir. Presentado en el cuadro de conjugación de p34 y aplicado intensivamente en los textos (vive en Getafe, vive en un pueblo de Cantabria, Vivo en la calle del instituto, Mi familia vive en Buenos Aires). En U2 ya aparecía como anticipación parcial."
+      }
+    },
+    {
+      "lema": "trabajar",
+      "tipo_de_verbo": ["intransitivo", "transitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["trabajo", "trabajas", "trabaja", "trabajamos", "trabajan"],
+      "fuentes": ["p33-act6", "p33-act8", "p33-act9", "p33-act10", "p34-act2", "p34-act3", "p38-act1", "p38-act2@R", "p41-act1"],
+      "descripcion": {
+        "U3": "Primer cierre canónico del paradigma de Presente de trabajar (regular -ar). Aparece en los textos descriptivos asociado a profesiones y lugares de trabajo (de lunes a viernes trabaja fuera de Madrid, Su madre trabaja en el hotel del pueblo, mi padre trabaja en un hotel, ¿Dónde trabaja tu padre? En un banco, Mi hermano David trabaja con mi padre)."
+      }
+    },
+    {
+      "lema": "hablar",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["hablo", "hablamos", "habla", "hablan", "hablar"],
+      "fuentes": ["p34-act1", "p34-act2", "p38-act1", "p40-act1", "p40-act3"],
+      "descripcion": {
+        "U3": "U2 la introdujo como anticipación (la hablan más de 580 millones); U3 cierra el paradigma del Presente operacionalizándolo en ejercicios gramaticales (¿Qué idiomas habla tu hermano?, ¿Cuántos idiomas hablas?, María y yo no hablamos mucho por teléfono) y en el texto cultural (no hablan los personajes, no necesita palabras para hablar de los temas, Hoy te hablo de mi familia)."
+      }
+    },
+    {
+      "lema": "escribir",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ir" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["escribes", "escribe"],
+      "fuentes": ["p34-act1", "p34-act2", "p40-act1", "p40-act2"],
+      "descripcion": {
+        "U3": "Primer cierre canónico del Presente de escribir (regular -ir). En contenido aparece en ejercicios gramaticales (¿Qué escribes?, Elena no escribe en su diario todos los días) y en el texto cultural y en p40-act2 (Robot Dreams es una película escrita y dirigida por Pablo Berger; Escribe el guion de una película). Las formas trabajadas se limitan a 3ª singular y 2ª singular; las demás se reconstruyen analógicamente desde el paradigma de vivir presentado en el cuadro."
+      }
+    },
+    {
+      "lema": "ser",
+      "tipo_de_verbo": ["copulativo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["soy", "eres", "es", "somos", "son"],
+      "fuentes": [
+        "p32-act3",
+        "p32-act4",
+        "p33-act6",
+        "p33-act7",
+        "p33-act8",
+        "p33-act9",
+        "p33-act10",
+        "p34-act3",
+        "p35-act5",
+        "p35-act6@R",
+        "p36-act1",
+        "p36-act2",
+        "p36-act3",
+        "p36-act4@R",
+        "p37-act5",
+        "p37-act6",
+        "p37-act7",
+        "p38-act1",
+        "p38-act2",
+        "p38-act2@R",
+        "p40-act1",
+        "p40-act2",
+        "p40-act3",
+        "p41-act2",
+        "p41-act2@R",
+        "p41-act3",
+        "p41-act4",
+        "p41-act4@R",
+        "p41-act6"
+      ],
+      "descripcion": {
+        "U3": "Recurrente: ya canónica en U1/U2 (paradigma completo). U3 la reactiva intensivamente para identificar relaciones de parentesco (Carlos y Juana son los abuelos de David, Es el abuelo de David, María es su hija) y profesiones (su madre es enfermera, El padre de Lucía es agricultor) y para expresar horas (Son las once, A las cinco y veinte)."
+      }
+    },
+    {
+      "lema": "tener",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"],
+      "fuentes": [
+        "p32-act3",
+        "p33-act5",
+        "p33-act6",
+        "p33-act8",
+        "p33-act9",
+        "p33-act10",
+        "p34-act2",
+        "p35-act4",
+        "p35-act5",
+        "p35-act6",
+        "p35-act6@R",
+        "p36-act1",
+        "p36-act2",
+        "p38-act1",
+        "p38-act2",
+        "p38-act2@R",
+        "p38-act3",
+        "p39-act7",
+        "p40-act1",
+        "p41-act1",
+        "p41-act2@R"
+      ],
+      "descripcion": {
+        "U3": "Recurrente: ya canónica en U1/U2 (paradigma completo). U3 la reactiva masivamente para expresar parentesco (Carlos y Juana tienen cinco nietos; tengo dos hermanas; no tengo hermanos; ¿Cuántos hijos tienen tus tíos?) y edad (Tiene 5 años, ¿Cuántos años tienen?, Tienen 8 años)."
+      }
+    },
+    {
+      "lema": "llamarse",
+      "tipo_de_verbo": ["pronominal"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["me llamo", "te llamas", "se llama", "se llaman", "os llamáis"],
+      "fuentes": ["p32-act2", "p32-act2@R", "p32-act4", "p33-act5", "p33-act10", "p34-act3", "p35-act5@R", "p35-act6@R", "p35-act7", "p35-act8", "p36-act1", "p36-act2", "p38-act1", "p39-act7@R", "p41-act2", "p41-act2@R"],
+      "descripcion": {
+        "U3": "Recurrente: ya canónica en U1/U2. U3 la reactiva intensivamente como núcleo del bloque comunicativo 'Hablar de la familia': presentar nombres de parientes en serie (Su abuelo se llama Carlos, Su abuela se llama Juana...; Mis padres se llaman Juan y María; se llama Bárbara; ¿Cómo se llaman tus padres?)."
+      }
+    },
+    {
+      "lema": "estar",
+      "tipo_de_verbo": ["copulativo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["estás", "está", "estamos"],
+      "fuentes": ["p35-act5", "p36-act1", "p38-act1", "p38-act3", "p41-act3"],
+      "descripcion": {
+        "U3": "Recurrente: ya canónica en U2 como anticipación. U3 la reactiva en localización (Vivo en la calle del instituto. Está muy cerca de aquí, p36; ¿Dónde está tu bolígrafo rojo?, p41), en valoración (Mis compañeros y yo estamos muy contentos, p35-act5) y en saludo (¿Qué tal estás?, p38)."
+      }
+    },
+    {
+      "lema": "gustar",
+      "tipo_de_verbo": ["tipo gustar", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "tipo gustar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["le gusta", "te gustan", "te gusta", "me gusta"],
+      "fuentes": ["p38-act1", "p38-act2@R", "p40-act1", "p40-act4", "p40-act5"],
+      "descripcion": {
+        "U3": "Recurrente: ya canónica en U2 como anticipación. U3 la reactiva en el correo de Marta (A mí me gusta mucho la Historia; A Marta le gusta la Historia) y en el bloque cultural (¿Por qué esta película le gusta al público?, ¿Qué películas de animación te gustan?, ¿Cuál te gusta más?)."
+      }
+    },
+    {
+      "lema": "jugar",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "diptongación radical (u→ue)" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["juega"],
+      "fuentes": ["p33-act6", "p33-act8"],
+      "descripcion": { "U3": "Anticipación: lema canónico de unidades posteriores. Incluido por decisión del autor por aparición en contenido de los textos descriptivos de p33 (juega al fútbol tres días a la semana; también juega al fútbol y estudia piano)." }
+    },
+    {
+      "lema": "merendar",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Infinitivo": "regular" },
+      "tiempos": ["Infinitivo"],
+      "formas_trabajadas": ["merendar"],
+      "fuentes": ["p36-act1"],
+      "descripcion": { "U3": "Anticipación: lema canónico de unidades posteriores. Incluido por decisión del autor por aparición en infinitivo dentro del diálogo del recreo (podéis venir a mi casa, a merendar)." }
+    },
+    {
+      "lema": "venir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular", "Infinitivo": "regular" },
+      "tiempos": ["Presente", "Infinitivo"],
+      "formas_trabajadas": ["viene", "venir"],
+      "fuentes": ["p36-act1"],
+      "descripcion": {
+        "U3": "Anticipación: lema canónico de unidades posteriores. Incluido por decisión del autor por aparición en el diálogo del recreo: forma Presente 3.ª singular (mi abuelo viene a visitarnos esta tarde) e infinitivo (podéis venir a mi casa)."
+      }
+    },
+    {
+      "lema": "hacer",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Infinitivo": "regular" },
+      "tiempos": ["Infinitivo"],
+      "formas_trabajadas": ["hacer"],
+      "fuentes": ["p40-act1"],
+      "descripcion": {
+        "U3": "Anticipación: lema canónico de unidades posteriores. Incluido por decisión del autor por aparición en infinitivo dentro del texto cultural de p40 (Pero para hacer una película de dibujos animados se necesita un gran desarrollo tecnológico)."
+      }
+    },
+    {
+      "lema": "interesar",
+      "tipo_de_verbo": ["tipo gustar", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "tipo gustar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["interesan"],
+      "fuentes": ["p40-act1"],
+      "descripcion": {
+        "U3": "PCIC A1 §9 — Verbo tipo gustar añadido en v10.129. Aparece en p40-act1 (texto cultural sobre la familia): 'A los abuelos también les interesan los deportes'. Construcción simétrica a gustar (dativo experimentante). Primera aparición canónica del lema; codificado por dictamen editorial del autor."
+      }
+    }
+  ],
+  "gramatica_consolidada": {
+    "principal": {
+      "Interrogativos": {
+        "items": [
+          {"palabra": "¿Qué...?", "fuentes": ["cuadro@p34#2", "p33-act9", "p34-act2", "p34-act3", "p36-act3", "p38-act2", "p41-act2@R"]},
+          {"palabra": "¿A qué hora...?", "fuentes": ["cuadro@p34#2", "p37-act7", "p41-act2@R"]},
+          {"palabra": "¿Quién...?", "fuentes": ["cuadro@p34#2", "p32-act4", "p34-act3", "p38-act2", "p41-act2@R"]},
+          {"palabra": "¿Quiénes...?", "fuentes": ["cuadro@p34#2", "p34-act3", "p38-act2"]},
+          {"palabra": "¿Cuál...?", "fuentes": ["cuadro@p34#2", "p34-act3", "p38-act2", "p41-act2@R"]},
+          {"palabra": "¿Dónde...?", "fuentes": ["cuadro@p34#2", "p33-act9", "p34-act1", "p34-act2", "p34-act3", "p35-act6@R", "p36-act1", "p41-act1", "p41-act2@R"]},
+          {"palabra": "¿De dónde...?", "fuentes": ["cuadro@p34#2", "p33-act9", "p35-act6@R"]},
+          {"palabra": "¿Cómo...?", "fuentes": ["cuadro@p34#2", "p32-act4", "p34-act3", "p35-act6@R", "p36-act1", "p41-act2@R"]},
+          {"palabra": "¿Cuándo...?", "fuentes": ["cuadro@p34#2"]},
+          {"palabra": "¿Cuánto...?", "fuentes": ["cuadro@p34#2", "p35-act4@R"]},
+          {"palabra": "¿Cuánta...?", "fuentes": ["cuadro@p34#2", "p35-act4@R"]},
+          {"palabra": "¿Cuántos...?", "fuentes": ["cuadro@p34#2", "p33-act9", "p35-act4", "p35-act4@R", "p35-act6@R", "p36-act1", "p38-act1", "p41-act2@R"]},
+          {"palabra": "¿Cuántas...?", "fuentes": ["cuadro@p34#2", "p35-act4@R"]}
+        ],
+        "fuentes": ["cuadro@p34#2", "p32-act4", "p33-act9", "p34-act1", "p34-act2", "p34-act3", "p35-act4", "p35-act4@R", "p35-act6", "p35-act6@R", "p36-act1", "p36-act3", "p37-act7", "p38-act1", "p38-act2", "p41-act1", "p41-act2@R"],
+        "descripcion": {
+          "U3": "PCIC A1 §10 Frases interrogativas — Primer cierre canónico ampliado del paradigma de interrogativos: qué, quién/quiénes, cuál, dónde, cómo, cuándo, cuánto/-a/-os/-as (con concordancia de género y número). Presentado en el cuadro de p34 con ejemplos de uso y operacionalizado intensivamente en los ejercicios gramaticales (p34-act3 selecciona forma; p35-act4 cuánto/-a/-os/-as; p35-act6 formula la pregunta a partir de la respuesta) y en el diálogo comunicativo del recreo (¿Cuántos años tienen?, ¿Cómo se llaman?, ¿Dónde vives?)."
+        }
+      },
+      "Posesivos": {
+        "items": [
+          {"palabra": "mi", "fuentes": ["cuadro@p35#1", "p32-act3", "p33-act5", "p35-act5", "p35-act7", "p35-act8", "p36-act1", "p38-act1", "p38-act3", "p41-act3", "p41-act4"]},
+          {"palabra": "mis", "fuentes": ["cuadro@p35#1", "p35-act5", "p35-act6@R", "p35-act8", "p36-act1", "p41-act3"]},
+          {"palabra": "tu", "fuentes": ["cuadro@p35#1", "p32-act4", "p34-act3", "p35-act5", "p35-act6", "p35-act7", "p36-act4", "p38-act3", "p39-act5", "p41-act2@R", "p41-act3"]},
+          {"palabra": "tus", "fuentes": ["cuadro@p35#1", "p33-act5", "p34-act3", "p35-act6", "p38-act3", "p41-act3"]},
+          {"palabra": "su", "fuentes": ["cuadro@p35#1", "p32-act2@R", "p33-act6", "p33-act8", "p33-act10", "p35-act5", "p35-act5@R", "p36-act1", "p38-act1", "p41-act3", "p41-act4"]},
+          {"palabra": "sus", "fuentes": ["cuadro@p35#1", "p32-act3", "p35-act5", "p35-act6@R", "p38-act1", "p41-act3"]},
+          {"palabra": "nuestro", "fuentes": ["cuadro@p35#1", "p35-act6@R", "p41-act3"]},
+          {"palabra": "nuestra", "fuentes": ["cuadro@p35#1", "p35-act6@R", "p41-act3"]},
+          {"palabra": "nuestros", "fuentes": ["cuadro@p35#1"]},
+          {"palabra": "nuestras", "fuentes": ["cuadro@p35#1", "p35-act5"]},
+          {"palabra": "vuestro", "fuentes": ["cuadro@p35#1", "p35-act6"]},
+          {"palabra": "vuestra", "fuentes": ["cuadro@p35#1", "p35-act6@R"]},
+          {"palabra": "vuestros", "fuentes": ["cuadro@p35#1"]},
+          {"palabra": "vuestras", "fuentes": ["cuadro@p35#1"]}
+        ],
+        "fuentes": [
+          "cuadro@p35#1",
+          "p32-act2@R",
+          "p32-act3",
+          "p32-act4",
+          "p33-act5",
+          "p33-act6",
+          "p33-act8",
+          "p33-act10",
+          "p34-act3",
+          "p35-act5",
+          "p35-act5@R",
+          "p35-act6",
+          "p35-act6@R",
+          "p35-act7",
+          "p35-act8",
+          "p36-act1",
+          "p36-act4",
+          "p38-act1",
+          "p38-act3",
+          "p39-act5",
+          "p41-act2@R",
+          "p41-act3",
+          "p41-act4"
+        ],
+        "descripcion": {
+          "U3": "PCIC A1 §7.2 Posesivos — Primer cierre canónico del paradigma completo de adjetivos posesivos átonos (singular: mi/tu/su; plural 1.ª-2.ª persona con género: nuestro/-a/-os/-as, vuestro/-a/-os/-as; 3.ª persona invariable: su/sus), con concordancia de número con el poseído. Presentado en el cuadro de p35 y operacionalizado intensivamente en p35-act5 (completar con posesivo correspondiente), p35-act6 (preguntas con posesivos), p35-act8 (presentación familiar) y p41-act3 (selección de forma correcta)."
+        }
+      },
+      "Pronombre sujeto": {
+        "items": [
+          {"palabra": "yo", "fuentes": ["cuadro@p34#1", "cuadro@p35#1", "p34-act1", "p35-act5", "p36-act1", "p41-act4"]},
+          {"palabra": "tú", "fuentes": ["cuadro@p34#1", "cuadro@p35#1", "p34-act1", "p36-act1", "p38-act1"]},
+          {"palabra": "él / ella / Ud.", "fuentes": ["cuadro@p34#1", "cuadro@p35#1"]},
+          {"palabra": "nosotros/-as", "fuentes": ["cuadro@p34#1", "cuadro@p35#1"]},
+          {"palabra": "vosotros/-as", "fuentes": ["cuadro@p34#1", "cuadro@p35#1", "p34-act1", "p34-act2"]},
+          {"palabra": "ellos / ellas / Uds.", "fuentes": ["cuadro@p34#1", "cuadro@p35#1", "p34-act2"]}
+        ],
+        "fuentes": ["cuadro@p34#1", "cuadro@p35#1", "p34-act1", "p34-act2", "p35-act5", "p36-act1", "p38-act1", "p41-act4"],
+        "descripcion": {
+          "U3": "Recurrente: ya canónica en U1 (paradigma de 6 personas). U3 la reactiva como soporte estructural del cuadro de conjugación del Presente de los verbos regulares (estudiar/comer/vivir, p34) y del cuadro de posesivos (p35), donde el pronombre sujeto encabeza la columna de paradigma."
+        }
+      }
+    },
+    "recurrente": {
+      "Concordancia de género": {
+        "items": [
+          {"palabra": "abuelo/abuela", "fuentes": ["p32-act1"]},
+          {"palabra": "tío/tía", "fuentes": ["p32-act1"]},
+          {"palabra": "primo/prima", "fuentes": ["p32-act1"]},
+          {"palabra": "hermano/hermana", "fuentes": ["p32-act1"]},
+          {"palabra": "hijo/hija", "fuentes": ["p32-act3"]},
+          {"palabra": "nieto/nieta", "fuentes": ["p32-act3"]},
+          {"palabra": "sobrino/sobrina", "fuentes": ["p32-act3"]},
+          {"palabra": "cuánto/cuánta", "fuentes": ["cuadro@p34#2", "p35-act4@R"]},
+          {"palabra": "nuestro/nuestra", "fuentes": ["cuadro@p35#1"]},
+          {"palabra": "vuestro/vuestra", "fuentes": ["cuadro@p35#1"]},
+          {"palabra": "iluminador/iluminadora", "fuentes": ["p40-act2"]},
+          {"palabra": "decorador/decoradora", "fuentes": ["p40-act2"]},
+          {"palabra": "maquillador/maquilladora", "fuentes": ["p40-act2"]},
+          {"palabra": "actor/actriz", "fuentes": ["p40-act2"]}
+        ],
+        "fuentes": ["p32-act1", "p32-act3", "cuadro@p34#2", "cuadro@p35#1", "p35-act4@R", "p40-act2"],
+        "descripcion": {
+          "U3": "Recurrente: ya canónica en U1/U2. U3 la reactiva en el paradigma de Parientes (terminaciones -o/-a sistemáticas: abuelo/abuela, tío/tía, primo/prima, etc.), en los interrogativos cuánto/-a/-os/-as (concordancia con el sustantivo cuantificado) y en los posesivos plurales nuestro/-a/-os/-as, vuestro/-a/-os/-as."
+        }
+      },
+      "Concordancia de número": {
+        "items": [
+          {"palabra": "padres", "fuentes": ["p32-act3", "p33-act5", "p33-act10", "p35-act6@R", "p35-act8", "p41-act1", "p41-act3"]},
+          {"palabra": "hijos", "fuentes": ["p32-act3", "p35-act6@R", "p41-act4@R"]},
+          {"palabra": "abuelos", "fuentes": ["p32-act3", "p33-act6", "p35-act6@R", "p36-act1"]},
+          {"palabra": "hermanos", "fuentes": ["p33-act5", "p33-act6", "p33-act8", "p36-act1"]},
+          {"palabra": "tíos", "fuentes": ["p35-act5", "p35-act6@R"]},
+          {"palabra": "primos", "fuentes": ["p36-act1", "p39-act7", "p41-act4@R"]},
+          {"palabra": "nietos", "fuentes": ["p32-act3", "p33-act7@R"]},
+          {"palabra": "amigos", "fuentes": ["p36-act4", "p38-act1", "p38-act3"]},
+          {"palabra": "compañeros", "fuentes": ["p35-act5", "p38-act3"]}
+        ],
+        "fuentes": ["p32-act3", "p33-act5", "p33-act6", "p33-act7@R", "p33-act8", "p33-act10", "p35-act5", "p35-act6@R", "p35-act8", "p36-act1", "p36-act4", "p38-act1", "p38-act3", "p39-act7", "p41-act1", "p41-act3", "p41-act4@R"],
+        "descripcion": {
+          "U3": "Recurrente: ya canónica en U2 (paradigma de plural +s / +es). U3 la reactiva en la pluralización sistemática del léxico de parentesco (padres, hijos, abuelos, hermanos, tíos, primos, nietos) y de relaciones sociales (amigos, compañeros)."
+        }
+      },
+      "Nombres propios": {
+        "items": [
+          {"palabra": "David", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p32-act4", "p41-act1", "p41-act4"]},
+          {"palabra": "Carlos", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3", "p32-act4", "p33-act10", "p41-act1"]},
+          {"palabra": "Juana", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3"]},
+          {"palabra": "Alicia", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3", "p41-act4"]},
+          {"palabra": "Luis", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3"]},
+          {"palabra": "Roberto", "fuentes": ["p32-act2", "p32-act3"]},
+          {"palabra": "Carmen", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3", "p41-act4"]},
+          {"palabra": "Pilar", "fuentes": ["p32-act2", "p32-act2@R", "p41-act4"]},
+          {"palabra": "María", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3", "p34-act1"]},
+          {"palabra": "Nacho", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3"]},
+          {"palabra": "Álvaro", "fuentes": ["p32-act2", "p32-act2@R"]},
+          {"palabra": "Paloma", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3"]},
+          {"palabra": "Javier", "fuentes": ["p33-act6", "p33-act7", "p33-act10"]},
+          {"palabra": "Lucía", "fuentes": ["p33-act8", "p33-act9", "p33-act10"]},
+          {"palabra": "Catalina", "fuentes": ["p33-act6", "p33-act7"]},
+          {"palabra": "Manolo", "fuentes": ["p33-act6", "p33-act7@R"]},
+          {"palabra": "Alejandra", "fuentes": ["p33-act6", "p33-act7"]},
+          {"palabra": "Ana", "fuentes": ["p33-act5", "p33-act8", "p38-act1"]},
+          {"palabra": "Marta", "fuentes": ["p33-act5", "p38-act1", "p38-act2", "p38-act2@R", "p38-act3"]},
+          {"palabra": "Antonio", "fuentes": ["p33-act5"]},
+          {"palabra": "Elena", "fuentes": ["p33-act5", "p34-act1", "p38-act1"]},
+          {"palabra": "Pablo", "fuentes": ["p33-act8", "p34-act1", "p36-act1", "p36-act2", "p41-act3"]},
+          {"palabra": "Pierre", "fuentes": ["p38-act1", "p38-act3"]},
+          {"palabra": "Bárbara", "fuentes": ["p38-act1", "p38-act2", "p38-act2@R"]},
+          {"palabra": "Mario", "fuentes": ["p38-act1", "p38-act2"]},
+          {"palabra": "Emilio", "fuentes": ["p38-act1", "p38-act2"]},
+          {"palabra": "Santiago", "fuentes": ["p38-act1", "p38-act2"]},
+          {"palabra": "Jorge", "fuentes": ["p34-act1", "p36-act1", "p36-act2@R", "p41-act3"]},
+          {"palabra": "Julia", "fuentes": ["p35-act6@R", "p36-act1", "p36-act2@R"]},
+          {"palabra": "Graciela", "fuentes": ["p35-act5", "p36-act1", "p36-act2"]},
+          {"palabra": "Rebeca", "fuentes": ["p36-act1", "p36-act2"]},
+          {"palabra": "Adela", "fuentes": ["p36-act1", "p36-act2"]},
+          {"palabra": "Luisa", "fuentes": ["p35-act8", "p36-act1", "p36-act2"]},
+          {"palabra": "Ronaldo", "fuentes": ["p35-act9"]},
+          {"palabra": "Daniel", "fuentes": ["p35-act5"]},
+          {"palabra": "Pedro", "fuentes": ["p35-act5", "p41-act2@R"]},
+          {"palabra": "Rosa", "fuentes": ["p34-act3@R", "p41-act3"]},
+          {"palabra": "Tom", "fuentes": ["p35-act6@R"]},
+          {"palabra": "Óscar", "fuentes": ["cuadro@p34#2", "p34-act3"]},
+          {"palabra": "Pepe", "fuentes": ["p35-act7@R"]},
+          {"palabra": "Nieves", "fuentes": ["p41-act2@R"]},
+          {"palabra": "Sebastián", "fuentes": ["cuadro@p34#1"]},
+          {"palabra": "Dog", "fuentes": ["p40-act1", "p40-act3"]},
+          {"palabra": "Pablo Berger", "fuentes": ["p40-act1", "p40-act3", "p40-act3@R"]},
+          {"palabra": "Getafe", "fuentes": ["p33-act6", "p33-act10"]},
+          {"palabra": "Madrid", "fuentes": ["p33-act6", "p39-act4"]},
+          {"palabra": "Cantabria", "fuentes": ["p33-act8", "p33-act10"]},
+          {"palabra": "España", "fuentes": ["p33-act8", "p39-act4", "p41-act1"]},
+          {"palabra": "Cádiz", "fuentes": ["p38-act1"]},
+          {"palabra": "Barcelona", "fuentes": ["p38-act1", "p38-act2@R", "p39-act4"]},
+          {"palabra": "Buenos Aires", "fuentes": ["p34-act1", "p35-act6@R"]},
+          {"palabra": "Argentina", "fuentes": ["p36-act1"]},
+          {"palabra": "Arévalo", "fuentes": ["p34-act1"]},
+          {"palabra": "Lima", "fuentes": ["cuadro@p34#1"]},
+          {"palabra": "Sevilla", "fuentes": ["p34-act2"]},
+          {"palabra": "Marbella", "fuentes": ["p34-act3"]},
+          {"palabra": "Valencia", "fuentes": ["p41-act1"]},
+          {"palabra": "Nueva York", "fuentes": ["p40-act1"]}
+        ],
+        "fuentes": [
+          "cuadro@p34#1",
+          "cuadro@p34#2",
+          "p32-act1",
+          "p32-act2",
+          "p32-act2@R",
+          "p32-act3",
+          "p32-act4",
+          "p33-act5",
+          "p33-act6",
+          "p33-act7",
+          "p33-act7@R",
+          "p33-act8",
+          "p33-act9",
+          "p33-act10",
+          "p34-act1",
+          "p34-act2",
+          "p34-act3",
+          "p34-act3@R",
+          "p35-act5",
+          "p35-act6@R",
+          "p35-act7@R",
+          "p35-act8",
+          "p35-act9",
+          "p36-act1",
+          "p36-act2",
+          "p36-act2@R",
+          "p38-act1",
+          "p38-act2",
+          "p38-act2@R",
+          "p38-act3",
+          "p39-act4",
+          "p40-act1",
+          "p40-act3",
+          "p40-act3@R",
+          "p41-act1",
+          "p41-act2@R",
+          "p41-act3",
+          "p41-act4"
+        ],
+        "descripcion": {
+          "U3": "Recurrente: ya canónica en U2 (categoría ampliada a antropónimos + topónimos, v10.128). U3 la reactiva masivamente: antropónimos en la presentación de la familia de David (Carlos, Juana, Alicia, Luis, Roberto, Carmen, Pilar, María, Nacho, Álvaro, Paloma) y en los textos descriptivos (Javier, Lucía, Catalina, Manolo, Alejandra, Marta, Pierre, Pablo Berger, etc.); topónimos en las localizaciones de los personajes (Getafe, Madrid, Cantabria, Cádiz, Barcelona, Buenos Aires, Lima, Sevilla, Nueva York, etc.)."
+        }
+      },
+      "Artículos determinados": {
+        "items": [
+          {"palabra": "el / la", "fuentes": ["p32-act3", "p32-act4", "p33-act6", "p33-act10", "p34-act2", "p34-act3", "p38-act1", "p38-act2@R", "p40-act1", "p41-act1", "p41-act4"]},
+          {"palabra": "los / las", "fuentes": ["p32-act3", "p33-act6", "p35-act5", "p41-act3"]}
+        ],
+        "fuentes": ["p32-act3", "p32-act4", "p33-act6", "p33-act10", "p34-act2", "p34-act3", "p35-act5", "p38-act1", "p38-act2@R", "p40-act1", "p41-act1", "p41-act3", "p41-act4"],
+        "descripcion": {
+          "U3": "Recurrente: ya canónico en U1/U2. U3 lo reactiva como soporte de las descripciones de parentesco (los abuelos de David, los padres de David, la madre de Javier, el padre de Lucía, la hermana de Marta) y de las construcciones cuasi-fijas con horas (a las cinco y veinte, las once y media)."
+        }
+      }
+    }
+  },
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {
+      "Sonidos y correspondencias ortográficas": {
+        "items": [
+          {"palabra": "/θ/", "fuentes": ["cuadro@p37#2", "p37-act8", "p37-act9", "p37-act10"]},
+          {"palabra": "azul", "fuentes": ["p37-act8"]},
+          {"palabra": "bicicleta", "fuentes": ["p37-act8"]},
+          {"palabra": "cinco", "fuentes": ["p37-act8"]},
+          {"palabra": "marzo", "fuentes": ["p37-act8"]},
+          {"palabra": "zapato", "fuentes": ["p37-act8"]},
+          {"palabra": "za / zo / zu", "fuentes": ["cuadro@p37#2"]},
+          {"palabra": "ce / ci", "fuentes": ["cuadro@p37#2"]},
+          {"palabra": "cine", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "once", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "zumo", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "zoo", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "baloncesto", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "ciclismo", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "ciudad", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "zona", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "pizarra", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]},
+          {"palabra": "habitación", "fuentes": ["p37-act9", "p37-act9@R", "p37-act10"]}
+        ],
+        "fuentes": ["cuadro@p37#2", "p37-act8", "p37-act9", "p37-act9@R", "p37-act10"],
+        "descripcion": {
+          "U3": "PCIC A1 Fonética §1.2 Consonantes — Primer cierre canónico del fonema interdental fricativo sordo /θ/ y de su doble correspondencia ortográfica: /θ/ + a/o/u → 'za, zo, zu' (azul, marzo, zapato, zumo, zoo, zona, pizarra) y /θ/ + e/i → 'ce, ci' (bicicleta, cinco, cine, once, ciclismo, ciudad, baloncesto, habitación). Presentado en el cuadro de p37 y operacionalizado en p37-act8 (escucha y repite palabras-muestra), p37-act9 (completar c/z) y p37-act10 (escucha y repite el resultado)."
+        }
+      }
+    },
+    "recurrente": {}
   },
   "secciones": {
     "vocabulario": {
-      "paginas": [32, 33],
-      "actividades_ids": [
-        "U3-p32-act01", "U3-p32-act02", "U3-p32-act03", "U3-p32-act04",
-        "U3-p33-act05", "U3-p33-act06", "U3-p33-act07", "U3-p33-act08", "U3-p33-act09", "U3-p33-act10"
-      ]
+      "paginas": [
+        32,
+        33
+      ],
+      "actividades_ids": ["U3-p32-act1", "U3-p32-act2", "U3-p32-act3", "U3-p32-act4", "U3-p33-act5", "U3-p33-act6", "U3-p33-act7", "U3-p33-act8", "U3-p33-act9", "U3-p33-act10"]
     },
     "gramatica": {
-      "paginas": [34, 35],
-      "actividades_ids": [
-        "U3-p34-act01", "U3-p34-act02", "U3-p34-act03",
-        "U3-p35-act04", "U3-p35-act05", "U3-p35-act06", "U3-p35-act07", "U3-p35-act08", "U3-p35-act09"
-      ]
+      "paginas": [
+        34,
+        35
+      ],
+      "actividades_ids": ["U3-p34-act1", "U3-p34-act2", "U3-p34-act3", "U3-p35-act4", "U3-p35-act5", "U3-p35-act6", "U3-p35-act7", "U3-p35-act8", "U3-p35-act9"]
     },
     "comunicacion": {
-      "paginas": [36, 37],
-      "actividades_ids": [
-        "U3-p36-act01", "U3-p36-act02", "U3-p36-act03", "U3-p36-act04",
-        "U3-p37-act05", "U3-p37-act06", "U3-p37-act07", "U3-p37-act08", "U3-p37-act09", "U3-p37-act10"
-      ]
+      "paginas": [
+        36,
+        37
+      ],
+      "actividades_ids": ["U3-p36-act1", "U3-p36-act2", "U3-p36-act3", "U3-p36-act4", "U3-p37-act5", "U3-p37-act6", "U3-p37-act7", "U3-p37-act8", "U3-p37-act9", "U3-p37-act10"]
     },
     "destrezas": {
-      "paginas": [38, 39],
-      "actividades_ids": [
-        "U3-p38-act01", "U3-p38-act02", "U3-p38-act03",
-        "U3-p39-act04", "U3-p39-act05", "U3-p39-act06", "U3-p39-act07"
-      ]
+      "paginas": [
+        38,
+        39
+      ],
+      "actividades_ids": ["U3-p38-act1", "U3-p38-act2", "U3-p38-act3", "U3-p39-act4", "U3-p39-act5", "U3-p39-act6", "U3-p39-act7"]
     },
     "cultura": {
-      "paginas": [40],
-      "actividades_ids": [
-        "U3-p40-act01", "U3-p40-act02", "U3-p40-act03", "U3-p40-act04", "U3-p40-act05"
-      ]
+      "paginas": [
+        40
+      ],
+      "actividades_ids": ["U3-p40-act1", "U3-p40-act2", "U3-p40-act3", "U3-p40-act4", "U3-p40-act5"]
     },
     "evaluacion": {
-      "paginas": [41],
-      "actividades_ids": [
-        "U3-p41-act01", "U3-p41-act02", "U3-p41-act03", "U3-p41-act04", "U3-p41-act05", "U3-p41-act06"
-      ]
+      "paginas": [
+        41
+      ],
+      "actividades_ids": ["U3-p41-act1", "U3-p41-act2", "U3-p41-act3", "U3-p41-act4", "U3-p41-act5", "U3-p41-act6"]
     },
     "reflexion": {
-      "paginas": [],
+      "paginas": [
+        41
+      ],
       "actividades_ids": []
     }
   },
@@ -108,50 +790,61 @@
     "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
     "emoticonos": true
   },
+  "_decisiones_ia": [
+    "Aplicación sistemática de §5.2 (metalengua de instrucción no es fuente de codificación): los verbos imperativos del enunciado del libro al alumno (Mira, Escucha, Repite, Escribe, Completa, Lee, Relaciona, Señala, Subraya, Marca, Pregunta, Responde, Contesta, Habla, Crea, Imagina, Busca, Cuéntale, Practica, Elige, Vuelve a leer, Termina, Forma, Realiza, Dile, Prepara, Representa, Planifica, Repasa, Comprueba, Dibuja) NO se codifican como apariciones verbales en tiempos_y_verbos[]. Solo los verbos cuyas formas conjugadas aparecen en el contenido didáctico (diálogos, textos, modelos, transcripciones de audio, items_libro, respuestas modelo) entran.",
+    "P-verbos-anticipación: jugar (juega, p33-act6/8), merendar (merendar infinitivo, p36-act1), venir (viene Presente y venir infinitivo, p36-act1), hacer (hacer infinitivo, p40-act1) — canónicos del registry pero con primera aparición en contenido en U3. Recurrentes desde U2: estar, gustar.",
+    "P-'La hora' — las expresiones de hora (en punto, y media, y cuarto, menos cuarto, y cinco/diez/veinte/veinticinco) presentadas en el cuadro@p37#1 NO se codifican como categoría canónica del vocabulario consolidado: no existe categoría 'La hora' en campos-semanticos-canonicos.json. El material queda capturado en datos del cuadro y de p37-act5; los números cardinales que las componen entran en 'Números cardinales' recurrente. Pendiente §0.1 si el autor quiere canonizar la categoría.",
+    "P-Cartelera de cine (p37-act7): cines, salas, horarios y títulos de películas (Robot Dreams, Padre no hay más que uno 5, Sin instrucciones, Flow, Cómo entrenar a tu dragón) capturados en datos.peliculas_cartelera. Los títulos se codifican léxicamente en 'Cine y teatro' (recurrente, criterio b) como soporte de la sección cultura.",
+    "P-Programación de TV (p39-act4): telediario, documental, vuelta ciclista, música clásica, fútbol, Saber y ganar, cine (Avatar) → entrada 'Televisión y radio' (recurrente, criterio b) por declaración explícita en el índice de DESTREZAS ('Escuchar la programación de la televisión').",
+    "P-Sopa de letras (p41-act5): tipo=juego (taxonomía cerrada §5). Vocabulario refuerza 'Parientes'. Las seis palabras escondidas en la cuadrícula son las respuestas modelo (visibles en la rejilla del libro): PRIMO, HERMANO, TÍA, MADRE, HIJA, ABUELO.",
+    "P-'Para aprender' p35-act9 (cuaderno de Ronaldo): tratado como actividad (subtipo=para_aprender). El contenido del cuaderno (Abuelo/-a: Avô/Avó; Hijo/-a: Filho/-a; Vivir: Viver) se captura en datos.items_libro como modelo a imitar; no genera entrada en tiempos_y_verbos (es metalengua editorial de mediación bilingüe).",
+    "P-Cuadro@p37#1 'La hora': tipo_cuadro=lexical (presentación visual de las expresiones de hora alrededor del reloj). Marcado como cuadro independiente porque expone un sistema pedagógico estructurado (12 posiciones del reloj) que excede la actividad p37-act5 de práctica.",
+    "P-Cuadro@p35#2 'Para aprender' NO se materializa como cuadro independiente: 'Para aprender' es etiqueta editorial del bloque que enmarca p35-act9; se documenta en _decisiones_ia y se trata como propiedad estructural de la actividad.",
+    "P-'Hacer un cuaderno de vocabulario' (índice de GRAMÁTICA): rótulo editorial del bloque pedagógico 'Para aprender' (p35-act9). No se codifica como categoría gramatical canónica (no existe en gramatica-canonica.json) ni como verbo en contenido (es metalengua editorial).",
+    "P-vivir/estudiar/hablar: ya consignados con apariciones U2 [PRE] en verbos-canonicos.json. U3 cierra el paradigma completo (6 personas) mediante el cuadro de conjugación de p34 y los ejercicios sistemáticos asociados.",
+    "P-'interesan' (p40-act1 texto cultural) codificado bajo lema 'gustar' por simetría sintáctico-semántica (tipo gustar, dativo experimentante). Si el autor prefiere lema independiente 'interesar' (no canónico actualmente), retirar de la entrada de gustar.",
+    "P-Acts p37-act8 y p37-act10 ('Escucha y repite' palabras-muestra del fonema /θ/): vocabulario=[] aunque las palabras citadas (azul, bicicleta, marzo, zapato) pertenecen a campos léxicos distintos. El enfoque es pronunciacion_ortografia y las palabras son material fónico, no léxico per §2.3."
+  ],
   "paginas_detalle": [
     {
       "pagina": 32,
       "seccion": "vocabulario",
       "actividades": [
         {
-          "id": "U3-p32-act01",
+          "id": "U3-p32-act1",
           "numero": 1,
           "tipo": "escucha_y_repite",
-          "destreza": ["comprension_auditiva", "comprension_lectora", "expresion_oral"],
+          "destreza": ["comprension_auditiva", "expresion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira el árbol genealógico de la familia de David. Después, escucha y repite.",
-          "contenido_linguistico": ["parientes", "vocabulario familiar"],
-          "campo_semantico": "Parientes",
-          "audio": { "presente": true, "pista": 31 },
-          "imagen": { "presente": true, "descripcion": "Árbol genealógico de la familia de David con 3 generaciones: arriba 1 abuelo y 2 abuela; en medio 3 madre, 4 padre, 5 tío, 6 tía, 7 tía; abajo 8 hermano, DAVID, 9 hermana, 10 primo, 11 prima. Cada miembro tiene su foto y etiqueta numerada." },
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Concordancia de género", "Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 31, "transcripcion": "abuelo, abuela, madre, padre, tío, tía, tía, hermano, hermana, primo, prima" },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Árbol genealógico de tres generaciones de la familia de David: arriba la pareja de abuelos (1 abuelo, 2 abuela); en el medio cinco personas etiquetadas 3 madre, 4 padre, 5 tío, 6 tía, 7 tía; abajo cinco niños etiquetados 8 hermano, DAVID, 9 hermana, 10 primo, 11 prima. Las relaciones se representan con líneas. Cada persona tiene una fotografía circular."
+          },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "items_libro": [
-              "1 a_bue_lo",
-              "2 a_bue_la",
-              "3 _ma_dre",
-              "4 _pa_dre",
-              "5 _tí_o",
-              "6 _tí_a",
-              "7 _tí_a",
-              "8 her_ma_no",
-              "9 her_ma_na",
-              "10 _pri_mo",
-              "11 _pri_ma"
-            ],
-            "_nota": "Las palabras tienen la sílaba tónica subrayada en el libro (convención hasta U3)."
+            "items_libro": ["1 abuelo", "2 abuela", "3 madre", "4 padre", "5 tío", "6 tía", "7 tía", "8 hermano", "DAVID", "9 hermana", "10 primo", "11 prima"]
           }
         },
         {
-          "id": "U3-p32-act02",
+          "id": "U3-p32-act2",
           "numero": 2,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["comprension_auditiva", "expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha a David. Mira el árbol genealógico anterior y forma frases con los siguientes nombres como en el ejemplo.",
-          "contenido_linguistico": ["parientes", "verbo llamarse", "posesivo su"],
-          "campo_semantico": "Parientes",
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
+          ],
+          "gramatica": ["Posesivos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 32 },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -168,53 +861,65 @@
             "11 Su prima se llama Paloma."
           ],
           "datos": {
-            "ejemplo_libro": "1. Su abuelo se llama Carlos.",
-            "palabras_recuadro": ["Carmen", "Roberto", "Carlos (tachado, ya usado en el ejemplo)", "Alicia", "María", "Nacho", "Juana", "Luis", "Álvaro", "Paloma", "Pilar"]
+            "palabras_recuadro": ["Carmen", "Roberto", "Carlos", "Alicia", "María", "Nacho", "Juana", "Luis", "Álvaro", "Paloma", "Pilar"],
+            "ejemplo_libro": "1. Su abuelo se llama Carlos."
           }
         },
         {
-          "id": "U3-p32-act03",
+          "id": "U3-p32-act3",
           "numero": 3,
-          "tipo": "escucha_y_responde",
-          "destreza": ["comprension_auditiva", "mediacion"],
+          "tipo": "escucha",
+          "destreza": ["comprension_auditiva", "comprension_lectora", "mediacion"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha las frases. ¿Cómo se dicen las palabras subrayadas en tu idioma?",
-          "contenido_linguistico": ["parientes", "traducción a L1"],
-          "campo_semantico": "Parientes",
-          "audio": { "presente": true, "pista": 33 },
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienen"]}
+          ],
+          "gramatica": ["Posesivos", "Artículos determinados", "Nombres propios", "Concordancia de número"],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 33,
+            "transcripcion": "1 Carlos y Juana son los abuelos de David. 2 Alicia y Luis son los padres de David, María y Nacho. 3 Alicia es la mujer de Luis. 4 Luis es el marido de Alicia. 5 David y Nacho son sus hijos. 6 María es su hija. 7 Carlos y Juana tienen cinco nietos: dos nietas y tres nietos. 8 David es el sobrino de Roberto y Carmen. 9 Paloma es la sobrina de Alicia."
+          },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
             "items_libro": [
-              "1 Carlos y Juana son los _abuelos_ de David.",
-              "2 Alicia y Luis son los _padres_ de David, María y Nacho.",
-              "3 Alicia es la _mujer_ de Luis.",
-              "4 Luis es el _marido_ de Alicia.",
-              "5 David y Nacho son sus _hijos_.",
-              "6 María es su _hija_.",
-              "7 Carlos y Juana tienen cinco _nietos_: dos _nietas_ y tres _nietos_.",
-              "8 David es el _sobrino_ de Roberto y Carmen.",
-              "9 Paloma es la _sobrina_ de Alicia."
-            ],
-            "_nota": "Las palabras a traducir aparecen subrayadas en el libro (marcadas con _palabra_)."
+              "1 Carlos y Juana son los abuelos de David.",
+              "2 Alicia y Luis son los padres de David, María y Nacho.",
+              "3 Alicia es la mujer de Luis.",
+              "4 Luis es el marido de Alicia.",
+              "5 David y Nacho son sus hijos.",
+              "6 María es su hija.",
+              "7 Carlos y Juana tienen cinco nietos: dos nietas y tres nietos.",
+              "8 David es el sobrino de Roberto y Carmen.",
+              "9 Paloma es la sobrina de Alicia."
+            ]
           }
         },
         {
-          "id": "U3-p32-act04",
+          "id": "U3-p32-act4",
           "numero": 4,
           "tipo": "interaccion_oral",
           "destreza": ["interaccion_oral"],
-          "enfoque": "vocabulario",
+          "enfoque": "comunicacion",
           "instruccion_original": "En parejas, practica la siguiente conversación. Pregunta y responde sobre otros miembros de la familia de David.",
-          "contenido_linguistico": ["parientes", "verbo ser", "verbo llamarse", "interrogativos"],
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
+          ],
+          "gramatica": ["Interrogativos", "Nombres propios", "Artículos determinados"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "¿Quién es Carlos? / Es el abuelo de David. / ¿Cómo se llama la madre de David? / Alicia."
-          }
+          "datos": { "ejemplo_libro": "• ¿Quién es Carlos?\n■ Es el abuelo de David.\n• ¿Cómo se llama la madre de David?\n■ Alicia." }
         }
       ]
     },
@@ -223,101 +928,133 @@
       "seccion": "vocabulario",
       "actividades": [
         {
-          "id": "U3-p33-act05",
+          "id": "U3-p33-act5",
           "numero": 5,
           "tipo": "expresion_escrita_libre",
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "Lee la descripción de la familia de una niña española. Después, escribe acerca de tu familia.",
-          "contenido_linguistico": ["parientes", "verbo tener", "verbo llamarse", "edad"],
+          "vocabulario": ["Parientes", "Edad", "Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama", "se llaman"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "Tengo"]}
+          ],
+          "gramatica": ["Posesivos", "Nombres propios", "Concordancia de número"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Foto de una familia (padre, madre y dos hijas) sentados en un sofá." },
+          "imagen": { "presente": true, "descripcion": "Fotografía de una familia de cinco personas (madre, padre, dos hijas pequeñas y otra niña) abrazándose en el sofá." },
           "video": { "presente": false },
           "respuestas": [],
-          "datos": {
-            "texto_completo": "Mi padre se llama Antonio y tiene cuarenta años. Mi madre tiene treinta y cinco y se llama Elena. Tengo dos hermanas, se llaman Ana y Marta. Ana tiene ocho años y Marta, cinco. No tengo hermanos."
-          }
+          "datos": { "texto_modelo": "Mi padre se llama Antonio y tiene cuarenta años. Mi madre tiene treinta y cinco y se llama Elena. Tengo dos hermanas, se llaman Ana y Marta. Ana tiene ocho años y Marta, cinco. No tengo hermanos." }
         },
         {
-          "id": "U3-p33-act06",
+          "id": "U3-p33-act6",
           "numero": 6,
           "tipo": "lee_y_escucha",
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Lee y escucha.",
-          "contenido_linguistico": ["familia", "profesiones", "verbos vivir/tener/trabajar/estudiar"],
-          "audio": { "presente": true, "pista": 34 },
-          "imagen": { "presente": true, "descripcion": "Foto de una familia (abuelo, padre, madre y dos niños) posando juntos." },
+          "vocabulario": ["Parientes", "Profesiones y lugares de trabajo", "Centros e instituciones educativas", "Días de la semana", "Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juega"]}
+          ],
+          "gramatica": ["Nombres propios", "Posesivos", "Artículos determinados", "Concordancia de número"],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 34,
+            "transcripcion": "Javier Rodríguez vive en Getafe, una ciudad muy cerca de Madrid. Javier tiene una hermana pequeña, se llama Alejandra y tiene 5 años, y en la misma casa vive también Manolo, su abuelo. El padre de Javier es camionero y de lunes a viernes trabaja fuera de Madrid. La madre, Catalina, es enfermera. Javier estudia el segundo curso de Educación Secundaria Obligatoria en el instituto de su barrio y juega al fútbol tres días a la semana."
+          },
+          "imagen": { "presente": true, "descripcion": "Fotografía de una familia de cinco personas posando juntas: el abuelo, los padres y dos niños." },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "titulo": "Javier Rodríguez",
-            "texto_completo": "Javier Rodríguez vive en Getafe, una ciudad muy cerca de Madrid. Javier tiene una hermana pequeña, se llama Alejandra y tiene 5 años, y en la misma casa vive también Manolo, su abuelo. El padre de Javier es camionero y de lunes a viernes trabaja fuera de Madrid. La madre, Catalina, es enfermera. Javier estudia el segundo curso de Educación Secundaria Obligatoria en el instituto de su barrio y juega al fútbol tres días a la semana."
+            "texto_completo": "Javier Rodríguez vive en Getafe, una ciudad muy cerca de Madrid. Javier tiene una hermana pequeña, se llama Alejandra y tiene 5 años, y en la misma casa vive también Manolo, su abuelo. El padre de Javier es camionero y de lunes a viernes trabaja fuera de Madrid. La madre, Catalina, es enfermera. Javier estudia el segundo curso de Educación Secundaria Obligatoria en el instituto de su barrio y juega al fútbol tres días a la semana. La madre, Catalina, es enfermera. Javier estudia el segundo curso de Educación Secundaria Obligatoria en el instituto de su barrio."
           }
         },
         {
-          "id": "U3-p33-act07",
+          "id": "U3-p33-act7",
           "numero": 7,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Completa las frases con la información del texto.",
-          "contenido_linguistico": ["parientes"],
-          "campo_semantico": "Parientes",
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]}
+          ],
+          "gramatica": ["Artículos determinados", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1 madre", "2 hijo", "3 nietos", "4 hermano"],
+          "respuestas": ["madre", "hijo", "nietos", "hermano"],
           "datos": {
-            "items_libro": [
-              "1 Catalina es la _____ de Javier.",
-              "2 Javier es el _____ de Catalina.",
-              "3 Javier y Alejandra son los _____ de Manolo.",
-              "4 Javier es el _____ de Alejandra."
-            ]
+            "items_libro": ["1 Catalina es la _____ de Javier.", "2 Javier es el _____ de Catalina.", "3 Javier y Alejandra son los _____ de Manolo.", "4 Javier es el _____ de Alejandra."]
           }
         },
         {
-          "id": "U3-p33-act08",
+          "id": "U3-p33-act8",
           "numero": 8,
           "tipo": "lee_y_escucha",
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Lee y escucha.",
-          "contenido_linguistico": ["familia", "profesiones", "estudios"],
-          "audio": { "presente": true, "pista": 35 },
-          "imagen": { "presente": true, "descripcion": "Foto de una chica joven con un gorro rosa (Lucía Alonso)." },
+          "vocabulario": ["Parientes", "Profesiones y lugares de trabajo", "Centros e instituciones educativas", "Edad", "Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tiene", "tiene"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juega"]}
+          ],
+          "gramatica": ["Nombres propios", "Posesivos", "Artículos determinados"],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 35,
+            "transcripcion": "Lucía Alonso es de un pueblo de Cantabria, al norte de España. Tiene tres hermanos: Ana, la hermana mayor, estudia ingeniería; Carlos, que tiene 16 años, estudia en el mismo instituto que Lucía; y Pablo, que es el hermano pequeño, tiene 9 años. El padre de Lucía es agricultor y también tiene vacas. Su madre trabaja en el hotel del pueblo. Lucía estudia el primer curso de Educación Secundaria Obligatoria en un pueblo cerca de su casa y también juega al fútbol y estudia piano."
+          },
+          "imagen": { "presente": true, "descripcion": "Fotografía de Lucía, una adolescente con gorra rosa, sonriente." },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "titulo": "Lucía Alonso",
             "texto_completo": "Lucía Alonso es de un pueblo de Cantabria, al norte de España. Tiene tres hermanos: Ana, la hermana mayor, estudia ingeniería; Carlos, que tiene 16 años, estudia en el mismo instituto que Lucía; y Pablo, que es el hermano pequeño, tiene 9 años. El padre de Lucía es agricultor y también tiene vacas. Su madre trabaja en el hotel del pueblo. Lucía estudia el primer curso de Educación Secundaria Obligatoria en un pueblo cerca de su casa y también juega al fútbol y estudia piano."
           }
         },
         {
-          "id": "U3-p33-act09",
+          "id": "U3-p33-act9",
           "numero": 9,
-          "tipo": "responder_preguntas_cerradas",
+          "tipo": "responder_preguntas_abiertas",
           "destreza": ["comprension_lectora", "expresion_escrita"],
-          "enfoque": "transversal",
+          "enfoque": "vocabulario",
           "instruccion_original": "Responde a las preguntas.",
-          "contenido_linguistico": ["familia", "profesiones", "lugar de origen"],
+          "vocabulario": ["Parientes", "Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["viven", "vive"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]}
+          ],
+          "gramatica": ["Interrogativos", "Nombres propios", "Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [
             "1 Lucía es de un pueblo de Cantabria.",
-            "2 Seis personas: su padre, su madre, su hermana Ana, sus hermanos Pablo y Carlos y ella.",
-            "3 Su padre es agricultor y también tiene vacas.",
+            "2 Seis personas: su padre, su madre, su hermana Ana, sus hermanos Pablo y Carlos y él.",
+            "3 Su padre es agricultor y también tiene vacas. Su madre es enfermera.",
             "4 Su madre trabaja en el hotel del pueblo."
           ],
           "datos": {
-            "preguntas": [
-              "1 ¿De dónde es Lucía?",
-              "2 ¿Cuántas personas viven en su casa?",
-              "3 ¿Qué profesión tiene el padre?",
-              "4 ¿Dónde trabaja la madre?"
-            ]
+            "preguntas": ["1 ¿De dónde es Lucía?", "2 ¿Cuántas personas viven en su casa?", "3 ¿Qué profesión tiene el padre?", "4 ¿Dónde trabaja la madre?"]
           }
         },
         {
@@ -325,19 +1062,28 @@
           "numero": 10,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
-          "enfoque": "transversal",
+          "enfoque": "vocabulario",
           "instruccion_original": "Completa las frases con la información de los textos de los ejercicios 6 y 8.",
-          "contenido_linguistico": ["verbo vivir", "verbo llamarse", "verbo ser", "verbo estudiar", "verbo tener"],
+          "vocabulario": ["Parientes", "Profesiones y lugares de trabajo", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama", "se llaman"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienen"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudian"]}
+          ],
+          "gramatica": ["Posesivos", "Nombres propios", "Concordancia de número"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [
-            "1 vive / vive",
-            "2 se llama / se llaman",
-            "3 es / es",
-            "4 es / tiene",
-            "5 estudian",
-            "6 tienen / tiene"
+            "1 Javier Rodríguez vive en Getafe. Lucía vive en un pueblo de Cantabria.",
+            "2 La hermana de Javier se llama Alejandra y los hermanos de Lucía se llaman Carlos y Pablo.",
+            "3 El padre de Javier es camionero y su madre es enfermera.",
+            "4 El padre de Lucía es agricultor y también tiene vacas.",
+            "5 Javier y Lucía estudian Educación Secundaria Obligatoria.",
+            "6 Javier y Lucía no tienen los mismos años, Javier tiene un año más."
           ],
           "datos": {
             "items_libro": [
@@ -357,28 +1103,27 @@
       "seccion": "gramatica",
       "actividades": [
         {
-          "id": "U3-p34-act01",
+          "id": "U3-p34-act1",
           "numero": 1,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa con la forma correcta del verbo.",
-          "contenido_linguistico": ["presente de indicativo", "verbos regulares -ar/-er/-ir"],
+          "vocabulario": ["Centros e instituciones educativas", "Asignaturas", "Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive", "vives", "vivimos", "vivís"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudian", "estudia"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["como", "coméis"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]},
+            {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablamos"]},
+            {"lema": "escribir", "tiempo": "Presente", "formas_trabajadas": ["escribe"]}
+          ],
+          "gramatica": ["Pronombre sujeto", "Interrogativos", "Posesivos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 estudian",
-            "2 como",
-            "3 vives",
-            "4 estudia",
-            "5 vivimos",
-            "6 coméis",
-            "7 trabaja",
-            "8 hablamos",
-            "9 escribe",
-            "10 vivís"
-          ],
+          "respuestas": ["estudian", "como", "vives", "estudia", "vivimos", "coméis", "trabaja", "hablamos", "escribe", "vivís"],
           "datos": {
             "ejemplo_libro": "Su hermano (vivir) vive en Buenos Aires",
             "items_libro": [
@@ -387,77 +1132,80 @@
               "3 ¿Dónde (vivir) _____ tú?",
               "4 Jorge (estudiar) _____ música.",
               "5 Mis primos y yo (vivir) _____ en Arévalo.",
-              "6 ¿Dónde (comer, vosotros) _____?",
+              "6 ¿Dónde (comer, vosotros) _____ ?",
               "7 Mi madre (trabajar) _____ en un hospital.",
               "8 María y yo no (hablar) _____ mucho por teléfono.",
               "9 Elena no (escribir) _____ en su diario todos los días.",
-              "10 ¿Dónde (vivir, vosotros) _____?"
+              "10 ¿Dónde (vivir, vosotros) _____ ?"
             ]
           }
         },
         {
-          "id": "U3-p34-act02",
+          "id": "U3-p34-act2",
           "numero": 2,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa estas preguntas con los verbos anteriores.",
-          "contenido_linguistico": ["presente de indicativo", "verbos regulares", "preguntas"],
+          "vocabulario": ["Profesiones y lugares de trabajo", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja", "trabajan"]},
+            {"lema": "escribir", "tiempo": "Presente", "formas_trabajadas": ["escribes"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["come", "comes"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["viven"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudiáis"]},
+            {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["habla"]}
+          ],
+          "gramatica": ["Interrogativos", "Posesivos", "Nombres propios", "Pronombre sujeto"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 trabaja",
-            "2 escribes",
-            "3 come",
-            "4 viven",
-            "5 estudiáis",
-            "6 comes",
-            "7 habla",
-            "8 trabajan"
-          ],
+          "respuestas": ["trabaja", "escribes", "come", "viven", "estudiáis", "comes", "habla", "trabajan"],
           "datos": {
             "items_libro": [
-              "1 ¿Dónde _____ tu padre? / En un banco.",
-              "2 ¿Qué _____ (tú)? / Un correo electrónico.",
-              "3 ¿Dónde _____ el profesor? / En un restaurante.",
-              "4 ¿Dónde _____ María y sus padres? / En Sevilla.",
-              "5 ¿Qué _____ vosotros? / Matemáticas.",
-              "6 ¿Qué _____ (tú)? / Un bocadillo.",
-              "7 ¿Qué idiomas _____ tu hermano? / Inglés, español y francés.",
-              "8 ¿Dónde _____ ellos? / En un hospital."
+              "1 • ¿Dónde _____ tu padre?\n■ En un banco.",
+              "2 • ¿Qué _____ (tú)?\n■ Un correo electrónico.",
+              "3 • ¿Dónde _____ el profesor?\n■ En un restaurante.",
+              "4 • ¿Dónde _____ María y sus padres?\n■ En Sevilla.",
+              "5 • ¿Qué _____ vosotros?\n■ Matemáticas.",
+              "6 • ¿Qué _____ (tú)?\n■ Un bocadillo.",
+              "7 • ¿Qué idiomas _____ tu hermano?\n■ Inglés, español y francés.",
+              "8 • ¿Dónde _____ ellos?\n■ En un hospital."
             ]
           }
         },
         {
-          "id": "U3-p34-act03",
+          "id": "U3-p34-act3",
           "numero": 3,
           "tipo": "seleccion_multiple",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Señala la forma correcta.",
-          "contenido_linguistico": ["interrogativos"],
+          "vocabulario": ["Parientes", "Asignaturas", "Profesiones y lugares de trabajo", "Centros e instituciones educativas", "Días de la semana"],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["viven"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["llamáis"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes"]}
+          ],
+          "gramatica": ["Interrogativos", "Posesivos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "ejemplo Dónde",
-            "1 Cómo",
-            "2 Qué",
-            "3 Dónde",
-            "4 Cuál",
-            "5 Qué",
-            "6 Quiénes"
-          ],
+          "respuestas": ["Dónde", "Cómo", "Qué", "Dónde", "Cuál", "Qué", "Quiénes"],
           "datos": {
-            "ejemplo_libro": "¿Dónde / Cuál viven tus abuelos? / En Marbella.",
+            "ejemplo_libro": "• ¿Dónde / Cuál viven tus abuelos?\n■ En Marbella.",
             "items_libro": [
-              "1 ¿Cómo / Cuál os llamáis vosotras? / Yo me llamo Rosa y ella, Alicia.",
-              "2 ¿Qué / Cuál estudia tu hermana mayor? / Geografía e Historia.",
-              "3 ¿Cómo / Dónde trabaja tu tío Óscar? / En un banco.",
-              "4 ¿Cuál / Cómo es tu día de la semana favorito? / El jueves.",
-              "5 ¿Qué / Dónde comes? / Patatas fritas.",
-              "6 ¿Quién / Quiénes son estos niños? / Son los hijos de Julia."
+              "1 • ¿Cómo / Cuál os llamáis vosotras?\n■ Yo me llamo Rosa y ella, Alicia.",
+              "2 • ¿Qué / Cuál estudia tu hermana mayor?\n■ Geografía e Historia.",
+              "3 • ¿Cómo / Dónde trabaja tu tío Óscar?\n■ En un banco.",
+              "4 • ¿Cuál / Cómo es tu día de la semana favorito?\n■ El jueves.",
+              "5 • ¿Qué / Dónde comes?\n■ Patatas fritas.",
+              "6 • ¿Quién / Quiénes son estos niños?\n■ Son los hijos de Julia."
             ]
           }
         }
@@ -468,38 +1216,52 @@
           "titulo": "Presente de los verbos regulares",
           "contenido": {
             "tipo": "tabla_conjugacion",
-            "verbos": ["estudiar", "comer", "vivir"],
-            "formas": {
-              "yo": ["estudio", "como", "vivo"],
-              "tú": ["estudias", "comes", "vives"],
-              "él / ella / Ud.": ["estudia", "come", "vive"],
-              "nosotros/-as": ["estudiamos", "comemos", "vivimos"],
-              "vosotros/-as": ["estudiáis", "coméis", "vivís"],
-              "ellos / ellas / Uds.": ["estudian", "comen", "viven"]
-            },
+            "encabezado": ["Pronombre sujeto", "estudiar", "comer", "vivir"],
+            "filas": [
+              ["yo", "estudio", "como", "vivo"],
+              ["tú", "estudias", "comes", "vives"],
+              ["él / ella / Ud.*", "estudia", "come", "vive"],
+              ["nosotros/-as", "estudiamos", "comemos", "vivimos"],
+              ["vosotros/-as", "estudiáis", "coméis", "vivís"],
+              ["ellos / ellas / Uds.*", "estudian", "comen", "viven"]
+            ],
             "nota": "* Ud. = usted; Uds. = ustedes",
-            "ejemplos": [
-              "¿Dónde estudiáis vosotros?",
-              "Ana y Sebastián comen en el instituto.",
-              "Nosotros vivimos en Lima."
-            ]
-          }
+            "ejemplos": ["¿Dónde estudiáis vosotros?", "Ana y Sebastián comen en el instituto.", "Nosotros vivimos en Lima."]
+          },
+          "vocabulario": ["Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudio", "estudias", "estudia", "estudiamos", "estudiáis", "estudian"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["como", "comes", "come", "comemos", "coméis", "comen"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vivo", "vives", "vive", "vivimos", "vivís", "viven"]}
+          ],
+          "gramatica": ["Pronombre sujeto"],
+          "pronunciacion_ortografia": []
         },
         {
           "tipo_cuadro": "gramatical",
           "titulo": "Interrogativos",
           "contenido": {
             "tipo": "tabla_interrogativos",
-            "filas": {
-              "Qué": ["¿Qué comes?", "¿A qué hora comes?"],
-              "Quién / Quiénes": ["¿Quién es esta chica?", "¿Quiénes son estas niñas?"],
-              "Cuál": ["¿Cuál es tu número de teléfono?", "¿Cuál es tu asignatura favorita?"],
-              "Dónde": ["¿Dónde viven tus abuelos?", "¿De dónde es Óscar?"],
-              "Cómo": ["¿Cómo se llama tu abuela?"],
-              "Cuándo": ["¿Cuándo tenemos el examen?"],
-              "Cuánto/-a/-os/-as": ["¿Cuánto es uno más uno?", "¿Cuánta agua bebes al día?", "¿Cuántos hermanos tienes?", "¿Cuántas mochilas tienes?"]
-            }
-          }
+            "filas": [
+              ["Qué", "¿Qué comes?", "¿A qué hora comes?"],
+              ["Quién / Quiénes", "¿Quién es esta chica?", "¿Quiénes son estas niñas?"],
+              ["Cuál", "¿Cuál es tu número de teléfono?", "¿Cuál es tu asignatura favorita?"],
+              ["Dónde", "¿Dónde viven tus abuelos?", "¿De dónde es Óscar?"],
+              ["Cómo", "¿Cómo se llama tu abuela?"],
+              ["Cuándo", "¿Cuándo tenemos el examen?"],
+              ["Cuánto/-a/-os/-as", "¿Cuánto es uno más uno?", "¿Cuánta agua bebes al día?", "¿Cuántos hermanos tienes?", "¿Cuántas mochilas tienes?"]
+            ]
+          },
+          "vocabulario": ["Parientes", "Asignaturas", "Número de teléfono"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tenemos", "tienes"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["viven"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes"]}
+          ],
+          "gramatica": ["Interrogativos", "Concordancia de género", "Concordancia de número", "Nombres propios"],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -508,58 +1270,48 @@
       "seccion": "gramatica",
       "actividades": [
         {
-          "id": "U3-p35-act04",
+          "id": "U3-p35-act4",
           "numero": 4,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con cuánto/-a/-os/-as.",
-          "contenido_linguistico": ["interrogativos", "concordancia género/número"],
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes", "tiene"]}
+          ],
+          "gramatica": ["Interrogativos", "Concordancia de género", "Concordancia de número", "Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 Cuántos",
-            "2 Cuántas",
-            "3 Cuántos",
-            "4 Cuánta",
-            "5 Cuántas",
-            "6 Cuánto"
-          ],
+          "respuestas": ["Cuántos", "Cuántas", "Cuántos", "Cuánta", "Cuántas", "Cuánto"],
           "datos": {
             "ejemplo_libro": "¿Cuántos bolígrafos tienes?",
-            "items_libro": [
-              "1 ¿_____ idiomas hablas?",
-              "2 ¿_____ naranjas come María?",
-              "3 ¿_____ móviles tiene el profesor?",
-              "4 ¿_____ agua bebes en un día?",
-              "5 ¿_____ hermanas tiene tu madre?",
-              "6 ¿_____ café bebe tu abuelo?"
-            ]
+            "items_libro": ["1 ¿_____ idiomas hablas?", "2 ¿_____ naranjas come María?", "3 ¿_____ móviles tiene el profesor?", "4 ¿_____ agua bebes en un día?", "5 ¿_____ hermanas tiene tu madre?", "6 ¿_____ café bebe tu abuelo?"]
           }
         },
         {
-          "id": "U3-p35-act05",
+          "id": "U3-p35-act5",
           "numero": 5,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa los huecos con el posesivo correspondiente.",
-          "contenido_linguistico": ["adjetivos posesivos"],
+          "vocabulario": ["Parientes", "Asignaturas", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia", "Estudias"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vivo", "vive"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienen", "tengo", "tiene", "tenemos"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estamos"]}
+          ],
+          "gramatica": ["Posesivos", "Pronombre sujeto", "Nombres propios", "Concordancia de género", "Concordancia de número"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 tu",
-            "2 mi",
-            "3 su",
-            "4 sus",
-            "5 mis",
-            "6 su",
-            "7 Nuestras",
-            "8 su",
-            "9 Nuestro"
-          ],
+          "respuestas": ["tu", "mi", "su", "sus", "mis", "su", "Nuestras", "su", "Nuestro"],
           "datos": {
             "ejemplo_libro": "Daniel estudia con su primo los fines de semana.",
             "items_libro": [
@@ -576,87 +1328,91 @@
           }
         },
         {
-          "id": "U3-p35-act06",
+          "id": "U3-p35-act6",
           "numero": 6,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Lee las respuestas y escribe las preguntas.",
-          "contenido_linguistico": ["interrogativos", "posesivos"],
+          "vocabulario": ["Parientes", "Números cardinales", "Edad"],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienen", "tiene"]}
+          ],
+          "gramatica": ["Interrogativos", "Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 ¿Dónde vive tu familia?",
-            "2 ¿Cómo se llama vuestro gato?",
-            "3 ¿De dónde son tus abuelos?",
-            "4 ¿Cuántos hijos tienen tus tíos?",
-            "5 ¿Cuántos años tienen sus hijos?",
-            "6 ¿Cuántos años tiene vuestra madre?"
-          ],
+          "respuestas": ["1 ¿Dónde vive tu familia?", "2 ¿Cómo se llama vuestro gato?", "3 ¿De dónde son tus abuelos?", "4 ¿Cuántos hijos tienen tus tíos?", "5 ¿Cuántos años tienen sus hijos?", "6 ¿Cuántos años tiene vuestra madre?"],
           "datos": {
             "items_libro": [
-              "1 _____ / Mi familia vive en Buenos Aires.",
-              "2 _____ / Nuestro gato se llama Tom.",
-              "3 _____ / Mis abuelos son mexicanos.",
-              "4 _____ / Mis tíos tienen dos hijos.",
-              "5 _____ / Sus hijos tienen 10 y 11 años.",
-              "6 _____ / Nuestra madre tiene 45 años."
+              "1 _____\nMi familia vive en Buenos Aires.",
+              "2 _____\nNuestro gato se llama Tom.",
+              "3 _____\nMis abuelos son mexicanos.",
+              "4 _____\nMis tíos tienen dos hijos.",
+              "5 _____\nSus hijos tienen 10 y 11 años.",
+              "6 _____\nNuestra madre tiene 45 años."
             ]
           }
         },
         {
-          "id": "U3-p35-act07",
+          "id": "U3-p35-act7",
           "numero": 7,
           "tipo": "interaccion_oral",
           "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "En parejas, pregúntale a tu compañero el nombre de los miembros de su familia.",
-          "contenido_linguistico": ["parientes", "verbo llamarse", "posesivos"],
+          "vocabulario": ["Parientes", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llaman"]}
+          ],
+          "gramatica": ["Interrogativos", "Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "¿Cómo se llaman tus padres? / Pepe y Luisa."
-          }
+          "respuestas": ["¿Cómo se llaman tus padres?", "Pepe y Luisa."],
+          "datos": { "ejemplo_libro": "• ¿Cómo se llaman tus padres?\n■ Pepe y Luisa." }
         },
         {
-          "id": "U3-p35-act08",
+          "id": "U3-p35-act8",
           "numero": 8,
           "tipo": "expresion_oral_libre",
-          "destreza": ["expresion_oral", "mediacion"],
+          "destreza": ["expresion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Ahora, dile a toda la clase cómo se llaman los miembros de tu familia y los de tu compañero.",
-          "contenido_linguistico": ["parientes", "verbo llamarse", "posesivos mi/su"],
+          "vocabulario": ["Parientes", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llaman", "se llama"]}
+          ],
+          "gramatica": ["Posesivos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "Mis padres se llaman Juan y María; sus padres se llaman Pepe y Luisa. Mi hermano se llama Carlos; su hermana se llama Marta…"
-          }
+          "respuestas": ["Mis padres se llaman Juan y María; sus padres se llaman Pepe y Luisa. Mi hermano se llama Carlos; su hermana se llama Marta…"],
+          "datos": { "texto_modelo": "Mis padres se llaman Juan y María; sus padres se llaman Pepe y Luisa. Mi hermano se llama Carlos; su hermana se llama Marta…" }
         },
         {
-          "id": "U3-p35-act09",
-          "numero": 9,
+          "id": "U3-p35-act9",
           "tipo": "produccion_escrita_guiada",
-          "destreza": ["comprension_lectora", "expresion_escrita", "mediacion"],
+          "destreza": ["expresion_escrita", "mediacion"],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira el cuaderno de Ronaldo, un brasileño que estudia español. Escribe palabras nuevas y tradúcelas a tu idioma.",
-          "contenido_linguistico": ["vocabulario nuevo", "traducción a L1"],
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Cuaderno de Ronaldo (estudiante brasileño) con vocabulario y su traducción al portugués: 'Abuelo/-a: Avô / Avó', 'Hijo/-a: Filho/-a', 'Vivir: Viver'. Junto al cuaderno, foto de un chico joven sonriendo." },
+          "imagen": { "presente": true, "descripcion": "Fotografía del cuaderno abierto de Ronaldo con tres entradas manuscritas (Abuelo/-a: Avô / Avó; Hijo/-a: Filho/-a; Vivir: Viver) junto a la foto sonriente de un adolescente brasileño." },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
             "subtipo": "para_aprender",
-            "titulo": "Para aprender — Hacer un cuaderno de vocabulario",
-            "ejemplos_cuaderno": [
-              "Abuelo/-a: Avô / Avó",
-              "Hijo/-a: Filho/-a",
-              "Vivir: Viver"
-            ]
+            "items_libro": ["Abuelo/-a: Avô / Avó", "Hijo/-a: Filho/-a", "Vivir: Viver"]
           }
         }
       ],
@@ -666,15 +1422,20 @@
           "titulo": "Posesivos",
           "contenido": {
             "tipo": "tabla_posesivos",
-            "filas": {
-              "yo": { "singular": "mi casa / libro", "plural": "mis casas / libros" },
-              "tú": { "singular": "tu mesa / boli", "plural": "tus mesas / bolis" },
-              "él / ella / Ud.": { "singular": "su silla / hijo", "plural": "sus sillas / hijos" },
-              "nosotros/-as": { "singular": "nuestro perro · nuestra amiga", "plural": "nuestros perros · nuestras amigas" },
-              "vosotros/-as": { "singular": "vuestro tío · vuestra silla", "plural": "vuestros tíos · vuestras sillas" },
-              "ellos / ellas / Uds.": { "singular": "su silla / hijo", "plural": "sus sillas / hijos" }
-            }
-          }
+            "encabezado": ["Pronombre sujeto", "Adjetivo posesivo singular", "Adjetivo posesivo plural"],
+            "filas": [
+              ["yo", "mi casa / libro", "mis casas / libros"],
+              ["tú", "tu mesa / boli", "tus mesas / bolis"],
+              ["él / ella / Ud.", "su silla / hijo", "sus sillas / hijos"],
+              ["nosotros/-as", "nuestro perro / nuestra amiga", "nuestros perros / nuestras amigas"],
+              ["vosotros/-as", "vuestro tío / vuestra silla", "vuestros tíos / vuestras sillas"],
+              ["ellos / ellas / Uds.", "su silla / hijo", "sus sillas / hijos"]
+            ]
+          },
+          "vocabulario": ["Parientes", "Objetos personales", "Mobiliario", "Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Posesivos", "Pronombre sujeto", "Concordancia de género", "Concordancia de número"],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -683,28 +1444,36 @@
       "seccion": "comunicacion",
       "actividades": [
         {
-          "id": "U3-p36-act01",
+          "id": "U3-p36-act1",
           "numero": 1,
           "tipo": "completa_huecos",
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "contenido_linguistico": ["hablar de la familia", "verbo tener", "interrogativos"],
-          "audio": { "presente": true, "pista": 36 },
-          "imagen": { "presente": true, "descripcion": "Tres fotografías del recreo con estudiantes (Pablo, Graciela, Julia, Jorge) sentados charlando." },
-          "video": { "presente": true },
-          "respuestas": [
-            "[1] tienes",
-            "[2] tengo",
-            "[3] Cuántos",
-            "[4] Tienen",
-            "[5] cómo",
-            "[6] Dónde",
-            "[7] Está"
+          "vocabulario": ["Parientes", "Centros e instituciones educativas", "Edad", "Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Son", "soy"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes", "tengo", "Tengo", "tienen", "Tienen"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Se llama", "se llaman", "Se llaman"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["Vivo", "vives"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["Está"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["viene"]},
+            {"lema": "venir", "tiempo": "Infinitivo", "formas_trabajadas": ["venir"]},
+            {"lema": "merendar", "tiempo": "Infinitivo", "formas_trabajadas": ["merendar"]}
           ],
+          "gramatica": ["Interrogativos", "Posesivos", "Nombres propios", "Concordancia de número"],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 36,
+            "transcripcion": "PABLO: Son las once. ¡Por fin el recreo! GRACIELA: ¡Sí! Julia, ¿tienes hermanos? JULIA: No, soy hija única, ¿y tú? GRACIELA: Sí, tengo una hermana dos años mayor que yo. Se llama Rebeca. ¿Y tú, Jorge? JORGE: No tengo hermanos, pero tengo muchos primos en Argentina. PABLO: Yo tengo dos hermanas gemelas. JORGE: ¡Gemelas! ¿Cuántos años tienen? PABLO: Tienen 8 años. JORGE: ¿Y cómo se llaman? PABLO: Se llaman Adela y Luisa. Esta tarde podéis venir a mi casa, a merendar, y a conocer a mis hermanas y a mis padres. Vivo muy cerca de aquí. JULIA: ¡Genial! ¿Dónde vives? PABLO: Vivo en la calle del instituto. Está muy cerca de aquí. GRACIELA: Yo no puedo, lo siento, mi abuelo viene a visitarnos esta tarde."
+          },
+          "imagen": { "presente": true, "descripcion": "Cuatro fotografías de adolescentes (Pablo, Graciela, Julia, Jorge) hablando en las gradas de un patio de instituto." },
+          "video": { "presente": true },
+          "respuestas": ["tienes", "tengo", "Cuántos", "Tienen", "cómo", "Dónde", "Está"],
           "datos": {
-            "palabras_recuadro": ["tienes", "Tienen", "tengo", "cómo", "Cuántos", "Dónde", "Está"],
             "titulo_dialogo": "En el recreo",
+            "palabras_recuadro": ["tienes", "Tienen", "tengo", "cómo", "Cuántos", "Dónde", "Está"],
             "dialogo_completo": [
               "PABLO: Son las once. ¡Por fin el recreo!",
               "GRACIELA: ¡Sí! Julia, ¿[1] _____ hermanos?",
@@ -723,24 +1492,24 @@
           }
         },
         {
-          "id": "U3-p36-act02",
+          "id": "U3-p36-act2",
           "numero": 2,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "Completa las frases con los nombres.",
-          "contenido_linguistico": ["personajes del diálogo", "información personal"],
+          "vocabulario": ["Parientes", "Edad", "Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienen"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
+          ],
+          "gramatica": ["Nombres propios", "Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 Jorge",
-            "2 Julia",
-            "3 Graciela",
-            "4 Graciela",
-            "5 Pablo",
-            "6 Adela"
-          ],
+          "respuestas": ["Jorge", "Julia", "Graciela", "Graciela", "Pablo", "Adela"],
           "datos": {
             "items_libro": [
               "1 _____ tiene primos en Argentina.",
@@ -753,44 +1522,43 @@
           }
         },
         {
-          "id": "U3-p36-act03",
+          "id": "U3-p36-act3",
           "numero": 3,
           "tipo": "verdadero_falso",
           "destreza": ["comprension_lectora"],
-          "enfoque": "transversal",
+          "enfoque": "cultura",
           "instruccion_original": "Las hermanas de Pablo son gemelas. ¿Qué sabes tú sobre los gemelos? ¿Son las frases siguientes verdaderas (V) o falsas (F)?",
-          "contenido_linguistico": ["gemelos", "vocabulario familiar"],
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son"]}
+          ],
+          "gramatica": ["Concordancia de número"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1 V", "2 V", "3 F"],
+          "respuestas": ["V", "V", "F"],
           "datos": {
-            "items_libro": [
-              "1 Los gemelos son dos hermanos que nacen el mismo día.",
-              "2 Los gemelos son dos hermanos iguales.",
-              "3 Los gemelos son siempre del mismo sexo: dos chicos o dos chicas."
-            ]
+            "afirmaciones_a_corregir": ["1 Los gemelos son dos hermanos que nacen el mismo día.", "2 Los gemelos son dos hermanos iguales.", "3 Los gemelos son siempre del mismo sexo: dos chicos o dos chicas."]
           }
         },
         {
-          "id": "U3-p36-act04",
+          "id": "U3-p36-act4",
           "numero": 4,
-          "tipo": "tarea_final",
-          "destreza": ["expresion_escrita", "expresion_oral", "interaccion_oral"],
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Crea tu propio diálogo siguiendo estos pasos:",
-          "contenido_linguistico": ["hablar de la familia", "presentación personal"],
+          "vocabulario": ["Parientes", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "pasos": [
-              "Busca algunas fotos de personas de tu familia y de amigos.",
-              "Prepara el diálogo con tu compañero.",
-              "Practica el diálogo con tu compañero.",
-              "Representa el diálogo delante de la clase."
-            ]
+            "pasos": ["Busca algunas fotos de personas de tu familia y de amigos.", "Prepara el diálogo con tu compañero.", "Practica el diálogo con tu compañero.", "Representa el diálogo delante de la clase."]
           }
         }
       ]
@@ -800,124 +1568,111 @@
       "seccion": "comunicacion",
       "actividades": [
         {
-          "id": "U3-p37-act05",
+          "id": "U3-p37-act5",
           "numero": 5,
-          "tipo": "completa_huecos",
-          "destreza": ["comprension_auditiva", "comprension_lectora", "expresion_oral"],
+          "tipo": "escucha_y_repite",
+          "destreza": ["comprension_auditiva", "expresion_escrita", "expresion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "¿Qué hora es? Completa, escucha y repite.",
-          "contenido_linguistico": ["la hora"],
-          "campo_semantico": "La hora",
-          "audio": { "presente": true, "pista": 37 },
-          "imagen": { "presente": true, "descripcion": "Reloj analógico con etiquetas alrededor que indican las distintas formas de decir la hora: 'en punto' arriba, 'menos cinco / y cinco', 'menos diez / y diez', 'menos cuarto / y cuarto', 'menos veinte / y veinte', 'menos veinticinco / y veinticinco', 'y media' abajo. Nota: 'cuarto = 1/4'." },
-          "video": { "presente": false },
-          "respuestas": [
-            "y _cinco_",
-            "y _cuarto_",
-            "_menos_ veinte",
-            "menos _veinticinco_",
-            "_y_ veinticinco"
+          "vocabulario": ["Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 37, "transcripcion": "en punto, y cinco, y diez, y cuarto, y veinte, y veinticinco, y media, menos veinticinco, menos veinte, menos cuarto, menos diez, menos cinco" },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Un reloj analógico grande con todas las posiciones horarias etiquetadas alrededor: en punto, y cinco, y diez, y cuarto, y veinte, y veinticinco, y media, menos veinticinco, menos veinte, menos cuarto, menos diez, menos cinco."
+          },
+          "video": { "presente": false },
+          "respuestas": ["cinco", "cuarto", "veinticinco", "menos", "veinticinco"],
           "datos": {
-            "items_libro": [
-              "y _____  (hueco para 'cinco')",
-              "y _____  (hueco para 'cuarto')",
-              "_____ veinte  (hueco para 'menos')",
-              "menos _____  (hueco para 'veinticinco')",
-              "_____ veinticinco  (hueco para 'y')"
-            ]
+            "items_libro": ["en punto", "y _____", "y diez", "y _____", "y veinte", "y _____", "y media", "menos _____", "menos veinte", "menos cuarto", "menos diez", "menos cinco"]
           }
         },
         {
-          "id": "U3-p37-act06",
+          "id": "U3-p37-act6",
           "numero": 6,
-          "tipo": "produccion_escrita_guiada",
+          "tipo": "completa_huecos",
           "destreza": ["comprension_auditiva", "expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Escribe las horas y, después, escucha y comprueba.",
-          "contenido_linguistico": ["la hora"],
-          "campo_semantico": "La hora",
-          "audio": { "presente": true, "pista": 38 },
-          "imagen": { "presente": true, "descripcion": "4 relojes digitales con horas: 1) 11:30, 2) 14:20, 3) 13:15, 4) 18:50." },
-          "video": { "presente": false },
-          "respuestas": [
-            "1 Son las once y media",
-            "2 Son las dos y veinte",
-            "3 Es la una y cuarto",
-            "4 Son las siete menos diez"
+          "vocabulario": ["Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Son", "Es"]}
           ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": true, "pista": 38, "transcripcion": "(audio dicta las cuatro horas: 11:30, 14:20, 13:15, 18:50)" },
+          "imagen": { "presente": true, "descripcion": "Cuatro relojes digitales (smartwatch) que muestran: 1) 11:30, 2) 14:20, 3) 13:15, 4) 18:50." },
+          "video": { "presente": false },
+          "respuestas": ["1 Son las once y media", "2 Son las dos y veinte", "3 Es la una y cuarto", "4 Son las siete menos diez"],
           "datos": {
-            "items_libro": ["1 11:30", "2 14:20", "3 13:15", "4 18:50"]
+            "horarios_digitales": { "1": "11:30", "2": "14:20", "3": "13:15", "4": "18:50" }
           }
         },
         {
-          "id": "U3-p37-act07",
+          "id": "U3-p37-act7",
           "numero": 7,
           "tipo": "interaccion_oral",
           "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Pregunta y contesta a tu compañero sobre la cartelera de cine.",
-          "contenido_linguistico": ["la hora", "preguntar a qué hora"],
+          "vocabulario": ["Cine y teatro", "Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
+          ],
+          "gramatica": ["Interrogativos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "5 carteles de cine (SALA 1: Robot Dreams, SALA 2: Padre no hay más que uno 5, SALA 3: Sin instrucciones, SALA 4: Flow un mundo que salvar, SALA 5: Cómo entrenar a tu dragón) y un horario 'Cines Ideales' con SALA 1: 19:30, SALA 2: 17:20, SALA 3: 16:50, SALA 4: 18:15, SALA 5: 20:45." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Cinco carteles de películas (SALA 1: Robot Dreams; SALA 2: Padre no hay más que uno 5; SALA 3: Sin instrucciones; SALA 4: Flow, un mundo que salvar; SALA 5: Cómo entrenar a tu dragón) junto al tablero 'Cines Ideales' con horarios: Sala 1 19:30, Sala 2 17:20, Sala 3 16:50, Sala 4 18:15, Sala 5 20:45."
+          },
           "video": { "presente": false },
-          "respuestas": [],
+          "respuestas": ["¿A qué hora es \"Padre no hay más que uno 5\"?", "A las cinco y veinte."],
           "datos": {
-            "ejemplo_libro": "¿A qué hora es 'Padre no hay más que uno 5'? / A las cinco y veinte."
+            "ejemplo_libro": "• ¿A qué hora es \"Padre no hay más que uno 5\"?\n■ A las cinco y veinte.",
+            "peliculas_cartelera": ["SALA 1: Robot dreams — 19:30", "SALA 2: Padre no hay más que uno 5 — 17:20", "SALA 3: Sin instrucciones — 16:50", "SALA 4: Flow, un mundo que salvar — 18:15", "SALA 5: Cómo entrenar a tu dragón — 20:45"]
           }
         },
         {
-          "id": "U3-p37-act08",
+          "id": "U3-p37-act8",
           "numero": 8,
           "tipo": "escucha_y_repite",
           "destreza": ["comprension_auditiva", "expresion_oral"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y repite.",
-          "contenido_linguistico": ["sonido /θ/", "z y c"],
-          "audio": { "presente": true, "pista": 39 },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
+          "audio": { "presente": true, "pista": 39, "transcripcion": "azul, bicicleta, cinco, marzo, zapato" },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "items_libro": ["azul • bicicleta • cinco • marzo • zapato"]
+            "items_libro": ["azul", "bicicleta", "cinco", "marzo", "zapato"]
           }
         },
         {
-          "id": "U3-p37-act09",
+          "id": "U3-p37-act9",
           "numero": 9,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Completa las siguientes palabras con z/c.",
-          "contenido_linguistico": ["sonido /θ/", "ortografía z/c"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 c (cine)",
-            "2 c (once)",
-            "3 z (zumo)",
-            "4 z (zoo)",
-            "5 c (baloncesto)",
-            "6 c (ciclismo)",
-            "7 c (ciudad)",
-            "8 z (zona)",
-            "9 z (pizarra)",
-            "10 c (habitación)"
-          ],
+          "respuestas": ["cine", "once", "zumo", "zoo", "baloncesto", "ciclismo", "ciudad", "zona", "pizarra", "habitación"],
           "datos": {
-            "items_libro": [
-              "1 _ine",
-              "2 on_e",
-              "3 _umo",
-              "4 _oo",
-              "5 balon_esto",
-              "6 _iclismo",
-              "7 _iudad",
-              "8 _ona",
-              "9 pi_arra",
-              "10 habita_ión"
-            ]
+            "items_libro": ["1 _ine", "2 on_e", "3 _umo", "4 _oo", "5 balon_esto", "6 _iclismo", "7 _iudad", "8 _ona", "9 pi_arra", "10 habita_ión"]
           }
         },
         {
@@ -925,26 +1680,46 @@
           "numero": 10,
           "tipo": "escucha_y_repite",
           "destreza": ["comprension_auditiva", "expresion_oral"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Ahora, escucha y repite.",
-          "contenido_linguistico": ["sonido /θ/", "z y c"],
-          "audio": { "presente": true, "pista": 40 },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
+          "audio": { "presente": true, "pista": 40, "transcripcion": "cine, once, zumo, zoo, baloncesto, ciclismo, ciudad, zona, pizarra, habitación" },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": []
+          "respuestas": [],
+          "datos": {}
         }
       ],
       "cuadros": [
         {
-          "tipo_cuadro": "fonetico",
-          "titulo": null,
+          "tipo_cuadro": "lexical",
+          "titulo": "La hora",
           "contenido": {
-            "tipo": "lista_reglas",
-            "reglas": [
-              "/θ/ + a, o, u → za, zo, zu",
-              "/θ/ + e, i → ce, ci"
-            ]
-          }
+            "tipo": "presentacion_visual",
+            "texto_intro": "Reloj analógico con todas las posiciones horarias etiquetadas (12 marcadores).",
+            "expresiones": ["en punto", "y cinco", "y diez", "y cuarto", "y veinte", "y veinticinco", "y media", "menos veinticinco", "menos veinte", "menos cuarto", "menos diez", "menos cinco"],
+            "nota": "cuarto = 1/4"
+          },
+          "vocabulario": ["Números cardinales"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
+        },
+        {
+          "tipo_cuadro": "pronunciacion_ortografia",
+          "titulo": "Pronunciación y ortografía",
+          "contenido": {
+            "tipo": "regla_correspondencia_sonido_grafia",
+            "reglas": ["/θ/ + a, o, u → za, zo, zu", "/θ/ + e, i → ce, ci"],
+            "ejemplos_introductorios": ["azul", "bicicleta", "cinco", "marzo", "zapato"]
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"]
         }
       ]
     },
@@ -953,33 +1728,42 @@
       "seccion": "destrezas",
       "actividades": [
         {
-          "id": "U3-p38-act01",
+          "id": "U3-p38-act1",
           "numero": 1,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Lee el segundo mensaje que le manda Marta a su amigo Pierre y corrige las afirmaciones.",
-          "contenido_linguistico": ["familia", "información personal", "horario", "asignaturas"],
+          "vocabulario": ["Parientes", "Profesiones y lugares de trabajo", "Asignaturas", "Centros e instituciones educativas", "Edad", "Números cardinales", "Saludos y despedidas"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es", "son"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tengo", "tienes", "tenemos"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja", "trabajan"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["viven"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estás"]},
+            {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablo"]}
+          ],
+          "gramatica": ["Posesivos", "Nombres propios", "Interrogativos", "Concordancia de número", "Artículos determinados"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Foto de una familia (padre, madre y dos hijas) sonriendo. Junto a ella, captura de un correo electrónico de Marta a Pierre." },
+          "imagen": { "presente": true, "descripcion": "Captura de un mensaje de correo electrónico (De: Marta, Para: Pierre) y, a la derecha, fotografía de una familia (padres, dos niñas pequeñas y una mayor) sonriendo con pulgar arriba." },
           "video": { "presente": false },
           "respuestas": [
-            "1 Su hermano tiene once años y su hermana, seis. / Su hermana tiene seis años y su hermano, once.",
+            "Marta tiene dos hermanos.",
+            "1 Su hermano tiene once años y su hermana, seis / Su hermana tiene seis años y su hermano, once.",
             "2 Su hermana se llama Ana.",
-            "3 Bárbara estudia en Cádiz. / Bárbara es de Barcelona.",
-            "4 El padre de Marta trabaja en un hotel. / La madre de Marta trabaja en un hospital. / El padre de Bárbara trabaja en un hospital.",
+            "3 Bárbara estudia en Cádiz / Bárbara es de Barcelona.",
+            "4 El padre de Marta trabaja en un hotel / La madre de Marta trabaja en un hospital / El padre de Bárbara trabaja en un hospital.",
             "5 En el instituto de Marta tres días a la semana tienen clase hasta las 15:30.",
             "6 Marta tiene siempre muchos deberes de Tecnología y Matemáticas.",
             "7 A Marta le gusta la Historia."
           ],
           "datos": {
-            "ejemplo_libro": "Marta tiene tres hermanos. → Marta tiene dos hermanos.",
-            "correo": {
-              "de": "Marta",
-              "para": "Pierre",
-              "texto": "¡Hola, Pierre! ¿Qué tal estás? Hoy te hablo de mi familia: mi padre trabaja en un hotel y mi madre en un hospital. Mi hermano Mario tiene once años y mi hermana Ana tiene seis. ¿Y tú, cuántos hermanos tienes? Y en el instituto, ¿qué tal el nuevo curso? Yo este año tengo muchos amigos en mi clase: Emilio, Elena, Santiago… y también tengo una compañera nueva: se llama Bárbara. Es de Barcelona. Sus padres trabajan en Cádiz y sus abuelos también viven aquí. Su padre y mi madre trabajan en el mismo hospital. Este curso es un poco más difícil. Tres días a la semana salimos a las 15:30 y además tenemos muchos deberes, especialmente de Tecnología y Matemáticas. A mí me gusta mucho la Historia. ¿Tú también tienes muchos deberes este año? ¡Un saludo desde Cádiz! Marta"
-            },
-            "items_libro": [
+            "texto_correo": "De: Marta\nPara: Pierre\n\n¡Hola, Pierre! ¿Qué tal estás?\nHoy te hablo de mi familia: mi padre trabaja en un hotel y mi madre en un hospital. Mi hermano Mario tiene once años y mi hermana Ana tiene seis. ¿Y tú, cuántos hermanos tienes?\nY en el instituto, ¿qué tal el nuevo curso? Yo este año tengo muchos amigos en mi clase: Emilio, Elena, Santiago… y también tengo una compañera nueva: se llama Bárbara. Es de Barcelona. Sus padres trabajan en Cádiz y sus abuelos también viven aquí. Su padre y mi madre trabajan en el mismo hospital.\nEste curso es un poco más difícil. Tres días a la semana salimos a las 15:30 y además tenemos muchos deberes, especialmente de Tecnología y Matemáticas. A mí me gusta mucho la Historia. ¿Tú también tienes muchos deberes este año?\n¡Un saludo desde Cádiz!\nMarta",
+            "afirmaciones_a_corregir": [
+              "Marta tiene tres hermanos.",
               "1 Su hermana tiene once años y su hermano, seis.",
               "2 Su hermana se llama Bárbara.",
               "3 Bárbara estudia en Barcelona.",
@@ -991,24 +1775,24 @@
           }
         },
         {
-          "id": "U3-p38-act02",
+          "id": "U3-p38-act2",
           "numero": 2,
-          "tipo": "responder_preguntas_cerradas",
+          "tipo": "responder_preguntas_abiertas",
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Vuelve a leer el mensaje anterior y contesta a las siguientes preguntas.",
-          "contenido_linguistico": ["familia", "amigos", "asignaturas"],
+          "vocabulario": ["Parientes", "Profesiones y lugares de trabajo", "Asignaturas"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabajan"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
+          ],
+          "gramatica": ["Interrogativos", "Nombres propios", "Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 Los hermanos de Marta",
-            "2 Los amigos de Marta",
-            "3 La compañera nueva de Marta",
-            "4 La madre de Marta y el padre de Bárbara",
-            "5 De Tecnología y de Matemáticas",
-            "6 La Historia"
-          ],
+          "respuestas": ["1 Los hermanos de Marta.", "2 Los amigos de Marta.", "3 La compañera nueva de Marta.", "4 La madre de Marta y el padre de Bárbara.", "5 De Tecnología y de Matemáticas.", "6 La Historia."],
           "datos": {
             "preguntas": [
               "1 ¿Quiénes son Mario y Ana?",
@@ -1021,13 +1805,19 @@
           }
         },
         {
-          "id": "U3-p38-act03",
+          "id": "U3-p38-act3",
           "numero": 3,
-          "tipo": "tarea_final",
+          "tipo": "expresion_escrita_libre",
           "destreza": ["expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Imagina que escribes a un amigo español un correo como el de Marta a Pierre. Sigue estos pasos:",
-          "contenido_linguistico": ["correo personal", "familia", "amigos", "asignaturas"],
+          "vocabulario": ["Parientes", "Centros e instituciones educativas", "Asignaturas", "Saludos y despedidas"],
+          "tiempos_y_verbos": [
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estás"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tener"]}
+          ],
+          "gramatica": ["Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": true },
@@ -1050,79 +1840,85 @@
       "seccion": "destrezas",
       "actividades": [
         {
-          "id": "U3-p39-act04",
+          "id": "U3-p39-act4",
           "numero": 4,
           "tipo": "relaciona",
           "destreza": ["comprension_auditiva"],
           "enfoque": "comunicacion",
           "instruccion_original": "Escucha la programación de televisión para hoy y dibuja la hora. Después, relaciona los relojes (del 1 al 7) con los digitales (del A al G).",
-          "contenido_linguistico": ["la hora", "programación de TV"],
-          "audio": { "presente": true, "pista": 41 },
-          "imagen": { "presente": true, "descripcion": "7 relojes analógicos numerados con sus programas de TV: 1 Telediario 1, 2 Vuelta ciclista a España, 3 Saber y ganar, 4 Documental: El león africano, 5 Cine: Avatar, 6 Música clásica, 7 Fútbol: Real Madrid-Barcelona. Y 7 relojes digitales etiquetados A-G con horas: A 17:30, B 23:00, C 15:30, D 15:00, E 21:30, F 19:00, G 16:30." },
+          "vocabulario": ["Televisión y radio", "Números cardinales", "Cine y teatro"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Nombres propios"],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 41,
+            "transcripcion": "(audio dicta horas para 7 programas: Telediario 1 → 15:00, Vuelta ciclista a España → 15:30, Saber y ganar → 17:30, Documental: El león africano → 16:30, Cine: Avatar → 21:30, Música clásica → 23:00, Fútbol: Real Madrid-Barcelona → 19:00)"
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "7 relojes analógicos (1-7) etiquetados con programas de televisión (Telediario 1, Vuelta ciclista a España, Saber y ganar, Documental: El león africano, Cine: Avatar, Música clásica, Fútbol: Real Madrid-Barcelona) y 7 relojes digitales (A-G) mostrando: A 17:30, B 23:00, C 15:30, D 15:00, E 21:30, F 19:00, G 16:30."
+          },
           "video": { "presente": false },
-          "respuestas": [
-            "1 Telediario 1 → D (15:00)",
-            "2 Vuelta ciclista a España → C (15:30)",
-            "3 Saber y ganar → A (17:30)",
-            "4 Documental: El león africano → G (16:30)",
-            "5 Cine: Avatar → E (21:30)",
-            "6 Música clásica → B (23:00)",
-            "7 Fútbol: Real Madrid-Barcelona → F (19:00)"
-          ],
+          "respuestas": ["1 D", "2 C", "3 A", "4 G", "5 E", "6 B", "7 F"],
           "datos": {
-            "items_libro": [
-              "1 Telediario 1",
-              "2 Vuelta ciclista a España",
-              "3 Saber y ganar",
-              "4 Documental: El león africano",
-              "5 Cine: Avatar",
-              "6 Música clásica",
-              "7 Fútbol: Real Madrid-Barcelona"
-            ],
-            "relojes_digitales": ["A 17:30", "B 23:00", "C 15:30", "D 15:00", "E 21:30", "F 19:00", "G 16:30"]
+            "programas_tv": ["1 Telediario 1", "2 Vuelta ciclista a España", "3 Saber y ganar", "4 Documental: El león africano", "5 Cine: Avatar", "6 Música clásica", "7 Fútbol: Real Madrid-Barcelona"],
+            "horarios_digitales": { "A": "17:30", "B": "23:00", "C": "15:30", "D": "15:00", "E": "21:30", "F": "19:00", "G": "16:30" }
           }
         },
         {
-          "id": "U3-p39-act05",
+          "id": "U3-p39-act5",
           "numero": 5,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Completa estos relojes con una hora. Tu compañero te va a preguntar la hora.",
-          "contenido_linguistico": ["la hora"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "4 relojes despertadores amarillos en blanco (sin manecillas) numerados 1 al 4." },
+          "imagen": { "presente": true, "descripcion": "Cuatro despertadores amarillos con esferas vacías para que el alumno dibuje las agujas." },
           "video": { "presente": false },
-          "respuestas": []
+          "respuestas": [],
+          "datos": {}
         },
         {
-          "id": "U3-p39-act06",
+          "id": "U3-p39-act6",
           "numero": 6,
           "tipo": "interaccion_oral",
           "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Pregunta a tu compañero la hora de sus relojes.",
-          "contenido_linguistico": ["la hora", "preguntar la hora"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": []
-        },
-        {
-          "id": "U3-p39-act07",
-          "numero": 7,
-          "tipo": "expresion_oral_libre",
-          "destreza": ["expresion_oral", "mediacion"],
-          "enfoque": "comunicacion",
-          "instruccion_original": "Cuéntale a tu compañero una cosa especial de tu familia. Él se lo va a contar al resto de la clase.",
-          "contenido_linguistico": ["familia", "información personal"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Interrogativos", "Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "Tengo un primo y una prima gemelos. Se llaman Romeo y Julieta…"
-          }
+          "datos": {}
+        },
+        {
+          "id": "U3-p39-act7",
+          "numero": 7,
+          "tipo": "interaccion_oral",
+          "destreza": ["expresion_oral", "interaccion_oral", "mediacion"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "Cuéntale a tu compañero una cosa especial de tu familia. Él se lo va a contar al resto de la clase.",
+          "vocabulario": ["Parientes", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Se llaman"]}
+          ],
+          "gramatica": ["Posesivos", "Nombres propios", "Concordancia de número"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": false },
+          "video": { "presente": false },
+          "respuestas": ["Tengo un primo y una prima gemelos. Se llaman Romeo y Julieta…"],
+          "datos": { "ejemplo_libro": "Tengo un primo y una prima gemelos. Se llaman Romeo y Julieta…" }
         }
       ]
     },
@@ -1131,113 +1927,150 @@
       "seccion": "cultura",
       "actividades": [
         {
-          "id": "U3-p40-act01",
+          "id": "U3-p40-act1",
           "numero": 1,
           "tipo": "lee_y_escucha",
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "cultura",
           "instruccion_original": "Lee y escucha el texto. ¿Por qué esta película de animación le gusta al público de todas las edades?",
-          "contenido_linguistico": ["cómic y animación", "cine en español"],
-          "audio": { "presente": true, "pista": 42 },
-          "imagen": { "presente": true, "descripcion": "Foto de una madre y un niño leyendo un cómic juntos en el suelo." },
+          "vocabulario": ["Cine y teatro", "Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["Vive"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "interesar", "tiempo": "Presente", "formas_trabajadas": ["interesan"]},
+            {"lema": "escribir", "tiempo": "Presente", "formas_trabajadas": ["escrita"]},
+            {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablar"]},
+            {"lema": "hacer", "tiempo": "Infinitivo", "formas_trabajadas": ["hacer"]}
+          ],
+          "gramatica": ["Nombres propios", "Artículos determinados"],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 42,
+            "transcripcion": "El cómic es una mezcla de dibujo y texto para contar una historia. Nace a finales del siglo XIX con mucho éxito por su sencillez técnica. Para crear un cómic solo se necesita tener una historia, un lápiz y un papel en blanco para dibujar. Pero para hacer una película de dibujos animados se necesita un gran desarrollo tecnológico. Una película de animación es un trabajo en equipo donde intervienen muchas personas: dibujantes, guionistas, iluminadores, maquilladores, actores, decoradores, etc. Robot Dreams es una película de animación muda, escrita y dirigida por Pablo Berger. Es la historia de Dog, un perro solitario. Vive en Nueva York. Un día fabrica un robot, su amigo inseparable. Pero una noche de verano se separan en la playa, quizás para siempre… Robot Dreams es una película muda, no necesita palabras para hablar de los temas que interesan al público de todas las edades: la amistad, la soledad, el amor… Para los críticos es \"la película más humana de la temporada\", pero entre sus personajes no tiene un solo humano."
+          },
+          "imagen": { "presente": true, "descripcion": "Título 'EL CÓMIC Y LAS PELÍCULAS DE ANIMACIÓN' en letras rojas y fotografía de dos niños tumbados leyendo un cómic." },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "titulo": "EL CÓMIC Y LAS PELÍCULAS DE ANIMACIÓN",
-            "texto_completo": "El cómic es una mezcla de dibujo y texto para contar una historia. Nace a finales del siglo XIX con mucho éxito por su sencillez técnica. Para crear un cómic solo se necesita tener una historia, un lápiz y un papel en blanco para dibujar. Pero para hacer una película de dibujos animados se necesita un gran desarrollo tecnológico. Una película de animación es un trabajo en equipo donde intervienen muchas personas: dibujantes, guionistas, iluminadores, maquilladores, actores, decoradores, etc. Robot Dreams es una película de animación muda, escrita y dirigida por Pablo Berger. Es la historia de Dog, un perro solitario. Vive en Nueva York. Un día fabrica un robot, su amigo inseparable. Pero una noche de verano se separan en la playa, quizás para siempre… Robot Dreams es una película muda, no necesita palabras para hablar de los temas que interesan al público de todas las edades: la amistad, la soledad, el amor… Para los críticos es \"la película más humana de la temporada\", pero entre sus personajes no tiene ni un solo humano."
+            "texto_completo": "El cómic es una mezcla de dibujo y texto para contar una historia. Nace a finales del siglo XIX con mucho éxito por su sencillez técnica. Para crear un cómic solo se necesita tener una historia, un lápiz y un papel en blanco para dibujar.\nPero para hacer una película de dibujos animados se necesita un gran desarrollo tecnológico. Una película de animación es un trabajo en equipo donde intervienen muchas personas: dibujantes, guionistas, iluminadores, maquilladores, actores, decoradores, etc.\nRobot Dreams es una película de animación muda, escrita y dirigida por Pablo Berger.\nEs la historia de Dog, un perro solitario. Vive en Nueva York. Un día fabrica un robot, su amigo inseparable. Pero una noche de verano se separan en la playa, quizás para siempre…\nRobot Dreams es una película muda, no necesita palabras para hablar de los temas que interesan al público de todas las edades: la amistad, la soledad, el amor… Para los críticos es \"la película más humana de la temporada\", pero entre sus personajes no tiene un solo humano."
           }
         },
         {
-          "id": "U3-p40-act02",
+          "id": "U3-p40-act2",
           "numero": 2,
           "tipo": "relaciona",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las palabras con sus definiciones.",
-          "contenido_linguistico": ["profesiones del cine", "vocabulario del cine"],
-          "campo_semantico": "Profesiones del cine",
+          "vocabulario": ["Profesiones y lugares de trabajo", "Cine y teatro"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es"]},
+            {"lema": "escribir", "tiempo": "Presente", "formas_trabajadas": ["Escribe"]}
+          ],
+          "gramatica": ["Concordancia de género", "Artículos determinados"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 guionista",
-            "2 actor / actriz",
-            "3 iluminador(a)",
-            "4 decorador(a)",
-            "5 dibujante",
-            "6 maquillador(a)"
-          ],
+          "respuestas": ["1 guionista", "2 actor / actriz", "3 iluminador(a)", "4 decorador(a)", "5 dibujante", "6 maquillador(a)"],
           "datos": {
             "palabras_recuadro": ["maquillador(a)", "decorador(a)", "dibujante", "actor / actriz", "iluminador(a)", "guionista"],
-            "items_libro": [
-              "1 Escribe el guion de una película.",
-              "2 Actúa en una obra o en una película.",
-              "3 Es el / la responsable de la iluminación en una obra o película.",
-              "4 Diseña los decorados de una obra o película.",
-              "5 Realiza los dibujos en una película de animación.",
-              "6 Es el / la responsable del maquillaje."
-            ]
+            "columnas_relaciona": {
+              "izquierda": [
+                "1 Escribe el guion de una película.",
+                "2 Actúa en una obra o en una película.",
+                "3 Es el / la responsable de la iluminación en una obra o película.",
+                "4 Diseña los decorados de una obra o película.",
+                "5 Realiza los dibujos en una película de animación.",
+                "6 Es el / la responsable del maquillaje."
+              ],
+              "derecha": ["maquillador(a)", "decorador(a)", "dibujante", "actor / actriz", "iluminador(a)", "guionista"]
+            }
           }
         },
         {
-          "id": "U3-p40-act03",
+          "id": "U3-p40-act3",
           "numero": 3,
           "tipo": "seleccion_multiple",
           "destreza": ["comprension_lectora"],
           "enfoque": "cultura",
           "instruccion_original": "Vuelve a leer el texto del ejercicio 1 y elige la respuesta correcta.",
-          "contenido_linguistico": ["cómic y animación", "Robot Dreams"],
+          "vocabulario": ["Cine y teatro", "Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablan"]}
+          ],
+          "gramatica": ["Interrogativos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 c (Una mezcla de dibujo y texto)",
-            "2 b (A finales del siglo XIX)",
-            "3 c (Un equipo con muchos profesionales)",
-            "4 a (Pablo Berger)",
-            "5 b (No hablan)"
-          ],
+          "respuestas": ["1 c", "2 b", "3 c", "4 a", "5 b"],
           "datos": {
-            "items_libro": [
-              "1 ¿Qué es el cómic? a) Una fotografía / b) Una novela / c) Una mezcla de dibujo y texto",
-              "2 ¿Cuándo nace el cómic? a) En 1950 / b) A finales del siglo XIX / c) Hace 10 años",
-              "3 ¿Cuántas personas son necesarias para crear una película de animación? a) Un escritor con un lápiz y un papel / b) Un escritor y un gran desarrollo tecnológico / c) Un equipo con muchos profesionales",
-              "4 ¿Quién es el escritor y director de Robot Dreams? a) Pablo Berger / b) Dog / c) El robot",
-              "5 ¿En qué idioma hablan los personajes? a) En inglés / b) No hablan / c) En español"
+            "preguntas_opciones": [
+              {
+                "pregunta": "1 ¿Qué es el cómic?",
+                "opciones": ["a Una fotografía", "b Una novela", "c Una mezcla de dibujo y texto"]
+              },
+              {
+                "pregunta": "2 ¿Cuándo nace el cómic?",
+                "opciones": ["a En 1950", "b A finales del siglo XIX", "c Hace 10 años"]
+              },
+              {
+                "pregunta": "3 ¿Cuántas personas son necesarias para crear una película de animación?",
+                "opciones": ["a Un escritor con un lápiz y un papel", "b Un escritor y un gran desarrollo tecnológico", "c Un equipo con muchos profesionales"]
+              },
+              {
+                "pregunta": "4 ¿Quién es el escritor y director de Robot Dreams?",
+                "opciones": ["a Pablo Berger", "b Dog", "c El robot"]
+              },
+              {
+                "pregunta": "5 ¿En qué idioma hablan los personajes?",
+                "opciones": ["a En inglés", "b No hablan", "c En español"]
+              }
             ]
           }
         },
         {
-          "id": "U3-p40-act04",
+          "id": "U3-p40-act4",
           "numero": 4,
-          "tipo": "responder_preguntas_abiertas",
+          "tipo": "expresion_oral_libre",
           "destreza": ["expresion_oral"],
           "enfoque": "cultura",
           "instruccion_original": "¿Qué películas de animación te gustan? ¿Qué cómics conoces?",
-          "contenido_linguistico": ["preferencias", "películas y cómics"],
+          "vocabulario": ["Cine y teatro"],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gustan"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
-          "datos": {
-            "preguntas": [
-              "¿Qué películas de animación te gustan?",
-              "¿Qué cómics conoces?"
-            ]
-          }
+          "datos": {}
         },
         {
-          "id": "U3-p40-act05",
+          "id": "U3-p40-act5",
           "numero": 5,
           "tipo": "busqueda_informacion",
-          "destreza": ["comprension_lectora", "expresion_oral"],
+          "destreza": ["expresion_escrita", "expresion_oral"],
           "enfoque": "cultura",
           "instruccion_original": "Busca información sobre el cine de animación. ¿Qué películas conoces? ¿Cuál te gusta más?",
-          "contenido_linguistico": ["cine de animación", "preferencias"],
+          "vocabulario": ["Cine y teatro"],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": []
+          "respuestas": [],
+          "datos": {}
         }
       ]
     },
@@ -1246,26 +2079,26 @@
       "seccion": "evaluacion",
       "actividades": [
         {
-          "id": "U3-p41-act01",
+          "id": "U3-p41-act1",
           "numero": 1,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con la forma correcta del verbo.",
-          "contenido_linguistico": ["presente de indicativo", "verbos regulares", "verbo tener"],
+          "vocabulario": ["Parientes", "Asignaturas", "Centros e instituciones educativas", "Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vivimos", "vives"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia", "estudiamos"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comen"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tienes"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]}
+          ],
+          "gramatica": ["Pronombre sujeto", "Posesivos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 vivimos",
-            "2 estudia",
-            "3 comen",
-            "4 tengo",
-            "5 estudiamos",
-            "6 trabaja",
-            "7 vives",
-            "8 tienes"
-          ],
+          "respuestas": ["vivimos", "estudia", "comen", "tengo", "estudiamos", "trabaja", "vives", "tienes"],
           "datos": {
             "items_libro": [
               "1 Mis padres y yo (vivir) _____ en España.",
@@ -1280,56 +2113,57 @@
           }
         },
         {
-          "id": "U3-p41-act02",
+          "id": "U3-p41-act2",
           "numero": 2,
           "tipo": "produccion_escrita_guiada",
-          "destreza": ["expresion_escrita"],
+          "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Escribe preguntas para las respuestas.",
-          "contenido_linguistico": ["interrogativos", "preguntas"],
+          "vocabulario": ["Asignaturas", "Centros e instituciones educativas"],
+          "tiempos_y_verbos": [
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes", "como"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["Estudio", "estudias"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
+          ],
+          "gramatica": ["Interrogativos", "Posesivos", "Nombres propios"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 ¿A qué hora acaba la clase?",
-            "2 ¿Cómo se llama tu profesora?",
-            "3 ¿Dónde comes todos los días?",
-            "4 ¿Qué / Cuántos idiomas estudias?",
-            "5 ¿Quién / Cuál es tu mejor amigo?",
-            "6 ¿Cuál es tu mes favorito?"
-          ],
+          "respuestas": ["1 ¿A qué hora acaba la clase?", "2 ¿Cómo se llama tu profesora?", "3 ¿Dónde comes todos los días?", "4 ¿Qué / Cuántos idiomas estudias?", "5 ¿Quién / Cuál es tu mejor amigo?", "6 ¿Cuál es tu mes favorito?"],
           "datos": {
             "items_libro": [
-              "1 ¿_____? / La clase acaba a las 12:30.",
-              "2 ¿_____? / Mi profesora se llama Nieves.",
-              "3 ¿_____? / Yo como en el instituto.",
-              "4 ¿_____? / Estudio inglés y francés.",
-              "5 ¿_____? / Mi mejor amigo es Pedro.",
-              "6 ¿_____? / Mi mes favorito es diciembre. ¡Es mi cumpleaños!"
+              "1 • ¿_____?\n■ La clase acaba a las 12:30.",
+              "2 • ¿_____?\n■ Mi profesora se llama Nieves.",
+              "3 • ¿_____?\n■ Yo como en el instituto.",
+              "4 • ¿_____?\n■ Estudio inglés y francés.",
+              "5 • ¿_____?\n■ Mi mejor amigo es Pedro.",
+              "6 • ¿_____?\n■ Mi mes favorito es diciembre. ¡Es mi cumpleaños!"
             ]
           }
         },
         {
-          "id": "U3-p41-act03",
+          "id": "U3-p41-act3",
           "numero": 3,
           "tipo": "seleccion_multiple",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Elige la opción correcta.",
-          "contenido_linguistico": ["adjetivos posesivos", "concordancia género/número"],
+          "vocabulario": ["Parientes", "Centros e instituciones educativas", "Días de la semana", "Asignaturas"],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["Vives"]},
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["Estudio"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["come"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
+          ],
+          "gramatica": ["Posesivos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 tus",
-            "2 mi",
-            "3 mis",
-            "4 mi",
-            "5 sus",
-            "6 tu",
-            "7 tu",
-            "8 Nuestra"
-          ],
+          "respuestas": ["tus", "mi", "mis", "mi", "sus", "tu", "tu", "Nuestra"],
           "datos": {
             "items_libro": [
               "1 ¿Vives con tu / tus padres?",
@@ -1344,27 +2178,22 @@
           }
         },
         {
-          "id": "U3-p41-act04",
+          "id": "U3-p41-act4",
           "numero": 4,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Completa las frases de David.",
-          "contenido_linguistico": ["parientes", "verbo ser", "posesivos"],
-          "campo_semantico": "Parientes",
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "soy", "son", "Es"]}
+          ],
+          "gramatica": ["Posesivos", "Nombres propios", "Artículos determinados"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 hijo",
-            "2 hermano",
-            "3 marido",
-            "4 tía",
-            "5 primos",
-            "6 abuelo",
-            "7 abuela",
-            "8 nieto"
-          ],
+          "respuestas": ["hijo", "hermano", "marido", "tía", "primos", "abuelo", "abuela", "nieto"],
           "datos": {
             "items_libro": [
               "1 Alicia es mi madre. Yo soy su _____.",
@@ -1372,47 +2201,61 @@
               "3 Mi madre es la mujer de mi padre. Mi padre es su _____.",
               "4 Carmen es la hermana de mi madre. Es mi _____.",
               "5 Los hijos de Carmen son mis _____.",
-              "6 El padre de mi padre es mi _____.",
+              "6 El padre de mi madre es mi _____.",
               "7 La madre de mi padre es mi _____.",
               "8 Yo soy el _____ de mi abuela."
             ]
           }
         },
         {
-          "id": "U3-p41-act05",
+          "id": "U3-p41-act5",
           "numero": 5,
-          "tipo": "busqueda_informacion",
+          "tipo": "juego",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Sopa de letras: busca seis palabras de los miembros de la familia.",
-          "contenido_linguistico": ["parientes"],
-          "campo_semantico": "Parientes",
+          "vocabulario": ["Parientes"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Sopa de letras de aproximadamente 9 columnas × 10 filas con 6 palabras escondidas relacionadas con la familia (primo, hermano, tía, hija, abuela, nieto)." },
+          "imagen": { "presente": true, "descripcion": "Cuadrícula de sopa de letras de 10 filas × 9 columnas junto a una fotografía de una familia numerosa saludando. Las seis palabras de Parientes están escondidas en la cuadrícula." },
           "video": { "presente": false },
-          "respuestas": ["primo", "hermano", "tía", "hija", "abuela", "nieto"],
+          "respuestas": ["PRIMO", "HERMANO", "TÍA", "MADRE", "HIJA", "ABUELO"],
           "datos": {
-            "_nota": "La cuadrícula completa de la sopa no se transcribe celda a celda en esta versión; las 6 palabras escondidas son las indicadas en respuestas. Para reconstrucción visual completa, ver imagen."
+            "cuadricula": [
+              ["P", "R", "I", "M", "O", "A", "G", "E", "H"],
+              ["O", "C", "B", "A", "I", "L", "J", "M", "Z"],
+              ["S", "R", "L", "D", "O", "B", "K", "H", "T"],
+              ["U", "J", "E", "R", "C", "I", "S", "P", "Í"],
+              ["Q", "R", "H", "E", "R", "M", "A", "N", "O"],
+              ["H", "P", "B", "I", "A", "C", "B", "O", "U"],
+              ["Ñ", "C", "A", "N", "J", "X", "U", "F", "Y"],
+              ["G", "K", "J", "A", "B", "O", "E", "C", "I"],
+              ["U", "Z", "X", "V", "I", "J", "L", "B", "H"],
+              ["L", "A", "J", "B", "A", "S", "O", "R", "P"]
+            ],
+            "objetivo_palabras": 6
           }
         },
         {
-          "id": "U3-p41-act06",
+          "id": "U3-p41-act6",
           "numero": 6,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "¿Qué hora es?",
-          "contenido_linguistico": ["la hora"],
-          "campo_semantico": "La hora",
+          "vocabulario": ["Números cardinales"],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Son"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "4 relojes despertadores numerados 1 al 4 con horas distintas (analógicos)." },
+          "imagen": { "presente": true, "descripcion": "Cuatro relojes analógicos (1-4) con las agujas marcando: 1) 14:20, 2) 17:30, 3) 22:50, 4) 16:30." },
           "video": { "presente": false },
-          "respuestas": [
-            "1 Son las dos y veinte",
-            "2 Son las cinco y media",
-            "3 Son las once menos diez",
-            "4 Son las cuatro y media"
-          ]
+          "respuestas": ["1 Son las dos y veinte", "2 Son las cinco y media", "3 Son las once menos diez", "4 Son las cuatro y media"],
+          "datos": {}
         }
       ]
     }

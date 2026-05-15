@@ -5,6 +5,38 @@
 
 ---
 
+## [v10.129 — 2026-05-15] — Fase 1: U3 migrada a shape v10.117 + canonización "La hora" + nuevo lema "interesar" + propagación U3 a 7 lemas verbales
+
+Cuarta unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U3/`, rama `proc-u3-wip`, agente dry-run en chat limpio, commit candidato `98b68d4`, integración a main por copia controlada + reformateo canónico + actualización coordinada de dos registries).
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U3/U3-nc1-inventario.json`**: shape v10.117 completo. 10 páginas (32-41), 47 actividades, 5 cuadros (presente regulares, interrogativos, posesivos, La hora, /θ/). Vocab 1 principal (Parientes) + 9 recurrentes. Gramática 3 principales (Interrogativos, Posesivos, Pronombre sujeto) + 4 recurrentes. Pron/orto: Sonidos y correspondencias ortográficas (fonema /θ/). 15 lemas verbales en tiempos_y_verbos_consolidado. 13 entradas en `_decisiones_ia`. **§5.2 metalengua de instrucción aplicada sistemáticamente** (formalizada en v10.128c/d).
+  - Edición poscopia: en `p40-act1`, la forma `interesan` se separa de `gustar` y se codifica como entrada independiente del lema `interesar` (canónico nuevo). Bloque `interesar` añadido a `tiempos_y_verbos_consolidado` con descripcion.U3 explicando la construcción tipo gustar.
+
+- **`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`** — canonización P-La-hora:
+  - Nueva entrada **`La hora`** (`origen: excepcion`, `aliases_indice: []`) con `nota` explicando el material (en punto, y media, y cuarto, menos cuarto, y X minutos), la fuente (cuadro@p37#1 + p37-act5 de U3) y la razón del origen excepcion (PCIC A1 no tiene la categoría como entrada léxica dedicada, aparece marginalmente bajo "Tiempo libre y entretenimiento" como "horario"). Total entradas 101 → 102. `_meta.version` 1.3 → 1.4.
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`**:
+  - **Nuevo lema `interesar`** (`tipo gustar (regular)`, `tipo_de_verbo: ['tipo gustar','intransitivo']`, `apariciones.U3:["PRE"]`). Total verbos 48 → 49.
+  - **7 lemas existentes con `apariciones.U3:["PRE"]` añadido:**
+    - `tener`, `llamarse`, `estar`, `gustar` — recurrentes en U3 con paradigma completado/reactivado.
+    - `jugar`, `venir`, `hacer` — codificados en U3 como **excepción aprobada por el autor** a la regla §5.2 de anticipación (mismo patrón aplicado en U2 con `ir/estar/gustar/hablar`). El paradigma canónico de estos lemas sigue siendo de unidades posteriores (U6/U7) pero su aparición material en U3 se conserva.
+  - `_meta.version` 1.1 → 1.2.
+
+**Notas operativas (decisiones del autor sobre propuestas §0.1 abiertas del agente):**
+
+- P-La-hora: **canonizada** como categoría léxica nueva (opción del autor).
+- P-interesar: **lema independiente añadido al registry** (opción del autor); en U3 deja de ir bajo `gustar`.
+- P-Hacer un cuaderno de vocabulario: rótulo editorial sin canónico gramatical, documentado en `_decisiones_ia` de U3, sin acción de registry.
+- P-verbos-anticipación: conservados como excepción aprobada (opción B del coordinador).
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U3/` y rama `proc-u3-wip` se conservan tras la integración — pendiente eliminarlos cuando el autor lo autorice.
+
+**Deuda restante en el bloque de re-extracción:** U4-U9 con shape legacy todavía pendientes de migración mediante el mismo flujo.
+
 ## [v10.128e — 2026-05-15] — Dashboard: render legible de arrays de objetos en `datos` (diálogos, fichas, pares, quiz)
 
 Hallazgo del autor revisando U2: bloques tipo `textos_personajes`, `dialogo`, `pares`, `fichas_modelo`, `preguntas_opciones` se renderizaban como JSON crudo (`{"personaje":"PROFESORA","texto":"Hola..."}`) por el fallback genérico en `renderDato` de `web/index.html`. Las comillas y llaves no introducen al personaje — visualmente incorrecto.

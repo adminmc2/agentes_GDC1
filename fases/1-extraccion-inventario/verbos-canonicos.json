@@ -1,7 +1,7 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.1",
+    "version": "1.2",
     "creado": "2026-05-11",
     "descripcion": "Registry canónico de lemas verbales de NC1. Cerrado en pieza 2 del rediseño (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §15). 48 lemas con shape {rasgo_por_tiempo, apariciones, tipo_de_verbo, tiempos, lo_que_se_trabaja}.",
     "estructura": "{verbos: {lema: {rasgo_por_tiempo, apariciones, tipo_de_verbo, tiempos, lo_que_se_trabaja}}}"
@@ -345,6 +345,9 @@
         ],
         "U2": [
           "PRE"
+        ],
+        "U3": [
+          "PRE"
         ]
       },
       "tipo_de_verbo": [
@@ -389,6 +392,9 @@
           "PRE"
         ],
         "U2": [
+          "PRE"
+        ],
+        "U3": [
           "PRE"
         ]
       },
@@ -435,6 +441,9 @@
       },
       "apariciones": {
         "U6": [
+          "PRE"
+        ],
+        "U3": [
           "PRE"
         ]
       },
@@ -487,6 +496,9 @@
           "PRE"
         ],
         "U7": [
+          "PRE"
+        ],
+        "U3": [
           "PRE"
         ]
       },
@@ -583,6 +595,9 @@
           "PRE"
         ],
         "U2": [
+          "PRE"
+        ],
+        "U3": [
           "PRE"
         ]
       },
@@ -834,6 +849,9 @@
         ],
         "U2": [
           "PRE"
+        ],
+        "U3": [
+          "PRE"
         ]
       },
       "tipo_de_verbo": [
@@ -871,6 +889,9 @@
           "PRE"
         ],
         "U7": [
+          "PRE"
+        ],
+        "U3": [
           "PRE"
         ]
       },
@@ -930,6 +951,24 @@
         ]
       },
       "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "interesar": {
+      "rasgo_por_tiempo": {
+        "Presente": "tipo gustar (regular)"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "tipo gustar",
         "intransitivo"
       ],
       "tiempos": [
