@@ -1407,8 +1407,28 @@ function renderInventario(inv) {
                     // Tabla de pares/tuplas (ej: letras_y_ejemplos)
                     return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><table style="font-size:13px;background:#FAFAFA;padding:6px;border-radius:6px;border-left:3px solid var(--md-primary-light);border-collapse:separate;border-spacing:8px 2px">${valor.map(row=>`<tr>${row.map(c=>`<td style="padding:1px 6px"><span style="font-weight:600;color:var(--md-primary-dark)">${_esc(c)}</span></td>`).join('')}</tr>`).join('')}</table></div>`;
                 }
-                // Lista de objetos (preguntas_opciones, etc.)
-                return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-size:13px;background:#FAFAFA;padding:8px 10px;border-radius:6px;border-left:3px solid var(--md-primary-light)">${valor.map(o=>`<div style="margin:4px 0">${_esc(JSON.stringify(o))}</div>`).join('')}</div></div>`;
+                // Lista de objetos: detectar shapes conocidas para render legible
+                const labelHead = `<div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div>`;
+                const boxStart = `<div style="font-size:13px;background:#FAFAFA;padding:8px 10px;border-radius:6px;border-left:3px solid var(--md-primary-light)">`;
+                const boxEnd = `</div>`;
+                // Diálogo con personaje + texto (dialogo, textos_personajes)
+                if (valor.every(o => o && typeof o === 'object' && 'personaje' in o && 'texto' in o)) {
+                    return `<div style="margin:6px 0">${labelHead}${boxStart}${valor.map(o => `<div style="margin:3px 0;display:flex;gap:10px;align-items:baseline"><span style="font-weight:600;color:var(--md-primary-dark);min-width:90px;text-transform:uppercase;font-size:11px;letter-spacing:0.5px;flex-shrink:0">${_esc(o.personaje)}</span><span style="flex:1">${_esc(o.texto)}</span></div>`).join('')}${boxEnd}</div>`;
+                }
+                // Pares informal/formal (tú vs usted)
+                if (valor.every(o => o && typeof o === 'object' && 'informal' in o && 'formal' in o)) {
+                    return `<div style="margin:6px 0">${labelHead}${boxStart}<table style="border-collapse:separate;border-spacing:12px 4px"><thead><tr><th style="text-align:left;font-size:11px;color:var(--md-on-surface-variant);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Informal (tú)</th><th style="text-align:left;font-size:11px;color:var(--md-on-surface-variant);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Formal (usted)</th></tr></thead><tbody>${valor.map(o => `<tr><td>${_esc(o.informal)}</td><td>${_esc(o.formal)}</td></tr>`).join('')}</tbody></table>${boxEnd}</div>`;
+                }
+                // Fichas modelo (ficha o numero + campos array)
+                if (valor.every(o => o && typeof o === 'object' && Array.isArray(o.campos))) {
+                    return `<div style="margin:6px 0">${labelHead}${boxStart}${valor.map(o => { const titulo = o.ficha || (o.numero != null ? `Ficha ${o.numero}` : ''); return `<div style="margin:4px 0"><span style="font-weight:600;color:var(--md-primary-dark);margin-right:8px">${_esc(titulo)}</span><span>${o.campos.map(c=>_esc(c)).join(' · ')}</span></div>`; }).join('')}${boxEnd}</div>`;
+                }
+                // Pregunta + opciones (quiz)
+                if (valor.every(o => o && typeof o === 'object' && 'pregunta' in o)) {
+                    return `<div style="margin:6px 0">${labelHead}${boxStart}${valor.map((o,i) => `<div style="margin:6px 0"><div style="font-weight:500">${i+1}. ${_esc(o.pregunta)}</div>${Array.isArray(o.opciones) ? `<ul style="margin:4px 0 4px 18px;padding:0">${o.opciones.map(op=>`<li>${_esc(op)}</li>`).join('')}</ul>` : ''}</div>`).join('')}${boxEnd}</div>`;
+                }
+                // Fallback: pares clave/valor por objeto
+                return `<div style="margin:6px 0">${labelHead}${boxStart}${valor.map(o => `<div style="margin:4px 0;padding:4px 0;border-bottom:1px dashed var(--md-outline-variant)">${Object.entries(o).map(([k,v]) => `<span style="margin-right:10px"><span style="font-weight:600;color:var(--md-primary-dark);font-size:11px;text-transform:uppercase;letter-spacing:0.3px">${_esc(_label(k))}:</span> <span>${typeof v === 'object' && v !== null ? _esc(JSON.stringify(v)) : _esc(v)}</span></span>`).join('')}</div>`).join('')}${boxEnd}</div>`;
             }
             if (typeof valor === 'object' && valor !== null) {
                 return `<div style="margin:6px 0"><div style="font-size:12px;font-weight:600;color:var(--md-primary-dark);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${_esc(_label(clave))}</div><div style="font-size:13px;background:#FAFAFA;padding:8px 10px;border-radius:6px;border-left:3px solid var(--md-primary-light);font-family:monospace">${_esc(JSON.stringify(valor, null, 2))}</div></div>`;

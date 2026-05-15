@@ -5,6 +5,24 @@
 
 ---
 
+## [v10.128e — 2026-05-15] — Dashboard: render legible de arrays de objetos en `datos` (diálogos, fichas, pares, quiz)
+
+Hallazgo del autor revisando U2: bloques tipo `textos_personajes`, `dialogo`, `pares`, `fichas_modelo`, `preguntas_opciones` se renderizaban como JSON crudo (`{"personaje":"PROFESORA","texto":"Hola..."}`) por el fallback genérico en `renderDato` de `web/index.html`. Las comillas y llaves no introducen al personaje — visualmente incorrecto.
+
+**Cambio en `web/index.html`** (función `renderDato`, rama "lista de objetos"):
+
+Detección por shape antes del fallback JSON. Cinco renders dedicados:
+
+1. **Diálogos con `{personaje, texto}`** (`textos_personajes`, variantes de `dialogo`): personaje a la izquierda en oliva oscuro (uppercase, letter-spacing) + texto a la derecha. Layout flex con `align-items:baseline`.
+2. **Pares `{informal, formal}`**: tabla bilingüe con cabecera "Informal (tú)" / "Formal (usted)".
+3. **Fichas modelo `{ficha|numero, campos[]}`**: rótulo de ficha en oliva + campos separados por `·`.
+4. **Quiz `{pregunta, opciones[]}`**: numeración + lista de opciones anidada.
+5. **Fallback de array-de-objetos genérico**: ya no es `JSON.stringify`; renderiza pares clave:valor por línea con la clave en oliva oscuro y separadores visuales.
+
+Aplica retroactivamente a todos los inventarios. Verificable en U1/U2 (varios bloques de diálogos y fichas modelo).
+
+**Sin cambios en `diagrama.py`** ni en los JSONs.
+
 ## [v10.128d — 2026-05-15] — Fase 1: retirada de "Caso histórico" en la regla de metalengua de instrucción
 
 Micro-fix tras v10.128c por dictamen del autor: la subsección añadida a `reglas-operativas.md §5.2` ("Regla de exclusión por metalengua de instrucción") incluía un párrafo final **"Caso histórico de aplicación"** con referencias a P-decisiones de unidades concretas (P4-revisada U0, P1 U1, P4 U2). Eso es narrativa retrospectiva sobre decisiones del autor en JSONs específicos — no encaja en un contrato operativo prescriptivo.
