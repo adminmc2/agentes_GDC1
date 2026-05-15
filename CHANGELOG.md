@@ -5,6 +5,47 @@
 
 ---
 
+## [v10.135c — 2026-05-15] — Fase 1: U4 — fusión de compuestos léxicos al lema base
+
+Continuación del saneamiento léxico de U4 tras v10.135b. Por dictamen del autor: los compuestos del tipo `X de Y`, `X + adj`, `X + marca` no aportan valor pedagógico separados de su base léxica cuando esta ya está atestada en la unidad. *"No es lo mismo pero en términos de vocabulario valen como X."*
+
+**Regla aplicada (solo a U4):** compuestos cuyo lema-cabeza ya está presente como item se fusionan en él. Fuentes mergeadas. Compuestos léxicos fijos sin lema-cabeza atestado (frutos secos, perritos calientes, comedor escolar) se mantienen.
+
+**23 compuestos fusionados:**
+
+| Compuesto | Lema |
+|---|---|
+| huevo frito | huevo |
+| zumo de naranja, zumo de piña | zumo |
+| atún con tomate | atún |
+| patatas fritas | patatas |
+| harina de maíz | maíz |
+| chocolate caliente | chocolate |
+| tomate frito, salsa de tomate | tomate |
+| tarta de chocolate | tarta |
+| pasta con tomate | pasta |
+| arroz a la cubana, arroz con tomate, arroz chino | arroz |
+| hamburguesa Brookling | hamburguesa |
+| ensalada mediterránea | ensalada |
+| sopa de cocido madrileño | sopa |
+| macarrones de Bolonia | macarrones |
+| pollo a la catalana, pollo asado | pollo |
+| filete a la plancha | filete |
+| menú del día | menú |
+| primer plato, segundo plato | plato |
+| puestos callejeros | puesto |
+
+**Resultado en U4:** 119 → 96 items (-23).
+
+- Alimentos: 60 → 50.
+- Comidas preparadas: 23 → 16.
+- Restaurante: 15 → 11.
+- Bebida: 11 → 9.
+
+**Validador desde main:** U4 → 0/0/0.
+
+**Sin retroactivo** en U1/U2/U3.
+
 ## [v10.135b — 2026-05-15] — Fase 1: U4 — colapso de flexiones sing/plural y masc/fem en `vocabulario_consolidado`
 
 Hallazgo del autor sobre U4: en los bloques léxicos del consolidado aparecían como items separados las formas singular y plural de la misma palabra (huevo/huevos, tomate/tomates, manzana/manzanas, pizza/pizzas, etc.) y las flexiones masc/fem de adjetivos (italiano/italiana, peruano/peruana, mexicano/mexicana, español/española/españoles). No tiene sentido pedagógicamente — son flexiones de un mismo lema.
