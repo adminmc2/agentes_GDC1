@@ -60,9 +60,66 @@ El rediseño cubre el curso **NC1** (Nuevo Compañeros 1). Multi-curso (NC2 u ot
 
 ---
 
-## §2. (paso 2 — pendiente, lo indicará el autor)
+## §2. Modelo de análisis por unidad (paso 2 — definido 2026-05-15)
 
-*(Placeholder. Se rellenará cuando el autor indique el siguiente paso a discutir.)*
+### §2.1. Tres momentos de análisis
+
+Cada unidad U[n] se analiza en **tres momentos** complementarios. Los tres son obligatorios; ninguno reemplaza a otro.
+
+1. **Intra-unidad** — análisis dentro de la propia U[n]: qué contenidos aparecen, en qué bloques, con qué función didáctica interna.
+2. **Cross-atrás** — comparación de U[n] contra U[0..n-1]: detecta retomas, ampliaciones, sistematizaciones y contrastes sobre lo ya introducido.
+3. **Cross-adelante** — comparación de U[n] contra U[n+1..N]: detecta **anticipaciones** (contenido que aparece en U[n] como input incidental antes de ser canónico en una unidad posterior).
+
+El momento 3 exige que el mapa canónico del curso (`nc1-curso.json` + registries canónicos con `_apariciones`) esté disponible al procesar U[n]. Por eso fase 2 se ejecuta **después** de que fase 1 haya cerrado el inventario de U[n] y los registries reflejen el rol canónico de cada contenido por unidad.
+
+### §2.2. Granularidad por bloque
+
+La unidad de análisis (el "hilo" de reciclaje) depende del bloque:
+
+| Bloque | Granularidad del hilo | Fuente canónica |
+|---|---|---|
+| Vocabulario | **Campo semántico** | `campos-semanticos-canonicos.json` + `vocabulario_consolidado` del inventario |
+| Gramática | **Categoría gramatical** | `gramatica-canonica.json` + `gramatica_consolidada` del inventario |
+| Pronunciación/ortografía | **Categoría pron/orto** | `pronunciacion-ortografia-canonica.json` + `pronunciacion_ortografia_consolidada` del inventario |
+| Verbal | **Lema** | `verbos-canonicos.json` + `tiempos_y_verbos_consolidado[].lema` del inventario |
+
+Vocabulario es el único bloque con granularidad de campo semántico (agrupa ítems léxicos). Los otros tres bloques bajan a la unidad atómica de su dimensión (categoría o lema).
+
+### §2.3. Etiquetas del hilo (coexistentes)
+
+Cada evento de un hilo en una unidad lleva **una lista de etiquetas** (`etiquetas[]`), no una `accion` única. Las seis etiquetas posibles son:
+
+| Etiqueta | Significado |
+|---|---|
+| `introduce` | Primera aparición canónica del contenido en el curso. |
+| `amplia` | Añade ítems, formas o usos a un contenido ya introducido. |
+| `aplica` | Reutiliza el contenido en una tarea sin presentarlo como objeto de estudio. |
+| `sistematiza` | Recoge y organiza explícitamente lo que ya estaba activo (cuadro, regla, paradigma). |
+| `contrasta` | Pone en oposición con otro contenido (ser/estar, indefinido/definido, etc.). |
+| `anticipacion` | Aparece como input incidental antes de ser canónico en una unidad posterior. |
+
+**Coexistencia:** un mismo evento puede llevar varias etiquetas a la vez (ej. `["amplia", "sistematiza"]` cuando un cuadro añade ítems y los organiza; `["aplica", "anticipacion"]` cuando una actividad reutiliza algo ya canónico pero además introduce de pasada una forma que se canonizará después).
+
+**Detección por momento:** `introduce` y `anticipacion` solo se detectan correctamente con cross-adelante (momento 3). `amplia`, `aplica`, `sistematiza`, `contrasta` requieren cross-atrás (momento 2). La etiqueta sola intra-unidad no basta para asignar correctamente ninguna.
+
+### §2.4. Shape del hilo (esbozo)
+
+```json
+{
+  "bloque": "vocabulario | gramatica | pronunciacion_ortografia | verbal",
+  "titulo": "<nombre canónico del registry>",
+  "eventos": [
+    {
+      "unidad": 3,
+      "etiquetas": ["amplia", "sistematiza"],
+      "evidencias": [ ... ],
+      "_nota_ia": "opcional, propuesta razonada de la Capa 2"
+    }
+  ]
+}
+```
+
+El detalle del shape (campos exactos, evidencias, persistencia de notas IA) se cierra en pasos siguientes.
 
 ---
 
@@ -92,3 +149,4 @@ Tabla de seguimiento de qué piezas de la versión vieja se importan al document
 ## Histórico de versiones del documento activo
 
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
+- **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
