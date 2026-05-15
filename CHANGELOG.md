@@ -5,6 +5,34 @@
 
 ---
 
+## [v10.135 — 2026-05-15] — Fase 1: U4 migrada a shape v10.117 + propagación U4 a 6 lemas verbales
+
+Quinta unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U4/`, rama `proc-u4-wip`, agente dry-run en chat limpio, commit candidato `09af577`, integración a main por copia controlada + reformateo canónico + actualización del registry verbal).
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U4/U4-nc1-inventario.json`**: shape v10.117 completo. 10 páginas (42-51), 49 actividades, 6 cuadros. Vocab 2 principales (Alimentos, Comidas preparadas) + 3 recurrentes (Bebida, Restaurante, Adjetivos de nacionalidad). Gramática 5 principales (Construcción gustar/doler, Pronombres átonos de OI, Artículos indeterminados, Nombres contables e incontables, Hay) + 2 recurrentes (Concordancia de género, Interrogativos). Pron/orto: Sonidos y correspondencias ortográficas. 8 lemas verbales en `tiempos_y_verbos_consolidado` (gustar, querer, comer, hacer, ser, tener, llamarse, ir). 10 entradas en `_decisiones_ia`. §5.2 metalengua aplicada sistemáticamente.
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`** — propagación: 6 lemas con `apariciones.U4:["PRE"]` añadido:
+  - `comer`, `ser`, `tener`, `llamarse` (recurrentes en U4 con paradigma activado).
+  - `hacer`, `ir` (excepción §5.2 anticipación aprobada por el autor — mismo patrón aplicado en U2/U3).
+  - `gustar` y `querer` ya tenían U4 declarado en el registry; no requirió cambio.
+  - `_meta.version` 1.2 → 1.3.
+
+**Decisiones sobre propuestas §0.1 abiertas del agente:**
+
+- **Bebida vs Bebidas**: el agente sugirió plural (`Bebidas`); por dictamen final del autor se mantiene **`Bebida`** literal del registry (origen `pcic_a1`, sin aliases).
+- **Artículos indeterminados** — verificación: U1/U2/U3 NO trabajan la categoría canónicamente (solo `Artículos determinados`). U4 ES la primera aparición canónica; registry ya lo refleja. **Sin acción.**
+- **`salir`** (forma "sale del horno" en p50): anticipación a U7 documentada en `_decisiones_ia`. **Sin acción.**
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0 · U4 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U4/` y rama `proc-u4-wip` se conservan tras la integración — pendiente eliminarlos cuando el autor lo autorice.
+
+**Cambio de flujo a partir de U5:** decisión editorial del autor — el flujo de worktree aislado + chat de procesamiento aparte se discontinúa desde U5. A partir de U5, el coordinador extrae directamente desde el chat coordinador (sin worktree, sin dry-run en chat). Memoria operativa guardada en `feedback_extraccion_directa_post_u4.md`.
+
+**Deuda restante en el bloque de re-extracción:** U5-U9 con shape legacy todavía pendientes (cambio de flujo aplicable desde U5).
+
 ## [v10.134 — 2026-05-15] — Fase 1: sincronización de P-decisiones tras retirada de "Nombres propios"
 
 Hallazgo del revisor: tras v10.131 (retirada del canon `Nombres propios`), las entradas antiguas de `_decisiones_ia` en U1 y U2 quedaron materialmente falsas — afirmaban que Nombre/topónimos se habían reasignado a la categoría gramatical, cosa que ya no es cierta. El JSON sostenía simultáneamente la ampliación/reasignación y la retirada de la misma categoría.

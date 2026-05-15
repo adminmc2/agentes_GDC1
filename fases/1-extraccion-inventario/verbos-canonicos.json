@@ -1,7 +1,7 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.2",
+    "version": "1.3",
     "creado": "2026-05-11",
     "descripcion": "Registry canónico de lemas verbales de NC1. Cerrado en pieza 2 del rediseño (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §15). 48 lemas con shape {rasgo_por_tiempo, apariciones, tipo_de_verbo, tiempos, lo_que_se_trabaja}.",
     "estructura": "{verbos: {lema: {rasgo_por_tiempo, apariciones, tipo_de_verbo, tiempos, lo_que_se_trabaja}}}"
@@ -117,6 +117,9 @@
       },
       "apariciones": {
         "U3": [
+          "PRE"
+        ],
+        "U4": [
           "PRE"
         ]
       },
@@ -445,6 +448,9 @@
         ],
         "U3": [
           "PRE"
+        ],
+        "U4": [
+          "PRE"
         ]
       },
       "tipo_de_verbo": [
@@ -474,6 +480,9 @@
           "IND"
         ],
         "U2": [
+          "PRE"
+        ],
+        "U4": [
           "PRE"
         ]
       },
@@ -598,6 +607,9 @@
           "PRE"
         ],
         "U3": [
+          "PRE"
+        ],
+        "U4": [
           "PRE"
         ]
       },
@@ -828,6 +840,9 @@
         ],
         "U5": [
           "PRE"
+        ],
+        "U4": [
+          "PRE"
         ]
       },
       "tipo_de_verbo": [
@@ -851,6 +866,9 @@
           "PRE"
         ],
         "U3": [
+          "PRE"
+        ],
+        "U4": [
           "PRE"
         ]
       },
