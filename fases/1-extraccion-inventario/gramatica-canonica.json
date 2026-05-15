@@ -51,10 +51,10 @@
       "items": ["masculino", "femenino"]
     },
     "Nombres propios": {
-      "_pcic_ref": "PCIC A1 §1.1.1 Nombres propios (antropónimos y topónimos)",
+      "_pcic_ref": "PCIC A1 §1.1.1 Nombres propios (apartado cubre antropónimos y topónimos; la canonización aquí se limita por ahora a antropónimos)",
       "_apariciones": { "U1": "principal (antropónimos en presentaciones: regla sin-artículo + estructura con llamarse)" },
-      "items": ["antropónimos", "topónimos"],
-      "_nota": "Añadido en v10.123 al reasignar la entrada \"Nombre\" de vocabulario_consolidado a gramatica_consolidada en U1. El valor pedagógico de los nombres propios en U1 no es léxico (los items concretos: David, Javier, María...) sino gramatical: en español los nombres propios se usan SIN artículo determinado, contraste con lenguas que admiten el artículo en uso coloquial."
+      "items": ["antropónimos"],
+      "_nota": "Añadido en v10.123 al reasignar la entrada \"Nombre\" de vocabulario_consolidado a gramatica_consolidada en U1. El valor pedagógico de los nombres propios en U1 no es léxico (los items concretos: David, Javier, María...) sino gramatical: en español los nombres propios se usan SIN artículo determinado, contraste con lenguas que admiten el artículo en uso coloquial. Los topónimos del apartado PCIC §1.1.1 quedan diferidos: serán canonizables por separado cuando una unidad presente material gramatical específico sobre nombres propios de lugar (probablemente vinculado a 'Adjetivos de nacionalidad' / países hispanohablantes en U2)."
     },
     "Concordancia de número": {
       "_pcic_ref": "PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3",

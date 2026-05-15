@@ -5,6 +5,23 @@
 
 ---
 
+## [v10.123b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.123 (P4 actualizada + topónimos diferidos + formato items)
+
+Tres ajustes de coherencia detectados por el revisor tras el commit v10.123:
+
+1. **P4 en `_decisiones_ia` de U1** quedaba materialmente falsa: seguía afirmando que "Nombre" entraba como principal en `vocabulario_consolidado`, contradiciendo el cambio aplicado. Reescrita como "P4 resuelta (a) parcialmente revisada por dictamen editorial (v10.123)" para reflejar que solo Edad y Número de teléfono se mantienen en vocabulario; Nombre fue reasignado a gramática como Nombres propios con justificación pedagógica.
+
+2. **Alcance sobre-declarado de `Nombres propios` en el registry**: la entrada declaraba `items: ["antropónimos", "topónimos"]` aunque solo los antropónimos están canonizados materialmente en U1. Cambios:
+   - `items` restringido a `["antropónimos"]`.
+   - `_pcic_ref` reformulado para aclarar el alcance: *"PCIC A1 §1.1.1 Nombres propios (apartado cubre antropónimos y topónimos; la canonización aquí se limita por ahora a antropónimos)"*.
+   - `_nota` ampliada con cláusula final que difiere los topónimos: *"...quedan diferidos: serán canonizables por separado cuando una unidad presente material gramatical específico sobre nombres propios de lugar (probablemente vinculado a 'Adjetivos de nacionalidad' / países hispanohablantes en U2)."*
+
+3. **Bug de formato del serializador custom de v10.123**: varios bloques `items` quedaron con múltiples objetos en una sola línea pegados con espacios (legible pero feo, ej. `Pronombre sujeto`, `ser/llamarse/tener`). Aplicado fix de formato que detecta líneas con `}, {` consecutivos y los separa en líneas independientes con indentación correcta. Sin cambios editoriales; +239 líneas / -21 líneas en U1 puramente cosméticas.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+**Trazabilidad:** el commit v10.123 queda aprobado por el revisor "con reservas" cerradas en este v10.123b. Sin reversión necesaria.
+
 ## [v10.123 — 2026-05-15] — Fase 1: reasignación editorial de "Nombre" en U1 (vocabulario → gramática "Nombres propios")
 
 Corrección editorial sobre U1 (post-v10.121) por dictamen del autor: la entrada `Nombre` que el agente de extracción había colocado en `vocabulario_consolidado.principal` no es un campo semántico léxico (no aporta items léxicos enseñables — los nombres propios concretos como *David, Javier, María* son antropónimos, no vocabulario aprendible uno a uno). Su valor pedagógico real es **gramatical**: en español los nombres propios de persona se usan SIN artículo determinado (*Me llamo María*, no *Me llamo la María*), contraste útil con lenguas que admiten el artículo en uso coloquial.
