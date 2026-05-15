@@ -2,6 +2,8 @@
 
 > Criterios de decisión para la construcción automatizada de `nc1-reciclaje.json`. Este archivo es la fuente única de verdad para los scripts y para los LLMs que trabajen en esta fase.
 
+> ⚠️ **Estado transitorio (2026-05-15, v10.119):** este archivo describe la lógica original del nivel `auto` cuando los inventarios tenían la clave `actividad.campo_semantico` y `vocabulario_consolidado.{principal,recurrente,comprension}` (shape v10.114). Tras el rediseño de fase 1 v10.115-118 esa clave fue eliminada y el sub-bloque `comprension` también. Las menciones a `campo_semantico` en §1.1 y §1.2 y §4 describen el modelo viejo y **siguen siendo accuratas para los inventarios actualmente operativos** (U0-U9 en shape v10.114). Tras la migración de los 10 inventarios al shape v10.117, este archivo deberá reformularse: el nivel `auto` se construirá desde las claves de los 4 bloques top-level consolidados (`vocabulario_consolidado.{principal,recurrente}`, `gramatica_consolidada.{principal,recurrente}`, `pronunciacion_ortografia_consolidada.{principal,recurrente}`, `tiempos_y_verbos_consolidado[].lema`) y desde las 4 listas tipadas por actividad. Pendiente como parte de la reactivación de fase 2.
+
 ---
 
 ## 1. Criterios de agrupación y naming de hilos

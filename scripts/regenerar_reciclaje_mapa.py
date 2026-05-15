@@ -3,6 +3,16 @@
 Regenera los hilos de nivel `mapa` en `unidades/nc1-reciclaje.json`
 a partir de `unidades/nc1-curso.json`.
 
+⚠️ ESTADO TRANSITORIO (2026-05-15, v10.119):
+   Este script lee `nc1-curso.json`, que no cambió de shape entre v10.114 y v10.117.
+   En principio sigue siendo operativo aunque fase 2 esté pausada (decisión 36, v10.108).
+   PERO: el output que genera (hilos `nivel_analisis: "mapa"` en `nc1-reciclaje.json`)
+   convive con los hilos `nivel_analisis: "auto"` generados por `regenerar_reciclaje_vocabulario.py`,
+   que SÍ está en shape v10.114 obsoleto. Mientras `nc1-reciclaje.json` no se regenere
+   íntegramente con scripts adaptados al shape v10.117, ejecutar solo este script puede
+   producir un `nc1-reciclaje.json` mixto (mapa nuevo + auto viejo). Coordinar la
+   regeneración completa cuando se reactive fase 2.
+
 Comportamiento:
 - Lee nc1-curso.json y extrae vocabulario, gramática, comunicación,
   pronunciación y para_aprender por unidad.

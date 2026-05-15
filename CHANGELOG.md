@@ -5,6 +5,27 @@
 
 ---
 
+## [v10.120 — 2026-05-15] — Fase 2: limpieza documental tras rediseño de fase 1 v10.115-118
+
+Limpieza declarativa de drift en docs y scripts de fase 2 tras los cambios de shape de fase 1 en v10.115-118 (eliminación de `actividad.campo_semantico`, eliminación de `vocabulario_consolidado.comprension`, renombrado `fonetica → pronunciacion_ortografia`, 4 bloques top-level consolidados nuevos, 4 listas tipadas por actividad).
+
+**Sin cambios operativos en fase 2** (sigue PAUSADA por decisión 36 v10.108). El reciclaje `nc1-reciclaje.json` y los 2 scripts de regeneración permanecen en shape v10.114; su migración al shape v10.117 está bloqueada por el procesamiento pendiente de U1-U9 (U0 ya migrada en v10.119). Este lote solo añade declaraciones explícitas para que el drift sea visible en lugar de silencioso.
+
+- `fases/2-reciclaje/CLAUDE.md` regla crítica 1 reformulada: retira mención obsoleta a `campo_semantico` (eliminado v10.115) y sustituye por referencia a las claves de los 4 bloques top-level consolidados + 4 listas tipadas por actividad como fuente de naming canónico de hilos.
+- `fases/2-reciclaje/CLAUDE.md` banner nuevo "Estado actual" al inicio: declara explícitamente la pausa + el bloqueo operativo añadido tras v10.115-118 + dependencias para reactivación.
+- `fases/2-reciclaje/reglas-reciclaje.md` header con cláusula transitoria explícita: las menciones a `campo_semantico` en §1.1, §1.2 y §4 describen el modelo viejo (siguen accuratas para U1-U9 actualmente en shape v10.114) y tendrán que reformularse cuando se migren los 9 inventarios restantes al shape v10.117. Sin cambios al cuerpo (el rediseño operativo de las reglas se hace en lote separado tras reactivación).
+- `scripts/regenerar_reciclaje_vocabulario.py` banner en docstring: declara shape v10.114 asumido + cambios de v10.115-118 + fallará si se ejecuta contra inventarios shape v10.117 + pendiente de adaptación tras reactivación.
+- `scripts/regenerar_reciclaje_mapa.py` banner en docstring: lee `nc1-curso.json` que no cambió de shape, pero advierte de que el output mixto (mapa nuevo + auto viejo del otro script) puede producir `nc1-reciclaje.json` incoherente. Recomienda coordinar la regeneración completa.
+
+**Estado declarado de fase 2 tras v10.120:**
+
+- PAUSADA por decisión 36 (v10.108) — vigente.
+- Bloqueo operativo: shape v10.114 en scripts/output, incompatible con shape v10.117 que producen las extracciones nuevas (U0 ya migrada v10.119; U1-U9 pendientes).
+- Drift documental declarado, no silencioso: cualquier lector ve qué falta migrar.
+- Decisión P1 del REDISEÑO-EN-CURSO.md sigue abierta.
+- Implementación de Capa 1 (R1-R5 cross-unidad) pendiente.
+- Reactivación condicionada a: U1-U9 migradas al shape v10.117 + adaptación de los 2 scripts + cierre de P1 + regeneración íntegra de `nc1-reciclaje.json`.
+
 ## [v10.119 — 2026-05-15] — Fase 1: U0 migrada a shape v10.117 + canonización "Saludos y despedidas"
 
 Primera unidad re-procesada con el flujo de worktree aislado introducido en v10.118c (`prompt-dry-run.md`): `../guia-proc-U0/` con rama `proc-u0-wip`, agente dry-run en chat limpio, commit candidato 485f9e5 en el worktree, integración a main por copia controlada del JSON + alta del nuevo canónico en el registry léxico.

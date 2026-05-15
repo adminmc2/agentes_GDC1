@@ -2,6 +2,8 @@
 
 > Auto-cargado por Claude Code al trabajar dentro de `fases/2-reciclaje/`. Contrato corto de la fase: qué produce, dónde input/output, cómo validar, reglas críticas, navegación.
 
+> ⚠️ **Estado actual (2026-05-15, v10.119):** **FASE 2 PAUSADA** por decisión 36 (v10.108). Bloqueo operativo añadido tras v10.115-118: los **scripts** `regenerar_reciclaje_mapa.py` y `regenerar_reciclaje_vocabulario.py` y el **output** `unidades/nc1-reciclaje.json` (fechado 2026-05-11) están en **shape v10.114** (pre-rediseño). Tras los cambios de fase 1 v10.115-118 (eliminación de `campo_semantico` y de `vocabulario_consolidado.comprension`, renombrado `fonetica → pronunciacion_ortografia`, 4 bloques top-level consolidados nuevos, 4 listas tipadas por actividad), los scripts fallarán si se ejecutan contra inventarios en shape v10.117. La reactivación operativa de fase 2 está **bloqueada por el procesamiento de unidades U0-U9 con shape v10.117** y exige adaptación previa de los 2 scripts + regeneración íntegra de `nc1-reciclaje.json`. Pendiente: cerrar decisión P1 del `REDISEÑO-EN-CURSO.md` + implementar Capa 1 (R1-R5).
+
 ---
 
 ## Qué produce esta fase
@@ -55,7 +57,7 @@ Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 
 ## Reglas críticas
 
-1. **Naming obligatorio:** el `titulo` de un hilo es siempre el nombre canónico del contenido tal como aparece en `nc1-curso.json` o en el `campo_semantico` del inventario. Nunca un nombre inventado o genérico.
+1. **Naming obligatorio:** el `titulo` de un hilo es siempre el nombre canónico del contenido tal como aparece en `nc1-curso.json` o en las claves de los bloques top-level consolidados del inventario (`vocabulario_consolidado.{principal,recurrente}`, `gramatica_consolidada.{principal,recurrente}`, `pronunciacion_ortografia_consolidada.{principal,recurrente}`, `tiempos_y_verbos_consolidado[].lema`). Nunca un nombre inventado o genérico. *(Tras v10.115 la clave `campo_semantico` por actividad fue eliminada; el naming canónico se toma ahora de los bloques consolidados y de las referencias en las 4 listas tipadas por actividad.)*
 2. **Un hilo por campo semántico:** si el nivel `auto` genera hilos separados para dos campos (ej. "Países hispanohablantes" y "Nacionalidades"), el nivel `mapa` también los separa. No se agrupan campos distintos en un mismo hilo.
 3. **Acciones con criterio:** ver `reglas-reciclaje.md` §2 para la tabla de acciones (introduce/amplia/aplica/sistematiza/contrasta).
 4. **Los scripts no inventan:** si un contenido no aparece en la fuente, no se genera hilo. Los scripts solo leen, no interpretan.

@@ -3,7 +3,22 @@
 Regenera los hilos automáticos de vocabulario en `unidades/nc1-reciclaje.json`
 a partir de `vocabulario_consolidado` de cada inventario.
 
-Comportamiento:
+⚠️ ESTADO TRANSITORIO (2026-05-15, v10.119):
+   Este script asume SHAPE v10.114 (pre-rediseño de fase 1):
+     - actividad.campo_semantico presente
+     - vocabulario_consolidado con 3 sub-bloques: principal/recurrente/comprension
+     - enfoque admite valor 'fonetica' (no 'pronunciacion_ortografia')
+   Tras el rediseño de fase 1 v10.115-118 el shape cambió:
+     - campo_semantico eliminado del schema
+     - vocabulario_consolidado reducido a 2 sub-bloques: principal/recurrente
+     - 3 bloques top-level consolidados nuevos paralelos
+       (tiempos_y_verbos_consolidado, gramatica_consolidada, pronunciacion_ortografia_consolidada)
+     - 4 listas tipadas por actividad
+   Este script FALLARÁ si se ejecuta contra inventarios en shape v10.117.
+   Pendiente de adaptación cuando se reactive fase 2 (decisión 36, v10.108).
+   Fase 2 actualmente PAUSADA por el procesamiento pendiente de U0-U9 al shape nuevo.
+
+Comportamiento (modelo v10.114):
 - Lee todos los inventarios `unidades/U*/U*-nc1-inventario.json` disponibles.
 - Por cada `campo_semantico` único (en principal / recurrente / comprension),
   genera un hilo con `nivel_analisis: "auto"`.
