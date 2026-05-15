@@ -5,6 +5,16 @@
 
 ---
 
+## [v10.124b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.124 (descripción + P3 sincronizadas con reclasificación de p14-act4 + regresión de formato resuelta)
+
+Dos hallazgos del revisor sobre v10.124:
+
+1. **Trazabilidad contradictoria.** Tras retirar `Adjetivos de nacionalidad` del `vocabulario` de p14-act4, dos zonas del JSON seguían afirmando que la categoría se trabaja allí: la `descripcion.U1` del bloque consolidado (lista los "sitios de trabajo": "...p13-act8, p14-act1, p14-act4, p15-act6...") y la entrada P3 de `_decisiones_ia` (misma enumeración). El archivo sostenía dos cosas a la vez. **Fix:** ambos textos reescritos retirando p14-act4 de los "sitios de trabajo léxico" y añadiendo aclaración explícita: la actividad ya no referencia esta categoría en su vocabulario por foco morfológico; los items genuinos que aparecen en sus respuestas (griego/-a, alemán/-a, brasileño/-a) se conservan en el bloque por aparición material en p14-act4@R, pero no por trabajo léxico-nacional pedagógicamente dirigido. P3 marcada como "parcialmente revisada por dictamen editorial (v10.124)" con cruce a P13.
+
+2. **Regresión de formato.** El serializador custom usado en v10.124 reintrodujo el bug que v10.123b había cerrado: arrays `items` con múltiples objetos pegados en una sola línea (visible en `Objetos de clase`, `Nombres de las letras`, etc.). **Fix:** reaplicado el separador de líneas que ya funcionaba en v10.123b (detecta líneas con `}, {` consecutivos y los separa con indentación correcta). 18 líneas afectadas reformateadas.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
 ## [v10.124 — 2026-05-15] — Fase 1: saneamiento de "Adjetivos de nacionalidad" en U1 + nueva categoría "Gentilicios"
 
 Hallazgo del autor durante revisión post-v10.123b: el bloque `vocabulario_consolidado.recurrente."Adjetivos de nacionalidad"` de U1 incluía items que no son gentilicios de país.
