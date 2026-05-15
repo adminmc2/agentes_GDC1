@@ -1,12 +1,12 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.2",
+    "version": "1.3",
     "actualizado": "2026-05-15",
     "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.",
     "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
   },
-  "version": "1.2",
+  "version": "1.3",
   "actualizado": "2026-05-15",
   "campos": [
     {
@@ -24,7 +24,11 @@
     {
       "canonico": "Números cardinales",
       "origen": "indice",
-      "aliases_indice": ["Números 0-10", "Números 1-20", "Números 21-100"],
+      "aliases_indice": [
+        "Números 0-10",
+        "Números 1-20",
+        "Números 21-100"
+      ],
       "aliases_auto": [],
       "nota": "Renombrado en v10.121 desde 'Números 0-10' (origen: indice U0) para abarcar las apariciones de U0 (0-10), U1 (0-20) y U2 (21-100) bajo un único canónico escalable. Los rótulos editoriales por unidad quedan registrados como aliases_indice."
     },
@@ -608,9 +612,18 @@
     {
       "canonico": "Saludos y despedidas",
       "origen": "excepcion",
-      "aliases_indice": ["Saludos"],
+      "aliases_indice": [
+        "Saludos"
+      ],
       "aliases_auto": [],
       "nota": "No aparece en el índice editorial de U0 ni en PCIC A1 vocabulario (el contenido pragmático vive en PCIC A1 comunicación). Canonizado en v10.119 por hallazgo de extracción de U0: cuadro p11 con fórmulas 'Buenos días / Buenas tardes / Buenas noches'. El rótulo verbatim del libro 'Saludos' queda registrado como aliases_indice."
+    },
+    {
+      "canonico": "Gentilicios",
+      "origen": "excepcion",
+      "aliases_indice": [],
+      "aliases_auto": [],
+      "nota": "Añadido en v10.124 por hallazgo del autor durante revisión de U1: el bloque 'Adjetivos de nacionalidad' incluía items que no son gentilicios de país (Madrid → madrileña, África → africana). Distinción editorial: 'Adjetivos de nacionalidad' se reserva para gentilicios de país (mexicano, español, japonés, etc.); 'Gentilicios' cubre gentilicios regionales (ciudades, regiones, comunidades autónomas) y continentales que el libro presenta con la misma función comunicativa (presentación personal: Soy madrileña, de Madrid) pero estrictamente no son nacionalidades. PCIC A1 §1 Información personal usa 'lugar de origen' como categoría más amplia."
     }
   ]
 }

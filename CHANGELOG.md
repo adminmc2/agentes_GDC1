@@ -5,6 +5,28 @@
 
 ---
 
+## [v10.124 — 2026-05-15] — Fase 1: saneamiento de "Adjetivos de nacionalidad" en U1 + nueva categoría "Gentilicios"
+
+Hallazgo del autor durante revisión post-v10.123b: el bloque `vocabulario_consolidado.recurrente."Adjetivos de nacionalidad"` de U1 incluía items que no son gentilicios de país.
+
+**Errores detectados:**
+
+- **`campeón` y `campeona`**: sustantivos comunes que aparecen en `p14-act4` ("Completa la tabla con el femenino o el masculino") como ejemplo del patrón morfológico `-ón/-ona`, junto a `profesor/-a`, `niño/-a`, `amiga/-o`. El agente los confundió con gentilicios por la coincidencia visual del sufijo con `-és/-esa` (de gentilicios reales). Eliminados del bloque.
+- **`mexicanas` (plural)**: redundante con `mexicana` — el lema canónico se conserva en singular. Eliminado.
+- **`madrileña` y `africana`**: gentilicios genuinos pero NO de país. `madrileña` es gentilicio de ciudad (Madrid); `africana` es gentilicio continental. PCIC A1 §1 distingue: nacionalidad = país. Movidos a nuevo canónico.
+
+**Cambios en main:**
+
+- **`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`**: nueva entrada **`Gentilicios`** (`origen: excepcion`, `aliases_indice: []`) con `nota` explicando la distinción editorial respecto a `Adjetivos de nacionalidad` (nacionalidad = país; gentilicios = ciudad/región/continente con la misma función comunicativa pero sin ser nacionalidades estrictas). Total entradas 100 → 101. `_meta.version` 1.2 → 1.3.
+- **`unidades/U1/U1-nc1-inventario.json`**:
+  - `vocabulario_consolidado.recurrente."Adjetivos de nacionalidad".items`: eliminados `campeón`, `campeona`, `mexicanas`; movidos `madrileña` y `africana` al nuevo bloque.
+  - `vocabulario_consolidado.recurrente."Gentilicios"`: nuevo bloque con los 2 items movidos + `descripcion.U1` explicando su función comunicativa equivalente y la separación canónica.
+  - **`p14-act4`** (reclasificación editorial): retirado `"Adjetivos de nacionalidad"` de `vocabulario`. La actividad teaches Concordancia de género (morfología `-o/-a`, `-és/-esa`, `-ón/-ona`, `-án/-ana`) sobre una mezcla de profesiones, sustantivos comunes y gentilicios; su foco pedagógico es gramatical, no léxico-nacional. `gramatica: ["Concordancia de género"]` se mantiene. Los items genuinos de nacionalidad que aparecen en respuestas (griego/-a, alemán/-a, brasileño/-a) se conservan en el bloque consolidado por aparición material en respuestas (p14-act4@R).
+  - **`p12-act1`, `p12-act2`, `p15-act6`**: añadido `"Gentilicios"` a `vocabulario` (madrileña en autodescripción de Katrina; modelo de presentación; africana en respuestas).
+  - **`_decisiones_ia`**: nueva entrada **P13** documentando el saneamiento completo.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
 ## [v10.123b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.123 (P4 actualizada + topónimos diferidos + formato items)
 
 Tres ajustes de coherencia detectados por el revisor tras el commit v10.123:
