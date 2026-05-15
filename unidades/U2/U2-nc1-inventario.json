@@ -391,103 +391,6 @@
         "descripcion": {
           "U2": "PCIC A1 §7.3 Demostrativos — Primer cierre canónico del paradigma de proximidad (este/esta/estos/estas) en función adjetiva y pronominal, con concordancia de género y número con el referente. Trabajado en cuadro p24 y aplicado en p25-6, p31-4."
         }
-      },
-      "Nombres propios": {
-        "items": [
-          {"palabra": "Cristina", "fuentes": ["p24-act3"]},
-          {"palabra": "Verónica", "fuentes": ["p24-act1"]},
-          {"palabra": "Tom", "fuentes": ["p24-act1"]},
-          {"palabra": "Andrés", "fuentes": ["p24-act1", "cuadro@p24#3"]},
-          {"palabra": "Gabriela", "fuentes": ["p24-act1"]},
-          {"palabra": "Lucía", "fuentes": ["p24-act2", "cuadro@p24#3"]},
-          {"palabra": "María", "fuentes": ["p24-act2", "p25-act6", "p25-act6@R", "p31-act1"]},
-          {"palabra": "Peter", "fuentes": ["p24-act2"]},
-          {"palabra": "Elisabeth", "fuentes": ["p24-act2"]},
-          {"palabra": "Juan", "fuentes": ["cuadro@p24#3", "p25-act7", "p31-act1"]},
-          {"palabra": "Lola", "fuentes": ["cuadro@p24#3", "p26-act1"]},
-          {"palabra": "Laura", "fuentes": ["cuadro@p24#3", "cuadro@p25"]},
-          {"palabra": "Rosa", "fuentes": ["cuadro@p24#3", "p24-act3"]},
-          {"palabra": "Dani", "fuentes": ["p24-act3"]},
-          {"palabra": "Pedro", "fuentes": ["p25-act4@R", "p25-act6"]},
-          {"palabra": "Graciela", "fuentes": ["p25-act7", "p25-act7@R", "p26-act1"]},
-          {"palabra": "Pablo", "fuentes": ["p25-act7@R", "p26-act1"]},
-          {"palabra": "Carlos", "fuentes": ["p25-act6", "p25-act6@R", "p31-act1"]},
-          {"palabra": "Alberto", "fuentes": ["p25-act6", "p25-act6@R", "p31-act1"]},
-          {"palabra": "Rosario", "fuentes": ["p25-act6", "p25-act6@R"]},
-          {"palabra": "Elena", "fuentes": ["p25-act6", "p25-act6@R"]},
-          {"palabra": "Alicia", "fuentes": ["p25-act6", "p25-act6@R"]},
-          {"palabra": "Luis Rodríguez", "fuentes": ["p25-act7", "p25-act7@R"]},
-          {"palabra": "Fernando", "fuentes": ["p25-act7", "p25-act7@R"]},
-          {"palabra": "Ricardo", "fuentes": ["cuadro@p25"]},
-          {"palabra": "Laura López", "fuentes": ["cuadro@p25"]},
-          {"palabra": "Natalia", "fuentes": ["p26-act1"]},
-          {"palabra": "Julia", "fuentes": ["p26-act1", "p27-act10"]},
-          {"palabra": "Jorge", "fuentes": ["p26-act1", "p26-act3@R", "p26-act4"]},
-          {"palabra": "Cervantes", "fuentes": ["p27-act8@R"]},
-          {"palabra": "Pepe", "fuentes": ["p27-act12"]},
-          {"palabra": "Pili", "fuentes": ["p27-act12"]},
-          {"palabra": "Marta Rodríguez", "fuentes": ["p28-act1"]},
-          {"palabra": "Pierre Dubois", "fuentes": ["p28-act1"]},
-          {"palabra": "Frida", "fuentes": ["p29-act3"]},
-          {"palabra": "Rubén", "fuentes": ["p29-act3"]},
-          {"palabra": "Violeta", "fuentes": ["p29-act3"]},
-          {"palabra": "Luisa", "fuentes": ["p31-act1"]},
-          {"palabra": "Don Quijote", "fuentes": ["p22-act1", "p22-act1@R"]},
-          {"palabra": "Batman", "fuentes": ["p25-act7", "p25-act7@R"]},
-          {"palabra": "El rey león", "fuentes": ["cuadro@p25"]},
-          {"palabra": "Parque Jurásico", "fuentes": ["cuadro@p25"]},
-          {"palabra": "Instituto Miguel de Unamuno", "fuentes": ["p28-act1", "p28-act1@R"]},
-          {"palabra": "Instituto Marie Curie", "fuentes": ["p28-act1", "p28-act1@R"]},
-          {"palabra": "Madrid", "fuentes": ["p24-act3", "p26-act1"]},
-          {"palabra": "Barcelona", "fuentes": ["p26-act1"]},
-          {"palabra": "Buenos Aires", "fuentes": ["p25-act7@R", "p26-act1", "p26-act4"]},
-          {"palabra": "Málaga", "fuentes": ["p26-act1"]},
-          {"palabra": "Andalucía", "fuentes": ["p26-act1"]},
-          {"palabra": "Cádiz", "fuentes": ["p28-act1", "p28-act2@R"]},
-          {"palabra": "París", "fuentes": ["p28-act1", "p28-act2@R"]},
-          {"palabra": "Francia", "fuentes": ["p28-act1", "cuadro@p25"]},
-          {"palabra": "Lima", "fuentes": ["p25-act7@R"]},
-          {"palabra": "Puebla", "fuentes": ["p25-act7@R"]},
-          {"palabra": "Estados Unidos", "fuentes": ["p23-act4"]},
-          {"palabra": "EE. UU.", "fuentes": ["p23-act5"]},
-          {"palabra": "América Central", "fuentes": ["p23-act4"]},
-          {"palabra": "América del Sur", "fuentes": ["p23-act4", "p23-act5"]},
-          {"palabra": "Nilo", "fuentes": ["p25-act7@R"]},
-          {"palabra": "Amazonas", "fuentes": ["cuadro@p25"]},
-          {"palabra": "Everest", "fuentes": ["cuadro@p25"]},
-          {"palabra": "Machu Picchu", "fuentes": ["p22-act1"]}
-        ],
-        "fuentes": [
-          "p22-act1",
-          "p22-act1@R",
-          "p23-act4",
-          "p23-act5",
-          "p24-act1",
-          "p24-act2",
-          "p24-act3",
-          "p24-act3@R",
-          "p25-act4@R",
-          "p25-act6",
-          "p25-act6@R",
-          "p25-act7",
-          "p25-act7@R",
-          "cuadro@p24#3",
-          "cuadro@p25",
-          "p26-act1",
-          "p26-act3@R",
-          "p26-act4",
-          "p27-act8@R",
-          "p27-act10",
-          "p27-act12",
-          "p28-act1",
-          "p28-act1@R",
-          "p28-act2@R",
-          "p29-act3",
-          "p31-act1"
-        ],
-        "descripcion": {
-          "U2": "PCIC A1 §3.3.1 — Primer cierre canónico expandido a antropónimos Y topónimos: U2 trabaja explícitamente la regla 'nombres propios → mayúscula inicial' aplicada a personas (Laura López), países (Francia), ciudades (Buenos Aires, Lima), ríos (Nilo, Amazonas), montañas (Everest) y títulos de obras (El rey león, Parque Jurásico, Don Quijote, Batman). Categoría ampliada por decisión editorial U2 (ver _decisiones_ia P3)."
-        }
       }
     },
     "recurrente": {
@@ -680,7 +583,8 @@
     "p30-act3 (Relaciona definiciones de palabras subrayadas): léxico heterogéneo intra-ejercicio (descanso=sustantivo, distintas=adjetivo, alrededor de=locución, extraescolares=adjetivo, optativas=adjetivo). Per §5.7, vocabulario de la actividad queda como [] sin forzar canónico único; los items relevantes quedan capturados en la categoría recurrente 'Centros e instituciones educativas'.",
     "Acts p27-act11 y p27-act12 ('Escucha y repite las vocales españolas' / 'Escucha y repite' palabras-muestra): enfoque=pronunciacion_ortografia. El cuadro lateral 'Pronunciación y ortografía' es un rótulo de sección, no un cuadro independiente con contenido propio; sus actividades se modelan directamente.",
     "p27-act7 ('Escribe los números que escuchas' con pares numéricos): enfoque=pronunciacion_ortografia per §2.3 heurística de dictado, no vocabulario. La fuente queda registrada en 'Números cardinales' como uso léxico secundario.",
-    "P14 resuelta por dictamen editorial del autor (v10.128b): saneamiento del bloque vocabulario_consolidado.recurrente tras revisión post-v10.128. (a) Eliminada la entrada 'Nacionalidad' (canónico PCIC A1 §1.7): el agente la había incluido justificándola como 'ya canónica en U1', pero U1 NO trabaja 'Nacionalidad' canónicamente — trabaja 'Adjetivos de nacionalidad' (canónico de origen indice) y 'Gentilicios'. Falso amigo entre dos entradas del registry que cubren material parcialmente solapado. La materia identitaria de U2 queda cubierta por 'Adjetivos de nacionalidad' (principal) y 'Países hispanohablantes' (principal); sin pérdida material. (b) Reescrita la descripcion.U2 de 'Centros e instituciones educativas': no entra como recurrente por reciclaje cross-unidad (no aparece como vocabulario canónico en ninguna otra unidad del curso) sino por el criterio (b) de §5.1.1 — material imprescindible para los textos/ejercicios de la unidad sin ser principal del índice editorial, soporte léxico de la sección 'cultura' ('La ESO en España'). Eliminadas 7 referencias a 'Nacionalidad' en actividad.vocabulario / cuadro.vocabulario."
+    "P14 resuelta por dictamen editorial del autor (v10.128b): saneamiento del bloque vocabulario_consolidado.recurrente tras revisión post-v10.128. (a) Eliminada la entrada 'Nacionalidad' (canónico PCIC A1 §1.7): el agente la había incluido justificándola como 'ya canónica en U1', pero U1 NO trabaja 'Nacionalidad' canónicamente — trabaja 'Adjetivos de nacionalidad' (canónico de origen indice) y 'Gentilicios'. Falso amigo entre dos entradas del registry que cubren material parcialmente solapado. La materia identitaria de U2 queda cubierta por 'Adjetivos de nacionalidad' (principal) y 'Países hispanohablantes' (principal); sin pérdida material. (b) Reescrita la descripcion.U2 de 'Centros e instituciones educativas': no entra como recurrente por reciclaje cross-unidad (no aparece como vocabulario canónico en ninguna otra unidad del curso) sino por el criterio (b) de §5.1.1 — material imprescindible para los textos/ejercicios de la unidad sin ser principal del índice editorial, soporte léxico de la sección 'cultura' ('La ESO en España'). Eliminadas 7 referencias a 'Nacionalidad' en actividad.vocabulario / cuadro.vocabulario.",
+    "P-Nombres-propios-retirada (v10.131): por dictamen editorial del autor, la categoría 'Nombres propios' queda retirada del canon gramatical del curso. Razón: el libro NC1 no trabaja pedagógicamente la categoría como tal — los antropónimos y topónimos aparecen en textos como contenido verbatim pero el manual no enseña una regla gramatical específica sobre nombres propios (la mera regla 'sin artículo' es inferida, no expuesta como contenido didáctico). Bloque retirado de gramatica_consolidada y refs limpiadas en actividades/cuadros. Los nombres propios siguen presentes verbatim en los textos del libro; no se consolidan en ningún bloque canónico. Revierte parcialmente v10.123 (U1) y v10.128 (U2, ampliación a topónimos)."
   ],
   "paginas_detalle": [
     {
@@ -698,7 +602,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 18, "transcripcion": "Colombia, Ecuador, Perú, Argentina, Bolivia, España, México" },
           "imagen": { "presente": true, "descripcion": "7 fotografías numeradas: 1 pareja bailando tango, 2 plato de tacos, 3 granos de café, 4 racimo de bananas, 5 silueta de Don Quijote sobre fondo naranja, 6 poncho colorido, 7 vista de Machu Picchu." },
@@ -801,7 +705,7 @@
             {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablan"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
           ],
-          "gramatica": ["Artículos determinados", "Nombres propios"],
+          "gramatica": ["Artículos determinados"],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -1102,7 +1006,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "son", "somos"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo"]}
           ],
-          "gramatica": ["Demostrativos", "Pronombre sujeto", "Nombres propios"],
+          "gramatica": ["Demostrativos", "Pronombre sujeto"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Marco de mensaje tipo email con foto de dos chicas (Rosa y Dani) inclinadas sonriendo." },
@@ -1175,7 +1079,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]}
           ],
-          "gramatica": ["Demostrativos", "Nombres propios"],
+          "gramatica": ["Demostrativos"],
           "pronunciacion_ortografia": []
         }
       ]
@@ -1273,7 +1177,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son", "Es", "Son"]}
           ],
-          "gramatica": ["Demostrativos", "Interrogativos", "Nombres propios", "Concordancia de género"],
+          "gramatica": ["Demostrativos", "Interrogativos", "Concordancia de género"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "5 fotos de personajes con etiqueta: Pedro/Perú (chico), 1 María/Colombia (chica), 2 Carlos/España (chico), 3 Alberto y Rosario/Ecuador (pareja), 4 Elena y Alicia/Nicaragua (pareja)." },
@@ -1304,7 +1208,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
             {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["le gusta"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": ["Mayúsculas"],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1341,7 +1245,7 @@
           "tiempos_y_verbos": [
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": ["Mayúsculas"]
         }
       ]
@@ -1366,7 +1270,7 @@
             {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Vamos"], "estructura_perifrastica": "ir a + infinitivo"},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
           ],
-          "gramatica": ["Interrogativos", "Pronombre sujeto", "Nombres propios", "Demostrativos"],
+          "gramatica": ["Interrogativos", "Pronombre sujeto", "Demostrativos"],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -1430,7 +1334,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "es"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
           ],
-          "gramatica": ["Interrogativos", "Nombres propios"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1452,7 +1356,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
             {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1566,7 +1470,7 @@
           "tiempos_y_verbos": [
             {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vives"]}
           ],
-          "gramatica": ["Interrogativos", "Nombres propios"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1606,7 +1510,7 @@
           "tiempos_y_verbos": [
             {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Vamos"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": {
@@ -1647,7 +1551,7 @@
           "instruccion_original": "Escucha y repite.",
           "vocabulario": [],
           "tiempos_y_verbos": [],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": ["Vocales"],
           "audio": { "presente": true, "pista": 29, "transcripcion": "azul, casa, mesa, policía, escribir, matemáticas, lápiz, Pepe, Pili, mamá, beber, vivir, tonto, uno" },
           "imagen": { "presente": false },
@@ -1679,7 +1583,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son", "somos"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estás"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto", "Interrogativos"],
+          "gramatica": ["Pronombre sujeto", "Interrogativos"],
           "pronunciacion_ortografia": ["Mayúsculas"],
           "audio": { "presente": false },
           "imagen": {
@@ -1716,7 +1620,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es", "Son", "son"]},
             {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia"]}
           ],
-          "gramatica": ["Interrogativos", "Nombres propios"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1746,7 +1650,7 @@
             {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["Estudian"]},
             {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["van"], "estructura_perifrastica": "ir a + infinitivo"}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 30 },
           "imagen": { "presente": true, "descripcion": "Dos retratos tipo carné con nombres: VIOLETA (chica, camiseta negra) y RUBÉN (chico, camiseta verde)." },
@@ -1855,7 +1759,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
             {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vivo"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": ["Mayúsculas"],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1945,7 +1849,7 @@
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
           ],
-          "gramatica": ["Artículos determinados", "Nombres propios"],
+          "gramatica": ["Artículos determinados"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -2020,7 +1924,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es", "somos", "eres", "soy"]}
           ],
-          "gramatica": ["Pronombre sujeto", "Nombres propios"],
+          "gramatica": ["Pronombre sujeto"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -2050,7 +1954,7 @@
           "tiempos_y_verbos": [
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tenemos", "tengo", "tienen", "tienes"]}
           ],
-          "gramatica": ["Pronombre sujeto", "Nombres propios"],
+          "gramatica": ["Pronombre sujeto"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -2069,7 +1973,7 @@
           "instruccion_original": "Completa la tabla.",
           "vocabulario": ["Adjetivos de nacionalidad", "Países hispanohablantes"],
           "tiempos_y_verbos": [],
-          "gramatica": ["Concordancia de género", "Concordancia de número", "Nombres propios"],
+          "gramatica": ["Concordancia de género", "Concordancia de número"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },

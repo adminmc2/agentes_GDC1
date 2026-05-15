@@ -5,6 +5,35 @@
 
 ---
 
+## [v10.131 — 2026-05-15] — Fase 1: retirada del canon de "Nombres propios" (gramatical)
+
+Dictamen editorial del autor: la categoría `Nombres propios` añadida al canon gramatical en v10.123 (antropónimos U1) y ampliada en v10.128 (topónimos U2) **se retira del canon**. Motivo: el libro NC1 no trabaja pedagógicamente la categoría como contenido — los antropónimos y topónimos aparecen en textos como contenido verbatim pero el manual no enseña una regla gramatical específica sobre nombres propios (la regla "sin-artículo determinado" es inferencia gramatical, no contenido didáctico expuesto). Aplicar `Nombres propios` cada vez que aparece un personaje o un topónimo en un texto convertía la categoría en un comodín pedagógicamente vacío.
+
+**Cambios:**
+
+- **`fases/1-extraccion-inventario/gramatica-canonica.json`**: entrada `Nombres propios` eliminada. Total categorías 18 → 17 (vuelve al estado pre-v10.123). `_meta.version` 1.2 → 1.3.
+
+- **`unidades/U1/U1-nc1-inventario.json`**:
+  - Bloque `gramatica_consolidada.principal."Nombres propios"` eliminado.
+  - 26 referencias `"Nombres propios"` retiradas de `actividad.gramatica` / `cuadro.gramatica`.
+  - Nueva entrada en `_decisiones_ia` documentando la retirada.
+
+- **`unidades/U2/U2-nc1-inventario.json`**:
+  - Bloque `gramatica_consolidada.principal."Nombres propios"` eliminado.
+  - 21 referencias retiradas de `actividad.gramatica` / `cuadro.gramatica`.
+  - Nueva entrada en `_decisiones_ia`.
+
+- **`unidades/U3/U3-nc1-inventario.json`**:
+  - Bloque `gramatica_consolidada.recurrente."Nombres propios"` eliminado.
+  - 29 referencias retiradas.
+  - Nueva entrada en `_decisiones_ia`.
+
+**No se restaura `Nombre` en vocabulario.** La decisión de v10.123 de NO codificar antropónimos como vocabulario (no son items léxicos enseñables uno a uno) se mantiene. Los nombres propios siguen presentes verbatim en los textos del libro y NO se consolidan en ningún bloque canónico.
+
+**Revierte parcialmente:** v10.123 (reasignación Nombre → Nombres propios en U1), v10.123b (alcance restringido a antropónimos), v10.128 (ampliación a topónimos en U2).
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0.
+
 ## [v10.130 — 2026-05-15] — Dashboard: respuestas sin numeración duplicada cuando el libro ya las numera
 
 Hallazgo del autor revisando inventarios: en `respuestas` con prefijo numérico del libro (`"1 brasileña"`, `"2 colombiana"`...), el `<ol>` del dashboard añadía su propia numeración → render duplicado `"1. 1 brasileña / 2. 2 colombiana"`.

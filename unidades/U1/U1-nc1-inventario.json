@@ -367,84 +367,6 @@
           "U1": "PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN. Principal U1 gramática ('Masculino y femenino'). Presentado en cuadro@p14#2 (sustantivos: el libro/la casa, el amigo/la amiga, el león/la leona) y cuadro@p14#3 (adjetivos: mexicano/-a, español/-a, japonés/-a). Trabajado en p14-act4 (completa la tabla con sufijación -o/-a, -és/-esa, -ón/-ona, -án/-ana), p14-act5 (forma el femenino), p15-act6 (escribe frases con ser concordando con sujeto), p15-act7 (objetos × colores con concordancia adjetival)."
         }
       },
-      "Nombres propios": {
-        "items": [
-          {"palabra": "Rafa", "fuentes": ["p12-act1"]},
-          {"palabra": "Katrina", "fuentes": ["p12-act1"]},
-          {"palabra": "Jesús Jiménez", "fuentes": ["p13-act6"]},
-          {"palabra": "Pedro Álvarez", "fuentes": ["p13-act6"]},
-          {"palabra": "Elena Haro", "fuentes": ["p13-act6"]},
-          {"palabra": "Patricia", "fuentes": ["p13-act7"]},
-          {"palabra": "Pedro", "fuentes": ["p13-act8", "p20-act1@R"]},
-          {"palabra": "Rita", "fuentes": ["p13-act8"]},
-          {"palabra": "Rosa", "fuentes": ["p13-act8"]},
-          {"palabra": "Alan", "fuentes": ["p13-act8"]},
-          {"palabra": "Elisabeth", "fuentes": ["p13-act8"]},
-          {"palabra": "Rosalía", "fuentes": ["p13-act8"]},
-          {"palabra": "Daniel", "fuentes": ["p13-act9"]},
-          {"palabra": "Beatriz", "fuentes": ["p13-act9"]},
-          {"palabra": "María", "fuentes": ["p14-act1", "p14-act2"]},
-          {"palabra": "Juan", "fuentes": ["p14-act1"]},
-          {"palabra": "Paola", "fuentes": ["p14-act1"]},
-          {"palabra": "Pierre", "fuentes": ["p14-act1"]},
-          {"palabra": "Iván", "fuentes": ["p14-act2", "p17-act7@R"]},
-          {"palabra": "Charlie", "fuentes": ["p14-act2"]},
-          {"palabra": "Julia", "fuentes": ["p14-act2", "p16-act1"]},
-          {"palabra": "Luis", "fuentes": ["p14-act3@R"]},
-          {"palabra": "Ana", "fuentes": ["p14-act3"]},
-          {"palabra": "Jonathan", "fuentes": ["cuadro@p14#1"]},
-          {"palabra": "Elaine", "fuentes": ["p15-act6"]},
-          {"palabra": "Graciela", "fuentes": ["p16-act1"]},
-          {"palabra": "Pablo", "fuentes": ["p16-act1"]},
-          {"palabra": "Jorge", "fuentes": ["p16-act1"]},
-          {"palabra": "Carlos", "fuentes": ["p16-act2", "p19-act3@R"]},
-          {"palabra": "Rocío", "fuentes": ["p17-act7@R"]},
-          {"palabra": "Augusto", "fuentes": ["p17-act7@R"]},
-          {"palabra": "Luis Rodríguez", "fuentes": ["p18-act1@R"]},
-          {"palabra": "Paloma Sandoval", "fuentes": ["p18-act1@R"]},
-          {"palabra": "Alba", "fuentes": ["p18-act2"]},
-          {"palabra": "Jasmín", "fuentes": ["p18-act2"]},
-          {"palabra": "Daniela", "fuentes": ["p19-act3@R"]},
-          {"palabra": "Paula", "fuentes": ["p19-act3@R", "p20-act1"]},
-          {"palabra": "Aída", "fuentes": ["p19-act5"]},
-          {"palabra": "Manu", "fuentes": ["cuadro@p20#1"]},
-          {"palabra": "Carla", "fuentes": ["p20-act1"]},
-          {"palabra": "Roberto", "fuentes": ["p20-act1"]},
-          {"palabra": "Manuel Rivera", "fuentes": ["cuadro@p20#1"]},
-          {"palabra": "Jorge Rivero", "fuentes": ["cuadro@p20#1"]},
-          {"palabra": "señora Ramos", "fuentes": ["cuadro@p20#1"]},
-          {"palabra": "Diego", "fuentes": ["p21-act4"]},
-          {"palabra": "Raúl", "fuentes": ["p21-act4"]},
-          {"palabra": "Ricardo", "fuentes": ["p21-act4"]}
-        ],
-        "fuentes": [
-          "p12-act1",
-          "p13-act6",
-          "p13-act7",
-          "p13-act8",
-          "p13-act9",
-          "p14-act1",
-          "p14-act2",
-          "p14-act3",
-          "p14-act3@R",
-          "cuadro@p14#1",
-          "p15-act6",
-          "p16-act1",
-          "p16-act2",
-          "p17-act7@R",
-          "p18-act1@R",
-          "p18-act2",
-          "p19-act3@R",
-          "p19-act5",
-          "cuadro@p20#1",
-          "p20-act1",
-          "p20-act1@R",
-          "p21-act4"
-        ],
-        "descripcion": {
-          "U1": "PCIC A1 §1.1.1 Nombres propios — Antropónimos (nombres de pila y compuestos nombre+apellido sin artículo). Reasignada desde vocabulario_consolidado en v10.123: el material que U1 activa como soporte de presentación personal son antropónimos, no un campo léxico cerrado con items enseñables. Uso gramatical específico en U1: los nombres propios de persona en español se usan SIN artículo determinado (Me llamo María, no *Me llamo la María) — contraste útil con lenguas que admiten el artículo en uso coloquial. Estructura anclaje: pregunta-respuesta con el verbo llamarse (¿Cómo te llamas? / Me llamo X) presentada en cuadro@p14#1 y cuadro@p20#1 (registro tú/usted). El material léxico (los nombres concretos: David, Javier, María, etc.) sigue conservado aquí como evidencia de aparición; el valor pedagógico es la regla sin-artículo, no aprender los nombres de pila uno a uno."
-        }
-      },
       "Pronombre sujeto": {
         "items": [
           {"palabra": "yo", "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act1@R", "p14-act3", "p18-act2", "p21-act1", "p21-act1@R", "p21-act4@R"]},
@@ -629,6 +551,7 @@
     "P11 resuelta (c): todas las formas singulares de ser/llamarse/tener visibles en U1 codificadas en formas_trabajadas + la forma plural 'son' (Presente de ser) incluida por aparecer textualmente en respuestas de p15-act6 (Los gatos son negros; Las profesoras son mexicanas). 'son' es anticipación material del principal de U2 (formas plurales); se reporta para fase 2.",
     "P12 resuelta (a): 'Concordancia de número' (canónico U2 según registry) codificada como RECURRENTE U1 con descripcion de anticipación material por consistencia con la decisión P3. Anclaje: cuadro@p14#2 (tabla singular/plural con el niño/los niños/la niña/las niñas) + producción incidental en respuestas de p15-act6 (plurales adjetivales). Excepción explícita a §6.3 estricta aprobada por el autor.",
     "P13 resuelta por dictamen editorial del autor (v10.124): saneamiento del bloque 'Adjetivos de nacionalidad' tras revisión post-v10.123. Eliminados items que no son adjetivos de nacionalidad: 'campeón' y 'campeona' (sustantivos comunes que aparecen en p14-act4 como ejemplos del patrón morfológico -ón/-ona junto a profesor/niño/amiga; el agente los confundió con gentilicios por la coincidencia del sufijo) y 'mexicanas' (plural redundante con 'mexicana', no debe canonizarse aparte). Movidos al nuevo bloque 'Gentilicios' (categoría léxica nueva añadida al registry, origen: excepcion): 'madrileña' (gentilicio de ciudad, Madrid) y 'africana' (gentilicio continental). Reclasificación de la actividad p14-act4: era 'Completa la tabla con el femenino o el masculino' — enfoque morfológico de Concordancia de género, no léxico-nacional; quitada la referencia 'Adjetivos de nacionalidad' de su vocabulario (los gentilicios genuinos que aparecen — griego/a, alemán/-a, brasileño/a — se conservan en el bloque consolidado por aparición material en respuestas, pero la actividad ya no los referencia en vocabulario). Añadido 'Gentilicios' a vocabulario de p12-act1 (madrileña en autodescripción de Katrina), p12-act2 (modelo de presentación) y p15-act6 (africana en respuestas).",
+    "P-Nombres-propios-retirada (v10.131): por dictamen editorial del autor, la categoría 'Nombres propios' queda retirada del canon gramatical del curso. Razón: el libro NC1 no trabaja pedagógicamente la categoría como tal — los antropónimos y topónimos aparecen en textos como contenido verbatim pero el manual no enseña una regla gramatical específica sobre nombres propios (la mera regla 'sin artículo' es inferida, no expuesta como contenido didáctico). Bloque retirado de gramatica_consolidada y refs limpiadas en actividades/cuadros. Los nombres propios siguen presentes verbatim en los textos del libro; no se consolidan en ningún bloque canónico. Revierte parcialmente v10.123 (U1) y v10.128 (U2, ampliación a topónimos).",
     "Anticipaciones detectadas para fase 2: (a) Lemas verbales 'escuchar/leer/escribir/repetir/preguntar/decir' continúan apareciendo como metalengua de instrucción imperativa en U1 (mismo patrón que U0); primera aparición canónica de su paradigma se difiere a U3 (leer/escribir PRE) y U6 (todos como IMP). (b) Forma plural 'son' del Presente de ser visible en p15-act6 y por elipsis en p21-act1; anticipación del principal de U2 (formas plurales de ser, tener). (c) Material extenso de 'Adjetivos de nacionalidad' (P3) y 'Concordancia de número' (P12) codificados como recurrentes con aprobación del autor por valor pedagógico no incidental, técnicamente anticipaciones de U2 si §6.3 se aplicara estricta. (d) Canonización nueva 'Números cardinales' (P10) pendiente de propagación al registry + retrocompatibilidad U0. (e) Lema 'estar' (canónico U5) visible en cuadro@p20#1 (¿Cómo está usted?, ¿Cómo está(s)?, está, estás), cuadro@p20#3 (¿Cómo estás? ¿Cómo está usted?), p19-act5 (¿Qué tal estás?) y p20-act1 (¿qué tal estás?, ¿Cómo está usted?); no codificado en tiempos_y_verbos por anticipación §5.2. Material relevante para introducción del paradigma en U5. (f) Campos PCIC 'Profesión' (profesor de judo, profesora de baile en p18-act1) y 'Tiempo libre y entretenimiento' (la música moderna, el fútbol y la música en p18-act1) con material puntual no codificado por debilidad de anclaje (solo 2 instancias en una actividad); reportados para que fase 2 evalúe canonización cross-unidad."
   ],
   "paginas_detalle": [
@@ -649,7 +572,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo", "tengo"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 7, "transcripcion": "¡Hola! Me llamo Katrina y tengo trece años. Soy madrileña, de Madrid. ¡Hola! Me llamo Rafa y soy argentino, de Buenos Aires. Tengo doce años." },
           "imagen": {
@@ -679,7 +602,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -764,7 +687,7 @@
           "tiempos_y_verbos": [
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
           "audio": { "presente": true, "pista": 10 },
           "imagen": { "presente": true, "descripcion": "Tres mini-diálogos ilustrados con fotografías de pares de hablantes (un entrevistador y un entrevistado) y burbujas de diálogo con los textos." },
@@ -799,7 +722,7 @@
           "tiempos_y_verbos": [
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Cuatro burbujas de diálogo encadenadas con las frases del modelo." },
@@ -822,7 +745,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "es"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "se llama"]}
           ],
-          "gramatica": ["Nombres propios", "Concordancia de género"],
+          "gramatica": ["Concordancia de género"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -854,7 +777,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "Me lllamo"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": {
@@ -890,7 +813,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "eres", "es"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto"],
+          "gramatica": ["Pronombre sujeto"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -913,7 +836,7 @@
           "tiempos_y_verbos": [
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -937,7 +860,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "eres", "es"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["llamas", "llamo"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto"],
+          "gramatica": ["Pronombre sujeto"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1018,7 +941,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo", "te llamas", "se llama"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tienes", "tiene"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto"],
+          "gramatica": ["Pronombre sujeto"],
           "pronunciacion_ortografia": []
         },
         {
@@ -1259,7 +1182,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "me llamo"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tienes", "Tengo"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos", "Pronombre sujeto"],
+          "gramatica": ["Interrogativos", "Pronombre sujeto"],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -1309,7 +1232,7 @@
           "tiempos_y_verbos": [
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "te llamas"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Fotografía de un chico joven sonriente sentado en pupitre con compañeros desenfocados al fondo." },
@@ -1455,7 +1378,7 @@
           "instruccion_original": "Escucha y completa las fichas.",
           "vocabulario": ["Edad", "Número de teléfono", "Números cardinales"],
           "tiempos_y_verbos": [],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 15 },
           "imagen": {
@@ -1496,7 +1419,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1526,7 +1449,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Me llamo", "Se llama"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo", "Tiene"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": {
@@ -1578,7 +1501,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo", "se llama"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto"],
+          "gramatica": ["Pronombre sujeto"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Fotografía de dos chicas adolescentes sentadas en un sofá conversando, una rubia con jersey verde claro y otra de pelo rizado con sudadera amarilla." },
@@ -1605,7 +1528,7 @@
           "instruccion_original": "Escucha y completa la tabla.",
           "vocabulario": ["Edad"],
           "tiempos_y_verbos": [],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 16 },
           "imagen": { "presente": false },
@@ -1667,7 +1590,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas", "Me llamo"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes", "Tengo"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": {
@@ -1697,7 +1620,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1722,7 +1645,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1743,7 +1666,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
           ],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1769,7 +1692,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto", "Interrogativos"],
+          "gramatica": ["Pronombre sujeto", "Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Recuadro con dos columnas: a la izquierda 5 preguntas/saludos numerados 1-5; a la derecha 5 respuestas etiquetadas a-e. Líneas curvas magenta conectan cada elemento con su par." },
@@ -1820,7 +1743,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Soy", "Es"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto", "Interrogativos"],
+          "gramatica": ["Pronombre sujeto", "Interrogativos"],
           "pronunciacion_ortografia": [],
           "observaciones": "Las formas de 'estar' visibles en este cuadro (¿Cómo está usted?, ¿Cómo está(s)?) son anticipación del lema 'estar' (canónico U5); no se codifican en tiempos_y_verbos por §5.2 (regla de anticipación)."
         },
@@ -1875,7 +1798,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "soy", "eres"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto", "Concordancia de género"],
+          "gramatica": ["Pronombre sujeto", "Concordancia de género"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1963,7 +1886,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama", "te llamas"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienes"]}
           ],
-          "gramatica": ["Nombres propios", "Pronombre sujeto", "Interrogativos"],
+          "gramatica": ["Pronombre sujeto", "Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -2014,7 +1937,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["te llamas"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienes"]}
           ],
-          "gramatica": ["Nombres propios", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },

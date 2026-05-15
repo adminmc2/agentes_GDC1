@@ -588,111 +588,6 @@
           "U3": "Recurrente: ya canónica en U2 (paradigma de plural +s / +es). U3 la reactiva en la pluralización sistemática del léxico de parentesco (padres, hijos, abuelos, hermanos, tíos, primos, nietos) y de relaciones sociales (amigos, compañeros)."
         }
       },
-      "Nombres propios": {
-        "items": [
-          {"palabra": "David", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p32-act4", "p41-act1", "p41-act4"]},
-          {"palabra": "Carlos", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3", "p32-act4", "p33-act10", "p41-act1"]},
-          {"palabra": "Juana", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3"]},
-          {"palabra": "Alicia", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3", "p41-act4"]},
-          {"palabra": "Luis", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3"]},
-          {"palabra": "Roberto", "fuentes": ["p32-act2", "p32-act3"]},
-          {"palabra": "Carmen", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3", "p41-act4"]},
-          {"palabra": "Pilar", "fuentes": ["p32-act2", "p32-act2@R", "p41-act4"]},
-          {"palabra": "María", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3", "p34-act1"]},
-          {"palabra": "Nacho", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3"]},
-          {"palabra": "Álvaro", "fuentes": ["p32-act2", "p32-act2@R"]},
-          {"palabra": "Paloma", "fuentes": ["p32-act2", "p32-act2@R", "p32-act3"]},
-          {"palabra": "Javier", "fuentes": ["p33-act6", "p33-act7", "p33-act10"]},
-          {"palabra": "Lucía", "fuentes": ["p33-act8", "p33-act9", "p33-act10"]},
-          {"palabra": "Catalina", "fuentes": ["p33-act6", "p33-act7"]},
-          {"palabra": "Manolo", "fuentes": ["p33-act6", "p33-act7@R"]},
-          {"palabra": "Alejandra", "fuentes": ["p33-act6", "p33-act7"]},
-          {"palabra": "Ana", "fuentes": ["p33-act5", "p33-act8", "p38-act1"]},
-          {"palabra": "Marta", "fuentes": ["p33-act5", "p38-act1", "p38-act2", "p38-act2@R", "p38-act3"]},
-          {"palabra": "Antonio", "fuentes": ["p33-act5"]},
-          {"palabra": "Elena", "fuentes": ["p33-act5", "p34-act1", "p38-act1"]},
-          {"palabra": "Pablo", "fuentes": ["p33-act8", "p34-act1", "p36-act1", "p36-act2", "p41-act3"]},
-          {"palabra": "Pierre", "fuentes": ["p38-act1", "p38-act3"]},
-          {"palabra": "Bárbara", "fuentes": ["p38-act1", "p38-act2", "p38-act2@R"]},
-          {"palabra": "Mario", "fuentes": ["p38-act1", "p38-act2"]},
-          {"palabra": "Emilio", "fuentes": ["p38-act1", "p38-act2"]},
-          {"palabra": "Santiago", "fuentes": ["p38-act1", "p38-act2"]},
-          {"palabra": "Jorge", "fuentes": ["p34-act1", "p36-act1", "p36-act2@R", "p41-act3"]},
-          {"palabra": "Julia", "fuentes": ["p35-act6@R", "p36-act1", "p36-act2@R"]},
-          {"palabra": "Graciela", "fuentes": ["p35-act5", "p36-act1", "p36-act2"]},
-          {"palabra": "Rebeca", "fuentes": ["p36-act1", "p36-act2"]},
-          {"palabra": "Adela", "fuentes": ["p36-act1", "p36-act2"]},
-          {"palabra": "Luisa", "fuentes": ["p35-act8", "p36-act1", "p36-act2"]},
-          {"palabra": "Ronaldo", "fuentes": ["p35-act9"]},
-          {"palabra": "Daniel", "fuentes": ["p35-act5"]},
-          {"palabra": "Pedro", "fuentes": ["p35-act5", "p41-act2@R"]},
-          {"palabra": "Rosa", "fuentes": ["p34-act3@R", "p41-act3"]},
-          {"palabra": "Tom", "fuentes": ["p35-act6@R"]},
-          {"palabra": "Óscar", "fuentes": ["cuadro@p34#2", "p34-act3"]},
-          {"palabra": "Pepe", "fuentes": ["p35-act7@R"]},
-          {"palabra": "Nieves", "fuentes": ["p41-act2@R"]},
-          {"palabra": "Sebastián", "fuentes": ["cuadro@p34#1"]},
-          {"palabra": "Dog", "fuentes": ["p40-act1", "p40-act3"]},
-          {"palabra": "Pablo Berger", "fuentes": ["p40-act1", "p40-act3", "p40-act3@R"]},
-          {"palabra": "Getafe", "fuentes": ["p33-act6", "p33-act10"]},
-          {"palabra": "Madrid", "fuentes": ["p33-act6", "p39-act4"]},
-          {"palabra": "Cantabria", "fuentes": ["p33-act8", "p33-act10"]},
-          {"palabra": "España", "fuentes": ["p33-act8", "p39-act4", "p41-act1"]},
-          {"palabra": "Cádiz", "fuentes": ["p38-act1"]},
-          {"palabra": "Barcelona", "fuentes": ["p38-act1", "p38-act2@R", "p39-act4"]},
-          {"palabra": "Buenos Aires", "fuentes": ["p34-act1", "p35-act6@R"]},
-          {"palabra": "Argentina", "fuentes": ["p36-act1"]},
-          {"palabra": "Arévalo", "fuentes": ["p34-act1"]},
-          {"palabra": "Lima", "fuentes": ["cuadro@p34#1"]},
-          {"palabra": "Sevilla", "fuentes": ["p34-act2"]},
-          {"palabra": "Marbella", "fuentes": ["p34-act3"]},
-          {"palabra": "Valencia", "fuentes": ["p41-act1"]},
-          {"palabra": "Nueva York", "fuentes": ["p40-act1"]}
-        ],
-        "fuentes": [
-          "cuadro@p34#1",
-          "cuadro@p34#2",
-          "p32-act1",
-          "p32-act2",
-          "p32-act2@R",
-          "p32-act3",
-          "p32-act4",
-          "p33-act5",
-          "p33-act6",
-          "p33-act7",
-          "p33-act7@R",
-          "p33-act8",
-          "p33-act9",
-          "p33-act10",
-          "p34-act1",
-          "p34-act2",
-          "p34-act3",
-          "p34-act3@R",
-          "p35-act5",
-          "p35-act6@R",
-          "p35-act7@R",
-          "p35-act8",
-          "p35-act9",
-          "p36-act1",
-          "p36-act2",
-          "p36-act2@R",
-          "p38-act1",
-          "p38-act2",
-          "p38-act2@R",
-          "p38-act3",
-          "p39-act4",
-          "p40-act1",
-          "p40-act3",
-          "p40-act3@R",
-          "p41-act1",
-          "p41-act2@R",
-          "p41-act3",
-          "p41-act4"
-        ],
-        "descripcion": {
-          "U3": "Recurrente: ya canónica en U2 (categoría ampliada a antropónimos + topónimos, v10.128). U3 la reactiva masivamente: antropónimos en la presentación de la familia de David (Carlos, Juana, Alicia, Luis, Roberto, Carmen, Pilar, María, Nacho, Álvaro, Paloma) y en los textos descriptivos (Javier, Lucía, Catalina, Manolo, Alejandra, Marta, Pierre, Pablo Berger, etc.); topónimos en las localizaciones de los personajes (Getafe, Madrid, Cantabria, Cádiz, Barcelona, Buenos Aires, Lima, Sevilla, Nueva York, etc.)."
-        }
-      },
       "Artículos determinados": {
         "items": [
           {"palabra": "el / la", "fuentes": ["p32-act3", "p32-act4", "p33-act6", "p33-act10", "p34-act2", "p34-act3", "p38-act1", "p38-act2@R", "p40-act1", "p41-act1", "p41-act4"]},
@@ -803,7 +698,8 @@
     "P-'Hacer un cuaderno de vocabulario' (índice de GRAMÁTICA): rótulo editorial del bloque pedagógico 'Para aprender' (p35-act9). No se codifica como categoría gramatical canónica (no existe en gramatica-canonica.json) ni como verbo en contenido (es metalengua editorial).",
     "P-vivir/estudiar/hablar: ya consignados con apariciones U2 [PRE] en verbos-canonicos.json. U3 cierra el paradigma completo (6 personas) mediante el cuadro de conjugación de p34 y los ejercicios sistemáticos asociados.",
     "P-'interesan' (p40-act1 texto cultural) codificado bajo lema 'gustar' por simetría sintáctico-semántica (tipo gustar, dativo experimentante). Si el autor prefiere lema independiente 'interesar' (no canónico actualmente), retirar de la entrada de gustar.",
-    "P-Acts p37-act8 y p37-act10 ('Escucha y repite' palabras-muestra del fonema /θ/): vocabulario=[] aunque las palabras citadas (azul, bicicleta, marzo, zapato) pertenecen a campos léxicos distintos. El enfoque es pronunciacion_ortografia y las palabras son material fónico, no léxico per §2.3."
+    "P-Acts p37-act8 y p37-act10 ('Escucha y repite' palabras-muestra del fonema /θ/): vocabulario=[] aunque las palabras citadas (azul, bicicleta, marzo, zapato) pertenecen a campos léxicos distintos. El enfoque es pronunciacion_ortografia y las palabras son material fónico, no léxico per §2.3.",
+    "P-Nombres-propios-retirada (v10.131): por dictamen editorial del autor, la categoría 'Nombres propios' queda retirada del canon gramatical del curso. Razón: el libro NC1 no trabaja pedagógicamente la categoría como tal — los antropónimos y topónimos aparecen en textos como contenido verbatim pero el manual no enseña una regla gramatical específica sobre nombres propios (la mera regla 'sin artículo' es inferida, no expuesta como contenido didáctico). Bloque retirado de gramatica_consolidada y refs limpiadas en actividades/cuadros. Los nombres propios siguen presentes verbatim en los textos del libro; no se consolidan en ningún bloque canónico. Revierte parcialmente v10.123 (U1) y v10.128 (U2, ampliación a topónimos)."
   ],
   "paginas_detalle": [
     {
@@ -819,7 +715,7 @@
           "instruccion_original": "Mira el árbol genealógico de la familia de David. Después, escucha y repite.",
           "vocabulario": ["Parientes"],
           "tiempos_y_verbos": [],
-          "gramatica": ["Concordancia de género", "Nombres propios"],
+          "gramatica": ["Concordancia de género"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 31, "transcripcion": "abuelo, abuela, madre, padre, tío, tía, tía, hermano, hermana, primo, prima" },
           "imagen": {
@@ -843,7 +739,7 @@
           "tiempos_y_verbos": [
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
           ],
-          "gramatica": ["Posesivos", "Nombres propios"],
+          "gramatica": ["Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 32 },
           "imagen": { "presente": false },
@@ -877,7 +773,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienen"]}
           ],
-          "gramatica": ["Posesivos", "Artículos determinados", "Nombres propios", "Concordancia de número"],
+          "gramatica": ["Posesivos", "Artículos determinados", "Concordancia de número"],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -913,7 +809,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
           ],
-          "gramatica": ["Interrogativos", "Nombres propios", "Artículos determinados"],
+          "gramatica": ["Interrogativos", "Artículos determinados"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -939,7 +835,7 @@
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama", "se llaman"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "Tengo"]}
           ],
-          "gramatica": ["Posesivos", "Nombres propios", "Concordancia de número"],
+          "gramatica": ["Posesivos", "Concordancia de número"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Fotografía de una familia de cinco personas (madre, padre, dos hijas pequeñas y otra niña) abrazándose en el sofá." },
@@ -964,7 +860,7 @@
             {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia"]},
             {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juega"]}
           ],
-          "gramatica": ["Nombres propios", "Posesivos", "Artículos determinados", "Concordancia de número"],
+          "gramatica": ["Posesivos", "Artículos determinados", "Concordancia de número"],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -989,7 +885,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]}
           ],
-          "gramatica": ["Artículos determinados", "Nombres propios"],
+          "gramatica": ["Artículos determinados"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1014,7 +910,7 @@
             {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]},
             {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juega"]}
           ],
-          "gramatica": ["Nombres propios", "Posesivos", "Artículos determinados"],
+          "gramatica": ["Posesivos", "Artículos determinados"],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -1042,7 +938,7 @@
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
             {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]}
           ],
-          "gramatica": ["Interrogativos", "Nombres propios", "Posesivos"],
+          "gramatica": ["Interrogativos", "Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1072,7 +968,7 @@
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienen"]},
             {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudian"]}
           ],
-          "gramatica": ["Posesivos", "Nombres propios", "Concordancia de número"],
+          "gramatica": ["Posesivos", "Concordancia de número"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1118,7 +1014,7 @@
             {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablamos"]},
             {"lema": "escribir", "tiempo": "Presente", "formas_trabajadas": ["escribe"]}
           ],
-          "gramatica": ["Pronombre sujeto", "Interrogativos", "Posesivos", "Nombres propios"],
+          "gramatica": ["Pronombre sujeto", "Interrogativos", "Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1156,7 +1052,7 @@
             {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudiáis"]},
             {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["habla"]}
           ],
-          "gramatica": ["Interrogativos", "Posesivos", "Nombres propios", "Pronombre sujeto"],
+          "gramatica": ["Interrogativos", "Posesivos", "Pronombre sujeto"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1191,7 +1087,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
             {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes"]}
           ],
-          "gramatica": ["Interrogativos", "Posesivos", "Nombres propios"],
+          "gramatica": ["Interrogativos", "Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1260,7 +1156,7 @@
             {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["viven"]},
             {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes"]}
           ],
-          "gramatica": ["Interrogativos", "Concordancia de género", "Concordancia de número", "Nombres propios"],
+          "gramatica": ["Interrogativos", "Concordancia de género", "Concordancia de número"],
           "pronunciacion_ortografia": []
         }
       ]
@@ -1306,7 +1202,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son", "es"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estamos"]}
           ],
-          "gramatica": ["Posesivos", "Pronombre sujeto", "Nombres propios", "Concordancia de género", "Concordancia de número"],
+          "gramatica": ["Posesivos", "Pronombre sujeto", "Concordancia de género", "Concordancia de número"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1388,7 +1284,7 @@
           "tiempos_y_verbos": [
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llaman", "se llama"]}
           ],
-          "gramatica": ["Posesivos", "Nombres propios"],
+          "gramatica": ["Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1404,7 +1300,7 @@
           "instruccion_original": "Mira el cuaderno de Ronaldo, un brasileño que estudia español. Escribe palabras nuevas y tradúcelas a tu idioma.",
           "vocabulario": ["Parientes"],
           "tiempos_y_verbos": [],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Fotografía del cuaderno abierto de Ronaldo con tres entradas manuscritas (Abuelo/-a: Avô / Avó; Hijo/-a: Filho/-a; Vivir: Viver) junto a la foto sonriente de un adolescente brasileño." },
@@ -1461,7 +1357,7 @@
             {"lema": "venir", "tiempo": "Infinitivo", "formas_trabajadas": ["venir"]},
             {"lema": "merendar", "tiempo": "Infinitivo", "formas_trabajadas": ["merendar"]}
           ],
-          "gramatica": ["Interrogativos", "Posesivos", "Nombres propios", "Concordancia de número"],
+          "gramatica": ["Interrogativos", "Posesivos", "Concordancia de número"],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -1504,7 +1400,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
           ],
-          "gramatica": ["Nombres propios", "Posesivos"],
+          "gramatica": ["Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1623,7 +1519,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "gramatica": ["Interrogativos", "Nombres propios"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": {
@@ -1745,7 +1641,7 @@
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estás"]},
             {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablo"]}
           ],
-          "gramatica": ["Posesivos", "Nombres propios", "Interrogativos", "Concordancia de número", "Artículos determinados"],
+          "gramatica": ["Posesivos", "Interrogativos", "Concordancia de número", "Artículos determinados"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Captura de un mensaje de correo electrónico (De: Marta, Para: Pierre) y, a la derecha, fotografía de una familia (padres, dos niñas pequeñas y una mayor) sonriendo con pulgar arriba." },
@@ -1787,7 +1683,7 @@
             {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabajan"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
           ],
-          "gramatica": ["Interrogativos", "Nombres propios", "Posesivos"],
+          "gramatica": ["Interrogativos", "Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1848,7 +1744,7 @@
           "instruccion_original": "Escucha la programación de televisión para hoy y dibuja la hora. Después, relaciona los relojes (del 1 al 7) con los digitales (del A al G).",
           "vocabulario": ["Televisión y radio", "Números cardinales", "Cine y teatro"],
           "tiempos_y_verbos": [],
-          "gramatica": ["Nombres propios"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -1912,7 +1808,7 @@
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["Se llaman"]}
           ],
-          "gramatica": ["Posesivos", "Nombres propios", "Concordancia de número"],
+          "gramatica": ["Posesivos", "Concordancia de número"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1944,7 +1840,7 @@
             {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablar"]},
             {"lema": "hacer", "tiempo": "Infinitivo", "formas_trabajadas": ["hacer"]}
           ],
-          "gramatica": ["Nombres propios", "Artículos determinados"],
+          "gramatica": ["Artículos determinados"],
           "pronunciacion_ortografia": [],
           "audio": {
             "presente": true,
@@ -2003,7 +1899,7 @@
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
             {"lema": "hablar", "tiempo": "Presente", "formas_trabajadas": ["hablan"]}
           ],
-          "gramatica": ["Interrogativos", "Nombres propios"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -2093,7 +1989,7 @@
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tienes"]},
             {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]}
           ],
-          "gramatica": ["Pronombre sujeto", "Posesivos", "Nombres propios"],
+          "gramatica": ["Pronombre sujeto", "Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -2126,7 +2022,7 @@
             {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["Estudio", "estudias"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "gramatica": ["Interrogativos", "Posesivos", "Nombres propios"],
+          "gramatica": ["Interrogativos", "Posesivos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -2188,7 +2084,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "soy", "son", "Es"]}
           ],
-          "gramatica": ["Posesivos", "Nombres propios", "Artículos determinados"],
+          "gramatica": ["Posesivos", "Artículos determinados"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
