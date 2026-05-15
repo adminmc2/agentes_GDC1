@@ -5,6 +5,26 @@
 
 ---
 
+## [v10.135b — 2026-05-15] — Fase 1: U4 — colapso de flexiones sing/plural y masc/fem en `vocabulario_consolidado`
+
+Hallazgo del autor sobre U4: en los bloques léxicos del consolidado aparecían como items separados las formas singular y plural de la misma palabra (huevo/huevos, tomate/tomates, manzana/manzanas, pizza/pizzas, etc.) y las flexiones masc/fem de adjetivos (italiano/italiana, peruano/peruana, mexicano/mexicana, español/española/españoles). No tiene sentido pedagógicamente — son flexiones de un mismo lema.
+
+**Regla aplicada (solo a U4):** los items de `vocabulario_consolidado.X.items` se colapsan al **lema masculino singular** cuando existen dos o más flexiones del mismo lema atestadas en la unidad. Las fuentes se fusionan. Compuestos / multi-palabra (huevo frito, zumo de naranja, hamburguesa Brookling, pollo a la catalana, etc.) NO son flexión y se mantienen como items distintos. Formas únicas sin par (colombianas, patatas, batidos, brasileño, madrileño, vegetariano, etc.) se mantienen verbatim del libro.
+
+**Resultado en U4:**
+
+- `Alimentos`: 73 → 60 items (-13).
+- `Comidas preparadas`: 26 → 23 items (-3).
+- `Restaurante`: 18 → 15 items (-3).
+- `Adjetivos de nacionalidad`: 16 → 10 items (-6).
+- **Total: 144 → 119 items** (-25 flexiones colapsadas).
+
+**Pares colapsados:** huevo+huevos→huevo, tomate+tomates→tomate, manzana+manzanas→manzana, yogur+yogures→yogur, zanahoria+zanahorias→zanahoria, naranja+naranjas→naranja, plátano+plátanos→plátano, filete+filetes→filete, pera+peras→pera, helado+helados→helado, bocadillo+bocadillos→bocadillo, pizza+pizzas→pizza, hamburguesa+hamburguesas→hamburguesa, ensalada+ensaladas→ensalada, restaurante+restaurantes→restaurante, pizzería+pizzerías→pizzería, puesto+puestos→puesto, carne+carnes→carne, verdura+verduras→verdura, plato+platos→plato, italianos+italiana→italiano, peruana→peruano (y argentina→argentino, mexicana+mexicanos→mexicano, española+españoles→español).
+
+**Sin cambios retroactivos en U1/U2/U3** — saneamiento global aplazado por decisión del autor.
+
+**Validador desde main:** U4 → 0/0/0.
+
 ## [v10.135 — 2026-05-15] — Fase 1: U4 migrada a shape v10.117 + propagación U4 a 6 lemas verbales
 
 Quinta unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U4/`, rama `proc-u4-wip`, agente dry-run en chat limpio, commit candidato `09af577`, integración a main por copia controlada + reformateo canónico + actualización del registry verbal).
