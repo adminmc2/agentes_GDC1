@@ -26,7 +26,113 @@ from dotenv import load_dotenv
 load_dotenv()
 
 PROJECT = Path(__file__).parent
-PORT = 8080
+PORT = 8081
+
+
+# === Paleta del proyecto (MD3 oliva-crema, coherente con web/index.html) ===
+# Tokens duplicados de :root en web/index.html para usarlos en los mermaids.
+PAL = {
+    "primary":          "#7D7432",  # oliva
+    "primary_dark":     "#6E6528",
+    "primary_light":    "#B5A84C",
+    "on_primary":       "#FFFFFF",
+    "primary_container":"#F5F0D0",  # crema claro (fondo de tarjeta)
+    "on_primary_container": "#3A3510",
+    "surface":          "#FFFDF6",
+    "surface_variant":  "#F5F0DC",
+    "on_surface":       "#1C1B17",
+    "on_surface_variant":"#5E5C52",
+    "outline":          "#DDD9C8",
+    "outline_variant":  "#EDEADF",
+    "success":          "#2E7D32",
+    "error":            "#C62828",
+    "warning":          "#E65100",
+}
+
+# Paleta extendida "cat-tag" (chips/etiquetas del dashboard, web/index.html L156-163).
+# Cada tono = (fondo, texto, borde). 8 tonos pastel suaves con texto oscuro y borde
+# semitransparente — para diferenciar tipos de nodo de forma legible y no chillona.
+CHIPS = {
+    "azul":      ("#E3F2FD", "#1A4F7A", "#BBDEFB"),
+    "verde":     ("#E8F5E9", "#2E5A33", "#C8E6C9"),
+    "amarillo":  ("#FFF8E1", "#7A5D00", "#FFECB3"),
+    "rosa":      ("#FCE4EC", "#7A2148", "#F8BBD0"),
+    "lila":      ("#F3E5F5", "#5A3170", "#E1BEE7"),
+    "melocoton": ("#FFF3E0", "#7A3F12", "#FFE0B2"),
+    "menta":     ("#E0F2F1", "#1F5751", "#B2DFDB"),
+    "gris":      ("#ECEFF1", "#455A64", "#CFD8DC"),
+}
+
+
+def _chip_style(tone):
+    """Devuelve directiva de estilo Mermaid para un nodo con tono chip dado.
+
+    El radio (rx/ry) refuerza el aspecto pill aunque el nodo ya use shape
+    redondeado en la sintaxis (`("...")`).
+    """
+    bg, fg, br = CHIPS[tone]
+    return f"fill:{bg},color:{fg},stroke:{br},stroke-width:1px,rx:10,ry:10"
+
+
+# === Auto-discovery del filesystem (se ejecuta en cada hit a /api/diagrams) ===
+
+def discover_fases():
+    """Devuelve [(numero, nombre_slug, path)] de las carpetas reales en fases/.
+
+    Solo incluye carpetas con patrón `<N>-<nombre>`. Ordenadas por número.
+    """
+    fases = []
+    base = PROJECT / "fases"
+    if not base.exists():
+        return fases
+    for p in base.iterdir():
+        if not p.is_dir():
+            continue
+        m = re.match(r"^(\d+)-(.+)$", p.name)
+        if not m:
+            continue
+        fases.append((int(m.group(1)), m.group(2), p))
+    fases.sort(key=lambda x: x[0])
+    return fases
+
+
+def discover_registries():
+    """Lista de archivos canónicos en fases/1-extraccion-inventario/.
+
+    Cubre tanto `*-canonicos.json` (plural) como `*-canonica.json` (singular).
+    """
+    base = PROJECT / "fases" / "1-extraccion-inventario"
+    if not base.exists():
+        return []
+    names = set()
+    for pat in ("*-canonicos.json", "*-canonica.json"):
+        for p in base.glob(pat):
+            names.add(p.name)
+    return sorted(names)
+
+
+def discover_scripts():
+    """Lista de scripts ejecutables en scripts/."""
+    base = PROJECT / "scripts"
+    if not base.exists():
+        return []
+    return sorted([p.name for p in base.glob("*.py") if not p.name.startswith("_")])
+
+
+def discover_inventarios():
+    """Devuelve {numero: path} para inventarios UX-nc1-inventario.json existentes."""
+    out = {}
+    base = PROJECT / "unidades"
+    if not base.exists():
+        return out
+    for p in base.iterdir():
+        m = re.match(r"^U(\d+)$", p.name)
+        if not m:
+            continue
+        inv = p / f"{p.name}-nc1-inventario.json"
+        if inv.exists():
+            out[int(m.group(1))] = inv
+    return out
 
 def _read_version():
     """Lee la versión más reciente del CHANGELOG.md. Siempre actualizado sin intervención manual."""
@@ -677,103 +783,183 @@ def color_for(status):
     return "#bdc3c7"
 
 
+def _mermaid_init():
+    """Bloque init de Mermaid con tipografía + paleta MD3 del proyecto.
+
+    Reduce el font-size al del dashboard (12-13 px) y fija fuente Inter
+    para coherencia con el resto del UI.
+    """
+    return (
+        "%%{init: {'theme':'base','themeVariables':{"
+        "'fontFamily':'Inter, system-ui, sans-serif',"
+        "'fontSize':'13px',"
+        f"'primaryColor':'{PAL['surface']}',"
+        f"'primaryTextColor':'{PAL['on_surface']}',"
+        f"'primaryBorderColor':'{PAL['primary']}',"
+        f"'lineColor':'{PAL['primary']}',"
+        f"'secondaryColor':'{PAL['surface_variant']}',"
+        f"'tertiaryColor':'{PAL['surface']}'"
+        "}}}%%"
+    )
+
+
 def mermaid_level1():
-    """Arquitectura del sistema activo. Solo lo que existe y está verificado."""
-    return """graph TD
-    LIBRO["Libro NC1 - Nuevo Compañeros 1"]
-    PDF["PDF embebido - unidades/UX/fuente/UX-nc1.pdf"]
-    PROMPT["Prompt versionado - fases/1-extraccion-inventario/prompt.md"]
-    CLAUDE["Claude Code - extracción en chat"]
-    INV["Inventario JSON - unidades/UX/UX-nc1-inventario.json"]
-    VAL["Validador Python - scripts/validar_inventario.py - cero LLM"]
-    DASH["Dashboard - web/index.html + diagrama.py"]
-    AUTOR["Autor - revisión visual"]
+    """Arquitectura del sistema activo — auto-discovered desde el filesystem.
 
-    subgraph ACTIVO["Sistema activo - en raíz"]
-        PDF
-        PROMPT
-        CLAUDE
-        INV
-        VAL
-        DASH
-    end
+    Diseño coherente con las etiquetas `.cat-tag` del dashboard (paleta CHIPS,
+    8 tonos pastel suaves). Nodos redondeados, etiquetas con título + subtítulo
+    explicativo, leyenda visual al final que mapea cada tono a un rol.
 
-    LIBRO --> PDF
-    PDF --> CLAUDE
-    PROMPT --> CLAUDE
-    CLAUDE --> INV
-    INV --> VAL
-    INV --> DASH
-    DASH --> AUTOR
-    VAL --> AUTOR
+    Convenciones de tono:
+    - azul       → Fuente externa (libro, PDFs)
+    - lila       → Especificación / contratos / registries
+    - menta      → Sistema IA (Claude Code)
+    - verde      → Producto validado (inventarios validados)
+    - amarillo   → Código operativo (scripts)
+    - melocoton  → Interfaz humana (autor, dashboard)
+    """
+    inv = len(discover_inventarios())
+    reg = len(discover_registries())
+    scr = len(discover_scripts())
 
-    style LIBRO fill:#3498db,color:#fff
-    style PDF fill:#2980b9,color:#fff
-    style CLAUDE fill:#8e44ad,color:#fff
-    style INV fill:#27ae60,color:#fff
-    style VAL fill:#16a085,color:#fff
-    style DASH fill:#e67e22,color:#fff
-    style AUTOR fill:#34495e,color:#fff
-    style ACTIVO fill:#eafaf1"""
+    lines = [_mermaid_init(), "graph TD"]
+
+    # Nodos: shape redondeado A("...") con título + subtítulo breve
+    lines.append(f'    LIBRO("Libro NC1<br/><small>Nuevo Compañeros 1 · SGEL · A1.1</small>")')
+    lines.append(f'    PDFS("PDFs por unidad<br/><small>unidades/UX/fuente/ · {inv}/10</small>")')
+    lines.append('    CONTRATOS("Contratos fase 1<br/><small>prompt · schema · reglas · convenciones</small>")')
+    lines.append(f'    REG("Registries canónicos<br/><small>{reg} archivos · léxico · verbal · gramatical · pron-orto</small>")')
+    lines.append('    PCIC("PCIC A1<br/><small>4 archivos fuente · respaldo decisional</small>")')
+    lines.append('    CLAUDE("Claude Code<br/><small>extracción dry-run en worktree aislado</small>")')
+    lines.append(f'    INV("Inventarios JSON<br/><small>{inv}/10 producidos · shape v10.117</small>")')
+    lines.append(f'    SCRIPTS("Scripts Python<br/><small>{scr} archivos · validador · serializador · integrador</small>")')
+    lines.append('    DASH("Dashboard<br/><small>diagrama.py + web/index.html · auto-actualizado</small>")')
+    lines.append('    AUTOR("Autor / revisor<br/><small>revisión visual · dictamen editorial</small>")')
+
+    # Flujo
+    lines.append('    LIBRO --> PDFS --> CLAUDE')
+    lines.append('    CONTRATOS --> CLAUDE')
+    lines.append('    PCIC --> REG --> CLAUDE')
+    lines.append('    CLAUDE --> INV')
+    lines.append('    INV --> SCRIPTS')
+    lines.append('    INV --> DASH')
+    lines.append('    SCRIPTS --> AUTOR')
+    lines.append('    DASH --> AUTOR')
+    lines.append('    AUTOR -.-> CONTRATOS')
+
+    # Asignación de tonos
+    tones = {
+        "LIBRO": "azul",
+        "PDFS": "azul",
+        "CONTRATOS": "lila",
+        "REG": "lila",
+        "PCIC": "lila",
+        "CLAUDE": "menta",
+        "INV": "verde",
+        "SCRIPTS": "amarillo",
+        "DASH": "melocoton",
+        "AUTOR": "melocoton",
+    }
+    for node, tone in tones.items():
+        lines.append(f"    style {node} {_chip_style(tone)}")
+
+    return "\n".join(lines)
+
+
+LEGEND_LEVEL1 = [
+    ("Fuente externa", "azul"),
+    ("Especificación", "lila"),
+    ("Sistema IA", "menta"),
+    ("Validado", "verde"),
+    ("Código", "amarillo"),
+    ("Interfaz humana", "melocoton"),
+]
 
 
 def mermaid_level2():
-    """Flujo operativo de la fase 1 - Extraccion del inventario."""
-    return """graph LR
-    P1["1 - Autor exporta PDF embebido a unidades/UX/fuente/"]
-    P2["2 - Autor invoca a Claude Code en chat"]
-    P3["3 - Claude Code lee prompt + CLAUDE.md de fase + PDF"]
-    P4["4 - Claude Code genera UX-nc1-inventario.json"]
-    P5["5 - Validación automática - validar_inventario.py"]
-    P6["6 - Validación visual del autor en dashboard"]
-    P7["7 - Si OK, fase 1 cerrada para esa unidad"]
-    P8["8 - Si surgen casos nuevos, se añaden al prompt"]
+    """Flujo operativo de fase 1 — extracción del inventario.
 
-    P1 --> P2 --> P3 --> P4 --> P5 --> P6
-    P6 -->|OK| P7
-    P6 -->|Errores| P4
-    P4 -.->|Aprendizaje continuo| P8
-    P8 -.-> P3
+    Nodos redondeados, paleta CHIPS coherente con `.cat-tag` del dashboard.
+    Convención de tono:
+    - melocoton → acción humana (autor)
+    - menta     → acción del sistema IA (Claude)
+    - amarillo  → acción de código (scripts)
+    - lila      → revisión humana visual
+    - verde     → cierre validado
+    """
+    lines = [_mermaid_init(), "graph LR"]
 
-    style P1 fill:#3498db,color:#fff
-    style P2 fill:#3498db,color:#fff
-    style P3 fill:#8e44ad,color:#fff
-    style P4 fill:#27ae60,color:#fff
-    style P5 fill:#16a085,color:#fff
-    style P6 fill:#e67e22,color:#fff
-    style P7 fill:#2ecc71,color:#fff
-    style P8 fill:#f39c12,color:#fff"""
+    lines.append('    P1("1 · Exporta PDF<br/><small>autor → unidades/UX/fuente/</small>")')
+    lines.append('    P2("2 · Invoca Claude<br/><small>autor → chat en worktree</small>")')
+    lines.append('    P3("3 · Lee contratos + PDF<br/><small>Claude → schema · reglas · convenciones</small>")')
+    lines.append('    P4("4 · Genera inventario<br/><small>Claude → UX-nc1-inventario.json</small>")')
+    lines.append('    P5("5 · Valida automático<br/><small>scripts/validar_inventario.py</small>")')
+    lines.append('    P6("6 · Revisión visual<br/><small>autor → dashboard</small>")')
+    lines.append('    P7("7 · Fase cerrada<br/><small>integración a main</small>")')
+
+    lines.append('    P1 --> P2 --> P3 --> P4 --> P5 --> P6')
+    lines.append('    P6 -->|OK| P7')
+    lines.append('    P6 -->|errores| P4')
+
+    tones = {
+        "P1": "melocoton",
+        "P2": "melocoton",
+        "P3": "menta",
+        "P4": "menta",
+        "P5": "amarillo",
+        "P6": "lila",
+        "P7": "verde",
+    }
+    for node, tone in tones.items():
+        lines.append(f"    style {node} {_chip_style(tone)}")
+
+    return "\n".join(lines)
+
+
+LEGEND_LEVEL2 = [
+    ("Acción humana", "melocoton"),
+    ("Acción IA", "menta"),
+    ("Acción código", "amarillo"),
+    ("Revisión visual", "lila"),
+    ("Validado", "verde"),
+]
 
 
 def mermaid_level3():
-    """Las 8 fases del proceso editorial con su estado actual."""
-    return """graph TD
-    F1["F1 - Extracción inventario JSON - OPERATIVA"]
-    F2["F2 - Análisis de vocabulario - PENDIENTE"]
-    F3["F3 - Tarjetas de vocabulario - PENDIENTE"]
-    F4["F4 - Tarjetas de estrategia - PENDIENTE"]
-    F5["F5 - Píldoras formativas - PENDIENTE"]
-    F6["F6 - Generación sección por sección - PENDIENTE"]
-    F7["F7 - Doble versión completa+resumida - PENDIENTE"]
-    F8["F8 - Principios + repertorios - PENDIENTE"]
+    """Fases del proceso editorial — auto-discovered desde fases/N-<nombre>/.
 
-    F1 --> F2
-    F2 --> F3
-    F2 --> F5
-    F3 --> F6
-    F4 --> F6
-    F5 --> F6
-    F6 --> F7
-    F8 -.->|apoyo transversal| F6
+    Solo muestra fases que tienen carpeta real en el repo. El estado por fase
+    se añadirá en una iteración posterior (decisión del autor, 2026-05-15).
+    """
+    fases = discover_fases()
+    lines = [_mermaid_init(), "graph LR"]
 
-    style F1 fill:#27ae60,color:#fff
-    style F2 fill:#bdc3c7,color:#000
-    style F3 fill:#bdc3c7,color:#000
-    style F4 fill:#bdc3c7,color:#000
-    style F5 fill:#bdc3c7,color:#000
-    style F6 fill:#bdc3c7,color:#000
-    style F7 fill:#bdc3c7,color:#000
-    style F8 fill:#bdc3c7,color:#000"""
+    if not fases:
+        lines.append('    EMPTY("Sin fases definidas en fases/")')
+        lines.append(f"    style EMPTY {_chip_style('gris')}")
+        return "\n".join(lines)
+
+    # Nodos: shape redondeado con título + nombre slug legible
+    for numero, slug, _ in fases:
+        nombre = slug.replace("-", " ")
+        lines.append(f'    F{numero}("Fase {numero}<br/><small>{nombre}</small>")')
+
+    # Encadenamiento secuencial entre fases consecutivas
+    for i in range(len(fases) - 1):
+        lines.append(f"    F{fases[i][0]} --> F{fases[i + 1][0]}")
+
+    # Estilos: F1 activa (verde), resto sin estado (gris suave)
+    for idx, (numero, _, _) in enumerate(fases):
+        tone = "verde" if idx == 0 else "gris"
+        lines.append(f"    style F{numero} {_chip_style(tone)}")
+
+    return "\n".join(lines)
+
+
+LEGEND_LEVEL3 = [
+    ("Activa", "verde"),
+    ("Sin estado declarado", "gris"),
+]
 
 
 def mermaid_level4(status):
@@ -898,14 +1084,20 @@ def mermaid_database():
 
 
 def build_diagrams_json():
-    """Return all diagram codes + status as JSON for live polling."""
+    """Return all diagram codes + status + legends as JSON for live polling."""
     status = scan_all()
+    legends = {
+        "nivel1": [{"label": l, "tone": t} for l, t in LEGEND_LEVEL1],
+        "nivel2": [{"label": l, "tone": t} for l, t in LEGEND_LEVEL2],
+        "nivel3": [{"label": l, "tone": t} for l, t in LEGEND_LEVEL3],
+    }
     return json.dumps({
         "nivel1": mermaid_level1(),
         "nivel2": mermaid_level2(),
         "nivel3": mermaid_level3(),
         "nivel4": mermaid_level4(status),
         "database": mermaid_database(),
+        "legends": legends,
         "status": status,
         "hash": hashlib.md5(json.dumps(status, sort_keys=True).encode()).hexdigest()[:8],
     }, ensure_ascii=False)

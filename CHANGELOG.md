@@ -5,6 +5,27 @@
 
 ---
 
+## [v10.127 — 2026-05-15] — Dashboard: diagramas auto-actualizados desde filesystem + paleta cat-tag + leyenda HTML
+
+Saneamiento del dashboard tras dictamen del autor: los mermaids antiguos (1) usaban paleta brillante saturada (#3498db azul Twitter, #27ae60 verde, etc.) que chocaba con el estilo MD3 oliva-crema del resto del UI; (2) tenían contenido hardcoded desincronizado de la realidad del proyecto (8 fases con nombres genéricos, BD aspiracional que no es la actual); (3) tras un primer rediseño minimalista sin pastel quedaron sin información explicativa y con leyenda como `subgraph` interno que rompía el layout.
+
+**Cambios en `diagrama.py`:**
+
+- Puerto cambiado de **8080 → 8081**.
+- Cuatro funciones de **auto-discovery** que leen el filesystem en cada hit a `/api/diagrams`: `discover_fases()`, `discover_registries()`, `discover_scripts()`, `discover_inventarios()`.
+- `mermaid_level1`/`level2`/`level3` reescritos: nodos generados desde los discovers (conteos reales) + paleta `CHIPS` (8 tonos `.cat-tag`) + shape redondeado `("...")` con `rx:10,ry:10` + tipografía Inter 13px (`_mermaid_init()`).
+- Convención estable de tonos por rol: **azul** fuente externa · **lila** especificación · **menta** sistema IA · **verde** producto validado · **amarillo** código · **melocoton** interfaz humana · **gris** sin estado declarado.
+- Leyenda movida fuera del mermaid: constantes `LEGEND_LEVEL{1,2,3}` expuestas bajo clave `legends` en `/api/diagrams`.
+
+**Cambios en `web/index.html`:**
+
+- Nuevo `<div id="diagram-legend">` antes del `.diagram-container` que renderiza chips horizontales reutilizando las clases `.cat-tag.p-<tone>` ya definidas en CSS.
+- `renderDiagram(k)` popula la leyenda desde `diagramData.legends[k]` antes de renderizar el SVG.
+
+**Pendientes (decisión 2026-05-15):** `mermaid_level4` (estado por unidad) y `mermaid_database` quedan sin tocar — se rediseñarán cuando el autor lo decida. Estado por fase con detalle (en curso / pausada / pendiente / cerrada) → siguiente iteración.
+
+**Conflicto de numeración resuelto:** v10.126 fue tomado durante este trabajo por un commit paralelo de fase 2 (`b1b04b1`), por lo que este lote toma **v10.127**.
+
 ## [v10.126 — 2026-05-15] — Fase 2: creación del nuevo `REDISEÑO-EN-CURSO.md` (modelo IA-first, construcción por pasos)
 
 Primer paso del rediseño de fase 2 bajo modelo IA-first. Mismo patrón que el rediseño de fase 1 v10.115-116 (reglas-operativas, convenciones-y-casos): el documento viejo se renombra a `-viejo.md` y el nuevo nace con el nombre canónico, construyéndose paso a paso conforme el autor indica decisiones.
