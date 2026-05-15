@@ -148,17 +148,6 @@
       }
     },
     "recurrente": {
-      "Nacionalidad": {
-        "items": [
-          {"palabra": "soy argentino", "fuentes": ["p26-act1"]},
-          {"palabra": "soy española", "fuentes": ["p28-act1@R"]},
-          {"palabra": "es argentina", "fuentes": ["p26-act1@R"]},
-          {"palabra": "Pierre es francés", "fuentes": ["p28-act1@R"]},
-          {"palabra": "¿De qué nacionalidad es?", "fuentes": ["p31-act8"]}
-        ],
-        "fuentes": ["p26-act1", "p26-act1@R", "p28-act1@R", "p31-act8"],
-        "descripcion": { "U2": "PCIC A1 §1.7 Nacionalidad — Recurrente: ya canónica en U1 (PCIC). U2 la reactiva en el contexto comunicativo del diálogo de presentación (¿De dónde eres? — Soy argentino) y de la carta personal." }
-      },
       "Edad": {
         "items": [
           {"palabra": "Tengo 13 años", "fuentes": ["p24-act3@R", "p26-act1"]},
@@ -231,7 +220,7 @@
           "p30-act4"
         ],
         "descripcion": {
-          "U2": "PCIC A1 §6 Educación: centros e instituciones — Recurrente: U2 introduce intensivamente el campo léxico escolar (instituto, ESO, recreo, aula, asignaturas obligatorias/optativas, actividades extraescolares, profesor, tutora, alumnos) como contexto del bloque cultural 'La ESO en España' y del horario. No declarado en el índice editorial pero pedagógicamente central."
+          "U2": "PCIC A1 §6 Educación: centros e instituciones. Recurrente en U2 por §5.1.1 criterio (b): no es canónico declarado en el vocabulario del índice editorial de U2 ni se introduce como principal en ninguna otra unidad del curso, pero es léxico imprescindible para comprender los textos y ejercicios de la unidad — vive principalmente como soporte de la sección 'cultura' ('La ESO en España'). Material trabajado: instituto, ESO, recreo, aula, asignaturas obligatorias/optativas, actividades extraescolares. Cumple los tres criterios (frecuencia masiva en pp.23-24, posición no-canónica y valor pedagógico claro de soporte cultural-comunicativo)."
         }
       }
     }
@@ -690,7 +679,8 @@
     "Audio 30 (p29-act3) presente sin transcripción visible en la página; per §6.6 su contenido NO cuenta como fuente para los bloques consolidados — las listas tipadas de esa actividad se pueblan solo desde texto verbatim (las 7 afirmaciones V/F).",
     "p30-act3 (Relaciona definiciones de palabras subrayadas): léxico heterogéneo intra-ejercicio (descanso=sustantivo, distintas=adjetivo, alrededor de=locución, extraescolares=adjetivo, optativas=adjetivo). Per §5.7, vocabulario de la actividad queda como [] sin forzar canónico único; los items relevantes quedan capturados en la categoría recurrente 'Centros e instituciones educativas'.",
     "Acts p27-act11 y p27-act12 ('Escucha y repite las vocales españolas' / 'Escucha y repite' palabras-muestra): enfoque=pronunciacion_ortografia. El cuadro lateral 'Pronunciación y ortografía' es un rótulo de sección, no un cuadro independiente con contenido propio; sus actividades se modelan directamente.",
-    "p27-act7 ('Escribe los números que escuchas' con pares numéricos): enfoque=pronunciacion_ortografia per §2.3 heurística de dictado, no vocabulario. La fuente queda registrada en 'Números cardinales' como uso léxico secundario."
+    "p27-act7 ('Escribe los números que escuchas' con pares numéricos): enfoque=pronunciacion_ortografia per §2.3 heurística de dictado, no vocabulario. La fuente queda registrada en 'Números cardinales' como uso léxico secundario.",
+    "P14 resuelta por dictamen editorial del autor (v10.128b): saneamiento del bloque vocabulario_consolidado.recurrente tras revisión post-v10.128. (a) Eliminada la entrada 'Nacionalidad' (canónico PCIC A1 §1.7): el agente la había incluido justificándola como 'ya canónica en U1', pero U1 NO trabaja 'Nacionalidad' canónicamente — trabaja 'Adjetivos de nacionalidad' (canónico de origen indice) y 'Gentilicios'. Falso amigo entre dos entradas del registry que cubren material parcialmente solapado. La materia identitaria de U2 queda cubierta por 'Adjetivos de nacionalidad' (principal) y 'Países hispanohablantes' (principal); sin pérdida material. (b) Reescrita la descripcion.U2 de 'Centros e instituciones educativas': no entra como recurrente por reciclaje cross-unidad (no aparece como vocabulario canónico en ninguna otra unidad del curso) sino por el criterio (b) de §5.1.1 — material imprescindible para los textos/ejercicios de la unidad sin ser principal del índice editorial, soporte léxico de la sección 'cultura' ('La ESO en España'). Eliminadas 7 referencias a 'Nacionalidad' en actividad.vocabulario / cuadro.vocabulario."
   ],
   "paginas_detalle": [
     {
@@ -778,7 +768,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿De dónde eres tú? Señala o completa tu nacionalidad.",
-          "vocabulario": ["Adjetivos de nacionalidad", "Nacionalidad"],
+          "vocabulario": ["Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Soy", "eres"]}
           ],
@@ -1279,7 +1269,7 @@
           "destreza": ["interaccion_oral"],
           "enfoque": "gramatica",
           "instruccion_original": "En parejas, pregunta y responde a tu compañero sobre estos personajes, como en el ejemplo.",
-          "vocabulario": ["Adjetivos de nacionalidad", "Países hispanohablantes", "Nacionalidad"],
+          "vocabulario": ["Adjetivos de nacionalidad", "Países hispanohablantes"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son", "Es", "Son"]}
           ],
@@ -1367,7 +1357,7 @@
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "vocabulario": ["Adjetivos de nacionalidad", "Saludos y despedidas", "Edad", "Nacionalidad", "Países hispanohablantes", "Centros e instituciones educativas", "Números ordinales"],
+          "vocabulario": ["Adjetivos de nacionalidad", "Saludos y despedidas", "Edad", "Países hispanohablantes", "Centros e instituciones educativas", "Números ordinales"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy", "Soy", "eres", "es", "Es"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tengo", "tienes", "tiene"]},
@@ -1479,7 +1469,7 @@
           "destreza": ["expresion_escrita", "expresion_oral", "interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Crea tu propio diálogo siguiendo estos pasos:",
-          "vocabulario": ["Nacionalidad", "Edad", "Saludos y despedidas"],
+          "vocabulario": ["Edad", "Saludos y despedidas"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -1832,7 +1822,7 @@
           "destreza": ["expresion_oral", "mediacion"],
           "enfoque": "comunicacion",
           "instruccion_original": "Con las respuestas de tu compañero informa a la clase sobre todo lo que ahora sabes de él: su nombre, su edad, su nacionalidad, su domicilio, sus aficiones… Los compañeros de clase pueden hacerte preguntas para completar la información.",
-          "vocabulario": ["Nacionalidad", "Edad", "Centros e instituciones educativas"],
+          "vocabulario": ["Edad", "Centros e instituciones educativas"],
           "tiempos_y_verbos": [
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tiene"]},
@@ -2180,7 +2170,7 @@
           "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Piensa en un personaje famoso. Tus compañeros te hacen preguntas para adivinar quién es.",
-          "vocabulario": ["Nacionalidad", "Edad"],
+          "vocabulario": ["Edad"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "es"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},

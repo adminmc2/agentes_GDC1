@@ -5,6 +5,25 @@
 
 ---
 
+## [v10.128b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.128 (Nacionalidad eliminada + Centros e instituciones educativas reescrita)
+
+Hallazgo del autor sobre el bloque `vocabulario_consolidado.recurrente` de U2 tras integración v10.128:
+
+1. **`Nacionalidad` (canónico PCIC A1 §1.7) eliminado.** El agente lo había incluido como recurrente justificándolo en "ya canónica en U1 (PCIC)". Falso: U1 NO trabaja `Nacionalidad` como canónico — trabaja `Adjetivos de nacionalidad` (canónico de origen `indice`) y `Gentilicios`. **Falso amigo entre dos entradas del registry** que cubren material parcialmente solapado pero pertenecen a dimensiones canónicas distintas:
+   - `Adjetivos de nacionalidad` (origen `indice`, léxico: gentilicios de país).
+   - `Nacionalidad` (origen `pcic_a1`, identidad personal).
+   La materia identitaria de U2 (¿de dónde eres? → Soy argentino) queda **cubierta sin pérdida** por `Adjetivos de nacionalidad` (principal en U2) y `Países hispanohablantes` (principal en U2). Eliminadas 6 referencias a `"Nacionalidad"` en `actividad.vocabulario` / `cuadro.vocabulario`.
+
+2. **`Centros e instituciones educativas` — descripción reescrita.** El agente decía "Recurrente: U2 introduce intensivamente el campo léxico escolar..." — contradicción interna entre la clasificación (recurrente) y la justificación (introducción nueva). Verificación: la categoría NO aparece como `vocabulario` canónico en el índice editorial de ninguna unidad U0-U9. El léxico escolar de U2 (instituto, ESO, recreo, aula, asignaturas obligatorias/optativas) vive principalmente como soporte de la sección `cultura` (`La ESO en España`). La descripción reescrita justifica correctamente la clasificación como recurrente por el **criterio (b) de §5.1.1** ("no forma parte del principal declarado en unidades posteriores pero es relevante para comprender textos y ejercicios de esta unidad"), no por reciclaje cross-unidad.
+
+**Edición adicional:**
+
+- `_decisiones_ia` de U2: nueva entrada **P14** documentando ambos saneamientos editoriales.
+
+**Sin cambios en registries.** Las reglas operativas (§5.1.1) ya contemplaban el caso (b) — no hace falta ampliar.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0.
+
 ## [v10.128 — 2026-05-15] — Fase 1: U2 migrada a shape v10.117 + ampliación "Nombres propios" a topónimos + U2 en apariciones verbales
 
 Tercera unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U2/`, rama `proc-u2-wip`, agente dry-run en chat limpio, commit candidato `dd6f8af`, integración a main por copia controlada + reformateo canónico + actualización coordinada de dos registries).
