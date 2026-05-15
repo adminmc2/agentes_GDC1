@@ -5,6 +5,16 @@
 
 ---
 
+## [v10.128d — 2026-05-15] — Fase 1: retirada de "Caso histórico" en la regla de metalengua de instrucción
+
+Micro-fix tras v10.128c por dictamen del autor: la subsección añadida a `reglas-operativas.md §5.2` ("Regla de exclusión por metalengua de instrucción") incluía un párrafo final **"Caso histórico de aplicación"** con referencias a P-decisiones de unidades concretas (P4-revisada U0, P1 U1, P4 U2). Eso es narrativa retrospectiva sobre decisiones del autor en JSONs específicos — no encaja en un contrato operativo prescriptivo.
+
+**Cambio:** retirado el párrafo. La regla queda solo descriptiva/prescriptiva (qué hacer, qué no hacer, lista de verbos típicos, caso ambiguo → §0.1), coherente con el estilo del resto de §5.2 y de las reglas operativas en general.
+
+Sin cambios materiales en la regla operativa. Sin cambios en JSONs.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0.
+
 ## [v10.128c — 2026-05-15] — Fase 1: formalización de la regla "metalengua de instrucción no es fuente de codificación" en §5.2
 
 Cierre de deuda doctrinal detectada por el autor: la regla operativa "**las formas verbales que aparecen únicamente en el enunciado/instrucción del libro al alumno NO cuentan como fuente de codificación de paradigma**" se ha aplicado en práctica al menos cuatro veces (P4-revisada U0, P1 U1, P4 U2, y ahora) pero **no estaba formalizada** en ningún contrato vivo. Vivía como decisiones ad-hoc replicadas en cada unidad — cada agente la redescubría.

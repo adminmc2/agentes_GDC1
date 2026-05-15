@@ -363,8 +363,6 @@ Ejemplo: en *"Quieres comer carne"*, `querer` entra con `tiempo: "Presente"`, `f
 - Lista provisional (no exhaustiva) de verbos imperativos típicos de enunciado en NC1: *Lee, Mira, Escucha, Repite, Escribe, Completa, Subraya, Marca, Relaciona, Ordena, Clasifica, Contesta, Responde, Pregunta, Continúa, Imagina, Crea, Habla, Piensa, Comprueba, Busca, Forma, Señala, Elige, Adivina*.
 - **Caso ambiguo (escalar §0.1):** un mismo lema aparece en el enunciado Y en el contenido didáctico de la misma actividad. Codificar **solo** las formas del contenido didáctico; descartar las formas del enunciado aunque coincidan léxicamente. Si la instrucción cita literalmente el contenido (*"Lee este texto: 'Mi padre lee el periódico'"*), proponer en chat antes de codificar.
 
-**Caso histórico de aplicación:** P4-revisada U0 (escuchar/leer/escribir/repetir/preguntar/decir como metalengua, no paradigma); P1 U1 (`leer` como metalengua, no paradigma — formas `Lee` en p12-act1, p13-act9, p18-act1/2 descartadas); P4 U2 (excluye 20 verbos imperativos de enunciados al codificar el paradigma; `ir` se codifica solo por contenido didáctico real — diálogos, sugerencias, perífrasis `ir a + infinitivo`).
-
 ### §5.6. Canon semántico léxico — asignación del nombre canónico
 
 **Aplica a:** asignar el nombre canónico de **campos semánticos léxicos**, que aparecen como:
