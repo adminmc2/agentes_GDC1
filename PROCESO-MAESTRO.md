@@ -488,7 +488,7 @@ guia-didactica-profesor-IA/
 │   │   ├── gramatica-canonica.json          (registry gramatical, 17 categorías, poblado v10.117)
 │   │   ├── pronunciacion-ortografia-canonica.json (registry pron-orto, 7 categorías, poblado v10.117)
 │   │   └── pcic-a1-{vocabulario,gramatica,pronunciacion-ortografia,comunicacion}.json (4 PCIC A1)
-│   └── 2-reciclaje/                         (fase 2 pausada, REDISEÑO-EN-CURSO.md documenta diseño)
+│   └── 2-reciclaje/                         (fase 2 pausada; REDISEÑO-EN-CURSO.md activo modelo IA-first desde v10.121 + REDISEÑO-EN-CURSO-viejo.md reservorio histórico)
 │
 ├── scripts/                                 ← código activo
 │   └── validar_inventario.py                (validador; alineación post-rediseño en deuda — §A.1 schema)

@@ -5,6 +5,23 @@
 
 ---
 
+## [v10.126 — 2026-05-15] — Fase 2: creación del nuevo `REDISEÑO-EN-CURSO.md` (modelo IA-first, construcción por pasos)
+
+Primer paso del rediseño de fase 2 bajo modelo IA-first. Mismo patrón que el rediseño de fase 1 v10.115-116 (reglas-operativas, convenciones-y-casos): el documento viejo se renombra a `-viejo.md` y el nuevo nace con el nombre canónico, construyéndose paso a paso conforme el autor indica decisiones.
+
+- `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` antiguo → `REDISEÑO-EN-CURSO-viejo.md`. Header añadido: declarado como reservorio histórico, no se actualiza con decisiones nuevas; se consulta como referencia de D1/D2/D3/R1-R5/§8; se archiva en `docs/historico/` cuando el activo cubra todo lo vigente.
+- `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` nuevo creado con esqueleto mínimo: solo §1 cerrado (modelo de trabajo, paso 1) + placeholders para pasos siguientes + apéndice de aprovechamiento (tabla con piezas del viejo a importar/descartar/reformular).
+- **§1 cerrado en este lote — Modelo de trabajo (paso 1):**
+  - §1.1 Granularidad: por unidad.
+  - §1.2 Estructura del ciclo por unidad: Chat A (fase 1 con `prompt-dry-run.md`) → Chat B (fase 2 con prompt envoltorio propio, pendiente de diseño) → integración a main. Ambos chats en el mismo worktree aislado.
+  - §1.3 Arquitectura interna híbrida (Capa 1 script + Capa 2 sesión IA, no a la vez) — decisión heredada del viejo, vigente.
+  - §1.4 Hitos cross-unidad: por unidad (Capa 1+2) + cada 3 unidades (cross-unidad ampliado) + global final tras cierre de bloque. Granularidad intermedia exacta pendiente.
+  - §1.5 Régimen temporal dual: mismo flujo + mismos prompts envoltorios + mismos contratos, distinto disparador. Manual ahora (construcción), agentic en futuro.
+  - §1.6 Alcance NC1. Multi-curso explícitamente fuera de alcance.
+- Refs actualizadas en docs vivos: `fases/2-reciclaje/CLAUDE.md` (P1 redirige al `-viejo.md` con nota de pendiente migrar), `fases/1-extraccion-inventario/gramatica-canonica.json` (§8 redirige al `-viejo.md`), `PROCESO-MAESTRO.md` árbol vivo (refleja activo + viejo coexistiendo).
+
+**Próximos pasos del rediseño (el autor indicará uno por uno):** diseño concreto del prompt envoltorio de fase 2 por unidad, política de hitos intermedios, decisión final de P1, cierre de §8 y R1-R5 en el documento activo, persistencia de propuestas decisionales, etc.
+
 ## [v10.125 — 2026-05-15] — Fase 1: blindaje del serializador de inventarios + reformateo canónico de U0/U1
 
 Cierre de deuda técnica detectada por el revisor tras v10.124b: el enfoque "post-regex" usado en los scripts ad-hoc de v10.123 y v10.124 para preservar el estilo editorial (items inline `{palabra, fuentes}` uno por línea) tenía un bug latente — cuando varios items consecutivos se colapsaban en secuencia, el patrón no preservaba el newline entre ellos y terminaban pegados en una sola línea con `},          {` consecutivos. La regresión se manifestó dos veces y se cerró ad-hoc en v10.123b y v10.124b. Con U2-U9 por procesar, mantener el bug latente garantizaba ensuciar todos los diffs futuros.
