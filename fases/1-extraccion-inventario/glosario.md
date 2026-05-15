@@ -154,6 +154,21 @@ Cada entrada del bloque tiene los siguientes campos:
 
 Cada actividad y cada cuadro ya declaran, dentro de su campo `tiempos_y_verbos`, los lemas verbales trabajados con su tiempo y sus formas. El bloque consolidado **reorganiza** esa información en una lista plana con **una entrada por lema único**, acumulando bajo cada entrada sus tiempos, formas trabajadas y fuentes a lo largo de toda la unidad.
 
+### Regla de anticipación verbal por lema
+
+Un verbo entra en `tiempos_y_verbos` (y en el consolidado) **solo si su lema es canónico de la unidad actual o de una unidad anterior** del curso, según declara `verbos-canonicos.json._apariciones`. Si el lema es canónico de una unidad **posterior**, sus formas que aparezcan en la unidad actual son **input incidental** (anticipación) y **NO se registran** como entrada verbal, aunque la forma sea materialmente visible.
+
+Casos típicos:
+- Conjugadas aisladas de un lema posterior (ej. `hacemos pasta` en U4 cuando `hacer` es canónico de U6) → no se registran.
+- Formas auxiliares de perífrasis cuyo lema es posterior (ej. `vamos a preparar` en U4 cuando `ir` es canónico de U6) → no se registran (ni el lema ni la perífrasis).
+- Infinitivos sueltos cuyo lema es canónico posterior → no se registran.
+
+**Cómo se anota la anticipación detectada:**
+- En **migración real** de inventarios al modelo nuevo: en `_migracion_rediseno.anticipaciones_detectadas_para_fase_2` (top-level del inventario, opcional transitorio).
+- En **fixtures exploratorias**: en `_fixture_exploratoria.hallazgos.anticipaciones_detectadas_para_fase_2`.
+
+Detalle normativo completo en `reglas-operativas.md` §5.2 (regla de anticipación) y §6.3 (anticipación en consolidados). **Fase 2 retoma este registro** para análisis cross-curso (clasificación del verbo por unidad con etiqueta `anticipacion` cuando aplica).
+
 ### Desalineación actual con el registry (deuda Paso 3)
 
 El **registry** `verbos-canonicos.json` (catálogo permanente de lemas válidos del curso) tiene hoy un shape parcialmente distinto del declarado en §9.2. `lema`, `tipo_de_verbo`, `rasgo_por_tiempo` y `tiempos` están alineados. Pendientes:
@@ -634,6 +649,33 @@ Cada dimensión lingüística del sistema usa **dos artefactos paralelos**: una 
 - `pcic-a1-comunicacion.json` — Funciones comunicativas PCIC A1 (141 entradas). No alimenta ningún bloque top-level del schema, pero se conserva como recurso disponible para descripciones que requieran apoyo pragmático-comunicativo, o para futuros bloques.
 
 **Source of truth del eje curso↔unidad:** `unidades/nc1-curso.json` (descrito en la sección "Top-level del inventario").
+
+### Atributos por categoría en los registries canónicos
+
+Cada categoría en `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json` y `verbos-canonicos.json` lleva metadatos para anclaje pedagógico y análisis cross-unidad.
+
+**`_pcic_ref`** *(string)* — referencia textual a la sección PCIC A1 que respalda la categoría (ej. `"PCIC A1 §3.1 El artículo definido"`). Sirve para trazabilidad pedagógica y auditoría. Cuando una categoría no encaja en una sección PCIC §X.Y específica, el campo puede usar naming descriptivo más amplio.
+
+**`_apariciones`** *(objeto `{U<n>: <rol-texto>}`)* — declara en qué unidades del curso la categoría aparece y con qué rol pedagógico. Ejemplo:
+
+```jsonc
+"Pronombre sujeto": {
+  "_pcic_ref": "PCIC A1 §7.1.1 Pronombre sujeto",
+  "_apariciones": {
+    "U1": "introducción (singulares con ser/llamarse/tener)",
+    "U2": "ampliación a plurales",
+    "U3": "recurrente como soporte sintáctico"
+  },
+  "items": ["yo", "tú", "él"]
+}
+```
+
+Reglas operativas:
+- Las claves son **unidades reales del curso** (`U0`-`U9`). PROHIBIDO usar rangos comprimidos tipo `"U4-U9"`; se desglosan en entradas individuales.
+- El valor es texto libre con el rol pedagógico (`"principal"`, `"ampliación a X"`, `"recurrente como soporte sintáctico"`, etc.).
+- En `verbos-canonicos.json` el campo equivalente se llama **`apariciones`** (sin guion bajo inicial) y su valor es lista de tiempos abreviados (`{"U1": ["PRE"]}`). Desalineación de shape declarada como deuda Paso 3 del schema.
+
+**Uso en fase 2:** `_apariciones` es la fuente principal para detectar **anticipación cross-unidad**: si una categoría aparece materialmente en U(n) pero su `_apariciones` declara que es canónica solo en U(n+k), la aparición en U(n) se etiqueta como `anticipacion`. Detalle del análisis cross-curso en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`.
 
 ### Forma de los archivos PCIC
 
