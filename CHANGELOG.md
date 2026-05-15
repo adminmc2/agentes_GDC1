@@ -5,6 +5,29 @@
 
 ---
 
+## [v10.128c — 2026-05-15] — Fase 1: formalización de la regla "metalengua de instrucción no es fuente de codificación" en §5.2
+
+Cierre de deuda doctrinal detectada por el autor: la regla operativa "**las formas verbales que aparecen únicamente en el enunciado/instrucción del libro al alumno NO cuentan como fuente de codificación de paradigma**" se ha aplicado en práctica al menos cuatro veces (P4-revisada U0, P1 U1, P4 U2, y ahora) pero **no estaba formalizada** en ningún contrato vivo. Vivía como decisiones ad-hoc replicadas en cada unidad — cada agente la redescubría.
+
+Búsqueda exhaustiva confirmada en `prompt.md`, `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`, `glosario.md` y `CLAUDE.md`. Lo más cercano era `convenciones-y-casos.md:125` que descarta marcadores editoriales (*Posibles respuestas:*, *Ejemplo:*) como "metalengua del libro", pero refiere a marcadores tipográficos, no a verbos imperativos del enunciado.
+
+**Cambio en `fases/1-extraccion-inventario/reglas-operativas.md` §5.2:**
+
+Añadida la subsección **"Regla de exclusión por metalengua de instrucción"** tras las reglas de anticipación y los casos típicos. Define:
+
+- Las formas verbales que aparecen únicamente en la metalengua de instrucción (*Lee y escucha*, *Escribe*, *Completa con…*, *Mira el vídeo*, etc.) NO se codifican en `actividad.tiempos_y_verbos[]` ni en `cuadro.tiempos_y_verbos[]`. Tampoco propagan apariciones en `verbos-canonicos.json[verbos][lema].apariciones`.
+- Aplica a cualquier lema, con independencia del modo (imperativo, presente, infinitivo).
+- Solo se codifican formas del **contenido didáctico**: diálogos, textos, modelos, audios, ejercicios, ejemplos, respuestas modelo, items_libro.
+- Lista provisional de verbos imperativos típicos de enunciado en NC1 (no exhaustiva): *Lee, Mira, Escucha, Repite, Escribe, Completa, Subraya, Marca, Relaciona, Ordena, Clasifica, Contesta, Responde, Pregunta, Continúa, Imagina, Crea, Habla, Piensa, Comprueba, Busca, Forma, Señala, Elige, Adivina*.
+- Caso ambiguo (escalar por §0.1): mismo lema aparece en enunciado Y en contenido didáctico de la misma actividad — codificar solo las formas del contenido didáctico.
+- Caso histórico documentado en la propia regla: P4-revisada U0, P1 U1, P4 U2 (con `ir` en U2 codificado solo por contenido didáctico real: diálogos, sugerencias, perífrasis `ir a + infinitivo`).
+
+**Sin cambios en JSONs de unidades** — la regla codifica lo que ya se venía aplicando correctamente. Los inventarios de U0/U1/U2 no requieren modificación.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0.
+
+**Beneficio operativo:** futuras extracciones (U3-U9) no tendrán que redescubrir la regla en cada P; podrán citar `reglas-operativas.md §5.2` directamente.
+
 ## [v10.128b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.128 (Nacionalidad eliminada + Centros e instituciones educativas reescrita)
 
 Hallazgo del autor sobre el bloque `vocabulario_consolidado.recurrente` de U2 tras integración v10.128:
