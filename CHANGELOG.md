@@ -5,6 +5,25 @@
 
 ---
 
+## [v10.132 — 2026-05-15] — Glosario + REDISEÑO fase 2 §2 (corrección de versionado)
+
+Lote acumulado que recoge dos commits anteriores cuyos mensajes contienen versiones erróneas (v10.118 y v10.119, números ya consumidos en estados anteriores del proyecto). Se documentan aquí bajo la versión correcta v10.132. Los commits previos quedan en el histórico técnico pero la versión canónica del trabajo es esta.
+
+**Cambios:**
+
+- **`fases/1-extraccion-inventario/glosario.md`** (commit `bdc987a`, mensaje "v10.118"):
+  - Nueva sub-sección "Regla de anticipación verbal por lema" en `tiempos_y_verbos_consolidado`. Documenta que un verbo entra al consolidado solo si su lema es canónico de la unidad actual o de una anterior; las formas de lemas canónicos posteriores son input incidental (anticipación) y se anotan en `_migracion_rediseno` o `_fixture_exploratoria`, no en el consolidado. Tres tipos de caso (conjugada aislada, perífrasis auxiliar, infinitivo aislado). Fase 2 retoma estas anotaciones para el análisis cross-curso.
+  - Nueva sub-sección "Atributos por categoría en los registries canónicos". Documenta `_pcic_ref` (referencia PCIC A1) y `_apariciones` (`{U<n>: <rol-texto>}`) como atributos por categoría dentro de los registries gramatical, pron/orto y léxico. Distingue de `apariciones` (sin underscore) de `verbos-canonicos.json`. Útil en fase 2 para detección cross-unidad de anticipaciones.
+
+- **`fases/2-reciclaje/REDISEÑO-EN-CURSO.md`** (commit `ad0bd70`, mensaje "v10.119"):
+  - §2 cerrado: **Modelo de análisis por unidad**.
+  - §2.1 — tres momentos de análisis obligatorios: intra-unidad, cross-atrás (U[n] vs U[0..n-1]), cross-adelante (U[n] vs U[n+1..N]).
+  - §2.2 — granularidad por bloque: vocabulario por campo semántico; gramática y pron/orto por categoría; verbal por lema.
+  - §2.3 — seis etiquetas coexistentes por evento (`etiquetas[]` en lugar de `accion` única): `introduce`, `amplia`, `aplica`, `sistematiza`, `contrasta`, `anticipacion`. Notas sobre qué momento de análisis las detecta.
+  - §2.4 — esbozo del shape del hilo. Detalle exacto (evidencias, persistencia de `_nota_ia`) pendiente para pasos siguientes.
+
+**Convención operativa (a partir de v10.132):** el trabajo de diseño de fase 2 pasa a un **worktree dedicado** para evitar colisiones de versionado con el procesamiento de unidades en `main`.
+
 ## [v10.131 — 2026-05-15] — Fase 1: retirada del canon de "Nombres propios" (gramatical)
 
 Dictamen editorial del autor: la categoría `Nombres propios` añadida al canon gramatical en v10.123 (antropónimos U1) y ampliada en v10.128 (topónimos U2) **se retira del canon**. Motivo: el libro NC1 no trabaja pedagógicamente la categoría como contenido — los antropónimos y topónimos aparecen en textos como contenido verbatim pero el manual no enseña una regla gramatical específica sobre nombres propios (la regla "sin-artículo determinado" es inferencia gramatical, no contenido didáctico expuesto). Aplicar `Nombres propios` cada vez que aparece un personaje o un topónimo en un texto convertía la categoría en un comodín pedagógicamente vacío.

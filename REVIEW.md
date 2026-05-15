@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-15 (v10.131 — retirada del canon de "Nombres propios" gramatical; limpieza en U1/U2/U3).
+> **Última actualización:** 2026-05-15 (v10.132 — glosario: anticipación verbal por lema + atributos de registries; REDISEÑO fase 2 §2 cerrado: 3 momentos de análisis + 6 etiquetas coexistentes; trabajo de diseño de fase 2 pasa a worktree dedicado).
 
 ---
 
