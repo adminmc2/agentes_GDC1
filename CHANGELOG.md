@@ -5,6 +5,19 @@
 
 ---
 
+## [v10.122 — 2026-05-15] — Fase 1: retirada de la fixture `unidades/U1-propuesta/`
+
+Cumplió su función diagnóstica durante el rediseño v10.111-v10.114 (estresar el shape nuevo antes de tener inventarios canónicos en shape v10.117). Con U1 canónica ya migrada en v10.121 con validador 0/0/0, la fixture queda obsoleta. Además estaba en shape pre-v10.115 (sin `_fixture_exploratoria`, sin los 3 bloques top-level consolidados nuevos), por lo que mantenerla requeriría re-migración sin valor pedagógico ni técnico.
+
+**Decisión consistente con v10.113** (retirada de U2p/U3p tras cumplir su función diagnóstica equivalente).
+
+**Cambios:**
+
+- `unidades/U1-propuesta/` eliminado del repositorio (`git rm -r`).
+- `PROCESO-MAESTRO.md`: línea del árbol de carpetas retirada.
+- Referencias genéricas a variantes "Np" en `diagrama.py:296` y `web/index.html:1200` **conservadas** (sirven a fixtures futuras del shape v10.117).
+- Referencias históricas en CHANGELOG/REVIEW **conservadas** (bitácora válida).
+
 ## [v10.121 — 2026-05-15] — Fase 1: U1 migrada a shape v10.117 + canonización "Números cardinales" (rename retroactivo U0)
 
 Segunda unidad re-procesada con el flujo de worktree aislado: `../guia-proc-U1/` con rama `proc-u1-wip`, agente dry-run en chat limpio, commit candidato `6132896` en el worktree, integración a main por copia controlada del JSON + rename del canónico léxico + retoque retroactivo en U0.

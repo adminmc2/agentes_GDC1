@@ -471,7 +471,6 @@ guia-didactica-profesor-IA/
 │   ├── U7/U7-nc1-inventario.json            (extraído pre-rediseño v10.115)
 │   ├── U8/U8-nc1-inventario.json            (extraído pre-rediseño v10.115)
 │   ├── U9/U9-nc1-inventario.json            (extraído pre-rediseño v10.115)
-│   ├── U1-propuesta/                        (fixture exploratoria del rediseño, unidad: "1p")
 │   ├── nc1-curso.json                       (índice editorial global del curso)
 │   ├── nc1-reciclaje.json                   (mapa de reciclaje cross-unidad, fase 2 pausada)
 │   └── U[X]/fuente/U[X]-nc1.pdf             (gitignored, input local del autor)
