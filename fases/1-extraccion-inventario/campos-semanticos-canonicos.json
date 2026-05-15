@@ -1,12 +1,12 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.1",
+    "version": "1.2",
     "actualizado": "2026-05-15",
     "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.",
     "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
   },
-  "version": "1.1",
+  "version": "1.2",
   "actualizado": "2026-05-15",
   "campos": [
     {
@@ -22,10 +22,11 @@
       "aliases_auto": []
     },
     {
-      "canonico": "Números 0-10",
+      "canonico": "Números cardinales",
       "origen": "indice",
-      "aliases_indice": [],
-      "aliases_auto": []
+      "aliases_indice": ["Números 0-10", "Números 1-20", "Números 21-100"],
+      "aliases_auto": [],
+      "nota": "Renombrado en v10.121 desde 'Números 0-10' (origen: indice U0) para abarcar las apariciones de U0 (0-10), U1 (0-20) y U2 (21-100) bajo un único canónico escalable. Los rótulos editoriales por unidad quedan registrados como aliases_indice."
     },
     {
       "canonico": "Para la clase",

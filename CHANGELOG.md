@@ -5,6 +5,34 @@
 
 ---
 
+## [v10.121 — 2026-05-15] — Fase 1: U1 migrada a shape v10.117 + canonización "Números cardinales" (rename retroactivo U0)
+
+Segunda unidad re-procesada con el flujo de worktree aislado: `../guia-proc-U1/` con rama `proc-u1-wip`, agente dry-run en chat limpio, commit candidato `6132896` en el worktree, integración a main por copia controlada del JSON + rename del canónico léxico + retoque retroactivo en U0.
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U1/U1-nc1-inventario.json`** reemplazado wholesale por el candidato del worktree. 10 páginas (12-21), 42 actividades, 7 cuadros. Vocab principal con 8 canónicos (Objetos de clase, Nombres de las letras, Nombre, Edad, Número de teléfono, Colores, Números cardinales, Saludos y despedidas) + 2 recurrentes (Adjetivos de nacionalidad, Para la clase). Gramática principal con 4 canónicos (Artículos determinados, Concordancia de género, Pronombre sujeto, Concordancia de número) + 1 recurrente (Interrogativos). Pron/orto principal con Entonación y Signos de puntuación + 1 recurrente (Sonidos y correspondencias ortográficas). Tres lemas verbales (ser, llamarse, tener). 13 entradas en `_decisiones_ia` con P1-P12 marcadas resueltas + última entrada con anticipaciones para fase 2.
+- **`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`**: rename `Números 0-10` → **`Números cardinales`** con `aliases_indice: ["Números 0-10", "Números 1-20", "Números 21-100"]`, `origen: indice`. Nota explicativa del rename y su escala (U0 0-10, U1 0-20, U2 21-100). `_meta.version` 1.1 → 1.2. Total entradas se mantiene en 100 (rename, no alta).
+- **`unidades/U0/U0-nc1-inventario.json`** (retoque retroactivo): rename de la clave `vocabulario_consolidado.principal."Números 0-10"` → `"Números cardinales"` y de la referencia `cuadro@p11.vocabulario`. El campo `descripcion.U0` se mantiene; el rótulo verbatim "Números 0-10" del título editorial de U0 queda registrado como alias en el registry.
+
+**Cerradas las 6 deudas legacy reportadas por el agente:** las 6 eran la misma causa (referencias a "Números cardinales" no canónico). Tras el rename del registry, las 6 desaparecen.
+
+**Edición poscopia del candidato U1 (P10 reescrita):**
+
+- Entrada P10 de `_decisiones_ia` reescrita como "P10 resuelta por dictamen editorial del autor (v10.121)..." para reflejar el cierre operativo de la acción coordinadora — patrón aplicado igual que con P1(b) en U0/v10.119.
+
+**Deuda §A.3 reportada por el agente (no bloquea; pendiente de saneamiento posterior):**
+
+- `verbos-canonicos.json` → `leer.apariciones.U1: ["PRE"]` divergente de la decisión P1 (lema metalengua, no paradigma).
+- `gramatica-canonica.json` → `Interrogativos` no declara U1 en `_apariciones` aunque U1 los trabaja como recurrente (P5).
+- `pronunciacion-ortografia-canonica.json` → `Signos de puntuación → _apariciones.U1: ["interrogación"]` confirmado pero con material débil (P8).
+
+**Validador final desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U1/` y rama `proc-u1-wip` eliminados tras integración limpia.
+
+**Deuda restante en el bloque de re-extracción:** U2-U9 con shape legacy todavía pendientes de migración mediante el mismo flujo.
+
 ## [v10.120 — 2026-05-15] — Fase 2: limpieza documental tras rediseño de fase 1 v10.115-118
 
 Limpieza declarativa de drift en docs y scripts de fase 2 tras los cambios de shape de fase 1 en v10.115-118 (eliminación de `actividad.campo_semantico`, eliminación de `vocabulario_consolidado.comprension`, renombrado `fonetica → pronunciacion_ortografia`, 4 bloques top-level consolidados nuevos, 4 listas tipadas por actividad).

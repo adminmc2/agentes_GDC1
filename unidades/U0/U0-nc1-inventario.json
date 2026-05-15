@@ -81,7 +81,7 @@
           "U0": "Punto de partida pre-A1.1: presentación del abecedario español como inventario léxico-fonético (27 letras con nombre canónico y palabra-ejemplo). Base para el deletreo (act7) y el dictado fonético (act8)."
         }
       },
-      "Números 0-10": {
+      "Números cardinales": {
         "items": [
           { "palabra": "cero",   "fuentes": ["p11-act9@R"] },
           { "palabra": "uno",    "fuentes": ["p11-act9@R"] },
@@ -432,7 +432,7 @@
           "destreza": ["comprension_auditiva"],
           "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y escribe los números del 0 al 10.",
-          "vocabulario": ["Números 0-10"],
+          "vocabulario": ["Números cardinales"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": ["Sonidos y correspondencias ortográficas"],
