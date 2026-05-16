@@ -5,6 +5,20 @@
 
 ---
 
+## [v10.141b — 2026-05-15] — Fase 1: U5 — doble codificación de Adverbios (corrige interpretación de v10.141)
+
+Aclaración del autor sobre v10.141: el bloque debe estar codificado **en las dos dimensiones del consolidado** simultáneamente, no solo en léxico.
+
+**Cambio aplicado:**
+
+- **`unidades/U5/U5-nc1-inventario.json`** — restaurado `gramatica_consolidada.principal["Adverbios y locuciones de lugar"]` con los mismos items y fuentes que el bloque léxico `vocabulario_consolidado.principal["Adverbios de posición"]` ya presente desde v10.141.
+- 9 referencias añadidas a `actividad.gramatica` / `cuadro.gramatica` (cuadro@p54, p54-act03, p55-act01/04/05, p56-act01, p58-act01, p59-act03, p61-act02) — ahora cada una tiene la categoría **tanto en `.vocabulario` como en `.gramatica`**.
+- Entrada `P16` de `_decisiones_ia` reescrita para reflejar la doble codificación: la unidad trabaja simultáneamente (a) las palabras-léxico (qué se dice) y (b) la categoría adverbial (cómo funciona sintácticamente con `estar`).
+
+**Sin cambios en registries** — `Adverbios y locuciones de lugar` (gramatical, v1.4) y `Adverbios de posición` (léxico, v1.5) ya están como se establecieron en v10.141.
+
+**Validador desde main:** U0/U1/U2/U3/U4/U5 → 0/0/0.
+
 ## [v10.141 — 2026-05-15] — Fase 1: `Posición` renombrada/reclasificada — A (gramatical) + B2 (léxico)
 
 Hallazgo del autor sobre U5: la categoría `Posición` en `gramatica_consolidada.principal` no es contenido gramatical propiamente — son palabras de marcador espacial (encima, debajo, detrás, delante, al lado) que NC1 A1.1 enseña como léxico, no como categoría adverbial abstracta. Decisión editorial: doble cambio (A + B2).
