@@ -6,7 +6,7 @@
 >
 > **Relación con `PROCESO-MAESTRO.md`:** maestro = decisiones cerradas + bitácora; REVIEW = plan ejecutable con gates pendientes.
 >
-> **Última actualización:** 2026-05-15 (v10.142b — U4: fix del fix; las fuentes ya estaban correctas, solo el `id` requería rename).
+> **Última actualización:** 2026-05-15 (v10.142c — U4: saneamiento §6.5 que v10.138 no detectó por bug de lookup; 20 `@R` adicionales retirados).
 
 ---
 
@@ -459,6 +459,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-15** — U4: saneamiento §6.5 que v10.138 no detectó por bug de lookup (v10.142c). Hallazgo del autor tras v10.142b: "cola" seguía con fuente `p47-act5@R` cuando la actividad numero 5 es `relaciona` (no productivo). Diagnóstico: v10.138 lookup hacía `pNN-actMM → UN-pNN-act<padded>`; al no coincidir con el id real (que era `act01`), resolvía erróneamente a otro `act05` (5to local, numero=9, productivo) y mantenía el @R. Ahora que v10.142b alineó id con numero, el lookup funciona. Fix: 20 @R retirados de U4 (10 en `relaciona` + 10 en `completa_huecos`); 12 @R legítimos en tipos productivos conservados. Validador U0-U4 → 0/0/0. U5 pendiente (siguiente lote).
 - **2026-05-15** — U4: fix del fix de v10.142 (v10.142b). Hallazgo del autor: tras v10.142, "cola" aparecía con fuente `p47-act9@R` cuando debería ser `p47-act5@R`. Diagnóstico: el agente de U4 usó dos convenciones (id=índice local, fuentes=numero del libro). Mi script v10.142 asumió ambos campos en convención local y propagó fuentes innecesariamente, rompiéndolas. Fix: revertir JSON de U4 al estado pre-v10.142 y reaplicar SOLO el rename de id (49 actividades), sin tocar fuentes (que ya estaban correctas). Aprendizaje aplicado a U5: el script solo modifica `id`, no propaga fuentes. Validador U0-U5 → 0/0/0.
 - **2026-05-15** — U4: corrección sistémica de `id` de actividades (v10.142). Bug detectado por el autor durante revisión visual de U5 (fuente `p53-act2` no correspondía a la actividad real "act 7" del libro). Auditoría: U0-U2 con convención correcta (`id = U<n>-p<pagina>-act<numero>`, sin padding, `numero` = número impreso en el libro); U3 también consistente; U4 y U5 con convención incorrecta (índice local de la página, con padding). U4 fix: 49 actividades renombradas, fuentes y `secciones.X.actividades_ids` propagados. Ej. `U4-p47-act08` → `U4-p47-act12`, fuentes `p47-act8@R` → `p47-act12@R`. U5 se arregla en lote siguiente (v10.143). Validador U0-U4 → 0/0/0.
 - **2026-05-15** — U5: doble codificación de Adverbios — corrige interpretación de v10.141 (v10.141b). Aclaración del autor: el bloque debe estar en las dos dimensiones del consolidado simultáneamente, no solo en léxico. Cambio: restaurado `gramatica_consolidada.principal["Adverbios y locuciones de lugar"]` con mismos items/fuentes que el bloque léxico ya presente. 9 refs añadidas a activity/cuadro.gramatica (cuadro@p54, p54-act03, p55-act01/04/05, p56-act01, p58-act01, p59-act03, p61-act02). P16 reescrita reflejando la doble codificación: U5 trabaja (a) las palabras-léxico (qué se dice) Y (b) la categoría adverbial (cómo funciona sintácticamente con `estar`). Sin cambios en registries. Validador U0-U5 → 0/0/0.

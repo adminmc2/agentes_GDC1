@@ -5,6 +5,32 @@
 
 ---
 
+## [v10.142c — 2026-05-15] — Fase 1: U4 — saneamiento §6.5 que v10.138 no detectó (bug de lookup)
+
+Tras v10.142b, una revisión del autor identificó que algunas palabras (ej. "cola" en p47-act5) seguían marcadas con `@R` cuando la actividad citada es de tipo `relaciona` (no productivo) — violación de §6.5.
+
+**Causa raíz:** mi script de saneamiento §6.5 en v10.138 tenía el **mismo bug latente** que arrastraba v10.142: asumía que las fuentes citaban id local de la actividad, no el `numero` del libro. Al hacer `re.match(r'^p(\d+)-act(\d+)$', base) → U4-p47-act05` (padded), buscaba una actividad con `id=U4-p47-act05` que SÍ existía en aquel momento (con `numero=9`, tipo `expresion_escrita_libre` — productivo) y por error la consideraba válida. La actividad realmente referenciada por la fuente era otra (`numero=5`, tipo `relaciona`).
+
+Ahora que v10.142b alineó los `id` con el `numero` del libro, el lookup funciona correctamente y el saneamiento puede aplicarse sin ambigüedad.
+
+**Fix aplicado en este lote:**
+
+- 20 `@R` retirados de fuentes en U4 que infringen §6.5 (lookup correcto contra `id == numero`):
+  - 10 en actividades de tipo `relaciona` (p47-act5).
+  - 10 en actividades de tipo `completa_huecos` (p49-act5).
+- 12 `@R` legítimos en actividades productivas (`produccion_escrita_guiada`, `expresion_escrita_libre`, `interaccion_oral`, `expresion_oral_libre`) se mantienen.
+
+**Ejemplo:** "cola" en `vocabulario_consolidado.principal.Alimentos`: fuente `p47-act5@R` → `p47-act5`. La actividad numero 5 (`relaciona` "una lata de cola...") no es tipo productivo, así que `@R` está prohibido.
+
+**Aplicabilidad a otras unidades:**
+
+- U0-U2: el lookup de v10.138 funcionó porque ahí `id` y `numero` siempre coinciden. No requiere acción.
+- U3: única actividad con desajuste tiene `numero=None` (caso atípico, no aplica saneamiento §6.5). No requiere acción.
+- U4: corregido en este lote.
+- U5: probable que tenga el mismo bug latente; se sanea junto al rename de `id` en el siguiente lote.
+
+**Validador desde main:** U0/U1/U2/U3/U4 → 0/0/0 · U5 → 0/0/0 (sin tocar; siguiente lote).
+
 ## [v10.142b — 2026-05-15] — Fase 1: U4 — fix del fix (las fuentes ya estaban correctas en v10.142; solo el id requería rename)
 
 Hallazgo del autor: tras v10.142, la palabra "cola" aparecía como fuente `p47-act9@R` cuando debería ser `p47-act5@R` (la actividad numero 5 del libro, donde aparece "una lata de cola" en `palabras_recuadro`).
