@@ -60,13 +60,8 @@ TIPOS_CUADRO_VALIDOS = {
 # Perífrasis retirado por opción B; estructura sintáctica, no tiempo.
 TIEMPOS_VALIDOS = {"Presente", "Pretérito indefinido", "Imperativo", "Infinitivo"}
 
-# Los 5 tipos productivos que admiten sufijo @R en fuentes (§6.5 reglas, §9.5 schema)
-TIPOS_PRODUCTIVOS_AR = {
-    "produccion_escrita_guiada", "expresion_escrita_libre", "expresion_oral_libre",
-    "tarea_final", "interaccion_oral",
-}
-
 # Regex de fuentes (§9.5 schema): pNN-actMM(@R)? | cuadro@pNN(#K)?
+# @R es marcador de localización ("palabra solo en respuestas[]") desde v10.145; no se restringe por tipo de actividad.
 import re
 FUENTE_REGEX = re.compile(r"^(p\d+-act\d+(@R)?|cuadro@p\d+(#\d+)?)$")
 
@@ -537,12 +532,9 @@ def validar(path):
                         if "estructura_perifrastica" in v_obj and not isinstance(v_obj["estructura_perifrastica"], str):
                             errores.append(f"❌ {vpref}: 'estructura_perifrastica' debe ser string si está presente")
 
-                    # @R en fuentes: solo si tipo está en los 5 productivos (§6.5 reglas)
-                    if tipo and tipo not in TIPOS_PRODUCTIVOS_AR:
-                        for v_obj in a.get("tiempos_y_verbos", []):
-                            for fuente in v_obj.get("fuentes", []) if isinstance(v_obj, dict) else []:
-                                if isinstance(fuente, str) and fuente.endswith("@R"):
-                                    errores.append(f"❌ {apref}: fuente con sufijo @R '{fuente}' en tipo no productivo '{tipo}' (§6.5: solo {sorted(TIPOS_PRODUCTIVOS_AR)})")
+                    # @R en fuentes: marcador de localización ("palabra solo en respuestas[]") desde v10.145.
+                    # No se restringe por tipo de actividad (gate viejo retirado). La validación de la regex de
+                    # fuentes (FUENTE_REGEX) ya admite @R libremente; la semántica vive en §6.5 de reglas-operativas.
 
                     # Marcas internas (schema §14)
                     if "_funcion_ambigua" in a and not isinstance(a["_funcion_ambigua"], bool):

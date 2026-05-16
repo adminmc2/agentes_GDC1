@@ -498,32 +498,28 @@ Para que un término entre como `recurrente`, debe cumplir los 3 criterios de §
 
 **Excepción:** nombres propios o siglas dentro de una forma compleja (raro en verbos A1) — escalar en chat por §0.1 antes de normalizar.
 
-### §6.5. Sufijo `@R` en fuentes
+### §6.5. Sufijo `@R` en fuentes — marcador de localización
 
 **Aplica a:** elementos de `fuentes` en cualquier entrada de los bloques consolidados.
 
-**Regla operativa.** Una palabra del consolidado lleva sufijo `@R` en su fuente si y solo si esa palabra **aparece únicamente** en el campo `respuestas` de una actividad de **producción**, no en el input del libro.
+**Regla operativa (v10.145).** Una palabra del consolidado lleva sufijo `@R` en su fuente si y solo si esa palabra **aparece únicamente en el campo `respuestas[]`** de la actividad citada y no en su input (`instruccion_original`, `datos.*`, `audio.transcripcion`, `items_libro`, `dialogo`, `texto`, `muestra_de_lengua`, opciones, etc.).
 
-**Tipos productivos que admiten `@R`** (los 5 declarados en la taxonomía cerrada de `schema-inventario.md` §5):
-- `produccion_escrita_guiada`
-- `expresion_escrita_libre`
-- `expresion_oral_libre`
-- `tarea_final`
-- `interaccion_oral`
+**`@R` es marcador de localización**, no de naturaleza pedagógica. Aplica a **cualquier `tipo` de actividad** (productivo o no): `completa_huecos`, `escucha_y_responde`, `relaciona`, `responder_preguntas_cerradas`, `seleccion_multiple`, `produccion_escrita_guiada`, `interaccion_oral`, etc. La dimensión pedagógica (productividad) vive en `actividad.tipo` y se cruza en runtime cuando hace falta — **no se codifica en el sufijo**.
 
-Cualquier otra lista divergente de la taxonomía es bug.
+> **Cambio de contrato v10.145.** El contrato anterior restringía `@R` a 5 tipos productivos (`produccion_escrita_guiada`, `expresion_escrita_libre`, `expresion_oral_libre`, `tarea_final`, `interaccion_oral`), lo que generaba falsos negativos sistemáticos en actividades no-productivas con la palabra revelada únicamente en respuestas (audio + completa_huecos, relaciona donde el lema vive en la columna-respuesta, etc.). El "Chequeo previo OBLIGATORIO contra los 5 productivos" queda retirado.
 
 **Cuándo NO aplica:** las fuentes de cuadro (`cuadro@pNN` o `cuadro@pNN#K`) nunca llevan `@R`. Los cuadros no tienen campo `respuestas`.
 
-**Chequeo previo OBLIGATORIO antes de poner `@R`.** Antes de añadir el sufijo a cualquier fuente, leer el campo `tipo` de la actividad y verificar que pertenece **exactamente** a la lista cerrada de 5 tipos productivos enumerada arriba. Si el `tipo` es cualquier otro (`completa_huecos`, `seleccion_multiple`, `escucha_y_repite`, `relaciona`, `clasifica`, etc.), **no se aplica `@R`** aunque la palabra "parezca" producida por el alumno. El criterio no es la intuición sobre producción, es el `tipo`. Aplicar `@R` sobre un tipo no productivo es bug.
+**Ejemplo:**
+- Palabra `"cocina"` aparece solo en `respuestas[]` de `p59-act4` (`completa_huecos`, no productivo). Fuente: `"p59-act4@R"`.
+- Palabra `"cocina"` aparece en `datos.items_libro` Y en `respuestas[]` de `p52-act3` (`clasifica`, no productivo). Dual-tracking: dos fuentes `"p52-act3"` + `"p52-act3@R"`.
+- Palabra que el alumno produce como respuesta esperada en un correo (`expresion_escrita_libre`) y no aparece previamente en el input → fuente `"pNN-actMM@R"`.
 
-**Ejemplo:** una palabra que el alumno produce como respuesta esperada en un correo (`expresion_escrita_libre`) y no aparece previamente en el input → fuente `"pNN-actMM@R"`. La misma palabra si aparece también en el input previo → fuente `"pNN-actMM"` sin sufijo.
+**Dual-tracking (input + respuesta en la misma actividad).** Si la palabra aparece **tanto en el input** (cualquier campo de input enumerado arriba) **como en `respuestas[]`** (ya sea forma idéntica o variante única), la fuente se codifica **dos veces** en la misma lista de `fuentes`: una vez sin sufijo (`pNN-actMM`) y una vez con `@R` (`pNN-actMM@R`). El dual-tracking refleja que la actividad aporta material por dos vías distintas (input + respuesta). Auditoría posterior puede usar esta doble entrada para reconstruir qué fue input y qué fue respuesta. Aplica a cualquier tipo de actividad.
 
-**Dual-tracking (input + respuesta única en la misma actividad).** Si la actividad es de tipo productivo y la palabra aparece **tanto en el input** (alguna forma o variante visible en el cuadro o el enunciado) **como en las respuestas con una forma única no presente en el input** (ej. el lema `gustar` tiene `gustar` en `items_libro` y `me gusta` solo en respuestas), entonces la fuente del item se codifica **dos veces** en la misma lista de `fuentes`: una vez sin sufijo (`pNN-actMM`) y una vez con `@R` (`pNN-actMM@R`). El dual-tracking refleja que la actividad aporta material por dos vías distintas (input + producción). Auditoría posterior puede usar esta doble entrada para reconstruir qué fue input y qué fue producción.
+**Solucionario "Posibles respuestas:" cuenta como respuesta.** Cuando el libro pone *"Posibles respuestas:"*, *"Modelo:"*, *"Solución:"* en la zona de respuestas (típico en mediación, interaccion_oral con búsqueda de información, expresión libre, tareas finales), el **marcador** se descarta (convenciones-y-casos §1.5) pero el **contenido subsiguiente** se transcribe a `respuestas[]` del JSON. Ese contenido cuenta como respuesta a efectos de §6.5: si una palabra aparece únicamente ahí, **lleva `@R`** (con independencia del `tipo`).
 
-**Solucionario "Posibles respuestas:" cuenta como respuesta.** Cuando el libro pone *"Posibles respuestas:"*, *"Modelo:"*, *"Solución:"* en la zona de respuestas (típico en actividades de mediación, interaccion_oral con búsqueda de información, expresión libre, tareas finales), el **marcador** se descarta (convenciones-y-casos §1.5) pero el **contenido subsiguiente** se transcribe a `respuestas[]` del JSON. Ese contenido cuenta como respuesta a efectos de §6.5: si una palabra aparece únicamente ahí (no en `instruccion_original`, `datos.*` ni `audio.transcripcion`) y la actividad es de tipo productivo, **lleva `@R`**. La existencia del modelo en el solucionario del libro no convierte al tipo en "no-productivo" — el criterio sigue siendo el `tipo` declarado de la actividad.
-
-**Caso prototípico que el agente original puede pasar por alto.** Actividades de `interaccion_oral` o `tarea_final` con subtipo de **mediación** o **búsqueda de información** suelen tener input escueto (solo el enunciado y los temas abstractos), mientras que el solucionario del libro lista la información concreta que el alumno construye oralmente. Todo lo que aparece únicamente en ese solucionario es producción del alumno por §6.5 — debe llevar `@R`. Ejemplo material en NC1: U4 `p49-act9` (`interaccion_oral`, subtipo `busqueda_informacion_y_mediacion`) tiene 12 ítems léxicos (`galletas`, `pasta`, `leche`, `fruta`, `verdura`, `bocadillo`, `arroz`, `cereales`, `tostadas`, `cacao`, `ensalada` y el repetido `leche` en otra categoría) que aparecen solo en el solucionario y por tanto llevan `@R`.
+**Caso prototípico de input escueto + solucionario rico.** Actividades de `interaccion_oral` o `tarea_final` con subtipo de **mediación** o **búsqueda de información** suelen tener input escueto (solo enunciado + temas abstractos) y solucionario con la información concreta que el alumno construye. Todo lo que aparece únicamente en ese solucionario lleva `@R`. Ejemplo material en NC1: U4 `p49-act9` (`interaccion_oral`, subtipo `busqueda_informacion_y_mediacion`) tiene 12 ítems léxicos que aparecen solo en el solucionario y por tanto llevan `@R`. Bajo el contrato v10.145, este caso ya no es excepción a una regla por tipo — es un ejemplo del patrón general.
 
 ### §6.6. Regla 11 — `audio.transcripcion` como condición de fuente válida
 

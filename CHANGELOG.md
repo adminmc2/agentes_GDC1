@@ -5,6 +5,41 @@
 
 ---
 
+## [v10.145 — 2026-05-16] — Fase 1: cambio de contrato — `@R` redefinido como marcador de localización (lote 1: contrato)
+
+Cambio de contrato breaking en su **semántica** (no en su estructura) tras diagnóstico del autor sobre el caso material "cocina" en U5 (8 fuentes, 3 con la palabra solo en respuestas y tipo no-productivo) y dictamen del revisor.
+
+**Causa raíz:** el contrato anterior acoplaba el sufijo `@R` al `tipo` de actividad (solo 5 productivos podían llevarlo). Esto generaba **falsos negativos sistemáticos** en actividades no-productivas con la palabra revelada únicamente en `respuestas[]` (completa_huecos con audio, escucha_y_responde, relaciona con lema en la columna-respuesta, etc.). El dashboard ya usaba semántica de localización ("Fuente ligada a respuesta") desde v10.137, mientras schema/reglas/validador seguían usando la dimensión pedagógica. Los dos lados del contrato estaban desalineados desde meses atrás.
+
+**Nueva definición canónica de `@R`:**
+
+> **Marcador de localización**: la palabra aparece **únicamente en el campo `respuestas[]`** de la actividad citada. Aplica a **cualquier `tipo` de actividad**, productivo o no. La dimensión pedagógica vive en `actividad.tipo` y se cruza en runtime — no se codifica en el sufijo. Dual-tracking se preserva intacto y se generaliza a cualquier tipo.
+
+**Lote 1 — cambio de contrato atómico (3 archivos núcleo + 2 docs meta):**
+
+- `fases/1-extraccion-inventario/schema-inventario.md` §9.5 — redefinición de `@R` como localización. Entrada del Apéndice transitorio actualizada coherentemente.
+- `fases/1-extraccion-inventario/reglas-operativas.md` §6.5 — reescritura completa. "Chequeo previo OBLIGATORIO contra los 5 productivos" retirado. Dual-tracking generalizado. Caso prototípico de mediación reformulado como ejemplo del patrón general, no como excepción a una regla por tipo. Ejemplos actualizados con el caso material `cocina` U5.
+- `scripts/validar_inventario.py` — constante `TIPOS_PRODUCTIVOS_AR` borrada (era muerta tras retirar gate, sin uso fuera de él). Chequeo `@R ⊂ productivos` (líneas 535-540 anteriores) retirado y sustituido por comentario que documenta el cambio. `FUENTE_REGEX` ya admite `@R` libremente y no se toca.
+- `CHANGELOG.md` + `REVIEW.md` — esta entrada.
+
+**Verificación del lote 1:** validador U0-U5 → **0/0/0** sin tocar JSONs. El relajamiento del gate no introduce errores: los datos actuales hoy no tienen `@R` en tipos no-productivos (esos casos están como falsos negativos en gris, no como errores).
+
+**Lo que NO se hace en este lote (queda para Lote 2):**
+
+- Migración de datos U0-U5. Auditoría programática estimó **≥138 casos en `vocabulario_consolidado`** (sin contar verbos/gramática/pron) que pasarán a llevar `@R` tras la migración. Mayoritariamente en `completa_huecos`, `responder_preguntas_cerradas`, `escucha_y_responde`, `relaciona`. Se hará por unidad con revisión visual.
+
+**Lo que NO se hace en absoluto:**
+
+- No se introduce `@S` ni ningún segundo sufijo (Opción B descartada).
+- No se elimina `@R` (Opción C descartada).
+- No se mezcla `audio.transcripcion` con `respuestas[]` (sigue siendo input por §6.6).
+- Las fuentes de cuadro siguen sin admitir `@R` (los cuadros no tienen `respuestas`).
+- El dashboard no se toca en este lote (su semántica ya estaba alineada con la nueva definición desde v10.137).
+
+**Decisión arquitectónica registrada.** El acoplamiento de `@R` a `tipo` era una sobrecarga del sufijo: mezclaba dos dimensiones ortogonales (dónde vive la palabra dentro de la actividad vs qué naturaleza pedagógica tiene la actividad). El contrato v10.145 separa las dos: localización en el sufijo, productividad en `tipo`. La pregunta "¿es una palabra producida por el alumno?" se responde cruzando los dos campos en runtime; no necesita codificación adicional en datos.
+
+---
+
 ## [v10.144 — 2026-05-16] — Fase 1: U5 — consolidación `Adverbios de posición` → `Marcadores de lugar` + §5.2 generalizada a las 4 dimensiones + gate de invocación
 
 Cierre de un bug estructural detectado por el autor durante revisión de U5: el bloque léxico `Marcadores de lugar: a la izquierda, ..., cerca` aparecía como "recurrente desde U2", pero al inspeccionar U2 las únicas apariciones reales eran `izquierda/derecha` como claves técnicas de `columnas_relaciona` y `delante` en una **instrucción de aula** (*"Representa el diálogo delante de la clase"*). Causa raíz: la regla §5.2 de exclusión por metalengua de instrucción solo cubría verbos en su redacción anterior, por lo que `delante` se filtró como ref léxica en U2 y arrastró un falso "recurrente" a U5. Adicionalmente coexistía en U5 un bloque `Adverbios de posición` con un único item placeholder `"Posición"` (artefacto de la reclasificación v10.141), cubriendo conceptualmente lo mismo.
