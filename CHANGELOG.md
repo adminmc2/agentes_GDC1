@@ -5,6 +5,33 @@
 
 ---
 
+## [v10.142d — 2026-05-15] — Fase 1: U4 — @R faltantes en `p49-act9` añadidos + §6.5 reforzada
+
+Cierre del audit §6.5 sobre U4 tras dos hallazgos del revisor: (a) el diagnóstico previo mezclaba un caso real con un falso positivo (`p44-act3` ya tenía dual-tracking correcto `pNN-actMM` + `pNN-actMM@R`); (b) el recuento exacto debía distinguir entradas consolidadas vs lemas únicos.
+
+**Estado real del bug en U4 (corregido):**
+
+- **1 actividad** afectada: `U4-p49-act9` (`interaccion_oral`, subtipo `busqueda_informacion_y_mediacion`).
+- **12 entradas consolidadas** con `@R` faltante (11 lemas únicos, deduplicando `leche` que aparece en 2 bloques).
+- Causa: el solucionario de la actividad ("Posibles respuestas:") contiene léxico que NO está en el input (instrucción ni datos). El agente original no marcó `@R` por intuición de "mediación" no es producción.
+
+**Fix aplicado en `unidades/U4/U4-nc1-inventario.json`:**
+
+- 12 fuentes `p49-act9` → `p49-act9@R` en:
+  - `vocabulario_consolidado.principal.Alimentos` (10): galletas, pasta, leche, fruta, verdura, bocadillo, arroz, cereales, tostadas, cacao.
+  - `vocabulario_consolidado.principal.Comidas preparadas` (1): ensalada.
+  - `vocabulario_consolidado.recurrente.Bebida` (1): leche.
+
+**Refuerzo de la regla §6.5 en `reglas-operativas.md`** para prevenir el mismo bug en futuras extracciones (U5-U9 cuando se procesen). Tres aclaraciones nuevas:
+
+1. **Dual-tracking explícito**: si una palabra aparece **tanto en input como en respuesta con forma única**, la fuente se duplica (`pNN-actMM` + `pNN-actMM@R`). El dual-tracking refleja que la actividad aporta material por dos vías distintas. Esto codifica formalmente el patrón que el inventario ya seguía implícitamente en p44-act3 (lema `gustar`).
+2. **Solucionario "Posibles respuestas:" cuenta como respuesta**: el marcador editorial se descarta (per convenciones §1.5) pero el contenido subsiguiente se transcribe a `respuestas[]` y cuenta para §6.5. La existencia del modelo en el solucionario no convierte al tipo en "no-productivo" — el criterio sigue siendo el `tipo` declarado.
+3. **Caso prototípico que el agente puede pasar por alto**: actividades `interaccion_oral` o `tarea_final` con subtipo de **mediación** o **búsqueda de información** suelen tener input escueto (solo enunciado y temas abstractos) y solucionario rico. Todo lo único del solucionario es producción. Se cita explícitamente el caso material `U4-p49-act9` como ejemplo prototípico.
+
+**Validador desde main:** U0/U1/U2/U3/U4 → 0/0/0 · U5 → 0/0/0 (sin tocar; aplicar mismo audit en siguiente lote).
+
+**Próximo lote (U5):** rename de `id` por alineación con `numero` del libro + audit §6.5 (a) `@R` de más + (b) `@R` de menos (caso `interaccion_oral` de mediación).
+
 ## [v10.142c — 2026-05-15] — Fase 1: U4 — saneamiento §6.5 que v10.138 no detectó (bug de lookup)
 
 Tras v10.142b, una revisión del autor identificó que algunas palabras (ej. "cola" en p47-act5) seguían marcadas con `@R` cuando la actividad citada es de tipo `relaciona` (no productivo) — violación de §6.5.
