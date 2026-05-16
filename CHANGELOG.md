@@ -5,6 +5,28 @@
 
 ---
 
+## [v10.145d — 2026-05-16] — Doc: precisión semántica de cifras del Lote 3A
+
+Corrección documental tras auditoría del revisor. La cifra "332 duales" usada en v10.145b y v10.145c era ambigua: se refiere a **duales añadidos por Lote 3A**, no a duales totales presentes en HEAD.
+
+**Conteo verificado (HEAD post-v10.145c, solo `vocabulario_consolidado` U0-U5):**
+
+| Tipo de fuente | Conteo | Origen |
+|---|---|---|
+| Duales (pares `plain` + `plain@R` en la misma `item.fuentes`) | **332** | Añadidos por Lote 3A (`--include-dual`) en v10.145b/c |
+| @R sin plain hermano (respuesta-only puros) | **169** | 150 de Lote 2 (v10.145a) + ~19 preexistentes (v10.142d en U4, otros) |
+| **Total @R en vocabulario U0-U5** | **501** | Estado post-Lote 3A |
+
+Cifras pre-Lote 3A (HEAD~1, antes de v10.145b): 0 pares dual + 169 solo-@R = 169 @R totales. Lote 3A añadió 332 nuevos pares de dual-tracking; el delta es exactamente 332 fuentes nuevas con `@R` alongside.
+
+**Formulación correcta a partir de ahora:**
+- "Lote 3A añadió 332 duales (pares plain + @R) en vocabulario U0-U5."
+- "Estado actual de @R en vocabulario U0-U5: 501 fuentes (332 duales pares + 169 respuesta-only puros)."
+
+Sin cambios materiales en JSONs ni scripts. Validador U0-U5 → 0/0/0.
+
+---
+
 ## [v10.145c — 2026-05-16] — Fase 1: Lote 3A — cierre de U2 vocabulario (42 duales aplicados)
 
 Cierre del Lote 3A en `vocabulario_consolidado` de U2, dejado fuera de v10.145b por sus 131 anomalías de dry-run. Aplicación de los 42 duales calculados; las 131 anomalías se documentan como deuda separada y no se resuelven en este lote.
