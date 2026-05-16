@@ -5,6 +5,47 @@
 
 ---
 
+## [v10.137 — 2026-05-15] — Dashboard: retirada del texto `·R` en badges + pista no-cromática preservada
+
+Ajuste cosmético del dashboard. **Sin tocar datos, contratos ni registries** — los 587 sufijos `@R` en los inventarios canónicos U0-U4 quedan intactos.
+
+**Archivo modificado (único):** `web/index.html`.
+
+**Cambios:**
+
+1. Retirada del pseudo-elemento CSS que añadía el texto " ·R" al final de los badges con clase `.source-respuesta`:
+
+```diff
+- .item-card-source.source-respuesta::after { content: " ·R"; opacity: 0.7; }
++ /* `·R` retirado de la etiqueta visible; la distinción se preserva por
++    color + title + aria-label en el render (ver líneas 1173, 1251, 1329). */
+```
+
+2. Render JS de los badges (3 sitios — líneas 1173, 1251, 1329) actualizado para que las fuentes con `@R` lleven `title` y `aria-label` que **combinan el contenido del badge con la nota semántica**, no solo la nota:
+
+```diff
+- return `<span class="item-card-source${isR?' source-respuesta':''}">${_esc(lab)}</span>`;
++ return `<span class="item-card-source${isR?' source-respuesta':''}"${isR?` title="Fuente ligada a respuesta" aria-label="${_esc(lab)}, fuente ligada a respuesta"`:''}>${_esc(lab)}</span>`;
+```
+
+**Por qué el aria-label combinado** (acepta hallazgo del revisor): si `aria-label` solo dijera "Fuente ligada a respuesta", las tecnologías asistivas anunciarían únicamente esa frase y perderían el dato útil del badge (la referencia concreta `p21-act5`, etc.). El nuevo formato `"${lab}, fuente ligada a respuesta"` preserva ambos.
+
+**Distinciones que cargan la semántica de `@R` ahora (redundancia no-cromática):**
+
+| Canal | Mecanismo |
+|---|---|
+| Color | Clase CSS `.source-respuesta` (badge azul, sin cambios). |
+| Hover (vista) | Atributo `title`. |
+| Tecnologías asistivas | Atributo `aria-label` combinando `lab + ", fuente ligada a respuesta"`. |
+| Identificación programática | Clase CSS `.source-respuesta` en el DOM. |
+| Datos persistentes (JSON) | Sufijo `@R` en `fuentes`. |
+
+**Trazabilidad de §6.5 que NO se aplica en este lote:** la regla operativa `reglas-operativas.md §6.5` exige que `@R` solo se use en actividades de los 5 tipos productivos. Una auditoría previa detectó múltiples `@R` en data que infringen ese criterio (587 totales en U0-U4, de los cuales solo ~33 están en tipo productivo válido). **El saneamiento de los `@R` en data queda pendiente** como trabajo separado; este lote toca solo dashboard, no data.
+
+**Validador:** sin afectación (no se tocaron JSONs). U0/U1/U2/U3/U4 → 0/0/0.
+
+**Compatibilidad:** retrocompatible. Consumidores que lean los JSON ven `@R`. Selectors / scrapers que buscan `.source-respuesta` siguen funcionando. Screen readers leen lab + nota.
+
 ## [v10.136 — 2026-05-15] — REDISEÑO fase 2 §4: modelo recursivo del hilo + nivel `detalle`
 
 Cierre del paso 4 del rediseño de fase 2. Recupera doctrina dispersa entre `REDISEÑO-EN-CURSO-viejo.md §2`, `viejo/marco-teorico-metodologico.md §6` y `docs/historico/B1.5-contrato-reciclaje.md`, e incorpora la decisión editorial sobre cómo se visualiza `detalle` en el dashboard.

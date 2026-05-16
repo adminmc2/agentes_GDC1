@@ -207,7 +207,7 @@ details:not([open]) > summary .acc-chevron { transform: rotate(0deg); }
     color: #01579B;
     border-color: #B3E5FC;
 }
-.item-card-source.source-respuesta::after { content: " ·R"; opacity: 0.7; }
+/* `·R` retirado de la etiqueta visual; el badge azul (clase .source-respuesta) sigue marcando la fuente como ligada a respuestas. */
 
 /* Grid de tarjetas dentro de categorías */
 .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px; }
@@ -1170,7 +1170,7 @@ function renderInventario(inv) {
                                             <span class="item-card-name">${_esc(texto)}</span>
                                             ${count>=2?`<span class="item-card-count">×${count}</span>`:''}
                                         </div>
-                                        ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}">${_esc(lab)}</span>`; }).join('')}</div>`:''}
+                                        ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}"${isR?` title="Fuente ligada a respuesta" aria-label="${_esc(lab)}, fuente ligada a respuesta"`:''}>${_esc(lab)}</span>`; }).join('')}</div>`:''}
                                     </div>`;
                                 }).join('')}
                             </div>
@@ -1248,7 +1248,7 @@ function renderInventario(inv) {
                             <span class="item-card-name">${_esc(texto)}</span>
                             ${count>=2?`<span class="item-card-count">×${count}</span>`:''}
                         </div>
-                        ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}">${_esc(lab)}</span>`; }).join('')}</div>`:''}
+                        ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}"${isR?` title="Fuente ligada a respuesta" aria-label="${_esc(lab)}, fuente ligada a respuesta"`:''}>${_esc(lab)}</span>`; }).join('')}</div>`:''}
                     </div>`;
                 }).join('')}
             </div>
@@ -1326,7 +1326,7 @@ function renderInventario(inv) {
                                                 <span class="item-card-name">${_esc(texto)}</span>
                                                 ${count>=2?`<span class="item-card-count">×${count}</span>`:''}
                                             </div>
-                                            ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}">${_esc(lab)}</span>`; }).join('')}</div>`:''}
+                                            ${count?`<div class="item-card-sources">${fuentes.map(f=>{ const isR = f.endsWith('@R'); const lab = isR ? f.slice(0,-2) : f; return `<span class="item-card-source${isR?' source-respuesta':''}"${isR?` title="Fuente ligada a respuesta" aria-label="${_esc(lab)}, fuente ligada a respuesta"`:''}>${_esc(lab)}</span>`; }).join('')}</div>`:''}
                                         </div>`;
                                     }).join('')}
                                 </div>
