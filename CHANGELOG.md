@@ -5,6 +5,46 @@
 
 ---
 
+## [v10.145c — 2026-05-16] — Fase 1: Lote 3A — cierre de U2 vocabulario (42 duales aplicados)
+
+Cierre del Lote 3A en `vocabulario_consolidado` de U2, dejado fuera de v10.145b por sus 131 anomalías de dry-run. Aplicación de los 42 duales calculados; las 131 anomalías se documentan como deuda separada y no se resuelven en este lote.
+
+**Cambios en `unidades/U2/U2-nc1-inventario.json`:**
+
+- **42 duales aplicados**: para cada fuente `pNN-actMM` cuya palabra aparecía en input Y `respuestas[]`, se añade `pNN-actMM@R` alongside del plain. Política idéntica al resto de Lote 3A.
+- `cat.fuentes` agregadas recomputadas como unión deduplicada.
+- Sin tocar items con dual-tracking pre-existente. Sin tocar fuentes `cuadro@*`.
+- Validador U2 → 0/0/0.
+
+**Estado actualizado de Lote 3A (suma con v10.145b):**
+
+| Unidad | Duales commiteados | Validador |
+|---|---|---|
+| U0 | 0 | 0/0/0 |
+| U1 | 48 | 0/0/0 |
+| U2 | 42 | 0/0/0 |
+| U3 | 42 | 0/0/0 |
+| U4 | 125 | 0/0/0 |
+| U5 | 75 | 0/0/0 |
+| **Total Lote 3A** | **332** | ✓ |
+
+**Las 131 anomalías de U2 NO se resuelven en este lote.** Se dividen en dos categorías distintas:
+
+1. **Limitación actual del matcher (~70-90 casos):** lemas con barra de flexión (`argentino/-a`, `francés/-esa`, `primero/-a`, etc.) que el matcher literal normalizado no expande a sus formas (`argentino` + `argentina`). La palabra **sí está** en la actividad (verificado material en p22-act2: `argentina` aparece como input+respuesta, `argentino` solo en respuesta), pero el script busca literal `argentino/-a` con la barra y no la encuentra. **No es benigno**, es deuda real del matcher.
+
+2. **Deuda heredada del extractor original (~30-50 casos):** fuentes donde el lema realmente no aparece en la actividad. Ejemplo: `lunes`, `martes`, `miércoles` codificados en p23-act12 sin aparición material. El agente extractor original codificó por campo semántico sin verificar aparición literal. **Es deuda preexistente del JSON**, no introducida por ninguna migración del contrato v10.145.
+
+3. **Residual:** unos pocos casos de nombres propios con matcher imperfecto. No bloqueante.
+
+**Implicación arquitectónica:** los 42 duales son sólidos porque se calcularon sobre el subconjunto de palabras que el matcher detecta correctamente. La mejora del matcher (expansión de `/-a`, `/-esa`, `(n)`) podría aumentar modestamente el universo de duales en el futuro pero **no invalida los 42 ya aplicados**. La mejora del matcher se trata como tarea separada — no entra en v10.145c por dictamen del revisor (no mezclar cierre de datos con rediseño de script).
+
+**Tareas futuras documentadas (no commiteadas):**
+
+- Mejora del matcher para expandir lemas con flexión barra-sufijo (`argentino/-a` → `{argentino, argentina}`). Probable utilidad cuando se aborde gramática (mismo patrón: `A mí me gusta(n)` con paréntesis).
+- Auditoría de la deuda heredada del extractor: ¿se canoniza por aparición material o se permite codificar por campo semántico? Decisión pendiente.
+
+---
+
 ## [v10.145b — 2026-05-16] — Fase 1: Lote 3A — dual-tracking retroactivo en `vocabulario_consolidado` (U1, U3, U4, U5)
 
 Aplicación del modo B (dual-tracking) al bloque `vocabulario_consolidado` en las unidades con duales detectados. Script extendido con flag `--include-dual` (solo para `--block vocab` en esta fase). Política: para cada fuente `pNN-actMM` cuya palabra aparece **tanto en input como en `respuestas[]`** de la actividad, se añade `pNN-actMM@R` alongside del plain (no reemplaza).
