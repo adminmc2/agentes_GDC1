@@ -5,6 +5,33 @@
 
 ---
 
+## [v10.141 — 2026-05-15] — Fase 1: `Posición` renombrada/reclasificada — A (gramatical) + B2 (léxico)
+
+Hallazgo del autor sobre U5: la categoría `Posición` en `gramatica_consolidada.principal` no es contenido gramatical propiamente — son palabras de marcador espacial (encima, debajo, detrás, delante, al lado) que NC1 A1.1 enseña como léxico, no como categoría adverbial abstracta. Decisión editorial: doble cambio (A + B2).
+
+**Cambios:**
+
+**A) Registry gramatical (`gramatica-canonica.json`):**
+- **Renombrada** `Posición` → `Adverbios y locuciones de lugar` (más preciso para nombrar la clase adverbial-gramatical).
+- Mismo `_pcic_ref` (PCIC A1 §8.2 + §8.9), mismos items, mismo `_apariciones.U5: "principal"`.
+- `_nota` documenta el rename + apunta al canónico léxico paralelo añadido en B2.
+- `_meta.version` 1.3 → 1.4.
+- La categoría queda disponible en registry para unidades futuras que enseñen explícitamente la clase adverbial.
+
+**B2) Registry léxico (`campos-semanticos-canonicos.json`):**
+- **Nueva entrada** `Adverbios de posición` (origen `pcic_a1`, aliases vacíos, `nota` distinguiéndola de `Marcadores de lugar: a la izquierda…` canónico U2 con alcance editorial distinto).
+- Cubre el léxico concreto de posición espacial: encima, debajo, detrás, delante, al lado.
+- `_meta.version` 1.4 → 1.5.
+
+**En `unidades/U5/U5-nc1-inventario.json`:**
+- Bloque movido de `gramatica_consolidada.principal["Posición"]` → `vocabulario_consolidado.principal["Adverbios de posición"]`. Items, fuentes y métricas preservados; `descripcion.U5` reescrita para reflejar la reclasificación.
+- 9 referencias `"Posición"` en `actividad.gramatica` / `cuadro.gramatica` retiradas (en cuadro@p54, p54-act03, p55-act01/04/05, p56-act01, p58-act01, p59-act03, p61-act02); `"Adverbios de posición"` añadido a `actividad.vocabulario` / `cuadro.vocabulario` en su lugar.
+- Nueva entrada **P16** en `_decisiones_ia` documentando la reclasificación y la disponibilidad dual en registries (gramatical + léxico) para futuras unidades.
+
+**Pedagógicamente:** en NC1 A1.1, encima/debajo/etc. se aprenden como palabras (léxico de lugar), no como categoría adverbial. La categoría gramatical queda disponible para una hipotética unidad de niveles superiores donde se enseñe la clase adverbial de manera explícita.
+
+**Validador desde main:** U0/U1/U2/U3/U4/U5 → 0/0/0.
+
 ## [v10.140 — 2026-05-15] — Fase 1: U5 — auditoría léxico-verbal + adición de `gustar` (recurrente) y `dormir` (excepción §5.2)
 
 Auditoría léxico-verbal de U5 tras v10.139 por intuición del autor ("muy pocos verbos para 46 actividades"). Detectados 2 lemas con apariciones reales que el agente omitió:

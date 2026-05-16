@@ -3,7 +3,7 @@
     "estado": "poblado",
     "creado": "2026-05-12",
     "poblado": "2026-05-15",
-    "version": "1.3",
+    "version": "1.4",
     "descripcion": "Registry de categorías canónicas de gramatica_consolidada. Materializado el 2026-05-15 (v10.117) aplicando la estrategia híbrida de pieza 3 §14.0 del rediseño (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §14): scaffold conceptual de §14.2 + resolución específica con PCIC A1 (fuente vinculante: fases/1-extraccion-inventario/pcic-a1-gramatica.json) + naming PCIC adaptado mínimamente para legibilidad. Cubre la matriz §14.1 de las 31 entradas gramaticales de gramatica[] de nc1-curso.json en U1-U9 (conteo real verificado el 2026-05-15; la matriz histórica del REDISEÑO §14.1 declaraba 32, discrepancia explicada por consolidación editorial entre el cierre de pieza 3 y la versión vigente del curso) + 2 categorías PCIC adicionales con anclaje material fuerte (Pronombre sujeto en cuadros verbales, Pronombres átonos de OI en construcción gustar/doler).",
     "estructura": "Diccionario {categoría → {_pcic_ref, _apariciones, items}}. Ampliable por expansión controlada si una extracción real surfacea una categoría PCIC A1 no contemplada.",
     "regla_fallback": "Si una extracción detecta contenido gramatical que no encaja en ninguna categoría aquí, marcar _pendiente_canon y escalar al autor (regla §0.1 de reglas-operativas.md).",
@@ -187,7 +187,7 @@
         "estar (ubicación, estado)"
       ]
     },
-    "Posición": {
+    "Adverbios y locuciones de lugar": {
       "_pcic_ref": "PCIC A1 §8.2 Adverbios nucleares o de predicado + §8.9 Locuciones adverbiales",
       "_apariciones": {
         "U5": "principal (adverbios y locuciones locativas)"
@@ -198,7 +198,8 @@
         "detrás",
         "delante",
         "al lado"
-      ]
+      ],
+      "_nota": "Renombrado en v10.141 desde 'Posición' a 'Adverbios y locuciones de lugar' para precisar que es categoría adverbial-gramatical (no campo semántico). El léxico de palabras de posición concretas (encima, debajo, etc.) tiene canónico paralelo en campos-semanticos-canonicos.json bajo 'Adverbios de posición'."
     },
     "Preposiciones": {
       "_pcic_ref": "PCIC A1 (preposiciones simples; entran en sintagmas preposicionales del SV §12.2)",

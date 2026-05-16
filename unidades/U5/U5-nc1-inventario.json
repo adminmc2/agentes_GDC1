@@ -86,6 +86,15 @@
         "descripcion": {
           "U5": "PCIC A1 §3.7 — Tipos de vivienda y alojamiento turístico. Principal en U5: léxico de alojamientos (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) trabajado en p53 con vocabulario visual, definiciones (p53-act09) y elección personal (p53-act10), y en p58-59 con descripción de viviendas reales."
         }
+      },
+      "Adverbios de posición": {
+        "items": [
+          {"palabra": "Posición", "fuentes": ["p54-act3", "cuadro@p54#2", "p55-act1", "p55-act4", "p55-act5", "p56-act1", "p58-act1", "p59-act3", "p61-act2"]}
+        ],
+        "fuentes": ["p54-act3", "cuadro@p54#2", "p55-act1", "p55-act4", "p55-act5", "p56-act1", "p58-act1", "p59-act3", "p61-act2"],
+        "descripcion": {
+          "U5": "Léxico principal U5 (reclasificado en v10.141 desde gramatica_consolidada a vocabulario_consolidado por dictamen editorial): marcadores espaciales (encima, debajo, delante, detrás, al lado) ilustrados en cuadro@p54#2 con la figura del cubo+perro y aplicados con 'estar' en p54-act03, p55-act01, p55-act04, p55-act05, p56-act01, p58-act01, p59-act03, p61-act02. Trabajados como léxico de posición (no como categoría gramatical), por lo que viven en vocabulario_consolidado bajo el canónico 'Adverbios de posición' (campos-semanticos-canonicos.json, origen: pcic_a1)."
+        }
       }
     },
     "recurrente": {
@@ -235,15 +244,6 @@
   ],
   "gramatica_consolidada": {
     "principal": {
-      "Posición": {
-        "items": [
-          {"palabra": "Posición", "fuentes": ["p54-act3", "cuadro@p54#2", "p55-act1", "p55-act4", "p55-act5", "p56-act1", "p58-act1", "p59-act3", "p61-act2"]}
-        ],
-        "fuentes": ["p54-act3", "cuadro@p54#2", "p55-act1", "p55-act4", "p55-act5", "p56-act1", "p58-act1", "p59-act3", "p61-act2"],
-        "descripcion": {
-          "U5": "PCIC A1 §17 — Expresión de la posición y la localización. Principal en U5: marcadores espaciales (encima, debajo, delante, detrás, al lado) ilustrados en cuadro p54#2 con la figura del cubo+perro y aplicados con 'estar' en p54-act03 (habitación de Mario), p55-act01 (completar tabla auditiva), p55-act05 (descripción del salón), p56-act01 (diálogo) y p61-act02 (preguntas sobre dibujos)."
-        }
-      },
       "Oposición ser / estar": {
         "items": [
           {"palabra": "Oposición ser / estar", "fuentes": ["p55-act2", "p55-act3", "p55-act4", "cuadro@p55", "p58-act2", "p61-act1", "p61-act4"]}
@@ -371,7 +371,8 @@
     "Sub-bloque 'comprension' del modelo viejo eliminado: 'vivienda_ecologica' (p60 cultura) y 'descripcion_habitaciones' (p58 destrezas) eran input incidental para comprensión; no se codifica como léxico activo de U5 ni como recurrente (no son canónicos del índice de otra unidad). Léxico del texto cultural se anota implícitamente vía las fuentes p60-actNN sin generar entradas vocabulario.",
     "formas_trabajadas: literalidad estricta en actividad/cuadro (mantiene mayúscula inicial cuando abre frase); minúscula al agregar en tiempos_y_verbos_consolidado (§6.4).",
     "Propuesta de unificación de canónicos al ejecutor coordinador: los canónicos 'Tipos de vivienda' y 'Alojamiento' del registry campos-semanticos-canonicos.json deberían fusionarse en un único campo. En U5 el léxico p53 (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) entra bajo el rótulo del índice 'Tipos de vivienda' tal cual aparece en nc1-curso.json. Mantenemos la categoría 'Tipos de vivienda' como única; el ejecutor coordinador decide si reescribe el registry para fusionar ambas y propaga el cambio.",
-    "P15 (post-revisión coordinador, v10.140): añadidos los lemas 'gustar' y 'dormir' al tiempos_y_verbos_consolidado tras auditoría léxico-verbal. (a) 'gustar' (canónico U2/U3/U4 PRE) es recurrente legítimo en U5 — el agente lo había omitido pese a apariciones reales en p58-act02, p58-act03 y p59-act05 (construcción gustar dativo). (b) 'dormir' (canónico U6 PRE) se codifica como excepción §5.2 a la regla de anticipación, aprobada por el autor — mismo patrón aplicado en U2 (ir/estar/gustar/hablar) y U3 (jugar/venir/hacer); aparece materialmente en p58-act01 y p58-act03 ('mi perro duerme en mi habitación')."
+    "P15 (post-revisión coordinador, v10.140): añadidos los lemas 'gustar' y 'dormir' al tiempos_y_verbos_consolidado tras auditoría léxico-verbal. (a) 'gustar' (canónico U2/U3/U4 PRE) es recurrente legítimo en U5 — el agente lo había omitido pese a apariciones reales en p58-act02, p58-act03 y p59-act05 (construcción gustar dativo). (b) 'dormir' (canónico U6 PRE) se codifica como excepción §5.2 a la regla de anticipación, aprobada por el autor — mismo patrón aplicado en U2 (ir/estar/gustar/hablar) y U3 (jugar/venir/hacer); aparece materialmente en p58-act01 y p58-act03 ('mi perro duerme en mi habitación').",
+    "P16 (v10.141): la categoría 'Posición' renombrada y reclasificada. (a) En el registry gramatical (gramatica-canonica.json), 'Posición' se renombra a 'Adverbios y locuciones de lugar' para precisar que es la categoría adverbial-gramatical (queda disponible para unidades que enseñen explícitamente la clase adverbial). (b) En el registry léxico (campos-semanticos-canonicos.json), se añade la categoría 'Adverbios de posición' (origen: pcic_a1) que cubre las palabras-léxico concretas (encima, debajo, detrás, delante, al lado). (c) En U5, el bloque se mueve de gramatica_consolidada a vocabulario_consolidado bajo el canónico léxico 'Adverbios de posición' — coherente con que NC1 A1.1 trabaja estas palabras como léxico de marcadores espaciales, no como categoría gramatical abstracta. Refs en 9 actividades y el cuadro@p54 actualizadas."
   ],
   "paginas_detalle": [
     {
@@ -720,11 +721,11 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Observa la habitación de Mario. Después, contesta a las preguntas utilizando el marcador de lugar correspondiente.",
-          "vocabulario": ["Mobiliario", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Mobiliario", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Adverbios de posición"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]}
           ],
-          "gramatica": ["Posición"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": {
@@ -791,11 +792,11 @@
             "ejemplos": []
           },
           "observaciones": null,
-          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Adverbios de posición"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
           ],
-          "gramatica": ["Posición"],
+          "gramatica": [],
           "pronunciacion_ortografia": []
         }
       ]
@@ -811,9 +812,9 @@
           "destreza": ["comprension_auditiva", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Ahora escucha a la madre de Mario y completa la tabla colocando cada cosa en su lugar.",
-          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Adverbios de posición"],
           "tiempos_y_verbos": [],
-          "gramatica": ["Posición"],
+          "gramatica": [],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 56 },
           "imagen": { "presente": false },
@@ -886,12 +887,12 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Relaciona las preguntas y sus respuestas.",
-          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Adverbios de posición"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "eres"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estás", "están", "está"]}
           ],
-          "gramatica": ["Oposición ser / estar", "Posición", "Interrogativos"],
+          "gramatica": ["Oposición ser / estar", "Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -911,12 +912,12 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Lee la descripción del salón de Guillermo. Después, describe el salón de tu casa y dibújalo.",
-          "vocabulario": ["Mobiliario", "Adjetivos descriptivos", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Mobiliario", "Adjetivos descriptivos", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Adverbios de posición"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "gramatica": ["Hay", "Posición"],
+          "gramatica": ["Hay"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": {
@@ -964,12 +965,12 @@
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "vocabulario": ["Mobiliario", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Mobiliario", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Adverbios de posición"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "Están", "Estáis"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "gramatica": ["Posición", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 57 },
           "imagen": { "presente": true, "descripcion": "Fotograma del vídeo: dos chicas jóvenes (Julia y Graciela) en una habitación, listas para salir." },
@@ -1223,13 +1224,13 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "¿Cómo es su habitación ideal? Lee estas cuatro descripciones.",
-          "vocabulario": ["Mobiliario", "Partes de la casa", "Adjetivos descriptivos"],
+          "vocabulario": ["Mobiliario", "Partes de la casa", "Adjetivos descriptivos", "Adverbios de posición"],
           "tiempos_y_verbos": [
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["Está", "está"]},
             {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duerme"]}
           ],
-          "gramatica": ["Hay", "Posición"],
+          "gramatica": ["Hay"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Cuatro fotografías de los personajes: Carlos (chico joven con pelo rizado), Elisa (chica joven), Antonio (chico joven con pelo largo), Lucía (chica joven con pelo rosa)." },
@@ -1386,9 +1387,9 @@
           "destreza": ["expresion_oral", "interaccion_oral"],
           "enfoque": "transversal",
           "instruccion_original": "En parejas. A explica cómo es su dormitorio y B dibuja un plano con las explicaciones que le da A.",
-          "vocabulario": ["Mobiliario", "Partes de la casa", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Mobiliario", "Partes de la casa", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Adverbios de posición"],
           "tiempos_y_verbos": [],
-          "gramatica": ["Hay", "Posición"],
+          "gramatica": ["Hay"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1600,11 +1601,11 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Contesta a las preguntas, fijándote en los dibujos.",
-          "vocabulario": ["Mobiliario", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Mobiliario", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Adverbios de posición"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]}
           ],
-          "gramatica": ["Posición", "Interrogativos"],
+          "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Seis ilustraciones simples: ejemplo con mesa y llaves encima; 1 cama con gato encima; 2 sofá con alfombra debajo; 3 ventana con cuadro al lado; 4 casa con coche delante; 5 silla con pelota detrás." },

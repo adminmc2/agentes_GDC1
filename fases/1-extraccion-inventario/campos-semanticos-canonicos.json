@@ -1,12 +1,12 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.4",
+    "version": "1.5",
     "actualizado": "2026-05-15",
     "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.",
     "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
   },
-  "version": "1.4",
+  "version": "1.5",
   "actualizado": "2026-05-15",
   "campos": [
     {
@@ -631,6 +631,13 @@
       "aliases_indice": [],
       "aliases_auto": [],
       "nota": "Añadido en v10.129 por hallazgo de extracción en U3 (cuadro@p37#1 \"La hora\" + p37-act5). Léxico de expresiones horarias en español: en punto, y media, y cuarto, menos cuarto, y cinco/diez/veinte/veinticinco. PCIC A1 no lo tiene como categoría léxica dedicada (aparece marginalmente bajo \"Tiempo libre y entretenimiento\" como \"horario\"); por eso origen: excepcion. Material trabajado en pp.37 con anclajes a las estructuras ser + la(s) + número (Es la una / Son las dos en punto)."
+    },
+    {
+      "canonico": "Adverbios de posición",
+      "origen": "pcic_a1",
+      "aliases_indice": [],
+      "aliases_auto": [],
+      "nota": "Añadido en v10.141 como categoría léxica paralela al canónico gramatical 'Adverbios y locuciones de lugar' (gramatica-canonica.json). Cubre las palabras-léxico de posición espacial trabajadas en U5 (encima, debajo, detrás, delante, al lado). PCIC A1 §8.2 las recoge como adverbios; en NC1 A1.1 se enseñan como léxico de marcadores espaciales. Distinto de 'Marcadores de lugar: a la izquierda, ...' (canónico U2 de origen indice) que solapa parcialmente pero tiene otro alcance editorial."
     }
   ]
 }
