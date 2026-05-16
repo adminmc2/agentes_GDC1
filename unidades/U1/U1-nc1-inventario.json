@@ -307,7 +307,7 @@
         "cuadro@p20#1",
         "cuadro@p20#3",
         "p20-act1",
-        "p21-act4",
+        "p21-act4@R",
         "p21-act6"
       ],
       "descripcion": {
@@ -320,7 +320,7 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["tengo", "tienes", "tiene"],
-      "fuentes": ["p12-act1", "p12-act2", "p13-act9", "cuadro@p14#1", "p14-act2", "p15-act8", "p16-act1", "p17-act5", "p18-act1", "p18-act2", "p19-act5", "p19-act6", "cuadro@p20#3", "p21-act4", "p21-act6"],
+      "fuentes": ["p12-act1", "p12-act2", "p13-act9", "cuadro@p14#1", "p14-act2", "p15-act8", "p16-act1", "p17-act5", "p18-act1", "p18-act2", "p19-act5", "p19-act6", "cuadro@p20#3", "p21-act4@R", "p21-act6"],
       "descripcion": {
         "U1": "PCIC A1 §9 El verbo (presente, formas singulares). Primera aparición canónica; principal U1 gramática. Trabajado como soporte de la fórmula '¿Cuántos años tienes? / Tengo X años' (índice U1 comunicación) y como soporte de posesión (Tengo móvil, Mi profesora tiene 10 años, Tienes un bolígrafo rojo)."
       }

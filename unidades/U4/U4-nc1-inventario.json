@@ -312,7 +312,7 @@
       "rasgo_por_tiempo": { "Presente": "irregularidad vocálica e→ie" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["quiero", "quieres", "quiere", "queremos", "queréis", "quieren", "no quiero", "no quiere", "no quieren", "no queremos"],
-      "fuentes": ["p43-act5", "p45-act7", "p45-act8", "p46-act1", "p46-act2", "p46-act4", "p47-act7", "p49-act5", "p49-act7", "p51-act1", "p51-act6", "cuadro@p45#2"],
+      "fuentes": ["p43-act5", "p45-act7", "p45-act8@R", "p46-act1", "p46-act2", "p46-act4", "p47-act7", "p49-act5", "p49-act7", "p51-act1@R", "p51-act6", "cuadro@p45#2"],
       "descripcion": {
         "U4": "PCIC A1 §16.3 — Presente de indicativo. Principal en U4: paradigma completo del presente, irregularidad e→ie (quiero, quieres, quiere, queremos, queréis, quieren). Función comunicativa: ofrecer y pedir ('¿Quieres...?' / 'Quiero...') en interacción de restaurante y oferta de postres."
       }

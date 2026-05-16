@@ -5,6 +5,39 @@
 
 ---
 
+## [v10.146 — 2026-05-16] — Fase 1: Lote 3B1 — verbos modo A (respuesta-only) en U1-U5
+
+Aplicación del modo A (respuesta-only → `@R`) al bloque `tiempos_y_verbos_consolidado` en U0-U5. Primera migración fuera de vocabulario tras validar el matcher por bloque (verbos: `formas_trabajadas` en lugar de lema infinitivo — hallazgo del autor que invalidó el 3B-mini previo).
+
+**Script extendido:**
+
+- `iter_items` para `tiempos_y_verbos_consolidado` ahora devuelve `formas_trabajadas` (lista) como `match_target`, no el lema.
+- `classify_fuente` admite `target` como string (vocab/gramatica/pron) o lista (verbos). Para listas: `in_input/in_resp = True` si **alguna** forma matchea.
+- Gate de `--apply` ampliado: `APPLY_ALLOWED = {vocab, verbos}`. Gramática y pron siguen congeladas.
+- Modo B (`--include-dual`) prohibido explícitamente para verbos en este lote (dictamen del revisor: 103 duales son demasiado volumen para el primer apply de verbos; modo B queda fuera).
+
+**Resultados (validador 0/0/0 en todas):**
+
+| Unidad | Items | Fuentes | Reemplazos A | Anomalías documentadas |
+|---|---|---|---|---|
+| U0 | 0 | 0 | 0 | 0 (unidad atípica sin verbos) |
+| U1 | 3 | 49 | 2 | 1 |
+| U2 | 9 | 66 | 3 | 1 |
+| U3 | 16 | 119 | 13 | 8 |
+| U4 | 8 | 67 | 2 | 14 |
+| U5 | 8 | 36 | 1 | 1 |
+| **Total** | 44 | 337 | **21** | **25** |
+
+**Orden de aplicación (dictamen del revisor):** U1, U2, U5 (anomalías bajas) primero; U3, U4 (anomalías concentradas) después. Validador 0/0/0 tras cada apply.
+
+**Anomalías (25, no bloqueantes):** verbos consolidados sobre actividades donde ninguna `forma_trabajada` listada aparece literal. Patrón análogo a las anomalías de vocab U2 (deuda preexistente del extractor: consolidación por campo semántico sin aparición material; o `formas_trabajadas` incompleto). Tasa 25/337 = 7 % (mucho menor que vocab U2 = 41 %). Quedan como deuda separada.
+
+**Lote 3B2 pendiente (verbos modo B, dual-tracking retroactivo):** 103 candidatos B detectados en dry-run; aplicación diferida por dictamen del revisor hasta evaluar el resultado visual del modo A.
+
+**Sin tocar:** `gramatica_consolidada` y `pronunciacion_ortografia_consolidada` (Lote 3C, congelado, sin matcher por bloque definido). Cuadros (`cuadro@*`). Items con dual-tracking pre-existente. Vocabulario (cerrado en v10.145a-d).
+
+---
+
 ## [v10.145d — 2026-05-16] — Doc: precisión semántica de cifras del Lote 3A
 
 Corrección documental tras auditoría del revisor. La cifra "332 duales" usada en v10.145b y v10.145c era ambigua: se refiere a **duales añadidos por Lote 3A**, no a duales totales presentes en HEAD.

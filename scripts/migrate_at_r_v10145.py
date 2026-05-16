@@ -70,16 +70,20 @@ def activity_resp_text(a):
     return " ".join(out)
 
 def iter_items(consolidated_block, block_key):
-    """Yields (tier, categoria, item_dict, palabra_for_match).
-    Para 'tiempos_y_verbos_consolidado': el item es un dict con 'lema'
-    (string) usado como palabra. Para los otros 3 bloques: items[].palabra.
+    """Yields (tier, categoria, item_dict, match_target).
+    match_target es lo que el matcher buscará en input/respuestas:
+    - vocab/gramatica/pron: string (item.palabra)
+    - tiempos_y_verbos: lista de strings (item.formas_trabajadas)
+      — usar formas conjugadas, NO el lema infinitivo (que casi nunca
+      aparece literal en el texto de las actividades).
     """
     if block_key == "tiempos_y_verbos_consolidado":
         # Shape real: lista plana top-level de lemas (no anidada por tier/categoría)
         container = consolidated_block if isinstance(consolidated_block, list) else []
         for item in container:
             if not isinstance(item, dict): continue
-            yield "_flat", None, item, item.get("lema") or ""
+            formas = item.get("formas_trabajadas") or []
+            yield "_flat", item.get("lema"), item, formas
     else:
         for tier, cats in (consolidated_block or {}).items():
             if not isinstance(cats, dict): continue
@@ -89,15 +93,24 @@ def iter_items(consolidated_block, block_key):
                     if not isinstance(item, dict): continue
                     yield tier, catname, item, item.get("palabra") or ""
 
-def classify_fuente(fuente, palabra, act_idx):
-    """Returns ('input-only'|'respuesta-only'|'dual'|'no-match'|'skip', tipo)."""
+def classify_fuente(fuente, target, act_idx):
+    """target puede ser un string (vocab/gramatica/pron) o una lista de strings
+    (tiempos_y_verbos: formas_trabajadas).
+    Para listas: in_input/in_resp = True si ALGUNA forma matchea.
+    Returns ('input-only'|'respuesta-only'|'dual'|'no-match'|'skip', tipo)."""
     m = re.match(r"^p(\d+)-act(\d+)$", fuente)
-    if not m: return ("skip", None)  # cuadro@ o ya @R
+    if not m: return ("skip", None)
     key = f"p{m.group(1)}-act{m.group(2)}"
     a = act_idx.get(key)
     if not a: return ("warn-no-act", None)
-    in_input = match_substring(palabra, activity_input_text(a))
-    in_resp  = match_substring(palabra, activity_resp_text(a))
+    inp = activity_input_text(a)
+    resp = activity_resp_text(a)
+    if isinstance(target, list):
+        in_input = any(match_substring(t, inp) for t in target if t)
+        in_resp  = any(match_substring(t, resp) for t in target if t)
+    else:
+        in_input = match_substring(target, inp)
+        in_resp  = match_substring(target, resp)
     tipo = a.get("tipo")
     if in_input and in_resp: return ("dual", tipo)
     if in_input:             return ("input-only", tipo)
@@ -120,19 +133,22 @@ def process_block(block, block_key, act_idx, apply_changes, include_dual=False):
     if not block: return A, B, NO, WARN
     # Categorías con cambios para recomputar agregado al final
     dirty_categories = []  # list of (cat_dict,) refs
-    for tier, cat, item, palabra in iter_items(block, block_key):
+    for tier, cat, item, target in iter_items(block, block_key):
         fuentes = item.get("fuentes")
         if not isinstance(fuentes, list): continue
         existing_at_r = {f[:-2] for f in fuentes if isinstance(f, str) and f.endswith("@R")}
         new_fuentes = list(fuentes)
         item_changed = False
+        # Etiqueta legible para informes
+        palabra_label = (item.get("lema") if block_key == "tiempos_y_verbos_consolidado"
+                         else (target if isinstance(target, str) else ", ".join(target)))
         for f in list(fuentes):
             if not isinstance(f, str): continue
             if f.endswith("@R"): continue
             if f.startswith("cuadro@"): continue
             if f in existing_at_r: continue  # dual-tracking ya completo
-            status, tipo = classify_fuente(f, palabra, act_idx)
-            rec = {"tier":tier, "categoria":cat, "palabra":palabra,
+            status, tipo = classify_fuente(f, target, act_idx)
+            rec = {"tier":tier, "categoria":cat, "palabra":palabra_label,
                    "fuente":f, "tipo":tipo}
             if status == "respuesta-only":
                 A.append(rec)
@@ -214,13 +230,20 @@ def main():
         sys.stderr.write("ERROR: --include-dual solo permitido con --block vocab (Lote 3A).\n"); sys.exit(2)
 
     blocks = list(BLOCK_MAP.keys()) if args.block == "all" else [args.block]
-    experimental_blocks = {b for b in blocks if b != "vocab"}
-
-    if args.apply and experimental_blocks:
+    # Bloques con --apply autorizado: vocab (Lote 2 v10.145a, Lote 3A v10.145b-d), verbos (Lote 3B1 v10.146).
+    # Gramática y pron quedan congelados hasta definir matcher por bloque.
+    APPLY_ALLOWED = {"vocab", "verbos"}
+    forbidden = {b for b in blocks if b not in APPLY_ALLOWED}
+    if args.apply and forbidden:
         sys.stderr.write(
-            f"ERROR: --apply solo permitido para --block vocab en Lote 2 (v10.145).\n"
-            f"Bloques experimentales detectados: {sorted(experimental_blocks)}.\n"
-            f"Usa --dry-run para estos bloques hasta validar U4.\n")
+            f"ERROR: --apply solo permitido para bloques {sorted(APPLY_ALLOWED)}.\n"
+            f"Bloques no autorizados detectados: {sorted(forbidden)}.\n"
+            f"Usa --dry-run para estos bloques hasta autorizar apply.\n")
+        sys.exit(2)
+    if args.apply and "verbos" in blocks and args.include_dual:
+        sys.stderr.write(
+            "ERROR: --include-dual no autorizado para --block verbos en Lote 3B1 (v10.146).\n"
+            "Solo modo A (respuesta-only). Modo B (dual) queda fuera por dictamen del revisor.\n")
         sys.exit(2)
 
     path = REPO / f"unidades/U{args.unit}/U{args.unit}-nc1-inventario.json"
@@ -246,7 +269,7 @@ def main():
                 if isinstance(f, str) and not f.startswith("cuadro@") and not f.endswith("@R"):
                     fuentes_total += 1
         A, B, NO, WARN = process_block(block, block_key_full, act_idx,
-                                       apply_changes=(args.apply and bkey == "vocab"),
+                                       apply_changes=(args.apply and bkey in {"vocab", "verbos"}),
                                        include_dual=args.include_dual)
         for rec in A+B+NO+WARN: rec["bloque"] = block_key_full
         all_A += A; all_B += B; all_NO += NO; all_WARN += WARN
