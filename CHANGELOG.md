@@ -5,6 +5,42 @@
 
 ---
 
+## [v10.142 — 2026-05-15] — Fase 1: U4 — corrección sistémica de `id` de actividades para alinearlo con el `numero` del libro
+
+**Problema detectado por el autor** durante revisión visual de U5 (dashboard mostraba fuente `p53-act2` para la palabra `dormitorio`, pero en el libro la actividad numerada como "2" no existe en la página 53 — la página empieza por la actividad 6).
+
+**Auditoría completa de los 6 inventarios** reveló un bug sistémico introducido en U4 y U5: los agentes de esas unidades adoptaron una convención de `id` distinta de U0-U2, sin propagar el cambio al resto del proyecto.
+
+| Unidad | Total actividades | Desajustes `id` vs `numero` |
+|---|---|---|
+| U0 | 10 | 0 ✓ |
+| U1 | 42 | 0 ✓ |
+| U2 | 52 | 0 ✓ |
+| U3 | 47 | 0 (única act con `numero=None` no es bug) ✓ |
+| **U4** | 49 | **49** (TODAS las actividades con id incorrecto) |
+| **U5** | 46 | **22** |
+
+**Convención correcta** (la de U0-U2): `id = U<n>-p<pagina>-act<numero>` donde `<numero>` es el número de actividad que aparece impreso en el libro. Sin padding. Ej. la actividad numerada "7" en p53 → `id = U5-p53-act7`.
+
+**Convención incorrecta** (la que usaron los agentes de U4/U5): `id = U<n>-p<pagina>-act<índice local en la página>` con padding a 2 dígitos. Ej. la actividad numerada "7" en p53, siendo la 2ª físicamente en la página → `id = U5-p53-act02`. Y las `fuentes` siguen este id local, no el `numero` real.
+
+**Por qué confunde:** cuando el dashboard muestra `p53-act2` como fuente, un revisor que abre el libro busca "actividad 2 en página 53" — y no la encuentra porque el libro etiqueta esa misma actividad como "7".
+
+**Fix aplicado a U4 en este lote:**
+
+- 49 actividades renombradas: `U4-pNN-actMM` (índice local padded) → `U4-pNN-act<numero>` (numero del libro, sin padding).
+  - Páginas con desajuste (la mayoría): p43 (act01-05 → act4-8), p45 (act01-05 → act6-10), p47 (act01-08 → act5-12), p49 (act01-06 → act4-9).
+  - Páginas donde solo cambia el padding (act01 → act1): p42, p44, p46, p48, p50, p51.
+- Todas las `fuentes` de los 4 bloques top-level consolidados y de los items dentro actualizadas al nuevo formato (`pNN-act<numero>` con su `@R` preservado donde aplique).
+- `secciones.X.actividades_ids` actualizadas.
+- Validador U4 → 0/0/0.
+
+**Próximos lotes** (uno por unidad): v10.143 aplicará el mismo fix a U5. Sin cambios en U0-U3 (ya están correctos).
+
+**Sin cambios** en registries, contratos, ni en U0/U1/U2/U3/U5 (esta última se hace en el siguiente lote).
+
+**Validador desde main:** U0/U1/U2/U3/U4 → 0/0/0 · U5 → 0/0/0 (sin tocar; se arregla en v10.143).
+
 ## [v10.141b — 2026-05-15] — Fase 1: U5 — doble codificación de Adverbios (corrige interpretación de v10.141)
 
 Aclaración del autor sobre v10.141: el bloque debe estar codificado **en las dos dimensiones del consolidado** simultáneamente, no solo en léxico.
