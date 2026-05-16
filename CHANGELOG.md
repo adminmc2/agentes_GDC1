@@ -5,6 +5,26 @@
 
 ---
 
+## [v10.139 — 2026-05-15] — Fase 1: U5 migrada a shape v10.117 + propagación U5 a `tener` y `vivir`
+
+Sexta unidad re-procesada con el flujo de worktree aislado en 3 fases (`../guia-proc-U5/`, rama `proc-u5-wip`, agente dry-run con 3 fases sin gates intermedios, commit candidato `39cdd77`).
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U5/U5-nc1-inventario.json`**: shape v10.117 completo. 10 páginas (52-61), 46 actividades, 4 cuadros, autoevaluación en p61. Vocab principal 4 (Partes de la casa, Mobiliario, Adjetivos descriptivos, Tipos de vivienda) + 2 recurrentes (Marcadores de lugar…, Establecimientos…). Gramática principal 2 (Posición, Oposición ser/estar) + 4 recurrentes (Hay, Interrogativos, Concordancia de género, Concordancia de número). Pron/orto: Sonidos y correspondencias ortográficas (sonido /x/). 6 lemas verbales (ahorrar, contaminar, estar, ser, tener, vivir). 14 entradas en `_decisiones_ia`. §5.2 metalengua aplicada sistemáticamente. §6.5 `@R` aplicado solo en los 5 tipos productivos.
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`** — propagación: `tener` y `vivir` con `apariciones.U5:["PRE"]` añadido (recurrentes en U5 con paradigma activo). Los otros 4 lemas (`ahorrar`, `contaminar`, `estar`, `ser`) ya tenían U5 declarado. `_meta.version` 1.3 → 1.4.
+
+**Decisión sobre propuesta §0.1 abierta del agente:**
+
+- **Fusión `Tipos de vivienda` + `Alojamiento`** → **NO fusionar** (opción A del autor). Son canónicos conceptualmente distintos: `Tipos de vivienda` (vivienda residencial permanente — piso, chalet, casa rural; origen `indice`) vs `Alojamiento` (lugares de estancia temporal — hotel, hostal, camping; origen `pcic_a1`, sin uso aún en inventarios). U5 usa solo `Tipos de vivienda`. `Alojamiento` queda disponible para unidades futuras de viajes/turismo (U7+). La nota del agente en `_decisiones_ia` queda como traza histórica de la decisión.
+
+**Validador desde main:** U0/U1/U2/U3/U4/U5 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U5/` y rama `proc-u5-wip` se conservan tras la integración — pendiente eliminarlos cuando el autor lo autorice.
+
+**Deuda restante en el bloque de re-extracción:** U6-U9 con shape legacy todavía pendientes.
+
 ## [v10.138 — 2026-05-15] — Fase 1: saneamiento de `@R` en data — retirada de los 587 sufijos que infringen §6.5
 
 Cierre operativo de la deuda señalada en v10.137. Aplicación literal de `reglas-operativas.md §6.5`: el sufijo `@R` solo es válido en fuentes de actividades de tipo **productivo** (`produccion_escrita_guiada`, `expresion_escrita_libre`, `expresion_oral_libre`, `interaccion_oral`, `tarea_final`). En cualquier otro `tipo` y en referencias a cuadros, `@R` está prohibido.
