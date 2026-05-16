@@ -5,6 +5,43 @@
 
 ---
 
+## [v10.138 — 2026-05-15] — Fase 1: saneamiento de `@R` en data — retirada de los 587 sufijos que infringen §6.5
+
+Cierre operativo de la deuda señalada en v10.137. Aplicación literal de `reglas-operativas.md §6.5`: el sufijo `@R` solo es válido en fuentes de actividades de tipo **productivo** (`produccion_escrita_guiada`, `expresion_escrita_libre`, `expresion_oral_libre`, `interaccion_oral`, `tarea_final`). En cualquier otro `tipo` y en referencias a cuadros, `@R` está prohibido.
+
+**Auditoría que motivó el saneamiento** (estado pre-lote):
+
+| Unidad | `@R` totales | `@R` válidos (tipo productivo) | `@R` bug §6.5 |
+|---|---|---|---|
+| U0 | 12 | 0 | 12 |
+| U1 | 150 | 2 | 148 |
+| U2 | 120 | 5 | 115 |
+| U3 | 152 | 0 | 152 |
+| U4 | 193 | 33 | 160 |
+| **Total** | **627** | **40** | **587** |
+
+**Acción aplicada en los 5 inventarios canónicos:** retirado el sufijo `@R` de las 587 fuentes que citan actividades de tipo no productivo (`completa_huecos`, `responder_preguntas_cerradas`, `verdadero_falso`, `clasifica`, `relaciona`, `ordena`, `escucha_y_repite`, etc.) o referencias a cuadros (`cuadro@pNN`, donde `@R` está prohibido por §6.5). Las 40 fuentes con `@R` en actividades productivas se mantienen.
+
+**Forma del cambio:** `pNN-actMM@R` → `pNN-actMM`. Tras retirar el sufijo, deduplicación elimina coincidencias con la misma fuente sin sufijo si ya estaba presente. Ningún ítem queda huérfano.
+
+**Archivos afectados:**
+- `unidades/U0/U0-nc1-inventario.json` (12 retirados).
+- `unidades/U1/U1-nc1-inventario.json` (148 retirados).
+- `unidades/U2/U2-nc1-inventario.json` (115 retirados).
+- `unidades/U3/U3-nc1-inventario.json` (152 retirados).
+- `unidades/U4/U4-nc1-inventario.json` (160 retirados).
+
+**Lo que se preserva sin cambios:**
+- Items léxicos, descripciones, decisiones_ia, listas tipadas por actividad — todo intacto.
+- Registries (`campos-semanticos-canonicos.json`, `verbos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`) — sin cambios.
+- Las 40 fuentes `@R` válidas (en actividades productivas).
+
+**Lo que NO se hizo:** no se aplicó el segundo criterio de §6.5 ("la palabra debe estar únicamente en `respuestas`, no en el input del libro") sobre las 40 fuentes preservadas. Esa verificación caso-por-caso queda como saneamiento opcional posterior.
+
+**Compatibilidad operativa con dashboard (v10.137):** dashboard sigue funcionando — los badges con `@R` (las 40 válidas) aparecen en azul con tooltip + aria-label combinado. Las 587 fuentes saneadas pasan a badges neutros sin afectar la renderización.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0 · U4 → 0/0/0.
+
 ## [v10.137 — 2026-05-15] — Dashboard: retirada del texto `·R` en badges + pista no-cromática preservada
 
 Ajuste cosmético del dashboard. **Sin tocar datos, contratos ni registries** — los 587 sufijos `@R` en los inventarios canónicos U0-U4 quedan intactos.

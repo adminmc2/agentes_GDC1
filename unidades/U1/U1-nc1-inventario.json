@@ -26,9 +26,9 @@
           {"palabra": "el libro", "fuentes": ["p12-act3", "p13-act4", "cuadro@p14#2"]},
           {"palabra": "la mesa", "fuentes": ["p12-act3", "cuadro@p14#2", "p21-act5"]},
           {"palabra": "la tableta", "fuentes": ["p12-act3", "p21-act5"]},
-          {"palabra": "el diccionario", "fuentes": ["p21-act5@R"]}
+          {"palabra": "el diccionario", "fuentes": ["p21-act5"]}
         ],
-        "fuentes": ["p12-act3", "p13-act4", "p15-act7", "cuadro@p14#2", "p21-act5", "p21-act5@R"],
+        "fuentes": ["p12-act3", "p13-act4", "p15-act7", "cuadro@p14#2", "p21-act5"],
         "descripcion": {
           "U1": "PCIC A1 (Material educativo y mobiliario de aula). Léxico principal de U1: 10 objetos de aula presentados con artículo determinado en p12-act3 (escucha + asociación palabra-imagen) y reciclados en juego 'veo, veo' (p13-act4), descripción de objetos por color (p15-act7) y autoevaluación de vocabulario (p21-act5). Soporta paralelamente la presentación del paradigma de artículos determinados (cuadro@p14#2)."
         }
@@ -37,13 +37,13 @@
         "items": [
           {"palabra": "a", "fuentes": ["p13-act5"]},
           {"palabra": "be", "fuentes": ["p13-act5", "p13-act6"]},
-          {"palabra": "ce", "fuentes": ["p13-act5", "p13-act7@R"]},
+          {"palabra": "ce", "fuentes": ["p13-act5", "p13-act7"]},
           {"palabra": "de", "fuentes": ["p13-act5"]},
           {"palabra": "e", "fuentes": ["p13-act5"]},
           {"palabra": "efe", "fuentes": ["p13-act5"]},
           {"palabra": "ge", "fuentes": ["p13-act5", "p13-act6"]},
           {"palabra": "hache", "fuentes": ["p13-act5", "p13-act6"]},
-          {"palabra": "i", "fuentes": ["p13-act5", "p13-act7@R"]},
+          {"palabra": "i", "fuentes": ["p13-act5", "p13-act7"]},
           {"palabra": "jota", "fuentes": ["p13-act5", "p13-act6"]},
           {"palabra": "ka", "fuentes": ["p13-act5"]},
           {"palabra": "ele", "fuentes": ["p13-act5", "p13-act4"]},
@@ -51,11 +51,11 @@
           {"palabra": "ene", "fuentes": ["p13-act5"]},
           {"palabra": "eñe", "fuentes": ["p13-act5"]},
           {"palabra": "o", "fuentes": ["p13-act5"]},
-          {"palabra": "pe", "fuentes": ["p13-act5", "p13-act7@R"]},
+          {"palabra": "pe", "fuentes": ["p13-act5", "p13-act7"]},
           {"palabra": "cu", "fuentes": ["p13-act5"]},
-          {"palabra": "erre", "fuentes": ["p13-act5", "p13-act7@R"]},
+          {"palabra": "erre", "fuentes": ["p13-act5", "p13-act7"]},
           {"palabra": "ese", "fuentes": ["p13-act5"]},
-          {"palabra": "te", "fuentes": ["p13-act5", "p13-act7@R"]},
+          {"palabra": "te", "fuentes": ["p13-act5", "p13-act7"]},
           {"palabra": "u", "fuentes": ["p13-act5"]},
           {"palabra": "uve", "fuentes": ["p13-act5", "p13-act6"]},
           {"palabra": "uve doble", "fuentes": ["p13-act5"]},
@@ -63,7 +63,7 @@
           {"palabra": "i griega", "fuentes": ["p13-act5"]},
           {"palabra": "zeta", "fuentes": ["p13-act5"]}
         ],
-        "fuentes": ["p13-act4", "p13-act5", "p13-act6", "p13-act7@R"],
+        "fuentes": ["p13-act4", "p13-act5", "p13-act6", "p13-act7"],
         "descripcion": {
           "U1": "PCIC A1 pronunciación §5 / ortografía. Léxico principal declarado en el índice U1 vocabulario: nombres canónicos de las 27 letras del abecedario español. Material reciclado de U0 (donde se canonizó como 'Abecedario español') pero codificado en U1 bajo la clave del índice editorial. Soporte de actividades de deletreo (p13-act6/act7) y consolidación auditiva (p13-act5)."
         }
@@ -72,17 +72,17 @@
         "items": [
           {"palabra": "doce años", "fuentes": ["p12-act1", "p13-act9", "p16-act1", "p18-act2"]},
           {"palabra": "trece años", "fuentes": ["p12-act1", "p13-act9", "p16-act1"]},
-          {"palabra": "12 años", "fuentes": ["p14-act2", "p17-act7@R", "p19-act5@R"]},
+          {"palabra": "12 años", "fuentes": ["p14-act2", "p17-act7", "p19-act5"]},
           {"palabra": "9 años", "fuentes": ["p14-act2"]},
-          {"palabra": "10 años", "fuentes": ["p14-act2", "p21-act4@R"]},
-          {"palabra": "13 años", "fuentes": ["p17-act7@R", "p21-act4@R"]},
-          {"palabra": "14 años", "fuentes": ["p17-act7@R"]},
-          {"palabra": "16 años", "fuentes": ["p19-act3@R"]},
-          {"palabra": "17 años", "fuentes": ["p19-act3@R"]},
-          {"palabra": "19 años", "fuentes": ["p18-act1@R", "p19-act3@R"]},
-          {"palabra": "20 años", "fuentes": ["p18-act1@R"]}
+          {"palabra": "10 años", "fuentes": ["p14-act2", "p21-act4"]},
+          {"palabra": "13 años", "fuentes": ["p17-act7", "p21-act4"]},
+          {"palabra": "14 años", "fuentes": ["p17-act7"]},
+          {"palabra": "16 años", "fuentes": ["p19-act3"]},
+          {"palabra": "17 años", "fuentes": ["p19-act3"]},
+          {"palabra": "19 años", "fuentes": ["p18-act1", "p19-act3"]},
+          {"palabra": "20 años", "fuentes": ["p18-act1"]}
         ],
-        "fuentes": ["p12-act1", "p13-act9", "p14-act2", "p16-act1", "p17-act7@R", "p18-act1@R", "p18-act2", "p19-act3@R", "p19-act5@R", "p21-act4@R"],
+        "fuentes": ["p12-act1", "p13-act9", "p14-act2", "p16-act1", "p17-act7", "p18-act1", "p18-act2", "p19-act3", "p19-act5", "p21-act4"],
         "descripcion": {
           "U1": "PCIC A1 §1 Identificación personal — Edad. Campo léxico de datos personales activado a través de la fórmula '¿Cuántos años tienes?' / 'Tengo X años' (índice U1 comunicación). Materializado en presentaciones de personajes (p12, p13, p16) y fichas (p17, p18, p21). Constituye además uno de los anclajes principales del paradigma 'tener' (formas singulares) en U1."
         }
@@ -92,12 +92,12 @@
           {"palabra": "555 675 903", "fuentes": ["p16-act1"]},
           {"palabra": "555 315 867", "fuentes": ["p16-act1"]},
           {"palabra": "555 051 342", "fuentes": ["p16-act1"]},
-          {"palabra": "645 98 34 21", "fuentes": ["p17-act7@R"]},
-          {"palabra": "91 856 49 21", "fuentes": ["p17-act7@R"]},
-          {"palabra": "91 577 64 32", "fuentes": ["p17-act7@R"]},
+          {"palabra": "645 98 34 21", "fuentes": ["p17-act7"]},
+          {"palabra": "91 856 49 21", "fuentes": ["p17-act7"]},
+          {"palabra": "91 577 64 32", "fuentes": ["p17-act7"]},
           {"palabra": "646 34 54 22", "fuentes": ["p19-act5"]}
         ],
-        "fuentes": ["p16-act1", "p17-act7@R", "p19-act5"],
+        "fuentes": ["p16-act1", "p17-act7", "p19-act5"],
         "descripcion": {
           "U1": "PCIC A1 §1 Identificación personal — Número de teléfono. Campo léxico de datos personales activado a través de la fórmula '¿Cuál es tu número de teléfono?' / 'Mi número de teléfono es...' (índice U1 comunicación). Materializado en diálogo del vídeo (p16-act1), fichas (p17-act7) y respuestas modelo (p19-act5)."
         }
@@ -105,18 +105,18 @@
       "Colores": {
         "items": [
           {"palabra": "blanco", "fuentes": ["cuadro@p15", "p15-act7"]},
-          {"palabra": "negro", "fuentes": ["cuadro@p15", "p15-act6@R", "p15-act7@R"]},
-          {"palabra": "rojo", "fuentes": ["cuadro@p15", "p15-act7@R"]},
-          {"palabra": "amarillo", "fuentes": ["cuadro@p15", "p15-act7@R"]},
-          {"palabra": "azul", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
-          {"palabra": "marrón", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
-          {"palabra": "verde", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
-          {"palabra": "rosa", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
-          {"palabra": "blanca", "fuentes": ["p15-act7", "p21-act1@R"]},
-          {"palabra": "roja", "fuentes": ["cuadro@p15", "p15-act6", "p15-act6@R", "p21-act1@R"]},
-          {"palabra": "negra", "fuentes": ["p15-act7@R"]}
+          {"palabra": "negro", "fuentes": ["cuadro@p15", "p15-act6", "p15-act7"]},
+          {"palabra": "rojo", "fuentes": ["cuadro@p15", "p15-act7"]},
+          {"palabra": "amarillo", "fuentes": ["cuadro@p15", "p15-act7"]},
+          {"palabra": "azul", "fuentes": ["cuadro@p15", "p15-act7"]},
+          {"palabra": "marrón", "fuentes": ["cuadro@p15", "p15-act7"]},
+          {"palabra": "verde", "fuentes": ["cuadro@p15", "p15-act7"]},
+          {"palabra": "rosa", "fuentes": ["cuadro@p15", "p15-act7"]},
+          {"palabra": "blanca", "fuentes": ["p15-act7", "p21-act1"]},
+          {"palabra": "roja", "fuentes": ["cuadro@p15", "p15-act6", "p21-act1"]},
+          {"palabra": "negra", "fuentes": ["p15-act7"]}
         ],
-        "fuentes": ["cuadro@p15", "p15-act6", "p15-act6@R", "p15-act7", "p15-act7@R", "p21-act1@R"],
+        "fuentes": ["cuadro@p15", "p15-act6", "p15-act7", "p21-act1"],
         "descripcion": {
           "U1": "Léxico de los 8 colores básicos presentados visualmente en el cuadro@p15 'Los colores' (origen: excepción del registry; índice U1 lo declara dentro de gramática junto a 'Masculino y femenino' por estrategia editorial, pero su destino canónico es léxico). Soporta la práctica de concordancia de género (rojo→roja, blanco→blanca, negro→negra) en p15-act6 (Escribe frases con ser) y p15-act7 (Describe objetos con colores)."
         }
@@ -126,25 +126,25 @@
           {"palabra": "uno", "fuentes": ["p16-act4"]},
           {"palabra": "dos", "fuentes": ["p16-act4", "p17-act6"]},
           {"palabra": "tres", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "cuatro", "fuentes": ["p16-act4", "p17-act6@R"]},
-          {"palabra": "cinco", "fuentes": ["p16-act4", "p17-act6", "p17-act6@R"]},
+          {"palabra": "cuatro", "fuentes": ["p16-act4", "p17-act6"]},
+          {"palabra": "cinco", "fuentes": ["p16-act4", "p17-act6"]},
           {"palabra": "seis", "fuentes": ["p16-act4", "p17-act6"]},
           {"palabra": "siete", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "ocho", "fuentes": ["p16-act4", "p17-act6", "p17-act6@R"]},
-          {"palabra": "nueve", "fuentes": ["p13-act9@R", "p16-act4", "p17-act6", "p17-act6@R"]},
+          {"palabra": "ocho", "fuentes": ["p16-act4", "p17-act6"]},
+          {"palabra": "nueve", "fuentes": ["p13-act9", "p16-act4", "p17-act6"]},
           {"palabra": "diez", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "once", "fuentes": ["p16-act4", "p17-act5", "p17-act6@R"]},
+          {"palabra": "once", "fuentes": ["p16-act4", "p17-act5", "p17-act6"]},
           {"palabra": "doce", "fuentes": ["p16-act4", "p17-act6"]},
           {"palabra": "trece", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "catorce", "fuentes": ["p16-act4", "p17-act6@R"]},
-          {"palabra": "quince", "fuentes": ["p16-act4", "p17-act6", "p17-act6@R"]},
-          {"palabra": "dieciséis", "fuentes": ["p16-act4", "p17-act6@R"]},
+          {"palabra": "catorce", "fuentes": ["p16-act4", "p17-act6"]},
+          {"palabra": "quince", "fuentes": ["p16-act4", "p17-act6"]},
+          {"palabra": "dieciséis", "fuentes": ["p16-act4", "p17-act6"]},
           {"palabra": "diecisiete", "fuentes": ["p16-act4"]},
-          {"palabra": "dieciocho", "fuentes": ["p16-act4", "p17-act6@R"]},
-          {"palabra": "diecinueve", "fuentes": ["p16-act4", "p17-act6@R"]},
-          {"palabra": "veinte", "fuentes": ["p16-act4", "p17-act6@R"]}
+          {"palabra": "dieciocho", "fuentes": ["p16-act4", "p17-act6"]},
+          {"palabra": "diecinueve", "fuentes": ["p16-act4", "p17-act6"]},
+          {"palabra": "veinte", "fuentes": ["p16-act4", "p17-act6"]}
         ],
-        "fuentes": ["p13-act9@R", "p16-act4", "p17-act5", "p17-act6", "p17-act6@R", "p17-act7@R", "p19-act3@R", "p19-act4"],
+        "fuentes": ["p13-act9", "p16-act4", "p17-act5", "p17-act6", "p17-act7", "p19-act3", "p19-act4"],
         "descripcion": {
           "U1": "Léxico de los números cardinales del 1 al 20 (índice U1 comunicación). Presentación en p16-act4 (escucha y relaciona número-palabra) + aplicación en sumas orales y escritas (p17-act5, p17-act6), fichas con edades y teléfonos (p17-act7) y bingo (p19-act4). Clave canónica nueva propuesta en este JSON; pendiente de propagación al registry campos-semanticos-canonicos.json renombrando 'Números 0-10' (U0) a 'Números cardinales' con aliases_indice ['Números 0-10', 'Números 1-20', 'Números 21-100'] — acción para el ejecutor coordinador post-cierre U1 (ver _decisiones_ia)."
         }
@@ -154,18 +154,18 @@
           {"palabra": "Hola, ¿qué tal?", "fuentes": ["cuadro@p20#1", "p16-act3"]},
           {"palabra": "¿Cómo está(s)?", "fuentes": ["cuadro@p20#1"]},
           {"palabra": "Buenos días", "fuentes": ["cuadro@p20#1"]},
-          {"palabra": "Buenas tardes", "fuentes": ["cuadro@p20#1", "p20-act1", "p20-act1@R"]},
+          {"palabra": "Buenas tardes", "fuentes": ["cuadro@p20#1", "p20-act1"]},
           {"palabra": "Buenas noches", "fuentes": ["cuadro@p20#1"]},
           {"palabra": "Adiós", "fuentes": ["cuadro@p20#1"]},
           {"palabra": "Hasta luego", "fuentes": ["cuadro@p20#1"]},
-          {"palabra": "Hasta mañana", "fuentes": ["cuadro@p20#1", "p20-act1", "p20-act1@R"]},
+          {"palabra": "Hasta mañana", "fuentes": ["cuadro@p20#1", "p20-act1"]},
           {"palabra": "¿Cómo está usted?", "fuentes": ["cuadro@p20#1", "p20-act1"]},
           {"palabra": "Muy bien, gracias", "fuentes": ["cuadro@p20#1"]},
-          {"palabra": "Bien, ¿y tú?", "fuentes": ["p16-act3", "p20-act1@R", "p19-act5@R"]},
+          {"palabra": "Bien, ¿y tú?", "fuentes": ["p16-act3", "p20-act1", "p19-act5"]},
           {"palabra": "Encantada", "fuentes": ["p16-act1"]},
           {"palabra": "Dígame", "fuentes": ["cuadro@p20#1"]}
         ],
-        "fuentes": ["p16-act1", "p16-act3", "cuadro@p20#1", "p20-act1", "p20-act1@R", "p19-act5@R"],
+        "fuentes": ["p16-act1", "p16-act3", "cuadro@p20#1", "p20-act1", "p19-act5"],
         "descripcion": {
           "U1": "Fórmulas pragmáticas de saludo y despedida (índice U1 cultura). Ampliación del canónico introducido en U0 (cuadro@p11 con Buenos días/Buenas tardes/Buenas noches): U1 añade Despedidas (Adiós/Hasta luego/Hasta mañana), variantes formales (¿Cómo está usted?) y el contraste informal/formal trabajado en p20."
         }
@@ -175,40 +175,40 @@
       "Adjetivos de nacionalidad": {
         "items": [
           {"palabra": "español", "fuentes": ["p13-act8", "p16-act1"]},
-          {"palabra": "española", "fuentes": ["p13-act8", "p13-act8@R", "p14-act3@R", "p15-act6@R", "p18-act1@R", "p18-act2", "p21-act1@R"]},
-          {"palabra": "francés", "fuentes": ["p13-act8", "p13-act8@R", "p14-act1"]},
+          {"palabra": "española", "fuentes": ["p13-act8", "p14-act3", "p15-act6", "p18-act1", "p18-act2", "p21-act1"]},
+          {"palabra": "francés", "fuentes": ["p13-act8", "p14-act1"]},
           {"palabra": "francesa", "fuentes": ["p14-act1"]},
-          {"palabra": "colombiana", "fuentes": ["p13-act8", "p13-act8@R"]},
-          {"palabra": "inglesa", "fuentes": ["p13-act8", "p13-act8@R"]},
-          {"palabra": "brasileña", "fuentes": ["p13-act8", "p13-act8@R", "p14-act4@R", "p15-act6@R"]},
+          {"palabra": "colombiana", "fuentes": ["p13-act8"]},
+          {"palabra": "inglesa", "fuentes": ["p13-act8"]},
+          {"palabra": "brasileña", "fuentes": ["p13-act8", "p14-act4", "p15-act6"]},
           {"palabra": "brasileño", "fuentes": ["p14-act4"]},
-          {"palabra": "italiana", "fuentes": ["p14-act1", "p15-act6@R"]},
-          {"palabra": "griego", "fuentes": ["p14-act4@R"]},
+          {"palabra": "italiana", "fuentes": ["p14-act1", "p15-act6"]},
+          {"palabra": "griego", "fuentes": ["p14-act4"]},
           {"palabra": "griega", "fuentes": ["p14-act4"]},
           {"palabra": "alemán", "fuentes": ["p14-act4"]},
-          {"palabra": "alemana", "fuentes": ["p14-act4@R"]},
+          {"palabra": "alemana", "fuentes": ["p14-act4"]},
           {"palabra": "mexicano", "fuentes": ["cuadro@p14#3"]},
-          {"palabra": "mexicana", "fuentes": ["cuadro@p14#3", "p21-act4@R"]},
-          {"palabra": "japonés", "fuentes": ["cuadro@p14#3", "p15-act6@R"]},
+          {"palabra": "mexicana", "fuentes": ["cuadro@p14#3", "p21-act4"]},
+          {"palabra": "japonés", "fuentes": ["cuadro@p14#3", "p15-act6"]},
           {"palabra": "japonesa", "fuentes": ["cuadro@p14#3"]},
           {"palabra": "coreana", "fuentes": ["p15-act8"]},
-          {"palabra": "peruana", "fuentes": ["p15-act6@R", "p21-act4@R"]},
-          {"palabra": "argentino", "fuentes": ["p12-act1", "p16-act1", "p18-act1@R"]},
+          {"palabra": "peruana", "fuentes": ["p15-act6", "p21-act4"]},
+          {"palabra": "argentino", "fuentes": ["p12-act1", "p16-act1", "p18-act1"]},
           {"palabra": "marroquí", "fuentes": ["p18-act2"]},
           {"palabra": "cubana", "fuentes": ["cuadro@p20#1"]},
-          {"palabra": "polaco", "fuentes": ["p21-act4@R"]}
+          {"palabra": "polaco", "fuentes": ["p21-act4"]}
         ],
-        "fuentes": ["p13-act8", "p16-act1", "p13-act8@R", "p14-act3@R", "p15-act6@R", "p18-act1@R", "p18-act2", "p21-act1@R", "p14-act1", "p14-act4@R", "p14-act4", "cuadro@p14#3", "p21-act4@R", "p15-act8", "p12-act1", "cuadro@p20#1"],
+        "fuentes": ["p13-act8", "p16-act1", "p14-act3", "p15-act6", "p18-act1", "p18-act2", "p21-act1", "p14-act1", "p14-act4", "cuadro@p14#3", "p21-act4", "p15-act8", "p12-act1", "cuadro@p20#1"],
         "descripcion": {
           "U1": "Anticipación material del principal canónico de U2 ('Adjetivos de nacionalidad', índice U2 vocabulario). En U1 no es input incidental: el cuadro@p14#3 'Nacionalidad' presenta explícitamente la tabla mexicano/-a, español/-a, japonés/-a como soporte directo del principal U1 gramática 'Masculino y femenino' (Concordancia de género). Sitios de trabajo léxico-nacional en U1: p13-act8, p14-act1, p15-act6, p18-fichas, p19-act3, p21. La actividad p14-act4 NO se cuenta como sitio de trabajo léxico tras saneamiento v10.124 (su foco es morfológico — Concordancia de género — y mezcla gentilicios con profesor/niño/amiga/campeón); los gentilicios genuinos que aparecen en sus respuestas (griego/-a, alemán/-a, brasileño/-a) se conservan en items[] de este bloque por aparición material en p14-act4@R, pero la actividad ya no referencia esta categoría en su vocabulario. Codificación como recurrente aprobada por el autor (P3); ver _decisiones_ia (incluye revisión por P13)."
         }
       },
       "Gentilicios": {
         "items": [
-          {"palabra": "africana", "fuentes": ["p15-act6@R"]},
+          {"palabra": "africana", "fuentes": ["p15-act6"]},
           {"palabra": "madrileña", "fuentes": ["p12-act1"]}
         ],
-        "fuentes": ["p15-act6@R", "p12-act1"],
+        "fuentes": ["p15-act6", "p12-act1"],
         "descripcion": {
           "U1": "Canónico nuevo añadido en v10.124 por hallazgo del autor durante revisión post-v10.123. Bloque que recoge gentilicios NO de país que el libro U1 usa con la misma función comunicativa que los adjetivos de nacionalidad (presentación personal) pero que estrictamente no son nacionalidades. En U1: 'madrileña' (gentilicio de ciudad — Madrid; aparece como autodescripción de Katrina en p12-act1 \"Soy madrileña, de Madrid\") y 'africana' (gentilicio continental; aparece en respuestas modelo de p15-act6@R). Materialmente complementario a Adjetivos de nacionalidad — el libro los presenta sin distinción didáctica, pero la clasificación canónica los separa por precisión."
         }
@@ -237,35 +237,25 @@
         "p12-act1",
         "p12-act2",
         "p13-act8",
-        "p13-act8@R",
         "p13-act9",
         "cuadro@p14#1",
         "p14-act1",
-        "p14-act1@R",
         "p14-act3",
-        "p14-act3@R",
         "cuadro@p15",
         "p15-act6",
-        "p15-act6@R",
         "p15-act7",
-        "p15-act7@R",
         "p15-act8",
         "p16-act1",
         "p18-act1",
-        "p18-act1@R",
         "p18-act2",
-        "p18-act2@R",
         "p19-act5",
-        "p19-act5@R",
         "p19-act7",
         "p19-act8",
         "cuadro@p20#1",
         "p20-act1",
         "cuadro@p20#3",
         "p21-act1",
-        "p21-act1@R",
         "p21-act4",
-        "p21-act4@R",
         "p21-act6"
       ],
       "descripcion": {
@@ -284,27 +274,20 @@
         "p13-act6",
         "p13-act7",
         "p13-act8",
-        "p13-act8@R",
         "p13-act9",
         "cuadro@p14#1",
         "p14-act3",
-        "p14-act3@R",
-        "p15-act6@R",
+        "p15-act6",
         "p16-act1",
         "p16-act2",
         "p18-act1",
-        "p18-act1@R",
         "p18-act2",
-        "p18-act2@R",
         "p19-act5",
-        "p19-act5@R",
         "p19-act6",
         "cuadro@p20#1",
         "cuadro@p20#3",
         "p20-act1",
-        "p20-act1@R",
         "p21-act4",
-        "p21-act4@R",
         "p21-act6"
       ],
       "descripcion": {
@@ -317,27 +300,7 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["tengo", "tienes", "tiene"],
-      "fuentes": [
-        "p12-act1",
-        "p12-act2",
-        "p13-act9",
-        "cuadro@p14#1",
-        "p14-act2",
-        "p14-act2@R",
-        "p15-act8",
-        "p16-act1",
-        "p17-act5",
-        "p18-act1",
-        "p18-act1@R",
-        "p18-act2",
-        "p19-act5",
-        "p19-act5@R",
-        "p19-act6",
-        "cuadro@p20#3",
-        "p21-act4",
-        "p21-act4@R",
-        "p21-act6"
-      ],
+      "fuentes": ["p12-act1", "p12-act2", "p13-act9", "cuadro@p14#1", "p14-act2", "p15-act8", "p16-act1", "p17-act5", "p18-act1", "p18-act2", "p19-act5", "p19-act6", "cuadro@p20#3", "p21-act4", "p21-act6"],
       "descripcion": {
         "U1": "PCIC A1 §9 El verbo (presente, formas singulares). Primera aparición canónica; principal U1 gramática. Trabajado como soporte de la fórmula '¿Cuántos años tienes? / Tengo X años' (índice U1 comunicación) y como soporte de posesión (Tengo móvil, Mi profesora tiene 10 años, Tienes un bolígrafo rojo)."
       }
@@ -347,12 +310,12 @@
     "principal": {
       "Artículos determinados": {
         "items": [
-          {"palabra": "el", "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p14-act5@R", "p21-act2", "p21-act2@R", "p21-act3", "p21-act3@R"]},
-          {"palabra": "la", "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p14-act5@R", "p15-act7", "p15-act7@R", "p21-act2", "p21-act2@R", "p21-act3", "p21-act3@R"]},
-          {"palabra": "los", "fuentes": ["cuadro@p14#2", "p15-act6@R"]},
-          {"palabra": "las", "fuentes": ["cuadro@p14#2", "p15-act6@R"]}
+          {"palabra": "el", "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p21-act2", "p21-act3"]},
+          {"palabra": "la", "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p15-act7", "p21-act2", "p21-act3"]},
+          {"palabra": "los", "fuentes": ["cuadro@p14#2", "p15-act6"]},
+          {"palabra": "las", "fuentes": ["cuadro@p14#2", "p15-act6"]}
         ],
-        "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p14-act5@R", "p15-act6@R", "p15-act7", "p15-act7@R", "p21-act2", "p21-act2@R", "p21-act3", "p21-act3@R"],
+        "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p15-act6", "p15-act7", "p21-act2", "p21-act3"],
         "descripcion": {
           "U1": "PCIC A1 §3.1 El artículo definido. Principal U1 gramática: presentación del paradigma completo el/la/los/las en cuadro@p14#2 con dos sub-bloques ilustrativos (Nombres de las cosas / Nombres de personas y animales) y tabla masculino-femenino × singular-plural. Trabajado en p14-act5 (forma el femenino), p21-act2 (coloca el artículo), p21-act3 (completa la tabla)."
         }
@@ -362,40 +325,22 @@
           {"palabra": "masculino", "fuentes": ["cuadro@p14#2", "cuadro@p14#3", "p14-act4"]},
           {"palabra": "femenino", "fuentes": ["cuadro@p14#2", "cuadro@p14#3", "p14-act4", "p14-act5"]}
         ],
-        "fuentes": ["cuadro@p14#2", "cuadro@p14#3", "p14-act4", "p14-act4@R", "p14-act5", "p14-act5@R", "cuadro@p15", "p15-act6", "p15-act6@R", "p15-act7", "p15-act7@R", "p21-act1", "p21-act1@R", "p21-act3", "p21-act3@R"],
+        "fuentes": ["cuadro@p14#2", "cuadro@p14#3", "p14-act4", "p14-act5", "cuadro@p15", "p15-act6", "p15-act7", "p21-act1", "p21-act3"],
         "descripcion": {
           "U1": "PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN. Principal U1 gramática ('Masculino y femenino'). Presentado en cuadro@p14#2 (sustantivos: el libro/la casa, el amigo/la amiga, el león/la leona) y cuadro@p14#3 (adjetivos: mexicano/-a, español/-a, japonés/-a). Trabajado en p14-act4 (completa la tabla con sufijación -o/-a, -és/-esa, -ón/-ona, -án/-ana), p14-act5 (forma el femenino), p15-act6 (escribe frases con ser concordando con sujeto), p15-act7 (objetos × colores con concordancia adjetival)."
         }
       },
       "Pronombre sujeto": {
         "items": [
-          {"palabra": "yo", "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act1@R", "p14-act3", "p18-act2", "p21-act1", "p21-act1@R", "p21-act4@R"]},
-          {"palabra": "tú", "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p15-act8", "p21-act1", "p21-act1@R", "p21-act4", "p21-act4@R"]},
+          {"palabra": "yo", "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p18-act2", "p21-act1", "p21-act4"]},
+          {"palabra": "tú", "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p15-act8", "p21-act1", "p21-act4"]},
           {"palabra": "él", "fuentes": ["cuadro@p14#1", "p14-act2", "p14-act3"]},
           {"palabra": "ella", "fuentes": ["cuadro@p14#1", "p14-act3", "p18-act2"]},
           {"palabra": "usted", "fuentes": ["cuadro@p14#1", "cuadro@p20#1", "cuadro@p20#2", "cuadro@p20#3", "p20-act1"]},
           {"palabra": "vosotros", "fuentes": ["cuadro@p20#2"]},
           {"palabra": "ustedes", "fuentes": ["cuadro@p20#2"]}
         ],
-        "fuentes": [
-          "cuadro@p14#1",
-          "p14-act1",
-          "p14-act1@R",
-          "p14-act2",
-          "p14-act3",
-          "p14-act3@R",
-          "p15-act8",
-          "p18-act2",
-          "p18-act2@R",
-          "cuadro@p20#1",
-          "cuadro@p20#2",
-          "cuadro@p20#3",
-          "p20-act1",
-          "p21-act1",
-          "p21-act1@R",
-          "p21-act4",
-          "p21-act4@R"
-        ],
+        "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act2", "p14-act3", "p15-act8", "p18-act2", "cuadro@p20#1", "cuadro@p20#2", "cuadro@p20#3", "p20-act1", "p21-act1", "p21-act4"],
         "descripcion": {
           "U1": "PCIC A1 §7.1.1 Pronombre sujeto. Principal U1: introducción del subset singular + usted (yo/tú/él/ella/usted) como soporte sintáctico del paradigma de los tres verbos (cuadro@p14#1). El cuadro@p20#2 '¿Tú o usted?' amplía con vosotros/ustedes como contraste pragmático informal/formal (mencionados, no conjugados); la conjugación plural se difiere a U2. Registry declara U1 como introducción y U2-U9 como recurrente."
         }
@@ -403,9 +348,9 @@
       "Concordancia de número": {
         "items": [
           {"palabra": "singular", "fuentes": ["cuadro@p14#2"]},
-          {"palabra": "plural", "fuentes": ["cuadro@p14#2", "p15-act6@R"]}
+          {"palabra": "plural", "fuentes": ["cuadro@p14#2", "p15-act6"]}
         ],
-        "fuentes": ["cuadro@p14#2", "p15-act6@R"],
+        "fuentes": ["cuadro@p14#2", "p15-act6"],
         "descripcion": {
           "U1": "Anticipación material del principal canónico de U2 ('Plural de nombres y adjetivos', PCIC A1 §1.3 + §2.3). Presentación pasiva en cuadro@p14#2 (tabla singular/plural con el niño/los niños/la niña/las niñas) + producción incidental de plurales en respuestas de p15-act6 (Los gatos son negros; Las profesoras son mexicanas). Codificación como recurrente aprobada por el autor por consistencia con la decisión P3 sobre 'Adjetivos de nacionalidad' (P12 confirmada (a))."
         }
