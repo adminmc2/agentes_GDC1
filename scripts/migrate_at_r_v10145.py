@@ -75,13 +75,11 @@ def iter_items(consolidated_block, block_key):
     (string) usado como palabra. Para los otros 3 bloques: items[].palabra.
     """
     if block_key == "tiempos_y_verbos_consolidado":
-        # Shape: dict { tier: [ items ] } o lista directa según implementación
-        # Por simplicidad: recorrer dict de tier → lista de objetos con 'lema'
-        for tier, container in (consolidated_block or {}).items():
-            if not isinstance(container, list): continue
-            for item in container:
-                if not isinstance(item, dict): continue
-                yield tier, None, item, item.get("lema") or ""
+        # Shape real: lista plana top-level de lemas (no anidada por tier/categoría)
+        container = consolidated_block if isinstance(consolidated_block, list) else []
+        for item in container:
+            if not isinstance(item, dict): continue
+            yield "_flat", None, item, item.get("lema") or ""
     else:
         for tier, cats in (consolidated_block or {}).items():
             if not isinstance(cats, dict): continue
@@ -113,7 +111,7 @@ def dedupe_keep_order(seq):
             seen.add(x); out.append(x)
     return out
 
-def process_block(block, block_key, act_idx, apply_changes):
+def process_block(block, block_key, act_idx, apply_changes, include_dual=False):
     """Mutates items in-place if apply_changes. Returns lists of records.
     Para bloques con categorías (vocab/gramatica/pron), tras mutar items
     recomputa también category.fuentes como unión deduplicada preservando
@@ -144,6 +142,11 @@ def process_block(block, block_key, act_idx, apply_changes):
                     item_changed = True
             elif status == "dual":
                 B.append(rec)
+                if apply_changes and include_dual:
+                    # Lote 3A: añadir @R alongside del plain (no reemplazar)
+                    idx_in_new = new_fuentes.index(f)
+                    new_fuentes.insert(idx_in_new + 1, f + "@R")
+                    item_changed = True
             elif status == "no-match":
                 NO.append(rec)
             elif status == "warn-no-act":
@@ -200,10 +203,15 @@ def main():
     ap.add_argument("--block", choices=list(BLOCK_MAP.keys())+["all"], default="vocab")
     ap.add_argument("--apply", action="store_true", help="escribe in-place (default: dry-run)")
     ap.add_argument("--dry-run", action="store_true", help="explícito (default si no se pasa --apply)")
+    ap.add_argument("--include-dual", action="store_true",
+                    help="Lote 3A: además de respuesta-only, añade @R alongside del plain en casos dual. "
+                         "Solo --block vocab.")
     ap.add_argument("--report", type=str, default=None)
     args = ap.parse_args()
     if args.apply and args.dry_run:
         sys.stderr.write("ERROR: --apply y --dry-run son mutuamente excluyentes.\n"); sys.exit(2)
+    if args.include_dual and args.block != "vocab":
+        sys.stderr.write("ERROR: --include-dual solo permitido con --block vocab (Lote 3A).\n"); sys.exit(2)
 
     blocks = list(BLOCK_MAP.keys()) if args.block == "all" else [args.block]
     experimental_blocks = {b for b in blocks if b != "vocab"}
@@ -238,7 +246,8 @@ def main():
                 if isinstance(f, str) and not f.startswith("cuadro@") and not f.endswith("@R"):
                     fuentes_total += 1
         A, B, NO, WARN = process_block(block, block_key_full, act_idx,
-                                       apply_changes=(args.apply and bkey == "vocab"))
+                                       apply_changes=(args.apply and bkey == "vocab"),
+                                       include_dual=args.include_dual)
         for rec in A+B+NO+WARN: rec["bloque"] = block_key_full
         all_A += A; all_B += B; all_NO += NO; all_WARN += WARN
 
@@ -269,7 +278,10 @@ def main():
             sys.stderr.write(f"\n❌ Validador falló. .bak preservado en {bak}\n"
                              f"   Rollback: mv '{bak}' '{path}'\n")
             sys.exit(3)
-        sys.stderr.write(f"\n✅ Aplicado. {len(all_A)} reemplazos. Validador 0/0/0.\n")
+        applied_A = len(all_A)
+        applied_dual = len(all_B) if args.include_dual else 0
+        sys.stderr.write(f"\n✅ Aplicado. {applied_A} reemplazos respuesta-only"
+                         f" + {applied_dual} alongside duales. Validador 0/0/0.\n")
 
 if __name__ == "__main__":
     main()

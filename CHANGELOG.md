@@ -5,6 +5,32 @@
 
 ---
 
+## [v10.145b — 2026-05-16] — Fase 1: Lote 3A — dual-tracking retroactivo en `vocabulario_consolidado` (U1, U3, U4, U5)
+
+Aplicación del modo B (dual-tracking) al bloque `vocabulario_consolidado` en las unidades con duales detectados. Script extendido con flag `--include-dual` (solo para `--block vocab` en esta fase). Política: para cada fuente `pNN-actMM` cuya palabra aparece **tanto en input como en `respuestas[]`** de la actividad, se añade `pNN-actMM@R` alongside del plain (no reemplaza).
+
+**Resultados (validador 0/0/0 en todas las unidades incluidas):**
+
+| Unidad | Duales aplicados | Notas |
+|---|---|---|
+| U0 | 0 | Sin duales — todo input-only o ya migrado en Lote 2. |
+| U1 | 48 | |
+| U2 | — | **Excluida del commit.** Dry-run mostró 131 anomalías (volumen elevado). Por cautela del revisor, U2 se cierra en un paso aparte tras inspeccionar la causa de las anomalías. Los duales calculados (42) NO se commitean en este lote. |
+| U3 | 42 | |
+| U4 | 125 | Gate funcional (volumen alto confirmado). |
+| U5 | 75 | |
+| **Total commiteado** | **290** | (U2 pendiente: 42) |
+
+**Lote 3B (estudio reabierto) — pendiente:** matcher por bloque para `tiempos_y_verbos_consolidado` (usar `formas_trabajadas` en lugar del lema). U4+U5 dry-run para conteo. Detectado tras observación del autor que invalidó el 3B-mini previo (mi script buscaba el infinitivo en texto, debe buscar las formas conjugadas).
+
+**Fuera de scope explícitamente:** gramática y pronunciación-ortografía. Quedan congeladas hasta definir política de matching propia. Gramática prohíbe derivación agresiva de fragmentos de paradigmas metalingüísticos (`A mí me gusta(n)` no se expande a `me gusta` automáticamente); si no hay expansión limpia → anomalía explícita, no candidato.
+
+**Sin cambios en contrato:** la semántica de `@R` (marcador de localización) sigue exactamente la de v10.145. Lote 3A solo aplica esa misma semántica a un caso adicional (palabra en input Y respuestas) que se había diferido.
+
+**Anomalías U2 elevadas (131).** Las inspecciono en una iteración futura — son posibles flexiones / signos / compuestos que el matcher literal normalizado no captura. No bloquean, son deuda documentada.
+
+---
+
 ## [v10.145a — 2026-05-16] — Fase 1: Lote 2 — migración de datos U0-U5 (vocabulario, modo A)
 
 Aplicación del nuevo contrato v10.145 a `vocabulario_consolidado` en U0-U5. **Modo A:** solo respuesta-only (plain → `@R`). Dual-tracking diferido a Lote 3.

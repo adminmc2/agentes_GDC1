@@ -16,56 +16,79 @@
     "principal": {
       "Partes de la casa": {
         "items": [
-          {"palabra": "cocina", "fuentes": ["p52-act1", "p52-act2@R", "p52-act3", "p52-act5", "p53-act7", "p56-act3", "p59-act4@R", "p61-act3@R"]},
-          {"palabra": "cuarto de baño", "fuentes": ["p52-act1", "p52-act2@R", "p52-act3", "p52-act5@R", "p61-act1", "p61-act3@R"]},
-          {"palabra": "dormitorio", "fuentes": ["p52-act1", "p52-act2@R", "p52-act3", "p52-act5", "p53-act7", "p55-act6", "p59-act4", "p59-act5", "p61-act3@R"]},
-          {"palabra": "recibidor", "fuentes": ["p52-act1"]},
-          {"palabra": "salón-comedor", "fuentes": ["p52-act1", "p52-act2@R", "p59-act4@R", "p61-act3@R"]},
-          {"palabra": "terraza", "fuentes": ["p52-act1", "p52-act2@R", "p53-act7", "p59-act4@R", "p59-act5", "p61-act1"]}
+          {"palabra": "cocina", "fuentes": ["p52-act1", "p52-act1@R", "p52-act2@R", "p52-act3", "p52-act3@R", "p52-act5", "p52-act5@R", "p53-act7", "p53-act7@R", "p56-act3", "p59-act4@R", "p61-act3@R"]},
+          {"palabra": "cuarto de baño", "fuentes": ["p52-act1", "p52-act1@R", "p52-act2@R", "p52-act3", "p52-act3@R", "p52-act5@R", "p61-act1", "p61-act3@R"]},
+          {"palabra": "dormitorio", "fuentes": ["p52-act1", "p52-act1@R", "p52-act2@R", "p52-act3", "p52-act3@R", "p52-act5", "p52-act5@R", "p53-act7", "p55-act6", "p55-act6@R", "p59-act4", "p59-act4@R", "p59-act5", "p59-act5@R", "p61-act3@R"]},
+          {"palabra": "recibidor", "fuentes": ["p52-act1", "p52-act1@R"]},
+          {"palabra": "salón-comedor", "fuentes": ["p52-act1", "p52-act1@R", "p52-act2@R", "p59-act4@R", "p61-act3@R"]},
+          {"palabra": "terraza", "fuentes": ["p52-act1", "p52-act1@R", "p52-act2@R", "p53-act7", "p59-act4@R", "p59-act5", "p59-act5@R", "p61-act1"]}
         ],
-        "fuentes": ["p52-act1", "p52-act2@R", "p52-act3", "p52-act5", "p53-act7", "p56-act3", "p59-act4@R", "p61-act3@R", "p52-act5@R", "p61-act1", "p55-act6", "p59-act4", "p59-act5"],
+        "fuentes": [
+          "p52-act1",
+          "p52-act1@R",
+          "p52-act2@R",
+          "p52-act3",
+          "p52-act3@R",
+          "p52-act5",
+          "p52-act5@R",
+          "p53-act7",
+          "p53-act7@R",
+          "p56-act3",
+          "p59-act4@R",
+          "p61-act3@R",
+          "p61-act1",
+          "p55-act6",
+          "p55-act6@R",
+          "p59-act4",
+          "p59-act5",
+          "p59-act5@R"
+        ],
         "descripcion": {
           "U5": "PCIC A1 §3.7.2 — Partes de la vivienda. Principal en U5: recibidor, salón-comedor, cocina, cuarto de baño, dormitorio, terraza. Se introduce en p52 con plano ilustrado y se trabaja en clasificación de mobiliario (p52-act03), preguntas de ubicación (p52-act05) y producción de descripciones (p55-act05, p59)."
         }
       },
       "Mobiliario": {
         "items": [
-          {"palabra": "alfombra", "fuentes": ["p52-act3", "p53-act7", "p55-act8", "p61-act2"]},
-          {"palabra": "armario", "fuentes": ["p52-act3", "p52-act5@R", "p53-act7"]},
-          {"palabra": "bañera", "fuentes": ["p52-act3", "p61-act3"]},
-          {"palabra": "cama", "fuentes": ["p52-act3", "p53-act7", "p54-act3@R", "p55-act6", "p56-act1", "p56-act2", "p58-act1", "p61-act2@R", "p61-act3"]},
-          {"palabra": "cuadro", "fuentes": ["p52-act3", "p52-act5", "p55-act8", "p61-act2"]},
-          {"palabra": "ducha", "fuentes": ["p52-act3"]},
-          {"palabra": "espejo", "fuentes": ["p52-act3", "p52-act5", "p53-act7"]},
-          {"palabra": "estantería", "fuentes": ["p52-act3", "p53-act7", "p58-act1"]},
-          {"palabra": "fregadero", "fuentes": ["p52-act3", "p52-act5@R", "p53-act7"]},
-          {"palabra": "frigorífico", "fuentes": ["p52-act3", "p52-act5@R", "p53-act7", "p58-act1", "p58-act3@R", "p61-act3"]},
-          {"palabra": "lavabo", "fuentes": ["p52-act3", "p52-act5", "p61-act1", "p61-act3"]},
-          {"palabra": "lavadora", "fuentes": ["p52-act3", "p52-act5@R"]},
-          {"palabra": "lámpara", "fuentes": ["p52-act3", "p53-act7", "p54-act3", "p55-act8"]},
-          {"palabra": "mesa", "fuentes": ["p52-act3", "p53-act7", "p54-act3", "p55-act6", "p55-act8", "p61-act2"]},
-          {"palabra": "ordenador", "fuentes": ["p52-act3", "p52-act5", "p53-act7", "p54-act3", "p55-act6", "p58-act1"]},
-          {"palabra": "póster", "fuentes": ["p52-act3"]},
-          {"palabra": "silla", "fuentes": ["p52-act3", "p52-act5", "p53-act7", "p54-act3", "p61-act2@R"]},
-          {"palabra": "sillón", "fuentes": ["p52-act3", "p55-act8", "p58-act1"]},
-          {"palabra": "sofá", "fuentes": ["p52-act3", "p53-act7", "p55-act8", "p56-act1", "p58-act1", "p61-act2@R", "p61-act3"]},
-          {"palabra": "televisión", "fuentes": ["p52-act3", "p52-act4", "p53-act7", "p55-act6", "p58-act1", "p58-act3"]},
-          {"palabra": "teléfono", "fuentes": ["p52-act3"]}
+          {"palabra": "alfombra", "fuentes": ["p52-act3", "p52-act3@R", "p53-act7", "p55-act8", "p61-act2"]},
+          {"palabra": "armario", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5@R", "p53-act7"]},
+          {"palabra": "bañera", "fuentes": ["p52-act3", "p52-act3@R", "p61-act3", "p61-act3@R"]},
+          {"palabra": "cama", "fuentes": ["p52-act3", "p52-act3@R", "p53-act7", "p54-act3@R", "p55-act6", "p55-act6@R", "p56-act1", "p56-act2", "p58-act1", "p61-act2@R", "p61-act3", "p61-act3@R"]},
+          {"palabra": "cuadro", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5", "p52-act5@R", "p55-act8", "p61-act2"]},
+          {"palabra": "ducha", "fuentes": ["p52-act3", "p52-act3@R"]},
+          {"palabra": "espejo", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5", "p52-act5@R", "p53-act7"]},
+          {"palabra": "estantería", "fuentes": ["p52-act3", "p52-act3@R", "p53-act7", "p58-act1"]},
+          {"palabra": "fregadero", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5@R", "p53-act7", "p53-act7@R"]},
+          {"palabra": "frigorífico", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5@R", "p53-act7", "p53-act7@R", "p58-act1", "p58-act3@R", "p61-act3", "p61-act3@R"]},
+          {"palabra": "lavabo", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5", "p52-act5@R", "p61-act1", "p61-act3", "p61-act3@R"]},
+          {"palabra": "lavadora", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5@R"]},
+          {"palabra": "lámpara", "fuentes": ["p52-act3", "p52-act3@R", "p53-act7", "p54-act3", "p54-act3@R", "p55-act8"]},
+          {"palabra": "mesa", "fuentes": ["p52-act3", "p52-act3@R", "p53-act7", "p54-act3", "p55-act6", "p55-act6@R", "p55-act8", "p61-act2"]},
+          {"palabra": "ordenador", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5", "p52-act5@R", "p53-act7", "p54-act3", "p54-act3@R", "p55-act6", "p55-act6@R", "p58-act1"]},
+          {"palabra": "póster", "fuentes": ["p52-act3", "p52-act3@R"]},
+          {"palabra": "silla", "fuentes": ["p52-act3", "p52-act3@R", "p52-act5", "p52-act5@R", "p53-act7", "p54-act3", "p54-act3@R", "p61-act2@R"]},
+          {"palabra": "sillón", "fuentes": ["p52-act3", "p52-act3@R", "p55-act8", "p58-act1"]},
+          {"palabra": "sofá", "fuentes": ["p52-act3", "p52-act3@R", "p53-act7", "p55-act8", "p56-act1", "p58-act1", "p61-act2@R", "p61-act3", "p61-act3@R"]},
+          {"palabra": "televisión", "fuentes": ["p52-act3", "p52-act3@R", "p52-act4", "p53-act7", "p55-act6", "p58-act1", "p58-act3"]},
+          {"palabra": "teléfono", "fuentes": ["p52-act3", "p52-act3@R"]}
         ],
         "fuentes": [
           "p52-act3",
+          "p52-act3@R",
           "p53-act7",
           "p55-act8",
           "p61-act2",
           "p52-act5@R",
           "p61-act3",
+          "p61-act3@R",
           "p54-act3@R",
           "p55-act6",
+          "p55-act6@R",
           "p56-act1",
           "p56-act2",
           "p58-act1",
           "p61-act2@R",
           "p52-act5",
+          "p53-act7@R",
           "p58-act3@R",
           "p61-act1",
           "p54-act3",
@@ -79,29 +102,29 @@
       "Adjetivos descriptivos": {
         "items": [
           {"palabra": "antiguo/-a", "fuentes": ["p57-act7"]},
-          {"palabra": "grande", "fuentes": ["p53-act7", "p55-act5", "p55-act8", "p57-act6", "p57-act7", "p58-act1", "p58-act2@R", "p61-act1", "p61-act4"]},
+          {"palabra": "grande", "fuentes": ["p53-act7", "p55-act5", "p55-act8", "p57-act6", "p57-act7", "p58-act1", "p58-act2@R", "p61-act1", "p61-act4", "p61-act4@R"]},
           {"palabra": "lento/-a", "fuentes": ["p57-act7"]},
           {"palabra": "pequeño/-a", "fuentes": ["p57-act7"]},
           {"palabra": "rojo/-a", "fuentes": ["p57-act7"]},
           {"palabra": "rápido/-a", "fuentes": ["p57-act7"]}
         ],
-        "fuentes": ["p57-act7", "p53-act7", "p55-act5", "p55-act8", "p57-act6", "p58-act1", "p58-act2@R", "p61-act1", "p61-act4"],
+        "fuentes": ["p57-act7", "p53-act7", "p55-act5", "p55-act8", "p57-act6", "p58-act1", "p58-act2@R", "p61-act1", "p61-act4", "p61-act4@R"],
         "descripcion": {
           "U5": "PCIC A1 §3.7.4 — Adjetivos para describir objetos y viviendas. Principal en U5: pares opuestos (grande/pequeño, nuevo/viejo, cómodo/incómodo, moderno/antiguo, bonito/feo) y otros (rápido/lento, rojo). Se trabaja en relación de antónimos (p53-act06), serie de palabras (p53-act07) y descripción de objetos y viviendas (p57-act07, p59-act07)."
         }
       },
       "Tipos de vivienda": {
         "items": [
-          {"palabra": "albergue juvenil", "fuentes": ["p53-act8", "p53-act9"]},
+          {"palabra": "albergue juvenil", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R"]},
           {"palabra": "apartamento", "fuentes": ["p53-act8", "p58-act2"]},
           {"palabra": "camping", "fuentes": ["p53-act8", "p53-act12@R"]},
-          {"palabra": "caravana", "fuentes": ["p53-act8", "p53-act9"]},
-          {"palabra": "casa rural", "fuentes": ["p53-act8", "p53-act9"]},
-          {"palabra": "crucero", "fuentes": ["p53-act8", "p53-act9"]},
-          {"palabra": "granja", "fuentes": ["p53-act8", "p53-act9", "p53-act12@R"]},
+          {"palabra": "caravana", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R"]},
+          {"palabra": "casa rural", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R"]},
+          {"palabra": "crucero", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R"]},
+          {"palabra": "granja", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R", "p53-act12@R"]},
           {"palabra": "hotel", "fuentes": ["p53-act8", "p53-act11@R"]}
         ],
-        "fuentes": ["p53-act8", "p53-act9", "p58-act2", "p53-act12@R", "p53-act11@R"],
+        "fuentes": ["p53-act8", "p53-act9", "p53-act9@R", "p58-act2", "p53-act12@R", "p53-act11@R"],
         "descripcion": {
           "U5": "PCIC A1 §3.7 — Tipos de vivienda y alojamiento turístico. Principal en U5: léxico de alojamientos (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) trabajado en p53 con vocabulario visual, definiciones (p53-act09) y elección personal (p53-act10), y en p58-59 con descripción de viviendas reales."
         }
@@ -109,12 +132,12 @@
       "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca": {
         "items": [
           {"palabra": "al lado", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R"]},
-          {"palabra": "debajo", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p56-act1", "p56-act2", "p61-act2@R"]},
+          {"palabra": "debajo", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p56-act1", "p56-act1@R", "p56-act2", "p61-act2@R"]},
           {"palabra": "delante", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R"]},
           {"palabra": "detrás", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p61-act2@R"]},
-          {"palabra": "encima", "fuentes": ["p54-act3", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p56-act1", "p56-act2", "p61-act2"]}
+          {"palabra": "encima", "fuentes": ["p54-act3", "p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p56-act1", "p56-act1@R", "p56-act2", "p61-act2", "p61-act2@R"]}
         ],
-        "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R", "p56-act1", "p56-act2", "p54-act3", "p61-act2"],
+        "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R", "p56-act1", "p56-act1@R", "p56-act2", "p54-act3", "p61-act2"],
         "descripcion": {
           "U5": "Léxico principal U5. Primera aparición real en NC1: el manual enseña los 5 marcadores espaciales (encima, debajo, delante, detrás, al lado) en cuadro@p54#2 (figura cubo+perro) y los aplica con 'estar' en p54-act3, p55-act1, p55-act4, p55-act5, p56-act1, p58-act1, p59-act3, p61-act2. El canónico léxico (origen: indice) cubre la lista extendida del índice del libro; en U5 se atestan los 5 lemas concretos arriba indicados. Sustituye al bloque transitorio 'Adverbios de posición' creado en v10.141 (cuyo único item era placeholder genérico 'Posición')."
         }
@@ -123,18 +146,18 @@
     "recurrente": {
       "Establecimientos: cine, restaurante, farmacia...": {
         "items": [
-          {"palabra": "biblioteca", "fuentes": ["p56-act4"]},
-          {"palabra": "bolera", "fuentes": ["p56-act4"]},
-          {"palabra": "cafetería", "fuentes": ["p56-act4"]},
-          {"palabra": "campo de fútbol", "fuentes": ["p56-act4"]},
-          {"palabra": "centro cultural", "fuentes": ["p56-act4"]},
-          {"palabra": "cine", "fuentes": ["p56-act4"]},
-          {"palabra": "circo", "fuentes": ["p56-act4"]},
-          {"palabra": "gimnasio", "fuentes": ["p56-act4"]},
-          {"palabra": "parque", "fuentes": ["p56-act4"]},
-          {"palabra": "restaurante", "fuentes": ["p56-act4"]}
+          {"palabra": "biblioteca", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "bolera", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "cafetería", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "campo de fútbol", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "centro cultural", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "cine", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "circo", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "gimnasio", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "parque", "fuentes": ["p56-act4", "p56-act4@R"]},
+          {"palabra": "restaurante", "fuentes": ["p56-act4", "p56-act4@R"]}
         ],
-        "fuentes": ["p56-act4"],
+        "fuentes": ["p56-act4", "p56-act4@R"],
         "descripcion": {
           "U5": "Recurrente: establecimientos urbanos. En U5 reaparece en p56-act04 (parque, gimnasio, cafetería, biblioteca, centro cultural, campo de fútbol, restaurante, circo, bolera, cine) como referente locativo para preguntar y contestar dónde están las personas, y en p61-act05 (ciudad: mercado, hoteles, universidad, jardines, museos, monumentos)."
         }

@@ -105,46 +105,46 @@
       "Colores": {
         "items": [
           {"palabra": "blanco", "fuentes": ["cuadro@p15", "p15-act7"]},
-          {"palabra": "negro", "fuentes": ["cuadro@p15", "p15-act6", "p15-act7"]},
-          {"palabra": "rojo", "fuentes": ["cuadro@p15", "p15-act7"]},
-          {"palabra": "amarillo", "fuentes": ["cuadro@p15", "p15-act7"]},
-          {"palabra": "azul", "fuentes": ["cuadro@p15", "p15-act7"]},
-          {"palabra": "marrón", "fuentes": ["cuadro@p15", "p15-act7"]},
-          {"palabra": "verde", "fuentes": ["cuadro@p15", "p15-act7"]},
-          {"palabra": "rosa", "fuentes": ["cuadro@p15", "p15-act7"]},
+          {"palabra": "negro", "fuentes": ["cuadro@p15", "p15-act6", "p15-act6@R", "p15-act7"]},
+          {"palabra": "rojo", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
+          {"palabra": "amarillo", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
+          {"palabra": "azul", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
+          {"palabra": "marrón", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
+          {"palabra": "verde", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
+          {"palabra": "rosa", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "blanca", "fuentes": ["p15-act7", "p21-act1"]},
           {"palabra": "roja", "fuentes": ["cuadro@p15", "p15-act6", "p21-act1"]},
           {"palabra": "negra", "fuentes": ["p15-act7@R"]}
         ],
-        "fuentes": ["cuadro@p15", "p15-act7", "p15-act6", "p21-act1", "p15-act7@R"],
+        "fuentes": ["cuadro@p15", "p15-act7", "p15-act6", "p15-act6@R", "p15-act7@R", "p21-act1"],
         "descripcion": {
           "U1": "Léxico de los 8 colores básicos presentados visualmente en el cuadro@p15 'Los colores' (origen: excepción del registry; índice U1 lo declara dentro de gramática junto a 'Masculino y femenino' por estrategia editorial, pero su destino canónico es léxico). Soporta la práctica de concordancia de género (rojo→roja, blanco→blanca, negro→negra) en p15-act6 (Escribe frases con ser) y p15-act7 (Describe objetos con colores)."
         }
       },
       "Números cardinales": {
         "items": [
-          {"palabra": "uno", "fuentes": ["p16-act4"]},
-          {"palabra": "dos", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "tres", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "cuatro", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "cinco", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "seis", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "siete", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "ocho", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "nueve", "fuentes": ["p13-act9", "p16-act4", "p17-act6"]},
-          {"palabra": "diez", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "once", "fuentes": ["p16-act4", "p17-act5", "p17-act6@R"]},
-          {"palabra": "doce", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "trece", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "catorce", "fuentes": ["p16-act4", "p17-act6@R"]},
-          {"palabra": "quince", "fuentes": ["p16-act4", "p17-act6"]},
-          {"palabra": "dieciséis", "fuentes": ["p16-act4", "p17-act6@R"]},
-          {"palabra": "diecisiete", "fuentes": ["p16-act4"]},
-          {"palabra": "dieciocho", "fuentes": ["p16-act4", "p17-act6@R"]},
-          {"palabra": "diecinueve", "fuentes": ["p16-act4", "p17-act6@R"]},
-          {"palabra": "veinte", "fuentes": ["p16-act4", "p17-act6@R"]}
+          {"palabra": "uno", "fuentes": ["p16-act4", "p16-act4@R"]},
+          {"palabra": "dos", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
+          {"palabra": "tres", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
+          {"palabra": "cuatro", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
+          {"palabra": "cinco", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
+          {"palabra": "seis", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
+          {"palabra": "siete", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
+          {"palabra": "ocho", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
+          {"palabra": "nueve", "fuentes": ["p13-act9", "p13-act9@R", "p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
+          {"palabra": "diez", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
+          {"palabra": "once", "fuentes": ["p16-act4", "p16-act4@R", "p17-act5", "p17-act6@R"]},
+          {"palabra": "doce", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
+          {"palabra": "trece", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
+          {"palabra": "catorce", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6@R"]},
+          {"palabra": "quince", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
+          {"palabra": "dieciséis", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6@R"]},
+          {"palabra": "diecisiete", "fuentes": ["p16-act4", "p16-act4@R"]},
+          {"palabra": "dieciocho", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6@R"]},
+          {"palabra": "diecinueve", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6@R"]},
+          {"palabra": "veinte", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6@R"]}
         ],
-        "fuentes": ["p16-act4", "p17-act6", "p13-act9", "p17-act5", "p17-act6@R"],
+        "fuentes": ["p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R", "p13-act9", "p13-act9@R", "p17-act5"],
         "descripcion": {
           "U1": "Léxico de los números cardinales del 1 al 20 (índice U1 comunicación). Presentación en p16-act4 (escucha y relaciona número-palabra) + aplicación en sumas orales y escritas (p17-act5, p17-act6), fichas con edades y teléfonos (p17-act7) y bingo (p19-act4). Clave canónica nueva propuesta en este JSON; pendiente de propagación al registry campos-semanticos-canonicos.json renombrando 'Números 0-10' (U0) a 'Números cardinales' con aliases_indice ['Números 0-10', 'Números 1-20', 'Números 21-100'] — acción para el ejecutor coordinador post-cierre U1 (ver _decisiones_ia)."
         }
@@ -174,41 +174,61 @@
     "recurrente": {
       "Adjetivos de nacionalidad": {
         "items": [
-          {"palabra": "español", "fuentes": ["p13-act8", "p16-act1"]},
-          {"palabra": "española", "fuentes": ["p13-act8", "p14-act3", "p15-act6", "p18-act1", "p18-act2", "p21-act1"]},
-          {"palabra": "francés", "fuentes": ["p13-act8", "p14-act1"]},
+          {"palabra": "español", "fuentes": ["p13-act8", "p13-act8@R", "p16-act1"]},
+          {"palabra": "española", "fuentes": ["p13-act8", "p13-act8@R", "p14-act3", "p14-act3@R", "p15-act6", "p15-act6@R", "p18-act1", "p18-act1@R", "p18-act2", "p21-act1"]},
+          {"palabra": "francés", "fuentes": ["p13-act8", "p13-act8@R", "p14-act1"]},
           {"palabra": "francesa", "fuentes": ["p14-act1"]},
-          {"palabra": "colombiana", "fuentes": ["p13-act8"]},
-          {"palabra": "inglesa", "fuentes": ["p13-act8"]},
-          {"palabra": "brasileña", "fuentes": ["p13-act8", "p14-act4@R", "p15-act6"]},
+          {"palabra": "colombiana", "fuentes": ["p13-act8", "p13-act8@R"]},
+          {"palabra": "inglesa", "fuentes": ["p13-act8", "p13-act8@R"]},
+          {"palabra": "brasileña", "fuentes": ["p13-act8", "p13-act8@R", "p14-act4@R", "p15-act6", "p15-act6@R"]},
           {"palabra": "brasileño", "fuentes": ["p14-act4"]},
-          {"palabra": "italiana", "fuentes": ["p14-act1", "p15-act6"]},
+          {"palabra": "italiana", "fuentes": ["p14-act1", "p15-act6", "p15-act6@R"]},
           {"palabra": "griego", "fuentes": ["p14-act4@R"]},
           {"palabra": "griega", "fuentes": ["p14-act4"]},
           {"palabra": "alemán", "fuentes": ["p14-act4"]},
           {"palabra": "alemana", "fuentes": ["p14-act4@R"]},
           {"palabra": "mexicano", "fuentes": ["cuadro@p14#3"]},
           {"palabra": "mexicana", "fuentes": ["cuadro@p14#3", "p21-act4"]},
-          {"palabra": "japonés", "fuentes": ["cuadro@p14#3", "p15-act6"]},
+          {"palabra": "japonés", "fuentes": ["cuadro@p14#3", "p15-act6", "p15-act6@R"]},
           {"palabra": "japonesa", "fuentes": ["cuadro@p14#3"]},
           {"palabra": "coreana", "fuentes": ["p15-act8"]},
-          {"palabra": "peruana", "fuentes": ["p15-act6", "p21-act4"]},
-          {"palabra": "argentino", "fuentes": ["p12-act1", "p16-act1", "p18-act1"]},
+          {"palabra": "peruana", "fuentes": ["p15-act6", "p15-act6@R", "p21-act4"]},
+          {"palabra": "argentino", "fuentes": ["p12-act1", "p16-act1", "p18-act1", "p18-act1@R"]},
           {"palabra": "marroquí", "fuentes": ["p18-act2"]},
           {"palabra": "cubana", "fuentes": ["cuadro@p20#1"]},
           {"palabra": "polaco", "fuentes": ["p21-act4"]}
         ],
-        "fuentes": ["p13-act8", "p16-act1", "p14-act3", "p15-act6", "p18-act1", "p18-act2", "p21-act1", "p14-act1", "p14-act4@R", "p14-act4", "cuadro@p14#3", "p21-act4", "p15-act8", "p12-act1", "cuadro@p20#1"],
+        "fuentes": [
+          "p13-act8",
+          "p13-act8@R",
+          "p16-act1",
+          "p14-act3",
+          "p14-act3@R",
+          "p15-act6",
+          "p15-act6@R",
+          "p18-act1",
+          "p18-act1@R",
+          "p18-act2",
+          "p21-act1",
+          "p14-act1",
+          "p14-act4@R",
+          "p14-act4",
+          "cuadro@p14#3",
+          "p21-act4",
+          "p15-act8",
+          "p12-act1",
+          "cuadro@p20#1"
+        ],
         "descripcion": {
           "U1": "Anticipación material del principal canónico de U2 ('Adjetivos de nacionalidad', índice U2 vocabulario). En U1 no es input incidental: el cuadro@p14#3 'Nacionalidad' presenta explícitamente la tabla mexicano/-a, español/-a, japonés/-a como soporte directo del principal U1 gramática 'Masculino y femenino' (Concordancia de género). Sitios de trabajo léxico-nacional en U1: p13-act8, p14-act1, p15-act6, p18-fichas, p19-act3, p21. La actividad p14-act4 NO se cuenta como sitio de trabajo léxico tras saneamiento v10.124 (su foco es morfológico — Concordancia de género — y mezcla gentilicios con profesor/niño/amiga/campeón); los gentilicios genuinos que aparecen en sus respuestas (griego/-a, alemán/-a, brasileño/-a) se conservan en items[] de este bloque por aparición material en p14-act4@R, pero la actividad ya no referencia esta categoría en su vocabulario. Codificación como recurrente aprobada por el autor (P3); ver _decisiones_ia (incluye revisión por P13)."
         }
       },
       "Gentilicios": {
         "items": [
-          {"palabra": "africana", "fuentes": ["p15-act6"]},
+          {"palabra": "africana", "fuentes": ["p15-act6", "p15-act6@R"]},
           {"palabra": "madrileña", "fuentes": ["p12-act1"]}
         ],
-        "fuentes": ["p15-act6", "p12-act1"],
+        "fuentes": ["p15-act6", "p15-act6@R", "p12-act1"],
         "descripcion": {
           "U1": "Canónico nuevo añadido en v10.124 por hallazgo del autor durante revisión post-v10.123. Bloque que recoge gentilicios NO de país que el libro U1 usa con la misma función comunicativa que los adjetivos de nacionalidad (presentación personal) pero que estrictamente no son nacionalidades. En U1: 'madrileña' (gentilicio de ciudad — Madrid; aparece como autodescripción de Katrina en p12-act1 \"Soy madrileña, de Madrid\") y 'africana' (gentilicio continental; aparece en respuestas modelo de p15-act6@R). Materialmente complementario a Adjetivos de nacionalidad — el libro los presenta sin distinción didáctica, pero la clasificación canónica los separa por precisión."
         }
