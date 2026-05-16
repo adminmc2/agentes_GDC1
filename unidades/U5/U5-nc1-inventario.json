@@ -446,40 +446,6 @@
           "U5": "PCIC A1 §3.7 — Tipos de vivienda y alojamiento turístico. Principal en U5: léxico de alojamientos (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) trabajado en p53 con vocabulario visual, definiciones (p53-act09) y elección personal (p53-act10), y en p58-59 con descripción de viviendas reales."
         }
       },
-      "Adverbios de posición": {
-        "items": [
-          {
-            "palabra": "Posición",
-            "fuentes": [
-              "p54-act3",
-              "cuadro@p54#2",
-              "p55-act4",
-              "p55-act7",
-              "p55-act8",
-              "p56-act1",
-              "p58-act1",
-              "p59-act6",
-              "p61-act2"
-            ]
-          }
-        ],
-        "fuentes": [
-          "p54-act3",
-          "cuadro@p54#2",
-          "p55-act4",
-          "p55-act7",
-          "p55-act8",
-          "p56-act1",
-          "p58-act1",
-          "p59-act6",
-          "p61-act2"
-        ],
-        "descripcion": {
-          "U5": "Léxico principal U5 (reclasificado en v10.141 desde gramatica_consolidada a vocabulario_consolidado por dictamen editorial): marcadores espaciales (encima, debajo, delante, detrás, al lado) ilustrados en cuadro@p54#2 con la figura del cubo+perro y aplicados con 'estar' en p54-act03, p55-act01, p55-act04, p55-act05, p56-act01, p58-act01, p59-act03, p61-act02. Trabajados como léxico de posición (no como categoría gramatical), por lo que viven en vocabulario_consolidado bajo el canónico 'Adverbios de posición' (campos-semanticos-canonicos.json, origen: pcic_a1)."
-        }
-      }
-    },
-    "recurrente": {
       "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca": {
         "items": [
           {
@@ -546,9 +512,11 @@
           "p61-act2"
         ],
         "descripcion": {
-          "U5": "Recurrente desde U2 (canónico literal del registry). En U5 reaparece intensamente acoplado a la categoría gramatical 'Posición': encima, debajo, delante, detrás, al lado. Cumple frecuencia (p54-act03, p55-act01, p55-act04, p55-act05, p56-act01, p61-act02) + posición (canónico previo) + valor pedagógico (sustenta la oposición ser/estar locativa)."
+          "U5": "Léxico principal U5. Primera aparición real en NC1: el manual enseña los 5 marcadores espaciales (encima, debajo, delante, detrás, al lado) en cuadro@p54#2 (figura cubo+perro) y los aplica con 'estar' en p54-act3, p55-act1, p55-act4, p55-act5, p56-act1, p58-act1, p59-act3, p61-act2. El canónico léxico (origen: indice) cubre la lista extendida del índice del libro; en U5 se atestan los 5 lemas concretos arriba indicados. Sustituye al bloque transitorio 'Adverbios de posición' creado en v10.141 (cuyo único item era placeholder genérico 'Posición')."
         }
-      },
+      }
+    },
+    "recurrente": {
       "Establecimientos: cine, restaurante, farmacia...": {
         "items": [
           {
@@ -915,7 +883,7 @@
           "p61-act2"
         ],
         "descripcion": {
-          "U5": "Principal gramatical en U5 (paralelo al canónico léxico 'Adverbios de posición' en vocabulario_consolidado). La unidad trabaja simultáneamente: (a) el léxico concreto de palabras de posición (encima, debajo, detrás, delante, al lado) — codificado en vocabulario_consolidado bajo 'Adverbios de posición'; (b) la categoría adverbial-gramatical que esas palabras instancian — codificada aquí bajo 'Adverbios y locuciones de lugar' (PCIC A1 §8.2 + §8.9). Mismos fuentes y items en ambos bloques por reflejar las dos dimensiones del mismo material editorial."
+          "U5": "Principal gramatical en U5 (paralelo al canónico léxico 'Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca' en vocabulario_consolidado). La unidad trabaja simultáneamente: (a) el léxico concreto de palabras de posición (encima, debajo, detrás, delante, al lado) — codificado en vocabulario_consolidado bajo 'Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca'; (b) la categoría adverbial-gramatical que esas palabras instancian — codificada aquí. Doble codificación intencional: léxico (qué se dice) + sintaxis (cómo funciona con 'estar'). Fuentes: cuadro@p54#2, p54-act3, p55-act1, p55-act4, p55-act5, p56-act1, p58-act1, p59-act3, p61-act2."
         }
       }
     },
@@ -1179,7 +1147,15 @@
     "formas_trabajadas: literalidad estricta en actividad/cuadro (mantiene mayúscula inicial cuando abre frase); minúscula al agregar en tiempos_y_verbos_consolidado (§6.4).",
     "Propuesta de unificación de canónicos al ejecutor coordinador: los canónicos 'Tipos de vivienda' y 'Alojamiento' del registry campos-semanticos-canonicos.json deberían fusionarse en un único campo. En U5 el léxico p53 (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) entra bajo el rótulo del índice 'Tipos de vivienda' tal cual aparece en nc1-curso.json. Mantenemos la categoría 'Tipos de vivienda' como única; el ejecutor coordinador decide si reescribe el registry para fusionar ambas y propaga el cambio.",
     "P15 (post-revisión coordinador, v10.140): añadidos los lemas 'gustar' y 'dormir' al tiempos_y_verbos_consolidado tras auditoría léxico-verbal. (a) 'gustar' (canónico U2/U3/U4 PRE) es recurrente legítimo en U5 — el agente lo había omitido pese a apariciones reales en p58-act02, p58-act03 y p59-act05 (construcción gustar dativo). (b) 'dormir' (canónico U6 PRE) se codifica como excepción §5.2 a la regla de anticipación, aprobada por el autor — mismo patrón aplicado en U2 (ir/estar/gustar/hablar) y U3 (jugar/venir/hacer); aparece materialmente en p58-act01 y p58-act03 ('mi perro duerme en mi habitación').",
-    "P16 (v10.141 + v10.141b): la categoría 'Posición' renombrada y desdoblada. (a) En el registry gramatical (gramatica-canonica.json), 'Posición' se renombra a 'Adverbios y locuciones de lugar' para precisar que es la categoría adverbial-gramatical (PCIC A1 §8.2 + §8.9). (b) En el registry léxico (campos-semanticos-canonicos.json), se añade 'Adverbios de posición' (origen: pcic_a1) que cubre las palabras-léxico concretas (encima, debajo, detrás, delante, al lado). (c) En U5, el bloque se codifica en AMBAS dimensiones del consolidado — léxico ('Adverbios de posición' en vocabulario_consolidado) y gramatical ('Adverbios y locuciones de lugar' en gramatica_consolidada) — porque la unidad trabaja simultáneamente las palabras concretas (qué se dice) y la categoría adverbial (cómo funciona sintácticamente con 'estar'). Mismos items y fuentes en ambos bloques. Refs duplicadas en activity/cuadro tanto en .vocabulario como en .gramatica."
+    "P16 (v10.141 + v10.141b): la categoría 'Posición' renombrada y desdoblada. (a) En el registry gramatical (gramatica-canonica.json), 'Posición' se renombra a 'Adverbios y locuciones de lugar' para precisar que es la categoría adverbial-gramatical (PCIC A1 §8.2 + §8.9). (b) En el registry léxico (campos-semanticos-canonicos.json), se añade 'Adverbios de posición' (origen: pcic_a1) que cubre las palabras-léxico concretas (encima, debajo, detrás, delante, al lado). (c) En U5, el bloque se codifica en AMBAS dimensiones del consolidado — léxico ('Adverbios de posición' en vocabulario_consolidado) y gramatical ('Adverbios y locuciones de lugar' en gramatica_consolidada) — porque la unidad trabaja simultáneamente las palabras concretas (qué se dice) y la categoría adverbial (cómo funciona sintácticamente con 'estar'). Mismos items y fuentes en ambos bloques. Refs duplicadas en activity/cuadro tanto en .vocabulario como en .gramatica.",
+    {
+      "id": "P17",
+      "version": "v10.144",
+      "decision": "Consolidación de bloques léxicos solapados 'Adverbios de posición' y 'Marcadores de lugar' en U5.",
+      "diagnostico": "Tras revisión del autor: (a) el bloque 'Marcadores de lugar' estaba marcado como recurrente desde U2, pero U2 no enseña esos lemas como léxico (solo aparecen 'izquierda/derecha' como claves técnicas de columnas_relaciona y 'delante' en una instrucción de aula). (b) El bloque 'Adverbios de posición' tenía como único item el placeholder genérico 'Posición', sin lemas reales. (c) Ambos cubrían exactamente el mismo contenido en U5 (los 5 marcadores espaciales del cuadro cubo+perro).",
+      "accion": "(1) 'Adverbios de posición' retirado de vocabulario_consolidado.principal y de las 9 refs en actividad/cuadro.vocabulario. (2) 'Marcadores de lugar: a la izquierda, ..., cerca' reclasificado de recurrente → principal en U5, con items reales (al lado, debajo, delante, detrás, encima) y descripción corregida (primera aparición real en NC1, no recurrente desde U2). (3) Descripción de la entrada gramatical paralela 'Adverbios y locuciones de lugar' actualizada para apuntar al nuevo canónico léxico. (4) Canónico 'Adverbios de posición' en el registry léxico NO se retira (decisión del autor: revisar más adelante).",
+      "ramifica": "P16 (v10.141 + v10.141b) queda parcialmente revertida en su parte léxica: el bloque 'Adverbios de posición' creado en v10.141 no se mantiene en U5. La doble codificación léxico+gramática que P16 introdujo se preserva, pero usando 'Marcadores de lugar' como canónico léxico."
+    }
   ],
   "paginas_detalle": [
     {
@@ -1861,7 +1837,7 @@
           "vocabulario": [
             "Mobiliario",
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [
             {
@@ -1988,7 +1964,7 @@
           "observaciones": null,
           "vocabulario": [
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [
             {
@@ -2022,7 +1998,7 @@
           "instruccion_original": "Ahora escucha a la madre de Mario y completa la tabla colocando cada cosa en su lugar.",
           "vocabulario": [
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [
@@ -2201,7 +2177,7 @@
           "instruccion_original": "Relaciona las preguntas y sus respuestas.",
           "vocabulario": [
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [
             {
@@ -2283,7 +2259,7 @@
             "Mobiliario",
             "Adjetivos descriptivos",
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [
             {
@@ -2384,7 +2360,7 @@
           "vocabulario": [
             "Mobiliario",
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [
             {
@@ -2907,7 +2883,7 @@
             "Mobiliario",
             "Partes de la casa",
             "Adjetivos descriptivos",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [
             {
@@ -3250,7 +3226,7 @@
             "Mobiliario",
             "Partes de la casa",
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [
@@ -3668,7 +3644,7 @@
           "vocabulario": [
             "Mobiliario",
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Adverbios de posición"
+            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [
             {

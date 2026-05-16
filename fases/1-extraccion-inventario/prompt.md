@@ -25,9 +25,14 @@
 
 ## Lectura mínima obligatoria
 
+**Gate de arranque (obligatorio antes de empezar la extracción):** el ejecutor debe **declarar explícitamente en chat** haber leído los tres contratos vivos antes de tocar el JSON. Si no se ha hecho, **abortar** y leerlos. Esta declaración es condición de inicio, no formalidad — la documentación de fase 1 es **siempre obligatoria**.
+
 - `schema-inventario.md` — shape del JSON.
 - `reglas-operativas.md` — autoridad operativa (reglas, protocolos, marcas, política PCIC).
+- `convenciones-y-casos.md` — convenciones de transcripción y casebook (sí, lookup puntual durante la corrida, pero se lee al menos por encima al arranque para conocer §1 y §4).
 - El PDF de la unidad.
+
+**Obligación recíproca del invocador.** Quien invoque este prompt (coordinador, autor, otro agente) debe citarlo literalmente (`fases/1-extraccion-inventario/prompt.md`) en la instrucción. No basta con describir la tarea: la cadena de invocación tiene que apuntar al prompt para que el ejecutor cargue su `CLAUDE.md` hermano y los contratos vivos.
 
 ## Lookup bajo demanda
 

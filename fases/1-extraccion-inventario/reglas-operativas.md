@@ -355,13 +355,30 @@ Ejemplo: en *"Quieres comer carne"*, `querer` entra con `tiempo: "Presente"`, `f
 
 **Cuándo escalar al autor:** si una forma aparece pero el contexto no deja claro si es verbo soporte trabajado o mención léxica suelta, escalar por §0.1.
 
-**Regla de exclusión por metalengua de instrucción.** Las formas verbales que aparecen **únicamente en la metalengua de instrucción** (el enunciado del libro dirigido al alumno: *"Lee y escucha"*, *"Escribe"*, *"Completa con…"*, *"Mira el vídeo"*, *"Marca verdadero o falso"*, etc.) **NO se consideran fuente de codificación de paradigma** en `actividad.tiempos_y_verbos[]` ni en `cuadro.tiempos_y_verbos[]`. Tampoco propagan apariciones en `verbos-canonicos.json[verbos][lema].apariciones`.
+**Regla de exclusión por metalengua de instrucción (transversal a las 4 dimensiones).** Las palabras (formas verbales, lemas léxicos, marcadores gramaticales, fenómenos pron/orto) que aparecen **únicamente en la metalengua de instrucción** del libro **NO se codifican** en las 4 listas tipadas de `actividad`/`cuadro` (`vocabulario`, `tiempos_y_verbos`, `gramatica`, `pronunciacion_ortografia`), **NO propagan apariciones** en los 4 bloques consolidados (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`) ni en los 4 registries canónicos (`campos-semanticos-canonicos.json`, `verbos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`).
 
-- Aplica a cualquier lema, incluidos los que también son canónicos en alguna unidad del curso.
-- Aplica con independencia del modo (imperativo *Lee*, presente *Comprueba*, infinitivo *Repetir*).
-- Solo se codifican formas que aparecen en el **contenido didáctico** de la actividad/cuadro: diálogos, textos, modelos, audios, ejercicios, ejemplos, respuestas modelo, items_libro.
-- Lista provisional (no exhaustiva) de verbos imperativos típicos de enunciado en NC1: *Lee, Mira, Escucha, Repite, Escribe, Completa, Subraya, Marca, Relaciona, Ordena, Clasifica, Contesta, Responde, Pregunta, Continúa, Imagina, Crea, Habla, Piensa, Comprueba, Busca, Forma, Señala, Elige, Adivina*.
-- **Caso ambiguo (escalar §0.1):** un mismo lema aparece en el enunciado Y en el contenido didáctico de la misma actividad. Codificar **solo** las formas del contenido didáctico; descartar las formas del enunciado aunque coincidan léxicamente. Si la instrucción cita literalmente el contenido (*"Lee este texto: 'Mi padre lee el periódico'"*), proponer en chat antes de codificar.
+**Qué cuenta como metalengua (excluida):**
+
+- `actividad.instruccion_original` — enunciado del libro dirigido al alumno como acción (*"Lee y escucha"*, *"Escribe"*, *"Completa con…"*, *"Marca verdadero o falso"*, *"Representa el diálogo delante de la clase"*).
+- `cuadro.titulo` cuando es etiqueta editorial metalingüística: verbos imperativos del tipo *"Observa"*, *"Para aprender"*, *"Recuerda"*, *"¡Atención!"*, *"Fíjate"*. Sus formas verbales y los lemas léxicos que figuren ahí son metalengua, no contenido.
+
+**Qué cuenta como contenido didáctico (sí codifica):**
+
+- Cuerpo de cuadros: reglas explícitas, paradigmas, listas, tablas, ejemplos modelados al alumno.
+- En actividades: `datos.*`, `dialogo`, `dialogo_completo`, `texto`, `texto_completo`, `respuestas`, `audio.transcripcion`, `items_libro`, `muestra_de_lengua`, opciones de selección.
+
+**Aplicación:**
+
+- Aplica a cualquier lema/palabra/categoría, incluidos los que también son canónicos en alguna unidad del curso.
+- Aplica con independencia del modo verbal (imperativo *Lee*, presente *Comprueba*, infinitivo *Repetir*).
+- Solo se codifican formas/palabras que aparecen en el **contenido didáctico** según la tabla anterior.
+- Lista provisional (no exhaustiva) de verbos imperativos típicos de enunciado en NC1: *Lee, Mira, Escucha, Repite, Escribe, Completa, Subraya, Marca, Relaciona, Ordena, Clasifica, Contesta, Responde, Pregunta, Continúa, Imagina, Crea, Habla, Piensa, Comprueba, Busca, Forma, Señala, Elige, Adivina, Representa, Practica*.
+
+**Casos ambiguos (escalar §0.1):**
+
+- Un mismo lema aparece en el enunciado Y en el contenido didáctico de la misma actividad. Codificar **solo** desde el contenido didáctico; descartar el enunciado aunque coincida léxicamente. Si la instrucción cita literalmente el contenido (*"Lee este texto: 'Mi padre lee el periódico'"*), proponer en chat antes de codificar.
+- Un cuadro entero formulado como instrucción (*"Observa cómo se forman los gentilicios:"* + patrón debajo): el patrón es contenido; el verbo del título (*"Observa"*) es metalengua.
+- Marcadores espaciales o léxico de contexto que aparecen solo en una instrucción de aula (*"Representa el diálogo delante de la clase"* — *delante* no es léxico atestado de la unidad). No codificar; escalar si el caso es prototípico nuevo.
 
 ### §5.6. Canon semántico léxico — asignación del nombre canónico
 

@@ -5,6 +5,43 @@
 
 ---
 
+## [v10.144 — 2026-05-16] — Fase 1: U5 — consolidación `Adverbios de posición` → `Marcadores de lugar` + §5.2 generalizada a las 4 dimensiones + gate de invocación
+
+Cierre de un bug estructural detectado por el autor durante revisión de U5: el bloque léxico `Marcadores de lugar: a la izquierda, ..., cerca` aparecía como "recurrente desde U2", pero al inspeccionar U2 las únicas apariciones reales eran `izquierda/derecha` como claves técnicas de `columnas_relaciona` y `delante` en una **instrucción de aula** (*"Representa el diálogo delante de la clase"*). Causa raíz: la regla §5.2 de exclusión por metalengua de instrucción solo cubría verbos en su redacción anterior, por lo que `delante` se filtró como ref léxica en U2 y arrastró un falso "recurrente" a U5. Adicionalmente coexistía en U5 un bloque `Adverbios de posición` con un único item placeholder `"Posición"` (artefacto de la reclasificación v10.141), cubriendo conceptualmente lo mismo.
+
+**Cambios materiales en `unidades/U5/U5-nc1-inventario.json`:**
+
+- `Adverbios de posición` retirado de `vocabulario_consolidado.principal` (item placeholder vacío sin valor léxico).
+- `Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca` reclasificado de **recurrente → principal** en U5, con items reales (`al lado`, `debajo`, `delante`, `detrás`, `encima`) y descripción corregida: primera aparición real en NC1, no recurrente desde U2.
+- **9 refs** en `actividad.vocabulario` / `cuadro.vocabulario` renombradas (`Adverbios de posición` → `Marcadores de lugar: ...`).
+- Descripción del bloque gramatical paralelo `Adverbios y locuciones de lugar` (en `gramatica_consolidada.principal`) actualizada para apuntar al nuevo canónico léxico.
+- Nueva entrada **P17** en `_decisiones_ia` documentando la consolidación.
+- Validador U5 → 0/0/0.
+
+**Decisión del autor:** el canónico `Adverbios de posición` en el registry léxico (`campos-semanticos-canonicos.json`, línea 636, creado en v10.141) **NO se retira** en esta versión — queda para revisión separada.
+
+**Cambios estructurales — generalización de §5.2:**
+
+`reglas-operativas.md` §5.2 (regla de exclusión por metalengua de instrucción) **generalizada de "solo verbos" a las 4 dimensiones** (léxico, verbos, gramática, pron/orto). Reescrita con:
+
+- Definición transversal: las palabras que aparecen únicamente en metalengua **NO se codifican** en las 4 listas tipadas, **NO propagan apariciones** en los 4 consolidados ni en los 4 registries.
+- Tabla explícita "Qué cuenta como metalengua (excluida)" vs "Qué cuenta como contenido didáctico (sí codifica)", cubriendo:
+  - `actividad.instruccion_original` (metalengua).
+  - `cuadro.titulo` cuando es etiqueta editorial metalingüística (*"Observa"*, *"Para aprender"*, *"Recuerda"*, *"¡Atención!"*, *"Fíjate"*) — metalengua.
+  - Cuerpo de cuadros, `datos.*`, `dialogo`, `texto`, `respuestas`, `audio.transcripcion`, `items_libro`, `muestra_de_lengua`, opciones — contenido didáctico.
+- Casos ambiguos a escalar §0.1 ampliados con el caso material de `delante`.
+
+**Casebook (`convenciones-y-casos.md` §4.1):** caso "delante en U2 codificado como léxico desde una instrucción de aula" añadido como error detectado y corregido, con cruce a la generalización de §5.2.
+
+**Gate de invocación — documentación de fase 1 siempre obligatoria:**
+
+- `prompt.md` § "Lectura mínima obligatoria": gate de arranque explícito — el ejecutor debe **declarar en chat** haber leído `schema-inventario.md` + `reglas-operativas.md` + `convenciones-y-casos.md` antes de tocar el JSON; si no, **abortar**. Obligación recíproca del invocador: citar literalmente `fases/1-extraccion-inventario/prompt.md` en la instrucción (no basta con describir la tarea).
+- `CLAUDE.md` (fase 1): nueva regla crítica 6 "Documentación de fase 1 es siempre obligatoria" con la razón del bug U5 v10.143/v10.144. Renumeración: la antigua regla 6 ("Canon canónico literal") pasa a regla 7.
+
+**Sin cambios en registries.** Sin cambios en U0-U4. Validador U5 → 0/0/0.
+
+---
+
 ## [v10.143 — 2026-05-16] — Fase 1: U5 — corrección sistémica de id de actividades + auditoría §6.5
 
 Aplicación a U5 del mismo saneamiento que cerró U4 en v10.142b/c/d.
