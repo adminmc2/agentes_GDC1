@@ -209,6 +209,28 @@
       "formas_trabajadas": ["vive", "viven"],
       "fuentes": ["p58-act2@R", "p59-act2"],
       "descripcion": { "U5": "Recurrente desde U2/U3 (PRE 'vivir'). En U5 reaparece en p58-act02 ('Elisa vive en un chalé') y p59-act02 ('los tres viven en Valencia'). Refuerza el paradigma regular -ir." }
+    },
+    {
+      "lema": "gustar",
+      "tipo_de_verbo": ["tipo gustar", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "tipo gustar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["gusta", "le gusta", "no le gusta", "te gusta", "les gusta"],
+      "fuentes": ["p58-act02", "p58-act02@R", "p58-act03", "p59-act05", "p59-act05@R"],
+      "descripcion": {
+        "U5": "Recurrente en U5: lema canónico de U2/U3/U4 (Presente, tipo gustar). En U5 reaparece como soporte de la lectura de habitaciones (p58: 'a Antonio no le gusta el cine', '¿qué habitación te gusta más?') y de la interacción oral sobre las preferencias de los personajes (p59-act05: 'les gusta mucho pasear con su perro')."
+      }
+    },
+    {
+      "lema": "dormir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica o→ue" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["duerme"],
+      "fuentes": ["p58-act01", "p58-act03"],
+      "descripcion": {
+        "U5": "Excepción §5.2 a la regla de anticipación, aprobada por el autor (mismo patrón que ir/estar/gustar/hablar en U2 y jugar/venir/hacer en U3): el lema 'dormir' es canónico de U6 (PRE), pero en U5 aparece materialmente como soporte del texto sobre la habitación de Elisa (p58-act01: 'Mi perro duerme en mi habitación'; p58-act03 pregunta '¿dónde duerme el perro de Elisa?'). Forma única conjugada 'duerme' (3.ª sg, irregular o→ue)."
+      }
     }
   ],
   "gramatica_consolidada": {
@@ -348,7 +370,8 @@
     "Sufijo @R: aplicado conservadoramente solo a actividades cuyo tipo es productivo (interaccion_oral, expresion_escrita_libre, produccion_escrita_guiada, expresion_oral_libre, tarea_final).",
     "Sub-bloque 'comprension' del modelo viejo eliminado: 'vivienda_ecologica' (p60 cultura) y 'descripcion_habitaciones' (p58 destrezas) eran input incidental para comprensión; no se codifica como léxico activo de U5 ni como recurrente (no son canónicos del índice de otra unidad). Léxico del texto cultural se anota implícitamente vía las fuentes p60-actNN sin generar entradas vocabulario.",
     "formas_trabajadas: literalidad estricta en actividad/cuadro (mantiene mayúscula inicial cuando abre frase); minúscula al agregar en tiempos_y_verbos_consolidado (§6.4).",
-    "Propuesta de unificación de canónicos al ejecutor coordinador: los canónicos 'Tipos de vivienda' y 'Alojamiento' del registry campos-semanticos-canonicos.json deberían fusionarse en un único campo. En U5 el léxico p53 (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) entra bajo el rótulo del índice 'Tipos de vivienda' tal cual aparece en nc1-curso.json. Mantenemos la categoría 'Tipos de vivienda' como única; el ejecutor coordinador decide si reescribe el registry para fusionar ambas y propaga el cambio."
+    "Propuesta de unificación de canónicos al ejecutor coordinador: los canónicos 'Tipos de vivienda' y 'Alojamiento' del registry campos-semanticos-canonicos.json deberían fusionarse en un único campo. En U5 el léxico p53 (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) entra bajo el rótulo del índice 'Tipos de vivienda' tal cual aparece en nc1-curso.json. Mantenemos la categoría 'Tipos de vivienda' como única; el ejecutor coordinador decide si reescribe el registry para fusionar ambas y propaga el cambio.",
+    "P15 (post-revisión coordinador, v10.140): añadidos los lemas 'gustar' y 'dormir' al tiempos_y_verbos_consolidado tras auditoría léxico-verbal. (a) 'gustar' (canónico U2/U3/U4 PRE) es recurrente legítimo en U5 — el agente lo había omitido pese a apariciones reales en p58-act02, p58-act03 y p59-act05 (construcción gustar dativo). (b) 'dormir' (canónico U6 PRE) se codifica como excepción §5.2 a la regla de anticipación, aprobada por el autor — mismo patrón aplicado en U2 (ir/estar/gustar/hablar) y U3 (jugar/venir/hacer); aparece materialmente en p58-act01 y p58-act03 ('mi perro duerme en mi habitación')."
   ],
   "paginas_detalle": [
     {
@@ -1203,7 +1226,8 @@
           "vocabulario": ["Mobiliario", "Partes de la casa", "Adjetivos descriptivos"],
           "tiempos_y_verbos": [
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]},
-            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["Está", "está"]}
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["Está", "está"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duerme"]}
           ],
           "gramatica": ["Hay", "Posición"],
           "pronunciacion_ortografia": [],
@@ -1245,7 +1269,8 @@
           "tiempos_y_verbos": [
             {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
-            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienen"]}
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tienen"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta", "le gusta", "no le gusta"]}
           ],
           "gramatica": ["Oposición ser / estar"],
           "pronunciacion_ortografia": [],
@@ -1273,7 +1298,10 @@
           "enfoque": "transversal",
           "instruccion_original": "Contesta a las preguntas.",
           "vocabulario": ["Mobiliario", "Partes de la casa"],
-          "tiempos_y_verbos": [],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["te gusta"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duerme"]}
+          ],
           "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
@@ -1400,7 +1428,8 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tienen", "tienen"]},
-            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["están"]}
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["están"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["les gusta"]}
           ],
           "gramatica": [],
           "pronunciacion_ortografia": [],

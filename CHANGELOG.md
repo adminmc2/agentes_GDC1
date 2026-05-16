@@ -5,6 +5,26 @@
 
 ---
 
+## [v10.140 — 2026-05-15] — Fase 1: U5 — auditoría léxico-verbal + adición de `gustar` (recurrente) y `dormir` (excepción §5.2)
+
+Auditoría léxico-verbal de U5 tras v10.139 por intuición del autor ("muy pocos verbos para 46 actividades"). Detectados 2 lemas con apariciones reales que el agente omitió:
+
+1. **`gustar`** (canónico U2/U3/U4 PRE, recurrente legítimo en U5): aparece en `p58-act02` (*"a Antonio no le gusta el cine"*, *"a Antonio le gusta mucho el cine"*), `p58-act03` (*"¿qué habitación te gusta más?"*) y `p59-act05` (*"les gusta mucho pasear con su perro"*). Tipo gustar dativo, construcción genuina.
+
+2. **`dormir`** (canónico U6 PRE — anticipación, excepción §5.2 aprobada por el autor): aparece en `p58-act01` (*"mi perro duerme en mi habitación"*) y `p58-act03` (*"¿dónde duerme el perro de Elisa?"*). Forma única `duerme` (3.ª sg, irregular o→ue). Mismo patrón aplicado en U2 (ir/estar/gustar/hablar) y U3 (jugar/venir/hacer).
+
+**Falsos positivos del audit no codificados:** `comer` ("*como X*" comparativo/preposicional), `cocinar` ("la cocina" sustantivo = parte de la casa), `ducharse` ("la ducha" sustantivo = parte del baño), `usar` ("uso de materiales" sustantivo deverbal). Verificados por contexto antes de descartar.
+
+**Cambios en main:**
+
+- **`unidades/U5/U5-nc1-inventario.json`**: entradas verbales `gustar` y `dormir` añadidas en 4 activity-level (`p58-act01`, `p58-act02`, `p58-act03`, `p59-act05`) y como bloques nuevos en `tiempos_y_verbos_consolidado`. `_decisiones_ia` con nueva entrada **P15** documentando la auditoría y las decisiones editoriales. 8 lemas verbales totales en U5 (antes 6).
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`**: `apariciones.U5:["PRE"]` añadido a `gustar` (recurrente) y `dormir` (anticipación-excepción). `_meta.version` 1.4 → 1.5.
+
+**Trazabilidad de §6.5 (sufijo `@R`):** las fuentes de las entradas verbales añadidas se filtraron contra los 5 tipos productivos antes de escribir; las fuentes de actividades no productivas (`responder_preguntas_cerradas`, `lee_y_escucha`) entraron sin `@R`.
+
+**Validador desde main:** U5 → 0/0/0. U0/U1/U2/U3/U4 sin afectación (no se tocaron).
+
 ## [v10.139 — 2026-05-15] — Fase 1: U5 migrada a shape v10.117 + propagación U5 a `tener` y `vivir`
 
 Sexta unidad re-procesada con el flujo de worktree aislado en 3 fases (`../guia-proc-U5/`, rama `proc-u5-wip`, agente dry-run con 3 fases sin gates intermedios, commit candidato `39cdd77`).
