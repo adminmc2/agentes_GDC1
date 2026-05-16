@@ -5,6 +5,30 @@
 
 ---
 
+## [v10.143 — 2026-05-16] — Fase 1: U5 — corrección sistémica de id de actividades + auditoría §6.5
+
+Aplicación a U5 del mismo saneamiento que cerró U4 en v10.142b/c/d.
+
+**Diferencia clave con U4:** en U4 el `id` usaba índice local pero las `fuentes` ya estaban con `numero` (por eso el v10.142 original rompió fuentes y v10.142b las revirtió). En U5, **tanto `id` como `fuentes` usan índice local** sin padding — la propagación a fuentes SÍ es necesaria y correcta.
+
+**Cambios en `unidades/U5/U5-nc1-inventario.json`:**
+
+- **46 actividades** renombradas: `id = U5-p<pagina>-act<numero>` (numero impreso en el libro, sin padding). 22 cambiaban de valor.
+- **Fuentes propagadas** en los 4 bloques consolidados (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`): cada `pNN-actMM` (con MM = índice local) → `pNN-act<numero>`. Sufijo `@R` preservado donde aplicaba.
+- `secciones.X.actividades_ids` y demás refs internas propagadas en el mismo paso (walker recursivo sobre todo el JSON).
+- 0 duplicados en el nuevo namespace de ids.
+
+**Auditoría §6.5 dual (de más + de menos):**
+
+- **De más** (`@R` en tipos no productivos o cuadros): **0 casos**. Los 19 `@R` existentes están todos en los 5 tipos productivos canónicos.
+- **De menos** (palabra en respuestas únicamente, en actividad productiva, sin `@R`): **0 candidatos**. U5 tiene 13 actividades productivas; 10 sin `respuestas[]`, 3 con `respuestas[]` (`p55-act6`, `p56-act4`, `p58-act2`) sin léxico exclusivo del solucionario. No hay caso prototípico análogo a `U4-p49-act9` (mediación/búsqueda de información con input escueto).
+
+**Sin cambios en registries.** Validador U5 → 0/0/0.
+
+**Deuda restante:** U6-U9 con shape legacy pendientes.
+
+---
+
 ## [v10.142d — 2026-05-15] — Fase 1: U4 — @R faltantes en `p49-act9` añadidos + §6.5 reforzada
 
 Cierre del audit §6.5 sobre U4 tras dos hallazgos del revisor: (a) el diagnóstico previo mezclaba un caso real con un falso positivo (`p44-act3` ya tenía dual-tracking correcto `pNN-actMM` + `pNN-actMM@R`); (b) el recuento exacto debía distinguir entradas consolidadas vs lemas únicos.
