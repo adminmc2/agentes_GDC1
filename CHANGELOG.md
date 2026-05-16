@@ -5,6 +5,28 @@
 
 ---
 
+## [v10.142b — 2026-05-15] — Fase 1: U4 — fix del fix (las fuentes ya estaban correctas en v10.142; solo el id requería rename)
+
+Hallazgo del autor: tras v10.142, la palabra "cola" aparecía como fuente `p47-act9@R` cuando debería ser `p47-act5@R` (la actividad numero 5 del libro, donde aparece "una lata de cola" en `palabras_recuadro`).
+
+**Diagnóstico:** v10.142 tenía un error en mi script de propagación. El agente de U4 había usado dos convenciones distintas para los IDs de las actividades:
+
+- **`id`** (campo de la actividad) → convención INCORRECTA: índice local de página con padding (`act01`, `act02`...).
+- **Fuentes** (en los bloques consolidados y en items) → convención CORRECTA: numero del libro (`p47-act5@R` referenciaba la actividad numero=5 del libro).
+
+Mi script de v10.142 asumió que ambos campos seguían la convención incorrecta y propagó las fuentes con un mapping `old_local → new_numero`. Pero las fuentes YA estaban usando `numero` desde el origen; al "propagar", las cambié erróneamente.
+
+**Fix aplicado a U4 en este lote:**
+
+- Restaurado el JSON de U4 desde el commit anterior a v10.142 (`86baebb`).
+- Reaplicado **solo el rename de `id`** de actividades (49 actividades: `U4-pNN-actMM` → `U4-pNN-act<numero>`).
+- **Las fuentes NO se tocan** — ya estaban correctas.
+- `secciones.X.actividades_ids` actualizadas conforme al nuevo `id`.
+
+**Validador desde main:** U0/U1/U2/U3/U4 → 0/0/0 · U5 → 0/0/0 (sin tocar).
+
+**Aprendizaje aplicado a los próximos lotes:** para U5, mi script de rename **solo** modifica `id`, no propaga fuentes. Si la auditoría inicial muestra que las fuentes de U5 también ya usan `numero` del libro (probable), el fix será solo del `id`.
+
 ## [v10.142 — 2026-05-15] — Fase 1: U4 — corrección sistémica de `id` de actividades para alinearlo con el `numero` del libro
 
 **Problema detectado por el autor** durante revisión visual de U5 (dashboard mostraba fuente `p53-act2` para la palabra `dormitorio`, pero en el libro la actividad numerada como "2" no existe en la página 53 — la página empieza por la actividad 6).

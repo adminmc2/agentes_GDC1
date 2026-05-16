@@ -16,42 +16,42 @@
     "principal": {
       "Alimentos": {
         "items": [
-          {"palabra": "pan", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p48-act1", "p48-act2", "p51-act2"]},
-          {"palabra": "galletas", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act7", "p47-act9", "p49-act9", "p51-act2"]},
-          {"palabra": "huevo", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act7", "p50-act2", "p51-act5@R", "p48-act1", "p48-act2", "p48-act3", "p46-act1", "p49-act8@R"]},
-          {"palabra": "pasta", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p43-act8", "p44-act2", "p46-act1", "p48-act1", "p48-act2", "p49-act7", "p49-act9", "p49-act9", "cuadro@p45#2"]},
-          {"palabra": "zanahoria", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p47-act11", "p51-act5@R", "p48-act1"]},
-          {"palabra": "tomate", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p45-act7", "p51-act1", "p42-act3", "p43-act8", "p44-act3", "p46-act1", "p48-act1", "p49-act9", "p47-act10"]},
-          {"palabra": "manzana", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act7", "p43-act8", "p44-act3", "p45-act8", "p51-act5@R", "p44-act5", "p46-act1", "p46-act4", "p48-act1", "p49-act8@R", "p51-act3"]},
-          {"palabra": "zumo", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act7", "p43-act8", "p45-act7", "p47-act9@R", "p47-act10", "p47-act11", "p47-act12"]},
-          {"palabra": "filete", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p51-act2", "p48-act1"]},
-          {"palabra": "pollo", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p48-act1", "p50-act2", "p51-act5@R"]},
-          {"palabra": "plátano", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p44-act2", "p45-act8", "p47-act11", "cuadro@p44#3", "cuadro@p45#1", "p43-act8", "p46-act1", "p46-act2", "p48-act1", "p51-act2"]},
-          {"palabra": "atún", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p47-act10", "p48-act1", "p49-act8@R"]},
-          {"palabra": "jamón", "fuentes": ["p42-act1", "p42-act2", "p43-act7"]},
-          {"palabra": "yogur", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p48-act2", "cuadro@p45#1"]},
-          {"palabra": "queso", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p43-act8", "p46-act1", "p48-act1", "p50-act2", "p51-act2"]},
-          {"palabra": "frutos secos", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p47-act10"]},
-          {"palabra": "naranja", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p45-act6", "p45-act9", "p46-act1", "p46-act4", "cuadro@p45#1"]},
-          {"palabra": "leche", "fuentes": ["p42-act1", "p42-act2", "p43-act7", "p47-act9@R", "p47-act12", "p49-act9", "p51-act1", "cuadro@p44#3", "cuadro@p45#1"]},
-          {"palabra": "carne", "fuentes": ["p42-act2", "p43-act8", "p44-act3", "p47-act12", "p48-act2", "p49-act7", "p50-act2", "p43-act8"]},
-          {"palabra": "fruta", "fuentes": ["p42-act2", "p46-act1", "p46-act2", "p48-act2", "p49-act7", "p49-act9"]},
-          {"palabra": "verdura", "fuentes": ["p42-act2", "p48-act2", "p49-act7", "p49-act9", "p43-act8"]},
-          {"palabra": "pescado", "fuentes": ["p42-act2", "p43-act7", "p44-act1", "p44-act3", "p47-act12", "p48-act2", "p49-act7", "p50-act2"]},
+          {"palabra": "pan", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p48-act1", "p48-act2", "p51-act2"]},
+          {"palabra": "galletas", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act4", "p47-act5", "p49-act9", "p51-act2"]},
+          {"palabra": "huevo", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act4", "p50-act2", "p51-act5@R", "p48-act1", "p48-act2", "p48-act3", "p46-act1", "p49-act5@R"]},
+          {"palabra": "pasta", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p43-act5", "p44-act2", "p46-act1", "p48-act1", "p48-act2", "p49-act4", "p49-act6", "p49-act9", "cuadro@p45#2"]},
+          {"palabra": "zanahoria", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p47-act11", "p51-act5@R", "p48-act1"]},
+          {"palabra": "tomate", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p45-act7", "p51-act1", "p42-act3", "p43-act5", "p44-act3", "p46-act1", "p48-act1", "p49-act6", "p47-act6"]},
+          {"palabra": "manzana", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act4", "p43-act5", "p44-act3", "p45-act8", "p51-act5@R", "p44-act5", "p46-act1", "p46-act4", "p48-act1", "p49-act5@R", "p51-act3"]},
+          {"palabra": "zumo", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act4", "p43-act5", "p45-act7", "p47-act5@R", "p47-act6", "p47-act11", "p47-act8"]},
+          {"palabra": "filete", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p51-act2", "p48-act1"]},
+          {"palabra": "pollo", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p48-act1", "p50-act2", "p51-act5@R"]},
+          {"palabra": "plátano", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p44-act2", "p45-act8", "p47-act7", "cuadro@p44#3", "cuadro@p45#1", "p43-act5", "p46-act1", "p46-act2", "p48-act1", "p51-act2"]},
+          {"palabra": "atún", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p47-act6", "p48-act1", "p49-act5@R"]},
+          {"palabra": "jamón", "fuentes": ["p42-act1", "p42-act2", "p43-act4"]},
+          {"palabra": "yogur", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p48-act2", "cuadro@p45#1"]},
+          {"palabra": "queso", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p43-act5", "p46-act1", "p48-act1", "p50-act2", "p51-act2"]},
+          {"palabra": "frutos secos", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p47-act6"]},
+          {"palabra": "naranja", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p45-act6", "p45-act9", "p46-act1", "p46-act4", "cuadro@p45#1"]},
+          {"palabra": "leche", "fuentes": ["p42-act1", "p42-act2", "p43-act4", "p47-act5@R", "p47-act8", "p49-act9", "p51-act1", "cuadro@p44#3", "cuadro@p45#1"]},
+          {"palabra": "carne", "fuentes": ["p42-act2", "p43-act5", "p44-act3", "p47-act8", "p48-act2", "p49-act4", "p50-act2", "p43-act8"]},
+          {"palabra": "fruta", "fuentes": ["p42-act2", "p46-act1", "p46-act2", "p48-act2", "p49-act4", "p49-act9"]},
+          {"palabra": "verdura", "fuentes": ["p42-act2", "p48-act2", "p49-act4", "p49-act9", "p43-act5"]},
+          {"palabra": "pescado", "fuentes": ["p42-act2", "p43-act4", "p44-act1", "p44-act3", "p47-act8", "p48-act2", "p49-act4", "p50-act2"]},
           {"palabra": "lácteos", "fuentes": ["p42-act2"]},
           {"palabra": "cebolla", "fuentes": ["p45-act6", "p48-act1", "p51-act2"]},
-          {"palabra": "patatas", "fuentes": ["p45-act6", "p49-act7", "p49-act9", "p51-act2", "p51-act5@R", "p48-act1"]},
+          {"palabra": "patatas", "fuentes": ["p45-act6", "p49-act4", "p49-act6", "p51-act2", "p51-act5@R", "p48-act1"]},
           {"palabra": "mantequilla", "fuentes": ["p45-act6", "cuadro@p44#3"]},
-          {"palabra": "agua", "fuentes": ["p43-act8", "p45-act6", "p46-act1", "p47-act9", "p47-act10", "p49-act8@R", "p51-act2", "cuadro@p44#3"]},
-          {"palabra": "café", "fuentes": ["p45-act6", "p47-act9@R", "p48-act1", "cuadro@p44#3"]},
+          {"palabra": "agua", "fuentes": ["p43-act5", "p45-act6", "p46-act1", "p47-act5", "p47-act6", "p49-act5@R", "p51-act2", "cuadro@p44#3"]},
+          {"palabra": "café", "fuentes": ["p45-act6", "p47-act5@R", "p48-act1", "cuadro@p44#3"]},
           {"palabra": "azúcar", "fuentes": ["p45-act6", "p51-act2", "cuadro@p44#3"]},
           {"palabra": "bocadillo", "fuentes": ["p45-act6", "p45-act7", "p49-act9"]},
-          {"palabra": "arroz", "fuentes": ["p46-act1", "p47-act10", "p49-act9", "p51-act2", "p51-act6", "cuadro@p44#3"]},
-          {"palabra": "garbanzos", "fuentes": ["p47-act9@R", "p48-act1"]},
-          {"palabra": "maíz", "fuentes": ["p47-act10", "p48-act1", "p50-act1"]},
-          {"palabra": "té", "fuentes": ["p47-act10"]},
-          {"palabra": "limonada", "fuentes": ["p47-act10"]},
-          {"palabra": "cola", "fuentes": ["p47-act9@R"]},
+          {"palabra": "arroz", "fuentes": ["p46-act1", "p47-act6", "p49-act9", "p51-act2", "p51-act6", "cuadro@p44#3"]},
+          {"palabra": "garbanzos", "fuentes": ["p47-act5@R", "p48-act1"]},
+          {"palabra": "maíz", "fuentes": ["p47-act6", "p48-act1", "p50-act1"]},
+          {"palabra": "té", "fuentes": ["p47-act6"]},
+          {"palabra": "limonada", "fuentes": ["p47-act6"]},
+          {"palabra": "cola", "fuentes": ["p47-act5@R"]},
           {"palabra": "chocolate", "fuentes": ["p50-act1", "p44-act2", "p45-act7", "p50-act3"]},
           {"palabra": "batidos", "fuentes": ["p50-act1"]},
           {"palabra": "lechuga", "fuentes": ["p48-act1"]},
@@ -59,9 +59,9 @@
           {"palabra": "cerdo", "fuentes": ["p50-act2"]},
           {"palabra": "pera", "fuentes": ["p44-act3", "p46-act4", "p51-act2"]},
           {"palabra": "melocotón", "fuentes": ["p46-act4"]},
-          {"palabra": "helado", "fuentes": ["p45-act7", "p46-act4", "p48-act1", "p48-act2", "p49-act9", "p49-act9", "p50-act1"]},
+          {"palabra": "helado", "fuentes": ["p45-act7", "p46-act4", "p48-act1", "p48-act2", "p49-act6", "p49-act9", "p50-act1"]},
           {"palabra": "flan", "fuentes": ["p46-act4", "p48-act1", "p48-act2", "p48-act3"]},
-          {"palabra": "tarta", "fuentes": ["p47-act9", "p45-act7"]},
+          {"palabra": "tarta", "fuentes": ["p47-act5", "p45-act7"]},
           {"palabra": "cereales", "fuentes": ["p49-act9"]},
           {"palabra": "tostadas", "fuentes": ["p49-act9"]},
           {"palabra": "churros", "fuentes": ["p50-act1"]},
@@ -71,8 +71,8 @@
           "p42-act1",
           "p42-act2",
           "p42-act3",
-          "p43-act7",
-          "p43-act8",
+          "p43-act4",
+          "p43-act5",
           "p43-act8",
           "p44-act1",
           "p44-act2",
@@ -85,17 +85,17 @@
           "p46-act1",
           "p46-act2",
           "p46-act4",
-          "p47-act9",
-          "p47-act10",
-          "p47-act11",
-          "p47-act12",
+          "p47-act5",
+          "p47-act6",
+          "p47-act7",
+          "p47-act8",
           "p47-act11",
           "p48-act1",
           "p48-act2",
           "p48-act3",
-          "p49-act7",
-          "p49-act8",
-          "p49-act9",
+          "p49-act4",
+          "p49-act5",
+          "p49-act6",
           "p49-act9",
           "p50-act1",
           "p50-act2",
@@ -114,12 +114,12 @@
       },
       "Comidas preparadas": {
         "items": [
-          {"palabra": "pasta", "fuentes": ["p43-act8", "p46-act1", "p46-act2", "p48-act2", "p48-act3"]},
-          {"palabra": "paella", "fuentes": ["p44-act3", "p46-act1", "p46-act2", "p47-act11"]},
+          {"palabra": "pasta", "fuentes": ["p43-act5", "p46-act1", "p46-act2", "p48-act2", "p48-act3"]},
+          {"palabra": "paella", "fuentes": ["p44-act3", "p46-act1", "p46-act2", "p47-act7"]},
           {"palabra": "arroz", "fuentes": ["p46-act1", "p46-act2", "p46-act3", "p48-act1"]},
-          {"palabra": "pizza", "fuentes": ["p43-act8", "p44-act5", "p46-act1", "p47-act10", "p50-act1"]},
-          {"palabra": "hamburguesa", "fuentes": ["p44-act5", "p45-act6", "p48-act1", "p47-act12", "p50-act1"]},
-          {"palabra": "ensalada", "fuentes": ["p47-act12", "p48-act1", "p49-act8@R", "p49-act9", "p49-act9", "p43-act8"]},
+          {"palabra": "pizza", "fuentes": ["p43-act8", "p44-act5", "p46-act1", "p47-act6", "p50-act1"]},
+          {"palabra": "hamburguesa", "fuentes": ["p44-act5", "p45-act6", "p48-act1", "p47-act8", "p50-act1"]},
+          {"palabra": "ensalada", "fuentes": ["p47-act8", "p48-act1", "p49-act5@R", "p49-act6", "p49-act9", "p43-act8"]},
           {"palabra": "sopa", "fuentes": ["p48-act2", "p48-act1"]},
           {"palabra": "macarrones", "fuentes": ["p44-act1", "p44-act2", "p48-act1"]},
           {"palabra": "pollo", "fuentes": ["p48-act1"]},
@@ -132,7 +132,7 @@
           {"palabra": "arepas", "fuentes": ["p50-act1", "p50-act2"]}
         ],
         "fuentes": [
-          "p43-act8",
+          "p43-act5",
           "p43-act8",
           "p44-act1",
           "p44-act2",
@@ -142,14 +142,14 @@
           "p46-act1",
           "p46-act2",
           "p46-act3",
-          "p47-act10",
-          "p47-act11",
-          "p47-act12",
+          "p47-act6",
+          "p47-act7",
+          "p47-act8",
           "p48-act1",
           "p48-act2",
           "p48-act3",
-          "p49-act8",
-          "p49-act9",
+          "p49-act5",
+          "p49-act6",
           "p49-act9",
           "p50-act1",
           "p50-act2",
@@ -163,11 +163,11 @@
     "recurrente": {
       "Restaurante": {
         "items": [
-          {"palabra": "restaurante", "fuentes": ["p43-act8", "p46-act1", "p48-act1", "p48-act2", "p49-act9", "p49-act7"]},
-          {"palabra": "menú", "fuentes": ["p48-act1", "p48-act2", "p49-act9", "p49-act7"]},
-          {"palabra": "plato", "fuentes": ["p48-act1", "p49-act9", "p49-act7", "p46-act1", "p48-act2", "p48-act3"]},
-          {"palabra": "postre", "fuentes": ["p46-act1", "p46-act2", "p46-act4", "p48-act1", "p48-act2", "p48-act3", "p49-act8@R", "p49-act9", "p49-act7", "p51-act1"]},
-          {"palabra": "camarero", "fuentes": ["p49-act8", "p49-act7"]},
+          {"palabra": "restaurante", "fuentes": ["p43-act8", "p46-act1", "p48-act1", "p48-act2", "p49-act6", "p49-act7"]},
+          {"palabra": "menú", "fuentes": ["p48-act1", "p48-act2", "p49-act6", "p49-act7"]},
+          {"palabra": "plato", "fuentes": ["p48-act1", "p49-act6", "p49-act7", "p46-act1", "p48-act2", "p48-act3"]},
+          {"palabra": "postre", "fuentes": ["p46-act1", "p46-act2", "p46-act4", "p48-act1", "p48-act2", "p48-act3", "p49-act5@R", "p49-act6", "p49-act7", "p51-act1"]},
+          {"palabra": "camarero", "fuentes": ["p49-act5", "p49-act7"]},
           {"palabra": "cliente", "fuentes": ["p49-act7"]},
           {"palabra": "comedor escolar", "fuentes": ["p48-act2"]},
           {"palabra": "pizzería", "fuentes": ["p50-act1"]},
@@ -175,14 +175,14 @@
           {"palabra": "quioscos", "fuentes": ["p50-act1", "p50-act3"]},
           {"palabra": "especialidad", "fuentes": ["p43-act8"]}
         ],
-        "fuentes": ["p43-act8", "p46-act1", "p46-act2", "p46-act4", "p48-act1", "p48-act2", "p48-act3", "p49-act8", "p49-act9", "p49-act7", "p50-act1", "p50-act3", "p51-act1"],
+        "fuentes": ["p43-act8", "p46-act1", "p46-act2", "p46-act4", "p48-act1", "p48-act2", "p48-act3", "p49-act5", "p49-act6", "p49-act7", "p50-act1", "p50-act3", "p51-act1"],
         "descripcion": {
           "U4": "PCIC A1 §3.6 — Restaurante. Léxico de comer fuera de casa. Cumple frecuencia (p43 selección de restaurantes; pp48-49 menú y simulación de pedido en La taberna del abuelo) + posición (PCIC A1 lo respalda) + valor pedagógico (sección Destrezas 'Comer en España' construye el dominio). Recurrente fuerte de la unidad."
         }
       },
       "Adjetivos de nacionalidad": {
         "items": [
-          {"palabra": "italiano", "fuentes": ["p43-act8", "p43-act8", "p48-act1"]},
+          {"palabra": "italiano", "fuentes": ["p43-act5", "p43-act8", "p48-act1"]},
           {"palabra": "peruano", "fuentes": ["p43-act8"]},
           {"palabra": "brasileño", "fuentes": ["p43-act8"]},
           {"palabra": "argentino", "fuentes": ["p43-act8", "p48-act1"]},
@@ -193,20 +193,20 @@
           {"palabra": "colombianas", "fuentes": ["p50-act2"]},
           {"palabra": "mexicano", "fuentes": ["p50-act2", "p50-act3"]}
         ],
-        "fuentes": ["p43-act8", "p43-act8", "p48-act1", "p48-act2", "p48-act3", "p50-act2", "p50-act3", "p51-act4"],
+        "fuentes": ["p43-act5", "p43-act8", "p48-act1", "p48-act2", "p48-act3", "p50-act2", "p50-act3", "p51-act4"],
         "descripcion": {
           "U4": "Recurrente desde U2 (PRE 'Adjetivos de nacionalidad'). En U4 reaparece intensamente: cocinas nacionales en la selección de restaurantes (p43-act8), descripción de platos típicos (p48), texto cultural 'Comer por la calle' (p50). Cumple los 3 criterios §5.1.1 (frecuencia + posición previa + valor pedagógico al situar la comida en su contexto cultural/nacional)."
         }
       },
       "Bebida": {
         "items": [
-          {"palabra": "agua", "fuentes": ["p43-act8", "p45-act6", "p46-act1", "p47-act9", "p47-act10", "p49-act8@R", "p51-act2"]},
-          {"palabra": "zumo", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act7", "p43-act8", "p45-act7", "p47-act9@R", "p47-act10", "p47-act11", "p47-act12"]},
-          {"palabra": "leche", "fuentes": ["p42-act1", "p47-act9@R", "p47-act12", "p49-act9", "p51-act1", "cuadro@p44#3"]},
-          {"palabra": "café", "fuentes": ["p45-act6", "p47-act9@R", "p48-act1", "cuadro@p44#3"]},
-          {"palabra": "té", "fuentes": ["p47-act10"]},
-          {"palabra": "limonada", "fuentes": ["p47-act10"]},
-          {"palabra": "cola", "fuentes": ["p47-act9@R"]},
+          {"palabra": "agua", "fuentes": ["p43-act5", "p45-act6", "p46-act1", "p47-act5", "p47-act6", "p49-act5@R", "p51-act2"]},
+          {"palabra": "zumo", "fuentes": ["p42-act1", "p42-act2", "p42-act3", "p43-act4", "p43-act5", "p45-act7", "p47-act5@R", "p47-act6", "p47-act11", "p47-act8"]},
+          {"palabra": "leche", "fuentes": ["p42-act1", "p47-act5@R", "p47-act8", "p49-act9", "p51-act1", "cuadro@p44#3"]},
+          {"palabra": "café", "fuentes": ["p45-act6", "p47-act5@R", "p48-act1", "cuadro@p44#3"]},
+          {"palabra": "té", "fuentes": ["p47-act6"]},
+          {"palabra": "limonada", "fuentes": ["p47-act6"]},
+          {"palabra": "cola", "fuentes": ["p47-act5@R"]},
           {"palabra": "chocolate", "fuentes": ["p50-act1"]},
           {"palabra": "batidos", "fuentes": ["p50-act1"]}
         ],
@@ -214,17 +214,17 @@
           "p42-act1",
           "p42-act2",
           "p42-act3",
-          "p43-act7",
-          "p43-act8",
+          "p43-act4",
+          "p43-act5",
           "p45-act6",
           "p45-act7",
           "p46-act1",
-          "p47-act9",
-          "p47-act10",
-          "p47-act12",
+          "p47-act5",
+          "p47-act6",
+          "p47-act8",
           "p47-act11",
           "p48-act1",
-          "p49-act8",
+          "p49-act5",
           "p49-act9",
           "p50-act1",
           "p51-act1",
@@ -267,7 +267,7 @@
         "no nos gusta",
         "no os gusta"
       ],
-      "fuentes": ["p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p46-act2", "p46-act3", "p47-act11", "p47-act12", "p47-act9", "p48-act2", "p49-act7", "p49-act8", "p51-act4", "p51-act6", "cuadro@p44#1"],
+      "fuentes": ["p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p46-act2", "p46-act3", "p47-act7", "p47-act8", "p47-act9", "p48-act2", "p49-act4", "p49-act8", "p51-act4", "p51-act6", "cuadro@p44#1"],
       "descripcion": {
         "U4": "PCIC A1 §15.2.2 — Verbos del tipo 'gustar'. Principal en U4: paradigma con pronombres átonos de OI (me/te/le/nos/os/les), oposición sg/pl según el sujeto pospuesto, intensificación (mucho/nada). Eje articulador de la comunicación 'expresar gustos en relación con la comida'."
       }
@@ -278,7 +278,7 @@
       "rasgo_por_tiempo": { "Presente": "irregularidad vocálica e→ie" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["quiero", "quieres", "quiere", "queremos", "queréis", "quieren", "no quiero", "no quiere", "no quieren", "no queremos"],
-      "fuentes": ["p43-act8", "p45-act7", "p45-act8", "p46-act1", "p46-act2", "p46-act4", "p47-act11", "p49-act8", "p49-act8@R", "p49-act7", "p51-act1", "p51-act6", "cuadro@p45#2"],
+      "fuentes": ["p43-act5", "p45-act7", "p45-act8", "p46-act1", "p46-act2", "p46-act4", "p47-act7", "p49-act5", "p49-act5@R", "p49-act7", "p51-act1", "p51-act6", "cuadro@p45#2"],
       "descripcion": {
         "U4": "PCIC A1 §16.3 — Presente de indicativo. Principal en U4: paradigma completo del presente, irregularidad e→ie (quiero, quieres, quiere, queremos, queréis, quieren). Función comunicativa: ofrecer y pedir ('¿Quieres...?' / 'Quiero...') en interacción de restaurante y oferta de postres."
       }
@@ -289,7 +289,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -er" },
       "tiempos": ["Presente", "Infinitivo"],
       "formas_trabajadas": ["comer", "come", "comen", "comemos", "como nunca"],
-      "fuentes": ["p43-act8", "p46-act1", "p46-act2", "p46-act3", "p47-act11", "p47-act12", "p48-act2", "p48-act3", "p49-act7", "p49-act9", "p50-act1", "p50-act3", "p50-act4"],
+      "fuentes": ["p43-act5", "p46-act1", "p46-act2", "p46-act3", "p47-act7", "p47-act8", "p48-act2", "p48-act3", "p49-act4", "p49-act9", "p50-act1", "p50-act3", "p50-act4"],
       "descripcion": {
         "U4": "Recurrente de U3 (PRE 'comer'). En U4 reaparece en infinitivo como complemento de querer ('¿Quieres comer carne?'), en presente para describir hábitos alimentarios (sección Destrezas y Cultura) y en 3ª persona referida a 'los españoles' o 'los niños'. Refuerza el paradigma regular -er."
       }
@@ -300,7 +300,7 @@
       "rasgo_por_tiempo": { "Presente": "irregularidad 1ª persona" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["hacemos"],
-      "fuentes": ["p43-act8"],
+      "fuentes": ["p43-act5"],
       "descripcion": { "U4": "Recurrente de U3 (PRE 'hacer'). En U4 una sola aparición ('Mejor hacemos pasta', p43-act5) como propuesta alimentaria. Refuerza la forma '-emos' del paradigma." }
     },
     {
@@ -309,7 +309,7 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["es", "son"],
-      "fuentes": ["p42-act3", "p43-act8", "p44-act2", "p44-act5", "p46-act1", "p46-act2", "p46-act3", "p48-act1", "p48-act2", "p48-act3", "p49-act9", "p49-act8", "p50-act1"],
+      "fuentes": ["p42-act3", "p43-act8", "p44-act2", "p44-act5", "p46-act1", "p46-act2", "p46-act3", "p48-act1", "p48-act2", "p48-act3", "p49-act6", "p49-act8", "p50-act1"],
       "descripcion": { "U4": "Recurrente desde U1 (PRE 'ser'). En U4 sustenta predicaciones identificativas ('Es una bebida...', 'El plato principal es vegetariano', 'es mi comida favorita', 'Son rojas, amarillas o verdes'). Tercera persona predominante." }
     },
     {
@@ -318,7 +318,7 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["tengo", "tiene", "tenemos", "tienen"],
-      "fuentes": ["p42-act3", "p43-act8", "p43-act8", "p44-act3", "p44-act5", "p45-act6", "p48-act1", "p48-act2", "p49-act7", "p50-act2", "p51-act3"],
+      "fuentes": ["p42-act3", "p43-act5", "p43-act8", "p44-act3", "p44-act5", "p45-act6", "p48-act1", "p48-act2", "p49-act7", "p50-act2", "p51-act3"],
       "descripcion": {
         "U4": "Recurrente desde U1 (PRE 'tener'). En U4 vehicula posesión y predicación cuantitativa: presencia/contenido de alimentos ('tenemos plátano', 'también tenemos manzanas', 'tienen muchas vitaminas'), composición de platos ('El menú tiene tres platos', 'tiene carne, pescado o huevo')."
       }
@@ -348,29 +348,29 @@
     "principal": {
       "Construcción gustar/doler": {
         "items": [
-          {"palabra": "A mí me gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p47-act11", "p47-act9", "p49-act7", "p49-act8", "p51-act4", "p51-act6"]},
-          {"palabra": "A ti te gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p47-act11", "p47-act12", "p49-act8", "p51-act4"]},
+          {"palabra": "A mí me gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p47-act7", "p47-act9", "p49-act4", "p49-act8", "p51-act4", "p51-act6"]},
+          {"palabra": "A ti te gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p47-act7", "p47-act8", "p49-act8", "p51-act4"]},
           {"palabra": "A él/ella/Ud. le gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act3", "p44-act3@R", "p46-act3", "p48-act2"]},
           {"palabra": "A nosotros/-as nos gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p51-act4"]},
           {"palabra": "A vosotros/-as os gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p51-act4"]},
           {"palabra": "A ellos/-as/Uds. les gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act3@R", "p48-act2", "p48-act3", "p51-act4"]},
-          {"palabra": "intensificadores: mucho / nada / muy", "fuentes": ["cuadro@p44#1", "p44-act2", "p46-act1", "p47-act11", "p47-act12", "p48-act2", "p48-act3", "p51-act6"]}
+          {"palabra": "intensificadores: mucho / nada / muy", "fuentes": ["cuadro@p44#1", "p44-act2", "p46-act1", "p47-act7", "p47-act8", "p48-act2", "p48-act3", "p51-act6"]}
         ],
-        "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p46-act2", "p46-act3", "p47-act11", "p47-act12", "p47-act9", "p48-act2", "p49-act7", "p49-act8", "p51-act4", "p51-act6"],
+        "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p46-act2", "p46-act3", "p47-act7", "p47-act8", "p47-act9", "p48-act2", "p49-act4", "p49-act8", "p51-act4", "p51-act6"],
         "descripcion": {
           "U4": "PCIC A1 §15.2.2 — Verbos del tipo 'gustar'. Principal en U4 con 'gustar': estructura [(A + pron. tónico/SN) + pron. átono OI + gustar 3ª sg/pl + sujeto pospuesto]. Concordancia del verbo con el sujeto pospuesto (gusta/gustan según singular/plural). Reaparece amplificada en U8 con 'doler'."
         }
       },
       "Pronombres átonos de OI": {
         "items": [
-          {"palabra": "me", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p46-act1", "p47-act11", "p51-act4", "p51-act6"]},
-          {"palabra": "te", "fuentes": ["cuadro@p44#1", "p44-act1", "p47-act11", "p47-act12", "p49-act8", "p51-act4"]},
+          {"palabra": "me", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p46-act1", "p47-act7", "p51-act4", "p51-act6"]},
+          {"palabra": "te", "fuentes": ["cuadro@p44#1", "p44-act1", "p47-act7", "p47-act8", "p49-act8", "p51-act4"]},
           {"palabra": "le", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act3", "p44-act3@R", "p46-act3", "p48-act2", "p51-act4"]},
           {"palabra": "nos", "fuentes": ["cuadro@p44#1", "p44-act1", "p51-act4"]},
           {"palabra": "os", "fuentes": ["cuadro@p44#1", "p44-act1", "p51-act4"]},
           {"palabra": "les", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act3@R", "p48-act2", "p48-act3", "p51-act4"]}
         ],
-        "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p46-act1", "p46-act3", "p47-act11", "p47-act12", "p47-act9", "p48-act2", "p48-act3", "p49-act7", "p49-act8", "p51-act4", "p51-act6"],
+        "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p46-act1", "p46-act3", "p47-act7", "p47-act8", "p47-act9", "p48-act2", "p48-act3", "p49-act4", "p49-act8", "p51-act4", "p51-act6"],
         "descripcion": {
           "U4": "PCIC A1 §7.2 — Pronombres personales en función de complemento indirecto (átonos). Principal en U4 con el paradigma 'gustar'. Paradigma completo: me/te/le/nos/os/les, ligado al sujeto experimentante y duplicable con (A + pronombre tónico) para énfasis y desambiguación."
         }
@@ -378,11 +378,11 @@
       "Artículos indeterminados": {
         "items": [
           {"palabra": "un", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act7", "p45-act8", "p46-act1", "p49-act7", "p51-act3"]},
-          {"palabra": "una", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act7", "p46-act1", "p46-act4", "p46-act4@R", "p47-act9", "p47-act9@R", "p49-act8@R", "p51-act3"]},
+          {"palabra": "una", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act7", "p46-act1", "p46-act4", "p46-act4@R", "p47-act5", "p47-act5@R", "p49-act5@R", "p51-act3"]},
           {"palabra": "unos", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act8", "p51-act2", "p51-act3", "cuadro@p45#1"]},
           {"palabra": "unas", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p51-act2"]}
         ],
-        "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act7", "p45-act8", "p46-act1", "p46-act4", "p47-act9", "p49-act8", "p49-act7", "p51-act2", "p51-act3"],
+        "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act7", "p45-act8", "p46-act1", "p46-act4", "p47-act5", "p49-act5", "p49-act7", "p51-act2", "p51-act3"],
         "descripcion": {
           "U4": "PCIC A1 §6.1 — Artículo indeterminado. Principal en U4: paradigma un/una/unos/unas, concordancia con sustantivo en género y número, uso ante sustantivos contables (singular o plural) y ausencia ante sustantivos incontables. Articulado con 'Nombres contables e incontables' (ver entrada propia)."
         }
@@ -400,10 +400,10 @@
       },
       "Hay": {
         "items": [
-          {"palabra": "Hay + SN indefinido o incontable", "fuentes": ["cuadro@p45#1", "p43-act7", "p45-act7", "p45-act8", "p51-act1"]},
-          {"palabra": "No hay + SN", "fuentes": ["p43-act7", "p45-act7", "p45-act8", "p51-act1"]}
+          {"palabra": "Hay + SN indefinido o incontable", "fuentes": ["cuadro@p45#1", "p43-act4", "p45-act7", "p45-act8", "p51-act1"]},
+          {"palabra": "No hay + SN", "fuentes": ["p43-act4", "p45-act7", "p45-act8", "p51-act1"]}
         ],
-        "fuentes": ["cuadro@p45#1", "p43-act7", "p45-act7", "p45-act8", "p51-act1"],
+        "fuentes": ["cuadro@p45#1", "p43-act4", "p45-act7", "p45-act8", "p51-act1"],
         "descripcion": {
           "U4": "PCIC A1 §18.1 — Existencia: 'hay'. Principal en U4: forma impersonal invariable (3ª persona singular de 'haber'), expresa existencia con sustantivos contables (singulares o plurales) e incontables. Contraste con 'querer' en ejercicios p45-act7 y p45-act8 ('hay' = existencia / 'querer' = deseo)."
         }
@@ -413,20 +413,20 @@
       "Concordancia de género": {
         "items": [
           {"palabra": "masculino (un / unos)", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act8", "p51-act3"]},
-          {"palabra": "femenino (una / unas)", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p47-act9", "p51-act3"]},
-          {"palabra": "concordancia adj-sust en género (rojas, amarillas, verdes; muy ricas; vegetariana; italiana)", "fuentes": ["p42-act3", "p43-act8", "p43-act8", "p48-act3", "p50-act1"]}
+          {"palabra": "femenino (una / unas)", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p47-act5", "p51-act3"]},
+          {"palabra": "concordancia adj-sust en género (rojas, amarillas, verdes; muy ricas; vegetariana; italiana)", "fuentes": ["p42-act3", "p43-act5", "p43-act8", "p48-act3", "p50-act1"]}
         ],
-        "fuentes": ["cuadro@p44#2", "p42-act3", "p43-act8", "p43-act8", "p44-act5", "p45-act6", "p45-act8", "p47-act9", "p48-act3", "p50-act1", "p51-act3"],
+        "fuentes": ["cuadro@p44#2", "p42-act3", "p43-act5", "p43-act8", "p44-act5", "p45-act6", "p45-act8", "p47-act5", "p48-act3", "p50-act1", "p51-act3"],
         "descripcion": {
           "U4": "Recurrente desde U1 (PRE 'Concordancia de género'). En U4 se aplica intensivamente a los artículos indeterminados con sustantivos de alimentos (un plátano / una manzana, un cartón / una botella) y a la concordancia adj-sust ('rojas, amarillas o verdes', 'cocina italiana', 'restaurante peruano', 'ensalada mediterránea'). Refuerza el patrón básico de género nominal."
         }
       },
       "Interrogativos": {
         "items": [
-          {"palabra": "qué", "fuentes": ["p46-act1", "p46-act2", "p47-act10", "p47-act11", "p47-act12", "p47-act9", "p48-act1", "p48-act2", "p49-act8@R", "p49-act7", "p49-act8", "p49-act9", "p50-act1", "p50-act2", "p50-act3", "p51-act6"]},
+          {"palabra": "qué", "fuentes": ["p46-act1", "p46-act2", "p47-act6", "p47-act7", "p47-act8", "p47-act9", "p48-act1", "p48-act2", "p49-act5@R", "p49-act7", "p49-act8", "p49-act9", "p50-act1", "p50-act2", "p50-act3", "p51-act6"]},
           {"palabra": "cuál", "fuentes": ["p46-act1", "p46-act2", "p49-act8", "p50-act4"]},
-          {"palabra": "cuáles", "fuentes": ["p43-act7"]},
-          {"palabra": "cómo", "fuentes": ["p43-act8", "p47-act10", "p47-act12"]},
+          {"palabra": "cuáles", "fuentes": ["p43-act4"]},
+          {"palabra": "cómo", "fuentes": ["p43-act8", "p47-act6", "p47-act8"]},
           {"palabra": "dónde", "fuentes": ["p43-act8", "p48-act2", "p50-act3"]},
           {"palabra": "cuánto", "fuentes": ["p48-act1"]},
           {"palabra": "cuántas", "fuentes": ["p45-act8"]},
@@ -436,19 +436,19 @@
           {"palabra": "de qué", "fuentes": ["p43-act8"]}
         ],
         "fuentes": [
-          "p43-act7",
+          "p43-act4",
           "p43-act8",
           "p45-act8",
           "p46-act1",
           "p46-act2",
           "p46-act3",
-          "p47-act10",
-          "p47-act11",
-          "p47-act12",
+          "p47-act6",
+          "p47-act7",
+          "p47-act8",
           "p47-act9",
           "p48-act1",
           "p48-act2",
-          "p49-act8",
+          "p49-act5",
           "p49-act7",
           "p49-act8",
           "p49-act9",
