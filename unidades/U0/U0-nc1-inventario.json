@@ -75,19 +75,19 @@
       },
       "Números cardinales": {
         "items": [
-          {"palabra": "cero", "fuentes": ["p11-act9"]},
-          {"palabra": "uno", "fuentes": ["p11-act9"]},
-          {"palabra": "dos", "fuentes": ["p11-act9"]},
-          {"palabra": "tres", "fuentes": ["p11-act9"]},
-          {"palabra": "cuatro", "fuentes": ["p11-act9"]},
-          {"palabra": "cinco", "fuentes": ["p11-act9"]},
-          {"palabra": "seis", "fuentes": ["p11-act9"]},
-          {"palabra": "siete", "fuentes": ["p11-act9"]},
-          {"palabra": "ocho", "fuentes": ["p11-act9"]},
-          {"palabra": "nueve", "fuentes": ["p11-act9"]},
-          {"palabra": "diez", "fuentes": ["p11-act9"]}
+          {"palabra": "cero", "fuentes": ["p11-act9@R"]},
+          {"palabra": "uno", "fuentes": ["p11-act9@R"]},
+          {"palabra": "dos", "fuentes": ["p11-act9@R"]},
+          {"palabra": "tres", "fuentes": ["p11-act9@R"]},
+          {"palabra": "cuatro", "fuentes": ["p11-act9@R"]},
+          {"palabra": "cinco", "fuentes": ["p11-act9@R"]},
+          {"palabra": "seis", "fuentes": ["p11-act9@R"]},
+          {"palabra": "siete", "fuentes": ["p11-act9@R"]},
+          {"palabra": "ocho", "fuentes": ["p11-act9@R"]},
+          {"palabra": "nueve", "fuentes": ["p11-act9@R"]},
+          {"palabra": "diez", "fuentes": ["p11-act9@R"]}
         ],
-        "fuentes": ["p11-act9"],
+        "fuentes": ["p11-act9@R"],
         "descripcion": { "U0": "Punto de partida pre-A1.1: introducción al léxico de los números 0-10 trabajado mediante dictado (escucha y escritura)." }
       },
       "Para la clase": {

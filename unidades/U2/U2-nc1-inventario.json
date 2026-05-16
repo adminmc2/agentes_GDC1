@@ -28,7 +28,7 @@
           {"palabra": "Nicaragua", "fuentes": ["p25-act6"]},
           {"palabra": "Perú", "fuentes": ["p22-act1", "p25-act6", "p25-act7", "p31-act3"]}
         ],
-        "fuentes": ["p22-act1", "p23-act4", "p25-act6", "p25-act7", "p26-act1", "p28-act1", "p29-act3", "p30-act2", "p31-act3"],
+        "fuentes": ["p22-act1", "p25-act6", "p29-act3", "p31-act3", "p23-act4", "p25-act7", "p26-act1", "p28-act1", "p30-act2"],
         "descripcion": {
           "U2": "PCIC A1 §18 Geografía física, humana y política — Primer cierre canónico del campo: U2 presenta el bloque de países donde el español es lengua oficial (Argentina, Bolivia, Colombia, Cuba, Chile, Ecuador, España, Guinea Ecuatorial, México, Nicaragua, Perú) asociándolos a productos culturales típicos y a la práctica de gentilicios."
         }
@@ -49,11 +49,11 @@
           {"palabra": "inglés/-esa", "fuentes": ["p22-act3"]},
           {"palabra": "japonés/-esa", "fuentes": ["p22-act3", "p24-act1"]},
           {"palabra": "mexicano/-a", "fuentes": ["p22-act2", "p25-act7", "p29-act3", "p31-act3"]},
-          {"palabra": "nicaragüense", "fuentes": ["p25-act6"]},
+          {"palabra": "nicaragüense", "fuentes": ["p25-act6@R"]},
           {"palabra": "peruano/-a", "fuentes": ["p22-act2", "p25-act4", "p25-act6", "p31-act3"]},
           {"palabra": "polaco/-a", "fuentes": ["p22-act3"]}
         ],
-        "fuentes": ["p22-act2", "p22-act3", "p24-act1", "p24-act2", "p25-act4", "p25-act5", "p25-act6", "p25-act7", "p26-act1", "p28-act1", "p29-act3", "p31-act1", "p31-act2", "p31-act3"],
+        "fuentes": ["p22-act3", "p22-act2", "p24-act1", "p26-act1", "p31-act2", "p31-act3", "p25-act4", "p25-act6", "p31-act1", "p25-act5", "p28-act1", "p24-act2", "p25-act7", "p29-act3", "p25-act6@R"],
         "descripcion": {
           "U2": "PCIC A1 §1.7 Información personal: Nacionalidad — Primer cierre canónico de gentilicios de país: moción de género masculino/femenino y plural. U2 presenta el paradigma con países hispanohablantes y refuerza con gentilicios europeos y asiáticos."
         }
@@ -62,13 +62,13 @@
         "items": [
           {"palabra": "lunes", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p24-act2", "p29-act3", "p31-act5"]},
           {"palabra": "martes", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p31-act5"]},
-          {"palabra": "miércoles", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p31-act5"]},
-          {"palabra": "jueves", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p31-act5"]},
-          {"palabra": "viernes", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p29-act3", "p31-act5"]},
-          {"palabra": "sábado", "fuentes": ["p23-act6", "p31-act5"]},
-          {"palabra": "domingo", "fuentes": ["p23-act6", "p31-act5"]}
+          {"palabra": "miércoles", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p31-act5@R"]},
+          {"palabra": "jueves", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p31-act5@R"]},
+          {"palabra": "viernes", "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p29-act3", "p31-act5@R"]},
+          {"palabra": "sábado", "fuentes": ["p23-act6", "p31-act5@R"]},
+          {"palabra": "domingo", "fuentes": ["p23-act6", "p31-act5@R"]}
         ],
-        "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p24-act2", "p29-act3", "p31-act5"],
+        "fuentes": ["p23-act6", "p23-act11", "p23-act12", "p23-act13", "p24-act2", "p29-act3", "p31-act5", "p31-act5@R"],
         "descripcion": { "U2": "PCIC A1 §3.2 Unidades de tiempo: días de la semana — Primer cierre canónico de la serie completa (lunes–domingo), trabajada con foco fonético (sílaba tónica marcada en el cuadro) y operacionalizada en un horario escolar." }
       },
       "Números ordinales": {
@@ -84,7 +84,7 @@
           {"palabra": "noveno/-a", "fuentes": ["p23-act7", "p23-act8"]},
           {"palabra": "décimo/-a", "fuentes": ["p23-act7", "p23-act8"]}
         ],
-        "fuentes": ["p23-act4", "p23-act7", "p23-act8", "p23-act11", "p23-act12", "p24-act3", "p26-act1", "p28-act1", "p31-act1"],
+        "fuentes": ["p23-act7", "p23-act8", "p23-act11", "p24-act3", "p26-act1", "p31-act1", "p23-act4", "p23-act12", "p28-act1"],
         "descripcion": {
           "U2": "PCIC A1 §3.5 Cantidades y números: números ordinales — Primer cierre canónico de la serie 1.º–10.º con moción de género (masculino/femenino) y apocopación de primero/tercero. U2 los aplica al horario escolar y a la descripción de cursos."
         }
@@ -97,16 +97,16 @@
           {"palabra": "Educación Física", "fuentes": ["p23-act9", "p23-act10", "p28-act1", "p30-act2"]},
           {"palabra": "Educación Plástica", "fuentes": ["p23-act9"]},
           {"palabra": "Español", "fuentes": ["p23-act9", "p23-act11", "p31-act6"]},
-          {"palabra": "Francés", "fuentes": ["p23-act9", "p24-act2", "p30-act2", "p31-act2", "p31-act6"]},
+          {"palabra": "Francés", "fuentes": ["p23-act9", "p24-act2", "p30-act2", "p31-act2", "p31-act6@R"]},
           {"palabra": "Historia", "fuentes": ["p28-act1", "p29-act3", "p30-act2"]},
-          {"palabra": "Informática", "fuentes": ["p23-act9", "p23-act11", "p24-act2", "p30-act2", "p31-act6"]},
+          {"palabra": "Informática", "fuentes": ["p23-act9", "p23-act11", "p24-act2", "p30-act2", "p31-act6@R"]},
           {"palabra": "Inglés", "fuentes": ["p30-act2"]},
-          {"palabra": "Lengua", "fuentes": ["p23-act9", "p23-act11", "p31-act6"]},
+          {"palabra": "Lengua", "fuentes": ["p23-act9", "p23-act11", "p31-act6@R"]},
           {"palabra": "Lengua española", "fuentes": ["p30-act2"]},
-          {"palabra": "Matemáticas", "fuentes": ["p23-act9", "p23-act11", "p24-act1", "p29-act3", "p30-act2", "p31-act6"]},
-          {"palabra": "Música", "fuentes": ["p23-act9", "p24-act2", "p28-act1", "p30-act2", "p31-act6"]}
+          {"palabra": "Matemáticas", "fuentes": ["p23-act9", "p23-act11", "p24-act1", "p29-act3", "p30-act2", "p31-act6@R"]},
+          {"palabra": "Música", "fuentes": ["p23-act9", "p24-act2", "p28-act1", "p30-act2", "p31-act6@R"]}
         ],
-        "fuentes": ["p23-act9", "p23-act10", "p23-act11", "p23-act12", "p24-act1", "p24-act2", "p28-act1", "p29-act3", "p30-act2", "p31-act2", "p31-act6"],
+        "fuentes": ["p30-act2", "p23-act9", "p23-act11", "p23-act12", "p23-act10", "p28-act1", "p31-act6", "p24-act2", "p31-act2", "p31-act6@R", "p29-act3", "p24-act1"],
         "descripcion": {
           "U2": "PCIC A1 §6.1 Centros e instituciones educativas — Primer cierre canónico del catálogo de asignaturas de Secundaria: Matemáticas, Lengua, Español, Historia, Música, Educación Física, Ciencias Naturales/Sociales, Informática, Francés/Inglés, Biología, Educación Plástica. Operacionalizadas en horario semanal."
         }
@@ -141,7 +141,7 @@
           {"palabra": "noventa y cuatro (94)", "fuentes": ["p27-act7"]},
           {"palabra": "cien (100)", "fuentes": ["p27-act6"]}
         ],
-        "fuentes": ["p27-act6", "p27-act7", "p27-act8", "p28-act1", "p28-act2", "p30-act2", "p31-act2"],
+        "fuentes": ["p27-act6", "p27-act7", "p28-act1", "p28-act2", "p30-act2", "p31-act2", "p27-act8"],
         "descripcion": {
           "U2": "PCIC A1 §3.5 Cantidades y números: números cardinales — Continuación del paradigma (U0: 0–10; U1: 11–20). U2 cierra el tramo 21–100 incluyendo decenas (veinte, treinta, cuarenta...) y composición decena-y-unidad (treinta y uno, cuarenta y tres, etc.). Aplicado al léxico de dirección y de edad. Rótulo del libro 'Números del 21 al 100' canonizado bajo 'Números cardinales' (aliases_indice)."
         }
@@ -171,7 +171,7 @@
           {"palabra": "¡Hola!, ¿qué tal?", "fuentes": ["p28-act1"]},
           {"palabra": "¿Cómo estás?", "fuentes": ["p28-act1"]}
         ],
-        "fuentes": ["p24-act3", "p25-act7", "p26-act1", "p28-act1"],
+        "fuentes": ["p25-act7", "p26-act1", "p28-act1", "p24-act3"],
         "descripcion": { "U2": "Recurrente: ya canónica en U0/U1. U2 amplía el inventario añadiendo fórmulas de apertura/cierre de carta (Querido, Un saludo) y de bienvenida (Bienvenido)." }
       },
       "Centros e instituciones educativas": {
@@ -184,7 +184,7 @@
           {"palabra": "recreo", "fuentes": ["p23-act11", "p27-act10", "p30-act2"]},
           {"palabra": "cafetería", "fuentes": ["p30-act2"]},
           {"palabra": "aulas", "fuentes": ["p30-act2"]},
-          {"palabra": "estudiantes", "fuentes": ["p25-act4", "p28-act1", "p30-act2"]},
+          {"palabra": "estudiantes", "fuentes": ["p25-act4@R", "p28-act1", "p30-act2"]},
           {"palabra": "alumnos", "fuentes": ["p28-act2", "p29-act4", "p30-act2"]},
           {"palabra": "asignaturas obligatorias", "fuentes": ["p30-act2"]},
           {"palabra": "(asignaturas) optativas", "fuentes": ["p30-act2", "p30-act3"]},
@@ -197,26 +197,27 @@
           {"palabra": "biblioteca", "fuentes": ["p27-act10"]}
         ],
         "fuentes": [
+          "p28-act1",
+          "p30-act2",
+          "p29-act7",
+          "p29-act8",
+          "p30-act4",
           "p23-act10@R",
-          "p23-act11",
-          "p23-act12",
-          "p23-act13",
           "p24-act1",
           "p24-act2",
           "p24-act3",
-          "p25-act4",
-          "p25-act7",
           "p26-act1",
+          "p29-act6",
+          "p23-act11",
           "p27-act10",
-          "p28-act1",
+          "p25-act4@R",
           "p28-act2",
           "p29-act4",
-          "p29-act6",
-          "p29-act7",
-          "p29-act8",
-          "p30-act2",
           "p30-act3",
-          "p30-act4"
+          "p25-act4",
+          "p25-act7",
+          "p23-act12",
+          "p23-act13"
         ],
         "descripcion": {
           "U2": "PCIC A1 §6 Educación: centros e instituciones. Recurrente en U2 por §5.1.1 criterio (b): no es canónico declarado en el vocabulario del índice editorial de U2 ni se introduce como principal en ninguna otra unidad del curso, pero es léxico imprescindible para comprender los textos y ejercicios de la unidad — vive principalmente como soporte de la sección 'cultura' ('La ESO en España'). Material trabajado: instituto, ESO, recreo, aula, asignaturas obligatorias/optativas, actividades extraescolares. Cumple los tres criterios (frecuencia masiva en pp.23-24, posición no-canónica y valor pedagógico claro de soporte cultural-comunicativo)."

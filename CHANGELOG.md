@@ -5,6 +5,34 @@
 
 ---
 
+## [v10.145a — 2026-05-16] — Fase 1: Lote 2 — migración de datos U0-U5 (vocabulario, modo A)
+
+Aplicación del nuevo contrato v10.145 a `vocabulario_consolidado` en U0-U5. **Modo A:** solo respuesta-only (plain → `@R`). Dual-tracking diferido a Lote 3.
+
+**Herramienta:** `scripts/migrate_at_r_v10145.py` (nuevo). CLI con selector por unidad y bloque, dry-run por defecto, `--apply` solo permitido para `--block vocab` en esta fase. Backup automático (`.bak.v10.145`). Validador integrado post-apply. Reformateo canónico vía `scripts/format_inventario.py`. Recomputa `cat.fuentes` agregadas tras mutar items (fix bloqueante detectado por revisor antes del primer apply).
+
+**Resultados:**
+
+| Unidad | Reemplazos | Candidatos B (dual, diferidos) | Validador |
+|---|---|---|---|
+| U0 | 11 | 0 | 0/0/0 |
+| U1 | 24 | — | 0/0/0 |
+| U2 | 12 | — | 0/0/0 |
+| U3 | 25 | — | 0/0/0 |
+| U4 | 40 | 125 | 0/0/0 |
+| U5 | 38 | — | 0/0/0 |
+| **Total** | **150** | — | ✓ |
+
+**Verificación material del caso "cocina" U5** que motivó el cambio: las 3 fuentes que aparecían solo en `respuestas[]` y estaban en gris (`p52-act2`, `p59-act4`, `p61-act3`, todas en tipos no productivos) pasan a `@R`. Las otras 5 (input only o dual) quedan plain.
+
+**Dual-tracking pre-existente preservado intacto** en U4 (`p49-act9@R` con 12 items añadidos en v10.142d; `p44-act3@R` para `gustar` desde v10.141 area), U2 (4 entradas), U3 (más entradas) — el script excluye automáticamente items con plain + @R ya presente.
+
+**No-tocados confirmados:** fuentes `cuadro@pNN[#K]` (1 sin tocar), bloques `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada` (Lote 3).
+
+**Lote 3 pendiente:** (a) habilitar `--apply` para verbos/gramática/pron tras smoke en dry-run, (b) decisión sobre dual-tracking retroactivo en cualquier tipo (125 candidatos B-only solo en vocabulario U4).
+
+---
+
 ## [v10.145 — 2026-05-16] — Fase 1: cambio de contrato — `@R` redefinido como marcador de localización (lote 1: contrato)
 
 Cambio de contrato breaking en su **semántica** (no en su estructura) tras diagnóstico del autor sobre el caso material "cocina" en U5 (8 fuentes, 3 con la palabra solo en respuestas y tipo no-productivo) y dictamen del revisor.
