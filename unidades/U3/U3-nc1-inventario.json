@@ -250,7 +250,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["estudio", "estudias", "estudia", "estudiamos", "estudiáis", "estudian"],
-      "fuentes": ["cuadro@p34#1", "p33-act10@R", "p34-act1", "p34-act2@R", "p34-act3", "p35-act5", "p38-act1", "p38-act3", "p41-act1", "p41-act2"],
+      "fuentes": ["cuadro@p34#1", "p33-act10@R", "p34-act1", "p34-act1@R", "p34-act2@R", "p34-act3", "p35-act5", "p38-act1", "p38-act1@R", "p38-act3", "p41-act1", "p41-act1@R", "p41-act2", "p41-act2@R"],
       "descripcion": {
         "U3": "PCIC A1 §6.4 — Primer cierre canónico del paradigma completo del Presente de estudiar (6 personas) como modelo de verbos regulares en -ar. Presentado en el cuadro de conjugación de p34 junto a comer/vivir y operacionalizado intensivamente en los ejercicios gramaticales (p34-act1/2/3) y en los textos descriptivos de Javier y Lucía (estudia ESO, estudia ingeniería, estudia piano). En U2 ya aparecía como anticipación."
       }
@@ -261,7 +261,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -er" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["como", "comes", "come", "comemos", "coméis", "comen"],
-      "fuentes": ["cuadro@p34#1", "p34-act1", "p34-act2@R", "p34-act3", "p41-act1", "p41-act2"],
+      "fuentes": ["cuadro@p34#1", "p34-act1", "p34-act1@R", "p34-act2@R", "p34-act3", "p41-act1", "p41-act1@R", "p41-act2", "p41-act2@R"],
       "descripcion": {
         "U3": "PCIC A1 §6.4 — Primer cierre canónico del paradigma completo del Presente de comer (6 personas) como modelo único de verbos regulares en -er. Presentado en el cuadro de conjugación de p34 y aplicado en los ejercicios gramaticales (¿Dónde come el profesor?, Yo como a las dos y veinte, Elena y sus amigos comen a las dos)."
       }
@@ -272,7 +272,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ir" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["vivo", "vives", "vive", "vivimos", "vivís", "viven"],
-      "fuentes": ["cuadro@p34#1", "p33-act6", "p33-act9", "p33-act10@R", "p34-act1", "p34-act2@R", "p34-act3", "p35-act5", "p35-act6", "p36-act1", "p38-act1", "p41-act1@R", "p41-act3"],
+      "fuentes": ["cuadro@p34#1", "p33-act6", "p33-act9", "p33-act10@R", "p34-act1", "p34-act1@R", "p34-act2@R", "p34-act3", "p35-act5", "p35-act6", "p35-act6@R", "p36-act1", "p38-act1", "p41-act1@R", "p41-act3"],
       "descripcion": {
         "U3": "PCIC A1 §6.4 — Primer cierre canónico del paradigma completo del Presente de vivir (6 personas) como modelo único de verbos regulares en -ir. Presentado en el cuadro de conjugación de p34 y aplicado intensivamente en los textos (vive en Getafe, vive en un pueblo de Cantabria, Vivo en la calle del instituto, Mi familia vive en Buenos Aires). En U2 ya aparecía como anticipación parcial."
       }
@@ -283,7 +283,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["trabajo", "trabajas", "trabaja", "trabajamos", "trabajan"],
-      "fuentes": ["p33-act6", "p33-act8", "p33-act9", "p33-act10", "p34-act2@R", "p34-act3", "p38-act1", "p38-act2", "p41-act1"],
+      "fuentes": ["p33-act6", "p33-act8", "p33-act9", "p33-act9@R", "p33-act10", "p34-act2@R", "p34-act3", "p38-act1", "p38-act1@R", "p38-act2", "p41-act1", "p41-act1@R"],
       "descripcion": {
         "U3": "Primer cierre canónico del paradigma de Presente de trabajar (regular -ar). Aparece en los textos descriptivos asociado a profesiones y lugares de trabajo (de lunes a viernes trabaja fuera de Madrid, Su madre trabaja en el hotel del pueblo, mi padre trabaja en un hotel, ¿Dónde trabaja tu padre? En un banco, Mi hermano David trabaja con mi padre)."
       }
@@ -294,7 +294,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["hablo", "hablamos", "habla", "hablan", "hablar"],
-      "fuentes": ["p34-act1", "p34-act2@R", "p38-act1", "p40-act1", "p40-act3"],
+      "fuentes": ["p34-act1", "p34-act1@R", "p34-act2@R", "p38-act1", "p40-act1", "p40-act3"],
       "descripcion": {
         "U3": "U2 la introdujo como anticipación (la hablan más de 580 millones); U3 cierra el paradigma del Presente operacionalizándolo en ejercicios gramaticales (¿Qué idiomas habla tu hermano?, ¿Cuántos idiomas hablas?, María y yo no hablamos mucho por teléfono) y en el texto cultural (no hablan los personajes, no necesita palabras para hablar de los temas, Hoy te hablo de mi familia)."
       }
@@ -323,26 +323,38 @@
         "p33-act7",
         "p33-act8",
         "p33-act9",
+        "p33-act9@R",
         "p33-act10",
+        "p33-act10@R",
         "p34-act3",
+        "p34-act3@R",
         "p35-act5",
+        "p35-act5@R",
         "p35-act6",
+        "p35-act6@R",
         "p36-act1",
+        "p36-act1@R",
         "p36-act2",
         "p36-act3",
         "p36-act4",
         "p37-act5",
         "p37-act6",
+        "p37-act6@R",
         "p37-act7",
+        "p37-act7@R",
         "p38-act1",
+        "p38-act1@R",
         "p38-act2",
         "p40-act1",
         "p40-act2",
         "p40-act3",
         "p41-act2",
+        "p41-act2@R",
         "p41-act3",
+        "p41-act3@R",
         "p41-act4",
-        "p41-act6"
+        "p41-act6",
+        "p41-act6@R"
       ],
       "descripcion": {
         "U3": "Recurrente: ya canónica en U1/U2 (paradigma completo). U3 la reactiva intensivamente para identificar relaciones de parentesco (Carlos y Juana son los abuelos de David, Es el abuelo de David, María es su hija) y profesiones (su madre es enfermera, El padre de Lucía es agricultor) y para expresar horas (Son las once, A las cinco y veinte)."
@@ -360,17 +372,22 @@
         "p33-act6",
         "p33-act8",
         "p33-act9",
+        "p33-act9@R",
         "p33-act10@R",
         "p34-act2",
         "p35-act4",
         "p35-act5",
         "p35-act6",
+        "p35-act6@R",
         "p36-act1",
+        "p36-act1@R",
         "p36-act2",
         "p38-act1",
+        "p38-act1@R",
         "p38-act2",
         "p38-act3",
         "p39-act7",
+        "p39-act7@R",
         "p40-act1",
         "p41-act1@R",
         "p41-act2"
@@ -385,7 +402,29 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["me llamo", "te llamas", "se llama", "se llaman", "os llamáis"],
-      "fuentes": ["p32-act2", "p32-act4", "p33-act5", "p33-act10@R", "p34-act3", "p35-act5", "p35-act6", "p35-act7", "p35-act8", "p36-act1", "p36-act2", "p38-act1", "p39-act7", "p41-act2"],
+      "fuentes": [
+        "p32-act2",
+        "p32-act2@R",
+        "p32-act4",
+        "p33-act5",
+        "p33-act10@R",
+        "p34-act3",
+        "p35-act5",
+        "p35-act6",
+        "p35-act6@R",
+        "p35-act7",
+        "p35-act7@R",
+        "p35-act8",
+        "p35-act8@R",
+        "p36-act1",
+        "p36-act2",
+        "p38-act1",
+        "p38-act1@R",
+        "p39-act7",
+        "p39-act7@R",
+        "p41-act2",
+        "p41-act2@R"
+      ],
       "descripcion": {
         "U3": "Recurrente: ya canónica en U1/U2. U3 la reactiva intensivamente como núcleo del bloque comunicativo 'Hablar de la familia': presentar nombres de parientes en serie (Su abuelo se llama Carlos, Su abuela se llama Juana...; Mis padres se llaman Juan y María; se llama Bárbara; ¿Cómo se llaman tus padres?)."
       }
@@ -396,7 +435,7 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["estás", "está", "estamos"],
-      "fuentes": ["p35-act5", "p36-act1", "p38-act1", "p38-act3", "p41-act3"],
+      "fuentes": ["p35-act5", "p36-act1", "p36-act1@R", "p38-act1", "p38-act3", "p41-act3"],
       "descripcion": {
         "U3": "Recurrente: ya canónica en U2 como anticipación. U3 la reactiva en localización (Vivo en la calle del instituto. Está muy cerca de aquí, p36; ¿Dónde está tu bolígrafo rojo?, p41), en valoración (Mis compañeros y yo estamos muy contentos, p35-act5) y en saludo (¿Qué tal estás?, p38)."
       }
@@ -407,7 +446,7 @@
       "rasgo_por_tiempo": { "Presente": "tipo gustar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["le gusta", "te gustan", "te gusta", "me gusta"],
-      "fuentes": ["p38-act1", "p38-act2", "p40-act1", "p40-act4", "p40-act5"],
+      "fuentes": ["p38-act1", "p38-act1@R", "p38-act2", "p40-act1", "p40-act4", "p40-act5"],
       "descripcion": {
         "U3": "Recurrente: ya canónica en U2 como anticipación. U3 la reactiva en el correo de Marta (A mí me gusta mucho la Historia; A Marta le gusta la Historia) y en el bloque cultural (¿Por qué esta película le gusta al público?, ¿Qué películas de animación te gustan?, ¿Cuál te gusta más?)."
       }

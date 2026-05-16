@@ -5,6 +5,39 @@
 
 ---
 
+## [v10.147 — 2026-05-16] — Fase 1: Lote 3B2 — verbos modo B (dual-tracking retroactivo) en U1-U5
+
+Aplicación del modo B (dual-tracking) al bloque `tiempos_y_verbos_consolidado`. Cierra Lote 3B para verbos: tras 3B1 (modo A, 21 reemplazos) y revisión del estado por el autor, se procede con dual retroactivo en las mismas 5 unidades.
+
+**Script:** se relaja el gate de `--include-dual` para incluir `--block verbos` (antes solo `vocab`). Sin cambios en la lógica de aplicación: política idéntica a Lote 3A vocab — para cada fuente `pNN-actMM` cuya palabra (matcher por `formas_trabajadas`) aparece en input Y en `respuestas[]`, se añade `pNN-actMM@R` alongside del plain.
+
+**Resultados (validador 0/0/0):**
+
+| Unidad | Duales aplicados |
+|---|---|
+| U0 | 0 (sin verbos) |
+| U1 | 13 |
+| U2 | 20 |
+| U3 | 39 |
+| U4 | 16 |
+| U5 | 15 |
+| **Total** | **103** |
+
+**Orden de aplicación** (mismo patrón que 3B1): U1, U2, U5 primero (anomalías bajas); U3, U4 después (anomalías concentradas).
+
+**Las 25 anomalías de verbos NO se resuelven en este lote.** Heredadas de Lote 3B1: verbos consolidados sobre actividades donde ninguna `forma_trabajada` listada aparece literal en el input ni en `respuestas[]` (patrón análogo a las 131 anomalías de vocab U2). Causa probable: deuda preexistente del extractor (consolidación por campo semántico sin aparición material) o `formas_trabajadas` incompleto. **Permanecen como deuda separada, no como parte cerrada del matcher**. La frase "Lote 3B cerrado completo para verbos" se refiere exclusivamente al apply de modos A y B sobre las fuentes detectables; no implica resolución de las 25 anomalías.
+
+**Estado consolidado del contrato v10.145 tras 3B2 (verbos completo modos A+B; gramática y pron congelados):**
+
+| Dimensión | Modo A | Modo B | Pendiente |
+|---|---|---|---|
+| vocabulario | ✅ 150 | ✅ 332 | — |
+| verbos | ✅ 21 | ✅ 103 | 25 anomalías documentadas (deuda) |
+| gramática | ⏸ | ⏸ | 🔒 Lote 3C — matcher por bloque sin definir |
+| pron-orto | ⏸ | ⏸ | 🔒 Lote 3C — matcher por bloque sin definir |
+
+---
+
 ## [v10.146 — 2026-05-16] — Fase 1: Lote 3B1 — verbos modo A (respuesta-only) en U1-U5
 
 Aplicación del modo A (respuesta-only → `@R`) al bloque `tiempos_y_verbos_consolidado` en U0-U5. Primera migración fuera de vocabulario tras validar el matcher por bloque (verbos: `formas_trabajadas` en lugar de lema infinitivo — hallazgo del autor que invalidó el 3B-mini previo).

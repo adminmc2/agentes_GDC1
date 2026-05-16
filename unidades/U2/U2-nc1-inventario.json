@@ -236,28 +236,39 @@
       "formas_trabajadas": ["soy", "eres", "es", "somos", "sois", "son"],
       "fuentes": [
         "p22-act1",
+        "p22-act1@R",
         "p22-act2",
+        "p22-act2@R",
         "p22-act3",
         "p23-act4",
         "p23-act5",
         "p23-act6",
         "p23-act10@R",
         "p24-act1",
+        "p24-act1@R",
         "p24-act3",
+        "p24-act3@R",
         "cuadro@p24#1",
         "p25-act5",
+        "p25-act5@R",
         "p25-act6",
+        "p25-act6@R",
         "p25-act7",
+        "p25-act7@R",
         "p26-act1",
+        "p26-act1@R",
         "p26-act3",
+        "p26-act3@R",
         "p26-act4",
         "p28-act1",
         "p28-act2",
+        "p28-act2@R",
         "p29-act3",
         "p29-act4",
         "p29-act6",
         "p30-act2",
         "p31-act1",
+        "p31-act1@R",
         "p31-act8"
       ],
       "descripcion": {
@@ -270,7 +281,7 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"],
-      "fuentes": ["p23-act12", "p24-act2", "p24-act3", "cuadro@p24#1", "p26-act1", "p26-act3", "p28-act1", "p29-act4", "p30-act1", "p30-act2", "p31-act2@R", "p31-act4", "p31-act8"],
+      "fuentes": ["p23-act12", "p24-act2", "p24-act2@R", "p24-act3", "p24-act3@R", "cuadro@p24#1", "p26-act1", "p26-act1@R", "p26-act3", "p28-act1", "p29-act4", "p30-act1", "p30-act2", "p31-act2@R", "p31-act4", "p31-act4@R", "p31-act8"],
       "descripcion": {
         "U2": "PCIC A1 §6.4 — U2 completa el paradigma plural del Presente (tenemos, tenéis, tienen) sobre la base singular de U1. Foco en la expresión de edad (Tengo X años), posesión (tener mochilas, libros) y disponibilidad de actividad (tener clase de...). Acts clave: p24-2, p24-3, p31-2."
       }
@@ -281,7 +292,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["me llamo", "te llamas", "se llama"],
-      "fuentes": ["p23-act4", "p25-act7", "cuadro@p25", "p26-act1", "p26-act3", "p28-act1", "p29-act6", "p29-act7@R", "p30-act2"],
+      "fuentes": ["p23-act4", "p25-act7", "p25-act7@R", "cuadro@p25", "p26-act1", "p26-act1@R", "p26-act3", "p28-act1", "p29-act6", "p29-act7@R", "p30-act2"],
       "descripcion": { "U2": "Recurrente: ya canónica en U1. U2 la reactiva en el diálogo de presentación de la sección Comunicación (¿Cómo te llamas? — Me llamo X) y en mediación (Mi compañera se llama...)." }
     },
     {
@@ -290,7 +301,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ir" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["vivo", "vives", "vive"],
-      "fuentes": ["p25-act7", "p26-act1", "p26-act4", "p27-act8", "p28-act1", "p29-act4", "p29-act6", "p29-act7@R", "p31-act8"],
+      "fuentes": ["p25-act7", "p25-act7@R", "p26-act1", "p26-act4", "p27-act8", "p27-act8@R", "p28-act1", "p29-act4", "p29-act6", "p29-act7@R", "p31-act8"],
       "descripcion": {
         "U2": "Anticipación: lema canónico de U3 (PCIC §1.2 Dirección). Incluido por decisión del autor para cubrir las formas que aparecen en el contenido de los diálogos y cartas (vivo en Madrid/Cádiz/París, ¿Dónde vives?, Lola vive en Málaga)."
       }
@@ -333,7 +344,7 @@
       "rasgo_por_tiempo": { "Presente": "tipo gustar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["le gusta"],
-      "fuentes": ["p25-act7", "p29-act6"],
+      "fuentes": ["p25-act7", "p25-act7@R", "p29-act6"],
       "descripcion": { "U2": "Anticipación: lema canónico de U4. Incluido por decisión del autor. Aparición incidental en frase de uso de mayúsculas ('A Juan le gusta Batman', p25-act7) y en mediación oral ('Le gusta...', p29-act6)." }
     },
     {

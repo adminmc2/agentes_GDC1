@@ -301,7 +301,29 @@
         "no nos gusta",
         "no os gusta"
       ],
-      "fuentes": ["p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p46-act2", "p46-act3", "p47-act7", "p47-act8", "p47-act9", "p48-act2", "p49-act4", "p49-act8", "p51-act4", "p51-act6", "cuadro@p44#1"],
+      "fuentes": [
+        "p44-act1",
+        "p44-act2",
+        "p44-act2@R",
+        "p44-act3",
+        "p44-act3@R",
+        "p44-act4",
+        "p46-act1",
+        "p46-act1@R",
+        "p46-act2",
+        "p46-act3",
+        "p47-act7",
+        "p47-act8",
+        "p47-act9",
+        "p48-act2",
+        "p49-act4",
+        "p49-act8",
+        "p51-act4",
+        "p51-act4@R",
+        "p51-act6",
+        "p51-act6@R",
+        "cuadro@p44#1"
+      ],
       "descripcion": {
         "U4": "PCIC A1 §15.2.2 — Verbos del tipo 'gustar'. Principal en U4: paradigma con pronombres átonos de OI (me/te/le/nos/os/les), oposición sg/pl según el sujeto pospuesto, intensificación (mucho/nada). Eje articulador de la comunicación 'expresar gustos en relación con la comida'."
       }
@@ -312,7 +334,7 @@
       "rasgo_por_tiempo": { "Presente": "irregularidad vocálica e→ie" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["quiero", "quieres", "quiere", "queremos", "queréis", "quieren", "no quiero", "no quiere", "no quieren", "no queremos"],
-      "fuentes": ["p43-act5", "p45-act7", "p45-act8@R", "p46-act1", "p46-act2", "p46-act4", "p47-act7", "p49-act5", "p49-act7", "p51-act1@R", "p51-act6", "cuadro@p45#2"],
+      "fuentes": ["p43-act5", "p45-act7", "p45-act7@R", "p45-act8@R", "p46-act1", "p46-act1@R", "p46-act2", "p46-act4", "p47-act7", "p49-act5", "p49-act5@R", "p49-act7", "p51-act1@R", "p51-act6", "p51-act6@R", "cuadro@p45#2"],
       "descripcion": {
         "U4": "PCIC A1 §16.3 — Presente de indicativo. Principal en U4: paradigma completo del presente, irregularidad e→ie (quiero, quieres, quiere, queremos, queréis, quieren). Función comunicativa: ofrecer y pedir ('¿Quieres...?' / 'Quiero...') en interacción de restaurante y oferta de postres."
       }
@@ -323,7 +345,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -er" },
       "tiempos": ["Presente", "Infinitivo"],
       "formas_trabajadas": ["comer", "come", "comen", "comemos", "como nunca"],
-      "fuentes": ["p43-act5", "p46-act1", "p46-act2", "p46-act3", "p47-act7", "p47-act8", "p48-act2", "p48-act3", "p49-act4", "p49-act9", "p50-act1", "p50-act3", "p50-act4"],
+      "fuentes": ["p43-act5", "p46-act1", "p46-act2", "p46-act3", "p47-act7", "p47-act8", "p48-act2", "p48-act2@R", "p48-act3", "p48-act3@R", "p49-act4", "p49-act9", "p49-act9@R", "p50-act1", "p50-act3", "p50-act4"],
       "descripcion": {
         "U4": "Recurrente de U3 (PRE 'comer'). En U4 reaparece en infinitivo como complemento de querer ('¿Quieres comer carne?'), en presente para describir hábitos alimentarios (sección Destrezas y Cultura) y en 3ª persona referida a 'los españoles' o 'los niños'. Refuerza el paradigma regular -er."
       }
@@ -343,7 +365,26 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["es", "son"],
-      "fuentes": ["p42-act3", "p43-act8", "p44-act2", "p44-act5", "p46-act1", "p46-act2", "p46-act3", "p48-act1", "p48-act2", "p48-act3", "p49-act6", "p49-act8", "p50-act1"],
+      "fuentes": [
+        "p42-act3",
+        "p43-act8",
+        "p43-act8@R",
+        "p44-act2",
+        "p44-act5",
+        "p46-act1",
+        "p46-act2",
+        "p46-act3",
+        "p48-act1",
+        "p48-act1@R",
+        "p48-act2",
+        "p48-act2@R",
+        "p48-act3",
+        "p48-act3@R",
+        "p49-act6",
+        "p49-act8",
+        "p50-act1",
+        "p50-act1@R"
+      ],
       "descripcion": { "U4": "Recurrente desde U1 (PRE 'ser'). En U4 sustenta predicaciones identificativas ('Es una bebida...', 'El plato principal es vegetariano', 'es mi comida favorita', 'Son rojas, amarillas o verdes'). Tercera persona predominante." }
     },
     {

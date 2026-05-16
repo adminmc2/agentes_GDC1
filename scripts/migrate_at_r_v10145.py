@@ -226,8 +226,8 @@ def main():
     args = ap.parse_args()
     if args.apply and args.dry_run:
         sys.stderr.write("ERROR: --apply y --dry-run son mutuamente excluyentes.\n"); sys.exit(2)
-    if args.include_dual and args.block != "vocab":
-        sys.stderr.write("ERROR: --include-dual solo permitido con --block vocab (Lote 3A).\n"); sys.exit(2)
+    if args.include_dual and args.block not in {"vocab", "verbos"}:
+        sys.stderr.write("ERROR: --include-dual solo permitido con --block vocab o verbos.\n"); sys.exit(2)
 
     blocks = list(BLOCK_MAP.keys()) if args.block == "all" else [args.block]
     # Bloques con --apply autorizado: vocab (Lote 2 v10.145a, Lote 3A v10.145b-d), verbos (Lote 3B1 v10.146).
@@ -240,11 +240,7 @@ def main():
             f"Bloques no autorizados detectados: {sorted(forbidden)}.\n"
             f"Usa --dry-run para estos bloques hasta autorizar apply.\n")
         sys.exit(2)
-    if args.apply and "verbos" in blocks and args.include_dual:
-        sys.stderr.write(
-            "ERROR: --include-dual no autorizado para --block verbos en Lote 3B1 (v10.146).\n"
-            "Solo modo A (respuesta-only). Modo B (dual) queda fuera por dictamen del revisor.\n")
-        sys.exit(2)
+    # Nota: --include-dual autorizado para --block verbos desde Lote 3B2 (v10.147).
 
     path = REPO / f"unidades/U{args.unit}/U{args.unit}-nc1-inventario.json"
     if not path.exists():

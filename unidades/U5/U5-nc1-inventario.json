@@ -171,7 +171,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Infinitivo"],
       "formas_trabajadas": ["ahorrar"],
-      "fuentes": ["p60-act1", "p60-act2"],
+      "fuentes": ["p60-act1", "p60-act2", "p60-act2@R"],
       "descripcion": {
         "U5": "PCIC A1 — Verbo canónico de U5 según registry. Aparece como infinitivo léxico en el texto cultural 'La vivienda verde' (p60-act01: 'Ahorro energético', 'para ahorrar energía'; p60-act02 definición: 'No gastar más de lo necesario')."
       }
@@ -182,7 +182,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Infinitivo"],
       "formas_trabajadas": ["contaminar"],
-      "fuentes": ["p60-act1", "p60-act2"],
+      "fuentes": ["p60-act1", "p60-act2", "p60-act2@R"],
       "descripcion": {
         "U5": "PCIC A1 — Verbo canónico de U5 según registry. Aparece como derivados/infinitivo léxico en el texto cultural 'La vivienda verde' (p60-act01: 'materiales contaminantes', 'evitar los materiales contaminantes'; p60-act02 definición: 'Hacer daño a la naturaleza...')."
       }
@@ -196,17 +196,23 @@
       "fuentes": [
         "p52-act4@R",
         "p52-act5",
+        "p52-act5@R",
         "p54-act1",
+        "p54-act1@R",
         "p54-act2",
+        "p54-act2@R",
         "p54-act3",
+        "p54-act3@R",
         "cuadro@p54#1",
         "cuadro@p54#2",
         "p55-act5",
+        "p55-act5@R",
         "p55-act6@R",
         "p55-act7",
         "p55-act8@R",
         "cuadro@p55",
         "p56-act1",
+        "p56-act1@R",
         "p56-act2",
         "p56-act3",
         "p56-act4@R",
@@ -216,7 +222,9 @@
         "p61-act1@R",
         "p61-act2",
         "p61-act3",
+        "p61-act3@R",
         "p61-act4",
+        "p61-act4@R",
         "p61-act5@R"
       ],
       "descripcion": {
@@ -229,7 +237,28 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["eres", "es", "son"],
-      "fuentes": ["p54-act2", "p55-act5", "p55-act6@R", "p55-act7", "p55-act8@R", "cuadro@p55", "p56-act1", "p57-act6", "p57-act7@R", "p58-act2@R", "p59-act8@R", "p60-act1", "p60-act4@R", "p61-act1", "p61-act4"],
+      "fuentes": [
+        "p54-act2",
+        "p54-act2@R",
+        "p55-act5",
+        "p55-act5@R",
+        "p55-act6@R",
+        "p55-act7",
+        "p55-act8@R",
+        "cuadro@p55",
+        "p56-act1",
+        "p56-act1@R",
+        "p57-act6",
+        "p57-act7@R",
+        "p58-act2@R",
+        "p59-act8@R",
+        "p60-act1",
+        "p60-act4@R",
+        "p61-act1",
+        "p61-act1@R",
+        "p61-act4",
+        "p61-act4@R"
+      ],
       "descripcion": { "U5": "Recurrente desde U1 (PRE 'ser'). En U5 sustenta la oposición ser/estar (cuadro p55, p55-act02, p55-act03, p55-act04) y la descripción de objetos y viviendas (p57-act06/07, p58, p61)." }
     },
     {
