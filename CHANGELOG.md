@@ -5,6 +5,30 @@
 
 ---
 
+## [v10.152b — 2026-05-17] — Doc: auditoría completa del registry léxico — cierre sin retiradas adicionales
+
+Cierre del hilo de auditoría del registry léxico iniciado en v10.152/v10.152a. Protocolo de auditoría aplicado: cruzar las 102 entradas del registry con uso en U0-U5 y con vocabulario declarado en `nc1-curso.json`.
+
+**Resultado:**
+
+| Estado | Cantidad |
+|---|---|
+| Conservar (origen `indice` del libro NC1) | 26 |
+| Conservar (atestadas en U0-U5) | 8 |
+| Conservar (reserva por encaje con U6-U9 declarado) | 16 |
+| Conservar (excepciones editoriales previas) | 4 |
+| Conservar (entradas pcic_a1 cuyo contenido NC1 trabaja bajo otro nombre canónico) | 48 |
+| **Total conservar** | **102** |
+| Retirar | **0** |
+
+**Decisión del autor sobre las 48 entradas pcic_a1 sin uso explícito en U0-U5:** se conservan. El criterio: las categorías PCIC A1 oficiales cubren contenido que NC1 trabaja bajo otros nombres canónicos (más editoriales). Mantenerlas como universo PCIC A1 de referencia permite cruzar pedagógicamente cualquier extracción futura con el repertorio oficial del nivel.
+
+**Sin cambios materiales en el registry, scripts ni inventarios.** Validador U0-U5 → 0/0/0.
+
+**Auditoría del registry léxico cerrada.** Próximo paso natural: extracción de U6-U9 sobre un registry estable y revisado.
+
+---
+
 ## [v10.152a — 2026-05-17] — Registry léxico: retirada de `Adverbios de posición` (huérfano confirmado)
 
 Cierre del primer hilo de la auditoría del registry léxico. Tras la rectificación de U5 en v10.152 (marcadores espaciales movidos a `gramatica_consolidada`), la entrada léxica `Adverbios de posición` quedó sin uso activo en ningún inventario.
