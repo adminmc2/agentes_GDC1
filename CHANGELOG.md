@@ -5,6 +5,32 @@
 
 ---
 
+## [v10.149b — 2026-05-17] — Doc: Apéndice transitorio del schema actualizado (§A.1 + §A.3 + §A.4)
+
+Ajuste documental tras dictamen del revisor sobre el estado real del validador frente a las nuevas reglas §5.10 y §5.11 (introducidas en v10.149 y corregidas en v10.149a). El revisor señaló que el Apéndice transitorio del schema describía mal la realidad y que añadir nuevas deudas sin sanear el relato existente reproduciría exactamente la desalineación contractual que el proyecto vino corrigiendo desde v10.145.
+
+**Tres correcciones aplicadas a `schema-inventario.md` Apéndice transitorio:**
+
+**§A.1 — Estado de alineación validador ↔ schema (reescrita).** El texto anterior decía que `scripts/validar_inventario.py` "todavía valida el modelo viejo" y que la validación del shape nuevo era manual en su totalidad. Eso ya no es cierto: el validador actual sí sostiene los 4 bloques top-level consolidados, los enums vigentes (`TIPOS_VALIDOS`, `TIPOS_CUADRO_VALIDOS`, `enfoque`, `tiempo`), el formato de fuentes con `@R` como localización (§9.5 post-v10.145), `tipo_cuadro`, `_migracion_rediseno` y chequeos estructurales por actividad y cuadro. La nueva redacción declara que la **deuda restante es parcial y específica**, y remite a §A.3 para el detalle.
+
+**§A.3 — Deuda restante del validador (reescrita).** Limpiada de pendientes ya absorbidos (enums renombrados, top-level migrado, schema por actividad, `vocabulario_consolidado` sin `comprension`, regex de fuentes, semántica de `@R`, coincidencia con `nc1-curso.json`). Quedan declarados como deuda viva, con alcance preciso:
+
+- **§5.10 Categoría A** — validación automática parcial pendiente: la lógica de matcher con expansión de flexiones ya existe en `scripts/migrate_at_r_v10145.py` y puede portarse al validador. Falsos positivos del matcher se escalan a §0.1.
+- **§5.10 Categoría B** — no validable automáticamente. Requiere juicio editorial. Sostenida por revisión humana + justificación en `descripcion` cuando exista.
+- **§5.11** — validación automática parcial pendiente para detección de pares no unificados; excepciones léxicas (compuestos multi-token, nombres propios, lemas sin par atestado) requieren criterio manual.
+- Otros pendientes técnicos preservados (desalineación verbos-canonicos.json, normalización a minúscula en consolidado).
+
+**§A.4 — Condiciones de retirada (ampliada).** Antes exigía "validador alineado con este schema" sin más. Ahora distingue entre:
+
+- **Parte mecanizable**: el validador debe absorberla regla por regla.
+- **Parte no mecanizable** (§5.10 Categoría B, excepciones léxicas de §5.11): la retirada NO exige automatización total; exige **protocolo explícito** documentado de validación manual y escalada por §0.1.
+
+Sin esta distinción, la retirada del apéndice quedaba autoimpuesta como cierre imposible o artificial (algunas reglas son puramente editoriales por naturaleza).
+
+**Lo que NO cambia.** §A.2 (clave `_migracion_rediseno`) y §A.5 (claves `_fixture_*`) intactas. Sin cambios en `reglas-operativas.md`, scripts ni JSONs. Validador U0-U5 → 0/0/0.
+
+---
+
 ## [v10.149a — 2026-05-17] — Doc: corrección de §5.11 (unificación condicionada a 2+ flexiones atestadas)
 
 Ajuste documental tras dictamen del revisor sobre v10.149. La redacción anterior de §5.11 decía *"se unifican siempre en una sola entrada con lema canónico singular"*, lo que entraba en contradicción con:

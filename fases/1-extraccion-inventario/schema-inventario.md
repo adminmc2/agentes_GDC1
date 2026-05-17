@@ -568,14 +568,16 @@ Marcas opcionales permitidas en el JSON con su shape exacto, ubicación y ciclo 
 
 ### A.1 Estado de alineación validador ↔ schema (hoy)
 
-Este schema describe el modelo nuevo (4 bloques top-level consolidados, 4 listas tipadas por actividad, sufijo `@R`, marcas internas declaradas). `scripts/validar_inventario.py` todavía valida el modelo viejo. La desalineación es **consciente y temporal**.
+Este schema describe el modelo nuevo (4 bloques top-level consolidados, 4 listas tipadas por actividad, sufijo `@R`, marcas internas declaradas). `scripts/validar_inventario.py` **ya está alineado con gran parte del shape canónico**: cubre los 4 bloques top-level consolidados (claves obligatorias, sub-bloques `principal`/`recurrente`, regex de fuentes con `@R` como localización per §9.5), las enumeraciones cerradas vigentes (`TIPOS_VALIDOS`, `TIPOS_CUADRO_VALIDOS`, `enfoque`, `tiempo`), las marcas internas declaradas, `_migracion_rediseno` y los chequeos estructurales por actividad y cuadro.
+
+La desalineación restante es **parcial y específica**: el validador no sostiene aún algunas reglas declaradas en este schema y en `reglas-operativas.md`. El detalle se enumera en §A.3.
 
 Implicaciones operativas mientras dure:
 
 - Este schema es la autoridad sobre el shape nuevo.
-- El validador produce errores falsos sobre inventarios que cumplen el shape nuevo.
-- La validación contra el shape nuevo es **manual** (lectura del schema + revisión visual).
-- Los inventarios viejos (U0–U9 ya extraídos, no migrados) no cumplen este schema; es esperado.
+- Para las piezas ya cubiertas, el validador es el gate de cierre (0 errores y 0 avisos).
+- Para las piezas listadas en §A.3, la validación es **manual** (lectura del schema + revisión visual o auditoría programática puntual) hasta absorción.
+- Los inventarios viejos (U6–U9 sin migrar a la fecha) pueden no cumplir este schema; es esperado mientras dure el plan de migración.
 
 ### A.2 Clave transitoria `_migracion_rediseno`
 
@@ -595,21 +597,23 @@ Clave opcional top-level admitida **solo mientras dure la migración**. Marca un
 
 **¿Bloquea cierre?** No. Es metadata de migración.
 
-### A.3 Deuda específica que `validar_inventario.py` debe absorber en Paso 3
+### A.3 Deuda restante del validador
 
-Listado vivo de cambios canonizados en este schema que el validador aún no contempla. Se completa cuando Paso 3 cierre.
+Listado vivo de reglas declaradas en este schema o en `reglas-operativas.md` que el validador **aún no sostiene total o parcialmente**. Solo entradas con deuda real; los pendientes ya absorbidos se retiran de esta lista al cerrarse.
 
-- **Enum `enfoque` (§5c)** — renombrado `fonetica` → `pronunciacion_ortografia`.
-- **Enum `tipo_cuadro` (§7)** — renombrado `fonetico` → `pronunciacion_ortografia`.
-- **Enum `tiempo` (§5d)** — estado actual: 4 valores (`Presente`, `Pretérito indefinido`, `Imperativo`, `Infinitivo`). Cambios acumulados respecto al modelo viejo: (1) añadido `Infinitivo` para cubrir la categoría "forma no personal del verbo" trabajada fuera de perífrasis; (2) retirado `Perífrasis` por opción B (v10.115): las perífrasis no son tiempos verbales sino estructuras sintácticas — se codifican aparte en `actividad.tiempos_y_verbos[].estructura_perifrastica` (ver §3.2). El auxiliar conserva su tiempo real (típicamente `Presente`). `Participio` y `Gerundio` se descartan en NC1 por inexistencia en el corpus.
-- **Top-level** — claves obligatorias nuevas (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`) y claves opcionales declaradas (`_decisiones_ia`, `_migracion_rediseno`).
-- **Schema por actividad** — eliminados `contenido_linguistico` y `campo_semantico`; añadidas las 4 listas tipadas y las marcas internas `_funcion_ambigua`, `_decisiones_ia`.
-- **`vocabulario_consolidado`** — sub-bloque `comprension` eliminado del modelo.
-- **Formato de fuentes (§9.5)** — regex con sufijo `@R` que marca **localización en `respuestas[]`** (cualquier tipo de actividad).
-- **Coincidencia con `nc1-curso.json`** — los campos top-level (`unidad`, `titulo`, `paginas_libro`, `nivel`, `contenidos_indice`) deben coincidir exactamente con la entrada de la unidad en `nc1-curso.json`.
-- **Desalineación `tiempos_y_verbos_consolidado` (§9.2) ↔ `verbos-canonicos.json`** — `lema`, `tipo_de_verbo`, `rasgo_por_tiempo` y `tiempos` ya alineados. Pendientes: el schema declara `formas_trabajadas` (lista de formas concretas literales del libro), `fuentes` (lista pNN-actMM/cuadro@pNN) y `descripcion` (U<n> → texto); el registry usa `apariciones` (U<n> → lista de tiempos abreviados) y `lo_que_se_trabaja` (U<n> → texto), y no guarda formas concretas. Decidir en Paso 3 qué shape gana en cada campo pendiente y alinear el otro.
-- **Semántica de `@R` (§9.5)** — **marcador de localización** ("palabra solo en `respuestas[]`"), no de naturaleza pedagógica. Aplica a cualquier `tipo` de actividad. Redefinido en v10.145 tras detectar que el contrato anterior (acoplado a 5 tipos productivos) generaba falsos negativos sistemáticos en actividades no-productivas con la palabra revelada solo en respuestas (escucha_y_responde, completa_huecos, relaciona con lema en columna, etc.). La dimensión pedagógica vive en `actividad.tipo` y se cruza en runtime.
-- **Normalización de `formas_trabajadas` en consolidado.** Literalidad estricta en actividad/cuadro (incluida mayúscula inicial de frase); **minúscula** en `tiempos_y_verbos_consolidado.formas_trabajadas` al agregar. Evita duplicados artificiales (`["Tengo", "tengo"]`). El validador, al alinearse, debe comprobar que las formas del consolidado están en minúscula.
+**§5.10 — Aparición material como condición de codificación (`reglas-operativas.md`).**
+
+- **§5.10 Categoría A — validación automática parcial pendiente.** Cada fuente A (lemas léxicos, formas verbales conjugadas, realizaciones gramaticales superficiales) debería verificarse contra aparición literal en el contenido didáctico definido en §5.2, en `respuestas[]` cuando aplique y en el cuerpo de cuadros. La lógica de matcher con expansión de flexiones (`expand_needle`) ya existe en `scripts/migrate_at_r_v10145.py` y puede portarse al validador. Hasta entonces, validación manual con apoyo del script auxiliar. Falsos positivos del matcher (flexiones que el `expand_needle` no cubre) se escalan a §0.1.
+- **§5.10 Categoría B — no validable automáticamente.** Etiquetas del registry, paradigmas editoriales condensados, notación técnica de pron/orto. Requieren juicio editorial sobre si la actividad/cuadro trabaja pedagógicamente el fenómeno declarado. Sostenida por revisión humana + justificación en `descripcion` cuando exista (§5.1.3).
+
+**§5.11 — Unificación de flexiones en `vocabulario_consolidado` (`reglas-operativas.md`).**
+
+- **Validación automática parcial pendiente.** Detección de pares de items en un mismo `<categoria>.items[]` que sean flexiones del mismo lema (regex sobre raíz + sufijos comunes -o/-a/-os/-as, -e/-es, etc.) y reporte de unificación faltante. Excepciones léxicas (compuestos multi-token, nombres propios, lemas atestados en una sola forma) requieren criterio manual y deben quedar fuera del check automático para evitar falsos positivos. Hasta absorción, validación manual con apoyo de script auxiliar.
+
+**Otros pendientes técnicos:**
+
+- **Desalineación `tiempos_y_verbos_consolidado` (§9.2) ↔ `verbos-canonicos.json`** — `lema`, `tipo_de_verbo`, `rasgo_por_tiempo` y `tiempos` ya alineados. Pendientes: el schema declara `formas_trabajadas` (lista de formas concretas literales del libro), `fuentes` (lista pNN-actMM/cuadro@pNN) y `descripcion` (U<n> → texto); el registry usa `apariciones` (U<n> → lista de tiempos abreviados) y `lo_que_se_trabaja` (U<n> → texto), y no guarda formas concretas. Decidir qué shape gana en cada campo pendiente y alinear el otro.
+- **Normalización de `formas_trabajadas` en consolidado.** Literalidad estricta en actividad/cuadro (incluida mayúscula inicial de frase); **minúscula** en `tiempos_y_verbos_consolidado.formas_trabajadas` al agregar. Evita duplicados artificiales (`["Tengo", "tengo"]`). El validador debe comprobar que las formas del consolidado están en minúscula.
 - **Suite automatizada de verificación global de integridad.** Construir un script (ampliando `scripts/validar_inventario.py` o creando `scripts/verificar_integridad.py`) que ejecute, contra TODOS los JSONs del proyecto:
   1. Cumplimiento del shape declarado en este schema (top-level, página, actividad, cuadro, 4 bloques consolidados, enumeraciones cerradas, restricciones condicionales).
   2. Toda referencia canónica usada en un inventario existe en su registry (`campos-semanticos-canonicos.json`, `verbos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`).
@@ -627,11 +631,12 @@ Listado vivo de cambios canonizados en este schema que el validador aún no cont
 Este apéndice se elimina, y con él la clave `_migracion_rediseno` y el aviso transitorio del header, cuando se cumplen **todas** estas condiciones:
 
 1. U0–U9 migradas al shape nuevo y validando sin errores.
-2. `scripts/validar_inventario.py` alineado con este schema.
-3. `reglas-operativas.md` alineada con este schema.
-4. Ningún inventario conserva `_migracion_rediseno`.
-5. La validación manual deja de ser mecanismo sustitutivo del validador.
-6. Se registra el cierre en `CHANGELOG.md`.
+2. `scripts/validar_inventario.py` ha **absorbido la parte mecanizable** de las reglas listadas en §A.3 (regla por regla, lo que sea automatizable: cumplimiento de shape, enumeraciones, formato de fuentes, formas en minúscula en consolidado, §5.10 Categoría A, §5.11 detección de pares no unificados).
+3. Para las reglas con **parte no mecanizable** (§5.10 Categoría B, excepciones léxicas de §5.11, otros casos editoriales declarados), existe un **protocolo explícito** documentado: cuándo y cómo se valida manualmente, qué se exige en `descripcion`, qué casos se escalan por §0.1. La retirada NO exige automatización total de estas reglas; exige protocolo cerrado.
+4. `reglas-operativas.md` alineada con este schema.
+5. Ningún inventario conserva `_migracion_rediseno`.
+6. La validación manual deja de ser mecanismo sustitutivo del validador para la parte mecanizable; para la parte editorial, sigue siendo el mecanismo legítimo declarado por protocolo.
+7. Se registra el cierre en `CHANGELOG.md`.
 
 ### A.5 Metadata extracontractual: claves `_fixture_*`
 
