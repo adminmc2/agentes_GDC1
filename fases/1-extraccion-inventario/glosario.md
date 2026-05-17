@@ -707,7 +707,7 @@ Cuando llegue NC2 (A1.2 / A2), cada par fuente↔registry se amplía según nece
 
 `schema-inventario.md` y `scripts/validar_inventario.py` son **contratos paralelos**: el primero declara la forma del JSON; el segundo la comprueba ejecutando código. Cualquier divergencia entre ambos es un bug y se resuelve antes del cierre. El validador debe chequear cinco categorías de regla, sin excepción.
 
-> **Nota transitoria.** El validador actual no está alineado con el schema nuevo. Hasta el cierre de la migración (Paso 3 del plan), la validación contra el shape canónico es manual: lectura del schema + revisión visual. Las cinco categorías que vienen a continuación describen el contrato canónico final, no el estado vigente. Estado vivo, deuda específica y condiciones de retirada → Apéndice transitorio del schema (§A.1, §A.3) y nota transitoria del prompt.
+> **Estado actual del validador (post-v10.151).** Las cinco categorías describen el contrato y, en su parte mecanizable, el chequeo automatizado vigente: shape, claves obligatorias, enumeraciones cerradas, regex de fuentes, §5.10 Categoría A y §5.11. La parte editorial no automatizable (§5.10 Categoría B y excepciones léxicas de §5.11) se valida manualmente y queda delimitada en `schema-inventario.md` §A.3.
 
 ### Claves obligatorias
 

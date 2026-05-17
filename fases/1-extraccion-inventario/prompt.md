@@ -17,9 +17,7 @@
 3. Revisión visual del autor (2-3 páginas al azar contra PDF) → OK explícito.
 4. Cualquier caso no contemplado en los contratos vivos ha sido escalado al autor antes del cierre.
 
-> **Nota transitoria.** Mientras `scripts/validar_inventario.py` no esté alineado con `schema-inventario.md`, el gate 1 (validador automático) queda sustituido por validación manual contra el schema y revisión visual. `reglas-operativas.md` y `convenciones-y-casos.md` sí están alineados con el schema.
->
-> Puntos de divergencia conocidos y condiciones de retirada → Apéndice transitorio del schema (§A.1, §A.3).
+> El validador `scripts/validar_inventario.py` es el gate automático de cierre para la parte mecanizable del contrato: shape canónico, enumeraciones, fuentes, §5.10 Categoría A y §5.11 (Lote 3E, v10.151). La deuda residual y la parte editorial no automatizable se documentan en el Apéndice transitorio del schema (§A.1, §A.3, §A.4).
 
 ---
 
@@ -58,9 +56,10 @@
 2. Extrae según `schema-inventario.md` (§2-§4): texto verbatim + estructura física + IDs estables. `tipo`, `destreza`, `enfoque` y las 4 listas tipadas son parte del shape final; su población se difiere al paso 3.
 3a. Clasifica y puebla actividades y cuadros según `reglas-operativas.md` (3 ejes + 4 listas tipadas + datos literales).
 3b. Deriva los 4 bloques top-level consolidados (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`) a partir de las listas tipadas de actividades y cuadros.
-4. Valida: si el validador automático está alineado con el schema, ejecuta `python3 scripts/validar_inventario.py X` y vuelve al paso 3 si emite errores. **Estado transitorio (ver nota arriba):** mientras `scripts/validar_inventario.py` no esté alineado con `schema-inventario.md`, la validación es manual contra el schema + revisión visual del autor.
-5. Escribe el JSON en `unidades/UX/UX-nc1-inventario.json`.
-6. Avisa al autor para revisión visual.
+4. Escribe el JSON candidato en `unidades/UX/UX-nc1-inventario.json`.
+5. Aplica `python3 scripts/cleanup_v150.py --unit X --apply` para sanear automáticamente la parte mecanizable de §5.10 y §5.11 sobre el JSON ya escrito.
+6. Valida con `python3 scripts/validar_inventario.py X` → debe dar 0/0/0. Si emite errores, vuelve al paso 3.
+7. Avisa al autor para revisión visual.
 
 ---
 

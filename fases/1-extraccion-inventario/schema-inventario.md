@@ -4,7 +4,7 @@
 >
 > **No contiene:** cuándo aplica cada campo, cómo elegir el valor, reglas de población semántica, workflow de extracción, ejemplos pedagógicos ni casos históricos. Esos viven en `reglas-operativas.md` o `convenciones-y-casos.md`.
 
-> ⚠️ **Aviso transitorio:** `validar_inventario.py` aún no está alineado con este schema; la validación contra este shape es manual. `reglas-operativas.md` y `convenciones-y-casos.md` sí están alineados. Detalle, implicaciones y criterios de retirada → **Apéndice transitorio** al final del documento.
+> ℹ️ `validar_inventario.py` es el gate automático de cierre para la parte mecanizable del contrato: shape canónico, enumeraciones, fuentes, §5.10 Categoría A y §5.11 desde v10.151. La deuda residual y la parte editorial no automatizable se documentan en el **Apéndice transitorio** al final del documento (§A.1, §A.3, §A.4).
 >
 > **Precedencia entre contratos vivos en caso de conflicto:** `schema-inventario.md` > `reglas-operativas.md` > `convenciones-y-casos.md`.
 

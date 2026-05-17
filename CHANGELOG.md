@@ -5,6 +5,34 @@
 
 ---
 
+## [v10.153 — 2026-05-17] — Doc: saneamiento documental fase 1 (post-v10.151) + cleanup integrado en flujo oficial
+
+Tras el cierre de la auditoría del registry léxico (v10.152b), la última deuda en fase 1 era documental: cuatro archivos seguían describiendo un validador desalineado y un proceso de "validación manual transitoria" que ya no aplica desde el Lote 3E (v10.151).
+
+**Dictamen del revisor:** antes de lanzar U6 piloto, sanear la documentación operativa para que refleje el estado real (validador como gate automático para la parte mecanizable) y integrar `cleanup_v150.py` explícitamente en el flujo oficial de extracción.
+
+**Cambios aplicados:**
+
+`fases/1-extraccion-inventario/prompt.md`:
+- Nota transitoria sobre validador desalineado **retirada**.
+- Sustituida por una línea afirmativa: validador como gate automático para la parte mecanizable (shape + enums + fuentes + §5.10 A + §5.11) desde v10.151; deuda residual en Apéndice transitorio.
+- **Flujo de pasos reordenado.** Antes el cleanup no podía insertarse entre 3b y 4 porque exige JSON ya escrito en disco. Nuevo orden: 1 verificar PDF → 2 extraer shape → 3a clasificar → 3b derivar consolidados → **4 escribir JSON candidato** → **5 aplicar `cleanup_v150.py --apply`** → **6 validar** → 7 avisar al autor. La numeración pasa de 6 a 7 pasos.
+
+`fases/1-extraccion-inventario/CLAUDE.md`:
+- Validador descrito como gate real (no transitorio). Regla crítica #4 simplificada. Regla crítica #5 mantiene el principio (schema↔validador no divergen) y reformula la deuda residual como "ya no invalida el gate automático", delimitada en §A.3.
+
+`fases/1-extraccion-inventario/schema-inventario.md`:
+- Aviso top reformulado: validador como gate automático para la parte mecanizable, deuda residual en Apéndice. No promete alineación absoluta.
+
+`fases/1-extraccion-inventario/glosario.md`:
+- Nota transitoria del §13 (Sincronía con el validador) sustituida por estado actual post-v10.151. Las cinco categorías describen contrato + chequeo automatizado en su parte mecanizable.
+
+**Sin cambios** en JSONs, scripts, registries ni Apéndice transitorio. Validador U0-U5 → 0/0/0.
+
+**Estado tras este commit:** documentación operativa de fase 1 alineada con el estado técnico real. El siguiente paso natural es **extraer U6 piloto** con el flujo corregido y medir el coste real de corrección.
+
+---
+
 ## [v10.152b — 2026-05-17] — Doc: auditoría completa del registry léxico — cierre sin retiradas adicionales
 
 Cierre del hilo de auditoría del registry léxico iniciado en v10.152/v10.152a. Protocolo de auditoría aplicado: cruzar las 102 entradas del registry con uso en U0-U5 y con vocabulario declarado en `nc1-curso.json`.
