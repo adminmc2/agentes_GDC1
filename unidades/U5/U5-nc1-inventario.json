@@ -128,19 +128,6 @@
         "descripcion": {
           "U5": "PCIC A1 §3.7 — Tipos de vivienda y alojamiento turístico. Principal en U5: léxico de alojamientos (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) trabajado en p53 con vocabulario visual, definiciones (p53-act09) y elección personal (p53-act10), y en p58-59 con descripción de viviendas reales."
         }
-      },
-      "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca": {
-        "items": [
-          {"palabra": "al lado", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R"]},
-          {"palabra": "debajo", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p56-act1", "p56-act1@R", "p56-act2", "p61-act2@R"]},
-          {"palabra": "delante", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R"]},
-          {"palabra": "detrás", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p61-act2@R"]},
-          {"palabra": "encima", "fuentes": ["p54-act3", "p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p56-act1", "p56-act1@R", "p56-act2", "p61-act2", "p61-act2@R"]}
-        ],
-        "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R", "p56-act1", "p56-act1@R", "p56-act2", "p54-act3", "p61-act2"],
-        "descripcion": {
-          "U5": "Léxico principal U5. Primera aparición real en NC1: el manual enseña los 5 marcadores espaciales (encima, debajo, delante, detrás, al lado) en cuadro@p54#2 (figura cubo+perro) y los aplica con 'estar' en p54-act3, p55-act1, p55-act4, p55-act5, p56-act1, p58-act1, p59-act3, p61-act2. El canónico léxico (origen: indice) cubre la lista extendida del índice del libro; en U5 se atestan los 5 lemas concretos arriba indicados. Sustituye al bloque transitorio 'Adverbios de posición' creado en v10.141 (cuyo único item era placeholder genérico 'Posición')."
-        }
       }
     },
     "recurrente": {
@@ -292,11 +279,15 @@
       },
       "Adverbios y locuciones de lugar": {
         "items": [
-          {"palabra": "Posición", "fuentes": ["cuadro@p54#2"]}
+          {"palabra": "al lado", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R"]},
+          {"palabra": "debajo", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p56-act1", "p56-act1@R", "p56-act2", "p61-act2@R"]},
+          {"palabra": "delante", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R"]},
+          {"palabra": "detrás", "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p61-act2@R"]},
+          {"palabra": "encima", "fuentes": ["p54-act3", "p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p56-act1", "p56-act1@R", "p56-act2", "p61-act2", "p61-act2@R"]}
         ],
-        "fuentes": ["cuadro@p54#2"],
+        "fuentes": ["p54-act3@R", "cuadro@p54#2", "p55-act4@R", "p55-act8", "p61-act2@R", "p56-act1", "p56-act1@R", "p56-act2", "p54-act3", "p61-act2"],
         "descripcion": {
-          "U5": "Principal gramatical en U5 (paralelo al canónico léxico 'Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca' en vocabulario_consolidado). La unidad trabaja simultáneamente: (a) el léxico concreto de palabras de posición (encima, debajo, detrás, delante, al lado) — codificado en vocabulario_consolidado bajo 'Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca'; (b) la categoría adverbial-gramatical que esas palabras instancian — codificada aquí. Doble codificación intencional: léxico (qué se dice) + sintaxis (cómo funciona con 'estar'). Fuentes: cuadro@p54#2, p54-act3, p55-act1, p55-act4, p55-act5, p56-act1, p58-act1, p59-act3, p61-act2."
+          "U5": "Principal gramatical en U5 — PCIC A1 §8 (Adverbios y locuciones adverbiales). La unidad enseña 5 adverbios/locuciones de lugar para indicar posición espacial: encima, debajo, delante, detrás, al lado. Se presentan en cuadro@p54#2 (figura cubo+perro) y se aplican con 'estar' en p54-act3, p55-act4, p55-act7, p55-act8, p56-act1, p56-act2, p58-act1, p59-act6, p61-act2. NC1 los introduce explícitamente en A1.1 como contenido gramatical (índice del libro coloca 'Posición' en gramatica, no vocabulario). Rectificación editorial en v10.152: anterior a v10.152 estos items vivían erróneamente duplicados en vocabulario_consolidado bajo 'Marcadores de lugar: a la izquierda, ..., cerca'; se trasladaron aquí porque pedagógicamente son gramática, no léxico (siguiendo el índice del libro y PCIC §8). El canónico léxico 'Marcadores de lugar: a la izquierda, ..., cerca' queda disponible para unidades futuras que enseñen marcadores espaciales relativos (izquierda/derecha/enfrente/entre/lejos/cerca), no presentes en U5."
         }
       }
     },
@@ -426,6 +417,14 @@
       "diagnostico": "Tras revisión del autor: (a) el bloque 'Marcadores de lugar' estaba marcado como recurrente desde U2, pero U2 no enseña esos lemas como léxico (solo aparecen 'izquierda/derecha' como claves técnicas de columnas_relaciona y 'delante' en una instrucción de aula). (b) El bloque 'Adverbios de posición' tenía como único item el placeholder genérico 'Posición', sin lemas reales. (c) Ambos cubrían exactamente el mismo contenido en U5 (los 5 marcadores espaciales del cuadro cubo+perro).",
       "accion": "(1) 'Adverbios de posición' retirado de vocabulario_consolidado.principal y de las 9 refs en actividad/cuadro.vocabulario. (2) 'Marcadores de lugar: a la izquierda, ..., cerca' reclasificado de recurrente → principal en U5, con items reales (al lado, debajo, delante, detrás, encima) y descripción corregida (primera aparición real en NC1, no recurrente desde U2). (3) Descripción de la entrada gramatical paralela 'Adverbios y locuciones de lugar' actualizada para apuntar al nuevo canónico léxico. (4) Canónico 'Adverbios de posición' en el registry léxico NO se retira (decisión del autor: revisar más adelante).",
       "ramifica": "P16 (v10.141 + v10.141b) queda parcialmente revertida en su parte léxica: el bloque 'Adverbios de posición' creado en v10.141 no se mantiene en U5. La doble codificación léxico+gramática que P16 introdujo se preserva, pero usando 'Marcadores de lugar' como canónico léxico."
+    },
+    {
+      "id": "P18",
+      "version": "v10.152",
+      "decision": "Rectificación editorial: marcadores espaciales (encima, debajo, delante, detrás, al lado) movidos de vocabulario a gramática.",
+      "diagnostico": "El índice del libro NC1 coloca 'Posición: encima, debajo, detrás, delante, al lado' en gramatica, no en vocabulario. PCIC A1 §8 los categoriza como adverbios/locuciones adverbiales de lugar. La codificación previa (v10.141 y v10.144) los puso erróneamente en vocabulario_consolidado bajo 'Marcadores de lugar: a la izquierda, ..., cerca' — etiqueta del registry léxico que cubre OTRO conjunto de marcadores (izquierda/derecha/enfrente/etc., no presentes en U5).",
+      "accion": "(1) Bloque léxico 'Marcadores de lugar: a la izquierda, ..., cerca' retirado de vocabulario_consolidado.principal. (2) 5 items reales (al lado, debajo, delante, detrás, encima) con sus fuentes trasladados a gramatica_consolidada.principal['Adverbios y locuciones de lugar'] (categoría canónica preexistente en gramatica-canonica.json). (3) Refs en actividad.vocabulario / cuadro.vocabulario retiradas; refs equivalentes añadidas a actividad.gramatica / cuadro.gramatica donde faltaban. (4) Descripción gramatical reescrita reflejando el cambio.",
+      "ramifica": "Invalida parcialmente P16 (v10.141 + v10.141b) y P17 (v10.144) — la 'doble codificación' léxico+gramatical introducida entonces se sustituye por codificación única en gramática. El canónico léxico 'Marcadores de lugar: a la izquierda, ..., cerca' del registry queda disponible para unidades futuras que enseñen los marcadores que sí cubre (izquierda/derecha/enfrente/entre/lejos/cerca). 'Adverbios de posición' del registry léxico — su uso vivía solo aquí — queda como huérfano (auditoría aparte del registry)."
     }
   ],
   "paginas_detalle": [
@@ -775,11 +774,7 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Observa la habitación de Mario. Después, contesta a las preguntas utilizando el marcador de lugar correspondiente.",
-          "vocabulario": [
-            "Mobiliario",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
-          ],
+          "vocabulario": ["Mobiliario"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]}
           ],
@@ -850,7 +845,7 @@
             "ejemplos": []
           },
           "observaciones": null,
-          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": [],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
           ],
@@ -870,7 +865,7 @@
           "destreza": ["comprension_auditiva", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Ahora escucha a la madre de Mario y completa la tabla colocando cada cosa en su lugar.",
-          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": [],
           "tiempos_y_verbos": [],
           "gramatica": ["Adverbios y locuciones de lugar"],
           "pronunciacion_ortografia": [],
@@ -945,7 +940,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Relaciona las preguntas y sus respuestas.",
-          "vocabulario": ["Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": [],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "eres"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estás", "están", "está"]}
@@ -970,12 +965,7 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Lee la descripción del salón de Guillermo. Después, describe el salón de tu casa y dibújalo.",
-          "vocabulario": [
-            "Mobiliario",
-            "Adjetivos descriptivos",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
-          ],
+          "vocabulario": ["Mobiliario", "Adjetivos descriptivos"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
@@ -1027,11 +1017,7 @@
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "vocabulario": [
-            "Mobiliario",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
-          ],
+          "vocabulario": ["Mobiliario"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "Están", "Estáis"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
@@ -1071,11 +1057,11 @@
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "¿Verdadero (V) o falso (F)?",
-          "vocabulario": ["Mobiliario", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Mobiliario"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["están", "está"]}
           ],
-          "gramatica": [],
+          "gramatica": ["Adverbios y locuciones de lugar"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
@@ -1290,7 +1276,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "¿Cómo es su habitación ideal? Lee estas cuatro descripciones.",
-          "vocabulario": ["Mobiliario", "Partes de la casa", "Adjetivos descriptivos", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Mobiliario", "Partes de la casa", "Adjetivos descriptivos"],
           "tiempos_y_verbos": [
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["Está", "está"]},
@@ -1453,12 +1439,7 @@
           "destreza": ["expresion_oral", "interaccion_oral"],
           "enfoque": "transversal",
           "instruccion_original": "En parejas. A explica cómo es su dormitorio y B dibuja un plano con las explicaciones que le da A.",
-          "vocabulario": [
-            "Mobiliario",
-            "Partes de la casa",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
-          ],
+          "vocabulario": ["Mobiliario", "Partes de la casa"],
           "tiempos_y_verbos": [],
           "gramatica": ["Hay", "Adverbios y locuciones de lugar"],
           "pronunciacion_ortografia": [],
@@ -1671,11 +1652,7 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Contesta a las preguntas, fijándote en los dibujos.",
-          "vocabulario": [
-            "Mobiliario",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
-            "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
-          ],
+          "vocabulario": ["Mobiliario"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]}
           ],
@@ -1718,12 +1695,12 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Ordena las conversaciones.",
-          "vocabulario": ["Adjetivos descriptivos", "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"],
+          "vocabulario": ["Adjetivos descriptivos"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
-          "gramatica": ["Oposición ser / estar", "Interrogativos"],
+          "gramatica": ["Oposición ser / estar", "Interrogativos", "Adverbios y locuciones de lugar"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },

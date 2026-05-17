@@ -69,6 +69,26 @@
         "descripcion": {
           "U3": "PCIC A1 §1.6 Familia (Parientes) — Primer cierre canónico del campo. U3 presenta el árbol genealógico de tres generaciones con los términos abuelo/-a, padre/madre, hijo/-a, hermano/-a, tío/-a, primo/-a, sobrino/-a, nieto/-a, marido/mujer. Añade hija única y gemelos/-as. Operacionalizado en la presentación de la familia de David (p32), las descripciones de Javier y Lucía (p33), el diálogo del recreo (p36) y la sopa de letras de la evaluación (p41)."
         }
+      },
+      "La hora": {
+        "items": [
+          {"palabra": "en punto", "fuentes": ["cuadro@p37#1", "p37-act5"]},
+          {"palabra": "y cinco", "fuentes": ["cuadro@p37#1", "p37-act5"]},
+          {"palabra": "y diez", "fuentes": ["cuadro@p37#1", "p37-act5"]},
+          {"palabra": "y cuarto", "fuentes": ["cuadro@p37#1", "p37-act5", "p37-act6@R"]},
+          {"palabra": "y veinte", "fuentes": ["cuadro@p37#1", "p37-act5", "p37-act6@R", "p37-act7", "p37-act7@R"]},
+          {"palabra": "y veinticinco", "fuentes": ["cuadro@p37#1", "p37-act5"]},
+          {"palabra": "y media", "fuentes": ["cuadro@p37#1", "p37-act5", "p37-act6@R"]},
+          {"palabra": "menos veinticinco", "fuentes": ["cuadro@p37#1", "p37-act5"]},
+          {"palabra": "menos veinte", "fuentes": ["cuadro@p37#1", "p37-act5"]},
+          {"palabra": "menos cuarto", "fuentes": ["cuadro@p37#1", "p37-act5"]},
+          {"palabra": "menos diez", "fuentes": ["cuadro@p37#1", "p37-act5", "p37-act6@R"]},
+          {"palabra": "menos cinco", "fuentes": ["cuadro@p37#1", "p37-act5"]}
+        ],
+        "fuentes": ["cuadro@p37#1", "p37-act5", "p37-act6@R", "p37-act7", "p37-act7@R"],
+        "descripcion": {
+          "U3": "PCIC A1 §16 — Expresión de la hora del reloj. Principal léxico en U3: 12 expresiones canónicas del cuadro@p37#1 ('La hora', reloj analógico con todas las posiciones horarias). El campo es comunicativo en el índice del libro (U3.comunicacion: 'La hora') pero los lemas léxicos específicos (en punto, y cinco, y cuarto, y media, menos diez, etc.) se trabajan como vocabulario propio. Se aplican en p37-act5 (escucha y completa), p37-act6 (escritura de horas desde horarios digitales) y p37-act7 (interacción oral con cartelera de cine). NC1 los introduce explícitamente en A1.1. Rectificación editorial en v10.152: anterior a v10.152 estos lemas no estaban codificados como categoría propia y el contenido de la hora se diluía bajo 'Números cardinales' (los números que componen la hora siguen viviendo allí, pero las expresiones temporales específicas tienen entidad léxica propia)."
+        }
       }
     },
     "recurrente": {
@@ -717,7 +737,15 @@
     "P-vivir/estudiar/hablar: ya consignados con apariciones U2 [PRE] en verbos-canonicos.json. U3 cierra el paradigma completo (6 personas) mediante el cuadro de conjugación de p34 y los ejercicios sistemáticos asociados.",
     "P-'interesan' (p40-act1 texto cultural) codificado bajo lema 'gustar' por simetría sintáctico-semántica (tipo gustar, dativo experimentante). Si el autor prefiere lema independiente 'interesar' (no canónico actualmente), retirar de la entrada de gustar.",
     "P-Acts p37-act8 y p37-act10 ('Escucha y repite' palabras-muestra del fonema /θ/): vocabulario=[] aunque las palabras citadas (azul, bicicleta, marzo, zapato) pertenecen a campos léxicos distintos. El enfoque es pronunciacion_ortografia y las palabras son material fónico, no léxico per §2.3.",
-    "P-Nombres-propios-retirada (v10.131): por dictamen editorial del autor, la categoría 'Nombres propios' queda retirada del canon gramatical del curso. Razón: el libro NC1 no trabaja pedagógicamente la categoría como tal — los antropónimos y topónimos aparecen en textos como contenido verbatim pero el manual no enseña una regla gramatical específica sobre nombres propios (la mera regla 'sin artículo' es inferida, no expuesta como contenido didáctico). Bloque retirado de gramatica_consolidada y refs limpiadas en actividades/cuadros. Los nombres propios siguen presentes verbatim en los textos del libro; no se consolidan en ningún bloque canónico. Revierte parcialmente v10.123 (U1) y v10.128 (U2, ampliación a topónimos)."
+    "P-Nombres-propios-retirada (v10.131): por dictamen editorial del autor, la categoría 'Nombres propios' queda retirada del canon gramatical del curso. Razón: el libro NC1 no trabaja pedagógicamente la categoría como tal — los antropónimos y topónimos aparecen en textos como contenido verbatim pero el manual no enseña una regla gramatical específica sobre nombres propios (la mera regla 'sin artículo' es inferida, no expuesta como contenido didáctico). Bloque retirado de gramatica_consolidada y refs limpiadas en actividades/cuadros. Los nombres propios siguen presentes verbatim en los textos del libro; no se consolidan en ningún bloque canónico. Revierte parcialmente v10.123 (U1) y v10.128 (U2, ampliación a topónimos).",
+    {
+      "id": "P14",
+      "version": "v10.152",
+      "decision": "Rectificación editorial: categoría 'La hora' creada en vocabulario_consolidado.principal de U3.",
+      "diagnostico": "El registry léxico canonizó 'La hora' en v10.129 pero el inventario U3 nunca la pobló. El contenido (12 expresiones canónicas del cuadro@p37#1: en punto, y cinco, y cuarto, etc.) estaba diluido bajo 'Números cardinales' sin entidad propia. Inconsistencia entre registry y datos.",
+      "accion": "Creada categoría 'La hora' con 12 items atestados en cuadro@p37#1 + p37-act5 + p37-act6 + p37-act7. Solo se incluyen lemas literalmente atestados en input/respuestas (§5.10 A). Refs añadidas a cuadro@p37#1, p37-act5, p37-act6, p37-act7. 'Números cardinales' se mantiene (los números siguen siendo léxico relevante). El índice del libro pone 'La hora' en comunicacion, pero los lemas léxicos específicos tienen entidad propia.",
+      "ramifica": "Cierra el desfase histórico entre registry (que ya tenía 'La hora' desde v10.129) y el inventario U3 (que no la usaba)."
+    }
   ],
   "paginas_detalle": [
     {
@@ -1488,7 +1516,7 @@
           "destreza": ["comprension_auditiva", "expresion_escrita", "expresion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "¿Qué hora es? Completa, escucha y repite.",
-          "vocabulario": ["Números cardinales"],
+          "vocabulario": ["Números cardinales", "La hora"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
@@ -1512,7 +1540,7 @@
           "destreza": ["comprension_auditiva", "expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Escribe las horas y, después, escucha y comprueba.",
-          "vocabulario": ["Números cardinales"],
+          "vocabulario": ["Números cardinales", "La hora"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Son", "Es"]}
           ],
@@ -1533,7 +1561,7 @@
           "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Pregunta y contesta a tu compañero sobre la cartelera de cine.",
-          "vocabulario": ["Cine y teatro", "Números cardinales"],
+          "vocabulario": ["Cine y teatro", "Números cardinales", "La hora"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
@@ -1617,7 +1645,7 @@
             "expresiones": ["en punto", "y cinco", "y diez", "y cuarto", "y veinte", "y veinticinco", "y media", "menos veinticinco", "menos veinte", "menos cuarto", "menos diez", "menos cinco"],
             "nota": "cuarto = 1/4"
           },
-          "vocabulario": ["Números cardinales"],
+          "vocabulario": ["Números cardinales", "La hora"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": []

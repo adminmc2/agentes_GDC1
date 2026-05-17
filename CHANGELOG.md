@@ -5,6 +5,44 @@
 
 ---
 
+## [v10.152 — 2026-05-17] — Rectificación editorial U5 + U3 (auditoría del registry léxico)
+
+Cambios materiales surgidos de la auditoría del registry léxico (Fase 4 del plan post-Lote 3E). Dos rectificaciones de criterio editorial detectadas y corregidas por dictamen del revisor.
+
+**Frente A — U5: marcadores espaciales movidos de vocabulario a gramática.**
+
+Diagnóstico: el índice del libro coloca *"Posición: encima, debajo, detrás, delante, al lado"* en `gramatica` (no `vocabulario`). PCIC A1 §8 los categoriza como adverbios/locuciones adverbiales de lugar. La codificación previa (v10.141 + v10.144) los puso erróneamente bajo `vocabulario_consolidado.principal["Marcadores de lugar: a la izquierda, ..., cerca"]` — una etiqueta del registry léxico que cubre OTRO conjunto de marcadores (izquierda, derecha, enfrente, entre, lejos, cerca; no presentes en U5).
+
+Cambios en `unidades/U5/U5-nc1-inventario.json`:
+
+- Bloque `Marcadores de lugar: a la izquierda, ..., cerca` retirado de `vocabulario_consolidado.principal`.
+- Los 5 items reales (al lado, debajo, delante, detrás, encima) con sus fuentes trasladados a `gramatica_consolidada.principal["Adverbios y locuciones de lugar"]` (categoría canónica preexistente en `gramatica-canonica.json`).
+- 11 refs en `actividad.vocabulario` / `cuadro.vocabulario` retiradas; 2 refs equivalentes añadidas a `actividad.gramatica` / `cuadro.gramatica` donde faltaban.
+- Descripción gramatical reescrita reflejando el cambio.
+- Nueva entrada P18 en `_decisiones_ia`.
+- **NO se crea categoría nueva en el registry** (la categoría ya existe).
+- El canónico léxico `Marcadores de lugar: ..., cerca` permanece en el registry léxico para unidades futuras que sí enseñen izquierda/derecha/enfrente/etc.
+- `Adverbios de posición` del registry léxico queda como huérfano (auditoría aparte).
+
+**Frente B — U3: categoría `La hora` poblada por primera vez.**
+
+Diagnóstico: el registry léxico canonizó `La hora` en v10.129 pero el inventario U3 nunca la pobló. El contenido (12 expresiones canónicas del cuadro@p37#1: en punto, y cinco, y cuarto, y media, menos diez, etc.) estaba diluido bajo `Números cardinales` sin entidad propia. Inconsistencia entre registry y datos.
+
+Cambios en `unidades/U3/U3-nc1-inventario.json`:
+
+- Nueva categoría `La hora` en `vocabulario_consolidado.principal` con 12 items literales atestados en cuadro@p37#1 + p37-act5 + p37-act6 + p37-act7. Solo lemas con aparición literal (§5.10 A): primera codificación inicial tenía 4 errores de fuente (asignaba `@R` cuando la expresión también aparecía en `audio.transcripcion` que es input); validador detectó y corregí.
+- 4 refs `La hora` añadidas en cuadro@p37#1 (lexical), p37-act5, p37-act6, p37-act7.
+- `Números cardinales` se mantiene (los números siguen siendo léxico relevante del campo numérico, complementario al campo horario).
+- Nueva entrada P14 en `_decisiones_ia`.
+
+**Sin cambios en registries**, scripts ni en otras unidades. Validador U0-U5 → 0/0/0 con el validador extendido (Lote 3E).
+
+**Pendientes de la auditoría del registry:**
+- `Adverbios de posición` del registry léxico (huérfano tras este lote).
+- Revisión completa de otras entradas del registry pcic_a1 sin uso en U0-U5 (potencial higiene si una unidad futura no las usa).
+
+---
+
 ## [v10.151 — 2026-05-17] — Fase 1: Lote 3E — validador absorbe §5.10 A + §5.11 + fix orden FASE 2/1
 
 Cierre técnico del contrato v10.145 + §5.10 + §5.11. El validador `scripts/validar_inventario.py` deja de ser un gate parcial: ahora absorbe la parte mecanizable de §5.10 A y §5.11. La validación manual se reserva solo para Cat B + excepciones léxicas (declarado en `schema-inventario.md` §A.3).
