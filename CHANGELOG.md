@@ -5,6 +5,44 @@
 
 ---
 
+## [v10.156 — 2026-05-17] — Registry gramatical: `Imperativo (tú)` añadido como categoría canónica (preparatorio U6)
+
+Cambio estructural preparatorio para la extracción de U6. Ampliación controlada del registry gramatical (§ "Naturaleza del contrato" del schema permite ampliación por expansión).
+
+**Diagnóstico (propuesta-en-chat §0.1 del extractor U6):** `nc1-curso.json` declara `Imperativo (tú)` como contenido `gramatica` principal de U6, pero `gramatica-canonica.json` v1.4 no incluía la categoría. El extractor no puede inventar la clave por su cuenta; requiere autorización + canonización previa.
+
+**Dictamen del autor + revisor (coincidentes):** sí, añadir como categoría canónica. Razones:
+- El libro NC1 tiene un cuadro gramatical explícito sobre el imperativo como contenido didáctico autónomo, distinto del paradigma verbal.
+- La categoría gramatical captura el fenómeno enseñado; `tiempos_y_verbos_consolidado` captura las formas concretas con `tiempo: Imperativo`. Dimensiones complementarias.
+- Precedente: U5 `Adverbios y locuciones de lugar` también vive en gramática como categoría aunque los lemas tengan paradigma verbal asociado.
+
+**Cambios en `fases/1-extraccion-inventario/gramatica-canonica.json`:**
+
+- Nueva categoría `Imperativo (tú)` con shape estándar:
+  - `_pcic_ref`: `"PCIC A1 §9.3.2 Imperativo afirmativo"`.
+  - `_apariciones`: `{ "U6": "principal" }`.
+  - `items`: `[]` (vacío, se llenará al extraer U6 con las formas atestadas en el cuadro gramatical + actividades).
+  - `_nota`: alerta documental sobre el alcance (afirmativo de 2ª persona del singular, no negativo, no resto de personas) y orientación para niveles posteriores.
+- `_meta.version`: 1.4 → 1.5.
+- Total categorías: 17 → 18.
+
+**Naming canónico (decisión política B+C del autor):**
+
+- Etiqueta canónica `Imperativo (tú)` literal del índice editorial de NC1 (no se renombra a "Imperativo afirmativo (tú)" para preservar la regla de naming canónico literal del índice).
+- La distinción afirmativo/negativo se documenta en `_nota` del registry + en `descripcion["U6"]` del inventario cuando se codifique.
+- Si NC2/A2 incorpora imperativo negativo, ahí se decide: renombrar + crear categoría separada, o ampliar descripción.
+
+**Decisiones complementarias del extractor (NO requieren cambio):**
+
+- **`Presente de verbos irregulares: cerrar, ir, venir, hacer, jugar, dormir`:** NO se añade al registry gramatical. La irregularidad es propiedad del lema verbal y vive en `tiempos_y_verbos_consolidado` vía `rasgo_por_tiempo`. Duplicar como categoría gramatical crearía solapamiento.
+- **`Profesiones y lugares de trabajo`:** ya es canónico del registry léxico (origen indice). En U6 pasa a `principal` con items literales atestados.
+
+**Sin cambios en otros registries, scripts, inventarios.** Validador U0-U5 → 0/0/0.
+
+**Próximo paso:** el extractor de U6 (worktree `../guia-proc-U6/`) sincroniza este cambio y continúa con paso 3 del flujo (extracción shape verbatim).
+
+---
+
 ## [v10.155 — 2026-05-17] — Reglas: salvedad de excepción autorizada en §5.1.1 + §6.3 + rectificaciones U1/U3
 
 Tras el análisis del autor sobre la clasificación de `recurrente` en U0-U5 (revisión del concepto en `glosario.md` y `reglas-operativas.md` §5.1.1), se detectaron categorías codificadas como `recurrente` cuando son **principal canónico en una unidad posterior** según `nc1-curso.json`. La regla §5.1.1 + §6.3 actual las prohíbe estrictamente, pero el material atestado tiene valor pedagógico real en la unidad actual.
