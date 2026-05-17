@@ -199,7 +199,7 @@
         "delante",
         "al lado"
       ],
-      "_nota": "Renombrado en v10.141 desde 'Posición' a 'Adverbios y locuciones de lugar' para precisar que es categoría adverbial-gramatical (no campo semántico). El léxico de palabras de posición concretas (encima, debajo, etc.) tiene canónico paralelo en campos-semanticos-canonicos.json bajo 'Adverbios de posición'."
+      "_nota": "Renombrado en v10.141 desde 'Posición' a 'Adverbios y locuciones de lugar' para precisar que es categoría adverbial-gramatical (no campo semántico). En v10.152 los 5 lemas concretos (encima, debajo, delante, detrás, al lado) se trasladaron a esta categoría como items en U5 (antes vivían erróneamente en vocabulario_consolidado). El canónico paralelo léxico 'Adverbios de posición' del registry de campos semánticos quedó huérfano y se retiró en v10.152a."
     },
     "Preposiciones": {
       "_pcic_ref": "PCIC A1 (preposiciones simples; entran en sintagmas preposicionales del SV §12.2)",

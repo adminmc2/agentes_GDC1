@@ -5,6 +5,28 @@
 
 ---
 
+## [v10.152a — 2026-05-17] — Registry léxico: retirada de `Adverbios de posición` (huérfano confirmado)
+
+Cierre del primer hilo de la auditoría del registry léxico. Tras la rectificación de U5 en v10.152 (marcadores espaciales movidos a `gramatica_consolidada`), la entrada léxica `Adverbios de posición` quedó sin uso activo en ningún inventario.
+
+**Verificación previa:** las 6 menciones de `Adverbios de posición` en U5 son todas en `_decisiones_ia` (narrativa histórica documental: P16, P17, P18 + texto sobre v10.141/v10.144/v10.152). Ninguna es una referencia activa al label canónico — son trazas históricas de las decisiones de extracción. Retirarla del registry no rompe ninguna referencia viva.
+
+**Cambios en `fases/1-extraccion-inventario/campos-semanticos-canonicos.json`:**
+
+- Entrada `Adverbios de posición` (origen `pcic_a1`, añadida en v10.141) retirada.
+- `_meta.version`: 1.5 → 1.6.
+- `_meta.actualizado`: 2026-05-17.
+- `_meta.descripcion` actualizada con nota de la retirada.
+- Total entradas: 103 → 102.
+
+**Cobertura semántica preservada:** los términos que el bloque cubría (encima, debajo, delante, detrás, al lado) viven ahora en `gramatica-canonica.json` bajo la categoría `Adverbios y locuciones de lugar` (PCIC A1 §8). Categoría sin duplicación.
+
+**Sin cambios en inventarios** ni en scripts. Validador U0-U5 → 0/0/0.
+
+**Pendiente de la auditoría del registry:** revisión de entradas pcic_a1 sin uso en U0-U5 (potencial higiene si una unidad futura no las usa).
+
+---
+
 ## [v10.152 — 2026-05-17] — Rectificación editorial U5 + U3 (auditoría del registry léxico)
 
 Cambios materiales surgidos de la auditoría del registry léxico (Fase 4 del plan post-Lote 3E). Dos rectificaciones de criterio editorial detectadas y corregidas por dictamen del revisor.
