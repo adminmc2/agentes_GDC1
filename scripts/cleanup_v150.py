@@ -33,24 +33,29 @@ from migrate_at_r_v10145 import (
 
 # ---------- Clasificación de items de gramática (Cat A vs B) ----------
 
-def is_gramatica_categoria_A(palabra):
-    """Heurística (alineada con §5.10 + criterio discriminante):
-    A — realización superficial: corta, sin paréntesis, sin barras múltiples,
-        sin IPA, sin secuencias metalingüísticas largas.
-    B — etiqueta/paradigma editorial: con paréntesis, barras múltiples,
-        IPA, multi-token largo, descripción del fenómeno, fórmulas con `+`.
+def is_gramatica_categoria_A(palabra, catname=None):
+    """Heurística (alineada con §5.10 + criterio discriminante).
+    A — realización superficial: corta, sin signos editoriales, no es
+        plantilla con elipsis ni alternancia con barra ni paradigma.
+    B — etiqueta / paradigma editorial / notación / label reproducido.
+
+    Reglas conservadoras: en duda → B (no tocar). El precio de un FN
+    (marcar B algo que era A) es no limpiar; el de un FP (marcar A algo
+    que era B) es retirar contenido legítimo del consolidado.
     """
     if not palabra: return False
     p = palabra.strip()
-    # Símbolos que delatan paradigma editorial o notación técnica
-    if "(" in p or ")" in p: return False
-    if "→" in p: return False
-    if p.count("/") >= 2: return False
-    if "+" in p: return False  # "No hay + SN", "ser + adj", etc. = paradigma
-    if any(c in p for c in "ˈˌʝθχ↑↓"): return False
-    if ":" in p and len(p) > 20: return False  # "intensificadores: mucho..."
+    # Signos editoriales que delatan paradigma/plantilla/notación
+    if any(c in p for c in "()→+?…"): return False
+    if "..." in p or ".." in p: return False  # "¿Qué...?", elipsis
+    if "/" in p: return False  # alternancia editorial: "un / unos", "abuelo/abuela"
+    if any(c in p for c in "ˈˌʝθχ↑↓"): return False  # IPA
+    if ":" in p: return False  # "intensificadores: mucho..."
+    # Item idéntico al nombre de la categoría → label reproducido como item (B)
+    if catname and p.strip().lower() == catname.strip().lower(): return False
     # Multi-token largo → probablemente descripción editorial
-    if len(p.split()) > 3 and len(p) > 25: return False
+    if len(p.split()) > 3: return False
+    if len(p) > 25: return False
     return True
 
 # ---------- Cuerpo del cuadro (también cuenta como input según §5.10) ----------
@@ -235,7 +240,7 @@ def fase1_aparicion_material(d, apply_changes, act_idx, cuadros_idx):
             new_items = []
             for item in items:
                 palabra = item.get("palabra") or ""
-                if not is_gramatica_categoria_A(palabra):
+                if not is_gramatica_categoria_A(palabra, catname):
                     new_items.append(item)  # Cat B: no se toca
                     continue
                 fuentes_orig = item.get("fuentes", []) or []
@@ -440,6 +445,49 @@ def fase3_saneamiento(d):
                         union.append(f)
                 cat["fuentes"] = dedupe_keep_order(union)
 
+# ---------- FASE 4: retirar categorías vacías + labels en listas tipadas ----------
+
+# Map bloque consolidado → campo en listas tipadas
+BLOQUE_A_LISTA = {
+    "vocabulario_consolidado": "vocabulario",
+    "gramatica_consolidada": "gramatica",
+    "pronunciacion_ortografia_consolidada": "pronunciacion_ortografia",
+}
+
+def fase4_retirar_vacias(d, apply_changes):
+    """Retira categorías sin items[] del consolidado y limpia su label de
+    las listas tipadas (actividad.X / cuadro.X) en todo el JSON.
+    Devuelve lista de (bloque, tier, categoria) retiradas."""
+    retiradas = []
+    for block_key, lista_field in BLOQUE_A_LISTA.items():
+        block = d.get(block_key, {})
+        if not isinstance(block, dict): continue
+        for tier in list(block.keys()):
+            cats = block.get(tier)
+            if not isinstance(cats, dict): continue
+            for catname in list(cats.keys()):
+                cat = cats[catname]
+                if not isinstance(cat, dict): continue
+                if not cat.get("items"):  # vacío
+                    retiradas.append((block_key, tier, catname))
+                    if apply_changes:
+                        del cats[catname]
+    # Limpiar labels en listas tipadas
+    if apply_changes and retiradas:
+        cats_retiradas_por_bloque = {}
+        for bk, _, cn in retiradas:
+            cats_retiradas_por_bloque.setdefault(BLOQUE_A_LISTA[bk], set()).add(cn)
+        for p in d.get("paginas_detalle", []):
+            for a in p.get("actividades", []) or []:
+                for lista_field, retirar in cats_retiradas_por_bloque.items():
+                    if lista_field in a and isinstance(a[lista_field], list):
+                        a[lista_field] = [x for x in a[lista_field] if x not in retirar]
+            for c in p.get("cuadros", []) or []:
+                for lista_field, retirar in cats_retiradas_por_bloque.items():
+                    if lista_field in c and isinstance(c[lista_field], list):
+                        c[lista_field] = [x for x in c[lista_field] if x not in retirar]
+    return retiradas
+
 # ---------- Indexar cuadros ----------
 
 def build_cuadros_index(d):
@@ -457,7 +505,8 @@ def build_cuadros_index(d):
 
 # ---------- Render informe ----------
 
-def render_report(unit, mode, retiradas_fuentes, retirados_items, pares, reescrituras):
+def render_report(unit, mode, retiradas_fuentes, retirados_items, pares, reescrituras, cats_retiradas=None):
+    cats_retiradas = cats_retiradas or []
     out = [f"# Cleanup v10.150 — U{unit}, modo {mode}", ""]
     out.append("## Resumen FASE 1 (§5.10 retirar inferencias)")
     out.append(f"- Fuentes A retiradas: {len(retiradas_fuentes)}")
@@ -466,6 +515,9 @@ def render_report(unit, mode, retiradas_fuentes, retirados_items, pares, reescri
     out.append("## Resumen FASE 2 (§5.11 unificar flexiones)")
     out.append(f"- Notaciones `lema/-suf` reescritas según atestación: {len(reescrituras)}")
     out.append(f"- Pares unificados: {len(pares)}")
+    out.append("")
+    out.append("## Resumen FASE 4 (retirar categorías vacías + labels en listas tipadas)")
+    out.append(f"- Categorías retiradas: {len(cats_retiradas)}")
     out.append("")
 
     def tabla(titulo, rows, cols):
@@ -491,6 +543,9 @@ def render_report(unit, mode, retiradas_fuentes, retirados_items, pares, reescri
     tabla("Pares unificados §5.11",
           [(c, " + ".join(p), canon) for (c,p,canon) in pares],
           ["categoría", "palabras_unidas", "lema_canónico"])
+    tabla("Categorías retiradas (vacías tras FASE 1)",
+          [(b, t, c) for (b,t,c) in cats_retiradas],
+          ["bloque", "tier", "categoría"])
     return "\n".join(out)
 
 # ---------- Main ----------
@@ -518,9 +573,13 @@ def main():
     act_idx = build_activity_index(d)
     cuadros_idx = build_cuadros_index(d)
 
+    # Mutamos siempre el dict en memoria; escribir al disco solo si --apply.
+    # Esto permite que dry-run muestre categorías vaciadas por FASE 1.
     retiradas_fuentes, retirados_items, _ = fase1_aparicion_material(
-        d, args.apply, act_idx, cuadros_idx)
-    pares, reescrituras = fase2_unificar_flexiones(d, args.apply, act_idx, cuadros_idx)
+        d, True, act_idx, cuadros_idx)
+    pares, reescrituras = fase2_unificar_flexiones(d, True, act_idx, cuadros_idx)
+
+    cats_retiradas = fase4_retirar_vacias(d, True)
 
     if args.apply:
         fase3_saneamiento(d)
@@ -533,7 +592,7 @@ def main():
             sys.stderr.write(f"\n❌ Reformat falló. Backup en {bak}\n"); sys.exit(3)
 
     mode = "APPLY" if args.apply else "DRY-RUN"
-    report = render_report(args.unit, mode, retiradas_fuentes, retirados_items, pares, reescrituras)
+    report = render_report(args.unit, mode, retiradas_fuentes, retirados_items, pares, reescrituras, cats_retiradas)
     if args.report:
         Path(args.report).write_text(report)
         sys.stderr.write(f"Informe en {args.report}\n")

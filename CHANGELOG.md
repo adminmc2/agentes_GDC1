@@ -5,6 +5,33 @@
 
 ---
 
+## [v10.150b — 2026-05-17] — Fase 1: Lote 3D-cleanup — U2 + correcciones del script (FASE 4 + heurística)
+
+Segundo apply del Lote 3D-cleanup. U2 en carril propio por dictamen del revisor.
+
+**Bloqueo previo detectado por el revisor.** Tras el primer intento de apply de U2, la categoría `gramatica_consolidada.recurrente.Artículos determinados` quedó con `items: []` y `fuentes: []`. Rollback inmediato.
+
+**Correcciones aplicadas al script `cleanup_v150.py`:**
+
+1. **Nueva FASE 4** — retirar categorías sin items y limpiar sus labels en `actividad.X` / `cuadro.X`.
+2. **Mutación del dict en memoria siempre activa** (antes solo en `--apply`); permite que dry-run muestre categorías vaciadas como consecuencia de FASE 1.
+3. **Heurística `is_gramatica_categoria_A` reformulada conservadora.** Versión anterior tenía falsos positivos graves: marcaba A items con un solo `/` (`abuelo/abuela`), elipsis (`¿Qué...?`), label como item (`Oposición ser / estar`). Primer dry-run con FASE 4 detectó que U3 perdía `Interrogativos` (principal) y U5 perdía `Oposición ser / estar` (principal). Nueva heurística rechaza cualquier `/`, `?`, `...`, `+`, paréntesis, IPA, ítem idéntico al nombre de categoría, multi-token > 3 palabras o > 25 chars. En duda → B.
+
+**Resultados U2 (con correcciones):**
+
+- 54 fuentes A retiradas
+- 9 items completos retirados
+- 26 reescrituras de notación `lema/-suf`
+- 0 categorías vacías (problema del revisor resuelto)
+- Validador U2 → 0/0/0
+- Diff: 60 insertions / 73 deletions
+
+**U4 (v10.150a) no requiere revisión.** La heurística nueva es más conservadora; lo retirado en U4 (`le`, `una`, `qué`, `cómo`, `a quién`) sigue siendo Cat A con la heurística nueva.
+
+**Próximo:** v10.150c — U0/U1/U3/U5 agrupados.
+
+---
+
 ## [v10.150a — 2026-05-17] — Fase 1: Lote 3D-cleanup — piloto U4 (§5.10 + §5.11 retroactivo)
 
 Primer apply del Lote 3D-cleanup. U4 como gate funcional según dictamen del revisor.
