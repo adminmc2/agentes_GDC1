@@ -219,10 +219,11 @@ Los cuadros admiten las mismas 4 listas tipadas que una actividad y aportan a lo
 
 ---
 
-## 5. Taxonomía cerrada de tipos de actividad (20 valores)
+## 5. Taxonomía cerrada de tipos de actividad (21 valores)
 
 ```
 escucha
+lee
 escucha_y_repite
 escucha_y_responde
 lee_y_escucha

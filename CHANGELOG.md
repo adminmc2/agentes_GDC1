@@ -5,6 +5,54 @@
 
 ---
 
+## [v10.157 — 2026-05-17] — Ampliación contrato preparatoria U6: registry verbal (+11 lemas) + enum `tipo` (+`lee`)
+
+Segundo cambio estructural preparatorio para la extracción de U6 (tras v10.156 que añadió `Imperativo (tú)`). El extractor de U6 detectó dos bloques estructurales mediante §0.1 propuesta-en-chat: lemas verbales no canonizados con anclaje material claro en U6, y un tipo de actividad ausente del enum.
+
+**Cambios estructurales:**
+
+**1. `fases/1-extraccion-inventario/verbos-canonicos.json` — 11 lemas nuevos:**
+
+| Lema | Tiempos U6 | tipo_de_verbo | Anclaje material |
+|---|---|---|---|
+| `poner` | Imperativo | transitivo | cuadro p64 + p65-act4 ("pon (tú)", "Pon la mochila") |
+| `beber` | Presente + Imperativo | transitivo | cuadro p64 + p65-act4 + p67-act9/10 ("bebe", "bebemos") |
+| `dar` | Imperativo | transitivo | cuadro p64 + p65-act3/4 + p71 ("Dame", "Da") |
+| `dejar` | Imperativo | transitivo | p65-act4 ("Deja el móvil") |
+| `cortar` | Imperativo | transitivo | p65-act5 + p71-act2 ("Corta") |
+| `pegar` | Imperativo | transitivo | p65-act5 (×3 huecos "Pega") |
+| `conectar` | Imperativo | transitivo | p65-act5 ("Conecta los cables") |
+| `decorar` | Imperativo | transitivo | p65-act5 ("decora el robot") |
+| `comprar` | Infinitivo | transitivo | p66-act1/2 (perífrasis "Quiero comprar") |
+| `recorrer` | Infinitivo | transitivo | p68-act1 (perífrasis "recorrer la ciudad") |
+| `pasear` | Presente + Infinitivo | intransitivo | p68-act1 + p62-act2 ("pasear", "paseas") |
+
+`_meta.version`: 1.5 → 1.6. Total lemas: 49 → 60.
+
+**Lemas correctamente excluidos del registry:**
+- `andar` — solo aparece en gerundio modal (`andando`), no es tiempo del enum. Queda solo en `datos.*` material, sin entrada en listas tipadas.
+- `salir`, `levantarse`, `sentarse`, `ducharse`, `llamar` — ya canónicos en U7 PRE; en U6 son anticipación según §5.2 → NO se codifican.
+- Verbos de metalengua de instrucción (`subraya`, `rodea`, `contesta`, `escucha`, `repite`...) — excluidos por §5.2 generalizada.
+
+**2. `fases/1-extraccion-inventario/schema-inventario.md` §5 + `scripts/validar_inventario.py` — enum `tipo` ampliado:**
+
+Nuevo valor `lee` añadido al enum. Total: 20 → 21 valores.
+
+Justificación: NC1 tiene casos materiales en U6 (p68-act1 "Lee el siguiente texto sobre Madrid", p69-act4 "Lee el texto sobre este pequeño pueblo cerca de Madrid") donde el enunciado pide solo input lector sin acción posterior en la propia actividad (las preguntas viven en actividades vecinas numeradas). Las opciones de bajo coste (forzar `lee_y_escucha` con `audio.presente=false`, o `responder_preguntas_cerradas` violando §2) introducían mentiras semánticas. La opción coherente es ampliar el enum.
+
+Coherencia con el enum existente: si `escucha` existe como input puro auditivo, debería existir `lee` como input puro lector.
+
+**Cambio en `scripts/validar_inventario.py`:** `TIPOS_VALIDOS` añade `"lee"`. Validador U0-U5 → 0/0/0 (sin regresiones; ninguna unidad usa `lee` aún).
+
+**Decisiones complementarias del extractor (NO requieren cambio de contrato):**
+
+- **p69-act7** ("Escucha y sigue las instrucciones") → codificar como `escucha` con nota en `_decisiones_ia` documentando la acción kinésica no codificable. Solo decisión de codificación.
+- **`columnas_relaciona`** (§4.3.1 pendiente) → codificar p63-act05 y p63-act08 con `datos.columnas_relaciona` per §4.3.1. La promoción §4.3.1 → §1 se difiere a sesión aparte.
+
+**Validador U0-U5 → 0/0/0.** Worktree `../guia-proc-U6/` debe rebasear para sincronizar.
+
+---
+
 ## [v10.156 — 2026-05-17] — Registry gramatical: `Imperativo (tú)` añadido como categoría canónica (preparatorio U6)
 
 Cambio estructural preparatorio para la extracción de U6. Ampliación controlada del registry gramatical (§ "Naturaleza del contrato" del schema permite ampliación por expansión).

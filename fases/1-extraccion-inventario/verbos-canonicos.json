@@ -1,9 +1,9 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.5",
+    "version": "1.6",
     "creado": "2026-05-11",
-    "descripcion": "Registry canónico de lemas verbales de NC1. Cerrado en pieza 2 del rediseño (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §15). 48 lemas con shape {rasgo_por_tiempo, apariciones, tipo_de_verbo, tiempos, lo_que_se_trabaja}.",
+    "descripcion": "Registry canónico de lemas verbales de NC1. Cerrado en pieza 2 del rediseño (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §15). 48 lemas con shape {rasgo_por_tiempo, apariciones, tipo_de_verbo, tiempos, lo_que_se_trabaja}. (v1.6 2026-05-17: +11 lemas U6 — poner, beber, dar, dejar, cortar, pegar, conectar, decorar, comprar, recorrer, pasear).",
     "estructura": "{verbos: {lema: {rasgo_por_tiempo, apariciones, tipo_de_verbo, tiempos, lo_que_se_trabaja}}}"
   },
   "verbos": {
@@ -94,6 +94,26 @@
       ],
       "lo_que_se_trabaja": {}
     },
+    "beber": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -er",
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "PRE",
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
     "cerrar": {
       "rasgo_por_tiempo": {
         "Presente": "irregularidad vocálica e→ie"
@@ -151,6 +171,40 @@
       ],
       "lo_que_se_trabaja": {}
     },
+    "comprar": {
+      "rasgo_por_tiempo": {
+        "Infinitivo": "forma léxica en perífrasis (querer + inf.)"
+      },
+      "apariciones": {
+        "U6": [
+          "INF"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Infinitivo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "conectar": {
+      "rasgo_por_tiempo": {
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
     "contaminar": {
       "rasgo_por_tiempo": {
         "Presente": "regular -ar"
@@ -188,6 +242,40 @@
       ],
       "lo_que_se_trabaja": {}
     },
+    "cortar": {
+      "rasgo_por_tiempo": {
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "dar": {
+      "rasgo_por_tiempo": {
+        "Imperativo": "totalmente irregular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
     "decir": {
       "rasgo_por_tiempo": {
         "Presente": "totalmente irregular",
@@ -203,6 +291,40 @@
       ],
       "tiempos": [
         "Presente",
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "decorar": {
+      "rasgo_por_tiempo": {
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "dejar": {
+      "rasgo_por_tiempo": {
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
         "Imperativo"
       ],
       "lo_que_se_trabaja": {}
@@ -469,6 +591,24 @@
       ],
       "lo_que_se_trabaja": {}
     },
+    "interesar": {
+      "rasgo_por_tiempo": {
+        "Presente": "tipo gustar (regular)"
+      },
+      "apariciones": {
+        "U3": [
+          "PRE"
+        ]
+      },
+      "tipo_de_verbo": [
+        "tipo gustar",
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
     "ir": {
       "rasgo_por_tiempo": {
         "Presente": "totalmente irregular",
@@ -680,6 +820,60 @@
       ],
       "lo_que_se_trabaja": {}
     },
+    "pasear": {
+      "rasgo_por_tiempo": {
+        "Presente": "regular -ar",
+        "Infinitivo": "forma léxica en perífrasis"
+      },
+      "apariciones": {
+        "U6": [
+          "PRE",
+          "INF"
+        ]
+      },
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "tiempos": [
+        "Presente",
+        "Infinitivo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "pegar": {
+      "rasgo_por_tiempo": {
+        "Imperativo": "regular 2ª persona singular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "poner": {
+      "rasgo_por_tiempo": {
+        "Imperativo": "totalmente irregular"
+      },
+      "apariciones": {
+        "U6": [
+          "IMP"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Imperativo"
+      ],
+      "lo_que_se_trabaja": {}
+    },
     "ponerse": {
       "rasgo_por_tiempo": {
         "Presente": "irregularidad 1ª persona"
@@ -751,6 +945,23 @@
       ],
       "tiempos": [
         "Presente"
+      ],
+      "lo_que_se_trabaja": {}
+    },
+    "recorrer": {
+      "rasgo_por_tiempo": {
+        "Infinitivo": "forma léxica en perífrasis (poder + inf.)"
+      },
+      "apariciones": {
+        "U6": [
+          "INF"
+        ]
+      },
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "tiempos": [
+        "Infinitivo"
       ],
       "lo_que_se_trabaja": {}
     },
@@ -981,24 +1192,6 @@
         ]
       },
       "tipo_de_verbo": [
-        "intransitivo"
-      ],
-      "tiempos": [
-        "Presente"
-      ],
-      "lo_que_se_trabaja": {}
-    },
-    "interesar": {
-      "rasgo_por_tiempo": {
-        "Presente": "tipo gustar (regular)"
-      },
-      "apariciones": {
-        "U3": [
-          "PRE"
-        ]
-      },
-      "tipo_de_verbo": [
-        "tipo gustar",
         "intransitivo"
       ],
       "tiempos": [
