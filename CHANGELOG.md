@@ -5,6 +5,31 @@
 
 ---
 
+## [v10.150a — 2026-05-17] — Fase 1: Lote 3D-cleanup — piloto U4 (§5.10 + §5.11 retroactivo)
+
+Primer apply del Lote 3D-cleanup. U4 como gate funcional según dictamen del revisor.
+
+**Herramienta:** `scripts/cleanup_v150.py` (nuevo). Reutiliza `expand_needle`, `match_substring` y helpers de `migrate_at_r_v10145.py`. 3 FASES:
+
+- **FASE 1 — §5.10:** retira fuentes A sin aparición literal en el contenido didáctico definido en §5.2 + `respuestas[]` + cuerpo de cuadros. Aplica a vocab (items léxicos), verbos (formas concretas en consolidado y en listas tipadas), gramática (solo items Cat A — heurística que excluye paréntesis, barras múltiples, IPA, `+`, multi-token largo). Pronunciación queda fuera (toda Cat B). Si un item se queda sin fuentes → retirar item. Si un objeto verbal en lista tipada se queda sin `formas_trabajadas` → retirar objeto.
+- **FASE 2 — §5.11:** unifica flexiones en `vocabulario_consolidado` cuando hay ≥2 formas atestadas; reescribe notación `lema/-suf` según atestación.
+- **FASE 3 — saneamiento:** recomputa `cat.fuentes` agregadas, reformatea canónico, valida 0/0/0.
+
+**Resultados U4:**
+
+- 54 fuentes A retiradas (vocab: 25, verbos consolidado: 13, verbos en listas tipadas: 5, gramática: 11).
+- 6 items completos retirados (3 vocab: `especialidad`, `argentino`, `uruguayo`; 3 objetos verbales en listas tipadas que se quedaron sin formas).
+- 0 reescrituras de notación `lema/-suf` (U4 no las tenía).
+- 0 pares unificados (U4 ya unificado en v10.135b).
+- Validador U4 → 0/0/0.
+- Diff: 41 insertions / 97 deletions.
+
+**Iteración pre-apply:** el primer intento falló validador porque retirar todas las `formas_trabajadas` de un objeto verbal en la lista tipada lo dejaba con `formas_trabajadas: []` (no permitido). Fix: cuando la lista queda vacía, retirar el objeto verbal entero. Después del fix, apply limpio.
+
+**Próximos pasos:** v10.150b (U2 por separado, volumen alto 106+28+26), v10.150c (U0/U1/U3/U5 agrupados).
+
+---
+
 ## [v10.149c — 2026-05-17] — Doc: §5.10 — exclusión de instrucción como remitencia, no como novedad
 
 Ajuste documental tras dictamen del revisor sobre v10.149. La redacción anterior de §5.10 enumeraba como "Errores prohibidos" la cláusula *"PROHIBIDO usar `instruccion_original` ni cualquier metalengua excluida por §5.2 como fuente de aparición material"*. El revisor señaló que esa exclusión **no es novedad sustantiva de §5.10**: ya vive en §5.2 generalizada (v10.144) y aplica con independencia de la nueva regla. Presentarla como decisión nueva mezclaba una confirmación con dos cambios reales (distinción A/B, aparición material), dificultando el dictamen.
