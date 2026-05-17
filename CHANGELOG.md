@@ -5,6 +5,30 @@
 
 ---
 
+## [v10.149a — 2026-05-17] — Doc: corrección de §5.11 (unificación condicionada a 2+ flexiones atestadas)
+
+Ajuste documental tras dictamen del revisor sobre v10.149. La redacción anterior de §5.11 decía *"se unifican siempre en una sola entrada con lema canónico singular"*, lo que entraba en contradicción con:
+
+1. **Precedente vivo (v10.135b):** la unificación se aplicó solo cuando había ≥2 flexiones atestadas del mismo lema en la unidad. Formas únicas sin par se mantienen verbatim. Mi *"siempre"* endurecía la regla.
+2. **Riesgo de inventar forma base:** la notación `argentino/-a` reescrita automáticamente a `argentino` puede crear una forma masculina no atestada literalmente en la unidad si solo aparece `argentina`. Eso viola §5.10 (aparición material).
+3. **Contradicción interna:** el propio §5.11 tenía una excepción *"Lemas que en el libro aparecen en una sola forma sin par se mantienen verbatim"* que chocaba con el *"siempre"* del enunciado principal.
+
+**Reformulación aplicada:**
+
+- **Condición de unificación:** cuando 2 o más flexiones del mismo lema están atestadas (cumplen §5.10) en la unidad, se unifican en lema singular (masc/sing para adj/gentilicios; sing conservando género en sustantivos).
+- **Una sola forma atestada:** se mantiene verbatim. No se infiere ni se genera la otra forma. `argentina` sola se queda `argentina`; `colombianas` se queda `colombianas`.
+- **Notación `lema/-a` retroactiva:** se reescribe al masculino singular solo si esa forma está atestada; si solo está atestada una flexiva, se pasa el item a esa forma verbatim.
+- **Relación con §5.10 explícita:** §5.11 nunca crea formas inferidas — opera sobre apariciones materiales.
+
+**Cambios materiales:**
+- `reglas-operativas.md` §5.11 reescrita.
+- `schema-inventario.md` §9.1 cross-ref reformulado.
+- `CHANGELOG.md` (esta entrada) + `REVIEW.md` bitácora.
+
+**Sin cambios en JSONs.** Validador U0-U5 → 0/0/0.
+
+---
+
 ## [v10.149 — 2026-05-17] — Fase 1: contrato — §5.10 (aparición material) + §5.11 (unificación flexiones)
 
 Cierre del contrato v10.145 mediante dos reglas operativas nuevas en `reglas-operativas.md`, tras auditoría de 459 anomalías generadas por el matcher en U0-U5 y dictamen del revisor sobre alcance.

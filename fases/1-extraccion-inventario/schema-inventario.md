@@ -351,7 +351,7 @@ Los 4 bloques top-level (`vocabulario_consolidado`, `tiempos_y_verbos_consolidad
 
 Objeto con 2 sub-bloques: `principal` y `recurrente`. **Categorías canónicas:** de `campos-semanticos-canonicos.json` (registry). **Fuente PCIC paralela:** `pcic-a1-vocabulario.json`.
 
-**Forma canónica de `palabra` (§5.11 reglas):** lema singular. En adjetivos y gentilicios que flexionan en género, masculino singular (`argentino`, `francés`); en sustantivos, singular conservando su género léxico (`manzana`, `huevo`). Las flexiones aparecidas en el libro propagan sus fuentes a la entrada única del lema.
+**Forma canónica de `palabra` (§5.11 reglas):** cuando hay 2 o más flexiones atestadas del mismo lema en la unidad, se unifican en lema singular (masculino singular para adj/gentilicios; singular conservando género para sustantivos: `argentino`, `manzana`, `huevo`). Cuando solo hay una forma atestada, el item se mantiene verbatim con esa forma (no se infiere la flexión inversa). Las flexiones atestadas propagan sus fuentes a la entrada única del lema.
 
 **Codificación de apariciones (§5.10 reglas):** los items léxicos son Categoría A — exigen aparición literal de la palabra en el contenido didáctico de la actividad/cuadro citado.
 

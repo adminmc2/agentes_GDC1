@@ -499,31 +499,40 @@ Si dudas si un ítem es A o B, o si una fuente A roza el límite, aplicar §0.1 
 
 **Aplica a:** items de `vocabulario_consolidado.{principal,recurrente}.<categoria>.items`.
 
-**Regla obligatoria.** Las flexiones (masc/fem, sing/plural, y combinaciones) de un mismo lema se unifican siempre en **una sola entrada** con **lema canónico singular**:
+**Regla obligatoria.** Cuando **dos o más flexiones** (masc/fem, sing/plural, y combinaciones) **del mismo lema están atestadas** en la unidad (cada una aparece literalmente según §5.10), se unifican en **una sola entrada** con **lema canónico singular**:
 
 - en **adjetivos y gentilicios** que flexionan en género, el lema canónico es la **forma masculina singular** (`argentino`, `mexicano`, `francés`, `primero`);
-- en **sustantivos**, el lema canónico es la **forma singular conservando su género léxico** (`manzana` y no `manzano`, `pizza` y no `pizzo`, `huevo`, `tomate`).
+- en **sustantivos**, el lema canónico es la **forma singular conservando su género léxico** (`manzana`, `pizza`, `huevo`, `tomate`).
 
-Las fuentes de todas las flexiones se fusionan en esa entrada única.
+Las fuentes de todas las flexiones atestadas se fusionan en esa entrada única.
 
-**Ejemplos:**
+**Cuando solo una forma está atestada en la unidad** (sin par flexivo atestado), el item se **mantiene verbatim** con la forma que aparece. No se infiere ni se genera la otra forma del lema. Ejemplos: si en la unidad solo aparece `argentina` y nunca `argentino`, el item del consolidado es `argentina`. Si solo aparece `colombianas`, el item es `colombianas`. Si solo aparece `madrileño`, el item es `madrileño`.
+
+**Ejemplos con 2+ formas atestadas (se unifican):**
 - Adjetivos/gentilicios: `argentino` + `argentina` + `argentinos` + `argentinas` → `"argentino"`.
-- Adjetivos/gentilicios: `mexicano`/`mexicana` → `"mexicano"`.
-- Adjetivos/gentilicios: `francés`/`francesa`/`franceses`/`francesas` → `"francés"`.
-- Ordinales: `primero`/`primera` → `"primero"`.
-- Sustantivos masculinos: `huevo`/`huevos` → `"huevo"`; `tomate`/`tomates` → `"tomate"`.
-- Sustantivos femeninos: `manzana`/`manzanas` → `"manzana"`; `pizza`/`pizzas` → `"pizza"`; `zanahoria`/`zanahorias` → `"zanahoria"`.
+- Adjetivos/gentilicios: `mexicano` + `mexicana` → `"mexicano"`.
+- Adjetivos/gentilicios: `francés` + `francesa` + `franceses` + `francesas` → `"francés"`.
+- Ordinales: `primero` + `primera` → `"primero"`.
+- Sustantivos masculinos: `huevo` + `huevos` → `"huevo"`; `tomate` + `tomates` → `"tomate"`.
+- Sustantivos femeninos: `manzana` + `manzanas` → `"manzana"`; `pizza` + `pizzas` → `"pizza"`; `zanahoria` + `zanahorias` → `"zanahoria"`.
 
-**Excepciones:**
-- **Compuestos multi-token con identidad propia** NO son flexión: `huevo frito`, `zumo de naranja`, `pollo a la catalana` se mantienen como items distintos.
-- **Lemas que en el libro aparecen en una sola forma sin par** se mantienen verbatim (`patatas`, `madrileño`, `vegetariano`).
-- **Nombres propios** no aplican.
+**Ejemplos con una sola forma atestada (verbatim):**
+- Solo `argentina` (no `argentino`) → item `"argentina"`.
+- Solo `colombianas` (no `colombiano`/`colombiana`/`colombianos`) → item `"colombianas"`.
+- Solo `madrileño` → item `"madrileño"`.
+- Solo `patatas` (no `patata`) → item `"patatas"`.
 
-**Aplicación retroactiva:** si una unidad existente tiene dos items separados (`argentino` y `argentina`, o `manzana` y `manzanas`), se colapsan al lema canónico según la regla anterior (masculino singular para adjetivos/gentilicios; singular conservando género para sustantivos). Si tiene un solo item con notación `lema/-a` (`argentino/-a`), se reescribe como `argentino`. Validador 0/0/0 obligatorio tras el cambio.
+**Excepciones (no se unifican aunque haya varias formas):**
+- **Compuestos multi-token con identidad propia**: `huevo frito`, `zumo de naranja`, `pollo a la catalana`.
+- **Nombres propios**.
+
+**Aplicación retroactiva:** unidades existentes con dos items separados (`argentino` y `argentina`, ambos atestados) se colapsan al lema canónico según la regla anterior. Items con notación `lema/-a` en notación verbatim de registry (ej. `argentino/-a`) se reescriben: al masculino singular **solo si esa forma está atestada** en la unidad; si solo una forma flexiva está atestada, el item pasa a esa forma verbatim. Validador 0/0/0 obligatorio.
 
 **No aplica a** `tiempos_y_verbos_consolidado` (un lema verbal ya es masculino infinitivo por contrato), `gramatica_consolidada` ni `pronunciacion_ortografia_consolidada` (sus items no son palabras flexionables sino categorías/patrones).
 
-**Relación con §6.4** (normalización de formas verbales): paralela pero distinta. §6.4 baja a minúscula en `tiempos_y_verbos_consolidado.formas_trabajadas`; §5.11 unifica a masculino singular en `vocabulario_consolidado.items`.
+**Relación con §5.10:** §5.11 opera sobre items que ya cumplen §5.10 (aparición material). Nunca crea formas inferidas — la condición de unificación es que al menos dos flexiones del lema estén atestadas.
+
+**Relación con §6.4** (formas verbales): §6.4 normaliza a minúscula en `tiempos_y_verbos_consolidado.formas_trabajadas`; §5.11 unifica flexiones atestadas en `vocabulario_consolidado.items`. Paralelas pero distintas.
 
 ---
 
