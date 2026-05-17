@@ -361,12 +361,13 @@ def reescribir_notacion_barra(item, act_idx, cuadros_idx):
     return left
 
 
-def fase2_unificar_flexiones(d, apply_changes, act_idx=None, cuadros_idx=None):
+def fase2_unificar_flexiones(d, apply_changes, act_idx=None, cuadros_idx=None,
+                              paso_a_only=False, paso_b_only=False):
     pares = []  # (categoria, palabras_unidas, lema_canonico)
     reescrituras = []  # (categoria, palabra_orig, palabra_nueva)
     vc = d.get("vocabulario_consolidado", {})
     # PASO A: reescribir notación verbatim 'lema/-suf' según atestación
-    if act_idx is not None and cuadros_idx is not None:
+    if not paso_b_only and act_idx is not None and cuadros_idx is not None:
         for tier in ("principal", "recurrente"):
             cats = vc.get(tier, {})
             if not isinstance(cats, dict): continue
@@ -377,6 +378,8 @@ def fase2_unificar_flexiones(d, apply_changes, act_idx=None, cuadros_idx=None):
                         reescrituras.append((catname, item.get("palabra"), nueva))
                         if apply_changes:
                             item["palabra"] = nueva
+    if paso_a_only:
+        return pares, reescrituras
     # PASO B: detectar y fusionar pares de flexiones
     for tier in ("principal", "recurrente"):
         cats = vc.get(tier, {})
@@ -575,9 +578,19 @@ def main():
 
     # Mutamos siempre el dict en memoria; escribir al disco solo si --apply.
     # Esto permite que dry-run muestre categorías vaciadas por FASE 1.
+    # Orden importante:
+    # 1) FASE 2 PASO A: reescribir notación lema/-suf según atestación
+    #    (antes de FASE 1, para que la verificación de aparición vea la
+    #    palabra ya canonizada).
+    # 2) FASE 1: aparición material.
+    # 3) FASE 2 PASO B: detectar y fusionar pares atestados.
+    # 4) FASE 4: retirar categorías vacías.
+    pares_pre, reescrituras = fase2_unificar_flexiones(d, True, act_idx, cuadros_idx,
+                                                       paso_a_only=True)
     retiradas_fuentes, retirados_items, _ = fase1_aparicion_material(
         d, True, act_idx, cuadros_idx)
-    pares, reescrituras = fase2_unificar_flexiones(d, True, act_idx, cuadros_idx)
+    pares, _ = fase2_unificar_flexiones(d, True, act_idx, cuadros_idx,
+                                         paso_b_only=True)
 
     cats_retiradas = fase4_retirar_vacias(d, True)
 

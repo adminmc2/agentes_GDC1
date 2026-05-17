@@ -40,17 +40,17 @@
           {"palabra": "boliviano", "fuentes": ["p22-act2@R"]},
           {"palabra": "chileno", "fuentes": ["p31-act3", "p31-act3@R"]},
           {"palabra": "chino", "fuentes": ["p25-act4", "p25-act4@R"]},
-          {"palabra": "colombiano", "fuentes": ["p22-act2@R", "p25-act6@R", "p31-act1"]},
+          {"palabra": "colombiano", "fuentes": ["p22-act2@R", "p31-act1"]},
           {"palabra": "cubano", "fuentes": ["p31-act3", "p31-act3@R"]},
           {"palabra": "ecuatoriano", "fuentes": ["p22-act2@R", "p25-act6@R"]},
           {"palabra": "español", "fuentes": ["p22-act2@R", "p24-act1", "p25-act4", "p25-act4@R", "p25-act5", "p25-act5@R", "p25-act6@R", "p26-act1", "p28-act1", "p31-act1"]},
           {"palabra": "francés", "fuentes": ["p24-act2"]},
           {"palabra": "griego", "fuentes": ["p22-act3"]},
           {"palabra": "inglés", "fuentes": ["p22-act3"]},
-          {"palabra": "japonés", "fuentes": ["p22-act3", "p24-act1"]},
+          {"palabra": "japonés", "fuentes": ["p22-act3"]},
           {"palabra": "mexicano", "fuentes": ["p22-act2", "p22-act2@R", "p25-act7", "p25-act7@R", "p29-act3", "p31-act3", "p31-act3@R"]},
           {"palabra": "nicaragüense", "fuentes": ["p25-act6@R"]},
-          {"palabra": "peruano", "fuentes": ["p22-act2@R", "p25-act4", "p25-act4@R", "p25-act6", "p25-act6@R", "p31-act3", "p31-act3@R"]},
+          {"palabra": "peruano", "fuentes": ["p22-act2@R", "p25-act6", "p25-act6@R", "p31-act3", "p31-act3@R"]},
           {"palabra": "polaco", "fuentes": ["p22-act3"]}
         ],
         "fuentes": [
@@ -64,8 +64,8 @@
           "p31-act3@R",
           "p25-act4",
           "p25-act4@R",
-          "p25-act6@R",
           "p31-act1",
+          "p25-act6@R",
           "p25-act5",
           "p25-act5@R",
           "p28-act1",
@@ -94,18 +94,18 @@
       },
       "Números ordinales": {
         "items": [
-          {"palabra": "primero", "fuentes": ["p23-act7", "p23-act8@R", "p31-act1"]},
-          {"palabra": "segundo", "fuentes": ["p23-act4", "p23-act7", "p23-act8@R", "p23-act12", "p28-act1"]},
-          {"palabra": "tercero", "fuentes": ["p23-act4", "p23-act7", "p23-act8", "p28-act1"]},
-          {"palabra": "cuarto", "fuentes": ["p23-act7", "p23-act8@R"]},
-          {"palabra": "quinto", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "primero", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "segundo", "fuentes": ["p23-act4", "p23-act7", "p23-act8@R", "p28-act1"]},
+          {"palabra": "tercero", "fuentes": ["p23-act7", "p23-act8", "p28-act1"]},
+          {"palabra": "cuarto", "fuentes": ["p23-act7"]},
+          {"palabra": "quinto", "fuentes": ["p23-act7"]},
           {"palabra": "sexto", "fuentes": ["p23-act7", "p23-act8@R"]},
-          {"palabra": "séptimo", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "séptimo", "fuentes": ["p23-act7"]},
           {"palabra": "octavo", "fuentes": ["p23-act7", "p23-act8@R"]},
-          {"palabra": "noveno", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "noveno", "fuentes": ["p23-act7"]},
           {"palabra": "décimo", "fuentes": ["p23-act7", "p23-act8@R"]}
         ],
-        "fuentes": ["p23-act7", "p23-act8@R", "p31-act1", "p23-act4", "p23-act12", "p28-act1", "p23-act8"],
+        "fuentes": ["p23-act7", "p23-act8@R", "p23-act4", "p28-act1", "p23-act8"],
         "descripcion": {
           "U2": "PCIC A1 §3.5 Cantidades y números: números ordinales — Primer cierre canónico de la serie 1.º–10.º con moción de género (masculino/femenino) y apocopación de primero/tercero. U2 los aplica al horario escolar y a la descripción de cursos."
         }

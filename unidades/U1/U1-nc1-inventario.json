@@ -87,16 +87,16 @@
       },
       "Colores": {
         "items": [
-          {"palabra": "blanco", "fuentes": ["cuadro@p15", "p15-act7", "p21-act1"]},
-          {"palabra": "negro", "fuentes": ["cuadro@p15", "p15-act6", "p15-act6@R", "p15-act7", "p15-act7@R"]},
-          {"palabra": "rojo", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R", "p15-act6", "p21-act1"]},
+          {"palabra": "blanco", "fuentes": ["cuadro@p15", "p15-act7"]},
+          {"palabra": "negro", "fuentes": ["cuadro@p15", "p15-act6", "p15-act6@R", "p15-act7"]},
+          {"palabra": "rojo", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "amarillo", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "azul", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "marrón", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "verde", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "rosa", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]}
         ],
-        "fuentes": ["cuadro@p15", "p15-act7", "p21-act1", "p15-act6", "p15-act6@R", "p15-act7@R"],
+        "fuentes": ["cuadro@p15", "p15-act7", "p15-act6", "p15-act6@R", "p15-act7@R"],
         "descripcion": {
           "U1": "Léxico de los 8 colores básicos presentados visualmente en el cuadro@p15 'Los colores' (origen: excepción del registry; índice U1 lo declara dentro de gramática junto a 'Masculino y femenino' por estrategia editorial, pero su destino canónico es léxico). Soporta la práctica de concordancia de género (rojo→roja, blanco→blanca, negro→negra) en p15-act6 (Escribe frases con ser) y p15-act7 (Describe objetos con colores)."
         }
@@ -157,11 +157,11 @@
           {"palabra": "francés", "fuentes": ["p13-act8", "p13-act8@R", "p14-act1"]},
           {"palabra": "colombiana", "fuentes": ["p13-act8", "p13-act8@R"]},
           {"palabra": "inglesa", "fuentes": ["p13-act8", "p13-act8@R"]},
-          {"palabra": "brasileño", "fuentes": ["p13-act8", "p13-act8@R", "p14-act4@R", "p15-act6", "p15-act6@R", "p14-act4"]},
+          {"palabra": "brasileño", "fuentes": ["p14-act4"]},
           {"palabra": "italiana", "fuentes": ["p14-act1", "p15-act6", "p15-act6@R"]},
           {"palabra": "griego", "fuentes": ["p14-act4@R", "p14-act4"]},
-          {"palabra": "alemán", "fuentes": ["p14-act4", "p14-act4@R"]},
-          {"palabra": "mexicano", "fuentes": ["cuadro@p14#3", "p21-act4"]},
+          {"palabra": "alemán", "fuentes": ["p14-act4"]},
+          {"palabra": "mexicano", "fuentes": ["cuadro@p14#3"]},
           {"palabra": "japonés", "fuentes": ["cuadro@p14#3", "p15-act6", "p15-act6@R"]},
           {"palabra": "coreana", "fuentes": ["p15-act8"]},
           {"palabra": "peruana", "fuentes": ["p15-act6", "p15-act6@R", "p21-act4"]},
@@ -183,11 +183,11 @@
           "p18-act2",
           "p21-act1",
           "p14-act1",
-          "p14-act4@R",
           "p14-act4",
+          "p14-act4@R",
           "cuadro@p14#3",
-          "p21-act4",
           "p15-act8",
+          "p21-act4",
           "p12-act1",
           "cuadro@p20#1"
         ],

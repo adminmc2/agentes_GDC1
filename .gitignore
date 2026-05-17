@@ -70,3 +70,4 @@ fases/1-extraccion-inventario/campos-semanticos-canonicos.json.lock
 
 # Backups de migración Lote 2 v10.145
 *.bak.v10.145
+*.bak.v10.150

@@ -16,12 +16,12 @@
     "principal": {
       "Parientes": {
         "items": [
-          {"palabra": "abuelo", "fuentes": ["p32-act1", "p32-act2", "p32-act3", "p33-act6", "p35-act6", "p35-act6@R", "p36-act1", "p41-act4@R", "p32-act2@R", "p41-act4"]},
+          {"palabra": "abuelo", "fuentes": ["p32-act1", "p32-act2", "p32-act3", "p33-act6", "p35-act6", "p35-act6@R", "p36-act1", "p41-act4@R", "p41-act4"]},
           {"palabra": "padre", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act5", "p33-act6", "p33-act9", "p33-act9@R", "p33-act10", "p33-act10@R", "p35-act8", "p35-act8@R", "p38-act1", "p38-act1@R", "p38-act2@R"]},
           {"palabra": "madre", "fuentes": ["p32-act1", "p32-act2@R", "p33-act5", "p33-act6", "p33-act7@R", "p33-act8", "p33-act9", "p33-act9@R", "p33-act10", "p33-act10@R", "p35-act4", "p35-act6", "p35-act6@R", "p38-act1", "p38-act1@R", "p38-act2@R", "p41-act4"]},
-          {"palabra": "hijo", "fuentes": ["p32-act3", "p35-act6", "p35-act6@R", "p41-act4", "p41-act4@R", "p36-act1"]},
+          {"palabra": "hijo", "fuentes": ["p32-act3", "p35-act6", "p35-act6@R", "p41-act4", "p41-act4@R"]},
           {"palabra": "hermano", "fuentes": ["p32-act1", "p32-act2@R", "p33-act5", "p33-act7@R", "p33-act10", "p33-act10@R", "p35-act8", "p35-act8@R", "p36-act1", "p38-act1", "p38-act1@R", "p38-act2@R", "p41-act4@R", "p33-act8", "p41-act4"]},
-          {"palabra": "tío", "fuentes": ["p32-act1", "p32-act2@R", "p34-act3", "p35-act5", "p41-act4@R"]},
+          {"palabra": "tío", "fuentes": ["p32-act1", "p32-act2@R", "p34-act3", "p35-act5"]},
           {"palabra": "primo", "fuentes": ["p32-act1", "p32-act2@R", "p35-act5", "p36-act1", "p39-act7", "p39-act7@R", "p41-act4@R"]},
           {"palabra": "marido", "fuentes": ["p32-act3", "p41-act4@R"]},
           {"palabra": "mujer", "fuentes": ["p32-act3"]},
@@ -41,8 +41,8 @@
           "p35-act6@R",
           "p36-act1",
           "p41-act4@R",
-          "p32-act2@R",
           "p41-act4",
+          "p32-act2@R",
           "p33-act5",
           "p33-act9",
           "p33-act9@R",
@@ -104,7 +104,7 @@
           {"palabra": "colegio", "fuentes": ["p34-act1"]},
           {"palabra": "clase", "fuentes": ["p35-act8", "p36-act4", "p38-act1", "p38-act1@R", "p38-act3", "p39-act7"]},
           {"palabra": "recreo", "fuentes": ["p36-act1"]},
-          {"palabra": "compañero", "fuentes": ["p35-act7", "p35-act8", "p36-act4", "p38-act3", "p39-act5", "p39-act6", "p39-act7", "p38-act1"]},
+          {"palabra": "compañero", "fuentes": ["p35-act7", "p35-act8", "p36-act4", "p38-act3", "p39-act5", "p39-act6", "p39-act7"]},
           {"palabra": "amigo", "fuentes": ["p36-act4", "p38-act1", "p38-act3"]}
         ],
         "fuentes": ["p33-act6", "p33-act8", "p35-act5", "p38-act1", "p38-act1@R", "p33-act10", "p33-act10@R", "p38-act3", "p34-act1", "p35-act8", "p36-act4", "p39-act7", "p36-act1", "p35-act7", "p39-act5", "p39-act6"],

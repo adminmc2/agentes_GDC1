@@ -65,6 +65,110 @@ TIEMPOS_VALIDOS = {"Presente", "Pretérito indefinido", "Imperativo", "Infinitiv
 import re
 FUENTE_REGEX = re.compile(r"^(p\d+-act\d+(@R)?|cuadro@p\d+(#\d+)?)$")
 
+# === Matcher para §5.10 A (aparición material) y §5.11 (unificación) ===
+
+INPUT_FIELDS_LIST = ("instruccion_original", "datos", "dialogo", "dialogo_completo",
+                     "texto", "texto_completo", "items_libro", "muestra_de_lengua",
+                     "opciones", "audio")
+
+def _norm_text(s):
+    return re.sub(r"\s+", " ", s or "").strip().lower()
+
+def _expand_needle(s):
+    """Expande lemas con barra-sufijo y paréntesis. Replica cleanup_v150.expand_needle."""
+    s = (s or "").strip()
+    if not s: return set()
+    variants = {s}
+    m = re.match(r'^(.*?)\(([^)]+)\)(.*)$', s)
+    if m:
+        prefix, inside, tail = m.group(1), m.group(2), m.group(3)
+        variants.discard(s)
+        variants.add((prefix + tail).strip())
+        variants.add((prefix + inside + tail).strip())
+    m = re.match(r'^(.+?)/-([a-záéíóúñü]+)$', s, re.IGNORECASE)
+    if m:
+        left, suffix = m.group(1).strip(), m.group(2).strip()
+        variants.discard(s)
+        variants.add(left)
+        sl = left.lower()
+        if sl.endswith('o') and suffix.lower() == 'a':
+            variants.add(left[:-1] + 'a')
+        elif sl.endswith('és') and suffix.lower() == 'esa':
+            variants.add(left[:-2] + 'esa')
+        elif sl.endswith('án') and suffix.lower() == 'ana':
+            variants.add(left[:-2] + 'ana')
+        elif suffix.lower() == 'a' and sl[-1] not in 'aeiouáéíóú':
+            variants.add(left + 'a')
+        else:
+            variants.add(left + suffix)
+            if len(suffix) <= len(left):
+                variants.add(left[:-len(suffix)] + suffix)
+    return {v for v in variants if v}
+
+def _match_in_text(needle, haystack):
+    if not needle: return False
+    h = _norm_text(haystack)
+    if not h: return False
+    return any(_norm_text(v) in h for v in _expand_needle(needle))
+
+def _gather_text(o, out):
+    if isinstance(o, dict):
+        for v in o.values(): _gather_text(v, out)
+    elif isinstance(o, list):
+        for x in o: _gather_text(x, out)
+    elif isinstance(o, str):
+        out.append(o)
+
+def _activity_input_text(a):
+    out = []
+    for f in INPUT_FIELDS_LIST:
+        if f in a: _gather_text(a[f], out)
+    return " ".join(out)
+
+def _activity_resp_text(a):
+    out = []
+    _gather_text(a.get("respuestas", []), out)
+    return " ".join(out)
+
+def _cuadro_body_text(c):
+    out = []
+    for k, v in c.items():
+        if k in ("vocabulario", "tiempos_y_verbos", "gramatica",
+                 "pronunciacion_ortografia", "tipo_cuadro", "pagina", "id"):
+            continue
+        _gather_text(v, out)
+    return " ".join(out)
+
+def _is_gramatica_categoria_A(palabra, catname=None):
+    """Mismo discriminador que cleanup_v150.is_gramatica_categoria_A."""
+    if not palabra: return False
+    p = palabra.strip()
+    if any(c in p for c in "()→+?…"): return False
+    if "..." in p or ".." in p: return False
+    if "/" in p: return False
+    if any(c in p for c in "ˈˌʝθχ↑↓"): return False
+    if ":" in p: return False
+    if catname and p.strip().lower() == catname.strip().lower(): return False
+    if len(p.split()) > 3: return False
+    if len(p) > 25: return False
+    return True
+
+def _detectar_flexion_par(p1, p2):
+    """Devuelve True si p1 y p2 son flexiones del mismo lema."""
+    if not p1 or not p2: return False
+    a, b = _norm_text(p1), _norm_text(p2)
+    if a == b: return False
+    if " " in a or " " in b: return False
+    if a.endswith("o") and b.endswith("a") and a[:-1] == b[:-1]: return True
+    if a.endswith("a") and b.endswith("o") and a[:-1] == b[:-1]: return True
+    if a + "s" == b or b + "s" == a: return True
+    if a + "es" == b or b + "es" == a: return True
+    if a.endswith("és") and b.endswith("esa") and a[:-2] == b[:-3]: return True
+    if a.endswith("esa") and b.endswith("és") and a[:-3] == b[:-2]: return True
+    if a.endswith("án") and b.endswith("ana") and a[:-2] == b[:-3]: return True
+    if b == a + "a" or a == b + "a": return True
+    return False
+
 TIPOS_VALIDOS = {
     # Taxonomía v10.59 — basada en la acción específica del enunciado del libro.
     # input sin acción específica posterior
@@ -601,7 +705,131 @@ def validar(path):
     avisos.extend(avi_canon)
     auditoria_legacy.extend(audit_canon)
 
+    # === §5.10 A + §5.11 (deuda automatizable parcial absorbida en v10.151) ===
+    err_510, err_511 = _validar_510_511(d)
+    errores.extend(err_510)
+    errores.extend(err_511)
+
     return errores, avisos, auditoria_legacy
+
+
+def _validar_510_511(d):
+    """Aplica §5.10 A (aparición material) y §5.11 (unificación de flexiones).
+    Devuelve (errores_510, errores_511).
+    Las excepciones léxicas de §5.11 (compuestos multi-token, nombres propios,
+    formas sin par atestado) se respetan: solo se reporta error cuando hay 2+
+    flexiones del mismo lema como items separados en la misma categoría."""
+    errores_510 = []
+    errores_511 = []
+
+    # Indexar actividades y cuadros para lookup de fuentes
+    act_idx = {}
+    cuadros_idx = {}
+    for p in d.get("paginas_detalle", []) or []:
+        page = p.get("pagina")
+        for a in p.get("actividades", []) or []:
+            num = a.get("numero")
+            if page is not None and num is not None:
+                act_idx[f"p{page}-act{num}"] = a
+        for i, c in enumerate(p.get("cuadros", []) or [], start=1):
+            cuadros_idx[f"cuadro@p{page}"] = c
+            cuadros_idx[f"cuadro@p{page}#{i}"] = c
+
+    def verificar_fuente(fuente, target):
+        """target = string (vocab/gram) o lista de strings (verbos formas_trabajadas).
+        Devuelve True si aparición literal verifica."""
+        m = re.match(r"^(p\d+-act\d+)(@R)?$", fuente)
+        if m:
+            key, suf = m.group(1), m.group(2) or ""
+            a = act_idx.get(key)
+            if not a: return True  # no resuelve, no se valida
+            txt = (_activity_resp_text(a) if suf == "@R"
+                   else _activity_input_text(a) + " " + _activity_resp_text(a))
+        elif fuente.startswith("cuadro@"):
+            c = cuadros_idx.get(fuente)
+            if not c: return True
+            txt = _cuadro_body_text(c)
+        else:
+            return True
+        if isinstance(target, list):
+            return any(_match_in_text(t, txt) for t in target if t)
+        return _match_in_text(target, txt)
+
+    # --- §5.10 A: vocab items (todos A) ---
+    vc = d.get("vocabulario_consolidado") or {}
+    for tier in ("principal", "recurrente"):
+        for catname, cat in (vc.get(tier) or {}).items():
+            if not isinstance(cat, dict): continue
+            for item in cat.get("items", []) or []:
+                palabra = item.get("palabra")
+                for f in item.get("fuentes", []) or []:
+                    if not isinstance(f, str): continue
+                    if not verificar_fuente(f, palabra):
+                        errores_510.append(
+                            f"❌ §5.10 A vocab: '{palabra}' en {tier}.'{catname}' "
+                            f"declara fuente '{f}' sin aparición literal")
+
+    # --- §5.10 A: verbos (formas_trabajadas en consolidado y listas tipadas) ---
+    tv = d.get("tiempos_y_verbos_consolidado") or []
+    if isinstance(tv, list):
+        for vobj in tv:
+            if not isinstance(vobj, dict): continue
+            lema = vobj.get("lema")
+            formas = vobj.get("formas_trabajadas", []) or []
+            for f in vobj.get("fuentes", []) or []:
+                if not isinstance(f, str): continue
+                if not verificar_fuente(f, formas):
+                    errores_510.append(
+                        f"❌ §5.10 A verbos: lema '{lema}' declara fuente '{f}' "
+                        f"sin aparición literal de ninguna forma_trabajada")
+    # formas_trabajadas en listas tipadas de actividad/cuadro
+    for p in d.get("paginas_detalle", []) or []:
+        page = p.get("pagina")
+        for a in p.get("actividades", []) or []:
+            key = f"p{page}-act{a.get('numero')}"
+            inp_resp = _activity_input_text(a) + " " + _activity_resp_text(a)
+            for vobj in a.get("tiempos_y_verbos", []) or []:
+                if not isinstance(vobj, dict): continue
+                for forma in vobj.get("formas_trabajadas", []) or []:
+                    if not _match_in_text(forma, inp_resp):
+                        errores_510.append(
+                            f"❌ §5.10 A verbos lista tipada: forma '{forma}' "
+                            f"de '{vobj.get('lema')}' en {key} sin aparición literal")
+
+    # --- §5.10 A: gramática items A (heurística conservadora) ---
+    gc = d.get("gramatica_consolidada") or {}
+    for tier in ("principal", "recurrente"):
+        for catname, cat in (gc.get(tier) or {}).items():
+            if not isinstance(cat, dict): continue
+            for item in cat.get("items", []) or []:
+                palabra = item.get("palabra")
+                if not _is_gramatica_categoria_A(palabra, catname):
+                    continue  # Cat B: no se valida aparición
+                for f in item.get("fuentes", []) or []:
+                    if not isinstance(f, str): continue
+                    if not verificar_fuente(f, palabra):
+                        errores_510.append(
+                            f"❌ §5.10 A gramática: '{palabra}' en {tier}.'{catname}' "
+                            f"declara fuente '{f}' sin aparición literal")
+
+    # --- §5.11: detectar pares de flexiones sin unificar en vocabulario ---
+    for tier in ("principal", "recurrente"):
+        for catname, cat in (vc.get(tier) or {}).items():
+            if not isinstance(cat, dict): continue
+            items = cat.get("items", []) or []
+            n = len(items)
+            for i in range(n):
+                p_i = items[i].get("palabra") or ""
+                if " " in p_i: continue  # compuesto, no aplica
+                for j in range(i+1, n):
+                    p_j = items[j].get("palabra") or ""
+                    if " " in p_j: continue
+                    if _detectar_flexion_par(p_i, p_j):
+                        errores_511.append(
+                            f"❌ §5.11 vocab: '{p_i}' y '{p_j}' en {tier}.'{catname}' "
+                            f"son flexiones del mismo lema; deben unificarse")
+
+    return errores_510, errores_511
 
 
 def main():

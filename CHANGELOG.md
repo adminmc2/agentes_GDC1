@@ -5,6 +5,43 @@
 
 ---
 
+## [v10.151 — 2026-05-17] — Fase 1: Lote 3E — validador absorbe §5.10 A + §5.11 + fix orden FASE 2/1
+
+Cierre técnico del contrato v10.145 + §5.10 + §5.11. El validador `scripts/validar_inventario.py` deja de ser un gate parcial: ahora absorbe la parte mecanizable de §5.10 A y §5.11. La validación manual se reserva solo para Cat B + excepciones léxicas (declarado en `schema-inventario.md` §A.3).
+
+**Cambios en `scripts/validar_inventario.py`:**
+
+- Nuevo bloque de funciones internas: `_expand_needle`, `_match_in_text`, `_activity_input_text`, `_activity_resp_text`, `_cuadro_body_text`, `_is_gramatica_categoria_A`, `_detectar_flexion_par`. Réplica de la lógica de `cleanup_v150.py` (no se importa para mantener el validador independiente).
+- Nueva función `_validar_510_511(d)` que ejecuta dos chequeos:
+  - **§5.10 A:** cada fuente declarada para items Cat A (vocab, formas verbales en consolidado y listas tipadas, gramática Cat A según heurística conservadora) debe verificar aparición literal en el contenido didáctico definido en §5.2 + `respuestas[]` + cuerpo de cuadros.
+  - **§5.11:** detección de pares de items en `vocabulario_consolidado.<cat>.items[]` que sean flexiones del mismo lema sin unificar.
+- Errores se acumulan en la lista principal y bloquean cierre (exit 1).
+
+**Bug corregido en `scripts/cleanup_v150.py`:**
+
+Al re-validar los JSON post-v10.150c, el validador detectó fuentes residuales (11 en U1, 11 en U2, 4 en U3). Causa: el orden FASE 1 → FASE 2 procesaba items con notación `lema/-suf` (como `mexicano/-a`) verificando `expand_needle(mexicano/-a) = {mexicano, mexicana}` y aceptando la fuente si `mexicana` aparecía. Después FASE 2 reescribía a `mexicano`, pero la fuente ya estaba conservada con el item original. Tras la reescritura, la fuente quedaba apuntando a una palabra (`mexicano`) que no aparecía literalmente.
+
+Fix: dividir FASE 2 en dos pasos. PASO A (reescritura `lema/-suf`) corre **antes** de FASE 1 para que la verificación de aparición vea ya la palabra canónica. PASO B (detectar pares atestados) corre después de FASE 1.
+
+**Resultados U1 / U2 / U3 re-saneadas:**
+
+- U1: 11 fuentes adicionales retiradas (`mexicano`, otras flexiones residuales).
+- U2: 11 fuentes adicionales retiradas.
+- U3: 4 fuentes adicionales retiradas.
+- Validador U0-U5 → **0/0/0 con el validador extendido** (incluye chequeos §5.10 A + §5.11).
+
+**Estado del Apéndice transitorio del schema (§A.3):** §5.10 A y §5.11 pasan de "validación automática parcial pendiente" a "absorbidas en el validador". §5.10 B y excepciones léxicas de §5.11 permanecen como deuda editorial sostenida por protocolo §0.1.
+
+**`.gitignore`:** patrón `*.bak.v10.150` añadido.
+
+**Limpieza inmediata previa al lote:** todos los `.bak.v10.145` y `.bak.v10.150` eliminados del filesystem.
+
+**Pendientes:**
+- Auditoría registry `campos-semanticos-canonicos.json` (notación `lema/-a`).
+- Condiciones de retirada del Apéndice transitorio del schema (§A.4): U6-U9 sin migrar todavía.
+
+---
+
 ## [v10.150c — 2026-05-17] — Fase 1: Lote 3D-cleanup — cierre U0/U1/U3/U5 agrupados
 
 Tercer y último apply del Lote 3D-cleanup. Cierra la aplicación retroactiva de §5.10 + §5.11 a las 6 unidades U0-U5.
