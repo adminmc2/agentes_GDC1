@@ -431,7 +431,7 @@
           {"palabra": "A ellos/-as/Uds. les gusta(n)", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act3@R", "p48-act2", "p48-act3", "p51-act4"]},
           {"palabra": "intensificadores: mucho / nada / muy", "fuentes": ["cuadro@p44#1", "p44-act2", "p46-act1", "p47-act7", "p47-act8", "p48-act2", "p48-act3", "p51-act6"]}
         ],
-        "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p46-act2", "p46-act3", "p47-act7", "p47-act8", "p47-act9", "p48-act2", "p49-act4", "p49-act8", "p51-act4", "p51-act6"],
+        "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p44-act3@R", "p44-act4", "p46-act1", "p47-act7", "p47-act9", "p49-act4", "p49-act8", "p51-act4", "p51-act6", "p47-act8", "p46-act3", "p48-act2", "p48-act3"],
         "descripcion": {
           "U4": "PCIC A1 §15.2.2 — Verbos del tipo 'gustar'. Principal en U4 con 'gustar': estructura [(A + pron. tónico/SN) + pron. átono OI + gustar 3ª sg/pl + sujeto pospuesto]. Concordancia del verbo con el sujeto pospuesto (gusta/gustan según singular/plural). Reaparece amplificada en U8 con 'doler'."
         }
@@ -445,7 +445,7 @@
           {"palabra": "os", "fuentes": ["cuadro@p44#1", "p44-act1", "p51-act4"]},
           {"palabra": "les", "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act3@R", "p48-act2", "p48-act3", "p51-act4"]}
         ],
-        "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p44-act3", "p46-act1", "p46-act3", "p47-act7", "p47-act8", "p47-act9", "p48-act2", "p48-act3", "p49-act4", "p49-act8", "p51-act4", "p51-act6"],
+        "fuentes": ["cuadro@p44#1", "p44-act1", "p44-act2", "p46-act1", "p47-act7", "p51-act4", "p51-act6", "p47-act8", "p49-act8", "p44-act3", "p44-act3@R", "p46-act3", "p48-act2", "p48-act3"],
         "descripcion": {
           "U4": "PCIC A1 §7.2 — Pronombres personales en función de complemento indirecto (átonos). Principal en U4 con el paradigma 'gustar'. Paradigma completo: me/te/le/nos/os/les, ligado al sujeto experimentante y duplicable con (A + pronombre tónico) para énfasis y desambiguación."
         }
@@ -457,7 +457,7 @@
           {"palabra": "unos", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act8", "p51-act2", "p51-act3", "cuadro@p45#1"]},
           {"palabra": "unas", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p51-act2"]}
         ],
-        "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act7", "p45-act8", "p46-act1", "p46-act4", "p47-act5", "p49-act5", "p49-act7", "p51-act2", "p51-act3"],
+        "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act7", "p45-act8", "p46-act1", "p49-act7", "p51-act3", "p46-act4", "p46-act4@R", "p47-act5", "p49-act5", "p51-act2", "cuadro@p45#1"],
         "descripcion": {
           "U4": "PCIC A1 §6.1 — Artículo indeterminado. Principal en U4: paradigma un/una/unos/unas, concordancia con sustantivo en género y número, uso ante sustantivos contables (singular o plural) y ausencia ante sustantivos incontables. Articulado con 'Nombres contables e incontables' (ver entrada propia)."
         }
@@ -491,7 +491,7 @@
           {"palabra": "femenino (una / unas)", "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p47-act5", "p51-act3"]},
           {"palabra": "concordancia adj-sust en género (rojas, amarillas, verdes; muy ricas; vegetariana; italiana)", "fuentes": ["p42-act3", "p43-act5", "p43-act8", "p48-act3", "p50-act1"]}
         ],
-        "fuentes": ["cuadro@p44#2", "p42-act3", "p43-act5", "p43-act8", "p44-act5", "p45-act6", "p45-act8", "p47-act5", "p48-act3", "p50-act1", "p51-act3"],
+        "fuentes": ["cuadro@p44#2", "p44-act5", "p45-act6", "p45-act8", "p51-act3", "p47-act5", "p42-act3", "p43-act5", "p43-act8", "p48-act3", "p50-act1"],
         "descripcion": {
           "U4": "Recurrente desde U1 (PRE 'Concordancia de género'). En U4 se aplica intensivamente a los artículos indeterminados con sustantivos de alimentos (un plátano / una manzana, un cartón / una botella) y a la concordancia adj-sust ('rojas, amarillas o verdes', 'cocina italiana', 'restaurante peruano', 'ensalada mediterránea'). Refuerza el patrón básico de género nominal."
         }
@@ -511,12 +511,8 @@
           {"palabra": "de qué", "fuentes": ["p43-act8"]}
         ],
         "fuentes": [
-          "p43-act4",
-          "p43-act8",
-          "p45-act8",
           "p46-act1",
           "p46-act2",
-          "p46-act3",
           "p47-act6",
           "p47-act7",
           "p47-act8",
@@ -530,8 +526,12 @@
           "p50-act1",
           "p50-act2",
           "p50-act3",
+          "p51-act6",
           "p50-act4",
-          "p51-act6"
+          "p43-act4",
+          "p43-act8",
+          "p45-act8",
+          "p46-act3"
         ],
         "descripcion": {
           "U4": "Recurrente desde U3 (PRE 'Interrogativos'). En U4 reaparece con alta frecuencia en preguntas de comprensión de menú, en interrogación de gustos en parejas, y en preguntas sobre el texto cultural. Paradigma activo: qué, cuál(es), cómo, dónde, cuánto/cuántas, quién(es), a quién, a qué hora, de qué."

@@ -42,11 +42,55 @@ def gather_text(o, out):
 
 def norm(s): return re.sub(r"\s+", " ", s or "").strip().lower()
 
+def expand_needle(s):
+    """Expande un lema potencialmente inflexionado a sus variantes literales.
+    Maneja barra-sufijo ('argentino/-a' → 'argentino' + 'argentina') y
+    paréntesis sufijales ('A mí me gusta(n)' → 'A mí me gusta' + 'A mí me gustan').
+    Devuelve un set de strings."""
+    s = (s or "").strip()
+    if not s: return set()
+    variants = {s}
+    # Paréntesis: 'prefix(suffix)tail' → ['prefixtail', 'prefixsuffixtail']
+    m = re.match(r'^(.*?)\(([^)]+)\)(.*)$', s)
+    if m:
+        prefix, inside, tail = m.group(1), m.group(2), m.group(3)
+        variants.discard(s)
+        variants.add((prefix + tail).strip())
+        variants.add((prefix + inside + tail).strip())
+    # Barra-sufijo: 'left/-suffix' → left + variante femenina derivada
+    m = re.match(r'^(.+?)/-([a-záéíóúñü]+)$', s, re.IGNORECASE)
+    if m:
+        left, suffix = m.group(1).strip(), m.group(2).strip()
+        variants.discard(s)
+        variants.add(left)
+        sl = left.lower()
+        # Reglas comunes en NC1 A1:
+        if sl.endswith('o') and suffix.lower() == 'a':
+            variants.add(left[:-1] + 'a')               # argentino → argentina
+        elif sl.endswith('és') and suffix.lower() == 'esa':
+            variants.add(left[:-2] + 'esa')             # francés → francesa
+        elif sl.endswith('án') and suffix.lower() == 'ana':
+            variants.add(left[:-2] + 'ana')             # alemán → alemana
+        elif suffix.lower() == 'a' and sl[-1] not in 'aeiouáéíóú':
+            variants.add(left + 'a')                    # español → española
+        else:
+            # Fallback general: ambas estrategias por si no encaja patrón conocido
+            variants.add(left + suffix)
+            if len(suffix) <= len(left):
+                variants.add(left[:-len(suffix)] + suffix)
+    return {v for v in variants if v}
+
 def match_substring(needle, haystack):
-    """Match literal case-insensitive con normalización leve de espacios."""
-    n = norm(needle)
+    """Match literal case-insensitive con normalización leve de espacios.
+    Si needle contiene barra-sufijo o paréntesis, expande a variantes y
+    devuelve True si alguna matchea."""
+    if not needle: return False
     h = norm(haystack)
-    return bool(n) and n in h
+    if not h: return False
+    for variant in expand_needle(needle):
+        if norm(variant) in h:
+            return True
+    return False
 
 def build_activity_index(d):
     idx = {}
@@ -227,12 +271,17 @@ def main():
     if args.apply and args.dry_run:
         sys.stderr.write("ERROR: --apply y --dry-run son mutuamente excluyentes.\n"); sys.exit(2)
     if args.include_dual and args.block not in {"vocab", "verbos"}:
-        sys.stderr.write("ERROR: --include-dual solo permitido con --block vocab o verbos.\n"); sys.exit(2)
+        sys.stderr.write("ERROR: --include-dual solo permitido con --block vocab o verbos.\n"
+                         "Gramática modo B y pronunciación quedan fuera por dictamen del revisor (v10.148).\n")
+        sys.exit(2)
 
     blocks = list(BLOCK_MAP.keys()) if args.block == "all" else [args.block]
-    # Bloques con --apply autorizado: vocab (Lote 2 v10.145a, Lote 3A v10.145b-d), verbos (Lote 3B1 v10.146).
-    # Gramática y pron quedan congelados hasta definir matcher por bloque.
-    APPLY_ALLOWED = {"vocab", "verbos"}
+    # Bloques con --apply autorizado:
+    #   vocab    — Lote 2 v10.145a, Lote 3A v10.145b-d, Lote 3D1 v10.148 (re-migración U2/U3)
+    #   verbos   — Lote 3B1 v10.146 (modo A), Lote 3B2 v10.147 (modo B)
+    #   gramatica — Lote 3D2 v10.148 (solo modo A; modo B prohibido por dictamen del revisor)
+    # pronunciacion_ortografia: NO autorizado todavía (apertura desigual, queda fuera).
+    APPLY_ALLOWED = {"vocab", "verbos", "gramatica"}
     forbidden = {b for b in blocks if b not in APPLY_ALLOWED}
     if args.apply and forbidden:
         sys.stderr.write(
@@ -265,7 +314,7 @@ def main():
                 if isinstance(f, str) and not f.startswith("cuadro@") and not f.endswith("@R"):
                     fuentes_total += 1
         A, B, NO, WARN = process_block(block, block_key_full, act_idx,
-                                       apply_changes=(args.apply and bkey in {"vocab", "verbos"}),
+                                       apply_changes=(args.apply and bkey in {"vocab", "verbos", "gramatica"}),
                                        include_dual=args.include_dual)
         for rec in A+B+NO+WARN: rec["bloque"] = block_key_full
         all_A += A; all_B += B; all_NO += NO; all_WARN += WARN

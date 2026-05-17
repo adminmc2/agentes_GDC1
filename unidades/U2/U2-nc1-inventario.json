@@ -36,24 +36,45 @@
       "Adjetivos de nacionalidad": {
         "items": [
           {"palabra": "alemán/-ana", "fuentes": ["p22-act3"]},
-          {"palabra": "argentino/-a", "fuentes": ["p22-act2", "p24-act1", "p26-act1", "p31-act2"]},
-          {"palabra": "boliviano/-a", "fuentes": ["p22-act2"]},
-          {"palabra": "chileno/-a", "fuentes": ["p31-act3"]},
-          {"palabra": "chino/-a", "fuentes": ["p25-act4"]},
-          {"palabra": "colombiano/-a", "fuentes": ["p22-act2", "p25-act6", "p31-act1"]},
-          {"palabra": "cubano/-a", "fuentes": ["p31-act3"]},
-          {"palabra": "ecuatoriano/-a", "fuentes": ["p22-act2", "p25-act6"]},
-          {"palabra": "español/-a", "fuentes": ["p22-act2", "p24-act1", "p25-act4", "p25-act5", "p25-act6", "p26-act1", "p28-act1", "p31-act1"]},
+          {"palabra": "argentino/-a", "fuentes": ["p22-act2", "p22-act2@R", "p24-act1", "p26-act1", "p31-act2"]},
+          {"palabra": "boliviano/-a", "fuentes": ["p22-act2@R"]},
+          {"palabra": "chileno/-a", "fuentes": ["p31-act3", "p31-act3@R"]},
+          {"palabra": "chino/-a", "fuentes": ["p25-act4", "p25-act4@R"]},
+          {"palabra": "colombiano/-a", "fuentes": ["p22-act2@R", "p25-act6@R", "p31-act1"]},
+          {"palabra": "cubano/-a", "fuentes": ["p31-act3", "p31-act3@R"]},
+          {"palabra": "ecuatoriano/-a", "fuentes": ["p22-act2@R", "p25-act6@R"]},
+          {"palabra": "español/-a", "fuentes": ["p22-act2@R", "p24-act1", "p25-act4", "p25-act4@R", "p25-act5", "p25-act5@R", "p25-act6@R", "p26-act1", "p28-act1", "p31-act1"]},
           {"palabra": "francés/-esa", "fuentes": ["p24-act2", "p26-act1", "p28-act1"]},
           {"palabra": "griego/-a", "fuentes": ["p22-act3"]},
           {"palabra": "inglés/-esa", "fuentes": ["p22-act3"]},
           {"palabra": "japonés/-esa", "fuentes": ["p22-act3", "p24-act1"]},
-          {"palabra": "mexicano/-a", "fuentes": ["p22-act2", "p25-act7", "p29-act3", "p31-act3"]},
+          {"palabra": "mexicano/-a", "fuentes": ["p22-act2", "p22-act2@R", "p25-act7", "p25-act7@R", "p29-act3", "p31-act3", "p31-act3@R"]},
           {"palabra": "nicaragüense", "fuentes": ["p25-act6@R"]},
-          {"palabra": "peruano/-a", "fuentes": ["p22-act2", "p25-act4", "p25-act6", "p31-act3"]},
+          {"palabra": "peruano/-a", "fuentes": ["p22-act2@R", "p25-act4", "p25-act4@R", "p25-act6", "p25-act6@R", "p31-act3", "p31-act3@R"]},
           {"palabra": "polaco/-a", "fuentes": ["p22-act3"]}
         ],
-        "fuentes": ["p22-act3", "p22-act2", "p24-act1", "p26-act1", "p31-act2", "p31-act3", "p25-act4", "p25-act6", "p31-act1", "p25-act5", "p28-act1", "p24-act2", "p25-act7", "p29-act3", "p25-act6@R"],
+        "fuentes": [
+          "p22-act3",
+          "p22-act2",
+          "p22-act2@R",
+          "p24-act1",
+          "p26-act1",
+          "p31-act2",
+          "p31-act3",
+          "p31-act3@R",
+          "p25-act4",
+          "p25-act4@R",
+          "p25-act6@R",
+          "p31-act1",
+          "p25-act5",
+          "p25-act5@R",
+          "p28-act1",
+          "p24-act2",
+          "p25-act7",
+          "p25-act7@R",
+          "p29-act3",
+          "p25-act6"
+        ],
         "descripcion": {
           "U2": "PCIC A1 §1.7 Información personal: Nacionalidad — Primer cierre canónico de gentilicios de país: moción de género masculino/femenino y plural. U2 presenta el paradigma con países hispanohablantes y refuerza con gentilicios europeos y asiáticos."
         }
@@ -73,18 +94,18 @@
       },
       "Números ordinales": {
         "items": [
-          {"palabra": "primero/-a", "fuentes": ["p23-act7", "p23-act8", "p23-act11", "p24-act3", "p26-act1", "p31-act1"]},
-          {"palabra": "segundo/-a", "fuentes": ["p23-act4", "p23-act7", "p23-act8", "p23-act11", "p23-act12", "p28-act1"]},
+          {"palabra": "primero/-a", "fuentes": ["p23-act7", "p23-act8@R", "p23-act11", "p24-act3", "p26-act1", "p31-act1"]},
+          {"palabra": "segundo/-a", "fuentes": ["p23-act4", "p23-act7", "p23-act8@R", "p23-act11", "p23-act12", "p28-act1"]},
           {"palabra": "tercero/-a", "fuentes": ["p23-act4", "p23-act7", "p23-act8", "p23-act11", "p28-act1"]},
-          {"palabra": "cuarto/-a", "fuentes": ["p23-act7", "p23-act8", "p23-act11"]},
-          {"palabra": "quinto/-a", "fuentes": ["p23-act7", "p23-act8", "p23-act11"]},
-          {"palabra": "sexto/-a", "fuentes": ["p23-act7", "p23-act8", "p23-act11"]},
-          {"palabra": "séptimo/-a", "fuentes": ["p23-act7", "p23-act8"]},
-          {"palabra": "octavo/-a", "fuentes": ["p23-act7", "p23-act8"]},
-          {"palabra": "noveno/-a", "fuentes": ["p23-act7", "p23-act8"]},
-          {"palabra": "décimo/-a", "fuentes": ["p23-act7", "p23-act8"]}
+          {"palabra": "cuarto/-a", "fuentes": ["p23-act7", "p23-act8@R", "p23-act11"]},
+          {"palabra": "quinto/-a", "fuentes": ["p23-act7", "p23-act8@R", "p23-act11"]},
+          {"palabra": "sexto/-a", "fuentes": ["p23-act7", "p23-act8@R", "p23-act11"]},
+          {"palabra": "séptimo/-a", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "octavo/-a", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "noveno/-a", "fuentes": ["p23-act7", "p23-act8@R"]},
+          {"palabra": "décimo/-a", "fuentes": ["p23-act7", "p23-act8@R"]}
         ],
-        "fuentes": ["p23-act7", "p23-act8", "p23-act11", "p24-act3", "p26-act1", "p31-act1", "p23-act4", "p23-act12", "p28-act1"],
+        "fuentes": ["p23-act7", "p23-act8@R", "p23-act11", "p24-act3", "p26-act1", "p31-act1", "p23-act4", "p23-act12", "p28-act1", "p23-act8"],
         "descripcion": {
           "U2": "PCIC A1 §3.5 Cantidades y números: números ordinales — Primer cierre canónico de la serie 1.º–10.º con moción de género (masculino/femenino) y apocopación de primero/tercero. U2 los aplica al horario escolar y a la descripción de cursos."
         }
@@ -129,7 +150,7 @@
           {"palabra": "treinta y siete (37)", "fuentes": ["p27-act7"]},
           {"palabra": "cuarenta (40)", "fuentes": ["p27-act6", "p31-act2"]},
           {"palabra": "cuarenta y uno (41)", "fuentes": ["p27-act7"]},
-          {"palabra": "cuarenta y tres (43)", "fuentes": ["p27-act8"]},
+          {"palabra": "cuarenta y tres (43)", "fuentes": ["p27-act8", "p27-act8@R"]},
           {"palabra": "cincuenta (50)", "fuentes": ["p27-act6"]},
           {"palabra": "sesenta (60)", "fuentes": ["p27-act6", "p27-act7"]},
           {"palabra": "sesenta y cinco (65)", "fuentes": ["p27-act7"]},
@@ -141,7 +162,7 @@
           {"palabra": "noventa y cuatro (94)", "fuentes": ["p27-act7"]},
           {"palabra": "cien (100)", "fuentes": ["p27-act6"]}
         ],
-        "fuentes": ["p27-act6", "p27-act7", "p28-act1", "p28-act2", "p30-act2", "p31-act2", "p27-act8"],
+        "fuentes": ["p27-act6", "p27-act7", "p28-act1", "p28-act2", "p30-act2", "p31-act2", "p27-act8", "p27-act8@R"],
         "descripcion": {
           "U2": "PCIC A1 §3.5 Cantidades y números: números cardinales — Continuación del paradigma (U0: 0–10; U1: 11–20). U2 cierra el tramo 21–100 incluyendo decenas (veinte, treinta, cuarenta...) y composición decena-y-unidad (treinta y uno, cuarenta y tres, etc.). Aplicado al léxico de dirección y de edad. Rótulo del libro 'Números del 21 al 100' canonizado bajo 'Números cardinales' (aliases_indice)."
         }
@@ -180,14 +201,14 @@
           {"palabra": "colegio", "fuentes": ["p29-act7", "p29-act8", "p30-act4"]},
           {"palabra": "clase", "fuentes": ["p23-act10@R", "p24-act1", "p24-act2", "p24-act3", "p26-act1", "p28-act1", "p29-act6", "p30-act2"]},
           {"palabra": "curso", "fuentes": ["p26-act1", "p28-act1", "p28-act1@R", "p30-act2"]},
-          {"palabra": "Educación Secundaria Obligatoria (ESO)", "fuentes": ["p28-act1", "p30-act2"]},
+          {"palabra": "Educación Secundaria Obligatoria (ESO)", "fuentes": ["p28-act1", "p28-act1@R", "p30-act2"]},
           {"palabra": "recreo", "fuentes": ["p23-act11", "p27-act10", "p30-act2"]},
           {"palabra": "cafetería", "fuentes": ["p30-act2"]},
           {"palabra": "aulas", "fuentes": ["p30-act2"]},
           {"palabra": "estudiantes", "fuentes": ["p25-act4@R", "p28-act1", "p30-act2"]},
           {"palabra": "alumnos", "fuentes": ["p28-act2", "p28-act2@R", "p29-act4", "p30-act2"]},
           {"palabra": "asignaturas obligatorias", "fuentes": ["p30-act2"]},
-          {"palabra": "(asignaturas) optativas", "fuentes": ["p30-act2", "p30-act3"]},
+          {"palabra": "(asignaturas) optativas", "fuentes": ["p30-act2", "p30-act3", "p30-act3@R"]},
           {"palabra": "actividades extraescolares", "fuentes": ["p30-act2", "p30-act3"]},
           {"palabra": "profesor", "fuentes": ["p24-act1", "p24-act2", "p25-act4", "p25-act4@R", "p30-act2"]},
           {"palabra": "tutora", "fuentes": ["p26-act1"]},
@@ -216,6 +237,7 @@
           "p28-act2@R",
           "p29-act4",
           "p30-act3",
+          "p30-act3@R",
           "p25-act4",
           "p25-act7",
           "p23-act12",
@@ -373,7 +395,7 @@
           {"palabra": "Este lápiz marrón / Estos lápices marrones", "fuentes": ["p25-act5"]},
           {"palabra": "Este chico español / Estos chicos españoles", "fuentes": ["p25-act5"]}
         ],
-        "fuentes": ["cuadro@p24#2", "p25-act4", "p25-act5", "p31-act3"],
+        "fuentes": ["cuadro@p24#2", "p25-act4", "p25-act5"],
         "descripcion": {
           "U2": "PCIC A1 §2.1.2 Plural — Primer cierre canónico de la formación del plural en nombres y adjetivos: +s tras vocal, +es tras consonante, alternancias ortográficas (z→c, lápiz→lápices) y ajustes de acento (alemán→alemanes, camión→camiones). Trabajada en cuadro p24, acts p25-4/5 y consolidada en evaluación p31-3."
         }
@@ -390,15 +412,15 @@
           {"palabra": "Estas son Laura y Rosa", "fuentes": ["cuadro@p24#3"]},
           {"palabra": "Estos de la foto son mis amigos", "fuentes": ["p24-act3"]},
           {"palabra": "Esta mujer", "fuentes": ["p24-act1"]},
-          {"palabra": "Estos niños", "fuentes": ["p24-act1", "p31-act4"]},
+          {"palabra": "Estos niños", "fuentes": ["p24-act1", "p31-act4@R"]},
           {"palabra": "Estos chicos", "fuentes": ["p24-act2"]},
           {"palabra": "¿Quién es este/esta?", "fuentes": ["p25-act6"]},
           {"palabra": "¿Quiénes son estos/estas?", "fuentes": ["p25-act6"]},
           {"palabra": "Esta niña", "fuentes": ["p31-act4"]},
-          {"palabra": "Estas niñas", "fuentes": ["p31-act4"]},
-          {"palabra": "Este niño", "fuentes": ["p31-act4"]}
+          {"palabra": "Estas niñas", "fuentes": ["p31-act4@R"]},
+          {"palabra": "Este niño", "fuentes": ["p31-act4@R"]}
         ],
-        "fuentes": ["cuadro@p24#3", "p24-act1", "p24-act2", "p24-act3", "p25-act6", "p31-act4"],
+        "fuentes": ["cuadro@p24#3", "p24-act3", "p24-act1", "p31-act4@R", "p24-act2", "p25-act6", "p31-act4"],
         "descripcion": {
           "U2": "PCIC A1 §7.3 Demostrativos — Primer cierre canónico del paradigma de proximidad (este/esta/estos/estas) en función adjetiva y pronominal, con concordancia de género y número con el referente. Trabajado en cuadro p24 y aplicado en p25-6, p31-4."
         }
@@ -418,7 +440,7 @@
           {"palabra": "vosotros/-as", "fuentes": ["cuadro@p24#1", "p24-act1", "p24-act2", "p29-act4"]},
           {"palabra": "ellos / ellas / ustedes", "fuentes": ["cuadro@p24#1"]}
         ],
-        "fuentes": ["cuadro@p24#1", "p22-act3", "p24-act1", "p24-act2", "p24-act3", "p26-act1", "p27-act8", "p29-act4", "p31-act1"],
+        "fuentes": ["cuadro@p24#1", "p24-act1", "p26-act1", "p22-act3", "p24-act2", "p27-act8", "p29-act4", "p31-act1", "p24-act3"],
         "descripcion": { "U2": "Recurrente: ya canónico en U1 (PCIC A1 §7.1.1). U2 lo refuerza intensivamente en el cuadro de conjugación de ser/tener (paradigma completo de 6 personas) y en ejercicios de selección de la forma verbal según pronombre sujeto." }
       },
       "Concordancia de género": {
@@ -431,7 +453,7 @@
           {"palabra": "Esta flor amarilla / Este bolígrafo rojo", "fuentes": ["p25-act5"]},
           {"palabra": "Este es Juan / Esta es Lola", "fuentes": ["cuadro@p24#3"]}
         ],
-        "fuentes": ["p22-act2", "cuadro@p24#2", "cuadro@p24#3", "p25-act4", "p25-act5", "p31-act3"],
+        "fuentes": ["p22-act2", "p31-act3", "cuadro@p24#2", "p25-act5", "cuadro@p24#3"],
         "descripcion": { "U2": "Recurrente: ya canónico en U1. U2 lo reactiva en la moción de género de gentilicios (-o/-a, -és/-esa, -e invariable) y en la concordancia de demostrativos y adjetivos descriptivos con el sustantivo." }
       },
       "Interrogativos": {
@@ -447,7 +469,7 @@
           {"palabra": "¿A qué hora...?", "fuentes": ["p24-act2"]},
           {"palabra": "¿De qué (ciudad/nacionalidad)...?", "fuentes": ["p28-act2", "p31-act8"]}
         ],
-        "fuentes": ["p22-act3", "p23-act6", "p23-act10", "p23-act10@R", "p23-act12", "p24-act1", "p24-act2", "p25-act6", "p26-act1", "p27-act8", "p28-act1", "p28-act2", "p29-act4", "p30-act1", "p30-act4", "p31-act7", "p31-act8"],
+        "fuentes": ["p22-act3", "p24-act1", "p25-act6", "p26-act1", "p29-act4", "p23-act6", "p23-act10", "p23-act10@R", "p28-act1", "p24-act2", "p31-act7", "p31-act8", "p23-act12", "p27-act8", "p28-act2"],
         "descripcion": {
           "U2": "Recurrente: ya canónico en U1. U2 lo amplía al servicio del bloque comunicativo 'pedir y dar información personal' (¿Cómo te llamas?, ¿De dónde eres?, ¿Cuántos años tienes?, ¿Dónde vives?, ¿Qué estudias?, ¿Cuál es tu asignatura/deporte/día favorito?)."
         }
@@ -457,7 +479,7 @@
           {"palabra": "el / la", "fuentes": ["p22-act1", "p23-act4", "cuadro@p24#2", "p27-act8"]},
           {"palabra": "los / las", "fuentes": ["cuadro@p24#2", "p23-act4", "p29-act7", "p30-act2"]}
         ],
-        "fuentes": ["p22-act1", "p23-act4", "cuadro@p24#2", "p25-act4", "p27-act8", "p29-act7", "p30-act2"],
+        "fuentes": ["p22-act1", "p23-act4", "cuadro@p24#2", "p27-act8", "p29-act7", "p30-act2"],
         "descripcion": { "U2": "Recurrente: ya canónico en U1. U2 lo reactiva como soporte de la concordancia de género/número del cuadro de adjetivos (el gato blanco / la gata blanca / los gatos blancos / las gatas blancas)." }
       }
     }

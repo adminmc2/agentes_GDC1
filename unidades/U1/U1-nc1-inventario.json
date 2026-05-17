@@ -343,10 +343,10 @@
         "items": [
           {"palabra": "el", "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p21-act2", "p21-act3"]},
           {"palabra": "la", "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p15-act7", "p21-act2", "p21-act3"]},
-          {"palabra": "los", "fuentes": ["cuadro@p14#2", "p15-act6"]},
-          {"palabra": "las", "fuentes": ["cuadro@p14#2", "p15-act6"]}
+          {"palabra": "los", "fuentes": ["cuadro@p14#2", "p15-act6@R"]},
+          {"palabra": "las", "fuentes": ["cuadro@p14#2", "p15-act6@R"]}
         ],
-        "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p15-act6", "p15-act7", "p21-act2", "p21-act3"],
+        "fuentes": ["p12-act3", "cuadro@p14#2", "p14-act5", "p21-act2", "p21-act3", "p15-act7", "p15-act6@R"],
         "descripcion": {
           "U1": "PCIC A1 §3.1 El artículo definido. Principal U1 gramática: presentación del paradigma completo el/la/los/las en cuadro@p14#2 con dos sub-bloques ilustrativos (Nombres de las cosas / Nombres de personas y animales) y tabla masculino-femenino × singular-plural. Trabajado en p14-act5 (forma el femenino), p21-act2 (coloca el artículo), p21-act3 (completa la tabla)."
         }
@@ -356,7 +356,7 @@
           {"palabra": "masculino", "fuentes": ["cuadro@p14#2", "cuadro@p14#3", "p14-act4"]},
           {"palabra": "femenino", "fuentes": ["cuadro@p14#2", "cuadro@p14#3", "p14-act4", "p14-act5"]}
         ],
-        "fuentes": ["cuadro@p14#2", "cuadro@p14#3", "p14-act4", "p14-act5", "cuadro@p15", "p15-act6", "p15-act7", "p21-act1", "p21-act3"],
+        "fuentes": ["cuadro@p14#2", "cuadro@p14#3", "p14-act4", "p14-act5"],
         "descripcion": {
           "U1": "PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN. Principal U1 gramática ('Masculino y femenino'). Presentado en cuadro@p14#2 (sustantivos: el libro/la casa, el amigo/la amiga, el león/la leona) y cuadro@p14#3 (adjetivos: mexicano/-a, español/-a, japonés/-a). Trabajado en p14-act4 (completa la tabla con sufijación -o/-a, -és/-esa, -ón/-ona, -án/-ana), p14-act5 (forma el femenino), p15-act6 (escribe frases con ser concordando con sujeto), p15-act7 (objetos × colores con concordancia adjetival)."
         }
@@ -371,7 +371,7 @@
           {"palabra": "vosotros", "fuentes": ["cuadro@p20#2"]},
           {"palabra": "ustedes", "fuentes": ["cuadro@p20#2"]}
         ],
-        "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act2", "p14-act3", "p15-act8", "p18-act2", "cuadro@p20#1", "cuadro@p20#2", "cuadro@p20#3", "p20-act1", "p21-act1", "p21-act4"],
+        "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p18-act2", "p21-act1", "p21-act4", "p15-act8", "p14-act2", "cuadro@p20#1", "cuadro@p20#2", "cuadro@p20#3", "p20-act1"],
         "descripcion": {
           "U1": "PCIC A1 §7.1.1 Pronombre sujeto. Principal U1: introducción del subset singular + usted (yo/tú/él/ella/usted) como soporte sintáctico del paradigma de los tres verbos (cuadro@p14#1). El cuadro@p20#2 '¿Tú o usted?' amplía con vosotros/ustedes como contraste pragmático informal/formal (mencionados, no conjugados); la conjugación plural se difiere a U2. Registry declara U1 como introducción y U2-U9 como recurrente."
         }
@@ -397,25 +397,25 @@
           {"palabra": "dónde", "fuentes": ["p15-act8", "p19-act5", "cuadro@p20#1", "cuadro@p20#3", "p21-act4", "p21-act6"]}
         ],
         "fuentes": [
-          "p13-act6",
           "p13-act7",
-          "p13-act9",
-          "p14-act2",
           "p15-act8",
           "p15-act9",
-          "p15-act10",
           "p16-act1",
-          "p16-act2",
           "p16-act3",
-          "p17-act5",
-          "p17-act6",
           "p19-act5",
           "p19-act6",
-          "cuadro@p20#1",
-          "cuadro@p20#3",
           "p20-act1",
-          "p21-act4",
-          "p21-act6"
+          "cuadro@p20#1",
+          "p13-act6",
+          "p15-act10",
+          "p16-act2",
+          "cuadro@p20#3",
+          "p21-act6",
+          "p13-act9",
+          "p14-act2",
+          "p17-act5",
+          "p17-act6",
+          "p21-act4"
         ],
         "descripcion": {
           "U1": "PCIC A1 §7.3 Los interrogativos. Anticipación material del principal canónico de U3 (paradigma morfológico cerrado). En U1 los interrogativos NO se trabajan como paradigma: aparecen exclusivamente como cabeza de fórmula-pregunta fija ligada a la función comunicativa 'Pedir y dar información personal' (¿Cómo te llamas? / ¿Cuántos años tienes? / ¿Cuál es tu número de teléfono? / ¿De dónde eres? / ¿Qué tal?). El cuadro p15 'Pronunciación y ortografía — Interrogativos' (encabezado sobre p15-act8) los recoge para trabajar entonación interrogativa, no morfología. Codificación como recurrente con restricción funcional aprobada por el autor (P5)."

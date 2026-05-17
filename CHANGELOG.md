@@ -5,6 +5,75 @@
 
 ---
 
+## [v10.148 — 2026-05-17] — Fase 1: Lote 3D — matcher mejorado: re-migración vocab U2/U3 + gramática modo A
+
+Extensión del matcher (`expand_needle`) para resolver dos limitaciones diagnosticadas en lotes anteriores:
+
+1. **Barra-sufijo de flexión:** `argentino/-a` → `{argentino, argentina}`, `francés/-esa` → `{francés, francesa}`, `alemán/-ana` → `{alemán, alemana}`, `español/-a` → `{español, española}`. Cubre los patrones documentados en `campos-semanticos-canonicos.json` para adjetivos de nacionalidad, números ordinales y similares.
+2. **Paréntesis sufijales:** `A mí me gusta(n)` → `{A mí me gusta, A mí me gustan}`. Cubre paradigmas metalingüísticos en `gramatica_consolidada` y formas con plural opcional.
+
+`match_substring` ahora expande el needle a un conjunto de variantes y devuelve `True` si **alguna** matchea. Sin cambios en la regex de fuentes ni en la política de escritura.
+
+**Impacto del matcher mejorado en anomalías (dry-run, U0-U5 vocab):**
+
+| Unidad | Anomalías antes | Anomalías ahora | Reducción |
+|---|---|---|---|
+| U2 | 131 | 47 | –84 |
+| U3 | 50 | 31 | –19 |
+| Otras | sin cambio | sin cambio | 0 |
+| **Total** | 246 | 143 | **–103** |
+
+**Lote 3D1 — vocab re-migración U2 y U3 (dictamen del revisor):**
+
+| Unidad | A nuevos | B nuevos |
+|---|---|---|
+| U2 | 17 | 15 |
+| U3 | 1 | 4 |
+| **Total** | **18** | **19** |
+
+Aplicados con `--include-dual`. Política idéntica a Lote 3A vocab. U0, U1, U4, U5 vocab no se tocan (no hay descubrimientos nuevos en ellas).
+
+**Lote 3D2 — gramática modo A (dictamen del revisor: solo modo A, no B):**
+
+| Unidad | A aplicados |
+|---|---|
+| U1 | 2 |
+| U2 | 3 |
+| U3 | 9 |
+| U4 | 0 (saneamiento cat.fuentes) |
+| U5 | 0 |
+| **Total** | **14** |
+
+Primera migración de `gramatica_consolidada`. Modo B (68 candidatos dual detectados) **no autorizado** por dictamen del revisor — volumen y complejidad del paradigma metalingüístico requieren revisión adicional antes de aplicar dual retroactivo.
+
+**Saneamiento colateral en U4 gramática:** al ampliar `apply_changes` a gramática, el recompute de `cat.fuentes` detectó una inconsistencia preexistente (`p46-act4@R` presente en un item pero faltaba del agregado de categoría). Saneada en el mismo lote sin pérdida de información.
+
+**Gate ampliado:** `APPLY_ALLOWED = {vocab, verbos, gramatica}`. `--include-dual` sigue restringido a `vocab` y `verbos`. Pronunciación-ortografía sigue fuera de apply (apertura desigual, dictamen del revisor).
+
+**Dictámenes del revisor explícitamente registrados:**
+
+- Gramática modo B (68 candidatos dual): **no autorizado** en este lote por volumen y por las 252 anomalías restantes (paradigmas con barras múltiples y paréntesis combinados no cubiertos por la expansión actual).
+- Pronunciación: **no autorizada** como lote. Desbloqueo es muy parcial (10 A solo en U3 + 3 B). Considerada "caso local prometedor" pero no migrable como dimensión.
+
+**Resultados (validador 0/0/0 en todas):**
+
+| Lote | Unidades tocadas | Reemplazos |
+|---|---|---|
+| 3D1 vocab | U2, U3 | 18 A + 19 B |
+| 3D2 gram | U1, U2, U3 | 14 A |
+| **Total v10.148** | | **51 nuevas fuentes @R** |
+
+**Tareas que siguen abiertas como deuda no resuelta:**
+
+- 143 anomalías de vocab post-matcher (mayoritariamente deuda heredada del extractor — palabras codificadas por campo semántico sin aparición material).
+- 252 anomalías de gramática (paradigmas complejos no cubiertos por la expansión actual).
+- 39 anomalías de pronunciación (notación IPA, no abordable con matcher literal).
+- 25 anomalías de verbos heredadas de v10.146.
+- Gramática modo B (68 candidatos).
+- Pronunciación-ortografía completa.
+
+---
+
 ## [v10.147 — 2026-05-16] — Fase 1: Lote 3B2 — verbos modo B (dual-tracking retroactivo) en U1-U5
 
 Aplicación del modo B (dual-tracking) al bloque `tiempos_y_verbos_consolidado`. Cierra Lote 3B para verbos: tras 3B1 (modo A, 21 reemplazos) y revisión del estado por el autor, se procede con dual retroactivo en las mismas 5 unidades.
