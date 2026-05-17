@@ -115,8 +115,17 @@
       },
       "Tipos de vivienda": {
         "items": [
-          {"palabra": "albergue juvenil", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R"]},
           {"palabra": "apartamento", "fuentes": ["p53-act8", "p58-act2"]},
+          {"palabra": "chalé", "fuentes": ["p58-act2@R"]}
+        ],
+        "fuentes": ["p53-act8", "p58-act2", "p58-act2@R"],
+        "descripcion": {
+          "U5": "PCIC A1 §3.7.2 — Tipos de vivienda residencial permanente. Principal en U5: apartamento (atestado en p53-act8 escucha_y_repite + p58-act2 respuestas — Elisa vive en un apartamento) y chalé (atestado en p58-act2@R — Elisa vive en un chalé). El bloque cubre vocabulario de vivienda donde se reside, distinto del alojamiento temporal turístico (categoría aparte 'Alojamiento'). Rectificación editorial v10.154: los términos 'albergue juvenil', 'camping', 'caravana', 'casa rural', 'crucero', 'granja', 'hotel' se trasladaron a 'Alojamiento' por aparecer en la unidad como alojamientos turísticos (p53-act8/9 con definiciones explícitas tipo 'lugar de vacaciones', 'lugar de alojarse'), no como tipos de vivienda residencial."
+        }
+      },
+      "Alojamiento": {
+        "items": [
+          {"palabra": "albergue juvenil", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R"]},
           {"palabra": "camping", "fuentes": ["p53-act8", "p53-act12@R"]},
           {"palabra": "caravana", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R"]},
           {"palabra": "casa rural", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R"]},
@@ -124,9 +133,9 @@
           {"palabra": "granja", "fuentes": ["p53-act8", "p53-act9", "p53-act9@R", "p53-act12@R"]},
           {"palabra": "hotel", "fuentes": ["p53-act8", "p53-act11@R"]}
         ],
-        "fuentes": ["p53-act8", "p53-act9", "p53-act9@R", "p58-act2", "p53-act12@R", "p53-act11@R"],
+        "fuentes": ["p53-act8", "p53-act9", "p53-act9@R", "p53-act12@R", "p53-act11@R"],
         "descripcion": {
-          "U5": "PCIC A1 §3.7 — Tipos de vivienda y alojamiento turístico. Principal en U5: léxico de alojamientos (hotel, albergue juvenil, crucero, casa rural, apartamento, caravana, camping, granja) trabajado en p53 con vocabulario visual, definiciones (p53-act09) y elección personal (p53-act10), y en p58-59 con descripción de viviendas reales."
+          "U5": "PCIC A1 — Alojamiento turístico / lugares de estancia temporal. Principal en U5: hotel, albergue juvenil, crucero, casa rural, caravana, camping, granja. Se presentan en p53-act8 (página web de vacaciones) y se trabajan con definiciones en p53-act9 ('Alojamiento con ruedas...', 'Barco grande para viajes de vacaciones...', etc.), aplicándose en p53-act10/11/12 sobre decisiones de viajes y alojamiento. Categoría distinta de 'Tipos de vivienda' (vivienda permanente) según decisión del autor v10.139 confirmada en v10.154."
         }
       }
     },
@@ -425,6 +434,14 @@
       "diagnostico": "El índice del libro NC1 coloca 'Posición: encima, debajo, detrás, delante, al lado' en gramatica, no en vocabulario. PCIC A1 §8 los categoriza como adverbios/locuciones adverbiales de lugar. La codificación previa (v10.141 y v10.144) los puso erróneamente en vocabulario_consolidado bajo 'Marcadores de lugar: a la izquierda, ..., cerca' — etiqueta del registry léxico que cubre OTRO conjunto de marcadores (izquierda/derecha/enfrente/etc., no presentes en U5).",
       "accion": "(1) Bloque léxico 'Marcadores de lugar: a la izquierda, ..., cerca' retirado de vocabulario_consolidado.principal. (2) 5 items reales (al lado, debajo, delante, detrás, encima) con sus fuentes trasladados a gramatica_consolidada.principal['Adverbios y locuciones de lugar'] (categoría canónica preexistente en gramatica-canonica.json). (3) Refs en actividad.vocabulario / cuadro.vocabulario retiradas; refs equivalentes añadidas a actividad.gramatica / cuadro.gramatica donde faltaban. (4) Descripción gramatical reescrita reflejando el cambio.",
       "ramifica": "Invalida parcialmente P16 (v10.141 + v10.141b) y P17 (v10.144) — la 'doble codificación' léxico+gramatical introducida entonces se sustituye por codificación única en gramática. El canónico léxico 'Marcadores de lugar: a la izquierda, ..., cerca' del registry queda disponible para unidades futuras que enseñen los marcadores que sí cubre (izquierda/derecha/enfrente/entre/lejos/cerca). 'Adverbios de posición' del registry léxico — su uso vivía solo aquí — queda como huérfano (auditoría aparte del registry)."
+    },
+    {
+      "id": "P19",
+      "version": "v10.154",
+      "decision": "Separar 'Tipos de vivienda' vs 'Alojamiento' en U5 según el uso material del libro.",
+      "diagnostico": "El índice del libro NC1 U5 dice 'Tipos de vivienda' pero el material en p53-act8/9 presenta 7 términos como alojamiento turístico (definiciones tipo 'alojamiento con ruedas', 'lugar de vacaciones'). Solo 'apartamento' y 'chalé' (atestado en p58-act2@R) son vivienda permanente en sentido material. La codificación anterior tenía los 8 términos mezclados en 'Tipos de vivienda', contradiciendo la decisión P (v10.139) del autor: 'NO fusionar Tipos de vivienda + Alojamiento; son canónicos conceptualmente distintos'.",
+      "accion": "(1) 'Tipos de vivienda' conserva: apartamento (atestado p53-act8 + p58-act2) + chalé (nuevo, atestado p58-act2@R). (2) 'Alojamiento' creado en vocabulario_consolidado.principal con 7 items: hotel, albergue juvenil, crucero, casa rural, caravana, camping, granja. Las fuentes se preservan. (3) Refs en activity.vocabulario actualizadas según items materialmente presentes en cada actividad: las que solo trabajan alojamiento turístico (p53-act7/8/9/10/11/12) referencian 'Alojamiento'; las que trabajan vivienda (p58-act2, p59-act5/7/8) referencian 'Tipos de vivienda'. (4) Sin cambios en el registry léxico — ambas categorías existían ya (Tipos de vivienda origen indice; Alojamiento origen pcic_a1).",
+      "ramifica": "Activa por primera vez el canónico 'Alojamiento' del registry PCIC A1, que estaba sin uso. Confirma la decisión P del autor en v10.139."
     }
   ],
   "paginas_detalle": [
@@ -579,7 +596,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Tacha la palabra que no corresponde en cada serie, como en el ejemplo.",
-          "vocabulario": ["Mobiliario", "Adjetivos descriptivos", "Tipos de vivienda", "Partes de la casa"],
+          "vocabulario": ["Mobiliario", "Adjetivos descriptivos", "Partes de la casa"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -607,7 +624,7 @@
           "destreza": ["comprension_auditiva", "expresion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira esta página web. Escucha y repite las palabras.",
-          "vocabulario": ["Tipos de vivienda"],
+          "vocabulario": ["Tipos de vivienda", "Alojamiento"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -629,7 +646,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona algunas palabras del ejercicio anterior con sus definiciones.",
-          "vocabulario": ["Tipos de vivienda"],
+          "vocabulario": ["Alojamiento"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -655,7 +672,7 @@
           "destreza": ["expresion_oral", "interaccion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "En parejas. ¿Qué alojamiento preferís? Ponedlos en orden de menor a mayor.",
-          "vocabulario": ["Tipos de vivienda"],
+          "vocabulario": [],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -671,7 +688,7 @@
           "destreza": ["comprension_auditiva", "expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha a una familia hablando sobre sus vacaciones y contesta a las preguntas.",
-          "vocabulario": ["Tipos de vivienda"],
+          "vocabulario": ["Alojamiento"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -690,7 +707,7 @@
           "destreza": ["comprension_auditiva", "expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha otra vez y escribe dónde prefiere ir cada uno.",
-          "vocabulario": ["Tipos de vivienda"],
+          "vocabulario": ["Alojamiento"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -1455,7 +1472,7 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "En grupos de cuatro: cada uno describe su casa ideal. Seguid los siguientes pasos:",
-          "vocabulario": ["Partes de la casa", "Tipos de vivienda", "Adjetivos descriptivos"],
+          "vocabulario": ["Partes de la casa", "Adjetivos descriptivos"],
           "tiempos_y_verbos": [],
           "gramatica": ["Hay", "Concordancia de género", "Concordancia de número"],
           "pronunciacion_ortografia": [],
@@ -1477,7 +1494,7 @@
           "destreza": ["expresion_oral", "interaccion_oral", "mediacion"],
           "enfoque": "transversal",
           "instruccion_original": "En grupos de cuatro, leed el texto sobre la familia González. Decidid entre los cuatro cuál de vuestras \"casas ideales\" del ejercicio anterior es la más apropiada para esta familia. Y explicad por qué.",
-          "vocabulario": ["Tipos de vivienda"],
+          "vocabulario": [],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tienen", "tienen"]},

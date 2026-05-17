@@ -5,6 +5,29 @@
 
 ---
 
+## [v10.154 — 2026-05-17] — Rectificación editorial U5 — separación `Tipos de vivienda` vs `Alojamiento`
+
+Tercera rectificación editorial U5 (tras v10.144 marcadores y v10.152 La hora) detectada por el autor antes de lanzar U6.
+
+**Diagnóstico:** la categoría `Tipos de vivienda` en U5 tenía 8 items mezclados: solo `apartamento` es vivienda permanente en sentido material (atestado en p58-act2: *"Elisa vive en un apartamento"*); los otros 7 (`hotel`, `albergue juvenil`, `crucero`, `casa rural`, `caravana`, `camping`, `granja`) aparecen en p53-act8/9 como **alojamiento turístico** con definiciones explícitas tipo *"Alojamiento con ruedas..."*, *"Barco grande para viajes de vacaciones..."*. Esto contradice la decisión P (v10.139) del autor: *"NO fusionar Tipos de vivienda + Alojamiento; son canónicos conceptualmente distintos: vivienda permanente vs estancia temporal"*.
+
+Además, el item `chalé` (atestado en p58-act2 respuestas: *"Elisa vive en un chalé"*) no estaba codificado en ningún sitio.
+
+**Cambios en `unidades/U5/U5-nc1-inventario.json`:**
+
+- `Tipos de vivienda` conserva: `apartamento` (atestado p53-act8 + p58-act2) + **`chalé` añadido** (atestado p58-act2@R).
+- `Alojamiento` **creado** en `vocabulario_consolidado.principal` con 7 items: hotel, albergue juvenil, crucero, casa rural, caravana, camping, granja. Activa por primera vez el canónico `Alojamiento` del registry pcic_a1, que estaba sin uso.
+- Refs en `actividad.vocabulario` actualizadas según items materialmente presentes:
+  - `Alojamiento`: p53-act8, p53-act9, p53-act11, p53-act12.
+  - `Tipos de vivienda`: p53-act8 (apartamento), p58-act2, p59-act5.
+  - Ambos en p53-act8 (presenta los 8 términos).
+  - Retiradas en p53-act7, p53-act10, p59-act7, p59-act8 — actividades sin items léxicos atestados literalmente (§5.10 A correctamente aplicada).
+- Nueva entrada P19 en `_decisiones_ia`.
+
+**Sin cambios en el registry léxico** (ambas categorías ya existían). Confirma la decisión P del autor en v10.139. Validador U5 → 0/0/0.
+
+---
+
 ## [v10.153 — 2026-05-17] — Doc: saneamiento documental fase 1 (post-v10.151) + cleanup integrado en flujo oficial
 
 Tras el cierre de la auditoría del registry léxico (v10.152b), la última deuda en fase 1 era documental: cuatro archivos seguían describiendo un validador desalineado y un proceso de "validación manual transitoria" que ya no aplica desde el Lote 3E (v10.151).
