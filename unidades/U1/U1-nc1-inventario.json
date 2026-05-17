@@ -17,53 +17,36 @@
       "Objetos de clase": {
         "items": [
           {"palabra": "el portátil", "fuentes": ["p12-act3"]},
-          {"palabra": "la mochila", "fuentes": ["p12-act3", "p13-act4", "p15-act7"]},
+          {"palabra": "la mochila", "fuentes": ["p12-act3"]},
           {"palabra": "el cuaderno", "fuentes": ["p12-act3", "cuadro@p14#2"]},
-          {"palabra": "el lápiz", "fuentes": ["p12-act3", "p13-act4", "cuadro@p14#2"]},
-          {"palabra": "la pizarra", "fuentes": ["p12-act3", "p15-act7@R", "cuadro@p14#2", "p21-act5"]},
-          {"palabra": "la silla", "fuentes": ["p12-act3", "p15-act7@R", "p21-act5"]},
-          {"palabra": "el bolígrafo", "fuentes": ["p12-act3", "p13-act4", "p15-act7@R"]},
-          {"palabra": "el libro", "fuentes": ["p12-act3", "p13-act4", "cuadro@p14#2"]},
-          {"palabra": "la mesa", "fuentes": ["p12-act3", "cuadro@p14#2", "p21-act5"]},
-          {"palabra": "la tableta", "fuentes": ["p12-act3", "p21-act5"]},
-          {"palabra": "el diccionario", "fuentes": ["p21-act5"]}
+          {"palabra": "el lápiz", "fuentes": ["p12-act3", "cuadro@p14#2"]},
+          {"palabra": "la pizarra", "fuentes": ["p12-act3", "p15-act7@R", "cuadro@p14#2"]},
+          {"palabra": "la silla", "fuentes": ["p12-act3", "p15-act7@R"]},
+          {"palabra": "el bolígrafo", "fuentes": ["p12-act3", "p15-act7@R"]},
+          {"palabra": "el libro", "fuentes": ["p12-act3", "cuadro@p14#2"]},
+          {"palabra": "la mesa", "fuentes": ["p12-act3", "cuadro@p14#2"]},
+          {"palabra": "la tableta", "fuentes": ["p12-act3"]}
         ],
-        "fuentes": ["p12-act3", "p13-act4", "p15-act7", "cuadro@p14#2", "p15-act7@R", "p21-act5"],
+        "fuentes": ["p12-act3", "cuadro@p14#2", "p15-act7@R"],
         "descripcion": {
           "U1": "PCIC A1 (Material educativo y mobiliario de aula). Léxico principal de U1: 10 objetos de aula presentados con artículo determinado en p12-act3 (escucha + asociación palabra-imagen) y reciclados en juego 'veo, veo' (p13-act4), descripción de objetos por color (p15-act7) y autoevaluación de vocabulario (p21-act5). Soporta paralelamente la presentación del paradigma de artículos determinados (cuadro@p14#2)."
         }
       },
       "Nombres de las letras": {
         "items": [
-          {"palabra": "a", "fuentes": ["p13-act5"]},
-          {"palabra": "be", "fuentes": ["p13-act5", "p13-act6"]},
+          {"palabra": "be", "fuentes": ["p13-act5"]},
           {"palabra": "ce", "fuentes": ["p13-act5", "p13-act7"]},
-          {"palabra": "de", "fuentes": ["p13-act5"]},
           {"palabra": "e", "fuentes": ["p13-act5"]},
-          {"palabra": "efe", "fuentes": ["p13-act5"]},
-          {"palabra": "ge", "fuentes": ["p13-act5", "p13-act6"]},
-          {"palabra": "hache", "fuentes": ["p13-act5", "p13-act6"]},
           {"palabra": "i", "fuentes": ["p13-act5", "p13-act7"]},
-          {"palabra": "jota", "fuentes": ["p13-act5", "p13-act6"]},
-          {"palabra": "ka", "fuentes": ["p13-act5"]},
-          {"palabra": "ele", "fuentes": ["p13-act5", "p13-act4"]},
-          {"palabra": "eme", "fuentes": ["p13-act5"]},
-          {"palabra": "ene", "fuentes": ["p13-act5"]},
-          {"palabra": "eñe", "fuentes": ["p13-act5"]},
+          {"palabra": "ele", "fuentes": ["p13-act4"]},
           {"palabra": "o", "fuentes": ["p13-act5"]},
-          {"palabra": "pe", "fuentes": ["p13-act5", "p13-act7"]},
+          {"palabra": "pe", "fuentes": ["p13-act7"]},
           {"palabra": "cu", "fuentes": ["p13-act5"]},
-          {"palabra": "erre", "fuentes": ["p13-act5", "p13-act7"]},
-          {"palabra": "ese", "fuentes": ["p13-act5"]},
+          {"palabra": "erre", "fuentes": ["p13-act7"]},
           {"palabra": "te", "fuentes": ["p13-act5", "p13-act7"]},
-          {"palabra": "u", "fuentes": ["p13-act5"]},
-          {"palabra": "uve", "fuentes": ["p13-act5", "p13-act6"]},
-          {"palabra": "uve doble", "fuentes": ["p13-act5"]},
-          {"palabra": "equis", "fuentes": ["p13-act5"]},
-          {"palabra": "i griega", "fuentes": ["p13-act5"]},
-          {"palabra": "zeta", "fuentes": ["p13-act5"]}
+          {"palabra": "u", "fuentes": ["p13-act5"]}
         ],
-        "fuentes": ["p13-act5", "p13-act6", "p13-act7", "p13-act4"],
+        "fuentes": ["p13-act5", "p13-act7", "p13-act4"],
         "descripcion": {
           "U1": "PCIC A1 pronunciación §5 / ortografía. Léxico principal declarado en el índice U1 vocabulario: nombres canónicos de las 27 letras del abecedario español. Material reciclado de U0 (donde se canonizó como 'Abecedario español') pero codificado en U1 bajo la clave del índice editorial. Soporte de actividades de deletreo (p13-act6/act7) y consolidación auditiva (p13-act5)."
         }
@@ -104,19 +87,16 @@
       },
       "Colores": {
         "items": [
-          {"palabra": "blanco", "fuentes": ["cuadro@p15", "p15-act7"]},
-          {"palabra": "negro", "fuentes": ["cuadro@p15", "p15-act6", "p15-act6@R", "p15-act7"]},
-          {"palabra": "rojo", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
+          {"palabra": "blanco", "fuentes": ["cuadro@p15", "p15-act7", "p21-act1"]},
+          {"palabra": "negro", "fuentes": ["cuadro@p15", "p15-act6", "p15-act6@R", "p15-act7", "p15-act7@R"]},
+          {"palabra": "rojo", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R", "p15-act6", "p21-act1"]},
           {"palabra": "amarillo", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "azul", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "marrón", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
           {"palabra": "verde", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
-          {"palabra": "rosa", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]},
-          {"palabra": "blanca", "fuentes": ["p15-act7", "p21-act1"]},
-          {"palabra": "roja", "fuentes": ["cuadro@p15", "p15-act6", "p21-act1"]},
-          {"palabra": "negra", "fuentes": ["p15-act7@R"]}
+          {"palabra": "rosa", "fuentes": ["cuadro@p15", "p15-act7", "p15-act7@R"]}
         ],
-        "fuentes": ["cuadro@p15", "p15-act7", "p15-act6", "p15-act6@R", "p15-act7@R", "p21-act1"],
+        "fuentes": ["cuadro@p15", "p15-act7", "p21-act1", "p15-act6", "p15-act6@R", "p15-act7@R"],
         "descripcion": {
           "U1": "Léxico de los 8 colores básicos presentados visualmente en el cuadro@p15 'Los colores' (origen: excepción del registry; índice U1 lo declara dentro de gramática junto a 'Masculino y femenino' por estrategia editorial, pero su destino canónico es léxico). Soporta la práctica de concordancia de género (rojo→roja, blanco→blanca, negro→negra) en p15-act6 (Escribe frases con ser) y p15-act7 (Describe objetos con colores)."
         }
@@ -152,7 +132,6 @@
       "Saludos y despedidas": {
         "items": [
           {"palabra": "Hola, ¿qué tal?", "fuentes": ["cuadro@p20#1", "p16-act3"]},
-          {"palabra": "¿Cómo está(s)?", "fuentes": ["cuadro@p20#1"]},
           {"palabra": "Buenos días", "fuentes": ["cuadro@p20#1"]},
           {"palabra": "Buenas tardes", "fuentes": ["cuadro@p20#1", "p20-act1"]},
           {"palabra": "Buenas noches", "fuentes": ["cuadro@p20#1"]},
@@ -174,23 +153,16 @@
     "recurrente": {
       "Adjetivos de nacionalidad": {
         "items": [
-          {"palabra": "español", "fuentes": ["p13-act8", "p13-act8@R", "p16-act1"]},
-          {"palabra": "española", "fuentes": ["p13-act8", "p13-act8@R", "p14-act3", "p14-act3@R", "p15-act6", "p15-act6@R", "p18-act1", "p18-act1@R", "p18-act2", "p21-act1"]},
+          {"palabra": "español", "fuentes": ["p13-act8", "p13-act8@R", "p16-act1", "p14-act3", "p14-act3@R", "p15-act6", "p15-act6@R", "p18-act1", "p18-act1@R", "p18-act2", "p21-act1"]},
           {"palabra": "francés", "fuentes": ["p13-act8", "p13-act8@R", "p14-act1"]},
-          {"palabra": "francesa", "fuentes": ["p14-act1"]},
           {"palabra": "colombiana", "fuentes": ["p13-act8", "p13-act8@R"]},
           {"palabra": "inglesa", "fuentes": ["p13-act8", "p13-act8@R"]},
-          {"palabra": "brasileña", "fuentes": ["p13-act8", "p13-act8@R", "p14-act4@R", "p15-act6", "p15-act6@R"]},
-          {"palabra": "brasileño", "fuentes": ["p14-act4"]},
+          {"palabra": "brasileño", "fuentes": ["p13-act8", "p13-act8@R", "p14-act4@R", "p15-act6", "p15-act6@R", "p14-act4"]},
           {"palabra": "italiana", "fuentes": ["p14-act1", "p15-act6", "p15-act6@R"]},
-          {"palabra": "griego", "fuentes": ["p14-act4@R"]},
-          {"palabra": "griega", "fuentes": ["p14-act4"]},
-          {"palabra": "alemán", "fuentes": ["p14-act4"]},
-          {"palabra": "alemana", "fuentes": ["p14-act4@R"]},
-          {"palabra": "mexicano", "fuentes": ["cuadro@p14#3"]},
-          {"palabra": "mexicana", "fuentes": ["cuadro@p14#3", "p21-act4"]},
+          {"palabra": "griego", "fuentes": ["p14-act4@R", "p14-act4"]},
+          {"palabra": "alemán", "fuentes": ["p14-act4", "p14-act4@R"]},
+          {"palabra": "mexicano", "fuentes": ["cuadro@p14#3", "p21-act4"]},
           {"palabra": "japonés", "fuentes": ["cuadro@p14#3", "p15-act6", "p15-act6@R"]},
-          {"palabra": "japonesa", "fuentes": ["cuadro@p14#3"]},
           {"palabra": "coreana", "fuentes": ["p15-act8"]},
           {"palabra": "peruana", "fuentes": ["p15-act6", "p15-act6@R", "p21-act4"]},
           {"palabra": "argentino", "fuentes": ["p12-act1", "p16-act1", "p18-act1", "p18-act1@R"]},
@@ -235,11 +207,11 @@
       },
       "Para la clase": {
         "items": [
-          {"palabra": "¿Cómo se escribe \"hola\"?", "fuentes": ["p15-act9", "p15-act10"]},
-          {"palabra": "¿Qué significa \"gracias\"?", "fuentes": ["p15-act9", "p15-act10"]},
-          {"palabra": "¿Cómo se dice en español \"hello\"?", "fuentes": ["p15-act9", "p15-act10"]}
+          {"palabra": "¿Cómo se escribe \"hola\"?", "fuentes": ["p15-act9"]},
+          {"palabra": "¿Qué significa \"gracias\"?", "fuentes": ["p15-act9"]},
+          {"palabra": "¿Cómo se dice en español \"hello\"?", "fuentes": ["p15-act9"]}
         ],
-        "fuentes": ["p15-act9", "p15-act10"],
+        "fuentes": ["p15-act9"],
         "descripcion": {
           "U1": "Ampliación del canónico introducido en U0 (cuadro 'Para la clase' p11-act10 con Escucha/Lee/Escribe/Repite + ¿Puedes repetir?/¿Cómo se dice en español hello?/¿Cómo se escribe en español hola?). U1 reactiva tres fórmulas funcionales de aula bajo el rótulo editorial 'Recursos para la clase' (mezclado en gramatica[] del índice U1; ver nota en nc1-curso.json) trabajadas como bloque 'Para aprender' en p15-act9/act10. Cumple §5.1.1 (frecuencia, posición = principal U0, valor pedagógico = consolidación + ampliación)."
         }
@@ -307,7 +279,6 @@
         "cuadro@p14#1",
         "p14-act3",
         "p14-act3@R",
-        "p15-act6",
         "p16-act1",
         "p16-act2",
         "p18-act1",
@@ -364,14 +335,14 @@
       "Pronombre sujeto": {
         "items": [
           {"palabra": "yo", "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p18-act2", "p21-act1", "p21-act4"]},
-          {"palabra": "tú", "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p15-act8", "p21-act1", "p21-act4"]},
+          {"palabra": "tú", "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p21-act1", "p21-act4"]},
           {"palabra": "él", "fuentes": ["cuadro@p14#1", "p14-act2", "p14-act3"]},
           {"palabra": "ella", "fuentes": ["cuadro@p14#1", "p14-act3", "p18-act2"]},
           {"palabra": "usted", "fuentes": ["cuadro@p14#1", "cuadro@p20#1", "cuadro@p20#2", "cuadro@p20#3", "p20-act1"]},
           {"palabra": "vosotros", "fuentes": ["cuadro@p20#2"]},
           {"palabra": "ustedes", "fuentes": ["cuadro@p20#2"]}
         ],
-        "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p18-act2", "p21-act1", "p21-act4", "p15-act8", "p14-act2", "cuadro@p20#1", "cuadro@p20#2", "cuadro@p20#3", "p20-act1"],
+        "fuentes": ["cuadro@p14#1", "p14-act1", "p14-act3", "p18-act2", "p21-act1", "p21-act4", "p14-act2", "cuadro@p20#1", "cuadro@p20#2", "cuadro@p20#3", "p20-act1"],
         "descripcion": {
           "U1": "PCIC A1 §7.1.1 Pronombre sujeto. Principal U1: introducción del subset singular + usted (yo/tú/él/ella/usted) como soporte sintáctico del paradigma de los tres verbos (cuadro@p14#1). El cuadro@p20#2 '¿Tú o usted?' amplía con vosotros/ustedes como contraste pragmático informal/formal (mencionados, no conjugados); la conjugación plural se difiere a U2. Registry declara U1 como introducción y U2-U9 como recurrente."
         }
@@ -379,9 +350,9 @@
       "Concordancia de número": {
         "items": [
           {"palabra": "singular", "fuentes": ["cuadro@p14#2"]},
-          {"palabra": "plural", "fuentes": ["cuadro@p14#2", "p15-act6"]}
+          {"palabra": "plural", "fuentes": ["cuadro@p14#2"]}
         ],
-        "fuentes": ["cuadro@p14#2", "p15-act6"],
+        "fuentes": ["cuadro@p14#2"],
         "descripcion": {
           "U1": "Anticipación material del principal canónico de U2 ('Plural de nombres y adjetivos', PCIC A1 §1.3 + §2.3). Presentación pasiva en cuadro@p14#2 (tabla singular/plural con el niño/los niños/la niña/las niñas) + producción incidental de plurales en respuestas de p15-act6 (Los gatos son negros; Las profesoras son mexicanas). Codificación como recurrente aprobada por el autor por consistencia con la decisión P3 sobre 'Adjetivos de nacionalidad' (P12 confirmada (a))."
         }
@@ -390,14 +361,13 @@
     "recurrente": {
       "Interrogativos": {
         "items": [
-          {"palabra": "qué", "fuentes": ["p13-act7", "p15-act8", "p15-act9", "p16-act1", "p16-act3", "p19-act5", "p19-act6", "p20-act1", "cuadro@p20#1"]},
-          {"palabra": "cómo", "fuentes": ["p13-act6", "p13-act7", "p15-act8", "p15-act9", "p15-act10", "p16-act1", "p16-act2", "p19-act5", "p19-act6", "cuadro@p20#1", "cuadro@p20#3", "p20-act1", "p21-act6"]},
+          {"palabra": "qué", "fuentes": ["p15-act8", "p15-act9", "p16-act1", "p16-act3", "p19-act5", "p19-act6", "p20-act1", "cuadro@p20#1"]},
+          {"palabra": "cómo", "fuentes": ["p13-act6", "p13-act7", "p15-act8", "p15-act9", "p16-act1", "p16-act2", "p19-act5", "p19-act6", "cuadro@p20#1", "cuadro@p20#3", "p20-act1", "p21-act6"]},
           {"palabra": "cuánto/-a/-os/-as", "fuentes": ["p13-act9", "p14-act2", "p15-act8", "p16-act1", "p17-act5", "p17-act6", "p19-act5", "p19-act6", "cuadro@p20#3", "p21-act4", "p21-act6"]},
           {"palabra": "cuál", "fuentes": ["p19-act5", "p19-act6", "p21-act6"]},
           {"palabra": "dónde", "fuentes": ["p15-act8", "p19-act5", "cuadro@p20#1", "cuadro@p20#3", "p21-act4", "p21-act6"]}
         ],
         "fuentes": [
-          "p13-act7",
           "p15-act8",
           "p15-act9",
           "p16-act1",
@@ -407,7 +377,7 @@
           "p20-act1",
           "cuadro@p20#1",
           "p13-act6",
-          "p15-act10",
+          "p13-act7",
           "p16-act2",
           "cuadro@p20#3",
           "p21-act6",
@@ -1390,11 +1360,7 @@
           "enfoque": "comunicacion",
           "instruccion_original": "En grupos de cuatro cread vuestro propio diálogo siguiendo estos pasos:",
           "vocabulario": ["Edad", "Número de teléfono", "Saludos y despedidas"],
-          "tiempos_y_verbos": [
-            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["soy"]},
-            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["me llamo"]},
-            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo"]}
-          ],
+          "tiempos_y_verbos": [],
           "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
           "audio": { "presente": false },
@@ -1617,9 +1583,7 @@
           "instruccion_original": "Utiliza las notas del ejercicio anterior para presentar a tu compañero al resto de la clase.",
           "vocabulario": ["Edad", "Número de teléfono"],
           "tiempos_y_verbos": [
-            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
-            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
-            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -1639,8 +1603,7 @@
           "vocabulario": ["Edad", "Número de teléfono", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
-            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
-            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]}
           ],
           "gramatica": [],
           "pronunciacion_ortografia": [],

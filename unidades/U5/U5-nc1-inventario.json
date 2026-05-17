@@ -101,12 +101,12 @@
       },
       "Adjetivos descriptivos": {
         "items": [
-          {"palabra": "antiguo/-a", "fuentes": ["p57-act7"]},
+          {"palabra": "antiguo", "fuentes": ["p57-act7"]},
           {"palabra": "grande", "fuentes": ["p53-act7", "p55-act5", "p55-act8", "p57-act6", "p57-act7", "p58-act1", "p58-act2@R", "p61-act1", "p61-act4", "p61-act4@R"]},
-          {"palabra": "lento/-a", "fuentes": ["p57-act7"]},
-          {"palabra": "pequeño/-a", "fuentes": ["p57-act7"]},
-          {"palabra": "rojo/-a", "fuentes": ["p57-act7"]},
-          {"palabra": "rápido/-a", "fuentes": ["p57-act7"]}
+          {"palabra": "lento", "fuentes": ["p57-act7"]},
+          {"palabra": "pequeño", "fuentes": ["p57-act7"]},
+          {"palabra": "rojo", "fuentes": ["p57-act7"]},
+          {"palabra": "rápido", "fuentes": ["p57-act7"]}
         ],
         "fuentes": ["p57-act7", "p53-act7", "p55-act5", "p55-act8", "p57-act6", "p58-act1", "p58-act2@R", "p61-act1", "p61-act4", "p61-act4@R"],
         "descripcion": {
@@ -182,7 +182,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Infinitivo"],
       "formas_trabajadas": ["contaminar"],
-      "fuentes": ["p60-act1", "p60-act2", "p60-act2@R"],
+      "fuentes": ["p60-act2", "p60-act2@R"],
       "descripcion": {
         "U5": "PCIC A1 — Verbo canónico de U5 según registry. Aparece como derivados/infinitivo léxico en el texto cultural 'La vivienda verde' (p60-act01: 'materiales contaminantes', 'evitar los materiales contaminantes'; p60-act02 definición: 'Hacer daño a la naturaleza...')."
       }
@@ -194,7 +194,6 @@
       "tiempos": ["Presente"],
       "formas_trabajadas": ["estamos", "estoy", "está", "estáis", "están", "estás"],
       "fuentes": [
-        "p52-act4@R",
         "p52-act5",
         "p52-act5@R",
         "p54-act1",
@@ -209,7 +208,6 @@
         "p55-act5@R",
         "p55-act6@R",
         "p55-act7",
-        "p55-act8@R",
         "cuadro@p55",
         "p56-act1",
         "p56-act1@R",
@@ -218,14 +216,12 @@
         "p56-act4@R",
         "p58-act1",
         "p59-act4",
-        "p59-act8@R",
         "p61-act1@R",
         "p61-act2",
         "p61-act3",
         "p61-act3@R",
         "p61-act4",
-        "p61-act4@R",
-        "p61-act5@R"
+        "p61-act4@R"
       ],
       "descripcion": {
         "U5": "PCIC A1 §16.3 — Presente de indicativo del verbo 'estar'. Principal en U5: paradigma completo (estoy, estás, está, estamos, estáis, están) introducido en cuadro p54#1 y trabajado en p54-act01 (completar formas), p54-act02 (selección), p54-act03 (preguntas de ubicación). Función comunicativa: localización de objetos y personas, oposición con 'ser' en p55."
@@ -237,28 +233,7 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["eres", "es", "son"],
-      "fuentes": [
-        "p54-act2",
-        "p54-act2@R",
-        "p55-act5",
-        "p55-act5@R",
-        "p55-act6@R",
-        "p55-act7",
-        "p55-act8@R",
-        "cuadro@p55",
-        "p56-act1",
-        "p56-act1@R",
-        "p57-act6",
-        "p57-act7@R",
-        "p58-act2@R",
-        "p59-act8@R",
-        "p60-act1",
-        "p60-act4@R",
-        "p61-act1",
-        "p61-act1@R",
-        "p61-act4",
-        "p61-act4@R"
-      ],
+      "fuentes": ["p54-act2", "p54-act2@R", "p55-act5", "p55-act5@R", "p55-act6@R", "p55-act7", "cuadro@p55", "p56-act1", "p56-act1@R", "p57-act6", "p58-act2@R", "p60-act1", "p61-act1", "p61-act1@R", "p61-act4", "p61-act4@R"],
       "descripcion": { "U5": "Recurrente desde U1 (PRE 'ser'). En U5 sustenta la oposición ser/estar (cuadro p55, p55-act02, p55-act03, p55-act04) y la descripción de objetos y viviendas (p57-act06/07, p58, p61)." }
     },
     {
@@ -267,7 +242,7 @@
       "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["tengo", "tiene", "tienen"],
-      "fuentes": ["p58-act1", "p58-act2@R", "p59-act4", "p59-act8@R", "p60-act1"],
+      "fuentes": ["p58-act1", "p58-act2@R", "p59-act4", "p60-act1"],
       "descripcion": {
         "U5": "Recurrente desde U1 (PRE 'tener'). En U5 vehicula posesión y descripción en los textos de habitaciones ideales (p58-act01 'tengo muchas fotografías', 'tengo un ordenador'; p59-act01 'tiene tres pisos') y en la descripción de la familia González (p59-act05 'Tienen cuatro hijos')."
       }
@@ -287,7 +262,7 @@
       "rasgo_por_tiempo": { "Presente": "tipo gustar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["gusta", "le gusta", "no le gusta", "te gusta", "les gusta"],
-      "fuentes": ["p58-act2", "p58-act2@R", "p58-act3", "p59-act8", "p59-act8@R"],
+      "fuentes": ["p58-act2", "p58-act2@R", "p58-act3", "p59-act8"],
       "descripcion": {
         "U5": "Recurrente en U5: lema canónico de U2/U3/U4 (Presente, tipo gustar). En U5 reaparece como soporte de la lectura de habitaciones (p58: 'a Antonio no le gusta el cine', '¿qué habitación te gusta más?') y de la interacción oral sobre las preferencias de los personajes (p59-act05: 'les gusta mucho pasear con su perro')."
       }
@@ -317,9 +292,9 @@
       },
       "Adverbios y locuciones de lugar": {
         "items": [
-          {"palabra": "Posición", "fuentes": ["p54-act3", "cuadro@p54#2", "p55-act4", "p55-act7", "p55-act8", "p56-act1", "p58-act1", "p59-act6", "p61-act2"]}
+          {"palabra": "Posición", "fuentes": ["cuadro@p54#2"]}
         ],
-        "fuentes": ["p54-act3", "cuadro@p54#2", "p55-act4", "p55-act7", "p55-act8", "p56-act1", "p58-act1", "p59-act6", "p61-act2"],
+        "fuentes": ["cuadro@p54#2"],
         "descripcion": {
           "U5": "Principal gramatical en U5 (paralelo al canónico léxico 'Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca' en vocabulario_consolidado). La unidad trabaja simultáneamente: (a) el léxico concreto de palabras de posición (encima, debajo, detrás, delante, al lado) — codificado en vocabulario_consolidado bajo 'Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca'; (b) la categoría adverbial-gramatical que esas palabras instancian — codificada aquí. Doble codificación intencional: léxico (qué se dice) + sintaxis (cómo funciona con 'estar'). Fuentes: cuadro@p54#2, p54-act3, p55-act1, p55-act4, p55-act5, p56-act1, p58-act1, p59-act3, p61-act2."
         }
@@ -547,7 +522,7 @@
           "instruccion_original": "Contesta a las preguntas.",
           "vocabulario": ["Mobiliario", "Partes de la casa"],
           "tiempos_y_verbos": [
-            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]}
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
           ],
           "gramatica": ["Hay"],
           "pronunciacion_ortografia": [],
@@ -1002,7 +977,6 @@
             "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
           ],
           "tiempos_y_verbos": [
-            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
           "gramatica": ["Hay", "Adverbios y locuciones de lugar"],
@@ -1557,8 +1531,7 @@
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
-            {"lema": "ahorrar", "tiempo": "Infinitivo", "formas_trabajadas": ["ahorrar"]},
-            {"lema": "contaminar", "tiempo": "Infinitivo", "formas_trabajadas": ["contaminar"]}
+            {"lema": "ahorrar", "tiempo": "Infinitivo", "formas_trabajadas": ["ahorrar"]}
           ],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -1769,7 +1742,7 @@
           "instruccion_original": "Conversa con tu compañero.",
           "vocabulario": ["Establecimientos: cine, restaurante, farmacia..."],
           "tiempos_y_verbos": [
-            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]}
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
           ],
           "gramatica": ["Hay", "Interrogativos"],
           "pronunciacion_ortografia": [],

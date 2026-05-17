@@ -44,14 +44,14 @@
         "items": [
           {"palabra": "a — adiós", "fuentes": ["p10-act5"]},
           {"palabra": "be — bolígrafo", "fuentes": ["p10-act5"]},
-          {"palabra": "ce — casa", "fuentes": ["p10-act5", "p11-act6"]},
+          {"palabra": "ce — casa", "fuentes": ["p10-act5"]},
           {"palabra": "de — dos", "fuentes": ["p10-act5"]},
           {"palabra": "e — elefante", "fuentes": ["p10-act5"]},
           {"palabra": "efe — foto", "fuentes": ["p10-act5"]},
-          {"palabra": "ge — gato", "fuentes": ["p10-act5", "p11-act6"]},
+          {"palabra": "ge — gato", "fuentes": ["p10-act5"]},
           {"palabra": "hache — hoja", "fuentes": ["p10-act5"]},
           {"palabra": "i — isla", "fuentes": ["p10-act5"]},
-          {"palabra": "jota — julio", "fuentes": ["p10-act5", "p11-act6"]},
+          {"palabra": "jota — julio", "fuentes": ["p10-act5"]},
           {"palabra": "ka — kilo", "fuentes": ["p10-act5"]},
           {"palabra": "ele — lápiz", "fuentes": ["p10-act5"]},
           {"palabra": "eme — mesa", "fuentes": ["p10-act5"]},
@@ -59,7 +59,7 @@
           {"palabra": "eñe — mañana", "fuentes": ["p10-act5"]},
           {"palabra": "o — oso", "fuentes": ["p10-act5"]},
           {"palabra": "pe — padre", "fuentes": ["p10-act5"]},
-          {"palabra": "cu — queso", "fuentes": ["p10-act5", "p11-act6"]},
+          {"palabra": "cu — queso", "fuentes": ["p10-act5"]},
           {"palabra": "erre — reloj", "fuentes": ["p10-act5"]},
           {"palabra": "ese — silla", "fuentes": ["p10-act5"]},
           {"palabra": "te — tomate", "fuentes": ["p10-act5"]},
@@ -68,9 +68,9 @@
           {"palabra": "uve doble — waterpolo", "fuentes": ["p10-act5"]},
           {"palabra": "equis — examen", "fuentes": ["p10-act5"]},
           {"palabra": "ye / i griega — yogur", "fuentes": ["p10-act5"]},
-          {"palabra": "zeta — zoo", "fuentes": ["p10-act5", "p11-act6"]}
+          {"palabra": "zeta — zoo", "fuentes": ["p10-act5"]}
         ],
-        "fuentes": ["p10-act5", "p11-act6"],
+        "fuentes": ["p10-act5"],
         "descripcion": { "U0": "Punto de partida pre-A1.1: presentación del abecedario español como inventario léxico-fonético (27 letras con nombre canónico y palabra-ejemplo). Base para el deletreo (act7) y el dictado fonético (act8)." }
       },
       "Números cardinales": {

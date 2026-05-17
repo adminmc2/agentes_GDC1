@@ -5,6 +5,44 @@
 
 ---
 
+## [v10.150c — 2026-05-17] — Fase 1: Lote 3D-cleanup — cierre U0/U1/U3/U5 agrupados
+
+Tercer y último apply del Lote 3D-cleanup. Cierra la aplicación retroactiva de §5.10 + §5.11 a las 6 unidades U0-U5.
+
+**Resultados por unidad (validador 0/0/0 en todas):**
+
+| Unidad | Fuentes A | Items A | Reescrituras `lema/-suf` | Pares unificados | Cats vacías |
+|---|---|---|---|---|---|
+| U0 | 5 | 0 | 0 | 0 | 0 |
+| U1 | 48 | 23 | 0 | 11 | 0 |
+| U3 | 52 | 6 | 0 | 8 | 0 |
+| U5 | 23 | 2 | 5 | 0 | 0 |
+| **Total v10.150c** | **128** | **31** | **5** | **19** | **0** |
+
+**Sin cambios en el script** desde v10.150b. La heurística conservadora demostró ser sólida (0 categorías vacías en las 4 unidades).
+
+**Estado consolidado del Lote 3D-cleanup (v10.150a + b + c):**
+
+| Unidad | Fuentes A | Items A | Reescrituras | Pares | Cats vacías |
+|---|---|---|---|---|---|
+| U0 | 5 | 0 | 0 | 0 | 0 |
+| U1 | 48 | 23 | 0 | 11 | 0 |
+| U2 | 54 | 9 | 26 | 0 | 0 |
+| U3 | 52 | 6 | 0 | 8 | 0 |
+| U4 | 54 | 6 | 0 | 0 | 0 |
+| U5 | 23 | 2 | 5 | 0 | 0 |
+| **Total Lote 3D** | **236** | **46** | **31** | **19** | **0** |
+
+**Cierre del contrato v10.145 + §5.10 + §5.11.** Validador U0-U5 → 0/0/0 en estado limpio.
+
+**Tareas futuras documentadas:**
+
+- Lote 3E: extensión del validador para absorber la parte automatizable de §5.10 A + §5.11 (declarado en `schema-inventario.md` §A.3 y §A.4).
+- Falsos positivos del matcher si surgen en futuras extracciones: protocolo §0.1 (escalada en chat) + lista de excepciones acotada por unidad o mejora del matcher (declarado en plan del cleanup).
+- Auditoría del registry `campos-semanticos-canonicos.json` (notación `lema/-a`): fuera de alcance del Lote 3D-cleanup por dictamen del revisor.
+
+---
+
 ## [v10.150b — 2026-05-17] — Fase 1: Lote 3D-cleanup — U2 + correcciones del script (FASE 4 + heurística)
 
 Segundo apply del Lote 3D-cleanup. U2 en carril propio por dictamen del revisor.

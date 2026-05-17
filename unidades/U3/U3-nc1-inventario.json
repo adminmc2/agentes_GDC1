@@ -16,25 +16,18 @@
     "principal": {
       "Parientes": {
         "items": [
-          {"palabra": "abuelo", "fuentes": ["p32-act1", "p32-act2", "p32-act3", "p33-act6", "p35-act6", "p35-act6@R", "p36-act1", "p41-act4@R"]},
-          {"palabra": "abuela", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p41-act4", "p41-act4@R"]},
-          {"palabra": "padre", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act5", "p33-act6", "p33-act9", "p33-act9@R", "p33-act10", "p33-act10@R", "p35-act6", "p35-act8", "p35-act8@R", "p38-act1", "p38-act1@R", "p38-act2@R"]},
-          {"palabra": "madre", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act5", "p33-act6", "p33-act7@R", "p33-act8", "p33-act9", "p33-act9@R", "p33-act10", "p33-act10@R", "p35-act4", "p35-act6", "p35-act6@R", "p38-act1", "p38-act1@R", "p38-act2@R", "p41-act4"]},
-          {"palabra": "hijo", "fuentes": ["p32-act3", "p35-act6", "p35-act6@R", "p41-act4", "p41-act4@R"]},
-          {"palabra": "hija", "fuentes": ["p32-act3", "p36-act1", "p41-act4"]},
-          {"palabra": "hermano", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act5", "p33-act6", "p33-act7@R", "p33-act10", "p33-act10@R", "p35-act8", "p35-act8@R", "p36-act1", "p38-act1", "p38-act1@R", "p38-act2@R", "p41-act4@R"]},
-          {"palabra": "hermana", "fuentes": ["p32-act1", "p32-act2@R", "p33-act5", "p33-act7", "p33-act8", "p33-act10", "p33-act10@R", "p35-act8", "p35-act8@R", "p36-act1", "p38-act1", "p38-act1@R", "p38-act2", "p41-act4"]},
-          {"palabra": "tío", "fuentes": ["p32-act1", "p32-act2@R", "p34-act3", "p35-act5"]},
-          {"palabra": "tía", "fuentes": ["p32-act1", "p32-act2@R", "p35-act5", "p41-act4@R"]},
+          {"palabra": "abuelo", "fuentes": ["p32-act1", "p32-act2", "p32-act3", "p33-act6", "p35-act6", "p35-act6@R", "p36-act1", "p41-act4@R", "p32-act2@R", "p41-act4"]},
+          {"palabra": "padre", "fuentes": ["p32-act1", "p32-act2@R", "p32-act3", "p33-act5", "p33-act6", "p33-act9", "p33-act9@R", "p33-act10", "p33-act10@R", "p35-act8", "p35-act8@R", "p38-act1", "p38-act1@R", "p38-act2@R"]},
+          {"palabra": "madre", "fuentes": ["p32-act1", "p32-act2@R", "p33-act5", "p33-act6", "p33-act7@R", "p33-act8", "p33-act9", "p33-act9@R", "p33-act10", "p33-act10@R", "p35-act4", "p35-act6", "p35-act6@R", "p38-act1", "p38-act1@R", "p38-act2@R", "p41-act4"]},
+          {"palabra": "hijo", "fuentes": ["p32-act3", "p35-act6", "p35-act6@R", "p41-act4", "p41-act4@R", "p36-act1"]},
+          {"palabra": "hermano", "fuentes": ["p32-act1", "p32-act2@R", "p33-act5", "p33-act7@R", "p33-act10", "p33-act10@R", "p35-act8", "p35-act8@R", "p36-act1", "p38-act1", "p38-act1@R", "p38-act2@R", "p41-act4@R", "p33-act8", "p41-act4"]},
+          {"palabra": "tío", "fuentes": ["p32-act1", "p32-act2@R", "p34-act3", "p35-act5", "p41-act4@R"]},
           {"palabra": "primo", "fuentes": ["p32-act1", "p32-act2@R", "p35-act5", "p36-act1", "p39-act7", "p39-act7@R", "p41-act4@R"]},
-          {"palabra": "prima", "fuentes": ["p32-act1", "p32-act2@R", "p39-act7", "p39-act7@R"]},
           {"palabra": "marido", "fuentes": ["p32-act3", "p41-act4@R"]},
           {"palabra": "mujer", "fuentes": ["p32-act3"]},
           {"palabra": "nieto", "fuentes": ["p32-act3", "p33-act7@R", "p41-act4@R"]},
-          {"palabra": "nieta", "fuentes": ["p32-act3"]},
           {"palabra": "sobrino", "fuentes": ["p32-act3"]},
-          {"palabra": "sobrina", "fuentes": ["p32-act3"]},
-          {"palabra": "gemelos", "fuentes": ["p36-act1", "p36-act2", "p36-act3", "p39-act7", "p39-act7@R"]},
+          {"palabra": "gemelos", "fuentes": ["p36-act3", "p39-act7", "p39-act7@R"]},
           {"palabra": "gemelas", "fuentes": ["p36-act1", "p36-act2"]},
           {"palabra": "familia", "fuentes": ["p33-act5", "p35-act6", "p35-act6@R", "p35-act7", "p36-act4", "p38-act1", "p38-act3", "p39-act7"]},
           {"palabra": "hija única", "fuentes": ["p36-act1", "p36-act2"]}
@@ -63,14 +56,12 @@
           "p33-act7@R",
           "p33-act8",
           "p35-act4",
-          "p33-act7",
-          "p38-act2",
           "p34-act3",
           "p35-act5",
           "p39-act7",
           "p39-act7@R",
-          "p36-act2",
           "p36-act3",
+          "p36-act2",
           "p35-act7",
           "p36-act4",
           "p38-act3"
@@ -92,51 +83,31 @@
           {"palabra": "decorador(a)", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
           {"palabra": "maquillador(a)", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
           {"palabra": "dibujante", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
-          {"palabra": "actor / actriz", "fuentes": ["p40-act1", "p40-act2", "p40-act2@R"]},
+          {"palabra": "actor / actriz", "fuentes": ["p40-act2", "p40-act2@R"]},
           {"palabra": "escritor", "fuentes": ["p40-act3"]},
           {"palabra": "director", "fuentes": ["p40-act3"]},
-          {"palabra": "hospital", "fuentes": ["p34-act1", "p34-act2", "p38-act1", "p38-act1@R", "p38-act2", "p41-act1"]},
-          {"palabra": "hotel", "fuentes": ["p33-act8", "p33-act10", "p38-act1", "p38-act1@R", "p38-act2"]},
+          {"palabra": "hospital", "fuentes": ["p34-act1", "p34-act2", "p38-act1", "p38-act1@R", "p38-act2"]},
+          {"palabra": "hotel", "fuentes": ["p33-act8", "p38-act1", "p38-act1@R"]},
           {"palabra": "banco", "fuentes": ["p34-act2", "p34-act3"]},
           {"palabra": "restaurante", "fuentes": ["p34-act2"]}
         ],
-        "fuentes": ["p33-act6", "p33-act10", "p33-act10@R", "p33-act8", "p34-act2", "p35-act5", "p40-act1", "p40-act2", "p40-act2@R", "p40-act3", "p34-act1", "p38-act1", "p38-act1@R", "p38-act2", "p41-act1", "p34-act3"],
+        "fuentes": ["p33-act6", "p33-act10", "p33-act10@R", "p33-act8", "p34-act2", "p35-act5", "p40-act1", "p40-act2", "p40-act2@R", "p40-act3", "p34-act1", "p38-act1", "p38-act1@R", "p38-act2", "p34-act3"],
         "descripcion": {
           "U3": "PCIC A1 §6.5 Profesiones y lugares de trabajo — Recurrente por §5.1.1 criterio (b): no es vocabulario canónico principal del índice editorial U3 (que solo declara Parientes), pero es léxico imprescindible para los textos descriptivos de las familias (Javier Rodríguez: padre camionero / madre enfermera; Lucía Alonso: padre agricultor / madre trabaja en el hotel) y para el bloque cultural sobre cine de animación (guionista, dibujante, iluminador, maquillador, decorador, actor/actriz)."
         }
       },
       "Centros e instituciones educativas": {
         "items": [
-          {"palabra": "instituto", "fuentes": ["p33-act6", "p33-act8", "p34-act2", "p34-act3", "p35-act5", "p38-act1", "p38-act1@R"]},
+          {"palabra": "instituto", "fuentes": ["p33-act6", "p33-act8", "p35-act5", "p38-act1", "p38-act1@R"]},
           {"palabra": "Educación Secundaria Obligatoria (ESO)", "fuentes": ["p33-act6", "p33-act8", "p33-act10", "p33-act10@R"]},
           {"palabra": "curso", "fuentes": ["p33-act6", "p33-act8", "p38-act1", "p38-act3"]},
           {"palabra": "colegio", "fuentes": ["p34-act1"]},
-          {"palabra": "clase", "fuentes": ["p35-act7", "p35-act8", "p36-act1", "p36-act4", "p38-act1", "p38-act1@R", "p38-act3", "p39-act7"]},
+          {"palabra": "clase", "fuentes": ["p35-act8", "p36-act4", "p38-act1", "p38-act1@R", "p38-act3", "p39-act7"]},
           {"palabra": "recreo", "fuentes": ["p36-act1"]},
-          {"palabra": "compañero", "fuentes": ["p35-act7", "p35-act8", "p36-act4", "p38-act3", "p39-act5", "p39-act6", "p39-act7"]},
-          {"palabra": "compañera", "fuentes": ["p38-act1"]},
+          {"palabra": "compañero", "fuentes": ["p35-act7", "p35-act8", "p36-act4", "p38-act3", "p39-act5", "p39-act6", "p39-act7", "p38-act1"]},
           {"palabra": "amigo", "fuentes": ["p36-act4", "p38-act1", "p38-act3"]}
         ],
-        "fuentes": [
-          "p33-act6",
-          "p33-act8",
-          "p34-act2",
-          "p34-act3",
-          "p35-act5",
-          "p38-act1",
-          "p38-act1@R",
-          "p33-act10",
-          "p33-act10@R",
-          "p38-act3",
-          "p34-act1",
-          "p35-act7",
-          "p35-act8",
-          "p36-act1",
-          "p36-act4",
-          "p39-act7",
-          "p39-act5",
-          "p39-act6"
-        ],
+        "fuentes": ["p33-act6", "p33-act8", "p35-act5", "p38-act1", "p38-act1@R", "p33-act10", "p33-act10@R", "p38-act3", "p34-act1", "p35-act8", "p36-act4", "p39-act7", "p36-act1", "p35-act7", "p39-act5", "p39-act6"],
         "descripcion": { "U3": "Recurrente: ya canónica en U2 por criterio (b). U3 la reactiva como soporte de los textos descriptivos de las familias (Javier/Lucía estudian ESO en el instituto/pueblo) y del diálogo del recreo entre compañeros de clase (p36)." }
       },
       "Asignaturas": {
@@ -166,20 +137,16 @@
       },
       "Números cardinales": {
         "items": [
-          {"palabra": "cinco (5)", "fuentes": ["p33-act5", "p33-act6", "p36-act4"]},
-          {"palabra": "ocho (8)", "fuentes": ["p33-act5", "p36-act1", "p36-act2"]},
-          {"palabra": "nueve (9)", "fuentes": ["p33-act8"]},
-          {"palabra": "diez (10)", "fuentes": ["p35-act6"]},
-          {"palabra": "once (11)", "fuentes": ["p35-act6", "p36-act1", "p38-act1", "p38-act1@R", "p38-act2"]},
-          {"palabra": "dieciséis (16)", "fuentes": ["p33-act8"]},
+          {"palabra": "cinco (5)", "fuentes": ["p33-act5"]},
+          {"palabra": "ocho (8)", "fuentes": ["p33-act5", "p36-act2"]},
+          {"palabra": "once (11)", "fuentes": ["p36-act1", "p38-act1", "p38-act1@R"]},
           {"palabra": "veinte (20)", "fuentes": ["p37-act5", "p37-act6@R", "p37-act7", "p37-act7@R"]},
           {"palabra": "veinticinco (25)", "fuentes": ["p37-act5", "p37-act5@R"]},
           {"palabra": "treinta (30)", "fuentes": ["p33-act5"]},
           {"palabra": "treinta y cinco (35)", "fuentes": ["p33-act5"]},
-          {"palabra": "cuarenta (40)", "fuentes": ["p33-act5"]},
-          {"palabra": "cuarenta y cinco (45)", "fuentes": ["p35-act6"]}
+          {"palabra": "cuarenta (40)", "fuentes": ["p33-act5"]}
         ],
-        "fuentes": ["p33-act5", "p33-act6", "p36-act4", "p36-act1", "p36-act2", "p33-act8", "p35-act6", "p38-act1", "p38-act1@R", "p38-act2", "p37-act5", "p37-act6@R", "p37-act7", "p37-act7@R", "p37-act5@R"],
+        "fuentes": ["p33-act5", "p36-act2", "p36-act1", "p38-act1", "p38-act1@R", "p37-act5", "p37-act6@R", "p37-act7", "p37-act7@R", "p37-act5@R"],
         "descripcion": { "U3": "Recurrente: ya canónica en U0–U2. U3 la reactiva intensivamente en las edades de los miembros de la familia (40, 35, 8, 5, 9, 16, 11, 45 años) y en las expresiones horarias (las cinco y veinte, las diez, las once)." }
       },
       "Edad": {
@@ -203,7 +170,6 @@
       },
       "Saludos y despedidas": {
         "items": [
-          {"palabra": "¡Hola!", "fuentes": ["p38-act1"]},
           {"palabra": "¿Qué tal estás?", "fuentes": ["p38-act1", "p38-act3"]},
           {"palabra": "¡Un saludo desde Cádiz!", "fuentes": ["p38-act1"]},
           {"palabra": "Un saludo", "fuentes": ["p38-act3"]},
@@ -219,7 +185,7 @@
         "items": [
           {"palabra": "cómic", "fuentes": ["p40-act1", "p40-act3", "p40-act4"]},
           {"palabra": "película", "fuentes": ["p40-act1", "p40-act2", "p40-act3", "p40-act4", "p40-act5"]},
-          {"palabra": "película de animación", "fuentes": ["p40-act1", "p40-act3", "p40-act4"]},
+          {"palabra": "película de animación", "fuentes": ["p40-act1", "p40-act3"]},
           {"palabra": "dibujos animados", "fuentes": ["p40-act1"]},
           {"palabra": "cine", "fuentes": ["p37-act7", "p39-act4", "p40-act5"]},
           {"palabra": "cine de animación", "fuentes": ["p40-act5"]},
@@ -252,10 +218,9 @@
           {"palabra": "música clásica", "fuentes": ["p39-act4"]},
           {"palabra": "fútbol (Real Madrid-Barcelona)", "fuentes": ["p39-act4"]},
           {"palabra": "Saber y ganar", "fuentes": ["p39-act4"]},
-          {"palabra": "programación de televisión", "fuentes": ["p39-act4"]},
-          {"palabra": "radio", "fuentes": ["p40-act1"]}
+          {"palabra": "programación de televisión", "fuentes": ["p39-act4"]}
         ],
-        "fuentes": ["p39-act4", "p40-act1"],
+        "fuentes": ["p39-act4"],
         "descripcion": {
           "U3": "Recurrente por §5.1.1 criterio (b): no es vocabulario canónico principal del índice editorial, pero es léxico imprescindible para la actividad de comprensión auditiva 'Escucha la programación de televisión para hoy' (p39-act4) declarada explícitamente en el índice de DESTREZAS: telediario, documental, vuelta ciclista, música clásica, fútbol, Saber y ganar."
         }
@@ -269,7 +234,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["estudio", "estudias", "estudia", "estudiamos", "estudiáis", "estudian"],
-      "fuentes": ["cuadro@p34#1", "p33-act10@R", "p34-act1", "p34-act1@R", "p34-act2@R", "p34-act3", "p35-act5", "p38-act1", "p38-act1@R", "p38-act3", "p41-act1", "p41-act1@R", "p41-act2", "p41-act2@R"],
+      "fuentes": ["cuadro@p34#1", "p33-act10@R", "p34-act1", "p34-act1@R", "p34-act2@R", "p34-act3", "p35-act5", "p38-act1", "p38-act1@R", "p41-act1", "p41-act1@R", "p41-act2", "p41-act2@R"],
       "descripcion": {
         "U3": "PCIC A1 §6.4 — Primer cierre canónico del paradigma completo del Presente de estudiar (6 personas) como modelo de verbos regulares en -ar. Presentado en el cuadro de conjugación de p34 junto a comer/vivir y operacionalizado intensivamente en los ejercicios gramaticales (p34-act1/2/3) y en los textos descriptivos de Javier y Lucía (estudia ESO, estudia ingeniería, estudia piano). En U2 ya aparecía como anticipación."
       }
@@ -302,7 +267,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["trabajo", "trabajas", "trabaja", "trabajamos", "trabajan"],
-      "fuentes": ["p33-act6", "p33-act8", "p33-act9", "p33-act9@R", "p33-act10", "p34-act2@R", "p34-act3", "p38-act1", "p38-act1@R", "p38-act2", "p41-act1", "p41-act1@R"],
+      "fuentes": ["p33-act6", "p33-act8", "p33-act9", "p33-act9@R", "p34-act2@R", "p34-act3", "p38-act1", "p38-act1@R", "p38-act2", "p41-act1", "p41-act1@R"],
       "descripcion": {
         "U3": "Primer cierre canónico del paradigma de Presente de trabajar (regular -ar). Aparece en los textos descriptivos asociado a profesiones y lugares de trabajo (de lunes a viernes trabaja fuera de Madrid, Su madre trabaja en el hotel del pueblo, mi padre trabaja en un hotel, ¿Dónde trabaja tu padre? En un banco, Mi hermano David trabaja con mi padre)."
       }
@@ -324,7 +289,7 @@
       "rasgo_por_tiempo": { "Presente": "regular -ir" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["escribes", "escribe"],
-      "fuentes": ["p34-act1@R", "p34-act2@R", "p40-act1", "p40-act2"],
+      "fuentes": ["p34-act1@R", "p34-act2@R", "p40-act2"],
       "descripcion": {
         "U3": "Primer cierre canónico del Presente de escribir (regular -ir). En contenido aparece en ejercicios gramaticales (¿Qué escribes?, Elena no escribe en su diario todos los días) y en el texto cultural y en p40-act2 (Robot Dreams es una película escrita y dirigida por Pablo Berger; Escribe el guion de una película). Las formas trabajadas se limitan a 3ª singular y 2ª singular; las demás se reconstruyen analógicamente desde el paradigma de vivir presentado en el cuadro."
       }
@@ -393,7 +358,6 @@
         "p33-act9",
         "p33-act9@R",
         "p33-act10@R",
-        "p34-act2",
         "p35-act4",
         "p35-act5",
         "p35-act6",
@@ -404,12 +368,10 @@
         "p38-act1",
         "p38-act1@R",
         "p38-act2",
-        "p38-act3",
         "p39-act7",
         "p39-act7@R",
         "p40-act1",
-        "p41-act1@R",
-        "p41-act2"
+        "p41-act1@R"
       ],
       "descripcion": {
         "U3": "Recurrente: ya canónica en U1/U2 (paradigma completo). U3 la reactiva masivamente para expresar parentesco (Carlos y Juana tienen cinco nietos; tengo dos hermanas; no tengo hermanos; ¿Cuántos hijos tienen tus tíos?) y edad (Tiene 5 años, ¿Cuántos años tienen?, Tienen 8 años)."
@@ -428,7 +390,6 @@
         "p33-act5",
         "p33-act10@R",
         "p34-act3",
-        "p35-act5",
         "p35-act6",
         "p35-act6@R",
         "p35-act7",
@@ -465,7 +426,7 @@
       "rasgo_por_tiempo": { "Presente": "tipo gustar" },
       "tiempos": ["Presente"],
       "formas_trabajadas": ["le gusta", "te gustan", "te gusta", "me gusta"],
-      "fuentes": ["p38-act1", "p38-act1@R", "p38-act2", "p40-act1", "p40-act4", "p40-act5"],
+      "fuentes": ["p38-act1", "p38-act1@R", "p40-act1", "p40-act4", "p40-act5"],
       "descripcion": {
         "U3": "Recurrente: ya canónica en U2 como anticipación. U3 la reactiva en el correo de Marta (A mí me gusta mucho la Historia; A Marta le gusta la Historia) y en el bloque cultural (¿Por qué esta película le gusta al público?, ¿Qué películas de animación te gustan?, ¿Cuál te gusta más?)."
       }
@@ -547,11 +508,11 @@
       },
       "Posesivos": {
         "items": [
-          {"palabra": "mi", "fuentes": ["cuadro@p35#1", "p32-act3", "p33-act5", "p35-act5", "p35-act7", "p35-act8", "p36-act1", "p38-act1", "p38-act3", "p41-act3", "p41-act4"]},
+          {"palabra": "mi", "fuentes": ["cuadro@p35#1", "p33-act5", "p35-act5", "p35-act7", "p35-act8", "p36-act1", "p38-act1", "p38-act3", "p41-act3", "p41-act4"]},
           {"palabra": "mis", "fuentes": ["cuadro@p35#1", "p35-act5", "p35-act6", "p35-act8", "p36-act1", "p41-act3"]},
-          {"palabra": "tu", "fuentes": ["cuadro@p35#1", "p32-act4", "p34-act3", "p35-act5", "p35-act6@R", "p35-act7", "p36-act4", "p38-act3", "p39-act5", "p41-act2", "p41-act3"]},
-          {"palabra": "tus", "fuentes": ["cuadro@p35#1", "p33-act5", "p34-act3", "p35-act6@R", "p38-act3", "p41-act3"]},
-          {"palabra": "su", "fuentes": ["cuadro@p35#1", "p32-act2", "p33-act6", "p33-act8", "p33-act10", "p35-act5", "p36-act1", "p38-act1", "p41-act3", "p41-act4"]},
+          {"palabra": "tu", "fuentes": ["cuadro@p35#1", "p34-act3", "p35-act5", "p35-act6@R", "p35-act7", "p36-act4", "p38-act3", "p39-act5", "p41-act2", "p41-act3"]},
+          {"palabra": "tus", "fuentes": ["cuadro@p35#1", "p34-act3", "p35-act6@R", "p41-act3"]},
+          {"palabra": "su", "fuentes": ["cuadro@p35#1", "p32-act2", "p33-act6", "p33-act8", "p33-act10", "p35-act5", "p38-act1", "p41-act3", "p41-act4"]},
           {"palabra": "sus", "fuentes": ["cuadro@p35#1", "p32-act3", "p35-act5@R", "p35-act6", "p38-act1", "p41-act3"]},
           {"palabra": "nuestro", "fuentes": ["cuadro@p35#1", "p35-act6", "p41-act3"]},
           {"palabra": "nuestra", "fuentes": ["cuadro@p35#1", "p35-act6", "p41-act3"]},
@@ -564,7 +525,6 @@
         ],
         "fuentes": [
           "cuadro@p35#1",
-          "p32-act3",
           "p33-act5",
           "p35-act5",
           "p35-act7",
@@ -575,7 +535,6 @@
           "p41-act3",
           "p41-act4",
           "p35-act6",
-          "p32-act4",
           "p34-act3",
           "p35-act6@R",
           "p36-act4",
@@ -585,6 +544,7 @@
           "p33-act6",
           "p33-act8",
           "p33-act10",
+          "p32-act3",
           "p35-act5@R"
         ],
         "descripcion": {
@@ -631,36 +591,17 @@
       },
       "Concordancia de número": {
         "items": [
-          {"palabra": "padres", "fuentes": ["p32-act3", "p33-act5", "p33-act10", "p35-act6", "p35-act8", "p41-act1", "p41-act3"]},
+          {"palabra": "padres", "fuentes": ["p32-act3", "p35-act8", "p41-act1", "p41-act3"]},
           {"palabra": "hijos", "fuentes": ["p32-act3", "p35-act6", "p41-act4"]},
-          {"palabra": "abuelos", "fuentes": ["p32-act3", "p33-act6", "p35-act6", "p36-act1"]},
-          {"palabra": "hermanos", "fuentes": ["p33-act5", "p33-act6", "p33-act8", "p36-act1"]},
+          {"palabra": "abuelos", "fuentes": ["p32-act3", "p35-act6"]},
+          {"palabra": "hermanos", "fuentes": ["p33-act5", "p33-act8", "p36-act1"]},
           {"palabra": "tíos", "fuentes": ["p35-act5", "p35-act6"]},
-          {"palabra": "primos", "fuentes": ["p36-act1", "p39-act7", "p41-act4@R"]},
+          {"palabra": "primos", "fuentes": ["p36-act1", "p41-act4@R"]},
           {"palabra": "nietos", "fuentes": ["p32-act3", "p33-act7@R"]},
           {"palabra": "amigos", "fuentes": ["p36-act4", "p38-act1", "p38-act3"]},
           {"palabra": "compañeros", "fuentes": ["p35-act5", "p38-act3"]}
         ],
-        "fuentes": [
-          "p32-act3",
-          "p33-act5",
-          "p33-act10",
-          "p35-act6",
-          "p35-act8",
-          "p41-act1",
-          "p41-act3",
-          "p41-act4",
-          "p33-act6",
-          "p36-act1",
-          "p33-act8",
-          "p35-act5",
-          "p39-act7",
-          "p41-act4@R",
-          "p33-act7@R",
-          "p36-act4",
-          "p38-act1",
-          "p38-act3"
-        ],
+        "fuentes": ["p32-act3", "p35-act8", "p41-act1", "p41-act3", "p35-act6", "p41-act4", "p33-act5", "p33-act8", "p36-act1", "p35-act5", "p41-act4@R", "p33-act7@R", "p36-act4", "p38-act1", "p38-act3"],
         "descripcion": {
           "U3": "Recurrente: ya canónica en U2 (paradigma de plural +s / +es). U3 la reactiva en la pluralización sistemática del léxico de parentesco (padres, hijos, abuelos, hermanos, tíos, primos, nietos) y de relaciones sociales (amigos, compañeros)."
         }
@@ -1709,7 +1650,7 @@
           "instruccion_original": "Lee el segundo mensaje que le manda Marta a su amigo Pierre y corrige las afirmaciones.",
           "vocabulario": ["Parientes", "Profesiones y lugares de trabajo", "Asignaturas", "Centros e instituciones educativas", "Edad", "Números cardinales", "Saludos y despedidas"],
           "tiempos_y_verbos": [
-            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es", "son"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es"]},
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene", "tengo", "tienes", "tenemos"]},
             {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
             {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja", "trabajan"]},
