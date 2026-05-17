@@ -458,6 +458,73 @@ Ejemplo: en *"Quieres comer carne"*, `querer` entra con `tiempo: "Presente"`, `f
 - Antes de escribir `_funcion_ambigua: true` → exponer la ambigüedad y opciones.
 - `_decisiones_ia` no requiere gatillo de chat; registra decisiones que ya se tomaron.
 
+### §5.10. Aparición material como condición de codificación
+
+**Aplica a:** la evidencia que justifica las apariciones codificadas en las listas tipadas de actividad/cuadro y, por derivación, en los bloques consolidados. **No regula** el valor literal del label canónico almacenado en la lista tipada (que sigue siendo nombre del registry).
+
+#### Distinción A / B
+
+**Categoría A — superficie textual.** Exige **aparición literal** en el contenido didáctico definido en §5.2.
+
+- `vocabulario_consolidado.{...}.items[].palabra` — lemas léxicos (`huevo`, `mexicano`).
+- `tiempos_y_verbos_consolidado[].formas_trabajadas` — formas verbales (`tengo`, `gustas`).
+- `gramatica_consolidada.{...}.items[].palabra` cuando es realización superficial: interrogativos (`qué`), pronombres (`tú`, `me`), alternancias (`un/una`), secuencias modelo cortas.
+
+**Categoría B — etiqueta / paradigma editorial.** No exige literalidad, pero exige **justificación pedagógica explícita en la evidencia de la unidad**; cuando haya `descripcion` (obligatoria en `principal`, opcional en `recurrente` por §5.1.3), debe recogerla.
+
+- Claves de categoría de cualquier bloque.
+- `gramatica_consolidada.{...}.items[].palabra` cuando es fórmula condensada o paradigma editorial (`A mí me gusta(n)`, `cuánto/-a/-os/-as`).
+- `pronunciacion_ortografia_consolidada.{...}.items[].palabra` íntegro (notación técnica).
+
+#### Criterio discriminante para gramática
+
+¿El alumno lo lee, escribe, dice o ve literal en el material (incluido el cuadro)? → A. ¿Es descripción editorial del fenómeno? → B.
+
+#### Errores prohibidos
+
+- PROHIBIDO codificar categoría A por inferencia, anticipación, elisión o paradigma completado.
+- PROHIBIDO codificar categoría B sin justificación pedagógica explícita en la evidencia de la unidad.
+- PROHIBIDO usar `instruccion_original` ni cualquier metalengua excluida por §5.2 como fuente de aparición material.
+
+#### Efecto operativo sobre fuentes
+
+- Ítem A: si una fuente no verifica aparición literal, se retira esa fuente. Si ninguna verifica, se retira el ítem completo.
+- Ítem B: la fuente se mantiene si la actividad/cuadro trabaja el fenómeno; la justificación va en `descripcion` cuando exista.
+
+#### Cuándo escalar
+
+Si dudas si un ítem es A o B, o si una fuente A roza el límite, aplicar §0.1 propuesta-en-chat antes de codificar o retirar.
+
+### §5.11. Unificación de flexiones en `vocabulario_consolidado`
+
+**Aplica a:** items de `vocabulario_consolidado.{principal,recurrente}.<categoria>.items`.
+
+**Regla obligatoria.** Las flexiones (masc/fem, sing/plural, y combinaciones) de un mismo lema se unifican siempre en **una sola entrada** con **lema canónico singular**:
+
+- en **adjetivos y gentilicios** que flexionan en género, el lema canónico es la **forma masculina singular** (`argentino`, `mexicano`, `francés`, `primero`);
+- en **sustantivos**, el lema canónico es la **forma singular conservando su género léxico** (`manzana` y no `manzano`, `pizza` y no `pizzo`, `huevo`, `tomate`).
+
+Las fuentes de todas las flexiones se fusionan en esa entrada única.
+
+**Ejemplos:**
+- Adjetivos/gentilicios: `argentino` + `argentina` + `argentinos` + `argentinas` → `"argentino"`.
+- Adjetivos/gentilicios: `mexicano`/`mexicana` → `"mexicano"`.
+- Adjetivos/gentilicios: `francés`/`francesa`/`franceses`/`francesas` → `"francés"`.
+- Ordinales: `primero`/`primera` → `"primero"`.
+- Sustantivos masculinos: `huevo`/`huevos` → `"huevo"`; `tomate`/`tomates` → `"tomate"`.
+- Sustantivos femeninos: `manzana`/`manzanas` → `"manzana"`; `pizza`/`pizzas` → `"pizza"`; `zanahoria`/`zanahorias` → `"zanahoria"`.
+
+**Excepciones:**
+- **Compuestos multi-token con identidad propia** NO son flexión: `huevo frito`, `zumo de naranja`, `pollo a la catalana` se mantienen como items distintos.
+- **Lemas que en el libro aparecen en una sola forma sin par** se mantienen verbatim (`patatas`, `madrileño`, `vegetariano`).
+- **Nombres propios** no aplican.
+
+**Aplicación retroactiva:** si una unidad existente tiene dos items separados (`argentino` y `argentina`, o `manzana` y `manzanas`), se colapsan al lema canónico según la regla anterior (masculino singular para adjetivos/gentilicios; singular conservando género para sustantivos). Si tiene un solo item con notación `lema/-a` (`argentino/-a`), se reescribe como `argentino`. Validador 0/0/0 obligatorio tras el cambio.
+
+**No aplica a** `tiempos_y_verbos_consolidado` (un lema verbal ya es masculino infinitivo por contrato), `gramatica_consolidada` ni `pronunciacion_ortografia_consolidada` (sus items no son palabras flexionables sino categorías/patrones).
+
+**Relación con §6.4** (normalización de formas verbales): paralela pero distinta. §6.4 baja a minúscula en `tiempos_y_verbos_consolidado.formas_trabajadas`; §5.11 unifica a masculino singular en `vocabulario_consolidado.items`.
+
 ---
 
 ## §6. Derivación de los 4 bloques top-level consolidados

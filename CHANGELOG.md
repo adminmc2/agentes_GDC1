@@ -5,6 +5,34 @@
 
 ---
 
+## [v10.149 — 2026-05-17] — Fase 1: contrato — §5.10 (aparición material) + §5.11 (unificación flexiones)
+
+Cierre del contrato v10.145 mediante dos reglas operativas nuevas en `reglas-operativas.md`, tras auditoría de 459 anomalías generadas por el matcher en U0-U5 y dictamen del revisor sobre alcance.
+
+**§5.10 — Aparición material como condición de codificación.** Distinción A/B para discriminar cuándo se exige aparición literal de un ítem:
+
+- **Categoría A (superficie textual):** lemas léxicos, formas verbales, realizaciones gramaticales superficiales (`qué`, `tú`, `un/una`). Exige aparición literal en el contenido didáctico definido en §5.2.
+- **Categoría B (etiqueta / paradigma editorial):** claves de categoría del registry, fórmulas pedagógicas condensadas (`A mí me gusta(n)`, `cuánto/-a/-os/-as`), notación técnica de pron/orto. No exige literalidad; exige justificación pedagógica explícita.
+- Criterio discriminante para gramática: ¿el alumno lo lee, escribe, dice o ve literal en el material (incluido el cuadro)? → A. ¿Es descripción editorial del fenómeno? → B.
+- Efecto operativo: ítem A sin aparición → se retira la fuente; si ninguna verifica → se retira el ítem.
+- **Prohibido** codificar A por inferencia, anticipación, elisión o paradigma completado. Prohibido usar `instruccion_original` ni metalengua excluida por §5.2 como fuente.
+
+**§5.11 — Unificación de flexiones en `vocabulario_consolidado`.** Canoniza retroactivamente la regla aplicada en v10.135b a U4: las flexiones (masc/fem, sing/plural) de un mismo lema se unifican siempre en una sola entrada con **lema canónico singular** — masculino singular en adjetivos y gentilicios (`argentino`, `francés`, `primero`), singular conservando género léxico en sustantivos (`manzana`, `huevo`, `tomate`). Excepciones: compuestos multi-token, lemas sin par atestado, nombres propios. Aplicación retroactiva pendiente a U0-U5.
+
+**Cambio menor en `schema-inventario.md` §9.1:** cross-reference añadido a §5.10 y §5.11 para que el shape del vocabulario consolidado apunte a las reglas operativas.
+
+**Origen y dictamen del revisor.** La redacción final se cerró en cuatro iteraciones que ajustaron: (1) compatibilidad con §5.1.3 (`descripcion` obligatoria solo en principal); (2) scope ampliado de "consolidados" a "evidencia que justifica las apariciones en listas tipadas y consolidados"; (3) discriminador de gramática ampliado a "lee, escribe, dice o ve literal"; (4) referencia a §5.2 en lugar de inventario duplicado de campos. Decisión final del revisor: aprobada.
+
+**Lo que NO entra en este commit (documental):**
+
+- Limpieza retroactiva de los 459 anomalías en U0-U5 (queda como Lote 3D-cleanup, separado, con script y revisión por unidad).
+- Aplicación retroactiva de §5.11 a U0-U3 y U5 (queda como Lote 3D-cleanup, U4 ya hecho en v10.135b).
+- Cambios materiales en JSONs.
+
+Validador U0-U5 → 0/0/0 (sin cambios en datos).
+
+---
+
 ## [v10.148 — 2026-05-17] — Fase 1: Lote 3D — matcher mejorado: re-migración vocab U2/U3 + gramática modo A
 
 Extensión del matcher (`expand_needle`) para resolver dos limitaciones diagnosticadas en lotes anteriores:
