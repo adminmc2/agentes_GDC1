@@ -310,6 +310,8 @@ Si un término no cumple los tres criterios, NO entra como recurrente. En partic
 - Léxico de input incidental que no es lo que la actividad enseña → no entra como vocabulario de la actividad ni como recurrente, salvo que coincida con un campo canónico declarado en otra unidad y cumpla los 3 criterios.
 - Léxico que es canónico en una **unidad posterior** y aparece como anticipación → NO se codifica como recurrente. Se anota como anticipación para fase 2 (ver §6.3).
 
+**Excepción autorizada por §0.1 (rara y estrecha).** El autor puede autorizar por §0.1 que una anticipación se conserve en `recurrente` cuando: (a) no sea input incidental y (b) funcione como **soporte pedagógico explícito del principal de la unidad actual** (no mero input rico). En ese caso, la entrada conserva su sitio en `recurrente` y debe llevar: (1) `descripcion` que declare explícitamente la anticipación y la unidad principal posterior; (2) entrada en `_decisiones_ia` que registre la excepción, su motivo y la autorización del autor. PROHIBIDO aplicar esta excepción silenciosamente; siempre vía §0.1 propuesta-en-chat.
+
 #### §5.1.2. Criterios pedagógicos por tiempo verbal
 
 El campo `tiempo` del enum cerrado (`Presente`, `Pretérito indefinido`, `Imperativo`, `Infinitivo`) se asigna según qué use el libro en la actividad/cuadro:
@@ -562,6 +564,8 @@ Un término que aparece como input incidental en la unidad N pero es **canónico
 - En **inventarios canónicos en producción**: la anticipación se reporta a fase 2 (capa 1, R1) como alerta cross-unidad.
 
 Para que un término entre como `recurrente`, debe cumplir los 3 criterios de §5.1.1 Y **no ser canónico en una unidad posterior**.
+
+**Excepción autorizada por §0.1 (alineada con §5.1.1).** El autor puede autorizar por §0.1 que una anticipación se conserve en `recurrente` cuando: (a) no sea input incidental y (b) funcione como **soporte pedagógico explícito del principal de la unidad actual** (no mero input rico). Requisitos formales: `descripcion` declara la anticipación y la unidad principal posterior; `_decisiones_ia` registra la excepción y su motivo. PROHIBIDO aplicar silenciosamente. Esta salvedad es la misma que §5.1.1 y aplica por simetría a este §6.3.
 
 ### §6.4. Normalización de `formas_trabajadas` en el consolidado
 

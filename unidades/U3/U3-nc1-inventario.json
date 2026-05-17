@@ -113,7 +113,7 @@
         ],
         "fuentes": ["p33-act6", "p33-act10", "p33-act10@R", "p33-act8", "p34-act2", "p35-act5", "p40-act1", "p40-act2", "p40-act2@R", "p40-act3", "p34-act1", "p38-act1", "p38-act1@R", "p38-act2", "p34-act3"],
         "descripcion": {
-          "U3": "PCIC A1 §6.5 Profesiones y lugares de trabajo — Recurrente por §5.1.1 criterio (b): no es vocabulario canónico principal del índice editorial U3 (que solo declara Parientes), pero es léxico imprescindible para los textos descriptivos de las familias (Javier Rodríguez: padre camionero / madre enfermera; Lucía Alonso: padre agricultor / madre trabaja en el hotel) y para el bloque cultural sobre cine de animación (guionista, dibujante, iluminador, maquillador, decorador, actor/actriz)."
+          "U3": "PCIC A1 §6.5 — Profesiones y lugares de trabajo. **Anticipación de U6 principal** del índice editorial (nc1-curso.json → U6.vocabulario: 'Profesiones y lugares de trabajo'). Codificada como recurrente en U3 por **excepción autorizada por §0.1** (reglas-operativas.md §5.1.1 + §6.3 salvedad): no es input incidental — el material aparece sistemáticamente en los textos descriptivos de las familias (Javier Rodríguez: padre camionero, madre enfermera; familias Castillo, Suárez...) y funciona como soporte pedagógico explícito del principal U3 'Parientes' (los miembros de la familia se presentan asociados a su profesión y lugar de trabajo). Detalle de la decisión en _decisiones_ia (entrada P-Profesiones-anticipacion-U6)."
         }
       },
       "Centros e instituciones educativas": {
@@ -745,6 +745,14 @@
       "diagnostico": "El registry léxico canonizó 'La hora' en v10.129 pero el inventario U3 nunca la pobló. El contenido (12 expresiones canónicas del cuadro@p37#1: en punto, y cinco, y cuarto, etc.) estaba diluido bajo 'Números cardinales' sin entidad propia. Inconsistencia entre registry y datos.",
       "accion": "Creada categoría 'La hora' con 12 items atestados en cuadro@p37#1 + p37-act5 + p37-act6 + p37-act7. Solo se incluyen lemas literalmente atestados en input/respuestas (§5.10 A). Refs añadidas a cuadro@p37#1, p37-act5, p37-act6, p37-act7. 'Números cardinales' se mantiene (los números siguen siendo léxico relevante). El índice del libro pone 'La hora' en comunicacion, pero los lemas léxicos específicos tienen entidad propia.",
       "ramifica": "Cierra el desfase histórico entre registry (que ya tenía 'La hora' desde v10.129) y el inventario U3 (que no la usaba)."
+    },
+    {
+      "id": "P-Profesiones-anticipacion-U6",
+      "version": "v10.155",
+      "decision": "Conservar 'Profesiones y lugares de trabajo' como recurrente en U3 pese a ser principal canónico de U6 (excepción autorizada por §0.1).",
+      "diagnostico": "La descripción anterior justificaba la entrada apelando a §5.1.1 criterio (b) 'no forma parte del principal declarado en unidades posteriores', pero esa justificación era factualmente incorrecta: 'Profesiones y lugares de trabajo' SÍ es principal en U6 según nc1-curso.json. Aplicar §5.1.1 estricta + §6.3 implicaría retirar la categoría como recurrente y anotarla solo como anticipación.",
+      "accion": "Conservación de la categoría como recurrente bajo la excepción autorizada introducida en reglas-operativas.md §5.1.1 y §6.3 (v10.155). Justificación pedagógica: el material no es input incidental — los textos descriptivos de familias en U3 trabajan sistemáticamente la profesión y el lugar de trabajo como soporte del principal 'Parientes'. Descripción reescrita para declarar explícitamente la anticipación y la unidad posterior.",
+      "ramifica": "Caso paralelo a U1 'Adjetivos de nacionalidad' (P3/P12/P13). Activa la salvedad de excepción autorizada en §5.1.1 y §6.3."
     }
   ],
   "paginas_detalle": [

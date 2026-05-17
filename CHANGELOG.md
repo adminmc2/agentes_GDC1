@@ -5,6 +5,33 @@
 
 ---
 
+## [v10.155 — 2026-05-17] — Reglas: salvedad de excepción autorizada en §5.1.1 + §6.3 + rectificaciones U1/U3
+
+Tras el análisis del autor sobre la clasificación de `recurrente` en U0-U5 (revisión del concepto en `glosario.md` y `reglas-operativas.md` §5.1.1), se detectaron categorías codificadas como `recurrente` cuando son **principal canónico en una unidad posterior** según `nc1-curso.json`. La regla §5.1.1 + §6.3 actual las prohíbe estrictamente, pero el material atestado tiene valor pedagógico real en la unidad actual.
+
+**Decisión del autor:** mantener esas entradas como recurrente bajo una **excepción rara, estrecha y autorizada por §0.1** (propuesta-en-chat). Reformulación del contrato:
+
+**Cambios en `reglas-operativas.md`:**
+
+- **§5.1.1** — añadida salvedad al final del bloque de exclusión: el autor puede autorizar por §0.1 que una anticipación se conserve en `recurrente` cuando: (a) no sea input incidental y (b) funcione como **soporte pedagógico explícito del principal de la unidad actual** (no mero input rico). Requisitos formales: `descripcion` declara la anticipación y la unidad principal posterior; `_decisiones_ia` registra la excepción. PROHIBIDO aplicar silenciosamente.
+- **§6.3** — misma salvedad replicada al final para evitar conflicto con §5.1.1.
+
+La regla general estricta se mantiene intacta; la salvedad es excepcional y exige autorización expresa.
+
+**Cambios materiales:**
+
+- **U3 `recurrente["Profesiones y lugares de trabajo"]`**: descripción reescrita. La anterior justificaba la entrada por §5.1.1 cláusula (b) — incorrecto porque la categoría SÍ es principal de U6 según índice. Nueva descripción declara la anticipación + invoca la salvedad. Nueva entrada `_decisiones_ia` P-Profesiones-anticipacion-U6 documentando.
+- **U1 `recurrente["Adjetivos de nacionalidad"]`**: descripción rectificada para declarar explícitamente la anticipación de U2 + invocar la salvedad. **No se añade entrada nueva** en `_decisiones_ia` (caso ya documentado en P3/P12/P13 de v10.123-v10.124); la descripción remite a esas decisiones existentes.
+
+**Casos pendientes (no aplicados en este lote):**
+
+- **U4 `recurrente["Restaurante"]`**: confirmado como categoría legítima (no anticipación de U6 — `Restaurante` y `Establecimientos: cine, restaurante, farmacia...` son canónicos distintos en el registry). Sin cambios.
+- **U5 `recurrente["Establecimientos: cine, restaurante, farmacia..."]`**: se deja para más adelante por dictamen del autor. Es anticipación literal de U6 principal pero la decisión sobre aplicar la salvedad o retirarla se difiere.
+
+**Sin cambios** en JSONs de U0/U2/U4/U5, scripts, registries ni Apéndice transitorio. Validador U0-U5 → 0/0/0.
+
+---
+
 ## [v10.154 — 2026-05-17] — Rectificación editorial U5 — separación `Tipos de vivienda` vs `Alojamiento`
 
 Tercera rectificación editorial U5 (tras v10.144 marcadores y v10.152 La hora) detectada por el autor antes de lanzar U6.
