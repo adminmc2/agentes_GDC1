@@ -484,7 +484,8 @@ Ejemplo: en *"Quieres comer carne"*, `querer` entra con `tiempo: "Presente"`, `f
 
 - PROHIBIDO codificar categoría A por inferencia, anticipación, elisión o paradigma completado.
 - PROHIBIDO codificar categoría B sin justificación pedagógica explícita en la evidencia de la unidad.
-- PROHIBIDO usar `instruccion_original` ni cualquier metalengua excluida por §5.2 como fuente de aparición material.
+
+> **Nota de remitencia (no novedad de §5.10).** La exclusión de `instruccion_original` y de cualquier metalengua definida como tal en §5.2 ya está vigente. §5.10 no introduce esa prohibición; se apoya en ella: ninguna fuente A puede sustentarse en metalengua de instrucción excluida por §5.2.
 
 #### Efecto operativo sobre fuentes
 

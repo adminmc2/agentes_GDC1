@@ -5,6 +5,23 @@
 
 ---
 
+## [v10.149c — 2026-05-17] — Doc: §5.10 — exclusión de instrucción como remitencia, no como novedad
+
+Ajuste documental tras dictamen del revisor sobre v10.149. La redacción anterior de §5.10 enumeraba como "Errores prohibidos" la cláusula *"PROHIBIDO usar `instruccion_original` ni cualquier metalengua excluida por §5.2 como fuente de aparición material"*. El revisor señaló que esa exclusión **no es novedad sustantiva de §5.10**: ya vive en §5.2 generalizada (v10.144) y aplica con independencia de la nueva regla. Presentarla como decisión nueva mezclaba una confirmación con dos cambios reales (distinción A/B, aparición material), dificultando el dictamen.
+
+**Cambio aplicado en `reglas-operativas.md` §5.10:**
+
+- La viñeta tercera del bloque "Errores prohibidos" se retira como prohibición independiente.
+- Se sustituye por una **nota de remitencia** explícita: "§5.10 no introduce esa prohibición; se apoya en ella". El texto deja claro que la exclusión vive en §5.2 y que §5.10 solo la invoca.
+
+**Cambios materiales:**
+- `reglas-operativas.md` §5.10 (sección "Errores prohibidos" + nueva nota de remitencia).
+- `CHANGELOG.md` + `REVIEW.md`.
+
+**Sin cambios en `schema-inventario.md`, scripts ni JSONs.** Validador U0-U5 → 0/0/0.
+
+---
+
 ## [v10.149b — 2026-05-17] — Doc: Apéndice transitorio del schema actualizado (§A.1 + §A.3 + §A.4)
 
 Ajuste documental tras dictamen del revisor sobre el estado real del validador frente a las nuevas reglas §5.10 y §5.11 (introducidas en v10.149 y corregidas en v10.149a). El revisor señaló que el Apéndice transitorio del schema describía mal la realidad y que añadir nuevas deudas sin sanear el relato existente reproduciría exactamente la desalineación contractual que el proyecto vino corrigiendo desde v10.145.
