@@ -5,6 +5,20 @@
 
 ---
 
+## [v10.160 — 2026-05-18] — Cierre fino U6 + estado global REVIEW alineado
+
+Tres flecos detectados por el revisor tras visto bueno parcial sobre U6 — el inventario en sí está bien, pero la documentación meta y el operativo Git no estaban del todo cerrados.
+
+**Cambios:**
+
+1. **`unidades/U6/U6-nc1-inventario.json` — `hospital` añadido a `Establecimientos`**: la descripción de la categoría prometía "ampliando con piscina, centro comercial, hospital, cafetería, gimnasio" pero `hospital` no figuraba como item (solo en `Profesiones y lugares de trabajo`). Aparece materialmente en p63-act8 (columna 'Lugares de trabajo') y p71-act4 ('médico/-a → en el hospital'). Item añadido + fuentes top-level + descripción extendida documentando la doble función (establecimiento + lugar de trabajo).
+2. **`REVIEW.md` §Estado global**: actualizado de "U0-U5 saneadas; U6-U9 pendientes" a "U0-U6 saneadas; U7-U9 pendientes" — alineado con la bitácora que ya registraba U6 como extraída desde v10.158.
+3. **Worktree `proc-u6-wip`**: diagnosticado. Delta local en `unidades/U6/U6-nc1-inventario.json` es la versión obsoleta pre-rename (shape v10.157 con `"Establecimientos: cine, restaurante, farmacia..."` largo, items en shape pre-v10.158). Fue **superada** por main (v10.158 tomó esa misma versión, la migró a shape post-v10.153 y aplicó renames cortos). Cierre del worktree pendiente de confirmación del autor.
+
+**Validación:** `python3 scripts/validar_inventario.py 6` → 0 errores, 0 avisos.
+
+---
+
 ## [v10.159 — 2026-05-18] — Lote rectificación editorial U4 (registry + 4 rectificaciones)
 
 Lote U4 disparado por auditoría del autor en chat sobre dos focos: (a) items mal encajados en categorías léxicas existentes, (b) campo léxico nuclear no codificado por ausencia de canónico en registry. Cuatro rectificaciones en una sola unidad + alta canónica nueva.

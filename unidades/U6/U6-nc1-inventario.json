@@ -23,6 +23,7 @@
           {"palabra": "estación de tren", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3", "p63-act3@R", "p71-act3@R"]},
           {"palabra": "farmacia", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3", "p63-act3@R", "p64-act2", "p66-act1", "p66-act2", "p66-act3", "p67-act6", "p71-act5"]},
           {"palabra": "gimnasio", "fuentes": ["p64-act1"]},
+          {"palabra": "hospital", "fuentes": ["p63-act8", "p71-act4"]},
           {"palabra": "hotel", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3", "p63-act3@R"]},
           {"palabra": "iglesia", "fuentes": ["p62-act1", "p62-act1@R", "p63-act3", "p63-act3@R", "p66-act4"]},
           {"palabra": "instituto", "fuentes": ["p62-act1", "p62-act1@R", "p67-act6"]},
@@ -55,10 +56,12 @@
           "p63-act3",
           "p64-act2",
           "p69-act10",
-          "p71-act7@R"
+          "p71-act7@R",
+          "p63-act8",
+          "p71-act4"
         ],
         "descripcion": {
-          "U6": "PCIC A1 §11.1 Servicios públicos / §13.1 Tiempo libre y entretenimiento — Establecimientos urbanos básicos. Principal en U6: se introduce un mapa-ilustración con 14 edificios y comercios canónicos (museo, oficina de correos, biblioteca, parque, farmacia, polideportivo, instituto, estación de tren, hotel, iglesia, librería, supermercado, cine, restaurante) en p62-act1 y se trabaja a lo largo de la unidad ampliando con piscina, centro comercial, hospital, cafetería, gimnasio. Cubre el bloque temático 'edificios y comercios' del barrio."
+          "U6": "PCIC A1 §11.1 Servicios públicos / §13.1 Tiempo libre y entretenimiento — Establecimientos urbanos básicos. Principal en U6: se introduce un mapa-ilustración con 14 edificios y comercios canónicos (museo, oficina de correos, biblioteca, parque, farmacia, polideportivo, instituto, estación de tren, hotel, iglesia, librería, supermercado, cine, restaurante) en p62-act1 y se trabaja a lo largo de la unidad ampliando con piscina, centro comercial, hospital, cafetería, gimnasio. Cubre el bloque temático 'edificios y comercios' del barrio. 'hospital' añadido en v10.160 (revisor): aparece materialmente en p63-act8 (columna 'Lugares de trabajo') y p71-act4 ('médico/-a → en el hospital'); también vive en 'Profesiones y lugares de trabajo' por doble función (establecimiento + lugar de trabajo)."
         }
       },
       "Marcadores de lugar": {
