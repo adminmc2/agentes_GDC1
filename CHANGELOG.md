@@ -5,6 +5,47 @@
 
 ---
 
+## [v10.163 — 2026-05-18] — U8 cerrada: saneamiento estructural + rectificación editorial
+
+Cierre de U8 ("Descripciones", pp. 82-91) bajo el flujo IA-first post-rediseño. U8 estaba ya en shape post-v10.115 (no requirió migración estructural completa), pero tenía 44 errores §5.10/§5.11 saneados por `cleanup_v150.py` y 3 incoherencias editoriales detectadas por revisor.
+
+**Resultado U8 (`unidades/U8/U8-nc1-inventario.json`):**
+
+- 10 páginas (p82-91) · 46 actividades · 5 cuadros · 15 `_decisiones_ia`.
+- Validador 0 errores · 0 avisos · 0 legacy.
+- Consolidados léxicos P: `El cuerpo humano`, `Práctica del surf`; R: `Adjetivos descriptivos` (recurrente desde U5), `Colores` (recurrente desde U1).
+- Consolidados gramaticales P: `Construcción gustar/doler` (paradigma doler), `Adverbios de cantidad`; R: `Pronombres átonos de OI`, `Concordancia de género`, `Concordancia de número`.
+- Consolidados pron/orto P: `Sonidos y correspondencias ortográficas` (cubre `/k/`).
+- Verbos consolidados (4): `doler`, `gustar`, `tener`, `ser`. `llevar` explícitamente excluido (no canónico en registry; input incidental por §5.2).
+
+**Saneamiento previo a las rectificaciones (cleanup_v150.py):**
+
+44 errores §5.10/§5.11 heredados del legacy retirados: fuentes sin aparición literal para `nariz`, adjetivos físicos, verbos `doler/gustar` en fuentes incorrectas, gramática `Me duele/le duele`, adverbios cantidad. Items huérfanos eliminados (`amarillo`, `marrón` en bucket erróneo), `dedo + dedos → dedo` unificado.
+
+**Rectificación detectada por revisor (3 puntos antes del commit):**
+
+1. **Alineación enfoque p85-act07/08**: cambiados de `gramatica` a `pronunciacion_ortografia` para coincidir con la decisión `D-Abreviaturas-de-diccionarios-deferida` ya documentada en `_decisiones_ia`. El JSON se contradecía a sí mismo.
+2. **Reubicación de colores en bucket `Colores` recurrente** (precedente U5 v10.162): `rojo`, `verde`, `azul`, `gris`, `blanco`, `negro` retirados de `Adjetivos descriptivos` y trasladados a nueva categoría `Colores` (PRE desde U1). Recuperados `amarillo/-a` (p83-act8) y `marrones` (p88-act3/05, p89-act8) que el cleanup_v150 había retirado por fuentes inválidas. **Deuda matcher documentada**: `_expand_needle` no normaliza acento `ó` → `o`, por lo que `marrón` no atrapa `marrones`; se usa la forma plural como item canónico en este caso.
+3. **Normalización de flexiones masc/fem a notación barra** en `Adjetivos descriptivos` (28 lemas: alto/-a, bajo/-a, guapo/-a, feo/-a, delgado/-a, gordo/-a, moreno/-a, rubio/-a, pelirrojo/-a, canoso/-a, castaño/-a, calvo/-a, rizado/-a, liso/-a, ondulado/-a, largo/-a, corto/-a, pequeño/-a, oscuro/-a, simpático/-a, antipático/-a, divertido/-a, aburrido/-a, trabajador/-a, cariñoso/-a, serio/-a, favorito/-a, famoso/-a). Consistencia con U5 v10.162 y precedente `moderno/-a` U6 v10.158.
+4. **Refs de actividad** actualizadas con `Colores` en 8 actividades (p82-act03, p83-act05, p83-act08, p86-act01, p88-act03, p88-act05, p89-act07, p89-act08, p91-act06).
+
+**Decisiones autónomas relevantes** (documentadas en `_decisiones_ia`):
+- `Construcción gustar/doler` única categoría cubre `Verbo doler` + `Verbos doler y gustar` + paradigma OI (registry-driven).
+- `Adverbios de cantidad` única categoría incluye muy + mucho/-a/-os/-as (flexiones operativamente distintas, no unificadas pese a §5.11).
+- `El cuerpo humano` (no `Partes del cuerpo`) — naming literal del índice editorial.
+- `Abreviaturas de los diccionarios` SIN alta canónica nueva: deferido §0.1 al autor; actividades p85-act07/08 con listas tipadas vacías de pron/orto pero `enfoque: pronunciacion_ortografia` consistente con PCIC.
+
+**Deudas residuales documentadas:**
+- `Abreviaturas de los diccionarios` sin canónico (escalado §0.1).
+- Matcher `_expand_needle` sin normalización de acentos (caso `marrón`/`marrones`).
+- Mismo perfil de bug sistémico que U5 v10.162 (colores mal encajados, flexiones simples cuando material tiene fem).
+
+**REVIEW.md §Estado global** actualizado: U0-U8 saneadas, U9 pendiente.
+
+**Higiene del commit:** solo U8 + meta docs.
+
+---
+
 ## [v10.162 — 2026-05-18] — Rectificación U5: bucket Adjetivos descriptivos + Colores recurrente
 
 Hallazgo del autor en revisión: el bucket `Adjetivos descriptivos` de U5 estaba muy incompleto y mezclaba un color con adjetivos descriptivos.

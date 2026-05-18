@@ -6,51 +6,1498 @@
   "nivel": "A1.1",
   "fuente": {
     "archivo": "unidades/U8/fuente/U8-nc1.pdf",
-    "version_extraccion": "2026-05-10"
+    "version_extraccion": "2026-05-18"
   },
   "contenidos_indice": {
     "vocabulario": "El cuerpo humano. Práctica del surf",
-    "gramatica": "Verbo doler. Verbos doler y gustar. Adverbios de cantidad. Muy, mucho/-a/-os/-as. Abreviaturas de los diccionarios",
-    "comunicacion": "Descripción de personas. Expresar identidad. El sonido /k/",
+    "gramatica": "Verbo doler: Me duele la cabeza / Me duelen los pies. Verbos doler y gustar. Adverbios de cantidad. Muy, mucho/-a/-os/-as",
+    "comunicacion": "Descripción de personas: ¿Cómo es...?. Expresar identidad: muy, bastante, poco",
     "destrezas": "La pandilla de Marta",
     "cultura": "La semana azul"
   },
   "vocabulario_consolidado": {
     "principal": {
-      "_descripcion": "Vocabulario declarado en el índice de la unidad y trabajado en la sección Vocabulario.",
-      "Cuerpo humano (cuerpo)": ["cabeza", "cuello", "pecho", "mano", "dedos", "pie", "pierna", "estómago", "espalda", "brazo"],
-      "Cuerpo humano (cabeza)": ["pelo", "ojo", "oreja", "nariz", "dientes", "muelas", "labios", "boca", "cara"],
-      "Adjetivos descriptivos (físico)": ["alto/-a", "bajo/-a", "guapo/-a", "feo/-a", "delgado/-a", "gordo/-a", "joven", "mayor", "moreno/-a", "rubio/-a", "calvo", "castaño/-a", "rizado/-a", "liso/-a", "ondulado/-a", "pelirrojo/-a", "canoso/-a"],
-      "Adjetivos descriptivos (carácter)": ["simpático/-a", "antipático/-a", "divertido/-a", "aburrido/-a", "trabajador(a)", "inteligente", "sociable", "cariñoso/-a", "serio/-a"]
+      "El cuerpo humano": {
+        "items": [
+          {
+            "palabra": "cabeza",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R",
+              "p83-act5",
+              "p84-act1",
+              "p84-act3",
+              "p84-act4",
+              "p84-act4@R"
+            ]
+          },
+          {
+            "palabra": "cuello",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R",
+              "p91-act4@R"
+            ]
+          },
+          {
+            "palabra": "pecho",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R"
+            ]
+          },
+          {
+            "palabra": "mano",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R",
+              "p83-act4",
+              "p83-act4@R",
+              "p83-act5"
+            ]
+          },
+          {
+            "palabra": "dedo",
+            "fuentes": [
+              "p91-act4@R",
+              "p82-act1",
+              "p82-act1@R",
+              "p83-act4@R",
+              "p83-act5"
+            ]
+          },
+          {
+            "palabra": "pie",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R",
+              "p83-act4",
+              "p83-act4@R",
+              "p91-act4@R",
+              "p83-act5"
+            ]
+          },
+          {
+            "palabra": "pierna",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R",
+              "p83-act4",
+              "p84-act3",
+              "p83-act5",
+              "p84-act4",
+              "p84-act4@R"
+            ]
+          },
+          {
+            "palabra": "estómago",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R",
+              "p83-act4@R",
+              "p84-act4",
+              "p84-act4@R"
+            ]
+          },
+          {
+            "palabra": "espalda",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R",
+              "p84-act1",
+              "p84-act1@R",
+              "p84-act3"
+            ]
+          },
+          {
+            "palabra": "brazo",
+            "fuentes": [
+              "p82-act1",
+              "p82-act1@R",
+              "p83-act4",
+              "p84-act1",
+              "p84-act1@R",
+              "p84-act4",
+              "p84-act4@R",
+              "p91-act4@R",
+              "p82-act3",
+              "p83-act5",
+              "p84-act3"
+            ]
+          },
+          {
+            "palabra": "rodilla",
+            "fuentes": [
+              "p84-act1",
+              "p84-act1@R",
+              "p84-act3"
+            ]
+          },
+          {
+            "palabra": "pelo",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R",
+              "p82-act3",
+              "p83-act5",
+              "p83-act8",
+              "cuadro@p82",
+              "p86-act1",
+              "p86-act1@R",
+              "p86-act2",
+              "p86-act3",
+              "p87-act5",
+              "p87-act7@R",
+              "p87-act8",
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act6@R",
+              "p89-act7",
+              "p89-act8",
+              "p89-act9",
+              "p91-act6",
+              "p91-act6@R",
+              "p87-act7",
+              "p88-act5",
+              "p89-act6"
+            ]
+          },
+          {
+            "palabra": "ojo",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R",
+              "p83-act5",
+              "p91-act4@R",
+              "p82-act3",
+              "p83-act4@R",
+              "cuadro@p82",
+              "p86-act1",
+              "p86-act3",
+              "p87-act5",
+              "p87-act7@R",
+              "p87-act8",
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act9",
+              "p91-act6",
+              "p91-act6@R",
+              "p87-act7",
+              "p88-act5",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "oreja",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R",
+              "p91-act4@R",
+              "p83-act4@R",
+              "p83-act5",
+              "p83-act8",
+              "cuadro@p82"
+            ]
+          },
+          {
+            "palabra": "nariz",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R",
+              "p82-act3",
+              "p83-act8",
+              "p87-act5",
+              "p89-act6@R",
+              "p91-act4@R",
+              "p89-act6"
+            ]
+          },
+          {
+            "palabra": "dientes",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R",
+              "p83-act4@R",
+              "p83-act5"
+            ]
+          },
+          {
+            "palabra": "muelas",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R",
+              "p83-act5",
+              "p84-act1",
+              "p84-act1@R"
+            ]
+          },
+          {
+            "palabra": "labios",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R",
+              "p83-act5"
+            ]
+          },
+          {
+            "palabra": "boca",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R",
+              "p82-act3",
+              "p83-act5",
+              "cuadro@p82"
+            ]
+          },
+          {
+            "palabra": "cara",
+            "fuentes": [
+              "p82-act2",
+              "p82-act2@R"
+            ]
+          },
+          {
+            "palabra": "barba",
+            "fuentes": [
+              "p86-act1",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "bigote",
+            "fuentes": [
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "pecas",
+            "fuentes": [
+              "p89-act8"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p82-act1",
+          "p82-act1@R",
+          "p83-act5",
+          "p84-act1",
+          "p84-act3",
+          "p84-act4",
+          "p84-act4@R",
+          "p91-act4@R",
+          "p83-act4",
+          "p83-act4@R",
+          "p84-act1@R",
+          "p82-act3",
+          "p82-act2",
+          "p82-act2@R",
+          "p83-act8",
+          "cuadro@p82",
+          "p86-act1",
+          "p86-act1@R",
+          "p86-act2",
+          "p86-act3",
+          "p87-act5",
+          "p87-act7@R",
+          "p87-act8",
+          "p88-act3",
+          "p88-act5@R",
+          "p89-act6@R",
+          "p89-act7",
+          "p89-act8",
+          "p89-act9",
+          "p91-act6",
+          "p91-act6@R",
+          "p87-act7",
+          "p88-act5",
+          "p89-act6"
+        ],
+        "descripcion": {
+          "U8": "PCIC A1 §13 Nociones específicas / Cuerpo humano (Partes del cuerpo). Principal en U8: se introduce el paradigma completo de partes del cuerpo en dos actividades fundacionales p82-act01 (cuerpo: cabeza, cuello, pecho, mano, dedos, pie, pierna, estómago, espalda, brazo) y p82-act02 (cabeza: pelo, ojo, oreja, nariz, dientes, muelas, labios, boca, cara), con apoyo visual e identificación auditiva. Se trabaja en V/F descriptivo (p82-act03), cloze de definiciones (p83-act04), texto de monstruo (p83-act05). Reaparece en sección de Gramática como contenido de doler (espalda, rodilla, brazo, muelas, cabeza), en Comunicación con descripciones (pelo, ojos, nariz, barba), en Destrezas con ampliación de léxico facial (barba, bigote, pecas) y se cierra en evaluación con identificación visual (p91-act04) y construcción libre (p91-act05)."
+        }
+      },
+      "Práctica del surf": {
+        "items": [
+          {
+            "palabra": "surf",
+            "fuentes": [
+              "p83-act6",
+              "p83-act7"
+            ]
+          },
+          {
+            "palabra": "surfista",
+            "fuentes": [
+              "p83-act6",
+              "p83-act8",
+              "p83-act7"
+            ]
+          },
+          {
+            "palabra": "tabla",
+            "fuentes": [
+              "p83-act6",
+              "p83-act7",
+              "p83-act8"
+            ]
+          },
+          {
+            "palabra": "ola",
+            "fuentes": [
+              "p83-act6"
+            ]
+          },
+          {
+            "palabra": "correa",
+            "fuentes": [
+              "p83-act6"
+            ]
+          },
+          {
+            "palabra": "Cantábrico",
+            "fuentes": [
+              "p83-act6",
+              "p83-act7"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p83-act6",
+          "p83-act7",
+          "p83-act8"
+        ],
+        "descripcion": {
+          "U8": "PCIC A1 §17 Nociones específicas / Tiempo libre y entretenimiento — Deportes. Principal en U8: se introduce el léxico del surf en p83-act06 (texto 'El mar Cantábrico, en el norte de España, es un lugar ideal para la práctica del surf...') con lemas surf, surfista, tabla, ola, correa, Cantábrico. Se trabaja en V/F (p83-act07) y en descripción de surfistas con apoyo visual (p83-act08)."
+        }
+      }
     },
     "recurrente": {
-      "_descripcion": "Vocabulario que aparece en varias secciones de la unidad.",
-      "Verbos doler y gustar": ["doler", "gustar"],
-      "Adverbios de cantidad": ["mucho", "bastante", "un poco", "nada", "muy"]
-    },
-    "comprension": {
-      "_descripcion": "Léxico que aparece en los textos de la unidad y afecta la comprensión, aunque no se trabaje explícitamente.",
-      "Texto Práctica del surf": ["surfista", "tabla", "ola", "correa", "Cantábrico", "deslizarse"],
-      "Texto La pandilla de Marta": ["pandilla", "liso", "pecas", "barba", "bigote"],
-      "Texto La semana azul": ["piragüismo", "senderismo", "náutico", "estancia", "monitor", "convivencia"],
-      "Abreviaturas del diccionario": ["adj.", "pron.", "s.m.", "s.f.", "v.", "adv.", "prep."]
+      "Colores": {
+        "items": [
+          {
+            "palabra": "rojo/-a",
+            "fuentes": [
+              "p83-act5"
+            ]
+          },
+          {
+            "palabra": "amarillo/-a",
+            "fuentes": [
+              "p83-act8"
+            ]
+          },
+          {
+            "palabra": "marrones",
+            "fuentes": [
+              "p88-act3",
+              "p88-act5",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "verde",
+            "fuentes": [
+              "p83-act5",
+              "p83-act8",
+              "p89-act8",
+              "p91-act6",
+              "p91-act6@R"
+            ]
+          },
+          {
+            "palabra": "azul",
+            "fuentes": [
+              "p82-act3",
+              "p87-act7@R",
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "gris",
+            "fuentes": [
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "blanco/-a",
+            "fuentes": [
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "negro/-a",
+            "fuentes": [
+              "p83-act8",
+              "p86-act1",
+              "p86-act2@R",
+              "p87-act7@R",
+              "p89-act7",
+              "p89-act8",
+              "p91-act6@R"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p82-act3",
+          "p83-act5",
+          "p83-act8",
+          "p86-act1",
+          "p86-act2@R",
+          "p87-act7@R",
+          "p88-act3",
+          "p88-act5",
+          "p88-act5@R",
+          "p89-act7",
+          "p89-act8",
+          "p91-act6",
+          "p91-act6@R"
+        ],
+        "descripcion": {
+          "U8": "Recurrente desde U1 (principal en cuadro@p15 + p15-act7). En U8 reaparece intensivamente como soporte de la 'Descripción de personas' (pelo + ojos + ropa): rojo en p83-act5, amarillo en p83-act8, marrón en p88-act3/05 y p89-act8, verde/azul/gris/blanco/negro en descripciones físicas (color de pelo y ojos). Reubicado en v10.163 desde 'Adjetivos descriptivos' (donde estaba mal encajado: los colores son categoría léxica propia, no descriptivos de tamaño/edad/comodidad/estética). 'amarillo/-a' y 'marrón' recuperados como items materiales que el extractor original había perdido (cleanup_v150 los había retirado por fuentes inválidas, pero el material los atesta)."
+        }
+      },
+      "Adjetivos descriptivos": {
+        "items": [
+          {
+            "palabra": "alto/-a",
+            "fuentes": [
+              "p86-act1",
+              "p86-act4",
+              "p87-act5",
+              "p87-act8",
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "bajo/-a",
+            "fuentes": [
+              "p86-act4",
+              "p87-act5",
+              "p87-act8",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "guapo/-a",
+            "fuentes": [
+              "p86-act4",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "feo/-a",
+            "fuentes": [
+              "p86-act4"
+            ]
+          },
+          {
+            "palabra": "delgado/-a",
+            "fuentes": [
+              "p86-act4",
+              "p87-act5",
+              "p87-act5@R",
+              "p87-act8",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "gordo/-a",
+            "fuentes": [
+              "p86-act4",
+              "p87-act5",
+              "p87-act5@R",
+              "p87-act8",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "joven",
+            "fuentes": [
+              "p86-act1",
+              "p86-act4",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "mayor",
+            "fuentes": [
+              "p86-act4",
+              "p87-act5",
+              "p87-act5@R",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "moreno/-a",
+            "fuentes": [
+              "p86-act4",
+              "p87-act5",
+              "p87-act5@R",
+              "p87-act7@R",
+              "p89-act6@R",
+              "p89-act8",
+              "p91-act6",
+              "p91-act6@R"
+            ]
+          },
+          {
+            "palabra": "rubio/-a",
+            "fuentes": [
+              "p83-act8",
+              "p86-act1",
+              "p86-act4",
+              "p87-act5",
+              "p87-act5@R",
+              "p87-act7@R",
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "pelirrojo/-a",
+            "fuentes": [
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "canoso/-a",
+            "fuentes": [
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "castaño/-a",
+            "fuentes": [
+              "p83-act8",
+              "p86-act1",
+              "p87-act5",
+              "p87-act5@R"
+            ]
+          },
+          {
+            "palabra": "calvo/-a",
+            "fuentes": [
+              "p87-act5",
+              "p87-act5@R"
+            ]
+          },
+          {
+            "palabra": "rizado/-a",
+            "fuentes": [
+              "p82-act3",
+              "p83-act8",
+              "p86-act1",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "liso/-a",
+            "fuentes": [
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act6@R",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "ondulado/-a",
+            "fuentes": [
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "largo/-a",
+            "fuentes": [
+              "p82-act3",
+              "p83-act5",
+              "p83-act8",
+              "p86-act1",
+              "p86-act4",
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act6@R",
+              "p89-act7",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "corto/-a",
+            "fuentes": [
+              "p82-act3",
+              "p83-act8",
+              "p86-act1",
+              "p86-act1@R",
+              "p86-act2@R",
+              "p86-act4",
+              "p87-act5",
+              "p87-act5@R",
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "grande",
+            "fuentes": [
+              "p82-act3",
+              "p83-act5",
+              "p83-act8",
+              "p87-act5",
+              "p87-act5@R",
+              "cuadro@p87",
+              "p89-act6@R",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "pequeño/-a",
+            "fuentes": [
+              "p89-act8",
+              "p91-act6"
+            ]
+          },
+          {
+            "palabra": "oscuro/-a",
+            "fuentes": [
+              "p86-act1",
+              "p86-act3"
+            ]
+          },
+          {
+            "palabra": "simpático/-a",
+            "fuentes": [
+              "p86-act1",
+              "p86-act1@R",
+              "p86-act3",
+              "p86-act4",
+              "p88-act1",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "antipático/-a",
+            "fuentes": [
+              "p86-act4",
+              "p88-act1",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "divertido/-a",
+            "fuentes": [
+              "p86-act3",
+              "p86-act4",
+              "p88-act1",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "aburrido/-a",
+            "fuentes": [
+              "p86-act4"
+            ]
+          },
+          {
+            "palabra": "trabajador/-a",
+            "fuentes": [
+              "p88-act1",
+              "p88-act2",
+              "p88-act3",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "inteligente",
+            "fuentes": [
+              "p88-act1",
+              "p88-act3",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "sociable",
+            "fuentes": [
+              "p88-act1"
+            ]
+          },
+          {
+            "palabra": "cariñoso/-a",
+            "fuentes": [
+              "p88-act1",
+              "p88-act3",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "serio/-a",
+            "fuentes": [
+              "p88-act1",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "favorito/-a",
+            "fuentes": [
+              "p86-act1@R"
+            ]
+          },
+          {
+            "palabra": "fuerte",
+            "fuentes": [
+              "p86-act1"
+            ]
+          },
+          {
+            "palabra": "famoso/-a",
+            "fuentes": [
+              "p89-act7"
+            ]
+          },
+          {
+            "palabra": "enorme",
+            "fuentes": [
+              "p83-act5"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p86-act1",
+          "p87-act8",
+          "p88-act3",
+          "p88-act5@R",
+          "p89-act8",
+          "p86-act4",
+          "p87-act5",
+          "p87-act5@R",
+          "p87-act7@R",
+          "p89-act6@R",
+          "p91-act6",
+          "p91-act6@R",
+          "p83-act8",
+          "p82-act3",
+          "p83-act5",
+          "p89-act7",
+          "p86-act1@R",
+          "p86-act2@R",
+          "cuadro@p87",
+          "p86-act3",
+          "p88-act1",
+          "p88-act2"
+        ],
+        "descripcion": {
+          "U8": "Recurrente desde U5 (principal en 'Adjetivos descriptivos' aplicada a vivienda). En U8 reaparece intensivamente como soporte de la función comunicativa 'Descripción de personas': adjetivos físicos (alto, bajo, guapo, feo, delgado, gordo, joven, mayor; pelo moreno/rubio/pelirrojo/canoso/castaño/calvo, rizado/liso/ondulado, largo/corto) y de carácter (simpático/antipático, divertido/aburrido, trabajador, inteligente, sociable, cariñoso, serio). Cumple §5.1.1: frecuencia alta (presente en todas las secciones), posición canónica U5 y valor pedagógico de soporte explícito del principal comunicativo de U8 (Descripción de personas)."
+        }
+      }
     }
   },
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "doler",
+      "tipo_de_verbo": [
+        "tipo gustar",
+        "intransitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "tipo gustar + irregularidad vocálica o→ue"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "duele",
+        "duelen"
+      ],
+      "fuentes": [
+        "cuadro@p84#1",
+        "cuadro@p84#2",
+        "p84-act1",
+        "p84-act1@R",
+        "p84-act3",
+        "p84-act4",
+        "p84-act4@R",
+        "cuadro@p85",
+        "p91-act1",
+        "p91-act1@R",
+        "p91-act2",
+        "p91-act2@R"
+      ],
+      "descripcion": {
+        "U8": "Verbo principal de U8 (construcción tipo gustar). Se introduce el paradigma con pronombres átonos de OI (a mí me duele/duelen el estómago/la cabeza/las muelas) en cuadro p84 y en las cuatro actividades de la sección de Gramática (p84-act01 producción 'A X le duele...', p84-act02 selección de pronombre, p84-act03 cloze de pronombre, p84-act04 ordenar palabras), y se evalúa en p91-act01/02."
+      }
+    },
+    {
+      "lema": "gustar",
+      "tipo_de_verbo": [
+        "tipo gustar",
+        "intransitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "tipo gustar"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "gusta",
+        "gustan",
+        "le gusta",
+        "les gusta",
+        "nos gusta"
+      ],
+      "fuentes": [
+        "p84-act2",
+        "p84-act4",
+        "p84-act4@R",
+        "p85-act5",
+        "cuadro@p85",
+        "p86-act1",
+        "p86-act1@R",
+        "p88-act3",
+        "p91-act1",
+        "p91-act1@R",
+        "p91-act2",
+        "p91-act2@R"
+      ],
+      "descripcion": {
+        "U8": "Verbo canónico del registry (principal U4); en U8 reaparece intensivamente como modelo de la construcción tipo gustar que sostiene el paradigma paralelo de doler. Se trabaja en oposición/integración con doler en p84-act02 (selección pronombre), p84-act04 (ordenar), cuadro p85 (Muy/mucho), y se evalúa en p91-act01/02."
+      }
+    },
+    {
+      "lema": "tener",
+      "tipo_de_verbo": [
+        "transitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "tengo",
+        "tiene"
+      ],
+      "fuentes": [
+        "p82-act3",
+        "p83-act5",
+        "p83-act8",
+        "cuadro@p85",
+        "p86-act1",
+        "p86-act1@R",
+        "p87-act5",
+        "cuadro@p87",
+        "p88-act3",
+        "p89-act7",
+        "p89-act8",
+        "p91-act6",
+        "p91-act6@R"
+      ],
+      "descripcion": {
+        "U8": "Verbo canónico del registry (principal U1); en U8 reaparece como verbo nuclear de la función comunicativa 'Descripción de personas' (Tiene el pelo... / Tiene los ojos... / Tengo X años) en todas las secciones (Vocabulario p82-p83, Comunicación p86-p87, Destrezas p88, Evaluación p91)."
+      }
+    },
+    {
+      "lema": "ser",
+      "tipo_de_verbo": [
+        "copulativo"
+      ],
+      "rasgo_por_tiempo": {
+        "Presente": "totalmente irregular",
+        "Pretérito indefinido": "totalmente irregular (mismo paradigma que ir)"
+      },
+      "tiempos": [
+        "Presente"
+      ],
+      "formas_trabajadas": [
+        "es",
+        "son",
+        "soy"
+      ],
+      "fuentes": [
+        "p83-act5",
+        "p83-act8",
+        "p86-act1",
+        "p86-act3",
+        "p87-act5",
+        "p88-act3",
+        "p89-act7",
+        "p89-act8",
+        "p91-act6",
+        "p91-act6@R",
+        "p90-act1"
+      ],
+      "descripcion": {
+        "U8": "Verbo canónico del registry (principal U1); en U8 reaparece como verbo copulativo de la función 'Descripción de personas' (Es alto/bajo/joven/mayor, Es muy simpático, Es trabajadora) en las secciones de Comunicación, Destrezas y Cultura, en oposición con tener (Tiene el pelo... / Es alta)."
+      }
+    }
+  ],
+  "gramatica_consolidada": {
+    "principal": {
+      "Construcción gustar/doler": {
+        "items": [
+          {
+            "palabra": "A mí me gusta(n)",
+            "fuentes": [
+              "cuadro@p84#1",
+              "cuadro@p84#2",
+              "cuadro@p85"
+            ]
+          },
+          {
+            "palabra": "Me duele",
+            "fuentes": [
+              "cuadro@p84#1",
+              "cuadro@p84#2",
+              "cuadro@p85"
+            ]
+          },
+          {
+            "palabra": "le duele",
+            "fuentes": [
+              "p84-act1",
+              "p84-act1@R"
+            ]
+          },
+          {
+            "palabra": "le duelen",
+            "fuentes": [
+              "p84-act1",
+              "p84-act1@R"
+            ]
+          }
+        ],
+        "fuentes": [
+          "cuadro@p84#1",
+          "cuadro@p84#2",
+          "cuadro@p85",
+          "p84-act1",
+          "p84-act1@R"
+        ],
+        "descripcion": {
+          "U8": "PCIC A1 §11 Gramática / Construcciones tipo gustar — amplía con doler. Principal en U8: extiende el paradigma de gustar (introducido en U4) al verbo doler con misma estructura sintáctica (pronombre OI + verbo en 3ª persona singular/plural concordando con sujeto sintáctico postpuesto). Se trabaja en cuadro p84 'Verbo doler' (texto_intro explícito: 'El verbo doler funciona igual que el verbo gustar'), cuatro actividades de Gramática (p84-act01 producción, p84-act02 selección pronombre con ambos verbos, p84-act03 cloze de pronombre, p84-act04 ordenar palabras con gustar y doler) y se evalúa en p91-act01/02."
+        }
+      },
+      "Adverbios de cantidad": {
+        "items": [
+          {
+            "palabra": "muy",
+            "fuentes": [
+              "p82-act3",
+              "p83-act8",
+              "p85-act5",
+              "p85-act5@R",
+              "p85-act6",
+              "p85-act6@R",
+              "cuadro@p85",
+              "p86-act1",
+              "p87-act5",
+              "cuadro@p87",
+              "p88-act3",
+              "p91-act3",
+              "p91-act3@R"
+            ]
+          },
+          {
+            "palabra": "mucho",
+            "fuentes": [
+              "cuadro@p84#2",
+              "p84-act4",
+              "p84-act4@R",
+              "p85-act5",
+              "p85-act5@R",
+              "cuadro@p85",
+              "p85-act6",
+              "p85-act6@R",
+              "p91-act3",
+              "p91-act3@R"
+            ]
+          },
+          {
+            "palabra": "mucha",
+            "fuentes": [
+              "p85-act5",
+              "p85-act5@R",
+              "p85-act6",
+              "p85-act6@R",
+              "cuadro@p85",
+              "p91-act3",
+              "p91-act3@R"
+            ]
+          },
+          {
+            "palabra": "muchos",
+            "fuentes": [
+              "p85-act5",
+              "p85-act5@R",
+              "cuadro@p85",
+              "p91-act3",
+              "p91-act3@R"
+            ]
+          },
+          {
+            "palabra": "muchas",
+            "fuentes": [
+              "p85-act5",
+              "p85-act5@R",
+              "p85-act6",
+              "p85-act6@R",
+              "cuadro@p85"
+            ]
+          },
+          {
+            "palabra": "bastante",
+            "fuentes": [
+              "cuadro@p84#2",
+              "p84-act3",
+              "p87-act5",
+              "cuadro@p87",
+              "p89-act6@R",
+              "p89-act8",
+              "p91-act2",
+              "p91-act2@R"
+            ]
+          },
+          {
+            "palabra": "un poco",
+            "fuentes": [
+              "cuadro@p84#2",
+              "p84-act4",
+              "p84-act4@R",
+              "cuadro@p87",
+              "p87-act5",
+              "p89-act6@R",
+              "p91-act2",
+              "p91-act2@R"
+            ]
+          },
+          {
+            "palabra": "nada",
+            "fuentes": [
+              "cuadro@p84#2",
+              "p84-act4",
+              "p84-act4@R",
+              "p89-act6@R"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p82-act3",
+          "p83-act8",
+          "p85-act5",
+          "p85-act5@R",
+          "p85-act6",
+          "p85-act6@R",
+          "cuadro@p85",
+          "p86-act1",
+          "p87-act5",
+          "cuadro@p87",
+          "p88-act3",
+          "p91-act3",
+          "p91-act3@R",
+          "cuadro@p84#2",
+          "p84-act4",
+          "p84-act4@R",
+          "p84-act3",
+          "p89-act6@R",
+          "p89-act8",
+          "p91-act2",
+          "p91-act2@R"
+        ],
+        "descripcion": {
+          "U8": "PCIC A1 §10 Gramática / Adverbios de cantidad y grado. Principal en U8 (incluye muy, mucho/-a/-os/-as fusionados según _apariciones del registry). Se introduce en cuadro p84 'Adverbios de cantidad' (escala mucho — bastante — un poco / no mucho — nada) y se sistematiza en cuadro p85 'Muy, mucho/-a/-os/-as' (Muy + adjetivo/adverbio; Mucho/-a/-os/-as + nombre; Verbo + mucho). Se trabaja con doler/gustar (Me duele mucho/bastante/un poco/nada) y como recurso de gradación de adjetivos descriptivos (muy alto, un poco gordo). Se trabaja en cinco actividades (p84-act04 ordena, p85-act05/06 cloze muy/mucho, p91-act03 evaluación cloze) y cuadro complementario p87 'Muy / Bastante / Un poco'."
+        }
+      }
+    },
+    "recurrente": {
+      "Pronombres átonos de OI": {
+        "items": [
+          {
+            "palabra": "me",
+            "fuentes": [
+              "p84-act2",
+              "cuadro@p84#1",
+              "cuadro@p84#2",
+              "p84-act4",
+              "p84-act4@R",
+              "p85-act5",
+              "cuadro@p85",
+              "p91-act2",
+              "p91-act2@R"
+            ]
+          },
+          {
+            "palabra": "te",
+            "fuentes": [
+              "p84-act2",
+              "cuadro@p84#1",
+              "p84-act3",
+              "p84-act3@R",
+              "p84-act4",
+              "p84-act4@R",
+              "p91-act2",
+              "p91-act2@R"
+            ]
+          },
+          {
+            "palabra": "le",
+            "fuentes": [
+              "p84-act1",
+              "p84-act1@R",
+              "p84-act2",
+              "p84-act2@R",
+              "cuadro@p84#1",
+              "p84-act3",
+              "p84-act3@R",
+              "p84-act4",
+              "p84-act4@R",
+              "cuadro@p85",
+              "p91-act1",
+              "p91-act1@R",
+              "p91-act2",
+              "p91-act2@R",
+              "p86-act1",
+              "p86-act1@R"
+            ]
+          },
+          {
+            "palabra": "nos",
+            "fuentes": [
+              "cuadro@p84#1",
+              "p84-act4",
+              "p84-act4@R",
+              "p88-act3",
+              "p91-act1",
+              "p91-act1@R",
+              "p91-act2",
+              "p91-act2@R"
+            ]
+          },
+          {
+            "palabra": "os",
+            "fuentes": [
+              "cuadro@p84#1",
+              "p84-act2",
+              "p84-act2@R",
+              "p84-act3",
+              "p84-act3@R",
+              "p91-act1",
+              "p91-act1@R"
+            ]
+          },
+          {
+            "palabra": "les",
+            "fuentes": [
+              "cuadro@p84#1",
+              "p84-act4",
+              "p84-act4@R",
+              "cuadro@p85",
+              "p91-act1",
+              "p91-act1@R",
+              "p91-act2",
+              "p91-act2@R"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p84-act2",
+          "cuadro@p84#1",
+          "cuadro@p84#2",
+          "p84-act4",
+          "p84-act4@R",
+          "p85-act5",
+          "cuadro@p85",
+          "p91-act2",
+          "p91-act2@R",
+          "p84-act3",
+          "p84-act3@R",
+          "p84-act1",
+          "p84-act1@R",
+          "p84-act2@R",
+          "p91-act1",
+          "p91-act1@R",
+          "p86-act1",
+          "p86-act1@R",
+          "p88-act3"
+        ],
+        "descripcion": {
+          "U8": "Recurrente desde U4 (principal con paradigma gustar). En U8 reaparece como ampliación: el paradigma completo (me/te/le/nos/os/les) se reactiva con el verbo doler, integrado en la 'Construcción gustar/doler'. Cumple §5.1.1: frecuencia alta (todas las actividades de Gramática y Evaluación), posición canónica U4, valor pedagógico de soporte directo del principal de U8."
+        }
+      },
+      "Concordancia de género": {
+        "items": [
+          {
+            "palabra": "pelo negro",
+            "fuentes": [
+              "cuadro@p82"
+            ]
+          },
+          {
+            "palabra": "boca pequeña",
+            "fuentes": [
+              "cuadro@p82"
+            ]
+          },
+          {
+            "palabra": "profesor simpático",
+            "fuentes": [
+              "p86-act3"
+            ]
+          },
+          {
+            "palabra": "profesora simpática",
+            "fuentes": [
+              "p86-act3"
+            ]
+          }
+        ],
+        "fuentes": [
+          "cuadro@p82",
+          "p86-act3"
+        ],
+        "descripcion": {
+          "U8": "Recurrente desde U1 (principal con sustantivos y adjetivos). En U8 reaparece como base de la 'Descripción de personas': el cuadro 'Recuerda' de p82 sistematiza la concordancia masculino/femenino (pelo negro / boca pequeña) que sostiene todas las descripciones de la unidad; p86-act03 lo recuerda explícitamente en los pasos del diálogo. Cumple §5.1.1: frecuencia alta, posición canónica U1, valor pedagógico de soporte explícito de la función comunicativa principal."
+        }
+      },
+      "Concordancia de número": {
+        "items": [
+          {
+            "palabra": "ojos negros",
+            "fuentes": [
+              "cuadro@p82"
+            ]
+          },
+          {
+            "palabra": "orejas pequeñas",
+            "fuentes": [
+              "cuadro@p82"
+            ]
+          },
+          {
+            "palabra": "pelo oscuro",
+            "fuentes": [
+              "p86-act3"
+            ]
+          },
+          {
+            "palabra": "ojos oscuros",
+            "fuentes": [
+              "p86-act3"
+            ]
+          }
+        ],
+        "fuentes": [
+          "cuadro@p82",
+          "p86-act3"
+        ],
+        "descripcion": {
+          "U8": "Recurrente desde U2 (principal con plural de nombres y adjetivos). En U8 reaparece como base de la 'Descripción de personas' al lado de la concordancia de género: el cuadro 'Recuerda' de p82 sistematiza singular/plural (pelo negro / ojos negros / orejas pequeñas) y se aplica transversalmente en todas las descripciones físicas. Cumple §5.1.1: frecuencia alta, posición canónica U2, valor pedagógico de soporte explícito."
+        }
+      }
+    }
+  },
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {
+      "Sonidos y correspondencias ortográficas": {
+        "items": [
+          {
+            "palabra": "/k/",
+            "fuentes": [
+              "p87-act9",
+              "p87-act10",
+              "p87-act10@R",
+              "p87-act11",
+              "p87-act12"
+            ]
+          },
+          {
+            "palabra": "ca",
+            "fuentes": [
+              "p87-act9",
+              "p87-act10",
+              "p87-act11",
+              "p87-act11@R",
+              "p87-act12"
+            ]
+          },
+          {
+            "palabra": "co",
+            "fuentes": [
+              "p87-act9",
+              "p87-act10"
+            ]
+          },
+          {
+            "palabra": "cu",
+            "fuentes": [
+              "p87-act9",
+              "p87-act10",
+              "p87-act11",
+              "p87-act11@R",
+              "p87-act12"
+            ]
+          },
+          {
+            "palabra": "que",
+            "fuentes": [
+              "p87-act9",
+              "p87-act10"
+            ]
+          },
+          {
+            "palabra": "qui",
+            "fuentes": [
+              "p87-act9",
+              "p87-act10",
+              "p87-act11",
+              "p87-act11@R"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p87-act9",
+          "p87-act10",
+          "p87-act10@R",
+          "p87-act11",
+          "p87-act12",
+          "p87-act11@R"
+        ],
+        "descripcion": {
+          "U8": "PCIC A1 Pronunciación §5.2 + Ortografía (correspondencias fonema-grafía) — sonido /k/. Principal en U8 (declarado en registry _apariciones[U8]=['/k/']). Se introduce en p87-act09 (escucha y repite: cuatro, casa, comer, queso, quiero), se descubre la regla en p87-act10 ('El sonido /k/ se escribe qu delante de e, i y se escribe c delante de a, o, u'), se practica en p87-act11 (cloze qu/c: cuando, pequeño, poco, química, quinientos, simpática, Ecuador, calle) y se cierra con escucha y repite de nombres propios en p87-act12 (Carlos, Pedro, Ana, Inés, Juan, Rosa)."
+        }
+      }
+    },
+    "recurrente": {}
+  },
   "secciones": {
-    "vocabulario":  { "paginas": [82, 83], "actividades_ids": ["U8-p82-act01", "U8-p82-act02", "U8-p82-act03", "U8-p83-act04", "U8-p83-act05", "U8-p83-act06", "U8-p83-act07", "U8-p83-act08"] },
-    "gramatica":    { "paginas": [84, 85], "actividades_ids": ["U8-p84-act01", "U8-p84-act02", "U8-p84-act03", "U8-p84-act04", "U8-p85-act05", "U8-p85-act06", "U8-p85-act07", "U8-p85-act08"] },
-    "comunicacion": { "paginas": [86, 87], "actividades_ids": ["U8-p86-act01", "U8-p86-act02", "U8-p86-act03", "U8-p86-act04", "U8-p87-act05", "U8-p87-act06", "U8-p87-act07", "U8-p87-act08", "U8-p87-act09", "U8-p87-act10", "U8-p87-act11", "U8-p87-act12"] },
-    "destrezas":    { "paginas": [88, 89], "actividades_ids": ["U8-p88-act01", "U8-p88-act02", "U8-p88-act03", "U8-p88-act04", "U8-p88-act05", "U8-p89-act06", "U8-p89-act07", "U8-p89-act08", "U8-p89-act09"] },
-    "cultura":      { "paginas": [90], "actividades_ids": ["U8-p90-act01", "U8-p90-act02"] },
-    "evaluacion":   { "paginas": [91], "actividades_ids": ["U8-p91-act01", "U8-p91-act02", "U8-p91-act03", "U8-p91-act04", "U8-p91-act05", "U8-p91-act06", "U8-p91-act07"] },
-    "reflexion":    { "paginas": [], "actividades_ids": [] }
+    "vocabulario": {
+      "paginas": [
+        82,
+        83
+      ],
+      "actividades_ids": [
+        "U8-p82-act01",
+        "U8-p82-act02",
+        "U8-p82-act03",
+        "U8-p83-act04",
+        "U8-p83-act05",
+        "U8-p83-act06",
+        "U8-p83-act07",
+        "U8-p83-act08"
+      ]
+    },
+    "gramatica": {
+      "paginas": [
+        84,
+        85
+      ],
+      "actividades_ids": [
+        "U8-p84-act01",
+        "U8-p84-act02",
+        "U8-p84-act03",
+        "U8-p84-act04",
+        "U8-p85-act05",
+        "U8-p85-act06",
+        "U8-p85-act07",
+        "U8-p85-act08"
+      ]
+    },
+    "comunicacion": {
+      "paginas": [
+        86,
+        87
+      ],
+      "actividades_ids": [
+        "U8-p86-act01",
+        "U8-p86-act02",
+        "U8-p86-act03",
+        "U8-p86-act04",
+        "U8-p87-act05",
+        "U8-p87-act06",
+        "U8-p87-act07",
+        "U8-p87-act08",
+        "U8-p87-act09",
+        "U8-p87-act10",
+        "U8-p87-act11",
+        "U8-p87-act12"
+      ]
+    },
+    "destrezas": {
+      "paginas": [
+        88,
+        89
+      ],
+      "actividades_ids": [
+        "U8-p88-act01",
+        "U8-p88-act02",
+        "U8-p88-act03",
+        "U8-p88-act04",
+        "U8-p88-act05",
+        "U8-p89-act06",
+        "U8-p89-act07",
+        "U8-p89-act08",
+        "U8-p89-act09"
+      ]
+    },
+    "cultura": {
+      "paginas": [
+        90
+      ],
+      "actividades_ids": [
+        "U8-p90-act01",
+        "U8-p90-act02"
+      ]
+    },
+    "evaluacion": {
+      "paginas": [
+        91
+      ],
+      "actividades_ids": [
+        "U8-p91-act01",
+        "U8-p91-act02",
+        "U8-p91-act03",
+        "U8-p91-act04",
+        "U8-p91-act05",
+        "U8-p91-act06",
+        "U8-p91-act07"
+      ]
+    },
+    "reflexion": {
+      "paginas": [],
+      "actividades_ids": []
+    }
   },
   "autoevaluacion": {
     "pagina": 91,
     "instruccion_original": "Mis resultados en esta unidad son:",
-    "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
+    "opciones": [
+      "MUY BUENOS",
+      "BUENOS",
+      "NO MUY BUENOS"
+    ],
     "emoticonos": true
   },
+  "_decisiones_ia": [
+    "Sesión v10.16x: extracción canónica de U8 desde JSON legacy + PDF aplicando shape post-v10.153 (4 listas tipadas + 4 bloques consolidados + sufijo @R + canon registries vigentes).",
+    "D-Abreviaturas-de-diccionarios-deferida (§0.1 al autor): el contenido 'Abreviaturas de los diccionarios' del libro (p85-act07/08, dos actividades 'Para aprender' que enseñan adj./pron./s.m./s.f./v./adv./prep.) NO existe como categoría canónica en ningún registry (campos-semanticos, gramatica, pronunciacion-ortografia, verbos). PCIC A1 lo cubre bajo Ortografía → 'Abreviaturas y Siglas / Abreviaturas'. En nc1-curso.json aparece como 'para_aprender' (no como gramatica ni vocabulario). Decisión interim: las actividades se codifican con enfoque='pronunciacion_ortografia' (consistente con PCIC) y listas tipadas vacías de pron/orto (no se inventa canónico); NO se añade categoría a 'pronunciacion_ortografia_consolidada'. Pendiente §0.1: el autor decide si se da de alta categoría 'Abreviaturas de los diccionarios' o equivalente en el registry pron/orto, con _apariciones[U8].",
+    "D-Construccion-gustar-doler (autónoma, con precedente registry): registry gramatica-canonica declara _apariciones['U8']='amplía con doler' para 'Construcción gustar/doler'. Se sigue el registry: una sola categoría principal cubre Verbo doler + Verbos doler y gustar + paradigma OI. El verbo doler entra como entrada principal en 'tiempos_y_verbos_consolidado' (tipo gustar + irregularidad o→ue, registry).",
+    "D-Adverbios-de-cantidad-unificado (autónoma, con precedente registry): registry declara 'Adverbios de cantidad' con _apariciones['U8']='principal (incluye muy, mucho/-a/-os/-as fusionados)'. Se sigue el registry: una sola categoría cubre muy, mucho/-a/-os/-as, bastante, un poco, nada. Los items se mantienen con flexiones separadas (mucho/mucha/muchos/muchas) porque NO hay solo dos pares atestados de un mismo lema con flexión simple o/a — son cuatro flexiones independientes operativas (muy ≠ mucho funcionalmente; mucho/-a/-os/-as son flexiones del mismo lema pero el material las trabaja como cuatro formas pedagógicamente distintas). Aplicación literal §5.11 unificaría mucha→mucho, muchos→mucho, muchas→mucho; mantengo la unificación parcial: cada flexión es su propio item porque el material pedagógico distingue su uso (Mucho + nombre masc sing / Mucha + nombre fem sing / Muchos + nombre masc plural / Muchas + nombre fem plural). Si el validador §5.11 marca esto, se eleva a §0.1.",
+    "D-Pronombres-atonos-OI-recurrente (autónoma, con precedente registry): registry declara _apariciones['U8']='ampliación (paradigma doler)'. Se codifica como recurrente desde U4. Cumple §5.1.1 con justificación pedagógica clara.",
+    "D-Adjetivos-descriptivos-recurrente (autónoma): registry léxico declara 'Adjetivos descriptivos' como único campo canónico; no se subdivide en (físico)/(carácter). U5 lo trabaja como principal (vivienda); U8 lo reactiva masivamente como soporte de 'Descripción de personas'. Cumple §5.1.1.",
+    "D-Cuerpo-humano-vs-Partes-del-cuerpo (autónoma): registry léxico tiene dos canónicos próximos — 'El cuerpo humano' (origen: indice U8) y 'Partes del cuerpo' (origen: pcic_a1). Se sigue el rótulo del índice editorial de U8: 'El cuerpo humano' como canónico de la unidad. 'Partes del cuerpo' (PCIC) queda como nombre paralelo no utilizado en este inventario.",
+    "D-Verbo-llevar-excluido (autónoma, precedente U7 D-Verbos-no-canonicos): el verbo 'llevar' aparece en U8 (lleva gafas en p86-act01, lleva el pie atado a la tabla en p83-act06) pero NO está en 'verbos-canonicos.json'. Tratado como input incidental por §5.2; no entra en 'tiempos_y_verbos' de actividades ni en 'tiempos_y_verbos_consolidado'.",
+    "D-Verbos-soporte-en-instrucciones (autónoma, §5.2 metalengua): verbos en instrucciones de aula ('Escucha', 'Lee', 'Completa', 'Mira', 'Relaciona', 'Ordena', etc.) y en pasos de actividades NO se codifican.",
+    "D-Concordancia-genero-numero-recurrente (autónoma): el cuadro 'Recuerda' de p82 sistematiza la concordancia (pelo negro / boca pequeña / ojos negros / orejas pequeñas). Aunque su trabajo formal pertenece a U1/U2, en U8 actúa como soporte explícito de 'Descripción de personas'. Codificado como recurrente cumpliendo §5.1.1.",
+    "D-Practica-del-surf-canon-literal (autónoma, registry): 'Práctica del surf' es canónico literal del registry (origen: indice). Se usa tal cual.",
+    "D-Cultura-La-semana-azul-sin-codificacion (autónoma): la sección de Cultura no aporta categorías canónicas al sistema (no se inventa canónico nuevo para 'piragüismo', 'senderismo', etc.); las actividades p90-act01/02 quedan con listas tipadas vacías. Léxico cultural disponible en el campo 'datos.texto_completo' para fase 2.",
+    "D-Comunicacion-Descripcion-de-personas-no-codificacion-canon (autónoma): la dimensión 'comunicación' no tiene registry canónico propio dentro del schema actual (los cuatro registries cubren léxico, gramática, pron/orto, verbos). Las actividades de Comunicación quedan codificadas en su contenido lingüístico real (Adjetivos descriptivos + El cuerpo humano + Construcción gustar/doler + verbos tener/ser + concordancia) sin categoría de 'descripción de personas' explícita en consolidado.",
+    "Rectificación shape: enfoque legacy 'fonetica' (p87-act09/10/11/12) reemplazado por 'pronunciacion_ortografia' (renombrado en v10.115).",
+    "Rectificación v10.163 (revisor — 3 puntos): (1) Alineación enfoque p85-act07/08: cambiados de 'gramatica' a 'pronunciacion_ortografia' para coincidir con la decisión D-Abreviaturas-de-diccionarios-deferida ya documentada (el JSON se contradecía a sí mismo). (2) Reubicación de colores: rojo, verde, azul, gris, blanco, negro retirados del bucket 'Adjetivos descriptivos' y trasladados a nueva categoría 'Colores' (recurrente desde U1, mismo precedente que U5 v10.162). Recuperados amarillo y marrón que el cleanup_v150 había retirado por fuentes inválidas: 'amarillo/-a' en p83-act8 ('amarillas') y 'marrones' en p88-act3/05 + p89-act8 (forma plural — 'marrón' no expande a 'marrones' en _expand_needle por no normalización del acento ó→o; deuda matcher documentada). (3) Normalización de flexiones a notación barra masc/fem en Adjetivos descriptivos para todos los lemas con flexión femenina atestada en el material (alto/-a, bajo/-a, guapo/-a, feo/-a, delgado/-a, gordo/-a, moreno/-a, rubio/-a, pelirrojo/-a, canoso/-a, castaño/-a, calvo/-a, rizado/-a, liso/-a, ondulado/-a, largo/-a, corto/-a, pequeño/-a, oscuro/-a, simpático/-a, antipático/-a, divertido/-a, aburrido/-a, trabajador/-a, cariñoso/-a, serio/-a, favorito/-a, famoso/-a). Consistencia con U5 v10.162 y precedente moderno/-a U6 v10.158. (4) Refs de actividad actualizadas con 'Colores' en 8 actividades (p82-act03, p83-act05, p83-act08, p86-act01, p88-act03, p88-act05, p89-act07, p89-act08, p91-act06)."
+  ],
   "paginas_detalle": [
     {
       "pagina": 82,
@@ -60,48 +1507,154 @@
           "id": "U8-p82-act01",
           "numero": 1,
           "tipo": "relaciona",
-          "destreza": ["comprension_auditiva", "comprension_lectora", "expresion_oral"],
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora",
+            "expresion_oral"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y repite. A continuación, relaciona las palabras con las partes del cuerpo de Ana.",
-          "contenido_linguistico": ["Cuerpo humano"],
-          "campo_semantico": "Cuerpo humano",
-          "audio": { "presente": true, "pista": 83 },
-          "imagen": { "presente": true, "descripcion": "Figura de Ana (chica) con 10 flechas numeradas del 1 al 10 señalando partes del cuerpo." },
-          "video": { "presente": false },
-          "respuestas": ["1 → cabeza", "2 → cuello", "3 → pecho", "4 → mano", "5 → dedos", "6 → pie", "7 → pierna", "8 → estómago", "9 → espalda", "10 → brazo"],
+          "vocabulario": [
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 83
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Figura de Ana (chica) con 10 flechas numeradas del 1 al 10 señalando partes del cuerpo."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 → cabeza",
+            "2 → cuello",
+            "3 → pecho",
+            "4 → mano",
+            "5 → dedos",
+            "6 → pie",
+            "7 → pierna",
+            "8 → estómago",
+            "9 → espalda",
+            "10 → brazo"
+          ],
           "datos": {
-            "palabras_recuadro": ["cabeza", "brazo", "pecho", "mano", "estómago", "dedos", "pierna", "pie", "cuello", "espalda"]
+            "palabras_recuadro": [
+              "cabeza",
+              "brazo",
+              "pecho",
+              "mano",
+              "estómago",
+              "dedos",
+              "pierna",
+              "pie",
+              "cuello",
+              "espalda"
+            ]
           }
         },
         {
           "id": "U8-p82-act02",
           "numero": 2,
           "tipo": "relaciona",
-          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las siguientes palabras con las distintas partes de la cabeza de Andrés. Después, escucha y comprueba.",
-          "contenido_linguistico": ["Cuerpo humano: cabeza"],
-          "campo_semantico": "Cuerpo humano",
-          "audio": { "presente": true, "pista": 84 },
-          "imagen": { "presente": true, "descripcion": "Cabeza de Andrés (chico) con 9 flechas numeradas del 1 al 9 señalando partes de la cabeza." },
-          "video": { "presente": false },
-          "respuestas": ["1 → pelo", "2 → ojo", "3 → oreja", "4 → nariz", "5 → dientes", "6 → muelas", "7 → labios", "8 → boca", "9 → cara"],
+          "vocabulario": [
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 84
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Cabeza de Andrés (chico) con 9 flechas numeradas del 1 al 9 señalando partes de la cabeza."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 → pelo",
+            "2 → ojo",
+            "3 → oreja",
+            "4 → nariz",
+            "5 → dientes",
+            "6 → muelas",
+            "7 → labios",
+            "8 → boca",
+            "9 → cara"
+          ],
           "datos": {
-            "palabras_recuadro": ["oreja", "dientes", "cara", "pelo", "nariz", "labios", "ojo", "muelas", "boca"]
+            "palabras_recuadro": [
+              "oreja",
+              "dientes",
+              "cara",
+              "pelo",
+              "nariz",
+              "labios",
+              "ojo",
+              "muelas",
+              "boca"
+            ]
           }
         },
         {
           "id": "U8-p82-act03",
           "numero": 3,
           "tipo": "verdadero_falso",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira las imágenes de los ejercicios 1 y 2 y señala si las siguientes afirmaciones son verdaderas (V) o falsas (F).",
-          "contenido_linguistico": ["Cuerpo humano", "Descripción física"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["1. V", "2. F", "3. F", "4. F", "5. V", "6. V"],
+          "vocabulario": [
+            "El cuerpo humano",
+            "Adjetivos descriptivos",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "tiene"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Concordancia de género",
+            "Concordancia de número"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1. V",
+            "2. F",
+            "3. F",
+            "4. F",
+            "5. V",
+            "6. V"
+          ],
           "datos": {
             "items_libro": [
               "1 Ana tiene el pelo rizado.",
@@ -121,13 +1674,34 @@
           "contenido": {
             "tipo": "tabla_concordancia",
             "tabla": {
-              "encabezados": ["", "masculino", "femenino"],
+              "encabezados": [
+                "",
+                "masculino",
+                "femenino"
+              ],
               "filas": [
-                ["singular", "pelo negro", "boca pequeña"],
-                ["plural", "ojos negros", "orejas pequeñas"]
+                [
+                  "singular",
+                  "pelo negro",
+                  "boca pequeña"
+                ],
+                [
+                  "plural",
+                  "ojos negros",
+                  "orejas pequeñas"
+                ]
               ]
             }
-          }
+          },
+          "vocabulario": [
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Concordancia de género",
+            "Concordancia de número"
+          ],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -139,15 +1713,36 @@
           "id": "U8-p83-act04",
           "numero": 4,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Completa las siguientes frases con partes del cuerpo.",
-          "contenido_linguistico": ["Cuerpo humano"],
-          "campo_semantico": "Cuerpo humano",
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["1. pie", "2. dedos", "3. dientes", "4. orejas", "5. ojos", "6. mano", "7. dedos", "8. estómago"],
+          "vocabulario": [
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1. pie",
+            "2. dedos",
+            "3. dientes",
+            "4. orejas",
+            "5. ojos",
+            "6. mano",
+            "7. dedos",
+            "8. estómago"
+          ],
           "datos": {
             "items_libro": [
               "1 Al final de tu pierna está el _____.",
@@ -165,14 +1760,37 @@
           "id": "U8-p83-act05",
           "numero": 5,
           "tipo": "responder_preguntas_cerradas",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Lee la descripción y dibuja el monstruo.",
-          "contenido_linguistico": ["Cuerpo humano", "Descripción física"],
-          "campo_semantico": "Cuerpo humano",
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "El cuerpo humano",
+            "Adjetivos descriptivos",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "tiene",
+                "Tiene"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
             "texto_completo": "El monstruo tiene una cabeza enorme con el pelo largo. Tiene dos orejas pequeñas, un ojo grande y rojo y dos narices. Su boca es grande y tiene tres dientes y cuatro muelas y unos labios verdes.\n\nTiene dos brazos largos con las manos muy pequeñas. Tiene tres piernas largas con sus tres pies. Cada pie tiene dos dedos."
@@ -182,13 +1800,29 @@
           "id": "U8-p83-act06",
           "numero": 6,
           "tipo": "lee_y_escucha",
-          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "Lee y escucha el siguiente texto.",
-          "contenido_linguistico": ["Comprensión lectora/auditiva: Práctica del surf"],
-          "audio": { "presente": true, "pista": 85 },
-          "imagen": { "presente": true, "descripcion": "Fotografía de un surfista sobre una ola." },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Práctica del surf"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 85
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Fotografía de un surfista sobre una ola."
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
             "texto_completo": "El mar Cantábrico, en el norte de España, es un lugar ideal para la práctica del surf por la altura de sus olas y sus playas magníficas.\n\nLos surfistas utilizan la energía de las olas para deslizarse sobre una tabla.\n\nLas tablas de surf miden unos dos metros y pesan alrededor de tres kilos. El surfista lleva el pie atado a la tabla con una correa. Así, si se cae, no pierde la tabla."
@@ -198,14 +1832,32 @@
           "id": "U8-p83-act07",
           "numero": 7,
           "tipo": "verdadero_falso",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "¿Verdadero (V) o falso (F)?",
-          "contenido_linguistico": ["Comprensión lectora: Práctica del surf"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["1. V", "2. V", "3. F", "4. F"],
+          "vocabulario": [
+            "Práctica del surf"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1. V",
+            "2. V",
+            "3. F",
+            "4. F"
+          ],
           "datos": {
             "items_libro": [
               "1 El mar Cantábrico es bueno para practicar surf.",
@@ -219,14 +1871,45 @@
           "id": "U8-p83-act08",
           "numero": 8,
           "tipo": "relaciona",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira los dibujos de los surfistas. Observa las siguientes descripciones y relaciónalas con cada uno de ellos.",
-          "contenido_linguistico": ["Descripción física"],
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Seis dibujos de surfistas etiquetados a, b, c, d, e, f." },
-          "video": { "presente": false },
-          "respuestas": ["1 → c", "2 → a", "3 → b", "4 → d", "5 → e", "6 → f"],
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "Tiene"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Seis dibujos de surfistas etiquetados a, b, c, d, e, f."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1 → c",
+            "2 → a",
+            "3 → b",
+            "4 → d",
+            "5 → e",
+            "6 → f"
+          ],
           "datos": {
             "items_libro": [
               "1 Tiene una tabla muy pequeña y sus orejas son muy grandes.",
@@ -248,13 +1931,40 @@
           "id": "U8-p84-act01",
           "numero": 1,
           "tipo": "produccion_escrita_guiada",
-          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "¿Qué les duele? Haz frases como en el ejemplo.",
-          "contenido_linguistico": ["Verbo doler", "Pronombres de objeto indirecto"],
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Imágenes de personas (Carlos, Mónica, Paco, Pilar) señalando distintas partes del cuerpo." },
-          "video": { "presente": false },
+          "vocabulario": [
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "doler",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "duele",
+                "duelen"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Construcción gustar/doler",
+            "Pronombres átonos de OI"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Imágenes de personas (Carlos, Mónica, Paco, Pilar) señalando distintas partes del cuerpo."
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1. A Carlos le duele la espalda.",
             "2. A Mónica le duele la rodilla.",
@@ -275,14 +1985,42 @@
           "id": "U8-p84-act02",
           "numero": 2,
           "tipo": "seleccion_multiple",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "Señala el pronombre correcto.",
-          "contenido_linguistico": ["Verbos doler y gustar", "Pronombres de objeto indirecto"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["1. le", "2. le", "3. le", "4. os"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "gustar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "gusta",
+                "gustan"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Construcción gustar/doler",
+            "Pronombres átonos de OI"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1. le",
+            "2. le",
+            "3. le",
+            "4. os"
+          ],
           "datos": {
             "ejemplo_libro": "Sergio, ¿te / me gusta mi móvil nuevo?",
             "items_libro": [
@@ -297,14 +2035,43 @@
           "id": "U8-p84-act03",
           "numero": 3,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa los huecos con el pronombre correspondiente.",
-          "contenido_linguistico": ["Verbo doler", "Pronombres de objeto indirecto"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["1. le", "2. te", "3. os", "4. le", "5. le"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "doler",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "duele",
+                "duelen"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Construcción gustar/doler",
+            "Pronombres átonos de OI"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1. le",
+            "2. te",
+            "3. os",
+            "4. le",
+            "5. le"
+          ],
           "datos": {
             "ejemplo_libro": "Al profe de mates hoy le duele bastante la cabeza.",
             "items_libro": [
@@ -320,13 +2087,46 @@
           "id": "U8-p84-act04",
           "numero": 4,
           "tipo": "ordena",
-          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "Ordena las palabras para formar frases correctas.",
-          "contenido_linguistico": ["Verbos doler y gustar", "Adverbios de cantidad"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "gustar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "gusta",
+                "gustan"
+              ]
+            },
+            {
+              "lema": "doler",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "duele",
+                "duelen"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Construcción gustar/doler",
+            "Pronombres átonos de OI",
+            "Adverbios de cantidad"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1. A Jorge le gustan mucho los videojuegos.",
             "2. A Rosalía no le gusta mucho la película.",
@@ -377,21 +2177,55 @@
               "● Hola, ¿qué tal?  ■ No muy bien.",
               "● ¿Qué te pasa?  ■ Me duele mucho la cabeza."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "doler",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "duele",
+                "duelen"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Construcción gustar/doler",
+            "Pronombres átonos de OI"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
           "tipo_cuadro": "gramatical",
           "titulo": "Adverbios de cantidad",
           "contenido": {
             "tipo": "lista_reglas",
-            "reglas": ["mucho — bastante — un poco / no mucho — nada"],
+            "reglas": [
+              "mucho — bastante — un poco / no mucho — nada"
+            ],
             "ejemplos": [
               "Me duele mucho el estómago.",
               "Me duele bastante la espalda.",
               "A mí me duele un poco la cabeza / No me duele mucho la cabeza.",
               "¿Las piernas? No, no me duelen nada."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "doler",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "duele",
+                "duelen"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Adverbios de cantidad",
+            "Construcción gustar/doler"
+          ],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -403,17 +2237,49 @@
           "id": "U8-p85-act05",
           "numero": 5,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con muy / mucho/-a/-os/-as.",
-          "contenido_linguistico": ["Muy / mucho/-a/-os/-as"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "gustar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "gusta"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Adverbios de cantidad"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
-            "1. mucho", "2. muy", "3. mucha", "4. muy", "5. mucha",
-            "6. Muchos", "7. muy", "8. muchas", "9. mucho", "10. muy",
-            "11. muy", "12. Muchos", "13. mucho", "14. muy"
+            "1. mucho",
+            "2. muy",
+            "3. mucha",
+            "4. muy",
+            "5. mucha",
+            "6. Muchos",
+            "7. muy",
+            "8. muchas",
+            "9. mucho",
+            "10. muy",
+            "11. muy",
+            "12. Muchos",
+            "13. mucho",
+            "14. muy"
           ],
           "datos": {
             "items_libro": [
@@ -438,47 +2304,116 @@
           "id": "U8-p85-act06",
           "numero": 6,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa con muy / mucho/-a/-os/-as.",
-          "contenido_linguistico": ["Muy / mucho/-a/-os/-as"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["[1] muchas", "[2] mucha", "[3] muy", "[4] mucho", "[5] muy", "[6] muchas"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Adverbios de cantidad"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "[1] muchas",
+            "[2] mucha",
+            "[3] muy",
+            "[4] mucho",
+            "[5] muy",
+            "[6] muchas"
+          ],
           "datos": {
-            "items_libro": ["En la costa este española hay [1] playas. En verano, [2] gente se baña en ellas. Sus aguas son [3] cálidas y limpias. Durante el día, hace [4] calor. Por la noche corre una brisa [5] agradable y [6] familias salen de paseo."]
+            "items_libro": [
+              "En la costa este española hay [1] playas. En verano, [2] gente se baña en ellas. Sus aguas son [3] cálidas y limpias. Durante el día, hace [4] calor. Por la noche corre una brisa [5] agradable y [6] familias salen de paseo."
+            ]
           }
         },
         {
           "id": "U8-p85-act07",
           "numero": 7,
           "tipo": "produccion_escrita_guiada",
-          "destreza": ["comprension_lectora", "expresion_escrita"],
-          "enfoque": "gramatica",
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Observa cómo aparecen las palabras en el diccionario. ¿Sabes qué significan las abreviaturas? Escribe la palabra completa.",
-          "contenido_linguistico": ["Abreviaturas de los diccionarios"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["adj. → adjetivo", "pron. → pronombre", "s.m. → sustantivo masculino", "s.f. → sustantivo femenino", "v. → verbo", "adv. → adverbio", "prep. → preposición"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "adj. → adjetivo",
+            "pron. → pronombre",
+            "s.m. → sustantivo masculino",
+            "s.f. → sustantivo femenino",
+            "v. → verbo",
+            "adv. → adverbio",
+            "prep. → preposición"
+          ],
           "datos": {
             "subtipo": "para_aprender",
-            "items_libro": ["adj.", "pron.", "s.m.", "s.f.", "v.", "adv.", "prep."]
+            "items_libro": [
+              "adj.",
+              "pron.",
+              "s.m.",
+              "s.f.",
+              "v.",
+              "adv.",
+              "prep."
+            ]
           }
         },
         {
           "id": "U8-p85-act08",
           "numero": 8,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
-          "enfoque": "gramatica",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Completa estas definiciones del diccionario con la abreviatura adecuada.",
-          "contenido_linguistico": ["Abreviaturas de los diccionarios"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["en → prep.", "cerca → adv.", "libro → s.m.", "mesa → s.f.", "largo/-a → adj.", "ellas → pron.", "tener → v."],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "en → prep.",
+            "cerca → adv.",
+            "libro → s.m.",
+            "mesa → s.f.",
+            "largo/-a → adj.",
+            "ellas → pron.",
+            "tener → v."
+          ],
           "datos": {
             "subtipo": "para_aprender",
             "items_libro": [
@@ -505,7 +2440,40 @@
               "Mucho/-a/-os/-as + nombre: Roberto no tiene mucho dinero. / Los niños beben mucha leche. / Tengo muchos animales. / En mi clase no hay muchas chicas.",
               "Verbo + mucho: Veo mucho la televisión. / Me duele mucho la cabeza. / A mis amigos les gusta mucho el teatro. / Salgo mucho con mis amigos."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "Tiene",
+                "tiene",
+                "Tengo",
+                "tengo"
+              ]
+            },
+            {
+              "lema": "gustar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "les gusta",
+                "gusta"
+              ]
+            },
+            {
+              "lema": "doler",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "Me duele",
+                "duele"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Adverbios de cantidad"
+          ],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -517,17 +2485,78 @@
           "id": "U8-p86-act01",
           "numero": 1,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "contenido_linguistico": ["Descripción de personas", "Adjetivos descriptivos"],
-          "audio": { "presente": true, "pista": 86 },
-          "imagen": { "presente": false },
-          "video": { "presente": true },
-          "respuestas": ["[1] favorito", "[2] simpático", "[3] corto", "[4] alta", "[5] tiene", "[6] le gusta", "[7] pelo", "[8] lleva"],
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "tengo",
+                "tiene"
+              ]
+            },
+            {
+              "lema": "ser",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "es"
+              ]
+            },
+            {
+              "lema": "gustar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "le gusta"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Concordancia de género",
+            "Concordancia de número"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 86
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": true
+          },
+          "respuestas": [
+            "[1] favorito",
+            "[2] simpático",
+            "[3] corto",
+            "[4] alta",
+            "[5] tiene",
+            "[6] le gusta",
+            "[7] pelo",
+            "[8] lleva"
+          ],
           "datos": {
             "titulo_dialogo": "¿Quién es?",
-            "palabras_recuadro": ["favorito", "simpático", "pelo", "corto", "alta", "le gusta", "tiene", "lleva"],
+            "palabras_recuadro": [
+              "favorito",
+              "simpático",
+              "pelo",
+              "corto",
+              "alta",
+              "le gusta",
+              "tiene",
+              "lleva"
+            ],
             "dialogo_completo": [
               "JORGE: Ey, ¿jugamos a algo?",
               "PABLO: ¿Al fútbol?",
@@ -550,13 +2579,25 @@
           "id": "U8-p86-act02",
           "numero": 2,
           "tipo": "responder_preguntas_cerradas",
-          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "destreza": [
+            "comprension_auditiva",
+            "comprension_lectora"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "Contesta a las siguientes preguntas.",
-          "contenido_linguistico": ["Comprensión del diálogo"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1. Corto y negro.",
             "2. En la de Inglés.",
@@ -578,13 +2619,30 @@
           "id": "U8-p86-act03",
           "numero": 3,
           "tipo": "interaccion_oral",
-          "destreza": ["expresion_oral", "interaccion_oral"],
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "En grupos de cuatro, preparad las descripciones para que vuestros compañeros adivinen quién es vuestro profesor favorito.",
-          "contenido_linguistico": ["Descripción de personas", "Concordancia adjetivo-nombre"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Concordancia de género",
+            "Concordancia de número"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
             "pasos": [
@@ -600,14 +2658,26 @@
           "id": "U8-p86-act04",
           "numero": 4,
           "tipo": "relaciona",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las siguientes palabras con su contrario.",
-          "contenido_linguistico": ["Adjetivos descriptivos: antónimos"],
-          "campo_semantico": "Adjetivos descriptivos",
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1 → b (bajo/-a)",
             "2 → d (feo/-a)",
@@ -620,8 +2690,26 @@
           ],
           "datos": {
             "columnas_relaciona": {
-              "izquierda": ["1 alto/-a", "2 guapo/-a", "3 delgado/-a", "4 joven", "5 simpático/-a", "6 divertido/-a", "7 moreno/-a", "8 largo/-a"],
-              "derecha": ["a gordo/-a", "b bajo/-a", "c mayor", "d feo/-a", "e corto/-a", "f antipático/-a", "g rubio/-a", "h aburrido/-a"]
+              "izquierda": [
+                "1 alto/-a",
+                "2 guapo/-a",
+                "3 delgado/-a",
+                "4 joven",
+                "5 simpático/-a",
+                "6 divertido/-a",
+                "7 moreno/-a",
+                "8 largo/-a"
+              ],
+              "derecha": [
+                "a gordo/-a",
+                "b bajo/-a",
+                "c mayor",
+                "d feo/-a",
+                "e corto/-a",
+                "f antipático/-a",
+                "g rubio/-a",
+                "h aburrido/-a"
+              ]
             }
           }
         }
@@ -635,14 +2723,43 @@
           "id": "U8-p87-act05",
           "numero": 5,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira a los personajes de los dibujos y completa sus descripciones con las siguientes palabras.",
-          "contenido_linguistico": ["Descripción física", "Adjetivos descriptivos"],
-          "campo_semantico": "Adjetivos descriptivos",
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Seis personajes dibujados etiquetados: Carlos, Pedro, Ana, Inés, Juan, Rosa." },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "tiene"
+              ]
+            },
+            {
+              "lema": "ser",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "es"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Seis personajes dibujados etiquetados: Carlos, Pedro, Ana, Inés, Juan, Rosa."
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1. mayor / gordo / calvo",
             "2. grande / castaño",
@@ -652,7 +2769,21 @@
             "6. rubio / simpática"
           ],
           "datos": {
-            "palabras_recuadro": ["alto/-a", "delgado/-a", "mayor", "corto", "castaño", "pelo", "gordo/-a", "grande", "bajo/-a", "calvo", "moreno", "rubio", "ojos"],
+            "palabras_recuadro": [
+              "alto/-a",
+              "delgado/-a",
+              "mayor",
+              "corto",
+              "castaño",
+              "pelo",
+              "gordo/-a",
+              "grande",
+              "bajo/-a",
+              "calvo",
+              "moreno",
+              "rubio",
+              "ojos"
+            ],
             "items_libro": [
               "1 Carlos es muy _____ y está un poco _____. Es _____, no tiene pelo.",
               "2 Pedro tiene la nariz bastante _____ y tiene el pelo _____.",
@@ -667,26 +2798,54 @@
           "id": "U8-p87-act06",
           "numero": 6,
           "tipo": "expresion_escrita_libre",
-          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "destreza": [
+            "expresion_escrita",
+            "interaccion_oral"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "Escribe la descripción de un chico y de una chica de tu clase. Léeselas a tu compañero para que adivine quiénes son.",
-          "contenido_linguistico": ["Descripción física"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": []
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {}
         },
         {
           "id": "U8-p87-act07",
           "numero": 7,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_auditiva"],
+          "destreza": [
+            "comprension_auditiva"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "Escucha a David hablando de sí mismo y de su familia. Completa la tabla con los datos de la descripción.",
-          "contenido_linguistico": ["Descripción física: edad, pelo, ojos"],
-          "audio": { "presente": true, "pista": 87 },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 87
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "David → 12 años / pelo moreno / ojos negros",
             "Madre → 38 años / pelo rubio / ojos azules",
@@ -694,21 +2853,45 @@
             "Hermano → 7 años / pelo rubio / ojos azules"
           ],
           "datos": {
-            "items_libro": ["David", "Madre", "Padre", "Hermano"],
-            "columnas_tabla": ["Edad", "Pelo", "Ojos"]
+            "items_libro": [
+              "David",
+              "Madre",
+              "Padre",
+              "Hermano"
+            ],
+            "columnas_tabla": [
+              "Edad",
+              "Pelo",
+              "Ojos"
+            ]
           }
         },
         {
           "id": "U8-p87-act08",
           "numero": 8,
           "tipo": "produccion_escrita_guiada",
-          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "destreza": [
+            "expresion_escrita",
+            "interaccion_oral"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "Pregunta a tu compañero por los miembros de su familia. Copia sus respuestas y escribe una pequeña descripción sobre uno de ellos.",
-          "contenido_linguistico": ["Descripción física", "Familia"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
             "preguntas": [
@@ -724,47 +2907,113 @@
           "id": "U8-p87-act09",
           "numero": 9,
           "tipo": "escucha_y_repite",
-          "destreza": ["comprension_auditiva", "expresion_oral"],
-          "enfoque": "fonetica",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y repite.",
-          "contenido_linguistico": ["El sonido /k/"],
-          "audio": { "presente": true, "pista": 88 },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [
+            "Sonidos y correspondencias ortográficas"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 88
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
-            "palabras_modelo": ["cuatro", "casa", "comer", "queso", "quiero"]
+            "palabras_modelo": [
+              "cuatro",
+              "casa",
+              "comer",
+              "queso",
+              "quiero"
+            ]
           }
         },
         {
           "id": "U8-p87-act10",
           "numero": 10,
           "tipo": "responder_preguntas_cerradas",
-          "destreza": ["comprension_lectora"],
-          "enfoque": "fonetica",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "¿Qué sonido se repite en todas las palabras?",
-          "contenido_linguistico": ["El sonido /k/"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["El sonido /k/."],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [
+            "Sonidos y correspondencias ortográficas"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "El sonido /k/."
+          ],
           "datos": {
-            "items_libro": ["cuatro", "casa", "comer", "queso", "quiero"],
-            "reglas_foneticas": ["El sonido /k/ se escribe qu delante de e, i y se escribe c delante de a, o, u."]
+            "items_libro": [
+              "cuatro",
+              "casa",
+              "comer",
+              "queso",
+              "quiero"
+            ],
+            "reglas_foneticas": [
+              "El sonido /k/ se escribe qu delante de e, i y se escribe c delante de a, o, u."
+            ]
           }
         },
         {
           "id": "U8-p87-act11",
           "numero": 11,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
-          "enfoque": "fonetica",
+          "destreza": [
+            "comprension_lectora"
+          ],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Completa con qu / c.",
-          "contenido_linguistico": ["El sonido /k/: ortografía qu/c"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": ["1. c (cuando)", "2. qu (pequeño)", "3. c (poco)", "4. qu (química)", "5. qu (quinientos)", "6. c (simpática)", "7. c (Ecuador)", "8. c (calle)"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [
+            "Sonidos y correspondencias ortográficas"
+          ],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1. c (cuando)",
+            "2. qu (pequeño)",
+            "3. c (poco)",
+            "4. qu (química)",
+            "5. qu (quinientos)",
+            "6. c (simpática)",
+            "7. c (Ecuador)",
+            "8. c (calle)"
+          ],
           "datos": {
             "items_libro": [
               "1 ___uando",
@@ -782,16 +3031,38 @@
           "id": "U8-p87-act12",
           "numero": 12,
           "tipo": "escucha_y_repite",
-          "destreza": ["comprension_auditiva", "expresion_oral"],
-          "enfoque": "fonetica",
+          "destreza": [
+            "comprension_auditiva",
+            "expresion_oral"
+          ],
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Ahora, escucha y repite.",
-          "contenido_linguistico": ["El sonido /k/"],
-          "audio": { "presente": true, "pista": 89 },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [
+            "Sonidos y correspondencias ortográficas"
+          ],
+          "audio": {
+            "presente": true,
+            "pista": 89
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
-            "palabras_modelo": ["Carlos", "Pedro", "Ana", "Inés", "Juan", "Rosa"]
+            "palabras_modelo": [
+              "Carlos",
+              "Pedro",
+              "Ana",
+              "Inés",
+              "Juan",
+              "Rosa"
+            ]
           }
         }
       ],
@@ -801,13 +3072,31 @@
           "titulo": "Muy / Bastante / Un poco",
           "contenido": {
             "tipo": "escala_gradacion",
-            "escala": ["Muy ★★★★", "Bastante ★★★", "Un poco ★"],
+            "escala": [
+              "Muy ★★★★",
+              "Bastante ★★★",
+              "Un poco ★"
+            ],
             "ejemplos": [
               "Tiene una nariz muy grande.",
               "Tiene una nariz bastante grande.",
               "Tiene una nariz un poco grande."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "Tiene"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Adverbios de cantidad"
+          ],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -819,30 +3108,66 @@
           "id": "U8-p88-act01",
           "numero": 1,
           "tipo": "responder_preguntas_abiertas",
-          "destreza": ["comprension_lectora", "expresion_oral"],
+          "destreza": [
+            "comprension_lectora",
+            "expresion_oral"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira esta clase y observa los adjetivos para describir la personalidad de algunos alumnos. ¿Cómo eres tú?",
-          "contenido_linguistico": ["Adjetivos de carácter y personalidad"],
-          "campo_semantico": "Adjetivos descriptivos",
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Ilustración de una clase con etiquetas de adjetivos de personalidad superpuestas sobre los alumnos: divertido, cariñosa, antipática, simpático, sociable, inteligente, trabajador, serio." },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Ilustración de una clase con etiquetas de adjetivos de personalidad superpuestas sobre los alumnos: divertido, cariñosa, antipática, simpático, sociable, inteligente, trabajador, serio."
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
-            "palabras_recuadro": ["trabajador(a)", "inteligente", "simpático/a", "sociable", "cariñoso/a", "serio/-a", "antipático/-a", "divertido/-a"]
+            "palabras_recuadro": [
+              "trabajador(a)",
+              "inteligente",
+              "simpático/a",
+              "sociable",
+              "cariñoso/a",
+              "serio/-a",
+              "antipático/-a",
+              "divertido/-a"
+            ]
           }
         },
         {
           "id": "U8-p88-act02",
           "numero": 2,
           "tipo": "interaccion_oral",
-          "destreza": ["interaccion_oral"],
+          "destreza": [
+            "interaccion_oral"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Comenta con tu compañero si los adjetivos de carácter anteriores son positivos o negativos.",
-          "contenido_linguistico": ["Adjetivos de carácter y personalidad"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
             "ejemplo_libro": "Para mí, ser trabajador es positivo."
@@ -852,14 +3177,61 @@
           "id": "U8-p88-act03",
           "numero": 3,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "Marta escribe a Pierre, su amigo francés. Lee el correo electrónico y escribe el nombre de los amigos de Marta en la foto.",
-          "contenido_linguistico": ["Comprensión lectora: descripción de personas"],
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Foto grupal de 5 jóvenes numerados del 1 al 5." },
-          "video": { "presente": false },
-          "respuestas": ["1. Ángela", "2. Carla", "3. Juan", "4. Marta", "5. Luis"],
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "tiene",
+                "tengo"
+              ]
+            },
+            {
+              "lema": "ser",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "es",
+                "soy"
+              ]
+            },
+            {
+              "lema": "gustar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "gusta",
+                "nos gusta"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Foto grupal de 5 jóvenes numerados del 1 al 5."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1. Ángela",
+            "2. Carla",
+            "3. Juan",
+            "4. Marta",
+            "5. Luis"
+          ],
           "datos": {
             "texto_completo": "Hola, Pierre:\n\nHoy te voy a presentar a los amigos de mi pandilla y por eso te mando esta foto. Luis es el más alto y tiene el pelo muy corto. Es muy trabajador. Carla es la chica con el pelo más largo y liso. Yo soy morena, tengo los ojos marrones y soy la más baja. Ángela es la chica más alta. Es muy inteligente y simpática y tiene el pelo rubio. Por último, Juan es rubio y con los ojos azules. Tiene el pelo más largo que Luis. Es muy cariñoso, pero a veces tiene problemas con los profesores. Bueno, estos son mis mejores amigos. Salimos juntos todos los fines de semana. A todos nos gusta ir al cine, hacer deporte y la música moderna.\n\n¿Por qué no me cuentas cómo son tus amigos?\n\nEscríbeme pronto.\n\nUn saludo,\nMarta"
           }
@@ -868,13 +3240,26 @@
           "id": "U8-p88-act04",
           "numero": 4,
           "tipo": "responder_preguntas_cerradas",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "Contesta a las preguntas.",
-          "contenido_linguistico": ["Comprensión lectora: descripción de personas"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1. Luis.",
             "2. Ángela.",
@@ -896,13 +3281,28 @@
           "id": "U8-p88-act05",
           "numero": 5,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "Completa la tabla con los datos que encuentres en el texto.",
-          "contenido_linguistico": ["Descripción física"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "Luis → Estatura: alto / Pelo: corto",
             "Carla → Pelo: largo y liso",
@@ -911,8 +3311,18 @@
             "Juan → Pelo: rubio / Ojos: azules"
           ],
           "datos": {
-            "items_libro": ["Luis", "Carla", "Marta", "Ángela", "Juan"],
-            "columnas_tabla": ["Estatura", "Pelo", "Ojos"]
+            "items_libro": [
+              "Luis",
+              "Carla",
+              "Marta",
+              "Ángela",
+              "Juan"
+            ],
+            "columnas_tabla": [
+              "Estatura",
+              "Pelo",
+              "Ojos"
+            ]
           }
         }
       ]
@@ -925,13 +3335,28 @@
           "id": "U8-p89-act06",
           "numero": 6,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_auditiva"],
+          "destreza": [
+            "comprension_auditiva"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "Escucha a Marta describiendo a su nueva profesora de gimnasia. Completa con los datos correctos.",
-          "contenido_linguistico": ["Descripción física"],
-          "audio": { "presente": true, "pista": 90 },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": true,
+            "pista": 90
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "Nombre: Ana",
             "Edad: unos 40 años",
@@ -942,23 +3367,54 @@
             "¿Le gusta a Juan? no le gusta nada"
           ],
           "datos": {
-            "items_libro": ["Nombre:", "Edad:", "Estatura:", "Pelo:", "Nariz:", "¿Le gusta a Marta?", "¿Le gusta a Juan?"]
+            "items_libro": [
+              "Nombre:",
+              "Edad:",
+              "Estatura:",
+              "Pelo:",
+              "Nariz:",
+              "¿Le gusta a Marta?",
+              "¿Le gusta a Juan?"
+            ]
           }
         },
         {
           "id": "U8-p89-act07",
           "numero": 7,
           "tipo": "interaccion_oral",
-          "destreza": ["expresion_oral", "interaccion_oral"],
+          "destreza": [
+            "expresion_oral",
+            "interaccion_oral"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "¿Conoces a estos personajes famosos? Si no es así, pide ayuda a tu profesor y busca información sobre ellos. Después, en parejas, A describe a uno de estos famosos y B adivina quién es.",
-          "contenido_linguistico": ["Descripción física", "Personajes famosos"],
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "5 fotografías de personajes famosos: Aitana Bonmatí, Rosalía, Carlos Alcaraz, Shakira, Pedro Pascal." },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "5 fotografías de personajes famosos: Aitana Bonmatí, Rosalía, Carlos Alcaraz, Shakira, Pedro Pascal."
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
-            "personajes": ["Aitana Bonmatí", "Rosalía", "Carlos Alcaraz", "Shakira", "Pedro Pascal"],
+            "personajes": [
+              "Aitana Bonmatí",
+              "Rosalía",
+              "Carlos Alcaraz",
+              "Shakira",
+              "Pedro Pascal"
+            ],
             "ejemplo_libro": "Es una cantante muy famosa. Tiene el pelo largo y negro. ¿Quién es?"
           }
         },
@@ -966,13 +3422,29 @@
           "id": "U8-p89-act08",
           "numero": 8,
           "tipo": "produccion_escrita_guiada",
-          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "destreza": [
+            "expresion_escrita",
+            "interaccion_oral"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "En parejas, tenéis que escribir una descripción de un compañero de clase.",
-          "contenido_linguistico": ["Descripción física y de carácter"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
             "pasos": [
@@ -984,12 +3456,53 @@
             ],
             "ejemplo_libro": "Es bastante alto / alta, tiene el pelo rizado y lleva gafas.",
             "vocabulario_tabla": {
-              "Aspecto general": ["alto/-a", "bajo/-a", "guapo/-a", "gordo/-a", "delgado/-a", "joven", "mayor"],
-              "Tipo de pelo": ["largo", "corto", "rizado", "liso", "ondulado"],
-              "Color de pelo": ["moreno", "rubio", "pelirrojo", "canoso", "blanco"],
-              "Ojos": ["grandes", "pequeños", "azules", "negros", "verdes", "marrones", "grises"],
-              "Otros detalles": ["barba", "bigote", "gafas", "pecas"],
-              "Personalidad": ["simpático/-a", "divertido/-a", "serio/-a", "antipático/-a", "trabajador(a)", "inteligente", "cariñoso/-a"]
+              "Aspecto general": [
+                "alto/-a",
+                "bajo/-a",
+                "guapo/-a",
+                "gordo/-a",
+                "delgado/-a",
+                "joven",
+                "mayor"
+              ],
+              "Tipo de pelo": [
+                "largo",
+                "corto",
+                "rizado",
+                "liso",
+                "ondulado"
+              ],
+              "Color de pelo": [
+                "moreno",
+                "rubio",
+                "pelirrojo",
+                "canoso",
+                "blanco"
+              ],
+              "Ojos": [
+                "grandes",
+                "pequeños",
+                "azules",
+                "negros",
+                "verdes",
+                "marrones",
+                "grises"
+              ],
+              "Otros detalles": [
+                "barba",
+                "bigote",
+                "gafas",
+                "pecas"
+              ],
+              "Personalidad": [
+                "simpático/-a",
+                "divertido/-a",
+                "serio/-a",
+                "antipático/-a",
+                "trabajador(a)",
+                "inteligente",
+                "cariñoso/-a"
+              ]
             }
           }
         },
@@ -997,13 +3510,27 @@
           "id": "U8-p89-act09",
           "numero": 9,
           "tipo": "expresion_escrita_libre",
-          "destreza": ["expresion_escrita"],
+          "destreza": [
+            "expresion_escrita"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "Escribe un correo electrónico a un amigo o a una amiga con la que te escribes para practicar tu español. Cuéntale quiénes son tus mejores amigos.",
-          "contenido_linguistico": ["Descripción física y de carácter", "Correo electrónico"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
             "pasos": [
@@ -1024,13 +3551,25 @@
           "id": "U8-p90-act01",
           "numero": 1,
           "tipo": "verdadero_falso",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "transversal",
           "instruccion_original": "Lee el texto \"La semana azul\" y di si las siguientes afirmaciones son verdaderas (V) o falsas (F). Corrige las falsas.",
-          "contenido_linguistico": ["Comprensión lectora: La semana azul"],
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Fotografía de un grupo de jóvenes alrededor de una fogata." },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Fotografía de un grupo de jóvenes alrededor de una fogata."
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1. F → Los padres no pueden participar en la semana azul: solo grupos escolares de primaria y secundaria, profesores y alumnos.",
             "2. V",
@@ -1053,13 +3592,24 @@
           "id": "U8-p90-act02",
           "numero": 2,
           "tipo": "interaccion_oral",
-          "destreza": ["interaccion_oral"],
+          "destreza": [
+            "interaccion_oral"
+          ],
           "enfoque": "cultura",
           "instruccion_original": "Intercambia información con tu compañero.",
-          "contenido_linguistico": ["Actividades extraescolares", "Semanas activas"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [],
           "datos": {
             "preguntas": [
@@ -1078,13 +3628,43 @@
           "id": "U8-p91-act01",
           "numero": 1,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con la forma correcta del verbo correspondiente y el pronombre adecuado.",
-          "contenido_linguistico": ["Verbos doler y gustar", "Pronombres de objeto indirecto"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "gustar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "gusta",
+                "gustan"
+              ]
+            },
+            {
+              "lema": "doler",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "duele"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Construcción gustar/doler",
+            "Pronombres átonos de OI"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1. no me gustan",
             "2. Os gusta",
@@ -1112,13 +3692,45 @@
           "id": "U8-p91-act02",
           "numero": 2,
           "tipo": "produccion_escrita_guiada",
-          "destreza": ["expresion_escrita"],
+          "destreza": [
+            "expresion_escrita"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "Construye frases correctas, como en el ejemplo.",
-          "contenido_linguistico": ["Verbos doler y gustar", "Pronombres de objeto indirecto"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "gustar",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "gusta",
+                "gustan"
+              ]
+            },
+            {
+              "lema": "doler",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "duele",
+                "duelen"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Construcción gustar/doler",
+            "Pronombres átonos de OI",
+            "Adverbios de cantidad"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "1. A mí me gustan los chicos simpáticos.",
             "2. ¿A ustedes les gusta la paella?",
@@ -1149,17 +3761,37 @@
           "id": "U8-p91-act03",
           "numero": 3,
           "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "destreza": [
+            "comprension_lectora"
+          ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las siguientes frases con muy / mucho/-a/-os/-as.",
-          "contenido_linguistico": ["Muy / mucho/-a/-os/-as"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Adverbios de cantidad"
+          ],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
-            "1. muy", "2. mucho", "3. muy", "4. mucho",
-            "5. mucha", "6. muchos", "7. mucho", "8. muy",
-            "9. mucho", "10. muchos"
+            "1. muy",
+            "2. mucho",
+            "3. muy",
+            "4. mucho",
+            "5. mucha",
+            "6. muchos",
+            "7. mucho",
+            "8. muy",
+            "9. mucho",
+            "10. muchos"
           ],
           "datos": {
             "items_libro": [
@@ -1180,41 +3812,110 @@
           "id": "U8-p91-act04",
           "numero": 4,
           "tipo": "produccion_escrita_guiada",
-          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Nombra las siguientes partes del cuerpo.",
-          "contenido_linguistico": ["Cuerpo humano"],
-          "campo_semantico": "Cuerpo humano",
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "7 fotografías de primer plano de partes del cuerpo numeradas del 1 al 7." },
-          "video": { "presente": false },
-          "respuestas": ["1. ojo", "2. nariz", "3. brazo", "4. cuello", "5. dedo", "6. oreja", "7. pie"]
+          "vocabulario": [
+            "El cuerpo humano"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": true,
+            "descripcion": "7 fotografías de primer plano de partes del cuerpo numeradas del 1 al 7."
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [
+            "1. ojo",
+            "2. nariz",
+            "3. brazo",
+            "4. cuello",
+            "5. dedo",
+            "6. oreja",
+            "7. pie"
+          ],
+          "datos": {}
         },
         {
           "id": "U8-p91-act05",
           "numero": 5,
           "tipo": "expresion_escrita_libre",
-          "destreza": ["expresion_escrita"],
+          "destreza": [
+            "expresion_escrita"
+          ],
           "enfoque": "vocabulario",
           "instruccion_original": "Dibuja tu propio monstruo inventado y descríbelo.",
-          "contenido_linguistico": ["Cuerpo humano", "Descripción física"],
-          "campo_semantico": "Cuerpo humano",
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": []
+          "vocabulario": [
+            "El cuerpo humano",
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {}
         },
         {
           "id": "U8-p91-act06",
           "numero": 6,
           "tipo": "ordena",
-          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "destreza": [
+            "comprension_lectora",
+            "expresion_escrita"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "Ordena las conversaciones.",
-          "contenido_linguistico": ["Descripción de personas: preguntar y responder"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
+          "vocabulario": [
+            "Adjetivos descriptivos",
+            "El cuerpo humano",
+            "Colores"
+          ],
+          "tiempos_y_verbos": [
+            {
+              "lema": "tener",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "Tiene",
+                "tiene"
+              ]
+            },
+            {
+              "lema": "ser",
+              "tiempo": "Presente",
+              "formas_trabajadas": [
+                "es"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
           "respuestas": [
             "¿Cómo se llama tu hermano? / Se llama Alejandro.",
             "¿Cómo tiene los ojos? / Tiene los ojos verdes.",
@@ -1238,14 +3939,28 @@
           "id": "U8-p91-act07",
           "numero": 7,
           "tipo": "expresion_oral_libre",
-          "destreza": ["expresion_oral"],
+          "destreza": [
+            "expresion_oral"
+          ],
           "enfoque": "comunicacion",
           "instruccion_original": "Lleva una foto de tu mejor amigo/-a a clase y descríbela. ¿Cómo se llama? ¿Cómo es? ¿Dónde está?",
-          "contenido_linguistico": ["Descripción de personas"],
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": []
+          "vocabulario": [
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": {
+            "presente": false
+          },
+          "imagen": {
+            "presente": false
+          },
+          "video": {
+            "presente": false
+          },
+          "respuestas": [],
+          "datos": {}
         }
       ]
     }
