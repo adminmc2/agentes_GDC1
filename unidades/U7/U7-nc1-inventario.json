@@ -4,10 +4,7 @@
   "titulo": "Hábitos",
   "paginas_libro": "72-81",
   "nivel": "A1.1",
-  "fuente": {
-    "archivo": "unidades/U7/fuente/U7-nc1.pdf",
-    "version_extraccion": "2026-05-10"
-  },
+  "fuente": { "archivo": "unidades/U7/fuente/U7-nc1.pdf", "version_extraccion": "2026-05-18" },
   "contenidos_indice": {
     "vocabulario": "Meses del año. Animales domésticos y salvajes",
     "gramatica": "Verbos reflexivos. Oposición salir / volver. Preposiciones (a, de, por, con, en). Signos de puntuación",
@@ -17,33 +14,561 @@
   },
   "vocabulario_consolidado": {
     "principal": {
-      "_descripcion": "Vocabulario declarado en el índice de la unidad y trabajado en la sección Vocabulario.",
-      "Meses del año": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
-      "Animales domésticos": ["vaca", "oveja", "gallina", "cerdo", "caballo"],
-      "Animales salvajes": ["león", "elefante", "serpiente", "delfín", "mono", "tiburón"]
+      "Meses del año": {
+        "items": [
+          {"palabra": "enero", "fuentes": ["p72-act1", "p72-act1@R", "p73-act4@R", "p81-act4@R"]},
+          {"palabra": "febrero", "fuentes": ["p72-act1", "p72-act1@R", "p81-act4@R"]},
+          {"palabra": "marzo", "fuentes": ["p72-act1", "p72-act1@R", "p73-act4@R"]},
+          {"palabra": "abril", "fuentes": ["p72-act1", "p72-act1@R"]},
+          {"palabra": "mayo", "fuentes": ["p72-act1", "p72-act1@R", "p73-act4@R", "p81-act4@R"]},
+          {"palabra": "junio", "fuentes": ["p72-act1", "p72-act1@R", "p81-act4", "p81-act4@R"]},
+          {"palabra": "julio", "fuentes": ["p72-act1", "p72-act1@R", "p81-act4@R"]},
+          {"palabra": "agosto", "fuentes": ["p72-act1", "p72-act1@R"]},
+          {"palabra": "septiembre", "fuentes": ["p72-act1", "p72-act1@R"]},
+          {"palabra": "octubre", "fuentes": ["p72-act1", "p72-act1@R", "p73-act4@R", "p81-act4@R"]},
+          {"palabra": "noviembre", "fuentes": ["p72-act1", "p72-act1@R", "p81-act4"]},
+          {"palabra": "diciembre", "fuentes": ["p72-act1", "p72-act1@R", "p73-act3", "p73-act4@R"]}
+        ],
+        "fuentes": ["p72-act1", "p72-act1@R", "p73-act4@R", "p81-act4@R", "p81-act4", "p73-act3"],
+        "descripcion": {
+          "U7": "PCIC A1 §16 Nociones específicas / Tiempo — Meses del año. Principal en U7: se introduce el paradigma completo (enero a diciembre) en p72-act1 con apoyo visual de calendarios mensuales y se trabaja en cuatro actividades de la sección Vocabulario (ordenar y repetir p72-act1, hablar de estaciones p72-act2, preguntar por cumpleaños p73-act3, escuchar fechas de fiestas españolas p73-act4) y se cierra en evaluación con adivinanzas p81-act4."
+        }
+      },
+      "Animales domésticos y salvajes": {
+        "items": [
+          {"palabra": "vaca", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p73-act7@R"]},
+          {"palabra": "oveja", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p73-act7@R", "p81-act5@R"]},
+          {"palabra": "gallina", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p73-act7@R", "p81-act5@R"]},
+          {"palabra": "cerdo", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p73-act7@R"]},
+          {"palabra": "caballo", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R"]},
+          {"palabra": "león", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p77-act11", "p81-act5@R"]},
+          {"palabra": "elefante", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p81-act5@R"]},
+          {"palabra": "serpiente", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R"]},
+          {"palabra": "delfín", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R"]},
+          {"palabra": "mono", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R"]},
+          {"palabra": "tiburón", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R"]},
+          {"palabra": "orangután", "fuentes": ["p79-act5"]},
+          {"palabra": "yegua", "fuentes": ["p73-act8"]},
+          {"palabra": "potro", "fuentes": ["p73-act8"]}
+        ],
+        "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p73-act7@R", "p81-act5@R", "p77-act11", "p79-act5", "p73-act8"],
+        "descripcion": {
+          "U7": "PCIC A1 §17 Nociones específicas / Mundo natural — Fauna. Principal en U7: se introduce el paradigma de 11 animales en p73-act5 (vaca, oveja, león, elefante, serpiente, delfín, gallina, cerdo, mono, tiburón, caballo) con apoyo visual y audio, se clasifica en domésticos vs salvajes (p73-act6), se identifica en audio (p73-act7) y se amplía en Destrezas con animales del zoo (mamíferos, ciervos, cebras, anfibios, reptiles, ranas, tortugas, cocodrilos, víboras, pitones, boas, aves, palomas, loros, cacatúas) y un orangután protagonista de un texto (p79). Cierra en evaluación con identificación visual (p81-act5)."
+        }
+      }
     },
     "recurrente": {
-      "_descripcion": "Vocabulario que aparece en varias secciones de la unidad.",
-      "Verbos reflexivos": ["ducharse", "acostarse", "levantarse", "lavarse", "vestirse", "ponerse", "sentarse", "bañarse", "afeitarse", "quedarse", "despertarse"],
-      "Verbos de movimiento y rutina": ["salir", "volver", "llegar", "llamar", "jugar", "ir", "venir"],
-      "Preposiciones": ["a", "al", "de", "en", "por"]
-    },
-    "comprension": {
-      "_descripcion": "Léxico que aparece en los textos de la unidad y afecta la comprensión, aunque no se trabaje explícitamente.",
-      "Texto El nacimiento de un potro": ["potro", "yegua", "patas", "pradera", "hierba", "champú"],
-      "Texto Un día en el zoo": ["cuidador", "terrario", "anfibios", "reptiles", "aves", "jaula", "veterinario"],
-      "Texto Zoo-Aquarium de Madrid": ["educativa", "investigadora", "conservadora", "medioambiental", "biodiversidad", "ecosistema"],
-      "Texto La historia de Budi": ["orangután", "leche condensada", "anemia"]
+      "Días de la semana": {
+        "items": [
+          {"palabra": "lunes", "fuentes": ["cuadro@p72", "p76-act1", "p76-act3", "p76-act3@R"]},
+          {"palabra": "martes", "fuentes": ["cuadro@p72"]},
+          {"palabra": "miércoles", "fuentes": ["cuadro@p72"]},
+          {"palabra": "jueves", "fuentes": ["cuadro@p72"]},
+          {"palabra": "viernes", "fuentes": ["cuadro@p72", "p76-act1", "p76-act3", "p76-act3@R"]},
+          {"palabra": "sábado", "fuentes": ["cuadro@p72", "p76-act1"]},
+          {"palabra": "domingo", "fuentes": ["cuadro@p72", "p73-act4@R"]}
+        ],
+        "fuentes": ["cuadro@p72", "p76-act1", "p76-act3", "p76-act3@R", "p73-act4@R"],
+        "descripcion": {
+          "U7": "Recurrente desde U2 (principal). En U7 reaparece como cuadro 'Recuerda' en p72 con las abreviaciones L/M/X/J/V/S/D → lunes...domingo, soporte de la sección de Meses del año. Cumple §5.1.1: frecuencia limitada pero posición canónica U2 y valor pedagógico de cierre del paradigma temporal (días + meses)."
+        }
+      }
     }
   },
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "acostarse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica o→ue", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["acostarse", "me acuesto", "nos acostamos", "os acostáis", "se acuesta", "se acuestan", "te acuestas"],
+      "fuentes": ["cuadro@p74", "p74-act1", "p74-act2", "p74-act3", "p75-act7", "p76-act1", "p76-act2", "p76-act3", "p76-act4", "p77-act5", "p77-act6", "p77-act8", "p79-act6", "p81-act1", "p81-act2"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "afeitarse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["se afeita", "se afeitan"],
+      "fuentes": ["p74-act3", "p75-act4", "p81-act1", "p81-act2"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "bañarse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["me baño", "os bañáis", "se baña", "se bañan"],
+      "fuentes": ["p74-act2", "p81-act1", "p81-act2"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "comer",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -er", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["come", "comer", "comes"],
+      "fuentes": ["p73-act8", "p76-act4", "p77-act10", "p77-act12", "p77-act6", "p77-act8", "p78-act1", "p78-act3", "p79-act6"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "dar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "totalmente irregular", "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["da"],
+      "fuentes": ["p78-act1"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "decir",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular", "Imperativo": "irregular (di)" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["dice"],
+      "fuentes": ["p77-act12"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "despertarse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica e→ie" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["me despierto", "se despierta", "se despiertan"],
+      "fuentes": ["p73-act8", "p76-act1", "p78-act1"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "dormir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica o→ue", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["dormir", "duerme", "duermes", "duermo"],
+      "fuentes": ["p73-act8", "p76-act1", "p76-act2", "p79-act6"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "ducharse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["ducharse", "me ducho", "nos duchamos", "os ducháis", "se ducha", "se duchan", "te duchas"],
+      "fuentes": ["cuadro@p74", "p74-act1", "p74-act2", "p74-act3", "p75-act7", "p76-act1", "p77-act10", "p81-act1", "p81-act2"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "estar",
+      "tipo_de_verbo": ["copulativo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular", "Pretérito indefinido": "raíz irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["estamos", "estoy", "está"],
+      "fuentes": ["p75-act5", "p76-act1", "p77-act9"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "gustar",
+      "tipo_de_verbo": ["tipo gustar", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "tipo gustar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["gustan", "me gusta", "te gustan"],
+      "fuentes": ["p76-act1", "p79-act7"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "hablar",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar", "Imperativo": "regular 2ª persona singular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo"],
+      "formas_trabajadas": ["hablar"],
+      "fuentes": ["p78-act1"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo." }
+    },
+    {
+      "lema": "hacer",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad 1ª persona", "Pretérito indefinido": "raíz irregular", "Imperativo": "irregular (haz)", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["hace", "hacemos", "hacer", "haces"],
+      "fuentes": ["p76-act1", "p76-act3", "p76-act4", "p77-act6", "p77-act9", "p78-act3", "p79-act7", "p81-act6"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "ir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular", "Pretérito indefinido": "totalmente irregular (mismo paradigma que ser)", "Imperativo": "irregular (ve)", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["ir", "va", "vais", "vamos", "van", "vas", "voy"],
+      "fuentes": ["cuadro@p75#2", "p75-act4", "p75-act5", "p75-act6", "p76-act1", "p77-act10", "p77-act11", "p77-act12", "p77-act9", "p78-act1", "p78-act3", "p79-act6", "p81-act3", "p81-act6"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "jugar",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica u→ue", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["juega", "juegan", "juegas", "jugamos", "jugar"],
+      "fuentes": ["cuadro@p75#2", "p73-act8", "p75-act5", "p75-act6", "p75-act7", "p76-act2", "p77-act10", "p77-act9", "p79-act6", "p81-act3"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "lavarse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["lava", "me lavo", "nos lavamos", "os laváis", "se lava", "te lavas"],
+      "fuentes": ["p73-act8", "p74-act1", "p74-act2", "p74-act3", "p75-act7", "p81-act1"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "levantarse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["levantarse", "me levanto", "nos levantamos", "os levantáis", "se levanta", "se levantan", "te levantas"],
+      "fuentes": ["cuadro@p75#2", "p74-act1", "p74-act2", "p74-act3", "p75-act4", "p75-act5", "p75-act7", "p76-act1", "p76-act4", "p77-act10", "p77-act11", "p77-act5", "p77-act6", "p77-act7", "p77-act8", "p81-act2"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "llamar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["llama", "llamar", "llamas", "llamo"],
+      "fuentes": ["p75-act5", "p75-act6", "p76-act1", "p78-act1", "p78-act3"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "llegar",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["llega", "llegamos", "llegan", "llegar", "llego"],
+      "fuentes": ["p75-act5", "p75-act6", "p75-act7", "p76-act4", "p77-act10", "p81-act3"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "ponerse",
+      "tipo_de_verbo": ["reflexivo", "pronominal"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad 1ª persona" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["me pongo", "nos ponemos", "os ponéis", "se pone", "se ponen", "te pones"],
+      "fuentes": ["cuadro@p74", "p73-act8", "p74-act1", "p74-act2"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "quedarse",
+      "tipo_de_verbo": ["reflexivo", "pronominal"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["me quedo", "nos quedamos"],
+      "fuentes": ["p81-act2"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "recorrer",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Infinitivo": "forma léxica en perífrasis (poder + inf.)", "Presente": "regular -ar" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["recorre", "recorrer"],
+      "fuentes": ["p78-act1", "p78-act3"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "salir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad 1ª persona", "Imperativo": "irregular (sal)", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["sale", "salen", "sales", "salgo", "salimos", "salir", "salís"],
+      "fuentes": ["cuadro@p75#1", "cuadro@p75#2", "p75-act4", "p75-act5", "p75-act6", "p75-act7", "p76-act1", "p76-act4", "p77-act5", "p77-act6", "p79-act6", "p81-act3"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "sentarse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica e→ie", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["me siento", "nos sentamos", "os sentáis", "se sienta", "se sientan", "sentarse", "te sientas"],
+      "fuentes": ["cuadro@p74", "p74-act2", "p79-act6"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "ser",
+      "tipo_de_verbo": ["copulativo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular", "Pretérito indefinido": "totalmente irregular (mismo paradigma que ir)" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["es"],
+      "fuentes": ["p77-act12", "p80-act1"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "tener",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["tenemos", "tengo", "tiene", "tienes"],
+      "fuentes": ["p76-act1", "p76-act3", "p77-act8", "p77-act9", "p79-act5", "p79-act6", "p79-act7", "p80-act1"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Presente." }
+    },
+    {
+      "lema": "venir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad 1ª persona + cambio vocálico e→ie", "Imperativo": "irregular (ven)", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["venir", "viene", "vienen", "vienes"],
+      "fuentes": ["cuadro@p75#2", "p75-act4", "p75-act5", "p75-act6", "p81-act3"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "vestirse",
+      "tipo_de_verbo": ["reflexivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica e→i", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["me visto", "nos vestimos", "os vestís", "se viste", "se visten", "te vistes", "vestirse"],
+      "fuentes": ["cuadro@p74", "p74-act1", "p74-act2", "p74-act3", "p76-act1", "p77-act5"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "volver",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica o→ue", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["volvemos", "volver", "volvéis", "vuelve", "vuelven", "vuelves", "vuelvo"],
+      "fuentes": ["cuadro@p75#1", "p75-act5", "p75-act6", "p75-act7", "p77-act5", "p77-act6", "p81-act3"],
+      "descripcion": { "U7": "Verbo canónico del registry; aparece en U7 con tiempos: Infinitivo, Presente." }
+    }
+  ],
+  "gramatica_consolidada": {
+    "principal": {
+      "Preposiciones": {
+        "items": [
+          {"palabra": "a", "fuentes": ["cuadro@p75#2", "p73-act3", "p73-act4", "p73-act8", "p73-act8@R", "p74-act1", "p74-act2", "p74-act3", "p74-act3@R", "p75-act4", "p75-act4@R", "p75-act5", "p75-act5@R", "p75-act6", "p75-act7", "p75-act7@R", "p75-act8", "p75-act8@R", "p75-act9", "p75-act9@R", "p76-act1", "p76-act1@R", "p76-act3", "p76-act3@R", "p76-act4", "p77-act11", "p77-act12", "p77-act12@R", "p77-act5", "p77-act6", "p77-act6@R", "p77-act8", "p77-act8@R", "p77-act9", "p77-act9@R", "p78-act1", "p78-act1@R", "p78-act3", "p78-act3@R", "p78-act4", "p79-act5", "p79-act6", "p79-act8", "p80-act1", "p81-act1", "p81-act2", "p81-act2@R", "p81-act3", "p81-act3@R", "p81-act6"]},
+          {"palabra": "al", "fuentes": ["cuadro@p75#2", "p73-act8", "p75-act4", "p75-act4@R", "p75-act5", "p75-act5@R", "p75-act7", "p75-act7@R", "p76-act2", "p77-act5", "p77-act9@R", "p78-act1", "p78-act3", "p79-act7", "p80-act1", "p81-act3@R", "p81-act6"]},
+          {"palabra": "de", "fuentes": ["cuadro@p75#2", "p72-act2", "p73-act4", "p73-act4@R", "p73-act5", "p73-act8", "p74-act1", "p74-act2", "p75-act4", "p75-act4@R", "p75-act5", "p75-act5@R", "p75-act7", "p75-act7@R", "p75-act8", "p75-act9", "p75-act9@R", "p76-act1", "p76-act1@R", "p76-act2", "p76-act4", "p77-act5", "p77-act6", "p77-act6@R", "p77-act8", "p77-act9", "p77-act9@R", "p78-act1", "p78-act1@R", "p78-act2", "p78-act3", "p78-act3@R", "p78-act4", "p79-act5", "p79-act6", "p79-act7", "p79-act8", "p80-act1", "p80-act2", "p81-act1", "p81-act2", "p81-act2@R", "p81-act3", "p81-act3@R", "p81-act4"]},
+          {"palabra": "en", "fuentes": ["cuadro@p75#2", "p72-act1", "p72-act2", "p73-act3", "p73-act8", "p74-act2", "p75-act4", "p75-act5", "p75-act5@R", "p75-act7", "p75-act9", "p76-act1", "p76-act4", "p77-act8", "p77-act9@R", "p78-act2", "p78-act4", "p79-act5", "p79-act5@R", "p79-act6", "p79-act7", "p79-act8", "p80-act1", "p80-act1@R", "p80-act2", "p81-act1", "p81-act2", "p81-act2@R"]},
+          {"palabra": "por", "fuentes": ["cuadro@p75#2", "p74-act1", "p74-act2", "p75-act4", "p75-act4@R", "p75-act5", "p75-act5@R", "p75-act7", "p75-act7@R", "p76-act1", "p77-act9@R", "p78-act1", "p78-act3", "p80-act1", "p80-act1@R", "p81-act1", "p81-act2", "p81-act2@R", "p81-act3@R", "p81-act6"]}
+        ],
+        "fuentes": [
+          "cuadro@p75#2",
+          "p73-act3",
+          "p73-act4",
+          "p73-act8",
+          "p73-act8@R",
+          "p74-act1",
+          "p74-act2",
+          "p74-act3",
+          "p74-act3@R",
+          "p75-act4",
+          "p75-act4@R",
+          "p75-act5",
+          "p75-act5@R",
+          "p75-act6",
+          "p75-act7",
+          "p75-act7@R",
+          "p75-act8",
+          "p75-act8@R",
+          "p75-act9",
+          "p75-act9@R",
+          "p76-act1",
+          "p76-act1@R",
+          "p76-act3",
+          "p76-act3@R",
+          "p76-act4",
+          "p77-act11",
+          "p77-act12",
+          "p77-act12@R",
+          "p77-act5",
+          "p77-act6",
+          "p77-act6@R",
+          "p77-act8",
+          "p77-act8@R",
+          "p77-act9",
+          "p77-act9@R",
+          "p78-act1",
+          "p78-act1@R",
+          "p78-act3",
+          "p78-act3@R",
+          "p78-act4",
+          "p79-act5",
+          "p79-act6",
+          "p79-act8",
+          "p80-act1",
+          "p81-act1",
+          "p81-act2",
+          "p81-act2@R",
+          "p81-act3",
+          "p81-act3@R",
+          "p81-act6",
+          "p76-act2",
+          "p79-act7",
+          "p72-act2",
+          "p73-act4@R",
+          "p73-act5",
+          "p78-act2",
+          "p80-act2",
+          "p81-act4",
+          "p72-act1",
+          "p79-act5@R",
+          "p80-act1@R"
+        ],
+        "descripcion": {
+          "U7": "PCIC A1 §6 Preposiciones — a, al, de, en, por. Principal en U7: se trabajan los usos básicos (movimiento, origen, lugar, momento del día) en selección múltiple (p75-act4), cloze en texto (p75-act5) y cuadro 'Uso de las preposiciones' con ejemplos prototípicos (Lucía va a clase / Lucía juega en el polideportivo / Lucía sale de su casa / Lucía va a la biblioteca por la tarde). Apoya transversalmente la sección de Comunicación 'hablar de hábitos diarios' (¿A qué hora? Por la mañana / por la noche)."
+        }
+      }
+    },
+    "recurrente": {
+      "Hay": {
+        "items": [
+          {"palabra": "Hay", "fuentes": ["p78-act1", "p78-act3@R", "p80-act2"]}
+        ],
+        "fuentes": ["p78-act1", "p78-act3@R", "p80-act2"],
+        "descripcion": { "U7": "Recurrente desde U4 (principal). En U7 reaparece puntualmente en p80-act2 ('¿Hay un zoo en tu ciudad?') para introducir la conversación sobre zoos. Cumple §5.1.1: posición canónica U4 y valor pedagógico claro (existencia)." }
+      },
+      "Interrogativos": {
+        "items": [
+          {"palabra": "qué", "fuentes": ["p72-act2", "p73-act7", "p73-act8", "p74-act1", "p74-act2", "p75-act4", "p75-act6", "p75-act7", "p75-act7@R", "p75-act8", "p75-act9", "p75-act9@R", "p76-act1", "p76-act1@R", "p76-act3", "p76-act3@R", "p76-act4", "p77-act10", "p77-act11", "p77-act12", "p77-act12@R", "p77-act5", "p77-act6", "p77-act6@R", "p77-act9", "p78-act1", "p79-act6", "p79-act7", "p79-act8", "p80-act1", "p81-act1", "p81-act3", "p81-act3@R", "p81-act4"]},
+          {"palabra": "cuándo", "fuentes": ["p73-act3", "p81-act1", "p81-act6"]},
+          {"palabra": "dónde", "fuentes": ["p75-act4", "p75-act8", "p77-act12", "p77-act12@R", "p77-act6", "p77-act6@R", "p79-act6"]},
+          {"palabra": "a qué hora", "fuentes": ["p74-act1", "p74-act2", "p75-act7", "p75-act7@R", "p75-act9", "p75-act9@R", "p76-act1", "p76-act1@R", "p76-act3@R", "p76-act4", "p77-act11", "p77-act6", "p77-act6@R", "p81-act1", "p81-act3", "p81-act3@R"]},
+          {"palabra": "cómo", "fuentes": ["p75-act8", "p75-act9", "p75-act9@R", "p77-act8", "p79-act6", "p79-act7", "p80-act2"]},
+          {"palabra": "cuál", "fuentes": ["p79-act6", "p80-act1"]}
+        ],
+        "fuentes": [
+          "p72-act2",
+          "p73-act7",
+          "p73-act8",
+          "p74-act1",
+          "p74-act2",
+          "p75-act4",
+          "p75-act6",
+          "p75-act7",
+          "p75-act7@R",
+          "p75-act8",
+          "p75-act9",
+          "p75-act9@R",
+          "p76-act1",
+          "p76-act1@R",
+          "p76-act3",
+          "p76-act3@R",
+          "p76-act4",
+          "p77-act10",
+          "p77-act11",
+          "p77-act12",
+          "p77-act12@R",
+          "p77-act5",
+          "p77-act6",
+          "p77-act6@R",
+          "p77-act9",
+          "p78-act1",
+          "p79-act6",
+          "p79-act7",
+          "p79-act8",
+          "p80-act1",
+          "p81-act1",
+          "p81-act3",
+          "p81-act3@R",
+          "p81-act4",
+          "p73-act3",
+          "p81-act6",
+          "p77-act8",
+          "p80-act2"
+        ],
+        "descripcion": {
+          "U7": "Recurrente desde U3 (principal). En U7 reaparece intensivamente como soporte de la función comunicativa 'hablar de hábitos diarios': ¿A qué hora te levantas/te acuestas/sales? (p76-act01, p76-act03, p77-act06), ¿Cuándo es tu cumpleaños? (p73-act3), ¿Qué desayunas/comes/haces? (p77-act06, p77-act12), ¿Dónde comes? (p77-act06), ¿Cómo te llamas?/¿Cómo vas? (p75-act08). Cumple §5.1.1: frecuencia alta, posición canónica U3, valor pedagógico de soporte de hábitos."
+        }
+      }
+    }
+  },
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {
+      "Signos de puntuación": {
+        "items": [
+          {"palabra": ".", "fuentes": ["p75-act8", "p75-act9"]},
+          {"palabra": ",", "fuentes": ["p75-act8", "p75-act9"]},
+          {"palabra": "¿?", "fuentes": ["p75-act8", "p75-act9", "p77-act12"]},
+          {"palabra": "¡!", "fuentes": ["p75-act8", "p75-act9", "p77-act12"]}
+        ],
+        "fuentes": ["p75-act8", "p75-act9", "p77-act12"],
+        "descripcion": {
+          "U7": "PCIC A1 Ortografía / Signos de puntuación. Principal en U7: se introduce la identificación y colocación de signos básicos en p75-act8 (relacionar frases-modelo con su signo) y p75-act9 (escribir los signos que faltan). Vuelve en p77-act12 integrada con la Entonación interrogativa y exclamativa. El registry declara subcategorías ¿? y ¡! como ortografía nuclear A1; punto y coma se documentan aquí por aparición material en p75-act8 aunque el _pcic_ref del registry no las liste explícitamente (deuda: extender subcategorías del registry o reclasificar). El índice del libro lista 'Signos de puntuación' bajo Gramática; se sigue el registry y se sitúa en pron/orto."
+        }
+      },
+      "Mayúsculas": {
+        "items": [
+          {"palabra": "mayúscula", "fuentes": ["p75-act8", "p75-act9"]}
+        ],
+        "fuentes": ["p75-act8", "p75-act9"],
+        "descripcion": {
+          "U7": "PCIC A1 Ortografía / Mayúsculas. Principal en U7: identificación de la mayúscula como recurso ortográfico en p75-act8 (etiqueta 'c) Mayúscula' relacionada con 'A mí me gustan las tortugas.') y p75-act9 (frases sin signos donde el alumno debe restaurar también la inicial mayúscula tras punto: 'Pablo,', 'Cristina,'). Primera aparición de la categoría en NC1: en v10.161 se separa de 'Signos de puntuación' (donde la extracción inicial la había mezclado) para respetar el registry canónico, que sitúa 'Mayúsculas' como categoría independiente con _apariciones declarado en U2 (uso general). Considerar actualizar _apariciones del registry para reflejar la entrada U7 (identificación)."
+        }
+      },
+      "Acentuación": {
+        "items": [
+          {"palabra": "tilde", "fuentes": ["p75-act8"]}
+        ],
+        "fuentes": ["p75-act8"],
+        "descripcion": {
+          "U7": "PCIC A1 Pronunciación §3 La sílaba y el acento + ortografía (acentuación gráfica). Principal en U7 a nivel de identificación: p75-act8 introduce 'Tilde / Acento' como etiqueta a relacionar con 'A qué hora te levantas?' / 'Cómo te llamas?' (frases con palabras tónicas marcadas). El desarrollo pleno (tipos agudas/llanas/esdrújulas) está en U9 según _apariciones del registry. En v10.161 se separa de 'Signos de puntuación' (mezcla original) para respetar el registry. Considerar actualizar _apariciones del registry para añadir U7 (identificación inicial)."
+        }
+      },
+      "Entonación": {
+        "items": [
+          {"palabra": "Entonación interrogativa", "fuentes": ["p77-act11", "p77-act12", "p77-act13"]},
+          {"palabra": "Entonación exclamativa", "fuentes": ["p77-act11", "p77-act12", "p77-act13"]}
+        ],
+        "fuentes": ["p77-act11", "p77-act12", "p77-act13"],
+        "descripcion": {
+          "U7": "PCIC A1 Pronunciación / Entonación — interrogativa y exclamativa. Principal en U7: se trabaja la entonación de oraciones interrogativas (¿A qué hora te levantas?) y exclamativas (¡Mira, un león! / ¡Vamos!) en escuchar y repetir (p77-act11), discriminación auditiva (p77-act12: escribir ¿?/¡! según entonación) y repetición tras corrección (p77-act13). Va integrada con 'Signos de puntuación' como vehículo gráfico de la entonación."
+        }
+      }
+    },
+    "recurrente": {}
+  },
   "secciones": {
-    "vocabulario":  { "paginas": [72, 73], "actividades_ids": ["U7-p72-act01", "U7-p72-act02", "U7-p73-act03", "U7-p73-act04", "U7-p73-act05", "U7-p73-act06", "U7-p73-act07", "U7-p73-act08"] },
-    "gramatica":    { "paginas": [74, 75], "actividades_ids": ["U7-p74-act01", "U7-p74-act02", "U7-p74-act03", "U7-p75-act04", "U7-p75-act05", "U7-p75-act06", "U7-p75-act07", "U7-p75-act08", "U7-p75-act09"] },
-    "comunicacion": { "paginas": [76, 77], "actividades_ids": ["U7-p76-act01", "U7-p76-act02", "U7-p76-act03", "U7-p76-act04", "U7-p77-act05", "U7-p77-act06", "U7-p77-act07", "U7-p77-act08", "U7-p77-act09", "U7-p77-act10", "U7-p77-act11", "U7-p77-act12", "U7-p77-act13"] },
-    "destrezas":    { "paginas": [78, 79], "actividades_ids": ["U7-p78-act01", "U7-p78-act02", "U7-p78-act03", "U7-p78-act04", "U7-p79-act05", "U7-p79-act06", "U7-p79-act07", "U7-p79-act08"] },
-    "cultura":      { "paginas": [80], "actividades_ids": ["U7-p80-act01", "U7-p80-act02"] },
-    "evaluacion":   { "paginas": [81], "actividades_ids": ["U7-p81-act01", "U7-p81-act02", "U7-p81-act03", "U7-p81-act04", "U7-p81-act05", "U7-p81-act06"] },
-    "reflexion":    { "paginas": [], "actividades_ids": [] }
+    "vocabulario": {
+      "paginas": [
+        72,
+        73
+      ],
+      "actividades_ids": ["U7-p72-act01", "U7-p72-act02", "U7-p73-act03", "U7-p73-act04", "U7-p73-act05", "U7-p73-act06", "U7-p73-act07", "U7-p73-act08"]
+    },
+    "gramatica": {
+      "paginas": [
+        74,
+        75
+      ],
+      "actividades_ids": ["U7-p74-act01", "U7-p74-act02", "U7-p74-act03", "U7-p75-act04", "U7-p75-act05", "U7-p75-act06", "U7-p75-act07", "U7-p75-act08", "U7-p75-act09"]
+    },
+    "comunicacion": {
+      "paginas": [
+        76,
+        77
+      ],
+      "actividades_ids": ["U7-p76-act01", "U7-p76-act02", "U7-p76-act03", "U7-p76-act04", "U7-p77-act05", "U7-p77-act06", "U7-p77-act07", "U7-p77-act08", "U7-p77-act09", "U7-p77-act10", "U7-p77-act11", "U7-p77-act12", "U7-p77-act13"]
+    },
+    "destrezas": {
+      "paginas": [
+        78,
+        79
+      ],
+      "actividades_ids": ["U7-p78-act01", "U7-p78-act02", "U7-p78-act03", "U7-p78-act04", "U7-p79-act05", "U7-p79-act06", "U7-p79-act07", "U7-p79-act08"]
+    },
+    "cultura": {
+      "paginas": [
+        80
+      ],
+      "actividades_ids": ["U7-p80-act01", "U7-p80-act02"]
+    },
+    "evaluacion": {
+      "paginas": [
+        81
+      ],
+      "actividades_ids": ["U7-p81-act01", "U7-p81-act02", "U7-p81-act03", "U7-p81-act04", "U7-p81-act05", "U7-p81-act06"]
+    },
+    "reflexion": {
+      "paginas": [],
+      "actividades_ids": []
+    }
   },
   "autoevaluacion": {
     "pagina": 81,
@@ -51,6 +576,16 @@
     "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
     "emoticonos": true
   },
+  "_decisiones_ia": [
+    "Sesión v10.161: extracción canónica de U7 desde JSON legacy + PDF aplicando shape post-v10.153 (4 listas tipadas + 4 bloques consolidados + sufijo @R + canon registries vigentes).",
+    "D-Signos-de-puntuacion-en-pron-orto (autónoma, con precedente): el índice del libro lista 'Signos de puntuación' bajo Gramática, pero el registry canónico la sitúa en 'pronunciacion-ortografia-canonica.json'. Se sigue el registry: la categoría figura como principal en 'pronunciacion_ortografia_consolidada' (no en 'gramatica_consolidada'). Precedente: U6 'Letras homófonas' también en pron-orto aunque el índice lo presentara como contenido gramatical.",
+    "D-Verbos-reflexivos-en-tyv (autónoma): 'Verbos reflexivos' del índice gramatical NO se codifica como categoría en 'gramatica_consolidada' (no existe en gramatica-canonica.json). Su tratamiento canónico vive en 'tiempos_y_verbos_consolidado' vía 'tipo_de_verbo: [\"reflexivo\"]' del registry para cada lema (ducharse, acostarse, levantarse, lavarse, vestirse, ponerse, sentarse, bañarse, afeitarse, quedarse, despertarse).",
+    "D-Oposicion-salir-volver-en-tyv (autónoma): 'Oposición salir / volver' del índice gramatical NO genera categoría gramatical canónica nueva. Ambos lemas viven como entradas en 'tiempos_y_verbos_consolidado'. El contraste pedagógico está implícito en su co-presencia con el mismo tiempo (Presente) y patrón irregular (cuadro de p75 'Verbos salir y volver').",
+    "D-Verbos-no-canonicos-excluidos (autónoma, regla §5.2): los verbos que aparecen en U7 pero no están en 'verbos-canonicos.json' (desayunar, cenar, ver, pasar, limpiar, alimentarse, moverse, ayudar, conocer, terminar, empezar, vivir, tomar, descubrir, aprender, etc.) se tratan como input incidental y NO entran en 'tiempos_y_verbos' de las actividades. Sus formas aparecen como léxico en los textos pero no se codifican como paradigma trabajado.",
+    "D-Entonacion-como-principal-U7 (autónoma): el índice de Comunicación dice 'Entonación interrogativa y exclamativa'. La categoría canónica 'Entonación' (registry pron/orto) entra como principal en 'pronunciacion_ortografia_consolidada' con items 'Entonación interrogativa' y 'Entonación exclamativa' (etiquetas editoriales categoría B §5.10). Sustenta fuentes p77-act11, p77-act12, p77-act13.",
+    "D-Animales-amplios (autónoma, regla §5.10 Cat A): los animales de los textos de Destrezas y Cultura (mamíferos, ciervos, cebras, anfibios, reptiles, ranas, tortugas, cocodrilos, víboras, pitones, boas, aves, palomas, loros, cacatúas, orangután, yegua, potro) se incluyen como ampliación del campo 'Animales domésticos y salvajes' por aparición material literal en los textos (p73-act8, p78-act1, p78-act2, p79-act5).",
+    "Rectificación v10.161 (revisor): la extracción inicial agrupaba 6 items (., ',', ¿?, ¡!, tilde, mayúscula) bajo 'Signos de puntuación' siguiendo la presentación pedagógica de p75-act8, pero el registry canónico separa esas piezas en 3 categorías distintas: 'Signos de puntuación' (subcategorías ¿?, ¡!), 'Mayúsculas' (uso general), 'Acentuación' (acentuación gráfica). Aplicado split canónico: tilde → 'Acentuación' (nueva como principal en U7, identificación inicial; pleno desarrollo de tipos en U9 por _apariciones del registry); mayúscula → 'Mayúsculas' (nueva como principal en U7); punto, coma, ¿?, ¡! quedan en 'Signos de puntuación'. Refs de actividad p75-act8 y p75-act9 actualizadas. Deuda registry: (a) extender _apariciones de 'Acentuación' y 'Mayúsculas' para reflejar U7; (b) decidir si el _pcic_ref de 'Signos de puntuación' debe ampliarse para listar punto y coma como subcategorías (hoy solo declara ¿? y ¡!)."
+  ],
   "paginas_detalle": [
     {
       "pagina": 72,
@@ -63,8 +598,10 @@
           "destreza": ["comprension_auditiva", "expresion_escrita", "expresion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escribe los meses del año en el orden correcto. Después, escucha, comprueba y repite.",
-          "contenido_linguistico": ["Meses del año"],
-          "campo_semantico": "Meses del año",
+          "vocabulario": ["Meses del año"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 72 },
           "imagen": { "presente": true, "descripcion": "12 calendarios mensuales con fotografías de paisajes estacionales, numerados del 1 al 12, con cuadrícula L M X J V S D." },
           "video": { "presente": false },
@@ -80,15 +617,15 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿En qué meses son las diferentes estaciones en tu país?",
-          "contenido_linguistico": ["Meses del año", "Estaciones"],
-          "campo_semantico": "Meses del año",
+          "vocabulario": ["Meses del año"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "4 fotografías de paisajes con etiquetas: primavera, verano, otoño, invierno." },
           "video": { "presente": false },
           "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "Los meses de verano son…"
-          }
+          "datos": { "ejemplo_libro": "Los meses de verano son…" }
         }
       ],
       "cuadros": [
@@ -97,16 +634,12 @@
           "titulo": "Recuerda",
           "contenido": {
             "tipo": "lista_abreviaciones",
-            "filas": [
-              "L > lunes",
-              "M > martes",
-              "X > miércoles",
-              "J > jueves",
-              "V > viernes",
-              "S > sábado",
-              "D > domingo"
-            ]
-          }
+            "filas": ["L > lunes", "M > martes", "X > miércoles", "J > jueves", "V > viernes", "S > sábado", "D > domingo"]
+          },
+          "vocabulario": ["Días de la semana"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -121,8 +654,10 @@
           "destreza": ["interaccion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Pregúntale a cuatro compañeros, como en el ejemplo, y completa la tabla.",
-          "contenido_linguistico": ["Meses del año", "Cumpleaños"],
-          "campo_semantico": "Meses del año",
+          "vocabulario": ["Meses del año"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -139,8 +674,10 @@
           "destreza": ["comprension_auditiva"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha a Elena hablando de las fiestas españolas y escribe las fechas que oyes.",
-          "contenido_linguistico": ["Meses del año", "Fechas", "Fiestas españolas"],
-          "campo_semantico": "Meses del año",
+          "vocabulario": ["Meses del año"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 73 },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -154,15 +691,7 @@
             "Cumpleaños de Elena: 12 de diciembre"
           ],
           "datos": {
-            "items_libro": [
-              "Año Nuevo",
-              "Reyes Magos",
-              "Día del Padre",
-              "Día de la Madre",
-              "Fiesta Nacional",
-              "Navidad",
-              "Cumpleaños de Elena"
-            ]
+            "items_libro": ["Año Nuevo", "Reyes Magos", "Día del Padre", "Día de la Madre", "Fiesta Nacional", "Navidad", "Cumpleaños de Elena"]
           }
         },
         {
@@ -172,8 +701,10 @@
           "destreza": ["comprension_auditiva", "expresion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y repite los nombres de los siguientes animales.",
-          "contenido_linguistico": ["Animales domésticos y salvajes"],
-          "campo_semantico": "Animales",
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 74 },
           "imagen": { "presente": true, "descripcion": "11 fotografías numeradas de animales: 1 vaca, 2 oveja, 3 león, 4 elefante, 5 serpiente, 6 delfín, 7 gallina, 8 cerdo, 9 mono, 10 tiburón, 11 caballo." },
           "video": { "presente": false },
@@ -189,15 +720,14 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "Completa la tabla con los animales del ejercicio anterior. Después, añade otros animales que tú conozcas.",
-          "contenido_linguistico": ["Animales domésticos y salvajes"],
-          "campo_semantico": "Animales",
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "Animales domésticos: vaca, oveja, gallina, cerdo, caballo",
-            "Animales salvajes: león, elefante, serpiente, delfín, mono, tiburón"
-          ],
+          "respuestas": ["Animales domésticos: vaca, oveja, gallina, cerdo, caballo", "Animales salvajes: león, elefante, serpiente, delfín, mono, tiburón"],
           "datos": {
             "items_libro": ["vaca", "oveja", "león", "elefante", "serpiente", "delfín", "gallina", "cerdo", "mono", "tiburón", "caballo"],
             "categorias": ["Animales domésticos", "Animales salvajes"],
@@ -211,12 +741,15 @@
           "destreza": ["comprension_auditiva"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿Qué animales escuchas?",
-          "contenido_linguistico": ["Animales domésticos y salvajes"],
-          "campo_semantico": "Animales",
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 75 },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. vaca", "2. oveja", "3. cerdo", "4. gallina"]
+          "respuestas": ["1. vaca", "2. oveja", "3. cerdo", "4. gallina"],
+          "datos": {}
         },
         {
           "id": "U7-p73-act08",
@@ -225,7 +758,17 @@
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Lee y escucha el texto. Después, contesta a las preguntas del test.",
-          "contenido_linguistico": ["Comprensión lectora: El nacimiento de un potro"],
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [
+            {"lema": "lavarse", "tiempo": "Presente", "formas_trabajadas": ["lava"]},
+            {"lema": "despertarse", "tiempo": "Presente", "formas_trabajadas": ["se despierta"]},
+            {"lema": "ponerse", "tiempo": "Presente", "formas_trabajadas": ["se pone"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duerme"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["come"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juega"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 76 },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -235,56 +778,33 @@
             "preguntas_opciones": [
               {
                 "pregunta": "El potro se pone de pie:",
-                "opciones": {
-                  "a": "media hora después de nacer.",
-                  "b": "dos horas después de nacer.",
-                  "c": "una hora después de nacer."
-                }
+                "opciones": { "a": "media hora después de nacer.", "b": "dos horas después de nacer.", "c": "una hora después de nacer." }
               },
               {
                 "pregunta": "Sus patas son:",
-                "opciones": {
-                  "a": "gruesas y cortas.",
-                  "b": "largas y gruesas.",
-                  "c": "delgadas y largas."
-                }
+                "opciones": { "a": "gruesas y cortas.", "b": "largas y gruesas.", "c": "delgadas y largas." }
               },
               {
                 "pregunta": "El primer día de su vida, el potro:",
-                "opciones": {
-                  "a": "mama y duerme.",
-                  "b": "mama y corre.",
-                  "c": "come y salta."
-                }
+                "opciones": { "a": "mama y duerme.", "b": "mama y corre.", "c": "come y salta." }
               },
               {
                 "pregunta": "Al principio, el potro mama:",
-                "opciones": {
-                  "a": "10 litros de leche diarios.",
-                  "b": "20 litros de leche diarios.",
-                  "c": "5 litros de leche diarios."
-                }
+                "opciones": { "a": "10 litros de leche diarios.", "b": "20 litros de leche diarios.", "c": "5 litros de leche diarios." }
               },
               {
                 "pregunta": "Los primeros meses, el potro come:",
-                "opciones": {
-                  "a": "solo leche.",
-                  "b": "leche y hierba.",
-                  "c": "solo hierba."
-                }
+                "opciones": { "a": "solo leche.", "b": "leche y hierba.", "c": "solo hierba." }
               },
               {
                 "pregunta": "Rayo juega en la pradera con:",
-                "opciones": {
-                  "a": "la yegua.",
-                  "b": "otros potros.",
-                  "c": "su padre."
-                }
+                "opciones": { "a": "la yegua.", "b": "otros potros.", "c": "su padre." }
               }
             ]
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 74,
@@ -297,22 +817,21 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa con la forma correcta del verbo.",
-          "contenido_linguistico": ["Verbos reflexivos: presente"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ducharse", "tiempo": "Presente", "formas_trabajadas": ["se ducha", "te duchas"]},
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["se levantan", "te levantas"]},
+            {"lema": "lavarse", "tiempo": "Presente", "formas_trabajadas": ["me lavo", "nos lavamos"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["os acostáis"]},
+            {"lema": "ponerse", "tiempo": "Presente", "formas_trabajadas": ["te pones"]},
+            {"lema": "vestirse", "tiempo": "Presente", "formas_trabajadas": ["se viste"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. se ducha",
-            "2. se levantan",
-            "3. me lavo",
-            "4. te duchas",
-            "5. se ducha",
-            "6. os acostáis",
-            "7. nos lavamos",
-            "8. te pones",
-            "9. te levantas",
-            "10. se viste"
-          ],
+          "respuestas": ["1. se ducha", "2. se levantan", "3. me lavo", "4. te duchas", "5. se ducha", "6. os acostáis", "7. nos lavamos", "8. te pones", "9. te levantas", "10. se viste"],
           "datos": {
             "items_libro": [
               "1 Juan (ducharse) _____ todas las mañanas.",
@@ -335,22 +854,23 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa los huecos con uno de los verbos del recuadro.",
-          "contenido_linguistico": ["Verbos reflexivos: presente"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "bañarse", "tiempo": "Presente", "formas_trabajadas": ["me baño", "se bañan"]},
+            {"lema": "lavarse", "tiempo": "Presente", "formas_trabajadas": ["Te lavas", "se lava"]},
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["os levantáis"]},
+            {"lema": "sentarse", "tiempo": "Presente", "formas_trabajadas": ["se sienta"]},
+            {"lema": "ducharse", "tiempo": "Presente", "formas_trabajadas": ["nos duchamos"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["se acuestan"]},
+            {"lema": "vestirse", "tiempo": "Presente", "formas_trabajadas": ["se viste"]},
+            {"lema": "ponerse", "tiempo": "Presente", "formas_trabajadas": ["me pongo"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. me baño",
-            "2. Te lavas",
-            "3. os levantáis",
-            "4. se sienta",
-            "5. nos duchamos",
-            "6. se acuestan",
-            "7. se viste",
-            "8. me pongo",
-            "9. se lava",
-            "10. se bañan"
-          ],
+          "respuestas": ["1. me baño", "2. Te lavas", "3. os levantáis", "4. se sienta", "5. nos duchamos", "6. se acuestan", "7. se viste", "8. me pongo", "9. se lava", "10. se bañan"],
           "datos": {
             "palabras_recuadro": ["levantarse", "lavarse (x2)", "acostarse", "sentarse", "ponerse", "ducharse", "bañarse (x2)", "vestirse"],
             "items_libro": [
@@ -374,26 +894,24 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Escribe lo que hacen estas personas.",
-          "contenido_linguistico": ["Verbos reflexivos: presente"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ducharse", "tiempo": "Presente", "formas_trabajadas": ["se ducha"]},
+            {"lema": "vestirse", "tiempo": "Presente", "formas_trabajadas": ["se viste"]},
+            {"lema": "afeitarse", "tiempo": "Presente", "formas_trabajadas": ["se afeita"]},
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["se levantan"]},
+            {"lema": "lavarse", "tiempo": "Presente", "formas_trabajadas": ["nos lavamos"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["me acuesto"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "Fotografías de personas realizando acciones cotidianas con pie de foto indicando el sujeto y el verbo reflexivo." },
           "video": { "presente": false },
-          "respuestas": [
-            "1. El niño se viste.",
-            "2. Mi padre se afeita.",
-            "3. Ellos se levantan a las ocho.",
-            "4. Nosotros nos lavamos las manos.",
-            "5. Yo me acuesto tarde."
-          ],
+          "respuestas": ["1. El niño se viste.", "2. Mi padre se afeita.", "3. Ellos se levantan a las ocho.", "4. Nosotros nos lavamos las manos.", "5. Yo me acuesto tarde."],
           "datos": {
             "ejemplo_libro": "mi madre / ducharse → Mi madre se ducha.",
-            "items_libro": [
-              "1 el niño / vestirse",
-              "2 mi padre / afeitarse",
-              "3 ellos / levantarse / a las ocho",
-              "4 nosotros / lavarse / las manos",
-              "5 yo / acostarse / tarde"
-            ]
+            "items_libro": ["1 el niño / vestirse", "2 mi padre / afeitarse", "3 ellos / levantarse / a las ocho", "4 nosotros / lavarse / las manos", "5 yo / acostarse / tarde"]
           }
         }
       ],
@@ -405,14 +923,24 @@
             "tipo": "tabla_conjugacion",
             "verbos": ["ducharse", "acostarse", "sentarse", "ponerse", "vestirse"],
             "conjugacion": {
-              "yo":               ["me ducho",    "me acuesto",    "me siento",    "me pongo",    "me visto"],
-              "tú":               ["te duchas",   "te acuestas",   "te sientas",   "te pones",    "te vistes"],
-              "él/ella/Ud.":      ["se ducha",    "se acuesta",    "se sienta",    "se pone",     "se viste"],
-              "nosotros/-as":     ["nos duchamos","nos acostamos", "nos sentamos", "nos ponemos", "nos vestimos"],
-              "vosotros/-as":     ["os ducháis",  "os acostáis",   "os sentáis",   "os ponéis",   "os vestís"],
-              "ellos/ellas/Uds.": ["se duchan",   "se acuestan",   "se sientan",   "se ponen",    "se visten"]
+              "yo": ["me ducho", "me acuesto", "me siento", "me pongo", "me visto"],
+              "tú": ["te duchas", "te acuestas", "te sientas", "te pones", "te vistes"],
+              "él/ella/Ud.": ["se ducha", "se acuesta", "se sienta", "se pone", "se viste"],
+              "nosotros/-as": ["nos duchamos", "nos acostamos", "nos sentamos", "nos ponemos", "nos vestimos"],
+              "vosotros/-as": ["os ducháis", "os acostáis", "os sentáis", "os ponéis", "os vestís"],
+              "ellos/ellas/Uds.": ["se duchan", "se acuestan", "se sientan", "se ponen", "se visten"]
             }
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ducharse", "tiempo": "Presente", "formas_trabajadas": ["me ducho", "te duchas", "se ducha", "nos duchamos", "os ducháis", "se duchan"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["me acuesto", "te acuestas", "se acuesta", "nos acostamos", "os acostáis", "se acuestan"]},
+            {"lema": "sentarse", "tiempo": "Presente", "formas_trabajadas": ["me siento", "te sientas", "se sienta", "nos sentamos", "os sentáis", "se sientan"]},
+            {"lema": "ponerse", "tiempo": "Presente", "formas_trabajadas": ["me pongo", "te pones", "se pone", "nos ponemos", "os ponéis", "se ponen"]},
+            {"lema": "vestirse", "tiempo": "Presente", "formas_trabajadas": ["me visto", "te vistes", "se viste", "nos vestimos", "os vestís", "se visten"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -427,20 +955,20 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Señala la preposición adecuada.",
-          "contenido_linguistico": ["Preposiciones: a, de, por, en"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["se levanta", "te levantas"]},
+            {"lema": "afeitarse", "tiempo": "Presente", "formas_trabajadas": ["se afeita"]},
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["salir"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["vas"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["vienes"]}
+          ],
+          "gramatica": ["Preposiciones"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. a / de",
-            "2. por",
-            "3. por",
-            "4. por",
-            "5. al",
-            "6. A",
-            "7. A",
-            "8. De"
-          ],
+          "respuestas": ["1. a / de", "2. por", "3. por", "4. por", "5. al", "6. A", "7. A", "8. De"],
           "datos": {
             "items_libro": [
               "1 Julieta se levanta a / de las seis de / a la mañana.",
@@ -461,27 +989,29 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa los huecos con la palabra correcta.",
-          "contenido_linguistico": ["Preposiciones: a, al, de, en, por"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["me levanto"]},
+            {"lema": "llamar", "tiempo": "Presente", "formas_trabajadas": ["llamo"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["voy", "vamos"]},
+            {"lema": "llegar", "tiempo": "Presente", "formas_trabajadas": ["Llegamos"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["jugamos"]},
+            {"lema": "volver", "tiempo": "Presente", "formas_trabajadas": ["Vuelvo"]},
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["salgo"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["vienen"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estamos"]}
+          ],
+          "gramatica": ["Preposiciones"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "[1] a",
-            "[2] al",
-            "[3] a",
-            "[4] de",
-            "[5] al",
-            "[6] a",
-            "[7] a",
-            "[8] Por",
-            "[9] a",
-            "[10] a",
-            "[11] Por",
-            "[12] en"
-          ],
+          "respuestas": ["[1] a", "[2] al", "[3] a", "[4] de", "[5] al", "[6] a", "[7] a", "[8] Por", "[9] a", "[10] a", "[11] Por", "[12] en"],
           "datos": {
             "palabras_recuadro": ["a", "al", "de", "en", "por"],
-            "items_libro": ["Los sábados me levanto pronto, llamo [1] mis amigos y voy [2] campo de fútbol. Llegamos allí [3] las once [4] la mañana y jugamos con el equipo del colegio. Después vamos [5] parque y vemos a otros amigos. Vuelvo [6] casa [7] las dos para comer con mi familia. [8] la tarde estudio dos o tres horas. Y [9] las 8 salgo para pasear a mi perro, Sam. Los domingos vienen [10] mi casa mis abuelos para comer. [11] la tarde toda la familia estamos [12] casa."]
+            "items_libro": [
+              "Los sábados me levanto pronto, llamo [1] mis amigos y voy [2] campo de fútbol. Llegamos allí [3] las once [4] la mañana y jugamos con el equipo del colegio. Después vamos [5] parque y vemos a otros amigos. Vuelvo [6] casa [7] las dos para comer con mi familia. [8] la tarde estudio dos o tres horas. Y [9] las 8 salgo para pasear a mi perro, Sam. Los domingos vienen [10] mi casa mis abuelos para comer. [11] la tarde toda la familia estamos [12] casa."
+            ]
           }
         },
         {
@@ -491,7 +1021,25 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Escribe a qué infinitivos pertenecen las siguientes formas verbales.",
-          "contenido_linguistico": ["Verbos reflexivos y de movimiento: infinitivo"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "llegar", "tiempo": "Infinitivo", "formas_trabajadas": ["llegar"]},
+            {"lema": "venir", "tiempo": "Infinitivo", "formas_trabajadas": ["venir"]},
+            {"lema": "jugar", "tiempo": "Infinitivo", "formas_trabajadas": ["jugar"]},
+            {"lema": "ir", "tiempo": "Infinitivo", "formas_trabajadas": ["ir"]},
+            {"lema": "volver", "tiempo": "Infinitivo", "formas_trabajadas": ["volver"]},
+            {"lema": "llamar", "tiempo": "Infinitivo", "formas_trabajadas": ["llamar"]},
+            {"lema": "salir", "tiempo": "Infinitivo", "formas_trabajadas": ["salir"]},
+            {"lema": "llegar", "tiempo": "Presente", "formas_trabajadas": ["llego"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["viene"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["jugamos"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["voy"]},
+            {"lema": "volver", "tiempo": "Presente", "formas_trabajadas": ["vuelvo"]},
+            {"lema": "llamar", "tiempo": "Presente", "formas_trabajadas": ["llamas"]},
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["salimos"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -508,7 +1056,19 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Construye frases, como en el ejemplo.",
-          "contenido_linguistico": ["Verbos reflexivos", "Verbos salir, volver, llegar, jugar"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ducharse", "tiempo": "Presente", "formas_trabajadas": ["se ducha"]},
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["salimos"]},
+            {"lema": "lavarse", "tiempo": "Presente", "formas_trabajadas": ["os laváis"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["me acuesto"]},
+            {"lema": "llegar", "tiempo": "Presente", "formas_trabajadas": ["llegan"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juegas"]},
+            {"lema": "volver", "tiempo": "Presente", "formas_trabajadas": ["vuelves"]},
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["se levanta"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -539,39 +1099,21 @@
           "numero": 8,
           "tipo": "relaciona",
           "destreza": ["comprension_lectora"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Relaciona los signos de puntuación con su nombre.",
-          "contenido_linguistico": ["Signos de puntuación"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Signos de puntuación", "Mayúsculas", "Acentuación"],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1 → d (Interrogación)",
-            "2 → c (Mayúscula)",
-            "3 → e (Admiración)",
-            "4 → b (Coma)",
-            "5 → a (Punto)",
-            "6 → f (Tilde / Acento)"
-          ],
+          "respuestas": ["1 → d (Interrogación)", "2 → c (Mayúscula)", "3 → e (Admiración)", "4 → b (Coma)", "5 → a (Punto)", "6 → f (Tilde / Acento)"],
           "datos": {
             "subtipo": "para_aprender",
             "columnas_relaciona": {
-              "izquierda": [
-                "1. ¿Dónde vives?",
-                "2. A mí me gustan las tortugas.",
-                "3. ¡Qué gato tan bonito!",
-                "4. Pablo, ven aquí.",
-                "5. Todos los días veo la tele.",
-                "6. ¿Cómo te llamas?"
-              ],
-              "derecha": [
-                "a) Punto",
-                "b) Coma",
-                "c) Mayúscula",
-                "d) Interrogación",
-                "e) Admiración",
-                "f) Tilde / Acento"
-              ]
+              "izquierda": ["1. ¿Dónde vives?", "2. A mí me gustan las tortugas.", "3. ¡Qué gato tan bonito!", "4. Pablo, ven aquí.", "5. Todos los días veo la tele.", "6. ¿Cómo te llamas?"],
+              "derecha": ["a) Punto", "b) Coma", "c) Mayúscula", "d) Interrogación", "e) Admiración", "f) Tilde / Acento"]
             }
           }
         },
@@ -580,30 +1122,19 @@
           "numero": 9,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["comprension_lectora", "expresion_escrita"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escribe los signos de puntuación que faltan en las siguientes frases.",
-          "contenido_linguistico": ["Signos de puntuación"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Signos de puntuación", "Mayúsculas"],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. ¡Estupendo!",
-            "2. ¿A qué hora sales de casa?",
-            "3. Hoy no quiero más helado.",
-            "4. ¿Qué tal?",
-            "5. Cristina, cierra la ventana.",
-            "6. ¿Cómo vas a clase?"
-          ],
+          "respuestas": ["1. ¡Estupendo!", "2. ¿A qué hora sales de casa?", "3. Hoy no quiero más helado.", "4. ¿Qué tal?", "5. Cristina, cierra la ventana.", "6. ¿Cómo vas a clase?"],
           "datos": {
             "subtipo": "para_aprender",
-            "items_libro": [
-              "1 Estupendo",
-              "2 A qué hora sales de casa",
-              "3 Hoy no quiero más helado",
-              "4 Qué tal",
-              "5 Cristina cierra la ventana",
-              "6 Cómo vas a clase"
-            ]
+            "items_libro": ["1 Estupendo", "2 A qué hora sales de casa", "3 Hoy no quiero más helado", "4 Qué tal", "5 Cristina cierra la ventana", "6 Cómo vas a clase"]
           }
         }
       ],
@@ -615,14 +1146,21 @@
             "tipo": "tabla_conjugacion",
             "verbos": ["salir", "volver"],
             "conjugacion": {
-              "yo":               ["salgo",   "vuelvo"],
-              "tú":               ["sales",   "vuelves"],
-              "él/ella/Ud.":      ["sale",    "vuelve"],
-              "nosotros/-as":     ["salimos", "volvemos"],
-              "vosotros/-as":     ["salís",   "volvéis"],
-              "ellos/ellas/Uds.": ["salen",   "vuelven"]
+              "yo": ["salgo", "vuelvo"],
+              "tú": ["sales", "vuelves"],
+              "él/ella/Ud.": ["sale", "vuelve"],
+              "nosotros/-as": ["salimos", "volvemos"],
+              "vosotros/-as": ["salís", "volvéis"],
+              "ellos/ellas/Uds.": ["salen", "vuelven"]
             }
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["salgo", "sales", "sale", "salimos", "salís", "salen"]},
+            {"lema": "volver", "tiempo": "Presente", "formas_trabajadas": ["vuelvo", "vuelves", "vuelve", "volvemos", "volvéis", "vuelven"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "tipo_cuadro": "gramatical",
@@ -635,7 +1173,17 @@
               "- De: Lucía sale de su casa. / Lucía viene de la piscina. / Lucía desayuna a las ocho de la mañana.",
               "- Por: Lucía va a la biblioteca por la tarde."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va"]},
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["se levanta"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juega"]},
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["sale"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["viene"]}
+          ],
+          "gramatica": ["Preposiciones"],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -650,20 +1198,28 @@
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "contenido_linguistico": ["Hablar de hábitos diarios", "Verbos reflexivos", "Salir / volver"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "llamar", "tiempo": "Presente", "formas_trabajadas": ["llamo"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tenemos", "tengo"]},
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hacemos"]},
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["salgo"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["voy"]},
+            {"lema": "ducharse", "tiempo": "Presente", "formas_trabajadas": ["me ducho"]},
+            {"lema": "vestirse", "tiempo": "Presente", "formas_trabajadas": ["me visto"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["estoy"]},
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["te levantas", "me levanto"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["te acuestas", "me acuesto"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duermes", "duermo"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["me gusta"]},
+            {"lema": "despertarse", "tiempo": "Presente", "formas_trabajadas": ["me despierto"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 77 },
           "imagen": { "presente": false },
           "video": { "presente": true },
-          "respuestas": [
-            "[1] tenemos",
-            "[2] tengo",
-            "[3] salgo",
-            "[4] a qué hora te acuestas",
-            "[5] me acuesto",
-            "[6] de la semana",
-            "[7] me levanto",
-            "[8] duermo"
-          ],
+          "respuestas": ["[1] tenemos", "[2] tengo", "[3] salgo", "[4] a qué hora te acuestas", "[5] me acuesto", "[6] de la semana", "[7] me levanto", "[8] duermo"],
           "datos": {
             "titulo_dialogo": "Por teléfono",
             "palabras_recuadro": ["a qué hora te acuestas", "tenemos", "duermo", "salgo", "de la semana", "me acuesto", "tengo", "me levanto"],
@@ -692,17 +1248,20 @@
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "¿Verdadero (V) o falso (F)?",
-          "contenido_linguistico": ["Comprensión del diálogo"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juegan"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duerme"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["se acuesta"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": ["1. F", "2. V", "3. F"],
           "datos": {
-            "items_libro": [
-              "1 Jorge y Pablo juegan al baloncesto.",
-              "2 Jorge duerme muchas horas.",
-              "3 Pablo se acuesta más tarde los fines de semana."
-            ]
+            "items_libro": ["1 Jorge y Pablo juegan al baloncesto.", "2 Jorge duerme muchas horas.", "3 Pablo se acuesta más tarde los fines de semana."]
           }
         },
         {
@@ -712,23 +1271,20 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Ordena las siguientes palabras para formar frases.",
-          "contenido_linguistico": ["Verbos reflexivos", "Orden de palabras"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tenemos", "tengo"]},
+            {"lema": "hacer", "tiempo": "Infinitivo", "formas_trabajadas": ["hacer"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["te acuestas", "me acuesto"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. Tenemos que hacer el trabajo para el lunes.",
-            "2. Yo mañana tengo baloncesto a las cinco.",
-            "3. ¿A qué hora te acuestas?",
-            "4. Los viernes me acuesto más tarde."
-          ],
+          "respuestas": ["1. Tenemos que hacer el trabajo para el lunes.", "2. Yo mañana tengo baloncesto a las cinco.", "3. ¿A qué hora te acuestas?", "4. Los viernes me acuesto más tarde."],
           "datos": {
-            "items_libro": [
-              "1 trabajo / hacer / para / el / que / tenemos / lunes / el",
-              "2 cinco / a / baloncesto / yo / tengo / las / mañana",
-              "3 ¿ / hora / a / te / qué / acuestas / ?",
-              "4 tarde / más / acuesto / me / los / viernes"
-            ]
+            "items_libro": ["1 trabajo / hacer / para / el / que / tenemos / lunes / el", "2 cinco / a / baloncesto / yo / tengo / las / mañana", "3 ¿ / hora / a / te / qué / acuestas / ?", "4 tarde / más / acuesto / me / los / viernes"]
           }
         },
         {
@@ -738,7 +1294,17 @@
           "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Pregúntale a tu compañero, como en el ejemplo. Utiliza los siguientes verbos.",
-          "contenido_linguistico": ["Hablar de hábitos diarios: horas y actividades"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["te levantas", "Me levanto"]},
+            {"lema": "salir", "tiempo": "Infinitivo", "formas_trabajadas": ["salir"]},
+            {"lema": "llegar", "tiempo": "Infinitivo", "formas_trabajadas": ["llegar"]},
+            {"lema": "hacer", "tiempo": "Infinitivo", "formas_trabajadas": ["hacer"]},
+            {"lema": "comer", "tiempo": "Infinitivo", "formas_trabajadas": ["comer"]},
+            {"lema": "acostarse", "tiempo": "Infinitivo", "formas_trabajadas": ["acostarse"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -748,7 +1314,8 @@
             "palabras_recuadro": ["salir de casa", "llegar a casa", "hacer los deberes", "comer", "acostarse"]
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 77,
@@ -761,7 +1328,16 @@
           "destreza": ["expresion_oral", "interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Trabaja con un compañero.",
-          "contenido_linguistico": ["Hablar de hábitos diarios", "Verbos reflexivos", "Salir / volver"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "levantarse", "tiempo": "Infinitivo", "formas_trabajadas": ["levantarse"]},
+            {"lema": "vestirse", "tiempo": "Infinitivo", "formas_trabajadas": ["vestirse"]},
+            {"lema": "acostarse", "tiempo": "Infinitivo", "formas_trabajadas": ["acostarse"]},
+            {"lema": "salir", "tiempo": "Infinitivo", "formas_trabajadas": ["salir"]},
+            {"lema": "volver", "tiempo": "Infinitivo", "formas_trabajadas": ["volver"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -783,19 +1359,26 @@
           "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Pregunta a tu compañero sobre su vida diaria.",
-          "contenido_linguistico": ["Preguntas sobre hábitos diarios", "Verbos reflexivos y de movimiento"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["te levantas"]},
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["sales"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes"]},
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["haces"]},
+            {"lema": "volver", "tiempo": "Presente", "formas_trabajadas": ["vuelves"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["te acuestas"]},
+            {"lema": "salir", "tiempo": "Infinitivo", "formas_trabajadas": ["salir"]},
+            {"lema": "comer", "tiempo": "Infinitivo", "formas_trabajadas": ["comer"]},
+            {"lema": "hacer", "tiempo": "Infinitivo", "formas_trabajadas": ["hacer"]},
+            {"lema": "volver", "tiempo": "Infinitivo", "formas_trabajadas": ["volver"]},
+            {"lema": "acostarse", "tiempo": "Infinitivo", "formas_trabajadas": ["acostarse"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "7 viñetas ilustradas con prompts de pregunta parcial (sujeto + verbo en infinitivo)." },
           "video": { "presente": false },
-          "respuestas": [
-            "1. ¿Qué desayunas?",
-            "2. ¿A qué hora sales de casa?",
-            "3. ¿Dónde comes?",
-            "4. ¿Qué haces después de clase?",
-            "5. ¿A qué hora vuelves a casa?",
-            "6. ¿A qué hora ves la televisión?",
-            "7. ¿A qué hora te acuestas?"
-          ],
+          "respuestas": ["1. ¿Qué desayunas?", "2. ¿A qué hora sales de casa?", "3. ¿Dónde comes?", "4. ¿Qué haces después de clase?", "5. ¿A qué hora vuelves a casa?", "6. ¿A qué hora ves la televisión?", "7. ¿A qué hora te acuestas?"],
           "datos": {
             "ejemplo_libro": "¿A qué hora / levantarse? → ¿A qué hora te levantas?",
             "items_libro": [
@@ -816,14 +1399,17 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Escribe un texto con la información que te ha dado tu compañero.",
-          "contenido_linguistico": ["Hablar de hábitos diarios", "Verbos reflexivos"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["se levanta"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
-          "datos": {
-            "texto_modelo": "Mi compañero se levanta…"
-          }
+          "datos": { "texto_modelo": "Mi compañero se levanta…" }
         },
         {
           "id": "U7-p77-act08",
@@ -832,29 +1418,21 @@
           "destreza": ["comprension_auditiva"],
           "enfoque": "transversal",
           "instruccion_original": "Escucha una entrevista con Enrique, un alumno de secundaria en un colegio interno, y completa la información sobre cómo es su vida normalmente.",
-          "contenido_linguistico": ["Hablar de hábitos diarios", "Horas"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["se levanta"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["come"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["se acuesta"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 78 },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "6:45 → se levanta",
-            "a) 7:00 – 7:45 → desayuna",
-            "b) 8:00 – 17:00 → tiene clases",
-            "c) 14:00 → come",
-            "d) 17:30 – 19:00 → tiene actividades deportivas y talleres",
-            "e) 21:00 → cena",
-            "f) 22:30 → se acuesta"
-          ],
+          "respuestas": ["6:45 → se levanta", "a) 7:00 – 7:45 → desayuna", "b) 8:00 – 17:00 → tiene clases", "c) 14:00 → come", "d) 17:30 – 19:00 → tiene actividades deportivas y talleres", "e) 21:00 → cena", "f) 22:30 → se acuesta"],
           "datos": {
-            "items_libro": [
-              "6:45 →",
-              "a) 7:00 – 7:45 →",
-              "b) 8:00 – 17:00 →",
-              "c) 14:00 →",
-              "d) 17:30 – 19:00 →",
-              "e) 21:00 →",
-              "f) 22:30 →"
-            ]
+            "items_libro": ["6:45 →", "a) 7:00 – 7:45 →", "b) 8:00 – 17:00 →", "c) 14:00 →", "d) 17:30 – 19:00 →", "e) 21:00 →", "f) 22:30 →"]
           }
         },
         {
@@ -864,7 +1442,16 @@
           "destreza": ["comprension_auditiva"],
           "enfoque": "transversal",
           "instruccion_original": "Vuelve a escuchar la entrevista y contesta a las preguntas.",
-          "contenido_linguistico": ["Hablar de hábitos diarios"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hace"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["Juega"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tiene"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 78 },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -873,10 +1460,7 @@
             "2. Tiene clases los sábados y por la tarde tiene tiempo libre o actividades deportivas. A veces va al centro comercial o al cine."
           ],
           "datos": {
-            "preguntas": [
-              "1. ¿Qué actividades hace Enrique después de las clases?",
-              "2. ¿Qué hace los fines de semana?"
-            ]
+            "preguntas": ["1. ¿Qué actividades hace Enrique después de las clases?", "2. ¿Qué hace los fines de semana?"]
           }
         },
         {
@@ -886,7 +1470,17 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Escribe qué haces los domingos. Utiliza los siguientes verbos.",
-          "contenido_linguistico": ["Hablar de hábitos diarios", "Verbos reflexivos y de movimiento"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "levantarse", "tiempo": "Infinitivo", "formas_trabajadas": ["levantarse"]},
+            {"lema": "ir", "tiempo": "Infinitivo", "formas_trabajadas": ["ir"]},
+            {"lema": "jugar", "tiempo": "Infinitivo", "formas_trabajadas": ["jugar"]},
+            {"lema": "comer", "tiempo": "Infinitivo", "formas_trabajadas": ["comer"]},
+            {"lema": "llegar", "tiempo": "Infinitivo", "formas_trabajadas": ["llegar"]},
+            {"lema": "ducharse", "tiempo": "Infinitivo", "formas_trabajadas": ["ducharse"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": true },
@@ -900,9 +1494,15 @@
           "numero": 11,
           "tipo": "escucha_y_repite",
           "destreza": ["comprension_auditiva", "expresion_oral"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y repite.",
-          "contenido_linguistico": ["Entonación interrogativa y exclamativa"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Vamos"]},
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["te levantas"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Entonación"],
           "audio": { "presente": true, "pista": 79 },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -916,29 +1516,23 @@
           "numero": 12,
           "tipo": "completa_huecos",
           "destreza": ["comprension_auditiva"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y escribe los signos adecuados: ¿ ? / ¡ !",
-          "contenido_linguistico": ["Entonación interrogativa y exclamativa", "Signos de puntuación"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["comes"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["vas"]},
+            {"lema": "decir", "tiempo": "Presente", "formas_trabajadas": ["dice"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Entonación", "Signos de puntuación"],
           "audio": { "presente": true, "pista": 80 },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. ¿Qué comes?",
-            "2. ¿Qué grande es?",
-            "3. ¡Estupendo!",
-            "4. ¡Cierra la ventana!",
-            "5. ¿A dónde vas?",
-            "6. ¿Qué dice Luis?"
-          ],
+          "respuestas": ["1. ¿Qué comes?", "2. ¿Qué grande es?", "3. ¡Estupendo!", "4. ¡Cierra la ventana!", "5. ¿A dónde vas?", "6. ¿Qué dice Luis?"],
           "datos": {
-            "items_libro": [
-              "1 Qué comes",
-              "2 Qué grande es",
-              "3 Estupendo",
-              "4 Cierra la ventana",
-              "5 A dónde vas",
-              "6 Qué dice Luis"
-            ]
+            "items_libro": ["1 Qué comes", "2 Qué grande es", "3 Estupendo", "4 Cierra la ventana", "5 A dónde vas", "6 Qué dice Luis"]
           }
         },
         {
@@ -946,15 +1540,20 @@
           "numero": 13,
           "tipo": "escucha_y_repite",
           "destreza": ["comprension_auditiva", "expresion_oral"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha otra vez y repite.",
-          "contenido_linguistico": ["Entonación interrogativa y exclamativa"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Entonación"],
           "audio": { "presente": true, "pista": 80 },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": []
+          "respuestas": [],
+          "datos": {}
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 78,
@@ -967,24 +1566,25 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Lee el texto y contesta a las preguntas.",
-          "contenido_linguistico": ["Comprensión lectora: rutina del cuidador de zoo"],
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [
+            {"lema": "dar", "tiempo": "Presente", "formas_trabajadas": ["da"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va"]},
+            {"lema": "despertarse", "tiempo": "Presente", "formas_trabajadas": ["se despiertan"]},
+            {"lema": "llamar", "tiempo": "Presente", "formas_trabajadas": ["llama"]},
+            {"lema": "comer", "tiempo": "Infinitivo", "formas_trabajadas": ["comer"]},
+            {"lema": "hablar", "tiempo": "Infinitivo", "formas_trabajadas": ["hablar"]},
+            {"lema": "recorrer", "tiempo": "Presente", "formas_trabajadas": ["recorre"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. Los mamíferos: leones, ciervos y cebras.",
-            "2. Limpia las jaulas y las camas de los animales que tiene a su cargo.",
-            "3. El veterinario.",
-            "4. Una hora."
-          ],
+          "respuestas": ["1. Los mamíferos: leones, ciervos y cebras.", "2. Limpia las jaulas y las camas de los animales que tiene a su cargo.", "3. El veterinario.", "4. Una hora."],
           "datos": {
             "texto_completo": "Pedro Martínez es cuidador del zoo de Madrid. Su trabajo empieza muy temprano, a las ocho. Primero da de comer a los mamíferos (leones, ciervos, cebras…). Luego va al terrario, donde viven los anfibios y reptiles, grandes y pequeños (ranas, tortugas, cocodrilos…, y varias especies de serpientes: víboras, pitones, boas…). Por último, desayunan las aves (palomas, loros, cacatúas…), que se despiertan más tarde.\n\nDespués del desayuno, Pedro limpia las jaulas y camas de los animales que tiene a su cargo. Si hay algún animal enfermo, Pedro llama al veterinario y lo ayuda. Así pasa la mañana, hasta las dos de la tarde: para una hora para comer y hablar con los compañeros del zoo. Por la tarde, Pedro recorre el zoo para controlar y vigilar a sus amigos. A todos los conoce por su nombre. A las cinco de la tarde termina su trabajo.",
-            "preguntas": [
-              "1. ¿Qué animales desayunan primero?",
-              "2. ¿Qué hace Pedro después de dar el desayuno a sus animales?",
-              "3. ¿Quién visita a los animales enfermos?",
-              "4. ¿Cuánto tiempo tiene Pedro Martínez para comer?"
-            ]
+            "preguntas": ["1. ¿Qué animales desayunan primero?", "2. ¿Qué hace Pedro después de dar el desayuno a sus animales?", "3. ¿Quién visita a los animales enfermos?", "4. ¿Cuánto tiempo tiene Pedro Martínez para comer?"]
           }
         },
         {
@@ -994,17 +1594,14 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Completa la tabla con los distintos tipos de animales que aparecen en el ejercicio anterior.",
-          "contenido_linguistico": ["Animales: mamíferos, anfibios, reptiles, aves"],
-          "campo_semantico": "Animales",
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "Mamíferos: leones, ciervos, cebras",
-            "Anfibios: ranas",
-            "Reptiles: tortugas, cocodrilos, víboras, pitones, boas",
-            "Aves: palomas, loros, cacatúas"
-          ],
+          "respuestas": ["Mamíferos: leones, ciervos, cebras", "Anfibios: ranas", "Reptiles: tortugas, cocodrilos, víboras, pitones, boas", "Aves: palomas, loros, cacatúas"],
           "datos": {
             "items_libro": ["Mamíferos", "Anfibios", "Reptiles", "Aves"]
           }
@@ -1016,25 +1613,22 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Lee el texto otra vez y completa las frases.",
-          "contenido_linguistico": ["Comprensión lectora: rutina del cuidador de zoo"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hace"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va"]},
+            {"lema": "comer", "tiempo": "Infinitivo", "formas_trabajadas": ["comer"]},
+            {"lema": "llamar", "tiempo": "Presente", "formas_trabajadas": ["llama"]},
+            {"lema": "recorrer", "tiempo": "Infinitivo", "formas_trabajadas": ["recorrer"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. dar de comer a los mamíferos",
-            "2. anfibios y reptiles",
-            "3. se despiertan más tarde",
-            "4. hay algún animal enfermo",
-            "5. recorrer el zoo para controlar y vigilar a sus amigos"
-          ],
+          "respuestas": ["1. dar de comer a los mamíferos", "2. anfibios y reptiles", "3. se despiertan más tarde", "4. hay algún animal enfermo", "5. recorrer el zoo para controlar y vigilar a sus amigos"],
           "datos": {
-            "items_libro": [
-              "1 Lo primero que hace Pedro cuando llega a su trabajo es…",
-              "2 Luego va a visitar a los…",
-              "3 Las aves desayunan las últimas porque…",
-              "4 Pedro llama al veterinario cuando…",
-              "5 El trabajo de Pedro por la tarde es…"
-            ]
+            "items_libro": ["1 Lo primero que hace Pedro cuando llega a su trabajo es…", "2 Luego va a visitar a los…", "3 Las aves desayunan las últimas porque…", "4 Pedro llama al veterinario cuando…", "5 El trabajo de Pedro por la tarde es…"]
           }
         },
         {
@@ -1044,16 +1638,14 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Completa las frases con las palabras subrayadas en el texto.",
-          "contenido_linguistico": ["Vocabulario: cuidador, terrario, temprano, conoce"],
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. terrario",
-            "2. cuidador",
-            "3. temprano",
-            "4. conoce"
-          ],
+          "respuestas": ["1. terrario", "2. cuidador", "3. temprano", "4. conoce"],
           "datos": {
             "palabras_recuadro": ["cuidador", "temprano", "terrario", "conoce"],
             "items_libro": [
@@ -1064,7 +1656,8 @@
             ]
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 79,
@@ -1077,17 +1670,16 @@
           "destreza": ["comprension_auditiva"],
           "enfoque": "transversal",
           "instruccion_original": "Escucha la historia sobre Budi, un orangután, y di si las siguientes afirmaciones son verdaderas (V) o falsas (F). Corrige las respuestas falsas.",
-          "contenido_linguistico": ["Comprensión auditiva: la historia de Budi"],
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 81 },
           "imagen": { "presente": true, "descripcion": "Fotografía de un orangután bebé con etiqueta BUDI." },
           "video": { "presente": false },
-          "respuestas": [
-            "1. V",
-            "2. F → Durante diez meses Budi se alimenta con leche condensada.",
-            "3. F → Ahora Budi tiene anemia y no puede moverse.",
-            "4. F → Actualmente Budi vive en Reino Unido.",
-            "5. V"
-          ],
+          "respuestas": ["1. V", "2. F → Durante diez meses Budi se alimenta con leche condensada.", "3. F → Ahora Budi tiene anemia y no puede moverse.", "4. F → Actualmente Budi vive en Reino Unido.", "5. V"],
           "datos": {
             "items_libro": [
               "1 Durante sus primeros meses de vida, Budi vive en una jaula.",
@@ -1105,7 +1697,19 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "¿Cuál es tu mascota favorita? Imagina que tienes ese animal en casa. Escribe un texto con su descripción. Sigue los siguientes pasos:",
-          "contenido_linguistico": ["Descripción de animales", "Verbos reflexivos y de rutina"],
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [
+            {"lema": "sentarse", "tiempo": "Infinitivo", "formas_trabajadas": ["sentarse"]},
+            {"lema": "dormir", "tiempo": "Infinitivo", "formas_trabajadas": ["dormir"]},
+            {"lema": "acostarse", "tiempo": "Infinitivo", "formas_trabajadas": ["acostarse"]},
+            {"lema": "ir", "tiempo": "Infinitivo", "formas_trabajadas": ["ir"]},
+            {"lema": "salir", "tiempo": "Infinitivo", "formas_trabajadas": ["salir"]},
+            {"lema": "comer", "tiempo": "Infinitivo", "formas_trabajadas": ["comer"]},
+            {"lema": "jugar", "tiempo": "Infinitivo", "formas_trabajadas": ["jugar"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tiene"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -1125,18 +1729,20 @@
           "destreza": ["interaccion_oral", "mediacion"],
           "enfoque": "transversal",
           "instruccion_original": "En grupos de cuatro, hablad sobre animales. El secretario toma nota, escribe las conclusiones y las lee al resto de la clase. Piensa en las siguientes preguntas.",
-          "contenido_linguistico": ["Hablar de animales", "Gustos y preferencias"],
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["te gustan", "gustan"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tienes"]},
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hace"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "preguntas": [
-              "¿Te gustan los animales?",
-              "¿Cuáles te gustan más: los salvajes, o los domésticos?",
-              "¿Tienes un animal en casa? ¿Cómo es? ¿Qué hace?",
-              "¿Qué animales te dan miedo?"
-            ]
+            "preguntas": ["¿Te gustan los animales?", "¿Cuáles te gustan más: los salvajes, o los domésticos?", "¿Tienes un animal en casa? ¿Cómo es? ¿Qué hace?", "¿Qué animales te dan miedo?"]
           }
         },
         {
@@ -1146,13 +1752,18 @@
           "destreza": ["expresion_oral", "interaccion_oral", "mediacion"],
           "enfoque": "transversal",
           "instruccion_original": "En grupos de cuatro, vamos a preparar una visita a un parque zoológico cercano. Buscad información sobre horarios, medios de transporte para llegar allí y qué animales o tipos de animales podéis conocer. Después, haced la propuesta a la clase.",
-          "contenido_linguistico": ["Animales", "Horarios", "Medios de transporte"],
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": []
+          "respuestas": [],
+          "datos": {}
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 80,
@@ -1165,7 +1776,13 @@
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Lee y escucha el texto anterior. Después, contesta a las preguntas.",
-          "contenido_linguistico": ["Comprensión lectora/auditiva: Zoo-Aquarium de Madrid"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 82 },
           "imagen": { "presente": true, "descripcion": "Fotografías de delfines en espectáculo acuático, flamingos y cabras en el Zoo-Aquarium de Madrid." },
           "video": { "presente": false },
@@ -1194,19 +1811,20 @@
           "destreza": ["interaccion_oral"],
           "enfoque": "cultura",
           "instruccion_original": "Comenta con tu compañero.",
-          "contenido_linguistico": ["Zoo: comparación cultural"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Hay"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "preguntas": [
-              "¿Hay un zoo en tu ciudad? ¿Cómo es?",
-              "¿Participas en alguna de sus actividades?"
-            ]
+            "preguntas": ["¿Hay un zoo en tu ciudad? ¿Cómo es?", "¿Participas en alguna de sus actividades?"]
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 81,
@@ -1219,20 +1837,20 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las siguientes frases con la forma correcta del verbo.",
-          "contenido_linguistico": ["Verbos reflexivos: presente"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["me acuesto", "se acuesta", "se acuestan"]},
+            {"lema": "ducharse", "tiempo": "Presente", "formas_trabajadas": ["te duchas"]},
+            {"lema": "lavarse", "tiempo": "Presente", "formas_trabajadas": ["nos lavamos", "te lavas"]},
+            {"lema": "bañarse", "tiempo": "Presente", "formas_trabajadas": ["os bañáis"]},
+            {"lema": "afeitarse", "tiempo": "Presente", "formas_trabajadas": ["se afeita"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. me acuesto",
-            "2. te duchas",
-            "3. se acuesta",
-            "4. nos lavamos",
-            "5. os bañáis",
-            "6. se afeita",
-            "7. se acuestan",
-            "8. te lavas"
-          ],
+          "respuestas": ["1. me acuesto", "2. te duchas", "3. se acuesta", "4. nos lavamos", "5. os bañáis", "6. se afeita", "7. se acuestan", "8. te lavas"],
           "datos": {
             "items_libro": [
               "1 Yo (acostarse) _____ temprano.",
@@ -1253,17 +1871,21 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Construye frases, como en el ejemplo.",
-          "contenido_linguistico": ["Verbos reflexivos: cambio de sujeto y pronombre"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "bañarse", "tiempo": "Presente", "formas_trabajadas": ["se baña", "me baño"]},
+            {"lema": "ducharse", "tiempo": "Presente", "formas_trabajadas": ["os ducháis", "te duchas"]},
+            {"lema": "levantarse", "tiempo": "Presente", "formas_trabajadas": ["nos levantamos", "se levanta"]},
+            {"lema": "quedarse", "tiempo": "Presente", "formas_trabajadas": ["me quedo", "nos quedamos"]},
+            {"lema": "afeitarse", "tiempo": "Presente", "formas_trabajadas": ["se afeita", "se afeitan"]},
+            {"lema": "acostarse", "tiempo": "Presente", "formas_trabajadas": ["me acuesto", "os acostáis"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. ¿Tú te duchas por la mañana?",
-            "2. Alfonso se levanta temprano.",
-            "3. Los domingos nos quedamos en casa.",
-            "4. Mis hermanos se afeitan todos los días.",
-            "5. Vosotros os acostáis a las once de la noche."
-          ],
+          "respuestas": ["1. ¿Tú te duchas por la mañana?", "2. Alfonso se levanta temprano.", "3. Los domingos nos quedamos en casa.", "4. Mis hermanos se afeitan todos los días.", "5. Vosotros os acostáis a las once de la noche."],
           "datos": {
             "ejemplo_libro": "Elena se baña. → Yo me baño.",
             "items_libro": [
@@ -1282,7 +1904,17 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Construye frases con las siguientes palabras.",
-          "contenido_linguistico": ["Verbos de movimiento y rutina: ir, salir, volver, llegar, jugar, venir"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["voy", "van", "vais"]},
+            {"lema": "salir", "tiempo": "Presente", "formas_trabajadas": ["sales", "sale"]},
+            {"lema": "llegar", "tiempo": "Presente", "formas_trabajadas": ["llega"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["Jugamos"]},
+            {"lema": "volver", "tiempo": "Presente", "formas_trabajadas": ["vuelven", "vuelvo"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["Vienes"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -1321,21 +1953,16 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿Qué mes es?",
-          "contenido_linguistico": ["Meses del año"],
-          "campo_semantico": "Meses del año",
+          "vocabulario": ["Meses del año"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": ["1. junio", "2. febrero", "3. mayo", "4. enero", "5. octubre", "6. julio"],
           "datos": {
-            "items_libro": [
-              "1 Soy el sexto mes del año.",
-              "2 Tengo solo 28 días.",
-              "3 Mi nombre solo tiene cuatro letras.",
-              "4 Soy el primero del año.",
-              "5 Voy antes que noviembre.",
-              "6 Voy después de junio."
-            ]
+            "items_libro": ["1 Soy el sexto mes del año.", "2 Tengo solo 28 días.", "3 Mi nombre solo tiene cuatro letras.", "4 Soy el primero del año.", "5 Voy antes que noviembre.", "6 Voy después de junio."]
           }
         },
         {
@@ -1345,12 +1972,15 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "Nombra los siguientes animales.",
-          "contenido_linguistico": ["Animales domésticos y salvajes"],
-          "campo_semantico": "Animales",
+          "vocabulario": ["Animales domésticos y salvajes"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": true, "descripcion": "4 fotografías numeradas de animales (1–4) sin etiqueta." },
           "video": { "presente": false },
-          "respuestas": ["1. elefante", "2. león", "3. oveja", "4. gallina"]
+          "respuestas": ["1. elefante", "2. león", "3. oveja", "4. gallina"],
+          "datos": {}
         },
         {
           "id": "U7-p81-act06",
@@ -1359,22 +1989,24 @@
           "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Pregunta a tu compañero cuándo hace las siguientes actividades.",
-          "contenido_linguistico": ["Hablar de hábitos diarios"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hace"]},
+            {"lema": "hacer", "tiempo": "Infinitivo", "formas_trabajadas": ["Hacer"]},
+            {"lema": "ir", "tiempo": "Infinitivo", "formas_trabajadas": ["Ir"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "items_libro": [
-              "Hacer deporte",
-              "Navegar por internet",
-              "Ver la tele",
-              "Ir al cine",
-              "Viajar"
-            ]
+            "items_libro": ["Hacer deporte", "Navegar por internet", "Ver la tele", "Ir al cine", "Viajar"]
           }
         }
-      ]
+      ],
+      "cuadros": []
     }
   ]
 }

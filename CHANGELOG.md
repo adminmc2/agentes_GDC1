@@ -5,6 +5,42 @@
 
 ---
 
+## [v10.161 — 2026-05-18] — U7 extraída + rectificación pron/orto + sincronización registry
+
+Segunda extracción real bajo el flujo IA-first post-rediseño (precedente U6 v10.158). Modo: extracción directa desde chat coordinador (sin worktree), Opción C estilo U6 (legacy pre-v10.115 como referencia de transcripción + PDF para verificar + JSON canónico nuevo en shape post-v10.153).
+
+**Resultado U7 (`unidades/U7/U7-nc1-inventario.json`):**
+
+- 10 páginas (p72-81) · 46 actividades · 4 cuadros · 8 entradas en `_decisiones_ia`.
+- Validador `python3 scripts/validar_inventario.py 7` → 0 errores · 0 avisos · 0 legacy.
+- Consolidados léxicos — principal: `Meses del año`, `Animales domésticos y salvajes`; recurrente: `Días de la semana`.
+- Consolidados gramaticales — principal: `Preposiciones`; recurrente: `Hay`, `Interrogativos`.
+- Consolidados pron/orto — principal: `Signos de puntuación`, `Mayúsculas`, `Acentuación`, `Entonación`.
+- `tiempos_y_verbos_consolidado`: 29 lemas (11 reflexivos U7 + `salir`/`volver` del cuadro p75 + recurrentes Presente/Infinitivo). Todos canónicos en `verbos-canonicos.json` v1.6, sin altas nuevas.
+- Decisiones autónomas con precedente: `Verbos reflexivos` y `Oposición salir/volver` no generan categoría gramatical canónica nueva (viven lema-a-lema en `tiempos_y_verbos`); `Signos de puntuación` se ubica en pron/orto siguiendo registry pese a que el índice del libro lo lista bajo Gramática (precedente U6 `Letras homófonas`).
+
+**Rectificación pron/orto detectada por revisor — split en 3 categorías canónicas:**
+
+La extracción inicial agrupaba 6 items (`.`, `,`, `¿?`, `¡!`, `tilde`, `mayúscula`) bajo `Signos de puntuación` siguiendo la presentación pedagógica de p75-act8. El revisor detectó que el registry canónico separa esas piezas en 3 categorías distintas. Aplicado split:
+
+- `Signos de puntuación`: `.`, `,`, `¿?`, `¡!`.
+- `Mayúsculas` (nueva principal U7): `mayúscula`.
+- `Acentuación` (nueva principal U7, identificación inicial; pleno desarrollo de tipos en U9): `tilde`.
+- Refs de actividad p75-act8 y p75-act9 actualizadas con las 3 categorías.
+
+**Sincronización del registry pron/orto (`pronunciacion-ortografia-canonica.json` v1.0 → v1.1):**
+
+- `Acentuación` — añadida `_apariciones.U7` ("identificación inicial (tilde como etiqueta)") + nueva subcategoría con items `tilde`, `acento`.
+- `Mayúsculas` — añadida `_apariciones.U7` ("identificación inicial (mayúscula como recurso ortográfico)") + nueva subcategoría con item `mayúscula`.
+- `Signos de puntuación` — refinada `_apariciones.U7` para reflejar la presencia conjunta de interrogación + exclamación (antes solo declaraba "exclamación" en U7).
+- `Signos de puntuación` — añadido bloque `_deuda_pcic_ref` documentando que punto y coma materiales en p75-act8/9 no están cubiertos por el `_pcic_ref` ni las subcategorías actuales. **Deuda no bloqueante** para v10.161 (pendiente decisión: ampliar `_pcic_ref` + subcategorías o mantener alcance estrecho).
+
+**Meta docs:** REVIEW.md §Estado global actualizado a "U0-U7 saneadas; U8-U9 pendientes".
+
+**Higiene del commit:** registry pron/orto + `unidades/U7/U7-nc1-inventario.json` + meta docs. Cambios untracked fuera del lote.
+
+---
+
 ## [v10.160 — 2026-05-18] — Cierre fino U6 + estado global REVIEW alineado
 
 Tres flecos detectados por el revisor tras visto bueno parcial sobre U6 — el inventario en sí está bien, pero la documentación meta y el operativo Git no estaban del todo cerrados.

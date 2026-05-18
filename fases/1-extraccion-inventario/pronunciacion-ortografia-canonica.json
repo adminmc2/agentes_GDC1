@@ -3,8 +3,8 @@
     "estado": "poblado",
     "creado": "2026-05-12",
     "poblado": "2026-05-15",
-    "version": "1.0",
-    "descripcion": "Registry de categorías canónicas de pronunciacion_ortografia_consolidada. Lista cerrada en pieza 4 del rediseño (2026-05-11) con matriz de cobertura cruzada contra las 9 entradas de pronunciacion_ortografia[] de nc1-curso.json + entrada de mayúsculas reasignada de pieza 3 (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §16). Materializado el 2026-05-15 (v10.117). Apoyo PCIC A1: fases/1-extraccion-inventario/pcic-a1-pronunciacion-ortografia.json.",
+    "version": "1.1",
+    "descripcion": "Registry de categorías canónicas de pronunciacion_ortografia_consolidada. Lista cerrada en pieza 4 del rediseño (2026-05-11) con matriz de cobertura cruzada contra las 9 entradas de pronunciacion_ortografia[] de nc1-curso.json + entrada de mayúsculas reasignada de pieza 3 (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §16). Materializado el 2026-05-15 (v10.117). Apoyo PCIC A1: fases/1-extraccion-inventario/pcic-a1-pronunciacion-ortografia.json. (v1.1 2026-05-18: sincronización con cierre U7 v10.161 — añadidas _apariciones.U7 a 'Acentuación' (identificación inicial de tilde como etiqueta) y 'Mayúsculas' (identificación de la mayúscula como recurso ortográfico); refinadas _apariciones.U7 de 'Signos de puntuación' para reflejar la presencia conjunta de interrogación y exclamación en p75/p77).",
     "estructura": "Diccionario de dos niveles: {categoría → subcategoría → [items]}. Las 7 categorías son canónicas y cerradas; ampliables por expansión controlada si NC2 lo exige."
   },
   "categorias": {
@@ -56,9 +56,11 @@
     "Acentuación": {
       "_pcic_ref": "PCIC A1 pronunciación §3 La sílaba y el acento (§3.2 reconocimiento y producción del acento) + ortografía (acentuación gráfica de agudas, llanas, esdrújulas)",
       "_apariciones": {
+        "U7": ["identificación inicial (tilde como etiqueta)"],
         "U9": ["tipos según sílaba tónica"]
       },
       "subcategorias": {
+        "identificación inicial (tilde como etiqueta)": ["tilde", "acento"],
         "tipos según sílaba tónica": ["agudas", "llanas", "esdrújulas"]
       }
     },
@@ -66,17 +68,19 @@
       "_pcic_ref": "PCIC A1 ortografía (Puntuación: signos de apertura y cierre obligatorios en interrogación y exclamación)",
       "_apariciones": {
         "U1": ["interrogación (apertura y cierre obligatorios)"],
-        "U7": ["exclamación (apertura y cierre obligatorios)"]
+        "U7": ["interrogación (apertura y cierre obligatorios)", "exclamación (apertura y cierre obligatorios)"]
       },
       "subcategorias": {
         "interrogación (apertura y cierre obligatorios)": ["¿", "?"],
         "exclamación (apertura y cierre obligatorios)": ["¡", "!"]
-      }
+      },
+      "_deuda_pcic_ref": "U7 (v10.161) introduce también punto y coma en p75-act8/p75-act9 como parte de la presentación editorial de signos básicos. El _pcic_ref actual y las subcategorías solo declaran ¿?/¡!. Pendiente: decidir si ampliar el _pcic_ref + subcategorías para acomodar punto y coma como parte del canónico, o mantener el alcance estrecho y dejar punto/coma como input editorial no codificado en subcategorías. No bloquea v10.161 (la materialización en U7 documenta esta deuda en _decisiones_ia)."
     },
     "Mayúsculas": {
       "_pcic_ref": "PCIC A1 ortografía (Ortografía De Letras Y Palabras: uso de mayúsculas — inicial de oración, después de punto, nombres propios, siglas)",
       "_apariciones": {
-        "U2": ["uso general"]
+        "U2": ["uso general"],
+        "U7": ["identificación inicial (mayúscula como recurso ortográfico)"]
       },
       "subcategorias": {
         "uso general": [
@@ -87,7 +91,8 @@
           "nombres propios de lugar",
           "nombres propios de instituciones",
           "siglas"
-        ]
+        ],
+        "identificación inicial (mayúscula como recurso ortográfico)": ["mayúscula"]
       }
     }
   }
