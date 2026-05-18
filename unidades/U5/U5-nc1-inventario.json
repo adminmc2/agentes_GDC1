@@ -101,16 +101,23 @@
       },
       "Adjetivos descriptivos": {
         "items": [
-          {"palabra": "antiguo", "fuentes": ["p57-act7"]},
-          {"palabra": "grande", "fuentes": ["p53-act7", "p55-act5", "p55-act8", "p57-act6", "p57-act7", "p58-act1", "p58-act2@R", "p61-act1", "p61-act4", "p61-act4@R"]},
+          {"palabra": "alto", "fuentes": ["p57-act7"]},
+          {"palabra": "antiguo/-a", "fuentes": ["p53-act6", "p55-act6", "p55-act8", "p57-act7"]},
+          {"palabra": "bonito/-a", "fuentes": ["p53-act6", "p53-act7", "p55-act8"]},
+          {"palabra": "cómodo/-a", "fuentes": ["p53-act6", "p53-act7", "p55-act8", "p58-act1", "p61-act4"]},
+          {"palabra": "feo", "fuentes": ["p53-act6"]},
+          {"palabra": "grande", "fuentes": ["p53-act6", "p53-act7", "p55-act5", "p55-act8", "p57-act6", "p57-act7", "p58-act1", "p58-act2", "p61-act1", "p61-act4"]},
+          {"palabra": "incómodo", "fuentes": ["p53-act6"]},
           {"palabra": "lento", "fuentes": ["p57-act7"]},
-          {"palabra": "pequeño", "fuentes": ["p57-act7"]},
-          {"palabra": "rojo", "fuentes": ["p57-act7"]},
-          {"palabra": "rápido", "fuentes": ["p57-act7"]}
+          {"palabra": "moderno/-a", "fuentes": ["p53-act6", "p53-act7", "p55-act8", "p57-act6", "p61-act1"]},
+          {"palabra": "nuevo/-a", "fuentes": ["p53-act6", "p53-act7", "p55-act6", "p61-act1"]},
+          {"palabra": "pequeño/-a", "fuentes": ["p53-act6", "p55-act6", "p55-act8", "p57-act7", "p58-act2"]},
+          {"palabra": "rápido", "fuentes": ["p57-act7"]},
+          {"palabra": "viejo", "fuentes": ["p53-act6"]}
         ],
-        "fuentes": ["p57-act7", "p53-act7", "p55-act5", "p55-act8", "p57-act6", "p58-act1", "p58-act2@R", "p61-act1", "p61-act4", "p61-act4@R"],
+        "fuentes": ["p53-act6", "p53-act7", "p55-act5", "p55-act6", "p55-act8", "p57-act6", "p57-act7", "p58-act1", "p58-act2", "p61-act1", "p61-act4"],
         "descripcion": {
-          "U5": "PCIC A1 §3.7.4 — Adjetivos para describir objetos y viviendas. Principal en U5: pares opuestos (grande/pequeño, nuevo/viejo, cómodo/incómodo, moderno/antiguo, bonito/feo) y otros (rápido/lento, rojo). Se trabaja en relación de antónimos (p53-act06), serie de palabras (p53-act07) y descripción de objetos y viviendas (p57-act07, p59-act07)."
+          "U5": "PCIC A1 §3.7.4 — Adjetivos para describir objetos y viviendas. Principal en U5: pares opuestos antónimos (grande/pequeño, nuevo/viejo, cómodo/incómodo, moderno/antiguo, bonito/feo) presentados en p53-act6 + otros descriptivos (alto, rápido/lento) introducidos en p57-act7 palabras_recuadro. Se trabajan en relación de antónimos (p53-act6, actividad fundacional del campo), serie de palabras (p53-act7), descripción de objetos y viviendas (p57-act6, p57-act7, p58-act1, p58-act2, p61-act1, p61-act4). Rectificación v10.162: 8 items materiales perdidos por el extractor original (alto, bonito, cómodo, feo, incómodo, moderno, nuevo, viejo) recuperados desde p53-act6 (que estaba bajo-codificada); 'rojo' trasladado a la categoría 'Colores' (recurrente desde U1)."
         }
       },
       "Tipos de vivienda": {
@@ -140,6 +147,15 @@
       }
     },
     "recurrente": {
+      "Colores": {
+        "items": [
+          {"palabra": "rojo", "fuentes": ["p57-act7"]}
+        ],
+        "fuentes": ["p57-act7"],
+        "descripcion": {
+          "U5": "Recurrente desde U1 (PRE 'Colores'). En U5 aparece como input incidental: 'rojo/-a' en palabras_recuadro de p57-act7 (descripción de objetos). Cumple §5.1.1 (a) posición previa: principal en U1 cuadro@p15 + p15-act7. Codificado en v10.162 al rectificar el bucket 'Adjetivos descriptivos' (donde estaba mal encajado: rojo no es adjetivo descriptivo de tamaño/edad/comodidad/estética sino color)."
+        }
+      },
       "Establecimientos": {
         "items": [
           {"palabra": "biblioteca", "fuentes": ["p56-act4", "p56-act4@R"]},
@@ -442,6 +458,14 @@
       "diagnostico": "El índice del libro NC1 U5 dice 'Tipos de vivienda' pero el material en p53-act8/9 presenta 7 términos como alojamiento turístico (definiciones tipo 'alojamiento con ruedas', 'lugar de vacaciones'). Solo 'apartamento' y 'chalé' (atestado en p58-act2@R) son vivienda permanente en sentido material. La codificación anterior tenía los 8 términos mezclados en 'Tipos de vivienda', contradiciendo la decisión P (v10.139) del autor: 'NO fusionar Tipos de vivienda + Alojamiento; son canónicos conceptualmente distintos'.",
       "accion": "(1) 'Tipos de vivienda' conserva: apartamento (atestado p53-act8 + p58-act2) + chalé (nuevo, atestado p58-act2@R). (2) 'Alojamiento' creado en vocabulario_consolidado.principal con 7 items: hotel, albergue juvenil, crucero, casa rural, caravana, camping, granja. Las fuentes se preservan. (3) Refs en activity.vocabulario actualizadas según items materialmente presentes en cada actividad: las que solo trabajan alojamiento turístico (p53-act7/8/9/10/11/12) referencian 'Alojamiento'; las que trabajan vivienda (p58-act2, p59-act5/7/8) referencian 'Tipos de vivienda'. (4) Sin cambios en el registry léxico — ambas categorías existían ya (Tipos de vivienda origen indice; Alojamiento origen pcic_a1).",
       "ramifica": "Activa por primera vez el canónico 'Alojamiento' del registry PCIC A1, que estaba sin uso. Confirma la decisión P del autor en v10.139."
+    },
+    {
+      "id": "P19",
+      "version": "v10.162",
+      "decision": "Rectificación bucket 'Adjetivos descriptivos' U5: 8 items materiales perdidos por el extractor original + reubicación de 'rojo' a categoría 'Colores' (recurrente).",
+      "diagnostico": "Hallazgo del autor en revisión: el bucket 'Adjetivos descriptivos' tenía solo 6 items (antiguo, grande, lento, pequeño, rojo, rápido) mientras la descripción prometía 14 (los 5 pares opuestos de p53-act6 + 'rápido/lento, rojo' de p57-act7). Causa raíz: el extractor capturó las palabras_recuadro de p57-act7 y los lemas ubicuos (grande/pequeño), pero perdió toda la actividad fundacional del campo en p53-act6 (relaciona antónimos con 10 adjetivos: grande/nuevo/cómodo/moderno/bonito ↔ antiguo/feo/incómodo/pequeño/viejo). Además 'rojo' estaba mal encajado: es color, no adjetivo descriptivo de tamaño/edad/comodidad/estética.",
+      "accion": "(1) Añadidos 8 items materiales: alto, bonito/-a, cómodo/-a, feo, incómodo, moderno/-a, nuevo/-a, viejo. Notación barra masc/fem aplicada donde aparece flexión femenina (precedente moderno/-a U6 v10.158, colombiano/-a U4 v10.159). 'antiguo/-a', 'pequeño/-a' rectificados también a notación barra. (2) 'rojo' trasladado de 'Adjetivos descriptivos' a nuevo bucket 'Colores' en vocabulario_consolidado.recurrente (PRE desde U1 cuadro@p15 + p15-act7). (3) Refs de actividad p57-act7 ampliadas con 'Colores'. (4) Fuentes recalculadas por aparición literal verificada contra el texto (p53-act6, p53-act7, p55-act5, p55-act6, p55-act8, p57-act6, p57-act7, p58-act1, p58-act2, p61-act1, p61-act4). Validador 0/0/0.",
+      "ramifica": "Mismo perfil de bug que U6 'Días de la semana' (1→7 items, v10.158) y U4 'Envases y recipientes' (campo huérfano, v10.159) y U4 'colombianas → colombiano/-a' (v10.159) y U4 'madrileño → Gentilicios' (v10.159). Confirma la deuda de auditoría retroactiva U0-U5 buscando patrones análogos: extractor pierde items en actividades cuya estructura no es palabras_recuadro (especialmente columnas_relaciona y items_libro con flexiones)."
     }
   ],
   "paginas_detalle": [
@@ -1210,7 +1234,7 @@
           "destreza": ["expresion_oral", "interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Ahora, pregunta y contesta a tu compañero, como en el ejemplo. Utiliza los siguientes adjetivos.",
-          "vocabulario": ["Adjetivos descriptivos"],
+          "vocabulario": ["Adjetivos descriptivos", "Colores"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es"]}
           ],

@@ -5,6 +5,26 @@
 
 ---
 
+## [v10.162 — 2026-05-18] — Rectificación U5: bucket Adjetivos descriptivos + Colores recurrente
+
+Hallazgo del autor en revisión: el bucket `Adjetivos descriptivos` de U5 estaba muy incompleto y mezclaba un color con adjetivos descriptivos.
+
+**Rectificaciones en `unidades/U5/U5-nc1-inventario.json`:**
+
+1. **Bucket `Adjetivos descriptivos`** ampliado de 6 a 13 items. Añadidos los 8 perdidos por el extractor original: `alto`, `bonito/-a`, `cómodo/-a`, `feo`, `incómodo`, `moderno/-a`, `nuevo/-a`, `viejo`. Rectificados a notación barra masc/fem: `antiguo/-a`, `pequeño/-a` (precedente `moderno/-a` U6 v10.158, `colombiano/-a` U4 v10.159).
+2. **`rojo` trasladado a categoría `Colores`** (nueva en `vocabulario_consolidado.recurrente`, PRE desde U1 cuadro@p15 + p15-act7). No es adjetivo descriptivo de tamaño/edad/comodidad/estética — es color.
+3. **Ref de actividad p57-act7** ampliada con `Colores` además de `Adjetivos descriptivos`.
+4. **Fuentes recalculadas** por aparición literal verificada (p53-act6, p53-act7, p55-act5, p55-act6, p55-act8, p57-act6, p57-act7, p58-act1, p58-act2, p61-act1, p61-act4). La actividad fundacional del campo (p53-act6, relaciona antónimos con 10 adjetivos) había sido bajo-codificada.
+5. **Entrada P19 en `_decisiones_ia`** documentando la rectificación y la causa raíz.
+
+**Causa raíz documentada**: el extractor original capturó solo las `palabras_recuadro` de p57-act7 + lemas ubicuos (grande/pequeño), perdiendo toda la actividad fundacional p53-act6. Mismo perfil de bug que `Días de la semana` U6 (1→7 items, v10.158), `Envases y recipientes` U4 (campo huérfano, v10.159) y reasignaciones U4 (madrileño→Gentilicios, colombiano/-a). Refuerza la deuda de auditoría retroactiva U0-U5 buscando patrones análogos.
+
+**Validación:** `python3 scripts/validar_inventario.py 5` → 0 errores · 0 avisos · 0 legacy.
+
+**Higiene del commit:** solo U5 + meta docs.
+
+---
+
 ## [v10.161 — 2026-05-18] — U7 extraída + rectificación pron/orto + sincronización registry
 
 Segunda extracción real bajo el flujo IA-first post-rediseño (precedente U6 v10.158). Modo: extracción directa desde chat coordinador (sin worktree), Opción C estilo U6 (legacy pre-v10.115 como referencia de transcripción + PDF para verificar + JSON canónico nuevo en shape post-v10.153).
