@@ -1,9 +1,9 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.7",
+    "version": "1.8",
     "actualizado": "2026-05-18",
-    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.(v1.6 2026-05-17: retirada de 'Adverbios de posición' por huérfano tras v10.152 — sus términos viven ahora en gramatica-canonica.json 'Adverbios y locuciones de lugar'). (v1.7 2026-05-18: 'Establecimientos: cine, restaurante, farmacia...' y 'Marcadores de lugar: a la izquierda, ..., cerca' renombrados a forma corta; cadenas largas del índice preservadas como aliases_indice — patrón ya usado en Números cardinales y Saludos y despedidas).",
+    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.(v1.6 2026-05-17: retirada de 'Adverbios de posición' por huérfano tras v10.152 — sus términos viven ahora en gramatica-canonica.json 'Adverbios y locuciones de lugar'). (v1.7 2026-05-18: 'Establecimientos: cine, restaurante, farmacia...' y 'Marcadores de lugar: a la izquierda, ..., cerca' renombrados a forma corta; cadenas largas del índice preservadas como aliases_indice — patrón ya usado en Números cardinales y Saludos y despedidas). (v1.8 2026-05-18: alta de canónico 'Envases y recipientes' con origen excepcion, por hallazgo del autor en revisión U4 — campo léxico nuclear en p47-act5/act6 no recogido como subcategoría dedicada en PCIC A1 §Alimentación; precedente metodológico: Gentilicios v10.124).",
     "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
   },
   "version": "1.5",
@@ -635,6 +635,13 @@
       "aliases_indice": [],
       "aliases_auto": [],
       "nota": "Añadido en v10.129 por hallazgo de extracción en U3 (cuadro@p37#1 \"La hora\" + p37-act5). Léxico de expresiones horarias en español: en punto, y media, y cuarto, menos cuarto, y cinco/diez/veinte/veinticinco. PCIC A1 no lo tiene como categoría léxica dedicada (aparece marginalmente bajo \"Tiempo libre y entretenimiento\" como \"horario\"); por eso origen: excepcion. Material trabajado en pp.37 con anclajes a las estructuras ser + la(s) + número (Es la una / Son las dos en punto)."
+    },
+    {
+      "canonico": "Envases y recipientes",
+      "origen": "excepcion",
+      "aliases_indice": [],
+      "aliases_auto": ["envases"],
+      "nota": "Añadido en v10.159 por hallazgo del autor durante revisión de U4: actividad nuclear en p47 (p47-act5 + p47-act6) sobre formatos de compra/consumo alimentario (botella, paquete, trozo, vaso, cartón, taza, lata, bote, bolsa). PCIC A1 §Alimentación (subcategorías Dieta y Nutrición, Bebida, Alimentos, Platos) NO recoge envases ni recipientes como subcategoría léxica dedicada; por eso origen: excepcion. Precedente metodológico: Gentilicios (v10.124) y La hora (v10.129) — alta por necesidad editorial documentada cuando NC1 introduce contenido material no resuelto por el repertorio PCIC A1. Naming 'Envases y recipientes' coherente con la propuesta histórica del repo (U4-propuesta-informe-corrida.md, nc1-reciclaje.json hilo conservado). Heterogeneidad menor: 'trozo' no es propiamente recipiente sino unidad de porción, pero forma parte del patrón pedagógico ('un trozo de tarta') trabajado en la misma actividad y no merece subcategoría separada — sobrefragmentaría el canon."
     }
   ]
 }

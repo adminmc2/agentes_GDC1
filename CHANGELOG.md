@@ -5,6 +5,33 @@
 
 ---
 
+## [v10.159 — 2026-05-18] — Lote rectificación editorial U4 (registry + 4 rectificaciones)
+
+Lote U4 disparado por auditoría del autor en chat sobre dos focos: (a) items mal encajados en categorías léxicas existentes, (b) campo léxico nuclear no codificado por ausencia de canónico en registry. Cuatro rectificaciones en una sola unidad + alta canónica nueva.
+
+**Registry (`campos-semanticos-canonicos.json` v1.7 → v1.8):**
+
+- Alta de canónico **`Envases y recipientes`** con `origen: excepcion`. PCIC A1 §Alimentación no recoge envases ni recipientes como subcategoría léxica dedicada. Precedente metodológico: Gentilicios (v10.124), La hora (v10.129). Naming coherente con propuesta histórica del repo. Heterogeneidad de `trozo` (unidad de porción, no recipiente estricto) documentada en nota.
+
+**Rectificaciones en `unidades/U4/U4-nc1-inventario.json`:**
+
+1. **`Restaurante` → `Establecimientos`**: movidos `comedor escolar`, `puesto`, `quioscos`, `pizzería` (no son restaurantes). `quioscos` unificado a `quiosco` (§5.11). Nueva entrada en `vocabulario_consolidado.recurrente` con descripción y fuentes. Refs de actividad p48-act2, p50-act1, p50-act3 actualizadas: sustituido `Restaurante` por `Establecimientos` donde corresponde.
+2. **`Adjetivos de nacionalidad` → `Gentilicios`**: movido `madrileño` (gentilicio regional, no nacionalidad). Canónico `Gentilicios` ya existe desde v10.124 para exactamente este caso.
+3. **`Adjetivos de nacionalidad`: `colombianas` → `colombiano/-a`**: forma fem pl violaba §5.11 (unificación de flexiones). Anotado con barra (precedente `moderno/-a` v10.158). Deuda matcher §5.10/§5.11 vs flexiones fem pendiente.
+4. **`Adjetivos de nacionalidad`: retirada de `vegetariano`**: no es nacionalidad ni gentilicio (es adjetivo de tipo de dieta). Sin reubicación canónica (no hay canónico vigente). Escalado a deuda: decidir canónico futuro (¿Tipos de dieta?) y aplicar retroactivamente.
+5. **Alta de `Envases y recipientes` como principal en U4**: 9 items (botella, paquete, trozo, vaso, cartón, taza, lata, bote, bolsa), fuentes p47-act5 + p47-act6. Refs de actividad p47-act5 y p47-act6 actualizadas. Causa raíz: extracción inicial perdió el campo léxico por ausencia de canónico (omisión §0.1) — se mencionó solo de pasada en la descripción de `Concordancia de género`.
+
+**Validación:** `python3 scripts/validar_inventario.py 4` → 0 errores, 0 avisos.
+
+**Deudas abiertas (no resueltas en este lote):**
+- `vegetariano` sin canónico vigente — escalado.
+- matcher §5.10/§5.11 vs flexiones fem (caso `colombiano/-a`, `moderno/-a` U6) — deuda técnica de sesión aparte.
+- Auditoría retroactiva U0-U5 buscando patrones análogos (items mal encajados, campos léxicos perdidos por ausencia de canónico).
+
+**Higiene del commit:** v10.159 contiene únicamente registry léxico + U4-nc1-inventario + meta docs (CHANGELOG, REVIEW). Cambios no relacionados y untracked quedan fuera.
+
+---
+
 ## [v10.158 — 2026-05-18] — U6 extraída + canónicos renombrados + correcciones editoriales
 
 Primera extracción real de unidad nueva tras todo el rediseño de fase 1. Migración de U6 desde shape legacy (pre-v10.115) a shape canónico post-v10.153, usando el JSON legacy como referencia de transcripción y reescribiendo desde cero (Opción C del autor + revisor en worktree separado).

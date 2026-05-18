@@ -180,6 +180,23 @@
         "descripcion": {
           "U4": "PCIC A1 — Platos (sección Dieta y nutrición). U4 introduce platos típicos de cocina hispana (paella, arroz a la cubana, pasta con tomate, tortillas, sopa de cocido madrileño, pollo a la catalana) e internacional (pizza, macarrones, hamburguesa, tacos, burritos, tamales, arepas). Articulado con la sección Destrezas (menú de restaurante 'La taberna del abuelo' y 'Comer en España') y la sección Cultura ('Comer por la calle')."
         }
+      },
+      "Envases y recipientes": {
+        "items": [
+          {"palabra": "botella", "fuentes": ["p47-act5", "p47-act6"]},
+          {"palabra": "paquete", "fuentes": ["p47-act5", "p47-act6"]},
+          {"palabra": "trozo", "fuentes": ["p47-act5", "p47-act6"]},
+          {"palabra": "vaso", "fuentes": ["p47-act5", "p47-act6"]},
+          {"palabra": "cartón", "fuentes": ["p47-act5", "p47-act6"]},
+          {"palabra": "taza", "fuentes": ["p47-act5", "p47-act6"]},
+          {"palabra": "lata", "fuentes": ["p47-act5", "p47-act6"]},
+          {"palabra": "bote", "fuentes": ["p47-act5", "p47-act6"]},
+          {"palabra": "bolsa", "fuentes": ["p47-act5", "p47-act6"]}
+        ],
+        "fuentes": ["p47-act5", "p47-act6"],
+        "descripcion": {
+          "U4": "Canónico de alta excepcional (registry v1.8, v10.159) por hallazgo del autor: campo léxico nuclear en p47 (formatos de compra/consumo alimentario) no recogido como subcategoría dedicada en PCIC A1 §Alimentación. Núcleo de p47-act5 (relacionar palabras con imágenes de envases) y p47-act6 (clasificar alimentos según envase). 'trozo' incluido por coherencia con el patrón pedagógico del libro pese a no ser propiamente recipiente (unidad de porción)."
+        }
       }
     },
     "recurrente": {
@@ -190,15 +207,23 @@
           {"palabra": "plato", "fuentes": ["p48-act1", "p49-act6", "p49-act7", "p46-act1", "p48-act2", "p48-act3", "p48-act3@R"]},
           {"palabra": "postre", "fuentes": ["p46-act1", "p46-act2", "p46-act4", "p48-act1", "p48-act2", "p48-act3", "p48-act3@R", "p49-act5", "p49-act5@R", "p49-act6", "p49-act7", "p51-act1"]},
           {"palabra": "camarero", "fuentes": ["p49-act5", "p49-act7"]},
-          {"palabra": "cliente", "fuentes": ["p49-act7"]},
-          {"palabra": "comedor escolar", "fuentes": ["p48-act2", "p48-act2@R"]},
-          {"palabra": "pizzería", "fuentes": ["p50-act1"]},
-          {"palabra": "puesto", "fuentes": ["p50-act1"]},
-          {"palabra": "quioscos", "fuentes": ["p50-act1", "p50-act3@R"]}
+          {"palabra": "cliente", "fuentes": ["p49-act7"]}
         ],
-        "fuentes": ["p43-act8", "p43-act8@R", "p48-act1", "p48-act2", "p48-act2@R", "p49-act6", "p49-act7", "p46-act1", "p48-act3", "p48-act3@R", "p46-act2", "p46-act4", "p49-act5", "p49-act5@R", "p51-act1", "p50-act1", "p50-act3@R"],
+        "fuentes": ["p43-act8", "p43-act8@R", "p48-act1", "p48-act2", "p48-act2@R", "p49-act6", "p49-act7", "p46-act1", "p48-act3", "p48-act3@R", "p46-act2", "p46-act4", "p49-act5", "p49-act5@R", "p51-act1"],
         "descripcion": {
           "U4": "PCIC A1 §3.6 — Restaurante. Léxico de comer fuera de casa. Cumple frecuencia (p43 selección de restaurantes; pp48-49 menú y simulación de pedido en La taberna del abuelo) + posición (PCIC A1 lo respalda) + valor pedagógico (sección Destrezas 'Comer en España' construye el dominio). Recurrente fuerte de la unidad."
+        }
+      },
+      "Establecimientos": {
+        "items": [
+          {"palabra": "comedor escolar", "fuentes": ["p48-act2", "p48-act2@R"]},
+          {"palabra": "puesto", "fuentes": ["p50-act1"]},
+          {"palabra": "quiosco", "fuentes": ["p50-act1", "p50-act3@R"]},
+          {"palabra": "pizzería", "fuentes": ["p50-act1"]}
+        ],
+        "fuentes": ["p48-act2", "p48-act2@R", "p50-act1", "p50-act3@R"],
+        "descripcion": {
+          "U4": "Léxico de establecimientos/lugares de consumo alimentario distintos del restaurante propiamente dicho: comedor escolar (Destrezas 'Comer en España') y puesto / quiosco / pizzería (Cultura 'Comer por la calle', p50-act1 con 'pequeñas pizzerías'). Reubicado en v10.159 desde 'Restaurante'. Categoría que se desarrolla como principal en U5; aquí entra como aparición material previa."
         }
       },
       "Adjetivos de nacionalidad": {
@@ -206,15 +231,22 @@
           {"palabra": "italiano", "fuentes": ["p43-act5"]},
           {"palabra": "peruano", "fuentes": ["p43-act8"]},
           {"palabra": "brasileño", "fuentes": ["p43-act8"]},
-          {"palabra": "vegetariano", "fuentes": ["p43-act8", "p48-act1", "p48-act3"]},
           {"palabra": "español", "fuentes": ["p43-act8@R", "p51-act4", "p48-act2"]},
-          {"palabra": "madrileño", "fuentes": ["p48-act1"]},
-          {"palabra": "colombianas", "fuentes": ["p50-act2"]},
+          {"palabra": "colombiano/-a", "fuentes": ["p50-act2"]},
           {"palabra": "mexicano", "fuentes": ["p50-act2"]}
         ],
-        "fuentes": ["p43-act5", "p43-act8", "p48-act1", "p48-act3", "p43-act8@R", "p51-act4", "p48-act2", "p50-act2"],
+        "fuentes": ["p43-act5", "p43-act8", "p43-act8@R", "p51-act4", "p48-act2", "p50-act2"],
         "descripcion": {
-          "U4": "Recurrente desde U2 (PRE 'Adjetivos de nacionalidad'). En U4 reaparece intensamente: cocinas nacionales en la selección de restaurantes (p43-act8), descripción de platos típicos (p48), texto cultural 'Comer por la calle' (p50). Cumple los 3 criterios §5.1.1 (frecuencia + posición previa + valor pedagógico al situar la comida en su contexto cultural/nacional)."
+          "U4": "Recurrente desde U2 (PRE 'Adjetivos de nacionalidad'). En U4 reaparece intensamente: cocinas nacionales en la selección de restaurantes (p43-act8), descripción de platos típicos (p48), texto cultural 'Comer por la calle' (p50). Cumple los 3 criterios §5.1.1 (frecuencia + posición previa + valor pedagógico al situar la comida en su contexto cultural/nacional). 'colombianas' (p50-act2, fem pl) anotado como 'colombiano/-a' por consistencia con precedente 'moderno/-a' en U6 (deuda matcher §5.10/§5.11 vs flexiones fem; pragmático)."
+        }
+      },
+      "Gentilicios": {
+        "items": [
+          {"palabra": "madrileño", "fuentes": ["p48-act1"]}
+        ],
+        "fuentes": ["p48-act1"],
+        "descripcion": {
+          "U4": "Gentilicio regional (Madrid → madrileño en 'sopa de cocido madrileño', p48-act1). Categoría creada en v10.124 para gentilicios no-nacionales. Reubicado en v10.159 desde 'Adjetivos de nacionalidad'."
         }
       },
       "Bebida": {
@@ -564,7 +596,11 @@
     "Verbos NO canonizados en verbos-canonicos.json detectados como input incidental en contenido didáctico (no codificados): tomar, beber, comprar, vender, llevar, poder, probar, encontrar, esperar, saborear, combatir, pedir, votar.",
     "Anticipaciones detectadas para fase 2 (input incidental cuyo lema es canónico en unidad posterior): 'salir' (U7) → 'sale del horno' en p50 texto cultural. No codificado, no recurrente. Reporte alerta cross-unidad.",
     "Verbo 'comer' tiene tiempo Infinitivo declarado en U4 además de Presente: aparece como complemento de querer ('¿Quieres comer carne?', p43-act5). En 'van a comer' (p46-act2) es perífrasis de futuro próximo con ir; el infinitivo NO se registra como entrada separada (queda implícito en estructura_perifrastica de 'ir').",
-    "Pendiente escalado al ejecutor coordinador (no resuelto por esta IA, mención explícita del autor en chat): verificar si la categoría 'Artículos indeterminados' aparece aplicada en alguna unidad anterior del libro (presencia previa al canon U4 PRE). En caso afirmativo, ajustar política de recurrente / consistencia cross-unidad."
+    "Pendiente escalado al ejecutor coordinador (no resuelto por esta IA, mención explícita del autor en chat): verificar si la categoría 'Artículos indeterminados' aparece aplicada en alguna unidad anterior del libro (presencia previa al canon U4 PRE). En caso afirmativo, ajustar política de recurrente / consistencia cross-unidad.",
+    "Rectificación v10.159 (autor en chat): 'Restaurante' incluía indebidamente 'comedor escolar', 'puesto', 'quioscos' y 'pizzería' — son establecimientos/lugares de consumo callejero o escolar, no restaurantes. Movidos a la categoría 'Establecimientos' (canónico ya existente en registry; principal en U5; aquí entra como aparición material previa). 'quioscos' unificado a 'quiosco' por §5.11. Refs de actividad p48-act2, p50-act1 y p50-act3 actualizadas: 'Restaurante' sustituido por 'Establecimientos' donde corresponde (los items reubicados ya no anclaban a Restaurante en esas actividades).",
+    "Rectificación v10.159 (autor en chat): 'Adjetivos de nacionalidad' incluía indebidamente 'madrileño' (gentilicio regional, no nacionalidad) y 'colombianas' (forma fem pl, viola §5.11). 'madrileño' movido a categoría 'Gentilicios' (canónico creado en v10.124 para este caso); 'colombianas' anotado como 'colombiano/-a' (precedente moderno/-a U6, deuda matcher §5.10/§5.11).",
+    "Rectificación v10.159 (autor en chat, escalado §0.1): 'vegetariano' estaba mal encajado en 'Adjetivos de nacionalidad' — no es nacionalidad ni gentilicio; es adjetivo de tipo de dieta. Retirado de U4 sin reubicación canónica (no hay canónico vigente). Deuda: decidir canónico (¿'Tipos de dieta'? ¿'Alimentación: hábitos'?) y aplicar retroactivamente. Aparece en p43-act8 ('Restaurante vegetariano'), p48-act1, p48-act3.",
+    "Alta canónica v10.159 (autor en chat, dictamen editorial §0.1 + §5.6): 'Envases y recipientes' añadido como canónico nuevo (registry v1.7→v1.8) con origen excepcion. Razón: campo léxico nuclear en p47-act5 (relacionar palabras con imágenes) y p47-act6 (clasificar alimentos por envase) que la extracción inicial perdió por ausencia de canónico vigente. PCIC A1 §Alimentación no recoge envases ni recipientes como subcategoría léxica dedicada. 9 items: botella, paquete, trozo, vaso, cartón, taza, lata, bote, bolsa. Codificado como principal en U4 (no recurrente: se introduce en p47 como foco explícito). Naming coherente con la propuesta histórica del repo (U4-propuesta-informe-corrida.md, hilo en nc1-reciclaje.json). Heterogeneidad documentada: 'trozo' (unidad de porción, no recipiente estricto) incluido por coherencia pedagógica del patrón del libro — no se sobrefragmenta el canon."
   ],
   "paginas_detalle": [
     {
@@ -1364,7 +1400,7 @@
           "destreza": ["comprension_lectora", "interaccion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Trabaja con tu compañero y relaciona las siguientes palabras con las imágenes.",
-          "vocabulario": ["Alimentos", "Bebida"],
+          "vocabulario": ["Alimentos", "Bebida", "Envases y recipientes"],
           "tiempos_y_verbos": [],
           "gramatica": ["Artículos indeterminados", "Concordancia de género"],
           "pronunciacion_ortografia": [],
@@ -1387,7 +1423,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿Cómo puedes comprar o consumir estos alimentos? Hay varias opciones.",
-          "vocabulario": ["Alimentos", "Bebida", "Comidas preparadas"],
+          "vocabulario": ["Alimentos", "Bebida", "Comidas preparadas", "Envases y recipientes"],
           "tiempos_y_verbos": [],
           "gramatica": ["Artículos indeterminados"],
           "pronunciacion_ortografia": [],
@@ -1595,7 +1631,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "cultura",
           "instruccion_original": "Lee y contesta a las preguntas.",
-          "vocabulario": ["Alimentos", "Comidas preparadas", "Restaurante", "Adjetivos de nacionalidad"],
+          "vocabulario": ["Alimentos", "Comidas preparadas", "Restaurante", "Establecimientos", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
             {"lema": "comer", "tiempo": "Presente", "formas_trabajadas": ["come", "comen"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
@@ -1825,7 +1861,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "cultura",
           "instruccion_original": "Lee el texto con atención. ¿Qué países aparecen?",
-          "vocabulario": ["Alimentos", "Comidas preparadas", "Bebida", "Restaurante", "Adjetivos de nacionalidad"],
+          "vocabulario": ["Alimentos", "Comidas preparadas", "Bebida", "Establecimientos", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [
             {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["le gusta"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es", "Son"]},
@@ -1873,7 +1909,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "cultura",
           "instruccion_original": "Lee el texto otra vez y contesta a las preguntas.",
-          "vocabulario": ["Alimentos", "Comidas preparadas", "Bebida", "Restaurante", "Adjetivos de nacionalidad"],
+          "vocabulario": ["Alimentos", "Comidas preparadas", "Bebida", "Establecimientos", "Adjetivos de nacionalidad"],
           "tiempos_y_verbos": [],
           "gramatica": ["Interrogativos"],
           "pronunciacion_ortografia": [],
