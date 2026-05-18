@@ -4,46 +4,598 @@
   "titulo": "¿A dónde vas?",
   "paginas_libro": "62-71",
   "nivel": "A1.1",
-  "fuente": {
-    "archivo": "unidades/U6/fuente/U6-nc1.pdf",
-    "version_extraccion": "2026-05-10"
-  },
+  "fuente": { "archivo": "unidades/U6/fuente/U6-nc1.pdf", "version_extraccion": "2026-05-17" },
   "contenidos_indice": {
-    "vocabulario": "Establecimientos. Marcadores de lugar. Profesiones y lugares de trabajo",
-    "gramatica": "Presente de verbos irregulares. Imperativo (tú). Análisis de errores",
-    "comunicacion": "Preguntar por acciones de otros. Horarios. La b = v",
+    "vocabulario": "Establecimientos: cine, restaurante, farmacia... Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca. Profesiones y lugares de trabajo",
+    "gramatica": "Presente de verbos irregulares: cerrar, ir, venir, hacer, jugar, dormir. Imperativo (tú). Análisis de errores",
+    "comunicacion": "Preguntar por acciones de otros: ¿A dónde vas? / ¿Cómo vas a clase? Horarios: ¿A qué hora...? La b = v",
     "destrezas": "Madrid. El barrio de mis sueños",
     "cultura": "Una ciudad colombiana"
   },
   "vocabulario_consolidado": {
     "principal": {
-      "_descripcion": "Léxico declarado en el índice de la unidad, trabajado en la sección Vocabulario.",
-      "Establecimientos": ["restaurante", "parque", "cine", "polideportivo", "iglesia", "oficina de correos", "supermercado", "museo", "farmacia", "librería", "biblioteca", "estación de tren", "instituto", "hotel"],
-      "Marcadores de lugar": ["a la izquierda", "a la derecha", "al lado", "delante", "detrás", "enfrente", "entre", "lejos", "cerca"],
-      "Profesiones y lugares de trabajo": ["bibliotecario/a", "cajero/a", "jardinero/a", "profesora", "camarero/a", "médico/a", "farmacéutico/a", "librero/a", "sacerdote"]
+      "Establecimientos": {
+        "items": [
+          {"palabra": "biblioteca", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3@R", "p63-act5", "p64-act1", "p66-act4", "p67-act6"]},
+          {"palabra": "cafetería", "fuentes": ["p67-act6"]},
+          {"palabra": "centro comercial", "fuentes": ["p66-act1", "p66-act1@R", "p66-act2", "p66-act2@R", "p66-act3"]},
+          {"palabra": "cine", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3@R", "p66-act4", "p68-act1", "p71-act3@R", "p71-act5"]},
+          {"palabra": "estación de tren", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3", "p63-act3@R", "p71-act3@R"]},
+          {"palabra": "farmacia", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3", "p63-act3@R", "p64-act2", "p66-act1", "p66-act2", "p66-act3", "p67-act6", "p71-act5"]},
+          {"palabra": "gimnasio", "fuentes": ["p64-act1"]},
+          {"palabra": "hotel", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3", "p63-act3@R"]},
+          {"palabra": "iglesia", "fuentes": ["p62-act1", "p62-act1@R", "p63-act3", "p63-act3@R", "p66-act4"]},
+          {"palabra": "instituto", "fuentes": ["p62-act1", "p62-act1@R", "p67-act6"]},
+          {"palabra": "librería", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p66-act1"]},
+          {"palabra": "museo", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3@R", "p63-act5", "p67-act6", "p68-act1", "p71-act5"]},
+          {"palabra": "oficina de correos", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R"]},
+          {"palabra": "parque", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3@R", "p63-act5", "p68-act1", "p71-act3@R"]},
+          {"palabra": "piscina", "fuentes": ["p66-act4", "p67-act6", "p69-act10"]},
+          {"palabra": "polideportivo", "fuentes": ["p62-act1", "p62-act1@R", "p62-act2@R", "p63-act3", "p63-act3@R", "p63-act5", "p64-act1", "p71-act5", "p71-act7@R"]},
+          {"palabra": "restaurante", "fuentes": ["p62-act1", "p62-act1@R", "p63-act3@R", "p71-act3@R", "p71-act5"]},
+          {"palabra": "supermercado", "fuentes": ["p62-act1", "p62-act1@R", "p63-act3", "p63-act3@R", "p66-act4", "p71-act5", "p71-act7@R"]}
+        ],
+        "fuentes": [
+          "p62-act1",
+          "p62-act1@R",
+          "p62-act2@R",
+          "p63-act3@R",
+          "p63-act5",
+          "p64-act1",
+          "p66-act4",
+          "p67-act6",
+          "p66-act1",
+          "p66-act1@R",
+          "p66-act2",
+          "p66-act2@R",
+          "p66-act3",
+          "p68-act1",
+          "p71-act3@R",
+          "p71-act5",
+          "p63-act3",
+          "p64-act2",
+          "p69-act10",
+          "p71-act7@R"
+        ],
+        "descripcion": {
+          "U6": "PCIC A1 §11.1 Servicios públicos / §13.1 Tiempo libre y entretenimiento — Establecimientos urbanos básicos. Principal en U6: se introduce un mapa-ilustración con 14 edificios y comercios canónicos (museo, oficina de correos, biblioteca, parque, farmacia, polideportivo, instituto, estación de tren, hotel, iglesia, librería, supermercado, cine, restaurante) en p62-act1 y se trabaja a lo largo de la unidad ampliando con piscina, centro comercial, hospital, cafetería, gimnasio. Cubre el bloque temático 'edificios y comercios' del barrio."
+        }
+      },
+      "Marcadores de lugar": {
+        "items": [
+          {"palabra": "a la derecha", "fuentes": ["cuadro@p62", "p63-act3", "p63-act3@R", "p71-act6@R"]},
+          {"palabra": "a la izquierda", "fuentes": ["cuadro@p62", "p63-act3", "p63-act3@R", "p71-act6@R"]},
+          {"palabra": "al lado", "fuentes": ["cuadro@p62", "p63-act3", "p63-act4", "p63-act4@R", "p69-act10"]},
+          {"palabra": "cerca", "fuentes": ["cuadro@p62", "p63-act3", "p63-act3@R", "p63-act4", "p66-act1"]},
+          {"palabra": "delante", "fuentes": ["cuadro@p62", "p63-act4", "p63-act4@R", "p71-act6@R"]},
+          {"palabra": "detrás", "fuentes": ["cuadro@p62", "p63-act3", "p63-act3@R", "p63-act4", "p63-act4@R", "p71-act6@R"]},
+          {"palabra": "enfrente", "fuentes": ["cuadro@p62", "p63-act3", "p63-act3@R", "p63-act4", "p63-act4@R"]},
+          {"palabra": "entre", "fuentes": ["cuadro@p62", "p63-act4", "p63-act4@R", "p71-act6@R"]},
+          {"palabra": "lejos", "fuentes": ["cuadro@p62", "p63-act3", "p63-act3@R"]}
+        ],
+        "fuentes": ["cuadro@p62", "p63-act3", "p63-act3@R", "p71-act6@R", "p63-act4", "p63-act4@R", "p69-act10", "p66-act1"],
+        "descripcion": {
+          "U6": "PCIC A1 §8.2 Adverbios de predicado + §8.9 Locuciones adverbiales. Primera aparición real como contenido principal en NC1: el cuadro de p62 introduce los 9 marcadores de lugar (incluyendo la nota '*Después de entre no va de') con apoyo visual y se trabajan en producción guiada (p63-act3), selección múltiple (p63-act4) y evaluación (p71-act6). Distinto de la categoría gramatical 'Adverbios y locuciones de lugar' de U5 (encima, debajo, delante, detrás, al lado): aquí el foco es léxico-pragmático, no morfo-sintáctico."
+        }
+      },
+      "Profesiones y lugares de trabajo": {
+        "items": [
+          {"palabra": "biblioteca", "fuentes": ["p63-act8", "p71-act4@R"]},
+          {"palabra": "bibliotecario", "fuentes": ["p63-act7", "p63-act7@R", "p71-act4"]},
+          {"palabra": "cajera", "fuentes": ["p63-act7", "p63-act7@R", "p63-act8"]},
+          {"palabra": "camarero", "fuentes": ["p63-act8"]},
+          {"palabra": "dependiente", "fuentes": ["p71-act4"]},
+          {"palabra": "farmacia", "fuentes": ["p63-act8", "p71-act4@R"]},
+          {"palabra": "farmacéutico", "fuentes": ["p63-act8", "p66-act1", "p71-act4"]},
+          {"palabra": "hospital", "fuentes": ["p63-act8", "p71-act4"]},
+          {"palabra": "iglesia", "fuentes": ["p63-act8"]},
+          {"palabra": "instituto", "fuentes": ["p63-act8", "p71-act4@R"]},
+          {"palabra": "jardinero", "fuentes": ["p63-act7", "p63-act7@R", "p63-act8", "p71-act4"]},
+          {"palabra": "librero", "fuentes": ["p71-act4"]},
+          {"palabra": "librería", "fuentes": ["p63-act8", "p71-act4@R"]},
+          {"palabra": "médico", "fuentes": ["p63-act7", "p63-act7@R", "p63-act8", "p71-act4"]},
+          {"palabra": "parque", "fuentes": ["p63-act8", "p71-act4@R"]},
+          {"palabra": "profesor", "fuentes": ["p71-act4", "p63-act7", "p63-act7@R", "p63-act8"]},
+          {"palabra": "restaurante", "fuentes": ["p63-act8"]},
+          {"palabra": "sacerdote", "fuentes": ["p63-act8"]},
+          {"palabra": "supermercado", "fuentes": ["p63-act8"]}
+        ],
+        "fuentes": ["p63-act8", "p71-act4@R", "p63-act7", "p63-act7@R", "p71-act4", "p66-act1"],
+        "descripcion": {
+          "U6": "PCIC A1 §10 Trabajo (Profesión, Lugares de trabajo). Principal en U6: se introducen profesiones canónicas (cajera, camarero, farmacéutico, profesor, librero, médico, jardinero, bibliotecario, sacerdote, dependiente) y se cruzan con sus lugares de trabajo prototípicos (supermercado, restaurante, farmacia, instituto, librería, hospital, parque, biblioteca, iglesia, tienda) mediante actividades de relacionar (p63-act7, p63-act8) y producción guiada (p71-act4). Salvedad §0.1 cerrada en v10.155: hasta U6 la categoría figuraba como recurrente en U3 con anticipación P-Profesiones-anticipacion-U6; en U6 pasa a principal canónico."
+        }
+      }
     },
     "recurrente": {
-      "_descripcion": "Léxico que aparece en varias secciones de la unidad.",
-      "Verbos irregulares": ["cerrar", "ir", "venir", "hacer", "jugar", "dormir"],
-      "Medios de transporte": ["andando", "a pie", "en moto", "en bici", "en autobús", "en tren", "en metro"]
-    },
-    "comprension": {
-      "_descripcion": "Léxico que aparece en los textos de Destrezas y Cultura y afecta la comprensión aunque no se trabaje explícitamente.",
-      "Madrid": ["avenidas", "barrios", "museos", "transportes públicos", "metro", "vida nocturna", "turistas", "El Retiro"],
-      "Illán de Vacas": ["habitantes", "municipios", "demográfico", "madrileños"],
-      "Cartagena de Indias": ["Patrimonio de la Humanidad", "centenarias", "rejas", "balcones", "patios", "amurallada", "carrozas", "disfraces", "palmeras"],
-      "Formas geométricas": ["rectángulo", "triángulo", "cuadrado", "círculo"],
-      "Otras palabras": ["centro comercial", "agenda", "horario"]
+      "Días de la semana": {
+        "items": [
+          {"palabra": "lunes", "fuentes": ["p64-act1", "p66-act4", "p66-act5", "p71-act7"]},
+          {"palabra": "martes", "fuentes": ["p66-act4"]},
+          {"palabra": "miércoles", "fuentes": ["p64-act1", "p66-act4"]},
+          {"palabra": "jueves", "fuentes": ["p66-act4"]},
+          {"palabra": "viernes", "fuentes": ["p64-act1", "p66-act4"]},
+          {"palabra": "sábado", "fuentes": ["p66-act4", "p67-act8"]},
+          {"palabra": "domingo", "fuentes": ["p66-act4", "p67-act8"]}
+        ],
+        "fuentes": ["p64-act1", "p66-act4", "p66-act5", "p71-act7", "p67-act8"],
+        "descripcion": {
+          "U6": "Recurrente desde U2 (principal). En U6 reaparece como soporte de horarios y rutinas: el cuadro de la agenda de Lorena (p66-act4) enumera los 7 días explícitamente; otros días aparecen en p64-act1 ('los lunes, miércoles y viernes'), p66-act5 (agenda propia, plantilla 'el lunes voy a...'), p67-act8 ('Hasta el sábado / domingo!') y p71-act7 (ordenación 'los lunes'). Cumple los 3 criterios §5.1.1: frecuencia (5 actividades), posición (canónico U2 principal), valor pedagógico (contextualiza la sección 'Comunicación: preguntar por acciones de otros / horarios'). Capitalización normalizada a minúscula (forma estándar del día de la semana en español); el libro usa mayúscula solo como cabecera de celda en la agenda (p66-act4), formato editorial no relevante para el item."
+        }
+      },
+      "Adjetivos descriptivos": {
+        "items": [
+          {"palabra": "altos", "fuentes": ["p68-act1"]},
+          {"palabra": "anchas", "fuentes": ["p68-act1", "p68-act2"]},
+          {"palabra": "antigua", "fuentes": ["p68-act2", "p68-act1", "p68-act3", "p70-act1"]},
+          {"palabra": "baratos", "fuentes": ["p68-act2"]},
+          {"palabra": "buenos", "fuentes": ["p68-act1", "p68-act2", "p68-act3", "p68-act3@R"]},
+          {"palabra": "caros", "fuentes": ["p68-act1", "p68-act2", "p68-act3"]},
+          {"palabra": "centenarias", "fuentes": ["p70-act1"]},
+          {"palabra": "coloridos", "fuentes": ["p70-act1"]},
+          {"palabra": "desconocido", "fuentes": ["p68-act2"]},
+          {"palabra": "diurna", "fuentes": ["p68-act2"]},
+          {"palabra": "estrechas", "fuentes": ["p68-act1", "p68-act2"]},
+          {"palabra": "famoso", "fuentes": ["p68-act1", "p68-act2"]},
+          {"palabra": "grande", "fuentes": ["p68-act1", "p68-act2", "p68-act3", "p68-act3@R"]},
+          {"palabra": "malos", "fuentes": ["p68-act2"]},
+          {"palabra": "moderno/-a", "fuentes": ["p68-act1", "p68-act2", "p68-act3", "p68-act3@R", "p69-act9"]},
+          {"palabra": "nocturna", "fuentes": ["p68-act1", "p68-act2", "p68-act3", "p68-act3@R"]},
+          {"palabra": "pequeña", "fuentes": ["p68-act2", "p68-act3"]},
+          {"palabra": "ruidoso", "fuentes": ["p68-act2", "p69-act9"]},
+          {"palabra": "silencioso", "fuentes": ["p68-act2"]},
+          {"palabra": "viejos", "fuentes": ["p68-act3"]}
+        ],
+        "fuentes": ["p68-act1", "p68-act2", "p68-act3", "p70-act1", "p68-act3@R", "p69-act9"],
+        "descripcion": {
+          "U6": "Recurrente desde U5 (principal). En U6 reaparece intensivamente en las páginas de Destrezas: texto sobre Madrid (p68-act1) introduce contrastes (grande/pequeña, moderna/antigua, anchas/estrechas, buenos/malos, baratos/caros, ruidoso/silencioso, famoso/desconocido, nocturna/diurna) que se trabajan en p68-act2 (relacionar contrarios) y p68-act3 (corregir afirmaciones). Cumple §5.1.1: frecuencia alta, posición canónica U5, valor pedagógico claro (soporte descriptivo del barrio/ciudad)."
+        }
+      }
     }
   },
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "abrir",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Presente": "regular -ir", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo", "Presente"],
+      "formas_trabajadas": ["abre", "abrir"],
+      "fuentes": ["p65-act4", "p67-act6", "p71-act2"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo, Presente." }
+    },
+    {
+      "lema": "beber",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Presente": "regular -er", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo", "Presente"],
+      "formas_trabajadas": ["bebe", "bebemos", "beber"],
+      "fuentes": ["cuadro@p64#2", "p65-act4", "p67-act10", "p67-act9"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo, Presente." }
+    },
+    {
+      "lema": "cerrar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica e→ie", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo", "Presente"],
+      "formas_trabajadas": ["cerramos", "cerrar", "cerráis", "cierra", "cierran", "cierras", "cierro"],
+      "fuentes": ["cuadro@p64#1", "p64-act1", "p64-act2", "p65-act4", "p66-act1", "p67-act6", "p71-act1", "p71-act2", "p71-act7"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo, Presente." }
+    },
+    {
+      "lema": "comer",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo"],
+      "formas_trabajadas": ["comer"],
+      "fuentes": ["p71-act5"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Infinitivo." }
+    },
+    {
+      "lema": "comprar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Infinitivo": "forma léxica en perífrasis (querer + inf.)" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["comprar", "compras"],
+      "fuentes": ["p62-act2", "p71-act5"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "conectar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["conecta", "conectar"],
+      "fuentes": ["p65-act5"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "cortar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["corta", "cortar"],
+      "fuentes": ["p65-act5", "p71-act2"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "dar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "totalmente irregular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["dame", "dar", "pásame"],
+      "fuentes": ["cuadro@p64#2", "p65-act3", "p65-act4", "p71-act2"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "decir",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "irregular (di)", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["decirle", "dime"],
+      "fuentes": ["cuadro@p64#2", "p66-act1", "p66-act2"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "decorar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["decora", "decorar"],
+      "fuentes": ["p65-act5"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "dejar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["deja", "dejar"],
+      "fuentes": ["p65-act4"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "dormir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica o→ue" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["dormimos", "dormís", "duerme", "duermen", "duermes", "duermo"],
+      "fuentes": ["cuadro@p64#1", "p62-act2", "p64-act1", "p64-act2"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "escribir",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["escribe", "escribir"],
+      "fuentes": ["cuadro@p64#2", "p65-act3", "p71-act2"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "escuchar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["escucha", "escuchar"],
+      "fuentes": ["cuadro@p64#2", "p65-act4"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "estar",
+      "tipo_de_verbo": ["copulativo", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["estoy", "está", "están", "estás"],
+      "fuentes": ["cuadro@p62", "p63-act3", "p63-act4", "p66-act1", "p68-act1", "p68-act3", "p69-act10", "p69-act5", "p69-act6", "p70-act2", "p70-act3", "p71-act6"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "estudiar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["estudia"],
+      "fuentes": ["p67-act10"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "gustar",
+      "tipo_de_verbo": ["tipo gustar", "intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "tipo gustar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["gusta"],
+      "fuentes": ["p68-act1", "p68-act3", "p69-act6", "p70-act3"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "hablar",
+      "tipo_de_verbo": ["transitivo", "intransitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular" },
+      "tiempos": ["Imperativo"],
+      "formas_trabajadas": ["habla"],
+      "fuentes": ["cuadro@p64#2"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo." }
+    },
+    {
+      "lema": "hacer",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad 1ª persona", "Imperativo": "irregular (haz)", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo", "Presente"],
+      "formas_trabajadas": ["hace", "hacemos", "hacen", "hacer", "haces", "hacéis", "hago", "haz"],
+      "fuentes": ["cuadro@p64#1", "cuadro@p64#2", "p63-act6", "p64-act1", "p64-act2", "p65-act3", "p65-act4", "p66-act1", "p71-act1"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo, Presente." }
+    },
+    {
+      "lema": "ir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular", "Imperativo": "irregular (ve)", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo", "Presente"],
+      "formas_trabajadas": ["ir", "va", "vais", "vamos", "van", "vas", "ve", "voy"],
+      "fuentes": [
+        "cuadro@p64#1",
+        "cuadro@p64#2",
+        "p64-act1",
+        "p64-act2",
+        "p66-act1",
+        "p66-act2",
+        "p66-act3",
+        "p66-act4",
+        "p66-act5",
+        "p67-act10",
+        "p67-act7",
+        "p67-act9",
+        "p69-act11",
+        "p69-act5",
+        "p69-act6",
+        "p69-act8",
+        "p70-act3",
+        "p71-act1",
+        "p71-act7"
+      ],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo, Presente." }
+    },
+    {
+      "lema": "jugar",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica u→ue", "Infinitivo": "forma no personal" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["juega", "juegan", "juegas", "juego", "jugamos", "jugar", "jugáis"],
+      "fuentes": ["cuadro@p64#1", "p63-act6", "p64-act1", "p64-act2", "p71-act5"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "llamarse",
+      "tipo_de_verbo": ["pronominal"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["se llama"],
+      "fuentes": ["p70-act3"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "pasear",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar", "Infinitivo": "forma léxica en perífrasis" },
+      "tiempos": ["Infinitivo", "Presente"],
+      "formas_trabajadas": ["pasear", "paseas"],
+      "fuentes": ["p62-act2", "p68-act1"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Infinitivo, Presente." }
+    },
+    {
+      "lema": "pegar",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "regular 2ª persona singular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo"],
+      "formas_trabajadas": ["pega", "pegar"],
+      "fuentes": ["p65-act5"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo." }
+    },
+    {
+      "lema": "poner",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Imperativo": "totalmente irregular", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo", "Presente"],
+      "formas_trabajadas": ["pon", "ponen", "poner"],
+      "fuentes": ["cuadro@p64#2", "p65-act4", "p70-act1"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo, Presente." }
+    },
+    {
+      "lema": "querer",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad vocálica e→ie" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["quiere", "quiero"],
+      "fuentes": ["p66-act1", "p66-act2", "p66-act3"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "ser",
+      "tipo_de_verbo": ["copulativo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["es", "son"],
+      "fuentes": ["p66-act1", "p68-act1", "p68-act3", "p69-act4", "p69-act5", "p69-act8", "p70-act1", "p70-act2", "p70-act3"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "tener",
+      "tipo_de_verbo": ["transitivo"],
+      "rasgo_por_tiempo": { "Presente": "totalmente irregular" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["tiene", "tienen"],
+      "fuentes": ["p66-act3", "p67-act10", "p68-act1", "p69-act10", "p70-act1"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "trabajar",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ar" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["trabaja", "trabajan"],
+      "fuentes": ["p63-act6", "p66-act1", "p66-act2", "p71-act4"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    },
+    {
+      "lema": "venir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "irregularidad 1ª persona + cambio vocálico e→ie", "Imperativo": "irregular (ven)", "Infinitivo": "forma no personal" },
+      "tiempos": ["Imperativo", "Infinitivo", "Presente"],
+      "formas_trabajadas": ["puede venir", "ven", "vengo", "venimos", "venir", "venís", "viene", "vienen", "vienes"],
+      "fuentes": ["cuadro@p64#1", "cuadro@p64#2", "p64-act1", "p64-act2", "p65-act4", "p66-act1", "p67-act9", "p71-act1", "p71-act2", "p71-act7"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Imperativo, Infinitivo, Presente." }
+    },
+    {
+      "lema": "vivir",
+      "tipo_de_verbo": ["intransitivo"],
+      "rasgo_por_tiempo": { "Presente": "regular -ir" },
+      "tiempos": ["Presente"],
+      "formas_trabajadas": ["vive", "vives", "vivimos"],
+      "fuentes": ["p67-act10", "p67-act9", "p69-act6", "p70-act3"],
+      "descripcion": { "U6": "Verbo canónico del registry; aparece en U6 con tiempos: Presente." }
+    }
+  ],
+  "gramatica_consolidada": {
+    "principal": {
+      "Imperativo (tú)": {
+        "items": [
+          {"palabra": "abre", "fuentes": ["p65-act4", "p71-act2"]},
+          {"palabra": "bebe", "fuentes": ["cuadro@p64#2", "p65-act4"]},
+          {"palabra": "cierra", "fuentes": ["p65-act4", "p71-act2"]},
+          {"palabra": "conecta", "fuentes": ["p65-act5"]},
+          {"palabra": "corta", "fuentes": ["p65-act5", "p71-act2"]},
+          {"palabra": "dame", "fuentes": ["cuadro@p64#2", "p65-act3", "p65-act4", "p71-act2"]},
+          {"palabra": "decora", "fuentes": ["p65-act5"]},
+          {"palabra": "deja", "fuentes": ["p65-act4"]},
+          {"palabra": "dime", "fuentes": ["cuadro@p64#2"]},
+          {"palabra": "escribe", "fuentes": ["cuadro@p64#2", "p65-act3", "p71-act2"]},
+          {"palabra": "escucha", "fuentes": ["cuadro@p64#2", "p65-act4"]},
+          {"palabra": "habla", "fuentes": ["cuadro@p64#2"]},
+          {"palabra": "haz", "fuentes": ["cuadro@p64#2", "p65-act3", "p65-act4"]},
+          {"palabra": "pega", "fuentes": ["p65-act5"]},
+          {"palabra": "pon", "fuentes": ["cuadro@p64#2", "p65-act4"]},
+          {"palabra": "pásame", "fuentes": ["cuadro@p64#2"]},
+          {"palabra": "ve", "fuentes": ["cuadro@p64#2"]},
+          {"palabra": "ven", "fuentes": ["cuadro@p64#2", "p65-act4", "p71-act2"]}
+        ],
+        "fuentes": ["p65-act4", "p71-act2", "cuadro@p64#2", "p65-act5", "p65-act3"],
+        "descripcion": {
+          "U6": "PCIC A1 §9.4 El imperativo (afirmativo, 2.ª persona del singular 'tú'). Principal en U6: primer tiempo verbal nuevo en NC1 después del Presente. El cuadro de p64 introduce el imperativo afirmativo en 2.ª persona del singular con paradigmas regulares (hablar→habla, beber→bebe, escribir→escribe) e irregulares (venir→ven, poner→pon, ir→ve, hacer→haz, decir→dime), junto con sus usos pragmáticos (dar órdenes, dar instrucciones). Se trabaja en transformación inf→imp (p65-act4), selección de orden por imagen (p65-act3) y completar instrucciones con verbos del recuadro (p65-act5: cortar, pegar, conectar, decorar). Reaparece en p71-act2 (evaluación) con ampliación: dar (a mí)→dame, venir→ven, cerrar→cierra, abrir→abre, cortar→corta, escribir→escribe. El alcance en U6 es estrictamente la 2.ª persona del singular afirmativa; el imperativo negativo y otras personas no entran en NC1."
+        }
+      }
+    },
+    "recurrente": {
+      "Interrogativos": {
+        "items": [
+          {"palabra": "a dónde", "fuentes": ["p64-act2", "p66-act4", "p71-act7"]},
+          {"palabra": "a qué hora", "fuentes": ["p66-act1", "p67-act6", "p71-act7"]},
+          {"palabra": "cuántos", "fuentes": ["p69-act10"]},
+          {"palabra": "cómo", "fuentes": ["p64-act1", "p66-act1", "p66-act2", "p67-act7", "p70-act3"]},
+          {"palabra": "de dónde", "fuentes": ["p71-act7"]},
+          {"palabra": "dónde", "fuentes": ["p62-act2", "p69-act5", "p69-act10", "p70-act3"]},
+          {"palabra": "para qué", "fuentes": ["p66-act1", "p69-act5"]},
+          {"palabra": "por qué", "fuentes": ["p64-act1", "p66-act2", "p69-act5"]},
+          {"palabra": "qué", "fuentes": ["p66-act1", "p69-act10"]}
+        ],
+        "fuentes": ["p64-act2", "p66-act4", "p71-act7", "p66-act1", "p67-act6", "p69-act10", "p64-act1", "p66-act2", "p67-act7", "p70-act3", "p62-act2", "p69-act5"],
+        "descripcion": {
+          "U6": "Recurrente desde U3 (principal). En U6 reaparece intensivamente como soporte de la función comunicativa 'Preguntar por acciones de otros y horarios' (¿A dónde vas?, ¿Cómo vas a clase?, ¿A qué hora abre/cierra...?, ¿Por qué...?, ¿Para qué...?, ¿De dónde vienes?). Compuesto interrogativo nuevo en NC1: 'A qué hora' (introduce horarios). Cumple §5.1.1: frecuencia muy alta, posición canónica U3, valor pedagógico claro."
+        }
+      },
+      "Pronombre sujeto": {
+        "items": [
+          {"palabra": "ella", "fuentes": ["cuadro@p64#1"]},
+          {"palabra": "ellas", "fuentes": ["cuadro@p64#1", "p64-act1"]},
+          {"palabra": "ellos", "fuentes": ["cuadro@p64#1", "p64-act2"]},
+          {"palabra": "nosotros", "fuentes": ["cuadro@p64#1"]},
+          {"palabra": "tú", "fuentes": ["cuadro@p64#1", "p64-act1", "p64-act2"]},
+          {"palabra": "vosotros", "fuentes": ["cuadro@p64#1"]},
+          {"palabra": "yo", "fuentes": ["cuadro@p64#1", "p64-act1", "p64-act2", "p71-act1"]},
+          {"palabra": "él", "fuentes": ["cuadro@p64#1"]}
+        ],
+        "fuentes": ["cuadro@p64#1", "p64-act1", "p64-act2", "p71-act1"],
+        "descripcion": {
+          "U6": "Recurrente desde U1 (introducción singulares) y U2 (ampliación plurales). En U6 el cuadro p64#1 'Presente de verbos irregulares' presenta la serie completa (yo, tú, él/ella/Ud., nosotros/-as, vosotros/-as, ellos/ellas/Uds.) como columna de pronombre sujeto para los 6 verbos irregulares trabajados. Reaparece como soporte sintáctico en actividades de cloze verbal (p64-act1, p64-act2, p71-act1) donde el alumno reconstruye la forma a partir del pronombre."
+        }
+      },
+      "Hay": {
+        "items": [
+          {"palabra": "hay", "fuentes": ["p66-act1", "p66-act1@R", "p68-act1", "p68-act3", "p68-act3@R", "p69-act8@R", "p69-act10", "p69-act11"]}
+        ],
+        "fuentes": ["p66-act1", "p66-act1@R", "p68-act1", "p68-act3", "p68-act3@R", "p69-act8@R", "p69-act10", "p69-act11"],
+        "descripcion": {
+          "U6": "Recurrente desde U4 (principal). En U6 aparece para expresar existencia en el barrio/ciudad: p66-act1 diálogo ('hay un centro comercial y hay una librería'), p68-act1 texto Madrid ('aquí está uno de los museos'... no, descriptivo, pero también hay otros: 'aquí está'), p68-act3 ('En Madrid hay metro'), p69-act8 modelo barrio sueños ('hay un campo de fútbol, hay dos piscinas, hay una tienda, hay una biblioteca'), p69-act10 ('¿En tu barrio hay coches, autobuses, metro?'), p69-act11 ('¿Hay piscina?')."
+        }
+      },
+      "Oposición ser / estar": {
+        "items": [
+          {"palabra": "estar (ubicación, estado)", "fuentes": ["p68-act1", "p68-act3", "p68-act3@R", "p69-act5", "p69-act5@R", "p69-act6", "p69-act10", "p71-act6@R", "cuadro@p62"]},
+          {"palabra": "ser (identidad, características)", "fuentes": ["p68-act1", "p68-act3", "p68-act3@R", "p69-act4", "p69-act5@R", "p70-act1", "p70-act2"]}
+        ],
+        "fuentes": ["p68-act1", "p68-act3", "p68-act3@R", "p69-act5", "p69-act5@R", "p69-act6", "p69-act10", "p71-act6@R", "cuadro@p62", "p69-act4", "p70-act1", "p70-act2"],
+        "descripcion": {
+          "U6": "Recurrente desde U5 (principal). En U6 reaparece como soporte transversal: ser para identidad/características en descripciones de ciudades (p68-act1 'Madrid... Es una ciudad muy grande, Es una ciudad moderna'; p69-act4 'Illán de Vacas es un pueblo...'; p70-act1/act2 Cartagena), estar para ubicación de marcadores de lugar (cuadro@p62 'El árbol está...', p63-act3/act4, p68-act1 'Madrid está en el centro de España', p69-act5 '¿Dónde está Illán de Vacas?', p71-act6 '¿Dónde está la manzana?')."
+        }
+      }
+    }
+  },
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {
+      "Letras homófonas": {
+        "items": [
+          {"palabra": "b = v", "fuentes": ["cuadro@p67#2", "p67-act9", "p67-act10", "p67-act10@R"]}
+        ],
+        "fuentes": ["cuadro@p67#2", "p67-act9", "p67-act10", "p67-act10@R"],
+        "descripcion": {
+          "U6": "PCIC A1 ortografía (Ortografía De Las Palabras: pares de letras con misma realización fonética). Principal en U6: introducción de la equivalencia b=v como par grafémico con idéntica realización fonética en español. Se trabaja en cuadro p67 (regla 'b = v'), audio de identificación con palabras-clave (p67-act9: abuelo, vienes, vamos, bien, bueno, ven, vivimos, bebemos) y completar grafía b/v en frases cortas (p67-act10)."
+        }
+      }
+    },
+    "recurrente": {}
+  },
   "secciones": {
-    "vocabulario":  { "paginas": [62, 63], "actividades_ids": ["U6-p62-act01", "U6-p62-act02", "U6-p63-act03", "U6-p63-act04", "U6-p63-act05", "U6-p63-act06", "U6-p63-act07", "U6-p63-act08"] },
-    "gramatica":    { "paginas": [64, 65], "actividades_ids": ["U6-p64-act01", "U6-p64-act02", "U6-p65-act03", "U6-p65-act04", "U6-p65-act05"] },
-    "comunicacion": { "paginas": [66, 67], "actividades_ids": ["U6-p66-act01", "U6-p66-act02", "U6-p66-act03", "U6-p66-act04", "U6-p66-act05", "U6-p67-act06", "U6-p67-act07", "U6-p67-act08", "U6-p67-act09", "U6-p67-act10"] },
-    "destrezas":    { "paginas": [68, 69], "actividades_ids": ["U6-p68-act01", "U6-p68-act02", "U6-p68-act03", "U6-p69-act04", "U6-p69-act05", "U6-p69-act06", "U6-p69-act07", "U6-p69-act08", "U6-p69-act09", "U6-p69-act10", "U6-p69-act11"] },
-    "cultura":      { "paginas": [70], "actividades_ids": ["U6-p70-act01", "U6-p70-act02", "U6-p70-act03"] },
-    "evaluacion":   { "paginas": [71], "actividades_ids": ["U6-p71-act01", "U6-p71-act02", "U6-p71-act03", "U6-p71-act04", "U6-p71-act05", "U6-p71-act06", "U6-p71-act07"] },
-    "reflexion":    { "paginas": [], "actividades_ids": [] }
+    "vocabulario": {
+      "paginas": [
+        62,
+        63
+      ],
+      "actividades_ids": ["U6-p62-act1", "U6-p62-act2", "U6-p63-act3", "U6-p63-act4", "U6-p63-act5", "U6-p63-act6", "U6-p63-act7", "U6-p63-act8"]
+    },
+    "gramatica": {
+      "paginas": [
+        64,
+        65
+      ],
+      "actividades_ids": ["U6-p64-act1", "U6-p64-act2", "U6-p65-act3", "U6-p65-act4", "U6-p65-act5"]
+    },
+    "comunicacion": {
+      "paginas": [
+        66,
+        67
+      ],
+      "actividades_ids": ["U6-p66-act1", "U6-p66-act2", "U6-p66-act3", "U6-p66-act4", "U6-p66-act5", "U6-p67-act6", "U6-p67-act7", "U6-p67-act8", "U6-p67-act9", "U6-p67-act10"]
+    },
+    "destrezas": {
+      "paginas": [
+        68,
+        69
+      ],
+      "actividades_ids": ["U6-p68-act1", "U6-p68-act2", "U6-p68-act3", "U6-p69-act4", "U6-p69-act5", "U6-p69-act6", "U6-p69-act7", "U6-p69-act8", "U6-p69-act9", "U6-p69-act10", "U6-p69-act11"]
+    },
+    "cultura": {
+      "paginas": [
+        70
+      ],
+      "actividades_ids": ["U6-p70-act1", "U6-p70-act2", "U6-p70-act3"]
+    },
+    "evaluacion": {
+      "paginas": [
+        71
+      ],
+      "actividades_ids": ["U6-p71-act1", "U6-p71-act2", "U6-p71-act3", "U6-p71-act4", "U6-p71-act5", "U6-p71-act6", "U6-p71-act7"]
+    },
+    "reflexion": {
+      "paginas": [],
+      "actividades_ids": []
+    }
   },
   "autoevaluacion": {
     "pagina": 71,
@@ -51,44 +603,93 @@
     "opciones": ["MUY BUENOS", "BUENOS", "NO MUY BUENOS"],
     "emoticonos": true
   },
+  "_decisiones_ia": [
+    "Sesión v10.156-v10.157: extracción canónica de U6 desde el PDF aplicando shape post-v10.153 (4 listas tipadas + 4 bloques consolidados + sufijo @R + canon registries vigentes).",
+    "Aprobada §0.1 (v10.156): 'Imperativo (tú)' añadido a gramatica-canonica.json v1.5 como 18ª categoría canónica con _apariciones.U6 = 'principal'. Etiqueta canónica literal del índice (sin renombrar a 'Imperativo afirmativo (tú)').",
+    "Aprobada §0.1 (v10.156): 'Presente de verbos irregulares: cerrar, ir, venir, hacer, jugar, dormir' NO se añade a gramatica-canonica.json. La irregularidad vive en verbos-canonicos.json vía rasgo_por_tiempo de cada lema. Principal gramatical U6 queda con una sola entrada: 'Imperativo (tú)'.",
+    "Aprobada §0.1 (v10.157): registry verbal ampliado a 60 lemas. 11 lemas nuevos con apariciones.U6: poner, beber, dar, dejar, cortar, pegar, conectar, decorar, comprar, recorrer, pasear.",
+    "Aprobada §0.1 (v10.157): enum tipo ampliado con 'lee' (input puro lector sin audio, sin acción posterior en la propia act). Aplicado a U6-p68-act1 (Lee texto sobre Madrid) y U6-p69-act4 (Lee texto Illán de Vacas).",
+    "Aprobada §0.1 (v10.157): U6-p69-act7 codificada como tipo 'escucha' aunque hay acción kinésica posterior ('sigue las instrucciones' implica seguir formas geométricas). La acción no es codificable en el JSON porque no se ve en el libro.",
+    "Aprobada §0.1 (v10.157): U6-p63-act5 y U6-p63-act8 codificadas con datos.columnas_relaciona por anclaje material en la maquetación (dos columnas visuales emparejadas con líneas). §4.3.1 NO se promueve a §1 en esta sesión.",
+    "U6-p65-act4: la PDF original lista items 1-8 pero respuestas muestran 10 ítems. Por inferencia desde respuestas, items 1-9 deben existir; los items numerados 1-8 son los transcritos; el item 9 inferido 'Mirar a la pizarra' (respuesta 10) NO se transcribe en items_libro por literalidad estricta. Marca para revisión visual del autor con el PDF físico para confirmar items 9-10.",
+    "Verbo 'andar' NO codificado: solo aparece en gerundio 'andando' (modo de transporte), forma no incluida en el enum tiempo (sin Gerundio). Per §3.2 y §5.2 queda fuera de listas tipadas.",
+    "Verbos del registry U7 ('salir', 'levantarse', 'sentarse', 'ducharse', 'llamar') que aparecen como input en U6 NO se codifican (§5.2 anticipación a unidad posterior). Apariciones materiales: p65-act3 imperativos reflexivos Levántate/Siéntate/Dúchate; p66-act1 'llama a tu prima'; p68-act1 'mucha gente sale'.",
+    "Metalengua de instrucción excluida por §5.2 + §5.10: verbos imperativos típicos de enunciado (Lee, Escucha, Repite, Escribe, Completa, Subraya, Rodea, Contesta, Pregunta, Responde, Comenta, Mira, Observa, Habla, Crea, Selecciona, Utiliza, Representa, Practica, Corrige, Ordena, Relaciona, Describe) no propagan apariciones aunque coincidan léxicamente con contenido.",
+    "§5.11 unificación de flexiones aplicada: camarero/camarera → camarero; profesor/profesora → profesor; librero/librera → librero; bibliotecario/bibliotecaria → bibliotecario; antigua/antiguas → antigua (solo fem atestada, mantenida como verbatim por ausencia de masc; fuentes fusionadas). Resto de items sin par flexivo atestado se mantienen verbatim.",
+    "Codificación de Pronombre sujeto (cuadro@p64#1): se codifica la serie completa de la columna 'Pronombre sujeto' (yo, tú, él, ella, usted, nosotros, vosotros, ellos, ellas, ustedes). Surface en el cuadro: 'él / ella / Ud.', 'nosotros/-as', 'vosotros/-as', 'ellos / ellas / Uds.' — separados a items canónicos individuales.",
+    {
+      "id": "P-p65-act4-error-editorial",
+      "version": "v10.158",
+      "decision": "Asimetría editorial confirmada en p65-act4: 8 items_libro vs 10 respuestas.",
+      "diagnostico": "El extractor reportó la asimetría como 'deuda visual a verificar contra PDF'. Tras verificación del autor: el libro NC1 tiene literalmente 8 frases en items_libro ('1 Cerrar la ventana' a '8 Dejar el móvil') pero 10 entradas en el solucionario ('1 Abre la ventana' a '10 Mira a la pizarra'). Es error editorial del libro NC1 (asimetría items-respuestas).",
+      "accion": "Mantener ambos campos literalmente como aparecen en el libro: items_libro con 8 entradas + respuestas con 10. No se inventan items 9-10 (no aparecen como input al alumno). No se retiran respuestas 9-10 (son material literal del solucionario). El alumno solo puede resolver 8 ítems; las respuestas 9-10 son material redundante del libro. Los verbos `dejar` (resp 9) y `mirar` (resp 10) NO se codifican en `actividad.tiempos_y_verbos` ni en `tiempos_y_verbos_consolidado` porque sus formas no aparecen en input atestado de la actividad (§5.10 A estricta).",
+      "ramifica": "Caso documentado para revisión visual futura: si NC1 publica corrigenda corrigiendo el ítem faltante, actualizar items_libro y reactivar codificación verbal."
+    }
+  ],
   "paginas_detalle": [
     {
       "pagina": 62,
       "seccion": "vocabulario",
       "actividades": [
         {
-          "id": "U6-p62-act01",
+          "id": "U6-p62-act1",
           "numero": 1,
           "tipo": "relaciona",
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las palabras con los edificios y comercios del mapa. Después, escucha y comprueba.",
-          "contenido_linguistico": ["Establecimientos del barrio"],
-          "campo_semantico": "Establecimientos",
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 64 },
-          "imagen": { "presente": true, "descripcion": "Mapa ilustrado de un barrio con 14 edificios y comercios numerados del 1 al 14: museo (1), oficina de correos (2), biblioteca (3), parque (4), farmacia (5), polideportivo (6), instituto (7), estación de tren (8), hotel (9), iglesia (10), librería (11), supermercado (12), cine (13), restaurante (14)." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Mapa-ilustración en perspectiva de un barrio con 14 edificios numerados del 1 al 14: 1 museo, 2 oficina de correos (CORREOS), 3 biblioteca, 4 parque, 5 farmacia, 6 polideportivo, 7 instituto, 8 estación de tren, 9 hotel, 10 iglesia, 11 librería, 12 supermercado, 13 cine, 14 restaurante."
+          },
           "video": { "presente": false },
-          "respuestas": ["1. museo", "2. oficina de correos", "3. biblioteca", "4. parque", "5. farmacia", "6. polideportivo", "7. instituto", "8. estación de tren", "9. hotel", "10. iglesia", "11. librería", "12. supermercado", "13. cine", "14. restaurante"],
+          "respuestas": [
+            "1 museo",
+            "2 oficina de correos",
+            "3 biblioteca",
+            "4 parque",
+            "5 farmacia",
+            "6 polideportivo",
+            "7 instituto",
+            "8 estación de tren",
+            "9 hotel",
+            "10 iglesia",
+            "11 librería",
+            "12 supermercado",
+            "13 cine",
+            "14 restaurante"
+          ],
           "datos": {
             "palabras_recuadro": ["restaurante", "parque", "cine", "polideportivo", "iglesia", "oficina de correos", "supermercado", "museo", "farmacia", "librería", "biblioteca", "estación de tren", "instituto", "hotel"]
           }
         },
         {
-          "id": "U6-p62-act02",
+          "id": "U6-p62-act2",
           "numero": 2,
           "tipo": "responder_preguntas_cerradas",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Contesta a las siguientes preguntas.",
-          "contenido_linguistico": ["Establecimientos del barrio", "Función: preguntar por ubicación de servicios"],
-          "campo_semantico": "Establecimientos",
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [
+            {"lema": "comprar", "tiempo": "Presente", "formas_trabajadas": ["compras"]},
+            {"lema": "pasear", "tiempo": "Presente", "formas_trabajadas": ["paseas"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duermes"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. En la biblioteca", "2. En el cine", "3. En la farmacia", "4. En el museo", "5. En el polideportivo", "6. En la oficina de correos", "7. En la librería", "8. En el parque", "9. En el hotel", "10. En la estación de tren"],
+          "respuestas": ["1 En la biblioteca", "2 En el cine", "3 En la farmacia", "4 En el museo", "5 En el polideportivo", "6 En la oficina de correos", "7 En la librería", "8 En el parque", "9 En el hotel", "10 En la estación de tren"],
           "datos": {
             "ejemplo_libro": "¿Dónde compras alimentos? En el supermercado.",
-            "preguntas": [
+            "items_libro": [
               "1 ¿Dónde te prestan libros?",
               "2 ¿Dónde ves películas?",
               "3 ¿Dónde compras medicinas?",
@@ -108,11 +709,17 @@
           "tipo_cuadro": "lexical",
           "titulo": "Marcadores de lugar",
           "contenido": {
-            "tipo": "lista_ilustrada",
+            "tipo": "tabla_lexica_ilustrada",
             "texto_intro": "El árbol está ... de la casa",
-            "marcadores": ["a la izquierda", "a la derecha", "al lado", "delante", "detrás", "enfrente", "entre", "lejos", "cerca"]
+            "items": ["a la izquierda", "a la derecha", "al lado", "delante", "detrás", "enfrente", "entre", "lejos", "cerca"]
           },
-          "observaciones": "*Después de entre no va de: El árbol está entre las casas."
+          "observaciones": "*Después de entre no va de: El árbol está entre las casas.",
+          "vocabulario": ["Marcadores de lugar"],
+          "tiempos_y_verbos": [
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -121,73 +728,74 @@
       "seccion": "vocabulario",
       "actividades": [
         {
-          "id": "U6-p63-act03",
+          "id": "U6-p63-act3",
           "numero": 3,
-          "tipo": "produccion_escrita_guiada",
-          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "tipo": "expresion_oral_libre",
+          "destreza": ["expresion_oral"],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira el mapa del ejercicio 1 y di dónde están los lugares. Utiliza los marcadores entre paréntesis.",
-          "contenido_linguistico": ["Marcadores de lugar", "Establecimientos"],
-          "campo_semantico": "Marcadores de lugar",
+          "vocabulario": ["Marcadores de lugar", "Establecimientos"],
+          "tiempos_y_verbos": [
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [
-            "1. La estación de tren está cerca del museo.",
-            "2. El supermercado está enfrente del parque.",
-            "3. El hotel está a la izquierda de la biblioteca.",
-            "4. La farmacia está a la derecha del cine.",
-            "5. El polideportivo está detrás del restaurante.",
-            "6. La iglesia está lejos del polideportivo."
+            "1 La estación de tren está cerca del museo.",
+            "2 El supermercado está enfrente del parque.",
+            "3 El hotel está a la izquierda de la biblioteca.",
+            "4 La farmacia está a la derecha del cine.",
+            "5 El polideportivo está detrás del restaurante.",
+            "6 La iglesia está lejos del polideportivo."
           ],
           "datos": {
             "ejemplo_libro": "La librería (al lado). La librería está al lado del supermercado.",
-            "items_libro": [
-              "1 La estación de tren (cerca).",
-              "2 El supermercado (enfrente).",
-              "3 El hotel (a la izquierda)",
-              "4 La farmacia (a la derecha)",
-              "5 El polideportivo (detrás)",
-              "6 La iglesia (lejos)."
-            ],
-            "_nota": "Las respuestas son posibles respuestas (producción abierta con el marcador dado entre paréntesis)."
+            "items_libro": ["1 La estación de tren (cerca).", "2 El supermercado (enfrente).", "3 El hotel (a la izquierda)", "4 La farmacia (a la derecha)", "5 El polideportivo (detrás)", "6 La iglesia (lejos)."]
           }
         },
         {
-          "id": "U6-p63-act04",
+          "id": "U6-p63-act4",
           "numero": 4,
           "tipo": "seleccion_multiple",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira los dibujos y rodea con un círculo el marcador de lugar correcto.",
-          "contenido_linguistico": ["Marcadores de lugar"],
-          "campo_semantico": "Marcadores de lugar",
+          "vocabulario": ["Marcadores de lugar"],
+          "tiempos_y_verbos": [
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "5 dibujos de un niño en diferentes posiciones: 1. delante de una puerta, 2. detrás de un sofá, 3. enfrente de un cine, 4. al lado de un sofá con otra persona, 5. entre dos personas sentadas." },
+          "imagen": { "presente": true, "descripcion": "Cinco dibujos numerados que muestran a un niño en distintas posiciones respecto a un asiento/objeto/cine, cada uno con dos opciones de marcador de lugar a elegir." },
           "video": { "presente": false },
-          "respuestas": ["1. delante", "2. detrás", "3. enfrente", "4. al lado", "5. entre"],
+          "respuestas": ["1 delante", "2 detrás", "3 enfrente", "4 al lado", "5 entre"],
           "datos": {
-            "items_libro": [
-              "1. El niño está… delante / detrás",
-              "2. El niño está… al lado / detrás",
-              "3. El niño está… al lado / enfrente",
-              "4. El niño está… delante / al lado",
-              "5. El niño está… cerca / entre"
-            ]
+            "texto_intro": "El niño está…",
+            "items_libro": ["1 delante / detrás", "2 al lado / detrás", "3 al lado / enfrente", "4 delante / al lado", "5 cerca / entre"]
           }
         },
         {
-          "id": "U6-p63-act05",
+          "id": "U6-p63-act5",
           "numero": 5,
           "tipo": "relaciona",
           "destreza": ["comprension_auditiva"],
-          "enfoque": "transversal",
+          "enfoque": "vocabulario",
           "instruccion_original": "Escucha cómo Laura le pregunta a Juan sobre a dónde van él y sus amigos los fines de semana. Relaciona a los chicos con los lugares.",
-          "contenido_linguistico": ["Preguntar por actividades de fin de semana", "Establecimientos"],
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 65 },
-          "imagen": { "presente": false },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Dibujo de dos columnas con cuatro nombres (Juan, Ángel, Roberto, Alba) a la izquierda y cuatro lugares (parque, museo, polideportivo, biblioteca) a la derecha, unidos con líneas que indican las relaciones correctas."
+          },
           "video": { "presente": false },
-          "respuestas": ["1. Juan → c (polideportivo)", "2. Ángel → a (parque)", "3. Roberto → b (museo)", "4. Alba → d (biblioteca)"],
+          "respuestas": ["1→d", "2→c", "3→a", "4→b"],
           "datos": {
             "columnas_relaciona": {
               "izquierda": ["1 Juan", "2 Ángel", "3 Roberto", "4 Alba"],
@@ -196,65 +804,68 @@
           }
         },
         {
-          "id": "U6-p63-act06",
+          "id": "U6-p63-act6",
           "numero": 6,
           "tipo": "relaciona",
-          "destreza": ["comprension_auditiva"],
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Escucha otra vez y relaciona las frases con los chicos del ejercicio anterior.",
-          "contenido_linguistico": ["Comprensión auditiva sobre actividades y rutinas"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hace"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juega"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 65 },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["A → Ángel", "B → Alba", "C → Juan"],
+          "respuestas": ["A Ángel", "B Alba", "C Juan"],
           "datos": {
-            "items_libro": [
-              "A No hace los deberes en casa.",
-              "B Su madre trabaja en un instituto.",
-              "C Juega al baloncesto los sábados por la mañana."
-            ]
+            "items_libro": ["A No hace los deberes en casa.", "B Su madre trabaja en un instituto.", "C Juega al baloncesto los sábados por la mañana."]
           }
         },
         {
-          "id": "U6-p63-act07",
+          "id": "U6-p63-act7",
           "numero": 7,
           "tipo": "relaciona",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las siguientes profesiones con las fotos.",
-          "contenido_linguistico": ["Profesiones"],
-          "campo_semantico": "Profesiones y lugares de trabajo",
+          "vocabulario": ["Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "6 fotos numeradas del 1 al 6: 1. mujer con cuaderno (profesora), 2. mujer joven en restaurante con bandeja (camarera), 3. hombre con bata médica (médico), 4. hombre al aire libre entre plantas (jardinero), 5. mujer en caja de supermercado (cajera), 6. hombre joven en biblioteca (bibliotecario)." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Seis fotos numeradas (1-6) mostrando personas en distintas profesiones: 1 profesora con tableta, 2 camarera con bandeja, 3 médico con bata azul, 4 jardinero con tijeras, 5 cajera con uniforme, 6 bibliotecario."
+          },
           "video": { "presente": false },
-          "respuestas": ["bibliotecario → foto 6", "cajera → foto 5", "jardinero → foto 4", "profesora → foto 1", "camarera → foto 2", "médico → foto 3"],
+          "respuestas": ["1 profesora", "2 camarera", "3 médico", "4 jardinero", "5 cajera", "6 bibliotecario"],
           "datos": {
             "palabras_recuadro": ["bibliotecario", "cajera", "jardinero", "profesora", "camarera", "médico"]
           }
         },
         {
-          "id": "U6-p63-act08",
+          "id": "U6-p63-act8",
           "numero": 8,
           "tipo": "relaciona",
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha a las siguientes personas hablando de sus profesiones. Después, relaciona las profesiones con los lugares de trabajo.",
-          "contenido_linguistico": ["Profesiones y lugares de trabajo"],
-          "campo_semantico": "Profesiones y lugares de trabajo",
+          "vocabulario": ["Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 66 },
-          "imagen": { "presente": false },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Dos columnas etiquetadas 'Profesiones' (1 cajera, 2 camarero, 3 farmacéutico, 4 profesora, 5 librera, 6 médico, 7 jardinero, 8 bibliotecaria, 9 sacerdote) y 'Lugares de trabajo' (a farmacia, b hospital, c iglesia, d restaurante, e supermercado, f parque, g instituto, h biblioteca, i librería) unidas con líneas."
+          },
           "video": { "presente": false },
-          "respuestas": [
-            "1. cajera → e supermercado",
-            "2. camarero → d restaurante",
-            "3. farmacéutico → a farmacia",
-            "4. profesora → g instituto",
-            "5. librera → i librería",
-            "6. médico → b hospital",
-            "7. jardinero → f parque",
-            "8. bibliotecaria → h biblioteca",
-            "9. sacerdote → c iglesia"
-          ],
+          "respuestas": ["1→e", "2→d", "3→a", "4→g", "5→i", "6→b", "7→f", "8→h", "9→c"],
           "datos": {
             "columnas_relaciona": {
               "izquierda": ["1 cajera", "2 camarero", "3 farmacéutico", "4 profesora", "5 librera", "6 médico", "7 jardinero", "8 bibliotecaria", "9 sacerdote"],
@@ -262,24 +873,35 @@
             }
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 64,
       "seccion": "gramatica",
       "actividades": [
         {
-          "id": "U6-p64-act01",
+          "id": "U6-p64-act1",
           "numero": 1,
           "tipo": "seleccion_multiple",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Subraya la forma correcta del verbo.",
-          "contenido_linguistico": ["Presente de verbos irregulares: cerrar, ir, hacer, jugar, dormir, venir"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "cerrar", "tiempo": "Presente", "formas_trabajadas": ["cierra", "cierran", "cierras", "cerramos"]},
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hacemos", "hacen", "hago", "hace"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va", "voy", "Vas", "Vamos"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juegan", "jugamos"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duerme", "duermo"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["vienes", "vienen", "viene"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. hacemos", "2. voy", "3. hago", "4. juegan", "5. duermo", "6. vienen", "7. vienes", "8. cierras", "9. Vamos"],
+          "respuestas": ["1 hacemos", "2 voy", "3 hago", "4 juegan", "5 duermo", "6 vienen", "7 vienes", "8 cierras", "9 Vamos"],
           "datos": {
             "ejemplo_libro": "La biblioteca cierra / cierran a las ocho.",
             "items_libro": [
@@ -296,19 +918,29 @@
           }
         },
         {
-          "id": "U6-p64-act02",
+          "id": "U6-p64-act2",
           "numero": 2,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con el verbo en la forma adecuada.",
-          "contenido_linguistico": ["Presente de verbos irregulares: hacer, jugar, cerrar, venir, dormir, ir"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hace", "hacen"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["jugamos", "juegas"]},
+            {"lema": "cerrar", "tiempo": "Presente", "formas_trabajadas": ["cierro", "cierra"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["vienen"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duerme", "duermes"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["vas"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. hacen", "2. jugamos", "3. juegas", "4. cierro", "5. cierra", "6. vienen", "7. duerme", "8. duermes", "9. vas"],
+          "respuestas": ["1 hacen", "2 jugamos", "3 juegas", "4 cierro", "5 cierra", "6 vienen", "7 duerme", "8 duermes", "9 vas"],
           "datos": {
-            "ejemplo_libro": "Pedro no _____ nada. (hacer)",
+            "ejemplo_libro": "Pedro no hace nada. (hacer)",
             "items_libro": [
               "1 Ellos _____ una sopa. (hacer)",
               "2 Ana y yo _____ al fútbol. (jugar)",
@@ -329,53 +961,89 @@
           "titulo": "Presente de verbos irregulares",
           "contenido": {
             "tipo": "tabla_conjugacion",
-            "verbos": ["cerrar", "ir", "venir", "hacer", "jugar", "dormir"],
-            "conjugacion": {
-              "yo":               ["cierro",   "voy",   "vengo",   "hago",   "juego",   "duermo"],
-              "tú":               ["cierras",  "vas",   "vienes",  "haces",  "juegas",  "duermes"],
-              "él/ella/Ud.":      ["cierra",   "va",    "viene",   "hace",   "juega",   "duerme"],
-              "nosotros/-as":     ["cerramos", "vamos", "venimos", "hacemos","jugamos", "dormimos"],
-              "vosotros/-as":     ["cerráis",  "vais",  "venís",   "hacéis", "jugáis",  "dormís"],
-              "ellos/ellas/Uds.": ["cierran",  "van",   "vienen",  "hacen",  "juegan",  "duermen"]
-            }
-          }
+            "encabezado": ["Pronombre sujeto", "cerrar", "ir", "venir", "hacer", "jugar", "dormir"],
+            "filas": [
+              {
+                "pronombre": "yo",
+                "formas": ["cierro", "voy", "vengo", "hago", "juego", "duermo"]
+              },
+              {
+                "pronombre": "tú",
+                "formas": ["cierras", "vas", "vienes", "haces", "juegas", "duermes"]
+              },
+              {
+                "pronombre": "él / ella / Ud.",
+                "formas": ["cierra", "va", "viene", "hace", "juega", "duerme"]
+              },
+              {
+                "pronombre": "nosotros/-as",
+                "formas": ["cerramos", "vamos", "venimos", "hacemos", "jugamos", "dormimos"]
+              },
+              {
+                "pronombre": "vosotros/-as",
+                "formas": ["cerráis", "vais", "venís", "hacéis", "jugáis", "dormís"]
+              },
+              {
+                "pronombre": "ellos / ellas / Uds.",
+                "formas": ["cierran", "van", "vienen", "hacen", "juegan", "duermen"]
+              }
+            ]
+          },
+          "observaciones": null,
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "cerrar", "tiempo": "Presente", "formas_trabajadas": ["cierro", "cierras", "cierra", "cerramos", "cerráis", "cierran"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["voy", "vas", "va", "vamos", "vais", "van"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["vengo", "vienes", "viene", "venimos", "venís", "vienen"]},
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hago", "haces", "hace", "hacemos", "hacéis", "hacen"]},
+            {"lema": "jugar", "tiempo": "Presente", "formas_trabajadas": ["juego", "juegas", "juega", "jugamos", "jugáis", "juegan"]},
+            {"lema": "dormir", "tiempo": "Presente", "formas_trabajadas": ["duermo", "duermes", "duerme", "dormimos", "dormís", "duermen"]}
+          ],
+          "gramatica": ["Pronombre sujeto"],
+          "pronunciacion_ortografia": []
         },
         {
           "tipo_cuadro": "gramatical",
           "titulo": "Imperativo",
           "contenido": {
-            "tipo": "tabla_conjugacion",
-            "subtablas": [
-              {
-                "titulo": "Verbos regulares",
-                "filas": [
-                  {"infinitivo": "hablar", "imperativo": "¡habla! (tú)"},
-                  {"infinitivo": "beber", "imperativo": "¡bebe! (tú)"},
-                  {"infinitivo": "escribir", "imperativo": "¡escribe! (tú)"}
-                ]
-              },
-              {
-                "titulo": "Verbos irregulares",
-                "filas": [
-                  {"infinitivo": "venir", "imperativo": "ven (tú)"},
-                  {"infinitivo": "poner", "imperativo": "pon (tú)"},
-                  {"infinitivo": "ir", "imperativo": "ve (tú)"},
-                  {"infinitivo": "hacer", "imperativo": "haz (tú)"},
-                  {"infinitivo": "decir (a mí)", "imperativo": "dime (tú)"}
-                ]
-              }
+            "tipo": "tabla_imperativo",
+            "verbos_regulares": [
+              { "infinitivo": "hablar", "imperativo": "¡habla! (tú)" },
+              { "infinitivo": "beber", "imperativo": "¡bebe! (tú)" },
+              { "infinitivo": "escriblir", "imperativo": "¡escribe! (tú)" }
             ],
-            "usos": [
+            "verbos_irregulares": [
+              { "infinitivo": "venir", "imperativo": "ven (tú)" },
+              { "infinitivo": "poner", "imperativo": "pon (tú)" },
+              { "infinitivo": "ir", "imperativo": "ve (tú)" },
+              { "infinitivo": "hacer", "imperativo": "haz (tú)" },
+              { "infinitivo": "decir (a mí)", "imperativo": "dime (tú)" }
+            ],
+            "explicacion": [
               "El imperativo se usa para dar órdenes, como hacen los padres a sus hijos, o los profesores a los estudiantes.",
-              "También se usa para dar instrucciones."
-            ],
-            "ejemplos": [
               "Jorge, ven aquí.",
               "Lucía, dame tu cuaderno, por favor.",
+              "También se usa para dar instrucciones.",
               "Escucha y escribe estas palabras.",
               "Pásame la pelota."
             ]
-          }
+          },
+          "observaciones": null,
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "hablar", "tiempo": "Imperativo", "formas_trabajadas": ["habla"]},
+            {"lema": "beber", "tiempo": "Imperativo", "formas_trabajadas": ["bebe"]},
+            {"lema": "escribir", "tiempo": "Imperativo", "formas_trabajadas": ["escribe"]},
+            {"lema": "venir", "tiempo": "Imperativo", "formas_trabajadas": ["ven"]},
+            {"lema": "poner", "tiempo": "Imperativo", "formas_trabajadas": ["pon"]},
+            {"lema": "ir", "tiempo": "Imperativo", "formas_trabajadas": ["ve"]},
+            {"lema": "hacer", "tiempo": "Imperativo", "formas_trabajadas": ["haz"]},
+            {"lema": "decir", "tiempo": "Imperativo", "formas_trabajadas": ["dime"]},
+            {"lema": "dar", "tiempo": "Imperativo", "formas_trabajadas": ["dame", "pásame"]},
+            {"lema": "escuchar", "tiempo": "Imperativo", "formas_trabajadas": ["escucha"]}
+          ],
+          "gramatica": ["Imperativo (tú)"],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -384,101 +1052,145 @@
       "seccion": "gramatica",
       "actividades": [
         {
-          "id": "U6-p65-act03",
+          "id": "U6-p65-act3",
           "numero": 3,
           "tipo": "relaciona",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Relaciona las imágenes con las órdenes.",
-          "contenido_linguistico": ["Imperativo (tú): verbos regulares e irregulares"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "escribir", "tiempo": "Imperativo", "formas_trabajadas": ["Escribe"]},
+            {"lema": "hacer", "tiempo": "Imperativo", "formas_trabajadas": ["Haz"]},
+            {"lema": "dar", "tiempo": "Imperativo", "formas_trabajadas": ["Dame"]}
+          ],
+          "gramatica": ["Imperativo (tú)"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "6 imágenes circulares (a-f) mostrando personas realizando acciones: a) mano entregando una tableta, b) persona escribiendo en una pizarra, c) persona sentándose en una silla, d) persona en una cocina, e) persona abriendo una puerta, f) persona joven en ropa deportiva." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Seis viñetas (a-f) etiquetadas con letras, cada una mostrando una acción: a alguien tocando una tableta, b alguien escribiendo en pizarra con fórmulas matemáticas, c alguien levantándose de una silla, d adulto y niño haciendo deberes, e niña duchándose, f niño sentándose en banco."
+          },
           "video": { "presente": false },
-          "respuestas": ["a → 4 (Dame mi tableta)", "b → 5 (Escribe en la pizarra)", "c → 2 (Siéntate)", "d → 6 (Haz los deberes)", "e → 1 (Levántate)", "f → 3 (Dúchate)"],
+          "respuestas": ["a 4", "b 5", "c 2", "d 6", "e 1", "f 3"],
           "datos": {
-            "items_libro": [
-              "1 Levántate.",
-              "2 Siéntate.",
-              "3 Dúchate.",
-              "4 Dame mi tableta.",
-              "5 Escribe en la pizarra.",
-              "6 Haz los deberes."
-            ]
+            "items_libro": ["1 Levántate.", "2 Siéntate.", "3 Dúchate.", "4 Dame mi tableta.", "5 Escribe en la pizarra.", "6 Haz los deberes."]
           }
         },
         {
-          "id": "U6-p65-act04",
+          "id": "U6-p65-act4",
           "numero": 4,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Escribe estas frases en imperativo.",
-          "contenido_linguistico": ["Imperativo (tú): verbos regulares e irregulares"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "abrir", "tiempo": "Infinitivo", "formas_trabajadas": ["Abrir"]},
+            {"lema": "cerrar", "tiempo": "Infinitivo", "formas_trabajadas": ["Cerrar"]},
+            {"lema": "hacer", "tiempo": "Infinitivo", "formas_trabajadas": ["Hacer"]},
+            {"lema": "dar", "tiempo": "Infinitivo", "formas_trabajadas": ["Dar"]},
+            {"lema": "beber", "tiempo": "Infinitivo", "formas_trabajadas": ["Beber"]},
+            {"lema": "poner", "tiempo": "Infinitivo", "formas_trabajadas": ["Poner"]},
+            {"lema": "venir", "tiempo": "Infinitivo", "formas_trabajadas": ["Venir"]},
+            {"lema": "escuchar", "tiempo": "Infinitivo", "formas_trabajadas": ["Escuchar"]},
+            {"lema": "dejar", "tiempo": "Infinitivo", "formas_trabajadas": ["Dejar"]},
+            {"lema": "abrir", "tiempo": "Imperativo", "formas_trabajadas": ["Abre"]},
+            {"lema": "cerrar", "tiempo": "Imperativo", "formas_trabajadas": ["Cierra"]},
+            {"lema": "hacer", "tiempo": "Imperativo", "formas_trabajadas": ["Haz"]},
+            {"lema": "dar", "tiempo": "Imperativo", "formas_trabajadas": ["Dame"]},
+            {"lema": "beber", "tiempo": "Imperativo", "formas_trabajadas": ["Bebe"]},
+            {"lema": "poner", "tiempo": "Imperativo", "formas_trabajadas": ["Pon"]},
+            {"lema": "venir", "tiempo": "Imperativo", "formas_trabajadas": ["Ven"]},
+            {"lema": "escuchar", "tiempo": "Imperativo", "formas_trabajadas": ["Escucha"]},
+            {"lema": "dejar", "tiempo": "Imperativo", "formas_trabajadas": ["Deja"]}
+          ],
+          "gramatica": ["Imperativo (tú)"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. Cierra la ventana",
-            "2. Haz los deberes",
-            "3. Dame la mano",
-            "4. Bebe más agua",
-            "5. Pon la mochila aquí",
-            "6. Ven a la cocina",
-            "7. Escucha al profesor",
-            "8. Deja el móvil"
-          ],
+          "respuestas": ["1 Abre la ventana", "2 Cierra la ventana", "3 Haz los deberes", "4 Dame la mano", "5 Bebe más agua", "6 Pon la mochila aquí", "7 Ven a la cocina.", "8 Escucha al profesor", "9 Deja el móvil", "10 Mira a la pizarra"],
           "datos": {
             "ejemplo_libro": "Abrir la ventana → Abre la ventana.",
-            "items_libro": [
-              "1 Cerrar la ventana",
-              "2 Hacer los deberes",
-              "3 Dar(me) la mano",
-              "4 Beber más agua",
-              "5 Poner la mochila aquí",
-              "6 Venir a la cocina",
-              "7 Escuchar al profesor",
-              "8 Dejar el móvil"
-            ]
+            "items_libro": ["1 Cerrar la ventana", "2 Hacer los deberes", "3 Dar(me) la mano", "4 Beber más agua", "5 Poner la mochila aquí", "6 Venir a la cocina", "7 Escuchar al profesor", "8 Dejar el móvil"]
           }
         },
         {
-          "id": "U6-p65-act05",
+          "id": "U6-p65-act5",
           "numero": 5,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Lee y completa las instrucciones con los verbos del recuadro en forma imperativa.",
-          "contenido_linguistico": ["Imperativo (tú): pegar, cortar, decorar, conectar"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "pegar", "tiempo": "Infinitivo", "formas_trabajadas": ["pegar"]},
+            {"lema": "cortar", "tiempo": "Infinitivo", "formas_trabajadas": ["cortar"]},
+            {"lema": "decorar", "tiempo": "Infinitivo", "formas_trabajadas": ["decorar"]},
+            {"lema": "conectar", "tiempo": "Infinitivo", "formas_trabajadas": ["conectar"]},
+            {"lema": "cortar", "tiempo": "Imperativo", "formas_trabajadas": ["Corta"]},
+            {"lema": "pegar", "tiempo": "Imperativo", "formas_trabajadas": ["Pega"]},
+            {"lema": "conectar", "tiempo": "Imperativo", "formas_trabajadas": ["Conecta"]},
+            {"lema": "decorar", "tiempo": "Imperativo", "formas_trabajadas": ["decora"]}
+          ],
+          "gramatica": ["Imperativo (tú)"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Recuadro 'Instrucciones para hacer un robot' con ilustración de un robot y lista de materiales: una botella de plástico, cables, un vaso de plástico, una batería, un motor pequeño, dos tubos de cartón." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Cartel/instructivo ilustrado con el título 'INSTRUCCIONES PARA HACER UN ROBOT': lista de materiales con dibujos (una botella de plástico, un vaso de plástico, cables, una batería, dos tubos de cartón, un motor pequeño) y lista de instrucciones con huecos numerados [1]-[5]. Robot terminado dibujado a la derecha."
+          },
           "video": { "presente": false },
           "respuestas": ["[1] Pega", "[2] Conecta", "[3] Pega", "[4] Pega", "[5] decora"],
           "datos": {
             "palabras_recuadro": ["pegar (x3)", "cortar", "decorar", "conectar"],
-            "texto_completo": "INSTRUCCIONES PARA HACER UN ROBOT. Para hacer un robot con cosas recicladas, necesitas: Una botella de plástico, Cables, Un vaso de plástico, Una batería, Un motor pequeño, Dos tubos de cartón. Instrucciones: • Corta la botella por la mitad • [1] _____ el motor a la base de la botella • [2] _____ los cables al motor y la batería • [3] _____ el vaso cortado para formar la cabeza • [4] _____ los tubos de cartón a la base de la botella para las piernas • Por último, [5] _____ el robot con materiales reciclados como tapas de botellas o pinturas"
+            "texto_intro": "Para hacer un robot con cosas recicladas, necesitas: Una botella de plástico, Un vaso de plástico, Cables, Una batería, Dos tubos de cartón, Un motor pequeño.",
+            "items_libro": [
+              "Corta la botella por la mitad",
+              "[1] _____ el motor a la base de la botella",
+              "[2] _____ los cables al motor y la batería",
+              "[3] _____ el vaso cortado para formar la cabeza",
+              "[4] _____ los tubos de cartón a la base de la botella para las piernas",
+              "Por último, [5] _____ el robot con materiales reciclados como tapas de botellas o pinturas"
+            ]
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 66,
       "seccion": "comunicacion",
       "actividades": [
         {
-          "id": "U6-p66-act01",
+          "id": "U6-p66-act1",
           "numero": 1,
           "tipo": "completa_huecos",
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "contenido_linguistico": ["Preguntar por acciones de otros: ¿Qué hacemos? ¿Vamos a…? ¿A qué hora cierra…? ¿Venís conmigo?", "Medios de transporte"],
+          "vocabulario": ["Establecimientos", "Profesiones y lugares de trabajo", "Marcadores de lugar"],
+          "tiempos_y_verbos": [
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hacemos"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Vamos", "vamos"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["puede venir", "Venís"]},
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["Quiero"], "estructura_perifrastica": "querer + infinitivo"},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Son", "es"]},
+            {"lema": "cerrar", "tiempo": "Presente", "formas_trabajadas": ["cierra", "Cierra"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["Estás", "estoy", "está"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]},
+            {"lema": "decir", "tiempo": "Infinitivo", "formas_trabajadas": ["decirle"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 67 },
-          "imagen": { "presente": true, "descripcion": "Foto de cuatro jóvenes (Pablo, Jorge, Graciela, Julia) sentados juntos en un sofá conversando." },
+          "imagen": { "presente": true, "descripcion": "Foto de cuatro adolescentes sentados en un sofá conversando." },
           "video": { "presente": true },
           "respuestas": ["[1] aburrimiento", "[2] Vamos", "[3] centro comercial", "[4] cierra", "[5] y media", "[6] Quiero", "[7] Venís", "[8] andando"],
           "datos": {
-            "titulo_dialogo": "Vamos al centro comercial",
             "palabras_recuadro": ["quiero", "cierra", "vamos", "venís", "andando", "y media", "aburrimiento", "centro comercial"],
+            "titulo_dialogo": "Vamos al centro comercial",
             "dialogo_completo": [
               "PABLO: Qué [1] _____ … ¿Qué hacemos?",
               "JORGE: ¿[2] _____ al centro?",
@@ -500,106 +1212,115 @@
           }
         },
         {
-          "id": "U6-p66-act02",
+          "id": "U6-p66-act2",
           "numero": 2,
           "tipo": "responder_preguntas_cerradas",
-          "destreza": ["comprension_lectora"],
-          "enfoque": "transversal",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "comunicacion",
           "instruccion_original": "Contesta a las siguientes preguntas.",
-          "contenido_linguistico": ["Comprensión del diálogo: razones y medios de transporte"],
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quiere"], "estructura_perifrastica": "querer + infinitivo"},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["van"]},
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabaja"]},
+            {"lema": "decir", "tiempo": "Infinitivo", "formas_trabajadas": ["decirle"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. Porque quiere comprar un libro",
-            "2. Porque su padre trabaja allí y quiere decirle que van al centro comercial",
-            "3. Andando"
-          ],
+          "respuestas": ["1 Porque quiere comprar un libro", "2 Porque su padre trabaja allí y quiere decirle que van al centro comercial", "3 Andando."],
           "datos": {
-            "preguntas": [
-              "1 ¿Por qué Julia quiere ir al centro comercial?",
-              "2 ¿Por qué Pablo quiere ir a la farmacia?",
-              "3 ¿Cómo van a la farmacia?"
-            ]
+            "items_libro": ["1 ¿Por qué Julia quiere ir al centro comercial?", "2 ¿Por qué Pablo quiere ir a la farmacia?", "3 ¿Cómo van a la farmacia?"]
           }
         },
         {
-          "id": "U6-p66-act03",
+          "id": "U6-p66-act3",
           "numero": 3,
           "tipo": "verdadero_falso",
-          "destreza": ["comprension_lectora"],
-          "enfoque": "transversal",
+          "destreza": ["comprension_auditiva", "comprension_lectora"],
+          "enfoque": "comunicacion",
           "instruccion_original": "¿Verdadero (V) o falso (F)?",
-          "contenido_linguistico": ["Comprensión del diálogo"],
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [
+            {"lema": "querer", "tiempo": "Presente", "formas_trabajadas": ["quiere"], "estructura_perifrastica": "querer + infinitivo"},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["Tienen"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Van"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. F", "2. V", "3. F"],
+          "respuestas": ["1 F", "2 V", "3 F"],
           "datos": {
-            "items_libro": [
-              "1 Pablo no quiere ir al centro comercial.",
-              "2 Tienen tiempo para ir a la farmacia.",
-              "3 Van al centro comercial andando."
-            ]
+            "items_libro": ["1 Pablo no quiere ir al centro comercial.", "2 Tienen tiempo para ir a la farmacia.", "3 Van al centro comercial andando."]
           }
         },
         {
-          "id": "U6-p66-act04",
+          "id": "U6-p66-act4",
           "numero": 4,
           "tipo": "interaccion_oral",
-          "destreza": ["comprension_lectora", "interaccion_oral"],
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira la agenda de Lorena. Pregunta y responde a tu compañero, como en el ejemplo.",
-          "contenido_linguistico": ["Preguntar por acciones de otros: ¿A dónde va Lorena el lunes? / El lunes va a la piscina."],
+          "vocabulario": ["Establecimientos", "Días de la semana"],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va", "vas", "voy"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Agenda semanal de Lorena con 7 entradas: Lunes Piscina, Martes Supermercado, Miércoles Biblioteca, Jueves Clase de guitarra, Viernes Cine, Sábado Casa de los abuelos, Domingo Iglesia." },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "ejemplo_libro": "¿A dónde va Lorena el lunes? / El lunes va a la piscina.",
-            "frases": [
-              "Lunes — Piscina",
-              "Martes — Supermercado",
-              "Miércoles — Biblioteca",
-              "Jueves — Clase de guitarra",
-              "Viernes — Cine",
-              "Sábado — Casa de los abuelos",
-              "Domingo — Iglesia"
+            "ejemplo_libro": "¿A dónde va Lorena el lunes? El lunes va a la piscina. ¿A dónde vas el lunes? El lunes voy a…",
+            "agenda": [
+              { "dia": "Lunes", "actividad": "Piscina" },
+              { "dia": "Martes", "actividad": "Supermercado" },
+              { "dia": "Miércoles", "actividad": "Biblioteca" },
+              { "dia": "Jueves", "actividad": "Clase de guitarra" },
+              { "dia": "Viernes", "actividad": "Cine" },
+              { "dia": "Sábado", "actividad": "Casa de los abuelos" },
+              { "dia": "Domingo", "actividad": "Iglesia" }
             ]
           }
         },
         {
-          "id": "U6-p66-act05",
+          "id": "U6-p66-act5",
           "numero": 5,
           "tipo": "interaccion_oral",
-          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Haz tu propia agenda y pregunta y responde a tu compañero, como en el ejemplo.",
-          "contenido_linguistico": ["Preguntar por acciones propias: ¿A dónde vas el lunes? / El lunes voy a…"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["vas", "voy"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
-          "datos": {
-            "ejemplo_libro": "¿A dónde vas el lunes? / El lunes voy a…"
-          }
+          "datos": { "ejemplo_libro": "¿A dónde vas el lunes? El lunes voy a…" }
         }
       ],
       "cuadros": [
         {
           "tipo_cuadro": "comunicativo",
-          "titulo": null,
+          "titulo": "Observa",
           "contenido": {
-            "tipo": "lista_reglas",
-            "texto_intro": "Observa",
-            "ejemplos": [
-              "De 6 h a 12 h de la mañana",
-              "De 12 h a 15 h del mediodía",
-              "De 15 h a 20 h de la tarde",
-              "De 20 h a 24 h de la noche",
-              "De 24 h a 5 h de la madrugada"
-            ]
-          }
+            "tipo": "lista_horarios",
+            "items": ["De 6 h a 12 h de la mañana", "De 12 h a 15 h del mediodía", "De 15 h a 20 h de la tarde", "De 20 h a 24 h de la noche", "De 24 h a 5 h de la madrugada"]
+          },
+          "observaciones": null,
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -608,65 +1329,71 @@
       "seccion": "comunicacion",
       "actividades": [
         {
-          "id": "U6-p67-act06",
+          "id": "U6-p67-act6",
           "numero": 6,
           "tipo": "interaccion_oral",
-          "destreza": ["comprension_lectora", "interaccion_oral"],
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Observa los carteles y pregunta a tu compañero, como en el ejemplo.",
-          "contenido_linguistico": ["Horarios: ¿A qué hora abre/cierra…?", "Establecimientos"],
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [
+            {"lema": "abrir", "tiempo": "Presente", "formas_trabajadas": ["abre"]},
+            {"lema": "cerrar", "tiempo": "Presente", "formas_trabajadas": ["cierra"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "6 carteles de establecimientos con horarios: Biblioteca (Horario de 17 a 20:30 h), MUSEO (Abierto de 9 a 24 h), PISCINA (ABIERTO de 16:30 a 22 h), Farmacia (Horario de 10 a 21 h), CAFETERÍA (Abierto de 18 a 23:30 h), INSTITUTO (Horario de 8:15 a 14:45 h)." },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Seis carteles de horarios de distintos lugares: Biblioteca (de 17 a 20:30 h), MUSEO (de 9 a 24 h), PISCINA (de 16:30 a 22 h), Farmacia (de 10 a 21 h), CAFETERÍA (de 18 a 23:30 h), INSTITUTO (de 8:15 a 14:45 h)."
+          },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "ejemplo_libro": "¿A qué hora abre la biblioteca? / A las cinco de la tarde. ¿Y a qué hora cierra? / A las ocho y media de la tarde.",
-            "horarios_digitales": {
-              "Biblioteca": "de 17 a 20:30 h",
-              "Museo": "de 9 a 24 h",
-              "Piscina": "de 16:30 a 22 h",
-              "Farmacia": "de 10 a 21 h",
-              "Cafetería": "de 18 a 23:30 h",
-              "Instituto": "de 8:15 a 14:45 h"
-            }
-          }
-        },
-        {
-          "id": "U6-p67-act07",
-          "numero": 7,
-          "tipo": "interaccion_oral",
-          "destreza": ["comprension_lectora", "interaccion_oral"],
-          "enfoque": "comunicacion",
-          "instruccion_original": "¿Cómo van a clase?",
-          "contenido_linguistico": ["Preguntar por medios de transporte: ¿Cómo va/van…a clase? / Va/Van en…"],
-          "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "5 fotos o imágenes con personas y medios de transporte: Carmen con tren, Laura y Carlos caminando (andando), Pedro en moto, David y Sergio en bicicleta, María en autobús." },
-          "video": { "presente": false },
-          "respuestas": [
-            "1. ¿Cómo van Laura y Carlos a clase? / Van andando",
-            "2. ¿Cómo va Pedro a clase? / Va en moto",
-            "3. ¿Cómo van David y Sergio a clase? / Van en bici",
-            "4. ¿Cómo va María a clase? / Va en autobús"
-          ],
-          "datos": {
-            "ejemplo_libro": "¿Cómo va Carmen a clase? / Va en tren.",
-            "items_libro": [
-              "1 Laura y Carlos / andando",
-              "2 Pedro / moto",
-              "3 David y Sergio / bici",
-              "4 María / autobús",
-              "Carmen / tren"
+            "ejemplo_libro": "¿A qué hora abre la biblioteca? A las cinco de la tarde. ¿Y a qué hora cierra? A las ocho y media de la tarde.",
+            "carteles": [
+              "Biblioteca — Horario de 17 a 20:30 h",
+              "MUSEO — Abierto de 9 a 24 h",
+              "PISCINA ABIERTO — de 16:30 a 22 h",
+              "Farmacia — Horario de 10 a 21 h",
+              "CAFETERÍA — Abierto de 18 a 23:30 h",
+              "INSTITUTO — Horario de 8:15 a 14:45 h"
             ]
           }
         },
         {
-          "id": "U6-p67-act08",
+          "id": "U6-p67-act7",
+          "numero": 7,
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["comprension_lectora", "expresion_escrita"],
+          "enfoque": "comunicacion",
+          "instruccion_original": "¿Cómo van a clase?",
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va", "Va", "van", "Van"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Cuatro fotos de medios de transporte: 1 Laura y Carlos a pie (andando), 2 Pedro en moto, 3 David y Sergio en bicicleta, 4 María en autobús. Foto adicional del ejemplo: Carmen en tren." },
+          "video": { "presente": false },
+          "respuestas": ["1 ¿Cómo van Laura y Carlos a clase? / Van andando", "2 ¿Cómo va Pedro a clase? / Va en moto", "3 ¿Cómo van David y Sergio a clase? / Van en bici", "4 ¿Cómo va María a clase? / Va en autobús"],
+          "datos": {
+            "ejemplo_libro": "Carmen / tren — ¿Cómo va Carmen a clase? Va en tren.",
+            "items_libro": ["1 Laura y Carlos / andando", "2 Pedro / moto", "3 David y Sergio / bici", "4 María / autobús"]
+          }
+        },
+        {
+          "id": "U6-p67-act8",
           "numero": 8,
-          "tipo": "tarea_final",
-          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "tipo": "interaccion_oral",
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Crea tu propio diálogo con un compañero siguiendo estos pasos:",
-          "contenido_linguistico": ["Planificar actividades de fin de semana", "Preguntar por lugares y horarios", "Expresiones: ¿Qué podemos hacer? ¿Vamos a…? ¿Por qué no vamos mejor a…? ¡Buena idea!"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -674,30 +1401,36 @@
           "datos": {
             "pasos": [
               "Prepara una lista de actividades que te gusta hacer con tus amigos: montar en bici, ir de compras, salir con los amigos, escuchar música…",
-              "Piensa dónde podéis ir en fin de semana para hacer vuestras actividades favoritas: ¿Qué lugares? ¿Dónde están? ¿A qué hora abren?",
+              "Piensa dónde podéis ir en fin de semana para hacer vuestras actividades favoritas: - ¿Qué lugares? - ¿Dónde están? - ¿A qué hora abren?",
               "Selecciona una actividad y prepara el diálogo con otro compañero. No te olvides de saludar y despedirte… - Hola, ¿cómo estás? - ¡Hasta el sábado / domingo!",
-              "Utiliza las expresiones siguientes: ¿Qué podemos hacer? ¿Vamos a…? ¿Por qué no vamos mejor a…? ¡Buena idea!",
+              "Utiliza las expresiones siguientes: - ¿Qué podemos hacer? - ¿Vamos a…? - ¿Por qué no vamos mejor a…? - ¡Buena idea!",
               "Practicad el diálogo, intercambiando los papeles.",
               "Representad el diálogo delante de la clase."
-            ],
-            "expresiones_dadas": ["¿Qué podemos hacer?", "¿Vamos a…?", "¿Por qué no vamos mejor a…?", "¡Buena idea!"]
+            ]
           }
         },
         {
-          "id": "U6-p67-act09",
+          "id": "U6-p67-act9",
           "numero": 9,
           "tipo": "escucha_y_repite",
           "destreza": ["comprension_auditiva", "expresion_oral"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y repite.",
-          "contenido_linguistico": ["Pronunciación b = v"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["vienes", "ven"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["vamos"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vivimos"]},
+            {"lema": "beber", "tiempo": "Presente", "formas_trabajadas": ["bebemos"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Letras homófonas"],
           "audio": { "presente": true, "pista": 68 },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "palabras_modelo": ["abuelo", "vienes", "vamos", "bien", "bueno", "ven", "vivimos", "bebemos"],
-            "reglas_foneticas": ["b = v"]
+            "items_libro": ["abuelo", "vienes", "vamos", "bien", "bueno", "ven", "vivimos", "bebemos"]
           }
         },
         {
@@ -705,22 +1438,37 @@
           "numero": 10,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Completa con b o v.",
-          "contenido_linguistico": ["Ortografía b/v"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "estudiar", "tiempo": "Presente", "formas_trabajadas": ["estudia"]},
+            {"lema": "beber", "tiempo": "Presente", "formas_trabajadas": ["bebe"]},
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["Vamos"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Letras homófonas"],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. b (habitación)", "2. b, b (bebe)", "3. v, v (vive)", "4. V, b, b (Vamos, biblioteca)", "5. b (balón)"],
+          "respuestas": ["1 habitación (b)", "2 bebe (b, b)", "3 vive (v, v)", "4 Vamos a la biblioteca (V, b, b)", "5 balón (b)"],
           "datos": {
-            "items_libro": [
-              "1 Juan estudia en su ha___itación.",
-              "2 Elena ___e___e agua.",
-              "3 Graciela ___i___e en un pueblo.",
-              "4 ¿___amos a la ___i___lioteca?",
-              "5 Jorge tiene un ___alón."
-            ]
+            "items_libro": ["1 Juan estudia en su ha_itación.", "2 Elena _e_e agua.", "3 Graciela _i_e en un pueblo.", "4 ¿_amos a la _i_lioteca?", "5 Jorge tiene un _alón."]
           }
+        }
+      ],
+      "cuadros": [
+        {
+          "tipo_cuadro": "pronunciacion_ortografia",
+          "titulo": "Pronunciación y ortografía — b = v",
+          "contenido": { "tipo": "regla_ortografica", "regla": "b = v" },
+          "observaciones": null,
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": ["Letras homófonas"]
         }
       ]
     },
@@ -729,15 +1477,24 @@
       "seccion": "destrezas",
       "actividades": [
         {
-          "id": "U6-p68-act01",
+          "id": "U6-p68-act1",
           "numero": 1,
-          "tipo": "lee_y_escucha",
+          "tipo": "lee",
           "destreza": ["comprension_lectora"],
-          "enfoque": "transversal",
+          "enfoque": "cultura",
           "instruccion_original": "Lee el siguiente texto sobre Madrid.",
-          "contenido_linguistico": ["Comprensión lectora: descripción de una ciudad española"],
+          "vocabulario": ["Establecimientos", "Adjetivos descriptivos"],
+          "tiempos_y_verbos": [
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "es", "son"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "pasear", "tiempo": "Infinitivo", "formas_trabajadas": ["pasear"]}
+          ],
+          "gramatica": ["Oposición ser / estar"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "Ilustración artística colorida de Madrid con monumentos, y foto de la Puerta de Alcalá iluminada con árboles en flor en primer plano." },
+          "imagen": { "presente": true, "descripcion": "Composición de imágenes sobre Madrid: ilustración tipo collage con la palabra MADRID grande y dos fotos: una de la Gran Vía y otra de la Puerta de Alcalá." },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
@@ -745,26 +1502,20 @@
           }
         },
         {
-          "id": "U6-p68-act02",
+          "id": "U6-p68-act2",
           "numero": 2,
           "tipo": "relaciona",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las palabras de la columna A con sus contrarios en la columna B.",
-          "contenido_linguistico": ["Antónimos de adjetivos descriptivos de ciudad"],
+          "vocabulario": ["Adjetivos descriptivos"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": false },
+          "imagen": { "presente": true, "descripcion": "Dos cuadros etiquetados A y B con palabras unidas por líneas que indican parejas de contrarios." },
           "video": { "presente": false },
-          "respuestas": [
-            "anchas ↔ estrechas",
-            "nocturna ↔ diurna",
-            "moderna ↔ antigua",
-            "famoso ↔ desconocido",
-            "grande ↔ pequeña",
-            "buenos ↔ malos",
-            "baratos ↔ caros",
-            "ruidoso ↔ silencioso"
-          ],
+          "respuestas": ["anchas → estrechas", "nocturna → diurna", "moderna → antigua", "famoso → desconocido", "grande → pequeña", "buenos → malos", "baratos → caros", "ruidoso → silencioso"],
           "datos": {
             "columnas_relaciona": {
               "izquierda": ["anchas", "nocturna", "moderna", "famoso", "grande", "buenos", "baratos", "ruidoso"],
@@ -773,90 +1524,101 @@
           }
         },
         {
-          "id": "U6-p68-act03",
+          "id": "U6-p68-act3",
           "numero": 3,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Corrige las siguientes afirmaciones.",
-          "contenido_linguistico": ["Comprensión lectora del texto de Madrid; corrección de afirmaciones falsas"],
+          "vocabulario": ["Adjetivos descriptivos"],
+          "tiempos_y_verbos": [
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]}
+          ],
+          "gramatica": ["Oposición ser / estar"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. Madrid es una ciudad muy grande y moderna.",
-            "2. Los transportes públicos de Madrid son buenos y no son caros.",
-            "3. En Madrid hay metro.",
-            "4. A los turistas les gusta la vida nocturna."
-          ],
+          "respuestas": ["1 Madrid es una ciudad muy grande y moderna", "2 Los transportes públicos de Madrid son buenos y no son caros", "3 En Madrid hay metro", "4 A los turistas les gusta la vida nocturna"],
           "datos": {
             "ejemplo_libro": "Madrid está al lado del mar. → Madrid está en el centro de España.",
-            "afirmaciones_a_corregir": [
-              "1 Madrid es una ciudad pequeña y antigua.",
-              "2 Los transportes públicos de Madrid son viejos y caros.",
-              "3 En Madrid no hay metro.",
-              "4 A los turistas les gusta la playa."
-            ]
+            "afirmaciones_a_corregir": ["1 Madrid es una ciudad pequeña y antigua.", "2 Los transportes públicos de Madrid son viejos y caros.", "3 En Madrid no hay metro.", "4 A los turistas les gusta la playa."]
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 69,
       "seccion": "destrezas",
       "actividades": [
         {
-          "id": "U6-p69-act04",
+          "id": "U6-p69-act4",
           "numero": 4,
-          "tipo": "lee_y_escucha",
+          "tipo": "lee",
           "destreza": ["comprension_lectora"],
-          "enfoque": "transversal",
+          "enfoque": "cultura",
           "instruccion_original": "Lee el texto sobre este pequeño pueblo cerca de Madrid.",
-          "contenido_linguistico": ["Comprensión lectora: descripción de un pueblo"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "es"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
+            "titulo_texto": "Illán de Vacas",
             "texto_completo": "Illán de Vacas es un pueblo español de la provincia de Toledo. Es el pueblo con menos habitantes de España: ¡un solo habitante! Sin embargo, no se encuentra entre los municipios con mayor problema demográfico. Porque muchos madrileños pasan allí sus vacaciones."
           }
         },
         {
-          "id": "U6-p69-act05",
+          "id": "U6-p69-act5",
           "numero": 5,
           "tipo": "responder_preguntas_cerradas",
           "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "Contesta a las siguientes preguntas.",
-          "contenido_linguistico": ["Comprensión lectora del texto de Illán de Vacas"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["van"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. En Toledo",
-            "2. Porque tiene un solo habitante",
-            "3. Para pasar allí sus vacaciones"
-          ],
+          "respuestas": ["1 En Toledo", "2 Porque tiene un solo habitante", "3 Para pasar allí sus vacaciones."],
           "datos": {
-            "preguntas": [
-              "1 ¿Dónde está Illán de Vacas?",
-              "2 ¿Por qué es el pueblo con menos habitantes de España?",
-              "3 ¿Para qué van los madrileños a Illán de Vacas?"
-            ]
+            "items_libro": ["1 ¿Dónde está Illán de Vacas?", "2 ¿Por qué es el pueblo con menos habitantes de España?", "3 ¿Para qué van los madrileños a Illán de Vacas?"]
           }
         },
         {
-          "id": "U6-p69-act06",
+          "id": "U6-p69-act6",
           "numero": 6,
           "tipo": "seleccion_multiple",
           "destreza": ["comprension_auditiva"],
           "enfoque": "transversal",
           "instruccion_original": "Escucha a Daniela hablando sobre Illán de Vacas. Después, elige la opción correcta.",
-          "contenido_linguistico": ["Comprensión auditiva: descripción de un pueblo y actividades de vacaciones"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 69 },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. Madrid", "2. lejos", "3. con su familia", "4. les gusta mucho", "5. A Daniela y a su marido"],
+          "respuestas": ["1 Madrid", "2 cerca", "3 con su familia", "4 les gusta mucho", "5 A Daniela y a su marido"],
           "datos": {
             "items_libro": [
               "1 Daniela vive en Illán de Vacas / Madrid.",
@@ -868,29 +1630,38 @@
           }
         },
         {
-          "id": "U6-p69-act07",
+          "id": "U6-p69-act7",
           "numero": 7,
           "tipo": "escucha",
           "destreza": ["comprension_auditiva"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿Conoces estas palabras: rectángulo, triángulo, cuadrado, círculo? Escucha y sigue las instrucciones.",
-          "contenido_linguistico": ["Vocabulario: formas geométricas", "Comprensión auditiva de instrucciones"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 70 },
-          "imagen": { "presente": true, "descripcion": "4 formas geométricas con caras dibujadas: un círculo con gafas (ojos circulares), un triángulo con ojos, un cuadrado con ojos y sonrisa, un círculo rojo con ojos y boca sonriente." },
+          "imagen": { "presente": true, "descripcion": "Cuatro formas geométricas con caritas: un cuadrado verde, un triángulo morado, un cuadrado amarillo, un círculo rojo." },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "palabras_modelo": ["rectángulo", "triángulo", "cuadrado", "círculo"]
+            "palabras_recuadro": ["rectángulo", "triángulo", "cuadrado", "círculo"]
           }
         },
         {
-          "id": "U6-p69-act08",
+          "id": "U6-p69-act8",
           "numero": 8,
           "tipo": "expresion_escrita_libre",
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Describe el barrio de tus sueños. Lee el modelo.",
-          "contenido_linguistico": ["Descripción de barrios: establecimientos, marcadores de lugar, hay"],
+          "vocabulario": ["Establecimientos", "Marcadores de lugar"],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["va"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "es"]}
+          ],
+          "gramatica": ["Hay"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -900,20 +1671,23 @@
           }
         },
         {
-          "id": "U6-p69-act09",
+          "id": "U6-p69-act9",
           "numero": 9,
           "tipo": "expresion_oral_libre",
-          "destreza": ["expresion_escrita", "expresion_oral"],
+          "destreza": ["expresion_oral", "mediacion"],
           "enfoque": "comunicacion",
           "instruccion_original": "Describe tu barrio ideal. Sigue los siguientes pasos:",
-          "contenido_linguistico": ["Descripción oral de un barrio: edificios, servicios, comercios, adjetivos"],
+          "vocabulario": ["Establecimientos", "Adjetivos descriptivos"],
+          "tiempos_y_verbos": [],
+          "gramatica": ["Interrogativos", "Hay"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
             "pasos": [
-              "Antes de empezar a escribir contesta a estas preguntas: ¿Qué edificios y servicios públicos hay en tu barrio? ¿Hay transporte público? ¿Qué comercios hay cerca de tu colegio / de tu casa?",
+              "Antes de empezar a escribir contesta a estas preguntas: - ¿Qué edificios y servicios públicos hay en tu barrio? - ¿Hay transporte público? - ¿Qué comercios hay cerca de tu colegio / de tu casa?",
               "Utiliza adjetivos como: moderno, ruidoso…",
               "No te olvides de utilizar la palabra también.",
               "Presenta tu barrio ideal a dos compañeros."
@@ -924,75 +1698,107 @@
           "id": "U6-p69-act10",
           "numero": 10,
           "tipo": "interaccion_oral",
-          "destreza": ["expresion_escrita", "interaccion_oral"],
+          "destreza": ["interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Habla con otro compañero sobre el barrio de vuestros sueños. Pregúntale y anota las respuestas.",
-          "contenido_linguistico": ["Preguntar e intercambiar información sobre barrios ideales"],
+          "vocabulario": ["Establecimientos", "Marcadores de lugar"],
+          "tiempos_y_verbos": [
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tiene"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "preguntas": [
-              "1 ¿Tu barrio tiene piscina?",
-              "2 ¿En tu barrio hay coches, autobuses, metro?",
-              "3 ¿Dónde está la pastelería?",
-              "4 ¿Cuántos campos de fútbol tiene?",
-              "5 ¿Qué hay al lado del colegio?",
-              "6 ¿Qué hay al lado de tu casa?"
-            ]
+            "items_libro": ["1 ¿Tu barrio tiene piscina?", "2 ¿En tu barrio hay coches, autobuses, metro?", "3 ¿Dónde está la pastelería?", "4 ¿Cuántos campos de fútbol tiene?", "5 ¿Qué hay al lado del colegio?", "6 ¿Qué hay al lado de tu casa?"]
           }
         },
         {
           "id": "U6-p69-act11",
           "numero": 11,
           "tipo": "interaccion_oral",
-          "destreza": ["interaccion_oral"],
+          "destreza": ["interaccion_oral", "mediacion"],
           "enfoque": "comunicacion",
           "instruccion_original": "Por parejas, A le cuenta dónde pasa sus vacaciones a B y B le hace preguntas a A para conseguir más información o relacionarlo con sus vacaciones. Pregúntale y anota las respuestas.",
-          "contenido_linguistico": ["Contar y preguntar sobre lugares de vacaciones"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["voy"]}
+          ],
+          "gramatica": ["Hay", "Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "ejemplo_libro": "A: Yo voy de vacaciones al pueblo de mis abuelos. Cerca hay un Safari Park con muchos animales. B: ¿Qué animales hay? ¿Hay piscina? Cerca del pueblo de mis abuelos hay un Parque Acuático."
+            "ejemplos_modelo": ["A: Yo voy de vacaciones al pueblo de mis abuelos. Cerca hay un Safari Park con muchos animales.", "B: ¿Qué animales hay? ¿Hay piscina? Cerca del pueblo de mis abuelos hay un Parque Acuático."]
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 70,
       "seccion": "cultura",
       "actividades": [
         {
-          "id": "U6-p70-act01",
+          "id": "U6-p70-act1",
           "numero": 1,
           "tipo": "relaciona",
           "destreza": ["comprension_auditiva", "comprension_lectora"],
           "enfoque": "cultura",
           "instruccion_original": "Lee y escucha el texto sobre Cartagena de Indias y relaciona los párrafos con las imágenes.",
-          "contenido_linguistico": ["Comprensión de texto cultural: Cartagena de Indias (Colombia)"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es"]},
+            {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tienen"]},
+            {"lema": "poner", "tiempo": "Presente", "formas_trabajadas": ["ponen"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": true, "pista": 71 },
-          "imagen": { "presente": true, "descripcion": "3 fotos etiquetadas a, b, c: a) playa del mar Caribe con sombrillas y edificios modernos al fondo, b) bailarines con trajes típicos coloridos en una calle durante una fiesta, c) fachadas coloridas (rosa, azul, naranja) de casas del centro histórico de Cartagena." },
+          "imagen": { "presente": true, "descripcion": "Tres fotos etiquetadas a, b, c sobre Cartagena de Indias (Colombia): a una playa con sombrillas azules, b dos personas con vestidos coloridos bailando, c una calle con casas de colores vivos." },
           "video": { "presente": false },
-          "respuestas": ["1. c", "2. a", "3. b"],
+          "respuestas": ["1 c", "2 a", "3 b"],
           "datos": {
-            "texto_completo": "CONOCE LAS CIUDADES DEL MUNDO: Cartagena de Indias (Colombia). [Párrafo 1] Cartagena de Indias es una ciudad Patrimonio de la Humanidad con casas centenarias de uno y dos pisos, con puertas de madera, ventanas con rejas y balcones llenos de flores en el centro histórico. En el interior de las casas, los patios tienen hermosos jardines con diseños árabes, romanos y griegos heredados de los pueblos españoles de Andalucía y Extremadura. [Párrafo 2] Junto al mar Caribe se encuentra la ciudad amurallada, fundada en el siglo xvi, con plazas, calles antiguas y edificios coloridos. Cartagena también es un destino turístico, por sus playas de arena blanca con palmeras. [Párrafo 3] El 11 de noviembre se celebra una de sus fiestas más populares: la Fiesta de la Independencia. En ella puedes disfrutar de bailes, desfiles, festivales de música y danza. Es una fiesta donde los protagonistas son los grupos musicales, las carrozas y los disfraces, que ponen en escena la riqueza del patrimonio cultural de Cartagena de Indias."
+            "titulo_texto": "Cartagena de Indias (Colombia)",
+            "textos_personajes": [
+              {
+                "personaje": "1",
+                "texto": "Cartagena de Indias es una ciudad Patrimonio de la Humanidad con casas centenarias de uno y dos pisos, con puertas de madera, ventanas con rejas y balcones llenos de flores en el centro histórico. En el interior de las casas, los patios tienen hermosos jardines con diseños árabes, romanos y griegos heredados de los pueblos españoles de Andalucía y Extremadura."
+              },
+              {
+                "personaje": "2",
+                "texto": "Junto al mar Caribe se encuentra la ciudad amurallada, fundada en el siglo xvi, con plazas, calles antiguas y edificios coloridos. Cartagena también es un destino turístico, por sus playas de arena blanca con palmeras."
+              },
+              {
+                "personaje": "3",
+                "texto": "El 11 de noviembre se celebra una de sus fiestas más populares: la Fiesta de la Independencia. En ella puedes disfrutar de bailes, desfiles, festivales de música y danza. Es una fiesta donde los protagonistas son los grupos musicales, las carrozas y los disfraces, que ponen en escena la riqueza del patrimonio cultural de Cartagena de Indias."
+              }
+            ]
           }
         },
         {
-          "id": "U6-p70-act02",
+          "id": "U6-p70-act2",
           "numero": 2,
           "tipo": "seleccion_multiple",
           "destreza": ["comprension_lectora"],
-          "enfoque": "transversal",
+          "enfoque": "cultura",
           "instruccion_original": "Lee el texto otra vez y elige las palabras correctas.",
-          "contenido_linguistico": ["Comprensión lectora del texto sobre Cartagena de Indias"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["están"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. americana", "2. a la altura del mar", "3. turística", "4. de muchos colores", "5. música popular"],
+          "respuestas": ["1 americana", "2 a la altura del mar", "3 turística", "4 de muchos colores", "5 música popular"],
           "datos": {
             "items_libro": [
               "1 Cartagena de Indias es una ciudad europea / americana.",
@@ -1004,43 +1810,62 @@
           }
         },
         {
-          "id": "U6-p70-act03",
+          "id": "U6-p70-act3",
           "numero": 3,
           "tipo": "interaccion_oral",
           "destreza": ["interaccion_oral"],
-          "enfoque": "comunicacion",
+          "enfoque": "cultura",
           "instruccion_original": "Comenta con tus compañeros.",
-          "contenido_linguistico": ["Intercambio oral sobre ciudades turísticas y preferencias personales"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["Vives"]},
+            {"lema": "llamarse", "tiempo": "Presente", "formas_trabajadas": ["se llama"]},
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
+            {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["son"]},
+            {"lema": "gustar", "tiempo": "Presente", "formas_trabajadas": ["gusta"]},
+            {"lema": "ir", "tiempo": "Infinitivo", "formas_trabajadas": ["ir"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
           "respuestas": [],
           "datos": {
-            "preguntas": [
+            "items_libro": [
               "1 ¿Vives cerca de alguna ciudad turística?",
               "2 Habla sobre ella: ¿cómo se llama?, ¿dónde está?, ¿cómo son sus fiestas tradicionales?",
               "3 ¿Te gusta visitar distintas ciudades, o prefieres ir a visitar pueblos pequeños?"
             ]
           }
         }
-      ]
+      ],
+      "cuadros": []
     },
     {
       "pagina": 71,
       "seccion": "evaluacion",
       "actividades": [
         {
-          "id": "U6-p71-act01",
+          "id": "U6-p71-act1",
           "numero": 1,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con la forma correcta del verbo.",
-          "contenido_linguistico": ["Presente de verbos irregulares: cerrar, ir, venir, hacer"],
+          "vocabulario": ["Establecimientos", "Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [
+            {"lema": "cerrar", "tiempo": "Presente", "formas_trabajadas": ["cierra", "cierran"]},
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["vamos"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["vengo"]},
+            {"lema": "hacer", "tiempo": "Presente", "formas_trabajadas": ["hago"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. cierra", "2. vamos", "3. vengo", "4. cierran", "5. hago"],
+          "respuestas": ["1 cierra", "2 vamos", "3 vengo", "4 cierran", "5 hago"],
           "datos": {
             "items_libro": [
               "1 La bibliotecaria (cerrar) _____ la biblioteca a las ocho y media.",
@@ -1052,97 +1877,99 @@
           }
         },
         {
-          "id": "U6-p71-act02",
+          "id": "U6-p71-act2",
           "numero": 2,
           "tipo": "completa_huecos",
           "destreza": ["comprension_lectora"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las órdenes con el imperativo de los siguientes verbos.",
-          "contenido_linguistico": ["Imperativo (tú): dar, venir, cerrar, abrir, cortar, escribir"],
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {"lema": "dar", "tiempo": "Infinitivo", "formas_trabajadas": ["dar"]},
+            {"lema": "venir", "tiempo": "Infinitivo", "formas_trabajadas": ["venir"]},
+            {"lema": "cerrar", "tiempo": "Infinitivo", "formas_trabajadas": ["cerrar"]},
+            {"lema": "abrir", "tiempo": "Infinitivo", "formas_trabajadas": ["abrir"]},
+            {"lema": "cortar", "tiempo": "Infinitivo", "formas_trabajadas": ["cortar"]},
+            {"lema": "escribir", "tiempo": "Infinitivo", "formas_trabajadas": ["escribir"]},
+            {"lema": "cortar", "tiempo": "Imperativo", "formas_trabajadas": ["Corta"]},
+            {"lema": "escribir", "tiempo": "Imperativo", "formas_trabajadas": ["Escribe"]},
+            {"lema": "dar", "tiempo": "Imperativo", "formas_trabajadas": ["dame"]},
+            {"lema": "abrir", "tiempo": "Imperativo", "formas_trabajadas": ["Abre"]},
+            {"lema": "cerrar", "tiempo": "Imperativo", "formas_trabajadas": ["Cierra"]},
+            {"lema": "venir", "tiempo": "Imperativo", "formas_trabajadas": ["ven"]}
+          ],
+          "gramatica": ["Imperativo (tú)"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1. Corta", "2. Escribe", "3. dame", "4. Abre", "5. Cierra, ven"],
+          "respuestas": ["1 Corta", "2 Escribe", "3 dame", "4 Abre", "5 Cierra ... ven"],
           "datos": {
             "palabras_recuadro": ["dar (a mí)", "venir", "cerrar", "abrir", "cortar", "escribir"],
-            "items_libro": [
-              "1 _____ el pan con un cuchillo.",
-              "2 _____ con buena letra.",
-              "3 Mamá, _____ dinero para un boli.",
-              "4 _____ la ventana. Hay mucho humo.",
-              "5 _____ el libro y _____ a la pizarra."
-            ]
+            "items_libro": ["1 _____ el pan con un cuchillo.", "2 _____ con buena letra.", "3 Mamá, _____ dinero para un boli.", "4 _____ la ventana. Hay mucho humo.", "5 _____ el libro y _____ a la pizarra."]
           }
         },
         {
-          "id": "U6-p71-act03",
+          "id": "U6-p71-act3",
           "numero": 3,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "Nombra los siguientes lugares.",
-          "contenido_linguistico": ["Establecimientos del barrio"],
-          "campo_semantico": "Establecimientos",
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "4 fotos numeradas: 1. tren en una estación (estación de tren), 2. imagen de dinosaurio/sala de cine (cine), 3. personas en un restaurante (restaurante), 4. zona arbolada de un parque (parque)." },
+          "imagen": { "presente": true, "descripcion": "Cuatro fotos numeradas (1-4) de lugares: 1 una estación de tren con un tren rojo, 2 una pantalla de cine con un dinosaurio, 3 personas comiendo en un restaurante, 4 un parque con árboles." },
           "video": { "presente": false },
-          "respuestas": ["1. estación de tren", "2. cine", "3. restaurante", "4. parque"],
-          "datos": {
-            "items_libro": ["1. _____", "2. _____", "3. _____", "4. _____"]
-          }
+          "respuestas": ["1 estación de tren", "2 cine", "3 restaurante", "4 parque"],
+          "datos": {}
         },
         {
-          "id": "U6-p71-act04",
+          "id": "U6-p71-act4",
           "numero": 4,
           "tipo": "produccion_escrita_guiada",
           "destreza": ["expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿Dónde trabajan?",
-          "contenido_linguistico": ["Profesiones y lugares de trabajo"],
-          "campo_semantico": "Profesiones y lugares de trabajo",
+          "vocabulario": ["Profesiones y lugares de trabajo"],
+          "tiempos_y_verbos": [
+            {"lema": "trabajar", "tiempo": "Presente", "formas_trabajadas": ["trabajan"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "1. en la librería",
-            "2. en el colegio / el instituto / la universidad",
-            "3. en el jardín / el parque",
-            "4. en la farmacia",
-            "5. en la biblioteca",
-            "6. en la tienda"
-          ],
+          "respuestas": ["1 en la librería", "2 en el colegio / el instituto / la universidad", "3 en el jardín / el parque", "4 en la farmacia", "5 en la biblioteca", "6 en la tienda"],
           "datos": {
-            "ejemplo_libro": "el / la médico/-a en el hospital",
-            "items_libro": [
-              "1 el / la librero/-a",
-              "2 el / la profesor(a)",
-              "3 el / la jardinero/-a",
-              "4 el / la farmacéutico/-a",
-              "5 el / la bibliotecario/-a",
-              "6 el / la dependiente/-a"
-            ]
+            "ejemplo_libro": "el / la médico/-a → en el hospital",
+            "items_libro": ["1 el / la librero/-a", "2 el / la profesor(a)", "3 el / la jardinero/-a", "4 el / la farmacéutico/-a", "5 el / la bibliotecario/-a", "6 el / la dependiente/-a"]
           }
         },
         {
-          "id": "U6-p71-act05",
+          "id": "U6-p71-act5",
           "numero": 5,
           "tipo": "relaciona",
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona los lugares con sus actividades.",
-          "contenido_linguistico": ["Establecimientos y actividades asociadas"],
-          "campo_semantico": "Establecimientos",
-          "audio": { "presente": false },
-          "imagen": { "presente": false },
-          "video": { "presente": false },
-          "respuestas": [
-            "1. polideportivo → f (jugar al tenis y nadar)",
-            "2. supermercado → a (comprar comida)",
-            "3. restaurante → c (comer)",
-            "4. museo → e (ver obras de arte)",
-            "5. farmacia → b (comprar medicinas)",
-            "6. cine → d (ver películas)"
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [
+            {"lema": "comprar", "tiempo": "Infinitivo", "formas_trabajadas": ["comprar"]},
+            {"lema": "comer", "tiempo": "Infinitivo", "formas_trabajadas": ["comer"]},
+            {"lema": "jugar", "tiempo": "Infinitivo", "formas_trabajadas": ["jugar"]}
           ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
+          "audio": { "presente": false },
+          "imagen": {
+            "presente": true,
+            "descripcion": "Dos columnas: 1-6 lugares (polideportivo, supermercado, restaurante, museo, farmacia, cine) y a-f actividades (comprar comida, comprar medicinas, comer, ver películas, ver obras de arte, jugar al tenis y nadar) unidas por líneas."
+          },
+          "video": { "presente": false },
+          "respuestas": ["1→f", "2→a", "3→c", "4→e", "5→b", "6→d"],
           "datos": {
             "columnas_relaciona": {
               "izquierda": ["1 polideportivo", "2 supermercado", "3 restaurante", "4 museo", "5 farmacia", "6 cine"],
@@ -1151,53 +1978,49 @@
           }
         },
         {
-          "id": "U6-p71-act06",
+          "id": "U6-p71-act6",
           "numero": 6,
-          "tipo": "completa_huecos",
-          "destreza": ["comprension_lectora"],
+          "tipo": "produccion_escrita_guiada",
+          "destreza": ["expresion_escrita"],
           "enfoque": "vocabulario",
           "instruccion_original": "¿Dónde está la manzana? La manzana está…",
-          "contenido_linguistico": ["Marcadores de lugar"],
-          "campo_semantico": "Marcadores de lugar",
+          "vocabulario": ["Marcadores de lugar"],
+          "tiempos_y_verbos": [
+            {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
-          "imagen": { "presente": true, "descripcion": "5 dibujos numerados mostrando una manzana en diferentes posiciones respecto a una o dos cestas: 1. delante, 2. a la derecha, 3. a la izquierda, 4. detrás, 5. entre dos cestas." },
+          "imagen": { "presente": true, "descripcion": "Cinco viñetas (1-5) con cestas y manzanas en distintas posiciones." },
           "video": { "presente": false },
-          "respuestas": ["1. delante de la cesta", "2. a la derecha de la cesta", "3. a la izquierda de la cesta", "4. detrás de la cesta", "5. entre las cestas"],
-          "datos": {
-            "items_libro": [
-              "1. La manzana está _____ de la cesta.",
-              "2. La manzana está _____ de la cesta.",
-              "3. La manzana está _____ de la cesta.",
-              "4. La manzana está _____ de la cesta.",
-              "5. La manzana está _____ las cestas."
-            ]
-          }
+          "respuestas": ["1 delante de la cesta.", "2 a la derecha de la cesta.", "3 a la izquierda de la cesta.", "4 detrás de la cesta.", "5 entre las cestas."],
+          "datos": {}
         },
         {
-          "id": "U6-p71-act07",
+          "id": "U6-p71-act7",
           "numero": 7,
           "tipo": "ordena",
-          "destreza": ["comprension_lectora"],
+          "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "comunicacion",
           "instruccion_original": "Ordena las conversaciones.",
-          "contenido_linguistico": ["Conversaciones sobre destinos y horarios: ¿A dónde vas? ¿A qué hora cierra? ¿De dónde vienes?"],
+          "vocabulario": ["Establecimientos"],
+          "tiempos_y_verbos": [
+            {"lema": "ir", "tiempo": "Presente", "formas_trabajadas": ["vas", "voy"]},
+            {"lema": "cerrar", "tiempo": "Presente", "formas_trabajadas": ["cierra"]},
+            {"lema": "venir", "tiempo": "Presente", "formas_trabajadas": ["vienes", "vengo"]}
+          ],
+          "gramatica": ["Interrogativos"],
+          "pronunciacion_ortografia": [],
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": [
-            "¿A dónde vas los lunes? / Voy al supermercado.",
-            "¿A qué hora cierra el supermercado? / A las ocho y cuarto.",
-            "¿De dónde vienes? / Vengo del polideportivo."
-          ],
+          "respuestas": ["¿A dónde vas los lunes? / Voy al supermercado.", "¿A qué hora cierra el supermercado? / A las ocho y cuarto.", "¿De dónde vienes? / Vengo del polideportivo."],
           "datos": {
-            "items_libro": [
-              "● ¿ a / los / dónde / lunes / vas / ? ■ supermercado / voy / al",
-              "● ¿ / hora / supermercado / qué / cierra / el / a / ? ■ ocho / a / y / las / cuarto",
-              "● ¿ / vienes / dónde / de / ? ■ del / vengo / polideportivo"
-            ]
+            "items_libro": ["¿ a / los / dónde / lunes / vas / ?", "supermercado / voy / al", "¿ / hora / supermercado / qué / cierra / el / a / ?", "ocho / a / y / las / cuarto", "¿ / vienes / dónde / de / ?", "del / vengo / polideportivo"]
           }
         }
-      ]
+      ],
+      "cuadros": []
     }
   ]
 }

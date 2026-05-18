@@ -140,7 +140,7 @@
       }
     },
     "recurrente": {
-      "Establecimientos: cine, restaurante, farmacia...": {
+      "Establecimientos": {
         "items": [
           {"palabra": "biblioteca", "fuentes": ["p56-act4", "p56-act4@R"]},
           {"palabra": "bolera", "fuentes": ["p56-act4", "p56-act4@R"]},
@@ -1122,7 +1122,7 @@
           "destreza": ["expresion_oral", "interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Ahora, pregunta y contesta a tu compañero, como en el ejercicio anterior. Utiliza las siguientes palabras.",
-          "vocabulario": ["Establecimientos: cine, restaurante, farmacia..."],
+          "vocabulario": ["Establecimientos"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["Está", "Están", "Estamos", "están", "está", "estáis", "estamos"]}
           ],
@@ -1734,7 +1734,7 @@
           "destreza": ["expresion_oral", "interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Conversa con tu compañero.",
-          "vocabulario": ["Establecimientos: cine, restaurante, farmacia..."],
+          "vocabulario": ["Establecimientos"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]}
           ],

@@ -5,6 +5,72 @@
 
 ---
 
+## [v10.158 — 2026-05-18] — U6 extraída + canónicos renombrados + correcciones editoriales
+
+Primera extracción real de unidad nueva tras todo el rediseño de fase 1. Migración de U6 desde shape legacy (pre-v10.115) a shape canónico post-v10.153, usando el JSON legacy como referencia de transcripción y reescribiendo desde cero (Opción C del autor + revisor en worktree separado).
+
+**Resultado U6:**
+
+- 10 páginas (62-71), 44 actividades, 5 cuadros, autoevaluación.
+- `vocabulario_consolidado`:
+  - principal: `Establecimientos`, `Marcadores de lugar`, `Profesiones y lugares de trabajo`
+  - recurrente: `Días de la semana`, `Adjetivos descriptivos`
+- `tiempos_y_verbos_consolidado`: 31 lemas (incluye los 11 nuevos canonizados en v10.157).
+- `gramatica_consolidada`:
+  - principal: `Imperativo (tú)` (canonizado en v10.156).
+  - recurrente: `Interrogativos`, `Pronombre sujeto`, `Hay`, `Oposición ser / estar`.
+- `pronunciacion_ortografia_consolidada` principal: `Letras homófonas` (b = v).
+- 14 entradas en `_decisiones_ia` documentando casos límite.
+
+**Validador U6 → 0/0/0** con el contrato extendido (incluye §5.10 A + §5.11).
+
+**Cambios estructurales en el registry léxico (v1.6 → v1.7):**
+
+Renombrado de 2 canónicos largos a forma corta + cadenas largas del índice preservadas como `aliases_indice`. Patrón ya usado en el registry para `Números cardinales` y `Saludos y despedidas`:
+
+- `Establecimientos: cine, restaurante, farmacia...` → **`Establecimientos`** (alias largo preservado).
+- `Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca` → **`Marcadores de lugar`** (alias largo preservado).
+
+Origen del problema (verificado con código): el índice del libro NC1 (`nc1-curso.json`) escribe estos dos campos con la lista de ejemplos. Al canonizar el registry en v10.107 se mantuvieron literales. La opción C aplica el patrón de "canónico corto + alias largo" ya existente.
+
+**Propagación:**
+
+- `U5-nc1-inventario.json`: 3 refs renombradas (canónico recurrente del `Establecimientos`).
+- `U6-nc1-inventario.json`: 26 refs renombradas (ambos canónicos como principal).
+
+**Correcciones editoriales durante la revisión visual del autor:**
+
+1. **`moderno/-a` (recurrente.Adjetivos descriptivos):** restaurado como notación con barra tras intento de unificación al masc fallido. Las fuentes p68-act1/2/3 solo tienen `moderna` literal; el matcher con `_expand_needle("moderno")` no encuentra `moderna` (no son substring). La notación `moderno/-a` SÍ se expande a `{moderno, moderna}`. Decisión pragmática: aceptar la notación verbatim del registry como item para que pase §5.10 A. Deuda contractual real (incoherencia entre §5.11 estricta y §5.10 A en flexiones masc/fem que no son substring) registrada para sesión aparte.
+
+2. **`Días de la semana` (recurrente) corregido (1 → 7 items):** el extractor capturó solo `Lunes` (mayúscula) con una fuente. Tras revisión: los 7 días aparecen materialmente en p64-act1, p66-act4 (agenda), p66-act5, p67-act8 y p71-act7. Items reconstruidos en minúscula con todas las fuentes atestadas: lunes, martes, miércoles, jueves, viernes, sábado, domingo.
+
+3. **`datos.agenda` de p66-act4 reestructurada** (dict → lista de objetos `[{dia, actividad}, ...]`). Causa: `_gather_text` del validador solo recoge **valores** de dicts, no claves; los días como claves del dict no entraban al texto buscable. La reestructuración resuelve el caso material U6 sin tocar el matcher global. Deuda del matcher (claves de dict no incluidas) registrada para sesión aparte.
+
+4. **p65-act4 — error editorial NC1 documentado:** asimetría confirmada — `items_libro` tiene 8 frases pero `respuestas` tiene 10. Es error del libro impreso, no del extractor. Mantenido literal en el JSON (ambos campos). Verbos `dejar` (resp 9) y `mirar` (resp 10) NO se codifican en consolidado verbal porque sus formas no aparecen en input atestado de la actividad (§5.10 A estricta). Nueva entrada `P-p65-act4-error-editorial` en `_decisiones_ia`.
+
+**Decisiones de extracción notables (registradas en `_decisiones_ia` U6):**
+
+- Filtro de verbos sin entrada en registry verbal: `haber`, `poder`, `ver`, `encontrarse`, `celebrar`, `pasar`, `vender`, `preferir`, `nadar` → NO codificados por §5.2.
+- Exclusión de anticipaciones U7 PRE: `salir`, `levantarse`, `sentarse`, `ducharse`, `llamar`.
+- `andar` solo en gerundio modal → fuera de listas tipadas.
+- `columnas_relaciona` confirmado materialmente en p63-act05 (Laura/Juan) y p63-act08 (profesiones/lugares) → codificado per §4.3.1.
+
+**Cifras consolidadas tras v10.158:**
+
+| Unidad | Validador | Estado |
+|---|---|---|
+| U0-U5 | 0/0/0 | Saneadas (Lote 3D-cleanup + correcciones) |
+| U6 | 0/0/0 | Extraída con shape post-v10.153, validador extendido |
+| U7-U9 | — | Pendientes |
+
+**Lo que NO entra en este commit (deuda documentada):**
+
+- Bug del matcher §5.10/§5.11 para flexiones masc/fem que no son substring (caso `moderno`/`moderna`). Solución posible: expandir `_expand_needle` para flexiones genéricas, o canonizar notación con barra como caso aceptado.
+- Bug `_gather_text` que no recoge claves de dicts (caso `datos.agenda`). Solución: mejorar `_gather_text` con lista de claves técnicas a excluir, o documentar convención.
+- Auditoría retroactiva U0-U5 buscando problemas análogos al caso `Días de la semana` (items incompletos, capitalización, estructuras dict bloqueantes).
+
+---
+
 ## [v10.157 — 2026-05-17] — Ampliación contrato preparatoria U6: registry verbal (+11 lemas) + enum `tipo` (+`lee`)
 
 Segundo cambio estructural preparatorio para la extracción de U6 (tras v10.156 que añadió `Imperativo (tú)`). El extractor de U6 detectó dos bloques estructurales mediante §0.1 propuesta-en-chat: lemas verbales no canonizados con anclaje material claro en U6, y un tipo de actividad ausente del enum.

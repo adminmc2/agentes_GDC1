@@ -1,9 +1,9 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.6",
-    "actualizado": "2026-05-17",
-    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.(v1.6 2026-05-17: retirada de 'Adverbios de posición' por huérfano tras v10.152 — sus términos viven ahora en gramatica-canonica.json 'Adverbios y locuciones de lugar').",
+    "version": "1.7",
+    "actualizado": "2026-05-18",
+    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.(v1.6 2026-05-17: retirada de 'Adverbios de posición' por huérfano tras v10.152 — sus términos viven ahora en gramatica-canonica.json 'Adverbios y locuciones de lugar'). (v1.7 2026-05-18: 'Establecimientos: cine, restaurante, farmacia...' y 'Marcadores de lugar: a la izquierda, ..., cerca' renombrados a forma corta; cadenas largas del índice preservadas como aliases_indice — patrón ya usado en Números cardinales y Saludos y despedidas).",
     "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
   },
   "version": "1.5",
@@ -123,15 +123,19 @@
       "aliases_auto": []
     },
     {
-      "canonico": "Establecimientos: cine, restaurante, farmacia...",
+      "canonico": "Establecimientos",
       "origen": "indice",
-      "aliases_indice": [],
+      "aliases_indice": [
+        "Establecimientos: cine, restaurante, farmacia..."
+      ],
       "aliases_auto": []
     },
     {
-      "canonico": "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca",
+      "canonico": "Marcadores de lugar",
       "origen": "indice",
-      "aliases_indice": [],
+      "aliases_indice": [
+        "Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca"
+      ],
       "aliases_auto": []
     },
     {
