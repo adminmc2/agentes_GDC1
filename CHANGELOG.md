@@ -5,6 +5,44 @@
 
 ---
 
+## [v11.5 — 2026-05-19] — Deuda matcher bug 3: `_gather_text` recoge claves de dict
+
+Tercer y último fix de la deuda técnica del matcher catalogada al cierre de fase 1. Con este commit, la deuda matcher queda cerrada por completo.
+
+**Problema:**
+
+`_gather_text(o, out)` iteraba sobre dicts recorriendo solo los valores (`o.values()`), nunca las claves. Caso real (U6 v10.158): la agenda semanal de Lorena en `p66-act4` se modelaba como dict `{"Lunes": "Piscina", "Martes": "Supermercado", ...}`. El matcher recogía solo los valores (las actividades), pero no los días — y `Días de la semana` solo aparecía con `Lunes` (capturado en otra actividad). Investigando se descubrió la causa: las claves del dict no se gathereaban.
+
+**Fix:**
+
+- `scripts/validar_inventario.py`: `_gather_text` ahora itera con `o.items()` y añade la clave al output si es string, además de recursar sobre el valor. Comportamiento idéntico para listas y strings.
+
+**Resultado:**
+
+- Para futuros inventarios, dicts con claves significativas (días, personajes, secciones, etc.) ya no obligan a reestructurar a lista de objetos solo para satisfacer al matcher.
+- Las 10 unidades siguen validando 0/0/0 tras el fix (sin regresión).
+
+**Decisión: U6 agenda NO se revierte a dict.**
+
+El workaround de v10.158 (agenda lista de objetos `[{"dia": "Lunes", "actividad": "Piscina"}, ...]`) se mantiene. Razones: (a) revertir es un cambio estructural sin ganancia funcional (el matcher ya lee ambos shapes); (b) otros consumidores potenciales (dashboard, agentes) pueden depender del shape actual; (c) el fix elimina la necesidad del workaround **para nuevos inventarios**, que es lo importante.
+
+**Trade-off aceptado:**
+
+Recoger claves de dict aumenta levemente la superficie de match. Las claves del proyecto son normalmente etiquetas semánticas (`Lunes`, `Martes`, `personaje`, `texto_modelo`, etc.). Si una clave técnica coincidiera con un item canónico por casualidad, generaría falso positivo. Riesgo bajo; si emergiera se documentaría.
+
+**Cierre de la deuda matcher:**
+
+Las 3 deudas técnicas catalogadas al cierre de fase 1 quedan resueltas en v11.3-v11.5:
+- ✅ Bug 1 (acentos): `_norm_text` aplica `_strip_accents` (v11.3).
+- ✅ Bug 2 (imágenes): `imagen` en `INPUT_FIELDS_LIST` (v11.4).
+- ✅ Bug 3 (claves de dict): `_gather_text` recoge claves (v11.5).
+
+**Próximo paso:** reactivar fase 2 (reciclaje) o continuar con producto editorial.
+
+**Higiene del commit:** solo `scripts/validar_inventario.py` + meta docs.
+
+---
+
 ## [v11.4 — 2026-05-19] — Deuda matcher bug 2: matcher recoge `imagen.descripcion`
 
 Segundo fix de la deuda técnica del matcher catalogada al cierre de fase 1.

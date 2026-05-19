@@ -135,7 +135,12 @@ def _match_in_text(needle, haystack):
 
 def _gather_text(o, out):
     if isinstance(o, dict):
-        for v in o.values(): _gather_text(v, out)
+        # v11.5 bug 3 (claves de dict): también recogemos las claves del dict, no solo los valores.
+        # Caso real U6 v10.158: agenda {"Lunes": "Piscina", ...} antes obligaba a reescribir como lista
+        # de objetos porque las claves Lunes/Martes/... no se recogían. Ahora se recogen automáticamente.
+        for k, v in o.items():
+            if isinstance(k, str): out.append(k)
+            _gather_text(v, out)
     elif isinstance(o, list):
         for x in o: _gather_text(x, out)
     elif isinstance(o, str):
