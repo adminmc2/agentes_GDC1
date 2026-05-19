@@ -5,6 +5,23 @@
 
 ---
 
+## [v11.0 — 2026-05-19] — Milestone post-fase 1: bump + fix scanner dashboard
+
+Primera versión tras el cierre de fase 1 (v10.164). Bump de major para marcar el hito: la parte mecanizable de extracción de inventario queda consolidada y las nuevas iteraciones se centran en infraestructura y producto (no en saneamiento retrospectivo).
+
+**Cambios:**
+
+1. **Bump major v10.164 → v11.0** — milestone de cierre de extracción canónica + apertura del bloque de infraestructura/producto.
+2. **Fix scanner del dashboard** (`diagrama.py` `scan_section`): el scanner buscaba el patrón legacy `unidades/UN/UN-<seccion>*.md` y devolvía `missing` para todo el material editorial nuevo, que vive en `unidades/UN/propuesta/<seccion>.md` (sin prefijo) según el flujo de publicación canónica documentado en CLAUDE.md raíz. Ahora busca primero en `propuesta/<seccion>.md` (nueva canónica) y luego en el patrón legacy (compatibilidad hacia atrás).
+
+**Resultado verificable:** el dashboard "Estado de unidades" pasa de `0/80 completas` a `20/80 completas` automáticamente (U1, U2, U4, U5 con 5 secciones cada una en estado `complete` + 4 con `in-progress` en evaluación). U0 atípica + U3, U6-U9 sin propuesta = `missing` legítimo.
+
+**Próximo paso (v11.1):** auto-refresh del dashboard cuando se añadan archivos en `propuesta/`.
+
+**Higiene del commit:** solo `diagrama.py` + meta docs.
+
+---
+
 ## [v10.164 — 2026-05-19] — Cierre fase 1: U9 + rectificación U6 + documentación operativa
 
 Cierre de U9 ("Ropa", pp. 92-101), **última unidad del curso NC1**. Con este commit, las 10 unidades del libro están saneadas con el contrato canónico post-v10.153 + §5.10 + §5.11. **Fase 1 cerrada en la parte mecanizable**.

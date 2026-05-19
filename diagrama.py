@@ -744,8 +744,12 @@ AGENTS = {
 
 
 def scan_section(unit_dir, unit, section):
-    candidates = list(unit_dir.glob(f"{unit}-{section}*.md"))
-    main = [f for f in candidates if "-paginas" not in f.name]
+    # Nueva canónica (post-rediseño): unidades/UN/propuesta/<section>.md (sin prefijo)
+    propuesta_dir = unit_dir / "propuesta"
+    new_candidates = list(propuesta_dir.glob(f"{section}.md")) if propuesta_dir.exists() else []
+    # Legacy: unidades/UN/UN-<section>*.md (compatibilidad hacia atrás)
+    legacy_candidates = [f for f in unit_dir.glob(f"{unit}-{section}*.md") if "-paginas" not in f.name]
+    main = new_candidates + legacy_candidates
     if not main:
         return {"status": "missing", "lines": 0, "pendiente": 0, "path": ""}
     f = main[0]
