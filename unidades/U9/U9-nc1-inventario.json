@@ -6,7 +6,7 @@
   "nivel": "A1.1",
   "fuente": {
     "archivo": "unidades/U9/fuente/U9-nc1.pdf",
-    "version_extraccion": "2026-05-10"
+    "version_extraccion": "2026-05-18"
   },
   "contenidos_indice": {
     "vocabulario": "Ropa",
@@ -14,6 +14,771 @@
     "comunicacion": "Preguntar por acciones en el pasado. Acentuación",
     "destrezas": "Segovia: Patrimonio de la Humanidad",
     "cultura": "Trajes tradicionales de España"
+  },
+  "vocabulario_consolidado": {
+    "principal": {
+      "Ropa": {
+        "items": [
+          {
+            "palabra": "abrigo",
+            "fuentes": [
+              "p92-act1",
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "bufanda",
+            "fuentes": [
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "camisa",
+            "fuentes": [
+              "p100-act2",
+              "p100-act3",
+              "p100-act3@R",
+              "p92-act2",
+              "p92-act2@R",
+              "p93-act3",
+              "p93-act5@R"
+            ]
+          },
+          {
+            "palabra": "camiseta",
+            "fuentes": [
+              "p92-act1",
+              "p93-act7",
+              "p93-act9"
+            ]
+          },
+          {
+            "palabra": "cazadora",
+            "fuentes": [
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "chándal",
+            "fuentes": [
+              "p101-act4@R",
+              "p92-act1",
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "chaqueta",
+            "fuentes": [
+              "p100-act2",
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "corbata",
+            "fuentes": [
+              "p101-act4@R",
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "falda",
+            "fuentes": [
+              "p100-act2",
+              "p101-act4@R",
+              "p92-act2",
+              "p92-act2@R",
+              "p93-act7",
+              "p93-act9"
+            ]
+          },
+          {
+            "palabra": "gorra",
+            "fuentes": [
+              "p101-act4@R",
+              "p92-act1",
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "guantes",
+            "fuentes": [
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "jersey",
+            "fuentes": [
+              "p101-act4@R",
+              "p92-act1",
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "pantalones",
+            "fuentes": [
+              "p92-act2",
+              "p92-act2@R",
+              "p93-act5@R"
+            ]
+          },
+          {
+            "palabra": "sudadera",
+            "fuentes": [
+              "p92-act1",
+              "p92-act2",
+              "p92-act2@R",
+              "p93-act4"
+            ]
+          },
+          {
+            "palabra": "vaqueros",
+            "fuentes": [
+              "p101-act4@R",
+              "p92-act1",
+              "p92-act2",
+              "p92-act2@R",
+              "p93-act3",
+              "p93-act4",
+              "p93-act7",
+              "p93-act9"
+            ]
+          },
+          {
+            "palabra": "zapatos",
+            "fuentes": [
+              "p92-act2",
+              "p92-act2@R"
+            ]
+          },
+          {
+            "palabra": "zapatillas deportivas",
+            "fuentes": [
+              "p101-act4@R",
+              "p92-act1",
+              "p92-act2",
+              "p92-act2@R",
+              "p93-act4"
+            ]
+          },
+          {
+            "palabra": "zapatillas",
+            "fuentes": [
+              "p101-act4@R",
+              "p92-act1",
+              "p92-act2",
+              "p92-act2@R",
+              "p93-act4",
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "botas",
+            "fuentes": [
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "vestido",
+            "fuentes": [
+              "p100-act2",
+              "p101-act5",
+              "p93-act7",
+              "p93-act7@R"
+            ]
+          },
+          {
+            "palabra": "traje",
+            "fuentes": [
+              "p100-act2",
+              "p100-act3",
+              "p100-act4"
+            ]
+          },
+          {
+            "palabra": "pañuelo",
+            "fuentes": [
+              "p100-act2"
+            ]
+          },
+          {
+            "palabra": "faja",
+            "fuentes": [
+              "p100-act2"
+            ]
+          },
+          {
+            "palabra": "sombrero",
+            "fuentes": [
+              "p100-act2"
+            ]
+          },
+          {
+            "palabra": "ropa",
+            "fuentes": [
+              "p101-act7",
+              "p93-act10",
+              "p93-act3",
+              "p93-act4",
+              "p93-act5",
+              "p93-act7",
+              "p93-act9",
+              "p96-act1",
+              "p96-act2@R"
+            ]
+          },
+          {
+            "palabra": "ropa deportiva",
+            "fuentes": [
+              "p96-act1",
+              "p96-act2@R"
+            ]
+          },
+          {
+            "palabra": "talla",
+            "fuentes": [
+              "p93-act5"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p92-act1",
+          "p92-act2",
+          "p92-act2@R",
+          "p100-act2",
+          "p100-act3",
+          "p100-act3@R",
+          "p93-act3",
+          "p93-act5@R",
+          "p93-act7",
+          "p93-act9",
+          "p101-act4@R",
+          "p93-act4",
+          "p101-act5",
+          "p93-act7@R",
+          "p100-act4",
+          "p101-act7",
+          "p93-act10",
+          "p93-act5",
+          "p96-act1",
+          "p96-act2@R"
+        ],
+        "descripcion": {
+          "U9": "PCIC A1 §3 Vestuario — prendas de vestir básicas (abrigo, camisa, camiseta, chaqueta, falda, jersey, pantalones, vaqueros, zapatos, zapatillas deportivas, gorra, bufanda, guantes, corbata, sudadera, cazadora, chándal) trabajadas como foco léxico de la unidad (p92-act1, p92-act2, p93-act5, p93-act7, p101-act4, p101-act5). Se amplía con ropa de festividades en Cultura (traje, vestido, camisa de lino, pañuelo, faja, sombrero)."
+        }
+      },
+      "Colores": {
+        "items": [
+          {
+            "palabra": "rojo/-a",
+            "fuentes": [
+              "p100-act2",
+              "p100-act3@R",
+              "p92-act1",
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "amarillo",
+            "fuentes": [
+              "p92-act1",
+              "p92-act1@R",
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "verde",
+            "fuentes": [
+              "p92-act1",
+              "p92-act1@R",
+              "p93-act4",
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "azul",
+            "fuentes": [
+              "p92-act1",
+              "p92-act1@R",
+              "p93-act3",
+              "p93-act4",
+              "p93-act5@R"
+            ]
+          },
+          {
+            "palabra": "gris",
+            "fuentes": [
+              "p92-act1",
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "blanco/-a",
+            "fuentes": [
+              "p100-act2",
+              "p100-act3@R",
+              "p92-act1"
+            ]
+          },
+          {
+            "palabra": "negro/-a",
+            "fuentes": [
+              "p92-act1",
+              "p93-act5@R",
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "rosa",
+            "fuentes": [
+              "p92-act1",
+              "p92-act1@R",
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "marrón",
+            "fuentes": [
+              "p92-act1"
+            ]
+          },
+          {
+            "palabra": "naranja",
+            "fuentes": [
+              "p92-act1",
+              "p92-act1@R"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p100-act2",
+          "p100-act3@R",
+          "p92-act1",
+          "p93-act7",
+          "p92-act1@R",
+          "p93-act4",
+          "p93-act3",
+          "p93-act5@R"
+        ],
+        "descripcion": {
+          "U9": "PCIC A1 §3.6 El color — recurrente desde U1 (principal en cuadro@p15+p15-act7). En U9 reaparece como contenido nuclear junto a 'Ropa' por concordancia en género y número del adjetivo de color con la prenda (p92-act1: 'una camiseta roja', 'unas zapatillas deportivas negras'). En v10.164 (revisor): aplicada notación barra /-a a rojo, blanco, negro (fem atestadas: roja, blanca, blancas, negra, negras); 'oscuro' reubicado de Colores → Adjetivos descriptivos (modificador, no color); 'morado/-a' (p101-act04 image: 'falda morada', 'jersey morado') NO codificado por deuda matcher (image.descripcion no está en INPUT_FIELDS_LIST de _gather_text)."
+        }
+      }
+    },
+    "recurrente": {
+      "Adjetivos descriptivos": {
+        "items": [
+          {
+            "palabra": "alto/-a",
+            "fuentes": [
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "ancho/-a",
+            "fuentes": [
+              "p100-act2"
+            ]
+          },
+          {
+            "palabra": "corto/-a",
+            "fuentes": [
+              "p100-act2",
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "deportivo/-a",
+            "fuentes": [
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "estrecho/-a",
+            "fuentes": [
+              "p93-act7"
+            ]
+          },
+          {
+            "palabra": "grande",
+            "fuentes": [
+              "p98-act1"
+            ]
+          },
+          {
+            "palabra": "largo/-a",
+            "fuentes": [
+              "p100-act2"
+            ]
+          },
+          {
+            "palabra": "oscuro/-a",
+            "fuentes": [
+              "p93-act7"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p93-act7",
+          "p98-act1",
+          "p100-act2"
+        ],
+        "descripcion": {
+          "U9": "Recurrente desde U8 (principal en 'Descripción de personas'). En U9 reaparece como soporte de la descripción de prendas en p93-act7 (camisetas cortas y estrechas, falda corta, botas altas, ropa oscura/deportiva) y de los trajes tradicionales en p100-act02 (trajes largos, chaqueta corta, ala ancha, falda larga), además de grandes monumentos en p98-act01 (Cultura sobre Segovia). Codificado en v10.164 (revisor) tras detectar el mismo perfil de bug sistémico que U5 v10.162 y U8 v10.163: el extractor original perdió estos items por encajar todo bajo 'Ropa' o 'Colores' ('oscuro' estaba en Colores)."
+        }
+      }
+    }
+  },
+  "tiempos_y_verbos_consolidado": [
+    {
+      "lema": "estar",
+      "tipo_de_verbo": [
+        "copulativo",
+        "intransitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Pretérito indefinido": "raíz irregular"
+      },
+      "tiempos": [
+        "Pretérito indefinido"
+      ],
+      "formas_trabajadas": [
+        "estuve",
+        "estuvieron",
+        "estuvimos",
+        "estuviste",
+        "estuvisteis",
+        "estuvo"
+      ],
+      "fuentes": [
+        "p101-act1",
+        "p101-act2",
+        "p101-act6",
+        "p94-act2",
+        "p95-act3",
+        "p95-act4",
+        "p95-act5",
+        "p95-act7",
+        "p96-act1",
+        "p96-act2",
+        "p96-act3",
+        "p97-act5",
+        "cuadro@p94#1",
+        "cuadro@p94#3",
+        "cuadro@p94#4",
+        "cuadro@p97",
+        "cuadro@p98"
+      ],
+      "descripcion": {
+        "U9": "Verbo canónico del registry; en U9 aparece en Pretérito indefinido como contenido nuclear de la sección de gramática (introducción del tiempo) y reaparece transversalmente en comunicación, destrezas y evaluación."
+      }
+    },
+    {
+      "lema": "ir",
+      "tipo_de_verbo": [
+        "intransitivo"
+      ],
+      "rasgo_por_tiempo": {
+        "Pretérito indefinido": "totalmente irregular (mismo paradigma que ser)"
+      },
+      "tiempos": [
+        "Pretérito indefinido"
+      ],
+      "formas_trabajadas": [
+        "fue",
+        "fueron",
+        "fui",
+        "fuimos",
+        "fuiste",
+        "fuisteis"
+      ],
+      "fuentes": [
+        "p101-act1",
+        "p101-act2",
+        "p101-act6",
+        "p94-act1",
+        "p95-act3",
+        "p95-act4",
+        "p95-act5",
+        "p95-act7",
+        "p96-act1",
+        "p96-act2",
+        "p97-act5",
+        "cuadro@p94#1",
+        "cuadro@p94#3",
+        "cuadro@p94#4",
+        "cuadro@p97"
+      ],
+      "descripcion": {
+        "U9": "Verbo canónico del registry; en U9 aparece en Pretérito indefinido como contenido nuclear de la sección de gramática (introducción del tiempo) y reaparece transversalmente en comunicación, destrezas y evaluación."
+      }
+    }
+  ],
+  "gramatica_consolidada": {
+    "principal": {
+      "Marcadores temporales del pasado": {
+        "items": [
+          {
+            "palabra": "ayer",
+            "fuentes": [
+              "p101-act1",
+              "p101-act3",
+              "p94-act1",
+              "p94-act2",
+              "p95-act5",
+              "p95-act6",
+              "p95-act7",
+              "p95-act7@R",
+              "p96-act1",
+              "p97-act4",
+              "cuadro@p94#2",
+              "cuadro@p94#3",
+              "cuadro@p94#4"
+            ]
+          },
+          {
+            "palabra": "ayer por la mañana",
+            "fuentes": [
+              "p94-act2",
+              "cuadro@p94#2"
+            ]
+          },
+          {
+            "palabra": "el año pasado",
+            "fuentes": [
+              "p94-act1",
+              "p95-act3",
+              "p95-act5",
+              "p95-act5@R",
+              "p95-act6",
+              "p95-act7",
+              "p95-act7@R",
+              "cuadro@p94#2",
+              "cuadro@p94#3"
+            ]
+          },
+          {
+            "palabra": "hace + tiempo",
+            "fuentes": [
+              "p95-act3",
+              "p95-act3@R",
+              "p96-act3@R",
+              "cuadro@p94#2"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p101-act1",
+          "p101-act3",
+          "p94-act1",
+          "p94-act2",
+          "p95-act5",
+          "p95-act6",
+          "p95-act7",
+          "p95-act7@R",
+          "p96-act1",
+          "p97-act4",
+          "cuadro@p94#2",
+          "cuadro@p94#3",
+          "cuadro@p94#4",
+          "p95-act3",
+          "p95-act5@R",
+          "p95-act3@R",
+          "p96-act3@R"
+        ],
+        "descripcion": {
+          "U9": "PCIC A1 §8 El adverbio + §8.9 Locuciones adverbiales (temporales) — marcadores temporales que apoyan el uso del pretérito indefinido de ir/estar: 'ayer', 'ayer por la mañana/tarde/noche', 'la semana pasada', 'el año pasado', 'el fin de semana pasado', 'el verano pasado', 'hace + tiempo' (hace dos meses, hace quince días). Introducido formalmente en cuadro@p94#2 y aplicado intensivamente en p94-act1, p94-act2, p95-act3, p95-act4 y siguientes."
+        }
+      }
+    },
+    "recurrente": {
+      "Interrogativos": {
+        "items": [
+          {
+            "palabra": "dónde",
+            "fuentes": [
+              "p101-act3",
+              "p101-act3@R",
+              "p101-act6",
+              "p101-act6@R",
+              "p94-act1",
+              "p94-act2",
+              "p95-act3",
+              "p95-act4",
+              "p95-act5",
+              "p95-act6",
+              "p95-act6@R",
+              "p96-act2",
+              "p96-act3",
+              "p96-act3@R",
+              "p99-act5",
+              "p99-act6",
+              "cuadro@p94#3"
+            ]
+          },
+          {
+            "palabra": "quién",
+            "fuentes": [
+              "p100-act3",
+              "p101-act3",
+              "p101-act3@R",
+              "p101-act6",
+              "p101-act6@R",
+              "p93-act4",
+              "p95-act4",
+              "p95-act5",
+              "p95-act6",
+              "p95-act6@R",
+              "p96-act2",
+              "p97-act4",
+              "p97-act5",
+              "p99-act5",
+              "cuadro@p94#3"
+            ]
+          },
+          {
+            "palabra": "cuándo",
+            "fuentes": [
+              "p100-act3",
+              "p101-act3",
+              "p101-act3@R",
+              "p95-act4",
+              "p95-act5",
+              "p95-act6",
+              "p95-act6@R",
+              "p97-act4",
+              "cuadro@p94#3"
+            ]
+          },
+          {
+            "palabra": "con quién",
+            "fuentes": [
+              "p101-act6@R",
+              "p95-act4",
+              "p95-act5",
+              "p96-act2",
+              "p97-act4",
+              "p97-act5",
+              "p99-act5",
+              "cuadro@p94#3"
+            ]
+          },
+          {
+            "palabra": "por qué",
+            "fuentes": [
+              "p95-act5",
+              "p97-act7",
+              "cuadro@p94#3"
+            ]
+          },
+          {
+            "palabra": "qué",
+            "fuentes": [
+              "p100-act1",
+              "p100-act3",
+              "p101-act3",
+              "p101-act3@R",
+              "p93-act3",
+              "p93-act5",
+              "p93-act9",
+              "p95-act4",
+              "p95-act5",
+              "p96-act1",
+              "p96-act1@R",
+              "p97-act5",
+              "p97-act7",
+              "p99-act4",
+              "p99-act5",
+              "p99-act6",
+              "cuadro@p94#3"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p101-act3",
+          "p101-act3@R",
+          "p101-act6",
+          "p101-act6@R",
+          "p94-act1",
+          "p94-act2",
+          "p95-act3",
+          "p95-act4",
+          "p95-act5",
+          "p95-act6",
+          "p95-act6@R",
+          "p96-act2",
+          "p96-act3",
+          "p96-act3@R",
+          "p99-act5",
+          "p99-act6",
+          "cuadro@p94#3",
+          "p100-act3",
+          "p93-act4",
+          "p97-act4",
+          "p97-act5",
+          "p97-act7",
+          "p100-act1",
+          "p93-act3",
+          "p93-act5",
+          "p93-act9",
+          "p96-act1",
+          "p96-act1@R",
+          "p99-act4"
+        ],
+        "descripcion": {
+          "U9": "Recurrente desde U3 (principal en U3). En U9 amplía con 'con quién' (cuadro@p94#3, p97-act4) y reaparece intensivamente apoyando preguntas sobre acciones del pasado: '¿dónde?', '¿quién?', '¿cuándo?', '¿con quién?', '¿por qué?', '¿qué?' (cuadro@p94#3, p95-act4, p95-act5, p95-act6, p101-act3)."
+        }
+      }
+    }
+  },
+  "pronunciacion_ortografia_consolidada": {
+    "principal": {
+      "Acentuación": {
+        "items": [
+          {
+            "palabra": "agudas",
+            "fuentes": [
+              "p97-act6",
+              "p97-act6@R",
+              "p97-act7"
+            ]
+          },
+          {
+            "palabra": "llanas",
+            "fuentes": [
+              "p97-act6",
+              "p97-act6@R",
+              "p97-act7"
+            ]
+          },
+          {
+            "palabra": "esdrújulas",
+            "fuentes": [
+              "p97-act6",
+              "p97-act6@R",
+              "p97-act7"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p97-act6",
+          "p97-act6@R",
+          "p97-act7"
+        ],
+        "descripcion": {
+          "U9": "PCIC A1 pronunciación §3 La sílaba y el acento (§3.2 reconocimiento y producción del acento) + ortografía (acentuación gráfica de agudas, llanas, esdrújulas). En U9 se introducen formalmente los 'tipos según sílaba tónica' (agudas, llanas, esdrújulas) con reglas de tildación (p97-act6: clasificación; p97-act7: reglas de cuándo llevan tilde). Recurrente respecto a U7 (identificación inicial de la tilde como etiqueta)."
+        }
+      }
+    },
+    "recurrente": {}
   },
   "secciones": {
     "vocabulario": {
@@ -108,43 +873,31 @@
       "actividades_ids": []
     }
   },
-  "vocabulario_consolidado": {
-    "bloque_libro": [
-      "abrigo",
-      "bufanda",
-      "camisa",
-      "camiseta",
-      "cazadora",
-      "chándal",
-      "chaqueta",
-      "corbata",
-      "falda",
-      "gorra",
-      "guantes",
-      "jersey",
-      "pantalones",
-      "sudadera",
-      "vaqueros",
-      "zapatos",
-      "zapatillas deportivas",
-      "amarillo",
-      "azul",
-      "blanco",
-      "gris",
-      "marrón",
-      "naranja",
-      "negro",
-      "rojo",
-      "rosa",
-      "verde"
-    ],
-    "bloque_actividades": [
-      "altas",
-      "deportiva",
-      "vestidos"
-    ],
-    "bloque_tematico": []
+  "autoevaluacion": {
+    "pagina": 101,
+    "instruccion_original": "Mis resultados en esta unidad son:",
+    "emoticonos": true,
+    "opciones": [
+      "MUY BUENOS",
+      "BUENOS",
+      "NO MUY BUENOS"
+    ]
   },
+  "_migracion_rediseno": {
+    "aplicada": true,
+    "fecha": "2026-05-18",
+    "anticipaciones_detectadas_para_fase_2": []
+  },
+  "_decisiones_ia": [
+    "Sesión v10.164: extracción canónica de U9 desde JSON legacy aplicando shape post-v10.153 (4 listas tipadas + 4 bloques consolidados + sufijo @R + canon registries vigentes). Última unidad del curso NC1.",
+    "D-Preterito-indefinido-soportado-por-registry (autónoma): el tiempo 'Pretérito indefinido' ya está canonizado en verbos-canonicos.json v1.6 para los lemas ir y estar (apariciones U9 ya declaradas). NO requiere alta nueva en registry verbal.",
+    "D-Marcadores-temporales-canonico (autónoma, registry): la categoría 'Marcadores temporales del pasado' ya existe en gramatica-canonica.json con _apariciones.U9 = 'principal (apoyo al pretérito indefinido)'. Items materiales: ayer, ayer por la mañana, el año pasado, hace + tiempo (canonizados en el registry).",
+    "D-Acentuacion-tipos-canonico (autónoma, registry): 'Acentuación' en pron/orto registry v1.1 ya declara _apariciones.U9 = 'tipos según sílaba tónica' con items agudas/llanas/esdrújulas. Sigue el registry sin alta nueva.",
+    "D-Analisis-de-errores-no-codificacion (autónoma, precedente U7): el ítem 'Análisis de errores' del índice gramatical editorial NO genera categoría canónica en gramatica_consolidada. Se codifica como subtipo 'para_aprender' en la actividad correspondiente (p95-act07).",
+    "D-Cultura-sin-codificacion-canon (autónoma, precedente U8 La semana azul): el texto cultural sobre 'Trajes tradicionales de España' (p100-act02) aporta léxico (traje, vestido, camisa de lino, pañuelo, faja, sombrero) que se preserva en Ropa pero NO se inventa canónico nuevo. Léxico cultural disponible en datos.texto_completo para fase 2.",
+    "Rectificación v10.164 (revisor, 4 puntos antes del cierre): (1) Notación barra masc/fem aplicada a colores con fem materialmente atestada: rojo/-a (roja en p92-act1, p100-act2), blanco/-a (blanca/blancas en p92-act1, p100-act2), negro/-a (negra/negras en p92-act1, p93-act7). 'amarillo' se mantiene masc sg (única flexión atestada en U9, §5.11 estricto). El cleanup_v150 había revertido las barras automáticamente — corregido manualmente. (2) 'oscuro' reubicado de bucket 'Colores' a nuevo bucket 'Adjetivos descriptivos' recurrente: no es color sino modificador (p93-act07: 'colores oscuros', 'ropa oscura'). (3) Bucket 'Adjetivos descriptivos' recurrente (desde U8) creado con 8 items materialmente atestados que el extractor original había omitido: alto/-a (p93-act7), ancho/-a (p100-act2), corto/-a (p93-act7, p100-act2), deportivo/-a (p93-act7), estrecho/-a (p93-act7), grande (p98-act1 'grandes monumentos'), largo/-a (p100-act2 'trajes largos', 'falda larga'), oscuro/-a (p93-act7). Mismo perfil sistémico que U5 v10.162 y U8 v10.163. (4) Refs de actividad actualizadas: p93-act07 (+Colores +Adjetivos descriptivos), p98-act01 (+Adjetivos descriptivos), p100-act02 (+Adjetivos descriptivos).",
+    "Deuda matcher documentada (v10.164): 'morado/-a' (p101-act04 image: 'falda morada', 'jersey morado') NO codificado en Colores porque image.descripcion NO está en INPUT_FIELDS_LIST de _gather_text. Es la segunda ocurrencia de deuda matcher en U9 (la primera: 'marrón' sin normalización de acento — U8 v10.163, no aplicable aquí). Pendiente: ampliar INPUT_FIELDS_LIST con 'imagen.descripcion' o aceptar pérdida material."
+  ],
   "paginas_detalle": [
     {
       "pagina": 92,
@@ -161,11 +914,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Escribe el color de las siguientes prendas de vestir. Presta atención a si es una palabra masculina o femenina, y si está en singular o en plural.",
-          "contenido_linguistico": [
-            "Colores",
-            "Concordancia de género y número del adjetivo",
-            "Prendas de vestir"
-          ],
           "audio": {
             "presente": false
           },
@@ -209,7 +957,14 @@
               "6 una gorra _____",
               "7 una sudadera _____"
             ]
-          }
+          },
+          "vocabulario": [
+            "Colores",
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p92-act02",
@@ -221,9 +976,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Mira el dibujo de la familia de Marta y relaciona los números con el siguiente vocabulario. Después, escucha y comprueba.",
-          "contenido_linguistico": [
-            "Prendas de vestir"
-          ],
           "audio": {
             "presente": true,
             "pista": 91
@@ -292,7 +1044,13 @@
                 "zapatos"
               ]
             }
-          }
+          },
+          "vocabulario": [
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -310,11 +1068,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Pregunta y responde, como en el ejemplo, sobre el color de la ropa de los personajes del dibujo anterior.",
-          "contenido_linguistico": [
-            "Colores",
-            "Prendas de vestir",
-            "Preguntar por el color"
-          ],
           "audio": {
             "presente": false
           },
@@ -327,7 +1080,14 @@
           "respuestas": [],
           "datos": {
             "ejemplo_libro": "¿De qué color es la camisa del padre de Marta? → Es blanca.\n¿De qué color son los vaqueros de la madre de Marta? → Son azules."
-          }
+          },
+          "vocabulario": [
+            "Colores",
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p93-act04",
@@ -338,11 +1098,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Describe la ropa que lleva puesta alguien de la clase. ¿Puede adivinar tu compañero de quién se trata?",
-          "contenido_linguistico": [
-            "Prendas de vestir",
-            "Colores",
-            "Descripción de personas"
-          ],
           "audio": {
             "presente": false
           },
@@ -355,7 +1110,14 @@
           "respuestas": [],
           "datos": {
             "ejemplo_libro": "Lleva vaqueros azules, una sudadera verde, zapatillas deportivas blancas…"
-          }
+          },
+          "vocabulario": [
+            "Colores",
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p93-act05",
@@ -366,12 +1128,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y completa la siguiente conversación en una tienda de ropa.",
-          "contenido_linguistico": [
-            "Comprar ropa",
-            "Prendas de vestir",
-            "Precios",
-            "Tallas"
-          ],
           "audio": {
             "presente": true,
             "pista": 92
@@ -410,7 +1166,13 @@
               "DEPENDIENTA: Esa vale [8] _____ euros.",
               "CLIENTA: Muy bien, me llevo las dos cosas."
             ]
-          }
+          },
+          "vocabulario": [
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p93-act06",
@@ -421,10 +1183,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Prepara con tu compañero una conversación como la del ejercicio anterior.",
-          "contenido_linguistico": [
-            "Comprar ropa",
-            "Interacción en tienda"
-          ],
           "audio": {
             "presente": false
           },
@@ -434,7 +1192,11 @@
           "video": {
             "presente": false
           },
-          "respuestas": []
+          "respuestas": [],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p93-act07",
@@ -445,10 +1207,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Lee lo que piensa Laura sobre la ropa. Completa con las siguientes palabras.",
-          "contenido_linguistico": [
-            "Prendas de vestir",
-            "Gustos y preferencias"
-          ],
           "audio": {
             "presente": false
           },
@@ -473,7 +1231,15 @@
             "items_libro": [
               "A mí me gustan los colores oscuros, siempre llevo ropa negra o gris. Me gustan los vaqueros negros y las camisetas cortas y estrechas. No me gustan nada los [1] _____ , pero tengo una falda corta y negra. Normalmente llevo zapatillas blancas, pero para salir llevo unas botas [2] _____ negras. También me gusta la ropa [3] _____ . En cambio, no me gustan nada los colores como el rojo, verde, rosa o amarillo."
             ]
-          }
+          },
+          "vocabulario": [
+            "Ropa",
+            "Colores",
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p93-act08",
@@ -484,10 +1250,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Escucha y escribe el nombre correspondiente.",
-          "contenido_linguistico": [
-            "Prendas de vestir",
-            "Comprensión auditiva"
-          ],
           "audio": {
             "presente": true,
             "pista": 93
@@ -512,7 +1274,13 @@
               "3 _____",
               "4 _____"
             ]
-          }
+          },
+          "vocabulario": [
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p93-act09",
@@ -523,11 +1291,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "En parejas, pregunta a tu compañero sobre ropa y colores.",
-          "contenido_linguistico": [
-            "Gustos y preferencias",
-            "Prendas de vestir",
-            "Colores"
-          ],
           "audio": {
             "presente": false
           },
@@ -545,7 +1308,14 @@
               "3 ¿Qué ropa no te gusta nada?",
               "4 ¿Cuáles son tus colores favoritos?"
             ]
-          }
+          },
+          "vocabulario": [
+            "Colores",
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p93-act10",
@@ -556,11 +1326,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Escribe un párrafo sobre la ropa y los gustos de tu compañero.",
-          "contenido_linguistico": [
-            "Prendas de vestir",
-            "Colores",
-            "Gustos y preferencias"
-          ],
           "audio": {
             "presente": false
           },
@@ -573,7 +1338,14 @@
           "respuestas": [],
           "datos": {
             "ejemplo_libro": "A mi compañero le gusta mucho…\nNo le gusta nada…\nLe gustan los colores…\nHoy lleva…"
-          }
+          },
+          "vocabulario": [
+            "Colores",
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -582,65 +1354,114 @@
       "seccion": "gramatica",
       "cuadros": [
         {
-          "id": "U9-p94-cuadro01",
           "tipo_cuadro": "gramatical",
           "titulo": "Pretérito indefinido de los verbos ir y estar",
-          "contenido": "ir: yo fui, tú fuiste, él/ella/Ud. fue, nosotros/-as fuimos, vosotros/-as fuisteis, ellos/ellas/Uds. fueron\nestar: yo estuve, tú estuviste, él/ella/Ud. estuvo, nosotros/-as estuvimos, vosotros/-as estuvisteis, ellos/ellas/Uds. estuvieron",
-          "audio": {
-            "presente": false
+          "contenido": {
+            "tipo": "texto",
+            "texto": "ir: yo fui, tú fuiste, él/ella/Ud. fue, nosotros/-as fuimos, vosotros/-as fuisteis, ellos/ellas/Uds. fueron\nestar: yo estuve, tú estuviste, él/ella/Ud. estuvo, nosotros/-as estuvimos, vosotros/-as estuvisteis, ellos/ellas/Uds. estuvieron"
           },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          }
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fui",
+                "fuiste",
+                "fue",
+                "fuimos",
+                "fuisteis",
+                "fueron"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuviste",
+                "estuvo",
+                "estuvimos",
+                "estuvisteis",
+                "estuvieron"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
-          "id": "U9-p94-cuadro02",
           "tipo_cuadro": "gramatical",
           "titulo": "Marcadores temporales del pasado",
-          "contenido": "El pretérito indefinido o pretérito perfecto simple de los verbos suele ir acompañado de expresiones de tiempo. Las más habituales son:\n- ayer por la mañana / tarde / noche\n- la semana pasada\n- el año pasado\n- hace una semana / un mes / un año",
-          "audio": {
-            "presente": false
+          "contenido": {
+            "tipo": "texto",
+            "texto": "El pretérito indefinido o pretérito perfecto simple de los verbos suele ir acompañado de expresiones de tiempo. Las más habituales son:\n- ayer por la mañana / tarde / noche\n- la semana pasada\n- el año pasado\n- hace una semana / un mes / un año"
           },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          }
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Marcadores temporales del pasado"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
-          "id": "U9-p94-cuadro03",
           "tipo_cuadro": "gramatical",
           "titulo": "Interrogativos",
-          "contenido": "¿Dónde? • ¿Dónde estuviste el domingo? → Estuve en el parque.\n¿Quién? • ¿Quién estuvo contigo en el parque? → Lola estuvo conmigo.\n¿Cuándo? • ¿Cuándo fuiste a Roma? → Fui a Roma el año pasado.\n¿Con quién? • ¿Con quién fuiste a Roma? → Fui a Roma con mi hermana.\n¿Por qué? • ¿Por qué no fuiste al cole ayer? → Porque fui al médico.",
-          "audio": {
-            "presente": false
+          "contenido": {
+            "tipo": "texto",
+            "texto": "¿Dónde? • ¿Dónde estuviste el domingo? → Estuve en el parque.\n¿Quién? • ¿Quién estuvo contigo en el parque? → Lola estuvo conmigo.\n¿Cuándo? • ¿Cuándo fuiste a Roma? → Fui a Roma el año pasado.\n¿Con quién? • ¿Con quién fuiste a Roma? → Fui a Roma con mi hermana.\n¿Por qué? • ¿Por qué no fuiste al cole ayer? → Porque fui al médico."
           },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          }
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fui",
+                "fuiste"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuviste",
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
-          "id": "U9-p94-observa01",
           "tipo_cuadro": "gramatical",
           "titulo": "Observa",
-          "contenido": "IR → A\nESTAR → EN\nYo estuve ayer en la piscina.\nYo fui ayer a clase de guitarra.",
-          "audio": {
-            "presente": false
+          "contenido": {
+            "tipo": "texto",
+            "texto": "IR → A\nESTAR → EN\nYo estuve ayer en la piscina.\nYo fui ayer a clase de guitarra."
           },
-          "imagen": {
-            "presente": true,
-            "descripcion": "Calendario de febrero con 'AYER' marcado en el jueves 3 y 'HOY' en el viernes 4. Ilustraciones de una chica nadando en una piscina y un chico tocando la guitarra."
-          },
-          "video": {
-            "presente": false
-          }
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fui"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ],
       "actividades": [
@@ -654,9 +1475,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa los huecos con el pretérito indefinido del verbo ir.",
-          "contenido_linguistico": [
-            "Pretérito indefinido de ir"
-          ],
           "audio": {
             "presente": false
           },
@@ -686,7 +1504,24 @@
               "6 ¿A dónde _____ vosotras el martes por la tarde?",
               "7 ¿El año pasado mis padres _____ a Grecia de vacaciones."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fue",
+                "fueron",
+                "fui",
+                "fuimos",
+                "fuiste",
+                "fuisteis"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p94-act02",
@@ -697,9 +1532,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "Subraya la forma correcta.",
-          "contenido_linguistico": [
-            "Pretérito indefinido de estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -730,7 +1562,24 @@
               "7 Ayer María estuvo / estuve en la biblioteca.",
               "8 Ayer por la noche mis hermanos estuvimos / estuvieron en una fiesta."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuvieron",
+                "estuvimos",
+                "estuviste",
+                "estuvisteis",
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -748,10 +1597,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "¿A dónde fueron los hermanos García de vacaciones?",
-          "contenido_linguistico": [
-            "Pretérito indefinido de ir y estar",
-            "Marcadores temporales del pasado"
-          ],
           "audio": {
             "presente": false
           },
@@ -809,7 +1654,30 @@
               "3 ¿A dónde fue Ana hace quince días?",
               "4 ¿A dónde fueron hace dos meses?"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fue",
+                "fueron"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuvieron",
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Marcadores temporales del pasado"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p95-act04",
@@ -820,10 +1688,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "Andrés es un hombre de negocios. Vive en Madrid, pero viaja mucho durante la semana. Mira su agenda de la semana pasada y contesta a las siguientes preguntas.",
-          "contenido_linguistico": [
-            "Pretérito indefinido de ir y estar",
-            "Interrogativos"
-          ],
           "audio": {
             "presente": false
           },
@@ -861,7 +1725,28 @@
               "6 ¿Dónde estuvo el domingo por la mañana?",
               "7 ¿Quién estuvo con él el jueves?"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fue"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p95-act05",
@@ -872,10 +1757,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "Relaciona.",
-          "contenido_linguistico": [
-            "Interrogativos",
-            "Pretérito indefinido de ir y estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -918,7 +1799,33 @@
                 "h Con mis padres."
               ]
             }
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fui",
+                "fuiste"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuvimos",
+                "estuviste",
+                "estuvisteis",
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p95-act06",
@@ -929,9 +1836,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa con el interrogativo adecuado: cuándo, dónde, quién.",
-          "contenido_linguistico": [
-            "Interrogativos: cuándo, dónde, quién"
-          ],
           "audio": {
             "presente": false
           },
@@ -965,7 +1869,13 @@
               "8 ¿ _____ viven tus abuelos?",
               "9 ¿Con _____ estuvo Rocío en París?"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p95-act07",
@@ -977,9 +1887,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "En todas las frases siguientes hay un error. ¿Cuál es? Corrígelo.",
-          "contenido_linguistico": [
-            "Análisis de errores: pretérito indefinido de ir y estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -1012,7 +1919,30 @@
               "7 Mis padres ayer no están en casa.",
               "8 Sábado pasado yo estuve en la piscina."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fue",
+                "fueron",
+                "fui"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuvieron",
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -1031,10 +1961,6 @@
           ],
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
-          "contenido_linguistico": [
-            "Pretérito indefinido de ir y estar",
-            "Actividades del fin de semana"
-          ],
           "audio": {
             "presente": true,
             "pista": 94
@@ -1076,7 +2002,29 @@
               "PABLO: No, el fin de semana pasado [7] _____ con mis hermanas en el parque de atracciones.",
               "JULIA: ¡Es verdad!"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fui",
+                "fuimos",
+                "fuiste",
+                "fuisteis"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p96-act02",
@@ -1088,10 +2036,6 @@
           ],
           "enfoque": "comunicacion",
           "instruccion_original": "Contesta a las siguientes preguntas.",
-          "contenido_linguistico": [
-            "Comprensión del diálogo",
-            "Pretérito indefinido de ir y estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -1116,7 +2060,27 @@
               "4 ¿Quién estuvo el sábado en la biblioteca?",
               "5 ¿Dónde fueron Pablo y sus hermanas el fin de semana pasado?"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fue",
+                "fueron"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p96-act03",
@@ -1127,10 +2091,6 @@
           ],
           "enfoque": "comunicacion",
           "instruccion_original": "En parejas, pregunta y responde a las preguntas como en el ejemplo.",
-          "contenido_linguistico": [
-            "Preguntar por acciones en el pasado",
-            "Pretérito indefinido de ir y estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -1157,7 +2117,24 @@
               "4 tú y tus amigos – verano pasado / Egipto",
               "5 tu hermana – quince días / casa de sus abuelos"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuvieron",
+                "estuvimos",
+                "estuviste",
+                "estuvisteis",
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -1166,19 +2143,33 @@
       "seccion": "comunicacion",
       "cuadros": [
         {
-          "id": "U9-p97-observa01",
           "tipo_cuadro": "gramatical",
           "titulo": "Observa",
-          "contenido": "• Estar en…\nEstuve en clase.\nEstuviste en la biblioteca.\n• Ir a…\nFui a clase.\nFuiste a la biblioteca.",
-          "audio": {
-            "presente": false
+          "contenido": {
+            "tipo": "texto",
+            "texto": "• Estar en…\nEstuve en clase.\nEstuviste en la biblioteca.\n• Ir a…\nFui a clase.\nFuiste a la biblioteca."
           },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          }
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fui",
+                "fuiste"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuviste"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ],
       "actividades": [
@@ -1191,10 +2182,6 @@
           ],
           "enfoque": "comunicacion",
           "instruccion_original": "Pregunta y responde a tu compañero, como en el ejemplo, sobre cuándo y con quién estuvisteis en los siguientes lugares.",
-          "contenido_linguistico": [
-            "Preguntar por acciones en el pasado",
-            "Interrogativos cuándo y con quién"
-          ],
           "audio": {
             "presente": false
           },
@@ -1217,7 +2204,13 @@
               "2 la montaña - la semana pasada - Pablo y María",
               "3 la playa - el sábado por la tarde - mi familia"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p97-act05",
@@ -1229,10 +2222,6 @@
           ],
           "enfoque": "comunicacion",
           "instruccion_original": "Preparad vuestro propio diálogo.",
-          "contenido_linguistico": [
-            "Preguntar por acciones en el pasado",
-            "Pretérito indefinido de ir y estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -1251,7 +2240,28 @@
               "Practica el diálogo con tu compañero.",
               "Representad el diálogo delante de la clase."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fui",
+                "fuiste"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuviste"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p97-act06",
@@ -1260,11 +2270,8 @@
           "destreza": [
             "comprension_auditiva"
           ],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "Escucha y clasifica las siguientes palabras según la sílaba tónica.",
-          "contenido_linguistico": [
-            "Acentuación: palabras esdrújulas, llanas y agudas"
-          ],
           "audio": {
             "presente": true,
             "pista": 95
@@ -1303,7 +2310,13 @@
               "periódico",
               "lápiz"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [
+            "Acentuación"
+          ]
         },
         {
           "id": "U9-p97-act07",
@@ -1313,11 +2326,8 @@
             "comprension_lectora",
             "expresion_escrita"
           ],
-          "enfoque": "fonetica",
+          "enfoque": "pronunciacion_ortografia",
           "instruccion_original": "¿Por qué algunas palabras llevan tilde y otras no? Completa las reglas.",
-          "contenido_linguistico": [
-            "Reglas de acentuación: agudas, llanas, esdrújulas"
-          ],
           "audio": {
             "presente": false
           },
@@ -1338,7 +2348,13 @@
               "2 Las palabras llanas no llevan tilde si terminan en _____ , _____, _____.",
               "3 Las palabras esdrújulas llevan tilde _____."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": [
+            "Acentuación"
+          ]
         }
       ]
     },
@@ -1347,19 +2363,24 @@
       "seccion": "destrezas",
       "cuadros": [
         {
-          "id": "U9-p98-observa01",
           "tipo_cuadro": "gramatical",
           "titulo": "Observa",
-          "contenido": "Mira cómo escribimos las fechas del pasado en español:\na. C. (antes de Cristo) para fechas anteriores al nacimiento de Cristo, año 1.\nd. C. (después de Cristo) para fechas posteriores al nacimiento de Cristo.\nLos romanos estuvieron en España desde el año 218 a. C.",
-          "audio": {
-            "presente": false
+          "contenido": {
+            "tipo": "texto",
+            "texto": "Mira cómo escribimos las fechas del pasado en español:\na. C. (antes de Cristo) para fechas anteriores al nacimiento de Cristo, año 1.\nd. C. (después de Cristo) para fechas posteriores al nacimiento de Cristo.\nLos romanos estuvieron en España desde el año 218 a. C."
           },
-          "imagen": {
-            "presente": false
-          },
-          "video": {
-            "presente": false
-          }
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuvieron"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ],
       "actividades": [
@@ -1372,10 +2393,6 @@
           ],
           "enfoque": "transversal",
           "instruccion_original": "Lee la información contenida en el folleto turístico de la ciudad de Segovia.",
-          "contenido_linguistico": [
-            "Segovia: Patrimonio de la Humanidad",
-            "Monumentos romanos en España"
-          ],
           "audio": {
             "presente": false
           },
@@ -1389,7 +2406,13 @@
           "respuestas": [],
           "datos": {
             "texto_completo": "Los romanos estuvieron en España durante siete siglos, desde 218 a. C. hasta el siglo v d. C. Ahora nos quedan grandes monumentos de aquella época que podemos visitar. Si viene a Segovia, vea el Acueducto construido por los romanos en el siglo i d. C. Tiene una longitud total de 15 km.\n\nVisite la Catedral, de estilo gótico con rasgos renacentistas, construida durante los siglos xvi, xvii y xviii. Horario de visitas: de 9 a 20 h.\n\nVisite el Alcázar, fortaleza construida en el s. xii, restaurada y habitada por el rey Felipe II en el s. xvi. Horario de visitas: de 10 a 17 h.\n\nRealice un agradable paseo por la ribera del río Eresma y contemple las magníficas vistas de la ciudad.\n\nDisfrute de las soleadas terrazas de la Plaza Mayor y pruebe sus deliciosos aperitivos junto a la Catedral.\n\nHaga sus compras en la histórica calle de Juan Bravo, que va desde la Plaza Mayor al Acueducto."
-          }
+          },
+          "vocabulario": [
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p98-act02",
@@ -1400,9 +2423,6 @@
           ],
           "enfoque": "transversal",
           "instruccion_original": "Señala si estas frases son verdaderas (V) o falsas (F). Corrige las falsas.",
-          "contenido_linguistico": [
-            "Comprensión lectora: Segovia"
-          ],
           "audio": {
             "presente": false
           },
@@ -1427,7 +2447,11 @@
               "4 La Catedral se puede visitar a las nueve de la mañana.",
               "5 El Alcázar fue construido el siglo pasado."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -1445,10 +2469,6 @@
           ],
           "enfoque": "transversal",
           "instruccion_original": "Primero escucha a María hablando sobre su visita a Segovia. Después, escribe en el orden correcto los lugares en los que estuvo.",
-          "contenido_linguistico": [
-            "Comprensión auditiva: visita turística",
-            "Conectores de orden: primero, después, luego, por último"
-          ],
           "audio": {
             "presente": true,
             "pista": 96
@@ -1472,7 +2492,11 @@
               "Luego…",
               "Por último…"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p99-act04",
@@ -1483,9 +2507,6 @@
           ],
           "enfoque": "transversal",
           "instruccion_original": "Lee estos dos textos sobre dos antiguas ciudades españolas de origen romano: Alcalá de Henares y Mérida. Después, busca información en internet y contesta a esta pregunta: ¿qué ciudad describe cada texto?",
-          "contenido_linguistico": [
-            "Ciudades romanas de España: Mérida y Alcalá de Henares"
-          ],
           "audio": {
             "presente": false
           },
@@ -1505,7 +2526,11 @@
               "a": "Los romanos estuvieron en esta ciudad en el siglo i a. C. Aún quedan restos de la ciudad antigua, como el puente romano sobre el río Guadiana, el acueducto de los Milagros, el Templo de Diana y el teatro romano, en el que actualmente se celebra todos los veranos el Festival Internacional de Teatro Clásico. La ciudad tiene también un importante Museo de Arte Romano. Fue declarada por la Unesco Patrimonio de la Humanidad en 1993.",
               "b": "Los romanos estuvieron en la ciudad desde el siglo I a. C. y la llamaron Complutum. Ahora tiene un importante conjunto de restos arqueológicos sobre el que se encuentra la ciudad moderna. Es una ciudad muy conocida porque en ella están situados los edificios del siglo xvi, sede de la Universidad Complutense de Madrid, una de las universidades más antiguas de España. En esta ciudad se encuentra la Casa Natal de Cervantes, el autor de El Quijote."
             }
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p99-act05",
@@ -1517,10 +2542,6 @@
           ],
           "enfoque": "transversal",
           "instruccion_original": "En grupos de tres, A pregunta a B, hablando por teléfono sin que C escuche, sobre algún viaje reciente. A le va contando a C lo que dice B. C puede hacer preguntas a A para conseguir más información de B.",
-          "contenido_linguistico": [
-            "Mediación oral",
-            "Hablar de viajes en el pasado"
-          ],
           "audio": {
             "presente": false
           },
@@ -1538,7 +2559,11 @@
               "¿En qué lugares estuviste?",
               "¿Con quién fuiste?"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p99-act06",
@@ -1549,10 +2574,6 @@
           ],
           "enfoque": "transversal",
           "instruccion_original": "Escribe un texto contando un viaje reciente con tu familia.",
-          "contenido_linguistico": [
-            "Narración de viajes en el pasado",
-            "Conectores: primero, después, luego, por último"
-          ],
           "audio": {
             "presente": false
           },
@@ -1571,7 +2592,11 @@
               "Organiza el texto en varios párrafos y ordena las actividades: Primero… - Después… - Por último…"
             ],
             "modelo_texto": "El verano pasado fui con mi familia a los Pirineos, unas montañas en el norte de España.\nPrimero estuvimos en un camping muy cerca del río Cinca. Todos los días fuimos a nadar al río y también estuvimos en una preciosa ciudad medieval, Aínsa.\nDespués fuimos a hacer una senda por el Monte Perdido y luego, con el coche, fuimos al lago San Mauricio.\nPor último estuvimos en un hotel en Andorra, con unas piscinas de aguas termales.\n¡Un verano estupendo!"
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -1589,10 +2614,6 @@
           ],
           "enfoque": "cultura",
           "instruccion_original": "Mira las fotos. ¿Qué llevan puesto? ¿Son de Pamplona, Andalucía, o Valencia?",
-          "contenido_linguistico": [
-            "Trajes tradicionales de España",
-            "Prendas de vestir"
-          ],
           "audio": {
             "presente": false
           },
@@ -1619,7 +2640,13 @@
               "Andalucía",
               "Valencia"
             ]
-          }
+          },
+          "vocabulario": [
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p100-act02",
@@ -1631,9 +2658,6 @@
           ],
           "enfoque": "cultura",
           "instruccion_original": "Lee y escucha el texto. Comprueba tus respuestas del ejercicio anterior.",
-          "contenido_linguistico": [
-            "Trajes tradicionales de España: Andalucía, Valencia, Pamplona"
-          ],
           "audio": {
             "presente": true,
             "pista": 97
@@ -1648,7 +2672,13 @@
           "datos": {
             "titulo": "Trajes tradicionales de España",
             "texto_completo": "Son muchos y muy variados los trajes tradicionales que hay en las distintas comunidades españolas. Aquí aparecen tres de los más conocidos internacionalmente.\n\nA El traje inicialmente utilizado por las mujeres gitanas es actualmente el traje típico andaluz y lo utilizan para acudir a las ferias que se celebran en muchas localidades de Andalucía y, particularmente, en la Feria de Abril de Sevilla, en la Feria de Jerez o en el Rocío, donde su vestido se considera imprescindible y es utilizado por mucha gente.\nLas mujeres visten trajes largos y pelo decorado con una flor, y los hombres, chaqueta corta, camisa blanca y sombrero de ala ancha.\n\nB El traje tradicional de la Comunidad Valenciana está muy presente en sus festividades y actos folclóricos, especialmente durante las Fiestas de las Fallas. Este es un traje muy vistoso y colorido, en el caso de las mujeres, en el que también tiene mucha importancia el peinado, que es muy elaborado.\nEl traje típico de fallera lleva una camisa de lino decorada con bordados a mano y una falda larga igualmente adornada.\n\nC En las fiestas de San Fermín lo tradicional es ir vestido con el traje de pamplonica, es decir, hombres y mujeres con camisa blanca, pantalón o falda del mismo color, y con la faja y el pañuelo de fiestas de color rojo. En estas fechas casi todo el mundo viste de esta manera. La sencillez de este atuendo festivo hace que tanto lugareños como gente de fuera lo utilicen, creando verdaderas mareas humanas de blanco y rojo."
-          }
+          },
+          "vocabulario": [
+            "Adjetivos descriptivos"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p100-act03",
@@ -1659,9 +2689,6 @@
           ],
           "enfoque": "cultura",
           "instruccion_original": "Lee otra vez el texto y contesta a las preguntas.",
-          "contenido_linguistico": [
-            "Trajes tradicionales de España"
-          ],
           "audio": {
             "presente": false
           },
@@ -1686,7 +2713,11 @@
               "4 ¿Qué colores son los que destacan en San Fermín?",
               "5 ¿Quiénes visten el traje típico de San Fermín?"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p100-act04",
@@ -1698,10 +2729,6 @@
           ],
           "enfoque": "cultura",
           "instruccion_original": "Completa las frases. Coméntalas con tu compañero.",
-          "contenido_linguistico": [
-            "Trajes tradicionales del país del alumno",
-            "Descripción de ropa"
-          ],
           "audio": {
             "presente": false
           },
@@ -1720,7 +2747,11 @@
               "4 La gente viste con trajes tradicionales cuando…",
               "5 Yo algunas veces / nunca visto un traje tradicional cuando…"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     },
@@ -1739,9 +2770,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con el pretérito indefinido.",
-          "contenido_linguistico": [
-            "Pretérito indefinido de ir y estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -1772,7 +2800,32 @@
               "7 Yo (ir) _____ a Canarias el mes pasado.",
               "8 Nosotros (estar) _____ el sábado en la piscina."
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fue",
+                "fueron",
+                "fui",
+                "fuiste"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuvieron",
+                "estuvimos",
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p101-act02",
@@ -1784,9 +2837,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "Construye las frases correctas con el pretérito indefinido, como en el ejemplo.",
-          "contenido_linguistico": [
-            "Pretérito indefinido de ir y estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -1818,7 +2868,32 @@
               "7 ¿(vosotros) estar / montaña?",
               "8 ¿(tú) ir / casa de Nuria?"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fue",
+                "fui",
+                "fuiste"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuvieron",
+                "estuvimos",
+                "estuviste",
+                "estuvisteis",
+                "estuvo"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p101-act03",
@@ -1829,9 +2904,6 @@
           ],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con uno de los pronombres interrogativos: qué, quién, cuándo, dónde.",
-          "contenido_linguistico": [
-            "Interrogativos: qué, quién, cuándo, dónde"
-          ],
           "audio": {
             "presente": false
           },
@@ -1867,7 +2939,13 @@
               "9 ¿ _____ estuvimos en casa de Raquel?",
               "10 ¿ _____ fue Pedro a Roma?"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [
+            "Interrogativos"
+          ],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p101-act04",
@@ -1878,9 +2956,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Nombra las siguientes prendas de vestir.",
-          "contenido_linguistico": [
-            "Prendas de vestir"
-          ],
           "audio": {
             "presente": false
           },
@@ -1910,7 +2985,13 @@
               "6",
               "7"
             ]
-          }
+          },
+          "vocabulario": [
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p101-act05",
@@ -1921,11 +3002,6 @@
           ],
           "enfoque": "vocabulario",
           "instruccion_original": "Describe cómo vas vestido y dibújate.",
-          "contenido_linguistico": [
-            "Prendas de vestir",
-            "Colores",
-            "Descripción de ropa"
-          ],
           "audio": {
             "presente": false
           },
@@ -1935,7 +3011,14 @@
           "video": {
             "presente": false
           },
-          "respuestas": []
+          "respuestas": [],
+          "vocabulario": [
+            "Colores",
+            "Ropa"
+          ],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p101-act06",
@@ -1946,10 +3029,6 @@
           ],
           "enfoque": "comunicacion",
           "instruccion_original": "Ordena las conversaciones.",
-          "contenido_linguistico": [
-            "Preguntar por acciones en el pasado",
-            "Pretérito indefinido de ir y estar"
-          ],
           "audio": {
             "presente": false
           },
@@ -1970,7 +3049,30 @@
               "¿ / fuiste / quién / con / ?  •  los / clase / fui / compañeros / con / de",
               "¿ / verano / estuvieron / dónde / profesores / los / en / ?  •  de / fueron / viaje / Croacia / a"
             ]
-          }
+          },
+          "vocabulario": [],
+          "tiempos_y_verbos": [
+            {
+              "lema": "ir",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "fueron",
+                "fui",
+                "fuiste"
+              ]
+            },
+            {
+              "lema": "estar",
+              "tiempo": "Pretérito indefinido",
+              "formas_trabajadas": [
+                "estuve",
+                "estuvieron",
+                "estuviste"
+              ]
+            }
+          ],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         },
         {
           "id": "U9-p101-act07",
@@ -1981,10 +3083,6 @@
           ],
           "enfoque": "comunicacion",
           "instruccion_original": "En parejas, A trabaja como dependiente en una tienda de ropa y B es un cliente que desea comprar una prenda.",
-          "contenido_linguistico": [
-            "Comprar ropa",
-            "Interacción en tienda de ropa"
-          ],
           "audio": {
             "presente": false
           },
@@ -1994,19 +3092,13 @@
           "video": {
             "presente": false
           },
-          "respuestas": []
+          "respuestas": [],
+          "vocabulario": [],
+          "tiempos_y_verbos": [],
+          "gramatica": [],
+          "pronunciacion_ortografia": []
         }
       ]
     }
-  ],
-  "autoevaluacion": {
-    "pagina": 101,
-    "instruccion_original": "Mis resultados en esta unidad son:",
-    "emoticonos": true,
-    "opciones": [
-      "MUY BUENOS",
-      "BUENOS",
-      "NO MUY BUENOS"
-    ]
-  }
+  ]
 }

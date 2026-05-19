@@ -26,12 +26,36 @@ guia-didactica-profesor-IA/
 ├── fases/<N>-<nombre>/            ← una carpeta por fase con CLAUDE.md + prompt + artefactos
 ├── scripts/                       ← código Python ejecutable (validación, regeneración)
 ├── web/, diagrama.py, eval/       ← infraestructura (dashboard, evaluación)
-├── viejo/                         ← archivo del sistema CrewAI v5 anterior — INTOCABLE
+├── viejo/                         ← archivo del sistema CrewAI v5 anterior + zona de trabajo
+│                                    activa del rediseño (pautas, plantillas, registro,
+│                                    propuestas en redacción). Ver flujo de publicación abajo.
 ├── PROCESO-MAESTRO.md             ← decisiones cerradas + bitácora
 ├── REVIEW.md                      ← plan ejecutable con gates (estado actual del proyecto)
 ├── README.md                      ← descripción del proyecto + estado de las 8 fases
 └── CHANGELOG.md, ROADMAP.md, GITHUB-MANIFEST.md, Dockerfile, etc.
 ```
+
+---
+
+## Flujo de publicación canónica (al cerrar una unidad)
+
+La redacción de cada unidad sucede en **`viejo/unidades/UXX-propuesta/`** (zona de trabajo, gitignored). Cuando la unidad entera está cerrada y validada, las propuestas se copian a la **ruta canónica versionada** `unidades/UX/propuesta/` con renaming sin prefijo:
+
+```
+viejo/unidades/U02-propuesta/U02-propuesta-vocabulario.md
+                                                            → unidades/U2/propuesta/vocabulario.md
+
+viejo/unidades/U02-propuesta/tarjetas/<archivo>.csv
+                                                            → unidades/U2/recursos/tarjetas/<archivo>.csv
+```
+
+- La canónica `unidades/UX/` es **mirror snapshot**, no fuente.
+- **Ediciones futuras siempre en `viejo/`**; canonical se actualiza re-copiando.
+- Para unidades atípicas (U0, sin secciones canónicas): un archivo único en `unidades/U0/propuesta/<nombre-descriptivo>.md`.
+
+Razón: `viejo/` mantiene todo a mano para Claude Code mientras se redacta (pautas, plantillas, registro, propuestas previas como referencia). La canónica es el entregable versionado que el repo git incluye y que cualquier máquina o colaborador puede consultar.
+
+Detalle del paso 13 del proceso operativo en `viejo/unidades/CLAUDE.md`.
 
 ---
 
@@ -95,6 +119,56 @@ Ejemplo concreto (fase 1, extracción de U4):
 - No inventar contenido editorial.
 - No duplicar instrucciones operativas en este CLAUDE.md raíz si ya viven en el CLAUDE.md de una fase.
 - No añadir aquí: historia, estado, planes futuros, meta-decisiones. Eso vive en PROCESO-MAESTRO, REVIEW, README según corresponda.
+
+---
+
+## Estado fase 1 (extracción de inventario) — cerrada en v10.164
+
+✅ **U0-U9 saneadas** con contrato canónico post-v10.153 + §5.10 + §5.11. Validador 0/0/0 en las 10 unidades.
+
+### Registries vigentes (autoridad de naming, regla crítica §5.6)
+
+| Dimensión | Archivo | Versión |
+|---|---|---|
+| Léxico | `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` | v1.8 |
+| Gramatical | `fases/1-extraccion-inventario/gramatica-canonica.json` | v1.5 |
+| Pron/orto | `fases/1-extraccion-inventario/pronunciacion-ortografia-canonica.json` | v1.1 |
+| Verbal | `fases/1-extraccion-inventario/verbos-canonicos.json` | v1.6 |
+
+Soporte PCIC A1: `pcic-a1-{vocabulario,gramatica,pronunciacion-ortografia,comunicacion}.json`.
+
+### Convenciones críticas para futuras correcciones
+
+1. **Naming literal del registry** (regla §5.6). No inventar canónicos. Si falta uno, **escalar §0.1 al autor** en chat.
+2. **Notación barra masc/fem** (`lema/-a`) cuando ambas flexiones aparecen materialmente. Matcher `_expand_needle` despliega masc + fem + plural por substring. Precedentes: `moderno/-a` U6 v10.158, `colombiano/-a` U4 v10.159, lotes U5/U6/U8/U9.
+3. **Colores como categoría independiente** (recurrente desde U1), no mezclar con `Adjetivos descriptivos`.
+4. **Fuentes verificadas literalmente**: cada `fuente` declarada en un item debe contener el item literal en el texto de la actividad (campos `INPUT_FIELDS_LIST`: instruccion_original, datos, dialogo, texto, texto_completo, items_libro, muestra_de_lengua, opciones, audio + respuestas). Si no, validador falla §5.10A.
+5. **Bug sistémico conocido**: el extractor original perdía items en actividades-relaciona (`columnas_relaciona`, `items_libro` con flexiones). Verificar siempre actividades fundacionales del campo, no solo `palabras_recuadro` de actividades posteriores.
+
+### Comandos canónicos
+
+```bash
+python3 scripts/validar_inventario.py N           # validar unidad N (0-9)
+python3 scripts/cleanup_v150.py --unit N --apply  # sanear §5.10/§5.11 antes de validar
+python3 diagrama.py                                # dashboard local (http://localhost:8081)
+# Slash command: /check-fase1 — valida las 10 unidades en bucle
+```
+
+### Deudas residuales catalogadas (no bloquean validador, abiertas para sesiones futuras)
+
+- **Matcher `_expand_needle` sin normalización de acentos**: `marrón` no atrapa `marrones` (U8 v10.163). Workaround: usar forma plural como item.
+- **Matcher `_gather_text` no recoge**: (a) claves de dict (caso `agenda` U6 v10.158, workaround: lista de objetos); (b) `image.descripcion` (caso `morado/-a` U9 v10.164, sin workaround).
+- **Canónicos huérfanos** (sin alta en registry): `Abreviaturas de los diccionarios` (U8), `vegetariano` (U4). Escalados §0.1.
+- **Auditoría retroactiva U0-U5** parcialmente cubierta por rectificaciones manuales v10.162-v10.164; queda como ejercicio sistemático abierto.
+
+### Cómo aplicar una corrección sin romper la estructura
+
+1. Editar el JSON de la unidad afectada.
+2. `python3 scripts/validar_inventario.py N` → debe dar 0/0/0.
+3. Si falla §5.10A: revisar fuentes / aplicar barra `/-a` / mover canónico.
+4. Documentar la decisión en `_decisiones_ia` del propio JSON.
+5. Bumpear versión en `CHANGELOG.md` + bitácora en `REVIEW.md`.
+6. Si toca registry: bumpear versión del registry + actualizar `_apariciones`.
 
 ---
 

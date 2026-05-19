@@ -5,6 +5,65 @@
 
 ---
 
+## [v10.164 — 2026-05-19] — Cierre fase 1: U9 + rectificación U6 + documentación operativa
+
+Cierre de U9 ("Ropa", pp. 92-101), **última unidad del curso NC1**. Con este commit, las 10 unidades del libro están saneadas con el contrato canónico post-v10.153 + §5.10 + §5.11. **Fase 1 cerrada en la parte mecanizable**.
+
+**Resultado U9 (`unidades/U9/U9-nc1-inventario.json`):**
+
+- 10 páginas (p92-101) · 41 actividades · 6 cuadros · 8 `_decisiones_ia`.
+- Migración Opción C: shape legacy pre-v10.115 → shape canónico post-v10.153 (4 listas tipadas + 4 consolidados).
+- Validador 0 errores · 0 avisos · 0 legacy.
+- Consolidados léxicos P: `Ropa` (27 items), `Colores` (10 items recurrente desde U1); R: `Adjetivos descriptivos` (recurrente desde U8, añadido por revisor).
+- Consolidados gramaticales P: `Marcadores temporales del pasado`; R: `Interrogativos` (ampliación con `con quién`).
+- Consolidados pron/orto P: `Acentuación` (agudas, llanas, esdrújulas).
+- Verbos consolidados (2): `ir` y `estar`, ambos en **Pretérito indefinido** (tiempo verbal nuevo del curso, ya canonizado en registry v1.6 sin alta necesaria).
+
+**Rectificación detectada por revisor (4 puntos antes del cierre):**
+
+1. **Notación barra masc/fem en Colores**: aplicada a colores con fem materialmente atestada — `rojo/-a` (roja), `blanco/-a` (blanca/blancas), `negro/-a` (negra/negras). `amarillo` se mantiene masc sg (única flexión atestada en U9). El `cleanup_v150` había revertido automáticamente las barras; corregido manualmente.
+2. **`oscuro` reubicado**: de `Colores` → nuevo bucket `Adjetivos descriptivos` recurrente (no es color sino modificador: 'colores oscuros', 'ropa oscura').
+3. **Bucket `Adjetivos descriptivos` recurrente creado** con 8 items materialmente atestados que el extractor original había omitido: `alto/-a`, `ancho/-a`, `corto/-a`, `deportivo/-a`, `estrecho/-a`, `grande`, `largo/-a`, `oscuro/-a`. Mismo perfil sistémico que U5 v10.162 y U8 v10.163.
+4. **Refs de actividad actualizadas**: p93-act07, p98-act01, p100-act02.
+
+**Decisiones autónomas relevantes (registry-driven, sin altas nuevas):**
+- `Pretérito indefinido` ya en registry verbal para `ir` y `estar`.
+- `Marcadores temporales del pasado`, `Acentuación`, `Interrogativos` ya en registries respectivos con `_apariciones.U9` declarado.
+- `Análisis de errores` no canónico — se codifica como `subtipo: para_aprender`.
+- Cultura sobre trajes tradicionales NO genera canónico nuevo (precedente U8 `La semana azul`).
+
+**Nueva deuda matcher documentada:**
+
+- `morado/-a` (p101-act04: `falda morada`, `jersey morado`) NO codificado en Colores porque `image.descripcion` NO está en `INPUT_FIELDS_LIST` de `_gather_text`. Pendiente: ampliar el contrato o aceptar pérdida material.
+
+**Resultado global fase 1:**
+
+- ✅ **U0-U9 saneadas** con contrato canónico v10.145 + §5.10 + §5.11.
+- 4 registries canónicos vigentes (campos-semanticos v1.8, gramatica v1.5, pronunciacion-ortografia v1.1, verbos v1.6) + 4 PCIC A1 + 6 archivos operativos de fase 1.
+- Validador alineado con la parte mecanizable del contrato desde v10.151.
+- Deudas residuales catalogadas:
+  - matcher `_expand_needle` sin normalización de acentos (caso `marrón`/`marrones`, U8 v10.163);
+  - `_gather_text` no recoge claves de dict (caso `agenda` U6 v10.158) ni `image.descripcion` (caso `morado/-a` U9 v10.164);
+  - `Abreviaturas de los diccionarios` sin canónico (escalado §0.1, U8 v10.163);
+  - `vegetariano` sin canónico (escalado §0.1, U4 v10.159);
+  - auditoría retroactiva U0-U5 ya parcialmente cubierta por las rectificaciones manuales de revisor v10.162-v10.164, pero queda como ejercicio sistemático abierto.
+
+**Rectificación adicional U6 (revisor, mismo lote v10.164):**
+
+El bucket `Adjetivos descriptivos` U6 tenía 11 items en plural/fem sin notación barra (altos, anchas, antigua, baratos, buenos, caros, centenarias, coloridos, diurna, estrechas, malos, nocturna, pequeña, viejos) + 3 masc sg sin barra (famoso, ruidoso, silencioso). Aplicada notación barra masc/fem a 17 items siguiendo precedente U5/U8/U9: alto/-a, ancho/-a, antiguo/-a, barato/-a, bueno/-a, caro/-a, centenario/-a, colorido/-a, diurno/-a, estrecho/-a, famoso/-a, malo/-a, nocturno/-a, pequeño/-a, ruidoso/-a, silencioso/-a, viejo/-a. `_expand_needle` expande masc+fem y substring matching cubre plurales. Validador U6 → 0/0/0.
+
+**Documentación operativa de cierre fase 1:**
+
+- `CLAUDE.md` raíz — nueva sección "Estado fase 1 (extracción de inventario) — cerrada en v10.164" con registries vigentes (versiones), convenciones críticas, comandos canónicos, deudas residuales catalogadas y procedimiento "Cómo aplicar una corrección sin romper la estructura". Permite a futuras sesiones de Claude Code recuperar el contexto operativo sin desalineamientos.
+- Slash command `.claude/commands/check-fase1.md` — ejecuta el validador en bucle U0-U9 y reporta el estado.
+- Memoria persistente `project_fase1_cerrada.md` con snapshot del cierre (fuera del repo, en `~/.claude/projects/`).
+
+**REVIEW.md §Estado global**: U0-U9 saneadas. Fase 1 cerrada en su parte mecanizable.
+
+**Higiene del commit:** U6 + U9 + CLAUDE.md + slash command + CHANGELOG + REVIEW.
+
+---
+
 ## [v10.163 — 2026-05-18] — U8 cerrada: saneamiento estructural + rectificación editorial
 
 Cierre de U8 ("Descripciones", pp. 82-91) bajo el flujo IA-first post-rediseño. U8 estaba ya en shape post-v10.115 (no requirió migración estructural completa), pero tenía 44 errores §5.10/§5.11 saneados por `cleanup_v150.py` y 3 incoherencias editoriales detectadas por revisor.
