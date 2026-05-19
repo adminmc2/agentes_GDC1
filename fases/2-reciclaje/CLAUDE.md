@@ -51,7 +51,7 @@ Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 ## Cómo validar
 
 1. `python3 scripts/regenerar_reciclaje_mapa.py` → sin errores.
-2. `python3 diagrama.py` → `http://localhost:8080` → vista RECICLAJE → revisar timeline.
+2. `python3 diagrama.py` → `http://localhost:8081` → vista RECICLAJE → revisar timeline.
 
 ---
 

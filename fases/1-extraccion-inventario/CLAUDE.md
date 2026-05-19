@@ -35,7 +35,7 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 > **Convención de comandos:** todos los comandos en este archivo y en `prompt.md` son **root-relative** — se ejecutan desde la raíz del repo (`/guia-didactica-profesor-IA/` o el worktree equivalente), no desde esta carpeta de fase. Aunque este CLAUDE.md se auto-cargue al trabajar dentro de `fases/1-extraccion-inventario/`, los comandos asumen `cwd = raíz del repo`.
 
 1. **Validador automático:** `python3 scripts/validar_inventario.py X` → debe dar **0 errores y 0 avisos** (1 aviso intencional aceptable si la unidad es atípica con `_nota_unidad_atipica`). Cubre shape canónico + §5.10 Categoría A + §5.11 desde v10.151. La deuda residual (parte editorial no automatizable) vive en el Apéndice transitorio del schema (§A.3).
-2. **Validación visual del autor:** `python3 diagrama.py` → `http://localhost:8080` → Inventarios → revisar 2-3 páginas al azar contrastando con el PDF.
+2. **Validación visual del autor:** `python3 diagrama.py` → `http://localhost:8081` → Inventarios → revisar 2-3 páginas al azar contrastando con el PDF.
 
 ---
 

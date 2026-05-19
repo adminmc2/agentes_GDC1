@@ -77,7 +77,7 @@ Cuando el autor entrega el PDF de una unidad (ej. U4):
 # Solo main:
 source .venv/bin/activate
 python3 diagrama.py
-# → http://localhost:8080
+# → http://localhost:8081
 
 # Con worktrees paralelos (extract/U3, extract/U4…):
 source .venv/bin/activate

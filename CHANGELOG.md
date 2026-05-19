@@ -5,6 +5,23 @@
 
 ---
 
+## [v11.8 — 2026-05-20] — Sync de puerto 8080→8081 fuera del subsistema dashboard
+
+Hallazgo del revisor tras v11.7: aunque el subsistema dashboard quedó sincronizado, seguían 4 referencias activas a `8080` fuera de ese subsistema, mientras `diagrama.py` PORT = 8081 desde v10.127.
+
+**Cambios — unificación a 8081 en todas las referencias activas:**
+
+- `README.md:80`: comando de arranque (`# → http://localhost:8081`).
+- `Dockerfile:16`: `EXPOSE 8081` (antes 8080, no coincidía con el puerto al que liga el server).
+- `fases/1-extraccion-inventario/CLAUDE.md:38`: comando de validación visual.
+- `fases/2-reciclaje/CLAUDE.md:54`: comando de revisión de timeline.
+
+**Verificación:** `grep -rn "8080"` en `*.md` / `*.py` / `Dockerfile` (excluyendo `viejo/`, `docs/historico/`, y entradas históricas de CHANGELOG/REVIEW) → 0 coincidencias activas.
+
+**Higiene del commit:** `README.md` + `Dockerfile` + 2 × CLAUDE.md de fase + meta docs.
+
+---
+
 ## [v11.7 — 2026-05-19] — Cleanup-sync: drifts menores tras auditoría v11.6
 
 Auditoría tras v11.6 detectó tres drifts del mismo subsistema. Lote único para cerrar todo en una sola pasada.
