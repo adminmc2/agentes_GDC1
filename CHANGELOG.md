@@ -5,6 +5,20 @@
 
 ---
 
+## [v11.6 — 2026-05-19] — Sync CLAUDE.md raíz tras cierre de deuda matcher
+
+Hallazgo del revisor tras v11.5: la sección "Estado fase 1 — Deudas residuales" de `CLAUDE.md` raíz seguía afirmando las 3 deudas matcher como abiertas, aunque ya quedaron resueltas en v11.3-v11.5. Bug puramente documental — no rompe runtime ni validación, pero deja una fuente normativa incorrecta para sesiones futuras (CLAUDE.md es la autoridad que cargan automáticamente todas las nuevas sesiones de Claude Code).
+
+**Cambios:**
+
+- `CLAUDE.md` § "Estado fase 1 — Deudas residuales catalogadas" reescrita:
+  - Bloque nuevo "Deuda matcher: CERRADA en v11.3-v11.5" con check de cada bug y la versión que lo resolvió.
+  - Bloque "Deudas todavía abiertas" conserva los canónicos huérfanos (`Abreviaturas de los diccionarios`, `vegetariano`) y la auditoría retroactiva U0-U5.
+
+**Higiene del commit:** solo `CLAUDE.md` + meta docs.
+
+---
+
 ## [v11.5 — 2026-05-19] — Deuda matcher bug 3: `_gather_text` recoge claves de dict
 
 Tercer y último fix de la deuda técnica del matcher catalogada al cierre de fase 1. Con este commit, la deuda matcher queda cerrada por completo.

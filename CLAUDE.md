@@ -154,10 +154,16 @@ python3 diagrama.py                                # dashboard local (http://loc
 # Slash command: /check-fase1 — valida las 10 unidades en bucle
 ```
 
-### Deudas residuales catalogadas (no bloquean validador, abiertas para sesiones futuras)
+### Deudas residuales catalogadas
 
-- **Matcher `_expand_needle` sin normalización de acentos**: `marrón` no atrapa `marrones` (U8 v10.163). Workaround: usar forma plural como item.
-- **Matcher `_gather_text` no recoge**: (a) claves de dict (caso `agenda` U6 v10.158, workaround: lista de objetos); (b) `image.descripcion` (caso `morado/-a` U9 v10.164, sin workaround).
+**Deuda matcher: CERRADA en v11.3-v11.5** (2026-05-19).
+
+- ✅ Bug 1 acentos (`_norm_text` aplica `_strip_accents`, v11.3) — `marrón` atrapa `marrones`. Workaround U8 revertido.
+- ✅ Bug 2 imágenes (`imagen` en `INPUT_FIELDS_LIST`, v11.4) — `morado/-a` recuperado en U9.
+- ✅ Bug 3 claves de dict (`_gather_text` recoge claves, v11.5) — futuros inventarios no necesitan reestructurar dicts. Workaround U6 agenda se mantiene por compatibilidad estructural con otros consumidores.
+
+**Deudas todavía abiertas (no bloquean validador):**
+
 - **Canónicos huérfanos** (sin alta en registry): `Abreviaturas de los diccionarios` (U8), `vegetariano` (U4). Escalados §0.1.
 - **Auditoría retroactiva U0-U5** parcialmente cubierta por rectificaciones manuales v10.162-v10.164; queda como ejercicio sistemático abierto.
 
