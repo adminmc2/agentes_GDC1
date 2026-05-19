@@ -2,7 +2,7 @@
 """Diagrama de procesos del proyecto - Guía Didáctica del Profesor.
 
 Genera diagramas Mermaid desde el estado real del proyecto.
-Uso: python3 diagrama.py -> http://127.0.0.1:8080
+Uso: python3 diagrama.py -> http://127.0.0.1:8081
 """
 
 import datetime
@@ -728,7 +728,6 @@ SECTION_LABELS = {
     "comunicacion": "Comunicación",
     "destrezas": "Destrezas",
     "cultura": "Cultura",
-    "reflexion": "Reflexión",
     "evaluacion": "Evaluación",
     "itinerarios": "Itinerarios",
 }

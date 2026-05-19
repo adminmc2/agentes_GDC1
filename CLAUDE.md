@@ -21,7 +21,9 @@ guia-didactica-profesor-IA/
 │   ├── fuente/UX-nc1.pdf          (PDF embedido, gitignored)
 │   ├── propuesta/                 (material editorial elaborado: vocabulario.md,
 │   │                               gramatica.md, comunicacion.md, destrezas.md,
-│   │                               cultura.md, evaluacion.md — capa editorial v10.127)
+│   │                               cultura.md, evaluacion.md — capa editorial v10.127.
+│   │                               Opcional: itinerarios.md (planificación cross-unidad,
+│   │                               mostrada como 7.ª columna en el dashboard))
 │   └── recursos/                  (CSVs de tarjetas, audios, imágenes, etc.)
 ├── fases/<N>-<nombre>/            ← una carpeta por fase con CLAUDE.md + prompt + artefactos
 ├── scripts/                       ← código Python ejecutable (validación, regeneración)
@@ -85,7 +87,7 @@ Aplican a **cualquier** trabajo en el repositorio. Reglas específicas de cada f
 ```bash
 # Arrancar dashboard
 python3 diagrama.py
-# → http://localhost:8080
+# → http://localhost:8081
 
 # Validar inventario de una unidad
 python3 scripts/validar_inventario.py 3
