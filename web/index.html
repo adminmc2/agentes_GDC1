@@ -335,7 +335,7 @@ details:not([open]) > summary .acc-chevron { transform: rotate(0deg); }
 .modal .btns button { padding: 10px 20px; border-radius: 20px; border: none; cursor: pointer; font-size: 14px; font-family: inherit; font-weight: 600; }
 
 /* === STATUS GRID === */
-.status-grid { display: grid; grid-template-columns: 50px repeat(8, 1fr); gap: 3px; font-size: 13px; }
+.status-grid { display: grid; grid-template-columns: 50px repeat(7, 1fr); gap: 3px; font-size: 13px; }
 .status-grid .hdr { font-weight: 600; color: var(--md-on-surface-variant); text-align: center; padding: 6px; }
 .status-grid .unit-label { font-weight: 600; color: var(--md-primary); padding: 6px 0; }
 .status-cell { text-align: center; padding: 6px; border-radius: var(--md-radius-xs); font-size: 12px; font-weight: 500; }
@@ -1490,14 +1490,14 @@ async function loadProjectData() {
     } catch(e) { document.getElementById('status-text').textContent = 'Error de conexión'; }
 }
 function renderStatusGrid(status) {
-    const secs = ['vocabulario','gramatica','comunicacion','destrezas','cultura','reflexion','evaluacion','itinerarios'];
+    const secs = ['vocabulario','gramatica','comunicacion','destrezas','cultura','evaluacion','itinerarios'];
     const g = document.getElementById('status-grid');
     let comp=0, tot=0, html='<div class="hdr"></div>';
     secs.forEach(s => { html += `<div class="hdr">${SECTION_LABELS[s]}</div>`; });
     for (let i=0;i<=9;i++) {
         const u=`U${i}`;
         html += `<div class="unit-label">${u}</div>`;
-        secs.forEach(s => { const info=(status[u]||{})[s]||{}; const st=info.status||'missing'; tot++; if(st==='complete')comp++; html += `<div class="status-cell ${st}">${info.lines||'-'}</div>`; });
+        secs.forEach(s => { const info=(status[u]||{})[s]||{}; const st=info.status||'missing'; tot++; if(st==='complete')comp++; const mark = st==='complete' ? '✓' : (st==='in-progress' ? `${info.pendiente||0}⏳` : '·'); html += `<div class="status-cell ${st}">${mark}</div>`; });
     }
     g.innerHTML = html;
     document.getElementById('status-summary').textContent = comp+'/'+tot+' completas';

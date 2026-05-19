@@ -721,7 +721,7 @@ def update_tarjeta_field(tarjeta_id, campo, valor):
 
 UNITS = [f"U{i}" for i in range(0, 10)]
 SECTIONS = ["vocabulario", "gramatica", "comunicacion", "destrezas",
-            "cultura", "reflexion", "evaluacion", "itinerarios"]
+            "cultura", "evaluacion", "itinerarios"]
 SECTION_LABELS = {
     "vocabulario": "Vocabulario",
     "gramatica": "Gramática",
@@ -747,6 +747,12 @@ def scan_section(unit_dir, unit, section):
     # Nueva canónica (post-rediseño): unidades/UN/propuesta/<section>.md (sin prefijo)
     propuesta_dir = unit_dir / "propuesta"
     new_candidates = list(propuesta_dir.glob(f"{section}.md")) if propuesta_dir.exists() else []
+    # U0 atípica: una sola propuesta `punto-de-partida.md` cubre la unidad entera.
+    # Si existe, se propaga a todas las celdas de U0.
+    if unit == "U0" and propuesta_dir.exists():
+        atipica = list(propuesta_dir.glob("punto-de-partida.md"))
+        if atipica:
+            new_candidates = atipica
     # Legacy: unidades/UN/UN-<section>*.md (compatibilidad hacia atrás)
     legacy_candidates = [f for f in unit_dir.glob(f"{unit}-{section}*.md") if "-paginas" not in f.name]
     main = new_candidates + legacy_candidates
@@ -757,12 +763,12 @@ def scan_section(unit_dir, unit, section):
     lines = text.splitlines()
     pend = sum(1 for l in lines if "*pendiente*" in l)
     n = len(lines)
-    if pend == 0 and n > 100:
+    # Criterio v11.0a: el conteo de líneas no es señal de calidad.
+    # complete = archivo existe sin marcadores *pendiente*. in-progress = tiene pendientes.
+    if pend == 0:
         st = "complete"
-    elif n > 50:
-        st = "in-progress"
     else:
-        st = "structure-only"
+        st = "in-progress"
     return {"status": st, "lines": n, "pendiente": pend,
             "path": str(f.relative_to(PROJECT))}
 
