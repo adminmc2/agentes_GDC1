@@ -70,7 +70,7 @@ FUENTE_REGEX = re.compile(r"^(p\d+-act\d+(@R)?|cuadro@p\d+(#\d+)?)$")
 
 INPUT_FIELDS_LIST = ("instruccion_original", "datos", "dialogo", "dialogo_completo",
                      "texto", "texto_completo", "items_libro", "muestra_de_lengua",
-                     "opciones", "audio")
+                     "opciones", "audio", "imagen")
 
 def _strip_accents(s):
     """Quita tildes manteniendo ñ (mark unicode U+0303 sobre n)."""

@@ -356,6 +356,12 @@
               "p92-act1",
               "p92-act1@R"
             ]
+          },
+          {
+            "palabra": "morado/-a",
+            "fuentes": [
+              "p101-act4"
+            ]
           }
         ],
         "fuentes": [
@@ -366,10 +372,11 @@
           "p92-act1@R",
           "p93-act4",
           "p93-act3",
-          "p93-act5@R"
+          "p93-act5@R",
+          "p101-act4"
         ],
         "descripcion": {
-          "U9": "PCIC A1 §3.6 El color — recurrente desde U1 (principal en cuadro@p15+p15-act7). En U9 reaparece como contenido nuclear junto a 'Ropa' por concordancia en género y número del adjetivo de color con la prenda (p92-act1: 'una camiseta roja', 'unas zapatillas deportivas negras'). En v10.164 (revisor): aplicada notación barra /-a a rojo, blanco, negro (fem atestadas: roja, blanca, blancas, negra, negras); 'oscuro' reubicado de Colores → Adjetivos descriptivos (modificador, no color); 'morado/-a' (p101-act04 image: 'falda morada', 'jersey morado') NO codificado por deuda matcher (image.descripcion no está en INPUT_FIELDS_LIST de _gather_text)."
+          "U9": "PCIC A1 §3.6 El color — recurrente desde U1 (principal en cuadro@p15+p15-act7). En U9 reaparece como contenido nuclear junto a 'Ropa' por concordancia en género y número del adjetivo de color con la prenda (p92-act1: 'una camiseta roja', 'unas zapatillas deportivas negras'). En v10.164 (revisor): aplicada notación barra /-a a rojo, blanco, negro (fem atestadas: roja, blanca, blancas, negra, negras); 'oscuro' reubicado de Colores → Adjetivos descriptivos (modificador, no color). v11.4: 'morado/-a' codificado tras resolver bug 2 del matcher — `imagen` añadido a INPUT_FIELDS_LIST; aparece en p101-act04 imagen.descripcion ('falda morada', 'jersey morado')."
         }
       }
     },
@@ -2987,7 +2994,8 @@
             ]
           },
           "vocabulario": [
-            "Ropa"
+            "Ropa",
+            "Colores"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [],

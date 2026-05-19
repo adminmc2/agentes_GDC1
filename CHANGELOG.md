@@ -5,6 +5,38 @@
 
 ---
 
+## [v11.4 — 2026-05-19] — Deuda matcher bug 2: matcher recoge `imagen.descripcion`
+
+Segundo fix de la deuda técnica del matcher catalogada al cierre de fase 1.
+
+**Problema:**
+
+El validador `_activity_input_text` solo iteraba sobre `INPUT_FIELDS_LIST` = `(instruccion_original, datos, dialogo, dialogo_completo, texto, texto_completo, items_libro, muestra_de_lengua, opciones, audio)`. El campo `imagen.descripcion` no estaba incluido. Caso real (U9 v10.164): `morado/-a` aparecía en el libro como color de prendas en `p101-act04`, pero solo dentro de `imagen.descripcion` ("Siete fotos de prendas... 1 falda morada, ... 7 jersey morado"). El validador no lo veía → no se podía codificar como item de Colores y el contenido material se perdía.
+
+**Razón editorial del fix** (autor en chat): la descripción de imagen es contexto editorial real que el alumno ve. Para entender una actividad es necesario saber qué muestra la imagen — no es metadato. El campo `respuestas`, en contraste, tiene función distinta (clave para profesor / contexto para agentes), pero esa decisión se mantiene fuera del alcance de este fix.
+
+**Fix:**
+
+- `scripts/validar_inventario.py`: añadido `"imagen"` a `INPUT_FIELDS_LIST`. `_gather_text` recurre sobre el dict `imagen` y recoge automáticamente todas las strings (incluido `descripcion`).
+
+**Resultado:**
+
+- `morado/-a` en U9 ahora codificado en bucket `Colores` recurrente con fuente `p101-act4` (recuperado tras workaround vacío de v10.164).
+- Refs de actividad p101-act04 ampliadas con `Colores`.
+- Las 10 unidades siguen validando 0/0/0 tras el fix.
+
+**Trade-off aceptado:**
+
+Algunas descripciones de imagen son verbosas (ej. p100-act01 con tres trajes tradicionales). Podrían generar falsos positivos puntuales para lemas cortos. Riesgo bajo y simétrico al que ya existe con `texto_completo`; si emergiera, se documentaría como deuda específica.
+
+**Pendiente:**
+
+- Bug 3 (matcher no recoge claves de dict) — caso `agenda` U6 v10.158.
+
+**Higiene del commit:** `scripts/validar_inventario.py` + `unidades/U9/U9-nc1-inventario.json` + meta docs.
+
+---
+
 ## [v11.3 — 2026-05-19] — Deuda matcher bug 1: normalización de acentos en `_norm_text`
 
 Primer fix de la deuda técnica del matcher catalogada al cierre de fase 1 (v10.164).
