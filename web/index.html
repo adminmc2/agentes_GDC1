@@ -1482,13 +1482,21 @@ function toggleSection(id) { document.getElementById(id).classList.toggle('colla
 function updateStatus() { document.getElementById('status-text').textContent = 'v'+serverVersion+' \u2014 '+new Date().toLocaleTimeString(); }
 
 // ===== PROYECTO =====
-async function loadProjectData() {
+let _projectHash = null;
+async function loadProjectData(opts) {
+    const silent = opts && opts.silent;
     try {
-        const r = await fetch('/api/diagrams'); diagramData = await r.json();
+        const r = await fetch('/api/diagrams'); const data = await r.json();
+        // Si el hash no cambió y es polling silencioso, no re-renderiza (evita DOM churn).
+        if (silent && _projectHash === data.hash) return;
+        _projectHash = data.hash;
+        diagramData = data;
         renderStatusGrid(diagramData.status); renderDiagramTabs(); renderDiagram(currentDiagram);
         updateStatus();
-    } catch(e) { document.getElementById('status-text').textContent = 'Error de conexión'; }
+    } catch(e) { if (!silent) document.getElementById('status-text').textContent = 'Error de conexión'; }
 }
+// Auto-refresh (v11.2): polling cada 5s, solo re-renderiza cuando el hash cambia.
+setInterval(() => loadProjectData({silent: true}), 5000);
 function renderStatusGrid(status) {
     const secs = ['vocabulario','gramatica','comunicacion','destrezas','cultura','evaluacion','itinerarios'];
     const g = document.getElementById('status-grid');

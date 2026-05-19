@@ -5,6 +5,29 @@
 
 ---
 
+## [v11.2 — 2026-05-19] — Dashboard auto-refresh por polling con hash
+
+El dashboard "Estado de unidades" no detectaba cambios sin recargar manualmente la página. Implementado auto-refresh por polling con hash check, sin nuevas dependencias.
+
+**Cómo funciona:**
+
+- Cada **5 segundos**, el frontend hace `fetch('/api/diagrams')` en silencio.
+- El endpoint ya devuelve un campo `hash` (md5 del `status` object) calculado en backend.
+- Si el `hash` recibido coincide con el último renderizado → no se re-renderiza nada (sin DOM churn).
+- Si el `hash` cambió → se re-renderiza la grid de estado, las tabs de diagrama y el diagrama activo.
+
+**Resultado:** cualquier modificación en `unidades/UN/propuesta/<seccion>.md` (creación, edición, borrado, añadir/quitar `*pendiente*`) se refleja automáticamente en el dashboard en ≤5 segundos sin recargar la pestaña.
+
+**Cambios:**
+
+- `web/index.html`: `loadProjectData()` ahora acepta opciones (`{silent: true}` para polling), guarda `_projectHash`, y solo re-renderiza cuando el hash cambia. Añadido `setInterval(..., 5000)` para el polling silencioso.
+
+**Higiene del commit:** solo `web/index.html` + meta docs.
+
+**Próximo paso (v11.3+):** decidir entre deuda matcher (`_expand_needle` / `_gather_text`) o reactivación de fase 2.
+
+---
+
 ## [v11.1 — 2026-05-19] — Dashboard "Estado de unidades": ajustes UX
 
 Ajustes UX al panel "Estado de unidades" del dashboard tras revisión visual del autor.
