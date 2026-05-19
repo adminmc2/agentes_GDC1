@@ -63,6 +63,7 @@ TIEMPOS_VALIDOS = {"Presente", "Pretérito indefinido", "Imperativo", "Infinitiv
 # Regex de fuentes (§9.5 schema): pNN-actMM(@R)? | cuadro@pNN(#K)?
 # @R es marcador de localización ("palabra solo en respuestas[]") desde v10.145; no se restringe por tipo de actividad.
 import re
+import unicodedata
 FUENTE_REGEX = re.compile(r"^(p\d+-act\d+(@R)?|cuadro@p\d+(#\d+)?)$")
 
 # === Matcher para §5.10 A (aparición material) y §5.11 (unificación) ===
@@ -71,8 +72,29 @@ INPUT_FIELDS_LIST = ("instruccion_original", "datos", "dialogo", "dialogo_comple
                      "texto", "texto_completo", "items_libro", "muestra_de_lengua",
                      "opciones", "audio")
 
+def _strip_accents(s):
+    """Quita tildes manteniendo ñ (mark unicode U+0303 sobre n)."""
+    # NFD descompone á → a + ´; quitamos los marks de tilde aguda/grave/circumflex
+    # pero preservamos ñ (su tilde combinada es U+0303 que también se quita; lo reañadimos).
+    nfd = unicodedata.normalize("NFD", s or "")
+    out = []
+    i = 0
+    while i < len(nfd):
+        c = nfd[i]
+        if c == "n" and i + 1 < len(nfd) and nfd[i+1] == "̃":
+            out.append("ñ"); i += 2; continue
+        if c == "N" and i + 1 < len(nfd) and nfd[i+1] == "̃":
+            out.append("Ñ"); i += 2; continue
+        if unicodedata.combining(c):
+            i += 1; continue  # descarta tilde aguda/grave/circumflex
+        out.append(c); i += 1
+    return "".join(out)
+
 def _norm_text(s):
-    return re.sub(r"\s+", " ", s or "").strip().lower()
+    # v11.3 bug 1 (acentos): normalizamos quitando tildes para que 'marrón' atrape 'marrones'.
+    # Aplicado a needle y haystack — ambos se desacentúan antes de comparar.
+    base = re.sub(r"\s+", " ", s or "").strip().lower()
+    return _strip_accents(base)
 
 def _expand_needle(s):
     """Expande lemas con barra-sufijo y paréntesis. Replica cleanup_v150.expand_needle."""

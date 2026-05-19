@@ -5,6 +5,43 @@
 
 ---
 
+## [v11.3 — 2026-05-19] — Deuda matcher bug 1: normalización de acentos en `_norm_text`
+
+Primer fix de la deuda técnica del matcher catalogada al cierre de fase 1 (v10.164).
+
+**Problema:**
+
+El validador `_norm_text` solo aplicaba lowercase + collapse de whitespace, sin normalizar tildes. Caso real (U8 v10.163): la palabra del libro era `marrones` (plural sin tilde). El item canónico debía ser `marrón` (singular con tilde, por §5.11). Pero `marrón` ≠ substring de `marrones` por la diferencia `ó`/`o` → matcher fallaba, obligando a escribir `marrones` como item (violando §5.11 unificación a singular).
+
+**Fix:**
+
+- Nueva función `_strip_accents(s)` en `scripts/validar_inventario.py` que descompone NFD y descarta los marks de tilde aguda/grave/circumflex, preservando `ñ` (re-componiendo `n + U+0303` → `ñ`).
+- `_norm_text(s)` ahora aplica `_strip_accents` tras lowercase + whitespace collapse. Se aplica simétricamente a needle y haystack → comparación substring funciona con tildes ausentes en plural.
+
+**Resultado:**
+
+- `marrón` (item singular) atrapa `marrones` en texto ✓
+- `años` atrapa `año` ✓
+- `período` atrapa `periodo` ✓
+- Las 10 unidades siguen validando 0/0/0 tras el fix (sin regresión).
+
+**Rectificación de workaround:**
+
+- `unidades/U8/U8-nc1-inventario.json`: `marrones` → `marrón` (forma singular canónica restaurada en bucket `Colores` recurrente). El workaround de v10.163 queda eliminado.
+
+**Trade-off aceptado:**
+
+La normalización acepta como match casos como `tu` ↔ `tú` (posesivo vs pronombre sujeto). En el inventario actual, ambos items declaran sus propias fuentes y la práctica editorial mantiene la disambiguación. Si emergiera una falsa coincidencia, se documentaría como deuda específica.
+
+**Pendiente:**
+
+- Bug 2 (matcher no recoge `image.descripcion`) — caso `morado/-a` U9.
+- Bug 3 (matcher no recoge claves de dict) — caso `agenda` U6.
+
+**Higiene del commit:** `scripts/validar_inventario.py` + `unidades/U8/U8-nc1-inventario.json` + meta docs.
+
+---
+
 ## [v11.2 — 2026-05-19] — Dashboard auto-refresh por polling con hash
 
 El dashboard "Estado de unidades" no detectaba cambios sin recargar manualmente la página. Implementado auto-refresh por polling con hash check, sin nuevas dependencias.
