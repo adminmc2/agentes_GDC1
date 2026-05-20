@@ -15,34 +15,6 @@ __pycache__/
 # Claude Code (local)
 .claude/
 
-# === Contenido editorial (no forma parte del sistema de agentes) ===
-
-# Contenido de unidades (output editorial)
-viejo/unidades/
-
-# Material pedagógico de referencia (bancos de técnicas)
-viejo/referencias/
-
-# Materiales producidos (LaTeX, PDFs, tarjetas InDesign)
-viejo/materiales/
-viejo/material-complementario/
-
-# Documentos pedagógicos extensos
-viejo/00-curso-general.md
-viejo/marco-teorico-metodologico.md
-
-# Prompts pedagógicos y repertorios (cambiarán con rediseño CrewAI)
-viejo/agentes/
-viejo/repertorios/
-
-# Output de agentes: ahora en viejo/unidades/UXX/tarjetas/csv/ (ya cubierto por unidades/)
-
-# Resultados de pruebas obsoletas (ahora en viejo/scripts/)
-viejo/scripts/resultados_prueba/
-
-# Documentación interna de diseño (no interviene en deploy)
-viejo/diseno/
-
 # Archivos binarios pesados
 *.ai
 *.indd
@@ -55,7 +27,6 @@ viejo/diseno/
 *.synctex.gz
 
 # PDFs fuente del libro (copyright SGEL, solo local)
-viejo/unidades/**/fuente/*.pdf
 unidades/**/fuente/*.pdf
 
 # Archivos de planificación local
