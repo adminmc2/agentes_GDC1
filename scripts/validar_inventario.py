@@ -286,7 +286,7 @@ def _validar_canon_inventario(d: dict) -> tuple[list[str], list[str], list[str]]
         errores.append(
             "❌ canon: no se puede leer "
             f"{canon.CANON_PATH.relative_to(PROJECT)} "
-            "(¿ejecutaste scripts/inicializar_canon_semantico.py?)"
+            "(el canon está versionado en git; si falta, restaurar el archivo)"
         )
         return errores, avisos, auditoria
     except json.JSONDecodeError as e:

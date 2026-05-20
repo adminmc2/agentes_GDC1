@@ -668,7 +668,7 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
    **Artefactos nuevos (solo datos y código, no doc):**
    - `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` — fuente única de verdad **solo de datos**. Estructura: `version`, `actualizado`, `campos[]` con entradas `{canonico, origen, [nota], aliases_indice, aliases_auto}`. La política (rollout R1/R2/R3, reglas de uso, árbol de decisión) NO vive embebida en el JSON; vive en `fases/1-extraccion-inventario/reglas-operativas.md`. La constante `LEGACY_UNIDADES_R1` vive en `scripts/validar_inventario.py` (es estado operativo del validador, no del canon).
    - `scripts/canon.py` — módulo compartido con 4 funciones: `cargar_canon()`, `validar_canon()`, `escribir_canon()` (atómico, con backup y lock), `detectar_pendientes()`.
-   - `scripts/inicializar_canon_semantico.py` — one-off que pobla el JSON inicial desde `nc1-curso.json` (`origen: "indice"`) + subset PCIC A1 curado (`origen: "pcic_a1"`).
+   - `inicializar_canon_semantico.py` — one-off que pobló el JSON inicial desde `nc1-curso.json` (`origen: "indice"`) + subset PCIC A1 curado (`origen: "pcic_a1"`). Cumplido su cometido; archivado en `docs/historico/scripts-one-shot/` (v11.18).
 
    **Modificaciones a documentos de fase 1 (sin archivos doc nuevos):** `CLAUDE.md` (regla crítica + tabla de navegación), `prompt.md` (paso de extracción canónica desde origen + 2 ítems al checklist), `reglas-operativas.md` (sustituir §5.6 por política de canon + árbol de decisión + rollout), `schema-inventario.md` (§9 y §10 con restricción de naming + marca `_pendiente_canon`).
 
