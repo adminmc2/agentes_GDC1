@@ -11,6 +11,8 @@
 __pycache__/
 *.pyc
 *.pkl
+.venv/
+.deepeval/
 
 # Claude Code — se versiona la config del proyecto; lo personal/transitorio no
 .claude/settings.local.json
