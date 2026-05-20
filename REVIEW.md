@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-20 (v11.38 — Fase 2: sincronización post-D2 — §6.1 precisa la fórmula del universo, nueva §6.5 anota las costuras pendientes, `CLAUDE.md` de fase 2 sincronizado. Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-20 (v11.39 — nuevo `glosario.md` transversal del proyecto en la raíz; el glosario de fase 1 se mantiene como referencia de schema).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.39 — 2026-05-20] — Glosario transversal del proyecto
+
+Nuevo `glosario.md` en la raíz: índice semántico transversal del proyecto (opción B de la decisión documental). El único glosario existente, `fases/1-extraccion-inventario/glosario.md`, no es un glosario general sino la referencia campo por campo del schema del inventario — se mantiene intacto en su sitio. El nuevo glosario global es corto y de orientación: Bloque 1 — 12 términos globales (repo A/B, inventario, registry canónico, PCIC, unidad/unidad atípica, fase, dashboard, modelo IA-first, dry-run, publicación canónica, mirror snapshot, source of truth); Bloque 2 — 10 términos de fase 2 marcados "en estabilización" (hilo, evento, etiqueta, mapa, auto, detalle, Capa 1, Capa 2, reciclaje, anticipación); Bloque 3 — tabla de glosarios de fase con enlaces. Cada entrada: definición breve + "ver detalle en fase X" cuando aplica. Añadida fila en "Documentos clave" del `CLAUDE.md` raíz como documento de Consulta. Los glosarios de fase (fase 2 y siguientes) se crearán cuando su terminología se estabilice.
+
 ## [v11.38 — 2026-05-20] — Fase 2: sincronización post-D2
 
 Cierra las tres costuras señaladas por el revisor tras v11.37. (1) `REDISEÑO-EN-CURSO.md` §6.1 precisa la fórmula del universo de hilos: no "los registries de fase 1" sin más, sino los **4 registries de fase 1 + `perifrasis-canonicas.json`** (5.º, derivado, propio de fase 2). (2) Nueva §6.5 que anota explícitamente las dos sincronizaciones que D2 arrastra: la fuente real para detectar perífrasis anticipatorias (fase 1 excluye de `tiempos_y_verbos` los auxiliares anticipatorios, así que `estructura_perifrastica` puede no transportarlas — se resolverá en el paso "formas verbales") y el contrato corto de fase 2 desactualizado. (3) `fases/2-reciclaje/CLAUDE.md` sincronizado: el nivel `auto` ya no se describe solo desde `vocabulario_consolidado` sino desde los 5 bloques; la regla "un hilo por campo semántico" se generaliza a granularidad por bloque (§2.2). Sin cambios operativos — fase 2 sigue PAUSADA.

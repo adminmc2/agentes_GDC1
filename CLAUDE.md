@@ -139,6 +139,7 @@ Ejemplo concreto (fase 1, extracción de U4):
 | `CHANGELOG.md` | Registro cronológico de commits | Consulta, no manda |
 | `docs/historico/` | Histórico archivado (changelog/review/docs superados) | Consulta puntual |
 | `fases/<N>-<nombre>/prompt.md` | Instrucciones detalladas de cada fase | Apunta |
+| `glosario.md` | Índice semántico transversal del proyecto; punto de entrada a la terminología global y a los glosarios de fase | Consulta |
 
 **Si CHANGELOG/REVIEW contradicen a CLAUDE.md → manda CLAUDE.md.** Una sesión futura solo necesita leer CLAUDE.md para operar; no debe re-analizar logs antiguos.
 
