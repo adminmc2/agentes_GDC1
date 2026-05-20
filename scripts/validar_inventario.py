@@ -97,7 +97,7 @@ def _norm_text(s):
     return _strip_accents(base)
 
 def _expand_needle(s):
-    """Expande lemas con barra-sufijo y paréntesis. Replica cleanup_v150.expand_needle."""
+    """Expande lemas con barra-sufijo y paréntesis. Replica matcher.expand_needle."""
     s = (s or "").strip()
     if not s: return set()
     variants = {s}
@@ -167,7 +167,7 @@ def _cuadro_body_text(c):
     return " ".join(out)
 
 def _is_gramatica_categoria_A(palabra, catname=None):
-    """Mismo discriminador que cleanup_v150.is_gramatica_categoria_A."""
+    """Mismo discriminador que sanear_inventario.is_gramatica_categoria_A."""
     if not palabra: return False
     p = palabra.strip()
     if any(c in p for c in "()→+?…"): return False

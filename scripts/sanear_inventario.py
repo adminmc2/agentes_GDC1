@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
-Cleanup v10.150 — aplicación retroactiva de §5.10 + §5.11 a U0-U5.
+Saneador de inventario — aplicación de §5.10 + §5.11 a un inventario.
 
-Aplica las 3 FASES del Lote 3D-cleanup:
+(Antes `cleanup_v150.py`; renombrado en v11.20 — el nombre `v150` sugería
+un one-shot pero es la herramienta de saneamiento activa del flujo de fase 1.)
+
+Aplica las 3 FASES del saneamiento §5.10/§5.11:
   FASE 1: §5.10 — retirar fuentes A sin aparición literal en contenido
           didáctico (§5.2) + respuestas[] + cuerpo de cuadros.
   FASE 2: §5.11 — unificar flexiones cuando hay ≥2 formas atestadas
@@ -12,8 +15,8 @@ Aplica las 3 FASES del Lote 3D-cleanup:
 Pron queda fuera del alcance material de §5.10 A (toda Cat B).
 
 CLI:
-  python3 scripts/cleanup_v150.py --unit N [--apply]
-  python3 scripts/cleanup_v150.py --unit N --report ruta.md
+  python3 scripts/sanear_inventario.py --unit N [--apply]
+  python3 scripts/sanear_inventario.py --unit N --report ruta.md
 
 Sin --apply → dry-run (default). Con --apply → escribe + valida.
 """
@@ -22,9 +25,9 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 
-# Importar matcher del script existente
+# Importar el módulo matcher
 sys.path.insert(0, str(REPO / "scripts"))
-from migrate_at_r_v10145 import (
+from matcher import (
     expand_needle, match_substring, norm,
     gather_text, build_activity_index,
     activity_input_text, activity_resp_text,

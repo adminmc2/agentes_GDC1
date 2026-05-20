@@ -158,7 +158,7 @@ Soporte PCIC A1: `pcic-a1-{vocabulario,gramatica,pronunciacion-ortografia,comuni
 
 ```bash
 python3 scripts/validar_inventario.py N           # validar unidad N (0-9)
-python3 scripts/cleanup_v150.py --unit N --apply  # sanear §5.10/§5.11 antes de validar
+python3 scripts/sanear_inventario.py --unit N --apply  # sanear §5.10/§5.11 antes de validar
 python3 diagrama.py                                # dashboard local (http://localhost:8081)
 # Slash command: /check-fase1 — valida las 10 unidades en bucle
 ```

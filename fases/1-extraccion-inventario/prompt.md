@@ -57,7 +57,7 @@
 3a. Clasifica y puebla actividades y cuadros según `reglas-operativas.md` (3 ejes + 4 listas tipadas + datos literales).
 3b. Deriva los 4 bloques top-level consolidados (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`) a partir de las listas tipadas de actividades y cuadros.
 4. Escribe el JSON candidato en `unidades/UX/UX-nc1-inventario.json`.
-5. Aplica `python3 scripts/cleanup_v150.py --unit X --apply` para sanear automáticamente la parte mecanizable de §5.10 y §5.11 sobre el JSON ya escrito.
+5. Aplica `python3 scripts/sanear_inventario.py --unit X --apply` para sanear automáticamente la parte mecanizable de §5.10 y §5.11 sobre el JSON ya escrito.
 6. Valida con `python3 scripts/validar_inventario.py X` → debe dar 0/0/0. Si emite errores, vuelve al paso 3.
 7. Avisa al autor para revisión visual.
 

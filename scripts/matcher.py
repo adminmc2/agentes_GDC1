@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-Migración v10.145 — @R como marcador de localización.
+Módulo matcher — expansión de flexiones y emparejamiento literal.
 
-Clasifica cada fuente `pNN-actMM` (sin @R) de un bloque consolidado en:
-  - input-only  → no acción
-  - respuesta-only → candidato A (escribible en modo A)
-  - dual           → candidato B-only (diferido a Lote 3)
-  - no-match       → anomalía, reportar
-Fuentes que NO se tocan: cuadro@*, fuentes con @R ya presente, items con
-dual-tracking ya completo (plain + @R en la misma lista).
+(Antes `migrate_at_r_v10145.py`; renombrado en v11.20. El nombre original
+era de su CLI de migración v10.145 — one-shot ya cumplido — pero el valor
+vivo del archivo es la librería de funciones matcher: `expand_needle`,
+`match_substring`, `norm`, `gather_text`, `build_activity_index`,
+`activity_input_text`, `activity_resp_text`, `dedupe_keep_order`,
+`INPUT_FIELDS`. Lo importa `sanear_inventario.py`.)
 
-Defaults: --block vocab --dry-run. --apply solo permitido para vocab en
-esta fase (Lote 2 v10.145); el resto de bloques solo dry-run.
+La CLI de migración @R que conserva abajo es histórica (v10.145, cumplida):
+clasificaba cada fuente `pNN-actMM` en input-only / respuesta-only / dual /
+no-match. Se mantiene por si se necesita re-auditar, pero no es flujo vigente.
 
-Uso:
-  python3 scripts/migrate_at_r_v10145.py --unit 4
-  python3 scripts/migrate_at_r_v10145.py --unit 4 --block vocab --apply
-  python3 scripts/migrate_at_r_v10145.py --unit 4 --block all
+Uso de la CLI histórica:
+  python3 scripts/matcher.py --unit 4
+  python3 scripts/matcher.py --unit 4 --block vocab --apply
+  python3 scripts/matcher.py --unit 4 --block all
 """
 import argparse, json, os, re, shutil, subprocess, sys
 from pathlib import Path
