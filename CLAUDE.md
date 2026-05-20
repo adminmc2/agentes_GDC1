@@ -28,9 +28,7 @@ guia-didactica-profesor-IA/
 ├── fases/<N>-<nombre>/            ← una carpeta por fase con CLAUDE.md + prompt + artefactos
 ├── scripts/                       ← código Python ejecutable (validación, regeneración)
 ├── web/, diagrama.py, eval/       ← infraestructura (dashboard, evaluación)
-├── viejo/                         ← archivo del sistema CrewAI v5 anterior + zona de trabajo
-│                                    activa del rediseño (pautas, plantillas, registro,
-│                                    propuestas en redacción). Ver flujo de publicación abajo.
+├── docs/historico/                ← histórico archivado (changelog/review/docs superados)
 ├── PROCESO-MAESTRO.md             ← decisiones cerradas + bitácora
 ├── REVIEW.md                      ← plan ejecutable con gates (estado actual del proyecto)
 ├── README.md                      ← descripción del proyecto + estado de las 8 fases
@@ -39,25 +37,34 @@ guia-didactica-profesor-IA/
 
 ---
 
+## Modelo de dos repositorios (A / B)
+
+El proyecto vive en **dos repositorios separados**:
+
+- **Repo A — este** (`guia-didactica-profesor-IA`): el **entregable publicado + infraestructura**. Inventarios canónicos (`unidades/UX/`), fases (`fases/`), scripts, dashboard (`web/`, `diagrama.py`), docs raíz. Es la versión que se versiona en GitHub.
+- **Repo B — externo** (`~/Desktop/guia-sistema-trabajo/`): el **sistema de trabajo**. Sistema metodológico vivo (hub, pautas, plantillas, referencias, registro), zona de redacción en curso (`unidades/UXX-propuesta/`) y archivo del sistema CrewAI v5 anterior.
+
+La redacción editorial sucede en repo B; el entregable se publica a repo A.
+
 ## Flujo de publicación canónica (al cerrar una unidad)
 
-La redacción de cada unidad sucede en **`viejo/unidades/UXX-propuesta/`** (zona de trabajo, gitignored). Cuando la unidad entera está cerrada y validada, las propuestas se copian a la **ruta canónica versionada** `unidades/UX/propuesta/` con renaming sin prefijo:
+La redacción de cada unidad sucede en **repo B** (`~/Desktop/guia-sistema-trabajo/unidades/UXX-propuesta/`). Cuando la unidad entera está cerrada y validada, las propuestas se publican (copian) a la **ruta canónica versionada de repo A** `unidades/UX/propuesta/` con renaming sin prefijo:
 
 ```
-viejo/unidades/U02-propuesta/U02-propuesta-vocabulario.md
-                                                            → unidades/U2/propuesta/vocabulario.md
+[repo B] unidades/U02-propuesta/U02-propuesta-vocabulario.md
+                                          → [repo A] unidades/U2/propuesta/vocabulario.md
 
-viejo/unidades/U02-propuesta/tarjetas/<archivo>.csv
-                                                            → unidades/U2/recursos/tarjetas/<archivo>.csv
+[repo B] unidades/U02-propuesta/tarjetas/<archivo>.csv
+                                          → [repo A] unidades/U2/recursos/tarjetas/<archivo>.csv
 ```
 
-- La canónica `unidades/UX/` es **mirror snapshot**, no fuente.
-- **Ediciones futuras siempre en `viejo/`**; canonical se actualiza re-copiando.
+- La canónica `unidades/UX/` de repo A es **mirror snapshot publicado**, no fuente.
+- **Ediciones futuras siempre en repo B**; la canónica de repo A se actualiza re-publicando.
 - Para unidades atípicas (U0, sin secciones canónicas): un archivo único en `unidades/U0/propuesta/<nombre-descriptivo>.md`.
 
-Razón: `viejo/` mantiene todo a mano para Claude Code mientras se redacta (pautas, plantillas, registro, propuestas previas como referencia). La canónica es el entregable versionado que el repo git incluye y que cualquier máquina o colaborador puede consultar.
+Razón: repo B mantiene a mano todo el sistema de trabajo mientras se redacta (pautas, plantillas, registro, propuestas previas como referencia). La canónica de repo A es el entregable versionado que GitHub incluye y que cualquier máquina o colaborador puede consultar.
 
-Detalle del paso 13 del proceso operativo en `viejo/unidades/CLAUDE.md`.
+> **Nota histórica:** las propuestas ya publicadas en `unidades/U*/propuesta/*.md` pueden contener referencias a rutas `viejo/...` — son snapshot histórico de cuando el sistema de trabajo vivía en `viejo/` dentro de repo A; no se reescriben retroactivamente.
 
 ---
 
@@ -69,7 +76,7 @@ Aplican a **cualquier** trabajo en el repositorio. Reglas específicas de cada f
 2. **Validar antes de cerrar.** Cada artefacto producido pasa por validación (script, revisión visual o ambas) antes de declararse cerrado.
 3. **No inventar.** Si una palabra, fecha o dato no está en la fuente original, no se añade. Marcar como "verificación pendiente" y consultar al autor.
 4. **Una fuente única.** Cada criterio editorial vive en un único archivo. La duplicación lleva a desincronización.
-5. **No tocar `viejo/`.** Contiene el sistema anterior, intocable hasta su eliminación final autorizada por el autor.
+5. **Redacción editorial en repo B.** El sistema de trabajo vive en el repo externo `guia-sistema-trabajo`; repo A solo recibe el entregable publicado.
 
 ---
 
@@ -115,8 +122,8 @@ Ejemplo concreto (fase 1, extracción de U4):
 
 ## Lo que NO se hace
 
-- No modificar nada en `viejo/`.
-- No ejecutar el sistema CrewAI antiguo (no está conectado al sistema actual).
+- No redactar material editorial directamente en repo A — la redacción vive en repo B (`guia-sistema-trabajo`); repo A solo recibe el entregable publicado.
+- No ejecutar el sistema CrewAI antiguo (archivado en repo B, no conectado al sistema actual).
 - No saltarse la validación antes de cerrar un artefacto.
 - No inventar contenido editorial.
 - No duplicar instrucciones operativas en este CLAUDE.md raíz si ya viven en el CLAUDE.md de una fase.

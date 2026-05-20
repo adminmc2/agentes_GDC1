@@ -315,14 +315,14 @@ def delete_tarjeta(tarjeta_id):
 
 
 def _scan_zona(base, pattern_carpeta, pattern_archivo, zona):
-    """Escanea una zona (viejo/nuevo) buscando inventarios."""
+    """Escanea una zona (main / path extra) buscando inventarios."""
     out = []
     if not base.exists():
         return out
     for d in sorted(base.iterdir()):
         if not d.is_dir() or not d.name.startswith("U"):
             continue
-        # archivo puede ser inventario.json (viejo) o U3-nc1-inventario.json (nuevo)
+        # archivo puede ser inventario.json o U3-nc1-inventario.json (variantes de naming)
         candidates = list(d.glob("*inventario.json"))
         if not candidates:
             continue
@@ -759,14 +759,12 @@ SECTION_LABELS = {
     "itinerarios": "Itinerarios",
 }
 
-AGENTS = {
-    "vocabulario": {"name": "Vocabulario", "rep": "viejo/repertorios/vocabulario.md"},
-    "gramatica": {"name": "Gramática", "rep": "viejo/repertorios/gramatica.md"},
-    "comunicacion": {"name": "Comunicación", "rep": "viejo/repertorios/comunicacion.md"},
-    "destrezas": {"name": "Destrezas", "rep": "viejo/repertorios/destrezas.md"},
-    "cultura": {"name": "Cultura", "rep": "viejo/repertorios/cultura.md"},
-    "evaluacion": {"name": "Evaluación", "rep": "viejo/repertorios/evaluacion.md"},
-}
+# Feature diferida al futuro — "repertorios por agente/sección" en el dashboard.
+# Existía un dict AGENTS que mapeaba cada sección a un repertorio en `viejo/repertorios/*.md`.
+# Era código muerto (definido, nunca usado) y apuntaba a `viejo/`, retirado en repo A
+# (migración a dos repos, v11.13). Cuando se quiera mostrar repertorios por sección en el
+# dashboard, reintroducir el mapa leyendo desde repo B (`guia-sistema-trabajo`) vía la
+# variable de entorno GUIA_TRABAJO_REPO.
 
 
 def scan_section(unit_dir, unit, section):

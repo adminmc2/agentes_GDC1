@@ -40,9 +40,6 @@ guia-didactica-profesor-IA/
 ├── eval/                            ← evaluación (DeepEval + promptfoo)
 ├── diagrama.py                      ← servidor del dashboard (HTTP + APIs)
 │
-├── viejo/                           ← archivo del sistema CrewAI v5 anterior
-│                                       (intocable hasta su eliminación final)
-│
 ├── CLAUDE.md                        ← contexto auto-cargado por Claude Code
 ├── PROCESO-MAESTRO.md               ← decisiones acumuladas + bitácora
 ├── REVIEW.md                        ← plan de trabajo con gates de validación
@@ -118,7 +115,7 @@ python3 scripts/validar_inventario.py unidades/U3/U3-nc1-inventario.json
 3. **Validar antes de cerrar.**
 4. **No inventar contenido.**
 5. **Una fuente única** por criterio editorial.
-6. **No tocar `viejo/`.**
+6. **Redacción editorial en repo B** (`guia-sistema-trabajo`); repo A solo recibe el entregable publicado.
 
 Detalle completo: [`CLAUDE.md`](CLAUDE.md).
 
@@ -143,14 +140,21 @@ Detalle completo: [`CLAUDE.md`](CLAUDE.md).
 | Extracción de inventario | Claude Code en chat con prompt versionado |
 | Validación estructural | Python (cero LLM) |
 | Dashboard | Python `http.server` + HTML/CSS/JS (Material Design 3, Phosphor icons, Mermaid) |
-| Persistencia de datos | JSON en filesystem (BD Neon PostgreSQL solo en el sistema viejo, no usada en activo) |
+| Persistencia de datos | JSON en filesystem (BD Neon PostgreSQL solo en el sistema CrewAI v5 anterior, no usada en activo) |
 | Despliegue | Local por ahora; Railway disponible si se reactiva |
 
 ---
 
-## Sobre el sistema anterior (`viejo/`)
+## Modelo de dos repositorios (A / B)
 
-La carpeta `viejo/` conserva el sistema CrewAI v5 que existía antes del rediseño. **No se toca, no se ejecuta, no se importa desde el sistema activo.** Se conserva como archivo de referencia hasta que todas las fases nuevas estén operativas y se haya migrado lo aprovechable. Más detalle en `PROCESO-MAESTRO.md`.
+El proyecto vive en **dos repositorios separados**:
+
+- **Repo A — este** (`guia-didactica-profesor-IA`): el **entregable publicado + infraestructura**. Inventarios canónicos, fases, scripts, dashboard, docs. Es lo que se versiona en GitHub.
+- **Repo B — externo** (`guia-sistema-trabajo`, en `~/Desktop/`): el **sistema de trabajo**. Sistema metodológico vivo (hub, pautas, plantillas, registro), zona de redacción en curso y archivo del sistema CrewAI v5 anterior.
+
+La redacción editorial sucede en repo B. Cuando una unidad cierra, su material se **publica** (copia) a la ruta canónica de repo A (`unidades/UX/propuesta/`). Repo A nunca es zona de redacción — solo recibe el entregable.
+
+**Histórico:** hasta la migración (v11.x), el sistema de trabajo vivía en una carpeta `viejo/` dentro de repo A. Las propuestas ya publicadas pueden contener referencias `viejo/...` — son snapshot histórico, no se reescriben. Más detalle del modelo y de la migración en `PROCESO-MAESTRO.md`.
 
 ---
 
