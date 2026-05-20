@@ -1,0 +1,4010 @@
+# Histórico CHANGELOG — Fase 1 (cierre) + Fase 2 (trabajo paralelo)
+
+> **Qué es este archivo:** registro cronológico completo del trabajo de **fase 1** (extracción de inventario U0-U9, versiones v10.40–v10.164) y del trabajo de **fase 2** (reciclaje) realizado en paralelo hasta su pausa.
+>
+> **Es la fuente documental de lo hecho en ambas fases.** No es autoridad operativa (esa es `CLAUDE.md`); es el registro detallado consultable.
+>
+> Archivado el 2026-05-20 (v11.11) al compactar `CHANGELOG.md`. El changelog activo conserva solo v11.0+.
+> Histórico anterior a v10.40 en `CHANGELOG-pre-refactor.md`.
+
+---
+
+## [v10.164 — 2026-05-19] — Cierre fase 1: U9 + rectificación U6 + documentación operativa
+
+Cierre de U9 ("Ropa", pp. 92-101), **última unidad del curso NC1**. Con este commit, las 10 unidades del libro están saneadas con el contrato canónico post-v10.153 + §5.10 + §5.11. **Fase 1 cerrada en la parte mecanizable**.
+
+**Resultado U9 (`unidades/U9/U9-nc1-inventario.json`):**
+
+- 10 páginas (p92-101) · 41 actividades · 6 cuadros · 8 `_decisiones_ia`.
+- Migración Opción C: shape legacy pre-v10.115 → shape canónico post-v10.153 (4 listas tipadas + 4 consolidados).
+- Validador 0 errores · 0 avisos · 0 legacy.
+- Consolidados léxicos P: `Ropa` (27 items), `Colores` (10 items recurrente desde U1); R: `Adjetivos descriptivos` (recurrente desde U8, añadido por revisor).
+- Consolidados gramaticales P: `Marcadores temporales del pasado`; R: `Interrogativos` (ampliación con `con quién`).
+- Consolidados pron/orto P: `Acentuación` (agudas, llanas, esdrújulas).
+- Verbos consolidados (2): `ir` y `estar`, ambos en **Pretérito indefinido** (tiempo verbal nuevo del curso, ya canonizado en registry v1.6 sin alta necesaria).
+
+**Rectificación detectada por revisor (4 puntos antes del cierre):**
+
+1. **Notación barra masc/fem en Colores**: aplicada a colores con fem materialmente atestada — `rojo/-a` (roja), `blanco/-a` (blanca/blancas), `negro/-a` (negra/negras). `amarillo` se mantiene masc sg (única flexión atestada en U9). El `cleanup_v150` había revertido automáticamente las barras; corregido manualmente.
+2. **`oscuro` reubicado**: de `Colores` → nuevo bucket `Adjetivos descriptivos` recurrente (no es color sino modificador: 'colores oscuros', 'ropa oscura').
+3. **Bucket `Adjetivos descriptivos` recurrente creado** con 8 items materialmente atestados que el extractor original había omitido: `alto/-a`, `ancho/-a`, `corto/-a`, `deportivo/-a`, `estrecho/-a`, `grande`, `largo/-a`, `oscuro/-a`. Mismo perfil sistémico que U5 v10.162 y U8 v10.163.
+4. **Refs de actividad actualizadas**: p93-act07, p98-act01, p100-act02.
+
+**Decisiones autónomas relevantes (registry-driven, sin altas nuevas):**
+- `Pretérito indefinido` ya en registry verbal para `ir` y `estar`.
+- `Marcadores temporales del pasado`, `Acentuación`, `Interrogativos` ya en registries respectivos con `_apariciones.U9` declarado.
+- `Análisis de errores` no canónico — se codifica como `subtipo: para_aprender`.
+- Cultura sobre trajes tradicionales NO genera canónico nuevo (precedente U8 `La semana azul`).
+
+**Nueva deuda matcher documentada:**
+
+- `morado/-a` (p101-act04: `falda morada`, `jersey morado`) NO codificado en Colores porque `image.descripcion` NO está en `INPUT_FIELDS_LIST` de `_gather_text`. Pendiente: ampliar el contrato o aceptar pérdida material.
+
+**Resultado global fase 1:**
+
+- ✅ **U0-U9 saneadas** con contrato canónico v10.145 + §5.10 + §5.11.
+- 4 registries canónicos vigentes (campos-semanticos v1.8, gramatica v1.5, pronunciacion-ortografia v1.1, verbos v1.6) + 4 PCIC A1 + 6 archivos operativos de fase 1.
+- Validador alineado con la parte mecanizable del contrato desde v10.151.
+- Deudas residuales catalogadas:
+  - matcher `_expand_needle` sin normalización de acentos (caso `marrón`/`marrones`, U8 v10.163);
+  - `_gather_text` no recoge claves de dict (caso `agenda` U6 v10.158) ni `image.descripcion` (caso `morado/-a` U9 v10.164);
+  - `Abreviaturas de los diccionarios` sin canónico (escalado §0.1, U8 v10.163);
+  - `vegetariano` sin canónico (escalado §0.1, U4 v10.159);
+  - auditoría retroactiva U0-U5 ya parcialmente cubierta por las rectificaciones manuales de revisor v10.162-v10.164, pero queda como ejercicio sistemático abierto.
+
+**Rectificación adicional U6 (revisor, mismo lote v10.164):**
+
+El bucket `Adjetivos descriptivos` U6 tenía 11 items en plural/fem sin notación barra (altos, anchas, antigua, baratos, buenos, caros, centenarias, coloridos, diurna, estrechas, malos, nocturna, pequeña, viejos) + 3 masc sg sin barra (famoso, ruidoso, silencioso). Aplicada notación barra masc/fem a 17 items siguiendo precedente U5/U8/U9: alto/-a, ancho/-a, antiguo/-a, barato/-a, bueno/-a, caro/-a, centenario/-a, colorido/-a, diurno/-a, estrecho/-a, famoso/-a, malo/-a, nocturno/-a, pequeño/-a, ruidoso/-a, silencioso/-a, viejo/-a. `_expand_needle` expande masc+fem y substring matching cubre plurales. Validador U6 → 0/0/0.
+
+**Documentación operativa de cierre fase 1:**
+
+- `CLAUDE.md` raíz — nueva sección "Estado fase 1 (extracción de inventario) — cerrada en v10.164" con registries vigentes (versiones), convenciones críticas, comandos canónicos, deudas residuales catalogadas y procedimiento "Cómo aplicar una corrección sin romper la estructura". Permite a futuras sesiones de Claude Code recuperar el contexto operativo sin desalineamientos.
+- Slash command `.claude/commands/check-fase1.md` — ejecuta el validador en bucle U0-U9 y reporta el estado.
+- Memoria persistente `project_fase1_cerrada.md` con snapshot del cierre (fuera del repo, en `~/.claude/projects/`).
+
+**REVIEW.md §Estado global**: U0-U9 saneadas. Fase 1 cerrada en su parte mecanizable.
+
+**Higiene del commit:** U6 + U9 + CLAUDE.md + slash command + CHANGELOG + REVIEW.
+
+---
+
+## [v10.163 — 2026-05-18] — U8 cerrada: saneamiento estructural + rectificación editorial
+
+Cierre de U8 ("Descripciones", pp. 82-91) bajo el flujo IA-first post-rediseño. U8 estaba ya en shape post-v10.115 (no requirió migración estructural completa), pero tenía 44 errores §5.10/§5.11 saneados por `cleanup_v150.py` y 3 incoherencias editoriales detectadas por revisor.
+
+**Resultado U8 (`unidades/U8/U8-nc1-inventario.json`):**
+
+- 10 páginas (p82-91) · 46 actividades · 5 cuadros · 15 `_decisiones_ia`.
+- Validador 0 errores · 0 avisos · 0 legacy.
+- Consolidados léxicos P: `El cuerpo humano`, `Práctica del surf`; R: `Adjetivos descriptivos` (recurrente desde U5), `Colores` (recurrente desde U1).
+- Consolidados gramaticales P: `Construcción gustar/doler` (paradigma doler), `Adverbios de cantidad`; R: `Pronombres átonos de OI`, `Concordancia de género`, `Concordancia de número`.
+- Consolidados pron/orto P: `Sonidos y correspondencias ortográficas` (cubre `/k/`).
+- Verbos consolidados (4): `doler`, `gustar`, `tener`, `ser`. `llevar` explícitamente excluido (no canónico en registry; input incidental por §5.2).
+
+**Saneamiento previo a las rectificaciones (cleanup_v150.py):**
+
+44 errores §5.10/§5.11 heredados del legacy retirados: fuentes sin aparición literal para `nariz`, adjetivos físicos, verbos `doler/gustar` en fuentes incorrectas, gramática `Me duele/le duele`, adverbios cantidad. Items huérfanos eliminados (`amarillo`, `marrón` en bucket erróneo), `dedo + dedos → dedo` unificado.
+
+**Rectificación detectada por revisor (3 puntos antes del commit):**
+
+1. **Alineación enfoque p85-act07/08**: cambiados de `gramatica` a `pronunciacion_ortografia` para coincidir con la decisión `D-Abreviaturas-de-diccionarios-deferida` ya documentada en `_decisiones_ia`. El JSON se contradecía a sí mismo.
+2. **Reubicación de colores en bucket `Colores` recurrente** (precedente U5 v10.162): `rojo`, `verde`, `azul`, `gris`, `blanco`, `negro` retirados de `Adjetivos descriptivos` y trasladados a nueva categoría `Colores` (PRE desde U1). Recuperados `amarillo/-a` (p83-act8) y `marrones` (p88-act3/05, p89-act8) que el cleanup_v150 había retirado por fuentes inválidas. **Deuda matcher documentada**: `_expand_needle` no normaliza acento `ó` → `o`, por lo que `marrón` no atrapa `marrones`; se usa la forma plural como item canónico en este caso.
+3. **Normalización de flexiones masc/fem a notación barra** en `Adjetivos descriptivos` (28 lemas: alto/-a, bajo/-a, guapo/-a, feo/-a, delgado/-a, gordo/-a, moreno/-a, rubio/-a, pelirrojo/-a, canoso/-a, castaño/-a, calvo/-a, rizado/-a, liso/-a, ondulado/-a, largo/-a, corto/-a, pequeño/-a, oscuro/-a, simpático/-a, antipático/-a, divertido/-a, aburrido/-a, trabajador/-a, cariñoso/-a, serio/-a, favorito/-a, famoso/-a). Consistencia con U5 v10.162 y precedente `moderno/-a` U6 v10.158.
+4. **Refs de actividad** actualizadas con `Colores` en 8 actividades (p82-act03, p83-act05, p83-act08, p86-act01, p88-act03, p88-act05, p89-act07, p89-act08, p91-act06).
+
+**Decisiones autónomas relevantes** (documentadas en `_decisiones_ia`):
+- `Construcción gustar/doler` única categoría cubre `Verbo doler` + `Verbos doler y gustar` + paradigma OI (registry-driven).
+- `Adverbios de cantidad` única categoría incluye muy + mucho/-a/-os/-as (flexiones operativamente distintas, no unificadas pese a §5.11).
+- `El cuerpo humano` (no `Partes del cuerpo`) — naming literal del índice editorial.
+- `Abreviaturas de los diccionarios` SIN alta canónica nueva: deferido §0.1 al autor; actividades p85-act07/08 con listas tipadas vacías de pron/orto pero `enfoque: pronunciacion_ortografia` consistente con PCIC.
+
+**Deudas residuales documentadas:**
+- `Abreviaturas de los diccionarios` sin canónico (escalado §0.1).
+- Matcher `_expand_needle` sin normalización de acentos (caso `marrón`/`marrones`).
+- Mismo perfil de bug sistémico que U5 v10.162 (colores mal encajados, flexiones simples cuando material tiene fem).
+
+**REVIEW.md §Estado global** actualizado: U0-U8 saneadas, U9 pendiente.
+
+**Higiene del commit:** solo U8 + meta docs.
+
+---
+
+## [v10.162 — 2026-05-18] — Rectificación U5: bucket Adjetivos descriptivos + Colores recurrente
+
+Hallazgo del autor en revisión: el bucket `Adjetivos descriptivos` de U5 estaba muy incompleto y mezclaba un color con adjetivos descriptivos.
+
+**Rectificaciones en `unidades/U5/U5-nc1-inventario.json`:**
+
+1. **Bucket `Adjetivos descriptivos`** ampliado de 6 a 13 items. Añadidos los 8 perdidos por el extractor original: `alto`, `bonito/-a`, `cómodo/-a`, `feo`, `incómodo`, `moderno/-a`, `nuevo/-a`, `viejo`. Rectificados a notación barra masc/fem: `antiguo/-a`, `pequeño/-a` (precedente `moderno/-a` U6 v10.158, `colombiano/-a` U4 v10.159).
+2. **`rojo` trasladado a categoría `Colores`** (nueva en `vocabulario_consolidado.recurrente`, PRE desde U1 cuadro@p15 + p15-act7). No es adjetivo descriptivo de tamaño/edad/comodidad/estética — es color.
+3. **Ref de actividad p57-act7** ampliada con `Colores` además de `Adjetivos descriptivos`.
+4. **Fuentes recalculadas** por aparición literal verificada (p53-act6, p53-act7, p55-act5, p55-act6, p55-act8, p57-act6, p57-act7, p58-act1, p58-act2, p61-act1, p61-act4). La actividad fundacional del campo (p53-act6, relaciona antónimos con 10 adjetivos) había sido bajo-codificada.
+5. **Entrada P19 en `_decisiones_ia`** documentando la rectificación y la causa raíz.
+
+**Causa raíz documentada**: el extractor original capturó solo las `palabras_recuadro` de p57-act7 + lemas ubicuos (grande/pequeño), perdiendo toda la actividad fundacional p53-act6. Mismo perfil de bug que `Días de la semana` U6 (1→7 items, v10.158), `Envases y recipientes` U4 (campo huérfano, v10.159) y reasignaciones U4 (madrileño→Gentilicios, colombiano/-a). Refuerza la deuda de auditoría retroactiva U0-U5 buscando patrones análogos.
+
+**Validación:** `python3 scripts/validar_inventario.py 5` → 0 errores · 0 avisos · 0 legacy.
+
+**Higiene del commit:** solo U5 + meta docs.
+
+---
+
+## [v10.161 — 2026-05-18] — U7 extraída + rectificación pron/orto + sincronización registry
+
+Segunda extracción real bajo el flujo IA-first post-rediseño (precedente U6 v10.158). Modo: extracción directa desde chat coordinador (sin worktree), Opción C estilo U6 (legacy pre-v10.115 como referencia de transcripción + PDF para verificar + JSON canónico nuevo en shape post-v10.153).
+
+**Resultado U7 (`unidades/U7/U7-nc1-inventario.json`):**
+
+- 10 páginas (p72-81) · 46 actividades · 4 cuadros · 8 entradas en `_decisiones_ia`.
+- Validador `python3 scripts/validar_inventario.py 7` → 0 errores · 0 avisos · 0 legacy.
+- Consolidados léxicos — principal: `Meses del año`, `Animales domésticos y salvajes`; recurrente: `Días de la semana`.
+- Consolidados gramaticales — principal: `Preposiciones`; recurrente: `Hay`, `Interrogativos`.
+- Consolidados pron/orto — principal: `Signos de puntuación`, `Mayúsculas`, `Acentuación`, `Entonación`.
+- `tiempos_y_verbos_consolidado`: 29 lemas (11 reflexivos U7 + `salir`/`volver` del cuadro p75 + recurrentes Presente/Infinitivo). Todos canónicos en `verbos-canonicos.json` v1.6, sin altas nuevas.
+- Decisiones autónomas con precedente: `Verbos reflexivos` y `Oposición salir/volver` no generan categoría gramatical canónica nueva (viven lema-a-lema en `tiempos_y_verbos`); `Signos de puntuación` se ubica en pron/orto siguiendo registry pese a que el índice del libro lo lista bajo Gramática (precedente U6 `Letras homófonas`).
+
+**Rectificación pron/orto detectada por revisor — split en 3 categorías canónicas:**
+
+La extracción inicial agrupaba 6 items (`.`, `,`, `¿?`, `¡!`, `tilde`, `mayúscula`) bajo `Signos de puntuación` siguiendo la presentación pedagógica de p75-act8. El revisor detectó que el registry canónico separa esas piezas en 3 categorías distintas. Aplicado split:
+
+- `Signos de puntuación`: `.`, `,`, `¿?`, `¡!`.
+- `Mayúsculas` (nueva principal U7): `mayúscula`.
+- `Acentuación` (nueva principal U7, identificación inicial; pleno desarrollo de tipos en U9): `tilde`.
+- Refs de actividad p75-act8 y p75-act9 actualizadas con las 3 categorías.
+
+**Sincronización del registry pron/orto (`pronunciacion-ortografia-canonica.json` v1.0 → v1.1):**
+
+- `Acentuación` — añadida `_apariciones.U7` ("identificación inicial (tilde como etiqueta)") + nueva subcategoría con items `tilde`, `acento`.
+- `Mayúsculas` — añadida `_apariciones.U7` ("identificación inicial (mayúscula como recurso ortográfico)") + nueva subcategoría con item `mayúscula`.
+- `Signos de puntuación` — refinada `_apariciones.U7` para reflejar la presencia conjunta de interrogación + exclamación (antes solo declaraba "exclamación" en U7).
+- `Signos de puntuación` — añadido bloque `_deuda_pcic_ref` documentando que punto y coma materiales en p75-act8/9 no están cubiertos por el `_pcic_ref` ni las subcategorías actuales. **Deuda no bloqueante** para v10.161 (pendiente decisión: ampliar `_pcic_ref` + subcategorías o mantener alcance estrecho).
+
+**Meta docs:** REVIEW.md §Estado global actualizado a "U0-U7 saneadas; U8-U9 pendientes".
+
+**Higiene del commit:** registry pron/orto + `unidades/U7/U7-nc1-inventario.json` + meta docs. Cambios untracked fuera del lote.
+
+---
+
+## [v10.160 — 2026-05-18] — Cierre fino U6 + estado global REVIEW alineado
+
+Tres flecos detectados por el revisor tras visto bueno parcial sobre U6 — el inventario en sí está bien, pero la documentación meta y el operativo Git no estaban del todo cerrados.
+
+**Cambios:**
+
+1. **`unidades/U6/U6-nc1-inventario.json` — `hospital` añadido a `Establecimientos`**: la descripción de la categoría prometía "ampliando con piscina, centro comercial, hospital, cafetería, gimnasio" pero `hospital` no figuraba como item (solo en `Profesiones y lugares de trabajo`). Aparece materialmente en p63-act8 (columna 'Lugares de trabajo') y p71-act4 ('médico/-a → en el hospital'). Item añadido + fuentes top-level + descripción extendida documentando la doble función (establecimiento + lugar de trabajo).
+2. **`REVIEW.md` §Estado global**: actualizado de "U0-U5 saneadas; U6-U9 pendientes" a "U0-U6 saneadas; U7-U9 pendientes" — alineado con la bitácora que ya registraba U6 como extraída desde v10.158.
+3. **Worktree `proc-u6-wip`**: diagnosticado. Delta local en `unidades/U6/U6-nc1-inventario.json` es la versión obsoleta pre-rename (shape v10.157 con `"Establecimientos: cine, restaurante, farmacia..."` largo, items en shape pre-v10.158). Fue **superada** por main (v10.158 tomó esa misma versión, la migró a shape post-v10.153 y aplicó renames cortos). Cierre del worktree pendiente de confirmación del autor.
+
+**Validación:** `python3 scripts/validar_inventario.py 6` → 0 errores, 0 avisos.
+
+---
+
+## [v10.159 — 2026-05-18] — Lote rectificación editorial U4 (registry + 4 rectificaciones)
+
+Lote U4 disparado por auditoría del autor en chat sobre dos focos: (a) items mal encajados en categorías léxicas existentes, (b) campo léxico nuclear no codificado por ausencia de canónico en registry. Cuatro rectificaciones en una sola unidad + alta canónica nueva.
+
+**Registry (`campos-semanticos-canonicos.json` v1.7 → v1.8):**
+
+- Alta de canónico **`Envases y recipientes`** con `origen: excepcion`. PCIC A1 §Alimentación no recoge envases ni recipientes como subcategoría léxica dedicada. Precedente metodológico: Gentilicios (v10.124), La hora (v10.129). Naming coherente con propuesta histórica del repo. Heterogeneidad de `trozo` (unidad de porción, no recipiente estricto) documentada en nota.
+
+**Rectificaciones en `unidades/U4/U4-nc1-inventario.json`:**
+
+1. **`Restaurante` → `Establecimientos`**: movidos `comedor escolar`, `puesto`, `quioscos`, `pizzería` (no son restaurantes). `quioscos` unificado a `quiosco` (§5.11). Nueva entrada en `vocabulario_consolidado.recurrente` con descripción y fuentes. Refs de actividad p48-act2, p50-act1, p50-act3 actualizadas: sustituido `Restaurante` por `Establecimientos` donde corresponde.
+2. **`Adjetivos de nacionalidad` → `Gentilicios`**: movido `madrileño` (gentilicio regional, no nacionalidad). Canónico `Gentilicios` ya existe desde v10.124 para exactamente este caso.
+3. **`Adjetivos de nacionalidad`: `colombianas` → `colombiano/-a`**: forma fem pl violaba §5.11 (unificación de flexiones). Anotado con barra (precedente `moderno/-a` v10.158). Deuda matcher §5.10/§5.11 vs flexiones fem pendiente.
+4. **`Adjetivos de nacionalidad`: retirada de `vegetariano`**: no es nacionalidad ni gentilicio (es adjetivo de tipo de dieta). Sin reubicación canónica (no hay canónico vigente). Escalado a deuda: decidir canónico futuro (¿Tipos de dieta?) y aplicar retroactivamente.
+5. **Alta de `Envases y recipientes` como principal en U4**: 9 items (botella, paquete, trozo, vaso, cartón, taza, lata, bote, bolsa), fuentes p47-act5 + p47-act6. Refs de actividad p47-act5 y p47-act6 actualizadas. Causa raíz: extracción inicial perdió el campo léxico por ausencia de canónico (omisión §0.1) — se mencionó solo de pasada en la descripción de `Concordancia de género`.
+
+**Validación:** `python3 scripts/validar_inventario.py 4` → 0 errores, 0 avisos.
+
+**Deudas abiertas (no resueltas en este lote):**
+- `vegetariano` sin canónico vigente — escalado.
+- matcher §5.10/§5.11 vs flexiones fem (caso `colombiano/-a`, `moderno/-a` U6) — deuda técnica de sesión aparte.
+- Auditoría retroactiva U0-U5 buscando patrones análogos (items mal encajados, campos léxicos perdidos por ausencia de canónico).
+
+**Higiene del commit:** v10.159 contiene únicamente registry léxico + U4-nc1-inventario + meta docs (CHANGELOG, REVIEW). Cambios no relacionados y untracked quedan fuera.
+
+---
+
+## [v10.158 — 2026-05-18] — U6 extraída + canónicos renombrados + correcciones editoriales
+
+Primera extracción real de unidad nueva tras todo el rediseño de fase 1. Migración de U6 desde shape legacy (pre-v10.115) a shape canónico post-v10.153, usando el JSON legacy como referencia de transcripción y reescribiendo desde cero (Opción C del autor + revisor en worktree separado).
+
+**Resultado U6:**
+
+- 10 páginas (62-71), 44 actividades, 5 cuadros, autoevaluación.
+- `vocabulario_consolidado`:
+  - principal: `Establecimientos`, `Marcadores de lugar`, `Profesiones y lugares de trabajo`
+  - recurrente: `Días de la semana`, `Adjetivos descriptivos`
+- `tiempos_y_verbos_consolidado`: 31 lemas (incluye los 11 nuevos canonizados en v10.157).
+- `gramatica_consolidada`:
+  - principal: `Imperativo (tú)` (canonizado en v10.156).
+  - recurrente: `Interrogativos`, `Pronombre sujeto`, `Hay`, `Oposición ser / estar`.
+- `pronunciacion_ortografia_consolidada` principal: `Letras homófonas` (b = v).
+- 14 entradas en `_decisiones_ia` documentando casos límite.
+
+**Validador U6 → 0/0/0** con el contrato extendido (incluye §5.10 A + §5.11).
+
+**Cambios estructurales en el registry léxico (v1.6 → v1.7):**
+
+Renombrado de 2 canónicos largos a forma corta + cadenas largas del índice preservadas como `aliases_indice`. Patrón ya usado en el registry para `Números cardinales` y `Saludos y despedidas`:
+
+- `Establecimientos: cine, restaurante, farmacia...` → **`Establecimientos`** (alias largo preservado).
+- `Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca` → **`Marcadores de lugar`** (alias largo preservado).
+
+Origen del problema (verificado con código): el índice del libro NC1 (`nc1-curso.json`) escribe estos dos campos con la lista de ejemplos. Al canonizar el registry en v10.107 se mantuvieron literales. La opción C aplica el patrón de "canónico corto + alias largo" ya existente.
+
+**Propagación:**
+
+- `U5-nc1-inventario.json`: 3 refs renombradas (canónico recurrente del `Establecimientos`).
+- `U6-nc1-inventario.json`: 26 refs renombradas (ambos canónicos como principal).
+
+**Correcciones editoriales durante la revisión visual del autor:**
+
+1. **`moderno/-a` (recurrente.Adjetivos descriptivos):** restaurado como notación con barra tras intento de unificación al masc fallido. Las fuentes p68-act1/2/3 solo tienen `moderna` literal; el matcher con `_expand_needle("moderno")` no encuentra `moderna` (no son substring). La notación `moderno/-a` SÍ se expande a `{moderno, moderna}`. Decisión pragmática: aceptar la notación verbatim del registry como item para que pase §5.10 A. Deuda contractual real (incoherencia entre §5.11 estricta y §5.10 A en flexiones masc/fem que no son substring) registrada para sesión aparte.
+
+2. **`Días de la semana` (recurrente) corregido (1 → 7 items):** el extractor capturó solo `Lunes` (mayúscula) con una fuente. Tras revisión: los 7 días aparecen materialmente en p64-act1, p66-act4 (agenda), p66-act5, p67-act8 y p71-act7. Items reconstruidos en minúscula con todas las fuentes atestadas: lunes, martes, miércoles, jueves, viernes, sábado, domingo.
+
+3. **`datos.agenda` de p66-act4 reestructurada** (dict → lista de objetos `[{dia, actividad}, ...]`). Causa: `_gather_text` del validador solo recoge **valores** de dicts, no claves; los días como claves del dict no entraban al texto buscable. La reestructuración resuelve el caso material U6 sin tocar el matcher global. Deuda del matcher (claves de dict no incluidas) registrada para sesión aparte.
+
+4. **p65-act4 — error editorial NC1 documentado:** asimetría confirmada — `items_libro` tiene 8 frases pero `respuestas` tiene 10. Es error del libro impreso, no del extractor. Mantenido literal en el JSON (ambos campos). Verbos `dejar` (resp 9) y `mirar` (resp 10) NO se codifican en consolidado verbal porque sus formas no aparecen en input atestado de la actividad (§5.10 A estricta). Nueva entrada `P-p65-act4-error-editorial` en `_decisiones_ia`.
+
+**Decisiones de extracción notables (registradas en `_decisiones_ia` U6):**
+
+- Filtro de verbos sin entrada en registry verbal: `haber`, `poder`, `ver`, `encontrarse`, `celebrar`, `pasar`, `vender`, `preferir`, `nadar` → NO codificados por §5.2.
+- Exclusión de anticipaciones U7 PRE: `salir`, `levantarse`, `sentarse`, `ducharse`, `llamar`.
+- `andar` solo en gerundio modal → fuera de listas tipadas.
+- `columnas_relaciona` confirmado materialmente en p63-act05 (Laura/Juan) y p63-act08 (profesiones/lugares) → codificado per §4.3.1.
+
+**Cifras consolidadas tras v10.158:**
+
+| Unidad | Validador | Estado |
+|---|---|---|
+| U0-U5 | 0/0/0 | Saneadas (Lote 3D-cleanup + correcciones) |
+| U6 | 0/0/0 | Extraída con shape post-v10.153, validador extendido |
+| U7-U9 | — | Pendientes |
+
+**Lo que NO entra en este commit (deuda documentada):**
+
+- Bug del matcher §5.10/§5.11 para flexiones masc/fem que no son substring (caso `moderno`/`moderna`). Solución posible: expandir `_expand_needle` para flexiones genéricas, o canonizar notación con barra como caso aceptado.
+- Bug `_gather_text` que no recoge claves de dicts (caso `datos.agenda`). Solución: mejorar `_gather_text` con lista de claves técnicas a excluir, o documentar convención.
+- Auditoría retroactiva U0-U5 buscando problemas análogos al caso `Días de la semana` (items incompletos, capitalización, estructuras dict bloqueantes).
+
+---
+
+## [v10.157 — 2026-05-17] — Ampliación contrato preparatoria U6: registry verbal (+11 lemas) + enum `tipo` (+`lee`)
+
+Segundo cambio estructural preparatorio para la extracción de U6 (tras v10.156 que añadió `Imperativo (tú)`). El extractor de U6 detectó dos bloques estructurales mediante §0.1 propuesta-en-chat: lemas verbales no canonizados con anclaje material claro en U6, y un tipo de actividad ausente del enum.
+
+**Cambios estructurales:**
+
+**1. `fases/1-extraccion-inventario/verbos-canonicos.json` — 11 lemas nuevos:**
+
+| Lema | Tiempos U6 | tipo_de_verbo | Anclaje material |
+|---|---|---|---|
+| `poner` | Imperativo | transitivo | cuadro p64 + p65-act4 ("pon (tú)", "Pon la mochila") |
+| `beber` | Presente + Imperativo | transitivo | cuadro p64 + p65-act4 + p67-act9/10 ("bebe", "bebemos") |
+| `dar` | Imperativo | transitivo | cuadro p64 + p65-act3/4 + p71 ("Dame", "Da") |
+| `dejar` | Imperativo | transitivo | p65-act4 ("Deja el móvil") |
+| `cortar` | Imperativo | transitivo | p65-act5 + p71-act2 ("Corta") |
+| `pegar` | Imperativo | transitivo | p65-act5 (×3 huecos "Pega") |
+| `conectar` | Imperativo | transitivo | p65-act5 ("Conecta los cables") |
+| `decorar` | Imperativo | transitivo | p65-act5 ("decora el robot") |
+| `comprar` | Infinitivo | transitivo | p66-act1/2 (perífrasis "Quiero comprar") |
+| `recorrer` | Infinitivo | transitivo | p68-act1 (perífrasis "recorrer la ciudad") |
+| `pasear` | Presente + Infinitivo | intransitivo | p68-act1 + p62-act2 ("pasear", "paseas") |
+
+`_meta.version`: 1.5 → 1.6. Total lemas: 49 → 60.
+
+**Lemas correctamente excluidos del registry:**
+- `andar` — solo aparece en gerundio modal (`andando`), no es tiempo del enum. Queda solo en `datos.*` material, sin entrada en listas tipadas.
+- `salir`, `levantarse`, `sentarse`, `ducharse`, `llamar` — ya canónicos en U7 PRE; en U6 son anticipación según §5.2 → NO se codifican.
+- Verbos de metalengua de instrucción (`subraya`, `rodea`, `contesta`, `escucha`, `repite`...) — excluidos por §5.2 generalizada.
+
+**2. `fases/1-extraccion-inventario/schema-inventario.md` §5 + `scripts/validar_inventario.py` — enum `tipo` ampliado:**
+
+Nuevo valor `lee` añadido al enum. Total: 20 → 21 valores.
+
+Justificación: NC1 tiene casos materiales en U6 (p68-act1 "Lee el siguiente texto sobre Madrid", p69-act4 "Lee el texto sobre este pequeño pueblo cerca de Madrid") donde el enunciado pide solo input lector sin acción posterior en la propia actividad (las preguntas viven en actividades vecinas numeradas). Las opciones de bajo coste (forzar `lee_y_escucha` con `audio.presente=false`, o `responder_preguntas_cerradas` violando §2) introducían mentiras semánticas. La opción coherente es ampliar el enum.
+
+Coherencia con el enum existente: si `escucha` existe como input puro auditivo, debería existir `lee` como input puro lector.
+
+**Cambio en `scripts/validar_inventario.py`:** `TIPOS_VALIDOS` añade `"lee"`. Validador U0-U5 → 0/0/0 (sin regresiones; ninguna unidad usa `lee` aún).
+
+**Decisiones complementarias del extractor (NO requieren cambio de contrato):**
+
+- **p69-act7** ("Escucha y sigue las instrucciones") → codificar como `escucha` con nota en `_decisiones_ia` documentando la acción kinésica no codificable. Solo decisión de codificación.
+- **`columnas_relaciona`** (§4.3.1 pendiente) → codificar p63-act05 y p63-act08 con `datos.columnas_relaciona` per §4.3.1. La promoción §4.3.1 → §1 se difiere a sesión aparte.
+
+**Validador U0-U5 → 0/0/0.** Worktree `../guia-proc-U6/` debe rebasear para sincronizar.
+
+---
+
+## [v10.156 — 2026-05-17] — Registry gramatical: `Imperativo (tú)` añadido como categoría canónica (preparatorio U6)
+
+Cambio estructural preparatorio para la extracción de U6. Ampliación controlada del registry gramatical (§ "Naturaleza del contrato" del schema permite ampliación por expansión).
+
+**Diagnóstico (propuesta-en-chat §0.1 del extractor U6):** `nc1-curso.json` declara `Imperativo (tú)` como contenido `gramatica` principal de U6, pero `gramatica-canonica.json` v1.4 no incluía la categoría. El extractor no puede inventar la clave por su cuenta; requiere autorización + canonización previa.
+
+**Dictamen del autor + revisor (coincidentes):** sí, añadir como categoría canónica. Razones:
+- El libro NC1 tiene un cuadro gramatical explícito sobre el imperativo como contenido didáctico autónomo, distinto del paradigma verbal.
+- La categoría gramatical captura el fenómeno enseñado; `tiempos_y_verbos_consolidado` captura las formas concretas con `tiempo: Imperativo`. Dimensiones complementarias.
+- Precedente: U5 `Adverbios y locuciones de lugar` también vive en gramática como categoría aunque los lemas tengan paradigma verbal asociado.
+
+**Cambios en `fases/1-extraccion-inventario/gramatica-canonica.json`:**
+
+- Nueva categoría `Imperativo (tú)` con shape estándar:
+  - `_pcic_ref`: `"PCIC A1 §9.3.2 Imperativo afirmativo"`.
+  - `_apariciones`: `{ "U6": "principal" }`.
+  - `items`: `[]` (vacío, se llenará al extraer U6 con las formas atestadas en el cuadro gramatical + actividades).
+  - `_nota`: alerta documental sobre el alcance (afirmativo de 2ª persona del singular, no negativo, no resto de personas) y orientación para niveles posteriores.
+- `_meta.version`: 1.4 → 1.5.
+- Total categorías: 17 → 18.
+
+**Naming canónico (decisión política B+C del autor):**
+
+- Etiqueta canónica `Imperativo (tú)` literal del índice editorial de NC1 (no se renombra a "Imperativo afirmativo (tú)" para preservar la regla de naming canónico literal del índice).
+- La distinción afirmativo/negativo se documenta en `_nota` del registry + en `descripcion["U6"]` del inventario cuando se codifique.
+- Si NC2/A2 incorpora imperativo negativo, ahí se decide: renombrar + crear categoría separada, o ampliar descripción.
+
+**Decisiones complementarias del extractor (NO requieren cambio):**
+
+- **`Presente de verbos irregulares: cerrar, ir, venir, hacer, jugar, dormir`:** NO se añade al registry gramatical. La irregularidad es propiedad del lema verbal y vive en `tiempos_y_verbos_consolidado` vía `rasgo_por_tiempo`. Duplicar como categoría gramatical crearía solapamiento.
+- **`Profesiones y lugares de trabajo`:** ya es canónico del registry léxico (origen indice). En U6 pasa a `principal` con items literales atestados.
+
+**Sin cambios en otros registries, scripts, inventarios.** Validador U0-U5 → 0/0/0.
+
+**Próximo paso:** el extractor de U6 (worktree `../guia-proc-U6/`) sincroniza este cambio y continúa con paso 3 del flujo (extracción shape verbatim).
+
+---
+
+## [v10.155 — 2026-05-17] — Reglas: salvedad de excepción autorizada en §5.1.1 + §6.3 + rectificaciones U1/U3
+
+Tras el análisis del autor sobre la clasificación de `recurrente` en U0-U5 (revisión del concepto en `glosario.md` y `reglas-operativas.md` §5.1.1), se detectaron categorías codificadas como `recurrente` cuando son **principal canónico en una unidad posterior** según `nc1-curso.json`. La regla §5.1.1 + §6.3 actual las prohíbe estrictamente, pero el material atestado tiene valor pedagógico real en la unidad actual.
+
+**Decisión del autor:** mantener esas entradas como recurrente bajo una **excepción rara, estrecha y autorizada por §0.1** (propuesta-en-chat). Reformulación del contrato:
+
+**Cambios en `reglas-operativas.md`:**
+
+- **§5.1.1** — añadida salvedad al final del bloque de exclusión: el autor puede autorizar por §0.1 que una anticipación se conserve en `recurrente` cuando: (a) no sea input incidental y (b) funcione como **soporte pedagógico explícito del principal de la unidad actual** (no mero input rico). Requisitos formales: `descripcion` declara la anticipación y la unidad principal posterior; `_decisiones_ia` registra la excepción. PROHIBIDO aplicar silenciosamente.
+- **§6.3** — misma salvedad replicada al final para evitar conflicto con §5.1.1.
+
+La regla general estricta se mantiene intacta; la salvedad es excepcional y exige autorización expresa.
+
+**Cambios materiales:**
+
+- **U3 `recurrente["Profesiones y lugares de trabajo"]`**: descripción reescrita. La anterior justificaba la entrada por §5.1.1 cláusula (b) — incorrecto porque la categoría SÍ es principal de U6 según índice. Nueva descripción declara la anticipación + invoca la salvedad. Nueva entrada `_decisiones_ia` P-Profesiones-anticipacion-U6 documentando.
+- **U1 `recurrente["Adjetivos de nacionalidad"]`**: descripción rectificada para declarar explícitamente la anticipación de U2 + invocar la salvedad. **No se añade entrada nueva** en `_decisiones_ia` (caso ya documentado en P3/P12/P13 de v10.123-v10.124); la descripción remite a esas decisiones existentes.
+
+**Casos pendientes (no aplicados en este lote):**
+
+- **U4 `recurrente["Restaurante"]`**: confirmado como categoría legítima (no anticipación de U6 — `Restaurante` y `Establecimientos: cine, restaurante, farmacia...` son canónicos distintos en el registry). Sin cambios.
+- **U5 `recurrente["Establecimientos: cine, restaurante, farmacia..."]`**: se deja para más adelante por dictamen del autor. Es anticipación literal de U6 principal pero la decisión sobre aplicar la salvedad o retirarla se difiere.
+
+**Sin cambios** en JSONs de U0/U2/U4/U5, scripts, registries ni Apéndice transitorio. Validador U0-U5 → 0/0/0.
+
+---
+
+## [v10.154 — 2026-05-17] — Rectificación editorial U5 — separación `Tipos de vivienda` vs `Alojamiento`
+
+Tercera rectificación editorial U5 (tras v10.144 marcadores y v10.152 La hora) detectada por el autor antes de lanzar U6.
+
+**Diagnóstico:** la categoría `Tipos de vivienda` en U5 tenía 8 items mezclados: solo `apartamento` es vivienda permanente en sentido material (atestado en p58-act2: *"Elisa vive en un apartamento"*); los otros 7 (`hotel`, `albergue juvenil`, `crucero`, `casa rural`, `caravana`, `camping`, `granja`) aparecen en p53-act8/9 como **alojamiento turístico** con definiciones explícitas tipo *"Alojamiento con ruedas..."*, *"Barco grande para viajes de vacaciones..."*. Esto contradice la decisión P (v10.139) del autor: *"NO fusionar Tipos de vivienda + Alojamiento; son canónicos conceptualmente distintos: vivienda permanente vs estancia temporal"*.
+
+Además, el item `chalé` (atestado en p58-act2 respuestas: *"Elisa vive en un chalé"*) no estaba codificado en ningún sitio.
+
+**Cambios en `unidades/U5/U5-nc1-inventario.json`:**
+
+- `Tipos de vivienda` conserva: `apartamento` (atestado p53-act8 + p58-act2) + **`chalé` añadido** (atestado p58-act2@R).
+- `Alojamiento` **creado** en `vocabulario_consolidado.principal` con 7 items: hotel, albergue juvenil, crucero, casa rural, caravana, camping, granja. Activa por primera vez el canónico `Alojamiento` del registry pcic_a1, que estaba sin uso.
+- Refs en `actividad.vocabulario` actualizadas según items materialmente presentes:
+  - `Alojamiento`: p53-act8, p53-act9, p53-act11, p53-act12.
+  - `Tipos de vivienda`: p53-act8 (apartamento), p58-act2, p59-act5.
+  - Ambos en p53-act8 (presenta los 8 términos).
+  - Retiradas en p53-act7, p53-act10, p59-act7, p59-act8 — actividades sin items léxicos atestados literalmente (§5.10 A correctamente aplicada).
+- Nueva entrada P19 en `_decisiones_ia`.
+
+**Sin cambios en el registry léxico** (ambas categorías ya existían). Confirma la decisión P del autor en v10.139. Validador U5 → 0/0/0.
+
+---
+
+## [v10.153 — 2026-05-17] — Doc: saneamiento documental fase 1 (post-v10.151) + cleanup integrado en flujo oficial
+
+Tras el cierre de la auditoría del registry léxico (v10.152b), la última deuda en fase 1 era documental: cuatro archivos seguían describiendo un validador desalineado y un proceso de "validación manual transitoria" que ya no aplica desde el Lote 3E (v10.151).
+
+**Dictamen del revisor:** antes de lanzar U6 piloto, sanear la documentación operativa para que refleje el estado real (validador como gate automático para la parte mecanizable) y integrar `cleanup_v150.py` explícitamente en el flujo oficial de extracción.
+
+**Cambios aplicados:**
+
+`fases/1-extraccion-inventario/prompt.md`:
+- Nota transitoria sobre validador desalineado **retirada**.
+- Sustituida por una línea afirmativa: validador como gate automático para la parte mecanizable (shape + enums + fuentes + §5.10 A + §5.11) desde v10.151; deuda residual en Apéndice transitorio.
+- **Flujo de pasos reordenado.** Antes el cleanup no podía insertarse entre 3b y 4 porque exige JSON ya escrito en disco. Nuevo orden: 1 verificar PDF → 2 extraer shape → 3a clasificar → 3b derivar consolidados → **4 escribir JSON candidato** → **5 aplicar `cleanup_v150.py --apply`** → **6 validar** → 7 avisar al autor. La numeración pasa de 6 a 7 pasos.
+
+`fases/1-extraccion-inventario/CLAUDE.md`:
+- Validador descrito como gate real (no transitorio). Regla crítica #4 simplificada. Regla crítica #5 mantiene el principio (schema↔validador no divergen) y reformula la deuda residual como "ya no invalida el gate automático", delimitada en §A.3.
+
+`fases/1-extraccion-inventario/schema-inventario.md`:
+- Aviso top reformulado: validador como gate automático para la parte mecanizable, deuda residual en Apéndice. No promete alineación absoluta.
+
+`fases/1-extraccion-inventario/glosario.md`:
+- Nota transitoria del §13 (Sincronía con el validador) sustituida por estado actual post-v10.151. Las cinco categorías describen contrato + chequeo automatizado en su parte mecanizable.
+
+**Sin cambios** en JSONs, scripts, registries ni Apéndice transitorio. Validador U0-U5 → 0/0/0.
+
+**Estado tras este commit:** documentación operativa de fase 1 alineada con el estado técnico real. El siguiente paso natural es **extraer U6 piloto** con el flujo corregido y medir el coste real de corrección.
+
+---
+
+## [v10.152b — 2026-05-17] — Doc: auditoría completa del registry léxico — cierre sin retiradas adicionales
+
+Cierre del hilo de auditoría del registry léxico iniciado en v10.152/v10.152a. Protocolo de auditoría aplicado: cruzar las 102 entradas del registry con uso en U0-U5 y con vocabulario declarado en `nc1-curso.json`.
+
+**Resultado:**
+
+| Estado | Cantidad |
+|---|---|
+| Conservar (origen `indice` del libro NC1) | 26 |
+| Conservar (atestadas en U0-U5) | 8 |
+| Conservar (reserva por encaje con U6-U9 declarado) | 16 |
+| Conservar (excepciones editoriales previas) | 4 |
+| Conservar (entradas pcic_a1 cuyo contenido NC1 trabaja bajo otro nombre canónico) | 48 |
+| **Total conservar** | **102** |
+| Retirar | **0** |
+
+**Decisión del autor sobre las 48 entradas pcic_a1 sin uso explícito en U0-U5:** se conservan. El criterio: las categorías PCIC A1 oficiales cubren contenido que NC1 trabaja bajo otros nombres canónicos (más editoriales). Mantenerlas como universo PCIC A1 de referencia permite cruzar pedagógicamente cualquier extracción futura con el repertorio oficial del nivel.
+
+**Sin cambios materiales en el registry, scripts ni inventarios.** Validador U0-U5 → 0/0/0.
+
+**Auditoría del registry léxico cerrada.** Próximo paso natural: extracción de U6-U9 sobre un registry estable y revisado.
+
+---
+
+## [v10.152a — 2026-05-17] — Registry léxico: retirada de `Adverbios de posición` (huérfano confirmado)
+
+Cierre del primer hilo de la auditoría del registry léxico. Tras la rectificación de U5 en v10.152 (marcadores espaciales movidos a `gramatica_consolidada`), la entrada léxica `Adverbios de posición` quedó sin uso activo en ningún inventario.
+
+**Verificación previa:** las 6 menciones de `Adverbios de posición` en U5 son todas en `_decisiones_ia` (narrativa histórica documental: P16, P17, P18 + texto sobre v10.141/v10.144/v10.152). Ninguna es una referencia activa al label canónico — son trazas históricas de las decisiones de extracción. Retirarla del registry no rompe ninguna referencia viva.
+
+**Cambios en `fases/1-extraccion-inventario/campos-semanticos-canonicos.json`:**
+
+- Entrada `Adverbios de posición` (origen `pcic_a1`, añadida en v10.141) retirada.
+- `_meta.version`: 1.5 → 1.6.
+- `_meta.actualizado`: 2026-05-17.
+- `_meta.descripcion` actualizada con nota de la retirada.
+- Total entradas: 103 → 102.
+
+**Cobertura semántica preservada:** los términos que el bloque cubría (encima, debajo, delante, detrás, al lado) viven ahora en `gramatica-canonica.json` bajo la categoría `Adverbios y locuciones de lugar` (PCIC A1 §8). Categoría sin duplicación.
+
+**Sin cambios en inventarios** ni en scripts. Validador U0-U5 → 0/0/0.
+
+**Pendiente de la auditoría del registry:** revisión de entradas pcic_a1 sin uso en U0-U5 (potencial higiene si una unidad futura no las usa).
+
+---
+
+## [v10.152 — 2026-05-17] — Rectificación editorial U5 + U3 (auditoría del registry léxico)
+
+Cambios materiales surgidos de la auditoría del registry léxico (Fase 4 del plan post-Lote 3E). Dos rectificaciones de criterio editorial detectadas y corregidas por dictamen del revisor.
+
+**Frente A — U5: marcadores espaciales movidos de vocabulario a gramática.**
+
+Diagnóstico: el índice del libro coloca *"Posición: encima, debajo, detrás, delante, al lado"* en `gramatica` (no `vocabulario`). PCIC A1 §8 los categoriza como adverbios/locuciones adverbiales de lugar. La codificación previa (v10.141 + v10.144) los puso erróneamente bajo `vocabulario_consolidado.principal["Marcadores de lugar: a la izquierda, ..., cerca"]` — una etiqueta del registry léxico que cubre OTRO conjunto de marcadores (izquierda, derecha, enfrente, entre, lejos, cerca; no presentes en U5).
+
+Cambios en `unidades/U5/U5-nc1-inventario.json`:
+
+- Bloque `Marcadores de lugar: a la izquierda, ..., cerca` retirado de `vocabulario_consolidado.principal`.
+- Los 5 items reales (al lado, debajo, delante, detrás, encima) con sus fuentes trasladados a `gramatica_consolidada.principal["Adverbios y locuciones de lugar"]` (categoría canónica preexistente en `gramatica-canonica.json`).
+- 11 refs en `actividad.vocabulario` / `cuadro.vocabulario` retiradas; 2 refs equivalentes añadidas a `actividad.gramatica` / `cuadro.gramatica` donde faltaban.
+- Descripción gramatical reescrita reflejando el cambio.
+- Nueva entrada P18 en `_decisiones_ia`.
+- **NO se crea categoría nueva en el registry** (la categoría ya existe).
+- El canónico léxico `Marcadores de lugar: ..., cerca` permanece en el registry léxico para unidades futuras que sí enseñen izquierda/derecha/enfrente/etc.
+- `Adverbios de posición` del registry léxico queda como huérfano (auditoría aparte).
+
+**Frente B — U3: categoría `La hora` poblada por primera vez.**
+
+Diagnóstico: el registry léxico canonizó `La hora` en v10.129 pero el inventario U3 nunca la pobló. El contenido (12 expresiones canónicas del cuadro@p37#1: en punto, y cinco, y cuarto, y media, menos diez, etc.) estaba diluido bajo `Números cardinales` sin entidad propia. Inconsistencia entre registry y datos.
+
+Cambios en `unidades/U3/U3-nc1-inventario.json`:
+
+- Nueva categoría `La hora` en `vocabulario_consolidado.principal` con 12 items literales atestados en cuadro@p37#1 + p37-act5 + p37-act6 + p37-act7. Solo lemas con aparición literal (§5.10 A): primera codificación inicial tenía 4 errores de fuente (asignaba `@R` cuando la expresión también aparecía en `audio.transcripcion` que es input); validador detectó y corregí.
+- 4 refs `La hora` añadidas en cuadro@p37#1 (lexical), p37-act5, p37-act6, p37-act7.
+- `Números cardinales` se mantiene (los números siguen siendo léxico relevante del campo numérico, complementario al campo horario).
+- Nueva entrada P14 en `_decisiones_ia`.
+
+**Sin cambios en registries**, scripts ni en otras unidades. Validador U0-U5 → 0/0/0 con el validador extendido (Lote 3E).
+
+**Pendientes de la auditoría del registry:**
+- `Adverbios de posición` del registry léxico (huérfano tras este lote).
+- Revisión completa de otras entradas del registry pcic_a1 sin uso en U0-U5 (potencial higiene si una unidad futura no las usa).
+
+---
+
+## [v10.151 — 2026-05-17] — Fase 1: Lote 3E — validador absorbe §5.10 A + §5.11 + fix orden FASE 2/1
+
+Cierre técnico del contrato v10.145 + §5.10 + §5.11. El validador `scripts/validar_inventario.py` deja de ser un gate parcial: ahora absorbe la parte mecanizable de §5.10 A y §5.11. La validación manual se reserva solo para Cat B + excepciones léxicas (declarado en `schema-inventario.md` §A.3).
+
+**Cambios en `scripts/validar_inventario.py`:**
+
+- Nuevo bloque de funciones internas: `_expand_needle`, `_match_in_text`, `_activity_input_text`, `_activity_resp_text`, `_cuadro_body_text`, `_is_gramatica_categoria_A`, `_detectar_flexion_par`. Réplica de la lógica de `cleanup_v150.py` (no se importa para mantener el validador independiente).
+- Nueva función `_validar_510_511(d)` que ejecuta dos chequeos:
+  - **§5.10 A:** cada fuente declarada para items Cat A (vocab, formas verbales en consolidado y listas tipadas, gramática Cat A según heurística conservadora) debe verificar aparición literal en el contenido didáctico definido en §5.2 + `respuestas[]` + cuerpo de cuadros.
+  - **§5.11:** detección de pares de items en `vocabulario_consolidado.<cat>.items[]` que sean flexiones del mismo lema sin unificar.
+- Errores se acumulan en la lista principal y bloquean cierre (exit 1).
+
+**Bug corregido en `scripts/cleanup_v150.py`:**
+
+Al re-validar los JSON post-v10.150c, el validador detectó fuentes residuales (11 en U1, 11 en U2, 4 en U3). Causa: el orden FASE 1 → FASE 2 procesaba items con notación `lema/-suf` (como `mexicano/-a`) verificando `expand_needle(mexicano/-a) = {mexicano, mexicana}` y aceptando la fuente si `mexicana` aparecía. Después FASE 2 reescribía a `mexicano`, pero la fuente ya estaba conservada con el item original. Tras la reescritura, la fuente quedaba apuntando a una palabra (`mexicano`) que no aparecía literalmente.
+
+Fix: dividir FASE 2 en dos pasos. PASO A (reescritura `lema/-suf`) corre **antes** de FASE 1 para que la verificación de aparición vea ya la palabra canónica. PASO B (detectar pares atestados) corre después de FASE 1.
+
+**Resultados U1 / U2 / U3 re-saneadas:**
+
+- U1: 11 fuentes adicionales retiradas (`mexicano`, otras flexiones residuales).
+- U2: 11 fuentes adicionales retiradas.
+- U3: 4 fuentes adicionales retiradas.
+- Validador U0-U5 → **0/0/0 con el validador extendido** (incluye chequeos §5.10 A + §5.11).
+
+**Estado del Apéndice transitorio del schema (§A.3):** §5.10 A y §5.11 pasan de "validación automática parcial pendiente" a "absorbidas en el validador". §5.10 B y excepciones léxicas de §5.11 permanecen como deuda editorial sostenida por protocolo §0.1.
+
+**`.gitignore`:** patrón `*.bak.v10.150` añadido.
+
+**Limpieza inmediata previa al lote:** todos los `.bak.v10.145` y `.bak.v10.150` eliminados del filesystem.
+
+**Pendientes:**
+- Auditoría registry `campos-semanticos-canonicos.json` (notación `lema/-a`).
+- Condiciones de retirada del Apéndice transitorio del schema (§A.4): U6-U9 sin migrar todavía.
+
+---
+
+## [v10.150c — 2026-05-17] — Fase 1: Lote 3D-cleanup — cierre U0/U1/U3/U5 agrupados
+
+Tercer y último apply del Lote 3D-cleanup. Cierra la aplicación retroactiva de §5.10 + §5.11 a las 6 unidades U0-U5.
+
+**Resultados por unidad (validador 0/0/0 en todas):**
+
+| Unidad | Fuentes A | Items A | Reescrituras `lema/-suf` | Pares unificados | Cats vacías |
+|---|---|---|---|---|---|
+| U0 | 5 | 0 | 0 | 0 | 0 |
+| U1 | 48 | 23 | 0 | 11 | 0 |
+| U3 | 52 | 6 | 0 | 8 | 0 |
+| U5 | 23 | 2 | 5 | 0 | 0 |
+| **Total v10.150c** | **128** | **31** | **5** | **19** | **0** |
+
+**Sin cambios en el script** desde v10.150b. La heurística conservadora demostró ser sólida (0 categorías vacías en las 4 unidades).
+
+**Estado consolidado del Lote 3D-cleanup (v10.150a + b + c):**
+
+| Unidad | Fuentes A | Items A | Reescrituras | Pares | Cats vacías |
+|---|---|---|---|---|---|
+| U0 | 5 | 0 | 0 | 0 | 0 |
+| U1 | 48 | 23 | 0 | 11 | 0 |
+| U2 | 54 | 9 | 26 | 0 | 0 |
+| U3 | 52 | 6 | 0 | 8 | 0 |
+| U4 | 54 | 6 | 0 | 0 | 0 |
+| U5 | 23 | 2 | 5 | 0 | 0 |
+| **Total Lote 3D** | **236** | **46** | **31** | **19** | **0** |
+
+**Cierre del contrato v10.145 + §5.10 + §5.11.** Validador U0-U5 → 0/0/0 en estado limpio.
+
+**Tareas futuras documentadas:**
+
+- Lote 3E: extensión del validador para absorber la parte automatizable de §5.10 A + §5.11 (declarado en `schema-inventario.md` §A.3 y §A.4).
+- Falsos positivos del matcher si surgen en futuras extracciones: protocolo §0.1 (escalada en chat) + lista de excepciones acotada por unidad o mejora del matcher (declarado en plan del cleanup).
+- Auditoría del registry `campos-semanticos-canonicos.json` (notación `lema/-a`): fuera de alcance del Lote 3D-cleanup por dictamen del revisor.
+
+---
+
+## [v10.150b — 2026-05-17] — Fase 1: Lote 3D-cleanup — U2 + correcciones del script (FASE 4 + heurística)
+
+Segundo apply del Lote 3D-cleanup. U2 en carril propio por dictamen del revisor.
+
+**Bloqueo previo detectado por el revisor.** Tras el primer intento de apply de U2, la categoría `gramatica_consolidada.recurrente.Artículos determinados` quedó con `items: []` y `fuentes: []`. Rollback inmediato.
+
+**Correcciones aplicadas al script `cleanup_v150.py`:**
+
+1. **Nueva FASE 4** — retirar categorías sin items y limpiar sus labels en `actividad.X` / `cuadro.X`.
+2. **Mutación del dict en memoria siempre activa** (antes solo en `--apply`); permite que dry-run muestre categorías vaciadas como consecuencia de FASE 1.
+3. **Heurística `is_gramatica_categoria_A` reformulada conservadora.** Versión anterior tenía falsos positivos graves: marcaba A items con un solo `/` (`abuelo/abuela`), elipsis (`¿Qué...?`), label como item (`Oposición ser / estar`). Primer dry-run con FASE 4 detectó que U3 perdía `Interrogativos` (principal) y U5 perdía `Oposición ser / estar` (principal). Nueva heurística rechaza cualquier `/`, `?`, `...`, `+`, paréntesis, IPA, ítem idéntico al nombre de categoría, multi-token > 3 palabras o > 25 chars. En duda → B.
+
+**Resultados U2 (con correcciones):**
+
+- 54 fuentes A retiradas
+- 9 items completos retirados
+- 26 reescrituras de notación `lema/-suf`
+- 0 categorías vacías (problema del revisor resuelto)
+- Validador U2 → 0/0/0
+- Diff: 60 insertions / 73 deletions
+
+**U4 (v10.150a) no requiere revisión.** La heurística nueva es más conservadora; lo retirado en U4 (`le`, `una`, `qué`, `cómo`, `a quién`) sigue siendo Cat A con la heurística nueva.
+
+**Próximo:** v10.150c — U0/U1/U3/U5 agrupados.
+
+---
+
+## [v10.150a — 2026-05-17] — Fase 1: Lote 3D-cleanup — piloto U4 (§5.10 + §5.11 retroactivo)
+
+Primer apply del Lote 3D-cleanup. U4 como gate funcional según dictamen del revisor.
+
+**Herramienta:** `scripts/cleanup_v150.py` (nuevo). Reutiliza `expand_needle`, `match_substring` y helpers de `migrate_at_r_v10145.py`. 3 FASES:
+
+- **FASE 1 — §5.10:** retira fuentes A sin aparición literal en el contenido didáctico definido en §5.2 + `respuestas[]` + cuerpo de cuadros. Aplica a vocab (items léxicos), verbos (formas concretas en consolidado y en listas tipadas), gramática (solo items Cat A — heurística que excluye paréntesis, barras múltiples, IPA, `+`, multi-token largo). Pronunciación queda fuera (toda Cat B). Si un item se queda sin fuentes → retirar item. Si un objeto verbal en lista tipada se queda sin `formas_trabajadas` → retirar objeto.
+- **FASE 2 — §5.11:** unifica flexiones en `vocabulario_consolidado` cuando hay ≥2 formas atestadas; reescribe notación `lema/-suf` según atestación.
+- **FASE 3 — saneamiento:** recomputa `cat.fuentes` agregadas, reformatea canónico, valida 0/0/0.
+
+**Resultados U4:**
+
+- 54 fuentes A retiradas (vocab: 25, verbos consolidado: 13, verbos en listas tipadas: 5, gramática: 11).
+- 6 items completos retirados (3 vocab: `especialidad`, `argentino`, `uruguayo`; 3 objetos verbales en listas tipadas que se quedaron sin formas).
+- 0 reescrituras de notación `lema/-suf` (U4 no las tenía).
+- 0 pares unificados (U4 ya unificado en v10.135b).
+- Validador U4 → 0/0/0.
+- Diff: 41 insertions / 97 deletions.
+
+**Iteración pre-apply:** el primer intento falló validador porque retirar todas las `formas_trabajadas` de un objeto verbal en la lista tipada lo dejaba con `formas_trabajadas: []` (no permitido). Fix: cuando la lista queda vacía, retirar el objeto verbal entero. Después del fix, apply limpio.
+
+**Próximos pasos:** v10.150b (U2 por separado, volumen alto 106+28+26), v10.150c (U0/U1/U3/U5 agrupados).
+
+---
+
+## [v10.149c — 2026-05-17] — Doc: §5.10 — exclusión de instrucción como remitencia, no como novedad
+
+Ajuste documental tras dictamen del revisor sobre v10.149. La redacción anterior de §5.10 enumeraba como "Errores prohibidos" la cláusula *"PROHIBIDO usar `instruccion_original` ni cualquier metalengua excluida por §5.2 como fuente de aparición material"*. El revisor señaló que esa exclusión **no es novedad sustantiva de §5.10**: ya vive en §5.2 generalizada (v10.144) y aplica con independencia de la nueva regla. Presentarla como decisión nueva mezclaba una confirmación con dos cambios reales (distinción A/B, aparición material), dificultando el dictamen.
+
+**Cambio aplicado en `reglas-operativas.md` §5.10:**
+
+- La viñeta tercera del bloque "Errores prohibidos" se retira como prohibición independiente.
+- Se sustituye por una **nota de remitencia** explícita: "§5.10 no introduce esa prohibición; se apoya en ella". El texto deja claro que la exclusión vive en §5.2 y que §5.10 solo la invoca.
+
+**Cambios materiales:**
+- `reglas-operativas.md` §5.10 (sección "Errores prohibidos" + nueva nota de remitencia).
+- `CHANGELOG.md` + `REVIEW.md`.
+
+**Sin cambios en `schema-inventario.md`, scripts ni JSONs.** Validador U0-U5 → 0/0/0.
+
+---
+
+## [v10.149b — 2026-05-17] — Doc: Apéndice transitorio del schema actualizado (§A.1 + §A.3 + §A.4)
+
+Ajuste documental tras dictamen del revisor sobre el estado real del validador frente a las nuevas reglas §5.10 y §5.11 (introducidas en v10.149 y corregidas en v10.149a). El revisor señaló que el Apéndice transitorio del schema describía mal la realidad y que añadir nuevas deudas sin sanear el relato existente reproduciría exactamente la desalineación contractual que el proyecto vino corrigiendo desde v10.145.
+
+**Tres correcciones aplicadas a `schema-inventario.md` Apéndice transitorio:**
+
+**§A.1 — Estado de alineación validador ↔ schema (reescrita).** El texto anterior decía que `scripts/validar_inventario.py` "todavía valida el modelo viejo" y que la validación del shape nuevo era manual en su totalidad. Eso ya no es cierto: el validador actual sí sostiene los 4 bloques top-level consolidados, los enums vigentes (`TIPOS_VALIDOS`, `TIPOS_CUADRO_VALIDOS`, `enfoque`, `tiempo`), el formato de fuentes con `@R` como localización (§9.5 post-v10.145), `tipo_cuadro`, `_migracion_rediseno` y chequeos estructurales por actividad y cuadro. La nueva redacción declara que la **deuda restante es parcial y específica**, y remite a §A.3 para el detalle.
+
+**§A.3 — Deuda restante del validador (reescrita).** Limpiada de pendientes ya absorbidos (enums renombrados, top-level migrado, schema por actividad, `vocabulario_consolidado` sin `comprension`, regex de fuentes, semántica de `@R`, coincidencia con `nc1-curso.json`). Quedan declarados como deuda viva, con alcance preciso:
+
+- **§5.10 Categoría A** — validación automática parcial pendiente: la lógica de matcher con expansión de flexiones ya existe en `scripts/migrate_at_r_v10145.py` y puede portarse al validador. Falsos positivos del matcher se escalan a §0.1.
+- **§5.10 Categoría B** — no validable automáticamente. Requiere juicio editorial. Sostenida por revisión humana + justificación en `descripcion` cuando exista.
+- **§5.11** — validación automática parcial pendiente para detección de pares no unificados; excepciones léxicas (compuestos multi-token, nombres propios, lemas sin par atestado) requieren criterio manual.
+- Otros pendientes técnicos preservados (desalineación verbos-canonicos.json, normalización a minúscula en consolidado).
+
+**§A.4 — Condiciones de retirada (ampliada).** Antes exigía "validador alineado con este schema" sin más. Ahora distingue entre:
+
+- **Parte mecanizable**: el validador debe absorberla regla por regla.
+- **Parte no mecanizable** (§5.10 Categoría B, excepciones léxicas de §5.11): la retirada NO exige automatización total; exige **protocolo explícito** documentado de validación manual y escalada por §0.1.
+
+Sin esta distinción, la retirada del apéndice quedaba autoimpuesta como cierre imposible o artificial (algunas reglas son puramente editoriales por naturaleza).
+
+**Lo que NO cambia.** §A.2 (clave `_migracion_rediseno`) y §A.5 (claves `_fixture_*`) intactas. Sin cambios en `reglas-operativas.md`, scripts ni JSONs. Validador U0-U5 → 0/0/0.
+
+---
+
+## [v10.149a — 2026-05-17] — Doc: corrección de §5.11 (unificación condicionada a 2+ flexiones atestadas)
+
+Ajuste documental tras dictamen del revisor sobre v10.149. La redacción anterior de §5.11 decía *"se unifican siempre en una sola entrada con lema canónico singular"*, lo que entraba en contradicción con:
+
+1. **Precedente vivo (v10.135b):** la unificación se aplicó solo cuando había ≥2 flexiones atestadas del mismo lema en la unidad. Formas únicas sin par se mantienen verbatim. Mi *"siempre"* endurecía la regla.
+2. **Riesgo de inventar forma base:** la notación `argentino/-a` reescrita automáticamente a `argentino` puede crear una forma masculina no atestada literalmente en la unidad si solo aparece `argentina`. Eso viola §5.10 (aparición material).
+3. **Contradicción interna:** el propio §5.11 tenía una excepción *"Lemas que en el libro aparecen en una sola forma sin par se mantienen verbatim"* que chocaba con el *"siempre"* del enunciado principal.
+
+**Reformulación aplicada:**
+
+- **Condición de unificación:** cuando 2 o más flexiones del mismo lema están atestadas (cumplen §5.10) en la unidad, se unifican en lema singular (masc/sing para adj/gentilicios; sing conservando género en sustantivos).
+- **Una sola forma atestada:** se mantiene verbatim. No se infiere ni se genera la otra forma. `argentina` sola se queda `argentina`; `colombianas` se queda `colombianas`.
+- **Notación `lema/-a` retroactiva:** se reescribe al masculino singular solo si esa forma está atestada; si solo está atestada una flexiva, se pasa el item a esa forma verbatim.
+- **Relación con §5.10 explícita:** §5.11 nunca crea formas inferidas — opera sobre apariciones materiales.
+
+**Cambios materiales:**
+- `reglas-operativas.md` §5.11 reescrita.
+- `schema-inventario.md` §9.1 cross-ref reformulado.
+- `CHANGELOG.md` (esta entrada) + `REVIEW.md` bitácora.
+
+**Sin cambios en JSONs.** Validador U0-U5 → 0/0/0.
+
+---
+
+## [v10.149 — 2026-05-17] — Fase 1: contrato — §5.10 (aparición material) + §5.11 (unificación flexiones)
+
+Cierre del contrato v10.145 mediante dos reglas operativas nuevas en `reglas-operativas.md`, tras auditoría de 459 anomalías generadas por el matcher en U0-U5 y dictamen del revisor sobre alcance.
+
+**§5.10 — Aparición material como condición de codificación.** Distinción A/B para discriminar cuándo se exige aparición literal de un ítem:
+
+- **Categoría A (superficie textual):** lemas léxicos, formas verbales, realizaciones gramaticales superficiales (`qué`, `tú`, `un/una`). Exige aparición literal en el contenido didáctico definido en §5.2.
+- **Categoría B (etiqueta / paradigma editorial):** claves de categoría del registry, fórmulas pedagógicas condensadas (`A mí me gusta(n)`, `cuánto/-a/-os/-as`), notación técnica de pron/orto. No exige literalidad; exige justificación pedagógica explícita.
+- Criterio discriminante para gramática: ¿el alumno lo lee, escribe, dice o ve literal en el material (incluido el cuadro)? → A. ¿Es descripción editorial del fenómeno? → B.
+- Efecto operativo: ítem A sin aparición → se retira la fuente; si ninguna verifica → se retira el ítem.
+- **Prohibido** codificar A por inferencia, anticipación, elisión o paradigma completado. Prohibido usar `instruccion_original` ni metalengua excluida por §5.2 como fuente.
+
+**§5.11 — Unificación de flexiones en `vocabulario_consolidado`.** Canoniza retroactivamente la regla aplicada en v10.135b a U4: las flexiones (masc/fem, sing/plural) de un mismo lema se unifican siempre en una sola entrada con **lema canónico singular** — masculino singular en adjetivos y gentilicios (`argentino`, `francés`, `primero`), singular conservando género léxico en sustantivos (`manzana`, `huevo`, `tomate`). Excepciones: compuestos multi-token, lemas sin par atestado, nombres propios. Aplicación retroactiva pendiente a U0-U5.
+
+**Cambio menor en `schema-inventario.md` §9.1:** cross-reference añadido a §5.10 y §5.11 para que el shape del vocabulario consolidado apunte a las reglas operativas.
+
+**Origen y dictamen del revisor.** La redacción final se cerró en cuatro iteraciones que ajustaron: (1) compatibilidad con §5.1.3 (`descripcion` obligatoria solo en principal); (2) scope ampliado de "consolidados" a "evidencia que justifica las apariciones en listas tipadas y consolidados"; (3) discriminador de gramática ampliado a "lee, escribe, dice o ve literal"; (4) referencia a §5.2 en lugar de inventario duplicado de campos. Decisión final del revisor: aprobada.
+
+**Lo que NO entra en este commit (documental):**
+
+- Limpieza retroactiva de los 459 anomalías en U0-U5 (queda como Lote 3D-cleanup, separado, con script y revisión por unidad).
+- Aplicación retroactiva de §5.11 a U0-U3 y U5 (queda como Lote 3D-cleanup, U4 ya hecho en v10.135b).
+- Cambios materiales en JSONs.
+
+Validador U0-U5 → 0/0/0 (sin cambios en datos).
+
+---
+
+## [v10.148 — 2026-05-17] — Fase 1: Lote 3D — matcher mejorado: re-migración vocab U2/U3 + gramática modo A
+
+Extensión del matcher (`expand_needle`) para resolver dos limitaciones diagnosticadas en lotes anteriores:
+
+1. **Barra-sufijo de flexión:** `argentino/-a` → `{argentino, argentina}`, `francés/-esa` → `{francés, francesa}`, `alemán/-ana` → `{alemán, alemana}`, `español/-a` → `{español, española}`. Cubre los patrones documentados en `campos-semanticos-canonicos.json` para adjetivos de nacionalidad, números ordinales y similares.
+2. **Paréntesis sufijales:** `A mí me gusta(n)` → `{A mí me gusta, A mí me gustan}`. Cubre paradigmas metalingüísticos en `gramatica_consolidada` y formas con plural opcional.
+
+`match_substring` ahora expande el needle a un conjunto de variantes y devuelve `True` si **alguna** matchea. Sin cambios en la regex de fuentes ni en la política de escritura.
+
+**Impacto del matcher mejorado en anomalías (dry-run, U0-U5 vocab):**
+
+| Unidad | Anomalías antes | Anomalías ahora | Reducción |
+|---|---|---|---|
+| U2 | 131 | 47 | –84 |
+| U3 | 50 | 31 | –19 |
+| Otras | sin cambio | sin cambio | 0 |
+| **Total** | 246 | 143 | **–103** |
+
+**Lote 3D1 — vocab re-migración U2 y U3 (dictamen del revisor):**
+
+| Unidad | A nuevos | B nuevos |
+|---|---|---|
+| U2 | 17 | 15 |
+| U3 | 1 | 4 |
+| **Total** | **18** | **19** |
+
+Aplicados con `--include-dual`. Política idéntica a Lote 3A vocab. U0, U1, U4, U5 vocab no se tocan (no hay descubrimientos nuevos en ellas).
+
+**Lote 3D2 — gramática modo A (dictamen del revisor: solo modo A, no B):**
+
+| Unidad | A aplicados |
+|---|---|
+| U1 | 2 |
+| U2 | 3 |
+| U3 | 9 |
+| U4 | 0 (saneamiento cat.fuentes) |
+| U5 | 0 |
+| **Total** | **14** |
+
+Primera migración de `gramatica_consolidada`. Modo B (68 candidatos dual detectados) **no autorizado** por dictamen del revisor — volumen y complejidad del paradigma metalingüístico requieren revisión adicional antes de aplicar dual retroactivo.
+
+**Saneamiento colateral en U4 gramática:** al ampliar `apply_changes` a gramática, el recompute de `cat.fuentes` detectó una inconsistencia preexistente (`p46-act4@R` presente en un item pero faltaba del agregado de categoría). Saneada en el mismo lote sin pérdida de información.
+
+**Gate ampliado:** `APPLY_ALLOWED = {vocab, verbos, gramatica}`. `--include-dual` sigue restringido a `vocab` y `verbos`. Pronunciación-ortografía sigue fuera de apply (apertura desigual, dictamen del revisor).
+
+**Dictámenes del revisor explícitamente registrados:**
+
+- Gramática modo B (68 candidatos dual): **no autorizado** en este lote por volumen y por las 252 anomalías restantes (paradigmas con barras múltiples y paréntesis combinados no cubiertos por la expansión actual).
+- Pronunciación: **no autorizada** como lote. Desbloqueo es muy parcial (10 A solo en U3 + 3 B). Considerada "caso local prometedor" pero no migrable como dimensión.
+
+**Resultados (validador 0/0/0 en todas):**
+
+| Lote | Unidades tocadas | Reemplazos |
+|---|---|---|
+| 3D1 vocab | U2, U3 | 18 A + 19 B |
+| 3D2 gram | U1, U2, U3 | 14 A |
+| **Total v10.148** | | **51 nuevas fuentes @R** |
+
+**Tareas que siguen abiertas como deuda no resuelta:**
+
+- 143 anomalías de vocab post-matcher (mayoritariamente deuda heredada del extractor — palabras codificadas por campo semántico sin aparición material).
+- 252 anomalías de gramática (paradigmas complejos no cubiertos por la expansión actual).
+- 39 anomalías de pronunciación (notación IPA, no abordable con matcher literal).
+- 25 anomalías de verbos heredadas de v10.146.
+- Gramática modo B (68 candidatos).
+- Pronunciación-ortografía completa.
+
+---
+
+## [v10.147 — 2026-05-16] — Fase 1: Lote 3B2 — verbos modo B (dual-tracking retroactivo) en U1-U5
+
+Aplicación del modo B (dual-tracking) al bloque `tiempos_y_verbos_consolidado`. Cierra Lote 3B para verbos: tras 3B1 (modo A, 21 reemplazos) y revisión del estado por el autor, se procede con dual retroactivo en las mismas 5 unidades.
+
+**Script:** se relaja el gate de `--include-dual` para incluir `--block verbos` (antes solo `vocab`). Sin cambios en la lógica de aplicación: política idéntica a Lote 3A vocab — para cada fuente `pNN-actMM` cuya palabra (matcher por `formas_trabajadas`) aparece en input Y en `respuestas[]`, se añade `pNN-actMM@R` alongside del plain.
+
+**Resultados (validador 0/0/0):**
+
+| Unidad | Duales aplicados |
+|---|---|
+| U0 | 0 (sin verbos) |
+| U1 | 13 |
+| U2 | 20 |
+| U3 | 39 |
+| U4 | 16 |
+| U5 | 15 |
+| **Total** | **103** |
+
+**Orden de aplicación** (mismo patrón que 3B1): U1, U2, U5 primero (anomalías bajas); U3, U4 después (anomalías concentradas).
+
+**Las 25 anomalías de verbos NO se resuelven en este lote.** Heredadas de Lote 3B1: verbos consolidados sobre actividades donde ninguna `forma_trabajada` listada aparece literal en el input ni en `respuestas[]` (patrón análogo a las 131 anomalías de vocab U2). Causa probable: deuda preexistente del extractor (consolidación por campo semántico sin aparición material) o `formas_trabajadas` incompleto. **Permanecen como deuda separada, no como parte cerrada del matcher**. La frase "Lote 3B cerrado completo para verbos" se refiere exclusivamente al apply de modos A y B sobre las fuentes detectables; no implica resolución de las 25 anomalías.
+
+**Estado consolidado del contrato v10.145 tras 3B2 (verbos completo modos A+B; gramática y pron congelados):**
+
+| Dimensión | Modo A | Modo B | Pendiente |
+|---|---|---|---|
+| vocabulario | ✅ 150 | ✅ 332 | — |
+| verbos | ✅ 21 | ✅ 103 | 25 anomalías documentadas (deuda) |
+| gramática | ⏸ | ⏸ | 🔒 Lote 3C — matcher por bloque sin definir |
+| pron-orto | ⏸ | ⏸ | 🔒 Lote 3C — matcher por bloque sin definir |
+
+---
+
+## [v10.146 — 2026-05-16] — Fase 1: Lote 3B1 — verbos modo A (respuesta-only) en U1-U5
+
+Aplicación del modo A (respuesta-only → `@R`) al bloque `tiempos_y_verbos_consolidado` en U0-U5. Primera migración fuera de vocabulario tras validar el matcher por bloque (verbos: `formas_trabajadas` en lugar de lema infinitivo — hallazgo del autor que invalidó el 3B-mini previo).
+
+**Script extendido:**
+
+- `iter_items` para `tiempos_y_verbos_consolidado` ahora devuelve `formas_trabajadas` (lista) como `match_target`, no el lema.
+- `classify_fuente` admite `target` como string (vocab/gramatica/pron) o lista (verbos). Para listas: `in_input/in_resp = True` si **alguna** forma matchea.
+- Gate de `--apply` ampliado: `APPLY_ALLOWED = {vocab, verbos}`. Gramática y pron siguen congeladas.
+- Modo B (`--include-dual`) prohibido explícitamente para verbos en este lote (dictamen del revisor: 103 duales son demasiado volumen para el primer apply de verbos; modo B queda fuera).
+
+**Resultados (validador 0/0/0 en todas):**
+
+| Unidad | Items | Fuentes | Reemplazos A | Anomalías documentadas |
+|---|---|---|---|---|
+| U0 | 0 | 0 | 0 | 0 (unidad atípica sin verbos) |
+| U1 | 3 | 49 | 2 | 1 |
+| U2 | 9 | 66 | 3 | 1 |
+| U3 | 16 | 119 | 13 | 8 |
+| U4 | 8 | 67 | 2 | 14 |
+| U5 | 8 | 36 | 1 | 1 |
+| **Total** | 44 | 337 | **21** | **25** |
+
+**Orden de aplicación (dictamen del revisor):** U1, U2, U5 (anomalías bajas) primero; U3, U4 (anomalías concentradas) después. Validador 0/0/0 tras cada apply.
+
+**Anomalías (25, no bloqueantes):** verbos consolidados sobre actividades donde ninguna `forma_trabajada` listada aparece literal. Patrón análogo a las anomalías de vocab U2 (deuda preexistente del extractor: consolidación por campo semántico sin aparición material; o `formas_trabajadas` incompleto). Tasa 25/337 = 7 % (mucho menor que vocab U2 = 41 %). Quedan como deuda separada.
+
+**Lote 3B2 pendiente (verbos modo B, dual-tracking retroactivo):** 103 candidatos B detectados en dry-run; aplicación diferida por dictamen del revisor hasta evaluar el resultado visual del modo A.
+
+**Sin tocar:** `gramatica_consolidada` y `pronunciacion_ortografia_consolidada` (Lote 3C, congelado, sin matcher por bloque definido). Cuadros (`cuadro@*`). Items con dual-tracking pre-existente. Vocabulario (cerrado en v10.145a-d).
+
+---
+
+## [v10.145d — 2026-05-16] — Doc: precisión semántica de cifras del Lote 3A
+
+Corrección documental tras auditoría del revisor. La cifra "332 duales" usada en v10.145b y v10.145c era ambigua: se refiere a **duales añadidos por Lote 3A**, no a duales totales presentes en HEAD.
+
+**Conteo verificado (HEAD post-v10.145c, solo `vocabulario_consolidado` U0-U5):**
+
+| Tipo de fuente | Conteo | Origen |
+|---|---|---|
+| Duales (pares `plain` + `plain@R` en la misma `item.fuentes`) | **332** | Añadidos por Lote 3A (`--include-dual`) en v10.145b/c |
+| @R sin plain hermano (respuesta-only puros) | **169** | 150 de Lote 2 (v10.145a) + ~19 preexistentes (v10.142d en U4, otros) |
+| **Total @R en vocabulario U0-U5** | **501** | Estado post-Lote 3A |
+
+Cifras pre-Lote 3A (HEAD~1, antes de v10.145b): 0 pares dual + 169 solo-@R = 169 @R totales. Lote 3A añadió 332 nuevos pares de dual-tracking; el delta es exactamente 332 fuentes nuevas con `@R` alongside.
+
+**Formulación correcta a partir de ahora:**
+- "Lote 3A añadió 332 duales (pares plain + @R) en vocabulario U0-U5."
+- "Estado actual de @R en vocabulario U0-U5: 501 fuentes (332 duales pares + 169 respuesta-only puros)."
+
+Sin cambios materiales en JSONs ni scripts. Validador U0-U5 → 0/0/0.
+
+---
+
+## [v10.145c — 2026-05-16] — Fase 1: Lote 3A — cierre de U2 vocabulario (42 duales aplicados)
+
+Cierre del Lote 3A en `vocabulario_consolidado` de U2, dejado fuera de v10.145b por sus 131 anomalías de dry-run. Aplicación de los 42 duales calculados; las 131 anomalías se documentan como deuda separada y no se resuelven en este lote.
+
+**Cambios en `unidades/U2/U2-nc1-inventario.json`:**
+
+- **42 duales aplicados**: para cada fuente `pNN-actMM` cuya palabra aparecía en input Y `respuestas[]`, se añade `pNN-actMM@R` alongside del plain. Política idéntica al resto de Lote 3A.
+- `cat.fuentes` agregadas recomputadas como unión deduplicada.
+- Sin tocar items con dual-tracking pre-existente. Sin tocar fuentes `cuadro@*`.
+- Validador U2 → 0/0/0.
+
+**Estado actualizado de Lote 3A (suma con v10.145b):**
+
+| Unidad | Duales commiteados | Validador |
+|---|---|---|
+| U0 | 0 | 0/0/0 |
+| U1 | 48 | 0/0/0 |
+| U2 | 42 | 0/0/0 |
+| U3 | 42 | 0/0/0 |
+| U4 | 125 | 0/0/0 |
+| U5 | 75 | 0/0/0 |
+| **Total Lote 3A** | **332** | ✓ |
+
+**Las 131 anomalías de U2 NO se resuelven en este lote.** Se dividen en dos categorías distintas:
+
+1. **Limitación actual del matcher (~70-90 casos):** lemas con barra de flexión (`argentino/-a`, `francés/-esa`, `primero/-a`, etc.) que el matcher literal normalizado no expande a sus formas (`argentino` + `argentina`). La palabra **sí está** en la actividad (verificado material en p22-act2: `argentina` aparece como input+respuesta, `argentino` solo en respuesta), pero el script busca literal `argentino/-a` con la barra y no la encuentra. **No es benigno**, es deuda real del matcher.
+
+2. **Deuda heredada del extractor original (~30-50 casos):** fuentes donde el lema realmente no aparece en la actividad. Ejemplo: `lunes`, `martes`, `miércoles` codificados en p23-act12 sin aparición material. El agente extractor original codificó por campo semántico sin verificar aparición literal. **Es deuda preexistente del JSON**, no introducida por ninguna migración del contrato v10.145.
+
+3. **Residual:** unos pocos casos de nombres propios con matcher imperfecto. No bloqueante.
+
+**Implicación arquitectónica:** los 42 duales son sólidos porque se calcularon sobre el subconjunto de palabras que el matcher detecta correctamente. La mejora del matcher (expansión de `/-a`, `/-esa`, `(n)`) podría aumentar modestamente el universo de duales en el futuro pero **no invalida los 42 ya aplicados**. La mejora del matcher se trata como tarea separada — no entra en v10.145c por dictamen del revisor (no mezclar cierre de datos con rediseño de script).
+
+**Tareas futuras documentadas (no commiteadas):**
+
+- Mejora del matcher para expandir lemas con flexión barra-sufijo (`argentino/-a` → `{argentino, argentina}`). Probable utilidad cuando se aborde gramática (mismo patrón: `A mí me gusta(n)` con paréntesis).
+- Auditoría de la deuda heredada del extractor: ¿se canoniza por aparición material o se permite codificar por campo semántico? Decisión pendiente.
+
+---
+
+## [v10.145b — 2026-05-16] — Fase 1: Lote 3A — dual-tracking retroactivo en `vocabulario_consolidado` (U1, U3, U4, U5)
+
+Aplicación del modo B (dual-tracking) al bloque `vocabulario_consolidado` en las unidades con duales detectados. Script extendido con flag `--include-dual` (solo para `--block vocab` en esta fase). Política: para cada fuente `pNN-actMM` cuya palabra aparece **tanto en input como en `respuestas[]`** de la actividad, se añade `pNN-actMM@R` alongside del plain (no reemplaza).
+
+**Resultados (validador 0/0/0 en todas las unidades incluidas):**
+
+| Unidad | Duales aplicados | Notas |
+|---|---|---|
+| U0 | 0 | Sin duales — todo input-only o ya migrado en Lote 2. |
+| U1 | 48 | |
+| U2 | — | **Excluida del commit.** Dry-run mostró 131 anomalías (volumen elevado). Por cautela del revisor, U2 se cierra en un paso aparte tras inspeccionar la causa de las anomalías. Los duales calculados (42) NO se commitean en este lote. |
+| U3 | 42 | |
+| U4 | 125 | Gate funcional (volumen alto confirmado). |
+| U5 | 75 | |
+| **Total commiteado** | **290** | (U2 pendiente: 42) |
+
+**Lote 3B (estudio reabierto) — pendiente:** matcher por bloque para `tiempos_y_verbos_consolidado` (usar `formas_trabajadas` en lugar del lema). U4+U5 dry-run para conteo. Detectado tras observación del autor que invalidó el 3B-mini previo (mi script buscaba el infinitivo en texto, debe buscar las formas conjugadas).
+
+**Fuera de scope explícitamente:** gramática y pronunciación-ortografía. Quedan congeladas hasta definir política de matching propia. Gramática prohíbe derivación agresiva de fragmentos de paradigmas metalingüísticos (`A mí me gusta(n)` no se expande a `me gusta` automáticamente); si no hay expansión limpia → anomalía explícita, no candidato.
+
+**Sin cambios en contrato:** la semántica de `@R` (marcador de localización) sigue exactamente la de v10.145. Lote 3A solo aplica esa misma semántica a un caso adicional (palabra en input Y respuestas) que se había diferido.
+
+**Anomalías U2 elevadas (131).** Las inspecciono en una iteración futura — son posibles flexiones / signos / compuestos que el matcher literal normalizado no captura. No bloquean, son deuda documentada.
+
+---
+
+## [v10.145a — 2026-05-16] — Fase 1: Lote 2 — migración de datos U0-U5 (vocabulario, modo A)
+
+Aplicación del nuevo contrato v10.145 a `vocabulario_consolidado` en U0-U5. **Modo A:** solo respuesta-only (plain → `@R`). Dual-tracking diferido a Lote 3.
+
+**Herramienta:** `scripts/migrate_at_r_v10145.py` (nuevo). CLI con selector por unidad y bloque, dry-run por defecto, `--apply` solo permitido para `--block vocab` en esta fase. Backup automático (`.bak.v10.145`). Validador integrado post-apply. Reformateo canónico vía `scripts/format_inventario.py`. Recomputa `cat.fuentes` agregadas tras mutar items (fix bloqueante detectado por revisor antes del primer apply).
+
+**Resultados:**
+
+| Unidad | Reemplazos | Candidatos B (dual, diferidos) | Validador |
+|---|---|---|---|
+| U0 | 11 | 0 | 0/0/0 |
+| U1 | 24 | — | 0/0/0 |
+| U2 | 12 | — | 0/0/0 |
+| U3 | 25 | — | 0/0/0 |
+| U4 | 40 | 125 | 0/0/0 |
+| U5 | 38 | — | 0/0/0 |
+| **Total** | **150** | — | ✓ |
+
+**Verificación material del caso "cocina" U5** que motivó el cambio: las 3 fuentes que aparecían solo en `respuestas[]` y estaban en gris (`p52-act2`, `p59-act4`, `p61-act3`, todas en tipos no productivos) pasan a `@R`. Las otras 5 (input only o dual) quedan plain.
+
+**Dual-tracking pre-existente preservado intacto** en U4 (`p49-act9@R` con 12 items añadidos en v10.142d; `p44-act3@R` para `gustar` desde v10.141 area), U2 (4 entradas), U3 (más entradas) — el script excluye automáticamente items con plain + @R ya presente.
+
+**No-tocados confirmados:** fuentes `cuadro@pNN[#K]` (1 sin tocar), bloques `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada` (Lote 3).
+
+**Lote 3 pendiente:** (a) habilitar `--apply` para verbos/gramática/pron tras smoke en dry-run, (b) decisión sobre dual-tracking retroactivo en cualquier tipo (125 candidatos B-only solo en vocabulario U4).
+
+---
+
+## [v10.145 — 2026-05-16] — Fase 1: cambio de contrato — `@R` redefinido como marcador de localización (lote 1: contrato)
+
+Cambio de contrato breaking en su **semántica** (no en su estructura) tras diagnóstico del autor sobre el caso material "cocina" en U5 (8 fuentes, 3 con la palabra solo en respuestas y tipo no-productivo) y dictamen del revisor.
+
+**Causa raíz:** el contrato anterior acoplaba el sufijo `@R` al `tipo` de actividad (solo 5 productivos podían llevarlo). Esto generaba **falsos negativos sistemáticos** en actividades no-productivas con la palabra revelada únicamente en `respuestas[]` (completa_huecos con audio, escucha_y_responde, relaciona con lema en la columna-respuesta, etc.). El dashboard ya usaba semántica de localización ("Fuente ligada a respuesta") desde v10.137, mientras schema/reglas/validador seguían usando la dimensión pedagógica. Los dos lados del contrato estaban desalineados desde meses atrás.
+
+**Nueva definición canónica de `@R`:**
+
+> **Marcador de localización**: la palabra aparece **únicamente en el campo `respuestas[]`** de la actividad citada. Aplica a **cualquier `tipo` de actividad**, productivo o no. La dimensión pedagógica vive en `actividad.tipo` y se cruza en runtime — no se codifica en el sufijo. Dual-tracking se preserva intacto y se generaliza a cualquier tipo.
+
+**Lote 1 — cambio de contrato atómico (3 archivos núcleo + 2 docs meta):**
+
+- `fases/1-extraccion-inventario/schema-inventario.md` §9.5 — redefinición de `@R` como localización. Entrada del Apéndice transitorio actualizada coherentemente.
+- `fases/1-extraccion-inventario/reglas-operativas.md` §6.5 — reescritura completa. "Chequeo previo OBLIGATORIO contra los 5 productivos" retirado. Dual-tracking generalizado. Caso prototípico de mediación reformulado como ejemplo del patrón general, no como excepción a una regla por tipo. Ejemplos actualizados con el caso material `cocina` U5.
+- `scripts/validar_inventario.py` — constante `TIPOS_PRODUCTIVOS_AR` borrada (era muerta tras retirar gate, sin uso fuera de él). Chequeo `@R ⊂ productivos` (líneas 535-540 anteriores) retirado y sustituido por comentario que documenta el cambio. `FUENTE_REGEX` ya admite `@R` libremente y no se toca.
+- `CHANGELOG.md` + `REVIEW.md` — esta entrada.
+
+**Verificación del lote 1:** validador U0-U5 → **0/0/0** sin tocar JSONs. El relajamiento del gate no introduce errores: los datos actuales hoy no tienen `@R` en tipos no-productivos (esos casos están como falsos negativos en gris, no como errores).
+
+**Lo que NO se hace en este lote (queda para Lote 2):**
+
+- Migración de datos U0-U5. Auditoría programática estimó **≥138 casos en `vocabulario_consolidado`** (sin contar verbos/gramática/pron) que pasarán a llevar `@R` tras la migración. Mayoritariamente en `completa_huecos`, `responder_preguntas_cerradas`, `escucha_y_responde`, `relaciona`. Se hará por unidad con revisión visual.
+
+**Lo que NO se hace en absoluto:**
+
+- No se introduce `@S` ni ningún segundo sufijo (Opción B descartada).
+- No se elimina `@R` (Opción C descartada).
+- No se mezcla `audio.transcripcion` con `respuestas[]` (sigue siendo input por §6.6).
+- Las fuentes de cuadro siguen sin admitir `@R` (los cuadros no tienen `respuestas`).
+- El dashboard no se toca en este lote (su semántica ya estaba alineada con la nueva definición desde v10.137).
+
+**Decisión arquitectónica registrada.** El acoplamiento de `@R` a `tipo` era una sobrecarga del sufijo: mezclaba dos dimensiones ortogonales (dónde vive la palabra dentro de la actividad vs qué naturaleza pedagógica tiene la actividad). El contrato v10.145 separa las dos: localización en el sufijo, productividad en `tipo`. La pregunta "¿es una palabra producida por el alumno?" se responde cruzando los dos campos en runtime; no necesita codificación adicional en datos.
+
+---
+
+## [v10.144 — 2026-05-16] — Fase 1: U5 — consolidación `Adverbios de posición` → `Marcadores de lugar` + §5.2 generalizada a las 4 dimensiones + gate de invocación
+
+Cierre de un bug estructural detectado por el autor durante revisión de U5: el bloque léxico `Marcadores de lugar: a la izquierda, ..., cerca` aparecía como "recurrente desde U2", pero al inspeccionar U2 las únicas apariciones reales eran `izquierda/derecha` como claves técnicas de `columnas_relaciona` y `delante` en una **instrucción de aula** (*"Representa el diálogo delante de la clase"*). Causa raíz: la regla §5.2 de exclusión por metalengua de instrucción solo cubría verbos en su redacción anterior, por lo que `delante` se filtró como ref léxica en U2 y arrastró un falso "recurrente" a U5. Adicionalmente coexistía en U5 un bloque `Adverbios de posición` con un único item placeholder `"Posición"` (artefacto de la reclasificación v10.141), cubriendo conceptualmente lo mismo.
+
+**Cambios materiales en `unidades/U5/U5-nc1-inventario.json`:**
+
+- `Adverbios de posición` retirado de `vocabulario_consolidado.principal` (item placeholder vacío sin valor léxico).
+- `Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca` reclasificado de **recurrente → principal** en U5, con items reales (`al lado`, `debajo`, `delante`, `detrás`, `encima`) y descripción corregida: primera aparición real en NC1, no recurrente desde U2.
+- **9 refs** en `actividad.vocabulario` / `cuadro.vocabulario` renombradas (`Adverbios de posición` → `Marcadores de lugar: ...`).
+- Descripción del bloque gramatical paralelo `Adverbios y locuciones de lugar` (en `gramatica_consolidada.principal`) actualizada para apuntar al nuevo canónico léxico.
+- Nueva entrada **P17** en `_decisiones_ia` documentando la consolidación.
+- Validador U5 → 0/0/0.
+
+**Decisión del autor:** el canónico `Adverbios de posición` en el registry léxico (`campos-semanticos-canonicos.json`, línea 636, creado en v10.141) **NO se retira** en esta versión — queda para revisión separada.
+
+**Cambios estructurales — generalización de §5.2:**
+
+`reglas-operativas.md` §5.2 (regla de exclusión por metalengua de instrucción) **generalizada de "solo verbos" a las 4 dimensiones** (léxico, verbos, gramática, pron/orto). Reescrita con:
+
+- Definición transversal: las palabras que aparecen únicamente en metalengua **NO se codifican** en las 4 listas tipadas, **NO propagan apariciones** en los 4 consolidados ni en los 4 registries.
+- Tabla explícita "Qué cuenta como metalengua (excluida)" vs "Qué cuenta como contenido didáctico (sí codifica)", cubriendo:
+  - `actividad.instruccion_original` (metalengua).
+  - `cuadro.titulo` cuando es etiqueta editorial metalingüística (*"Observa"*, *"Para aprender"*, *"Recuerda"*, *"¡Atención!"*, *"Fíjate"*) — metalengua.
+  - Cuerpo de cuadros, `datos.*`, `dialogo`, `texto`, `respuestas`, `audio.transcripcion`, `items_libro`, `muestra_de_lengua`, opciones — contenido didáctico.
+- Casos ambiguos a escalar §0.1 ampliados con el caso material de `delante`.
+
+**Casebook (`convenciones-y-casos.md` §4.1):** caso "delante en U2 codificado como léxico desde una instrucción de aula" añadido como error detectado y corregido, con cruce a la generalización de §5.2.
+
+**Gate de invocación — documentación de fase 1 siempre obligatoria:**
+
+- `prompt.md` § "Lectura mínima obligatoria": gate de arranque explícito — el ejecutor debe **declarar en chat** haber leído `schema-inventario.md` + `reglas-operativas.md` + `convenciones-y-casos.md` antes de tocar el JSON; si no, **abortar**. Obligación recíproca del invocador: citar literalmente `fases/1-extraccion-inventario/prompt.md` en la instrucción (no basta con describir la tarea).
+- `CLAUDE.md` (fase 1): nueva regla crítica 6 "Documentación de fase 1 es siempre obligatoria" con la razón del bug U5 v10.143/v10.144. Renumeración: la antigua regla 6 ("Canon canónico literal") pasa a regla 7.
+
+**Sin cambios en registries.** Sin cambios en U0-U4. Validador U5 → 0/0/0.
+
+---
+
+## [v10.143 — 2026-05-16] — Fase 1: U5 — corrección sistémica de id de actividades + auditoría §6.5
+
+Aplicación a U5 del mismo saneamiento que cerró U4 en v10.142b/c/d.
+
+**Diferencia clave con U4:** en U4 el `id` usaba índice local pero las `fuentes` ya estaban con `numero` (por eso el v10.142 original rompió fuentes y v10.142b las revirtió). En U5, **tanto `id` como `fuentes` usan índice local** sin padding — la propagación a fuentes SÍ es necesaria y correcta.
+
+**Cambios en `unidades/U5/U5-nc1-inventario.json`:**
+
+- **46 actividades** renombradas: `id = U5-p<pagina>-act<numero>` (numero impreso en el libro, sin padding). 22 cambiaban de valor.
+- **Fuentes propagadas** en los 4 bloques consolidados (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`): cada `pNN-actMM` (con MM = índice local) → `pNN-act<numero>`. Sufijo `@R` preservado donde aplicaba.
+- `secciones.X.actividades_ids` y demás refs internas propagadas en el mismo paso (walker recursivo sobre todo el JSON).
+- 0 duplicados en el nuevo namespace de ids.
+
+**Auditoría §6.5 dual (de más + de menos):**
+
+- **De más** (`@R` en tipos no productivos o cuadros): **0 casos**. Los 19 `@R` existentes están todos en los 5 tipos productivos canónicos.
+- **De menos** (palabra en respuestas únicamente, en actividad productiva, sin `@R`): **0 candidatos**. U5 tiene 13 actividades productivas; 10 sin `respuestas[]`, 3 con `respuestas[]` (`p55-act6`, `p56-act4`, `p58-act2`) sin léxico exclusivo del solucionario. No hay caso prototípico análogo a `U4-p49-act9` (mediación/búsqueda de información con input escueto).
+
+**Sin cambios en registries.** Validador U5 → 0/0/0.
+
+**Deuda restante:** U6-U9 con shape legacy pendientes.
+
+---
+
+## [v10.142d — 2026-05-15] — Fase 1: U4 — @R faltantes en `p49-act9` añadidos + §6.5 reforzada
+
+Cierre del audit §6.5 sobre U4 tras dos hallazgos del revisor: (a) el diagnóstico previo mezclaba un caso real con un falso positivo (`p44-act3` ya tenía dual-tracking correcto `pNN-actMM` + `pNN-actMM@R`); (b) el recuento exacto debía distinguir entradas consolidadas vs lemas únicos.
+
+**Estado real del bug en U4 (corregido):**
+
+- **1 actividad** afectada: `U4-p49-act9` (`interaccion_oral`, subtipo `busqueda_informacion_y_mediacion`).
+- **12 entradas consolidadas** con `@R` faltante (11 lemas únicos, deduplicando `leche` que aparece en 2 bloques).
+- Causa: el solucionario de la actividad ("Posibles respuestas:") contiene léxico que NO está en el input (instrucción ni datos). El agente original no marcó `@R` por intuición de "mediación" no es producción.
+
+**Fix aplicado en `unidades/U4/U4-nc1-inventario.json`:**
+
+- 12 fuentes `p49-act9` → `p49-act9@R` en:
+  - `vocabulario_consolidado.principal.Alimentos` (10): galletas, pasta, leche, fruta, verdura, bocadillo, arroz, cereales, tostadas, cacao.
+  - `vocabulario_consolidado.principal.Comidas preparadas` (1): ensalada.
+  - `vocabulario_consolidado.recurrente.Bebida` (1): leche.
+
+**Refuerzo de la regla §6.5 en `reglas-operativas.md`** para prevenir el mismo bug en futuras extracciones (U5-U9 cuando se procesen). Tres aclaraciones nuevas:
+
+1. **Dual-tracking explícito**: si una palabra aparece **tanto en input como en respuesta con forma única**, la fuente se duplica (`pNN-actMM` + `pNN-actMM@R`). El dual-tracking refleja que la actividad aporta material por dos vías distintas. Esto codifica formalmente el patrón que el inventario ya seguía implícitamente en p44-act3 (lema `gustar`).
+2. **Solucionario "Posibles respuestas:" cuenta como respuesta**: el marcador editorial se descarta (per convenciones §1.5) pero el contenido subsiguiente se transcribe a `respuestas[]` y cuenta para §6.5. La existencia del modelo en el solucionario no convierte al tipo en "no-productivo" — el criterio sigue siendo el `tipo` declarado.
+3. **Caso prototípico que el agente puede pasar por alto**: actividades `interaccion_oral` o `tarea_final` con subtipo de **mediación** o **búsqueda de información** suelen tener input escueto (solo enunciado y temas abstractos) y solucionario rico. Todo lo único del solucionario es producción. Se cita explícitamente el caso material `U4-p49-act9` como ejemplo prototípico.
+
+**Validador desde main:** U0/U1/U2/U3/U4 → 0/0/0 · U5 → 0/0/0 (sin tocar; aplicar mismo audit en siguiente lote).
+
+**Próximo lote (U5):** rename de `id` por alineación con `numero` del libro + audit §6.5 (a) `@R` de más + (b) `@R` de menos (caso `interaccion_oral` de mediación).
+
+## [v10.142c — 2026-05-15] — Fase 1: U4 — saneamiento §6.5 que v10.138 no detectó (bug de lookup)
+
+Tras v10.142b, una revisión del autor identificó que algunas palabras (ej. "cola" en p47-act5) seguían marcadas con `@R` cuando la actividad citada es de tipo `relaciona` (no productivo) — violación de §6.5.
+
+**Causa raíz:** mi script de saneamiento §6.5 en v10.138 tenía el **mismo bug latente** que arrastraba v10.142: asumía que las fuentes citaban id local de la actividad, no el `numero` del libro. Al hacer `re.match(r'^p(\d+)-act(\d+)$', base) → U4-p47-act05` (padded), buscaba una actividad con `id=U4-p47-act05` que SÍ existía en aquel momento (con `numero=9`, tipo `expresion_escrita_libre` — productivo) y por error la consideraba válida. La actividad realmente referenciada por la fuente era otra (`numero=5`, tipo `relaciona`).
+
+Ahora que v10.142b alineó los `id` con el `numero` del libro, el lookup funciona correctamente y el saneamiento puede aplicarse sin ambigüedad.
+
+**Fix aplicado en este lote:**
+
+- 20 `@R` retirados de fuentes en U4 que infringen §6.5 (lookup correcto contra `id == numero`):
+  - 10 en actividades de tipo `relaciona` (p47-act5).
+  - 10 en actividades de tipo `completa_huecos` (p49-act5).
+- 12 `@R` legítimos en actividades productivas (`produccion_escrita_guiada`, `expresion_escrita_libre`, `interaccion_oral`, `expresion_oral_libre`) se mantienen.
+
+**Ejemplo:** "cola" en `vocabulario_consolidado.principal.Alimentos`: fuente `p47-act5@R` → `p47-act5`. La actividad numero 5 (`relaciona` "una lata de cola...") no es tipo productivo, así que `@R` está prohibido.
+
+**Aplicabilidad a otras unidades:**
+
+- U0-U2: el lookup de v10.138 funcionó porque ahí `id` y `numero` siempre coinciden. No requiere acción.
+- U3: única actividad con desajuste tiene `numero=None` (caso atípico, no aplica saneamiento §6.5). No requiere acción.
+- U4: corregido en este lote.
+- U5: probable que tenga el mismo bug latente; se sanea junto al rename de `id` en el siguiente lote.
+
+**Validador desde main:** U0/U1/U2/U3/U4 → 0/0/0 · U5 → 0/0/0 (sin tocar; siguiente lote).
+
+## [v10.142b — 2026-05-15] — Fase 1: U4 — fix del fix (las fuentes ya estaban correctas en v10.142; solo el id requería rename)
+
+Hallazgo del autor: tras v10.142, la palabra "cola" aparecía como fuente `p47-act9@R` cuando debería ser `p47-act5@R` (la actividad numero 5 del libro, donde aparece "una lata de cola" en `palabras_recuadro`).
+
+**Diagnóstico:** v10.142 tenía un error en mi script de propagación. El agente de U4 había usado dos convenciones distintas para los IDs de las actividades:
+
+- **`id`** (campo de la actividad) → convención INCORRECTA: índice local de página con padding (`act01`, `act02`...).
+- **Fuentes** (en los bloques consolidados y en items) → convención CORRECTA: numero del libro (`p47-act5@R` referenciaba la actividad numero=5 del libro).
+
+Mi script de v10.142 asumió que ambos campos seguían la convención incorrecta y propagó las fuentes con un mapping `old_local → new_numero`. Pero las fuentes YA estaban usando `numero` desde el origen; al "propagar", las cambié erróneamente.
+
+**Fix aplicado a U4 en este lote:**
+
+- Restaurado el JSON de U4 desde el commit anterior a v10.142 (`86baebb`).
+- Reaplicado **solo el rename de `id`** de actividades (49 actividades: `U4-pNN-actMM` → `U4-pNN-act<numero>`).
+- **Las fuentes NO se tocan** — ya estaban correctas.
+- `secciones.X.actividades_ids` actualizadas conforme al nuevo `id`.
+
+**Validador desde main:** U0/U1/U2/U3/U4 → 0/0/0 · U5 → 0/0/0 (sin tocar).
+
+**Aprendizaje aplicado a los próximos lotes:** para U5, mi script de rename **solo** modifica `id`, no propaga fuentes. Si la auditoría inicial muestra que las fuentes de U5 también ya usan `numero` del libro (probable), el fix será solo del `id`.
+
+## [v10.142 — 2026-05-15] — Fase 1: U4 — corrección sistémica de `id` de actividades para alinearlo con el `numero` del libro
+
+**Problema detectado por el autor** durante revisión visual de U5 (dashboard mostraba fuente `p53-act2` para la palabra `dormitorio`, pero en el libro la actividad numerada como "2" no existe en la página 53 — la página empieza por la actividad 6).
+
+**Auditoría completa de los 6 inventarios** reveló un bug sistémico introducido en U4 y U5: los agentes de esas unidades adoptaron una convención de `id` distinta de U0-U2, sin propagar el cambio al resto del proyecto.
+
+| Unidad | Total actividades | Desajustes `id` vs `numero` |
+|---|---|---|
+| U0 | 10 | 0 ✓ |
+| U1 | 42 | 0 ✓ |
+| U2 | 52 | 0 ✓ |
+| U3 | 47 | 0 (única act con `numero=None` no es bug) ✓ |
+| **U4** | 49 | **49** (TODAS las actividades con id incorrecto) |
+| **U5** | 46 | **22** |
+
+**Convención correcta** (la de U0-U2): `id = U<n>-p<pagina>-act<numero>` donde `<numero>` es el número de actividad que aparece impreso en el libro. Sin padding. Ej. la actividad numerada "7" en p53 → `id = U5-p53-act7`.
+
+**Convención incorrecta** (la que usaron los agentes de U4/U5): `id = U<n>-p<pagina>-act<índice local en la página>` con padding a 2 dígitos. Ej. la actividad numerada "7" en p53, siendo la 2ª físicamente en la página → `id = U5-p53-act02`. Y las `fuentes` siguen este id local, no el `numero` real.
+
+**Por qué confunde:** cuando el dashboard muestra `p53-act2` como fuente, un revisor que abre el libro busca "actividad 2 en página 53" — y no la encuentra porque el libro etiqueta esa misma actividad como "7".
+
+**Fix aplicado a U4 en este lote:**
+
+- 49 actividades renombradas: `U4-pNN-actMM` (índice local padded) → `U4-pNN-act<numero>` (numero del libro, sin padding).
+  - Páginas con desajuste (la mayoría): p43 (act01-05 → act4-8), p45 (act01-05 → act6-10), p47 (act01-08 → act5-12), p49 (act01-06 → act4-9).
+  - Páginas donde solo cambia el padding (act01 → act1): p42, p44, p46, p48, p50, p51.
+- Todas las `fuentes` de los 4 bloques top-level consolidados y de los items dentro actualizadas al nuevo formato (`pNN-act<numero>` con su `@R` preservado donde aplique).
+- `secciones.X.actividades_ids` actualizadas.
+- Validador U4 → 0/0/0.
+
+**Próximos lotes** (uno por unidad): v10.143 aplicará el mismo fix a U5. Sin cambios en U0-U3 (ya están correctos).
+
+**Sin cambios** en registries, contratos, ni en U0/U1/U2/U3/U5 (esta última se hace en el siguiente lote).
+
+**Validador desde main:** U0/U1/U2/U3/U4 → 0/0/0 · U5 → 0/0/0 (sin tocar; se arregla en v10.143).
+
+## [v10.141b — 2026-05-15] — Fase 1: U5 — doble codificación de Adverbios (corrige interpretación de v10.141)
+
+Aclaración del autor sobre v10.141: el bloque debe estar codificado **en las dos dimensiones del consolidado** simultáneamente, no solo en léxico.
+
+**Cambio aplicado:**
+
+- **`unidades/U5/U5-nc1-inventario.json`** — restaurado `gramatica_consolidada.principal["Adverbios y locuciones de lugar"]` con los mismos items y fuentes que el bloque léxico `vocabulario_consolidado.principal["Adverbios de posición"]` ya presente desde v10.141.
+- 9 referencias añadidas a `actividad.gramatica` / `cuadro.gramatica` (cuadro@p54, p54-act03, p55-act01/04/05, p56-act01, p58-act01, p59-act03, p61-act02) — ahora cada una tiene la categoría **tanto en `.vocabulario` como en `.gramatica`**.
+- Entrada `P16` de `_decisiones_ia` reescrita para reflejar la doble codificación: la unidad trabaja simultáneamente (a) las palabras-léxico (qué se dice) y (b) la categoría adverbial (cómo funciona sintácticamente con `estar`).
+
+**Sin cambios en registries** — `Adverbios y locuciones de lugar` (gramatical, v1.4) y `Adverbios de posición` (léxico, v1.5) ya están como se establecieron en v10.141.
+
+**Validador desde main:** U0/U1/U2/U3/U4/U5 → 0/0/0.
+
+## [v10.141 — 2026-05-15] — Fase 1: `Posición` renombrada/reclasificada — A (gramatical) + B2 (léxico)
+
+Hallazgo del autor sobre U5: la categoría `Posición` en `gramatica_consolidada.principal` no es contenido gramatical propiamente — son palabras de marcador espacial (encima, debajo, detrás, delante, al lado) que NC1 A1.1 enseña como léxico, no como categoría adverbial abstracta. Decisión editorial: doble cambio (A + B2).
+
+**Cambios:**
+
+**A) Registry gramatical (`gramatica-canonica.json`):**
+- **Renombrada** `Posición` → `Adverbios y locuciones de lugar` (más preciso para nombrar la clase adverbial-gramatical).
+- Mismo `_pcic_ref` (PCIC A1 §8.2 + §8.9), mismos items, mismo `_apariciones.U5: "principal"`.
+- `_nota` documenta el rename + apunta al canónico léxico paralelo añadido en B2.
+- `_meta.version` 1.3 → 1.4.
+- La categoría queda disponible en registry para unidades futuras que enseñen explícitamente la clase adverbial.
+
+**B2) Registry léxico (`campos-semanticos-canonicos.json`):**
+- **Nueva entrada** `Adverbios de posición` (origen `pcic_a1`, aliases vacíos, `nota` distinguiéndola de `Marcadores de lugar: a la izquierda…` canónico U2 con alcance editorial distinto).
+- Cubre el léxico concreto de posición espacial: encima, debajo, detrás, delante, al lado.
+- `_meta.version` 1.4 → 1.5.
+
+**En `unidades/U5/U5-nc1-inventario.json`:**
+- Bloque movido de `gramatica_consolidada.principal["Posición"]` → `vocabulario_consolidado.principal["Adverbios de posición"]`. Items, fuentes y métricas preservados; `descripcion.U5` reescrita para reflejar la reclasificación.
+- 9 referencias `"Posición"` en `actividad.gramatica` / `cuadro.gramatica` retiradas (en cuadro@p54, p54-act03, p55-act01/04/05, p56-act01, p58-act01, p59-act03, p61-act02); `"Adverbios de posición"` añadido a `actividad.vocabulario` / `cuadro.vocabulario` en su lugar.
+- Nueva entrada **P16** en `_decisiones_ia` documentando la reclasificación y la disponibilidad dual en registries (gramatical + léxico) para futuras unidades.
+
+**Pedagógicamente:** en NC1 A1.1, encima/debajo/etc. se aprenden como palabras (léxico de lugar), no como categoría adverbial. La categoría gramatical queda disponible para una hipotética unidad de niveles superiores donde se enseñe la clase adverbial de manera explícita.
+
+**Validador desde main:** U0/U1/U2/U3/U4/U5 → 0/0/0.
+
+## [v10.140 — 2026-05-15] — Fase 1: U5 — auditoría léxico-verbal + adición de `gustar` (recurrente) y `dormir` (excepción §5.2)
+
+Auditoría léxico-verbal de U5 tras v10.139 por intuición del autor ("muy pocos verbos para 46 actividades"). Detectados 2 lemas con apariciones reales que el agente omitió:
+
+1. **`gustar`** (canónico U2/U3/U4 PRE, recurrente legítimo en U5): aparece en `p58-act02` (*"a Antonio no le gusta el cine"*, *"a Antonio le gusta mucho el cine"*), `p58-act03` (*"¿qué habitación te gusta más?"*) y `p59-act05` (*"les gusta mucho pasear con su perro"*). Tipo gustar dativo, construcción genuina.
+
+2. **`dormir`** (canónico U6 PRE — anticipación, excepción §5.2 aprobada por el autor): aparece en `p58-act01` (*"mi perro duerme en mi habitación"*) y `p58-act03` (*"¿dónde duerme el perro de Elisa?"*). Forma única `duerme` (3.ª sg, irregular o→ue). Mismo patrón aplicado en U2 (ir/estar/gustar/hablar) y U3 (jugar/venir/hacer).
+
+**Falsos positivos del audit no codificados:** `comer` ("*como X*" comparativo/preposicional), `cocinar` ("la cocina" sustantivo = parte de la casa), `ducharse` ("la ducha" sustantivo = parte del baño), `usar` ("uso de materiales" sustantivo deverbal). Verificados por contexto antes de descartar.
+
+**Cambios en main:**
+
+- **`unidades/U5/U5-nc1-inventario.json`**: entradas verbales `gustar` y `dormir` añadidas en 4 activity-level (`p58-act01`, `p58-act02`, `p58-act03`, `p59-act05`) y como bloques nuevos en `tiempos_y_verbos_consolidado`. `_decisiones_ia` con nueva entrada **P15** documentando la auditoría y las decisiones editoriales. 8 lemas verbales totales en U5 (antes 6).
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`**: `apariciones.U5:["PRE"]` añadido a `gustar` (recurrente) y `dormir` (anticipación-excepción). `_meta.version` 1.4 → 1.5.
+
+**Trazabilidad de §6.5 (sufijo `@R`):** las fuentes de las entradas verbales añadidas se filtraron contra los 5 tipos productivos antes de escribir; las fuentes de actividades no productivas (`responder_preguntas_cerradas`, `lee_y_escucha`) entraron sin `@R`.
+
+**Validador desde main:** U5 → 0/0/0. U0/U1/U2/U3/U4 sin afectación (no se tocaron).
+
+## [v10.139 — 2026-05-15] — Fase 1: U5 migrada a shape v10.117 + propagación U5 a `tener` y `vivir`
+
+Sexta unidad re-procesada con el flujo de worktree aislado en 3 fases (`../guia-proc-U5/`, rama `proc-u5-wip`, agente dry-run con 3 fases sin gates intermedios, commit candidato `39cdd77`).
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U5/U5-nc1-inventario.json`**: shape v10.117 completo. 10 páginas (52-61), 46 actividades, 4 cuadros, autoevaluación en p61. Vocab principal 4 (Partes de la casa, Mobiliario, Adjetivos descriptivos, Tipos de vivienda) + 2 recurrentes (Marcadores de lugar…, Establecimientos…). Gramática principal 2 (Posición, Oposición ser/estar) + 4 recurrentes (Hay, Interrogativos, Concordancia de género, Concordancia de número). Pron/orto: Sonidos y correspondencias ortográficas (sonido /x/). 6 lemas verbales (ahorrar, contaminar, estar, ser, tener, vivir). 14 entradas en `_decisiones_ia`. §5.2 metalengua aplicada sistemáticamente. §6.5 `@R` aplicado solo en los 5 tipos productivos.
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`** — propagación: `tener` y `vivir` con `apariciones.U5:["PRE"]` añadido (recurrentes en U5 con paradigma activo). Los otros 4 lemas (`ahorrar`, `contaminar`, `estar`, `ser`) ya tenían U5 declarado. `_meta.version` 1.3 → 1.4.
+
+**Decisión sobre propuesta §0.1 abierta del agente:**
+
+- **Fusión `Tipos de vivienda` + `Alojamiento`** → **NO fusionar** (opción A del autor). Son canónicos conceptualmente distintos: `Tipos de vivienda` (vivienda residencial permanente — piso, chalet, casa rural; origen `indice`) vs `Alojamiento` (lugares de estancia temporal — hotel, hostal, camping; origen `pcic_a1`, sin uso aún en inventarios). U5 usa solo `Tipos de vivienda`. `Alojamiento` queda disponible para unidades futuras de viajes/turismo (U7+). La nota del agente en `_decisiones_ia` queda como traza histórica de la decisión.
+
+**Validador desde main:** U0/U1/U2/U3/U4/U5 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U5/` y rama `proc-u5-wip` se conservan tras la integración — pendiente eliminarlos cuando el autor lo autorice.
+
+**Deuda restante en el bloque de re-extracción:** U6-U9 con shape legacy todavía pendientes.
+
+## [v10.138 — 2026-05-15] — Fase 1: saneamiento de `@R` en data — retirada de los 587 sufijos que infringen §6.5
+
+Cierre operativo de la deuda señalada en v10.137. Aplicación literal de `reglas-operativas.md §6.5`: el sufijo `@R` solo es válido en fuentes de actividades de tipo **productivo** (`produccion_escrita_guiada`, `expresion_escrita_libre`, `expresion_oral_libre`, `interaccion_oral`, `tarea_final`). En cualquier otro `tipo` y en referencias a cuadros, `@R` está prohibido.
+
+**Auditoría que motivó el saneamiento** (estado pre-lote):
+
+| Unidad | `@R` totales | `@R` válidos (tipo productivo) | `@R` bug §6.5 |
+|---|---|---|---|
+| U0 | 12 | 0 | 12 |
+| U1 | 150 | 2 | 148 |
+| U2 | 120 | 5 | 115 |
+| U3 | 152 | 0 | 152 |
+| U4 | 193 | 33 | 160 |
+| **Total** | **627** | **40** | **587** |
+
+**Acción aplicada en los 5 inventarios canónicos:** retirado el sufijo `@R` de las 587 fuentes que citan actividades de tipo no productivo (`completa_huecos`, `responder_preguntas_cerradas`, `verdadero_falso`, `clasifica`, `relaciona`, `ordena`, `escucha_y_repite`, etc.) o referencias a cuadros (`cuadro@pNN`, donde `@R` está prohibido por §6.5). Las 40 fuentes con `@R` en actividades productivas se mantienen.
+
+**Forma del cambio:** `pNN-actMM@R` → `pNN-actMM`. Tras retirar el sufijo, deduplicación elimina coincidencias con la misma fuente sin sufijo si ya estaba presente. Ningún ítem queda huérfano.
+
+**Archivos afectados:**
+- `unidades/U0/U0-nc1-inventario.json` (12 retirados).
+- `unidades/U1/U1-nc1-inventario.json` (148 retirados).
+- `unidades/U2/U2-nc1-inventario.json` (115 retirados).
+- `unidades/U3/U3-nc1-inventario.json` (152 retirados).
+- `unidades/U4/U4-nc1-inventario.json` (160 retirados).
+
+**Lo que se preserva sin cambios:**
+- Items léxicos, descripciones, decisiones_ia, listas tipadas por actividad — todo intacto.
+- Registries (`campos-semanticos-canonicos.json`, `verbos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`) — sin cambios.
+- Las 40 fuentes `@R` válidas (en actividades productivas).
+
+**Lo que NO se hizo:** no se aplicó el segundo criterio de §6.5 ("la palabra debe estar únicamente en `respuestas`, no en el input del libro") sobre las 40 fuentes preservadas. Esa verificación caso-por-caso queda como saneamiento opcional posterior.
+
+**Compatibilidad operativa con dashboard (v10.137):** dashboard sigue funcionando — los badges con `@R` (las 40 válidas) aparecen en azul con tooltip + aria-label combinado. Las 587 fuentes saneadas pasan a badges neutros sin afectar la renderización.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0 · U4 → 0/0/0.
+
+## [v10.137 — 2026-05-15] — Dashboard: retirada del texto `·R` en badges + pista no-cromática preservada
+
+Ajuste cosmético del dashboard. **Sin tocar datos, contratos ni registries** — los 587 sufijos `@R` en los inventarios canónicos U0-U4 quedan intactos.
+
+**Archivo modificado (único):** `web/index.html`.
+
+**Cambios:**
+
+1. Retirada del pseudo-elemento CSS que añadía el texto " ·R" al final de los badges con clase `.source-respuesta`:
+
+```diff
+- .item-card-source.source-respuesta::after { content: " ·R"; opacity: 0.7; }
++ /* `·R` retirado de la etiqueta visible; la distinción se preserva por
++    color + title + aria-label en el render (ver líneas 1173, 1251, 1329). */
+```
+
+2. Render JS de los badges (3 sitios — líneas 1173, 1251, 1329) actualizado para que las fuentes con `@R` lleven `title` y `aria-label` que **combinan el contenido del badge con la nota semántica**, no solo la nota:
+
+```diff
+- return `<span class="item-card-source${isR?' source-respuesta':''}">${_esc(lab)}</span>`;
++ return `<span class="item-card-source${isR?' source-respuesta':''}"${isR?` title="Fuente ligada a respuesta" aria-label="${_esc(lab)}, fuente ligada a respuesta"`:''}>${_esc(lab)}</span>`;
+```
+
+**Por qué el aria-label combinado** (acepta hallazgo del revisor): si `aria-label` solo dijera "Fuente ligada a respuesta", las tecnologías asistivas anunciarían únicamente esa frase y perderían el dato útil del badge (la referencia concreta `p21-act5`, etc.). El nuevo formato `"${lab}, fuente ligada a respuesta"` preserva ambos.
+
+**Distinciones que cargan la semántica de `@R` ahora (redundancia no-cromática):**
+
+| Canal | Mecanismo |
+|---|---|
+| Color | Clase CSS `.source-respuesta` (badge azul, sin cambios). |
+| Hover (vista) | Atributo `title`. |
+| Tecnologías asistivas | Atributo `aria-label` combinando `lab + ", fuente ligada a respuesta"`. |
+| Identificación programática | Clase CSS `.source-respuesta` en el DOM. |
+| Datos persistentes (JSON) | Sufijo `@R` en `fuentes`. |
+
+**Trazabilidad de §6.5 que NO se aplica en este lote:** la regla operativa `reglas-operativas.md §6.5` exige que `@R` solo se use en actividades de los 5 tipos productivos. Una auditoría previa detectó múltiples `@R` en data que infringen ese criterio (587 totales en U0-U4, de los cuales solo ~33 están en tipo productivo válido). **El saneamiento de los `@R` en data queda pendiente** como trabajo separado; este lote toca solo dashboard, no data.
+
+**Validador:** sin afectación (no se tocaron JSONs). U0/U1/U2/U3/U4 → 0/0/0.
+
+**Compatibilidad:** retrocompatible. Consumidores que lean los JSON ven `@R`. Selectors / scrapers que buscan `.source-respuesta` siguen funcionando. Screen readers leen lab + nota.
+
+## [v10.136 — 2026-05-15] — REDISEÑO fase 2 §4: modelo recursivo del hilo + nivel `detalle`
+
+Cierre del paso 4 del rediseño de fase 2. Recupera doctrina dispersa entre `REDISEÑO-EN-CURSO-viejo.md §2`, `viejo/marco-teorico-metodologico.md §6` y `docs/historico/B1.5-contrato-reciclaje.md`, e incorpora la decisión editorial sobre cómo se visualiza `detalle` en el dashboard.
+
+**Cambios en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`:**
+
+- **§4.1 Dos ejes distintos**: distingue **Capa 1 / Capa 2** (quién procesa: script vs IA) de **`mapa` / `auto` / `detalle`** (grado de población del mismo hilo). El rediseño activo no separaba estos ejes; ahora explícitos.
+- **§4.2 Modelo recursivo de capas**: `mapa` (esqueleto desde `nc1-curso.json`) → `auto` (enriquecimiento desde inventario) → `detalle` (justificación lingüístico-pedagógica). Un solo hilo por contenido, acumulativo. `nivel_analisis` deja de ser tipo de hilo y pasa a ser grado de población.
+- **§4.3 Función del reciclaje como catálogo acumulativo**: criterios documentados — conexión natural + refuerzo/requisito, 5-6 elementos de mayor impacto por unidad, dosificación 70/30, análisis contextual (no tabla fija).
+- **§4.4 Nivel `detalle`**: no añade más contenido al hilo; añade **explicación del procedimiento didáctico** fundamentada en lógica lingüística. Expone cadena de prerrequisitos lingüísticos, justificación y relaciones. Representación interna como **grafo de nodos-enlaces** (cada evento = nodo con análisis lingüístico-pedagógico; enlaces materializan "introduce → recupera → amplía → contrasta"). Representación en dashboard: la tabla actual se mantiene para mapa/auto; `detalle` se abre como **modal a página completa**, no como columna lateral.
+- **§4.5 Quién pobla cada capa**: `mapa` y `auto` por Capa 1 (script) + Capa 2 IA para etiquetas; `detalle` íntegramente por Capa 2 IA. Procedimiento concreto pendiente de pasos siguientes.
+
+## [v10.135c — 2026-05-15] — Fase 1: U4 — fusión de compuestos léxicos al lema base
+
+Continuación del saneamiento léxico de U4 tras v10.135b. Por dictamen del autor: los compuestos del tipo `X de Y`, `X + adj`, `X + marca` no aportan valor pedagógico separados de su base léxica cuando esta ya está atestada en la unidad. *"No es lo mismo pero en términos de vocabulario valen como X."*
+
+**Regla aplicada (solo a U4):** compuestos cuyo lema-cabeza ya está presente como item se fusionan en él. Fuentes mergeadas. Compuestos léxicos fijos sin lema-cabeza atestado (frutos secos, perritos calientes, comedor escolar) se mantienen.
+
+**23 compuestos fusionados:**
+
+| Compuesto | Lema |
+|---|---|
+| huevo frito | huevo |
+| zumo de naranja, zumo de piña | zumo |
+| atún con tomate | atún |
+| patatas fritas | patatas |
+| harina de maíz | maíz |
+| chocolate caliente | chocolate |
+| tomate frito, salsa de tomate | tomate |
+| tarta de chocolate | tarta |
+| pasta con tomate | pasta |
+| arroz a la cubana, arroz con tomate, arroz chino | arroz |
+| hamburguesa Brookling | hamburguesa |
+| ensalada mediterránea | ensalada |
+| sopa de cocido madrileño | sopa |
+| macarrones de Bolonia | macarrones |
+| pollo a la catalana, pollo asado | pollo |
+| filete a la plancha | filete |
+| menú del día | menú |
+| primer plato, segundo plato | plato |
+| puestos callejeros | puesto |
+
+**Resultado en U4:** 119 → 96 items (-23).
+
+- Alimentos: 60 → 50.
+- Comidas preparadas: 23 → 16.
+- Restaurante: 15 → 11.
+- Bebida: 11 → 9.
+
+**Validador desde main:** U4 → 0/0/0.
+
+**Sin retroactivo** en U1/U2/U3.
+
+## [v10.135b — 2026-05-15] — Fase 1: U4 — colapso de flexiones sing/plural y masc/fem en `vocabulario_consolidado`
+
+Hallazgo del autor sobre U4: en los bloques léxicos del consolidado aparecían como items separados las formas singular y plural de la misma palabra (huevo/huevos, tomate/tomates, manzana/manzanas, pizza/pizzas, etc.) y las flexiones masc/fem de adjetivos (italiano/italiana, peruano/peruana, mexicano/mexicana, español/española/españoles). No tiene sentido pedagógicamente — son flexiones de un mismo lema.
+
+**Regla aplicada (solo a U4):** los items de `vocabulario_consolidado.X.items` se colapsan al **lema masculino singular** cuando existen dos o más flexiones del mismo lema atestadas en la unidad. Las fuentes se fusionan. Compuestos / multi-palabra (huevo frito, zumo de naranja, hamburguesa Brookling, pollo a la catalana, etc.) NO son flexión y se mantienen como items distintos. Formas únicas sin par (colombianas, patatas, batidos, brasileño, madrileño, vegetariano, etc.) se mantienen verbatim del libro.
+
+**Resultado en U4:**
+
+- `Alimentos`: 73 → 60 items (-13).
+- `Comidas preparadas`: 26 → 23 items (-3).
+- `Restaurante`: 18 → 15 items (-3).
+- `Adjetivos de nacionalidad`: 16 → 10 items (-6).
+- **Total: 144 → 119 items** (-25 flexiones colapsadas).
+
+**Pares colapsados:** huevo+huevos→huevo, tomate+tomates→tomate, manzana+manzanas→manzana, yogur+yogures→yogur, zanahoria+zanahorias→zanahoria, naranja+naranjas→naranja, plátano+plátanos→plátano, filete+filetes→filete, pera+peras→pera, helado+helados→helado, bocadillo+bocadillos→bocadillo, pizza+pizzas→pizza, hamburguesa+hamburguesas→hamburguesa, ensalada+ensaladas→ensalada, restaurante+restaurantes→restaurante, pizzería+pizzerías→pizzería, puesto+puestos→puesto, carne+carnes→carne, verdura+verduras→verdura, plato+platos→plato, italianos+italiana→italiano, peruana→peruano (y argentina→argentino, mexicana+mexicanos→mexicano, española+españoles→español).
+
+**Sin cambios retroactivos en U1/U2/U3** — saneamiento global aplazado por decisión del autor.
+
+**Validador desde main:** U4 → 0/0/0.
+
+## [v10.135 — 2026-05-15] — Fase 1: U4 migrada a shape v10.117 + propagación U4 a 6 lemas verbales
+
+Quinta unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U4/`, rama `proc-u4-wip`, agente dry-run en chat limpio, commit candidato `09af577`, integración a main por copia controlada + reformateo canónico + actualización del registry verbal).
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U4/U4-nc1-inventario.json`**: shape v10.117 completo. 10 páginas (42-51), 49 actividades, 6 cuadros. Vocab 2 principales (Alimentos, Comidas preparadas) + 3 recurrentes (Bebida, Restaurante, Adjetivos de nacionalidad). Gramática 5 principales (Construcción gustar/doler, Pronombres átonos de OI, Artículos indeterminados, Nombres contables e incontables, Hay) + 2 recurrentes (Concordancia de género, Interrogativos). Pron/orto: Sonidos y correspondencias ortográficas. 8 lemas verbales en `tiempos_y_verbos_consolidado` (gustar, querer, comer, hacer, ser, tener, llamarse, ir). 10 entradas en `_decisiones_ia`. §5.2 metalengua aplicada sistemáticamente.
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`** — propagación: 6 lemas con `apariciones.U4:["PRE"]` añadido:
+  - `comer`, `ser`, `tener`, `llamarse` (recurrentes en U4 con paradigma activado).
+  - `hacer`, `ir` (excepción §5.2 anticipación aprobada por el autor — mismo patrón aplicado en U2/U3).
+  - `gustar` y `querer` ya tenían U4 declarado en el registry; no requirió cambio.
+  - `_meta.version` 1.2 → 1.3.
+
+**Decisiones sobre propuestas §0.1 abiertas del agente:**
+
+- **Bebida vs Bebidas**: el agente sugirió plural (`Bebidas`); por dictamen final del autor se mantiene **`Bebida`** literal del registry (origen `pcic_a1`, sin aliases).
+- **Artículos indeterminados** — verificación: U1/U2/U3 NO trabajan la categoría canónicamente (solo `Artículos determinados`). U4 ES la primera aparición canónica; registry ya lo refleja. **Sin acción.**
+- **`salir`** (forma "sale del horno" en p50): anticipación a U7 documentada en `_decisiones_ia`. **Sin acción.**
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0 · U4 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U4/` y rama `proc-u4-wip` se conservan tras la integración — pendiente eliminarlos cuando el autor lo autorice.
+
+**Cambio de flujo a partir de U5:** decisión editorial del autor — el flujo de worktree aislado + chat de procesamiento aparte se discontinúa desde U5. A partir de U5, el coordinador extrae directamente desde el chat coordinador (sin worktree, sin dry-run en chat). Memoria operativa guardada en `feedback_extraccion_directa_post_u4.md`.
+
+**Deuda restante en el bloque de re-extracción:** U5-U9 con shape legacy todavía pendientes (cambio de flujo aplicable desde U5).
+
+## [v10.134 — 2026-05-15] — Fase 1: sincronización de P-decisiones tras retirada de "Nombres propios"
+
+Hallazgo del revisor: tras v10.131 (retirada del canon `Nombres propios`), las entradas antiguas de `_decisiones_ia` en U1 y U2 quedaron materialmente falsas — afirmaban que Nombre/topónimos se habían reasignado a la categoría gramatical, cosa que ya no es cierta. El JSON sostenía simultáneamente la ampliación/reasignación y la retirada de la misma categoría.
+
+**Cambios:**
+
+- **U1 P4** (línea 544): reescrita. Antes decía que `Nombre` fue "reasignado a gramatica_consolidada.principal bajo el nuevo canónico Nombres propios". Ahora aclara: `Nombre` no se codifica en U1 ni en vocabulario_consolidado (la eliminación v10.123 se mantiene) ni en gramatica_consolidada (la reasignación intermedia quedó invalidada por v10.131 con la retirada total del canónico). Cruce explícito a P-Nombres-propios-retirada.
+
+- **U2 P3** (línea 580): reescrita. Antes decía "categoría gramatical 'Nombres propios' ampliada en U2 para cubrir antropónimos Y topónimos... PENDIENTE actualización del registry". Ahora la marca como **invalidada por v10.131**: la decisión queda sin efecto tras la retirada completa del canónico; antropónimos y topónimos quedan verbatim en los textos pero no se consolidan en ningún bloque canónico. Cruce explícito a P-Nombres-propios-retirada.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0.
+
+## [v10.133 — 2026-05-15] — REDISEÑO fase 2 §3: cobertura por bloque y marcas internas
+
+Cierre del paso 3 del rediseño de fase 2. Resuelve cuatro gaps de fase 1 identificados en la auditoría F1↔F2: pronunciación/ortografía, tiempos y verbos, perífrasis y marcas internas.
+
+**Cambios en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`:**
+
+- **§3.1 Pronunciación/ortografía**: granularidad por categoría canónica; etiquetas = 6 genéricas + `discrimina` (específica del bloque, para discriminación auditiva/ortográfica); evidencias desde `actividad.pronunciacion_ortografia[]` + `cuadro.pronunciacion_ortografia[]` + `pronunciacion_ortografia_consolidada`; las categorías `recurrente` no reciben etiqueta automática (análisis IA + cierre humano).
+- **§3.2 Tiempos y verbos**: granularidad por lema; evento por **lema-tiempo** (un mismo lema en presente y en indefinido = dos eventos); 6 etiquetas genéricas; evidencias desde el inventario + atributo `apariciones` del registry verbal.
+- **§3.3 Perífrasis verbales**: **hilo aparte** del lema. `ir a + infinitivo` genera un hilo propio independiente del hilo `ir`; fuente = `estructura_perifrastica`.
+- **§3.4 Marcas internas**: política de tratamiento. `_pendiente_canon` no bloquea fase 2; `_funcion_ambigua` se lleva a chat con el autor; `_decisiones_ia` se leen, cuestionan y proponen ajustes (no se aceptan a ciegas). Fase 2 puede generar marcas propias, pero el flujo normal es cerrar con humano.
+
+## [v10.132 — 2026-05-15] — Glosario + REDISEÑO fase 2 §2 (corrección de versionado)
+
+Lote acumulado que recoge dos commits anteriores cuyos mensajes contienen versiones erróneas (v10.118 y v10.119, números ya consumidos en estados anteriores del proyecto). Se documentan aquí bajo la versión correcta v10.132. Los commits previos quedan en el histórico técnico pero la versión canónica del trabajo es esta.
+
+**Cambios:**
+
+- **`fases/1-extraccion-inventario/glosario.md`** (commit `bdc987a`, mensaje "v10.118"):
+  - Nueva sub-sección "Regla de anticipación verbal por lema" en `tiempos_y_verbos_consolidado`. Documenta que un verbo entra al consolidado solo si su lema es canónico de la unidad actual o de una anterior; las formas de lemas canónicos posteriores son input incidental (anticipación) y se anotan en `_migracion_rediseno` o `_fixture_exploratoria`, no en el consolidado. Tres tipos de caso (conjugada aislada, perífrasis auxiliar, infinitivo aislado). Fase 2 retoma estas anotaciones para el análisis cross-curso.
+  - Nueva sub-sección "Atributos por categoría en los registries canónicos". Documenta `_pcic_ref` (referencia PCIC A1) y `_apariciones` (`{U<n>: <rol-texto>}`) como atributos por categoría dentro de los registries gramatical, pron/orto y léxico. Distingue de `apariciones` (sin underscore) de `verbos-canonicos.json`. Útil en fase 2 para detección cross-unidad de anticipaciones.
+
+- **`fases/2-reciclaje/REDISEÑO-EN-CURSO.md`** (commit `ad0bd70`, mensaje "v10.119"):
+  - §2 cerrado: **Modelo de análisis por unidad**.
+  - §2.1 — tres momentos de análisis obligatorios: intra-unidad, cross-atrás (U[n] vs U[0..n-1]), cross-adelante (U[n] vs U[n+1..N]).
+  - §2.2 — granularidad por bloque: vocabulario por campo semántico; gramática y pron/orto por categoría; verbal por lema.
+  - §2.3 — seis etiquetas coexistentes por evento (`etiquetas[]` en lugar de `accion` única): `introduce`, `amplia`, `aplica`, `sistematiza`, `contrasta`, `anticipacion`. Notas sobre qué momento de análisis las detecta.
+  - §2.4 — esbozo del shape del hilo. Detalle exacto (evidencias, persistencia de `_nota_ia`) pendiente para pasos siguientes.
+
+**Convención operativa (a partir de v10.132):** el trabajo de diseño de fase 2 pasa a un **worktree dedicado** para evitar colisiones de versionado con el procesamiento de unidades en `main`.
+
+## [v10.131 — 2026-05-15] — Fase 1: retirada del canon de "Nombres propios" (gramatical)
+
+Dictamen editorial del autor: la categoría `Nombres propios` añadida al canon gramatical en v10.123 (antropónimos U1) y ampliada en v10.128 (topónimos U2) **se retira del canon**. Motivo: el libro NC1 no trabaja pedagógicamente la categoría como contenido — los antropónimos y topónimos aparecen en textos como contenido verbatim pero el manual no enseña una regla gramatical específica sobre nombres propios (la regla "sin-artículo determinado" es inferencia gramatical, no contenido didáctico expuesto). Aplicar `Nombres propios` cada vez que aparece un personaje o un topónimo en un texto convertía la categoría en un comodín pedagógicamente vacío.
+
+**Cambios:**
+
+- **`fases/1-extraccion-inventario/gramatica-canonica.json`**: entrada `Nombres propios` eliminada. Total categorías 18 → 17 (vuelve al estado pre-v10.123). `_meta.version` 1.2 → 1.3.
+
+- **`unidades/U1/U1-nc1-inventario.json`**:
+  - Bloque `gramatica_consolidada.principal."Nombres propios"` eliminado.
+  - 26 referencias `"Nombres propios"` retiradas de `actividad.gramatica` / `cuadro.gramatica`.
+  - Nueva entrada en `_decisiones_ia` documentando la retirada.
+
+- **`unidades/U2/U2-nc1-inventario.json`**:
+  - Bloque `gramatica_consolidada.principal."Nombres propios"` eliminado.
+  - 21 referencias retiradas de `actividad.gramatica` / `cuadro.gramatica`.
+  - Nueva entrada en `_decisiones_ia`.
+
+- **`unidades/U3/U3-nc1-inventario.json`**:
+  - Bloque `gramatica_consolidada.recurrente."Nombres propios"` eliminado.
+  - 29 referencias retiradas.
+  - Nueva entrada en `_decisiones_ia`.
+
+**No se restaura `Nombre` en vocabulario.** La decisión de v10.123 de NO codificar antropónimos como vocabulario (no son items léxicos enseñables uno a uno) se mantiene. Los nombres propios siguen presentes verbatim en los textos del libro y NO se consolidan en ningún bloque canónico.
+
+**Revierte parcialmente:** v10.123 (reasignación Nombre → Nombres propios en U1), v10.123b (alcance restringido a antropónimos), v10.128 (ampliación a topónimos en U2).
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0.
+
+## [v10.130 — 2026-05-15] — Dashboard: respuestas sin numeración duplicada cuando el libro ya las numera
+
+Hallazgo del autor revisando inventarios: en `respuestas` con prefijo numérico del libro (`"1 brasileña"`, `"2 colombiana"`...), el `<ol>` del dashboard añadía su propia numeración → render duplicado `"1. 1 brasileña / 2. 2 colombiana"`.
+
+**Cambio en `web/index.html`** (render del bloque `Respuestas` en `renderInventario`):
+
+- Detección heurística: si ≥50% de respuestas empiezan con `^\d+[\s.)]` (número del libro), se renderiza como lista plana (`<div>` por respuesta) sin numeración automática. Si no, se mantiene `<ol>` con numeración auto.
+- El JSON no se toca: respuestas verbatim del libro intactas (regla crítica 1).
+
+## [v10.129 — 2026-05-15] — Fase 1: U3 migrada a shape v10.117 + canonización "La hora" + nuevo lema "interesar" + propagación U3 a 7 lemas verbales
+
+Cuarta unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U3/`, rama `proc-u3-wip`, agente dry-run en chat limpio, commit candidato `98b68d4`, integración a main por copia controlada + reformateo canónico + actualización coordinada de dos registries).
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U3/U3-nc1-inventario.json`**: shape v10.117 completo. 10 páginas (32-41), 47 actividades, 5 cuadros (presente regulares, interrogativos, posesivos, La hora, /θ/). Vocab 1 principal (Parientes) + 9 recurrentes. Gramática 3 principales (Interrogativos, Posesivos, Pronombre sujeto) + 4 recurrentes. Pron/orto: Sonidos y correspondencias ortográficas (fonema /θ/). 15 lemas verbales en tiempos_y_verbos_consolidado. 13 entradas en `_decisiones_ia`. **§5.2 metalengua de instrucción aplicada sistemáticamente** (formalizada en v10.128c/d).
+  - Edición poscopia: en `p40-act1`, la forma `interesan` se separa de `gustar` y se codifica como entrada independiente del lema `interesar` (canónico nuevo). Bloque `interesar` añadido a `tiempos_y_verbos_consolidado` con descripcion.U3 explicando la construcción tipo gustar.
+
+- **`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`** — canonización P-La-hora:
+  - Nueva entrada **`La hora`** (`origen: excepcion`, `aliases_indice: []`) con `nota` explicando el material (en punto, y media, y cuarto, menos cuarto, y X minutos), la fuente (cuadro@p37#1 + p37-act5 de U3) y la razón del origen excepcion (PCIC A1 no tiene la categoría como entrada léxica dedicada, aparece marginalmente bajo "Tiempo libre y entretenimiento" como "horario"). Total entradas 101 → 102. `_meta.version` 1.3 → 1.4.
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`**:
+  - **Nuevo lema `interesar`** (`tipo gustar (regular)`, `tipo_de_verbo: ['tipo gustar','intransitivo']`, `apariciones.U3:["PRE"]`). Total verbos 48 → 49.
+  - **7 lemas existentes con `apariciones.U3:["PRE"]` añadido:**
+    - `tener`, `llamarse`, `estar`, `gustar` — recurrentes en U3 con paradigma completado/reactivado.
+    - `jugar`, `venir`, `hacer` — codificados en U3 como **excepción aprobada por el autor** a la regla §5.2 de anticipación (mismo patrón aplicado en U2 con `ir/estar/gustar/hablar`). El paradigma canónico de estos lemas sigue siendo de unidades posteriores (U6/U7) pero su aparición material en U3 se conserva.
+  - `_meta.version` 1.1 → 1.2.
+
+**Notas operativas (decisiones del autor sobre propuestas §0.1 abiertas del agente):**
+
+- P-La-hora: **canonizada** como categoría léxica nueva (opción del autor).
+- P-interesar: **lema independiente añadido al registry** (opción del autor); en U3 deja de ir bajo `gustar`.
+- P-Hacer un cuaderno de vocabulario: rótulo editorial sin canónico gramatical, documentado en `_decisiones_ia` de U3, sin acción de registry.
+- P-verbos-anticipación: conservados como excepción aprobada (opción B del coordinador).
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0 · U3 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U3/` y rama `proc-u3-wip` se conservan tras la integración — pendiente eliminarlos cuando el autor lo autorice.
+
+**Deuda restante en el bloque de re-extracción:** U4-U9 con shape legacy todavía pendientes de migración mediante el mismo flujo.
+
+## [v10.128e — 2026-05-15] — Dashboard: render legible de arrays de objetos en `datos` (diálogos, fichas, pares, quiz)
+
+Hallazgo del autor revisando U2: bloques tipo `textos_personajes`, `dialogo`, `pares`, `fichas_modelo`, `preguntas_opciones` se renderizaban como JSON crudo (`{"personaje":"PROFESORA","texto":"Hola..."}`) por el fallback genérico en `renderDato` de `web/index.html`. Las comillas y llaves no introducen al personaje — visualmente incorrecto.
+
+**Cambio en `web/index.html`** (función `renderDato`, rama "lista de objetos"):
+
+Detección por shape antes del fallback JSON. Cinco renders dedicados:
+
+1. **Diálogos con `{personaje, texto}`** (`textos_personajes`, variantes de `dialogo`): personaje a la izquierda en oliva oscuro (uppercase, letter-spacing) + texto a la derecha. Layout flex con `align-items:baseline`.
+2. **Pares `{informal, formal}`**: tabla bilingüe con cabecera "Informal (tú)" / "Formal (usted)".
+3. **Fichas modelo `{ficha|numero, campos[]}`**: rótulo de ficha en oliva + campos separados por `·`.
+4. **Quiz `{pregunta, opciones[]}`**: numeración + lista de opciones anidada.
+5. **Fallback de array-de-objetos genérico**: ya no es `JSON.stringify`; renderiza pares clave:valor por línea con la clave en oliva oscuro y separadores visuales.
+
+Aplica retroactivamente a todos los inventarios. Verificable en U1/U2 (varios bloques de diálogos y fichas modelo).
+
+**Sin cambios en `diagrama.py`** ni en los JSONs.
+
+## [v10.128d — 2026-05-15] — Fase 1: retirada de "Caso histórico" en la regla de metalengua de instrucción
+
+Micro-fix tras v10.128c por dictamen del autor: la subsección añadida a `reglas-operativas.md §5.2` ("Regla de exclusión por metalengua de instrucción") incluía un párrafo final **"Caso histórico de aplicación"** con referencias a P-decisiones de unidades concretas (P4-revisada U0, P1 U1, P4 U2). Eso es narrativa retrospectiva sobre decisiones del autor en JSONs específicos — no encaja en un contrato operativo prescriptivo.
+
+**Cambio:** retirado el párrafo. La regla queda solo descriptiva/prescriptiva (qué hacer, qué no hacer, lista de verbos típicos, caso ambiguo → §0.1), coherente con el estilo del resto de §5.2 y de las reglas operativas en general.
+
+Sin cambios materiales en la regla operativa. Sin cambios en JSONs.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0.
+
+## [v10.128c — 2026-05-15] — Fase 1: formalización de la regla "metalengua de instrucción no es fuente de codificación" en §5.2
+
+Cierre de deuda doctrinal detectada por el autor: la regla operativa "**las formas verbales que aparecen únicamente en el enunciado/instrucción del libro al alumno NO cuentan como fuente de codificación de paradigma**" se ha aplicado en práctica al menos cuatro veces (P4-revisada U0, P1 U1, P4 U2, y ahora) pero **no estaba formalizada** en ningún contrato vivo. Vivía como decisiones ad-hoc replicadas en cada unidad — cada agente la redescubría.
+
+Búsqueda exhaustiva confirmada en `prompt.md`, `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`, `glosario.md` y `CLAUDE.md`. Lo más cercano era `convenciones-y-casos.md:125` que descarta marcadores editoriales (*Posibles respuestas:*, *Ejemplo:*) como "metalengua del libro", pero refiere a marcadores tipográficos, no a verbos imperativos del enunciado.
+
+**Cambio en `fases/1-extraccion-inventario/reglas-operativas.md` §5.2:**
+
+Añadida la subsección **"Regla de exclusión por metalengua de instrucción"** tras las reglas de anticipación y los casos típicos. Define:
+
+- Las formas verbales que aparecen únicamente en la metalengua de instrucción (*Lee y escucha*, *Escribe*, *Completa con…*, *Mira el vídeo*, etc.) NO se codifican en `actividad.tiempos_y_verbos[]` ni en `cuadro.tiempos_y_verbos[]`. Tampoco propagan apariciones en `verbos-canonicos.json[verbos][lema].apariciones`.
+- Aplica a cualquier lema, con independencia del modo (imperativo, presente, infinitivo).
+- Solo se codifican formas del **contenido didáctico**: diálogos, textos, modelos, audios, ejercicios, ejemplos, respuestas modelo, items_libro.
+- Lista provisional de verbos imperativos típicos de enunciado en NC1 (no exhaustiva): *Lee, Mira, Escucha, Repite, Escribe, Completa, Subraya, Marca, Relaciona, Ordena, Clasifica, Contesta, Responde, Pregunta, Continúa, Imagina, Crea, Habla, Piensa, Comprueba, Busca, Forma, Señala, Elige, Adivina*.
+- Caso ambiguo (escalar por §0.1): mismo lema aparece en enunciado Y en contenido didáctico de la misma actividad — codificar solo las formas del contenido didáctico.
+- Caso histórico documentado en la propia regla: P4-revisada U0, P1 U1, P4 U2 (con `ir` en U2 codificado solo por contenido didáctico real: diálogos, sugerencias, perífrasis `ir a + infinitivo`).
+
+**Sin cambios en JSONs de unidades** — la regla codifica lo que ya se venía aplicando correctamente. Los inventarios de U0/U1/U2 no requieren modificación.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0.
+
+**Beneficio operativo:** futuras extracciones (U3-U9) no tendrán que redescubrir la regla en cada P; podrán citar `reglas-operativas.md §5.2` directamente.
+
+## [v10.128b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.128 (Nacionalidad eliminada + Centros e instituciones educativas reescrita)
+
+Hallazgo del autor sobre el bloque `vocabulario_consolidado.recurrente` de U2 tras integración v10.128:
+
+1. **`Nacionalidad` (canónico PCIC A1 §1.7) eliminado.** El agente lo había incluido como recurrente justificándolo en "ya canónica en U1 (PCIC)". Falso: U1 NO trabaja `Nacionalidad` como canónico — trabaja `Adjetivos de nacionalidad` (canónico de origen `indice`) y `Gentilicios`. **Falso amigo entre dos entradas del registry** que cubren material parcialmente solapado pero pertenecen a dimensiones canónicas distintas:
+   - `Adjetivos de nacionalidad` (origen `indice`, léxico: gentilicios de país).
+   - `Nacionalidad` (origen `pcic_a1`, identidad personal).
+   La materia identitaria de U2 (¿de dónde eres? → Soy argentino) queda **cubierta sin pérdida** por `Adjetivos de nacionalidad` (principal en U2) y `Países hispanohablantes` (principal en U2). Eliminadas 6 referencias a `"Nacionalidad"` en `actividad.vocabulario` / `cuadro.vocabulario`.
+
+2. **`Centros e instituciones educativas` — descripción reescrita.** El agente decía "Recurrente: U2 introduce intensivamente el campo léxico escolar..." — contradicción interna entre la clasificación (recurrente) y la justificación (introducción nueva). Verificación: la categoría NO aparece como `vocabulario` canónico en el índice editorial de ninguna unidad U0-U9. El léxico escolar de U2 (instituto, ESO, recreo, aula, asignaturas obligatorias/optativas) vive principalmente como soporte de la sección `cultura` (`La ESO en España`). La descripción reescrita justifica correctamente la clasificación como recurrente por el **criterio (b) de §5.1.1** ("no forma parte del principal declarado en unidades posteriores pero es relevante para comprender textos y ejercicios de esta unidad"), no por reciclaje cross-unidad.
+
+**Edición adicional:**
+
+- `_decisiones_ia` de U2: nueva entrada **P14** documentando ambos saneamientos editoriales.
+
+**Sin cambios en registries.** Las reglas operativas (§5.1.1) ya contemplaban el caso (b) — no hace falta ampliar.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0.
+
+## [v10.128 — 2026-05-15] — Fase 1: U2 migrada a shape v10.117 + ampliación "Nombres propios" a topónimos + U2 en apariciones verbales
+
+Tercera unidad re-procesada con el flujo de worktree aislado (`../guia-proc-U2/`, rama `proc-u2-wip`, agente dry-run en chat limpio, commit candidato `dd6f8af`, integración a main por copia controlada + reformateo canónico + actualización coordinada de dos registries).
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U2/U2-nc1-inventario.json`**: shape v10.117 completo. 10 páginas (22-31), 52 actividades, 4 cuadros. Vocab principal con 6 canónicos (Países hispanohablantes, Adjetivos de nacionalidad, Días de la semana, Números ordinales, Asignaturas, Números cardinales) + 4 recurrentes (Nacionalidad, Edad, Saludos y despedidas, Centros e instituciones educativas). Gramática principal con 3 canónicos (Concordancia de número, Demostrativos, Nombres propios) + 4 recurrentes (Pronombre sujeto, Concordancia de género, Interrogativos, Artículos determinados). Pron/orto principal con Vocales y Mayúsculas. Nueve lemas verbales (ser/tener/llamarse/vivir/estudiar/ir/estar/gustar/hablar). 8 entradas en `_decisiones_ia`. Reformateado canónico vía `scripts/format_inventario.py` (v10.125).
+
+- **`fases/1-extraccion-inventario/gramatica-canonica.json`** — cierre de P3: `Nombres propios` ampliado.
+  - `items: ["antropónimos"]` → `["antropónimos", "topónimos"]`.
+  - `_pcic_ref` actualizado a "PCIC A1 §1.1.1 Nombres propios (cubre antropónimos y topónimos)" — retirada la cláusula diferidora introducida en v10.123b.
+  - `_apariciones.U2: "principal (topónimos: países hispanohablantes sin artículo · El Salvador con artículo integral)"`.
+  - `_nota` reescrita: documenta la materialización de topónimos en v10.128 y el ancla pedagógico común (regla sin-artículo) con sus dos anclas estructurales (antropónimos con `llamarse`, topónimos con `ser + de + topónimo` cruzado con el canónico léxico `Países hispanohablantes`).
+  - `_meta.version` 1.1 → 1.2.
+
+- **`fases/1-extraccion-inventario/verbos-canonicos.json`** — cierre de P4: 7 lemmas con `apariciones.U2: ["PRE"]` añadido (`llamarse`, `vivir`, `estudiar`, `ir`, `estar`, `gustar`, `hablar`). El agente reportó 6; el coordinador añadió también `llamarse` (registry solo tenía U1 y materialmente aparece en U2). `_meta.version` 1.0 → 1.1.
+
+**Notas operativas:**
+
+- Audio 30 (p29-act3) sin transcripción → registrado conforme a §6.6, sin acción.
+- p30-act3 con léxico heterogéneo intraejercicio → gestionado por §5.7 (heterogeneidad semántica), sin marca bloqueante.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0 · U2 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U2/` y rama `proc-u2-wip` se conservan tras la integración para auditoría — pendiente eliminarlos cuando el autor lo autorice.
+
+**Deuda restante en el bloque de re-extracción:** U3-U9 con shape legacy todavía pendientes de migración mediante el mismo flujo.
+
+## [v10.127 — 2026-05-15] — Dashboard: diagramas auto-actualizados desde filesystem + paleta cat-tag + leyenda HTML
+
+Saneamiento del dashboard tras dictamen del autor: los mermaids antiguos (1) usaban paleta brillante saturada (#3498db azul Twitter, #27ae60 verde, etc.) que chocaba con el estilo MD3 oliva-crema del resto del UI; (2) tenían contenido hardcoded desincronizado de la realidad del proyecto (8 fases con nombres genéricos, BD aspiracional que no es la actual); (3) tras un primer rediseño minimalista sin pastel quedaron sin información explicativa y con leyenda como `subgraph` interno que rompía el layout.
+
+**Cambios en `diagrama.py`:**
+
+- Puerto cambiado de **8080 → 8081**.
+- Cuatro funciones de **auto-discovery** que leen el filesystem en cada hit a `/api/diagrams`: `discover_fases()`, `discover_registries()`, `discover_scripts()`, `discover_inventarios()`.
+- `mermaid_level1`/`level2`/`level3` reescritos: nodos generados desde los discovers (conteos reales) + paleta `CHIPS` (8 tonos `.cat-tag`) + shape redondeado `("...")` con `rx:10,ry:10` + tipografía Inter 13px (`_mermaid_init()`).
+- Convención estable de tonos por rol: **azul** fuente externa · **lila** especificación · **menta** sistema IA · **verde** producto validado · **amarillo** código · **melocoton** interfaz humana · **gris** sin estado declarado.
+- Leyenda movida fuera del mermaid: constantes `LEGEND_LEVEL{1,2,3}` expuestas bajo clave `legends` en `/api/diagrams`.
+
+**Cambios en `web/index.html`:**
+
+- Nuevo `<div id="diagram-legend">` antes del `.diagram-container` que renderiza chips horizontales reutilizando las clases `.cat-tag.p-<tone>` ya definidas en CSS.
+- `renderDiagram(k)` popula la leyenda desde `diagramData.legends[k]` antes de renderizar el SVG.
+
+**Pendientes (decisión 2026-05-15):** `mermaid_level4` (estado por unidad) y `mermaid_database` quedan sin tocar — se rediseñarán cuando el autor lo decida. Estado por fase con detalle (en curso / pausada / pendiente / cerrada) → siguiente iteración.
+
+**Conflicto de numeración resuelto:** v10.126 fue tomado durante este trabajo por un commit paralelo de fase 2 (`b1b04b1`), por lo que este lote toma **v10.127**.
+
+## [v10.126 — 2026-05-15] — Fase 2: creación del nuevo `REDISEÑO-EN-CURSO.md` (modelo IA-first, construcción por pasos)
+
+Primer paso del rediseño de fase 2 bajo modelo IA-first. Mismo patrón que el rediseño de fase 1 v10.115-116 (reglas-operativas, convenciones-y-casos): el documento viejo se renombra a `-viejo.md` y el nuevo nace con el nombre canónico, construyéndose paso a paso conforme el autor indica decisiones.
+
+- `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` antiguo → `REDISEÑO-EN-CURSO-viejo.md`. Header añadido: declarado como reservorio histórico, no se actualiza con decisiones nuevas; se consulta como referencia de D1/D2/D3/R1-R5/§8; se archiva en `docs/historico/` cuando el activo cubra todo lo vigente.
+- `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` nuevo creado con esqueleto mínimo: solo §1 cerrado (modelo de trabajo, paso 1) + placeholders para pasos siguientes + apéndice de aprovechamiento (tabla con piezas del viejo a importar/descartar/reformular).
+- **§1 cerrado en este lote — Modelo de trabajo (paso 1):**
+  - §1.1 Granularidad: por unidad.
+  - §1.2 Estructura del ciclo por unidad: Chat A (fase 1 con `prompt-dry-run.md`) → Chat B (fase 2 con prompt envoltorio propio, pendiente de diseño) → integración a main. Ambos chats en el mismo worktree aislado.
+  - §1.3 Arquitectura interna híbrida (Capa 1 script + Capa 2 sesión IA, no a la vez) — decisión heredada del viejo, vigente.
+  - §1.4 Hitos cross-unidad: por unidad (Capa 1+2) + cada 3 unidades (cross-unidad ampliado) + global final tras cierre de bloque. Granularidad intermedia exacta pendiente.
+  - §1.5 Régimen temporal dual: mismo flujo + mismos prompts envoltorios + mismos contratos, distinto disparador. Manual ahora (construcción), agentic en futuro.
+  - §1.6 Alcance NC1. Multi-curso explícitamente fuera de alcance.
+- Refs actualizadas en docs vivos: `fases/2-reciclaje/CLAUDE.md` (P1 redirige al `-viejo.md` con nota de pendiente migrar), `fases/1-extraccion-inventario/gramatica-canonica.json` (§8 redirige al `-viejo.md`), `PROCESO-MAESTRO.md` árbol vivo (refleja activo + viejo coexistiendo).
+
+**Próximos pasos del rediseño (el autor indicará uno por uno):** diseño concreto del prompt envoltorio de fase 2 por unidad, política de hitos intermedios, decisión final de P1, cierre de §8 y R1-R5 en el documento activo, persistencia de propuestas decisionales, etc.
+
+## [v10.125 — 2026-05-15] — Fase 1: blindaje del serializador de inventarios + reformateo canónico de U0/U1
+
+Cierre de deuda técnica detectada por el revisor tras v10.124b: el enfoque "post-regex" usado en los scripts ad-hoc de v10.123 y v10.124 para preservar el estilo editorial (items inline `{palabra, fuentes}` uno por línea) tenía un bug latente — cuando varios items consecutivos se colapsaban en secuencia, el patrón no preservaba el newline entre ellos y terminaban pegados en una sola línea con `},          {` consecutivos. La regresión se manifestó dos veces y se cerró ad-hoc en v10.123b y v10.124b. Con U2-U9 por procesar, mantener el bug latente garantizaba ensuciar todos los diffs futuros.
+
+**Cambios:**
+
+- **Nuevo: `scripts/format_inventario.py`** — serializador canónico reutilizable. Reemplaza el enfoque post-regex por una **serialización recursiva tree-aware** que decide formato inline vs multi-línea según el shape del nodo, no por regex. Reglas explícitas:
+  - Items con shape `{palabra, fuentes}` → inline en una sola línea, uno por línea.
+  - Items con shape `{lema, tiempo, formas_trabajadas, ...}` de `tiempos_y_verbos` → inline en una sola línea si caben.
+  - Arrays de strings cortos (≤ 220 chars) → inline.
+  - Objetos pequeños con valores primitivos (≤ 240 chars) → inline.
+  - Resto → indent estándar de 2 espacios.
+  - Incluye sanity check de **round-trip estructural** (el JSON re-parseado debe coincidir con el original) antes de escribir, para detectar regresiones de contenido.
+  - Modo CLI: `python3 scripts/format_inventario.py <ruta1> [<ruta2> ...]`.
+
+- **Reformateado canónico aplicado a `unidades/U0/U0-nc1-inventario.json` y `unidades/U1/U1-nc1-inventario.json`**. U0 no había sido tocado desde v10.121 y heredaba inconsistencias menores del serializador antiguo; ahora ambos archivos comparten estilo. Diff cosmético, contenido idéntico (round-trip verificado).
+
+**Convención operativa a partir de aquí (U2-U9):** cualquier script que modifique inventarios debe usar `format_inventory_json` de `scripts/format_inventario.py` para escribir el output. El enfoque post-regex queda **deprecado**.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+## [v10.124b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.124 (descripción + P3 sincronizadas con reclasificación de p14-act4 + regresión de formato resuelta)
+
+Dos hallazgos del revisor sobre v10.124:
+
+1. **Trazabilidad contradictoria.** Tras retirar `Adjetivos de nacionalidad` del `vocabulario` de p14-act4, dos zonas del JSON seguían afirmando que la categoría se trabaja allí: la `descripcion.U1` del bloque consolidado (lista los "sitios de trabajo": "...p13-act8, p14-act1, p14-act4, p15-act6...") y la entrada P3 de `_decisiones_ia` (misma enumeración). El archivo sostenía dos cosas a la vez. **Fix:** ambos textos reescritos retirando p14-act4 de los "sitios de trabajo léxico" y añadiendo aclaración explícita: la actividad ya no referencia esta categoría en su vocabulario por foco morfológico; los items genuinos que aparecen en sus respuestas (griego/-a, alemán/-a, brasileño/-a) se conservan en el bloque por aparición material en p14-act4@R, pero no por trabajo léxico-nacional pedagógicamente dirigido. P3 marcada como "parcialmente revisada por dictamen editorial (v10.124)" con cruce a P13.
+
+2. **Regresión de formato.** El serializador custom usado en v10.124 reintrodujo el bug que v10.123b había cerrado: arrays `items` con múltiples objetos pegados en una sola línea (visible en `Objetos de clase`, `Nombres de las letras`, etc.). **Fix:** reaplicado el separador de líneas que ya funcionaba en v10.123b (detecta líneas con `}, {` consecutivos y los separa con indentación correcta). 18 líneas afectadas reformateadas.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+## [v10.124 — 2026-05-15] — Fase 1: saneamiento de "Adjetivos de nacionalidad" en U1 + nueva categoría "Gentilicios"
+
+Hallazgo del autor durante revisión post-v10.123b: el bloque `vocabulario_consolidado.recurrente."Adjetivos de nacionalidad"` de U1 incluía items que no son gentilicios de país.
+
+**Errores detectados:**
+
+- **`campeón` y `campeona`**: sustantivos comunes que aparecen en `p14-act4` ("Completa la tabla con el femenino o el masculino") como ejemplo del patrón morfológico `-ón/-ona`, junto a `profesor/-a`, `niño/-a`, `amiga/-o`. El agente los confundió con gentilicios por la coincidencia visual del sufijo con `-és/-esa` (de gentilicios reales). Eliminados del bloque.
+- **`mexicanas` (plural)**: redundante con `mexicana` — el lema canónico se conserva en singular. Eliminado.
+- **`madrileña` y `africana`**: gentilicios genuinos pero NO de país. `madrileña` es gentilicio de ciudad (Madrid); `africana` es gentilicio continental. PCIC A1 §1 distingue: nacionalidad = país. Movidos a nuevo canónico.
+
+**Cambios en main:**
+
+- **`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`**: nueva entrada **`Gentilicios`** (`origen: excepcion`, `aliases_indice: []`) con `nota` explicando la distinción editorial respecto a `Adjetivos de nacionalidad` (nacionalidad = país; gentilicios = ciudad/región/continente con la misma función comunicativa pero sin ser nacionalidades estrictas). Total entradas 100 → 101. `_meta.version` 1.2 → 1.3.
+- **`unidades/U1/U1-nc1-inventario.json`**:
+  - `vocabulario_consolidado.recurrente."Adjetivos de nacionalidad".items`: eliminados `campeón`, `campeona`, `mexicanas`; movidos `madrileña` y `africana` al nuevo bloque.
+  - `vocabulario_consolidado.recurrente."Gentilicios"`: nuevo bloque con los 2 items movidos + `descripcion.U1` explicando su función comunicativa equivalente y la separación canónica.
+  - **`p14-act4`** (reclasificación editorial): retirado `"Adjetivos de nacionalidad"` de `vocabulario`. La actividad teaches Concordancia de género (morfología `-o/-a`, `-és/-esa`, `-ón/-ona`, `-án/-ana`) sobre una mezcla de profesiones, sustantivos comunes y gentilicios; su foco pedagógico es gramatical, no léxico-nacional. `gramatica: ["Concordancia de género"]` se mantiene. Los items genuinos de nacionalidad que aparecen en respuestas (griego/-a, alemán/-a, brasileño/-a) se conservan en el bloque consolidado por aparición material en respuestas (p14-act4@R).
+  - **`p12-act1`, `p12-act2`, `p15-act6`**: añadido `"Gentilicios"` a `vocabulario` (madrileña en autodescripción de Katrina; modelo de presentación; africana en respuestas).
+  - **`_decisiones_ia`**: nueva entrada **P13** documentando el saneamiento completo.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+## [v10.123b — 2026-05-15] — Fase 1: micro-fix de coherencia tras v10.123 (P4 actualizada + topónimos diferidos + formato items)
+
+Tres ajustes de coherencia detectados por el revisor tras el commit v10.123:
+
+1. **P4 en `_decisiones_ia` de U1** quedaba materialmente falsa: seguía afirmando que "Nombre" entraba como principal en `vocabulario_consolidado`, contradiciendo el cambio aplicado. Reescrita como "P4 resuelta (a) parcialmente revisada por dictamen editorial (v10.123)" para reflejar que solo Edad y Número de teléfono se mantienen en vocabulario; Nombre fue reasignado a gramática como Nombres propios con justificación pedagógica.
+
+2. **Alcance sobre-declarado de `Nombres propios` en el registry**: la entrada declaraba `items: ["antropónimos", "topónimos"]` aunque solo los antropónimos están canonizados materialmente en U1. Cambios:
+   - `items` restringido a `["antropónimos"]`.
+   - `_pcic_ref` reformulado para aclarar el alcance: *"PCIC A1 §1.1.1 Nombres propios (apartado cubre antropónimos y topónimos; la canonización aquí se limita por ahora a antropónimos)"*.
+   - `_nota` ampliada con cláusula final que difiere los topónimos: *"...quedan diferidos: serán canonizables por separado cuando una unidad presente material gramatical específico sobre nombres propios de lugar (probablemente vinculado a 'Adjetivos de nacionalidad' / países hispanohablantes en U2)."*
+
+3. **Bug de formato del serializador custom de v10.123**: varios bloques `items` quedaron con múltiples objetos en una sola línea pegados con espacios (legible pero feo, ej. `Pronombre sujeto`, `ser/llamarse/tener`). Aplicado fix de formato que detecta líneas con `}, {` consecutivos y los separa en líneas independientes con indentación correcta. Sin cambios editoriales; +239 líneas / -21 líneas en U1 puramente cosméticas.
+
+**Validador desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+**Trazabilidad:** el commit v10.123 queda aprobado por el revisor "con reservas" cerradas en este v10.123b. Sin reversión necesaria.
+
+## [v10.123 — 2026-05-15] — Fase 1: reasignación editorial de "Nombre" en U1 (vocabulario → gramática "Nombres propios")
+
+Corrección editorial sobre U1 (post-v10.121) por dictamen del autor: la entrada `Nombre` que el agente de extracción había colocado en `vocabulario_consolidado.principal` no es un campo semántico léxico (no aporta items léxicos enseñables — los nombres propios concretos como *David, Javier, María* son antropónimos, no vocabulario aprendible uno a uno). Su valor pedagógico real es **gramatical**: en español los nombres propios de persona se usan SIN artículo determinado (*Me llamo María*, no *Me llamo la María*), contraste útil con lenguas que admiten el artículo en uso coloquial.
+
+**Decisión:** mover a `gramatica_consolidada.principal` bajo nuevo canónico `Nombres propios` con uso específico definido. Edad y Número de teléfono **se mantienen en vocabulario** (sí tienen contenido léxico rastreable: rangos numéricos, formato de teléfono).
+
+**Cambios en main (un solo commit):**
+
+- **`fases/1-extraccion-inventario/gramatica-canonica.json`**: nueva entrada `Nombres propios` con `_pcic_ref: "PCIC A1 §1.1.1 Nombres propios (antropónimos y topónimos)"`, `_apariciones.U1: "principal (antropónimos en presentaciones: regla sin-artículo + estructura con llamarse)"`, `items: ["antropónimos", "topónimos"]` y `_nota` explicativa. Total categorías 17 → 18. `_meta.version` 1.0 → 1.1.
+- **`unidades/U1/U1-nc1-inventario.json`**:
+  - `vocabulario_consolidado.principal."Nombre"` eliminado.
+  - `gramatica_consolidada.principal."Nombres propios"` añadido (preservando los items reales — antropónimos visibles en pp.12-21 — como evidencia de aparición; `descripcion.U1` reescrita para explicar el uso gramatical específico: regla sin-artículo + estructura con verbo `llamarse` anclada en cuadros@p14#1 y @p20#1 con contraste tú/usted).
+  - 15 actividades + 2 cuadros con referencia `vocabulario: [..., "Nombre", ...]` actualizados: `Nombre` retirado de vocabulario, `Nombres propios` añadido al inicio de `gramatica`. Las referencias literales `"Nombre"` que aparecen como `campos` dentro de `datos.fichas_modelo[*].campos` (rótulos verbatim del libro en fichas de información personal) **se conservan intactas** por ser texto literal del libro, no referencias canónicas.
+
+**Decisión de fundamentación:** búsqueda en PCIC A1 confirmó que `§1.1.1 Nombres propios` existe explícitamente (antropónimos: nombres de pila sin artículo, hipocorísticos, apellidos; topónimos: países con o sin artículo). En nuestro registry `gramatica-canonica.json` la categoría no existía aún — se añade con `origen: pcic_a1` (vía `_pcic_ref`).
+
+**Reformat colateral del JSON de U1:** la edición se aplicó vía script de Python (load/modify/dump con serializador custom para preservar el estilo de items inline del agente). El diff resultante es grande (≈ 757 insertions / 803 deletions sobre 2138 líneas) por el reformat, pero el contenido editorial es idéntico al de v10.121 salvo la reasignación Nombre → Nombres propios. Esto **NO cambia el shape canónico** ni el contenido visible al alumno.
+
+**Validador final desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+**Anticipaciones para fase 2 ya documentadas en U1:** topónimos (países hispanohablantes, etc.) tienen presencia material puntual en U1 pero no se añaden a `Nombres propios.items` en este lote — quedan a discreción del agente de U2 que trabaja `Adjetivos de nacionalidad` como principal.
+
+## [v10.122 — 2026-05-15] — Fase 1: retirada de la fixture `unidades/U1-propuesta/`
+
+Cumplió su función diagnóstica durante el rediseño v10.111-v10.114 (estresar el shape nuevo antes de tener inventarios canónicos en shape v10.117). Con U1 canónica ya migrada en v10.121 con validador 0/0/0, la fixture queda obsoleta. Además estaba en shape pre-v10.115 (sin `_fixture_exploratoria`, sin los 3 bloques top-level consolidados nuevos), por lo que mantenerla requeriría re-migración sin valor pedagógico ni técnico.
+
+**Decisión consistente con v10.113** (retirada de U2p/U3p tras cumplir su función diagnóstica equivalente).
+
+**Cambios:**
+
+- `unidades/U1-propuesta/` eliminado del repositorio (`git rm -r`).
+- `PROCESO-MAESTRO.md`: línea del árbol de carpetas retirada.
+- Referencias genéricas a variantes "Np" en `diagrama.py:296` y `web/index.html:1200` **conservadas** (sirven a fixtures futuras del shape v10.117).
+- Referencias históricas en CHANGELOG/REVIEW **conservadas** (bitácora válida).
+
+## [v10.121 — 2026-05-15] — Fase 1: U1 migrada a shape v10.117 + canonización "Números cardinales" (rename retroactivo U0)
+
+Segunda unidad re-procesada con el flujo de worktree aislado: `../guia-proc-U1/` con rama `proc-u1-wip`, agente dry-run en chat limpio, commit candidato `6132896` en el worktree, integración a main por copia controlada del JSON + rename del canónico léxico + retoque retroactivo en U0.
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U1/U1-nc1-inventario.json`** reemplazado wholesale por el candidato del worktree. 10 páginas (12-21), 42 actividades, 7 cuadros. Vocab principal con 8 canónicos (Objetos de clase, Nombres de las letras, Nombre, Edad, Número de teléfono, Colores, Números cardinales, Saludos y despedidas) + 2 recurrentes (Adjetivos de nacionalidad, Para la clase). Gramática principal con 4 canónicos (Artículos determinados, Concordancia de género, Pronombre sujeto, Concordancia de número) + 1 recurrente (Interrogativos). Pron/orto principal con Entonación y Signos de puntuación + 1 recurrente (Sonidos y correspondencias ortográficas). Tres lemas verbales (ser, llamarse, tener). 13 entradas en `_decisiones_ia` con P1-P12 marcadas resueltas + última entrada con anticipaciones para fase 2.
+- **`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`**: rename `Números 0-10` → **`Números cardinales`** con `aliases_indice: ["Números 0-10", "Números 1-20", "Números 21-100"]`, `origen: indice`. Nota explicativa del rename y su escala (U0 0-10, U1 0-20, U2 21-100). `_meta.version` 1.1 → 1.2. Total entradas se mantiene en 100 (rename, no alta).
+- **`unidades/U0/U0-nc1-inventario.json`** (retoque retroactivo): rename de la clave `vocabulario_consolidado.principal."Números 0-10"` → `"Números cardinales"` y de la referencia `cuadro@p11.vocabulario`. El campo `descripcion.U0` se mantiene; el rótulo verbatim "Números 0-10" del título editorial de U0 queda registrado como alias en el registry.
+
+**Cerradas las 6 deudas legacy reportadas por el agente:** las 6 eran la misma causa (referencias a "Números cardinales" no canónico). Tras el rename del registry, las 6 desaparecen.
+
+**Edición poscopia del candidato U1 (P10 reescrita):**
+
+- Entrada P10 de `_decisiones_ia` reescrita como "P10 resuelta por dictamen editorial del autor (v10.121)..." para reflejar el cierre operativo de la acción coordinadora — patrón aplicado igual que con P1(b) en U0/v10.119.
+
+**Deuda §A.3 reportada por el agente (no bloquea; pendiente de saneamiento posterior):**
+
+- `verbos-canonicos.json` → `leer.apariciones.U1: ["PRE"]` divergente de la decisión P1 (lema metalengua, no paradigma).
+- `gramatica-canonica.json` → `Interrogativos` no declara U1 en `_apariciones` aunque U1 los trabaja como recurrente (P5).
+- `pronunciacion-ortografia-canonica.json` → `Signos de puntuación → _apariciones.U1: ["interrogación"]` confirmado pero con material débil (P8).
+
+**Validador final desde main:** U0 → 0/0/0 · U1 → 0/0/0.
+
+**Trazabilidad operativa:** worktree `../guia-proc-U1/` y rama `proc-u1-wip` eliminados tras integración limpia.
+
+**Deuda restante en el bloque de re-extracción:** U2-U9 con shape legacy todavía pendientes de migración mediante el mismo flujo.
+
+## [v10.120 — 2026-05-15] — Fase 2: limpieza documental tras rediseño de fase 1 v10.115-118
+
+Limpieza declarativa de drift en docs y scripts de fase 2 tras los cambios de shape de fase 1 en v10.115-118 (eliminación de `actividad.campo_semantico`, eliminación de `vocabulario_consolidado.comprension`, renombrado `fonetica → pronunciacion_ortografia`, 4 bloques top-level consolidados nuevos, 4 listas tipadas por actividad).
+
+**Sin cambios operativos en fase 2** (sigue PAUSADA por decisión 36 v10.108). El reciclaje `nc1-reciclaje.json` y los 2 scripts de regeneración permanecen en shape v10.114; su migración al shape v10.117 está bloqueada por el procesamiento pendiente de U1-U9 (U0 ya migrada en v10.119). Este lote solo añade declaraciones explícitas para que el drift sea visible en lugar de silencioso.
+
+- `fases/2-reciclaje/CLAUDE.md` regla crítica 1 reformulada: retira mención obsoleta a `campo_semantico` (eliminado v10.115) y sustituye por referencia a las claves de los 4 bloques top-level consolidados + 4 listas tipadas por actividad como fuente de naming canónico de hilos.
+- `fases/2-reciclaje/CLAUDE.md` banner nuevo "Estado actual" al inicio: declara explícitamente la pausa + el bloqueo operativo añadido tras v10.115-118 + dependencias para reactivación.
+- `fases/2-reciclaje/reglas-reciclaje.md` header con cláusula transitoria explícita: las menciones a `campo_semantico` en §1.1, §1.2 y §4 describen el modelo viejo (siguen accuratas para U1-U9 actualmente en shape v10.114) y tendrán que reformularse cuando se migren los 9 inventarios restantes al shape v10.117. Sin cambios al cuerpo (el rediseño operativo de las reglas se hace en lote separado tras reactivación).
+- `scripts/regenerar_reciclaje_vocabulario.py` banner en docstring: declara shape v10.114 asumido + cambios de v10.115-118 + fallará si se ejecuta contra inventarios shape v10.117 + pendiente de adaptación tras reactivación.
+- `scripts/regenerar_reciclaje_mapa.py` banner en docstring: lee `nc1-curso.json` que no cambió de shape, pero advierte de que el output mixto (mapa nuevo + auto viejo del otro script) puede producir `nc1-reciclaje.json` incoherente. Recomienda coordinar la regeneración completa.
+
+**Estado declarado de fase 2 tras v10.120:**
+
+- PAUSADA por decisión 36 (v10.108) — vigente.
+- Bloqueo operativo: shape v10.114 en scripts/output, incompatible con shape v10.117 que producen las extracciones nuevas (U0 ya migrada v10.119; U1-U9 pendientes).
+- Drift documental declarado, no silencioso: cualquier lector ve qué falta migrar.
+- Decisión P1 del REDISEÑO-EN-CURSO.md sigue abierta.
+- Implementación de Capa 1 (R1-R5 cross-unidad) pendiente.
+- Reactivación condicionada a: U1-U9 migradas al shape v10.117 + adaptación de los 2 scripts + cierre de P1 + regeneración íntegra de `nc1-reciclaje.json`.
+
+## [v10.119 — 2026-05-15] — Fase 1: U0 migrada a shape v10.117 + canonización "Saludos y despedidas"
+
+Primera unidad re-procesada con el flujo de worktree aislado introducido en v10.118c (`prompt-dry-run.md`): `../guia-proc-U0/` con rama `proc-u0-wip`, agente dry-run en chat limpio, commit candidato 485f9e5 en el worktree, integración a main por copia controlada del JSON + alta del nuevo canónico en el registry léxico.
+
+**Cambios en main (un solo commit):**
+
+- **`unidades/U0/U0-nc1-inventario.json`** reemplazado wholesale por el candidato del worktree. Sustituye el JSON legacy (shape v10.114: faltaban los 3 bloques top-level consolidados, faltaban las 4 listas tipadas por actividad, `enfoque: "fonetica"` ya no en enum vigente) por el nuevo (shape v10.117 completo: cabecera + `paginas_libro` + `secciones` + 4 bloques top-level consolidados + `paginas_detalle` con 4 páginas/10 actividades/1 cuadro + `_nota_unidad_atipica` justificando el mapeo íntegro a sección `vocabulario` por §7 de `reglas-operativas.md` + 11 entradas de `_decisiones_ia` con P1-P10 marcadas resueltas y anticipaciones detectadas para fase 2).
+- **`fases/1-extraccion-inventario/campos-semanticos-canonicos.json`**: nueva entrada **`Saludos y despedidas`** (origen: `excepcion`, `aliases_indice: ["Saludos"]`) con `nota` explicando que no aparece en índice editorial de U0 ni en PCIC A1 vocabulario (el contenido pragmático vive en PCIC A1 comunicación), canonizado por hallazgo de extracción en el cuadro p11 ("Buenos días / Buenas tardes / Buenas noches"). Total entradas 99 → 100. `_meta.version` 1.0 → 1.1.
+
+**Cierre de las 5 deudas legacy de U0:**
+
+| Legacy en main | Resolución |
+|---|---|
+| `Abecedario` | Remapeo del agente del worktree → `Abecedario español` (ya canónico) |
+| `Números` | Remapeo del agente del worktree → `Números 0-10` (ya canónico) |
+| `Instrucciones de aula` | Remapeo del agente del worktree → `Para la clase` (ya canónico) |
+| `Vocabulario internacional (cognados)` (recurrente) | Absorbido por el shape nuevo (recurrente vacío en U0 atípica) |
+| `Saludos` | Canonizado como `Saludos y despedidas` por dictamen del autor; `Saludos` queda como alias del rótulo verbatim del libro |
+
+**Detalle de edición sobre el candidato copiado:**
+
+- Clave de `vocabulario_consolidado.principal`: `Saludos` → `Saludos y despedidas`.
+- Referencia `cuadro@p11.vocabulario`: `["Saludos"]` → `["Saludos y despedidas"]`.
+- Campo `titulo: "Saludos"` del cuadro p11: **conservado** (texto verbatim del libro).
+- `descripcion.U0` del bloque consolidado y entrada P1(b) de `_decisiones_ia` reescritas para reflejar el canónico final y el dictamen editorial del autor.
+
+**Validador final desde main:** `python3 scripts/validar_inventario.py 0` → **0 errores · 0 avisos · 0 legacy**.
+
+**Trazabilidad operativa:**
+
+- Worktree `../guia-proc-U0/` y rama `proc-u0-wip` se conservan tras la integración para auditoría/comparación; pendiente eliminarlos cuando el autor lo autorice.
+- Inventario legacy anterior queda en el historial git (commit previo en main).
+- Anticipaciones para fase 2 registradas dentro del JSON de U0 (`_decisiones_ia` última entrada): "Nombres de las letras" (U1), "Países hispanohablantes" (U2), lemas verbales escuchar/leer/escribir/repetir/preguntar/decir (U1/U3/U6).
+
+**Deuda restante en el bloque de re-extracción:** U1-U9 con shape legacy todavía pendientes de migración mediante el mismo flujo de worktree (input esperado para próximos lotes).
+
+## [v10.118 — 2026-05-15] — Fase 1: auditoría completa de fase 1 + cierre de las 3 deudas activas
+
+Auditoría sistemática de coherencia interna y cruzada de fase 1 tras los lotes v10.115/116/117 (11 pasos: baseline → coherencia estructural → refs §X.Y + single source of truth → docs vivos ↔ registries → registries ↔ PCIC → registries ↔ nc1-curso.json → CHANGELOG/REVIEW → docs raíz → gaps funcionales). Saneamiento de drift documental en zonas vivas. Cierre de las 3 deudas activas que quedaban declaradas tras v10.117.
+
+**Saneamientos de coherencia (Pasos 1-8):**
+
+- `prompt.md` saneado: nota transitoria acotada a `validar_inventario.py`; paso 4 con cláusula transitoria; "Contratos vivos en orden de precedencia" reformulado.
+- `CLAUDE.md` fase 1 saneado: regla crítica 4 con cláusula transitoria del validador; regla crítica 5 reconoce divergencia declarada en §A.1; regla crítica 6 ampliada a los 4 registries + convención de auditoría (cita canónica vs mención temática); tabla de navegación ajustada (retirada "sílaba tónica subrayada" obsoleta tras v10.116); banner de archivados actualizado.
+- `reglas-operativas.md`: nota explícita de huecos de numeración (§5.3-§5.5, §5.7-§5.8, §8 conservados por estabilidad de refs); cita §0.0 (principio de literalidad) formalizada como sección propia (antes ancla imprecisa); §5.7 nueva "Heterogeneidad semántica intraejercicio".
+- `schema-inventario.md`: Apéndice A.4 reordenado antes de A.5; A.3 item de enum `tiempo` reformulado para reflejar estado acumulado (4 valores, `Perífrasis` retirado por opción B).
+- `glosario.md`: ejemplos de naming canónico corregidos (Parientes/Profesiones y cargos/Asignaturas en lugar de Familia/Profesiones/Lugares); puntero §1.4→§1.3 actualizado tras renumeración v10.116; ref obsoleta a "5 valores" del enum tiempo corregida a 4.
+- `convenciones-y-casos.md`: cita "principio de literalidad" actualizada a §0.0 explícito (en §1.1 y §2).
+- `campos-semanticos-canonicos.json` y `verbos-canonicos.json`: añadido bloque `_meta` con `estado: poblado` (paridad con los otros 2 registries).
+- `gramatica-canonica.json`: clave `_apariciones` de "Pronombre sujeto" desglosada de "U4-U9" comprimido a U3-U9 individuales.
+- `pronunciacion-ortografia-canonica.json`: añadido `_pcic_ref` por categoría (las 7), paridad con `gramatica-canonica.json`.
+- `campos-semanticos-canonicos.json`: añadida entrada "Colores" (origen: excepcion + nota explicativa) — gap detectado en cobertura inversa de `gramatica[]` de U1.
+- **PROCESO-MAESTRO.md** sincronizado en zonas vivas: 4 desincronizaciones corregidas (validador "alineado" → con cláusula transitoria; 5 archivos vivos → 6; 3 bloques `vocabulario_consolidado` → 2; `campo_semantico` contextualizado como eliminado en v10.115; árbol vivo Parte 3 expandido con U0-U9, U1-propuesta, 4 registries, 4 PCIC, archivados de `docs/historico/`).
+- **REVIEW.md** sincronizado: cabecera "Última actualización" 2026-05-07 → 2026-05-15; tabla Bloque "5 archivos operativos + canon.py" → "6 archivos + 4 registries + 4 PCIC"; "Resultado vivo" del Bloque A con cláusula transitoria del validador.
+
+**Las 3 deudas activas cerradas (Paso 10):**
+
+1. **Heterogeneidad semántica intraejercicio** → integrada como `reglas-operativas.md` §5.7. Procedimiento operativo (propuesta-en-chat → distribución / canónico nuevo / marca ambigua), errores prohibidos y caso histórico U2-propuesta documentado.
+2. **`scripts/validar_inventario.py` alineado con schema v10.117**. Cambios: `CLAVES_TOP` incluye los 4 bloques top-level consolidados; `CLAVES_TOP_OPCIONALES` incluye `_decisiones_ia` y `_migracion_rediseno`; enum `tiempo` con 4 valores (`Perífrasis` retirado por opción B); enum `tipo_cuadro` y `enfoque` renombrados (`fonetico/fonetica` → `pronunciacion_ortografia`); validación de las 4 listas tipadas por actividad (siempre presentes); validación del shape `tiempos_y_verbos[]` (lema/tiempo/formas_trabajadas + `estructura_perifrastica` opcional); validación de los 4 bloques top-level consolidados (sub-bloques principal/recurrente + shape de `tiempos_y_verbos_consolidado` lista plana); tolerancia de `_fixture_*` cuando `_fixture_exploratoria` está presente; rechazo de `_fixture_*` en inventarios canónicos (unidad: int); chequeo previo del sufijo `@R` por tipo productivo; validación de marcas internas (`_funcion_ambigua`, `_decisiones_ia`); canon semántico actualizado (`campo_semantico` eliminado, sub-bloque `comprension` eliminado, validación expandida a referencias léxicas en `actividad.vocabulario` y `cuadro.vocabulario`). Conserva los 3 canales (errores, avisos, auditoría legacy R1).
+3. **`scripts/verificar_integridad.py` nuevo** con los 9 chequeos declarados en `schema-inventario.md` §A.3: schema por inventario (delega a validar_inventario, propaga auditoría legacy como avisos); refs canónicas en los 4 registries; regex de fuentes (§9.5); coincidencia cabecera ↔ `nc1-curso.json`; coherencia interna (minúsculas en `formas_trabajadas` del consolidado); integridad PCIC; integridad de registries; detección de marcas bloqueantes en inventarios canónicos; rechazo de `_fixture_*` / unidad no entero en canónicos. Modos `--json` y `--solo N`.
+
+**Verificaciones materiales del lote:**
+
+- Validador refactorizado pasa sintaxis y ejecución contra fixture U4-propuesta archivada (detecta correctamente los 3 errores `Perífrasis` esperados, pre-opción-B).
+- Suite global pasa sintaxis y ejecución; chequeos 6 y 7 (PCIC + registries) limpios; chequeo 1 contra U0 detecta los gaps esperados de shape v10.114 (1811 errores estructurales + 5 entradas de auditoría legacy R1 propagadas como avisos `📋 legacy:`).
+
+**Estado post-lote:**
+
+- 6 docs vivos en fase 1 coherentes entre sí y con los 4 registries poblados.
+- Validador y suite global operativos sobre el shape v10.117.
+- 4 hallazgos diferidos al lote anterior (PROCESO-MAESTRO desincronizaciones) absorbidos en este lote.
+- Deuda restante única: re-extracción de U0-U9 con shape v10.117 — el validador alineado rechaza correctamente las versiones pre-rediseño y eso es input esperado para el próximo lote de procesamiento.
+
+## [v10.117 — 2026-05-15] — Fase 1: materialización de registries gramatical y pronunciación/ortografía
+
+Cierre de deuda heredada desde v10.111 (los registries `gramatica-canonica.json` y `pronunciacion-ortografia-canonica.json` permanecían como esqueletos vacíos `{ "categorias": [] }` con `_meta.estado: "esqueleto-rediseno"`). El bloqueo lo había destapado la fixture U4-propuesta del lote v10.115 (no podía poblar `recurrente` en gramática y pron/orto). Ambos registries se materializan aplicando los diseños cerrados en pieza 3 §14 y pieza 4 §16 de `docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`, con criterio de inclusión depurado por dictamen del revisor.
+
+- **`fases/1-extraccion-inventario/pronunciacion-ortografia-canonica.json`** poblado con 7 categorías canónicas (lista cerrada de pieza 4 §16.2): Sonidos y correspondencias ortográficas (/θ/, /r/, /rr/, /x/, /k/), Letras homófonas (b = v), Vocales, Entonación (interrogativa, exclamativa), Acentuación, Signos de puntuación (interrogación, exclamación), Mayúsculas. Estructura `{categoría → {_apariciones, subcategorias}}`. Cobertura 9/9 entradas de `pronunciacion_ortografia[]` de `nc1-curso.json` + entrada de mayúsculas reasignada desde `gramatica[]`. `_meta.estado` pasa de `esqueleto-rediseno` a `poblado`.
+- **`fases/1-extraccion-inventario/gramatica-canonica.json`** poblado con 17 categorías canónicas aplicando estrategia híbrida de pieza 3 §14.0 (scaffold + PCIC A1):
+  - 15 categorías de la matriz §14.1 (entradas gramaticales puras de `gramatica[]` de `nc1-curso.json`): Artículos determinados, Artículos indeterminados, Demostrativos, Posesivos, Interrogativos, Concordancia de género, Concordancia de número, Nombres contables e incontables, Hay, Construcción gustar/doler, Oposición ser/estar, Posición, Preposiciones, Adverbios de cantidad, Marcadores temporales del pasado.
+  - 2 categorías PCIC adicionales con anclaje material fuerte: Pronombre sujeto (PCIC §7.1.1, presente en cuadros verbales de U1 en adelante), Pronombres átonos de OI (PCIC §7.1.3 serie completa me/te/le/nos/os/les, presente en construcción gustar/doler).
+  - Estructura por categoría: `{_pcic_ref, _apariciones, items}`. Cada `_pcic_ref` apunta a la sección PCIC A1 exacta (`pcic-a1-gramatica.json`).
+- **Criterio de inclusión depurado.** Versión inicial tenía 20 categorías; tras dictamen del revisor sobre el criterio del canon ampliado ("materialmente presente y analíticamente necesario", no "universo lógico potencial"), se retiraron 3 sobreextensiones: Conjunciones copulativas (y/e), Conjunciones disyuntivas (o/u), Adverbios de afirmación y negación (sí/no/también/tampoco). Son uso pragmático del corpus, no contenido enseñado por NC1.
+- **Responsabilidad analítica de fase 2** documentada en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` §8 (nueva sección). Política: componentes "siempre presentes pero no indexados" (las 3 sobreextensiones retiradas y futuros candidatos) **no se canonizan automáticamente en fase 1**; fase 2 detecta el patrón cross-unidad y propone al autor el tratamiento canónico (canonizar, modelar como fenómeno transversal o ignorar). Lista inicial de 3 candidatos + 4 reglas operativas + criterio de ampliación.
+- **Coherencia interna corregida** tras hallazgo del revisor en `Pronombres átonos de OI`: el `_pcic_ref` original citaba la sección PCIC con naming literal ("serie me, te, le") mientras los `items` incluían el paradigma completo. Naming ajustado a "serie completa: me, te, le, nos, os, les" para reflejar la cobertura material real sin perder la referencia PCIC.
+
+Sin cambios en docs operativos (schema, reglas, glosario, convenciones, prompt, CLAUDE): los registries ya estaban declarados como referencias en sus respectivos lugares; lo único que cambia es que ahora están poblados.
+
+## [v10.116 — 2026-05-15] — Fase 1: reset de `convenciones-y-casos.md` bajo modelo IA-first
+
+Cierre del lote de rediseño de fase 1. Tras el reset de `reglas-operativas.md` (v10.115), esta versión cierra la tercera capa viva de soporte: `convenciones-y-casos.md` se reescribe bajo modelo IA-first como **lookup puntual** durante la corrida, con precedencia explícita **schema > reglas > convenciones**.
+
+- **`fases/1-extraccion-inventario/convenciones-y-casos.md`** reescrito completo desde cero. Estructura nueva: §0 naturaleza del archivo + precedencia explícita; §1 convenciones de transcripción (§1.1 literalidad, §1.2 primer ítem resuelto, §1.3 textos con tabla decisional y sub-secciones §1.3.1/2/3 para `texto_completo`/`dialogo_completo`/`textos_personajes`, §1.4 sopas de letras, §1.5 marcadores editoriales que no van en `respuestas`); §2 ejemplos canónicos por tipo de actividad (cloze, selección múltiple, cuestionario, ejemplos incorrectos); §3 ejemplo canónico de unidad atípica con autoridad decisional en reglas §7; §4 casebook (§4.1 errores, §4.2 casos resueltos por unidad, §4.3 casos pendientes de confirmación con shape v10.115); §5 puntero a `reglas-operativas.md` §10.
+- **Cambios sobre el modelo viejo:**
+  - §1.7 vieja (`enfoque` no se hereda de sección) → absorbida en `reglas-operativas.md` §2.3, retirada de convenciones.
+  - §5 vieja (política de mejora continua) → absorbida en `reglas-operativas.md` §10, retirada.
+  - §1.1 vieja (sílaba tónica subrayada hasta U3 con marcado `_palabra_` + `datos._nota`) → **eliminada por decisión del autor** (no relevante en el modelo IA-first). Los inventarios canónicos U0/U1/U3 que documentaron la convención con `datos._nota` quedan como deuda heredada no contractual.
+  - §1.4 y §1.4-bis viejas (textos seguidos y textos atribuidos a personajes) → fusionadas en §1.3 con tabla decisional al frente y sub-secciones §1.3.1/2/3.
+  - §1.8 vieja (`columnas_relaciona`) → reubicada en §4.3.1 como caso pendiente de confirmación con shape v10.115 (anclaje único en U6, no extraído con shape nuevo).
+  - Tono reescrito IA-first: "la IA aplica esta convención al transcribir X" en lugar de "se transcribe X".
+- **Regla decisional única para `respuestas` con huecos** (§1.3.2): si el input usa `[N]` (típico de `dialogo_completo`), cada entrada de `respuestas` lleva formato `"[N] valor"`; si el input usa ítems numerados (`"1. …"`, típico de `items_libro`), cada entrada va solo con el valor. No mezclar variantes.
+- **Precedencia explícita schema > reglas > convenciones** propagada a:
+  - `prompt.md`: eliminado el bloque de "Deuda transitoria"; lectura mínima limitada a schema + reglas + PDF; nueva sección "Lookup puntual durante la corrida" para `convenciones-y-casos.md`; nota final con jerarquía explícita.
+  - `CLAUDE.md` fase 1: banner de estado actualizado (sin "EN MIGRACIÓN", `convenciones-y-casos.md` 🟢); regla 3 (single source of truth) reformulada con jerarquía explícita en conflicto; tabla "Para qué consultar qué archivo" redirigida al archivo vivo; documentos relacionados consolidados.
+  - `reglas-operativas.md`: cláusula transitoria del header retirada; añadida nota de precedencia entre contratos vivos.
+  - `schema-inventario.md`: aviso transitorio acotado a `validar_inventario.py` (reglas y convenciones declaradas alineadas); añadida nota de precedencia.
+- **Archivado en `docs/historico/`** de los dos reservorios históricos:
+  - `convenciones-y-casos-viejo.md` con header de archivo histórico que mapea cada §X.Y vieja al destino vivo (o a "absorbida en reglas-operativas.md" / "eliminada").
+  - `reglas-operativas-viejo.md` con su header existente actualizado: la condición de archivado diferida (cierre de convenciones) se cumple ahora.
+- **Coherencia con `glosario.md`** (Paso 5): cobertura verificada de campos `datos.*` vía el principio "saco abierto" declarado (sin enumerar campo por campo, sin abrir deuda de mantenimiento cruzado); añadido **un único puntero selectivo** desde la entrada `datos` del glosario hacia `convenciones-y-casos.md §1.3` (tabla decisional entre los 3 campos canónicos de texto).
+- **Verificación atómica de referencias** (Paso 4): cero referencias operativas vivas a los dos `-viejo` desde docs operativos en `fases/` o desde raíz. Las menciones residuales en `CHANGELOG.md` son bitácora histórica preservada por anti-revisionismo. Referencias `§X.Y` desde `CLAUDE.md` fase 1 hacia `convenciones-y-casos.md` (§1, §2, §4) resuelven correctamente contra el archivo vivo.
+- **Validación material** (Paso 6) por convención promovida a §1: §1.1 literalidad transversal; §1.2 primer ítem resuelto verificado en U0 (Colombia, F-ú-t-b-o-l, ejemplos_modelo); §1.3.1 `texto_completo` en U1 y U3 (lecturas Javier/Lucía); §1.3.2 `dialogo_completo` en U1, U3 y fixture U4-propuesta; §1.3.3 `textos_personajes` y §1.5 marcadores editoriales conservadas en §1 sin caso material verificable en shape v10.115 (anclaje histórico U5) por valor preventivo (en particular §1.5 previene el bug real de desplazamiento de numeración cuando el modelo entra como primera opción); §1.4 sopa de letras con caso disparador U3 documentado y transcripción material `cuadricula` en U1.
+
+Sin commit/rerun funcional (decisión: el cambio es absorción y limpieza, no introducción de patrón decisional nuevo).
+
+## [v10.115 — 2026-05-14] — Fase 1: reset de `reglas-operativas.md` bajo modelo IA-first
+
+Hito de cierre del lote de rediseño operativo de fase 1. `reglas-operativas.md` deja de ser parche evolutivo del modelo viejo y pasa a ser **autoridad operativa única reescrita desde cero bajo el modelo IA-first**. La capa de convenciones queda en deuda transitoria declarada explícitamente.
+
+- **`fases/1-extraccion-inventario/reglas-operativas.md`** reescrito completo desde cero. Estructura nueva: §0 política transversal (§0.1 propuesta-en-chat, §0.2 construcción iterativa de `recurrente`, §0.3 procedimiento obligatorio A/B/C de poblado), §1 precedencia actividad/cuadro/nota/autoevaluación, §2 asignación de `tipo` (taxonomía de 20) + §2.3 destreza/enfoque, §3 `tipo_cuadro`, §4 "Para aprender" / "Observa", §5 población de campos (§5.1 criterios paraguas con §5.1.1-§5.1.3, §5.2 verbo soporte vs paradigma, §5.6 canon semántico léxico, §5.9 ciclo de vida de marcas internas), §6 derivación de los 4 bloques consolidados (incluye §6.3 anticipación, §6.4 normalización formas_trabajadas, §6.5 sufijo `@R` con 5 tipos productivos, §6.6 Regla 11 audio.transcripcion), §7 unidades atípicas, §9 política PCIC, §10 mejora continua. Banner de follow-ups vivos reducido a 2: heterogeneidad semántica y suite automatizada de verificación global.
+- **Familia `@R` alineada a 5 tipos productivos** (no 6) en `reglas-operativas.md` §6.5, `schema-inventario.md` §9.5 y §A.3, `glosario.md` l.124. Eliminado `produccion_escrita_libre` por no existir en la taxonomía de 20.
+- **§5.6 acotado a campos semánticos léxicos** con exclusiones explícitas para `tiempos_y_verbos_consolidado`, `gramatica_consolidada` y `pronunciacion_ortografia_consolidada` (cada uno tiene política propia en su registry).
+- **`reglas-operativas-viejo.md`** congelado como reservorio histórico: header "ARCHIVO HISTÓRICO" prohíbe consulta operativa y edición; bloque de follow-ups reescrito como "CERRADOS" con punteros a la sección viva donde cada uno resolvió (`@R` → §6.5, Regla 11 → §6.6, input incidental → §5.1.1+§5.6, anticipación → §6.3, verbo soporte → §5.2, normalización formas_trabajadas → §6.4); boilerplate heredado neutralizado por nota única que declara desactivada toda autoridad operativa del archivo.
+- **Apéndice §A.3 del schema** depurado: retirado el falso pendiente sobre Regla 11 (ya cerrada en §6.6 del archivo vivo).
+- **`prompt.md`** saneado de inconsistencias con la deuda transitoria de convenciones: lectura mínima, "otros artefactos si hay conflicto" y lista de contratos vivos reformuladas para que `convenciones-y-casos.md` deje de aparecer como consultable durante una corrida; queda solo `convenciones-y-casos-viejo.md` con alcance acotado a transcripción concreta + casebook y cláusula explícita de no-prevalencia sobre schema/reglas. Bloque de deuda transitoria de convenciones añadido al header del archivo.
+- **`fases/1-extraccion-inventario/CLAUDE.md`** alineado: regla 3 (single source of truth por capa) reformulada para reflejar que la capa de convenciones está en deuda transitoria; tabla "Para qué consultar qué archivo" y "Documentos relacionados" redirigidos a `-viejo.md` con caveat de no-prevalencia. Banner de estado ya declaraba 🟡 deuda para `convenciones-y-casos.md` desde v10.111; ahora todo el archivo es coherente.
+- **Verificación atómica de referencias `§X.Y`** cruzadas desde schema, glosario, prompt y CLAUDE de fase 1 hacia `reglas-operativas.md`: cero referencias rotas tras la reescritura.
+- **Prueba de certificación del contrato sobre U4-propuesta pp.42-46** (worktree paralelo, chat limpio, rama `v10.115-wip`). Los 9 ejes discriminativos pasaron: pureza de entrada, navegabilidad, refs `§X.Y` verificables, §0.1 con 15 propuestas abiertas y cero autoresoluciones, §0.3 A/B/C ejecutado en las 3 dimensiones, §6.5 con chequeo previo y 0 sufijos `@R` aplicados, no dependencia normativa del `-viejo`, conformidad de fixture en shape y convención de fase. El endurecimiento de §6.5 (chequeo previo obligatorio del `tipo`) eliminó el bug crítico de la corrida fallida del mismo día sobre v10.114 (archivada en `docs/historico/pruebas-fallidas/2026-05-14-corrida-invalida-v10.115/`). Fixture aprobada conservada en `docs/historico/pruebas/2026-05-14-prueba-aprobada-v10.115/` como evidencia forense, no como inventario canónico.
+- **Opción B para perífrasis** (gatillada por defecto de salida de la prueba aprobada). El enum `tiempo` queda en 4 valores: `Perífrasis` retirado por no ser tiempo verbal sino estructura sintáctica. Añadido campo opcional `estructura_perifrastica: <str>` en `actividad.tiempos_y_verbos[]` (schema §3.2). El verbo auxiliar de una perífrasis conserva su tiempo real (típicamente `Presente`); el infinitivo complemento NO se registra como entrada verbal separada — queda implícito en `estructura_perifrastica`. Propagado a `schema-inventario.md` (§3.2, §5d), `reglas-operativas.md` (§5.1.2, §5.2), `glosario.md` (entradas de `tiempo` y `tiempos_y_verbos`).
+- **§5.2 reformulada con regla de anticipación por lema.** Un verbo entra en `tiempos_y_verbos` solo si su lema es canónico de la unidad actual o anterior. Si es canónico de unidad posterior, sus formas que aparezcan son input incidental y NO se registran, aunque la forma sea visible. Aplica por igual a formas conjugadas aisladas, auxiliares de perífrasis e infinitivos sueltos. Resuelve la asimetría `ir`/`hacer` detectada en la fixture.
+- **Endurecimiento de §6.5 con chequeo previo obligatorio del `tipo`** antes de aplicar `@R`. Si el `tipo` no pertenece exactamente a la lista cerrada de 5 productivos, no se aplica el sufijo aunque la palabra "parezca" producida. Aplicar `@R` sobre tipo no productivo o sobre cuadro es bug.
+
+- **Archivado de `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`** a `docs/historico/`. Todas sus piezas arquitectónicas están absorbidas en los contratos vivos (schema, reglas, glosario, registries, PCIC). Header de archivo histórico añadido; referencias en `fases/1-extraccion-inventario/CLAUDE.md`, `prompt.md` y `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` actualizadas.
+
+Lote siguiente (no incluido en este commit): reset de `convenciones-y-casos.md` bajo modelo IA-first.
+
+## [v10.114 — 2026-05-13] — Archivo de documentos absorbidos a `docs/historico/`
+
+Dos documentos de fase 1 cuyo contenido ya está absorbido en los contratos vivos pasan a histórico:
+
+- `fases/1-extraccion-inventario/schema-inventario-viejo.md` → `docs/historico/schema-inventario-viejo.md`. Su propio header lo declaraba histórico; sus decisiones viven ahora en `schema-inventario.md` cuerpo §1-§14.
+- `fases/1-extraccion-inventario/PROPUESTA-PIEZA-2-IA-FIRST.md` → `docs/historico/PROPUESTA-PIEZA-2-IA-FIRST.md`. Propuesta arquitectónica del rediseño IA-first, absorbida en `prompt.md`, `schema-inventario.md`, `glosario.md` y `reglas-operativas.md`.
+
+`fases/1-extraccion-inventario/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md` se mantiene en su ubicación actual por decisión del autor (sigue siendo referencia de discusión activa). Referencias actualizadas en `CLAUDE.md` de fase 1.
+
+## [v10.113 — 2026-05-13] — Retirada de fixtures exploratorias U2p y U3p tras prueba
+
+Las fixtures `U2-propuesta` y `U3-propuesta` introducidas en v10.112 cumplieron su función (prueba mínima discriminativa + segunda prueba cerrable que reveló el error de proceso motivador de `reglas-operativas.md` §5.12-§5.14). Eliminadas del repositorio tras consolidar las lecciones en contrato vivo. `U1-propuesta` se mantiene intacta con su shape original (`_propuesta_rediseno` + `_migracion_rediseno`) y su banner especial en el dashboard, reservada como muestra de la arquitectura nueva para revisión futura. Sin cambios en el contrato documental ni en el dashboard.
+
+## [v10.112 — 2026-05-13] — Rediseño fase 1: dashboard adaptado + fixtures exploratorias
+
+Segundo commit del hito transitorio (continuación de v10.111).
+
+- `diagrama.py`: mapping genérico `Np` → `UN-propuesta` (antes solo `U1p` hardcodeado).
+- `web/index.html`: 3 bugs del renderer ante el shape nuevo corregidos. (1) `vocBlock` ahora lee `g.items || g.palabras` (compatibilidad shape nuevo + viejo). (2) `verbosBlock` lee `v.lo_que_se_trabaja || v.descripcion` (registry o schema). (3) `renderConsolidatedWithSubs` ahora pinta sub-bloques vacíos como "(vacío)" atenuado, en lugar de ocultarlos.
+- Fixtures exploratorias en `unidades/`: `U1-propuesta` (preexistente, ahora trackeada), `U2-propuesta` (pp.24+30, cerrable tras decisiones D1-D3 en chat: Escuela canónico para léxico cultural, ser entra en cuadro Demostrativos, clases optativas/obligatorias renombrados; metadata coherente con contenido), `U3-propuesta` (pp.32+34, prueba discriminativa que reveló error sistémico de proceso al omitir vocabulario_consolidado.recurrente; motivó §5.12-§5.14 en reglas-operativas).
+- Convención `_fixture_exploratoria` consolidada: visibles en dashboard como `Up`, declaradas extracontractuales en schema §A.5 y glosario.
+
+## [v10.111 — 2026-05-13] — Rediseño fase 1: contrato documental consolidado (hito transitorio)
+
+Primer commit del hito transitorio del rediseño de fase 1. **Schema NC1 cerrado en cuerpo; rediseño fase 1 completo NO cerrado** (deuda viva catalogada en Apéndice transitorio).
+
+- `fases/1-extraccion-inventario/schema-inventario.md`: cuerpo §1-§14 cerrado para NC1 (top-level, página, actividad, cuadro, 4 enumeraciones cerradas, 4 bloques consolidados con fuentes y descripcion compartidas en §9.5/§9.6, respuestas y multimedia, marcas internas §14). Apéndice transitorio §A.1-§A.5 cataloga deuda externa: alineación validador (§A.1), clave transitoria `_migracion_rediseno` (§A.2), 11 ítems específicos para validador (§A.3 — renombrados de enums, ampliación tiempo, normalización formas_trabajadas, suite de verificación automatizada, etc.), condiciones de retirada del apéndice (§A.4), metadata extracontractual `_fixture_*` (§A.5).
+- `fases/1-extraccion-inventario/glosario.md`: creado. Diccionario operativo de todos los términos del schema, alineado con `schema-inventario.md` punto por punto.
+- `fases/1-extraccion-inventario/reglas-operativas.md`: 5 reglas del rediseño integradas en cuerpo con carácter OBLIGATORIO. §5.10 (verbo soporte: entra si sus formas aparecen, independientemente del foco), §5.11 (normalización formas_trabajadas), §5.12 con sub-A/B/C (procedimiento obligatorio de poblado de `recurrente` para las tres dimensiones), §5.13 (propuesta-en-chat ante toda decisión no clara), §5.14 (construcción iterativa de `recurrente`). Banner de follow-ups conserva la deuda residual: sufijo `@R`, regla 11 audio, input incidental, anticipación, heterogeneidad semántica, suite de verificación.
+- `fases/1-extraccion-inventario/CLAUDE.md`: header reescrito con semáforo de estado real (🟢 schema, 🟡 reglas-operativas, 🟡 convenciones-y-casos). Regla de precedencia: en conflicto schema↔reglas-operativas, gana schema. Convención de fixtures `UNp` documentada.
+- `fases/1-extraccion-inventario/prompt.md`: nota transitoria cubre validador + reglas-operativas con regla de precedencia; pasos 3a/3b explícitos (clasificar y derivar consolidados); lookup bajo demanda incluye los 4 archivos PCIC.
+- `fases/1-extraccion-inventario/convenciones-y-casos.md`: renombrado `fonetica` → `pronunciacion_ortografia`.
+- Registries esqueleto: `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`. `verbos-canonicos.json` ya poblado.
+- 4 archivos PCIC A1 fuente: `pcic-a1-vocabulario.json` (417 entradas), `pcic-a1-gramatica.json`, `pcic-a1-pronunciacion-ortografia.json` (sub-bloques pronunciación + ortografía, pronunciación extraída de Cervantes web), `pcic-a1-comunicacion.json` (fuera de las 4 dimensiones, recurso disponible).
+- Documentos archivados: `docs/historico/prompt-v1-antiguo.md`, `docs/historico/prompt-v2-monolitico-NO-USAR.md`. Documentos de transición arquitectónica: `REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md`, `PROPUESTA-PIEZA-2-IA-FIRST.md`, `schema-inventario-viejo.md`, `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`.
+
+## [v10.108f — 2026-05-11] — Cierre residual de coherencia: PROCESO-MAESTRO paso 7 del pipeline
+
+Hallazgo medio del revisor sobre v10.108e: quedaba una línea viva en PROCESO-MAESTRO §3 (pipeline definido, paso 7) que decía *"actualizar `nc1-reciclaje.json` manualmente con ayuda de Claude Code en chat (no automático)"* y contradecía el comportamiento vigente desde v10.108d.
+
+Reformulada como histórico, apuntando a la decisión 36 y al comportamiento actual (fase 2 pausada + flag `--regenerar-reciclaje` opcional). Grep cruzado confirma cero referencias residuales al modelo viejo automático en docs operativas / contrato vigente; las entradas cronológicas en bitácoras (REVIEW y PROCESO-MAESTRO) se conservan literales como historia.
+
+REVIEW etiqueta de sincronización → v10.108f. Esta entrada se autodocumenta.
+
+---
+
+## [v10.108e — 2026-05-11] — Cierre de coherencia documental tras v10.108d
+
+Tres correcciones tras hallazgos del revisor sobre v10.108d:
+
+- **Medio:** `fases/2-reciclaje/CLAUDE.md` y `reglas-reciclaje.md` decían que el nivel auto "se ejecuta automáticamente al integrar cada unidad". Actualizados al comportamiento real: fase 2 pausada, integración no regenera por defecto, flag `--regenerar-reciclaje` opcional.
+- **Bajo:** `CLAUDE.md` raíz tenía en el comentario del comando `integrar_unidad.py` el wording "valida + actualiza reciclaje + commit". Reformulado a "copia + valida + commit del inventario" con nota sobre el flag opcional.
+- **Bajo:** `PROCESO-MAESTRO.md` líneas 118 (Parte 3, descripción D) y 546 (decisión 23) contaban dos modelos antiguos del reciclaje distintos del vigente. Anotadas como histórico/superado por la decisión 36; trazabilidad de evolución preservada (v10.97 introdujo scripts, v10.108 pausó fase 2, v10.108d desacopló).
+
+REVIEW etiqueta de sincronización → v10.108e. Esta entrada se autodocumenta.
+
+---
+
+## [v10.108d — 2026-05-11] — Desacoplar regeneración de reciclaje del flujo de integración (fase 2 pausada)
+
+Hallazgo medio del revisor: `integrar_unidad.py` ejecutaba `regenerar_reciclaje_vocabulario.py` automáticamente en cada integración, contradiciendo la pausa declarada de fase 2 en REVIEW/README/PROCESO-MAESTRO y las decisiones antiguas que describían el reciclaje como manual.
+
+**Opción A disciplinada** aplicada:
+- `scripts/integrar_unidad.py`: la llamada al regenerador queda detrás de un flag explícito `--regenerar-reciclaje`. Por defecto, el reciclaje no se toca. El docstring y el paso 4 reflejan el cambio. El commit final solo incluye el inventario por defecto, y el reciclaje solo si se regeneró.
+- README.md, REVIEW.md y PROCESO-MAESTRO §36: nota corta que explica el comportamiento por defecto durante la pausa de fase 2 y la existencia del flag opcional.
+- REVIEW etiqueta de sincronización → v10.108d.
+- Eliminado el `.bak` local del canon (transitorio, gitignored).
+
+Esta entrada se autodocumenta en el mismo commit para no reabrir la regresión de trazabilidad.
+
+---
+
+## [v10.108c — 2026-05-11] — Sincronización documental del batch canon (REVIEW + PROCESO-MAESTRO + CHANGELOG)
+
+Cierre documental de la activación del canon semántico en fase 1
+(v10.108 + v10.108b). Sin cambios funcionales: solo trazabilidad.
+
+- CHANGELOG: entradas formales de v10.108, v10.108b y esta misma v10.108c (autodocumentada para no reabrir la regresión doc).
+- REVIEW: estado de fase 1 actualizado con canon activado en rollout R1; etiqueta de sincronización → v10.108c; bitácora con el cierre del batch.
+- PROCESO-MAESTRO: bitácora con la implementación cerrada de la decisión 36.
+
+---
+
+## [v10.108b — 2026-05-11] — Fix prompt: ítem 13 del checklist alineado al contrato del canon
+
+Hallazgo bajo del revisor sobre v10.108: el ítem 13 del checklist de cierre del entrypoint decía "existen en el canon o son aliases conocidos", pero el resto del contrato exige canónicos literales para extracción nueva. Reformulado a "canónicos literales (no aliases)". Aliases solo se reconocen para diagnóstico de legacy. Sin cambios funcionales.
+
+---
+
+## [v10.108 — 2026-05-11] — Canon semántico activado en fase 1 (batch único)
+
+Batch único que cierra la coherencia del canon en fase 1 sin romper main en ningún punto. Combina los pasos 3-7 del plan de implementación de la decisión 36 (E-final).
+
+**6 archivos modificados, 0 archivos doc nuevos:**
+
+- `schema-inventario.md`: §9, §10, §13 con restricciones canon + marca `_pendiente_canon`. Ejemplo top-level alineado a `<canonico>`.
+- `reglas-operativas.md` §5.6: reescrita por completo. Sustituye la decisión "liberal" antigua. Define universo válido, frontera `aliases_indice` vs `aliases_auto` por procedencia, árbol de decisión, rollout R1/R2/R3 con matriz por tipo de match.
+- `scripts/validar_inventario.py`: tercer canal `auditoria_legacy` con contador propio. Constantes `ROLLOUT_CANON_ITERACION = "R1"` y `LEGACY_UNIDADES_R1 = [0..9]`. Función `_validar_canon_inventario` recorre dos superficies (campo_semantico + claves de vocabulario_consolidado). Dos fixes: control de canon malformado (vía `canon.validar_canon`) y distinción real `aliases_indice` vs `aliases_auto` por iteración. `_pendiente_canon` → error duro siempre. Bug latente de shadowing `d`→`dx` en loop de destreza arreglado.
+- `prompt.md`: pasos 5 y 6 del flujo instruyen agrupación canónica directa y `_pendiente_canon` como vía honesta. Checklist con 2 ítems nuevos (13 canon, 14 ausencia de marca).
+- `CLAUDE.md` de fase 1: regla crítica 6 (canon como autoridad de naming) + entrada en tabla de navegación.
+- `PROCESO-MAESTRO.md`: decisión 36 — `_pendiente_canon` aclarado como marca literal (no booleano).
+
+**Comportamiento del validador (matriz documentada y aplicada):**
+
+| Caso | R1 legacy | R1 no-legacy | R2 | R3 |
+|---|---|---|---|---|
+| canónico literal | OK | OK | OK | OK |
+| `aliases_indice` | auditoría legacy | error duro | OK silencioso | error duro |
+| `aliases_auto` | auditoría legacy | error duro | aviso | error duro |
+| sin match | auditoría legacy | error duro | error duro | error duro |
+| `_pendiente_canon` | error duro | error duro | error duro | error duro |
+
+**Verificación:** U0-U9 siguen validando 0/0 con auditoría legacy informativa (11, 19, 9, 13, 9, 14, 16, 14, 16, 0 entradas respectivamente). Caso negativo controlado (U10 simulada) produce los errores duros esperados. Canon íntegro (98 entradas).
+
+---
+
+## [v10.105b — 2026-05-11] — Fix doc v10.105: ambigüedad de SoT + trazabilidad + tabla README
+
+Tres correcciones tras hallazgos del revisor sobre v10.105:
+- PROCESO-MAESTRO decisión 36: se quita la mención a `_politica` embebida en el JSON canónico (contradecía la versión aprobada "JSON solo de datos, política en `reglas-operativas.md`"). La política y `LEGACY_UNIDADES_R1` se ubican explícitamente en sus archivos correctos.
+- REVIEW etiqueta de sincronización: v10.104b → v10.105b (estaba un commit por detrás).
+- README tabla de estado: fase 2 marcada como "⏸ Pausada hasta cierre del canon de fase 1" para alinear con la sección Estado actual.
+
+Esta entrada se autodocumenta en este commit para no reabrir la regresión de trazabilidad.
+
+---
+
+## [v10.105 — 2026-05-11] — Decisión de diseño cerrada: canon semántico en fase 1 (E-final)
+
+Tras 5 iteraciones revisor↔ejecutor sobre cómo gobernar los nombres de `campo_semantico` y de las claves de `vocabulario_consolidado` en los inventarios:
+
+**Propuesta E-final aprobada por el revisor:** el canon vive dentro de fase 1, integrado en sus documentos existentes sin crear archivos de doc nuevos. Artefactos nuevos solo son datos y código (`campos-semanticos-canonicos.json`, `scripts/canon.py`, `scripts/inicializar_canon_semantico.py`). Modificaciones quirúrgicas a `CLAUDE.md`/`prompt.md`/`reglas-operativas.md`/`schema-inventario.md` de fase 1. Validador endurecido con 3 canales (errores, avisos, auditoría legacy con contador propio). Rollout R1 (auditoría para U0-U9, error duro para nuevas) → R2 (legacy vaciada) → R3 (endurecimiento final). Dos carriles complementarios: extracción canónica desde origen (prompt) + saneamiento retrospectivo. Marca `_pendiente_canon` transitoria con triple defensa que bloquea cierre. Dashboard solo lectura. **Fase 2 pausada** hasta cierre de canon; modelo viejo del reciclaje (mapa+auto+detalle paralelo) anulado.
+
+**Sincronización documental:**
+- `REVIEW.md`: estado bloque B reformulado; B2a marcado como anulado; bitácora con entrada de la decisión.
+- `PROCESO-MAESTRO.md`: decisión 36 nueva con detalle completo; anotación de anulación en la descripción del modelo viejo de `nc1-reciclaje.json` (línea 213); bitácora.
+- `README.md`: estado actual de fase 1 y fase 2 actualizados.
+
+No incluye `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` (artefacto local untracked, sigue siendo el documento de trabajo de la reformulación de fase 2 cuando llegue su turno).
+
+---
+
+## [v10.104d — 2026-05-11] — Fix CHANGELOG: entrada formal de v10.104c
+
+Hallazgo bajo del revisor sobre `05ddacb`: el fix de v10.104c reescribió la entrada de v10.104b pero no se autodocumentó como hito propio en el changelog. Añadida entrada formal de v10.104c. Esta entrada de v10.104d se autodocumenta en el mismo commit para no reabrir la brecha.
+
+---
+
+## [v10.104c — 2026-05-11] — Fix CHANGELOG: retira referencia a artefacto local untracked
+
+Hallazgo bajo del revisor sobre v10.104b: la entrada de CHANGELOG mencionaba `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` como ubicación de los refinamientos pendientes, pero ese archivo es local untracked. Reformulada la frase para no comprometer una referencia que no existe en clon limpio.
+
+---
+
+## [v10.104b — 2026-05-11] — Doc canónica de integración U9 + curso completo extraído
+
+Sincroniza CHANGELOG/REVIEW/PROCESO-MAESTRO/README con la integración U9 (v10.104) y refleja que U0-U9 están integradas y validando 0/0. No incluye `REDISEÑO-EN-CURSO.md` (artefacto local untracked).
+
+Esta entrada se autodocumenta en el mismo commit junto a la de v10.104, evitando reabrir la brecha de trazabilidad del patrón doc-comenta-pero-no-se-comenta.
+
+**Estado tras este commit:** curso completo extraído (10 unidades). Fase 1 con todos los inventarios integrados; refinamientos del extractor identificados pendientes (canon semántico, doble superficie del validador, refuerzo del prompt) — su documentación operativa entrará en main cuando se cierre la decisión.
+
+---
+
+## [v10.104 — 2026-05-11] — Integración U9 a main (41 actividades, 6 cuadros, 0/0)
+
+Integración limpia de U9 desde worktree `extract/U9` vía `integrar_unidad.py`. Última unidad del curso.
+
+- **Stats:** 41 actividades, 6 cuadros, autoevaluación presente, validador 0/0.
+- **Reciclaje:** se mantiene en 181 hilos (92 mapa + 89 auto) — U9 no introduce campos semánticos nuevos respecto a U0-U8; sus contenidos caen sobre hilos ya existentes.
+- **Sin desviaciones** del flujo automatizado.
+
+---
+
+## [v10.103c — 2026-05-10] — Fix doc: autodocumenta v10.103b + retira referencia a artefacto local
+
+Dos correcciones tras hallazgos del revisor sobre b887984:
+- CHANGELOG/REVIEW/PROCESO-MAESTRO: añadida entrada formal de v10.103b (que sincronizaba la integración U8 pero no se autodocumentaba).
+- REVIEW: retirada la referencia a `REDISEÑO-EN-CURSO.md` del estado comprometido del bloque B. Ese artefacto sigue local (untracked); no debe figurar como referencia activa en main.
+- Esta entrada (v10.103c) se autodocumenta en el mismo commit, evitando reabrir la brecha de trazabilidad.
+
+---
+
+## [v10.103b — 2026-05-10] — Doc canónica de integración U8
+
+Sincroniza CHANGELOG/REVIEW/PROCESO-MAESTRO con la integración U8 (v10.103). 46 actividades, 5 cuadros, 0/0, reciclaje a 181 hilos (92 mapa + 89 auto).
+
+---
+
+## [v10.103 — 2026-05-10] — Integración U8 a main (46 actividades, 5 cuadros, 0/0)
+
+Integración limpia de U8 desde worktree `extract/U8` vía `integrar_unidad.py`. Reciclaje actualizado: 181 hilos (92 mapa + 89 auto). Sin desviaciones del flujo automatizado.
+
+---
+
+## [v10.102 — 2026-05-10] — Integración U7 a main (46 actividades, 4 cuadros, 0/0)
+
+Integración limpia de U7 desde worktree `extract/U7` vía `integrar_unidad.py`. Reciclaje actualizado: 171 hilos (92 mapa + 79 auto). Sin desviaciones del flujo automatizado.
+
+---
+
+## [v10.101 — 2026-05-10] — Refuerzo del checklist de cierre del extractor (prompt.md)
+
+Tras auditar los tres fixes del ejecutor 2 en U6 (ejemplo duplicado en respuestas + ítem inventado), análisis: las reglas canónicas existen y son suficientes (§1.6 y §5.7), pero son fallos invisibles al validador estructural. La fricción está en el cierre — el ejecutor no estaba comprobándolos antes de dar el JSON por bueno.
+
+Añadidos 2 ítems al checklist de "Comprobaciones manuales" en `prompt.md` (no nueva sección, no bloat):
+- Ítem 11: `datos.ejemplo_libro` no duplicado en `respuestas` (ref §1.6).
+- Ítem 12: cardinalidad literal de `items_libro` igual a la del PDF, sin invención (ref §5.7).
+
+No se modifican reglas. Solo se hace explícito en el prompt lo que ya era obligatorio.
+
+---
+
+## [v10.100 — 2026-05-10] — Integración U6 a main (44 actividades, 4 cuadros, 0/0)
+
+Primera integración con el flujo automatizado `integrar_unidad.py`. Inventario U6 final auditado por el ejecutor 2 + actualización automática de `nc1-reciclaje.json` (161 hilos: 92 mapa + 69 auto).
+
+Tres fixes de auditoría incluidos en el inventario final:
+- Ejemplo duplicado eliminado en `respuestas` de U6-p64-act01.
+- Ejemplo duplicado eliminado en `respuestas` de U6-p64-act02.
+- Ítem inventado #9 eliminado en U6-p65-act04.
+
+U6 usa el campo canónico `columnas_relaciona` en U6-p63-act05, U6-p63-act08, U6-p68-act02 y U6-p71-act05 (campo introducido en v10.98).
+
+---
+
+## [v10.99g — 2026-05-10] — Cierre de regresión doc: v10.99e/f autodocumentadas
+
+Doble cierre para detener la regresión "cada commit doc abre una brecha nueva":
+- Entrada de v10.99e corregida: decía "Tres correcciones" enumerando cuatro bullets, y uno (separación v10.99b/c) no fue cambio de v10.99e — esas entradas ya estaban separadas en v10.99d. Atribución falsa eliminada.
+- Entrada formal de v10.99f añadida.
+- Esta misma entrada (v10.99g) cierra el ciclo en el mismo commit que documenta a sus predecesoras, evitando otra brecha.
+
+---
+
+## [v10.99f — 2026-05-10] — Cierre trazabilidad: v10.99e documentado
+
+Tras hallazgo del revisor: v10.99e era un commit doc pero no estaba reflejado en CHANGELOG/REVIEW/PROCESO-MAESTRO. Añadidas entradas formales en los tres documentos.
+
+---
+
+## [v10.99e — 2026-05-10] — Fix doc: cronología honesta v10.99 + estado sincronización
+
+Tres correcciones tras hallazgos del revisor sobre v10.99d:
+- CHANGELOG v10.99: la entrada original atribuía retroactivamente a v10.99 garantías que no entraron hasta v10.99b/c. Reescrita para reflejar solo lo que entró en ese commit.
+- CHANGELOG: añadida entrada formal de v10.99d.
+- REVIEW: estado de documentación marcado como ✅ sincronizada.
+
+---
+
+## [v10.99d — 2026-05-10] — Sincronización documental CHANGELOG/REVIEW/PROCESO-MAESTRO
+
+Actualización obligatoria de los tres documentos canónicos tras los commits v10.97-v10.99c que habían quedado sin reflejarse. Sin cambios de código ni datos.
+
+---
+
+## [v10.99c — 2026-05-10] — Fix integrar_unidad: snapshot de nc1-reciclaje.json antes de regenerar
+
+Si `regenerar_reciclaje_vocabulario.py` falla, ahora se restauran ambos archivos: el inventario de la unidad y `nc1-reciclaje.json`. Antes solo se restauraba el inventario, dejando el reciclaje potencialmente inconsistente.
+
+---
+
+## [v10.99b — 2026-05-10] — Fix integrar_unidad: git add antes del commit + corrección de sintaxis
+
+Dos defectos del v10.99 cerrados tras hallazgos del revisor:
+- Sintaxis de commit corregida: `git commit --only -- <paths> -m <msg>` era inválida (después de `--` todo es pathspec) → `git commit -m <msg> -- <paths>` con `-m` antes de `--`.
+- `git add` explícito añadido antes del commit para que funcione con archivos nuevos (caso real: primera integración de U6).
+
+---
+
+## [v10.99 — 2026-05-10] — Script integrar_unidad.py + fase 2 CLAUDE.md actualizado
+
+`scripts/integrar_unidad.py` — nuevo script que encadena los pasos de integración de una unidad: copia, valida, actualiza reciclaje, commit. Primera versión del flujo automatizado. **Defectos corregidos en commits posteriores:** sintaxis de commit inválida (v10.99b), restauración incompleta de main si fallaba el reciclaje (v10.99c).
+
+`CLAUDE.md` raíz — añadido `integrar_unidad.py` a comandos básicos.
+
+`fases/2-reciclaje/CLAUDE.md` y `reglas-reciclaje.md §4` — nivel auto documentado como parte del flujo de integración automática, no invocación manual.
+
+---
+
+## [v10.98 — 2026-05-10] — Campo canónico columnas_relaciona + migración U1/U5
+
+Nuevo campo canónico `datos.columnas_relaciona` para actividades `relaciona` con dos columnas explícitas en el libro (`{izquierda: [str], derecha: [str]}`).
+
+- `schema-inventario.md`: campo añadido al saco `datos`; §12 actualizado con excepción para `relaciona` columnar; ref a `TIPOS_QUE_REQUIEREN_CONTENIDO_VISIBLE`.
+- `reglas-operativas.md §5.7`: excepción explícita para `relaciona` con dos columnas.
+- `convenciones-y-casos.md §1.8`: convención nueva con ejemplo canónico y caso disparador.
+- `validar_inventario.py`: `columnas_relaciona` en `CONTENIDOS_VISIBLES` + validación estructural; `TIPOS_QUE_REQUIEREN_ITEMS` renombrado a `TIPOS_QUE_REQUIEREN_CONTENIDO_VISIBLE`; mensaje de error actualizado.
+
+Migración: `U1-p16-act4` (números↔palabras), `U5-p53-act01` (adjetivos↔contrarios), `U5-p55-act04` (preguntas↔respuestas). U6 pendiente para el ejecutor 2.
+
+---
+
+## [v10.97 — 2026-05-10] — Integración U5 + fase 2 reciclaje automatizada
+
+Integración U5 a main (worktree `extract/U5`, 46 actividades, 4 cuadros, 0/0). Fix: `textos_personajes` de `U5-p58-act01` convertido de objeto a lista canónica `[{personaje, texto}]`.
+
+Fase 2 reciclaje — base automatizada:
+- `fases/2-reciclaje/CLAUDE.md`: contrato de fase con orden obligatorio de scripts.
+- `fases/2-reciclaje/reglas-reciclaje.md`: criterios de agrupación, tabla de acciones, casebook.
+- `scripts/regenerar_reciclaje_mapa.py`: genera hilos mapa desde `nc1-curso.json`; preserva auto/detalle. Procesa U0 (`contenido_general`) y campos estándar.
+- `nc1-reciclaje.json` regenerado: 92 hilos mapa + 59 auto = 151 hilos. "Países hispanohablantes y nacionalidades" separado en dos hilos. "Léxico de aula" eliminado.
+
+---
+
+## [v10.96b — 2026-05-09] — Cierre v10.96: framing general del antipatrón `enfoque` ≠ `seccion` + corrección U5-p61-act04
+
+Hallazgos del revisor sobre v10.96: la regla #3 hablaba solo de Cultura/Comunicación cuando el antipatrón aplica a cualquier sección, y el caso U5-p61-act04 estaba mal etiquetado (era sección Evaluación, no Comunicación).
+
+**Cambios:**
+- `reglas-operativas.md` §2.3 — bloque "Antipatrón frecuente" reformulado a proximidad editorial general: enumera las 6 secciones (`gramatica`, `vocabulario`, `comunicacion`, `cultura`, `destrezas`, `evaluacion`) y aclara que el antipatrón aplica sea cual sea la sección. U5-p61-act04 corregido a sección Evaluación.
+- `convenciones-y-casos.md` §1.7 — título y ejemplo reformulados ("seccion: X → enfoque: X"). El bloque "cuándo SÍ aplica enfoque de dominio" ya cubre los 5 dominios (cultura, comunicacion, gramatica, vocabulario, fonetica), no solo dos. U5-p61-act04 corregido.
+
+**Sin cambios funcionales en datos.** Validador U0-U4 → 0/0.
+
+---
+
+## [v10.96 — 2026-05-09] — Fixes de fase 1 a partir de hallazgos de extracción U5
+
+Tres problemas detectados durante la revisión de U5 (ejecutor 2, sin integrar todavía a main) corregidos en el contrato de fase 1. El cuarto problema (palabras-respuesta de imágenes) se descartó tras revisión: era error del ejecutor, no gap del schema.
+
+**Problema 1 — `textos_personajes` no reconocido por validador:**
+- `schema-inventario.md` §3: campo nuevo `textos_personajes: [{personaje, texto}]` en saco `datos`, para N textos cortos atribuidos a N personajes (autorretratos, fichas, presentaciones múltiples). Distinto de `texto_completo` (texto seguido) y `dialogo_completo` (turnos).
+- `validar_inventario.py`: añadido a `CONTENIDOS_VISIBLES` + validación estructural — debe ser lista de objetos con `personaje` y `texto` (strings no vacíos). Probado: detecta tipos mal formados.
+- `convenciones-y-casos.md` §1.4-bis: regla con ejemplo, tabla de decisión entre los 3 campos canónicos, caso disparador U5-p58-act01 (4 descripciones en Destrezas).
+- `reglas-operativas.md` §2.5: tabla de elección entre `texto_completo` / `dialogo_completo` / `textos_personajes` con principio "no fusionar para forzar `texto_completo` cuando hay atribución por personaje".
+
+**Problema 2 — Etiquetas editoriales coladas en `respuestas`:**
+- `convenciones-y-casos.md` §1.6: regla "marcadores editoriales no van en `respuestas`". `Posibles respuestas:`, `Ejemplo:`, `Modelo:`, `Solución:` se descartan; el contenido tras el marcador va a `datos.ejemplo_libro` / `datos.ejemplos_modelo` o a `respuestas` sin el marcador. Ejemplos correcto/incorrecto + casos disparadores U5-p54-act03, U5-p55-act02, U5-p61-act02.
+
+**Problema 3 — `enfoque` heredado por proximidad editorial:**
+- La regla ya existía en `reglas-operativas.md` §2.3 ("`enfoque` clasifica la actividad concreta, no la sección"). Lo que faltaba era refuerzo + caso visible.
+- `reglas-operativas.md` §2.3: bloque "Antipatrón frecuente — copiar `enfoque` de `seccion`" con casos disparadores reales (U5-p60-act03, U5-p61-act04).
+- `convenciones-y-casos.md` §1.7: ejemplo correcto/incorrecto + cuándo SÍ y cuándo NO usar `cultura`/`comunicacion` como enfoque (frente a `transversal`).
+
+**Problema 4 — Palabras de imagen en respuestas:** descartado tras revisión con autor (error del ejecutor, no gap del schema).
+
+**Verificado:** validador U0/U1/U2/U3/U4 → 0/0 tras los cambios.
+
+---
+
+## [v10.95 — 2026-05-09] — Modelo de hilos verbales: jerarquía uso → tipo de verbo → verbos + script auto vocabulario + categorías PCIC
+
+**Bloque grande de cambios sobre `nc1-reciclaje.json` y la vista RECICLAJE del dashboard. Múltiples iteraciones con autor.**
+
+**1. Taxonomía y rename:**
+- `forma_verbal` → `tiempos_y_verbos` (cubre tiempos + tipos + verbos concretos).
+
+**2. Schema de hilos verbales — 3 niveles de profundidad:**
+- Cada hilo de `tiempos_y_verbos` (Presente, Imperativo, Pretérito indefinido) tiene `usos[]`.
+- Cada `uso` tiene `id`, `titulo`, `ejemplo`, `tipos_verbo[]`.
+- Cada `tipo_verbo` tiene `verbos[]` con `verbo`, `unidad`, `seccion`, `accion`, `formas_trabajadas`.
+- Usos del presente derivados del estándar A1 (Universo Dele): acciones en el momento actual, hábitos y rutinas, información personal y verdades permanentes, verdades universales, futuro próximo.
+
+**3. Categorías de verbos según PCIC del Cervantes / ELE canónico:**
+- Verbos regulares (-ar / -er / -ir)
+- Verbos con cambio vocálico (e→ie, o→ue, u→ue, e→i)
+- Verbos con irregularidad en la 1.ª persona del singular
+- Verbos totalmente irregulares
+- Verbos pronominales
+- Verbos del tipo *gustar*
+
+(Antes había términos inventados: "defectivos pedagógicos", "súper irregulares", "irregulares yo (-go)" — corregidos.)
+
+**4. Pase 1 ampliado a U0-U9 + reorden por aparición:**
+- Pase 1 (mapa) cubre las 9 unidades (antes U0-U3).
+- Hilos ordenados por unidad de primera aparición (U0 arriba, U9 abajo) — timeline más fluida.
+
+**5. Script automático de vocabulario:**
+- `scripts/regenerar_reciclaje_vocabulario.py` proyecta `vocabulario_consolidado` de cada inventario a hilos `vocabulario` con `nivel_analisis: "auto"`. 50 campos semánticos extraídos de U0-U4. Preserva hilos manuales (mapa).
+
+**6. Vista RECICLAJE rediseñada — acordeón en la tabla:**
+- Click en hilo verbal → expande inline con sub-filas por uso (cada uso con su mini-timeline).
+- Click en uso → expande tipos de verbo y verbos concretos.
+- Verbos del mismo nombre con múltiples eventos (ej. *ser* en U1+U2) se muestran en **una sola fila** con dots en cada unidad.
+- Click en verbo (leaf) → drawer con secuencia de trabajo + ejemplo del uso.
+- Texto agrandado, sin cursivas en verbos.
+
+**7. Sección de incoherencias:**
+- Componente al final de cada bloque de tipo (vocabulario, tiempos_y_verbos, contenido_gramatical, estrategia).
+- Hoy vacío (verde "✓ Sin incoherencias detectadas") porque se anotarán manualmente cuando se detecten.
+
+**Estado de datos:**
+- 75 hilos: 23 manuales (mapa) + 52 auto (vocabulario por campo semántico).
+- 3 hilos verbales con 9 usos totales, 25 verbos únicos, 50+ formas trabajadas anotadas.
+- Inventarios sin tocar. Validador U0/U1/U2/U3/U4 → 0/0.
+
+**Pendiente declarado por autor:** quedan más correcciones por iterar.
+
+---
+
+## [v10.94b — 2026-05-09] — Saneo post-v10.94: duplicado `estrategia` en frontend + 6 referencias vivas
+
+Hallazgos del revisor sobre v10.94 (en dos rondas):
+
+1. **`web/index.html`** — `REC_COLOR_TIPO` tenía la clave `estrategia` duplicada y el array `orden` repetía el mismo tipo, con lo que la vista RECICLAJE pintaba dos bloques ESTRATEGIA. Limpiado.
+2. **`PROCESO-MAESTRO.md`** snapshot operativo (línea 227) y resumen vivo del bloque B (línea 697) actualizados al estado real (23 hilos / 70 eventos / U0-U9).
+3. **`REVIEW.md`** estado vivo (líneas 45, 48, 157, 163) y tabla de artefactos (línea 428): U4 separada como trackeada (v10.93), B2a.1 cerrado v10.94, B2a.2 menciona inventarios disponibles + script automático pendiente.
+
+**Sin cambios funcionales en datos.** Validador U0-U4 → 0/0.
+
+---
+
+## [v10.94 — 2026-05-09] — B2a pase 1 ampliado a U0-U9 + taxonomía unificada (4 tipos)
+
+**Dos correcciones del autor sobre el alcance del pase 1:**
+
+1. **Cobertura completa del índice.** El pase 1 anterior (v10.92) limitaba arbitrariamente a U0-U3 porque eran las únicas unidades integradas. Pero el pase 1 se basa en `nc1-curso.json` (índice oficial del libro), que ya contiene las 9 unidades. Las unidades aún no extraídas igualmente entran porque su contenido está declarado en el índice. Pase 1 regenerado cubriendo **U0-U9 completas**.
+2. **Taxonomía unificada a 4 tipos.** El tipo `estrategia_comunicativa` se elimina; `estrategia` cubre cualquier tipo de estrategia (comunicativa, de aprendizaje, metacognitiva…) asociada a las destrezas de la lengua. El matiz va en la descripción del hilo, no en el tipo.
+
+**Resultado del pase 1 ampliado:**
+- 23 hilos, 70 eventos, todas las unidades del curso (U0-U9).
+- Distribución por tipo: vocabulario 10, forma_verbal 1 (presente con 9 eventos), contenido_gramatical 5, estrategia 7.
+- Hilos nuevos identificados al cubrir el resto del libro: comidas, vivienda, ubicación espacial, descripción, establecimientos, horarios, meses/animales, cuerpo, ropa, pronunciación (transversal), Para aprender (transversal), preposiciones, rutinas/hábitos.
+
+**Cambios técnicos:**
+- `unidades/nc1-reciclaje.json` — regenerado con 4 tipos válidos declarados en `_tipos_validos`.
+- `PROCESO-MAESTRO.md` — bloque schema y decisión 20 actualizadas a 4 tipos.
+- `web/index.html` — color map actualizado (estrategia_comunicativa eliminada).
+
+**Próximo:** B2a.2 (pase 2 contra inventarios) + script automático de proyección de vocabulario por campo semántico.
+
+---
+
+## [v10.93 — 2026-05-09] — Integración de U4 a main (worktree extract/U4)
+
+**Tercera integración del carril paralelo de extracciones** tras U2 (v10.87) y U3 (v10.91).
+
+**Datos de U4:**
+- 10 páginas (42-51), 49 actividades, 6 cuadros.
+- Título: "Comidas y bebidas". Contrato post-refactor (taxonomía 20 + destreza/enfoque, schema cuadros).
+- Validador: 0 errores / 0 avisos.
+
+**Verificación del revisor (pre-merge):** todas las respuestas verificadas contra el solucionario del libro página por página. Ningún error de contenido (pronombres, conjugaciones, clasificaciones incluyendo queso como incontable, V/F, ordenaciones). El caso pescado/atún en p43-act01 es ambigüedad del propio libro, no del extractor.
+
+**Estado de main post-integración:**
+- Unidades trackeadas validando 0/0: U0, U1, U2, U3, U4.
+
+**Próximo:** B2a.2 (pase 2 de reciclaje contra inventarios) y/o extracción de U5 en nuevo worktree por ejecutor 2.
+
+---
+
+## [v10.92b — 2026-05-09] — Saneo post-v10.92: contrato de hilos en docs vivas + multiplicidad de eventos
+
+Hallazgos del revisor sobre v10.92: la migración funcional al modelo de hilos era correcta, pero el contrato vivo seguía describiendo el modelo punto-a-punto, y la timeline colapsaba silenciosamente múltiples eventos del mismo hilo en una unidad.
+
+**Cambios:**
+1. **`PROCESO-MAESTRO.md` bloque `nc1-reciclaje.json`** reescrito al modelo de hilos: top-level `hilos[]`, schema por hilo y por evento, acciones válidas (introduce/amplia/aplica/sistematiza/contrasta), multiplicidad permitida (varios eventos del mismo hilo en una unidad), endpoint `/api/reciclaje`.
+2. **`REVIEW.md` B2a + tabla de artefactos** alineados con el estado real: B2a.1 (pase 1) ✅ cerrado v10.92; B2a.2 (pase 2 contra inventarios) abierto. Tabla de artefactos refleja "9 hilos / 23 eventos" en lugar de "esqueleto vacío".
+3. **`REVIEW.md` referencias a endpoints** corregidas: `/api/global/<tipo>` (que no existe) → `/api/reciclaje` ya operativo; `/api/tarjetas` y `/api/pildoras` quedan pendientes.
+4. **Decisión schema:** se permiten múltiples eventos del mismo hilo en la misma unidad (ej. una unidad puede `amplia` y `aplica` un mismo hilo simultáneamente). Documentado en PROCESO-MAESTRO.
+5. **`web/index.html` timeline** corregida: indexa eventos por unidad como **lista**, no como dato único. Si una unidad tiene N eventos del mismo hilo, se renderizan los N puntos uno al lado del otro en su columna. Sin colapso silencioso.
+
+**Sin cambios en datos.** 9 hilos / 23 eventos siguen igual; el JSON pase 1 ya cumple "máximo 1 evento por hilo+unidad" pero el schema y la viz ya soportan más para el pase 2.
+
+---
+
+## [v10.92 — 2026-05-09] — B2a (pase 1): primera población de `nc1-reciclaje.json` con modelo de hilos + vista en dashboard
+
+**Refinamiento del schema cerrado en B1.5.** El modelo punto-a-punto (`reciclajes_por_unidad` con entradas `origen → destino`) era insuficiente para representar dos realidades editoriales:
+1. **Fan-out:** un mismo contenido se ramifica en varias unidades (ej. números: U0→U1→U2→U3 como un único hilo, no 3 reciclajes sueltos).
+2. **Cascada:** las ramificaciones se acumulan; lo que U3 recicla "de U1" en realidad ya pasó por U2.
+
+**Schema nuevo:** `hilos[]` reemplaza `reciclajes_por_unidad`. Cada hilo es un contenido con identidad propia (`id`, `titulo`, `tipo`) y una secuencia de `eventos` por unidad con `accion` (introduce | amplia | aplica | sistematiza | contrasta), `seccion`, `descripcion`, `impacto`.
+
+**Pase 1 generado** cruzando `nc1-curso.json` (sin abrir inventarios todavía):
+- 9 hilos detectados: números, alfabeto, léxico de aula, países hispanohablantes, presente de indicativo, género/número, info personal, saludos, interrogativos.
+- 23 eventos repartidos en U0/U1/U2/U3.
+- Cada hilo lleva `nivel_analisis: "mapa"` para distinguirlo del pase 2 (que validará contra inventarios y añadirá vocabulario complementario de frecuencia).
+
+**Dashboard:**
+- Nueva ruta `/api/reciclaje` en `diagrama.py` (función `get_reciclaje`).
+- Nuevo botón **RECICLAJE** en sidebar de `web/index.html`.
+- Vista **línea de tiempo**: cada hilo es una barra horizontal con puntos en U0..U9 coloreados por acción (azul=introduce, verde=amplia, naranja=aplica, morado=sistematiza, rosa=contrasta). Click en punto o título abre drawer lateral con la trayectoria completa del hilo.
+- Agrupación por tipo (vocabulario, forma_verbal, contenido_gramatical, estrategia_comunicativa) con border de color.
+
+**Pendiente (pase 2):** validación de cada hilo contra los inventarios reales de U1/U2/U3 + adición del vocabulario complementario de frecuencia que el índice oficial no captura.
+
+**Sin cambios funcionales en JSONs de inventario.** Validador U0/U1/U2/U3 → 0/0.
+
+---
+
+## [v10.91c — 2026-05-09] — Alineación operativa de B2a: U1/U2/U3 como scope unificado
+
+Hallazgo del revisor sobre v10.91/v10.91b: el CHANGELOG anunciaba B2a con scope "U1/U2/U3" pero `REVIEW.md` (B2a + tabla de artefactos) y `PROCESO-MAESTRO.md` (resumen vivo) seguían diciendo "U1 y U2". Doble verdad operativa.
+
+**Decisión cerrada con autor:** B2a (primera población de `nc1-reciclaje.json`) cubre U1, U2 y U3 — las 3 unidades trackeadas en main. U0 queda fuera por ser unidad atípica sin unidades anteriores que reciclar.
+
+**Cambios:**
+- `REVIEW.md` línea 48 (estado vivo bloque B), líneas 165-166 (B2a acción + gate), línea 431 (tabla artefactos).
+- `PROCESO-MAESTRO.md` línea 699 (resumen vivo bloque B).
+
+**Sin cambios funcionales.** Validador 0/0.
+
+---
+
+## [v10.91b — 2026-05-09] — Saneo documental post-v10.91: alineación de 3 referencias vivas
+
+Hallazgos del revisor sobre v10.91: la integración funcional de U3 era correcta, pero 3 referencias vivas seguían en el escenario previo y contradecían el estado real:
+
+1. **`nc1-curso.json:_nota`** — declaraba la divergencia 32-41 vs 34-43 como deuda técnica abierta. Actualizada: deuda saldada en v10.91.
+2. **`REVIEW.md` estado vivo + tabla de artefactos** — U3 figuraba como borrada y U2 como solo working tree con errores. Ambas corregidas: U2 trackeada (v10.87), U3 reintegrada (v10.91), U4 como nueva extracción en worktree.
+3. **`PROCESO-MAESTRO.md` protocolo ejecutor 2** — anclaba U3 como ejemplo de unidad fuera de main. Generalizado a U4/U5; U3 anotada como caso ya cerrado siguiendo el mismo protocolo.
+
+**Sin cambios en JSONs de inventario.** Validador 0/0 sobre U0/U1/U2/U3.
+
+---
+
+## [v10.91 — 2026-05-09] — Integración de U3 a main (worktree extract/U3)
+
+**Segunda integración del carril paralelo de extracciones** tras U2 (v10.87). El JSON fue re-extraído en el worktree `extract/U3` con el PDF correcto (páginas 32-41) tras el borrado del JSON erróneo en v10.88.
+
+**Datos de U3:**
+- 10 páginas (32-41), 47 actividades, 4 cuadros.
+- Título: "La Familia". Contrato post-refactor (taxonomía 20 + destreza/enfoque, schema cuadros).
+- Validador: 0 errores / 0 avisos.
+
+**Estado de main post-integración:**
+- Unidades trackeadas validando 0/0: U0, U1, U2, U3 (reintegrada).
+- La deuda técnica de paginación anotada en `nc1-curso.json:_nota` queda saldada.
+
+**Próximo:** B2a (primera población de `nc1-reciclaje.json` con U1/U2/U3).
+
+---
+
+## [v10.90 — 2026-05-08] — Saneo documental post-v10.89: REVIEW alineado, protocolo ejecutor 2, comando dashboard
+
+**6 frentes corregidos:**
+
+1. **REVIEW.md estado vivo (línea 48):** B1.5 ya no figura "en diseño" — marcado ✅ cerrado con referencia a v10.89. `nc1-reciclaje.json` ya no aparece como pendiente en la tabla de artefactos.
+2. **REVIEW.md bloque B2 reescrito:** desacoplado de U3. Dividido en B2a (reciclaje, desbloqueado), B2b (tarjetas, bloqueado) y B2c (píldoras, bloqueado). U3 queda explícitamente fuera de main hasta nueva integración.
+3. **REVIEW.md tabla artefactos:** U3 reflejada como borrada (v10.88, PDF erróneo, re-extracción en worktree `extract/U3`).
+4. **PROCESO-MAESTRO.md resumen vivo (línea 676):** B1.5 marcado ✅; B2a desbloqueado.
+5. **PROCESO-MAESTRO.md protocolo ejecutor 2 añadido** (zona operativa, antes de §27): worktree dedicado, validación con venv principal, revisión en dashboard con `EXTRA_UNIDADES_PATHS`, sin tocar main, integración posterior con receta `--no-ff --no-commit`.
+6. **README.md §2 "Arrancar el dashboard":** comando oficial documentado para main solo y para worktrees paralelos con `EXTRA_UNIDADES_PATHS` (U3+U4 como ejemplo).
+7. **web/index.html línea 575:** ruta obsoleta `viejo/unidades/UXX/` corregida a `unidades/UX/`.
+
+**Sin cambios en JSONs de inventario. Validador U0/U1/U2 → 0/0. U3 en worktree paralelo.**
+
+**Próximo:** B2a — primera población de `nc1-reciclaje.json` con reciclajes de U1 y U2.
+
+---
+
+## [v10.89 — 2026-05-08] — B1.5 cerrado: contrato de `nc1-reciclaje.json` + esqueleto vacío creado
+
+**Decisión cerrada con autor:** schema completo de `nc1-reciclaje.json` cerrado en B1.5. Las 4 preguntas abiertas se resolvieron:
+
+- **Disparadores:** criterio de conexión natural adoptado de `viejo/marco-teorico-metodologico.md` §6 — entra un contenido si refuerza o es requisito del contenido nuevo. Proceso de análisis de 4 pasos. No se recicla todo; máximo 5-6 elementos de mayor impacto por unidad.
+- **Campo `origen`:** objeto `{ "unidad": N, "seccion": "..." }` — unidad + sección canónica del libro (vocabulario, gramatica, comunicacion, destrezas, cultura, pronunciacion_ortografia, para_aprender).
+- **`indice_por_tipo`:** objeto con tipo como clave, valores = lista de IDs de entradas. Los 5 tipos cerrados arrancan con lista vacía.
+- **Estado inicial:** archivo creado vacío en B1.5; primera población en B2 con U1 y U2.
+
+**Archivos modificados:**
+- `unidades/nc1-reciclaje.json` — creado (esqueleto vacío).
+- `PROCESO-MAESTRO.md` — bloque `nc1-reciclaje.json` ampliado con decisiones de origen, indice_por_tipo y criterio de disparador.
+- `REVIEW.md` — B1.5 marcado ✅ cerrado.
+- `docs/actual/B1.5-contrato-reciclaje.md` — documento de trabajo (se mueve a historico).
+
+**Sin cambios en JSONs de inventario.** Validador U0/U1/U2 → 0/0; U3 pendiente de re-extracción.
+
+**Próximo:** B2 (primera población de `nc1-reciclaje.json` con U1 y U2).
+
+---
+
+## [v10.88 — 2026-05-08] — Borrado de `unidades/U3/U3-nc1-inventario.json` (PDF erróneo, pendiente de re-extracción)
+
+**Decisión cerrada con autor:** el PDF de U3 que se había usado para la extracción inicial contenía errores (paginación divergente con el Scope and Sequence oficial: Scope dice U3=32-41; el inventario decía 34-43; ver decisión 35 en PROCESO-MAESTRO Parte 4 y deuda técnica anotada en `nc1-curso.json:_nota`).
+
+**Acción:** el autor proporciona el PDF correcto y borra el JSON viejo. Main queda temporalmente sin inventario de U3 hasta la re-extracción.
+
+**Estado:**
+- `unidades/U3/U3-nc1-inventario.json` → borrado (esta versión).
+- `unidades/U3/fuente/U3-nc1.pdf` → reemplazado por el correcto (gitignored, no entra al commit).
+
+**Próximo:** worktree `extract/U3` + chat nuevo para que el ejecutor 2 re-extraiga la unidad con el contrato post-refactor (taxonomía 20, destreza/enfoque, schema cuadros con `texto_intro`/nullable, etc.).
+
+**Sin cambios funcionales en código.** Validador sobre U0/U1/U2 → 0/0; U3 ahora "no existe" hasta la re-extracción.
+
+---
+
+## [v10.87 — 2026-05-08] — Integración de U2 a main (merge `extract/U2`)
+
+**Primera integración del carril paralelo de extracciones** desde la apertura del modelo de worktrees (post v10.79). Sigue la receta acordada con el revisor (`git merge --no-ff --no-commit` + edición de archivos vivos compartidos + commit único).
+
+**Contenido integrado:** `unidades/U2/U2-nc1-inventario.json` extraído por el ejecutor 2 en su worktree paralelo (`extract/U2`), validando 0/0 con el contrato post-refactor (taxonomía 20 + destreza/enfoque, schema §4 con `texto_intro`/`titulo` nullable/`lista_reglas`).
+
+**Datos de U2:**
+- 10 páginas (22-31), 52 actividades, 6 cuadros.
+- Contenido: vocabulario de países hispanohablantes, ser/tener plurales, demostrativos, los números 21-100, las vocales fonéticas, ESO en España, etc.
+- Inventario se ajusta al índice oficial del libro (`nc1-curso.json`).
+
+**Hallazgos cerrados antes de la integración:**
+- 7 correcciones del extractor original aplicadas (horario, cuadro ordinales eliminado, "tenemos" en p24-act02, Pierre Curso completo, cuadro mayúsculas con `texto_intro`, palabras_recuadro en p30-act03 eliminado, globo 3 con 11 letras corregido).
+- 5 refinamientos de regla derivados (v10.83-v10.86): bifurcación "Para aprender", schema cuadros con `texto_intro`/`titulo` nullable/`lista_reglas`, `responder_preguntas_abiertas` con destreza condicional, distinción individual vs parejas.
+- 1 verificación final aplicada en worktree (commit `155838f`): U2-p29-act04 destreza corregida a `[expresion_escrita]` tras confirmar contra PDF (escribe individual, no oral).
+
+**Estado de main post-integración:**
+- Unidades trackeadas validando 0/0: U0, U1, U2 (nuevo), U3.
+- Worktree `extract/U2` y rama `extract/U2` se mantienen intactos hasta que el autor decida limpiarlos.
+- Variable `EXTRA_UNIDADES_PATHS` del dashboard puede retirarse o dejarse (la lógica `main gana sobre extras` hace que U2 ahora se sirva desde main).
+
+**Próximo:** B1.5 (diseño de `nc1-reciclaje.json`) en este chat (ejecutor 1); re-extracción de U3 cuando el autor proporcione PDF correcto (ejecutor 2 en nuevo worktree).
+
+---
+
+## [v10.86 — 2026-05-08] — Refinamiento §2.2 regla 3: distinción individual vs parejas en respuesta a preguntas
+
+**Caso disparador** (riesgo residual del revisor sobre v10.85): si U2-p29-act04 resulta ser intercambio en parejas, no solo cambia la destreza, sino también el `tipo` (de `responder_preguntas_abiertas` a `interaccion_oral`). La regla §2.2 punto 3 actual no hacía explícita la distinción individual vs parejas.
+
+**Decisión cerrada con autor:** refinar §2.2 regla 3 para que distinga 3 casos en lugar de 2:
+- Respuesta concreta del input → `responder_preguntas_cerradas`.
+- Respuesta personal/libre **individual** → `responder_preguntas_abiertas`.
+- Respuesta personal/libre **en parejas** → `interaccion_oral` (la interacción con compañero prevalece).
+
+**Cambio quirúrgico** (1 bullet añadido, 1 modificado, 0 párrafos nuevos):
+
+```
+- Respuesta personal/libre del alumno, individual (sin compañero) → responder_preguntas_abiertas.
+- Respuesta personal/libre en parejas → interaccion_oral. Destreza: [interaccion_oral].
+```
+
+**Por qué refinar la regla en lugar de documentar un árbol de decisión aparte:** la regla precisa hace innecesaria la documentación adicional. Respeta el principio del autor de no engordar docs. Single source of truth de la decisión sigue en `reglas-operativas.md` §2.2.
+
+**Sin cambios en JSONs.** La aplicación a U2-p29-act04 sigue pendiente de verificación contra PDF (worktree de U2). Las preguntas a verificar ahora son **dos**:
+- ¿Solo o en parejas? (Si parejas → tipo `interaccion_oral`)
+- ¿Escribe o habla? (Solo aplica si individual, decide la destreza)
+
+**Validador U0/U1/U3 → 0/0.**
+
+**Próximo:** verificar U2-p29-act04 contra PDF e integrar U2 a main.
+
+---
+
+## [v10.85 — 2026-05-08] — Refinamiento §2.3: `responder_preguntas_abiertas` con destreza condicional al enunciado del libro
+
+**Caso disparador** (hallazgo C en U2-p29-act04 durante revisión del worktree de U2): la regla §2.3 decía que `responder_preguntas_abiertas` con respuesta personal/libre → `expresion_escrita` por defecto. Pero en algunos casos del libro la respuesta es oral (en parejas, en clase). Asumir `expresion_escrita` siempre es impreciso.
+
+**Decisión cerrada con autor:** la destreza depende de lo que pida el enunciado real del libro:
+- Si el libro pide escribir → `expresion_escrita`.
+- Si el libro pide responder oralmente → `expresion_oral`.
+
+**Cambio quirúrgico en `reglas-operativas.md` §2.3** (1 línea modificada, 0 párrafos añadidos):
+
+Línea 68:
+- **Antes:** *"Respuesta personal/libre del alumno, sin texto-fuente → `responder_preguntas_abiertas`. Destreza: `expresion_escrita` (es contenido propio)."*
+- **Después:** *"Respuesta personal/libre del alumno, sin texto-fuente → `responder_preguntas_abiertas`. Destreza: `expresion_escrita` si el libro pide escribir; `expresion_oral` si el libro pide responder oralmente. Verificar contra el enunciado real."*
+
+**Sin cambios en JSONs.** La aplicación a U2-p29-act04 concreta queda pendiente de verificación contra PDF (worktree de U2). U0/U1/U3 siguen validando 0/0; sus actividades de `responder_preguntas_abiertas` ya cumplen con el criterio (escritura).
+
+**Próximo:** verificar PDF de U2-p29-act04 y aplicar el cambio si procede; integrar U2 a main.
+
+---
+
+## [v10.83b — 2026-05-08] — Cierre limpio de v10.83: alineación de 2 referencias vivas
+
+Hallazgo del revisor sobre v10.83: la regla nueva quedó bien en `reglas-operativas.md` §1+§4, pero 2 referencias vivas seguían diciendo "Para aprender → siempre actividad" sin la bifurcación, contradiciendo v10.83 desde otros entry points.
+
+**Sitios alineados:**
+
+1. **`prompt.md:54`** (descripción de qué contiene `reglas-operativas.md`): decía *"...criterios de tipo y tipo_cuadro, 'Para aprender' → actividad / 'Observa' → nota, reglas de población..."*. Reescrito a *"...criterios de tipo y tipo_cuadro, criterios para 'Para aprender' y 'Observa', reglas de población..."*. La descripción **nombra** los criterios sin reducirlos a una formulación; la regla canónica vive en `reglas-operativas.md` §4.
+
+2. **`convenciones-y-casos.md:141`** (sección 4.1, caso histórico): decía *"'Para aprender' es una actividad. Esta es la corrección que diferencia los dos elementos."* Reescrito para reflejar que el caso histórico citado tenía verbo imperativo (con tarea), y que la regla actual bifurca: *"con verbo imperativo → actividad; solo informativa → cuadro"*.
+
+**Single source of truth restablecida**: la regla "Para aprender" tiene una sola definición canónica en `reglas-operativas.md` §4. Los demás archivos solo apuntan a ella, sin reformularla ni contradecirla.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** decidir hallazgos C-D del worktree de U2 e integrar U2 a main.
+
+---
+
+## [v10.84 — 2026-05-08] — Schema §4 (cuadros): `texto_intro` documentado + `titulo` nullable + `lista_reglas`
+
+**Hallazgos del ejecutor 2 en U2 que motivan este cambio:**
+1. Cuadros tipo lista de reglas (U2-p25 mayúsculas, U2-p29 mayúsculas) tienen un encabezado verbatim antes de la lista que el ejecutor 2 capturó como `texto_intro`. El schema lo permitía implícitamente (`contenido` es estructura libre), pero no lo documentaba como campo canónico — riesgo de divergencia entre extractores futuros.
+2. El cuadro de U2-p29 no tiene título visible en el libro. El schema decía `"titulo": <str>` sin marcar nullable, dejando ambiguo el caso real.
+3. El tipo `lista_reglas` aparecía implícitamente en U2 pero no estaba en la lista de ejemplos del schema.
+
+**Cambios quirúrgicos en `schema-inventario.md` §4** (3 líneas modificadas, 1 nueva, 0 párrafos añadidos):
+- `"titulo": <str>` → `"titulo": <str | null>` con comentario aclarando cuándo es null.
+- En `"tipo"`: añadido `lista_reglas` a la lista de ejemplos.
+- **Línea nueva**: `"texto_intro": <str opcional — encabezado introductorio antes de listas o tablas>`.
+
+**Resuelve 3 cosas en un commit:**
+- Documenta `texto_intro` como campo canónico.
+- Cierra el hallazgo A previo (cuadro p29 sin título → `null` legítimo).
+- Documenta `lista_reglas` como tipo válido (ya en uso de facto).
+
+**Sin cambios funcionales en código** (`contenido` es estructura libre, el validador no chequea esos campos). Validador U0/U1/U3 → 0/0.
+
+**Próximo:** decidir hallazgos C-D (oral vs escrita en U2-p29-act04, tipo busqueda_informacion en U2-p29-act07) e integrar U2 a main.
+
+---
+
+## [v10.83 — 2026-05-08] — Refinamiento de regla "Para aprender" tras dictamen del ejecutor 2 en U2
+
+**Caso disparador** (extracción de U2 por ejecutor 2): el bloque "Para aprender — Uso de las mayúsculas" en U2-p25 es **puramente informativo** (lista de reglas con ejemplos, sin instrucción al alumno). La regla §1 regla 2 + §4 actuales decían "siempre actividad", lo que forzaba clasificación incorrecta.
+
+**Decisión cerrada con autor:** bifurcar "Para aprender" según naturaleza:
+- **Con tarea** (verbo imperativo al alumno): actividad (`tipo: produccion_escrita_guiada`, `datos.subtipo: "para_aprender"`).
+- **Solo informativa** (sin verbo imperativo): cuadro con `tipo_cuadro` apropiado.
+
+**Cambios en `reglas-operativas.md`** (reformulación, no añadido — respeta principio del autor de no engordar docs):
+
+- **§1 regla 2 reescrita** como índice corto + puntero a §4 (mismo tamaño que antes; antes redirigía a "siempre actividad" sin matizar).
+- **§4 reescrita** absorbiendo la bifurcación en una tabla con criterio decisional explícito + ejemplos canónicos de cada caso (con tarea: U3-p37 "Hacer un cuaderno de vocabulario"; solo informativa: U2-p25 "Uso de las mayúsculas"). Eliminada la duplicación previa entre §1 y §4. **§4 ahora es source of truth única**; §1 es índice.
+
+**Auditoría aplicada a U0/U1/U3** antes de aplicar la regla:
+- U0: sin "Para aprender" extraídos (atípica). Sin cambios.
+- U1: sin "Para aprender" extraídos como actividad/cuadro, aunque el índice del libro tiene "Recursos para la clase" — gap del inventario, fix futuro de extracción de U1, no afecta a esta serie.
+- U3: 1 caso (`U3-p37-act09 "Mira el cuaderno de Ronaldo... Escribe palabras nuevas y tradúcelas"`) con verbos imperativos al alumno → actividad legítima con tarea. **Sin cambios** necesarios.
+
+**Sin reclasificaciones aplicadas**: la regla nueva confirma las clasificaciones existentes. La aplicación efectiva ocurre en U2 (en su worktree) que ya implementa la bifurcación.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.84 (schema §4: documentar `texto_intro` + `titulo` nullable + `lista_reglas`).
+
+---
+
+## [v10.82b — 2026-05-08] — Refinamiento de B1.4 tras dictamen del revisor
+
+**2 hallazgos del revisor sobre v10.82:**
+
+**1. Schema documentado ≠ JSON real.** La decisión 35 y la sección B1.4 de REVIEW describían el apéndice como `título + página inicio` y un top-level cerrado, pero el archivo real usa `seccion` (no `titulo`) y añade un `_nota` top-level no documentado.
+
+**Fix:**
+- Decisión 35 (Parte 4) reescrita para reflejar el schema real: `seccion` en apéndice, `_nota` documentado como campo top-level opcional.
+- B1.4 en REVIEW.md actualizado en consonancia.
+
+**2. Cierre de B1.4 contradice su propia regla de source of truth.** La decisión 35 decía que cualquier divergencia entre `nc1-curso.json` y los inventarios per-unidad es bug "antes del cierre", pero el repo cerró con divergencias conocidas:
+- U3 paginación: nc1-curso.json dice 32-41 (Scope and Sequence); inventario de U3 dice 34-43.
+- U1 y U3 mezclan "PARA APRENDER" en `contenidos_indice.gramatica`.
+
+**Causa identificada** (input del autor): el PDF actual de U3 tiene errores; la unidad se re-extraerá por el ejecutor 2 en un worktree paralelo cuando el autor proporcione un PDF correcto.
+
+**Fix:** decisión 35 reformulada en su cláusula de source of truth:
+> *`nc1-curso.json` es canónico para el índice editorial del curso. Los `paginas_libro` y `contenidos_indice` per-unidad pueden divergir legítimamente cuando el libro tiene portadas/separadores no extraídos o el PDF disponible no coincide con la edición oficial. Las divergencias se anotan como deuda técnica conocida en `_nota` y no bloquean el cierre de B1.4 ni de B1.5; se resuelven cuando se actualice el inventario afectado.*
+
+**Cambios aplicados:**
+- `PROCESO-MAESTRO.md` decisión 35: schema real documentado + regla source of truth refinada.
+- `REVIEW.md` B1.4: schema real documentado + hallazgo U3 ampliado con causa y plan.
+- `unidades/nc1-curso.json` `_nota` ampliado para listar las 2 deudas técnicas conocidas (U3 paginación, U1/U3 mezcla "PARA APRENDER").
+
+**No se toca el JSON de U3 ni su PDF.** El autor los reemplazará después y el ejecutor 2 re-extraerá la unidad en un worktree paralelo.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** B1.5 (diseño de `nc1-reciclaje.json`) con base documental ahora coherente.
+
+---
+
+## [v10.82 — 2026-05-08] — B1.4 cerrado: creado `unidades/nc1-curso.json` (índice editorial global del curso)
+
+**Objetivo del paso:** disponer del índice editorial canónico del curso "Nuevo Compañeros 1" como artefacto JSON consultable, antes de diseñar `nc1-reciclaje.json` (B1.5). Sin un mapa global de "qué enseña cada unidad", el reciclaje no se puede mapear con trazabilidad.
+
+**Fuente:** índice oficial del libro impreso (Scope and Sequence, páginas 6-7), facilitado por el autor como imágenes en chat. **No se usa** `viejo/00-curso-general.md` como fuente — ese archivo tenía datos imprecisos en páginas (U1=10-23 y U2=14-33 se solapaban) y mezclaba dato editorial con metadocumentación pedagógica.
+
+**Schema cerrado** (registrado como **decisión 35** en `PROCESO-MAESTRO.md` Parte 4):
+- Path canónico: `unidades/nc1-curso.json`.
+- Top-level: `curso` ("nc1"), `titulo`, `editorial`, `nivel` ("A1.1"), `fuente`, `estructura_libro`, `unidades` (array), `apendice` (array).
+- **Por unidad regular** (U1-U9): campos top-level `vocabulario` (lista), `gramatica` (lista), `para_aprender` (string o `null`), `pronunciacion_ortografia` (string), `comunicacion` (lista), `destrezas` (lista), `cultura` (lista), más `pagina_inicio` y `paginas_libro`.
+- **Por U0** (Punto de partida, atípica): solo `contenido_general` (lista).
+- **Apéndice**: solo metadatos (título + `pagina_inicio`); contenido detallado fuera de alcance por ahora.
+- **Contenido de las celdas**: **literal del índice del libro**, sin expansión MCER ni interpretación pedagógica añadida.
+
+**Datos extraídos** del índice oficial:
+- 10 unidades (U0 + U1-U9) con todos sus campos.
+- Páginas correctas: U1=12-21, U2=22-31, U3=32-41, U4=42-51, U5=52-61, U6=62-71, U7=72-81, U8=82-91, U9=92-101 (10 páginas exactas por unidad regular).
+- Apéndice: Glosario (102), Resumen Gramatical (107), Transcripciones (112).
+
+**Hallazgos anotados (no bloqueantes):**
+- Los `contenidos_indice` ya extraídos en `unidades/U1/...inventario.json` y `unidades/U3/...inventario.json` mezclan "PARA APRENDER" dentro del campo `gramatica` (ej. U3: "Hacer un cuaderno de vocabulario" aparece en gramática cuando es una estrategia metacognitiva separada). Anotado como **fix futuro de los inventarios**; no bloquea B1.4 ni B1.5.
+- Single source of truth con `nc1-curso.json` y los `contenidos_indice` per-unidad: cualquier divergencia futura es bug que se resuelve antes del cierre.
+
+**Sin validador estructural propio** todavía. Se decidirá si añadir checks a `scripts/validar_inventario.py` cuando aparezca el primer caso real de divergencia.
+
+**Próximo:** B1.5 (diseño de `nc1-reciclaje.json`) ahora con `nc1-curso.json` ya disponible para mapear los flujos de reciclaje entre unidades.
+
+---
+
+## [v10.81 — 2026-05-08] — Dashboard: badge "extracción en curso" en lugar de path absoluto para unidades de worktrees paralelos
+
+**Problema visual tras v10.79:** las tarjetas de inventarios mostraban el path del JSON. Para unidades en main, el path era relativo y corto (`unidades/U2/U2-nc1-inventario.json`). Para unidades de worktrees paralelos (vía `EXTRA_UNIDADES_PATHS`), el path absoluto largo aparecía sin contexto, dando una apariencia de error visual cuando en realidad indicaba un estado válido (extracción no integrada todavía).
+
+**Fix:** en la lista de inventarios, si `zona === "extra"`, se muestra un badge informativo *"🔄 Extracción en curso (worktree paralelo)"* en lugar del path. Para unidades en main (`zona === ""`), se mantiene el path relativo como antes.
+
+**Comportamiento al integrar una unidad a main:** automático. La API empieza a devolver `zona: ""` para esa unidad (main gana sobre extras), el badge desaparece y la tarjeta vuelve a mostrar el path relativo. Sin tocar código.
+
+**Cambios en `web/index.html`:**
+- `loadInventarios()`: render condicional según `u.zona`. Badge ámbar para extras, path monoespaciado para main.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+---
+
+## [v10.80b — 2026-05-08] — Dashboard: eliminado el badge de versión (uno solo, el de la derecha)
+
+**Decisión del autor tras v10.80:** v10.80 había hecho el badge dinámico para resolver el desfase, pero seguían apareciendo **dos indicadores de versión** (badge verde a la izquierda + indicador `vX — hh:mm:ss` a la derecha). Decisión: dejar solo el indicador derecho, que ya muestra versión + hora viva. El badge era redundante.
+
+**Cambios en `web/index.html`:**
+- Eliminado el `<span id="version-badge">` del header.
+- Eliminada la línea JS que actualizaba `version-badge.textContent` en `init()`.
+- `serverVersion` se sigue cargando desde `/api/version` y se sigue mostrando en el indicador derecho via `updateStatus()`.
+
+**Resultado:** una sola fuente visible de versión en el dashboard, sin posibilidad de desfase entre dos elementos.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+---
+
+## [v10.80 — 2026-05-08] — Dashboard: badge de versión dinámico (fix doble visualización)
+
+**Problema detectado tras v10.79:** el header del dashboard mostraba dos versiones distintas. El badge verde (`v10.78`, hardcoded en `web/index.html` desde v10.78) y el indicador `v10.79 — hh:mm:ss` (dinámico desde `/api/version`). Origen: el badge se añadió como string literal, no como elemento dinámico.
+
+**Fix:** badge convertido a `id="version-badge"` con texto inicial `v?.??` que se rellena en `init()` desde la respuesta de `/api/version`. Una sola fuente de verdad (`CHANGELOG.md` → `_read_version()` → `/api/version`).
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+---
+
+## [v10.79 — 2026-05-08] — Dashboard: variable `EXTRA_UNIDADES_PATHS` para servir worktrees paralelos
+
+**Problema resuelto:** durante extracciones paralelas, el JSON de la unidad en curso vive en un worktree separado (ej. `extract/U2`), no en `main`. El dashboard de main no veía esos JSONs porque solo escaneaba su propia carpeta `unidades/`.
+
+**Solución:** variable de entorno `EXTRA_UNIDADES_PATHS` con paths adicionales a escanear (separador `:` estilo PATH). El dashboard fusiona inventarios de `unidades/` + paths extra. **Main tiene prioridad**: si una unidad existe en main, no se sobreescribe desde un path extra. Las unidades que solo están en paths extra se marcan con `zona='extra'`.
+
+**Uso:**
+
+```bash
+EXTRA_UNIDADES_PATHS=/Users/.../guia-didactica-extract-U2/unidades python3 diagrama.py
+```
+
+**Cambios en `diagrama.py`:**
+- Nueva función `_extra_unidades_paths()` (lee env var, valida existencia).
+- `list_inventarios()` fusiona main + extras (main gana ante colisión).
+- `get_inventario()` busca en main → extras como fallback.
+- `_scan_zona()` tolera paths fuera de `PROJECT` usando absoluto cuando `relative_to(PROJECT)` falla.
+
+**Ventajas:**
+- Una sola URL (`localhost:8080`), una sola instancia.
+- Refrescar el navegador muestra cambios del worktree paralelo en tiempo real.
+- Cuando la unidad se integra a main, automáticamente pasa a verse desde main.
+- Sirve para cualquier worktree de extracción futuro.
+
+**Sin cambios en código de fase 1, schema, validador ni archivos de extracción.** Validador U0/U1/U3 → 0/0.
+
+---
+
+## [v10.78 — 2026-05-08] — Dashboard: enfoque visible en inventarios + badge de versión
+
+- `web/index.html`: campo `enfoque` ahora se muestra en cada actividad de la vista Inventarios (debajo de Destreza).
+- `web/index.html`: `destreza` renderiza correctamente cuando es array (valores separados por `·`).
+- `web/index.html`: badge de versión `v10.78` visible en el header del dashboard.
+
+---
+
+## [v10.77c — 2026-05-07] — Cierre administrativo: corrección recursiva de meta-drift en v10.77b
+
+Hallazgo del revisor sobre v10.77b: el propio micro-fix de v10.77b reprodujo el problema que estaba arreglando. El commit real de v10.77b fue `2026-05-07 19:55:26 +0200`, pero las nuevas referencias ancladas a `19:25 / commit 40c8a4c` quedaron desactualizadas el momento mismo del commit.
+
+**Causa estructural:** cualquier acta que pretenda capturar "el momento real de su propio commit" entra en bucle: el commit aún no existe cuando se redacta el acta.
+
+**Convención explicitada en este commit (v10.77c):**
+
+> El campo *"Última actualización"* en cabeceras de archivos vivos apunta al **último commit consolidado de cierre de serie**, no al commit en curso. Las entradas de bitácora describen el commit que las introduce con timestamp aproximado al momento real del commit.
+
+**Fixes aplicados:**
+
+- `REVIEW.md:9`: cabecera ahora apunta a `becaa69` (v10.77b) como cierre real de la serie de limpieza, con timestamp `19:55`.
+- `REVIEW.md:434`: entrada de v10.77b corregida a `19:55` con commit `becaa69` citado.
+- `PROCESO-MAESTRO.md:661`: entrada de v10.77b corregida a `19:55`, citando ambos commits relevantes (commit principal `40c8a4c` y commit final `becaa69`).
+
+**Decisión consciente:** este commit v10.77c **NO se auto-documenta como nueva "última actualización"** porque eso reabriría el bucle. La cabecera de REVIEW.md sigue apuntando a `becaa69`. Si en el futuro se introduce una nueva edición sustantiva, esa edición será la que actualice la cabecera.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Cierre administrativo de la serie v10.72-v10.77c.** Base documental coherente; cierre de la serie y apertura del carril de extracciones paralelas sujetos a validación final del revisor.
+
+---
+
+## [v10.77b — 2026-05-07] — Micro-fix de 2 imprecisiones tras dictamen del revisor sobre v10.77
+
+Hallazgos del revisor sobre v10.77 (`40c8a4c`):
+
+**1. Timestamp ficticio en cabeceras y actas.** El acta v10.77 declaraba que los timestamps se pusieron "al momento real del commit", pero usé `14:00` cuando el commit real fue `2026-05-07 19:20 +0200` (verificado con `git log -1 --format='%ci'`). 14:00 era hora estimada de cierre de trabajo, no del commit. Imprecisión factual en 4 sitios:
+- `REVIEW.md:9`
+- `REVIEW.md:434` (entrada de bitácora del commit)
+- `PROCESO-MAESTRO.md:660` (entrada de bitácora del documento)
+- `CHANGELOG.md:24` (texto del acta)
+
+**Fix:** sustituido `14:00` por `19:20` en los 4 sitios con referencia al commit `40c8a4c` para trazabilidad. La cabecera de REVIEW conserva ahora `19:20 (commit 40c8a4c, v10.77)`.
+
+**2. Árbol vivo incompleto.** En `PROCESO-MAESTRO.md:472` (vista viva del árbol del repo) el bloque `docs/historico/` no listaba el archivo nuevo `REVIEW-bloque-A-cerrado.md` creado en el mismo commit v10.77.
+
+**Fix:** añadida la entrada al árbol con su descripción.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Cierre real de la serie v10.72-v10.77.** Tras este micro-fix, las cabeceras y bitácoras describen fielmente lo que dicen describir (momento real del commit anterior + estado físico real del repo).
+
+---
+
+## [v10.77 — 2026-05-07] — Compactación del Bloque A cerrado de REVIEW + 3 cabeceras desincronizadas
+
+Última pieza de la limpieza documental tras v10.74-v10.76b. El Bloque A de REVIEW.md ("Estabilizar la fase 1") está totalmente cerrado desde 2026-05-07 (A1, A2, A3, A4 todos en ✅). Su detalle ejecutable (sub-pasos A4.0-A4.6, gates, riesgos, plan completo) ya solo aporta valor histórico; mantenerlo en REVIEW vivo cargaba ~8K chars sin contrapartida operativa.
+
+**Decisión informada según receta del revisor** (4 ajustes sobre el plan inicial):
+
+1. Corte por encabezado, no por número de línea (robustez ante reescrituras superiores).
+2. Timestamps en cabeceras al momento real del commit, no al de la última bitácora previa.
+3. Reformular `PROCESO-MAESTRO.md:648` para no afirmar que el detalle vive en REVIEW (ya no lo hace).
+4. En el archivo histórico, no decir "bitácora completa archivada": la bitácora cronológica general del documento sigue viva en REVIEW.
+
+**Cambios aplicados:**
+
+- **Extracción literal del Bloque A** (líneas con `## Bloque A` hasta antes de `## Bloque B`, 99 líneas, 8.022 chars) a `docs/historico/REVIEW-bloque-A-cerrado.md` (111 líneas con cabecera explicativa). Sin reescribir.
+- **Sustitución en REVIEW vivo** por resumen de 12 líneas con: estado de los 4 sub-pasos, resultado vivo (U0/U1/U3 0/0, 5 archivos operativos, validador alineado), referencia al archivo histórico, mención del merge `110e722` y aclaración de que la bitácora cronológica general permanece viva.
+- **Cabeceras desincronizadas absorbidas en este commit** (condición pragmática del revisor):
+  - `REVIEW.md:9`: "Última actualización: 2026-05-07 03:15" → momento del commit (corregido a `19:20` en v10.77b tras detectar imprecisión).
+  - `PROCESO-MAESTRO.md:448`: "Última actualización: 2026-05-05" → "2026-05-07 (limpieza documental v10.72-v10.77...)".
+  - `PROCESO-MAESTRO.md:630`: "actualizado 2026-05-05 19:00" → "actualizado 2026-05-07".
+- **Reformulación de `PROCESO-MAESTRO.md:648`** ("Detalle vivo y bitácora en REVIEW.md" → "Resumen vivo en REVIEW sección Bloque A; detalle íntegro archivado en docs/historico/...; bitácora cronológica general permanece viva en REVIEW.md").
+
+**Resultado medido:**
+- REVIEW.md: 580 → 493 líneas (-15%, ~2K tokens menos en la parte viva).
+- Detalle del Bloque A preservado íntegro en histórico (111 líneas).
+
+**No se toca:**
+- Bloques B-E vivos en REVIEW.
+- Bitácora cronológica general de REVIEW (línea 521+).
+- Bitácora del documento de PROCESO-MAESTRO.
+- Referencias históricas a líneas o a "17 tipos" en bitácoras y actas anteriores (intocables, revisionismo prohibido).
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Cierre de la serie de limpieza documental.** Ahorro acumulado v10.72-v10.77: ~32K tokens (-37%) sobre el peso documental original. Base limpia para abrir extracciones paralelas (`extract/U2`, `extract/U4`, etc.) en chats nuevos con worktrees dedicados.
+
+---
+
+## [v10.76b — 2026-05-07] — Cierre de drift vivo en PROCESO-MAESTRO tras dictamen del revisor sobre v10.76
+
+Hallazgos del revisor sobre v10.76: el archivado fue correcto, pero el documento vivo seguía arrastrando 3 zonas con drift activo que la limpieza no había tocado. Sin corregirlas, compactar más documentación habría consolidado incoherencias.
+
+**1. Decisión 17 (Parte 4, línea 520):** decía "taxonomía cerrada de **17 valores**" en una decisión cerrada viva. Real: 20 valores desde v10.64. Tampoco mencionaba `destreza` (lista MCER de 6) ni `enfoque` (string del enum de 6) introducidos en v10.60.
+
+**Fix:** decisión 17 reescrita con "taxonomía cerrada de **20 valores**" + referencia a schema §5 + mención de los 3 ejes ortogonales (`tipo`/`destreza`/`enfoque`) con sus enumeraciones cerradas y referencia a schema §5b/§5c.
+
+**2. Árbol actual (Parte 3, líneas 450-486):** describía a U3 como "única poblada" cuando el repo ya tenía U0, U1 y U3 todas pobladas y validando 0/0; no mencionaba los 5 archivos vivos de `fases/1-extraccion-inventario/` post-refactor (solo CLAUDE.md y prompt.md); no incluía `docs/historico/` que existe desde v10.72 y se pobló más en v10.75 y v10.76.
+
+**Fix:** árbol vivo reescrito al estado real: 3 unidades extraídas con conteo de actividades; los 5 archivos operativos de fase 1 listados (CLAUDE, prompt, schema-inventario, reglas-operativas, convenciones-y-casos); `docs/historico/` con sus 3 sub-rutas/archivos archivados; CLAUDE.md raíz mencionado como contrato global.
+
+**3. Síntesis Parte 6 (líneas 637-642):** decía "📋 **Bloque A pendiente** (REVIEW): estabilizar fase 1 (validar U3, probar U4, resolver bugs B1-B4)". Real: A1, A2, A3, A4 todos ✅ cerrados; el bloque A entero está cerrado (REVIEW.md líneas 45 y 112).
+
+**Fix:** Bloque A actualizado a ✅ cerrado con detalle de los 4 sub-pasos y referencia a REVIEW.md. Bloque B refinado al estado real (parcial: B5 cerrado, B1.5 en diseño, B1+B2 esperan dependencias).
+
+**Lo que NO se toca** (legítimo, no es drift vivo):
+- Bitácora del documento (Parte final): menciones a "17 tipos" en entradas del 2026-05-05 son históricas, describen el estado en su momento. Revisionismo prohibido.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.77 (compactar bloque A REVIEW, decisión condicional) ahora con base documental viva limpia.
+
+---
+
+## [v10.76 — 2026-05-07] — Archivado de árboles históricos y Parte 5.bis de PROCESO-MAESTRO
+
+Continuación de la limpieza documental tras v10.75. Tres bloques de PROCESO-MAESTRO.md auto-etiquetados como históricos en su propio contenido se trasladan a `docs/historico/`, dejando punteros cortos donde estaban.
+
+**Bloques movidos:**
+
+1. **Árbol intermedio del repositorio** (líneas 487-533, ~2.161 chars). Etiqueta original: *"estado anterior — pre-disolución de `nuevo/`"*. Útil para entender la fase de migración cuando `nuevo/` y `viejo/` coexistían.
+2. **Árbol antes del split** (líneas 535-668, ~3.960 chars). Etiqueta original: *"referencia histórica — anterior a 2026-05-05 12:15, NO ES EL ESTADO ACTUAL"*. Estructura del repo cuando todo el contenido editorial vivía en raíz.
+3. **Parte 5.bis: Histórico de la estrategia de migración (CERRADA)** (líneas 788-806, ~1.301 chars). Cronología y plan de la migración que produjo la estructura actual; declarada cerrada en su propio título.
+
+**Destinos:**
+- `docs/historico/PROCESO-MAESTRO-arboles-historicos.md` (196 líneas, 11.324 chars): los 2 árboles con cabecera explicando qué archiva y diferencia con el árbol vivo.
+- `docs/historico/PROCESO-MAESTRO-parte5bis-migracion.md` (27 líneas, 1.807 chars): Parte 5.bis con cabecera.
+
+**En PROCESO-MAESTRO vivo:** los 3 bloques quedan reemplazados por punteros cortos (3 líneas cada uno) que mantienen el encabezado original de la sección + 1 línea referenciando el histórico. La numeración y secuencia de Partes (1, 2, 3, 4, 5, 5.bis, 6, Bitácora) queda intacta.
+
+**Lo que NO se toca:**
+- Árbol actual (Parte 3, línea 450): es el estado vivo, queda íntegro.
+- Bitácora del documento (Parte final): histórica pero parte de la trazabilidad viva del propio PROCESO-MAESTRO.
+- Decisiones cerradas (Parte 4) y pendientes (Parte 5): vivos.
+
+**Resultado medido:**
+- PROCESO-MAESTRO.md: 868 → 677 líneas (-22%, ~190 líneas archivadas).
+- Peso documental reducido en ~7K chars de partes vivas, preservados en archivos históricos referenciables.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.77 (compactar bloque A cerrado de REVIEW.md, **decisión condicional** tras evaluar si tras v10.75-76 sigue compensando).
+
+---
+
+## [v10.75b — 2026-05-07] — Corrección de 2 inexactitudes menores en el acta de v10.75
+
+Hallazgo del revisor sobre v10.75 (ambos en el acta del propio commit, no en el archivado):
+
+1. La verificación post-archivado decía *"`diagrama._read_version()` devuelve `10.74`"*. La lógica real (lee primer `## [v...]`) devuelve `10.75` tras el commit, porque la primera entrada del CHANGELOG vivo pasa a ser v10.75.
+2. La métrica final decía *"977 líneas (-61%)"*. Tras añadir la entrada v10.75 + puntero al histórico, el archivo resultó en **1.004 líneas (-60%)**.
+
+Ninguna afecta a la funcionalidad ni al archivado en sí (que está bien hecho); solo precisión del acta.
+
+**Fix:** ambas líneas del acta v10.75 actualizadas a los valores reales (CHANGELOG.md líneas 23 y 25; REVIEW.md bitácora del 2026-05-07 13:00).
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.76 (mover árboles históricos embebidos + Parte 5.bis de PROCESO-MAESTRO), ya con la serie documental cerrada limpia.
+
+---
+
+## [v10.75 — 2026-05-07] — Archivado del CHANGELOG pre-v10.40 a `docs/historico/`
+
+Limpieza documental autorizada por el revisor tras el pase de coherencia (v10.74/v10.74b). El CHANGELOG vivo crecía sin límite y representaba el 56% del peso documental total del repo. Las entradas anteriores a v10.40 (refactor del prompt de fase 1) son histórico inmutable; trasladarlas reduce contaminación de contexto sin perder trazabilidad.
+
+**Verificaciones previas al archivado:**
+- `grep "\(#v" CHANGELOG.md` → 0 hits (sin links internos rotos).
+- Frontera identificada: v10.40 termina en línea 977; v10.39 empieza en línea 978.
+- `diagrama.py:_read_version()` solo busca el primer `## [v...]`, no acoplado al rango de versiones.
+
+**Acción:**
+- Trasladado el texto íntegro (líneas 978-2512, 1.535 líneas, ~112K chars) a `docs/historico/CHANGELOG-pre-refactor.md` con una cabecera mínima explicando qué archiva.
+- CHANGELOG vivo conserva v10.40 íntegra hacia adelante.
+- Puntero corto al histórico añadido bajo el título y antes del primer `---`.
+
+**Verificaciones post-archivado:**
+- `diagrama._read_version()` devuelve `10.75` tras el commit (primera entrada viva, comportamiento idéntico al previo).
+- Validador U0/U1/U3 → 0/0 (control de sanidad lateral).
+- Tamaño: CHANGELOG vivo pasa de 2.512 a 1.004 líneas tras añadir esta entrada y el puntero al histórico (-60%); peso documental del archivo reducido aproximadamente 28K tokens.
+
+**No se reescriben** entradas históricas (revisionismo prohibido). El traslado es texto-a-texto sin edición.
+
+**Próximo:** v10.76 (mover árboles históricos embebidos + Parte 5.bis de PROCESO-MAESTRO).
+
+---
+
+## [v10.74b — 2026-05-07] — Cierre del pase de coherencia tras dictamen del revisor sobre v10.74
+
+Hallazgos del revisor sobre v10.74: la actualización fue parcial en 2 sitios:
+
+**1. PROCESO-MAESTRO.md líneas 163-180 (estructura por actividad).** v10.74 actualizó el titular a "20 tipos" pero la enumeración debajo seguía listando 17 valores (faltaban `escucha`, `lee_y_escucha`, `ver_video`, `responder_preguntas_cerradas`, `responder_preguntas_abiertas`); además el shape de actividad seguía describiendo `destreza` como string sin mencionar el nuevo campo `enfoque` introducido en v10.60. Drift incompleto del corazón del contrato.
+
+**Fix:** enumeración real de 20 tipos completa; `destreza` reescrita como "lista de strings, alfabética, sin duplicados" con enum cerrado de 6 valores y referencia a schema §5b; **`enfoque` añadido** como nuevo bullet con su enum cerrado de 6 y referencia a schema §5c. Cita de qué cambió en cada versión (v10.25, v10.59, v10.60, v10.64).
+
+**2. PROCESO-MAESTRO.md línea 779 ("Sobre la implementación a escribir cuando lleguemos").** Seguía diciendo "Plantilla HTML del informe por unidad e integración en dashboard (paso B del plan)", reabriendo el modelo viejo de informe estático que v10.71 había cerrado.
+
+**Fix:** sección renombrada a "Sobre la implementación pendiente" (sin "a escribir" que sugería que nada está hecho); el bullet del informe HTML reescrito a "Refinamiento visual de la **vista HTML dinámica**" — la vista existe y funciona, lo pendiente es refinamiento visual y extensión a los 3 JSON globales.
+
+**Efecto:** v10.74 ahora cerrada limpia. Archivos vivos sin drift sobre Fase 1 ni sobre la vista HTML.
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** v10.75 (archivar CHANGELOG pre-v10.40). Paralelización de extracciones autorizada con base documental ya limpia.
+
+---
+
+## [v10.74 — 2026-05-07] — Pase de coherencia documental: drift en PROCESO-MAESTRO + REVIEW
+
+Bloqueante para la limpieza/compactación posterior (v10.75-77) y para la apertura de chats paralelos de extracción. Mientras los archivos vivos describan el sistema con datos obsoletos, cualquier compactación consolida información incorrecta y los chats nuevos heredan drift.
+
+**Drift identificado por el revisor + auditoría propia:**
+
+- `PROCESO-MAESTRO.md` línea 88: `validar_inventario.py` "a escribir" — el validador es operativo desde antes del refactor.
+- `PROCESO-MAESTRO.md` línea 128: misma redacción "a escribir".
+- `PROCESO-MAESTRO.md` línea 163: "taxonomía cerrada de **17 tipos**" — son **20** desde v10.64 (+ `escucha`).
+- `PROCESO-MAESTRO.md` línea 231: "Plantilla HTML del informe por unidad" como tarea pendiente — v10.71 cerró que es vista HTML dinámica del dashboard, no plantilla estática.
+- `PROCESO-MAESTRO.md` línea 701 (Parte 4, decisión 24): mismo "validar_inventario.py (a escribir)".
+- `REVIEW.md` línea 45 (fila estado global Fase 1): "🔄 A4 refactor documental en curso" — A4 cerrado en v10.69.
+- `REVIEW.md` línea 112 (encabezado bloque A4): "🔄 EN CURSO" — idem.
+
+**Cambios aplicados:**
+
+- 5 actualizaciones a estado real en `PROCESO-MAESTRO.md` (líneas 88, 128, 163, 231, 701). Parte 2 de Fase 1 actualizada a estado real, **NO reducida a puntero** — la reducción a puntero pertenece a un paso de compactación estructural posterior.
+- 2 correcciones de estado en `REVIEW.md` (línea 45 fila tabla y línea 112 encabezado bloque).
+
+**Lo que NO se toca** (legítimo, no es drift):
+- Líneas 107 y 113 de `PROCESO-MAESTRO.md`: `regenerar_tarjetas_globales.py` y `regenerar_pildoras_globales.py` siguen siendo tareas pendientes reales (verificado: solo `validar_inventario.py` existe en `scripts/`).
+- Bitácora histórica de `PROCESO-MAESTRO.md` (líneas 860, 865) que mencionan "17 tipos" — describen estado en el momento del commit, no se reescriben.
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0 post-cambios.
+
+**Próximo:** v10.75 (archivar CHANGELOG pre-v10.40), ya en worktree `docs/cleanup`. La paralelización de chats de extracción se puede abrir tras el push de v10.74.
+
+---
+
+## [v10.73 — 2026-05-07] — Cierre de referencias rotas en `schema-inventario.md` tras v10.72
+
+Hallazgo del revisor sobre v10.72: el archivado de `REFACTOR-PROPUESTA.md` a `docs/historico/` dejó dos referencias rotas en `fases/1-extraccion-inventario/schema-inventario.md` (líneas 7 y 377). Ambas decían *"ver REFACTOR-PROPUESTA.md paso 5.5"* en un archivo vivo del producto operativo.
+
+**Decisión:** en lugar de re-apuntar al nuevo path histórico, el revisor sugirió formulación estable y atemporal — el schema describe contrato vigente del JSON, no debería encadenarse a un artefacto del proceso de refactor que ya cumplió su función.
+
+**Fix quirúrgico (2 líneas):**
+- Línea 7: *"...se resuelve antes del merge en commit aparte (ver REFACTOR-PROPUESTA.md paso 5.5)."* → *"...se resuelve antes del merge en commit aparte."*
+- Línea 377: *"La divergencia no es un estado válido de cierre del refactor (ver REFACTOR-PROPUESTA.md paso 5.5)."* → *"La divergencia no es un estado válido de cierre."*
+
+**Verificación:** sin más referencias vivas a `REFACTOR-*.md` fuera de `docs/historico/`. Las menciones que quedan en CHANGELOG y bitácora REVIEW siguen siendo históricas (no se reescriben).
+
+**Sin cambios funcionales.** Validador U0/U1/U3 → 0/0.
+
+**Próximo:** push de `main` a `origin` con autorización del autor + reextracción de U2 en rama nueva (no directamente sobre main).
+
+---
+
+## [v10.72 — 2026-05-07] — Archivado de documentos del refactor cerrado en `docs/historico/`
+
+Limpieza post-refactor: los dos artefactos del **proceso** del refactor de fase 1 (no del producto vivo) se archivan en `docs/historico/refactor-prompt-fase1/` para que `fases/1-extraccion-inventario/` contenga solo lo operativo (CLAUDE.md, prompt.md, schema, reglas, convenciones).
+
+**Movidos con `git mv` (preserva historial):**
+- `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` → `docs/historico/refactor-prompt-fase1/REFACTOR-PROPUESTA.md` — plan ejecutable del refactor, cerrado al 100% en v10.69.
+- `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` → `docs/historico/refactor-prompt-fase1/REFACTOR-WORKTREE.md` — documentación del worktree dedicado usado durante la ejecución.
+
+**Creado:**
+- `docs/historico/refactor-prompt-fase1/README.md` — explica qué hay archivado, por qué se movió fuera de la carpeta de fase, y cuándo conviene consultar el archivo (planificación de futuros refactores, reapertura de decisiones, plantilla de proceso).
+
+**Cross-references vivas actualizadas:**
+- `PROCESO-MAESTRO.md` decisión 34 (línea 727).
+- `REVIEW.md` paso A4 sección viva (líneas 118, 120, 124, 135, 142, 150).
+
+**Cross-references históricas NO tocadas** (entradas de bitácora en REVIEW.md y CHANGELOG.md anteriores que mencionan los paths originales): describen el estado del repo en el momento del commit; reescribirlas sería revisionismo.
+
+**`viejo/` no se toca** (regla del proyecto: intocable hasta autorización explícita del autor).
+
+**Sin cambios funcionales en código.** Validador U0/U1/U3 → 0/0 post-archivado (sanity check).
+
+---
+
+## [v10.71 — 2026-05-07] — Ajuste de redacción en PROCESO-MAESTRO sobre informe HTML / vista dinámica del dashboard
+
+Observación post-merge: la decisión 25 de `PROCESO-MAESTRO.md` (línea 705) y la entrada de bitácora del 2026-05-05 (línea 845) hablaban de "**generar además un informe HTML visual**" como si la fase 1 produjera un segundo artefacto HTML estático. La implementación real (verificada por el revisor en `diagrama.py:245/980/983` y `web/index.html:341/595/647`) confirma que **el JSON es el único output de la fase**, y que la "vista HTML" es una **renderización dinámica** que el dashboard genera al vuelo desde el JSON. No existe ningún paso de generación de HTML estático por unidad.
+
+**Drift detectado:** el lenguaje "genera además" en PROCESO-MAESTRO sugería un segundo artefacto que en realidad nunca existió como archivo. Los archivos de fase 1 (CLAUDE.md, prompt.md) ya estaban correctos declarando un único output JSON.
+
+**Fix quirúrgico (2 líneas en PROCESO-MAESTRO.md):**
+
+- **Decisión 25 (línea 705)** — reescrita: *"Cada extracción de inventario produce un JSON por unidad. Ese JSON queda además disponible como vista HTML dinámica integrada en el dashboard existente (`web/index.html`), sin generar por ahora un archivo HTML independiente."*
+- **Bitácora 2026-05-05 (línea 845)** — final reescrito: *"El dashboard ofrece una vista HTML dinámica integrada del inventario JSON (`web/index.html`); no existe actualmente un artefacto HTML estático adicional por unidad."*
+
+**Sin tocar:** archivos de fase 1 (ya fieles al sistema real), líneas 232/680/815 de PROCESO-MAESTRO (coherentes con la nueva redacción).
+
+**Sin cambios funcionales en código.** Solo coherencia documental.
+
+---
+
+## [v10.70 — 2026-05-07] — Regla 3 de `CLAUDE.md` de fase reformulada para que describa la realidad del sistema
+
+Observación post-merge del revisor: la regla 3 ("Single source of truth por capa") prohibía duplicación entre `prompt.md`, `schema-inventario.md`, `reglas-operativas.md` y `convenciones-y-casos.md` — pero **excluía tácitamente al propio `CLAUDE.md` de fase**. La duplicación contractual real entre `CLAUDE.md` y `prompt.md` (objetivo, input/output, invocación, validación mínima, literalidad, convención root-relative, framing SSoT) sobrevivía al refactor sin estar contemplada en la regla.
+
+**Auditoría previa (sin cambios de código):**
+- **Grupo A — duplicación contractual aceptable** entre los 2 entry points: 7 bloques (objetivo, paths, invocación, validación, literalidad, convención root-relative, framing SSoT). Todos contractuales, ninguno operativo.
+- **Grupo B — duplicación operativa peligrosa**: 0 hallazgos. Verificado que NO aparecen valores concretos de `tipo`, `destreza`, `tipo_cuadro`, opciones fijas NC1, categorías de `vocabulario_consolidado` ni reglas de desempate fuera de su archivo canónico. La lógica decisional vive solo en `reglas-operativas.md`; el shape solo en `schema-inventario.md`; las convenciones solo en `convenciones-y-casos.md`.
+
+**Fix quirúrgico (1 línea):** regla 3 reescrita según la formulación del revisor:
+
+> "Single source of truth por capa — las reglas estructurales, decisionales y convenciones viven una sola vez en los archivos de soporte (`schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`). `CLAUDE.md` y `prompt.md` pueden repetir hechos y reglas mínimas de contrato de fase (objetivo, input/output, invocación, validación, literalidad) por ser entry points complementarios. Si lógica operativa o reglas de clasificación aparecen duplicadas fuera de su archivo canónico, es un bug."
+
+**Sin tocar `prompt.md` ni los archivos de soporte ni el validador.** No es problema arquitectónico profundo: la regla mal formulada simplemente no describía la realidad ya implementada.
+
+**Próximo:** ninguno por ahora. Refactor cerrado y revisor sin bloqueantes pendientes.
+
+---
+
+## [v10.69 — 2026-05-07] — A4.6 cerrado: merge `refactor/prompt-fase-1` → `main` (cierre del refactor de fase 1)
+
+Merge ejecutado con `git merge --no-ff` (commit `110e722`) para preservar el rastro completo del refactor de fase 1 (v10.40 → v10.68, 29 commits intermedios).
+
+**Diff del merge:** 14 archivos, +2555 / –838 líneas.
+
+**Archivos creados en `main`:**
+- `fases/1-extraccion-inventario/schema-inventario.md` (contrato de datos puro).
+- `fases/1-extraccion-inventario/reglas-operativas.md` (reglas decisionales — single source of truth de precedencias).
+- `fases/1-extraccion-inventario/convenciones-y-casos.md` (transcripción + casebook).
+- `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` (documentación del worktree dedicado).
+
+**Archivos modificados:**
+- `fases/1-extraccion-inventario/prompt.md` (547 → 111 líneas, –80%).
+- `fases/1-extraccion-inventario/CLAUDE.md` (de fase, modo contrato corto, 60 líneas).
+- `scripts/validar_inventario.py` (validador estructural, contrato paralelo del schema).
+- `unidades/U0/U0-nc1-inventario.json`, `unidades/U1/U1-nc1-inventario.json`, `unidades/U3/U3-nc1-inventario.json` (los 3 oráculos reclasificados al contrato actualizado).
+- `CHANGELOG.md`, `REVIEW.md`, `PROCESO-MAESTRO.md` (bitácoras).
+
+**Validador en `main` post-merge:** U0 ✅, U1 ✅, U3 ✅, todos 0 errores y 0 avisos.
+
+**Gate A4 entero cerrado:** los 5 sub-gates del bloque "Gate de cierre de A4 entero" en `REVIEW.md` ya en ✅ (sub-pasos cerrados, A4.5 acta empírica, A4.5.5 0 divergencias, merge ejecutado, bitácoras sincronizadas).
+
+**Sin push automático.** Push a remoto queda como decisión del autor.
+
+**Branch `refactor/prompt-fase-1` y worktree** `/Users/armandocruz/Desktop/guia-didactica-refactor/` **se mantienen intactos** por si se necesita inspeccionar el rastro del refactor.
+
+**Refactor de fase 1 cerrado.**
+
+---
+
+## [v10.68 — 2026-05-07] — Cierre formal de A4.5 (acta empírica) y A4.5.5 (cross-check schema↔validador)
+
+Actas formales de los dos gates pre-merge tras el dictamen positivo del revisor sobre v10.67:
+
+**A4.5 — Acta de prueba empírica:** los 3 oráculos U0/U1/U3 reclasificados al contrato actualizado (3 ejes ortogonales `tipo`/`destreza`/`enfoque`) en 4 commits iterativos con dictamen del revisor:
+- v10.64 — U0 piloto (10 actividades) + ampliación taxonomía 19→20 (`escucha`).
+- v10.65 — U1 (42 actividades) + 3 fixes A1/A2/A3 del revisor + regla nueva de desempate §2.2 punto 5 (`completa_huecos` vs `produccion_escrita_guiada`).
+- v10.66 — U3 (47 actividades) + 3 refinamientos de §2.2 (puntos 1, 2 y 3: video sin manipulación posterior, manipulación manda en cualquier punto, criterio explícito destreza para `responder_preguntas_*`).
+- v10.67 — cierre de bloqueante sobre `escucha_y_responde` (3 reclasificaciones).
+
+Validador U0/U1/U3 → 0/0. Sin pérdida de decisiones semánticas. Conteos coherentes (10 + 42 + 47 = 99 actividades).
+
+**A4.5.5 — Acta de cross-check schema↔validador:** script de paridad ejecutado sobre las 5 enumeraciones cerradas → **5/5 idénticas, 0 divergencias**:
+- `tipo`: 20 valores (`busqueda_informacion`, `clasifica`, `completa_huecos`, `escucha`, `escucha_y_repite`, `escucha_y_responde`, `expresion_escrita_libre`, `expresion_oral_libre`, `interaccion_oral`, `juego`, `lee_y_escucha`, `ordena`, `produccion_escrita_guiada`, `relaciona`, `responder_preguntas_abiertas`, `responder_preguntas_cerradas`, `seleccion_multiple`, `tarea_final`, `ver_video`, `verdadero_falso`).
+- `destreza`: 6 valores (`comprension_auditiva`, `comprension_lectora`, `expresion_escrita`, `expresion_oral`, `interaccion_oral`, `mediacion`).
+- `enfoque`: 6 valores (`comunicacion`, `cultura`, `fonetica`, `gramatica`, `transversal`, `vocabulario`).
+- `tipo_cuadro`: 5 valores (`comunicativo`, `cultural`, `fonetico`, `gramatical`, `lexical`).
+- `seccion`: 7 valores (`comunicacion`, `cultura`, `destrezas`, `evaluacion`, `gramatica`, `reflexion`, `vocabulario`).
+
+El gate ineludible de no-divergencia schema↔validador queda cumplido.
+
+**Sin cambios funcionales en este commit.** Solo cierre documental de actas en REVIEW.md (tabla de sub-pasos A4.5 y A4.5.5 marcadas ✅) y CHANGELOG.
+
+**Próximo:** A4.6 — merge `refactor/prompt-fase-1` → `main` (pendiente de confirmación explícita del autor por ser acción visible y hard-to-reverse).
+
+---
+
+## [v10.67 — 2026-05-07] — Cierre de bloqueante del revisor: `escucha_y_responde` mal usado en 3 oráculos
+
+Hallazgo bloqueante del revisor sobre v10.66: la definición de `escucha_y_responde` en `reglas-operativas.md` §2.2 ("Escucha y responde oralmente, sin texto delante") no se alineaba con el uso real en los oráculos. Tres actividades estaban clasificadas con ese tipo cuando en realidad encajan en mecánicas más específicas:
+
+- **U0-p11-act08** "Escucha y escribe" (dictado deletreado, items_libro con slots `_____`): conflicto con regla 5 nueva (con slots predefinidos → `completa_huecos`). **Fix:** `escucha_y_responde` → `completa_huecos`.
+- **U0-p11-act09** "Escucha y escribe los números 0-10" (items_libro con slots `_____`): mismo conflicto. **Fix:** `escucha_y_responde` → `completa_huecos`.
+- **U3-p39-act06** "Escribe las horas y, después, escucha y comprueba": no es respuesta a estímulo auditivo (el alumno escribe ANTES de escuchar; el audio es comprobación). Tampoco hay slots predefinidos (relojes digitales como estímulo visual). **Fix:** `escucha_y_responde` → `produccion_escrita_guiada`.
+
+**Definición de `escucha_y_responde` se mantiene intacta** — es un nicho legítimo para respuesta oral genuina sin manipulación de slots ni producción escrita.
+
+**Estado del branch:** U0 ✅, U1 ✅, U3 ✅. Cross-check informal del revisor para A4.5.5 confirma alineación schema↔validador en 20 tipos / 6 destrezas / 6 enfoques. Sin otros hallazgos bloqueantes.
+
+**Próximo:** A4.5 (acta) + A4.5.5 (cross-check formal) + A4.6 (merge a `main`).
+
+---
+
+## [v10.66 — 2026-05-07] — Cierre de U3 y refinamiento de desempates en §2.2
+
+- U3 reclasificada: 47 actividades con destrezas normalizadas en listas alfabéticas y enfoque completo.
+- 11 cambios de tipo: 10 casos "Completa..." pasan de `produccion_escrita_guiada` a `completa_huecos`, y U3-p39-act05 pasa de `escucha_y_repite` a `completa_huecos`.
+- U3-p41-act05 se mantiene en `produccion_escrita_guiada` por tratarse de producción propia sobre relojes vacíos (sin `items_libro`).
+- §2.2 se refina en tres puntos:
+  - **Regla 1 (`ver_video`)**: solo cuando no hay manipulación posterior. "Mira el vídeo y completa" → `completa_huecos`, no `ver_video`.
+  - **Regla 2 (manipulación manda)**: la manipulación domina **en cualquier punto** del enunciado, no solo "posterior". "Completa, escucha y repite" → `completa_huecos` aunque le siga "repite".
+  - **Regla 3 (`responder_preguntas_*`)**: distingue explícitamente destreza con texto-fuente (`comprension_lectora` o `comprension_auditiva`, sin `expresion_escrita`) frente a respuesta libre del alumno sin texto-fuente (`expresion_escrita`).
+
+**Estado del branch:** U0 ✅, U1 ✅, U3 ✅. Los 3 oráculos validan 0/0 con el contrato completo. Branch listo para A4.5 (acta) / A4.5.5 (cross-check) / merge a `main`.
+
+---
+
+## [v10.65 — 2026-05-07] — U1 reclasificada + 3 fixes del revisor + regla nueva de desempate `completa_huecos` vs `produccion_escrita_guiada`
+
+Reclasificación de U1 (42 actividades) tras prueba empírica de v10.64. Validación del revisor sobre la primera pasada detectó 3 desajustes contractuales reales:
+
+**A1 (Bloqueante) — U1-p12-act3:** la actividad encadenaba "Escucha y repite vocabulario / Después, escucha y escribe" — el contrato (§2.2 regla de desempate 2: "última acción que pide producción concreta") obliga a clasificar por la fase final (asignación numérica), no por la primera (repetición). Tampoco corresponde `expresion_escrita` (escribir un número es transcripción/manipulación). **Fix:** tipo `escucha_y_repite` → `relaciona`; destreza `[comprension_auditiva, comprension_lectora, expresion_oral]` (sin `expresion_escrita`).
+
+**A2 (Alto) — Frontera ambigua `completa_huecos` vs `produccion_escrita_guiada`:** la primera pasada congeló 4 actividades en `produccion_escrita_guiada` por solapamiento de descripciones en §2.2 (ambos tipos ejemplificaban "Coloca el artículo / Completa la tabla"). El revisor señaló que la ambigüedad existe pero no justifica el congelamiento — y propuso una **regla de desempate explícita**:
+> Con huecos/celdas/slots predefinidos → `completa_huecos`. Sin huecos predefinidos, el alumno construye frases/etiquetas a partir de modelo/imagen/regla → `produccion_escrita_guiada`.
+
+**Fix de regla:** §2.2 punto 5 nuevo en `reglas-operativas.md` con la formulación.
+
+**Fix de JSON:** 5 actividades cambian de tipo siguiendo la nueva regla:
+- U1-p14-act2 "Completa los huecos con la forma del verbo tener" → `completa_huecos`
+- U1-p14-act4 "Completa la tabla con el masculino/femenino" → `completa_huecos`
+- U1-p21-act1 "Completa las frases con el verbo ser" → `completa_huecos`
+- U1-p21-act3 "Completa la tabla [género]" → `completa_huecos`
+- U1-p21-act4 "Completa con el verbo ser/llamarse/tener" → `completa_huecos`
+
+Mantienen `produccion_escrita_guiada` (sin huecos predefinidos): U1-p21-act2 "Coloca el artículo", U1-p14-act5 "Forma el femenino", U1-p15-act6/7, U1-p17-act6, U1-p21-act5.
+
+**A3 (Alto) — U1-p14-act3 "Forma frases tomando un elemento de cada columna":** el contrato (§2.2 ejemplo explícito de `produccion_escrita_guiada`: "Forma frases") obliga a clasificarlo como producción guiada. La primera pasada lo dejó en `relaciona`, lo cual además entraba en conflicto con asignar `expresion_escrita` a una mecánica de relación (regla anti-sobreasignación). **Fix:** tipo `relaciona` → `produccion_escrita_guiada`; destreza `[comprension_lectora, expresion_escrita]` mantenida.
+
+**Resumen del commit:**
+- 7 actividades de U1 con `tipo` corregido (1 por A1, 5 por A2 incl. consistencia, 1 por A3).
+- 1 regla nueva en `reglas-operativas.md` §2.2 punto 5.
+- Validador U1 → 0/0.
+
+**Estado del branch:**
+- U0: ✅ verde
+- U1: ✅ verde (tras estos fixes)
+- U3: ❌ rojo (legacy, pendiente — siguiente)
+
+**Próximo:** reclasificar U3 con la regla de desempate ya cerrada y aplicada.
+
+---
+
+## [v10.64 — 2026-05-07] — U0 reclasificada (piloto) + taxonomía `tipo` 19→20 (añadido `escucha`) + refinamiento §2.3
+
+**Prueba empírica del nuevo contrato `destreza`/`enfoque`** con U0 como piloto. El sistema funciona: 10 actividades reclasificadas, validador 0/0.
+
+**Decisiones tomadas durante la prueba:**
+
+1. **Taxonomía `tipo` ampliada de 19 → 20:** añadido valor `escucha` (input puro auditivo sin lectura de texto extenso ni acción posterior; apoyo visual no textual admisible: mapa, imagen, foto). Caso disparador: U0-p8-act01 ("Mira el mapa y escucha el nombre de los países. Observa la pronunciación.") no encajaba en `escucha_y_repite` (no pide repetir) ni en `lee_y_escucha` (no hay texto extenso para leer). Decisión cerrada en PROCESO-MAESTRO bitácora cumpliendo la regla §2.4 de `reglas-operativas.md`. Aplicado en schema §5, validador `TIPOS_VALIDOS`, reglas-operativas §2.2 (nueva fila + descripciones afinadas de `lee_y_escucha` y `escucha_y_repite`), todas las cross-references `19 → 20` (4 archivos).
+
+2. **Regla `expresion_escrita` reformulada (§2.3):** la versión inicial de v10.60 era estricta ("solo si produce texto lingüístico propio: frase elaborada, párrafo, correo, presentación"). Tras prueba con U0 se decide ampliarla a "produce contenido escrito propio" — incluye tanto textos elaborados como **listas de palabras evocadas** (ej. "escribe los países que recuerdas"). Distinción honesta entre **contenido propio** (memoria/criterio/conocimiento → `expresion_escrita`) y **transcripción/aplicación de regla** (dictado, completar artículo, completar palabra del banco → NO `expresion_escrita`).
+
+3. **Heurística `vocabulario` vs `fonetica` documentada (§2.3):** para "escucha y repite" / "escucha y escribe" — agrupación por campo léxico → `vocabulario`; agrupación por dificultad fonética → `fonetica`; deletrear → siempre `fonetica`; **dictado** → siempre `fonetica` (incluso si el contenido dictado es léxico, ej. dictado de números).
+
+4. **U0 reclasificada en bloque (10 actividades):** asignados `destreza` (lista alfabética) y `enfoque` (string) según las reglas refinadas. U0-p8-act01 cambia de `escucha_y_repite` → `escucha` (nuevo tipo). Validador U0 → 0/0.
+
+**Estado actual del branch:**
+- U0: ✅ verde (formato nuevo + taxonomía nueva)
+- U1, U3: ❌ rojos (formato legacy de destreza, sin enfoque, posibles tipos a revisar) — pendientes de reclasificar siguiendo el mismo patrón.
+
+**Próximo:** reclasificar U1 (~33 actividades) con el mismo procedimiento.
+
+---
+
+## [v10.63 — 2026-05-07] — Fix de drift post-v10.60 en CLAUDE.md de fase
+
+Hallazgo durante la re-revisión del componente 1: la tabla "Para qué consultar qué archivo" (línea 45) listaba las decisiones que viven en `reglas-operativas.md` mencionando solo `tipo` y `tipo_cuadro`. Tras v10.60 hay 4 ejes decisionales (`tipo`/`destreza`/`enfoque`/`tipo_cuadro`); un usuario que llegaba buscando "¿cómo decido la destreza?" no encontraba puntero claro.
+
+**Fix quirúrgico:** una línea — añadidos `destreza` y `enfoque` a la enumeración de decisiones que el archivo `reglas-operativas.md` cubre.
+
+**Las 5 "Reglas críticas" del CLAUDE de fase (líneas 29-35) NO se tocan.** Verificadas como reglas de contrato (no operativas) tanto por el revisor como por re-revisión propia: literalidad del libro, no inventar, single source of truth, validar antes de cerrar, no divergencia schema/validador. Pasan ambos tests (Anthropic + decisión de proyecto sobre single source of truth).
+
+**Sin cambios en otros archivos.** CLAUDE.md de fase: 60 líneas (norte 40-60 cumplido).
+
+**Próximo:** componente 4 — `reglas-operativas.md`.
+
+---
+
+## [v10.62 — 2026-05-07] — Cierre del componente 3 (schema-inventario.md): 3 fixes accionables del revisor
+
+Revisión del componente 3 con 3 hallazgos accionables cerrados en este commit.
+
+**F0 (Bloqueante) — Divergencia real schema↔validador en `_nota_unidad_atipica`.** El schema §11 declara la clave como contractual y opcional, y exige que el validador la incluya en `CLAVES_TOP_OPCIONALES`. El validador solo tenía `{"autoevaluacion"}`, por lo que U0 emitía aviso "Claves top-level no canónicas: ['_nota_unidad_atipica']" — divergencia real con el schema. **Fix:** añadido `_nota_unidad_atipica` a `CLAVES_TOP_OPCIONALES`. U0 ahora valida sin avisos espurios. Schema y validador alineados.
+
+**F1 (Medio) — §13 desactualizada tras v10.60.** La sección "Source of truth con validar_inventario.py" listaba las enumeraciones cerradas (19 tipos / 5 tipo_cuadro / 7 secciones / 3 opciones autoevaluación) pero no mencionaba `destreza` (6 valores) ni `enfoque` (6 valores) introducidos en v10.60. Tampoco listaba la restricción condicional de orden alfabético de `destreza`. **Fix:** §13 reescrita con las 6 enumeraciones cerradas explícitas, los 3 ejes obligatorios por actividad nombrados, y la restricción de orden alfabético añadida a la lista de restricciones condicionales validables.
+
+**F3 (Bajo) — Ambigüedad contractual de `numero`.** El schema §3 declaraba `"numero": <int>` sin especificar obligatoriedad. El validador no lo chequeaba. Algunas actividades del libro NO tienen número visible (ej. "Para aprender", cuadros clasificados como actividad por reglas §1, autoevaluación a pie de página). **Decisión:** `numero` es **opcional**. **Fixes:** schema §3 actualizado a `<int opcional — ver §3.1>` con nueva sub-sección §3.1 explicando cuándo se omite y puntero a `reglas-operativas.md` §1. Validador añade check: si `numero` está presente, debe ser int (no chequea presencia, alineado con la decisión opcional).
+
+**Sin cambios en otros archivos del refactor.** Branch sigue rojo por la migración pendiente de destreza/enfoque per-unidad (gate v10.60).
+
+**Próximo:** revisión del componente 4 — `reglas-operativas.md`.
+
+---
+
+## [v10.61 — 2026-05-07] — Fix de drift documental post-v10.60 en `prompt.md`
+
+Hallazgo del revisor durante la revisión componente-a-componente del refactor: tras v10.60 el contrato exige `destreza` y `enfoque` obligatorios en cada actividad, pero el `prompt.md` no los reflejaba. El paso 5 de "Pasos de la extracción" solo mencionaba "extraer todos los campos del esquema" genéricamente, y el checklist manual de "Cierre y validación" listaba `tipo` entre los enums cerrados pero omitía los dos ejes nuevos.
+
+**Cambios quirúrgicos:**
+- Paso 5 ampliado con recordatorio explícito de los **3 ejes ortogonales obligatorios** (`tipo`/`destreza`/`enfoque`) con punteros al schema (§5b/§5c) y a `reglas-operativas.md` §2.3.
+- Checklist manual de 9 → 11 items: insertados "Destrezas válidas" e "Enfoque válido" después de "Tipos válidos".
+
+**Métrica:** prompt.md 109 → 111 líneas (sigue dentro del norte 80-120).
+
+**Sin cambios en otros archivos.** Componente 1 (CLAUDE.md de fase) aprobado por el revisor sin findings materiales antes de este commit.
+
+**Próximo:** revisión del componente 3 — `schema-inventario.md`.
+
+---
+
+## [v10.60 — 2026-05-07] — Contrato `destreza`/`enfoque`: separación de ejes habilidad ↔ dominio (commit intermedio rompedor de contrato)
+
+> ⚠️ **Estado intermedio:** este commit deja el branch en rojo intencionadamente. El validador rechaza U0/U1/U3 (~250 errores: `destreza` en formato string legacy + ausencia del nuevo campo `enfoque`). La reclasificación per-unidad de las 97 actividades a destreza-lista-canónica + enfoque se hará en otro chat antes de A4.5.
+
+Hallazgo en revisión durante la primera pasada del rediseño de `destreza`: la versión inicial (lista de 8 valores incluyendo `gramatica`/`vocabulario`) mezclaba dos ejes — habilidad lingüística (MCER) y dominio de contenido (gramática, léxico, etc.). El revisor lo señaló como bloqueante. Decisión: separar en dos campos ortogonales.
+
+**Cambios:**
+
+- **Nuevo eje `destreza` (eje habilidad MCER pura, schema §5b):** lista de strings, enum cerrado de 6 valores: `comprension_auditiva`, `comprension_lectora`, `expresion_escrita`, `expresion_oral`, `interaccion_oral`, `mediacion`. Orden alfabético obligatorio (validable mecánicamente, evita variantes equivalentes con orden distinto). Mínimo 1 elemento, sin duplicados.
+- **Nuevo campo `enfoque` (eje dominio de contenido, schema §5c):** string único, enum cerrado de 6 valores: `gramatica`, `vocabulario`, `comunicacion`, `fonetica`, `cultura`, `transversal`. Obligatorio en cada actividad. Independiente de `seccion` (que clasifica la página entera según el índice editorial); `enfoque` clasifica la actividad concreta según su foco pedagógico real. El valor `transversal` reemplaza la propuesta inicial `destrezas` (que reutilizaba el nombre de una sección editorial y pegaba el eje al layout de página, justo lo que la separación intentaba evitar).
+- **Validador:** nuevas constantes `DESTREZAS_VALIDAS` (6) y `ENFOQUES_VALIDOS` (6). Bloque de validación por actividad: `destreza` debe existir, ser lista no vacía, valores del enum, orden alfabético, sin duplicados; `enfoque` debe existir, ser string, valor del enum.
+- **`reglas-operativas.md` §2.3 reescrita íntegra:** tabla de los 3 ejes ortogonales (`tipo`/`destreza`/`enfoque`), definición de cada valor en ambos ejes, reglas de asignación, relación `enfoque` vs `seccion`, **regla anti-sobreasignación de `expresion_escrita`** (las mecánicas de manipulación de elementos dados — completar, relacionar, ordenar, marcar — NO añaden por sí mismas `expresion_escrita`; solo se añade cuando el alumno produce texto lingüístico propio), 9 ejemplos canónicos con los 3 ejes.
+- **Decisiones semánticas registradas:**
+  - `comprension_auditiva` es el nombre canónico (no alias). `comprension_oral` y `comprension_auditiva` se consideran sinónimos en este proyecto; en la migración per-unidad, `comprension_oral` legacy se normaliza a `comprension_auditiva`.
+  - `produccion_*` → `expresion_*` (terminología MCER moderna).
+  - `gramatica`/`vocabulario` salen del eje `destreza` (no son habilidades) y entran como valores de `enfoque` (dominios).
+  - `interaccion_escrita` queda fuera del enum (no aparece en NC1 A1.1; ampliación futura como decisión cerrada en PROCESO-MAESTRO si surge un caso).
+- **Referencia colgada `§2b` corregida:** el schema apuntaba a `reglas-operativas.md §2b` que no existía; ahora apunta a §2.3 (donde realmente vive el contenido).
+
+**Impacto sobre los oráculos:** U0/U1/U3 quedan en formato legacy (string con `+`) y sin `enfoque`. El validador los rechaza sistemáticamente — estado intermedio aceptado y documentado, no estado de cierre.
+
+**Gates pendientes (en orden):**
+1. Reclasificación per-unidad de U0/U1/U3 (otro chat, una unidad por sesión). Asignar `destreza` (lista canónica) y `enfoque` (string) a las 97 actividades. Validador 0/0 al cierre de cada unidad.
+2. A4.5 — prueba empírica de reextracción (solo después de gate 1).
+3. A4.5.5 — cross-check schema↔validador (antes del merge).
+
+**Próximo:** revisión componente-a-componente del refactor (en curso) + reclasificación per-unidad.
+
+---
+
+## [v10.59 — 2026-05-07] — Taxonomía de `tipo` rediseñada (17 → 19) por acción imperativa del enunciado
+
+Hallazgo durante el inicio de A4.5 (reextracción empírica de U1 con oráculo): la taxonomía de 17 tipos mezclaba `tipo` (formato/mecánica que pide el enunciado) con `destreza` (habilidad ejercitada). Tipos como `comprension_lectora` o `comprension_auditiva` describían destrezas, no acciones; provocaban ambigüedad real (una actividad "Lee y escucha el diálogo. Después, marca verdadero o falso" podía clasificarse como `comprension_lectora`, `comprension_auditiva` o `verdadero_falso`).
+
+**Decisión:** `tipo` y `destreza` son dimensiones independientes. `tipo` = la acción específica que pide el enunciado (cómo se manipulan los elementos). `destreza` = qué habilidad ejercita el alumno (campo separado, próximo trabajo).
+
+**Cambios:**
+
+- **Schema (§5):** taxonomía cerrada reescrita a 19 valores, agrupados en 7 familias por acción: input puro (`lee_y_escucha`, `ver_video`); orales reproductivas/responsivas (`escucha_y_repite`, `escucha_y_responde`); manipulación de elementos dados (`completa_huecos`, `relaciona`, `ordena`, `clasifica`, `seleccion_multiple`, `verdadero_falso`); responder preguntas (`responder_preguntas_cerradas`, `responder_preguntas_abiertas`); producción oral (`interaccion_oral`, `expresion_oral_libre`); producción escrita (`produccion_escrita_guiada`, `expresion_escrita_libre`); otros (`busqueda_informacion`, `tarea_final`, `juego`).
+- **Eliminados:** `comprension_lectora`, `comprension_auditiva` (eran destrezas, no acciones).
+- **Validador:** `TIPOS_VALIDOS` y `TIPOS_QUE_REQUIEREN_ITEMS` actualizados. Añadidas `ejemplos_modelo`, `programas_tv`, `horarios_digitales` a `CONTENIDOS_VISIBLES` (claves ya documentadas en schema pero ausentes del validador — divergencia schema↔validador detectada y cerrada como adelanto parcial de A4.5.5).
+- **`reglas-operativas.md` §2:** reescrita íntegra. §2.1 regla operativa "tipo = la acción específica del enunciado". §2.2 tabla canónica de los 19 tipos con disparadores de enunciado y ejemplo de oráculo. §2.3 nota sobre la separación `tipo` vs `destreza` (campo separado, no tocado en este commit).
+- **Reasignaciones aplicadas:** 16 actividades reclasificadas en U1 (9) y U3 (7); U0 sin cambios. Mapeo completo registrado en la bitácora del REVIEW.
+- **Validación:** `python3 scripts/validar_inventario.py 0/1/3` → 0 errores en los tres (U0 con 1 aviso intencional `_nota_unidad_atipica`).
+
+**Efecto sobre A4.5:** las divergencias detectadas en la primera pasada empírica de U1 (7 tipos no coincidentes con el oráculo + análogas en U3) eran reales pero la causa raíz no era una mala clasificación — era ambigüedad de la propia taxonomía. Resuelto el origen, las clasificaciones convergen.
+
+**Próximo:** trabajar la dimensión `destreza` como campo separado (segundo eje pedagógico, no afecta a `tipo`).
+
+---
+
+## [v10.58 — 2026-05-07] — Sincronización de fila-resumen A4.4 con la bitácora
+
+Hallazgo Bajo del revisor sobre `590fd96` (v10.57): la fila-resumen de A4.4 en la tabla de sub-pasos de `REVIEW.md` se quedó desactualizada. Decía *"✅ 2026-05-07 02:30 (57 líneas, 7 secciones)"* mientras que CHANGELOG v10.57 y la propia bitácora REVIEW ya reflejaban el cierre limpio a las 03:00 con **59 líneas** (tras añadir la convención root-relative). Doble verdad menor entre tabla y bitácora.
+
+**Resolución:** fila reescrita a *"✅ cerrado limpio 2026-05-07 03:00 en v10.57 (59 líneas tras añadir convención root-relative explícita; 7 secciones; norte 40-60 cumplido; cero duplicaciones literales con prompt.md)"*. Tabla y bitácora ahora dicen lo mismo.
+
+**Adicional registrado:** el revisor confirma que ejecutó el validador desde la raíz del repo con la convención root-relative ahora explícita y devuelve JSON válido y 0 avisos para U1. Es una **primera verificación funcional informal externa al ejecutor**, no sustituye A4.5 (la prueba funcional oficial sigue pendiente como reextracción de los 3 casos seleccionados, ver REFACTOR-PROPUESTA §5 paso 5).
+
+**Sin cambios de código.** Solo coherencia documental.
+
+**Próximo:** A4.5.
+
+---
+
+## [v10.57 — 2026-05-07] — Cierre limpio de A4.4: convención root-relative explícita antes de A4.5
+
+Hallazgo Medio del revisor sobre `278144a` (v10.56, A4.4): los comandos en `CLAUDE.md` de fase no son ejecutables tal como están escritos en el contexto que el propio archivo declara.
+
+**El defecto:** `CLAUDE.md` de fase se auto-carga al trabajar dentro de `fases/1-extraccion-inventario/`. Pero los comandos `python3 scripts/validar_inventario.py X` y `python3 diagrama.py` son rutas root-relative — ejecutados literalmente desde la carpeta de fase, fallan con "No such file or directory" porque `scripts/` y `diagrama.py` solo existen desde la raíz del repo.
+
+La convención implícita del proyecto sí es root-relative (el `CLAUDE.md` raíz también prescribe `python3 scripts/validar_inventario.py 3` así). Pero el CLAUDE de fase, al auto-cargarse en otro `cwd`, sugiere otro contexto. Ambigüedad documental real, no funcional.
+
+**Por qué se resuelve antes de A4.5:** A4.5 es la primera prueba funcional oficial del refactor. El procedimiento incluye ejecutar el validador. Si el documento que se carga a la sesión (CLAUDE de fase) describe comandos que no funcionan literalmente, el sub-paso arranca con confusión innecesaria.
+
+**Resolución:** nota explícita "Convención de comandos: root-relative — se ejecutan desde la raíz del repo, no desde la carpeta de fase" añadida al inicio de:
+
+- `CLAUDE.md` de fase, sección "Cómo validar".
+- `prompt.md`, sección "Cierre y validación".
+
+La nota del CLAUDE es más extensa (incluye el matiz de que aunque se auto-cargue en la fase, los comandos asumen `cwd = raíz`). La nota del prompt es más breve porque el prompt no se auto-carga.
+
+**Métricas:**
+
+| Archivo | Pre-v10.57 | Post-v10.57 |
+|---|---|---|
+| `CLAUDE.md` fase | 57 | 59 |
+| `prompt.md` | 107 | 109 |
+
+Ambos siguen dentro de su norte de tamaño respectivo (40-60 y 80-120).
+
+**Sin cambios en otros archivos.** Sin cambios de código.
+
+**Próximo:** A4.5 — primera prueba funcional oficial del refactor.
+
+---
+
+## [v10.56 — 2026-05-07] — A4.4: reescritura de `CLAUDE.md` de fase en modo contrato corto
+
+Séptimo sub-paso del refactor. `CLAUDE.md` de fase reescrito según `REFACTOR-PROPUESTA.md` §3.1: contrato corto, no manual.
+
+**Estructura final** (57 líneas, 7 secciones — dentro del norte 40-60):
+
+1. Qué produce esta fase (1 párrafo).
+2. Input y output (2 bullets).
+3. Cómo se invoca (1 línea).
+4. Cómo validar (validador automático + revisión visual del autor).
+5. **Reglas críticas (las que un humano nunca debe olvidar al trabajar en esta fase)** — 5 reglas en 1 línea cada una:
+   - Texto verbatim del libro (la regla de oro como recordatorio breve).
+   - No inventar contenido editorial.
+   - Single source of truth por capa.
+   - Validar antes de cerrar.
+   - Schema documental ↔ validador no divergen.
+6. **Tabla "Para qué consultar qué archivo"** — 7 preguntas mapeadas a su archivo: prompt, schema, reglas-operativas, convenciones-y-casos. Mapa de navegación operativo.
+7. Documentos relacionados (lista breve).
+
+**Eliminados respecto al pre-refactor (cc1f18b: 111 líneas, 9 secciones):**
+
+- **Sección "Reglas operativas críticas (resumen — detalle en `prompt.md`)"** de 22 líneas que reescribía contenido ahora migrado a `reglas-operativas.md` y `schema-inventario.md`. Violaba single source of truth: las mismas reglas vivían en CLAUDE como "resumen" y en los archivos de soporte como "fuente". Sustituida por 5 reglas críticas en 1 línea cada una (las que el humano debe recordar, no las que el modelo consulta para ejecutar).
+- **"Coste estimado"** (no operativo, ya eliminado del prompt en A4.3).
+- **"Mejora continua"** (vive ahora en `convenciones-y-casos.md` §5).
+- **"Contexto futuro (cuando esta fase sea un agente CrewAI)"** — especulación sobre el futuro, no contrato operativo. CrewAI sigue bloqueado en este proyecto; reabrir solo cuando aplique.
+- Sub-bloque "Lo que hace Claude Code" (4 pasos numerados duplicaban los pasos del prompt).
+- Sub-sección "Errores detectados en extracción real" (4 bullets que duplican casos resueltos en `convenciones-y-casos.md` §4 + reglas decisionales en `reglas-operativas.md` §1, §3, §4, §6).
+
+**Verificación:**
+
+```
+grep "Texto verbatim del libro|10 claves obligatorias|Taxonomía cerrada de tipos|Mis resultados en esta unidad son|produccion_escrita_guiada"
+→ ningún match duplicado entre CLAUDE.md y prompt.md.
+```
+
+La única regla que aparece en CLAUDE como recordatorio ("Texto verbatim del libro") está formulada distinto del prompt ("El JSON debe contener el contenido EXACTAMENTE COMO APARECE EN EL LIBRO"). El detalle operativo de la regla vive en `prompt.md` Regla de oro; el CLAUDE solo la nombra. Es la jerarquía correcta según el plan: CLAUDE marca **lo que un humano debe recordar**, prompt expande para **ejecutar**.
+
+**Métricas:**
+
+| Versión | Líneas | Secciones |
+|---|---|---|
+| Pre-refactor (`cc1f18b`) | 111 | 9 |
+| Post-A4.4 (este commit) | **57** | **7** |
+
+Reducción 49% sobre el CLAUDE de fase pre-refactor.
+
+**Métricas globales del refactor tras A4.4:**
+
+| Archivo | Pre-refactor | Post-A4.4 |
+|---|---|---|
+| `prompt.md` | 547 | 107 |
+| `CLAUDE.md` (fase) | 111 | 57 |
+| `schema-inventario.md` | — | 308 |
+| `reglas-operativas.md` | — | 208 |
+| `convenciones-y-casos.md` | — | 165 |
+| Total operativo | 658 | 845 |
+
+El total crece (+187 líneas) porque ahora hay 5 archivos en lugar de 2, **pero cada uno tiene una responsabilidad única y no se duplican entre sí**. El prompt y el CLAUDE — los archivos que se leen en cada extracción — han bajado de 658 a 164 líneas (–75%). Los 681 líneas adicionales viven en archivos de soporte que solo se consultan cuando hace falta.
+
+**Próximo:** A4.5 — **primera prueba funcional oficial.** Reextracción empírica de 3 casos seleccionados (página rica + U0 completa + U1-p21) usando solo los nuevos artefactos. Diff vs JSON existente. Validador con 0 errores y 0 avisos. Es el primer test de que los nuevos archivos sirven realmente para extraer.
+
+---
+
+## [v10.55 — 2026-05-07] — A4.3: reescritura desde cero de `prompt.md` core
+
+Sexto sub-paso del refactor. `prompt.md` reescrito íntegramente según `REFACTOR-PROPUESTA.md` §5 paso 3, no solo consolidación.
+
+**Estructura final del prompt core** (107 líneas, 9 secciones):
+
+1. Header con quién/output/invocación.
+2. Objetivo (1 párrafo describiendo qué produce la fase).
+3. Input (PDF en `unidades/UX/fuente/`).
+4. Output (1 archivo JSON).
+5. Definición de éxito — **sección nueva**, no existía en pre-refactor. 4 condiciones explícitas (validador 0/0, contenido literal del libro, revisión visual del autor, casos no contemplados consultados al autor).
+6. Regla de oro (no negociable) — sin cambios respecto al pre-refactor.
+7. Artefactos de soporte consultados durante la extracción — cabecera global con 1 bullet por archivo hermano (`schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`, y el validador como contrato paralelo). Reemplaza los 4-5 placeholders intermedios redundantes que tenía la versión anterior.
+8. Pasos de la extracción — 11 pasos numerados (10 del pre-refactor + 1 nuevo paso 8 que captura el bloque `autoevaluacion` explícitamente). Cada paso con referencias cortas a los archivos de soporte.
+9. Cierre y validación — absorbe la antigua "Validación post-extracción" + "Salida" en una sola sección con sub-encabezados (comprobaciones manuales, validador automático, salida).
+
+**Cambios respecto a la versión post-A4.2c (108 líneas, 10 placeholders dispersos):**
+
+- **Eliminados los 5 placeholders intermedios redundantes** que decían "Migrado a X" en zonas específicas: ya no había contenido editorial allí, solo etiquetas que la cabecera global ya cubría. Eran ruido para el lector y para el modelo.
+- **Definición de éxito añadida** como sección nueva, alineada con el lenguaje del plan ("Objetivo", "Definición de éxito" en `REFACTOR-PROPUESTA.md` §3.2 y §5 paso 3).
+- **Pasos enriquecidos** con un nuevo paso 8 explícito sobre el bloque `autoevaluacion` (antes implícito).
+- **"Cierre y validación" absorbe Salida** en una sola sección, como pide el plan.
+- **Norte de tamaño cumplido:** 107 líneas (rango 80-120 según REFACTOR-PROPUESTA §3.2).
+
+**Verificación:**
+
+```
+grep -E "Migrado a |Migradas a |migrar a |migrarán a |migrará a |en construcción|A4.2[abc]" prompt.md
+→ 0 (ningún marcador transitorio residual)
+
+grep -E "ver sección \"|sección dedicada|de este prompt antes" prompt.md
+→ 0 (ninguna referencia interna huérfana)
+```
+
+**Métricas finales del prompt core:**
+
+| Versión | Líneas | Secciones | Estado |
+|---|---|---|---|
+| Pre-refactor (`cc1f18b`) | 547 | 34 | monolito mezclando 7 funciones |
+| Post-A4.2c | 108 | 10 | contenido editorial migrado pero con placeholders intermedios |
+| **Post-A4.3 (este commit)** | **107** | **9** | **prompt core mínimo, sin placeholders, alineado con el plan** |
+
+**Reducción total desde inicio del refactor:** 547 → 107 líneas (–80%). Las 9 secciones del prompt core son ahora estrictamente operativas: cómo invocar, qué produce, qué condiciones de éxito, regla de oro inviolable, dónde están los artefactos de soporte, qué pasos seguir, cómo cerrar y validar.
+
+**Próximo:** A4.4 — reescribir `CLAUDE.md` de fase en modo contrato corto. Hoy tiene 111 líneas con duplicación de reglas que ya viven en `prompt.md` y en los archivos de soporte. Objetivo: 40-60 líneas según REFACTOR-PROPUESTA.md §3.1.
+
+---
+
+## [v10.54 — 2026-05-07] — A4.2c: migración a `convenciones-y-casos.md` + cierre completo de A4.2
+
+Quinto sub-paso del refactor (parte c de A4.2). Movido a `convenciones-y-casos.md` todo el contenido editorial residual del prompt: convenciones de transcripción, ejemplos canónicos por tipo de actividad, ejemplo JSON de unidad atípica, casebook de extracciones reales, política de mejora continua.
+
+**Estructura final de `convenciones-y-casos.md`** (5 secciones, 165 líneas):
+
+1. Convenciones de transcripción del libro al JSON (sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", textos de lectura, diálogos con marcadores `[1]`/`[2]`, sopas de letras y juegos).
+2. Ejemplos canónicos de `items_libro` por tipo de actividad (cloze, selección múltiple, cuestionario con opciones) + ejemplos INCORRECTOS.
+3. Ejemplo canónico de unidad atípica (U0 con `_nota_unidad_atipica` literal).
+4. Casebook — casos resueltos en extracciones reales ("Para aprender" confundido con cuadro + 6 casos resueltos en U3).
+5. Política de mejora continua (cómo se añade un caso nuevo y a qué archivo según su tipo: schema, reglas-operativas o convenciones-y-casos).
+
+**Cambios en `prompt.md`:**
+- 4 secciones movidas reemplazadas por placeholders cortos.
+- Sección "Coste estimado" eliminada (no aporta valor operativo).
+- Cabecera "Schema, reglas y convenciones — archivos externos" actualizada: ya no dice "convenciones-y-casos.md — en construcción".
+
+**Lección de v10.53 aplicada proactivamente** (verificar la zona reemplazada como enlace limpio, no solo anclas movidas): detectadas y corregidas **3 referencias huérfanas** en los pasos de la extracción que apuntaban a secciones eliminadas:
+
+- Paso 3: *"Aplicar la sección 'Reglas para unidades atípicas' de este prompt"* → `reglas-operativas.md` §7.
+- Paso 4: *"ver sección 'Reglas para cuadros'"* → `reglas-operativas.md` §1 / §3 / §4.
+- Paso 5: *"(ver sección dedicada)"* (sílaba tónica + primer ítem resuelto) → `convenciones-y-casos.md` §1.1 / §1.2.
+
+Esto demuestra que la lección de "verificar zona limpia, no solo grep de anclas" está internalizada — se aplicó **antes** de que el revisor lo señalara.
+
+**Verificación de anclas semánticas** (8 frases canónicas):
+
+| Ancla | convenciones | prompt |
+|---|---|---|
+| `Pablo y Jorge (estudiar)` | 1 | 0 |
+| `PABLO: Son las once` | 1 | 0 |
+| `PRIMO` | 1 | 0 |
+| `Punto de partida... introductoria pre-A1` | 1 | 0 |
+| `se subraya la sílaba tónica` | 1 | 0 |
+| `primer ítem resuelto` | 1 | 4 (referencias legítimas en pasos + cabeceras) |
+| `Pronunciación con z/c` | 1 | 0 |
+| `Lecturas Javier/Lucía` | 1 | 0 |
+
+La única ancla con cuenta > 0 en prompt es "primer ítem resuelto", y todas sus apariciones son **referencias legítimas** (paso 5 + cabecera + placeholder) — no contenido editorial duplicado.
+
+**Métricas finales A4.2c:**
+- `prompt.md`: 260 → 108 líneas (–58% solo en este sub-paso; –80% desde el inicio del refactor en v10.42).
+- `schema-inventario.md`: 308 (sin cambios desde A4.2a).
+- `reglas-operativas.md`: 208 (sin cambios desde A4.2b).
+- `convenciones-y-casos.md`: 10 → 165 líneas (recibió todo el contenido editorial residual).
+
+**Estado del paso A4.2:** ✅ **cerrado al 100%** — (a) ✅ schema · (b) ✅ reglas-operativas · (c) ✅ convenciones-y-casos.
+
+**Sobre A4.3:** el prompt actual de 108 líneas ya está dentro del norte de tamaño 80-120 que define la propuesta. A4.3 ("reescribir prompt.md core desde cero") podrá enfocarse más en consolidar la estructura (fusionar placeholders contiguos, ajustar la cabecera del archivo, añadir la sección "Cierre y validación" absorbida) que en reducir tamaño.
+
+**Próximo:** A4.3.
+
+---
+
+## [v10.53 — 2026-05-07] — Cierre real de A4.2b: reescritura de la cabecera transicional residual
+
+El revisor sobre `ddd9879` (v10.52, "A4.2b cerrado"): el cierre **no era válido**. Tres hallazgos.
+
+**1 (Bloqueante) — Cabecera transicional residual reabría la contradicción.**
+
+`prompt.md` líneas 44-52 (cabecera "Esquema y schema del JSON") seguían describiendo literalmente el estado **pre-A4.2b**:
+
+> *"Las reglas de población semántica (...) se migrarán a `reglas-operativas.md` en A4.2b. Hasta entonces, el estado real de cada bloque decisional es: (...) Distinción crítica vive provisionalmente en este `prompt.md`... Resto de criterios... se documentarán por primera vez al construir `reglas-operativas.md` en A4.2b... Reglas de población... el resto vive provisionalmente en este `prompt.md`..."*
+
+Mientras el resto del prompt y `reglas-operativas.md` ya describían el estado **post-A4.2b** (todo migrado y vivo en reglas-operativas). Tres afirmaciones falsas convivían con la realidad migrada en el mismo archivo. Eso reabre exactamente la contradicción de source of truth que v10.50/v10.51 cerraron.
+
+Causa raíz: la cabecera había sido escrita en v10.51 como puente provisional pre-A4.2b. v10.52 (A4.2b) corrigió las secciones específicas pero **olvidó reescribir esta cabecera global**. Quedó "viva" describiendo un estado anterior.
+
+**2 (Medio) — Verificación de anclas sobredeclarada.**
+
+v10.52 verificó que 7 frases canónicas movidas estaban en `reglas-operativas.md` y ausentes de `prompt.md`. Pero el criterio real del paso 2 del plan (`REFACTOR-PROPUESTA.md` §5 paso 2) es más fuerte: **la zona reemplazada del prompt debe quedar reducida a un enlace limpio**, no solo libre de las frases concretas movidas. Esa cabecera transicional incumplía el criterio aunque ninguna frase individual exacta apareciera duplicada.
+
+**3 (Bajo) — Cabecera REVIEW desincronizada.**
+
+REVIEW decía "Última actualización: 2026-05-06 22:30" pero el commit `ddd9879` fue a las 23:58 (1.5 h de retraso documental).
+
+---
+
+**Resolución (todo en este commit):**
+
+- **Cabecera transicional reescrita** como puente corto y verdadero (3 bullets, alineada con el estado actual): schema → `schema-inventario.md`; reglas decisionales → `reglas-operativas.md`; convenciones → `convenciones-y-casos.md` (en construcción, A4.2c).
+- **Verificación reforzada con el criterio del plan:** `grep` de afirmaciones pre-A4.2b en `prompt.md` (`"se migrarán a reglas-operativas"`, `"Hasta entonces"`, `"vive provisionalmente en este .prompt"`, `"el único bloque decisional explícito"`, `"oráculo de facto"`) → todos 0. Las 3 referencias residuales a "A4.2c" son legítimas (esperan ese sub-paso, cuyas migraciones todavía no se han hecho).
+- **Cabecera REVIEW** sincronizada al timestamp de este commit.
+- **A4.2b vuelve a ✅ pero como "cerrado limpio en v10.53"** — el CHANGELOG y la bitácora REVIEW reconocen que v10.52 había declarado el cierre prematuramente.
+
+**Lección aplicada (lente Anthropic-first):** la regla "cada placeholder debe ser enlace limpio" requiere verificar **toda la zona reemplazada**, no solo las frases nominalmente movidas. Cuando una cabecera describe un proceso transicional, hay que reescribirla en cuanto la transición se completa — si no, el archivo entero queda contradiciéndose. La causa raíz es la misma de A4.2a: tratar la verificación como "buscar lo que sí debería estar fuera" en vez de "comprobar que la zona está limpia y solo es enlace".
+
+**Sin cambios de código.**
+
+---
+
+## [v10.52 — 2026-05-06] — A4.2b: migración del contenido decisional a `reglas-operativas.md`
+
+Cuarto sub-paso del refactor (parte b de A4.2). Movido a `reglas-operativas.md` todo el contenido decisional del prompt: precedencias entre tipos de elemento, criterios de asignación, reglas de población de cada campo, unidades atípicas.
+
+**Estructura final de `reglas-operativas.md`** (8 secciones, 208 líneas):
+
+1. Precedencia entre actividad / cuadro / nota / autoevaluación.
+2. Cómo asignar `tipo` (Distinción crítica `completa_huecos` vs `produccion_escrita_guiada` + nota sobre criterios implícitos del resto + política de la enumeración).
+3. Cómo asignar `tipo_cuadro` (5 valores con criterios + nota de ortogonalidad seccion/tipo_cuadro).
+4. Qué NO es un cuadro: "Para aprender" → actividad; "Observa" → nota.
+5. Reglas de población de cada campo: `vocabulario_consolidado` (criterios para los 3 bloques), `secciones` top-level (construcción del índice), `seccion` por página (tabla con oráculo), `respuestas` (contenido y formato), `audio/imagen/video` (cuándo `presente=true`), `campo_semantico` (cuándo aplica), `items_libro` (literalidad obligatoria).
+6. Cuándo se incluye u omite `autoevaluacion`.
+7. Reglas para unidades atípicas (procedimiento de 4 pasos).
+8. Estado del source of truth de las reglas decisionales tras A4.2b.
+
+**Hallazgo importante durante la ejecución:** A4.2a fue **más extensiva en pérdidas** de lo identificado en v10.51. Además de la "Distinción crítica" (la única que v10.51 detectó), el placeholder grande de A4.2a había absorbido también:
+
+- Reglas decisionales de `vocabulario_consolidado` (qué cuenta como `principal` / `recurrente` / `comprension`).
+- Reglas decisionales de `respuestas` (formatos para selección múltiple, V/F, cloze).
+- Reglas decisionales de `campo_semantico` (cuándo aplica + nota "liberal por ahora").
+- Reglas decisionales de `secciones` top-level (construcción del índice, secciones inexistentes vacías, `actividades_ids` en orden).
+
+Verificado con `grep` cruzado: estas frases existían en `cc1f18b` y no estaban en el prompt actual. **A4.2b las recupera todas** tomando como fuente `cc1f18b` (estado pre-refactor) y las migra directamente a `reglas-operativas.md`.
+
+**Cambios en `prompt.md`:** sección "Reglas decisionales provisionales" (Distinción crítica) reemplazada por línea-puente. Sección "Reglas para `datos.items_libro`" pierde solo la regla de literalidad (línea-puente a §5.7) — los ejemplos correctos/incorrectos siguen aquí provisionalmente, esperando A4.2c. Sección "Reglas para unidades atípicas" pierde los 4 pasos (línea-puente a §7) — el ejemplo JSON sigue, esperando A4.2c. Sección "Reglas para cuadros" entera reemplazada por línea-puente (todo era decisional). Total: prompt pasa de 290 → 260 líneas.
+
+**Verificación de anclas semánticas** (7 frases canónicas, todas pasan):
+
+| Ancla | reglas-operativas | prompt |
+|---|---|---|
+| Distinción crítica `completa_huecos` | 1 | 0 |
+| escribe texto nuevo | 1 | 0 |
+| vocabulario que aparece en varias secciones | 1 | 0 |
+| Selección múltiple, indicar la opción correcta | 1 | 0 |
+| campo semántico identificable | 1 | 0 |
+| "Para aprender" Cajas con consejos | 1 | 0 |
+| "Observa" Notas que llaman la atención | 1 | 0 |
+
+**Métricas finales A4.2b:**
+- `prompt.md`: 290 → 260 líneas (−30, total desde inicio del refactor: −287).
+- `schema-inventario.md`: 308 (sin cambios desde A4.2a).
+- `reglas-operativas.md`: 81 → 208 líneas (recibió todo el contenido decisional + recuperación).
+- `convenciones-y-casos.md`: 10 (esperando A4.2c).
+
+**Lección aplicada del riesgo operativo señalado por el revisor:** A4.2b incluye **canonización por primera vez** de criterios que estaban implícitos antes del refactor. Pero **no he inventado criterios nuevos**: solo he migrado lo que ya estaba explícito (en prompt actual o en `cc1f18b`) o he marcado como "no canonizado todavía, oráculo de facto en U0/U1/U3" lo que sigue implícito (resto de criterios para los 17 tipos más allá de `completa_huecos` vs `produccion_escrita_guiada`). La canonización progresiva ocurre por el flujo del paso A4.5 + casos editoriales nuevos, no aquí.
+
+**Estado del paso A4.2:** (a) ✅ schema · (b) ✅ reglas-operativas · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2c — migrar a `convenciones-y-casos.md` los ejemplos correctos/incorrectos de `items_libro`, las convenciones de transcripción (textos de lectura, diálogos, sopas de letras), sílaba tónica subrayada hasta U3, patrón "primer ítem resuelto como ejemplo", casos resueltos en U3, política de mejora continua, y el ejemplo JSON canónico de unidades atípicas.
+
+---
+
+## [v10.51 — 2026-05-06] — Cleanup pre-A4.2b parte 2: restaurar bloque decisional perdido en A4.2a
+
+El revisor sobre `68799b6` (v10.50): el hallazgo del source of truth de la taxonomía no quedó cerrado, solo reformulado. v10.50 alineó `prompt.md` y `reglas-operativas.md` para decir lo mismo, pero **lo que decían era falso**: ambos afirmaban "el contenido decisional canónico vive provisionalmente en `prompt.md`" cuando en el archivo real ese contenido **ya no estaba**. Verdad única alineada, pero sobre una premisa que el repo no sostenía.
+
+**Causa raíz:** el placeholder grande que metí en A4.2a (commit `668572f`, v10.47) absorbió por error de scope el bloque "Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`" del prompt pre-refactor (`cc1f18b:227-230`). Ese bloque era el **único contenido decisional explícito** sobre la taxonomía que tenía el prompt. Al sustituirlo por placeholder, dejé el archivo afirmando un source of truth que ya no existía físicamente.
+
+**Resolución (opción A del revisor):** restaurar la verdad para que la declaración sea verdadera.
+
+- **Bloque "Distinción crítica" recuperado** del commit pre-refactor `cc1f18b` y reinsertado en `prompt.md` como nueva sección **"Reglas decisionales provisionales (a migrar en A4.2b)"**. Texto idéntico al original, sin reescritura.
+- **Placeholder grande reformulado con honestidad sobre el estado real:**
+  - Distinción `completa_huecos` vs `produccion_escrita_guiada`: source of truth = `prompt.md` (sección restaurada).
+  - Resto de criterios para los 17 tipos: **no canonizados todavía en ningún archivo**, implícitos del dominio editorial; oráculo de facto = inventarios trackeados U0/U1/U3. Se canonizarán al construir `reglas-operativas.md` en A4.2b.
+  - 3 fragmentos absorbidos en v10.49 (autoevaluación opcional, mapeo de secciones, taxonomía revisable) viven en `reglas-operativas.md`.
+- **`reglas-operativas.md` alineado simétricamente** con la misma descripción del estado.
+
+**Verificación:**
+- `grep "Distinción crítica.*completa_huecos.*produccion_escrita_guiada" prompt.md` → línea 60 (presente).
+- `grep "escribe texto nuevo" prompt.md` → línea 62.
+- `grep "Regla práctica.*alumno tiene que escribir" prompt.md` → línea 64.
+
+El bloque restaurado coincide caracter por caracter con `cc1f18b`.
+
+**Por qué se hace ahora:** A4.2b va a migrar exactamente este contenido. Si arranca con la afirmación falsa de "ya está aquí" cuando no está, el sub-paso pierde su anclaje. Restaurar la verdad antes de migrar es prerequisito para que la migración signifique algo.
+
+**Lección registrada:** los placeholders de A4.2a fueron demasiado amplios. En A4.2b habrá que ser más quirúrgico al sustituir bloques por enlaces — verificar siempre que cada parte del bloque viejo tiene destino antes de borrarla del origen.
+
+**Sin cambios de código.** Solo restauración de contenido editorial perdido + alineación de redacciones.
+
+**Estado A4.2 tras este commit:** (a) ✅ schema migrado + frontera limpia · (b) 📋 reglas-operativas con adelanto parcial + bloque "Distinción crítica" pendiente de migrar desde prompt · (c) 📋 convenciones-y-casos.
+
+---
+
+## [v10.50 — 2026-05-06] — Cleanup pre-A4.2b: dos correcciones del revisor antes de arrancar
+
+Dos hallazgos del revisor sobre el commit anterior `40e123c` (v10.49). Ambos resueltos antes de tocar A4.2b para que el sub-paso arranque sin inconsistencias.
+
+**1 (Medio) — Doble verdad sobre source of truth de la taxonomía.**
+
+Tras v10.49, el placeholder de `prompt.md` decía:
+> *"Las reglas de población semántica (...distinción completa_huecos vs produccion_escrita_guiada) viven en reglas-operativas.md (se migran en A4.2b)."*
+
+Mientras `reglas-operativas.md` decía:
+> *"El criterio canónico para cada uno de los 17 tipos vive aún en prompt.md y se moverá aquí en el siguiente sub-paso."*
+
+Los dos archivos hablaban del mismo contenido en sentidos opuestos. La realidad: el contenido decisional canónico **sigue en `prompt.md`** hasta que A4.2b lo migre.
+
+**Resolución:** ambos archivos alineados a la verdad operativa. `prompt.md` ahora dice *"siguen viviendo provisionalmente en este `prompt.md` y se migrarán a `reglas-operativas.md` en A4.2b. Hasta que A4.2b cierre, el source of truth de esas reglas decisionales es este archivo"*. `reglas-operativas.md` confirma simétricamente *"vive provisionalmente en `prompt.md`... source of truth = `prompt.md`"*.
+
+**2 (Bajo) — Tabla de mapeo de secciones no alineada con la práctica.**
+
+En el adelanto parcial de v10.49, escribí en `reglas-operativas.md` la fila *"Reflexión / Autoevaluación / cierre → reflexion"*. Verificado contra los inventarios reales: las páginas de cierre con bloque `autoevaluacion` (U1-p21, U3-p43) usan `seccion: evaluacion`, no `reflexion`. Mi fila era una regla inventada sin avalar.
+
+Verificación programática:
+```
+U1 p21 (con bloque autoevaluacion top-level): seccion=evaluacion
+U3 p43 (con bloque autoevaluacion top-level): seccion=evaluacion
+```
+
+**Resolución:** tabla reescrita con una columna nueva "Avalado en" que cita los inventarios oráculo. La fila inventada se sustituye por *"Página de cierre de unidad con bloque `autoevaluacion` (U1-p21, U3-p43) → `evaluacion`"*. Sobre `reflexion` (que está en el enum del schema pero ningún inventario actual lo usa), se añade nota explícita: decisión diferida hasta primer caso real o hasta que A4.2b traiga la regla canónica desde el `prompt.md` actual. Mientras tanto, "usar `evaluacion` por consistencia con el oráculo".
+
+**Por qué se hace antes de A4.2b:** ambos defectos contaminan el sub-paso siguiente. La doble verdad sobre la taxonomía es exactamente el contenido que A4.2b va a migrar — arrancar sin alinear primero significaría arrastrar la inconsistencia. La regla inventada de `reflexion` se vería confirmada al ejecutar el smoke test post-A4.4 si no se corrige ahora.
+
+**Sin cambios de código.** Solo coherencia documental + alineación con el oráculo.
+
+---
+
+## [v10.49 — 2026-05-06] — Cleanup de A4.2a: 3 fugas decisionales retiradas de schema + métrica corregida
+
+Dos hallazgos del revisor sobre el commit `668572f` (v10.47, cierre de A4.2a). Ambos se aceptan:
+
+**1 (Medio) — Frontera schema/reglas no quedó limpia.** El revisor identificó 3 fragmentos decisionales que se habían colado en `schema-inventario.md` violando el principio "split por capa, no por campo":
+
+- **Fuga 1, §6 (autoevaluación):** "se omite en unidades atípicas que no tienen bloque (ej. U0)". El "cuándo se omite" es decisional según el mapeo de la sección 4 de `REFACTOR-PROPUESTA.md`. La forma "el bloque es opcional a nivel top-level" sí pertenece a schema.
+- **Fuga 2, §8 (enumeración seccion):** "Las páginas que continúan una sección usan la misma clave normalizada". Es regla de cómo determinar la sección, no parte de la enumeración cerrada.
+- **Fuga 3, §5 (taxonomía):** la nota "Provisional y revisable... Si aparece un caso que no encaja, se marca y se consulta al autor". Workflow editorial, no contrato de datos puro.
+
+**Resolución:** los 3 fragmentos se retiran de `schema-inventario.md` y se absorben en `reglas-operativas.md` como adelanto parcial de A4.2b. Donde antes había contenido decisional en schema queda ahora solo:
+- La forma estructural correspondiente.
+- Una **línea-puente** explícita del estilo "Cuándo / Cómo … → `reglas-operativas.md`".
+
+Verificación: grep del contenido decisional concreto → `reglas=1, schema=0` en cada uno de los 3 casos. La línea-puente sí aparece en schema, pero es referencia al destino, no contenido decisional.
+
+**2 (Bajo) — Métrica desalineada.** El CHANGELOG v10.47 y la bitácora REVIEW dijeron "300 líneas" para `schema-inventario.md` cuando el dato real era **302**. Repetición del patrón "cifras duras por aproximación" que ya se había marcado antes (v10.37). Métrica corregida en esta entrada con el valor exacto del momento de cierre de v10.49: `schema-inventario.md` 308 líneas (creció con las líneas-puente), `prompt.md` 290 (no cambia), `reglas-operativas.md` 75 (antes 8).
+
+**Cómo se documentó honestamente A4.2a:** el "cerrado limpio" de A4.2a queda matizado retroactivamente. La fila de la tabla de sub-pasos en REVIEW.md ahora dice "(a) ✅ schema migrado + 3 fugas decisionales absorbidas en v10.49"; refleja que A4.2a fue sustancialmente correcto pero requirió este cleanup para sostener la frontera. La lección recurrente: el revisor pidió en v10.37 verificar todas las filas de cualquier "evidencia dura"; aplicado aquí significa verificar también que la frontera por capas se respetó en todo el archivo, no solo en las anclas semánticas.
+
+**Estado A4.2 tras este commit:** (a) ✅ schema migrado + frontera limpia · (b) 📋 reglas-operativas con adelanto parcial ya hecho · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2b — continuar la migración de `reglas-operativas.md` con el resto del contenido decisional del prompt (ya enumerado al final del propio archivo en sección "Pendiente de A4.2b").
+
+---
+
+## [v10.48 — 2026-05-06] — Regla de tipología de verificaciones por sub-paso
+
+Antes de arrancar A4.2b, se documenta de forma explícita qué tipo de verificación corresponde a cada sub-paso del refactor. Sin esta regla, cabía la ambigüedad de tratar las verificaciones de anclas (locales, documentales) como si fueran pruebas funcionales, lo cual debilita el gate real de A4.5.
+
+**La regla, no negociable:**
+
+- **A4.2 → A4.4:** **solo checks locales de integridad documental.** Anclas semánticas, mapeo como checklist externo, ausencia de contenido movido en el origen, presencia en el destino, no-duplicación entre archivos. NO son pruebas funcionales — el inventario no se reextrae todavía. Estos checks atrapan errores de migración (perder texto, duplicarlo, mal asignar capa) pero no validan que los nuevos artefactos sirvan para extraer.
+- **A4.5:** **primera prueba funcional oficial.** Reextracción empírica de los 3 casos seleccionados (página rica + U0 completa + U1-p21) usando solo los nuevos artefactos. Diff vs JSON existente. Validador con 0 errores y 0 avisos.
+- **A4.5.5:** cross-check `schema-inventario.md` ↔ `scripts/validar_inventario.py`. Gate obligatorio antes del merge.
+
+**Smoke test opcional tras A4.4:** se permite hacer una comprobación temprana en chat para atrapar roturas obvias antes de A4.5 (archivo que no se carga, sección huérfana, referencia muerta). **NO cuenta como gate formal ni sustituye la prueba funcional de A4.5.**
+
+**Aplicado en:**
+- `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` §5: nota destacada al inicio del plan, antes del paso 0.
+- `REVIEW.md` bloque A4: eco breve tras la tabla de sub-pasos, con referencia al detalle en REFACTOR-PROPUESTA.md.
+
+**Por qué se documenta ahora:** la regla no es nueva en sustancia (ya estaba implícita en el diseño del paso A4.5 como prueba empírica), pero hacerla explícita evita que en sub-pasos posteriores alguien (incluido el ejecutor) confunda un check de ancla con un OK funcional. Es exactamente el patrón que el revisor pidió blindar con la "lente Anthropic-first": cada artefacto debe declarar qué tipo de validación lo respalda.
+
+Sin cambios de código.
+
+---
+
+## [v10.47 — 2026-05-06] — A4.2a: migración del contenido estructural a `schema-inventario.md`
+
+Tercer sub-paso del refactor (parte (a) de A4.2). Movido al nuevo `schema-inventario.md` todo el contenido del `prompt.md` actual cuya capa es **estructural** (forma del JSON, tipos, obligatoriedad, enumeraciones, restricciones validables sin contexto editorial).
+
+**Contenido migrado a `schema-inventario.md`** (300 líneas, 13 secciones):
+
+1. Estructura top-level (10 claves obligatorias + 1 opcional `_nota_unidad_atipica`).
+2. Schema por página.
+3. Schema por actividad (incluye declaración del saco `datos`).
+4. Schema por cuadro + nota canónica `tipo_cuadro` (categoría pedagógica) vs `contenido.tipo` (estructura interna).
+5. Taxonomía cerrada de 17 tipos de actividad.
+6. Schema del bloque de autoevaluación (top-level opcional) con valores fijos NC1.
+7. Enumeración cerrada de `tipo_cuadro` (5 valores).
+8. Enumeración cerrada de `seccion` (7 valores).
+9. Estructura de `vocabulario_consolidado` (3 sub-bloques con `_descripcion`).
+10. Estructura de `respuestas`, `campo_semantico`, `audio`/`imagen`/`video` con la restricción condicional `imagen.descripcion` obligatoria si `presente=true`.
+11. Schema de `_nota_unidad_atipica` como clave opcional contractual.
+12. Estructura de `datos.items_libro` (lista de strings, obligatoriedad por tipo de actividad — contrato paralelo con `validar_inventario.py:TIPOS_QUE_REQUIEREN_ITEMS`).
+13. Source of truth con `scripts/validar_inventario.py` (regla de no-divergencia explícita).
+
+**Frontera respetada:** todo el contenido de cuándo aplicar / cómo elegir / cómo poblar permaneció en su zona del prompt para migrar en A4.2b a `reglas-operativas.md`. Ej: la enumeración de los 17 tipos vive ahora en schema, pero la "Distinción crítica `completa_huecos` vs `produccion_escrita_guiada`" sigue en prompt esperando A4.2b.
+
+**Cambios en `prompt.md`:** 9 secciones consecutivas (Esquema canónico, Esquema por página, por actividad, por cuadro, Bloque de autoevaluación, Taxonomía 17 tipos, Reglas para `vocabulario_consolidado`, `secciones`, `seccion`, `respuestas`, `audio/imagen/video`, `campo_semantico`) reemplazadas por **un único placeholder con enlace** al schema. `prompt.md` pasa de 547 → 290 líneas.
+
+**Verificación de anclas semánticas** (todas pasan):
+
+| Ancla | schema | prompt |
+|---|---|---|
+| `Taxonomía cerrada de tipos de actividad` | 1 | 0 |
+| `tipo_cuadro describe la categoría pedagógica` | 1 | 0 |
+| `Mis resultados en esta unidad son` | 2 | 0 |
+| `MUY BUENOS / BUENOS / NO MUY BUENOS` | 1 | 0 |
+
+**Estado del paso A4.2:** 🔄 (a) ✅ schema · (b) 📋 reglas-operativas · (c) 📋 convenciones-y-casos.
+
+**Próximo:** A4.2b — migrar a `reglas-operativas.md` (precedencias entre actividad/cuadro/nota/autoevaluación, reglas de población, distinción `completa_huecos` vs `produccion_escrita_guiada`, unidades atípicas, literalidad de `items_libro`).
+
+---
+
+## [v10.46 — 2026-05-06] — A4.1: tres archivos auxiliares creados con headers de identidad
+
+Segundo sub-paso del refactor documental de fase 1 (ver paso A4 en `REVIEW.md` y `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` sección 5 paso 1).
+
+**Archivos creados** en `fases/1-extraccion-inventario/`:
+
+- `schema-inventario.md` (8 líneas) — Contrato de datos puro. Forma del JSON, tipos, obligatoriedad, restricciones validables sin contexto editorial. Contrato paralelo con `scripts/validar_inventario.py`.
+- `reglas-operativas.md` (8 líneas) — Decisión, clasificación, población y unidades atípicas. **Single source of truth de precedencias.**
+- `convenciones-y-casos.md` (10 líneas) — Transcripción del libro al JSON + casebook de casos resueltos.
+
+Cada archivo lleva solo el header de responsabilidad: qué SÍ contiene, qué NO contiene, y referencia al mapeo de la sección 4 de `REFACTOR-PROPUESTA.md` para identificar qué se moverá en A4.2.
+
+**Ningún contenido editorial movido todavía.** `prompt.md` sigue intacto en 547 líneas. Eso es A4.2.
+
+**Verificación:** los 3 archivos existen físicamente (`ls fases/1-extraccion-inventario/`), tienen identidad clara y citan su origen. El `prompt.md` actual no se ha tocado — la migración fila por fila es el próximo sub-paso.
+
+**Próximo:** A4.2 (migrar contenido del `prompt.md` actual a los 3 destinos según el mapeo de la sección 4, aplicando split por capa, con verificación de anclas semánticas tras cada movimiento).
+
+---
+
+## [v10.45 — 2026-05-06] — Limpieza cosmética del setup de worktree
+
+Dos residuos bajos detectados por el revisor en el commit v10.44 (`a9f710e`). Ninguno bloqueante.
+
+**1. Tabla de estado del CHANGELOG con HEAD desfasado.** La tabla decía `guia-didactica-refactor/ ... e3ed91d` como HEAD del worktree, pero el propio commit v10.44 lo elevó a `a9f710e`. Es el problema clásico de documentar en un commit el estado tras ese mismo commit. Actualizado a `a9f710e` y añadida aclaración explícita: ese SHA es el HEAD "al cerrar v10.44"; el HEAD vivo cambia con cada commit del refactor — referencia a `git worktree list` para el estado actual del momento.
+
+**2. `REFACTOR-WORKTREE.md` con redacción residual.** Cerraba con "commit posterior bumpeará la versión a v10.44", redactado en futuro cuando ese commit ya había ocurrido. Reescrito como referencia retrospectiva al commit `a9f710e`/v10.44.
+
+Sin cambios operativos. Solo coherencia documental.
+
+---
+
+## [v10.44 — 2026-05-06] — A4.0 refinado: migración a worktree dedicado
+
+Tras dictamen del revisor con lente Anthropic-first: la rama `refactor/prompt-fase-1` se mueve de "checked out en el directorio original" a un **worktree dedicado** en `/Users/armandocruz/Desktop/guia-didactica-refactor/`. El directorio original vuelve a `main`.
+
+**Por qué esto es relevante (no es ceremonia):** la docs oficial de git establece que `git worktree add` crea un **checkout fresco** que **NO copia los archivos sin trackear** del checkout originante. En este repo eso se traduce en un beneficio concreto:
+
+- En el directorio original quedan los untracked de carriles paralelos: `unidades/U2/` y `viejo/_template/`.
+- En el worktree del refactor **no existen físicamente esos paths** (verificado con `ls`).
+- El trabajo de A4.1-A4.6 sucede en un árbol limpio, sin riesgo de mezcla accidental con esos untracked.
+
+Esto está alineado con la guía de Anthropic sobre Claude Code, que recomienda worktrees como mecanismo de aislamiento cuando el árbol principal acumula ruido.
+
+**Operaciones git ejecutadas:**
+- `git -C guia-didactica-profesor-IA checkout main` (devuelve el directorio original a `main`).
+- `git worktree add /Users/armandocruz/Desktop/guia-didactica-refactor refactor/prompt-fase-1` (crea el directorio del refactor en hermano).
+- Verificación: `git worktree list` muestra dos entradas; `ls` confirma ausencia de los untracked en el worktree.
+
+**Estado tras la migración:**
+
+| Directorio | Branch | HEAD | Untracked |
+|---|---|---|---|
+| `guia-didactica-profesor-IA/` | `main` | `cc1f18b` | `unidades/U2/`, `viejo/_template/` |
+| `guia-didactica-refactor/` | `refactor/prompt-fase-1` | `a9f710e` (HEAD al cerrar v10.44; vivo cambia con cada commit del refactor — ver `git worktree list`) | (ninguno) |
+
+**Documentación nueva:** `fases/1-extraccion-inventario/REFACTOR-WORKTREE.md` explica el setup paso a paso para que el autor pueda recuperar contexto si vuelve más tarde — incluye reglas de uso, comandos de verificación, procedimiento de cierre (merge + `git worktree remove`) y procedimiento de aborto.
+
+**Política operativa a partir de ahora:** todos los commits de A4.1 → A4.6 se hacen en el worktree (`guia-didactica-refactor/`). El directorio original solo se toca para inspeccionar `main` o trabajar en otros frentes (Bloque B, etc.).
+
+**Sin cambios en archivos editoriales del refactor.** Solo metadata git + documentación del setup.
+
+---
+
+## [v10.43 — 2026-05-06] — A4.0: tag pre-refactor + rama refactor/prompt-fase-1
+
+Primer sub-paso del refactor documental de fase 1 (ver paso A4 en `REVIEW.md` y `fases/1-extraccion-inventario/REFACTOR-PROPUESTA.md` sección 5 paso 0).
+
+**Operaciones ejecutadas:**
+- `git tag pre-refactor-prompt-fase1` sobre HEAD del `main` (`cc1f18b`). Marcador inmutable de la base pre-refactor.
+- `git checkout -b refactor/prompt-fase-1`. Rama de trabajo creada y activa.
+- Verificación: `git rev-parse pre-refactor-prompt-fase1` y `git rev-parse HEAD` coinciden en `cc1f18b` (rama aún sin commits propios, parten del mismo punto).
+
+**Política de aislamiento:**
+- Todos los commits del refactor (A4.1 → A4.6) se hacen en `refactor/prompt-fase-1`, no en `main`.
+- `main` queda intacto en `cc1f18b` durante todo el refactor; el dashboard en producción (Railway) y el sistema activo siguen funcionando con el `prompt.md` viejo hasta que se mergee.
+- Si rollback: `git checkout main` (sin operaciones destructivas). La rama puede descartarse con `git branch -D refactor/prompt-fase-1` si no llegamos a mergear.
+
+**No hay cambios en archivos editoriales** todavía. Solo metadata git (tag + rama) + actualización de bitácoras.
+
+**Próximo:** A4.1 (crear los 3 archivos auxiliares vacíos con headers: `schema-inventario.md`, `reglas-operativas.md`, `convenciones-y-casos.md`).
+
+---
+
+## [v10.42 — 2026-05-06] — Limpieza grep: anotaciones inline en entradas históricas con rango "27-33"
+
+Hallazgo bajo no bloqueante del revisor: tras v10.41 (renumeración 27-33 → 28-34), dos entradas históricas seguían siendo grep-ables con el rango viejo "27-33" sin que el contexto del fix apareciera en la misma línea:
+
+- `REVIEW.md` bitácora del 14:30 v10.40.
+- `CHANGELOG.md` v10.40 sección "1. PROCESO-MAESTRO".
+
+**Decisión:** anotación inline (opción B, propuesta al autor). Se mantiene el texto histórico porque describe lo que hizo v10.40 en su momento (fidelidad histórica), pero se le pega un inciso del tipo *"renumeradas a 28-34 en v10.41 por colisión con la Decisión 27 preexistente"*. Así, una búsqueda textual de "27-33" siempre encuentra a la vez la nota de cierre.
+
+**Lo que NO se hace:** reescribir las entradas históricas para que digan "28-34". Eso sería revisionismo del CHANGELOG y de la bitácora — describirían lo que NO se hizo en v10.40.
+
+**Sin cambios de código.** Todo en working tree antes de A4.0.
+
+---
+
+## [v10.41 — 2026-05-06] — Fix de coherencia documental: numeración duplicada en PROCESO-MAESTRO + cabecera REVIEW
+
+Dos defectos detectados por el revisor en el commit anterior (v10.40, `e2fbfa2`).
+
+**1 (Medio) — Numeración duplicada de "Decisión 27" en PROCESO-MAESTRO.md.**
+
+Cuando v10.40 amplió Parte 4 con decisiones nuevas, las numeré 27-33 sin verificar que ya existía una "Decisión 27 — Arquitectura datos+instrucciones" en Parte 5 (bajo un subheader "Decisiones cerradas adicionales (post-creación inicial)" que paradójicamente vivía dentro de la sección "Decisiones pendientes"). Quedaban dos defectos:
+- "Decisión 27" pasaba a ser referencia ambigua.
+- Una decisión cerrada vivía bajo "Decisiones pendientes".
+
+Resolución:
+- El bloque "Arquitectura datos+instrucciones" se mueve de Parte 5 a Parte 4 (donde corresponde por estar cerrada) como nueva subsección "Sobre la arquitectura datos + instrucciones (decidida 2026-05-05)", **preservando su número 27 por antigüedad**.
+- Las 7 decisiones del refactor de fase 1 que v10.40 había numerado 27-33 se **renumeran a 28-34**. La nota del CHANGELOG v10.40 que decía "decisiones 27-33" queda obsoleta como dato de cierre — la entrada actual la corrige.
+- El subheader "Decisiones cerradas adicionales (post-creación inicial)" se elimina (era el síntoma de no haber consolidado en su momento).
+
+**2 (Bajo) — Cabecera "Última actualización" de REVIEW.md desactualizada.**
+
+Decía `2026-05-06 12:00` cuando la bitácora ya tenía entradas a las 14:30. Sincronizada a `15:00` (timestamp de este fix).
+
+**Por qué corrección antes de A4.0:** el revisor lo trató como bloqueante ligero del paso siguiente porque PROCESO-MAESTRO se usa como ancla canónica del plan; arrancar el refactor sobre numeración ambigua propaga la ambigüedad a todos los commits del refactor.
+
+---
+
+## [v10.40 — 2026-05-06] — Refactor de fase 1 documentado como plan ejecutable
+
+Antes de empezar la ejecución del refactor (v10.35-v10.39 cerraron solo la propuesta), trazo el plan en los dos artefactos canónicos para evitar el patrón "trabajo solo en bitácora, no en plan" que el revisor ya señaló con Railway.
+
+**1. `PROCESO-MAESTRO.md` — Parte 4 ampliada con 7 decisiones cerradas (27-33, *renumeradas a 28-34 en v10.41 por colisión con la Decisión 27 preexistente — ver entrada v10.41*)**
+
+Nueva subsección "Sobre la arquitectura documental de las fases (refactor de fase 1, decidido 2026-05-06)":
+- Decisión 27: refactor aprobado tras 6 rondas.
+- Decisión 28: arquitectura objetivo de 5 archivos.
+- Decisión 29: frontera de capas no negociable (forma vs decisión).
+- Decisión 30: single source of truth de precedencias en `reglas-operativas.md`.
+- Decisión 31: skill fuera de v1.
+- Decisión 32: schema y validador como contratos paralelos sin divergencia en el merge.
+- Decisión 33: REFACTOR-PROPUESTA.md como source of truth operativa; PROCESO-MAESTRO no duplica detalle.
+
+Bitácora del documento actualizada con la entrada de cierre de propuesta.
+
+**2. `REVIEW.md` — Paso A4 insertado en bloque A**
+
+Nuevo paso A4 "Refactor documental de fase 1" con 8 sub-pasos enumerados (A4.0 → A4.6 + A4.5.5 cross-check obligatorio). Tabla de sub-pasos como marcador interno; cada commit del refactor citará su sub-paso en el mensaje. Gate de cierre con 5 condiciones explícitas (incluida cero divergencia schema↔validador).
+
+Estado global del bloque A actualizado: `🔄 A4 refactor documental en curso`.
+
+**Por qué este commit antes de tocar código:** sin paso formal en REVIEW + decisión registrada en PROCESO-MAESTRO, cada commit del refactor no tendría dónde anclarse en el plan, repitiendo el patrón Railway / fix Mermaid / build slim que el revisor ya criticó. Esto se hace una vez, antes de empezar.
+
+**No hay cambios de código.** Solo documentación del plan ejecutable.
+
+---
+
