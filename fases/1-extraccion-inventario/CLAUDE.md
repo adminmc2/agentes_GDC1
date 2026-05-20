@@ -69,7 +69,7 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 | ¿Cómo se ve un cloze, una selección múltiple, un cuestionario en el JSON? | `convenciones-y-casos.md` §2 |
 | ¿Hubo un caso similar antes en una extracción real? | `convenciones-y-casos.md` §4 (casebook) |
 | ¿Cómo se añade un caso nuevo al sistema? | `reglas-operativas.md` §10 (política de mejora continua) |
-| ¿Qué nombres canónicos puedo usar como clave de los bloques consolidados o como referencia en las 4 listas tipadas de actividad/cuadro? | Cada dimensión tiene su registry: léxico → `campos-semanticos-canonicos.json`; gramatical → `gramatica-canonica.json`; pron/orto → `pronunciacion-ortografia-canonica.json`; verbal → `verbos-canonicos.json`. Política y árbol de decisión léxico → `reglas-operativas.md` §5.6. Política análoga aplica a los demás registries (regla crítica 6). |
+| ¿Qué nombres canónicos puedo usar como clave de los bloques consolidados o como referencia en las 4 listas tipadas de actividad/cuadro? | Cada dimensión tiene su registry: léxico → `campos-semanticos-canonicos.json`; gramatical → `gramatica-canonica.json`; pron/orto → `pronunciacion-ortografia-canonica.json`; verbal → `verbos-canonicos.json`. Política y árbol de decisión léxico → `reglas-operativas.md` §5.6. Política análoga aplica a los demás registries (regla crítica 7). |
 | ¿Qué fuente PCIC apoya cada dimensión? Glosario "Fuentes PCIC y registries canónicos" (tabla resumen) + archivos `pcic-a1-vocabulario.json`, `pcic-a1-gramatica.json`, `pcic-a1-pronunciacion-ortografia.json`, `pcic-a1-comunicacion.json` |
 
 ---
