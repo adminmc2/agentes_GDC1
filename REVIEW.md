@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-20 (v11.32 — REDISEÑO fase 2: corregida la incoherencia de P1, reetiquetado como decisión heredada (opción A) a ratificar/formalizar. Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-20 (v11.33 — Fase 2: decisión de alcance — `comunicacion` y `estrategia` pospuestas a desarrollo posterior; rediseño activo cubre solo bloques lingüísticos. Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

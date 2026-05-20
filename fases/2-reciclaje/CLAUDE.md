@@ -8,7 +8,9 @@
 
 ## Qué produce esta fase
 
-Un mapa de hilos de reciclaje (`unidades/nc1-reciclaje.json`) que modela cómo cada contenido del curso (vocabulario, gramática, funciones comunicativas, estrategias) se introduce, amplía, aplica, sistematiza o contrasta a lo largo de las unidades.
+Un mapa de hilos de reciclaje (`unidades/nc1-reciclaje.json`) que modela cómo cada contenido del curso se introduce, amplía, aplica, sistematiza o contrasta a lo largo de las unidades.
+
+> **Alcance del rediseño activo (decidido 2026-05-20):** el rediseño de fase 2 en curso cubre los **bloques lingüísticos** del inventario — vocabulario, gramática, pronunciación/ortografía y verbal (más `perifrasis` derivado). Las **funciones comunicativas** y las **estrategias** quedan **pospuestas** a un desarrollo posterior; no las modela el rediseño vigente. Ver `REDISEÑO-EN-CURSO.md` §5 Nivel 1 y bitácora de `PROCESO-MAESTRO.md`.
 
 El archivo tiene tres niveles de análisis que se generan por separado:
 
