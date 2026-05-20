@@ -49,9 +49,12 @@ guia-didactica-profesor-IA/
 ├── CHANGELOG.md                     ← historial técnico de cambios
 ├── ROADMAP.md, GITHUB-MANIFEST.md
 │
+├── docs/historico/                  ← histórico archivado (changelog/review/docs viejos)
 ├── Dockerfile, railway.toml, requirements.txt, .env.example
 └── .gitignore, .dockerignore
 ```
+
+> **Autoridad documental:** `CLAUDE.md` (raíz + de fase) manda sobre cómo actuar hoy. `CHANGELOG.md` y `REVIEW.md` son registro/estado, no autoridad. **Dónde mirar el histórico:** todo lo cerrado o superado vive en `docs/historico/` — no hace falta releer logs gigantes; consultar ahí solo si se necesita contexto antiguo puntual.
 
 ---
 

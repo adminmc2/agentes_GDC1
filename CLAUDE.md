@@ -182,11 +182,21 @@ python3 diagrama.py                                # dashboard local (http://loc
 
 ## Documentos clave (índice de navegación)
 
-| Archivo | Para qué |
-|---|---|
-| `README.md` | Descripción del proyecto, estado de las 8 fases, cómo se trabaja |
-| `PROCESO-MAESTRO.md` | Modelo conceptual completo, decisiones cerradas, esquemas, bitácora |
-| `REVIEW.md` | Plan ejecutable con gates, estado vivo, próximos pasos |
-| `CHANGELOG.md` | Historial técnico de commits |
-| `fases/<N>-<nombre>/CLAUDE.md` | Contexto operativo de cada fase (auto-cargado al trabajar ahí) |
-| `fases/<N>-<nombre>/prompt.md` | Instrucciones detalladas de cada fase |
+| Archivo | Para qué | ¿Autoridad? |
+|---|---|---|
+| `CLAUDE.md` (raíz + de fase) | Cómo actuar **hoy** — reglas vigentes | ✅ **MANDA** |
+| `fases/1-extraccion-inventario/{schema,reglas,convenciones}.md` | Contratos de fase 1 | ✅ Manda (en fase 1) |
+| `README.md` | Descripción del proyecto, estado de las 8 fases, cómo se trabaja | Apunta |
+| `PROCESO-MAESTRO.md` | Modelo conceptual, decisiones cerradas, esquemas, bitácora | Consulta |
+| `REVIEW.md` | Plan ejecutable con gates, estado vivo, próximos pasos | Estado, no manda reglas |
+| `CHANGELOG.md` | Registro cronológico de commits | Consulta, no manda |
+| `docs/historico/` | Histórico archivado (changelog/review/docs superados) | Consulta puntual |
+| `fases/<N>-<nombre>/prompt.md` | Instrucciones detalladas de cada fase | Apunta |
+
+**Si CHANGELOG/REVIEW contradicen a CLAUDE.md → manda CLAUDE.md.** Una sesión futura solo necesita leer CLAUDE.md para operar; no debe re-analizar logs antiguos.
+
+### Regla editorial de CHANGELOG / REVIEW
+
+- Entradas nuevas **cortas y operativas** (2-4 líneas: qué cambió + por qué + archivos). No reescribir entradas antiguas.
+- La bitácora de REVIEW se centra en **estado y decisiones vivas**; cuando una entrada deja de ser operativa, se compacta y se referencia `docs/historico/` en lugar de replicar el detalle.
+- El histórico ya resuelto vive en `docs/historico/` — no se replica en los archivos activos.

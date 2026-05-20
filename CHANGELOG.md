@@ -1,7 +1,17 @@
 # Changelog — Guía Didáctica del Profesor (IA)
 ## Sistema de Agentes v5.0 — Nuevo Compañeros 1
 
-> Histórico anterior a v10.40 archivado en `docs/historico/CHANGELOG-pre-refactor.md`.
+> **Rol de este archivo:** registro cronológico de qué cambió. **NO es autoridad operativa** — la autoridad de cómo actuar es `CLAUDE.md`. Si una entrada antigua contradice a `CLAUDE.md`, manda `CLAUDE.md`.
+>
+> **Regla editorial:** entradas nuevas **cortas y operativas** (2-4 líneas: qué cambió + por qué + archivos). El detalle extenso de versiones antiguas ya está resuelto; no se replica ni se reescribe.
+>
+> **Histórico:** anterior a v10.40 archivado en `docs/historico/CHANGELOG-pre-refactor.md`.
+
+---
+
+## [v11.10 — 2026-05-20] — Jerarquía de autoridad documental + regla editorial
+
+Cierre del problema de crecimiento perpetuo de CHANGELOG/REVIEW sin rearchivar nada. Cambios: (1) cabeceras de CHANGELOG.md y REVIEW.md declaran su rol (registro/estado, NO autoridad) y la regla editorial de entradas cortas; (2) CLAUDE.md § "Documentos clave" añade columna ¿Autoridad? + bloque "Regla editorial" — CLAUDE.md manda, el resto apunta; (3) README.md añade línea "dónde mirar histórico" (`docs/historico/`). Sin mover archivos. Archivos: CLAUDE.md, README.md, CHANGELOG.md, REVIEW.md.
 
 ---
 
