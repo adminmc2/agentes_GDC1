@@ -12,8 +12,9 @@ __pycache__/
 *.pyc
 *.pkl
 
-# Claude Code (local)
-.claude/
+# Claude Code — se versiona la config del proyecto; lo personal/transitorio no
+.claude/settings.local.json
+.claude/claude-code-chat-images/
 
 # Archivos binarios pesados
 *.ai

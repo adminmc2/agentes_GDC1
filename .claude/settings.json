@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:paginadelespanol.com)",
+      "WebFetch(domain:www.spanishlearninglab.com)",
+      "WebFetch(domain:preply.com)",
+      "WebFetch(domain:gianfrancoconti.com)",
+      "WebFetch(domain:mrvinalesmfl.wordpress.com)",
+      "WebFetch(domain:www.stannesacademy.org.uk)",
+      "Bash(xelatex -interaction=nonstopmode U03-tarjetas-vocabulario-validacion-editorial.tex)"
+    ]
+  }
+}

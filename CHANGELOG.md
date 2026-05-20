@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.15 — 2026-05-20] — Limpieza de `.claude/` tras la migración
+
+`.claude/` de repo A queda mínimo: solo `commands/check-fase1.md` + `settings.json` (config de infraestructura/inventarios). Retirados de repo A los archivos de trabajo editorial y del sistema CrewAI antiguo — ya copiados a repo B (`temporal-antiguo-guia-ia`, verificado idéntico, con rutas `viejo/`→`unidades/` adaptadas): `rules/{agent-prompt-design,tool-design,criterios-generacion-texto}.md`, `agents/auditor-seccion.md`, `skills/auditar-seccion/`, `commands/audit.md`. Borrado el `.bak` huérfano. `.gitignore`: `.claude/` deja de ignorarse en bloque — ahora se versiona `settings.json` + `commands/check-fase1.md`; siguen ignorados `settings.local.json` y `claude-code-chat-images/`. Carpeta `claude-code-chat-images/` (26 screenshots viejos, 6.1M) eliminada — no aportan nada; el ignore se mantiene por si la extensión la recrea.
+
+---
+
 ## [v11.14 — 2026-05-20] — Migración a dos repos · Mitad 2 paso 2: borrado físico de `viejo/`
 
 `viejo/` eliminado de repo A (disco + índice git): 8 archivos tracked + el resto ignorado. Su copia íntegra y verificada (`diff -rq` sin diferencias) vive en repo B `temporal-antiguo-guia-ia` (local `~/Desktop/temporal-antiguo-guia-ia`, GitHub privado `adminmc2/temporal-antiguo-guia-ia`, commits `8164c2f`+`6cdf342`). `.gitignore` — retirado el bloque "Contenido editorial" completo (~15 líneas que ignoraban `viejo/...`) + la línea de PDFs `viejo/unidades/**/fuente/`. Hook `.git/hooks/pre-commit` (bloqueaba commits con rutas `viejo/`) retirado: sin objeto. Repo A queda sin `viejo/`; el sistema de trabajo es ya exclusivamente repo B. Cierra la Mitad 2 de la migración.
