@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.29 — 2026-05-20] — Residuos `ROADMAP.md` / `GITHUB-MANIFEST.md` en REVIEW y PROCESO-MAESTRO
+
+Micro-lote de cierre tras v11.27. Quedaban dos rastros de los archivos retirados: `REVIEW.md` los listaba como filas "⚠ Heredado, sin tocar" en la tabla maestra de archivos del sistema; `PROCESO-MAESTRO.md` los mostraba en el árbol de estructura de raíz. `GITHUB-MANIFEST.md` ya no existe y `ROADMAP.md` nunca existió — ambas referencias retiradas. Cierra el carril de limpieza de raíz.
+
+---
+
 ## [v11.28 — 2026-05-20] — Corrección del nombre de repo B en la autoridad documental
 
 CLAUDE.md, README.md y PROCESO-MAESTRO.md nombraban repo B como `guia-sistema-trabajo` (el nombre planeado en v11.13), pero el repo B real es `temporal-antiguo-guia-ia` (renombrado por el otro chat en v11.14). 7 referencias activas corregidas (CLAUDE.md ×4, README.md ×2, PROCESO-MAESTRO.md ×1). Confirmado por el autor (Caso 1): repo B es el sistema de trabajo vivo donde sucede la redacción — el "Modelo de dos repos" y el "Flujo de publicación canónica" siguen válidos, solo el nombre estaba mal. Bitácora histórica de REVIEW intacta (en v11.13 el nombre planeado sí era `guia-sistema-trabajo`). Además: comentario de `integrar_unidad.py` en Comandos básicos actualizado (el flujo ya no usa worktree; el flag de reciclaje quedó en cuarentena en v11.19).

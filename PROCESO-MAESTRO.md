@@ -538,7 +538,7 @@ guia-didactica-profesor-IA/
 │   └── material-complementario/             (gitignored)
 │
 ├── .claude/rules/                           (meta-reglas técnicas: agent-prompt-design, tool-design, etc.)
-├── README.md, CHANGELOG.md, REVIEW.md, ROADMAP.md, GITHUB-MANIFEST.md
+├── README.md, CHANGELOG.md, REVIEW.md
 ├── CLAUDE.md                                ← contrato global del proyecto (auto-cargado)
 ├── PROCESO-MAESTRO.md                       ← este documento (temporal)
 ├── requirements.txt, .env.example
