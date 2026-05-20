@@ -252,7 +252,7 @@ Lo que falta **decidir** antes de poder escribir contrato.
 | **Cierre de alcance: `comunicacion` y `estrategia`** | El contrato activo (`CLAUDE.md` de fase 2) todavía nombra funciones comunicativas y estrategias como contenido que el reciclaje modela, pero el rediseño nuevo (§2-§4) no las trata de forma visible. Decidir explícitamente: ¿fase 2 las cubre, las pospone o las excluye? Sin esta decisión el alcance queda ambiguo. |
 | **D1 — Tabla de equivalencias** (`nc1-equivalencias-hilos.json`) | Vincular hilos `mapa` ↔ `auto` por equivalencia semántica, no por coincidencia de texto. Decidida en el viejo, no poblada. |
 | **D2 — Universo cerrado de hilos canónicos válidos** | Qué hilos pueden existir y cuáles no. |
-| **P1 — Almacenamiento de datos enriquecidos** (opción A vs B) | Dónde viven los datos del nivel `detalle`. Decisión pendiente heredada del viejo. |
+| **P1 — Almacenamiento de datos enriquecidos** (opción A) | **Decisión heredada a ratificar/formalizar**, no pendiente: el viejo cerró P1 en **opción A** (2026-05-10) — los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta ratificarla en el modelo nuevo y formalizar el contrato de regeneración. |
 | **§8 — Componentes "siempre presentes no indexados"** | Conjunciones, adverbios sí/no… Política de tratamiento. Reubicar del viejo al activo. |
 | **Hallazgos del revisor** (§5 del viejo) | Revisar uno a uno e integrar o descartar. |
 
@@ -294,7 +294,7 @@ Tabla de seguimiento de qué piezas de la versión vieja se importan al document
 | D1 — Tabla de equivalencias canónica externa | Pendiente revisión | — |
 | D2 — Universo cerrado de hilos canónicos válidos | Pendiente revisión | — |
 | D3 — Disparador de regeneración: Claude Code | Vigente (heredado) | Reformulado y absorbido en §1.5 (régimen temporal dual) |
-| P1 — Almacenamiento de datos enriquecidos (opción A vs B) | Pendiente decisión | — |
+| P1 — Almacenamiento de datos enriquecidos | Decidido en el viejo (opción A, 2026-05-10) | Heredado a ratificar/formalizar — listado en §5 Nivel 1 |
 | Capa 1 — R1-R5 validación cruzada cross-unidad | Pendiente revisión | — |
 | §8 — Componentes "siempre presentes no indexados" | Vigente (registrado v10.117) | Pendiente reubicación en documento activo |
 | Hallazgos del revisor (§5 del viejo) | Pendiente revisión | — |
@@ -306,5 +306,6 @@ Tabla de seguimiento de qué piezas de la versión vieja se importan al document
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-20 (v11.32)** — Corregida la incoherencia de P1: el viejo lo cerró en opción A (2026-05-10); el documento activo lo marcaba como "pendiente decisión" en §5 y en el apéndice. Reetiquetado como decisión heredada a ratificar/formalizar en ambos sitios.
 - **2026-05-20 (v11.31)** — §5 añadido: hoja de ruta del trabajo pendiente en 4 niveles (decisiones de modelo · contrato operativo · implementación Capa 1/2 · reactivación). Integra cuestiones nuevas: formas verbales, carril de explicaciones gramaticales, triage declarado/reconciliable/nuevo para gramática y pron/orto, cierre de alcance de comunicación/estrategia.
 - **2026-05-15 (v10.136)** — §4 cerrado: modelo recursivo del hilo (`mapa → auto → detalle` como capas acumulativas, no paralelas; distinción con Capa 1/Capa 2 de procesamiento) + función del reciclaje como catálogo acumulativo con criterios documentados (5-6 por unidad, 70/30, análisis contextual) + nivel `detalle` como justificación lingüístico-pedagógica representada como grafo de nodos-enlaces y visualizada como modal a página completa en el dashboard.

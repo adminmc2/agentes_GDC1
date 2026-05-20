@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.32 — 2026-05-20] — REDISEÑO fase 2: corregida la incoherencia de P1
+
+Micro-lote de consistencia tras v11.31. P1 (almacenamiento de datos enriquecidos) figuraba como "pendiente decisión" en `REDISEÑO-EN-CURSO.md` (§5 Nivel 1 + apéndice), pero el reservorio viejo lo cerró en **opción A** el 2026-05-10 (datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad). Reetiquetado en ambos sitios como **decisión heredada a ratificar/formalizar**, no pendiente. La tensión documental de `CLAUDE.md` de fase 2 (cita `comunicacion`/`estrategia` como modelados) se deja intacta a propósito: depende del "cierre de alcance" todavía pendiente en §5 Nivel 1.
+
 ## [v11.31 — 2026-05-20] — REDISEÑO fase 2 §5: hoja de ruta del trabajo pendiente
 
 Añadida §5 a `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`: hoja de ruta viva del trabajo pendiente para cerrar el rediseño de fase 2 al estándar de contrato de fase 1. Estructurada en 4 niveles: (1) decisiones de modelo pendientes — incluye cuestiones nuevas (tratamiento detallado de formas verbales, carril propio para explicaciones gramaticales, triage declarado/reconciliable/contenido-nuevo para gramática y pron/orto, cierre de alcance de `comunicacion`/`estrategia`) + piezas heredadas del viejo (D1, D2, P1, §8, hallazgos del revisor); (2) contrato operativo a producir (prompt, schema de `nc1-reciclaje.json`, reglas reescritas, persistencia de decisiones IA, validación y gates); (3) implementación de Capa 1/Capa 2 (procedimiento, validador R1-R5, wiring); (4) reactivación operativa (adaptar scripts, validador cross-unidad, regeneración íntegra, sincronización dashboard/docs). Solo documento de rediseño; fase 2 sigue PAUSADA.
