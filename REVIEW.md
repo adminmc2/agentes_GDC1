@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-20 (v11.35 — `CLAUDE.md` raíz adelgazado: bloque "Estado fase 1" repartido — contrato operativo al `CLAUDE.md` de fase 1, estado vivo a REVIEW. Raíz 209→153 líneas).
+> **Última actualización:** 2026-05-20 (v11.36 — `CLAUDE.md` raíz: árbol del repositorio adelgazado a mapa de alto nivel, sin detalle de drift).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

@@ -17,14 +17,10 @@ Sistema editorial asistido por IA para producir la **guía didáctica del profes
 ```
 guia-didactica-profesor-IA/
 ├── unidades/UX/                   ← contenido editorial por unidad
-│   ├── UX-nc1-inventario.json     (extracción fase 1, top-level)
-│   ├── fuente/UX-nc1.pdf          (PDF embedido, gitignored)
-│   ├── propuesta/                 (material editorial elaborado: vocabulario.md,
-│   │                               gramatica.md, comunicacion.md, destrezas.md,
-│   │                               cultura.md, evaluacion.md — capa editorial v10.127.
-│   │                               Opcional: itinerarios.md (planificación cross-unidad,
-│   │                               mostrada como 7.ª columna en el dashboard))
-│   └── recursos/                  (CSVs de tarjetas, audios, imágenes, etc.)
+│   ├── UX-nc1-inventario.json     (extracción de fase 1)
+│   ├── fuente/                    (PDF del libro, gitignored)
+│   ├── propuesta/                 (material editorial elaborado por sección)
+│   └── recursos/                  (CSVs de tarjetas, audios, imágenes…)
 ├── fases/<N>-<nombre>/            ← una carpeta por fase con CLAUDE.md + prompt + artefactos
 ├── scripts/                       ← código Python ejecutable (validación, regeneración)
 ├── web/, diagrama.py              ← infraestructura (dashboard)

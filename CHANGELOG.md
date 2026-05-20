@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.36 — 2026-05-20] — `CLAUDE.md` raíz: árbol del repositorio a mapa de alto nivel
+
+El árbol de "Estructura del repositorio" mezclaba orientación estable (dónde vive cada cosa) con detalle de drift: enumeración exhaustiva de los archivos de `propuesta/`, sello de versión `v10.127` y nota de UI ("7.ª columna del dashboard"). Adelgazado el sub-árbol de `unidades/UX/` a sus 4 subcarpetas canónicas con propósito general. El árbol sigue en CLAUDE.md — es arquitectura/orientación legítima — pero ahora responde solo a "¿dónde vive cada cosa?", no a "¿qué contiene exactamente hoy?". El detalle fino vive en los `CLAUDE.md` de fase o se descubre al vuelo.
+
 ## [v11.35 — 2026-05-20] — Adelgazado de `CLAUDE.md` raíz: estado fuera de la autoridad operativa
 
 El `CLAUDE.md` raíz contenía el bloque `## Estado fase 1` (~55 líneas: registries con versiones, convenciones de corrección, comandos, deudas residuales, procedimiento), contradiciendo su propia regla "no añadir aquí historia, estado, planes". Reparto en 3 destinos: (A) el contrato operativo de fase 1 — registries como autoridad de naming (sin columna de versión), convenciones críticas de corrección (sin precedentes con versión), comandos canónicos y procedimiento de corrección — se traslada a `fases/1-extraccion-inventario/CLAUDE.md` (su sitio natural, auto-cargado al trabajar en fase 1); (B) el estado vivo — cierre de fase y deudas — ya vivía en `REVIEW.md`; se compacta la deuda matcher (cerrada en v11.3-v11.5) dejando solo las deudas abiertas; (C) el bloque se elimina del raíz. Resultado: `CLAUDE.md` raíz baja de 209 a 153 líneas, deja de mezclar capas y respeta la separación de funciones que el propio repo declara (CLAUDE = reglas vigentes · REVIEW = estado · CHANGELOG = cambios · PROCESO-MAESTRO = decisiones). Sin pérdida de contenido operativo.
