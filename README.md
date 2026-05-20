@@ -46,8 +46,8 @@ guia-didactica-profesor-IA/
 ├── ROADMAP.md, GITHUB-MANIFEST.md
 │
 ├── docs/historico/                  ← histórico archivado (changelog/review/docs viejos)
-├── Dockerfile, railway.toml, requirements.txt, .env.example
-└── .gitignore, .dockerignore
+├── requirements.txt, .env.example
+└── .gitignore
 ```
 
 > **Autoridad documental:** `CLAUDE.md` (raíz + de fase) manda sobre cómo actuar hoy. `CHANGELOG.md` y `REVIEW.md` son registro/estado, no autoridad. **Dónde mirar el histórico:** todo lo cerrado o superado vive en `docs/historico/` — no hace falta releer logs gigantes; consultar ahí solo si se necesita contexto antiguo puntual.
@@ -140,7 +140,7 @@ Detalle completo: [`CLAUDE.md`](CLAUDE.md).
 | Validación estructural | Python (cero LLM) |
 | Dashboard | Python `http.server` + HTML/CSS/JS (Material Design 3, Phosphor icons, Mermaid) |
 | Persistencia de datos | JSON en filesystem (BD Neon PostgreSQL solo en el sistema CrewAI v5 anterior, no usada en activo) |
-| Despliegue | Local por ahora; Railway disponible si se reactiva |
+| Ejecución | Local — `python3 diagrama.py`. Sin despliegue en la nube (stack Docker/Railway retirado en v11.21; el dashboard es herramienta local) |
 
 ---
 

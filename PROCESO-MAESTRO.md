@@ -541,8 +541,8 @@ guia-didactica-profesor-IA/
 ├── README.md, CHANGELOG.md, REVIEW.md, ROADMAP.md, GITHUB-MANIFEST.md
 ├── CLAUDE.md                                ← contrato global del proyecto (auto-cargado)
 ├── PROCESO-MAESTRO.md                       ← este documento (temporal)
-├── Dockerfile, railway.toml, requirements.txt, .env.example
-└── .gitignore, .dockerignore
+├── requirements.txt, .env.example
+└── .gitignore
 ```
 
 ### Árbol intermedio (estado anterior — pre-disolución de `nuevo/`)

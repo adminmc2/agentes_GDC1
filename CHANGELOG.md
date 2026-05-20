@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.21 — 2026-05-20] — Retirada del stack de despliegue (Docker/Railway)
+
+Repo A ya no se despliega en la nube — el dashboard es herramienta local (`python3 diagrama.py`). Eliminados `Dockerfile`, `.dockerignore` y `railway.toml`. Razón: el despliegue tenía sentido cuando se compartía el dashboard con el equipo y los módulos de agentes vivían aquí; tras la migración a dos repos (agentes en repo B) y la decisión de no desplegar repo A, el stack quedó sin uso (y `.dockerignore` arrastraba 7 líneas `viejo/` muertas). `requirements.txt` se mantiene (lo necesita el `.venv` local). Referencias actualizadas: `CLAUDE.md` y `PROCESO-MAESTRO.md` (estructura del repo), `README.md` (estructura + fila "Ejecución" del stack), `REVIEW.md` (estado global, B5 marcado ⊘ SUPERADO, tablas de archivos/código). Bitácora histórica de CHANGELOG/REVIEW no se reescribe.
+
+---
+
 ## [v11.20 — 2026-05-20] — Renombrado de scripts: `sanear_inventario.py` y `matcher.py`
 
 Lote 3 (naming) de la revisión de `scripts/`. Renombrado limpio con `git mv` + actualización de todas las referencias activas: `cleanup_v150.py` → `sanear_inventario.py` (el `v150` sugería one-shot, pero es la herramienta de saneamiento activa del flujo de fase 1); `migrate_at_r_v10145.py` → `matcher.py` (su nombre era de la CLI de migración v10.145 — one-shot cumplida — pero su valor vivo es la librería matcher que importa `sanear_inventario.py`). Referencias actualizadas: `CLAUDE.md`, `prompt.md`, `validar_inventario.py` (2 comentarios), `schema-inventario.md`, el import de `sanear_inventario.py` y los docstrings de ambos. Histórico de CHANGELOG/REVIEW no se reescribe (nombres de la época). Verificado: import OK, `sanear_inventario.py` corre, validador 0/0/0.

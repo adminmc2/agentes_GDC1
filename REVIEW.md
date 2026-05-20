@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-20 (v11.20 — Renombrado de scripts (Lote 3 de la revisión de `scripts/`): `cleanup_v150.py` → `sanear_inventario.py`, `migrate_at_r_v10145.py` → `matcher.py`. `git mv` + todas las referencias activas actualizadas (CLAUDE.md, prompt.md, validar_inventario.py, schema-inventario.md, import). Revisión de `scripts/` completa: 3 lotes cerrados).
+> **Última actualización:** 2026-05-20 (v11.21 — Retirada del stack de despliegue: eliminados `Dockerfile`, `.dockerignore`, `railway.toml`. Repo A es local-only (`python3 diagrama.py`), no se despliega en la nube. `requirements.txt` se mantiene. B5 marcado ⊘ SUPERADO. Referencias limpiadas en CLAUDE/README/PROCESO-MAESTRO/REVIEW).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >
@@ -40,7 +40,7 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 | **`REVIEW.md`** (este archivo) | Siempre. Tras completar un paso: marcar ✅, registrar gate-met, añadir entrada a bitácora del propio REVIEW, insertar pasos nuevos si aparecieron. |
 | **`CHANGELOG.md`** | Si el paso implica un commit relevante (cambio físico de archivos, código nuevo, documento nuevo). Una entrada por commit con motivo, movimientos, actualizaciones de referencias. |
 | **`README.md`** | Si cambia estructura raíz, comandos, o instalación. |
-| **`.gitignore` / `.dockerignore`** | Si se añaden/eliminan paths trackeables o se cambia política. |
+| **`.gitignore`** | Si se añaden/eliminan paths trackeables o se cambia política. |
 
 **Si alguna actualización meta no se hizo, el gate del paso NO se considera cumplido**, aunque el trabajo principal esté hecho.
 
@@ -51,9 +51,9 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 | Bloque | Estado |
 |---|---|
 | Fase 1 — Extracción de inventario | ✅ **U0-U9 saneadas** con el contrato canónico v10.145 + §5.10 + §5.11. **Fase 1 cerrada en su parte mecanizable** (v10.164). Trayecto: Lote 3D-cleanup (U0-U5) + U6 piloto v10.158-v10.160 + U7 v10.161 + U8 v10.163 + U9 v10.164. Las 10 unidades validan 0/0/0. Deudas residuales catalogadas en CHANGELOG v10.164: matcher (acentos, claves de dict, image.descripcion), canónicos huérfanos (Abreviaturas de los diccionarios, vegetariano), auditoría retroactiva U0-U5 parcialmente cubierta. **Canon semántico activado** en rollout R1 (v10.108). Rediseño operativo cerrado en v10.115-117 (reglas IA-first + 4 registries poblados). **6 archivos operativos** + 4 registries + 4 PCIC A1. `validar_inventario.py` alineado con la parte mecanizable del contrato (shape canónico + §5.10 A + §5.11) desde v10.151. Deuda residual: parte editorial no automatizable (§5.10 Categoría B + excepciones léxicas de §5.11) delimitada en `schema-inventario.md` §A.3. |
-| Infraestructura (dashboard, validador) | ✅ Activa local + ✅ desplegada en producción (Railway, B5 cerrado) |
+| Infraestructura (dashboard, validador) | ✅ Activa **local** (`python3 diagrama.py`). Sin despliegue en la nube — stack Docker/Railway retirado en v11.21 (el dashboard es herramienta local; B5 queda superado). |
 | Documentación raíz (CLAUDE.md, README, PROCESO-MAESTRO, REVIEW) | ✅ Sincronizada (v10.108f) |
-| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje **PAUSADA** hasta cerrar canon semántico de fase 1. `nc1-reciclaje.json` actual (181 hilos) congelado. `integrar_unidad.py` no regenera reciclaje por defecto (flag `--regenerar-reciclaje` opcional desde v10.108d) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 ✅ |
+| Bloque B (cerrar infraestructura fase 1) | 🔄 Parcial — B1.5 ✅ · Fase 2 reciclaje **PAUSADA** hasta cerrar canon semántico de fase 1. `nc1-reciclaje.json` actual (181 hilos) congelado. `integrar_unidad.py` no regenera reciclaje por defecto (flag `--regenerar-reciclaje` opcional desde v10.108d) · tarjetas dependen de B1+fase 2 · píldoras dependen de fase 5 · B5 superado (despliegue retirado v11.21) |
 | Bloque C (fases 2-8) | 📋 Pendiente |
 | Bloque D (lecciones Claude Code) | 📋 Pendiente |
 | Bloque E (limpieza final) | 📋 Pendiente |
@@ -245,9 +245,11 @@ El modelo de hilos jerárquicos (mapa/auto/detalle, pase 1/pase 2) queda anulado
 
 ---
 
-### B5. Despliegue público del dashboard — ✅ CERRADO 2026-05-06 (carril paralelo)
+### B5. Despliegue público del dashboard — ⊘ SUPERADO (revertido en v11.21)
 
-> **Contexto:** este paso se ejecutó **fuera del orden B1-B4**, como carril paralelo, a petición del autor para compartir el dashboard con el equipo editorial. Se documenta retroactivamente para que el plan refleje el trabajo real y se elimine la doble verdad operativa entre bitácora y plan.
+> **Estado v11.21:** el despliegue en Railway se retiró. Repo A ya no se publica en la nube — el dashboard es herramienta local (`python3 diagrama.py`). El stack `Dockerfile` / `.dockerignore` / `railway.toml` se eliminó. Razón: el despliegue tenía sentido cuando se compartía con el equipo y los módulos de agentes estaban en este repo; tras la migración a dos repos (los agentes viven en repo B) y la decisión de no desplegar repo A, el stack quedó sin uso. Lo de abajo es registro histórico de cuando B5 estuvo activo.
+>
+> **Contexto (histórico):** este paso se ejecutó **fuera del orden B1-B4**, como carril paralelo, a petición del autor para compartir el dashboard con el equipo editorial.
 
 **Objetivo:** dashboard accesible públicamente para el equipo editorial (consultar Inventarios + Proyecto), sin BD ni Langfuse.
 
@@ -413,12 +415,11 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 | `ROADMAP.md` | ⚠ Heredado, sin tocar | Cuando se decida si reescribir o eliminar |
 | `GITHUB-MANIFEST.md` | ⚠ Heredado, sin tocar | Cuando se decida si reescribir o eliminar |
 | `.gitignore` | ✅ Actualizado | Cuando cambien rutas trackeables |
-| `.dockerignore` | ✅ Actualizado | Cuando cambien rutas trackeables |
 
 ### Código activo (raíz)
 | Archivo | Estado | Próxima modificación esperada |
 |---|---|---|
-| `diagrama.py` | ✅ Activo, sirviendo en producción (Railway) | B4 (vista globales), nuevos endpoints si surgen |
+| `diagrama.py` | ✅ Activo — dashboard local (`python3 diagrama.py`) | B4 (vista globales), nuevos endpoints si surgen |
 | `web/index.html` | ✅ Vista Inventarios funcional | B4, mejoras estéticas |
 | `eval/` | ⚠ Heredado | Bloque C cuando aplique |
 | `fases/1-extraccion-inventario/prompt.md` | ✅ Operativo | A1 (con cada error nuevo en U3), A2 (con casos nuevos en otras unidades) |
@@ -467,6 +468,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-20** — Retirada del stack de despliegue Docker/Railway (v11.21). Repo A ya no se despliega en la nube — el dashboard es herramienta local (`python3 diagrama.py`). Eliminados `Dockerfile`, `.dockerignore`, `railway.toml`. Razón (acordada con autor): el despliegue tenía sentido cuando se compartía el dashboard con el equipo editorial y los módulos de agentes vivían en este repo; tras la migración a dos repos (los agentes están en repo B) y la decisión de no desplegar repo A, el stack quedó sin uso — y `.dockerignore` arrastraba además 7 líneas `viejo/` muertas. Ni se mueve a repo B (es archival, no se despliega) ni se conserva: se elimina; el `Dockerfile` es trivial de recrear si algún día se necesita. `requirements.txt` se mantiene (lo necesita el `.venv` local). Referencias actualizadas: `CLAUDE.md` (estructura), `README.md` (estructura + fila del stack: "Ejecución — local, sin despliegue"), `PROCESO-MAESTRO.md` (estructura), `REVIEW.md` (estado global de Infraestructura, sección B5 marcada ⊘ SUPERADO con banner explicativo, tabla de meta-actualización, tablas de archivos/código). Hallazgo del revisor incorporado: el lote incluyó REVIEW.md (no solo CLAUDE/README/PROCESO-MAESTRO) y se ajustó la frase de README que decía "Railway disponible si se reactiva" — habría quedado contradiciendo la retirada. Bitácora histórica de CHANGELOG/REVIEW intacta (registro de cuando B5 estuvo activo).
 - **2026-05-20** — Renombrado de scripts: `sanear_inventario.py` y `matcher.py` (v11.20). Lote 3 (naming) y cierre de la revisión de `scripts/`. `cleanup_v150.py` → `sanear_inventario.py`: el `v150` sugería un one-shot pero es la herramienta de saneamiento §5.10/§5.11 activa del flujo de fase 1. `migrate_at_r_v10145.py` → `matcher.py`: su nombre era de la CLI de migración @R v10.145 (one-shot cumplida), pero su valor vivo es la librería matcher (expand_needle, match_substring, norm, gather_text, etc.) que importa `sanear_inventario.py`. Renombrado limpio con `git mv` (no alias transitorio — evita doble mantenimiento) + actualización exhaustiva de referencias activas: `CLAUDE.md` (Comandos básicos), `prompt.md` (paso 5 del flujo), `validar_inventario.py` (2 comentarios), `schema-inventario.md` (§A.3), el `import` de `sanear_inventario.py` y los docstrings de ambos archivos (con nota "Antes `X`"). El histórico de CHANGELOG/REVIEW no se reescribe — los nombres viejos eran correctos en su época. Verificado: `import matcher` desde `sanear_inventario.py` OK, `sanear_inventario.py --unit 0` corre, validador U0 → 0/0/0. **Revisión de `scripts/` completa**: Lote 1 (archivar one-shot real), Lote 2 (cuarentena del roto), Lote 3 (naming) — los 3 cerrados.
 - **2026-05-20** — Cuarentena de `regenerar_reciclaje_vocabulario.py` (v11.19). Lote 2 de la revisión de `scripts/` (dictamen del revisor). El script está roto: asume SHAPE v10.114 (pre-rediseño de fase 1 — `campo_semantico`, 3 sub-bloques, enfoque `fonetica`); los inventarios actuales son post-v10.153. No se archiva porque sigue colgado del flag opcional `--regenerar-reciclaje` de `integrar_unidad.py`. Cambios: (1) función `_cuarentena()` al inicio de `main()` — fail-fast: imprime mensaje explícito de bloqueo y `sys.exit(2)` salvo override de mantenimiento `RECICLAJE_VOCAB_OVERRIDE=1`; (2) `integrar_unidad.py` ya no dispara el script roto cuando se pasa `--regenerar-reciclaje` — imprime aviso de cuarentena y completa la integración del inventario sin abortar ni hacer rollback (la integración ya estaba validada; no se cae por un script obsoleto); el commit pasa a ser solo el inventario (antes añadía `nc1-reciclaje.json` que ya no se regenera). `regenerar_reciclaje_mapa.py` se deja intacto — sigue operativo (lee `nc1-curso.json`, sin cambio de shape), pausa técnica conocida de fase 2. Pendiente: Lote 3 (naming — `cleanup_v150.py` y `migrate_at_r_v10145.py`, este último realmente el módulo matcher).
 - **2026-05-20** — Archivado del one-shot `inicializar_canon_semantico.py` (v11.18). Lote 1 de la revisión de `scripts/` (dictamen del revisor: 3 lotes separados). `inicializar_canon_semantico.py` — one-off que pobló el canon semántico (`campos-semanticos-canonicos.json`); cumplido su cometido, el canon se mantiene a mano desde entonces — movido a `docs/historico/scripts-one-shot/` (con README que explica la carpeta). Referencias activas corregidas **antes** de mover: `validar_inventario.py` (el mensaje de ayuda del error "canon ausente" citaba el script; ahora dice "el canon está versionado en git, restaurar el archivo") y `PROCESO-MAESTRO.md` (nota de archivado). La entrada de bitácora del 2026-05-11 que lo menciona se deja intacta (registro histórico). Hallazgo que corrigió el dictamen: `migrate_at_r_v10145.py` NO se archiva pese al nombre one-shot — `cleanup_v150.py:27` lo importa como módulo matcher (8 funciones); archivarlo rompería una herramienta activa. Su renombrado (refleja mal su rol real) queda para un lote posterior de naming. Validador U0 → 0/0/0 tras el movimiento.

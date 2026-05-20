@@ -32,7 +32,7 @@ guia-didactica-profesor-IA/
 ├── PROCESO-MAESTRO.md             ← decisiones cerradas + bitácora
 ├── REVIEW.md                      ← plan ejecutable con gates (estado actual del proyecto)
 ├── README.md                      ← descripción del proyecto + estado de las 8 fases
-└── CHANGELOG.md, ROADMAP.md, GITHUB-MANIFEST.md, Dockerfile, etc.
+└── CHANGELOG.md, ROADMAP.md, GITHUB-MANIFEST.md, etc.
 ```
 
 ---
