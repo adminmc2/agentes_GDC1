@@ -692,17 +692,46 @@ async function loadInventarios() {
             el.innerHTML = '<div class="section"><div class="section-body" style="padding:20px">No hay inventarios disponibles. Coloca un <code>UX-nc1-inventario.json</code> en <code>unidades/UX/</code>.</div></div>';
             return;
         }
-        el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">' + data.map(u => {
+        el.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px">' + data.map(u => {
             const esExtra = u.zona === 'extra';
             const fuente = esExtra
                 ? `<div style="font-size:11px;color:#B45309;background:#FEF3C7;padding:4px 8px;border-radius:6px;font-weight:600;display:inline-block">🔄 Extracción en curso (worktree paralelo)</div>`
-                : `<div style="font-size:11px;color:var(--md-on-surface-variant);font-family:monospace">${u.archivo}</div>`;
+                : `<div style="font-size:10px;color:var(--md-on-surface-variant);font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${u.archivo}</div>`;
+            // v11.9: bloques A (stats), B (consolidados), C (propuesta mini-grid), D (keywords)
+            const s = u.stats || {};
+            const stats = (s.actividades !== undefined)
+                ? `<div style="font-size:12px;color:var(--md-on-surface-variant);margin-top:6px">📋 ${s.actividades} actividades · ${s.cuadros} cuadros · ${s.decisiones_ia} decisiones</div>` : '';
+            const c = u.consolidados || {};
+            const consolidados = c.lexico ? `<div style="font-size:11px;color:var(--md-on-surface-variant);margin-top:4px;line-height:1.5">
+                <span title="Léxico: principal/recurrente">📚 Léx ${c.lexico.p}P/${c.lexico.r}R</span> ·
+                <span title="Gramática">⚙ Gram ${c.gram.p}P/${c.gram.r}R</span> ·
+                <span title="Pron/orto">🔤 P/O ${c.po.p}P/${c.po.r}R</span> ·
+                <span title="Verbos consolidados">📖 ${c.verbos}v</span>
+            </div>` : '';
+            const propSecs = ['vocabulario','gramatica','comunicacion','destrezas','cultura','evaluacion','itinerarios'];
+            const propLabels = {vocabulario:'Voc',gramatica:'Gram',comunicacion:'Com',destrezas:'Dest',cultura:'Cult',evaluacion:'Eval',itinerarios:'Itin'};
+            const propStatus = u.propuesta || {};
+            const propRow = propSecs.length ? `<div style="display:flex;gap:4px;margin-top:8px;flex-wrap:wrap">` + propSecs.map(sk => {
+                const info = propStatus[sk] || {};
+                const st = info.status || 'missing';
+                const mark = st==='complete' ? '✓' : (st==='in-progress' ? `${info.pendiente||0}⏳` : '·');
+                const bg = st==='complete' ? '#E8F5E9' : (st==='in-progress' ? '#FFF8E1' : '#FCE4EC');
+                const fg = st==='complete' ? '#2E5A33' : (st==='in-progress' ? '#7A5D00' : '#7A2148');
+                return `<span title="${propLabels[sk]} (${st})" style="font-size:10px;padding:2px 6px;border-radius:8px;background:${bg};color:${fg};font-weight:600">${propLabels[sk]} ${mark}</span>`;
+            }).join('') + `</div>` : '';
+            const kw = u.keywords || [];
+            const kwRow = kw.length ? `<div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">` + kw.map(k =>
+                `<span style="font-size:10px;padding:2px 6px;border-radius:8px;background:var(--md-primary-container);color:var(--md-on-primary-container)">${k}</span>`).join('') + `</div>` : '';
             return `<div class="section" style="cursor:pointer" onclick="goTo('inventario', '${u.unidad}')">
                 <div class="section-body" style="padding:16px">
                     <div style="font-size:11px;color:var(--md-primary-dark);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">U${u.unidad} &middot; ${u.nivel}</div>
                     <div style="font-size:18px;font-weight:600;margin-bottom:4px">${u.titulo || '(sin título)'}</div>
                     <div style="font-size:12px;color:var(--md-on-surface-variant);margin-bottom:4px">páginas ${u.paginas}</div>
-                    ${fuente}
+                    ${stats}
+                    ${consolidados}
+                    ${propRow}
+                    ${kwRow}
+                    <div style="margin-top:8px">${fuente}</div>
                 </div>
             </div>`;
         }).join('') + '</div>';

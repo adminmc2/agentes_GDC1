@@ -335,6 +335,28 @@ def _scan_zona(base, pattern_carpeta, pattern_archivo, zona):
                 # Path fuera de PROJECT (caso típico: worktree paralelo
                 # via EXTRA_UNIDADES_PATHS). Usar absoluto.
                 archivo = str(f)
+            # === v11.9: stats compactas para las tarjetas del dashboard ===
+            pd = data.get("paginas_detalle", []) or []
+            n_acts = sum(len(p.get("actividades", []) or []) for p in pd)
+            n_cuadros = sum(len(p.get("cuadros", []) or []) for p in pd)
+            n_decisiones = len(data.get("_decisiones_ia", []) or [])
+            voc = data.get("vocabulario_consolidado", {}) or {}
+            gram = data.get("gramatica_consolidada", {}) or {}
+            po = data.get("pronunciacion_ortografia_consolidada", {}) or {}
+            verbos = data.get("tiempos_y_verbos_consolidado", []) or []
+            consolidados = {
+                "lexico":   {"p": len((voc.get("principal") or {})),   "r": len((voc.get("recurrente") or {}))},
+                "gram":     {"p": len((gram.get("principal") or {})),  "r": len((gram.get("recurrente") or {}))},
+                "po":       {"p": len((po.get("principal") or {})),    "r": len((po.get("recurrente") or {}))},
+                "verbos":   len(verbos),
+            }
+            keywords = list((voc.get("principal") or {}).keys())[:3] + list((gram.get("principal") or {}).keys())[:2]
+            # Estado de la propuesta editorial (mismas 7 secciones del scanner)
+            propuesta_status = {}
+            try:
+                propuesta_status = {s: scan_section(d, d.name, s) for s in SECTIONS}
+            except Exception:
+                propuesta_status = {}
             out.append({
                 "unidad": data.get("unidad"),
                 "carpeta": d.name,
@@ -343,6 +365,11 @@ def _scan_zona(base, pattern_carpeta, pattern_archivo, zona):
                 "titulo": data.get("titulo", ""),
                 "paginas": data.get("paginas", "") or data.get("paginas_libro", ""),
                 "nivel": data.get("nivel", ""),
+                # nuevos campos v11.9
+                "stats": {"actividades": n_acts, "cuadros": n_cuadros, "decisiones_ia": n_decisiones},
+                "consolidados": consolidados,
+                "keywords": keywords,
+                "propuesta": propuesta_status,
             })
         except Exception:
             pass
