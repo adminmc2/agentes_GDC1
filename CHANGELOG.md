@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.19 — 2026-05-20] — Cuarentena de `regenerar_reciclaje_vocabulario.py`
+
+Lote 2 de la revisión de `scripts/`. `regenerar_reciclaje_vocabulario.py` está roto (asume shape v10.114 pre-rediseño; los inventarios son post-v10.153). No se archiva — sigue colgado del flag opcional de `integrar_unidad.py`. Cambios: (1) guard fail-fast `_cuarentena()` al inicio de `main()` — el script se rechaza con mensaje explícito salvo `RECICLAJE_VOCAB_OVERRIDE=1`; (2) `integrar_unidad.py` ya no dispara el script roto desde `--regenerar-reciclaje` — imprime aviso de cuarentena y completa la integración del inventario sin abortar; el commit es solo el inventario. `regenerar_reciclaje_mapa.py` se deja intacto (sigue operativo, fase 2 pausada).
+
+---
+
 ## [v11.18 — 2026-05-20] — Archivado del one-shot `inicializar_canon_semantico.py`
 
 `scripts/inicializar_canon_semantico.py` (one-off que pobló el canon semántico; cumplido — el canon se mantiene a mano desde entonces) movido a `docs/historico/scripts-one-shot/` con README. Referencias activas actualizadas antes de mover: `validar_inventario.py` (mensaje de ayuda del error de canon ausente → ahora apunta a "restaurar desde git") y `PROCESO-MAESTRO.md` (nota de archivado). **`migrate_at_r_v10145.py` NO se archiva** pese al nombre one-shot: `cleanup_v150.py` lo importa como módulo matcher — sigue activo. Su renombrado queda para un lote posterior de naming.

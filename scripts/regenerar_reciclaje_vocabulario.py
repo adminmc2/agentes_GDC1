@@ -32,13 +32,30 @@ Comportamiento (modelo v10.114):
 Uso: python3 scripts/regenerar_reciclaje_vocabulario.py
 """
 import json
+import os
 import re
+import sys
 import unicodedata
 from datetime import date
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parent.parent
 RECICLAJE = PROJECT / "unidades" / "nc1-reciclaje.json"
+
+
+def _cuarentena():
+    """v11.19: fail-fast. Este script asume shape v10.114 (pre-rediseño de fase 1).
+    Los inventarios actuales son post-v10.153 — ejecutarlo falla o corrompe datos.
+    Se rechaza la ejecución salvo override explícito de mantenimiento."""
+    if os.environ.get("RECICLAJE_VOCAB_OVERRIDE") == "1":
+        print("⚠️  RECICLAJE_VOCAB_OVERRIDE=1 — ejecutando script en cuarentena bajo tu responsabilidad.")
+        return
+    print("⛔ BLOQUEADO — regenerar_reciclaje_vocabulario.py está en cuarentena.")
+    print("   Asume SHAPE v10.114 (pre-rediseño de fase 1): campo_semantico, 3 sub-bloques, enfoque 'fonetica'.")
+    print("   Los inventarios actuales son post-v10.153 → este script FALLA o produce datos corruptos.")
+    print("   Fase 2 (reciclaje) está pausada. Reactivarlo exige reescribirlo al shape nuevo.")
+    print("   Override solo para depuración de mantenimiento: RECICLAJE_VOCAB_OVERRIDE=1")
+    sys.exit(2)
 
 
 def slug(s: str) -> str:
@@ -58,6 +75,7 @@ def map_seccion_bloque(bloque: str) -> str:
 
 
 def main():
+    _cuarentena()
     inventarios = sorted(PROJECT.glob("unidades/U*/U*-nc1-inventario.json"))
     BLOQUE_ORDER = {"principal": 0, "recurrente": 1, "comprension": 2}
     # campo → list of (unidad, bloque, n_palabras, posicion_global)

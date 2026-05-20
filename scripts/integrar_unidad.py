@@ -102,17 +102,15 @@ def main():
     # 4. Regenerar reciclaje — OPCIONAL, off por defecto mientras fase 2 esté pausada
     reciclaje_path = PROJECT / "unidades" / "nc1-reciclaje.json"
     if regenerar:
-        reciclaje_prev = reciclaje_path.read_bytes() if reciclaje_path.exists() else None
-        code, out = run(["python3", "scripts/regenerar_reciclaje_vocabulario.py"])
-        print(out)
-        if code != 0:
-            restaurar(dst, dst_prev)
-            restaurar(reciclaje_path, reciclaje_prev)
-            print("❌ Error al regenerar reciclaje. Main restaurado al estado anterior.")
-            sys.exit(1)
-        print("✓ Reciclaje actualizado")
+        # v11.19: regenerar_reciclaje_vocabulario.py está en cuarentena (asume shape
+        # v10.114, roto tras el rediseño de fase 1). No se dispara desde aquí: la
+        # integración del inventario ya está hecha y validada — no se aborta por un
+        # script obsoleto. Reactivar solo cuando fase 2 se reescriba al shape nuevo.
+        print("⛔ --regenerar-reciclaje ignorado: regenerar_reciclaje_vocabulario.py")
+        print("   está en cuarentena (shape v10.114, roto post-rediseño de fase 1).")
+        print("   La integración del inventario SÍ se completó. Reciclaje queda congelado.")
     else:
-        print("⏸ Reciclaje no regenerado (fase 2 pausada — usa --regenerar-reciclaje para forzar).")
+        print("⏸ Reciclaje no regenerado (fase 2 pausada).")
 
     # 5. Commit aislado — solo el inventario, y reciclaje si se regeneró
     d = json.loads(dst.read_text(encoding="utf-8"))
@@ -120,10 +118,9 @@ def main():
     cuadros = sum(len(p.get("cuadros", [])) for p in d.get("paginas_detalle", []))
 
     inventario_rel = str(dst.relative_to(PROJECT))
-    reciclaje_rel = "unidades/nc1-reciclaje.json"
+    # v11.19: el commit es solo el inventario. El reciclaje ya no se regenera aquí
+    # (regenerar_reciclaje_vocabulario.py en cuarentena hasta reescribir fase 2).
     paths_commit = [inventario_rel]
-    if regenerar:
-        paths_commit.append(reciclaje_rel)
 
     msg = (
         f"integración {unit_id} a main (worktree extract/{unit_id}, "
