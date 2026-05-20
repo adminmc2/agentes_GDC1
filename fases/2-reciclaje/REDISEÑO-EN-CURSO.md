@@ -79,11 +79,12 @@ La unidad de análisis (el "hilo" de reciclaje) depende del bloque:
 | Bloque | Granularidad del hilo | Fuente canónica |
 |---|---|---|
 | Vocabulario | **Campo semántico** | `campos-semanticos-canonicos.json` + `vocabulario_consolidado` del inventario |
-| Gramática | **Categoría gramatical** | `gramatica-canonica.json` + `gramatica_consolidada` del inventario |
+| Gramática | **Categoría gramatical** (sub-organizada por `_grupo`, ver §6.3) | `gramatica-canonica.json` + `gramatica_consolidada` del inventario |
 | Pronunciación/ortografía | **Categoría pron/orto** | `pronunciacion-ortografia-canonica.json` + `pronunciacion_ortografia_consolidada` del inventario |
 | Verbal | **Lema** | `verbos-canonicos.json` + `tiempos_y_verbos_consolidado[].lema` del inventario |
+| Perífrasis | **Perífrasis** (hilo aparte, ver §3.3) | `perifrasis-canonicas.json` (5.º registry, ver §6.2) + `estructura_perifrastica` del inventario |
 
-Vocabulario es el único bloque con granularidad de campo semántico (agrupa ítems léxicos). Los otros tres bloques bajan a la unidad atómica de su dimensión (categoría o lema).
+Vocabulario es el único bloque con granularidad de campo semántico (agrupa ítems léxicos). Los demás bajan a la unidad atómica de su dimensión (categoría, lema o perífrasis). El bloque gramática se sub-organiza internamente por `_grupo` (§6.3) sin cambiar su granularidad de hilo.
 
 ### §2.3. Etiquetas del hilo (coexistentes)
 
@@ -252,7 +253,6 @@ Lo que falta **decidir** antes de poder escribir contrato.
 | **Carril propio para las explicaciones gramaticales** | La explicación/cuadro que el libro expone ("cómo se forma el presente") no es el paradigma ni la categoría suelta. Decidir si es hilo propio o atributo del hilo. Necesita espacio de análisis separado. |
 | **Triage declarado / no declarado en índice** (gramática y pron/orto) | NO es un eje binario. Es un **flujo de decisión** de tres salidas para cada categoría que aparece: (1) **declarado literal** — está en el índice del curso tal cual; (2) **reconciliable** — no está literal, pero es un elemento del índice categorizado de otra forma → se reconcilia; (3) **contenido nuevo real** — no encaja en el índice de ningún modo → se escala al autor. La gramática y la pron/orto no declaradas se analizan **en detalle** antes de clasificarlas, no se vuelcan a "no declarado" por defecto. |
 | **D1 — Tabla de equivalencias** (`nc1-equivalencias-hilos.json`) | Vincular hilos `mapa` ↔ `auto` por equivalencia semántica, no por coincidencia de texto. Decidida en el viejo, no poblada — pendiente de redefinir en el activo. |
-| **D2 — Universo cerrado de hilos canónicos válidos** | Definir qué hilos pueden existir. La formulación vieja (lista PCIC curada de ~55 subcategorías) queda **superada** por los 4 registries de fase 1; la pieza sigue viva: redefinir el universo a partir de los registries actuales + los bloques derivados aceptados (p. ej. `perifrasis`). Aquí se cierra de paso la incoherencia §2.2↔§3.3 (`perifrasis` no figura en la tabla de bloques de §2.2). |
 | **P1 — Almacenamiento de datos enriquecidos** (opción A) | **Decisión heredada a ratificar/formalizar**, no pendiente: el viejo cerró P1 en **opción A** (2026-05-10) — los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta ratificarla en el modelo nuevo y formalizar el contrato de regeneración. |
 | **§8 — Componentes "siempre presentes no indexados"** | Conjunciones, adverbios sí/no… Política de tratamiento. Material heredado en el **Reservorio §R.2**, pendiente de procesar. |
 
@@ -284,6 +284,66 @@ Fase 2 está PAUSADA. Reactivar exige, en este orden:
 
 ---
 
+## §6. D2 — Universo de hilos válidos y sub-organización de gramática (paso 6 — definido 2026-05-20)
+
+Cierra la pieza D2. La formulación vieja (lista PCIC curada de ~55 subcategorías) queda **obsoleta**.
+
+### §6.1. Universo de hilos válidos
+
+El universo de títulos de hilo válidos de fase 2 = los **registries canónicos de fase 1**. Fase 2 **no cura un universo propio**: lo hereda.
+
+- **Cerrado para escritura**: fase 2 no inventa un título canónico. Si fase 1 no lo canonizó, fase 2 no lo crea.
+- **Abierto para detección**: si fase 2, al analizar en profundidad, surfacea una **estructura no declarada** en ningún registry, eso es un **hallazgo legítimo** que se escala al autor (misma política que §R.2 "siempre presentes"). No se inventa, no se rechaza: se propone.
+
+### §6.2. Perífrasis — 5.º registry
+
+Las perífrasis verbales (§3.3) pasan a tener registry propio: **`perifrasis-canonicas.json`** (5.º registry). Universo cerrado también para perífrasis. Se poblará desde el campo `estructura_perifrastica` de los inventarios + PCIC A1.
+
+Esto **cierra la incoherencia §2.2↔§3.3**: la tabla de bloques de §2.2 pasa de 4 a 5 bloques (ver §2.2 actualizada).
+
+### §6.3. Bloque gramática — sub-organización por `_grupo`
+
+El bloque gramática gana un campo interno **`_grupo`** en cada categoría de `gramatica-canonica.json`. Eje de agrupación: **subsistema gramatical**, alineado con la estructura del PCIC A1 (estable y legible). Grupos:
+
+- **Determinantes** — artículos determinados/indeterminados, demostrativos, posesivos.
+- **Pronombres** — pronombre sujeto, átonos de OI, interrogativos.
+- **Sintagma nominal y concordancia** — concordancia de género, de número, contables/incontables.
+- **Construcciones** — hay, construcción gustar/doler, oposición ser/estar.
+- **Tiempos y modos verbales** — ver §6.4.
+- **Adverbios y marcadores** — posición, adverbios de cantidad, marcadores temporales del pasado.
+- **Preposiciones**.
+
+El dashboard lee la gramática **agrupada por `_grupo`** — favorece la lectura. `_grupo` es organización interna, no cambia la granularidad del hilo (sigue siendo la categoría gramatical).
+
+### §6.4. Grupo "Tiempos y modos verbales"
+
+Dentro de gramática. Contiene **dos tipos de categorías**:
+
+1. **Flexión / paradigmas verbales** — el sistema de conjugación como contenido gramatical enseñado: paradigma de verbos regulares, paradigmas de irregularidad vocálica (e>ie, o>ue…), imperativo regular e irregular, etc.
+2. **Usos de tiempos y modos** — para qué sirve cada tiempo/modo a nivel A1: presente → acciones habituales / descripción / estados; imperativo → instrucciones / peticiones; etc.
+
+Ambos tipos se **canonizan desde el PCIC A1** (hoy no capturados) como categorías nuevas de `gramatica-canonica.json` bajo este grupo, con `_pcic_ref`.
+
+**Distinción clave — tres planos separados:**
+
+| Plano | Qué responde | Dónde vive |
+|---|---|---|
+| **Bloque `verbal`** | ¿Qué verbos concretos aparecen y cómo se conjugan? Lista grande, cada verbo del libro. | Apartado propio (bloque `verbal`, granularidad lema) |
+| **Grupo "Tiempos y modos verbales"** | ¿Qué reglas de conjugación y qué usos de tiempo/modo enseña el libro? Sistema verbal abstracto. | Dentro del bloque `gramatica` |
+| **Grupo "Construcciones"** | hay, gustar/doler, ser/estar. | Dentro del bloque `gramatica` |
+
+El bloque `verbal` responde "¿qué verbos y cómo se conjugan?"; el grupo "Tiempos y modos verbales" responde "¿qué reglas y usos?". Planos distintos, no se fusionan.
+
+### §6.5. Tareas de población diferidas
+
+§6 **decide y documenta** el modelo; no ejecuta cambios de registry ahora. Quedan como tareas posteriores (tocan registries de fase 1, listadas en §5):
+
+- Crear y poblar `perifrasis-canonicas.json`.
+- Añadir el campo `_grupo` a las 17 categorías de `gramatica-canonica.json`.
+- Canonizar desde PCIC A1 las categorías nuevas del grupo "Tiempos y modos verbales" (flexión + usos).
+
+---
+
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
 El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas. Tres estados: **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva pero su versión vieja no sirve; se redefine en el activo), **en reservorio** (material vivo sin procesar, copiado al Reservorio de este documento).
@@ -293,7 +353,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 | §1 Punto de partida (el problema) | Obsoleto | Diagnóstico histórico que motivó el rediseño. No se migra. |
 | §2 Modelo objetivo (mapa/auto/detalle) | Ya migrado | Absorbido en §4 (modelo recursivo del hilo). |
 | §3 · D1 — Tabla de equivalencias canónica | Superado en su formulación vieja | La pieza sigue pendiente; se redefine en el activo. Listada en §5 Nivel 1. |
-| §3 · D2 — Universo cerrado de hilos válidos | Superado en su formulación vieja | La formulación vieja (lista PCIC curada de ~55 subcategorías) queda superada por los 4 registries de fase 1. La **pieza sigue viva**: definir el universo válido de hilos a partir de los registries actuales + los bloques derivados aceptados (p. ej. `perifrasis`). Pendiente de redefinición en el activo. Listada en §5 Nivel 1. |
+| §3 · D2 — Universo cerrado de hilos válidos | Cerrado en §6 | La formulación vieja (lista PCIC curada) queda obsoleta. Redefinido en §6: universo = los 5 registries de fase 1 (4 + `perifrasis-canonicas.json`), cerrado para escritura y abierto para detección. |
 | §3 · D3 — Disparador de regeneración: Claude Code | Ya migrado | Reformulado y absorbido en §1.5 (régimen temporal dual). |
 | §4 · P1 — Almacenamiento de datos enriquecidos | Ya migrado | Decidido en opción A (2026-05-10); reflejado en §5 Nivel 1 como decisión heredada a ratificar. |
 | §5 Hallazgos del revisor | Obsoleto | Un solo hallazgo, ya cerrado por D1+D2. No se migra. |
@@ -353,6 +413,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-20 (v11.37)** — §6 cerrado (D2): universo de hilos válidos = los 5 registries de fase 1 (4 + nuevo `perifrasis-canonicas.json`), cerrado para escritura / abierto para detección. Perífrasis pasa a 5.º bloque (cierra incoherencia §2.2↔§3.3). Bloque gramática sub-organizado por `_grupo` (subsistema gramatical, 7 grupos). Grupo "Tiempos y modos verbales" — flexión/paradigmas + usos, desde PCIC A1 — distinto del bloque `verbal` (lista de verbos). §2.2 actualizada (5 bloques). Población de registries: tarea diferida.
 - **2026-05-20 (v11.34)** — Integración a documento único: `REDISEÑO-EN-CURSO-viejo.md` archivado en `docs/historico/`. Su material vivo sin procesar (§7 R1-R5, §8 siempre-presentes) copiado verbatim al nuevo apéndice §R (Reservorio). Apéndice §N reescrito con la disposición final de cada pieza del viejo (ya migrado / superado en formulación vieja / en reservorio / obsoleto). D2 reetiquetado: la lista PCIC vieja queda superada, la pieza sigue viva. Referencias activas al viejo actualizadas en `PROCESO-MAESTRO.md`, `gramatica-canonica.json` y `CLAUDE.md` de fase 2.
 - **2026-05-20 (v11.33)** — Decisión de alcance cerrada: `comunicacion` y `estrategia` pospuestas a desarrollo posterior. Pieza "Cierre de alcance" retirada de §5 Nivel 1 (pasa a decisión cerrada con nota destacada). Sincronizado `CLAUDE.md` de fase 2 y bitácora de `PROCESO-MAESTRO.md`.
 - **2026-05-20 (v11.32)** — Corregida la incoherencia de P1: el viejo lo cerró en opción A (2026-05-10); el documento activo lo marcaba como "pendiente decisión" en §5 y en el apéndice. Reetiquetado como decisión heredada a ratificar/formalizar en ambos sitios.

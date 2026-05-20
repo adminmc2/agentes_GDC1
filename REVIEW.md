@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-20 (v11.36 — `CLAUDE.md` raíz: árbol del repositorio adelgazado a mapa de alto nivel, sin detalle de drift).
+> **Última actualización:** 2026-05-20 (v11.37 — REDISEÑO fase 2 §6 cerrado (D2): universo de hilos = registries de fase 1; perífrasis 5.º registry; gramática sub-organizada por `_grupo`; grupo "Tiempos y modos verbales". Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

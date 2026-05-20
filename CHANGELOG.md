@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.37 — 2026-05-20] — REDISEÑO fase 2 §6: D2 — universo de hilos y sub-organización de gramática
+
+Cerrada la pieza D2 en `REDISEÑO-EN-CURSO.md` (nueva §6). (1) Universo de hilos válidos = los registries canónicos de fase 1; la lista PCIC curada del viejo queda obsoleta. Cerrado para escritura (fase 2 no inventa canónicos), abierto para detección (estructuras no declaradas → hallazgo escalado). (2) Perífrasis gana registry propio `perifrasis-canonicas.json` (5.º registry); la tabla de bloques de §2.2 pasa de 4 a 5 — cierra la incoherencia §2.2↔§3.3. (3) El bloque gramática se sub-organiza con un campo `_grupo` por subsistema gramatical (7 grupos: Determinantes, Pronombres, Sintagma nominal y concordancia, Construcciones, Tiempos y modos verbales, Adverbios y marcadores, Preposiciones). (4) El grupo "Tiempos y modos verbales" integra flexión/paradigmas (regular, irregularidad vocálica, imperativo) + usos de tiempos/modos, canonizados desde PCIC A1 — plano distinto del bloque `verbal` (lista de cada verbo del libro). Población de `perifrasis-canonicas.json` y de las categorías nuevas de `gramatica-canonica.json`: tareas diferidas. Actualizados §2.2, §5 Nivel 1 y apéndice §N.
+
 ## [v11.36 — 2026-05-20] — `CLAUDE.md` raíz: árbol del repositorio a mapa de alto nivel
 
 El árbol de "Estructura del repositorio" mezclaba orientación estable (dónde vive cada cosa) con detalle de drift: enumeración exhaustiva de los archivos de `propuesta/`, sello de versión `v10.127` y nota de UI ("7.ª columna del dashboard"). Adelgazado el sub-árbol de `unidades/UX/` a sus 4 subcarpetas canónicas con propósito general. El árbol sigue en CLAUDE.md — es arquitectura/orientación legítima — pero ahora responde solo a "¿dónde vive cada cosa?", no a "¿qué contiene exactamente hoy?". El detalle fino vive en los `CLAUDE.md` de fase o se descubre al vuelo.
