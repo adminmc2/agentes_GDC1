@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.26 — 2026-05-20] — Borrado de backups muertos `.bak.v10.150`
+
+Efecto colateral de v11.25 detectado por el revisor: el patrón genérico `*.bak` no cubre los backups antiguos `*.bak.v10.150` (terminan en `.v10.150`, no en `.bak`), así que 6 archivos `unidades/U{1,2,3,7,8,9}/U*-nc1-inventario.json.bak.v10.150` quedaron como untracked. Son backups de la migración de saneamiento v10.150, cerrada hace tiempo; los inventarios están en v11.x validando 0/0/0. Eliminados — no se re-ignoran (cruft muerto). El patrón `*.bak` se mantiene para backups futuros.
+
+---
+
 ## [v11.25 — 2026-05-20] — Limpieza `.gitignore` + coherencia de estructura
 
 `.gitignore`: retirados los patrones de backup de migraciones cerradas (`*.bak.v10.145`, `*.bak.v10.150`) y sustituidos por un genérico `*.bak`. Coherencia documental: `ROADMAP.md` (no existe) y `GITHUB-MANIFEST.md` (existe pero gitignorado como planificación local, fuera de la autoridad documental) se retiran de la estructura del repo en `README.md` y `CLAUDE.md` — los docs los listaban como archivos del proyecto pese a no versionarse. Patrones binarios/diseño del `.gitignore` se dejan intactos (ignores defensivos).
