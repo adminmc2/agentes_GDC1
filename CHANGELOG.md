@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.17 — 2026-05-20] — `eval/` movido a `temporal-antiguo-guia-ia`
+
+`eval/` (3 archivos, 28K — `promptfoo.yaml`, `evaluar_tarjetas.py`, `provider_crewai.py`) era tooling de evaluación del sistema CrewAI/Recurvo, no infraestructura viva de este repo. Estaba **roto** desde v11.14: `provider_crewai.py` importa de `scripts/crewai/`, que se fue a `temporal-antiguo-guia-ia` con el borrado de `viejo/`. Copiado a `temporal-antiguo-guia-ia` (commit `cf5da5e`) y eliminado de aquí. `CLAUDE.md` y `README.md` — retirada la referencia a `eval/` de la estructura del repositorio. Fase 3 (tarjetas), cuando se construya, tendrá su evaluación propia si la necesita; no depende de este `eval/` atado a Recurvo.
+
+---
+
 ## [v11.16 — 2026-05-20] — Higiene `.gitignore` + limpieza de carpetas sueltas
 
 Pasada de limpieza de carpetas de raíz. `.gitignore`: añadidos `.venv/` (654M, virtualenv regenerable que estaba untracked sin ignorar — riesgo de commit accidental) y `.deepeval/` (carpeta que el framework recrea). Eliminadas carpetas sin valor: `.deepeval/` (vacía), `.github/copilot-instructions.md` (obsoleto — describía un workspace antiguo con rutas inexistentes, era para Copilot no Claude Code), `.claude/claude-code-chat-images/` (26 screenshots viejos, 6.1M).

@@ -27,7 +27,7 @@ guia-didactica-profesor-IA/
 │   └── recursos/                  (CSVs de tarjetas, audios, imágenes, etc.)
 ├── fases/<N>-<nombre>/            ← una carpeta por fase con CLAUDE.md + prompt + artefactos
 ├── scripts/                       ← código Python ejecutable (validación, regeneración)
-├── web/, diagrama.py, eval/       ← infraestructura (dashboard, evaluación)
+├── web/, diagrama.py              ← infraestructura (dashboard)
 ├── docs/historico/                ← histórico archivado (changelog/review/docs superados)
 ├── PROCESO-MAESTRO.md             ← decisiones cerradas + bitácora
 ├── REVIEW.md                      ← plan ejecutable con gates (estado actual del proyecto)

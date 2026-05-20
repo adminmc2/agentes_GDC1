@@ -37,7 +37,6 @@ guia-didactica-profesor-IA/
 ├── scripts/
 │   └── validar_inventario.py        ← validación estructural sin LLM
 ├── web/                             ← frontend del dashboard
-├── eval/                            ← evaluación (DeepEval + promptfoo)
 ├── diagrama.py                      ← servidor del dashboard (HTTP + APIs)
 │
 ├── CLAUDE.md                        ← contexto auto-cargado por Claude Code
