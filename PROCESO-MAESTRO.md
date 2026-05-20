@@ -252,7 +252,7 @@ Estructura por cuadro gramatical:
 - ✅ PDF promocionado a `unidades/U3/fuente/U3-nc1.pdf` (raíz, gitignored).
 - ✅ Las 10 referencias internas del JSON ya apuntan a la nueva ruta.
 - 📋 PENDIENTE (cuando proceda): el resto del contenido editorial de U03 (tarjetas/, pildoras/, secciones MD) sigue solo en `viejo/unidades/U03/` y se evaluará migrar al sistema activo cuando se construyan las fases 3-7.
-- Actualizar referencias en scripts (`importar_inventario.py`, `crear_crew_agents.py`, `diagrama.py`), CLAUDE.md, README.md, .gitignore, .dockerignore.
+- Actualizar referencias en scripts (`importar_inventario.py`, `crear_crew_agents.py`, `diagrama.py`), CLAUDE.md, README.md, .gitignore. _(Tarea histórica ya superada; `.dockerignore` se eliminó en v11.21.)_
 - Crear los 3 JSONs globales vacíos en `unidades/` (con esquema mínimo cuando esté definido).
 
 ---
