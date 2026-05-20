@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.25 — 2026-05-20] — Limpieza `.gitignore` + coherencia de estructura
+
+`.gitignore`: retirados los patrones de backup de migraciones cerradas (`*.bak.v10.145`, `*.bak.v10.150`) y sustituidos por un genérico `*.bak`. Coherencia documental: `ROADMAP.md` (no existe) y `GITHUB-MANIFEST.md` (existe pero gitignorado como planificación local, fuera de la autoridad documental) se retiran de la estructura del repo en `README.md` y `CLAUDE.md` — los docs los listaban como archivos del proyecto pese a no versionarse. Patrones binarios/diseño del `.gitignore` se dejan intactos (ignores defensivos).
+
+---
+
 ## [v11.24 — 2026-05-20] — Adelgazado de `.env.example` para repo A
 
 `.env.example` pasó de ~70 a ~24 líneas. Repo A es dashboard local + validador: no usa agentes en su flujo vigente, no necesita claves de API, y ninguna variable es obligatoria (el dashboard arranca sin `.env`). Retirado: API keys (ANTHROPIC/GROQ/DEEPSEEK — de agentes, repo B), bloque Crew Recurvo, bloque DeepEval, `PORT=8080` (puerto viejo). Conservado como opcional: `PORT`/`HOST`/`EXTRA_UNIDADES_PATHS`/`DEBUG` (servidor del dashboard) + bloque comentado `DATABASE_URL`/`LANGFUSE_*` (superficies de BD/trazas heredadas y dormidas — el código de `diagrama.py` aún las lee). Verificado contra el uso real de `os.environ` en `diagrama.py`. `.env` real (con claves) intacto y gitignorado.

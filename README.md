@@ -43,7 +43,6 @@ guia-didactica-profesor-IA/
 ├── PROCESO-MAESTRO.md               ← decisiones acumuladas + bitácora
 ├── REVIEW.md                        ← plan de trabajo con gates de validación
 ├── CHANGELOG.md                     ← historial técnico de cambios
-├── ROADMAP.md, GITHUB-MANIFEST.md
 │
 ├── docs/historico/                  ← histórico archivado (changelog/review/docs viejos)
 ├── requirements.txt, .env.example
