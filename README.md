@@ -113,7 +113,7 @@ python3 scripts/validar_inventario.py unidades/U3/U3-nc1-inventario.json
 3. **Validar antes de cerrar.**
 4. **No inventar contenido.**
 5. **Una fuente única** por criterio editorial.
-6. **Redacción editorial en repo B** (`guia-sistema-trabajo`); repo A solo recibe el entregable publicado.
+6. **Redacción editorial en repo B** (`temporal-antiguo-guia-ia`); repo A solo recibe el entregable publicado.
 
 Detalle completo: [`CLAUDE.md`](CLAUDE.md).
 
@@ -148,7 +148,7 @@ Detalle completo: [`CLAUDE.md`](CLAUDE.md).
 El proyecto vive en **dos repositorios separados**:
 
 - **Repo A — este** (`guia-didactica-profesor-IA`): el **entregable publicado + infraestructura**. Inventarios canónicos, fases, scripts, dashboard, docs. Es lo que se versiona en GitHub.
-- **Repo B — externo** (`guia-sistema-trabajo`, en `~/Desktop/`): el **sistema de trabajo**. Sistema metodológico vivo (hub, pautas, plantillas, registro), zona de redacción en curso y archivo del sistema CrewAI v5 anterior.
+- **Repo B — externo** (`temporal-antiguo-guia-ia`, en `~/Desktop/`): el **sistema de trabajo**. Sistema metodológico vivo (hub, pautas, plantillas, registro), zona de redacción en curso y archivo del sistema CrewAI v5 anterior.
 
 La redacción editorial sucede en repo B. Cuando una unidad cierra, su material se **publica** (copia) a la ruta canónica de repo A (`unidades/UX/propuesta/`). Repo A nunca es zona de redacción — solo recibe el entregable.
 

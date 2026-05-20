@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.28 — 2026-05-20] — Corrección del nombre de repo B en la autoridad documental
+
+CLAUDE.md, README.md y PROCESO-MAESTRO.md nombraban repo B como `guia-sistema-trabajo` (el nombre planeado en v11.13), pero el repo B real es `temporal-antiguo-guia-ia` (renombrado por el otro chat en v11.14). 7 referencias activas corregidas (CLAUDE.md ×4, README.md ×2, PROCESO-MAESTRO.md ×1). Confirmado por el autor (Caso 1): repo B es el sistema de trabajo vivo donde sucede la redacción — el "Modelo de dos repos" y el "Flujo de publicación canónica" siguen válidos, solo el nombre estaba mal. Bitácora histórica de REVIEW intacta (en v11.13 el nombre planeado sí era `guia-sistema-trabajo`). Además: comentario de `integrar_unidad.py` en Comandos básicos actualizado (el flujo ya no usa worktree; el flag de reciclaje quedó en cuarentena en v11.19).
+
+---
+
 ## [v11.27 — 2026-05-20] — Eliminado `GITHUB-MANIFEST.md` obsoleto
 
 `GITHUB-MANIFEST.md` (118 líneas, gitignorado, nunca versionado) eliminado. Era el manifiesto de despliegue del sistema de agentes CrewAI en Railway (fechado 2026-03-16): listaba `scripts/crewai/`, `eval/`, `Dockerfile`, `railway.toml`, rutas `datos/inventarios/` — todo migrado a repo B, eliminado o en rutas viejas. Documento muerto que desinformaba. `.gitignore`: retiradas las líneas `ROADMAP.md` (inexistente) y `GITHUB-MANIFEST.md` de la sección de planificación local; `.github/` se conserva ignorado.

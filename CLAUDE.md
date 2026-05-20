@@ -42,13 +42,13 @@ guia-didactica-profesor-IA/
 El proyecto vive en **dos repositorios separados**:
 
 - **Repo A — este** (`guia-didactica-profesor-IA`): el **entregable publicado + infraestructura**. Inventarios canónicos (`unidades/UX/`), fases (`fases/`), scripts, dashboard (`web/`, `diagrama.py`), docs raíz. Es la versión que se versiona en GitHub.
-- **Repo B — externo** (`~/Desktop/guia-sistema-trabajo/`): el **sistema de trabajo**. Sistema metodológico vivo (hub, pautas, plantillas, referencias, registro), zona de redacción en curso (`unidades/UXX-propuesta/`) y archivo del sistema CrewAI v5 anterior.
+- **Repo B — externo** (`~/Desktop/temporal-antiguo-guia-ia/`): el **sistema de trabajo**. Sistema metodológico vivo (hub, pautas, plantillas, referencias, registro), zona de redacción en curso (`unidades/UXX-propuesta/`) y archivo del sistema CrewAI v5 anterior.
 
 La redacción editorial sucede en repo B; el entregable se publica a repo A.
 
 ## Flujo de publicación canónica (al cerrar una unidad)
 
-La redacción de cada unidad sucede en **repo B** (`~/Desktop/guia-sistema-trabajo/unidades/UXX-propuesta/`). Cuando la unidad entera está cerrada y validada, las propuestas se publican (copian) a la **ruta canónica versionada de repo A** `unidades/UX/propuesta/` con renaming sin prefijo:
+La redacción de cada unidad sucede en **repo B** (`~/Desktop/temporal-antiguo-guia-ia/unidades/UXX-propuesta/`). Cuando la unidad entera está cerrada y validada, las propuestas se publican (copian) a la **ruta canónica versionada de repo A** `unidades/UX/propuesta/` con renaming sin prefijo:
 
 ```
 [repo B] unidades/U02-propuesta/U02-propuesta-vocabulario.md
@@ -76,7 +76,7 @@ Aplican a **cualquier** trabajo en el repositorio. Reglas específicas de cada f
 2. **Validar antes de cerrar.** Cada artefacto producido pasa por validación (script, revisión visual o ambas) antes de declararse cerrado.
 3. **No inventar.** Si una palabra, fecha o dato no está en la fuente original, no se añade. Marcar como "verificación pendiente" y consultar al autor.
 4. **Una fuente única.** Cada criterio editorial vive en un único archivo. La duplicación lleva a desincronización.
-5. **Redacción editorial en repo B.** El sistema de trabajo vive en el repo externo `guia-sistema-trabajo`; repo A solo recibe el entregable publicado.
+5. **Redacción editorial en repo B.** El sistema de trabajo vive en el repo externo `temporal-antiguo-guia-ia`; repo A solo recibe el entregable publicado.
 
 ---
 
@@ -99,8 +99,8 @@ python3 diagrama.py
 # Validar inventario de una unidad
 python3 scripts/validar_inventario.py 3
 
-# Integrar una unidad desde su worktree a main (copia + valida + commit del inventario)
-# Por defecto NO regenera reciclaje (fase 2 pausada). Flag --regenerar-reciclaje para forzar.
+# Integrar el inventario de una unidad a main (copia + valida + commit del inventario)
+# El reciclaje no se regenera: regenerar_reciclaje_vocabulario.py está en cuarentena (fase 2 pausada).
 python3 scripts/integrar_unidad.py 6
 ```
 
@@ -122,7 +122,7 @@ Ejemplo concreto (fase 1, extracción de U4):
 
 ## Lo que NO se hace
 
-- No redactar material editorial directamente en repo A — la redacción vive en repo B (`guia-sistema-trabajo`); repo A solo recibe el entregable publicado.
+- No redactar material editorial directamente en repo A — la redacción vive en repo B (`temporal-antiguo-guia-ia`); repo A solo recibe el entregable publicado.
 - No ejecutar el sistema CrewAI antiguo (archivado en repo B, no conectado al sistema actual).
 - No saltarse la validación antes de cerrar un artefacto.
 - No inventar contenido editorial.

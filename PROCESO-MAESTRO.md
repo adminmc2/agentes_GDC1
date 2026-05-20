@@ -6,7 +6,7 @@
 >
 > **Cómo se usa:** lectura obligada antes de cualquier reorganización del repo. Se actualiza conforme se rellenan huecos o se cierran decisiones.
 
-> **Nota de migración (v11.13):** este documento contiene numerosas referencias a rutas `viejo/...` (material del sistema CrewAI v5 anterior y del sistema de trabajo: `viejo/agentes/`, `viejo/materiales/`, `viejo/repertorios/`, `viejo/unidades/U03/`, etc.). Tras la separación en dos repositorios, **todo ese material vive ahora en el repo B** (`guia-sistema-trabajo`, en `~/Desktop/`). Las rutas `viejo/...` de este documento son **punteros históricos**: sustituir mentalmente `viejo/` → raíz de repo B. La reescritura completa de estas referencias queda pendiente de una pasada posterior dedicada a PROCESO-MAESTRO.
+> **Nota de migración (v11.13):** este documento contiene numerosas referencias a rutas `viejo/...` (material del sistema CrewAI v5 anterior y del sistema de trabajo: `viejo/agentes/`, `viejo/materiales/`, `viejo/repertorios/`, `viejo/unidades/U03/`, etc.). Tras la separación en dos repositorios, **todo ese material vive ahora en el repo B** (`temporal-antiguo-guia-ia`, en `~/Desktop/`). Las rutas `viejo/...` de este documento son **punteros históricos**: sustituir mentalmente `viejo/` → raíz de repo B. La reescritura completa de estas referencias queda pendiente de una pasada posterior dedicada a PROCESO-MAESTRO.
 
 ---
 
