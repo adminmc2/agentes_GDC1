@@ -17,7 +17,7 @@ El archivo tiene tres niveles de análisis que se generan por separado:
 | nivel_analisis | Origen | Generado por |
 |---|---|---|
 | `mapa` | `nc1-curso.json` (índice editorial del curso) | Script `regenerar_reciclaje_mapa.py` |
-| `auto` | Inventarios `UX-nc1-inventario.json` (vocabulario_consolidado) | Script `regenerar_reciclaje_vocabulario.py` |
+| `auto` | Inventarios `UX-nc1-inventario.json` (los 5 bloques: vocabulario, gramática, pron/orto, verbal, perífrasis — ver `REDISEÑO-EN-CURSO.md` §2.2) | Script `regenerar_reciclaje_vocabulario.py` |
 | `detalle` | Inventarios (actividades individuales) | Fase futura |
 
 ## Input y output
@@ -60,7 +60,7 @@ Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 ## Reglas críticas
 
 1. **Naming obligatorio:** el `titulo` de un hilo es siempre el nombre canónico del contenido tal como aparece en `nc1-curso.json` o en las claves de los bloques top-level consolidados del inventario (`vocabulario_consolidado.{principal,recurrente}`, `gramatica_consolidada.{principal,recurrente}`, `pronunciacion_ortografia_consolidada.{principal,recurrente}`, `tiempos_y_verbos_consolidado[].lema`). Nunca un nombre inventado o genérico. *(Tras v10.115 la clave `campo_semantico` por actividad fue eliminada; el naming canónico se toma ahora de los bloques consolidados y de las referencias en las 4 listas tipadas por actividad.)*
-2. **Un hilo por campo semántico:** si el nivel `auto` genera hilos separados para dos campos (ej. "Países hispanohablantes" y "Nacionalidades"), el nivel `mapa` también los separa. No se agrupan campos distintos en un mismo hilo.
+2. **Granularidad del hilo por bloque** (ver `REDISEÑO-EN-CURSO.md` §2.2): vocabulario → campo semántico; gramática → categoría gramatical; pron/orto → categoría; verbal → lema; perífrasis → perífrasis. No se agrupan unidades de análisis distintas en un mismo hilo (ej. "Países hispanohablantes" y "Nacionalidades" son dos hilos, no uno).
 3. **Acciones con criterio:** ver `reglas-reciclaje.md` §2 para la tabla de acciones (introduce/amplia/aplica/sistematiza/contrasta).
 4. **Los scripts no inventan:** si un contenido no aparece en la fuente, no se genera hilo. Los scripts solo leen, no interpretan.
 5. **No editar `nc1-reciclaje.json` a mano para hilos mapa/auto.** Para cambiar un hilo: editar `nc1-curso.json` (nivel mapa) o el inventario correspondiente (nivel auto) y regenerar con el script.

@@ -290,9 +290,9 @@ Cierra la pieza D2. La formulación vieja (lista PCIC curada de ~55 subcategorí
 
 ### §6.1. Universo de hilos válidos
 
-El universo de títulos de hilo válidos de fase 2 = los **registries canónicos de fase 1**. Fase 2 **no cura un universo propio**: lo hereda.
+El universo de títulos de hilo válidos de fase 2 = **los 4 registries canónicos de fase 1** (`campos-semanticos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`, `verbos-canonicos.json`) **+ el registry derivado `perifrasis-canonicas.json`** (5.º, propio de fase 2 — ver §6.2). Fase 2 **no cura un universo libre**: hereda los 4 de fase 1 y solo añade el derivado de perífrasis.
 
-- **Cerrado para escritura**: fase 2 no inventa un título canónico. Si fase 1 no lo canonizó, fase 2 no lo crea.
+- **Cerrado para escritura**: fase 2 no inventa un título canónico. Si no está en uno de los 5 registries, fase 2 no lo crea.
 - **Abierto para detección**: si fase 2, al analizar en profundidad, surfacea una **estructura no declarada** en ningún registry, eso es un **hallazgo legítimo** que se escala al autor (misma política que §R.2 "siempre presentes"). No se inventa, no se rechaza: se propone.
 
 ### §6.2. Perífrasis — 5.º registry
@@ -334,7 +334,14 @@ Ambos tipos se **canonizan desde el PCIC A1** (hoy no capturados) como categorí
 
 El bloque `verbal` responde "¿qué verbos y cómo se conjugan?"; el grupo "Tiempos y modos verbales" responde "¿qué reglas y usos?". Planos distintos, no se fusionan.
 
-### §6.5. Tareas de población diferidas
+### §6.5. Sincronizaciones pendientes que arrastra D2
+
+D2 queda cerrado como decisión de modelo, pero deja dos costuras con el contrato operativo de alrededor — anotadas aquí para no perderlas:
+
+1. **Fuente real de perífrasis anticipatorias.** §6.2 dice que `perifrasis-canonicas.json` se poblará desde `estructura_perifrastica` del inventario. Pero el contrato vigente de fase 1 **excluye de `tiempos_y_verbos` los auxiliares de aparición anticipatoria** (`reglas-operativas.md §5.2`, `glosario.md`), y con el auxiliar se excluye la perífrasis. Es decir: una perífrasis que aparece antes de que su auxiliar sea canónico **no viaja** por `estructura_perifrastica`. Hay que decidir — en el paso "tratamiento detallado de formas verbales" — si fase 2 lee también el registro transitorio de anticipaciones (`_migracion_rediseno` / `_fixture_exploratoria`) o si fase 1 preserva esas perífrasis de otro modo. Hasta entonces, la parte "abierto para detección" de §6.1 es correcta en modelo pero incompleta en operabilidad para perífrasis anticipatorias.
+2. **Contrato corto de fase 2 desactualizado.** El `CLAUDE.md` de fase 2 aún describe el nivel `auto` desde `vocabulario_consolidado` y la regla "un hilo por campo semántico" — anterior al modelo de 5 bloques. Sincronizado parcialmente en v11.38; revisión completa cuando fase 2 se reactive.
+
+### §6.6. Tareas de población diferidas
 
 §6 **decide y documenta** el modelo; no ejecuta cambios de registry ahora. Quedan como tareas posteriores (tocan registries de fase 1, listadas en §5):
 
@@ -413,6 +420,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-20 (v11.38)** — Sincronización post-D2: §6.1 precisa la fórmula del universo (4 registries de fase 1 + `perifrasis-canonicas.json` derivado); nueva §6.5 anota las dos costuras que arrastra D2 (fuente de perífrasis anticipatorias, contrato corto de fase 2); `CLAUDE.md` de fase 2 sincronizado (nivel `auto` desde los 5 bloques; regla de granularidad por bloque).
 - **2026-05-20 (v11.37)** — §6 cerrado (D2): universo de hilos válidos = los 5 registries de fase 1 (4 + nuevo `perifrasis-canonicas.json`), cerrado para escritura / abierto para detección. Perífrasis pasa a 5.º bloque (cierra incoherencia §2.2↔§3.3). Bloque gramática sub-organizado por `_grupo` (subsistema gramatical, 7 grupos). Grupo "Tiempos y modos verbales" — flexión/paradigmas + usos, desde PCIC A1 — distinto del bloque `verbal` (lista de verbos). §2.2 actualizada (5 bloques). Población de registries: tarea diferida.
 - **2026-05-20 (v11.34)** — Integración a documento único: `REDISEÑO-EN-CURSO-viejo.md` archivado en `docs/historico/`. Su material vivo sin procesar (§7 R1-R5, §8 siempre-presentes) copiado verbatim al nuevo apéndice §R (Reservorio). Apéndice §N reescrito con la disposición final de cada pieza del viejo (ya migrado / superado en formulación vieja / en reservorio / obsoleto). D2 reetiquetado: la lista PCIC vieja queda superada, la pieza sigue viva. Referencias activas al viejo actualizadas en `PROCESO-MAESTRO.md`, `gramatica-canonica.json` y `CLAUDE.md` de fase 2.
 - **2026-05-20 (v11.33)** — Decisión de alcance cerrada: `comunicacion` y `estrategia` pospuestas a desarrollo posterior. Pieza "Cierre de alcance" retirada de §5 Nivel 1 (pasa a decisión cerrada con nota destacada). Sincronizado `CLAUDE.md` de fase 2 y bitácora de `PROCESO-MAESTRO.md`.
