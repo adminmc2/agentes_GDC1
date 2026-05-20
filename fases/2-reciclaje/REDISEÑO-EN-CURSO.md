@@ -1,6 +1,6 @@
 # Rediseño de fase 2 — modelo IA-first (versión activa)
 
-> **Estado:** EN CONSTRUCCIÓN. Documento vivo del rediseño de fase 2 bajo modelo IA-first. Reemplaza progresivamente a `REDISEÑO-EN-CURSO-viejo.md` (versión vieja, conservada como reservorio histórico hasta que este documento cubra todo lo vigente y el viejo se archive en `docs/historico/`).
+> **Estado:** EN CONSTRUCCIÓN. Documento vivo y **único** del rediseño de fase 2 bajo modelo IA-first. El antiguo `REDISEÑO-EN-CURSO-viejo.md` se archivó en `docs/historico/` (v11.34); su material vivo sin procesar quedó absorbido en el "Reservorio" al final de este documento.
 >
 > **Audiencia:** autor + revisor. El ejecutor (Claude) lo va actualizando paso a paso conforme el autor y el revisor cierran decisiones.
 >
@@ -251,11 +251,10 @@ Lo que falta **decidir** antes de poder escribir contrato.
 | **Tratamiento detallado de formas verbales** | Separar tres planos hoy mezclados: (a) **lema**, (b) **forma verbal concreta** (yo hablo, tú hablas…), (c) **explicación gramatical** asociada al verbo. El hilo verbal debe mostrar la **progresión del paradigma** (qué personas/tiempos se trabajan por unidad). Incluye resolver la anticipación de formas (formas como input incidental antes de que el lema sea canónico). |
 | **Carril propio para las explicaciones gramaticales** | La explicación/cuadro que el libro expone ("cómo se forma el presente") no es el paradigma ni la categoría suelta. Decidir si es hilo propio o atributo del hilo. Necesita espacio de análisis separado. |
 | **Triage declarado / no declarado en índice** (gramática y pron/orto) | NO es un eje binario. Es un **flujo de decisión** de tres salidas para cada categoría que aparece: (1) **declarado literal** — está en el índice del curso tal cual; (2) **reconciliable** — no está literal, pero es un elemento del índice categorizado de otra forma → se reconcilia; (3) **contenido nuevo real** — no encaja en el índice de ningún modo → se escala al autor. La gramática y la pron/orto no declaradas se analizan **en detalle** antes de clasificarlas, no se vuelcan a "no declarado" por defecto. |
-| **D1 — Tabla de equivalencias** (`nc1-equivalencias-hilos.json`) | Vincular hilos `mapa` ↔ `auto` por equivalencia semántica, no por coincidencia de texto. Decidida en el viejo, no poblada. |
-| **D2 — Universo cerrado de hilos canónicos válidos** | Qué hilos pueden existir y cuáles no. |
+| **D1 — Tabla de equivalencias** (`nc1-equivalencias-hilos.json`) | Vincular hilos `mapa` ↔ `auto` por equivalencia semántica, no por coincidencia de texto. Decidida en el viejo, no poblada — pendiente de redefinir en el activo. |
+| **D2 — Universo cerrado de hilos canónicos válidos** | Definir qué hilos pueden existir. La formulación vieja (lista PCIC curada de ~55 subcategorías) queda **superada** por los 4 registries de fase 1; la pieza sigue viva: redefinir el universo a partir de los registries actuales + los bloques derivados aceptados (p. ej. `perifrasis`). Aquí se cierra de paso la incoherencia §2.2↔§3.3 (`perifrasis` no figura en la tabla de bloques de §2.2). |
 | **P1 — Almacenamiento de datos enriquecidos** (opción A) | **Decisión heredada a ratificar/formalizar**, no pendiente: el viejo cerró P1 en **opción A** (2026-05-10) — los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta ratificarla en el modelo nuevo y formalizar el contrato de regeneración. |
-| **§8 — Componentes "siempre presentes no indexados"** | Conjunciones, adverbios sí/no… Política de tratamiento. Reubicar del viejo al activo. |
-| **Hallazgos del revisor** (§5 del viejo) | Revisar uno a uno e integrar o descartar. |
+| **§8 — Componentes "siempre presentes no indexados"** | Conjunciones, adverbios sí/no… Política de tratamiento. Material heredado en el **Reservorio §R.2**, pendiente de procesar. |
 
 ### Nivel 2 — Contrato operativo a producir
 
@@ -270,7 +269,7 @@ Lo que falta **escribir** para que fase 2 tenga el mismo estándar de contrato q
 ### Nivel 3 — Implementación de Capa 1 y Capa 2
 
 - **Procedimiento concreto de Capa 1** (script determinista): qué genera, en qué orden.
-- **Validador cross-unidad R1-R5** — reglas de validación cruzada heredadas del viejo.
+- **Validador cross-unidad R1-R5** — reglas de validación cruzada. Material heredado en el **Reservorio §R.1**, pendiente de procesar.
 - **Sesión IA de Capa 2** — cómo se ejecuta el enriquecimiento, qué inputs recibe.
 - **Wiring** — encadenado de Capa 1 → Capa 2 → integración.
 
@@ -285,20 +284,67 @@ Fase 2 está PAUSADA. Reactivar exige, en este orden:
 
 ---
 
-## §N. Apéndice — Qué se aprovecha del REDISEÑO-EN-CURSO-viejo.md
+## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
-Tabla de seguimiento de qué piezas de la versión vieja se importan al documento nuevo, cuáles se descartan y cuáles se reformulan. Se completa progresivamente con cada paso del rediseño.
+El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas. Tres estados: **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva pero su versión vieja no sirve; se redefine en el activo), **en reservorio** (material vivo sin procesar, copiado al Reservorio de este documento).
 
-| Pieza del viejo | Estado | Destino en el documento activo |
+| Pieza del viejo | Estado | Disposición |
 |---|---|---|
-| Modelo objetivo (§2 del viejo) | Pendiente revisión | — |
-| D1 — Tabla de equivalencias canónica externa | Pendiente revisión | — |
-| D2 — Universo cerrado de hilos canónicos válidos | Pendiente revisión | — |
-| D3 — Disparador de regeneración: Claude Code | Vigente (heredado) | Reformulado y absorbido en §1.5 (régimen temporal dual) |
-| P1 — Almacenamiento de datos enriquecidos | Decidido en el viejo (opción A, 2026-05-10) | Heredado a ratificar/formalizar — listado en §5 Nivel 1 |
-| Capa 1 — R1-R5 validación cruzada cross-unidad | Pendiente revisión | — |
-| §8 — Componentes "siempre presentes no indexados" | Vigente (registrado v10.117) | Pendiente reubicación en documento activo |
-| Hallazgos del revisor (§5 del viejo) | Pendiente revisión | — |
+| §1 Punto de partida (el problema) | Obsoleto | Diagnóstico histórico que motivó el rediseño. No se migra. |
+| §2 Modelo objetivo (mapa/auto/detalle) | Ya migrado | Absorbido en §4 (modelo recursivo del hilo). |
+| §3 · D1 — Tabla de equivalencias canónica | Superado en su formulación vieja | La pieza sigue pendiente; se redefine en el activo. Listada en §5 Nivel 1. |
+| §3 · D2 — Universo cerrado de hilos válidos | Superado en su formulación vieja | La formulación vieja (lista PCIC curada de ~55 subcategorías) queda superada por los 4 registries de fase 1. La **pieza sigue viva**: definir el universo válido de hilos a partir de los registries actuales + los bloques derivados aceptados (p. ej. `perifrasis`). Pendiente de redefinición en el activo. Listada en §5 Nivel 1. |
+| §3 · D3 — Disparador de regeneración: Claude Code | Ya migrado | Reformulado y absorbido en §1.5 (régimen temporal dual). |
+| §4 · P1 — Almacenamiento de datos enriquecidos | Ya migrado | Decidido en opción A (2026-05-10); reflejado en §5 Nivel 1 como decisión heredada a ratificar. |
+| §5 Hallazgos del revisor | Obsoleto | Un solo hallazgo, ya cerrado por D1+D2. No se migra. |
+| §6 Pasos de migración | Obsoleto | Reemplazado por la hoja de ruta de §5. No se migra. |
+| §7 · R1-R5 validación cruzada cross-unidad | En reservorio | Material vivo sin procesar. Copiado al Reservorio. Se procesará en §5 Nivel 3. |
+| §8 · Componentes "siempre presentes no indexados" | En reservorio | Material vivo sin procesar. Copiado al Reservorio. Se procesará en §5 Nivel 1. |
+
+---
+
+## §R. Reservorio — material heredado sin procesar
+
+> **Procedencia:** copiado **verbatim** de `REDISEÑO-EN-CURSO-viejo.md` §7 y §8 al archivar ese documento (v11.34, 2026-05-20).
+> **Estado:** material vivo **sin procesar**. No es decisión cerrada del modelo nuevo — es materia prima a discutir y reformular cuando el roadmap §5 llegue a estas piezas. Al procesarse, cada bloque se mueve a una sección propia (§6+) y se retira de aquí.
+
+### §R.1 — Capa 1: Validación cruzada cross-unidad (heredado del viejo §7, cerrado en diseño 2026-05-12)
+
+> **Origen:** decisiones derivadas del rediseño de fase 1 que requieren chequeos cross-unidad. Estas reglas viven en el validador `scripts/validar_inventarios_cross.py` (capa 1 del pipeline de fase 2 redefinida).
+>
+> **Nota:** este bloque sustituye conceptualmente al viejo modelo "mapa + auto" en lo relativo a coherencia cross-unidad. La materialización (código del validador) se hace en E4a del plan del rediseño de fase 1, no aquí.
+
+**R1 — Detección de anticipación de léxico.** *Premisa:* fase 1 codifica `recurrente` solo si el léxico aparece con frecuencia, no está en el índice de la propia unidad, **y** no es canónico en una unidad posterior. Lo que cumple las dos primeras condiciones pero falla la tercera lo deja silenciosamente fuera. Fase 2 lo detecta y reporta. *Algoritmo:* (1) leer el índice editorial completo (`nc1-curso.json`); (2) leer el `principal` de cada inventario; (3) leer el `recurrente` de cada inventario; (4) re-ejecutar análisis de frecuencias — para cada término frecuente que no está en `principal` ni `recurrente` de U(n): si es canónico en U(n+k) posterior → alerta de anticipación; si es canónico solo en U(n−k) anterior o en ninguna → no es alerta. *Output:* alertas `{unidad, termino, unidad_canónica, frecuencia, ejemplos}`.
+
+**R2 — Detección de inventos** (validación intra-unidad asumida como pre-condición). "No inventar palabras" es regla de fase 1. Fase 2 ejecuta un chequeo redundante: cada palabra de `vocabulario_consolidado` debe aparecer literalmente en alguna actividad/cuadro de la unidad. Si falla, indica bug del extractor.
+
+**R3 — Detección de errores de clasificación semántica.** Fase 2 usa el canon (`campos-semanticos-canonicos.json`) para detectar palabras mal categorizadas (ej. `campeón` en `Nacionalidades`). Regla intra-unidad de fase 1; fase 2 la usa como sanity check post-extracción.
+
+**R4 — Inconsistencias de progresión** (regla preexistente): léxico `recurrente` en U(n) que no fue `principal` en ninguna U(n−k); dos unidades con nombres distintos para el mismo contenido semántico; verbos en `vocabulario_consolidado` que deberían vivir en `tiempos_y_verbos_consolidado`.
+
+**R5 — Coherencia bidireccional de trazabilidad** (asumida como pre-condición). La coherencia entre `actividad.X` y `top-level.X.fuentes` la chequea el validador intra-unidad de fase 1. Fase 2 la asume y aborta si no se cumple.
+
+*Estado heredado:* diseño de reglas cerrado el 2026-05-12; implementación en `validar_inventarios_cross.py` pendiente.
+
+### §R.2 — Componentes "siempre presentes no indexados" (heredado del viejo §8, registrado v10.117)
+
+**Definición.** Componentes lingüísticos que aparecen sistemáticamente en el corpus de NC1 pero el libro NO los enseña como contenido en el índice editorial. Su omnipresencia es un fenómeno cross-unidad detectable; su tratamiento canónico no es trivial.
+
+**Por qué no se canonizan en fase 1.** El registry de fase 1 se ancla al criterio "materialmente presente y analíticamente necesario". Eso excluye material que aparece como input pragmático del corpus pero no se trabaja como contenido enseñado. Canonizarlos automáticamente inflaría el registry.
+
+**Responsabilidad de fase 2.** Fase 2 debe **proponer al autor** el tratamiento canónico cuando detecte el patrón de presencia sistemática cross-unidad. La propuesta puede ser: canonizar como categoría cross-unidad; tratarlos como fenómeno transversal en un bloque analítico de `nc1-reciclaje.json`; o ignorarlos. Decide el autor; fase 2 propone con evidencia.
+
+**Lista inicial de candidatos** (detectados durante v10.117):
+
+| Candidato | Estado | Evidencia | Pregunta para fase 2 |
+|---|---|---|---|
+| Conjunciones copulativas (`y`, `e`) | NO canonizadas en fase 1 | Omnipresentes como coordinador de constituyentes | ¿Categoría gramatical cross-unidad o input pragmático? |
+| Conjunciones disyuntivas (`o`, `u`) | NO canonizadas | Frecuentes en cuestionarios y opciones | Idem |
+| Adverbios de afirmación y negación (`sí`, `no`, `también`, `tampoco`) | NO canonizadas | "sí"/"no" omnipresentes desde U1; "también"/"tampoco" tardíos | ¿Se separan por momento de aparición? |
+
+**Política operativa.** (1) Fase 1 no los canoniza automáticamente; si una extracción surfacea uno con anclaje material claro, se escala al autor por §0.1. (2) Fase 2 los detecta como patrón al agregar inventarios cross-unidad — produce un `hallazgo`, no una modificación silenciosa. (3) El autor decide caso por caso. (4) Si el autor canoniza, se añade al registry de fase 1 con `_pcic_ref` y `_apariciones`, y se actualiza `_meta.siempre_presentes_no_indexados`.
+
+*(El viejo §8 dejaba un epígrafe "Criterio de ampliación" sin cuerpo; se completará al procesar esta pieza.)*
 
 ---
 
@@ -307,6 +353,7 @@ Tabla de seguimiento de qué piezas de la versión vieja se importan al document
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-20 (v11.34)** — Integración a documento único: `REDISEÑO-EN-CURSO-viejo.md` archivado en `docs/historico/`. Su material vivo sin procesar (§7 R1-R5, §8 siempre-presentes) copiado verbatim al nuevo apéndice §R (Reservorio). Apéndice §N reescrito con la disposición final de cada pieza del viejo (ya migrado / superado en formulación vieja / en reservorio / obsoleto). D2 reetiquetado: la lista PCIC vieja queda superada, la pieza sigue viva. Referencias activas al viejo actualizadas en `PROCESO-MAESTRO.md`, `gramatica-canonica.json` y `CLAUDE.md` de fase 2.
 - **2026-05-20 (v11.33)** — Decisión de alcance cerrada: `comunicacion` y `estrategia` pospuestas a desarrollo posterior. Pieza "Cierre de alcance" retirada de §5 Nivel 1 (pasa a decisión cerrada con nota destacada). Sincronizado `CLAUDE.md` de fase 2 y bitácora de `PROCESO-MAESTRO.md`.
 - **2026-05-20 (v11.32)** — Corregida la incoherencia de P1: el viejo lo cerró en opción A (2026-05-10); el documento activo lo marcaba como "pendiente decisión" en §5 y en el apéndice. Reetiquetado como decisión heredada a ratificar/formalizar en ambos sitios.
 - **2026-05-20 (v11.31)** — §5 añadido: hoja de ruta del trabajo pendiente en 4 niveles (decisiones de modelo · contrato operativo · implementación Capa 1/2 · reactivación). Integra cuestiones nuevas: formas verbales, carril de explicaciones gramaticales, triage declarado/reconciliable/nuevo para gramática y pron/orto, cierre de alcance de comunicación/estrategia.
