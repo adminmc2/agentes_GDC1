@@ -58,6 +58,49 @@ Convertir el PDF del libro de una unidad en un JSON estructurado (`UX-nc1-invent
 
 ---
 
+## Registries vigentes y procedimiento de corrección
+
+### Registries — autoridad de naming (regla crítica 7, §5.6)
+
+Todo valor canónico que entra al JSON debe ser literal de su registry:
+
+| Dimensión | Archivo |
+|---|---|
+| Léxico | `fases/1-extraccion-inventario/campos-semanticos-canonicos.json` |
+| Gramatical | `fases/1-extraccion-inventario/gramatica-canonica.json` |
+| Pron/orto | `fases/1-extraccion-inventario/pronunciacion-ortografia-canonica.json` |
+| Verbal | `fases/1-extraccion-inventario/verbos-canonicos.json` |
+
+Soporte PCIC A1: `pcic-a1-{vocabulario,gramatica,pronunciacion-ortografia,comunicacion}.json`.
+
+### Convenciones críticas para futuras correcciones
+
+1. **Naming literal del registry** (§5.6). No inventar canónicos. Si falta uno, **escalar §0.1 al autor** en chat.
+2. **Notación barra masc/fem** (`lema/-a`) cuando ambas flexiones aparecen materialmente. El matcher `_expand_needle` despliega masc + fem + plural por substring.
+3. **Colores** es categoría independiente, no se mezcla con `Adjetivos descriptivos`.
+4. **Fuentes verificadas literalmente**: cada `fuente` declarada en un item debe contener el item literal en el texto de la actividad (campos `INPUT_FIELDS_LIST`: instruccion_original, datos, dialogo, texto, texto_completo, items_libro, muestra_de_lengua, opciones, audio, imagen + respuestas). Si no, el validador falla §5.10A.
+5. **Actividades-relaciona**: verificar siempre las actividades fundacionales del campo (`columnas_relaciona`, `items_libro` con flexiones), no solo `palabras_recuadro` de actividades posteriores.
+
+### Comandos canónicos
+
+```bash
+python3 scripts/validar_inventario.py N           # validar unidad N (0-9)
+python3 scripts/sanear_inventario.py --unit N --apply  # sanear §5.10/§5.11 antes de validar
+python3 diagrama.py                                # dashboard local (http://localhost:8081)
+# Slash command: /check-fase1 — valida las 10 unidades en bucle
+```
+
+### Cómo aplicar una corrección sin romper la estructura
+
+1. Editar el JSON de la unidad afectada.
+2. `python3 scripts/validar_inventario.py N` → debe dar 0/0/0.
+3. Si falla §5.10A: revisar fuentes / aplicar barra `/-a` / mover canónico.
+4. Documentar la decisión en `_decisiones_ia` del propio JSON.
+5. Bumpear versión en `CHANGELOG.md` + bitácora en `REVIEW.md`.
+6. Si toca registry: bumpear versión del registry + actualizar `_apariciones`.
+
+---
+
 ## Para qué consultar qué archivo
 
 | Pregunta | Archivo |
