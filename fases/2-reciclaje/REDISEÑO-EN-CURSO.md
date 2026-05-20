@@ -236,6 +236,54 @@ El campo `nivel_analisis` **no clasifica el hilo** en tres tipos paralelos — i
 
 ---
 
+## §5. Hoja de ruta — trabajo pendiente (definida 2026-05-20)
+
+Inventario vivo de lo que falta para cerrar el rediseño de fase 2 al estándar de fase 1 (contrato operativo completo, no solo modelo conceptual). Ordenado en **cuatro niveles**; cada nivel se aborda cuando el anterior está suficientemente cerrado. Las piezas se mueven a secciones propias (§6+) conforme se discuten y cierran.
+
+### Nivel 1 — Decisiones de modelo pendientes
+
+Lo que falta **decidir** antes de poder escribir contrato.
+
+| Pieza | Qué resuelve |
+|---|---|
+| **Tratamiento detallado de formas verbales** | Separar tres planos hoy mezclados: (a) **lema**, (b) **forma verbal concreta** (yo hablo, tú hablas…), (c) **explicación gramatical** asociada al verbo. El hilo verbal debe mostrar la **progresión del paradigma** (qué personas/tiempos se trabajan por unidad). Incluye resolver la anticipación de formas (formas como input incidental antes de que el lema sea canónico). |
+| **Carril propio para las explicaciones gramaticales** | La explicación/cuadro que el libro expone ("cómo se forma el presente") no es el paradigma ni la categoría suelta. Decidir si es hilo propio o atributo del hilo. Necesita espacio de análisis separado. |
+| **Triage declarado / no declarado en índice** (gramática y pron/orto) | NO es un eje binario. Es un **flujo de decisión** de tres salidas para cada categoría que aparece: (1) **declarado literal** — está en el índice del curso tal cual; (2) **reconciliable** — no está literal, pero es un elemento del índice categorizado de otra forma → se reconcilia; (3) **contenido nuevo real** — no encaja en el índice de ningún modo → se escala al autor. La gramática y la pron/orto no declaradas se analizan **en detalle** antes de clasificarlas, no se vuelcan a "no declarado" por defecto. |
+| **Cierre de alcance: `comunicacion` y `estrategia`** | El contrato activo (`CLAUDE.md` de fase 2) todavía nombra funciones comunicativas y estrategias como contenido que el reciclaje modela, pero el rediseño nuevo (§2-§4) no las trata de forma visible. Decidir explícitamente: ¿fase 2 las cubre, las pospone o las excluye? Sin esta decisión el alcance queda ambiguo. |
+| **D1 — Tabla de equivalencias** (`nc1-equivalencias-hilos.json`) | Vincular hilos `mapa` ↔ `auto` por equivalencia semántica, no por coincidencia de texto. Decidida en el viejo, no poblada. |
+| **D2 — Universo cerrado de hilos canónicos válidos** | Qué hilos pueden existir y cuáles no. |
+| **P1 — Almacenamiento de datos enriquecidos** (opción A vs B) | Dónde viven los datos del nivel `detalle`. Decisión pendiente heredada del viejo. |
+| **§8 — Componentes "siempre presentes no indexados"** | Conjunciones, adverbios sí/no… Política de tratamiento. Reubicar del viejo al activo. |
+| **Hallazgos del revisor** (§5 del viejo) | Revisar uno a uno e integrar o descartar. |
+
+### Nivel 2 — Contrato operativo a producir
+
+Lo que falta **escribir** para que fase 2 tenga el mismo estándar de contrato que fase 1.
+
+- **Prompt envoltorio de fase 2** por unidad (entry point operativo).
+- **Schema / contrato de `nc1-reciclaje.json`** — shape canónico del hilo y del evento (hoy disperso, sin documento de contrato).
+- **Reglas operativas reescritas** — `reglas-reciclaje.md` está en shape viejo; reescribir al modelo IA-first.
+- **Persistencia de las decisiones de la Capa 2 IA** — dónde y cómo se guardan las propuestas decisionales.
+- **Comandos de validación + criterio de cierre** — qué se ejecuta y qué gate certifica que el reciclaje de una unidad está cerrado.
+
+### Nivel 3 — Implementación de Capa 1 y Capa 2
+
+- **Procedimiento concreto de Capa 1** (script determinista): qué genera, en qué orden.
+- **Validador cross-unidad R1-R5** — reglas de validación cruzada heredadas del viejo.
+- **Sesión IA de Capa 2** — cómo se ejecuta el enriquecimiento, qué inputs recibe.
+- **Wiring** — encadenado de Capa 1 → Capa 2 → integración.
+
+### Nivel 4 — Reactivación operativa
+
+Fase 2 está PAUSADA. Reactivar exige, en este orden:
+
+1. **Adaptar los 2 scripts** `regenerar_reciclaje_*.py` del shape viejo (v10.114) al shape de fase 1 actual.
+2. **Implementar el validador cross-unidad** (R1-R5).
+3. **Regenerar `nc1-reciclaje.json` íntegro** (181 hilos hoy congelados).
+4. **Sincronizar dashboard + docs raíz** — vista de reciclaje del dashboard (incluido el modal `detalle` de §4.4) y actualización de `CLAUDE.md` de fase 2, `CLAUDE.md` raíz, `REVIEW.md`, `PROCESO-MAESTRO.md`.
+
+---
+
 ## §N. Apéndice — Qué se aprovecha del REDISEÑO-EN-CURSO-viejo.md
 
 Tabla de seguimiento de qué piezas de la versión vieja se importan al documento nuevo, cuáles se descartan y cuáles se reformulan. Se completa progresivamente con cada paso del rediseño.
@@ -258,4 +306,5 @@ Tabla de seguimiento de qué piezas de la versión vieja se importan al document
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-20 (v11.31)** — §5 añadido: hoja de ruta del trabajo pendiente en 4 niveles (decisiones de modelo · contrato operativo · implementación Capa 1/2 · reactivación). Integra cuestiones nuevas: formas verbales, carril de explicaciones gramaticales, triage declarado/reconciliable/nuevo para gramática y pron/orto, cierre de alcance de comunicación/estrategia.
 - **2026-05-15 (v10.136)** — §4 cerrado: modelo recursivo del hilo (`mapa → auto → detalle` como capas acumulativas, no paralelas; distinción con Capa 1/Capa 2 de procesamiento) + función del reciclaje como catálogo acumulativo con criterios documentados (5-6 por unidad, 70/30, análisis contextual) + nivel `detalle` como justificación lingüístico-pedagógica representada como grafo de nodos-enlaces y visualizada como modal a página completa en el dashboard.

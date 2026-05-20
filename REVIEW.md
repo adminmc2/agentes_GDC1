@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-20 (v11.30 — Fix de consistencia en `fases/1-extraccion-inventario/CLAUDE.md`: una cita a "regla crítica 6" sobre naming canónico debía decir "regla crítica 7". Sin cambios funcionales).
+> **Última actualización:** 2026-05-20 (v11.31 — REDISEÑO fase 2 §5: hoja de ruta del trabajo pendiente en 4 niveles. Solo documento de rediseño; fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

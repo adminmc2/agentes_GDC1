@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.31 — 2026-05-20] — REDISEÑO fase 2 §5: hoja de ruta del trabajo pendiente
+
+Añadida §5 a `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`: hoja de ruta viva del trabajo pendiente para cerrar el rediseño de fase 2 al estándar de contrato de fase 1. Estructurada en 4 niveles: (1) decisiones de modelo pendientes — incluye cuestiones nuevas (tratamiento detallado de formas verbales, carril propio para explicaciones gramaticales, triage declarado/reconciliable/contenido-nuevo para gramática y pron/orto, cierre de alcance de `comunicacion`/`estrategia`) + piezas heredadas del viejo (D1, D2, P1, §8, hallazgos del revisor); (2) contrato operativo a producir (prompt, schema de `nc1-reciclaje.json`, reglas reescritas, persistencia de decisiones IA, validación y gates); (3) implementación de Capa 1/Capa 2 (procedimiento, validador R1-R5, wiring); (4) reactivación operativa (adaptar scripts, validador cross-unidad, regeneración íntegra, sincronización dashboard/docs). Solo documento de rediseño; fase 2 sigue PAUSADA.
+
 ## [v11.30 — 2026-05-20] — Fix de consistencia en `fases/1-extraccion-inventario/CLAUDE.md`
 
 La tabla "Para qué consultar qué archivo" citaba "(regla crítica 6)" al hablar de la política de naming canónico, pero esa es la **regla crítica 7** ("Canon canónico literal"); la 6 es "Documentación de fase 1 obligatoria". Corregida la referencia. Sin cambios funcionales.
