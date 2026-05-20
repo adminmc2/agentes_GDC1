@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.23 — 2026-05-20] — Residuo `.dockerignore` en el paso E3 de REVIEW
+
+Hallazgo del revisor tras v11.22: el paso futuro E3 de `REVIEW.md` (Meta-lista de archivos a limpiar) aún nombraba `.dockerignore`, que no existe desde v11.21. Añadida nota inline aclarando que ya no aplica. Cierra el último rastro de `.dockerignore` en el plan vivo.
+
+---
+
 ## [v11.22 — 2026-05-20] — Residuo `.dockerignore` en PROCESO-MAESTRO
 
 Hallazgo del revisor tras v11.21: `PROCESO-MAESTRO.md:255` mencionaba `.dockerignore` en una lista de tarea sin marcar como superada. Añadida nota inline "tarea histórica ya superada; `.dockerignore` eliminado en v11.21". Sin más cambios.

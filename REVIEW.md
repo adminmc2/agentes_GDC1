@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-20 (v11.22 — Residuo menor tras v11.21: `PROCESO-MAESTRO.md:255` mencionaba `.dockerignore` en una lista de tarea sin marcar como superada; añadida nota inline de tarea histórica. Cierra el rastro del stack de despliegue retirado).
+> **Última actualización:** 2026-05-20 (v11.23 — Residuo menor tras v11.22: el paso futuro E3 de este REVIEW aún nombraba `.dockerignore` en su Meta-lista; añadida nota de que ya no aplica (eliminado en v11.21). Cierra el último rastro de `.dockerignore` en el plan vivo).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >
@@ -388,7 +388,7 @@ Para cada fase nueva (2 a 8), repetir la secuencia C.X.1 → C.X.6:
 ### E3. Eliminar `viejo/`
 **Pre-condición:** E2 cerrado + autor da OK explícito.
 **Archivos a eliminar:** `viejo/` completo.
-**Meta:** `CLAUDE.md`, `README.md`, `PROCESO-MAESTRO.md`, `.gitignore`, `.dockerignore` — eliminar todas las referencias.
+**Meta:** `CLAUDE.md`, `README.md`, `PROCESO-MAESTRO.md`, `.gitignore` — eliminar todas las referencias. (`.dockerignore` ya no aplica: eliminado con el stack de despliegue en v11.21.)
 **Gate:** sin referencias residuales en código ni docs.
 
 ### E4. Eliminar `PROCESO-MAESTRO.md` y `REVIEW.md`
@@ -468,6 +468,7 @@ En cada iteración:
 
 ## Bitácora de actualizaciones del REVIEW
 
+- **2026-05-20** — Residuo `.dockerignore` en el paso E3 de REVIEW (v11.23). Hallazgo del revisor tras v11.22: el paso futuro E3 ("Eliminar `viejo/`") tenía una Meta-lista de archivos a limpiar que aún nombraba `.dockerignore` — archivo inexistente desde v11.21. Es un rastro en el plan vivo, no en bitácora. Añadida nota inline: "`.dockerignore` ya no aplica: eliminado con el stack de despliegue en v11.21". Último rastro de `.dockerignore` cerrado.
 - **2026-05-20** — Residuo `.dockerignore` en PROCESO-MAESTRO (v11.22). Hallazgo del revisor tras v11.21: `PROCESO-MAESTRO.md:255` aún mencionaba `.dockerignore` en una lista de tarea no marcada como superada. `.dockerignore` ya no existe en repo A. Añadida nota inline "tarea histórica ya superada; `.dockerignore` eliminado en v11.21". Cierra el último rastro del stack de despliegue.
 - **2026-05-20** — Retirada del stack de despliegue Docker/Railway (v11.21). Repo A ya no se despliega en la nube — el dashboard es herramienta local (`python3 diagrama.py`). Eliminados `Dockerfile`, `.dockerignore`, `railway.toml`. Razón (acordada con autor): el despliegue tenía sentido cuando se compartía el dashboard con el equipo editorial y los módulos de agentes vivían en este repo; tras la migración a dos repos (los agentes están en repo B) y la decisión de no desplegar repo A, el stack quedó sin uso — y `.dockerignore` arrastraba además 7 líneas `viejo/` muertas. Ni se mueve a repo B (es archival, no se despliega) ni se conserva: se elimina; el `Dockerfile` es trivial de recrear si algún día se necesita. `requirements.txt` se mantiene (lo necesita el `.venv` local). Referencias actualizadas: `CLAUDE.md` (estructura), `README.md` (estructura + fila del stack: "Ejecución — local, sin despliegue"), `PROCESO-MAESTRO.md` (estructura), `REVIEW.md` (estado global de Infraestructura, sección B5 marcada ⊘ SUPERADO con banner explicativo, tabla de meta-actualización, tablas de archivos/código). Hallazgo del revisor incorporado: el lote incluyó REVIEW.md (no solo CLAUDE/README/PROCESO-MAESTRO) y se ajustó la frase de README que decía "Railway disponible si se reactiva" — habría quedado contradiciendo la retirada. Bitácora histórica de CHANGELOG/REVIEW intacta (registro de cuando B5 estuvo activo).
 - **2026-05-20** — Renombrado de scripts: `sanear_inventario.py` y `matcher.py` (v11.20). Lote 3 (naming) y cierre de la revisión de `scripts/`. `cleanup_v150.py` → `sanear_inventario.py`: el `v150` sugería un one-shot pero es la herramienta de saneamiento §5.10/§5.11 activa del flujo de fase 1. `migrate_at_r_v10145.py` → `matcher.py`: su nombre era de la CLI de migración @R v10.145 (one-shot cumplida), pero su valor vivo es la librería matcher (expand_needle, match_substring, norm, gather_text, etc.) que importa `sanear_inventario.py`. Renombrado limpio con `git mv` (no alias transitorio — evita doble mantenimiento) + actualización exhaustiva de referencias activas: `CLAUDE.md` (Comandos básicos), `prompt.md` (paso 5 del flujo), `validar_inventario.py` (2 comentarios), `schema-inventario.md` (§A.3), el `import` de `sanear_inventario.py` y los docstrings de ambos archivos (con nota "Antes `X`"). El histórico de CHANGELOG/REVIEW no se reescribe — los nombres viejos eran correctos en su época. Verificado: `import matcher` desde `sanear_inventario.py` OK, `sanear_inventario.py --unit 0` corre, validador U0 → 0/0/0. **Revisión de `scripts/` completa**: Lote 1 (archivar one-shot real), Lote 2 (cuarentena del roto), Lote 3 (naming) — los 3 cerrados.
