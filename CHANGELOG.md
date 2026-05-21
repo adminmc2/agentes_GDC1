@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.43 — 2026-05-21] — REDISEÑO fase 2: §9 generalizado + D1 absorbida
+
+Cierre de la pieza D1 (tabla de equivalencias) en `REDISEÑO-EN-CURSO.md`. (1) El triage §9 se **generaliza a los 5 bloques** — la lógica declarado/reconciliable/nuevo no era específica de gramática, vale para vocabulario, gramática, pron/orto, verbal y perífrasis. (2) Nueva §9.5: `procedencia_indice` (triage) y `etiquetas` (§2.3) son **dos ejes ortogonales** del evento — el triage añade un eje, no sustituye las etiquetas; un evento lleva los dos. (3) Nueva §9.6: **D1 queda absorbida por el triage** — el archivo curado `nc1-equivalencias-hilos.json` del rediseño viejo es obsoleto; la reconciliación índice↔canónico es la salida `reconciliado` del triage, resuelta evento a evento como propuesta IA con cierre humano. Actualizados §5 Nivel 1 (D1 retirada) y apéndice §N. Con esto el Nivel 1 del roadmap queda completo salvo §R.2 (siempre-presentes).
+
 ## [v11.42 — 2026-05-21] — REDISEÑO fase 2 §9: triage índice
 
 Cerrada la pieza "triage declarado/reconciliable/contenido nuevo" en `REDISEÑO-EN-CURSO.md` (nueva §9). Para gramática y pron/orto: cada aparición de una categoría se clasifica respecto al índice del curso en tres salidas — `declarado`, `reconciliado` o `nuevo`. El declarado literal lo precomputa la Capa 1 (coincidencia mecánica); reconciliable y nuevo los analiza la Capa 2 IA como propuestas con cierre humano (una categoría nueva genera propuesta al autor: canonizar en registry de fase 1 o dejar como hallazgo, tipo §R.2). El estatus se marca por evento (categoría-unidad), registrado en el campo `procedencia_indice`. Además: anclada en §5 Nivel 2 la nota de §8.4 (serialización de `que_dice_el_libro`). Actualizado §5 Nivel 1.

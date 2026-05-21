@@ -250,7 +250,6 @@ Lo que falta **decidir** antes de poder escribir contrato.
 
 | Pieza | Qué resuelve |
 |---|---|
-| **D1 — Tabla de equivalencias** (`nc1-equivalencias-hilos.json`) | Vincular hilos `mapa` ↔ `auto` por equivalencia semántica, no por coincidencia de texto. Decidida en el viejo, no poblada — pendiente de redefinir en el activo. |
 | **P1 — Almacenamiento de datos enriquecidos** (opción A) | **Decisión heredada a ratificar/formalizar**, no pendiente: el viejo cerró P1 en **opción A** (2026-05-10) — los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta ratificarla en el modelo nuevo y formalizar el contrato de regeneración. |
 | **§8 — Componentes "siempre presentes no indexados"** | Conjunciones, adverbios sí/no… Política de tratamiento. Material heredado en el **Reservorio §R.2**, pendiente de procesar. |
 
@@ -442,17 +441,17 @@ El `que_dice_el_libro` y los `analisis_ia` de los eventos son **insumos** que el
 
 ---
 
-## §9. Triage índice — estatus de cada categoría por evento (paso 9 — definido 2026-05-21)
+## §9. Triage índice — estatus de cada contenido por evento (paso 9 — definido 2026-05-21, generalizado a los 5 bloques en v11.43)
 
-Aplica a los bloques **gramática** y **pronunciación/ortografía**. Cada vez que una categoría aparece en una unidad, el triage determina su estatus respecto al índice editorial del curso (`nc1-curso.json`).
+Aplica a **los 5 bloques** (vocabulario, gramática, pron/orto, verbal, perífrasis). Cada vez que un contenido aparece en una unidad, el triage determina su estatus respecto al índice editorial del curso (`nc1-curso.json`). La lógica "¿declarado / reconciliable / nuevo?" no es específica de gramática — vale para cualquier contenido.
 
 ### §9.1. Las tres salidas
 
-1. **Declarado literal** — la categoría coincide con una entrada del índice del curso para esa unidad.
+1. **Declarado literal** — el contenido coincide con una entrada del índice del curso para esa unidad.
 2. **Reconciliable** — no está literal en el índice, pero es el **mismo contenido** que una entrada del índice declarada con otro nombre.
 3. **Contenido nuevo real** — aparece en el libro pero **no está en el índice** y **no es reconciliable** con ninguna entrada. Contenido que el libro trae sin que el índice lo declare.
 
-Las categorías no declaradas **no se vuelcan a "nuevo" por defecto**: se analizan en detalle para distinguir reconciliable de nuevo real.
+Lo no declarado **no se vuelca a "nuevo" por defecto**: se analiza en detalle para distinguir reconciliable de nuevo real.
 
 ### §9.2. Quién aplica cada salida
 
@@ -472,6 +471,21 @@ El estatus del triage se marca **por evento** (categoría-unidad), **no** una so
 
 El evento del hilo lleva un campo **`procedencia_indice`** con valor `declarado` | `reconciliado` | `nuevo`. Si es `reconciliado`, se anota además a qué entrada del índice equivale. El campo es resultado de propuesta — la parte no mecánica (reconciliado/nuevo) queda pendiente de cierre humano.
 
+### §9.5. `procedencia_indice` y `etiquetas` son dos ejes ortogonales
+
+El triage **añade un eje nuevo** al evento; no sustituye ni se mezcla con las etiquetas de §2.3. Un evento lleva **los dos**:
+
+| Eje | Valores | Qué responde |
+|---|---|---|
+| `etiquetas` (§2.3) | introduce, amplia, aplica, sistematiza, contrasta, anticipacion (+ discrimina en pron/orto) | ¿Qué **hace** la unidad con el contenido? |
+| `procedencia_indice` (§9) | declarado, reconciliado, nuevo | ¿Qué **estatus** tiene respecto al índice del curso? |
+
+Ejemplos de combinación: `etiquetas: ["amplia"]` + `procedencia_indice: "declarado"`; `etiquetas: ["anticipacion"]` + `procedencia_indice: "nuevo"`.
+
+### §9.6. D1 — tabla de equivalencias: absorbida en §9
+
+La pieza **D1** del rediseño viejo (`nc1-equivalencias-hilos.json`, una tabla curada a mano que vinculaba títulos del índice con campos de los inventarios por equivalencia semántica) **queda absorbida por el triage**. Ya no hace falta un archivo de equivalencias curado: la reconciliación índice↔canónico es la salida `reconciliado` del triage §9, y el triage aplica a los 5 bloques. La equivalencia se resuelve evento a evento como propuesta IA con cierre humano, no como tabla estática previa.
+
 ---
 
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
@@ -482,7 +496,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 |---|---|---|
 | §1 Punto de partida (el problema) | Obsoleto | Diagnóstico histórico que motivó el rediseño. No se migra. |
 | §2 Modelo objetivo (mapa/auto/detalle) | Ya migrado | Absorbido en §4 (modelo recursivo del hilo). |
-| §3 · D1 — Tabla de equivalencias canónica | Superado en su formulación vieja | La pieza sigue pendiente; se redefine en el activo. Listada en §5 Nivel 1. |
+| §3 · D1 — Tabla de equivalencias canónica | Cerrado en §9.6 | La tabla curada (`nc1-equivalencias-hilos.json`) queda obsoleta. La reconciliación índice↔canónico la hace el triage §9 (salida `reconciliado`), aplicado a los 5 bloques. No se crea archivo de equivalencias. |
 | §3 · D2 — Universo cerrado de hilos válidos | Cerrado en §6 | La formulación vieja (lista PCIC curada) queda obsoleta. Redefinido en §6: universo = los 5 registries de fase 1 (4 + `perifrasis-canonicas.json`), cerrado para escritura y abierto para detección. |
 | §3 · D3 — Disparador de regeneración: Claude Code | Ya migrado | Reformulado y absorbido en §1.5 (régimen temporal dual). |
 | §4 · P1 — Almacenamiento de datos enriquecidos | Ya migrado | Decidido en opción A (2026-05-10); reflejado en §5 Nivel 1 como decisión heredada a ratificar. |
@@ -543,6 +557,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.43)** — §9 generalizado a los 5 bloques (el triage no era específico de gramática). Nueva §9.5 (`procedencia_indice` y `etiquetas` son dos ejes ortogonales del evento) y §9.6 (D1 absorbida: la tabla de equivalencias curada queda obsoleta, la reconciliación la hace el triage). D1 cerrado — Nivel 1 del roadmap completo salvo §R.2.
 - **2026-05-21 (v11.42)** — §9 cerrado: triage índice. Tres salidas por evento (`declarado` / `reconciliado` / `nuevo`) para gramática y pron/orto. Declarado literal lo precomputa la Capa 1; reconciliable y nuevo son propuestas de la Capa 2 IA con cierre humano. Estatus por evento (categoría-unidad), registrado en `procedencia_indice`. Anclada en §5 Nivel 2 la nota de serialización de `que_dice_el_libro` (§8.4).
 - **2026-05-21 (v11.41)** — §8 cerrado: carril de explicaciones. La explicación que el libro da de un contenido es un **atributo del evento** (campo `explicacion`), no un hilo propio. Dos partes: `que_dice_el_libro` (literal del cuadro) + `analisis_ia` (el trabajo de fase 2: relaciones, lógica, incoherencias). Alcance a los 5 bloques. Insumo del nivel `detalle`, no se solapa con él. Anclada en §5 Nivel 3 la nota del desglose de `formas` para Capa 1.
 - **2026-05-21 (v11.40)** — §7 cerrado: tratamiento detallado de formas verbales. El evento verbal lleva un campo `formas` (lista de formas concretas por unidad, opción A); la progresión del paradigma se lee comparando eventos. `rasgo_por_tiempo` se queda en el hilo verbal, frontera trazada con el grupo gramatical §6.4. Anticipación de formas en modelo híbrido (fase 2 lee el registro transitorio y completa el análisis) — cierra la costura §6.5 punto 1, incluida la perífrasis anticipatoria.
