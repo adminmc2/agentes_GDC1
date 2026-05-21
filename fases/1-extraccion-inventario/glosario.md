@@ -641,7 +641,7 @@ Cada dimensión lingüística del sistema usa **dos artefactos paralelos**: una 
 | Dimensión | Fuente PCIC | Registry canónico | Estado registry |
 |---|---|---|---|
 | Vocabulario | `pcic-a1-vocabulario.json` | `campos-semanticos-canonicos.json` | Existente, poblado |
-| Gramática | `pcic-a1-gramatica.json` | `gramatica-canonica.json` | Poblado (17 categorías, v10.117) |
+| Gramática | `pcic-a1-gramatica.json` | `gramatica-canonica.json` | Poblado (23 categorías, registry v1.7) |
 | Pronunciación / ortografía | `pcic-a1-pronunciacion-ortografia.json` | `pronunciacion-ortografia-canonica.json` | Poblado (7 categorías, v10.117) |
 | Tiempos y verbos | *(sin PCIC propio: paradigmas en gramática, verbos léxicos en vocabulario)* | `verbos-canonicos.json` | Existente, poblado |
 

@@ -113,7 +113,7 @@
 - Estructuras sintácticas marcadas: orden de palabras, negación, interrogación, comparativos, perífrasis.
 
 **Cruce (paso 4):**
-- `gramatica-canonica.json` (registry poblado con 17 categorías canónicas, v10.117).
+- `gramatica-canonica.json` (registry poblado con 23 categorías canónicas, registry v1.7).
 - `unidades/nc1-curso.json` → `unidades[N].gramatica[]` para cada N ≠ unidad actual.
 - `pcic-a1-gramatica.json` para confirmar respaldo PCIC y construir nombres canónicos sintéticos (ver §0.2).
 
@@ -390,7 +390,7 @@ Ejemplo: en *"Quieres comer carne"*, `querer` entra con `tiempo: "Presente"`, `f
 
 **No aplica a:**
 - `tiempos_y_verbos_consolidado` (lista plana de lemas; el lema canónico vive en `verbos-canonicos.json` con política propia — forma de diccionario).
-- `gramatica_consolidada` y `pronunciacion_ortografia_consolidada` (naming canónico de categorías gramaticales o fonético-ortográficas vive en sus propios registries `gramatica-canonica.json` (17 categorías) y `pronunciacion-ortografia-canonica.json` (7 categorías), poblados en v10.117; aplican política análoga al léxico: naming canónico literal del registry, fallback a `_pendiente_canon` con escalado al autor si no hay categoría que aplique).
+- `gramatica_consolidada` y `pronunciacion_ortografia_consolidada` (naming canónico de categorías gramaticales o fonético-ortográficas vive en sus propios registries `gramatica-canonica.json` (23 categorías) y `pronunciacion-ortografia-canonica.json` (7 categorías); aplican política análoga al léxico: naming canónico literal del registry, fallback a `_pendiente_canon` con escalado al autor si no hay categoría que aplique).
 
 **Universo válido para léxico.** `campos-semanticos-canonicos.json` (fuente única). Naming canónico literal, no `snake_case` ni invenciones.
 

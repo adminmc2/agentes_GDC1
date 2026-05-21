@@ -49,7 +49,7 @@ Si `git rev-parse --show-toplevel` devuelve `/guia-didactica-profesor-IA` o `git
 
 - `campos-semanticos-canonicos.json` — 99 categorías léxicas.
 - `verbos-canonicos.json` — 48 lemas verbales.
-- `gramatica-canonica.json` — 17 categorías gramaticales.
+- `gramatica-canonica.json` — 23 categorías gramaticales.
 - `pronunciacion-ortografia-canonica.json` — 7 categorías pron-ortográficas.
 
 PCIC A1 como respaldo en `pcic-a1-*.json` (4 archivos).

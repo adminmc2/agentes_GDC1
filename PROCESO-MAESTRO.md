@@ -500,7 +500,7 @@ guia-didactica-profesor-IA/
 │   │   ├── convenciones-y-casos.md          (transcripción + casebook, reseteado v10.116)
 │   │   ├── campos-semanticos-canonicos.json (registry léxico, 99 categorías canónicas)
 │   │   ├── verbos-canonicos.json            (registry verbal, 48 lemas)
-│   │   ├── gramatica-canonica.json          (registry gramatical, 17 categorías, poblado v10.117)
+│   │   ├── gramatica-canonica.json          (registry gramatical, 23 categorías, registry v1.7)
 │   │   ├── pronunciacion-ortografia-canonica.json (registry pron-orto, 7 categorías, poblado v10.117)
 │   │   └── pcic-a1-{vocabulario,gramatica,pronunciacion-ortografia,comunicacion}.json (4 PCIC A1)
 │   └── 2-reciclaje/                         (fase 2 pausada; REDISEÑO-EN-CURSO.md = documento único del rediseño IA-first. El viejo se archivó en docs/historico/ el 2026-05-20, v11.34)
