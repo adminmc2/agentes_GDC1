@@ -75,4 +75,4 @@ Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 | ¿Qué acción asignar a cada evento? | `reglas-reciclaje.md` §2 |
 | ¿Cómo funciona el script de mapa? | `regenerar_reciclaje_mapa.py` + `reglas-reciclaje.md` §3 |
 | ¿Cómo funciona el script de auto? | `regenerar_reciclaje_vocabulario.py` + `reglas-reciclaje.md` §4 |
-| ¿Qué shape tiene nc1-reciclaje.json? | `../../PROCESO-MAESTRO.md` §B1.5 |
+| ¿Qué shape tiene nc1-reciclaje.json? | `schema-reciclaje.md` (contrato del rediseño nuevo) · `../../PROCESO-MAESTRO.md` §B1.5 (modelo viejo) |
