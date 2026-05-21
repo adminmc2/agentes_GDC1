@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.49 — 2026-05-21] — Fase 2 Nivel 2 COMPLETO: prompt envoltorio
+
+Cerrada la última pieza del Nivel 2: nuevo `fases/2-reciclaje/prompt.md`, entry point operativo de fase 2 por unidad — espeja `prompt.md` de fase 1. Cubre: gate de arranque (declarar lectura de los 3 contratos), input/output, flujo Capa 1 (esqueleto determinista) / Capa 2 (sesión IA: 3 momentos de análisis, etiquetas, triage, propuestas), criterio de cierre (§13), y "lo que no se hace". Es un esqueleto-contrato: el detalle del pipeline (scripts de Capa 1, validadores) es Nivel 3, y el prompt lo deja explícito sin fingir que existen. Sincronizado el `CLAUDE.md` de fase 2 ("Cómo se invoca" distingue modelo nuevo/viejo). **Con esto el Nivel 2 (contrato operativo) queda COMPLETO**: fase 2 tiene contrato corto + schema + reglas + prompt, al estándar de fase 1. Siguiente: Nivel 3 (implementación de Capa 1/Capa 2 y validadores).
+
 ## [v11.48 — 2026-05-21] — Fase 2 Nivel 2: validación y criterio de cierre
 
 Cerrada la pieza "comandos de validación + criterio de cierre" del Nivel 2. Nueva §13 en `reglas-reciclaje.md`: la validación del reciclaje de una unidad tiene tres partes — (a) chequeo estructural contra `schema-reciclaje.md` (0 errores), (b) validador cross-unidad R1-R5 (sin alertas sin resolver), (c) revisión editorial del autor. El criterio de cierre por unidad exige las 5 condiciones (generado + estructural + R1-R5 + `propuestas[]` resueltas/diferidas + revisión del autor). Los validadores como script son Nivel 3 (pendientes); §13 fija qué deben comprobar. Sincronizado el `CLAUDE.md` de fase 2: corregida la línea desfasada que daba P1 como pendiente (ya ratificada en §12), y la sección "Cómo validar" pasa a apuntar a §13 en vez de a los comandos del modelo viejo. En el Nivel 2 solo queda el prompt envoltorio.

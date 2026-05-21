@@ -28,6 +28,10 @@ El archivo tiene tres niveles de análisis que se generan por separado:
 
 ## Cómo se invoca
 
+**Modelo nuevo (rediseño):** el entry point operativo de fase 2 es `prompt.md` — procesa el reciclaje de una unidad. Su pipeline (Capa 1/Capa 2) es Nivel 3, pendiente de implementar.
+
+**Modelo viejo (mientras fase 2 sigue PAUSADA):** los comandos de abajo siguen sirviendo para inspección, pero no reflejan el contrato nuevo.
+
 **Nivel mapa — una sola vez** (o cuando cambia `nc1-curso.json`):
 ```bash
 python3 scripts/regenerar_reciclaje_mapa.py
