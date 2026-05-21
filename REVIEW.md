@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-21 (v11.55 — Fase 2 Nivel 3: §2-bis en `reglas-reciclaje.md` — procedimiento de canonización de categorías gramaticales. Siguiente: ejecutar las 7 altas de "Tiempos y modos verbales". Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-21 (v11.56 — Fase 2 Nivel 3: 5 altas en `gramatica-canonica.json` v1.7 (grupo "Tiempos y modos verbales"); usos del presente fuera del registry, como análisis interpretativo. Siguiente (4/4): sincronizar refs "17 categorías". Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

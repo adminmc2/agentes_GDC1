@@ -3,9 +3,9 @@
     "estado": "poblado",
     "creado": "2026-05-12",
     "poblado": "2026-05-15",
-    "version": "1.6",
+    "version": "1.7",
     "descripcion": "Registry de categorías canónicas de gramatica_consolidada. Materializado el 2026-05-15 (v10.117) aplicando la estrategia híbrida de pieza 3 §14.0 del rediseño (referencia: docs/historico/REDISEÑO-CONTENIDOS-LINGUISTICOS-EN-CURSO.md §14): scaffold conceptual de §14.2 + resolución específica con PCIC A1 (fuente vinculante: fases/1-extraccion-inventario/pcic-a1-gramatica.json) + naming PCIC adaptado mínimamente para legibilidad. Cubre la matriz §14.1 de las 31 entradas gramaticales de gramatica[] de nc1-curso.json en U1-U9 (conteo real verificado el 2026-05-15; la matriz histórica del REDISEÑO §14.1 declaraba 32, discrepancia explicada por consolidación editorial entre el cierre de pieza 3 y la versión vigente del curso) + 2 categorías PCIC adicionales con anclaje material fuerte (Pronombre sujeto en cuadros verbales, Pronombres átonos de OI en construcción gustar/doler).",
-    "estructura": "Diccionario {categoría → {_grupo, _pcic_ref, _apariciones, items}}. El campo _grupo (añadido v1.6) sub-organiza las categorías por subsistema gramatical (7 grupos: Determinantes, Pronombres, Sintagma nominal y concordancia, Construcciones, Tiempos y modos verbales, Adverbios y marcadores, Preposiciones) — es eje de organización/lectura, no cambia la granularidad de hilo de fase 2 (sigue siendo la categoría). Ver fases/2-reciclaje/REDISEÑO-EN-CURSO.md §6.3. Ampliable por expansión controlada si una extracción real surfacea una categoría PCIC A1 no contemplada.",
+    "estructura": "Diccionario {categoría → {_grupo, _pcic_ref, _apariciones, items}}. El campo _grupo (añadido v1.6) sub-organiza las categorías por subsistema gramatical (7 grupos: Determinantes, Pronombres, Sintagma nominal y concordancia, Construcciones, Tiempos y modos verbales, Adverbios y marcadores, Preposiciones) — es eje de organización/lectura, no cambia la granularidad de hilo de fase 2 (sigue siendo la categoría). Ver fases/2-reciclaje/REDISEÑO-EN-CURSO.md §6.3. v1.7 (2026-05-21): 5 categorías nuevas del grupo 'Tiempos y modos verbales' dadas de alta como primera aplicación del procedimiento de canonización de fases/2-reciclaje/reglas-reciclaje.md §2-bis (4 de flexión + 1 de uso, 'Uso del imperativo'; los usos del presente NO se canonizan — sin cuadro propio — se tratan como análisis interpretativo de fase 2). Total 18→23 categorías. Ampliable por expansión controlada si una extracción real surfacea una categoría PCIC A1 no contemplada.",
     "regla_fallback": "Si una extracción detecta contenido gramatical que no encaja en ninguna categoría aquí, marcar _pendiente_canon y escalar al autor (regla §0.1 de reglas-operativas.md).",
     "siempre_presentes_no_indexados": "Componentes que aparecen sistemáticamente en el corpus pero NC1 no los enseña como contenido (conjunciones copulativas y/e, conjunciones disyuntivas o/u, adverbios de afirmación y negación sí/no/también/tampoco) NO se canonizan aquí. Su tratamiento canónico es responsabilidad de fase 2 (analítica): propondrá al autor si deben codificarse como categorías cross-unidad cuando detecte el patrón de presencia sistemática. Detalle en fases/2-reciclaje/REDISEÑO-EN-CURSO.md §10 (componentes 'siempre presentes no indexados')."
   },
@@ -263,6 +263,68 @@
         "ayer por la mañana",
         "el año pasado",
         "hace + tiempo"
+      ]
+    },
+    "Paradigma regular del presente (-ar/-er/-ir)": {
+      "_grupo": "Tiempos y modos verbales",
+      "_pcic_ref": "PCIC A1 §9.1.1 Presente — paradigma de verbos regulares en las tres conjugaciones (-ar/-er/-ir).",
+      "_apariciones": {
+        "U3": "principal (cuadro de presente de verbos regulares, p34)"
+      },
+      "items": [
+        "hablar (-ar)",
+        "comer (-er)",
+        "vivir (-ir)"
+      ]
+    },
+    "Irregularidad vocálica e→ie (presente)": {
+      "_grupo": "Tiempos y modos verbales",
+      "_pcic_ref": "PCIC A1 §9.1.1 Presente (verbos irregulares); el patrón de irregularidad vocálica e→ie no está itemizado en el inventario PCIC A1 — categoría con evidencia material fuerte en NC1.",
+      "_apariciones": {
+        "U4": "principal (cuadro de presente de querer)",
+        "U6": "ampliación (cerrar)"
+      },
+      "items": [
+        "cerrar",
+        "empezar",
+        "querer"
+      ]
+    },
+    "Irregularidad vocálica o→ue (presente)": {
+      "_grupo": "Tiempos y modos verbales",
+      "_pcic_ref": "PCIC A1 §9.1.1 Presente (verbos irregulares); el patrón de irregularidad vocálica o→ue no está itemizado en el inventario PCIC A1 — categoría con evidencia material fuerte en NC1.",
+      "_apariciones": {
+        "U7": "principal (presente paradigmático en el cuadro de verbos reflexivos)"
+      },
+      "items": [
+        "dormir",
+        "poder",
+        "volver"
+      ]
+    },
+    "Infinitivo simple": {
+      "_grupo": "Tiempos y modos verbales",
+      "_pcic_ref": "PCIC A1 §9.4.1 Infinitivo — infinitivo simple en las tres conjugaciones.",
+      "_apariciones": {
+        "U6": "principal (cuadro con infinitivo/imperativo/presente)",
+        "U7": "ampliación (infinitivo en reflexivos y perífrasis)"
+      },
+      "items": [
+        "hablar",
+        "comer",
+        "vivir"
+      ]
+    },
+    "Uso del imperativo — instrucciones y peticiones": {
+      "_grupo": "Tiempos y modos verbales",
+      "_pcic_ref": "Sin entrada A1 explícita en el inventario PCIC §9; categoría de uso con evidencia material fuerte (cuadro de imperativo de U6 con explicación de uso).",
+      "_apariciones": {
+        "U6": "principal (cuadro de imperativo: instrucciones y peticiones)"
+      },
+      "items": [
+        "Jorge, ven aquí.",
+        "Lucía, dame tu cuaderno, por favor.",
+        "Pásame la pelota."
       ]
     }
   }

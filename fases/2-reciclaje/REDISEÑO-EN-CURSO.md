@@ -317,7 +317,14 @@ Dentro de gramática. Contiene **dos tipos de categorías**:
 1. **Flexión / paradigmas verbales** — el sistema de conjugación como contenido gramatical enseñado: paradigma de verbos regulares, paradigmas de irregularidad vocálica (e>ie, o>ue…), imperativo regular e irregular, etc.
 2. **Usos de tiempos y modos** — para qué sirve cada tiempo/modo a nivel A1: presente → acciones habituales / descripción / estados; imperativo → instrucciones / peticiones; etc.
 
-Ambos tipos se **canonizan desde el PCIC A1** (hoy no capturados) como categorías nuevas de `gramatica-canonica.json` bajo este grupo, con `_pcic_ref`.
+**Frontera de canonización (anclada a evidencia, no al carril).** No todo lo que entra en este grupo se canoniza como categoría de registry — la condición decisiva es el **umbral de evidencia material** de `reglas-reciclaje.md` §2-bis, no el carril:
+
+- El carril de **flexión** produce categoría de registry cuando el curso enseña ese paradigma con cuadro/sistematización.
+- El carril de **usos** produce categoría de registry **solo cuando el curso enseña ese uso como contenido gramatical con evidencia material suficiente** (cuadro propio). Si un uso está solo **distribuido funcionalmente** en tareas y comunicación, se trata en `analisis_ia` / `detalle` (capa interpretativa de fase 2), **no como categoría canónica**.
+
+Ejemplo: "Uso del imperativo — instrucciones y peticiones" **sí** es categoría — tiene cuadro propio en U6. Los **usos del presente** (actual/durativo, o su framing didáctico hábitos/describir) **no** — NC1 usa el presente intensivamente pero no lo sistematiza con cuadro; se analizan en la capa interpretativa, no en el registry.
+
+Las categorías que sí pasan se dan de alta en `gramatica-canonica.json` bajo este grupo, siguiendo el procedimiento de `reglas-reciclaje.md` §2-bis.
 
 **Distinción clave — tres planos separados:**
 
@@ -342,7 +349,7 @@ D2 queda cerrado como decisión de modelo, pero deja dos costuras con el contrat
 
 - ✅ Crear y poblar `perifrasis-canonicas.json` — hecho en v11.53.
 - ✅ Añadir el campo `_grupo` a las 18 categorías de `gramatica-canonica.json` — hecho en v11.54 (registry v1.6).
-- ⬜ Canonizar desde PCIC A1 las categorías nuevas del grupo "Tiempos y modos verbales" (flexión + usos).
+- ✅ Canonizar las categorías nuevas del grupo "Tiempos y modos verbales" — hecho en v11.56: 5 altas (4 flexión + "Uso del imperativo"), registry v1.7. Los usos del presente NO se canonizan (sin cuadro propio); se tratan como análisis interpretativo (§6.4).
 
 ---
 
@@ -639,6 +646,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.56)** — Nivel 3, paquete de registries (3/4, parte 2): 5 altas en `gramatica-canonica.json` (v1.6→v1.7, 18→23 categorías) del grupo "Tiempos y modos verbales" — Paradigma regular del presente, Irregularidad vocálica e→ie, Irregularidad vocálica o→ue, Infinitivo simple (flexión) + Uso del imperativo — instrucciones y peticiones (uso con cuadro). Primera aplicación de §2-bis. §6.4 reformulado: la frontera de canonización se ancla al **umbral de evidencia**, no al carril — un uso entra al registry si tiene cuadro propio; los usos del presente, sin cuadro, se tratan como análisis interpretativo.
 - **2026-05-21 (v11.55)** — Nivel 3, paquete de registries (3/4, parte 1): añadida §2-bis a `reglas-reciclaje.md` — procedimiento reproducible de canonización de categorías gramaticales nuevas (4 pasos: fuentes admitidas, dos carriles flexión/uso, criterio de alta con umbral de evidencia, cierre humano). Responde a la cuestión de replicabilidad: las categorías son del curso, el procedimiento es transversal. Las 7 altas de "Tiempos y modos verbales" serán su primera aplicación.
 - **2026-05-21 (v11.54)** — Nivel 3, paquete de registries (2/4): añadido el campo `_grupo` a las 18 categorías de `gramatica-canonica.json` (registry v1.5→v1.6) — mapeo a los 7 grupos de §6.3 (Determinantes 4, Pronombres 3, Sintagma nominal y concordancia 3, Construcciones 3, Adverbios y marcadores 3, Preposiciones 1, Tiempos y modos verbales 1). `_grupo` es eje de organización/lectura; no fusiona categorías ni cambia la granularidad de hilo. Sin tocar nombres canónicos ni `_pcic_ref`.
 - **2026-05-21 (v11.53)** — Nivel 3, paquete de registries (1/4): creado `fases/2-reciclaje/perifrasis-canonicas.json` — 5.º registry del universo cerrado, propio de fase 2. Dos entradas (`ir a + infinitivo`, `querer + infinitivo`) desde el relevo de `estructura_perifrastica` en U0-U9. Deuda U4↔U6 y exclusión de `tener que + infinitivo` documentadas en su `_meta`. Universo cerrado = 5 registries, físicamente 4 (fase 1) + 1 (fase 2).
