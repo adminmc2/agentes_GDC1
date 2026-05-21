@@ -2,7 +2,7 @@
 
 > Auto-cargado por Claude Code al trabajar dentro de `fases/2-reciclaje/`. Contrato corto de la fase: qué produce, dónde input/output, cómo validar, reglas críticas, navegación.
 
-> ⚠️ **Estado actual (2026-05-15, v10.120):** **FASE 2 PAUSADA** por decisión 36 (v10.108). Bloqueo operativo añadido tras v10.115-118: los **scripts** `regenerar_reciclaje_mapa.py` y `regenerar_reciclaje_vocabulario.py` y el **output** `unidades/nc1-reciclaje.json` (fechado 2026-05-11) están en **shape v10.114** (pre-rediseño). Tras los cambios de fase 1 v10.115-118 (eliminación de `campo_semantico` y de `vocabulario_consolidado.comprension`, renombrado `fonetica → pronunciacion_ortografia`, 4 bloques top-level consolidados nuevos, 4 listas tipadas por actividad), los scripts fallarán si se ejecutan contra inventarios en shape v10.117. La reactivación operativa de fase 2 está **bloqueada por el procesamiento de unidades U1-U9 con shape v10.117** (U0 ya migrada en v10.119) y exige adaptación previa de los 2 scripts + regeneración íntegra de `nc1-reciclaje.json`. Pendiente: ratificar/formalizar decisión P1 (opción A) + implementar Capa 1 (R1-R5). El rediseño activo se construye paso a paso en `REDISEÑO-EN-CURSO.md` (documento único; el viejo se archivó en `docs/historico/` el 2026-05-20, v11.34).
+> ⚠️ **Estado actual (2026-05-15, v10.120):** **FASE 2 PAUSADA** por decisión 36 (v10.108). Bloqueo operativo añadido tras v10.115-118: los **scripts** `regenerar_reciclaje_mapa.py` y `regenerar_reciclaje_vocabulario.py` y el **output** `unidades/nc1-reciclaje.json` (fechado 2026-05-11) están en **shape v10.114** (pre-rediseño). Tras los cambios de fase 1 v10.115-118 (eliminación de `campo_semantico` y de `vocabulario_consolidado.comprension`, renombrado `fonetica → pronunciacion_ortografia`, 4 bloques top-level consolidados nuevos, 4 listas tipadas por actividad), los scripts fallarán si se ejecutan contra inventarios en shape v10.117. La reactivación operativa de fase 2 está **bloqueada por el procesamiento de unidades U1-U9 con shape v10.117** (U0 ya migrada en v10.119) y exige adaptación previa de los 2 scripts + regeneración íntegra de `nc1-reciclaje.json`. Pendiente: implementar el pipeline de Capa 1/Capa 2 y el validador R1-R5 (Nivel 3 del rediseño). P1 ya quedó ratificada (contrato de regeneración en `reglas-reciclaje.md` §12). El rediseño activo se construye paso a paso en `REDISEÑO-EN-CURSO.md` (documento único; el viejo se archivó en `docs/historico/` el 2026-05-20, v11.34).
 
 ---
 
@@ -52,8 +52,9 @@ Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 
 ## Cómo validar
 
-1. `python3 scripts/regenerar_reciclaje_mapa.py` → sin errores.
-2. `python3 diagrama.py` → `http://localhost:8081` → vista RECICLAJE → revisar timeline.
+El **criterio de cierre** del reciclaje de una unidad (chequeo estructural + validador cross-unidad R1-R5 + revisión editorial) está definido en `reglas-reciclaje.md` §13. Los validadores como script son Nivel 3 del rediseño (pendientes). Mientras fase 2 esté PAUSADA, el gate no se ejecuta.
+
+*(Los comandos del modelo viejo — `regenerar_reciclaje_mapa.py` y vista RECICLAJE del dashboard — siguen sirviendo para inspección, pero no reflejan el contrato nuevo.)*
 
 ---
 

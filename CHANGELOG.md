@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.48 — 2026-05-21] — Fase 2 Nivel 2: validación y criterio de cierre
+
+Cerrada la pieza "comandos de validación + criterio de cierre" del Nivel 2. Nueva §13 en `reglas-reciclaje.md`: la validación del reciclaje de una unidad tiene tres partes — (a) chequeo estructural contra `schema-reciclaje.md` (0 errores), (b) validador cross-unidad R1-R5 (sin alertas sin resolver), (c) revisión editorial del autor. El criterio de cierre por unidad exige las 5 condiciones (generado + estructural + R1-R5 + `propuestas[]` resueltas/diferidas + revisión del autor). Los validadores como script son Nivel 3 (pendientes); §13 fija qué deben comprobar. Sincronizado el `CLAUDE.md` de fase 2: corregida la línea desfasada que daba P1 como pendiente (ya ratificada en §12), y la sección "Cómo validar" pasa a apuntar a §13 en vez de a los comandos del modelo viejo. En el Nivel 2 solo queda el prompt envoltorio.
+
 ## [v11.47 — 2026-05-21] — Fase 2 Nivel 2: P1 ratificada — contrato de regeneración
 
 Ratificada y formalizada la decisión P1 (almacenamiento de datos enriquecidos), último residuo del Nivel 1. Nueva §12 en `reglas-reciclaje.md` con el contrato de ciclo de vida de `nc1-reciclaje.json`: (1) archivo único canónico `unidades/nc1-reciclaje.json`; (2) los hilos/eventos de nivel mapa/auto no se editan a mano — se regeneran desde los inputs fuente vía el pipeline (excepción: `propuestas[]` y cierres humanos sí se escriben); (3) disparadores — incremental al integrar cada unidad, revisión cross-unidad ampliada tras 3 unidades, regeneración íntegra solo al cierre de bloque; (4) Capa 1 determinista reproducible vs Capa 2 IA con cierre humano persistido en `propuestas[]`; (5) "reciclaje cerrado por unidad" = generado + pasa el criterio de cierre vigente + `propuestas[]` resueltas/diferidas; mientras fase 2 siga PAUSADA, ninguna unidad tiene reciclaje cerrado. Registrada la ratificación en `REDISEÑO-EN-CURSO.md` — el Nivel 1 queda sin residuos.

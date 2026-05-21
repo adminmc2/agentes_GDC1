@@ -121,4 +121,22 @@ Ratifica y formaliza la decisión P1 (opción A, heredada del rediseño viejo, 2
 
 4. **Determinista vs cierre humano.** La **Capa 1** regenera el esqueleto mecánico — reproducible. La **Capa 2 IA** enriquece y produce `propuestas[]`; cada propuesta se cierra con el humano y su resolución se persiste con `estado` (§6 del schema). La parte determinista se puede rehacer sin pérdida; la parte humana vive en `propuestas[]`.
 
-5. **"Reciclaje cerrado para una unidad"** = su reciclaje incremental está generado **y** ha pasado el criterio de cierre vigente de fase 2 **y** sus `propuestas[]` están resueltas o explícitamente diferidas. Mientras fase 2 esté **PAUSADA** operativamente, **ninguna unidad** tiene su reciclaje cerrado: la pausa significa que el pipeline no corre; "cerrado" aplica por unidad solo tras la reactivación.
+5. **"Reciclaje cerrado para una unidad"** = su reciclaje incremental está generado **y** ha pasado el criterio de cierre vigente de fase 2 (§13) **y** sus `propuestas[]` están resueltas o explícitamente diferidas. Mientras fase 2 esté **PAUSADA** operativamente, **ninguna unidad** tiene su reciclaje cerrado: la pausa significa que el pipeline no corre; "cerrado" aplica por unidad solo tras la reactivación.
+
+## §13. Validación y criterio de cierre
+
+La validación del reciclaje de una unidad tiene **tres partes**:
+
+- **(a) Chequeo estructural** — conformidad de `nc1-reciclaje.json` con `schema-reciclaje.md` (claves, tipos, enumeraciones). Automatizable; debe dar **0 errores**.
+- **(b) Validador cross-unidad R1-R5** — control de calidad cruzado entre unidades: R1 anticipación de léxico, R2 detección de inventos, R3 errores de clasificación semántica, R4 inconsistencias de progresión, R5 coherencia bidireccional de trazabilidad. No debe dejar **alertas sin resolver**.
+- **(c) Revisión editorial del autor** — el autor revisa el reciclaje de la unidad en el dashboard.
+
+**Criterio de cierre por unidad** — el reciclaje de una unidad se considera **cerrado** solo si se cumplen **todas** estas condiciones:
+
+1. El reciclaje incremental está **generado** (Capa 1 + Capa 2 ejecutadas sobre la unidad).
+2. Pasa el **chequeo estructural** (a) — 0 errores contra `schema-reciclaje.md`.
+3. El **validador cross-unidad R1-R5** (b) no deja alertas sin resolver.
+4. Las `propuestas[]` que afectan a esa unidad están **resueltas o explícitamente diferidas**.
+5. La **revisión editorial del autor** (c) está hecha.
+
+**Comandos:** el chequeo estructural (a) y el validador cross-unidad (b) son scripts de **Nivel 3** (pendientes de implementar; ver `REDISEÑO-EN-CURSO.md` §5). Este §13 fija **qué deben comprobar**; el cómo (nombre de comando, salida) se cierra al implementarlos. Mientras fase 2 esté **PAUSADA**, el gate no se ejecuta — ninguna unidad puede cerrarse (§12.5).
