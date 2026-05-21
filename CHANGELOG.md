@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.51 — 2026-05-21] — Fase 2: limpieza de drift documental antes del Nivel 3
+
+Dos correcciones de coherencia señaladas por el revisor. (1) `CLAUDE.md` de fase 2 §"Cómo se invoca" decía que la pausa de fase 2 dura "mientras el canon semántico de fase 1 está en desarrollo" — contradice el estado real (fase 1 cerrada en v10.164); reformulado: la pausa dura mientras esté pendiente la implementación del Nivel 3 del rediseño. (2) `REDISEÑO-EN-CURSO.md` §6.5 punto 2 seguía diciendo que el `CLAUDE.md` de fase 2 estaba "sincronizado parcialmente" — ya está sincronizado del todo (v11.38/46/48/50); marcado como resuelto. Sin cambios de modelo.
+
 ## [v11.50 — 2026-05-21] — Fase 2: sincronización de cabecera del `CLAUDE.md`
 
 Dos ajustes de frescura en `fases/2-reciclaje/CLAUDE.md` señalados por el revisor tras v11.49. (1) El banner "Estado actual" seguía fechado en 2026-05-15 / v10.120 aunque el contenido se había ido actualizando — reescrito a 2026-05-21 / v11.49, reflejando que Nivel 1 y Nivel 2 del rediseño están cerrados y Nivel 3/4 pendientes, sin el detalle obsoleto del bloqueo v10.114. (2) La tabla de `nivel_analisis` presentaba `mapa`/`auto`/`detalle` como "tres niveles que se generan por separado" con los scripts viejos como generador — reformulada al modelo recursivo (grado de población de un mismo hilo, §4.2) y atribuida al pipeline de fase 2 (Capa 1/Capa 2, Nivel 3 pendiente). Sin cambios de modelo; solo coherencia documental.

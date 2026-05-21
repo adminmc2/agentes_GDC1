@@ -334,7 +334,7 @@ El bloque `verbal` responde "¿qué verbos y cómo se conjugan?"; el grupo "Tiem
 D2 queda cerrado como decisión de modelo, pero deja dos costuras con el contrato operativo de alrededor — anotadas aquí para no perderlas:
 
 1. **Fuente real de perífrasis anticipatorias.** §6.2 dice que `perifrasis-canonicas.json` se poblará desde `estructura_perifrastica` del inventario. Pero el contrato vigente de fase 1 **excluye de `tiempos_y_verbos` los auxiliares de aparición anticipatoria** (`reglas-operativas.md §5.2`, `glosario.md`), y con el auxiliar se excluye la perífrasis. Es decir: una perífrasis que aparece antes de que su auxiliar sea canónico **no viaja** por `estructura_perifrastica`. **Resuelto en §7.3** (modelo híbrido): fase 2 lee el registro transitorio de anticipaciones (`_migracion_rediseno` / `_fixture_exploratoria`) y completa el análisis por su cuenta. La perífrasis anticipatoria se recupera por esa vía, sin depender de que `estructura_perifrastica` la transporte.
-2. **Contrato corto de fase 2 desactualizado.** El `CLAUDE.md` de fase 2 aún describe el nivel `auto` desde `vocabulario_consolidado` y la regla "un hilo por campo semántico" — anterior al modelo de 5 bloques. Sincronizado parcialmente en v11.38; revisión completa cuando fase 2 se reactive.
+2. **Contrato corto de fase 2.** *(Resuelto.)* El `CLAUDE.md` de fase 2 se sincronizó con el modelo de 5 bloques a lo largo del Nivel 2 (v11.38, v11.46, v11.48, v11.50): nivel `auto`, granularidad por bloque, banner de estado, tabla `nivel_analisis`, cruces a `schema-reciclaje.md` y `reglas-reciclaje.md`.
 
 ### §6.6. Tareas de población diferidas
 

@@ -42,7 +42,7 @@ Este script crea `nc1-reciclaje.json` si no existe. Debe ejecutarse antes que el
 
 **Nivel auto — fase 2 PAUSADA actualmente (decisión 36, v10.108):**
 
-Mientras dure la pausa de fase 2 (canon semántico de fase 1 en desarrollo), `scripts/integrar_unidad.py` **no regenera reciclaje por defecto**. La integración de una unidad copia el inventario, valida y hace commit del inventario, pero deja `nc1-reciclaje.json` congelado.
+Mientras dure la pausa de fase 2 (pendiente la implementación del Nivel 3 del rediseño — pipeline y validadores), `scripts/integrar_unidad.py` **no regenera reciclaje por defecto**. La integración de una unidad copia el inventario, valida y hace commit del inventario, pero deja `nc1-reciclaje.json` congelado.
 
 Para forzar la regeneración en una integración concreta (excepción consciente), usar el flag explícito `--regenerar-reciclaje`:
 
