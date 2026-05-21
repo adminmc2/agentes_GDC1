@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-21 (v11.52 — REDISEÑO fase 2 §11: procedimiento de la Capa 1 (Nivel 3 arranca). Siguiente: paquete mínimo de registries → §R.1. Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-21 (v11.53 — Fase 2 Nivel 3: creado el registry `perifrasis-canonicas.json` (1/4 del paquete de registries). Siguiente: `_grupo` en `gramatica-canonica.json`. Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

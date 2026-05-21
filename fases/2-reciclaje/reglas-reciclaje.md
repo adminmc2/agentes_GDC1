@@ -26,7 +26,12 @@ No se agrupan unidades de análisis distintas en un mismo hilo. El bloque `grama
 
 ## §2. Naming canónico
 
-El `titulo` del hilo es **literal** del registry de su dimensión — universo cerrado de 5 registries (4 de fase 1 + `perifrasis-canonicas.json`). Fase 2 **no inventa** títulos. Si un contenido no tiene canónico, **no se rechaza ni se inventa**: se escala como propuesta (§11).
+El `titulo` del hilo es **literal** del registry de su dimensión. Universo cerrado de **5 registries**, físicamente **4 + 1** por propiedad de fase:
+
+- 4 de fase 1: `fases/1-extraccion-inventario/{campos-semanticos,gramatica,pronunciacion-ortografia,verbos}-canonicos.json`.
+- 1 derivado, propio de fase 2: `fases/2-reciclaje/perifrasis-canonicas.json`.
+
+Fase 2 **no inventa** títulos. Si un contenido no tiene canónico, **no se rechaza ni se inventa**: se escala como propuesta (§11).
 
 El `id` del hilo es un slug estable `<bloque>-<slug>` (clave primaria); no se recalcula si el `titulo` se corrige.
 

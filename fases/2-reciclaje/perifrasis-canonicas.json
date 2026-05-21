@@ -1,0 +1,31 @@
+{
+  "_meta": {
+    "estado": "poblado",
+    "creado": "2026-05-21",
+    "version": "1.0",
+    "descripcion": "Registry de perífrasis verbales canónicas de NC1. 5.º registry del proyecto, propio de fase 2 (ver fases/2-reciclaje/REDISEÑO-EN-CURSO.md §6.2). Poblado el 2026-05-21 desde el relevo del campo estructura_perifrastica en los inventarios U0-U9 (evidencia material) + verificación contra pcic-a1-gramatica.json. Universo cerrado: fase 2 no inventa perífrasis; lo no contemplado se escala (regla_fallback).",
+    "estructura": "Diccionario {perífrasis → {_pcic_ref, _apariciones, auxiliar, valor}}. La clave es la perífrasis en forma canónica '<auxiliar> + infinitivo'.",
+    "regla_fallback": "Si una extracción o el análisis de fase 2 detecta una perífrasis no contemplada aquí, marcar _pendiente_canon y escalar al autor (regla §0.1 de reglas-operativas.md).",
+    "deudas": "querer + infinitivo: U4 trabaja la construcción ('¿Quieres comer carne?', U4-p43-act5) pero el inventario U4 NO la etiquetó como estructura_perifrastica — la trató como infinitivo complemento de querer (ver _decisiones_ia de U4). U6 sí la etiqueta. Inconsistencia de codificación U4↔U6 pendiente de corregir en el inventario U4; hasta entonces _apariciones de 'querer + infinitivo' registra solo U6. Al corregir U4, añadir su aparición.",
+    "fuera_del_primer_corte": "tener que + infinitivo: el schema de fase 1 (§3.2) la menciona como ejemplo de perífrasis posible, pero no aparece materialmente en ningún inventario U0-U9 ni tiene anclaje PCIC A1 local inequívoco. Excluida del primer corte; se reabre si aparece evidencia material o respaldo PCIC."
+  },
+  "perifrasis": {
+    "ir a + infinitivo": {
+      "_pcic_ref": "PCIC A1 §9.1.1 Presente — 'Perífrasis ir a + infinitivo para presente inmediato' (ejemplo PCIC: 'Voy a comer').",
+      "_apariciones": {
+        "U2": "primera aparición — ir a + infinitivo en presente (formas auxiliares: vamos, van)",
+        "U4": "recurrente — ir a + infinitivo (formas auxiliares: Vamos a, van a)"
+      },
+      "auxiliar": "ir",
+      "valor": "futuro próximo / presente inmediato"
+    },
+    "querer + infinitivo": {
+      "_pcic_ref": "PCIC A1 §9.4.1 Infinitivo trata 'querer + infinitivo' como infinitivo objeto directo ('Quiero ir a España'), NO como perífrasis canónica. Entra a este registry por evidencia material de NC1: el inventario codifica la construcción con estructura_perifrastica en U6.",
+      "_apariciones": {
+        "U6": "principal — querer + infinitivo en presente (formas auxiliares: Quiero, quiere)"
+      },
+      "auxiliar": "querer",
+      "valor": "deseo / voluntad"
+    }
+  }
+}
