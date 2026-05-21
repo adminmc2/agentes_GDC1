@@ -168,4 +168,20 @@ La validación del reciclaje de una unidad tiene **tres partes**:
 4. Las `propuestas[]` que afectan a esa unidad están **resueltas o explícitamente diferidas**.
 5. La **revisión editorial del autor** (c) está hecha.
 
-**Comandos:** el chequeo estructural (a) y el validador cross-unidad (b) son scripts de **Nivel 3** (pendientes de implementar; ver `REDISEÑO-EN-CURSO.md` §5). Este §13 fija **qué deben comprobar**; el cómo (nombre de comando, salida) se cierra al implementarlos. Mientras fase 2 esté **PAUSADA**, el gate no se ejecuta — ninguna unidad puede cerrarse (§12.5).
+**Comandos:** el chequeo estructural (a) y el validador cross-unidad (b) se materializan como scripts; su implementación se difiere al bloque de implementación del pipeline. Este §13 fija **qué deben comprobar**; el cómo (nombre de comando, salida) se cierra al implementarlos. Mientras fase 2 esté **PAUSADA**, el gate no se ejecuta — ninguna unidad puede cerrarse (§12.5).
+
+## §14. Validador cross-unidad — R1-R5
+
+Detalle del componente (b) del gate de cierre (§13). Cinco reglas de **validación cruzada entre unidades** que se ejecutan sobre los inventarios de fase 1 antes de dar por cerrado el reciclaje. Diseño heredado, cerrado en 2026-05-12.
+
+**R1 — Anticipación de léxico.** Detecta léxico frecuente en U(n) que **no** está en el `principal` ni `recurrente` de esa unidad pero **es canónico en una unidad posterior** → alerta de anticipación. Algoritmo: leer el índice del curso + el `principal`/`recurrente` de cada inventario + re-ejecutar frecuencias; para cada término frecuente no declarado en U(n), si es canónico en U(n+k) → alerta. Alimenta la etiqueta `anticipacion` (§3) y el triage `procedencia_indice` (§4). Output: `{unidad, término, unidad_canónica, frecuencia, ejemplos}`.
+
+**R2 — Materialidad y trazabilidad del contenido extraído.** Todo contenido consolidado debe estar sustentado por **evidencias reales** de actividad o cuadro en la unidad. En vocabulario, los ítems deben aparecer **literalmente**; en verbal, las formas o el lema deben estar **atestiguados** según el contrato de fase 1; en gramática y pron/orto, la categoría debe estar **trazada a actividades/cuadros** que la trabajan (la etiqueta canónica no tiene por qué aparecer literal en el libro). Si falla, es bug de extracción de fase 1. Pre-condición.
+
+**R3 — Errores de clasificación por dimensión.** Chequeo contra los registries y el contrato de fase 1 para detectar contenido ubicado en la **dimensión equivocada**. Caso típico: término léxico en un campo semántico incorrecto. Sanity check post-extracción; produce alerta, no aborta.
+
+**R4 — Inconsistencias de progresión.** Detecta: léxico `recurrente` en U(n) que nunca fue `principal` antes; el mismo contenido con dos nombres distintos en unidades distintas (→ candidato a reconciliación, §4); verbos en `vocabulario_consolidado` que deberían vivir en `tiempos_y_verbos_consolidado`. Produce alerta.
+
+**R5 — Coherencia bidireccional de trazabilidad.** `actividad.X` ↔ `fuentes` del bloque consolidado deben coincidir en los dos sentidos. Pre-condición; si falla, fase 2 aborta.
+
+**Qué bloquea:** R2 y R5 son **pre-condiciones** (un fallo es bug de fase 1; fase 2 aborta). R1, R3 y R4 producen **alertas** que entran en el criterio de cierre §13 (no quedan alertas sin resolver). La implementación del validador se difiere al bloque de implementación del pipeline.

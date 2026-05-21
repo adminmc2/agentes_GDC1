@@ -1,6 +1,6 @@
 # Rediseño de fase 2 — modelo IA-first (versión activa)
 
-> **Estado:** EN CONSTRUCCIÓN. Documento vivo y **único** del rediseño de fase 2 bajo modelo IA-first. El antiguo `REDISEÑO-EN-CURSO-viejo.md` se archivó en `docs/historico/` (v11.34); su material vivo sin procesar quedó absorbido en el "Reservorio" al final de este documento.
+> **Estado:** EN CONSTRUCCIÓN. Documento vivo y **único** del rediseño de fase 2 bajo modelo IA-first. El antiguo `REDISEÑO-EN-CURSO-viejo.md` se archivó en `docs/historico/` (v11.34); su material vivo se procesó por completo (§10 y `reglas-reciclaje.md` §14), el Reservorio quedó vacío y se retiró en v11.58.
 >
 > **Audiencia:** autor + revisor. El ejecutor (Claude) lo va actualizando paso a paso conforme el autor y el revisor cierran decisiones.
 >
@@ -264,7 +264,7 @@ El contrato operativo de fase 2 está escrito al estándar de fase 1: contrato c
 ### Nivel 3 — Implementación de Capa 1 y Capa 2
 
 - ✅ **Procedimiento concreto de Capa 1** — definido en §11 (v11.52): inputs (4, incluido el reciclaje actual para preservar `propuestas[]`), qué genera (proyección mecánica), qué precomputa (solo lo literal), 10 invariantes, modo incremental/íntegro con un mismo algoritmo. **Nota (§7.4):** el desglose de `formas` por unidad exige leer `actividad.tiempos_y_verbos` — recogido en §11.
-- **Validador cross-unidad R1-R5** — reglas de validación cruzada. Material heredado en el **Reservorio §R.1**, pendiente de procesar.
+- ✅ **Validador cross-unidad R1-R5** — reglas de validación cruzada definidas como contrato operativo en `reglas-reciclaje.md` §14 (v11.58). La materialización como script se difiere al bloque de implementación.
 - **Sesión IA de Capa 2** — cómo se ejecuta el enriquecimiento, qué inputs recibe.
 - **Wiring** — encadenado de Capa 1 → Capa 2 → integración.
 
@@ -597,7 +597,7 @@ La diferencia es el conjunto de unidades y la estrategia de escritura, no la ló
 
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
-El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas. Tres estados: **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva pero su versión vieja no sirve; se redefine en el activo), **en reservorio** (material vivo sin procesar, copiado al Reservorio de este documento).
+El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas: **obsoleto** (no se migra), **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva, se redefine en el activo) o **cerrado en §X / reglas** (procesado a una sección propia). Todas las piezas están ya procesadas; no queda material heredado sin procesar.
 
 | Pieza del viejo | Estado | Disposición |
 |---|---|---|
@@ -609,35 +609,8 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 | §4 · P1 — Almacenamiento de datos enriquecidos | Ya migrado | Decidido en opción A (2026-05-10); reflejado en §5 Nivel 1 como decisión heredada a ratificar. |
 | §5 Hallazgos del revisor | Obsoleto | Un solo hallazgo, ya cerrado por D1+D2. No se migra. |
 | §6 Pasos de migración | Obsoleto | Reemplazado por la hoja de ruta de §5. No se migra. |
-| §7 · R1-R5 validación cruzada cross-unidad | En reservorio | Material vivo sin procesar. Copiado al Reservorio. Se procesará en §5 Nivel 3. |
+| §7 · R1-R5 validación cruzada cross-unidad | Cerrado en `reglas-reciclaje.md` §14 | Procesado (v11.58): R1-R5 reformulado como contrato operativo del validador cross-unidad. |
 | §8 · Componentes "siempre presentes no indexados" | Cerrado en §10 | Procesado: §10 lo reconcilia con el triage (patrón cross-unidad de `nuevo`), define detección, salidas y criterio de ampliación. |
-
----
-
-## §R. Reservorio — material heredado sin procesar
-
-> **Procedencia:** copiado **verbatim** de `REDISEÑO-EN-CURSO-viejo.md` §7 y §8 al archivar ese documento (v11.34, 2026-05-20).
-> **Estado:** material vivo **sin procesar**. Al procesarse, cada bloque se mueve a una sección propia y se retira de aquí. El antiguo §R.2 (siempre-presentes) se procesó como §10 (v11.44); queda solo §R.1.
-
-### §R.1 — Capa 1: Validación cruzada cross-unidad (heredado del viejo §7, cerrado en diseño 2026-05-12)
-
-> **Origen:** decisiones derivadas del rediseño de fase 1 que requieren chequeos cross-unidad. Estas reglas viven en el validador `scripts/validar_inventarios_cross.py` (capa 1 del pipeline de fase 2 redefinida).
->
-> **Nota:** este bloque sustituye conceptualmente al viejo modelo "mapa + auto" en lo relativo a coherencia cross-unidad. La materialización (código del validador) se hace en E4a del plan del rediseño de fase 1, no aquí.
-
-**R1 — Detección de anticipación de léxico.** *Premisa:* fase 1 codifica `recurrente` solo si el léxico aparece con frecuencia, no está en el índice de la propia unidad, **y** no es canónico en una unidad posterior. Lo que cumple las dos primeras condiciones pero falla la tercera lo deja silenciosamente fuera. Fase 2 lo detecta y reporta. *Algoritmo:* (1) leer el índice editorial completo (`nc1-curso.json`); (2) leer el `principal` de cada inventario; (3) leer el `recurrente` de cada inventario; (4) re-ejecutar análisis de frecuencias — para cada término frecuente que no está en `principal` ni `recurrente` de U(n): si es canónico en U(n+k) posterior → alerta de anticipación; si es canónico solo en U(n−k) anterior o en ninguna → no es alerta. *Output:* alertas `{unidad, termino, unidad_canónica, frecuencia, ejemplos}`.
-
-**R2 — Detección de inventos** (validación intra-unidad asumida como pre-condición). "No inventar palabras" es regla de fase 1. Fase 2 ejecuta un chequeo redundante: cada palabra de `vocabulario_consolidado` debe aparecer literalmente en alguna actividad/cuadro de la unidad. Si falla, indica bug del extractor.
-
-**R3 — Detección de errores de clasificación semántica.** Fase 2 usa el canon (`campos-semanticos-canonicos.json`) para detectar palabras mal categorizadas (ej. `campeón` en `Nacionalidades`). Regla intra-unidad de fase 1; fase 2 la usa como sanity check post-extracción.
-
-**R4 — Inconsistencias de progresión** (regla preexistente): léxico `recurrente` en U(n) que no fue `principal` en ninguna U(n−k); dos unidades con nombres distintos para el mismo contenido semántico; verbos en `vocabulario_consolidado` que deberían vivir en `tiempos_y_verbos_consolidado`.
-
-**R5 — Coherencia bidireccional de trazabilidad** (asumida como pre-condición). La coherencia entre `actividad.X` y `top-level.X.fuentes` la chequea el validador intra-unidad de fase 1. Fase 2 la asume y aborta si no se cumple.
-
-*Estado heredado:* diseño de reglas cerrado el 2026-05-12; implementación en `validar_inventarios_cross.py` pendiente.
-
-> El antiguo §R.2 (componentes "siempre presentes no indexados") **se procesó en v11.44** y vive ahora como sección propia **§10**.
 
 ---
 
@@ -646,6 +619,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.58)** — Nivel 3: §R.1 procesado. R1-R5 (validador cross-unidad) reformulado como contrato operativo en `reglas-reciclaje.md` §14 — R2 redefinido como materialidad/trazabilidad (no literalidad universal), R3 acotado a clasificación por dimensión. El Reservorio §R queda vacío y se retira del documento; el rediseño deja de tener material heredado sin procesar.
 - **2026-05-21 (v11.56)** — Nivel 3, paquete de registries (3/4, parte 2): 5 altas en `gramatica-canonica.json` (v1.6→v1.7, 18→23 categorías) del grupo "Tiempos y modos verbales" — Paradigma regular del presente, Irregularidad vocálica e→ie, Irregularidad vocálica o→ue, Infinitivo simple (flexión) + Uso del imperativo — instrucciones y peticiones (uso con cuadro). Primera aplicación de §2-bis. §6.4 reformulado: la frontera de canonización se ancla al **umbral de evidencia**, no al carril — un uso entra al registry si tiene cuadro propio; los usos del presente, sin cuadro, se tratan como análisis interpretativo.
 - **2026-05-21 (v11.55)** — Nivel 3, paquete de registries (3/4, parte 1): añadida §2-bis a `reglas-reciclaje.md` — procedimiento reproducible de canonización de categorías gramaticales nuevas (4 pasos: fuentes admitidas, dos carriles flexión/uso, criterio de alta con umbral de evidencia, cierre humano). Responde a la cuestión de replicabilidad: las categorías son del curso, el procedimiento es transversal. Las 7 altas de "Tiempos y modos verbales" serán su primera aplicación.
 - **2026-05-21 (v11.54)** — Nivel 3, paquete de registries (2/4): añadido el campo `_grupo` a las 18 categorías de `gramatica-canonica.json` (registry v1.5→v1.6) — mapeo a los 7 grupos de §6.3 (Determinantes 4, Pronombres 3, Sintagma nominal y concordancia 3, Construcciones 3, Adverbios y marcadores 3, Preposiciones 1, Tiempos y modos verbales 1). `_grupo` es eje de organización/lectura; no fusiona categorías ni cambia la granularidad de hilo. Sin tocar nombres canónicos ni `_pcic_ref`.

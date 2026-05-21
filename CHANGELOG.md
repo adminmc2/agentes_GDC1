@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.58 — 2026-05-21] — Fase 2 Nivel 3: §R.1 procesado — validador cross-unidad R1-R5
+
+Procesada la pieza §R.1 del Reservorio (R1-R5, validación cruzada cross-unidad heredada del rediseño viejo §7). Convertida en contrato operativo: nueva §14 en `reglas-reciclaje.md` — "Validador cross-unidad — R1-R5". Reformulaciones aplicadas sobre el material heredado: **R2** redefinido de "literalidad universal" a **materialidad y trazabilidad** (en vocabulario los ítems aparecen literalmente, en verbal las formas/lema atestiguados, en gramática/pron-orto la categoría trazada a actividades/cuadros — la etiqueta canónica no aparece literal en el libro); **R3** acotado a "errores de clasificación por dimensión". R2 y R5 son pre-condiciones (fallo = bug de fase 1, aborta); R1, R3, R4 producen alertas para el criterio de cierre §13. El nombre del script y el nivel de implementación no se cristalizan — "se difiere al bloque de implementación del pipeline". Con esto el **Reservorio §R queda vacío y se retira** de `REDISEÑO-EN-CURSO.md`: el rediseño ya no tiene material heredado sin procesar. Actualizados el apéndice §N (§7 viejo → cerrado en §14), §5 Nivel 3 y la cabecera del documento.
+
 ## [v11.57 — 2026-05-21] — Fase 2 Nivel 3: sincronización del conteo de categorías — paquete de registries cerrado
 
 Cuarta y última pieza del paquete de registries del Nivel 3. Sincronizadas las 5 referencias activas que aún decían "17 categorías" para `gramatica-canonica.json` — stale desde v10.156 (alta de "Imperativo (tú)") y ahora 23 tras las 5 altas de v11.56: `PROCESO-MAESTRO.md` (árbol del repo), `reglas-operativas.md` (×2), `prompt-dry-run.md` y `glosario.md` (tabla de fuentes PCIC). Las menciones "17" en bitácora histórica (REVIEW, CHANGELOG archivado) no se tocan — describen estados pasados, no contrato vivo. **Con esto el paquete de registries del Nivel 3 queda cerrado** (4/4): `perifrasis-canonicas.json` creado · `_grupo` añadido · 5 altas de "Tiempos y modos verbales" · conteo sincronizado.

@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-21 (v11.57 — Fase 2 Nivel 3: sincronizado el conteo "17→23 categorías" en 5 refs activas. **Paquete de registries cerrado** (4/4). Siguiente en Nivel 3: procesar §R.1 (validador cross-unidad R1-R5). Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-21 (v11.58 — Fase 2 Nivel 3: §R.1 procesado — validador cross-unidad R1-R5 a contrato operativo (`reglas-reciclaje.md` §14); Reservorio retirado. Siguiente en Nivel 3: procedimiento de la sesión de Capa 2 + wiring. Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >
