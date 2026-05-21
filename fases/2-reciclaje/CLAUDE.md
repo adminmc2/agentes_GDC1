@@ -61,7 +61,7 @@ Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 
 1. **Naming obligatorio:** el `titulo` de un hilo es siempre el nombre canónico del contenido tal como aparece en `nc1-curso.json` o en las claves de los bloques top-level consolidados del inventario (`vocabulario_consolidado.{principal,recurrente}`, `gramatica_consolidada.{principal,recurrente}`, `pronunciacion_ortografia_consolidada.{principal,recurrente}`, `tiempos_y_verbos_consolidado[].lema`). Nunca un nombre inventado o genérico. *(Tras v10.115 la clave `campo_semantico` por actividad fue eliminada; el naming canónico se toma ahora de los bloques consolidados y de las referencias en las 4 listas tipadas por actividad.)*
 2. **Granularidad del hilo por bloque** (ver `REDISEÑO-EN-CURSO.md` §2.2): vocabulario → campo semántico; gramática → categoría gramatical; pron/orto → categoría; verbal → lema; perífrasis → perífrasis. No se agrupan unidades de análisis distintas en un mismo hilo (ej. "Países hispanohablantes" y "Nacionalidades" son dos hilos, no uno).
-3. **Acciones con criterio:** ver `reglas-reciclaje.md` §2 para la tabla de acciones (introduce/amplia/aplica/sistematiza/contrasta).
+3. **Etiquetas con criterio:** el evento lleva una lista `etiquetas[]` (coexisten) — ver `reglas-reciclaje.md` §3. *(El modelo nuevo sustituye la `accion` única del modelo viejo por la lista de etiquetas.)*
 4. **Los scripts no inventan:** si un contenido no aparece en la fuente, no se genera hilo. Los scripts solo leen, no interpretan.
 5. **No editar `nc1-reciclaje.json` a mano para hilos mapa/auto.** Para cambiar un hilo: editar `nc1-curso.json` (nivel mapa) o el inventario correspondiente (nivel auto) y regenerar con el script.
 
@@ -71,8 +71,8 @@ Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 
 | Pregunta | Archivo |
 |---|---|
-| ¿Cuándo separar o agrupar hilos? ¿Qué nombre usar? | `reglas-reciclaje.md` §1 |
-| ¿Qué acción asignar a cada evento? | `reglas-reciclaje.md` §2 |
-| ¿Cómo funciona el script de mapa? | `regenerar_reciclaje_mapa.py` + `reglas-reciclaje.md` §3 |
-| ¿Cómo funciona el script de auto? | `regenerar_reciclaje_vocabulario.py` + `reglas-reciclaje.md` §4 |
+| ¿Cuándo separar o agrupar hilos? ¿Qué nombre usar? | `reglas-reciclaje.md` §1 (granularidad) y §2 (naming canónico) |
+| ¿Qué etiquetas asignar a cada evento? | `reglas-reciclaje.md` §3 |
+| ¿Cómo se clasifica respecto al índice? | `reglas-reciclaje.md` §4 (triage `procedencia_indice`) |
+| ¿Cómo funcionan los scripts de Capa 1? | Pendiente — Nivel 3 del rediseño (`REDISEÑO-EN-CURSO.md` §5). |
 | ¿Qué shape tiene nc1-reciclaje.json? | `schema-reciclaje.md` (contrato del rediseño nuevo) · `../../PROCESO-MAESTRO.md` §B1.5 (modelo viejo) |
