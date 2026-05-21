@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.41 — 2026-05-21] — REDISEÑO fase 2 §8: carril de explicaciones
+
+Cerrada la pieza "carril propio para las explicaciones gramaticales" en `REDISEÑO-EN-CURSO.md` (nueva §8). La explicación que el libro da de un contenido (el cuadro "cómo se forma X") es un **atributo del evento** — campo `explicacion` — no un hilo propio (un hilo aparte duplicaría el recorrido de la categoría). El campo tiene dos partes: `que_dice_el_libro` (lo que el cuadro expone literalmente) y `analisis_ia` (el trabajo de fase 2: relaciones lógicas, prerrequisitos, incoherencias — fase 2 no copia la fuente, la analiza). Alcance a los 5 bloques, no solo gramática. Es insumo del nivel `detalle` (§4.4), sin solaparse: el `analisis_ia` es local al evento, el `detalle` razona la cadena cross-unidad completa. Además, anclada en §5 Nivel 3 la nota de que el desglose de `formas` por unidad exige leer `actividad.tiempos_y_verbos` al diseñar Capa 1. Actualizado §5 Nivel 1.
+
 ## [v11.40 — 2026-05-21] — REDISEÑO fase 2 §7: tratamiento detallado de formas verbales
 
 Cerrada la pieza "tratamiento detallado de formas verbales" en `REDISEÑO-EN-CURSO.md` (nueva §7). (1) El evento verbal (lema-tiempo-unidad) lleva un campo `formas` con las formas conjugadas concretas que esa unidad trabaja — opción A: la forma es dato del evento, no sub-entidad con recorrido propio. La progresión del paradigma se lee comparando los `formas` de eventos sucesivos. (2) `rasgo_por_tiempo` (regular/irregular del lema) se mantiene en el hilo verbal; frontera trazada con el grupo gramatical "Tiempos y modos verbales" (§6.4): atributo del verbo concreto vs flexión abstracta como contenido enseñado. (3) Anticipación de formas en modelo híbrido — fase 2 lee el registro transitorio de fase 1 (`_migracion_rediseno`) y completa el análisis por su cuenta; cierra la costura §6.5 punto 1, incluida la perífrasis anticipatoria (ya no depende de `estructura_perifrastica`). Actualizados §3.2, §5 Nivel 1 y §6.5. Población del desglose por unidad: tarea diferida a la Capa 1.

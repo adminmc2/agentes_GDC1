@@ -250,7 +250,6 @@ Lo que falta **decidir** antes de poder escribir contrato.
 
 | Pieza | Qué resuelve |
 |---|---|
-| **Carril propio para las explicaciones gramaticales** | La explicación/cuadro que el libro expone ("cómo se forma el presente") no es el paradigma ni la categoría suelta. Decidir si es hilo propio o atributo del hilo. Necesita espacio de análisis separado. |
 | **Triage declarado / no declarado en índice** (gramática y pron/orto) | NO es un eje binario. Es un **flujo de decisión** de tres salidas para cada categoría que aparece: (1) **declarado literal** — está en el índice del curso tal cual; (2) **reconciliable** — no está literal, pero es un elemento del índice categorizado de otra forma → se reconcilia; (3) **contenido nuevo real** — no encaja en el índice de ningún modo → se escala al autor. La gramática y la pron/orto no declaradas se analizan **en detalle** antes de clasificarlas, no se vuelcan a "no declarado" por defecto. |
 | **D1 — Tabla de equivalencias** (`nc1-equivalencias-hilos.json`) | Vincular hilos `mapa` ↔ `auto` por equivalencia semántica, no por coincidencia de texto. Decidida en el viejo, no poblada — pendiente de redefinir en el activo. |
 | **P1 — Almacenamiento de datos enriquecidos** (opción A) | **Decisión heredada a ratificar/formalizar**, no pendiente: el viejo cerró P1 en **opción A** (2026-05-10) — los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta ratificarla en el modelo nuevo y formalizar el contrato de regeneración. |
@@ -268,7 +267,7 @@ Lo que falta **escribir** para que fase 2 tenga el mismo estándar de contrato q
 
 ### Nivel 3 — Implementación de Capa 1 y Capa 2
 
-- **Procedimiento concreto de Capa 1** (script determinista): qué genera, en qué orden.
+- **Procedimiento concreto de Capa 1** (script determinista): qué genera, en qué orden. **Nota (§7.4):** el desglose de `formas` por unidad exige leer `actividad.tiempos_y_verbos`, no solo el consolidado agregado — tenerlo presente al diseñar Capa 1.
 - **Validador cross-unidad R1-R5** — reglas de validación cruzada. Material heredado en el **Reservorio §R.1**, pendiente de procesar.
 - **Sesión IA de Capa 2** — cómo se ejecuta el enriquecimiento, qué inputs recibe.
 - **Wiring** — encadenado de Capa 1 → Capa 2 → integración.
@@ -397,6 +396,53 @@ Esto **cierra la costura §6.5 punto 1**: la perífrasis anticipatoria (auxiliar
 
 ---
 
+## §8. Carril de explicaciones — el evento lleva la explicación analizada (paso 8 — definido 2026-05-21)
+
+Resuelve dónde vive la **explicación** que el libro da de un contenido (el cuadro "cómo se forma X", "cuándo se usa Y").
+
+### §8.1. La explicación es un atributo del evento, no un hilo propio
+
+Un solo hilo por contenido. Donde el libro explica el contenido, el **evento de esa unidad lleva un campo `explicacion`**. No se crea un hilo aparte "Explicación de X" — duplicaría el recorrido del hilo de la categoría.
+
+```json
+{
+  "bloque": "gramatica", "titulo": "Oposición ser / estar",
+  "eventos": [
+    { "unidad": 5, "etiquetas": ["introduce", "sistematiza"],
+      "explicacion": {
+        "que_dice_el_libro": "ser para identidad/características; estar para ubicación/estado",
+        "fuente": "cuadro@p47",
+        "analisis_ia": "Requiere adjetivos descriptivos (U1) y locuciones de lugar (U5). El libro no contrasta casos límite."
+      } },
+    { "unidad": 7, "etiquetas": ["aplica"] }
+  ]
+}
+```
+
+### §8.2. El campo `explicacion` tiene dos partes
+
+- **`que_dice_el_libro`** — lo que el cuadro expone literalmente. Es válido tenerlo, pero **no es el trabajo de fase 2**.
+- **`analisis_ia`** — **el trabajo de fase 2**: relaciones lógicas, prerrequisitos, coherencia, incoherencias detectadas. Aquí está el valor. La fuente (el cuadro) puede ser pobre o escueta; fase 2 no se limita a copiarla — la analiza en profundidad.
+
+### §8.3. Alcance — los 5 bloques
+
+El campo `explicacion` aplica a **cualquier bloque** (vocabulario, gramática, pron/orto, verbal, perífrasis) cuyo contenido el libro explique con un cuadro. No es exclusivo de gramática.
+
+### §8.4. Evidencia
+
+Cuadros del inventario con el `tipo_cuadro` correspondiente — `cuadro.titulo` + `cuadro.contenido`. La evidencia alimenta `que_dice_el_libro`; el `analisis_ia` lo produce la Capa 2 IA mirando además las relaciones cross-unidad.
+
+### §8.5. Relación con el nivel `detalle` (§4.4)
+
+No se solapan:
+
+- El **`analisis_ia` del `explicacion`** es **local a un evento** — analiza la explicación de ese contenido en esa unidad.
+- El **nivel `detalle`** (§4.4) es la justificación lingüístico-pedagógica de **todo el hilo / la cadena cross-unidad** — el recorrido completo.
+
+El `que_dice_el_libro` y los `analisis_ia` de los eventos son **insumos** que el nivel `detalle` usa para razonar la cadena completa. El cuadro es material; el `detalle` razona sobre él.
+
+---
+
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
 El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas. Tres estados: **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva pero su versión vieja no sirve; se redefine en el activo), **en reservorio** (material vivo sin procesar, copiado al Reservorio de este documento).
@@ -466,6 +512,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.41)** — §8 cerrado: carril de explicaciones. La explicación que el libro da de un contenido es un **atributo del evento** (campo `explicacion`), no un hilo propio. Dos partes: `que_dice_el_libro` (literal del cuadro) + `analisis_ia` (el trabajo de fase 2: relaciones, lógica, incoherencias). Alcance a los 5 bloques. Insumo del nivel `detalle`, no se solapa con él. Anclada en §5 Nivel 3 la nota del desglose de `formas` para Capa 1.
 - **2026-05-21 (v11.40)** — §7 cerrado: tratamiento detallado de formas verbales. El evento verbal lleva un campo `formas` (lista de formas concretas por unidad, opción A); la progresión del paradigma se lee comparando eventos. `rasgo_por_tiempo` se queda en el hilo verbal, frontera trazada con el grupo gramatical §6.4. Anticipación de formas en modelo híbrido (fase 2 lee el registro transitorio y completa el análisis) — cierra la costura §6.5 punto 1, incluida la perífrasis anticipatoria.
 - **2026-05-20 (v11.38)** — Sincronización post-D2: §6.1 precisa la fórmula del universo (4 registries de fase 1 + `perifrasis-canonicas.json` derivado); nueva §6.5 anota las dos costuras que arrastra D2 (fuente de perífrasis anticipatorias, contrato corto de fase 2); `CLAUDE.md` de fase 2 sincronizado (nivel `auto` desde los 5 bloques; regla de granularidad por bloque).
 - **2026-05-20 (v11.37)** — §6 cerrado (D2): universo de hilos válidos = los 5 registries de fase 1 (4 + nuevo `perifrasis-canonicas.json`), cerrado para escritura / abierto para detección. Perífrasis pasa a 5.º bloque (cierra incoherencia §2.2↔§3.3). Bloque gramática sub-organizado por `_grupo` (subsistema gramatical, 7 grupos). Grupo "Tiempos y modos verbales" — flexión/paradigmas + usos, desde PCIC A1 — distinto del bloque `verbal` (lista de verbos). §2.2 actualizada (5 bloques). Población de registries: tarea diferida.
