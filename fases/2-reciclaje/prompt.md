@@ -4,7 +4,7 @@
 >
 > ⚠️ **Fase 2 PAUSADA** (decisión 36). Este prompt es el contrato para cuando fase 2 se reactive; hoy no se ejecuta. El rediseño que lo sustenta está en `REDISEÑO-EN-CURSO.md`.
 >
-> ⚠️ **Estado: esqueleto-contrato.** El flujo de alto nivel está fijado por el modelo (`REDISEÑO-EN-CURSO.md` §1-§13). El **detalle operativo del pipeline** (script de Capa 1, sesión de Capa 2, validadores) es **Nivel 3** del rediseño, aún sin implementar — este prompt no asume que esos scripts existan.
+> ⚠️ **Estado: esqueleto-contrato.** El flujo y los contratos del pipeline están cerrados (`REDISEÑO-EN-CURSO.md` §1-§13, Niveles 1-3). La **implementación en código** (scripts de Capa 1, validadores) es **Nivel 4** del rediseño, aún pendiente — este prompt no asume que esos scripts existan.
 
 ---
 
@@ -29,7 +29,7 @@ El **reciclaje incremental de una unidad**: la actualización de `unidades/nc1-r
 
 El procesamiento es híbrido en dos capas, **no a la vez** (`REDISEÑO-EN-CURSO.md` §1.3):
 
-1. **Capa 1 — esqueleto determinista.** Genera/actualiza mecánicamente los hilos de nivel `mapa` (desde `nc1-curso.json`) y `auto` (desde los 5 bloques del inventario). Precomputa lo mecánico del triage (`procedencia_indice: declarado`). *Procedimiento concreto: Nivel 3.*
+1. **Capa 1 — esqueleto determinista.** Genera/actualiza mecánicamente los hilos de nivel `mapa` (desde `nc1-curso.json`) y `auto` (desde los 5 bloques del inventario). Precomputa lo mecánico del triage (`procedencia_indice: declarado`). *Procedimiento: `REDISEÑO-EN-CURSO.md` §11; implementación en código: Nivel 4.*
 2. **Capa 2 — sesión IA enriquecedora.** Sobre el esqueleto:
    - Aplica los **tres momentos de análisis** (`reglas-reciclaje.md` / §2.1): intra-unidad, cross-atrás, cross-adelante.
    - Asigna las **etiquetas** del evento (§3 de reglas) y completa el **triage** `procedencia_indice` (§4).
@@ -40,11 +40,11 @@ El procesamiento es híbrido en dos capas, **no a la vez** (`REDISEÑO-EN-CURSO.
 
 El reciclaje de la unidad se cierra cuando cumple las 5 condiciones de `reglas-reciclaje.md` §13 (generado + chequeo estructural + validador cross-unidad R1-R5 + `propuestas[]` resueltas/diferidas + revisión editorial del autor).
 
-⚠️ Los **comandos concretos** del chequeo estructural y del validador R1-R5 son **Nivel 3** (pendientes de implementar). Hasta entonces, el gate se aplica según el contrato de §13, no como comandos cerrados.
+⚠️ Los **comandos concretos** del chequeo estructural y del validador R1-R5 se implementan en **Nivel 4** (pendiente). Hasta entonces, el gate se aplica según el contrato de `reglas-reciclaje.md` §13-§14, no como comandos cerrados.
 
 ## Lo que NO se hace
 
 - No editar a mano los hilos/eventos de nivel `mapa`/`auto` — se regeneran desde la fuente (`reglas-reciclaje.md` §12).
 - No inventar títulos canónicos — el universo es cerrado (§2 de reglas); lo no canónico se escala como propuesta.
 - No cerrar decisiones editoriales en automático — lo no obvio va a `propuestas[]` con cierre humano.
-- No asumir que los scripts de Capa 1 / validadores existen — son Nivel 3.
+- No asumir que los scripts de Capa 1 / validadores existen — su implementación es Nivel 4.

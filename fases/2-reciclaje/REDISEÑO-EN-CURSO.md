@@ -261,12 +261,14 @@ El contrato operativo de fase 2 está escrito al estándar de fase 1: contrato c
 - ✅ **Comandos de validación + criterio de cierre** — gate definido en `reglas-reciclaje.md` §13 (v11.48): chequeo estructural + validador cross-unidad R1-R5 + revisión editorial; criterio de cierre por unidad de 5 condiciones. Los validadores como script son Nivel 3.
 - ✅ **Ratificación formal de P1** — opción A confirmada y contrato de regeneración formalizado en `reglas-reciclaje.md` §12 (v11.47).
 
-### Nivel 3 — Implementación de Capa 1 y Capa 2
+### Nivel 3 — Diseño del pipeline (contratos) — ✅ COMPLETO (2026-05-21)
+
+Nivel 3 = el **diseño** (contratos ejecutables) del pipeline. La **implementación en código** es Nivel 4 (ver §13.5).
 
 - ✅ **Procedimiento concreto de Capa 1** — definido en §11 (v11.52): inputs (4, incluido el reciclaje actual para preservar `propuestas[]`), qué genera (proyección mecánica), qué precomputa (solo lo literal), 10 invariantes, modo incremental/íntegro con un mismo algoritmo. **Nota (§7.4):** el desglose de `formas` por unidad exige leer `actividad.tiempos_y_verbos` — recogido en §11.
 - ✅ **Validador cross-unidad R1-R5** — reglas de validación cruzada definidas como contrato operativo en `reglas-reciclaje.md` §14 (v11.58). La materialización como script se difiere al bloque de implementación.
 - ✅ **Sesión IA de Capa 2** — procedimiento definido en §12 (v11.59): inputs, secuencia de 7 pasos en 3 fases (precondiciones / trabajo editorial / gate), `detalle` en hitos cross-unidad, régimen de ejecución supervisado por unidad.
-- **Wiring** — encadenado de Capa 1 → Capa 2 → integración.
+- ✅ **Wiring** — encadenado Capa 1 → Capa 2 → gate → integración, definido en §13 (v11.60), con la frontera explícita Nivel 3 (contrato) / Nivel 4 (código).
 
 ### Nivel 4 — Reactivación operativa
 
@@ -644,6 +646,42 @@ Una **sesión IA supervisada por unidad** en Chat B (§1.2):
 
 ---
 
+## §13. Wiring del pipeline (paso 13 — definido 2026-05-21) — Nivel 3
+
+Última pieza de diseño del Nivel 3. **Consolida** el encadenado end-to-end del pipeline de fase 2 — no abre decisiones nuevas: encadena §11 (Capa 1), §12 (Capa 2), el gate de `reglas-reciclaje.md` §13 y el ciclo por unidad de §1.2.
+
+### §13.1. Propósito
+
+Fijar **cómo se encadenan** las piezas: Capa 1 → Capa 2 → gate → integración. Es el contrato del flujo, no su implementación.
+
+### §13.2. Flujo incremental por unidad
+
+1. **Capa 1** corre sobre la unidad recién integrada en fase 1 → produce el esqueleto mecánico (§11).
+2. **Capa 2** corre sobre ese esqueleto → enriquecimiento editorial (§12).
+3. **Gate de cierre de unidad** (`reglas-reciclaje.md` §13): chequeo estructural + validador cross-unidad R1-R5 + revisión editorial + `propuestas[]` resueltas o diferidas.
+4. Si el gate **pasa** → **integración a main** del paquete (inventario + reciclaje). Si **falla** → **no hay integración**.
+5. Salto a la siguiente unidad.
+
+### §13.3. Flujo en hitos cross-unidad y cierre global
+
+- **Tras 3 unidades acumuladas**: revisión cross-unidad ampliada (Capa 2 sobre el bloque de unidades) — promueve hilos a `nivel_analisis: detalle`. **No es regeneración íntegra** — es revisión.
+- **Cierre global del curso**: regeneración íntegra de `nc1-reciclaje.json` + remate del `detalle` pendiente.
+
+### §13.4. Puntos de corte y abortos
+
+- **Pre-chequeo de Capa 2** (§12.2 paso 1): si hay fallo fatal de R2/R5 heredado de fase 1, la Capa 2 **aborta** — no se procesa la unidad.
+- **Gate** (`reglas-reciclaje.md` §13): si quedan alertas sin resolver o `propuestas[]` sin resolver/diferir, la unidad **no se cierra** → **no hay integración a main**.
+- La **integración a main no es parte del enriquecimiento de fase 2**: es el cierre del ciclo por unidad, a cargo del **ejecutor coordinador** (§1.2 paso 3), no de la sesión de Capa 2.
+
+### §13.5. Frontera Nivel 3 / Nivel 4
+
+- **Nivel 3 (diseño)** — define el **contrato** del encadenado del pipeline: qué se ejecuta, en qué orden, con qué puntos de corte. **Se cierra aquí.**
+- **Nivel 4 (implementación)** — **implementa ese contrato en código**, ejecuta la **regeneración real** de `nc1-reciclaje.json` y **reactiva** la fase.
+
+El **código** (scripts de Capa 1, validadores estructural y cross-unidad) es **Nivel 4**, no Nivel 3. El Nivel 3 entrega contratos ejecutables por una persona o un agente; el Nivel 4 los materializa en software.
+
+---
+
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
 El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas: **obsoleto** (no se migra), **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva, se redefine en el activo) o **cerrado en §X / reglas** (procesado a una sección propia). Todas las piezas están ya procesadas; no queda material heredado sin procesar.
@@ -668,6 +706,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.60)** — Nivel 3: §13 cerrada — wiring del pipeline (encadenado Capa 1 → Capa 2 → gate → integración; flujo incremental y de hitos; puntos de corte; frontera explícita Nivel 3 contrato / Nivel 4 código). **Nivel 3 (diseño) COMPLETO.** Sincronizada la deriva terminológica en `CLAUDE.md` de fase 2 y `prompt.md`: el código pasa a ser Nivel 4. Solo queda el Nivel 4 (implementación + reactivación).
 - **2026-05-21 (v11.59)** — Nivel 3: §12 cerrada — procedimiento de la sesión de Capa 2. Inputs (incluidas las marcas transitorias de fase 1 como contexto revisable y el recorrido previo consolidado), secuencia de 7 pasos separada en 3 fases (precondiciones / trabajo editorial / gate), `detalle` como salida de hitos cross-unidad (no obligatoria por unidad), régimen supervisado en Chat B con cierre humano de `propuestas[]`.
 - **2026-05-21 (v11.58)** — Nivel 3: §R.1 procesado. R1-R5 (validador cross-unidad) reformulado como contrato operativo en `reglas-reciclaje.md` §14 — R2 redefinido como materialidad/trazabilidad (no literalidad universal), R3 acotado a clasificación por dimensión. El Reservorio §R queda vacío y se retira del documento; el rediseño deja de tener material heredado sin procesar.
 - **2026-05-21 (v11.56)** — Nivel 3, paquete de registries (3/4, parte 2): 5 altas en `gramatica-canonica.json` (v1.6→v1.7, 18→23 categorías) del grupo "Tiempos y modos verbales" — Paradigma regular del presente, Irregularidad vocálica e→ie, Irregularidad vocálica o→ue, Infinitivo simple (flexión) + Uso del imperativo — instrucciones y peticiones (uso con cuadro). Primera aplicación de §2-bis. §6.4 reformulado: la frontera de canonización se ancla al **umbral de evidencia**, no al carril — un uso entra al registry si tiene cuadro propio; los usos del presente, sin cuadro, se tratan como análisis interpretativo.
