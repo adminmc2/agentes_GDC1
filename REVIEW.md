@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-21 (v11.41 — REDISEÑO fase 2 §8: carril de explicaciones (`explicacion` como atributo del evento, `que_dice_el_libro` + `analisis_ia`, alcance a 5 bloques). Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-21 (v11.42 — REDISEÑO fase 2 §9: triage índice (declarado/reconciliado/nuevo por evento, `procedencia_indice`). Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

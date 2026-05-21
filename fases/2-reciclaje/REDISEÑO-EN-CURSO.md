@@ -250,7 +250,6 @@ Lo que falta **decidir** antes de poder escribir contrato.
 
 | Pieza | Qué resuelve |
 |---|---|
-| **Triage declarado / no declarado en índice** (gramática y pron/orto) | NO es un eje binario. Es un **flujo de decisión** de tres salidas para cada categoría que aparece: (1) **declarado literal** — está en el índice del curso tal cual; (2) **reconciliable** — no está literal, pero es un elemento del índice categorizado de otra forma → se reconcilia; (3) **contenido nuevo real** — no encaja en el índice de ningún modo → se escala al autor. La gramática y la pron/orto no declaradas se analizan **en detalle** antes de clasificarlas, no se vuelcan a "no declarado" por defecto. |
 | **D1 — Tabla de equivalencias** (`nc1-equivalencias-hilos.json`) | Vincular hilos `mapa` ↔ `auto` por equivalencia semántica, no por coincidencia de texto. Decidida en el viejo, no poblada — pendiente de redefinir en el activo. |
 | **P1 — Almacenamiento de datos enriquecidos** (opción A) | **Decisión heredada a ratificar/formalizar**, no pendiente: el viejo cerró P1 en **opción A** (2026-05-10) — los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta ratificarla en el modelo nuevo y formalizar el contrato de regeneración. |
 | **§8 — Componentes "siempre presentes no indexados"** | Conjunciones, adverbios sí/no… Política de tratamiento. Material heredado en el **Reservorio §R.2**, pendiente de procesar. |
@@ -260,7 +259,7 @@ Lo que falta **decidir** antes de poder escribir contrato.
 Lo que falta **escribir** para que fase 2 tenga el mismo estándar de contrato que fase 1.
 
 - **Prompt envoltorio de fase 2** por unidad (entry point operativo).
-- **Schema / contrato de `nc1-reciclaje.json`** — shape canónico del hilo y del evento (hoy disperso, sin documento de contrato).
+- **Schema / contrato de `nc1-reciclaje.json`** — shape canónico del hilo y del evento (hoy disperso, sin documento de contrato). **Nota (§8.4):** precisar cómo se serializa `explicacion.que_dice_el_libro` cuando el cuadro de origen tiene contenido interno estructurado (no solo texto plano).
 - **Reglas operativas reescritas** — `reglas-reciclaje.md` está en shape viejo; reescribir al modelo IA-first.
 - **Persistencia de las decisiones de la Capa 2 IA** — dónde y cómo se guardan las propuestas decisionales.
 - **Comandos de validación + criterio de cierre** — qué se ejecuta y qué gate certifica que el reciclaje de una unidad está cerrado.
@@ -443,6 +442,38 @@ El `que_dice_el_libro` y los `analisis_ia` de los eventos son **insumos** que el
 
 ---
 
+## §9. Triage índice — estatus de cada categoría por evento (paso 9 — definido 2026-05-21)
+
+Aplica a los bloques **gramática** y **pronunciación/ortografía**. Cada vez que una categoría aparece en una unidad, el triage determina su estatus respecto al índice editorial del curso (`nc1-curso.json`).
+
+### §9.1. Las tres salidas
+
+1. **Declarado literal** — la categoría coincide con una entrada del índice del curso para esa unidad.
+2. **Reconciliable** — no está literal en el índice, pero es el **mismo contenido** que una entrada del índice declarada con otro nombre.
+3. **Contenido nuevo real** — aparece en el libro pero **no está en el índice** y **no es reconciliable** con ninguna entrada. Contenido que el libro trae sin que el índice lo declare.
+
+Las categorías no declaradas **no se vuelcan a "nuevo" por defecto**: se analizan en detalle para distinguir reconciliable de nuevo real.
+
+### §9.2. Quién aplica cada salida
+
+Principio de eficiencia: aprovechar lo que fase 1 ya resuelve; desarrollar en fase 2 solo lo que falte.
+
+- **Declarado literal** → **precomputable por la Capa 1** (coincidencia mecánica con el índice del curso). No requiere IA.
+- **Reconciliable** → **Capa 2 IA propone** la reconciliación; el **humano cierra**.
+- **Contenido nuevo real** → **Capa 2 IA genera una propuesta al autor** ("detectada esta categoría no declarada — ¿canonizar en el registry de fase 1 o dejarla como hallazgo?"). Decide el autor. Mismo tipo de hallazgo que §R.2 "siempre presentes".
+
+Reconciliaciones y categorías nuevas son siempre **propuestas** (IA propone / humano cierra), nunca decisiones automáticas de fase 2.
+
+### §9.3. Granularidad — por evento
+
+El estatus del triage se marca **por evento** (categoría-unidad), **no** una sola vez por categoría. Una misma categoría puede tener estatus distinto según la unidad: p. ej. "Marcadores temporales del pasado" está declarada en el índice de U9 (→ `declarado`) pero puede aparecer de pasada en U3 (→ `nuevo` / anticipación).
+
+### §9.4. Registro en el evento
+
+El evento del hilo lleva un campo **`procedencia_indice`** con valor `declarado` | `reconciliado` | `nuevo`. Si es `reconciliado`, se anota además a qué entrada del índice equivale. El campo es resultado de propuesta — la parte no mecánica (reconciliado/nuevo) queda pendiente de cierre humano.
+
+---
+
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
 El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas. Tres estados: **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva pero su versión vieja no sirve; se redefine en el activo), **en reservorio** (material vivo sin procesar, copiado al Reservorio de este documento).
@@ -512,6 +543,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.42)** — §9 cerrado: triage índice. Tres salidas por evento (`declarado` / `reconciliado` / `nuevo`) para gramática y pron/orto. Declarado literal lo precomputa la Capa 1; reconciliable y nuevo son propuestas de la Capa 2 IA con cierre humano. Estatus por evento (categoría-unidad), registrado en `procedencia_indice`. Anclada en §5 Nivel 2 la nota de serialización de `que_dice_el_libro` (§8.4).
 - **2026-05-21 (v11.41)** — §8 cerrado: carril de explicaciones. La explicación que el libro da de un contenido es un **atributo del evento** (campo `explicacion`), no un hilo propio. Dos partes: `que_dice_el_libro` (literal del cuadro) + `analisis_ia` (el trabajo de fase 2: relaciones, lógica, incoherencias). Alcance a los 5 bloques. Insumo del nivel `detalle`, no se solapa con él. Anclada en §5 Nivel 3 la nota del desglose de `formas` para Capa 1.
 - **2026-05-21 (v11.40)** — §7 cerrado: tratamiento detallado de formas verbales. El evento verbal lleva un campo `formas` (lista de formas concretas por unidad, opción A); la progresión del paradigma se lee comparando eventos. `rasgo_por_tiempo` se queda en el hilo verbal, frontera trazada con el grupo gramatical §6.4. Anticipación de formas en modelo híbrido (fase 2 lee el registro transitorio y completa el análisis) — cierra la costura §6.5 punto 1, incluida la perífrasis anticipatoria.
 - **2026-05-20 (v11.38)** — Sincronización post-D2: §6.1 precisa la fórmula del universo (4 registries de fase 1 + `perifrasis-canonicas.json` derivado); nueva §6.5 anota las dos costuras que arrastra D2 (fuente de perífrasis anticipatorias, contrato corto de fase 2); `CLAUDE.md` de fase 2 sincronizado (nivel `auto` desde los 5 bloques; regla de granularidad por bloque).

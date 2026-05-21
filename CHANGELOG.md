@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.42 — 2026-05-21] — REDISEÑO fase 2 §9: triage índice
+
+Cerrada la pieza "triage declarado/reconciliable/contenido nuevo" en `REDISEÑO-EN-CURSO.md` (nueva §9). Para gramática y pron/orto: cada aparición de una categoría se clasifica respecto al índice del curso en tres salidas — `declarado`, `reconciliado` o `nuevo`. El declarado literal lo precomputa la Capa 1 (coincidencia mecánica); reconciliable y nuevo los analiza la Capa 2 IA como propuestas con cierre humano (una categoría nueva genera propuesta al autor: canonizar en registry de fase 1 o dejar como hallazgo, tipo §R.2). El estatus se marca por evento (categoría-unidad), registrado en el campo `procedencia_indice`. Además: anclada en §5 Nivel 2 la nota de §8.4 (serialización de `que_dice_el_libro`). Actualizado §5 Nivel 1.
+
 ## [v11.41 — 2026-05-21] — REDISEÑO fase 2 §8: carril de explicaciones
 
 Cerrada la pieza "carril propio para las explicaciones gramaticales" en `REDISEÑO-EN-CURSO.md` (nueva §8). La explicación que el libro da de un contenido (el cuadro "cómo se forma X") es un **atributo del evento** — campo `explicacion` — no un hilo propio (un hilo aparte duplicaría el recorrido de la categoría). El campo tiene dos partes: `que_dice_el_libro` (lo que el cuadro expone literalmente) y `analisis_ia` (el trabajo de fase 2: relaciones lógicas, prerrequisitos, incoherencias — fase 2 no copia la fuente, la analiza). Alcance a los 5 bloques, no solo gramática. Es insumo del nivel `detalle` (§4.4), sin solaparse: el `analisis_ia` es local al evento, el `detalle` razona la cadena cross-unidad completa. Además, anclada en §5 Nivel 3 la nota de que el desglose de `formas` por unidad exige leer `actividad.tiempos_y_verbos` al diseñar Capa 1. Actualizado §5 Nivel 1.
