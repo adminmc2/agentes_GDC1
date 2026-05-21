@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.44 — 2026-05-21] — REDISEÑO fase 2 §10: componentes "siempre presentes" — Nivel 1 completo
+
+Procesada la última pieza conceptual del Nivel 1: los componentes "siempre presentes no indexados" (conjunciones `y/e`, `o/u`; adverbios `sí/no/también/tampoco`). Movidos del Reservorio §R.2 a sección propia §10 y reconciliados con el modelo §1-§9: un "siempre presente" es un patrón cross-unidad del triage §9 — un contenido que el triage marca `nuevo` sistemáticamente curso a curso. §10 define: detección por la Capa 2 IA en los hitos cross-unidad; tres salidas de propuesta al autor (canonizar en registry de fase 1 / modelar como bloque analítico / ignorar); criterio de ampliación de la lista (presencia sistemática + no declarado + función pragmática). Con esto el **Nivel 1 del roadmap queda completo** — residuo único: ratificación formal de P1, que se hará en el Nivel 2. Actualizados §5, apéndice §N, Reservorio §R (queda solo §R.1) y el puntero de `gramatica-canonica.json._meta`.
+
 ## [v11.43 — 2026-05-21] — REDISEÑO fase 2: §9 generalizado + D1 absorbida
 
 Cierre de la pieza D1 (tabla de equivalencias) en `REDISEÑO-EN-CURSO.md`. (1) El triage §9 se **generaliza a los 5 bloques** — la lógica declarado/reconciliable/nuevo no era específica de gramática, vale para vocabulario, gramática, pron/orto, verbal y perífrasis. (2) Nueva §9.5: `procedencia_indice` (triage) y `etiquetas` (§2.3) son **dos ejes ortogonales** del evento — el triage añade un eje, no sustituye las etiquetas; un evento lleva los dos. (3) Nueva §9.6: **D1 queda absorbida por el triage** — el archivo curado `nc1-equivalencias-hilos.json` del rediseño viejo es obsoleto; la reconciliación índice↔canónico es la salida `reconciliado` del triage, resuelta evento a evento como propuesta IA con cierre humano. Actualizados §5 Nivel 1 (D1 retirada) y apéndice §N. Con esto el Nivel 1 del roadmap queda completo salvo §R.2 (siempre-presentes).

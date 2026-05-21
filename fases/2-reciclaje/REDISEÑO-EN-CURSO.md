@@ -242,16 +242,13 @@ El campo `nivel_analisis` **no clasifica el hilo** en tres tipos paralelos — i
 
 Inventario vivo de lo que falta para cerrar el rediseño de fase 2 al estándar de fase 1 (contrato operativo completo, no solo modelo conceptual). Ordenado en **cuatro niveles**; cada nivel se aborda cuando el anterior está suficientemente cerrado. Las piezas se mueven a secciones propias (§6+) conforme se discuten y cierran.
 
-### Nivel 1 — Decisiones de modelo pendientes
+### Nivel 1 — Decisiones de modelo — ✅ COMPLETO (2026-05-21)
 
-Lo que falta **decidir** antes de poder escribir contrato.
+Las decisiones de modelo están cerradas. Trayecto: alcance (v11.33) · D2/§6 · formas verbales/§7 · explicaciones/§8 · triage/§9 · D1 absorbida en §9.6 · siempre-presentes/§10.
 
-> **Decisión de alcance — cerrada 2026-05-20.** `comunicacion` (funciones comunicativas) y `estrategia` quedan **fuera del rediseño actual de fase 2**: son desarrollo **posterior**, a abordar más adelante. El rediseño vigente cubre solo los bloques lingüísticos del inventario — vocabulario, gramática, pronunciación/ortografía y verbal (más `perifrasis` como bloque derivado). Cuando se retomen, `comunicacion` y `estrategia` se incorporan como ampliación. Registrado en la bitácora de `PROCESO-MAESTRO.md`.
+> **Decisión de alcance — cerrada 2026-05-20.** `comunicacion` (funciones comunicativas) y `estrategia` quedan **fuera del rediseño actual de fase 2**: son desarrollo **posterior**. El rediseño vigente cubre solo los bloques lingüísticos del inventario — vocabulario, gramática, pronunciación/ortografía, verbal y `perifrasis`. Registrado en la bitácora de `PROCESO-MAESTRO.md`.
 
-| Pieza | Qué resuelve |
-|---|---|
-| **P1 — Almacenamiento de datos enriquecidos** (opción A) | **Decisión heredada a ratificar/formalizar**, no pendiente: el viejo cerró P1 en **opción A** (2026-05-10) — los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta ratificarla en el modelo nuevo y formalizar el contrato de regeneración. |
-| **§8 — Componentes "siempre presentes no indexados"** | Conjunciones, adverbios sí/no… Política de tratamiento. Material heredado en el **Reservorio §R.2**, pendiente de procesar. |
+**Único residuo del Nivel 1 — P1.** Decisión heredada del viejo, cerrada en **opción A** (2026-05-10): los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta **ratificarla/formalizarla** en el Nivel 2 (contrato de regeneración) — no es una decisión abierta, es un trámite de formalización.
 
 ### Nivel 2 — Contrato operativo a producir
 
@@ -290,7 +287,7 @@ Cierra la pieza D2. La formulación vieja (lista PCIC curada de ~55 subcategorí
 El universo de títulos de hilo válidos de fase 2 = **los 4 registries canónicos de fase 1** (`campos-semanticos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`, `verbos-canonicos.json`) **+ el registry derivado `perifrasis-canonicas.json`** (5.º, propio de fase 2 — ver §6.2). Fase 2 **no cura un universo libre**: hereda los 4 de fase 1 y solo añade el derivado de perífrasis.
 
 - **Cerrado para escritura**: fase 2 no inventa un título canónico. Si no está en uno de los 5 registries, fase 2 no lo crea.
-- **Abierto para detección**: si fase 2, al analizar en profundidad, surfacea una **estructura no declarada** en ningún registry, eso es un **hallazgo legítimo** que se escala al autor (misma política que §R.2 "siempre presentes"). No se inventa, no se rechaza: se propone.
+- **Abierto para detección**: si fase 2, al analizar en profundidad, surfacea una **estructura no declarada** en ningún registry, eso es un **hallazgo legítimo** que se escala al autor (misma política que §10 "siempre presentes"). No se inventa, no se rechaza: se propone.
 
 ### §6.2. Perífrasis — 5.º registry
 
@@ -459,7 +456,7 @@ Principio de eficiencia: aprovechar lo que fase 1 ya resuelve; desarrollar en fa
 
 - **Declarado literal** → **precomputable por la Capa 1** (coincidencia mecánica con el índice del curso). No requiere IA.
 - **Reconciliable** → **Capa 2 IA propone** la reconciliación; el **humano cierra**.
-- **Contenido nuevo real** → **Capa 2 IA genera una propuesta al autor** ("detectada esta categoría no declarada — ¿canonizar en el registry de fase 1 o dejarla como hallazgo?"). Decide el autor. Mismo tipo de hallazgo que §R.2 "siempre presentes".
+- **Contenido nuevo real** → **Capa 2 IA genera una propuesta al autor** ("detectada esta categoría no declarada — ¿canonizar en el registry de fase 1 o dejarla como hallazgo?"). Decide el autor. Mismo tipo de hallazgo que §10 "siempre presentes".
 
 Reconciliaciones y categorías nuevas son siempre **propuestas** (IA propone / humano cierra), nunca decisiones automáticas de fase 2.
 
@@ -488,6 +485,51 @@ La pieza **D1** del rediseño viejo (`nc1-equivalencias-hilos.json`, una tabla c
 
 ---
 
+## §10. Componentes "siempre presentes no indexados" (paso 10 — definido 2026-05-21)
+
+Procesa el material heredado del viejo §8 (antes en el Reservorio §R.2) y lo reconcilia con el modelo §1-§9. Cierra la última pieza conceptual del Nivel 1.
+
+### §10.1. Definición
+
+Componentes lingüísticos que aparecen **sistemáticamente** en el corpus de NC1 pero que el libro **NO enseña como contenido** del índice editorial (`nc1-curso.json`). Su omnipresencia es un fenómeno cross-unidad; su tratamiento canónico no es trivial.
+
+### §10.2. Es un patrón cross-unidad del triage §9
+
+Un "siempre presente" **no es un mecanismo aparte**: es un componente que el triage §9 marcaría `nuevo` (no declarado en el índice) **de forma sistemática, en muchas o todas las unidades**. §10 es la **lectura agregada** del triage — el mecanismo que reconoce ese patrón cross-unidad. Un `nuevo` aislado es un hallazgo puntual; un `nuevo` recurrente curso a curso es un "siempre presente".
+
+### §10.3. Detección — Capa 2 IA en los hitos cross-unidad
+
+La detección la hace la **Capa 2 IA** en los **hitos cross-unidad** (§1.4 — cada 3 unidades / cierre global), cuando ya hay varias unidades acumuladas para que el patrón sea visible. No se detecta procesando una unidad aislada.
+
+### §10.4. Qué se hace — propuesta al autor con tres salidas
+
+La Capa 2 IA genera una **propuesta al autor**, con evidencia (frecuencia, distribución por unidades, función pragmática vs gramatical). Tres salidas posibles, decide el autor caso por caso:
+
+- **(a)** Canonizar como **categoría cross-unidad** en el registry de fase 1 que corresponda.
+- **(b)** Modelarlo como **bloque analítico transversal** propio de `nc1-reciclaje.json`.
+- **(c)** **Ignorarlo** si no aporta valor de análisis.
+
+### §10.5. Criterio de ampliación de la lista
+
+Un candidato nuevo entra en la lista de "siempre presentes" cuando se cumplen las tres condiciones: (1) **presencia sistemática cross-unidad**, (2) **no declarado** en el índice editorial, (3) **función pragmática / de input**, no contenido enseñado. La Capa 2 IA lo propone en un hito cross-unidad; el autor confirma la incorporación.
+
+### §10.6. Lista inicial de candidatos (detectados durante v10.117)
+
+| Candidato | Evidencia | Pregunta para fase 2 |
+|---|---|---|
+| Conjunciones copulativas (`y`, `e`) | Omnipresentes como coordinador de constituyentes | ¿Categoría gramatical cross-unidad o input pragmático? |
+| Conjunciones disyuntivas (`o`, `u`) | Frecuentes en cuestionarios y opciones | Idem |
+| Adverbios de afirmación y negación (`sí`, `no`, `también`, `tampoco`) | "sí"/"no" omnipresentes desde U1; "también"/"tampoco" tardíos | ¿Se separan por momento de aparición? |
+
+### §10.7. Política operativa
+
+1. **Fase 1 no los canoniza automáticamente.** Si una extracción surfacea uno con anclaje material claro, se escala al autor por §0.1.
+2. **Fase 2 los detecta como patrón** al agregar inventarios cross-unidad — produce un `hallazgo`/propuesta, no una modificación silenciosa de ningún registry.
+3. **El autor decide** caso por caso entre las tres salidas de §10.4.
+4. **Si el autor canoniza** (salida a), se añade al registry de fase 1 con `_pcic_ref` y `_apariciones`, y se actualiza `_meta.siempre_presentes_no_indexados` del registry para retirar el candidato.
+
+---
+
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
 El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas. Tres estados: **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva pero su versión vieja no sirve; se redefine en el activo), **en reservorio** (material vivo sin procesar, copiado al Reservorio de este documento).
@@ -503,14 +545,14 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 | §5 Hallazgos del revisor | Obsoleto | Un solo hallazgo, ya cerrado por D1+D2. No se migra. |
 | §6 Pasos de migración | Obsoleto | Reemplazado por la hoja de ruta de §5. No se migra. |
 | §7 · R1-R5 validación cruzada cross-unidad | En reservorio | Material vivo sin procesar. Copiado al Reservorio. Se procesará en §5 Nivel 3. |
-| §8 · Componentes "siempre presentes no indexados" | En reservorio | Material vivo sin procesar. Copiado al Reservorio. Se procesará en §5 Nivel 1. |
+| §8 · Componentes "siempre presentes no indexados" | Cerrado en §10 | Procesado: §10 lo reconcilia con el triage (patrón cross-unidad de `nuevo`), define detección, salidas y criterio de ampliación. |
 
 ---
 
 ## §R. Reservorio — material heredado sin procesar
 
 > **Procedencia:** copiado **verbatim** de `REDISEÑO-EN-CURSO-viejo.md` §7 y §8 al archivar ese documento (v11.34, 2026-05-20).
-> **Estado:** material vivo **sin procesar**. No es decisión cerrada del modelo nuevo — es materia prima a discutir y reformular cuando el roadmap §5 llegue a estas piezas. Al procesarse, cada bloque se mueve a una sección propia (§6+) y se retira de aquí.
+> **Estado:** material vivo **sin procesar**. Al procesarse, cada bloque se mueve a una sección propia y se retira de aquí. El antiguo §R.2 (siempre-presentes) se procesó como §10 (v11.44); queda solo §R.1.
 
 ### §R.1 — Capa 1: Validación cruzada cross-unidad (heredado del viejo §7, cerrado en diseño 2026-05-12)
 
@@ -530,25 +572,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 
 *Estado heredado:* diseño de reglas cerrado el 2026-05-12; implementación en `validar_inventarios_cross.py` pendiente.
 
-### §R.2 — Componentes "siempre presentes no indexados" (heredado del viejo §8, registrado v10.117)
-
-**Definición.** Componentes lingüísticos que aparecen sistemáticamente en el corpus de NC1 pero el libro NO los enseña como contenido en el índice editorial. Su omnipresencia es un fenómeno cross-unidad detectable; su tratamiento canónico no es trivial.
-
-**Por qué no se canonizan en fase 1.** El registry de fase 1 se ancla al criterio "materialmente presente y analíticamente necesario". Eso excluye material que aparece como input pragmático del corpus pero no se trabaja como contenido enseñado. Canonizarlos automáticamente inflaría el registry.
-
-**Responsabilidad de fase 2.** Fase 2 debe **proponer al autor** el tratamiento canónico cuando detecte el patrón de presencia sistemática cross-unidad. La propuesta puede ser: canonizar como categoría cross-unidad; tratarlos como fenómeno transversal en un bloque analítico de `nc1-reciclaje.json`; o ignorarlos. Decide el autor; fase 2 propone con evidencia.
-
-**Lista inicial de candidatos** (detectados durante v10.117):
-
-| Candidato | Estado | Evidencia | Pregunta para fase 2 |
-|---|---|---|---|
-| Conjunciones copulativas (`y`, `e`) | NO canonizadas en fase 1 | Omnipresentes como coordinador de constituyentes | ¿Categoría gramatical cross-unidad o input pragmático? |
-| Conjunciones disyuntivas (`o`, `u`) | NO canonizadas | Frecuentes en cuestionarios y opciones | Idem |
-| Adverbios de afirmación y negación (`sí`, `no`, `también`, `tampoco`) | NO canonizadas | "sí"/"no" omnipresentes desde U1; "también"/"tampoco" tardíos | ¿Se separan por momento de aparición? |
-
-**Política operativa.** (1) Fase 1 no los canoniza automáticamente; si una extracción surfacea uno con anclaje material claro, se escala al autor por §0.1. (2) Fase 2 los detecta como patrón al agregar inventarios cross-unidad — produce un `hallazgo`, no una modificación silenciosa. (3) El autor decide caso por caso. (4) Si el autor canoniza, se añade al registry de fase 1 con `_pcic_ref` y `_apariciones`, y se actualiza `_meta.siempre_presentes_no_indexados`.
-
-*(El viejo §8 dejaba un epígrafe "Criterio de ampliación" sin cuerpo; se completará al procesar esta pieza.)*
+> El antiguo §R.2 (componentes "siempre presentes no indexados") **se procesó en v11.44** y vive ahora como sección propia **§10**.
 
 ---
 
@@ -557,6 +581,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.44)** — §10 cerrado: componentes "siempre presentes no indexados" procesados del Reservorio §R.2. Reconciliados como patrón cross-unidad del triage §9 (un `nuevo` sistemático). Detección por la Capa 2 IA en hitos cross-unidad; tres salidas de propuesta al autor (canonizar / bloque analítico / ignorar); criterio de ampliación definido. **Nivel 1 del roadmap COMPLETO** (residuo: ratificación formal de P1 en Nivel 2). Reservorio: queda solo §R.1.
 - **2026-05-21 (v11.43)** — §9 generalizado a los 5 bloques (el triage no era específico de gramática). Nueva §9.5 (`procedencia_indice` y `etiquetas` son dos ejes ortogonales del evento) y §9.6 (D1 absorbida: la tabla de equivalencias curada queda obsoleta, la reconciliación la hace el triage). D1 cerrado — Nivel 1 del roadmap completo salvo §R.2.
 - **2026-05-21 (v11.42)** — §9 cerrado: triage índice. Tres salidas por evento (`declarado` / `reconciliado` / `nuevo`) para gramática y pron/orto. Declarado literal lo precomputa la Capa 1; reconciliable y nuevo son propuestas de la Capa 2 IA con cierre humano. Estatus por evento (categoría-unidad), registrado en `procedencia_indice`. Anclada en §5 Nivel 2 la nota de serialización de `que_dice_el_libro` (§8.4).
 - **2026-05-21 (v11.41)** — §8 cerrado: carril de explicaciones. La explicación que el libro da de un contenido es un **atributo del evento** (campo `explicacion`), no un hilo propio. Dos partes: `que_dice_el_libro` (literal del cuadro) + `analisis_ia` (el trabajo de fase 2: relaciones, lógica, incoherencias). Alcance a los 5 bloques. Insumo del nivel `detalle`, no se solapa con él. Anclada en §5 Nivel 3 la nota del desglose de `formas` para Capa 1.
