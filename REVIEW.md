@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-20 (v11.39 — nuevo `glosario.md` transversal del proyecto en la raíz; el glosario de fase 1 se mantiene como referencia de schema).
+> **Última actualización:** 2026-05-21 (v11.40 — REDISEÑO fase 2 §7: tratamiento detallado de formas verbales (evento con `formas`, progresión del paradigma, anticipación híbrida). Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

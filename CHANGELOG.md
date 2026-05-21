@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.40 — 2026-05-21] — REDISEÑO fase 2 §7: tratamiento detallado de formas verbales
+
+Cerrada la pieza "tratamiento detallado de formas verbales" en `REDISEÑO-EN-CURSO.md` (nueva §7). (1) El evento verbal (lema-tiempo-unidad) lleva un campo `formas` con las formas conjugadas concretas que esa unidad trabaja — opción A: la forma es dato del evento, no sub-entidad con recorrido propio. La progresión del paradigma se lee comparando los `formas` de eventos sucesivos. (2) `rasgo_por_tiempo` (regular/irregular del lema) se mantiene en el hilo verbal; frontera trazada con el grupo gramatical "Tiempos y modos verbales" (§6.4): atributo del verbo concreto vs flexión abstracta como contenido enseñado. (3) Anticipación de formas en modelo híbrido — fase 2 lee el registro transitorio de fase 1 (`_migracion_rediseno`) y completa el análisis por su cuenta; cierra la costura §6.5 punto 1, incluida la perífrasis anticipatoria (ya no depende de `estructura_perifrastica`). Actualizados §3.2, §5 Nivel 1 y §6.5. Población del desglose por unidad: tarea diferida a la Capa 1.
+
 ## [v11.39 — 2026-05-20] — Glosario transversal del proyecto
 
 Nuevo `glosario.md` en la raíz: índice semántico transversal del proyecto (opción B de la decisión documental). El único glosario existente, `fases/1-extraccion-inventario/glosario.md`, no es un glosario general sino la referencia campo por campo del schema del inventario — se mantiene intacto en su sitio. El nuevo glosario global es corto y de orientación: Bloque 1 — 12 términos globales (repo A/B, inventario, registry canónico, PCIC, unidad/unidad atípica, fase, dashboard, modelo IA-first, dry-run, publicación canónica, mirror snapshot, source of truth); Bloque 2 — 10 términos de fase 2 marcados "en estabilización" (hilo, evento, etiqueta, mapa, auto, detalle, Capa 1, Capa 2, reciclaje, anticipación); Bloque 3 — tabla de glosarios de fase con enlaces. Cada entrada: definición breve + "ver detalle en fase X" cuando aplica. Añadida fila en "Documentos clave" del `CLAUDE.md` raíz como documento de Consulta. Los glosarios de fase (fase 2 y siguientes) se crearán cuando su terminología se estabilice.
