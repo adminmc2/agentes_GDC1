@@ -35,6 +35,30 @@ Fase 2 **no inventa** títulos. Si un contenido no tiene canónico, **no se rech
 
 El `id` del hilo es un slug estable `<bloque>-<slug>` (clave primaria); no se recalcula si el `titulo` se corrige.
 
+## §2-bis. Canonización de categorías gramaticales nuevas
+
+Procedimiento **reproducible** para dar de alta una categoría canónica nueva en el registry gramatical cuando se detecta contenido que el canon vigente no cubre. Las categorías resultantes son específicas del curso; el procedimiento es **transversal**: con otro libro o nivel se re-ejecuta, no se improvisa.
+
+**1. Fuentes admitidas.** Una candidata se releva de **dos fuentes, ambas necesarias**:
+- **Plan curricular del nivel aplicable para gramática** — respaldo curricular.
+- **Corpus del curso** — inventarios, cuadros gramaticales, `rasgo_por_tiempo` y bloques consolidados. Evidencia material.
+
+No se admite ninguna otra base de alta.
+
+**2. Separación en dos carriles.** El contenido verbal se releva en dos planos que **no se mezclan**:
+- **Flexión / paradigmas** — el sistema de conjugación como contenido enseñado.
+- **Usos de tiempos y modos** — para qué sirve cada tiempo o modo.
+
+Una misma evidencia puede generar candidatos en ambos carriles; se tratan por separado.
+
+**3. Criterio de alta con umbral de evidencia.** Una candidata se canoniza solo si:
+- Tiene **evidencia material** en el corpus; no basta el respaldo curricular.
+- Se canoniza **separada por paradigma o uso real**, no en un saco único.
+- El **nombre canónico** se ancla, cuando exista, en la formulación del plan curricular.
+- Si la evidencia es **débil o demasiado lema-específica**, no se canoniza; se deja como hallazgo.
+
+**4. Cierre humano.** La Capa 2 IA **propone** las altas con su evidencia; el **autor decide**. Ninguna alta entra en automático. Al aprobarse, se escribe en el registry con `_grupo`, `_pcic_ref` y `_apariciones`, y se sincronizan, **si procede**, los conteos y referencias documentales.
+
 ## §3. Etiquetas del evento
 
 Cada evento lleva una **lista** `etiquetas[]` (coexisten, no es valor único). Las siete:
