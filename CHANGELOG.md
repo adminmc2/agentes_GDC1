@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.52 — 2026-05-21] — REDISEÑO fase 2 §11: procedimiento de la Capa 1 (Nivel 3 arranca)
+
+Arranca el Nivel 3 (implementación) del rediseño de fase 2. Nueva §11 en `REDISEÑO-EN-CURSO.md` — procedimiento de la Capa 1 como contrato de implementación del script determinista. (1) **Inputs**: 4 — `nc1-curso.json`, inventarios cerrados, los 5 registries canónicos, y el estado actual de `nc1-reciclaje.json` (no como fuente del contenido mecánico sino para preservar `propuestas[]` y cierres humanos). (2) **Qué genera**: la proyección mecánica válida contra el schema — hilos (`id`, `bloque`, `titulo`, `_grupo`, `nivel_analisis`) y eventos básicos; nunca `reconciliado`/`nuevo`, `explicacion`, `detalle` ni etiquetas editoriales. (3) **Qué precomputa**: solo lo literal y determinista (`procedencia_indice: declarado`, `formas`, `tiempo`, `evidencias`, `_meta`). (4) **10 invariantes** que la Capa 2 puede dar por garantizados (identidad, canonicidad, tipado, no-duplicación de eventos, no-invención editorial, preservación de `propuestas[]`). (5) **Ejecución**: un mismo algoritmo parametrizado por alcance (incremental/íntegro). Es diseño del procedimiento; el código Python se escribe en la reactivación, cuando los registries estén poblados.
+
 ## [v11.51 — 2026-05-21] — Fase 2: limpieza de drift documental antes del Nivel 3
 
 Dos correcciones de coherencia señaladas por el revisor. (1) `CLAUDE.md` de fase 2 §"Cómo se invoca" decía que la pausa de fase 2 dura "mientras el canon semántico de fase 1 está en desarrollo" — contradice el estado real (fase 1 cerrada en v10.164); reformulado: la pausa dura mientras esté pendiente la implementación del Nivel 3 del rediseño. (2) `REDISEÑO-EN-CURSO.md` §6.5 punto 2 seguía diciendo que el `CLAUDE.md` de fase 2 estaba "sincronizado parcialmente" — ya está sincronizado del todo (v11.38/46/48/50); marcado como resuelto. Sin cambios de modelo.

@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-21 (v11.51 — Fase 2: limpieza de drift documental antes del Nivel 3. Nivel 1 y 2 del rediseño cerrados; siguiente Nivel 3 (orden: procedimiento Capa 1 → registries → §R.1). Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-21 (v11.52 — REDISEÑO fase 2 §11: procedimiento de la Capa 1 (Nivel 3 arranca). Siguiente: paquete mínimo de registries → §R.1. Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

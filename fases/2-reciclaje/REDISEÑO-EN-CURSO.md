@@ -263,7 +263,7 @@ El contrato operativo de fase 2 está escrito al estándar de fase 1: contrato c
 
 ### Nivel 3 — Implementación de Capa 1 y Capa 2
 
-- **Procedimiento concreto de Capa 1** (script determinista): qué genera, en qué orden. **Nota (§7.4):** el desglose de `formas` por unidad exige leer `actividad.tiempos_y_verbos`, no solo el consolidado agregado — tenerlo presente al diseñar Capa 1.
+- ✅ **Procedimiento concreto de Capa 1** — definido en §11 (v11.52): inputs (4, incluido el reciclaje actual para preservar `propuestas[]`), qué genera (proyección mecánica), qué precomputa (solo lo literal), 10 invariantes, modo incremental/íntegro con un mismo algoritmo. **Nota (§7.4):** el desglose de `formas` por unidad exige leer `actividad.tiempos_y_verbos` — recogido en §11.
 - **Validador cross-unidad R1-R5** — reglas de validación cruzada. Material heredado en el **Reservorio §R.1**, pendiente de procesar.
 - **Sesión IA de Capa 2** — cómo se ejecuta el enriquecimiento, qué inputs recibe.
 - **Wiring** — encadenado de Capa 1 → Capa 2 → integración.
@@ -531,6 +531,63 @@ Un candidato nuevo entra en la lista de "siempre presentes" cuando se cumplen la
 
 ---
 
+## §11. Procedimiento de la Capa 1 (paso 11 — definido 2026-05-21) — Nivel 3
+
+Primera pieza del Nivel 3. Fija la Capa 1 como **contrato de implementación**: qué lee, qué genera, qué precomputa, qué invariantes promete. La Capa 1 es el **productor del esqueleto mecánico** de `nc1-reciclaje.json`; no toma decisiones editoriales (eso es Capa 2).
+
+### §11.1. Inputs
+
+Cuatro:
+
+1. `unidades/nc1-curso.json` — índice editorial del curso.
+2. Inventarios canónicos `UX-nc1-inventario.json` **ya cerrados** de las unidades cubiertas.
+3. Los **5 registries canónicos** — 4 de fase 1 + `perifrasis-canonicas.json`.
+4. El **estado actual de `unidades/nc1-reciclaje.json`** — **no** como fuente del contenido mecánico, sino como soporte para **preservar `propuestas[]` y los cierres humanos** ya persistidos. Sin este input el modo incremental queda mal definido (las `propuestas[]` no salen de ninguna otra fuente).
+
+PCIC no es input operativo de la Capa 1: entra indirectamente, ya volcado en los registries.
+
+### §11.2. Qué genera
+
+La **proyección mecánica** del reciclaje, válida contra `schema-reciclaje.md`.
+
+**Por hilo:** `id`, `bloque`, `titulo`, `_grupo` (solo `gramatica`), `nivel_analisis`.
+
+**Por evento:** `unidad`; `tiempo` (solo `verbal`/`perifrasis`); `procedencia_indice: declarado` cuando hay coincidencia literal con el índice; `formas` (solo `verbal`); `evidencias` derivables del inventario; `etiquetas: []` (vacío inicial, para que el archivo intermedio de Capa 1 ya sea válido contra el schema antes de la Capa 2).
+
+**Lo que NO genera** (frontera con la Capa 2, §1.3): `procedencia_indice` `reconciliado`/`nuevo`, `reconciliado_con`, `explicacion`, `detalle`, ni etiquetas editoriales. Todo eso exige lectura cross-atrás/cross-adelante y juicio didáctico.
+
+### §11.3. Qué precomputa
+
+**Sí** (literal y determinista): `procedencia_indice: declarado` por coincidencia literal con el índice; `formas` del evento verbal (volcado mecánico del inventario); `tiempo` del evento verbal/perífrasis; `evidencias` trazables desde actividad/cuadro; `nivel_analisis` alcanzado por cada hilo; `_meta` (`fecha`, `unidades_cubiertas`, `estado`).
+
+**No** precomputa: las 7 etiquetas (`introduce`, `amplia`, `aplica`, `sistematiza`, `contrasta`, `anticipacion`, `discrimina`); `reconciliado`/`nuevo`.
+
+### §11.4. Invariantes que la Capa 1 promete
+
+Lo que la Capa 2 puede dar por garantizado:
+
+1. Todo `id` de hilo es **único y estable**.
+2. Todo `titulo` es **literal del registry** de su dimensión.
+3. **Ningún hilo** fuera del universo cerrado de 5 registries.
+4. Toda `unidad` de evento pertenece al curso y a `_meta.unidades_cubiertas`.
+5. En `gramatica`, `_grupo` siempre existe y es válido; fuera de `gramatica`, no aparece.
+6. En `verbal`/`perifrasis`, `tiempo` siempre existe y es válido; fuera de esos bloques, no aparece.
+7. **No hay eventos duplicados** para la misma clave mecánica: `(hilo, unidad)` en vocabulario/gramática/pron-orto; `(hilo, unidad, tiempo)` en verbal/perífrasis.
+8. La Capa 1 **nunca escribe** `reconciliado` ni `nuevo` — solo `declarado` cuando la coincidencia es mecánica.
+9. La Capa 1 **nunca fabrica contenido editorial** — no rellena `explicacion`, no rellena `detalle`, no asigna etiquetas interpretativas.
+10. `propuestas[]` y sus resoluciones humanas **se preservan**; la Capa 1 no las invalida al regenerar (conecta con el contrato de ciclo de vida, `reglas-reciclaje.md` §12).
+
+### §11.5. Modo de ejecución
+
+**Un mismo algoritmo**, parametrizado por alcance — no dos algoritmos distintos:
+
+- **Incremental**: recalcula la proyección mecánica de las unidades cubiertas o del slice afectado, y preserva `propuestas[]` / cierres humanos.
+- **Íntegro**: recalcula toda la proyección mecánica del curso y vuelve a adjuntar la parte no determinista preservable.
+
+La diferencia es el conjunto de unidades y la estrategia de escritura, no la lógica. Encaja con los disparadores de regeneración de `reglas-reciclaje.md` §12.3.
+
+---
+
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
 El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas. Tres estados: **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva pero su versión vieja no sirve; se redefine en el activo), **en reservorio** (material vivo sin procesar, copiado al Reservorio de este documento).
@@ -582,6 +639,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.52)** — Nivel 3 arranca: §11 cerrada — procedimiento de la Capa 1 como contrato de implementación (4 inputs, proyección mecánica, lo que precomputa vs lo que deja a Capa 2, 10 invariantes, ejecución incremental/íntegra con un solo algoritmo). Es diseño del procedimiento; el código se escribe en la reactivación.
 - **2026-05-21 (v11.49)** — Nivel 2 COMPLETO: creado `prompt.md` de fase 2 (entry point operativo por unidad, esqueleto-contrato). El contrato operativo de fase 2 espeja el de fase 1 (CLAUDE.md + schema + reglas + prompt). Siguiente: Nivel 3 (implementación).
 - **2026-05-21 (v11.48)** — Nivel 2: validación y criterio de cierre. Nueva §13 en `reglas-reciclaje.md` — gate de cierre del reciclaje por unidad (3 partes: chequeo estructural contra schema + validador cross-unidad R1-R5 + revisión editorial; 5 condiciones de cierre). Sincronizado `CLAUDE.md` de fase 2 (línea desfasada de P1 corregida; "Cómo validar" apunta a §13). Solo queda el prompt envoltorio en el Nivel 2.
 - **2026-05-21 (v11.47)** — Nivel 2: P1 ratificada y formalizada. Contrato de regeneración de `nc1-reciclaje.json` plasmado en `reglas-reciclaje.md` §12 (archivo único canónico, no edición manual de mapa/auto, disparadores incremental/revisión-ampliada/íntegra, determinista vs cierre humano, definición de "reciclaje cerrado por unidad"). El Nivel 1 queda sin residuos.
