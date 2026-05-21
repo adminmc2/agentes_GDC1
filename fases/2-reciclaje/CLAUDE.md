@@ -2,7 +2,7 @@
 
 > Auto-cargado por Claude Code al trabajar dentro de `fases/2-reciclaje/`. Contrato corto de la fase: qué produce, dónde input/output, cómo validar, reglas críticas, navegación.
 
-> ⚠️ **Estado actual (2026-05-15, v10.120):** **FASE 2 PAUSADA** por decisión 36 (v10.108). Bloqueo operativo añadido tras v10.115-118: los **scripts** `regenerar_reciclaje_mapa.py` y `regenerar_reciclaje_vocabulario.py` y el **output** `unidades/nc1-reciclaje.json` (fechado 2026-05-11) están en **shape v10.114** (pre-rediseño). Tras los cambios de fase 1 v10.115-118 (eliminación de `campo_semantico` y de `vocabulario_consolidado.comprension`, renombrado `fonetica → pronunciacion_ortografia`, 4 bloques top-level consolidados nuevos, 4 listas tipadas por actividad), los scripts fallarán si se ejecutan contra inventarios en shape v10.117. La reactivación operativa de fase 2 está **bloqueada por el procesamiento de unidades U1-U9 con shape v10.117** (U0 ya migrada en v10.119) y exige adaptación previa de los 2 scripts + regeneración íntegra de `nc1-reciclaje.json`. Pendiente: implementar el pipeline de Capa 1/Capa 2 y el validador R1-R5 (Nivel 3 del rediseño). P1 ya quedó ratificada (contrato de regeneración en `reglas-reciclaje.md` §12). El rediseño activo se construye paso a paso en `REDISEÑO-EN-CURSO.md` (documento único; el viejo se archivó en `docs/historico/` el 2026-05-20, v11.34).
+> ⚠️ **Estado actual (2026-05-21, v11.49):** **FASE 2 PAUSADA** por decisión 36. El rediseño de fase 2 (modelo IA-first) tiene cerrados el **Nivel 1 — modelo conceptual** (§1-§10) y el **Nivel 2 — contrato operativo** (`schema-reciclaje.md`, `reglas-reciclaje.md` §1-§13, `prompt.md`, este `CLAUDE.md`). Pendiente: **Nivel 3 — implementación** (pipeline de Capa 1/Capa 2, validadores estructural y cross-unidad R1-R5) y **Nivel 4 — reactivación operativa**. Los scripts viejos (`regenerar_reciclaje_mapa.py`, `regenerar_reciclaje_vocabulario.py`) y el `nc1-reciclaje.json` actual están en shape pre-rediseño (v10.114) y se sustituirán en el Nivel 3. El rediseño se construye en `REDISEÑO-EN-CURSO.md` (documento único; el viejo se archivó en `docs/historico/` en v11.34).
 
 ---
 
@@ -12,13 +12,15 @@ Un mapa de hilos de reciclaje (`unidades/nc1-reciclaje.json`) que modela cómo c
 
 > **Alcance del rediseño activo (decidido 2026-05-20):** el rediseño de fase 2 en curso cubre los **bloques lingüísticos** del inventario — vocabulario, gramática, pronunciación/ortografía y verbal (más `perifrasis` derivado). Las **funciones comunicativas** y las **estrategias** quedan **pospuestas** a un desarrollo posterior; no las modela el rediseño vigente. Ver `REDISEÑO-EN-CURSO.md` §5 Nivel 1 y bitácora de `PROCESO-MAESTRO.md`.
 
-El archivo tiene tres niveles de análisis que se generan por separado:
+El campo `nivel_analisis` indica el **grado de población de un mismo hilo** — no son tres archivos ni tres hilos paralelos: el hilo nace en `mapa`, se enriquece a `auto` y se completa a `detalle` (modelo recursivo, `REDISEÑO-EN-CURSO.md` §4.2):
 
-| nivel_analisis | Origen | Generado por |
+| `nivel_analisis` | Qué añade | Fuente |
 |---|---|---|
-| `mapa` | `nc1-curso.json` (índice editorial del curso) | Script `regenerar_reciclaje_mapa.py` |
-| `auto` | Inventarios `UX-nc1-inventario.json` (los 5 bloques: vocabulario, gramática, pron/orto, verbal, perífrasis — ver `REDISEÑO-EN-CURSO.md` §2.2) | Script `regenerar_reciclaje_vocabulario.py` |
-| `detalle` | Inventarios (actividades individuales) | Fase futura |
+| `mapa` | Esqueleto: identidad del hilo + eventos básicos | `nc1-curso.json` (índice del curso) |
+| `auto` | Enriquece los eventos: contenidos por unidad, etiquetas, triage | Inventarios `UX-nc1-inventario.json` (los 5 bloques — `REDISEÑO-EN-CURSO.md` §2.2) |
+| `detalle` | Justificación lingüístico-pedagógica del procedimiento | Análisis cross-unidad sobre el inventario |
+
+La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA) — su implementación es Nivel 3 del rediseño, pendiente. Los scripts viejos `regenerar_reciclaje_*.py` son pre-rediseño.
 
 ## Input y output
 

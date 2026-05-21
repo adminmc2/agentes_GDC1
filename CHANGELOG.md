@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.50 — 2026-05-21] — Fase 2: sincronización de cabecera del `CLAUDE.md`
+
+Dos ajustes de frescura en `fases/2-reciclaje/CLAUDE.md` señalados por el revisor tras v11.49. (1) El banner "Estado actual" seguía fechado en 2026-05-15 / v10.120 aunque el contenido se había ido actualizando — reescrito a 2026-05-21 / v11.49, reflejando que Nivel 1 y Nivel 2 del rediseño están cerrados y Nivel 3/4 pendientes, sin el detalle obsoleto del bloqueo v10.114. (2) La tabla de `nivel_analisis` presentaba `mapa`/`auto`/`detalle` como "tres niveles que se generan por separado" con los scripts viejos como generador — reformulada al modelo recursivo (grado de población de un mismo hilo, §4.2) y atribuida al pipeline de fase 2 (Capa 1/Capa 2, Nivel 3 pendiente). Sin cambios de modelo; solo coherencia documental.
+
 ## [v11.49 — 2026-05-21] — Fase 2 Nivel 2 COMPLETO: prompt envoltorio
 
 Cerrada la última pieza del Nivel 2: nuevo `fases/2-reciclaje/prompt.md`, entry point operativo de fase 2 por unidad — espeja `prompt.md` de fase 1. Cubre: gate de arranque (declarar lectura de los 3 contratos), input/output, flujo Capa 1 (esqueleto determinista) / Capa 2 (sesión IA: 3 momentos de análisis, etiquetas, triage, propuestas), criterio de cierre (§13), y "lo que no se hace". Es un esqueleto-contrato: el detalle del pipeline (scripts de Capa 1, validadores) es Nivel 3, y el prompt lo deja explícito sin fingir que existen. Sincronizado el `CLAUDE.md` de fase 2 ("Cómo se invoca" distingue modelo nuevo/viejo). **Con esto el Nivel 2 (contrato operativo) queda COMPLETO**: fase 2 tiene contrato corto + schema + reglas + prompt, al estándar de fase 1. Siguiente: Nivel 3 (implementación de Capa 1/Capa 2 y validadores).

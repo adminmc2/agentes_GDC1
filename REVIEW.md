@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-21 (v11.49 — Fase 2 Nivel 2 COMPLETO: creado `prompt.md` de fase 2. Contrato operativo al estándar de fase 1. Siguiente: Nivel 3 (implementación). Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-21 (v11.50 — Fase 2: sincronizada la cabecera del `CLAUDE.md` (banner de estado + tabla `nivel_analisis`). Nivel 1 y 2 del rediseño cerrados; siguiente Nivel 3. Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >
