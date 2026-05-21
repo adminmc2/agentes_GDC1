@@ -1,0 +1,624 @@
+#!/usr/bin/env python3
+"""
+Generador de Capa 1 de fase 2 — proyección mecánica de `nc1-reciclaje.json`.
+
+Implementa el contrato del Nivel 3 del rediseño de fase 2:
+  - `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` §11 — procedimiento de la Capa 1.
+  - `fases/2-reciclaje/schema-reciclaje.md`     — shape canónico de salida.
+
+La Capa 1 produce el ESQUELETO MECÁNICO del reciclaje: identidad de los hilos,
+eventos por unidad, evidencias trazables, `procedencia_indice: declarado` por
+coincidencia literal con el índice y formas verbales. NO toma decisiones
+editoriales — las etiquetas interpretativas, `reconciliado`/`nuevo`,
+`explicacion` y `detalle` son trabajo de la Capa 2 IA (§11.2).
+
+Modo implementado: ÍNTEGRO (§11.5) — recalcula toda la proyección mecánica del
+curso. Preserva `propuestas[]` y los cierres humanos del `nc1-reciclaje.json`
+existente, que la Capa 1 nunca invalida (invariante §11.4.10).
+
+ALCANCE ACTUAL (laguna conocida del Nivel 4): este generador materializa la
+proyección de nivel `auto` — hilos y eventos derivados de los inventarios
+cerrados. La proyección de nivel `mapa` desde `nc1-curso.json` (REDISEÑO §4.2;
+CLAUDE.md de fase 2, tabla `nivel_analisis`) AÚN NO se materializa: hoy
+`nc1-curso.json` se usa solo como soporte del triage `declarado`, y todos los
+hilos salen con `nivel_analisis: "auto"`. Pendiente: generar el esqueleto
+`mapa` de los contenidos declarados en el índice del curso que aún no tienen
+inventario, y degradar a `mapa` los hilos sin evento respaldado por inventario.
+
+La salida se valida estructuralmente contra `schema-reciclaje.md` y contra las
+invariantes §11.4 ANTES de escribirse: si la validación falla, no se escribe.
+
+Uso:
+    python3 scripts/generar_reciclaje_capa1.py            # genera y escribe
+    python3 scripts/generar_reciclaje_capa1.py --dry-run  # valida sin escribir
+"""
+import argparse
+import json
+import re
+import sys
+import unicodedata
+from datetime import date
+from pathlib import Path
+
+PROJECT = Path(__file__).resolve().parent.parent
+UNIDADES = PROJECT / "unidades"
+CURSO = UNIDADES / "nc1-curso.json"
+RECICLAJE = UNIDADES / "nc1-reciclaje.json"
+CHANGELOG = PROJECT / "CHANGELOG.md"
+FASE1 = PROJECT / "fases" / "1-extraccion-inventario"
+FASE2 = PROJECT / "fases" / "2-reciclaje"
+
+REG_CAMPOS = FASE1 / "campos-semanticos-canonicos.json"
+REG_GRAMATICA = FASE1 / "gramatica-canonica.json"
+REG_PRONORTO = FASE1 / "pronunciacion-ortografia-canonica.json"
+REG_VERBOS = FASE1 / "verbos-canonicos.json"
+REG_PERIFRASIS = FASE2 / "perifrasis-canonicas.json"
+
+# --- enumeraciones del schema (schema-reciclaje.md §2, §3, §6) ---
+BLOQUES = {
+    "vocabulario", "gramatica", "pronunciacion_ortografia", "verbal", "perifrasis",
+}
+# prefijo del `id` del hilo por bloque (schema §2)
+PREFIJO = {
+    "vocabulario": "voc",
+    "gramatica": "gram",
+    "pronunciacion_ortografia": "pron",
+    "verbal": "verb",
+    "perifrasis": "perif",
+}
+NIVELES = {"mapa", "auto", "detalle"}
+TIEMPOS = {"Presente", "Pretérito indefinido", "Imperativo", "Infinitivo"}
+GRUPOS = {
+    "Determinantes", "Pronombres", "Sintagma nominal y concordancia",
+    "Construcciones", "Tiempos y modos verbales", "Adverbios y marcadores",
+    "Preposiciones",
+}
+ETIQUETAS = {
+    "introduce", "amplia", "aplica", "sistematiza", "contrasta",
+    "anticipacion", "discrimina",
+}
+# bloques con `tiempo` obligatorio en el evento (schema §3)
+BLOQUES_CON_TIEMPO = {"verbal", "perifrasis"}
+
+# campo de `nc1-curso.json` que indexa cada bloque, para el triage `declarado`
+CURSO_CAMPO = {
+    "vocabulario": "vocabulario",
+    "gramatica": "gramatica",
+    "pronunciacion_ortografia": "pronunciacion_ortografia",
+}
+
+
+# --------------------------------------------------------------------------
+# utilidades
+# --------------------------------------------------------------------------
+def slug(s: str) -> str:
+    """Normaliza una cadena a slug ASCII (minúsculas, sin tildes, guiones)."""
+    s = unicodedata.normalize("NFD", s)
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    s = re.sub(r"[^a-zA-Z0-9]+", "-", s.lower()).strip("-")
+    return s
+
+
+def hilo_id(bloque: str, titulo: str) -> str:
+    return f"{PREFIJO[bloque]}-{slug(titulo)}"
+
+
+def cargar_json(path: Path) -> dict:
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def leer_version_changelog() -> str:
+    """Última versión vX.Y declarada en CHANGELOG.md (schema _meta.version)."""
+    try:
+        txt = CHANGELOG.read_text(encoding="utf-8")
+    except OSError:
+        return "v0.0"
+    versiones = re.findall(r"v(\d+)\.(\d+)", txt)
+    if not versiones:
+        return "v0.0"
+    mayor = max((int(a), int(b)) for a, b in versiones)
+    return f"v{mayor[0]}.{mayor[1]}"
+
+
+def walk_dicts(obj):
+    """Recorre recursivamente todos los dicts de una estructura JSON."""
+    if isinstance(obj, dict):
+        yield obj
+        for v in obj.values():
+            yield from walk_dicts(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from walk_dicts(v)
+
+
+# --------------------------------------------------------------------------
+# registries — universo cerrado de hilos válidos (§6.1, §11.4 invariantes 2-3)
+# --------------------------------------------------------------------------
+class Registries:
+    """Carga los 5 registries canónicos y expone consultas de canonicidad."""
+
+    def __init__(self):
+        campos = cargar_json(REG_CAMPOS)["campos"]
+        # canónico -> conjunto de aliases del índice (para el triage `declarado`)
+        self.vocab = {}
+        for c in campos:
+            self.vocab[c["canonico"]] = {
+                slug(a) for a in c.get("aliases_indice", [])
+            }
+
+        gram = cargar_json(REG_GRAMATICA)["categorias"]
+        # categoría -> _grupo
+        self.gramatica = {k: v.get("_grupo") for k, v in gram.items()}
+
+        pron = cargar_json(REG_PRONORTO)["categorias"]
+        self.pronorto = set(pron.keys())
+
+        self.verbos = set(cargar_json(REG_VERBOS)["verbos"].keys())
+        self.perifrasis = set(cargar_json(REG_PERIFRASIS)["perifrasis"].keys())
+
+    def canonico(self, bloque: str, titulo: str) -> bool:
+        if bloque == "vocabulario":
+            return titulo in self.vocab
+        if bloque == "gramatica":
+            return titulo in self.gramatica
+        if bloque == "pronunciacion_ortografia":
+            return titulo in self.pronorto
+        if bloque == "verbal":
+            return titulo in self.verbos
+        if bloque == "perifrasis":
+            return titulo in self.perifrasis
+        return False
+
+    def grupo(self, titulo: str):
+        return self.gramatica.get(titulo)
+
+
+# --------------------------------------------------------------------------
+# índice del curso — soporte del triage `procedencia_indice: declarado` (§9.1)
+# --------------------------------------------------------------------------
+class IndiceCurso:
+    """Entradas del índice editorial por unidad y bloque, ya slugificadas."""
+
+    def __init__(self, curso: dict):
+        # (unidad, campo_curso) -> conjunto de slugs de entradas del índice
+        self._idx = {}
+        # entradas planas por unidad (U0 usa `contenido_general` para todo)
+        self._general = {}
+        for u in curso.get("unidades", []):
+            num = u["unidad"]
+            for campo in ("vocabulario", "gramatica", "pronunciacion_ortografia"):
+                valor = u.get(campo)
+                if valor is None:
+                    continue
+                items = [valor] if isinstance(valor, str) else valor
+                self._idx[(num, campo)] = {slug(x) for x in items}
+            general = u.get("contenido_general") or []
+            self._general[num] = {slug(x) for x in general}
+
+    def declarado(self, unidad: int, bloque: str, titulo: str,
+                  aliases: set) -> bool:
+        """True si `titulo` coincide literalmente con una entrada del índice.
+
+        Coincidencia mecánica (§11.3): igualdad de slug, prefijo del slug del
+        índice (absorbe paréntesis del índice como '... (el, la, los, las)'),
+        o coincidencia con un alias del índice declarado en el registry.
+        """
+        campo = CURSO_CAMPO.get(bloque)
+        objetivo = slug(titulo)
+        candidatos = set(self._general.get(unidad, set()))
+        if campo is not None:
+            candidatos |= self._idx.get((unidad, campo), set())
+        for entrada in candidatos:
+            if entrada == objetivo or entrada.startswith(objetivo + "-"):
+                return True
+            if entrada in aliases:
+                return True
+        return False
+
+
+# --------------------------------------------------------------------------
+# acumulador de hilos
+# --------------------------------------------------------------------------
+class Constructor:
+    """Acumula hilos y eventos a lo largo de las unidades procesadas."""
+
+    def __init__(self, registries: Registries, indice: IndiceCurso):
+        self.reg = registries
+        self.indice = indice
+        self.hilos = {}            # id -> hilo
+        self.descartados = []      # (bloque, titulo, unidad) fuera de registry
+        self.unidades = set()
+
+    def _hilo(self, bloque: str, titulo: str) -> dict:
+        hid = hilo_id(bloque, titulo)
+        h = self.hilos.get(hid)
+        if h is None:
+            h = {
+                "id": hid,
+                "bloque": bloque,
+                "titulo": titulo,
+                # `auto`: el hilo se construye desde inventarios. La proyección
+                # `mapa` desde nc1-curso.json es laguna pendiente (ver docstring).
+                "nivel_analisis": "auto",
+                "eventos": [],
+            }
+            if bloque == "gramatica":
+                h["_grupo"] = self.reg.grupo(titulo)
+            self.hilos[hid] = h
+        return h
+
+    def add_evento(self, bloque, titulo, unidad, evidencias, tiempo=None,
+                   formas=None):
+        """Registra (o fusiona) un evento mecánico en su hilo."""
+        if not self.reg.canonico(bloque, titulo):
+            self.descartados.append((bloque, titulo, unidad))
+            return
+        self.unidades.add(unidad)
+        hilo = self._hilo(bloque, titulo)
+
+        # clave mecánica de unicidad del evento (§11.4 invariante 7)
+        existente = None
+        for ev in hilo["eventos"]:
+            if ev["unidad"] == unidad and ev.get("tiempo") == tiempo:
+                existente = ev
+                break
+        if existente is not None:
+            # fusiona evidencias / formas de una fuente repetida en la unidad
+            existente["evidencias"] = sorted(
+                set(existente["evidencias"]) | set(evidencias or [])
+            )
+            if formas:
+                existente["formas"] = sorted(
+                    set(existente.get("formas", [])) | set(formas)
+                )
+            return
+
+        evento = {
+            "unidad": unidad,
+            "etiquetas": [],  # vacío: lo puebla la Capa 2 (§11.2)
+            "evidencias": sorted(set(evidencias or [])),
+        }
+        if tiempo is not None:
+            evento["tiempo"] = tiempo
+        if bloque == "verbal":
+            evento["formas"] = sorted(set(formas or []))
+        # triage mecánico: solo `declarado` (§11.2, §11.4 invariante 8)
+        aliases = self.reg.vocab.get(titulo, set()) if bloque == "vocabulario" else set()
+        if self.indice.declarado(unidad, bloque, titulo, aliases):
+            evento["procedencia_indice"] = "declarado"
+        hilo["eventos"].append(evento)
+
+
+# --------------------------------------------------------------------------
+# extracción mecánica por bloque desde un inventario de unidad
+# --------------------------------------------------------------------------
+def _ref_actividad(parent: dict) -> str:
+    """Referencia trazable de una actividad/cuadro, sin el prefijo 'UX-'."""
+    ref = parent.get("id") or parent.get("ref") or ""
+    return re.sub(r"^U\d+-", "", ref)
+
+
+def items_tiempos_y_verbos(inventario: dict):
+    """Itera (parent, item) por cada entrada de `*.tiempos_y_verbos[]`.
+
+    Aplica a actividades y cuadros (§3.2, §3.3). Excluye el consolidado, que
+    usa la clave `tiempos` (lista), no `tiempos_y_verbos`.
+    """
+    for d in walk_dicts(inventario):
+        tyv = d.get("tiempos_y_verbos")
+        if not isinstance(tyv, list):
+            continue
+        for item in tyv:
+            if isinstance(item, dict):
+                yield d, item
+
+
+def formas_verbales_por_actividad(inventario: dict) -> dict:
+    """Agrega `formas_trabajadas` por (lema, tiempo) desde las actividades.
+
+    El consolidado da una lista plana de formas por lema; el desglose por
+    tiempo se reconstruye leyendo `*.tiempos_y_verbos[]` (§7.1, §7.4).
+    """
+    formas = {}
+    for _, item in items_tiempos_y_verbos(inventario):
+        lema = item.get("lema")
+        tiempo = item.get("tiempo")
+        if not lema or not tiempo:
+            continue
+        formas.setdefault((lema, tiempo), set()).update(
+            item.get("formas_trabajadas") or []
+        )
+    return formas
+
+
+def perifrasis_por_actividad(inventario: dict) -> dict:
+    """Agrega evidencias por (perífrasis, tiempo) desde `*.tiempos_y_verbos[]`.
+
+    La perífrasis se modela como hilo aparte; su fuente es el campo
+    `estructura_perifrastica` de las entradas de actividad/cuadro (§3.3).
+    """
+    perif = {}
+    for parent, item in items_tiempos_y_verbos(inventario):
+        estructura = item.get("estructura_perifrastica")
+        if not estructura:
+            continue
+        tiempo = item.get("tiempo")
+        ref = _ref_actividad(parent)
+        clave = (estructura, tiempo)
+        if ref:
+            perif.setdefault(clave, set()).add(ref)
+        else:
+            perif.setdefault(clave, set())
+    return perif
+
+
+def procesar_unidad(constructor: Constructor, unidad: int, inventario: dict):
+    """Vuelca la proyección mecánica de los 5 bloques de una unidad."""
+    # --- vocabulario / gramática / pronunciación-ortografía -----------------
+    consolidados = {
+        "vocabulario": "vocabulario_consolidado",
+        "gramatica": "gramatica_consolidada",
+        "pronunciacion_ortografia": "pronunciacion_ortografia_consolidada",
+    }
+    for bloque, clave in consolidados.items():
+        bloque_data = inventario.get(clave) or {}
+        for sub in ("principal", "recurrente"):
+            for titulo, cat in (bloque_data.get(sub) or {}).items():
+                evidencias = cat.get("fuentes") or []
+                constructor.add_evento(bloque, titulo, unidad, evidencias)
+
+    # --- verbal + perífrasis -----------------------------------------------
+    formas_idx = formas_verbales_por_actividad(inventario)
+    for entrada in inventario.get("tiempos_y_verbos_consolidado") or []:
+        lema = entrada.get("lema")
+        if not lema:
+            continue
+        fuentes = entrada.get("fuentes") or []
+        tiempos = entrada.get("tiempos") or []
+        for tiempo in tiempos:
+            if tiempo not in TIEMPOS:
+                # tiempo fuera de la enumeración del schema: se descarta
+                constructor.descartados.append(("verbal", f"{lema}::{tiempo}", unidad))
+                continue
+            formas = formas_idx.get((lema, tiempo))
+            if not formas:
+                # sin desglose por actividad: cae al consolidado agregado
+                formas = entrada.get("formas_trabajadas") or []
+            constructor.add_evento(
+                "verbal", lema, unidad, fuentes, tiempo=tiempo, formas=formas
+            )
+
+    # --- perífrasis: hilo aparte, fuente `estructura_perifrastica` (§3.3) ---
+    for (estructura, tiempo), refs in perifrasis_por_actividad(inventario).items():
+        if tiempo not in TIEMPOS:
+            constructor.descartados.append(
+                ("perifrasis", f"{estructura}::{tiempo}", unidad)
+            )
+            continue
+        constructor.add_evento(
+            "perifrasis", estructura, unidad, sorted(refs), tiempo=tiempo
+        )
+
+
+# --------------------------------------------------------------------------
+# validación contra schema-reciclaje.md + invariantes §11.4
+# --------------------------------------------------------------------------
+def validar(reciclaje: dict) -> list:
+    """Devuelve la lista de errores; vacía si la salida es válida."""
+    errores = []
+
+    # --- top-level (schema §1) ---------------------------------------------
+    for clave in ("_meta", "hilos", "propuestas"):
+        if clave not in reciclaje:
+            errores.append(f"top-level: falta '{clave}'")
+    meta = reciclaje.get("_meta", {})
+    for clave in ("version", "fecha", "unidades_cubiertas", "estado"):
+        if clave not in meta:
+            errores.append(f"_meta: falta '{clave}'")
+    cubiertas = set(meta.get("unidades_cubiertas", []))
+
+    # --- hilos (schema §2-§5, invariantes §11.4) ---------------------------
+    ids_vistos = set()
+    for h in reciclaje.get("hilos", []):
+        hid = h.get("id", "<sin-id>")
+        if hid in ids_vistos:
+            errores.append(f"hilo {hid}: id duplicado (invariante 1)")
+        ids_vistos.add(hid)
+
+        bloque = h.get("bloque")
+        if bloque not in BLOQUES:
+            errores.append(f"hilo {hid}: bloque inválido '{bloque}'")
+        if not h.get("titulo"):
+            errores.append(f"hilo {hid}: titulo vacío")
+        if h.get("nivel_analisis") not in NIVELES:
+            errores.append(f"hilo {hid}: nivel_analisis inválido")
+
+        # _grupo: presente y válido solo en gramática (invariante 5)
+        if bloque == "gramatica":
+            if h.get("_grupo") not in GRUPOS:
+                errores.append(f"hilo {hid}: _grupo inválido '{h.get('_grupo')}'")
+        elif "_grupo" in h:
+            errores.append(f"hilo {hid}: _grupo no debe aparecer fuera de gramática")
+
+        eventos = h.get("eventos", [])
+        if not eventos:
+            errores.append(f"hilo {hid}: sin eventos")
+
+        claves_evento = set()
+        for ev in eventos:
+            unidad = ev.get("unidad")
+            if not isinstance(unidad, int):
+                errores.append(f"hilo {hid}: evento con unidad no entera")
+            elif cubiertas and unidad not in cubiertas:
+                errores.append(
+                    f"hilo {hid}: unidad {unidad} fuera de unidades_cubiertas"
+                    " (invariante 4)"
+                )
+
+            tiempo = ev.get("tiempo")
+            if bloque in BLOQUES_CON_TIEMPO:
+                if tiempo not in TIEMPOS:
+                    errores.append(
+                        f"hilo {hid} u{unidad}: tiempo inválido '{tiempo}'"
+                        " (invariante 6)"
+                    )
+            elif tiempo is not None:
+                errores.append(
+                    f"hilo {hid} u{unidad}: tiempo no debe aparecer en {bloque}"
+                )
+
+            # unicidad de la clave mecánica del evento (invariante 7)
+            clave = (unidad, tiempo)
+            if clave in claves_evento:
+                errores.append(
+                    f"hilo {hid}: evento duplicado para {clave} (invariante 7)"
+                )
+            claves_evento.add(clave)
+
+            if not isinstance(ev.get("etiquetas"), list):
+                errores.append(f"hilo {hid} u{unidad}: etiquetas no es lista")
+            elif ev["etiquetas"]:
+                # la Capa 1 nunca asigna etiquetas (invariante 9)
+                errores.append(
+                    f"hilo {hid} u{unidad}: etiquetas no vacías en salida de Capa 1"
+                )
+
+            for et in ev.get("etiquetas", []):
+                if et not in ETIQUETAS:
+                    errores.append(f"hilo {hid} u{unidad}: etiqueta inválida '{et}'")
+
+            # triage: la Capa 1 solo escribe `declarado` (invariante 8)
+            proc = ev.get("procedencia_indice")
+            if proc is not None and proc != "declarado":
+                errores.append(
+                    f"hilo {hid} u{unidad}: procedencia_indice '{proc}'"
+                    " no permitido en Capa 1 (invariante 8)"
+                )
+
+            if not isinstance(ev.get("evidencias"), list):
+                errores.append(f"hilo {hid} u{unidad}: evidencias no es lista")
+
+            if bloque == "verbal" and not isinstance(ev.get("formas"), list):
+                errores.append(f"hilo {hid} u{unidad}: formas no es lista")
+            if bloque != "verbal" and "formas" in ev:
+                errores.append(
+                    f"hilo {hid} u{unidad}: formas solo aplica a bloque verbal"
+                )
+
+            # la Capa 1 nunca fabrica contenido editorial (invariante 9)
+            for prohibido in ("explicacion", "detalle"):
+                if prohibido in ev or prohibido in h:
+                    errores.append(
+                        f"hilo {hid}: '{prohibido}' presente en salida de Capa 1"
+                        " (invariante 9)"
+                    )
+
+    # --- propuestas (schema §6) --------------------------------------------
+    for p in reciclaje.get("propuestas", []):
+        if "id" not in p:
+            errores.append("propuesta sin id")
+        if p.get("estado") not in {"pendiente", "aceptada", "rechazada"}:
+            errores.append(f"propuesta {p.get('id')}: estado inválido")
+
+    return errores
+
+
+# --------------------------------------------------------------------------
+# orquestación — modo íntegro (§11.5)
+# --------------------------------------------------------------------------
+def generar() -> tuple:
+    """Construye la proyección mecánica íntegra. Devuelve (reciclaje, descartados)."""
+    registries = Registries()
+    curso = cargar_json(CURSO)
+    indice = IndiceCurso(curso)
+    constructor = Constructor(registries, indice)
+
+    for u in range(0, 10):
+        inv_path = UNIDADES / f"U{u}" / f"U{u}-nc1-inventario.json"
+        if not inv_path.exists():
+            continue
+        procesar_unidad(constructor, u, cargar_json(inv_path))
+
+    # ordenación estable: por bloque y luego por id
+    orden_bloque = {b: i for i, b in enumerate(
+        ["vocabulario", "gramatica", "pronunciacion_ortografia", "verbal", "perifrasis"]
+    )}
+    hilos = sorted(
+        constructor.hilos.values(),
+        key=lambda h: (orden_bloque.get(h["bloque"], 99), h["id"]),
+    )
+    for h in hilos:
+        h["eventos"].sort(key=lambda e: (e["unidad"], e.get("tiempo") or ""))
+
+    # preservación de propuestas[] y cierres humanos (§11.1 input 4, §11.4.10)
+    propuestas = []
+    if RECICLAJE.exists():
+        previo = cargar_json(RECICLAJE)
+        propuestas = previo.get("propuestas", [])
+
+    reciclaje = {
+        "_meta": {
+            "version": leer_version_changelog(),
+            "fecha": date.today().isoformat(),
+            "unidades_cubiertas": sorted(constructor.unidades),
+            "estado": "en construcción",
+        },
+        "hilos": hilos,
+        "propuestas": propuestas,
+    }
+    return reciclaje, constructor.descartados
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Generador de Capa 1 de fase 2.")
+    parser.add_argument(
+        "--dry-run", action="store_true",
+        help="genera y valida sin escribir nc1-reciclaje.json",
+    )
+    args = parser.parse_args()
+
+    reciclaje, descartados = generar()
+
+    n_hilos = len(reciclaje["hilos"])
+    n_eventos = sum(len(h["eventos"]) for h in reciclaje["hilos"])
+    print(f"Capa 1 — modo íntegro")
+    print(f"  unidades cubiertas : {reciclaje['_meta']['unidades_cubiertas']}")
+    print(f"  hilos generados    : {n_hilos}")
+    print(f"  eventos generados  : {n_eventos}")
+    print(f"  propuestas preservadas: {len(reciclaje['propuestas'])}")
+
+    if descartados:
+        print(f"\n  ⚠ {len(descartados)} contenidos descartados (fuera del "
+              f"universo cerrado de registries, §11.4 invariante 3):")
+        vistos = set()
+        for bloque, titulo, unidad in descartados:
+            clave = (bloque, titulo)
+            if clave in vistos:
+                continue
+            vistos.add(clave)
+            print(f"      [{bloque}] {titulo}  (primera vez en U{unidad})")
+
+    errores = validar(reciclaje)
+    if errores:
+        print(f"\n✗ Validación FALLIDA — {len(errores)} errores:")
+        for e in errores:
+            print(f"    - {e}")
+        print("\nNo se escribe nc1-reciclaje.json.")
+        return 1
+
+    print("\n✓ Validación superada (schema-reciclaje.md + invariantes §11.4).")
+
+    if args.dry_run:
+        print("[--dry-run] No se escribe nc1-reciclaje.json.")
+        return 0
+
+    with open(RECICLAJE, "w", encoding="utf-8") as fh:
+        json.dump(reciclaje, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+    print(f"✓ Escrito {RECICLAJE.relative_to(PROJECT)}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

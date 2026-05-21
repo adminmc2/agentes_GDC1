@@ -398,6 +398,7 @@ Esto **cierra la costura §6.5 punto 1**: la perífrasis anticipatoria (auxiliar
 
 - El desglose de `formas` por unidad depende de leer `actividad.tiempos_y_verbos` (no solo el consolidado agregado): se concreta al implementar la Capa 1 (§5 Nivel 3).
 - La lectura del registro de anticipaciones (`_migracion_rediseno`) es una marca **transitoria** de fase 1; cuando fase 1 cierre esa deuda, fase 2 ajusta la fuente.
+- *Nota de implementación diferida (observada en la salida real de la Capa 1, Nivel 4):* la Capa 1 vuelca `formas_trabajadas` **literalmente**, lo que puede producir duplicados aparentes por mayúscula/minúscula (p. ej. `["Es", "es", "Soy", "soy"]` cuando la forma aparece a inicio de frase). No es bug de la Capa 1 bajo el contrato actual — su mandato es transcribir, no interpretar. Una eventual deduplicación/normalización del paradigma requeriría decisión explícita de contrato o tratamiento en la Capa 2.
 
 ---
 

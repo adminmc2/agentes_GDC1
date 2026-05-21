@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.62 — 2026-05-22] — Fase 2 Nivel 4: generador de Capa 1 validado en dry-run
+
+Primer paso del Nivel 4 (implementación en código), **checkpoint de herramienta, sin reactivar fase 2**. Nuevo `scripts/generar_reciclaje_capa1.py` — Capa 1 modo íntegro: materializa la **proyección `auto`** del contrato §11 (hilos de los 5 bloques desde inventarios, eventos, `evidencias`, `formas`, `procedencia_indice: declarado`), preserva `propuestas[]` y valida la salida contra `schema-reciclaje.md` + las 10 invariantes §11.4 antes de escribir. Dry-run: 118 hilos / 283 eventos / OK. Laguna conocida: la proyección de nivel `mapa` desde `nc1-curso.json` (§11, `REDISEÑO` §4.2) **aún no se materializa** — todos los hilos salen `auto`; pendiente del Nivel 4. El canónico `nc1-reciclaje.json` **no se reescribe**. Nota empírica diferida añadida en `REDISEÑO-EN-CURSO.md` §7.4. Archivos: `scripts/generar_reciclaje_capa1.py` (nuevo), `REDISEÑO-EN-CURSO.md`.
+
 ## [v11.61 — 2026-05-21] — Fase 2: cierre de la deriva terminológica Nivel 3/Nivel 4 en el `CLAUDE.md`
 
 Micro-lote de coherencia tras v11.60. El `CLAUDE.md` de fase 2 aún tenía 6 referencias que situaban la implementación en código en "Nivel 3", contradiciendo el cierre del Nivel 3 (diseño) ya registrado en `REDISEÑO-EN-CURSO.md`: el banner (scripts viejos "se sustituirán en el Nivel 3"), la tabla `nivel_analisis`, "Cómo se invoca", "Cómo se invoca / nivel auto", "Cómo validar" y la tabla "Para qué consultar". Las 6 corregidas: la implementación en código y la sustitución de los scripts viejos son **Nivel 4**; el Nivel 3 (diseño del pipeline) está cerrado. Banner de estado actualizado a v11.61. Sin cambios de modelo — solo coherencia documental; cierra el riesgo documental señalado por el revisor.
