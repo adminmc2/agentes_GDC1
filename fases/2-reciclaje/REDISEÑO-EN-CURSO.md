@@ -265,7 +265,7 @@ El contrato operativo de fase 2 está escrito al estándar de fase 1: contrato c
 
 - ✅ **Procedimiento concreto de Capa 1** — definido en §11 (v11.52): inputs (4, incluido el reciclaje actual para preservar `propuestas[]`), qué genera (proyección mecánica), qué precomputa (solo lo literal), 10 invariantes, modo incremental/íntegro con un mismo algoritmo. **Nota (§7.4):** el desglose de `formas` por unidad exige leer `actividad.tiempos_y_verbos` — recogido en §11.
 - ✅ **Validador cross-unidad R1-R5** — reglas de validación cruzada definidas como contrato operativo en `reglas-reciclaje.md` §14 (v11.58). La materialización como script se difiere al bloque de implementación.
-- **Sesión IA de Capa 2** — cómo se ejecuta el enriquecimiento, qué inputs recibe.
+- ✅ **Sesión IA de Capa 2** — procedimiento definido en §12 (v11.59): inputs, secuencia de 7 pasos en 3 fases (precondiciones / trabajo editorial / gate), `detalle` en hitos cross-unidad, régimen de ejecución supervisado por unidad.
 - **Wiring** — encadenado de Capa 1 → Capa 2 → integración.
 
 ### Nivel 4 — Reactivación operativa
@@ -595,6 +595,55 @@ La diferencia es el conjunto de unidades y la estrategia de escritura, no la ló
 
 ---
 
+## §12. Procedimiento de la sesión de Capa 2 (paso 12 — definido 2026-05-21) — Nivel 3
+
+Segunda pieza del Nivel 3. Fija cómo se ejecuta la **sesión IA enriquecedora** sobre el esqueleto que dejó la Capa 1 (§11). La Capa 2 **no reconstruye** el esqueleto — lo enriquece.
+
+### §12.1. Inputs
+
+- **`nc1-reciclaje.json` en estado salido de Capa 1** — el esqueleto a enriquecer.
+- **Inventario canónico de la unidad en curso.**
+- **`nc1-curso.json`** — índice del curso.
+- **Los 5 registries canónicos.**
+- **`nc1-reciclaje.json` actual (estado previo)** — solo para **preservar y releer `propuestas[]`** y no pisar cierres humanos.
+- **Marcas internas de fase 1** (`_migracion_rediseno`, `_decisiones_ia`, `_funcion_ambigua`, `_pendiente_canon`) — como **contexto revisable, no autoridad** (`reglas-reciclaje.md` §5, §9).
+- **El recorrido previo consolidado** de las unidades anteriores (modo incremental) — necesario: `amplia`/`aplica`/`sistematiza`/`contrasta` y el triage no se deciden con la unidad aislada.
+
+### §12.2. Secuencia de la sesión
+
+Tres fases que **no se mezclan** — precondiciones, trabajo editorial, gate:
+
+**Precondiciones de arranque:**
+1. **Pre-chequeo**: el esqueleto de Capa 1 existe, la unidad tiene inventario cerrado, y no hay fallo fatal de R2/R5 heredado de fase 1 (§14 de `reglas-reciclaje.md`).
+
+**Trabajo editorial de la sesión:**
+2. **Tres momentos de análisis** (§2.1): intra-unidad → cross-atrás → cross-adelante.
+3. **Asignación de `etiquetas[]`** (§2.3, §3 de reglas).
+4. **Completar `procedencia_indice`**: el `declarado` mecánico ya viene de Capa 1; la Capa 2 **propone** `reconciliado` / `nuevo` donde haga falta (§9).
+5. **Escribir `explicacion`** cuando la unidad tiene cuadro o explicación material (§8).
+6. **Detectar y escalar a `propuestas[]`** solo lo no obvio (§11 de reglas).
+
+**Gate:**
+7. **Salida al gate de cierre de unidad** (`reglas-reciclaje.md` §13).
+
+### §12.3. El nivel `detalle` no es salida obligatoria por unidad
+
+- **Por unidad**, la Capa 2 produce: `etiquetas`, `procedencia_indice`, `explicacion` y, si procede, `propuestas[]`.
+- **En los hitos cross-unidad** (§1.4): promueve a `nivel_analisis: detalle` los hilos que ya tienen **masa crítica** para justificar una cadena lingüístico-pedagógica.
+- **En el cierre global**: remata el `detalle` pendiente.
+
+Razón: el `detalle` justifica **todo el hilo / la cadena cross-unidad** (§4.4), no un evento local — exige recorrido. Producirlo por unidad inflaría cada unidad con pseudo-detalles prematuros.
+
+### §12.4. Régimen de ejecución
+
+Una **sesión IA supervisada por unidad** en Chat B (§1.2):
+
+- La IA enriquece y **propone**; el autor **revisa y cierra o difiere**.
+- Las `propuestas[]` **no** necesitan estar todas aceptadas o rechazadas — basta con que estén **resueltas o explícitamente diferidas** (`reglas-reciclaje.md` §13).
+- Solo entonces la unidad pasa el gate de cierre.
+
+---
+
 ## §N. Apéndice — Disposición de las piezas del REDISEÑO-EN-CURSO-viejo.md
 
 El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). Esta tabla cierra la disposición final de cada una de sus piezas: **obsoleto** (no se migra), **ya migrado** (absorbido en una sección del activo), **superado en su formulación vieja** (la pieza sigue viva, se redefine en el activo) o **cerrado en §X / reglas** (procesado a una sección propia). Todas las piezas están ya procesadas; no queda material heredado sin procesar.
@@ -619,6 +668,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.59)** — Nivel 3: §12 cerrada — procedimiento de la sesión de Capa 2. Inputs (incluidas las marcas transitorias de fase 1 como contexto revisable y el recorrido previo consolidado), secuencia de 7 pasos separada en 3 fases (precondiciones / trabajo editorial / gate), `detalle` como salida de hitos cross-unidad (no obligatoria por unidad), régimen supervisado en Chat B con cierre humano de `propuestas[]`.
 - **2026-05-21 (v11.58)** — Nivel 3: §R.1 procesado. R1-R5 (validador cross-unidad) reformulado como contrato operativo en `reglas-reciclaje.md` §14 — R2 redefinido como materialidad/trazabilidad (no literalidad universal), R3 acotado a clasificación por dimensión. El Reservorio §R queda vacío y se retira del documento; el rediseño deja de tener material heredado sin procesar.
 - **2026-05-21 (v11.56)** — Nivel 3, paquete de registries (3/4, parte 2): 5 altas en `gramatica-canonica.json` (v1.6→v1.7, 18→23 categorías) del grupo "Tiempos y modos verbales" — Paradigma regular del presente, Irregularidad vocálica e→ie, Irregularidad vocálica o→ue, Infinitivo simple (flexión) + Uso del imperativo — instrucciones y peticiones (uso con cuadro). Primera aplicación de §2-bis. §6.4 reformulado: la frontera de canonización se ancla al **umbral de evidencia**, no al carril — un uso entra al registry si tiene cuadro propio; los usos del presente, sin cuadro, se tratan como análisis interpretativo.
 - **2026-05-21 (v11.55)** — Nivel 3, paquete de registries (3/4, parte 1): añadida §2-bis a `reglas-reciclaje.md` — procedimiento reproducible de canonización de categorías gramaticales nuevas (4 pasos: fuentes admitidas, dos carriles flexión/uso, criterio de alta con umbral de evidencia, cierre humano). Responde a la cuestión de replicabilidad: las categorías son del curso, el procedimiento es transversal. Las 7 altas de "Tiempos y modos verbales" serán su primera aplicación.
