@@ -105,3 +105,20 @@ Fase 2 **no decide sola** lo no obvio: genera una propuesta para `propuestas[]` 
 - Una estructura que no encaja en ningún registry (universo cerrado para escritura, abierto para detección).
 
 El análisis IA ya consolidado (`explicacion.analisis_ia`, razonamiento del `detalle`) **no** va a `propuestas[]` — va inline en el hilo/evento. `propuestas[]` es solo lo pendiente de cierre humano.
+
+## §12. Ciclo de vida de `nc1-reciclaje.json` (contrato de regeneración — P1)
+
+Ratifica y formaliza la decisión P1 (opción A, heredada del rediseño viejo, 2026-05-10).
+
+1. **Archivo único canónico.** El reciclaje enriquecido vive en un único archivo: `unidades/nc1-reciclaje.json`. No hay copias ni derivados paralelos.
+
+2. **No se edita a mano.** Los hilos y eventos de nivel `mapa`/`auto` **no se editan manualmente**: se **regeneran** desde los inputs fuente (`nc1-curso.json`, inventarios `UX-nc1-inventario.json`) vía el pipeline de fase 2. Para cambiar un hilo `mapa`/`auto`, se edita la fuente y se regenera. **Excepción:** las entradas de `propuestas[]` y la persistencia del cierre humano sí se escriben — esa es su función.
+
+3. **Disparadores de regeneración** (alineados con los hitos cross-unidad, `REDISEÑO-EN-CURSO.md` §1.4):
+   - **Incremental** — al integrar cada unidad: ciclo de reciclaje de esa unidad (Capa 1 + Capa 2 sobre la unidad recién integrada).
+   - **Revisión cross-unidad ampliada** — tras 3 unidades acumuladas: la Capa 2 revisa el bloque de unidades. Es revisión, **no** regeneración íntegra.
+   - **Regeneración íntegra** — solo al **cierre de bloque** (todas las unidades del curso): regeneración completa de `nc1-reciclaje.json`.
+
+4. **Determinista vs cierre humano.** La **Capa 1** regenera el esqueleto mecánico — reproducible. La **Capa 2 IA** enriquece y produce `propuestas[]`; cada propuesta se cierra con el humano y su resolución se persiste con `estado` (§6 del schema). La parte determinista se puede rehacer sin pérdida; la parte humana vive en `propuestas[]`.
+
+5. **"Reciclaje cerrado para una unidad"** = su reciclaje incremental está generado **y** ha pasado el criterio de cierre vigente de fase 2 **y** sus `propuestas[]` están resueltas o explícitamente diferidas. Mientras fase 2 esté **PAUSADA** operativamente, **ninguna unidad** tiene su reciclaje cerrado: la pausa significa que el pipeline no corre; "cerrado" aplica por unidad solo tras la reactivación.

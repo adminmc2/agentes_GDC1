@@ -248,7 +248,7 @@ Las decisiones de modelo están cerradas. Trayecto: alcance (v11.33) · D2/§6 �
 
 > **Decisión de alcance — cerrada 2026-05-20.** `comunicacion` (funciones comunicativas) y `estrategia` quedan **fuera del rediseño actual de fase 2**: son desarrollo **posterior**. El rediseño vigente cubre solo los bloques lingüísticos del inventario — vocabulario, gramática, pronunciación/ortografía, verbal y `perifrasis`. Registrado en la bitácora de `PROCESO-MAESTRO.md`.
 
-**Único residuo del Nivel 1 — P1.** Decisión heredada del viejo, cerrada en **opción A** (2026-05-10): los datos enriquecidos viven en `nc1-reciclaje.json`, regenerado al integrar cada unidad. Falta **ratificarla/formalizarla** en el Nivel 2 (contrato de regeneración) — no es una decisión abierta, es un trámite de formalización.
+**P1 — ✅ ratificada y formalizada (v11.47).** Opción A confirmada; el contrato de regeneración (archivo único, no edición manual, disparadores, determinista vs cierre humano, definición de "cerrado por unidad") está plasmado en `reglas-reciclaje.md` §12. El Nivel 1 ya no tiene residuos.
 
 ### Nivel 2 — Contrato operativo a producir
 
@@ -259,7 +259,7 @@ Lo que falta **escribir** para que fase 2 tenga el mismo estándar de contrato q
 - **Prompt envoltorio de fase 2** por unidad (entry point operativo).
 - ✅ **Reglas operativas reescritas** — `reglas-reciclaje.md` reescrito al modelo §1-§10 en v11.46. Es la autoridad decisional estable de fase 2 (granularidad, naming, etiquetas, triage, anticipación, formas verbales, explicación, siempre-presentes, marcas, `@R`, cuándo escalar). Sin lógica de scripts (es Nivel 3) ni narrativa de transición.
 - **Comandos de validación + criterio de cierre** — qué se ejecuta y qué gate certifica que el reciclaje de una unidad está cerrado.
-- **Ratificación formal de P1** — confirmar opción A y formalizar el contrato de regeneración.
+- ✅ **Ratificación formal de P1** — opción A confirmada y contrato de regeneración formalizado en `reglas-reciclaje.md` §12 (v11.47).
 
 ### Nivel 3 — Implementación de Capa 1 y Capa 2
 
@@ -582,6 +582,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.47)** — Nivel 2: P1 ratificada y formalizada. Contrato de regeneración de `nc1-reciclaje.json` plasmado en `reglas-reciclaje.md` §12 (archivo único canónico, no edición manual de mapa/auto, disparadores incremental/revisión-ampliada/íntegra, determinista vs cierre humano, definición de "reciclaje cerrado por unidad"). El Nivel 1 queda sin residuos.
 - **2026-05-21 (v11.46)** — Nivel 2: `reglas-reciclaje.md` reescrito íntegro del modelo viejo (campo_semantico, acción única, scripts) al modelo §1-§10 — autoridad decisional estable de fase 2 (§1-§11). Sincronizado el `CLAUDE.md` de fase 2 (cruces a las nuevas secciones, terminología acción→etiquetas).
 - **2026-05-21 (v11.45)** — Nivel 2 arranca: creado `schema-reciclaje.md` (documento de contrato aparte, espeja `schema-inventario.md` de fase 1). Shape canónico de `nc1-reciclaje.json` — `_meta` + `hilos[]` (con `id` slug estable) + `propuestas[]`. Funcional para JSON y BD. Resuelve de paso la pieza "persistencia de decisiones IA" (bloque `propuestas[]`). `detalle` con contrato mínimo, shape fino diferido.
 - **2026-05-21 (v11.44)** — §10 cerrado: componentes "siempre presentes no indexados" procesados del Reservorio §R.2. Reconciliados como patrón cross-unidad del triage §9 (un `nuevo` sistemático). Detección por la Capa 2 IA en hitos cross-unidad; tres salidas de propuesta al autor (canonizar / bloque analítico / ignorar); criterio de ampliación definido. **Nivel 1 del roadmap COMPLETO** (residuo: ratificación formal de P1 en Nivel 2). Reservorio: queda solo §R.1.
