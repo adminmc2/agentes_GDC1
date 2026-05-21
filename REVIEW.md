@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-21 (v11.53 — Fase 2 Nivel 3: creado el registry `perifrasis-canonicas.json` (1/4 del paquete de registries). Siguiente: `_grupo` en `gramatica-canonica.json`. Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-21 (v11.54 — Fase 2 Nivel 3: campo `_grupo` añadido a `gramatica-canonica.json` v1.6 (2/4 del paquete de registries). Siguiente: categorías de "Tiempos y modos verbales" desde PCIC. Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >

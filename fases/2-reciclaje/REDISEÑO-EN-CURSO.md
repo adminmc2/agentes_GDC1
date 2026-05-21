@@ -338,11 +338,11 @@ D2 queda cerrado como decisión de modelo, pero deja dos costuras con el contrat
 
 ### §6.6. Tareas de población diferidas
 
-§6 **decide y documenta** el modelo; no ejecuta cambios de registry ahora. Quedan como tareas posteriores (tocan registries de fase 1, listadas en §5):
+§6 **decide y documenta** el modelo. La población de registries se ejecuta en el Nivel 3:
 
-- Crear y poblar `perifrasis-canonicas.json`.
-- Añadir el campo `_grupo` a las 17 categorías de `gramatica-canonica.json`.
-- Canonizar desde PCIC A1 las categorías nuevas del grupo "Tiempos y modos verbales" (flexión + usos).
+- ✅ Crear y poblar `perifrasis-canonicas.json` — hecho en v11.53.
+- ✅ Añadir el campo `_grupo` a las 18 categorías de `gramatica-canonica.json` — hecho en v11.54 (registry v1.6).
+- ⬜ Canonizar desde PCIC A1 las categorías nuevas del grupo "Tiempos y modos verbales" (flexión + usos).
 
 ---
 
@@ -639,6 +639,7 @@ El viejo se archivó en `docs/historico/REDISEÑO-EN-CURSO-viejo.md` (v11.34). E
 - **2026-05-15 (v10.126)** — Documento creado tras renombrar el viejo `REDISEÑO-EN-CURSO.md` → `REDISEÑO-EN-CURSO-viejo.md`. Contiene paso 1 cerrado (modelo de trabajo) + placeholders + apéndice de aprovechamiento.
 - **2026-05-15 (v10.119)** — §2 cerrado: modelo de análisis por unidad (3 momentos: intra / cross-atrás / cross-adelante), granularidad por bloque, 6 etiquetas coexistentes, esbozo del shape del hilo.
 - **2026-05-15 (v10.133)** — §3 cerrado: cobertura por bloque y tratamiento de marcas. Pron/orto (categoría + `discrimina`), verbal (lema, evento por lema-tiempo), perífrasis (hilo aparte), política de marcas internas (`_pendiente_canon` no bloquea, `_funcion_ambigua` a chat, `_decisiones_ia` lectura crítica). §3.5 (sufijo `@R` se preserva sin tratamiento diferencial) y §3.6 (`principal`/`recurrente` no dicta etiqueta del evento) cerrados en mismo paso. §3.7: sub-bloque `comprension` eliminado sin sustituto.
+- **2026-05-21 (v11.54)** — Nivel 3, paquete de registries (2/4): añadido el campo `_grupo` a las 18 categorías de `gramatica-canonica.json` (registry v1.5→v1.6) — mapeo a los 7 grupos de §6.3 (Determinantes 4, Pronombres 3, Sintagma nominal y concordancia 3, Construcciones 3, Adverbios y marcadores 3, Preposiciones 1, Tiempos y modos verbales 1). `_grupo` es eje de organización/lectura; no fusiona categorías ni cambia la granularidad de hilo. Sin tocar nombres canónicos ni `_pcic_ref`.
 - **2026-05-21 (v11.53)** — Nivel 3, paquete de registries (1/4): creado `fases/2-reciclaje/perifrasis-canonicas.json` — 5.º registry del universo cerrado, propio de fase 2. Dos entradas (`ir a + infinitivo`, `querer + infinitivo`) desde el relevo de `estructura_perifrastica` en U0-U9. Deuda U4↔U6 y exclusión de `tener que + infinitivo` documentadas en su `_meta`. Universo cerrado = 5 registries, físicamente 4 (fase 1) + 1 (fase 2).
 - **2026-05-21 (v11.52)** — Nivel 3 arranca: §11 cerrada — procedimiento de la Capa 1 como contrato de implementación (4 inputs, proyección mecánica, lo que precomputa vs lo que deja a Capa 2, 10 invariantes, ejecución incremental/íntegra con un solo algoritmo). Es diseño del procedimiento; el código se escribe en la reactivación.
 - **2026-05-21 (v11.49)** — Nivel 2 COMPLETO: creado `prompt.md` de fase 2 (entry point operativo por unidad, esqueleto-contrato). El contrato operativo de fase 2 espeja el de fase 1 (CLAUDE.md + schema + reglas + prompt). Siguiente: Nivel 3 (implementación).
