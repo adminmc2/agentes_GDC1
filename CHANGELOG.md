@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.61 — 2026-05-21] — Fase 2: cierre de la deriva terminológica Nivel 3/Nivel 4 en el `CLAUDE.md`
+
+Micro-lote de coherencia tras v11.60. El `CLAUDE.md` de fase 2 aún tenía 6 referencias que situaban la implementación en código en "Nivel 3", contradiciendo el cierre del Nivel 3 (diseño) ya registrado en `REDISEÑO-EN-CURSO.md`: el banner (scripts viejos "se sustituirán en el Nivel 3"), la tabla `nivel_analisis`, "Cómo se invoca", "Cómo se invoca / nivel auto", "Cómo validar" y la tabla "Para qué consultar". Las 6 corregidas: la implementación en código y la sustitución de los scripts viejos son **Nivel 4**; el Nivel 3 (diseño del pipeline) está cerrado. Banner de estado actualizado a v11.61. Sin cambios de modelo — solo coherencia documental; cierra el riesgo documental señalado por el revisor.
+
 ## [v11.60 — 2026-05-21] — REDISEÑO fase 2 §13: wiring del pipeline — Nivel 3 (diseño) completo
 
 Última pieza de diseño del Nivel 3. Nueva §13 en `REDISEÑO-EN-CURSO.md` — wiring del pipeline: consolida el encadenado end-to-end (no abre decisiones nuevas). Cinco bloques: propósito; flujo incremental por unidad (Capa 1 → Capa 2 → gate → integración); flujo en hitos cross-unidad (revisión ampliada, que no es regeneración íntegra) y cierre global; puntos de corte y abortos (el gate va después de Capa 2 y antes de integración — si falla, no hay integración a main; la integración la hace el ejecutor coordinador, no la sesión de Capa 2); y **frontera explícita Nivel 3 / Nivel 4** — Nivel 3 define el contrato del encadenado, Nivel 4 lo implementa en código, regenera `nc1-reciclaje.json` y reactiva la fase. **Con esto el Nivel 3 (diseño del pipeline) queda completo.** Corregida en el mismo lote la deriva terminológica que situaba el código en "Nivel 3": `CLAUDE.md` de fase 2 y `prompt.md` (×3) pasan a decir que la implementación en código es Nivel 4. Queda solo el Nivel 4.

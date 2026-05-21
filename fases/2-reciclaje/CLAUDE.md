@@ -2,7 +2,7 @@
 
 > Auto-cargado por Claude Code al trabajar dentro de `fases/2-reciclaje/`. Contrato corto de la fase: qué produce, dónde input/output, cómo validar, reglas críticas, navegación.
 
-> ⚠️ **Estado actual (2026-05-21, v11.49):** **FASE 2 PAUSADA** por decisión 36. El rediseño de fase 2 (modelo IA-first) tiene cerrados el **Nivel 1 — modelo conceptual** (§1-§10), el **Nivel 2 — contrato operativo** (`schema-reciclaje.md`, `reglas-reciclaje.md`, `prompt.md`, este `CLAUDE.md`) y el **Nivel 3 — diseño del pipeline** (contratos: §11 Capa 1, §12 Capa 2, §13 wiring, `reglas-reciclaje.md` §14 validador R1-R5). Pendiente: **Nivel 4 — implementación en código + reactivación operativa** (escribir los scripts de Capa 1 y los validadores, regenerar `nc1-reciclaje.json`, reactivar la fase). Los scripts viejos (`regenerar_reciclaje_mapa.py`, `regenerar_reciclaje_vocabulario.py`) y el `nc1-reciclaje.json` actual están en shape pre-rediseño (v10.114) y se sustituirán en el Nivel 3. El rediseño se construye en `REDISEÑO-EN-CURSO.md` (documento único; el viejo se archivó en `docs/historico/` en v11.34).
+> ⚠️ **Estado actual (2026-05-21, v11.61):** **FASE 2 PAUSADA** por decisión 36. El rediseño de fase 2 (modelo IA-first) tiene cerrados el **Nivel 1 — modelo conceptual** (§1-§10), el **Nivel 2 — contrato operativo** (`schema-reciclaje.md`, `reglas-reciclaje.md`, `prompt.md`, este `CLAUDE.md`) y el **Nivel 3 — diseño del pipeline** (contratos: §11 Capa 1, §12 Capa 2, §13 wiring, `reglas-reciclaje.md` §14 validador R1-R5). Pendiente: **Nivel 4 — implementación en código + reactivación operativa** (escribir los scripts de Capa 1 y los validadores, regenerar `nc1-reciclaje.json`, reactivar la fase). Los scripts viejos (`regenerar_reciclaje_mapa.py`, `regenerar_reciclaje_vocabulario.py`) y el `nc1-reciclaje.json` actual están en shape pre-rediseño (v10.114) y se sustituirán en el Nivel 4. El rediseño se construye en `REDISEÑO-EN-CURSO.md` (documento único; el viejo se archivó en `docs/historico/` en v11.34).
 
 ---
 
@@ -20,7 +20,7 @@ El campo `nivel_analisis` indica el **grado de población de un mismo hilo** —
 | `auto` | Enriquece los eventos: contenidos por unidad, etiquetas, triage | Inventarios `UX-nc1-inventario.json` (los 5 bloques — `REDISEÑO-EN-CURSO.md` §2.2) |
 | `detalle` | Justificación lingüístico-pedagógica del procedimiento | Análisis cross-unidad sobre el inventario |
 
-La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA) — su implementación es Nivel 3 del rediseño, pendiente. Los scripts viejos `regenerar_reciclaje_*.py` son pre-rediseño.
+La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA) — su diseño está cerrado (Nivel 3); su implementación en código es Nivel 4, pendiente. Los scripts viejos `regenerar_reciclaje_*.py` son pre-rediseño.
 
 ## Input y output
 
@@ -30,7 +30,7 @@ La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA
 
 ## Cómo se invoca
 
-**Modelo nuevo (rediseño):** el entry point operativo de fase 2 es `prompt.md` — procesa el reciclaje de una unidad. Su pipeline (Capa 1/Capa 2) es Nivel 3, pendiente de implementar.
+**Modelo nuevo (rediseño):** el entry point operativo de fase 2 es `prompt.md` — procesa el reciclaje de una unidad. Su pipeline (Capa 1/Capa 2) está diseñado (Nivel 3); la implementación en código es Nivel 4, pendiente.
 
 **Modelo viejo (mientras fase 2 sigue PAUSADA):** los comandos de abajo siguen sirviendo para inspección, pero no reflejan el contrato nuevo.
 
@@ -42,7 +42,7 @@ Este script crea `nc1-reciclaje.json` si no existe. Debe ejecutarse antes que el
 
 **Nivel auto — fase 2 PAUSADA actualmente (decisión 36, v10.108):**
 
-Mientras dure la pausa de fase 2 (pendiente la implementación del Nivel 3 del rediseño — pipeline y validadores), `scripts/integrar_unidad.py` **no regenera reciclaje por defecto**. La integración de una unidad copia el inventario, valida y hace commit del inventario, pero deja `nc1-reciclaje.json` congelado.
+Mientras dure la pausa de fase 2 (pendiente el Nivel 4 del rediseño — implementación en código del pipeline y los validadores), `scripts/integrar_unidad.py` **no regenera reciclaje por defecto**. La integración de una unidad copia el inventario, valida y hace commit del inventario, pero deja `nc1-reciclaje.json` congelado.
 
 Para forzar la regeneración en una integración concreta (excepción consciente), usar el flag explícito `--regenerar-reciclaje`:
 
@@ -58,7 +58,7 @@ Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
 
 ## Cómo validar
 
-El **criterio de cierre** del reciclaje de una unidad (chequeo estructural + validador cross-unidad R1-R5 + revisión editorial) está definido en `reglas-reciclaje.md` §13. Los validadores como script son Nivel 3 del rediseño (pendientes). Mientras fase 2 esté PAUSADA, el gate no se ejecuta.
+El **criterio de cierre** del reciclaje de una unidad (chequeo estructural + validador cross-unidad R1-R5 + revisión editorial) está definido en `reglas-reciclaje.md` §13-§14. Los validadores como script se implementan en el Nivel 4 (pendiente). Mientras fase 2 esté PAUSADA, el gate no se ejecuta.
 
 *(Los comandos del modelo viejo — `regenerar_reciclaje_mapa.py` y vista RECICLAJE del dashboard — siguen sirviendo para inspección, pero no reflejan el contrato nuevo.)*
 
@@ -81,5 +81,5 @@ El **criterio de cierre** del reciclaje de una unidad (chequeo estructural + val
 | ¿Cuándo separar o agrupar hilos? ¿Qué nombre usar? | `reglas-reciclaje.md` §1 (granularidad) y §2 (naming canónico) |
 | ¿Qué etiquetas asignar a cada evento? | `reglas-reciclaje.md` §3 |
 | ¿Cómo se clasifica respecto al índice? | `reglas-reciclaje.md` §4 (triage `procedencia_indice`) |
-| ¿Cómo funcionan los scripts de Capa 1? | Pendiente — Nivel 3 del rediseño (`REDISEÑO-EN-CURSO.md` §5). |
+| ¿Cómo funciona el pipeline de Capa 1/Capa 2? | Diseño cerrado — `REDISEÑO-EN-CURSO.md` §11-§13. Implementación en código: Nivel 4 (pendiente). |
 | ¿Qué shape tiene nc1-reciclaje.json? | `schema-reciclaje.md` (contrato del rediseño nuevo) · `../../PROCESO-MAESTRO.md` §B1.5 (modelo viejo) |

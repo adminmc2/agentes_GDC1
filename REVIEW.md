@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-21 (v11.60 — REDISEÑO fase 2 §13: wiring del pipeline. **Nivel 3 — diseño del pipeline COMPLETO** (§11-§13 + `reglas-reciclaje.md` §14). Queda solo el Nivel 4 (implementación en código + reactivación). Fase 2 sigue PAUSADA).
+> **Última actualización:** 2026-05-21 (v11.61 — Fase 2: cerrada la deriva terminológica Nivel 3/Nivel 4 en el `CLAUDE.md` de fase 2. Rediseño de fase 2: Niveles 1-3 cerrados; queda solo el Nivel 4 (implementación en código + reactivación). Fase 2 sigue PAUSADA).
 >
 > **Hito previo (v11.0):** 2026-05-19 (Milestone post-fase 1. Bump major + fix scanner dashboard).
 >
