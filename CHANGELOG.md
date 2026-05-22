@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.69 — 2026-05-22] — Fase 2 REACTIVADA (lote documental)
+
+Levantada la pausa de la decisión 36. El Nivel 4 del rediseño cerró su parte de herramienta (v11.62-v11.68: Capa 1, los dos validadores del gate, `nc1-reciclaje.json` regenerado al shape del rediseño), así que la pausa deja de tener objeto. Lote **documental**, sin lógica nueva: `CLAUDE.md`/`prompt.md`/`reglas-reciclaje.md` de fase 2 actualizados (banners de estado → REACTIVADA; comandos reales del pipeline `generar_reciclaje_capa1.py` y del gate `validar_reciclaje.py`/`validar_cross_unidad.py`); `scripts/integrar_unidad.py` retira el flag `--regenerar-reciclaje` y la lógica de cuarentena — el reciclaje lo gestiona el pipeline de fase 2, no la integración (`REDISEÑO-EN-CURSO.md` §13.4); `CLAUDE.md` raíz, `README.md`, `REVIEW.md`, `PROCESO-MAESTRO.md` sincronizados. **Cautela explícita en los contratos:** la Capa 2 (sesión IA enriquecedora) nunca se ha ejecutado — su primera corrida real será también su shakedown. La reactivación habilita el pipeline; correr la Capa 2 unidad a unidad es la pieza siguiente, no parte de este lote.
+
 ## [v11.68 — 2026-05-22] — Fase 2 Nivel 4: regeneración del canónico `nc1-reciclaje.json`
 
 `nc1-reciclaje.json` se regenera con el generador de Capa 1 (v11.62-v11.63): el archivo pasa del shape pre-rediseño v10.114 (181 hilos, claves `curso/_acciones_validas/...`) al shape del rediseño (`_meta/hilos/propuestas`, 118 hilos / 283 eventos). Validado: validador estructural 0 errores contra `schema-reciclaje.md`; validador cross-unidad R1-R5 — pre-condiciones R2/R5 OK, 14 alertas R1/R4 idénticas a v11.65 (son de datos, no regresión de generación). `propuestas[]` queda vacío (el archivo viejo no tenía). Con esto la Capa 1 del pipeline de fase 2 queda materializada de extremo a extremo. **Fase 2 sigue PAUSADA**: la regeneración produce el esqueleto mecánico, no reactiva la fase — pendientes la Capa 2 (sesión IA enriquecedora) y la reactivación operativa. Archivo: `unidades/nc1-reciclaje.json`.

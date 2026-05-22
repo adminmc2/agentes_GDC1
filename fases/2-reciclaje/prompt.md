@@ -2,9 +2,9 @@
 
 > **Qué es:** entry point operativo de fase 2. Describe cómo se procesa el reciclaje de **una unidad**. Espeja el rol de `prompt.md` en fase 1.
 >
-> ⚠️ **Fase 2 PAUSADA** (decisión 36). Este prompt es el contrato para cuando fase 2 se reactive; hoy no se ejecuta. El rediseño que lo sustenta está en `REDISEÑO-EN-CURSO.md`.
+> ✅ **Fase 2 REACTIVADA** (v11.69 — pausa de decisión 36 levantada). El pipeline está cerrado en sus cuatro niveles de herramienta: Capa 1 implementada (`scripts/generar_reciclaje_capa1.py`), validadores del gate como script (`validar_reciclaje.py`, `validar_cross_unidad.py`), `nc1-reciclaje.json` regenerado al shape del rediseño. El rediseño que lo sustenta está en `REDISEÑO-EN-CURSO.md`.
 >
-> ⚠️ **Estado: esqueleto-contrato.** El flujo y los contratos del pipeline están cerrados (`REDISEÑO-EN-CURSO.md` §1-§13, Niveles 1-3). La **implementación en código** (scripts de Capa 1, validadores) es **Nivel 4** del rediseño, aún pendiente — este prompt no asume que esos scripts existan.
+> ⚠️ **La Capa 2 no se ha estrenado.** El procedimiento de la sesión IA enriquecedora (§12) está cerrado como contrato pero nunca se ha ejecutado: la primera unidad que se procese es también el shakedown de la Capa 2 — revísala con ese ojo.
 
 ---
 
@@ -29,7 +29,7 @@ El **reciclaje incremental de una unidad**: la actualización de `unidades/nc1-r
 
 El procesamiento es híbrido en dos capas, **no a la vez** (`REDISEÑO-EN-CURSO.md` §1.3):
 
-1. **Capa 1 — esqueleto determinista.** Genera/actualiza mecánicamente los hilos de nivel `mapa` (desde `nc1-curso.json`) y `auto` (desde los 5 bloques del inventario). Precomputa lo mecánico del triage (`procedencia_indice: declarado`). *Procedimiento: `REDISEÑO-EN-CURSO.md` §11; implementación en código: Nivel 4.*
+1. **Capa 1 — esqueleto determinista.** Genera/actualiza mecánicamente los hilos de nivel `mapa` (desde `nc1-curso.json`) y `auto` (desde los 5 bloques del inventario). Precomputa lo mecánico del triage (`procedencia_indice: declarado`). *Procedimiento: `REDISEÑO-EN-CURSO.md` §11; script: `python3 scripts/generar_reciclaje_capa1.py`.*
 2. **Capa 2 — sesión IA enriquecedora.** Sobre el esqueleto:
    - Aplica los **tres momentos de análisis** (`reglas-reciclaje.md` / §2.1): intra-unidad, cross-atrás, cross-adelante.
    - Asigna las **etiquetas** del evento (§3 de reglas) y completa el **triage** `procedencia_indice` (§4).
@@ -40,11 +40,11 @@ El procesamiento es híbrido en dos capas, **no a la vez** (`REDISEÑO-EN-CURSO.
 
 El reciclaje de la unidad se cierra cuando cumple las 5 condiciones de `reglas-reciclaje.md` §13 (generado + chequeo estructural + validador cross-unidad R1-R5 + `propuestas[]` resueltas/diferidas + revisión editorial del autor).
 
-⚠️ Los **comandos concretos** del chequeo estructural y del validador R1-R5 se implementan en **Nivel 4** (pendiente). Hasta entonces, el gate se aplica según el contrato de `reglas-reciclaje.md` §13-§14, no como comandos cerrados.
+Comandos del gate: `python3 scripts/validar_reciclaje.py` (chequeo estructural §13a) y `python3 scripts/validar_cross_unidad.py` (validador cross-unidad R1-R5 §13b). La revisión editorial del autor no es automatizable.
 
 ## Lo que NO se hace
 
 - No editar a mano los hilos/eventos de nivel `mapa`/`auto` — se regeneran desde la fuente (`reglas-reciclaje.md` §12).
 - No inventar títulos canónicos — el universo es cerrado (§2 de reglas); lo no canónico se escala como propuesta.
 - No cerrar decisiones editoriales en automático — lo no obvio va a `propuestas[]` con cierre humano.
-- No asumir que los scripts de Capa 1 / validadores existen — su implementación es Nivel 4.
+- No dar por rodada la Capa 2 hasta que su primera corrida real lo confirme.

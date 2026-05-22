@@ -270,14 +270,16 @@ Nivel 3 = el **diseño** (contratos ejecutables) del pipeline. La **implementaci
 - ✅ **Sesión IA de Capa 2** — procedimiento definido en §12 (v11.59): inputs, secuencia de 7 pasos en 3 fases (precondiciones / trabajo editorial / gate), `detalle` en hitos cross-unidad, régimen de ejecución supervisado por unidad.
 - ✅ **Wiring** — encadenado Capa 1 → Capa 2 → gate → integración, definido en §13 (v11.60), con la frontera explícita Nivel 3 (contrato) / Nivel 4 (código).
 
-### Nivel 4 — Reactivación operativa
+### Nivel 4 — Reactivación operativa — ✅ COMPLETO (2026-05-22)
 
-Fase 2 está PAUSADA. Reactivar exige, en este orden:
+Implementado en v11.62-v11.69. No se siguió el plan literal (adaptar los `regenerar_reciclaje_*.py` viejos): esos scripts quedaron obsoletos y se escribió uno nuevo desde cero.
 
-1. **Adaptar los 2 scripts** `regenerar_reciclaje_*.py` del shape viejo (v10.114) al shape de fase 1 actual.
-2. **Implementar el validador cross-unidad** (R1-R5).
-3. **Regenerar `nc1-reciclaje.json` íntegro** (181 hilos hoy congelados).
-4. **Sincronizar dashboard + docs raíz** — vista de reciclaje del dashboard (incluido el modal `detalle` de §4.4) y actualización de `CLAUDE.md` de fase 2, `CLAUDE.md` raíz, `REVIEW.md`, `PROCESO-MAESTRO.md`.
+1. ✅ **Capa 1 en código** — `scripts/generar_reciclaje_capa1.py` (proyecciones `auto` v11.62 + `mapa` v11.63), modo íntegro, valida la salida antes de escribir.
+2. ✅ **Validadores del gate como script** — `validar_reciclaje.py` (chequeo estructural §13a, v11.64) y `validar_cross_unidad.py` (cross-unidad R1-R5 §13b, v11.65; R1 en versión proxy determinista).
+3. ✅ **`nc1-reciclaje.json` regenerado** al shape del rediseño (v11.68 — 118 hilos / 283 eventos).
+4. ✅ **Docs sincronizadas + fase reactivada** (v11.69) — `CLAUDE.md`/`prompt.md`/`reglas-reciclaje.md` de fase 2, `integrar_unidad.py`, `CLAUDE.md` raíz, `README.md`, `REVIEW.md`, `PROCESO-MAESTRO.md`. La pausa de decisión 36 queda levantada.
+
+**Pendiente fuera del Nivel 4 (trabajo editorial, no herramienta):** la **Capa 2** (sesión IA enriquecedora, §12) no se ha ejecutado todavía sobre ninguna unidad — su primera corrida es su shakedown. La integración del dashboard del modal `detalle` (§4.4) se aborda cuando el nivel `detalle` empiece a poblarse.
 
 ---
 

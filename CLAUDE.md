@@ -96,7 +96,7 @@ python3 diagrama.py
 python3 scripts/validar_inventario.py 3
 
 # Integrar el inventario de una unidad a main (copia + valida + commit del inventario)
-# El reciclaje no se regenera: regenerar_reciclaje_vocabulario.py está en cuarentena (fase 2 pausada).
+# El reciclaje no lo toca: lo gestiona el pipeline de fase 2 (generar_reciclaje_capa1.py + Capa 2).
 python3 scripts/integrar_unidad.py 6
 ```
 

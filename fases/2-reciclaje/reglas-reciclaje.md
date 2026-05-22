@@ -150,7 +150,7 @@ Ratifica y formaliza la decisión P1 (opción A, heredada del rediseño viejo, 2
 
 4. **Determinista vs cierre humano.** La **Capa 1** regenera el esqueleto mecánico — reproducible. La **Capa 2 IA** enriquece y produce `propuestas[]`; cada propuesta se cierra con el humano y su resolución se persiste con `estado` (§6 del schema). La parte determinista se puede rehacer sin pérdida; la parte humana vive en `propuestas[]`.
 
-5. **"Reciclaje cerrado para una unidad"** = su reciclaje incremental está generado **y** ha pasado el criterio de cierre vigente de fase 2 (§13) **y** sus `propuestas[]` están resueltas o explícitamente diferidas. Mientras fase 2 esté **PAUSADA** operativamente, **ninguna unidad** tiene su reciclaje cerrado: la pausa significa que el pipeline no corre; "cerrado" aplica por unidad solo tras la reactivación.
+5. **"Reciclaje cerrado para una unidad"** = su reciclaje incremental está generado **y** ha pasado el criterio de cierre vigente de fase 2 (§13) **y** sus `propuestas[]` están resueltas o explícitamente diferidas. Fase 2 está **reactivada** (v11.69): el pipeline corre y una unidad puede cerrar su reciclaje. A fecha de la reactivación ninguna unidad ha pasado aún por la Capa 2, así que ninguna tiene todavía el reciclaje cerrado.
 
 ## §13. Validación y criterio de cierre
 
@@ -168,7 +168,12 @@ La validación del reciclaje de una unidad tiene **tres partes**:
 4. Las `propuestas[]` que afectan a esa unidad están **resueltas o explícitamente diferidas**.
 5. La **revisión editorial del autor** (c) está hecha.
 
-**Comandos:** el chequeo estructural (a) y el validador cross-unidad (b) se materializan como scripts; su implementación se difiere al bloque de implementación del pipeline. Este §13 fija **qué deben comprobar**; el cómo (nombre de comando, salida) se cierra al implementarlos. Mientras fase 2 esté **PAUSADA**, el gate no se ejecuta — ninguna unidad puede cerrarse (§12.5).
+**Comandos** (implementados en el Nivel 4 — fase 2 reactivada en v11.69):
+
+- (a) Chequeo estructural → `python3 scripts/validar_reciclaje.py` — 0 errores contra `schema-reciclaje.md`.
+- (b) Validador cross-unidad R1-R5 → `python3 scripts/validar_cross_unidad.py` — sin alertas R1/R3/R4 sin resolver; R2/R5 son pre-condiciones que abortan.
+
+La revisión editorial del autor (c) no es automatizable.
 
 ## §14. Validador cross-unidad — R1-R5
 
@@ -184,4 +189,4 @@ Detalle del componente (b) del gate de cierre (§13). Cinco reglas de **validaci
 
 **R5 — Coherencia bidireccional de trazabilidad.** `actividad.X` ↔ `fuentes` del bloque consolidado deben coincidir en los dos sentidos. Pre-condición; si falla, fase 2 aborta.
 
-**Qué bloquea:** R2 y R5 son **pre-condiciones** (un fallo es bug de fase 1; fase 2 aborta). R1, R3 y R4 producen **alertas** que entran en el criterio de cierre §13 (no quedan alertas sin resolver). La implementación del validador se difiere al bloque de implementación del pipeline.
+**Qué bloquea:** R2 y R5 son **pre-condiciones** (un fallo es bug de fase 1; fase 2 aborta). R1, R3 y R4 producen **alertas** que entran en el criterio de cierre §13 (no quedan alertas sin resolver). El validador está implementado en `scripts/validar_cross_unidad.py`: R2/R5 se delegan a `verificar_integridad.py` (fase 1); R1 va en versión proxy determinista (anticipación material trazable — ver el docstring del script).

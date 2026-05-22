@@ -6,16 +6,17 @@ Pasos reales (en este orden):
 1. Localiza el inventario en el worktree extract/UN.
 2. Copia el inventario a unidades/UN/ guardando en memoria la versión previa si existe.
 3. Valida. Si falla, restaura la versión previa (o borra si no había) y aborta.
-4. [Opcional, OFF por defecto] Regenera nc1-reciclaje.json. Solo se ejecuta
-   si se pasa --regenerar-reciclaje. Mientras fase 2 esté pausada (decisión
-   36 de PROCESO-MAESTRO), el reciclaje no se toca en integraciones
-   ordinarias.
-5. Hace commit aislado: solo el inventario (más reciclaje si se regeneró).
+4. Hace commit aislado: solo el inventario.
+
+El reciclaje (`nc1-reciclaje.json`) NO lo toca este script. Desde la
+reactivación de fase 2 (v11.69) el reciclaje lo gestiona el pipeline de
+fase 2 por separado — `scripts/generar_reciclaje_capa1.py` (Capa 1) + la
+sesión de Capa 2 —, no la integración del inventario (ver `REDISEÑO-EN-CURSO.md`
+§13.4: la integración a main no es parte del enriquecimiento de fase 2).
 
 Uso:
     python3 scripts/integrar_unidad.py <N>
     python3 scripts/integrar_unidad.py 6
-    python3 scripts/integrar_unidad.py 6 --regenerar-reciclaje
     python3 scripts/integrar_unidad.py 6 /ruta/al/worktree/unidades
 
 El worktree se busca por defecto en:
@@ -32,11 +33,6 @@ from pathlib import Path
 PROJECT = Path(__file__).resolve().parent.parent
 DESKTOP = Path.home() / "Desktop"
 
-# Flag de guardia para la regeneración de reciclaje. Cuando fase 2 se
-# reactive, este flag puede dejar de ser necesario y la llamada volverá
-# a ser parte del flujo por defecto. Ver decisión 36 de PROCESO-MAESTRO.
-FLAG_REGENERAR_RECICLAJE = "--regenerar-reciclaje"
-
 
 def run(cmd: list, cwd=None) -> tuple[int, str]:
     r = subprocess.run(cmd, capture_output=True, text=True, cwd=cwd or PROJECT)
@@ -51,17 +47,11 @@ def restaurar(dst: Path, dst_prev: bytes | None):
 
 
 def main():
-    # Parsear args: 1 obligatorio (N), 1 opcional posicional (ruta worktree), 1 flag (--regenerar-reciclaje)
+    # Parsear args: 1 obligatorio (N), 1 opcional posicional (ruta worktree)
     args = sys.argv[1:]
-    regenerar = FLAG_REGENERAR_RECICLAJE in args
-    args = [a for a in args if a != FLAG_REGENERAR_RECICLAJE]
 
     if len(args) < 1:
-        print(
-            "Uso: python3 scripts/integrar_unidad.py <N> [ruta_worktree_unidades] "
-            f"[{FLAG_REGENERAR_RECICLAJE}]\n"
-            "  Sin --regenerar-reciclaje, el reciclaje queda congelado (fase 2 pausada)."
-        )
+        print("Uso: python3 scripts/integrar_unidad.py <N> [ruta_worktree_unidades]")
         sys.exit(1)
 
     n = args[0]
@@ -99,27 +89,18 @@ def main():
     avisos = sum(1 for l in out.splitlines() if l.strip().startswith("⚠"))
     print(f"✓ Validación: 0 errores · {avisos} avisos")
 
-    # 4. Regenerar reciclaje — OPCIONAL, off por defecto mientras fase 2 esté pausada
-    reciclaje_path = PROJECT / "unidades" / "nc1-reciclaje.json"
-    if regenerar:
-        # v11.19: regenerar_reciclaje_vocabulario.py está en cuarentena (asume shape
-        # v10.114, roto tras el rediseño de fase 1). No se dispara desde aquí: la
-        # integración del inventario ya está hecha y validada — no se aborta por un
-        # script obsoleto. Reactivar solo cuando fase 2 se reescriba al shape nuevo.
-        print("⛔ --regenerar-reciclaje ignorado: regenerar_reciclaje_vocabulario.py")
-        print("   está en cuarentena (shape v10.114, roto post-rediseño de fase 1).")
-        print("   La integración del inventario SÍ se completó. Reciclaje queda congelado.")
-    else:
-        print("⏸ Reciclaje no regenerado (fase 2 pausada).")
+    # 4. El reciclaje NO se toca aquí: lo gestiona el pipeline de fase 2
+    #    (generar_reciclaje_capa1.py + sesión de Capa 2) por separado.
+    print("ℹ Reciclaje: gestionado por el pipeline de fase 2, no por la integración.")
 
-    # 5. Commit aislado — solo el inventario, y reciclaje si se regeneró
+    # 5. Commit aislado — solo el inventario
     d = json.loads(dst.read_text(encoding="utf-8"))
     acts = sum(len(p.get("actividades", [])) for p in d.get("paginas_detalle", []))
     cuadros = sum(len(p.get("cuadros", [])) for p in d.get("paginas_detalle", []))
 
     inventario_rel = str(dst.relative_to(PROJECT))
-    # v11.19: el commit es solo el inventario. El reciclaje ya no se regenera aquí
-    # (regenerar_reciclaje_vocabulario.py en cuarentena hasta reescribir fase 2).
+    # El commit es solo el inventario; el reciclaje lo commitea el pipeline de
+    # fase 2 en su propio cierre de unidad (REDISEÑO-EN-CURSO.md §13).
     paths_commit = [inventario_rel]
 
     msg = (

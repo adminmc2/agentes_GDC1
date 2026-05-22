@@ -2,7 +2,9 @@
 
 > Auto-cargado por Claude Code al trabajar dentro de `fases/2-reciclaje/`. Contrato corto de la fase: qué produce, dónde input/output, cómo validar, reglas críticas, navegación.
 
-> ⚠️ **Estado actual (2026-05-21, v11.61):** **FASE 2 PAUSADA** por decisión 36. El rediseño de fase 2 (modelo IA-first) tiene cerrados el **Nivel 1 — modelo conceptual** (§1-§10), el **Nivel 2 — contrato operativo** (`schema-reciclaje.md`, `reglas-reciclaje.md`, `prompt.md`, este `CLAUDE.md`) y el **Nivel 3 — diseño del pipeline** (contratos: §11 Capa 1, §12 Capa 2, §13 wiring, `reglas-reciclaje.md` §14 validador R1-R5). Pendiente: **Nivel 4 — implementación en código + reactivación operativa** (escribir los scripts de Capa 1 y los validadores, regenerar `nc1-reciclaje.json`, reactivar la fase). Los scripts viejos (`regenerar_reciclaje_mapa.py`, `regenerar_reciclaje_vocabulario.py`) y el `nc1-reciclaje.json` actual están en shape pre-rediseño (v10.114) y se sustituirán en el Nivel 4. El rediseño se construye en `REDISEÑO-EN-CURSO.md` (documento único; el viejo se archivó en `docs/historico/` en v11.34).
+> ✅ **Estado actual (2026-05-22, v11.69):** **FASE 2 REACTIVADA** — la pausa de decisión 36 queda levantada. El rediseño (modelo IA-first) tiene cerrados los cuatro niveles en su parte de herramienta: **Nivel 1** modelo conceptual (§1-§10), **Nivel 2** contrato operativo (`schema-reciclaje.md`, `reglas-reciclaje.md`, `prompt.md`, este `CLAUDE.md`), **Nivel 3** diseño del pipeline (§11-§13 + `reglas-reciclaje.md` §14), **Nivel 4** implementación en código — `scripts/generar_reciclaje_capa1.py` (Capa 1), `scripts/validar_reciclaje.py` (chequeo estructural §13a), `scripts/validar_cross_unidad.py` (validador R1-R5 §13b) — y `nc1-reciclaje.json` regenerado al shape del rediseño (v11.68). Los scripts viejos `regenerar_reciclaje_*.py` quedan obsoletos (pre-rediseño). El rediseño se construye en `REDISEÑO-EN-CURSO.md`.
+>
+> ⚠️ **La Capa 2 no se ha ejecutado todavía sobre ninguna unidad.** Es una sesión IA supervisada (no un script); su contrato está cerrado (§12) pero su **primera corrida real será también su shakedown**. La primera unidad que se procese debe revisarse con ese ojo: confirmar que el procedimiento de Capa 2 funciona como el contrato describe, no dar por rodado.
 
 ---
 
@@ -20,7 +22,7 @@ El campo `nivel_analisis` indica el **grado de población de un mismo hilo** —
 | `auto` | Enriquece los eventos: contenidos por unidad, etiquetas, triage | Inventarios `UX-nc1-inventario.json` (los 5 bloques — `REDISEÑO-EN-CURSO.md` §2.2) |
 | `detalle` | Justificación lingüístico-pedagógica del procedimiento | Análisis cross-unidad sobre el inventario |
 
-La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA) — su diseño está cerrado (Nivel 3); su implementación en código es Nivel 4, pendiente. Los scripts viejos `regenerar_reciclaje_*.py` son pre-rediseño.
+La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA). La Capa 1 está implementada en código (`scripts/generar_reciclaje_capa1.py`); la Capa 2 es una sesión IA supervisada por unidad (procedimiento `REDISEÑO-EN-CURSO.md` §12, aún sin estrenar). Los scripts viejos `regenerar_reciclaje_*.py` son pre-rediseño y quedan obsoletos.
 
 ## Input y output
 
@@ -30,37 +32,27 @@ La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA
 
 ## Cómo se invoca
 
-**Modelo nuevo (rediseño):** el entry point operativo de fase 2 es `prompt.md` — procesa el reciclaje de una unidad. Su pipeline (Capa 1/Capa 2) está diseñado (Nivel 3); la implementación en código es Nivel 4, pendiente.
+El entry point operativo de fase 2 es `prompt.md` — procesa el reciclaje de una unidad. El pipeline es híbrido en dos capas (`REDISEÑO-EN-CURSO.md` §1.3):
 
-**Modelo viejo (mientras fase 2 sigue PAUSADA):** los comandos de abajo siguen sirviendo para inspección, pero no reflejan el contrato nuevo.
-
-**Nivel mapa — una sola vez** (o cuando cambia `nc1-curso.json`):
+**Capa 1 — esqueleto determinista.** Script:
 ```bash
-python3 scripts/regenerar_reciclaje_mapa.py
+python3 scripts/generar_reciclaje_capa1.py            # regenera nc1-reciclaje.json (modo íntegro)
+python3 scripts/generar_reciclaje_capa1.py --dry-run  # valida sin escribir
 ```
-Este script crea `nc1-reciclaje.json` si no existe. Debe ejecutarse antes que el de auto.
+Genera los hilos `mapa` (desde `nc1-curso.json`) y `auto` (desde los inventarios), precomputa el triage mecánico (`procedencia_indice: declarado`) y preserva `propuestas[]`. No asigna etiquetas ni decide nada editorial — eso es Capa 2.
 
-**Nivel auto — fase 2 PAUSADA actualmente (decisión 36, v10.108):**
-
-Mientras dure la pausa de fase 2 (pendiente el Nivel 4 del rediseño — implementación en código del pipeline y los validadores), `scripts/integrar_unidad.py` **no regenera reciclaje por defecto**. La integración de una unidad copia el inventario, valida y hace commit del inventario, pero deja `nc1-reciclaje.json` congelado.
-
-Para forzar la regeneración en una integración concreta (excepción consciente), usar el flag explícito `--regenerar-reciclaje`:
-
-```bash
-# Comportamiento por defecto: NO regenera reciclaje
-python3 scripts/integrar_unidad.py 6
-
-# Excepción consciente: SÍ regenera (commit incluye reciclaje)
-python3 scripts/integrar_unidad.py 6 --regenerar-reciclaje
-```
-
-Cuando fase 2 se reactive, este flag puede dejar de ser necesario.
+**Capa 2 — sesión IA enriquecedora.** No es un script: es una sesión IA supervisada por unidad (`REDISEÑO-EN-CURSO.md` §12) que, sobre el esqueleto de Capa 1, asigna etiquetas, completa el triage, escribe `explicacion` y escala `propuestas[]`. La IA propone, el autor cierra. **Aún sin estrenar** — ver el banner de estado.
 
 ## Cómo validar
 
-El **criterio de cierre** del reciclaje de una unidad (chequeo estructural + validador cross-unidad R1-R5 + revisión editorial) está definido en `reglas-reciclaje.md` §13-§14. Los validadores como script se implementan en el Nivel 4 (pendiente). Mientras fase 2 esté PAUSADA, el gate no se ejecuta.
+El **criterio de cierre** del reciclaje de una unidad está en `reglas-reciclaje.md` §13-§14. Los dos validadores automáticos del gate ya existen como script:
 
-*(Los comandos del modelo viejo — `regenerar_reciclaje_mapa.py` y vista RECICLAJE del dashboard — siguen sirviendo para inspección, pero no reflejan el contrato nuevo.)*
+```bash
+python3 scripts/validar_reciclaje.py        # (a) chequeo estructural contra schema-reciclaje.md
+python3 scripts/validar_cross_unidad.py     # (b) validador cross-unidad R1-R5
+```
+
+El chequeo estructural debe dar **0 errores**; el cross-unidad no debe dejar **alertas R1/R3/R4 sin resolver** (R2/R5 son pre-condiciones que abortan). El tercer componente del gate —revisión editorial del autor— no es automatizable.
 
 ---
 

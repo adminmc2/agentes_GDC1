@@ -91,7 +91,7 @@ unidades/
 4. Validación visual fuente vs JSON (revisión de 2-3 páginas al azar).
 5. `python scripts/importar_inventario.py unidades/UX/UX-nc1-inventario.json` → carga a BD (idempotente, DELETE CASCADE).
 6. Tras desarrollar la unidad, regenerar `nc1-tarjetas.json` y `nc1-pildoras.json` con scripts Python deterministas.
-7. Cierre de unidad: actualización de `nc1-reciclaje.json`. *(Histórico: en el pipeline original era manual con Claude Code en chat. Estado vigente desde v10.108d: fase 2 pausada; `integrar_unidad.py` no regenera reciclaje por defecto, requiere el flag explícito `--regenerar-reciclaje` cuando se justifique. Ver decisión 36.)*
+7. Cierre de unidad: actualización de `nc1-reciclaje.json`. *(Histórico: en el pipeline original era manual con Claude Code en chat. Estado vigente desde v11.69: fase 2 reactivada; el reciclaje lo gestiona el pipeline de fase 2 — Capa 1 `generar_reciclaje_capa1.py` + sesión de Capa 2 —, no `integrar_unidad.py`. Ver decisión 36 y bitácora 2026-05-22.)*
 8. Si el PDF cambia, repetir desde el paso 1 con versión nueva + entrada en CHANGELOG.
 
 ---
@@ -487,7 +487,7 @@ guia-didactica-profesor-IA/
 │   ├── U9  └── inventario shape v10.114 (pendiente migración)    + propuesta/ recursos/ vacíos
 │   │
 │   ├── nc1-curso.json                       (índice editorial global del curso)
-│   └── nc1-reciclaje.json                   (mapa de reciclaje cross-unidad, fase 2 pausada)
+│   └── nc1-reciclaje.json                   (mapa de reciclaje cross-unidad; shape del rediseño desde v11.68)
 │
 ├── fases/                                   ← una carpeta por fase con sus archivos operativos
 │   ├── 1-extraccion-inventario/             (post-refactor v10.69 + rediseño v10.111-v10.117)
@@ -502,7 +502,7 @@ guia-didactica-profesor-IA/
 │   │   ├── gramatica-canonica.json          (registry gramatical, 23 categorías, registry v1.7)
 │   │   ├── pronunciacion-ortografia-canonica.json (registry pron-orto, 7 categorías, poblado v10.117)
 │   │   └── pcic-a1-{vocabulario,gramatica,pronunciacion-ortografia,comunicacion}.json (4 PCIC A1)
-│   └── 2-reciclaje/                         (fase 2 pausada; REDISEÑO-EN-CURSO.md = documento único del rediseño IA-first. El viejo se archivó en docs/historico/ el 2026-05-20, v11.34)
+│   └── 2-reciclaje/                         (fase 2 reactivada v11.69; REDISEÑO-EN-CURSO.md = documento único del rediseño IA-first. El viejo se archivó en docs/historico/ el 2026-05-20, v11.34)
 │
 ├── scripts/                                 ← código activo
 │   └── validar_inventario.py                (validador; alineación post-rediseño en deuda — §A.1 schema)
@@ -585,7 +585,7 @@ Archivado en `docs/historico/PROCESO-MAESTRO-arboles-historicos.md`. Estado del 
 ### Sobre la generación de los JSONs
 21. **`UX-nc1-inventario.json`**: lo genera **Claude Code** en chat con un **prompt versionado** (`fases/1-extraccion-inventario/prompt.md`, operativo). NO Python autónomo.
 22. **`nc1-tarjetas.json`** y **`nc1-pildoras.json`**: scripts Python deterministas (`regenerar_tarjetas_globales.py`, `regenerar_pildoras_globales.py`, a escribir). Cero tokens.
-23. **`nc1-reciclaje.json`** (decisión histórica): originalmente **manual con Claude Code** en chat al cerrar cada unidad, NO automático, NO inferido por script, acumulativo. **Superada por la decisión 36** (v10.108): scripts de regeneración existen, fase 2 actualmente pausada, `integrar_unidad.py` no regenera por defecto.
+23. **`nc1-reciclaje.json`** (decisión histórica): originalmente **manual con Claude Code** en chat al cerrar cada unidad, NO automático, NO inferido por script, acumulativo. **Superada por la decisión 36** (v10.108) y por el rediseño IA-first: desde v11.69 fase 2 está reactivada y el reciclaje lo produce el pipeline de dos capas (Capa 1 determinista `generar_reciclaje_capa1.py` + Capa 2 IA supervisada).
 24. **Validación post-extracción** del inventario: script Python `scripts/validar_inventario.py` (operativo desde antes del refactor; alineado con `fases/1-extraccion-inventario/schema-inventario.md` hasta v10.62 — cross-check A4.5.5; tras el rediseño v10.115-117 la alineación queda transitoriamente declarada como deuda en el Apéndice §A.1 del schema, con validación manual sustitutiva mientras dure).
 
 ### Sobre el dashboard y el informe HTML
@@ -697,7 +697,7 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
 
    **Dashboard:** solo lectura. Endpoint `GET /api/canon/pendientes` + vista UI mínima de cola. NO escribe en el canon. La edición la hace Claude Code (carril operativo del sistema).
 
-   **Fase 2 pausada** hasta cierre del canon. El `nc1-reciclaje.json` actual queda congelado. La reformulación del reciclaje (modelo de hilos) entra como trabajo posterior. **`integrar_unidad.py` no regenera reciclaje por defecto** desde v10.108d: la llamada al regenerador está detrás del flag explícito `--regenerar-reciclaje` para que el comportamiento por defecto respete la pausa. Cuando fase 2 se reactive, ese flag puede dejar de ser necesario.
+   **Fase 2 pausada** hasta cierre del canon (medida de la decisión 36). El `nc1-reciclaje.json` quedó congelado mientras se rediseñaba la fase. *(Actualización v11.69: la pausa queda **levantada** — el rediseño IA-first cerró sus cuatro niveles de herramienta y `nc1-reciclaje.json` se regeneró al shape nuevo. Fase 2 reactivada; ver bitácora 2026-05-22. El flag `--regenerar-reciclaje` de `integrar_unidad.py` se retiró: el reciclaje lo gestiona el pipeline de fase 2, no la integración.)*
 
 ---
 
@@ -792,6 +792,7 @@ Detalle paso a paso con condiciones de cierre: ver `REVIEW.md`.
 
 ## Bitácora del documento
 
+- **2026-05-22** — **Fase 2 reactivada: pausa de decisión 36 levantada** (v11.69). El rediseño IA-first de fase 2 cerró sus cuatro niveles en la parte de herramienta: Nivel 1-2-3 (modelo, contrato operativo, diseño del pipeline) ya estaban; el Nivel 4 se completó en v11.62-v11.68 — Capa 1 implementada (`scripts/generar_reciclaje_capa1.py`, proyecciones `auto`+`mapa`), validadores del gate como script (`validar_reciclaje.py` chequeo estructural §13a, `validar_cross_unidad.py` cross-unidad R1-R5 §13b), y `nc1-reciclaje.json` regenerado del shape pre-rediseño v10.114 al shape del rediseño (118 hilos). Con esto la pausa de la decisión 36 ("fase 2 pausada hasta cerrar el canon / rediseñar la fase") deja de tener objeto y se levanta. Lote documental v11.69: actualizados `CLAUDE.md`/`prompt.md`/`reglas-reciclaje.md` de fase 2, `scripts/integrar_unidad.py` (retirado el flag `--regenerar-reciclaje` — el reciclaje lo gestiona el pipeline de fase 2, no la integración; `REDISEÑO-EN-CURSO.md` §13.4), `CLAUDE.md` raíz, `README.md`, `REVIEW.md` y este documento. **Cautela registrada:** la **Capa 2** (sesión IA enriquecedora, §12) tiene su contrato cerrado pero **nunca se ha ejecutado** — la primera unidad que se procese es también su shakedown. La reactivación habilita el pipeline; el trabajo editorial de fase 2 (correr la Capa 2 unidad a unidad) es la pieza siguiente.
 - **2026-05-20** — **Decisión de alcance de fase 2: `comunicacion` y `estrategia` pospuestas** (v11.33). El rediseño activo de fase 2 (`fases/2-reciclaje/REDISEÑO-EN-CURSO.md`) cubre solo los **bloques lingüísticos** del inventario — vocabulario, gramática, pronunciación/ortografía y verbal (más `perifrasis` derivado). Las **funciones comunicativas** y las **estrategias** quedan fuera del rediseño actual: son desarrollo **posterior**, a abordar más adelante como ampliación del modelo. **Roadmap:** cuando los bloques lingüísticos estén cerrados e implementados, se retoma el alcance para incorporar `comunicacion` y `estrategia` (hilos propios, etiquetas, granularidad y nivel `detalle` específicos de cada uno). Sincronizado: `REDISEÑO-EN-CURSO.md` §5 Nivel 1 (decisión registrada, pieza retirada de las pendientes) y `fases/2-reciclaje/CLAUDE.md` (contrato corto dejó de afirmar que fase 2 ya las modela).
 - **2026-05-11** — **Decisión 36 implementada: canon semántico activado en fase 1** (v10.108 batch único, commit `46534c7`; v10.108b ajuste de wording del prompt, `5e963cd`; v10.108c sincronización documental autodocumentada). Validador endurecido con 3 canales (errores, avisos, auditoría legacy) en rollout R1. U0-U9 mantienen validación 0/0 con auditoría legacy informativa pendiente de saneamiento retrospectivo (carril B, paso futuro). Caso negativo verificado: marca `_pendiente_canon` y valor fuera de canon en unidad nueva producen error duro. Canon íntegro (98 entradas). Cero archivos doc nuevos, integración total en docs existentes de fase 1.
 - **2026-05-11** — **Decisión 36 cerrada: canon semántico en fase 1 (E-final).** Tras 5 iteraciones revisor↔ejecutor: el universo de `campo_semantico` y claves de `vocabulario_consolidado` se gobierna mediante canon JSON dentro de fase 1, sin archivos doc nuevos. Artefactos nuevos: JSON canónico + `scripts/canon.py` + script de inicialización. Modificaciones quirúrgicas en docs de fase 1. Validador endurecido con 3 canales (errores, avisos, auditoría legacy) + rollout R1/R2/R3. Dos carriles: extracción canónica desde origen + saneamiento retrospectivo U0-U9. Marca `_pendiente_canon` transitoria que bloquea cierre. Fase 2 pausada hasta canon limpio; modelo viejo (mapa+auto+detalle) anulado en línea 213 con anotación. Implementación pendiente.

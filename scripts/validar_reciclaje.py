@@ -15,9 +15,9 @@ Alcance:
   - NO comprueba la calidad cross-unidad R1-R5 (`reglas-reciclaje.md` §14):
     ese es un validador aparte.
 
-Nota: mientras fase 2 siga PAUSADA, el `unidades/nc1-reciclaje.json` canónico
-sigue en shape pre-rediseño (v10.114); validarlo con este script reportará
-errores hasta que el Nivel 4 regenere el canónico con el shape nuevo.
+Nota: desde v11.68 el `unidades/nc1-reciclaje.json` canónico está en el shape
+del rediseño (lo regenera `generar_reciclaje_capa1.py`); este validador da
+0 errores sobre él.
 
 Uso:
     python3 scripts/validar_reciclaje.py [ruta]
