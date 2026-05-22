@@ -418,10 +418,31 @@ def list_inventarios():
     return sorted(out, key=lambda x: (x["unidad"] is None, str(x["unidad"])))
 
 
+def _indice_curso(unidad):
+    """Índice editorial de la unidad leído de `nc1-curso.json` — los campos de
+    contenido de su entrada, sin los metadatos. Fuente única del índice tras la
+    eliminación de `contenidos_indice` del inventario (v11.67)."""
+    try:
+        num = int(unidad)
+    except (TypeError, ValueError):
+        return None
+    path = PROJECT / "unidades" / "nc1-curso.json"
+    if not path.exists():
+        return None
+    curso = json.loads(path.read_text(encoding="utf-8"))
+    meta = {"unidad", "titulo", "pagina_inicio", "paginas_libro"}
+    for u in curso.get("unidades", []):
+        if u.get("unidad") == num:
+            return {k: v for k, v in u.items() if k not in meta}
+    return None
+
+
 def get_inventario(unidad, zona=""):
     """Lee inventario de main o de paths extra (main tiene prioridad).
 
     `unidad` puede ser int (U0-U9) o str (variantes tipo "1p" para propuestas).
+    Adjunta `_indice_curso` (índice editorial leído de `nc1-curso.json`): desde
+    v11.67 el índice ya no se duplica dentro del inventario.
     """
     try:
         folder_name = f"U{int(unidad)}"
@@ -431,16 +452,23 @@ def get_inventario(unidad, zona=""):
         s = f"U{unidad}"
         m = _re.match(r"^U(\d+)p$", s)
         folder_name = f"U{m.group(1)}-propuesta" if m else s
-    folder = PROJECT / "unidades" / folder_name
-    candidates = list(folder.glob("*inventario.json")) if folder.exists() else []
-    if candidates:
-        return json.loads(candidates[0].read_text(encoding="utf-8"))
-    for ep in _extra_unidades_paths():
-        folder = ep / folder_name
-        candidates = list(folder.glob("*inventario.json")) if folder.exists() else []
-        if candidates:
-            return json.loads(candidates[0].read_text(encoding="utf-8"))
-    return {"error": f"No hay inventario para U{unidad}"}
+
+    def _cargar(folder):
+        cands = list(folder.glob("*inventario.json")) if folder.exists() else []
+        return json.loads(cands[0].read_text(encoding="utf-8")) if cands else None
+
+    inv = _cargar(PROJECT / "unidades" / folder_name)
+    if inv is None:
+        for ep in _extra_unidades_paths():
+            inv = _cargar(ep / folder_name)
+            if inv is not None:
+                break
+    if inv is None:
+        return {"error": f"No hay inventario para U{unidad}"}
+    indice = _indice_curso(unidad)
+    if indice is not None:
+        inv["_indice_curso"] = indice
+    return inv
 
 
 def get_reciclaje():
@@ -1026,7 +1054,6 @@ def mermaid_database():
         text titulo
         text paginas
         text nivel
-        jsonb contenidos_indice
     }
     paginas {
         int id PK

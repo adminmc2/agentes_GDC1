@@ -624,7 +624,6 @@ Algunas unidades NO tienen las 5 secciones canónicas (vocabulario / gramatica /
 1. Mapear todo el contenido a la sección que más se ajuste (en U0: `vocabulario`, porque todo es léxico-fonético).
 2. Las demás secciones canónicas quedan vacías: `{ "paginas": [], "actividades_ids": [] }`.
 3. Añadir clave top-level `_nota_unidad_atipica` con explicación de por qué es atípica y cómo se mapeó.
-4. En `contenidos_indice`, las secciones que no aplican llevan el valor `"(no aplica en esta unidad introductoria)"`.
 
 ---
 

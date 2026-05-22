@@ -289,5 +289,5 @@
     {"seccion": "Resumen Gramatical", "pagina_inicio": 107},
     {"seccion": "Transcripciones", "pagina_inicio": 112}
   ],
-  "_nota": "Cada unidad regular (1-9) cierra con la sección 'Reflexión y Evaluación' (no listada como contenido en el índice oficial; es estructura fija). U0 (Punto de partida) es atípica y no sigue las 5 secciones canónicas.\n\nDEUDA TÉCNICA:\n1. U3 paginación: ✅ saldada en v10.91 (re-extracción con PDF correcto integrada a main; inventario y nc1-curso.json ahora coinciden en 32-41).\n2. Los contenidos_indice ya extraídos de U1 mezclan 'PARA APRENDER' (estrategia metacognitiva, campo independiente) dentro del campo 'gramatica'. Fix futuro del inventario de U1 (saneo manual)."
+  "_nota": "Cada unidad regular (1-9) cierra con la sección 'Reflexión y Evaluación' (no listada como contenido en el índice oficial; es estructura fija). U0 (Punto de partida) es atípica y no sigue las 5 secciones canónicas.\n\nDEUDA TÉCNICA:\n1. U3 paginación: ✅ saldada en v10.91 (re-extracción con PDF correcto integrada a main; inventario y nc1-curso.json ahora coinciden en 32-41).\n2. contenidos_indice: ✅ saldada en v11.67 — el campo se eliminó del inventario (era copia desincronizada del índice; el índice vive solo aquí, en nc1-curso.json)."
 }

@@ -1371,10 +1371,12 @@ function renderInventario(inv) {
     let ortoBlock = renderConsolidatedWithSubs('Pronunciación y ortografía consolidada', inv.pronunciacion_ortografia_consolidada);
 
     let idxBlock = '';
-    if (inv.contenidos_indice) {
+    // El índice ya no se duplica en el inventario (v11.67): se lee de
+    // nc1-curso.json, que el backend adjunta como `_indice_curso`.
+    if (inv._indice_curso) {
         idxBlock = `<div class="section"><div class="section-header"><h2>Índice de contenidos</h2></div><div class="section-body">
-            ${Object.entries(inv.contenidos_indice).map(([k,v])=>
-                `<div style="margin-bottom:8px"><span style="font-weight:600">${_esc(_label(k))}:</span> ${_esc(v)}</div>`
+            ${Object.entries(inv._indice_curso).map(([k,v])=>
+                `<div style="margin-bottom:8px"><span style="font-weight:600">${_esc(_label(k))}:</span> ${_esc(Array.isArray(v)?v.join(' · '):v)}</div>`
             ).join('')}
         </div></div>`;
     }

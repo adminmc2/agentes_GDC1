@@ -145,7 +145,6 @@ Estructura top-level (10 claves obligatorias + 1 opcional):
 - `paginas_libro` (str): rango de páginas en el libro. Ej: "34-43".
 - `nivel` (str): nivel MCER. Ej: "A1.1".
 - `fuente` (object): `{ archivo, version_extraccion }`.
-- `contenidos_indice` (object): las 5 secciones canónicas — vocabulario, gramatica, comunicacion, destrezas, cultura. Texto descriptivo de cada una.
 - `vocabulario_consolidado` (object): vista agregada del vocabulario de toda la unidad, organizada en **3 bloques**:
   - **`principal`** — Vocabulario declarado en el índice de la unidad. La sección Vocabulario lo trabaja explícitamente. Agrupado por campo semántico.
   - **`recurrente`** — Vocabulario que aparece en varias secciones de la unidad, no solo en la sección Vocabulario. Agrupado por categoría temática.
@@ -655,7 +654,7 @@ Cada nueva extracción de inventario (U4, U5…) se hace en un worktree dedicado
 
   **Contenido de las celdas:** literal del índice del libro, sin expansión MCER ni interpretación pedagógica.
 
-  **Source of truth (regla refinada en v10.82b):** `nc1-curso.json` es **canónico para el índice editorial del curso** (qué se enseña en cada unidad). Los campos `paginas_libro` y `contenidos_indice` de cada inventario per-unidad reflejan lo extraído del PDF concreto y **pueden divergir legítimamente** cuando el libro tiene portadas/separadores no extraídos o cuando el PDF disponible no coincide exactamente con la edición oficial. Las divergencias detectadas se anotan como **deuda técnica conocida** en el campo `_nota` del propio JSON, **no bloquean el cierre** de B1.4 ni de B1.5. Se resuelven cuando se actualice el inventario afectado (re-extracción en su worktree paralelo).
+  **Source of truth (regla refinada en v10.82b; `contenidos_indice` retirado del párrafo en v11.67):** `nc1-curso.json` es **canónico para el índice editorial del curso** (qué se enseña en cada unidad). El campo `paginas_libro` de cada inventario per-unidad refleja lo extraído del PDF concreto y **puede divergir legítimamente** cuando el libro tiene portadas/separadores no extraídos o cuando el PDF disponible no coincide exactamente con la edición oficial. Las divergencias detectadas se anotan como **deuda técnica conocida** en el campo `_nota` del propio JSON, **no bloquean el cierre** de B1.4 ni de B1.5. *(El campo `contenidos_indice`, que también figuraba aquí, fue eliminado del inventario en v11.67 — el índice editorial vive solo en `nc1-curso.json`.)*
 
   **Validador estructural:** sin checks propios todavía. Se decidirá si añadir a `validar_inventario.py` cuando aparezca el primer caso real de bug de schema.
 

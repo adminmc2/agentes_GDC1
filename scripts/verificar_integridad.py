@@ -190,14 +190,9 @@ def chequeo_4_cabecera_curso():
             # que siempre daba None → 10 falsos positivos. (v11.66)
             if d.get("nivel") != curso.get("nivel"):
                 errores.append(f"{rel}: campo 'nivel' diverge — inventario='{d.get('nivel')}' vs curso='{curso.get('nivel')}'")
-            # `contenidos_indice`: comparación RETIRADA temporalmente (v11.66).
-            # El campo del inventario es texto concatenado (copia abreviada,
-            # ~2026-05-05); los campos de nc1-curso.json son listas (índice fiel
-            # al libro, 2026-05-08). Divergen en shape y contenido — comparar
-            # texto contra lista producía ~45 falsos positivos. El glosario de
-            # fase 1 exige coincidencia exacta de contenidos_indice con
-            # nc1-curso.json; el check se reactivará cuando contenidos_indice se
-            # regenere desde esa fuente canónica (pieza aparte tras v11.66).
+            # El campo `contenidos_indice` fue eliminado del inventario en
+            # v11.67 (era una copia desincronizada del índice de nc1-curso.json;
+            # fuente única → nc1-curso.json). Ya no hay nada que comparar aquí.
     return errores, []
 
 

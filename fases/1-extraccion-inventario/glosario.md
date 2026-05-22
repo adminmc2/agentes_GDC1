@@ -33,15 +33,11 @@ Conjunto de dos datos que permiten saber **de qué documento físico salió el i
 
 Permite trazabilidad: si dentro de un año el libro cambia de edición, podemos saber a partir de qué fuente se construyó este inventario.
 
-## `contenidos_indice`
-Cinco frases tomadas del **índice oficial del libro** (Scope & Sequence, páginas 6-7), una por cada bloque pedagógico: vocabulario, gramática, comunicación, destrezas y cultura.
-
-No es un resumen de lo que la unidad enseña; es la **copia literal** de cómo el libro anuncia su contenido. Sirve como referencia de alto nivel contra la que la IA contrasta lo que después encuentra en la unidad página a página.
-- **Origen del valor:** `unidades/nc1-curso.json`, dentro de la entrada de la unidad correspondiente.
+> **Índice editorial de la unidad — vive solo en `unidades/nc1-curso.json`.** El inventario llevó hasta v11.66 un campo `contenidos_indice` que copiaba el índice del libro. Se **eliminó en v11.67**: era una duplicación de lo que ya está en `nc1-curso.json` (índice editorial fiel al libro), y la copia se había desincronizado. El índice de una unidad se consulta directamente en `nc1-curso.json`; el inventario no lo replica (regla de oro 4 — fuente única).
 
 ---
 
-> **Source of truth de la cabecera identificativa:** `unidades/nc1-curso.json` es el diccionario maestro del curso para los campos de identificación del inventario (`unidad`, `curso`, `titulo`, `paginas_libro`, `nivel`) y `contenidos_indice`. Esos campos deben coincidir exactamente con la entrada de la unidad correspondiente. **El resto del top-level no deriva de `nc1-curso.json`:** `fuente.archivo` es convención fija, `fuente.version_extraccion` es la fecha de la corrida, los 4 bloques consolidados se derivan de las actividades y cuadros, `secciones` se reconstruye recorriendo `paginas_detalle`, `paginas_detalle` viene de la extracción del PDF, y las claves opcionales (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `_migracion_rediseno`) tienen cada una su propio origen.
+> **Source of truth de la cabecera identificativa:** `unidades/nc1-curso.json` es el diccionario maestro del curso para los campos de identificación del inventario (`unidad`, `curso`, `titulo`, `paginas_libro`, `nivel`). Esos campos deben coincidir exactamente con la entrada de la unidad correspondiente. **El resto del top-level no deriva de `nc1-curso.json`:** `fuente.archivo` es convención fija, `fuente.version_extraccion` es la fecha de la corrida, los 4 bloques consolidados se derivan de las actividades y cuadros, `secciones` se reconstruye recorriendo `paginas_detalle`, `paginas_detalle` viene de la extracción del PDF, y las claves opcionales (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `_migracion_rediseno`) tienen cada una su propio origen.
 
 ---
 
@@ -568,7 +564,7 @@ Enumeración cerrada de las **7 secciones pedagógicas normalizadas** que estruc
 - **`reflexion`** — páginas de reflexión sobre el aprendizaje (autoevaluación extendida, metacognición).
 
 ### Relación con el índice del libro
-Las 7 secciones derivan de la estructura editorial del libro impreso. `contenidos_indice` (top-level) lleva las cinco etiquetas literales del índice oficial; `seccion` es su **normalización canónica** para uso interno del sistema, ampliada con `evaluacion` y `reflexion` que el libro suele incluir aunque no figuren en el índice principal.
+Las 7 secciones derivan de la estructura editorial del libro impreso. El índice oficial del libro (sus cinco etiquetas literales) vive en `unidades/nc1-curso.json`; `seccion` es su **normalización canónica** para uso interno del sistema, ampliada con `evaluacion` y `reflexion` que el libro suele incluir aunque no figuren en el índice principal.
 
 > **Política:** cerrada y **versionable por expansión controlada**, igual que el resto de enumeraciones.
 

@@ -25,14 +25,6 @@
     "archivo": "unidades/UX/fuente/UX-nc1.pdf",
     "version_extraccion": "<YYYY-MM-DD>"
   },
-  "contenidos_indice": {
-    "vocabulario": <str>,
-    "gramatica": <str>,
-    "comunicacion": <str>,
-    "destrezas": <str>,
-    "cultura": <str>
-  },
-
   "vocabulario_consolidado":              <objeto principal+recurrente — ver §9.1>,
   "tiempos_y_verbos_consolidado":         <lista de lemas — ver §9.2>,
   "gramatica_consolidada":                <objeto principal+recurrente — ver §9.3>,
@@ -59,7 +51,9 @@
 }
 ```
 
-**Recuento del shape:** 13 claves obligatorias (`unidad`, `curso`, `titulo`, `paginas_libro`, `nivel`, `fuente`, `contenidos_indice`, los 4 bloques consolidados, `secciones`, `paginas_detalle`) + 3 claves opcionales canónicas (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`) + 1 clave opcional transitoria (`_migracion_rediseno`, ver Apéndice).
+**Recuento del shape:** 12 claves obligatorias (`unidad`, `curso`, `titulo`, `paginas_libro`, `nivel`, `fuente`, los 4 bloques consolidados, `secciones`, `paginas_detalle`) + 3 claves opcionales canónicas (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`) + 1 clave opcional transitoria (`_migracion_rediseno`, ver Apéndice).
+
+> **Nota (v11.67):** el campo `contenidos_indice` fue **eliminado** del inventario. Era una copia del índice editorial que ya vive en `unidades/nc1-curso.json` — duplicación que contradecía la regla de fuente única y se desincronizó. El índice del curso se consulta directamente en `nc1-curso.json`.
 
 ---
 
@@ -619,7 +613,7 @@ Listado vivo de reglas declaradas en este schema o en `reglas-operativas.md` que
   1. Cumplimiento del shape declarado en este schema (top-level, página, actividad, cuadro, 4 bloques consolidados, enumeraciones cerradas, restricciones condicionales).
   2. Toda referencia canónica usada en un inventario existe en su registry (`campos-semanticos-canonicos.json`, `verbos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`).
   3. Toda fuente cumple la regex de §9.5.
-  4. Coincidencia exacta entre cabecera de cada inventario y `unidades/nc1-curso.json` (campos `unidad`, `titulo`, `paginas_libro`, `nivel`, `contenidos_indice`).
+  4. Coincidencia exacta entre cabecera de cada inventario y `unidades/nc1-curso.json` (campos `unidad`, `titulo`, `paginas_libro`, `nivel`).
   5. Coherencia interna: `secciones` reconstruible desde `paginas_detalle`; los 4 bloques consolidados son derivables de las listas tipadas de actividades y cuadros; `formas_trabajadas` en consolidado están en minúscula.
   6. Integridad de los archivos PCIC (`pcic-a1-*.json`) contra su `_meta` declarado.
   7. Integridad de los registries (`*-canonicos.json`, `*-canonica.json`) contra su shape interno.

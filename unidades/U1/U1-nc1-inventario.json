@@ -5,13 +5,6 @@
   "paginas_libro": "12-21",
   "nivel": "A1.1",
   "fuente": { "archivo": "unidades/U1/fuente/U1-nc1.pdf", "version_extraccion": "2026-05-15" },
-  "contenidos_indice": {
-    "vocabulario": "Objetos de clase. Nombres de las letras",
-    "gramatica": "Verbos ser, llamarse y tener (formas singulares). Artículos determinados (el, la, los, las). Masculino y femenino. Colores. Interrogativos. Recursos para la clase",
-    "comunicacion": "Saludar. Pedir y dar información personal. Números del 1 al 20",
-    "destrezas": "Mis compañeros de clase",
-    "cultura": "Saludos y despedidas. Tú y usted"
-  },
   "vocabulario_consolidado": {
     "principal": {
       "Objetos de clase": {

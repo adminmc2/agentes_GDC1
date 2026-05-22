@@ -39,7 +39,6 @@ ROLLOUT_CANON_ITERACION = "R1"  # R1 | R2 | R3
 LEGACY_UNIDADES_R1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 CLAVES_TOP = {"unidad", "curso", "titulo", "paginas_libro", "nivel", "fuente",
-              "contenidos_indice",
               # 4 bloques top-level consolidados (v10.111+)
               "vocabulario_consolidado", "tiempos_y_verbos_consolidado",
               "gramatica_consolidada", "pronunciacion_ortografia_consolidada",
@@ -514,17 +513,10 @@ def validar(path):
                 if ae.get("emoticonos") is not True:
                     errores.append("❌ autoevaluacion.emoticonos NC1 fijo: true")
 
-    # 2. fuente, contenidos_indice, secciones tienen estructura esperada
+    # 2. fuente y secciones tienen estructura esperada
     if "fuente" in d:
         if not isinstance(d["fuente"], dict) or "archivo" not in d["fuente"]:
             errores.append("❌ fuente debe tener al menos {archivo}")
-
-    if "contenidos_indice" in d:
-        secciones_idx = set(d["contenidos_indice"].keys())
-        esperadas = {"vocabulario", "gramatica", "comunicacion", "destrezas", "cultura"}
-        faltan_idx = esperadas - secciones_idx
-        if faltan_idx:
-            avisos.append(f"⚠ contenidos_indice incompleto, faltan: {sorted(faltan_idx)}")
 
     if "secciones" in d:
         for k in d["secciones"]:
