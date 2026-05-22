@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.63 — 2026-05-22] — Fase 2 Nivel 4: proyección `mapa` de la Capa 1
+
+Cierra la laguna declarada en v11.62. `scripts/generar_reciclaje_capa1.py` añade la proyección de nivel `mapa` (§4.2/§4.5): siembra desde el índice de `nc1-curso.json` con resolución **conservadora** — resuelve una entrada del índice a su título canónico solo si la coincidencia es inequívoca (§11.4 invariantes 2-3); las entradas que no resuelven (lemas verbales embebidos en `gramatica`, divergencias de naming con los registries, pron a nivel de subcategoría) se reportan como **avisos**, no se fuerzan. `nivel_analisis` pasa a calcularse según el grado de población (`auto` si el hilo tiene evento respaldado por inventario, `mapa` si solo está declarado en el índice). Dry-run: 118 hilos (auto 118 / mapa 0 — curso íntegramente cubierto) / 283 eventos / 41 con `procedencia_indice: declarado` / 25 avisos / validación OK. El canónico `nc1-reciclaje.json` sigue sin reescribirse. Archivo: `scripts/generar_reciclaje_capa1.py`.
+
 ## [v11.62 — 2026-05-22] — Fase 2 Nivel 4: generador de Capa 1 validado en dry-run
 
 Primer paso del Nivel 4 (implementación en código), **checkpoint de herramienta, sin reactivar fase 2**. Nuevo `scripts/generar_reciclaje_capa1.py` — Capa 1 modo íntegro: materializa la **proyección `auto`** del contrato §11 (hilos de los 5 bloques desde inventarios, eventos, `evidencias`, `formas`, `procedencia_indice: declarado`), preserva `propuestas[]` y valida la salida contra `schema-reciclaje.md` + las 10 invariantes §11.4 antes de escribir. Dry-run: 118 hilos / 283 eventos / OK. Laguna conocida: la proyección de nivel `mapa` desde `nc1-curso.json` (§11, `REDISEÑO` §4.2) **aún no se materializa** — todos los hilos salen `auto`; pendiente del Nivel 4. El canónico `nc1-reciclaje.json` **no se reescribe**. Nota empírica diferida añadida en `REDISEÑO-EN-CURSO.md` §7.4. Archivos: `scripts/generar_reciclaje_capa1.py` (nuevo), `REDISEÑO-EN-CURSO.md`.

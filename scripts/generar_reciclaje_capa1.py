@@ -16,14 +16,16 @@ Modo implementado: ÍNTEGRO (§11.5) — recalcula toda la proyección mecánica
 curso. Preserva `propuestas[]` y los cierres humanos del `nc1-reciclaje.json`
 existente, que la Capa 1 nunca invalida (invariante §11.4.10).
 
-ALCANCE ACTUAL (laguna conocida del Nivel 4): este generador materializa la
-proyección de nivel `auto` — hilos y eventos derivados de los inventarios
-cerrados. La proyección de nivel `mapa` desde `nc1-curso.json` (REDISEÑO §4.2;
-CLAUDE.md de fase 2, tabla `nivel_analisis`) AÚN NO se materializa: hoy
-`nc1-curso.json` se usa solo como soporte del triage `declarado`, y todos los
-hilos salen con `nivel_analisis: "auto"`. Pendiente: generar el esqueleto
-`mapa` de los contenidos declarados en el índice del curso que aún no tienen
-inventario, y degradar a `mapa` los hilos sin evento respaldado por inventario.
+El generador materializa las dos proyecciones que pueblan la Capa 1 (§4.5):
+  - `auto`  — hilos y eventos derivados de los inventarios cerrados (§11.2).
+  - `mapa`  — siembra desde el índice de `nc1-curso.json` (§4.2): se resuelve
+              cada entrada del índice a su título canónico de registry con
+              criterio CONSERVADOR — solo cuando la coincidencia es inequívoca
+              (§11.4 invariantes 2-3). Las entradas que no resuelven (ambiguas,
+              compuestas, o sin categoría canónica) NO se fuerzan: se reportan
+              como avisos para revisión. `finalizar_niveles()` fija el nivel
+              de cada hilo: `auto` si tiene evento respaldado por inventario,
+              `mapa` si solo está declarado en el índice.
 
 La salida se valida estructuralmente contra `schema-reciclaje.md` y contra las
 invariantes §11.4 ANTES de escribirse: si la validación falla, no se escribe.
@@ -37,6 +39,7 @@ import json
 import re
 import sys
 import unicodedata
+from collections import Counter
 from datetime import date
 from pathlib import Path
 
@@ -173,6 +176,56 @@ class Registries:
     def grupo(self, titulo: str):
         return self.gramatica.get(titulo)
 
+    @staticmethod
+    def _match(objetivo: str, claves: set) -> int:
+        """Puntúa una entrada contra un conjunto de claves: 2=exacto, 1=prefijo."""
+        mejor = 0
+        for clave in claves:
+            if not clave:
+                continue
+            if objetivo == clave:
+                mejor = max(mejor, 2)
+            elif objetivo.startswith(clave + "-"):
+                mejor = max(mejor, 1)
+        return mejor
+
+    def resolver(self, bloque: str, entrada: str):
+        """Resuelve una entrada del índice del curso a su título canónico.
+
+        Devuelve el título canónico solo si la resolución es **inequívoca**;
+        `None` si no hay coincidencia o si es ambigua (varios candidatos al
+        mismo nivel de coincidencia). Resolución conservadora: la Capa 1 nunca
+        inventa ni adivina un título (§11.4 invariantes 2-3).
+
+        Coincidencia mecánica: igualdad de slug, prefijo (absorbe paréntesis
+        del índice, p. ej. 'Artículos determinados (el, la, los, las)') y, en
+        vocabulario, los `aliases_indice` del registry.
+        """
+        objetivo = slug(entrada)
+        if not objetivo:
+            return None
+        candidatos = []  # (titulo, score)
+        if bloque == "vocabulario":
+            for canonico, aliases in self.vocab.items():
+                puntua = self._match(objetivo, {slug(canonico)} | set(aliases))
+                if puntua:
+                    candidatos.append((canonico, puntua))
+        elif bloque == "gramatica":
+            for cat in self.gramatica:
+                puntua = self._match(objetivo, {slug(cat)})
+                if puntua:
+                    candidatos.append((cat, puntua))
+        elif bloque == "pronunciacion_ortografia":
+            for cat in self.pronorto:
+                puntua = self._match(objetivo, {slug(cat)})
+                if puntua:
+                    candidatos.append((cat, puntua))
+        if not candidatos:
+            return None
+        mejor = max(p for _, p in candidatos)
+        ganadores = [t for t, p in candidatos if p == mejor]
+        return ganadores[0] if len(ganadores) == 1 else None
+
 
 # --------------------------------------------------------------------------
 # índice del curso — soporte del triage `procedencia_indice: declarado` (§9.1)
@@ -238,9 +291,9 @@ class Constructor:
                 "id": hid,
                 "bloque": bloque,
                 "titulo": titulo,
-                # `auto`: el hilo se construye desde inventarios. La proyección
-                # `mapa` desde nc1-curso.json es laguna pendiente (ver docstring).
-                "nivel_analisis": "auto",
+                # provisional: `finalizar_niveles()` fija el nivel definitivo
+                # según el grado de población alcanzado (§4.2).
+                "nivel_analisis": "mapa",
                 "eventos": [],
             }
             if bloque == "gramatica":
@@ -288,6 +341,36 @@ class Constructor:
         if self.indice.declarado(unidad, bloque, titulo, aliases):
             evento["procedencia_indice"] = "declarado"
         hilo["eventos"].append(evento)
+
+    def add_evento_mapa(self, bloque: str, titulo: str, unidad: int):
+        """Registra un evento de nivel `mapa` desde el índice del curso (§4.2).
+
+        `titulo` ya viene resuelto y es canónico (`Registries.resolver`). El
+        evento no lleva evidencias ni etiquetas. Si ya existe un evento para
+        esa `(unidad)` —procedente de inventario—, no lo pisa: solo garantiza
+        el triage `declarado` (la entrada está en el índice por definición).
+        """
+        self.unidades.add(unidad)
+        hilo = self._hilo(bloque, titulo)
+        for ev in hilo["eventos"]:
+            if ev["unidad"] == unidad and ev.get("tiempo") is None:
+                ev["procedencia_indice"] = "declarado"
+                return
+        hilo["eventos"].append({
+            "unidad": unidad,
+            "etiquetas": [],
+            "evidencias": [],
+            "procedencia_indice": "declarado",
+        })
+
+    def finalizar_niveles(self):
+        """Fija `nivel_analisis` de cada hilo según el grado de población (§4.2):
+        `auto` si tiene algún evento respaldado por inventario (con evidencias);
+        `mapa` si todos sus eventos son solo declaración del índice del curso.
+        """
+        for hilo in self.hilos.values():
+            respaldado = any(ev.get("evidencias") for ev in hilo["eventos"])
+            hilo["nivel_analisis"] = "auto" if respaldado else "mapa"
 
 
 # --------------------------------------------------------------------------
@@ -399,6 +482,56 @@ def procesar_unidad(constructor: Constructor, unidad: int, inventario: dict):
         constructor.add_evento(
             "perifrasis", estructura, unidad, sorted(refs), tiempo=tiempo
         )
+
+
+# --------------------------------------------------------------------------
+# proyección de nivel `mapa` desde el índice del curso (§4.2, §4.5)
+# --------------------------------------------------------------------------
+def procesar_indice(constructor: Constructor, curso: dict, cubiertas: set) -> list:
+    """Siembra hilos/eventos de nivel `mapa` desde el índice de `nc1-curso.json`.
+
+    Resolución **conservadora** (§11.4 invariantes 2-3): cada entrada del índice
+    se resuelve a su título canónico solo si la coincidencia es inequívoca; las
+    entradas que no resuelven (ambiguas, compuestas, o sin categoría canónica —
+    p. ej. lemas verbales embebidos en `gramatica`) NO se fuerzan: se devuelven
+    como avisos para revisión, sin generar hilo.
+
+    Solo cubre vocabulario, gramática y pron/orto: el índice no lista lemas
+    verbales ni perífrasis de forma individual (esos hilos nacen del inventario).
+
+    Devuelve la lista de entradas no resueltas: `(unidad, campo, entrada)`.
+    """
+    avisos = []
+    campos = ("vocabulario", "gramatica", "pronunciacion_ortografia")
+    for u in curso.get("unidades", []):
+        unidad = u["unidad"]
+        if unidad not in cubiertas:
+            continue
+        # campos tipados del índice — cada uno fija el bloque destino
+        for campo in campos:
+            valor = u.get(campo)
+            if not valor:
+                continue
+            items = [valor] if isinstance(valor, str) else valor
+            for entrada in items:
+                titulo = constructor.reg.resolver(campo, entrada)
+                if titulo is None:
+                    avisos.append((unidad, campo, entrada))
+                else:
+                    constructor.add_evento_mapa(campo, titulo, unidad)
+        # U0 (atípica): `contenido_general` se prueba contra los tres bloques;
+        # se acepta solo si resuelve de forma inequívoca en exactamente uno.
+        for entrada in u.get("contenido_general") or []:
+            hits = [
+                (campo, constructor.reg.resolver(campo, entrada))
+                for campo in campos
+            ]
+            hits = [(c, t) for c, t in hits if t is not None]
+            if len(hits) == 1:
+                constructor.add_evento_mapa(hits[0][0], hits[0][1], unidad)
+            else:
+                avisos.append((unidad, "contenido_general", entrada))
+    return avisos
 
 
 # --------------------------------------------------------------------------
@@ -528,17 +661,29 @@ def validar(reciclaje: dict) -> list:
 # orquestación — modo íntegro (§11.5)
 # --------------------------------------------------------------------------
 def generar() -> tuple:
-    """Construye la proyección mecánica íntegra. Devuelve (reciclaje, descartados)."""
+    """Construye la proyección mecánica íntegra.
+
+    Devuelve `(reciclaje, descartados, avisos_indice)`.
+    """
     registries = Registries()
     curso = cargar_json(CURSO)
     indice = IndiceCurso(curso)
     constructor = Constructor(registries, indice)
 
+    # pasada `auto`: hilos y eventos desde los inventarios cerrados (§11.2)
+    cubiertas = []
     for u in range(0, 10):
         inv_path = UNIDADES / f"U{u}" / f"U{u}-nc1-inventario.json"
         if not inv_path.exists():
             continue
+        cubiertas.append(u)
         procesar_unidad(constructor, u, cargar_json(inv_path))
+
+    # pasada `mapa`: siembra desde el índice del curso (§4.2, §4.5)
+    avisos = procesar_indice(constructor, curso, set(cubiertas))
+
+    # nivel definitivo de cada hilo según el grado de población alcanzado
+    constructor.finalizar_niveles()
 
     # ordenación estable: por bloque y luego por id
     orden_bloque = {b: i for i, b in enumerate(
@@ -561,13 +706,13 @@ def generar() -> tuple:
         "_meta": {
             "version": leer_version_changelog(),
             "fecha": date.today().isoformat(),
-            "unidades_cubiertas": sorted(constructor.unidades),
+            "unidades_cubiertas": sorted(cubiertas),
             "estado": "en construcción",
         },
         "hilos": hilos,
         "propuestas": propuestas,
     }
-    return reciclaje, constructor.descartados
+    return reciclaje, constructor.descartados, avisos
 
 
 def main() -> int:
@@ -578,15 +723,27 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    reciclaje, descartados = generar()
+    reciclaje, descartados, avisos = generar()
 
     n_hilos = len(reciclaje["hilos"])
     n_eventos = sum(len(h["eventos"]) for h in reciclaje["hilos"])
+    niveles = Counter(h["nivel_analisis"] for h in reciclaje["hilos"])
     print(f"Capa 1 — modo íntegro")
     print(f"  unidades cubiertas : {reciclaje['_meta']['unidades_cubiertas']}")
-    print(f"  hilos generados    : {n_hilos}")
+    print(f"  hilos generados    : {n_hilos}  (auto: {niveles['auto']}, "
+          f"mapa: {niveles['mapa']})")
     print(f"  eventos generados  : {n_eventos}")
     print(f"  propuestas preservadas: {len(reciclaje['propuestas'])}")
+
+    if avisos:
+        print(f"\n  ⚠ {len(avisos)} entradas del índice del curso sin resolver "
+              f"a título canónico (proyección `mapa`, resolución conservadora):")
+        vistos = set()
+        for unidad, campo, entrada in avisos:
+            if entrada in vistos:
+                continue
+            vistos.add(entrada)
+            print(f"      [U{unidad} · {campo}] {entrada}")
 
     if descartados:
         print(f"\n  ⚠ {len(descartados)} contenidos descartados (fuera del "
