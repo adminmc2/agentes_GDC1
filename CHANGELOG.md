@@ -15,6 +15,16 @@
 
 ---
 
+## [v11.71 — 2026-05-23] — Dashboard RECICLAJE: corrección UX (badge `auto` y leyenda Capa 2)
+
+Tres correcciones puntuales sobre v11.70, a partir de feedback del autor mirando la vista real:
+
+1. El badge `AUTO` aparecía con fondo lila intenso en las 118 filas con el mismo valor — ruido visual sin información. Ahora solo se muestra como **marcador pequeño sin fondo** y **únicamente cuando el hilo se desvía del nivel dominante** (hoy: ningún hilo se desvía → 0 marcadores por fila).
+2. Nueva **nota global discreta** arriba de la vista con el reparto de niveles ("118/118 hilos en `auto`. Esqueleto poblado desde inventarios; la Capa 2 IA aún no ha generado hilos en `detalle`.").
+3. La leyenda de "Etiqueta del evento (Capa 2)" prometía 7 colores que **no aparecen** en el render (todos los puntos son grises hoy). Se sustituye por una **nota honesta** que describe el estado-esqueleto y enumera las etiquetas por nombre, no por chip de color. Cuando la Capa 2 corra y existan eventos etiquetados, la nota cambia automáticamente al modo "colores reales".
+
+Solo `web/index.html`; sintaxis verificada con `node --check`. Sin tocar datos ni lógica.
+
 ## [v11.70 — 2026-05-22] — Dashboard: vista RECICLAJE adaptada al shape del rediseño
 
 La vista RECICLAJE de `web/index.html` estaba construida para el shape pre-rediseño (`h.tipo`, `ev.accion`, `ev.impacto`, `ev.descripcion`, `h.usos`, `recData.actualizado`) y quedó rota tras la regeneración de `nc1-reciclaje.json` en v11.68 — un consumidor del archivo que la validación de v11.68 no cubrió. Rewire al modelo nuevo: agrupación por `bloque`, badge de `nivel_analisis`, eventos con `etiquetas[]` (chips múltiples), `procedencia_indice` y `evidencias[]`; drawer con `evidencias`/`formas`/`tiempo`; cabecera de la vista con `_meta.fecha`/`estado` y conteo de hilos/propuestas; bloque `propuestas[]` separado al final con estado vacío sobrio. El estado-esqueleto de Capa 1 (eventos con `etiquetas: []`) se representa como **válido** — dot gris, "sin etiquetar (Capa 1)" — sin fingir semántica de Capa 2 inexistente. Solo `web/index.html` (−119 líneas netas: el modelo nuevo es más plano, sin `usos`/`tipos_verbo` anidados); `diagrama.py` sin cambios (`/api/reciclaje` ya sirve el archivo tal cual). Sintaxis JS verificada con `node --check`.

@@ -835,15 +835,25 @@ function renderRecDots(eventosByU, hId) {
     }).join('');
 }
 
-function renderRecHiloRow(h, bColor) {
+// Marcador de nivel solo para hilos que se desvían del nivel dominante. Pequeño,
+// sin fondo: información para "lo distinto", no decoración repetida en cada fila.
+function recNivelMarker(nivel) {
+    const c = REC_COLOR_NIVEL[nivel] || '#90A4AE';
+    return `<span title="Nivel de análisis del hilo" style="font-size:10px;color:${c};font-weight:700;text-transform:uppercase;letter-spacing:.5px">${_esc(nivel || '?')}</span>`;
+}
+
+function renderRecHiloRow(h, bColor, dominantNivel) {
     const eventosByU = {};
     (h.eventos || []).forEach(ev => { (eventosByU[ev.unidad] = eventosByU[ev.unidad] || []).push(ev); });
     const puntos = renderRecDots(eventosByU, h.id);
+    // Solo se muestra el nivel cuando el hilo se desvía del dominante (info útil).
+    const marker = (h.nivel_analisis && h.nivel_analisis !== dominantNivel)
+        ? recNivelMarker(h.nivel_analisis) : '';
     return `<div style="border-bottom:1px solid #F5F5F5">
         <div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;align-items:center">
             <div onclick="openRecDrawer('${h.id}')" style="display:flex;align-items:center;gap:6px;padding-right:8px;border-right:3px solid ${bColor};cursor:pointer">
                 <span style="font-size:13px;font-weight:600;color:#263238">${_esc(h.titulo)}</span>
-                ${recNivelBadge(h.nivel_analisis)}
+                ${marker}
             </div>
             <div style="display:flex;align-items:center;position:relative">
                 <div style="position:absolute;left:0;right:0;top:50%;height:2px;background:#ECEFF1"></div>
@@ -853,23 +863,54 @@ function renderRecHiloRow(h, bColor) {
     </div>`;
 }
 
+// Nota global discreta con el reparto de niveles: sustituye al badge repetido
+// en cada fila. Refleja el estado real (puede mostrar mezcla cuando la haya).
+function renderRecNivelNota() {
+    const hilos = recData.hilos || [];
+    const cuenta = {};
+    hilos.forEach(h => { cuenta[h.nivel_analisis] = (cuenta[h.nivel_analisis] || 0) + 1; });
+    const total = hilos.length;
+    const partes = Object.entries(cuenta).map(([n, c]) => `${c}/${total} en <strong>${_esc(n)}</strong>`).join(' · ');
+    const sinDetalle = !cuenta.detalle;
+    const cola = sinDetalle ? ' Esqueleto poblado desde inventarios; la Capa 2 IA aún no ha generado hilos en <strong>detalle</strong>.' : '';
+    return `<div style="padding:10px 14px;background:#F5F5F5;border-left:3px solid #5C6BC0;border-radius:6px;margin-bottom:12px;font-size:12px;color:#37474F;line-height:1.55"><strong>Nivel de análisis:</strong> ${partes}.${cola}</div>`;
+}
+
+// Nota de estado de las etiquetas: honesta sobre lo que hay y lo que vendrá
+// cuando la Capa 2 procese unidades. No promete colores que aún no existen.
+function renderRecEtiquetasNota() {
+    const eventosTotal = (recData.hilos || []).reduce((a, h) => a + (h.eventos || []).length, 0);
+    const etiquetados = (recData.hilos || []).reduce((a, h) =>
+        a + (h.eventos || []).filter(e => e.etiquetas && e.etiquetas.length).length, 0);
+    const skeletonState = etiquetados === 0;
+    const titulo = skeletonState ? 'Estado actual' : 'Etiquetas del evento (Capa 2)';
+    const cuerpo = skeletonState
+        ? `eventos sin etiquetar (<span style="color:#90A4AE">●</span> gris) = esqueleto de Capa 1. Cuando la Capa 2 procese una unidad, los eventos podrán mostrar etiquetas como <em>introduce</em>, <em>amplía</em>, <em>aplica</em>, <em>sistematiza</em>, <em>contrasta</em>, <em>anticipación</em> y <em>discrimina</em>.`
+        : `${etiquetados}/${eventosTotal} eventos con etiqueta asignada. Colores: ` +
+          Object.keys(REC_COLOR_ETIQUETA).map(a =>
+            `<span style="display:inline-flex;align-items:center;gap:4px"><span style="width:9px;height:9px;border-radius:50%;background:${REC_COLOR_ETIQUETA[a]};display:inline-block"></span>${a}</span>`
+          ).join(' · ');
+    return `<div style="padding:10px 14px;background:#FAFAFA;border-radius:6px;margin-bottom:20px;font-size:12px;color:#546E7A;line-height:1.55"><strong>${titulo}:</strong> ${cuerpo}</div>`;
+}
+
 function renderRecTimeline() {
     const { grupos, bloques } = hilosPorBloque();
-    const leyenda = `<div style="display:flex;gap:14px;flex-wrap:wrap;padding:12px 16px;background:#F5F5F5;border-radius:8px;margin-bottom:20px;font-size:12px;align-items:center">
-        <strong style="color:#37474F">Etiqueta del evento (Capa 2):</strong>
-        ${Object.keys(REC_COLOR_ETIQUETA).map(a => `<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:50%;background:${REC_COLOR_ETIQUETA[a]};display:inline-block"></span>${a}</span>`).join('')}
-        <span style="display:inline-flex;align-items:center;gap:6px;color:#90A4AE"><span style="width:12px;height:12px;border-radius:50%;background:${REC_DOT_SKELETON};display:inline-block"></span>sin etiquetar — esqueleto de Capa 1</span>
-    </div>`;
+    // Nivel dominante global = el más frecuente. Si todos coinciden, los marcadores
+    // por fila no aparecen (información que no discrimina = ruido).
+    const cuenta = {};
+    (recData.hilos || []).forEach(h => { cuenta[h.nivel_analisis] = (cuenta[h.nivel_analisis] || 0) + 1; });
+    const dominantNivel = Object.entries(cuenta).sort((a, b) => b[1] - a[1])[0]?.[0];
+    const notas = renderRecNivelNota() + renderRecEtiquetasNota();
     const bloquesHTML = bloques.map(bloque => {
         const bColor = REC_COLOR_BLOQUE[bloque] || '#607D8B';
-        const lineas = grupos[bloque].map(h => renderRecHiloRow(h, bColor)).join('');
+        const lineas = grupos[bloque].map(h => renderRecHiloRow(h, bColor, dominantNivel)).join('');
         const headerU = `<div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;border-bottom:2px solid #ECEFF1;font-weight:700;font-size:11px;color:#90A4AE"><div></div><div style="display:flex">${REC_UNIDADES.map(u => `<div style="flex:1;text-align:center">U${u}</div>`).join('')}</div></div>`;
         return `<div class="section" style="margin-bottom:20px;border-left:4px solid ${bColor}">
             <div class="section-header" style="background:${bColor};color:#fff"><h2 style="color:#fff;margin:0">${_esc(REC_LABEL_BLOQUE[bloque] || bloque)} <span style="font-weight:400;font-size:13px">· ${grupos[bloque].length} hilos</span></h2></div>
             <div class="section-body" style="padding:16px">${headerU}${lineas}</div>
         </div>`;
     }).join('');
-    return leyenda + bloquesHTML;
+    return notas + bloquesHTML;
 }
 
 function renderRecPropuestas() {
