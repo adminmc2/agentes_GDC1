@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.64 — 2026-05-22] — Fase 2 Nivel 4: validador estructural como script
+
+Componente (a) del gate de cierre (`reglas-reciclaje.md` §13). Nuevo `scripts/validar_reciclaje.py` — chequeo estructural de `nc1-reciclaje.json` contra `schema-reciclaje.md` (claves, tipos, enumeraciones); valida el archivo en cualquier estadio del pipeline (salida de Capa 1 o enriquecida por Capa 2 con etiquetas, `reconciliado`/`nuevo`, `explicacion`, `detalle`). `generar_reciclaje_capa1.py` se refactoriza para **importar** ese validador (fuente única, regla de oro 4): su `validar()` se parte en `validar_schema` (compartido) + `validar_capa1` (invariantes §11.4 propias de la salida de Capa 1, que no aplican a un archivo ya enriquecido). Dry-run del generador sin regresión (118 hilos / 283 eventos / OK); validador en seco sobre salida fresca de Capa 1: 0 errores. El canónico `nc1-reciclaje.json` sigue intacto (en shape pre-rediseño, no conforme — esperado hasta el Nivel 4). Archivos: `scripts/validar_reciclaje.py` (nuevo), `scripts/generar_reciclaje_capa1.py`.
+
 ## [v11.63 — 2026-05-22] — Fase 2 Nivel 4: proyección `mapa` de la Capa 1
 
 Cierra la laguna declarada en v11.62. `scripts/generar_reciclaje_capa1.py` añade la proyección de nivel `mapa` (§4.2/§4.5): siembra desde el índice de `nc1-curso.json` con resolución **conservadora** — resuelve una entrada del índice a su título canónico solo si la coincidencia es inequívoca (§11.4 invariantes 2-3); las entradas que no resuelven (lemas verbales embebidos en `gramatica`, divergencias de naming con los registries, pron a nivel de subcategoría) se reportan como **avisos**, no se fuerzan. `nivel_analisis` pasa a calcularse según el grado de población (`auto` si el hilo tiene evento respaldado por inventario, `mapa` si solo está declarado en el índice). Dry-run: 118 hilos (auto 118 / mapa 0 — curso íntegramente cubierto) / 283 eventos / 41 con `procedencia_indice: declarado` / 25 avisos / validación OK. El canónico `nc1-reciclaje.json` sigue sin reescribirse. Archivo: `scripts/generar_reciclaje_capa1.py`.

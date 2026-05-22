@@ -43,6 +43,11 @@ from collections import Counter
 from datetime import date
 from pathlib import Path
 
+# Validador estructural: fuente única del chequeo de schema (regla de oro 4).
+# Ambos scripts viven en scripts/, así que el import directo funciona al
+# ejecutar `python3 scripts/generar_reciclaje_capa1.py`.
+from validar_reciclaje import TIEMPOS, validar_schema
+
 PROJECT = Path(__file__).resolve().parent.parent
 UNIDADES = PROJECT / "unidades"
 CURSO = UNIDADES / "nc1-curso.json"
@@ -57,10 +62,6 @@ REG_PRONORTO = FASE1 / "pronunciacion-ortografia-canonica.json"
 REG_VERBOS = FASE1 / "verbos-canonicos.json"
 REG_PERIFRASIS = FASE2 / "perifrasis-canonicas.json"
 
-# --- enumeraciones del schema (schema-reciclaje.md §2, §3, §6) ---
-BLOQUES = {
-    "vocabulario", "gramatica", "pronunciacion_ortografia", "verbal", "perifrasis",
-}
 # prefijo del `id` del hilo por bloque (schema §2)
 PREFIJO = {
     "vocabulario": "voc",
@@ -69,19 +70,8 @@ PREFIJO = {
     "verbal": "verb",
     "perifrasis": "perif",
 }
-NIVELES = {"mapa", "auto", "detalle"}
-TIEMPOS = {"Presente", "Pretérito indefinido", "Imperativo", "Infinitivo"}
-GRUPOS = {
-    "Determinantes", "Pronombres", "Sintagma nominal y concordancia",
-    "Construcciones", "Tiempos y modos verbales", "Adverbios y marcadores",
-    "Preposiciones",
-}
-ETIQUETAS = {
-    "introduce", "amplia", "aplica", "sistematiza", "contrasta",
-    "anticipacion", "discrimina",
-}
-# bloques con `tiempo` obligatorio en el evento (schema §3)
-BLOQUES_CON_TIEMPO = {"verbal", "perifrasis"}
+# `TIEMPOS` (enumeración del schema) se importa de `validar_reciclaje` — el
+# resto de enumeraciones las usa solo el validador estructural, no la generación.
 
 # campo de `nc1-curso.json` que indexa cada bloque, para el triage `declarado`
 CURSO_CAMPO = {
@@ -535,92 +525,34 @@ def procesar_indice(constructor: Constructor, curso: dict, cubiertas: set) -> li
 
 
 # --------------------------------------------------------------------------
-# validación contra schema-reciclaje.md + invariantes §11.4
+# validación de la salida — schema general + invariantes §11.4 de la Capa 1
 # --------------------------------------------------------------------------
-def validar(reciclaje: dict) -> list:
-    """Devuelve la lista de errores; vacía si la salida es válida."""
+def validar_capa1(reciclaje: dict) -> list:
+    """Invariantes específicas de la SALIDA de la Capa 1 (§11.4).
+
+    Complementa al chequeo estructural general (`validar_schema`, en
+    `validar_reciclaje.py`): comprueba lo que la Capa 1 promete por encima
+    del schema — no asigna etiquetas, no escribe `reconciliado`/`nuevo`, no
+    fabrica `explicacion`/`detalle`. Estas comprobaciones NO aplican a un
+    `nc1-reciclaje.json` enriquecido por la Capa 2, por eso viven aquí y no
+    en el validador estructural compartido.
+    """
     errores = []
-
-    # --- top-level (schema §1) ---------------------------------------------
-    for clave in ("_meta", "hilos", "propuestas"):
-        if clave not in reciclaje:
-            errores.append(f"top-level: falta '{clave}'")
-    meta = reciclaje.get("_meta", {})
-    for clave in ("version", "fecha", "unidades_cubiertas", "estado"):
-        if clave not in meta:
-            errores.append(f"_meta: falta '{clave}'")
-    cubiertas = set(meta.get("unidades_cubiertas", []))
-
-    # --- hilos (schema §2-§5, invariantes §11.4) ---------------------------
-    ids_vistos = set()
     for h in reciclaje.get("hilos", []):
         hid = h.get("id", "<sin-id>")
-        if hid in ids_vistos:
-            errores.append(f"hilo {hid}: id duplicado (invariante 1)")
-        ids_vistos.add(hid)
-
-        bloque = h.get("bloque")
-        if bloque not in BLOQUES:
-            errores.append(f"hilo {hid}: bloque inválido '{bloque}'")
-        if not h.get("titulo"):
-            errores.append(f"hilo {hid}: titulo vacío")
-        if h.get("nivel_analisis") not in NIVELES:
-            errores.append(f"hilo {hid}: nivel_analisis inválido")
-
-        # _grupo: presente y válido solo en gramática (invariante 5)
-        if bloque == "gramatica":
-            if h.get("_grupo") not in GRUPOS:
-                errores.append(f"hilo {hid}: _grupo inválido '{h.get('_grupo')}'")
-        elif "_grupo" in h:
-            errores.append(f"hilo {hid}: _grupo no debe aparecer fuera de gramática")
-
-        eventos = h.get("eventos", [])
-        if not eventos:
-            errores.append(f"hilo {hid}: sin eventos")
-
-        claves_evento = set()
-        for ev in eventos:
+        # la Capa 1 nunca fabrica el nivel `detalle` (invariante 9)
+        if "detalle" in h:
+            errores.append(
+                f"hilo {hid}: 'detalle' presente en salida de Capa 1 (invariante 9)"
+            )
+        for ev in h.get("eventos", []):
             unidad = ev.get("unidad")
-            if not isinstance(unidad, int):
-                errores.append(f"hilo {hid}: evento con unidad no entera")
-            elif cubiertas and unidad not in cubiertas:
-                errores.append(
-                    f"hilo {hid}: unidad {unidad} fuera de unidades_cubiertas"
-                    " (invariante 4)"
-                )
-
-            tiempo = ev.get("tiempo")
-            if bloque in BLOQUES_CON_TIEMPO:
-                if tiempo not in TIEMPOS:
-                    errores.append(
-                        f"hilo {hid} u{unidad}: tiempo inválido '{tiempo}'"
-                        " (invariante 6)"
-                    )
-            elif tiempo is not None:
-                errores.append(
-                    f"hilo {hid} u{unidad}: tiempo no debe aparecer en {bloque}"
-                )
-
-            # unicidad de la clave mecánica del evento (invariante 7)
-            clave = (unidad, tiempo)
-            if clave in claves_evento:
-                errores.append(
-                    f"hilo {hid}: evento duplicado para {clave} (invariante 7)"
-                )
-            claves_evento.add(clave)
-
-            if not isinstance(ev.get("etiquetas"), list):
-                errores.append(f"hilo {hid} u{unidad}: etiquetas no es lista")
-            elif ev["etiquetas"]:
-                # la Capa 1 nunca asigna etiquetas (invariante 9)
+            # la Capa 1 nunca asigna etiquetas (invariante 9)
+            if ev.get("etiquetas"):
                 errores.append(
                     f"hilo {hid} u{unidad}: etiquetas no vacías en salida de Capa 1"
+                    " (invariante 9)"
                 )
-
-            for et in ev.get("etiquetas", []):
-                if et not in ETIQUETAS:
-                    errores.append(f"hilo {hid} u{unidad}: etiqueta inválida '{et}'")
-
             # triage: la Capa 1 solo escribe `declarado` (invariante 8)
             proc = ev.get("procedencia_indice")
             if proc is not None and proc != "declarado":
@@ -628,32 +560,12 @@ def validar(reciclaje: dict) -> list:
                     f"hilo {hid} u{unidad}: procedencia_indice '{proc}'"
                     " no permitido en Capa 1 (invariante 8)"
                 )
-
-            if not isinstance(ev.get("evidencias"), list):
-                errores.append(f"hilo {hid} u{unidad}: evidencias no es lista")
-
-            if bloque == "verbal" and not isinstance(ev.get("formas"), list):
-                errores.append(f"hilo {hid} u{unidad}: formas no es lista")
-            if bloque != "verbal" and "formas" in ev:
-                errores.append(
-                    f"hilo {hid} u{unidad}: formas solo aplica a bloque verbal"
-                )
-
             # la Capa 1 nunca fabrica contenido editorial (invariante 9)
-            for prohibido in ("explicacion", "detalle"):
-                if prohibido in ev or prohibido in h:
-                    errores.append(
-                        f"hilo {hid}: '{prohibido}' presente en salida de Capa 1"
-                        " (invariante 9)"
-                    )
-
-    # --- propuestas (schema §6) --------------------------------------------
-    for p in reciclaje.get("propuestas", []):
-        if "id" not in p:
-            errores.append("propuesta sin id")
-        if p.get("estado") not in {"pendiente", "aceptada", "rechazada"}:
-            errores.append(f"propuesta {p.get('id')}: estado inválido")
-
+            if "explicacion" in ev:
+                errores.append(
+                    f"hilo {hid} u{unidad}: 'explicacion' presente en salida"
+                    " de Capa 1 (invariante 9)"
+                )
     return errores
 
 
@@ -756,7 +668,8 @@ def main() -> int:
             vistos.add(clave)
             print(f"      [{bloque}] {titulo}  (primera vez en U{unidad})")
 
-    errores = validar(reciclaje)
+    # chequeo estructural compartido (gate §13 a) + invariantes §11.4 de Capa 1
+    errores = validar_schema(reciclaje) + validar_capa1(reciclaje)
     if errores:
         print(f"\n✗ Validación FALLIDA — {len(errores)} errores:")
         for e in errores:
