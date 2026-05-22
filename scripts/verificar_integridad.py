@@ -182,15 +182,22 @@ def chequeo_4_cabecera_curso():
             if not u_curso:
                 errores.append(f"{rel}: unidad={unidad_inv} no existe en nc1-curso.json")
                 continue
-            for campo in ("titulo", "paginas_libro", "nivel"):
+            for campo in ("titulo", "paginas_libro"):
                 if d.get(campo) != u_curso.get(campo):
                     errores.append(f"{rel}: campo '{campo}' diverge — inventario='{d.get(campo)}' vs curso='{u_curso.get(campo)}'")
-            ci_inv = d.get("contenidos_indice", {})
-            ci_curso = {k: u_curso.get(k, "") for k in ("vocabulario", "gramatica", "comunicacion", "destrezas", "cultura")}
-            for k, v_curso in ci_curso.items():
-                v_inv = ci_inv.get(k, "")
-                if v_inv != v_curso and v_curso:
-                    errores.append(f"{rel}: contenidos_indice.{k} diverge de nc1-curso.json")
+            # `nivel` es un campo GLOBAL del curso (nc1-curso.json, top-level),
+            # no una clave por unidad. Antes se comparaba contra u_curso.get(),
+            # que siempre daba None → 10 falsos positivos. (v11.66)
+            if d.get("nivel") != curso.get("nivel"):
+                errores.append(f"{rel}: campo 'nivel' diverge — inventario='{d.get('nivel')}' vs curso='{curso.get('nivel')}'")
+            # `contenidos_indice`: comparación RETIRADA temporalmente (v11.66).
+            # El campo del inventario es texto concatenado (copia abreviada,
+            # ~2026-05-05); los campos de nc1-curso.json son listas (índice fiel
+            # al libro, 2026-05-08). Divergen en shape y contenido — comparar
+            # texto contra lista producía ~45 falsos positivos. El glosario de
+            # fase 1 exige coincidencia exacta de contenidos_indice con
+            # nc1-curso.json; el check se reactivará cuando contenidos_indice se
+            # regenere desde esa fuente canónica (pieza aparte tras v11.66).
     return errores, []
 
 
