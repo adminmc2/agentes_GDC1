@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.68 — 2026-05-22] — Fase 2 Nivel 4: regeneración del canónico `nc1-reciclaje.json`
+
+`nc1-reciclaje.json` se regenera con el generador de Capa 1 (v11.62-v11.63): el archivo pasa del shape pre-rediseño v10.114 (181 hilos, claves `curso/_acciones_validas/...`) al shape del rediseño (`_meta/hilos/propuestas`, 118 hilos / 283 eventos). Validado: validador estructural 0 errores contra `schema-reciclaje.md`; validador cross-unidad R1-R5 — pre-condiciones R2/R5 OK, 14 alertas R1/R4 idénticas a v11.65 (son de datos, no regresión de generación). `propuestas[]` queda vacío (el archivo viejo no tenía). Con esto la Capa 1 del pipeline de fase 2 queda materializada de extremo a extremo. **Fase 2 sigue PAUSADA**: la regeneración produce el esqueleto mecánico, no reactiva la fase — pendientes la Capa 2 (sesión IA enriquecedora) y la reactivación operativa. Archivo: `unidades/nc1-reciclaje.json`.
+
 ## [v11.67 — 2026-05-22] — Eliminado `contenidos_indice` del inventario canónico
 
 `contenidos_indice` era una copia del índice editorial dentro de cada inventario — duplicación de lo que ya vive en `nc1-curso.json`, desincronizada desde 2026-05-08 (deuda técnica conocida ya registrada en B1.4). Se **elimina**: el índice del curso tiene fuente única en `nc1-curso.json` (regla de oro 4). Campo retirado de los 10 inventarios U0-U9. `validar_inventario.py` deja de exigirlo; `verificar_integridad.py` chequeo 4 limpio (la comparación retirada en v11.66 pasa a definitiva). Contratos de fase 1 actualizados: `schema-inventario.md` (12 claves obligatorias, antes 13), `glosario.md`, `reglas-operativas.md`, `PROCESO-MAESTRO.md`. El dashboard conserva el bloque "Índice de contenidos" leyéndolo ahora de `nc1-curso.json` — `get_inventario` adjunta `_indice_curso` (`diagrama.py` + `web/index.html`). Validación: U0-U9 a 0/0/0, `verificar_integridad.py` 9/9 (0 errores), `validar_cross_unidad.py` sin regresión. Cierra de paso la contradicción glosario↔PROCESO-MAESTRO sobre si `contenidos_indice` debía coincidir o podía divergir.
