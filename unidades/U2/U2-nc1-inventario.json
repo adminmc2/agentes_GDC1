@@ -5,6 +5,10 @@
   "paginas_libro": "22-31",
   "nivel": "A1.1",
   "fuente": { "archivo": "unidades/U2/fuente/U2-nc1.pdf", "version_extraccion": "2026-05-15" },
+  "portada": {
+    "pagina": 22,
+    "descripcion": "Número grande «2» y título «Países de habla hispana» en la parte superior izquierda. A la izquierda, foto de tres jóvenes en una piragua/kayak naranja sobre el agua: un chico y dos chicas, sonrientes, con remos. Debajo, listado con cinco epígrafes precedidos de viñeta: «VOCABULARIO Países hispanohablantes. Adjetivos de nacionalidad. Días de la semana. Números ordinales. Asignaturas»; «GRAMÁTICA Verbos ser y tener (formas plurales). Plural de nombres y adjetivos. Demostrativos. Uso de las mayúsculas»; «COMUNICACIÓN Saludar. Pedir y dar información personal. Números del 21 al 100. Hacer sugerencias. Las vocales»; «DESTREZAS Una carta de presentación personal. Pedir y dar datos pesonales»; «CULTURA La ESO en España»."
+  },
   "vocabulario_consolidado": {
     "principal": {
       "Países hispanohablantes": {

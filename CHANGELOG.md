@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.91 — 2026-05-23] — Portada U2 (Países de habla hispana, p.22)
+
+Añadido `portada` a U2: número «2», título, foto de 3 jóvenes en piragua y los 5 epígrafes del índice. Errata del libro «datos pesonales» (sic) mantenida verbatim. Validador 0/0/0.
+
+---
+
 ## [v11.90 — 2026-05-23] — Portada U1 (¡Hola!, p.12)
 
 Añadido `portada` a U1: número «1», título «¡Hola!», foto de dos chicos y los 5 epígrafes del índice (VOCABULARIO/GRAMÁTICA/COMUNICACIÓN/DESTREZAS/CULTURA con sus contenidos). Validador 0/0/0.
