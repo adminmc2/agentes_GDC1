@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-23 (v11.85 — Dashboard: drawer lateral del reciclaje sustituido por **modal centrado** sobre overlay semi-transparente, con ancho 760px / max-height 88vh / scroll interno (REDISEÑO §4.4). Prepara la infraestructura para explicaciones detalladas y el modal a página completa de `nivel: detalle`. Sin tocar lógica de render ni datos).
+> **Última actualización:** 2026-05-23 (v11.86 — **Relaciones cross-hilo**: capa contractual completa. `schema-reciclaje.md` §6 (tipo `relacion_cross_hilo` + payload `relacion_candidata`) y §7 (`hilo.relaciones[]` con enum cerrado de 5 tipos + frontera vs `detalle.enlaces`). `reglas-reciclaje.md` §15 fija criterios, política de extensión y política de cierre. Helper `scripts/proponer_relaciones_cuadro.py` propone candidatos por cuadro compartido (idempotente, id canónico del par ordenado). `scripts/validar_reciclaje.py` valida `relaciones[]` y `relacion_candidata`. Sin tocar canónico ni dashboard — rediseño visual del modal queda para v11.87 cuando haya relaciones cerradas que mostrar).
+>
+> **Hito previo (v11.85):** 2026-05-23 (Dashboard: drawer lateral → modal centrado 760px/88vh — REDISEÑO §4.4).
 >
 > **Hito previo (v11.82):** 2026-05-23 (Sincronización **automática** de `_meta.version` y `_meta.fecha` del canónico vía pre-commit hook (`scripts/hooks/pre-commit` + `scripts/sync_meta_reciclaje.py`); cualquier commit que toque `nc1-reciclaje.json` actualiza `_meta` antes de cerrar. Documentado en `fases/2-reciclaje/CLAUDE.md`. El dashboard siempre reflejará la versión real sin intervención manual).
 >

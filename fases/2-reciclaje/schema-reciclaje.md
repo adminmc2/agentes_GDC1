@@ -102,17 +102,41 @@ Presente cuando `nivel_analisis: detalle`. Modela la justificación lingüístic
 | Clave | Tipo | Contenido |
 |---|---|---|
 | `id` | string | Identificador de la propuesta. |
-| `tipo` | enum | `reconciliacion` \| `categoria_nueva` \| `siempre_presente`. |
+| `tipo` | enum | `reconciliacion` \| `categoria_nueva` \| `siempre_presente` \| `relacion_cross_hilo` (v11.86). |
 | `descripcion` | string | Qué propone la IA, con su evidencia/razonamiento. |
-| `hilo_ref` | string | `id` del hilo afectado, cuando aplica. |
+| `hilo_ref` | string | `id` del hilo afectado, cuando aplica. **No aplica a `tipo: relacion_cross_hilo`** — esa propuesta es **no dirigida**: la dirección se decide solo al aceptar (v11.86). |
 | `estado` | enum | `pendiente` \| `aceptada` \| `rechazada`. |
 | `resolucion` | string | Decisión del autor al cerrarla (cuando `estado ≠ pendiente`). |
+| `relacion_candidata` | objeto | **Solo si `tipo: relacion_cross_hilo`** (v11.86). Payload **neutral respecto a origen/destino**: `{hilos: [id_a, id_b] ordenados alfabéticamente, cuadros_compartidos: lista no vacía de strings con prefijo "cuadro@"}`. La candidata identifica un **par no dirigido**; la dirección (qué hilo es origen y qué hilo es destino) se fija solo al cerrar como `aceptada` y se materializa en la entrada de `hilo.relaciones[]` del hilo de origen elegido. |
 
-El análisis IA **ya consolidado** (`explicacion.analisis_ia`, el razonamiento del `detalle`) NO va aquí — va inline en el hilo/evento. `propuestas[]` es solo lo **pendiente de cierre humano**.
+El análisis IA **ya consolidado** (`explicacion.analisis_ia`, el razonamiento del `detalle`, las relaciones cerradas de §7) NO va aquí — va inline en el hilo/evento. `propuestas[]` es solo lo **pendiente de cierre humano**.
 
 ---
 
-## §7. Notas
+## §7. `hilo.relaciones[]` — relaciones cross-hilo (v11.86)
+
+Resumen editorial de las relaciones entre el hilo y otros hilos relevantes del curso. Aplica a hilos en `mapa` o `auto` — no requiere que el hilo haya alcanzado `nivel: detalle`. Se construye unidad a unidad por la Capa 2 + cierre humano.
+
+**Frontera con `detalle.enlaces`:** `hilo.relaciones[]` es la **lectura editorial resumida**, una entrada por relación cross-hilo importante, con `tipo` enum + `detalle` corto. `detalle.enlaces` (§5) es el **grafo lingüístico-pedagógico profundo** — nodos y enlaces con justificación didáctica completa de toda la cadena del hilo. Coexisten: un hilo puede tener `relaciones` mientras está en `auto`, y eventualmente, al promoverse a `detalle`, tener además `enlaces` con la profundidad lingüística. `enlaces` no sustituye a `relaciones`; son dos niveles de abstracción distintos.
+
+| Clave del objeto relación | Tipo | Contenido |
+|---|---|---|
+| `hilo_ref` | string | `id` del hilo destino — debe existir como `hilo.id` en el mismo archivo. No autorreferencia (no puede ser el id del propio hilo). |
+| `tipo` | enum | `usa` \| `prerrequisito` \| `activa` \| `contrasta` \| `comparte`. Definidos en `reglas-reciclaje.md` §15. Extensión del enum: requiere entrada nueva en §15 con criterio + ejemplo (no se añade silenciosamente). |
+| `detalle` | string | Texto editorial corto (1-3 frases) que explica el matiz de la relación. |
+| `unidad_relevante` | int | **Opcional.** Unidad donde la relación se activa (entero en `_meta.unidades_cubiertas`). Si está ausente, la relación es **transversal** a varias unidades. Patrón multi-anclaje (lista de unidades) queda como iteración futura. |
+
+**Estados del ciclo de vida:**
+
+- **Candidato** — vive en `propuestas[]` con `tipo: relacion_cross_hilo` y payload `relacion_candidata`. No es dato firme.
+- **Cerrada (aceptada)** — entrada en `hilo.relaciones[]` con `tipo` + `detalle`. La propuesta espejo se archiva con `estado: aceptada` y `resolucion` que documenta el cierre (ver `reglas-reciclaje.md` §15 política de cierre).
+- **Rechazada** — la propuesta queda con `estado: rechazada` y `resolucion` con motivo. No se crea entrada en `hilo.relaciones[]`.
+
+Solo lo cerrado renderiza en el dashboard. Los candidatos pendientes se reportan como conteo, no como grafo.
+
+---
+
+## §8. Notas
 
 - **Naming canónico:** `titulo` es literal del registry de su dimensión (universo cerrado, §6.1). Fase 2 no inventa títulos.
 - **Granularidad del hilo por bloque** (§2.2): vocabulario → campo semántico; gramática → categoría; pron/orto → categoría; verbal → lema; perífrasis → perífrasis.

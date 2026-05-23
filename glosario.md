@@ -72,6 +72,18 @@ El JSON conserva **3 valores técnicos** (`declarado`/`reconciliado`/`nuevo`); l
 
 El valor es **estable por hilo** (depende del título canónico contra el índice y los registries globales, no de la unidad del evento). La cronología la marca la etiqueta: `anticipacion` (antes), `aplica` (después), sin etiqueta temporal cuando coincide con su unidad canónica.
 
+**`hilo.relaciones[]`** (v11.86) — Lecturas editoriales cross-hilo cerradas: cada entrada vincula el hilo con otro hilo del curso con un `tipo` (enum cerrado, ver tabla) y un `detalle` corto. Nacen como propuestas con `tipo: relacion_cross_hilo` — **par no dirigido** `{hilos: [a, b]}` (señal de partida: cuadros compartidos en una unidad); la dirección, cuando el `tipo` la requiere, se elige solo al aceptar y se materializa en `hilo.relaciones[]` del hilo de origen. Frontera con `detalle.enlaces`: `relaciones[]` es la lectura editorial resumida (válida en `mapa`/`auto`); `enlaces` es el grafo lingüístico-pedagógico profundo del `nivel: detalle`. Coexisten. Definidas en `schema-reciclaje.md §7`; criterios y política en `reglas-reciclaje.md §15`.
+
+Los 5 `tipo` del enum cerrado:
+
+| `tipo` | Significado breve |
+|---|---|
+| `usa` | A se sirve operativamente de B sin que B sea prerrequisito formal. |
+| `prerrequisito` | B debe estar activo para que A pueda funcionar. |
+| `activa` | A (escena/actividad) pone en juego B (contenido lingüístico). |
+| `contrasta` | A y B se trabajan en oposición explícita. |
+| `comparte` | Coocurrencia editorial sin jerarquía (mismo cuadro/escena). |
+
 ---
 
 ## Bloque 3 — Glosarios de fase

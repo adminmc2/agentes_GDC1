@@ -47,8 +47,12 @@ ETIQUETAS = {
     "anticipacion", "discrimina",
 }
 PROCEDENCIAS = {"declarado", "reconciliado", "nuevo"}
-PROPUESTA_TIPOS = {"reconciliacion", "categoria_nueva", "siempre_presente"}
+PROPUESTA_TIPOS = {
+    "reconciliacion", "categoria_nueva", "siempre_presente",
+    "relacion_cross_hilo",  # v11.86
+}
 PROPUESTA_ESTADOS = {"pendiente", "aceptada", "rechazada"}
+RELACION_TIPOS = {"usa", "prerrequisito", "activa", "contrasta", "comparte"}
 
 # bloques cuyo evento lleva `tiempo` obligatorio (schema §3)
 BLOQUES_CON_TIEMPO = {"verbal", "perifrasis"}
@@ -94,6 +98,11 @@ def validar_schema(reciclaje: dict) -> list:
         hilos = []
 
     ids_vistos = set()
+    # pre-recolectamos todos los hilo.id (válidos) para validar referencias
+    todos_ids = {
+        h.get("id") for h in hilos
+        if isinstance(h, dict) and isinstance(h.get("id"), str) and h.get("id")
+    }
     for h in hilos:
         if not isinstance(h, dict):
             errores.append("hilos: hay un elemento que no es objeto")
@@ -132,6 +141,12 @@ def validar_schema(reciclaje: dict) -> list:
 
         errores.extend(_validar_eventos(hid, bloque, h.get("eventos"), cubiertas))
 
+        # relaciones cross-hilo (schema §7, v11.86) — opcional
+        if "relaciones" in h:
+            errores.extend(
+                _validar_relaciones(hid, h["relaciones"], todos_ids, cubiertas)
+            )
+
     # --- propuestas (schema §6) -------------------------------------------
     propuestas = reciclaje.get("propuestas", [])
     if not isinstance(propuestas, list):
@@ -157,6 +172,105 @@ def validar_schema(reciclaje: dict) -> list:
                 f"propuesta {pid}: estado '{estado}' sin 'resolucion'"
             )
 
+        # relacion_candidata: obligatorio solo si tipo == relacion_cross_hilo (v11.86)
+        if p.get("tipo") == "relacion_cross_hilo":
+            errores.extend(
+                _validar_relacion_candidata(pid, p.get("relacion_candidata"), todos_ids)
+            )
+            # par no dirigido: 'hilo_ref' no aplica (schema §6, v11.86)
+            if "hilo_ref" in p:
+                errores.append(
+                    f"propuesta {pid}: 'hilo_ref' no aplica a tipo 'relacion_cross_hilo'"
+                    " (par no dirigido; usar relacion_candidata.hilos)"
+                )
+        elif "relacion_candidata" in p:
+            errores.append(
+                f"propuesta {pid}: 'relacion_candidata' solo aplica a tipo 'relacion_cross_hilo'"
+            )
+
+    return errores
+
+
+def _validar_relaciones(hid: str, relaciones, todos_ids: set, cubiertas: set) -> list:
+    """Valida `hilo.relaciones[]` (schema §7, v11.86)."""
+    errores = []
+    if not isinstance(relaciones, list):
+        return [f"hilo {hid}: 'relaciones' no es lista"]
+    for r in relaciones:
+        if not isinstance(r, dict):
+            errores.append(f"hilo {hid}: hay una relación que no es objeto")
+            continue
+        href = r.get("hilo_ref")
+        if not isinstance(href, str) or not href:
+            errores.append(f"hilo {hid}: relación con 'hilo_ref' ausente o vacío")
+        elif href == hid:
+            errores.append(f"hilo {hid}: relación autorreferente (hilo_ref == id)")
+        elif href not in todos_ids:
+            errores.append(
+                f"hilo {hid}: relación apunta a hilo_ref '{href}' inexistente"
+            )
+        if r.get("tipo") not in RELACION_TIPOS:
+            errores.append(
+                f"hilo {hid}: relación con tipo inválido '{r.get('tipo')}'"
+            )
+        if not isinstance(r.get("detalle"), str) or not r.get("detalle"):
+            errores.append(f"hilo {hid}: relación con 'detalle' ausente o vacío")
+        if "unidad_relevante" in r:
+            u = r["unidad_relevante"]
+            if not isinstance(u, int):
+                errores.append(
+                    f"hilo {hid}: relación con 'unidad_relevante' no entera"
+                )
+            elif cubiertas and u not in cubiertas:
+                errores.append(
+                    f"hilo {hid}: relación.unidad_relevante {u} fuera de _meta.unidades_cubiertas"
+                )
+    return errores
+
+
+def _validar_relacion_candidata(pid: str, payload, todos_ids: set) -> list:
+    """Valida `propuesta.relacion_candidata` (schema §6, v11.86) — par no dirigido."""
+    if not isinstance(payload, dict):
+        return [f"propuesta {pid}: 'relacion_candidata' ausente o no es objeto"]
+    errores = []
+    hilos = payload.get("hilos")
+    if not (isinstance(hilos, list) and len(hilos) == 2
+            and all(isinstance(x, str) and x for x in hilos)):
+        errores.append(
+            f"propuesta {pid}: relacion_candidata.hilos debe ser lista de"
+            " exactamente 2 strings no vacíos"
+        )
+    else:
+        a, b = hilos
+        if a == b:
+            errores.append(
+                f"propuesta {pid}: relacion_candidata.hilos no puede ser un par"
+                " autorreferente"
+            )
+        if a > b:
+            errores.append(
+                f"propuesta {pid}: relacion_candidata.hilos debe estar ordenado"
+                " alfabéticamente (par no dirigido canónico)"
+            )
+        for h in (a, b):
+            if h not in todos_ids:
+                errores.append(
+                    f"propuesta {pid}: relacion_candidata.hilos referencia hilo"
+                    f" inexistente '{h}'"
+                )
+    if "hilo_destino" in payload:
+        errores.append(
+            f"propuesta {pid}: relacion_candidata.hilo_destino obsoleto"
+            " — usar 'hilos' (v11.86)"
+        )
+    cuadros = payload.get("cuadros_compartidos")
+    if not isinstance(cuadros, list) or not cuadros or not all(
+        isinstance(c, str) and c.startswith("cuadro@") for c in cuadros
+    ):
+        errores.append(
+            f"propuesta {pid}: relacion_candidata.cuadros_compartidos debe ser"
+            " lista no vacía de strings con prefijo 'cuadro@'"
+        )
     return errores
 
 

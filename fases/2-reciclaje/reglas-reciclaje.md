@@ -194,3 +194,35 @@ Detalle del componente (b) del gate de cierre (§13). Cinco reglas de **validaci
 **R5 — Coherencia bidireccional de trazabilidad.** `actividad.X` ↔ `fuentes` del bloque consolidado deben coincidir en los dos sentidos. Pre-condición; si falla, fase 2 aborta.
 
 **Qué bloquea:** R2 y R5 son **pre-condiciones** (un fallo es bug de fase 1; fase 2 aborta). R1, R3 y R4 producen **alertas** que entran en el criterio de cierre §13 (no quedan alertas sin resolver). El validador está implementado en `scripts/validar_cross_unidad.py`: R2/R5 se delegan a `verificar_integridad.py` (fase 1); R1 va en versión proxy determinista (anticipación material trazable — ver el docstring del script).
+
+## §15. Relaciones cross-hilo (v11.86)
+
+Las relaciones cross-hilo materializan lecturas editoriales del tipo "este hilo se apoya en aquel", "este contrasta con aquel". Viven en `hilo.relaciones[]` (§7 del schema) una vez cerradas, y nacen como propuestas con `tipo: relacion_cross_hilo` (§6 del schema).
+
+**Cómo se detectan los candidatos.** La señal de partida son los **cuadros compartidos**: un mismo `cuadro@pXX` referenciado por eventos de dos hilos distintos en la misma unidad — un solo cuadro tratando dos contenidos a la vez es indicio fuerte de que la unidad los pone en relación. El helper `scripts/proponer_relaciones_cuadro.py` recorre el canónico y, para cada par de hilos que comparten ≥1 cuadro, crea (o actualiza, si ya existe pendiente) una propuesta con `tipo: relacion_cross_hilo` y `relacion_candidata: {hilos: [a, b] ordenados, cuadros_compartidos: [...]}`. **Solo cuadros**: las actividades compartidas no son señal suficiente (son demasiado polifónicas).
+
+**Identidad no dirigida del candidato.** La propuesta candidata representa un **par no dirigido** de hilos: el payload guarda los dos hilos sin asignar origen ni destino. Tres de los cinco `tipo` (`usa`, `prerrequisito`, `activa`) son **direccionales**; los otros dos (`contrasta`, `comparte`) son **simétricos**. Fijar la dirección antes de tiempo (p. ej. por orden alfabético) sesgaría editorialmente el dato. Por eso la propuesta se mantiene neutral y la dirección se decide **solo al aceptar**: el humano elige `tipo` y, si es direccional, qué hilo del par actúa como origen — esa elección se materializa al escribir la entrada en `hilo.relaciones[]` del hilo de origen. La propuesta candidata **no tiene `hilo_ref`** (schema §6).
+
+**Tipos** — enum cerrado de `tipo`:
+
+| Tipo | Criterio | Ejemplo |
+|---|---|---|
+| `usa` | El hilo A se sirve de B operativamente sin que B sea un prerrequisito formal. | "Saludos y despedidas" *usa* "Tú/usted" para elegir registro. |
+| `prerrequisito` | B debe estar activo (introducido o sistematizado) antes de que A pueda funcionar. | "Concordancia adjetivo-sustantivo" tiene como *prerrequisito* "Género y número del sustantivo". |
+| `activa` | A funciona como disparador didáctico que pone en juego B aunque B no sea el foco. | "Presentaciones" *activa* "Verbo llamarse". |
+| `contrasta` | A y B se trabajan en oposición explícita (par contrastivo). | "Ser" *contrasta* "Estar". |
+| `comparte` | A y B comparten un mismo cuadro/escena editorial sin que la relación sea de uso, prerrequisito, activación o contraste — coocurrencia editorial sin jerarquía. | "Países hispanohablantes" *comparte* cuadro con "Gentilicios". |
+
+Si dudas entre `usa` y `prerrequisito`, pregunta "¿se puede trabajar A sin B?" — si la respuesta es no, es `prerrequisito`; si es "sí pero con menos sentido", es `usa`. `activa` se reserva para cuando A es la actividad/escena y B es el contenido lingüístico que sale a flote.
+
+**Política de extensión del enum.** No se añaden tipos silenciosamente. Para extender: entrada nueva en la tabla de arriba con **criterio + ejemplo del curso**, mención en `schema-reciclaje.md §7` y actualización del validador. Una propuesta de Capa 2 con un `tipo` no listado se considera mal formada.
+
+**Política de cierre de la propuesta.**
+
+- **Aceptada** → el humano elige `tipo` y, si es direccional, qué hilo del par `hilos[]` actúa como **origen** (el otro queda como destino). Se añade entrada a `hilos[origen].relaciones[]` con `{hilo_ref: destino, tipo, detalle, unidad_relevante?}`. La propuesta queda con `estado: aceptada` y `resolucion` registra la dirección elegida (formato sugerido: `"aceptada como '<tipo>' origen=<id_origen> destino=<id_destino>"`; para tipos simétricos basta `"aceptada como '<tipo>' entre <id_a> y <id_b>"`). No se crea relación recíproca automática — si la inversa también es interesante (raro fuera de `contrasta`/`comparte`, donde la entrada en un solo lado suele bastar), se añade una segunda entrada manualmente en el hilo simétrico citando la misma propuesta cerrada.
+- **Rechazada** → `estado: rechazada` y `resolucion` con motivo corto (ej. "coocurrencia accidental — no hay vínculo editorial"). No se toca `hilo.relaciones[]`.
+- **Diferida** → se mantiene `pendiente`; el helper, en pasadas siguientes, **no duplica** la propuesta (mismo `id` canónico del par ordenado) sino que la actualiza si emergen cuadros compartidos nuevos.
+
+**Idempotencia — un único constructor de id.** Helper y cualquier flujo de cierre manual comparten un único constructor de id del par ordenado: `id_relacion_par(hilo_a, hilo_b)` en `scripts/proponer_relaciones_cuadro.py` ordena alfabéticamente y devuelve `prop-rel-<menor>-<mayor>`. Mismo cálculo para crear, buscar duplicados y cerrar — evita desalineaciones sutiles.
+
+**Frontera con `detalle.enlaces`** (recordatorio de schema §7). `hilo.relaciones[]` resume la lectura editorial cross-hilo (entrada corta, una por relación importante). `detalle.enlaces` es el grafo lingüístico-pedagógico profundo del hilo cuando alcanza `nivel: detalle`. No se sustituyen — un hilo en `auto` puede tener `relaciones` y, al promoverse a `detalle`, sumar `enlaces` sin tocar las primeras.
