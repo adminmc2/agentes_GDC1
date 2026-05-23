@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "v11.82",
+    "version": "v11.84",
     "fecha": "2026-05-23",
     "unidades_cubiertas": [
       0,
@@ -43,7 +43,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "cuadro@p14#3",
             "cuadro@p20#1",
@@ -479,7 +481,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p15",
             "p15-act6",
@@ -647,7 +651,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p12-act1",
             "p13-act9",
@@ -952,7 +958,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p13-act4",
             "p13-act5",
@@ -970,7 +978,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p16-act1",
             "p17-act7@R",
@@ -1000,7 +1010,9 @@
         },
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "amplia"
+          ],
           "evidencias": [
             "p13-act9",
             "p13-act9@R",
@@ -1075,7 +1087,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p14#2",
             "p12-act3",
@@ -1149,7 +1163,9 @@
         },
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p15-act9"
           ],
@@ -1387,7 +1403,9 @@
         },
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "sistematiza"
+          ],
           "evidencias": [
             "cuadro@p20#1",
             "p16-act1",
@@ -1525,7 +1543,10 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce",
+            "sistematiza"
+          ],
           "evidencias": [
             "cuadro@p14#2",
             "p12-act3",
@@ -1610,7 +1631,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p14#2",
             "cuadro@p14#3",
@@ -1697,7 +1720,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p14#2"
           ],
@@ -1919,7 +1944,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "cuadro@p20#1",
             "cuadro@p20#3",
@@ -2350,7 +2377,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p14#1",
             "cuadro@p20#1",
@@ -2505,7 +2534,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p15-act8",
             "p15-act9"
@@ -2581,7 +2612,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p15-act8"
           ],
@@ -2621,7 +2654,9 @@
         },
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p13-act6",
             "p13-act7"
@@ -4720,7 +4755,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p14#1",
             "cuadro@p20#1",
@@ -4754,7 +4791,9 @@
             "me llamo",
             "se llama",
             "te llamas"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
         },
         {
           "unidad": 2,
@@ -5248,7 +5287,10 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce",
+            "sistematiza"
+          ],
           "evidencias": [
             "cuadro@p14#1",
             "cuadro@p15",
@@ -5291,7 +5333,9 @@
             "es",
             "son",
             "soy"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
         },
         {
           "unidad": 2,
@@ -5522,7 +5566,9 @@
       "eventos": [
         {
           "unidad": 1,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p14#1",
             "cuadro@p20#3",
@@ -5549,7 +5595,9 @@
             "tengo",
             "tiene",
             "tienes"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
         },
         {
           "unidad": 2,
@@ -6152,13 +6200,22 @@
       "tipo": "siempre_presente",
       "hilo_ref": "voc-abecedario-espanol",
       "descripcion": "El hilo `voc · Abecedario español` solo tiene evento en U0 (donde el libro lo introduce con el paradigma completo), pero el inventario alfabético se trabaja transversalmente en unidades posteriores (deletreo de nombres y palabras, referencias a letras concretas, trabajos de pronunciación que parten del abecedario). Fase 1 categorizó esas apariciones bajo otros hilos (sonidos específicos, letras homófonas). ¿Debería el hilo recoger eventos en U1+ cuando el libro vuelve a usar el inventario alfabético como tal — aunque sea incidentalmente — o se considera que esas reapariciones ya están cubiertas por los hilos de pronunciación/ortografía y no procede duplicarlas en el hilo del abecedario? Decidir cuando Capa 2 procese U1-U9 y se vea con qué frecuencia/forma reaparece el inventario alfabético en cada unidad.",
-      "estado": "pendiente"
+      "estado": "rechazada",
+      "resolucion": "Rechazada (sesión Capa 2 sobre U1, 2026-05-23). U1 trabaja un hilo separado `voc · Nombres de las letras` (canónico declarado, principal U1). Fase 1 distinguió correctamente: `Abecedario español` es el inventario alfabético como tal (U0); `Nombres de las letras` es trabajar productivamente cómo se llama cada letra (U1). Son hilos distintos, no recurrencias del mismo. El hilo `voc · Abecedario español` se queda con su único evento en U0 sin ampliarse a unidades posteriores."
     },
     {
       "id": "prop-saludos-y-despedidas-vocab-vs-cultura",
       "tipo": "reconciliacion",
       "hilo_ref": "voc-saludos-y-despedidas",
       "descripcion": "Fase 1 categorizó 'Saludos y despedidas' como hilo de **vocabulario**, pero el curso (`nc1-curso.json`) lo declara como **CULTURA** en U1. El contenido funcionalmente es pragmático (convenciones sociales, fórmulas fijas, sin trabajo léxico productivo) — más cercano a cultura que a vocabulario. Decisión editorial pendiente: (a) aceptar la categorización léxica de fase 1 como simplificación operativa; (b) reclasificar el hilo a un bloque/categoría cultural (cambio de modelo de fase 2 + registry); (c) dejar como vocabulario pero documentar la naturaleza pragmática en el `analisis_ia` de cada evento. Decidir cuando se procese U1 con Capa 2 y se vea cómo el curso ancla 'Saludos y despedidas' dentro de su columna cultura.",
+      "estado": "rechazada",
+      "resolucion": "Rechazada por scope (sesión Capa 2 sobre U1, 2026-05-23). `REDISEÑO-EN-CURSO.md §5 Nivel 1` pospone cultura/comunicación del rediseño actual; el modelo de fase 2 hoy solo cubre bloques lingüísticos. Reclasificar el hilo a cultura no es posible mientras ese bloque no exista. El hilo se queda como vocabulario por decisión explícita del autor: U1 lo trabaja productivamente (formas reaparecen en respuestas de actividades, no es solo descripción cultural). Cuando el rediseño extienda el modelo a cultura, se podrá reabrir."
+    },
+    {
+      "id": "prop-gentilicios-alias-adjetivos-nacionalidad",
+      "tipo": "reconciliacion",
+      "hilo_ref": "voc-gentilicios",
+      "descripcion": "El hilo `voc · Gentilicios` aparece en U1 (2 items) y U4 (1 item), nunca como `principal` y sin respaldo en el índice del curso (`origen=excepcion` sin aliases). En cambio `voc · Adjetivos de nacionalidad` es canónico de U2 con 17 items principales. Sospecha editorial: en español los gentilicios (sustantivo: 'un español') y los adjetivos de nacionalidad ('es español') coinciden formalmente — probable solape conceptual; `Gentilicios` puede ser alias de `Adjetivos de nacionalidad` y no un hilo autónomo. Decidir cuando Capa 2 procese U2 y se vea cómo el libro trata la distinción sustantivo/adjetivo en los items principales. Opciones: (a) fusionar Gentilicios → Adjetivos de nacionalidad (alias en el registry); (b) mantener Gentilicios como hilo autónomo si se justifica una distinción funcional; (c) reclasificar los items de Gentilicios a Adjetivos de nacionalidad uno a uno.",
       "estado": "pendiente"
     }
   ]

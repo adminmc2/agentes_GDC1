@@ -15,6 +15,19 @@
 
 ---
 
+## [v11.84 — 2026-05-23] — Capa 2 sobre U1: etiquetas + propuestas (explicaciones pendientes)
+
+Segunda sesión real de Capa 2 IA, sobre U1. Aplicado a `unidades/nc1-reciclaje.json`:
+
+- **21 eventos U1 con etiquetas editoriales**: 9 `introduce`; 1 `amplia` (Números cardinales — U0 introdujo 0-10, U1 amplía 1-20); 1 `aplica` (Para la clase); 4 `anticipacion` (Adjetivos de nacionalidad → U2; Interrogativos → U3; Signos de puntuación → U7; Sonidos y correspondencias); 2 `[introduce, sistematiza]` (Artículos determinados con cuadro@p14#2 paradigma completo; verbal · ser con cuadros sistematizadores); 2 `[introduce]` verbal (llamarse, tener); 1 `[sistematiza]` (`voc · Saludos y despedidas` U1 — corregido durante la sesión: si U0 marcó `[anticipacion]`, U1 no puede ser `[introduce]`; lo correcto es `sistematiza` — U1 recoge lo activado en U0 y añade despedidas + registro formal/informal); 1 evento sin etiqueta (`voc · Gentilicios` U1 — en limbo hasta resolver la propuesta de alias).
+- **Procedencia verbal decidida por Capa 2**: los 3 lemas (ser, llamarse, tener) → `reconciliado · "indice:Verbos ser, llamarse y tener (formas singulares)"`.
+- **2 propuestas de la sesión U0 resueltas (rechazadas)**: `prop-abecedario-cobertura-cross-unidad` (fase 1 separó correctamente Abecedario vs Nombres de las letras); `prop-saludos-y-despedidas-vocab-vs-cultura` (cultura fuera del scope; se queda como vocabulario).
+- **1 propuesta nueva abierta**: `prop-gentilicios-alias-adjetivos-nacionalidad` — diferida a U2.
+
+**Pendiente declarado**: las **explicaciones** de los cuadros de U1 quedan sin escribir. El autor señaló que el criterio editorial necesita más rigor — las explicaciones deben ser flujos didácticos detallados, no descripciones de actividades, y deben aplicarse a cada etiqueta (incluyendo verbos con contexto de tiempos y formas) no solo a eventos con cuadro. Se redactan en próxima iteración tras tener el modal centrado del dashboard activo. Observación: typo `"Me lllamo"` en `verb · llamarse` U1 heredado del inventario fase 1.
+
+Validador estructural sin errores. `_meta.version` sincronizado por el hook v11.82.
+
 ## [v11.83 — 2026-05-23] — Rectificación cobertura U7 · campo "Animales domésticos y salvajes"
 
 Detectado por el autor: el CSV `unidades/U07-propuesta/tarjetas/csv/animales.csv` solo cubría 14 animales, alineado con `items[]` del inventario. Pero la nota `D-Animales-amplios` (v10.161) declaraba 18 lemas como ampliación del campo desde los textos de Destrezas (p78, p79) y solo se habían materializado 3 (orangután, yegua, potro); los 15 restantes faltaban en `items[]`.
