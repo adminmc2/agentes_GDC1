@@ -5,6 +5,10 @@
   "paginas_libro": "72-81",
   "nivel": "A1.1",
   "fuente": { "archivo": "unidades/U7/fuente/U7-nc1.pdf", "version_extraccion": "2026-05-18" },
+  "portada": {
+    "pagina": 72,
+    "descripcion": "Número grande «7» y título «Hábitos» en la parte superior izquierda. A la izquierda, foto en primer plano de unas manos enjabonadas bajo el grifo, con espuma blanca. Debajo, listado con cinco epígrafes precedidos de viñeta: «VOCABULARIO Meses del año. Animales domésticos y salvajes»; «GRAMÁTICA Verbos reflexivos. Oposición salir / volver. Preposiciones (a, de, por, con, en). Signos de puntuación»; «COMUNICACIÓN Hablar de hábitos diarios. Entonación interrogativa y exclamativa»; «DESTREZAS La rutina del cuidador de zoo. La historia de Budi»; «CULTURA El Zoo-Aquarium de Madrid»."
+  },
   "vocabulario_consolidado": {
     "principal": {
       "Meses del año": {

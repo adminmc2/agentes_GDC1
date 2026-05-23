@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.96 — 2026-05-23] — Portada U7 (Hábitos, p.72)
+
+Añadido `portada` a U7: número «7», título, foto de manos enjabonadas bajo el grifo y los 5 epígrafes del índice. Validador 0/0/0.
+
+---
+
 ## [v11.95 — 2026-05-23] — Portada U6 (¿A dónde vas?, p.62)
 
 Añadido `portada` a U6: número «6», título, foto de chica en sección de productos frescos y los 5 epígrafes del índice. Validador 0/0/0.

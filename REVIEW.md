@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-23 (v11.95 — Portada U6 (p.62, «¿A dónde vas?»). Número «6», foto de chica en sección de productos frescos, 5 epígrafes del índice. Validador 0/0/0. Próximo: U7).
+> **Última actualización:** 2026-05-23 (v11.96 — Portada U7 (p.72, «Hábitos»). Número «7», foto de manos enjabonadas bajo grifo, 5 epígrafes del índice. Validador 0/0/0. Próximo: U8).
 >
 > **Hito previo (v11.85):** 2026-05-23 (Dashboard: drawer lateral → modal centrado 760px/88vh — REDISEÑO §4.4).
 >
