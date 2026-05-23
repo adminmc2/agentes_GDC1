@@ -15,6 +15,14 @@
 
 ---
 
+## [v11.83 — 2026-05-23] — Rectificación cobertura U7 · campo "Animales domésticos y salvajes"
+
+Detectado por el autor: el CSV `unidades/U07-propuesta/tarjetas/csv/animales.csv` solo cubría 14 animales, alineado con `items[]` del inventario. Pero la nota `D-Animales-amplios` (v10.161) declaraba 18 lemas como ampliación del campo desde los textos de Destrezas (p78, p79) y solo se habían materializado 3 (orangután, yegua, potro); los 15 restantes faltaban en `items[]`.
+
+- **Inventario** `unidades/U7/U7-nc1-inventario.json`: `items[]` 14 → 29 (+mamífero, anfibio, reptil, ave, ciervo, cebra, rana, tortuga, cocodrilo, víbora, pitón, boa, paloma, loro, cacatúa, en singular canónico). `fuentes` del campo ampliadas con `p78-act1`, `p78-act2`. Nota `D-Animales-amplios` reformulada como registro de la rectificación. Validación: 0/0/0.
+- **CSV** `unidades/U07-propuesta/tarjetas/csv/animales.csv` (repo B): 14 → 29 filas, mismo formato (9 traducciones, 3 combos, sílaba tónica, gramapop).
+- **Reapertura puntual de fase 1** en alcance U7 (cerrada en v10.164). Rectificación de cobertura por nota mal materializada, no cambio de contrato.
+
 ## [v11.82 — 2026-05-23] — Sincronización automática de `_meta` del canónico (pre-commit hook)
 
 Tras v11.81 (sync manual), el autor pidió que la actualización fuera automática para no depender de la memoria humana. Implementado:

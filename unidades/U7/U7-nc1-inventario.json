@@ -42,9 +42,24 @@
           {"palabra": "tiburón", "fuentes": ["p73-act5", "p73-act6", "p73-act6@R"]},
           {"palabra": "orangután", "fuentes": ["p79-act5"]},
           {"palabra": "yegua", "fuentes": ["p73-act8"]},
-          {"palabra": "potro", "fuentes": ["p73-act8"]}
+          {"palabra": "potro", "fuentes": ["p73-act8"]},
+          {"palabra": "mamífero", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "anfibio", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "reptil", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "ave", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "ciervo", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "cebra", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "rana", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "tortuga", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "cocodrilo", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "víbora", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "pitón", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "boa", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "paloma", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "loro", "fuentes": ["p78-act1", "p78-act2"]},
+          {"palabra": "cacatúa", "fuentes": ["p78-act1", "p78-act2"]}
         ],
-        "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p73-act7@R", "p81-act5@R", "p77-act11", "p79-act5", "p73-act8"],
+        "fuentes": ["p73-act5", "p73-act6", "p73-act6@R", "p73-act7@R", "p81-act5@R", "p77-act11", "p79-act5", "p73-act8", "p78-act1", "p78-act2"],
         "descripcion": {
           "U7": "PCIC A1 §17 Nociones específicas / Mundo natural — Fauna. Principal en U7: se introduce el paradigma de 11 animales en p73-act5 (vaca, oveja, león, elefante, serpiente, delfín, gallina, cerdo, mono, tiburón, caballo) con apoyo visual y audio, se clasifica en domésticos vs salvajes (p73-act6), se identifica en audio (p73-act7) y se amplía en Destrezas con animales del zoo (mamíferos, ciervos, cebras, anfibios, reptiles, ranas, tortugas, cocodrilos, víboras, pitones, boas, aves, palomas, loros, cacatúas) y un orangután protagonista de un texto (p79). Cierra en evaluación con identificación visual (p81-act5)."
         }
@@ -576,7 +591,7 @@
     "D-Oposicion-salir-volver-en-tyv (autónoma): 'Oposición salir / volver' del índice gramatical NO genera categoría gramatical canónica nueva. Ambos lemas viven como entradas en 'tiempos_y_verbos_consolidado'. El contraste pedagógico está implícito en su co-presencia con el mismo tiempo (Presente) y patrón irregular (cuadro de p75 'Verbos salir y volver').",
     "D-Verbos-no-canonicos-excluidos (autónoma, regla §5.2): los verbos que aparecen en U7 pero no están en 'verbos-canonicos.json' (desayunar, cenar, ver, pasar, limpiar, alimentarse, moverse, ayudar, conocer, terminar, empezar, vivir, tomar, descubrir, aprender, etc.) se tratan como input incidental y NO entran en 'tiempos_y_verbos' de las actividades. Sus formas aparecen como léxico en los textos pero no se codifican como paradigma trabajado.",
     "D-Entonacion-como-principal-U7 (autónoma): el índice de Comunicación dice 'Entonación interrogativa y exclamativa'. La categoría canónica 'Entonación' (registry pron/orto) entra como principal en 'pronunciacion_ortografia_consolidada' con items 'Entonación interrogativa' y 'Entonación exclamativa' (etiquetas editoriales categoría B §5.10). Sustenta fuentes p77-act11, p77-act12, p77-act13.",
-    "D-Animales-amplios (autónoma, regla §5.10 Cat A): los animales de los textos de Destrezas y Cultura (mamíferos, ciervos, cebras, anfibios, reptiles, ranas, tortugas, cocodrilos, víboras, pitones, boas, aves, palomas, loros, cacatúas, orangután, yegua, potro) se incluyen como ampliación del campo 'Animales domésticos y salvajes' por aparición material literal en los textos (p73-act8, p78-act1, p78-act2, p79-act5).",
+    "D-Animales-amplios (autónoma, regla §5.10 Cat A): los animales de los textos de Destrezas y Cultura (mamífero, anfibio, reptil, ave, ciervo, cebra, rana, tortuga, cocodrilo, víbora, pitón, boa, paloma, loro, cacatúa, orangután, yegua, potro) se incluyen en items[] del campo 'Animales domésticos y salvajes' por aparición material literal en los textos (p73-act8, p78-act1, p78-act2, p79-act5). Lemas en singular (forma de diccionario), aunque el libro los presente en plural en los textos. Rectificación de cobertura registrada en sesión posterior al cierre de fase 1: la nota original (v10.161) declaraba ampliación pero solo materializó 3 de los 18 lemas; los 15 restantes se incorporan ahora.",
     "Rectificación v10.161 (revisor): la extracción inicial agrupaba 6 items (., ',', ¿?, ¡!, tilde, mayúscula) bajo 'Signos de puntuación' siguiendo la presentación pedagógica de p75-act8, pero el registry canónico separa esas piezas en 3 categorías distintas: 'Signos de puntuación' (subcategorías ¿?, ¡!), 'Mayúsculas' (uso general), 'Acentuación' (acentuación gráfica). Aplicado split canónico: tilde → 'Acentuación' (nueva como principal en U7, identificación inicial; pleno desarrollo de tipos en U9 por _apariciones del registry); mayúscula → 'Mayúsculas' (nueva como principal en U7); punto, coma, ¿?, ¡! quedan en 'Signos de puntuación'. Refs de actividad p75-act8 y p75-act9 actualizadas. Deuda registry: (a) extender _apariciones de 'Acentuación' y 'Mayúsculas' para reflejar U7; (b) decidir si el _pcic_ref de 'Signos de puntuación' debe ampliarse para listar punto y coma como subcategorías (hoy solo declara ¿? y ¡!)."
   ],
   "paginas_detalle": [
