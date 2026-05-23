@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "version": "v11.68",
-    "fecha": "2026-05-22",
+    "version": "v11.75",
+    "fecha": "2026-05-23",
     "unidades_cubiertas": [
       0,
       1,
@@ -62,7 +62,8 @@
             "p18-act2",
             "p21-act1",
             "p21-act4"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 2,
@@ -101,7 +102,8 @@
             "p48-act2",
             "p50-act2",
             "p51-act4"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -139,7 +141,8 @@
             "p68-act3@R",
             "p69-act9",
             "p70-act1"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 8,
@@ -167,7 +170,8 @@
             "p89-act8",
             "p91-act6",
             "p91-act6@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 9,
@@ -176,7 +180,8 @@
             "p100-act2",
             "p93-act7",
             "p98-act1"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -330,7 +335,8 @@
             "p41-act1",
             "p41-act2",
             "p41-act3"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -468,14 +474,16 @@
             "p15-act6@R",
             "p15-act7",
             "p15-act7@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 5,
           "etiquetas": [],
           "evidencias": [
             "p57-act7"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 8,
@@ -494,7 +502,8 @@
             "p89-act8",
             "p91-act6",
             "p91-act6@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 9,
@@ -509,7 +518,8 @@
             "p93-act4",
             "p93-act5@R",
             "p93-act7"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -588,7 +598,8 @@
             "p34-act3",
             "p35-act5",
             "p41-act3"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -599,7 +610,8 @@
             "p66-act5",
             "p67-act8",
             "p71-act7"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -610,7 +622,8 @@
             "p76-act1",
             "p76-act3",
             "p76-act3@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -742,7 +755,8 @@
             "p48-act2@R",
             "p50-act1",
             "p50-act3@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 5,
@@ -750,7 +764,8 @@
           "evidencias": [
             "p56-act4",
             "p56-act4@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -822,7 +837,8 @@
             "p37-act6@R",
             "p37-act7",
             "p37-act7@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -953,8 +969,7 @@
           "etiquetas": [],
           "evidencias": [
             "p11-act9@R"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 1,
@@ -1100,7 +1115,8 @@
           "etiquetas": [],
           "evidencias": [
             "p15-act9"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -1227,7 +1243,8 @@
             "p40-act2",
             "p40-act2@R",
             "p40-act3"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -1319,7 +1336,8 @@
           "etiquetas": [],
           "evidencias": [
             "cuadro@p11"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 1,
@@ -1330,7 +1348,8 @@
             "p16-act3",
             "p19-act5",
             "p20-act1"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 2,
@@ -1339,7 +1358,8 @@
             "p24-act3",
             "p26-act1",
             "p28-act1"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 3,
@@ -1347,7 +1367,8 @@
           "evidencias": [
             "p38-act1",
             "p38-act3"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -1476,7 +1497,8 @@
             "p27-act8",
             "p29-act7",
             "p30-act2"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 3,
@@ -1495,7 +1517,8 @@
             "p41-act1",
             "p41-act3",
             "p41-act4"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ],
       "_grupo": "Determinantes"
@@ -1760,7 +1783,8 @@
             "p59-act6",
             "p59-act7",
             "p61-act5"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -1774,7 +1798,8 @@
             "p69-act10",
             "p69-act11",
             "p69-act8@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -1783,7 +1808,8 @@
             "p78-act1",
             "p78-act3@R",
             "p80-act2"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ],
       "_grupo": "Construcciones"
@@ -1837,7 +1863,8 @@
             "p20-act1",
             "p21-act4",
             "p21-act6"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 2,
@@ -1858,7 +1885,8 @@
             "p29-act4",
             "p31-act7",
             "p31-act8"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 3,
@@ -1902,7 +1930,8 @@
             "p50-act2",
             "p50-act3",
             "p50-act4"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 5,
@@ -1920,7 +1949,8 @@
             "p61-act2",
             "p61-act4",
             "p61-act5"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -1938,7 +1968,8 @@
             "p69-act5",
             "p70-act3",
             "p71-act7"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -1982,7 +2013,8 @@
             "p81-act3@R",
             "p81-act4",
             "p81-act6"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 9,
@@ -2113,7 +2145,8 @@
             "p70-act1",
             "p70-act2",
             "p71-act6@R"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ],
       "_grupo": "Construcciones"
@@ -2361,7 +2394,8 @@
           "etiquetas": [],
           "evidencias": [
             "p75-act8"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 9,
@@ -2387,7 +2421,8 @@
           "evidencias": [
             "p15-act8",
             "p15-act9"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -2455,7 +2490,8 @@
           "etiquetas": [],
           "evidencias": [
             "p15-act8"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -2464,7 +2500,8 @@
             "p75-act8",
             "p75-act9",
             "p77-act12"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -2882,7 +2919,8 @@
             "comes",
             "como",
             "coméis"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 4,
@@ -2904,7 +2942,8 @@
           "tiempo": "Infinitivo",
           "formas": [
             "comer"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 4,
@@ -2931,7 +2970,8 @@
             "comen",
             "comes",
             "como nunca"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -2942,7 +2982,8 @@
           "tiempo": "Infinitivo",
           "formas": [
             "comer"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -2961,7 +3002,8 @@
           "tiempo": "Infinitivo",
           "formas": [
             "comer"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -2981,7 +3023,8 @@
           "formas": [
             "come",
             "comes"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -3449,7 +3492,8 @@
             "escribe",
             "escribes",
             "escrita"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -3463,7 +3507,8 @@
           "formas": [
             "Escribe",
             "escribe"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -3476,7 +3521,8 @@
           "tiempo": "Infinitivo",
           "formas": [
             "escribir"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -3497,7 +3543,8 @@
           "formas": [
             "Escucha",
             "escucha"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -3509,7 +3556,8 @@
           "tiempo": "Infinitivo",
           "formas": [
             "Escuchar"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -3916,7 +3964,8 @@
           "tiempo": "Presente",
           "formas": [
             "hablan"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 3,
@@ -3936,7 +3985,8 @@
             "hablan",
             "hablar",
             "hablo"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -3947,7 +3997,8 @@
           "tiempo": "Imperativo",
           "formas": [
             "habla"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -3958,7 +4009,8 @@
           "tiempo": "Infinitivo",
           "formas": [
             "hablar"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },
@@ -3977,7 +4029,8 @@
           "tiempo": "Infinitivo",
           "formas": [
             "hacer"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 4,
@@ -3988,7 +4041,8 @@
           "tiempo": "Presente",
           "formas": [
             "hacemos"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -4008,7 +4062,8 @@
           "formas": [
             "Haz",
             "haz"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -4027,7 +4082,8 @@
           "tiempo": "Infinitivo",
           "formas": [
             "Hacer"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 6,
@@ -4051,7 +4107,8 @@
             "haces",
             "hacéis",
             "hago"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -4070,7 +4127,8 @@
           "formas": [
             "Hacer",
             "hacer"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         },
         {
           "unidad": 7,
@@ -4090,7 +4148,8 @@
             "hace",
             "hacemos",
             "haces"
-          ]
+          ],
+          "procedencia_indice": "declarado"
         }
       ]
     },

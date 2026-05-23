@@ -451,46 +451,57 @@ El `que_dice_el_libro` y los `analisis_ia` de los eventos son **insumos** que el
 
 ---
 
-## §9. Triage índice — estatus de cada contenido por evento (paso 9 — definido 2026-05-21, generalizado a los 5 bloques en v11.43)
+## §9. Triage índice — estatus de cada contenido por evento (paso 9 — definido 2026-05-21, generalizado a los 5 bloques en v11.43; reformulado como eje identitario en v11.75)
 
-Aplica a **los 5 bloques** (vocabulario, gramática, pron/orto, verbal, perífrasis). Cada vez que un contenido aparece en una unidad, el triage determina su estatus respecto al índice editorial del curso (`nc1-curso.json`). La lógica "¿declarado / reconciliable / nuevo?" no es específica de gramática — vale para cualquier contenido.
+Aplica a **los 5 bloques** (vocabulario, gramática, pron/orto, verbal, perífrasis). El triage responde a **una sola pregunta de identidad**: ¿el contenido del hilo está en el índice editorial del curso (`nc1-curso.json`), en cualquier unidad? La temporalidad (esta unidad vs la canónica del índice) **no** la lleva este eje — vive en las **etiquetas** del evento (§2.3): `anticipacion` cuando el evento es anterior a la unidad canónica del índice, `aplica` cuando es posterior, sin etiqueta temporal explícita cuando coincide con su unidad canónica.
 
 ### §9.1. Las tres salidas
 
-1. **Declarado literal** — el contenido coincide con una entrada del índice del curso para esa unidad.
-2. **Reconciliable** — no está literal en el índice, pero es el **mismo contenido** que una entrada del índice declarada con otro nombre.
-3. **Contenido nuevo real** — aparece en el libro pero **no está en el índice** y **no es reconciliable** con ninguna entrada. Contenido que el libro trae sin que el índice lo declare.
+Eje identitario puro (curso-wide; **no** depende de la unidad del evento):
 
-Lo no declarado **no se vuelca a "nuevo" por defecto**: se analiza en detalle para distinguir reconciliable de nuevo real.
+1. **Declarado** — el título canónico del hilo coincide **literalmente** con una entrada del índice del curso, **en cualquier unidad**. El cotejo es por slug del nombre canónico; absorbe paréntesis del índice ("Artículos determinados (el, la, los, las)" — la entrada del índice empieza por el nombre canónico).
+2. **Reconciliado** — el título canónico **no** aparece literal en el índice, pero es el **mismo contenido** que una entrada del índice **bajo otro nombre** (alias del registry / equivalencia vía PCIC). P. ej. el índice dice "Verbos ser, llamarse y tener" y el hilo canónico es `ser`.
+3. **Nuevo** — el contenido **no aparece en el índice del curso** en ninguna unidad, **ni literal ni reconciliable**. Contenido emergente del libro que el índice no anuncia.
+
+Lo no declarado **no se vuelca a `nuevo` por defecto**: se analiza para distinguir `reconciliado` de `nuevo` real.
 
 ### §9.2. Quién aplica cada salida
 
 Principio de eficiencia: aprovechar lo que fase 1 ya resuelve; desarrollar en fase 2 solo lo que falte.
 
-- **Declarado literal** → **precomputable por la Capa 1** (coincidencia mecánica con el índice del curso). No requiere IA.
-- **Reconciliable** → **Capa 2 IA propone** la reconciliación; el **humano cierra**.
-- **Contenido nuevo real** → **Capa 2 IA genera una propuesta al autor** ("detectada esta categoría no declarada — ¿canonizar en el registry de fase 1 o dejarla como hallazgo?"). Decide el autor. Mismo tipo de hallazgo que §10 "siempre presentes".
+- **Declarado** → **precomputable por la Capa 1** mediante coincidencia **literal** (sin aliases) del título contra el índice **curso-wide**. No requiere IA y, por construcción, no se mete con el eje alias-based (eso es Capa 2).
+- **Reconciliado** → **Capa 2 IA propone** la reconciliación (alias / equivalencia PCIC); el **humano cierra**. La Capa 1 **no** infla `declarado` con aliases — eso re-mezclaría ejes por la puerta de atrás (v11.75).
+- **Nuevo** → **Capa 2 IA genera una propuesta al autor** ("detectada esta categoría no declarada y no reconciliable — ¿canonizar en el registry de fase 1 o dejarla como hallazgo?"). Decide el autor. Mismo tipo de hallazgo que §10 "siempre presentes".
 
 Reconciliaciones y categorías nuevas son siempre **propuestas** (IA propone / humano cierra), nunca decisiones automáticas de fase 2.
 
-### §9.3. Granularidad — por evento
+### §9.3. Granularidad — por evento, valor estable por hilo
 
-El estatus del triage se marca **por evento** (categoría-unidad), **no** una sola vez por categoría. Una misma categoría puede tener estatus distinto según la unidad: p. ej. "Marcadores temporales del pasado" está declarada en el índice de U9 (→ `declarado`) pero puede aparecer de pasada en U3 (→ `nuevo` / anticipación).
+El campo `procedencia_indice` se persiste **por evento** (compatibilidad de schema), pero por construcción del eje identitario su valor es **estable por hilo**: todos los eventos del mismo hilo comparten el mismo `procedencia_indice` (porque depende del título canónico vs el índice global del curso, no de la unidad del evento). La cronología "esta unidad vs la canónica" vive en las etiquetas.
+
+Ejemplo: "Marcadores temporales del pasado" está en el índice del curso para U9. Sus eventos:
+- En U9 (unidad canónica) → `procedencia: declarado` + `etiquetas: [introduce]` o similar.
+- En U3 (anticipación) → `procedencia: declarado` (sigue siendo "contenido del índice") + `etiquetas: [anticipacion]`.
+
+La distinción "en U9 vs en U3" la marca **solo** la etiqueta; la procedencia es la misma porque el contenido es el mismo en el índice.
 
 ### §9.4. Registro en el evento
 
-El evento del hilo lleva un campo **`procedencia_indice`** con valor `declarado` | `reconciliado` | `nuevo`. Si es `reconciliado`, se anota además a qué entrada del índice equivale. El campo es resultado de propuesta — la parte no mecánica (reconciliado/nuevo) queda pendiente de cierre humano.
+El evento lleva el campo **`procedencia_indice`** con valor `declarado` | `reconciliado` | `nuevo`. Si es `reconciliado`, se anota además a qué entrada del índice equivale (`reconciliado_con`). El campo es resultado de propuesta — la parte no mecánica (`reconciliado`/`nuevo`) queda pendiente de cierre humano.
 
 ### §9.5. `procedencia_indice` y `etiquetas` son dos ejes ortogonales
 
-El triage **añade un eje nuevo** al evento; no sustituye ni se mezcla con las etiquetas de §2.3. Un evento lleva **los dos**:
-
 | Eje | Valores | Qué responde |
 |---|---|---|
-| `etiquetas` (§2.3) | introduce, amplia, aplica, sistematiza, contrasta, anticipacion (+ discrimina en pron/orto) | ¿Qué **hace** la unidad con el contenido? |
-| `procedencia_indice` (§9) | declarado, reconciliado, nuevo | ¿Qué **estatus** tiene respecto al índice del curso? |
+| `procedencia_indice` (§9) | declarado, reconciliado, nuevo | **Identidad** — ¿el contenido del hilo está en el índice del curso? |
+| `etiquetas` (§2.3) | introduce, amplia, aplica, sistematiza, contrasta, anticipacion (+ discrimina en pron/orto) | **Función pedagógica + temporalidad** — ¿qué hace la unidad con el contenido y cuándo? |
 
-Ejemplos de combinación: `etiquetas: ["amplia"]` + `procedencia_indice: "declarado"`; `etiquetas: ["anticipacion"]` + `procedencia_indice: "nuevo"`.
+Ejemplos de combinación reales del modelo nuevo:
+- `procedencia: declarado` + `etiquetas: [introduce]` — primera aparición en su unidad canónica.
+- `procedencia: declarado` + `etiquetas: [anticipacion]` — contenido del índice trabajado antes de su unidad canónica.
+- `procedencia: declarado` + `etiquetas: [aplica]` — reutilización después de su unidad canónica.
+- `procedencia: reconciliado` + `etiquetas: [introduce]` — primera aparición de un contenido del índice bajo nombre canónico distinto (alias).
+- `procedencia: nuevo` + `etiquetas: [aplica]` — contenido emergente que el índice no anuncia.
 
 ### §9.6. D1 — tabla de equivalencias: absorbida en §9
 

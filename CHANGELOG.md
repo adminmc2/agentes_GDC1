@@ -15,6 +15,18 @@
 
 ---
 
+## [v11.75 — 2026-05-23] — Modelo: `procedencia_indice` pasa a eje identitario puro (curso-wide, sin aliases)
+
+Corrección de modelo Nivel 1/2 tras feedback del autor en la sesión de Capa 2 sobre U0: el `procedencia_indice` antiguo (§9.1) **mezclaba dos ejes** — pertenencia al índice del curso y temporalidad respecto de la unidad canónica —, produciendo casos donde "Saludos y despedidas U0" salía como `nuevo` aunque el curso lo declara para U1. **Cambio:** `procedencia_indice` se redefine como **eje identitario puro**, evaluado **curso-wide**, sin uso de aliases del registry:
+
+- `declarado` → el título canónico coincide literalmente con una entrada del índice del curso **en cualquier unidad** (no solo la del evento). Lo precomputa la Capa 1.
+- `reconciliado` → alias / equivalencia PCIC. Decisión de Capa 2, propuesta + cierre humano. **La Capa 1 no usa aliases para `declarado`** (cautela importante: si se metiera el alias por la puerta de atrás, se re-mezclarían los ejes).
+- `nuevo` → no aparece en el índice del curso en ninguna unidad ni es reconciliable.
+
+La temporalidad (esta unidad vs la canónica) la lleva **enteramente la etiqueta**: `anticipacion` (antes), sin etiqueta temporal (en su unidad canónica), `aplica` (después).
+
+Archivos: `REDISEÑO-EN-CURSO.md` §9 reformulado · `reglas-reciclaje.md` §4 + §14 R1 sincronizados · `glosario.md` raíz · `scripts/generar_reciclaje_capa1.py` (`IndiceCurso` simplificado a un solo set curso-wide; `declarado()` sin aliases; `add_evento_mapa` decide procedencia con la misma regla) · `nc1-reciclaje.json` regenerado. Reparto nuevo: **100 eventos `declarado`** (antes 41) y 183 sin asignar (para Capa 2 triar `reconciliado`/`nuevo`). Validador estructural y cross-unidad sin regresión (14 alertas R1/R4 idénticas, son de datos).
+
 ## [v11.74 — 2026-05-23] — Revisión R1/R4: diagnóstico y dos propuestas anotadas para Capa 2
 
 Lectura una a una de las 14 alertas del validador cross-unidad sobre el canónico v11.68. Ninguna es bug de fase 1. **12 son insumo normal del pipeline**: las 6 R1 (anticipación material) alimentarán la etiqueta `anticipacion` cuando Capa 2 procese U1-U6; 6 de las 8 R4 son léxico PCIC incidental coherente con la unidad (`recurrente` de fondo, §3.6). **2 sospechosas anotadas en bitácora REVIEW** como propuestas a abrir en la sesión de Capa 2 — para no depender de memoria de sesión: `Gentilicios` U1 (posible alias de `Adjetivos de nacionalidad`) y `Bebida` U4 (tensión índice↔contenido — el título "Comidas y bebidas" no cuadra con el principal declarado). Sin tocar datos ni registries; solo registro de la revisión y las dos propuestas pendientes.

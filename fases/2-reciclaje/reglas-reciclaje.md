@@ -77,17 +77,19 @@ Cada evento lleva una **lista** `etiquetas[]` (coexisten, no es valor único). L
 
 La clasificación `principal`/`recurrente` del inventario de fase 1 **no dicta** la etiqueta — la decide la Capa 2 IA leyendo el contexto. Prior: la mayoría de `recurrente` reciben etiquetas de repetición, pero `introduce` sobre un `recurrente` es legítimo.
 
-## §4. `procedencia_indice` — triage respecto al índice
+## §4. `procedencia_indice` — triage respecto al índice (eje identitario, v11.75)
 
-Cada evento lleva `procedencia_indice`, eje **ortogonal** a `etiquetas`. Tres salidas:
+Eje **identitario puro**, ortogonal a `etiquetas`. Responde solo a "¿el contenido del hilo está en el índice del curso, en cualquier unidad?". La temporalidad la lleva enteramente la etiqueta. Tres salidas:
 
 | Valor | Criterio |
 |---|---|
-| `declarado` | El contenido coincide con una entrada del índice del curso para esa unidad. Precomputable mecánicamente. |
-| `reconciliado` | No está literal en el índice, pero es el mismo contenido que una entrada del índice con otro nombre. Se anota `reconciliado_con`. |
-| `nuevo` | Aparece en el libro pero no está en el índice ni es reconciliable. |
+| `declarado` | El título canónico del hilo coincide **literalmente** con una entrada del índice del curso, **en cualquier unidad**. Precomputable por la Capa 1 — coincidencia mecánica curso-wide, **sin aliases**. |
+| `reconciliado` | No literal pero es el mismo contenido bajo otro nombre (alias del registry / equivalencia PCIC). Decisión de Capa 2 (propuesta + cierre humano). Se anota `reconciliado_con`. |
+| `nuevo` | No aparece en el índice del curso en ninguna unidad, ni literal ni reconciliable. Contenido emergente. Propuesta de Capa 2. |
 
-Se marca **por evento** (un contenido puede ser `nuevo` en una unidad y `declarado` en otra). `reconciliado` y `nuevo` son propuestas (§11); lo no declarado no se vuelca a `nuevo` por defecto — se analiza para distinguir reconciliable de nuevo.
+El valor es **estable por hilo** (todos los eventos del mismo hilo comparten `procedencia_indice` porque depende del título contra el índice global). Se persiste por evento por compatibilidad del schema. La cronología "esta unidad vs la canónica" vive en las etiquetas: `anticipacion` (antes), sin etiqueta temporal (en su unidad canónica), `aplica` (después).
+
+**Cautela operativa (v11.75)**: la Capa 1 **no** usa aliases del registry para marcar `declarado`. Si el contenido entra al hilo por alias resolution, el evento queda **sin** `procedencia_indice` mecánica y la Capa 2 propone `reconciliado` con cierre humano.
 
 ## §5. Anticipación
 
@@ -179,7 +181,7 @@ La revisión editorial del autor (c) no es automatizable.
 
 Detalle del componente (b) del gate de cierre (§13). Cinco reglas de **validación cruzada entre unidades** que se ejecutan sobre los inventarios de fase 1 antes de dar por cerrado el reciclaje. Diseño heredado, cerrado en 2026-05-12.
 
-**R1 — Anticipación de léxico.** Detecta léxico frecuente en U(n) que **no** está en el `principal` ni `recurrente` de esa unidad pero **es canónico en una unidad posterior** → alerta de anticipación. Algoritmo: leer el índice del curso + el `principal`/`recurrente` de cada inventario + re-ejecutar frecuencias; para cada término frecuente no declarado en U(n), si es canónico en U(n+k) → alerta. Alimenta la etiqueta `anticipacion` (§3) y el triage `procedencia_indice` (§4). Output: `{unidad, término, unidad_canónica, frecuencia, ejemplos}`.
+**R1 — Anticipación de léxico.** Detecta léxico frecuente en U(n) que **no** está en el `principal` ni `recurrente` de esa unidad pero **es canónico en una unidad posterior** → alerta de anticipación. Algoritmo: leer el índice del curso + el `principal`/`recurrente` de cada inventario + re-ejecutar frecuencias; para cada término frecuente no declarado en U(n), si es canónico en U(n+k) → alerta. Alimenta sobre todo la etiqueta `anticipacion` (§3). `procedencia_indice` (§4) **no** cambia por R1 — el eje identitario es estable por hilo y curso-wide; si el contenido está en el índice del curso es `declarado` independientemente de en qué unidad aparezca el evento (v11.75). Output: `{unidad, término, unidad_canónica, frecuencia, ejemplos}`.
 
 **R2 — Materialidad y trazabilidad del contenido extraído.** Todo contenido consolidado debe estar sustentado por **evidencias reales** de actividad o cuadro en la unidad. En vocabulario, los ítems deben aparecer **literalmente**; en verbal, las formas o el lema deben estar **atestiguados** según el contrato de fase 1; en gramática y pron/orto, la categoría debe estar **trazada a actividades/cuadros** que la trabajan (la etiqueta canónica no tiene por qué aparecer literal en el libro). Si falla, es bug de extracción de fase 1. Pre-condición.
 

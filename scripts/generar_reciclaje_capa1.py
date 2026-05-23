@@ -73,12 +73,6 @@ PREFIJO = {
 # `TIEMPOS` (enumeración del schema) se importa de `validar_reciclaje` — el
 # resto de enumeraciones las usa solo el validador estructural, no la generación.
 
-# campo de `nc1-curso.json` que indexa cada bloque, para el triage `declarado`
-CURSO_CAMPO = {
-    "vocabulario": "vocabulario",
-    "gramatica": "gramatica",
-    "pronunciacion_ortografia": "pronunciacion_ortografia",
-}
 
 
 # --------------------------------------------------------------------------
@@ -221,41 +215,50 @@ class Registries:
 # índice del curso — soporte del triage `procedencia_indice: declarado` (§9.1)
 # --------------------------------------------------------------------------
 class IndiceCurso:
-    """Entradas del índice editorial por unidad y bloque, ya slugificadas."""
+    """Índice editorial del curso slugificado.
+
+    Eje identitario puro (v11.75): `procedencia_indice: declarado` se decide
+    por coincidencia LITERAL del título canónico contra el conjunto de slugs
+    del índice **curso-wide** (todas las unidades unidas), **sin aliases**.
+    La temporalidad (esta unidad vs la canónica) la lleva la etiqueta del
+    evento, no este eje. Aliases del registry son territorio de Capa 2 →
+    `reconciliado`, propuesta con cierre humano (§9.2).
+    """
+
+    # Todos los campos de contenido por unidad de nc1-curso.json (excluye
+    # metadatos: unidad, titulo, pagina_inicio, paginas_libro, ...). Para el
+    # eje identitario, "está en el índice del curso" se interpreta sobre el
+    # índice completo, no solo los 3 bloques lingüísticos del rediseño.
+    _CAMPOS_INDICE = (
+        "vocabulario", "gramatica", "pronunciacion_ortografia", "para_aprender",
+        "comunicacion", "destrezas", "cultura", "contenido_general",
+    )
 
     def __init__(self, curso: dict):
-        # (unidad, campo_curso) -> conjunto de slugs de entradas del índice
-        self._idx = {}
-        # entradas planas por unidad (U0 usa `contenido_general` para todo)
-        self._general = {}
+        slugs = set()
         for u in curso.get("unidades", []):
-            num = u["unidad"]
-            for campo in ("vocabulario", "gramatica", "pronunciacion_ortografia"):
+            for campo in self._CAMPOS_INDICE:
                 valor = u.get(campo)
                 if valor is None:
                     continue
                 items = [valor] if isinstance(valor, str) else valor
-                self._idx[(num, campo)] = {slug(x) for x in items}
-            general = u.get("contenido_general") or []
-            self._general[num] = {slug(x) for x in general}
+                slugs.update(slug(x) for x in items)
+        self._slugs = slugs
 
-    def declarado(self, unidad: int, bloque: str, titulo: str,
-                  aliases: set) -> bool:
-        """True si `titulo` coincide literalmente con una entrada del índice.
+    def declarado(self, titulo: str) -> bool:
+        """True si el slug del título canónico coincide literalmente con
+        alguna entrada del índice del curso (en cualquier unidad).
 
-        Coincidencia mecánica (§11.3): igualdad de slug, prefijo del slug del
-        índice (absorbe paréntesis del índice como '... (el, la, los, las)'),
-        o coincidencia con un alias del índice declarado en el registry.
+        Acepta prefijo del slug del índice — absorbe paréntesis del índice
+        ('Artículos determinados (el, la, los, las)' es declarado para el
+        canónico 'Artículos determinados'). NO acepta aliases: si la relación
+        es por alias, queda para Capa 2 como `reconciliado` (§9.2).
         """
-        campo = CURSO_CAMPO.get(bloque)
         objetivo = slug(titulo)
-        candidatos = set(self._general.get(unidad, set()))
-        if campo is not None:
-            candidatos |= self._idx.get((unidad, campo), set())
-        for entrada in candidatos:
+        if not objetivo:
+            return False
+        for entrada in self._slugs:
             if entrada == objetivo or entrada.startswith(objetivo + "-"):
-                return True
-            if entrada in aliases:
                 return True
         return False
 
@@ -326,9 +329,9 @@ class Constructor:
             evento["tiempo"] = tiempo
         if bloque == "verbal":
             evento["formas"] = sorted(set(formas or []))
-        # triage mecánico: solo `declarado` (§11.2, §11.4 invariante 8)
-        aliases = self.reg.vocab.get(titulo, set()) if bloque == "vocabulario" else set()
-        if self.indice.declarado(unidad, bloque, titulo, aliases):
+        # Triage mecánico — eje identitario curso-wide, sin aliases (§9, v11.75).
+        # La Capa 2 decide `reconciliado`/`nuevo` con cierre humano.
+        if self.indice.declarado(titulo):
             evento["procedencia_indice"] = "declarado"
         hilo["eventos"].append(evento)
 
@@ -336,22 +339,27 @@ class Constructor:
         """Registra un evento de nivel `mapa` desde el índice del curso (§4.2).
 
         `titulo` ya viene resuelto y es canónico (`Registries.resolver`). El
-        evento no lleva evidencias ni etiquetas. Si ya existe un evento para
-        esa `(unidad)` —procedente de inventario—, no lo pisa: solo garantiza
-        el triage `declarado` (la entrada está en el índice por definición).
+        evento no lleva evidencias ni etiquetas. La procedencia se decide con
+        la misma regla curso-wide literal que en el paso de inventario — si
+        el título es alias del índice (no literal), queda sin procedencia y
+        la Capa 2 propondrá `reconciliado` con cierre humano (§9.2).
         """
         self.unidades.add(unidad)
         hilo = self._hilo(bloque, titulo)
+        declarado = self.indice.declarado(titulo)
         for ev in hilo["eventos"]:
             if ev["unidad"] == unidad and ev.get("tiempo") is None:
-                ev["procedencia_indice"] = "declarado"
+                if declarado:
+                    ev["procedencia_indice"] = "declarado"
                 return
-        hilo["eventos"].append({
+        nuevo_ev = {
             "unidad": unidad,
             "etiquetas": [],
             "evidencias": [],
-            "procedencia_indice": "declarado",
-        })
+        }
+        if declarado:
+            nuevo_ev["procedencia_indice"] = "declarado"
+        hilo["eventos"].append(nuevo_ev)
 
     def finalizar_niveles(self):
         """Fija `nivel_analisis` de cada hilo según el grado de población (§4.2):
