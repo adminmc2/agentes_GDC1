@@ -58,6 +58,14 @@
 
 **anticipación** — Contenido que aparece en una unidad como input incidental antes de ser canónico en una unidad posterior. Es a la vez una etiqueta de evento y un fenómeno cross-unidad. Ver §2.3.
 
+**`procedencia_indice`** — Triaje de cada evento respecto al índice editorial del curso (`nc1-curso.json`). Eje ortogonal a `etiqueta` (`REDISEÑO-EN-CURSO.md` §9). Tres valores; el JSON conserva el técnico, el dashboard muestra el rótulo editorial:
+
+| Valor (JSON) | Rótulo editorial | Significado |
+|---|---|---|
+| `declarado` | **contenido del índice** | El contenido aparece literal en el índice del curso para esa unidad. Lo escribe la Capa 1 por coincidencia mecánica. |
+| `reconciliado` | **reconciliado según el PCIC** | El contenido corresponde a una entrada del índice del curso bajo otro nombre — la equivalencia se resuelve vía los registries canónicos respaldados por PCIC (el índice puede decir "Verbos ser, llamarse y tener" y el hilo ser "ser"). Lo escribe la Capa 2. |
+| `nuevo` | **fuera del índice** | El contenido aparece en la unidad pero el índice del curso no lo anuncia; es contenido emergente. Lo escribe la Capa 2. |
+
 ---
 
 ## Bloque 3 — Glosarios de fase

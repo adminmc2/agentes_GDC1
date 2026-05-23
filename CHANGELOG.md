@@ -15,6 +15,27 @@
 
 ---
 
+## [v11.72 — 2026-05-23] — Dashboard RECICLAJE: dos ejes visuales ortogonales (etiqueta + procedencia del índice) con rótulos editoriales
+
+Itera sobre v11.71 a partir de feedback del autor mirando la vista: el evento tiene dos ejes ortogonales (`etiquetas` y `procedencia_indice`, `REDISEÑO §9.5`) y el dashboard solo mostraba uno. Cambios en `web/index.html`:
+
+- **Quitadas las dos notas verbosas de arriba** (nivel + estado de etiquetas).
+- **Dos leyendas compactas en su lugar**, una por eje. Cada chip lleva su marca + rótulo + `(n)` con el reparto real; los valores sin presencia se ven atenuados (no fingen estar).
+- **Diferenciación no cromática** entre ejes para que ningún chip se pueda confundir con otro: etiqueta sigue como **círculo de color**; procedencia pasa a **cuadrito gris oscuro con inicial mnemotécnica** (`I` contenido del índice · `E` reconciliado según el PCIC · `F` fuera del índice). Los dos ejes hablan visualmente lenguajes distintos (color vs letra) — imposible solapamiento.
+- **Rótulos editoriales** para `procedencia_indice` — los técnicos eran opacos al editor:
+
+  | JSON | Dashboard |
+  |---|---|
+  | `declarado` | **contenido del índice** |
+  | `reconciliado` | **reconciliado según el PCIC** |
+  | `nuevo` | **fuera del índice** |
+
+  El JSON conserva los valores técnicos; el mapeo a rótulos vive solo en la vista. El drawer también muestra el rótulo editorial.
+
+Glosario raíz (`glosario.md` Bloque 2) actualizado: nueva entrada `procedencia_indice` con tabla técnico↔editorial y significado de cada valor.
+
+Reparto actual visible: 41 eventos `[I]` contenido del índice, 0 `[E]` reconciliado según el PCIC (atenuado), 0 `[F]` fuera del índice (atenuado), 242 sin asignar. Etiquetas: 0/283 (las 7 atenuadas) + 283 sin etiquetar (Capa 2 aún sin estrenar).
+
 ## [v11.71 — 2026-05-23] — Dashboard RECICLAJE: corrección UX (badge `auto` y leyenda Capa 2)
 
 Tres correcciones puntuales sobre v11.70, a partir de feedback del autor mirando la vista real:

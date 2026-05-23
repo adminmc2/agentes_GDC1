@@ -767,6 +767,19 @@ const REC_COLOR_ETIQUETA = {
 const REC_COLOR_NIVEL = { mapa: '#90A4AE', auto: '#5C6BC0', detalle: '#2E7D32' };
 const REC_DOT_SKELETON = '#CFD8DC';  // evento sin etiquetar — estado válido (Capa 1)
 
+// `procedencia_indice` — eje ortogonal a `etiquetas`. El JSON guarda el valor
+// técnico; el dashboard muestra el rótulo editorial (ver glosario.md).
+// Diferenciación NO cromática: inicial mnemotécnica en gris oscuro, para que el
+// editor nunca confunda un chip de procedencia con un dot de etiqueta — los
+// dos ejes hablan visualmente lenguajes distintos (color vs letra).
+const REC_PROCEDENCIA_LABEL = {
+    declarado: 'contenido del índice',
+    reconciliado: 'reconciliado según el PCIC',
+    nuevo: 'fuera del índice'
+};
+const REC_INICIAL_PROCEDENCIA = { declarado: 'I', reconciliado: 'E', nuevo: 'F' };
+const REC_GRIS_PROCEDENCIA = '#37474F';  // mismo gris para los tres valores
+
 async function loadReciclaje() {
     renderSidebar();
     const el = document.getElementById('rec-list');
@@ -863,34 +876,69 @@ function renderRecHiloRow(h, bColor, dominantNivel) {
     </div>`;
 }
 
-// Nota global discreta con el reparto de niveles: sustituye al badge repetido
-// en cada fila. Refleja el estado real (puede mostrar mezcla cuando la haya).
-function renderRecNivelNota() {
-    const hilos = recData.hilos || [];
-    const cuenta = {};
-    hilos.forEach(h => { cuenta[h.nivel_analisis] = (cuenta[h.nivel_analisis] || 0) + 1; });
-    const total = hilos.length;
-    const partes = Object.entries(cuenta).map(([n, c]) => `${c}/${total} en <strong>${_esc(n)}</strong>`).join(' · ');
-    const sinDetalle = !cuenta.detalle;
-    const cola = sinDetalle ? ' Esqueleto poblado desde inventarios; la Capa 2 IA aún no ha generado hilos en <strong>detalle</strong>.' : '';
-    return `<div style="padding:10px 14px;background:#F5F5F5;border-left:3px solid #5C6BC0;border-radius:6px;margin-bottom:12px;font-size:12px;color:#37474F;line-height:1.55"><strong>Nivel de análisis:</strong> ${partes}.${cola}</div>`;
+// Conteo por valor en una lista de eventos, dado el campo. Soporta scalars y
+// arrays (etiquetas[] aporta cada uno de sus elementos al conteo).
+function _recContar(eventos, campo) {
+    const c = {};
+    eventos.forEach(ev => {
+        const v = ev[campo];
+        if (Array.isArray(v)) v.forEach(x => { c[x] = (c[x] || 0) + 1; });
+        else if (v != null) c[v] = (c[v] || 0) + 1;
+    });
+    return c;
 }
 
-// Nota de estado de las etiquetas: honesta sobre lo que hay y lo que vendrá
-// cuando la Capa 2 procese unidades. No promete colores que aún no existen.
-function renderRecEtiquetasNota() {
-    const eventosTotal = (recData.hilos || []).reduce((a, h) => a + (h.eventos || []).length, 0);
-    const etiquetados = (recData.hilos || []).reduce((a, h) =>
-        a + (h.eventos || []).filter(e => e.etiquetas && e.etiquetas.length).length, 0);
-    const skeletonState = etiquetados === 0;
-    const titulo = skeletonState ? 'Estado actual' : 'Etiquetas del evento (Capa 2)';
-    const cuerpo = skeletonState
-        ? `eventos sin etiquetar (<span style="color:#90A4AE">●</span> gris) = esqueleto de Capa 1. Cuando la Capa 2 procese una unidad, los eventos podrán mostrar etiquetas como <em>introduce</em>, <em>amplía</em>, <em>aplica</em>, <em>sistematiza</em>, <em>contrasta</em>, <em>anticipación</em> y <em>discrimina</em>.`
-        : `${etiquetados}/${eventosTotal} eventos con etiqueta asignada. Colores: ` +
-          Object.keys(REC_COLOR_ETIQUETA).map(a =>
-            `<span style="display:inline-flex;align-items:center;gap:4px"><span style="width:9px;height:9px;border-radius:50%;background:${REC_COLOR_ETIQUETA[a]};display:inline-block"></span>${a}</span>`
-          ).join(' · ');
-    return `<div style="padding:10px 14px;background:#FAFAFA;border-radius:6px;margin-bottom:20px;font-size:12px;color:#546E7A;line-height:1.55"><strong>${titulo}:</strong> ${cuerpo}</div>`;
+// Leyenda compacta de etiquetas: chip de color + rótulo + (n).
+// Valores sin datos se atenúan — el sistema se nombra completo pero no se
+// finge presencia donde no la hay.
+function _recLeyendaChips(valores, colores, labels, cuenta) {
+    return valores.map(v => {
+        const col = colores[v] || '#607D8B';
+        const lab = (labels && labels[v]) || v;
+        const n = cuenta[v] || 0;
+        const dim = n === 0 ? 'opacity:.45;' : '';
+        return `<span style="display:inline-flex;align-items:center;gap:5px;${dim}"><span style="width:10px;height:10px;border-radius:50%;background:${col};display:inline-block"></span><span>${_esc(lab)}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${n})</span></span>`;
+    }).join('<span style="color:#CFD8DC;margin:0 2px">·</span>');
+}
+
+// Leyenda compacta de procedencia: cuadrito gris con la inicial mnemotécnica
+// + rótulo + (n). Tratamiento monocromo, distinto al de etiquetas, para que
+// los dos ejes (color vs letra) no se puedan confundir.
+function _recLeyendaIniciales(valores, iniciales, labels, cuenta) {
+    return valores.map(v => {
+        const ini = iniciales[v] || '?';
+        const lab = (labels && labels[v]) || v;
+        const n = cuenta[v] || 0;
+        const dim = n === 0 ? 'opacity:.45;' : '';
+        return `<span style="display:inline-flex;align-items:center;gap:6px;${dim}"><span style="display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:4px;font-size:10px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(ini)}</span><span>${_esc(lab)}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${n})</span></span>`;
+    }).join('<span style="color:#CFD8DC;margin:0 2px">·</span>');
+}
+
+// Dos leyendas compactas para los dos ejes ortogonales del evento: etiqueta
+// (qué hace) y procedencia respecto al índice (cómo se relaciona con el curso).
+function renderRecLeyendas() {
+    const eventos = (recData.hilos || []).flatMap(h => h.eventos || []);
+    const eventosTotal = eventos.length;
+    const cEt = _recContar(eventos, 'etiquetas');
+    const etiquetados = eventos.filter(e => e.etiquetas && e.etiquetas.length).length;
+    const sinEtiqueta = eventosTotal - etiquetados;
+    const filaEt = _recLeyendaChips(
+        Object.keys(REC_COLOR_ETIQUETA), REC_COLOR_ETIQUETA, null, cEt
+    ) + `<span style="color:#CFD8DC;margin:0 2px">·</span>` +
+        `<span style="display:inline-flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:${REC_DOT_SKELETON};display:inline-block"></span><span>sin etiquetar</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${sinEtiqueta})</span></span>`;
+
+    const cPr = _recContar(eventos, 'procedencia_indice');
+    const conProc = Object.values(cPr).reduce((a, b) => a + b, 0);
+    const sinProc = eventosTotal - conProc;
+    const filaPr = _recLeyendaIniciales(
+        ['declarado', 'reconciliado', 'nuevo'], REC_INICIAL_PROCEDENCIA, REC_PROCEDENCIA_LABEL, cPr
+    ) + `<span style="color:#CFD8DC;margin:0 2px">·</span>` +
+        `<span style="display:inline-flex;align-items:center;gap:5px;color:#90A4AE"><span>sin asignar</span><span style="font-variant-numeric:tabular-nums">(${sinProc})</span></span>`;
+
+    return `<div style="margin-bottom:20px;font-size:12px;color:#546E7A">
+        <div style="display:flex;align-items:baseline;gap:10px;padding:8px 0;border-bottom:1px solid #ECEFF1"><span style="min-width:170px;color:#37474F;font-weight:600">Etiqueta del evento</span><div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">${filaEt}</div></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:8px 0"><span style="min-width:170px;color:#37474F;font-weight:600">Procedencia del índice</span><div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">${filaPr}</div></div>
+    </div>`;
 }
 
 function renderRecTimeline() {
@@ -900,7 +948,7 @@ function renderRecTimeline() {
     const cuenta = {};
     (recData.hilos || []).forEach(h => { cuenta[h.nivel_analisis] = (cuenta[h.nivel_analisis] || 0) + 1; });
     const dominantNivel = Object.entries(cuenta).sort((a, b) => b[1] - a[1])[0]?.[0];
-    const notas = renderRecNivelNota() + renderRecEtiquetasNota();
+    const notas = renderRecLeyendas();
     const bloquesHTML = bloques.map(bloque => {
         const bColor = REC_COLOR_BLOQUE[bloque] || '#607D8B';
         const lineas = grupos[bloque].map(h => renderRecHiloRow(h, bColor, dominantNivel)).join('');
@@ -939,7 +987,7 @@ function openRecDrawer(hiloId) {
             ? ev.etiquetas.map(e => `<span style="font-size:10px;background:${REC_COLOR_ETIQUETA[e] || '#607D8B'};color:#fff;padding:2px 8px;border-radius:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">${_esc(e)}</span>`).join(' ')
             : `<span style="font-size:11px;color:#90A4AE;font-style:italic">sin etiquetar (esqueleto de Capa 1)</span>`;
         const proc = ev.procedencia_indice
-            ? `<span style="font-size:10px;background:#455A64;color:#fff;padding:2px 7px;border-radius:8px">${_esc(ev.procedencia_indice)}</span>` : '';
+            ? `<span title="${_esc(ev.procedencia_indice)}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#37474F"><span style="display:inline-flex;width:16px;height:16px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:3px;font-size:9px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(REC_INICIAL_PROCEDENCIA[ev.procedencia_indice] || '?')}</span>${_esc(REC_PROCEDENCIA_LABEL[ev.procedencia_indice] || ev.procedencia_indice)}</span>` : '';
         const tiempo = ev.tiempo
             ? `<span style="font-size:11px;color:#90A4AE">${_esc(ev.tiempo)}</span>` : '';
         const formas = (ev.formas && ev.formas.length)
