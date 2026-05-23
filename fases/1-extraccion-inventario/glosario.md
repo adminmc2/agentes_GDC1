@@ -37,7 +37,7 @@ Permite trazabilidad: si dentro de un año el libro cambia de edición, podemos 
 
 ---
 
-> **Source of truth de la cabecera identificativa:** `unidades/nc1-curso.json` es el diccionario maestro del curso para los campos de identificación del inventario (`unidad`, `curso`, `titulo`, `paginas_libro`, `nivel`). Esos campos deben coincidir exactamente con la entrada de la unidad correspondiente. **El resto del top-level no deriva de `nc1-curso.json`:** `fuente.archivo` es convención fija, `fuente.version_extraccion` es la fecha de la corrida, los 4 bloques consolidados se derivan de las actividades y cuadros, `secciones` se reconstruye recorriendo `paginas_detalle`, `paginas_detalle` viene de la extracción del PDF, y las claves opcionales (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `_migracion_rediseno`) tienen cada una su propio origen.
+> **Source of truth de la cabecera identificativa:** `unidades/nc1-curso.json` es el diccionario maestro del curso para los campos de identificación del inventario (`unidad`, `curso`, `titulo`, `paginas_libro`, `nivel`). Esos campos deben coincidir exactamente con la entrada de la unidad correspondiente. **El resto del top-level no deriva de `nc1-curso.json`:** `fuente.archivo` es convención fija, `fuente.version_extraccion` es la fecha de la corrida, los 4 bloques consolidados se derivan de las actividades y cuadros, `secciones` se reconstruye recorriendo `paginas_detalle`, `paginas_detalle` viene de la extracción del PDF, y las claves opcionales (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `_migracion_rediseno`, `portada`) tienen cada una su propio origen.
 
 ---
 
@@ -736,7 +736,7 @@ Reglas que dependen del estado de otros campos. Cada una se aplica por el valida
 
 ### Claves opcionales declaradas
 
-Las claves opcionales **del top-level** del inventario (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `_migracion_rediseno`) deben figurar en la lista `CLAVES_TOP_OPCIONALES` del validador. Si no, el validador emite aviso al encontrarlas en el JSON aunque sean correctas. Las marcas internas `_pendiente_canon` y `_funcion_ambigua` **no son top-level**: solo viven dentro de una actividad o de una entrada de categoría en bloques consolidados (ver §14 del schema y sección "Marcas internas declaradas en el contrato" en este glosario).
+Las claves opcionales **del top-level** del inventario (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `_migracion_rediseno`, `portada`) deben figurar en la lista `CLAVES_TOP_OPCIONALES` del validador. Si no, el validador emite aviso al encontrarlas en el JSON aunque sean correctas. Las marcas internas `_pendiente_canon` y `_funcion_ambigua` **no son top-level**: solo viven dentro de una actividad o de una entrada de categoría en bloques consolidados (ver §14 del schema y sección "Marcas internas declaradas en el contrato" en este glosario).
 
 ### Marcas internas que bloquean cierre
 

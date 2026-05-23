@@ -54,6 +54,8 @@
 
 1. Verifica que existe `unidades/UX/fuente/UX-nc1.pdf`. Si no, aborta y avisa al autor.
 2. Extrae según `schema-inventario.md` (§2-§4): texto verbatim + estructura física + IDs estables. `tipo`, `destreza`, `enfoque` y las 4 listas tipadas son parte del shape final; su población se difiere al paso 3.
+
+   **2b. Portada de unidad (§1.1, opcional).** Si la 1.ª página de Vocabulario tiene la columna de apertura (número + título de unidad + fotos temáticas), captúrala como campo top-level `portada: {pagina, descripcion}`. `descripcion` es texto verbatim de lo que se ve (regla crítica 1): título tal como aparece y descripción foto a foto, sin interpretar.
 3a. Clasifica y puebla actividades y cuadros según `reglas-operativas.md` (3 ejes + 4 listas tipadas + datos literales).
 3b. Deriva los 4 bloques top-level consolidados (`vocabulario_consolidado`, `tiempos_y_verbos_consolidado`, `gramatica_consolidada`, `pronunciacion_ortografia_consolidada`) a partir de las listas tipadas de actividades y cuadros.
 4. Escribe el JSON candidato en `unidades/UX/UX-nc1-inventario.json`.

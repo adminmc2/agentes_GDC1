@@ -602,6 +602,17 @@ Para que un término entre como `recurrente`, debe cumplir los 3 criterios de §
 
 **Caso prototípico de input escueto + solucionario rico.** Actividades de `interaccion_oral` o `tarea_final` con subtipo de **mediación** o **búsqueda de información** suelen tener input escueto (solo enunciado + temas abstractos) y solucionario con la información concreta que el alumno construye. Todo lo que aparece únicamente en ese solucionario lleva `@R`. Ejemplo material en NC1: U4 `p49-act9` (`interaccion_oral`, subtipo `busqueda_informacion_y_mediacion`) tiene 12 ítems léxicos que aparecen solo en el solucionario y por tanto llevan `@R`. Bajo el contrato v10.145, este caso ya no es excepción a una regla por tipo — es un ejemplo del patrón general.
 
+### §6.7. Portada de unidad (`portada`, top-level opcional)
+
+Captura la columna de apertura de cada unidad: número + título + fotos temáticas, siempre en la 1.ª página de la sección Vocabulario, a la izquierda. Es maquetación de portada — ni actividad ni cuadro — por eso va al top-level (`portada: {pagina, descripcion}`), no dentro de `paginas_detalle`. Shape completo en `schema-inventario.md` §1.1.
+
+**Cuando ocurra (lo normal en NC1):**
+1. Identificar la 1.ª página de Vocabulario de la unidad.
+2. `pagina`: número de esa página.
+3. `descripcion`: **verbatim** (regla de oro 1 — no inventar, no interpretar). Incluir el número y el título tal como aparece en el libro y una descripción foto a foto (qué se ve en cada una). No reformular.
+
+Campo **opcional**: las unidades anteriores a su introducción (v11.x) pueden no tenerlo. Cuando esté presente, ambas subclaves son obligatorias y `descripcion` no puede estar vacía (validador §1.1).
+
 ### §6.6. Regla 11 — `audio.transcripcion` como condición de fuente válida
 
 **Aplica a:** decisión de si el contenido auditivo de una actividad aporta léxico/verbos/gramática/pronunciación a los bloques consolidados.

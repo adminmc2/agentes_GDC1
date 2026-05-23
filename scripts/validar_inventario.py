@@ -46,7 +46,8 @@ CLAVES_TOP = {"unidad", "curso", "titulo", "paginas_libro", "nivel", "fuente",
 
 CLAVES_TOP_OPCIONALES = {"autoevaluacion", "_nota_unidad_atipica",
                          "_decisiones_ia",         # marca interna §14 schema
-                         "_migracion_rediseno"}    # clave transitoria §A.2 schema
+                         "_migracion_rediseno",    # clave transitoria §A.2 schema
+                         "portada"}                # apertura de unidad §1.1 schema
 
 SECCIONES_CANONICAS = {"vocabulario", "gramatica", "comunicacion", "destrezas",
                        "cultura", "evaluacion", "reflexion"}
@@ -512,6 +513,23 @@ def validar(path):
                     errores.append(f"❌ autoevaluacion.opciones NC1 fijo: {NC1_OPCIONES}")
                 if ae.get("emoticonos") is not True:
                     errores.append("❌ autoevaluacion.emoticonos NC1 fijo: true")
+
+    # portada (opcional, §1.1 schema): si existe, debe tener pagina:int + descripcion:str no vacío
+    if "portada" in d:
+        po = d["portada"]
+        if not isinstance(po, dict):
+            errores.append("❌ portada debe ser dict")
+        else:
+            for k in ("pagina", "descripcion"):
+                if k not in po:
+                    errores.append(f"❌ portada: falta '{k}'")
+            if "pagina" in po and not isinstance(po["pagina"], int):
+                errores.append("❌ portada.pagina debe ser int")
+            if "descripcion" in po:
+                if not isinstance(po["descripcion"], str):
+                    errores.append("❌ portada.descripcion debe ser str")
+                elif not po["descripcion"].strip():
+                    errores.append("❌ portada.descripcion no puede estar vacía")
 
     # 2. fuente y secciones tienen estructura esperada
     if "fuente" in d:

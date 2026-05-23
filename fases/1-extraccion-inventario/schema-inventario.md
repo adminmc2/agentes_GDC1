@@ -12,7 +12,7 @@
 
 ---
 
-## 1. Estructura top-level (13 claves obligatorias + 3 opcionales canónicas + 1 transitoria)
+## 1. Estructura top-level (12 claves obligatorias + 4 opcionales canónicas + 1 transitoria)
 
 ```jsonc
 {
@@ -43,6 +43,7 @@
   "autoevaluacion":         <bloque, opcional — ver §6>,
   "_nota_unidad_atipica":   <str, opcional — ver §11>,
   "_decisiones_ia":         [str, opcional — ver §14],
+  "portada":                <objeto, opcional — ver §1.1>,
 
   // Opcional transitoria (ver Apéndice)
   "_migracion_rediseno":    <objeto, opcional — clave transitoria, ver Apéndice>,
@@ -51,9 +52,23 @@
 }
 ```
 
-**Recuento del shape:** 12 claves obligatorias (`unidad`, `curso`, `titulo`, `paginas_libro`, `nivel`, `fuente`, los 4 bloques consolidados, `secciones`, `paginas_detalle`) + 3 claves opcionales canónicas (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`) + 1 clave opcional transitoria (`_migracion_rediseno`, ver Apéndice).
+**Recuento del shape:** 12 claves obligatorias (`unidad`, `curso`, `titulo`, `paginas_libro`, `nivel`, `fuente`, los 4 bloques consolidados, `secciones`, `paginas_detalle`) + 4 claves opcionales canónicas (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `portada`) + 1 clave opcional transitoria (`_migracion_rediseno`, ver Apéndice).
 
 > **Nota (v11.67):** el campo `contenidos_indice` fue **eliminado** del inventario. Era una copia del índice editorial que ya vive en `unidades/nc1-curso.json` — duplicación que contradecía la regla de fuente única y se desincronizó. El índice del curso se consulta directamente en `nc1-curso.json`.
+
+### 1.1. `portada` — apertura de unidad (opcional)
+
+Captura el elemento de **apertura de cada unidad**: la columna izquierda de la 1.ª página de la sección Vocabulario, con el número y título de la unidad y las fotos temáticas que introducen el tema. Es maquetación de portada — ni actividad ni cuadro — por eso es campo top-level, no parte de `paginas_detalle`.
+
+```jsonc
+"portada": {
+  "pagina": <int>,        // página donde aparece (1.ª de vocabulario)
+  "descripcion": <str>    // texto verbatim: título tal como aparece +
+                          // descripción de cada foto. No interpretar.
+}
+```
+
+Campo **opcional**: las unidades extraídas antes de su introducción (v11.x) pueden no tenerlo; se rellena unidad por unidad. Cuando está presente, ambas subclaves (`pagina`, `descripcion`) son obligatorias y `descripcion` no puede estar vacía.
 
 ---
 
@@ -526,7 +541,7 @@ Este schema y `scripts/validar_inventario.py` son contratos paralelos. El valida
 - Cada clave declarada **obligatoria** aquí (en particular los 3 ejes por actividad `tipo`/`destreza`/`enfoque` y los 4 bloques top-level consolidados).
 - Cada **enumeración cerrada**: `tipo` (§5), `destreza` (§5b), `enfoque` (§5c), `tiempo` (§5d), `tipo_cuadro` (§7), `seccion` (§8), `autoevaluacion.opciones` NC1 (§6) — rechazar todo valor fuera del set.
 - Cada **restricción condicional**: `imagen.descripcion` obligatoria si `imagen.presente=true` (§10); `autoevaluacion` con valores fijos NC1 cuando `curso=="nc1"` (§6); `destreza` en orden alfabético y sin duplicados (§5b); referencias canónicas existentes en los registries (`campos-semanticos-canonicos.json`, `verbos-canonicos.json`, `gramatica-canonica.json`, `pronunciacion-ortografia-canonica.json`); formato de `fuentes` (§9.5 regex); `descripcion` obligatoria en cada entrada de `principal` de cada bloque consolidado.
-- Cada **clave opcional del top-level** (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `_migracion_rediseno`) debe figurar en `CLAVES_TOP_OPCIONALES` del validador para no emitir aviso. Las marcas internas que viven dentro de actividad o de entrada de categoría (`_funcion_ambigua`, `_decisiones_ia` en actividad, `_pendiente_canon`) **no entran** en esa lista; el validador las trata según §14 (las bloqueantes como error duro).
+- Cada **clave opcional del top-level** (`autoevaluacion`, `_nota_unidad_atipica`, `_decisiones_ia`, `_migracion_rediseno`, `portada`) debe figurar en `CLAVES_TOP_OPCIONALES` del validador para no emitir aviso. Las marcas internas que viven dentro de actividad o de entrada de categoría (`_funcion_ambigua`, `_decisiones_ia` en actividad, `_pendiente_canon`) **no entran** en esa lista; el validador las trata según §14 (las bloqueantes como error duro).
 - Cada **marca interna que bloquea cierre** (`_pendiente_canon`, `_funcion_ambigua`) debe detectarse como error duro (§14).
 
 Cualquier divergencia entre este schema y el validador es un bug que se resuelve antes del cierre.
