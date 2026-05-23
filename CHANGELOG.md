@@ -15,6 +15,14 @@
 
 ---
 
+## [v11.74 — 2026-05-23] — Revisión R1/R4: diagnóstico y dos propuestas anotadas para Capa 2
+
+Lectura una a una de las 14 alertas del validador cross-unidad sobre el canónico v11.68. Ninguna es bug de fase 1. **12 son insumo normal del pipeline**: las 6 R1 (anticipación material) alimentarán la etiqueta `anticipacion` cuando Capa 2 procese U1-U6; 6 de las 8 R4 son léxico PCIC incidental coherente con la unidad (`recurrente` de fondo, §3.6). **2 sospechosas anotadas en bitácora REVIEW** como propuestas a abrir en la sesión de Capa 2 — para no depender de memoria de sesión: `Gentilicios` U1 (posible alias de `Adjetivos de nacionalidad`) y `Bebida` U4 (tensión índice↔contenido — el título "Comidas y bebidas" no cuadra con el principal declarado). Sin tocar datos ni registries; solo registro de la revisión y las dos propuestas pendientes.
+
+## [v11.73 — 2026-05-23] — Higiene: eliminar `diff_index.txt`
+
+Artefacto suelto (140 líneas, un `git diff > …` antiguo, no funcional) colado en v11.72 al usar `git add -A`. Commit aislado solo con el borrado. Compromiso: usar pathspec explícito en `git add` también en repo A para que no se repita.
+
 ## [v11.72 — 2026-05-23] — Dashboard RECICLAJE: dos ejes visuales ortogonales (etiqueta + procedencia del índice) con rótulos editoriales
 
 Itera sobre v11.71 a partir de feedback del autor mirando la vista: el evento tiene dos ejes ortogonales (`etiquetas` y `procedencia_indice`, `REDISEÑO §9.5`) y el dashboard solo mostraba uno. Cambios en `web/index.html`:
