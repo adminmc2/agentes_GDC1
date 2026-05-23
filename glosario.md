@@ -60,13 +60,15 @@
 
 **`procedencia_indice`** — Eje **identitario** (no temporal) del evento respecto al índice editorial del curso (`nc1-curso.json`) **y al respaldo PCIC**. Responde a "¿el título canónico del hilo está respaldado por el índice del curso o por los registries de fase 1?" — la temporalidad ("esta unidad vs la canónica") la lleva la etiqueta, no este campo. Eje ortogonal a `etiqueta` (`REDISEÑO-EN-CURSO.md` §9). El JSON conserva el valor técnico; el dashboard muestra el rótulo editorial:
 
-| Valor (JSON) | Rótulo editorial | Significado | Quién lo escribe |
-|---|---|---|---|
-| `declarado` | **contenido del índice** | El título canónico coincide literalmente con una entrada del índice del curso, en cualquier unidad. | Capa 1 (mecánico). |
-| `reconciliado` con `reconciliado_con: "indice:<entrada>"` | **reconciliado con el índice** | El canónico es alias de una entrada del índice del curso, resuelto vía `aliases_indice` del registry. | Capa 1 (mecánico, v11.76). |
-| `reconciliado` con `reconciliado_con: "pcic:<ref>"` | **reconciliado según el PCIC** | El canónico tiene respaldo PCIC pero no entrada en el curso (`origen=pcic_a1` o `_pcic_ref`). `"pcic:A1"` como fallback. | Capa 1 (mecánico, v11.76). |
-| `nuevo` | **fuera del índice** | No está en el índice ni vía aliases ni con respaldo PCIC. Caso residual (`origen=excepcion` sin aliases). | Capa 1 (mecánico). |
-| **sin asignar** | **pendiente Capa 2 (verbal)** | Solo bloque `verbal`: `verbos-canonicos.json` no expone respaldo estructurado. | Capa 2 decide (excepción del modelo, v11.76). |
+| Valor (JSON) | Inicial dashboard | Rótulo editorial | Significado | Quién lo escribe |
+|---|---|---|---|---|
+| `declarado` | **I** | **contenido del índice** | El título canónico coincide literalmente con una entrada del índice del curso, en cualquier unidad. | Capa 1 (mecánico). |
+| `reconciliado` con `reconciliado_con: "indice:<entrada>"` | **E** | **equivalente del índice** | El canónico es alias de una entrada del índice del curso, resuelto vía `aliases_indice` del registry. | Capa 1 (mecánico, v11.76). |
+| `reconciliado` con `reconciliado_con: "pcic:<ref>"` | **P** | **reconciliado según el PCIC** | El canónico tiene respaldo PCIC pero no entrada en el curso (`origen=pcic_a1` o `_pcic_ref`). `"pcic:A1"` como fallback. | Capa 1 (mecánico, v11.76). |
+| `nuevo` | **F** | **fuera del índice** | No está en el índice ni vía aliases ni con respaldo PCIC. Caso residual (`origen=excepcion` sin aliases). | Capa 1 (mecánico). |
+| **sin asignar** | — | **pendiente Capa 2 (verbal)** | Solo bloque `verbal`: `verbos-canonicos.json` no expone respaldo estructurado. | Capa 2 decide (excepción del modelo, v11.76). |
+
+El JSON conserva **3 valores técnicos** (`declarado`/`reconciliado`/`nuevo`); las **4 iniciales** I/E/P/F del dashboard subdividen `reconciliado` por prefijo de `reconciliado_con` y viven solo en la vista (`REC_PROCEDENCIA_CATS` en `web/index.html`, v11.77).
 
 El valor es **estable por hilo** (depende del título canónico contra el índice y los registries globales, no de la unidad del evento). La cronología la marca la etiqueta: `anticipacion` (antes), `aplica` (después), sin etiqueta temporal cuando coincide con su unidad canónica.
 
