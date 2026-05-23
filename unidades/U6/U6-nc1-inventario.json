@@ -5,6 +5,10 @@
   "paginas_libro": "62-71",
   "nivel": "A1.1",
   "fuente": { "archivo": "unidades/U6/fuente/U6-nc1.pdf", "version_extraccion": "2026-05-17" },
+  "portada": {
+    "pagina": 62,
+    "descripcion": "Número grande «6» y título «¿A dónde vas?» en la parte superior izquierda. A la izquierda, foto de una chica joven de cabello largo y oscuro, con jersey turquesa, mirando hacia productos frescos (verduras y hierbas) en un puesto o sección de supermercado. Debajo, listado con cinco epígrafes precedidos de viñeta: «VOCABULARIO Establecimientos. Marcadores de lugar. Profesiones y lugares de trabajo»; «GRAMÁTICA Presente de verbos irregulares. Imperativo (tú). Análisis de errores»; «COMUNICACIÓN Preguntar por acciones de otros. Horarios. La b = v»; «DESTREZAS Madrid. El barrio de mis sueños»; «CULTURA Una ciudad colombiana»."
+  },
   "vocabulario_consolidado": {
     "principal": {
       "Establecimientos": {

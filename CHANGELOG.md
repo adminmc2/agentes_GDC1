@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.95 — 2026-05-23] — Portada U6 (¿A dónde vas?, p.62)
+
+Añadido `portada` a U6: número «6», título, foto de chica en sección de productos frescos y los 5 epígrafes del índice. Validador 0/0/0.
+
+---
+
 ## [v11.94 — 2026-05-23] — Portada U5 (¿Dónde están las llaves?, p.52)
 
 Añadido `portada` a U5: número «5», título, foto de llavero con casita de madera y los 5 epígrafes del índice. Validador 0/0/0.
