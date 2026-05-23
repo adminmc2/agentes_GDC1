@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.99 — 2026-05-23] — Fix U8: foto de portada tiene 5 personas, no 4
+
+Rectificación de `portada.descripcion` en U8 (revisión del autor): la foto lateral de p.82 muestra cinco jóvenes, no cuatro como se había anotado en v11.97. Validador 0/0/0.
+
+---
+
 ## [v11.98 — 2026-05-23] — Portada U9 (Ropa, p.92) — cobertura completa U0-U9
 
 Añadido `portada` a U9: número «9», título, foto de chica en tienda de ropa y los 5 epígrafes del índice. **Cobertura completa**: U0-U9 ya tienen `portada` rellena. Validador 10/10 unidades 0/0/0.
