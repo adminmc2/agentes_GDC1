@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.97 — 2026-05-23] — Portada U8 (Descripciones, p.82)
+
+Añadido `portada` a U8: número «8», título, foto de grupo de 4 jóvenes con ropa de invierno y los 5 epígrafes del índice. Validador 0/0/0.
+
+---
+
 ## [v11.96 — 2026-05-23] — Portada U7 (Hábitos, p.72)
 
 Añadido `portada` a U7: número «7», título, foto de manos enjabonadas bajo el grifo y los 5 epígrafes del índice. Validador 0/0/0.
