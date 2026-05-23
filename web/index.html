@@ -962,6 +962,18 @@ function renderRecLeyendas() {
     </div>`;
 }
 
+// Orden canónico de los grupos gramaticales (REDISEÑO-EN-CURSO.md §6.3).
+// Solo aplica al bloque gramatical; los otros bloques no llevan `_grupo`.
+const REC_GRAMATICA_GRUPOS = [
+    'Determinantes',
+    'Pronombres',
+    'Sintagma nominal y concordancia',
+    'Construcciones',
+    'Tiempos y modos verbales',
+    'Adverbios y marcadores',
+    'Preposiciones',
+];
+
 function renderRecTimeline() {
     const { grupos, bloques } = hilosPorBloque();
     // Nivel dominante global = el más frecuente. Si todos coinciden, los marcadores
@@ -970,13 +982,32 @@ function renderRecTimeline() {
     (recData.hilos || []).forEach(h => { cuenta[h.nivel_analisis] = (cuenta[h.nivel_analisis] || 0) + 1; });
     const dominantNivel = Object.entries(cuenta).sort((a, b) => b[1] - a[1])[0]?.[0];
     const notas = renderRecLeyendas();
+    const headerU = `<div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;border-bottom:2px solid #ECEFF1;font-weight:700;font-size:11px;color:#90A4AE"><div></div><div style="display:flex">${REC_UNIDADES.map(u => `<div style="flex:1;text-align:center">U${u}</div>`).join('')}</div></div>`;
     const bloquesHTML = bloques.map(bloque => {
         const bColor = REC_COLOR_BLOQUE[bloque] || '#607D8B';
-        const lineas = grupos[bloque].map(h => renderRecHiloRow(h, bColor, dominantNivel)).join('');
-        const headerU = `<div style="display:grid;grid-template-columns:240px 1fr;gap:12px;padding:8px 0;border-bottom:2px solid #ECEFF1;font-weight:700;font-size:11px;color:#90A4AE"><div></div><div style="display:flex">${REC_UNIDADES.map(u => `<div style="flex:1;text-align:center">U${u}</div>`).join('')}</div></div>`;
+        let cuerpo;
+        if (bloque === 'gramatica') {
+            // Sub-agrupar por `_grupo` siguiendo el orden canónico §6.3
+            const porGrupo = {};
+            grupos[bloque].forEach(h => {
+                const g = h._grupo || 'Sin grupo';
+                (porGrupo[g] = porGrupo[g] || []).push(h);
+            });
+            const gruposOrden = REC_GRAMATICA_GRUPOS.filter(g => porGrupo[g])
+                .concat(Object.keys(porGrupo).filter(g => !REC_GRAMATICA_GRUPOS.includes(g)));
+            cuerpo = gruposOrden.map(g => {
+                const lineas = porGrupo[g].map(h => renderRecHiloRow(h, bColor, dominantNivel)).join('');
+                return `<div style="margin-top:14px">
+                    <div style="font-size:12px;font-weight:700;color:${bColor};text-transform:uppercase;letter-spacing:.6px;padding:6px 0;border-bottom:1px solid ${bColor}33">${_esc(g)} <span style="font-weight:400;color:#90A4AE;text-transform:none;letter-spacing:0">· ${porGrupo[g].length} hilo${porGrupo[g].length === 1 ? '' : 's'}</span></div>
+                    ${lineas}
+                </div>`;
+            }).join('');
+        } else {
+            cuerpo = grupos[bloque].map(h => renderRecHiloRow(h, bColor, dominantNivel)).join('');
+        }
         return `<div class="section" style="margin-bottom:20px;border-left:4px solid ${bColor}">
             <div class="section-header" style="background:${bColor};color:#fff"><h2 style="color:#fff;margin:0">${_esc(REC_LABEL_BLOQUE[bloque] || bloque)} <span style="font-weight:400;font-size:13px">· ${grupos[bloque].length} hilos</span></h2></div>
-            <div class="section-body" style="padding:16px">${headerU}${lineas}</div>
+            <div class="section-body" style="padding:16px">${headerU}${cuerpo}</div>
         </div>`;
     }).join('');
     return notas + bloquesHTML;

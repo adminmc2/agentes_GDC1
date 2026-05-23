@@ -280,6 +280,35 @@ El modelo de hilos jerárquicos (mapa/auto/detalle, pase 1/pase 2) queda anulado
 
 ---
 
+### Deuda abierta — B.D1 · Política general de recurrentes post-principal de paradigmas abstractos
+
+**Estado:** 📋 **Abierta** (2026-05-23, derivada de v12.1 scope B).
+
+**Pregunta a cerrar:** ¿Todo paradigma abstracto que entra como **principal** en `gramatica_consolidada` debe seguir teniendo cola **recurrente explícita** en las unidades posteriores donde reaparece materialmente (formas atestadas que aplican el paradigma sin nuevo cuadro)? Hoy la convención editorial existe solo para categorías léxicas y para algunas categorías gramaticales clásicas (Interrogativos, Pronombre sujeto, Hay…); no está cerrada como **política general** para paradigmas verbales abstractos.
+
+**Por qué surge ahora:** la pasada de coherencia previa al lote v12.1 detectó 3 grupos de aplicaciones post-principal sin cobertura en `gramatica_consolidada`:
+
+1. **Paradigma regular del presente (-ar/-er/-ir)** — principal U3. Aplicaciones atestadas en U4 (comer, llamarse), U5 (ahorrar, contaminar, vivir), U6 (abrir, beber, estudiar, llamarse, pasear, trabajar, vivir), U7 (12 lemas, sobre todo reflexivos -ar: afeitarse, bañarse, ducharse, lavarse, levantarse, llamar, llegar, quedarse, recorrer, comer, hablar, dar).
+2. **Uso del imperativo — instrucciones y peticiones** — principal U6. Aplicación atestada en U7 con 7 lemas en imperativo (dar, decir, hablar, hacer, ir, salir, venir) en instrucciones de actividades.
+3. **Irregularidad vocálica o→ue (presente)** — principal U7. Caso límite en U8: `doler` con rasgo mixto "tipo gustar + o→ue".
+
+**Lo que ya se hizo en v12.1:** se aplicó solo el caso "limpio" (Irreg. e→ie U6 recurrente con `cerrar` — testigo nuevo del paradigma post-U4). Los 3 grupos de arriba quedaron fuera para no convertir el lote de reconciliación en una segunda campaña.
+
+**Lo que hay que decidir:**
+
+- **(a) Criterio de inclusión** — ¿cuándo una aplicación post-principal entra como `recurrente`? Tres opciones extremas: (i) **siempre** que haya forma atestada que aplique el paradigma; (ii) **solo** cuando hay sistematización o cuadro nuevo que invoca el paradigma; (iii) **selectiva** según peso pedagógico (criterio editorial). La convención actual para categorías léxicas tiende a (iii) — `recurrente` exige material no incidental + valor pedagógico, no toda aparición.
+- **(b) Tratamiento de casos mixtos** — `doler` (tipo gustar + o→ue): ¿se considera recurrente de o→ue (igual que `cerrar` es testigo de e→ie en U6), o se excluye por rasgo no puro (igual que `venir` quedó fuera de e→ie por su rasgo mixto "1ª persona + e→ie")? Coherencia con la decisión tomada para `venir`.
+- **(c) Granularidad de items** — si entran, ¿items = todas las formas atestadas del lema en presente?, ¿solo las paradigmáticas?, ¿se replica la convención de cada principal?
+- **(d) Trazabilidad cross-unidad** — ¿basta con que el dashboard de fase 2 muestre la trayectoria vía hilo (un evento por unidad atestada), o también hay que duplicarla como `recurrente` en cada inventario? El plano fase 2 ya conecta los puntos; añadir recurrentes en fase 1 es duplicación con coste editorial alto.
+
+**Alcance estimado si se decide (a)/(c) inclusivas:** 4 entradas recurrentes nuevas en U4, U5, U6 y U7 para el paradigma regular del presente + 1 entrada recurrente en U7 para Uso del imperativo + 1 entrada (posiblemente) en U8 para o→ue. **6 inventarios afectados.** Trabajo editorial considerable.
+
+**Bloquea a:** nada urgente — la deuda no impide ningún cierre actual. Es asunto de **completitud editorial** del modelo y **coherencia visual** del dashboard.
+
+**Para resolver:** sesión de criterio editorial con el autor; cerrar (a)-(d) como entradas en `reglas-operativas.md` (fase 1) o `reglas-reciclaje.md` (si se decide que es asunto de fase 2). Tras cierre, ejecución mecánica al patrón v12.1.
+
+---
+
 ## Bloque C — Diseñar y construir las fases 2-8
 
 ### Plantilla de pasos por cada fase
@@ -473,6 +502,8 @@ En cada iteración:
 ---
 
 ## Bitácora de actualizaciones del REVIEW
+
+- **2026-05-23** — Abierta deuda **B.D1 · Política general de recurrentes post-principal de paradigmas abstractos**. Derivada del scope B de v12.1: la pasada de coherencia detectó 3 grupos sin cobertura en `gramatica_consolidada` (paradigma regular del presente como recurrente en U4-U7, Uso del imperativo recurrente en U7, o→ue recurrente en U8 con caso mixto `doler`). v12.1 dejó solo el caso limpio (Irreg. e→ie U6 recurrente con `cerrar`). La política general sobre cuándo una aplicación post-principal entra como `recurrente` para paradigmas verbales abstractos no está cerrada — convención editorial tradicional aplica criterio (iii) selectivo, pero no está explicitada para este grupo de categorías. Ver sección `Deuda abierta — B.D1` arriba con preguntas (a)-(d) a cerrar. **Alcance estimado** si se decide inclusivo: 6 inventarios afectados (U4, U5, U6, U7, U8 + posibles U9). No bloquea cierres actuales — es completitud editorial.
 
 - **2026-05-23** — Schema fase 1: campo `portada` opcional (v11.88). Captura la columna de apertura de cada unidad — número + título + fotos temáticas, siempre en la 1.ª página de Vocabulario, a la izquierda. Hoy el inventario no lo recogía: las claves de página son solo `pagina/seccion/actividades/cuadros`, e `imagen.descripcion` solo existe a nivel de actividad. La portada es maquetación de portada — ni actividad ni cuadro — por eso campo top-level, no parte de `paginas_detalle`. Shape: `{pagina: int, descripcion: str (verbatim del libro)}`. Campo opcional para no romper U0-U9 (validador 0/0/0 tras el cambio). `schema-inventario.md` §1 recuento actualizado (4 opcionales canónicas en lugar de 3; corregida inconsistencia preexistente del header que decía "13 obligatorias" cuando L54 ya decía 12 tras eliminación de `contenidos_indice` en v11.67) + nueva §1.1 con shape y semántica. `validar_inventario.py`: `portada` añadida a `CLAVES_TOP_OPCIONALES` + chequeo de shape (si presente: ambas subclaves obligatorias, `pagina` int, `descripcion` str no vacío). Próximo (paso a paso, no lote masivo, acordado con autor): rellenar `portada` unidad por unidad leyendo el PDF de cada una, empezando por U0.
 - **2026-05-23** — Dashboard: drawer lateral → modal centrado (v11.85). Refactor pendiente desde el rediseño (§4.4: "se abre como modal a página completa, no una columna lateral"). El drawer lateral de 480px que implementamos en v11.70 era una solución rápida pero insuficiente para alojar explicaciones largas y para el modal a página completa que pedirá `nivel: detalle` cuando Capa 2 empiece a producirlo. Sustituido por modal centrado sobre overlay semi-transparente (rgba 0.55), ancho `min(760px, 94vw)`, altura `max 88vh`, scroll interno, bordes redondeados, sombra elevada. Click fuera (overlay) sigue cerrando. El id `rec-drawer` se conserva por compatibilidad con el JS — solo cambia el posicionamiento CSS y la sombra. Lógica de render y datos sin tocar. Sintaxis JS validada con `node --check`. Cuando Capa 2 empiece a generar `nivel: detalle`, el modal puede expandirse a página completa o duplicarse en una variante "fullscreen" — la infraestructura ya está preparada.
