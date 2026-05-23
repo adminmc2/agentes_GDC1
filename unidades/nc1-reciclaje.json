@@ -26,8 +26,7 @@
         {
           "unidad": 0,
           "etiquetas": [
-            "introduce",
-            "sistematiza"
+            "introduce"
           ],
           "evidencias": [
             "p10-act5"
@@ -1122,8 +1121,7 @@
         {
           "unidad": 0,
           "etiquetas": [
-            "introduce",
-            "sistematiza"
+            "introduce"
           ],
           "evidencias": [
             "p11-act7",
@@ -1380,7 +1378,12 @@
           "evidencias": [
             "cuadro@p11"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Tres fórmulas de saludo según el momento del día: 'Buenos días', 'Buenas tardes', 'Buenas noches'. Cuadro comunicativo titulado 'Saludos', formato fórmulas pragmáticas (sin estructura verbal).",
+            "fuente": "cuadro@p11",
+            "analisis_ia": "U0 abre el aparato pragmático mínimo (Buenos días / Buenas tardes / Buenas noches) antes de que el curso disponga de verbos o pronombres — son fórmulas fijas que el alumno puede usar el primer día. U1 lo recogerá dentro de un marco más amplio (curso U1 cultura: 'Saludos y despedidas. Tú y usted') que añadirá 'Hola' (informal) y la distinción de registro tú/usted. El cuadro de U0 es estricto: solo el eje formal-temporal, sin saludo informal ni registro."
+          }
         },
         {
           "unidad": 1,
@@ -6143,5 +6146,20 @@
       ]
     }
   ],
-  "propuestas": []
+  "propuestas": [
+    {
+      "id": "prop-abecedario-cobertura-cross-unidad",
+      "tipo": "siempre_presente",
+      "hilo_ref": "voc-abecedario-espanol",
+      "descripcion": "El hilo `voc · Abecedario español` solo tiene evento en U0 (donde el libro lo introduce con el paradigma completo), pero el inventario alfabético se trabaja transversalmente en unidades posteriores (deletreo de nombres y palabras, referencias a letras concretas, trabajos de pronunciación que parten del abecedario). Fase 1 categorizó esas apariciones bajo otros hilos (sonidos específicos, letras homófonas). ¿Debería el hilo recoger eventos en U1+ cuando el libro vuelve a usar el inventario alfabético como tal — aunque sea incidentalmente — o se considera que esas reapariciones ya están cubiertas por los hilos de pronunciación/ortografía y no procede duplicarlas en el hilo del abecedario? Decidir cuando Capa 2 procese U1-U9 y se vea con qué frecuencia/forma reaparece el inventario alfabético en cada unidad.",
+      "estado": "pendiente"
+    },
+    {
+      "id": "prop-saludos-y-despedidas-vocab-vs-cultura",
+      "tipo": "reconciliacion",
+      "hilo_ref": "voc-saludos-y-despedidas",
+      "descripcion": "Fase 1 categorizó 'Saludos y despedidas' como hilo de **vocabulario**, pero el curso (`nc1-curso.json`) lo declara como **CULTURA** en U1. El contenido funcionalmente es pragmático (convenciones sociales, fórmulas fijas, sin trabajo léxico productivo) — más cercano a cultura que a vocabulario. Decisión editorial pendiente: (a) aceptar la categorización léxica de fase 1 como simplificación operativa; (b) reclasificar el hilo a un bloque/categoría cultural (cambio de modelo de fase 2 + registry); (c) dejar como vocabulario pero documentar la naturaleza pragmática en el `analisis_ia` de cada evento. Decidir cuando se procese U1 con Capa 2 y se vea cómo el curso ancla 'Saludos y despedidas' dentro de su columna cultura.",
+      "estado": "pendiente"
+    }
+  ]
 }

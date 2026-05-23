@@ -15,6 +15,23 @@
 
 ---
 
+## [v11.80 — 2026-05-23] — Capa 2 sobre U0 cerrada (primera unidad enriquecida)
+
+Primera sesión real de Capa 2 IA completada — shakedown del procedimiento §12 sobre U0 (atípica, "Punto de partida"). Cambios sobre `unidades/nc1-reciclaje.json`:
+
+- **6 eventos U0 con etiquetas editoriales**: `voc · Abecedario español` [introduce]; `voc · Países que hablan español` [introduce]; `voc · Números cardinales` [introduce]; `voc · Para la clase` [introduce]; `voc · Saludos y despedidas` [anticipacion]; `pron · Sonidos y correspondencias ortográficas` [anticipacion]. Corrección de la sesión previa: se retira `sistematiza` de Abecedario y Países — `sistematiza` exige contenido "ya activo" (`reglas §3`), y U0 es primera aparición canónica. Las dos pasan a solo `[introduce]`.
+- **Explicación en `voc · Saludos y despedidas` U0** según el cuadro@p11 ("Buenos días / Buenas tardes / Buenas noches") — `analisis_ia` sitúa el evento en el arco U0→U1.
+- **2 propuestas editoriales abiertas** en `propuestas[]`:
+  - `prop-abecedario-cobertura-cross-unidad` (tipo: `siempre_presente`) — ¿debería el hilo `voc · Abecedario español` recoger eventos en U1+ cuando el inventario alfabético reaparece transversalmente, o ya están cubiertas por otros hilos (sonidos, letras homófonas)?
+  - `prop-saludos-y-despedidas-vocab-vs-cultura` (tipo: `reconciliacion`) — tensión entre fase 1 (lo categorizó como `vocabulario`) y el curso (lo declara como `cultura` en U1). El contenido es funcionalmente pragmático; decidir si reclasificar el hilo o aceptar la simplificación léxica.
+- Ambas propuestas se difieren a la sesión de U1 — su naturaleza cross-unidad pide ver primero cómo reaparecen los contenidos antes de cerrar la decisión.
+
+Validador estructural sin errores. U0 cumple los criterios §13 (a) chequeo estructural + (c) revisión editorial; las propuestas que afectan a U0 quedan explícitamente diferidas. Primera evidencia del flujo `Capa 1 mecánica → sesión Capa 2 → merge no destructivo` funcionando end-to-end sobre una unidad real.
+
+## [v11.79 — 2026-05-23] — Glosario: documenta las iniciales I/E/P/F del dashboard en `procedencia_indice`
+
+Deuda documental retroactiva. La tabla del glosario raíz para `procedencia_indice` describía los 4 casos editoriales del dashboard pero no enseñaba las iniciales (I/E/P/F) que el dashboard usa. Añadida columna "Inicial dashboard" + nota de que el JSON conserva 3 valores técnicos y las 4 iniciales viven solo en la vista (`REC_PROCEDENCIA_CATS`, `web/index.html`). Solo `glosario.md`.
+
 ## [v11.78 — 2026-05-23] — Dashboard drawer: `reconciliado_con` visible como texto persistente
 
 Micro-UX. En v11.77 el chip de procedencia se afinó a 4 categorías (I/E/P/F), pero el `reconciliado_con` completo (`indice:Números 0-10`, `pcic:A1`, etc.) solo era visible al pasar el cursor por el chip (`title`) — invisible en móvil/touch y poco escaneable. v11.78 lo muestra **como texto persistente** en la fila del evento del drawer, en gris claro itálico, precedido por flecha (`→ indice:Números 0-10`). Sin perder el tooltip — el `title` con `procedencia · reconciliado_con` se mantiene como hover-detail. Solo `web/index.html`; sintaxis JS validada.
