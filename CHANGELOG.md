@@ -15,6 +15,19 @@
 
 ---
 
+## [v11.77 — 2026-05-23] — Dashboard: leyenda de procedencia con 4 chips (separa `reconciliado` por prefijo)
+
+Follow-up no bloqueante de v11.76. Ahora que `reconciliado_con` lleva prefijo (`indice:` o `pcic:`), la leyenda del dashboard que decía `[E] reconciliado según el PCIC` para todo era imprecisa. v11.77 divide visualmente la categoría:
+
+| JSON | Rótulo en dashboard | Inicial |
+|---|---|---|
+| `procedencia: declarado` | contenido del índice | **I** |
+| `procedencia: reconciliado` + `reconciliado_con: "indice:..."` | equivalente del índice | **E** |
+| `procedencia: reconciliado` + `reconciliado_con: "pcic:..."` | reconciliado según el PCIC | **P** |
+| `procedencia: nuevo` | fuera del índice | **F** |
+
+El JSON sigue con 3 valores técnicos (`declarado`/`reconciliado`/`nuevo`) — la sub-división vive **solo en la vista**. Reparto visible hoy: I=78 · E=4 · P=44 · F=3 · sin asignar=154 (verbal). Solo `web/index.html`; sintaxis JS validada con `node --check`.
+
 ## [v11.76 — 2026-05-23] — Modelo: triage identitario mecánico (alias + PCIC) + merge no destructivo
 
 Tras revisión del autor de v11.75: la cautela "Capa 1 sin aliases" era una sobrecorrección — `campos-semanticos-canonicos.json` (`origen` + `aliases_indice`) y `gramatica-canonica.json` / `pronunciacion-ortografia-canonica.json` / `perifrasis-canonicas.json` (`_pcic_ref`) ya traen el respaldo estructurado para resolver `reconciliado` mecánicamente. Tres cambios:

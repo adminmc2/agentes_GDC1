@@ -767,18 +767,28 @@ const REC_COLOR_ETIQUETA = {
 const REC_COLOR_NIVEL = { mapa: '#90A4AE', auto: '#5C6BC0', detalle: '#2E7D32' };
 const REC_DOT_SKELETON = '#CFD8DC';  // evento sin etiquetar — estado válido (Capa 1)
 
-// `procedencia_indice` — eje ortogonal a `etiquetas`. El JSON guarda el valor
-// técnico; el dashboard muestra el rótulo editorial (ver glosario.md).
-// Diferenciación NO cromática: inicial mnemotécnica en gris oscuro, para que el
-// editor nunca confunda un chip de procedencia con un dot de etiqueta — los
-// dos ejes hablan visualmente lenguajes distintos (color vs letra).
-const REC_PROCEDENCIA_LABEL = {
-    declarado: 'contenido del índice',
-    reconciliado: 'reconciliado según el PCIC',
-    nuevo: 'fuera del índice'
-};
-const REC_INICIAL_PROCEDENCIA = { declarado: 'I', reconciliado: 'E', nuevo: 'F' };
-const REC_GRIS_PROCEDENCIA = '#37474F';  // mismo gris para los tres valores
+// `procedencia_indice` — eje ortogonal a `etiquetas`. El JSON guarda 3 valores
+// técnicos (declarado / reconciliado / nuevo); el dashboard muestra 4 rótulos
+// editoriales porque `reconciliado` se subdivide según el prefijo de
+// `reconciliado_con` ("indice:" → equivalente del índice; "pcic:" → respaldo
+// PCIC). Diferenciación NO cromática: inicial mnemotécnica en gris oscuro.
+const REC_GRIS_PROCEDENCIA = '#37474F';
+const REC_PROCEDENCIA_CATS = [
+    { key: 'declarado', initial: 'I', label: 'contenido del índice',
+      match: ev => ev.procedencia_indice === 'declarado' },
+    { key: 'recon_indice', initial: 'E', label: 'equivalente del índice',
+      match: ev => ev.procedencia_indice === 'reconciliado'
+                   && String(ev.reconciliado_con || '').startsWith('indice:') },
+    { key: 'recon_pcic', initial: 'P', label: 'reconciliado según el PCIC',
+      match: ev => ev.procedencia_indice === 'reconciliado'
+                   && String(ev.reconciliado_con || '').startsWith('pcic:') },
+    { key: 'nuevo', initial: 'F', label: 'fuera del índice',
+      match: ev => ev.procedencia_indice === 'nuevo' },
+];
+
+function _recCatProcedencia(ev) {
+    return REC_PROCEDENCIA_CATS.find(c => c.match(ev)) || null;
+}
 
 async function loadReciclaje() {
     renderSidebar();
@@ -903,14 +913,13 @@ function _recLeyendaChips(valores, colores, labels, cuenta) {
 
 // Leyenda compacta de procedencia: cuadrito gris con la inicial mnemotécnica
 // + rótulo + (n). Tratamiento monocromo, distinto al de etiquetas, para que
-// los dos ejes (color vs letra) no se puedan confundir.
-function _recLeyendaIniciales(valores, iniciales, labels, cuenta) {
-    return valores.map(v => {
-        const ini = iniciales[v] || '?';
-        const lab = (labels && labels[v]) || v;
-        const n = cuenta[v] || 0;
+// los dos ejes (color vs letra) no se puedan confundir. Cuatro chips porque
+// `reconciliado` se subdivide por prefijo de `reconciliado_con` (v11.77).
+function _recLeyendaIniciales(cats, cuenta) {
+    return cats.map(c => {
+        const n = cuenta[c.key] || 0;
         const dim = n === 0 ? 'opacity:.45;' : '';
-        return `<span style="display:inline-flex;align-items:center;gap:6px;${dim}"><span style="display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:4px;font-size:10px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(ini)}</span><span>${_esc(lab)}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${n})</span></span>`;
+        return `<span style="display:inline-flex;align-items:center;gap:6px;${dim}"><span style="display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:4px;font-size:10px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(c.initial)}</span><span>${_esc(c.label)}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${n})</span></span>`;
     }).join('<span style="color:#CFD8DC;margin:0 2px">·</span>');
 }
 
@@ -927,13 +936,20 @@ function renderRecLeyendas() {
     ) + `<span style="color:#CFD8DC;margin:0 2px">·</span>` +
         `<span style="display:inline-flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:${REC_DOT_SKELETON};display:inline-block"></span><span>sin etiquetar</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${sinEtiqueta})</span></span>`;
 
-    const cPr = _recContar(eventos, 'procedencia_indice');
-    const conProc = Object.values(cPr).reduce((a, b) => a + b, 0);
+    // Conteo por sub-categoría de procedencia (4 chips: declarado, reconciliado
+    // vía índice, reconciliado vía PCIC, nuevo). v11.77.
+    const cuentaCats = {};
+    let conProc = 0;
+    eventos.forEach(ev => {
+        if (!ev.procedencia_indice) return;
+        conProc += 1;
+        const cat = _recCatProcedencia(ev);
+        if (cat) cuentaCats[cat.key] = (cuentaCats[cat.key] || 0) + 1;
+    });
     const sinProc = eventosTotal - conProc;
-    const filaPr = _recLeyendaIniciales(
-        ['declarado', 'reconciliado', 'nuevo'], REC_INICIAL_PROCEDENCIA, REC_PROCEDENCIA_LABEL, cPr
-    ) + `<span style="color:#CFD8DC;margin:0 2px">·</span>` +
-        `<span style="display:inline-flex;align-items:center;gap:5px;color:#90A4AE"><span>sin asignar</span><span style="font-variant-numeric:tabular-nums">(${sinProc})</span></span>`;
+    const filaPr = _recLeyendaIniciales(REC_PROCEDENCIA_CATS, cuentaCats)
+        + `<span style="color:#CFD8DC;margin:0 2px">·</span>`
+        + `<span style="display:inline-flex;align-items:center;gap:5px;color:#90A4AE"><span>sin asignar</span><span style="font-variant-numeric:tabular-nums">(${sinProc})</span></span>`;
 
     return `<div style="margin-bottom:20px;font-size:12px;color:#546E7A">
         <div style="display:flex;align-items:baseline;gap:10px;padding:8px 0;border-bottom:1px solid #ECEFF1"><span style="min-width:170px;color:#37474F;font-weight:600">Etiqueta del evento</span><div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">${filaEt}</div></div>
@@ -986,8 +1002,13 @@ function openRecDrawer(hiloId) {
         const et = (ev.etiquetas && ev.etiquetas.length)
             ? ev.etiquetas.map(e => `<span style="font-size:10px;background:${REC_COLOR_ETIQUETA[e] || '#607D8B'};color:#fff;padding:2px 8px;border-radius:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">${_esc(e)}</span>`).join(' ')
             : `<span style="font-size:11px;color:#90A4AE;font-style:italic">sin etiquetar (esqueleto de Capa 1)</span>`;
-        const proc = ev.procedencia_indice
-            ? `<span title="${_esc(ev.procedencia_indice)}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#37474F"><span style="display:inline-flex;width:16px;height:16px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:3px;font-size:9px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(REC_INICIAL_PROCEDENCIA[ev.procedencia_indice] || '?')}</span>${_esc(REC_PROCEDENCIA_LABEL[ev.procedencia_indice] || ev.procedencia_indice)}</span>` : '';
+        const procCat = ev.procedencia_indice ? _recCatProcedencia(ev) : null;
+        const procTitle = ev.reconciliado_con
+            ? `${ev.procedencia_indice} · ${ev.reconciliado_con}`
+            : (ev.procedencia_indice || '');
+        const proc = procCat
+            ? `<span title="${_esc(procTitle)}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#37474F"><span style="display:inline-flex;width:16px;height:16px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:3px;font-size:9px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(procCat.initial)}</span>${_esc(procCat.label)}</span>`
+            : '';
         const tiempo = ev.tiempo
             ? `<span style="font-size:11px;color:#90A4AE">${_esc(ev.tiempo)}</span>` : '';
         const formas = (ev.formas && ev.formas.length)
