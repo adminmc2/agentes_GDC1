@@ -5,6 +5,10 @@
   "paginas_libro": "32-41",
   "nivel": "A1.1",
   "fuente": { "archivo": "unidades/U3/fuente/U3-nc1.pdf", "version_extraccion": "2026-05-15" },
+  "portada": {
+    "pagina": 32,
+    "descripcion": "Número grande «3» y título «La Familia» en la parte superior izquierda. A la izquierda, foto de un grupo familiar haciendo pícnic sobre el césped: varios adultos y niños sentados alrededor de comida (se ve una sandía), en exterior. Debajo, listado con cinco epígrafes precedidos de viñeta: «VOCABULARIO Parientes»; «GRAMÁTICA Presente de los verbos regulares. Interrogativos. Posesivos. Hacer un cuaderno de vocabulario»; «COMUNICACIÓN Hablar de la familia. La hora. El sonido /θ/»; «DESTREZAS Escribir un correo con información personal, sobre la familia y los compañeros de clase. Escuchar la programación de la televisión»; «CULTURA El cómic y las películas de animación»."
+  },
   "vocabulario_consolidado": {
     "principal": {
       "Parientes": {

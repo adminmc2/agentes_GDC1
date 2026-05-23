@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.92 — 2026-05-23] — Portada U3 (La Familia, p.32)
+
+Añadido `portada` a U3: número «3», título, foto de pícnic familiar y los 5 epígrafes del índice. Validador 0/0/0.
+
+---
+
 ## [v11.91 — 2026-05-23] — Portada U2 (Países de habla hispana, p.22)
 
 Añadido `portada` a U2: número «2», título, foto de 3 jóvenes en piragua y los 5 epígrafes del índice. Errata del libro «datos pesonales» (sic) mantenida verbatim. Validador 0/0/0.
