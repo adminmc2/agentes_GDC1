@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.90 — 2026-05-23] — Portada U1 (¡Hola!, p.12)
+
+Añadido `portada` a U1: número «1», título «¡Hola!», foto de dos chicos y los 5 epígrafes del índice (VOCABULARIO/GRAMÁTICA/COMUNICACIÓN/DESTREZAS/CULTURA con sus contenidos). Validador 0/0/0.
+
+---
+
 ## [v11.89 — 2026-05-23] — Portada U0 (Punto de partida, p.8)
 
 Añadido `portada` al inventario de U0 (`unidades/U0/U0-nc1-inventario.json`). Unidad atípica sin numeración: capturados verbatim el título («Punto de partida»), la foto de cubos con letras del abecedario y el índice de cuatro epígrafes. Validador 0/0/0.

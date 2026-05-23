@@ -5,6 +5,10 @@
   "paginas_libro": "12-21",
   "nivel": "A1.1",
   "fuente": { "archivo": "unidades/U1/fuente/U1-nc1.pdf", "version_extraccion": "2026-05-15" },
+  "portada": {
+    "pagina": 12,
+    "descripcion": "Número grande «1» y título «¡Hola!» en la parte superior izquierda. A la izquierda, foto de dos chicos jóvenes: uno con auriculares al cuello, camiseta naranja, sujetando libros bajo el brazo; junto a él, otro chico con mochila apoyado sobre su hombro, ambos sonriendo. Debajo, listado con cinco epígrafes precedidos de viñeta: «VOCABULARIO Objetos de clase. Nombres de las letras»; «GRAMÁTICA Verbos ser llamarse y tener (formas singulares). Artículos determinados (el, la, los, las). Masculino y femenino. Colores. Interrogativos. Recursos para la clase»; «COMUNICACIÓN Saludar. Pedir y dar información personal. Números del 1 al 20»; «DESTREZAS Mis compañeros de clase»; «CULTURA Saludos y despedidas. Tú y usted»."
+  },
   "vocabulario_consolidado": {
     "principal": {
       "Objetos de clase": {
