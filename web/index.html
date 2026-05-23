@@ -445,8 +445,13 @@ details:not([open]) > summary .acc-chevron { transform: rotate(0deg); }
     <div id="view-reciclaje" style="display:none">
         <div class="page-header"><span class="page-title">Reciclaje cross-unidad</span><div class="page-subtitle" id="rec-subtitle">Índice editorial de contenido reutilizado entre unidades.</div></div>
         <div id="rec-list"></div>
-        <div id="rec-drawer" style="display:none;position:fixed;top:0;right:0;width:480px;max-width:90vw;height:100vh;background:#fff;box-shadow:-4px 0 16px rgba(0,0,0,0.2);overflow-y:auto;z-index:1000;padding:24px"></div>
-        <div id="rec-drawer-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:999" onclick="closeRecDrawer()"></div>
+        <!-- Modal centrado del hilo (v11.85) — sustituye al drawer lateral. La
+             columna lateral no daba espacio para explicaciones largas ni para
+             el modal a página completa que pedirá `nivel: detalle` (REDISEÑO §4.4).
+             El contenedor `rec-drawer` mantiene el id por compatibilidad de JS
+             pero ahora se centra. -->
+        <div id="rec-drawer-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:999" onclick="closeRecDrawer()"></div>
+        <div id="rec-drawer" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(760px,94vw);max-height:88vh;background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.28);overflow-y:auto;z-index:1000;padding:28px 32px"></div>
     </div>
 
     <!-- ===== INVENTARIO (detalle de unidad) ===== -->

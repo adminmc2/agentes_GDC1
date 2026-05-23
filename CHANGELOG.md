@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.85 — 2026-05-23] — Dashboard: drawer lateral → modal centrado (REDISEÑO §4.4)
+
+Refactor del drawer del reciclaje en `web/index.html`. La columna lateral de 480px no daba espacio para explicaciones largas ni para el modal a página completa que el rediseño pide para `nivel: detalle` (§4.4). Sustituido por un **modal centrado** sobre overlay semi-transparente (rgba 0.55), con ancho `min(760px, 94vw)`, altura `max 88vh`, scroll interno, bordes redondeados y sombra elevada. Click fuera (overlay) cierra como antes. El id `rec-drawer` se conserva por compatibilidad con el JS — solo cambia el posicionamiento CSS. Sin tocar lógica de render ni datos. Sintaxis JS validada con `node --check`. Prepara la infraestructura para la siguiente iteración de explicaciones detalladas de Capa 2.
+
 ## [v11.84 — 2026-05-23] — Capa 2 sobre U1: etiquetas + propuestas (explicaciones pendientes)
 
 Segunda sesión real de Capa 2 IA, sobre U1. Aplicado a `unidades/nc1-reciclaje.json`:
