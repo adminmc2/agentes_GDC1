@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.98 — 2026-05-23] — Portada U9 (Ropa, p.92) — cobertura completa U0-U9
+
+Añadido `portada` a U9: número «9», título, foto de chica en tienda de ropa y los 5 epígrafes del índice. **Cobertura completa**: U0-U9 ya tienen `portada` rellena. Validador 10/10 unidades 0/0/0.
+
+---
+
 ## [v11.97 — 2026-05-23] — Portada U8 (Descripciones, p.82)
 
 Añadido `portada` a U8: número «8», título, foto de grupo de 4 jóvenes con ropa de invierno y los 5 epígrafes del índice. Validador 0/0/0.

@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-23 (v11.97 — Portada U8 (p.82, «Descripciones»). Número «8», foto de grupo de 4 jóvenes con ropa de invierno, 5 epígrafes del índice. Validador 0/0/0. Próximo: U9).
+> **Última actualización:** 2026-05-23 (v11.98 — Portada U9 (p.92, «Ropa»). **Cobertura completa**: U0-U9 ya tienen `portada` rellena. Validador 10/10 unidades 0/0/0).
 >
 > **Hito previo (v11.85):** 2026-05-23 (Dashboard: drawer lateral → modal centrado 760px/88vh — REDISEÑO §4.4).
 >
