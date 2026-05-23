@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "v11.87",
+    "version": "v12.1",
     "fecha": "2026-05-23",
     "unidades_cubiertas": [
       0,
@@ -293,6 +293,8 @@
             "p73-act7@R",
             "p73-act8",
             "p77-act11",
+            "p78-act1",
+            "p78-act2",
             "p79-act5",
             "p81-act5@R"
           ],
@@ -2159,6 +2161,83 @@
       "_grupo": "Pronombres"
     },
     {
+      "id": "gram-irregularidad-vocalica-e-ie-presente",
+      "bloque": "gramatica",
+      "titulo": "Irregularidad vocálica e→ie (presente)",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 4,
+          "etiquetas": [],
+          "evidencias": [
+            "p43-act5",
+            "p44-act5",
+            "p45-act7",
+            "p45-act8",
+            "p46-act1",
+            "p46-act2",
+            "p46-act4",
+            "p49-act5",
+            "p49-act7",
+            "p51-act1",
+            "p51-act3",
+            "p51-act6"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §9.1.1 Presente (verbos irregulares); el patrón de irregularidad vocálica e→ie no está itemizado en el inventario PCIC A1 — categoría con evidencia material fuerte en NC1."
+        },
+        {
+          "unidad": 6,
+          "etiquetas": [],
+          "evidencias": [
+            "p64-act1",
+            "p64-act2",
+            "p66-act1",
+            "p67-act6",
+            "p71-act1",
+            "p71-act7"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §9.1.1 Presente (verbos irregulares); el patrón de irregularidad vocálica e→ie no está itemizado en el inventario PCIC A1 — categoría con evidencia material fuerte en NC1."
+        }
+      ],
+      "_grupo": "Tiempos y modos verbales"
+    },
+    {
+      "id": "gram-irregularidad-vocalica-o-ue-presente",
+      "bloque": "gramatica",
+      "titulo": "Irregularidad vocálica o→ue (presente)",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 7,
+          "etiquetas": [],
+          "evidencias": [
+            "cuadro@p74",
+            "cuadro@p75#1",
+            "p73-act08",
+            "p74-act01",
+            "p74-act02",
+            "p74-act03",
+            "p75-act05",
+            "p75-act06",
+            "p75-act07",
+            "p76-act01",
+            "p76-act02",
+            "p76-act03",
+            "p77-act06",
+            "p77-act08",
+            "p81-act01",
+            "p81-act02",
+            "p81-act03"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §9.1.1 Presente (verbos irregulares); el patrón de irregularidad vocálica o→ue no está itemizado en el inventario PCIC A1 — categoría con evidencia material fuerte en NC1."
+        }
+      ],
+      "_grupo": "Tiempos y modos verbales"
+    },
+    {
       "id": "gram-marcadores-temporales-del-pasado",
       "bloque": "gramatica",
       "titulo": "Marcadores temporales del pasado",
@@ -2253,6 +2332,40 @@
         }
       ],
       "_grupo": "Construcciones"
+    },
+    {
+      "id": "gram-paradigma-regular-del-presente-ar-er-ir",
+      "bloque": "gramatica",
+      "titulo": "Paradigma regular del presente (-ar/-er/-ir)",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 3,
+          "etiquetas": [],
+          "evidencias": [
+            "cuadro@p34#1",
+            "cuadro@p34#2",
+            "p33-act10",
+            "p33-act6",
+            "p33-act8",
+            "p33-act9",
+            "p34-act1",
+            "p34-act2",
+            "p34-act3",
+            "p35-act5",
+            "p35-act6",
+            "p36-act1",
+            "p38-act1",
+            "p40-act1",
+            "p41-act1",
+            "p41-act2",
+            "p41-act3"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §9.1.1 Presente — paradigma de verbos regulares en las tres conjugaciones (-ar/-er/-ir)."
+        }
+      ],
+      "_grupo": "Tiempos y modos verbales"
     },
     {
       "id": "gram-posesivos",
@@ -2499,6 +2612,26 @@
         }
       ],
       "_grupo": "Pronombres"
+    },
+    {
+      "id": "gram-uso-del-imperativo-instrucciones-y-peticiones",
+      "bloque": "gramatica",
+      "titulo": "Uso del imperativo — instrucciones y peticiones",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 6,
+          "etiquetas": [],
+          "evidencias": [
+            "cuadro@p64#2",
+            "p65-act3",
+            "p65-act5"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:Sin entrada A1 explícita en el inventario PCIC §9; categoría de uso con evidencia material fuerte (cuadro de imperativo de U6 con explicación de uso)."
+        }
+      ],
+      "_grupo": "Tiempos y modos verbales"
     },
     {
       "id": "pron-acentuacion",

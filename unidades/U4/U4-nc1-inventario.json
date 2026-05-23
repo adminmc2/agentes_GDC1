@@ -480,6 +480,20 @@
         "descripcion": {
           "U4": "PCIC A1 §18.1 — Existencia: 'hay'. Principal en U4: forma impersonal invariable (3ª persona singular de 'haber'), expresa existencia con sustantivos contables (singulares o plurales) e incontables. Contraste con 'querer' en ejercicios p45-act7 y p45-act8 ('hay' = existencia / 'querer' = deseo)."
         }
+      },
+      "Irregularidad vocálica e→ie (presente)": {
+        "items": [
+          {"palabra": "quiero", "fuentes": ["p43-act5", "p44-act5", "p45-act7", "p45-act8", "p46-act1", "p49-act5", "p49-act7", "p51-act1", "p51-act3", "p51-act6"]},
+          {"palabra": "quieres", "fuentes": ["p43-act5", "p44-act5", "p45-act7", "p46-act4", "p51-act1", "p51-act6"]},
+          {"palabra": "quiere", "fuentes": ["p45-act7", "p45-act8", "p46-act2", "p49-act5", "p49-act7", "p51-act1"]},
+          {"palabra": "queremos", "fuentes": ["p51-act1", "p51-act3"]},
+          {"palabra": "queréis", "fuentes": ["p46-act1"]},
+          {"palabra": "quieren", "fuentes": ["p44-act5", "p45-act7", "p51-act1"]}
+        ],
+        "fuentes": ["p43-act5", "p44-act5", "p45-act7", "p45-act8", "p46-act1", "p46-act2", "p46-act4", "p49-act5", "p49-act7", "p51-act1", "p51-act3", "p51-act6"],
+        "descripcion": {
+          "U4": "PCIC A1 §9.1 Presente de indicativo — irregularidades vocálicas. Primer cierre canónico del paradigma de irregularidad vocálica e→ie en el presente, presentado con el lema testigo querer: la e radical diptonga a ie en las formas tónicas (quiero/quieres/quiere/quieren) y se mantiene en las átonas (queremos/queréis). Cuadro de p44 expone el paradigma; operacionalizado en p44-act5 (construcción 'querer + infinitivo': quiero comer, quiero ir), p45-act7/8 (contraste querer/hay: deseo vs existencia), p46-act1/2/4 (preguntas y respuestas volitivas) y reapariciones en p49-act5/7 y p51-act1/3/6. Convive con tiempos_y_verbos_consolidado.querer.rasgo_por_tiempo='irregularidad vocálica e→ie': planos distintos (categoría gramatical vs atributo del lema, REDISEÑO-EN-CURSO.md §7.2)."
+        }
       }
     },
     "recurrente": {

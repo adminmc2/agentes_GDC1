@@ -581,6 +581,32 @@
         "descripcion": {
           "U3": "Recurrente: ya canónica en U1 (paradigma de 6 personas). U3 la reactiva como soporte estructural del cuadro de conjugación del Presente de los verbos regulares (estudiar/comer/vivir, p34) y del cuadro de posesivos (p35), donde el pronombre sujeto encabeza la columna de paradigma."
         }
+      },
+      "Paradigma regular del presente (-ar/-er/-ir)": {
+        "items": [
+          {"palabra": "estudio", "fuentes": ["cuadro@p34#1", "p41-act2", "p41-act3"]},
+          {"palabra": "estudias", "fuentes": ["cuadro@p34#1", "p35-act5", "p41-act2"]},
+          {"palabra": "estudia", "fuentes": ["cuadro@p34#1", "p33-act6", "p33-act8", "p34-act1", "p34-act3", "p35-act5", "p41-act1"]},
+          {"palabra": "estudiamos", "fuentes": ["cuadro@p34#1", "p41-act1"]},
+          {"palabra": "estudiáis", "fuentes": ["cuadro@p34#1", "p34-act2"]},
+          {"palabra": "estudian", "fuentes": ["cuadro@p34#1", "p33-act10", "p34-act1"]},
+          {"palabra": "como", "fuentes": ["cuadro@p34#1", "p34-act1", "p41-act2"]},
+          {"palabra": "comes", "fuentes": ["cuadro@p34#1", "cuadro@p34#2", "p34-act2", "p34-act3", "p41-act2"]},
+          {"palabra": "come", "fuentes": ["cuadro@p34#1", "p34-act2", "p41-act3"]},
+          {"palabra": "comemos", "fuentes": ["cuadro@p34#1"]},
+          {"palabra": "coméis", "fuentes": ["cuadro@p34#1", "p34-act1"]},
+          {"palabra": "comen", "fuentes": ["cuadro@p34#1", "p41-act1"]},
+          {"palabra": "vivo", "fuentes": ["cuadro@p34#1", "p35-act5", "p36-act1"]},
+          {"palabra": "vives", "fuentes": ["cuadro@p34#1", "p34-act1", "p36-act1", "p41-act1", "p41-act3"]},
+          {"palabra": "vive", "fuentes": ["cuadro@p34#1", "p33-act10", "p33-act6", "p33-act9", "p34-act1", "p35-act5", "p35-act6", "p40-act1"]},
+          {"palabra": "vivimos", "fuentes": ["cuadro@p34#1", "p34-act1", "p41-act1"]},
+          {"palabra": "vivís", "fuentes": ["cuadro@p34#1", "p34-act1"]},
+          {"palabra": "viven", "fuentes": ["cuadro@p34#1", "cuadro@p34#2", "p33-act9", "p34-act2", "p34-act3", "p38-act1"]}
+        ],
+        "fuentes": ["cuadro@p34#1", "cuadro@p34#2", "p33-act10", "p33-act6", "p33-act8", "p33-act9", "p34-act1", "p34-act2", "p34-act3", "p35-act5", "p35-act6", "p36-act1", "p38-act1", "p40-act1", "p41-act1", "p41-act2", "p41-act3"],
+        "descripcion": {
+          "U3": "PCIC A1 §9.1 Presente de indicativo — Primer cierre canónico del paradigma regular del presente en sus tres conjugaciones (-ar/-er/-ir). Presentado en cuadro@p34#1 ('Presente de los verbos regulares') con los tres verbos modelo del libro: estudiar (-ar), comer (-er), vivir (-ir), desplegando las seis personas (yo, tú, él/ella/usted, nosotros/-as, vosotros/-as, ellos/ellas/ustedes) por terminación — 18 formas completas. Operacionalizado en p34-act1 (completar paradigma), p34-act2 (selección de forma correcta) y p34-act3 (formular preguntas con interrogativos + presente regular). El paradigma sostiene el resto de la unidad: aplicación comunicativa en presentaciones de tercera persona (p36-act1), descripción de familia (p38-act1) y diálogo de presentaciones (p41-act1/2/3). Otros lemas regulares atestados en U3 (hablar, trabajar, escribir, llamarse) aplican el paradigma pero no son verbos modelo del cuadro; sus formas viven en tiempos_y_verbos_consolidado, no como items de esta categoría. Plano separado del bloque verbal (REDISEÑO-EN-CURSO.md §7.2): aquí 'el paradigma' como contenido enseñado; el rasgo morfológico de cada lema vive en tiempos_y_verbos_consolidado.rasgo_por_tiempo."
+        }
       }
     },
     "recurrente": {

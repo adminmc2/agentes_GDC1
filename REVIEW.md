@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-23 (v11.99 — Fix U8: la foto de portada tiene 5 personas, no 4 (rectificación del autor sobre v11.97). Cobertura completa U0-U9 mantiene 10/10 0/0/0).
+> **Última actualización:** 2026-05-23 (v12.1 — Reconciliación fase 1 ↔ registry v1.7 del grupo «Tiempos y modos verbales»: 5 entradas nuevas en `gramatica_consolidada` de U3/U4/U6/U7, `_nota` a "Infinitivo simple" en el registry, notas editoriales de anticipación en `_decisiones_ia` de U1/U2/U5/U6, `nc1-reciclaje.json` regenerado. Queda resuelta la proyección mecánica fase 1 → registry → Capa 1 para estos 5 hilos. Generador sin tocar).
+>
+> **Hito previo (v12.0):** 2026-05-23 (Documentación de la deuda — registry v1.7 canonizaba 5 categorías nuevas pero no estaban retroinyectadas en `gramatica_consolidada`. Resuelta en v12.1).
 >
 > **Hito previo (v11.85):** 2026-05-23 (Dashboard: drawer lateral → modal centrado 760px/88vh — REDISEÑO §4.4).
 >
@@ -82,6 +84,8 @@ Antes de declarar un paso como ✅ completado, se verifica que TODAS estas actua
 > - **`nc1-tarjetas.json`**: requiere fase 2 primero. Sin tarjetas generadas, el global está vacío. Pendiente hasta cerrar fase 2.
 > - **`nc1-pildoras.json`**: pendiente hasta trabajar U3 vocabulario (fase 5).
 > - **`nc1-reciclaje.json`**: se puede discutir y diseñar ahora. El autor quiere definir cómo construirlo antes de implementar — formalizado como **B1.5** (gate de diseño previo a B2).
+
+> **🟠 Deuda viva — reconciliación fase 1 ↔ registry gramatical v1.7 (2026-05-23):** Las 5 categorías del grupo «Tiempos y modos verbales» se canonizaron en `gramatica-canonica.json` (v11.56, commit 0ff6c8c) pero **no se retroinyectaron** en `gramatica_consolidada` de U3/U4/U6/U7. Por eso `generar_reciclaje_capa1.py` (que lee inventario + índice, no `_apariciones` del registry) no proyecta esas categorías a `nc1-reciclaje.json`. **No es bug de render**: es divergencia entre tres capas de verdad (registry / inventarios / Capa 1). **Resolución diferida al ejecutor 2** — exige decidir frontera de modelo (¿dato verbal en `tiempos_y_verbos_consolidado` y `rasgo_por_tiempo` vs. categoría en `gramatica_consolidada`?) antes de cualquier reescritura. **No tocar el generador para leer `_apariciones`**: rompería el contrato determinista de Capa 1.
 
 ### B1. Escribir scripts Python para los JSONs globales del curso
 

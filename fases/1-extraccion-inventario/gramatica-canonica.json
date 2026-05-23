@@ -313,7 +313,8 @@
         "hablar",
         "comer",
         "vivir"
-      ]
+      ],
+      "_nota": "Tras revisión del criterio de canonización (REDISEÑO-EN-CURSO.md §6.4 + reglas-reciclaje.md §2-bis): la categoría NO baja a 'gramatica_consolidada' de inventario ni se materializa como hilo en fase 2. Las apariciones registradas en U6/U7 son flexión paradigmática del imperativo (U6, columna de infinitivo en cuadro@p64#1 como modelo de cita) o uso distribuido como segundo elemento de perífrasis y forma de cita de reflexivos (U7), sin cuadro propio de las funciones del PCIC §9.4.1 (respuesta a preguntas, sujeto, OD de verbos volitivos/psicológicos). El alta v1.7 se conserva en el registry sin evidencia material suficiente para bajar a gramatica_consolidada ni proyectarse como hilo propio; revisable si una unidad futura aporta cuadro de funciones propias del infinitivo."
     },
     "Uso del imperativo — instrucciones y peticiones": {
       "_grupo": "Tiempos y modos verbales",

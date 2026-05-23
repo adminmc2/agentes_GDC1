@@ -426,6 +426,27 @@
         "descripcion": {
           "U7": "PCIC A1 §6 Preposiciones — a, al, de, en, por. Principal en U7: se trabajan los usos básicos (movimiento, origen, lugar, momento del día) en selección múltiple (p75-act4), cloze en texto (p75-act5) y cuadro 'Uso de las preposiciones' con ejemplos prototípicos (Lucía va a clase / Lucía juega en el polideportivo / Lucía sale de su casa / Lucía va a la biblioteca por la tarde). Apoya transversalmente la sección de Comunicación 'hablar de hábitos diarios' (¿A qué hora? Por la mañana / por la noche)."
         }
+      },
+      "Irregularidad vocálica o→ue (presente)": {
+        "items": [
+          {"palabra": "me acuesto", "fuentes": ["cuadro@p74", "p74-act03", "p75-act07", "p76-act01", "p76-act03", "p81-act01", "p81-act02"]},
+          {"palabra": "te acuestas", "fuentes": ["cuadro@p74", "p76-act01", "p76-act03", "p77-act06"]},
+          {"palabra": "se acuesta", "fuentes": ["cuadro@p74", "p76-act02", "p77-act08", "p81-act01"]},
+          {"palabra": "nos acostamos", "fuentes": ["cuadro@p74"]},
+          {"palabra": "os acostáis", "fuentes": ["cuadro@p74", "p74-act01", "p81-act02"]},
+          {"palabra": "se acuestan", "fuentes": ["cuadro@p74", "p74-act02", "p81-act01"]},
+          {"palabra": "duermo", "fuentes": ["p76-act01"]},
+          {"palabra": "duermes", "fuentes": ["p76-act01"]},
+          {"palabra": "duerme", "fuentes": ["p73-act08", "p76-act02"]},
+          {"palabra": "vuelvo", "fuentes": ["cuadro@p75#1", "p75-act05", "p75-act06", "p81-act03"]},
+          {"palabra": "vuelves", "fuentes": ["cuadro@p75#1", "p75-act07", "p77-act06"]},
+          {"palabra": "vuelve", "fuentes": ["cuadro@p75#1"]},
+          {"palabra": "vuelven", "fuentes": ["cuadro@p75#1", "p81-act03"]}
+        ],
+        "fuentes": ["cuadro@p74", "cuadro@p75#1", "p73-act08", "p74-act01", "p74-act02", "p74-act03", "p75-act05", "p75-act06", "p75-act07", "p76-act01", "p76-act02", "p76-act03", "p77-act06", "p77-act08", "p81-act01", "p81-act02", "p81-act03"],
+        "descripcion": {
+          "U7": "PCIC A1 §9.1 Presente de indicativo — irregularidades vocálicas. Primer cierre canónico del paradigma de irregularidad vocálica o→ue en el presente, presentado en cuadro@p74 con dos lemas testigos del paradigma completo: acostarse (reflexivo: me acuesto, te acuestas, se acuesta, nos acostamos, os acostáis, se acuestan) y volver (cuadro@p75#1: vuelvo, vuelves, vuelve, vuelven; las formas átonas volvemos/volvéis están atestadas en tiempos_y_verbos_consolidado pero no en este cuadro). Dormir aplica el paradigma con tres formas atestadas (duermo, duermes, duerme); las átonas dormimos/dormís quedan no atestadas en U7 (sí en U6 anticipación). La o radical diptonga a ue en las formas tónicas; se mantiene en las átonas (acostamos, dormimos, volvemos). Operacionalizado en p74-act01/02/03 (paradigma reflexivo con o→ue), p75-act05/06/07 (volver en agenda diaria), p76-act01/02/03 (rutinas con acostarse/dormir) y p81-act01/02/03 (evaluación). Anticipación previa: dormir atestado materialmente en U5 (1 forma 'duerme') y U6 (paradigma casi completo), documentada en _decisiones_ia de ambas unidades. Convive con tiempos_y_verbos_consolidado.rasgo_por_tiempo='irregularidad vocálica o→ue' de los lemas (REDISEÑO-EN-CURSO.md §7.2)."
+        }
       }
     },
     "recurrente": {

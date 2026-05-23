@@ -480,6 +480,21 @@
         "descripcion": {
           "U6": "PCIC A1 §9.4 El imperativo (afirmativo, 2.ª persona del singular 'tú'). Principal en U6: primer tiempo verbal nuevo en NC1 después del Presente. El cuadro de p64 introduce el imperativo afirmativo en 2.ª persona del singular con paradigmas regulares (hablar→habla, beber→bebe, escribir→escribe) e irregulares (venir→ven, poner→pon, ir→ve, hacer→haz, decir→dime), junto con sus usos pragmáticos (dar órdenes, dar instrucciones). Se trabaja en transformación inf→imp (p65-act4), selección de orden por imagen (p65-act3) y completar instrucciones con verbos del recuadro (p65-act5: cortar, pegar, conectar, decorar). Reaparece en p71-act2 (evaluación) con ampliación: dar (a mí)→dame, venir→ven, cerrar→cierra, abrir→abre, cortar→corta, escribir→escribe. El alcance en U6 es estrictamente la 2.ª persona del singular afirmativa; el imperativo negativo y otras personas no entran en NC1."
         }
+      },
+      "Uso del imperativo — instrucciones y peticiones": {
+        "items": [
+          {"palabra": "Levántate.", "fuentes": ["p65-act3"]},
+          {"palabra": "Siéntate.", "fuentes": ["p65-act3"]},
+          {"palabra": "Dame mi tableta.", "fuentes": ["p65-act3"]},
+          {"palabra": "Escribe en la pizarra.", "fuentes": ["p65-act3"]},
+          {"palabra": "Haz los deberes.", "fuentes": ["p65-act3"]},
+          {"palabra": "Corta la botella por la mitad.", "fuentes": ["p65-act5"]},
+          {"palabra": "Pon el motor a la base de la botella.", "fuentes": ["p65-act5"]}
+        ],
+        "fuentes": ["cuadro@p64#2", "p65-act3", "p65-act5"],
+        "descripcion": {
+          "U6": "Categoría de uso pragmático del imperativo (alta v1.7 del registry vía procedimiento §2-bis de reglas-reciclaje.md con evidencia material fuerte; sin entrada A1 explícita en el inventario PCIC §9). El cuadro@p64#2 vincula el imperativo afirmativo de 2.ª persona del singular a dos sub-usos pragmáticos: petición/orden directa a interlocutor presente (p65-act3: Levántate, Siéntate, Dame mi tableta, Escribe en la pizarra, Haz los deberes — órdenes en contexto aula) e instrucción técnica secuenciada (p65-act5: Corta la botella por la mitad, Pon el motor a la base — instrucciones de construcción de un robot reciclado). Eje distinto de 'Imperativo (tú)' (que modela la flexión): esta categoría modela el valor pragmático del modo. Conviven en U6 principal como dos categorías del grupo 'Tiempos y modos verbales' del registry."
+        }
       }
     },
     "recurrente": {
@@ -533,6 +548,19 @@
         "fuentes": ["p68-act1", "p68-act3", "p68-act3@R", "p69-act5", "p69-act5@R", "p69-act6", "p69-act10", "p71-act6@R", "cuadro@p62", "p69-act4", "p70-act1", "p70-act2"],
         "descripcion": {
           "U6": "Recurrente desde U5 (principal). En U6 reaparece como soporte transversal: ser para identidad/características en descripciones de ciudades (p68-act1 'Madrid... Es una ciudad muy grande, Es una ciudad moderna'; p69-act4 'Illán de Vacas es un pueblo...'; p70-act1/act2 Cartagena), estar para ubicación de marcadores de lugar (cuadro@p62 'El árbol está...', p63-act3/act4, p68-act1 'Madrid está en el centro de España', p69-act5 '¿Dónde está Illán de Vacas?', p71-act6 '¿Dónde está la manzana?')."
+        }
+      },
+      "Irregularidad vocálica e→ie (presente)": {
+        "items": [
+          {"palabra": "cierro", "fuentes": ["p64-act2"]},
+          {"palabra": "cierras", "fuentes": ["p64-act1"]},
+          {"palabra": "cierra", "fuentes": ["p64-act1", "p64-act2", "p66-act1", "p67-act6", "p71-act1", "p71-act7"]},
+          {"palabra": "cerramos", "fuentes": ["p64-act1"]},
+          {"palabra": "cierran", "fuentes": ["p64-act1", "p71-act1"]}
+        ],
+        "fuentes": ["p64-act1", "p64-act2", "p66-act1", "p67-act6", "p71-act1", "p71-act7"],
+        "descripcion": {
+          "U6": "Recurrente desde U4 (principal con querer). En U6 el paradigma e→ie reaparece con el lema testigo cerrar, que aplica la diptongación radical en las formas tónicas (cierro/cierras/cierra/cierran) y la mantiene átona en cerramos. Sin cuadro nuevo del paradigma: la aplicación es material (p64-act1 selección de forma 'cierras/cerramos'; p64-act2 completar conjugación 'cierro/cierra/cierras') y se integra al cuadro@p64#1 (paradigma mixto de presente que cruza regulares e irregulares). Otros lemas con rasgo e→ie en U6 (querer continuación de U4, venir con rasgo mixto '1ª persona + e→ie') no entran como testigos del paradigma puro."
         }
       }
     }
@@ -625,7 +653,9 @@
       "diagnostico": "El extractor reportó la asimetría como 'deuda visual a verificar contra PDF'. Tras verificación del autor: el libro NC1 tiene literalmente 8 frases en items_libro ('1 Cerrar la ventana' a '8 Dejar el móvil') pero 10 entradas en el solucionario ('1 Abre la ventana' a '10 Mira a la pizarra'). Es error editorial del libro NC1 (asimetría items-respuestas).",
       "accion": "Mantener ambos campos literalmente como aparecen en el libro: items_libro con 8 entradas + respuestas con 10. No se inventan items 9-10 (no aparecen como input al alumno). No se retiran respuestas 9-10 (son material literal del solucionario). El alumno solo puede resolver 8 ítems; las respuestas 9-10 son material redundante del libro. Los verbos `dejar` (resp 9) y `mirar` (resp 10) NO se codifican en `actividad.tiempos_y_verbos` ni en `tiempos_y_verbos_consolidado` porque sus formas no aparecen en input atestado de la actividad (§5.10 A estricta).",
       "ramifica": "Caso documentado para revisión visual futura: si NC1 publica corrigenda corrigiendo el ítem faltante, actualizar items_libro y reactivar codificación verbal."
-    }
+    },
+    "Anticipación detectada (lote de reconciliación fase 1 ↔ registry v1.7 grupo 'Tiempos y modos verbales'): 'Irregularidad vocálica o→ue (presente)' se canoniza como principal en U7 (cuadro@p74). En U6 aparece materialmente el lema `dormir` con paradigma casi completo (dormimos, dormís, duerme, duermen, duermes, duermo) en cuadro@p64#1 (selección de forma) y p64-act1/2. No se añade entrada de o→ue en gramatica_consolidada de U6 — el paradigma aún no está canonizado. Anticipación documentada editorialmente en esta unidad. Queda como contexto para futura revisión de fase 2 / Capa 2; no la detectan automáticamente ni R1 ni la Capa 1 actual.",
+    "Reconciliación con registry v1.7 (lote de reconciliación fase 1 ↔ registry v1.7 grupo 'Tiempos y modos verbales'): gramatica-canonica.json v1.7 (2026-05-21) dio de alta cinco categorías nuevas del grupo 'Tiempos y modos verbales' vía procedimiento §2-bis de reglas-reciclaje.md. Esta edición consolida en U6: 'Irregularidad vocálica e→ie (presente)' como recurrente (lema testigo cerrar) y 'Uso del imperativo — instrucciones y peticiones' como principal (cuadro@p64#2). No contradice la decisión registrada arriba ('Presente de verbos irregulares: cerrar, ir, venir, hacer, jugar, dormir' NO se añade a gramatica-canonica.json): aquella rechazó una formulación-saco que mezclaba paradigmas heterogéneos; las altas v1.7 son paradigmas separados (e→ie, o→ue) y un uso pragmático, formulación distinta que sí cumple §2-bis punto 3. La decisión original sigue vigente para la formulación-saco rechazada."
   ],
   "paginas_detalle": [
     {
