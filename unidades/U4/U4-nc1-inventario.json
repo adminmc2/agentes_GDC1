@@ -5,6 +5,10 @@
   "paginas_libro": "42-51",
   "nivel": "A1.1",
   "fuente": { "archivo": "unidades/U4/fuente/U4-nc1.pdf", "version_extraccion": "2026-05-15" },
+  "portada": {
+    "pagina": 42,
+    "descripcion": "Número grande «4» y título «Comidas y bebidas» en la parte superior izquierda. A la izquierda, foto de varios platos servidos sobre una mesa: albóndigas en salsa de tomate, ensalada con zanahoria rallada, puré de patata y otros acompañamientos. Debajo, listado con cinco epígrafes precedidos de viñeta: «VOCABULARIO Alimentos. Comidas preparadas»; «GRAMÁTICA Verbo gustar. Artículos indeterminados (un, una, unos, unas). Nombres contables e incontables. Hay. Verbo querer. Organizar el léxico»; «COMUNICACIÓN Ofrecer. Las cosas que nos gustan y las que no nos gustan. El sonido /r/ y el sonido /ɾ/»; «DESTREZAS Comer en España»; «CULTURA Comer por la calle»."
+  },
   "vocabulario_consolidado": {
     "principal": {
       "Alimentos": {

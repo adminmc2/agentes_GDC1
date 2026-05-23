@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.93 — 2026-05-23] — Portada U4 (Comidas y bebidas, p.42)
+
+Añadido `portada` a U4: número «4», título, foto de platos servidos en mesa y los 5 epígrafes del índice. Validador 0/0/0.
+
+---
+
 ## [v11.92 — 2026-05-23] — Portada U3 (La Familia, p.32)
 
 Añadido `portada` a U3: número «3», título, foto de pícnic familiar y los 5 epígrafes del índice. Validador 0/0/0.

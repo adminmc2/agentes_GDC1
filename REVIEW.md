@@ -10,7 +10,7 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-23 (v11.92 — Portada U3 (p.32, «La Familia»). Número «3», foto de pícnic familiar, 5 epígrafes del índice. Validador 0/0/0. Próximo: U4).
+> **Última actualización:** 2026-05-23 (v11.93 — Portada U4 (p.42, «Comidas y bebidas»). Número «4», foto de platos servidos, 5 epígrafes del índice. Validador 0/0/0. Próximo: U5).
 >
 > **Hito previo (v11.85):** 2026-05-23 (Dashboard: drawer lateral → modal centrado 760px/88vh — REDISEÑO §4.4).
 >
