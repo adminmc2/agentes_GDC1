@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.94 — 2026-05-23] — Portada U5 (¿Dónde están las llaves?, p.52)
+
+Añadido `portada` a U5: número «5», título, foto de llavero con casita de madera y los 5 epígrafes del índice. Validador 0/0/0.
+
+---
+
 ## [v11.93 — 2026-05-23] — Portada U4 (Comidas y bebidas, p.42)
 
 Añadido `portada` a U4: número «4», título, foto de platos servidos en mesa y los 5 epígrafes del índice. Validador 0/0/0.
