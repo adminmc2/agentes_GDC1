@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "v11.84",
+    "version": "v11.87",
     "fecha": "2026-05-23",
     "unidades_cubiertas": [
       0,
@@ -6217,6 +6217,2645 @@
       "hilo_ref": "voc-gentilicios",
       "descripcion": "El hilo `voc · Gentilicios` aparece en U1 (2 items) y U4 (1 item), nunca como `principal` y sin respaldo en el índice del curso (`origen=excepcion` sin aliases). En cambio `voc · Adjetivos de nacionalidad` es canónico de U2 con 17 items principales. Sospecha editorial: en español los gentilicios (sustantivo: 'un español') y los adjetivos de nacionalidad ('es español') coinciden formalmente — probable solape conceptual; `Gentilicios` puede ser alias de `Adjetivos de nacionalidad` y no un hilo autónomo. Decidir cuando Capa 2 procese U2 y se vea cómo el libro trata la distinción sustantivo/adjetivo en los items principales. Opciones: (a) fusionar Gentilicios → Adjetivos de nacionalidad (alias en el registry); (b) mantener Gentilicios como hilo autónomo si se justifica una distinción funcional; (c) reclasificar los items de Gentilicios a Adjetivos de nacionalidad uno a uno.",
       "estado": "pendiente"
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-gram-pronombre-sujeto",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'gram-pronombre-sujeto'. Cuadros compartidos: cuadro@p20#1, cuadro@p20#3 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "gram-pronombre-sujeto"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1",
+          "cuadro@p20#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-verb-llamarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'verb-llamarse'. Cuadros compartidos: cuadro@p20#1, cuadro@p20#3 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "verb-llamarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1",
+          "cuadro@p20#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-verb-ser",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'verb-ser'. Cuadros compartidos: cuadro@p20#1, cuadro@p20#3 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "verb-ser"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1",
+          "cuadro@p20#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-voc-adjetivos-de-nacionalidad",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'voc-adjetivos-de-nacionalidad'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "voc-adjetivos-de-nacionalidad"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-voc-saludos-y-despedidas",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'voc-saludos-y-despedidas'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "voc-saludos-y-despedidas"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-llamarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-llamarse'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#1, cuadro@p20#3 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-llamarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#1",
+          "cuadro@p20#1",
+          "cuadro@p20#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-ser",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-ser'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#1, cuadro@p20#3, cuadro@p24#1 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-ser"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#1",
+          "cuadro@p20#1",
+          "cuadro@p20#3",
+          "cuadro@p24#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-voc-adjetivos-de-nacionalidad",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'voc-adjetivos-de-nacionalidad'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "voc-adjetivos-de-nacionalidad"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-voc-saludos-y-despedidas",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'voc-saludos-y-despedidas'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "voc-saludos-y-despedidas"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-llamarse-verb-ser",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-llamarse' y 'verb-ser'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#1, cuadro@p20#3 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-llamarse",
+          "verb-ser"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#1",
+          "cuadro@p20#1",
+          "cuadro@p20#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-llamarse-voc-adjetivos-de-nacionalidad",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-llamarse' y 'voc-adjetivos-de-nacionalidad'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-llamarse",
+          "voc-adjetivos-de-nacionalidad"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-llamarse-voc-saludos-y-despedidas",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-llamarse' y 'voc-saludos-y-despedidas'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-llamarse",
+          "voc-saludos-y-despedidas"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ser-voc-adjetivos-de-nacionalidad",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ser' y 'voc-adjetivos-de-nacionalidad'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ser",
+          "voc-adjetivos-de-nacionalidad"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ser-voc-saludos-y-despedidas",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ser' y 'voc-saludos-y-despedidas'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ser",
+          "voc-saludos-y-despedidas"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-voc-adjetivos-de-nacionalidad-voc-saludos-y-despedidas",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'voc-adjetivos-de-nacionalidad' y 'voc-saludos-y-despedidas'. Cuadros compartidos: cuadro@p20#1 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "voc-adjetivos-de-nacionalidad",
+          "voc-saludos-y-despedidas"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-voc-adjetivos-de-nacionalidad",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'voc-adjetivos-de-nacionalidad'. Cuadros compartidos: cuadro@p14#3 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "voc-adjetivos-de-nacionalidad"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-adverbios-de-cantidad-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-de-cantidad' y 'verb-tener'. Cuadros compartidos: cuadro@p85, cuadro@p87 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-adverbios-de-cantidad",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p85",
+          "cuadro@p87"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-adverbios-de-cantidad-voc-adjetivos-descriptivos",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-de-cantidad' y 'voc-adjetivos-descriptivos'. Cuadros compartidos: cuadro@p87 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-adverbios-de-cantidad",
+          "voc-adjetivos-descriptivos"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p87"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-tener-voc-adjetivos-descriptivos",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-tener' y 'voc-adjetivos-descriptivos'. Cuadros compartidos: cuadro@p87 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-tener",
+          "voc-adjetivos-descriptivos"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p87"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-articulos-indeterminados-gram-hay",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-articulos-indeterminados' y 'gram-hay'. Cuadros compartidos: cuadro@p45#1 (U4). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-articulos-indeterminados",
+          "gram-hay"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p45#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-articulos-indeterminados-voc-alimentos",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-articulos-indeterminados' y 'voc-alimentos'. Cuadros compartidos: cuadro@p45#1 (U4). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-articulos-indeterminados",
+          "voc-alimentos"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p45#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-hay-voc-alimentos",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-hay' y 'voc-alimentos'. Cuadros compartidos: cuadro@p45#1 (U4). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-hay",
+          "voc-alimentos"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p45#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-nombres-contables-e-incontables-voc-alimentos",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-nombres-contables-e-incontables' y 'voc-alimentos'. Cuadros compartidos: cuadro@p44#3 (U4). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-nombres-contables-e-incontables",
+          "voc-alimentos"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p44#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-nombres-contables-e-incontables-voc-bebida",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-nombres-contables-e-incontables' y 'voc-bebida'. Cuadros compartidos: cuadro@p44#3 (U4). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-nombres-contables-e-incontables",
+          "voc-bebida"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p44#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-voc-alimentos-voc-bebida",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'voc-alimentos' y 'voc-bebida'. Cuadros compartidos: cuadro@p44#3 (U4). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "voc-alimentos",
+          "voc-bebida"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p44#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ser-voc-colores",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ser' y 'voc-colores'. Cuadros compartidos: cuadro@p15 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ser",
+          "voc-colores"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p15"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-gram-concordancia-de-numero",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-concordancia-de-numero'. Cuadros compartidos: cuadro@p14#2, cuadro@p24#2, cuadro@p82 (U1, U2, U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "gram-concordancia-de-numero"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#2",
+          "cuadro@p24#2",
+          "cuadro@p82"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-voc-el-cuerpo-humano",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'voc-el-cuerpo-humano'. Cuadros compartidos: cuadro@p82 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "voc-el-cuerpo-humano"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p82"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-numero-voc-el-cuerpo-humano",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-numero' y 'voc-el-cuerpo-humano'. Cuadros compartidos: cuadro@p82 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-numero",
+          "voc-el-cuerpo-humano"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p82"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-oposicion-ser-estar-verb-estar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-oposicion-ser-estar' y 'verb-estar'. Cuadros compartidos: cuadro@p55, cuadro@p62 (U5, U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-oposicion-ser-estar",
+          "verb-estar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p55",
+          "cuadro@p62"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-oposicion-ser-estar-voc-marcadores-de-lugar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-oposicion-ser-estar' y 'voc-marcadores-de-lugar'. Cuadros compartidos: cuadro@p62 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-oposicion-ser-estar",
+          "voc-marcadores-de-lugar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p62"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-estar-voc-marcadores-de-lugar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-estar' y 'voc-marcadores-de-lugar'. Cuadros compartidos: cuadro@p62 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-estar",
+          "voc-marcadores-de-lugar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p62"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-articulos-determinados-gram-concordancia-de-genero",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-articulos-determinados' y 'gram-concordancia-de-genero'. Cuadros compartidos: cuadro@p14#2, cuadro@p24#2 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-articulos-determinados",
+          "gram-concordancia-de-genero"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#2",
+          "cuadro@p24#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-articulos-determinados-gram-concordancia-de-numero",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-articulos-determinados' y 'gram-concordancia-de-numero'. Cuadros compartidos: cuadro@p14#2, cuadro@p24#2 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-articulos-determinados",
+          "gram-concordancia-de-numero"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#2",
+          "cuadro@p24#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-articulos-determinados-voc-objetos-de-clase",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-articulos-determinados' y 'voc-objetos-de-clase'. Cuadros compartidos: cuadro@p14#2 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-articulos-determinados",
+          "voc-objetos-de-clase"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-voc-objetos-de-clase",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'voc-objetos-de-clase'. Cuadros compartidos: cuadro@p14#2 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "voc-objetos-de-clase"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-numero-voc-objetos-de-clase",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-numero' y 'voc-objetos-de-clase'. Cuadros compartidos: cuadro@p14#2 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-numero",
+          "voc-objetos-de-clase"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-adverbios-de-cantidad-gram-construccion-gustar-doler",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-de-cantidad' y 'gram-construccion-gustar-doler'. Cuadros compartidos: cuadro@p84#2, cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-adverbios-de-cantidad",
+          "gram-construccion-gustar-doler"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p84#2",
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-adverbios-de-cantidad-gram-pronombres-atonos-de-oi",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-de-cantidad' y 'gram-pronombres-atonos-de-oi'. Cuadros compartidos: cuadro@p84#2, cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-adverbios-de-cantidad",
+          "gram-pronombres-atonos-de-oi"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p84#2",
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-adverbios-de-cantidad-verb-doler",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-de-cantidad' y 'verb-doler'. Cuadros compartidos: cuadro@p84#2, cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-adverbios-de-cantidad",
+          "verb-doler"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p84#2",
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-construccion-gustar-doler-gram-pronombres-atonos-de-oi",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-construccion-gustar-doler' y 'gram-pronombres-atonos-de-oi'. Cuadros compartidos: cuadro@p44#1, cuadro@p84#1, cuadro@p84#2, cuadro@p85 (U4, U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-construccion-gustar-doler",
+          "gram-pronombres-atonos-de-oi"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p44#1",
+          "cuadro@p84#1",
+          "cuadro@p84#2",
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-construccion-gustar-doler-verb-doler",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-construccion-gustar-doler' y 'verb-doler'. Cuadros compartidos: cuadro@p84#1, cuadro@p84#2, cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-construccion-gustar-doler",
+          "verb-doler"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p84#1",
+          "cuadro@p84#2",
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombres-atonos-de-oi-verb-doler",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombres-atonos-de-oi' y 'verb-doler'. Cuadros compartidos: cuadro@p84#1, cuadro@p84#2, cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombres-atonos-de-oi",
+          "verb-doler"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p84#1",
+          "cuadro@p84#2",
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-adverbios-de-cantidad-verb-gustar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-de-cantidad' y 'verb-gustar'. Cuadros compartidos: cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-adverbios-de-cantidad",
+          "verb-gustar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-construccion-gustar-doler-verb-gustar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-construccion-gustar-doler' y 'verb-gustar'. Cuadros compartidos: cuadro@p44#1, cuadro@p85 (U4, U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-construccion-gustar-doler",
+          "verb-gustar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p44#1",
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-construccion-gustar-doler-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-construccion-gustar-doler' y 'verb-tener'. Cuadros compartidos: cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-construccion-gustar-doler",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombres-atonos-de-oi-verb-gustar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombres-atonos-de-oi' y 'verb-gustar'. Cuadros compartidos: cuadro@p44#1, cuadro@p85 (U4, U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombres-atonos-de-oi",
+          "verb-gustar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p44#1",
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombres-atonos-de-oi-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombres-atonos-de-oi' y 'verb-tener'. Cuadros compartidos: cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombres-atonos-de-oi",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-doler-verb-gustar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-doler' y 'verb-gustar'. Cuadros compartidos: cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-doler",
+          "verb-gustar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-doler-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-doler' y 'verb-tener'. Cuadros compartidos: cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-doler",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-gustar-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-gustar' y 'verb-tener'. Cuadros compartidos: cuadro@p85 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-gustar",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p85"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-adverbios-y-locuciones-de-lugar-verb-estar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-y-locuciones-de-lugar' y 'verb-estar'. Cuadros compartidos: cuadro@p54#2 (U5). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-adverbios-y-locuciones-de-lugar",
+          "verb-estar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p54#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-articulos-indeterminados-gram-concordancia-de-genero",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-articulos-indeterminados' y 'gram-concordancia-de-genero'. Cuadros compartidos: cuadro@p44#2 (U4). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-articulos-indeterminados",
+          "gram-concordancia-de-genero"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p44#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-gram-demostrativos",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-demostrativos'. Cuadros compartidos: cuadro@p24#3 (U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "gram-demostrativos"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p24#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-gram-posesivos",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-posesivos'. Cuadros compartidos: cuadro@p35#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "gram-posesivos"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p35#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-gram-pronombre-sujeto",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-pronombre-sujeto'. Cuadros compartidos: cuadro@p35#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "gram-pronombre-sujeto"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p35#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-posesivos-gram-pronombre-sujeto",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-posesivos' y 'gram-pronombre-sujeto'. Cuadros compartidos: cuadro@p35#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-posesivos",
+          "gram-pronombre-sujeto"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p35#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-gram-interrogativos",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-interrogativos'. Cuadros compartidos: cuadro@p34#2 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "gram-interrogativos"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-beber",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-beber'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-beber"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-dar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-dar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-dar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-decir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-decir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-decir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-escribir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-escribir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-escribir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-escuchar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-escuchar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-escuchar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-hablar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-hablar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-hablar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-ir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-dar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-dar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-dar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-decir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-decir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-decir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-escribir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-escribir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-escribir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-escuchar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-escuchar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-escuchar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-hablar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-hablar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-hablar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-ir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-beber-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-beber' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-beber",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dar-verb-decir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dar' y 'verb-decir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dar",
+          "verb-decir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dar-verb-escribir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dar' y 'verb-escribir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dar",
+          "verb-escribir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dar-verb-escuchar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dar' y 'verb-escuchar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dar",
+          "verb-escuchar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dar-verb-hablar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dar' y 'verb-hablar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dar",
+          "verb-hablar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dar-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dar' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dar",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dar-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dar' y 'verb-ir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dar",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dar-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dar' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dar",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dar-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dar' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dar",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-decir-verb-escribir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-decir' y 'verb-escribir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-decir",
+          "verb-escribir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-decir-verb-escuchar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-decir' y 'verb-escuchar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-decir",
+          "verb-escuchar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-decir-verb-hablar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-decir' y 'verb-hablar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-decir",
+          "verb-hablar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-decir-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-decir' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-decir",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-decir-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-decir' y 'verb-ir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-decir",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-decir-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-decir' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-decir",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-decir-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-decir' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-decir",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escribir-verb-escuchar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escribir' y 'verb-escuchar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escribir",
+          "verb-escuchar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escribir-verb-hablar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escribir' y 'verb-hablar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escribir",
+          "verb-hablar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escribir-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escribir' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escribir",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escribir-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escribir' y 'verb-ir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escribir",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escribir-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escribir' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escribir",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escribir-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escribir' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escribir",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escuchar-verb-hablar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escuchar' y 'verb-hablar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escuchar",
+          "verb-hablar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escuchar-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escuchar' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escuchar",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escuchar-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escuchar' y 'verb-ir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escuchar",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escuchar-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escuchar' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escuchar",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-escuchar-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-escuchar' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-escuchar",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-hablar-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-hablar' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-hablar",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-hablar-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-hablar' y 'verb-ir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-hablar",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-hablar-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-hablar' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-hablar",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-hablar-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-hablar' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-hablar",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-hacer-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-hacer' y 'verb-ir'. Cuadros compartidos: cuadro@p64#1, cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-hacer",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1",
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-hacer-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-hacer' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-hacer",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-hacer-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-hacer' y 'verb-venir'. Cuadros compartidos: cuadro@p64#1, cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-hacer",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1",
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ir-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ir' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ir",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ir-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ir' y 'verb-venir'. Cuadros compartidos: cuadro@p64#1, cuadro@p64#2, cuadro@p75#2 (U6, U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ir",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1",
+          "cuadro@p64#2",
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-poner-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-poner' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-poner",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'verb-tener'. Cuadros compartidos: cuadro@p20#3 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p20#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-tener'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#3, cuadro@p24#1 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#1",
+          "cuadro@p20#3",
+          "cuadro@p24#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-llamarse-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-llamarse' y 'verb-tener'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#3 (U1). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-llamarse",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#1",
+          "cuadro@p20#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ser-verb-tener",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ser' y 'verb-tener'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#3, cuadro@p24#1 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ser",
+          "verb-tener"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p14#1",
+          "cuadro@p20#3",
+          "cuadro@p24#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-gram-marcadores-temporales-del-pasado",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'gram-marcadores-temporales-del-pasado'. Cuadros compartidos: cuadro@p94#3 (U9). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "gram-marcadores-temporales-del-pasado"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p94#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-verb-estar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'verb-estar'. Cuadros compartidos: cuadro@p94#3 (U9). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "verb-estar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p94#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'verb-ir'. Cuadros compartidos: cuadro@p94#3 (U9). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p94#3"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-marcadores-temporales-del-pasado-verb-estar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-marcadores-temporales-del-pasado' y 'verb-estar'. Cuadros compartidos: cuadro@p94#3, cuadro@p94#4 (U9). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-marcadores-temporales-del-pasado",
+          "verb-estar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p94#3",
+          "cuadro@p94#4"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-marcadores-temporales-del-pasado-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-marcadores-temporales-del-pasado' y 'verb-ir'. Cuadros compartidos: cuadro@p94#3, cuadro@p94#4 (U9). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-marcadores-temporales-del-pasado",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p94#3",
+          "cuadro@p94#4"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-estar-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-estar' y 'verb-ir'. Cuadros compartidos: cuadro@p94#1, cuadro@p94#3, cuadro@p94#4, cuadro@p97 (U9). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-estar",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p94#1",
+          "cuadro@p94#3",
+          "cuadro@p94#4",
+          "cuadro@p97"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-oposicion-ser-estar-verb-ser",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-oposicion-ser-estar' y 'verb-ser'. Cuadros compartidos: cuadro@p55 (U5). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-oposicion-ser-estar",
+          "verb-ser"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p55"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-estar-verb-ser",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-estar' y 'verb-ser'. Cuadros compartidos: cuadro@p55 (U5). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-estar",
+          "verb-ser"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p55"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-preposiciones-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-preposiciones' y 'verb-ir'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-preposiciones",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-preposiciones-verb-jugar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-preposiciones' y 'verb-jugar'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-preposiciones",
+          "verb-jugar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-preposiciones-verb-levantarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-preposiciones' y 'verb-levantarse'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-preposiciones",
+          "verb-levantarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-preposiciones-verb-salir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-preposiciones' y 'verb-salir'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-preposiciones",
+          "verb-salir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-preposiciones-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-preposiciones' y 'verb-venir'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-preposiciones",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ir-verb-jugar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ir' y 'verb-jugar'. Cuadros compartidos: cuadro@p64#1, cuadro@p75#2 (U6, U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ir",
+          "verb-jugar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1",
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ir-verb-levantarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ir' y 'verb-levantarse'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ir",
+          "verb-levantarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ir-verb-salir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ir' y 'verb-salir'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ir",
+          "verb-salir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-jugar-verb-levantarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-jugar' y 'verb-levantarse'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-jugar",
+          "verb-levantarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-jugar-verb-salir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-jugar' y 'verb-salir'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-jugar",
+          "verb-salir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-jugar-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-jugar' y 'verb-venir'. Cuadros compartidos: cuadro@p64#1, cuadro@p75#2 (U6, U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-jugar",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1",
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-levantarse-verb-salir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-levantarse' y 'verb-salir'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-levantarse",
+          "verb-salir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-levantarse-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-levantarse' y 'verb-venir'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-levantarse",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-salir-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-salir' y 'verb-venir'. Cuadros compartidos: cuadro@p75#2 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-salir",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-comer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-comer'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-comer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-estudiar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-estudiar'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-estudiar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-vivir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-vivir'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-vivir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-comer-verb-estudiar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-comer' y 'verb-estudiar'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-comer",
+          "verb-estudiar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-comer-verb-vivir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-comer' y 'verb-vivir'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-comer",
+          "verb-vivir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-estudiar-verb-vivir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-estudiar' y 'verb-vivir'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-estudiar",
+          "verb-vivir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-cerrar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-cerrar'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-cerrar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-dormir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-dormir'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-dormir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-ir'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-jugar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-jugar'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-jugar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-pronombre-sujeto-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-venir'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-pronombre-sujeto",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-cerrar-verb-dormir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-cerrar' y 'verb-dormir'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-cerrar",
+          "verb-dormir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-cerrar-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-cerrar' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-cerrar",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-cerrar-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-cerrar' y 'verb-ir'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-cerrar",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-cerrar-verb-jugar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-cerrar' y 'verb-jugar'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-cerrar",
+          "verb-jugar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-cerrar-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-cerrar' y 'verb-venir'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-cerrar",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dormir-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dormir' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dormir",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dormir-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dormir' y 'verb-ir'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dormir",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dormir-verb-jugar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dormir' y 'verb-jugar'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dormir",
+          "verb-jugar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-dormir-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-dormir' y 'verb-venir'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-dormir",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-hacer-verb-jugar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-hacer' y 'verb-jugar'. Cuadros compartidos: cuadro@p64#1 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-hacer",
+          "verb-jugar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-pron-mayusculas-verb-llamarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'pron-mayusculas' y 'verb-llamarse'. Cuadros compartidos: cuadro@p25 (U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "pron-mayusculas",
+          "verb-llamarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p25"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-acostarse-verb-ducharse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-acostarse' y 'verb-ducharse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-acostarse",
+          "verb-ducharse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-acostarse-verb-ponerse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-acostarse' y 'verb-ponerse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-acostarse",
+          "verb-ponerse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-acostarse-verb-sentarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-acostarse' y 'verb-sentarse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-acostarse",
+          "verb-sentarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-acostarse-verb-vestirse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-acostarse' y 'verb-vestirse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-acostarse",
+          "verb-vestirse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ducharse-verb-ponerse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ducharse' y 'verb-ponerse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ducharse",
+          "verb-ponerse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ducharse-verb-sentarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ducharse' y 'verb-sentarse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ducharse",
+          "verb-sentarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ducharse-verb-vestirse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ducharse' y 'verb-vestirse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ducharse",
+          "verb-vestirse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ponerse-verb-sentarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ponerse' y 'verb-sentarse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ponerse",
+          "verb-sentarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-ponerse-verb-vestirse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ponerse' y 'verb-vestirse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-ponerse",
+          "verb-vestirse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-sentarse-verb-vestirse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-sentarse' y 'verb-vestirse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-sentarse",
+          "verb-vestirse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-salir-verb-volver",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-salir' y 'verb-volver'. Cuadros compartidos: cuadro@p75#1 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-salir",
+          "verb-volver"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#1"
+        ]
+      }
     }
   ]
 }

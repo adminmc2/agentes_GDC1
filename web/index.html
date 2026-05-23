@@ -451,7 +451,7 @@ details:not([open]) > summary .acc-chevron { transform: rotate(0deg); }
              El contenedor `rec-drawer` mantiene el id por compatibilidad de JS
              pero ahora se centra. -->
         <div id="rec-drawer-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:999" onclick="closeRecDrawer()"></div>
-        <div id="rec-drawer" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(760px,94vw);max-height:88vh;background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.28);overflow-y:auto;z-index:1000;padding:28px 32px"></div>
+        <div id="rec-drawer" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(1100px,95vw);max-height:90vh;background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.28);overflow-y:auto;z-index:1000;padding:28px 32px"></div>
     </div>
 
     <!-- ===== INVENTARIO (detalle de unidad) ===== -->
@@ -988,11 +988,28 @@ function renderRecPropuestas() {
         return `<div class="section" style="margin-bottom:20px"><div class="section-header"><h2>Propuestas</h2></div>
             <div class="section-body" style="padding:20px;color:#90A4AE;font-size:13px">Sin propuestas — la Capa 2 (sesión IA enriquecedora) aún no se ha ejecutado sobre ninguna unidad.</div></div>`;
     }
-    const filas = props.map(p => `<div style="padding:10px 12px;border-bottom:1px solid #ECEFF1;font-size:13px">
-        <span style="font-size:10px;background:#5C6BC0;color:#fff;padding:2px 7px;border-radius:8px;font-weight:700">${_esc(p.tipo || '?')}</span>
-        <span style="font-size:10px;background:#90A4AE;color:#fff;padding:2px 7px;border-radius:8px;margin-left:4px">${_esc(p.estado || '?')}</span>
-        <div style="margin-top:4px;color:#37474F">${_esc(p.descripcion || '')}</div>
-    </div>`).join('');
+    const hilosByID = {};
+    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
+    const _tit = id => (hilosByID[id] ? hilosByID[id].titulo : id);
+    const filas = props.map(p => {
+        const tipoCol = p.tipo === 'relacion_cross_hilo' ? '#7E57C2' : '#5C6BC0';
+        let extra = '';
+        if (p.tipo === 'relacion_cross_hilo' && p.relacion_candidata) {
+            const hh = p.relacion_candidata.hilos || [];
+            const cc = p.relacion_candidata.cuadros_compartidos || [];
+            const linkPar = hh.length === 2
+                ? `<a onclick="openRecDrawer('${_esc(hh[0])}')" style="color:#0D47A1;cursor:pointer;text-decoration:underline">${_esc(_tit(hh[0]))}</a> ↔ <a onclick="openRecDrawer('${_esc(hh[1])}')" style="color:#0D47A1;cursor:pointer;text-decoration:underline">${_esc(_tit(hh[1]))}</a>`
+                : '';
+            extra = `<div style="margin-top:6px;font-size:12px;color:#455A64">${linkPar}</div>
+                     <div style="margin-top:4px;font-size:11px;color:#90A4AE;font-family:monospace">${cc.map(c => _esc(c)).join(' · ')}</div>`;
+        }
+        return `<div style="padding:10px 12px;border-bottom:1px solid #ECEFF1;font-size:13px">
+            <span style="font-size:10px;background:${tipoCol};color:#fff;padding:2px 7px;border-radius:8px;font-weight:700">${_esc(p.tipo || '?')}</span>
+            <span style="font-size:10px;background:#90A4AE;color:#fff;padding:2px 7px;border-radius:8px;margin-left:4px">${_esc(p.estado || '?')}</span>
+            <div style="margin-top:4px;color:#37474F">${_esc(p.descripcion || '')}</div>
+            ${extra}
+        </div>`;
+    }).join('');
     return `<div class="section" style="margin-bottom:20px"><div class="section-header"><h2>Propuestas · ${props.length}</h2></div><div class="section-body" style="padding:8px">${filas}</div></div>`;
 }
 
@@ -1042,9 +1059,60 @@ function openRecDrawer(hiloId) {
     </div>
     <div style="border-top:3px solid ${bColor};margin-bottom:8px"></div>
     <div style="font-size:13px;color:#37474F;margin-bottom:12px"><strong>Trayectoria:</strong> ${eventos.length} eventos en U${unidadesDeHilo(h).join(', U')}</div>
-    <div style="background:#FAFAFA;border-radius:8px;overflow:hidden">${evHTML}</div>`;
+    <div style="background:#FAFAFA;border-radius:8px;overflow:hidden">${evHTML}</div>
+    ${renderRecRelaciones(h)}`;
     document.getElementById('rec-drawer-overlay').style.display = '';
     drawer.style.display = '';
+}
+
+// Relaciones cross-hilo (schema §7, v11.86) — render dentro del modal del hilo.
+// Muestra: (a) `hilo.relaciones[]` cerradas con tipo + destino + detalle;
+// (b) conteo de propuestas tipo `relacion_cross_hilo` pendientes que mencionan
+// este hilo en `relacion_candidata.hilos[]`. Los candidatos NO se renderizan
+// como grafo — solo conteo; el detalle de cada par vive en la sección de
+// Propuestas (renderRecPropuestas) hasta que el humano lo cierre.
+const REC_REL_COLOR = {
+    usa: '#7E57C2', prerrequisito: '#EF5350', activa: '#26A69A',
+    contrasta: '#FFA726', comparte: '#42A5F5',
+};
+function renderRecRelaciones(h) {
+    const cerradas = h.relaciones || [];
+    const pendientes = (recData.propuestas || []).filter(p =>
+        p.tipo === 'relacion_cross_hilo' &&
+        p.estado === 'pendiente' &&
+        ((p.relacion_candidata && p.relacion_candidata.hilos) || []).includes(h.id)
+    );
+    if (!cerradas.length && !pendientes.length) {
+        return `<div style="margin-top:20px;padding:14px;background:#FAFAFA;border-radius:8px;color:#90A4AE;font-size:12px;font-style:italic">Sin relaciones cross-hilo. Capa 2 las propone como candidatos; las aceptadas aparecen aquí.</div>`;
+    }
+    const hilosByID = {};
+    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
+    const filasCerradas = cerradas.map(r => {
+        const dest = hilosByID[r.hilo_ref];
+        const destTitulo = dest ? dest.titulo : r.hilo_ref;
+        const col = REC_REL_COLOR[r.tipo] || '#607D8B';
+        const u = (r.unidad_relevante != null)
+            ? `<span style="font-size:11px;color:#90A4AE;margin-left:6px">· U${r.unidad_relevante}</span>`
+            : `<span style="font-size:11px;color:#90A4AE;margin-left:6px;font-style:italic">· transversal</span>`;
+        return `<div style="padding:10px 12px;border-bottom:1px solid #ECEFF1">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                <span style="font-size:10px;background:${col};color:#fff;padding:2px 8px;border-radius:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">${_esc(r.tipo)}</span>
+                <span style="color:#37474F;font-size:13px">→ <a onclick="openRecDrawer('${_esc(r.hilo_ref)}')" style="color:#0D47A1;cursor:pointer;text-decoration:underline">${_esc(destTitulo)}</a></span>
+                ${u}
+            </div>
+            <div style="font-size:12px;color:#455A64;margin-top:5px;line-height:1.45">${_esc(r.detalle || '')}</div>
+        </div>`;
+    }).join('');
+    const headCerradas = cerradas.length
+        ? `<div style="font-size:13px;color:#37474F;margin:18px 0 8px"><strong>Relaciones cross-hilo · ${cerradas.length}</strong></div>
+           <div style="background:#FAFAFA;border-radius:8px;overflow:hidden">${filasCerradas}</div>`
+        : '';
+    const headPend = pendientes.length
+        ? `<div style="margin-top:12px;padding:10px 12px;background:#FFF8E1;border-left:3px solid #FFA726;border-radius:4px;font-size:12px;color:#5D4037">
+              <strong>${pendientes.length}</strong> candidato${pendientes.length === 1 ? '' : 's'} de relación cross-hilo pendiente${pendientes.length === 1 ? '' : 's'} de cierre — ver sección Propuestas.
+           </div>`
+        : '';
+    return headCerradas + headPend;
 }
 
 function closeRecDrawer() {
