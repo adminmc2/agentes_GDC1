@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.81 — 2026-05-23] — Sync `_meta.version` del canónico (dashboard muestra versión actual)
+
+Higiene. `_meta.version` de `nc1-reciclaje.json` lo escribe el generador de Capa 1; la última corrida fue en v11.76 y se quedó en `v11.77` (lectura del CHANGELOG en ese momento). Tras v11.77→v11.80 el JSON cambió varias veces sin regenerar (Capa 2 sobre U0 en v11.80 escribió etiquetas, explicación y propuestas directamente). El dashboard mostraba `v11.77` en la cabecera, desfasado del estado real. Sincronizado a `v11.81` para reflejar el contenido actual. Solo `unidades/nc1-reciclaje.json` (campo `_meta.version`).
+
 ## [v11.80 — 2026-05-23] — Capa 2 sobre U0 cerrada (primera unidad enriquecida)
 
 Primera sesión real de Capa 2 IA completada — shakedown del procedimiento §12 sobre U0 (atípica, "Punto de partida"). Cambios sobre `unidades/nc1-reciclaje.json`:
