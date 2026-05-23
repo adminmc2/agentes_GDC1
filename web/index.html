@@ -772,6 +772,18 @@ const REC_COLOR_ETIQUETA = {
 const REC_COLOR_NIVEL = { mapa: '#90A4AE', auto: '#5C6BC0', detalle: '#2E7D32' };
 const REC_DOT_SKELETON = '#CFD8DC';  // evento sin etiquetar — estado válido (Capa 1)
 
+// Color por `tipo` de relación cross-hilo (schema §7, v11.86 / v12.3).
+const REC_REL_COLOR = {
+    usa: '#7E57C2', prerrequisito: '#EF5350', activa: '#26A69A',
+    contrasta: '#FFA726', comparte: '#42A5F5',
+};
+// Sigla compacta para el tiempo verbal — usada bajo cada dot de timeline
+// y dentro del modal (v12.3). Solo aplica a bloques `verbal` y `perifrasis`.
+const REC_TIEMPO_SIGLA = {
+    'Presente': 'PRE', 'Pretérito indefinido': 'IND',
+    'Imperativo': 'IMP', 'Infinitivo': 'INF',
+};
+
 // `procedencia_indice` — eje ortogonal a `etiquetas`. El JSON guarda 3 valores
 // técnicos (declarado / reconciliado / nuevo); el dashboard muestra 4 rótulos
 // editoriales porque `reconciliado` se subdivide según el prefijo de
@@ -847,19 +859,26 @@ function recNivelBadge(nivel) {
     return `<span style="font-size:9px;background:${c};color:#fff;padding:2px 7px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">${_esc(nivel || '?')}</span>`;
 }
 
-function renderRecDots(eventosByU, hId) {
+function renderRecDots(eventosByU, hId, bloque) {
+    const conSigla = (bloque === 'verbal' || bloque === 'perifrasis');
     return REC_UNIDADES.map(u => {
         const evs = eventosByU[u];
         if (!evs || !evs.length) {
-            return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px"><div style="width:8px;height:8px;border-radius:50%;background:#ECEFF1;border:1px solid #CFD8DC"></div></div>`;
+            return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:${conSigla ? 38 : 30}px"><div style="width:8px;height:8px;border-radius:50%;background:#ECEFF1;border:1px solid #CFD8DC"></div></div>`;
         }
         const dots = evs.map(ev => {
             const c = _recDotColor(ev);
             const et = (ev.etiquetas && ev.etiquetas.length) ? ev.etiquetas.join(', ') : 'sin etiquetar (Capa 1)';
             const tip = `U${ev.unidad}${ev.tiempo ? ' · ' + ev.tiempo : ''} · ${et} · ${(ev.evidencias || []).length} evidencias`;
-            return `<div onclick="openRecDrawer('${hId}')" title="${_esc(tip)}" style="width:16px;height:16px;border-radius:50%;background:${c};cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px ${c}"></div>`;
+            const sigla = (conSigla && REC_TIEMPO_SIGLA[ev.tiempo])
+                ? `<div style="font-size:8px;color:#90A4AE;font-weight:700;letter-spacing:.3px;line-height:1;margin-top:2px">${REC_TIEMPO_SIGLA[ev.tiempo]}</div>`
+                : '';
+            return `<div onclick="openRecDrawer('${hId}')" title="${_esc(tip)}" style="display:flex;flex-direction:column;align-items:center;cursor:pointer">
+                <div style="width:16px;height:16px;border-radius:50%;background:${c};border:2px solid #fff;box-shadow:0 0 0 1px ${c}"></div>
+                ${sigla}
+            </div>`;
         }).join('');
-        return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:30px;gap:2px;flex-wrap:wrap">${dots}</div>`;
+        return `<div style="flex:1;display:flex;justify-content:center;align-items:flex-start;padding-top:4px;height:${conSigla ? 38 : 30}px;gap:4px;flex-wrap:wrap">${dots}</div>`;
     }).join('');
 }
 
@@ -873,7 +892,7 @@ function recNivelMarker(nivel) {
 function renderRecHiloRow(h, bColor, dominantNivel) {
     const eventosByU = {};
     (h.eventos || []).forEach(ev => { (eventosByU[ev.unidad] = eventosByU[ev.unidad] || []).push(ev); });
-    const puntos = renderRecDots(eventosByU, h.id);
+    const puntos = renderRecDots(eventosByU, h.id, h.bloque);
     // Solo se muestra el nivel cuando el hilo se desvía del dominante (info útil).
     const marker = (h.nivel_analisis && h.nivel_analisis !== dominantNivel)
         ? recNivelMarker(h.nivel_analisis) : '';
@@ -1044,78 +1063,477 @@ function renderRecPropuestas() {
     return `<div class="section" style="margin-bottom:20px"><div class="section-header"><h2>Propuestas · ${props.length}</h2></div><div class="section-body" style="padding:8px">${filas}</div></div>`;
 }
 
-function openRecDrawer(hiloId) {
+// Modal del reciclaje (v11.87 / v12.3).
+// Layout: cronología horizontal arriba (eventos por unidad + ramas a hilos
+// relacionados con cada evento) + dos columnas abajo (explicación editorial a
+// la izquierda; evidencias y formas del evento seleccionado a la derecha).
+// Click en un nodo de la cronología cambia el evento seleccionado.
+function openRecDrawer(hiloId, selectedIdx) {
     const h = (recData.hilos || []).find(x => x.id === hiloId);
     if (!h) return;
     const bColor = REC_COLOR_BLOQUE[h.bloque] || '#607D8B';
     const drawer = document.getElementById('rec-drawer');
     const eventos = (h.eventos || []).slice().sort((a,b) =>
         (a.unidad - b.unidad) || String(a.tiempo || '').localeCompare(String(b.tiempo || '')));
-    const evHTML = eventos.map(ev => {
-        const et = (ev.etiquetas && ev.etiquetas.length)
-            ? ev.etiquetas.map(e => `<span style="font-size:10px;background:${REC_COLOR_ETIQUETA[e] || '#607D8B'};color:#fff;padding:2px 8px;border-radius:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">${_esc(e)}</span>`).join(' ')
-            : `<span style="font-size:11px;color:#90A4AE;font-style:italic">sin etiquetar (esqueleto de Capa 1)</span>`;
-        const procCat = ev.procedencia_indice ? _recCatProcedencia(ev) : null;
-        const procTitle = ev.reconciliado_con
-            ? `${ev.procedencia_indice} · ${ev.reconciliado_con}`
-            : (ev.procedencia_indice || '');
-        const proc = procCat
-            ? `<span title="${_esc(procTitle)}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#37474F"><span style="display:inline-flex;width:16px;height:16px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:3px;font-size:9px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(procCat.initial)}</span>${_esc(procCat.label)}</span>`
-            : '';
-        // `reconciliado_con` como texto persistente (v11.79) — el chip de
-        // procedencia ya identifica el tipo; aquí se ve el referente literal
-        // sin necesidad de hover (útil en móvil/touch y para escaneo visual).
-        const reconRef = ev.reconciliado_con
-            ? `<span style="font-size:11px;color:#90A4AE;font-style:italic;margin-left:-2px">→ ${_esc(ev.reconciliado_con)}</span>`
-            : '';
-        const tiempo = ev.tiempo
-            ? `<span style="font-size:11px;color:#90A4AE">${_esc(ev.tiempo)}</span>` : '';
-        const formas = (ev.formas && ev.formas.length)
-            ? `<div style="font-size:12px;color:#37474F;margin-top:5px"><strong>Formas:</strong> ${_esc(ev.formas.join(', '))}</div>` : '';
-        const evid = (ev.evidencias && ev.evidencias.length)
-            ? `<div style="font-size:12px;color:#607D8B;margin-top:5px;font-family:monospace;line-height:1.5">${ev.evidencias.map(x => _esc(x)).join(' · ')}</div>`
-            : `<div style="font-size:11px;color:#CFD8DC;margin-top:5px">sin evidencias</div>`;
-        return `<div style="padding:10px 12px;border-bottom:1px solid #ECEFF1">
-            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><strong style="color:#0D47A1;font-size:14px">U${ev.unidad}</strong>${tiempo}${et}${proc}${reconRef}</div>
-            ${formas}${evid}
-        </div>`;
-    }).join('');
-    drawer.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:16px">
+    if (!eventos.length) {
+        drawer.innerHTML = `<div>Hilo sin eventos.</div>`;
+        document.getElementById('rec-drawer-overlay').style.display = '';
+        drawer.style.display = '';
+        return;
+    }
+    const idx = (selectedIdx == null || selectedIdx < 0 || selectedIdx >= eventos.length) ? 0 : selectedIdx;
+    const evSel = eventos[idx];
+
+    const mapa = renderRecMapaMatriz(h, eventos, idx, bColor);
+    const panelIzq = renderRecPanelExplicacion(h, evSel, bColor);
+    const panelDer = renderRecPanelEvidencias(h, evSel, bColor);
+
+    drawer.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:14px">
         <div>
             <div style="font-size:11px;color:${bColor};font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">${_esc(REC_LABEL_BLOQUE[h.bloque] || h.bloque)}${h._grupo ? ' · ' + _esc(h._grupo) : ''}</div>
             <div style="font-size:20px;font-weight:700;color:#263238">${_esc(h.titulo)}</div>
-            <div style="font-size:11px;color:#90A4AE;margin-top:6px;display:flex;align-items:center;gap:8px"><span style="font-family:monospace">${_esc(h.id)}</span>${recNivelBadge(h.nivel_analisis)}</div>
+            <div style="font-size:11px;color:#90A4AE;margin-top:6px;display:flex;align-items:center;gap:8px"><span style="font-family:monospace">${_esc(h.id)}</span>${recNivelBadge(h.nivel_analisis)} · ${eventos.length} eventos</div>
         </div>
         <button onclick="closeRecDrawer()" style="background:none;border:none;font-size:24px;cursor:pointer;color:#90A4AE;padding:0 8px">×</button>
     </div>
-    <div style="border-top:3px solid ${bColor};margin-bottom:8px"></div>
-    <div style="font-size:13px;color:#37474F;margin-bottom:12px"><strong>Trayectoria:</strong> ${eventos.length} eventos en U${unidadesDeHilo(h).join(', U')}</div>
-    <div style="background:#FAFAFA;border-radius:8px;overflow:hidden">${evHTML}</div>
-    ${renderRecRelaciones(h)}`;
+    <div style="border-top:3px solid ${bColor};margin-bottom:14px"></div>
+    ${mapa}
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px">
+        <div>${panelIzq}</div>
+        <div>${panelDer}</div>
+    </div>`;
     document.getElementById('rec-drawer-overlay').style.display = '';
     drawer.style.display = '';
 }
 
-// Relaciones cross-hilo (schema §7, v11.86) — render dentro del modal del hilo.
-// Muestra: (a) `hilo.relaciones[]` cerradas con tipo + destino + detalle;
-// (b) conteo de propuestas tipo `relacion_cross_hilo` pendientes que mencionan
-// este hilo en `relacion_candidata.hilos[]`. Los candidatos NO se renderizan
-// como grafo — solo conteo; el detalle de cada par vive en la sección de
-// Propuestas (renderRecPropuestas) hasta que el humano lo cierre.
-const REC_REL_COLOR = {
-    usa: '#7E57C2', prerrequisito: '#EF5350', activa: '#26A69A',
-    contrasta: '#FFA726', comparte: '#42A5F5',
-};
-function renderRecRelaciones(h) {
+// === Mapa de relaciones (v12.3 — matriz hilos × unidades) ===========
+// Helper: devuelve hilos relacionados con este hilo (relaciones cerradas + co-presentes
+// por cuadro compartido), agrupados por hilo destino con su lista de unidades de contacto.
+function _recRelacionados(h) {
+    const hilosByID = {};
+    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
+    // (a) relaciones cerradas por hilo destino
+    const cerradas = {};
+    (h.relaciones || []).forEach(r => {
+        cerradas[r.hilo_ref] = {
+            hilo_ref: r.hilo_ref, titulo: (hilosByID[r.hilo_ref] || {}).titulo || r.hilo_ref,
+            tipo: r.tipo, detalle: r.detalle, unidad: r.unidad_relevante, estado: 'cerrada',
+            cuadros: [],
+        };
+    });
+    // (b) candidatos pendientes
+    const pendientes = {};
+    (recData.propuestas || []).forEach(p => {
+        if (p.tipo !== 'relacion_cross_hilo' || p.estado !== 'pendiente') return;
+        const hh = (p.relacion_candidata && p.relacion_candidata.hilos) || [];
+        if (!hh.includes(h.id)) return;
+        const otro = hh.find(x => x !== h.id);
+        if (!otro) return;
+        if (cerradas[otro]) return;
+        pendientes[otro] = {
+            hilo_ref: otro, titulo: (hilosByID[otro] || {}).titulo || otro,
+            tipo: null, detalle: null,
+            cuadros: p.relacion_candidata.cuadros_compartidos || [],
+            estado: 'pendiente',
+        };
+    });
+    // unidades de contacto para los pendientes — derivar desde la coocurrencia real
+    Object.values(pendientes).forEach(rel => {
+        const otroH = hilosByID[rel.hilo_ref];
+        if (!otroH) { rel.unidades = []; return; }
+        const propCuadros = new Set(rel.cuadros);
+        const unidades = new Set();
+        (h.eventos || []).forEach(ev => {
+            const cuadrosEv = (ev.evidencias || []).filter(e => typeof e === 'string').map(e => e.split(' ')[0]);
+            if (cuadrosEv.some(c => propCuadros.has(c))) unidades.add(ev.unidad);
+        });
+        rel.unidades = [...unidades].sort((a,b)=>a-b);
+    });
+    Object.values(cerradas).forEach(rel => {
+        rel.unidades = (rel.unidad != null) ? [rel.unidad] : [];
+    });
+    return [...Object.values(cerradas), ...Object.values(pendientes)];
+}
+
+// (Borrado v12.3) Carriles + satélites — descartados a favor de la matriz.
+/* function renderRecMapaCarriles_DEPRECATED(h, eventos, selectedIdx, bColor) {
+    const hilosByID = {};
+    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
+    const rels = _recRelacionados(h);
+    const cellW = 90;  // ancho por columna (unidad)
+    const minCol = 0, maxCol = 9;
+    const colWidth = `${cellW}px`;
+    const cols = REC_UNIDADES;  // [0..9]
+
+    // Cabecera con etiquetas U0..U9
+    const header = `<div style="display:flex;align-items:center;padding-left:200px">
+        ${cols.map(u => `<div style="width:${colWidth};text-align:center;font-size:11px;font-weight:700;color:#90A4AE">U${u}</div>`).join('')}
+    </div>`;
+
+    function carril(hilo, mainHilo, selectedIdx, evs, isMain, relInfo) {
+        const evsByU = {};
+        (evs || hilo.eventos || []).forEach(ev => { evsByU[ev.unidad] = ev; });
+        const label = `<div style="width:200px;font-size:12px;font-weight:600;color:${isMain?bColor:'#455A64'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:10px">${isMain?'':'<span style="color:#CFD8DC">↳ </span>'}<a onclick="event.stopPropagation();openRecDrawer('${_esc(hilo.id)}')" style="cursor:pointer;${isMain?'pointer-events:none':'color:#0D47A1'}">${_esc(hilo.titulo)}</a></div>`;
+        const celdas = cols.map(u => {
+            const ev = evsByU[u];
+            if (!ev) return `<div style="width:${colWidth};display:flex;justify-content:center;align-items:center;height:34px"><div style="width:6px;height:1px;background:#ECEFF1"></div></div>`;
+            const c = _recDotColor(ev);
+            const et = (ev.etiquetas && ev.etiquetas.length) ? ev.etiquetas[0] : '';
+            const sel = isMain && evs && evs[selectedIdx] && evs[selectedIdx].unidad === u && evs[selectedIdx].tiempo === ev.tiempo;
+            const tag = et ? `<div style="font-size:8.5px;color:#fff;background:${c};padding:1px 5px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-top:2px">${_esc(et).slice(0,6)}</div>` : '';
+            const onclick = isMain ? `openRecDrawer('${_esc(mainHilo.id)}', ${(evs||[]).indexOf(ev)})` : `openRecDrawer('${_esc(hilo.id)}')`;
+            return `<div style="width:${colWidth};display:flex;flex-direction:column;align-items:center;justify-content:flex-start;height:34px;cursor:pointer" onclick="event.stopPropagation();${onclick}">
+                <div style="width:${sel?14:10}px;height:${sel?14:10}px;border-radius:50%;background:${c};border:${sel?'2px solid '+bColor:'1px solid #fff'};box-shadow:0 0 0 1px ${c}"></div>
+                ${tag}
+            </div>`;
+        }).join('');
+        // Etiqueta de relación al inicio del carril (solo para relacionados)
+        const relTag = isMain ? '' : (relInfo.estado === 'cerrada'
+            ? `<div style="position:absolute;left:0;top:0;width:200px;font-size:9px;color:${REC_REL_COLOR[relInfo.tipo]||'#607D8B'};font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding-right:10px;text-align:right">${_esc(relInfo.tipo)}</div>`
+            : `<div style="position:absolute;left:0;top:0;width:200px;font-size:9px;color:#FFA726;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding-right:10px;text-align:right">pendiente</div>`);
+        return `<div style="position:relative;display:flex;align-items:center;padding:6px 0;border-bottom:1px dashed #ECEFF1">${label}${celdas}${relTag}</div>`;
+    }
+
+    // Conectores verticales: para cada unidad donde el hilo principal y el relacionado
+    // tienen ambos evento, se dibuja una línea vertical etiquetada con el tipo
+    // de relación. Para simplificar usamos un overlay absoluto sobre cada carril.
+    // (Implementación visual ligera: borde lateral en las celdas que comparten unidad.)
+
+    const carrilPrincipal = carril(h, h, selectedIdx, eventos, true, null);
+    const carrilesRelacionados = rels.map(rel => {
+        const otro = hilosByID[rel.hilo_ref];
+        if (!otro) return '';
+        // marcamos en el carril relacionado solo los eventos cuyas unidades están en rel.unidades
+        const evsFiltered = (otro.eventos || []).filter(ev => (rel.unidades||[]).includes(ev.unidad));
+        // pero también queremos ver el contexto de su carril; mejor todos los eventos del otro hilo
+        return carril(otro, h, selectedIdx, otro.eventos || [], false, rel);
+    }).join('');
+
+    const sinRel = rels.length === 0
+        ? `<div style="padding:14px;color:#90A4AE;font-size:12px;font-style:italic;text-align:center">Este hilo no tiene relaciones cross-hilo (ni cerradas ni pendientes).</div>`
+        : '';
+
+    return `<div style="background:#FAFAFA;border-radius:8px;padding:14px 12px;overflow-x:auto">
+        <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Carriles paralelos — este hilo arriba; relacionados debajo</div>
+        ${header}
+        <div style="border-top:2px solid ${bColor};margin-top:4px;padding-top:4px">${carrilPrincipal}</div>
+        ${carrilesRelacionados}
+        ${sinRel}
+    </div>`;
+}
+
+function renderRecMapaSatelites_DEPRECATED(h, eventos, selectedIdx, bColor) {
+    const hilosByID = {};
+    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
+    const rels = _recRelacionados(h);
+    const evSel = eventos[selectedIdx];
+
+    // Centro: el hilo actual con su cronología compacta + selección
+    const cronoCompacta = eventos.map((ev, i) => {
+        const sel = i === selectedIdx;
+        const c = _recDotColor(ev);
+        return `<span onclick="event.stopPropagation();openRecDrawer('${_esc(h.id)}', ${i})" title="U${ev.unidad}${ev.tiempo?' · '+ev.tiempo:''}" style="cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:${sel?28:22}px;height:${sel?28:22}px;border-radius:50%;background:${c};color:#fff;font-size:10px;font-weight:700;margin:0 2px;border:${sel?'2px solid '+bColor:'1px solid #fff'};box-shadow:0 0 0 1px ${c}">U${ev.unidad}</span>`;
+    }).join('');
+
+    const centro = `<div style="background:${bColor}11;border:2px solid ${bColor};border-radius:12px;padding:14px 18px;text-align:center">
+        <div style="font-size:10px;color:${bColor};font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px">${_esc(REC_LABEL_BLOQUE[h.bloque] || h.bloque)}${h._grupo ? ' · ' + _esc(h._grupo) : ''}</div>
+        <div style="font-size:16px;font-weight:700;color:#263238;margin-bottom:8px">${_esc(h.titulo)}</div>
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:2px">${cronoCompacta}</div>
+    </div>`;
+
+    // Satélites
+    const sats = rels.map(rel => {
+        const otro = hilosByID[rel.hilo_ref];
+        const tit = otro ? otro.titulo : rel.hilo_ref;
+        const col = rel.estado === 'cerrada' ? (REC_REL_COLOR[rel.tipo] || '#607D8B') : '#FFA726';
+        const tipoLabel = rel.estado === 'cerrada' ? rel.tipo : 'pendiente';
+        const unidadesStr = (rel.unidades && rel.unidades.length) ? `U${rel.unidades.join(', U')}` : '';
+        const blq = otro ? (REC_COLOR_BLOQUE[otro.bloque] || '#607D8B') : '#607D8B';
+        const detalle = rel.detalle
+            ? `<div style="font-size:10px;color:#455A64;font-style:italic;line-height:1.3;margin-top:4px">"${_esc(rel.detalle)}"</div>`
+            : '';
+        const cuadros = (rel.cuadros && rel.cuadros.length)
+            ? `<div style="font-size:9px;color:#90A4AE;font-family:monospace;margin-top:3px">${rel.cuadros.map(c=>_esc(c)).join(' · ')}</div>`
+            : '';
+        return `<div onclick="event.stopPropagation();openRecDrawer('${_esc(rel.hilo_ref)}')" style="cursor:pointer;background:#fff;border:1px solid ${blq}55;border-radius:8px;padding:10px 12px;min-width:180px;max-width:220px;position:relative">
+            <div style="position:absolute;top:-8px;left:10px;background:${col};color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;text-transform:uppercase;letter-spacing:.5px">${_esc(tipoLabel)}</div>
+            <div style="font-size:12px;font-weight:600;color:#0D47A1;margin-top:4px">${_esc(tit)}</div>
+            <div style="font-size:10px;color:#90A4AE;margin-top:3px">${unidadesStr}</div>
+            ${detalle}${cuadros}
+        </div>`;
+    }).join('');
+
+    const sinRel = rels.length === 0
+        ? `<div style="padding:14px;color:#90A4AE;font-size:12px;font-style:italic;text-align:center;margin-top:10px">Este hilo no tiene relaciones cross-hilo.</div>`
+        : '';
+
+    return `<div style="background:#FAFAFA;border-radius:8px;padding:18px 14px">
+        <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;text-align:center">Nodo central + satélites</div>
+        <div style="display:flex;justify-content:center;margin-bottom:18px">${centro}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">${sats}</div>
+        ${sinRel}
+    </div>`;
+}
+
+} */
+// === Mapa — Matriz hilos × unidades (única variante v12.3) ==========
+// Mapa principal del modal: fila del hilo actual arriba (destacada en color
+// del bloque), filas de hilos relacionados debajo. Cada celda U0..U9 lleva
+// la etiqueta del evento en chip grande + el bloque del hilo en pastilla.
+// El evento seleccionado resalta con halo. Click en celda del hilo principal
+// = selecciona ese evento; click en celda de un hilo relacionado = navega al
+// modal de ese hilo.
+function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
+    const hilosByID = {};
+    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
+    const rels = _recRelacionados(h);
+    const cols = REC_UNIDADES;
+    const CELL_W = 78, CELL_H = 60;
+    const evSelKey = (eventos[selectedIdx] || {}).unidad + '·' + (eventos[selectedIdx] || {}).tiempo;
+
+    function celda(ev, hilo, isMain, idxEvento) {
+        if (!ev) {
+            return `<td style="padding:0;width:${CELL_W}px;height:${CELL_H}px;background:#FAFBFC;border-bottom:1px solid #ECEFF1"></td>`;
+        }
+        const c = _recDotColor(ev);
+        const et = (ev.etiquetas && ev.etiquetas.length) ? ev.etiquetas[0] : null;
+        const etTxt = et ? et.toUpperCase() : '';
+        const sel = isMain && (ev.unidad + '·' + ev.tiempo) === evSelKey;
+        const tooltipParts = [`U${ev.unidad}`];
+        if (ev.tiempo) tooltipParts.push(ev.tiempo);
+        if (et) tooltipParts.push(ev.etiquetas.join(', ')); else tooltipParts.push('sin etiqueta');
+        tooltipParts.push(`${(ev.evidencias||[]).length} evidencias`);
+        const onclick = isMain
+            ? `openRecDrawer('${_esc(hilo.id)}', ${idxEvento})`
+            : `openRecDrawer('${_esc(hilo.id)}')`;
+        const chip = et
+            ? `<div style="font-size:10px;font-weight:700;color:#fff;background:${c};padding:3px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap">${_esc(etTxt)}</div>`
+            : `<div style="font-size:9px;color:#90A4AE;font-style:italic">sin etiqueta</div>`;
+        const tiempo = ev.tiempo && REC_TIEMPO_SIGLA[ev.tiempo]
+            ? `<div style="font-size:9px;color:#607D8B;font-weight:600;margin-top:3px;letter-spacing:.3px">${REC_TIEMPO_SIGLA[ev.tiempo]}</div>`
+            : '';
+        const bg = sel ? `${bColor}22` : (isMain ? '#fff' : '#FAFBFC');
+        const border = sel ? `2px solid ${bColor}` : '1px solid #ECEFF1';
+        const ringStyle = sel ? `box-shadow:inset 0 0 0 1px ${bColor};` : '';
+        return `<td title="${_esc(tooltipParts.join(' · '))}" onclick="event.stopPropagation();${onclick}" style="padding:6px;width:${CELL_W}px;height:${CELL_H}px;background:${bg};border:${border};border-bottom:1px solid #ECEFF1;cursor:pointer;text-align:center;${ringStyle}transition:background .15s">
+            ${chip}${tiempo}
+        </td>`;
+    }
+
+    function fila(hilo, isMain, relInfo) {
+        const evsByU = {};
+        (hilo.eventos || []).forEach(ev => { evsByU[ev.unidad] = ev; });
+        // Para el hilo principal precomputamos el índice canónico de cada evento (orden de eventos[])
+        const idxByKey = {};
+        if (isMain) eventos.forEach((ev, i) => { idxByKey[ev.unidad + '·' + ev.tiempo] = i; });
+
+        const blq = REC_COLOR_BLOQUE[hilo.bloque] || '#607D8B';
+        const blqLabel = REC_LABEL_BLOQUE[hilo.bloque] || hilo.bloque;
+        const blqChip = `<span style="font-size:9px;color:${blq};background:${blq}22;padding:2px 7px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-left:8px">${_esc(blqLabel.slice(0,8))}</span>`;
+        const tit = isMain
+            ? `<span style="font-weight:700;color:${bColor};font-size:14px">${_esc(hilo.titulo)}</span>${blqChip}`
+            : `<a onclick="event.stopPropagation();openRecDrawer('${_esc(hilo.id)}')" style="color:#0D47A1;cursor:pointer;text-decoration:none;font-weight:600;font-size:13px">${_esc(hilo.titulo)}</a>${blqChip}`;
+
+        const relCol = isMain ? '<td style="border-bottom:1px solid #ECEFF1;background:#FFF"></td>' : (
+            relInfo.estado === 'cerrada'
+                ? `<td style="padding:8px 12px;border-bottom:1px solid #ECEFF1;background:#FFF;text-align:center">
+                    <span style="display:inline-block;font-size:10px;color:#fff;background:${REC_REL_COLOR[relInfo.tipo]||'#607D8B'};padding:3px 9px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap">${_esc(relInfo.tipo)}</span>
+                </td>`
+                : `<td style="padding:8px 12px;border-bottom:1px solid #ECEFF1;background:#FFF;text-align:center">
+                    <span style="display:inline-block;font-size:10px;color:#fff;background:#FFA726;padding:3px 9px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">PENDIENTE</span>
+                </td>`
+        );
+
+        const tdTitulo = `<td style="padding:10px 14px;border-bottom:1px solid #ECEFF1;background:${isMain?bColor+'08':'#fff'};white-space:nowrap;border-left:4px solid ${isMain?bColor:blq+'66'}">${tit}</td>`;
+
+        const cells = cols.map(u => {
+            const ev = evsByU[u];
+            const idxEvento = ev && isMain ? (idxByKey[ev.unidad + '·' + ev.tiempo] ?? 0) : null;
+            return celda(ev, hilo, isMain, idxEvento);
+        }).join('');
+
+        return `<tr>${tdTitulo}${relCol}${cells}</tr>`;
+    }
+
+    const headerCells = cols.map(u => `<th style="padding:8px 0;background:#F5F7FA;font-size:12px;color:#546E7A;width:${CELL_W}px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #E0E4E8">U${u}</th>`).join('');
+    const filaPrincipal = fila(h, true, null);
+    const filasRel = rels.map(rel => {
+        const otro = hilosByID[rel.hilo_ref];
+        return otro ? fila(otro, false, rel) : '';
+    }).join('');
+
+    const sinRel = rels.length === 0
+        ? `<div style="padding:18px;color:#90A4AE;font-size:13px;font-style:italic;text-align:center;background:#FAFAFA;border-radius:6px;margin-top:8px">Este hilo no tiene relaciones cross-hilo (ni cerradas ni candidatas).</div>`
+        : '';
+
+    return `<div style="background:#fff;border-radius:10px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <div style="font-size:12px;font-weight:700;color:#37474F;text-transform:uppercase;letter-spacing:.8px">Mapa del hilo × unidades</div>
+            <div style="font-size:11px;color:#90A4AE">Hilo actual + ${rels.length} relacionado${rels.length===1?'':'s'}</div>
+        </div>
+        <div style="overflow-x:auto;border:1px solid #ECEFF1;border-radius:8px">
+            <table style="border-collapse:separate;border-spacing:0;width:100%">
+                <thead><tr>
+                    <th style="padding:10px 14px;background:#F5F7FA;font-size:11px;color:#546E7A;text-align:left;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #E0E4E8;text-transform:uppercase;border-left:4px solid transparent">Hilo</th>
+                    <th style="padding:10px;background:#F5F7FA;font-size:11px;color:#546E7A;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #E0E4E8;text-transform:uppercase;text-align:center">Relación</th>
+                    ${headerCells}
+                </tr></thead>
+                <tbody>${filaPrincipal}${filasRel}</tbody>
+            </table>
+        </div>
+        ${sinRel}
+    </div>`;
+}
+
+// === FIN mapas ======================================================
+
+// (Deprecated v12.3) Cronología strip — sustituida por los 3 mapas de arriba.
+// Se conserva por si quieres volver a ella en el futuro.
+function renderRecCronologia(h, eventos, selectedIdx, bColor) {
+    const totalCols = eventos.length;
+    const nodos = eventos.map((ev, i) => {
+        const sel = (i === selectedIdx);
+        const c = _recDotColor(ev);
+        const tiempoSigla = REC_TIEMPO_SIGLA[ev.tiempo] || '';
+        const sigla = tiempoSigla
+            ? `<div style="font-size:9px;color:#90A4AE;font-weight:700;letter-spacing:.4px;margin-top:3px">${tiempoSigla}</div>` : '';
+        const ramas = renderRecRamas(h, ev);
+        return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;min-width:80px">
+            <div style="font-size:11px;color:#90A4AE;font-weight:700;margin-bottom:4px">U${ev.unidad}</div>
+            <div onclick="openRecDrawer('${_esc(h.id)}', ${i})" style="cursor:pointer;display:flex;flex-direction:column;align-items:center">
+                <div style="width:${sel?22:16}px;height:${sel?22:16}px;border-radius:50%;background:${c};border:${sel?'3px solid '+bColor:'2px solid #fff'};box-shadow:0 0 0 1px ${c}${sel?', 0 0 0 4px '+bColor+'33':''}"></div>
+                ${sigla}
+            </div>
+            <div style="margin-top:10px;width:100%;display:flex;flex-direction:column;align-items:center;gap:4px">${ramas}</div>
+        </div>`;
+    }).join(`<div style="align-self:flex-start;margin-top:24px;height:2px;background:${bColor}33;flex:0 0 20px"></div>`);
+    return `<div style="background:#FAFAFA;border-radius:8px;padding:14px 12px">
+        <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Cronología — click en un evento para ver detalle</div>
+        <div style="display:flex;align-items:stretch;justify-content:flex-start">${nodos}</div>
+    </div>`;
+}
+
+// Ramas: hilos relacionados con un evento concreto. Dos fuentes:
+// (a) relaciones cerradas del hilo cuyo `unidad_relevante` coincide con la
+//     unidad del evento (o transversales, sin unidad);
+// (b) otros hilos que comparten ≥1 cuadro con este evento en la misma unidad
+//     — útil cuando todavía no se ha cerrado relación, indica candidatos.
+function renderRecRamas(h, ev) {
+    const cuadrosEv = (ev.evidencias || []).filter(e => typeof e === 'string' && e.split(' ')[0].match(/^cuadro@/))
+        .map(e => e.split(' ')[0]);
+    const hilosByID = {};
+    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
+    // (a) relaciones cerradas
+    const rel = (h.relaciones || []).filter(r => r.unidad_relevante == null || r.unidad_relevante === ev.unidad);
+    const ramasCerradas = rel.map(r => {
+        const dest = hilosByID[r.hilo_ref];
+        const tit = dest ? dest.titulo : r.hilo_ref;
+        const col = REC_REL_COLOR[r.tipo] || '#607D8B';
+        return `<div title="${_esc(r.detalle || '')}" style="font-size:10px;line-height:1.25;padding:3px 6px;background:${col}22;border-left:2px solid ${col};border-radius:2px;width:100%;text-align:left">
+            <span style="color:${col};font-weight:700;text-transform:uppercase;letter-spacing:.4px">${_esc(r.tipo)}</span>
+            <a onclick="event.stopPropagation();openRecDrawer('${_esc(r.hilo_ref)}')" style="color:#0D47A1;text-decoration:underline;cursor:pointer;display:block">${_esc(tit)}</a>
+        </div>`;
+    }).join('');
+    // (b) hilos co-presentes en el mismo cuadro (candidatos detectados)
+    let coPresentes = new Set();
+    if (cuadrosEv.length) {
+        (recData.hilos || []).forEach(otro => {
+            if (otro.id === h.id) return;
+            const tieneCuadroCompartido = (otro.eventos || []).some(otroEv => {
+                if (otroEv.unidad !== ev.unidad) return false;
+                const otroCuadros = (otroEv.evidencias || []).filter(e => typeof e === 'string').map(e => e.split(' ')[0]);
+                return cuadrosEv.some(c => otroCuadros.includes(c));
+            });
+            if (tieneCuadroCompartido) coPresentes.add(otro.id);
+        });
+    }
+    const yaEnRel = new Set(rel.map(r => r.hilo_ref));
+    coPresentes = [...coPresentes].filter(id => !yaEnRel.has(id));
+    const ramasCoPres = coPresentes.slice(0, 4).map(id => {
+        const otro = hilosByID[id];
+        return `<div style="font-size:10px;line-height:1.25;padding:2px 6px;border-left:2px dashed #B0BEC5;color:#607D8B;width:100%;text-align:left">
+            <a onclick="event.stopPropagation();openRecDrawer('${_esc(id)}')" style="color:#546E7A;text-decoration:none;cursor:pointer">↪ ${_esc(otro ? otro.titulo : id)}</a>
+        </div>`;
+    }).join('');
+    const masTxt = coPresentes.length > 4
+        ? `<div style="font-size:10px;color:#90A4AE;font-style:italic;margin-top:2px">+${coPresentes.length - 4} más comparten cuadro</div>`
+        : '';
+    return ramasCerradas + ramasCoPres + masTxt;
+}
+
+// Panel izquierdo: explicación editorial del evento seleccionado.
+// Si el evento tiene `explicacion`, se muestra (que_dice_el_libro / analisis_ia).
+// Si no, se indica "sin explicación (pendiente de Capa 2)". También muestra
+// las relaciones cerradas globales del hilo y el aviso de candidatos pendientes.
+function renderRecPanelExplicacion(h, ev, bColor) {
+    const etiquetas = (ev.etiquetas && ev.etiquetas.length)
+        ? ev.etiquetas.map(e => `<span style="font-size:10px;background:${REC_COLOR_ETIQUETA[e] || '#607D8B'};color:#fff;padding:2px 8px;border-radius:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">${_esc(e)}</span>`).join(' ')
+        : `<span style="font-size:11px;color:#90A4AE;font-style:italic">sin etiquetar (esqueleto de Capa 1)</span>`;
+    const procCat = ev.procedencia_indice ? _recCatProcedencia(ev) : null;
+    const procTitle = ev.reconciliado_con
+        ? `${ev.procedencia_indice} · ${ev.reconciliado_con}`
+        : (ev.procedencia_indice || '');
+    const proc = procCat
+        ? `<div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#37474F;margin-top:6px" title="${_esc(procTitle)}"><span style="display:inline-flex;width:16px;height:16px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:3px;font-size:9px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(procCat.initial)}</span>${_esc(procCat.label)}${ev.reconciliado_con ? `<span style="color:#90A4AE;font-style:italic">→ ${_esc(ev.reconciliado_con)}</span>` : ''}</div>`
+        : '';
+    let explic;
+    if (ev.explicacion && (ev.explicacion.que_dice_el_libro || ev.explicacion.analisis_ia)) {
+        explic = `
+            <div style="margin-top:14px">
+                <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px">Lo que dice el libro <span style="color:#90A4AE;font-weight:400;letter-spacing:0;text-transform:none">· ${_esc(ev.explicacion.fuente || '')}</span></div>
+                <div style="font-size:13px;color:#37474F;line-height:1.5">${_esc(ev.explicacion.que_dice_el_libro || '')}</div>
+            </div>
+            <div style="margin-top:14px">
+                <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px">Análisis editorial</div>
+                <div style="font-size:13px;color:#37474F;line-height:1.5">${_esc(ev.explicacion.analisis_ia || '')}</div>
+            </div>`;
+    } else {
+        explic = `<div style="margin-top:14px;padding:14px;background:#FAFAFA;border-radius:6px;color:#90A4AE;font-size:12px;font-style:italic">Sin explicación editorial — pendiente de Capa 2.</div>`;
+    }
+    const relacionesGlob = renderRecRelacionesGlobales(h);
+    return `
+        <div style="background:#fff;border:1px solid ${bColor}33;border-radius:8px;padding:14px 16px">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px">
+                <strong style="color:${bColor};font-size:16px">U${ev.unidad}</strong>
+                ${ev.tiempo ? `<span style="font-size:11px;color:#90A4AE">${_esc(ev.tiempo)}</span>` : ''}
+                ${etiquetas}
+            </div>
+            ${proc}
+            ${explic}
+        </div>
+        ${relacionesGlob}`;
+}
+
+// Panel derecho: evidencias + formas del evento seleccionado.
+function renderRecPanelEvidencias(h, ev, bColor) {
+    const evidencias = (ev.evidencias && ev.evidencias.length)
+        ? ev.evidencias.map(e => `<div style="font-family:monospace;font-size:12px;color:#37474F;padding:4px 8px;background:#FAFAFA;border-radius:3px;margin-bottom:3px">${_esc(e)}</div>`).join('')
+        : `<div style="color:#CFD8DC;font-size:11px;font-style:italic">sin evidencias</div>`;
+    const formas = (ev.formas && ev.formas.length)
+        ? `<div style="margin-top:14px">
+            <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px">Formas trabajadas (${ev.formas.length})</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px">${ev.formas.map(f => `<span style="font-size:12px;background:${bColor}22;color:#37474F;padding:3px 8px;border-radius:9px;font-family:monospace">${_esc(f)}</span>`).join('')}</div>
+        </div>` : '';
+    return `
+        <div style="background:#fff;border:1px solid ${bColor}33;border-radius:8px;padding:14px 16px">
+            <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px">Evidencias del evento (${(ev.evidencias || []).length})</div>
+            ${evidencias}
+            ${formas}
+        </div>`;
+}
+
+// Relaciones cerradas a nivel hilo (globales — no por evento) + aviso de
+// candidatos pendientes. Antes vivía en `renderRecRelaciones`; aquí se
+// reubica como subpanel del panel izquierdo del modal v11.87.
+function renderRecRelacionesGlobales(h) {
     const cerradas = h.relaciones || [];
     const pendientes = (recData.propuestas || []).filter(p =>
         p.tipo === 'relacion_cross_hilo' &&
         p.estado === 'pendiente' &&
         ((p.relacion_candidata && p.relacion_candidata.hilos) || []).includes(h.id)
     );
-    if (!cerradas.length && !pendientes.length) {
-        return `<div style="margin-top:20px;padding:14px;background:#FAFAFA;border-radius:8px;color:#90A4AE;font-size:12px;font-style:italic">Sin relaciones cross-hilo. Capa 2 las propone como candidatos; las aceptadas aparecen aquí.</div>`;
-    }
+    if (!cerradas.length && !pendientes.length) return '';
     const hilosByID = {};
     (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
     const filasCerradas = cerradas.map(r => {
@@ -1125,25 +1543,25 @@ function renderRecRelaciones(h) {
         const u = (r.unidad_relevante != null)
             ? `<span style="font-size:11px;color:#90A4AE;margin-left:6px">· U${r.unidad_relevante}</span>`
             : `<span style="font-size:11px;color:#90A4AE;margin-left:6px;font-style:italic">· transversal</span>`;
-        return `<div style="padding:10px 12px;border-bottom:1px solid #ECEFF1">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-                <span style="font-size:10px;background:${col};color:#fff;padding:2px 8px;border-radius:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">${_esc(r.tipo)}</span>
-                <span style="color:#37474F;font-size:13px">→ <a onclick="openRecDrawer('${_esc(r.hilo_ref)}')" style="color:#0D47A1;cursor:pointer;text-decoration:underline">${_esc(destTitulo)}</a></span>
+        return `<div style="padding:8px 10px;border-bottom:1px solid #ECEFF1">
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+                <span style="font-size:10px;background:${col};color:#fff;padding:2px 7px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:.4px">${_esc(r.tipo)}</span>
+                <span style="font-size:12px;color:#37474F">→ <a onclick="openRecDrawer('${_esc(r.hilo_ref)}')" style="color:#0D47A1;cursor:pointer;text-decoration:underline">${_esc(destTitulo)}</a></span>
                 ${u}
             </div>
-            <div style="font-size:12px;color:#455A64;margin-top:5px;line-height:1.45">${_esc(r.detalle || '')}</div>
+            <div style="font-size:11px;color:#455A64;margin-top:4px;line-height:1.4">${_esc(r.detalle || '')}</div>
         </div>`;
     }).join('');
-    const headCerradas = cerradas.length
-        ? `<div style="font-size:13px;color:#37474F;margin:18px 0 8px"><strong>Relaciones cross-hilo · ${cerradas.length}</strong></div>
-           <div style="background:#FAFAFA;border-radius:8px;overflow:hidden">${filasCerradas}</div>`
-        : '';
-    const headPend = pendientes.length
-        ? `<div style="margin-top:12px;padding:10px 12px;background:#FFF8E1;border-left:3px solid #FFA726;border-radius:4px;font-size:12px;color:#5D4037">
-              <strong>${pendientes.length}</strong> candidato${pendientes.length === 1 ? '' : 's'} de relación cross-hilo pendiente${pendientes.length === 1 ? '' : 's'} de cierre — ver sección Propuestas.
-           </div>`
-        : '';
-    return headCerradas + headPend;
+    const blockCerradas = cerradas.length
+        ? `<div style="margin-top:14px">
+            <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px">Relaciones cross-hilo · ${cerradas.length}</div>
+            <div style="background:#FAFAFA;border-radius:6px;overflow:hidden">${filasCerradas}</div>
+        </div>` : '';
+    const avisoPend = pendientes.length
+        ? `<div style="margin-top:10px;padding:8px 10px;background:#FFF8E1;border-left:3px solid #FFA726;border-radius:4px;font-size:11px;color:#5D4037">
+            <strong>${pendientes.length}</strong> candidato${pendientes.length === 1 ? '' : 's'} de relación cross-hilo pendiente${pendientes.length === 1 ? '' : 's'} — ver sección Propuestas.
+        </div>` : '';
+    return blockCerradas + avisoPend;
 }
 
 function closeRecDrawer() {

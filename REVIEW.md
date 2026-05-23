@@ -10,9 +10,11 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-23 (v12.1 — Reconciliación fase 1 ↔ registry v1.7 del grupo «Tiempos y modos verbales»: 5 entradas nuevas en `gramatica_consolidada` de U3/U4/U6/U7, `_nota` a "Infinitivo simple" en el registry, notas editoriales de anticipación en `_decisiones_ia` de U1/U2/U5/U6, `nc1-reciclaje.json` regenerado. Queda resuelta la proyección mecánica fase 1 → registry → Capa 1 para estos 5 hilos. Generador sin tocar).
+> **Última actualización:** 2026-05-24 (v12.3 — Modal del reciclaje rediseñado: strip de dots → **mapa matriz hilos × unidades** que enseña la trayectoria del hilo y las relaciones cross-hilo como filas paralelas con tipo de relación en chip de color. Celda con etiqueta + sigla de tiempo; click en celda selecciona evento o navega a hilo relacionado. Render de tiempos verbales también en la timeline principal. Cierra la Fase 1 del plan editorial — infra visual lista para Fase 2 (explicaciones U1)).
 >
-> **Hito previo (v12.0):** 2026-05-23 (Documentación de la deuda — registry v1.7 canonizaba 5 categorías nuevas pero no estaban retroinyectadas en `gramatica_consolidada`. Resuelta en v12.1).
+> **Hito previo (v12.2):** 2026-05-24 (Dashboard sub-agrupa por `_grupo` en el bloque gramatical + deuda B.D1 abierta).
+>
+> **Hito previo (v12.1):** 2026-05-23 (Reconciliación fase 1 ↔ registry v1.7 — grupo "Tiempos y modos verbales": 5 entradas nuevas + regeneración canónico).
 >
 > **Hito previo (v11.85):** 2026-05-23 (Dashboard: drawer lateral → modal centrado 760px/88vh — REDISEÑO §4.4).
 >
