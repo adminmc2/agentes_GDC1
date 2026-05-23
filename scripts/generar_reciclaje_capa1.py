@@ -127,22 +127,30 @@ class Registries:
 
     def __init__(self):
         campos = cargar_json(REG_CAMPOS)["campos"]
-        # canónico -> conjunto de aliases del índice (para el triage `declarado`)
+        # canónico -> conjunto de aliases del índice (slugs)
         self.vocab = {}
+        # Entradas crudas indexadas por canónico — para resolver procedencia
+        # vía `origen` + `aliases_indice` (v11.76, REDISEÑO §9.2).
+        self.campos_raw = {}
         for c in campos:
             self.vocab[c["canonico"]] = {
                 slug(a) for a in c.get("aliases_indice", [])
             }
+            self.campos_raw[c["canonico"]] = c
 
         gram = cargar_json(REG_GRAMATICA)["categorias"]
-        # categoría -> _grupo
         self.gramatica = {k: v.get("_grupo") for k, v in gram.items()}
+        self.gramatica_raw = gram  # categoria -> {_grupo, _pcic_ref, ...}
 
         pron = cargar_json(REG_PRONORTO)["categorias"]
         self.pronorto = set(pron.keys())
+        self.pronorto_raw = pron
 
         self.verbos = set(cargar_json(REG_VERBOS)["verbos"].keys())
-        self.perifrasis = set(cargar_json(REG_PERIFRASIS)["perifrasis"].keys())
+
+        perif = cargar_json(REG_PERIFRASIS)["perifrasis"]
+        self.perifrasis = set(perif.keys())
+        self.perifrasis_raw = perif
 
     def canonico(self, bloque: str, titulo: str) -> bool:
         if bloque == "vocabulario":
@@ -235,32 +243,49 @@ class IndiceCurso:
     )
 
     def __init__(self, curso: dict):
-        slugs = set()
+        # slug → entrada literal del índice (primer match preservado).
+        # Mantenemos el texto original para poder construir `reconciliado_con:
+        # "indice:<entrada>"` cuando hay alias resolution (v11.76).
+        slug_to_entrada = {}
         for u in curso.get("unidades", []):
             for campo in self._CAMPOS_INDICE:
                 valor = u.get(campo)
                 if valor is None:
                     continue
                 items = [valor] if isinstance(valor, str) else valor
-                slugs.update(slug(x) for x in items)
-        self._slugs = slugs
+                for item in items:
+                    s = slug(item)
+                    slug_to_entrada.setdefault(s, item)
+        self._slug_to_entrada = slug_to_entrada
+        self._slugs = set(slug_to_entrada.keys())
 
-    def declarado(self, titulo: str) -> bool:
-        """True si el slug del título canónico coincide literalmente con
-        alguna entrada del índice del curso (en cualquier unidad).
+    def declarado(self, titulo: str):
+        """Devuelve la entrada literal del índice que matchea el título
+        canónico (curso-wide; literal o prefijo). None si no hay match.
 
         Acepta prefijo del slug del índice — absorbe paréntesis del índice
-        ('Artículos determinados (el, la, los, las)' es declarado para el
-        canónico 'Artículos determinados'). NO acepta aliases: si la relación
-        es por alias, queda para Capa 2 como `reconciliado` (§9.2).
+        ('Artículos determinados (el, la, los, las)' matchea el canónico
+        'Artículos determinados'). NO acepta aliases: para alias-matching,
+        usar `entrada_para_alias` (v11.76).
         """
         objetivo = slug(titulo)
         if not objetivo:
-            return False
-        for entrada in self._slugs:
-            if entrada == objetivo or entrada.startswith(objetivo + "-"):
-                return True
-        return False
+            return None
+        # Match exacto primero
+        if objetivo in self._slugs:
+            return self._slug_to_entrada[objetivo]
+        # Match prefijo
+        for entrada_slug, entrada_txt in self._slug_to_entrada.items():
+            if entrada_slug.startswith(objetivo + "-"):
+                return entrada_txt
+        return None
+
+    def entrada_para_alias(self, alias: str):
+        """Devuelve la entrada literal del índice cuyo slug iguala al alias
+        slug, o None si no hay match. Usado por la resolución `indice:<X>` del
+        `reconciliado` mecánico (v11.76)."""
+        s = slug(alias)
+        return self._slug_to_entrada.get(s)
 
 
 # --------------------------------------------------------------------------
@@ -294,6 +319,65 @@ class Constructor:
             self.hilos[hid] = h
         return h
 
+    def resolver_procedencia(self, bloque: str, titulo: str):
+        """Triage identitario mecánico (REDISEÑO §9, v11.76).
+
+        Devuelve `(procedencia, reconciliado_con)` o `(None, None)`:
+          - `declarado` — slug literal del título canónico en el índice del curso.
+          - `reconciliado` + `"indice:<entrada>"` — alias de una entrada del
+            índice resuelto vía registry (aliases_indice en vocab).
+          - `reconciliado` + `"pcic:<ref>"` o `"pcic:A1"` — respaldo PCIC sin
+            entrada en el curso (origen=pcic_a1 en vocab; _pcic_ref en
+            gramatica/pron/perif).
+          - `nuevo` — sin respaldo de ningún tipo.
+          - `(None, None)` — bloque `verbal`: Capa 2 lo decide (los lemas
+            verbales no llevan respaldo PCIC estructurado en su registry).
+        """
+        if bloque == "verbal":
+            return None, None
+        if self.indice.declarado(titulo) is not None:
+            return "declarado", None
+        if bloque == "vocabulario":
+            entry = self.reg.campos_raw.get(titulo)
+            if entry is not None:
+                # 1) ¿algún alias coincide con una entrada del índice?
+                for alias in entry.get("aliases_indice") or []:
+                    entrada = self.indice.entrada_para_alias(alias)
+                    if entrada:
+                        return "reconciliado", f"indice:{entrada}"
+                # 2) ¿respaldo PCIC (origen=pcic_a1)?
+                if entry.get("origen") == "pcic_a1":
+                    return "reconciliado", "pcic:A1"
+                # 3) origen=excepcion sin aliases → contenido sin respaldo
+                return "nuevo", None
+        elif bloque == "gramatica":
+            entry = self.reg.gramatica_raw.get(titulo)
+            ref = (entry or {}).get("_pcic_ref")
+            if ref:
+                return "reconciliado", f"pcic:{ref}"
+            return "nuevo", None
+        elif bloque == "pronunciacion_ortografia":
+            entry = self.reg.pronorto_raw.get(titulo)
+            ref = (entry or {}).get("_pcic_ref")
+            if ref:
+                return "reconciliado", f"pcic:{ref}"
+            return "nuevo", None
+        elif bloque == "perifrasis":
+            entry = self.reg.perifrasis_raw.get(titulo)
+            ref = (entry or {}).get("_pcic_ref")
+            if ref:
+                return "reconciliado", f"pcic:{ref}"
+            return "nuevo", None
+        return "nuevo", None
+
+    def _aplicar_procedencia(self, evento: dict, bloque: str, titulo: str):
+        """Aplica el resultado del resolver al evento, sin meter campos `None`."""
+        proc, recon = self.resolver_procedencia(bloque, titulo)
+        if proc is not None:
+            evento["procedencia_indice"] = proc
+        if recon is not None:
+            evento["reconciliado_con"] = recon
+
     def add_evento(self, bloque, titulo, unidad, evidencias, tiempo=None,
                    formas=None):
         """Registra (o fusiona) un evento mecánico en su hilo."""
@@ -322,43 +406,43 @@ class Constructor:
 
         evento = {
             "unidad": unidad,
-            "etiquetas": [],  # vacío: lo puebla la Capa 2 (§11.2)
+            "etiquetas": [],
             "evidencias": sorted(set(evidencias or [])),
         }
         if tiempo is not None:
             evento["tiempo"] = tiempo
         if bloque == "verbal":
             evento["formas"] = sorted(set(formas or []))
-        # Triage mecánico — eje identitario curso-wide, sin aliases (§9, v11.75).
-        # La Capa 2 decide `reconciliado`/`nuevo` con cierre humano.
-        if self.indice.declarado(titulo):
-            evento["procedencia_indice"] = "declarado"
+        # Triage identitario mecánico, v11.76 — 4 bloques resueltos en Capa 1;
+        # verbal queda sin asignar (Capa 2 decide).
+        self._aplicar_procedencia(evento, bloque, titulo)
         hilo["eventos"].append(evento)
 
     def add_evento_mapa(self, bloque: str, titulo: str, unidad: int):
         """Registra un evento de nivel `mapa` desde el índice del curso (§4.2).
 
-        `titulo` ya viene resuelto y es canónico (`Registries.resolver`). El
-        evento no lleva evidencias ni etiquetas. La procedencia se decide con
-        la misma regla curso-wide literal que en el paso de inventario — si
-        el título es alias del índice (no literal), queda sin procedencia y
-        la Capa 2 propondrá `reconciliado` con cierre humano (§9.2).
+        Procedencia mecánica via el resolver — el evento queda con la misma
+        clasificación que tendría si viniera del inventario.
         """
         self.unidades.add(unidad)
         hilo = self._hilo(bloque, titulo)
-        declarado = self.indice.declarado(titulo)
+        proc, recon = self.resolver_procedencia(bloque, titulo)
         for ev in hilo["eventos"]:
             if ev["unidad"] == unidad and ev.get("tiempo") is None:
-                if declarado:
-                    ev["procedencia_indice"] = "declarado"
+                if proc is not None:
+                    ev["procedencia_indice"] = proc
+                if recon is not None:
+                    ev["reconciliado_con"] = recon
                 return
         nuevo_ev = {
             "unidad": unidad,
             "etiquetas": [],
             "evidencias": [],
         }
-        if declarado:
-            nuevo_ev["procedencia_indice"] = "declarado"
+        if proc is not None:
+            nuevo_ev["procedencia_indice"] = proc
+        if recon is not None:
+            nuevo_ev["reconciliado_con"] = recon
         hilo["eventos"].append(nuevo_ev)
 
     def finalizar_niveles(self):
@@ -535,62 +619,187 @@ def procesar_indice(constructor: Constructor, curso: dict, cubiertas: set) -> li
 # --------------------------------------------------------------------------
 # validación de la salida — schema general + invariantes §11.4 de la Capa 1
 # --------------------------------------------------------------------------
-def validar_capa1(reciclaje: dict) -> list:
-    """Invariantes específicas de la SALIDA de la Capa 1 (§11.4).
+_PROCEDENCIAS_CAPA1 = {"declarado", "reconciliado", "nuevo"}
 
-    Complementa al chequeo estructural general (`validar_schema`, en
-    `validar_reciclaje.py`): comprueba lo que la Capa 1 promete por encima
-    del schema — no asigna etiquetas, no escribe `reconciliado`/`nuevo`, no
-    fabrica `explicacion`/`detalle`. Estas comprobaciones NO aplican a un
-    `nc1-reciclaje.json` enriquecido por la Capa 2, por eso viven aquí y no
-    en el validador estructural compartido.
+
+def validar_capa1(reciclaje: dict) -> list:
+    """Invariantes de la salida MECÁNICA de la Capa 1 (§11.4, ajustado v11.76).
+
+    Complementa el chequeo estructural (`validar_schema`). La Capa 1 ahora
+    resuelve mecánicamente `declarado`, `reconciliado` y `nuevo` para los 4
+    bloques no-verbales (vocab/gram/pron/perif). Verbal queda sin asignar
+    para que la Capa 2 lo decida. La Capa 1 sigue sin asignar etiquetas y
+    sin fabricar explicacion/detalle.
+
+    Nota: estas invariantes describen lo que la propia Capa 1 produce. Tras
+    una sesión de Capa 2, las etiquetas y explicaciones legítimas conviven en
+    el archivo y el validador estructural sí las acepta — `validar_capa1` se
+    usa al **regenerar** sobre un archivo recién creado, no sobre uno ya
+    enriquecido (por eso el flujo de merge no destructivo).
     """
     errores = []
     for h in reciclaje.get("hilos", []):
         hid = h.get("id", "<sin-id>")
-        # la Capa 1 nunca fabrica el nivel `detalle` (invariante 9)
-        if "detalle" in h:
-            errores.append(
-                f"hilo {hid}: 'detalle' presente en salida de Capa 1 (invariante 9)"
-            )
         for ev in h.get("eventos", []):
             unidad = ev.get("unidad")
-            # la Capa 1 nunca asigna etiquetas (invariante 9)
-            if ev.get("etiquetas"):
-                errores.append(
-                    f"hilo {hid} u{unidad}: etiquetas no vacías en salida de Capa 1"
-                    " (invariante 9)"
-                )
-            # triage: la Capa 1 solo escribe `declarado` (invariante 8)
             proc = ev.get("procedencia_indice")
-            if proc is not None and proc != "declarado":
+            if proc is not None and proc not in _PROCEDENCIAS_CAPA1:
                 errores.append(
-                    f"hilo {hid} u{unidad}: procedencia_indice '{proc}'"
-                    " no permitido en Capa 1 (invariante 8)"
+                    f"hilo {hid} u{unidad}: procedencia_indice '{proc}' no válido"
                 )
-            # la Capa 1 nunca fabrica contenido editorial (invariante 9)
-            if "explicacion" in ev:
+            recon = ev.get("reconciliado_con")
+            if proc == "reconciliado":
+                if not isinstance(recon, str) or not (
+                    recon.startswith("indice:") or recon.startswith("pcic:")
+                ):
+                    errores.append(
+                        f"hilo {hid} u{unidad}: reconciliado_con debe empezar"
+                        " por 'indice:' o 'pcic:' (schema §3, v11.76)"
+                    )
+            elif recon is not None:
                 errores.append(
-                    f"hilo {hid} u{unidad}: 'explicacion' presente en salida"
-                    " de Capa 1 (invariante 9)"
+                    f"hilo {hid} u{unidad}: reconciliado_con sin procedencia"
+                    " reconciliado"
                 )
     return errores
 
 
 # --------------------------------------------------------------------------
-# orquestación — modo íntegro (§11.5)
+# merge no destructivo — Capa 1 sobreescribe lo mecánico, preserva lo editorial
+# --------------------------------------------------------------------------
+# Campos del evento que la Capa 1 SOBREESCRIBE en cada regeneración (mecánicos).
+_EV_MECANICOS = {"unidad", "tiempo", "evidencias", "formas",
+                 "procedencia_indice", "reconciliado_con"}
+# Campos del evento que la Capa 1 PRESERVA del archivo previo (interpretativos
+# de la Capa 2). Si vienen rellenos en el JSON existente, sobreviven al regenerar.
+_EV_INTERPRETATIVOS = {"etiquetas", "explicacion"}
+
+
+def _evento_tiene_enriquecimiento(ev: dict, bloque: str) -> bool:
+    """True si el evento contiene material editorial (Capa 2) no recuperable
+    desde inventario/registry. Disparador del abort-on-loss.
+
+    En `verbal`, `procedencia_indice` y `reconciliado_con` son trabajo de
+    Capa 2 (verbal no tiene resolución mecánica por contrato §9, v11.76) —
+    también se protegen.
+    """
+    if ev.get("etiquetas"):
+        return True
+    if "explicacion" in ev:
+        return True
+    if bloque == "verbal" and (
+        ev.get("procedencia_indice") or ev.get("reconciliado_con")
+    ):
+        return True
+    return False
+
+
+def _hilo_tiene_enriquecimiento(h: dict) -> bool:
+    bloque = h.get("bloque", "")
+    if "detalle" in h or h.get("nivel_analisis") == "detalle":
+        return True
+    return any(_evento_tiene_enriquecimiento(ev, bloque) for ev in h.get("eventos", []))
+
+
+def merge_no_destructivo(nuevos: list, existentes: list) -> tuple:
+    """Fusiona los hilos nuevos (Capa 1) con los del archivo previo.
+
+    Política:
+      - Capa 1 sobreescribe los campos mecánicos.
+      - Preserva del archivo previo: `etiquetas`, `explicacion`, `detalle` y
+        cualquier `nivel_analisis: detalle` ya alcanzado.
+      - Si un hilo/evento del archivo previo desaparece de la salida nueva y
+        tenía enriquecimiento editorial → se registra como **pérdida**. El
+        flujo `main()` decide abortar o continuar con log.
+
+    Devuelve `(merged, perdidas)`.
+    """
+    existentes_por_id = {h["id"]: h for h in existentes}
+    nuevos_ids = {h["id"] for h in nuevos}
+    perdidas = []
+    merged = []
+
+    for nuevo in nuevos:
+        prev = existentes_por_id.get(nuevo["id"])
+        if prev is None:
+            merged.append(nuevo)
+            continue
+        # Hilo-level: empezamos por el nuevo, preservamos `detalle` y nivel si
+        # el previo lo alcanzó.
+        fusion = dict(nuevo)
+        if prev.get("nivel_analisis") == "detalle":
+            fusion["nivel_analisis"] = "detalle"
+        if "detalle" in prev:
+            fusion["detalle"] = prev["detalle"]
+
+        # Eventos: cruzar por clave mecánica (unidad, tiempo).
+        bloque = nuevo.get("bloque", "")
+        prev_eventos = {(e["unidad"], e.get("tiempo")): e
+                        for e in prev.get("eventos", [])}
+        fusion_eventos = []
+        for ev_n in nuevo["eventos"]:
+            clave = (ev_n["unidad"], ev_n.get("tiempo"))
+            ev_prev = prev_eventos.pop(clave, None)
+            if ev_prev is None:
+                fusion_eventos.append(ev_n)
+                continue
+            # Tomar mecánico del nuevo, preservar interpretativo del previo.
+            ev_fusion = dict(ev_n)
+            for campo in _EV_INTERPRETATIVOS:
+                if campo in ev_prev and ev_prev[campo]:
+                    ev_fusion[campo] = ev_prev[campo]
+            # En verbal, procedencia_indice / reconciliado_con son escritos por
+            # Capa 2 (no por Capa 1). Preservarlos cuando el evento nuevo no los
+            # trae — si no, la regeneración los borraría silenciosamente (v11.76).
+            if bloque == "verbal":
+                for campo in ("procedencia_indice", "reconciliado_con"):
+                    if campo not in ev_fusion and campo in ev_prev:
+                        ev_fusion[campo] = ev_prev[campo]
+            fusion_eventos.append(ev_fusion)
+        # Eventos que estaban en el previo y ya no en el nuevo: pérdida si
+        # tenían enriquecimiento.
+        for clave, ev_huerfano in prev_eventos.items():
+            if _evento_tiene_enriquecimiento(ev_huerfano, bloque):
+                perdidas.append({
+                    "tipo": "evento",
+                    "hilo_id": nuevo["id"],
+                    "titulo": nuevo.get("titulo"),
+                    "clave_evento": {"unidad": clave[0], "tiempo": clave[1]},
+                    "evento_perdido": ev_huerfano,
+                })
+        fusion["eventos"] = fusion_eventos
+        merged.append(fusion)
+
+    # Hilos del previo que ya no aparecen en la salida nueva.
+    for hid, prev in existentes_por_id.items():
+        if hid in nuevos_ids:
+            continue
+        if _hilo_tiene_enriquecimiento(prev):
+            perdidas.append({
+                "tipo": "hilo",
+                "hilo_id": hid,
+                "titulo": prev.get("titulo"),
+                "hilo_perdido": prev,
+            })
+
+    return merged, perdidas
+
+
+# --------------------------------------------------------------------------
+# orquestación — modo íntegro con merge no destructivo (§11.5, v11.76)
 # --------------------------------------------------------------------------
 def generar() -> tuple:
-    """Construye la proyección mecánica íntegra.
+    """Construye la proyección mecánica íntegra, fusionándola con el archivo
+    previo de forma no destructiva.
 
-    Devuelve `(reciclaje, descartados, avisos_indice)`.
+    Devuelve `(reciclaje, descartados, avisos_indice, perdidas)`. Si `perdidas`
+    es no-vacío, el `main()` decide entre abortar o continuar (flag explícito).
     """
     registries = Registries()
     curso = cargar_json(CURSO)
     indice = IndiceCurso(curso)
     constructor = Constructor(registries, indice)
 
-    # pasada `auto`: hilos y eventos desde los inventarios cerrados (§11.2)
     cubiertas = []
     for u in range(0, 10):
         inv_path = UNIDADES / f"U{u}" / f"U{u}-nc1-inventario.json"
@@ -599,13 +808,9 @@ def generar() -> tuple:
         cubiertas.append(u)
         procesar_unidad(constructor, u, cargar_json(inv_path))
 
-    # pasada `mapa`: siembra desde el índice del curso (§4.2, §4.5)
     avisos = procesar_indice(constructor, curso, set(cubiertas))
-
-    # nivel definitivo de cada hilo según el grado de población alcanzado
     constructor.finalizar_niveles()
 
-    # ordenación estable: por bloque y luego por id
     orden_bloque = {b: i for i, b in enumerate(
         ["vocabulario", "gramatica", "pronunciacion_ortografia", "verbal", "perifrasis"]
     )}
@@ -616,11 +821,13 @@ def generar() -> tuple:
     for h in hilos:
         h["eventos"].sort(key=lambda e: (e["unidad"], e.get("tiempo") or ""))
 
-    # preservación de propuestas[] y cierres humanos (§11.1 input 4, §11.4.10)
+    # Merge no destructivo con el archivo previo (v11.76).
     propuestas = []
+    perdidas = []
     if RECICLAJE.exists():
         previo = cargar_json(RECICLAJE)
         propuestas = previo.get("propuestas", [])
+        hilos, perdidas = merge_no_destructivo(hilos, previo.get("hilos", []))
 
     reciclaje = {
         "_meta": {
@@ -632,7 +839,7 @@ def generar() -> tuple:
         "hilos": hilos,
         "propuestas": propuestas,
     }
-    return reciclaje, constructor.descartados, avisos
+    return reciclaje, constructor.descartados, avisos, perdidas
 
 
 def main() -> int:
@@ -641,9 +848,15 @@ def main() -> int:
         "--dry-run", action="store_true",
         help="genera y valida sin escribir nc1-reciclaje.json",
     )
+    parser.add_argument(
+        "--permitir-perdidas", action="store_true",
+        help=("permite continuar cuando el merge detecte pérdida de "
+              "enriquecimiento editorial (etiquetas / explicación / detalle); "
+              "vuelca el detalle de lo perdido en docs/historico/"),
+    )
     args = parser.parse_args()
 
-    reciclaje, descartados, avisos = generar()
+    reciclaje, descartados, avisos, perdidas = generar()
 
     n_hilos = len(reciclaje["hilos"])
     n_eventos = sum(len(h["eventos"]) for h in reciclaje["hilos"])
@@ -675,6 +888,36 @@ def main() -> int:
                 continue
             vistos.add(clave)
             print(f"      [{bloque}] {titulo}  (primera vez en U{unidad})")
+
+    # Política de merge no destructivo (v11.76): abort-on-loss por defecto.
+    if perdidas:
+        print(f"\n✗ Pérdida de enriquecimiento editorial detectada — "
+              f"{len(perdidas)} elementos del archivo previo desaparecerían:")
+        for p in perdidas[:10]:
+            if p["tipo"] == "evento":
+                k = p["clave_evento"]
+                print(f"    [evento] hilo '{p['titulo']}' u{k['unidad']}"
+                      f"{' · ' + k['tiempo'] if k['tiempo'] else ''}")
+            else:
+                print(f"    [hilo]   '{p['titulo']}' ({p['hilo_id']})")
+        if len(perdidas) > 10:
+            print(f"    ... y {len(perdidas) - 10} más")
+        if not args.permitir_perdidas:
+            print("\nLa regeneración aborta para evitar pérdida silenciosa de "
+                  "trabajo editorial. Para continuar conscientemente, repite "
+                  "con --permitir-perdidas (el detalle de lo perdido se vuelca "
+                  "en docs/historico/).")
+            return 2
+        # Continuar: volcar el log.
+        ruta_log = (PROJECT / "docs" / "historico" /
+                    f"reciclaje-merge-loss-{date.today().isoformat()}.json")
+        ruta_log.parent.mkdir(parents=True, exist_ok=True)
+        with open(ruta_log, "w", encoding="utf-8") as fh:
+            json.dump({"fecha": date.today().isoformat(),
+                       "version": leer_version_changelog(),
+                       "perdidas": perdidas}, fh, ensure_ascii=False, indent=2)
+        print(f"\n  ⚠ --permitir-perdidas activo → continúa. Log en "
+              f"{ruta_log.relative_to(PROJECT)}")
 
     # chequeo estructural compartido (gate §13 a) + invariantes §11.4 de Capa 1
     errores = validar_schema(reciclaje) + validar_capa1(reciclaje)

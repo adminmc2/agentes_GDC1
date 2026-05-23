@@ -56,8 +56,8 @@ Un evento = una aparición del contenido en una unidad concreta.
 | `unidad` | entero | Unidad del evento. |
 | `tiempo` | enum | **Solo `verbal` y `perifrasis`.** Evento por lema-tiempo (§3.2): `Presente` \| `Pretérito indefinido` \| `Imperativo` \| `Infinitivo`. |
 | `etiquetas` | lista de enum | Qué hace la unidad con el contenido (§2.3): `introduce`, `amplia`, `aplica`, `sistematiza`, `contrasta`, `anticipacion` (+ `discrimina` solo en pron/orto). Coexisten. |
-| `procedencia_indice` | enum | Estatus respecto al índice del curso (§9): `declarado` \| `reconciliado` \| `nuevo`. Si `reconciliado`, ver `reconciliado_con`. |
-| `reconciliado_con` | string | **Solo si `procedencia_indice: reconciliado`.** Entrada del índice del curso con la que se reconcilia. |
+| `procedencia_indice` | enum | Estatus identitario del título canónico (§9, reformulado v11.76): `declarado` \| `reconciliado` \| `nuevo`. Resuelto mecánicamente por Capa 1 leyendo los registries, **excepto en bloque `verbal`** (Capa 2 lo decide; v11.76). Si `reconciliado`, ver `reconciliado_con`. |
+| `reconciliado_con` | string con prefijo | **Solo si `procedencia_indice: reconciliado`.** Referencia con prefijo obligatorio: `"indice:<entrada literal del curso>"` cuando es alias de una entrada del índice del curso; `"pcic:<referencia concreta>"` cuando el respaldo viene de PCIC sin entrada en el curso; `"pcic:A1"` como fallback para vocabulario con `origen=pcic_a1` sin referencia más fina. Semántica ampliada en v11.76. |
 | `formas` | lista de string | **Solo `bloque: verbal`.** Formas conjugadas concretas que esa unidad trabaja de ese lema-tiempo (§7.1). |
 | `explicacion` | objeto | Opcional — presente si el libro explica el contenido en esa unidad (§4). |
 | `evidencias` | lista | Referencias a las actividades/cuadros del inventario que sustentan el evento (preservan el sufijo `@R` cuando aplica, §3.5). |

@@ -213,10 +213,19 @@ def _validar_eventos(hid: str, bloque: str, eventos, cubiertas: set) -> list:
             errores.append(
                 f"hilo {hid} u{unidad}: procedencia_indice inválida '{proc}'"
             )
-        if proc == "reconciliado" and not ev.get("reconciliado_con"):
-            errores.append(
-                f"hilo {hid} u{unidad}: procedencia 'reconciliado' sin 'reconciliado_con'"
-            )
+        if proc == "reconciliado":
+            recon = ev.get("reconciliado_con")
+            if not recon:
+                errores.append(
+                    f"hilo {hid} u{unidad}: procedencia 'reconciliado' sin 'reconciliado_con'"
+                )
+            elif not isinstance(recon, str) or not (
+                recon.startswith("indice:") or recon.startswith("pcic:")
+            ):
+                errores.append(
+                    f"hilo {hid} u{unidad}: 'reconciliado_con' debe empezar"
+                    " por 'indice:' o 'pcic:' (schema §3, v11.76)"
+                )
         if proc != "reconciliado" and "reconciliado_con" in ev:
             errores.append(
                 f"hilo {hid} u{unidad}: 'reconciliado_con' sin procedencia 'reconciliado'"

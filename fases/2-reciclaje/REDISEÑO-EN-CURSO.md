@@ -451,29 +451,38 @@ El `que_dice_el_libro` y los `analisis_ia` de los eventos son **insumos** que el
 
 ---
 
-## §9. Triage índice — estatus de cada contenido por evento (paso 9 — definido 2026-05-21, generalizado a los 5 bloques en v11.43; reformulado como eje identitario en v11.75)
+## §9. Triage índice — estatus de cada contenido por evento (paso 9 — definido 2026-05-21, generalizado a los 5 bloques en v11.43; reformulado como eje identitario en v11.75; mecanizado vía registries en v11.76)
 
-Aplica a **los 5 bloques** (vocabulario, gramática, pron/orto, verbal, perífrasis). El triage responde a **una sola pregunta de identidad**: ¿el contenido del hilo está en el índice editorial del curso (`nc1-curso.json`), en cualquier unidad? La temporalidad (esta unidad vs la canónica del índice) **no** la lleva este eje — vive en las **etiquetas** del evento (§2.3): `anticipacion` cuando el evento es anterior a la unidad canónica del índice, `aplica` cuando es posterior, sin etiqueta temporal explícita cuando coincide con su unidad canónica.
+Aplica a **los 5 bloques**. El triage responde a **una sola pregunta de identidad**: ¿el contenido del hilo está respaldado por el índice del curso (`nc1-curso.json`) o por los registries de fase 1 (incluido PCIC)? La temporalidad (esta unidad vs la canónica) **no** la lleva este eje — vive en las **etiquetas** del evento (§2.3).
+
+**Decisión clave (v11.76):** el triage es **íntegramente mecánico para 4 bloques** (vocabulario, gramática, pron/orto, perífrasis) porque sus registries traen el respaldo estructurado necesario (`origen` + `aliases_indice` en campos-semanticos; `_pcic_ref` en los otros tres). El bloque **verbal** queda como **excepción** mientras `verbos-canonicos.json` no ofrezca metadata equivalente: para verbal, la Capa 1 deja `procedencia_indice` **sin asignar** y la Capa 2 la decide. No es un descuido — es decisión heredada de fase 1 (los lemas verbales se analizan en fase 2).
 
 ### §9.1. Las tres salidas
 
 Eje identitario puro (curso-wide; **no** depende de la unidad del evento):
 
-1. **Declarado** — el título canónico del hilo coincide **literalmente** con una entrada del índice del curso, **en cualquier unidad**. El cotejo es por slug del nombre canónico; absorbe paréntesis del índice ("Artículos determinados (el, la, los, las)" — la entrada del índice empieza por el nombre canónico).
-2. **Reconciliado** — el título canónico **no** aparece literal en el índice, pero es el **mismo contenido** que una entrada del índice **bajo otro nombre** (alias del registry / equivalencia vía PCIC). P. ej. el índice dice "Verbos ser, llamarse y tener" y el hilo canónico es `ser`.
-3. **Nuevo** — el contenido **no aparece en el índice del curso** en ninguna unidad, **ni literal ni reconciliable**. Contenido emergente del libro que el índice no anuncia.
-
-Lo no declarado **no se vuelca a `nuevo` por defecto**: se analiza para distinguir `reconciliado` de `nuevo` real.
+1. **Declarado** — el título canónico del hilo coincide **literalmente** con una entrada del índice del curso, **en cualquier unidad**. El cotejo es por slug; absorbe paréntesis del índice ("Artículos determinados (el, la, los, las)" cuenta como literal del canónico "Artículos determinados").
+2. **Reconciliado** — el título canónico **no** aparece literal en el índice, pero **sí** está respaldado por una referencia estructurada del registry. Dos sub-formas, identificadas por prefijo de `reconciliado_con`:
+   - **`indice:<entrada del curso>`** — el canónico es alias de una entrada del índice del curso (resuelto vía `aliases_indice` del registry).
+   - **`pcic:<referencia>`** — el canónico tiene respaldo PCIC pero no entrada en el curso (`origen=pcic_a1` en campos; `_pcic_ref` en gramática/pron/perif). Usar `"pcic:A1"` como fallback cuando el registry no da una referencia más fina.
+3. **Nuevo** — el contenido **no está en el índice del curso, no tiene aliases, y no tiene respaldo PCIC**. Contenido aprobado por excepción (`origen=excepcion` sin aliases en vocabulario; equivalente en otros bloques). Caso residual.
 
 ### §9.2. Quién aplica cada salida
 
-Principio de eficiencia: aprovechar lo que fase 1 ya resuelve; desarrollar en fase 2 solo lo que falte.
+Mecanización por bloque (v11.76):
 
-- **Declarado** → **precomputable por la Capa 1** mediante coincidencia **literal** (sin aliases) del título contra el índice **curso-wide**. No requiere IA y, por construcción, no se mete con el eje alias-based (eso es Capa 2).
-- **Reconciliado** → **Capa 2 IA propone** la reconciliación (alias / equivalencia PCIC); el **humano cierra**. La Capa 1 **no** infla `declarado` con aliases — eso re-mezclaría ejes por la puerta de atrás (v11.75).
-- **Nuevo** → **Capa 2 IA genera una propuesta al autor** ("detectada esta categoría no declarada y no reconciliable — ¿canonizar en el registry de fase 1 o dejarla como hallazgo?"). Decide el autor. Mismo tipo de hallazgo que §10 "siempre presentes".
+| Bloque | Declarado mecánico | Reconciliado mecánico | Verbal |
+|---|---|---|---|
+| vocabulario | Capa 1: slug literal en curso index | Capa 1: lee `origen` + `aliases_indice` de `campos-semanticos-canonicos.json`. Resuelve `indice:` o `pcic:A1`. | — |
+| gramatica | Capa 1: slug literal | Capa 1: lee `_pcic_ref` de la categoría. Resuelve `pcic:<ref>`. | — |
+| pronunciacion_ortografia | Capa 1: slug literal | Capa 1: lee `_pcic_ref`. Resuelve `pcic:<ref>`. | — |
+| perifrasis | Capa 1: slug literal (raro) | Capa 1: lee `_pcic_ref` de `perifrasis-canonicas.json`. Resuelve `pcic:<ref>`. | — |
+| **verbal** | — | — | **Capa 2** decide procedencia (`verbos-canonicos.json` no expone respaldo estructurado por decisión de fase 1). |
 
-Reconciliaciones y categorías nuevas son siempre **propuestas** (IA propone / humano cierra), nunca decisiones automáticas de fase 2.
+**Implicaciones operativas:**
+- La Capa 2 deja de tener `procedencia_indice` como tarea ordinaria: solo la decide en hilos verbales o cuando hay que corregir un caso mal clasificado mecánicamente.
+- El validador `validar_capa1()` se relaja: acepta `declarado` y `reconciliado` (con `reconciliado_con` con prefijo) en la salida de Capa 1.
+- `nuevo` mecánico es raro — solo `origen=excepcion` sin aliases ni PCIC. Si aparece, es disparador de revisión editorial concreta.
 
 ### §9.3. Granularidad — por evento, valor estable por hilo
 
@@ -575,15 +584,15 @@ La **proyección mecánica** del reciclaje, válida contra `schema-reciclaje.md`
 
 **Por hilo:** `id`, `bloque`, `titulo`, `_grupo` (solo `gramatica`), `nivel_analisis`.
 
-**Por evento:** `unidad`; `tiempo` (solo `verbal`/`perifrasis`); `procedencia_indice: declarado` cuando hay coincidencia literal con el índice; `formas` (solo `verbal`); `evidencias` derivables del inventario; `etiquetas: []` (vacío inicial, para que el archivo intermedio de Capa 1 ya sea válido contra el schema antes de la Capa 2).
+**Por evento:** `unidad`; `tiempo` (solo `verbal`/`perifrasis`); `procedencia_indice` y `reconciliado_con` mecanizados según §9 (v11.76 — `declarado` / `reconciliado` con prefijo `indice:` o `pcic:` / `nuevo`, salvo el bloque `verbal` que queda sin asignar para que lo decida la Capa 2); `formas` (solo `verbal`); `evidencias` derivables del inventario; `etiquetas: []` (vacío inicial, para que el archivo intermedio de Capa 1 ya sea válido contra el schema antes de la Capa 2).
 
-**Lo que NO genera** (frontera con la Capa 2, §1.3): `procedencia_indice` `reconciliado`/`nuevo`, `reconciliado_con`, `explicacion`, `detalle`, ni etiquetas editoriales. Todo eso exige lectura cross-atrás/cross-adelante y juicio didáctico.
+**Lo que NO genera** (frontera con la Capa 2, §1.3): etiquetas editoriales, `explicacion`, `detalle`, y la procedencia de los hilos **verbales** (donde la Capa 2 sí decide). Todo lo demás del triage de §9 lo cubre Capa 1 mecánicamente leyendo los registries.
 
 ### §11.3. Qué precomputa
 
-**Sí** (literal y determinista): `procedencia_indice: declarado` por coincidencia literal con el índice; `formas` del evento verbal (volcado mecánico del inventario); `tiempo` del evento verbal/perífrasis; `evidencias` trazables desde actividad/cuadro; `nivel_analisis` alcanzado por cada hilo; `_meta` (`fecha`, `unidades_cubiertas`, `estado`).
+**Sí** (mecánico desde los registries y el índice del curso): `procedencia_indice` y `reconciliado_con` para vocabulario, gramática, pron/orto y perífrasis — leyendo `origen` + `aliases_indice` (vocab) y `_pcic_ref` (otros tres bloques); `formas` del evento verbal (volcado mecánico del inventario); `tiempo` del evento verbal/perífrasis; `evidencias` trazables desde actividad/cuadro; `nivel_analisis` alcanzado por cada hilo; `_meta` (`fecha`, `unidades_cubiertas`, `estado`).
 
-**No** precomputa: las 7 etiquetas (`introduce`, `amplia`, `aplica`, `sistematiza`, `contrasta`, `anticipacion`, `discrimina`); `reconciliado`/`nuevo`.
+**No** precomputa: las 7 etiquetas (`introduce`, `amplia`, `aplica`, `sistematiza`, `contrasta`, `anticipacion`, `discrimina`); `explicacion`; `detalle`; ni la `procedencia_indice` del bloque `verbal` (excepción explícita por falta de respaldo estructurado en `verbos-canonicos.json`).
 
 ### §11.4. Invariantes que la Capa 1 promete
 
@@ -596,9 +605,9 @@ Lo que la Capa 2 puede dar por garantizado:
 5. En `gramatica`, `_grupo` siempre existe y es válido; fuera de `gramatica`, no aparece.
 6. En `verbal`/`perifrasis`, `tiempo` siempre existe y es válido; fuera de esos bloques, no aparece.
 7. **No hay eventos duplicados** para la misma clave mecánica: `(hilo, unidad)` en vocabulario/gramática/pron-orto; `(hilo, unidad, tiempo)` en verbal/perífrasis.
-8. La Capa 1 **nunca escribe** `reconciliado` ni `nuevo` — solo `declarado` cuando la coincidencia es mecánica.
-9. La Capa 1 **nunca fabrica contenido editorial** — no rellena `explicacion`, no rellena `detalle`, no asigna etiquetas interpretativas.
-10. `propuestas[]` y sus resoluciones humanas **se preservan**; la Capa 1 no las invalida al regenerar (conecta con el contrato de ciclo de vida, `reglas-reciclaje.md` §12).
+8. La Capa 1 escribe `declarado` / `reconciliado` (con prefijo `indice:` o `pcic:` en `reconciliado_con`) / `nuevo` para vocabulario, gramática, pron/orto y perífrasis — lectura mecánica de los registries (v11.76). En `verbal` deja la procedencia **sin asignar** por la falta de respaldo estructurado en `verbos-canonicos.json`; ahí la decide Capa 2.
+9. La Capa 1 **nunca fabrica contenido editorial** — no rellena `explicacion`, no rellena `detalle`, no asigna etiquetas interpretativas, y no decide la procedencia de los hilos verbales.
+10. `propuestas[]` y sus resoluciones humanas **se preservan**; la Capa 1 no las invalida al regenerar. Por la misma política de merge no destructivo (v11.76), también se preservan `etiquetas`, `explicacion`, `detalle` y la `procedencia_indice` + `reconciliado_con` de los eventos **verbales** (donde son trabajo editorial). Si la regeneración haría desaparecer un hilo/evento con enriquecimiento → **abort por defecto**; opt-in con `--permitir-perdidas` para registrar las pérdidas en `docs/historico/`.
 
 ### §11.5. Modo de ejecución
 
@@ -635,7 +644,7 @@ Tres fases que **no se mezclan** — precondiciones, trabajo editorial, gate:
 **Trabajo editorial de la sesión:**
 2. **Tres momentos de análisis** (§2.1): intra-unidad → cross-atrás → cross-adelante.
 3. **Asignación de `etiquetas[]`** (§2.3, §3 de reglas).
-4. **Completar `procedencia_indice`**: el `declarado` mecánico ya viene de Capa 1; la Capa 2 **propone** `reconciliado` / `nuevo` donde haga falta (§9).
+4. **`procedencia_indice`**: para vocabulario, gramática, pron/orto y perífrasis llega ya resuelta de Capa 1 (declarado/reconciliado/nuevo, v11.76). La Capa 2 **solo** la toca en dos casos: (a) **hilos verbales** — Capa 1 los deja sin asignar por falta de respaldo estructurado y la sesión decide; (b) **corrección excepcional** de un caso mecánicamente mal clasificado.
 5. **Escribir `explicacion`** cuando la unidad tiene cuadro o explicación material (§8).
 6. **Detectar y escalar a `propuestas[]`** solo lo no obvio (§11 de reglas).
 
@@ -644,7 +653,7 @@ Tres fases que **no se mezclan** — precondiciones, trabajo editorial, gate:
 
 ### §12.3. El nivel `detalle` no es salida obligatoria por unidad
 
-- **Por unidad**, la Capa 2 produce: `etiquetas`, `procedencia_indice`, `explicacion` y, si procede, `propuestas[]`.
+- **Por unidad**, la Capa 2 produce: `etiquetas`, `explicacion`, `propuestas[]` cuando procede, y **`procedencia_indice` solo en hilos verbales** o como corrección excepcional (en el resto de bloques la procedencia llega ya resuelta por Capa 1; v11.76).
 - **En los hitos cross-unidad** (§1.4): promueve a `nivel_analisis: detalle` los hilos que ya tienen **masa crítica** para justificar una cadena lingüístico-pedagógica.
 - **En el cierre global**: remata el `detalle` pendiente.
 

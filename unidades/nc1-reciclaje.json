@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "v11.75",
+    "version": "v11.77",
     "fecha": "2026-05-23",
     "unidades_cubiertas": [
       0,
@@ -25,7 +25,10 @@
       "eventos": [
         {
           "unidad": 0,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce",
+            "sistematiza"
+          ],
           "evidencias": [
             "p10-act5"
           ],
@@ -267,7 +270,9 @@
             "p53-act8",
             "p53-act9",
             "p53-act9@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -375,7 +380,9 @@
             "p51-act1",
             "p51-act2",
             "p51-act2@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -410,7 +417,9 @@
             "p30-act3",
             "p30-act3@R",
             "p30-act4"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         },
         {
           "unidad": 3,
@@ -432,7 +441,9 @@
             "p39-act5",
             "p39-act6",
             "p39-act7"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -455,7 +466,9 @@
             "p40-act3",
             "p40-act4",
             "p40-act5"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -647,7 +660,9 @@
             "p19-act3@R",
             "p19-act5",
             "p21-act4"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         },
         {
           "unidad": 2,
@@ -657,7 +672,9 @@
             "p28-act1",
             "p31-act4",
             "p31-act4@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         },
         {
           "unidad": 3,
@@ -672,7 +689,9 @@
             "p36-act2",
             "p38-act1",
             "p38-act1@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -737,7 +756,8 @@
           "evidencias": [
             "p47-act5",
             "p47-act6"
-          ]
+          ],
+          "procedencia_indice": "nuevo"
         }
       ]
     },
@@ -811,14 +831,16 @@
             "p12-act1",
             "p15-act6",
             "p15-act6@R"
-          ]
+          ],
+          "procedencia_indice": "nuevo"
         },
         {
           "unidad": 4,
           "etiquetas": [],
           "evidencias": [
             "p48-act1"
-          ]
+          ],
+          "procedencia_indice": "nuevo"
         }
       ]
     },
@@ -954,7 +976,9 @@
             "p16-act1",
             "p17-act7@R",
             "p19-act5"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -966,10 +990,14 @@
       "eventos": [
         {
           "unidad": 0,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p11-act9@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Números 0-10"
         },
         {
           "unidad": 1,
@@ -982,7 +1010,9 @@
             "p17-act5",
             "p17-act6",
             "p17-act6@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Números 0-10"
         },
         {
           "unidad": 2,
@@ -994,7 +1024,9 @@
             "p28-act1",
             "p30-act2",
             "p31-act2"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Números 0-10"
         },
         {
           "unidad": 3,
@@ -1010,7 +1042,9 @@
             "p37-act7@R",
             "p38-act1",
             "p38-act1@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Números 0-10"
         }
       ]
     },
@@ -1087,7 +1121,10 @@
       "eventos": [
         {
           "unidad": 0,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce",
+            "sistematiza"
+          ],
           "evidencias": [
             "p11-act7",
             "p8-act1"
@@ -1104,7 +1141,9 @@
       "eventos": [
         {
           "unidad": 0,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p11-act10"
           ],
@@ -1286,7 +1325,9 @@
             "p49-act6",
             "p49-act7",
             "p51-act1"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -1333,7 +1374,9 @@
       "eventos": [
         {
           "unidad": 0,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "cuadro@p11"
           ],
@@ -1383,7 +1426,9 @@
           "etiquetas": [],
           "evidencias": [
             "p39-act4"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -1462,7 +1507,9 @@
             "p56-act2",
             "p61-act2",
             "p61-act2@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §8.2 Adverbios nucleares o de predicado + §8.9 Locuciones adverbiales"
         }
       ],
       "_grupo": "Adverbios y marcadores"
@@ -1566,7 +1613,9 @@
             "cuadro@p14#3",
             "p14-act4",
             "p14-act5"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
         },
         {
           "unidad": 2,
@@ -1577,7 +1626,9 @@
             "p22-act2",
             "p25-act5",
             "p31-act3"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
         },
         {
           "unidad": 3,
@@ -1589,7 +1640,9 @@
             "p32-act3",
             "p35-act4",
             "p40-act2"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
         },
         {
           "unidad": 4,
@@ -1606,7 +1659,9 @@
             "p48-act3",
             "p50-act1",
             "p51-act3"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
         },
         {
           "unidad": 5,
@@ -1614,7 +1669,9 @@
           "evidencias": [
             "p57-act7",
             "p59-act7"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
         },
         {
           "unidad": 8,
@@ -1622,7 +1679,9 @@
           "evidencias": [
             "cuadro@p82",
             "p86-act3"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
         }
       ],
       "_grupo": "Sintagma nominal y concordancia"
@@ -1638,7 +1697,9 @@
           "etiquetas": [],
           "evidencias": [
             "cuadro@p14#2"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3"
         },
         {
           "unidad": 2,
@@ -1647,7 +1708,9 @@
             "cuadro@p24#2",
             "p25-act4",
             "p25-act5"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3"
         },
         {
           "unidad": 3,
@@ -1668,14 +1731,18 @@
             "p41-act3",
             "p41-act4",
             "p41-act4@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3"
         },
         {
           "unidad": 5,
           "etiquetas": [],
           "evidencias": [
             "p59-act7"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3"
         },
         {
           "unidad": 8,
@@ -1683,7 +1750,9 @@
           "evidencias": [
             "cuadro@p82",
             "p86-act3"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3"
         }
       ],
       "_grupo": "Sintagma nominal y concordancia"
@@ -1715,7 +1784,9 @@
             "p49-act8",
             "p51-act4",
             "p51-act6"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §12.2.3 Objeto indirecto + §10.4 Concordancia SN-verbo"
         },
         {
           "unidad": 8,
@@ -1726,7 +1797,9 @@
             "cuadro@p85",
             "p84-act1",
             "p84-act1@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §12.2.3 Objeto indirecto + §10.4 Concordancia SN-verbo"
         }
       ],
       "_grupo": "Construcciones"
@@ -2287,7 +2360,9 @@
             "p20-act1",
             "p21-act1",
             "p21-act4"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
         },
         {
           "unidad": 2,
@@ -2301,7 +2376,9 @@
             "p26-act1",
             "p29-act4",
             "p31-act1"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
         },
         {
           "unidad": 3,
@@ -2315,7 +2392,9 @@
             "p36-act1",
             "p38-act1",
             "p41-act4"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
         },
         {
           "unidad": 6,
@@ -2325,7 +2404,9 @@
             "p64-act1",
             "p64-act2",
             "p71-act1"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
         }
       ],
       "_grupo": "Pronombres"
@@ -2353,7 +2434,9 @@
             "p49-act8",
             "p51-act4",
             "p51-act6"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §7.1.3 Pronombres átonos de OI (serie completa: me, te, le, nos, os, les)"
         },
         {
           "unidad": 8,
@@ -2378,7 +2461,9 @@
             "p91-act1@R",
             "p91-act2",
             "p91-act2@R"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §7.1.3 Pronombres átonos de OI (serie completa: me, te, le, nos, os, les)"
         }
       ],
       "_grupo": "Pronombres"
@@ -2450,7 +2535,9 @@
             "p67-act10",
             "p67-act10@R",
             "p67-act9"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 ortografía (Ortografía De Las Palabras: pares de letras con misma realización fonética)"
         }
       ]
     },
@@ -2467,7 +2554,9 @@
             "cuadro@p25",
             "p25-act7",
             "p29-act7"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 ortografía (Ortografía De Letras Y Palabras: uso de mayúsculas — inicial de oración, después de punto, nombres propios, siglas)"
         },
         {
           "unidad": 7,
@@ -2475,7 +2564,9 @@
           "evidencias": [
             "p75-act8",
             "p75-act9"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 ortografía (Ortografía De Letras Y Palabras: uso de mayúsculas — inicial de oración, después de punto, nombres propios, siglas)"
         }
       ]
     },
@@ -2513,13 +2604,17 @@
       "eventos": [
         {
           "unidad": 0,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p10-act5",
             "p11-act6",
             "p11-act7",
             "p11-act8"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)"
         },
         {
           "unidad": 1,
@@ -2527,7 +2622,9 @@
           "evidencias": [
             "p13-act6",
             "p13-act7"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)"
         },
         {
           "unidad": 3,
@@ -2537,7 +2634,9 @@
             "p37-act10",
             "p37-act8",
             "p37-act9"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)"
         },
         {
           "unidad": 4,
@@ -2547,7 +2646,9 @@
             "p47-act10",
             "p47-act11",
             "p47-act12"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)"
         },
         {
           "unidad": 5,
@@ -2556,7 +2657,9 @@
             "cuadro@p57",
             "p57-act8",
             "p57-act9"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)"
         },
         {
           "unidad": 8,
@@ -2568,7 +2671,9 @@
             "p87-act11@R",
             "p87-act12",
             "p87-act9"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)"
         }
       ]
     },
@@ -2584,7 +2689,9 @@
           "evidencias": [
             "p27-act11",
             "p27-act12"
-          ]
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.1 Identificación y producción de fonemas vocálicos"
         }
       ]
     },
@@ -2919,8 +3026,7 @@
             "comes",
             "como",
             "coméis"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 4,
@@ -2942,8 +3048,7 @@
           "tiempo": "Infinitivo",
           "formas": [
             "comer"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 4,
@@ -2970,8 +3075,7 @@
             "comen",
             "comes",
             "como nunca"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 6,
@@ -2982,8 +3086,7 @@
           "tiempo": "Infinitivo",
           "formas": [
             "comer"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 7,
@@ -3002,8 +3105,7 @@
           "tiempo": "Infinitivo",
           "formas": [
             "comer"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 7,
@@ -3023,8 +3125,7 @@
           "formas": [
             "come",
             "comes"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         }
       ]
     },
@@ -3492,8 +3593,7 @@
             "escribe",
             "escribes",
             "escrita"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 6,
@@ -3507,8 +3607,7 @@
           "formas": [
             "Escribe",
             "escribe"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 6,
@@ -3521,8 +3620,7 @@
           "tiempo": "Infinitivo",
           "formas": [
             "escribir"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         }
       ]
     },
@@ -3543,8 +3641,7 @@
           "formas": [
             "Escucha",
             "escucha"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 6,
@@ -3556,8 +3653,7 @@
           "tiempo": "Infinitivo",
           "formas": [
             "Escuchar"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         }
       ]
     },
@@ -3964,8 +4060,7 @@
           "tiempo": "Presente",
           "formas": [
             "hablan"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 3,
@@ -3985,8 +4080,7 @@
             "hablan",
             "hablar",
             "hablo"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 6,
@@ -3997,8 +4091,7 @@
           "tiempo": "Imperativo",
           "formas": [
             "habla"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 7,
@@ -4009,8 +4102,7 @@
           "tiempo": "Infinitivo",
           "formas": [
             "hablar"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         }
       ]
     },
@@ -4029,8 +4121,7 @@
           "tiempo": "Infinitivo",
           "formas": [
             "hacer"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 4,
@@ -4041,8 +4132,7 @@
           "tiempo": "Presente",
           "formas": [
             "hacemos"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 6,
@@ -4062,8 +4152,7 @@
           "formas": [
             "Haz",
             "haz"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 6,
@@ -4082,8 +4171,7 @@
           "tiempo": "Infinitivo",
           "formas": [
             "Hacer"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 6,
@@ -4107,8 +4195,7 @@
             "haces",
             "hacéis",
             "hago"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 7,
@@ -4127,8 +4214,7 @@
           "formas": [
             "Hacer",
             "hacer"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         },
         {
           "unidad": 7,
@@ -4148,8 +4234,7 @@
             "hace",
             "hacemos",
             "haces"
-          ],
-          "procedencia_indice": "declarado"
+          ]
         }
       ]
     },
@@ -6020,7 +6105,9 @@
             "p26-act1",
             "p29-act3"
           ],
-          "tiempo": "Presente"
+          "tiempo": "Presente",
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §9.1.1 Presente — 'Perífrasis ir a + infinitivo para presente inmediato' (ejemplo PCIC: 'Voy a comer')."
         },
         {
           "unidad": 4,
@@ -6029,7 +6116,9 @@
             "p43-act5",
             "p46-act2"
           ],
-          "tiempo": "Presente"
+          "tiempo": "Presente",
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §9.1.1 Presente — 'Perífrasis ir a + infinitivo para presente inmediato' (ejemplo PCIC: 'Voy a comer')."
         }
       ]
     },
@@ -6047,7 +6136,9 @@
             "p66-act2",
             "p66-act3"
           ],
-          "tiempo": "Presente"
+          "tiempo": "Presente",
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:PCIC A1 §9.4.1 Infinitivo trata 'querer + infinitivo' como infinitivo objeto directo ('Quiero ir a España'), NO como perífrasis canónica. Entra a este registry por evidencia material de NC1: el inventario codifica la construcción con estructura_perifrastica en U6."
         }
       ]
     }

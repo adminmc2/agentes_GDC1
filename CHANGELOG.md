@@ -15,6 +15,26 @@
 
 ---
 
+## [v11.76 — 2026-05-23] — Modelo: triage identitario mecánico (alias + PCIC) + merge no destructivo
+
+Tras revisión del autor de v11.75: la cautela "Capa 1 sin aliases" era una sobrecorrección — `campos-semanticos-canonicos.json` (`origen` + `aliases_indice`) y `gramatica-canonica.json` / `pronunciacion-ortografia-canonica.json` / `perifrasis-canonicas.json` (`_pcic_ref`) ya traen el respaldo estructurado para resolver `reconciliado` mecánicamente. Tres cambios:
+
+**Modelo (REDISEÑO §9, reglas §4, glosario, prompt fase 2, schema §3):**
+
+- `procedencia_indice` se resuelve **íntegramente en Capa 1** para vocabulario, gramática, pron/orto y perífrasis (lee registries). El bloque **verbal queda como excepción** mientras `verbos-canonicos.json` no exponga respaldo estructurado equivalente — la procedencia sale sin asignar y la Capa 2 la decide. Documentado explícitamente.
+- `reconciliado_con` amplía semántica con **prefijos obligatorios**: `"indice:<entrada>"` (alias del índice del curso) o `"pcic:<ref>"` (`"pcic:A1"` como fallback). Schema §3 + validador estructural actualizados.
+- Capa 2 deja de tener procedencia en su núcleo de tareas: solo verbal o corrección excepcional.
+
+**Generador (`scripts/generar_reciclaje_capa1.py`):**
+
+- `IndiceCurso` preserva la entrada literal del índice para resolver `indice:<X>`; `Registries` expone `campos_raw`, `gramatica_raw`, `pronorto_raw`, `perifrasis_raw` con metadata cruda; nuevo `Constructor.resolver_procedencia()` aplica las reglas mecánicamente.
+- **Merge no destructivo**: la regeneración fusiona con el archivo previo — sobreescribe campos mecánicos (`procedencia_indice`, `reconciliado_con`, `evidencias`, `formas`), preserva interpretativos (`etiquetas`, `explicacion`, `detalle`). En `verbal`, donde `procedencia_indice` y `reconciliado_con` son trabajo de Capa 2 (no mecánico), también se preservan — y el detector de pérdidas los considera enriquecimiento editorial. **Abort por defecto ante pérdida**. Flag `--permitir-perdidas` (opt-in) vuelca el detalle en `docs/historico/`.
+- `validar_capa1()` relajada: acepta `declarado` / `reconciliado` / `nuevo` y exige prefijo en `reconciliado_con`.
+
+**Reparto nuevo:** 78 declarado · 48 reconciliado (44 con `pcic:`, 4 con `indice:`) · 3 nuevo · 154 sin asignar (verbal). Validadores estructural + cross-unidad sin regresión (14 alertas idénticas, son de datos). Las etiquetas de Capa 2 ya escritas en U0 sobreviven al merge — 0 pérdidas detectadas en esta regeneración.
+
+**Nota UX pendiente**: la leyenda del dashboard `[E] reconciliado según el PCIC` es ligeramente imprecisa ahora que algunos reconciliados llevan prefijo `indice:` (4 de 48). El drawer muestra el `reconciliado_con` completo y eso aclara el caso. Si se valora, una iteración v11.77 puede afinar la rotulación.
+
 ## [v11.75 — 2026-05-23] — Modelo: `procedencia_indice` pasa a eje identitario puro (curso-wide, sin aliases)
 
 Corrección de modelo Nivel 1/2 tras feedback del autor en la sesión de Capa 2 sobre U0: el `procedencia_indice` antiguo (§9.1) **mezclaba dos ejes** — pertenencia al índice del curso y temporalidad respecto de la unidad canónica —, produciendo casos donde "Saludos y despedidas U0" salía como `nuevo` aunque el curso lo declara para U1. **Cambio:** `procedencia_indice` se redefine como **eje identitario puro**, evaluado **curso-wide**, sin uso de aliases del registry:

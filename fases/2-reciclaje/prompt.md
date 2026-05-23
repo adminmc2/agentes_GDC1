@@ -29,12 +29,12 @@ El **reciclaje incremental de una unidad**: la actualización de `unidades/nc1-r
 
 El procesamiento es híbrido en dos capas, **no a la vez** (`REDISEÑO-EN-CURSO.md` §1.3):
 
-1. **Capa 1 — esqueleto determinista.** Genera/actualiza mecánicamente los hilos de nivel `mapa` (desde `nc1-curso.json`) y `auto` (desde los 5 bloques del inventario). Precomputa lo mecánico del triage (`procedencia_indice: declarado`). *Procedimiento: `REDISEÑO-EN-CURSO.md` §11; script: `python3 scripts/generar_reciclaje_capa1.py`.*
+1. **Capa 1 — esqueleto determinista.** Genera/actualiza mecánicamente los hilos de nivel `mapa` (desde `nc1-curso.json`) y `auto` (desde los 5 bloques del inventario). Resuelve mecánicamente `procedencia_indice` para vocabulario, gramática, pron/orto y perífrasis: `declarado` / `reconciliado` (con prefijo `indice:` o `pcic:`) / `nuevo` (v11.76). En verbal la procedencia queda sin asignar — la decide Capa 2. *Procedimiento: `REDISEÑO-EN-CURSO.md` §11; script: `python3 scripts/generar_reciclaje_capa1.py`.*
 2. **Capa 2 — sesión IA enriquecedora.** Sobre el esqueleto:
    - Aplica los **tres momentos de análisis** (`reglas-reciclaje.md` / §2.1): intra-unidad, cross-atrás, cross-adelante.
-   - Asigna las **etiquetas** del evento (§3 de reglas) y completa el **triage** `procedencia_indice` (§4).
-   - Trata anticipación (§5), formas verbales (§6), explicación (§7), siempre-presentes (§8).
-   - Genera las **`propuestas[]`** de lo no obvio (§11) — la IA propone, el humano cierra.
+   - **Asigna las `etiquetas`** del evento (§3 de reglas), **escribe `explicacion`** cuando haya cuadro (§7) y **escala `propuestas[]`** lo no obvio (§11).
+   - Trata anticipación (§5), formas verbales (§6), siempre-presentes (§8).
+   - `procedencia_indice` (§4) **no** forma parte del núcleo ordinario de Capa 2 desde v11.76: la Capa 1 la resuelve mecánicamente para vocabulario, gramática, pron/orto y perífrasis. Capa 2 solo la toca en dos casos: (a) **hilos verbales** —`verbos-canonicos.json` no expone respaldo estructurado, así que la procedencia llega sin asignar y la decide la sesión—; (b) **corrección excepcional** de un caso mecánicamente mal clasificado.
 
 ## Criterio de cierre
 

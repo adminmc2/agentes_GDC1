@@ -58,15 +58,17 @@
 
 **anticipación** — Contenido que aparece en una unidad como input incidental antes de ser canónico en una unidad posterior. Es a la vez una etiqueta de evento y un fenómeno cross-unidad. Ver §2.3.
 
-**`procedencia_indice`** — Eje **identitario** (no temporal) del evento respecto al índice editorial del curso (`nc1-curso.json`). Responde a "¿el contenido del hilo está en el índice del curso, en cualquier unidad?" — la temporalidad ("esta unidad vs la canónica") la lleva la etiqueta, no este campo. Eje ortogonal a `etiqueta` (`REDISEÑO-EN-CURSO.md` §9). El JSON conserva el valor técnico; el dashboard muestra el rótulo editorial:
+**`procedencia_indice`** — Eje **identitario** (no temporal) del evento respecto al índice editorial del curso (`nc1-curso.json`) **y al respaldo PCIC**. Responde a "¿el título canónico del hilo está respaldado por el índice del curso o por los registries de fase 1?" — la temporalidad ("esta unidad vs la canónica") la lleva la etiqueta, no este campo. Eje ortogonal a `etiqueta` (`REDISEÑO-EN-CURSO.md` §9). El JSON conserva el valor técnico; el dashboard muestra el rótulo editorial:
 
-| Valor (JSON) | Rótulo editorial | Significado |
-|---|---|---|
-| `declarado` | **contenido del índice** | El título canónico del hilo coincide **literalmente** con una entrada del índice del curso, en cualquier unidad. Lo escribe la Capa 1 por coincidencia mecánica curso-wide, **sin** usar aliases. |
-| `reconciliado` | **reconciliado según el PCIC** | El contenido corresponde a una entrada del índice del curso **bajo otro nombre** — la equivalencia se resuelve vía los registries canónicos respaldados por PCIC (el índice puede decir "Verbos ser, llamarse y tener" y el hilo canónico ser `ser`). Lo escribe la Capa 2 como propuesta + cierre humano. |
-| `nuevo` | **fuera del índice** | El contenido **no aparece en el índice del curso en ninguna unidad**, ni literal ni reconciliable. Contenido emergente. Lo escribe la Capa 2. |
+| Valor (JSON) | Rótulo editorial | Significado | Quién lo escribe |
+|---|---|---|---|
+| `declarado` | **contenido del índice** | El título canónico coincide literalmente con una entrada del índice del curso, en cualquier unidad. | Capa 1 (mecánico). |
+| `reconciliado` con `reconciliado_con: "indice:<entrada>"` | **reconciliado con el índice** | El canónico es alias de una entrada del índice del curso, resuelto vía `aliases_indice` del registry. | Capa 1 (mecánico, v11.76). |
+| `reconciliado` con `reconciliado_con: "pcic:<ref>"` | **reconciliado según el PCIC** | El canónico tiene respaldo PCIC pero no entrada en el curso (`origen=pcic_a1` o `_pcic_ref`). `"pcic:A1"` como fallback. | Capa 1 (mecánico, v11.76). |
+| `nuevo` | **fuera del índice** | No está en el índice ni vía aliases ni con respaldo PCIC. Caso residual (`origen=excepcion` sin aliases). | Capa 1 (mecánico). |
+| **sin asignar** | **pendiente Capa 2 (verbal)** | Solo bloque `verbal`: `verbos-canonicos.json` no expone respaldo estructurado. | Capa 2 decide (excepción del modelo, v11.76). |
 
-El valor es **estable por hilo** (todos los eventos del mismo hilo comparten `procedencia_indice`, porque depende del título canónico contra el índice global del curso). La cronología la marca la etiqueta: `anticipacion` (antes de la unidad canónica), `aplica` (después), sin etiqueta temporal cuando coincide con su unidad canónica.
+El valor es **estable por hilo** (depende del título canónico contra el índice y los registries globales, no de la unidad del evento). La cronología la marca la etiqueta: `anticipacion` (antes), `aplica` (después), sin etiqueta temporal cuando coincide con su unidad canónica.
 
 ---
 

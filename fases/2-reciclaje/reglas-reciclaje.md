@@ -77,19 +77,21 @@ Cada evento lleva una **lista** `etiquetas[]` (coexisten, no es valor único). L
 
 La clasificación `principal`/`recurrente` del inventario de fase 1 **no dicta** la etiqueta — la decide la Capa 2 IA leyendo el contexto. Prior: la mayoría de `recurrente` reciben etiquetas de repetición, pero `introduce` sobre un `recurrente` es legítimo.
 
-## §4. `procedencia_indice` — triage respecto al índice (eje identitario, v11.75)
+## §4. `procedencia_indice` — triage respecto al índice y al PCIC (eje identitario mecanizado, v11.76)
 
-Eje **identitario puro**, ortogonal a `etiquetas`. Responde solo a "¿el contenido del hilo está en el índice del curso, en cualquier unidad?". La temporalidad la lleva enteramente la etiqueta. Tres salidas:
+Eje **identitario puro**, ortogonal a `etiquetas`. Responde a "¿el título canónico del hilo está respaldado por el índice del curso o por los registries (incluido PCIC)?". La temporalidad la lleva la etiqueta, no este eje.
 
-| Valor | Criterio |
-|---|---|
-| `declarado` | El título canónico del hilo coincide **literalmente** con una entrada del índice del curso, **en cualquier unidad**. Precomputable por la Capa 1 — coincidencia mecánica curso-wide, **sin aliases**. |
-| `reconciliado` | No literal pero es el mismo contenido bajo otro nombre (alias del registry / equivalencia PCIC). Decisión de Capa 2 (propuesta + cierre humano). Se anota `reconciliado_con`. |
-| `nuevo` | No aparece en el índice del curso en ninguna unidad, ni literal ni reconciliable. Contenido emergente. Propuesta de Capa 2. |
+| Valor | Criterio | Quién lo escribe |
+|---|---|---|
+| `declarado` | El título canónico coincide **literalmente** con una entrada del índice del curso, **en cualquier unidad** (slug curso-wide; absorbe paréntesis del índice). | **Capa 1**, mecánico. |
+| `reconciliado` con prefijo `indice:` | El canónico es alias de una entrada del índice del curso (resuelto vía `aliases_indice` del registry de campos). `reconciliado_con: "indice:<entrada del curso>"`. | **Capa 1**, mecánico (v11.76). |
+| `reconciliado` con prefijo `pcic:` | El canónico tiene respaldo PCIC pero no entrada en el curso (`origen=pcic_a1` en vocab; `_pcic_ref` en gramática/pron/perif). `reconciliado_con: "pcic:<ref>"` o `"pcic:A1"` como fallback. | **Capa 1**, mecánico (v11.76). |
+| `nuevo` | No está en el índice ni vía aliases ni vía respaldo PCIC. Solo en `origen=excepcion` sin aliases. Caso residual. | **Capa 1**, mecánico. |
+| **sin asignar** | **Solo bloque `verbal`**: `verbos-canonicos.json` no expone respaldo estructurado equivalente a `_pcic_ref`. La Capa 1 deja la procedencia vacía. | **Capa 2 decide** (excepción al modelo mecánico, v11.76). |
 
-El valor es **estable por hilo** (todos los eventos del mismo hilo comparten `procedencia_indice` porque depende del título contra el índice global). Se persiste por evento por compatibilidad del schema. La cronología "esta unidad vs la canónica" vive en las etiquetas: `anticipacion` (antes), sin etiqueta temporal (en su unidad canónica), `aplica` (después).
+El valor es **estable por hilo** (depende del título canónico contra el índice y los registries globales, no de la unidad). Se persiste por evento por compatibilidad de schema. La cronología la marca la etiqueta: `anticipacion` (antes), sin etiqueta temporal (en su unidad canónica), `aplica` (después).
 
-**Cautela operativa (v11.75)**: la Capa 1 **no** usa aliases del registry para marcar `declarado`. Si el contenido entra al hilo por alias resolution, el evento queda **sin** `procedencia_indice` mecánica y la Capa 2 propone `reconciliado` con cierre humano.
+**Cambio de modelo v11.76**: en v11.75 todos los `reconciliado`/`nuevo` eran propuestas de Capa 2 (cautela anti-alias). Comprobado que el registry ya curado de fase 1 trae el respaldo estructurado necesario para 4 bloques, la Capa 1 mecaniza el triage íntegro salvo verbal.
 
 ## §5. Anticipación
 
