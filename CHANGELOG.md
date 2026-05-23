@@ -15,6 +15,12 @@
 
 ---
 
+## [v11.89 — 2026-05-23] — Portada U0 (Punto de partida, p.8)
+
+Añadido `portada` al inventario de U0 (`unidades/U0/U0-nc1-inventario.json`). Unidad atípica sin numeración: capturados verbatim el título («Punto de partida»), la foto de cubos con letras del abecedario y el índice de cuatro epígrafes. Validador 0/0/0.
+
+---
+
 ## [v11.88 — 2026-05-23] — Schema fase 1: campo `portada` opcional (apertura de unidad)
 
 Nuevo campo top-level opcional `portada` en el inventario, para capturar la columna de apertura de cada unidad (número + título + fotos temáticas, siempre 1.ª página de Vocabulario, columna izquierda). Es metadato de unidad — ni actividad ni cuadro — por eso va al nivel de `titulo`/`nivel`. Shape: `{pagina: int, descripcion: str (verbatim)}`. **Campo opcional**: no rompe U0-U9 (validador 0/0/0 tras el cambio). `schema-inventario.md` §1 (recuento + jsonc) + nueva §1.1 con shape y semántica. `validar_inventario.py`: `portada` en `CLAVES_TOP_OPCIONALES` + chequeo de shape (si presente: ambas subclaves obligatorias, `pagina` int, `descripcion` str no vacío). Corregida también la inconsistencia preexistente en §1: recuento decía "13 obligatorias" pero L54 ya decía 12 (tras la eliminación de `contenidos_indice` en v11.67). Próximo: rellenar `portada` unidad por unidad leyendo el PDF, empezando por U0.

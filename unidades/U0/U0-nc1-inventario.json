@@ -5,6 +5,10 @@
   "paginas_libro": "8-11",
   "nivel": "A1.1",
   "fuente": { "archivo": "unidades/U0/fuente/U0-nc1.pdf", "version_extraccion": "2026-05-15" },
+  "portada": {
+    "pagina": 8,
+    "descripcion": "Título: «Punto de partida» (sin número de unidad). A la izquierda, foto de cubos de colores apilados con letras del abecedario visibles (E, R, P, O, D, K, B, M, C, G, Z, E, G, F, J, W, O, entre otras). Debajo, listado con cuatro epígrafes precedidos de viñeta: «Países que hablan español», «Abecedario español», «Números 0-10», «Para la clase»."
+  },
   "vocabulario_consolidado": {
     "principal": {
       "Países que hablan español": {
