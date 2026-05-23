@@ -15,6 +15,17 @@
 
 ---
 
+## [v11.82 — 2026-05-23] — Sincronización automática de `_meta` del canónico (pre-commit hook)
+
+Tras v11.81 (sync manual), el autor pidió que la actualización fuera automática para no depender de la memoria humana. Implementado:
+
+- **`scripts/sync_meta_reciclaje.py`** — idempotente: lee `CHANGELOG.md` (máximo `vX.Y`) y la fecha de hoy, escribe `_meta.version` y `_meta.fecha` en `nc1-reciclaje.json` solo si cambian.
+- **`scripts/hooks/pre-commit`** — hook git que detecta si `unidades/nc1-reciclaje.json` está staged en un commit y, si lo está, ejecuta el sync y re-stage del JSON. Si no toca el canónico, no hace nada.
+- **Instalación:** `git config core.hooksPath scripts/hooks` (una sola vez por checkout).
+- **Documentación:** sección nueva en `fases/2-reciclaje/CLAUDE.md`.
+
+Desde ahora cualquier commit que incluya cambios al canónico (regeneración de Capa 1, escritura directa de Capa 2, ediciones manuales) llevará `_meta.version` actualizado automáticamente. El dashboard refleja siempre la versión real sin intervención.
+
 ## [v11.81 — 2026-05-23] — Sync `_meta.version` del canónico (dashboard muestra versión actual)
 
 Higiene. `_meta.version` de `nc1-reciclaje.json` lo escribe el generador de Capa 1; la última corrida fue en v11.76 y se quedó en `v11.77` (lectura del CHANGELOG en ese momento). Tras v11.77→v11.80 el JSON cambió varias veces sin regenerar (Capa 2 sobre U0 en v11.80 escribió etiquetas, explicación y propuestas directamente). El dashboard mostraba `v11.77` en la cabecera, desfasado del estado real. Sincronizado a `v11.81` para reflejar el contenido actual. Solo `unidades/nc1-reciclaje.json` (campo `_meta.version`).

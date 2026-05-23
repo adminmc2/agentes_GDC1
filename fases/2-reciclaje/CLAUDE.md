@@ -43,6 +43,16 @@ Genera los hilos `mapa` (desde `nc1-curso.json`) y `auto` (desde los inventarios
 
 **Capa 2 — sesión IA enriquecedora.** No es un script: es una sesión IA supervisada por unidad (`REDISEÑO-EN-CURSO.md` §12) que, sobre el esqueleto de Capa 1, asigna etiquetas, completa el triage, escribe `explicacion` y escala `propuestas[]`. La IA propone, el autor cierra. **Aún sin estrenar** — ver el banner de estado.
 
+## Sincronización automática de `_meta.version`
+
+`_meta.version` y `_meta.fecha` del canónico `nc1-reciclaje.json` se mantienen al día automáticamente por un pre-commit hook (v11.82). El hook detecta cuándo el JSON está en el commit y bumpea `_meta` al estado actual (versión máxima de `CHANGELOG.md` + fecha de hoy) antes de cerrar el commit. Si no se ha instalado el hook, ejecutar una vez:
+
+```bash
+git config core.hooksPath scripts/hooks
+```
+
+Si conviene sincronizar a mano (sin commit): `python3 scripts/sync_meta_reciclaje.py` (idempotente).
+
 ## Cómo validar
 
 El **criterio de cierre** del reciclaje de una unidad está en `reglas-reciclaje.md` §13-§14. Los dos validadores automáticos del gate ya existen como script:

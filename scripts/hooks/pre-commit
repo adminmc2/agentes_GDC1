@@ -1,0 +1,31 @@
+#!/bin/bash
+# Pre-commit hook — sincroniza _meta del canónico de fase 2 (v11.82).
+#
+# Si `unidades/nc1-reciclaje.json` está en el staged y/o ha cambiado,
+# corre `scripts/sync_meta_reciclaje.py` para bumpear `_meta.version` y
+# `_meta.fecha` al estado actual del proyecto (CHANGELOG + fecha de hoy).
+# Vuelve a stage del JSON si la sincronización ha cambiado algo.
+#
+# Instalación: ver `fases/2-reciclaje/CLAUDE.md` o ejecutar una sola vez:
+#   git config core.hooksPath scripts/hooks
+#
+# Si quieres saltarlo en un commit puntual: `git commit --no-verify`.
+
+set -e
+
+PROJECT_ROOT="$(git rev-parse --show-toplevel)"
+TARGET="unidades/nc1-reciclaje.json"
+
+# Solo activa si el canónico está staged en este commit.
+if ! git diff --cached --name-only | grep -qx "$TARGET"; then
+    exit 0
+fi
+
+cd "$PROJECT_ROOT"
+python3 scripts/sync_meta_reciclaje.py
+# Re-stage solo si el script modificó el archivo.
+if ! git diff --quiet -- "$TARGET"; then
+    git add "$TARGET"
+fi
+
+exit 0
