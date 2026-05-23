@@ -15,6 +15,10 @@
 
 ---
 
+## [v11.78 — 2026-05-23] — Dashboard drawer: `reconciliado_con` visible como texto persistente
+
+Micro-UX. En v11.77 el chip de procedencia se afinó a 4 categorías (I/E/P/F), pero el `reconciliado_con` completo (`indice:Números 0-10`, `pcic:A1`, etc.) solo era visible al pasar el cursor por el chip (`title`) — invisible en móvil/touch y poco escaneable. v11.78 lo muestra **como texto persistente** en la fila del evento del drawer, en gris claro itálico, precedido por flecha (`→ indice:Números 0-10`). Sin perder el tooltip — el `title` con `procedencia · reconciliado_con` se mantiene como hover-detail. Solo `web/index.html`; sintaxis JS validada.
+
 ## [v11.77 — 2026-05-23] — Dashboard: leyenda de procedencia con 4 chips (separa `reconciliado` por prefijo)
 
 Follow-up no bloqueante de v11.76. Ahora que `reconciliado_con` lleva prefijo (`indice:` o `pcic:`), la leyenda del dashboard que decía `[E] reconciliado según el PCIC` para todo era imprecisa. v11.77 divide visualmente la categoría:

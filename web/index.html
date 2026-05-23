@@ -1009,6 +1009,12 @@ function openRecDrawer(hiloId) {
         const proc = procCat
             ? `<span title="${_esc(procTitle)}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#37474F"><span style="display:inline-flex;width:16px;height:16px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:3px;font-size:9px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(procCat.initial)}</span>${_esc(procCat.label)}</span>`
             : '';
+        // `reconciliado_con` como texto persistente (v11.79) — el chip de
+        // procedencia ya identifica el tipo; aquí se ve el referente literal
+        // sin necesidad de hover (útil en móvil/touch y para escaneo visual).
+        const reconRef = ev.reconciliado_con
+            ? `<span style="font-size:11px;color:#90A4AE;font-style:italic;margin-left:-2px">→ ${_esc(ev.reconciliado_con)}</span>`
+            : '';
         const tiempo = ev.tiempo
             ? `<span style="font-size:11px;color:#90A4AE">${_esc(ev.tiempo)}</span>` : '';
         const formas = (ev.formas && ev.formas.length)
@@ -1017,7 +1023,7 @@ function openRecDrawer(hiloId) {
             ? `<div style="font-size:12px;color:#607D8B;margin-top:5px;font-family:monospace;line-height:1.5">${ev.evidencias.map(x => _esc(x)).join(' · ')}</div>`
             : `<div style="font-size:11px;color:#CFD8DC;margin-top:5px">sin evidencias</div>`;
         return `<div style="padding:10px 12px;border-bottom:1px solid #ECEFF1">
-            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><strong style="color:#0D47A1;font-size:14px">U${ev.unidad}</strong>${tiempo}${et}${proc}</div>
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><strong style="color:#0D47A1;font-size:14px">U${ev.unidad}</strong>${tiempo}${et}${proc}${reconRef}</div>
             ${formas}${evid}
         </div>`;
     }).join('');
