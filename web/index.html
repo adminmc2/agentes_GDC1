@@ -756,15 +756,14 @@ const REC_COLOR_BLOQUE = {
     verbal: '#E64A19',
     perifrasis: '#5D4037'
 };
-// Paleta pastel por bloque — fondo claro + texto oscuro + borde sutil.
-// Mantiene la identidad cromática pero alineada con el sistema pastel
-// del inventario. v12.4+
+// Paleta pastel por bloque — fondo medio + texto oscuro + borde definido,
+// con presencia visual sobre el fondo crema del dashboard. v12.5+
 const REC_PASTEL_BLOQUE = {
-    vocabulario:              { bg: '#E3F2FD', fg: '#1A4F7A', bd: '#BBDEFB' },
-    gramatica:                { bg: '#F3E5F5', fg: '#5A3170', bd: '#E1BEE7' },
-    pronunciacion_ortografia: { bg: '#E0F2F1', fg: '#1F5751', bd: '#B2DFDB' },
-    verbal:                   { bg: '#FFF3E0', fg: '#7A3F12', bd: '#FFE0B2' },
-    perifrasis:               { bg: '#ECEFF1', fg: '#455A64', bd: '#CFD8DC' },
+    vocabulario:              { bg: '#B3E5FC', fg: '#01579B', bd: '#4FC3F7' },
+    gramatica:                { bg: '#CE93D8', fg: '#4A148C', bd: '#AB47BC' },
+    pronunciacion_ortografia: { bg: '#80DEEA', fg: '#006064', bd: '#26C6DA' },
+    verbal:                   { bg: '#FFAB91', fg: '#BF360C', bd: '#FF7043' },
+    perifrasis:               { bg: '#BCAAA4', fg: '#3E2723', bd: '#8D6E63' },
 };
 const REC_LABEL_BLOQUE = {
     vocabulario: 'Vocabulario',
@@ -779,17 +778,17 @@ const REC_COLOR_ETIQUETA = {
     sistematiza: '#7B1FA2', contrasta: '#C2185B',
     anticipacion: '#0097A7', discrimina: '#5D4037'
 };
-// Paleta pastel coherente con `.cat-tag.p-*` del sistema de inventarios.
-// Cada chip lleva fondo claro + texto oscuro + borde sutil; uniforme con
-// el resto del dashboard. Se usa en el modal del reciclaje (v12.4+).
+// Paleta pastel — más saturada que `cat-tag.p-*` del inventario para que
+// los círculos solos (sin texto) tengan presencia visual sobre el fondo
+// crema del dashboard. Inspirada en Material 200/700. v12.5+
 const REC_PASTEL_ETIQUETA = {
-    introduce:    { bg: '#E3F2FD', fg: '#1A4F7A', bd: '#BBDEFB' }, // azul
-    amplia:       { bg: '#E8F5E9', fg: '#2E5A33', bd: '#C8E6C9' }, // verde
-    aplica:       { bg: '#FFF3E0', fg: '#7A3F12', bd: '#FFE0B2' }, // melocotón
-    sistematiza:  { bg: '#F3E5F5', fg: '#5A3170', bd: '#E1BEE7' }, // lila
-    contrasta:    { bg: '#FCE4EC', fg: '#7A2148', bd: '#F8BBD0' }, // rosa
-    anticipacion: { bg: '#E0F2F1', fg: '#1F5751', bd: '#B2DFDB' }, // menta
-    discrimina:   { bg: '#ECEFF1', fg: '#455A64', bd: '#CFD8DC' }, // gris
+    introduce:    { bg: '#90CAF9', fg: '#0D47A1', bd: '#42A5F5' }, // azul
+    amplia:       { bg: '#A5D6A7', fg: '#1B5E20', bd: '#66BB6A' }, // verde
+    aplica:       { bg: '#FFCC80', fg: '#E65100', bd: '#FFA726' }, // naranja
+    sistematiza:  { bg: '#CE93D8', fg: '#4A148C', bd: '#AB47BC' }, // lila
+    contrasta:    { bg: '#F48FB1', fg: '#880E4F', bd: '#EC407A' }, // rosa
+    anticipacion: { bg: '#80CBC4', fg: '#004D40', bd: '#26A69A' }, // teal
+    discrimina:   { bg: '#BCAAA4', fg: '#3E2723', bd: '#8D6E63' }, // marrón
 };
 const REC_COLOR_NIVEL = { mapa: '#90A4AE', auto: '#5C6BC0', detalle: '#2E7D32' };
 const REC_DOT_SKELETON = '#CFD8DC';  // evento sin etiquetar — estado válido (Capa 1)
@@ -800,23 +799,32 @@ const REC_REL_COLOR = {
     contrasta: '#FFA726', comparte: '#42A5F5',
 };
 const REC_PASTEL_REL = {
-    usa:           { bg: '#F3E5F5', fg: '#5A3170', bd: '#E1BEE7' }, // lila
-    prerrequisito: { bg: '#FCE4EC', fg: '#7A2148', bd: '#F8BBD0' }, // rosa
-    activa:        { bg: '#E0F2F1', fg: '#1F5751', bd: '#B2DFDB' }, // menta
-    contrasta:     { bg: '#FFF3E0', fg: '#7A3F12', bd: '#FFE0B2' }, // melocotón
-    comparte:      { bg: '#E3F2FD', fg: '#1A4F7A', bd: '#BBDEFB' }, // azul
+    usa:           { bg: '#CE93D8', fg: '#4A148C', bd: '#AB47BC' }, // lila
+    prerrequisito: { bg: '#EF9A9A', fg: '#B71C1C', bd: '#E57373' }, // rojo
+    activa:        { bg: '#80CBC4', fg: '#004D40', bd: '#26A69A' }, // teal
+    contrasta:     { bg: '#FFCC80', fg: '#E65100', bd: '#FFA726' }, // naranja
+    comparte:      { bg: '#90CAF9', fg: '#0D47A1', bd: '#42A5F5' }, // azul
 };
-const REC_PASTEL_PENDIENTE = { bg: '#FFF8E1', fg: '#7A5D00', bd: '#FFECB3' };
-// Helper para renderizar un chip pastel uniforme.
+const REC_PASTEL_PENDIENTE = { bg: '#FFE082', fg: '#FF6F00', bd: '#FFCA28' };
+// Helper para renderizar un chip pastel uniforme — minimalista, sin borde.
+// El color de fondo ya identifica la categoría; el borde sería redundante.
 function _recChipPastel(palette, key, label) {
-    const p = palette[key] || { bg: '#ECEFF1', fg: '#455A64', bd: '#CFD8DC' };
-    return `<span style="font-size:10px;color:${p.fg};background:${p.bg};border:1px solid ${p.bd};padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap">${_esc(label)}</span>`;
+    const p = palette[key] || { bg: '#ECEFF1', fg: '#455A64' };
+    return `<span style="font-size:9px;color:${p.fg};background:${p.bg};padding:2px 7px;border-radius:9px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap">${_esc(label)}</span>`;
 }
 // Sigla compacta para el tiempo verbal — usada bajo cada dot de timeline
 // y dentro del modal (v12.3). Solo aplica a bloques `verbal` y `perifrasis`.
 const REC_TIEMPO_SIGLA = {
     'Presente': 'PRE', 'Pretérito indefinido': 'IND',
     'Imperativo': 'IMP', 'Infinitivo': 'INF',
+};
+// Color pastel por tiempo verbal — v12.5+. Cada sigla lleva su propio color
+// como cuadradito de fondo en la leyenda y bajo el dot de la timeline.
+const REC_PASTEL_TIEMPO = {
+    'Presente':            { bg: '#90CAF9', fg: '#0D47A1' }, // azul
+    'Pretérito indefinido':{ bg: '#A5D6A7', fg: '#1B5E20' }, // verde
+    'Imperativo':          { bg: '#FFCC80', fg: '#E65100' }, // naranja
+    'Infinitivo':          { bg: '#CE93D8', fg: '#4A148C' }, // lila
 };
 
 // `procedencia_indice` — eje ortogonal a `etiquetas`. El JSON guarda 3 valores
@@ -901,24 +909,27 @@ function recNivelBadge(nivel) {
 
 function renderRecDots(eventosByU, hId, bloque) {
     const conSigla = (bloque === 'verbal' || bloque === 'perifrasis');
+    const cellH = conSigla ? 42 : 32;
     return REC_UNIDADES.map(u => {
         const evs = eventosByU[u];
         if (!evs || !evs.length) {
-            return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:${conSigla ? 38 : 30}px"><div style="width:8px;height:8px;border-radius:50%;background:#ECEFF1;border:1px solid #CFD8DC"></div></div>`;
+            return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:${cellH}px"><div style="width:6px;height:6px;border-radius:2px;background:var(--md-outline-variant);box-shadow:0 0 0 3px var(--md-surface)"></div></div>`;
         }
         const dots = evs.map(ev => {
             const p = _recDotPastel(ev);
             const et = (ev.etiquetas && ev.etiquetas.length) ? ev.etiquetas.join(', ') : 'sin etiquetar (Capa 1)';
             const tip = `U${ev.unidad}${ev.tiempo ? ' · ' + ev.tiempo : ''} · ${et} · ${(ev.evidencias || []).length} evidencias`;
-            const sigla = (conSigla && REC_TIEMPO_SIGLA[ev.tiempo])
-                ? `<div style="font-size:8px;color:var(--md-on-surface-variant);font-weight:600;letter-spacing:.3px;line-height:1;margin-top:2px">${REC_TIEMPO_SIGLA[ev.tiempo]}</div>`
-                : '';
-            return `<div onclick="openRecDrawer('${hId}')" title="${_esc(tip)}" style="display:flex;flex-direction:column;align-items:center;cursor:pointer">
-                <div style="width:14px;height:14px;border-radius:50%;background:${p.bg};border:1px solid ${p.bd}"></div>
+            let sigla = '';
+            if (conSigla && REC_TIEMPO_SIGLA[ev.tiempo]) {
+                const t = REC_PASTEL_TIEMPO[ev.tiempo] || { bg: 'var(--md-surface-variant)', fg: 'var(--md-on-surface-variant)' };
+                sigla = `<div style="font-size:8px;color:${t.fg};background:${t.bg};font-weight:700;letter-spacing:.3px;line-height:1;padding:2px 4px;border-radius:3px;margin-top:3px">${REC_TIEMPO_SIGLA[ev.tiempo]}</div>`;
+            }
+            return `<div onclick="openRecDrawer('${hId}')" title="${_esc(tip)}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer">
+                <div style="width:18px;height:18px;border-radius:4px;background:${p.bg};border:1.5px solid ${p.bd};box-shadow:0 1px 2px rgba(0,0,0,0.08), 0 0 0 3px var(--md-surface)"></div>
                 ${sigla}
             </div>`;
         }).join('');
-        return `<div style="flex:1;display:flex;justify-content:center;align-items:flex-start;padding-top:4px;height:${conSigla ? 38 : 30}px;gap:4px;flex-wrap:wrap">${dots}</div>`;
+        return `<div style="flex:1;display:flex;justify-content:center;align-items:center;height:${cellH}px;gap:4px;flex-wrap:wrap">${dots}</div>`;
     }).join('');
 }
 
@@ -943,7 +954,7 @@ function renderRecHiloRow(h, bColor, dominantNivel) {
                 ${marker}
             </div>
             <div style="display:flex;align-items:center;position:relative">
-                <div style="position:absolute;left:0;right:0;top:50%;height:2px;background:#ECEFF1"></div>
+                <div style="position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(to right, transparent 0%, var(--md-outline) 8%, var(--md-outline) 92%, transparent 100%);transform:translateY(-0.5px)"></div>
                 <div style="display:flex;flex:1;position:relative;z-index:1">${puntos}</div>
             </div>
         </div>
@@ -965,14 +976,24 @@ function _recContar(eventos, campo) {
 // Leyenda compacta de etiquetas: chip de color + rótulo + (n).
 // Valores sin datos se atenúan — el sistema se nombra completo pero no se
 // finge presencia donde no la hay.
-function _recLeyendaChips(valores, colores, labels, cuenta) {
+function _recLeyendaChips(valores, palette, labels, cuenta) {
+    // `palette` puede ser dict{key→string saturado} (legacy) o dict{key→{bg,fg,bd}}
+    // (pastel, v12.4+). Detecta el tipo y renderiza el dot con el mismo lenguaje
+    // visual que los dots de la timeline para que la leyenda quede coherente.
     return valores.map(v => {
-        const col = colores[v] || '#607D8B';
+        const entry = palette[v];
         const lab = (labels && labels[v]) || v;
         const n = cuenta[v] || 0;
-        const dim = n === 0 ? 'opacity:.45;' : '';
-        return `<span style="display:inline-flex;align-items:center;gap:5px;${dim}"><span style="width:10px;height:10px;border-radius:50%;background:${col};display:inline-block"></span><span>${_esc(lab)}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${n})</span></span>`;
-    }).join('<span style="color:#CFD8DC;margin:0 2px">·</span>');
+        const dim = n === 0 ? 'opacity:.4;' : '';
+        let dotHtml;
+        if (entry && typeof entry === 'object' && entry.bg) {
+            dotHtml = `<span style="width:12px;height:12px;border-radius:3px;background:${entry.bg};border:1.5px solid ${entry.bd};display:inline-block;box-sizing:border-box;flex-shrink:0"></span>`;
+        } else {
+            const col = entry || '#607D8B';
+            dotHtml = `<span style="width:10px;height:10px;border-radius:2px;background:${col};display:inline-block;flex-shrink:0"></span>`;
+        }
+        return `<span style="display:inline-flex;align-items:center;gap:6px;${dim}">${dotHtml}<span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--md-on-surface)">${_esc(lab)}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums;font-size:11px">${n}</span></span>`;
+    }).join('');
 }
 
 // Leyenda compacta de procedencia: cuadrito gris con la inicial mnemotécnica
@@ -982,9 +1003,9 @@ function _recLeyendaChips(valores, colores, labels, cuenta) {
 function _recLeyendaIniciales(cats, cuenta) {
     return cats.map(c => {
         const n = cuenta[c.key] || 0;
-        const dim = n === 0 ? 'opacity:.45;' : '';
-        return `<span style="display:inline-flex;align-items:center;gap:6px;${dim}"><span style="display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:4px;font-size:10px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace">${_esc(c.initial)}</span><span>${_esc(c.label)}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${n})</span></span>`;
-    }).join('<span style="color:#CFD8DC;margin:0 2px">·</span>');
+        const dim = n === 0 ? 'opacity:.4;' : '';
+        return `<span style="display:inline-flex;align-items:center;gap:6px;${dim}"><span style="display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;background:${REC_GRIS_PROCEDENCIA};color:#fff;border-radius:3px;font-size:10px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace;flex-shrink:0">${_esc(c.initial)}</span><span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--md-on-surface)">${_esc(c.label)}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums;font-size:11px">${n}</span></span>`;
+    }).join('');
 }
 
 // Dos leyendas compactas para los dos ejes ortogonales del evento: etiqueta
@@ -996,9 +1017,9 @@ function renderRecLeyendas() {
     const etiquetados = eventos.filter(e => e.etiquetas && e.etiquetas.length).length;
     const sinEtiqueta = eventosTotal - etiquetados;
     const filaEt = _recLeyendaChips(
-        Object.keys(REC_COLOR_ETIQUETA), REC_COLOR_ETIQUETA, null, cEt
-    ) + `<span style="color:#CFD8DC;margin:0 2px">·</span>` +
-        `<span style="display:inline-flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:50%;background:${REC_DOT_SKELETON};display:inline-block"></span><span>sin etiquetar</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums">(${sinEtiqueta})</span></span>`;
+        Object.keys(REC_PASTEL_ETIQUETA), REC_PASTEL_ETIQUETA, null, cEt
+    ) +
+        `<span style="display:inline-flex;align-items:center;gap:6px;opacity:${sinEtiqueta===0?'.4':'1'}"><span style="width:12px;height:12px;border-radius:3px;background:#F5F5F5;border:1.5px solid #E0E0E0;display:inline-block;box-sizing:border-box;flex-shrink:0"></span><span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--md-on-surface)">sin etiquetar</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums;font-size:11px">${sinEtiqueta}</span></span>`;
 
     // Conteo por sub-categoría de procedencia (4 chips: declarado, reconciliado
     // vía índice, reconciliado vía PCIC, nuevo). v11.77.
@@ -1012,12 +1033,47 @@ function renderRecLeyendas() {
     });
     const sinProc = eventosTotal - conProc;
     const filaPr = _recLeyendaIniciales(REC_PROCEDENCIA_CATS, cuentaCats)
-        + `<span style="color:#CFD8DC;margin:0 2px">·</span>`
-        + `<span style="display:inline-flex;align-items:center;gap:5px;color:#90A4AE"><span>sin asignar</span><span style="font-variant-numeric:tabular-nums">(${sinProc})</span></span>`;
+        + `<span style="display:inline-flex;align-items:center;gap:6px;opacity:${sinProc===0?'.4':'1'}"><span style="display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;background:#F5F5F5;border:1.5px solid #E0E0E0;color:#90A4AE;border-radius:3px;font-size:10px;font-weight:700;font-family:'SF Mono',Menlo,Consolas,monospace;flex-shrink:0">—</span><span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--md-on-surface)">sin asignar</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums;font-size:11px">${sinProc}</span></span>`;
 
-    return `<div style="margin-bottom:20px;font-size:12px;color:#546E7A">
-        <div style="display:flex;align-items:baseline;gap:10px;padding:8px 0;border-bottom:1px solid #ECEFF1"><span style="min-width:170px;color:#37474F;font-weight:600">Etiqueta del evento</span><div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">${filaEt}</div></div>
-        <div style="display:flex;align-items:baseline;gap:10px;padding:8px 0"><span style="min-width:170px;color:#37474F;font-weight:600">Procedencia del índice</span><div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">${filaPr}</div></div>
+    // Conteo de eventos verbales/perifrásticos por tiempo (siglas bajo cada dot).
+    // Solo se acumulan los del bloque `verbal` o `perifrasis` — el resto no
+    // tiene `tiempo`.
+    const cuentaTiempo = {};
+    let verbales = 0;
+    (recData.hilos || []).forEach(h => {
+        if (h.bloque !== 'verbal' && h.bloque !== 'perifrasis') return;
+        (h.eventos || []).forEach(ev => {
+            verbales += 1;
+            if (ev.tiempo) cuentaTiempo[ev.tiempo] = (cuentaTiempo[ev.tiempo] || 0) + 1;
+        });
+    });
+    const tiemposLabels = {
+        'Presente': 'PRE — Presente',
+        'Pretérito indefinido': 'IND — Pretérito indefinido',
+        'Imperativo': 'IMP — Imperativo',
+        'Infinitivo': 'INF — Infinitivo',
+    };
+    const filaTi = Object.keys(tiemposLabels).map(t => {
+        const n = cuentaTiempo[t] || 0;
+        const dim = n === 0 ? 'opacity:.4;' : '';
+        const sigla = REC_TIEMPO_SIGLA[t];
+        const p = REC_PASTEL_TIEMPO[t] || { bg: 'var(--md-surface-variant)', fg: 'var(--md-on-surface-variant)' };
+        return `<span style="display:inline-flex;align-items:center;gap:6px;${dim}"><span style="font-size:10px;color:${p.fg};background:${p.bg};padding:2px 6px;border-radius:3px;font-weight:700;letter-spacing:.3px;font-variant-numeric:tabular-nums;flex-shrink:0">${sigla}</span><span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--md-on-surface)">${tiemposLabels[t].split(' — ')[1]}</span><span style="color:#90A4AE;font-variant-numeric:tabular-nums;font-size:11px">${n}</span></span>`;
+    }).join('');
+
+    const seccion = (label, contenido, nota) => `
+        <div style="padding:14px 0">
+            <div style="font-size:13px;font-weight:700;color:var(--md-on-surface);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">${label}</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));gap:10px 20px;align-items:center">${contenido}</div>
+            ${nota ? `<div style="font-size:11px;color:#90A4AE;font-style:italic;margin-top:10px">${nota}</div>` : ''}
+        </div>`;
+
+    return `<div style="margin-bottom:20px;background:var(--md-surface);border:1px solid var(--md-outline-variant);border-radius:var(--md-radius-sm);padding:6px 22px;display:flex;flex-direction:column;divide-y">
+        ${seccion('Etiqueta del evento', filaEt, null)}
+        <div style="height:1px;background:var(--md-outline-variant)"></div>
+        ${seccion('Procedencia del índice', filaPr, null)}
+        <div style="height:1px;background:var(--md-outline-variant)"></div>
+        ${seccion('Tiempo verbal', filaTi, `solo en verbal/perífrasis (${verbales} eventos)`)}
     </div>`;
 }
 
@@ -1336,7 +1392,7 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
 
     function celda(ev, hilo, isMain, idxEvento) {
         if (!ev) {
-            return `<td style="padding:0;width:${CELL_W}px;height:${CELL_H}px;background:#FAFBFC;border-bottom:1px solid #ECEFF1"></td>`;
+            return `<td style="padding:0;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant)"></td>`;
         }
         const c = _recDotColor(ev);
         const et = (ev.etiquetas && ev.etiquetas.length) ? ev.etiquetas[0] : null;
@@ -1352,13 +1408,12 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
         const chip = et
             ? _recChipPastel(REC_PASTEL_ETIQUETA, et, etTxt)
             : `<span style="font-size:9px;color:#B0BEC5;font-style:italic">·</span>`;
-        const tiempo = ev.tiempo && REC_TIEMPO_SIGLA[ev.tiempo]
-            ? `<div style="font-size:9px;color:#607D8B;font-weight:600;margin-top:3px;letter-spacing:.3px">${REC_TIEMPO_SIGLA[ev.tiempo]}</div>`
+        const tPastel = ev.tiempo ? (REC_PASTEL_TIEMPO[ev.tiempo] || null) : null;
+        const tiempo = ev.tiempo && REC_TIEMPO_SIGLA[ev.tiempo] && tPastel
+            ? `<div style="display:inline-block;font-size:9px;color:${tPastel.fg};background:${tPastel.bg};font-weight:700;margin-top:4px;padding:1px 5px;border-radius:3px;letter-spacing:.3px">${REC_TIEMPO_SIGLA[ev.tiempo]}</div>`
             : '';
-        const isMainBg = isMain ? 'var(--md-surface)' : 'var(--md-surface-variant)';
-        const bg = sel ? 'var(--md-surface)' : isMainBg;
         const shadow = sel ? `box-shadow:0 0 0 1px var(--md-on-surface-variant) inset, 0 1px 3px rgba(0,0,0,0.08);` : '';
-        return `<td title="${_esc(tooltipParts.join(' · '))}" onclick="event.stopPropagation();${onclick}" style="padding:6px;width:${CELL_W}px;height:${CELL_H}px;background:${bg};border:1px solid var(--md-outline-variant);cursor:pointer;text-align:center;${shadow}transition:box-shadow .15s">
+        return `<td title="${_esc(tooltipParts.join(' · '))}" onclick="event.stopPropagation();${onclick}" style="padding:6px;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant);cursor:pointer;text-align:center;${shadow}transition:box-shadow .15s">
             ${chip}${tiempo}
         </td>`;
     }
@@ -1372,8 +1427,9 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
 
         const blq = REC_COLOR_BLOQUE[hilo.bloque] || '#607D8B';
         const blqLabel = REC_LABEL_BLOQUE[hilo.bloque] || hilo.bloque;
-        // Chip pastel del bloque — coherente con el resto del dashboard
-        const blqChip = `<span style="font-size:9px;color:${blq};background:${blq}14;border:1px solid ${blq}33;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-left:8px">${_esc(blqLabel.slice(0,9))}</span>`;
+        // Chip pastel del bloque — minimalista, sin borde
+        const blqPastel = REC_PASTEL_BLOQUE[hilo.bloque] || { bg: '#ECEFF1', fg: '#455A64' };
+        const blqChip = `<span style="font-size:9px;color:${blqPastel.fg};background:${blqPastel.bg};padding:2px 7px;border-radius:9px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-left:8px">${_esc(blqLabel.slice(0,9))}</span>`;
         // Sub-texto que explica POR QUÉ aparece la fila: para cerradas, el detalle
         // editorial corto; para pendientes, los cuadros compartidos con su unidad.
         let porQue = '';
@@ -1395,11 +1451,11 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
                     ${_recChipPastel(REC_PASTEL_REL, relInfo.tipo, relInfo.tipo)}
                 </td>`
                 : `<td style="padding:8px 12px;border-bottom:1px solid #ECEFF1;background:#FFF;text-align:center">
-                    <span style="font-size:10px;color:${REC_PASTEL_PENDIENTE.fg};background:${REC_PASTEL_PENDIENTE.bg};border:1px solid ${REC_PASTEL_PENDIENTE.bd};padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px">pendiente</span>
+                    <span style="font-size:9px;color:${REC_PASTEL_PENDIENTE.fg};background:${REC_PASTEL_PENDIENTE.bg};padding:2px 7px;border-radius:9px;font-weight:600;text-transform:uppercase;letter-spacing:.4px">pendiente</span>
                 </td>`
         );
 
-        const tdTitulo = `<td style="padding:10px 14px;border-bottom:1px solid var(--md-outline-variant);background:${isMain?bPastel.bg+'66':'var(--md-surface)'};white-space:nowrap">${tit}</td>`;
+        const tdTitulo = `<td style="padding:10px 14px;border-bottom:1px solid var(--md-outline-variant);background:var(--md-surface);white-space:nowrap;${isMain ? 'border-left:3px solid '+bPastel.bd : ''}">${tit}</td>`;
 
         const cells = cols.map(u => {
             const ev = evsByU[u];

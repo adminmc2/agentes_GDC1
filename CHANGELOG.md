@@ -15,6 +15,32 @@
 
 ---
 
+## [v12.6 — 2026-05-24] — Dashboard reciclaje: cuadrados, color por tiempo verbal, leyenda rediseñada
+
+Iteración estética del dashboard reciclaje (`web/index.html`) tras revisión visual del autor:
+
+(a) **Círculos → cuadrados redondeados** en toda la timeline (vista principal + modal matriz). Dots de evento, dots vacíos y marcadores de leyenda comparten ahora la misma geometría (cuadrado con border-radius 3-4px) — lenguaje visual unificado con los chips de las celdas.
+
+(b) **Color por tiempo verbal** (nueva `REC_PASTEL_TIEMPO`): PRE Presente → azul, IND Pretérito indefinido → verde, IMP Imperativo → naranja, INF Infinitivo → lila. Cada sigla aparece como cuadradito de color tanto en la timeline (bajo el dot del evento verbal/perifrástico) como en la leyenda y en el modal matriz. Antes era gris neutro y se confundía con el resto del fondo.
+
+(c) **Paleta de etiquetas más saturada** (Material 200 en lugar de 50). Las pastel previas (`#E3F2FD`, `#E8F5E9`…) no tenían contraste sobre el fondo crema; las nuevas (`#90CAF9`, `#A5D6A7`…) mantienen el lenguaje pastel pero se ven. Aplica también a bloques (vocabulario azul, gramática lila, pron-orto cian, verbal coral, perífrasis marrón) y a tipos de relación cross-hilo.
+
+(d) **Leyenda rediseñada como tarjeta** con 3 secciones internas ("Etiqueta del evento" / "Procedencia del índice" / "Tiempo verbal") separadas por líneas divisorias. Cabeceras en 13px mayúsculas con letter-spacing; grid de 260px mínimo por chip para que entradas largas como "reconciliado según el PCIC" entren en una sola línea. Nombres de etiqueta en mayúsculas con peso 600 para empatar con los chips de las celdas.
+
+(e) **Chips sin borde, más minimalistas**: el color de fondo identifica la categoría; el borde era redundante. Tamaño bajado a 9px con padding 2×7. Aplica a chips de etiqueta, tipo de relación, bloque y PENDIENTE.
+
+(f) **Celdas uniformes**: fondo blanco en todas (las filas relacionadas pierden el tinte cream que generaba ruido). La fila del hilo principal del modal se distingue solo por un borde lateral fino del color del bloque a la izquierda del título; la celda seleccionada por sombra sutil + borde interior, sin recuadro grueso azul.
+
+(g) **Línea de fondo de timeline** con gradiente sutil (`transparent → var(--md-outline) → transparent`) y halo blanco alrededor de cada cuadradito para aislarlo de la línea.
+
+Sintaxis JS verificada con `node --check`. Sin cambios en datos ni schema; solo CSS/JS. Cierra la afinación visual sobre Fase 1 + Fase 2 del plan editorial.
+
+## [v12.5 — 2026-05-24] — Deuda léxica catalogada: recanonización **global** del campo «Adjetivos descriptivos»
+
+El canónico único `Adjetivos descriptivos` (`campos-semanticos-canonicos.json:120`) está **sobregeneralizado a escala del curso**, no es un problema local de U8. El mismo bucket vive en U5 (principal, casa/objetos), U6 (recurrente, mixto), U8 (recurrente, mezcla físicas + carácter + residuo) y U9 (recurrente, ropa). U8 es el **caso disparador más evidente**, no el alcance. PCIC separa al menos dos familias: §1.1 «Características Físicas» y §1.2 «Carácter y Personalidad». **Partición mínima a decidir:** (1) «Características físicas» (PCIC §1.1) → bloque físico de U8 + parte de U9 corporal; (2) «Carácter y personalidad» (PCIC §1.2) → bloque social/anímico de U8; (3) tratamiento del residuo heterogéneo (favorito, famoso, fuerte, enorme, grande, pequeño, oscuro en U8) que no encaja en PCIC — decidir si se reasigna, elimina o mantiene canónico genérico; (4) revisión paralela del bucket vivienda/objetos de U5 (probable PCIC §43 Vivienda) y del bucket ropa de U9 (probable PCIC §3 Vestuario). En U8, además, el bucket debería pasar a **principal** (la unidad se titula «Descripciones»), no recurrente. **Resolución diferida al ejecutor 2** con deliverable explícito que cubra **U5, U6, U8 y U9 simultáneamente**: tabla completa de items por unidad con columnas (a) PCIC destino, (b) decisión canónica, (c) bucket destino (principal/recurrente), (d) impacto en hilos cross-unidad y relato histórico. **Convención obligatoria al canonizar (aplicable a todo nuevo campo léxico):** cada entry del registry debe declarar (a) `_pcic_ref` (PCIC de respaldo) **y** (b) la categoría literal del libro NC1 que lo introduce (índice general, portada de unidad o etiqueta interna del cuadro) — preserva trazabilidad libro↔PCIC↔canon. **Prohibición de ejecución parcial:** la partición se ejecuta como lote único sobre el conjunto del canónico, o no se ejecuta. Sin cambios de código, registry ni inventarios en este bump. Deuda registrada en `REVIEW.md` (Bloque B).
+
+---
+
 ## [v12.4 — 2026-05-24] — Capa 2 sobre U1 — explicaciones editoriales + paleta pastel unificada
 
 Dos hitos en un lote:
