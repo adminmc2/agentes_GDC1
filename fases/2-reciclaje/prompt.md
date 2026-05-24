@@ -2,9 +2,9 @@
 
 > **Qué es:** entry point operativo de fase 2. Describe cómo se procesa el reciclaje de **una unidad**. Espeja el rol de `prompt.md` en fase 1.
 >
-> ✅ **Fase 2 REACTIVADA** (v11.69 — pausa de decisión 36 levantada). El pipeline está cerrado en sus cuatro niveles de herramienta: Capa 1 implementada (`scripts/generar_reciclaje_capa1.py`), validadores del gate como script (`validar_reciclaje.py`, `validar_cross_unidad.py`), `nc1-reciclaje.json` regenerado al shape del rediseño. El rediseño que lo sustenta está en `REDISEÑO-EN-CURSO.md`.
+> ✅ **Fase 2 REACTIVADA** (v11.69 — pausa de decisión 36 levantada). El pipeline tiene cerrados sus cuatro niveles **originales** de herramienta: Capa 1 implementada (`scripts/generar_reciclaje_capa1.py`), validadores del gate como script (`validar_reciclaje.py`, `validar_cross_unidad.py`), `nc1-reciclaje.json` regenerado al shape del rediseño. **Nivel 5 abierto en v12.19** sobre procedimentalización de Capa 2 — ver `REDISEÑO-EN-CURSO.md` §5.
 >
-> ⚠️ **La Capa 2 no se ha estrenado.** El procedimiento de la sesión IA enriquecedora (§12) está cerrado como contrato pero nunca se ha ejecutado: la primera unidad que se procese es también el shakedown de la Capa 2 — revísala con ese ojo.
+> ⚠️ **Capa 2 corrida como shakedown en U0-U3** (v11.80, v11.84, v12.4, v12.10, v12.18). El procedimiento §12 funciona como contrato general, pero las cuatro sesiones evidenciaron que el contrato sigue sub-procedimentado (etiquetas sin árbol de decisión cerrado, procedencia verbal como excepción, cierre cross-hilo con `tipo`+dirección al humano). Cierre operativo abierto en `REDISEÑO-EN-CURSO.md` §5 Nivel 5 (v12.19). **No abrir Capa 2 sobre U4-U9 hasta que el Nivel 5 cierre los puntos 2-4 del plan.**
 
 ---
 
@@ -47,4 +47,4 @@ Comandos del gate: `python3 scripts/validar_reciclaje.py` (chequeo estructural �
 - No editar a mano los hilos/eventos de nivel `mapa`/`auto` — se regeneran desde la fuente (`reglas-reciclaje.md` §12).
 - No inventar títulos canónicos — el universo es cerrado (§2 de reglas); lo no canónico se escala como propuesta.
 - No cerrar decisiones editoriales en automático — lo no obvio va a `propuestas[]` con cierre humano.
-- No dar por rodada la Capa 2 hasta que su primera corrida real lo confirme.
+- No abrir Capa 2 sobre U4-U9 hasta que `REDISEÑO-EN-CURSO.md` §5 Nivel 5 cierre la procedimentalización (matriz de etiquetas + anexos verbal/cross-hilo + decisión `explicacion`).

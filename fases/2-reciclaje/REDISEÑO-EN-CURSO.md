@@ -279,7 +279,31 @@ Implementado en v11.62-v11.69. No se siguió el plan literal (adaptar los `regen
 3. ✅ **`nc1-reciclaje.json` regenerado** al shape del rediseño (v11.68 — 118 hilos / 283 eventos).
 4. ✅ **Docs sincronizadas + fase reactivada** (v11.69) — `CLAUDE.md`/`prompt.md`/`reglas-reciclaje.md` de fase 2, `integrar_unidad.py`, `CLAUDE.md` raíz, `README.md`, `REVIEW.md`, `PROCESO-MAESTRO.md`. La pausa de decisión 36 queda levantada.
 
-**Pendiente fuera del Nivel 4 (trabajo editorial, no herramienta):** la **Capa 2** (sesión IA enriquecedora, §12) no se ha ejecutado todavía sobre ninguna unidad — su primera corrida es su shakedown. La integración del dashboard del modal `detalle` (§4.4) se aborda cuando el nivel `detalle` empiece a poblarse.
+**Pendiente fuera del Nivel 4 (trabajo editorial, no herramienta):** la **Capa 2** (sesión IA enriquecedora, §12) ha corrido como shakedown en U0-U3 (v11.80, v11.84, v12.4, v12.10, v12.18) pero su contrato sigue sub-procedimentado — el cierre operativo se aborda en el Nivel 5 (abajo). La integración del dashboard del modal `detalle` (§4.4) se aborda cuando el nivel `detalle` empiece a poblarse.
+
+### Nivel 5 — Procedimentalización de Capa 2 (definido 2026-05-24)
+
+**Diagnóstico.** Capa 2 ha corrido en U0-U3 (v11.80, v11.84, v12.4, v12.10, v12.18) como shakedown del procedimiento §12, pero su contrato sigue siendo **narrativo, no procedimental**: las etiquetas (§3 reglas) están definidas semánticamente pero sin árbol de decisión cerrado; la procedencia verbal queda como excepción explícita decidida por la sesión (§4 reglas); el cierre cross-hilo deja `tipo` y dirección al humano (§15 reglas). Como consecuencia, las 4 sesiones U0-U3 produjeron resultados con varianza editorial entre corridas y no son reproducibles por agente sin supervisor.
+
+Además, la documentación **está desincronizada**: `README.md`, `fases/2-reciclaje/CLAUDE.md` y `fases/2-reciclaje/prompt.md` siguen afirmando "Capa 2 no se ha estrenado" mientras el canónico `unidades/nc1-reciclaje.json` ya contiene etiquetas, explicaciones y `hilo.relaciones[]` cerradas para U0-U3.
+
+**Objetivo.** Cerrar Capa 2 al estándar de Capa 1 — contratos sincronizados (prompt + schema + reglas) y suficientemente cerrados para que **el mismo procedimiento sea operativo hoy bajo Claude Code supervisado y mañana bajo agente autónomo**. No se construye `scripts/enriquecer_capa2.py` todavía: primero se cierra el contrato, luego se decide si vale la pena materializarlo.
+
+**Patrón arquitectónico rector.** Capa 2 deja de tratarse como un bloque monolítico ("una sesión IA enriquecedora") y pasa a entenderse como un **pipeline de sub-trabajos discretos**, igual que la Fase 1. Cada sub-trabajo, **cuando su contrato queda cerrado**, se clasifica en uno de dos carriles: **mecánico** (input determinista → output reproducible, ejecutable por script o por agente sin juicio editorial) o **IA aislada** (decisión editorial acotada con criterios escritos), admitiendo excepciones explícitas y propuestas para lo no decidible. El orden de ejecución de los sub-trabajos no se fija; sí su separación. Este patrón es coherente con la separación ya vigente entre productor mecánico (Capa 1) y enriquecimiento editorial — extiende esa lógica dentro de la propia Capa 2.
+
+**Lo que NO se rehace.** El modelo conceptual (Niveles 1-3), el shape del schema, la Capa 1 determinista, el merge no destructivo y los validadores del gate están vigentes y no se tocan en este Nivel 5.
+
+**Plan ordenado** (cada punto se aborda solo cuando el anterior está cerrado):
+
+1. ✅ **Sincronización documental** (v12.20). `README.md` (tabla de fases + estado), `fases/2-reciclaje/CLAUDE.md` (banner + dos coletillas internas) y `fases/2-reciclaje/prompt.md` (banner + "Lo que NO se hace") actualizados: dejan de afirmar "Capa 2 no se ha estrenado" y reflejan el estado real (corrida como shakedown en U0-U3, contrato sub-procedimentado, Nivel 5 abierto). Sin tocar contrato ni código.
+2. **Matriz de decisión para `etiquetas[]`.** Bloqueador más fuerte porque afecta a **todos los eventos**. Cerrar mapping reproducible `{primera_aparicion_canónica, principal_en_índice, principal_posterior_existe, recurrente_material_previo, cuadro_en_unidad, contraste_explícito} → etiqueta(s)`. Anclar la matriz en los casos ya presentes en el canónico U0-U3 (evidencia material, no especulación). Material vivo: `reglas-reciclaje.md` §3.
+3. **Anexos breves.** Dos piezas pequeñas: (a) criterio operativo para `procedencia_indice` en bloque `verbal` (§4 reglas); (b) checklist de cierre para `relacion_cross_hilo` (tipo + dirección) que convierta el cierre humano en supervisión disciplinada (§15 reglas).
+4. **Decisión sobre `explicacion`.** Quedarse cuadro-bound (estado actual del schema §4 + reglas §7) o ampliar a "toda relación requiere explicación, con o sin cuadro". Si se amplía, cambia a la vez schema, reglas y prompt — no antes. Si no se amplía, no se mueve.
+5. **Piloto en U4.** Primera unidad bajo el contrato cerrado. Es el shakedown de la procedimentalización, igual que U0 fue el shakedown del procedimiento §12 original.
+6. **Retrofit U0-U3.** Auditar y, si procede, ajustar las sesiones previas contra el contrato cerrado. **Después** de validar el piloto, no antes.
+7. **(Diferido)** `scripts/enriquecer_capa2.py` — solo si tras estabilizar con U4 y retrofit las heurísticas se demuestran lo suficientemente cerradas para mecanizar parcialmente. Congelar heurísticas antes de formalizarlas sería prematuro.
+
+**Frontera explícita Claude Code / agente.** El contrato resultante debe ser ejecutable bajo dos regímenes sin reescritura: (i) **hoy** con Claude Code como ejecutor supervisado por el autor, sin preguntas paso a paso (la matriz responde por sí sola); (ii) **mañana** con un agente autónomo que ejecuta la matriz contra el canónico y deja `propuestas[]` solo para lo genuinamente no decidible. Si una decisión no cabe en ninguno de los dos regímenes, falta cerrar contrato.
 
 ---
 

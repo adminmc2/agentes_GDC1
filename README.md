@@ -11,7 +11,7 @@ El contenido editorial se genera siguiendo un **proceso de 8 fases**, partiendo 
 | Fase | Descripción | Estado |
 |------|-------------|--------|
 | 1 | Input PDF → inventario JSON | ✅ U0-U9 integradas y validando 0/0 |
-| 2 | Reciclaje de contenidos | 🔄 Reactivada (v11.69) — pipeline Capa 1 + validadores implementado; Capa 2 IA pendiente de estreno |
+| 2 | Reciclaje de contenidos | 🔄 Reactivada (v11.69) — pipeline Capa 1 + validadores implementado; Capa 2 corrida como shakedown en U0-U3 (v11.80→v12.18), pendiente de procedimentalizar (Nivel 5, v12.19) |
 | 3 | Tarjetas de vocabulario | 📋 Pendiente |
 | 4 | Tarjetas de estrategia | 📋 Pendiente |
 | 5 | Píldoras formativas | 📋 Pendiente |
@@ -159,6 +159,6 @@ La redacción editorial sucede en repo B. Cuando una unidad cierra, su material 
 ## Estado actual
 
 - **Fase 1 — curso completo extraído.** U0-U9 integradas y validando 0/0. Refinamiento abierto: canon semántico en construcción para gobernar nombres de `campo_semantico` y `vocabulario_consolidado` desde fase 1 (propuesta E-final aprobada por revisor 2026-05-11, implementación pendiente).
-- **Fase 2 (reciclaje) reactivada** (v11.69). El rediseño IA-first cerró sus cuatro niveles de herramienta: pipeline de Capa 1 (`scripts/generar_reciclaje_capa1.py`), validadores del gate (`validar_reciclaje.py`, `validar_cross_unidad.py`) y `nc1-reciclaje.json` regenerado al shape del rediseño (118 hilos). Pendiente: la Capa 2 (sesión IA enriquecedora) no se ha ejecutado todavía sobre ninguna unidad.
+- **Fase 2 (reciclaje) reactivada** (v11.69). El rediseño IA-first cerró sus cuatro niveles de herramienta: pipeline de Capa 1 (`scripts/generar_reciclaje_capa1.py`), validadores del gate (`validar_reciclaje.py`, `validar_cross_unidad.py`) y `nc1-reciclaje.json` regenerado al shape del rediseño (118 hilos). Capa 2 ha corrido como shakedown en U0-U3 (v11.80, v11.84, v12.4, v12.10, v12.18); el contrato sigue sub-procedimentado — Nivel 5 abierto en [`fases/2-reciclaje/REDISEÑO-EN-CURSO.md`](fases/2-reciclaje/REDISEÑO-EN-CURSO.md) §5 para cerrar Capa 2 al estándar de Capa 1 (pipeline de sub-trabajos discretos: mecánico + IA aislada).
 - **Fases 3-8 pendientes** de definir prompt y construir.
 - **Plan detallado y gates pendientes:** ver [`REVIEW.md`](REVIEW.md).

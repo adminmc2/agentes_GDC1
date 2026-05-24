@@ -2,9 +2,9 @@
 
 > Auto-cargado por Claude Code al trabajar dentro de `fases/2-reciclaje/`. Contrato corto de la fase: qué produce, dónde input/output, cómo validar, reglas críticas, navegación.
 
-> ✅ **Estado actual (2026-05-22, v11.69):** **FASE 2 REACTIVADA** — la pausa de decisión 36 queda levantada. El rediseño (modelo IA-first) tiene cerrados los cuatro niveles en su parte de herramienta: **Nivel 1** modelo conceptual (§1-§10), **Nivel 2** contrato operativo (`schema-reciclaje.md`, `reglas-reciclaje.md`, `prompt.md`, este `CLAUDE.md`), **Nivel 3** diseño del pipeline (§11-§13 + `reglas-reciclaje.md` §14), **Nivel 4** implementación en código — `scripts/generar_reciclaje_capa1.py` (Capa 1), `scripts/validar_reciclaje.py` (chequeo estructural §13a), `scripts/validar_cross_unidad.py` (validador R1-R5 §13b) — y `nc1-reciclaje.json` regenerado al shape del rediseño (v11.68). Los scripts viejos `regenerar_reciclaje_*.py` quedan obsoletos (pre-rediseño). El rediseño se construye en `REDISEÑO-EN-CURSO.md`.
+> ✅ **Hito de reactivación (2026-05-22, v11.69):** **FASE 2 REACTIVADA** — la pausa de decisión 36 queda levantada. Los cuatro niveles **originales** del rediseño (modelo IA-first) están cerrados en su parte de herramienta: **Nivel 1** modelo conceptual (§1-§10), **Nivel 2** contrato operativo (`schema-reciclaje.md`, `reglas-reciclaje.md`, `prompt.md`, este `CLAUDE.md`), **Nivel 3** diseño del pipeline (§11-§13 + `reglas-reciclaje.md` §14), **Nivel 4** implementación en código — `scripts/generar_reciclaje_capa1.py` (Capa 1), `scripts/validar_reciclaje.py` (chequeo estructural §13a), `scripts/validar_cross_unidad.py` (validador R1-R5 §13b) — y `nc1-reciclaje.json` regenerado al shape del rediseño (v11.68). Los scripts viejos `regenerar_reciclaje_*.py` quedan obsoletos (pre-rediseño). **Nivel 5 abierto en v12.19** (procedimentalización de Capa 2) — ver `REDISEÑO-EN-CURSO.md` §5.
 >
-> ⚠️ **La Capa 2 no se ha ejecutado todavía sobre ninguna unidad.** Es una sesión IA supervisada (no un script); su contrato está cerrado (§12) pero su **primera corrida real será también su shakedown**. La primera unidad que se procese debe revisarse con ese ojo: confirmar que el procedimiento de Capa 2 funciona como el contrato describe, no dar por rodado.
+> ⚠️ **Capa 2 corrida como shakedown en U0-U3** (v11.80, v11.84, v12.4, v12.10, v12.18) — el procedimiento §12 funciona como contrato general, pero las cuatro sesiones evidenciaron que el contrato sigue **sub-procedimentado**: las etiquetas (§3 reglas) están definidas semánticamente sin árbol de decisión cerrado; la procedencia verbal (§4) queda como excepción decidida por la sesión; el cierre cross-hilo (§15) deja `tipo` y dirección al humano. Cierre operativo abierto en `REDISEÑO-EN-CURSO.md` §5 Nivel 5 (v12.19) — pipeline de sub-trabajos discretos, mecánico + IA aislada, hasta que el contrato sea reproducible bajo Claude Code supervisado hoy y bajo agente autónomo mañana. **No abrir Capa 2 sobre U4-U9 hasta que el Nivel 5 cierre los puntos 2-4 del plan.**
 
 ---
 
@@ -22,7 +22,7 @@ El campo `nivel_analisis` indica el **grado de población de un mismo hilo** —
 | `auto` | Enriquece los eventos: contenidos por unidad, etiquetas, triage | Inventarios `UX-nc1-inventario.json` (los 5 bloques — `REDISEÑO-EN-CURSO.md` §2.2) |
 | `detalle` | Justificación lingüístico-pedagógica del procedimiento | Análisis cross-unidad sobre el inventario |
 
-La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA). La Capa 1 está implementada en código (`scripts/generar_reciclaje_capa1.py`); la Capa 2 es una sesión IA supervisada por unidad (procedimiento `REDISEÑO-EN-CURSO.md` §12, aún sin estrenar). Los scripts viejos `regenerar_reciclaje_*.py` son pre-rediseño y quedan obsoletos.
+La población la hace el **pipeline de fase 2** (Capa 1 determinista + Capa 2 IA). La Capa 1 está implementada en código (`scripts/generar_reciclaje_capa1.py`); la Capa 2 es una sesión IA supervisada por unidad (procedimiento `REDISEÑO-EN-CURSO.md` §12, corrida como shakedown en U0-U3; su procedimentalización está abierta en §5 Nivel 5). Los scripts viejos `regenerar_reciclaje_*.py` son pre-rediseño y quedan obsoletos.
 
 ## Input y output
 
@@ -41,7 +41,7 @@ python3 scripts/generar_reciclaje_capa1.py --dry-run  # valida sin escribir
 ```
 Genera los hilos `mapa` (desde `nc1-curso.json`) y `auto` (desde los inventarios), precomputa el triage mecánico (`procedencia_indice: declarado`) y preserva `propuestas[]`. No asigna etiquetas ni decide nada editorial — eso es Capa 2.
 
-**Capa 2 — sesión IA enriquecedora.** No es un script: es una sesión IA supervisada por unidad (`REDISEÑO-EN-CURSO.md` §12) que, sobre el esqueleto de Capa 1, asigna etiquetas, completa el triage, escribe `explicacion` y escala `propuestas[]`. La IA propone, el autor cierra. **Aún sin estrenar** — ver el banner de estado.
+**Capa 2 — sesión IA enriquecedora.** No es un script: es una sesión IA supervisada por unidad (`REDISEÑO-EN-CURSO.md` §12) que, sobre el esqueleto de Capa 1, asigna etiquetas, completa el triage, escribe `explicacion` y escala `propuestas[]`. La IA propone, el autor cierra. **Corrida como shakedown en U0-U3** — el contrato sigue sub-procedimentado; ver `REDISEÑO-EN-CURSO.md` §5 Nivel 5 (v12.19) para el plan de cierre operativo y el banner de estado arriba.
 
 ## Sincronización automática de `_meta.version`
 
@@ -83,5 +83,5 @@ El chequeo estructural debe dar **0 errores**; el cross-unidad no debe dejar **a
 | ¿Cuándo separar o agrupar hilos? ¿Qué nombre usar? | `reglas-reciclaje.md` §1 (granularidad) y §2 (naming canónico) |
 | ¿Qué etiquetas asignar a cada evento? | `reglas-reciclaje.md` §3 |
 | ¿Cómo se clasifica respecto al índice? | `reglas-reciclaje.md` §4 (triage `procedencia_indice`) |
-| ¿Cómo funciona el pipeline de Capa 1/Capa 2? | Diseño cerrado — `REDISEÑO-EN-CURSO.md` §11-§13. Implementación en código: Nivel 4 (pendiente). |
+| ¿Cómo funciona el pipeline de Capa 1/Capa 2? | Diseño cerrado — `REDISEÑO-EN-CURSO.md` §11-§13. Implementación en código (Nivel 4 ✅): `scripts/generar_reciclaje_capa1.py`, `scripts/validar_reciclaje.py`, `scripts/validar_cross_unidad.py`. Procedimentalización de Capa 2 en curso (Nivel 5, §5). |
 | ¿Qué shape tiene nc1-reciclaje.json? | `schema-reciclaje.md` (contrato del rediseño nuevo) · `../../PROCESO-MAESTRO.md` §B1.5 (modelo viejo) |

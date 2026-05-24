@@ -15,6 +15,20 @@
 
 ---
 
+## [v12.20 — 2026-05-24] — Sincronización documental sobre estado de Capa 2 (Nivel 5 punto 1)
+
+Ejecutado el punto 1 del Nivel 5 (v12.19): `README.md` (tabla de fases L14 + párrafo de estado L162), `fases/2-reciclaje/CLAUDE.md` (banner ⚠️ L7 + coletillas L25 y L44) y `fases/2-reciclaje/prompt.md` (banner ⚠️ L7 + "Lo que NO se hace" L50) dejan de afirmar "Capa 2 no se ha estrenado". Reflejan el estado real: Capa 2 corrida como shakedown en U0-U3 (v11.80, v11.84, v12.4, v12.10, v12.18); contrato sub-procedimentado (etiquetas sin árbol de decisión cerrado, procedencia verbal como excepción, cierre cross-hilo con `tipo`+dirección al humano); cierre operativo abierto en Nivel 5. Añadida regla de gate en CLAUDE.md y prompt.md: **no abrir Capa 2 sobre U4-U9 hasta que el Nivel 5 cierre los puntos 2-4 del plan**.
+
+**Higiene documental adicional** (micro-revisión Anthropic-first sobre `fases/2-reciclaje/CLAUDE.md` y `prompt.md`): (a) eliminada la línea obsoleta `CLAUDE.md:86` que afirmaba "Implementación en código: Nivel 4 (pendiente)" — Nivel 4 está ✅ desde v11.69; sustituida por enlace a los tres scripts + mención del Nivel 5 en curso. (b) Banner de reactivación en `CLAUDE.md:5` y `prompt.md:5` reformulado: "los cuatro niveles" → "los cuatro niveles **originales**" + mención explícita de Nivel 5 abierto en v12.19. Evita que un lector (humano o agente) interprete el rediseño como cerrado y omita el Nivel 5.
+
+Sin tocar contrato (schema, reglas) ni código (scripts, validadores). Punto 1 del Nivel 5 marcado ✅ en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md`.
+
+## [v12.19 — 2026-05-24] — Nivel 5 abierto en REDISEÑO: procedimentalización de Capa 2
+
+Tras revisión crítica del estado de fase 2 (¿es funcional end-to-end si la ejecuta un agente?), diagnóstico cerrado: el modelo, el shape, la Capa 1 y los validadores están vigentes y operativos; lo que está sub-procedimentado es **Capa 2** (etiquetas como definición semántica sin árbol de decisión cerrado; procedencia verbal como excepción explícita; cierre cross-hilo con `tipo` y dirección al humano). Además la doc afirma "Capa 2 no se ha estrenado" mientras U0-U3 ya están enriquecidas en el canónico.
+
+Cambio: nueva sección **Nivel 5 — Procedimentalización de Capa 2** en `fases/2-reciclaje/REDISEÑO-EN-CURSO.md` §5, con 7 puntos ordenados (sincronización documental → matriz de etiquetas → anexos verbal+cross-hilo → decisión `explicacion` → piloto U4 → retrofit U0-U3 → script diferido). Objetivo: contrato ejecutable bajo dos regímenes — Claude Code supervisado hoy y agente autónomo mañana — sin reescritura. No se toca contrato ni schema en este lote; el Nivel 5 declara el plan, no ejecuta los pasos.
+
 ## [v12.18 — 2026-05-24] — Capa 2 sobre U3 cerrada (etiquetas + explicaciones + cierres cross-hilo)
 
 Cuarta sesión de Capa 2 IA (después de U0 v11.80, U1 v11.84/v12.4, U2 v12.10). Aplicada sobre los 36 eventos U3 del canónico `nc1-reciclaje.json`:
