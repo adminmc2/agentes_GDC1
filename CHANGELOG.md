@@ -15,6 +15,16 @@
 
 ---
 
+## [v12.8 — 2026-05-24] — Taxonomía cerrada para la deuda de «Adjetivos descriptivos» (3 buckets canónicos)
+
+Avance documental sobre la deuda léxica abierta en v12.5: se cierran los **nombres canónicos** de la partición. Los 3 buckets que sustituirán al actual `Adjetivos descriptivos` son: (1) **«Características físicas»** — PCIC §1.1, cubre descripción de personas (cuerpo, cara, pelo, ojos); destino U8 principal. (2) **«Carácter y personalidad»** — PCIC §1.2, cubre rasgos sociales/anímicos; destino U8 principal. (3) **«Cualidades de objetos y lugares»** — sin PCIC A1 directo único (respaldo disperso §43, §3, §52), cubre **todo lo no-persona** (vivienda, objetos, lugares, ropa, entornos); destino U5 principal, U6/U9 recurrente. Decisión deliberada: no se subdivide #3 por dominio (casa/ropa/lugares) porque hay solape masivo entre dominios; la frontera operativa real es «persona vs no-persona». Residuo disuelto caso a caso: `enorme` → #3; `fuerte` → #1 o #3 según fuente; `famoso/-a` → #3; `favorito/-a` → fuera de la taxonomía (es marcador de preferencia, no descriptor). En U8 el bucket pasa a **principal** (la unidad se titula «Descripciones»). **Ejecución sigue diferida al ejecutor 2** como lote único sobre U5/U6/U8/U9; el canónico viejo se retira o queda como deprecated alias. Sin cambios de código, registry ni inventarios. Deuda actualizada en `REVIEW.md`.
+
+---
+
+## [v12.7 — 2026-05-24] — Dashboard reciclaje: tiempos verbales pasan a eje visual neutro
+
+Fix de colisión cromática detectado en revisión: las 4 siglas de tiempo verbal (PRE/IND/IMP/INF) usaban azul/verde/naranja/lila — los mismos colores que las etiquetas editoriales `introduce`/`amplia`/`aplica`/`sistematiza`. El choque más visible: PRE y `introduce` compartían azul. Sustituido por un **eje visual neutro único**: las 4 siglas comparten ahora un cuadradito gris-azulado oscuro (`#455A64`) con la sigla en blanco. Las letras (PRE/IND/IMP/INF) son lo que distingue el tiempo; el color no necesita variar. Mismo lenguaje visual que las iniciales de procedencia (I/E/P/F en gris oscuro con letra blanca) — los dos ejes "neutros" (procedencia + tiempo) quedan agrupados visualmente, los chips de colores se reservan a las etiquetas editoriales. Una sola constante `REC_TIEMPO_VISUAL` reemplaza la tabla anterior por tiempo. Cambio mínimo, sin tocar dato ni schema. JS válido.
+
 ## [v12.6 — 2026-05-24] — Dashboard reciclaje: cuadrados, color por tiempo verbal, leyenda rediseñada
 
 Iteración estética del dashboard reciclaje (`web/index.html`) tras revisión visual del autor:
