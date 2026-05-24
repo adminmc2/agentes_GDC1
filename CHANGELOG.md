@@ -15,6 +15,20 @@
 
 ---
 
+## [v12.22 — 2026-05-24] — Reactivación del despliegue del dashboard en Railway (entornoeditorial.up.railway.app)
+
+A petición del autor se **revierte parcialmente la decisión v11.21** y se reabre el carril de despliegue público del dashboard. Se restauran 3 archivos en la raíz del repo:
+
+- **`Dockerfile`** (idéntico al pre-v11.21): `python:3.12-slim` + `gcc`/`libpq-dev` (psycopg2) + `pip install -r requirements.txt` + `EXPOSE 8081` + `CMD ["python", "diagrama.py"]`.
+- **`railway.toml`** (idéntico al pre-v11.21): builder `DOCKERFILE`, healthcheck en `/api/status`, restart `ON_FAILURE` x3.
+- **`.dockerignore`** (saneado respecto al pre-v11.21): retiradas las 7 líneas `viejo/` muertas (`viejo/` ya no existe en repo A tras la migración a dos repos); conservado `.env`, `.git`, `.claude`, `__pycache__`, `*.pyc`, `unidades/**/fuente/*.pdf`, `*.indd`/`*.ai`/`*.psd`.
+
+**Verificaciones previas:** `/api/status` existe en `diagrama.py:1276` (healthcheck OK); `diagrama.py:1425` lee `os.environ.get("PORT", 8081)` (Railway puede sobrescribir puerto). Sin tocar `requirements.txt`, `diagrama.py`, `web/index.html`, inventarios ni registry. Causa del despliegue fallido reportado: tras v11.21, Railway intentaba autodetectar build sin Dockerfile/railway.toml y fallaba en el paso «Build image». Con estos 3 archivos restaurados, el push reactiva el build.
+
+Bloque B5 de REVIEW deja de estar ⊘ SUPERADO. Variables de entorno del panel de Railway (DATABASE_URL, etc.) las configura el autor directamente en la UI si hacen falta.
+
+---
+
 ## [v12.20 — 2026-05-24] — Sincronización documental sobre estado de Capa 2 (Nivel 5 punto 1)
 
 Ejecutado el punto 1 del Nivel 5 (v12.19): `README.md` (tabla de fases L14 + párrafo de estado L162), `fases/2-reciclaje/CLAUDE.md` (banner ⚠️ L7 + coletillas L25 y L44) y `fases/2-reciclaje/prompt.md` (banner ⚠️ L7 + "Lo que NO se hace" L50) dejan de afirmar "Capa 2 no se ha estrenado". Reflejan el estado real: Capa 2 corrida como shakedown en U0-U3 (v11.80, v11.84, v12.4, v12.10, v12.18); contrato sub-procedimentado (etiquetas sin árbol de decisión cerrado, procedencia verbal como excepción, cierre cross-hilo con `tipo`+dirección al humano); cierre operativo abierto en Nivel 5. Añadida regla de gate en CLAUDE.md y prompt.md: **no abrir Capa 2 sobre U4-U9 hasta que el Nivel 5 cierre los puntos 2-4 del plan**.

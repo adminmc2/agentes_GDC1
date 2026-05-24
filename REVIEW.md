@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-24 (v12.20 — **Nivel 5 punto 1 ejecutado**: sincronización documental sobre estado de Capa 2 en README + CLAUDE.md de fase 2 + prompt. Dejan de afirmar "Capa 2 no se ha estrenado". Añadido gate operativo: no abrir Capa 2 sobre U4-U9 hasta que Nivel 5 cierre los puntos 2-4. Sin tocar contrato ni código).
+> **Última actualización:** 2026-05-24 (v12.22 — **Reactivación del despliegue del dashboard en Railway** (`entornoeditorial.up.railway.app`) a petición del autor. Reverte parcialmente v11.21: se restauran `Dockerfile`, `railway.toml` y `.dockerignore` (este último saneado sin las líneas `viejo/`). El push reactiva el build de Railway que llevaba fallando en «Build image» por falta de configuración).
+>
+> **Hito previo (v12.20):** 2026-05-24 (Nivel 5 punto 1 ejecutado: sincronización documental sobre estado de Capa 2 + gate operativo).
 >
 > **Hito previo (v12.19):** 2026-05-24 (Nivel 5 abierto en REDISEÑO: procedimentalización de Capa 2 declarada como plan en 7 puntos + patrón arquitectónico rector — pipeline de sub-trabajos discretos, mecánico + IA aislada).
 >
