@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "v12.4",
+    "version": "v12.10",
     "fecha": "2026-05-24",
     "unidades_cubiertas": [
       0,
@@ -76,7 +76,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p22-act2",
             "p22-act2@R",
@@ -315,7 +317,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p23-act10",
             "p23-act10@R",
@@ -402,7 +406,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p23-act11",
             "p23-act12",
@@ -605,7 +611,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p23-act11",
             "p23-act11@R",
@@ -683,7 +691,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p26-act1",
             "p28-act1",
@@ -1039,7 +1049,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "amplia"
+          ],
           "evidencias": [
             "p27-act6",
             "p27-act8",
@@ -1079,7 +1091,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p23-act4",
             "p23-act7",
@@ -1124,7 +1138,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p22-act1",
             "p22-act1@R",
@@ -1439,7 +1455,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p24-act3",
             "p26-act1",
@@ -1587,7 +1605,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "cuadro@p24#2",
             "p22-act1",
@@ -1596,7 +1616,12 @@
             "p29-act7",
             "p30-act2"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p24#2 'Plural de nombres y adjetivos' aplica el artículo determinado como soporte estructural del paradigma plural: 'el gato blanco / los gatos blancos', 'la gata blanca / las gatas blancas'. El subbloque de nombres trabaja la pluralización con coche/coches y camión/camiones; el subbloque de adjetivos cruza singular/plural × masculino/femenino con los artículos correspondientes.",
+            "fuente": "cuadro@p24#2",
+            "analisis_ia": "Recurrente desde U1 (principal, cuadro@p14#2 con el paradigma 2×2 género × número). En U2 los artículos sirven como columna del cuadro plural — encabezan cada sintagma nominal y reflejan el rasgo de número que el cuadro está sistematizando. No es nueva sistematización del artículo en sí, sino aplicación coherente del paradigma ya activo: el alumno conoce el/la/los/las desde U1 y aquí los aplica al léxico nuevo (gato/coche/camión + adjetivos blanco/grande). El cuadro consolida pedagógicamente la trinidad artículo+sustantivo+adjetivo como bloque concordante completo. Reaparece también como soporte de los demostrativos (cuadro@p24#3: 'el libro' → 'este libro', 'la casa' → 'esta casa') — los demostrativos canónicos U2 mantienen la misma flexión 2×2 del artículo. El paradigma del artículo indeterminado (un/una/unos/unas) entra en U4 con 'Hay + SN indefinido' como principal del propio bloque."
+          }
         },
         {
           "unidad": 3,
@@ -1619,7 +1644,19 @@
           "procedencia_indice": "declarado"
         }
       ],
-      "_grupo": "Determinantes"
+      "_grupo": "Determinantes",
+      "relaciones": [
+        {
+          "hilo_ref": "gram-concordancia-de-genero",
+          "tipo": "comparte",
+          "detalle": "Los artículos determinados portan la marca de género; cuadros@p14#2 y @p24#2 los presentan como columna que refleja la concordancia. Coocurren en el sintagma nominal mínimo (el/la sustantivo)."
+        },
+        {
+          "hilo_ref": "gram-concordancia-de-numero",
+          "tipo": "comparte",
+          "detalle": "Los artículos determinados portan también la marca de número (el/los, la/las); cuadros@p14#2 y @p24#2 los presentan como portadores de ambos rasgos. Coocurren en el sintagma nominal."
+        }
+      ]
     },
     {
       "id": "gram-articulos-indeterminados",
@@ -1677,7 +1714,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "cuadro@p24#2",
             "cuadro@p24#3",
@@ -1686,7 +1725,12 @@
             "p31-act3"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p24#2 aplica la concordancia de género al paradigma plural: 'el gato blanco/la gata blanca' (singular masc/fem) y 'los gatos blancos/las gatas blancas' (plural masc/fem). El subbloque de adjetivos opone explícitamente las cuatro celdas masc-sg/fem-sg/masc-pl/fem-pl. Incluye un adjetivo invariable: 'el gato grande/la gata grande' (terminación -e, no flexiona en género).",
+            "fuente": "cuadro@p24#2",
+            "analisis_ia": "Recurrente desde U1 (principal, cuadro@p14#2 con el paradigma binario en sustantivos y adjetivos). En U2 la regla se aplica al paradigma plural en ejecución conjunta con concordancia de número — el cuadro las trabaja cruzadas, no por separado. La diferencia clave con U1: aparece el adjetivo 'grande' (terminado en -e), invariable en género — el gato grande / la gata grande comparten la misma forma adjetival. Primera evidencia material en NC1 de que la flexión adjetival no es uniforme: los adjetivos en -o/-a flexionan (blanco/blanca, mexicano/mexicana ya canonizada en U1), los adjetivos en -e (grande, inteligente, interesante) y los terminados en consonante no marcada (azul, joven) son invariables. NC1 introduce esto en germen, sin canonizarlo como subregla aparte — el alumno lo deriva por contraste con los adjetivos en -o/-a ya activos. La sistematización analítica de adjetivos descriptivos (con su tipología flexiva) llega en U8 (canónico principal 'Adjetivos descriptivos', deuda léxica abierta en v12.5/v12.8 para repartirlo en 3 buckets). En U2 la regla se aplica también a los adjetivos de nacionalidad (principales U2): los mexicanos/las mexicanas, los españoles/las españolas — el alumno cruza concordancia binaria con el campo léxico nuevo."
+          }
         },
         {
           "unidad": 3,
@@ -1742,7 +1786,14 @@
           "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
         }
       ],
-      "_grupo": "Sintagma nominal y concordancia"
+      "_grupo": "Sintagma nominal y concordancia",
+      "relaciones": [
+        {
+          "hilo_ref": "gram-concordancia-de-numero",
+          "tipo": "comparte",
+          "detalle": "Las dos concordancias se trabajan cruzadas en cuadro@p14#2 (U1, paradigma 2×2 género × número) y cuadro@p24#2 (U2, paradigma plural completo de sustantivos y adjetivos). El alumno opera ambas reglas a la vez, no en secuencia."
+        }
+      ]
     },
     {
       "id": "gram-concordancia-de-numero",
@@ -1768,14 +1819,21 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "amplia"
+          ],
           "evidencias": [
             "cuadro@p24#2",
             "p25-act4",
             "p25-act5"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3"
+          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p24#2 sistematiza el paradigma plural de sustantivos y adjetivos. Subbloque de sustantivos: 'coche → coches' (pauta -s para vocal final), 'camión → camiones' (pauta -es para consonante final, con cambio gráfico ó→o por desplazamiento del acento prosódico). Subbloque de adjetivos cruza singular/plural × masc/fem ('los gatos blancos', 'las gatas blancas', 'los gatos grandes', 'las gatas grandes').",
+            "fuente": "cuadro@p24#2",
+            "analisis_ia": "Amplía el paradigma de número introducido en U1 (cuadro@p14#2: pauta básica +s con vocal final, paradigma artículo el/la/los/las en 'el niño/los niños'). U2 canoniza las dos pautas completas: (a) +s tras vocal (coche → coches, gato → gatos, mexicano → mexicanos), (b) +es tras consonante (camión → camiones, profesor → profesores) con cambio gráfico de tilde si la palabra es aguda (la pérdida del acento gráfico al pluralizar no se metalingüiza pero queda atestada en el ejemplo). La pauta -es no estaba canonizada en U1 — allí solo aparecía con vocal. El cuadro trabaja la pluralización en el sustantivo + su reflejo en el adjetivo, distinguiendo flexión adjetival regular ('gatos blancos' / 'gatas blancas') vs invariable ('gatos grandes' / 'gatas grandes'). Convive estructuralmente con concordancia de género: el alumno opera ambas reglas a la vez, no en secuencia. Reaparece en U3 al pluralizar gentilicios (los mexicanos, las españolas) y léxico nuevo de profesiones (los profesores, las profesoras). Soporta directamente el principal U2 'Adjetivos de nacionalidad' — los gentilicios canónicos del U2 se pluralizan con las reglas que el cuadro establece."
+          }
         },
         {
           "unidad": 3,
@@ -1877,7 +1935,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p24#3",
             "p24-act1",
@@ -1887,10 +1947,23 @@
             "p31-act4",
             "p31-act4@R"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p24#3 'Demostrativos' presenta los demostrativos de proximidad en tabla 2×2 género × número: 'este libro/esta casa' (singular masc/fem), 'estos libros/estas casas' (plural masc/fem). Cuatro ejemplos pragmáticos con ser: 'Este es Juan', 'Esta es Lola', 'Estos son Andrés y Lucía', 'Estas son Laura y Rosa'.",
+            "fuente": "cuadro@p24#3",
+            "analisis_ia": "Primer cierre canónico de los demostrativos en NC1. PCIC A1 §7.1 demostrativos. NC1 A1.1 canoniza solo la serie de proximidad (este/esta/estos/estas) — las series de distancia media (ese/esa/esos/esas) y lejana (aquel/aquella/aquellos/aquellas) se difieren a niveles posteriores. La presentación es estructuralmente paralela al cuadro de artículos determinados de U1 (cuadro@p14#2): misma tabla 2×2 género × número, misma flexión (-o → -a en fem, +s para plural). Pedagógicamente el alumno transfiere la regla flexiva ya activa de U1 al nuevo paradigma — solo cambia el determinante. Los cuatro ejemplos con ser introducen el uso pragmático nuclear del demostrativo en NC1: identificar y presentar referentes próximos ('Este es Juan' para presentar a alguien). El ejemplo es deliberado: aplica los plurales de ser canonizados en el mismo U2 (cuadro@p24#1) y los nombres propios cuyo uso ortográfico se canoniza en el cuadro@p25 ('Juan, Lola, Andrés, Lucía, Laura, Rosa' con mayúscula inicial). Convergen así tres principales canónicos del U2 en una sola escena pragmática: demostrativos (forma), ser plural (verbo), mayúsculas en nombres propios (ortografía). El alumno cierra U2 con la capacidad de presentar referentes humanos próximos en singular y plural."
+          }
         }
       ],
-      "_grupo": "Determinantes"
+      "_grupo": "Determinantes",
+      "relaciones": [
+        {
+          "hilo_ref": "gram-concordancia-de-genero",
+          "tipo": "prerrequisito",
+          "detalle": "Los demostrativos canónicos U2 (este/esta/estos/estas, cuadro@p24#3) aplican la regla de concordancia de género ya canonizada en U1. El alumno transfiere la regla flexiva -o/-a del paradigma de artículos al paradigma de demostrativos. Sin la concordancia activa, los demostrativos no funcionan operativamente.",
+          "unidad_relevante": 2
+        }
+      ]
     },
     {
       "id": "gram-hay",
@@ -2013,7 +2086,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p22-act3",
             "p23-act10",
@@ -2556,7 +2631,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "amplia"
+          ],
           "evidencias": [
             "cuadro@p24#1",
             "p22-act3",
@@ -2568,7 +2645,12 @@
             "p31-act1"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
+          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p24#1 'Presente de los verbos ser y tener' presenta en columna las seis personas como encabezado del paradigma verbal: yo, tú, él/ella/usted, nosotros/-as, vosotros/-as, ellos/ellas/ustedes. La notación con barra (nosotros/-as) marca explícitamente la flexión de género del pronombre. Sirve de soporte estructural para conjugar ser y tener al completo.",
+            "fuente": "cuadro@p24#1",
+            "analisis_ia": "Amplía el paradigma de pronombre sujeto introducido en U1 (cuadro@p14#1, tres formas singulares: yo/tú/él-ella-usted) a las seis personas completas. El cuadro mantiene la convención de U1 — fila 'él/ella/usted' compactada en una celda para marcar el sincretismo morfológico (mismo verbo para los tres) — y la replica para la tercera persona del plural ('ellos/ellas/ustedes' en una sola fila). La notación 'nosotros/-as' y 'vosotros/-as' introduce explícitamente la flexión de género del pronombre: primer caso material donde el pronombre sujeto varía en género. Junto con la canonización de las formas plurales de ser/tener en el mismo cuadro, completa la base verbal mínima del A1.1: el alumno puede ya hablar en cualquier persona. Decisión pedagógica coherente con U1: el pronombre se canoniza como columna del paradigma verbal, no como categoría aislada — el alumno A1 lo aprende con el verbo. Ningún paradigma verbal canónico posterior en NC1 amplía el pronombre sujeto (se difieren las series de OD, OI, reflexivos átonos a U4-U7 cada una como paradigma propio del pronombre átono, no del sujeto)."
+          }
         },
         {
           "unidad": 3,
@@ -2599,7 +2681,19 @@
           "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
         }
       ],
-      "_grupo": "Pronombres"
+      "_grupo": "Pronombres",
+      "relaciones": [
+        {
+          "hilo_ref": "verb-ser",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p14#1 (U1) y cuadro@p24#1 (U2) los presentan en columnas paralelas — pronombre sujeto como encabezado del paradigma, ser como verbo conjugado. Coocurren obligatoriamente como ejes del paradigma verbal copulativo del A1."
+        },
+        {
+          "hilo_ref": "verb-tener",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p14#1 (U1) y cuadro@p24#1 (U2) trabajan pronombre y tener en columnas paralelas, igual que ser↔pronombre. La fila 'él/ella/usted' compactada marca el sincretismo del pronombre, que el verbo respeta morfológicamente."
+        }
+      ]
     },
     {
       "id": "gram-pronombres-atonos-de-oi",
@@ -2761,14 +2855,21 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p25",
             "p25-act7",
             "p29-act7"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 ortografía (Ortografía De Letras Y Palabras: uso de mayúsculas — inicial de oración, después de punto, nombres propios, siglas)"
+          "reconciliado_con": "pcic:PCIC A1 ortografía (Ortografía De Letras Y Palabras: uso de mayúsculas — inicial de oración, después de punto, nombres propios, siglas)",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p25 'Para aprender — Uso de las mayúsculas' lista las tres reglas básicas: (a) primera palabra de una oración ('Hola, me llamo Ricardo'); (b) nombres propios — antropónimos y topónimos: personas, países, ríos, montañas ('Laura López, Francia, Amazonas, Everest'); (c) títulos de obras culturales: películas y libros ('El rey león, Parque Jurásico').",
+            "fuente": "cuadro@p25",
+            "analisis_ia": "Primer cierre canónico de las reglas de uso de mayúsculas en NC1. PCIC A1 convenciones ortográficas básicas. NC1 A1.1 limita el alcance a tres contextos: inicio de oración, nombres propios (antropónimos y topónimos) y títulos de obras culturales — suficiente para el A1.1. No entran en este nivel los tratamientos honoríficos abreviados (Sr., Dr., Sra.), las siglas, los gentilicios (que en español no se mayusculizan a diferencia del inglés — punto pedagógico crítico que NC1 omite explicitar), ni los días de la semana o meses (que el alumno A1 podría confundir por interferencia con el inglés). La presentación es deliberadamente concisa: tres reglas con ejemplos canónicos, sin extensiones. Convive con el principal 'Países hispanohablantes' del mismo U2: el alumno aplica la regla (b) al escribir Argentina, Bolivia, Chile, México, etc. — los topónimos del campo léxico nuevo son material inmediato de práctica ortográfica. La regla (a) aplica también a 'Hola, me llamo X' — fórmula pragmática nuclear ya activa de U1. La regla (c) es más periférica al A1.1; los títulos de obras aparecen como input cultural en unidades posteriores (U6 cultura con referencias a ciudades, U8 con descripciones culturales) pero no se trabajan como contenido ortográfico. El alumno sale de U2 con la regla operativa para escribir su propia carta de presentación (destrezas U2: 'Una carta de presentación personal')."
+          }
         },
         {
           "unidad": 7,
@@ -2779,6 +2880,14 @@
           ],
           "procedencia_indice": "reconciliado",
           "reconciliado_con": "pcic:PCIC A1 ortografía (Ortografía De Letras Y Palabras: uso de mayúsculas — inicial de oración, después de punto, nombres propios, siglas)"
+        }
+      ],
+      "relaciones": [
+        {
+          "hilo_ref": "verb-llamarse",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p25 (U2) usa la fórmula de auto-presentación 'Hola, me llamo Ricardo' como ejemplo canónico de las reglas (a) inicio de oración y (b) nombre propio. Coocurrencia editorial: el cuadro ortográfico activa una rutina pragmática del verbo (ya activa de U1), sin sistematización verbal nueva.",
+          "unidad_relevante": 2
         }
       ]
     },
@@ -2901,7 +3010,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p27-act11",
             "p27-act12"
@@ -3881,7 +3992,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p26-act1",
             "p28-act1",
@@ -4042,7 +4155,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p28-act1",
             "p28-act2",
@@ -4111,7 +4226,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p25-act7",
             "p25-act7@R",
@@ -4269,7 +4386,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p23-act4"
           ],
@@ -4481,7 +4600,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p26-act1",
             "p27-act9",
@@ -4980,7 +5101,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "cuadro@p25",
             "p23-act4",
@@ -5000,7 +5123,12 @@
             "me llamo",
             "se llama",
             "te llamas"
-          ]
+          ],
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p25 'Para aprender — Uso de las mayúsculas' usa el ejemplo 'Hola, me llamo Ricardo' como ilustración de la regla de mayúscula inicial de frase. La forma 'me llamo' aparece como testigo material del verbo en presente, dentro del contexto ortográfico.",
+            "fuente": "cuadro@p25",
+            "analisis_ia": "Aplicación incidental del lema llamarse (introducido como tríada de presentación en U1, cuadro@p14#1 junto con ser y tener). En U2 no se sistematiza el paradigma verbal — la forma 'me llamo' aparece como ejemplo de regla ortográfica (mayúscula inicial de oración), no como contenido verbal autónomo. El cuadro@p25 pertenece al bloque de pronunciación/ortografía, no al bloque verbal — la aparición de llamarse es funcional, no sistematizadora. Reaparición coherente con la convención editorial del A1.1: 'Me llamo X' es la fórmula pragmática nuclear de autoidentificación, ya activa desde U1, que se mantiene como rutina del alumno sin requerir nueva canonización. El paradigma reflexivo se canoniza analíticamente en U7 (cuadro@p74 con ducharse/acostarse/sentarse/ponerse/vestirse como modelos del paradigma -arse). La forma plural 'os llamáis' / 'se llaman' no se atesta en U2 pero está implícita en el paradigma de U7. En U2 llamarse opera el alumno sin cambios respecto a U1."
+          }
         },
         {
           "unidad": 3,
@@ -5527,7 +5655,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "amplia"
+          ],
           "evidencias": [
             "cuadro@p24#1",
             "p22-act1",
@@ -5576,7 +5706,12 @@
             "somos",
             "son",
             "soy"
-          ]
+          ],
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p24#1 amplía el presente de ser a las seis formas completas: soy (yo), eres (tú), es (él/ella/usted), somos (nosotros/-as), sois (vosotros/-as), son (ellos/ellas/ustedes). El cuadro lo presenta junto con el paradigma completo de tener en columnas paralelas.",
+            "fuente": "cuadro@p24#1",
+            "analisis_ia": "Cierre del paradigma completo del presente de ser en NC1. U1 trabajó las tres formas singulares (etiqueta `[introduce, sistematiza]` en cuadro@p14#1); U2 canoniza las plurales según el índice del curso ('Verbos ser y tener — formas plurales'). El paradigma de ser es totalmente irregular: las formas singulares (soy/eres/es) y plurales (somos/sois/son) no comparten raíz visible — el alumno debe memorizar el verbo como bloque cerrado, no derivarlo de una pauta morfológica. Esa irregularidad total es precisamente por lo que NC1 lo presenta tabularmente, sin metalenguaje de flexión. Reaplicación inmediata en las tres macrofunciones ya canonizadas en U1: identidad personal (Soy Ana, Somos estudiantes), origen/nacionalidad (¿De dónde son?), atribución de característica (Las clases son interesantes). El cuadro@p24#3 reaplica ser en construcciones demostrativas (Este es Juan, Estas son Laura y Rosa) — los demostrativos canonizados en U2 se construyen con la cópula ser, no con estar. El alumno sale de U2 con ser cerrado como verbo nuclear; estar (su par contrastivo) entra en U5. Convive con `rasgo_por_tiempo: totalmente irregular` del bloque verbal."
+          }
         },
         {
           "unidad": 3,
@@ -5744,6 +5879,13 @@
             "soy"
           ]
         }
+      ],
+      "relaciones": [
+        {
+          "hilo_ref": "verb-tener",
+          "tipo": "comparte",
+          "detalle": "Verbos copulativos canonizados como pareja en NC1 — cuadro@p14#1 (U1, formas singulares) y cuadro@p24#1 (U2, paradigma completo) los presentan en columnas paralelas. Función nuclear compartida: identidad/origen (ser) + edad/posesión (tener) son el bloque mínimo de autopresentación del alumno A1."
+        }
       ]
     },
     {
@@ -5794,7 +5936,9 @@
         },
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "amplia"
+          ],
           "evidencias": [
             "cuadro@p24#1",
             "p23-act12",
@@ -5825,7 +5969,12 @@
             "tiene",
             "tienen",
             "tienes"
-          ]
+          ],
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p24#1 amplía el presente de tener a las seis formas completas: tengo (yo), tienes (tú), tiene (él/ella/usted), tenemos (nosotros/-as), tenéis (vosotros/-as), tienen (ellos/ellas/ustedes). Presentado en paralelo a ser en el mismo cuadro.",
+            "fuente": "cuadro@p24#1",
+            "analisis_ia": "Cierre del paradigma completo del presente de tener en NC1, paralelo al de ser. U1 trabajó tengo/tienes/tiene (etiqueta `[introduce]` en cuadro@p14#1); U2 amplía a tenemos/tenéis/tienen según el índice. El paradigma combina dos mecanismos morfológicos: irregularidad de primera persona (tengo, no *teno — característica de los verbos con raíz consonántica final tipo poner/salir/decir) + diptongación e→ie en las formas tónicas (tienes/tiene/tienen), manteniéndose como -e- en las átonas (tenemos/tenéis). NC1 presenta el paradigma sin metalenguaje morfológico — el alumno opera tener como bloque sin analizarlo. La canonización analítica de la irregularidad e→ie llega en U4 (con querer como testigo del paradigma) y reaparece en U6 (cerrar como recurrente); el rasgo `tener` se cataloga como 'totalmente irregular' en el bloque verbal por la coexistencia de los dos mecanismos, no como caso e→ie puro. En U2 tener cierra como verbo nuclear A1.1: cubre edad ('Tengo 14 años / Tienes 15'), posesión y parentesco ('Tenemos un perro, tienen dos hermanas'). La fórmula formal '¿Cuántos años tiene usted?' de U1 sigue activa."
+          }
         },
         {
           "unidad": 3,
@@ -6202,7 +6351,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p25-act7",
             "p25-act7@R",
@@ -6344,7 +6495,9 @@
       "eventos": [
         {
           "unidad": 2,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p26-act1",
             "p29-act3"
@@ -6409,7 +6562,8 @@
       "tipo": "reconciliacion",
       "hilo_ref": "voc-gentilicios",
       "descripcion": "El hilo `voc · Gentilicios` aparece en U1 (2 items) y U4 (1 item), nunca como `principal` y sin respaldo en el índice del curso (`origen=excepcion` sin aliases). En cambio `voc · Adjetivos de nacionalidad` es canónico de U2 con 17 items principales. Sospecha editorial: en español los gentilicios (sustantivo: 'un español') y los adjetivos de nacionalidad ('es español') coinciden formalmente — probable solape conceptual; `Gentilicios` puede ser alias de `Adjetivos de nacionalidad` y no un hilo autónomo. Decidir cuando Capa 2 procese U2 y se vea cómo el libro trata la distinción sustantivo/adjetivo en los items principales. Opciones: (a) fusionar Gentilicios → Adjetivos de nacionalidad (alias en el registry); (b) mantener Gentilicios como hilo autónomo si se justifica una distinción funcional; (c) reclasificar los items de Gentilicios a Adjetivos de nacionalidad uno a uno.",
-      "estado": "pendiente"
+      "estado": "rechazada",
+      "resolucion": "rechazada — la distinción es semánticamente válida: 'Adjetivos de nacionalidad' = nacionalidad-país (canónico PCIC A1 §1.7, principal U2 con 17 items: mexicano/español/japonés…); 'Gentilicios' = ciudad/región/continente (bucket débil con madrileña/africana). La decisión editorial fase 1 (v10.124, U1 _decisiones_ia P13) ya los separó por scope distinto. Fusionarlos perdería información granular de los items subnacionales. Mantener ambos hilos autónomos."
     },
     {
       "id": "prop-rel-gram-interrogativos-gram-pronombre-sujeto",
@@ -6510,7 +6664,7 @@
       "id": "prop-rel-gram-pronombre-sujeto-verb-ser",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-ser'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#1, cuadro@p20#3, cuadro@p24#1 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-pronombre-sujeto",
@@ -6522,7 +6676,8 @@
           "cuadro@p20#3",
           "cuadro@p24#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre gram-pronombre-sujeto y verb-ser; entrada de relación añadida en gram-pronombre-sujeto"
     },
     {
       "id": "prop-rel-gram-pronombre-sujeto-voc-adjetivos-de-nacionalidad",
@@ -6816,7 +6971,7 @@
       "id": "prop-rel-gram-concordancia-de-genero-gram-concordancia-de-numero",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-concordancia-de-numero'. Cuadros compartidos: cuadro@p14#2, cuadro@p24#2, cuadro@p82 (U1, U2, U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-concordancia-de-genero",
@@ -6827,7 +6982,8 @@
           "cuadro@p24#2",
           "cuadro@p82"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre gram-concordancia-de-genero y gram-concordancia-de-numero; entrada de relación añadida en gram-concordancia-de-genero"
     },
     {
       "id": "prop-rel-gram-concordancia-de-genero-voc-el-cuerpo-humano",
@@ -6909,7 +7065,7 @@
       "id": "prop-rel-gram-articulos-determinados-gram-concordancia-de-genero",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-articulos-determinados' y 'gram-concordancia-de-genero'. Cuadros compartidos: cuadro@p14#2, cuadro@p24#2 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-articulos-determinados",
@@ -6919,13 +7075,14 @@
           "cuadro@p14#2",
           "cuadro@p24#2"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre gram-articulos-determinados y gram-concordancia-de-genero; entrada de relación añadida en gram-articulos-determinados"
     },
     {
       "id": "prop-rel-gram-articulos-determinados-gram-concordancia-de-numero",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-articulos-determinados' y 'gram-concordancia-de-numero'. Cuadros compartidos: cuadro@p14#2, cuadro@p24#2 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-articulos-determinados",
@@ -6935,7 +7092,8 @@
           "cuadro@p14#2",
           "cuadro@p24#2"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre gram-articulos-determinados y gram-concordancia-de-numero; entrada de relación añadida en gram-articulos-determinados"
     },
     {
       "id": "prop-rel-gram-articulos-determinados-voc-objetos-de-clase",
@@ -7238,7 +7396,7 @@
       "id": "prop-rel-gram-concordancia-de-genero-gram-demostrativos",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-demostrativos'. Cuadros compartidos: cuadro@p24#3 (U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-concordancia-de-genero",
@@ -7247,7 +7405,8 @@
         "cuadros_compartidos": [
           "cuadro@p24#3"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'prerrequisito' origen=gram-demostrativos destino=gram-concordancia-de-genero; entrada de relación añadida en gram-demostrativos"
     },
     {
       "id": "prop-rel-gram-concordancia-de-genero-gram-posesivos",
@@ -8157,7 +8316,7 @@
       "id": "prop-rel-gram-pronombre-sujeto-verb-tener",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-tener'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#3, cuadro@p24#1 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-pronombre-sujeto",
@@ -8168,7 +8327,8 @@
           "cuadro@p20#3",
           "cuadro@p24#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre gram-pronombre-sujeto y verb-tener; entrada de relación añadida en gram-pronombre-sujeto"
     },
     {
       "id": "prop-rel-verb-llamarse-verb-tener",
@@ -8190,7 +8350,7 @@
       "id": "prop-rel-verb-ser-verb-tener",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-ser' y 'verb-tener'. Cuadros compartidos: cuadro@p14#1, cuadro@p20#3, cuadro@p24#1 (U1, U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "verb-ser",
@@ -8201,7 +8361,8 @@
           "cuadro@p20#3",
           "cuadro@p24#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre verb-ser y verb-tener; entrada de relación añadida en verb-ser"
     },
     {
       "id": "prop-rel-gram-interrogativos-gram-marcadores-temporales-del-pasado",
@@ -8874,7 +9035,7 @@
       "id": "prop-rel-pron-mayusculas-verb-llamarse",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'pron-mayusculas' y 'verb-llamarse'. Cuadros compartidos: cuadro@p25 (U2). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "pron-mayusculas",
@@ -8883,7 +9044,8 @@
         "cuadros_compartidos": [
           "cuadro@p25"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre pron-mayusculas y verb-llamarse; entrada de relación añadida en pron-mayusculas"
     },
     {
       "id": "prop-rel-verb-acostarse-verb-ducharse",
