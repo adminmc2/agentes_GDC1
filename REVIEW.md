@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-24 (v12.16 — **Paso 2b cerrado**: `nc1-reciclaje.json` regenerado tras la recanonización de «Adjetivos descriptivos»: hilo viejo desaparecido, 3 hilos nuevos poblados (`voc-cualidades-de-objetos-y-lugares` U5/U6/U9, `voc-caracteristicas-fisicas` U8, `voc-caracter-y-personalidad` U8). 2 propuestas cross-hilo obsoletas eliminadas. Registry v1.9→v1.10 con `origen indice→excepcion` + `nota` en la entry deprecated. Validadores fase 1 (10/10 0/0/0) y fase 2 (estructural 0 errores; cross-unidad 14 alertas idénticas, sin regresión).
+> **Última actualización:** 2026-05-24 (v12.17 — **Paso 2b adicional cerrado**: filtro de canónicos `_deprecated` en Capa 1 (`generar_reciclaje_capa1.py`) — los hilos huérfanos `voc-practica-del-surf` y `voc-adjetivos-descriptivos` ya no se proyectan desde `nc1-curso.json` aunque el índice del libro siga mencionándolos por verbatim. Reciclaje regenerado: 125 hilos, 5 hilos vigentes del split poblados con evidencias. Registry léxico saneado: `_meta.version` v1.10→1.11 sin prefijo. Validadores en verde, sin regresión).
+>
+> **Hito previo (v12.16):** 2026-05-24 (Paso 2b: `nc1-reciclaje.json` regenerado tras la recanonización de «Adjetivos descriptivos»; 2 propuestas cross-hilo obsoletas eliminadas; registry saneado para validador inv-7).
 >
 > **Hito previo (v12.15):** 2026-05-24 (Materialización de los datos de v12.13 — registry v1.9→v1.11 + U8 split Deportes/Paisaje + saneo de referencias fantasma).
 >

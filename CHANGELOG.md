@@ -15,6 +15,20 @@
 
 ---
 
+## [v12.17 — 2026-05-24] — Paso 2b adicional: cierre del split «Práctica del surf» + filtro deprecated en Capa 1
+
+Tras v12.16 el reciclaje seguía arrastrando un hilo huérfano `voc-practica-del-surf` (nivel `mapa`, 0 evidencias, 0 etiquetas) — Capa 1 lo proyectaba porque `nc1-curso.json` U8 sigue diciendo «Práctica del surf» (verbatim del libro, decisión firme), aunque el registry tiene el canónico marcado como `_deprecated` desde v12.13/v12.15. Mismo problema latente con `voc-adjetivos-descriptivos` en U5: regenerar volvía a crear el hilo huérfano.
+
+(a) **Filtro en Capa 1** (`scripts/generar_reciclaje_capa1.py`): nuevo método `Registries.es_deprecated(bloque, titulo)` chequea si la entry del registry lleva campo `_deprecated`. `Constructor.add_evento_mapa` se salta los canónicos deprecated — la entry histórica del registry se conserva como trazabilidad pero ya no produce hilo mapa huérfano en el reciclaje. nc1-curso.json puede seguir mencionando el canónico viejo por convención de verbatim del libro: el filtro vive en Capa 1, no en el índice. Aplica a vocabulario, gramática, pron/orto y perífrasis (verbal queda fuera porque su clave es `lema`).
+
+(b) **`nc1-reciclaje.json` regenerado**: `voc-practica-del-surf` y `voc-adjetivos-descriptivos` desaparecen. Los 5 hilos vigentes del split (`voc-deportes`, `voc-paisaje-y-accidentes-geograficos`, `voc-cualidades-de-objetos-y-lugares`, `voc-caracteristicas-fisicas`, `voc-caracter-y-personalidad`) siguen poblados con sus evidencias completas. Total: 125 hilos.
+
+(c) **Saneo documental del registry léxico**: `_meta.version` pasa de `v1.10` (con prefijo) a `1.11` (sin prefijo, coherente con `version` raíz que ya estaba en `1.11`). `_meta.fecha` actualizada. Narrativa de `_meta.descripcion` extendida con la nota de v1.11.
+
+Validador fase 1: 10/10 0/0/0. Estructural fase 2: 0 errores. Cross-unidad: 14 alertas R1/R4 idénticas, sin regresión. La regla de oro #1 (verbatim del libro en `nc1-curso.json`) queda preservada; los canónicos vigentes son los del registry.
+
+---
+
 ## [v12.16 — 2026-05-24] — Paso 2b: regeneración de `nc1-reciclaje.json` tras la recanonización de «Adjetivos descriptivos»
 
 Cierre operativo del briefing del Paso 2b. Antes de este bump, los inventarios + el registry ya reflejaban el split del bucket viejo en 3 buckets nuevos (Paso 2a, v12.11/v12.13), pero `unidades/nc1-reciclaje.json` seguía arrastrando el hilo `voc-adjetivos-descriptivos` proyectado por Capa 1 desde el estado anterior.

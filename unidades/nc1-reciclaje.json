@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "v12.16",
+    "version": "v12.17",
     "fecha": "2026-05-24",
     "unidades_cubiertas": [
       0,
@@ -607,7 +607,7 @@
             "p61-act1",
             "p61-act4"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "nuevo"
         },
         {
           "unidad": 6,
@@ -620,7 +620,7 @@
             "p69-act9",
             "p70-act1"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "nuevo"
         },
         {
           "unidad": 9,
@@ -630,7 +630,7 @@
             "p93-act7",
             "p98-act1"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "nuevo"
         }
       ]
     },
@@ -1350,20 +1350,6 @@
             "p61-act1",
             "p61-act3@R"
           ],
-          "procedencia_indice": "declarado"
-        }
-      ]
-    },
-    {
-      "id": "voc-practica-del-surf",
-      "bloque": "vocabulario",
-      "titulo": "Práctica del surf",
-      "nivel_analisis": "mapa",
-      "eventos": [
-        {
-          "unidad": 8,
-          "etiquetas": [],
-          "evidencias": [],
           "procedencia_indice": "declarado"
         }
       ]

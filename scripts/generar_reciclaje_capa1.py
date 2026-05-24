@@ -168,6 +168,28 @@ class Registries:
     def grupo(self, titulo: str):
         return self.gramatica.get(titulo)
 
+    def es_deprecated(self, bloque: str, titulo: str) -> bool:
+        """¿La entry canónica está marcada como `_deprecated` en su registry?
+
+        Capa 1 no debe proyectar hilos `mapa` desde el índice del curso para
+        canónicos deprecated — son entradas históricas conservadas como
+        trazabilidad, no contenido vigente. Si el índice los menciona
+        (por convención de verbatim del libro), Capa 1 los ignora.
+        """
+        entry = None
+        if bloque == "vocabulario":
+            entry = self.campos_raw.get(titulo)
+        elif bloque == "gramatica":
+            entry = self.gramatica_raw.get(titulo)
+        elif bloque == "pronunciacion_ortografia":
+            entry = self.pronorto_raw.get(titulo)
+        elif bloque == "perifrasis":
+            entry = self.perifrasis_raw.get(titulo)
+        # verbal: la clave es `lema`, no aplica concepto de deprecated aquí
+        if not entry:
+            return False
+        return "_deprecated" in entry
+
     @staticmethod
     def _match(objetivo: str, claves: set) -> int:
         """Puntúa una entrada contra un conjunto de claves: 2=exacto, 1=prefijo."""
@@ -423,7 +445,16 @@ class Constructor:
 
         Procedencia mecánica via el resolver — el evento queda con la misma
         clasificación que tendría si viniera del inventario.
+
+        Si el canónico está marcado como `_deprecated` en su registry, NO se
+        proyecta como hilo mapa: la entry histórica del registry se conserva
+        para trazabilidad, pero no produce un hilo huérfano en el reciclaje.
+        El índice del curso (`nc1-curso.json`) puede seguir mencionando el
+        canónico viejo por convención de verbatim del libro — el filtro vive
+        aquí, en Capa 1.
         """
+        if self.reg.es_deprecated(bloque, titulo):
+            return
         self.unidades.add(unidad)
         hilo = self._hilo(bloque, titulo)
         proc, recon = self.resolver_procedencia(bloque, titulo)
