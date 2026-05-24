@@ -366,96 +366,8 @@
         "descripcion": {
           "U8": "PCIC A1 §17 Nociones específicas / Tiempo libre y entretenimiento — Deportes. Principal en U8: se introduce el léxico del surf en p83-act06 (texto 'El mar Cantábrico, en el norte de España, es un lugar ideal para la práctica del surf...') con lemas surf, surfista, tabla, ola, correa, Cantábrico. Se trabaja en V/F (p83-act07) y en descripción de surfistas con apoyo visual (p83-act08)."
         }
-      }
-    },
-    "recurrente": {
-      "Colores": {
-        "items": [
-          {
-            "palabra": "rojo/-a",
-            "fuentes": [
-              "p83-act5"
-            ]
-          },
-          {
-            "palabra": "amarillo/-a",
-            "fuentes": [
-              "p83-act8"
-            ]
-          },
-          {
-            "palabra": "marrón",
-            "fuentes": [
-              "p88-act3",
-              "p88-act5",
-              "p89-act8"
-            ]
-          },
-          {
-            "palabra": "verde",
-            "fuentes": [
-              "p83-act5",
-              "p83-act8",
-              "p89-act8",
-              "p91-act6",
-              "p91-act6@R"
-            ]
-          },
-          {
-            "palabra": "azul",
-            "fuentes": [
-              "p82-act3",
-              "p87-act7@R",
-              "p88-act3",
-              "p88-act5@R",
-              "p89-act8"
-            ]
-          },
-          {
-            "palabra": "gris",
-            "fuentes": [
-              "p89-act8"
-            ]
-          },
-          {
-            "palabra": "blanco/-a",
-            "fuentes": [
-              "p89-act8"
-            ]
-          },
-          {
-            "palabra": "negro/-a",
-            "fuentes": [
-              "p83-act8",
-              "p86-act1",
-              "p86-act2@R",
-              "p87-act7@R",
-              "p89-act7",
-              "p89-act8",
-              "p91-act6@R"
-            ]
-          }
-        ],
-        "fuentes": [
-          "p82-act3",
-          "p83-act5",
-          "p83-act8",
-          "p86-act1",
-          "p86-act2@R",
-          "p87-act7@R",
-          "p88-act3",
-          "p88-act5",
-          "p88-act5@R",
-          "p89-act7",
-          "p89-act8",
-          "p91-act6",
-          "p91-act6@R"
-        ],
-        "descripcion": {
-          "U8": "Recurrente desde U1 (principal en cuadro@p15 + p15-act7). En U8 reaparece intensivamente como soporte de la 'Descripción de personas' (pelo + ojos + ropa): rojo en p83-act5, amarillo en p83-act8, marrón en p88-act3/05 y p89-act8, verde/azul/gris/blanco/negro en descripciones físicas (color de pelo y ojos). Reubicado en v10.163 desde 'Adjetivos descriptivos' (donde estaba mal encajado: los colores son categoría léxica propia, no descriptivos de tamaño/edad/comodidad/estética). 'amarillo/-a' y 'marrón' recuperados como items materiales que el extractor original había perdido (cleanup_v150 los había retirado por fuentes inválidas, pero el material los atesta)."
-        }
       },
-      "Adjetivos descriptivos": {
+      "Características físicas": {
         "items": [
           {
             "palabra": "alto/-a",
@@ -666,6 +578,45 @@
             ]
           },
           {
+            "palabra": "fuerte",
+            "fuentes": [
+              "p86-act1"
+            ]
+          },
+          {
+            "palabra": "enorme",
+            "fuentes": [
+              "p83-act5"
+            ]
+          }
+        ],
+        "fuentes": [
+          "cuadro@p87",
+          "p82-act3",
+          "p83-act5",
+          "p83-act8",
+          "p86-act1",
+          "p86-act1@R",
+          "p86-act2@R",
+          "p86-act3",
+          "p86-act4",
+          "p87-act5",
+          "p87-act5@R",
+          "p87-act7@R",
+          "p87-act8",
+          "p88-act3",
+          "p88-act5@R",
+          "p89-act6@R",
+          "p89-act7",
+          "p89-act8",
+          "p91-act6",
+          "p91-act6@R"
+        ],
+        "descripcion": "Principal en U8: léxico nuclear de la sección Comunicación 'Descripción de personas' (cuerpo, cara, pelo, ojos): alto/bajo, guapo/feo, delgado/gordo, joven/mayor, moreno/rubio/pelirrojo/canoso/castaño/calvo, rizado/liso/ondulado, largo/corto (pelo), grande/pequeño/oscuro (ojos), fuerte (persona), enorme (cabeza del monstruo p83). Respaldo PCIC §1.1 'Individuo: Dimensión Física / Características Físicas'. Migración v12.11: split desde 'Adjetivos descriptivos' (que era recurrente) + expulsión de famoso/-a (p89-act7 atributo social, sin canónico) y favorito/-a (p86-act1@R marcador de preferencia)."
+      },
+      "Carácter y personalidad": {
+        "items": [
+          {
             "palabra": "simpático/-a",
             "fuentes": [
               "p86-act1",
@@ -736,58 +687,106 @@
               "p88-act1",
               "p89-act8"
             ]
-          },
-          {
-            "palabra": "favorito/-a",
-            "fuentes": [
-              "p86-act1@R"
-            ]
-          },
-          {
-            "palabra": "fuerte",
-            "fuentes": [
-              "p86-act1"
-            ]
-          },
-          {
-            "palabra": "famoso/-a",
-            "fuentes": [
-              "p89-act7"
-            ]
-          },
-          {
-            "palabra": "enorme",
-            "fuentes": [
-              "p83-act5"
-            ]
           }
         ],
         "fuentes": [
           "p86-act1",
-          "p87-act8",
-          "p88-act3",
-          "p88-act5@R",
-          "p89-act8",
+          "p86-act1@R",
+          "p86-act3",
           "p86-act4",
-          "p87-act5",
-          "p87-act5@R",
-          "p87-act7@R",
-          "p89-act6@R",
-          "p91-act6",
-          "p91-act6@R",
-          "p83-act8",
+          "p88-act1",
+          "p88-act2",
+          "p88-act3",
+          "p89-act8"
+        ],
+        "descripcion": "Principal en U8: léxico nuclear de la sección Comunicación 'Descripción de personas' (rasgos sociales/anímicos): simpático/antipático, divertido/aburrido, trabajador, inteligente, sociable, cariñoso, serio. Respaldo PCIC §1.2 'Individuo: Dimensión Perceptiva y Anímica / Carácter y Personalidad'. Migración v12.11 desde 'Adjetivos descriptivos'."
+      }
+    },
+    "recurrente": {
+      "Colores": {
+        "items": [
+          {
+            "palabra": "rojo/-a",
+            "fuentes": [
+              "p83-act5"
+            ]
+          },
+          {
+            "palabra": "amarillo/-a",
+            "fuentes": [
+              "p83-act8"
+            ]
+          },
+          {
+            "palabra": "marrón",
+            "fuentes": [
+              "p88-act3",
+              "p88-act5",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "verde",
+            "fuentes": [
+              "p83-act5",
+              "p83-act8",
+              "p89-act8",
+              "p91-act6",
+              "p91-act6@R"
+            ]
+          },
+          {
+            "palabra": "azul",
+            "fuentes": [
+              "p82-act3",
+              "p87-act7@R",
+              "p88-act3",
+              "p88-act5@R",
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "gris",
+            "fuentes": [
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "blanco/-a",
+            "fuentes": [
+              "p89-act8"
+            ]
+          },
+          {
+            "palabra": "negro/-a",
+            "fuentes": [
+              "p83-act8",
+              "p86-act1",
+              "p86-act2@R",
+              "p87-act7@R",
+              "p89-act7",
+              "p89-act8",
+              "p91-act6@R"
+            ]
+          }
+        ],
+        "fuentes": [
           "p82-act3",
           "p83-act5",
-          "p89-act7",
-          "p86-act1@R",
+          "p83-act8",
+          "p86-act1",
           "p86-act2@R",
-          "cuadro@p87",
-          "p86-act3",
-          "p88-act1",
-          "p88-act2"
+          "p87-act7@R",
+          "p88-act3",
+          "p88-act5",
+          "p88-act5@R",
+          "p89-act7",
+          "p89-act8",
+          "p91-act6",
+          "p91-act6@R"
         ],
         "descripcion": {
-          "U8": "Recurrente desde U5 (principal en 'Adjetivos descriptivos' aplicada a vivienda). En U8 reaparece intensivamente como soporte de la función comunicativa 'Descripción de personas': adjetivos físicos (alto, bajo, guapo, feo, delgado, gordo, joven, mayor; pelo moreno/rubio/pelirrojo/canoso/castaño/calvo, rizado/liso/ondulado, largo/corto) y de carácter (simpático/antipático, divertido/aburrido, trabajador, inteligente, sociable, cariñoso, serio). Cumple §5.1.1: frecuencia alta (presente en todas las secciones), posición canónica U5 y valor pedagógico de soporte explícito del principal comunicativo de U8 (Descripción de personas)."
+          "U8": "Recurrente desde U1 (principal en cuadro@p15 + p15-act7). En U8 reaparece intensivamente como soporte de la 'Descripción de personas' (pelo + ojos + ropa): rojo en p83-act5, amarillo en p83-act8, marrón en p88-act3/05 y p89-act8, verde/azul/gris/blanco/negro en descripciones físicas (color de pelo y ojos). Reubicado en v10.163 desde 'Adjetivos descriptivos' (donde estaba mal encajado: los colores son categoría léxica propia, no descriptivos de tamaño/edad/comodidad/estética). 'amarillo/-a' y 'marrón' recuperados como items materiales que el extractor original había perdido (cleanup_v150 los había retirado por fuentes inválidas, pero el material los atesta)."
         }
       }
     }
@@ -1484,14 +1483,14 @@
     "D-Construccion-gustar-doler (autónoma, con precedente registry): registry gramatica-canonica declara _apariciones['U8']='amplía con doler' para 'Construcción gustar/doler'. Se sigue el registry: una sola categoría principal cubre Verbo doler + Verbos doler y gustar + paradigma OI. El verbo doler entra como entrada principal en 'tiempos_y_verbos_consolidado' (tipo gustar + irregularidad o→ue, registry).",
     "D-Adverbios-de-cantidad-unificado (autónoma, con precedente registry): registry declara 'Adverbios de cantidad' con _apariciones['U8']='principal (incluye muy, mucho/-a/-os/-as fusionados)'. Se sigue el registry: una sola categoría cubre muy, mucho/-a/-os/-as, bastante, un poco, nada. Los items se mantienen con flexiones separadas (mucho/mucha/muchos/muchas) porque NO hay solo dos pares atestados de un mismo lema con flexión simple o/a — son cuatro flexiones independientes operativas (muy ≠ mucho funcionalmente; mucho/-a/-os/-as son flexiones del mismo lema pero el material las trabaja como cuatro formas pedagógicamente distintas). Aplicación literal §5.11 unificaría mucha→mucho, muchos→mucho, muchas→mucho; mantengo la unificación parcial: cada flexión es su propio item porque el material pedagógico distingue su uso (Mucho + nombre masc sing / Mucha + nombre fem sing / Muchos + nombre masc plural / Muchas + nombre fem plural). Si el validador §5.11 marca esto, se eleva a §0.1.",
     "D-Pronombres-atonos-OI-recurrente (autónoma, con precedente registry): registry declara _apariciones['U8']='ampliación (paradigma doler)'. Se codifica como recurrente desde U4. Cumple §5.1.1 con justificación pedagógica clara.",
-    "D-Adjetivos-descriptivos-recurrente (autónoma): registry léxico declara 'Adjetivos descriptivos' como único campo canónico; no se subdivide en (físico)/(carácter). U5 lo trabaja como principal (vivienda); U8 lo reactiva masivamente como soporte de 'Descripción de personas'. Cumple §5.1.1.",
+    "D-Caracteristicas-fisicas-y-Caracter-y-personalidad-principal (v12.11, 2026-05-24): tras la deuda léxica v12.5-v12.9, el viejo canónico 'Adjetivos descriptivos' del registry queda deprecado por split en 3 buckets — 'Características físicas' (PCIC §1.1, ya existente), 'Carácter y personalidad' (PCIC §1.2, ya existente) y 'Cualidades de objetos y lugares' (nuevo, excepcion). En U8 se aplican #1 y #2 como **principal** (la unidad se titula 'Descripciones'; antes vivían en recurrente bajo 'Adjetivos descriptivos'). Expulsados del consolidado en U8: famoso/-a (p89-act7 — atributo social sin canónico de respaldo) y favorito/-a (p86-act1@R — marcador de preferencia, no descriptor). Histórico previo: U5 trabajaba el viejo bucket como principal (vivienda); U8 lo reactivaba como soporte de 'Descripción de personas'.",
     "D-Cuerpo-humano-vs-Partes-del-cuerpo (autónoma): registry léxico tiene dos canónicos próximos — 'El cuerpo humano' (origen: indice U8) y 'Partes del cuerpo' (origen: pcic_a1). Se sigue el rótulo del índice editorial de U8: 'El cuerpo humano' como canónico de la unidad. 'Partes del cuerpo' (PCIC) queda como nombre paralelo no utilizado en este inventario.",
     "D-Verbo-llevar-excluido (autónoma, precedente U7 D-Verbos-no-canonicos): el verbo 'llevar' aparece en U8 (lleva gafas en p86-act01, lleva el pie atado a la tabla en p83-act06) pero NO está en 'verbos-canonicos.json'. Tratado como input incidental por §5.2; no entra en 'tiempos_y_verbos' de actividades ni en 'tiempos_y_verbos_consolidado'.",
     "D-Verbos-soporte-en-instrucciones (autónoma, §5.2 metalengua): verbos en instrucciones de aula ('Escucha', 'Lee', 'Completa', 'Mira', 'Relaciona', 'Ordena', etc.) y en pasos de actividades NO se codifican.",
     "D-Concordancia-genero-numero-recurrente (autónoma): el cuadro 'Recuerda' de p82 sistematiza la concordancia (pelo negro / boca pequeña / ojos negros / orejas pequeñas). Aunque su trabajo formal pertenece a U1/U2, en U8 actúa como soporte explícito de 'Descripción de personas'. Codificado como recurrente cumpliendo §5.1.1.",
     "D-Practica-del-surf-canon-literal (autónoma, registry): 'Práctica del surf' es canónico literal del registry (origen: indice). Se usa tal cual.",
     "D-Cultura-La-semana-azul-sin-codificacion (autónoma): la sección de Cultura no aporta categorías canónicas al sistema (no se inventa canónico nuevo para 'piragüismo', 'senderismo', etc.); las actividades p90-act01/02 quedan con listas tipadas vacías. Léxico cultural disponible en el campo 'datos.texto_completo' para fase 2.",
-    "D-Comunicacion-Descripcion-de-personas-no-codificacion-canon (autónoma): la dimensión 'comunicación' no tiene registry canónico propio dentro del schema actual (los cuatro registries cubren léxico, gramática, pron/orto, verbos). Las actividades de Comunicación quedan codificadas en su contenido lingüístico real (Adjetivos descriptivos + El cuerpo humano + Construcción gustar/doler + verbos tener/ser + concordancia) sin categoría de 'descripción de personas' explícita en consolidado.",
+    "D-Comunicacion-Descripcion-de-personas-no-codificacion-canon (autónoma; actualizada v12.11): la dimensión 'comunicación' no tiene registry canónico propio dentro del schema actual (los cuatro registries cubren léxico, gramática, pron/orto, verbos). Las actividades de Comunicación quedan codificadas en su contenido lingüístico real (Características físicas + Carácter y personalidad + El cuerpo humano + Construcción gustar/doler + verbos tener/ser + concordancia) sin categoría de 'descripción de personas' explícita en consolidado. Nota: hasta v12.11 los rasgos físicos y de carácter se etiquetaban bajo el viejo bucket único 'Adjetivos descriptivos'; tras la migración se separan en sus dos buckets PCIC propios.",
     "Rectificación shape: enfoque legacy 'fonetica' (p87-act09/10/11/12) reemplazado por 'pronunciacion_ortografia' (renombrado en v10.115).",
     "Rectificación v10.163 (revisor — 3 puntos): (1) Alineación enfoque p85-act07/08: cambiados de 'gramatica' a 'pronunciacion_ortografia' para coincidir con la decisión D-Abreviaturas-de-diccionarios-deferida ya documentada (el JSON se contradecía a sí mismo). (2) Reubicación de colores: rojo, verde, azul, gris, blanco, negro retirados del bucket 'Adjetivos descriptivos' y trasladados a nueva categoría 'Colores' (recurrente desde U1, mismo precedente que U5 v10.162). Recuperados amarillo y marrón que el cleanup_v150 había retirado por fuentes inválidas: 'amarillo/-a' en p83-act8 ('amarillas') y 'marrones' en p88-act3/05 + p89-act8 (forma plural — 'marrón' no expande a 'marrones' en _expand_needle por no normalización del acento ó→o; deuda matcher documentada). (3) Normalización de flexiones a notación barra masc/fem en Adjetivos descriptivos para todos los lemas con flexión femenina atestada en el material (alto/-a, bajo/-a, guapo/-a, feo/-a, delgado/-a, gordo/-a, moreno/-a, rubio/-a, pelirrojo/-a, canoso/-a, castaño/-a, calvo/-a, rizado/-a, liso/-a, ondulado/-a, largo/-a, corto/-a, pequeño/-a, oscuro/-a, simpático/-a, antipático/-a, divertido/-a, aburrido/-a, trabajador/-a, cariñoso/-a, serio/-a, favorito/-a, famoso/-a). Consistencia con U5 v10.162 y precedente moderno/-a U6 v10.158. (4) Refs de actividad actualizadas con 'Colores' en 8 actividades (p82-act03, p83-act05, p83-act08, p86-act01, p88-act03, p88-act05, p89-act07, p89-act08, p91-act06)."
   ],
@@ -1618,7 +1617,7 @@
           "instruccion_original": "Mira las imágenes de los ejercicios 1 y 2 y señala si las siguientes afirmaciones son verdaderas (V) o falsas (F).",
           "vocabulario": [
             "El cuerpo humano",
-            "Adjetivos descriptivos",
+            "Características físicas",
             "Colores"
           ],
           "tiempos_y_verbos": [
@@ -1764,7 +1763,7 @@
           "instruccion_original": "Lee la descripción y dibuja el monstruo.",
           "vocabulario": [
             "El cuerpo humano",
-            "Adjetivos descriptivos",
+            "Características físicas",
             "Colores"
           ],
           "tiempos_y_verbos": [
@@ -1874,7 +1873,7 @@
           "enfoque": "vocabulario",
           "instruccion_original": "Mira los dibujos de los surfistas. Observa las siguientes descripciones y relaciónalas con cada uno de ellos.",
           "vocabulario": [
-            "Adjetivos descriptivos",
+            "Características físicas",
             "El cuerpo humano",
             "Colores"
           ],
@@ -2489,7 +2488,8 @@
           "enfoque": "comunicacion",
           "instruccion_original": "Mira el vídeo o lee y escucha el diálogo y completa con las palabras del recuadro.",
           "vocabulario": [
-            "Adjetivos descriptivos",
+            "Características físicas",
+            "Carácter y personalidad",
             "El cuerpo humano",
             "Colores"
           ],
@@ -2623,7 +2623,8 @@
           "enfoque": "comunicacion",
           "instruccion_original": "En grupos de cuatro, preparad las descripciones para que vuestros compañeros adivinen quién es vuestro profesor favorito.",
           "vocabulario": [
-            "Adjetivos descriptivos"
+            "Características físicas",
+            "Carácter y personalidad"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [
@@ -2661,7 +2662,8 @@
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las siguientes palabras con su contrario.",
           "vocabulario": [
-            "Adjetivos descriptivos"
+            "Características físicas",
+            "Carácter y personalidad"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [],
@@ -2726,7 +2728,7 @@
           "enfoque": "vocabulario",
           "instruccion_original": "Mira a los personajes de los dibujos y completa sus descripciones con las siguientes palabras.",
           "vocabulario": [
-            "Adjetivos descriptivos",
+            "Características físicas",
             "El cuerpo humano"
           ],
           "tiempos_y_verbos": [
@@ -2827,7 +2829,6 @@
           "enfoque": "transversal",
           "instruccion_original": "Escucha a David hablando de sí mismo y de su familia. Completa la tabla con los datos de la descripción.",
           "vocabulario": [
-            "Adjetivos descriptivos",
             "El cuerpo humano"
           ],
           "tiempos_y_verbos": [],
@@ -2874,7 +2875,7 @@
           "enfoque": "comunicacion",
           "instruccion_original": "Pregunta a tu compañero por los miembros de su familia. Copia sus respuestas y escribe una pequeña descripción sobre uno de ellos.",
           "vocabulario": [
-            "Adjetivos descriptivos",
+            "Características físicas",
             "El cuerpo humano"
           ],
           "tiempos_y_verbos": [],
@@ -3112,7 +3113,7 @@
           "enfoque": "vocabulario",
           "instruccion_original": "Mira esta clase y observa los adjetivos para describir la personalidad de algunos alumnos. ¿Cómo eres tú?",
           "vocabulario": [
-            "Adjetivos descriptivos"
+            "Carácter y personalidad"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [],
@@ -3151,7 +3152,7 @@
           "enfoque": "vocabulario",
           "instruccion_original": "Comenta con tu compañero si los adjetivos de carácter anteriores son positivos o negativos.",
           "vocabulario": [
-            "Adjetivos descriptivos"
+            "Carácter y personalidad"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [],
@@ -3180,7 +3181,8 @@
           "enfoque": "transversal",
           "instruccion_original": "Marta escribe a Pierre, su amigo francés. Lee el correo electrónico y escribe el nombre de los amigos de Marta en la foto.",
           "vocabulario": [
-            "Adjetivos descriptivos",
+            "Características físicas",
+            "Carácter y personalidad",
             "El cuerpo humano",
             "Colores"
           ],
@@ -3242,9 +3244,7 @@
           ],
           "enfoque": "transversal",
           "instruccion_original": "Contesta a las preguntas.",
-          "vocabulario": [
-            "Adjetivos descriptivos"
-          ],
+          "vocabulario": [],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -3284,7 +3284,6 @@
           "enfoque": "transversal",
           "instruccion_original": "Completa la tabla con los datos que encuentres en el texto.",
           "vocabulario": [
-            "Adjetivos descriptivos",
             "El cuerpo humano",
             "Colores"
           ],
@@ -3338,7 +3337,6 @@
           "enfoque": "transversal",
           "instruccion_original": "Escucha a Marta describiendo a su nueva profesora de gimnasia. Completa con los datos correctos.",
           "vocabulario": [
-            "Adjetivos descriptivos",
             "El cuerpo humano"
           ],
           "tiempos_y_verbos": [],
@@ -3386,7 +3384,7 @@
           "enfoque": "comunicacion",
           "instruccion_original": "¿Conoces a estos personajes famosos? Si no es así, pide ayuda a tu profesor y busca información sobre ellos. Después, en parejas, A describe a uno de estos famosos y B adivina quién es.",
           "vocabulario": [
-            "Adjetivos descriptivos",
+            "Características físicas",
             "El cuerpo humano",
             "Colores"
           ],
@@ -3426,7 +3424,8 @@
           "enfoque": "comunicacion",
           "instruccion_original": "En parejas, tenéis que escribir una descripción de un compañero de clase.",
           "vocabulario": [
-            "Adjetivos descriptivos",
+            "Características físicas",
+            "Carácter y personalidad",
             "El cuerpo humano",
             "Colores"
           ],
@@ -3513,7 +3512,6 @@
           "enfoque": "comunicacion",
           "instruccion_original": "Escribe un correo electrónico a un amigo o a una amiga con la que te escribes para practicar tu español. Cuéntale quiénes son tus mejores amigos.",
           "vocabulario": [
-            "Adjetivos descriptivos",
             "El cuerpo humano"
           ],
           "tiempos_y_verbos": [],
@@ -3852,8 +3850,7 @@
           "enfoque": "vocabulario",
           "instruccion_original": "Dibuja tu propio monstruo inventado y descríbelo.",
           "vocabulario": [
-            "El cuerpo humano",
-            "Adjetivos descriptivos"
+            "El cuerpo humano"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [],
@@ -3881,7 +3878,7 @@
           "enfoque": "comunicacion",
           "instruccion_original": "Ordena las conversaciones.",
           "vocabulario": [
-            "Adjetivos descriptivos",
+            "Características físicas",
             "El cuerpo humano",
             "Colores"
           ],
@@ -3941,9 +3938,7 @@
           ],
           "enfoque": "comunicacion",
           "instruccion_original": "Lleva una foto de tu mejor amigo/-a a clase y descríbela. ¿Cómo se llama? ¿Cómo es? ¿Dónde está?",
-          "vocabulario": [
-            "Adjetivos descriptivos"
-          ],
+          "vocabulario": [],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],

@@ -96,7 +96,7 @@
           "U5": "PCIC A1 §3.7.3 — Mobiliario y enseres. Principal en U5: léxico nuclear (alfombra, armario, bañera, cama, cocina, cuadro, ducha, espejo, estantería, fregadero, frigorífico, lámpara, lavabo, lavadora, mesa, ordenador, póster, silla, sillón, sofá, teléfono, televisión). Se trabaja en clasificación por habitaciones (p52-act03) y como apoyo léxico transversal a las descripciones."
         }
       },
-      "Adjetivos descriptivos": {
+      "Cualidades de objetos y lugares": {
         "items": [
           {"palabra": "alto", "fuentes": ["p57-act7"]},
           {"palabra": "antiguo/-a", "fuentes": ["p53-act6", "p55-act6", "p55-act8", "p57-act7"]},
@@ -418,7 +418,7 @@
   "_decisiones_ia": [
     "Migración v10.138+: shape viejo→nuevo. Renombrado enfoque 'fonetica'→'pronunciacion_ortografia' (p57-act04, p57-act05).",
     "Renombrado tipo_cuadro 'fonetico'→'pronunciacion_ortografia' (cuadro p57).",
-    "Léxico principal U5 (índice nc1-curso.json): Tipos de vivienda, Partes de la casa, Mobiliario, Adjetivos descriptivos. Categorías canónicas literales del registry campos-semanticos-canonicos.json.",
+    "Léxico principal U5: en el índice del libro (nc1-curso.json) figura como 'Tipos de vivienda, Partes de la casa, Mobiliario, Adjetivos descriptivos'. Tras v12.11, los tres primeros siguen como canónicos literales del registry; el cuarto ('Adjetivos descriptivos') queda deprecado y se sustituye por 'Cualidades de objetos y lugares' (alta v1.9 del registry, origen excepcion) — la etiqueta literal del libro se preserva en `_nc1_ref` del registry.",
     "Léxico recurrente propuesto: 'Marcadores de lugar: a la izquierda, a la derecha, al lado, delante, detrás, enfrente, entre, lejos, cerca' (canónico U2 que reaparece intensamente en U5 con la categoría 'Posición') y 'Establecimientos: cine, restaurante, farmacia...' (reaparece en p56-act4 y p61-act5). Cumplen los 3 criterios §5.1.1.",
     "Gramática principal U5: 'Oposición ser / estar' (PRE índice) y 'Posición' (PRE índice). El 'Verbo estar' del índice se proyecta en tiempos_y_verbos_consolidado (lema estar), no como categoría gramatical.",
     "Gramática recurrente: 'Hay' (PRE en U4), 'Concordancia de género', 'Concordancia de número' (PRE en U1) e 'Interrogativos' (PRE en U3) — todos reaparecen y cumplen los 3 criterios §5.1.1.",
@@ -593,7 +593,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona los adjetivos con sus contrarios.",
-          "vocabulario": ["Adjetivos descriptivos"],
+          "vocabulario": ["Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -618,7 +618,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Tacha la palabra que no corresponde en cada serie, como en el ejemplo.",
-          "vocabulario": ["Mobiliario", "Adjetivos descriptivos", "Partes de la casa"],
+          "vocabulario": ["Mobiliario", "Cualidades de objetos y lugares", "Partes de la casa"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -923,7 +923,7 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Señala la forma correcta.",
-          "vocabulario": ["Adjetivos descriptivos"],
+          "vocabulario": ["Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]}
@@ -956,7 +956,7 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Escribe frases utilizando los verbos ser y estar, a partir de los siguientes pares de palabras.",
-          "vocabulario": ["Mobiliario", "Adjetivos descriptivos", "Partes de la casa"],
+          "vocabulario": ["Mobiliario", "Cualidades de objetos y lugares", "Partes de la casa"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están"]}
@@ -1004,7 +1004,7 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Lee la descripción del salón de Guillermo. Después, describe el salón de tu casa y dibújalo.",
-          "vocabulario": ["Mobiliario", "Adjetivos descriptivos"],
+          "vocabulario": ["Mobiliario", "Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
@@ -1211,7 +1211,7 @@
           "destreza": ["comprension_auditiva", "expresion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Escucha y repite.",
-          "vocabulario": ["Adjetivos descriptivos"],
+          "vocabulario": ["Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}
           ],
@@ -1232,7 +1232,7 @@
           "destreza": ["expresion_oral", "interaccion_oral"],
           "enfoque": "comunicacion",
           "instruccion_original": "Ahora, pregunta y contesta a tu compañero, como en el ejemplo. Utiliza los siguientes adjetivos.",
-          "vocabulario": ["Adjetivos descriptivos", "Colores"],
+          "vocabulario": ["Cualidades de objetos y lugares", "Colores"],
           "tiempos_y_verbos": [
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "Es"]}
           ],
@@ -1315,7 +1315,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "transversal",
           "instruccion_original": "¿Cómo es su habitación ideal? Lee estas cuatro descripciones.",
-          "vocabulario": ["Mobiliario", "Partes de la casa", "Adjetivos descriptivos"],
+          "vocabulario": ["Mobiliario", "Partes de la casa", "Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [
             {"lema": "tener", "tiempo": "Presente", "formas_trabajadas": ["tengo", "tiene"]},
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["Está", "está"]},
@@ -1357,7 +1357,7 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Corrige las siguientes afirmaciones.",
-          "vocabulario": ["Tipos de vivienda", "Adjetivos descriptivos"],
+          "vocabulario": ["Tipos de vivienda", "Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [
             {"lema": "vivir", "tiempo": "Presente", "formas_trabajadas": ["vive"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]},
@@ -1494,7 +1494,7 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "En grupos de cuatro: cada uno describe su casa ideal. Seguid los siguientes pasos:",
-          "vocabulario": ["Partes de la casa", "Adjetivos descriptivos"],
+          "vocabulario": ["Partes de la casa", "Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [],
           "gramatica": ["Hay", "Concordancia de género", "Concordancia de número"],
           "pronunciacion_ortografia": [],
@@ -1658,7 +1658,7 @@
           "destreza": ["expresion_escrita"],
           "enfoque": "gramatica",
           "instruccion_original": "Completa las frases con la forma correspondiente de los verbos ser y estar.",
-          "vocabulario": ["Mobiliario", "Adjetivos descriptivos", "Partes de la casa"],
+          "vocabulario": ["Mobiliario", "Cualidades de objetos y lugares", "Partes de la casa"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está", "están", "estamos", "estoy"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]}
@@ -1734,7 +1734,7 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Ordena las conversaciones.",
-          "vocabulario": ["Adjetivos descriptivos"],
+          "vocabulario": ["Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es"]}

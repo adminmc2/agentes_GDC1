@@ -122,7 +122,7 @@
           "U6": "Recurrente desde U2 (principal). En U6 reaparece como soporte de horarios y rutinas: el cuadro de la agenda de Lorena (p66-act4) enumera los 7 días explícitamente; otros días aparecen en p64-act1 ('los lunes, miércoles y viernes'), p66-act5 (agenda propia, plantilla 'el lunes voy a...'), p67-act8 ('Hasta el sábado / domingo!') y p71-act7 (ordenación 'los lunes'). Cumple los 3 criterios §5.1.1: frecuencia (5 actividades), posición (canónico U2 principal), valor pedagógico (contextualiza la sección 'Comunicación: preguntar por acciones de otros / horarios'). Capitalización normalizada a minúscula (forma estándar del día de la semana en español); el libro usa mayúscula solo como cabecera de celda en la agenda (p66-act4), formato editorial no relevante para el item."
         }
       },
-      "Adjetivos descriptivos": {
+      "Cualidades de objetos y lugares": {
         "items": [
           {"palabra": "alto/-a", "fuentes": ["p68-act1"]},
           {"palabra": "ancho/-a", "fuentes": ["p68-act1", "p68-act2"]},
@@ -1514,7 +1514,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "cultura",
           "instruccion_original": "Lee el siguiente texto sobre Madrid.",
-          "vocabulario": ["Establecimientos", "Adjetivos descriptivos"],
+          "vocabulario": ["Establecimientos", "Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["Es", "es", "son"]},
@@ -1539,7 +1539,7 @@
           "destreza": ["comprension_lectora"],
           "enfoque": "vocabulario",
           "instruccion_original": "Relaciona las palabras de la columna A con sus contrarios en la columna B.",
-          "vocabulario": ["Adjetivos descriptivos"],
+          "vocabulario": ["Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [],
           "gramatica": [],
           "pronunciacion_ortografia": [],
@@ -1561,7 +1561,7 @@
           "destreza": ["comprension_lectora", "expresion_escrita"],
           "enfoque": "transversal",
           "instruccion_original": "Corrige las siguientes afirmaciones.",
-          "vocabulario": ["Adjetivos descriptivos"],
+          "vocabulario": ["Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [
             {"lema": "estar", "tiempo": "Presente", "formas_trabajadas": ["está"]},
             {"lema": "ser", "tiempo": "Presente", "formas_trabajadas": ["es", "son"]},
@@ -1708,7 +1708,7 @@
           "destreza": ["expresion_oral", "mediacion"],
           "enfoque": "comunicacion",
           "instruccion_original": "Describe tu barrio ideal. Sigue los siguientes pasos:",
-          "vocabulario": ["Establecimientos", "Adjetivos descriptivos"],
+          "vocabulario": ["Establecimientos", "Cualidades de objetos y lugares"],
           "tiempos_y_verbos": [],
           "gramatica": ["Interrogativos", "Hay"],
           "pronunciacion_ortografia": [],

@@ -15,6 +15,20 @@
 
 ---
 
+## [v12.11 — 2026-05-24] — Ejecución mecánica de la deuda «Adjetivos descriptivos» (Paso 2a — sin regeneración de reciclaje)
+
+Aplicada la migración definida en v12.5/v12.8/v12.9. Cambios estructurales sobre **5 archivos** (inventarios U5/U6/U8/U9 + registry léxico):
+
+- **U5 (`vocabulario_consolidado.principal`)**: bucket `Adjetivos descriptivos` (13 items) → renombrado a `Cualidades de objetos y lugares`. Listas tipadas de actividades/cuadros actualizadas (13 refs).
+- **U6 (`vocabulario_consolidado.recurrente`)**: bucket → `Cualidades de objetos y lugares`. 5 refs actualizadas (incluye `famoso/-a` que aquí se confirma como atributo de lugar — Madrid).
+- **U9 (`vocabulario_consolidado.recurrente`)**: bucket → `Cualidades de objetos y lugares`. 4 refs actualizadas.
+- **U8 (split + movimiento de bucket)**: el bucket `recurrente.Adjetivos descriptivos` se elimina; se crean en `principal` los buckets `Características físicas` (24 items: alto/bajo, guapo/feo, delgado/gordo, joven/mayor, moreno/rubio/pelirrojo/canoso/castaño/calvo, rizado/liso/ondulado, largo/corto, grande/pequeño/oscuro, fuerte, enorme) y `Carácter y personalidad` (9 items: simpático/antipático, divertido/aburrido, trabajador, inteligente, sociable, cariñoso, serio). `famoso/-a` (p89-act7) y `favorito/-a` (p86-act1@R) **expulsados del consolidado** sin canónico nuevo. 22 refs en listas tipadas reescritas: cada actividad recibe el subconjunto de buckets nuevos que realmente contiene (algunas reciben los 2, otras solo 1, las que solo contenían famoso/favorito pierden el tag — ninguna queda huérfana porque todas tenían otros adjetivos).
+- **Registry (`campos-semanticos-canonicos.json` v1.8 → v1.9)**: alta de `Cualidades de objetos y lugares` (origen `excepcion`, con `_pcic_ref` + `_nc1_ref` + `nota` por convención obligatoria); `Adjetivos descriptivos` queda como entry con campo `_deprecated`. `Características físicas` (línea 184) y `Carácter y personalidad` (línea 196) **se reutilizan tal cual** sin tocar — ya existían con origen `pcic_a1` desde v10.115.
+
+**Validador:** 10/10 unidades en 0/0/0. **Sin tocar `nc1-reciclaje.json` ni el generador** — la regeneración del reciclaje queda para el otro chat tras coordinación. Sin tocar `web/index.html` (en working tree del otro chat).
+
+---
+
 ## [v12.10 — 2026-05-24] — Capa 2 sobre U2 cerrada (etiquetas + explicaciones + cierres cross-hilo)
 
 Tercera sesión de Capa 2 IA (después de U0 v11.80 y U1 v11.84/v12.4). Aplicada sobre los 27 eventos U2 del canónico `nc1-reciclaje.json`:

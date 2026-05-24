@@ -1,13 +1,13 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.8",
-    "actualizado": "2026-05-18",
-    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.(v1.6 2026-05-17: retirada de 'Adverbios de posición' por huérfano tras v10.152 — sus términos viven ahora en gramatica-canonica.json 'Adverbios y locuciones de lugar'). (v1.7 2026-05-18: 'Establecimientos: cine, restaurante, farmacia...' y 'Marcadores de lugar: a la izquierda, ..., cerca' renombrados a forma corta; cadenas largas del índice preservadas como aliases_indice — patrón ya usado en Números cardinales y Saludos y despedidas). (v1.8 2026-05-18: alta de canónico 'Envases y recipientes' con origen excepcion, por hallazgo del autor en revisión U4 — campo léxico nuclear en p47-act5/act6 no recogido como subcategoría dedicada en PCIC A1 §Alimentación; precedente metodológico: Gentilicios v10.124).",
+    "version": "1.9",
+    "actualizado": "2026-05-24",
+    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.(v1.6 2026-05-17: retirada de 'Adverbios de posición' por huérfano tras v10.152 — sus términos viven ahora en gramatica-canonica.json 'Adverbios y locuciones de lugar'). (v1.7 2026-05-18: 'Establecimientos: cine, restaurante, farmacia...' y 'Marcadores de lugar: a la izquierda, ..., cerca' renombrados a forma corta; cadenas largas del índice preservadas como aliases_indice — patrón ya usado en Números cardinales y Saludos y despedidas). (v1.8 2026-05-18: alta de canónico 'Envases y recipientes' con origen excepcion, por hallazgo del autor en revisión U4 — campo léxico nuclear en p47-act5/act6 no recogido como subcategoría dedicada en PCIC A1 §Alimentación; precedente metodológico: Gentilicios v10.124). (v1.9 2026-05-24: alta de 'Cualidades de objetos y lugares' (origen excepcion) + deprecación de 'Adjetivos descriptivos' tras split en 3 buckets — 'Características físicas' (PCIC §1.1) y 'Carácter y personalidad' (PCIC §1.2) ya existían; el viejo canónico mezclaba 3 sub-dominios incompatibles. Ver REVIEW deuda léxica v12.5-v12.9; ejecución mecánica v12.11).",
     "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
   },
-  "version": "1.5",
-  "actualizado": "2026-05-15",
+  "version": "1.9",
+  "actualizado": "2026-05-24",
   "campos": [
     {
       "canonico": "Países que hablan español",
@@ -120,7 +120,17 @@
       "canonico": "Adjetivos descriptivos",
       "origen": "indice",
       "aliases_indice": [],
-      "aliases_auto": []
+      "aliases_auto": [],
+      "_deprecated": "v1.9 (2026-05-24): sustituido por split en 'Características físicas' (PCIC §1.1, ya existía), 'Carácter y personalidad' (PCIC §1.2, ya existía) y 'Cualidades de objetos y lugares' (alta v1.9). El viejo canónico mezclaba 3 sub-dominios incompatibles: rasgos físicos de persona + carácter/personalidad + descriptivos genéricos de cosas/objetos. Ningún inventario lo referencia ya."
+    },
+    {
+      "canonico": "Cualidades de objetos y lugares",
+      "origen": "excepcion",
+      "aliases_indice": [],
+      "aliases_auto": [],
+      "_pcic_ref": "PCIC A1 dispersa (§43 Vivienda, §3 Vestuario, §52 Lugares/Personas/Actividades) — sin categoría única; cubre el léxico descriptivo no-persona en NC1.",
+      "_nc1_ref": "Sustituye al canónico anterior 'Adjetivos descriptivos' del índice (U5 principal, U6/U9 recurrente). Frontera operativa: persona vs no-persona, no por dominio (casa/ropa/lugares) — hay solape masivo entre dominios.",
+      "nota": "Sin PCIC A1 directo único. Cubre el léxico descriptivo no-persona (vivienda, objetos, lugares, ropa, entornos). Frontera operativa: persona vs no-persona; no se subdivide por dominio porque hay solape masivo de items."
     },
     {
       "canonico": "Establecimientos",
