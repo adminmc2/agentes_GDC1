@@ -10,7 +10,11 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-24 (v12.14 — Dashboard reciclaje: vista única «subway» de relacionados (principal arriba con sus etiquetas + relacionados debajo con tipo de relación solo en celdas de convergencia) + sistema de chips unificado por CSS `.rec-chip` con 4 helpers JS, fondos de celda neutros, ~710 líneas de código muerto eliminadas. Cierre del rediseño visual del modal).
+> **Última actualización:** 2026-05-24 (v12.16 — **Paso 2b cerrado**: `nc1-reciclaje.json` regenerado tras la recanonización de «Adjetivos descriptivos»: hilo viejo desaparecido, 3 hilos nuevos poblados (`voc-cualidades-de-objetos-y-lugares` U5/U6/U9, `voc-caracteristicas-fisicas` U8, `voc-caracter-y-personalidad` U8). 2 propuestas cross-hilo obsoletas eliminadas. Registry v1.9→v1.10 con `origen indice→excepcion` + `nota` en la entry deprecated. Validadores fase 1 (10/10 0/0/0) y fase 2 (estructural 0 errores; cross-unidad 14 alertas idénticas, sin regresión).
+>
+> **Hito previo (v12.15):** 2026-05-24 (Materialización de los datos de v12.13 — registry v1.9→v1.11 + U8 split Deportes/Paisaje + saneo de referencias fantasma).
+>
+> **Hito previo (v12.14):** 2026-05-24 (Dashboard reciclaje: vista única «subway» de relacionados + sistema de chips unificado por CSS).
 >
 > **Hito previo (v12.13):** 2026-05-24 (Corrección canónica «Práctica del surf» → «Deportes» + «Paisaje y accidentes geográficos» en U8 — split del léxico, registry v1.9→v1.11).
 >

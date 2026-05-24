@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "v12.10",
+    "version": "v12.16",
     "fecha": "2026-05-24",
     "unidades_cubiertas": [
       0,
@@ -113,84 +113,6 @@
             "p48-act2",
             "p50-act2",
             "p51-act4"
-          ],
-          "procedencia_indice": "declarado"
-        }
-      ]
-    },
-    {
-      "id": "voc-adjetivos-descriptivos",
-      "bloque": "vocabulario",
-      "titulo": "Adjetivos descriptivos",
-      "nivel_analisis": "auto",
-      "eventos": [
-        {
-          "unidad": 5,
-          "etiquetas": [],
-          "evidencias": [
-            "p53-act6",
-            "p53-act7",
-            "p55-act5",
-            "p55-act6",
-            "p55-act8",
-            "p57-act6",
-            "p57-act7",
-            "p58-act1",
-            "p58-act2",
-            "p61-act1",
-            "p61-act4"
-          ],
-          "procedencia_indice": "declarado"
-        },
-        {
-          "unidad": 6,
-          "etiquetas": [],
-          "evidencias": [
-            "p68-act1",
-            "p68-act2",
-            "p68-act3",
-            "p68-act3@R",
-            "p69-act9",
-            "p70-act1"
-          ],
-          "procedencia_indice": "declarado"
-        },
-        {
-          "unidad": 8,
-          "etiquetas": [],
-          "evidencias": [
-            "cuadro@p87",
-            "p82-act3",
-            "p83-act5",
-            "p83-act8",
-            "p86-act1",
-            "p86-act1@R",
-            "p86-act2@R",
-            "p86-act3",
-            "p86-act4",
-            "p87-act5",
-            "p87-act5@R",
-            "p87-act7@R",
-            "p87-act8",
-            "p88-act1",
-            "p88-act2",
-            "p88-act3",
-            "p88-act5@R",
-            "p89-act6@R",
-            "p89-act7",
-            "p89-act8",
-            "p91-act6",
-            "p91-act6@R"
-          ],
-          "procedencia_indice": "declarado"
-        },
-        {
-          "unidad": 9,
-          "etiquetas": [],
-          "evidencias": [
-            "p100-act2",
-            "p93-act7",
-            "p98-act1"
           ],
           "procedencia_indice": "declarado"
         }
@@ -399,6 +321,66 @@
       ]
     },
     {
+      "id": "voc-caracter-y-personalidad",
+      "bloque": "vocabulario",
+      "titulo": "Carácter y personalidad",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "etiquetas": [],
+          "evidencias": [
+            "p86-act1",
+            "p86-act1@R",
+            "p86-act3",
+            "p86-act4",
+            "p88-act1",
+            "p88-act2",
+            "p88-act3",
+            "p89-act8"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
+        }
+      ]
+    },
+    {
+      "id": "voc-caracteristicas-fisicas",
+      "bloque": "vocabulario",
+      "titulo": "Características físicas",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "etiquetas": [],
+          "evidencias": [
+            "cuadro@p87",
+            "p82-act3",
+            "p83-act5",
+            "p83-act8",
+            "p86-act1",
+            "p86-act1@R",
+            "p86-act2@R",
+            "p86-act3",
+            "p86-act4",
+            "p87-act5",
+            "p87-act5@R",
+            "p87-act7@R",
+            "p87-act8",
+            "p88-act3",
+            "p88-act5@R",
+            "p89-act6@R",
+            "p89-act7",
+            "p89-act8",
+            "p91-act6",
+            "p91-act6@R"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
+        }
+      ]
+    },
+    {
       "id": "voc-centros-e-instituciones-educativas",
       "bloque": "vocabulario",
       "titulo": "Centros e instituciones educativas",
@@ -600,6 +582,74 @@
             "p50-act3@R"
           ],
           "procedencia_indice": "declarado"
+        }
+      ]
+    },
+    {
+      "id": "voc-cualidades-de-objetos-y-lugares",
+      "bloque": "vocabulario",
+      "titulo": "Cualidades de objetos y lugares",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 5,
+          "etiquetas": [],
+          "evidencias": [
+            "p53-act6",
+            "p53-act7",
+            "p55-act5",
+            "p55-act6",
+            "p55-act8",
+            "p57-act6",
+            "p57-act7",
+            "p58-act1",
+            "p58-act2",
+            "p61-act1",
+            "p61-act4"
+          ],
+          "procedencia_indice": "declarado"
+        },
+        {
+          "unidad": 6,
+          "etiquetas": [],
+          "evidencias": [
+            "p68-act1",
+            "p68-act2",
+            "p68-act3",
+            "p68-act3@R",
+            "p69-act9",
+            "p70-act1"
+          ],
+          "procedencia_indice": "declarado"
+        },
+        {
+          "unidad": 9,
+          "etiquetas": [],
+          "evidencias": [
+            "p100-act2",
+            "p93-act7",
+            "p98-act1"
+          ],
+          "procedencia_indice": "declarado"
+        }
+      ]
+    },
+    {
+      "id": "voc-deportes",
+      "bloque": "vocabulario",
+      "titulo": "Deportes",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "etiquetas": [],
+          "evidencias": [
+            "p83-act6",
+            "p83-act7",
+            "p83-act8"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
         }
       ]
     },
@@ -1131,6 +1181,24 @@
       ]
     },
     {
+      "id": "voc-paisaje-y-accidentes-geograficos",
+      "bloque": "vocabulario",
+      "titulo": "Paisaje y accidentes geográficos",
+      "nivel_analisis": "auto",
+      "eventos": [
+        {
+          "unidad": 8,
+          "etiquetas": [],
+          "evidencias": [
+            "p83-act6",
+            "p83-act7"
+          ],
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "pcic:A1"
+        }
+      ]
+    },
+    {
       "id": "voc-paises-hispanohablantes",
       "bloque": "vocabulario",
       "titulo": "Países hispanohablantes",
@@ -1290,16 +1358,12 @@
       "id": "voc-practica-del-surf",
       "bloque": "vocabulario",
       "titulo": "Práctica del surf",
-      "nivel_analisis": "auto",
+      "nivel_analisis": "mapa",
       "eventos": [
         {
           "unidad": 8,
           "etiquetas": [],
-          "evidencias": [
-            "p83-act6",
-            "p83-act7",
-            "p83-act8"
-          ],
+          "evidencias": [],
           "procedencia_indice": "declarado"
         }
       ]
@@ -1644,19 +1708,7 @@
           "procedencia_indice": "declarado"
         }
       ],
-      "_grupo": "Determinantes",
-      "relaciones": [
-        {
-          "hilo_ref": "gram-concordancia-de-genero",
-          "tipo": "comparte",
-          "detalle": "Los artículos determinados portan la marca de género; cuadros@p14#2 y @p24#2 los presentan como columna que refleja la concordancia. Coocurren en el sintagma nominal mínimo (el/la sustantivo)."
-        },
-        {
-          "hilo_ref": "gram-concordancia-de-numero",
-          "tipo": "comparte",
-          "detalle": "Los artículos determinados portan también la marca de número (el/los, la/las); cuadros@p14#2 y @p24#2 los presentan como portadores de ambos rasgos. Coocurren en el sintagma nominal."
-        }
-      ]
+      "_grupo": "Determinantes"
     },
     {
       "id": "gram-articulos-indeterminados",
@@ -1786,14 +1838,7 @@
           "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
         }
       ],
-      "_grupo": "Sintagma nominal y concordancia",
-      "relaciones": [
-        {
-          "hilo_ref": "gram-concordancia-de-numero",
-          "tipo": "comparte",
-          "detalle": "Las dos concordancias se trabajan cruzadas en cuadro@p14#2 (U1, paradigma 2×2 género × número) y cuadro@p24#2 (U2, paradigma plural completo de sustantivos y adjetivos). El alumno opera ambas reglas a la vez, no en secuencia."
-        }
-      ]
+      "_grupo": "Sintagma nominal y concordancia"
     },
     {
       "id": "gram-concordancia-de-numero",
@@ -1955,15 +2000,7 @@
           }
         }
       ],
-      "_grupo": "Determinantes",
-      "relaciones": [
-        {
-          "hilo_ref": "gram-concordancia-de-genero",
-          "tipo": "prerrequisito",
-          "detalle": "Los demostrativos canónicos U2 (este/esta/estos/estas, cuadro@p24#3) aplican la regla de concordancia de género ya canonizada en U1. El alumno transfiere la regla flexiva -o/-a del paradigma de artículos al paradigma de demostrativos. Sin la concordancia activa, los demostrativos no funcionan operativamente.",
-          "unidad_relevante": 2
-        }
-      ]
+      "_grupo": "Determinantes"
     },
     {
       "id": "gram-hay",
@@ -2681,19 +2718,7 @@
           "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
         }
       ],
-      "_grupo": "Pronombres",
-      "relaciones": [
-        {
-          "hilo_ref": "verb-ser",
-          "tipo": "comparte",
-          "detalle": "Cuadro@p14#1 (U1) y cuadro@p24#1 (U2) los presentan en columnas paralelas — pronombre sujeto como encabezado del paradigma, ser como verbo conjugado. Coocurren obligatoriamente como ejes del paradigma verbal copulativo del A1."
-        },
-        {
-          "hilo_ref": "verb-tener",
-          "tipo": "comparte",
-          "detalle": "Cuadro@p14#1 (U1) y cuadro@p24#1 (U2) trabajan pronombre y tener en columnas paralelas, igual que ser↔pronombre. La fila 'él/ella/usted' compactada marca el sincretismo del pronombre, que el verbo respeta morfológicamente."
-        }
-      ]
+      "_grupo": "Pronombres"
     },
     {
       "id": "gram-pronombres-atonos-de-oi",
@@ -2880,14 +2905,6 @@
           ],
           "procedencia_indice": "reconciliado",
           "reconciliado_con": "pcic:PCIC A1 ortografía (Ortografía De Letras Y Palabras: uso de mayúsculas — inicial de oración, después de punto, nombres propios, siglas)"
-        }
-      ],
-      "relaciones": [
-        {
-          "hilo_ref": "verb-llamarse",
-          "tipo": "comparte",
-          "detalle": "Cuadro@p25 (U2) usa la fórmula de auto-presentación 'Hola, me llamo Ricardo' como ejemplo canónico de las reglas (a) inicio de oración y (b) nombre propio. Coocurrencia editorial: el cuadro ortográfico activa una rutina pragmática del verbo (ya activa de U1), sin sistematización verbal nueva.",
-          "unidad_relevante": 2
         }
       ]
     },
@@ -5091,13 +5108,13 @@
             "se llama",
             "te llamas"
           ],
-          "procedencia_indice": "reconciliado",
-          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)",
           "explicacion": {
             "que_dice_el_libro": "Cuadro@p14#1 expone las tres formas singulares del presente de 'llamarse': me llamo (yo), te llamas (tú), se llama (él/ella/usted), en columna del paradigma de verbos copulativos de presentación junto con ser y tener. Ejemplo: 'Yo soy de Sevilla y me llamo Jonathan'. Cuadro@p20#1 reactiva el verbo en viñeta: '—¡Buenas tardes! ¿Es usted Manuel Rivera? —No, señor, yo me llamo Jorge Rivero.'. Cuadro@p20#3 lo opone formal/informal: ¿Cómo te llamas? / ¿Cómo se llama usted?",
             "fuente": "cuadro@p14#1",
             "analisis_ia": "Primer cierre canónico del lema 'llamarse' en NC1 — verbo reflexivo de primera conjugación regular (paradigma -ar) presentado solo en sus tres formas singulares. La función pedagógica es central: 'llamarse' es el verbo de identidad nominal por excelencia, complementa a 'ser' (identidad geográfica/atributiva) y a 'tener' (posesión, edad). El cuadro@p14#1 los presenta como tríada porque las tres se necesitan para construir la presentación mínima del alumno A1 ('Soy [nacionalidad], me llamo [nombre], tengo [edad] años'). La presentación con el pronombre reflexivo ya ligado (me/te/se) — no como infinitivo abstracto — es decisión pedagógica: el alumno A1 no necesita comprender la reflexividad gramatical para usar el verbo; la opera lexicalmente. La canonización gramatical del paradigma reflexivo se difiere a U7 (cuadro@p74 con ducharse, acostarse, sentarse, ponerse, vestirse) y el paradigma regular -ar al que pertenece se canoniza en U3 (cuadro@p34#1 con estudiar/comer/vivir como modelos). El alumno sale de U1 con tres formas operativas y la fórmula '¿Cómo te llamas? / Me llamo X' como rutina pragmática nuclear. La etiqueta es `introduce` sin `sistematiza` porque el paradigma completo (seis personas) no se cierra en U1: las plurales entran en U3 con el resto del paradigma verbal regular. Observación residual: el inventario fase 1 conserva la forma 'Me lllamo' con tres eles (probable typo del libro o del extractor); preservada literal por convención de fase 1, anotada como deuda menor de verificación."
-          }
+          },
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
         },
         {
           "unidad": 2,
@@ -5645,13 +5662,13 @@
             "son",
             "soy"
           ],
-          "procedencia_indice": "reconciliado",
-          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)",
           "explicacion": {
             "que_dice_el_libro": "Cuadro@p14#1 expone las tres formas singulares del presente de 'ser': soy (yo), eres (tú), es (él/ella/usted), en columna del paradigma de verbos copulativos. Ejemplo: 'Yo soy de Sevilla'. Cuadro@p15 emplea 'es' como cópula atributiva con colores: 'El coche es rojo. La mochila es roja.'. Cuadro@p20#1 lo reactiva en interacción: '—¿De dónde es usted? —Soy cubana.'. Cuadro@p20#3 contrasta '¿De dónde eres?' / '¿De dónde es usted?'.",
             "fuente": "cuadro@p14#1",
             "analisis_ia": "Primer cierre canónico de 'ser' en NC1 — verbo totalmente irregular cuyo paradigma se ha simplificado por decisión editorial a las tres formas singulares (soy/eres/es). La etiqueta `[introduce, sistematiza]` refleja la doble función: introduce el lema y sistematiza su empleo en tres macrofunciones A1.1 — (a) identidad personal ('Soy Jonathan'), (b) origen y nacionalidad ('Soy de Sevilla', 'Soy cubana'), (c) atribución de característica ('La mochila es roja'). Los cuatro cuadros que lo tocan ilustran las tres funciones: p14#1 fija el paradigma, p15 lo aplica como cópula atributiva (que prepara su oposición con 'estar' canonizada en U5), p20#1 lo despliega en interacción comunicativa, p20#3 lo modula sociolingüísticamente. La forma plural 'son' aparece atestada en respuestas de p15-act6 ('Los gatos son negros') — anticipación material documentada en _decisiones_ia U1; el principal canónico de las formas plurales se traslada a U2 (donde se completa el paradigma con somos/sois/son). El alumno sale de U1 con 'ser' como verbo nuclear de la presentación, sin ambigüedad con 'estar' (cuya introducción se difiere a U5 con su oposición canónica). El cuadro@p15 es especialmente importante: usa 'ser' para fijar el género de los colores ('rojo/roja'), entrelazando el lema con el principal gramatical Concordancia de género (cuadro@p14#2)."
-          }
+          },
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
         },
         {
           "unidad": 2,
@@ -5879,13 +5896,6 @@
             "soy"
           ]
         }
-      ],
-      "relaciones": [
-        {
-          "hilo_ref": "verb-tener",
-          "tipo": "comparte",
-          "detalle": "Verbos copulativos canonizados como pareja en NC1 — cuadro@p14#1 (U1, formas singulares) y cuadro@p24#1 (U2, paradigma completo) los presentan en columnas paralelas. Función nuclear compartida: identidad/origen (ser) + edad/posesión (tener) son el bloque mínimo de autopresentación del alumno A1."
-        }
       ]
     },
     {
@@ -5926,13 +5936,13 @@
             "tiene",
             "tienes"
           ],
-          "procedencia_indice": "reconciliado",
-          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)",
           "explicacion": {
             "que_dice_el_libro": "Cuadro@p14#1 expone las tres formas singulares del presente de 'tener': tengo (yo), tienes (tú), tiene (él/ella/usted), en columna del paradigma de verbos copulativos de presentación junto con ser y llamarse. Cuadro@p20#3 lo aplica en la oposición formal/informal: '¿Cuántos años tienes? / ¿Cuántos años tiene usted?'.",
             "fuente": "cuadro@p14#1",
             "analisis_ia": "Primer cierre canónico de 'tener' en NC1 — verbo totalmente irregular (tengo/tienes/tiene exhibe diptongación e→ie en formas tónicas más irregularidad de primera persona) cuyo paradigma se simplifica a las tres formas singulares. Función pedagógica: 'tener' es el verbo de posesión y atribución cuantitativa que en A1.1 cubre dos macrofunciones — (a) edad ('Tengo 14 años'), (b) parentesco y posesión nominal ('Tengo dos hermanas'). En U1 el cuadro@p14#1 lo presenta junto a ser y llamarse como tríada de auto-presentación. La forma 'tiene' se aplica también en p20#3 como tercera persona formal de cortesía ('¿Cuántos años tiene usted?'). La canonización morfológica de su irregularidad (e→ie + 1ª persona) se difiere a U6 — donde se canoniza 'Irregularidad vocálica e→ie' con querer como testigo principal (U4) y cerrar como recurrente (U6); 'tener' queda en el bloque verbal con `rasgo_por_tiempo: totalmente irregular` por la coexistencia de tres mecanismos morfológicos (1ª persona irregular -ng-, e→ie, sin cambio gráfico en infinitivo). El alumno A1 lo opera sin metalenguaje morfológico; recibirá su análisis cuando llegue al paradigma e→ie en U4-U6. La forma plural 'tienen' (anticipación material en respuestas) se canoniza junto a las plurales de ser y llamarse en U2."
-          }
+          },
+          "procedencia_indice": "reconciliado",
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
         },
         {
           "unidad": 2,
@@ -6828,36 +6838,6 @@
         ],
         "cuadros_compartidos": [
           "cuadro@p85",
-          "cuadro@p87"
-        ]
-      }
-    },
-    {
-      "id": "prop-rel-gram-adverbios-de-cantidad-voc-adjetivos-descriptivos",
-      "tipo": "relacion_cross_hilo",
-      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-de-cantidad' y 'voc-adjetivos-descriptivos'. Cuadros compartidos: cuadro@p87 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
-      "relacion_candidata": {
-        "hilos": [
-          "gram-adverbios-de-cantidad",
-          "voc-adjetivos-descriptivos"
-        ],
-        "cuadros_compartidos": [
-          "cuadro@p87"
-        ]
-      }
-    },
-    {
-      "id": "prop-rel-verb-tener-voc-adjetivos-descriptivos",
-      "tipo": "relacion_cross_hilo",
-      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-tener' y 'voc-adjetivos-descriptivos'. Cuadros compartidos: cuadro@p87 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
-      "relacion_candidata": {
-        "hilos": [
-          "verb-tener",
-          "voc-adjetivos-descriptivos"
-        ],
-        "cuadros_compartidos": [
           "cuadro@p87"
         ]
       }
@@ -9209,6 +9189,396 @@
         ],
         "cuadros_compartidos": [
           "cuadro@p75#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-adverbios-de-cantidad-voc-caracteristicas-fisicas",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-adverbios-de-cantidad' y 'voc-caracteristicas-fisicas'. Cuadros compartidos: cuadro@p87 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-adverbios-de-cantidad",
+          "voc-caracteristicas-fisicas"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p87"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-verb-tener-voc-caracteristicas-fisicas",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-tener' y 'voc-caracteristicas-fisicas'. Cuadros compartidos: cuadro@p87 (U8). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "verb-tener",
+          "voc-caracteristicas-fisicas"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p87"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-concordancia-de-genero-gram-paradigma-regular-del-presente-ar-er-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-paradigma-regular-del-presente-ar-er-ir'. Cuadros compartidos: cuadro@p34#2 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-concordancia-de-genero",
+          "gram-paradigma-regular-del-presente-ar-er-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-interrogativos-gram-paradigma-regular-del-presente-ar-er-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'gram-paradigma-regular-del-presente-ar-er-ir'. Cuadros compartidos: cuadro@p34#2 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-interrogativos",
+          "gram-paradigma-regular-del-presente-ar-er-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-imperativo-tu-gram-uso-del-imperativo-instrucciones-y-peticiones",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-imperativo-tu' y 'gram-uso-del-imperativo-instrucciones-y-peticiones'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-imperativo-tu",
+          "gram-uso-del-imperativo-instrucciones-y-peticiones"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-beber",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-beber'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-beber"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-dar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-dar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-dar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-decir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-decir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-decir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-escribir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-escribir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-escribir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-escuchar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-escuchar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-escuchar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-hablar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-hablar'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-hablar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-hacer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-hacer'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-hacer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-ir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-ir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-ir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-poner",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-poner'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-poner"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-uso-del-imperativo-instrucciones-y-peticiones-verb-venir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-uso-del-imperativo-instrucciones-y-peticiones' y 'verb-venir'. Cuadros compartidos: cuadro@p64#2 (U6). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-uso-del-imperativo-instrucciones-y-peticiones",
+          "verb-venir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p64#2"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-irregularidad-vocalica-o-ue-presente-verb-acostarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-irregularidad-vocalica-o-ue-presente' y 'verb-acostarse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-irregularidad-vocalica-o-ue-presente",
+          "verb-acostarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-irregularidad-vocalica-o-ue-presente-verb-ducharse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-irregularidad-vocalica-o-ue-presente' y 'verb-ducharse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-irregularidad-vocalica-o-ue-presente",
+          "verb-ducharse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-irregularidad-vocalica-o-ue-presente-verb-ponerse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-irregularidad-vocalica-o-ue-presente' y 'verb-ponerse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-irregularidad-vocalica-o-ue-presente",
+          "verb-ponerse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-irregularidad-vocalica-o-ue-presente-verb-sentarse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-irregularidad-vocalica-o-ue-presente' y 'verb-sentarse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-irregularidad-vocalica-o-ue-presente",
+          "verb-sentarse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-irregularidad-vocalica-o-ue-presente-verb-vestirse",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-irregularidad-vocalica-o-ue-presente' y 'verb-vestirse'. Cuadros compartidos: cuadro@p74 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-irregularidad-vocalica-o-ue-presente",
+          "verb-vestirse"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p74"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-irregularidad-vocalica-o-ue-presente-verb-salir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-irregularidad-vocalica-o-ue-presente' y 'verb-salir'. Cuadros compartidos: cuadro@p75#1 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-irregularidad-vocalica-o-ue-presente",
+          "verb-salir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-irregularidad-vocalica-o-ue-presente-verb-volver",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-irregularidad-vocalica-o-ue-presente' y 'verb-volver'. Cuadros compartidos: cuadro@p75#1 (U7). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-irregularidad-vocalica-o-ue-presente",
+          "verb-volver"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p75#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-paradigma-regular-del-presente-ar-er-ir-gram-pronombre-sujeto",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-paradigma-regular-del-presente-ar-er-ir' y 'gram-pronombre-sujeto'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-paradigma-regular-del-presente-ar-er-ir",
+          "gram-pronombre-sujeto"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-paradigma-regular-del-presente-ar-er-ir-verb-comer",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-paradigma-regular-del-presente-ar-er-ir' y 'verb-comer'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-paradigma-regular-del-presente-ar-er-ir",
+          "verb-comer"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-paradigma-regular-del-presente-ar-er-ir-verb-estudiar",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-paradigma-regular-del-presente-ar-er-ir' y 'verb-estudiar'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-paradigma-regular-del-presente-ar-er-ir",
+          "verb-estudiar"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
+        ]
+      }
+    },
+    {
+      "id": "prop-rel-gram-paradigma-regular-del-presente-ar-er-ir-verb-vivir",
+      "tipo": "relacion_cross_hilo",
+      "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-paradigma-regular-del-presente-ar-er-ir' y 'verb-vivir'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
+      "estado": "pendiente",
+      "relacion_candidata": {
+        "hilos": [
+          "gram-paradigma-regular-del-presente-ar-er-ir",
+          "verb-vivir"
+        ],
+        "cuadros_compartidos": [
+          "cuadro@p34#1"
         ]
       }
     }

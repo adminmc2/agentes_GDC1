@@ -313,7 +313,7 @@
           "U8": "PCIC A1 §13 Nociones específicas / Cuerpo humano (Partes del cuerpo). Principal en U8: se introduce el paradigma completo de partes del cuerpo en dos actividades fundacionales p82-act01 (cuerpo: cabeza, cuello, pecho, mano, dedos, pie, pierna, estómago, espalda, brazo) y p82-act02 (cabeza: pelo, ojo, oreja, nariz, dientes, muelas, labios, boca, cara), con apoyo visual e identificación auditiva. Se trabaja en V/F descriptivo (p82-act03), cloze de definiciones (p83-act04), texto de monstruo (p83-act05). Reaparece en sección de Gramática como contenido de doler (espalda, rodilla, brazo, muelas, cabeza), en Comunicación con descripciones (pelo, ojos, nariz, barba), en Destrezas con ampliación de léxico facial (barba, bigote, pecas) y se cierra en evaluación con identificación visual (p91-act04) y construcción libre (p91-act05)."
         }
       },
-      "Práctica del surf": {
+      "Deportes": {
         "items": [
           {
             "palabra": "surf",
@@ -339,15 +339,28 @@
             ]
           },
           {
-            "palabra": "ola",
-            "fuentes": [
-              "p83-act6"
-            ]
-          },
-          {
             "palabra": "correa",
             "fuentes": [
               "p83-act6"
+            ]
+          }
+        ],
+        "fuentes": [
+          "p83-act6",
+          "p83-act7",
+          "p83-act8"
+        ],
+        "descripcion": {
+          "U8": "PCIC A1 §17 Ocio / Tiempo Libre y Entretenimiento / Deportes. Principal en U8: léxico nuclear deportivo introducido en p83-act06 (texto sobre surf en el mar Cantábrico) y trabajado en p83-act07 (V/F) + p83-act08 (descripciones de surfistas). Items: surf, surfista, tabla, correa (equipamiento). v12.13 (2026-05-24, Opción A): se retiran del bucket los items 'ola' y 'Cantábrico' por no ser semánticamente deporte — se trasladan a 'Paisaje y accidentes geográficos' (PCIC §). El bloque coherente Deportes queda con su léxico nuclear sin contaminación geográfica."
+        }
+      },
+      "Paisaje y accidentes geográficos": {
+        "items": [
+          {
+            "palabra": "ola",
+            "fuentes": [
+              "p83-act6",
+              "p83-act7"
             ]
           },
           {
@@ -360,11 +373,10 @@
         ],
         "fuentes": [
           "p83-act6",
-          "p83-act7",
-          "p83-act8"
+          "p83-act7"
         ],
         "descripcion": {
-          "U8": "PCIC A1 §17 Nociones específicas / Tiempo libre y entretenimiento — Deportes. Principal en U8: se introduce el léxico del surf en p83-act06 (texto 'El mar Cantábrico, en el norte de España, es un lugar ideal para la práctica del surf...') con lemas surf, surfista, tabla, ola, correa, Cantábrico. Se trabaja en V/F (p83-act07) y en descripción de surfistas con apoyo visual (p83-act08)."
+          "U8": "PCIC A1 §Geografía y Naturaleza / Paisaje y Accidentes Geográficos (montaña, mar, río, playa). Principal en U8: léxico geográfico introducido en el texto sobre surf de p83-act06 ('mar Cantábrico', 'olas') y trabajado en V/F de p83-act07 ('Las olas del Cantábrico son bajas'). Items: ola, Cantábrico. v12.13 (2026-05-24, Opción A): trasladado del bucket 'Deportes' por ser semánticamente geografía, no deporte."
         }
       },
       "Características físicas": {
@@ -1488,7 +1500,7 @@
     "D-Verbo-llevar-excluido (autónoma, precedente U7 D-Verbos-no-canonicos): el verbo 'llevar' aparece en U8 (lleva gafas en p86-act01, lleva el pie atado a la tabla en p83-act06) pero NO está en 'verbos-canonicos.json'. Tratado como input incidental por §5.2; no entra en 'tiempos_y_verbos' de actividades ni en 'tiempos_y_verbos_consolidado'.",
     "D-Verbos-soporte-en-instrucciones (autónoma, §5.2 metalengua): verbos en instrucciones de aula ('Escucha', 'Lee', 'Completa', 'Mira', 'Relaciona', 'Ordena', etc.) y en pasos de actividades NO se codifican.",
     "D-Concordancia-genero-numero-recurrente (autónoma): el cuadro 'Recuerda' de p82 sistematiza la concordancia (pelo negro / boca pequeña / ojos negros / orejas pequeñas). Aunque su trabajo formal pertenece a U1/U2, en U8 actúa como soporte explícito de 'Descripción de personas'. Codificado como recurrente cumpliendo §5.1.1.",
-    "D-Practica-del-surf-canon-literal (autónoma, registry): 'Práctica del surf' es canónico literal del registry (origen: indice). Se usa tal cual.",
+    "D-Deportes-corrige-Practica-del-surf (v12.13, 2026-05-24, Opción A del revisor): el libro NC1 codificó este campo léxico en la portada U8 como 'Práctica del surf' (etiqueta hiperespecífica). Decisión: canonizar como 'Deportes' (PCIC §17 Ocio / Tiempo Libre y Entretenimiento / Deportes — canónico ya existente en el registry desde origen pcic_a1), pero con scope estricto. Forzar un único bucket amplio sobre léxico heterogéneo violaría reglas-operativas.md §5.2 (prohíbe forzar un único campo cuando el léxico no encaja semánticamente bajo uno solo). Por eso se splita en 2 buckets coherentes: (1) 'Deportes' (PCIC §17) — surf, surfista, tabla, correa; (2) 'Paisaje y accidentes geográficos' (PCIC §Geo, canónico ya existente) — ola, Cantábrico. Listas tipadas p83-act06/07 reciben ambos canónicos (texto + V/F trabajan ambas dimensiones); p83-act08 gana 'Deportes' (la actividad menciona tabla/surfistas como contexto visual). 'Práctica del surf' queda con `_deprecated` en el registry. La etiqueta del libro se preserva en la portada U8 verbatim (regla de oro 1) y en `_nc1_ref` del canónico 'Deportes'.",
     "D-Cultura-La-semana-azul-sin-codificacion (autónoma): la sección de Cultura no aporta categorías canónicas al sistema (no se inventa canónico nuevo para 'piragüismo', 'senderismo', etc.); las actividades p90-act01/02 quedan con listas tipadas vacías. Léxico cultural disponible en el campo 'datos.texto_completo' para fase 2.",
     "D-Comunicacion-Descripcion-de-personas-no-codificacion-canon (autónoma; actualizada v12.11): la dimensión 'comunicación' no tiene registry canónico propio dentro del schema actual (los cuatro registries cubren léxico, gramática, pron/orto, verbos). Las actividades de Comunicación quedan codificadas en su contenido lingüístico real (Características físicas + Carácter y personalidad + El cuerpo humano + Construcción gustar/doler + verbos tener/ser + concordancia) sin categoría de 'descripción de personas' explícita en consolidado. Nota: hasta v12.11 los rasgos físicos y de carácter se etiquetaban bajo el viejo bucket único 'Adjetivos descriptivos'; tras la migración se separan en sus dos buckets PCIC propios.",
     "Rectificación shape: enfoque legacy 'fonetica' (p87-act09/10/11/12) reemplazado por 'pronunciacion_ortografia' (renombrado en v10.115).",
@@ -1803,7 +1815,8 @@
           "enfoque": "transversal",
           "instruccion_original": "Lee y escucha el siguiente texto.",
           "vocabulario": [
-            "Práctica del surf"
+            "Deportes",
+            "Paisaje y accidentes geográficos"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [],
@@ -1834,7 +1847,8 @@
           "enfoque": "transversal",
           "instruccion_original": "¿Verdadero (V) o falso (F)?",
           "vocabulario": [
-            "Práctica del surf"
+            "Deportes",
+            "Paisaje y accidentes geográficos"
           ],
           "tiempos_y_verbos": [],
           "gramatica": [],
@@ -1875,7 +1889,8 @@
           "vocabulario": [
             "Características físicas",
             "El cuerpo humano",
-            "Colores"
+            "Colores",
+            "Deportes"
           ],
           "tiempos_y_verbos": [
             {

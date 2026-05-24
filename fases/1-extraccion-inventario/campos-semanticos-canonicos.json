@@ -1,12 +1,13 @@
 {
   "_meta": {
     "estado": "poblado",
-    "version": "1.9",
+    "version": "v1.10",
     "actualizado": "2026-05-24",
-    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.(v1.6 2026-05-17: retirada de 'Adverbios de posición' por huérfano tras v10.152 — sus términos viven ahora en gramatica-canonica.json 'Adverbios y locuciones de lugar'). (v1.7 2026-05-18: 'Establecimientos: cine, restaurante, farmacia...' y 'Marcadores de lugar: a la izquierda, ..., cerca' renombrados a forma corta; cadenas largas del índice preservadas como aliases_indice — patrón ya usado en Números cardinales y Saludos y despedidas). (v1.8 2026-05-18: alta de canónico 'Envases y recipientes' con origen excepcion, por hallazgo del autor en revisión U4 — campo léxico nuclear en p47-act5/act6 no recogido como subcategoría dedicada en PCIC A1 §Alimentación; precedente metodológico: Gentilicios v10.124). (v1.9 2026-05-24: alta de 'Cualidades de objetos y lugares' (origen excepcion) + deprecación de 'Adjetivos descriptivos' tras split en 3 buckets — 'Características físicas' (PCIC §1.1) y 'Carácter y personalidad' (PCIC §1.2) ya existían; el viejo canónico mezclaba 3 sub-dominios incompatibles. Ver REVIEW deuda léxica v12.5-v12.9; ejecución mecánica v12.11).",
-    "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}"
+    "descripcion": "Registry canónico de campos semánticos léxicos. Naming canónico literal; aliases del índice editorial y aliases auto-detectados en aliases_indice / aliases_auto. Apoyo PCIC: fases/1-extraccion-inventario/pcic-a1-vocabulario.json.(v1.6 2026-05-17: retirada de 'Adverbios de posición' por huérfano tras v10.152 — sus términos viven ahora en gramatica-canonica.json 'Adverbios y locuciones de lugar'). (v1.7 2026-05-18: 'Establecimientos: cine, restaurante, farmacia...' y 'Marcadores de lugar: a la izquierda, ..., cerca' renombrados a forma corta; cadenas largas del índice preservadas como aliases_indice — patrón ya usado en Números cardinales y Saludos y despedidas). (v1.8 2026-05-18: alta de canónico 'Envases y recipientes' con origen excepcion, por hallazgo del autor en revisión U4 — campo léxico nuclear en p47-act5/act6 no recogido como subcategoría dedicada en PCIC A1 §Alimentación; precedente metodológico: Gentilicios v10.124). (v1.9 2026-05-24: alta de 'Cualidades de objetos y lugares' (origen excepcion) + deprecación de 'Adjetivos descriptivos' tras split en 3 buckets — 'Características físicas' (PCIC §1.1) y 'Carácter y personalidad' (PCIC §1.2) ya existían; el viejo canónico mezclaba 3 sub-dominios incompatibles. Ver REVIEW deuda léxica v12.5-v12.9; ejecución mecánica v12.11). (v1.11 2026-05-24, Opción A del revisor: corrección canónica + refinamiento del scope. El libro NC1 etiquetó este campo léxico en la portada U8 como 'Práctica del surf', etiqueta hiperespecífica que no es la categoría semántica adecuada. Se canoniza como 'Deportes' (PCIC §17 ya existente en el registry desde origen pcic_a1) — entry enriquecida con `_pcic_ref` + `_nc1_ref` + nota — pero con scope estricto (surf, surfista, tabla, correa): forzar un único bucket amplio sobre léxico heterogéneo violaría reglas-operativas.md §5.2. Los items colaterales geográficos del texto (ola, Cantábrico) se trasladan a 'Paisaje y accidentes geográficos' (PCIC §Geo, canónico ya existente). 'Práctica del surf' queda con `_deprecated`. Ver CHANGELOG v12.13).",
+    "estructura": "{campos: [{canonico, origen, aliases_indice, aliases_auto, ...}]}",
+    "fecha": "2026-05-24"
   },
-  "version": "1.9",
+  "version": "1.11",
   "actualizado": "2026-05-24",
   "campos": [
     {
@@ -118,10 +119,11 @@
     },
     {
       "canonico": "Adjetivos descriptivos",
-      "origen": "indice",
+      "origen": "excepcion",
       "aliases_indice": [],
       "aliases_auto": [],
-      "_deprecated": "v1.9 (2026-05-24): sustituido por split en 'Características físicas' (PCIC §1.1, ya existía), 'Carácter y personalidad' (PCIC §1.2, ya existía) y 'Cualidades de objetos y lugares' (alta v1.9). El viejo canónico mezclaba 3 sub-dominios incompatibles: rasgos físicos de persona + carácter/personalidad + descriptivos genéricos de cosas/objetos. Ningún inventario lo referencia ya."
+      "_deprecated": "v1.9 (2026-05-24): sustituido por split en 'Características físicas' (PCIC §1.1, ya existía), 'Carácter y personalidad' (PCIC §1.2, ya existía) y 'Cualidades de objetos y lugares' (alta v1.9). El viejo canónico mezclaba 3 sub-dominios incompatibles: rasgos físicos de persona + carácter/personalidad + descriptivos genéricos de cosas/objetos. Ningún inventario lo referencia ya. | v1.10 (2026-05-24): origen 'indice'→'excepcion' para reflejar que el índice del curso (nc1-curso.json U5) se renombró a 'Cualidades de objetos y lugares' tras el Paso 2b — el canónico queda como entrada histórica deprecated, no de índice vigente.",
+      "nota": "Canónico histórico DEPRECATED (v1.9): el bucket se partió en 3 (Características físicas PCIC §1.1, Carácter y personalidad PCIC §1.2, Cualidades de objetos y lugares). En v1.10 origen 'indice'→'excepcion' tras reflejar la decisión editorial firme del índice del curso. Ningún inventario lo referencia ya; se conserva en el registry como entrada histórica. Ver `_deprecated` para detalle del split."
     },
     {
       "canonico": "Cualidades de objetos y lugares",
@@ -176,7 +178,8 @@
       "canonico": "Práctica del surf",
       "origen": "indice",
       "aliases_indice": [],
-      "aliases_auto": []
+      "aliases_auto": [],
+      "_deprecated": "v1.11 (2026-05-24): sustituido por 'Deportes' (PCIC §17 Ocio / Tiempo Libre y Entretenimiento / Deportes) para los items nucleares (surf, surfista, tabla, correa) + 'Paisaje y accidentes geográficos' (PCIC §Geo) para los items colaterales geográficos (ola, Cantábrico). Decisión: el libro NC1 codificó el campo léxico en la portada U8 como 'Práctica del surf' — etiqueta hiperespecífica que no es la categoría semántica adecuada. Error de codificación editorial del libro corregido a nivel canónico; la etiqueta del libro vive como traza editorial (`_nc1_ref` del canónico 'Deportes'), no como nombre canónico. Ningún inventario lo referencia ya tras la migración v12.13."
     },
     {
       "canonico": "Ropa",
@@ -386,7 +389,10 @@
       "canonico": "Deportes",
       "origen": "pcic_a1",
       "aliases_indice": [],
-      "aliases_auto": []
+      "aliases_auto": [],
+      "_pcic_ref": "PCIC A1 §17 Ocio / Tiempo Libre y Entretenimiento / Deportes — categoría literal del marco curricular (correr, nadar, esquiar, hacer deporte/ejercicio/gimnasia, jugar al fútbol/baloncesto/tenis). Abierto a expansión controlada con léxico deportivo material atestado en el libro.",
+      "_nc1_ref": "v1.11 (U8): el libro NC1 etiquetó este campo léxico en la portada/índice de U8 como 'Práctica del surf' — etiqueta hiperespecífica. Se canoniza como 'Deportes' (este canónico, ya existente desde origen PCIC) con scope estricto: solo léxico deportivo y equipamiento — surf, surfista, tabla, correa (4 items). Items colaterales geográficos del texto (ola, Cantábrico) viven en 'Paisaje y accidentes geográficos' (PCIC §Geo) por no encajar semánticamente bajo Deportes — reglas-operativas.md §5.2.",
+      "nota": "v1.11 (2026-05-24, Opción A del revisor): absorbe con scope estricto el léxico deportivo antes en 'Práctica del surf' (deprecado). Solo deporte y equipamiento; ola y Cantábrico viven en 'Paisaje y accidentes geográficos'. Decisión: la categoría adecuada del PCIC para el bloque nuclear es 'Deportes'; los colaterales geográficos del texto tienen su canónico propio."
     },
     {
       "canonico": "Correspondencia escrita",
@@ -650,7 +656,9 @@
       "canonico": "Envases y recipientes",
       "origen": "excepcion",
       "aliases_indice": [],
-      "aliases_auto": ["envases"],
+      "aliases_auto": [
+        "envases"
+      ],
       "nota": "Añadido en v10.159 por hallazgo del autor durante revisión de U4: actividad nuclear en p47 (p47-act5 + p47-act6) sobre formatos de compra/consumo alimentario (botella, paquete, trozo, vaso, cartón, taza, lata, bote, bolsa). PCIC A1 §Alimentación (subcategorías Dieta y Nutrición, Bebida, Alimentos, Platos) NO recoge envases ni recipientes como subcategoría léxica dedicada; por eso origen: excepcion. Precedente metodológico: Gentilicios (v10.124) y La hora (v10.129) — alta por necesidad editorial documentada cuando NC1 introduce contenido material no resuelto por el repertorio PCIC A1. Naming 'Envases y recipientes' coherente con la propuesta histórica del repo (U4-propuesta-informe-corrida.md, nc1-reciclaje.json hilo conservado). Heterogeneidad menor: 'trozo' no es propiamente recipiente sino unidad de porción, pero forma parte del patrón pedagógico ('un trozo de tarta') trabajado en la misma actividad y no merece subcategoría separada — sobrefragmentaría el canon."
     }
   ]

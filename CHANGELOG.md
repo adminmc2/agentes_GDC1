@@ -15,6 +15,39 @@
 
 ---
 
+## [v12.16 — 2026-05-24] — Paso 2b: regeneración de `nc1-reciclaje.json` tras la recanonización de «Adjetivos descriptivos»
+
+Cierre operativo del briefing del Paso 2b. Antes de este bump, los inventarios + el registry ya reflejaban el split del bucket viejo en 3 buckets nuevos (Paso 2a, v12.11/v12.13), pero `unidades/nc1-reciclaje.json` seguía arrastrando el hilo `voc-adjetivos-descriptivos` proyectado por Capa 1 desde el estado anterior.
+
+(a) **Regeneración determinista**: `python3 scripts/generar_reciclaje_capa1.py` reescribe el canónico leyendo los inventarios saneados (Paso 2a). Resultado: `voc-adjetivos-descriptivos` desaparece como hilo `auto` (queda solo como entry `mapa` derivada del índice del curso, que sigue diciendo «Adjetivos descriptivos» como verbatim del libro — comportamiento esperado, no se toca el índice). Aparecen los 3 hilos nuevos poblados con sus eventos: `voc-cualidades-de-objetos-y-lugares` (auto, U5/U6/U9), `voc-caracteristicas-fisicas` (auto, U8), `voc-caracter-y-personalidad` (auto, U8).
+
+(b) **Limpieza de propuestas obsoletas**: 2 propuestas pendientes `relacion_cross_hilo` que apuntaban al hilo viejo (`prop-rel-gram-adverbios-de-cantidad-voc-adjetivos-descriptivos` y `prop-rel-verb-tener-voc-adjetivos-descriptivos`) eliminadas del array — referenciaban un hilo que ya no existe como auto; la trazabilidad queda en git history.
+
+(c) **Re-detección automática de candidatos**: ejecutado `proponer_relaciones_cuadro.py` (idempotente). Detecta 26 nuevas propuestas cross-hilo con los nombres de los hilos nuevos como pares. Total propuestas: 200 (189 pendientes + 8 aceptadas + 3 rechazadas).
+
+(d) **Saneo del registry — entry `Adjetivos descriptivos`**: a `_deprecated` (v1.9 del otro chat) se le añade en v1.10 el cambio `origen: indice → excepcion` + campo `nota` editorial obligatorio para entradas con `origen=excepcion`. La entry queda como histórica deprecated sin romper el contrato del validador estructural inv-7. Registry: v1.9 → v1.10.
+
+Validador fase 1 (`verificar_integridad.py`): 0/0/0 en los 10 chequeos. Validador estructural fase 2 (`validar_reciclaje.py`): 0 errores contra schema. Validador cross-unidad (`validar_cross_unidad.py`): 14 alertas R1/R4 idénticas al estado anterior, sin regresión. Capa 1 sin tocar (contrato determinista intacto).
+
+Nota: este commit absorbe también los cambios del otro chat al CHANGELOG/REVIEW/registry/U8-inventario que estaban en working tree sin commitear (entrada v12.15 + materialización v12.13 de datos), porque están entrelazados con el saneo del registry que tuve que hacer para que el validador volviera al verde.
+
+---
+
+## [v12.15 — 2026-05-24] — Materialización de los datos de v12.13 (registry + U8) + saneo de referencias fantasma
+
+Aplica los cambios de datos descritos en la entrada v12.13 de este CHANGELOG, que estaba documentada pero no commiteada (la entrada documental llegó a `main` vía el commit v12.14 del otro chat, que tocó CHANGELOG/REVIEW/web sin tocar los datos). Este commit cierra la diferencia.
+
+- `fases/1-extraccion-inventario/campos-semanticos-canonicos.json`: registry v1.9→v1.11. Entry «Deportes» con `_pcic_ref` + `_nc1_ref` + nota; entry «Práctica del surf» con `_deprecated`.
+- `unidades/U8/U8-nc1-inventario.json`: bucket «Práctica del surf» eliminado; «Deportes» con scope estricto (surf, surfista, tabla, correa) y «Paisaje y accidentes geográficos» reutilizado para ola/Cantábrico. Listas tipadas p83-act06/07/08 alineadas. `ola.fuentes` saneada (+p83-act7). `_decisiones_ia` actualizada.
+
+**Saneo de trazas fantasma (atendiendo dictamen del revisor):** todas las referencias internas a una versión intermedia `v12.12` / `v1.10` (que existió como working state pero nunca llegó a commitearse) se han colapsado para hablar directamente de `v12.13` / `v1.11`. Afecta a 4 puntos: `_deprecated` y `_nc1_ref` y `nota` del registry, y la entrada `D-Deportes-corrige-Practica-del-surf` de `_decisiones_ia` en U8.
+
+**Working tree saneado:** se descarta una modificación a `unidades/nc1-curso.json` que cambiaba `vocabulario[3]` de U5 de «Adjetivos descriptivos» (verbatim del libro) a «Cualidades de objetos y lugares» (canónico vigente) — modificación no autorizada que rompía regla de oro 1 (verbatim de portada U5) y además hacía fallar el validador `inv-7` (la entry deprecada del registry con `origen=indice` deja de tener literal en nc1-curso.json). Precedente fijado: U8 vocab en nc1-curso.json sigue diciendo «Práctica del surf» (verbatim) aunque el canónico vigente sea «Deportes»; nc1-curso.json espeja el libro, no los canónicos.
+
+Validador 10/10 unidades en 0/0/0 (reproducible desde runtime limpio). Sin tocar `nc1-reciclaje.json` ni `web/index.html`.
+
+---
+
 ## [v12.14 — 2026-05-24] — Dashboard reciclaje: vista única «subway» de relacionados + sistema de chips unificado por CSS
 
 Cierre del rediseño del modal del reciclaje tras varias iteraciones exploratorias (variantes A/B/C, P1-P4, radial SVG):
