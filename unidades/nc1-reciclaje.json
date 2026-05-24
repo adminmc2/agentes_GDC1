@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "version": "v12.1",
-    "fecha": "2026-05-23",
+    "version": "v12.4",
+    "fecha": "2026-05-24",
     "unidades_cubiertas": [
       0,
       1,
@@ -67,7 +67,12 @@
             "p21-act1",
             "p21-act4"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Tabla 'Nacionalidad' (cuadro@p14#3) con tres pares masculino/femenino: mexicano/mexicana, español/española, japonés/japonesa — paradigma morfológico de flexión de género en adjetivos de nacionalidad terminados en -o/-a y consonante/-a.",
+            "fuente": "cuadro@p14#3",
+            "analisis_ia": "Anticipación del principal de U2. U1 introduce el paradigma flexivo (no el léxico léxico-cultural exhaustivo, que se canoniza en U2): la mecánica masculino/-o → femenino/-a (mexicano/mexicana) y la pauta consonante-final → -a (español/española, japonés/japonesa con cambio ortográfico). La selección de tres pares es deliberadamente pedagógica: cubre la pauta canónica (-o/-a), la pauta consonántica con -ñ- final (español) y la pauta -és/-esa con pérdida de tilde (japonés/japonesa). Funciona como anclaje material del paradigma de Concordancia de género (principal U1, cuadro@p14#2) — aplicación inmediata de la regla en un campo léxico concreto. Cuando U2 amplíe el campo a 'Países de habla hispana' + gentilicios completos, el alumno ya conoce el patrón morfológico. Reaparece en cuadro@p20#1 como input pragmático: 'Soy cubana' en la viñeta del aeropuerto. La etiqueta `anticipacion` (no `introduce`) reconoce que la unidad canónica del campo léxico es U2; en U1 entra como material que sostiene la concordancia."
+          }
         },
         {
           "unidad": 2,
@@ -493,7 +498,12 @@
             "p15-act7",
             "p15-act7@R"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Paleta de 8 colores en cuadro@p15 (Los colores): blanco, negro, rojo, amarillo, azul, verde, rosa, marrón — léxico canónico de la dimensión cromática. Dos ejemplos pragmáticos modelan la concordancia adjetival: 'El coche es rojo.' / 'La mochila es roja.'",
+            "fuente": "cuadro@p15",
+            "analisis_ia": "Primera aparición canónica del campo léxico 'Colores' en NC1. La selección (8 colores básicos, sin tonos secundarios) es coherente con A1.1: nombrar objetos del entorno inmediato. La estructura del cuadro es bipartita: presentación léxica (paleta cromática) + activación morfosintáctica (los dos ejemplos imponen concordancia 'rojo/roja' con el sustantivo 'coche/mochila'). Doble anclaje: lexical (`introduce`) y de aplicación de Concordancia de género (canónica de U1, cuadro@p14#2). La cópula 'ser' (forma 'es') aparece como verbo soporte de la atribución cromática — refuerza el principal verbal U1 (cuadro@p14#1). El alumno aprende los colores con ser, no como lista aislada. Reaparece transversalmente: U5 'rojo' como ejemplo cromático en p57-act7; U8 amplía con adjetivos descriptivos donde reaparecen colores como atributo; U9 los aplica a ropa. La inclusión de 'marrón' (terminación nasal, invariable) y 'rosa' (sustantivo común usado como color, invariable) introduce en germen la idea de que no todos los adjetivos flexionan — semilla pedagógica que U8 retomará al canonizar 'Adjetivos descriptivos'."
+          }
         },
         {
           "unidad": 5,
@@ -1097,7 +1107,12 @@
             "p12-act3",
             "p15-act7@R"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p14#2 (Artículos determinados) incluye dos sub-bloques léxicos como ilustración del paradigma artículo+nombre: 'Nombres de las cosas' (el libro, la casa, el cuaderno, la mesa, el lápiz, la pizarra) y 'Nombres de personas y animales' (el amigo/la amiga, el profesor/la profesora, el león/la leona). Los Objetos de clase canonizados en U1 son los del primer sub-bloque.",
+            "fuente": "cuadro@p14#2",
+            "analisis_ia": "Primera aparición canónica del campo 'Objetos de clase'. La presentación es subordinada al cuadro gramatical de Artículos determinados: el léxico no aparece como lista autónoma sino como ilustración del paradigma artículo+nombre con concordancia de género y número. Pedagógicamente la decisión es eficiente — el alumno introduce 6 sustantivos del entorno escolar (libro, casa, cuaderno, mesa, lápiz, pizarra) con su artículo determinado lexicalizado: 'el libro' funciona como bloque inicial, no como artículo + sustantivo independiente. El masculino/femenino del cuadro (el libro vs la casa, el cuaderno vs la mesa) ejemplifica la regla -o → masc / -a → fem y prepara la noción de género gramatical no marcado por sexo. La paleta léxica recoge el aula inmediata del alumno A1; reapariciones funcionales en p18-act1 ('para la clase') y aplicaciones cromáticas con Colores (la mochila es roja, p15-act6) consolidan el campo. Convive con la canónica 'Para la clase' del índice U1 que cubre la dimensión pragmática (instrucciones de aula: escucha, repite, completa); 'Objetos de clase' cubre la dimensión nominal del mismo escenario."
+          }
         }
       ]
     },
@@ -1415,7 +1430,12 @@
             "p19-act5",
             "p20-act1"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p20#1 'Saludos y despedidas' presenta dos listas literales: saludos (Hola, ¿qué tal?; ¿Cómo está(s)?; Buenos días; Buenas tardes; Buenas noches) y despedidas (Adiós; Hasta luego; Hasta mañana). Cinco viñetas las contextualizan: patio escolar (Hola/qué tal), saludo formal a persona mayor (¿Cómo está usted, señora Ramos?), despedida entre compañeros (Hasta luego/Adiós), mostrador de aeropuerto (¿De dónde es usted? — Soy cubana), consulta (¡Buenas tardes! ¿Es usted Manuel Rivera?).",
+            "fuente": "cuadro@p20#1",
+            "analisis_ia": "Sistematización del campo iniciado anticipadamente en U0 (que abrió 'Buenos días / Buenas tardes / Buenas noches' como fórmulas mínimas sin verbo ni pronombre). U1 cierra el paradigma pragmático: añade 'Hola' (informal), 'Adiós/Hasta luego/Hasta mañana' (despedidas) y, sobre todo, introduce la oposición formal/informal en saludo y pregunta de cortesía (¿Cómo estás? / ¿Cómo está usted?). La etiqueta `sistematiza` y no `introduce` es deliberada: U0 ya activó el campo; U1 lo organiza con criterio sociolingüístico explícito. Las viñetas no son ornamentales: cada una ejemplifica un eje pragmático distinto (par escolar, generacional, despedida transitoria, control de identidad en aeropuerto, situación de consulta) y entrelazan el campo con otros principales de U1 — el aeropuerto activa 'ser + de + lugar' y nacionalidad ('Soy cubana'); la consulta activa 'llamarse' formal ('¿Es usted Manuel Rivera?' / 'yo me llamo Jorge Rivero'). El cuadro funciona así como nodo integrador del flujo U1: junta saludos, registro tú/usted, verbos copulativos y léxico nacional en un solo ecosistema pragmático coherente."
+          }
         },
         {
           "unidad": 2,
@@ -1558,7 +1578,12 @@
             "p21-act2",
             "p21-act3"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p14#2 expone el paradigma completo en una tabla 2×2 género × número: singular masculino 'el niño' / femenino 'la niña'; plural masculino 'los niños' / femenino 'las niñas'. Dos sub-bloques léxicos lo ilustran: cosas (el libro/la casa, el cuaderno/la mesa, el lápiz/la pizarra) y personas/animales (el amigo/la amiga, el profesor/la profesora, el león/la leona).",
+            "fuente": "cuadro@p14#2",
+            "analisis_ia": "Primera aparición canónica del paradigma de artículos determinados en NC1, presentado de forma sistematizada desde el inicio — de ahí la coexistencia de etiquetas `[introduce, sistematiza]`. La sistematización es estructural: el cuadro despliega las cuatro formas (el/la/los/las) en tabla bidimensional género × número, no como lista de ejemplos. Esto entrena al alumno A1 a leer el sustantivo como portador de dos rasgos morfológicos cruzados (género + número) que el artículo refleja. Los sub-bloques léxicos son funcionales: las cosas demuestran género arbitrario (el libro vs la casa — sin correlato semántico), las personas demuestran género motivado por sexo (el amigo/la amiga, el profesor/la profesora), y los animales (el león/la leona) ejemplifican flexión léxica especial. Sostén estructural de los principales U1 'Concordancia de género' y 'Concordancia de número'; soporta léxicamente 'Objetos de clase'. La forma neutra 'lo' y el contraste con artículo indeterminado se difieren a U4 (donde 'Artículos indeterminados' entra como principal junto con 'Hay')."
+          }
         },
         {
           "unidad": 2,
@@ -1643,7 +1668,12 @@
             "p14-act5"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN",
+          "explicacion": {
+            "que_dice_el_libro": "Dos cuadros materializan la regla: p14#2 (Artículos determinados) opone el/la con sustantivos paralelos (el niño/la niña, el libro/la casa, el lápiz/la pizarra, el profesor/la profesora); p14#3 (Nacionalidad) opone masc/fem en tres adjetivos (mexicano/mexicana, español/española, japonés/japonesa). El paradigma binario género masc/fem se aplica tanto a sustantivos como a adjetivos.",
+            "fuente": "cuadro@p14#2",
+            "analisis_ia": "Primer cierre canónico de la regla de concordancia de género en NC1. La elección pedagógica es enseñarla en dos planos paralelos desde el inicio — en sustantivos con sus artículos (cuadro p14#2) y en adjetivos de atribución (cuadro p14#3) — para que el alumno detecte el rasgo morfológico como invariante categorial, no como hecho aislado de los sustantivos. Las reglas implícitas en los ejemplos: (a) -o → -a (mexicano/mexicana, niño/niña), (b) consonante final → +a (español/española, profesor/profesora), (c) -és átono final → -esa con pérdida de tilde (japonés/japonesa). El sub-bloque 'cosas' del cuadro p14#2 introduce, por contraste con 'personas/animales', la noción de género no motivado (el libro / la casa son de género arbitrario, no sexual). Esta presentación temprana de la arbitrariedad evita la sobregeneralización 'masculino = macho' que muchos aprendices A1 hacen. El paradigma se aplica inmediatamente en el campo 'Colores' (cuadro@p15: el coche es rojo / la mochila es roja) y en 'Adjetivos de nacionalidad' (Soy cubana, p20#1) — el alumno opera con la regla, no solo la reconoce. Soporta el principal de U2 (Adjetivos de nacionalidad), donde se ampliará con más pautas flexivas."
+          }
         },
         {
           "unidad": 2,
@@ -1729,7 +1759,12 @@
             "cuadro@p14#2"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3"
+          "reconciliado_con": "pcic:PCIC A1 §1.3 El número de los sustantivos + §2.3 El número del adjetivo + §10.3",
+          "explicacion": {
+            "que_dice_el_libro": "El cuadro@p14#2 opone singular/plural en el paradigma binario: el niño/los niños, la niña/las niñas. La oposición se reitera en cada par del paradigma artículo-sustantivo, cruzada con el género.",
+            "fuente": "cuadro@p14#2",
+            "analisis_ia": "Primer cierre canónico del paradigma de número. La presentación es solidaria de la de género: el cuadro p14#2 los muestra cruzados, no por separado, lo que permite al alumno A1 captar género y número como dos dimensiones morfológicas independientes que coactúan en el sintagma nominal. La regla implícita (singular → plural mediante -s con vocal final, paradigma 'el niño/los niños') es elemental y no se complica con consonantes finales (-es) en este cuadro — esa pauta entrará en U5 con 'lápiz → lápices' y 'profesor → profesores'. El alumno sale de U1 con la pauta básica de pluralización en sustantivos terminados en vocal, suficiente para el léxico de 'Objetos de clase'. La oposición plural también afecta al artículo y al adjetivo: el alumno verá 'los gatos son negros' en respuestas de p15-act6 (anticipación material documentada en _decisiones_ia). Reaparece como recurrente en U2 (saneamiento canónico de v10.123) cuando se trabajen plurales en 'Adjetivos de nacionalidad' (los mexicanos, las españolas)."
+          }
         },
         {
           "unidad": 2,
@@ -1969,7 +2004,12 @@
             "p21-act4",
             "p21-act6"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p20#1 muestra interrogativos en uso pragmático en las viñetas: '¿Cómo está usted, señora Ramos?'; '¿De dónde es usted?'; '¿Es usted Manuel Rivera?'. Cuadro@p20#3 sistematiza el contraste informal/formal con cuatro pares basados en interrogativos: ¿Cómo te llamas? / ¿Cómo se llama usted?; ¿De dónde eres? / ¿De dónde es usted?; ¿Cómo estás? / ¿Cómo está usted?; ¿Cuántos años tienes? / ¿Cuántos años tiene usted?",
+            "fuente": "cuadro@p20#3",
+            "analisis_ia": "Anticipación material del principal de U3 (cuadro@p34#2 amplía a 13 interrogativos canónicos). En U1 los interrogativos no se presentan como paradigma — aparecen funcionalmente al servicio de la oposición de tratamiento tú/usted. Cuatro interrogativos canónicos atestados en U1: '¿Cómo?', '¿De dónde?', '¿Cuántos?' y la fórmula sin interrogativo explícito '¿Es usted...?' (interrogación total sí/no). El alumno no recibe la lista cerrada de qué/quién/cuál/dónde/cuándo (eso es U3); recibe los suficientes para articular las cuatro fórmulas pragmáticas mínimas (identidad, origen, estado, edad). La etiqueta `anticipacion` —no `introduce`— se justifica porque la canonización del paradigma (el cuadro como tabla de interrogativos) ocurre en U3, no en U1. Esta separación es pedagógicamente importante: U1 evita sobrecargar al alumno con metalengua gramatical de interrogación; U3 la sistematiza cuando el alumno ya tiene base verbal con presente regular y puede formular preguntas plenas."
+          }
         },
         {
           "unidad": 2,
@@ -2507,7 +2547,12 @@
             "p21-act4"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
+          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p14#1 (Presente de los verbos ser, llamarse y tener — formas singulares) presenta tres pronombres sujeto en columna: yo, tú, él/ella/usted, ligados a su conjugación en presente singular. El ejemplo 'Yo soy de Sevilla y me llamo Jonathan' los pone en uso. Cuadro@p20#2 ('¿Tú o usted?') explica las dos formas de tratamiento: tú/vosotros (informal) vs usted/ustedes (formal), con notas sobre la variación geográfica (Hispanoamérica más formal, España más informal, vos en algunos países). Cuadro@p20#3 sistematiza la oposición en cuatro pares pragmáticos.",
+            "fuente": "cuadro@p14#1",
+            "analisis_ia": "Primer cierre canónico del paradigma de pronombre sujeto en sus formas singulares. La presentación es modular: el cuadro p14#1 lo introduce como columna del paradigma verbal — el pronombre aparece encabezando la conjugación, no en lista aislada. Esto es eficaz pedagógicamente: el alumno A1 aprende el pronombre con el verbo, no como categoría abstracta. La fila 'él/ella/usted' compactada en una celda es la decisión clave: marca el sincretismo morfológico (mismo verbo para los tres) y abre el problema sociolingüístico que el cuadro p20#2 desarrolla. La inclusión de 'usted' en la tercera persona morfológica (no en la segunda) es la convención canónica del español que el alumno debe internalizar — usted se conjuga como él/ella aunque pragmáticamente sea segunda persona (tratamiento al interlocutor). Las formas plurales (nosotros/vosotros/ellos) no entran en U1 — solo material anticipatorio en respuestas de p15-act6 documentado como excepción. El paradigma se cierra en U3 (cuadro@p34#1 amplía a las seis personas como columna del cuadro de presente regular), pero el dispositivo conceptual queda establecido en U1. El cuadro@p20#3 cumple función distinta: el pronombre no se reintroduce sino que se ejercita en la oposición tú/usted, integrando pragmática y morfología en un mismo plano operativo."
+          }
         },
         {
           "unidad": 2,
@@ -4926,7 +4971,12 @@
             "te llamas"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p14#1 expone las tres formas singulares del presente de 'llamarse': me llamo (yo), te llamas (tú), se llama (él/ella/usted), en columna del paradigma de verbos copulativos de presentación junto con ser y tener. Ejemplo: 'Yo soy de Sevilla y me llamo Jonathan'. Cuadro@p20#1 reactiva el verbo en viñeta: '—¡Buenas tardes! ¿Es usted Manuel Rivera? —No, señor, yo me llamo Jorge Rivero.'. Cuadro@p20#3 lo opone formal/informal: ¿Cómo te llamas? / ¿Cómo se llama usted?",
+            "fuente": "cuadro@p14#1",
+            "analisis_ia": "Primer cierre canónico del lema 'llamarse' en NC1 — verbo reflexivo de primera conjugación regular (paradigma -ar) presentado solo en sus tres formas singulares. La función pedagógica es central: 'llamarse' es el verbo de identidad nominal por excelencia, complementa a 'ser' (identidad geográfica/atributiva) y a 'tener' (posesión, edad). El cuadro@p14#1 los presenta como tríada porque las tres se necesitan para construir la presentación mínima del alumno A1 ('Soy [nacionalidad], me llamo [nombre], tengo [edad] años'). La presentación con el pronombre reflexivo ya ligado (me/te/se) — no como infinitivo abstracto — es decisión pedagógica: el alumno A1 no necesita comprender la reflexividad gramatical para usar el verbo; la opera lexicalmente. La canonización gramatical del paradigma reflexivo se difiere a U7 (cuadro@p74 con ducharse, acostarse, sentarse, ponerse, vestirse) y el paradigma regular -ar al que pertenece se canoniza en U3 (cuadro@p34#1 con estudiar/comer/vivir como modelos). El alumno sale de U1 con tres formas operativas y la fórmula '¿Cómo te llamas? / Me llamo X' como rutina pragmática nuclear. La etiqueta es `introduce` sin `sistematiza` porque el paradigma completo (seis personas) no se cierra en U1: las plurales entran en U3 con el resto del paradigma verbal regular. Observación residual: el inventario fase 1 conserva la forma 'Me lllamo' con tres eles (probable typo del libro o del extractor); preservada literal por convención de fase 1, anotada como deuda menor de verificación."
+          }
         },
         {
           "unidad": 2,
@@ -5468,7 +5518,12 @@
             "soy"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p14#1 expone las tres formas singulares del presente de 'ser': soy (yo), eres (tú), es (él/ella/usted), en columna del paradigma de verbos copulativos. Ejemplo: 'Yo soy de Sevilla'. Cuadro@p15 emplea 'es' como cópula atributiva con colores: 'El coche es rojo. La mochila es roja.'. Cuadro@p20#1 lo reactiva en interacción: '—¿De dónde es usted? —Soy cubana.'. Cuadro@p20#3 contrasta '¿De dónde eres?' / '¿De dónde es usted?'.",
+            "fuente": "cuadro@p14#1",
+            "analisis_ia": "Primer cierre canónico de 'ser' en NC1 — verbo totalmente irregular cuyo paradigma se ha simplificado por decisión editorial a las tres formas singulares (soy/eres/es). La etiqueta `[introduce, sistematiza]` refleja la doble función: introduce el lema y sistematiza su empleo en tres macrofunciones A1.1 — (a) identidad personal ('Soy Jonathan'), (b) origen y nacionalidad ('Soy de Sevilla', 'Soy cubana'), (c) atribución de característica ('La mochila es roja'). Los cuatro cuadros que lo tocan ilustran las tres funciones: p14#1 fija el paradigma, p15 lo aplica como cópula atributiva (que prepara su oposición con 'estar' canonizada en U5), p20#1 lo despliega en interacción comunicativa, p20#3 lo modula sociolingüísticamente. La forma plural 'son' aparece atestada en respuestas de p15-act6 ('Los gatos son negros') — anticipación material documentada en _decisiones_ia U1; el principal canónico de las formas plurales se traslada a U2 (donde se completa el paradigma con somos/sois/son). El alumno sale de U1 con 'ser' como verbo nuclear de la presentación, sin ambigüedad con 'estar' (cuya introducción se difiere a U5 con su oposición canónica). El cuadro@p15 es especialmente importante: usa 'ser' para fijar el género de los colores ('rojo/roja'), entrelazando el lema con el principal gramatical Concordancia de género (cuadro@p14#2)."
+          }
         },
         {
           "unidad": 2,
@@ -5730,7 +5785,12 @@
             "tienes"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)"
+          "reconciliado_con": "indice:Verbos ser, llamarse y tener (formas singulares)",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p14#1 expone las tres formas singulares del presente de 'tener': tengo (yo), tienes (tú), tiene (él/ella/usted), en columna del paradigma de verbos copulativos de presentación junto con ser y llamarse. Cuadro@p20#3 lo aplica en la oposición formal/informal: '¿Cuántos años tienes? / ¿Cuántos años tiene usted?'.",
+            "fuente": "cuadro@p14#1",
+            "analisis_ia": "Primer cierre canónico de 'tener' en NC1 — verbo totalmente irregular (tengo/tienes/tiene exhibe diptongación e→ie en formas tónicas más irregularidad de primera persona) cuyo paradigma se simplifica a las tres formas singulares. Función pedagógica: 'tener' es el verbo de posesión y atribución cuantitativa que en A1.1 cubre dos macrofunciones — (a) edad ('Tengo 14 años'), (b) parentesco y posesión nominal ('Tengo dos hermanas'). En U1 el cuadro@p14#1 lo presenta junto a ser y llamarse como tríada de auto-presentación. La forma 'tiene' se aplica también en p20#3 como tercera persona formal de cortesía ('¿Cuántos años tiene usted?'). La canonización morfológica de su irregularidad (e→ie + 1ª persona) se difiere a U6 — donde se canoniza 'Irregularidad vocálica e→ie' con querer como testigo principal (U4) y cerrar como recurrente (U6); 'tener' queda en el bloque verbal con `rasgo_por_tiempo: totalmente irregular` por la coexistencia de tres mecanismos morfológicos (1ª persona irregular -ng-, e→ie, sin cambio gráfico en infinitivo). El alumno A1 lo opera sin metalenguaje morfológico; recibirá su análisis cuando llegue al paradigma e→ie en U4-U6. La forma plural 'tienen' (anticipación material en respuestas) se canoniza junto a las plurales de ser y llamarse en U2."
+          }
         },
         {
           "unidad": 2,

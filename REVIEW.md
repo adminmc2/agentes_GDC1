@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-24 (v12.3 — Modal del reciclaje rediseñado: strip de dots → **mapa matriz hilos × unidades** que enseña la trayectoria del hilo y las relaciones cross-hilo como filas paralelas con tipo de relación en chip de color. Celda con etiqueta + sigla de tiempo; click en celda selecciona evento o navega a hilo relacionado. Render de tiempos verbales también en la timeline principal. Cierra la Fase 1 del plan editorial — infra visual lista para Fase 2 (explicaciones U1)).
+> **Última actualización:** 2026-05-24 (v12.4 — Capa 2 sobre U1 cierra **explicaciones de cuadros**: 12 explicaciones nuevas (4 vocabulario + 5 gramática + 3 verbales) inyectadas en `nc1-reciclaje.json` con rigor pedagógico — flujo didáctico, prerrequisitos, arco del curso, convivencia con plano verbal. **Paleta pastel unificada** en el dashboard reciclaje: section-headers, dots y chips del modal matriz alineados con el sistema `cat-tag.p-*` del inventario. Cierra Fase 1 + Fase 2 del plan editorial — abre paso a Fase 3 (Capa 2 U2-U9 + cierre cross-hilo por unidad)).
+>
+> **Hito previo (v12.3):** 2026-05-24 (Modal del reciclaje rediseñado: strip de dots → **mapa matriz hilos × unidades** + tiempos verbales en timeline. Cierra la Fase 1 del plan editorial — infra visual lista).
 >
 > **Hito previo (v12.2):** 2026-05-24 (Dashboard sub-agrupa por `_grupo` en el bloque gramatical + deuda B.D1 abierta).
 >
