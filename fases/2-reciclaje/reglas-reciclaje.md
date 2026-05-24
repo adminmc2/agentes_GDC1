@@ -75,7 +75,60 @@ Cada evento lleva una **lista** `etiquetas[]` (coexisten, no es valor único). L
 
 **Detección por momento de análisis** (§2.1 del rediseño): `introduce` y `anticipacion` exigen el análisis cross-adelante; `amplia`/`aplica`/`sistematiza`/`contrasta` exigen el cross-atrás. La etiqueta no se asigna solo con el análisis intra-unidad.
 
-La clasificación `principal`/`recurrente` del inventario de fase 1 **no dicta** la etiqueta — la decide la Capa 2 IA leyendo el contexto. Prior: la mayoría de `recurrente` reciben etiquetas de repetición, pero `introduce` sobre un `recurrente` es legítimo.
+La clasificación `principal`/`recurrente` del inventario de fase 1 **no dicta** la etiqueta — la decide la Capa 2 leyendo el contexto. Prior: la mayoría de `recurrente` reciben etiquetas de repetición, pero `introduce` sobre un `recurrente` es legítimo (caso de un hilo que aparece primero como `recurrente` y nunca llega a ser `principal`).
+
+### §3.1. Matriz de decisión (cierre operativo del Nivel 5, v12.21)
+
+La asignación de etiquetas de las cinco categorías **deterministas** (`introduce`, `amplia`, `aplica`, `sistematiza`, `anticipacion`) se resuelve mecánicamente con seis predicados sobre el canónico y la proyección canónica de fase 1. `contrasta` y `discrimina` quedan fuera del cierre determinista — ver §3-bis.
+
+**Inputs (6 predicados binarios).**
+
+| Sigla | Predicado | Fuente de verdad |
+|---|---|---|
+| **A** | Es la primera aparición efectiva del hilo en el recorrido del curso. | `min(unidad)` entre eventos del hilo en `nc1-reciclaje.json`. |
+| **B** | La unidad actual es **unidad canónica** del hilo. | Proyección canónica de fase 1, por bloque: vocab → `vocabulario_consolidado.{principal,recurrente}` del inventario, alias resueltos por `campos-semanticos-canonicos.json`. Gram → `gramatica_consolidada.{principal,recurrente}`, alias por `gramatica-canonica.json`. Pron/orto → `pronunciacion_ortografia_consolidada.{principal,recurrente}`, alias por `pronunciacion-ortografia-canonica.json`. Verbal → `tiempos_y_verbos_consolidado[].lema`, universo cerrado por `verbos-canonicos.json`. Perífrasis → registry decisor `fases/2-reciclaje/perifrasis-canonicas.json`; `tiempos_y_verbos_consolidado[].estructura_perifrastica` del inventario solo aporta **evidencia material** de presencia/apoyo de detección — no decide B/C, y por la naturaleza híbrida de la anticipación perifrástica (§5) tampoco se considera input fiable para D_any (que se mide siempre sobre `nc1-reciclaje.json`). **No** literalidad de `nc1-curso.json`. |
+| **C** | Existe **unidad canónica posterior** del hilo. | Misma fuente que B, cross-adelante. |
+| **D_any** | Existe evento previo del hilo en unidades anteriores. | `nc1-reciclaje.json` cross-atrás. |
+| **D_ant** | Existe evento previo del hilo etiquetado `anticipacion`. | `nc1-reciclaje.json` cross-atrás filtrado por etiqueta. |
+| **E** | La unidad expone un cuadro/regla del hilo. | `cuadros[]` del inventario `UX-nc1-inventario.json` referido al hilo. |
+
+**Capa 1 — función principal del evento** (asigna una etiqueta de las cinco deterministas):
+
+| Patrón | A | B | C | D_any | D_ant | E | Función principal |
+|---|---|---|---|---|---|---|---|
+| Anticipación: primera aparición efectiva, no canónica | sí | no | sí | no | — | — | `anticipacion` |
+| Anticipación recurrente (no es la primera aparición, sigue antes de su canónica) | no | no | sí | sí | — | — | `anticipacion` |
+| Primera aparición canónica pura | sí | sí | — | no | no | — | `introduce` |
+| Primera aparición sobre recurrente, sin canónica posterior | sí | no | no | no | no | — | `introduce` |
+| Sistematización canónica tras anticipación previa | no | sí | — | sí | sí | sí | `sistematiza` |
+| Sistematización post-introducción | no | sí | — | sí | no | sí (holístico) | `sistematiza` |
+| Ampliación: añade ítems/formas/usos | no | sí | — | sí | no | (no holístico) | `amplia` |
+| Aplicación post-introducción | no | — | — | sí | no | no | `aplica` |
+
+`sistematiza` exige siempre **E=sí**: sin cuadro/regla del libro no hay sistematización.
+
+**Capa 2 — coexistencias permitidas** (admitidas por `REDISEÑO-EN-CURSO.md` §2.3). Se añaden sobre la función principal de Capa 1:
+
+| Coexistencia | Condición | Caso |
+|---|---|---|
+| `introduce + sistematiza` | función principal = `introduce` **y** E=sí (cuadro holístico simultáneo a la primera aparición canónica). | `verb · ser` U1 (cuadros@p14#1, p15, p20#1, p20#3). |
+| `amplia + sistematiza` | función principal = `amplia` **y** E=sí + el cuadro presenta paradigma completo añadiendo formas. | Hipotético — admitido por contrato. |
+| `aplica + anticipacion` | función principal = `aplica` **y** C=sí (reutiliza contenido previo y anticipa material de unidad posterior). | Hipotético — admitido por contrato. |
+
+**Excepción residual conservada** (único resto de juicio editorial). Cuando A=no + B=sí + D_any=sí + D_ant=no + E=sí, la matriz tiene dos filas posibles (`sistematiza` post-introducción y `amplia + sistematiza`). La distinción es editorial: si el cuadro presenta paradigma holístico recogiendo lo ya activo → `sistematiza`; si añade ítems/formas específicas al inventario previo → `amplia` o `amplia + sistematiza` según haya o no presentación holística. Se declara aquí como excepción explícita; **no** se esconde dentro de la tabla.
+
+**Hilos sin canónico.** Cuando un contenido no tiene canónico resuelto (caso `voc · Gentilicios` U1 en limbo editorial hasta cerrar la propuesta de alias): `etiquetas: []`, fuera de matriz. La etiqueta se asigna cuando la propuesta de reconciliación/canonización se cierra.
+
+### §3-bis. Etiquetas no cerradas en cierre determinista (provisional, v12.21)
+
+Las etiquetas `contrasta` y `discrimina` se mantienen en el enum del schema pero **su asignación queda como decisión editorial supervisada**, no determinista. Razón: el inventario de fase 1 no codifica hoy un campo estructurado de "foco contrastivo" en los cuadros — los contrastes viven en texto libre/notas (`schema-inventario.md` actual). El predicado análogo a F del rediseño exploratorio no es input determinista todavía.
+
+El cierre determinista se reabrirá cuando se cumpla **una** de estas condiciones:
+
+- (a) el inventario de fase 1 incorpora un campo estructurado de foco contrastivo en `cuadros[]`;
+- (b) se acumula corpus suficiente (≥5 casos atestados en el canónico) para inducir una regla determinista por inducción empírica.
+
+Mientras tanto: `contrasta` y `discrimina` se asignan caso a caso con criterio del autor y se anotan como hallazgo, no como propuesta cerrada. El reparto observado en U0-U3 es 0/0; el primer caso atestado abrirá registro.
 
 ## §4. `procedencia_indice` — triage respecto al índice y al PCIC (eje identitario mecanizado, v11.76)
 

@@ -29,6 +29,10 @@ Bloque B5 de REVIEW deja de estar ⊘ SUPERADO. Variables de entorno del panel d
 
 ---
 
+## [v12.21 — 2026-05-24] — Matriz de decisión para `etiquetas[]` cerrada (Nivel 5 punto 2)
+
+`reglas-reciclaje.md` §3.1 (nueva): matriz determinista para 5 etiquetas (`introduce`/`amplia`/`aplica`/`sistematiza`/`anticipacion`) con 6 predicados (A primera aparición efectiva · B unidad canónica · C unidad canónica posterior · D_any/D_ant evento previo · E cuadro/regla). Dos capas (función principal + 3 coexistencias documentadas). Fuente de B/C: los 5 registries del rediseño, no literalidad de `nc1-curso.json`. Excepción explícita conservada: `amplia` vs `sistematiza` (único juicio editorial residual). §3-bis: `contrasta`/`discrimina` fuera del cierre determinista, con condiciones de reapertura. Matriz validada contra los 89 eventos U0-U3. Punto 2 marcado ✅ en `REDISEÑO-EN-CURSO.md`. Sin tocar schema, scripts, validadores ni canónico.
+
 ## [v12.20 — 2026-05-24] — Sincronización documental sobre estado de Capa 2 (Nivel 5 punto 1)
 
 Ejecutado el punto 1 del Nivel 5 (v12.19): `README.md` (tabla de fases L14 + párrafo de estado L162), `fases/2-reciclaje/CLAUDE.md` (banner ⚠️ L7 + coletillas L25 y L44) y `fases/2-reciclaje/prompt.md` (banner ⚠️ L7 + "Lo que NO se hace" L50) dejan de afirmar "Capa 2 no se ha estrenado". Reflejan el estado real: Capa 2 corrida como shakedown en U0-U3 (v11.80, v11.84, v12.4, v12.10, v12.18); contrato sub-procedimentado (etiquetas sin árbol de decisión cerrado, procedencia verbal como excepción, cierre cross-hilo con `tipo`+dirección al humano); cierre operativo abierto en Nivel 5. Añadida regla de gate en CLAUDE.md y prompt.md: **no abrir Capa 2 sobre U4-U9 hasta que el Nivel 5 cierre los puntos 2-4 del plan**.

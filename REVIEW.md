@@ -12,6 +12,8 @@
 >
 > **Última actualización:** 2026-05-24 (v12.22 — **Reactivación del despliegue del dashboard en Railway** (`entornoeditorial.up.railway.app`) a petición del autor. Reverte parcialmente v11.21: se restauran `Dockerfile`, `railway.toml` y `.dockerignore` (este último saneado sin las líneas `viejo/`). El push reactiva el build de Railway que llevaba fallando en «Build image» por falta de configuración).
 >
+> **Hito previo (v12.21):** 2026-05-24 (Nivel 5 punto 2: matriz de decisión para `etiquetas[]` cerrada en `reglas-reciclaje.md` §3.1 — 6 predicados deterministas → 5 etiquetas en 2 capas; `contrasta`/`discrimina` en §3-bis provisional).
+>
 > **Hito previo (v12.20):** 2026-05-24 (Nivel 5 punto 1 ejecutado: sincronización documental sobre estado de Capa 2 + gate operativo).
 >
 > **Hito previo (v12.19):** 2026-05-24 (Nivel 5 abierto en REDISEÑO: procedimentalización de Capa 2 declarada como plan en 7 puntos + patrón arquitectónico rector — pipeline de sub-trabajos discretos, mecánico + IA aislada).
@@ -562,6 +564,8 @@ En cada iteración:
 ---
 
 ## Bitácora de actualizaciones del REVIEW
+
+- **2026-05-24** — **Nivel 5 punto 2 ejecutado** (v12.21). Matriz de decisión para `etiquetas[]` cerrada en `fases/2-reciclaje/reglas-reciclaje.md` §3.1: 6 predicados deterministas (A/B/C/D_any/D_ant/E) → 5 etiquetas (`introduce`/`amplia`/`aplica`/`sistematiza`/`anticipacion`) en dos capas (función principal + 3 coexistencias). B/C apoyadas en los 5 registries del rediseño, no en literalidad de `nc1-curso.json`. §3-bis abierto (provisional): `contrasta`/`discrimina` fuera del cierre determinista hasta que el inventario codifique foco contrastivo o se acumulen ≥5 casos. Validada contra los 89 eventos U0-U3. Punto 2 ✅ en `REDISEÑO-EN-CURSO.md`. Sin tocar schema, scripts, validadores ni canónico.
 
 - **2026-05-24** — **Nivel 5 punto 1 ejecutado** (v12.20). Sincronización documental sobre estado de Capa 2 en `README.md` (tabla de fases L14 + párrafo de estado L162), `fases/2-reciclaje/CLAUDE.md` (banner ⚠️ L7 + coletillas L25 y L44) y `fases/2-reciclaje/prompt.md` (banner ⚠️ L7 + "Lo que NO se hace" L50): dejan de afirmar "Capa 2 no se ha estrenado" — reflejan que ha corrido como shakedown en U0-U3 (v11.80, v11.84, v12.4, v12.10, v12.18) y que el contrato sigue sub-procedimentado. Añadido gate operativo: **no abrir Capa 2 sobre U4-U9 hasta que el Nivel 5 cierre los puntos 2-4** (matriz `etiquetas[]` + anexos verbal/cross-hilo + decisión `explicacion`). Higiene documental añadida tras micro-revisión Anthropic-first: corregida fila obsoleta `CLAUDE.md:86` ("Nivel 4 pendiente" → enlace a scripts + mención de Nivel 5) y banner de reactivación en `CLAUDE.md:5` + `prompt.md:5` ("cuatro niveles" → "cuatro niveles **originales**" + mención Nivel 5). Punto 1 marcado ✅ en `REDISEÑO-EN-CURSO.md`. Sin tocar contrato (schema, reglas) ni código.
 
