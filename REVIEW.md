@@ -10,7 +10,11 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-24 (v12.11 — **Ejecución mecánica de la deuda «Adjetivos descriptivos» (Paso 2a)**: split aplicado sobre U5/U6/U8/U9 + registry. U8 pasa a principal con `Características físicas` (24) + `Carácter y personalidad` (9); U5/U6/U9 a `Cualidades de objetos y lugares`. `famoso/-a` y `favorito/-a` expulsados del consolidado en U8 sin canónico nuevo. Registry v1.8→v1.9. Validador 10/10 0/0/0. `nc1-reciclaje.json` no regenerado — queda para coordinación con el otro chat).
+> **Última actualización:** 2026-05-24 (v12.14 — Dashboard reciclaje: vista única «subway» de relacionados (principal arriba con sus etiquetas + relacionados debajo con tipo de relación solo en celdas de convergencia) + sistema de chips unificado por CSS `.rec-chip` con 4 helpers JS, fondos de celda neutros, ~710 líneas de código muerto eliminadas. Cierre del rediseño visual del modal).
+>
+> **Hito previo (v12.13):** 2026-05-24 (Corrección canónica «Práctica del surf» → «Deportes» + «Paisaje y accidentes geográficos» en U8 — split del léxico, registry v1.9→v1.11).
+>
+> **Hito previo (v12.11):** 2026-05-24 (Ejecución mecánica de la deuda «Adjetivos descriptivos» — Paso 2a: split aplicado sobre U5/U6/U8/U9 + registry v1.8→v1.9).
 >
 > **Hito previo (v12.10):** 2026-05-24 (Capa 2 sobre U2 cerrada: 27 etiquetas + 9 explicaciones + 8 cierres `hilo.relaciones[]`).
 >

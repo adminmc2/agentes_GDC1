@@ -15,6 +15,46 @@
 
 ---
 
+## [v12.14 — 2026-05-24] — Dashboard reciclaje: vista única «subway» de relacionados + sistema de chips unificado por CSS
+
+Cierre del rediseño del modal del reciclaje tras varias iteraciones exploratorias (variantes A/B/C, P1-P4, radial SVG):
+
+(a) **Vista única «subway»** — tabla con principal arriba (etiquetas en cada celda U0-U9) + relacionados debajo (tipo de relación en celdas de convergencia, vacío fuera). Sin columna "Relación" separada, sin duplicación del principal, sin segunda tabla. Anchos de columna fijos y alineados entre cabecera y cuerpo. Toggle de variantes eliminado.
+
+(b) **Sistema de chips unificado** — clase CSS `.rec-chip` con tamaño, padding, tipografía y border-radius fijos. 4 helpers JS centralizan la creación (`_recChipPastel`, `_recChipBloque`, `_recChipPendiente`, `_recChipGhost`). Todos los chips inline existentes pasan por estos helpers — cambio futuro de tamaño/forma toca solo `.rec-chip`, sin drift posible. Fondos de celda neutros (`var(--md-surface)`); el chip carga el color, no la celda.
+
+(c) **Limpieza masiva de código muerto** — eliminadas ~710 líneas de funciones obsoletas de las exploraciones previas: `_renderRelLayout`, `_filaRelP1`, `_renderRelP2/P3-viejo/P4`, `_renderRelRadial`, `_renderRelV1-V4`, `renderRecMapaSatelites_DEPRECATED`, `renderRecMapaCarriles_DEPRECATED` (comentada), `renderRecCronologia` y `renderRecRamas` deprecated. Variable `window._recRelLayout` retirada.
+
+Sintaxis JS verificada con `node --check`. Sin cambios en datos ni schema; solo CSS/JS.
+
+## [v12.13 — 2026-05-24] — Corrección canónica «Práctica del surf» → «Deportes» + «Paisaje y accidentes geográficos» en U8 (Opción A del revisor)
+
+Decisión editorial en dos pasos consolidados en un solo lote:
+
+**(a) Corrección canónica:** el libro NC1 etiquetó en la portada U8 el campo léxico como «Práctica del surf» — etiqueta hiperespecífica que no es la categoría semántica adecuada para los items que cubre. El canónico vigente pasa a ser **«Deportes»** (PCIC §17, ya existente en el registry desde origen `pcic_a1` v10.115). «Práctica del surf» queda con `_deprecated`.
+
+**(b) Refinamiento del scope (Opción A del revisor):** «Deportes» en sentido amplio forzaba bajo un único canónico léxico heterogéneo (surf/surfista/tabla = deporte y equipamiento; ola/Cantábrico = geografía/topónimo) — `reglas-operativas.md §5.2` prohíbe forzar un único campo cuando el léxico no encaja semánticamente. Se splita en **2 buckets coherentes**:
+
+- **«Deportes»** (PCIC §17): surf, surfista, tabla, correa (4 items deportivos + equipamiento).
+- **«Paisaje y accidentes geográficos»** (PCIC §Geo, canónico ya existente desde origen `pcic_a1`): ola, Cantábrico (2 items).
+
+**Listas tipadas U8 p83 alineadas con el split** (corrige incoherencia interna pre-existente):
+- `p83-act06`: `['Deportes', 'Paisaje y accidentes geográficos']` (el texto introduce ambas dimensiones).
+- `p83-act07`: idem (los V/F trabajan los Cantábricos, olas y surf/tabla).
+- `p83-act08`: añadido `'Deportes'` a la lista existente `['Características físicas', 'El cuerpo humano', 'Colores']` (la actividad menciona tabla/surfistas como contexto visual). Coherente con `surfista`/`tabla` cuyas `fuentes` incluyen p83-act8.
+- **Fuentes saneadas**: `ola.fuentes` se completa con p83-act7 (estaba pre-existentemente incompleta — «Las olas del Cantábrico son bajas»).
+
+**Registry (`campos-semanticos-canonicos.json` v1.9 → v1.11):**
+- Entry «Deportes» enriquecida con `_pcic_ref` + `_nc1_ref` (preservando «Práctica del surf» como traza editorial) + nota con scope estricto.
+- «Práctica del surf» con `_deprecated`.
+- Versiones meta + raíz sincronizadas.
+
+**`_decisiones_ia` en U8** (`D-Deportes-corrige-Practica-del-surf`) actualizada con la decisión final v12.13 (Opción A).
+
+**Verbatim preservado**: portada U8 sigue diciendo «VOCABULARIO El cuerpo humano. Práctica del surf» (regla de oro 1); `nc1-curso.json` igual. La etiqueta del libro vive como traza editorial en `_nc1_ref`. **Validador: 10/10 unidades 0/0/0.** Sin tocar `nc1-reciclaje.json` (regeneración por el otro chat).
+
+---
+
 ## [v12.11 — 2026-05-24] — Ejecución mecánica de la deuda «Adjetivos descriptivos» (Paso 2a — sin regeneración de reciclaje)
 
 Aplicada la migración definida en v12.5/v12.8/v12.9. Cambios estructurales sobre **5 archivos** (inventarios U5/U6/U8/U9 + registry léxico):

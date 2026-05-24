@@ -162,6 +162,28 @@ details:not([open]) > summary .acc-chevron { transform: rotate(0deg); }
 .cat-tag.p-menta   { background: #E0F2F1; color: #1F5751; border-color: #B2DFDB; }
 .cat-tag.p-gris    { background: #ECEFF1; color: #455A64; border-color: #CFD8DC; }
 
+/* Chip unificado del módulo de reciclaje (v12.14+).
+   Tamaño fijo para todos los chips (etiqueta evento, tipo de relación,
+   bloque, pendiente, sin etiqueta) — evita drift visual. El color de
+   fondo/texto se inyecta inline en cada uso concreto. */
+.rec-chip {
+    display: inline-block;
+    font-size: 8.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 1px 6px;
+    border-radius: 8px;
+    white-space: nowrap;
+    line-height: 1.4;
+    font-family: inherit;
+}
+.rec-chip-ghost {
+    color: #B0BEC5;
+    border: 1px dashed var(--md-outline);
+    font-style: italic;
+}
+
 /* Caja blanca uniforme para palabras/ítems */
 .item-card {
     background: var(--md-surface);
@@ -806,11 +828,25 @@ const REC_PASTEL_REL = {
     comparte:      { bg: '#90CAF9', fg: '#0D47A1', bd: '#42A5F5' }, // azul
 };
 const REC_PASTEL_PENDIENTE = { bg: '#FFE082', fg: '#FF6F00', bd: '#FFCA28' };
-// Helper para renderizar un chip pastel uniforme — minimalista, sin borde.
-// El color de fondo ya identifica la categoría; el borde sería redundante.
+// Helper unificado v12.14: chip pastel con clase CSS `.rec-chip`. Garantiza
+// tamaño y tipografía idénticos en TODOS los chips del módulo de reciclaje.
 function _recChipPastel(palette, key, label) {
     const p = palette[key] || { bg: '#ECEFF1', fg: '#455A64' };
-    return `<span style="font-size:9px;color:${p.fg};background:${p.bg};padding:2px 7px;border-radius:9px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap">${_esc(label)}</span>`;
+    return `<span class="rec-chip" style="color:${p.fg};background:${p.bg}">${_esc(label)}</span>`;
+}
+// Chip de bloque — más pastel (40% alpha del fondo), label completo.
+function _recChipBloque(bloque) {
+    const p = REC_PASTEL_BLOQUE[bloque] || { bg: '#ECEFF1', fg: '#455A64' };
+    const label = REC_LABEL_BLOQUE[bloque] || bloque;
+    return `<span class="rec-chip" style="color:${p.fg};background:${p.bg}66;margin-left:6px">${_esc(label)}</span>`;
+}
+// Chip "PENDIENTE" — usa la misma clase para no salirse de tamaño.
+function _recChipPendiente() {
+    return `<span class="rec-chip" style="color:${REC_PASTEL_PENDIENTE.fg};background:${REC_PASTEL_PENDIENTE.bg}">pendiente</span>`;
+}
+// Chip "sin etiqueta" (placeholder ghost)
+function _recChipGhost(text) {
+    return `<span class="rec-chip rec-chip-ghost">${_esc(text || 'sin etiqueta')}</span>`;
 }
 // Sigla compacta para el tiempo verbal — usada bajo cada dot de timeline
 // y dentro del modal (v12.3). Solo aplica a bloques `verbal` y `perifrasis`.
@@ -1257,134 +1293,7 @@ function _recRelacionados(h) {
     return [...Object.values(cerradas), ...Object.values(pendientes)];
 }
 
-// (Borrado v12.3) Carriles + satélites — descartados a favor de la matriz.
-/* function renderRecMapaCarriles_DEPRECATED(h, eventos, selectedIdx, bColor) {
-    const hilosByID = {};
-    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
-    const rels = _recRelacionados(h);
-    const cellW = 90;  // ancho por columna (unidad)
-    const minCol = 0, maxCol = 9;
-    const colWidth = `${cellW}px`;
-    const cols = REC_UNIDADES;  // [0..9]
 
-    // Cabecera con etiquetas U0..U9
-    const header = `<div style="display:flex;align-items:center;padding-left:200px">
-        ${cols.map(u => `<div style="width:${colWidth};text-align:center;font-size:11px;font-weight:700;color:#90A4AE">U${u}</div>`).join('')}
-    </div>`;
-
-    function carril(hilo, mainHilo, selectedIdx, evs, isMain, relInfo) {
-        const evsByU = {};
-        (evs || hilo.eventos || []).forEach(ev => { evsByU[ev.unidad] = ev; });
-        const label = `<div style="width:200px;font-size:12px;font-weight:600;color:${isMain?bColor:'#455A64'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:10px">${isMain?'':'<span style="color:#CFD8DC">↳ </span>'}<a onclick="event.stopPropagation();openRecDrawer('${_esc(hilo.id)}')" style="cursor:pointer;${isMain?'pointer-events:none':'color:#0D47A1'}">${_esc(hilo.titulo)}</a></div>`;
-        const celdas = cols.map(u => {
-            const ev = evsByU[u];
-            if (!ev) return `<div style="width:${colWidth};display:flex;justify-content:center;align-items:center;height:34px"><div style="width:6px;height:1px;background:#ECEFF1"></div></div>`;
-            const c = _recDotColor(ev);
-            const et = (ev.etiquetas && ev.etiquetas.length) ? ev.etiquetas[0] : '';
-            const sel = isMain && evs && evs[selectedIdx] && evs[selectedIdx].unidad === u && evs[selectedIdx].tiempo === ev.tiempo;
-            const tag = et ? `<div style="font-size:8.5px;color:#fff;background:${c};padding:1px 5px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-top:2px">${_esc(et).slice(0,6)}</div>` : '';
-            const onclick = isMain ? `openRecDrawer('${_esc(mainHilo.id)}', ${(evs||[]).indexOf(ev)})` : `openRecDrawer('${_esc(hilo.id)}')`;
-            return `<div style="width:${colWidth};display:flex;flex-direction:column;align-items:center;justify-content:flex-start;height:34px;cursor:pointer" onclick="event.stopPropagation();${onclick}">
-                <div style="width:${sel?14:10}px;height:${sel?14:10}px;border-radius:50%;background:${c};border:${sel?'2px solid '+bColor:'1px solid #fff'};box-shadow:0 0 0 1px ${c}"></div>
-                ${tag}
-            </div>`;
-        }).join('');
-        // Etiqueta de relación al inicio del carril (solo para relacionados)
-        const relTag = isMain ? '' : (relInfo.estado === 'cerrada'
-            ? `<div style="position:absolute;left:0;top:0;width:200px;font-size:9px;color:${REC_REL_COLOR[relInfo.tipo]||'#607D8B'};font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding-right:10px;text-align:right">${_esc(relInfo.tipo)}</div>`
-            : `<div style="position:absolute;left:0;top:0;width:200px;font-size:9px;color:#FFA726;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding-right:10px;text-align:right">pendiente</div>`);
-        return `<div style="position:relative;display:flex;align-items:center;padding:6px 0;border-bottom:1px dashed #ECEFF1">${label}${celdas}${relTag}</div>`;
-    }
-
-    // Conectores verticales: para cada unidad donde el hilo principal y el relacionado
-    // tienen ambos evento, se dibuja una línea vertical etiquetada con el tipo
-    // de relación. Para simplificar usamos un overlay absoluto sobre cada carril.
-    // (Implementación visual ligera: borde lateral en las celdas que comparten unidad.)
-
-    const carrilPrincipal = carril(h, h, selectedIdx, eventos, true, null);
-    const carrilesRelacionados = rels.map(rel => {
-        const otro = hilosByID[rel.hilo_ref];
-        if (!otro) return '';
-        // marcamos en el carril relacionado solo los eventos cuyas unidades están en rel.unidades
-        const evsFiltered = (otro.eventos || []).filter(ev => (rel.unidades||[]).includes(ev.unidad));
-        // pero también queremos ver el contexto de su carril; mejor todos los eventos del otro hilo
-        return carril(otro, h, selectedIdx, otro.eventos || [], false, rel);
-    }).join('');
-
-    const sinRel = rels.length === 0
-        ? `<div style="padding:14px;color:#90A4AE;font-size:12px;font-style:italic;text-align:center">Este hilo no tiene relaciones cross-hilo (ni cerradas ni pendientes).</div>`
-        : '';
-
-    return `<div style="background:#FAFAFA;border-radius:8px;padding:14px 12px;overflow-x:auto">
-        <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Carriles paralelos — este hilo arriba; relacionados debajo</div>
-        ${header}
-        <div style="border-top:2px solid ${bColor};margin-top:4px;padding-top:4px">${carrilPrincipal}</div>
-        ${carrilesRelacionados}
-        ${sinRel}
-    </div>`;
-}
-
-function renderRecMapaSatelites_DEPRECATED(h, eventos, selectedIdx, bColor) {
-    const hilosByID = {};
-    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
-    const rels = _recRelacionados(h);
-    const evSel = eventos[selectedIdx];
-
-    // Centro: el hilo actual con su cronología compacta + selección
-    const cronoCompacta = eventos.map((ev, i) => {
-        const sel = i === selectedIdx;
-        const c = _recDotColor(ev);
-        return `<span onclick="event.stopPropagation();openRecDrawer('${_esc(h.id)}', ${i})" title="U${ev.unidad}${ev.tiempo?' · '+ev.tiempo:''}" style="cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:${sel?28:22}px;height:${sel?28:22}px;border-radius:50%;background:${c};color:#fff;font-size:10px;font-weight:700;margin:0 2px;border:${sel?'2px solid '+bColor:'1px solid #fff'};box-shadow:0 0 0 1px ${c}">U${ev.unidad}</span>`;
-    }).join('');
-
-    const centro = `<div style="background:${bColor}11;border:2px solid ${bColor};border-radius:12px;padding:14px 18px;text-align:center">
-        <div style="font-size:10px;color:${bColor};font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px">${_esc(REC_LABEL_BLOQUE[h.bloque] || h.bloque)}${h._grupo ? ' · ' + _esc(h._grupo) : ''}</div>
-        <div style="font-size:16px;font-weight:700;color:#263238;margin-bottom:8px">${_esc(h.titulo)}</div>
-        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:2px">${cronoCompacta}</div>
-    </div>`;
-
-    // Satélites
-    const sats = rels.map(rel => {
-        const otro = hilosByID[rel.hilo_ref];
-        const tit = otro ? otro.titulo : rel.hilo_ref;
-        const col = rel.estado === 'cerrada' ? (REC_REL_COLOR[rel.tipo] || '#607D8B') : '#FFA726';
-        const tipoLabel = rel.estado === 'cerrada' ? rel.tipo : 'pendiente';
-        const unidadesStr = (rel.unidades && rel.unidades.length) ? `U${rel.unidades.join(', U')}` : '';
-        const blq = otro ? (REC_COLOR_BLOQUE[otro.bloque] || '#607D8B') : '#607D8B';
-        const detalle = rel.detalle
-            ? `<div style="font-size:10px;color:#455A64;font-style:italic;line-height:1.3;margin-top:4px">"${_esc(rel.detalle)}"</div>`
-            : '';
-        const cuadros = (rel.cuadros && rel.cuadros.length)
-            ? `<div style="font-size:9px;color:#90A4AE;font-family:monospace;margin-top:3px">${rel.cuadros.map(c=>_esc(c)).join(' · ')}</div>`
-            : '';
-        return `<div onclick="event.stopPropagation();openRecDrawer('${_esc(rel.hilo_ref)}')" style="cursor:pointer;background:#fff;border:1px solid ${blq}55;border-radius:8px;padding:10px 12px;min-width:180px;max-width:220px;position:relative">
-            <div style="position:absolute;top:-8px;left:10px;background:${col};color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;text-transform:uppercase;letter-spacing:.5px">${_esc(tipoLabel)}</div>
-            <div style="font-size:12px;font-weight:600;color:#0D47A1;margin-top:4px">${_esc(tit)}</div>
-            <div style="font-size:10px;color:#90A4AE;margin-top:3px">${unidadesStr}</div>
-            ${detalle}${cuadros}
-        </div>`;
-    }).join('');
-
-    const sinRel = rels.length === 0
-        ? `<div style="padding:14px;color:#90A4AE;font-size:12px;font-style:italic;text-align:center;margin-top:10px">Este hilo no tiene relaciones cross-hilo.</div>`
-        : '';
-
-    return `<div style="background:#FAFAFA;border-radius:8px;padding:18px 14px">
-        <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;text-align:center">Nodo central + satélites</div>
-        <div style="display:flex;justify-content:center;margin-bottom:18px">${centro}</div>
-        <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">${sats}</div>
-        ${sinRel}
-    </div>`;
-}
-
-} */
-// === Mapa — Matriz hilos × unidades (única variante v12.3) ==========
-// Mapa principal del modal: fila del hilo actual arriba (destacada en color
-// del bloque), filas de hilos relacionados debajo. Cada celda U0..U9 lleva
-// la etiqueta del evento en chip grande + el bloque del hilo en pastilla.
-// El evento seleccionado resalta con halo. Click en celda del hilo principal
-// = selecciona ese evento; click en celda de un hilo relacionado = navega al
-// modal de ese hilo.
 function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
     const hilosByID = {};
     (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
@@ -1394,10 +1303,22 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
     const evSelKey = (eventos[selectedIdx] || {}).unidad + '·' + (eventos[selectedIdx] || {}).tiempo;
     const bPastel = REC_PASTEL_BLOQUE[h.bloque] || { bg: 'var(--md-surface-variant)', fg: 'var(--md-on-surface-variant)', bd: 'var(--md-outline)' };
 
-    function celda(ev, hilo, isMain, idxEvento) {
+    // Vista de relacionados — variante única "subway" (v12.14):
+    // tabla unificada con principal arriba (sus etiquetas en cada unidad) +
+    // relacionados debajo (tipo de relación en celdas de convergencia, vacío
+    // fuera). Sin columna "Relación" separada. Sin duplicación del principal.
+    const layout = 'P3';
+
+    function celda(ev, hilo, isMain, idxEvento, relUnidades) {
+        // relUnidades: Set de unidades donde la relación aplica (solo para filas no-main).
+        // Si la unidad de este evento NO está en relUnidades → tratamiento especial.
+        const enConvergencia = isMain || !relUnidades || relUnidades.has((ev||{}).unidad);
         if (!ev) {
             return `<td style="padding:0;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant)"></td>`;
         }
+        // En el layout 'R' (radial) las filas relacionadas no se renderizan en la
+        // matriz — solo el principal. En 'M' (matriz) todas las filas se dibujan.
+        const opacityStyle = '';
         const c = _recDotColor(ev);
         const et = (ev.etiquetas && ev.etiquetas.length) ? ev.etiquetas[0] : null;
         const etTxt = et ? et.toUpperCase() : '';
@@ -1409,20 +1330,29 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
         const onclick = isMain
             ? `openRecDrawer('${_esc(hilo.id)}', ${idxEvento})`
             : `openRecDrawer('${_esc(hilo.id)}')`;
-        const chip = et
+        // Slot etiqueta: siempre con la misma altura aunque el evento no
+        // tenga etiqueta — así el slot de tiempo (PRE/IND/IMP/INF) queda
+        // siempre en la misma posición vertical en todas las celdas.
+        const chipSlot = et
             ? _recChipPastel(REC_PASTEL_ETIQUETA, et, etTxt)
-            : `<span style="font-size:9px;color:#B0BEC5;font-style:italic">·</span>`;
+            : _recChipGhost('sin etiqueta');
         const tPastel = ev.tiempo ? (REC_PASTEL_TIEMPO[ev.tiempo] || null) : null;
-        const tiempo = ev.tiempo && REC_TIEMPO_SIGLA[ev.tiempo] && tPastel
-            ? `<div style="display:inline-block;font-size:9px;color:${tPastel.fg};background:${tPastel.bg};font-weight:700;margin-top:4px;padding:1px 5px;border-radius:3px;letter-spacing:.3px">${REC_TIEMPO_SIGLA[ev.tiempo]}</div>`
+        const tiempoSlot = ev.tiempo && REC_TIEMPO_SIGLA[ev.tiempo] && tPastel
+            ? `<div style="display:inline-block;font-size:9px;color:${tPastel.fg};background:${tPastel.bg};font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:.3px">${REC_TIEMPO_SIGLA[ev.tiempo]}</div>`
             : '';
         const shadow = sel ? `box-shadow:0 0 0 1px var(--md-on-surface-variant) inset, 0 1px 3px rgba(0,0,0,0.08);` : '';
-        return `<td title="${_esc(tooltipParts.join(' · '))}" onclick="event.stopPropagation();${onclick}" style="padding:6px;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant);cursor:pointer;text-align:center;${shadow}transition:box-shadow .15s">
-            ${chip}${tiempo}
+        return `<td title="${_esc(tooltipParts.join(' · '))}" onclick="event.stopPropagation();${onclick}" style="padding:6px;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant);cursor:pointer;text-align:center;${shadow}${opacityStyle}transition:box-shadow .15s;vertical-align:middle">
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;height:100%">
+                <div style="height:18px;display:flex;align-items:center;justify-content:center">${chipSlot}</div>
+                <div style="height:14px;display:flex;align-items:center;justify-content:center">${tiempoSlot}</div>
+            </div>
         </td>`;
     }
 
     function fila(hilo, isMain, relInfo) {
+        const relUnidadesSet = (!isMain && relInfo)
+            ? new Set(relInfo.unidades || [])
+            : null;
         const evsByU = {};
         (hilo.eventos || []).forEach(ev => { evsByU[ev.unidad] = ev; });
         // Para el hilo principal precomputamos el índice canónico de cada evento (orden de eventos[])
@@ -1433,7 +1363,7 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
         const blqLabel = REC_LABEL_BLOQUE[hilo.bloque] || hilo.bloque;
         // Chip pastel del bloque — minimalista, sin borde
         const blqPastel = REC_PASTEL_BLOQUE[hilo.bloque] || { bg: '#ECEFF1', fg: '#455A64' };
-        const blqChip = `<span style="font-size:9px;color:${blqPastel.fg};background:${blqPastel.bg};padding:2px 7px;border-radius:9px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-left:8px">${_esc(blqLabel.slice(0,9))}</span>`;
+        const blqChip = _recChipBloque(hilo.bloque);
         // Sub-texto que explica POR QUÉ aparece la fila: para cerradas, el detalle
         // editorial corto; para pendientes, los cuadros compartidos con su unidad.
         let porQue = '';
@@ -1455,7 +1385,7 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
                     ${_recChipPastel(REC_PASTEL_REL, relInfo.tipo, relInfo.tipo)}
                 </td>`
                 : `<td style="padding:8px 12px;border-bottom:1px solid #ECEFF1;background:#FFF;text-align:center">
-                    <span style="font-size:9px;color:${REC_PASTEL_PENDIENTE.fg};background:${REC_PASTEL_PENDIENTE.bg};padding:2px 7px;border-radius:9px;font-weight:600;text-transform:uppercase;letter-spacing:.4px">pendiente</span>
+                    ${_recChipPendiente()}
                 </td>`
         );
 
@@ -1464,7 +1394,7 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
         const cells = cols.map(u => {
             const ev = evsByU[u];
             const idxEvento = ev && isMain ? (idxByKey[ev.unidad + '·' + ev.tiempo] ?? 0) : null;
-            return celda(ev, hilo, isMain, idxEvento);
+            return celda(ev, hilo, isMain, idxEvento, relUnidadesSet);
         }).join('');
 
         return `<tr>${tdTitulo}${relCol}${cells}</tr>`;
@@ -1488,14 +1418,31 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
     const filaSeparadora = relsOrdered.length
         ? `<tr><td colspan="${totalCols}" style="padding:8px 14px;background:var(--md-surface-variant);border-top:1px solid var(--md-outline);border-bottom:1px solid var(--md-outline-variant);font-size:11px;color:var(--md-on-surface-variant)"><span style="font-weight:700;text-transform:uppercase;letter-spacing:.6px">Hilos relacionados</span> · ${explicaciones.join(' · ')}</td></tr>`
         : '';
-    const filasRel = relsOrdered.map(rel => {
-        const otro = hilosByID[rel.hilo_ref];
-        return otro ? fila(otro, false, rel) : '';
-    }).join('');
+    // Filas relacionadas (subway v12.14): separador + una fila por relacionado
+    // con tipo en celdas de convergencia, vacío fuera.
+    let filasRel = '';
+    if (relsOrdered.length) {
+        const nCerradas = relsOrdered.filter(r => r.estado === 'cerrada').length;
+        const nPend = relsOrdered.length - nCerradas;
+        const explic = [];
+        if (nCerradas) explic.push(`<strong style="color:#37474F">${nCerradas}</strong> cerradas`);
+        if (nPend) explic.push(`<strong style="color:#F57F17">${nPend}</strong> candidato${nPend===1?'':'s'} (comparten cuadro)`);
+        const totalColsAll = 1 + cols.length;
+        const sepRow = `<tr><td colspan="${totalColsAll}" style="padding:8px 14px;background:var(--md-surface-variant);border-top:1px solid var(--md-outline);border-bottom:1px solid var(--md-outline-variant);font-size:11px;color:var(--md-on-surface-variant)"><span style="font-weight:700;text-transform:uppercase;letter-spacing:.6px">Hilos relacionados</span> · ${explic.join(' · ')}</td></tr>`;
+        filasRel = sepRow + relsOrdered.map(rel => {
+            const otro = hilosByID[rel.hilo_ref];
+            return otro ? _filaRelP3(otro, rel, cols, CELL_W, CELL_H) : '';
+        }).join('');
+    }
+
+    // Toggle eliminado en v12.14 — vista única.
+    const toggle = '';
 
     const sinRel = rels.length === 0
         ? `<div style="padding:18px;color:#90A4AE;font-size:13px;font-style:italic;text-align:center;background:#FAFAFA;border-radius:6px;margin-top:8px">Este hilo no tiene relaciones cross-hilo (ni cerradas ni candidatas).</div>`
         : '';
+
+    const filaPrincipalRender = _filaPrincipalP3(h, eventos, cols, CELL_W, CELL_H, bColor, bPastel);
 
     return `<div style="background:var(--md-surface);border-radius:var(--md-radius);padding:18px;border:1px solid var(--md-outline-variant)">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
@@ -1506,96 +1453,60 @@ function renderRecMapaMatriz(h, eventos, selectedIdx, bColor) {
             <table style="border-collapse:separate;border-spacing:0;width:100%">
                 <thead><tr>
                     <th style="padding:10px 14px;background:var(--md-surface-variant);font-size:11px;color:var(--md-on-surface-variant);text-align:left;font-weight:600;letter-spacing:.5px;border-bottom:1px solid var(--md-outline);text-transform:uppercase;border-left:3px solid transparent">Hilo</th>
-                    <th style="padding:10px;background:var(--md-surface-variant);font-size:11px;color:var(--md-on-surface-variant);font-weight:600;letter-spacing:.5px;border-bottom:1px solid var(--md-outline);text-transform:uppercase;text-align:center">Relación</th>
                     ${headerCells}
                 </tr></thead>
-                <tbody>${filaPrincipal}${filaSeparadora}${filasRel}</tbody>
+                <tbody>${filaPrincipalRender}${filasRel}</tbody>
             </table>
         </div>
         ${sinRel}
     </div>`;
 }
 
-// === FIN mapas ======================================================
+// Fila principal para P3 — sin la celda Relación
+function _filaPrincipalP3(hilo, eventos, cols, CELL_W, CELL_H, bColor, bPastel) {
+    const evByU = {};
+    eventos.forEach(ev => { evByU[ev.unidad] = ev; });
+    const blqLabel = REC_LABEL_BLOQUE[hilo.bloque] || hilo.bloque;
+    const blqChip = _recChipBloque(hilo.bloque);
+    const tit = `<div><span style="font-weight:700;color:${bColor};font-size:14px">${_esc(hilo.titulo)}</span>${blqChip}</div>`;
+    const tdTitulo = `<td style="padding:10px 14px;border-bottom:1px solid var(--md-outline-variant);background:var(--md-surface);white-space:nowrap;border-left:3px solid ${bPastel.bd}">${tit}</td>`;
+    const cells = cols.map(u => {
+        const ev = evByU[u];
+        if (!ev || !ev.etiquetas || !ev.etiquetas.length) {
+            return `<td style="padding:0;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant)"></td>`;
+        }
+        const et = ev.etiquetas[0];
+        return `<td style="padding:0;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant);text-align:center;vertical-align:middle">${_recChipPastel(REC_PASTEL_ETIQUETA, et, et.toUpperCase())}</td>`;
+    }).join('');
+    return `<tr>${tdTitulo}${cells}</tr>`;
+}
+
+// Fila de relacionado para P3 — sin celda Relación, tipo en celdas de convergencia
+function _filaRelP3(otro, rel, cols, CELL_W, CELL_H) {
+    const blqPastel = REC_PASTEL_BLOQUE[otro.bloque] || { bg:'#ECEFF1', fg:'#455A64' };
+    const blqLabel = REC_LABEL_BLOQUE[otro.bloque] || otro.bloque;
+    const blqChip = _recChipBloque(otro.bloque);
+    const tit = `<div><a onclick="event.stopPropagation();openRecDrawer('${_esc(otro.id)}')" style="color:#0D47A1;cursor:pointer;text-decoration:none;font-weight:600;font-size:13px">${_esc(otro.titulo)}</a>${blqChip}</div>`;
+    const tdTit = `<td style="padding:10px 14px;border-bottom:1px solid var(--md-outline-variant);background:var(--md-surface);white-space:nowrap">${tit}</td>`;
+    const relUnidades = new Set(rel.unidades || []);
+    const tipoP = rel.estado === 'cerrada'
+        ? (REC_PASTEL_REL[rel.tipo] || { bg:'#ECEFF1', fg:'#455A64' })
+        : REC_PASTEL_PENDIENTE;
+    const tipoLab = rel.estado === 'cerrada' ? rel.tipo : 'pendiente';
+    const cells = cols.map(u => {
+        if (!relUnidades.has(u)) {
+            return `<td style="padding:0;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant)"></td>`;
+        }
+        return `<td style="padding:0;width:${CELL_W}px;height:${CELL_H}px;background:var(--md-surface);border:1px solid var(--md-outline-variant);text-align:center;vertical-align:middle">
+            <span class="rec-chip" style="color:${tipoP.fg};background:${tipoP.bg}">${_esc(tipoLab)}</span>
+        </td>`;
+    }).join('');
+    return `<tr>${tdTit}${cells}</tr>`;
+}
+
 
 // (Deprecated v12.3) Cronología strip — sustituida por los 3 mapas de arriba.
 // Se conserva por si quieres volver a ella en el futuro.
-function renderRecCronologia(h, eventos, selectedIdx, bColor) {
-    const totalCols = eventos.length;
-    const nodos = eventos.map((ev, i) => {
-        const sel = (i === selectedIdx);
-        const c = _recDotColor(ev);
-        const tiempoSigla = REC_TIEMPO_SIGLA[ev.tiempo] || '';
-        const sigla = tiempoSigla
-            ? `<div style="font-size:9px;color:#90A4AE;font-weight:700;letter-spacing:.4px;margin-top:3px">${tiempoSigla}</div>` : '';
-        const ramas = renderRecRamas(h, ev);
-        return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;min-width:80px">
-            <div style="font-size:11px;color:#90A4AE;font-weight:700;margin-bottom:4px">U${ev.unidad}</div>
-            <div onclick="openRecDrawer('${_esc(h.id)}', ${i})" style="cursor:pointer;display:flex;flex-direction:column;align-items:center">
-                <div style="width:${sel?22:16}px;height:${sel?22:16}px;border-radius:50%;background:${c};border:${sel?'3px solid '+bColor:'2px solid #fff'};box-shadow:0 0 0 1px ${c}${sel?', 0 0 0 4px '+bColor+'33':''}"></div>
-                ${sigla}
-            </div>
-            <div style="margin-top:10px;width:100%;display:flex;flex-direction:column;align-items:center;gap:4px">${ramas}</div>
-        </div>`;
-    }).join(`<div style="align-self:flex-start;margin-top:24px;height:2px;background:${bColor}33;flex:0 0 20px"></div>`);
-    return `<div style="background:#FAFAFA;border-radius:8px;padding:14px 12px">
-        <div style="font-size:11px;font-weight:700;color:#607D8B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px">Cronología — click en un evento para ver detalle</div>
-        <div style="display:flex;align-items:stretch;justify-content:flex-start">${nodos}</div>
-    </div>`;
-}
-
-// Ramas: hilos relacionados con un evento concreto. Dos fuentes:
-// (a) relaciones cerradas del hilo cuyo `unidad_relevante` coincide con la
-//     unidad del evento (o transversales, sin unidad);
-// (b) otros hilos que comparten ≥1 cuadro con este evento en la misma unidad
-//     — útil cuando todavía no se ha cerrado relación, indica candidatos.
-function renderRecRamas(h, ev) {
-    const cuadrosEv = (ev.evidencias || []).filter(e => typeof e === 'string' && e.split(' ')[0].match(/^cuadro@/))
-        .map(e => e.split(' ')[0]);
-    const hilosByID = {};
-    (recData.hilos || []).forEach(x => { hilosByID[x.id] = x; });
-    // (a) relaciones cerradas
-    const rel = (h.relaciones || []).filter(r => r.unidad_relevante == null || r.unidad_relevante === ev.unidad);
-    const ramasCerradas = rel.map(r => {
-        const dest = hilosByID[r.hilo_ref];
-        const tit = dest ? dest.titulo : r.hilo_ref;
-        const col = REC_REL_COLOR[r.tipo] || '#607D8B';
-        return `<div title="${_esc(r.detalle || '')}" style="font-size:10px;line-height:1.25;padding:3px 6px;background:${col}22;border-left:2px solid ${col};border-radius:2px;width:100%;text-align:left">
-            <span style="color:${col};font-weight:700;text-transform:uppercase;letter-spacing:.4px">${_esc(r.tipo)}</span>
-            <a onclick="event.stopPropagation();openRecDrawer('${_esc(r.hilo_ref)}')" style="color:#0D47A1;text-decoration:underline;cursor:pointer;display:block">${_esc(tit)}</a>
-        </div>`;
-    }).join('');
-    // (b) hilos co-presentes en el mismo cuadro (candidatos detectados)
-    let coPresentes = new Set();
-    if (cuadrosEv.length) {
-        (recData.hilos || []).forEach(otro => {
-            if (otro.id === h.id) return;
-            const tieneCuadroCompartido = (otro.eventos || []).some(otroEv => {
-                if (otroEv.unidad !== ev.unidad) return false;
-                const otroCuadros = (otroEv.evidencias || []).filter(e => typeof e === 'string').map(e => e.split(' ')[0]);
-                return cuadrosEv.some(c => otroCuadros.includes(c));
-            });
-            if (tieneCuadroCompartido) coPresentes.add(otro.id);
-        });
-    }
-    const yaEnRel = new Set(rel.map(r => r.hilo_ref));
-    coPresentes = [...coPresentes].filter(id => !yaEnRel.has(id));
-    const ramasCoPres = coPresentes.slice(0, 4).map(id => {
-        const otro = hilosByID[id];
-        return `<div style="font-size:10px;line-height:1.25;padding:2px 6px;border-left:2px dashed #B0BEC5;color:#607D8B;width:100%;text-align:left">
-            <a onclick="event.stopPropagation();openRecDrawer('${_esc(id)}')" style="color:#546E7A;text-decoration:none;cursor:pointer">↪ ${_esc(otro ? otro.titulo : id)}</a>
-        </div>`;
-    }).join('');
-    const masTxt = coPresentes.length > 4
-        ? `<div style="font-size:10px;color:#90A4AE;font-style:italic;margin-top:2px">+${coPresentes.length - 4} más comparten cuadro</div>`
-        : '';
-    return ramasCerradas + ramasCoPres + masTxt;
-}
-
-// Panel izquierdo: explicación editorial del evento seleccionado.
-// Si el evento tiene `explicacion`, se muestra (que_dice_el_libro / analisis_ia).
-// Si no, se indica "sin explicación (pendiente de Capa 2)". También muestra
-// las relaciones cerradas globales del hilo y el aviso de candidatos pendientes.
 function renderRecPanelExplicacion(h, ev, bColor) {
     const etiquetas = (ev.etiquetas && ev.etiquetas.length)
         ? ev.etiquetas.map(e => _recChipPastel(REC_PASTEL_ETIQUETA, e, e)).join(' ')
