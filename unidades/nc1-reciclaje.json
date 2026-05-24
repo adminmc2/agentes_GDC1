@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "v12.17",
+    "version": "v12.18",
     "fecha": "2026-05-24",
     "unidades_cubiertas": [
       0,
@@ -262,7 +262,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p34-act1",
             "p34-act3",
@@ -419,7 +421,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p33-act10",
             "p33-act10@R",
@@ -451,7 +455,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p37-act7",
             "p37-act7@R",
@@ -678,7 +684,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p33-act6",
             "p34-act3",
@@ -755,7 +763,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p33-act10@R",
             "p33-act5",
@@ -929,7 +939,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p37#1",
             "p37-act5",
@@ -937,7 +949,12 @@
             "p37-act7",
             "p37-act7@R"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p37#1 'La hora' presenta un reloj analógico con todas las posiciones horarias etiquetadas (12 marcadores) y la lista canónica de doce expresiones para indicar minutos: 'en punto', 'y cinco', 'y diez', 'y cuarto', 'y veinte', 'y veinticinco', 'y media', 'menos veinticinco', 'menos veinte', 'menos cuarto', 'menos diez', 'menos cinco'. Nota: 'cuarto = 1/4'.",
+            "fuente": "cuadro@p37#1",
+            "analisis_ia": "Primer cierre canónico del campo léxico-pragmático 'La hora' en NC1. PCIC A1 (decir y preguntar la hora). El cuadro presenta el paradigma completo de 12 expresiones organizadas en dos mitades del reloj: primera mitad (incremento — 'y' + número de minutos hasta 'y media') y segunda mitad (decremento — 'menos' + minutos restantes para la hora siguiente). Tres formas especiales lexicalizadas: 'y cuarto' (15 min), 'y media' (30 min), 'menos cuarto' (45 min) — uso fraccionario que la nota explicita ('cuarto = 1/4'). Las horas en sí (la una, las dos, las tres, ...) son léxico numeral activo desde U0-U2 con `voc · Números cardinales`; el cuadro las da por sabidas y solo sistematiza el componente de minutos. La presentación con reloj analógico es decisión pedagógica deliberada: NC1 NO canoniza el formato digital 24h (10:35, 14:50, etc.), que entra en niveles superiores como contenido alternativo. El campo está anclado en la comunicación U3 'La hora' (índice del curso) y se entrelaza inmediatamente con tres principales: `gram · Interrogativos` (cuadro@p34#2 con '¿A qué hora comes?'), `gram · Paradigma regular del presente` ('¿A qué hora estudias?' / 'Como a las dos'), y `voc · Días de la semana` (recurrente U3 desde U2, articulando tiempo semanal). La construcción 'ser + hora' (Es la una / Son las dos) NO se canoniza como cuadro propio en U3 — está implícita en las formas plurales de ser canonizadas en U2 y se opera funcionalmente sin metalenguaje. El campo reaparece como recurrente en U6 (horarios de establecimientos: '¿A qué hora abre/cierra...?') y U7 (hábitos diarios y rutinas). Sin principal canónico posterior: U3 es la unidad donde el campo se cierra; en unidades posteriores solo se aplica."
+          }
         }
       ]
     },
@@ -1115,7 +1132,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p33-act5",
             "p36-act1",
@@ -1282,7 +1301,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p32-act1",
             "p32-act2",
@@ -1362,7 +1383,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p33-act10",
             "p33-act10@R",
@@ -1517,7 +1540,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p38-act1",
             "p38-act3"
@@ -1534,7 +1559,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p39-act4"
           ],
@@ -1675,7 +1702,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p32-act3",
             "p32-act4",
@@ -1772,7 +1801,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "cuadro@p34#2",
             "cuadro@p35#1",
@@ -1782,7 +1813,12 @@
             "p40-act2"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN"
+          "reconciliado_con": "pcic:PCIC A1 §1.2 El género de los sustantivos + §10.3 Concordancia interna al SN",
+          "explicacion": {
+            "que_dice_el_libro": "El campo se atesta cruzado en dos cuadros U3: cuadro@p34#2 ('Interrogativos') aplica la concordancia género/número al interrogativo cuantitativo con cuatro formas ejemplificadas — '¿Cuánto es uno más uno?', '¿Cuánta agua bebes al día?', '¿Cuántos hermanos tienes?', '¿Cuántas mochilas tienes?'. cuadro@p35#1 ('Posesivos') la aplica al paradigma de 1ª/2ª persona del plural: nuestro/nuestra/nuestros/nuestras (nuestro perro / nuestra amiga, nuestros perros / nuestras amigas) y vuestro/vuestra/vuestros/vuestras (vuestro tío / vuestra silla, vuestros tíos / vuestras sillas).",
+            "fuente": "cuadro@p34#2",
+            "analisis_ia": "Recurrente material desde U1 (principal con paradigma binario género × número en sustantivos/artículos, cuadro@p14#2) y U2 (amplía al paradigma plural -es, cuadro@p24#2). En U3 NO hay nueva sistematización de la regla en sí — el alumno reutiliza la pauta -o/-a + pluralización ya activa para operar los dos paradigmas nuevos canonizados en esta unidad. Aplicación 1: el interrogativo Cuánto/-a/-os/-as es el único interrogativo del paradigma U3 que flexiona en ambos rasgos — los otros seis (Qué, Quién/Quiénes, Cuál, Dónde, Cómo, Cuándo) son invariables o flexionan solo en número (Quién/Quiénes). Aplicación 2: los posesivos de 1ª/2ª plural (nuestro, vuestro) introducen las cuatro celdas masc-sg / fem-sg / masc-pl / fem-pl. En cambio, los posesivos de 1ª/2ª/3ª singular y 3ª plural (mi, tu, su, sus) flexionan SOLO en número, no en género — primera evidencia material en NC1 de un determinante con paradigma incompleto género × número. Convive con `gram · Concordancia de número` (recurrente U3, paralela) y con `gram · Paradigma regular del presente` (introduce U3) donde la concordancia opera en otro plano: sujeto-verbo (persona/número), no determinante-sustantivo (género/número)."
+          }
         },
         {
           "unidad": 4,
@@ -1868,7 +1904,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p32-act3",
             "p33-act5",
@@ -2133,7 +2171,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p34#2",
             "p32-act4",
@@ -2151,7 +2191,12 @@
             "p41-act1",
             "p41-act2"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p34#2 sistematiza el paradigma completo de interrogativos en tabla de siete filas con ejemplos canónicos: Qué ('¿Qué comes?' '¿A qué hora comes?'); Quién / Quiénes ('¿Quién es esta chica?' '¿Quiénes son estas niñas?'); Cuál ('¿Cuál es tu número de teléfono?' '¿Cuál es tu asignatura favorita?'); Dónde ('¿Dónde viven tus abuelos?' '¿De dónde es Óscar?'); Cómo ('¿Cómo se llama tu abuela?'); Cuándo ('¿Cuándo tenemos el examen?'); Cuánto/-a/-os/-as con las cuatro formas flexivas ('¿Cuánto es uno más uno?' '¿Cuánta agua bebes al día?' '¿Cuántos hermanos tienes?' '¿Cuántas mochilas tienes?').",
+            "fuente": "cuadro@p34#2",
+            "analisis_ia": "Primer cierre canónico del paradigma de interrogativos en NC1. PCIC A1 §10 (frases interrogativas). U1 anticipó funcionalmente cuatro interrogativos (Cómo, De dónde, Cuántos + la interrogación total '¿Es usted...?') sin sistematización; U2 los reactivó en la oposición tú/usted (cuadro@p20#3). U3 cierra el paradigma con cuadro propio de siete categorías. La selección PCIC A1 omite deliberadamente 'Por qué/Para qué' (causa/finalidad — entran en niveles superiores con conectores) y 'Cuál + sustantivo' en uso atributivo ampliado. Cuánto/-a/-os/-as es el único interrogativo del paradigma que flexiona en género Y número — convive con `gram · Concordancia de género` y `gram · Concordancia de número` (recurrentes U3). Los ejemplos del cuadro están entrelazados deliberadamente con los demás principales de U3: '¿Qué comes?' y '¿A qué hora comes?' activan `Paradigma regular del presente` (comer en 2ª persona) y `La hora` (cuadro@p37#1); '¿Cómo se llama tu abuela?' activa `Parientes` + `verb-llamarse`; '¿Dónde viven tus abuelos?' activa `verb-vivir` + Parientes; '¿Cuántos hermanos tienes?' activa Parientes + `verb-tener`. El cuadro es nodo integrador del flujo U3. Reaparece como recurrente en U4-U9 para articular preguntas comunicativas con los nuevos campos léxicos."
+          }
         },
         {
           "unidad": 4,
@@ -2296,7 +2341,21 @@
           "procedencia_indice": "declarado"
         }
       ],
-      "_grupo": "Pronombres"
+      "_grupo": "Pronombres",
+      "relaciones": [
+        {
+          "hilo_ref": "gram-concordancia-de-genero",
+          "tipo": "usa",
+          "detalle": "Interrogativos USA Concordancia de género para flexionar el interrogativo cuantitativo Cuánto/-a/-os/-as (cuatro formas atestadas en cuadro@p34#2). Es el ÚNICO interrogativo del paradigma U3 que flexiona en género; los otros seis (Qué, Quién/Quiénes, Cuál, Dónde, Cómo, Cuándo) son invariables. Aplicación parcial: no es prerrequisito del paradigma entero.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "gram-paradigma-regular-del-presente-ar-er-ir",
+          "tipo": "usa",
+          "detalle": "Interrogativos USA el paradigma regular del presente para formar preguntas comunicativas. Cuadro@p34#2 ejemplifica con verbos regulares conjugados: '¿Qué comes?', '¿A qué hora comes?', '¿Dónde viven tus abuelos?'. El paradigma verbal habilita el contenido proposicional sobre el que opera el interrogativo.",
+          "unidad_relevante": 3
+        }
+      ]
     },
     {
       "id": "gram-irregularidad-vocalica-e-ie-presente",
@@ -2479,7 +2538,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p34#1",
             "cuadro@p34#2",
@@ -2500,10 +2561,41 @@
             "p41-act3"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §9.1.1 Presente — paradigma de verbos regulares en las tres conjugaciones (-ar/-er/-ir)."
+          "reconciliado_con": "pcic:PCIC A1 §9.1.1 Presente — paradigma de verbos regulares en las tres conjugaciones (-ar/-er/-ir).",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p34#1 'Presente de los verbos regulares' presenta el paradigma completo de las tres conjugaciones (-ar, -er, -ir) con tres lemas modelo: estudiar (-ar), comer (-er), vivir (-ir). La tabla cruza las seis personas (yo, tú, él/ella/Ud., nosotros/-as, vosotros/-as, ellos/ellas/Uds.) con los tres lemas, generando 18 formas paradigmáticas. Nota explicativa 'Ud. = usted; Uds. = ustedes'. Tres ejemplos pragmáticos: '¿Dónde estudiáis vosotros?', 'Ana y Sebastián comen en el instituto.', 'Nosotros vivimos en Lima.'",
+            "fuente": "cuadro@p34#1",
+            "analisis_ia": "Primer cierre canónico del paradigma regular del presente en NC1. PCIC A1 §9.1 (presente de indicativo, paradigma regular). Cumple los criterios §6.4 del REDISEÑO: cuadro propio + paradigma sistematizado + tres lemas modelo. Decisión pedagógica clave: NC1 elige estudiar/comer/vivir como modelos (no los más clásicos hablar/comer/vivir) — coherente con el contexto escolar y familiar de U3, donde la unidad gira alrededor de la escuela y la familia. Estado previo de los tres lemas como hilos verbales independientes: `verb-estudiar` y `verb-vivir` ya estaban introducidos como lemas en U2 (su evento U3 queda `aplica` — reutilización como modelo del paradigma); `verb-comer` es lema nuevo y se introduce simultáneamente en U3 — el evento U3 del lema lleva `introduce` y aparece tanto en el hilo gramatical (este cuadro) como en su propio hilo verbal (cuadro@p34#1 es fuente compartida). La concordancia sujeto-verbo (persona/número) se opera implícitamente — cada fila del cuadro es una persona, y cada lema flexiona consistente. La canonización analítica de las irregularidades verbales del presente llega después: U4 (irregularidad vocálica e→ie con querer principal), U6 (e→ie recurrente con cerrar; o→ue anticipación con dormir), U7 (o→ue principal con acostarse/dormir/volver). El paradigma habilita las preguntas comunicativas del propio U3 (cuadro@p34#2 ejemplifica con presente regular); en U4-U9 se aplica con cada lema regular nuevo del corpus."
+          }
         }
       ],
-      "_grupo": "Tiempos y modos verbales"
+      "_grupo": "Tiempos y modos verbales",
+      "relaciones": [
+        {
+          "hilo_ref": "gram-pronombre-sujeto",
+          "tipo": "prerrequisito",
+          "detalle": "El paradigma regular del presente DEPENDE del pronombre sujeto: cada fila del cuadro@p34#1 es una persona del pronombre y la forma verbal correspondiente. Sin el paradigma de 6 personas del pronombre (canonizado en U1+U2) el cuadro verbal no se puede operar. Prerrequisito operativo direccional.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "verb-comer",
+          "tipo": "usa",
+          "detalle": "El paradigma regular del presente USA al lema comer como vehículo para mostrar la 2ª conjugación (-er) en el cuadro@p34#1. El paradigma se sirve del lema como dato concreto, pero podría haber elegido otro lema regular -er (beber, leer); la sistematización del paradigma no depende formalmente de comer.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "verb-estudiar",
+          "tipo": "usa",
+          "detalle": "El paradigma regular del presente USA al lema estudiar como vehículo para mostrar la 1ª conjugación (-ar) en el cuadro@p34#1. Decisión pedagógica de NC1: estudiar (no hablar) como modelo -ar — coherente con el contexto escolar de U3.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "verb-vivir",
+          "tipo": "usa",
+          "detalle": "El paradigma regular del presente USA al lema vivir como vehículo para mostrar la 3ª conjugación (-ir) en el cuadro@p34#1. vivir es el verbo de identidad geográfica nuclear en A1.1 (¿Dónde vives?) — elección coherente con el flujo comunicativo del libro.",
+          "unidad_relevante": 3
+        }
+      ]
     },
     {
       "id": "gram-posesivos",
@@ -2513,7 +2605,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p35#1",
             "p32-act2",
@@ -2538,10 +2632,29 @@
             "p41-act3",
             "p41-act4"
           ],
-          "procedencia_indice": "declarado"
+          "procedencia_indice": "declarado",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p35#1 'Posesivos' presenta el paradigma completo de adjetivos posesivos átonos en tabla 6 personas × singular/plural: yo → mi/mis (mi casa / libro, mis casas / libros); tú → tu/tus (tu mesa / boli, tus mesas / bolis); él/ella/Ud. → su/sus (su silla / hijo, sus sillas / hijos); nosotros/-as → nuestro/nuestra/nuestros/nuestras (nuestro perro / nuestra amiga, nuestros perros / nuestras amigas); vosotros/-as → vuestro/vuestra/vuestros/vuestras (vuestro tío / vuestra silla, vuestros tíos / vuestras sillas); ellos/ellas/Uds. → su/sus (sincretismo idéntico a 3ª singular).",
+            "fuente": "cuadro@p35#1",
+            "analisis_ia": "Primer cierre canónico del paradigma de adjetivos posesivos átonos en NC1. PCIC A1 §7.2 (posesivos). El cuadro despliega dos rasgos morfológicos cruzados: persona del poseedor (6 valores con sincretismo 3ª singular = 3ª plural en 'su/sus') y número del poseído (singular/plural). Las personas 1ª/2ª singular (mi/tu) y todas las 3ª (su) NO flexionan en género — solo varían por número del poseído. Las personas 1ª/2ª plural (nuestro/vuestro) SÍ flexionan en género Y número del poseído: cuatro formas cada una. Esto introduce la primera asimetría visible del paradigma flexivo posesivo del español. El sincretismo 3ª singular = 3ª plural (su/sus para él/ella/Ud./ellos/ellas/Uds.) es decisión pedagógica del libro — no se canoniza la forma tónica (mío/tuyo/suyo) que entra en niveles superiores. El paradigma se introduce en U3 con la familia (Parientes, principal U3) como contexto natural: 'mi padre', 'mis hermanos', 'nuestra abuela', 'sus hijos' son la aplicación pragmática inmediata. Convive con `gram · Concordancia de género` (recurrente U3, aplicada al paradigma nuestro/vuestro) y `gram · Concordancia de número` (recurrente U3). Reaparece como recurrente en U4-U9 aplicando posesión sobre los nuevos campos léxicos."
+          }
         }
       ],
-      "_grupo": "Determinantes"
+      "_grupo": "Determinantes",
+      "relaciones": [
+        {
+          "hilo_ref": "gram-concordancia-de-genero",
+          "tipo": "usa",
+          "detalle": "Posesivos USA Concordancia de género para flexionar las formas de 1ª/2ª persona del plural en cuadro@p35#1: nuestro/nuestra/nuestros/nuestras y vuestro/vuestra/vuestros/vuestras (cuatro celdas masc-sg/fem-sg/masc-pl/fem-pl cada uno). Aplicación parcial: las personas 1ª/2ª/3ª singular y 3ª plural (mi, tu, su, sus) NO flexionan en género — solo número.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "gram-pronombre-sujeto",
+          "tipo": "usa",
+          "detalle": "Posesivos USA Pronombre sujeto como columna estructural del paradigma de poseedor en cuadro@p35#1. Cada fila del cuadro de posesivos cruza una persona del pronombre con sus formas posesivas correspondientes. El pronombre es la espina estructural del paradigma posesivo (igual que del paradigma verbal en cuadro@p34#1).",
+          "unidad_relevante": 3
+        }
+      ]
     },
     {
       "id": "gram-preposiciones",
@@ -2677,7 +2790,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "cuadro@p34#1",
             "cuadro@p35#1",
@@ -2689,7 +2804,12 @@
             "p41-act4"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
+          "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto",
+          "explicacion": {
+            "que_dice_el_libro": "El pronombre sujeto se reutiliza en U3 como encabezado estructural en dos cuadros: cuadro@p34#1 ('Presente de los verbos regulares') usa el paradigma de 6 personas (yo, tú, él/ella/Ud., nosotros/-as, vosotros/-as, ellos/ellas/Uds.) como columna de la tabla de conjugación; cuadro@p35#1 ('Posesivos') lo reusa idénticamente como columna del paradigma posesivo. La notación 'Ud./Uds.' aparece como abreviatura de usted/ustedes en ambos cuadros.",
+            "fuente": "cuadro@p34#1",
+            "analisis_ia": "Recurrente material desde U1 (principal con 3 formas singulares, cuadro@p14#1) y U2 (amplía a 6 personas, cuadro@p24#1). En U3 el pronombre NO se reintroduce ni se reformula: se reutiliza como columna estructural de dos paradigmas nuevos — el verbal regular (cuadro@p34#1) y el posesivo (cuadro@p35#1). Esto consolida pedagógicamente al pronombre sujeto como el eje cruzado del sistema flexivo de NC1: persona verbal + persona del poseedor + sincretismo 3ª singular = 3ª plural en ambos planos. El alumno A1 ve el paradigma de 6 personas en cuatro cuadros distintos del libro (p14#1 ser/llamarse/tener singular; p24#1 ser/tener completo; p34#1 regulares; p35#1 posesivos) y deriva la regularidad estructural por repetición. Sin sistematización nueva del propio pronombre; el contenido se consume como soporte. La canonización de las series átonas (OD, OI) se difiere a U4 con la construcción gustar/doler (pronombres átonos de OI: me/te/le/nos/os/les)."
+          }
         },
         {
           "unidad": 6,
@@ -2704,7 +2824,33 @@
           "reconciliado_con": "pcic:PCIC A1 §7.1.1 Pronombre sujeto"
         }
       ],
-      "_grupo": "Pronombres"
+      "_grupo": "Pronombres",
+      "relaciones": [
+        {
+          "hilo_ref": "gram-concordancia-de-genero",
+          "tipo": "usa",
+          "detalle": "Pronombre sujeto USA Concordancia de género para flexionar las formas de 1ª/2ª persona del plural (nosotros/nosotras, vosotros/vosotras), atestadas con notación con barra en cuadro@p35#1 y cuadro@p34#1 (U3). Aplicación parcial: las otras cuatro personas (yo, tú, él/ella/Ud., ellos/ellas/Uds.) no flexionan en género.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "verb-comer",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p34#1 (U3) presenta el paradigma regular del presente con pronombre sujeto como columna y comer como uno de los tres verbos modelo. Coocurren paralelamente: cada fila de la tabla cruza una persona del pronombre con la forma correspondiente de comer.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "verb-estudiar",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p34#1 (U3) presenta el paradigma regular del presente con pronombre sujeto como columna y estudiar como uno de los tres verbos modelo. Coocurren paralelamente — cada fila cruza pronombre con forma de estudiar.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "verb-vivir",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p34#1 (U3) presenta el paradigma regular del presente con pronombre sujeto como columna y vivir como uno de los tres verbos modelo. Coocurren paralelamente — cada fila cruza pronombre con forma de vivir.",
+          "unidad_relevante": 3
+        }
+      ]
     },
     {
       "id": "gram-pronombres-atonos-de-oi",
@@ -2956,7 +3102,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "sistematiza"
+          ],
           "evidencias": [
             "cuadro@p37#2",
             "p37-act10",
@@ -2964,7 +3112,12 @@
             "p37-act9"
           ],
           "procedencia_indice": "reconciliado",
-          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)"
+          "reconciliado_con": "pcic:PCIC A1 pronunciación §5.2 Identificación y producción de fonemas consonánticos + ortografía (correspondencias fonema-grafía)",
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p37#2 expone dos reglas de correspondencia sonido-grafía para el fonema /θ/: '/θ/ + a, o, u → za, zo, zu' y '/θ/ + e, i → ce, ci'. Cinco ejemplos introductorios cubren las cinco vocales: azul (zu), bicicleta (ci), cinco (ci), marzo (zo), zapato (za).",
+            "fuente": "cuadro@p37#2",
+            "analisis_ia": "Sistematiza el primer sonido específico del paradigma de sonidos del libro. PCIC A1 ortografía (correspondencias sonido-grafía con doble grafía). El campo 'Sonidos y correspondencias ortográficas' fue anticipado en U0 con la etiqueta `[anticipacion]` (primera exposición no sistematizada a la grafía española en el contexto del Abecedario); U3 fija la primera regla concreta y didácticamente compleja: el fonema /θ/ del español peninsular, con dos correspondencias grafemáticas que se eligen según la vocal siguiente (z + a/o/u; c + e/i). NC1 omite explicitar la variación dialectal seseo (la /s/ del español americano y de Andalucía) vs distinción (la /θ/ peninsular): la regla del cuadro aplica a la GRAFÍA universal, no a la pronunciación local — decisión pedagógica defendible para A1 (la grafía es estable; la pronunciación es geográfica). Los cinco ejemplos cubren las cinco vocales en orden alfabético: za (zapato), zo (marzo), zu (azul), ce (cinco, bicicleta), ci (cinco, bicicleta). Las excepciones léxicas con z + e/i (zeta, zigzag, zen, zinc) y los préstamos no entran en NC1. El sonido /θ/ es el primero del paradigma de sonidos canonizados; reaparecerá secuencialmente: /r/ y /rr/ en U4, /x/ en U5, b=v en U6, /k/ en U8 — cada unidad sistematiza un sonido o par de letras."
+          }
         },
         {
           "unidad": 4,
@@ -3336,7 +3489,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "cuadro@p34#1",
             "p34-act1",
@@ -3356,7 +3511,12 @@
             "comes",
             "como",
             "coméis"
-          ]
+          ],
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p34#1 expone el paradigma completo del presente de comer en sus seis formas: como (yo), comes (tú), come (él/ella/Ud.), comemos (nosotros/-as), coméis (vosotros/-as), comen (ellos/ellas/Uds.). El verbo es modelo de la 2ª conjugación (-er) en el cuadro paradigmático. Ejemplo: 'Ana y Sebastián comen en el instituto.'",
+            "fuente": "cuadro@p34#1",
+            "analisis_ia": "Primer cierre canónico del lema 'comer' en NC1 — etiqueta `introduce`. Verbo regular de la 2ª conjugación (-er), elegido por el libro como modelo del paradigma `gram · Paradigma regular del presente` (junto con estudiar -ar y vivir -ir). El lema es nuevo en U3 (no aparecía en U0-U2); entra simultáneamente como evento verbal `introduce` y como contenido material del cuadro gramatical principal de la unidad. La elección pedagógica es deliberada: 'comer' es el verbo de actividad cotidiana habitual que el alumno asocia con horarios y rutinas escolares ('Ana y Sebastián comen en el instituto') — entrelaza con `La hora` (cuadro@p37#1: '¿A qué hora comes?', presente en el cuadro de interrogativos p34#2) y con la unidad U4, que canoniza el campo léxico de alimentos y la construcción gustar para hablar de comida. Las seis formas paradigmáticas se atestan completas en cuadro@p34#1; reaparece como aplicación material en U4-U9 con régimen ampliado. Convive con `rasgo_por_tiempo: regular -er` del lema en el bloque verbal (plano del lema concreto); el paradigma como contenido enseñado vive en el hilo gramatical `gram · Paradigma regular del presente` (REDISEÑO §7.2 — planos ortogonales)."
+          }
         },
         {
           "unidad": 4,
@@ -3456,6 +3616,20 @@
             "come",
             "comes"
           ]
+        }
+      ],
+      "relaciones": [
+        {
+          "hilo_ref": "verb-estudiar",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p34#1 (U3) presenta a comer y estudiar como dos de los tres verbos modelo del paradigma regular del presente, en columnas paralelas. Coocurrencia editorial — modelos del paradigma -er y -ar respectivamente.",
+          "unidad_relevante": 3
+        },
+        {
+          "hilo_ref": "verb-vivir",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p34#1 (U3) presenta a comer y vivir como dos de los tres verbos modelo del paradigma regular del presente, en columnas paralelas. Coocurrencia editorial — modelos del paradigma -er y -ir respectivamente.",
+          "unidad_relevante": 3
         }
       ]
     },
@@ -3911,7 +4085,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p34-act1@R",
             "p34-act2@R",
@@ -4012,7 +4188,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p35-act5",
             "p36-act1",
@@ -4180,7 +4358,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "cuadro@p34#1",
             "p33-act10@R",
@@ -4206,7 +4386,12 @@
             "estudias",
             "estudio",
             "estudiáis"
-          ]
+          ],
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p34#1 expone el paradigma completo del presente de estudiar: estudio (yo), estudias (tú), estudia (él/ella/Ud.), estudiamos (nosotros/-as), estudiáis (vosotros/-as), estudian (ellos/ellas/Uds.). El verbo es modelo de la 1ª conjugación (-ar) en el cuadro paradigmático. Ejemplo: '¿Dónde estudiáis vosotros?'",
+            "fuente": "cuadro@p34#1",
+            "analisis_ia": "Aplicación canónica del lema 'estudiar' (introducido en U2 — etiqueta `aplica` en U3). Verbo regular -ar, elegido por el libro como modelo de la 1ª conjugación del paradigma `gram · Paradigma regular del presente` en U3. El lema no se reintroduce: ya estaba activo desde U2 con formas atestadas en presente ('los estudiantes estudian X', 'Ana estudia en Madrid'). En U3 se REUTILIZA como columna del cuadro paradigmático: el alumno ya conoce el verbo pragmáticamente, ahora ve sus seis formas sistematizadas en paradigma cerrado. Convención editorial v12.10 sobre lemas-modelo: el evento del lema verbal queda `aplica` (no `sistematiza`), porque la sistematización canónica corresponde al hilo gramatical (`gram · Paradigma regular del presente`, etiqueta `introduce` U3), no al lema individual — distinción ortogonal del plano verbal vs plano gramatical (REDISEÑO §7.2). El paradigma sistematizado en U3 habilita inmediatamente las preguntas comunicativas con interrogativos (¿Dónde estudias?, ¿Qué estudias?, ¿Cuándo estudiáis?) — el ejemplo '¿Dónde estudiáis vosotros?' es del propio cuadro. Convive con `rasgo_por_tiempo: regular -ar`."
+          }
         },
         {
           "unidad": 6,
@@ -4218,6 +4403,14 @@
           "formas": [
             "estudia"
           ]
+        }
+      ],
+      "relaciones": [
+        {
+          "hilo_ref": "verb-vivir",
+          "tipo": "comparte",
+          "detalle": "Cuadro@p34#1 (U3) presenta a estudiar y vivir como dos de los tres verbos modelo del paradigma regular del presente, en columnas paralelas. Coocurrencia editorial — modelos del paradigma -ar y -ir respectivamente.",
+          "unidad_relevante": 3
         }
       ]
     },
@@ -4245,7 +4438,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p38-act1",
             "p38-act1@R",
@@ -4402,7 +4597,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p34-act1",
             "p34-act1@R",
@@ -4452,7 +4649,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p40-act1"
           ],
@@ -4584,7 +4783,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p40-act1"
           ],
@@ -4821,7 +5022,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p33-act6",
             "p33-act8"
@@ -5135,7 +5338,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p32-act2",
             "p32-act2@R",
@@ -5242,7 +5447,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p36-act1"
           ],
@@ -5718,7 +5925,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p32-act3",
             "p32-act4",
@@ -5974,7 +6183,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "p32-act3",
             "p33-act10@R",
@@ -6124,7 +6335,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "introduce"
+          ],
           "evidencias": [
             "p33-act6",
             "p33-act8",
@@ -6169,7 +6382,9 @@
       "eventos": [
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p36-act1"
           ],
@@ -6180,7 +6395,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "anticipacion"
+          ],
           "evidencias": [
             "p36-act1"
           ],
@@ -6373,7 +6590,9 @@
         },
         {
           "unidad": 3,
-          "etiquetas": [],
+          "etiquetas": [
+            "aplica"
+          ],
           "evidencias": [
             "cuadro@p34#1",
             "p33-act10@R",
@@ -6402,7 +6621,12 @@
             "vivimos",
             "vivo",
             "vivís"
-          ]
+          ],
+          "explicacion": {
+            "que_dice_el_libro": "Cuadro@p34#1 expone el paradigma completo del presente de vivir: vivo (yo), vives (tú), vive (él/ella/Ud.), vivimos (nosotros/-as), vivís (vosotros/-as), viven (ellos/ellas/Uds.). El verbo es modelo de la 3ª conjugación (-ir) en el cuadro paradigmático. Ejemplo: 'Nosotros vivimos en Lima.'",
+            "fuente": "cuadro@p34#1",
+            "analisis_ia": "Aplicación canónica del lema 'vivir' (introducido en U2 — etiqueta `aplica` en U3). Verbo regular -ir, elegido por el libro como modelo de la 3ª conjugación del paradigma `gram · Paradigma regular del presente` U3. Misma convención que estudiar U3 (v12.10): el lema queda `aplica` (introducido U2); la sistematización del paradigma vive en el hilo gramatical, no en el lema. Pedagógicamente vivir es el VERBO DE IDENTIDAD GEOGRÁFICA en A1.1 — habilita las preguntas '¿Dónde vives?' (canónicas desde U1) que entrelazan tres principales de U3 simultáneamente: `Paradigma regular del presente` (vivir es modelo -ir), `Interrogativos` (cuadro@p34#2 reaplica '¿Dónde viven tus abuelos?'), y la unidad temática completa 'La Familia' / `Parientes` (¿dónde viven los miembros de la familia?). Verb-vivir cierra en U3 como verbo nuclear del paradigma regular; reaparece como aplicación material en U5 (vivienda principal), U6 (¿dónde vives?, identidad de ciudad) y U7 (hábitos relacionados con vivir). Convive con `rasgo_por_tiempo: regular -ir` del lema."
+          }
         },
         {
           "unidad": 5,
@@ -7378,7 +7602,7 @@
       "id": "prop-rel-gram-concordancia-de-genero-gram-posesivos",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-posesivos'. Cuadros compartidos: cuadro@p35#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-concordancia-de-genero",
@@ -7387,13 +7611,14 @@
         "cuadros_compartidos": [
           "cuadro@p35#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'usa' origen=gram-posesivos destino=gram-concordancia-de-genero; entrada de relación añadida en gram-posesivos"
     },
     {
       "id": "prop-rel-gram-concordancia-de-genero-gram-pronombre-sujeto",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-pronombre-sujeto'. Cuadros compartidos: cuadro@p35#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-concordancia-de-genero",
@@ -7402,13 +7627,14 @@
         "cuadros_compartidos": [
           "cuadro@p35#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'usa' origen=gram-pronombre-sujeto destino=gram-concordancia-de-genero; entrada de relación añadida en gram-pronombre-sujeto"
     },
     {
       "id": "prop-rel-gram-posesivos-gram-pronombre-sujeto",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-posesivos' y 'gram-pronombre-sujeto'. Cuadros compartidos: cuadro@p35#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-posesivos",
@@ -7417,13 +7643,14 @@
         "cuadros_compartidos": [
           "cuadro@p35#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'usa' origen=gram-posesivos destino=gram-pronombre-sujeto; entrada de relación añadida en gram-posesivos"
     },
     {
       "id": "prop-rel-gram-concordancia-de-genero-gram-interrogativos",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-interrogativos'. Cuadros compartidos: cuadro@p34#2 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-concordancia-de-genero",
@@ -7432,7 +7659,8 @@
         "cuadros_compartidos": [
           "cuadro@p34#2"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'usa' origen=gram-interrogativos destino=gram-concordancia-de-genero; entrada de relación añadida en gram-interrogativos"
     },
     {
       "id": "prop-rel-gram-imperativo-tu-verb-beber",
@@ -8671,7 +8899,7 @@
       "id": "prop-rel-gram-pronombre-sujeto-verb-comer",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-comer'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-pronombre-sujeto",
@@ -8680,13 +8908,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre gram-pronombre-sujeto y verb-comer; entrada de relación añadida en gram-pronombre-sujeto"
     },
     {
       "id": "prop-rel-gram-pronombre-sujeto-verb-estudiar",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-estudiar'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-pronombre-sujeto",
@@ -8695,13 +8924,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre gram-pronombre-sujeto y verb-estudiar; entrada de relación añadida en gram-pronombre-sujeto"
     },
     {
       "id": "prop-rel-gram-pronombre-sujeto-verb-vivir",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-pronombre-sujeto' y 'verb-vivir'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-pronombre-sujeto",
@@ -8710,13 +8940,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre gram-pronombre-sujeto y verb-vivir; entrada de relación añadida en gram-pronombre-sujeto"
     },
     {
       "id": "prop-rel-verb-comer-verb-estudiar",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-comer' y 'verb-estudiar'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "verb-comer",
@@ -8725,13 +8956,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre verb-comer y verb-estudiar; entrada de relación añadida en verb-comer"
     },
     {
       "id": "prop-rel-verb-comer-verb-vivir",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-comer' y 'verb-vivir'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "verb-comer",
@@ -8740,13 +8972,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre verb-comer y verb-vivir; entrada de relación añadida en verb-comer"
     },
     {
       "id": "prop-rel-verb-estudiar-verb-vivir",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'verb-estudiar' y 'verb-vivir'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "verb-estudiar",
@@ -8755,7 +8988,8 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'comparte' entre verb-estudiar y verb-vivir; entrada de relación añadida en verb-estudiar"
     },
     {
       "id": "prop-rel-gram-pronombre-sujeto-verb-cerrar",
@@ -9212,7 +9446,7 @@
       "id": "prop-rel-gram-concordancia-de-genero-gram-paradigma-regular-del-presente-ar-er-ir",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-concordancia-de-genero' y 'gram-paradigma-regular-del-presente-ar-er-ir'. Cuadros compartidos: cuadro@p34#2 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "rechazada",
       "relacion_candidata": {
         "hilos": [
           "gram-concordancia-de-genero",
@@ -9221,13 +9455,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#2"
         ]
-      }
+      },
+      "resolucion": "rechazada — coocurrencia accidental en cuadro@p34#2 sin relación didáctica. Los verbos regulares del presente NO flexionan en género en español (solo en persona/número); el cuadro@p34#2 menciona ambos hilos en sus listas tipadas porque los ejemplos de interrogativos incluyen verbos conjugados Y el interrogativo Cuánto/-a/-os/-as flexiona en género — pero esto es coincidencia editorial, no vínculo entre concordancia de género y paradigma verbal. El paradigma verbal y la concordancia de género operan en planos morfológicos independientes."
     },
     {
       "id": "prop-rel-gram-interrogativos-gram-paradigma-regular-del-presente-ar-er-ir",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-interrogativos' y 'gram-paradigma-regular-del-presente-ar-er-ir'. Cuadros compartidos: cuadro@p34#2 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-interrogativos",
@@ -9236,7 +9471,8 @@
         "cuadros_compartidos": [
           "cuadro@p34#2"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'usa' origen=gram-interrogativos destino=gram-paradigma-regular-del-presente-ar-er-ir; entrada de relación añadida en gram-interrogativos"
     },
     {
       "id": "prop-rel-gram-imperativo-tu-gram-uso-del-imperativo-instrucciones-y-peticiones",
@@ -9512,7 +9748,7 @@
       "id": "prop-rel-gram-paradigma-regular-del-presente-ar-er-ir-gram-pronombre-sujeto",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-paradigma-regular-del-presente-ar-er-ir' y 'gram-pronombre-sujeto'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-paradigma-regular-del-presente-ar-er-ir",
@@ -9521,13 +9757,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'prerrequisito' origen=gram-paradigma-regular-del-presente-ar-er-ir destino=gram-pronombre-sujeto; entrada de relación añadida en gram-paradigma-regular-del-presente-ar-er-ir"
     },
     {
       "id": "prop-rel-gram-paradigma-regular-del-presente-ar-er-ir-verb-comer",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-paradigma-regular-del-presente-ar-er-ir' y 'verb-comer'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-paradigma-regular-del-presente-ar-er-ir",
@@ -9536,13 +9773,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'usa' origen=gram-paradigma-regular-del-presente-ar-er-ir destino=verb-comer; entrada de relación añadida en gram-paradigma-regular-del-presente-ar-er-ir"
     },
     {
       "id": "prop-rel-gram-paradigma-regular-del-presente-ar-er-ir-verb-estudiar",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-paradigma-regular-del-presente-ar-er-ir' y 'verb-estudiar'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-paradigma-regular-del-presente-ar-er-ir",
@@ -9551,13 +9789,14 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'usa' origen=gram-paradigma-regular-del-presente-ar-er-ir destino=verb-estudiar; entrada de relación añadida en gram-paradigma-regular-del-presente-ar-er-ir"
     },
     {
       "id": "prop-rel-gram-paradigma-regular-del-presente-ar-er-ir-verb-vivir",
       "tipo": "relacion_cross_hilo",
       "descripcion": "Candidato relación cross-hilo (par no dirigido) entre 'gram-paradigma-regular-del-presente-ar-er-ir' y 'verb-vivir'. Cuadros compartidos: cuadro@p34#1 (U3). Capa 2 debe decidir 'tipo' (usa/prerrequisito/activa/contrasta/comparte), elegir dirección si el tipo lo requiere y redactar 'detalle' editorial; ver reglas-reciclaje.md §15.",
-      "estado": "pendiente",
+      "estado": "aceptada",
       "relacion_candidata": {
         "hilos": [
           "gram-paradigma-regular-del-presente-ar-er-ir",
@@ -9566,7 +9805,8 @@
         "cuadros_compartidos": [
           "cuadro@p34#1"
         ]
-      }
+      },
+      "resolucion": "aceptada como 'usa' origen=gram-paradigma-regular-del-presente-ar-er-ir destino=verb-vivir; entrada de relación añadida en gram-paradigma-regular-del-presente-ar-er-ir"
     }
   ]
 }

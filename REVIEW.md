@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-24 (v12.17 — **Paso 2b adicional cerrado**: filtro de canónicos `_deprecated` en Capa 1 (`generar_reciclaje_capa1.py`) — los hilos huérfanos `voc-practica-del-surf` y `voc-adjetivos-descriptivos` ya no se proyectan desde `nc1-curso.json` aunque el índice del libro siga mencionándolos por verbatim. Reciclaje regenerado: 125 hilos, 5 hilos vigentes del split poblados con evidencias. Registry léxico saneado: `_meta.version` v1.10→1.11 sin prefijo. Validadores en verde, sin regresión).
+> **Última actualización:** 2026-05-24 (v12.18 — **Capa 2 sobre U3 cerrada**: 36 etiquetas (11 introduce + 16 aplica + 1 sistematiza + 8 anticipacion) + 10 explicaciones editoriales sobre 5 cuadros únicos U3 (paradigma regular, interrogativos, posesivos, La hora, sonido /θ/) + 15 cierres `hilo.relaciones[]` (total proyecto 23) + 1 rechazo razonado (concordancia género ↔ paradigma regular = coocurrencia accidental, no vínculo didáctico). Cuarta unidad enriquecida; quedan U4-U9. Sin regresión en validadores).
+>
+> **Hito previo (v12.17):** 2026-05-24 (Paso 2b adicional: filtro de canónicos `_deprecated` en Capa 1; hilos huérfanos eliminados; registry léxico saneado v1.10→1.11).
 >
 > **Hito previo (v12.16):** 2026-05-24 (Paso 2b: `nc1-reciclaje.json` regenerado tras la recanonización de «Adjetivos descriptivos»; 2 propuestas cross-hilo obsoletas eliminadas; registry saneado para validador inv-7).
 >

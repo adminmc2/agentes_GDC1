@@ -15,6 +15,20 @@
 
 ---
 
+## [v12.18 — 2026-05-24] — Capa 2 sobre U3 cerrada (etiquetas + explicaciones + cierres cross-hilo)
+
+Cuarta sesión de Capa 2 IA (después de U0 v11.80, U1 v11.84/v12.4, U2 v12.10). Aplicada sobre los 36 eventos U3 del canónico `nc1-reciclaje.json`:
+
+(a) **36 etiquetas asignadas** según `reglas-reciclaje.md` §3 + lectura del índice del curso U3 (vocabulario principal: Parientes; gramática principal: Presente de los verbos regulares + Interrogativos + Posesivos; pron/orto: sonido /θ/; comunicación con cuadro: La hora). Reparto: 11 `introduce` (Parientes principal U3 + La hora primera aparición canónica + Cine y teatro/Televisión y radio campos culturales nuevos + 3 principales gramaticales + 4 lemas verbales nuevos: comer/escribir/merendar/trabajar), 16 `aplica` (léxico/gramática previa que se reutiliza sin sistematización nueva: Asignaturas/Centros/Días/Edad/N. cardinales/Saludos; Artículos/Concordancia género-número/Pron. sujeto; verbos previos estudiar/hablar/llamarse/ser/tener/vivir), 1 `sistematiza` (Sonidos y correspondencias ortográficas — anticipado en U0, sistematizado primero sonido /θ/ con cuadro@p37#2), 8 `anticipacion` (Profesiones→U6; verbos estar→U5/gustar→U4/hacer Inf→U6/interesar→U4 con gustar/jugar→U6/venir Inf+Pres→U6).
+
+(b) **10 explicaciones editoriales** para los 10 eventos U3 con cuadro (anclados a 5 cuadros únicos: p34#1 paradigma regular, p34#2 interrogativos, p35#1 posesivos, p37#1 La hora, p37#2 sonido /θ/). Mismo criterio que v12.4/v12.10: flujo didáctico, prerrequisitos, arco del curso, contexto de tiempos y formas para verbos. Taxonomía explícita en cada `analisis_ia`: principal U3 / recurrente material / anticipación. Convención v12.10 sobre lemas-modelo respetada: estudiar/vivir en cuadro@p34#1 quedan `aplica` (introducidos U2), comer queda `introduce` (lema nuevo en U3 simultáneamente al cuadro paradigmático).
+
+(c) **15 cierres editoriales de `hilo.relaciones[]`** sobre cuadros U3 (sumados a los 8 de U2, total proyecto 23): 6 `comparte` (paradigma regular: Pron sujeto ↔ {comer, estudiar, vivir} + lemas entre sí), 1 `prerrequisito` direccional (Paradigma regular → Pron sujeto: el cuadro de conjugación depende del paradigma de 6 personas del pronombre), 8 `usa` direccionales (Paradigma → cada lema modelo como vehículo; Interrogativos → Concordancia para Cuánto/-a/-os/-as; Interrogativos → Paradigma para preguntas verbales; Posesivos → Concordancia para nuestro/vuestro; Pron sujeto → Concordancia para nosotros/-as/vosotros/-as; Posesivos → Pron sujeto como columna estructural).
+
+(d) **1 rechazo razonado** — `gram-concordancia-de-genero ↔ gram-paradigma-regular-del-presente-ar-er-ir` (cuadro@p34#2): coocurrencia accidental sin vínculo didáctico. Los verbos regulares NO flexionan en género; ambos aparecen en el mismo cuadro porque los ejemplos de interrogativos llevan verbos conjugados Y el interrogativo Cuánto/-a flexiona, pero entre paradigma verbal y concordancia de género no hay relación operativa.
+
+Validadores: estructural fase 2 en verde (0 errores). Cross-unidad: 14 alertas R1/R4 idénticas a sesiones anteriores, sin regresión. Capa 1 sin tocar. Cuarta unidad enriquecida en NC1 (U0+U1+U2+U3); quedan U4-U9 para futuras sesiones Capa 2.
+
 ## [v12.17 — 2026-05-24] — Paso 2b adicional: cierre del split «Práctica del surf» + filtro deprecated en Capa 1
 
 Tras v12.16 el reciclaje seguía arrastrando un hilo huérfano `voc-practica-del-surf` (nivel `mapa`, 0 evidencias, 0 etiquetas) — Capa 1 lo proyectaba porque `nc1-curso.json` U8 sigue diciendo «Práctica del surf» (verbatim del libro, decisión firme), aunque el registry tiene el canónico marcado como `_deprecated` desde v12.13/v12.15. Mismo problema latente con `voc-adjetivos-descriptivos` en U5: regenerar volvía a crear el hilo huérfano.
