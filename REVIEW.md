@@ -12,6 +12,10 @@
 >
 > **Última actualización:** 2026-05-24 (v12.8 — Taxonomía cerrada para la deuda de «Adjetivos descriptivos»: **3 buckets canónicos** sustituirán al actual — (1) «Características físicas» (PCIC §1.1), (2) «Carácter y personalidad» (PCIC §1.2), (3) «Cualidades de objetos y lugares» (sin PCIC directo, cubre todo lo no-persona). Residuo disuelto caso a caso (enorme/fuerte/famoso reasignados; favorito sale de la taxonomía). Ejecución sigue diferida al ejecutor 2 como lote único U5/U6/U8/U9).
 >
+> **Hito previo (v12.7):** 2026-05-24 (Dashboard reciclaje: tiempos verbales pasan a eje visual neutro — todas las siglas PRE/IND/IMP/INF comparten cuadradito gris-azulado oscuro con texto blanco, mismo lenguaje que las iniciales de procedencia. Quita la colisión PRE↔introduce).
+>
+> **Hito previo (v12.6):** 2026-05-24 (Dashboard reciclaje: círculos → cuadrados, color por tiempo verbal, leyenda rediseñada).
+>
 > **Hito previo (v12.5):** 2026-05-24 (Documentación de deuda léxica como **recanonización global** del canónico «Adjetivos descriptivos»: el bucket vive en U5/U6/U8/U9 y mezcla físicas + carácter + residuo. Partición mínima: §1.1 + §1.2 PCIC + tratamiento del residuo + revisión paralela vivienda/ropa. Convención obligatoria: `_pcic_ref` + categoría literal del libro NC1. Prohibición de ejecución parcial).
 >
 > **Hito previo (v12.4):** 2026-05-24 (Capa 2 sobre U1 cierra explicaciones de cuadros: 12 explicaciones inyectadas. Paleta pastel unificada en dashboard. Cierra Fase 1 + Fase 2 del plan editorial — abre paso a Fase 3).

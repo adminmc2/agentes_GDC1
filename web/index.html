@@ -818,13 +818,17 @@ const REC_TIEMPO_SIGLA = {
     'Presente': 'PRE', 'Pretérito indefinido': 'IND',
     'Imperativo': 'IMP', 'Infinitivo': 'INF',
 };
-// Color pastel por tiempo verbal — v12.5+. Cada sigla lleva su propio color
-// como cuadradito de fondo en la leyenda y bajo el dot de la timeline.
+// Color por tiempo verbal — v12.7+. Eje neutro único: todas las siglas
+// comparten el mismo fondo gris-azulado oscuro con texto blanco. La sigla
+// (PRE/IND/IMP/INF) ya distingue el tiempo; el color no necesita variar
+// y así no compite con los colores de etiqueta (introduce, amplia, …).
+// Mismo lenguaje visual que las iniciales de procedencia (eje neutro).
+const REC_TIEMPO_VISUAL = { bg: '#455A64', fg: '#FFFFFF' };
 const REC_PASTEL_TIEMPO = {
-    'Presente':            { bg: '#90CAF9', fg: '#0D47A1' }, // azul
-    'Pretérito indefinido':{ bg: '#A5D6A7', fg: '#1B5E20' }, // verde
-    'Imperativo':          { bg: '#FFCC80', fg: '#E65100' }, // naranja
-    'Infinitivo':          { bg: '#CE93D8', fg: '#4A148C' }, // lila
+    'Presente':             REC_TIEMPO_VISUAL,
+    'Pretérito indefinido': REC_TIEMPO_VISUAL,
+    'Imperativo':           REC_TIEMPO_VISUAL,
+    'Infinitivo':           REC_TIEMPO_VISUAL,
 };
 
 // `procedencia_indice` — eje ortogonal a `etiquetas`. El JSON guarda 3 valores
