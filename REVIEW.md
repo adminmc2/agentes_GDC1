@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-24 (v12.22 — **Reactivación del despliegue del dashboard en Railway** (`entornoeditorial.up.railway.app`) a petición del autor. Reverte parcialmente v11.21: se restauran `Dockerfile`, `railway.toml` y `.dockerignore` (este último saneado sin las líneas `viejo/`). El push reactiva el build de Railway que llevaba fallando en «Build image» por falta de configuración).
+> **Última actualización:** 2026-05-24 (v12.23 — **Fix despliegue Railway**: añadido `Procfile` con `web: python diagrama.py` para que Railpack (builder activo del proyecto en el panel) pueda detectar el start command. El `Dockerfile` + `railway.toml` de v12.22 se conservan como respaldo. Resuelve el error «No start command detected»).
+>
+> **Hito previo (v12.22):** 2026-05-24 (Reactivación del despliegue del dashboard en Railway: Dockerfile + railway.toml + .dockerignore restaurados).
 >
 > **Hito previo (v12.21):** 2026-05-24 (Nivel 5 punto 2: matriz de decisión para `etiquetas[]` cerrada en `reglas-reciclaje.md` §3.1 — 6 predicados deterministas → 5 etiquetas en 2 capas; `contrasta`/`discrimina` en §3-bis provisional).
 >

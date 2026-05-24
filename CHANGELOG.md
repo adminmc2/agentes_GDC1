@@ -15,6 +15,20 @@
 
 ---
 
+## [v12.23 — 2026-05-24] — Fix despliegue Railway: `Procfile` para Railpack
+
+El build de v12.22 falló porque el panel de Railway tiene **Railpack** (no Dockerfile) como builder activo del proyecto, y Railpack ignora `railway.toml builder=DOCKERFILE`. Error reportado: «No start command detected». Como cambiar el builder del proyecto en el panel no era viable, se añade un `Procfile` en la raíz:
+
+```
+web: python diagrama.py
+```
+
+Railpack lo interpreta automáticamente como start command. El `Dockerfile` y el `railway.toml` se conservan (siguen siendo válidos si en algún momento se vuelve a forzar Dockerfile como builder en el panel) — no rompen Railpack.
+
+Sin cambios en código (`diagrama.py`, `web/index.html`), datos, registry ni inventarios.
+
+---
+
 ## [v12.22 — 2026-05-24] — Reactivación del despliegue del dashboard en Railway (entornoeditorial.up.railway.app)
 
 A petición del autor se **revierte parcialmente la decisión v11.21** y se reabre el carril de despliegue público del dashboard. Se restauran 3 archivos en la raíz del repo:
