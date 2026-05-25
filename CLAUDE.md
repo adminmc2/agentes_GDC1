@@ -20,6 +20,7 @@ guia-didactica-profesor-IA/
 │   ├── UX-nc1-inventario.json     (extracción de fase 1)
 │   ├── fuente/                    (PDF del libro, gitignored)
 │   ├── propuesta/                 (material editorial elaborado por sección)
+│   ├── final/                     (versión limpia para InDesign + ajustes finales)
 │   └── recursos/                  (CSVs de tarjetas, audios, imágenes…)
 ├── fases/<N>-<nombre>/            ← una carpeta por fase con CLAUDE.md + prompt + artefactos
 ├── scripts/                       ← código Python ejecutable (validación, regeneración)
@@ -35,14 +36,16 @@ guia-didactica-profesor-IA/
 
 ## Modelo de dos repositorios (A / B)
 
-El proyecto vive en **dos repositorios separados**:
+El proyecto vivió en **dos repositorios separados**:
 
-- **Repo A — este** (`guia-didactica-profesor-IA`): el **entregable publicado + infraestructura**. Inventarios canónicos (`unidades/UX/`), fases (`fases/`), scripts, dashboard (`web/`, `diagrama.py`), docs raíz. Es la versión que se versiona en GitHub.
-- **Repo B — externo** (`~/Desktop/temporal-antiguo-guia-ia/`): el **sistema de trabajo**. Sistema metodológico vivo (hub, pautas, plantillas, referencias, registro), zona de redacción en curso (`unidades/UXX-propuesta/`) y archivo del sistema CrewAI v5 anterior.
+- **Repo A — este** (`guia-didactica-profesor-IA`): el **entregable publicado + infraestructura + capa editorial activa**. Contiene `unidades/UX/propuesta/` (fuente rica con metanotas, snapshot publicado desde repo B) y `unidades/UX/final/` (versión limpia para InDesign, donde sucede toda la edición editorial actual). Inventarios canónicos, fases, scripts, dashboard, docs raíz.
+- **Repo B — externo** (`~/Desktop/temporal-antiguo-guia-ia/`): **congelado editorialmente desde 2026-05-25**. Mantiene el sistema metodológico histórico (hub, pautas, plantillas, referencias, registro), las propuestas originales y el archivo del sistema CrewAI v5. Solo se consulta como referencia; no se edita.
 
-La redacción editorial sucede en repo B; el entregable se publica a repo A.
+**Desde 2026-05-25 toda edición editorial ocurre en repo A**, capa `unidades/UX/final/`. La capa `propuesta/` queda como fuente rica intacta.
 
-## Flujo de publicación canónica (al cerrar una unidad)
+## Flujo de publicación canónica (histórico — repo B congelado desde 2026-05-25)
+
+> Este flujo describe cómo se publicaron las propuestas de U0-U9 desde repo B a repo A entre 2026-05-19 y 2026-05-25. Desde el congelamiento de repo B, ya no se aplica para edición nueva: la edición ocurre directamente en `unidades/UX/final/` de repo A. Se conserva para entender el origen de los snapshots en `propuesta/`.
 
 La redacción de cada unidad sucede en **repo B** (`~/Desktop/temporal-antiguo-guia-ia/unidades/UXX-propuesta/`). Cuando la unidad entera está cerrada y validada, las propuestas se publican (copian) a la **ruta canónica versionada de repo A** `unidades/UX/propuesta/` con renaming sin prefijo:
 
@@ -72,7 +75,7 @@ Aplican a **cualquier** trabajo en el repositorio. Reglas específicas de cada f
 2. **Validar antes de cerrar.** Cada artefacto producido pasa por validación (script, revisión visual o ambas) antes de declararse cerrado.
 3. **No inventar.** Si una palabra, fecha o dato no está en la fuente original, no se añade. Marcar como "verificación pendiente" y consultar al autor.
 4. **Una fuente única.** Cada criterio editorial vive en un único archivo. La duplicación lleva a desincronización.
-5. **Redacción editorial en repo B.** El sistema de trabajo vive en el repo externo `temporal-antiguo-guia-ia`; repo A solo recibe el entregable publicado.
+5. **Edición editorial en repo A, capa `final/`.** Desde 2026-05-25 toda edición editorial ocurre en `unidades/UX/final/` de este repo. La capa `propuesta/` se conserva intacta como fuente rica. Repo B queda congelado.
 
 ---
 
@@ -118,7 +121,8 @@ Ejemplo concreto (fase 1, extracción de U4):
 
 ## Lo que NO se hace
 
-- No redactar material editorial directamente en repo A — la redacción vive en repo B (`temporal-antiguo-guia-ia`); repo A solo recibe el entregable publicado.
+- No editar la capa `propuesta/` — es fuente rica intacta. La edición editorial ocurre en `unidades/UX/final/`.
+- No editar en repo B — congelado editorialmente desde 2026-05-25.
 - No ejecutar el sistema CrewAI antiguo (archivado en repo B, no conectado al sistema actual).
 - No saltarse la validación antes de cerrar un artefacto.
 - No inventar contenido editorial.
@@ -133,6 +137,8 @@ Ejemplo concreto (fase 1, extracción de U4):
 |---|---|---|
 | `CLAUDE.md` (raíz + de fase) | Cómo actuar **hoy** — reglas vigentes | ✅ **MANDA** |
 | `fases/1-extraccion-inventario/{schema,reglas,convenciones}.md` | Contratos de fase 1 | ✅ Manda (en fase 1) |
+| `docs/manual-estilo-final.md` | Manual de estilo de la capa `final/` — autoridad de estilo, tipografía, terminología, metadiscurso | ✅ Manda (en `unidades/**/final/*.md`, activado vía `.claude/rules/final-style.md`) |
+| `docs/formulacion-objetivos.md` | Criterios de formulación de objetivos generales y específicos (Bloom, verbos, naturaleza por sección) | ✅ Manda (objetivos en `final/`) |
 | `README.md` | Descripción del proyecto, estado de las 8 fases, cómo se trabaja | Apunta |
 | `PROCESO-MAESTRO.md` | Modelo conceptual, decisiones cerradas, esquemas, bitácora | Consulta |
 | `REVIEW.md` | Plan ejecutable con gates, estado vivo, próximos pasos | Estado, no manda reglas |

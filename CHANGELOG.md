@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.28 — 2026-05-26] — Capa `final/` abierta + piloto U1 vocabulario
+
+Capa `unidades/UX/final/` para versión limpia editable post-InDesign. Piloto cerrado en `unidades/U1/final/vocabulario.md`. Manual de estilo en `docs/manual-estilo-final.md` (autoridad path-scoped vía `.claude/rules/final-style.md`). Migrado `docs/formulacion-objetivos.md` desde repo B. CLAUDE.md raíz reconoce capa `final/` y congelación de repo B desde 2026-05-25.
+
 ## [v12.27 — 2026-05-25] — Publicación canónica de U9 — 6 secciones + 1 tarjeta CSV
 
 Mirror al repo A del trabajo editorial de U9 *Ropa* cerrado en repo B (`temporal-antiguo-guia-ia/unidades/U09-propuesta/`). Renaming sin prefijo `U09-propuesta-` según `CLAUDE.md §Flujo de publicación canónica`. Archivos publicados:

@@ -10,7 +10,11 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-25 (v12.25 — Higiene UI: panel sin explicación distingue 3 casos; mensaje neutro para "etiqueta sin cuadro" en lugar de la afirmación "No requiere explicación editorial" que pre-juzgaba la decisión del Nivel 5 punto 5).
+> **Última actualización:** 2026-05-26 (v12.28 — Capa `final/` abierta en repo A. Piloto U1 vocabulario cerrado. Manual de estilo + activación path-scoped + migración del manual de objetivos desde repo B).
+>
+> **Hito previo (v12.27):** 2026-05-25 (Publicación canónica de U9; repo B congelado editorialmente).
+>
+> **Hito previo (v12.25):** 2026-05-25 (Higiene UI: panel sin explicación distingue 3 casos; mensaje neutro para "etiqueta sin cuadro").
 >
 > **Hito previo (v12.24):** 2026-05-25 (Nivel 5 punto 3: ampliación §15 cross-hilo multifuente + canal avisos validador. Schema §6 con nuevo shape `relacion_candidata`; validador retro-compatible con avisos. REDISEÑO §5 reordenado con 7 lotes nuevos. Validador post-cambio: 0 errores, 197 avisos esperados).
 >
