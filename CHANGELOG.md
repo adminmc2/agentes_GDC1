@@ -15,6 +15,15 @@
 
 ---
 
+## [v12.26 — 2026-05-25] — Publicación canónica de U8 — 6 secciones + 3 tarjetas CSV
+
+Mirror al repo A del trabajo editorial de U8 *Descripciones* cerrado en repo B (`temporal-antiguo-guia-ia/unidades/U08-propuesta/`). Renaming sin prefijo `U08-propuesta-` según `CLAUDE.md §Flujo de publicación canónica`. Archivos publicados:
+
+- `unidades/U8/propuesta/vocabulario.md`, `gramatica.md`, `comunicacion.md`, `destrezas.md`, `cultura.md`, `evaluacion.md`.
+- `unidades/U8/recursos/tarjetas/caracter-y-personalidad.csv`, `caracteristicas-fisicas.csv`, `partes-del-cuerpo.csv`.
+
+Snapshot publicado; ediciones futuras siempre en repo B y re-publicación canónica al cerrar la siguiente vuelta.
+
 ## [v12.25 — 2026-05-25] — Higiene UI: distinguir 3 casos en panel sin explicación
 
 `web/index.html` — `renderRecPanelExplicacion`: cuando un evento no tiene `explicacion`, la UI distingue ahora 3 casos (a) Capa 2 no procesado, (b) etiqueta sin cuadro material, (c) etiqueta y cuadro pero sin explicación redactada. El caso (b) lleva mensaje neutro ("Explicación pendiente — alcance del campo en revisión, Nivel 5") en lugar de la afirmación previa "No requiere explicación editorial" — que pre-juzga la decisión sobre el alcance de `explicacion` que el Nivel 5 punto 5 dejará cerrada (cuadro-bound vs ampliada). Sin tocar lógica de render ni schema.
