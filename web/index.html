@@ -1530,7 +1530,24 @@ function renderRecPanelExplicacion(h, ev, bColor) {
                 <div style="font-size:13px;color:#37474F;line-height:1.5">${_esc(ev.explicacion.analisis_ia || '')}</div>
             </div>`;
     } else {
-        explic = `<div style="margin-top:14px;padding:14px;background:#FAFAFA;border-radius:6px;color:#90A4AE;font-size:12px;font-style:italic">Sin explicación editorial — pendiente de Capa 2.</div>`;
+        // Tres casos de evento sin `explicacion`:
+        //   (a) Evento sin etiqueta → Capa 2 aún no procesó este evento.
+        //   (b) Evento con etiqueta, sin cuadro material → el alcance del
+        //       campo `explicacion` (cuadro-bound vs ampliada) está abierto
+        //       en el Nivel 5 punto 5 del REDISEÑO; no se afirma doctrina.
+        //   (c) Evento con etiqueta y cuadro material, pero sin explicación
+        //       redactada todavía.
+        const tieneEtiqueta = ev.etiquetas && ev.etiquetas.length;
+        const tieneCuadro = (ev.evidencias || []).some(e => typeof e === 'string' && e.startsWith('cuadro@'));
+        let msg;
+        if (!tieneEtiqueta) {
+            msg = 'Capa 2 aún no ha procesado este evento.';
+        } else if (!tieneCuadro) {
+            msg = 'Explicación pendiente — alcance del campo en revisión (Nivel 5).';
+        } else {
+            msg = 'Capa 2 procesada (etiqueta asignada) pero la explicación editorial del cuadro aún no se ha redactado.';
+        }
+        explic = `<div style="margin-top:14px;padding:14px;background:var(--md-surface-variant);border-radius:6px;color:var(--md-on-surface-variant);font-size:12px;font-style:italic">${msg}</div>`;
     }
     const relacionesGlob = renderRecRelacionesGlobales(h);
     return `

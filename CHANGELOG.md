@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.25 — 2026-05-25] — Higiene UI: distinguir 3 casos en panel sin explicación
+
+`web/index.html` — `renderRecPanelExplicacion`: cuando un evento no tiene `explicacion`, la UI distingue ahora 3 casos (a) Capa 2 no procesado, (b) etiqueta sin cuadro material, (c) etiqueta y cuadro pero sin explicación redactada. El caso (b) lleva mensaje neutro ("Explicación pendiente — alcance del campo en revisión, Nivel 5") en lugar de la afirmación previa "No requiere explicación editorial" — que pre-juzga la decisión sobre el alcance de `explicacion` que el Nivel 5 punto 5 dejará cerrada (cuadro-bound vs ampliada). Sin tocar lógica de render ni schema.
+
 ## [v12.24 — 2026-05-25] — Ampliación §15 cross-hilo multifuente + canal avisos validador (Nivel 5 punto 3)
 
 `schema-reciclaje.md` §6: nuevo shape `relacion_candidata` con `fuente_deteccion` (enum cerrado: `cuadro_compartido`/`actividad`/`indice_curso`/`encuadre_editorial`) + `evidencia` (referencias con formato cerrado por fuente + razonamiento obligatorio para fuentes editoriales). `reglas-reciclaje.md` §15: detección deja de ser cuadro-bound; 3 fuentes editoriales con contrato mínimo de evidencia; política proposal first uniforme para todas las fuentes. `proponer_relaciones_cuadro.py` emite el nuevo shape; `validar_reciclaje.py` valida nuevo shape + retro-compatibilidad legacy con aviso (canal nuevo, separado de errores). REDISEÑO §5 reordenado: 3b reemplazado, abiertos puntos 4-10 (marco lingüístico, rúbrica `explicacion`, 3a verbal, piloto U4, visualización dashboard, retrofit, consolidación mapa A1 como **registro derivado versionado de relaciones canónicas por nivel** — artefacto distinto de los 5 registries de identidades). Migración de las 197 propuestas legacy + materialización de 8 sin espejo: lote posterior. Validador post-cambio: 0 errores, 197 avisos legacy (esperado).
