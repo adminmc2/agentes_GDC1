@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.24 — 2026-05-25] — Ampliación §15 cross-hilo multifuente + canal avisos validador (Nivel 5 punto 3)
+
+`schema-reciclaje.md` §6: nuevo shape `relacion_candidata` con `fuente_deteccion` (enum cerrado: `cuadro_compartido`/`actividad`/`indice_curso`/`encuadre_editorial`) + `evidencia` (referencias con formato cerrado por fuente + razonamiento obligatorio para fuentes editoriales). `reglas-reciclaje.md` §15: detección deja de ser cuadro-bound; 3 fuentes editoriales con contrato mínimo de evidencia; política proposal first uniforme para todas las fuentes. `proponer_relaciones_cuadro.py` emite el nuevo shape; `validar_reciclaje.py` valida nuevo shape + retro-compatibilidad legacy con aviso (canal nuevo, separado de errores). REDISEÑO §5 reordenado: 3b reemplazado, abiertos puntos 4-10 (marco lingüístico, rúbrica `explicacion`, 3a verbal, piloto U4, visualización dashboard, retrofit, consolidación mapa A1 como **registro derivado versionado de relaciones canónicas por nivel** — artefacto distinto de los 5 registries de identidades). Migración de las 197 propuestas legacy + materialización de 8 sin espejo: lote posterior. Validador post-cambio: 0 errores, 197 avisos legacy (esperado).
+
 ## [v12.23 — 2026-05-24] — Fix despliegue Railway: `Procfile` para Railpack
 
 El build de v12.22 falló porque el panel de Railway tiene **Railpack** (no Dockerfile) como builder activo del proyecto, y Railpack ignora `railway.toml builder=DOCKERFILE`. Error reportado: «No start command detected». Como cambiar el builder del proyecto en el panel no era viable, se añade un `Procfile` en la raíz:

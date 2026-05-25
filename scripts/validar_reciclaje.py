@@ -25,6 +25,7 @@ Uso:
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -62,9 +63,14 @@ def _es_lista_de_str(valor) -> bool:
     return isinstance(valor, list) and all(isinstance(x, str) for x in valor)
 
 
-def validar_schema(reciclaje: dict) -> list:
+def validar_schema(reciclaje: dict, avisos: list | None = None) -> list:
     """Valida `reciclaje` contra `schema-reciclaje.md`. Devuelve lista de
-    errores (vacía si es conforme)."""
+    errores (vacía si es conforme).
+
+    Avisos (v12.24): canal separado de errores. Si se pasa una lista en
+    `avisos`, se acumulan ahí los avisos no bloqueantes (p. ej. propuestas
+    con payload legacy pendientes de migrar). Si no se pasa, se descartan
+    (compatibilidad con callers que ignoran avisos)."""
     errores = []
 
     if not isinstance(reciclaje, dict):
@@ -172,10 +178,10 @@ def validar_schema(reciclaje: dict) -> list:
                 f"propuesta {pid}: estado '{estado}' sin 'resolucion'"
             )
 
-        # relacion_candidata: obligatorio solo si tipo == relacion_cross_hilo (v11.86)
+        # relacion_candidata: obligatorio solo si tipo == relacion_cross_hilo (v11.86, v12.24)
         if p.get("tipo") == "relacion_cross_hilo":
             errores.extend(
-                _validar_relacion_candidata(pid, p.get("relacion_candidata"), todos_ids)
+                _validar_relacion_candidata(pid, p.get("relacion_candidata"), todos_ids, avisos)
             )
             # par no dirigido: 'hilo_ref' no aplica (schema §6, v11.86)
             if "hilo_ref" in p:
@@ -228,11 +234,42 @@ def _validar_relaciones(hid: str, relaciones, todos_ids: set, cubiertas: set) ->
     return errores
 
 
-def _validar_relacion_candidata(pid: str, payload, todos_ids: set) -> list:
-    """Valida `propuesta.relacion_candidata` (schema §6, v11.86) — par no dirigido."""
+FUENTES_DETECCION = {
+    "cuadro_compartido", "actividad", "indice_curso", "encuadre_editorial",
+}
+CAMPOS_INDICE_CURSO = {
+    "vocabulario", "gramatica", "comunicacion", "cultura",
+    "destrezas", "para_aprender", "pronunciacion_ortografia",
+}
+_RE_ACTIVIDAD = re.compile(r"^p\d+-act\d+(@R)?$")
+_RE_CUADRO = re.compile(r"^cuadro@p\d+(#\d+)?$")
+_RE_INDICE = re.compile(
+    r"^U\d+:(" + "|".join(CAMPOS_INDICE_CURSO) + r"):.+$"
+)
+
+
+def _ref_encaja_en_alguno(ref: str) -> bool:
+    """¿La referencia encaja en cualquiera de los 3 patrones cerrados? Útil
+    para `encuadre_editorial`, que admite mix."""
+    return bool(
+        _RE_CUADRO.match(ref) or _RE_ACTIVIDAD.match(ref) or _RE_INDICE.match(ref)
+    )
+
+
+def _validar_relacion_candidata(pid: str, payload, todos_ids: set,
+                                avisos: list | None = None) -> list:
+    """Valida `propuesta.relacion_candidata` (schema §6, v11.86 + v12.24).
+
+    Acepta dos shapes:
+    - **Nuevo** (v12.24): `{hilos, fuente_deteccion, evidencia: {referencias, razonamiento?}}`.
+    - **Legacy** (v11.86): `{hilos, cuadros_compartidos}` — sigue validando con
+      reglas viejas y emite **aviso** (no error) para señalar migración pendiente.
+    """
     if not isinstance(payload, dict):
         return [f"propuesta {pid}: 'relacion_candidata' ausente o no es objeto"]
     errores = []
+
+    # --- validación del par (común a ambos shapes) ---
     hilos = payload.get("hilos")
     if not (isinstance(hilos, list) and len(hilos) == 2
             and all(isinstance(x, str) and x for x in hilos)):
@@ -263,13 +300,117 @@ def _validar_relacion_candidata(pid: str, payload, todos_ids: set) -> list:
             f"propuesta {pid}: relacion_candidata.hilo_destino obsoleto"
             " — usar 'hilos' (v11.86)"
         )
-    cuadros = payload.get("cuadros_compartidos")
-    if not isinstance(cuadros, list) or not cuadros or not all(
-        isinstance(c, str) and c.startswith("cuadro@") for c in cuadros
-    ):
+
+    # --- dispatch por shape ---
+    tiene_fuente = "fuente_deteccion" in payload
+    tiene_legacy = "cuadros_compartidos" in payload
+    if tiene_fuente:
+        # nuevo shape v12.24
+        errores.extend(_validar_payload_nuevo(pid, payload))
+    elif tiene_legacy:
+        # legacy v11.86: valida reglas viejas, emite aviso de migración
+        cuadros = payload.get("cuadros_compartidos")
+        if not isinstance(cuadros, list) or not cuadros or not all(
+            isinstance(c, str) and c.startswith("cuadro@") for c in cuadros
+        ):
+            errores.append(
+                f"propuesta {pid}: relacion_candidata.cuadros_compartidos debe"
+                " ser lista no vacía de strings con prefijo 'cuadro@'"
+            )
+        if avisos is not None:
+            avisos.append(
+                f"propuesta {pid}: payload legacy (sin 'fuente_deteccion');"
+                " migrar al shape v12.24 en lote de higiene posterior"
+            )
+    else:
         errores.append(
-            f"propuesta {pid}: relacion_candidata.cuadros_compartidos debe ser"
-            " lista no vacía de strings con prefijo 'cuadro@'"
+            f"propuesta {pid}: relacion_candidata sin 'fuente_deteccion' ni"
+            " 'cuadros_compartidos' — payload incompleto"
+        )
+
+    return errores
+
+
+def _validar_payload_nuevo(pid: str, payload: dict) -> list:
+    """Valida el shape nuevo (v12.24): fuente_deteccion + evidencia."""
+    errores = []
+    fuente = payload.get("fuente_deteccion")
+    if fuente not in FUENTES_DETECCION:
+        errores.append(
+            f"propuesta {pid}: relacion_candidata.fuente_deteccion debe ser"
+            f" uno de {sorted(FUENTES_DETECCION)} (recibido: {fuente!r})"
+        )
+    evidencia = payload.get("evidencia")
+    if not isinstance(evidencia, dict):
+        errores.append(
+            f"propuesta {pid}: relacion_candidata.evidencia debe ser objeto"
+        )
+        return errores
+    referencias = evidencia.get("referencias")
+    if not (isinstance(referencias, list) and referencias
+            and all(isinstance(r, str) and r for r in referencias)):
+        errores.append(
+            f"propuesta {pid}: relacion_candidata.evidencia.referencias debe"
+            " ser lista no vacía de strings"
+        )
+    else:
+        # validación del formato por fuente
+        if fuente == "cuadro_compartido":
+            malas = [r for r in referencias if not _RE_CUADRO.match(r)]
+            if malas:
+                errores.append(
+                    f"propuesta {pid}: fuente cuadro_compartido exige"
+                    f" referencias 'cuadro@pN[#M]'; mal formadas: {malas}"
+                )
+        elif fuente == "actividad":
+            malas = [r for r in referencias if not _RE_ACTIVIDAD.match(r)]
+            if malas:
+                errores.append(
+                    f"propuesta {pid}: fuente actividad exige referencias"
+                    f" 'pN-actM[@R]'; mal formadas: {malas}"
+                )
+        elif fuente == "indice_curso":
+            malas = [r for r in referencias if not _RE_INDICE.match(r)]
+            if malas:
+                errores.append(
+                    f"propuesta {pid}: fuente indice_curso exige referencias"
+                    " 'UN:<campo>:<entrada>' con campo en"
+                    f" {sorted(CAMPOS_INDICE_CURSO)}; mal formadas: {malas}"
+                )
+        elif fuente == "encuadre_editorial":
+            malas = [r for r in referencias if not _ref_encaja_en_alguno(r)]
+            if malas:
+                errores.append(
+                    f"propuesta {pid}: fuente encuadre_editorial exige"
+                    " referencias en alguno de los 3 formatos cerrados"
+                    f" (cuadro@/actividad/indice); mal formadas: {malas}"
+                )
+    razonamiento = evidencia.get("razonamiento")
+    if fuente in {"actividad", "indice_curso", "encuadre_editorial"}:
+        if not (isinstance(razonamiento, str) and razonamiento.strip()):
+            errores.append(
+                f"propuesta {pid}: fuente '{fuente}' exige"
+                " evidencia.razonamiento no vacío"
+            )
+    elif razonamiento is not None and not isinstance(razonamiento, str):
+        errores.append(
+            f"propuesta {pid}: evidencia.razonamiento debe ser string si"
+            " está presente"
+        )
+    # claves desconocidas en evidencia
+    permitidas = {"referencias", "razonamiento"}
+    desconocidas = set(evidencia.keys()) - permitidas
+    if desconocidas:
+        errores.append(
+            f"propuesta {pid}: evidencia tiene claves desconocidas: {sorted(desconocidas)}"
+        )
+    # claves desconocidas en el payload
+    permitidas_payload = {"hilos", "fuente_deteccion", "evidencia"}
+    desconocidas_p = set(payload.keys()) - permitidas_payload
+    if desconocidas_p:
+        errores.append(
+            f"propuesta {pid}: relacion_candidata tiene claves desconocidas:"
+            f" {sorted(desconocidas_p)}"
         )
     return errores
 
@@ -414,14 +555,22 @@ def main() -> int:
         print(f"✗ JSON inválido en {ruta}: {exc}")
         return 1
 
-    errores = validar_schema(reciclaje)
+    avisos: list = []
+    errores = validar_schema(reciclaje, avisos)
     print(f"Validador estructural — {ruta}")
     if errores:
         print(f"\n✗ {len(errores)} errores contra schema-reciclaje.md:")
         for e in errores:
             print(f"    - {e}")
+    if avisos:
+        print(f"\n⚠ {len(avisos)} avisos (no bloquean):")
+        for a in avisos:
+            print(f"    - {a}")
+    if errores:
+        print(f"\n✗ Resumen: {len(errores)} errores, {len(avisos)} avisos.")
         return 1
-    print("\n✓ Conforme con schema-reciclaje.md (0 errores).")
+    print(f"\n✓ Conforme con schema-reciclaje.md ({len(errores)} errores,"
+          f" {len(avisos)} avisos).")
     return 0
 
 

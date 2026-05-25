@@ -4,11 +4,15 @@ Helper Capa 2 — propone candidatos de `relacion_cross_hilo` por cuadro compart
 
 Lee `unidades/nc1-reciclaje.json`, detecta pares de hilos cuyos eventos
 comparten ≥1 referencia `cuadro@*` en la misma unidad y crea (o actualiza,
-si ya existen pendientes) propuestas con `tipo: relacion_cross_hilo` y
-`relacion_candidata: {hilos: [a, b] ordenados, cuadros_compartidos}`.
+si ya existen pendientes) propuestas con `tipo: relacion_cross_hilo` y el
+payload v12.24: `relacion_candidata: {hilos, fuente_deteccion: "cuadro_compartido",
+evidencia: {referencias: [cuadros]}}`.
 
 Política (`reglas-reciclaje.md` §15):
-  - Solo evidencias `cuadro@*` (las actividades son señal demasiado polifónica).
+  - Este helper es el carril **mecánico automático** de las cuatro fuentes
+    posibles: emite siempre `fuente_deteccion: "cuadro_compartido"`. Las otras
+    tres (`actividad`, `indice_curso`, `encuadre_editorial`) son editoriales y
+    las añade la sesión Capa 2; el helper no las toca.
   - Candidata **no dirigida**: el payload guarda el par sin asignar origen ni
     destino. La dirección (cuando el `tipo` la requiere) la elige el humano al
     aceptar; aquí no se sesga editorialmente.
@@ -16,8 +20,10 @@ Política (`reglas-reciclaje.md` §15):
     Mismo cálculo para crear, buscar duplicados y futuro cierre.
   - Propuestas existentes con estado `aceptada` o `rechazada` no se tocan
     (decisión humana cerrada — el helper no la revive).
-  - Pendientes existentes se actualizan: se completa `cuadros_compartidos`
-    con los cuadros nuevos detectados sin duplicar.
+  - Pendientes existentes se actualizan: se completa `evidencia.referencias`
+    con los cuadros nuevos detectados sin duplicar. Si encuentra payload
+    legacy (con `cuadros_compartidos` y sin `fuente_deteccion`), lo migra
+    al nuevo shape antes de actualizar.
 
 Uso:
     python3 scripts/proponer_relaciones_cuadro.py [--dry-run]
@@ -108,20 +114,32 @@ def sincronizar_propuestas(reciclaje: dict, pares: dict) -> dict:
                 omitidas += 1
                 continue
             payload = existente.setdefault("relacion_candidata", {
-                "hilos": [a, b], "cuadros_compartidos": []
+                "hilos": [a, b],
+                "fuente_deteccion": "cuadro_compartido",
+                "evidencia": {"referencias": []},
             })
             # par no dirigido canónico — siempre [a, b] con a < b
             payload["hilos"] = [a, b]
-            previos = set(payload.get("cuadros_compartidos") or [])
+            # migración suave de payload legacy (con cuadros_compartidos sin
+            # fuente_deteccion) al nuevo shape v12.24
+            if "fuente_deteccion" not in payload:
+                legacy = payload.pop("cuadros_compartidos", []) or []
+                payload["fuente_deteccion"] = "cuadro_compartido"
+                payload["evidencia"] = {"referencias": sorted(legacy)}
+            evidencia = payload.setdefault(
+                "evidencia", {"referencias": []}
+            )
+            previos = set(evidencia.get("referencias") or [])
             nuevos = previos.union(cuadros)
             if nuevos != previos:
-                payload["cuadros_compartidos"] = sorted(nuevos)
+                evidencia["referencias"] = sorted(nuevos)
                 existente["descripcion"] = _descripcion(a, b, sorted(nuevos), unidades)
                 actualizadas += 1
             continue
 
         # propuesta no dirigida: sin hilo_ref (schema §6 v11.86) —
-        # la dirección se elige al aceptar
+        # la dirección se elige al aceptar.
+        # Nuevo shape v12.24: fuente_deteccion + evidencia.
         propuestas.append({
             "id": pid,
             "tipo": "relacion_cross_hilo",
@@ -129,7 +147,8 @@ def sincronizar_propuestas(reciclaje: dict, pares: dict) -> dict:
             "estado": "pendiente",
             "relacion_candidata": {
                 "hilos": [a, b],
-                "cuadros_compartidos": cuadros,
+                "fuente_deteccion": "cuadro_compartido",
+                "evidencia": {"referencias": cuadros},
             },
         })
         por_id[pid] = propuestas[-1]

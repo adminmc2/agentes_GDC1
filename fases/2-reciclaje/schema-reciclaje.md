@@ -107,7 +107,16 @@ Presente cuando `nivel_analisis: detalle`. Modela la justificación lingüístic
 | `hilo_ref` | string | `id` del hilo afectado, cuando aplica. **No aplica a `tipo: relacion_cross_hilo`** — esa propuesta es **no dirigida**: la dirección se decide solo al aceptar (v11.86). |
 | `estado` | enum | `pendiente` \| `aceptada` \| `rechazada`. |
 | `resolucion` | string | Decisión del autor al cerrarla (cuando `estado ≠ pendiente`). |
-| `relacion_candidata` | objeto | **Solo si `tipo: relacion_cross_hilo`** (v11.86). Payload **neutral respecto a origen/destino**: `{hilos: [id_a, id_b] ordenados alfabéticamente, cuadros_compartidos: lista no vacía de strings con prefijo "cuadro@"}`. La candidata identifica un **par no dirigido**; la dirección (qué hilo es origen y qué hilo es destino) se fija solo al cerrar como `aceptada` y se materializa en la entrada de `hilo.relaciones[]` del hilo de origen elegido. |
+| `relacion_candidata` | objeto | **Solo si `tipo: relacion_cross_hilo`** (v11.86, ampliado v12.24). Payload **neutral respecto a origen/destino** con tres claves: `hilos` (lista de 2 strings ordenados alfabéticamente, no autorreferentes), `fuente_deteccion` (enum cerrado: `cuadro_compartido` \| `actividad` \| `indice_curso` \| `encuadre_editorial`), `evidencia` (objeto con `referencias` lista no vacía + `razonamiento` string, obligatorio no vacío para fuentes editoriales y opcional para `cuadro_compartido`). La candidata identifica un **par no dirigido**; la dirección (qué hilo es origen y qué hilo es destino) se fija solo al cerrar como `aceptada` y se materializa en la entrada de `hilo.relaciones[]` del hilo de origen elegido. **Retro-compatibilidad temporal**: payloads legacy con `cuadros_compartidos` (sin `fuente_deteccion`) se aceptan validados con las reglas viejas pero el validador emite aviso. La migración mecánica al nuevo shape vive en lote posterior. |
+
+**Formato de `evidencia.referencias` por fuente** (validación estructural):
+
+| `fuente_deteccion` | Formato exigido |
+|---|---|
+| `cuadro_compartido` | Cada string con prefijo `cuadro@` (ej. `cuadro@p34#1`). |
+| `actividad` | Cada string con patrón `p<N>-act<M>` con sufijo opcional `@R` (ej. `p15-act3`, `p15-act3@R`). |
+| `indice_curso` | Cada string con formato `U<N>:<campo>:<entrada>` donde `<campo>` ∈ enum del índice (`vocabulario`/`gramatica`/`comunicacion`/`cultura`/`destrezas`/`para_aprender`/`pronunciacion_ortografia`) y `<entrada>` es texto literal del índice (ej. `U1:gramatica:Verbos ser, llamarse y tener (formas singulares)`). El validador estructural chequea formato; la verificación de existencia literal en `nc1-curso.json` es responsabilidad editorial de la sesión Capa 2 y queda como chequeo cross-archivo diferido a un validador posterior. |
+| `encuadre_editorial` | Admite mix de los tres formatos anteriores (cada string debe encajar en uno de los patrones). |
 
 El análisis IA **ya consolidado** (`explicacion.analisis_ia`, el razonamiento del `detalle`, las relaciones cerradas de §7) NO va aquí — va inline en el hilo/evento. `propuestas[]` es solo lo **pendiente de cierre humano**.
 
