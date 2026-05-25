@@ -15,6 +15,15 @@
 
 ---
 
+## [v12.27 — 2026-05-25] — Publicación canónica de U9 — 6 secciones + 1 tarjeta CSV
+
+Mirror al repo A del trabajo editorial de U9 *Ropa* cerrado en repo B (`temporal-antiguo-guia-ia/unidades/U09-propuesta/`). Renaming sin prefijo `U09-propuesta-` según `CLAUDE.md §Flujo de publicación canónica`. Archivos publicados:
+
+- `unidades/U9/propuesta/vocabulario.md`, `gramatica.md`, `comunicacion.md`, `destrezas.md`, `cultura.md`, `evaluacion.md`.
+- `unidades/U9/recursos/tarjetas/ropa.csv`.
+
+Snapshot publicado; repo B queda congelado editorialmente — ediciones futuras directamente en repo A.
+
 ## [v12.26 — 2026-05-25] — Publicación canónica de U8 — 6 secciones + 3 tarjetas CSV
 
 Mirror al repo A del trabajo editorial de U8 *Descripciones* cerrado en repo B (`temporal-antiguo-guia-ia/unidades/U08-propuesta/`). Renaming sin prefijo `U08-propuesta-` según `CLAUDE.md §Flujo de publicación canónica`. Archivos publicados:
