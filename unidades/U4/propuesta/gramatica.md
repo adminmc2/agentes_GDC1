@@ -171,7 +171,7 @@ Mencione que por construir frases con *gustar* y los pronombres átonos, aplicar
 
 ## Píldora formativa 4.1 — *El verbo gustar y los pronombres OI*
 
-Píldora proyectable de cinco diapositivas (con dos más de refuerzo opcional). Se lanza al inicio del BLOQUE 1, antes de abrir el cuadro del verbo *gustar* de la página 44. La clase ya conoce las frases *me gusta / me gustan* por la exposición incidental de Vocabulario (diálogo Rosa-Alberto y tabla de gustos del ejercicio 7). La píldora conduce el descubrimiento del sistema de uso del verbo (palabra pequeña con la persona · verbo con la cosa singular o plural) por contraste con pares mínimos. Tras la píldora, el cuadro del libro confirma lo descubierto. Sub-marco A — píldora inductiva siguiendo MARS EARS.
+Píldora formativa de cinco diapositivas (con dos más de refuerzo opcional). Se lanza al inicio del BLOQUE 1, antes de abrir el cuadro del verbo *gustar* de la página 44. La clase ya conoce las frases *me gusta / me gustan* por la exposición incidental de Vocabulario (diálogo Rosa-Alberto y tabla de gustos del ejercicio 7). La píldora conduce el descubrimiento del sistema de uso del verbo (palabra pequeña con la persona · verbo con la cosa singular o plural) por contraste con pares mínimos. Tras la píldora, el cuadro del libro confirma lo descubierto. Sub-marco A — píldora inductiva siguiendo MARS EARS.
 
 **Diapositiva 1 — PÍLAR abre la sesión.**
 - *Texto en pantalla:* *A mí me gusta la fruta · A mí me gustan las manzanas*.

@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.29 — 2026-05-26] — U1 final/: gramática + comunicación cerradas; manual ampliado
+
+Pieza 2 del piloto `final/`. Nuevos: `unidades/U1/final/gramatica.md`, `unidades/U1/final/comunicacion.md`. Manual `docs/manual-estilo-final.md` con 8 reglas adicionales (§10.3-10.6, §11.4, §2.1, retítulo §10, §13 patrones pendientes). Renombrado masivo *PÍLDORA PROYECTABLE* → *PÍLDORA FORMATIVA* en 13 propuestas de repo A. Aplicación retroactiva §10.4 a `unidades/U1/final/vocabulario.md`.
+
 ## [v12.28 — 2026-05-26] — Capa `final/` abierta + piloto U1 vocabulario
 
 Capa `unidades/UX/final/` para versión limpia editable post-InDesign. Piloto cerrado en `unidades/U1/final/vocabulario.md`. Manual de estilo en `docs/manual-estilo-final.md` (autoridad path-scoped vía `.claude/rules/final-style.md`). Migrado `docs/formulacion-objetivos.md` desde repo B. CLAUDE.md raíz reconoce capa `final/` y congelación de repo B desde 2026-05-25.

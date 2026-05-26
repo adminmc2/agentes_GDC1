@@ -58,7 +58,7 @@ El ejercicio 2 lleva a clasificar a los animales del texto en cuatro grupos — 
 
 El ejercicio 3 plantea cinco frases que se completan releyendo. Pareja primero; en plenaria, solo si hay dudas.
 
-| 📽 PÍLDORA PROYECTABLE 7.2 · *Lee el día por dentro* |
+| 📽 PÍLDORA FORMATIVA 7.2 · *Lee el día por dentro* |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 

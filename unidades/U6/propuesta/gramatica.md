@@ -69,7 +69,7 @@ Cierre el bloque con un dictado breve de tres frases que mezclan, en los tres gr
 > - **Opción del repertorio (`gramatica-pautas.md §7bis`):** §4.1A (ciclo inductivo) para el patrón regular del imperativo; presentación deductiva de la lista de irregulares. §4.2A (receptiva con reconocimiento) para la act 3; §4.4A para la transformación escrita de la act 4; §4.4B (huecos en texto) para la act 5.
 > - **Enfoque (§5):** inductivo para el imperativo regular (patrón deducible — el final del infinitivo cambia: *-ar → -a*, *-er/-ir → -e*); deductivo para los cinco irregulares (*ven, pon, ve, haz, dime*), lista que se memoriza.
 > - **Ciclo de fases (§6):** la píldora 6.1 recorre MARS EARS (Modelling → Awareness → Receptive → Structured production → confirmación → Expansion) como preámbulo inductivo → cuadro p.64 como confirmación → F2a act 3 (reconocimiento) → F2b act 4 (producción escrita) → F2b act 5 (aplicación en texto). La regla no se enuncia al inicio: se infiere y se confirma al final (`marco-teorico-metodologico.md §8.4`, §8.7).
-> - **Píldora formativa 6.1 — *La máquina del imperativo*** (Sub-marco A). El cuerpo de R1 es la versión de aula autónoma y económica (descubrimiento inductivo breve, mínimo de acciones del docente); el cuadro *Píldora proyectable* al cierre de R1 remite a la versión interactiva publicada en `ele.sgel.es/descargas`. El bloque `## Píldora formativa 6.1` al final es material de autoría (insumo para construir la píldora), no contenido de aula.
+> - **Píldora formativa 6.1 — *La máquina del imperativo*** (Sub-marco A). El cuerpo de R1 es la versión de aula autónoma y económica (descubrimiento inductivo breve, mínimo de acciones del docente); el cuadro *Píldora formativa* al cierre de R1 remite a la versión interactiva publicada en `ele.sgel.es/descargas`. El bloque `## Píldora formativa 6.1` al final es material de autoría (insumo para construir la píldora), no contenido de aula.
 > - **Reciclaje 70/30:** presente regular de U3 y los verbos de acción de aula ya manejados (*hablar, beber, escribir, escuchar, abrir*) — el imperativo se construye sobre infinitivos y verbos ya conocidos.
 > - **Lagunas lógicas que tocan aquí (§13bis):** los imperativos reflexivos *levántate, siéntate, dúchate* (act 3) y los enclíticos *dame, pásame* (cuadro y act 4) llevan una palabra pegada al final; se reconocen y se ejecutan, no se producen ni se analizan — los verbos reflexivos llegan en U7. Además: el recuadro de la act 5 da los verbos en infinitivo, registro propio del texto instructivo escrito en español; el imperativo de *tú* del ejercicio se practica sin elevarlo a modelo de cómo se redactan instrucciones.
 > - **Tiempo orientativo del bloque:** 18-20 min (píldora incluida).
@@ -85,7 +85,7 @@ Sin abrir todavía el cuadro, diga tres verbos que la clase ya conoce —*hablar
 
 Lleve después la atención a los cinco verbos del cuadro que no salen de esa regla —*ven, pon, ve, haz, dime*— y léalos con la clase: son los que hay que recordar de memoria. Cierre con los propios ejemplos del cuadro: el imperativo sirve para dar una orden (*¡Ven aquí!*) y para dar una instrucción (*Escucha y escribe*), y *por favor* hace que la orden suene más amable. Señale de paso que en *dame* y *pásame* la orden lleva una palabra pegada al final; aquí solo se reconoce.
 
-| 📽 PÍLDORA PROYECTABLE 6.1 · *La máquina del imperativo* |
+| 📽 PÍLDORA FORMATIVA 6.1 · *La máquina del imperativo* |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 
@@ -117,7 +117,7 @@ Mencione que por conjugar los seis verbos irregulares en presente, completar fra
 
 ## Píldora formativa 6.1 — *La máquina del imperativo*
 
-Píldora proyectable de seis diapositivas. Se lanza al inicio del BLOQUE 2, antes de abrir el cuadro *Imperativo* de la página 64. La clase ya conjuga el presente; lo que aún no tiene es cómo se da una orden. La píldora lo trabaja con una máquina que transforma infinitivos en órdenes. Sigue el Sub-marco A (MARS EARS, Conti): el alumno **descubre** el patrón regular —Modelling → Awareness → Receptive → Structured production— y **solo después** la regla se formaliza y se confirma con el cuadro del libro; cierra viendo para qué sirve el imperativo (Expansion). La regla no se enuncia al principio: se infiere con la práctica y se confirma al final (`marco-teorico-metodologico.md §8.4`, §8.7).
+Píldora formativa de seis diapositivas. Se lanza al inicio del BLOQUE 2, antes de abrir el cuadro *Imperativo* de la página 64. La clase ya conjuga el presente; lo que aún no tiene es cómo se da una orden. La píldora lo trabaja con una máquina que transforma infinitivos en órdenes. Sigue el Sub-marco A (MARS EARS, Conti): el alumno **descubre** el patrón regular —Modelling → Awareness → Receptive → Structured production— y **solo después** la regla se formaliza y se confirma con el cuadro del libro; cierra viendo para qué sirve el imperativo (Expansion). La regla no se enuncia al principio: se infiere con la práctica y se confirma al final (`marco-teorico-metodologico.md §8.4`, §8.7).
 
 **Diapositiva 1 — PÍLAR enciende la máquina.**
 - *Texto en pantalla:* una máquina que convierte verbos en órdenes; a la entrada, cuatro tarjetas: *hablar · beber · escribir · escuchar*. Burbuja: *Mira qué hace mi máquina.*

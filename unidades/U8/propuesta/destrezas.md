@@ -70,7 +70,7 @@ Cierre con las cinco preguntas del ejercicio 4: tres en pareja, las dos últimas
 
 > **[Metanota]** Pautas: `destrezas-pautas.md` §3, §4, §5 (CO + H), §6.3 (CO1-CO3), §6.4 (H1-H3), §6bis, §10, §11.
 > **Repertorio (`repertorios/destrezas.md §3`):** §3.4 Opción A (pre-escucha con ficha de registro visible + escucha escalonada por categoría) para act 6; §3.6 Opción B (rotación de parejas con cronómetro) para act 7.
-> **Protocolo:** CO1 pre-escucha con la tabla del libro como organizador previo + clasificación por categoría + predicción por slot → CO2 escucha global (categoría *identidad*) + escucha detallada (categoría *físico* y *valoración*) → CO3 cotejo en parejas con tercera escucha verificadora puntual + cuadro «Píldora proyectable» al cierre del R1. H1 worked example del docente con un famoso → H2 rondas en parejas con cronómetro → H3 cierre con el famoso más reconocido y la frase decisiva (R2).
+> **Protocolo:** CO1 pre-escucha con la tabla del libro como organizador previo + clasificación por categoría + predicción por slot → CO2 escucha global (categoría *identidad*) + escucha detallada (categoría *físico* y *valoración*) → CO3 cotejo en parejas con tercera escucha verificadora puntual + cuadro «Píldora formativa» al cierre del R1. H1 worked example del docente con un famoso → H2 rondas en parejas con cronómetro → H3 cierre con el famoso más reconocido y la frase decisiva (R2).
 > **Píldora formativa 8.2 — *La ficha de Ana, paso a paso***: se proyecta acompañando la fase de escucha del act 6 (B2 R1). El cuerpo del R1 es la versión de aula autónoma de esa fase (sin proyector): mismo procedimiento de slot-listening en dos capas (clasificación por categoría + predicción por slot) con el mínimo de acciones del docente. Anclaje al Protocolo CO. Versión enriquecida secuencial al final del documento.
 > **Tarjeta de estrategia (Caja 2):** no se introduce ni se reactiva en este bloque. La nueva tarjeta de Mediación entra en B3.
 > **Reciclaje 70/30:** paradigma físico (alto · bajo · pelo · ojos · nariz · estatura — Voc U8); colores (recurrente U1, reactivado en U8); *muy · bastante · un poco* (gradación Gram U8 + cuadro p87 de Com U8); construcción *gustar* en 3.ª persona con *le · nos · les* y la negación *no le gusta nada* (U4 nuclear + Gram U8); números cardinales para la edad (U1 + U7); verbo *ser* y *tener* en 3.ª persona singular; concordancia M/F y sg/pl.
@@ -92,7 +92,7 @@ Segunda escucha. Cada estudiante rellena las casillas restantes — físico y va
 
 Cruce de notas en parejas: cada pareja contrasta su tabla con la de la pareja vecina. Donde haya discrepancia, ponga la pista una tercera vez pero solo del fragmento del dato en conflicto. En plenaria, recoja el retrato completo de Ana y comente con la clase qué predicciones acertaron y cuáles sorprendieron.
 
-| 📽 PÍLDORA PROYECTABLE 8.2 · *La ficha de Ana, paso a paso* |
+| 📽 PÍLDORA FORMATIVA 8.2 · *La ficha de Ana, paso a paso* |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 

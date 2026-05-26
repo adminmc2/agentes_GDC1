@@ -110,7 +110,7 @@ Compruebe el resultado en parejas, comparando lo que cada uno ha hecho sobre las
 > **Repertorio (`repertorios/destrezas.md §3`):** §3.3 Opción A (proceso completo con texto modelo) para acts 8-9; §3.6 Opción A (diálogo guiado con modelado del profesor) para act 10; §3.8 Opción A (mediación con tarjeta de estrategia) para act 11.
 > **Protocolo:** E1 análisis del texto modelo → E2 planificación con las preguntas guía del libro → E3-E4 escritura y presentación · H1 modelado con voluntario → H2 entrevista en parejas → H3 puesta en común · H+Med transmisión a la clase de las vacaciones de la pareja.
 > **Tarjeta de estrategia (Caja 2):** se reactiva *AMPLÍA TU FRASE* (U5D) en la escritura del act 8, y *CUENTA LO QUE OYES* (U3D, mediación) en el act 11.
-> **Píldora formativa 6.2 — *Del plano al texto*** (Sub-marco B procedimental, `pildora-formativa-pautas.md §7`, 6 diapositivas, anclada al Protocolo E). El cuerpo de R1 es la versión de aula autónoma y económica; el cuadro *Píldora proyectable* al cierre de R1 remite a la versión interactiva publicada en `ele.sgel.es/descargas`. El bloque `## Píldora formativa 6.2` al final es material de autoría (insumo para construir la píldora), no contenido de aula.
+> **Píldora formativa 6.2 — *Del plano al texto*** (Sub-marco B procedimental, `pildora-formativa-pautas.md §7`, 6 diapositivas, anclada al Protocolo E). El cuerpo de R1 es la versión de aula autónoma y económica; el cuadro *Píldora formativa* al cierre de R1 remite a la versión interactiva publicada en `ele.sgel.es/descargas`. El bloque `## Píldora formativa 6.2` al final es material de autoría (insumo para construir la píldora), no contenido de aula.
 > **Reciclaje 70/30:** establecimientos y servicios del barrio (Caja 1 U6V); marcadores de lugar —*al lado de, enfrente de, cerca de*— (U6V); *hay · tener · ir* (U6G); interrogativos (U6G y U6C); el conector *también* (presente en el texto modelo del libro); adjetivos descriptivos (U5V y U6V).
 > **Léxico contextual nuevo (pre-enseñanza oral sin formalizar):** ninguno — todo el léxico del bloque está formalizado en U6 Vocabulario y en el texto modelo del libro.
 > **Objetivo de bloque — trazabilidad:** `formulacion-objetivos.md` §1.2; bloque productivo y final → Bloom 3; verbo *describir*. Redactado: "Describir el barrio de sus sueños con frases sencillas."
@@ -130,7 +130,7 @@ Con el plano delante, cada estudiante escribe su barrio recorriéndolo lugar por
 
 Para cerrar, cada estudiante lee su barrio a otros dos. Quien escucha elige un lugar de los barrios ajenos que le gustaría tener en el suyo y se lo dice a quien lo escribió.
 
-| 📽 PÍLDORA PROYECTABLE 6.2 · *Del plano al texto* |
+| 📽 PÍLDORA FORMATIVA 6.2 · *Del plano al texto* |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 
@@ -180,7 +180,7 @@ Mencione que por haber leído cómo son Madrid e Illán de Vacas, haber escuchad
 
 ## Píldora formativa 6.2 — *Del plano al texto*
 
-Píldora proyectable de seis diapositivas (Sub-marco B procedimental, `pildora-formativa-pautas.md §7`). Se proyecta en el BLOQUE 3, durante el rótulo de escritura del barrio. El cuerpo de R1 es la versión de aula autónoma; esta es la versión enriquecida e interactiva. Foco pedagógico: un texto descriptivo de un lugar no se improvisa frase a frase — primero se **organiza el lugar en un plano** y luego se **recorre el plano convirtiendo cada zona en frases**. Anclada al Protocolo E. Personajes con roles funcionales según §7.3 de la pauta.
+Píldora formativa de seis diapositivas (Sub-marco B procedimental, `pildora-formativa-pautas.md §7`). Se proyecta en el BLOQUE 3, durante el rótulo de escritura del barrio. El cuerpo de R1 es la versión de aula autónoma; esta es la versión enriquecida e interactiva. Foco pedagógico: un texto descriptivo de un lugar no se improvisa frase a frase — primero se **organiza el lugar en un plano** y luego se **recorre el plano convirtiendo cada zona en frases**. Anclada al Protocolo E. Personajes con roles funcionales según §7.3 de la pauta.
 
 **Diapositiva 1 — PÍLAR presenta la tarea y el modelo.**
 - *Texto en pantalla:* el texto modelo del ejercicio 8 (el barrio con campo de fútbol, piscinas, tienda y biblioteca). En el centro, en grande: *¿Cómo escribo el barrio de mis sueños?*

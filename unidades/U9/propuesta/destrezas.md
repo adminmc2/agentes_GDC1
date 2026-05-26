@@ -66,7 +66,7 @@ Recoja en plenaria solo los desacuerdos: el estudiante o pareja que defiende la 
 
 > **[Metanota]** Pautas: `destrezas-pautas.md` §3, §4, §5 (CO + CL), §6.3 (CO1-CO3), §6.1 (L1-L4), §6bis, §10, §11.
 > **Repertorio (`repertorios/destrezas.md §3`):** §3.4 Opción B (escucha con ficha del libro como organizador previo + procesamiento de inferencia léxica en flujo) para act 3; §3.2 Opción A (lectura individual + corrección en parejas + plenaria) adaptada a resolución de incógnita texto↔foto para act 4.
-> **Protocolo:** CO1 pre-escucha con la habilidad detective de las tres pistas + ficha del libro como organizador previo → CO2 escucha activa con circulación de palabras nuevas + hipótesis al margen + ordenación de lugares en marcadores temporales → CO3 cotejo en pareja + plenaria con reflexión metacognitiva sobre las pistas usadas. Cuadro «Píldora proyectable 9.3» al cierre del rótulo del audio. Para act 4: L1 entrada con las dos fotos sin etiqueta → L2 lectura en pareja con doble misión (identificar texto↔foto + extraer pista decisiva) → L3 puesta en común con justificación textual.
+> **Protocolo:** CO1 pre-escucha con la habilidad detective de las tres pistas + ficha del libro como organizador previo → CO2 escucha activa con circulación de palabras nuevas + hipótesis al margen + ordenación de lugares en marcadores temporales → CO3 cotejo en pareja + plenaria con reflexión metacognitiva sobre las pistas usadas. Cuadro «Píldora formativa 9.3» al cierre del rótulo del audio. Para act 4: L1 entrada con las dos fotos sin etiqueta → L2 lectura en pareja con doble misión (identificar texto↔foto + extraer pista decisiva) → L3 puesta en común con justificación textual.
 > **Píldora formativa 9.3 — *Las tres pistas del detective*:** se proyecta acompañando la fase de escucha del act 3 (B2 R1). El cuerpo del R1 es la versión de aula autónoma sin proyector: mismo procedimiento de inferencia léxica activa con tres pistas convergentes (entorno · tema · palabra parecida) con el mínimo de acciones del docente. Anclaje al Protocolo CO + a la cara A modo Detective y a la cara B *Cuando algo falla* de la tarjeta U2D *ESCUCHA EN TRES MODOS* (misma destreza, §7.2 de la pauta). Versión enriquecida secuencial al final del documento.
 > **Tarjeta de estrategia (Caja 2):** *ESCUCHA EN TRES MODOS* (U2D) disponible en la caja del aula como apoyo descendente para el modo Detective. No se activa ceremoniosamente — la píldora 9.3 ya entrena la habilidad detective en flujo.
 > **Reciclaje 70/30:** marcadores secuenciales *primero/después/luego/por último* + indefinido de *ir/estar* + marcadores temporales del pasado (U9G nuclear, cuadro p.94); preposiciones de lugar (U5, U6); topónimos hispánicos (U7C).
@@ -90,7 +90,7 @@ En parejas, contrastan el orden de los lugares y comparten qué palabras circula
 
 Recoja en plenaria el orden final con los marcadores temporales como anclaje. Pregunte por una o dos palabras nuevas que circularon y qué pista funcionó mejor para cada estudiante. Cierre conectando con el siguiente rótulo: María cerró su viaje en Segovia y ahora la clase pasa a otras dos ciudades romanas por reconocer.
 
-| 📽 PÍLDORA PROYECTABLE 9.3 · *Las tres pistas del detective* |
+| 📽 PÍLDORA FORMATIVA 9.3 · *Las tres pistas del detective* |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 

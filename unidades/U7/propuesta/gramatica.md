@@ -104,7 +104,7 @@ Lea con la clase las cuatro frases del cuadro de la página 75 y, según se lean
 
 Pida que miren el mapa terminado y digan qué información marca cada preposición. Con dos o tres respuestas —*a* lleva a un sitio o a una hora, *en* sitúa, *de* marca de dónde, *por* marca la franja del día— abra el cuadro *Uso de las preposiciones*: confirma lo que el mapa ya muestra.
 
-| 📽 PÍLDORA PROYECTABLE 7.1 · *El mapa del día de Lucía* |
+| 📽 PÍLDORA FORMATIVA 7.1 · *El mapa del día de Lucía* |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 
@@ -182,7 +182,7 @@ La píldora formativa 7.1 es componente paralelo: no cuenta en el tope de técni
 
 ## Píldora formativa 7.1 — *El mapa del día de Lucía*
 
-> Bloque de autoría: insumo del repositorio de producción, no contenido de aula (`pildora-formativa-pautas.md §5`). Píldora proyectable de cinco diapositivas (con dos más de refuerzo opcional). Se lanza en el BLOQUE 2, antes de abrir el cuadro *Uso de las preposiciones* de la página 75, como preámbulo inductivo. Las preposiciones *a / en / de / por* no tienen regla deducible —son convencionales—; lo que el alumno descubre es la **correlación situación↔preposición**: agrupando las frases del día de Lucía por lo que hace (ir a un sitio, estar en un sitio, salir de un sitio, un momento del día), dentro de cada grupo se repite siempre la misma palabra. Sub-marco A — píldora inductiva (MARS EARS): la regla no se enuncia al inicio; se infiere observando el patrón de co-ocurrencia y se confirma con el cuadro del libro al final.
+> Bloque de autoría: insumo del repositorio de producción, no contenido de aula (`pildora-formativa-pautas.md §5`). Píldora formativa de cinco diapositivas (con dos más de refuerzo opcional). Se lanza en el BLOQUE 2, antes de abrir el cuadro *Uso de las preposiciones* de la página 75, como preámbulo inductivo. Las preposiciones *a / en / de / por* no tienen regla deducible —son convencionales—; lo que el alumno descubre es la **correlación situación↔preposición**: agrupando las frases del día de Lucía por lo que hace (ir a un sitio, estar en un sitio, salir de un sitio, un momento del día), dentro de cada grupo se repite siempre la misma palabra. Sub-marco A — píldora inductiva (MARS EARS): la regla no se enuncia al inicio; se infiere observando el patrón de co-ocurrencia y se confirma con el cuadro del libro al final.
 
 **Diapositiva 1 — PÍLAR abre la sesión.**
 - *Texto en pantalla:* el día de Lucía en frases: *Lucía sale de su casa · Lucía va a clase · Lucía juega en el polideportivo · Lucía va a la biblioteca por la tarde.* En burbuja: *Este es el día de Lucía. Mira las palabras pequeñas.*

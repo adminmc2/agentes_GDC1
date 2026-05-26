@@ -55,7 +55,7 @@ Repita el eje con *ir*, mismo procedimiento: *voy ↔ fui · vas ↔ fuiste · v
 
 Lleve un momento la atención al cuadro 2 *Marcadores temporales del pasado* — *ayer por la mañana / tarde / noche · la semana pasada · el año pasado · hace una semana / un mes / un año*. Léalos con la clase de un tirón y deje el cuadro a la vista durante el resto del bloque: el marcador es lo que anuncia el indefinido en cada frase.
 
-| 📽 PÍLDORA PROYECTABLE 9.2 · *La línea del tiempo de* ir *y* estar |
+| 📽 PÍLDORA FORMATIVA 9.2 · *La línea del tiempo de* ir *y* estar |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 

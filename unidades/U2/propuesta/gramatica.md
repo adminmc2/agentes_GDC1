@@ -130,7 +130,7 @@ Mencione que por haber participado en los tres bloques reciben la insignia ¡PLU
 
 ## Píldora formativa 2.1 — Demostrativos
 
-Píldora proyectable de cinco diapositivas (con dos más de refuerzo opcional). Se lanza dentro del BLOQUE 3, justo antes del ejercicio 6, cuando la clase ya ha trabajado el plural de *ser* (B1) y la concordancia de número (B2), pero todavía no ha visto el sistema de demostrativos. La idea es que los estudiantes descubran las cuatro formas (*este / esta / estos / estas*) por contraste y luego las apliquen sobre los personajes hispanos del propio ejercicio. Sub-marco A — píldora inductiva siguiendo MARS EARS.
+Píldora formativa de cinco diapositivas (con dos más de refuerzo opcional). Se lanza dentro del BLOQUE 3, justo antes del ejercicio 6, cuando la clase ya ha trabajado el plural de *ser* (B1) y la concordancia de número (B2), pero todavía no ha visto el sistema de demostrativos. La idea es que los estudiantes descubran las cuatro formas (*este / esta / estos / estas*) por contraste y luego las apliquen sobre los personajes hispanos del propio ejercicio. Sub-marco A — píldora inductiva siguiendo MARS EARS.
 
 **Diapositiva 1 — PÍLAR abre la sesión.**
 - *Texto en pantalla:* *Este chico es Pedro · Esta chica es María*.

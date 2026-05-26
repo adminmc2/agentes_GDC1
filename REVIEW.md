@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-26 (v12.28 — Capa `final/` abierta en repo A. Piloto U1 vocabulario cerrado. Manual de estilo + activación path-scoped + migración del manual de objetivos desde repo B).
+> **Última actualización:** 2026-05-26 (v12.29 — U1 final/: gramática + comunicación cerradas. Manual ampliado con 8 reglas nuevas. Renombrado bulk *píldora proyectable* → *píldora formativa* en propuestas de repo A).
+>
+> **Hito previo (v12.28):** 2026-05-26 (Capa `final/` abierta en repo A. Piloto U1 vocabulario cerrado. Manual de estilo + activación path-scoped + migración del manual de objetivos desde repo B).
 >
 > **Hito previo (v12.27):** 2026-05-25 (Publicación canónica de U9; repo B congelado editorialmente).
 >

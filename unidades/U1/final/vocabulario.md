@@ -36,7 +36,7 @@ Pase al **ejercicio 3**. Divida los diez objetos en dos tandas. **Primera tanda 
 
 **Segunda tanda (objetos del aula que están alrededor):** mesa, pizarra, portátil, silla y tableta. Misma secuencia: escucha, repetición, numeración.
 
-Llame la atención sobre el artículo que acompaña a cada palabra (*el portátil, la mochila, el cuaderno*…). No formalice la distinción de género —se trabaja en gramática—, pero pídales que se fijen en que el artículo no es siempre el mismo. Cierre con una minidinámica corporal: usted dice *el lápiz* y los estudiantes lo levantan; *la silla* y todos tocan su silla; *la pizarra* y todos miran a la pizarra. Encadene algunas órdenes para fijar la asociación palabra-objeto desde el cuerpo.
+Llame la atención sobre el artículo que acompaña a cada palabra (*el portátil, la mochila, el cuaderno*…). Sin formalizar la distinción de género —se trabaja en gramática—, pídales que se fijen en que el artículo no es siempre el mismo. Cierre con una minidinámica corporal: usted dice *el lápiz* y los estudiantes lo levantan; *la silla* y todos tocan su silla; *la pizarra* y todos miran a la pizarra. Encadene algunas órdenes para fijar la asociación palabra-objeto desde el cuerpo.
 
 JUEGUE AL VEO VEO CON LOS OBJETOS
 

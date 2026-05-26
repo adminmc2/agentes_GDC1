@@ -175,7 +175,7 @@ Mencione que por saber decir quiénes son, distinguir masculino y femenino y hac
 
 ## Píldora formativa 1.1 — Colores y concordancia
 
-Píldora proyectable de siete diapositivas. Se lanza dentro del BLOQUE 2, justo antes del ejercicio 7, cuando la clase ya ha descubierto el patrón -o/-a en sustantivos y nacionalidades pero todavía no ha visto el cuadro de colores de la página 15. La idea es que la clase llegue al cuadro habiendo descubierto, con un breve juego, cuándo cambia el adjetivo de color y cuándo no.
+Píldora formativa de siete diapositivas. Se lanza dentro del BLOQUE 2, justo antes del ejercicio 7, cuando la clase ya ha descubierto el patrón -o/-a en sustantivos y nacionalidades pero todavía no ha visto el cuadro de colores de la página 15. La idea es que la clase llegue al cuadro habiendo descubierto, con un breve juego, cuándo cambia el adjetivo de color y cuándo no.
 
 **Diapositiva 1 — PÍLAR abre la sesión.**
 - *Texto en pantalla:* *La mochila es roja · El libro es rojo*.

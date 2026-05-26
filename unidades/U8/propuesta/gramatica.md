@@ -4,7 +4,7 @@
 >
 > Densidad metodológica: píldora formativa 8.1 (Sub-marco A — inductiva) en B3. La píldora va en bloque sin dinámica acompañante (§5.3).
 >
-> ⚠ **Estado actual: borrador con cuerpos de rótulo redactados, pendiente decisión del autor sobre cuál de las TRES propuestas de píldora 8.1 se queda.** El cuerpo de B3-R1 (actividad de aula autónoma) está alineado con la mecánica de **observación dirigida** sobre la palabra siguiente al cuantificador, compatible con cualquiera de las tres propuestas; el cuadro «Píldora proyectable» de B3-R1 lleva por defecto el título de la propuesta C (*La lupa de la palabra siguiente*), que es la mecánica más cercana al cuerpo. Si el autor elige A o B, basta con sustituir el título en el cuadro y eliminar las otras dos §5.2.
+> ⚠ **Estado actual: borrador con cuerpos de rótulo redactados, pendiente decisión del autor sobre cuál de las TRES propuestas de píldora 8.1 se queda.** El cuerpo de B3-R1 (actividad de aula autónoma) está alineado con la mecánica de **observación dirigida** sobre la palabra siguiente al cuantificador, compatible con cualquiera de las tres propuestas; el cuadro «Píldora formativa» de B3-R1 lleva por defecto el título de la propuesta C (*La lupa de la palabra siguiente*), que es la mecánica más cercana al cuerpo. Si el autor elige A o B, basta con sustituir el título en el cuadro y eliminar las otras dos §5.2.
 
 > **Conteo del cuerpo (auto):** 1679 palabras
 
@@ -119,7 +119,7 @@ Añada una quinta frase del cuadro: *En mi clase no hay muchas chicas*. Pídale 
 
 Lea entonces el cuadro entero como confirmación. La palabra siguiente al cuantificador es lo que decide: adjetivo o adverbio → *muy*; nombre → *mucho* con concordancia; verbo → *mucho* invariable.
 
-| 📽 PÍLDORA PROYECTABLE 8.1 · *La lupa de la palabra siguiente* |
+| 📽 PÍLDORA FORMATIVA 8.1 · *La lupa de la palabra siguiente* |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 

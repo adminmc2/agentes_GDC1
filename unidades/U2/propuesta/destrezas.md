@@ -145,7 +145,7 @@ Mencione que por haber leído un mensaje de presentación, escuchado y verificad
 
 ## Píldora formativa 2.2 — Lectura con linterna
 
-Píldora proyectable de cinco diapositivas (con dos más de refuerzo opcional). Se lanza dentro del BLOQUE 1, justo antes del ejercicio 1, cuando los alumnos ya saben quiénes son Marta y Pierre y tienen las fichas a la vista pero todavía no han buscado los datos. La idea es que descubran que **leer no es entender todo**, sino enfocar la mirada donde está el dato que se busca. Modo central: **metáfora visual de la linterna sobre texto oscurecido** (técnica T71 *Lectura con linterna* de `tecnicas-comprension-lectora.md`, integrada con T1 *Caza de Palabras Temática* y T59 *Rellenar la Agenda*). Sub-marco B procedimental siguiendo el Protocolo L.
+Píldora formativa de cinco diapositivas (con dos más de refuerzo opcional). Se lanza dentro del BLOQUE 1, justo antes del ejercicio 1, cuando los alumnos ya saben quiénes son Marta y Pierre y tienen las fichas a la vista pero todavía no han buscado los datos. La idea es que descubran que **leer no es entender todo**, sino enfocar la mirada donde está el dato que se busca. Modo central: **metáfora visual de la linterna sobre texto oscurecido** (técnica T71 *Lectura con linterna* de `tecnicas-comprension-lectora.md`, integrada con T1 *Caza de Palabras Temática* y T59 *Rellenar la Agenda*). Sub-marco B procedimental siguiendo el Protocolo L.
 
 **Diapositiva 1 — PÍLAR abre la sesión.**
 - *Texto en pantalla:* el mensaje completo de Marta aparece **oscurecido y difuminado**, casi ilegible. En el centro, una linterna y el título *Lectura con linterna*.

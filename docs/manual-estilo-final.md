@@ -80,6 +80,34 @@ Lo que **NO va** en `final/`:
 - Conteo automático de palabras.
 - **Instrucciones de preparación / impresión de tarjetas** (líneas tipo *"Preparar Tarjetas de Vocabulario - X (10 tarjetas, cara frontal solo imagen…)"*). La impresión y disponibilidad de las tarjetas vive en la **estación de servicio del itinerario imprimible**, no en el cuerpo del docente de cada bloque. En `final/` nunca se le pide al docente preparar/imprimir tarjetas — se asume que están disponibles desde el inicio de la unidad.
 
+### 2.1 Convenciones específicas por sección
+
+Algunas secciones llevan líneas obligatorias adicionales a la estructura mínima. Estas convenciones aplican siempre (no son opcionales).
+
+#### Comunicación — referencia al vídeo de la unidad
+
+Cada `unidades/U[X]/final/comunicacion.md` incluye, en el bloque 1 (después del objetivo de bloque y antes de las líneas *Imprimir*), la línea:
+
+> *Buscar Vídeo de comunicación **unidad X***
+
+Donde X es el número de la unidad. Cada unidad tiene su vídeo de comunicación correspondiente (U1→vídeo 1, U2→vídeo 2…). La línea avisa al docente del material audiovisual que debe localizar antes de la sesión.
+
+**Formato canónico:**
+- *Buscar* con mayúscula inicial.
+- *Vídeo* con mayúscula y tilde.
+- *unidad X* en minúscula y negrita (§9.2).
+- Sin dos puntos, sin guion al final.
+
+#### Comunicación — tarjetas de estrategia
+
+Las tarjetas de estrategia de Comunicación se referencian con el formato canónico:
+
+> *Imprimir tarjeta de estrategia—[destreza]—*[título]**
+
+Ejemplo: *Imprimir tarjeta de estrategia—interacción oral—*Saludar y despedirse**.
+
+La destreza va en minúscula y precede al título; el título va en cursiva. Tres componentes separados por guion largo (em-dash). La línea va al inicio del bloque donde se usa la tarjeta, junto al resto de líneas *Imprimir*.
+
 ---
 
 ## 3. Acentuación diacrítica
@@ -385,7 +413,7 @@ Si la frase principal continúa tras la cita, se reformula en dos oraciones sepa
 
 ---
 
-## 10. Estructura sin metadiscurso editorial
+## 10. Voz del cuerpo del docente y criterios editoriales de redacción
 
 El cuerpo del docente vive en **lengua de aula con acción concreta**. No contiene metadiscurso sobre el sistema editorial.
 
@@ -406,6 +434,115 @@ Pregunta antes de escribir cualquier frase del cuerpo del docente:
 > *¿Esta frase describe una acción concreta del docente en el aula, o solo describe el estado del sistema editorial / del aprendizaje?*
 
 Si describe **estado** y no acción, **fuera del cuerpo**.
+
+### 10.3 Voz del cuerpo — el docente no realiza acciones del estudiante
+
+El cuerpo describe acciones que el docente realiza desde su posición frente al aula (explicar, dirigir la atención, escribir en pizarra, leer en voz alta con el grupo, modelar). **No se usan verbos en imperativo dirigidos al docente para acciones que físicamente realiza el estudiante con su material** — abrir el libro, hojearlo, escribir en el cuaderno, subrayar en su libro. Esas acciones se introducen con verbos que enmarquen la propuesta del docente al grupo: *Proponga abrir, Pida que abran, Pídales que hojeen, Dígales que escriban*.
+
+**Razón.** La guía describe lo que el docente hace o propone; no usurpa la acción del estudiante. La voz coherente refuerza la separación entre el rol del docente (conduce, modela, propone) y el del estudiante (ejecuta sobre su material).
+
+**Casos a evitar y su corrección:**
+
+| ❌ Incorrecto | ✅ Correcto |
+|---|---|
+| *Abra la página 14.* | *Proponga abrir la página 14.* / *Pida a la clase que abra la página 14.* |
+| *Hojee la unidad.* | *Pídales que hojeen la unidad.* |
+| *Subraye los verbos.* | *Pídales que subrayen los verbos.* |
+| *Escriba la respuesta en el cuaderno.* | *Pídales que escriban la respuesta en el cuaderno.* |
+
+**Excepción — sí va imperativo al docente** cuando la acción ocurre en la zona del docente (pizarra, voz, gesto, modelado): *Escriba en la pizarra · Lea con la clase · Dibuje un triángulo · Mime las acciones · Diríjase a una persona del grupo*.
+
+**Filtro de detección.** Antes de cualquier imperativo en el cuerpo, preguntarse: *¿esta acción la ejecuta el docente desde su posición, o la ejecuta el estudiante sobre su propio material?* Si es del estudiante, reformular con *Proponga / Pida que / Pídales que / Dígales que*.
+
+### 10.4 Estilo propositivo en restricciones temporales de fase inductiva
+
+Cuando en una secuencia didáctica hay algo que **aún no debe enunciarse o formalizarse** (la regla no se da hasta que la formulan los estudiantes, la respuesta no se revela hasta el cierre, el patrón no se nombra antes de que se descubra), se redacta en **forma propositiva** que describe lo que sí ocurre, no en imperativo prohibitivo dirigido al docente.
+
+**Razón.** El imperativo prohibitivo (*no formalice, no enuncie, no dé la respuesta*) carga al docente con una vigilancia negativa. La forma propositiva (*sin formalizar, sin enunciar, deje que…*) describe la misma intención didáctica en clave de propuesta abierta — coherente con la voz de andamiaje que conduce, no controla.
+
+**Ámbito acotado.** Esta regla aplica a **restricciones temporales del marco inductivo** (MARS EARS): el contenido se mantiene oculto hasta el momento didáctico apropiado. **No** prohíbe el imperativo negativo cuando la acción negada es una norma de aula que el docente sí debe sostener activamente (ej.: *Mantenga la inmersión en español*, *No traduzca a su lengua* sigue siendo válido si la regla del aula es inmersión).
+
+**Casos a evitar y su corrección:**
+
+| ❌ Imperativo prohibitivo | ✅ Propositivo |
+|---|---|
+| *No formalice la regla todavía.* | *Sin formalizar la regla.* / *Aún sin enunciar la regla.* |
+| *No dé la respuesta.* | *Sin dar la respuesta.* / *Deje que la encuentren ellos.* |
+| *No enuncie el patrón antes de tiempo.* | *Aún sin nombrar el patrón.* |
+| *No interrumpa al estudiante.* | *Espere a que termine.* / *Acompañe en silencio.* |
+
+### 10.5 Doble marcaje de restricción temporal en fase inductiva
+
+Una restricción temporal de fase inductiva (no formalizar la regla todavía, no anticipar la respuesta, no nombrar el patrón antes de que se descubra) se enuncia **una sola vez por actividad**. Si la misma restricción aparece marcada al abrir y al cerrar la misma actividad, hay **doblete funcional**: dos marcadores de la misma intención didáctica flanqueando una secuencia única.
+
+**Cómo resolver el doblete.** Conservar la marca que mejor encaje pedagógicamente — **normalmente la de cierre**, porque es donde el docente decide si lanzar la formalización tras la fase inductiva — y eliminar la otra. Si la marca de apertura aporta algo que el cierre no recoge (un matiz distinto, una acción concreta a evitar), conservar la apertura y eliminar el cierre.
+
+**Tercer caso — eliminar ambas.** Si la propia secuencia de la actividad hace explícita la fase inductiva por diseño (preguntas abiertas, descubrimiento guiado, ninguna enunciación de regla en el cuerpo), eliminar las dos marcas: el diseño ya hace el trabajo del marcador, y los avisos verbales se vuelven redundantes con el dispositivo didáctico mismo.
+
+**Razón.** La fase inductiva ya está marcada por el diseño mismo de la actividad (preguntas abiertas, descubrimiento, no enunciación). Marcarlo además al abrir y al cerrar carga al docente con dos avisos del mismo principio sin sumar pedagogía.
+
+**Filtro de detección.** Ante una actividad con marca propositiva de restricción temporal (§10.4), preguntarse: *¿esta restricción ya está marcada en otro punto de la misma actividad?* Si sí, evaluar dónde se queda y dónde se elimina.
+
+**Ejemplo resuelto** (U1G B2, *Contraste el masculino y el femenino*, 2026-05-26):
+
+| Posición | Texto | Decisión |
+|---|---|---|
+| Apertura | *Sin dar la regla todavía, lance al grupo cuatro preguntas breves…* | Eliminada (duplicaba el cierre). |
+| Cierre | *Mantenga la tensión: deje que la regla la cierren los propios estudiantes al final del bloque.* | Eliminada en revisión posterior — las 4 preguntas abiertas marcan por sí solas la fase inductiva; ningún marcador verbal necesario (caso del "tercer caso" del párrafo anterior). |
+
+⚠ **A diferencia de §10.6**, esta regla no exige consulta previa: si el doblete funcional es evidente (misma restricción, misma actividad, dos marcadores), el chat lo resuelve aplicando el criterio "normalmente conservar el cierre". Si hay ambigüedad sobre qué marca conservar, sí consultar.
+
+**Prioridad cruzada con §10.6.** Si un mismo fragmento dispara también §10.6 (recuenta contenido visible del libro además de ser doblete temporal), **manda §10.6**: aplica el gate de consulta previa de §10.6 antes de cualquier eliminación. La regla más cautelosa prevalece.
+
+### 10.6 Recuento redundante de contenido visible del libro: consulta previa antes de eliminar
+
+Las **aclaraciones-recuento** que enumeran o desglosan contenido que el docente tiene a la vista en el libro del alumno (ítems de un ejercicio, contenido de un cuadro, frases de un audio, opciones de una tabla) tienen valor **solo si añaden foco didáctico, contraste, criterio de atención o aviso de riesgo**. Si solo recuentan lo que el docente ya ve a simple vista, normalmente pueden salir del cuerpo.
+
+**Formas en que aparecen:**
+
+- Generalizaciones numéricas: *"cinco son de tipo X, uno es de tipo Y"*.
+- Enumeración del contenido de un cuadro: *"Artículos determinados (el/la/los/las), Masculino y femenino (nombres de cosas y de personas)…"*.
+- Lista parentética de ejemplos cuando el docente ya los tiene delante.
+
+**El valor está en lo que la aclaración añade, no en lo que enumera.** Una aclaración aporta si:
+
+- distingue **categorías que requieren explicación distinta**;
+- focaliza la **atención del docente** en ítems con dificultad recurrente;
+- anuncia un **contraste o un riesgo didáctico** que el ejercicio no señala por sí solo.
+
+Si la aclaración solo nombra lo que está visible y no cumple ninguna de esas tres funciones, es candidata a eliminación.
+
+⚠ **Pero la decisión final es del editor.** Determinar si una aclaración aporta foco, contraste, atención o aviso requiere juicio editorial sobre el contexto pedagógico. **Ningún chat puede eliminar aclaraciones-recuento por su cuenta basándose solo en este criterio.**
+
+**Procedimiento obligatorio cuando se detecta una candidata:**
+
+1. **No eliminar directamente.**
+2. **Citar en chat** la aclaración detectada con su contexto (rótulo, ejercicio, cuadro).
+3. **Aplicar el filtro** y exponer el análisis: *"¿esta aclaración añade foco, contraste, atención o aviso, o solo recuenta lo visible?"*
+4. **Proponer al editor** dos opciones: mantener o eliminar, con una recomendación razonada.
+5. **Esperar OK explícito en chat.** **Silencio o ausencia de respuesta no equivalen a aprobación.** Solo el OK literal autoriza la eliminación.
+
+**Razón de la consulta obligatoria.** El docente tiene el material delante, sí, pero a veces una aclaración aparentemente redundante recoge un matiz que el editor introdujo deliberadamente (un punto de atención, una conexión con otro bloque, una ayuda para el docente que enseña esto por primera vez, un aviso de error frecuente). Eliminar sin consultar puede borrar valor editorial sutil que el chat no aprecia.
+
+**Filtro orientativo (no decisorio):**
+
+> *Esta aclaración, ¿añade foco, contraste, criterio de atención o aviso de riesgo didáctico, o solo recuenta contenido visible del libro?*
+
+Si la respuesta es "solo recuenta", **proponer** la eliminación al editor en chat. No aplicarla por defecto.
+
+**Ejemplos de aclaraciones-recuento cuyo análisis en chat fue concluyente:**
+
+| Aclaración | Análisis | Decisión del editor |
+|---|---|---|
+| *Cinco son tercera persona (Iván, María, él, Charlie, Julia → tiene), uno es primera (yo → tengo).* (U1G B1, ej. 2) | Solo recuenta los sujetos del ejercicio. No añade foco distinto. | Fuera (2026-05-26). |
+| *Artículos determinados (el/la/los/las), Masculino y femenino (nombres de cosas y de personas), Nacionalidad (mexicano/mexicana, español/española, japonés/japonesa).* (U1G B2) | Solo recuenta el contenido del cuadro; el docente lo ve al dirigir la atención. | Fuera (2026-05-26). |
+| *La mitad son -o/-a clásicos…; cuatro son profesiones -or/-ero…; dos son invariables.* (U1G B2, ej. 5) | Distingue tres tipos morfológicos que requieren explicación distinta. | Mantener. |
+| *Tres ítems piden cuidado especial: el 6 (...), el 9 (...), el 10 (...).* (U7G B1, ej. 1) | Focaliza la corrección donde la clase suele dudar. | Mantener. |
+| *regulares (profesor/profesora, niño/niña), formas dadas en femenino con masculino a inferir (amigo/amiga), nacionalidades con cambio de acento (campeón/campeona, alemán/alemana), y una con cambio gráfico (griego/griega, brasileño/brasileña).* (U1G B2, ej. 4) | Las categorías distinguen cuatro tipos morfológicos; los paréntesis actúan como tagger que etiqueta cada ítem con su categoría — ayuda a focalizar la corrección. | Mantener (2026-05-26). |
+| *los ocho colores del libro (rojo, blanco, negro, amarillo, azul, marrón, verde, rosa).* (U1G B2, ej. 7) | Los paréntesis son insumo de acción inmediata para una tarea de pizarra; sin ellos el docente tiene que ir a la página 15 a leer la lista. | Mantener (2026-05-26). |
+| *Formular preguntas con los interrogativos básicos (cómo, cuántos, de dónde, qué, cuál).* (U1G B3, objetivo de bloque) | La enumeración entre paréntesis recuenta el contenido del ejercicio 9; los interrogativos están visibles en el libro. El objetivo de bloque debe ser síntesis, no inventario del contenido enumerado. | Fuera (2026-05-26). |
+
+⚠ **Los ejemplos de esta tabla NO son plantillas reutilizables.** Cada nuevo caso requiere consulta independiente, aunque parezca análogo a uno ya resuelto. La tabla es histórico de decisiones, no jurisprudencia.
 
 ---
 
@@ -429,6 +566,31 @@ Este manual se activa automáticamente cuando Claude trabaja con cualquier archi
 4. Actualizar este manual en commit propio.
 5. La regla activa automáticamente desde el siguiente uso.
 
+### 11.4 Criterio de aplicación: compactación y consulta
+
+Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pasada de compactación editorial** sobre el cuerpo del docente. Esta pasada se aplica **sin microconsulta paso a paso**: se ejecuta directamente cuando el caso es evidente. La consulta en chat se reserva a los supuestos listados al final de este apartado.
+
+**Criterios de la pasada de compactación** (decir lo mismo con menos palabras, sin alterar dinámica, secuencia ni intención didáctica):
+
+- Reducir redundancias evidentes (frases que reformulan la anterior sin añadir información nueva).
+- Eliminar conectores temporales de relleno (*A continuación*, *Entonces*, *Después*) cuando el orden del texto ya marca la sucesión.
+- Suprimir sujetos explícitos redundantes (*los estudiantes*, *cada alumno*) cuando el contexto los hace implícitos.
+- Suprimir adjetivos y adverbios sin carga informativa (*real*, *propio*, *rápidamente*, *formalmente*).
+- Eliminar afirmaciones hiperbólicas según §10.1, sin sustituirlas por nada.
+- Aplicar §10.4 (estilo propositivo) y §10.5 (sin doblete de marca temporal) cuando el caso sea claro y autoejecutable.
+- Variar los cierres de corrección según naturaleza del ejercicio (ej. *Corrigen en parejas* vs. *Corrija en plenaria*).
+
+**Cuándo SÍ se abre consulta en chat (no automatismo, no compactación silenciosa):**
+
+- Eliminación de generalizaciones o aclaraciones-recuento del libro — siempre §10.6, con gate de consulta previa.
+- Cambios que afecten la estructura o la dinámica del archivo (eliminar una actividad, cambiar tipo de corrección de forma sustancial, mover bloques).
+- Falta de claridad en el material original que impida decidir con confianza.
+- Dudas sustantivas sobre qué categoría aplicar, qué dinámica preservar, qué objetivo reformular.
+
+**Filtro de detección antes de cada recorte:**
+
+> *¿Este recorte pierde algo (información operativa, dinámica, claridad) o solo redundancia?* Si solo redundancia → aplicar. Si pierde algo → consultar.
+
 ---
 
 ## 12. Cambios y versiones
@@ -437,5 +599,43 @@ Este manual se activa automáticamente cuando Claude trabaja con cualquier archi
 |---|---|
 | 2026-05-25 | Manual inicial — capa `final/`. Codifica decisiones de la sesión coordinador del 2026-05-25 sobre derivación retroactiva de propuestas a versión limpia. |
 | 2026-05-26 | §10.1 — reformulado el bullet de resúmenes-balance de cierre de sección: *"el círculo está cerrado"* y *"en una sola doble página han aprendido…"* pasan a estar definitivamente fuera (caso confirmado en piloto U1V). |
+| 2026-05-26 | §10.3 nueva — voz del cuerpo: el docente no realiza acciones del estudiante (*Abra* → *Proponga abrir*, etc.). Codifica un patrón implícito ya practicado en vocabulario U1V. |
+| 2026-05-26 | §10.4 nueva — estilo propositivo en restricciones temporales de fase inductiva (*no formalice* → *sin formalizar*). Ámbito acotado a restricciones del marco inductivo MARS EARS; no afecta a normas de aula sostenidas activamente. Aplicación retroactiva al piloto: *vocabulario.md* L39, *gramatica.md* L39 y L65. |
+| 2026-05-26 | §10.6 nueva — generalizaciones del ejercicio: consulta previa en chat obligatoria antes de cualquier eliminación. Silencio ≠ OK; ejemplos no son jurisprudencia. §10.5 reservada para futuras reglas de voz. |
+| 2026-05-26 | §10 retitulada — *"Estructura sin metadiscurso editorial"* → *"Voz del cuerpo del docente y criterios editoriales de redacción"*. Tras incorporar §10.3-10.6, el título anterior solo describía §10.1-10.2. |
+| 2026-05-26 | §10.5 nueva — doble marcaje de restricción temporal en fase inductiva: una sola marca por actividad, normalmente la de cierre. Codifica el caso U1G B2 (apertura *"sin dar la regla todavía"* eliminada por duplicar el cierre). Sin gate de consulta: regla autoejecutable cuando el doblete es evidente. |
+| 2026-05-26 | §10.6 ampliada — de *"generalizaciones del ejercicio"* a *"recuento redundante de contenido visible del libro"*. Mantiene el gate de consulta previa (silencio ≠ OK, sin jurisprudencia). Acotación añadida: el valor está en lo que la aclaración añade (foco, contraste, atención, aviso), no en lo que enumera. |
+| 2026-05-26 | §10.5 — nota de prioridad cruzada con §10.6 añadida: cuando un fragmento dispara ambas, manda §10.6 (la regla más cautelosa). |
+| 2026-05-26 | §10.5 — añadido "tercer caso": si la propia secuencia hace explícita la fase inductiva por diseño (preguntas abiertas, descubrimiento guiado), eliminar ambas marcas. Ejemplo U1G B2 revisado: cierre también eliminado al constatar que las 4 preguntas abiertas marcan por sí solas la inducción. |
+| 2026-05-26 | §11.4 nueva — criterio de aplicación: compactación y consulta. Codifica la pasada de compactación editorial sobre el cuerpo del docente como **paso de uso del manual** (no como bloque doctrinal nuevo). La compactación ordinaria se aplica sin microconsulta; la consulta en chat queda reservada a §10.6, cambios de estructura/dinámica y dudas reales. |
+| 2026-05-26 | §10.6 — fila nueva en la tabla de ejemplos: enumeración entre paréntesis dentro del objetivo de bloque que recuenta contenido visible del libro (caso *"Formular preguntas con los interrogativos básicos (cómo, cuántos, de dónde, qué, cuál)"* — eliminados los paréntesis). El objetivo de bloque es síntesis, no inventario. |
+| 2026-05-26 | §2.1 nueva — convenciones específicas por sección. Codifica para Comunicación: (a) línea obligatoria *"Buscar Vídeo de comunicación **unidad X**"* en B1; (b) formato canónico de tarjeta de estrategia: *"Imprimir tarjeta de estrategia—[destreza]—*[título]*"*. |
+| 2026-05-26 | §13 nueva — patrones observados pendientes de codificación. Registra dos patrones detectados en el piloto U1 que el autor decide no codificar todavía: narración meta-pedagógica del proceso (Patrón 1) y autoafirmaciones sobre el éxito esperado de una dinámica (Patrón 3). Revisar al cerrar más unidades. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
+
+---
+
+## 13. Patrones observados pendientes de codificación
+
+Lista interna de patrones detectados durante el piloto que **no se han codificado todavía**. Cada uno necesita más casos de observación antes de decidir si merece regla propia, encajar como subcaso de regla existente, o descartar como decisión editorial caso a caso. Revisar al cerrar más unidades.
+
+### Patrón 1 — Narración meta-pedagógica del proceso de aprendizaje
+
+**Caso piloto** (U1G B2, rótulo *SISTEMATICE LA REGLA DE CONCORDANCIA*):
+
+> *"…ahora la verbalizan ellos y usted la oficializa señalando dónde queda en el libro."*
+
+**Qué describe.** Comentario sobre **quién verbaliza qué** y **quién oficializa qué** en la dinámica de aula (estudiantes verbalizan, profesor oficializa), en lugar de instruir una acción concreta del docente.
+
+**Estado.** Eliminado en piloto. Sin codificar — el autor necesita más casos para decidir si es subcaso de §10.1 (metadiscurso editorial) o si merece regla propia.
+
+### Patrón 3 — Autoafirmaciones sobre el éxito esperado de una dinámica
+
+**Caso piloto** (U1G B3, ensayo en parejas tras el modelado del docente):
+
+> *"Dos o tres intercambios bastan para automatizar la melodía y la fórmula."*
+
+**Qué describe.** Afirmación que **declara cuántas repeticiones, rondas o intercambios bastarán para producir tal aprendizaje** (prescripción pedagógica generalista). La instrucción concreta de cantidad (*tres rondas, dos vueltas*) se mantiene; lo que sale es la afirmación de **suficiencia para conseguir X**.
+
+**Estado.** Eliminado en piloto. Sin codificar — decisión caso a caso por ahora. Revisar al cerrar más unidades: si el patrón se repite consistentemente, se codifica como subcaso de §10.1.
