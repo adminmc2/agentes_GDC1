@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-26 (v12.31 — U1 Destrezas cerrada en `final/`. Tarjeta de estrategia *Caza el dato* + píldora formativa 1.2 *Te presento a mi compañero*. Sin nuevas reglas en manual; me gusta/le gusta como chunks).
+> **Última actualización:** 2026-05-27 (v12.32 — U1 Cultura cerrada en `final/`. Sin píldora, sin tarjeta de estrategia. Iteración fina con el autor: eliminada reproducción de fórmulas del cuadro y caso plurilingüe/monolingüe).
+>
+> **Hito previo (v12.31):** 2026-05-26 (U1 Destrezas cerrada en `final/`. Tarjeta de estrategia *Caza el dato* + píldora formativa 1.2 *Te presento a mi compañero*. Sin nuevas reglas en manual; me gusta/le gusta como chunks).
 >
 > **Hito previo (v12.30):** 2026-05-26 (U1 Comunicación iterada. 4 reglas nuevas en manual: §10.6 cuarto bullet, §10.7 sin bloques, §10.8 ENTREGA DE INSIGNIA, §2.1 caras por contenido. §13 patrón 4).
 >

@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.32 — 2026-05-27] — U1 Cultura cerrada
+
+Nueva: `unidades/U1/final/cultura.md`. Sección breve (1 ejercicio + 6 rótulos del docente) sobre tratamiento *tú/usted/vos*. Sin píldora, sin tarjeta de estrategia. Ficha 1.6 (insignia) + ficha 1.7 (tarjetas de rol para dinámica). Iteración fina con el autor: eliminada la reproducción de las 4 fórmulas del cuadro (§10.6) y eliminado el caso *plurilingüe/monolingüe* (NC1 asume lengua común del grupo).
+
 ## [v12.31 — 2026-05-26] — U1 Destrezas cerrada (con tarjeta + píldora)
 
 Nueva: `unidades/U1/final/destrezas.md`. Derivación íntegra desde propuesta con aplicación del manual de estilo + protocolo de objetivos + tratamiento de la tarjeta de estrategia *Caza el dato* (comprensión auditiva) y de la píldora formativa 1.2 *Te presento a mi compañero*. Iteración fina con el autor: rótulo *PRESENTE Y PRACTIQUE LA MEDIACIÓN ORAL*, tabla de cambio de persona reformulada (6 filas, columnas YO / MI COMPAÑERO/A), me gusta/le gusta presentado como chunks, presentación oral compactada.
