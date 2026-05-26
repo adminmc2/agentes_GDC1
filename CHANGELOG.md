@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.31 — 2026-05-26] — U1 Destrezas cerrada (con tarjeta + píldora)
+
+Nueva: `unidades/U1/final/destrezas.md`. Derivación íntegra desde propuesta con aplicación del manual de estilo + protocolo de objetivos + tratamiento de la tarjeta de estrategia *Caza el dato* (comprensión auditiva) y de la píldora formativa 1.2 *Te presento a mi compañero*. Iteración fina con el autor: rótulo *PRESENTE Y PRACTIQUE LA MEDIACIÓN ORAL*, tabla de cambio de persona reformulada (6 filas, columnas YO / MI COMPAÑERO/A), me gusta/le gusta presentado como chunks, presentación oral compactada.
+
 ## [v12.30 — 2026-05-26] — U1 Comunicación iterada + 4 reglas nuevas en manual
 
 Iteración fina de `unidades/U1/final/comunicacion.md`: fusión de rótulos (CONTEXTUALICE + PRESENTE EL VÍDEO), referencias a las caras de la tarjeta por contenido (no CARA A/B), eliminación de citas textuales reproducidas del libro, eliminación de referencias a "bloque", restructuración de ENTREGA DE INSIGNIA (rótulo + frase única). Aplicación retroactiva del nuevo estilo de entrega en `vocabulario.md` y `gramatica.md`. Manual ampliado con §10.6 (cuarto bullet), §10.7 (sin bloques en cuerpo), §10.8 (ENTREGA DE INSIGNIA), §2.1 (caras de tarjeta por contenido). §13 con patrón 4 (fusión de rótulos).
