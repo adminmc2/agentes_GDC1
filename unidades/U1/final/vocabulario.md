@@ -73,7 +73,7 @@ Antes de abrir el **ejercicio 8**, escriba en la pizarra los cinco pares de naci
 | brasileño | brasileña |
 | colombiano | colombiana |
 
-Pregunte qué cambia entre las dos columnas y deje que los estudiantes lo digan en voz alta. Recoja dos o tres respuestas sin formalizar la regla. Lea ahora con ellos el ejemplo del libro: *Me llamo Pedro y soy de España, soy español*. Pida que completen las cinco frases del **ejercicio 8** fijándose en si la persona del enunciado es chico o chica para elegir la forma correcta del recuadro. Resuelva en parejas y haga una puesta en común breve.
+Pregunte qué cambia entre las dos columnas y deje que los estudiantes lo digan en voz alta. Recoja dos o tres respuestas sin formalizar la regla. Lea ahora con ellos el ejemplo del libro. Pida que completen las cinco frases del **ejercicio 8** fijándose en si la persona del enunciado es chico o chica para elegir la forma correcta del recuadro. Resuelva en parejas y haga una puesta en común breve.
 
 Cierre volviendo a las dos fotos del **ejercicio 1**: ¿cuál es la nacionalidad de Katrina? ¿Y la de Rafa? Recoja las dos respuestas en plenaria: Katrina es española, Rafa es argentino. Aproveche para señalar el contraste entre masculino y femenino en estos nombres y el de las cinco frases del recuadro.
 
@@ -85,5 +85,4 @@ Los estudiantes leen en silencio los dos pequeños textos. Después, individualm
 
 ENTREGA DE INSIGNIA
 
-Entrega de insignia **¡MUCHO GUSTO!**
-Mencione que por presentarse en español, conocer los objetos de la clase, deletrear su propio nombre y decir su nacionalidad, reciben esta insignia. Comente que en español *mucho gusto* es la fórmula que se usa al conocer a alguien por primera vez: a partir de ahora, la pueden usar entre el grupo cada vez que coincidan con una persona nueva.
+Mencione que por presentarse en español, conocer los objetos de la clase, deletrear su propio nombre y decir su nacionalidad, reciben la insignia **¡MUCHO GUSTO!** Comente que en español *mucho gusto* es la fórmula que se usa al conocer a alguien por primera vez: a partir de ahora, la pueden usar entre el grupo cada vez que coincidan con una persona nueva.

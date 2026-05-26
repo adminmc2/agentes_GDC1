@@ -64,7 +64,7 @@ Lance al grupo cuatro preguntas breves, una a una, recogiendo dos o tres respues
 
 En el **ejercicio 4**, completan la tabla con el género que falta en los siete pares: regulares -o/-a y con cambio de acento (campeón/campeona). Corrigen en parejas.
 
-El **ejercicio 5** amplía a diez sustantivos masculinos que pasan a femenino: ocho aplican los patrones del bloque (alumno → alumna, doctor → doctora…) y dos invariables (estudiante, cantante: solo cambia el artículo). Corrigen en parejas. Cierre con los dos últimos: *estos no cambian, solo cambia el artículo*.
+El **ejercicio 5** amplía a diez sustantivos masculinos que pasan a femenino: ocho aplican los patrones del **ejercicio 4** (alumno → alumna, doctor → doctora…) y dos invariables (estudiante, cantante: solo cambia el artículo). Corrigen en parejas. Cierre con los dos últimos: *estos no cambian, solo cambia el artículo*.
 
 PRACTIQUE LA CONCORDANCIA CON COLORES Y NACIONALIDADES
 
@@ -111,5 +111,4 @@ En el **ejercicio 10** eligen dos o tres preguntas de los ejercicios anteriores 
 
 ENTREGA DE INSIGNIA
 
-Entrega de insignia **¡YO SOY YO!**
-Mencione que por saber decir quiénes son, distinguir masculino y femenino y hacer preguntas para conocer a alguien, reciben esta insignia. Comente que en español *yo soy yo* es la afirmación más simple de identidad: ya pueden decirla en presente y con su nombre.
+Mencione que por saber decir quiénes son, distinguir masculino y femenino y hacer preguntas para conocer a alguien, reciben la insignia **¡YO SOY YO!** Comente que en español *yo soy yo* es la afirmación más simple de identidad: ya pueden decirla en presente y con su nombre.

@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.30 — 2026-05-26] — U1 Comunicación iterada + 4 reglas nuevas en manual
+
+Iteración fina de `unidades/U1/final/comunicacion.md`: fusión de rótulos (CONTEXTUALICE + PRESENTE EL VÍDEO), referencias a las caras de la tarjeta por contenido (no CARA A/B), eliminación de citas textuales reproducidas del libro, eliminación de referencias a "bloque", restructuración de ENTREGA DE INSIGNIA (rótulo + frase única). Aplicación retroactiva del nuevo estilo de entrega en `vocabulario.md` y `gramatica.md`. Manual ampliado con §10.6 (cuarto bullet), §10.7 (sin bloques en cuerpo), §10.8 (ENTREGA DE INSIGNIA), §2.1 (caras de tarjeta por contenido). §13 con patrón 4 (fusión de rótulos).
+
 ## [v12.29 — 2026-05-26] — U1 final/: gramática + comunicación cerradas; manual ampliado
 
 Pieza 2 del piloto `final/`. Nuevos: `unidades/U1/final/gramatica.md`, `unidades/U1/final/comunicacion.md`. Manual `docs/manual-estilo-final.md` con 8 reglas adicionales (§10.3-10.6, §11.4, §2.1, retítulo §10, §13 patrones pendientes). Renombrado masivo *PÍLDORA PROYECTABLE* → *PÍLDORA FORMATIVA* en 13 propuestas de repo A. Aplicación retroactiva §10.4 a `unidades/U1/final/vocabulario.md`.

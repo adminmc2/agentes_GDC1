@@ -108,6 +108,17 @@ Ejemplo: *Imprimir tarjeta de estrategia—interacción oral—*Saludar y desped
 
 La destreza va en minúscula y precede al título; el título va en cursiva. Tres componentes separados por guion largo (em-dash). La línea va al inicio del bloque donde se usa la tarjeta, junto al resto de líneas *Imprimir*.
 
+#### Comunicación — referencias a las caras de la tarjeta en el cuerpo
+
+Las etiquetas *CARA A* / *CARA B* son convención editorial interna. **NO aparecen en el cuerpo del docente.** En el cuerpo, las caras se nombran **por su contenido**:
+
+- *"la cara del saludo en cuatro pasos"* (no *"CARA A (saluda en cuatro pasos)"*)
+- *"la cara de las micro-funciones"* (no *"CARA A"*)
+- *"la cara del diálogo modelo"* (no *"CARA B"*)
+- *"la cara de los trucos comunicativos"* (no *"CARA B"*)
+
+Las etiquetas internas se reservan a la spec textual de la tarjeta (que no va en `final/` por ser material de autoría interna). Regla equivalente a la convención canónica de repo B en `tarjetas-estrategia-comunicacion-pautas.md` §1.
+
 ---
 
 ## 3. Acentuación diacrítica
@@ -503,6 +514,7 @@ Las **aclaraciones-recuento** que enumeran o desglosan contenido que el docente 
 - Generalizaciones numéricas: *"cinco son de tipo X, uno es de tipo Y"*.
 - Enumeración del contenido de un cuadro: *"Artículos determinados (el/la/los/las), Masculino y femenino (nombres de cosas y de personas)…"*.
 - Lista parentética de ejemplos cuando el docente ya los tiene delante.
+- Reproducción de citas textuales del libro tras *"lea con la clase el ejemplo del ejercicio X: …"* o *"…el ejemplo del libro: …"*. La cita ya está en el libro a la vista del docente; sale el contenido tras los dos puntos, se mantiene la instrucción (*"Lea con la clase el ejemplo del ejercicio X"*).
 
 **El valor está en lo que la aclaración añade, no en lo que enumera.** Una aclaración aporta si:
 
@@ -541,8 +553,39 @@ Si la respuesta es "solo recuenta", **proponer** la eliminación al editor en ch
 | *regulares (profesor/profesora, niño/niña), formas dadas en femenino con masculino a inferir (amigo/amiga), nacionalidades con cambio de acento (campeón/campeona, alemán/alemana), y una con cambio gráfico (griego/griega, brasileño/brasileña).* (U1G B2, ej. 4) | Las categorías distinguen cuatro tipos morfológicos; los paréntesis actúan como tagger que etiqueta cada ítem con su categoría — ayuda a focalizar la corrección. | Mantener (2026-05-26). |
 | *los ocho colores del libro (rojo, blanco, negro, amarillo, azul, marrón, verde, rosa).* (U1G B2, ej. 7) | Los paréntesis son insumo de acción inmediata para una tarea de pizarra; sin ellos el docente tiene que ir a la página 15 a leer la lista. | Mantener (2026-05-26). |
 | *Formular preguntas con los interrogativos básicos (cómo, cuántos, de dónde, qué, cuál).* (U1G B3, objetivo de bloque) | La enumeración entre paréntesis recuenta el contenido del ejercicio 9; los interrogativos están visibles en el libro. El objetivo de bloque debe ser síntesis, no inventario del contenido enumerado. | Fuera (2026-05-26). |
+| *Lea con la clase el ejemplo del ejercicio 2: ¡Hola! · ¿Cómo te llamas? · Me llamo… ¿Y tú? · Me llamo…* (U1 Comunicación B1, ej. 2) y casos análogos en ej. 3, 5, 6 + vocabulario U1V *Me llamo Pedro y soy de España, soy español* | La cita reproduce contenido visible del libro del alumno; el docente la tiene a la vista. Sale tras los dos puntos; se mantiene la instrucción *"Lea con la clase el ejemplo del ejercicio X"* o *"el ejemplo del libro"*. | Fuera (2026-05-26). |
 
 ⚠ **Los ejemplos de esta tabla NO son plantillas reutilizables.** Cada nuevo caso requiere consulta independiente, aunque parezca análogo a uno ya resuelto. La tabla es histórico de decisiones, no jurisprudencia.
+
+### 10.7 Sin referencias a "bloque" en el cuerpo del docente
+
+Los **bloques** son convención editorial interna (división del archivo `final/` por *Ejercicios X-Y*). **No aparecen en el cuerpo del docente.** En su lugar, las referencias intra-archivo se hacen:
+
+- por **número de ejercicio**: *"el ejercicio 4"*, *"los ejercicios anteriores"*, *"el ejercicio 7"*.
+- por **temporalidad**: *"anteriormente"*, *"ya visto"*, *"trabajado antes"*, *"como aprendieron"*.
+- por **contenido**: *"los patrones de masculino y femenino"*, *"la fórmula del saludo"*.
+
+**Casos a evitar:**
+
+| ❌ Con "bloque" | ✅ Por ejercicio / anteriormente / contenido |
+|---|---|
+| *"al cerrar el bloque…"* | *"al cerrar la sección…"* / *"al cerrar el ejercicio X…"* |
+| *"los patrones del bloque…"* | *"los patrones del ejercicio 4"* / *"los patrones vistos"* |
+| *"integra todo lo del bloque"* | *"integra todo lo trabajado en los ejercicios anteriores"* |
+| *"la tarjeta del bloque 1"* | *"la tarjeta usada anteriormente"* / *"la tarjeta del ejercicio 3"* |
+
+**Razón.** El docente no ve la sección como dividida en "bloques" — ve ejercicios numerados. La división en bloques es organización interna del archivo (para legibilidad editorial); referenciarla al docente añade jerga sin función.
+
+### 10.8 ENTREGA DE INSIGNIA: rótulo + frase única
+
+El rótulo *ENTREGA DE INSIGNIA* nombra la acción. **No se repite debajo** con *"Entrega de insignia ¡LEMA!"* como segunda línea — sería redundancia visual con el rótulo.
+
+El bloque queda en una o dos frases:
+
+1. Frase obligatoria: *"Mencione que por [logros del estudiante], reciben la insignia **¡LEMA!**"*
+2. Frase opcional (solo si el comentario cultural sobre el lema es **verificable y aporta**): *"Comente que en español [lema] es [explicación breve real]."*
+
+Si el lema no tiene comentario cultural verdadero o significativo, **no se inventa**: el bloque queda solo con la frase obligatoria.
 
 ---
 
@@ -611,6 +654,11 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-05-26 | §10.6 — fila nueva en la tabla de ejemplos: enumeración entre paréntesis dentro del objetivo de bloque que recuenta contenido visible del libro (caso *"Formular preguntas con los interrogativos básicos (cómo, cuántos, de dónde, qué, cuál)"* — eliminados los paréntesis). El objetivo de bloque es síntesis, no inventario. |
 | 2026-05-26 | §2.1 nueva — convenciones específicas por sección. Codifica para Comunicación: (a) línea obligatoria *"Buscar Vídeo de comunicación **unidad X**"* en B1; (b) formato canónico de tarjeta de estrategia: *"Imprimir tarjeta de estrategia—[destreza]—*[título]*"*. |
 | 2026-05-26 | §13 nueva — patrones observados pendientes de codificación. Registra dos patrones detectados en el piloto U1 que el autor decide no codificar todavía: narración meta-pedagógica del proceso (Patrón 1) y autoafirmaciones sobre el éxito esperado de una dinámica (Patrón 3). Revisar al cerrar más unidades. |
+| 2026-05-26 | §13 — patrón 4 añadido: fusión de rótulos secuenciales con acciones encadenadas (caso piloto U1 Comunicación B1, dos rótulos *CONTEXTUALICE…* + *PRESENTE EL VÍDEO* fusionados). Sin codificar — exige juicio editorial sobre granularidad. |
+| 2026-05-26 | §2.1 — añadida subsección Comunicación: las etiquetas *CARA A* / *CARA B* son convención editorial interna y no aparecen en el cuerpo del docente; en el cuerpo se nombran por contenido (*la cara del saludo en cuatro pasos*, *la cara de las micro-funciones*…). Aplicado retroactivamente en U1 Comunicación B1. |
+| 2026-05-26 | §10.6 — añadido cuarto bullet en "Formas en que aparecen": reproducción de citas textuales del libro tras *"lea con la clase el ejemplo: …"*. El docente tiene el libro a la vista; la cita reproducida en el cuerpo no añade. Aplicado retroactivamente: 4 ocurrencias en U1 Comunicación + 1 en U1V. |
+| 2026-05-26 | §10.7 nueva — sin referencias a *"bloque"* en el cuerpo del docente. Los bloques son convención editorial interna; en el cuerpo se referencia por número de ejercicio (*"el ejercicio 4"*), temporalidad (*"anteriormente"*) o contenido (*"los patrones de M/F"*). Aplicado retroactivamente: 2 ocurrencias en U1 (comunicacion.md L75, gramatica.md L67) + el caso original en U1 Comunicación B3 (*"del bloque 1"* → *"usada anteriormente"*). |
+| 2026-05-26 | §10.8 nueva — ENTREGA DE INSIGNIA: rótulo + frase única. Eliminada la línea *"Entrega de insignia ¡LEMA!"* duplicada bajo el rótulo en los tres `final/` (vocabulario, gramatica, comunicacion); el lema se integra en la frase *"…reciben la insignia ¡LEMA!"*. Comentario cultural opcional solo si verificable. Eliminada afirmación falsa sobre *a conocernos* en U1 Comunicación. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
@@ -639,3 +687,17 @@ Lista interna de patrones detectados durante el piloto que **no se han codificad
 **Qué describe.** Afirmación que **declara cuántas repeticiones, rondas o intercambios bastarán para producir tal aprendizaje** (prescripción pedagógica generalista). La instrucción concreta de cantidad (*tres rondas, dos vueltas*) se mantiene; lo que sale es la afirmación de **suficiencia para conseguir X**.
 
 **Estado.** Eliminado en piloto. Sin codificar — decisión caso a caso por ahora. Revisar al cerrar más unidades: si el patrón se repite consistentemente, se codifica como subcaso de §10.1.
+
+### Patrón 4 — Fusión de rótulos secuenciales con acciones encadenadas
+
+**Caso piloto** (U1 Comunicación B1):
+
+> Dos rótulos consecutivos:
+> *"CONTEXTUALICE LA SITUACIÓN COMUNICATIVA"* (conectar con lo trabajado en Vocabulario y Gramática + bridge al vídeo)
+> *"PRESENTE EL DIÁLOGO MEDIANTE EL VÍDEO"* (lanzar el vídeo + dos proyecciones)
+>
+> → fusionados en uno: *"CONTEXTUALICE LA SITUACIÓN Y PRESENTE EL VÍDEO"*
+
+**Qué describe.** Dos rótulos consecutivos cuyas acciones forman una **secuencia natural única** (contextualizar → presentar, modelar → practicar, leer → responder) pueden fusionarse cuando la separación entre ambos no añade granularidad didáctica real. El comentario del autor: *"dos títulos en uno no tiene sentido tantos"* — la atomización excesiva de rótulos satura visualmente al docente sin añadir orientación operativa.
+
+**Estado.** Aplicado en piloto. Sin codificar como regla — exige juicio editorial sobre si la separación entre rótulos aporta granularidad o solo fragmenta visualmente. Un chat no debería fusionar rótulos por su cuenta. Revisar al cerrar más unidades: si el patrón se repite consistentemente, codificar como regla con gate de consulta previa (similar a §10.6).

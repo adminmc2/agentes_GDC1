@@ -17,35 +17,31 @@ Buscar Vídeo de comunicación **unidad 1**
 Imprimir ficha 1.4—tarjetas de emparejamiento (preguntas y respuestas)
 Imprimir tarjeta de estrategia—interacción oral—*Saludar y despedirse*
 
-CONTEXTUALICE LA SITUACIÓN COMUNICATIVA
+CONTEXTUALICE LA SITUACIÓN Y PRESENTE EL VÍDEO
 
-Antes de poner el vídeo, conecte con lo trabajado en Vocabulario y Gramática: *¿recordáis cómo Katrina y Rafa se presentaron? ¿Qué fórmulas usaron?* Recoja un par de respuestas rápidas; saldrán *me llamo, soy de, tengo X años*. Anuncie que en esta sección lo ponen en acción con sus compañeros reales y añaden las **fórmulas informales** de saludo y las **despedidas**.
-
-PRESENTE EL DIÁLOGO MEDIANTE EL VÍDEO
+Antes de poner el vídeo, conecte con lo trabajado en Vocabulario y Gramática: *¿recordáis cómo Katrina y Rafa se presentaron? ¿Qué fórmulas usaron?* Recoja un par de respuestas rápidas. Señale que van a ver un vídeo con esta misma situación.
 
 Ponga el vídeo (**pista 13** como audio si no hay proyector). Primera proyección sin pausa y sin subtítulos: solo miran y escuchan. Pregunta-guía: *¿cuántos chicos hay? ¿Cómo se llaman?* Recoja respuestas en plenaria.
 
 Segunda proyección con subtítulos o con el libro abierto en la **página 16**: siguen el diálogo con la vista. Pregunta-guía: *¿de dónde son? ¿Qué edad tienen?* Recoja en plenaria.
 
-Comente brevemente las palabras nuevas: *hola, ¿qué tal?, mucho gusto*. Las fórmulas *me llamo, soy de, tengo X años* ya las usaron en Vocabulario y Gramática — aquí entran en interacción real.
-
 ACTIVE LA PRESENTACIÓN MUTUA EN PAREJAS
 
-Lea con la clase el ejemplo del **ejercicio 2**: *¡Hola! · ¿Cómo te llamas? · Me llamo… ¿Y tú? · Me llamo…* Modele el intercambio con un estudiante voluntario: usted hace el primer turno, el voluntario responde, alternan.
+Lea con la clase el ejemplo del **ejercicio 2**. Modele el intercambio con un estudiante voluntario: usted hace el primer turno, el voluntario responde, alternan.
 
-A continuación, lance el **emparejamiento por frases** enriquecido. Tenga recortadas las tarjetas de la **ficha 1.4**: 5 preguntas básicas (*¡Hola! ¿Qué tal? · ¿Cómo te llamas? · ¿De dónde eres? · ¿Cuántos años tienes? · ¿Cuál es tu número de teléfono?*) y 15-20 tarjetas-respuesta con varias variantes por pregunta. Reparta una tarjeta por estudiante.
+A continuación, reparta las tarjetas de la **ficha 1.4** para formar grupos por pregunta. La ficha contiene 5 tarjetas-pregunta (*¡Hola! ¿Qué tal? · ¿Cómo te llamas? · ¿De dónde eres? · ¿Cuántos años tienes? · ¿Cuál es tu número de teléfono?*) y 15-20 tarjetas-respuesta con varias variantes para cada pregunta. Cada estudiante recibe una tarjeta: 5 reciben pregunta, el resto recibe respuesta.
 
-Quienes tienen preguntas se reparten por el aula sin mostrar la tarjeta y la dicen en voz alta cada pocos segundos. Quienes tienen respuestas se mueven hasta identificar la pregunta que les encaja; al encontrarla, ambos la dicen en voz alta y se quedan juntos.
+Los estudiantes con pregunta se quedan de pie en distintos puntos del aula y dicen su pregunta en voz alta cada pocos segundos. Los estudiantes con respuesta caminan entre ellos escuchando hasta reconocer la pregunta que encaja con su respuesta; al reconocerla, se acercan al compañero y se quedan a su lado.
 
-Cuando todos se han emparejado, cada grupo lee en voz alta: primero la pregunta, después cada respuesta. La clase oye varias respuestas distintas para una misma pregunta.
+Cuando todas las respuestas estén emparejadas con su pregunta, cada grupo lee en voz alta: primero el estudiante con la pregunta, después uno a uno los que tienen respuesta. La clase oye varias respuestas distintas para una misma pregunta.
 
-Cierre volviendo a sentar a todos. En parejas, repiten el intercambio del **ejercicio 2** alternando rol con sus datos reales.
+Cierre con todos sentados de nuevo. En parejas, repiten el intercambio del **ejercicio 2** alternando rol con sus datos reales.
 
 PROPICIE LA PRÁCTICA DEL SALUDO INFORMAL
 
-Lea con la clase el ejemplo del **ejercicio 3**: *¡Hola! · ¿Qué tal? · Bien, ¿y tú? · Bien, gracias*. Reparta o proyecte la tarjeta de estrategia *Saludar y despedirse*. Pida que miren la **CARA A** (*saluda en cuatro pasos*) como guía visual durante los próximos minutos.
+Lea con la clase el ejemplo del **ejercicio 3**. Reparta o proyecte la tarjeta de estrategia *Saludar y despedirse*. Pida que miren y analicen la cara del saludo en cuatro pasos como guía durante los próximos minutos.
 
-En parejas, practican el saludo + intercambio del nombre con apoyo descendente: primero con la tarjeta a la vista, después con la tarjeta boca abajo y, por último, de memoria mirando a los ojos. Una pareja voluntaria lee al cierre.
+En parejas, practican el saludo + intercambio del nombre con apoyo descendente: primero con la tarjeta a la vista, después con la tarjeta boca abajo y, por último, de memoria. Pida voluntarios para que compartan su diálogo.
 
 ### Ejercicios 4-7
 
@@ -62,7 +58,7 @@ Pase al **ejercicio 4**: relacionan cada número con su palabra. Resolución ind
 
 SUPERVISE LA PRÁCTICA DE PREGUNTAR Y DECIR LA EDAD
 
-Lea con la clase el ejemplo del **ejercicio 5**: *¿Cuántos años tienes? — Tengo trece años. ¿Y tú? — Tengo catorce*. Modele el intercambio con un estudiante voluntario.
+Lea con la clase el ejemplo del **ejercicio 5**. Modele el intercambio con un estudiante voluntario.
 
 En parejas, preguntan y responden con su edad real. Anuncie: *ahora vais a preguntar a tres compañeros distintos*. Cada uno rota por tres parejas y apunta las edades en el cuaderno.
 
@@ -70,15 +66,15 @@ Al volver a su sitio, breve puesta en común: *¿tenéis todos la misma edad o h
 
 ORIENTE LA PRÁCTICA DE LOS NÚMEROS DEL 1 AL 20
 
-Lea con la clase el ejemplo del **ejercicio 6**: *¿Cuánto es ocho más cinco? — Trece*. Comente que *más* es **+** e *igual* es **=** (acompañe con gesto). Las sumas afianzan los números antes de pasar al teléfono.
+Lea con la clase el ejemplo del **ejercicio 6**. Comente el nombre de los símbolos e invítelos a relacionarlos con alguna otra lengua que conozcan.
 
 En parejas, cada uno prepara cuatro sumas con resultados entre 1 y 20. Alternan: A pregunta, B responde, A apunta si acierta; cambian. Para cerrar, tres parejas voluntarias lanzan una suma en plenaria y el resto responde a coro.
 
 CIERRE CON LA ESCUCHA DE LAS FICHAS PERSONALES
 
-Pase al **ejercicio 7**: van a oír a varias personas dando su nombre, edad y teléfono y completan las fichas del libro — integra todo lo del bloque.
+Pase al **ejercicio 7**: van a oír a varias personas dando su nombre, edad y teléfono y completan las fichas del libro — integra todo lo trabajado en los ejercicios anteriores.
 
-Ponga la **pista 15**. Primera escucha completa, sin pausas: solo escuchan. Pregunta-guía: *¿cuántas personas hay?* Recoja la respuesta.
+Ponga la **pista 15**. Primera escucha completa, sin pausas: solo escuchan. Pregunta-guía: *¿cuántas personas hay en la conversación?* Recoja la respuesta.
 
 Segunda escucha con pausas tras cada persona: completan las fichas con nombre, edad y teléfono. Si hace falta, tercera escucha para las casillas que falten.
 
@@ -95,7 +91,7 @@ CONDUZCA LA PREPARACIÓN DEL DIÁLOGO EN GRUPOS
 
 Pase al **ejercicio 8**: en grupos de cuatro, cada miembro tiene un rol y todos intercambian la información completa — saludarse, presentarse, dar edad y teléfono, despedirse.
 
-Reparta o proyecte la tarjeta de estrategia *Presentarse y datos personales*. Sus cuatro pasos (nombre, edad, lugar, teléfono) son una guía rápida para el interior de la presentación; combinada con la *Saludar y despedirse* del bloque 1, cubre toda la conversación: una abre y cierra, la otra el interior.
+Reparta o proyecte la tarjeta de estrategia *Presentarse y datos personales*. Sus cuatro pasos (nombre, edad, lugar, teléfono) son una guía rápida para la presentación; combinada con la *Saludar y despedirse* usada anteriormente, cubre toda la conversación: una abre y cierra, la otra el proceso de presentarse.
 
 Forme grupos de cuatro (en clases impares, un grupo de tres o cinco). Cada grupo tiene a la vista las dos tarjetas. Preparan el diálogo por escrito en el cuaderno.
 
@@ -109,5 +105,4 @@ Dos o tres grupos voluntarios representan ante la clase; el resto escucha y apla
 
 ENTREGA DE INSIGNIA
 
-Entrega de insignia **¡A CONOCERNOS!**
-Mencione que por saludar, presentarse, decir su edad y teléfono y representar un diálogo grupal reciben esta insignia. Comente que en español *a conocernos* es una forma natural de abrir conversación con alguien nuevo.
+Mencione que por saludar, presentarse, decir su edad y teléfono y representar un diálogo grupal reciben la insignia **¡A CONOCERNOS!**
