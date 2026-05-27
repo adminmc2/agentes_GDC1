@@ -1,0 +1,761 @@
+{
+  "unidad": "U1",
+  "actualizado": "2026-05-27",
+  "fuente_carpeta": "unidades/U1/recursos/",
+  "nota": "Inventario del material complementario de U1, descrito como conjunto de actividades/dinámicas independientes (no como archivos). El campo archivo_fuente indica el contenedor físico. El chat principal decide la integración en final/. El extractor no integra.",
+  "esquema_version": "2.0",
+  "campos_descriptores": {
+    "tipo_dinamica": "lúdica | competitiva | cooperativa | reflexiva | investigacion | presentacion | mecanizacion | cinetica | reconocimiento",
+    "categoria_editorial": "diapositivas_aula | juego_lexico | juego_ortografico | tarea_interaccion | tarea_investigacion | dinamica_movimiento | concurso_cultural | actividad_proyeccion | evaluacion | gamificacion | itinerario | captura_plataforma | otro",
+    "competencias": "CO comprension oral | CE comprension escrita | EO expresion oral | EE expresion escrita | IO interaccion oral | MED mediacion",
+    "secciones_aplicables": "vocabulario | gramatica | comunicacion | destrezas | cultura | evaluacion | reflexion | transversal"
+  },
+  "items": [
+    {
+      "id": "U1-mc-001",
+      "actividad": "Los colores — presentación proyectable",
+      "tipo": "presentacion_aula",
+      "formato_soporte": "presentacion_pptx",
+      "archivo_fuente": "UNIDAD1NUEVOCOMPANEROS.pptx",
+      "paginas_en_fuente": "diapositivas 1-22",
+      "origen": "editorial_SGEL",
+      "ambito": "U1",
+      "categoria_editorial": "diapositivas_aula",
+      "tipo_dinamica": ["presentacion", "mecanizacion", "reconocimiento"],
+
+      "duracion_estimada": "15-25 min",
+      "agrupamiento": "clase entera (presentación guiada por el docente)",
+      "agrupamiento_detalle": "El docente proyecta y conduce; los alumnos repiten, deducen el patrón masc./fem. y resuelven las 4 diapos finales en plenario o por turnos individuales.",
+      "materiales_necesarios": ["proyector o pantalla", "archivo .pptx (PowerPoint, Keynote o equivalente)"],
+
+      "objetivo_didactico": "Presentar el campo léxico de los colores básicos del español y deducir el patrón de concordancia masc./fem. (-o/-a) frente a los colores invariables (azul, marrón, verde, rosa).",
+
+      "competencias": ["CO (escuchar al docente)", "EO (repetir, responder a ejercicios finales)", "CE (leer las frases ejemplo)"],
+
+      "funciones_comunicativas": [
+        "nombrar el color de un objeto",
+        "describir objetos con adjetivos de color (atributo con 'ser')"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "8 colores: amarillo, negro, azul, marrón, rojo, blanco, verde, rosa",
+          "sustantivos de apoyo: sol, flor, coche, pizarra, corazón, estrella, libro, mesa, tomate, fresa, ordenador, nieve, lápiz, planta, caramelo, rosa (flor), manzana, mochila, perro"
+        ],
+        "gramatica_explicita": [
+          "concordancia de género en adjetivos calificativos (-o/-a)",
+          "distinción adjetivos variables vs. invariables (azul, marrón, verde, rosa)",
+          "estructura atributiva: sujeto + ser + adjetivo de color"
+        ],
+        "fonetica_ortografia": ["pronunciación de /θ/ en azul/verde (variación dialectal)", "tildes: marrón"]
+      },
+
+      "apoyos": ["visual fuerte (color en cada diapositiva)", "auditivo (modelo oral del docente)", "escrito (frases ejemplo)"],
+
+      "descripcion_dinamica": "Presentación de 22 diapositivas organizadas en pares: para cada uno de los 8 colores, una diapositiva muestra la palabra suelta (con terminación /a cuando aplica) y la siguiente la ejemplifica con dos frases contrastadas masc./fem. ('El sol es amarillo / La flor es amarilla'). La diapo 18 sintetiza el patrón en una tabla 'Fíjate' con dos columnas (masc./fem.) y los invariables apartados. Las diapos 19-22 son ejercicios de cierre tipo cloze ('La manzana es ___ → roja') con la solución aparecida tras un clic.",
+
+      "estructura_interna": [
+        "Slide 1 — portada 'Nuevo Compañeros — Los colores'",
+        "Slides 2-17 — los 8 colores en pares palabra+frases (amarillo, negro, azul, marrón, rojo, blanco, verde, rosa)",
+        "Slide 18 — tabla síntesis de concordancia y lista de invariables",
+        "Slides 19-22 — 4 ejercicios cloze de aplicación con solución"
+      ],
+
+      "secciones_aplicables": ["vocabulario", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — bloque léxico 'colores' como recurso principal de presentación",
+        "gramatica.md — concordancia de género en adjetivos, especialmente para mostrar la subclase de invariables"
+      ],
+
+      "adaptaciones_posibles": [
+        "Reducir a presentación rápida saltándose las diapos de frases ejemplo si el grupo avanza",
+        "Convertir las diapos 19-22 en dictado oral antes de proyectar la solución",
+        "Ampliar con objetos del aula reales: el profesor señala objetos y los alumnos producen frases nuevas"
+      ],
+
+      "consideraciones": [
+        "Nombre del archivo ('UNIDAD1NUEVOCOMPANEROS.pptx') es engañoso: cubre solo el subtema léxico de colores, no toda U1",
+        "Posible existencia de .pptx hermanos para otros subtemas de U1 (saludos, países/nacionalidades, profesiones, objetos de clase) aún no aportados a recursos/"
+      ],
+
+      "gestion_aula": "Preparación: comprobar que el .pptx abre con animaciones (las soluciones de las diapos 20-22 aparecen tras clic). Inicio (2 min): anunciar el tema. Desarrollo (12-18 min): proyectar cada par de diapos, modelar pronunciación, pedir repetición coral; en la diapo 18 inducir a los alumnos a verbalizar el patrón antes de mostrarlo. Cierre (3-5 min): resolver las 4 diapos finales en plenario.",
+
+      "observaciones": "Producto editorial cerrado; útil tal cual. Apto para introducción o para repaso. La diapo-síntesis (18) es el recurso de mayor densidad pedagógica."
+    },
+
+    {
+      "id": "U1-mc-002",
+      "actividad": "El ahorcado",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "actividades_extra.pdf",
+      "paginas_en_fuente": "1-2",
+      "origen": "editorial_SGEL",
+      "ambito": "U1",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["lúdica", "competitiva", "cooperativa_intragrupo"],
+
+      "duracion_estimada": "20-30 min",
+      "agrupamiento": "clase entera dividida en 2 equipos",
+      "agrupamiento_detalle": "Asignación por numeración 1/2; los 1 forman Grupo A, los 2 Grupo B. Por turnos, un miembro de cada grupo sale a la pizarra con una tarjeta.",
+      "materiales_necesarios": ["26 tarjetas léxicas recortables (incluidas en la p. 2 del PDF)", "pizarra", "rotulador o tiza"],
+
+      "objetivo_didactico": "Repasar el vocabulario activo de U1 (objetos de clase, colores, números) y consolidar el reconocimiento auditivo y la producción oral del abecedario español.",
+
+      "competencias": ["EO (deletreo)", "CO (escuchar letras propuestas por el equipo contrario)", "IO (negociar en equipo qué letra decir)"],
+
+      "funciones_comunicativas": [
+        "deletrear palabras",
+        "preguntar y confirmar (¿hay una 'a'? — sí / no)",
+        "reaccionar a aciertos y errores"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "objetos de clase: lápiz, regla, borrador, mochila, pizarra, bolígrafo, silla, libro, sacapuntas, tiza, estantería, cuaderno, mapa, tijeras, grapadora, calculadora",
+          "colores: negro, amarillo, blanco, marrón",
+          "números: 4, 8, 15, 16, 19, 20"
+        ],
+        "gramatica_implicita": ["género de sustantivos (la mochila, el lápiz)", "número (tijeras pl.)"],
+        "fonetica_ortografia": [
+          "nombres de las letras del abecedario español",
+          "tildes implicadas: lápiz, dieciséis, estantería"
+        ]
+      },
+
+      "apoyos": ["visual (pizarra, dibujo del ahorcado)", "kinestésico (salir a la pizarra)", "escrito (guiones)"],
+
+      "descripcion_dinamica": "Versión clásica del juego del ahorcado adaptada al aula ELE. El docente entrega tarjetas léxicas a cada equipo. Por turnos, un alumno sale a la pizarra con una tarjeta, escribe tantos guiones como letras tenga su palabra y oculta la palabra. El equipo contrario propone letras una a una en español; por cada acierto el alumno escribe la letra en el guion correspondiente; por cada fallo añade una parte al dibujo del ahorcado (orden acordado al inicio: cabeza, tronco, brazos, piernas…). Si el equipo adivina la palabra antes de completar el dibujo, gana 1 punto; si se completa el dibujo, el punto va al equipo que escribió.",
+
+      "secciones_aplicables": ["vocabulario", "comunicacion", "evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — dinámica integradora que combina los tres campos léxicos de la unidad (objetos, colores, números)",
+        "comunicacion.md — práctica oral del abecedario y función de deletrear",
+        "evaluacion.md — prueba formativa lúdica para diagnosticar dominio léxico antes del cierre de unidad"
+      ],
+
+      "adaptaciones_posibles": [
+        "Grupos más pequeños (3-4 personas) en clases numerosas",
+        "Variante cooperativa: equipo contra reloj sin oponente, registrando número de intentos",
+        "Subir dificultad: añadir adjetivos compuestos con género (mochila negra, libro rojo)",
+        "Bajar dificultad: dejar visible la inicial de la palabra"
+      ],
+
+      "consideraciones": [
+        "La imagen del ahorcado puede ser culturalmente sensible — algunos centros prefieren sustituirla por un dibujo neutro (flor que pierde pétalos, escalera invertida, globo que se desinfla)",
+        "Requiere dominio mínimo del abecedario; si el grupo aún no lo domina, hacer primero una dinámica de presentación del alfabeto",
+        "Necesita gestión de turnos para que no monopolicen los alumnos más extrovertidos"
+      ],
+
+      "gestion_aula": "Preparación: recortar las 26 tarjetas previamente. Inicio (3 min): explicar reglas + acordar partes del dibujo del ahorcado. Desarrollo (15-20 min): turnos alternos por equipo; el profesor arbitra letras válidas y lleva la puntuación. Cierre (3-5 min): contar puntos y devolver las palabras fallidas al pizarrón para revisar significado/ortografía.",
+
+      "observaciones": "Las 26 palabras pueden cotejarse con unidades/U1/recursos/tarjetas/ para detectar solapamiento. La selección léxica mezcla los tres campos sin agruparlos — útil para repaso integrador, no para introducción."
+    },
+
+    {
+      "id": "U1-mc-003",
+      "actividad": "¿Quién es quién?",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "actividades_extra.pdf",
+      "paginas_en_fuente": "3-4",
+      "origen": "editorial_SGEL",
+      "ambito": "U1",
+      "categoria_editorial": "concurso_cultural",
+      "tipo_dinamica": ["lúdica", "competitiva", "reconocimiento"],
+
+      "duracion_estimada": "15-20 min",
+      "agrupamiento": "grupos de 5-6 personas",
+      "agrupamiento_detalle": "Cada grupo recibe la ficha con las 5 fotos y resuelve el test colectivamente; al final se corrige en plenario al estilo concurso, ganando el grupo con más aciertos.",
+      "materiales_necesarios": ["ficha con 5 fotos+test recortable (incluida en la p. 4)"],
+
+      "objetivo_didactico": "Practicar las estructuras 'Se llama…' y 'Es de…' en 3ª persona singular mientras se introducen referentes culturales hispanos (España e Hispanoamérica).",
+
+      "competencias": ["CE (leer las opciones a/b/c)", "IO (debate en grupo)", "EO (justificar respuesta)"],
+
+      "funciones_comunicativas": [
+        "identificar a alguien (¿cómo se llama? / se llama X)",
+        "preguntar y dar el origen (¿de dónde es? / es de X)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "nombres propios hispanos: Shakira, Messi, Ricky Martin, Pau Gasol, Salma Hayek",
+          "países: España, Colombia, Argentina, Puerto Rico, México (más opciones distractoras: Estados Unidos, Venezuela, Nicaragua, República Dominicana, Bolivia)"
+        ],
+        "gramatica_explicita": [
+          "3ª pers. sing. del presente de 'llamarse' (se llama)",
+          "3ª pers. sing. del presente de 'ser' + preposición 'de' + país"
+        ]
+      },
+
+      "apoyos": ["visual fuerte (5 fotos en blanco y negro)", "escrito (test de opción múltiple)"],
+
+      "descripcion_dinamica": "Cada grupo recibe la ficha con 5 fotos numeradas. Para cada personaje hay dos preguntas (¿cómo se llama? y ¿de dónde es?) con tres opciones cada una. Los alumnos negocian en grupo qué respuesta marcar (CE + IO). Una vez todos han terminado, el docente corrige al estilo concurso: lee la pregunta, los grupos cantan su respuesta y se anotan puntos por acierto.",
+
+      "soluciones": {
+        "1_Shakira": "Colombia",
+        "2_Messi": "Argentina",
+        "3_Ricky_Martin": "Puerto Rico",
+        "4_Pau_Gasol": "España",
+        "5_Salma_Hayek": "México"
+      },
+
+      "secciones_aplicables": ["comunicacion", "cultura", "vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — funciones 'identificar a alguien' y 'preguntar/dar origen' en 3ª persona",
+        "cultura.md — primer acercamiento a referentes hispanos contemporáneos de música, deporte y cine",
+        "vocabulario.md — nombres de países hispanohablantes"
+      ],
+
+      "adaptaciones_posibles": [
+        "Sustituir 1-2 famosos envejecidos por referentes actuales (Bad Bunny, Rosalía, Karol G, Aitana Bonmatí, etc.)",
+        "Pedir a los alumnos que aporten ellos los famosos de un país hispano",
+        "Ampliar: tras el test, cada grupo elige un personaje e investiga 3 datos más",
+        "Variante mediación: los alumnos no leen las opciones sino que el docente las dice y ellos deben recordar"
+      ],
+
+      "consideraciones": [
+        "Obsolescencia parcial: Shakira y Messi siguen vigentes globalmente; Pau Gasol retirado en 2021; Salma Hayek y Ricky Martin con visibilidad menor para Gen Z",
+        "Los 5 personajes son de un perfil específico (pop, fútbol, Hollywood, deporte) — no representan diversidad cultural hispana (literatura, arte, ciencia)",
+        "Buen punto para abrir conversación: '¿conocéis a otros famosos hispanos?'"
+      ],
+
+      "gestion_aula": "Preparación: recortar 1 ficha por grupo. Inicio (2 min): formar grupos y entregar ficha. Desarrollo (8-12 min): resolución colectiva en grupos. Cierre (5 min): corrección en plenario como concurso, recuento de puntos, breve apertura cultural ('¿de dónde son los famosos que conocéis vosotros?').",
+
+      "observaciones": "Es la única actividad del PDF con foco cultural explícito. La obsolescencia de referentes es la mayor decisión editorial para el chat principal: dejar tal cual, ampliar, o sustituir."
+    },
+
+    {
+      "id": "U1-mc-004",
+      "actividad": "Dictado a la carrera",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "actividades_extra.pdf",
+      "paginas_en_fuente": "5-6",
+      "origen": "editorial_SGEL",
+      "ambito": "U1",
+      "categoria_editorial": "juego_ortografico",
+      "tipo_dinamica": ["lúdica", "cinetica", "competitiva", "cooperativa_intragrupo"],
+
+      "duracion_estimada": "15-25 min",
+      "agrupamiento": "2 equipos (o varios si la clase es numerosa)",
+      "agrupamiento_detalle": "Cada equipo tiene su propia ficha colgada en un extremo del aula o pasillo. Dentro de cada equipo, un miembro corre, mira y memoriza; vuelve y dicta al compañero que escribe. Se rotan los roles hasta completar la ficha.",
+      "materiales_necesarios": ["2 fichas distintas con letras y números mezclados (incluidas en la p. 6)", "espacio amplio (aula grande o pasillo)", "papel y bolígrafo por equipo"],
+
+      "objetivo_didactico": "Repasar los números del 1 al 20 y las letras del abecedario de forma lúdica y cinética, ejercitando memoria visual a corto plazo y producción oral precisa.",
+
+      "competencias": ["CO (escuchar al compañero que dicta)", "EE (escribir letra/número al dictado)", "EO (dictar oralmente lo memorizado)", "IO (coordinar el relevo)"],
+
+      "funciones_comunicativas": [
+        "deletrear",
+        "dictar números",
+        "verificar/confirmar lo escrito"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "letras del abecedario español (incluye ñ)",
+          "números 2-20 (sin orden, distintos por equipo)"
+        ],
+        "fonetica_ortografia": [
+          "nombres orales de las letras (especialmente las difíciles: ñ, j, g, w, x, y)",
+          "discriminación auditiva entre letras parecidas (b/v, ll/y, g/j)",
+          "pronunciación correcta de números (especialmente 11-19)"
+        ]
+      },
+
+      "apoyos": ["kinestésico fuerte (movimiento por el aula)", "visual (memorización de la ficha)", "auditivo (escucha del dictado del compañero)", "escrito (registro)"],
+
+      "descripcion_dinamica": "Se forman dos equipos; cada uno tiene su ficha (Equipo A / Equipo B) con una secuencia de ~20 caracteres mezclados (letras y números). Un miembro del equipo corre hasta la ficha colgada, memoriza lo que puede, regresa y dicta al compañero que escribe. Se turnan los corredores hasta que el equipo cree haber terminado la transcripción completa. El docente verifica: si es correcta, ganan; si tiene errores, deben seguir corrigiendo. Gana el primer equipo en lograr transcripción perfecta.",
+
+      "estructura_ficha_equipo_A": ["19 q 15 s 18", "t x w l d d e 6", "f g i 3 i o m n", "11 y 13 u 14 ñ", "a b h 20 j 8 l 7"],
+      "estructura_ficha_equipo_B": ["g 14 m 11 ñ 10", "ñ p 7 w k 6 j 3 j", "h 15 c 2 d 20 x", "n 9 n 7 g 17 j y", "a c p v y l 19"],
+
+      "secciones_aplicables": ["comunicacion", "vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — funciones 'deletrear' y 'decir números' practicadas bajo presión real",
+        "vocabulario.md — refuerzo de abecedario y números 1-20"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión estática: el alumno corredor no corre, solo mira durante 5 segundos desde su sitio",
+        "Versión por parejas (no equipos): A dicta a B, luego cambian",
+        "Subir dificultad: añadir signos especiales (¿, ¡, tildes)",
+        "Variante por relevos: cada miembro del equipo debe correr exactamente una vez antes de que pueda repetirse"
+      ],
+
+      "consideraciones": [
+        "Requiere espacio físico (pasillo largo o aula amplia) — no funciona en aulas pequeñas saturadas",
+        "Alta carga sonora: avisar a aulas vecinas",
+        "Inadecuada para grupos con problemas de movilidad sin adaptación previa (usar variante estática)",
+        "Puede generar competitividad excesiva — recordar que el objetivo es la precisión, no la velocidad"
+      ],
+
+      "gestion_aula": "Preparación: imprimir las 2 fichas y colgarlas en extremos opuestos del espacio. Inicio (3 min): formar equipos, explicar reglas, distribuir papel y bolígrafo. Desarrollo (10-15 min): juego con docente como árbitro circulante. Cierre (5 min): comparar las dos transcripciones en pizarra, comentar errores típicos (letras confundidas, números con error de decena).",
+
+      "observaciones": "Actividad de alta energía — útil después de bloques de presentación estática para reactivar al grupo. El contenido lingüístico es ortográfico/auditivo puro, sin pragmática."
+    },
+
+    {
+      "id": "U1-mc-005",
+      "actividad": "Mi compañero",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "actividades_extra.pdf",
+      "paginas_en_fuente": "7-8",
+      "origen": "editorial_SGEL",
+      "ambito": "U1",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["cooperativa", "presentacion", "reflexiva"],
+
+      "duracion_estimada": "25-35 min",
+      "agrupamiento": "parejas (A/B)",
+      "agrupamiento_detalle": "Cada miembro de la pareja recibe su ficha (Alumno A / Alumno B). Trabajo individual primero (clasificación de preguntas + datos propios), después interacción en pareja (entrevista mutua), finalmente plenario (algunos presentan a su pareja al resto de la clase).",
+      "materiales_necesarios": ["ficha con parte Alumno A y parte Alumno B recortables (incluida en la p. 8)", "bolígrafo"],
+
+      "objetivo_didactico": "Practicar las preguntas y respuestas para pedir y dar información personal en 2ª persona singular, cerrando con una presentación oral del compañero.",
+
+      "competencias": ["CE (leer y clasificar preguntas)", "IO (entrevistar y responder)", "EE (anotar las respuestas en la tabla)", "EO (presentar al compañero en plenario)"],
+
+      "funciones_comunicativas": [
+        "preguntar y dar el nombre",
+        "preguntar y dar la edad",
+        "preguntar y dar el color de los ojos",
+        "preguntar y dar la nacionalidad/origen",
+        "preguntar y dar el número de teléfono",
+        "preguntar y dar la afición favorita",
+        "presentar a una tercera persona (3ª persona sing.)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "campos de información personal: nombre, edad, ojos, nacionalidad, número de teléfono, afición",
+          "colores reutilizados (color de ojos)",
+          "números reutilizados (edad, teléfono)"
+        ],
+        "gramatica_explicita": [
+          "interrogativos: cómo, cuántos, de qué color, de dónde, cuál",
+          "2ª pers. sing.: llamarse (te llamas), tener (tienes), ser (eres)",
+          "estructura: tener + los ojos + adjetivo de color",
+          "paso a 3ª persona en la presentación final (se llama, tiene, es)"
+        ]
+      },
+
+      "apoyos": ["escrito (tabla a rellenar)", "auditivo (entrevista oral)", "interpersonal"],
+
+      "descripcion_dinamica": "Tres fases. (1) INDIVIDUAL: cada alumno lee las 6 preguntas sueltas que figuran encima de la tabla y las coloca en la columna 'Preguntas' asociándolas a su campo correspondiente (Nombre, Edad, Ojos, Nacionalidad, Nº teléfono, Afición). Después rellena la columna 'Tú' con sus propios datos. (2) PAREJA: A entrevista a B y anota en la columna 'Tu compañero'; después invierten roles. (3) PLENARIO: algunos alumnos voluntarios pasan a presentar a su compañero al resto de la clase usando 3ª persona singular ('Mi compañera se llama Marta, tiene 19 años, tiene los ojos verdes, es de Italia…').",
+
+      "soluciones_clasificacion": {
+        "Nombre": "¿Cómo te llamas?",
+        "Edad": "¿Cuántos años tienes?",
+        "Ojos": "¿De qué color tienes los ojos?",
+        "Nacionalidad": "¿De dónde eres?",
+        "Nº teléfono": "¿Cuál es tu número de teléfono?",
+        "Afición favorita": "¿Cuál es tu afición favorita?"
+      },
+
+      "secciones_aplicables": ["comunicacion", "destrezas", "vocabulario", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — función nuclear: pedir/dar información personal en 2ª pers.",
+        "destrezas.md — ciclo integrador CE → EE → IO → EO que recorre las cuatro destrezas",
+        "vocabulario.md — reactivación transversal (colores, números, nacionalidades)",
+        "gramatica.md — paso reflexivo de 2ª a 3ª persona en la presentación final"
+      ],
+
+      "adaptaciones_posibles": [
+        "Tríos en clases impares: A↔B↔C con doble presentación cruzada",
+        "Añadir preguntas: ¿dónde vives?, ¿qué estudias?, ¿hablas otros idiomas?",
+        "Variante mediación: B no responde literalmente sino que A debe deducir por pistas",
+        "Versión escrita posterior: cada alumno redacta un breve perfil de su compañero como producto escrito (EE)"
+      ],
+
+      "consideraciones": [
+        "Protección de datos: si se trabaja con teléfonos reales, advertir; mejor usar números ficticios o solo prefijos internacionales",
+        "Léxico de 'afición' puede no estar todavía dominado en U1 — proporcionar lista de apoyo (fútbol, música, leer, viajar, bailar…)",
+        "Sensibilidad: 'color de ojos' puede generar incomodidad si la pareja no se conoce — opcional sustituir por 'color favorito'",
+        "Pareja muy desnivelada lingüísticamente: el más fuerte tiende a dominar la entrevista — circular para equilibrar"
+      ],
+
+      "gestion_aula": "Preparación: recortar fichas en mitades A y B. Inicio (3 min): formar parejas y entregar fichas opuestas a cada miembro. Desarrollo fase 1 (5 min): trabajo individual silencioso. Desarrollo fase 2 (10-12 min): entrevistas en parejas — circular para corregir pronunciación y entonación interrogativa. Cierre (8-10 min): 3-5 presentaciones voluntarias en plenario, el resto entrega la ficha como evidencia.",
+
+      "observaciones": "Es la actividad más completa del PDF: integra las cuatro destrezas y obliga al paso 2ª pers. → 3ª pers. Excelente candidata para tarea final de U1 o para evaluación formativa."
+    },
+
+    {
+      "id": "U1-mc-006",
+      "actividad": "¿Dónde está?",
+      "tipo": "tarea_investigacion",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "actividades_extra.pdf",
+      "paginas_en_fuente": "9-10",
+      "origen": "editorial_SGEL",
+      "ambito": "U1",
+      "categoria_editorial": "tarea_investigacion",
+      "tipo_dinamica": ["investigacion", "cooperativa", "reconocimiento"],
+
+      "duracion_estimada": "25-40 min",
+      "agrupamiento": "grupos pequeños (3-4 personas)",
+      "agrupamiento_detalle": "Cada grupo recibe la ficha con 10 monumentos. Trabajan en internet (móvil o portátil) para identificar la ciudad de cada uno. Opcionalmente, ubican las ciudades en un mapa mudo de España.",
+      "materiales_necesarios": ["ficha con 10 fotos+nombres de monumentos (incluida en la p. 10)", "acceso a internet por grupo (móvil/tableta/portátil)", "opcional: mapa mudo político de España (no incluido)"],
+
+      "objetivo_didactico": "Conocer ciudades españolas a través de su patrimonio cultural y familiarizarse con el uso de internet y buscadores en español como herramienta de aprendizaje autónomo.",
+
+      "competencias": ["CE (instrucciones, nombres propios)", "MED (búsqueda y selección de info en L2)", "IO (negociar resultados con el grupo)", "EE (anotar ciudad junto a cada monumento)", "estrategias digitales (búsqueda en español)"],
+
+      "funciones_comunicativas": [
+        "localizar geográficamente (está en + ciudad)",
+        "preguntar y dar la ubicación (¿dónde está?)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "10 monumentos: Acueducto, Museo Guggenheim, Giralda, Sagrada Familia, Museo del Prado, Pilar (Basílica del Pilar), Alhambra, Mezquita (de Córdoba), Ciudad de las Artes y las Ciencias, Teatro Romano",
+          "10 ciudades: Segovia, Bilbao, Sevilla, Barcelona, Madrid, Zaragoza, Granada, Córdoba, Valencia, Mérida"
+        ],
+        "gramatica_implicita": [
+          "presente 3ª pers. sing. del verbo 'estar' (con valor locativo)",
+          "preposición 'en' + topónimo"
+        ]
+      },
+
+      "apoyos": ["visual fuerte (10 fotos en blanco y negro)", "digital (buscador internet)", "opcional cartográfico (mapa mudo)"],
+
+      "descripcion_dinamica": "El docente entrega a cada grupo la ficha con 10 fotos y nombres de monumentos. La consigna: relacionar cada monumento con su ciudad usando internet. Los alumnos buscan en español (o en su lengua), comparan resultados dentro del grupo y rellenan los huecos junto a cada monumento. Al terminar, el docente corrige en plenario. Si se dispone de mapa mudo, los alumnos ubican las 10 ciudades sobre él como segunda fase.",
+
+      "soluciones": {
+        "Acueducto": "Segovia",
+        "Museo Guggenheim": "Bilbao",
+        "Giralda": "Sevilla",
+        "Sagrada Familia": "Barcelona",
+        "Museo del Prado": "Madrid",
+        "Pilar": "Zaragoza",
+        "Alhambra": "Granada",
+        "Mezquita": "Córdoba",
+        "Ciudad de las Artes y las Ciencias": "Valencia",
+        "Teatro Romano": "Mérida"
+      },
+
+      "secciones_aplicables": ["cultura", "destrezas", "comunicacion"],
+
+      "posibles_anclajes_en_final": [
+        "cultura.md — eje principal: patrimonio español y diversidad de ciudades",
+        "destrezas.md — comprensión lectora digital en internet en lengua meta (estrategia de aprendizaje)",
+        "comunicacion.md — usos de 'estar' con valor locativo + preposición 'en'"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión sin internet: el docente proyecta soluciones o reparte un dossier impreso con la información",
+        "Ampliación cooperativa: tras la actividad, cada grupo investiga 1 monumento en profundidad (1 frase: dónde está + qué es + cuándo se construyó) y lo presenta al resto",
+        "Variante competitiva: cronómetro, gana el grupo que termine primero con todas correctas",
+        "Versión geolocalizada: usar Google Maps para situar visualmente los monumentos"
+      ],
+
+      "consideraciones": [
+        "Requiere acceso a internet en el aula — no funciona sin conectividad",
+        "El material es exclusivamente España (no Hispanoamérica) — coherente con la fase introductoria de U1, pero conviene compensar con cultura latinoamericana en otro punto del curso (señalar al chat principal)",
+        "Necesita mapa mudo si se quiere hacer la fase cartográfica — no viene incluido",
+        "Alumnos con bajo nivel digital pueden bloquearse — formar grupos heterogéneos"
+      ],
+
+      "gestion_aula": "Preparación: imprimir 1 ficha por grupo, verificar conectividad. Inicio (3 min): formar grupos, entregar fichas, repasar consigna y modelar una búsqueda en español ('Acueducto España ciudad'). Desarrollo (15-20 min): trabajo autónomo en grupos. Cierre (10-15 min): corrección en plenario monumento a monumento; si hay mapa mudo, fase cartográfica adicional.",
+
+      "observaciones": "Actividad fuertemente cultural y digital; combina autonomía investigadora con repaso visual. Es la única tarea del PDF que rompe con el aula tradicional para abrir al uso de recursos externos. Buen candidato para visibilizar la dimensión 'aprender a aprender' en U1."
+    },
+
+    {
+      "id": "U1-mc-007",
+      "actividad": "Prueba de evaluación U1 — ¡Hola!",
+      "tipo": "prueba_evaluacion",
+      "formato_soporte": "examen_imprimible_pdf",
+      "archivo_fuente": "evaluaciones.pdf",
+      "paginas_en_fuente": "1-2",
+      "origen": "editorial_SGEL",
+      "ambito": "U1",
+      "categoria_editorial": "evaluacion",
+      "tipo_dinamica": ["evaluacion_sumativa", "individual"],
+
+      "duracion_estimada": "45-60 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "Cada alumno resuelve la prueba por escrito, en silencio, sin apoyos. El docente entrega la fotocopia y corrige posteriormente.",
+      "materiales_necesarios": ["fotocopia de la prueba (2 páginas)", "bolígrafo"],
+
+      "objetivo_didactico": "Evaluar de forma sumativa el dominio de los contenidos lingüísticos y comunicativos de U1 (vocabulario, gramática, comunicación) y las destrezas básicas de comprensión lectora y expresión escrita.",
+
+      "estructura_general": {
+        "bloque_1_vocabulario": "Ejercicios 1-2",
+        "bloque_2_gramatica_comunicacion": "Ejercicios 3-9",
+        "bloque_3_destrezas_leer_escribir": "Ejercicios 10-11",
+        "total_ejercicios": 11
+      },
+
+      "competencias": ["CE (instrucciones, texto del ej. 10)", "EE (transversal, especialmente ej. 11)", "ortografía y léxico productivo"],
+
+      "contenidos_evaluados": {
+        "vocabulario": [
+          "objetos de clase (libro, regla, sacapuntas, mesa, pizarra, lápiz, mochila, silla — ej. 1)",
+          "abecedario aplicado a 8 palabras (ej. 2)",
+          "números 2-20 escritos en letras (ej. 8)"
+        ],
+        "gramatica": [
+          "distinción ser / llamarse (ej. 3)",
+          "artículos determinados, género y número (ej. 4)",
+          "flexión masc./fem. de sustantivos animados incluyendo invariables como 'la estudiante' (ej. 5)",
+          "construcción de frases atributivas con artículo + ser + atributo (ej. 6)",
+          "orden básico de frases SVO con atributos (ej. 7)"
+        ],
+        "comunicacion": [
+          "producción de interrogativos para pedir información personal: cómo, cuántos, de dónde, cuál (ej. 9)",
+          "deletrear (ej. 2)"
+        ],
+        "destrezas": [
+          "comprensión lectora orientada a extracción de datos a partir de texto descriptivo (ej. 10)",
+          "expresión escrita guiada: párrafo autobiográfico con 4 ítems mínimos — nombre, edad, teléfono, asignaturas favoritas (ej. 11)"
+        ]
+      },
+
+      "estructura_interna": [
+        "Ej. 1 — Vocabulario: escribir 8 palabras de objetos de clase a partir de dibujos",
+        "Ej. 2 — Vocabulario: deletrear 8 palabras (bolígrafo, tijeras, ordenador, ciudad, Andalucía, hola, estudiante, Sevilla)",
+        "Ej. 3 — Gramática: completar 7 frases con ser o llamarse",
+        "Ej. 4 — Gramática: poner artículo determinado a 8 sustantivos (música, diccionarios, perro, compañera, hijas, profesor, coches, alumnas)",
+        "Ej. 5 — Gramática: completar tabla masc./fem. de 10 pares de sustantivos (incluye invariable 'estudiante')",
+        "Ej. 6 — Gramática/Comunicación: construir 5 frases con artículo + verbo ser + atributo",
+        "Ej. 7 — Gramática: ordenar 6 frases dadas en desorden",
+        "Ej. 8 — Vocabulario: escribir 12 números en letras (12, 18, 4, 20, 10, 8, 11, 14, 7, 13, 9, 2)",
+        "Ej. 9 — Comunicación: completar 6 preguntas de una conversación a partir de las respuestas dadas",
+        "Ej. 10 — Destrezas (CE): leer texto sobre Marta y completar ficha con 8 campos (nombre, edad, nacionalidad, miembros familia, edad hermano, profesión padre, profesión madre, asignaturas, teléfono)",
+        "Ej. 11 — Destrezas (EE): escribir párrafo autobiográfico con 4 ítems mínimos (nombre, edad, teléfono, asignaturas favoritas)"
+      ],
+
+      "secciones_aplicables": ["evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "evaluacion.md — prueba sumativa de referencia para U1, candidata a aparecer tal cual o adaptada como modelo de evaluación final",
+        "evaluacion.md — los ejercicios pueden tomarse como banco de ítems separables: ej. 10-11 sirven como prueba de destrezas; ej. 1-9 como control gramatical y léxico",
+        "destrezas.md — referencia cruzada al ej. 11 (paralelo escrito de la entrevista oral U1-mc-005 'Mi compañero')"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión reducida (40 min): mantener un ejercicio por contenido — 1, 3, 5, 8, 10",
+        "Versión oral del ej. 2 (deletrear) si se quiere evaluar producción oral",
+        "Ampliar ej. 11 con rúbrica para evaluación criterial (extensión, coherencia, corrección ortográfica)",
+        "Sustituir el texto del ej. 10 por otro perfil para evitar memorización entre grupos"
+      ],
+
+      "consideraciones": [
+        "Inconsistencia potencial con el inventario de U1: el ej. 10 introduce léxico de 'asignaturas' (Matemáticas, Ciencias Naturales) que no necesariamente forma parte del vocabulario activo de U1 — verificar con el inventario canónico antes de usar tal cual. Lo mismo aplica a 'profesiones' (profesora, médico) en ese mismo texto",
+        "El ej. 11 pide redactar sobre 'asignaturas favoritas', heredando la misma inconsistencia",
+        "El ej. 5 incluye animales (gata, león) que pueden no estar en el vocabulario de U1 — verificable",
+        "Falta clave de respuestas y rúbrica de puntuación — el docente debe elaborar ambas",
+        "Diseño claramente orientado a contexto escolar adolescente (asignaturas, hermanos, familia) — adaptar si el grupo es adulto"
+      ],
+
+      "gestion_aula": "Preparación: imprimir 1 prueba por alumno, decidir tiempo y criterios de puntuación. Inicio (5 min): repartir, explicar tiempo disponible y normas. Desarrollo (35-45 min): resolución individual en silencio. Cierre: recoger pruebas; corrección posterior por el docente. Devolución en sesión siguiente con feedback global de errores tipo.",
+
+      "observaciones": "Producto evaluativo coherente y completo, cubre los tres ejes (vocabulario, gramática/comunicación, destrezas) con buena distribución. El paralelismo entre ej. 11 (escrito) y la actividad U1-mc-005 (oral) hace que ambos puedan combinarse como evaluación integrada de comunicación personal."
+    },
+
+    {
+      "id": "U1-mc-008",
+      "actividad": "El trébol",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "gamificación_todas_unidades.pdf",
+      "paginas_en_fuente": "4-5",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Cuaderno de juegos NC1 (García-Alifa & Villatoro, SGEL 2021)",
+      "ambito": "U1",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["lúdica", "cinetica", "cooperativa", "presentacion"],
+
+      "duracion_estimada": "30 min",
+      "agrupamiento": "clase entera con movilidad",
+      "agrupamiento_detalle": "Cada estudiante recibe un trébol con 4 hojas para rellenar con datos personales. Después circula por el aula entrevistando a los compañeros y completando información. Cierre en gran grupo.",
+      "materiales_necesarios": ["material de escritura", "trébol fotocopiable (incluido en p. 5)", "cartón o cartulina opcional para rigidizar"],
+
+      "objetivo_didactico": "Romper el hielo en la primera sesión del curso, conocer al grupo y practicar los exponentes comunicativos básicos de U1 (presentarse, dar información personal) en interacción real con todos los compañeros.",
+
+      "vinculacion_libro_alumno": {
+        "vocabulario": "ejercicios 6, 7, 10",
+        "comunicacion": "ejercicios 1-3"
+      },
+
+      "competencias": ["EE (rellenar el trébol propio)", "IO (entrevistar compañeros)", "EO (hacer preguntas y responder)", "CO (escuchar respuestas y anotar)"],
+
+      "funciones_comunicativas": [
+        "saludar e iniciar conversación",
+        "preguntar y dar el nombre",
+        "preguntar y dar la edad",
+        "preguntar y dar la nacionalidad/origen",
+        "preguntar y dar preferencias (color, deporte, música favorita)",
+        "despedirse"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "campos personales: nombre, apellido, edad",
+          "campos de preferencias: color favorito, deporte favorito, música/género musical favorito",
+          "léxico de gustos básicos"
+        ],
+        "gramatica_explicita": [
+          "presente 1ª/2ª pers. sing.: llamarse (me llamo / te llamas)",
+          "presente 1ª/2ª pers. sing.: vivir (vivo / vives)",
+          "presente 1ª/2ª pers. sing.: tener (tengo / tienes — edad)",
+          "presente 1ª/2ª pers. sing.: ser (soy / eres — nacionalidad)",
+          "interrogativos: cómo, cuántos, de dónde, cuál"
+        ]
+      },
+
+      "apoyos": ["visual (trébol como soporte gráfico organizador)", "kinestésico (circular por el aula)", "escrito (registro en el trébol)", "interpersonal"],
+
+      "descripcion_dinamica": "El docente entrega a cada estudiante un trébol de 4 hojas (recortado de la p. 5 del PDF o creado en papel). En cada hoja, el estudiante apunta una categoría de información personal acordada previamente: nombre + apellido / edad / color favorito / deporte o música favorita (las categorías se pueden adaptar). Una vez rellenado el trébol propio, los alumnos circulan libremente por el aula preguntándose entre sí, anotando o intercambiando datos de los compañeros. Al terminar, ronda en gran grupo donde se extraen similitudes ('¿cuántos tenéis música rock favorita?', etc.) o se subrayan datos curiosos.",
+
+      "secciones_aplicables": ["comunicacion", "vocabulario", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — primer ejercicio práctico de los exponentes de presentación; sustituible por o complementario a otras tareas iniciales",
+        "vocabulario.md — uso de léxico de preferencias y campos personales",
+        "destrezas.md — ciclo EE → IO → EO en formato lúdico-social",
+        "Sesión 1 de la unidad — candidato natural para arrancar U1 como ice-breaker"
+      ],
+
+      "adaptaciones_posibles": [
+        "Variante propuesta por el propio cuaderno (Más ideas): pedir a los alumnos que se agrupen en distintos espacios del aula según preferencias musicales, deportivas, edad, barrio, etc., formando subgrupos dinámicos",
+        "Sustituir el trébol por una mano de 5 dedos, un sol con rayos u otra forma visual con varias casillas",
+        "Versión digital: hacer el trébol en Padlet o Mentimeter para clases híbridas",
+        "Reducir o ampliar el número de hojas según el nivel del grupo"
+      ],
+
+      "consideraciones": [
+        "Especialmente útil en la primera sesión del curso — el cuaderno enfatiza que U1 es momento crítico para 'crear grupo'",
+        "Sensibilidad: las categorías 'preferencias musicales/deportivas' generan participación natural; evitar categorías que puedan exponer (familia, religión, situación económica)",
+        "Léxico de música/deportes puede no estar todavía dominado — admite respuestas en código mixto (nombre del grupo musical en su idioma original)",
+        "Requiere movilidad real por el aula — no apto si las mesas están fijas en filas tradicionales sin posibilidad de moverse"
+      ],
+
+      "gestion_aula": "Preparación: fotocopiar 1 trébol por alumno, opcionalmente plastificar/cartulinar. Inicio (5 min): explicar dinámica, acordar las 4 categorías que irán en cada hoja del trébol. Fase 1 (5 min): cada alumno rellena su propio trébol. Fase 2 (15-20 min): circulación libre por el aula con entrevistas mutuas. Cierre (5-10 min): ronda en gran grupo extrayendo similitudes/datos curiosos.",
+
+      "observaciones": "El archivo fuente es transversal — el Cuaderno de juegos NC1 publicado por SGEL contiene 19 juegos para U1-U9 + 2 repasos. Los juegos de U2-U9 están en el mismo PDF y serán inventariables en sus respectivas unidades cuando se procesen (ver bloque fuentes_transversales al final del JSON). Esta actividad es la 1ª de las 2 que aplican a U1."
+    },
+
+    {
+      "id": "U1-mc-009",
+      "actividad": "El matamoscas",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "gamificación_todas_unidades.pdf",
+      "paginas_en_fuente": "6-8",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Cuaderno de juegos NC1 (García-Alifa & Villatoro, SGEL 2021)",
+      "ambito": "U1",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["lúdica", "cinetica", "competitiva", "reconocimiento"],
+
+      "duracion_estimada": "20 min",
+      "agrupamiento": "2 equipos en fila india con movilidad",
+      "agrupamiento_detalle": "Dos equipos colocados en fila india, de espaldas al aula. El primero de cada fila tiene un matamoscas. El docente dice un número; los primeros se vuelven, buscan el cartel del número en el aula y golpean ('matan la mosca'). Al acertar, el matamoscas pasa al siguiente de la fila.",
+      "materiales_necesarios": [
+        "carteles con los números 1-20 (incluidos en la p. 7 para recortar)",
+        "hilo grueso o lana / blu-tack / chinchetas para colgar los carteles",
+        "2 matamoscas (incluidos en la p. 8 para recortar y pegar en cartón o vara, o comprados de plástico)"
+      ],
+
+      "objetivo_didactico": "Repasar los números del 1 al 20 ejercitando reconocimiento visual rápido bajo presión, en una dinámica cinética que activa al grupo y consolida el léxico numérico de forma lúdica.",
+
+      "vinculacion_libro_alumno": {
+        "comunicacion": "ejercicios 1-7",
+        "destrezas": "ejercicio 2"
+      },
+
+      "competencias": ["CO (escuchar el número dicho por el docente)", "reconocimiento visual rápido", "IO (coordinación intragrupo)", "EO (en variantes ampliadas)"],
+
+      "funciones_comunicativas": [
+        "reconocer números dictados oralmente",
+        "en variantes ampliadas: decir números, sumar cantidades, deletrear palabras numéricas"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": ["números cardinales 1-20"],
+        "fonetica_ortografia": [
+          "discriminación auditiva de números similares (uno/once, dos/doce, tres/trece, cuatro/catorce, cinco/quince, seis/dieciséis, siete/diecisiete, ocho/dieciocho, nueve/diecinueve)",
+          "reconocimiento de números escritos en cifras vs. en palabras (en la variante ampliada)"
+        ]
+      },
+
+      "apoyos": ["visual fuerte (carteles distribuidos por el aula)", "kinestésico muy fuerte (girar, correr al cartel, golpear)", "auditivo (dictado del número por el docente)"],
+
+      "descripcion_dinamica": "Los 20 carteles con los números del 1 al 20 se cuelgan del techo, paredes, bajo mesas o pegados con blu-tack por toda la clase de forma desordenada. Se forman dos equipos que se colocan en fila india en un extremo del aula, todos de espaldas al espacio donde están los carteles. El primero de cada fila recibe un matamoscas. El docente dice un número al azar en voz alta; los dos primeros de las filas deben darse la vuelta rápidamente, localizar el cartel correspondiente y 'matar la mosca' golpeando el número con el matamoscas. El que acierta primero le pasa el matamoscas al siguiente compañero de su fila y se va al final. Se repite el proceso hasta que se hayan completado todos los números y todos los alumnos hayan participado al menos una vez. Gana el equipo que primero consigue 'matar todas las moscas' correctamente.",
+
+      "secciones_aplicables": ["vocabulario", "comunicacion"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — bloque léxico 'números 1-20' como dinámica de fijación tras la presentación",
+        "comunicacion.md — práctica de comprensión auditiva de números dictados",
+        "Sesión de repaso o calentamiento — útil como activador al inicio de sesión"
+      ],
+
+      "adaptaciones_posibles": [
+        "Variante propuesta por el cuaderno (Más ideas): sustituir los números en cifras por números escritos en palabras (treinta, dieciséis…) para complicar el juego",
+        "Variante propuesta: ocultar los números en lugares menos visibles (bajo mesas, tras puertas de armario) para añadir búsqueda",
+        "Variante propuesta: en lugar de decir el número, dar cantidades para sumar (ej. 'cinco más tres'); enlaza con Comunicación ej. 6 del libro",
+        "Variante propuesta para clases numerosas: dictar números a un representante de cada grupo en lugar de tener filas únicas",
+        "Ampliación natural: cuando se aprendan números mayores (U2 o repaso), reescribir carteles con 1-100"
+      ],
+
+      "consideraciones": [
+        "Requiere espacio físico amplio — no apto para aulas pequeñas con mobiliario fijo",
+        "Alta carga sonora y de movimiento — avisar a aulas vecinas, atender a posibles choques entre alumnos al correr",
+        "Necesita preparación previa relativamente larga (recortar y colgar 20 carteles + montar 2 matamoscas) — amortizable si se reutiliza varias veces",
+        "Los matamoscas son símbolo lúdico pero pueden romperse al golpear paredes/superficies — usar versión cartón flexible",
+        "No apto para alumnos con dificultades de movilidad sin adaptación previa (variante estática: señalar con dedo en lugar de golpear)"
+      ],
+
+      "gestion_aula": "Preparación: recortar y colgar los 20 carteles por toda el aula previamente; montar los 2 matamoscas. Inicio (3 min): formar 2 equipos en fila india, distribuir matamoscas, recordar reglas. Desarrollo (12-15 min): dictado de números por turnos, alternando velocidad e introduciendo dificultad progresiva (primero números bajos, luego mezclados con 11-19). Cierre (2-3 min): recuento, breve repaso oral de los números que generaron más errores.",
+
+      "observaciones": "El archivo fuente es transversal — el Cuaderno de juegos NC1 publicado por SGEL contiene 19 juegos para U1-U9 + 2 repasos. Los juegos de U2-U9 están en el mismo PDF y serán inventariables en sus respectivas unidades cuando se procesen (ver bloque fuentes_transversales al final del JSON). Esta actividad es la 2ª de las 2 que aplican a U1. Complementaria con U1-mc-004 (Dictado a la carrera) que también trabaja números 1-20: el matamoscas mide reconocimiento visual rápido, el dictado mide producción escrita."
+    }
+  ],
+
+  "fuentes_transversales": [
+    {
+      "id": "FT-cuaderno-juegos-NC1",
+      "archivo": "gamificación_todas_unidades.pdf",
+      "obra": "Cuaderno de juegos NC1",
+      "autores": ["Belén García-Alifa", "Javier Villatoro"],
+      "editorial": "SGEL",
+      "anio": 2021,
+      "paginas_totales": 56,
+      "ambito_real": "transversal U1-U9 + 2 repasos",
+      "descripcion": "Cuaderno publicado de juegos didácticos complementarios al manual NC1, con 19 juegos distribuidos en las 9 unidades (2 juegos por unidad en general) más 2 actividades globales de repaso. Cada juego incluye instrucciones, vinculación al libro del alumno, materiales recortables si aplica y sección 'Más ideas' con variantes. NO es un sistema de gamificación (no hay insignias/puntos/niveles); el nombre del archivo 'gamificación_todas_unidades.pdf' es engañoso — se sugiere renombrar a 'cuaderno-juegos-NC1.pdf' (decisión del autor).",
+      "indice_completo": [
+        { "unidad": "U1", "juego": "El trébol", "pagina": 4, "id_si_inventariado": "U1-mc-008" },
+        { "unidad": "U1", "juego": "El matamoscas", "pagina": 6, "id_si_inventariado": "U1-mc-009" },
+        { "unidad": "U2", "juego": "La pelota encadenada", "pagina": 9 },
+        { "unidad": "U2", "juego": "Tira los dados", "pagina": 10 },
+        { "unidad": "U3", "juego": "Ronda familiar", "pagina": 12 },
+        { "unidad": "U3", "juego": "Batalla naval", "pagina": 17 },
+        { "unidad": "U4", "juego": "¿Me conoces?", "pagina": 19 },
+        { "unidad": "U4", "juego": "Bingonevera", "pagina": 23 },
+        { "unidad": "U5", "juego": "Pictionary", "pagina": 29 },
+        { "unidad": "U5", "juego": "La casa de tus sueños", "pagina": 31 },
+        { "unidad": "Repaso 1", "juego": "Actividad global 1 — La fiesta", "pagina": 32 },
+        { "unidad": "U6", "juego": "Busca tu sitio", "pagina": 36 },
+        { "unidad": "U6", "juego": "Conviértete", "pagina": 38 },
+        { "unidad": "U7", "juego": "Dibujo encadenado", "pagina": 39 },
+        { "unidad": "U7", "juego": "Calendario indiscreto", "pagina": 40 },
+        { "unidad": "U8", "juego": "Twister", "pagina": 42 },
+        { "unidad": "U8", "juego": "El mentiroso", "pagina": 44 },
+        { "unidad": "U9", "juego": "La pasarela", "pagina": 46 },
+        { "unidad": "U9", "juego": "La telaraña", "pagina": 48 },
+        { "unidad": "Repaso final", "juego": "Actividad global 2 — Agencia de viajes", "pagina": 49 }
+      ],
+      "nota_inventarios_futuros": "Cuando se procesen los inventarios de material complementario de U2-U9, esta misma fuente puede reutilizarse: cada juego encaja directamente como ítem en el inventario de su unidad correspondiente, manteniendo los campos obra_origen y archivo_fuente. El bloque fuentes_transversales puede replicarse en cada unidad o convertirse en archivo separado nc1-fuentes-transversales.json."
+    }
+  ]
+}

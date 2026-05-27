@@ -15,6 +15,12 @@
 
 ---
 
+## [v12.33 — 2026-05-27] — U1 Evaluación cerrada + material complementario inventariado
+
+Nueva: `unidades/U1/final/evaluacion.md`. Sin insignia. Dos versiones (A — deberes + revisión en clase / B — sesión completa). Iteración fina con el autor: eliminado FEEDBACK FOCALIZADO en ambas; AUTOEVALUACIÓN (B) sintetizada a *"Igual que en la versión A"*. Corrección retroactiva en `destrezas.md`: *actividad/actividades* → *ejercicio/ejercicios* (regla §8.1 ya codificada que se violó por descuido).
+
+Inventario del material complementario: `unidades/U1/U1-nc1-material-complementario.json` (schema v2.0, 9 ítems descritos como actividades/dinámicas) producido por chat separado de extracción. Renombrado para alinear con la convención `U1-nc1-*` del inventario del libro. Material fuente añadido en `unidades/U1/recursos/`: PPTX presentación + 3 PDFs (actividades extra, evaluaciones, cuaderno de juegos NC1).
+
 ## [v12.32 — 2026-05-27] — U1 Cultura cerrada
 
 Nueva: `unidades/U1/final/cultura.md`. Sección breve (1 ejercicio + 6 rótulos del docente) sobre tratamiento *tú/usted/vos*. Sin píldora, sin tarjeta de estrategia. Ficha 1.6 (insignia) + ficha 1.7 (tarjetas de rol para dinámica). Iteración fina con el autor: eliminada la reproducción de las 4 fórmulas del cuadro (§10.6) y eliminado el caso *plurilingüe/monolingüe* (NC1 asume lengua común del grupo).

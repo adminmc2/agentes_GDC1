@@ -52,7 +52,7 @@ Pase al bingo del **ejercicio 4**. Solo tienen que marcar los números que oigan
 
 RECOJA Y CONECTE CON LA INTERACCIÓN ORAL
 
-Verifique las dos actividades. Para el bingo, una pareja grita *¡línea!* si tiene una fila completa con sus aciertos. Anuncie lo que sigue: a partir de ahora los datos personales salen del propio compañero, no de una escucha; al final de la clase cada uno presentará al suyo al resto y le escribirá unas líneas a un amigo.
+Verifique los dos ejercicios. Para el bingo, una pareja grita *¡línea!* si tiene una fila completa con sus aciertos. Anuncie lo que sigue: a partir de ahora los datos personales salen del propio compañero, no de una escucha; al final de la clase cada uno presentará al suyo al resto y le escribirá unas líneas a un amigo.
 
 ### Ejercicios 5-8
 
