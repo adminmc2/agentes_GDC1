@@ -15,6 +15,14 @@
 
 ---
 
+## [v12.34 — 2026-05-28] — U1 itinerario imprimible cerrado + regla léxica ampliada
+
+Nuevo: `unidades/U1/U1-itinerarios.md`. Itinerario imprimible completo (BÁSICO 5 secciones color-coded + EXTENDIDO con Estación de servicio y Materiales complementarios). Reglas nuevas aplicadas y codificadas en plantilla repo B: [CASA] una sola línea, fusión obligatoria de [CASA] consecutivos, mini-descripción de [CASA] en estilo *Repaso de X / Práctica de X / Producción escrita: X*. Reducción sistemática de descripciones [CLASE] largas (~90-100 char). Etiqueta píldora 1.2 corregida (`destreza` → `expresión oral`). Reformulación Destrezas Ej 1 (centrado en comprensión lectora). Evaluación bifurcada en Versión A / Versión B en paralelo.
+
+Ampliado JSON `U1-nc1-material-complementario.json`: 15 ítems (mc-001 a mc-015, BLINKLEARNING completo + mc-015 entrada mínima del vídeo Blinklearning). Páginas/diapositivas añadidas a todas las entradas relevantes del itinerario para inserción imprenta.
+
+Regla léxica `actividad → ejercicio` ampliada en §8.1 manual: ahora cubre también bloques editoriales y referencias internas, no solo tareas numeradas. Excepciones documentadas (nombres propios SGEL: *Actividades Extra*, *Actividad global 1/2*; filenames `actividades_extra.pdf`). Aplicación retroactiva en `U1-nc1-material-complementario.json` (campo schema renombrado + ~13 menciones en texto libre).
+
 ## [v12.33 — 2026-05-27] — U1 Evaluación cerrada + material complementario inventariado
 
 Nueva: `unidades/U1/final/evaluacion.md`. Sin insignia. Dos versiones (A — deberes + revisión en clase / B — sesión completa). Iteración fina con el autor: eliminado FEEDBACK FOCALIZADO en ambas; AUTOEVALUACIÓN (B) sintetizada a *"Igual que en la versión A"*. Corrección retroactiva en `destrezas.md`: *actividad/actividades* → *ejercicio/ejercicios* (regla §8.1 ya codificada que se violó por descuido).

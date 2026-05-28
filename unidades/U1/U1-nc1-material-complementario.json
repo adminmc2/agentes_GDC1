@@ -2,18 +2,18 @@
   "unidad": "U1",
   "actualizado": "2026-05-27",
   "fuente_carpeta": "unidades/U1/recursos/",
-  "nota": "Inventario del material complementario de U1, descrito como conjunto de actividades/dinámicas independientes (no como archivos). El campo archivo_fuente indica el contenedor físico. El chat principal decide la integración en final/. El extractor no integra.",
+  "nota": "Inventario del material complementario de U1, descrito como conjunto de ejercicios/dinámicas independientes (no como archivos). El campo archivo_fuente indica el contenedor físico. El chat principal decide la integración en final/. El extractor no integra.",
   "esquema_version": "2.0",
   "campos_descriptores": {
     "tipo_dinamica": "lúdica | competitiva | cooperativa | reflexiva | investigacion | presentacion | mecanizacion | cinetica | reconocimiento",
-    "categoria_editorial": "diapositivas_aula | juego_lexico | juego_ortografico | tarea_interaccion | tarea_investigacion | dinamica_movimiento | concurso_cultural | actividad_proyeccion | evaluacion | gamificacion | itinerario | captura_plataforma | otro",
+    "categoria_editorial": "diapositivas_aula | juego_lexico | juego_ortografico | tarea_interaccion | tarea_investigacion | dinamica_movimiento | concurso_cultural | ejercicio_proyeccion | evaluacion | gamificacion | itinerario | captura_plataforma | otro",
     "competencias": "CO comprension oral | CE comprension escrita | EO expresion oral | EE expresion escrita | IO interaccion oral | MED mediacion",
     "secciones_aplicables": "vocabulario | gramatica | comunicacion | destrezas | cultura | evaluacion | reflexion | transversal"
   },
   "items": [
     {
       "id": "U1-mc-001",
-      "actividad": "Los colores — presentación proyectable",
+      "ejercicio": "Los colores — presentación proyectable",
       "tipo": "presentacion_aula",
       "formato_soporte": "presentacion_pptx",
       "archivo_fuente": "UNIDAD1NUEVOCOMPANEROS.pptx",
@@ -86,7 +86,7 @@
 
     {
       "id": "U1-mc-002",
-      "actividad": "El ahorcado",
+      "ejercicio": "El ahorcado",
       "tipo": "dinamica_aula",
       "formato_soporte": "ficha_imprimible_pdf",
       "archivo_fuente": "actividades_extra.pdf",
@@ -156,7 +156,7 @@
 
     {
       "id": "U1-mc-003",
-      "actividad": "¿Quién es quién?",
+      "ejercicio": "¿Quién es quién?",
       "tipo": "dinamica_aula",
       "formato_soporte": "ficha_imprimible_pdf",
       "archivo_fuente": "actividades_extra.pdf",
@@ -226,12 +226,12 @@
 
       "gestion_aula": "Preparación: recortar 1 ficha por grupo. Inicio (2 min): formar grupos y entregar ficha. Desarrollo (8-12 min): resolución colectiva en grupos. Cierre (5 min): corrección en plenario como concurso, recuento de puntos, breve apertura cultural ('¿de dónde son los famosos que conocéis vosotros?').",
 
-      "observaciones": "Es la única actividad del PDF con foco cultural explícito. La obsolescencia de referentes es la mayor decisión editorial para el chat principal: dejar tal cual, ampliar, o sustituir."
+      "observaciones": "Es el único ejercicio del PDF con foco cultural explícito. La obsolescencia de referentes es la mayor decisión editorial para el chat principal: dejar tal cual, ampliar, o sustituir."
     },
 
     {
       "id": "U1-mc-004",
-      "actividad": "Dictado a la carrera",
+      "ejercicio": "Dictado a la carrera",
       "tipo": "dinamica_aula",
       "formato_soporte": "ficha_imprimible_pdf",
       "archivo_fuente": "actividades_extra.pdf",
@@ -298,12 +298,12 @@
 
       "gestion_aula": "Preparación: imprimir las 2 fichas y colgarlas en extremos opuestos del espacio. Inicio (3 min): formar equipos, explicar reglas, distribuir papel y bolígrafo. Desarrollo (10-15 min): juego con docente como árbitro circulante. Cierre (5 min): comparar las dos transcripciones en pizarra, comentar errores típicos (letras confundidas, números con error de decena).",
 
-      "observaciones": "Actividad de alta energía — útil después de bloques de presentación estática para reactivar al grupo. El contenido lingüístico es ortográfico/auditivo puro, sin pragmática."
+      "observaciones": "Ejercicio de alta energía — útil después de bloques de presentación estática para reactivar al grupo. El contenido lingüístico es ortográfico/auditivo puro, sin pragmática."
     },
 
     {
       "id": "U1-mc-005",
-      "actividad": "Mi compañero",
+      "ejercicio": "Mi compañero",
       "tipo": "dinamica_aula",
       "formato_soporte": "ficha_imprimible_pdf",
       "archivo_fuente": "actividades_extra.pdf",
@@ -384,12 +384,12 @@
 
       "gestion_aula": "Preparación: recortar fichas en mitades A y B. Inicio (3 min): formar parejas y entregar fichas opuestas a cada miembro. Desarrollo fase 1 (5 min): trabajo individual silencioso. Desarrollo fase 2 (10-12 min): entrevistas en parejas — circular para corregir pronunciación y entonación interrogativa. Cierre (8-10 min): 3-5 presentaciones voluntarias en plenario, el resto entrega la ficha como evidencia.",
 
-      "observaciones": "Es la actividad más completa del PDF: integra las cuatro destrezas y obliga al paso 2ª pers. → 3ª pers. Excelente candidata para tarea final de U1 o para evaluación formativa."
+      "observaciones": "Es el ejercicio más completo del PDF: integra las cuatro destrezas y obliga al paso 2ª pers. → 3ª pers. Excelente candidato para tarea final de U1 o para evaluación formativa."
     },
 
     {
       "id": "U1-mc-006",
-      "actividad": "¿Dónde está?",
+      "ejercicio": "¿Dónde está?",
       "tipo": "tarea_investigacion",
       "formato_soporte": "ficha_imprimible_pdf",
       "archivo_fuente": "actividades_extra.pdf",
@@ -451,7 +451,7 @@
 
       "adaptaciones_posibles": [
         "Versión sin internet: el docente proyecta soluciones o reparte un dossier impreso con la información",
-        "Ampliación cooperativa: tras la actividad, cada grupo investiga 1 monumento en profundidad (1 frase: dónde está + qué es + cuándo se construyó) y lo presenta al resto",
+        "Ampliación cooperativa: tras el ejercicio, cada grupo investiga 1 monumento en profundidad (1 frase: dónde está + qué es + cuándo se construyó) y lo presenta al resto",
         "Variante competitiva: cronómetro, gana el grupo que termine primero con todas correctas",
         "Versión geolocalizada: usar Google Maps para situar visualmente los monumentos"
       ],
@@ -465,12 +465,12 @@
 
       "gestion_aula": "Preparación: imprimir 1 ficha por grupo, verificar conectividad. Inicio (3 min): formar grupos, entregar fichas, repasar consigna y modelar una búsqueda en español ('Acueducto España ciudad'). Desarrollo (15-20 min): trabajo autónomo en grupos. Cierre (10-15 min): corrección en plenario monumento a monumento; si hay mapa mudo, fase cartográfica adicional.",
 
-      "observaciones": "Actividad fuertemente cultural y digital; combina autonomía investigadora con repaso visual. Es la única tarea del PDF que rompe con el aula tradicional para abrir al uso de recursos externos. Buen candidato para visibilizar la dimensión 'aprender a aprender' en U1."
+      "observaciones": "Ejercicio fuertemente cultural y digital; combina autonomía investigadora con repaso visual. Es la única tarea del PDF que rompe con el aula tradicional para abrir al uso de recursos externos. Buen candidato para visibilizar la dimensión 'aprender a aprender' en U1."
     },
 
     {
       "id": "U1-mc-007",
-      "actividad": "Prueba de evaluación U1 — ¡Hola!",
+      "ejercicio": "Prueba de evaluación U1 — ¡Hola!",
       "tipo": "prueba_evaluacion",
       "formato_soporte": "examen_imprimible_pdf",
       "archivo_fuente": "evaluaciones.pdf",
@@ -558,12 +558,12 @@
 
       "gestion_aula": "Preparación: imprimir 1 prueba por alumno, decidir tiempo y criterios de puntuación. Inicio (5 min): repartir, explicar tiempo disponible y normas. Desarrollo (35-45 min): resolución individual en silencio. Cierre: recoger pruebas; corrección posterior por el docente. Devolución en sesión siguiente con feedback global de errores tipo.",
 
-      "observaciones": "Producto evaluativo coherente y completo, cubre los tres ejes (vocabulario, gramática/comunicación, destrezas) con buena distribución. El paralelismo entre ej. 11 (escrito) y la actividad U1-mc-005 (oral) hace que ambos puedan combinarse como evaluación integrada de comunicación personal."
+      "observaciones": "Producto evaluativo coherente y completo, cubre los tres ejes (vocabulario, gramática/comunicación, destrezas) con buena distribución. El paralelismo entre ej. 11 (escrito) y el ejercicio U1-mc-005 (oral) hace que ambos puedan combinarse como evaluación integrada de comunicación personal."
     },
 
     {
       "id": "U1-mc-008",
-      "actividad": "El trébol",
+      "ejercicio": "El trébol",
       "tipo": "dinamica_aula",
       "formato_soporte": "ficha_imprimible_pdf",
       "archivo_fuente": "gamificación_todas_unidades.pdf",
@@ -641,12 +641,12 @@
 
       "gestion_aula": "Preparación: fotocopiar 1 trébol por alumno, opcionalmente plastificar/cartulinar. Inicio (5 min): explicar dinámica, acordar las 4 categorías que irán en cada hoja del trébol. Fase 1 (5 min): cada alumno rellena su propio trébol. Fase 2 (15-20 min): circulación libre por el aula con entrevistas mutuas. Cierre (5-10 min): ronda en gran grupo extrayendo similitudes/datos curiosos.",
 
-      "observaciones": "El archivo fuente es transversal — el Cuaderno de juegos NC1 publicado por SGEL contiene 19 juegos para U1-U9 + 2 repasos. Los juegos de U2-U9 están en el mismo PDF y serán inventariables en sus respectivas unidades cuando se procesen (ver bloque fuentes_transversales al final del JSON). Esta actividad es la 1ª de las 2 que aplican a U1."
+      "observaciones": "El archivo fuente es transversal — el Cuaderno de juegos NC1 publicado por SGEL contiene 19 juegos para U1-U9 + 2 repasos. Los juegos de U2-U9 están en el mismo PDF y serán inventariables en sus respectivas unidades cuando se procesen (ver bloque fuentes_transversales al final del JSON). Este ejercicio es el 1º de los 2 que aplican a U1."
     },
 
     {
       "id": "U1-mc-009",
-      "actividad": "El matamoscas",
+      "ejercicio": "El matamoscas",
       "tipo": "dinamica_aula",
       "formato_soporte": "ficha_imprimible_pdf",
       "archivo_fuente": "gamificación_todas_unidades.pdf",
@@ -718,7 +718,476 @@
 
       "gestion_aula": "Preparación: recortar y colgar los 20 carteles por toda el aula previamente; montar los 2 matamoscas. Inicio (3 min): formar 2 equipos en fila india, distribuir matamoscas, recordar reglas. Desarrollo (12-15 min): dictado de números por turnos, alternando velocidad e introduciendo dificultad progresiva (primero números bajos, luego mezclados con 11-19). Cierre (2-3 min): recuento, breve repaso oral de los números que generaron más errores.",
 
-      "observaciones": "El archivo fuente es transversal — el Cuaderno de juegos NC1 publicado por SGEL contiene 19 juegos para U1-U9 + 2 repasos. Los juegos de U2-U9 están en el mismo PDF y serán inventariables en sus respectivas unidades cuando se procesen (ver bloque fuentes_transversales al final del JSON). Esta actividad es la 2ª de las 2 que aplican a U1. Complementaria con U1-mc-004 (Dictado a la carrera) que también trabaja números 1-20: el matamoscas mide reconocimiento visual rápido, el dictado mide producción escrita."
+      "observaciones": "El archivo fuente es transversal — el Cuaderno de juegos NC1 publicado por SGEL contiene 19 juegos para U1-U9 + 2 repasos. Los juegos de U2-U9 están en el mismo PDF y serán inventariables en sus respectivas unidades cuando se procesen (ver bloque fuentes_transversales al final del JSON). Este ejercicio es el 2º de los 2 que aplican a U1. Complementario con U1-mc-004 (Dictado a la carrera) que también trabaja números 1-20: el matamoscas mide reconocimiento visual rápido, el dictado mide producción escrita."
+    },
+
+    {
+      "id": "U1-mc-010",
+      "ejercicio": "Ejercicio 5 — Observa el nombre de las letras y escribe la palabra",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U1/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U1",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 1 - ¡Hola! → Libro del alumno → Ejercicio 5",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-8 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve el ejercicio en su dispositivo (ordenador, tableta o móvil) accediendo a Blinklearning con sus credenciales. La plataforma valida automáticamente y permite hasta 3 intentos.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar el reconocimiento del nombre de las letras del abecedario español aplicado a la transcripción ortográfica de palabras del vocabulario de U1, mediante práctica autónoma autocorregible.",
+
+      "competencias": ["CE (lectura del nombre de las letras escritas)", "EE (transcripción ortográfica)", "metacognición ortográfica (asociar nombre de letra → grafema correcto)"],
+
+      "funciones_comunicativas": ["decodificar deletreos escritos → reconstruir la palabra correcta"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "8 palabras: mochila, borrador, amarillo, abecedario, reloj, profesora, hermano, hospital",
+          "campos léxicos mezclados: objetos de clase (mochila, borrador, reloj), colores (amarillo), familia (hermano), profesiones (profesora), lugares (hospital), meta-vocabulario (abecedario)"
+        ],
+        "fonetica_ortografia": [
+          "nombres del abecedario español (incluye 'erre' doble, 'hache' muda, 'ce', 'jota')",
+          "grafemas complejos: ch (ce+hache en 'mochila'), ll (ele+ele en 'amarillo'), rr (erre+erre en 'borrador')",
+          "letra muda: h en 'hermano' y 'hospital'",
+          "letra final inusual: j en 'reloj'"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "deletreo": "eme-o-ce-hache-i-ele-a", "solucion": "mochila" },
+        { "n": 2, "deletreo": "be-o-erre-erre-a-de-o-erre", "solucion": "borrador" },
+        { "n": 3, "deletreo": "a-eme-a-erre-i-ele-ele-o", "solucion": "amarillo" },
+        { "n": 4, "deletreo": "a-be-e-ce-e-de-a-erre-i-o", "solucion": "abecedario" },
+        { "n": 5, "deletreo": "erre-e-ele-o-jota", "solucion": "reloj" },
+        { "n": 6, "deletreo": "pe-erre-o-efe-e-ese-o-erre-a", "solucion": "profesora" },
+        { "n": 7, "deletreo": "hache-e-erre-eme-a-ene-o", "solucion": "hermano" },
+        { "n": 8, "deletreo": "hache-o-ese-pe-i-te-a-ele", "solucion": "hospital" }
+      ],
+
+      "apoyos": ["digital (interfaz autocorregible Blinklearning)", "escrito (input de texto)", "feedback inmediato (botón Validate)"],
+
+      "descripcion_dinamica": "Ejercicio interactivo autocorregible de Blinklearning. Se presentan 8 palabras escritas con los nombres de sus letras separados por guiones (ej. 'eme-o-ce-hache-i-ele-a'). El alumno debe reconstruir y escribir la palabra correctamente en el campo de texto correspondiente a cada ítem. Al pulsar 'Validate' la plataforma corrige y marca aciertos/errores. El alumno dispone de 3 intentos para conseguir resolución completa antes de bloquearse la corrección.",
+
+      "mecanica_correccion": {
+        "tipo": "automática inmediata",
+        "intentos_permitidos": 3,
+        "puede_reiniciar": true,
+        "retroalimentacion": "binaria visible (correcto/incorrecto) — sin pista granular por ítem en la interfaz visible"
+      },
+
+      "secciones_aplicables": ["vocabulario", "comunicacion", "evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — función 'deletrear' en modo decodificación (reconocer letras dictadas en lugar de producirlas)",
+        "vocabulario.md — repaso integrador del léxico de U1 (objetos, colores, familia, profesiones, lugares)",
+        "evaluacion.md — apto como autoevaluación previa al control sumativo U1-mc-007"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica equivalente: dictado oral del docente con las mismas 8 palabras",
+        "Inversa: dar la palabra y pedir al alumno que la deletree (oral o escrito)",
+        "Combinación con U1-mc-002 (El ahorcado) o U1-mc-004 (Dictado a la carrera) para integrar digital + analógico",
+        "Subir dificultad: pedir al alumno que añada la tilde donde corresponda"
+      ],
+
+      "consideraciones": [
+        "Léxico mixto: 'profesora', 'hermano', 'hospital', 'abecedario' pueden o no estar todavía en el vocabulario activo de U1 — verificar contra el inventario canónico (mismo patrón detectado en U1-mc-007 ej. 10-11)",
+        "El ejercicio asume dominio previo de los nombres de TODAS las letras incluido 'hache' (muda), 'erre' (doble), 'jota', 'ce' — debe presentarse después de la sesión sistemática de abecedario",
+        "Sólo 3 intentos: si el alumno falla repetidamente puede frustrarse — el docente debería poder reiniciar credenciales o complementar con apoyo presencial",
+        "Sin retroalimentación granular: el alumno sabe qué está mal pero no por qué — conviene complementar con corrección guiada en aula"
+      ],
+
+      "gestion_aula": "Uso recomendado: como deberes asíncronos tras la sesión del abecedario (tarea de casa de 5-10 min), o como tarea en aula de informática. El docente accede al panel de seguimiento de Blinklearning para revisar quién lo ha hecho y con cuántos intentos.",
+
+      "observaciones": "Primera captura inventariada de los ejercicios extra interactivos de Blinklearning para U1. Combina dos contenidos clave (abecedario + léxico activo) en una sola tarea autónoma. Buen complemento digital para las dinámicas analógicas U1-mc-002 (ahorcado) y U1-mc-004 (dictado a la carrera). Se esperan más capturas de la misma serie."
+    },
+
+    {
+      "id": "U1-mc-011",
+      "ejercicio": "Ejercicio 1 — Empareja las palabras con su imagen",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U1/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U1",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 1 - ¡Hola! → Libro del alumno → Ejercicio 1",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "asociacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve en su dispositivo arrastrando o haciendo clic para asociar cada palabra con su imagen. La plataforma ofrece botón 'Solution' para revelar la respuesta correcta y 'Restart exercise' para reiniciar.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Fijar el reconocimiento del léxico nuclear de objetos de clase de U1 asociando significante escrito (con artículo definido) y significado visual (imagen del objeto).",
+
+      "competencias": ["CE (lectura del sintagma con artículo)", "reconocimiento visual de objetos cotidianos", "asociación léxico-visual"],
+
+      "funciones_comunicativas": ["identificar y nombrar objetos del entorno escolar"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "8 objetos de clase: goma de borrar, diccionarios, mochila, bolígrafo, lápiz, pizarra, mesa, regla"
+        ],
+        "gramatica_explicita": [
+          "artículo definido singular masculino: el (el bolígrafo, el lápiz)",
+          "artículo definido singular femenino: la (la goma de borrar, la mochila, la pizarra, la mesa, la regla)",
+          "artículo definido plural masculino: los (los diccionarios)",
+          "sustantivo compuesto con preposición: la goma de borrar"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "etiqueta": "la goma de borrar", "imagen": "goma con virutas" },
+        { "n": 2, "etiqueta": "los diccionarios", "imagen": "pila de diccionarios de varios idiomas" },
+        { "n": 3, "etiqueta": "la mochila", "imagen": "mochila azul" },
+        { "n": 4, "etiqueta": "el bolígrafo", "imagen": "bolígrafo plateado/negro" },
+        { "n": 5, "etiqueta": "el lápiz", "imagen": "lápiz amarillo con goma" },
+        { "n": 6, "etiqueta": "la pizarra", "imagen": "pizarra blanca" },
+        { "n": 7, "etiqueta": "la mesa", "imagen": "mesa de madera" },
+        { "n": 8, "etiqueta": "la regla", "imagen": "regla azul transparente" }
+      ],
+
+      "apoyos": ["visual fuerte (fotografía realista de cada objeto)", "digital (interacción drag-and-drop o tap)", "feedback inmediato vía 'Solution'"],
+
+      "descripcion_dinamica": "Ejercicio interactivo de emparejamiento en Blinklearning. El alumno ve 16 tarjetas: 8 con etiquetas léxicas (palabra + artículo definido) y 8 con imágenes fotográficas de los objetos correspondientes. Debe asociar cada etiqueta con su imagen mediante arrastre o clic. A diferencia del ejercicio anterior (U1-mc-010), la interfaz ofrece un botón 'Solution' que revela directamente la respuesta correcta y un contador de intentos que arranca en 0 y va aumentando con cada uso de 'Solution' o 'Restart'.",
+
+      "mecanica_correccion": {
+        "tipo": "autocorrección por revelación de respuesta",
+        "boton_principal": "Solution (muestra la respuesta correcta)",
+        "boton_secundario": "Restart exercise (reinicia el ejercicio)",
+        "intentos_permitidos": "no limitados visiblemente; el contador empieza en 0 y se incrementa con cada interacción",
+        "retroalimentacion": "global por reset/solution, sin pista granular por ítem"
+      },
+
+      "secciones_aplicables": ["vocabulario", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — léxico nuclear de objetos de clase de U1 (núcleo del bloque); candidato a tarea inicial de presentación o fijación temprana",
+        "gramatica.md — práctica implícita del artículo definido en sus 3 formas (el, la, los) incluyendo distinción de género y número"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica: tarjetas físicas para emparejar en mesa o pizarra",
+        "Subir dificultad: pedir al alumno que escriba el artículo correcto antes de emparejar",
+        "Variante oral: el docente describe el objeto y el alumno apunta a la imagen",
+        "Ampliación: añadir más objetos de clase o pasar a formas plurales para todos los ítems"
+      ],
+
+      "consideraciones": [
+        "Léxico totalmente alineado con el inventario de U1 (objetos de clase) — a diferencia de U1-mc-010, este ejercicio es plenamente coherente con el vocabulario activo de la unidad",
+        "Mecánica de corrección 'Solution' es más permisiva pero menos formativa que la del ej. 5 (Validate con 3 intentos): el alumno puede revelar la respuesta sin esfuerzo previo — el docente debería instar a intentarlo primero",
+        "Sustantivo 'goma de borrar' compite con 'borrador' (presente en U1-mc-002 y U1-mc-010): convive variación léxica — coherente con que U1 introduce sinónimos regionales/comunes",
+        "Numeración Blinklearning: este es 'Ejercicio 1' (probablemente el primero de la serie); U1-mc-010 era 'Ejercicio 5'. La numeración no se procesa en orden — conviene rastrear la posición real en la plataforma para el chat principal"
+      ],
+
+      "gestion_aula": "Uso recomendado: como primera tarea digital de la unidad para fijar léxico nuclear de objetos de clase, idealmente en aula de informática o como deberes de calentamiento. Por su baja exigencia cognitiva (reconocimiento visual), funciona como entrada al léxico antes de pasar a ejercicios de producción.",
+
+      "observaciones": "Segunda captura inventariada de la serie Blinklearning U1. A diferencia de U1-mc-010 (Ejercicio 5, mezcla campos léxicos), este es léxico nuclear puro de objetos de clase con artículo definido — entrada idónea. Combina bien con U1-mc-002 (El ahorcado, mismos objetos) y U1-mc-007 ej. 1 (prueba escrita con dibujos)."
+    },
+
+    {
+      "id": "U1-mc-012",
+      "ejercicio": "Ejercicio 2 — Sopa de letras de objetos de clase",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U1/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U1",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 1 - ¡Hola! → Libro del alumno → Ejercicio 2",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["lúdica", "busqueda_visual", "asociacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-10 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno explora la cuadrícula 10×10, identifica visualmente cada palabra de la lista (apoyándose en las imágenes numeradas) y la selecciona arrastrando o haciendo clic sobre las letras.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Fijar la ortografía del léxico de objetos de clase de U1 mediante reconocimiento visual de las palabras en una cuadrícula, asociando imagen → palabra → grafía.",
+
+      "competencias": ["reconocimiento visual ortográfico", "asociación imagen-palabra", "atención sostenida al detalle"],
+
+      "funciones_comunicativas": ["identificar y nombrar objetos del aula a partir de imagen"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "7 objetos de clase: sacapuntas, estuche, libro, silla, tijeras, ordenador, cuaderno"
+        ],
+        "gramatica_implicita": [
+          "palabras sin artículo (forma léxica desnuda)",
+          "género implícito: el sacapuntas, el estuche, el libro, la silla, las tijeras, el ordenador, el cuaderno",
+          "número: 'tijeras' como sustantivo pluralia tantum"
+        ],
+        "fonetica_ortografia": [
+          "palabras con grafemas complejos: cu en 'cuaderno', qu (potencial)",
+          "léxico peninsular: 'ordenador' frente a 'computadora' (variación dialectal hispanoamericana — no aparece)"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "imagen": "sacapuntas", "palabra": "sacapuntas" },
+        { "n": 2, "imagen": "estuche con cremallera", "palabra": "estuche" },
+        { "n": 3, "imagen": "libro abierto", "palabra": "libro" },
+        { "n": 4, "imagen": "silla", "palabra": "silla" },
+        { "n": 5, "imagen": "tijeras", "palabra": "tijeras" },
+        { "n": 6, "imagen": "ordenador portátil", "palabra": "ordenador" },
+        { "n": 7, "imagen": "cuaderno con espiral", "palabra": "cuaderno" }
+      ],
+
+      "sopa_letras": {
+        "dimensiones": "10×10",
+        "filas": [
+          "Q I Q C K S S T O O",
+          "J C Z Z G A P M R D",
+          "Z U T N M C K G D E",
+          "K A I M L A D A E S",
+          "S D J J I P J P N T",
+          "I E E U B U C B A U",
+          "L R R G R N Z F D C",
+          "L N A G O T W V O H",
+          "A O S W A A A B R E",
+          "L V W F V S O G S C"
+        ],
+        "palabras_a_localizar": ["sacapuntas", "estuche", "libro", "silla", "tijeras", "ordenador", "cuaderno"]
+      },
+
+      "apoyos": ["visual fuerte (dibujos lineales claros)", "digital (selección interactiva en cuadrícula)", "lista de palabras visible como ancla"],
+
+      "descripcion_dinamica": "Ejercicio interactivo de sopa de letras en Blinklearning. El alumno ve 7 imágenes numeradas de objetos de clase, una cuadrícula de 10×10 con letras dispuestas aparentemente al azar y una lista lateral con las 7 palabras a localizar (subrayadas en la interfaz). Debe encontrar cada palabra en la sopa (horizontal, vertical o diagonalmente, en cualquier dirección) y seleccionarla arrastrando el cursor desde la primera letra hasta la última. Cada palabra localizada queda visualmente marcada y desaparece (o se tacha) de la lista lateral.",
+
+      "mecanica_correccion": {
+        "tipo": "autocorrección por selección visual",
+        "feedback": "la palabra encontrada queda marcada en la cuadrícula y en la lista lateral",
+        "boton_principal": "Solution (revela la posición de todas las palabras restantes)",
+        "boton_secundario": "Restart exercise",
+        "intentos_permitidos": "no limitados; el contador 'attempts' se incrementa con Solution o Restart"
+      },
+
+      "secciones_aplicables": ["vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — fijación ortográfica del léxico de objetos de clase de U1, complementario al ejercicio U1-mc-011 (emparejamiento) y a U1-mc-002 (ahorcado)",
+        "vocabulario.md — introduce léxico no cubierto en U1-mc-011: sacapuntas, estuche, tijeras, ordenador, cuaderno"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica: sopa de letras impresa con lápiz y papel",
+        "Subir dificultad: añadir más palabras o palabras distractoras",
+        "Variante con tiempo: cronómetro para añadir competitividad",
+        "Posterior: pedir al alumno que añada el artículo correcto a cada palabra encontrada"
+      ],
+
+      "consideraciones": [
+        "El léxico es plenamente nuclear de U1 (objetos de clase) y ortográficamente accesible para A1.1",
+        "La palabra 'estuche' es la única que potencialmente puede no haber sido introducida explícitamente — verificar contra inventario canónico de U1",
+        "La sopa carece de letras especiales del español (ñ, ll, ch dígrafos) — coherente con que esas grafías no aparecen en las 7 palabras objetivo",
+        "Mecánica de búsqueda visual puede ser frustrante para alumnos con dificultades visuales o dislexia — considerar alternativa de ejercicio si aplica"
+      ],
+
+      "gestion_aula": "Uso recomendado: como tarea de fijación tras la presentación del léxico de objetos de clase, o como deberes de repaso lúdico (5-10 min). Útil también como ejercicio de descanso cognitivo entre tareas más exigentes.",
+
+      "observaciones": "Tercera captura inventariada de la serie Blinklearning U1 (Ej. 2 según numeración de la plataforma). Junto con U1-mc-011 (Ej. 1, emparejamiento) y U1-mc-010 (Ej. 5, deletreo), conforman un bloque digital coherente de presentación-fijación-prueba del léxico nuclear de objetos de clase. El léxico de los 3 ejercicios solapa parcialmente: mochila/bolígrafo/lápiz/pizarra (Ej.1) + sacapuntas/estuche/libro/silla/tijeras/ordenador/cuaderno (Ej.2) + mochila/borrador/abecedario… (Ej.5) — cobertura distinta y complementaria."
+    },
+
+    {
+      "id": "U1-mc-013",
+      "ejercicio": "Ejercicio 3 — Escucha y une cada objeto con su color",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U1/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U1",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 1 - ¡Hola! → Libro del alumno → Ejercicio 3",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["comprension_auditiva", "asociacion", "mecanizacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-8 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno escucha el audio (probablemente frases del tipo 'el coche es azul, el huevo es amarillo, …') y arrastra cada objeto a su color correspondiente. Puede reproducir el audio las veces que necesite.",
+      "materiales_necesarios": ["dispositivo con navegador", "altavoces o auriculares", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Practicar la comprensión auditiva de frases atributivas simples (sujeto + ser + color) en presente, asociando información oral con representación visual de objeto y color.",
+
+      "competencias": ["CO (comprensión auditiva de frases atributivas)", "asociación auditivo-visual", "reconocimiento de léxico de colores y objetos cotidianos en habla nativa"],
+
+      "funciones_comunicativas": ["describir el color de un objeto (X es + color)"],
+
+      "contenidos_linguisticos": {
+        "lexico": {
+          "objetos": ["coche", "huevo", "hoja (de planta)", "piano", "perro", "móvil"],
+          "colores": ["marrón", "azul", "amarillo", "verde", "negro", "rojo"]
+        },
+        "gramatica_implicita": [
+          "presente 3ª pers. sing. del verbo 'ser' como cópula atributiva",
+          "concordancia de género entre sustantivo y adjetivo de color (coche/azul, huevo/amarillo, hoja/verde, piano/negro, perro/marrón, móvil/rojo)",
+          "todos los colores aquí presentes son invariables en género (azul, amarillo, verde, negro, rojo, marrón) — no hay -o/-a",
+          "uso del artículo definido en la frase oral (el coche, el huevo, la hoja, el piano, el perro, el móvil)"
+        ]
+      },
+
+      "items_ejercicio_interpretados": [
+        { "n": 1, "objeto": "coche", "color_segun_flechas": "azul", "nota": "interpretación visual; pendiente de confirmar con audio" },
+        { "n": 2, "objeto": "huevo", "color_segun_flechas": "amarillo", "nota": "interpretación visual; pendiente de confirmar con audio" },
+        { "n": 3, "objeto": "hoja (planta)", "color_segun_flechas": "verde", "nota": "interpretación visual coherente con realidad" },
+        { "n": 4, "objeto": "piano", "color_segun_flechas": "negro", "nota": "interpretación visual coherente con realidad" },
+        { "n": 5, "objeto": "perro", "color_segun_flechas": "marrón", "nota": "interpretación visual; pendiente de confirmar con audio" },
+        { "n": 6, "objeto": "móvil", "color_segun_flechas": "rojo", "nota": "interpretación visual; pendiente de confirmar con audio" }
+      ],
+
+      "apoyos": ["auditivo (input oral)", "visual (dibujos lineales + manchas de pigmento)", "digital (drag-and-drop o conexión por línea)"],
+
+      "descripcion_dinamica": "Ejercicio interactivo de comprensión auditiva en Blinklearning. El alumno escucha un audio en el que probablemente se describen los colores de 6 objetos mediante frases atributivas simples ('el coche es azul', 'el huevo es amarillo', etc.). En pantalla ve dos columnas: a la izquierda 6 dibujos lineales de objetos, a la derecha 6 manchas de pigmento con los colores correspondientes. Debe trazar una línea (o arrastrar) entre cada objeto y su color según lo que oye. Puede reproducir el audio repetidamente. El botón 'Hide' permite ocultar la solución una vez revelada; 'Restart exercise' reinicia el ejercicio.",
+
+      "mecanica_correccion": {
+        "tipo": "autocorrección por revelación de respuesta",
+        "boton_principal_revelado": "Hide (oculta la solución; aparece cuando la solución se está mostrando)",
+        "boton_principal_oculto": "Solution / Show (revela la respuesta — botón inicial probable)",
+        "boton_secundario": "Restart exercise",
+        "intentos_permitidos": "no limitados; el contador 'attempts' se incrementa con uso de Solution/Restart",
+        "retroalimentacion": "global por mostrar/ocultar la solución completa"
+      },
+
+      "secciones_aplicables": ["vocabulario", "comunicacion", "destrezas", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — refuerzo del bloque léxico 'colores' presentado en U1-mc-001 (presentación) y trabajado en U1-mc-002 (ahorcado)",
+        "comunicacion.md — función 'describir el color de un objeto' en input oral",
+        "destrezas.md — primer ejercicio digital de U1 con componente de comprensión auditiva, candidato a presentación de la CO en U1",
+        "gramatica.md — concordancia ser + adjetivo de color invariable (todos los colores del ejercicio lo son)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión sin audio (mediación): el docente lee las frases y los alumnos unen en papel",
+        "Subir dificultad: incluir colores variables -o/-a que obliguen a discriminar género (la flor es amarilla / el sol es amarillo)",
+        "Inversa: el alumno produce las frases oralmente describiendo cada par objeto-color",
+        "Combinable con U1-mc-001 (presentación de colores) como cierre digital tras la presentación analógica"
+      ],
+
+      "consideraciones": [
+        "Léxico de objetos: 'móvil' (variante peninsular) frente a 'celular' (variante hispanoamericana); coherente con que la plataforma usa español de España",
+        "Selección de objetos con asignaciones algo arbitrarias (huevo amarillo, móvil rojo) que dependen estrictamente del input auditivo: sin audio, las asignaciones no son deducibles por sentido común",
+        "Todos los colores del ejercicio son INVARIABLES en género (azul, amarillo, verde, negro, rojo, marrón) — no se ejercita la oposición -o/-a (eso lo trabajan U1-mc-001 y U1-mc-002)",
+        "Captura tomada con la solución revelada (botón 'Hide' visible) — las flechas mostradas son las soluciones del sistema, no del alumno",
+        "El audio en sí no está accesible desde la captura — para validar las soluciones de forma definitiva habría que reproducirlo en la plataforma"
+      ],
+
+      "gestion_aula": "Uso recomendado: como primer ejercicio digital con CO, idealmente con auriculares en aula de informática o como tarea de casa. El docente debería verificar previamente que los alumnos tienen acceso al audio (algunos navegadores móviles bloquean autoplay). Permite repetir el audio cuantas veces el alumno necesite — útil para A1.1.",
+
+      "observaciones": "Cuarta captura inventariada de la serie Blinklearning U1. Primera del bloque con audio. Las soluciones marcadas son interpretación de las flechas visibles en la captura (mostradas vía botón 'Hide') — pendientes de confirmación al reproducir el audio en la plataforma. Complemento digital ideal para U1-mc-001 (presentación analógica de colores) cerrando el ciclo presentación-fijación-comprobación."
+    },
+
+    {
+      "id": "U1-mc-014",
+      "ejercicio": "Ejercicio 4 — Coloca cada imagen en la caja de su género (masculino o femenino)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U1/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U1",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 1 - ¡Hola! → Libro del alumno → Ejercicio 4",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["clasificacion", "mecanizacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno arrastra cada una de las 8 imágenes-etiqueta a una de las dos cajas (EL / LA) según su género. La plataforma valida con botón 'Validate' y permite hasta 3 intentos; tras agotarse o solicitarse, aparece el botón 'Hide' que muestra/oculta la solución.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar el reconocimiento del género gramatical (masculino/femenino) de sustantivos comunes, incluyendo casos prototípicos (-o masc., -a fem.) y casos menos predecibles que requieren conocer el sustantivo (-ón masc. con tilde, -or fem., consonante).",
+
+      "competencias": ["CE (lectura de la palabra)", "reconocimiento gramatical de género", "discriminación regla vs. excepción"],
+
+      "funciones_comunicativas": ["seleccionar el artículo definido adecuado al género del sustantivo"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "8 sustantivos comunes: balón, flor, ventana, helado, avión, puerta, casa, limón"
+        ],
+        "gramatica_explicita": [
+          "género de sustantivos no animados",
+          "artículo definido singular: el (masc.) vs. la (fem.)",
+          "patrones de género por desinencia: -o → masc. (helado), -a → fem. (ventana, puerta, casa)",
+          "casos menos prototípicos: -ón masc. con tilde (balón, avión, limón), -or fem. (flor)",
+          "patrón didáctico: el ejercicio incluye más femeninos terminados en -a (3) y más masculinos terminados en -ón (3) para reforzar dos macropatrones distintos"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "palabra": "balón", "genero": "masculino", "imagen": "pelota de fútbol", "patron": "-ón masc." },
+        { "palabra": "flor", "genero": "femenino", "imagen": "flor morada", "patron": "-or fem. (excepción)" },
+        { "palabra": "ventana", "genero": "femenino", "imagen": "ventana con persianas naranjas", "patron": "-a fem." },
+        { "palabra": "helado", "genero": "masculino", "imagen": "cono de helado", "patron": "-o masc." },
+        { "palabra": "avión", "genero": "masculino", "imagen": "avión", "patron": "-ón masc." },
+        { "palabra": "puerta", "genero": "femenino", "imagen": "puerta verde", "patron": "-a fem." },
+        { "palabra": "casa", "genero": "femenino", "imagen": "casa con jardín", "patron": "-a fem." },
+        { "palabra": "limón", "genero": "masculino", "imagen": "limón cortado", "patron": "-ón masc." }
+      ],
+
+      "soluciones": {
+        "EL": ["balón", "helado", "avión", "limón"],
+        "LA": ["flor", "ventana", "puerta", "casa"]
+      },
+
+      "apoyos": ["visual (imágenes claras a color)", "etiqueta léxica visible bajo cada imagen", "digital (drag-and-drop a contenedor visual)"],
+
+      "descripcion_dinamica": "Ejercicio interactivo de clasificación binaria en Blinklearning. El alumno ve 8 tarjetas con imagen + palabra correspondiente y dos cajas destino etiquetadas 'EL' y 'LA'. Debe arrastrar cada tarjeta a la caja del género correspondiente. Al pulsar 'Validate' la plataforma corrige y marca aciertos/errores. Tras agotar los 3 intentos o solicitar la solución, aparece el botón 'Hide' que permite ocultar/mostrar las tarjetas ya correctamente colocadas. 'Restart exercise' reinicia el ejercicio.",
+
+      "mecanica_correccion": {
+        "tipo": "validación con intentos limitados + revelación de solución",
+        "boton_principal_inicial": "Validate (comprueba la respuesta)",
+        "intentos_permitidos": 3,
+        "tras_agotar_intentos": "aparece botón Hide/Show para mostrar/ocultar la solución",
+        "boton_secundario": "Restart exercise",
+        "retroalimentacion": "binaria por ítem tras Validate; revelación total tras Show/Hide"
+      },
+
+      "secciones_aplicables": ["gramatica", "vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "gramatica.md — eje central: género gramatical de sustantivos no animados, con patrones prototípicos y excepciones",
+        "gramatica.md — práctica del artículo definido el/la en oposición de género",
+        "vocabulario.md — ampliación léxica fuera del aula (alimentos, partes de la casa, transporte) para reforzar género en contextos variados",
+        "Combinable con U1-mc-007 ej. 4-5 (prueba escrita) que también trabaja artículo y tabla masc./fem."
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica: tarjetas físicas para clasificar en mesa",
+        "Subir dificultad: añadir más excepciones (la mano, el día, el problema, la moto)",
+        "Ampliar: pedir al alumno que verbalice el sustantivo con su artículo correcto ('el balón', 'la flor') antes de arrastrar",
+        "Variante con plural: incluir tarjetas en plural y añadir cajas 'LOS' / 'LAS'"
+      ],
+
+      "consideraciones": [
+        "Léxico fuera del campo nuclear de objetos de clase de U1 — el ejercicio prioriza la regla gramatical sobre el campo léxico, lo cual es coherente con su objetivo",
+        "Inclusión sistemática de la terminación -ón (balón, avión, limón) en masculino y la -or (flor) en femenino — son excepciones clásicas que conviene introducir desde temprano",
+        "El ejercicio asume que el alumno conoce previamente el género de cada sustantivo: si no, debe deducirlo por la imagen (no es deducible sin conocimiento previo) — útil como ejercicio de FIJACIÓN, no de presentación",
+        "Variantes regionales: 'limón' y 'casa' son léxico transparente; 'balón' compite con 'pelota' (más usada en algunas zonas)",
+        "Coherencia con U1-mc-007 ej. 4-5 (control sumativo): ambos trabajan el mismo eje (género + artículo) en formatos distintos"
+      ],
+
+      "gestion_aula": "Uso recomendado: tras la presentación del género gramatical en aula, como fijación digital autónoma (deberes o aula de informática). Mejor secuenciar DESPUÉS de U1-mc-011 (objetos de clase con artículo) que introduce la noción 'palabra + artículo'. El docente puede revisar el panel de Blinklearning para ver patrones de error (los alumnos suelen fallar en -ón y -or).",
+
+      "observaciones": "Quinta captura inventariada de la serie Blinklearning U1 (Ej. 4). Junto con U1-mc-011 (Ej. 1, artículo definido en objetos de clase), forman el bloque gramatical 'género + artículo' de la serie digital. Las dos capturas del estado resuelto (con botón Hide visible) confirman las 8 soluciones sin ambigüedad — no requiere validación adicional."
+    },
+
+    {
+      "id": "U1-mc-015",
+      "ejercicio": "Vídeo Blinklearning",
+      "origen": "plataforma_blinklearning",
+      "ambito": "U1",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 1 - ¡Hola!",
+      "secciones_aplicables": ["comunicacion"],
+      "verificacion_pendiente": true,
+      "observaciones": "Entrada mínima — completar título oficial, duración y enlace cuando se disponga del dato."
     }
   ],
 

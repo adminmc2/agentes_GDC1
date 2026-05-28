@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-27 (v12.33 — U1 Evaluación cerrada en `final/`. Material complementario inventariado en `U1-nc1-material-complementario.json` (schema v2.0, 9 ítems) + 4 archivos fuente en `recursos/`. Corrección retroactiva *actividad → ejercicio*).
+> **Última actualización:** 2026-05-28 (v12.34 — U1 itinerario imprimible cerrado en `unidades/U1/U1-itinerarios.md`. Nuevas reglas codificadas en plantilla repo B ([CASA] una línea, fusión de [CASA] consecutivos, mini-descripción concreta tipo *Repaso de X / Práctica de X*). JSON material complementario ampliado a 15 ítems (mc-010 a mc-014 BLINKLEARNING + mc-015 vídeo Blinklearning) con páginas/diapositivas incorporadas para imprenta. Manual §8.1 amplía el veto *actividad → ejercicio* a bloques editoriales y referencias internas; excepciones SGEL (*Actividades Extra*, *Actividad global 1/2*) y filename `actividades_extra.pdf` documentadas).
+>
+> **Hito previo (v12.33):** 2026-05-27 (U1 Evaluación cerrada en `final/`. Material complementario inventariado en `U1-nc1-material-complementario.json` (schema v2.0, 9 ítems) + 4 archivos fuente en `recursos/`. Corrección retroactiva *actividad → ejercicio*).
 >
 > **Hito previo (v12.32):** 2026-05-27 (U1 Cultura cerrada en `final/`. Sin píldora, sin tarjeta de estrategia. Iteración fina con el autor: eliminada reproducción de fórmulas del cuadro y caso plurilingüe/monolingüe).
 >

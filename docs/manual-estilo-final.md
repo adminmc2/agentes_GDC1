@@ -292,7 +292,7 @@ Estos se mantienen tal cual.
 
 | Concepto | Forma canónica | Formas a evitar |
 |---|---|---|
-| Tarea numerada del libro | `ejercicio` (palabra completa) | ~~ej.~~ · ~~act.~~ · ~~actividad~~ (cuando se refiere a tarea numerada) |
+| Tarea del libro o bloque editorial | `ejercicio` (palabra completa) | ~~ej.~~ · ~~act.~~ · ~~actividad~~ · ~~actividades~~ — vetada también para bloques editoriales y referencias internas, no solo para tareas numeradas. Excepción: nombres propios de productos SGEL (`Actividades Extra`, `Actividad global 1/2` del Cuaderno de juegos) y nombres de archivos físicos (`actividades_extra.pdf`). |
 | Material sonoro del libro | `pista` (palabra completa) | ~~audio~~ · ~~audición~~ (`escucha` solo como destreza CO) |
 | Páginas del libro | `página` / `páginas` (palabra completa) | ~~p.~~ · ~~pp.~~ · ~~pág.~~ |
 | Docente | `docente` | ~~profesor~~ · ~~profesora~~ · ~~prof.~~ |
