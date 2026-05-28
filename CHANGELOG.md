@@ -15,6 +15,23 @@
 
 ---
 
+## [v12.35 — 2026-05-28] — U1 piloto cerrado completo (final/ + itinerario + material)
+
+Hito de cierre del piloto U1. Todas las piezas editoriales de la unidad están terminadas y listas para imprenta:
+
+- **`unidades/U1/final/`**: las 6 secciones cerradas (vocabulario, gramática, comunicación, destrezas, cultura, evaluación) con manual de estilo y manual de objetivos aplicados.
+- **`unidades/U1/U1-itinerarios.md`**: itinerario imprimible BÁSICO + EXTENDIDO con páginas/diapositivas listas para insertar en imprenta.
+- **`unidades/U1/U1-nc1-material-complementario.json`**: inventario completo de 15 ítems (mc-001 a mc-015) cubriendo PPT, Actividades Extra, Cuaderno de juegos, BLINKLEARNING y vídeo Blinklearning. FT-cuaderno-juegos-NC1 catalogado.
+- **`unidades/U1/recursos/`**: PPTX + 3 PDFs fuente + tarjetas.
+
+Marco metodológico estabilizado durante el piloto y reutilizable para U2-U9:
+
+- Manual de estilo (`docs/manual-estilo-final.md`) ampliado en §2.1, §8.1, §10.3-10.8, §11.4, §13. La regla léxica *actividad → ejercicio* vetada también para bloques editoriales (no solo tareas numeradas).
+- Plantilla de itinerario en repo B con reglas nuevas: [CASA] una línea, fusión de consecutivos, mini-descripción concreta tipo *Repaso de X / Práctica de X*.
+- Schema v2.0 del inventario de material complementario validado en U1 (esquema reutilizable para todas las unidades restantes).
+
+Próximo paso: aplicar el mismo flujo a U2 (final/, itinerario, material complementario). Los 4 archivos fuente de U2 ya están depositados en `unidades/U2/recursos/` y pendientes de procesamiento.
+
 ## [v12.34 — 2026-05-28] — U1 itinerario imprimible cerrado + regla léxica ampliada
 
 Nuevo: `unidades/U1/U1-itinerarios.md`. Itinerario imprimible completo (BÁSICO 5 secciones color-coded + EXTENDIDO con Estación de servicio y Materiales complementarios). Reglas nuevas aplicadas y codificadas en plantilla repo B: [CASA] una sola línea, fusión obligatoria de [CASA] consecutivos, mini-descripción de [CASA] en estilo *Repaso de X / Práctica de X / Producción escrita: X*. Reducción sistemática de descripciones [CLASE] largas (~90-100 char). Etiqueta píldora 1.2 corregida (`destreza` → `expresión oral`). Reformulación Destrezas Ej 1 (centrado en comprensión lectora). Evaluación bifurcada en Versión A / Versión B en paralelo.
