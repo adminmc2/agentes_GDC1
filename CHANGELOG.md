@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.36 — 2026-05-28] — U1 final/ bloqueada con regla path-scoped
+
+Nueva: `.claude/rules/u1-final-locked.md` con frontmatter `paths: ["unidades/U1/final/*.md"]`. Prohíbe editar las 6 secciones cerradas sin permiso explícito previo del autor. Mecanismo path-scoped (mismo patrón que `final-style.md`) para escalar al cierre de U2-U9. No interfiere con `U1-itinerarios.md`, `U1-nc1-*.json` ni `recursos/`.
+
 ## [v12.35 — 2026-05-28] — U1 piloto cerrado completo (final/ + itinerario + material)
 
 Hito de cierre del piloto U1. Todas las piezas editoriales de la unidad están terminadas y listas para imprenta:
