@@ -15,6 +15,26 @@
 
 ---
 
+## [v12.37 — 2026-05-29] — Lote de corrección PDF↔JSON (U1 + U2) + protocolo §11 en reglas-operativas
+
+Lote de correcciones detectadas en revisión sistemática PDF↔JSON, framing A (el libro fuente imprime las formas correctas; las versiones anteriores del inventario las habían transcrito mal). **Cinco correcciones de datos en `unidades/U1/U1-nc1-inventario.json` y `unidades/U2/U2-nc1-inventario.json`:**
+
+- **U1-p13-act9 respuesta 3**: «Nueve» → «Trece» (Beatriz dice «tengo trece años»). `_nota` actualizada para reflejar que la transcripción anterior era una lectura errónea del PDF, no una errata del libro.
+- **U1-p15-act7 respuesta 5**: «La cartera es marrón» → «La mochila es marrón» (el ítem visible es «mochila» y la respuesta impresa también). `_nota` actualizada.
+- **U1-p21-act4 respuesta 4**: «eres» → «soy» («Yo soy polaco»; «Yo eres polaco» es gramaticalmente imposible). `_nota` actualizada.
+- **U2-p23-act11**: paquete unificado de coherencia en el horario. (a) Falta agregada: `«5.ª Jueves: C. Sociales»` en `respuestas[]` y `audio.transcripcion`. (b) Realineamiento de la 6.ª fila: la respuesta era `«6.ª Miércoles: Informática»` cuando el PDF imprime Informática en Lunes y Jueves; corregido a `«6.ª Jueves: Informática»` + cuadrícula de la 6.ª fila pasa de `["6.ª", "_____", "", "_____", "", "Informática"]` a `["6.ª", "_____", "", "", "_____", ""]` (Viernes deja de estar pre-impreso, Miércoles deja de ser hueco, Jueves pasa a ser hueco). (c) `audio.transcripcion` realineada con respuestas corregidas.
+- **U2-p26-act1 respuesta [3]**: añadido `¿` inicial → «¿Cuántos años tienes?» (coherencia con `palabras_recuadro` que ya tenía la forma con `¿`).
+
+**Re-saneado y validador 10/10 0/0/0.** Tras el fix E2 se realinearon las fuentes del bucket `Números cardinales` de U1 con la actividad p13-act9 corregida: (a) `nueve` pierde sus fuentes `p13-act9` y `p13-act9@R` (la palabra ya no aparece literalmente en la actividad — el saneo automático retiró `p13-act9@R`, la `p13-act9` se retiró manualmente por coherencia); (b) `trece` gana `p13-act9` (texto de Beatriz «tengo trece años») y `p13-act9@R` (respuesta corregida «3 Trece»); (c) el agregado bucket-level `fuentes` incorpora `p13-act9@R`.
+
+**Protocolo §11 en `reglas-operativas.md`**: añadida sección «Corrección de errores detectados en revisión PDF↔JSON» — clasificación obligatoria (codificación / editorial del libro / inconsistencia interna del JSON) + regla de coherencia de campos acoplados (`respuestas[]` ↔ `audio.transcripcion` ↔ `datos.cuadricula` ↔ `vocabulario_consolidado.*.fuentes` ↔ `_nota`/`_decisiones_ia` que justifican el dato antiguo). El workflow (validar, bump, coordinación con ejecutor 2) sigue viviendo en `CLAUDE.md` §«Cómo aplicar una corrección sin romper la estructura»; §11 cubre solo criterio + coherencia, no duplica workflow.
+
+**Sin tocar**: registry léxico, `nc1-curso.json`, `nc1-reciclaje.json`, dashboard (lee respuestas dinámicamente). Capa 2 explicaciones no afectadas (no citan literalmente las respuestas corregidas).
+
+**Fuera del lote (revisor)**: E1 propuesto (U0-p11-act8 item 8 «lila») se descarta — el PDF fuente del repo imprime `ele-i-eme-o-ene` en ambos items 7 y 8, JSON coincide, sin error.
+
+---
+
 ## [v12.36 — 2026-05-28] — U1 final/ bloqueada con regla path-scoped
 
 Nueva: `.claude/rules/u1-final-locked.md` con frontmatter `paths: ["unidades/U1/final/*.md"]`. Prohíbe editar las 6 secciones cerradas sin permiso explícito previo del autor. Mecanismo path-scoped (mismo patrón que `final-style.md`) para escalar al cierre de U2-U9. No interfiere con `U1-itinerarios.md`, `U1-nc1-*.json` ni `recursos/`.

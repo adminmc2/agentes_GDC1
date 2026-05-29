@@ -108,11 +108,11 @@
           {"palabra": "seis", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
           {"palabra": "siete", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
           {"palabra": "ocho", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
-          {"palabra": "nueve", "fuentes": ["p13-act9", "p13-act9@R", "p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
+          {"palabra": "nueve", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
           {"palabra": "diez", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
           {"palabra": "once", "fuentes": ["p16-act4", "p16-act4@R", "p17-act5", "p17-act6@R"]},
           {"palabra": "doce", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
-          {"palabra": "trece", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6"]},
+          {"palabra": "trece", "fuentes": ["p13-act9", "p13-act9@R", "p16-act4", "p16-act4@R", "p17-act6"]},
           {"palabra": "catorce", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6@R"]},
           {"palabra": "quince", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6", "p17-act6@R"]},
           {"palabra": "dieciséis", "fuentes": ["p16-act4", "p16-act4@R", "p17-act6@R"]},
@@ -729,7 +729,7 @@
             "descripcion": "Dos fotografías tipo retrato escolar con etiquetas: a la izquierda Daniel (chico moreno con camiseta de rayas rojas y blancas, etiqueta DANIEL); a la derecha Beatriz (chica pelirroja con coleta y camiseta amarilla, etiqueta BEATRIZ). Sobre cada foto, una burbuja con su presentación escrita."
           },
           "video": { "presente": false },
-          "respuestas": ["1 Daniel", "2 Beatriz", "3 Nueve"],
+          "respuestas": ["1 Daniel", "2 Beatriz", "3 Trece"],
           "datos": {
             "subtipo": "lectura_personajes_preguntas",
             "textos_personajes": [
@@ -737,7 +737,7 @@
               { "personaje": "Beatriz", "texto": "¡Hola! ¿Qué tal? Me lllamo Beatriz y tengo trece años. Soy de Barcelona." }
             ],
             "preguntas": ["1 ¿Quien tiene doce años?", "2 ¿Quien es de Barcelona?", "3 ¿Cuántos años tiene Beatriz?"],
-            "_nota": "El libro escribe 'Me lllamo' (con triple 'l') en el texto de Beatriz; se conserva por literalidad. La respuesta dada en el libro a la pregunta 3 es 'Nueve' (incoherente con el texto que dice 'tengo trece años'); se transcribe literal."
+            "_nota": "El libro escribe 'Me lllamo' (con triple 'l') en el texto de Beatriz; se conserva por literalidad. Sobre la respuesta a la pregunta 3: la versión anterior de este inventario transcribía 'Nueve' por una lectura errónea de la fuente PDF; la revisión PDF↔JSON v12.37 (2026-05-29) confirma que el libro imprime 'Trece' (coherente con 'tengo trece años' del texto de Beatriz). Codificación corregida."
           }
         }
       ]
@@ -1011,13 +1011,13 @@
             "descripcion": "Una puerta blanca (ejemplo) + 7 fotografías de objetos numerados: 1 una silla azul de plástico, 2 una ventana verde, 3 un sol amarillo dibujado, 4 una pizarra negra, 5 una mochila marrón, 6 la pantera rosa (personaje de dibujos), 7 un bolígrafo rojo."
           },
           "video": { "presente": false },
-          "respuestas": ["1 La silla es azul", "2 La ventana es verde", "3 El sol es amarillo", "4 La pizarra es negra", "5 La cartera es marrón", "6 La pantera es rosa", "7 El bolígrafo es rojo"],
+          "respuestas": ["1 La silla es azul", "2 La ventana es verde", "3 El sol es amarillo", "4 La pizarra es negra", "5 La mochila es marrón", "6 La pantera es rosa", "7 El bolígrafo es rojo"],
           "datos": {
             "subtipo": "describir_color_objeto",
             "palabras_recuadro": ["azul", "marrón", "verde", "rojo/-a", "amarillo/-a", "blanco/-a", "negro/-a", "rosa"],
             "ejemplo_libro": "La puerta es blanca.",
             "items_libro": ["1 silla", "2 ventana", "3 sol", "4 pizarra", "5 mochila", "6 pantera", "7 bolígrafo"],
-            "_nota": "La respuesta 5 del libro dice 'La cartera es marrón' aunque el ítem dice 'mochila'; se conserva por literalidad."
+            "_nota": "Sobre la respuesta 5: la versión anterior de este inventario transcribía 'La cartera es marrón' por una lectura errónea de la fuente PDF (el item visible es 'mochila' y la respuesta impresa del libro también es 'mochila'). La revisión PDF↔JSON v12.37 (2026-05-29) confirma el libro: 'La mochila es marrón'. Codificación corregida."
           }
         },
         {
@@ -1828,7 +1828,7 @@
           "audio": { "presente": false },
           "imagen": { "presente": false },
           "video": { "presente": false },
-          "respuestas": ["1 es", "2 tiene", "3 tienes", "4 eres", "5 se llama", "6 es", "6 tiene", "7 es", "8 eres / te llamas"],
+          "respuestas": ["1 es", "2 tiene", "3 tienes", "4 soy", "5 se llama", "6 es", "6 tiene", "7 es", "8 eres / te llamas"],
           "datos": {
             "subtipo": "cloze_tres_verbos",
             "items_libro": [
@@ -1841,7 +1841,7 @@
               "7 ¿De dónde _____ Diego?",
               "8 ¿Tú _____ Ricardo?"
             ],
-            "_nota": "La respuesta 4 del libro pone 'eres' donde el sujeto es 'Yo' (debería ser 'soy'); se transcribe literal. La fila 8 admite ambas opciones según el libro."
+            "_nota": "Sobre la respuesta 4: la versión anterior de este inventario transcribía 'eres' por una lectura errónea de la fuente PDF (la frase 'Yo eres polaco' es gramaticalmente imposible). La revisión PDF↔JSON v12.37 (2026-05-29) confirma que el libro imprime 'soy' ('Yo soy polaco'). Codificación corregida. La fila 8 admite ambas opciones (eres / te llamas) según el libro."
           }
         },
         {

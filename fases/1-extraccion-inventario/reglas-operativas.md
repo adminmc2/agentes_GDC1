@@ -677,6 +677,25 @@ Cuando una extracción real revela un caso no contemplado por el sistema:
 
 ---
 
+## §11. Corrección de errores detectados en revisión PDF↔JSON
+
+Cuando una revisión post-cierre detecta divergencia entre el inventario y la fuente PDF, **clasificar antes de tocar el JSON**:
+
+1. **Error de codificación** — el JSON difiere del PDF. La fuente impresa es coherente y la transcripción anterior se equivocó (lectura del render, copy-paste, omisión). Se corrige el JSON.
+2. **Error editorial del libro** — el PDF es auto-contradictorio (callout vs imagen, texto vs respuesta, sujeto vs verbo). Por defecto se preserva verbatim (regla de oro 1) y se documenta la incoherencia en `_decisiones_ia` o en `_nota` de la actividad. Excepción solo si la errata compromete la comprensión pedagógica de la propia actividad: se corrige y se documenta el framing en CHANGELOG.
+3. **Inconsistencia interna del JSON** — campos acoplados que reflejan el mismo dato divergen entre sí. Se corrigen **todos** coherentemente, no solo el más visible.
+
+**Regla de coherencia de campos acoplados.** Al corregir cualquier respuesta o dato:
+
+- `respuestas[]` ↔ `audio.transcripcion` (cuando hay audio dictado).
+- `respuestas[]` ↔ `datos.cuadricula` / `datos.items_libro` (cuando hay estructura tabular o de huecos).
+- `respuestas[]` ↔ `vocabulario_consolidado.*.items[].fuentes` (las apariciones literales en la actividad alimentan las fuentes del consolidado; tras cambiar una respuesta, ejecutar `scripts/sanear_inventario.py --unit X --apply` para realinear).
+- `_nota` y `_decisiones_ia` existentes que justifican el dato antiguo → actualizarse o eliminarse en el mismo lote (no dejar inventario autocontradictorio).
+
+El workflow (validar, _decisiones_ia, bump CHANGELOG/REVIEW, coordinación con ejecutor 2 si toca consolidados) vive en `CLAUDE.md` §«Cómo aplicar una corrección sin romper la estructura». §11 cubre solo el criterio de clasificación + la regla de coherencia entre campos acoplados.
+
+---
+
 ## Banner de follow-ups (lista viva pendiente)
 
 Reglas operativas detectadas durante el rediseño que aún esperan integración formal en el cuerpo:

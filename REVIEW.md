@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-28 (v12.36 — U1 `final/` bloqueada con regla path-scoped `.claude/rules/u1-final-locked.md`. Prohíbe editar las 6 secciones cerradas sin permiso explícito del autor. Mecanismo escalable para cerrar U2-U9 con el mismo patrón).
+> **Última actualización:** 2026-05-29 (v12.37 — **Lote de corrección PDF↔JSON U1+U2** (framing A: el libro fuente es coherente; las versiones anteriores del inventario habían transcrito mal). 5 correcciones: U1-p13-act9 «Nueve»→«Trece», U1-p15-act7 «cartera»→«mochila», U1-p21-act4 «eres»→«soy», U2-p23-act11 paquete unificado (falta 5.ª Jueves + realineamiento 6.ª fila + audio.transcripcion + cuadricula), U2-p26-act1 `¿` inicial. `_nota` afectadas actualizadas. **Protocolo §11** en `reglas-operativas.md`: clasificación obligatoria + regla de coherencia de campos acoplados. Validador 10/10 0/0/0. Sin tocar registry, `nc1-curso.json`, `nc1-reciclaje.json` ni dashboard).
+>
+> **Hito previo (v12.36):** 2026-05-28 (U1 `final/` bloqueada con regla path-scoped).
 >
 > **Hito previo (v12.35):** 2026-05-28 (**U1 piloto cerrado completo**. Las 6 secciones `final/` + itinerario imprimible + inventario de material complementario (15 ítems) están terminados y listos para imprenta. Marco metodológico estabilizado: manual de estilo `final/` (§2.1, §8.1, §10.3-10.8, §11.4, §13), plantilla de itinerario con reglas nuevas en repo B, schema v2.0 del inventario de material reutilizable. Próximo paso: replicar el flujo en U2 con los 4 archivos fuente ya depositados en `unidades/U2/recursos/`).
 >

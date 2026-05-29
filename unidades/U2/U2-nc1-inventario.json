@@ -859,7 +859,7 @@
           "audio": {
             "presente": true,
             "pista": 23,
-            "transcripcion": "(audio dicta las celdas del horario: 1.ª lunes Español, 1.ª miércoles C. Naturales, 1.ª jueves Matemáticas, 2.ª lunes Matemáticas, 2.ª miércoles Lengua, 2.ª jueves Español, 3.ª lunes Lengua, 3.ª miércoles Lengua, 4.ª lunes C. Naturales, 5.ª lunes C. Sociales, 5.ª miércoles C. Sociales, 6.ª lunes Informática, 6.ª miércoles Informática)"
+            "transcripcion": "(audio dicta las celdas del horario: 1.ª lunes Español, 1.ª miércoles C. Naturales, 1.ª jueves Matemáticas, 2.ª lunes Matemáticas, 2.ª miércoles Lengua, 2.ª jueves Español, 3.ª lunes Lengua, 3.ª miércoles Lengua, 4.ª lunes C. Naturales, 5.ª lunes C. Sociales, 5.ª miércoles C. Sociales, 5.ª jueves C. Sociales, 6.ª lunes Informática, 6.ª jueves Informática)"
           },
           "imagen": { "presente": false },
           "video": { "presente": false },
@@ -875,8 +875,9 @@
             "4.ª Lunes: C. Naturales",
             "5.ª Lunes: C. Sociales",
             "5.ª Miércoles: C. Sociales",
+            "5.ª Jueves: C. Sociales",
             "6.ª Lunes: Informática",
-            "6.ª Miércoles: Informática"
+            "6.ª Jueves: Informática"
           ],
           "datos": {
             "cuadricula": [
@@ -887,7 +888,7 @@
               ["RECREO", "", "", "", "", ""],
               ["4.ª", "_____", "Informática", "", "", "Matemáticas"],
               ["5.ª", "_____", "", "_____", "_____", "Lengua"],
-              ["6.ª", "_____", "", "_____", "", "Informática"]
+              ["6.ª", "_____", "", "", "_____", ""]
             ]
           }
         },
@@ -1279,7 +1280,7 @@
           },
           "imagen": { "presente": true, "descripcion": "Tres fotos del aula: profesora explicando frente a la pizarra; grupo de alumnos sentados escuchando; primer plano de un chico con sudadera azul." },
           "video": { "presente": true },
-          "respuestas": ["[1] me llamo", "[2] cómo te llamas", "[3] Cuántos años tienes?", "[4] de dónde eres", "[5] Tengo", "[6] Soy", "[7] soy"],
+          "respuestas": ["[1] me llamo", "[2] cómo te llamas", "[3] ¿Cuántos años tienes?", "[4] de dónde eres", "[5] Tengo", "[6] Soy", "[7] soy"],
           "datos": {
             "titulo_dialogo": "En clase",
             "palabras_recuadro": ["de dónde eres", "Tengo", "¿Cuántos años tienes?", "me llamo", "cómo te llamas", "soy (x2)"],
