@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.39 — 2026-05-29] — Fix bug latente: merge no destructivo protege `hilo.relaciones[]`
+
+`generar_reciclaje_capa1.py` — el detector de pérdidas y la lógica de fusión del merge no destructivo (v11.76) reconocían `etiquetas`, `explicacion`, `detalle` y procedencia verbal como enriquecimiento editorial, pero **no `hilo.relaciones[]`** (campo añadido en v11.86, posterior al detector). Cualquier regeneración íntegra borraba silenciosamente las relaciones cross-hilo cerradas. Bug detectado al ejecutar el paso de higiene tras v12.37: las 15 entradas U2/U3 cerradas (v12.10/v12.18) desaparecían sin abortar. Fix: `_hilo_tiene_enriquecimiento` reconoce ahora `relaciones` no vacías; `merge_no_destructivo` preserva el array del previo si la salida nueva no lo trae. Test verificado: regeneración íntegra conserva las 15 entradas; diff sobre canónico = solo bump automático de `_meta` (`v12.18 → v12.39`). Validadores estructural + cross-unidad sin regresión (0 errores; 197 avisos legacy + alertas R1/R4 conocidas).
+
 ## [v12.38 — 2026-05-29] — Erratum documental: corrige descripción técnica del re-saneado en v12.37
 
 Solo documental. La entrada de v12.37 contenía dos frases técnicamente incorrectas que se rectifican aquí sin tocar datos:

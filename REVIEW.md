@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-29 (v12.38 — **Erratum documental** sobre v12.37: dos frases técnicamente incorrectas rectificadas. (1) El bucket-level `fuentes` de `Números cardinales` NO cambió en v12.37 (ya contenía `p13-act9@R` antes); el commit solo redistribuyó entre items. (2) Capa 1 lee bucket-level `cat.fuentes` (`generar_reciclaje_capa1.py:563-564`), no item-level. Consecuencia: regenerar Capa 1 no debería producir diff; es verificación de higiene. Grep unívoco sobre `nc1-reciclaje.json` da 0 matches. Sin cambios en datos).
+> **Última actualización:** 2026-05-29 (v12.39 — **Fix bug latente**: `generar_reciclaje_capa1.py` no protegía `hilo.relaciones[]` en el merge no destructivo. Cualquier regeneración íntegra borraba silenciosamente las 15 entradas cross-hilo cerradas en U2/U3. Fix: `_hilo_tiene_enriquecimiento` y `merge_no_destructivo` reconocen ahora `relaciones` como enriquecimiento editorial protegido. Test: regeneración íntegra conserva las 15 entradas; sin regresión en validadores).
+>
+> **Hito previo (v12.38):** 2026-05-29 (Erratum documental sobre v12.37: dos frases técnicamente incorrectas rectificadas).
 >
 > **Hito previo (v12.37):** 2026-05-29 (Lote de corrección PDF↔JSON U1+U2: 5 respuestas corregidas + protocolo §11 en `reglas-operativas.md`).
 >
@@ -594,6 +596,8 @@ En cada iteración:
 ---
 
 ## Bitácora de actualizaciones del REVIEW
+
+- **2026-05-29** — **Fix bug latente del merge no destructivo** (v12.39). `scripts/generar_reciclaje_capa1.py` reconocía como enriquecimiento editorial protegido `etiquetas`, `explicacion`, `detalle` y procedencia verbal, pero **no `hilo.relaciones[]`** (campo añadido en v11.86, posterior al detector). Cualquier regeneración íntegra borraba silenciosamente las relaciones cross-hilo cerradas y el script terminaba con éxito aparente. Bug descubierto al ejecutar la higiene de regeneración tras v12.37: las 15 entradas materializadas (8 cierres U2 v12.10 + 7 U3 v12.18) desaparecían sin abortar. Fix: `_hilo_tiene_enriquecimiento` reconoce ahora `relaciones` no vacías; `merge_no_destructivo` preserva el array del previo si la salida nueva no lo trae. Verificación end-to-end: pre-fix regeneración → 15 entradas borradas; post-fix → 15 entradas preservadas, diff sobre canónico = solo bump automático de `_meta`. Validadores sin regresión (0 errores estructural; 197 avisos legacy + alertas R1/R4 conocidas en cross-unidad).
 
 - **2026-05-25** — **Higiene UI** (v12.25). `web/index.html` `renderRecPanelExplicacion`: panel sin `explicacion` distingue ahora 3 casos (Capa 2 no procesado / etiqueta sin cuadro material / etiqueta y cuadro pero sin explicación redactada). El caso "etiqueta sin cuadro" lleva mensaje neutro "Explicación pendiente — alcance del campo en revisión (Nivel 5)" — sustituye a "No requiere explicación editorial" que pre-juzgaba la decisión cuadro-bound vs ampliada del Nivel 5 punto 5. Sin tocar lógica de render, schema, ni contratos.
 

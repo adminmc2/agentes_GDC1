@@ -729,6 +729,10 @@ def _hilo_tiene_enriquecimiento(h: dict) -> bool:
     bloque = h.get("bloque", "")
     if "detalle" in h or h.get("nivel_analisis") == "detalle":
         return True
+    # `hilo.relaciones[]` (schema §7, v11.86): cierres editoriales cross-hilo.
+    # Trabajo de Capa 2 — no es recuperable desde inventario ni registry.
+    if h.get("relaciones"):
+        return True
     return any(_evento_tiene_enriquecimiento(ev, bloque) for ev in h.get("eventos", []))
 
 
@@ -755,13 +759,19 @@ def merge_no_destructivo(nuevos: list, existentes: list) -> tuple:
         if prev is None:
             merged.append(nuevo)
             continue
-        # Hilo-level: empezamos por el nuevo, preservamos `detalle` y nivel si
-        # el previo lo alcanzó.
+        # Hilo-level: empezamos por el nuevo, preservamos `detalle`, nivel y
+        # `relaciones` cerradas si el previo los tenía.
         fusion = dict(nuevo)
         if prev.get("nivel_analisis") == "detalle":
             fusion["nivel_analisis"] = "detalle"
         if "detalle" in prev:
             fusion["detalle"] = prev["detalle"]
+        # `hilo.relaciones[]` (schema §7, v11.86): cierres editoriales
+        # cross-hilo. Trabajo de Capa 2 — preservar del previo si la salida
+        # nueva no los trae. Sin esto, cualquier regeneración íntegra borraría
+        # silenciosamente las relaciones cerradas (bug detectado en v12.38).
+        if prev.get("relaciones") and not fusion.get("relaciones"):
+            fusion["relaciones"] = prev["relaciones"]
 
         # Eventos: cruzar por clave mecánica (unidad, tiempo).
         bloque = nuevo.get("bloque", "")
