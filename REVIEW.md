@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-05-29 (v12.37 — **Lote de corrección PDF↔JSON U1+U2** (framing A: el libro fuente es coherente; las versiones anteriores del inventario habían transcrito mal). 5 correcciones: U1-p13-act9 «Nueve»→«Trece», U1-p15-act7 «cartera»→«mochila», U1-p21-act4 «eres»→«soy», U2-p23-act11 paquete unificado (falta 5.ª Jueves + realineamiento 6.ª fila + audio.transcripcion + cuadricula), U2-p26-act1 `¿` inicial. `_nota` afectadas actualizadas. **Protocolo §11** en `reglas-operativas.md`: clasificación obligatoria + regla de coherencia de campos acoplados. Validador 10/10 0/0/0. Sin tocar registry, `nc1-curso.json`, `nc1-reciclaje.json` ni dashboard).
+> **Última actualización:** 2026-05-29 (v12.38 — **Erratum documental** sobre v12.37: dos frases técnicamente incorrectas rectificadas. (1) El bucket-level `fuentes` de `Números cardinales` NO cambió en v12.37 (ya contenía `p13-act9@R` antes); el commit solo redistribuyó entre items. (2) Capa 1 lee bucket-level `cat.fuentes` (`generar_reciclaje_capa1.py:563-564`), no item-level. Consecuencia: regenerar Capa 1 no debería producir diff; es verificación de higiene. Grep unívoco sobre `nc1-reciclaje.json` da 0 matches. Sin cambios en datos).
+>
+> **Hito previo (v12.37):** 2026-05-29 (Lote de corrección PDF↔JSON U1+U2: 5 respuestas corregidas + protocolo §11 en `reglas-operativas.md`).
 >
 > **Hito previo (v12.36):** 2026-05-28 (U1 `final/` bloqueada con regla path-scoped).
 >

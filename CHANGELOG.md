@@ -15,6 +15,20 @@
 
 ---
 
+## [v12.38 — 2026-05-29] — Erratum documental: corrige descripción técnica del re-saneado en v12.37
+
+Solo documental. La entrada de v12.37 contenía dos frases técnicamente incorrectas que se rectifican aquí sin tocar datos:
+
+- (1) v12.37 afirmaba: *«el agregado bucket-level `fuentes` incorpora `p13-act9@R`»*. **Falso**: la verificación `git show e60945a^:U1` contra `git show e60945a:U1` muestra que el array `fuentes` del bucket `Números cardinales` ya contenía `p13-act9@R` antes del commit. El diff real de v12.37 solo redistribuyó `p13-act9` y `p13-act9@R` entre los items `nueve` y `trece`, sin alterar el agregado del bucket.
+
+- (2) Briefing al ejecutor 2 (mensajería, no committed) afirmaba: *«Capa 1 proyecta `cat.fuentes` desde item-level, no desde bucket-level»*. **Falso**: `generar_reciclaje_capa1.py:563-564` literalmente hace `evidencias = cat.get("fuentes") or []`, consumiendo el agregado del bucket. Capa 1 lee bucket-level.
+
+**Consecuencia operativa**: la regeneración de Capa 1 sobre el inventario corregido por v12.37 no debería producir diff (el input que consume Capa 1 — el fuentes agregado del bucket — no cambió). Regenerar es verificación de higiene, no necesidad probada. El grep unívoco sobre `nc1-reciclaje.json` (strings imposibles tras el fix: «3 Nueve», «La cartera es marrón», «Yo eres polaco», «6.ª Miércoles: Informática», «6.ª Viernes: Informática») da 0 matches: no hay deuda editorial literal detectada.
+
+Sin cambios en datos, registry, inventarios ni código.
+
+---
+
 ## [v12.37 — 2026-05-29] — Lote de corrección PDF↔JSON (U1 + U2) + protocolo §11 en reglas-operativas
 
 Lote de correcciones detectadas en revisión sistemática PDF↔JSON, framing A (el libro fuente imprime las formas correctas; las versiones anteriores del inventario las habían transcrito mal). **Cinco correcciones de datos en `unidades/U1/U1-nc1-inventario.json` y `unidades/U2/U2-nc1-inventario.json`:**
