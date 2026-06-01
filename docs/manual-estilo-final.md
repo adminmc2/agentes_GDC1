@@ -119,6 +119,22 @@ Las etiquetas *CARA A* / *CARA B* son convención editorial interna. **NO aparec
 
 Las etiquetas internas se reservan a la spec textual de la tarjeta (que no va en `final/` por ser material de autoría interna). Regla equivalente a la convención canónica de repo B en `tarjetas-estrategia-comunicacion-pautas.md` §1.
 
+#### Evaluación — conexión a unidad siguiente
+
+Cada `unidades/U[X]/final/evaluacion.md` cierra dentro del rótulo *AUTOEVALUACIÓN Y CIERRE* con una **sola frase escueta** de conexión a la unidad siguiente. Formato canónico:
+
+> *Cierre con la conexión a la **unidad X+1**: en la próxima unidad [síntesis breve del contenido nuclear].*
+
+**Formato canónico:**
+- *Cierre* como verbo del docente.
+- *unidad X+1* en minúscula y negrita (§9.2).
+- **Una sola frase**, sin enumeración exhaustiva — síntesis del contenido nuclear en tres a cinco elementos.
+- Es la **única referencia anticipatoria permitida** en cualquier `final/`. En el resto de secciones aplica el bullet de §10.1 sobre referencias anticipatorias.
+
+**Casos observados.**
+- U1E: *"Cierre con la conexión a la **unidad 2**: en la próxima unidad hablarán de los países hispanohablantes, ampliarán las nacionalidades al plural y los números hasta el 100."*
+- U3E: *"Cierre con la conexión a la **unidad 4**: en la próxima unidad hablarán de alimentos y comidas, aprenderán a expresar lo que les gusta con gustar y a usar hay para hablar de cantidades."*
+
 ---
 
 ## 3. Acentuación diacrítica
@@ -678,6 +694,7 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-05-29 | §10.6 — ampliada con un quinto bullet en "Formas en que aparecen": descripciones del enunciado o del formato del ejercicio que recuentan lo visible (*"El ejercicio X pide…"*, *"El ejercicio Y cierra con…"*, *"Pase al ejercicio Z: dictado de…"*). La identificación se hace con referencia numerada; la orientación describe lo que el docente hace, no lo que el ejercicio pide. Mantiene el gate de consulta previa de §10.6 (silencio ≠ OK). Caso detectado en U2 Comunicación. |
 | 2026-06-01 | §10.1 — bullet nuevo: prescripción de decisiones libres del docente (paletas de colores específicas, mapeos concretos, mecánicas detalladas no obligadas). La guía orienta el qué y el para qué; el docente decide el cómo concreto cuando la elección no carga peso didáctico. Caso detectado en U2 Gramática y Cultura. |
 | 2026-06-01 | §6.1 — nota tipográfica añadida: el título individual de una tarjeta citado como referencia individual va en cursiva título-case (*Caza el dato*, *Escucha en tres modos*, *Saludar y despedirse*, *Presentarse y datos personales*), nunca en ALL CAPS (reservado a rótulos imperativos y lemas de insignia §4.2). Distinción explícita respecto a la mención canónica del tipo de la tabla §6.1. Caso detectado en U2 Destrezas. |
+| 2026-06-01 | §2.1 — subsección nueva *Evaluación — conexión a unidad siguiente*: una sola frase escueta al cierre de *AUTOEVALUACIÓN Y CIERRE* con formato canónico (*Cierre con la conexión a la **unidad X+1**: en la próxima unidad…*). Única referencia anticipatoria permitida en cualquier `final/`. Codificación desde patrón cumplido en U1E + U3E. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
