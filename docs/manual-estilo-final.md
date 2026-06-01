@@ -244,6 +244,8 @@ Ejemplos:
 - `Tarjetas de Vocabulario - familia`
 - `Tarjetas de Destreza - comprensión auditiva - escucha en tres modos`
 
+**Tipografía del título individual de tarjeta.** Cuando el nombre concreto de una tarjeta (de destreza, de estrategia, de vocabulario nombrada) se **cita en el cuerpo del docente como referencia individual** — distinta de la mención canónica del tipo de la tabla anterior —, va siempre en cursiva con mayúscula inicial (título-case): *Caza el dato*, *Escucha en tres modos*, *Saludar y despedirse*, *Presentarse y datos personales*. Nunca en ALL CAPS — esa forma queda reservada a rótulos imperativos del docente y a lemas de insignia (§4.2).
+
 ### 6.2 Nomenclatura interna que NO debe aparecer en `final/`
 
 | Nomenclatura interna | Razón | Sustituir por |
@@ -270,6 +272,8 @@ Cuando el referente es genérico, usar formas no marcadas:
 | niño / niña | la persona joven · cada estudiante · el grupo (según contexto A1.1) |
 | amigo / amiga | la persona · alguien (según contexto) |
 | portador / portadora | quien lleva la tarjeta · quien tiene la tarjeta |
+
+**Nota — cuantificación plural.** En plural cuantificado (*tres voluntarios*, *cuatro alumnos*), cuantificar la acción en lugar de las personas: *tres intervenciones* · *tres turnos* · *tres aportaciones*. Evita tanto el masculino genérico marcado como las metonimias forzadas.
 
 ### 7.2 Epicenos aceptados (no se sustituyen)
 
@@ -303,6 +307,8 @@ Estos se mantienen tal cual.
 | Píldora | `píldora` (con tilde) | ~~pildora~~ |
 | Diapositiva | `diapositiva` | ~~slide~~ (solo en specs técnicos internos) |
 | Tarjeta | `tarjeta` | (forma única) |
+| Hipótesis o conjetura del grupo recogida por el docente | `respuestas` · `propuestas` | ~~apuestas~~ |
+| Personas que intervienen oralmente en plenaria o puesta en común | `intervenciones` · `turnos` · `aportaciones` | ~~voces~~ |
 
 ### 8.2 Tiempos en el cuerpo
 
@@ -434,8 +440,11 @@ El cuerpo del docente vive en **lengua de aula con acción concreta**. No contie
 - **Resúmenes-balance de cierre de sección**: frases que recapitulan lo aprendido en clave grandilocuente o de balance editorial. Ejemplos a evitar: *"el círculo está cerrado"*, *"en una sola doble página han aprendido a…"*, *"el set queda activado"*, *"con esto cerramos el bloque de…"*. No describen acción del docente ni aportan andamiaje al aula: solo cierran retóricamente lo que la propia secuencia de ejercicios ya cierra. Fuera del cuerpo.
 - Decisiones del equipo editorial: *"hemos decidido..."*, *"el equipo propone..."*.
 - Referencias a otras secciones del propio sistema MD: *"como ya vimos en la metanota..."*.
+- **Referencias anticipatorias a otra sección de la guía o del libro**: *"—el plural se trabaja en gramática—"*, *"—lo verán en comunicación—"*, *"—esto se cierra en evaluación—"*. El docente ya sabe que el libro tiene secciones; anunciar curricularmente lo que viene después es metadiscurso editorial. La intención didáctica de no abrir la regla en este punto se mantiene con la forma propositiva de §10.4 (*sin desarrollar la explicación detallada*, *sin formalizar la regla*).
 - **Afirmaciones normativas redundantes sobre el libro**: *"La estructura obligatoria es siempre la del libro"*, *"Hay que seguir el orden del libro"*, *"Esto es lo que dice el libro"*. El docente ya sabe que el libro es la fuente; el cuerpo de los rótulos debe limitarse a la acción concreta sin recordatorios meta-editoriales.
 - **Afirmaciones hiperbólicas, grandilocuentes o no verificables**: *"son las preguntas reales de cualquier hablante de español al escribir un nombre nuevo: las van a oír y a hacer toda la vida"*, *"este vocabulario les acompañará siempre"*, *"es la clave para…"*. No aportan valor lingüístico ni didáctico; son retórica de relleno. Si una afirmación no aporta valor lingüístico verificable, fuera del cuerpo. Sustituir por explicación funcional concreta (ej.: *"son importantes para esclarecer entre dos opciones"*).
+- **Predicciones narrativas sobre la respuesta de la clase**: *"saldrá X"*, *"dirán Y"*, *"la clase responderá Z"*. Narran el resultado esperado en vez de indicar qué hace el docente para conducirlo. Sustituir por andamiaje activo (*guíelos para que…*, *conduzca a…*, *apoye las respuestas que aparezcan…*). Se exceptúan las bifurcaciones operativas con instrucción para cada rama (*si sale X, confírmelo; si no, redirija con Y*).
+- **Prescripción de decisiones libres del docente**: paletas de colores específicas (*a · rojo · e · amarillo · i · verde…*), mapeos concretos de items intercambiables (combos de tarjetas, asignación de roles, orden de turnos), mecánicas detalladas cuya secuencia exacta no es obligatoria pedagógicamente. La guía orienta el qué y el para qué; el docente decide el cómo concreto cuando la elección no carga peso didáctico. Sustituir por instrucción abierta: *"asigne un color distinto a cada vocal"*, *"reparta las tarjetas en parejas"*, *"haga dos o tres rondas"*.
 - **Respuestas de los ejercicios cuando ya están visibles en la imagen del libro del alumno**: ejemplo: *"completan los huecos con la letra correcta (J / j, V / v, H / con h)"* — el paréntesis es redundante porque el docente ya ve las respuestas en su material y el alumno trabaja sobre el libro. Solo se incluyen respuestas en el cuerpo del docente si hay algo específico que destacar (ej.: ítem con error frecuente, opción ambigua, ítem que el docente debe corregir explícitamente). Por defecto, fuera.
 
 ### 10.2 Filtro de detección
@@ -515,6 +524,7 @@ Las **aclaraciones-recuento** que enumeran o desglosan contenido que el docente 
 - Enumeración del contenido de un cuadro: *"Artículos determinados (el/la/los/las), Masculino y femenino (nombres de cosas y de personas)…"*.
 - Lista parentética de ejemplos cuando el docente ya los tiene delante.
 - Reproducción de citas textuales del libro tras *"lea con la clase el ejemplo del ejercicio X: …"* o *"…el ejemplo del libro: …"*. La cita ya está en el libro a la vista del docente; sale el contenido tras los dos puntos, se mantiene la instrucción (*"Lea con la clase el ejemplo del ejercicio X"*).
+- Descripciones del enunciado o del formato del ejercicio que recuentan lo que el docente ya ve en el libro: *"El ejercicio 3 pide cuatro datos sobre Jorge"*, *"El ejercicio 4 cierra la comprensión con cuatro frases de verdadero o falso"*, *"Pase al ejercicio 7: dictado de ocho números"*. La identificación del ejercicio se hace con referencia numerada (*"Para el ejercicio 3"*, *"En el ejercicio 4"*); la orientación describe lo que el docente hace, no lo que el ejercicio pide.
 
 **El valor está en lo que la aclaración añade, no en lo que enumera.** Una aclaración aporta si:
 
@@ -659,6 +669,15 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-05-26 | §10.6 — añadido cuarto bullet en "Formas en que aparecen": reproducción de citas textuales del libro tras *"lea con la clase el ejemplo: …"*. El docente tiene el libro a la vista; la cita reproducida en el cuerpo no añade. Aplicado retroactivamente: 4 ocurrencias en U1 Comunicación + 1 en U1V. |
 | 2026-05-26 | §10.7 nueva — sin referencias a *"bloque"* en el cuerpo del docente. Los bloques son convención editorial interna; en el cuerpo se referencia por número de ejercicio (*"el ejercicio 4"*), temporalidad (*"anteriormente"*) o contenido (*"los patrones de M/F"*). Aplicado retroactivamente: 2 ocurrencias en U1 (comunicacion.md L75, gramatica.md L67) + el caso original en U1 Comunicación B3 (*"del bloque 1"* → *"usada anteriormente"*). |
 | 2026-05-26 | §10.8 nueva — ENTREGA DE INSIGNIA: rótulo + frase única. Eliminada la línea *"Entrega de insignia ¡LEMA!"* duplicada bajo el rótulo en los tres `final/` (vocabulario, gramatica, comunicacion); el lema se integra en la frase *"…reciben la insignia ¡LEMA!"*. Comentario cultural opcional solo si verificable. Eliminada afirmación falsa sobre *a conocernos* en U1 Comunicación. |
+| 2026-05-28 | §10.1 — bullet nuevo: referencias anticipatorias a otra sección de la guía o del libro (*"—el plural se trabaja en gramática—"*). Caso detectado en U2V. La intención didáctica de no abrir la regla se conserva con la forma propositiva de §10.4. |
+| 2026-05-28 | §8.1 — entrada nueva: *apuestas* queda vetado para verbalizar la recogida de hipótesis del grupo; se usa *respuestas* o *propuestas*. Caso detectado en U2V. El matiz lúdico-conjetural de *apuesta* no encaja con la voz docente. |
+| 2026-05-28 | §8.1 — entrada nueva: *voces* queda vetado como metonimia cuantificable de personas que intervienen en plenaria; se usa *intervenciones*, *turnos* o *aportaciones*. Caso detectado en U2V (cuantificación plural de intervinientes). |
+| 2026-05-28 | §7.1 — nota nueva tras la tabla: en plural cuantificado, cuantificar la acción (*tres intervenciones*), no las personas. Cierra el cuello de botella que llevaba a metonimias forzadas o a masculino genérico. |
+| 2026-05-28 | §10.1 — bullet nuevo: predicciones narrativas sobre la respuesta de la clase (*"saldrá X"*, *"dirán Y"*) prohibidas. Sustituir por andamiaje activo. Excepción: bifurcaciones operativas con instrucción para cada rama (*si sale X, confírmelo; si no, redirija con Y*). Caso detectado en U2G. Integrado como bullet en §10.1 (no sección autónoma) porque encaja en la frontera §10.1/§10.2. |
+| 2026-05-28 | §13 — Patrón 5 añadido: worked examples redundantes con el saber del docente (paradigmas verbales triviales). Sin codificar por inestabilidad de la frontera con modelados que sí orientan. Caso piloto en U2G. |
+| 2026-05-29 | §10.6 — ampliada con un quinto bullet en "Formas en que aparecen": descripciones del enunciado o del formato del ejercicio que recuentan lo visible (*"El ejercicio X pide…"*, *"El ejercicio Y cierra con…"*, *"Pase al ejercicio Z: dictado de…"*). La identificación se hace con referencia numerada; la orientación describe lo que el docente hace, no lo que el ejercicio pide. Mantiene el gate de consulta previa de §10.6 (silencio ≠ OK). Caso detectado en U2 Comunicación. |
+| 2026-06-01 | §10.1 — bullet nuevo: prescripción de decisiones libres del docente (paletas de colores específicas, mapeos concretos, mecánicas detalladas no obligadas). La guía orienta el qué y el para qué; el docente decide el cómo concreto cuando la elección no carga peso didáctico. Caso detectado en U2 Gramática y Cultura. |
+| 2026-06-01 | §6.1 — nota tipográfica añadida: el título individual de una tarjeta citado como referencia individual va en cursiva título-case (*Caza el dato*, *Escucha en tres modos*, *Saludar y despedirse*, *Presentarse y datos personales*), nunca en ALL CAPS (reservado a rótulos imperativos y lemas de insignia §4.2). Distinción explícita respecto a la mención canónica del tipo de la tabla §6.1. Caso detectado en U2 Destrezas. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
@@ -701,3 +720,14 @@ Lista interna de patrones detectados durante el piloto que **no se han codificad
 **Qué describe.** Dos rótulos consecutivos cuyas acciones forman una **secuencia natural única** (contextualizar → presentar, modelar → practicar, leer → responder) pueden fusionarse cuando la separación entre ambos no añade granularidad didáctica real. El comentario del autor: *"dos títulos en uno no tiene sentido tantos"* — la atomización excesiva de rótulos satura visualmente al docente sin añadir orientación operativa.
 
 **Estado.** Aplicado en piloto. Sin codificar como regla — exige juicio editorial sobre si la separación entre rótulos aporta granularidad o solo fragmenta visualmente. Un chat no debería fusionar rótulos por su cuenta. Revisar al cerrar más unidades: si el patrón se repite consistentemente, codificar como regla con gate de consulta previa (similar a §10.6).
+
+### Patrón 5 — Worked examples redundantes con el saber del docente
+
+**Casos piloto** (U2G, 2026-05-28):
+- *"pídales las tres formas del singular de tener (tengo, tienes, tiene)"* — eliminado el paréntesis.
+- *"escríbalas en la fila Una persona: tengo / tienes / tiene"* — eliminado.
+- *"escríbalas: tenemos, tenéis"* — eliminado.
+
+**Qué describe.** Ejemplos que **no están en el libro** pero son trivialmente recuperables para un docente de ELE A1.1 (paradigmas verbales básicos, opuestos M/F evidentes). Distinto de §10.6 (recuento del libro).
+
+**Estado.** Sin codificar — la línea con worked examples que sí orientan (apocopación *primer curso, tercer piso*, modelados orales que disparan dinámica) sigue siendo inestable. Revisar al cerrar U2 y U3.
