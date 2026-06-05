@@ -1,4 +1,5 @@
 ---
+name: check-final
 description: Audita un archivo `final/` contra el checklist v1 de reglas codificadas de repo A. Solo lectura. Devuelve informe en chat con ✅/❌/⚠ por ítem y citas concretas. No modifica el archivo.
 argument-hint: <ruta al archivo final.md>
 arguments:
@@ -26,6 +27,8 @@ Objetivo: verificar que `$archivo` cumple las reglas activas y canónicas codifi
 
 Apertura canónica (Insignia gamificada + Objetivo + Imprimir ficha + Insignia y obtención), headers `### Ejercicios X-Y` o `### Ejercicio X`, bloques con Objetivo + rótulos + cuerpo, ENTREGA DE INSIGNIA al cierre. Ausencia de residuos de `propuesta/` (metanotas, trazabilidad, brief de píldora, spec de tarjeta, cabeceras `# UXX —` o `## DOBLE PÁGINA`).
 
+**Excepción Evaluación**: ver §2.1 *Evaluación — estructura específica* — apertura solo con *Objetivo* (sin *Insignia gamificada* ni *Imprimir ficha* ni *Insignia y obtención*), headers `### Versión A — ...` y `### Versión B — ...` (no `### Ejercicios X-Y`), sin *ENTREGA DE INSIGNIA*.
+
 ### 2. Convenciones específicas de la sección (§2.1)
 
 **Comunicación — vídeo** (§2.1 *Comunicación — referencia al vídeo de la unidad*): existe la línea con formato canónico `*Buscar Vídeo de comunicación **unidad X***` (*Buscar* con mayúscula inicial; *Vídeo* con tilde y mayúscula; *unidad X* en minúscula y negrita; sin dos puntos ni guion al final). **Placement**: en el bloque 1, después del objetivo de bloque y antes de las líneas Imprimir. **Auditar formato + placement.**
@@ -41,6 +44,8 @@ Un verbo, no aditivo, naturaleza correcta por sección (§2.1). Si la sección e
 ### 4. Rótulos, headers, casing (§4.2)
 
 Rótulos imperativos en MAYÚSCULAS. Labels (*Insignia gamificada*, *Objetivo*, *Insignia y obtención*, *ENTREGA DE INSIGNIA*) con casing canónico. Headers `### Ejercicios X-Y` o `### Ejercicio X` sin "BLOQUE", sin páginas, sin título descriptivo.
+
+**Excepción Evaluación**: ver §2.1 *Evaluación — rótulos como etiquetas de contenido* — los rótulos son etiquetas de contenido o destreza **sin verbo** (*VERBO SER*, *DATOS PERSONALES*, *AUTOEVALUACIÓN Y CIERRE*, *REALIZACIÓN ESCALONADA*, *CORRECCIÓN COLECTIVA*), también en MAYÚSCULAS. En este modelo no aplica el criterio del verbo imperativo del docente.
 
 ⚠ **El verbo del rótulo NO se audita contra banco** (repo A no tiene fuente única todavía); si un verbo chirría, marcar ⚠ con cita, nunca ❌.
 
@@ -77,6 +82,8 @@ Solo si aparecen marcas explícitas. Estilo propositivo (*"sin formalizar la reg
 Búsqueda de la palabra *bloque* en el cuerpo del docente. Referencias permitidas: número de ejercicio (*"el ejercicio 4"*), temporalidad (*"anteriormente"*), contenido (*"los patrones de M/F"*).
 
 ### 12. ENTREGA DE INSIGNIA (§10.8)
+
+Aplica a todas las secciones **salvo Evaluación**. En Evaluación no se audita porque, según §2.1 *Evaluación — estructura específica*, el archivo no lleva rótulo *ENTREGA DE INSIGNIA*. En el resto de secciones:
 
 Estructura siempre auditable: rótulo + frase obligatoria *"Mencione que por [logros], reciben la insignia ¡LEMA!"* presente. Sin línea repetida *"Entrega de insignia ¡LEMA!"* bajo el rótulo → si está, ❌.
 
