@@ -135,6 +135,28 @@ Cada `unidades/U[X]/final/evaluacion.md` cierra dentro del rótulo *AUTOEVALUACI
 - U1E: *"Cierre con la conexión a la **unidad 2**: en la próxima unidad hablarán de los países hispanohablantes, ampliarán las nacionalidades al plural y los números hasta el 100."*
 - U3E: *"Cierre con la conexión a la **unidad 4**: en la próxima unidad hablarán de alimentos y comidas, aprenderán a expresar lo que les gusta con gustar y a usar hay para hablar de cantidades."*
 
+#### Evaluación — estructura específica
+
+A diferencia del resto de secciones, `unidades/U[X]/final/evaluacion.md` **NO usa la apertura canónica con Insignia gamificada** (no lleva insignia propia). La estructura es:
+
+- **Apertura**: solo *Objetivo* (sin *Insignia gamificada*, sin *Imprimir ficha*, sin *Insignia y obtención*).
+- **Headers de bloque**: `### Versión A — [descripción breve]` y `### Versión B — [descripción breve]` (no `### Ejercicios X-Y`).
+- **Cierre**: rótulo *AUTOEVALUACIÓN Y CIERRE* con la conexión a la unidad siguiente (ver subsección *Evaluación — conexión a unidad siguiente*). **Sin rótulo *ENTREGA DE INSIGNIA***.
+
+**Casos canónicos:** U1E, U3E.
+
+#### Evaluación — rótulos como etiquetas de contenido
+
+A diferencia del resto de secciones (rótulos imperativos en MAYÚSCULAS con verbo del docente, §4.2), los rótulos de Evaluación son **etiquetas del contenido o destreza que se corrige**, **sin verbo**. Aparecen en MAYÚSCULAS dentro del cuerpo del docente.
+
+**Ejemplos canónicos del corpus:**
+- U1E: *VERBO SER · ARTÍCULOS Y GÉNERO · SER, LLAMARSE Y TENER · OBJETOS DE CLASE · DATOS PERSONALES · AUTOEVALUACIÓN Y CIERRE*.
+- U3E: *PRESENTE REGULAR · INTERROGATIVOS · POSESIVOS · PARENTESCOS · SOPA DE LETRAS · LA HORA · AUTOEVALUACIÓN Y CIERRE*.
+
+Los rótulos no-correctivos de la Versión B se etiquetan con el **procedimiento** (*REALIZACIÓN ESCALONADA*, *CORRECCIÓN COLECTIVA*), también sin verbo.
+
+En este modelo **no aplica** el criterio del verbo imperativo del docente (§4.2).
+
 ---
 
 ## 3. Acentuación diacrítica
@@ -695,6 +717,8 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-06-01 | §10.1 — bullet nuevo: prescripción de decisiones libres del docente (paletas de colores específicas, mapeos concretos, mecánicas detalladas no obligadas). La guía orienta el qué y el para qué; el docente decide el cómo concreto cuando la elección no carga peso didáctico. Caso detectado en U2 Gramática y Cultura. |
 | 2026-06-01 | §6.1 — nota tipográfica añadida: el título individual de una tarjeta citado como referencia individual va en cursiva título-case (*Caza el dato*, *Escucha en tres modos*, *Saludar y despedirse*, *Presentarse y datos personales*), nunca en ALL CAPS (reservado a rótulos imperativos y lemas de insignia §4.2). Distinción explícita respecto a la mención canónica del tipo de la tabla §6.1. Caso detectado en U2 Destrezas. |
 | 2026-06-01 | §2.1 — subsección nueva *Evaluación — conexión a unidad siguiente*: una sola frase escueta al cierre de *AUTOEVALUACIÓN Y CIERRE* con formato canónico (*Cierre con la conexión a la **unidad X+1**: en la próxima unidad…*). Única referencia anticipatoria permitida en cualquier `final/`. Codificación desde patrón cumplido en U1E + U3E. |
+| 2026-06-05 | §2.1 — subsección nueva *Evaluación — estructura específica*: codifica que Evaluación NO usa apertura con Insignia gamificada, usa headers `### Versión A — ...` y `### Versión B — ...` (no `### Ejercicios X-Y`), y NO lleva *ENTREGA DE INSIGNIA*. Casos canónicos U1E + U3E. Cierra brecha que el piloto de `/check-final` reveló al producir falsos positivos sobre estructura. |
+| 2026-06-05 | §2.1 — subsección nueva *Evaluación — rótulos como etiquetas de contenido*: codifica que los rótulos de Evaluación son etiquetas del contenido o destreza sin verbo (*VERBO SER*, *DATOS PERSONALES*, *AUTOEVALUACIÓN Y CIERRE*), en MAYÚSCULAS, no imperativos. Excepción explícita al criterio §4.2 rótulos imperativos. Caso canónico U1E + U3E. Cierra brecha que el piloto de `/check-final` reveló. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
