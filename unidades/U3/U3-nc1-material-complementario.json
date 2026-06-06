@@ -1,0 +1,1294 @@
+{
+  "unidad": "U3",
+  "actualizado": "2026-06-04",
+  "fuente_carpeta": "unidades/U3/recursos/",
+  "nota": "Inventario del material complementario de U3 ('La familia'), descrito como conjunto de ejercicios/dinámicas independientes (no como archivos). El campo archivo_fuente indica el contenedor físico. El chat principal decide la integración en final/. El extractor no integra.",
+  "esquema_version": "2.0",
+  "campos_descriptores": {
+    "tipo_dinamica": "lúdica | competitiva | cooperativa | reflexiva | investigacion | presentacion | mecanizacion | cinetica | reconocimiento | asociacion | autocorregible | individual",
+    "categoria_editorial": "diapositivas_aula | juego_lexico | juego_ortografico | tarea_interaccion | tarea_investigacion | dinamica_movimiento | concurso_cultural | ejercicio_proyeccion | evaluacion | gamificacion | itinerario | captura_plataforma | ejercicio_digital_interactivo | otro",
+    "competencias": "CO comprension oral | CE comprension escrita | EO expresion oral | EE expresion escrita | IO interaccion oral | MED mediacion",
+    "secciones_aplicables": "vocabulario | gramatica | comunicacion | destrezas | cultura | evaluacion | reflexion | transversal"
+  },
+  "items": [
+    {
+      "id": "U3-mc-001",
+      "ejercicio": "La familia de Julia — presentación proyectable",
+      "tipo": "presentacion_aula",
+      "formato_soporte": "presentacion_pptx",
+      "archivo_fuente": "UNIDAD3NUEVOCOMPANEROS.pptx",
+      "paginas_en_fuente": "diapositivas 1-24",
+      "origen": "editorial_SGEL",
+      "ambito": "U3",
+      "categoria_editorial": "diapositivas_aula",
+      "tipo_dinamica": ["presentacion", "mecanizacion", "reconocimiento"],
+
+      "duracion_estimada": "20-30 min",
+      "agrupamiento": "clase entera (presentación guiada por el docente)",
+      "agrupamiento_detalle": "El docente proyecta y conduce; los alumnos observan el árbol genealógico de Julia, escuchan y repiten los términos de parentesco, deducen los grados familiares progresivamente y responden a los cinco ítems V/F finales en plenaria o por turnos individuales.",
+      "materiales_necesarios": ["proyector o pantalla", "archivo .pptx (PowerPoint, Keynote o equivalente)"],
+
+      "objetivo_didactico": "Presentar el léxico de parentesco en español a partir del árbol genealógico de Julia y consolidar los grados familiares (abuelos, padres, hijos, hermanos, tíos, primos, sobrinos, nietos, marido, mujer) mediante una secuencia de descubrimiento progresivo y cierre con ítems de verdadero o falso.",
+
+      "competencias": ["CO (escuchar al docente)", "EO (repetir y responder a ítems V/F)", "CE (leer las frases ejemplo)"],
+
+      "funciones_comunicativas": [
+        "presentar a los miembros de una familia",
+        "expresar relaciones de parentesco con ser + sustantivo (es el padre de…, son los nietos de…)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "11 grados de parentesco: abuelo, abuela, padre, madre, tío, tía, hermano, hermana, primo, prima, marido, mujer, hijo (en 'tienen dos hijos'), sobrino, nieto",
+          "11 nombres propios hispanos: Julia, José, Ana, Carlos, María, Eva, Álex, Ángel, Maca, Luis, Cris",
+          "fórmulas perifrásticas de parentesco: 'el marido de X', 'la mujer de X', 'los primos de X', 'los nietos de X', 'los sobrinos de X'"
+        ],
+        "gramatica_explicita": [
+          "ser + sustantivo en singular y plural (es / son)",
+          "tener en 3ª persona singular y plural (tiene / tienen)",
+          "posesivo átono sus + sustantivo plural (sus abuelos, sus padres, sus tíos)",
+          "concordancia M/F en los grados de parentesco (tío/tía, primo/prima, hermano/hermana)",
+          "artículo definido los/las antes de sustantivos plurales (los primos, los nietos, los sobrinos)"
+        ],
+        "fonetica_ortografia": [
+          "tilde en nombres propios: Álex, Cris (sin tilde), Ángel, María",
+          "diptongos en nombres hispanos (Luis, Maca)"
+        ]
+      },
+
+      "apoyos": ["visual fuerte (foto-avatar de cada miembro de la familia)", "auditivo (modelo oral del docente)", "escrito (frases descriptivas que aparecen progresivamente)"],
+
+      "descripcion_dinamica": "Presentación de 24 diapositivas en tres bloques. Bloque 1 (slides 1-2): portada 'NUEVO COMPAÑEROS — La familia' y árbol genealógico mudo de Julia con etiquetas de grado (Abuelo, Abuela, Padre, Madre, Tío, Tía, Hermana, Hermano, Primo, Prima). Bloque 2 (slides 3-12): presentación secuencial de los grados, una pareja a la vez, sobre el mismo árbol — abuelos (José y Ana), padres (Carlos y María), hermanos (Eva y Álex), tíos (Ángel y Maca), marido (Ángel de Maca), mujer (Maca de Ángel), hijos del tío (Luis y Cris), primos (Luis y Cris de Julia/Eva/Álex), nietos (Luis, Cris, Julia, Eva, Álex de José y Ana), sobrinos (Luis y Cris de Carlos y María). Bloque 3 (slides 13-24): árbol completo con los 11 miembros y cinco ítems de verdadero/falso con click-reveal de solución (cada ítem se duplica: una diapositiva con la afirmación, la siguiente con la corrección si es falsa).",
+
+      "estructura_interna": [
+        "Slide 1 — portada 'Nuevo Compañeros — La familia'",
+        "Slide 2 — árbol genealógico de Julia con etiquetas de grado (sin nombres concretos)",
+        "Slide 3 — abuelos: José y Ana son sus abuelos",
+        "Slide 4 — padres: Carlos y María son sus padres",
+        "Slide 5 — hermanos: Julia tiene dos hermanos, Eva y Álex",
+        "Slide 6 — tíos: sus tíos son Ángel y Maca",
+        "Slide 7 — marido: Ángel es el marido de Maca",
+        "Slide 8 — mujer: Maca es la mujer de Ángel",
+        "Slide 9 — hijos: Ángel y Maca tienen dos hijos, Luis y Cris",
+        "Slide 10 — primos: Luis y Cris son los primos de Julia, Eva y Álex",
+        "Slide 11 — nietos: Luis, Cris, Julia, Eva y Álex son los nietos de José y Ana",
+        "Slide 12 — sobrinos: Luis y Cris son los sobrinos de Carlos y María",
+        "Slide 13 — árbol completo (síntesis con etiquetas de grado)",
+        "Slide 14 — árbol completo con nombres (síntesis final)",
+        "Slides 15-16 — ítem V/F: 'Carlos es el tío de Luis' (verdadero — confirmación)",
+        "Slides 17-18 — ítem V/F: 'Maca es la tía de Cris' (falso — corrección: Maca es la madre de Cris)",
+        "Slides 19-20 — ítem V/F: 'Ana es la abuela de Álex' (verdadero — confirmación)",
+        "Slides 21-22 — ítem V/F: 'José tiene cinco sobrinos' (falso — corrección: José tiene cinco nietos)",
+        "Slides 23-24 — ítem V/F: 'Cris es prima de Luis' (falso — corrección: Cris es hermana de Luis)"
+      ],
+
+      "secciones_aplicables": ["vocabulario", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — bloque de presentación del léxico de parentesco como alternativa visual al árbol genealógico de David del libro (ej. 1-4)",
+        "vocabulario.md — repaso lúdico de cierre antes del texto modelo (ej. 5) con los cinco V/F",
+        "gramatica.md — apoyo visual para el uso de ser/tener en tercera persona y los posesivos átonos plurales"
+      ],
+
+      "adaptaciones_posibles": [
+        "Reducir a presentación rápida saltándose las diapositivas de los grados ya conocidos (abuelos, padres, hermanos) si el grupo ya los ha trabajado",
+        "Convertir las V/F en producción oral: pedir a un estudiante que justifique por qué cada afirmación es V o F antes de revelar la solución",
+        "Ampliar con preguntas de comprensión adicionales: '¿Cuántos primos tiene Julia?', '¿Quién es el padre de Cris?'",
+        "Combinación con el árbol del libro (David) para contraste cruzado: ¿qué grados aparecen en ambos árboles?"
+      ],
+
+      "consideraciones": [
+        "Nombre del archivo ('UNIDAD3NUEVOCOMPANEROS.pptx') es engañoso: cubre solo el subtema léxico de parentesco con un árbol genealógico ficticio (Julia), no toda U3 (ni profesiones, ni hora, ni días de la semana, ni posesivos)",
+        "Posible existencia de .pptx hermanos para otros subtemas de U3 (profesiones, hora, días, posesivos) aún no aportados a recursos/",
+        "El árbol de Julia no coincide con el árbol de David del libro — son dos familias diferentes; útil para evitar memorización por nombres y forzar el procesamiento del grado",
+        "Los V/F finales mezclan grados consanguíneos y políticos (tío vs tía, hermana vs prima, nieto vs sobrino) — pueden requerir aclaración previa para grupos con escasa familiaridad cultural con árboles genealógicos extensos"
+      ],
+
+      "gestion_aula": "Preparación: comprobar que el .pptx abre con las transiciones (los V/F se revelan por clic). Inicio (3-5 min): activar conocimientos previos con preguntas sobre la propia familia del grupo. Desarrollo (12-18 min): proyectar cada par de grados, modelar pronunciación, pedir repetición y pequeñas verbalizaciones (¿quién es el padre de X?). Cierre (5-8 min): los cinco V/F como evaluación formativa en plenaria o por equipos.",
+
+      "observaciones": "Producto editorial cerrado; útil tal cual como presentación inductiva del léxico nuclear de parentesco. La doble función (presentación + V/F) lo hace especialmente compatible con sesiones de 30-45 min. Combina bien con U3-mc-002 (Árbol genealógico — Actividades Extra 3) como práctica posterior con una familia diferente (la de Ángel) y con U3-mc-008 (Ronda familiar) como juego de cierre."
+    },
+
+    {
+      "id": "U3-mc-002",
+      "ejercicio": "Árbol genealógico (Actividades Extra 3) — vacío de información en parejas",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "04Companeros1Nuevaedicion_actividadesextra3.pdf",
+      "paginas_en_fuente": "pp. 1-2",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 3",
+      "ambito": "U3",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["cooperativa", "interaccion_oral"],
+
+      "duracion_estimada": "15-20 min",
+      "agrupamiento": "parejas (Alumno A + Alumno B)",
+      "agrupamiento_detalle": "El docente recorta la ficha en las dos mitades (Alumno A y Alumno B) y reparte una a cada miembro de la pareja. Cada alumno completa primero su árbol con sus seis pistas (5-6 min) y después intercambia oralmente la información con el compañero para completar el árbol entero (8-10 min).",
+      "materiales_necesarios": ["ficha fotocopiada y recortada por la mitad (cara Alumno A + cara Alumno B)", "lápiz por estudiante"],
+
+      "objetivo_didactico": "Practicar el léxico de parentesco mediante una dinámica de vacío de información en parejas que obliga a producir y comprender oralmente frases del tipo 'X es el/la <grado> de Y' para reconstruir el árbol genealógico completo de una familia ficticia (la de Ángel).",
+
+      "competencias": ["IO (interacción oral con turnos de pregunta y respuesta)", "CE (leer las propias pistas)", "EE (escribir los nombres en los huecos del árbol)"],
+
+      "funciones_comunicativas": [
+        "informar al interlocutor de relaciones de parentesco",
+        "preguntar y aclarar relaciones de parentesco no conocidas"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "grados de parentesco: abuelo, abuela, hijo, hija, hermano, hermana, padre, primo, prima, tía",
+          "11 nombres propios: Ángel, Elvira, Ángela, Carlos, Teresa, Fernando, Marcelo, Hugo, María, Sofía, Lucía, David"
+        ],
+        "gramatica_explicita": [
+          "ser + sustantivo de parentesco (Ángel es el abuelo, Teresa es la hermana de Marcelo)",
+          "tener + sustantivo (no tiene hijos, tiene tres hijos)",
+          "estar + adjetivo de estado civil (Teresa está casada con Fernando)",
+          "verbo solo + adverbio (David solo tiene una hermana)",
+          "expresión de la posesión: 'La tía de Sofía es Teresa'"
+        ]
+      },
+
+      "estructura_interna": [
+        "p. 1 — página del docente: objetivo + instrucciones + árbol genealógico completo con soluciones (Ángel + Elvira → Ángela + Carlos / Teresa + Fernando / Marcelo → Hugo, María, Sofía / Lucía, David)",
+        "p. 2 — ficha del alumno: dos mitades recortables (Alumno A con seis pistas + Alumno B con seis pistas complementarias), con foto-retrato de Ángel y árbol vacío en cada mitad"
+      ],
+
+      "pistas_alumno_A": [
+        "Ángel es el abuelo",
+        "Marcelo es el hijo de Ángel y no tiene hijos",
+        "Teresa es la hermana de Marcelo y tiene hijos",
+        "Teresa está casada con Fernando",
+        "La tía de Sofía es Teresa",
+        "Lucía es prima de Sofía"
+      ],
+      "pistas_alumno_B": [
+        "Elvira es la abuela",
+        "David solo tiene una hermana",
+        "Ángela es hija de Elvira y tiene tres hijos",
+        "Hugo es el primo de David",
+        "María es hermana de Hugo",
+        "Carlos es el padre de María"
+      ],
+
+      "apoyos": ["visual (árbol genealógico vacío con casillas)", "foto-retrato de Ángel como anclaje visual", "escrito (pistas en texto)"],
+
+      "descripcion_dinamica": "Cada estudiante recibe seis pistas distintas sobre la familia de Ángel y un árbol genealógico vacío idéntico al de su compañero. Primero completa con sus propias pistas lo que puede deducir; después, en turnos alternos, comparte información oralmente con el compañero hasta reconstruir la familia completa. Al final ambos árboles deben coincidir con la solución impresa en la página del docente.",
+
+      "secciones_aplicables": ["vocabulario", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — práctica oral interactiva del léxico de parentesco como cierre de los ejercicios 1-5 del libro",
+        "destrezas.md — práctica de interacción oral con vacío de información, complementaria a la entrevista de Marta del libro"
+      ],
+
+      "adaptaciones_posibles": [
+        "Aumentar dificultad pidiendo que cada alumno justifique cada deducción ('Si Marcelo no tiene hijos, entonces Hugo no es su sobrino')",
+        "Reducir dificultad permitiendo que ambos estudiantes vean las dos columnas de pistas antes de empezar la fase oral",
+        "Convertir en ejercicio individual para grupos impares: un alumno trabaja con las 12 pistas combinadas y completa el árbol entero solo"
+      ],
+
+      "consideraciones": [
+        "Nombres con tilde: Ángel, Ángela, María, Sofía, Lucía — verificar que el docente las modela en la pronunciación",
+        "El árbol incluye un caso de hermano sin descendencia (Marcelo) que puede confundir si los alumnos asumen que todos los adultos tienen hijos",
+        "Algunas pistas combinan léxico de parentesco con léxico de estado civil ('Teresa está casada con Fernando') — verificar que el grupo conoce 'casado/a' o introducirlo brevemente"
+      ],
+
+      "gestion_aula": "Preparación: recortar las fichas en dos mitades antes de la clase (una pareja = una ficha completa partida). Modelado (2-3 min): hacer una primera ronda con el docente como Alumno A y un voluntario como Alumno B sobre un grado fácil. Fase autónoma (5-6 min) + fase oral en parejas (8-10 min). Cierre (2-3 min): proyectar la solución y revisar discrepancias.",
+
+      "observaciones": "Producto editorial cerrado; encaja perfectamente como práctica oral de cierre del bloque de léxico de parentesco. Funciona como puente entre la presentación (U3-mc-001) y la producción libre. Familia diferente a la del libro (David) y a la del .pptx (Julia) — útil para evitar memorización."
+    },
+
+    {
+      "id": "U3-mc-003",
+      "ejercicio": "Juego de lógica (Actividades Extra 3) — completar tabla a partir de pistas",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "04Companeros1Nuevaedicion_actividadesextra3.pdf",
+      "paginas_en_fuente": "pp. 3-4",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 3",
+      "ambito": "U3",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["reflexiva", "cooperativa", "competitiva"],
+
+      "duracion_estimada": "15-25 min",
+      "agrupamiento": "flexible (individual, parejas, grupos pequeños o concurso)",
+      "agrupamiento_detalle": "El docente puede plantear la actividad como considere más oportuno. Recomendación: parejas o grupos de 3 para fomentar la verbalización del razonamiento. Variante motivadora: concurso entre grupos midiendo tiempo + número de aciertos.",
+      "materiales_necesarios": ["ficha fotocopiada (una por estudiante o grupo)", "lápiz"],
+
+      "objetivo_didactico": "Desarrollar la comprensión lectora resolviendo un juego de lógica que practica de forma integrada léxico de estado civil, profesiones, números (edad e hijos) y léxico familiar; entrena la inferencia y el cruce de información entre pistas múltiples.",
+
+      "competencias": ["CE (lectura de 19 pistas en texto)", "EE (rellenar la tabla)", "pensamiento lógico-deductivo"],
+
+      "funciones_comunicativas": [
+        "deducir información implícita a partir de pistas parciales",
+        "expresar y entender información biográfica básica (edad, estado civil, profesión, familia)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "estado civil: soltera, casado, divorciado, casada",
+          "profesiones: estudiante, profesor, camarero, enfermera",
+          "léxico familiar: hijos, hermano, hermana",
+          "números cardinales: 25, 44, 53, 60",
+          "numerales bajos: tres hijos, cuatro hijos, dos hijos, dos hermanos, dos hermanas"
+        ],
+        "gramatica_explicita": [
+          "tener + número + sustantivo (tiene 60 años, tiene tres hijos)",
+          "estar + adjetivo de estado civil (Luis está divorciado)",
+          "ser + sustantivo de profesión (Olga es enfermera, el hombre que está casado es profesor)",
+          "presente regular 3ª sg. (trabaja en un bar)"
+        ]
+      },
+
+      "personajes_tabla": ["Silvia (soltera, 25 años, estudiante, sin hijos, un hermano y una hermana)", "Ricardo (casado, 44 años, profesor, tres hijos, dos hermanos)", "Luis (divorciado, 53 años, camarero, cuatro hijos, dos hermanas)", "Olga (casada, 60 años, enfermera, dos hijos, un hermano y dos hermanas)"],
+
+      "estructura_interna": [
+        "p. 3 — página del docente: objetivo + instrucciones + tabla 5×4 de soluciones (Estado civil, Edad, Profesión, Hijos, Hermanos × Silvia, Ricardo, Luis, Olga)",
+        "p. 4 — ficha del alumno: 19 pistas en lista de viñetas + tabla vacía 5×4 para completar"
+      ],
+
+      "apoyos": ["visual (tabla con columnas y filas etiquetadas)", "escrito (19 pistas como entrada lectora)"],
+
+      "descripcion_dinamica": "El alumno (o grupo) lee las 19 pistas y va cruzando información para completar la tabla. Algunas pistas son directas ('Olga tiene 60 años'), otras requieren inferencia múltiple ('El camarero está divorciado y tiene 53 años' + 'Luis está divorciado' → Luis es el camarero de 53 años). El profesor puede gestionar tiempos y dar pistas opcionales si algún grupo se atasca.",
+
+      "secciones_aplicables": ["vocabulario", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "destrezas.md — práctica de comprensión lectora con inferencia, complementaria a los textos de Javier y Lucía del libro",
+        "vocabulario.md — integración del léxico de profesiones, estado civil y familia tras la sección de profesiones (ej. 7-8 del libro)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión con apoyo: permitir tachado en las pistas a medida que se usan",
+        "Versión cooperativa: cada grupo se responsabiliza de un personaje y luego ponen en común",
+        "Variante competitiva con cronómetro: primer grupo en completar la tabla correctamente gana",
+        "Versión inversa para ampliación: dar la tabla completa y pedir que escriban tres pistas nuevas para cada personaje"
+      ],
+
+      "consideraciones": [
+        "Léxico de estado civil (soltera/casado/divorciado) no aparece sistemáticamente en U3 — el docente debe verificar que el grupo lo conoce o introducirlo brevemente antes",
+        "La pista 'La persona que tiene cuatro hijos trabaja en un bar' usa 'trabaja en' sin nombrar la profesión directamente — exige cruce con 'El camarero está divorciado'",
+        "Edades de 53 y 60 años requieren números altos: verificar que el grupo ha trabajado los números hasta 100 (sección Comunicación U2)",
+        "Hay paralelismo de estructura entre las pistas: el ejercicio entrena patrón sintáctico tanto como léxico"
+      ],
+
+      "gestion_aula": "Preparación: una copia por grupo o estudiante. Inicio (2 min): explicar que cada pista es una ayuda pequeña y que hay que combinar varias para resolver cada celda. Desarrollo (10-15 min): trabajo autónomo o cooperativo. Cierre (5-8 min): puesta en común celda por celda, justificando con la pista que la confirma. Variante concurso: 12-15 min con cronómetro.",
+
+      "observaciones": "Excelente ejercicio integrador para final de U3: combina léxico nuclear (familia, profesiones, números, estado civil) en una tarea de razonamiento que no es solo mecanización. Compatible con grupos heterogéneos por la flexibilidad de agrupamiento."
+    },
+
+    {
+      "id": "U3-mc-004",
+      "ejercicio": "¿Qué hora es? (Actividades Extra 3) — vacío de información en parejas con relojes",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "04Companeros1Nuevaedicion_actividadesextra3.pdf",
+      "paginas_en_fuente": "pp. 5-6",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 3",
+      "ambito": "U3",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["cooperativa", "interaccion_oral", "mecanizacion"],
+
+      "duracion_estimada": "10-15 min",
+      "agrupamiento": "parejas (Alumno A + Alumno B)",
+      "agrupamiento_detalle": "El docente recorta la ficha por la mitad: Alumno A tiene 4 relojes con horas marcadas + 4 relojes vacíos, Alumno B tiene la combinación complementaria (los relojes que A tiene marcados, B los tiene vacíos, y viceversa). Los estudiantes preguntan al compañero las horas que les faltan.",
+      "materiales_necesarios": ["ficha fotocopiada y recortada por la mitad", "lápiz por estudiante"],
+
+      "objetivo_didactico": "Practicar la pregunta y respuesta de la hora mediante una actividad de expresión oral con vacío de información que obliga a producir y comprender oralmente todas las modalidades de hora trabajadas (en punto, y cuarto/media, menos cuarto/diez).",
+
+      "competencias": ["IO (interacción oral con turnos pregunta-respuesta)", "EO (verbalizar la hora a partir del reloj)", "CO (entender la respuesta del compañero)", "EE (anotar la hora en su propio reloj)"],
+
+      "funciones_comunicativas": [
+        "preguntar la hora con la fórmula canónica '¿Qué hora es en el reloj N?'",
+        "responder con la fórmula 'Son las + hora' (o 'Es la una' para la una)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "fórmulas de la hora: en punto, y cuarto, y media, menos cuarto, y/menos diez",
+          "numerales 1-12 (horas)"
+        ],
+        "gramatica_explicita": [
+          "ser impersonal de tercera persona en plural y singular (Es la una / Son las dos)",
+          "concordancia 'Son las' + número en plural",
+          "patrón aditivo (y) hasta la media, sustractivo (menos) a partir de la media",
+          "fórmula interrogativa: ¿Qué hora es en el reloj N?"
+        ]
+      },
+
+      "estructura_interna": [
+        "p. 5 — página del docente: objetivo + instrucciones + 8 relojes con horas marcadas (soluciones de los 8 ítems)",
+        "p. 6 — ficha del alumno: dos mitades recortables, Alumno A y Alumno B, cada uno con 8 relojes (4 con horas marcadas + 4 vacíos) en distribución complementaria"
+      ],
+
+      "apoyos": ["visual (relojes analógicos con manecillas)", "fórmula interrogativa modelo en el enunciado"],
+
+      "descripcion_dinamica": "Cada estudiante recibe una ficha con 8 relojes numerados; cuatro tienen las manecillas dibujadas (las horas que el alumno sabe) y cuatro están vacíos (las horas que el compañero le va a dar). Por turnos preguntan: '¿Qué hora es en el reloj 2?' y el compañero responde según su ficha. Cada alumno anota las cuatro horas que le faltaban en sus propios relojes vacíos.",
+
+      "secciones_aplicables": ["comunicacion"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — práctica oral de la hora con vacío de información, complementaria a los ejercicios 5-7 del libro sobre la hora",
+        "comunicacion.md — fijación de la pregunta '¿Qué hora es?' como rutina comunicativa instalada"
+      ],
+
+      "adaptaciones_posibles": [
+        "Variante escrita: tras la fase oral, pedir que escriban las horas en letras",
+        "Variante con cronómetro: cuál pareja completa primero todos los relojes correctamente",
+        "Ampliación: pedir que añadan una actividad cotidiana en cada hora ('A las nueve y cuarto: clase de español')",
+        "Reducir dificultad usando solo horas en punto y medias en una primera ronda"
+      ],
+
+      "consideraciones": [
+        "Verificar que el grupo conoce el formato 12 h (no se usan 'las catorce horas' aquí)",
+        "Las horas mostradas en p. 5 no aparecen explicitadas como cifras: hay que leerlas de los relojes — el docente puede prepararlas previamente para evitar discrepancias",
+        "Caso 'la una' (singular) puede aparecer y rompe el patrón 'Son las…' — si aparece, modelarlo aparte"
+      ],
+
+      "gestion_aula": "Preparación: recortar las fichas. Modelado (2 min): el docente como Alumno A pregunta a un voluntario por la hora del reloj 1. Práctica en parejas (8-12 min). Cierre (3 min): puesta en común con la página de soluciones proyectada o leída en plenaria.",
+
+      "observaciones": "Actividad nuclear de la sección de la hora; combina con U3-mc-009 (Batalla naval) como dos prácticas distintas del mismo contenido (vacío de información vs. juego competitivo). Y con U3-mc-014 y U3-mc-015 (Blinklearning Ej. 4 y 5) como dos refuerzos digitales del mismo contenido."
+    },
+
+    {
+      "id": "U3-mc-005",
+      "ejercicio": "¿Quedamos? (Actividades Extra 3) — negociación grupal con agendas",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "04Companeros1Nuevaedicion_actividadesextra3.pdf",
+      "paginas_en_fuente": "pp. 7-8",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 3",
+      "ambito": "U3",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["cooperativa", "interaccion_oral"],
+
+      "duracion_estimada": "15-20 min",
+      "agrupamiento": "grupos de cuatro estudiantes",
+      "agrupamiento_detalle": "El docente recorta las cuatro agendas individuales y reparte una a cada miembro del grupo. Cada estudiante consulta su agenda y propone horas; el grupo negocia hasta encontrar la única hora libre común a los cuatro.",
+      "materiales_necesarios": ["ficha fotocopiada y recortada en cuatro agendas individuales (Agenda 1, 2, 3, 4)", "lápiz por estudiante"],
+
+      "objetivo_didactico": "Practicar de forma integrada la hora, el vocabulario de las asignaturas escolares y de actividades cotidianas, las propuestas y respuestas comunicativas, mediante una negociación oral grupal que culmina en una decisión colectiva.",
+
+      "competencias": ["IO (negociación grupal con turnos múltiples)", "EO (propuestas razonadas con justificación)", "CO (entender propuestas y excusas de los demás)", "CE (leer la propia agenda)"],
+
+      "funciones_comunicativas": [
+        "proponer una hora para una actividad común ('¿Quedamos a las…?')",
+        "rechazar una propuesta justificándose ('No puedo, tengo clase de…')",
+        "aceptar una propuesta ('Yo sí puedo')",
+        "negociar alternativas hasta encontrar una hora común"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "asignaturas: Matemáticas, Inglés, Educación Física, Música, Ciencias Sociales, Informática, Alemán, Francés, Ciencias Naturales, Química",
+          "actividades cotidianas: recreo, comida, deberes, partido de fútbol, noche de pizza, comida con mis abuelos, ver las noticias, ayudar a mamá con la cena, cumpleaños de Elena, ver un concurso, clase de tenis, reunión con el tutor",
+          "fórmula interrogativa ¿Quedamos a las…?"
+        ],
+        "gramatica_explicita": [
+          "presente de tener (tengo clase de…)",
+          "fórmula 'a las + hora' para puntos del día",
+          "rango horario 'de las X a las Y' (rango libre de 17.00 a 18.00)",
+          "negación + razón (No puedo, tengo…)",
+          "afirmación corta (Yo sí puedo / Yo no puedo)"
+        ]
+      },
+
+      "estructura_interna": [
+        "p. 7 — página del docente: objetivo + instrucciones + cuatro ejemplos de diálogo + solución (la hora libre común es de 17.00 a 18.00 horas)",
+        "p. 8 — ficha del alumno: cuatro agendas individuales numeradas (Agenda 1 a 4) con franjas horarias 10.00-21.00 ocupadas con asignaturas o actividades, y consigna 'Tienes que hacer un trabajo de Matemáticas en grupo'"
+      ],
+
+      "apoyos": ["visual (agenda en formato tabla con franjas horarias)", "modelo de diálogo de cuatro turnos (Estudiante 1-4) en el enunciado del docente", "consigna contextualizadora (trabajo de Matemáticas en grupo)"],
+
+      "descripcion_dinamica": "Cada grupo de cuatro estudiantes recibe cuatro agendas distintas. Cada agenda tiene franjas horarias de 10.00 a 21.00 con clases, comidas, actividades cotidianas o huecos vacíos. Hay que encontrar la única franja horaria en la que los cuatro están libres (17.00-18.00). Los estudiantes proponen horas por turnos, los demás aceptan o rechazan con justificación basada en su agenda, hasta encontrar la solución.",
+
+      "secciones_aplicables": ["comunicacion", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — práctica integrada de la hora + propuestas comunicativas como cierre de la sección de Comunicación",
+        "destrezas.md — práctica de interacción oral en grupo con negociación",
+        "vocabulario.md — repaso transversal del léxico de asignaturas (visto en U2) en contexto comunicativo"
+      ],
+
+      "adaptaciones_posibles": [
+        "Reducir a grupos de 3 con tres agendas: la franja libre se ajusta",
+        "Ampliación: cada estudiante propone qué hacer en la hora libre y el grupo elige",
+        "Variante con su propia agenda real: cada estudiante rellena una agenda vacía con sus actividades reales y luego negocian",
+        "Producción escrita posterior: cada grupo redacta el diálogo resultante"
+      ],
+
+      "consideraciones": [
+        "El léxico de asignaturas (Matemáticas, Inglés, etc.) se introduce en U2 — verificar que está activo",
+        "Formato horario 24h en las agendas (15.00, 18.00) — distinto del formato 12h de los relojes; aclarar la equivalencia si surge confusión",
+        "La consigna 'trabajo de Matemáticas en grupo' contextualiza pero puede sustituirse por cualquier otra actividad colectiva"
+      ],
+
+      "gestion_aula": "Preparación: recortar las cuatro agendas por grupo. Modelado (2-3 min): leer juntos el ejemplo de diálogo de la página del docente. Práctica en grupos (10-15 min): el docente circula y apoya con vocabulario. Cierre (3-5 min): cada grupo comparte la hora a la que han quedado y justifica brevemente.",
+
+      "observaciones": "Actividad de cierre ideal para integrar Comunicación (la hora, propuestas) + Vocabulario transversal (asignaturas, actividades). Funciona como puente entre U3 (la hora) y U2 (asignaturas) en un mismo contexto comunicativo. Útil tras los ejercicios 9-10 del libro sobre la hora."
+    },
+
+    {
+      "id": "U3-mc-006",
+      "ejercicio": "Amigos por correo electrónico (Actividades Extra 3) — producción escrita guiada",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "04Companeros1Nuevaedicion_actividadesextra3.pdf",
+      "paginas_en_fuente": "pp. 9-10",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 3",
+      "ambito": "U3",
+      "categoria_editorial": "tarea_investigacion",
+      "tipo_dinamica": ["reflexiva", "investigacion"],
+
+      "duracion_estimada": "25-40 min (variable: incluye redacción + intercambio si se realiza con institución hispana)",
+      "agrupamiento": "individual (redacción) — el docente gestiona el intercambio si lo hay",
+      "agrupamiento_detalle": "Cada estudiante redacta individualmente un correo electrónico de presentación. Si el docente tiene contacto con un colegio o instituto de habla hispana, los correos se envían y los estudiantes hispanos responden a quien elijan por afinidad. Si no, los datos se inventan y los correos quedan como práctica escrita.",
+      "materiales_necesarios": ["ficha fotocopiada", "papel o procesador de texto para la redacción", "opcional: dirección de un centro hispano de contacto"],
+
+      "objetivo_didactico": "Relacionarse con estudiantes nativos utilizando vocabulario y estructuras básicas; producir un correo electrónico de presentación que integre toda la información personal trabajada en U1-U3 (nombre, edad, origen, residencia, estudios, asignaturas favoritas, familia, amigos, aficiones).",
+
+      "competencias": ["EE (redacción del correo)", "MED (intercambio intercultural si se realiza el envío real)", "CE (lectura de las respuestas si las hay)"],
+
+      "funciones_comunicativas": [
+        "presentarse por escrito de forma extensa",
+        "describir la propia familia, estudios y aficiones",
+        "iniciar una relación social asíncrona"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "presentación: cómo te llamas, cuántos años tienes, de dónde eres, dónde vives",
+          "estudios: qué estudias, asignaturas favoritas",
+          "vida personal: familia, amigos, aficiones"
+        ],
+        "gramatica_explicita": [
+          "presente de llamarse, tener, ser, vivir, estudiar (1ª persona)",
+          "fórmulas interrogativas como organizadores del texto",
+          "posesivos átonos para hablar de la familia (mi/mis)"
+        ]
+      },
+
+      "estructura_interna": [
+        "p. 9 — página del docente: objetivo + instrucciones + sugerencia metodológica sobre el intercambio con centro hispano",
+        "p. 10 — ficha del alumno: lista de 9 puntos a incluir (nombre, edad, origen, residencia, estudios, asignaturas favoritas, familia, amigos, aficiones) + maqueta visual de interfaz de correo electrónico (Destinatarios, Asunto, cuerpo en blanco, botón Enviar)"
+      ],
+
+      "lista_puntos_obligatorios": [
+        "Cómo te llamas",
+        "Cuántos años tienes",
+        "De dónde eres",
+        "Dónde vives",
+        "Qué estudias",
+        "Asignaturas favoritas",
+        "Familia",
+        "Amigos",
+        "Aficiones"
+      ],
+
+      "apoyos": ["visual (interfaz de correo electrónico)", "lista de 9 puntos como guion estructural", "contexto comunicativo real (correspondencia)"],
+
+      "descripcion_dinamica": "El alumno redacta un correo electrónico de presentación incluyendo los 9 puntos de la lista. Si el docente lo gestiona, los correos se envían a un centro de habla hispana y los estudiantes nativos responden a uno (por afinidad). La actividad puede prolongarse a lo largo del curso, generando una correspondencia continuada que fomenta la comunicación con hablantes nativos.",
+
+      "secciones_aplicables": ["destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "destrezas.md — producción escrita integradora como cierre de U3 con todos los contenidos de U1-U3",
+        "destrezas.md — extensión del correo modelo del libro (Marta) a producción propia más completa"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión simplificada: solo los primeros 6 puntos para grupos con menos producción acumulada",
+        "Versión con destinatario simulado: el docente o un personaje ficticio recibe el correo y responde",
+        "Producción digital: usar un cliente de correo real (no recomendado con menores sin consentimiento)",
+        "Variante en parejas: redactar el correo de un personaje inventado entre dos estudiantes"
+      ],
+
+      "consideraciones": [
+        "Si se opta por intercambio real con centro hispano, gestionar previamente con el colegio receptor y obtener consentimientos pertinentes (menores, datos personales)",
+        "Si los datos se inventan, advertir explícitamente al grupo y proponer personajes con identidad propia para que la tarea sea coherente",
+        "La consigna integra contenidos de U1 (presentación), U2 (asignaturas, origen, residencia) y U3 (familia) — útil como evaluación formativa transversal",
+        "El espacio en blanco de la interfaz de correo en la ficha es generoso (toda la página) — facilita producción extensa pero conviene marcar mínimo de palabras o frases"
+      ],
+
+      "gestion_aula": "Preparación: decidir si el correo se enviará o quedará como práctica. Inicio (5 min): repasar los 9 puntos en plenaria con ejemplos. Redacción individual (20-30 min): el docente circula y apoya. Cierre (5-10 min): lectura voluntaria de algunos correos o corrección dialogada. Si hay intercambio real: planificar el envío y el retorno en una sesión posterior.",
+
+      "observaciones": "Tarea integradora de gran valor para cierre de U3 (o como tarea final del primer trimestre, integrando U1-U3). Permite evaluación holística de la producción escrita. La opción del intercambio real, si es viable, multiplica el valor motivacional y abre una práctica de mediación intercultural sostenida."
+    },
+
+    {
+      "id": "U3-mc-007",
+      "ejercicio": "Busco y encuentro (Actividades Extra 3) — dinámica de movimiento con 15 tarjetas",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "04Companeros1Nuevaedicion_actividadesextra3.pdf",
+      "paginas_en_fuente": "pp. 11-12",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 3",
+      "ambito": "U3 (con repaso transversal U1-U2)",
+      "categoria_editorial": "dinamica_movimiento",
+      "tipo_dinamica": ["cinetica", "interaccion_oral", "lúdica"],
+
+      "duracion_estimada": "20-30 min",
+      "agrupamiento": "clase entera con movimiento por el aula",
+      "agrupamiento_detalle": "El docente reparte una de las 15 tarjetas-persona a cada estudiante. Los alumnos se mueven libremente por el aula haciéndose preguntas para identificar quién encaja con cada una de las 15 descripciones de la ficha de búsqueda. Cada estudiante busca las personas que faltan en su ficha (sin ver las tarjetas de los demás).",
+      "materiales_necesarios": ["ficha fotocopiada (una por estudiante)", "15 tarjetas-persona recortadas (una por estudiante, repartibles)", "espacio libre para moverse"],
+
+      "objetivo_didactico": "Practicar el vocabulario y las estructuras estudiadas en las tres primeras unidades mediante interacción oral en movimiento; consolidar las preguntas básicas de identidad, edad, aficiones, mascotas y familia.",
+
+      "competencias": ["IO (preguntas y respuestas con múltiples interlocutores)", "EO (verbalizar la propia identidad asignada)", "CO (entender las respuestas de los demás)", "EE (anotar los nombres en la ficha)"],
+
+      "funciones_comunicativas": [
+        "preguntar por la identidad (¿Cómo te llamas?)",
+        "preguntar y dar información personal (¿Cuántos años tienes? ¿Dónde vives?)",
+        "preguntar por aficiones (¿Qué te gusta hacer en tu tiempo libre?)",
+        "preguntar por animales de compañía (¿Tienes animales / mascotas en casa?)",
+        "preguntar por la familia (¿Tienes hermanos/-as? ¿Tienes primos/-as?)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "nombres y apellidos hispanos (15): Ana Pérez, Javier García, Antonia Méndez, Cristina Márquez, Juan Areces, Andrea Allende, Susana Ruíz, Elisa Alonso, Jaime Gutiérrez, María López, Vladimir Castro, Gabriel Rodríguez, Almudena Ríos, Eduardo Olmos, David Pichardo",
+          "edades: 10-15 años",
+          "aficiones: música pop, montar en bicicleta, teatro, arte, fútbol, salir con amigas, informática, nadar, cine, patinar, libros, deportes, navegar por internet",
+          "mascotas: gato, conejo, perro, peces, tortuga, hámster, periquito, araña",
+          "familia: hermanos, hermanas, hermana gemela, primos, tíos, hijo único, vive con sus abuelos"
+        ],
+        "gramatica_explicita": [
+          "presente de tener (tiene un gato, tiene una hermana gemela)",
+          "presente de gustar con sustantivo (le gusta el teatro, le gustan los libros)",
+          "concordancia M/F y singular/plural en aficiones y mascotas",
+          "ser + sustantivo (es hijo único)",
+          "vivir con + sustantivo (vive con sus abuelos)"
+        ]
+      },
+
+      "lista_15_busquedas": [
+        "Tiene un gato y le gusta la música pop",
+        "Tiene un conejo y le gusta montar en bicicleta",
+        "Le gusta el teatro",
+        "Le gusta el arte y tiene tres hermanas",
+        "Tiene dos tortugas y le gusta el fútbol",
+        "Le gusta salir con sus amigas",
+        "Tiene 14 años y le gusta la informática",
+        "Le gusta nadar",
+        "Es hijo único y le gusta el cine",
+        "Tiene una hermana gemela",
+        "Le gusta patinar y tiene una tortuga",
+        "Le gustan los libros y tiene un periquito",
+        "Tiene 12 años y vive con sus abuelos",
+        "Tiene una araña y le gustan los deportes",
+        "Tiene cinco primos y un hermano"
+      ],
+
+      "apoyos": ["visual (15 tarjetas-persona con foto-icono implícita, edad, aficiones, mascota, familia)", "ficha de búsqueda con 15 descripciones numeradas", "movimiento como soporte motivacional"],
+
+      "descripcion_dinamica": "Cada estudiante recibe una identidad (una tarjeta-persona con nombre, edad, aficiones, mascota, familia) y una ficha con 15 descripciones que tiene que encajar con sus compañeros. Se mueve por el aula haciendo preguntas para identificar qué compañero encaja con cada descripción. Antes de empezar, el docente repasa el vocabulario clave (especialmente 'mascota' y 'aficiones') y aclara hermano/-a gemelo/-a.",
+
+      "secciones_aplicables": ["vocabulario", "destrezas", "transversal"],
+
+      "posibles_anclajes_en_final": [
+        "destrezas.md — práctica de interacción oral cinética como cierre integrador de U3 que repasa U1-U2",
+        "vocabulario.md — repaso transversal del léxico personal (edad, familia, aficiones, mascotas)",
+        "cultura.md — exposición a nombres y apellidos hispanos variados (incluido Vladimir Castro como variante latinoamericana)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Reducir a 8-10 tarjetas si el grupo es pequeño",
+        "Variante con tarjetas reales: cada estudiante rellena una tarjeta con su identidad real",
+        "Ampliación: tras encontrar a todos, cada estudiante presenta a tres compañeros en tercera persona",
+        "Reformulación digital: usar formularios online en lugar de tarjetas físicas"
+      ],
+
+      "consideraciones": [
+        "Si el grupo tiene menos de 15 estudiantes, algunas tarjetas no se reparten — el docente las retira y ajusta las búsquedas de la ficha eliminando las descripciones correspondientes",
+        "Léxico de mascotas (araña, periquito, hámster, peces, tortuga, conejo) puede no estar todo activo — el docente lo introduce brevemente antes",
+        "El léxico de aficiones puede mezclar sustantivos y verbos en infinitivo ('teatro' vs 'nadar') — útil como repaso de ambas formas con gustar",
+        "Sigue siendo el ejercicio más cinético del cuadernillo: requiere espacio físico mínimo (sillas movibles o aula amplia)"
+      ],
+
+      "gestion_aula": "Preparación: recortar las 15 tarjetas-persona + una ficha de búsqueda por estudiante. Inicio (5 min): aclarar vocabulario, modelar dos preguntas tipo. Movimiento (15-20 min): los estudiantes circulan haciéndose preguntas; el docente observa y apoya. Cierre (5-8 min): puesta en común — cada descripción ↔ qué nombre encontrado.",
+
+      "observaciones": "Actividad cinética de cierre transversal U1-U3: combina léxico de identidad, familia y aficiones de las tres unidades. Útil como evaluación formativa indirecta o como sesión de repaso antes de la evaluación sumativa. Funciona mejor en grupos grandes (≥10 estudiantes) por la diversidad de interlocutores."
+    },
+
+    {
+      "id": "U3-mc-008",
+      "ejercicio": "Ronda familiar (Cuaderno de juegos NC1) — emparejamiento perifrástico de léxico de parentesco",
+      "tipo": "juego_aula",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "Nuevocompaneros1gamificacion_117959.pdf",
+      "paginas_en_fuente": "pp. 12-16",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Cuaderno de juegos NC1 (Belén García-Alifa, Javier Villatoro, SGEL, 2021)",
+      "ambito": "U3",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["lúdica", "competitiva", "cooperativa", "mecanizacion"],
+
+      "duracion_estimada": "20-30 min",
+      "agrupamiento": "equipos de cuatro jugadores",
+      "agrupamiento_detalle": "El docente reparte 24 cartas por equipo (6 a cada jugador). Cada carta es una perífrasis ('El padre de mi madre') o un término directo ('Mi abuelo'). Cada jugador debe formar tres parejas correctas (perífrasis ↔ término) descartando las cartas que no le sean útiles.",
+      "materiales_necesarios": ["24 cartas/tarjetas impresas y recortadas por equipo (12 perifrásticas + 12 directas)", "espacio plano (mesa)"],
+
+      "objetivo_didactico": "Repasar el vocabulario relacionado con los lugares de trabajo y las profesiones (según la portada del juego en el cuaderno) — en la práctica, repasar el léxico de parentesco asociando perífrasis a término directo (el padre de mi madre = mi abuelo).",
+
+      "competencias": ["CE (leer las cartas)", "IO (negociación dentro del equipo, anuncios)", "razonamiento léxico-semántico"],
+
+      "funciones_comunicativas": [
+        "asociar una descripción perifrástica con su término léxico equivalente",
+        "anunciar la victoria en voz alta ('¡familia!')"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "12 perífrasis de parentesco: el padre de mi madre, otro hijo de mis padres, la madre de mi padre, el hermano de mi madre, otra hija de mis padres, el hijo de mis tíos, la hija de mis tíos, el hijo de mi hijo, el marido de mi madre, la hija de mi hermano, la mujer de mi padre, la hermana de mi padre",
+          "12 términos directos: mi abuelo, mi abuela, mi madre, mi tío, mi tía, mi hermano, mi primo, mi prima, mi nieto, mi padre, mi sobrina, mi hermana"
+        ],
+        "gramatica_explicita": [
+          "posesivo átono mi + sustantivo singular y mis + sustantivo plural",
+          "estructura perifrástica: artículo + sustantivo + de + posesivo + sustantivo (el padre de mi madre)",
+          "concordancia M/F y equivalencias semánticas (otro hijo de mis padres = mi hermano)"
+        ]
+      },
+
+      "anclaje_libro_alumno": {
+        "vocabulario": "ejercicios 1-11",
+        "gramatica": "ejercicios 7 y 9",
+        "comunicacion": "ejercicios 1-4",
+        "destrezas": "ejercicios 1 y 2"
+      },
+
+      "estructura_interna": [
+        "p. 12 — instrucciones del juego: objetivos, dinámica en equipos de 4, mecánica de ronda (carta no útil → soltar bocabajo, vecino derecho la coge), anuncio de victoria ('¡familia!'), variante competitiva 'Más ideas' con mano al centro y puntos",
+        "p. 13 — tarjetas perifrásticas 1 (no inventariada en captura, deducida del patrón)",
+        "p. 14 — tarjetas perifrásticas 2: La hija de mis tíos, El hijo de mi hijo, El marido de mi madre, La hija de mi hermano, La mujer de mi padre, La hermana de mi padre",
+        "p. 15 — tarjetas directas 1: Mi abuelo, Mi abuela, Mi madre, Mi tío, Mi tía, Mi hermano",
+        "p. 16 — tarjetas directas 2: Mi primo, Mi prima, Mi nieto, Mi padre, Mi sobrina, Mi hermana"
+      ],
+
+      "apoyos": ["visual (tarjetas con texto destacado)", "mecánica de descarte clara (soltar bocabajo + vecino derecho)", "anuncio acústico de victoria"],
+
+      "descripcion_dinamica": "Cada jugador recibe 6 cartas. Las observa y decide qué tres parejas perífrasis-término puede formar. Las cartas no útiles se sueltan bocabajo simultáneamente cuando el docente da la voz de '¡ya!'; el jugador de la derecha recoge la carta soltada. El proceso se repite hasta que un jugador completa sus tres parejas y grita '¡familia!'. Variante competitiva: mano al centro tras el grito, último jugador en colocarla queda eliminado para la ronda siguiente.",
+
+      "secciones_aplicables": ["vocabulario", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — juego de cierre del bloque de parentesco tras los ejercicios 1-11 del libro",
+        "gramatica.md — fijación lúdica del posesivo átono mi/mis tras los ejercicios 7 y 9 del libro"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión con 18 cartas (9 parejas) para grupos más cortos en tiempo",
+        "Variante cooperativa: el equipo gana cuando los cuatro completan sus tres parejas",
+        "Ampliación: tras la partida, cada estudiante construye dos nuevas perífrasis equivalentes a 'mi tío' o 'mi prima'",
+        "Versión sin descarte: las cartas se reparten todas y cada jugador forma tantas parejas como pueda con sus 6"
+      ],
+
+      "consideraciones": [
+        "La portada del juego anuncia 'Vocabulario sobre la familia' pero el campo 'Objetivos y contenidos' menciona 'lugares de trabajo y profesiones' — errata de la editorial; el contenido real es léxico de parentesco",
+        "El cuaderno indica 24 cartas por equipo y 6 por jugador (4 jugadores) — coincide",
+        "Algunas perífrasis admiten dos equivalentes ('otro hijo de mis padres' = mi hermano; pero también 'el hijo de mi padre y mi madre') — el docente acepta variantes razonadas",
+        "Tarjetas de p. 13 no recogidas en el inventario visual de capturas — se deducen del patrón de las otras tres páginas para completar las 12 perifrásticas"
+      ],
+
+      "gestion_aula": "Preparación: imprimir y recortar 24 cartas por equipo (importante prepararlas antes; tiempo de corte significativo). Inicio (3-5 min): explicar las parejas y modelar 1-2 con el grupo. Desarrollo (15-20 min): 2-3 rondas según ritmo. Cierre (3-5 min): puesta en común de las parejas más difíciles + opción de jugar la variante competitiva.",
+
+      "observaciones": "Juego nuclear de U3 que cierra el léxico de parentesco como práctica lúdica de mecanización. Combina especialmente bien con U3-mc-001 (PPTX) como presentación previa y con U3-mc-003 (Juego de lógica) como práctica lectora del mismo léxico."
+    },
+
+    {
+      "id": "U3-mc-009",
+      "ejercicio": "Batalla naval (Cuaderno de juegos NC1) — coordenadas día/hora",
+      "tipo": "juego_aula",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "Nuevocompaneros1gamificacion_117959.pdf",
+      "paginas_en_fuente": "pp. 17-18",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Cuaderno de juegos NC1 (Belén García-Alifa, Javier Villatoro, SGEL, 2021)",
+      "ambito": "U3",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["lúdica", "competitiva", "interaccion_oral"],
+
+      "duracion_estimada": "40-50 min",
+      "agrupamiento": "por parejas",
+      "agrupamiento_detalle": "Cada estudiante recibe dos plantillas idénticas: una para colocar sus propios barcos y otra para anotar los disparos al compañero. Antes de empezar, la pareja se pone de acuerdo en las 9 horas que servirán como coordenadas verticales (deben ser idénticas y en el mismo orden en ambos paneles).",
+      "materiales_necesarios": ["dos plantillas fotocopiadas por estudiante (4 por pareja)", "lápiz/bolígrafo", "opcional: fichas tridimensionales para representar los barcos"],
+
+      "objetivo_didactico": "Aprender la formación de las horas y el vocabulario de los días de la semana mediante un juego comunicativo competitivo que obliga a producir y comprender oralmente coordenadas formadas por día + hora.",
+
+      "competencias": ["EO (anuncios de coordenadas)", "CO (entender la coordenada del compañero y decidir respuesta)", "IO (turnos de juego, anuncios de Agua/Tocado/Hundido)", "EE (registro escrito de disparos en la plantilla)"],
+
+      "funciones_comunicativas": [
+        "anunciar una coordenada temporal precisa (Miércoles, siete menos cuarto)",
+        "responder con uno de tres marcadores (Agua / Tocado / Hundido)",
+        "negociar la configuración del tablero antes de empezar"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "7 días de la semana: lunes, martes, miércoles, jueves, viernes, sábado, domingo",
+          "9 horas elegidas libremente por la pareja (típicamente franja escolar/diaria: las siete, las siete y cuarto, las siete y media, las siete menos cuarto, etc.)",
+          "marcadores del juego: Agua, Tocado, Hundido"
+        ],
+        "gramatica_explicita": [
+          "fórmulas de la hora con y/menos cuarto/media/diez",
+          "fórmula 'día, hora' como coordenada (Miércoles, siete menos cuarto)",
+          "el día como sustantivo común (sin artículo en este uso de coordenada)"
+        ]
+      },
+
+      "anclaje_libro_alumno": {
+        "comunicacion": "ejercicios 5-7",
+        "destrezas": "ejercicios 3 y 4"
+      },
+
+      "estructura_interna": [
+        "p. 17 — instrucciones: materiales (papel/cartulina), dinámica por parejas, doble plantilla, acuerdo previo sobre las coordenadas, ejemplos de turno con tres respuestas posibles (Agua/Tocado/Hundido)",
+        "p. 18 — plantilla fotocopiable x2: rejilla de 7 columnas (días de la semana) × 9 filas (horas que se rellenan a mano), surtido de iconos de barcos para recortar, modelo de turno comunicativo en bocadillos"
+      ],
+
+      "apoyos": ["visual (rejilla 7×9 + iconos de barcos)", "modelo de turno con las cuatro respuestas posibles", "doble plantilla (tablero propio + tablero de disparos)"],
+
+      "descripcion_dinamica": "Versión del clásico hundir la flota adaptada al léxico de días y horas. Cada estudiante coloca sus barcos en su plantilla (sin que el compañero los vea) tras acordar las 9 horas que servirán como coordenadas. Por turnos, cada jugador anuncia una coordenada ('Miércoles, siete menos cuarto'). El otro consulta su tablero y responde: Agua (no hay barco), Tocado (acierto parcial) o Hundido (barco completo). Gana quien hunde antes la flota completa del rival.",
+
+      "secciones_aplicables": ["comunicacion", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — práctica lúdica de la hora + días de la semana como cierre comunicativo de la sección",
+        "destrezas.md — entrenamiento de comprensión y producción oral con vocabulario específico de coordenadas temporales"
+      ],
+
+      "adaptaciones_posibles": [
+        "Reducir a 5 horas (rejilla 7×5) para grupos con menos tiempo",
+        "Variante con franjas horarias (8.00-9.00, 9.00-10.00) en lugar de horas puntuales",
+        "Ampliación con actividades: en cada coordenada hay una actividad (clase de mates, comida) que se anuncia junto al día/hora",
+        "Versión digital con tablero compartido (Google Sheets, Miro) para grupos remotos"
+      ],
+
+      "consideraciones": [
+        "Las horas no vienen impresas en la plantilla — la pareja decide qué franja horaria utiliza, lo que personaliza el juego pero exige consenso inicial",
+        "El docente debe explicar Tocado/Hundido si el grupo no conoce el juego clásico (puede ser cultural-específico)",
+        "Tiempo total alto (40-50 min): conviene reservarlo a una sesión completa o partir el juego en dos días",
+        "Compatible con cualquier configuración de barcos (3-5 barcos por jugador es lo habitual)"
+      ],
+
+      "gestion_aula": "Preparación: dos copias de la plantilla por estudiante. Inicio (5-8 min): explicar reglas, modelar un turno con un voluntario en la pizarra. Acuerdo y colocación (5-7 min): cada pareja consensúa las 9 horas y coloca barcos. Partida (25-35 min): turnos alternos. Cierre (3-5 min): identificar al ganador de cada pareja y comentar las coordenadas más difíciles.",
+
+      "observaciones": "Juego de cierre comunicativo de U3 con alto contenido cinético-mental. Útil como sesión completa de práctica de la hora tras los ejercicios 5-7 del libro. La duración total (40-50 min) lo hace incompatible con sesiones cortas — planificar acorde."
+    },
+
+    {
+      "id": "U3-mc-010",
+      "ejercicio": "Evaluación 3 — prueba sumativa de unidad",
+      "tipo": "evaluacion_escrita",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "13Companeros1Nuevaedicion_evaluacion3.pdf",
+      "paginas_en_fuente": "pp. 1-2",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Pruebas de evaluación NC1 — Unidad 3",
+      "ambito": "U3",
+      "categoria_editorial": "evaluacion",
+      "tipo_dinamica": ["evaluativa", "individual"],
+
+      "duracion_estimada": "30-45 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "Prueba sumativa individual. El docente puede aplicarla como evaluación final de unidad (sesión completa) o como evaluación en casa con revisión posterior en plenaria (Versión A canónica del manual de estilo).",
+      "materiales_necesarios": ["prueba fotocopiada (una por estudiante)", "lápiz/bolígrafo"],
+
+      "objetivo_didactico": "Evaluar de forma sumativa los aprendizajes nucleares de U3: léxico de parentesco, presente regular y de tener, posesivos átonos singular y plural, ortografía z/c, la hora, y comprensión lectora y producción escrita sobre la familia.",
+
+      "competencias": ["CE (texto de Silvia)", "EE (frases controladas, párrafo libre sobre la familia)", "CO/EO no se evalúan en esta prueba escrita"],
+
+      "estructura_interna": [
+        "p. 1 — Vocabulario (ej. 1-2): completar la descripción del árbol genealógico de Marina (8 huecos) + completar 6 frases de Mario con léxico de parentesco. Gramática y Comunicación (ej. 3-6): conjugar presente regular en huecos (8 ítems), tener (6 ítems), elegir posesivo átono mi/tu/su/nuestra/vuestra singular o plural (8 ítems), completar 6 frases con posesivo en hueco libre",
+        "p. 2 — Gramática y Comunicación (ej. 7-9): ordenar 5 frases desordenadas, completar 8 palabras con z/c, escribir la hora de 4 relojes. Destrezas: leer y escribir (ej. 10-11): leer texto sobre Silvia + responder 5 preguntas, escribir un párrafo sobre la propia familia"
+      ],
+
+      "items_ejercicio": [
+        { "n": 1, "tipo": "completar_descripcion", "subseccion": "vocabulario", "huecos": 8, "tema": "árbol genealógico de Marina + descripción con léxico de parentesco" },
+        { "n": 2, "tipo": "completar_frases", "subseccion": "vocabulario", "huecos": 6, "tema": "frases de Mario con léxico familiar" },
+        { "n": 3, "tipo": "conjugar_verbo", "subseccion": "gramatica", "huecos": 8, "tema": "presente regular -ar/-er/-ir" },
+        { "n": 4, "tipo": "conjugar_tener", "subseccion": "gramatica", "huecos": 6, "tema": "tener en presente (todas las personas)" },
+        { "n": 5, "tipo": "elegir_opcion", "subseccion": "gramatica", "huecos": 8, "tema": "posesivos átonos: contraste singular/plural (mi/mis, tu/tus, su/sus, nuestra/nuestras, vuestra/vuestras)" },
+        { "n": 6, "tipo": "completar_posesivo", "subseccion": "gramatica", "huecos": 6, "tema": "elección libre del posesivo átono correspondiente" },
+        { "n": 7, "tipo": "ordenar_frases", "subseccion": "gramatica", "items": 5, "tema": "sintaxis de frases simples con presente, posesivos, complementos" },
+        { "n": 8, "tipo": "completar_palabras", "subseccion": "gramatica_ortografia", "items": 8, "tema": "contraste ortográfico z/c (pizarra, once, cocina, zumo, zoológico, baloncesto, zapato, ciclismo)" },
+        { "n": 9, "tipo": "escribir_hora", "subseccion": "comunicacion", "items": 4, "tema": "leer relojes analógicos y escribir la hora" },
+        { "n": 10, "tipo": "comprension_lectora", "subseccion": "destrezas", "preguntas": 5, "tema": "texto sobre Silvia (Cartagena de Indias, familia, danza) + 5 preguntas abiertas" },
+        { "n": 11, "tipo": "produccion_escrita", "subseccion": "destrezas", "tema": "párrafo libre sobre la propia familia" }
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "léxico de parentesco completo (madre, padre, hermana, hermano, tío, tía, primo, prima, abuelo, abuela, hija, hijo, mujer, marido)",
+          "presente de verbos regulares -ar/-er/-ir y de tener",
+          "palabras con z/c: pizarra, once, cocina, zumo, zoológico, baloncesto, zapato, ciclismo"
+        ],
+        "gramatica_explicita": [
+          "presente de indicativo regular -ar (trabajar, comer, estudiar, vivir, hablar)",
+          "presente de tener (todas las personas)",
+          "posesivos átonos en singular y plural, M y F (mi/mis, tu/tus, su/sus, nuestro/nuestra/nuestros/nuestras, vuestro/vuestra/vuestros/vuestras)",
+          "ortografía z/c (z antes de a/o/u, c antes de e/i)",
+          "fórmulas de la hora"
+        ]
+      },
+
+      "apoyos": ["visual (árbol genealógico de Marina, relojes analógicos)", "texto modelo (Silvia) como entrada lectora", "fórmulas y enunciados claros por ejercicio"],
+
+      "descripcion_dinamica": "Prueba sumativa de 11 ejercicios distribuidos en 4 bloques: Vocabulario (2 ejercicios), Gramática y Comunicación (7 ejercicios), Destrezas leer y escribir (2 ejercicios). Mezcla ejercicios de respuesta cerrada (completar, conjugar, elegir, ordenar) con un ejercicio de producción libre al final (párrafo sobre la propia familia). Cobertura completa del programa de U3.",
+
+      "secciones_aplicables": ["evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "evaluacion.md — prueba sumativa canónica de U3, integrable en Versión A (ejercicios 1-9 como deberes + ejercicios 10-11 revisados en clase) o Versión B (sesión completa en clase)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión A (canónica del manual): 8 ejercicios como deberes + revisión en plenaria",
+        "Versión B: sesión completa con realización escalonada en tres tandas + corrección colectiva",
+        "Reducción para grupos con menos tiempo: eliminar ej. 7 (ordenar) y ej. 8 (z/c)",
+        "Ampliación: añadir un ejercicio oral previo de presentación familiar para evaluación holística"
+      ],
+
+      "consideraciones": [
+        "El ejercicio 8 (z/c) introduce ortografía no necesariamente trabajada explícitamente en U3 — verificar si el grupo ha visto el contraste antes de aplicarlo o aceptar tasas bajas de acierto en este ítem",
+        "El texto de Silvia menciona Cartagena de Indias (Colombia) — aporta dimensión cultural latinoamericana en la evaluación, coherente con la representación hispanohablante de U2 y U3",
+        "El ejercicio 11 (producción escrita libre) es el único que evalúa producción autónoma — peso pedagógico desproporcionado; calibrar puntuación si se usa sumativo",
+        "El árbol de Marina del ej. 1 es diferente al de David (libro), Julia (PPTX) y Ángel (Actividades Extra) — coherencia: cada familia es distinta para forzar procesamiento del grado"
+      ],
+
+      "gestion_aula": "Versión A (recomendada): repartir la prueba como deberes (sesión N), corregir en plenaria en la sesión siguiente (sesión N+1, 20-30 min) con énfasis en errores recurrentes. Versión B: sesión completa con los 11 ejercicios escalonados en tres tandas (Vocabulario + Gramática 1 → Gramática 2 + Comunicación → Destrezas).",
+
+      "observaciones": "Prueba sumativa cerrada de U3, lista para imprenta. Cobertura razonable de los contenidos nucleares (parentesco, presente, tener, posesivos, hora). Combina especialmente bien con U3-mc-007 (Busco y encuentro) como repaso transversal previo y con U3-mc-006 (Amigos por correo electrónico) como evaluación holística alternativa de la producción escrita."
+    },
+
+    {
+      "id": "U3-mc-011",
+      "ejercicio": "Ejercicio 1 — Observa la imagen y completa las frases (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U3/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U3",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 3 - La familia → Libro del alumno → Ejercicio 1",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "asociacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-8 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve el ejercicio en su dispositivo (ordenador, tableta o móvil) accediendo a Blinklearning con sus credenciales. Arrastra o escribe las palabras correctas en los 6 huecos del ejercicio. La plataforma corrige automáticamente.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Fijar el léxico nuclear de parentesco (madre, padre, padres, abuelos, hermana, hijos) en singular y plural mediante completado de 6 frases sobre un árbol genealógico ficticio, con autocorrección inmediata.",
+
+      "competencias": ["CE (lectura del árbol y de las frases)", "EE (completar el hueco con el término correcto)", "reconocimiento visual del árbol genealógico"],
+
+      "funciones_comunicativas": [
+        "expresar relaciones de parentesco entre miembros de una familia",
+        "describir un árbol genealógico"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "6 términos de parentesco: madre, padre (en 'el padre de Laura se llama Luis'), padres, abuelos, hermana, hijos",
+          "11 nombres propios hispanos: Manuel, Carmen, Luis, Tamara, Carlos, Mónica, David, Laura, Esther, Marta, Pablo"
+        ],
+        "gramatica_explicita": [
+          "ser + sustantivo singular y plural (Carmen es la madre / Carlos y Mónica son los padres)",
+          "concordancia M/F del artículo y sustantivo (la madre, los padres, los abuelos, la hermana, los hijos)",
+          "presente de llamarse (el padre de Laura se llama Luis)",
+          "expresión perifrástica con de (el padre de Laura, los abuelos de Esther y David)"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "frase": "Carmen es la _____ de Carlos", "solucion": "madre" },
+        { "n": 2, "frase": "El padre de Laura se llama _____", "solucion": "Luis" },
+        { "n": 3, "frase": "Carlos y Mónica son los _____ de Pablo", "solucion": "padres" },
+        { "n": 4, "frase": "Carmen y Manuel son los _____ de Esther y David", "solucion": "abuelos" },
+        { "n": 5, "frase": "Tamara es la _____ de Carlos", "solucion": "hermana" },
+        { "n": 6, "frase": "Esther, Laura y David son los _____ de Luis y Tamara", "solucion": "hijos" }
+      ],
+
+      "apoyos": ["visual (árbol genealógico ilustrado con avatares)", "digital (interfaz autocorregible)", "feedback inmediato"],
+
+      "descripcion_dinamica": "Ejercicio interactivo autocorregible de Blinklearning. La pantalla muestra un árbol genealógico ilustrado (Manuel + Carmen como abuelos → Luis+Tamara y Carlos+Mónica como hijos → David, Laura, Esther / Marta, Pablo como nietos). El alumno completa 6 frases con la palabra adecuada de parentesco, ya sea arrastrando desde un banco de opciones o escribiendo en el campo de texto. La plataforma valida al instante.",
+
+      "secciones_aplicables": ["vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — fijación digital del léxico de parentesco tras los ejercicios 1-5 del libro (familia de David)",
+        "vocabulario.md — refuerzo individual asíncrono antes del juego Ronda familiar (U3-mc-008)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica equivalente: imprimir el árbol y las frases para hacerlas en papel",
+        "Ampliación: pedir al alumno que escriba 3 frases adicionales sobre el mismo árbol",
+        "Variante de mediación: convertir el árbol en descripción oral en voz alta para un compañero"
+      ],
+
+      "consideraciones": [
+        "Erratum detectado en la frase 5: la pantalla muestra 'Tamara en la hermana de Carlos' donde debería ser 'es' — el alumno puede confundirse leyendo el enunciado; el docente debería advertirlo antes",
+        "El árbol genealógico es distinto al de David (libro), Julia (PPTX), Ángel (Actividades Extra) y Marina (Evaluación) — la quinta familia ficticia de U3, refuerza la habilidad de no memorizar por nombre"
+      ],
+
+      "gestion_aula": "Uso recomendado: como deberes asíncronos tras los ejercicios 1-5 del libro (sección Vocabulario), o como tarea en aula de informática. Tiempo bajo (5-8 min) facilita usarlo como cierre de sesión o calentamiento.",
+
+      "observaciones": "Primera captura inventariada de la serie Juega y aprende Blinklearning de U3. Bloque inicial de léxico de parentesco, alineado con U3-mc-012 (Ej. 2, CO) y U3-mc-013 (Ej. 3, crucigrama) como tríada de refuerzo vocabular digital."
+    },
+
+    {
+      "id": "U3-mc-012",
+      "ejercicio": "Ejercicio 2 — Observa la imagen y escucha los audios. Escribe el nombre de la persona adecuada (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U3/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U3",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 3 - La familia → Libro del alumno → Ejercicio 2",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El alumno escucha cada uno de los 3 audios y escribe el nombre del personaje del árbol que encaja con la descripción oral. La plataforma corrige al instante.",
+      "materiales_necesarios": ["dispositivo con navegador y audio (auriculares recomendados)", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Practicar la comprensión oral de descripciones perifrásticas de parentesco asociándolas al miembro correcto del árbol genealógico de la familia ficticia presentada en el ejercicio 1.",
+
+      "competencias": ["CO (comprensión de la descripción oral perifrástica)", "EE (escritura del nombre propio en el hueco)", "asociación auditivo-visual"],
+
+      "funciones_comunicativas": [
+        "comprender descripciones de personas a partir de relaciones familiares",
+        "identificar miembros de una familia descritos oralmente"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "léxico de parentesco (perifrástico oral): el padre de…, la hija de…, la mujer de…, la hermana de…, el abuelo de…",
+          "11 nombres propios del mismo árbol que U3-mc-011"
+        ],
+        "gramatica_explicita": [
+          "ser + sustantivo en estructura perifrástica oral",
+          "ortografía de nombres propios con tilde (Mónica)"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "audio": "perífrasis no transcrita en captura — describe a Manuel", "solucion": "Manuel" },
+        { "n": 2, "audio": "perífrasis no transcrita en captura — describe a Laura", "solucion": "Laura" },
+        { "n": 3, "audio": "perífrasis no transcrita en captura — describe a Mónica", "solucion": "Mónica" }
+      ],
+
+      "apoyos": ["visual (mismo árbol genealógico del ej. 1)", "auditivo (3 audios accionables con icono altavoz)", "feedback inmediato de la plataforma"],
+
+      "descripcion_dinamica": "Mismo árbol genealógico del ejercicio anterior. La pantalla presenta 3 huecos con icono de altavoz. El alumno reproduce cada audio (descripción perifrástica oral del tipo 'el padre de Luis y Carlos' o 'la hija de Luis y Tamara') y escribe el nombre correcto del personaje del árbol en el campo de texto.",
+
+      "secciones_aplicables": ["vocabulario", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — refuerzo digital de comprensión oral del léxico de parentesco",
+        "destrezas.md — práctica autónoma de comprensión oral con tarea simple de transcripción"
+      ],
+
+      "adaptaciones_posibles": [
+        "Variante con dictado del docente: el docente lee perífrasis y los alumnos escriben el nombre en papel",
+        "Ampliación: tras resolver, pedir al alumno que invente 3 perífrasis para personajes no descritos en los audios"
+      ],
+
+      "consideraciones": [
+        "Las transcripciones exactas de los 3 audios no están disponibles en la captura — el inventario las marca como 'no transcritas' y deduce que son perífrasis del tipo 'el padre de…' que apuntan unívocamente a Manuel/Laura/Mónica",
+        "Ortografía de Mónica con tilde — el alumno debe respetarla para que el sistema valide; verificar política de la plataforma sobre tildes (acentos opcionales o estrictos)",
+        "Sin lista de opciones visible: el alumno debe recordar los nombres del árbol o consultar visualmente; mecanismo más exigente que opción múltiple"
+      ],
+
+      "gestion_aula": "Uso recomendado: como segundo ejercicio digital de U3 tras U3-mc-011 (Ej. 1). Tiempo bajo (3-5 min): compatible con cierre de sesión o transición entre bloques. Recomendado en aula de informática con auriculares para escucha individual.",
+
+      "observaciones": "Segunda captura inventariada de Juega y aprende U3. Pareja natural con U3-mc-011 (mismo árbol, modalidad complementaria CO en lugar de CE). Las tres soluciones son los únicos miembros adultos no consanguíneos directos a un nivel del árbol (un abuelo, una nieta, una nuera) — variedad equilibrada."
+    },
+
+    {
+      "id": "U3-mc-013",
+      "ejercicio": "Ejercicio 3 — Lee las frases y rellena el crucigrama (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U3/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U3",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 3 - La familia → Libro del alumno → Ejercicio 3",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "juego_ortografico", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-8 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El alumno lee las pistas perifrásticas (botón '0 ≡' desplegable) y completa el crucigrama interactivo escribiendo la palabra correspondiente en cada serie de casillas. La plataforma corrige al instante.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar el léxico de parentesco trabajando simultáneamente la ortografía y la correspondencia entre perífrasis (en las pistas) y término directo (en la solución del crucigrama).",
+
+      "competencias": ["CE (lectura de las pistas)", "EE (escritura ortográfica del término)", "asociación perífrasis ↔ término"],
+
+      "funciones_comunicativas": [
+        "decodificar descripciones perifrásticas de parentesco",
+        "reconocer el término directo correspondiente"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "6 términos clave de parentesco en singular: abuelo, prima, hijo, nieto, hermana, sobrina",
+          "perífrasis (en las pistas ocultas): probablemente del patrón 'el padre de mi padre' = ABUELO, 'la hija de mis tíos' = PRIMA, etc."
+        ],
+        "gramatica_explicita": [
+          "alternancia M/F en pares léxicos (abuelo/abuela, primo/prima, hijo/hija, nieto/nieta, hermano/hermana, sobrino/sobrina) — el ejercicio elige una forma de cada par",
+          "ortografía sin tildes en los 6 términos (todos paroxítonos sin tilde)"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "orientacion": "horizontal", "solucion": "ABUELO" },
+        { "n": 2, "orientacion": "horizontal", "solucion": "PRIMA" },
+        { "n": 3, "orientacion": "horizontal", "solucion": "HIJO" },
+        { "n": 4, "orientacion": "vertical", "solucion": "NIETO" },
+        { "n": 5, "orientacion": "vertical", "solucion": "HERMANA" },
+        { "n": 6, "orientacion": "horizontal", "solucion": "SOBRINA" }
+      ],
+
+      "apoyos": ["visual (rejilla de crucigrama interactiva)", "pistas desplegables (botón '0 ≡')", "validación inmediata por casilla y palabra"],
+
+      "descripcion_dinamica": "Crucigrama interactivo de 6 entradas (horizontales y verticales que se cruzan). El alumno consulta las pistas (perífrasis tipo 'el padre de mi padre' → ABUELO) y completa las casillas con el término directo correspondiente. La plataforma valida al rellenar cada entrada o al finalizar.",
+
+      "secciones_aplicables": ["vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — fijación ortográfica del léxico de parentesco, complementario a Ronda familiar (U3-mc-008) que practica el mismo emparejamiento perífrasis-término en formato lúdico"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión papel: imprimir un crucigrama equivalente con las mismas pistas",
+        "Ampliación: pedir al alumno que invente un crucigrama con otros 6 términos del campo (madre, hija, prima, abuela, sobrino, tía)",
+        "Variante oral: el docente lee las pistas en voz alta y los alumnos escriben"
+      ],
+
+      "consideraciones": [
+        "Las pistas exactas no son visibles en la captura (botón '0 ≡' oculto) — el inventario deduce el patrón perífrasis → término del modelo de Ronda familiar (U3-mc-008)",
+        "Mezcla de orientaciones (horizontal/vertical) cumple función estructural: cada entrada está condicionada por las cruces de letras",
+        "Léxico sin tildes — política de la plataforma sobre acentos no es relevante en este ejercicio"
+      ],
+
+      "gestion_aula": "Uso recomendado: tras U3-mc-011 y U3-mc-012, como tercer ejercicio del bloque léxico de parentesco. Tiempo medio (5-8 min). Como deberes asíncronos o en aula de informática.",
+
+      "observaciones": "Tercera captura inventariada de Juega y aprende U3. Cierra el bloque léxico-vocabular digital (Ej. 1-3) trabajando los tres modos: completar frase con término (Ej. 1), CO con nombre propio (Ej. 2), CE con escritura ortográfica del término (Ej. 3). Combina especialmente bien con U3-mc-008 (Ronda familiar) que practica la misma asociación perífrasis ↔ término en formato lúdico no digital."
+    },
+
+    {
+      "id": "U3-mc-014",
+      "ejercicio": "Ejercicio 4 — Escucha y une cada tren con su hora de llegada (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U3/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U3",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 3 - La familia → Libro del alumno → Ejercicio 4",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "asociacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El alumno escucha cinco audios con horas anunciadas y empareja cada uno con su tren correspondiente (5 trenes ilustrados a la izquierda, 5 horas en cifras a la derecha). La plataforma corrige al instante.",
+      "materiales_necesarios": ["dispositivo con navegador y audio (auriculares recomendados)", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Practicar la comprensión oral de las horas en sus dos patrones (y/menos + cuartos/medias/diez) mediante una tarea de emparejamiento visual con cinco coordenadas temporales distintas.",
+
+      "competencias": ["CO (escucha de la hora anunciada oralmente)", "asociación auditivo-visual con representación digital de la hora"],
+
+      "funciones_comunicativas": [
+        "comprender la hora dicha oralmente en formato canónico",
+        "identificar la hora correspondiente entre opciones"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "fórmulas de la hora: y cuarto (4:15), y media (5:30), y diez (6:10), menos cuarto (4:45), menos diez (6:50)",
+          "numerales 4, 5, 6 (horas)"
+        ],
+        "gramatica_explicita": [
+          "ser impersonal (Son las…)",
+          "patrón aditivo y/sustractivo menos",
+          "inversión hacia la hora siguiente tras la media (4:45 = cinco menos cuarto)",
+          "concordancia 'Son las' + numeral plural"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "tren": "tren rojo locomotora", "solucion_hora": "6:50", "solucion_verbal": "las siete menos diez" },
+        { "n": 2, "tren": "tren con techo verde y estrella", "solucion_hora": "5:30", "solucion_verbal": "las cinco y media" },
+        { "n": 3, "tren": "tren verde-rojo de vagones rayados", "solucion_hora": "4:45", "solucion_verbal": "las cinco menos cuarto" },
+        { "n": 4, "tren": "tren multicolor con vagones cuadrados", "solucion_hora": "6:10", "solucion_verbal": "las seis y diez" },
+        { "n": 5, "tren": "tren con vagones de colores", "solucion_hora": "4:15", "solucion_verbal": "las cuatro y cuarto" }
+      ],
+
+      "apoyos": ["visual (5 trenes ilustrados como anclajes diferenciadores)", "digital (interfaz de emparejamiento con líneas o arrastre)", "feedback inmediato"],
+
+      "descripcion_dinamica": "Pantalla dividida en dos columnas: cinco trenes numerados (1-5) a la izquierda con audio asociado a cada uno; cinco horas en cifras (6:50, 5:30, 4:45, 6:10, 4:15) a la derecha. El alumno escucha cada audio y traza la línea o arrastra para asociar el tren con la hora correcta. La plataforma valida al finalizar.",
+
+      "secciones_aplicables": ["comunicacion"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — práctica digital autónoma de comprensión oral de la hora tras los ejercicios 5-7 del libro",
+        "comunicacion.md — secuencia con U3-mc-015 (Ej. 5, EE de la hora) como pareja receptiva/productiva"
+      ],
+
+      "adaptaciones_posibles": [
+        "Variante con dictado del docente: el docente dicta las 5 horas y los alumnos escriben en cifras",
+        "Ampliación: tras emparejar, pedir al alumno que escriba las 5 horas en letras",
+        "Combinación con U3-mc-004 (¿Qué hora es? Actividades Extra) como práctica de seguimiento oral en parejas"
+      ],
+
+      "consideraciones": [
+        "El ejercicio no incluye el formato 'en punto' (sin 0:00, 5:00, etc.) — cubre solo las cuatro variantes con cuartos/medias/diez; complementar si se quiere cobertura completa",
+        "Los iconos de los trenes son decorativos y no aportan léxico — el alumno no necesita reconocerlos como objetos lingüísticos",
+        "Modalidad CO pura: sin pistas visuales más allá del audio; útil como diagnóstico real de comprensión oral de la hora"
+      ],
+
+      "gestion_aula": "Uso recomendado: en aula de informática con auriculares, individualmente o por parejas (un audio escuchado por dos). Tiempo bajo (3-5 min): viable como ejercicio de calentamiento o cierre. Como deberes asíncronos también es viable.",
+
+      "observaciones": "Cuarta captura inventariada de Juega y aprende U3. Apertura del bloque digital de la hora (Ej. 4-5). Recepción (CO) emparejada con producción (EE) en U3-mc-015. Refuerzo digital ideal antes de U3-mc-009 (Batalla naval) que exige misma fórmula horaria en formato comunicativo."
+    },
+
+    {
+      "id": "U3-mc-015",
+      "ejercicio": "Ejercicio 5 — Escribe con letras la hora de cada reloj (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U3/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U3",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 3 - La familia → Libro del alumno → Ejercicio 5",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-8 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El alumno observa 6 relojes analógicos y escribe la hora correspondiente en letras siguiendo la fórmula fija 'Son las…' preescrita en la pantalla. La plataforma valida la corrección ortográfica de cada respuesta.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar la producción escrita de la hora en letras dominando los dos patrones canónicos (y hasta la media, menos a partir de la media) y la ortografía correcta de los componentes (cuartos, media, numerales).",
+
+      "competencias": ["EE (producción escrita de la hora en letras)", "lectura del reloj analógico (decodificación visual)", "ortografía de numerales y fórmulas horarias"],
+
+      "funciones_comunicativas": [
+        "expresar la hora por escrito en formato literal",
+        "decodificar un reloj analógico"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "numerales del 1 al 12 (horas): seis, ocho, cuatro, cinco, dos, ocho",
+          "incrementos: cinco, veinte, veinticinco, diez, cuarto, media",
+          "fórmula 'Son las…'"
+        ],
+        "gramatica_explicita": [
+          "patrón y (hasta la media) y menos (a partir de la media)",
+          "inversión hacia la hora siguiente (3:45 = cuatro menos cuarto, 1:35 = dos menos veinticinco, 7:50 = ocho menos diez)",
+          "concordancia 'Son las' (plural fem.) + numeral",
+          "ortografía sin tilde de numerales: seis, ocho, cuatro, cinco, dos, veinte, veinticinco, diez, cuarto, media"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "reloj_indica": "6:20", "solucion_literal": "seis y veinte" },
+        { "n": 2, "reloj_indica": "8:30", "solucion_literal": "ocho y media" },
+        { "n": 3, "reloj_indica": "3:45", "solucion_literal": "cuatro menos cuarto" },
+        { "n": 4, "reloj_indica": "5:05", "solucion_literal": "cinco y cinco" },
+        { "n": 5, "reloj_indica": "1:35", "solucion_literal": "dos menos veinticinco" },
+        { "n": 6, "reloj_indica": "7:50", "solucion_literal": "ocho menos diez" }
+      ],
+
+      "apoyos": ["visual (6 relojes analógicos con manecillas claras)", "fórmula 'Son las…' preescrita en cada hueco como soporte sintáctico", "feedback inmediato de la plataforma"],
+
+      "descripcion_dinamica": "Pantalla con 6 relojes analógicos distribuidos en cuadrícula 3×2. Debajo de cada reloj, la fórmula 'Son las' está preescrita y un campo de texto vacío permite escribir la hora en letras. El alumno escribe y la plataforma valida la ortografía y el formato.",
+
+      "secciones_aplicables": ["comunicacion"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — producción escrita de la hora como cierre del bloque tras práctica oral (libro + U3-mc-004 + U3-mc-014)",
+        "comunicacion.md — fijación ortográfica de la fórmula horaria, útil antes de la evaluación sumativa U3-mc-010 (ej. 9)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión papel: imprimir los 6 relojes y escribir la hora a mano",
+        "Ampliación: para cada reloj, escribir además una actividad cotidiana en esa hora (a las seis y veinte: clase de inglés)",
+        "Variante en parejas: un alumno dicta la hora, el otro escribe y se comprueba en la pantalla"
+      ],
+
+      "consideraciones": [
+        "Política de tildes de la plataforma desconocida: las soluciones no llevan tildes ('seis', 'ocho', 'cuatro') — caso no problemático aquí",
+        "Caso 3:45 = 'cuatro menos cuarto' (no 'tres y cuarenta y cinco') exige que el alumno haya internalizado la inversión — error frecuente; conviene practicarlo antes",
+        "Caso 5:05 = 'cinco y cinco' usa el numeral 'cinco' dos veces consecutivas (hora + minutos), peculiar pero gramaticalmente correcto",
+        "El ejercicio no incluye 'en punto' ni 'la una' (singular) — cobertura parcial; complementar para programa completo"
+      ],
+
+      "gestion_aula": "Uso recomendado: tras U3-mc-014 (Ej. 4, CO de la hora) como pareja productiva (EE). Tiempo medio (5-8 min): viable como deberes o cierre de sesión. La autocorrección permite que el alumno reciba feedback ortográfico inmediato sin sobrecarga del docente.",
+
+      "observaciones": "Quinta y última captura inventariada de Juega y aprende U3. Cierra la serie con producción escrita tras dos recepciones (Ej. 1-3 vocabulario, Ej. 4 hora oral). Refuerzo individual asíncrono ideal antes de la evaluación sumativa (U3-mc-010) que en el ej. 9 pide exactamente la misma tarea con 4 relojes."
+    },
+
+    {
+      "id": "U3-mc-016",
+      "ejercicio": "Vídeo Blinklearning",
+      "origen": "plataforma_blinklearning",
+      "ambito": "U3",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 3 - La familia",
+      "secciones_aplicables": ["comunicacion"],
+      "verificacion_pendiente": true,
+      "observaciones": "Entrada mínima — completar título oficial, duración, situación comunicativa, personajes y enlace cuando se disponga del dato. Material fijo presente en cada unidad según el manual de estilo §2.1; al menos uno por unidad anclado al bloque inicial de Comunicación."
+    }
+  ],
+
+  "fuentes_transversales": [
+    {
+      "id": "FT-cuaderno-juegos-NC1",
+      "archivo": "Nuevocompaneros1gamificacion_117959.pdf",
+      "obra": "Cuaderno de juegos NC1",
+      "autores": ["Belén García-Alifa", "Javier Villatoro"],
+      "editorial": "SGEL",
+      "anio": 2021,
+      "paginas_totales": 56,
+      "ambito_real": "transversal U1-U9 + 2 repasos",
+      "descripcion": "Cuaderno publicado de juegos didácticos complementarios al manual NC1, con 19 juegos distribuidos en las 9 unidades (2 juegos por unidad en general) más 2 actividades globales de repaso. Cada juego incluye instrucciones, vinculación al libro del alumno, materiales recortables si aplica y sección 'Más ideas' con variantes. NO es un sistema de gamificación (no hay insignias/puntos/niveles); el nombre del archivo 'Nuevocompaneros1gamificacion_117959.pdf' es engañoso — se sugiere renombrar a 'cuaderno-juegos-NC1.pdf' (decisión del autor).",
+      "indice_completo": [
+        { "unidad": "U1", "juego": "El trébol", "pagina": 4 },
+        { "unidad": "U1", "juego": "El matamoscas", "pagina": 6 },
+        { "unidad": "U2", "juego": "La pelota encadenada", "pagina": 9 },
+        { "unidad": "U2", "juego": "Tira los dados", "pagina": 10 },
+        { "unidad": "U3", "juego": "Ronda familiar", "pagina": 12, "id_si_inventariado": "U3-mc-008" },
+        { "unidad": "U3", "juego": "Batalla naval", "pagina": 17, "id_si_inventariado": "U3-mc-009" },
+        { "unidad": "U4", "juego": "¿Me conoces?", "pagina": 19 },
+        { "unidad": "U4", "juego": "Bingonevera", "pagina": 23 },
+        { "unidad": "U5", "juego": "Pictionary", "pagina": 29 },
+        { "unidad": "U5", "juego": "La casa de tus sueños", "pagina": 31 },
+        { "unidad": "Repaso 1", "juego": "Actividad global 1 — La fiesta", "pagina": 32 },
+        { "unidad": "U6", "juego": "Busca tu sitio", "pagina": 36 },
+        { "unidad": "U6", "juego": "Conviértete", "pagina": 38 },
+        { "unidad": "U7", "juego": "Dibujo encadenado", "pagina": 39 },
+        { "unidad": "U7", "juego": "Calendario indiscreto", "pagina": 40 },
+        { "unidad": "U8", "juego": "Twister", "pagina": 42 },
+        { "unidad": "U8", "juego": "El mentiroso", "pagina": 44 },
+        { "unidad": "U9", "juego": "La pasarela", "pagina": 46 },
+        { "unidad": "U9", "juego": "La telaraña", "pagina": 48 },
+        { "unidad": "Repaso final", "juego": "Actividad global 2 — Agencia de viajes", "pagina": 49 }
+      ],
+      "nota_inventarios_futuros": "Cuando se procesen los inventarios de material complementario de U4-U9, esta misma fuente puede reutilizarse: cada juego encaja directamente como ítem en el inventario de su unidad correspondiente, manteniendo los campos obra_origen y archivo_fuente. El bloque fuentes_transversales puede replicarse en cada unidad o convertirse en archivo separado nc1-fuentes-transversales.json."
+    }
+  ]
+}
