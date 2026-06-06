@@ -284,6 +284,8 @@ Ejemplos:
 
 **Tipografía del título individual de tarjeta.** Cuando el nombre concreto de una tarjeta (de destreza, de estrategia, de vocabulario nombrada) se **cita en el cuerpo del docente como referencia individual** — distinta de la mención canónica del tipo de la tabla anterior —, va siempre en cursiva con mayúscula inicial (título-case): *Caza el dato*, *Escucha en tres modos*, *Saludar y despedirse*, *Presentarse y datos personales*. Nunca en ALL CAPS — esa forma queda reservada a rótulos imperativos del docente y a lemas de insignia (§4.2).
 
+**Campo semántico — sin etiquetas internas de proceso.** El campo semántico de las Tarjetas de Vocabulario es siempre el **dominio léxico** (*familia, profesiones, colores, asignaturas, parentesco*…), nunca una **etiqueta interna de proceso** (*nuevo, anteriores, Caja N, sesión X, recién introducido*…). Las etiquetas de proceso describen estado o ubicación del material en el sistema editorial, no su contenido semántico. Reescribir omitiéndolas: *Tarjetas de Vocabulario - escuela*, no *Tarjetas de Vocabulario nuevo de la Caja 1*. Caso detectado en U3 Destrezas y U3 Comunicación.
+
 ### 6.2 Nomenclatura interna que NO debe aparecer en `final/`
 
 | Nomenclatura interna | Razón | Sustituir por |
@@ -719,6 +721,7 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-06-01 | §2.1 — subsección nueva *Evaluación — conexión a unidad siguiente*: una sola frase escueta al cierre de *AUTOEVALUACIÓN Y CIERRE* con formato canónico (*Cierre con la conexión a la **unidad X+1**: en la próxima unidad…*). Única referencia anticipatoria permitida en cualquier `final/`. Codificación desde patrón cumplido en U1E + U3E. |
 | 2026-06-05 | §2.1 — subsección nueva *Evaluación — estructura específica*: codifica que Evaluación NO usa apertura con Insignia gamificada, usa headers `### Versión A — ...` y `### Versión B — ...` (no `### Ejercicios X-Y`), y NO lleva *ENTREGA DE INSIGNIA*. Casos canónicos U1E + U3E. Cierra brecha que el piloto de `/check-final` reveló al producir falsos positivos sobre estructura. |
 | 2026-06-05 | §2.1 — subsección nueva *Evaluación — rótulos como etiquetas de contenido*: codifica que los rótulos de Evaluación son etiquetas del contenido o destreza sin verbo (*VERBO SER*, *DATOS PERSONALES*, *AUTOEVALUACIÓN Y CIERRE*), en MAYÚSCULAS, no imperativos. Excepción explícita al criterio §4.2 rótulos imperativos. Caso canónico U1E + U3E. Cierra brecha que el piloto de `/check-final` reveló. |
+| 2026-06-06 | §6.1 — nota nueva: campo semántico sin etiquetas internas de proceso. El campo de Tarjetas de Vocabulario es siempre el dominio léxico (familia, profesiones, asignaturas…), nunca etiqueta de proceso (nuevo, anteriores, Caja N, sesión X). Caso detectado en U3 Destrezas y Comunicación. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
