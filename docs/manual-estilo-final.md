@@ -140,8 +140,9 @@ Cada `unidades/U[X]/final/evaluacion.md` cierra dentro del rótulo *AUTOEVALUACI
 A diferencia del resto de secciones, `unidades/U[X]/final/evaluacion.md` **NO usa la apertura canónica con Insignia gamificada** (no lleva insignia propia). La estructura es:
 
 - **Apertura**: solo *Objetivo* (sin *Insignia gamificada*, sin *Imprimir ficha*, sin *Insignia y obtención*).
-- **Headers de bloque**: `### Versión A — [descripción breve]` y `### Versión B — [descripción breve]` (no `### Ejercicios X-Y`).
-- **Cierre**: rótulo *AUTOEVALUACIÓN Y CIERRE* con la conexión a la unidad siguiente (ver subsección *Evaluación — conexión a unidad siguiente*). **Sin rótulo *ENTREGA DE INSIGNIA***.
+- **Headers de bloque**: dos versiones canónicas en este orden — `### Versión A — Deberes y revisión en clase` y `### Versión B — En clase` (no `### Ejercicios X-Y`).
+- **Autoevaluación y cierre**: van al final de la **Versión A** (conexión a la unidad siguiente — ver subsección *Evaluación — conexión a unidad siguiente*). **Sin rótulo *ENTREGA DE INSIGNIA***.
+- **Cierre de la Versión B**: remite a la Versión A con la fórmula canónica *"Igual que en la Versión A."*
 
 **Casos canónicos:** U1E, U3E.
 
@@ -726,6 +727,7 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-06-06 | §6.1 — nota nueva: campo semántico sin etiquetas internas de proceso. El campo de Tarjetas de Vocabulario es siempre el dominio léxico (familia, profesiones, asignaturas…), nunca etiqueta de proceso (nuevo, anteriores, Caja N, sesión X). Caso detectado en U3 Destrezas y Comunicación. |
 | 2026-06-06 | §10.1 — bullet nuevo: jerga didáctica metodológica en cuerpo o títulos (scaffolding, anticipación de hipótesis, mantra de la regla, reparar la conversación, weaning off…). El cuerpo del docente instruye en lengua de aula, no describe la estrategia subyacente. Caso detectado en U3 Gramática, Comunicación y Cultura. |
 | 2026-06-06 | §10.1 — bullet nuevo: listas o pasos que duplican contenido de una tarjeta o píldora ya disponible. El cuerpo remite al material editorial, no reproduce el desglose. Lógica equivalente a §10.6 aplicada al material editorial propio del proyecto, no al libro del alumno. Caso detectado en U3 Destrezas. |
+| 2026-06-06 | §2.1 *Evaluación — estructura específica* — refuerzo: fijados nombres canónicos exactos *Versión A — Deberes y revisión en clase* y *Versión B — En clase*, orden estricto A → B, y fórmula canónica de cierre de la Versión B (*"Igual que en la Versión A."*). Codificación desde patrón cumplido en U1E + U3E. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
