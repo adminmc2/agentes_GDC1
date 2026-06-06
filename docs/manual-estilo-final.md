@@ -106,7 +106,13 @@ Las tarjetas de estrategia de Comunicación se referencian con el formato canón
 
 Ejemplo: *Imprimir tarjeta de estrategia—interacción oral—*Saludar y despedirse**.
 
-La destreza va en minúscula y precede al título; el título va en cursiva. Tres componentes separados por guion largo (em-dash). La línea va al inicio del bloque donde se usa la tarjeta, junto al resto de líneas *Imprimir*.
+**Los tres componentes son obligatorios** y van en este orden:
+
+1. La cadena fija *Imprimir tarjeta de estrategia*.
+2. La **destreza** en minúscula (*interacción oral*, *mediación oral*, *expresión escrita*, *reflexión intercultural*…). **Obligatoria**: si la línea omite este componente (*"Imprimir tarjeta de estrategia—Comparar sin jerarquizar"*), está mal formada.
+3. El **título canónico** de la tarjeta en cursiva título-case, **sin prefijos descriptivos de subtipo**. Correcto: *Hablar de la familia*. Incorrecto: *Esquema comunicativo: hablar de la familia* (*Esquema comunicativo* describe el tipo de cara B en la spec interna, no es parte del título de la tarjeta).
+
+Tres componentes separados por guion largo (em-dash). La línea va al inicio del bloque donde se usa la tarjeta, junto al resto de líneas *Imprimir*.
 
 #### Comunicación — referencias a las caras de la tarjeta en el cuerpo
 
@@ -728,6 +734,7 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-06-06 | §10.1 — bullet nuevo: jerga didáctica metodológica en cuerpo o títulos (scaffolding, anticipación de hipótesis, mantra de la regla, reparar la conversación, weaning off…). El cuerpo del docente instruye en lengua de aula, no describe la estrategia subyacente. Caso detectado en U3 Gramática, Comunicación y Cultura. |
 | 2026-06-06 | §10.1 — bullet nuevo: listas o pasos que duplican contenido de una tarjeta o píldora ya disponible. El cuerpo remite al material editorial, no reproduce el desglose. Lógica equivalente a §10.6 aplicada al material editorial propio del proyecto, no al libro del alumno. Caso detectado en U3 Destrezas. |
 | 2026-06-06 | §2.1 *Evaluación — estructura específica* — refuerzo: fijados nombres canónicos exactos *Versión A — Deberes y revisión en clase* y *Versión B — En clase*, orden estricto A → B, y fórmula canónica de cierre de la Versión B (*"Igual que en la Versión A."*). Codificación desde patrón cumplido en U1E + U3E. |
+| 2026-06-06 | §2.1 *Comunicación — tarjetas de estrategia* — refuerzo: los tres componentes del formato canónico (cadena fija + destreza + título) son obligatorios. La destreza no es opcional (omisión = línea mal formada). El título canónico va en cursiva título-case, sin prefijos descriptivos de subtipo (*Hablar de la familia*, no *Esquema comunicativo: hablar de la familia*). Casos detectados en U3 Cultura (sin destreza) y U3 Comunicación (con prefijo). V3 + V4 del lote U3 con consulta previa a `tarjetas-estrategia-comunicacion-pautas.md` de repo B. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
