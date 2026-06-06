@@ -1,0 +1,1239 @@
+{
+  "unidad": "U2",
+  "actualizado": "2026-05-28",
+  "fuente_carpeta": "unidades/U2/recursos/",
+  "nota": "Inventario del material complementario de U2 ('Países de habla hispana'), descrito como conjunto de ejercicios/dinámicas independientes (no como archivos). El campo archivo_fuente indica el contenedor físico. El chat principal decide la integración en final/. El extractor no integra.",
+  "esquema_version": "2.0",
+  "campos_descriptores": {
+    "tipo_dinamica": "lúdica | competitiva | cooperativa | reflexiva | investigacion | presentacion | mecanizacion | cinetica | reconocimiento",
+    "categoria_editorial": "diapositivas_aula | juego_lexico | juego_ortografico | tarea_interaccion | tarea_investigacion | dinamica_movimiento | concurso_cultural | ejercicio_proyeccion | evaluacion | gamificacion | itinerario | captura_plataforma | otro",
+    "competencias": "CO comprension oral | CE comprension escrita | EO expresion oral | EE expresion escrita | IO interaccion oral | MED mediacion",
+    "secciones_aplicables": "vocabulario | gramatica | comunicacion | destrezas | cultura | evaluacion | reflexion | transversal"
+  },
+  "items": [
+    {
+      "id": "U2-mc-001",
+      "ejercicio": "El plural de nombres y adjetivos — presentación proyectable",
+      "tipo": "presentacion_aula",
+      "formato_soporte": "presentacion_pptx",
+      "archivo_fuente": "UNIDAD2NUEVOCOMPANEROS.pptx",
+      "paginas_en_fuente": "diapositivas 1-8",
+      "origen": "editorial_SGEL",
+      "ambito": "U2",
+      "categoria_editorial": "diapositivas_aula",
+      "tipo_dinamica": ["presentacion", "mecanizacion", "reconocimiento"],
+
+      "duracion_estimada": "15-20 min",
+      "agrupamiento": "clase entera (presentación guiada por el docente)",
+      "agrupamiento_detalle": "El docente proyecta y conduce; los alumnos observan las transformaciones singular → plural, deducen los patrones de formación del plural (-s, -es) y la concordancia con adjetivos, y verbalizan los ejemplos. La diapo 8 funciona como tabla síntesis para inducir la regla con el grupo.",
+      "materiales_necesarios": ["proyector o pantalla", "archivo .pptx (PowerPoint, Keynote o equivalente)"],
+
+      "objetivo_didactico": "Presentar el plural de nombres y adjetivos en español, ejemplificando los dos patrones básicos (-s tras vocal átona, -es tras consonante o vocal tónica), la concordancia sustantivo-adjetivo en número y los casos especiales (palabras invariables como 'joven' que adoptan tilde diacrítica en plural, plural en 'jóvenes').",
+
+      "competencias": ["CO (escuchar al docente)", "EO (repetir, leer en voz alta los sintagmas)", "CE (leer las parejas singular/plural)"],
+
+      "funciones_comunicativas": [
+        "describir objetos y personas con sintagmas en singular y plural",
+        "formar sintagmas nominales con artículo + sustantivo + adjetivo en concordancia de número"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "sustantivos de apoyo: teléfono, casa, cuaderno, niña, estudiante, profesor",
+          "adjetivos: nuevo, grande, azul, pequeño, joven, americana"
+        ],
+        "gramatica_explicita": [
+          "formación del plural de sustantivos: +s tras vocal átona (teléfono → teléfonos, casa → casas, cuaderno → cuadernos, niña → niñas), +es tras consonante (profesor → profesores, joven → jóvenes)",
+          "formación del plural de adjetivos en paralelo (nuevo → nuevos, grande → grandes, azul → azules, pequeña → pequeñas)",
+          "concordancia de número entre sustantivo y adjetivo en el sintagma nominal",
+          "concordancia con artículo definido (el/la → los/las)",
+          "adjetivos invariables en género (grande, azul, joven, estudiante) que sí varían en número",
+          "tilde diacrítica en 'joven' → 'jóvenes' por desplazamiento del acento prosódico"
+        ],
+        "fonetica_ortografia": [
+          "acento prosódico y tilde en palabras llanas terminadas en -s tras añadir el morfema de plural (joven → jóvenes)"
+        ]
+      },
+
+      "apoyos": ["visual fuerte (cada par singular/plural en una diapositiva con animación de aparición progresiva)", "auditivo (modelo oral del docente)", "escrito (sintagma completo con artículo + sustantivo + adjetivo)"],
+
+      "descripcion_dinamica": "Presentación de 8 diapositivas. La primera es portada ('NUEVO COMPAÑEROS — El plural de nombres y adjetivos'). Las diapositivas 2-7 muestran cada una un sintagma nominal en singular contrastado con su plural mediante animación progresiva (aparece primero el artículo, luego el sustantivo, luego el adjetivo, primero en singular y después en plural). Los seis pares son: 'el teléfono nuevo' / 'los teléfonos nuevos', 'la casa grande' / 'las casas grandes', 'el cuaderno azul' / 'los cuadernos azules', 'la niña pequeña' / 'las niñas pequeñas', 'el estudiante joven' / 'los estudiantes jóvenes', 'la estudiante americana' / 'las estudiantes americanas'. La diapositiva 8 funciona como cuadro síntesis con cuatro celdas (singular/plural × masculino/femenino) usando dos ejemplos consolidados: 'el niño pequeño / los niños pequeños / la niña pequeña / las niñas pequeñas' y 'el profesor joven / los profesores jóvenes / la profesora joven / las profesoras jóvenes'.",
+
+      "estructura_interna": [
+        "Slide 1 — portada 'Nuevo Compañeros — El plural de nombres y adjetivos'",
+        "Slide 2 — 'el teléfono nuevo' / 'los teléfonos nuevos' (patrón +s, masc.)",
+        "Slide 3 — 'la casa grande' / 'las casas grandes' (patrón +s, fem., adj. invariable en género)",
+        "Slide 4 — 'el cuaderno azul' / 'los cuadernos azules' (patrón +s en sust., +es en adj. tras consonante)",
+        "Slide 5 — 'la niña pequeña' / 'las niñas pequeñas' (patrón +s, fem., concordancia plena)",
+        "Slide 6 — 'el estudiante joven' / 'los estudiantes jóvenes' (sust. invariable en género + adj. con tilde diacrítica en plural)",
+        "Slide 7 — 'la estudiante americana' / 'las estudiantes americanas' (mismo sust. en fem. + adj. de nacionalidad)",
+        "Slide 8 — tabla síntesis 4 celdas (SINGULAR/PLURAL × MASCULINO/FEMENINO) con 'niño pequeño' y 'profesor joven'"
+      ],
+
+      "secciones_aplicables": ["gramatica", "vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "gramatica.md — bloque 'plural de nombres y adjetivos' como recurso principal de presentación inductiva",
+        "gramatica.md — apoyo visual para presentar el caso especial de 'joven' / 'jóvenes' (acento prosódico y tilde)",
+        "vocabulario.md — refuerzo léxico transversal (objetos de clase, adjetivos calificativos, nacionalidades)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Inducción: ocultar la columna del plural y pedir a los alumnos que la deduzcan antes de mostrarla por animación",
+        "Ampliación: tras la diapo 8, proponer más ejemplos del entorno inmediato del aula ('la mochila roja / las mochilas rojas', 'el bolígrafo azul / los bolígrafos azules')",
+        "Variante escrita: tras la presentación, pedir a los alumnos que escriban 5 sintagmas singular/plural sobre sus propios objetos",
+        "Combinación con U2-mc-005 (Tira los dados) como ejercicio de producción tras la presentación"
+      ],
+
+      "consideraciones": [
+        "Nombre del archivo ('UNIDAD2NUEVOCOMPANEROS.pptx') es engañoso: cubre solo el subtema gramatical del plural, no toda U2 (ni países, ni nacionalidades, ni ordinales, ni demostrativos)",
+        "Posible existencia de .pptx hermanos para otros subtemas de U2 (nacionalidades, días, ordinales, asignaturas, demostrativos, números 21-100) aún no aportados a recursos/",
+        "La presentación no aborda el plural de palabras terminadas en -z (lápiz → lápices), en consonante con vocal tónica final (rubí → rubíes) ni en -s (lunes → lunes) — pueden requerir ejemplificación complementaria"
+      ],
+
+      "gestion_aula": "Preparación: comprobar que el .pptx abre con animaciones (las parejas singular/plural aparecen por clic). Inicio (2 min): anunciar el tema y activar conocimientos previos sobre singular/plural en la L1 del grupo. Desarrollo (10-15 min): proyectar cada par, modelar pronunciación, pedir repetición coral; inducir el patrón antes de mostrar la siguiente diapositiva. Cierre (3-5 min): leer la tabla síntesis de la diapo 8 y verbalizar la regla con el grupo ('si termina en vocal, +s; si termina en consonante, +es').",
+
+      "observaciones": "Producto editorial cerrado; útil tal cual como presentación de la regla gramatical nuclear de U2. La diapo-síntesis (8) es el recurso de mayor densidad pedagógica. Combina especialmente bien con el ejercicio U2-mc-005 (Tira los dados) del Cuaderno de juegos NC1, que ejercita el mismo contenido en formato lúdico."
+    },
+
+    {
+      "id": "U2-mc-002",
+      "ejercicio": "Crucigrama de las capitales y las nacionalidades",
+      "tipo": "tarea_investigacion",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "NuevoCompa1_Actividades2_794524.pdf",
+      "paginas_en_fuente": "1-2",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra 2 (NC1, SGEL)",
+      "ambito": "U2",
+      "categoria_editorial": "tarea_investigacion",
+      "tipo_dinamica": ["investigacion", "cooperativa", "reconocimiento"],
+
+      "duracion_estimada": "20-30 min",
+      "agrupamiento": "individual o parejas con apoyo digital",
+      "agrupamiento_detalle": "Cada alumno o pareja recibe la ficha del crucigrama y dispone de un dispositivo con acceso a internet para buscar las capitales y nacionalidades de los países hispanoamericanos solicitados. Al terminar se corrige en plenario.",
+      "materiales_necesarios": ["ficha imprimible con el crucigrama (p. 2)", "acceso a internet o mapa de Hispanoamérica del libro p. 12", "bolígrafo o lápiz"],
+
+      "objetivo_didactico": "Conocer las capitales de algunos países de América del Sur y Central, y repasar la formación y ortografía de los adjetivos de nacionalidad estudiados en U2, integrando la consulta autónoma de fuentes (internet o el propio mapa de la p. 12 del libro del alumno).",
+
+      "competencias": ["CE (instrucciones, definiciones)", "EE (escribir en el crucigrama)", "MED (búsqueda y selección de info en L2)", "reconocimiento gráfico-léxico (cruce de letras)"],
+
+      "funciones_comunicativas": [
+        "identificar la capital de un país",
+        "identificar la nacionalidad de los habitantes de un país"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "8 capitales hispanoamericanas: San Salvador, La Habana, Santiago de Chile, Tegucigalpa, Buenos Aires, Managua, San José, Guatemala",
+          "6 adjetivos de nacionalidad: puertorriqueño, costarricense, peruano, ecuatoriano, panameño, paraguayo"
+        ],
+        "gramatica_explicita": [
+          "adjetivos de nacionalidad en masculino singular (terminaciones -eño, -ano, -ense, -ayo)",
+          "ortografía de mayúsculas en topónimos (capitales) frente a minúsculas en adjetivos de nacionalidad",
+          "uso de la ñ en gentilicios (puertorriqueño, panameño)"
+        ],
+        "fonetica_ortografia": [
+          "tildes en topónimos compuestos: San José",
+          "ortografía de combinaciones consonánticas complejas (Tegucigalpa, costarricense)"
+        ]
+      },
+
+      "apoyos": ["visual (cuadrícula del crucigrama con numeración)", "digital (buscador internet)", "cartográfico (mapa de la p. 12 del libro del alumno como apoyo)"],
+
+      "descripcion_dinamica": "El docente entrega la ficha del crucigrama con 14 definiciones (8 horizontales, 6 verticales). Cada definición pide o bien la capital de un país hispanoamericano ('Capital de Cuba', 'Capital de Honduras'…) o bien el gentilicio de un país ('Ciudadano de Puerto Rico', 'Ciudadano de Perú'…). Los alumnos consultan internet (o el mapa de Hispanoamérica del libro p. 12) para resolver las casillas. Las soluciones se cruzan ortográficamente en la cuadrícula, lo que sirve de autocorrección parcial.",
+
+      "soluciones": {
+        "horizontales": {
+          "3": "puertorriqueño",
+          "5": "La Habana",
+          "6": "peruano",
+          "9": "Tegucigalpa",
+          "11": "Managua",
+          "12": "ecuatoriano",
+          "13": "San José",
+          "14": "Guatemala"
+        },
+        "verticales": {
+          "1": "San Salvador",
+          "2": "costarricense",
+          "4": "Santiago de Chile",
+          "7": "Buenos Aires",
+          "8": "panameño",
+          "10": "paraguayo"
+        }
+      },
+
+      "secciones_aplicables": ["vocabulario", "cultura", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — bloque 'países hispanohablantes y adjetivos de nacionalidad' como ejercicio de consolidación tras la presentación",
+        "cultura.md — apertura cultural a las capitales y referentes geográficos hispanoamericanos",
+        "destrezas.md — práctica de búsqueda autónoma en español (estrategia de aprendizaje)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión sin internet: entregar el mapa de la p. 12 del libro como única fuente",
+        "Versión competitiva: cronómetro, gana el primer alumno o pareja con todo correcto",
+        "Ampliación cultural: tras resolver, cada alumno elige un país e investiga un dato más (moneda, plato típico, cantante famoso)",
+        "Versión digital: digitalizar el crucigrama en un formulario online o en una herramienta tipo CrosswordLabs"
+      ],
+
+      "consideraciones": [
+        "La instrucción del crucigrama menciona 'América del Sur' pero el listado incluye países de Centroamérica y Caribe (Cuba, Honduras, Nicaragua, Costa Rica, Guatemala, El Salvador, Panamá, Puerto Rico): conviene aclarar al alumnado que cubre toda Hispanoamérica",
+        "Requiere conectividad o el libro del alumno a mano — verificar antes de imprimir",
+        "Los gentilicios -eño y -ense pueden no estar todos presentados explícitamente en la unidad — verificar contra el inventario canónico de U2",
+        "El crucigrama mezcla topónimos (con mayúscula) y gentilicios (con minúscula): conviene recordar la convención ortográfica antes de empezar"
+      ],
+
+      "gestion_aula": "Preparación: imprimir 1 ficha por alumno o pareja; verificar conectividad o tener a mano libros del alumno. Inicio (3 min): repartir, recordar la regla ortográfica mayúscula/minúscula, modelar una búsqueda. Desarrollo (15-20 min): trabajo autónomo o en pareja. Cierre (5-10 min): corrección en plenario casilla a casilla, anotando en la pizarra las soluciones y comentando la formación de cada gentilicio (-ano, -eño, -ense, -ayo).",
+
+      "observaciones": "Ejercicio integrador que combina vocabulario (capitales + nacionalidades), cultura (mapa de Hispanoamérica) y estrategia de búsqueda. Es el primer ejercicio del PDF de Actividades Extra 2 y el de mayor carga cultural. El ejercicio U2-mc-005 (Evaluación U2) también pide nacionalidades (ej. 1), por lo que ambos pueden encadenarse como práctica + control."
+    },
+
+    {
+      "id": "U2-mc-003",
+      "ejercicio": "El precio justo",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "NuevoCompa1_Actividades2_794524.pdf",
+      "paginas_en_fuente": "3-4",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra 2 (NC1, SGEL)",
+      "ambito": "U2",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["lúdica", "competitiva", "cooperativa_intragrupo"],
+
+      "duracion_estimada": "20-30 min",
+      "agrupamiento": "parejas o grupos pequeños",
+      "agrupamiento_detalle": "El profesor recorta las 16 tarjetas (4×4) con objeto + precio. En cada turno, un miembro del grupo o pareja recibe una tarjeta y pregunta '¿Cuánto cuesta un/una X?'; el resto debe adivinar la cifra exacta a partir de pistas 'más / menos' que va dando quien tiene la tarjeta.",
+      "materiales_necesarios": ["las 16 tarjetas recortables (p. 4 del PDF)", "tijeras (para el profesor previo a la sesión)"],
+
+      "objetivo_didactico": "Repasar los números del 1 al 100 (especialmente los del 21 al 100 introducidos en U2) en situación comunicativa real de pregunta-respuesta sobre precios, ejercitando la interacción oral con las funciones 'preguntar el precio' y 'orientar al interlocutor (más/menos)'.",
+
+      "competencias": ["CO (escuchar las cifras propuestas por el compañero)", "EO (decir cifras y emitir 'más'/'menos')", "IO (negociar y adivinar la cifra correcta)"],
+
+      "funciones_comunicativas": [
+        "preguntar el precio de un objeto ('¿Cuánto cuesta…?')",
+        "decir un precio en euros",
+        "orientar al interlocutor en una negociación de cifras ('más', 'menos', '¡correcto!')",
+        "responder afirmativa o negativamente sobre exactitud"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "16 objetos y servicios con precio: bolígrafo (6 €), libro de Matemáticas (43 €), silla (39 €), reloj (85 €), mochila (93 €), entrada a la piscina (4 €), entrada al zoo (18 €), entrada al cine (10 €), entrada a la discoteca (15 €), diccionario de español (17 €), clase de Informática (25 €), CD (16 €), diccionario de francés (35 €), diccionario de inglés (32 €), libro de Ciencias (36 €), pinturas (13 €)",
+          "campos léxicos cruzados: objetos de clase (bolígrafo, silla, mochila, diccionarios, libros, pinturas), tiempo libre (entradas a piscina/zoo/cine/discoteca), asignaturas (Matemáticas, Informática, Ciencias)",
+          "moneda: euro/euros"
+        ],
+        "gramatica_explicita": [
+          "presente 3ª pers. sing. del verbo 'costar' (cuesta)",
+          "interrogativo 'cuánto'",
+          "artículo indefinido un/una en concordancia con el sustantivo (un bolígrafo, una silla, una entrada)",
+          "comparativos elípticos: 'más', 'menos' (sin segundo término)"
+        ],
+        "fonetica_ortografia": [
+          "pronunciación de números compuestos del 21 al 99 (treinta y dos, ochenta y cinco, noventa y tres)",
+          "entonación interrogativa y entonación de aproximación ('más', 'menos')"
+        ]
+      },
+
+      "apoyos": ["visual (tarjeta con objeto y precio)", "auditivo (interacción oral)", "interpersonal"],
+
+      "descripcion_dinamica": "El profesor recorta previamente las 16 tarjetas (cada una con un objeto/servicio y su precio en euros). En cada turno, un miembro del grupo o pareja recibe una tarjeta y pregunta '¿Cuánto cuesta un/una [objeto]?' a sus compañeros. Estos proponen cifras una a una; quien tiene la tarjeta responde 'más' (si la cifra es inferior al precio) o 'menos' (si es superior) hasta que aciertan, momento en el que dice '¡Correcto!'. Se rotan los roles de modo que todos pasen por preguntar y responder. Gana quien adivine más precios o adivine en el menor número de intentos.",
+
+      "items_ejercicio": [
+        { "n": 1, "objeto": "Bolígrafo", "precio_eur": 6 },
+        { "n": 2, "objeto": "Libro de Matemáticas", "precio_eur": 43 },
+        { "n": 3, "objeto": "Silla", "precio_eur": 39 },
+        { "n": 4, "objeto": "Reloj", "precio_eur": 85 },
+        { "n": 5, "objeto": "Mochila", "precio_eur": 93 },
+        { "n": 6, "objeto": "Entrada a la piscina", "precio_eur": 4 },
+        { "n": 7, "objeto": "Entrada al zoo", "precio_eur": 18 },
+        { "n": 8, "objeto": "Entrada al cine", "precio_eur": 10 },
+        { "n": 9, "objeto": "Entrada a la discoteca", "precio_eur": 15 },
+        { "n": 10, "objeto": "Diccionario de español", "precio_eur": 17 },
+        { "n": 11, "objeto": "Clase de Informática", "precio_eur": 25 },
+        { "n": 12, "objeto": "CD", "precio_eur": 16 },
+        { "n": 13, "objeto": "Diccionario de francés", "precio_eur": 35 },
+        { "n": 14, "objeto": "Diccionario de inglés", "precio_eur": 32 },
+        { "n": 15, "objeto": "Libro de Ciencias", "precio_eur": 36 },
+        { "n": 16, "objeto": "Pinturas", "precio_eur": 13 }
+      ],
+
+      "secciones_aplicables": ["comunicacion", "vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — bloque 'números del 21 al 100' practicado en uso comunicativo (no solo recitado)",
+        "comunicacion.md — funciones 'preguntar el precio' y 'orientar (más/menos)' en interacción real",
+        "vocabulario.md — reactivación cruzada de objetos de clase, tiempo libre y asignaturas"
+      ],
+
+      "adaptaciones_posibles": [
+        "Subir dificultad: precios decimales o de 3 cifras (centenas), si el grupo ya domina 1-100",
+        "Variante por equipos en plenario: el docente lleva la tarjeta y los equipos compiten por adivinar",
+        "Versión inversa: el alumno conoce el objeto pero no el precio, y debe deducirlo por preguntas tipo '¿es más de 20 euros?'",
+        "Producción escrita asociada: al final, cada alumno redacta tres preguntas/respuestas en forma de diálogo",
+        "Sustitución de objetos por otros más actuales (cargador USB, suscripción streaming) si el grupo lo demanda"
+      ],
+
+      "consideraciones": [
+        "Precios pensados para Europa (euros) — si el grupo está en Hispanoamérica, conviene adaptar a la moneda local manteniendo cifras del 1 al 100",
+        "Algunos precios son poco realistas para la fecha actual (CD a 16 €, entrada al cine a 10 €) — actualizable a discreción del docente",
+        "El verbo 'costar' no está sistematizado en U2 (es léxico, no morfología) — usar la fórmula fija '¿Cuánto cuesta…?' como bloque",
+        "Necesita preparación previa: recortar las 16 tarjetas (no muy laboriosa pero imprescindible)",
+        "Léxico mixto: 'entrada a la discoteca' o 'CD' pueden parecer datados al alumnado actual"
+      ],
+
+      "gestion_aula": "Preparación: imprimir y recortar las 16 tarjetas (1 juego por grupo o pareja). Inicio (3 min): formar grupos o parejas, recordar fórmulas '¿Cuánto cuesta…?', 'más', 'menos', '¡correcto!', modelar un ejemplo con el grupo. Desarrollo (15-20 min): rotación de turnos en cada grupo/pareja; el docente circula corrigiendo pronunciación de números compuestos. Cierre (5 min): puesta en común con los precios más sorprendentes, repaso de los números que generaron más dudas.",
+
+      "observaciones": "Es el ejercicio más comunicativo del PDF y el de mayor uso de números 21-100 en contexto real. Excelente complemento del bloque numérico de U2; combina especialmente bien con el ejercicio 8 de la evaluación (U2-mc-005), donde los números se trabajan en escritura."
+    },
+
+    {
+      "id": "U2-mc-004",
+      "ejercicio": "Yo soy…",
+      "tipo": "tarea_escritura",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "NuevoCompa1_Actividades2_794524.pdf",
+      "paginas_en_fuente": "5-6",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra 2 (NC1, SGEL)",
+      "ambito": "U2",
+      "categoria_editorial": "ejercicio_proyeccion",
+      "tipo_dinamica": ["reflexiva", "presentacion", "mecanizacion"],
+
+      "duracion_estimada": "25-35 min",
+      "agrupamiento": "individual con puesta en común final",
+      "agrupamiento_detalle": "Cada alumno recibe la ficha con tres fotografías de jóvenes y un texto modelo. Trabaja individualmente redactando dos presentaciones (una por cada fotografía sin texto). Cierre en plenario con lectura de algunas presentaciones.",
+      "materiales_necesarios": ["ficha con 3 fotografías + texto modelo (p. 6 del PDF)", "bolígrafo"],
+
+      "objetivo_didactico": "Repasar los elementos gramaticales estudiados en U2 (género y número en nombres y adjetivos, formas plurales del verbo 'ser', adjetivos demostrativos) mediante una tarea de expresión escrita que practica la función comunicativa de presentar a una persona en 1ª y 3ª persona.",
+
+      "competencias": ["CE (lectura del texto modelo)", "EE (redacción de presentaciones)", "EO (en la puesta en común final)"],
+
+      "funciones_comunicativas": [
+        "presentarse (en 1ª pers.)",
+        "presentar a otra persona o grupo (en 3ª pers.)",
+        "dar información personal: nombre, edad, nacionalidad, lugar de residencia, descripción física, asignatura favorita",
+        "mostrar objetos propios usando demostrativos ('este es mi…')"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "campos personales: nombre, edad, nacionalidad, lugar de residencia",
+          "adjetivos de descripción física y carácter (alto, simpático, etc.)",
+          "asignaturas escolares (Educación Plástica, inglés, etc.)",
+          "léxico de objetos cotidianos asociado a demostrativos (libro de inglés)"
+        ],
+        "gramatica_explicita": [
+          "presente del verbo 'ser' en 1ª y 3ª pers. sing. y pl. (soy, eres, es, somos, sois, son)",
+          "presente del verbo 'tener' en 1ª y 3ª pers. (tengo, tiene, tenemos, tienen)",
+          "presente del verbo 'vivir' (vivo, vive, viven)",
+          "adjetivos demostrativos: este, esta, estos, estas",
+          "género y número en sustantivos y adjetivos (concordancia)",
+          "adjetivos de nacionalidad (cubano, español…)"
+        ]
+      },
+
+      "apoyos": ["visual fuerte (3 fotografías de jóvenes)", "escrito (texto modelo como andamiaje)", "líneas guía para la escritura"],
+
+      "descripcion_dinamica": "El alumno recibe la ficha con tres fotografías de jóvenes (un chico solo, una pareja delante de un portátil y un grupo de cuatro skaters) y un texto modelo que describe a uno de ellos: 'Me llamo Antonio. Tengo catorce años. Soy cubano pero vivo en España, en Madrid. Soy alto y simpático. Este es mi libro de inglés. Mi asignatura favorita es la Educación Plástica.'. A partir de este modelo, debe redactar dos presentaciones más para las otras dos fotografías, manteniendo el patrón y adaptando género, número y persona (singular en la pareja, plural en el grupo de cuatro). Al terminar, voluntarios leen su producción en plenario.",
+
+      "modelo_dado": "Me llamo Antonio. Tengo catorce años. Soy cubano pero vivo en España, en Madrid. Soy alto y simpático. Este es mi libro de inglés. Mi asignatura favorita es la Educación Plástica.",
+
+      "secciones_aplicables": ["destrezas", "gramatica", "comunicacion", "vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "destrezas.md — práctica de expresión escrita guiada con modelo (ciclo CE → EE)",
+        "gramatica.md — integración de plurales, concordancia, demostrativos y formas plurales de 'ser' en producción real",
+        "comunicacion.md — función nuclear 'presentarse y presentar a otra persona' ampliada a 3ª pers. plural",
+        "vocabulario.md — reactivación transversal de nacionalidades, asignaturas y descripción personal"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión oral: tras redactar, los alumnos exponen sus presentaciones en plenario sin leer (memorización + EO)",
+        "Versión cooperativa: parejas se intercambian las fotografías y comparan presentaciones",
+        "Subir dificultad: añadir requisitos mínimos (5 frases, uso obligatorio de 2 demostrativos diferentes)",
+        "Ampliar: el alumno aporta una fotografía real (suya o de familiares) y se presenta a sí mismo o a su familia",
+        "Variante en plural: la fotografía de grupo (4 skaters) obliga a usar formas plurales — explotar pedagógicamente"
+      ],
+
+      "consideraciones": [
+        "Las fotografías son genéricas de banco de imágenes: sin datos reales, el alumno debe inventar nombre, edad, nacionalidad, etc. — favorece la creatividad pero también la consistencia gramatical",
+        "El modelo dado mezcla 1ª pers. ('Me llamo', 'Tengo') y demostrativos ('Este es') — útil para introducir el este/esta de forma natural",
+        "Para la fotografía de grupo (4 personas), conviene aclarar si se espera una presentación colectiva ('Nos llamamos / Somos…') o individual de cada miembro — decisión del docente",
+        "La consigna sugiere que el alumno escriba 'una presentación para cada uno de ellos': técnicamente 3, pero el modelo cubre 1 → quedan 2 por redactar (chico solo de la imagen 1 + pareja + grupo, o interpretación alternativa)",
+        "Sensibilidad: pedir nacionalidad inventada puede generar estereotipos — animar a usar países variados (no siempre EE.UU. o Reino Unido)"
+      ],
+
+      "gestion_aula": "Preparación: imprimir 1 ficha por alumno. Inicio (5 min): leer el modelo en plenario, comentar las estructuras clave (Me llamo, Tengo, Soy, vivo en, Este es), recordar la concordancia. Desarrollo (15-20 min): redacción individual silenciosa; el docente circula corrigiendo concordancia y ortografía. Cierre (8-10 min): 3-5 voluntarios leen su mejor presentación; el resto entrega la ficha como evidencia de la EE.",
+
+      "observaciones": "Ejercicio de cierre integrador del PDF: combina todo lo gramatical de U2 (plurales, concordancia, demostrativos, ser/tener) con la función comunicativa nuclear de presentarse. Buen candidato para tarea final de U2 o evaluación formativa de la EE. Paralelo natural al ejercicio 11 de la evaluación (U2-mc-005), que pide un correo electrónico autobiográfico."
+    },
+
+    {
+      "id": "U2-mc-005",
+      "ejercicio": "De colores",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "NuevoCompa1_Actividades2_794524.pdf",
+      "paginas_en_fuente": "7-8",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra 2 (NC1, SGEL)",
+      "ambito": "U2",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["lúdica", "competitiva", "cooperativa_intragrupo", "investigacion"],
+
+      "duracion_estimada": "25-35 min",
+      "agrupamiento": "grupos reducidos (3-4 personas)",
+      "agrupamiento_detalle": "La clase se divide en grupos reducidos. Cada grupo dispone de un único diccionario bilingüe y trabaja contra reloj para ampliar vocabulario asociado a 8 colores. La corrección es oral y competitiva.",
+      "materiales_necesarios": ["ficha con 8 cuadros de colores (p. 8 del PDF)", "1 diccionario bilingüe por grupo", "bolígrafo", "cronómetro o reloj"],
+
+      "objetivo_didactico": "Repasar los colores (presentados en U1) y ampliar el vocabulario asociado a cada color mediante el uso autónomo del diccionario, ejercitando la concordancia de los adjetivos de color con los sustantivos en género y número.",
+
+      "competencias": ["CE (consulta del diccionario bilingüe)", "EE (escritura de sustantivos por color)", "EO (lectura en voz alta con concordancia correcta)", "IO (negociación en grupo)", "MED (uso de diccionario)"],
+
+      "funciones_comunicativas": [
+        "describir el color de objetos del mundo real",
+        "formar sintagmas nominales con concordancia plena de género y número (sustantivo + adjetivo de color)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "8 colores: blanco, amarillo, azul, naranja, rojo, rosa, verde, negro",
+          "vocabulario abierto aportado por los alumnos (sustantivos asociables a cada color)",
+          "léxico del ejemplo: nieve, algodón, sábanas"
+        ],
+        "gramatica_explicita": [
+          "concordancia de género en adjetivos de color variables (-o/-a): blanco/blanca, amarillo/amarilla, rojo/roja, negro/negra",
+          "adjetivos de color invariables en género: azul, naranja, rosa, verde",
+          "concordancia de número: +s tras vocal (blancas, rojas), +es tras consonante (azules, verdes)",
+          "estructura sintagma nominal: sustantivo + adjetivo de color en posición pospuesta"
+        ],
+        "fonetica_ortografia": [
+          "tildes en formas plurales no alteradas (los adjetivos de color del ejercicio no tienen problemas de tilde)",
+          "letras especiales en sustantivos del campo léxico (potencialmente ñ, ll, ch al añadir vocabulario)"
+        ]
+      },
+
+      "apoyos": ["visual (cuadrícula con 8 colores)", "lexicográfico (diccionario bilingüe)", "interpersonal (negociación en grupo)"],
+
+      "descripcion_dinamica": "El profesor divide la clase en grupos reducidos y entrega a cada grupo la ficha con 8 cuadros (uno por color) y un único diccionario bilingüe. Durante el periodo de tiempo marcado por el profesor, cada grupo debe escribir 8 palabras (sustantivos) asociadas a cada color en su L1, traducirlas al español con ayuda del diccionario y anotarlas en el cuadro correspondiente. Al cierre del tiempo, se procede a la corrección oral: cada equipo va diciendo sus palabras y, lo más importante, tiene que producir el sintagma completo con concordancia de género y número con el color ('nieve blanca', 'algodón blanco', 'sábanas blancas'). Gana el equipo con mayor número de respuestas correctamente concordadas.",
+
+      "ejemplo_dado": {
+        "color": "blanco",
+        "sustantivos": ["nieve", "algodón", "sábanas"],
+        "sintagmas_concordados": ["nieve blanca", "algodón blanco", "sábanas blancas"]
+      },
+
+      "secciones_aplicables": ["vocabulario", "gramatica", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "gramatica.md — refuerzo de la concordancia género/número de adjetivos en sintagma nominal, incluyendo la subclase de adjetivos invariables en género",
+        "vocabulario.md — ampliación abierta del campo léxico, vinculada a colores como ancla",
+        "destrezas.md — práctica de uso autónomo del diccionario bilingüe como estrategia de aprendizaje",
+        "Sesión de repaso intermedio — útil como activador a mitad de unidad para enlazar U1 (colores) y U2 (plurales/concordancia)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Sin diccionario: lluvia de ideas con conocimientos previos (apto para grupos avanzados)",
+        "Versión inversa: el profesor da una lista de sustantivos y los alumnos los clasifican por color asociado",
+        "Subir dificultad: pedir frases completas ('El algodón es blanco') además del sintagma",
+        "Variante de aplicación: tras el ejercicio, los alumnos crean una mini-poesía o caligrama con sus sintagmas favoritos",
+        "Versión digital: usar Google Imágenes o Wordreference en vez de diccionario en papel",
+        "Reducción: solo 4 colores (uno variable y uno invariable de cada terminación) si el tiempo es escaso"
+      ],
+
+      "consideraciones": [
+        "Reutiliza el campo léxico 'colores' de U1: comprobar que el grupo lo recuerda activamente antes de empezar",
+        "El ejercicio se llama 'De colores' pero en realidad el contenido nuclear es la CONCORDANCIA (gramática U2), no los colores en sí — útil para U2 como aplicación práctica del plural y la concordancia",
+        "Incluye 'naranja' como color invariable (en U1 no aparecía sistematizado): se introduce aquí como ampliación implícita",
+        "Necesita 1 diccionario bilingüe por grupo: si no hay, sustituir por móviles con traductor",
+        "Asociaciones color-sustantivo son culturales: aceptar variaciones razonables y discutir las dudas en plenario"
+      ],
+
+      "gestion_aula": "Preparación: imprimir 1 ficha por grupo, conseguir 1 diccionario bilingüe por grupo (o autorizar móviles). Inicio (5 min): formar grupos, repartir materiales, leer el ejemplo dado y subrayar la concordancia. Desarrollo (10-15 min): trabajo cronometrado en grupos. Cierre (10-15 min): corrección oral grupo a grupo, premiando concordancias correctas; el docente anota en la pizarra las mejores asociaciones y corrige las concordancias erróneas.",
+
+      "observaciones": "Cierra el PDF de Actividades Extra 2 enlazando U1 (colores) con U2 (plurales y concordancia). Es el único ejercicio del PDF con componente lexicográfico explícito (uso del diccionario). Combinable con U2-mc-001 (presentación del plural) como aplicación práctica, o con U2-mc-006 (Tira los dados) como variante lúdica del mismo contenido."
+    },
+
+    {
+      "id": "U2-mc-006",
+      "ejercicio": "Prueba de evaluación U2 — Países de habla hispana",
+      "tipo": "prueba_evaluacion",
+      "formato_soporte": "examen_imprimible_pdf",
+      "archivo_fuente": "12Companeros1Nuevaedicion_evaluacion2.pdf",
+      "paginas_en_fuente": "1-2",
+      "origen": "editorial_SGEL",
+      "ambito": "U2",
+      "categoria_editorial": "evaluacion",
+      "tipo_dinamica": ["evaluacion_sumativa", "individual"],
+
+      "duracion_estimada": "45-60 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "Cada alumno resuelve la prueba por escrito, en silencio, sin apoyos. El docente entrega la fotocopia y corrige posteriormente.",
+      "materiales_necesarios": ["fotocopia de la prueba (2 páginas)", "bolígrafo"],
+
+      "objetivo_didactico": "Evaluar de forma sumativa el dominio de los contenidos lingüísticos y comunicativos de U2 (vocabulario de nacionalidades, ordinales y asignaturas; gramática del verbo 'ser' en plural, plurales de sustantivos y adjetivos, demostrativos; comunicación de presentación personal) y las destrezas básicas de comprensión lectora y expresión escrita.",
+
+      "estructura_general": {
+        "bloque_1_vocabulario": "Ejercicios 1-4",
+        "bloque_2_gramatica_comunicacion": "Ejercicios 5-9",
+        "bloque_3_destrezas_leer_escribir": "Ejercicios 10-11",
+        "total_ejercicios": 11
+      },
+
+      "competencias": ["CE (instrucciones, texto del ej. 10)", "EE (transversal, especialmente ej. 11)", "ortografía y léxico productivo"],
+
+      "contenidos_evaluados": {
+        "vocabulario": [
+          "adjetivos de nacionalidad (ej. 1): mexicano, cubano, ecuatoriano, peruano, argentino, nicaragüense, chileno, español, colombiano, paraguayo",
+          "ordinales 1.º a 10.º escritos en letras (ej. 2): primero/primera, segundo, tercero, cuarto, quinto, sexto/sexta, séptimo, octava, noveno, décima",
+          "asignaturas a partir de definiciones (ej. 3): Matemáticas, Ciencias Naturales, Educación Plástica, Geografía, Educación Física, Lengua, Música",
+          "series secuenciales (ej. 4): días de la semana (lunes, martes, miércoles, jueves, viernes, sábado, domingo), ordinales en orden inverso (décimo a primero), decenas (diez, veinte, treinta, cuarenta, cincuenta, sesenta, setenta, ochenta, noventa, cien)"
+        ],
+        "gramatica": [
+          "presente de 'ser' en todas las personas, plural incluido (ej. 5): son, somos, sois, soy, es, son, eres, sois, es, somos",
+          "formación del singular a partir del plural (ej. 6): mes, árbol, amigo, sábado, colombiano, ciencia, lápiz, azul",
+          "formación del plural de sintagmas (ej. 7): los móviles nuevos, las casas grandes, las mesas azules, los libros viejos, los niños pequeños, las sillas grises, las niñas simpáticas, las carpetas amarillas, los lápices azules",
+          "demostrativos este/esta (ej. 8): concordancia de género en 10 sintagmas"
+        ],
+        "comunicacion": [
+          "producción de interrogativos para pedir información personal (ej. 9): ¿Cómo te llamas?, ¿Cuántos años tienes?, ¿De dónde eres?, ¿Dónde vives?, ¿Vamos…?"
+        ],
+        "destrezas": [
+          "comprensión lectora orientada a juicios V/F y corrección de frases falsas a partir de un correo electrónico (ej. 10)",
+          "expresión escrita guiada: redactar un correo electrónico de respuesta con presentación personal (ej. 11)"
+        ]
+      },
+
+      "estructura_interna": [
+        "Ej. 1 — Vocabulario: escribir las nacionalidades correspondientes a 10 países hispanohablantes",
+        "Ej. 2 — Vocabulario: escribir en letras 10 números ordinales (3.º, 5.º, 1.ª, 2.º, 4.º, 7.º, 8.ª, 9.º, 10.ª, 6.ª)",
+        "Ej. 3 — Vocabulario: identificar 7 asignaturas a partir de definiciones",
+        "Ej. 4 — Vocabulario: continuar 3 series (días de la semana / ordinales descendentes / decenas)",
+        "Ej. 5 — Gramática: completar 10 frases con la forma adecuada del verbo 'ser'",
+        "Ej. 6 — Gramática: escribir el singular de 8 palabras dadas en plural",
+        "Ej. 7 — Gramática: formar el plural de 9 sintagmas nominales",
+        "Ej. 8 — Gramática: completar 10 frases con demostrativo este/esta",
+        "Ej. 9 — Comunicación: completar 5 preguntas de una conversación a partir de las respuestas dadas",
+        "Ej. 10 — Destrezas (CE): leer correo de Manuel a Sofía y juzgar V/F sobre 5 afirmaciones, corrigiendo las falsas",
+        "Ej. 11 — Destrezas (EE): redactar un correo electrónico de respuesta presentándose"
+      ],
+
+      "soluciones_principales": {
+        "ej_1_nacionalidades": {
+          "México": "mexicano/-a",
+          "Cuba": "cubano/-a",
+          "Ecuador": "ecuatoriano/-a",
+          "Perú": "peruano/-a",
+          "Argentina": "argentino/-a",
+          "Nicaragua": "nicaragüense",
+          "Chile": "chileno/-a",
+          "España": "español/-a",
+          "Colombia": "colombiano/-a",
+          "Paraguay": "paraguayo/-a"
+        },
+        "ej_4_series": {
+          "dias_semana": ["miércoles", "jueves", "viernes", "sábado", "domingo"],
+          "ordinales_descendentes": ["octavo", "séptimo", "sexto", "quinto", "cuarto", "tercero", "segundo", "primero"],
+          "decenas": ["treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa", "cien"]
+        },
+        "ej_6_singulares": ["mes", "árbol", "amigo", "sábado", "colombiano", "ciencia", "lápiz", "azul"],
+        "ej_7_plurales": [
+          "los móviles nuevos",
+          "las casas grandes",
+          "las mesas azules",
+          "los libros viejos",
+          "los niños pequeños",
+          "las sillas grises",
+          "las niñas simpáticas",
+          "las carpetas amarillas",
+          "los lápices azules"
+        ],
+        "ej_10_VF": {
+          "1_Manuel_vive_en_Italia": "F (vive en España)",
+          "2_Manuel_estudia_2_ESO": "V",
+          "3_asignatura_favorita_EF": "F (es Matemáticas)",
+          "4_le_encanta_baloncesto": "V",
+          "5_grupo_favorito_Estopa": "F (es Tokio Hotel)"
+        }
+      },
+
+      "secciones_aplicables": ["evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "evaluacion.md — prueba sumativa de referencia para U2, candidata a aparecer tal cual o adaptada como modelo de evaluación final",
+        "evaluacion.md — los ejercicios pueden tomarse como banco de ítems separables: ej. 10-11 sirven como prueba de destrezas; ej. 1-9 como control gramatical y léxico",
+        "destrezas.md — referencia cruzada al ej. 11 (correo electrónico autobiográfico), paralelo escrito de U2-mc-004 'Yo soy…'",
+        "gramatica.md — los ejercicios 5-8 son banco directo de ítems para evaluación de plurales, ser plural y demostrativos"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión reducida (40 min): mantener un ejercicio por contenido — 1, 4, 5, 7, 10",
+        "Versión oral del ej. 1 (nacionalidades) si se quiere evaluar producción oral",
+        "Ampliar ej. 11 con rúbrica para evaluación criterial (extensión, coherencia, uso de demostrativos, concordancia)",
+        "Sustituir el correo del ej. 10 por otro perfil para evitar memorización entre grupos",
+        "Versión digital: el ej. 11 (correo electrónico) puede escribirse realmente en un editor de correo y enviarse al docente"
+      ],
+
+      "consideraciones": [
+        "El ej. 1 incluye 'nicaragüense' (terminación -ense con diéresis), pieza no necesariamente sistematizada en U2 — verificar contra el inventario canónico",
+        "El ej. 3 (asignaturas) presupone el léxico completo de asignaturas presentado en U2; conviene comprobar la cobertura: Matemáticas, Ciencias Naturales (o Naturales), Educación Plástica/Arte, Geografía (o Sociales), Educación Física, Lengua, Música",
+        "El ej. 10 introduce léxico de gustos ('le encanta', 'me gustan') que pertenece más a unidades posteriores (U3+) — verificar si se ha tratado de forma incidental en U2",
+        "El ej. 11 menciona 'Tokio Hotel' y 'Estopa' como referentes musicales potencialmente datados — actualizables a discreción del docente",
+        "Falta clave de respuestas formal y rúbrica de puntuación — el docente debe elaborar ambas",
+        "Diseño orientado a contexto escolar adolescente (asignaturas, ESO, grupos de música) — adaptar si el grupo es adulto",
+        "Coherente con U2-mc-002 (crucigrama de capitales/nacionalidades) y U2-mc-004 (Yo soy…) como secuencia práctica + sumativa"
+      ],
+
+      "gestion_aula": "Preparación: imprimir 1 prueba por alumno, decidir tiempo y criterios de puntuación. Inicio (5 min): repartir, explicar tiempo disponible y normas. Desarrollo (35-45 min): resolución individual en silencio. Cierre: recoger pruebas; corrección posterior por el docente. Devolución en sesión siguiente con feedback global de errores tipo (nacionalidades irregulares, plurales en -es y en -ces, demostrativos).",
+
+      "observaciones": "Producto evaluativo coherente y completo, cubre los tres ejes (vocabulario, gramática/comunicación, destrezas) con buena distribución. El paralelismo entre ej. 11 (correo escrito) y U2-mc-004 'Yo soy…' (presentación escrita guiada) hace que ambos puedan combinarse como evaluación integrada de comunicación personal escrita. El ej. 1 (nacionalidades) cierra el bucle con U2-mc-002 (crucigrama)."
+    },
+
+    {
+      "id": "U2-mc-007",
+      "ejercicio": "La pelota encadenada",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "Nuevocompaneros1gamificacion_117959.pdf",
+      "paginas_en_fuente": "9",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Cuaderno de juegos NC1 (García-Alifa & Villatoro, SGEL 2021)",
+      "ambito": "U2",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["lúdica", "cinetica", "cooperativa", "competitiva", "presentacion"],
+
+      "duracion_estimada": "20 min",
+      "agrupamiento": "clase entera con movilidad",
+      "agrupamiento_detalle": "Los estudiantes se colocan de pie o sentados sin mesa, formando un círculo para verse las caras. El docente inicia el juego lanzando la pelota a un alumno mientras dice un país; ese alumno añade la nacionalidad correspondiente y lanza a otro compañero, que debe repetir lo dicho antes y añadir un nuevo país, y así sucesivamente formando una cadena memorística acumulativa.",
+      "materiales_necesarios": ["una pelota de tamaño adecuado para lanzar y recibir con las manos"],
+
+      "objetivo_didactico": "Sistematizar la relación entre países hispanohablantes y sus adjetivos de nacionalidad mediante una dinámica oral, cinética y memorística, consolidando la asociación país → gentilicio en producción oral espontánea bajo presión lúdica.",
+
+      "vinculacion_libro_alumno": {
+        "vocabulario": "ejercicios 1, 2",
+        "gramatica": "ejercicios 1, 2, 6",
+        "comunicacion": "ejercicios 1-5"
+      },
+
+      "competencias": ["CO (escuchar el país dicho por el compañero y la cadena previa)", "EO (producir el gentilicio correcto y reanudar la cadena)", "IO (coordinar lanzamientos y turnos)", "memoria secuencial (recordar la cadena acumulada)"],
+
+      "funciones_comunicativas": [
+        "asociar país y nacionalidad",
+        "decir el gentilicio masculino o femenino de un país hispanohablante",
+        "repetir y ampliar una cadena de ítems en orden"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "países hispanohablantes (España, Argentina, Chile, Cuba, Ecuador, etc.)",
+          "adjetivos de nacionalidad en masculino y femenino (español/-a, argentino/-a, chileno/-a, cubano/-a, ecuatoriano/-a…)"
+        ],
+        "gramatica_explicita": [
+          "formación del gentilicio en -o/-a, -ense, -í, -eño/-eña según país",
+          "concordancia de género del gentilicio (decisión sobre si el profesor pide masc. o fem.)",
+          "ortografía y pronunciación de mayúsculas en topónimos vs. minúsculas en gentilicios (a nivel oral, conciencia léxica)"
+        ]
+      },
+
+      "apoyos": ["kinestésico fuerte (pase de pelota)", "auditivo (cadena acumulativa)", "memoria a corto plazo (lista creciente)"],
+
+      "descripcion_dinamica": "Los alumnos forman un círculo de pie o sentados sin mesa delante. El docente coge la pelota y la lanza a un alumno al tiempo que dice el nombre de un país (ej. 'España'). El alumno que recibe repite el país y suma la nacionalidad correspondiente, eligiendo masc. o fem. salvo que el profesor decida una de las dos opciones ('España → español'); a continuación lanza la pelota a otro compañero diciendo un nuevo país. El siguiente alumno debe repetir el país inicial y su nacionalidad, añadir el nuevo país que acaba de recibir + su nacionalidad, y lanzar a otro compañero con un tercer país. Y así sucesivamente, en cadena acumulativa creciente, hasta que hayan participado todos los alumnos. Si un estudiante olvida una de las palabras dichas previamente o no añade un país nuevo, abandona el juego una ronda (regla opcional a criterio del profesor). Se pueden dar varias rondas según el tiempo disponible.",
+
+      "ejemplo_dado": {
+        "profesor": "España",
+        "alumno_1": "España → español",
+        "alumno_2": "España → español / Chile",
+        "alumno_3": "España → español / Chile → chileno…"
+      },
+
+      "secciones_aplicables": ["vocabulario", "comunicacion", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — fijación oral del bloque 'países hispanohablantes y adjetivos de nacionalidad' como dinámica de consolidación tras la presentación",
+        "comunicacion.md — práctica de producción oral espontánea con el patrón país → gentilicio",
+        "gramatica.md — concordancia y formación del gentilicio (decisión masc./fem.)",
+        "Sesión de calentamiento o cierre de U2 — útil como activador rápido"
+      ],
+
+      "adaptaciones_posibles": [
+        "Subir dificultad: pedir el gentilicio en ambos géneros ('España → español, española')",
+        "Ampliar: incluir capitales además del gentilicio ('España → español, Madrid')",
+        "Variante con eliminación: el que falla queda eliminado físicamente del círculo",
+        "Sin pelota: usar palmadas rítmicas o pasarse un objeto cualquiera",
+        "En clases numerosas: dividir en 2 círculos simultáneos para que todos participen más",
+        "Inversa: el profesor dice un gentilicio y el alumno responde con el país"
+      ],
+
+      "consideraciones": [
+        "Requiere espacio para formar un círculo y para el movimiento de la pelota — apto para aulas de tamaño medio; en aulas pequeñas, hacerlo de pie",
+        "El juego puede generar ruido y movimiento físico — avisar a aulas vecinas",
+        "Cuidado con pelotas duras o muy ligeras: usar tamaño y peso adecuados para minimizar accidentes",
+        "Carga memorística acumulativa: en grupos numerosos (>15) la cadena se vuelve impracticable a partir del 8º-10º alumno — limitar la longitud por ronda",
+        "No apto para alumnos con dificultades de movilidad sin adaptación previa (variante estática: pase sin pelota, solo turno verbal)"
+      ],
+
+      "gestion_aula": "Preparación: tener la pelota lista, despejar el espacio del aula o llevar al grupo a una sala más amplia. Inicio (3 min): formar círculo, explicar reglas, modelar el ejemplo (España → español / Chile → chileno). Desarrollo (12-15 min): primera ronda lenta para asentar mecánica; segundas rondas más rápidas o con variantes. Cierre (2-3 min): repaso oral de los gentilicios que generaron más errores o dudas.",
+
+      "observaciones": "Ejercicio 1 de los 2 que aplican a U2 dentro del Cuaderno de juegos NC1. Es la pareja natural de la presentación U2-mc-001 (plural) y del crucigrama U2-mc-002 (capitales y nacionalidades): ambos trabajan el bloque 'países hispanohablantes y nacionalidades', éste en producción oral, el crucigrama en escrita. El archivo fuente es transversal (Cuaderno de juegos NC1) — ver bloque fuentes_transversales al final del JSON."
+    },
+
+    {
+      "id": "U2-mc-008",
+      "ejercicio": "Tira los dados",
+      "tipo": "dinamica_aula",
+      "formato_soporte": "ficha_imprimible_pdf",
+      "archivo_fuente": "Nuevocompaneros1gamificacion_117959.pdf",
+      "paginas_en_fuente": "10-11",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Cuaderno de juegos NC1 (García-Alifa & Villatoro, SGEL 2021)",
+      "ambito": "U2",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["lúdica", "competitiva", "cooperativa_intragrupo", "cinetica"],
+
+      "duracion_estimada": "20-30 min",
+      "agrupamiento": "clase entera dividida en equipos con movilidad",
+      "agrupamiento_detalle": "Toda la clase organizada en equipos. Cada equipo tira sucesivamente tres dados (sustantivo, adjetivo, marca de número singular/plural/comodín) y cada miembro debe construir y enunciar un sintagma nominal correcto a partir de la combinación obtenida. Se cronometra el tiempo total que cada equipo tarda en formar todos sus sintagmas.",
+      "materiales_necesarios": ["cronómetro", "3 dados de cartulina, gomaespuma u otro material manejable (plantilla recortable en la p. 11)", "rotulador para escribir sustantivos y adjetivos en las caras en blanco"],
+
+      "objetivo_didactico": "Repasar la formación del plural de nombres y adjetivos y la concordancia en número en sintagmas nominales, mediante una dinámica lúdica con dados que generan combinaciones aleatorias de sustantivo + adjetivo + marca singular/plural.",
+
+      "vinculacion_libro_alumno": {
+        "gramatica": "ejercicios 3-5"
+      },
+
+      "competencias": ["CE (lectura de las caras del dado)", "EO (enunciado oral del sintagma)", "EE (en variante: escritura del sintagma)", "reconocimiento gramatical de concordancia"],
+
+      "funciones_comunicativas": [
+        "formar sintagmas nominales descriptivos",
+        "describir objetos del entorno escolar mediante sustantivo + adjetivo"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "vocabulario básico relativo al entorno escolar (decidido por el docente al escribir las caras): coche, libro, mochila, silla, lápiz, etc.",
+          "adjetivos calificativos básicos (decididos por el docente): viejo, nuevo, grande, pequeño, rojo, azul, etc."
+        ],
+        "gramatica_explicita": [
+          "formación del plural de sustantivos (+s tras vocal, +es tras consonante)",
+          "formación del plural de adjetivos en paralelo",
+          "concordancia de número sustantivo-adjetivo dentro del sintagma nominal",
+          "selección del artículo definido en concordancia (el/la/los/las)"
+        ]
+      },
+
+      "apoyos": ["visual fuerte (caras de los dados con palabras)", "kinestésico (lanzar los dados)", "competitivo (cronómetro)"],
+
+      "descripcion_dinamica": "El docente prepara previamente 3 dados a partir de la plantilla recortable de la p. 11 del PDF. El dado 1 lleva en sus caras las etiquetas 'singular', 'plural' y 'comodín' (cada una repetida en dos caras opuestas). El dado 2 lleva sustantivos del vocabulario decidido por el docente. El dado 3 lleva adjetivos en singular. En cada turno, un equipo lanza los tres dados sucesivamente: primero el de sustantivos, luego el de adjetivos, finalmente el de número (singular/plural). El alumno debe construir y enunciar oralmente el sintagma nominal correspondiente con artículo, sustantivo y adjetivo en la concordancia correcta. Se cronometra el tiempo total de cada equipo. Gana el equipo que tarde menos en formar correctamente todos sus sintagmas. La cara 'comodín' permite elegir libremente singular o plural.",
+
+      "ejemplo_dado": {
+        "tirada_dado_1": "plural",
+        "tirada_dado_2": "coche",
+        "tirada_dado_3": "viejo",
+        "sintagma_correcto": "Los coches viejos"
+      },
+
+      "secciones_aplicables": ["gramatica", "vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "gramatica.md — eje central: aplicación práctica de la regla del plural y la concordancia (eco directo de U2-mc-001 'presentación del plural')",
+        "vocabulario.md — refuerzo abierto del léxico decidido por el docente al rotular los dados",
+        "Sesión de consolidación de la gramática del plural — candidato natural tras la presentación PPT y antes de la prueba sumativa"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión escrita: cada alumno escribe el sintagma en una hoja antes de enunciarlo (EE añadida)",
+        "Subir dificultad: añadir un cuarto dado con 'masculino/femenino' (o usar el comodín como cambio de género)",
+        "Ampliar léxico: cambiar el contenido de los dados según la unidad — colores, nacionalidades, profesiones",
+        "Versión analógica: usar fichas de cartón apiladas en lugar de dados si no hay tiempo de montaje",
+        "Versión digital: usar un generador de dados online (random.org o app de dados) con listas personalizadas",
+        "Reducción: 2 dados (sustantivo + número) sin adjetivo si el grupo aún no domina la concordancia",
+        "Variante cooperativa sin cronómetro: el equipo construye junto el sintagma y todos repiten en coro"
+      ],
+
+      "consideraciones": [
+        "Requiere preparación previa relativamente laboriosa (recortar y montar al menos 3 dados, escribir las caras) — amortizable si se reutiliza en varias sesiones o unidades",
+        "El docente decide el vocabulario de los dados — buena oportunidad para personalizar al léxico activo de U2",
+        "La cara 'comodín' debe explicarse bien antes de empezar para evitar confusión",
+        "Si se juega en el suelo con dados grandes, requiere espacio amplio; si en la mesa, dados pequeños bastan",
+        "Necesita reglas claras sobre qué cuenta como 'sintagma correcto' (¿con artículo obligatorio? ¿con concordancia perfecta?) — pactarlas al inicio",
+        "El cronómetro puede generar estrés en alumnos sensibles a la competición — ofrecer variante cooperativa sin tiempo"
+      ],
+
+      "gestion_aula": "Preparación: fotocopiar la plantilla de la p. 11, recortar, plegar y pegar al menos 3 dados; escribir sustantivos y adjetivos en las caras en blanco (10-15 min de preparación). Inicio (5 min): formar equipos, explicar reglas, hacer una tirada de demostración. Desarrollo (15-20 min): rondas cronometradas por equipo. Cierre (5 min): recuento, repaso de los sintagmas con errores y consolidación de la regla del plural y la concordancia.",
+
+      "observaciones": "Ejercicio 2 de los 2 que aplican a U2 dentro del Cuaderno de juegos NC1. Pareja natural de la presentación U2-mc-001 (plural de nombres y adjetivos): el PPT presenta, este juego aplica en producción. Combinable también con U2-mc-005 'De colores' (otra dinámica de concordancia, ahí con colores). El archivo fuente es transversal — ver bloque fuentes_transversales al final del JSON."
+    },
+
+    {
+      "id": "U2-mc-009",
+      "ejercicio": "Ejercicio 1 — Une cada bandera con su nacionalidad",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U2/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U2",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 2 - Países de habla hispana → Libro del alumno → Ejercicio 1",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "asociacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve el ejercicio en su dispositivo (ordenador, tableta o móvil) accediendo a Blinklearning con sus credenciales. La plataforma valida automáticamente.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar el reconocimiento de las banderas y los gentilicios de ocho países hispanohablantes mediante asociación visual autocorregible.",
+
+      "competencias": ["CE (lectura de los gentilicios escritos)", "reconocimiento visual (identificación de banderas)"],
+
+      "funciones_comunicativas": ["asociar país (representado por su bandera) con su gentilicio masculino/femenino"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "8 gentilicios hispanos: chileno/-a, argentino/-a, colombiano/-a, venezolano/-a, mexicano/-a, uruguayo/-a, paraguayo/-a, nicaragüense",
+          "8 países hispanohablantes representados por su bandera: Chile, Argentina, Colombia, Venezuela, México, Uruguay, Paraguay, Nicaragua"
+        ],
+        "gramatica_explicita": [
+          "concordancia de género en gentilicios -o/-a (7 de los 8)",
+          "gentilicio invariable en género terminado en -ense (nicaragüense)"
+        ],
+        "fonetica_ortografia": ["diéresis en 'nicaragüense' (ü)"]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "bandera": "Chile", "solucion": "chileno/-a" },
+        { "n": 2, "bandera": "Argentina", "solucion": "argentino/-a" },
+        { "n": 3, "bandera": "Colombia", "solucion": "colombiano/-a" },
+        { "n": 4, "bandera": "Venezuela", "solucion": "venezolano/-a" },
+        { "n": 5, "bandera": "México", "solucion": "mexicano/-a" },
+        { "n": 6, "bandera": "Uruguay", "solucion": "uruguayo/-a" },
+        { "n": 7, "bandera": "Paraguay", "solucion": "paraguayo/-a" },
+        { "n": 8, "bandera": "Nicaragua", "solucion": "nicaragüense" }
+      ],
+
+      "apoyos": ["digital (interfaz autocorregible Blinklearning)", "visual fuerte (bandera de cada país)", "feedback inmediato"],
+
+      "descripcion_dinamica": "Ejercicio interactivo autocorregible de Blinklearning. Se presentan 8 banderas de países hispanohablantes en la columna izquierda y 8 etiquetas de gentilicios en la derecha. El alumno empareja cada bandera con su gentilicio correspondiente. Al validar, la plataforma marca aciertos y errores.",
+
+      "metadatos_blinklearning": {
+        "permite_revision_solucion": true,
+        "puede_reiniciar": true,
+        "retroalimentacion": "binaria visible (correcto/incorrecto)"
+      },
+
+      "secciones_aplicables": ["vocabulario", "evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — repaso de los gentilicios hispanos del bloque 1 (ejs. 1-3)",
+        "evaluacion.md — apoyo autoevaluativo del ejercicio 7 (escribir el mayor número posible de nacionalidades hispanas)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica equivalente: imprimir las 8 banderas y los 8 gentilicios en tarjetas y emparejar en grupo",
+        "Inversa: dar el gentilicio y pedir que dibujen o identifiquen la bandera",
+        "Ampliación: añadir el nombre del país tras emparejar (Chile → chileno → 'Soy de Chile')"
+      ],
+
+      "consideraciones": [
+        "Solo 8 de los 21 países hispanohablantes están representados. No incluye España, Cuba, Perú, Ecuador, Bolivia, Guatemala, Honduras, El Salvador, Panamá, Costa Rica, Puerto Rico, República Dominicana, Guinea Ecuatorial.",
+        "Gentilicio 'nicaragüense' es el único invariable del set — buena oportunidad para destacar este patrón frente al mayoritario -o/-a"
+      ],
+
+      "gestion_aula": "Uso recomendado: como deberes asíncronos antes o después del bloque de vocabulario (ejs. 1-3), o como autoevaluación del ejercicio 7 de evaluación (recuperación de gentilicios hispanos).",
+
+      "observaciones": "Primera captura inventariada de Blinklearning para U2. Buen complemento digital para el bloque de gentilicios. Se esperan más capturas de la misma serie."
+    },
+
+    {
+      "id": "U2-mc-010",
+      "ejercicio": "Ejercicio 2 — Observa la imagen y di en qué orden van a llegar los coches a la meta",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U2/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U2",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 2 - Países de habla hispana → Libro del alumno → Ejercicio 2",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "interpretacion_visual", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve el ejercicio en su dispositivo accediendo a Blinklearning con sus credenciales. La plataforma valida automáticamente.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar los seis primeros números ordinales en masculino (primero, segundo, tercero, cuarto, quinto, sexto) aplicándolos al orden de llegada de unos coches identificados por su color.",
+
+      "competencias": ["CE (lectura del enunciado y de los colores)", "EE (escritura del ordinal)", "interpretación visual (orden de los coches en la pista)"],
+
+      "funciones_comunicativas": ["asignar un puesto ordinal a un objeto identificado por una propiedad visible (color)"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "6 ordinales masculinos: primero, segundo, tercero, cuarto, quinto, sexto",
+          "6 colores: azul, rosa, marrón, naranja, verde, rojo",
+          "1 sustantivo: coche"
+        ],
+        "gramatica_explicita": [
+          "ordinal en función atributiva con artículo (es el primero) — sin apocopación porque no precede a sustantivo",
+          "concordancia de género masculino (el coche es masculino → el primero, no la primera)",
+          "estructura atributiva: sujeto + ser + artículo + ordinal"
+        ],
+        "fonetica_ortografia": [
+          "tilde en marrón",
+          "ortografía de quinto y sexto"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "enunciado": "El coche azul es el ___", "solucion": "sexto" },
+        { "n": 2, "enunciado": "El coche rosa es el ___", "solucion": "segundo" },
+        { "n": 3, "enunciado": "El coche marrón es el ___", "solucion": "tercero" },
+        { "n": 4, "enunciado": "El coche naranja es el ___", "solucion": "primero" },
+        { "n": 5, "enunciado": "El coche verde es el ___", "solucion": "quinto" },
+        { "n": 6, "enunciado": "El coche rojo es el ___", "solucion": "cuarto" }
+      ],
+
+      "apoyos": ["digital (interfaz autocorregible Blinklearning)", "visual fuerte (pista vertical con seis coches de colores, meta arriba)", "feedback inmediato"],
+
+      "descripcion_dinamica": "Ejercicio interactivo autocorregible de Blinklearning. A la izquierda, seis frases del tipo 'El coche [color] es el ___' con campo de texto. A la derecha, una imagen vertical de una pista con la palabra META arriba y seis coches de distintos colores en orden de cercanía a la meta. El alumno observa la posición de cada coche, identifica el color y escribe el ordinal correspondiente. Validación binaria por la plataforma.",
+
+      "metadatos_blinklearning": {
+        "permite_revision_solucion": true,
+        "puede_reiniciar": true,
+        "retroalimentacion": "binaria visible (correcto/incorrecto)"
+      },
+
+      "secciones_aplicables": ["vocabulario", "evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — repaso de los ordinales del bloque 2 (ejs. 7-8)",
+        "evaluacion.md — complemento del ejercicio 3 (concordancia) o como precalentamiento ordinal"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica: imprimir la pista en una ficha y pedir que escriban los ordinales en cuaderno",
+        "Ampliación: pedir la forma femenina (la moto naranja es la primera) sustituyendo el sustantivo",
+        "Variante oral: hacer carrera mimada en aula (seis estudiantes corren y los demás los ordenan)"
+      ],
+
+      "consideraciones": [
+        "Solo se trabajan los seis primeros ordinales (no séptimo, octavo, noveno, décimo del recuadro de U2V)",
+        "Todos los ordinales son masculinos por concordancia con coche; el alumno no practica aquí el contraste -o/-a",
+        "Buena ocasión para practicar la lectura ordenada en español (de arriba abajo = de primero a último)"
+      ],
+
+      "gestion_aula": "Uso recomendado: como deberes asíncronos tras el bloque 2 de vocabulario (introducción de ordinales) o como autoevaluación previa al ejercicio 8 del libro.",
+
+      "observaciones": "Segunda captura de Blinklearning para U2. Complemento ágil para fijar los seis primeros ordinales en contexto visual concreto."
+    },
+
+    {
+      "id": "U2-mc-011",
+      "ejercicio": "Ejercicio 3 — Arrastra las palabras y completa las frases",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U2/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U2",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 2 - Países de habla hispana → Libro del alumno → Ejercicio 3",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "drag_drop", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve el ejercicio en su dispositivo accediendo a Blinklearning con sus credenciales. La plataforma valida automáticamente.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar la asociación entre los siete días de la semana y su posición ordinal en la semana española (lunes como primer día), con foco en la apocopación de los ordinales primer y tercer ante sustantivo masculino singular.",
+
+      "competencias": ["CE (lectura de las frases con el ordinal)", "manipulación digital (arrastrar y soltar)"],
+
+      "funciones_comunicativas": ["identificar la posición ordinal de cada día en la semana"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "7 días de la semana: lunes, martes, miércoles, jueves, viernes, sábado, domingo",
+          "7 ordinales que preceden a 'día': primer, segundo, tercer, cuarto, quinto, sexto, séptimo"
+        ],
+        "gramatica_explicita": [
+          "apocopación obligatoria de primero → primer y tercero → tercer ante sustantivo masculino singular ('el primer día', 'el tercer día')",
+          "ordinales no apocopados ante sustantivo masculino: segundo, cuarto, quinto, sexto, séptimo (conservan -o)",
+          "estructura: artículo + día + verbo ser + artículo + ordinal + día + de la semana"
+        ],
+        "fonetica_ortografia": [
+          "tildes diacríticas en miércoles, sábado",
+          "tilde en séptimo",
+          "días sin mayúscula en español (contraste con otras lenguas)"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "enunciado": "El ___ es el quinto día de la semana", "solucion": "viernes" },
+        { "n": 2, "enunciado": "El ___ es el séptimo día de la semana", "solucion": "domingo" },
+        { "n": 3, "enunciado": "El ___ es el tercer día de la semana", "solucion": "miércoles" },
+        { "n": 4, "enunciado": "El ___ es el primer día de la semana", "solucion": "lunes" },
+        { "n": 5, "enunciado": "El ___ es el segundo día de la semana", "solucion": "martes" },
+        { "n": 6, "enunciado": "El ___ es el cuarto día de la semana", "solucion": "jueves" },
+        { "n": 7, "enunciado": "El ___ es el sexto día de la semana", "solucion": "sábado" }
+      ],
+
+      "apoyos": ["digital (interfaz autocorregible Blinklearning con drag-and-drop)", "feedback inmediato", "los siete días disponibles a la vez en la zona arrastrable"],
+
+      "descripcion_dinamica": "Ejercicio interactivo autocorregible de Blinklearning. En la parte superior, una bandeja con los siete días de la semana en cajas arrastrables (orden aleatorizado, no canónico). Debajo, siete frases con un hueco entre 'El' y el resto del enunciado describiendo cada día como N-ésimo día de la semana. El alumno arrastra cada día al hueco correspondiente. Validación binaria por la plataforma.",
+
+      "metadatos_blinklearning": {
+        "permite_revision_solucion": true,
+        "puede_reiniciar": true,
+        "retroalimentacion": "binaria visible (correcto/incorrecto)",
+        "intentos_visibles": "contador en pantalla"
+      },
+
+      "secciones_aplicables": ["vocabulario", "gramatica", "evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — repaso de los días de la semana (ej. 6) cruzado con los ordinales (ejs. 7-8)",
+        "gramatica.md — refuerzo de la apocopación de primer y tercer (introducida en el bloque de ordinales)",
+        "evaluacion.md — complemento del ejercicio 5 (continuar la serie de los días)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica: imprimir los días en tarjetas y las frases en pizarra; emparejar a mano",
+        "Inversa: dar el día y pedir que digan en qué posición está (el alumno produce el ordinal apocopado)",
+        "Ampliación: pedir la frase femenina (la primera clase, la séptima hora) para contrastar con un sustantivo femenino"
+      ],
+
+      "consideraciones": [
+        "Cobertura completa de los siete días de la semana — buen ejercicio integrador del bloque 2 de vocabulario",
+        "Pareja didáctica natural con U2-mc-010 (ordinales sin apocopación, función atributiva): este ejercicio fija la apocopación obligatoria, U2-mc-010 fija la forma plena",
+        "Asume que el lunes es el primer día de la semana (convención española/latinoamericana); en países con calendario que empieza en domingo el orden cambia — buen punto de observación intercultural"
+      ],
+
+      "gestion_aula": "Uso recomendado: como deberes asíncronos tras los ejs. 6-8 de vocabulario (días + ordinales) o como autoevaluación previa al ejercicio 5 del libro de evaluación.",
+
+      "observaciones": "Tercera captura de Blinklearning para U2. Pareja con U2-mc-010 (apocopación vs forma plena de los ordinales). Cierra el bloque léxico de días + ordinales del U2 vocabulario."
+    },
+
+    {
+      "id": "U2-mc-012",
+      "ejercicio": "Ejercicio 4 — Arrastra el nombre de las asignaturas. Después, escucha y comprueba",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U2/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U2",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 2 - Países de habla hispana → Libro del alumno → Ejercicio 4",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "drag_drop", "asociacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve el ejercicio en su dispositivo accediendo a Blinklearning con sus credenciales. La plataforma valida automáticamente y la pista de audio sirve de autocomprobación oral.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1", "altavoces o auriculares"],
+
+      "objetivo_didactico": "Consolidar la asociación entre el nombre escrito de seis asignaturas básicas de la ESO y su representación icónica visual, con confirmación oral por audio.",
+
+      "competencias": ["CE (lectura del nombre de la asignatura)", "CO (escucha de comprobación)", "reconocimiento visual (icono → asignatura)", "manipulación digital (drag-and-drop)"],
+
+      "funciones_comunicativas": ["identificar una asignatura escolar a partir de un icono representativo"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "6 asignaturas: Lengua, Matemáticas, Música, Educación plástica, Educación física, Ciencias naturales"
+        ],
+        "gramatica_explicita": [
+          "mayúscula inicial en nombres de asignatura (Lengua, Matemáticas…) por convención editorial española",
+          "sustantivos compuestos: 'Educación física', 'Educación plástica', 'Ciencias naturales' (sustantivo + adjetivo, solo la primera palabra con mayúscula)"
+        ],
+        "fonetica_ortografia": [
+          "tilde en Matemáticas, Música, física, plástica",
+          "diptongo en Ciencias",
+          "convención de mayúsculas en asignaturas"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "icono": "pluma sobre papel (escritura)", "solucion": "Lengua" },
+        { "n": 2, "icono": "pizarra con '1+2='", "solucion": "Matemáticas" },
+        { "n": 3, "icono": "violín", "solucion": "Música" },
+        { "n": 4, "icono": "paleta de pintor con pincel", "solucion": "Educación plástica" },
+        { "n": 5, "icono": "canasta de baloncesto", "solucion": "Educación física" },
+        { "n": 6, "icono": "lupa sobre hoja verde", "solucion": "Ciencias naturales" }
+      ],
+
+      "apoyos": ["digital (interfaz autocorregible con drag-and-drop)", "visual fuerte (icono representativo de cada asignatura)", "auditivo (pista de comprobación tras emparejar)", "feedback inmediato"],
+
+      "descripcion_dinamica": "Ejercicio interactivo autocorregible de Blinklearning. En la parte superior, una bandeja con seis cajas arrastrables con los nombres de las asignaturas (orden aleatorizado). Debajo, una cuadrícula de 6 iconos circulares de colores (escritura, suma, violín, paleta, canasta, lupa). El alumno arrastra cada nombre al icono que cree que le corresponde. Tras completar, una pista de audio pronuncia los seis nombres en orden, permitiéndole comprobar oralmente. Validación binaria por la plataforma.",
+
+      "metadatos_blinklearning": {
+        "permite_revision_solucion": true,
+        "puede_reiniciar": true,
+        "retroalimentacion": "binaria visible (correcto/incorrecto) + comprobación oral por audio",
+        "tiene_audio": true,
+        "intentos_visibles": "contador en pantalla"
+      },
+
+      "secciones_aplicables": ["vocabulario", "evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — repaso del ejercicio 9 (asignaturas con icono) en modalidad digital",
+        "evaluacion.md — complemento del ejercicio 6 (ordenar letras de asignaturas)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica: imprimir los 6 iconos y las 6 etiquetas en tarjetas y emparejar en grupo",
+        "Inversa: dar el nombre y pedir que dibujen un icono representativo",
+        "Ampliación: añadir Francés, Inglés, Historia, Biología, Informática para alcanzar las 10-13 asignaturas del curso completo"
+      ],
+
+      "consideraciones": [
+        "Solo 6 de las 10 asignaturas del libro físico (pista 22 de U2V tiene 10: Ciencias Naturales, Ciencias Sociales, Educación Física, Francés, Lengua, Español, Matemáticas, Música, Educación Plástica, Informática)",
+        "El set de tarjetas de Vocabulario (centros e instituciones educativas) tiene 13 asignaturas — este ejercicio cubre solo 6",
+        "La pista de comprobación oral añade entrenamiento receptivo además del reconocimiento visual"
+      ],
+
+      "gestion_aula": "Uso recomendado: como deberes asíncronos tras el ejercicio 9 de vocabulario (relacionar asignaturas con dibujo) o como autoevaluación rápida del léxico escolar.",
+
+      "observaciones": "Cuarta captura de Blinklearning para U2. Primera con componente auditivo (las anteriores eran solo visuales/escritas). Buen complemento del ej. 9 del libro físico, pero con cobertura léxica más reducida (6 vs 10)."
+    },
+
+    {
+      "id": "U2-mc-013",
+      "ejercicio": "Ejercicio 5 — Observa las imágenes y escribe la opción correcta para formar el plural o el singular",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U2/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U2",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 2 - Países de habla hispana → Libro del alumno → Ejercicio 5",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "transformacion_morfologica", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-8 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve el ejercicio en su dispositivo accediendo a Blinklearning con sus credenciales. La plataforma valida automáticamente.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar la formación del plural y la recuperación del singular en seis sustantivos que cubren los patrones principales del español: regular -o/-os, regular -a/-as, consonante final + tilde con pérdida en plural (camión → camiones), y dos casos de género irregular (la mano y el policía).",
+
+      "competencias": ["CE (lectura de la forma dada)", "EE (escritura de la forma transformada)", "reconocimiento visual (singular = 1 objeto, plural = varios)"],
+
+      "funciones_comunicativas": ["transformar un sintagma nominal de singular a plural y viceversa"],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "6 sustantivos: gato, camión, piscina, policía, globo, mano"
+        ],
+        "gramatica_explicita": [
+          "plural regular en -s tras vocal átona: gato → gatos, piscina → piscinas, globo → globos, mano → manos",
+          "plural en -es tras consonante: camión → camiones, policía → policías (con vocal final acentuada -ía)",
+          "pérdida de tilde al pluralizar oxítonas terminadas en -ón: camión (oxítona, tilde obligatoria) → camiones (paroxítona, sin tilde)",
+          "género irregular: la mano (femenino terminado en -o), el policía (masculino terminado en -a, para el agente; la policía sería el cuerpo)",
+          "concordancia artículo + sustantivo en número (el/los, la/las)"
+        ],
+        "fonetica_ortografia": [
+          "tildes: camión (oxítona con n final), policía (hiato í-a), camiones sin tilde",
+          "policía conserva tilde en singular y plural (hiato)"
+        ]
+      },
+
+      "items_ejercicio": [
+        { "n": 1, "dado": "el gato", "solicitado": "plural", "solucion": "los gatos" },
+        { "n": 2, "dado": "los camiones", "solicitado": "singular", "solucion": "el camión" },
+        { "n": 3, "dado": "la piscina", "solicitado": "plural", "solucion": "las piscinas" },
+        { "n": 4, "dado": "los policías", "solicitado": "singular", "solucion": "el policía" },
+        { "n": 5, "dado": "el globo", "solicitado": "plural", "solucion": "los globos" },
+        { "n": 6, "dado": "las manos", "solicitado": "singular", "solucion": "la mano" }
+      ],
+
+      "apoyos": ["digital (interfaz autocorregible Blinklearning)", "visual fuerte (imagen del sustantivo en singular y en plural)", "feedback inmediato"],
+
+      "descripcion_dinamica": "Ejercicio interactivo autocorregible de Blinklearning. Seis filas con dos columnas cada una (singular a la izquierda, plural a la derecha). Cada fila muestra dos imágenes: una con un solo objeto (singular) y otra con varios (plural). Debajo de cada imagen, una etiqueta con el sintagma o un campo de texto a rellenar. Las filas alternan: en algunas se da el singular y el alumno escribe el plural; en otras se da el plural y el alumno recupera el singular. Validación binaria por la plataforma.",
+
+      "metadatos_blinklearning": {
+        "permite_revision_solucion": true,
+        "puede_reiniciar": true,
+        "retroalimentacion": "binaria visible (correcto/incorrecto)",
+        "intentos_visibles": "contador en pantalla"
+      },
+
+      "secciones_aplicables": ["gramatica", "vocabulario", "evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "gramatica.md — refuerzo del bloque 2 (plural de sustantivos y adjetivos: regla -s/-es)",
+        "evaluacion.md — complemento del ejercicio 3 (tabla de plural)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión analógica: dictar el sintagma singular y pedir el plural en cuaderno",
+        "Ampliación: pedir al alumno que añada un adjetivo concordando en número (el gato negro / los gatos negros)",
+        "Foco gramatical: discutir en plenaria por qué la mano es femenino a pesar de terminar en -o, y por qué el policía es masculino a pesar de terminar en -a"
+      ],
+
+      "consideraciones": [
+        "Dos ítems con género irregular (mano femenino en -o, policía masculino en -a) — pueden necesitar explicación del docente si el alumno los escribe sin el artículo correcto",
+        "El cambio de tilde camión → camiones es una regla de acentuación que requiere atención: muchos alumnos importan la tilde al plural por inercia",
+        "Cobertura léxica diversa (animales, vehículos, instalaciones, profesiones, objetos, cuerpo) — buena variedad para fijar la regla general más allá del campo escolar de U2"
+      ],
+
+      "gestion_aula": "Uso recomendado: como deberes asíncronos tras el bloque 2 de gramática (plural de sustantivos y adjetivos), o como autoevaluación previa al ejercicio 3 de la evaluación.",
+
+      "observaciones": "Quinta captura de Blinklearning para U2. Refuerza la regla del plural más allá del campo léxico escolar de U2 (gato, camión, globo… sustantivos transversales). Útil también para destacar dos casos de género irregular (mano, policía) que el libro físico no toca explícitamente."
+    },
+
+    {
+      "id": "U2-mc-014",
+      "ejercicio": "Vídeo Blinklearning",
+      "origen": "plataforma_blinklearning",
+      "ambito": "U2",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 2 - Países de habla hispana",
+      "secciones_aplicables": ["comunicacion"],
+      "verificacion_pendiente": true,
+      "observaciones": "Entrada mínima — completar título oficial, duración y enlace cuando se disponga del dato."
+    }
+  ],
+
+  "fuentes_transversales": [
+    {
+      "id": "FT-cuaderno-juegos-NC1",
+      "archivo": "Nuevocompaneros1gamificacion_117959.pdf",
+      "obra": "Cuaderno de juegos NC1",
+      "autores": ["Belén García-Alifa", "Javier Villatoro"],
+      "editorial": "SGEL",
+      "anio": 2021,
+      "paginas_totales": 56,
+      "ambito_real": "transversal U1-U9 + 2 repasos",
+      "descripcion": "Cuaderno publicado de juegos didácticos complementarios al manual NC1, con 19 juegos distribuidos en las 9 unidades (2 juegos por unidad en general) más 2 actividades globales de repaso. Cada juego incluye instrucciones, vinculación al libro del alumno, materiales recortables si aplica y sección 'Más ideas' con variantes. NO es un sistema de gamificación (no hay insignias/puntos/niveles); el nombre del archivo 'Nuevocompaneros1gamificacion_117959.pdf' es engañoso — se sugiere renombrar a 'cuaderno-juegos-NC1.pdf' (decisión del autor).",
+      "indice_completo": [
+        { "unidad": "U1", "juego": "El trébol", "pagina": 4, "id_si_inventariado": "U1-mc-008" },
+        { "unidad": "U1", "juego": "El matamoscas", "pagina": 6, "id_si_inventariado": "U1-mc-009" },
+        { "unidad": "U2", "juego": "La pelota encadenada", "pagina": 9, "id_si_inventariado": "U2-mc-007" },
+        { "unidad": "U2", "juego": "Tira los dados", "pagina": 10, "id_si_inventariado": "U2-mc-008" },
+        { "unidad": "U3", "juego": "Ronda familiar", "pagina": 12 },
+        { "unidad": "U3", "juego": "Batalla naval", "pagina": 17 },
+        { "unidad": "U4", "juego": "¿Me conoces?", "pagina": 19 },
+        { "unidad": "U4", "juego": "Bingonevera", "pagina": 23 },
+        { "unidad": "U5", "juego": "Pictionary", "pagina": 29 },
+        { "unidad": "U5", "juego": "La casa de tus sueños", "pagina": 31 },
+        { "unidad": "Repaso 1", "juego": "Actividad global 1 — La fiesta", "pagina": 32 },
+        { "unidad": "U6", "juego": "Busca tu sitio", "pagina": 36 },
+        { "unidad": "U6", "juego": "Conviértete", "pagina": 38 },
+        { "unidad": "U7", "juego": "Dibujo encadenado", "pagina": 39 },
+        { "unidad": "U7", "juego": "Calendario indiscreto", "pagina": 40 },
+        { "unidad": "U8", "juego": "Twister", "pagina": 42 },
+        { "unidad": "U8", "juego": "El mentiroso", "pagina": 44 },
+        { "unidad": "U9", "juego": "La pasarela", "pagina": 46 },
+        { "unidad": "U9", "juego": "La telaraña", "pagina": 48 },
+        { "unidad": "Repaso final", "juego": "Actividad global 2 — Agencia de viajes", "pagina": 49 }
+      ],
+      "nota_inventarios_futuros": "Cuando se procesen los inventarios de material complementario de U3-U9, esta misma fuente puede reutilizarse: cada juego encaja directamente como ítem en el inventario de su unidad correspondiente, manteniendo los campos obra_origen y archivo_fuente. El bloque fuentes_transversales puede replicarse en cada unidad o convertirse en archivo separado nc1-fuentes-transversales.json."
+    }
+  ]
+}
