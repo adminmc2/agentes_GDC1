@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.48 — 2026-06-07] — `formulacion-objetivos.md` §2.2 Cultura: refuerzo abstracción del rasgo + par ❌/✅
+
+`docs/formulacion-objetivos.md` §2.2 Cultura — añadido bullet de principio explícito ("Abstracción del rasgo cultural, no enumeración del contenido") + tabla par ❌/✅ siguiendo el patrón ya usado para Evaluación en la misma §2.2. Principio: el objetivo de Cultura nombra el **rasgo cultural** que la sección trabaja (el *uso*, el *papel*, las *ocasiones*, los *sistemas*); no enumera el inventario de contenido específico (qué tres trajes, qué tres regiones, qué tres marcadores). El contenido específico vive en los rótulos del cuerpo. Par ❌/✅ con ❌ literal del caso U9 Cultura primera ronda + ✅ ejemplo normativo derivado (Bloom 3, *Contrastar*) — no fingido como cita final literal porque el post-mortem no fija una. Caso de origen: brecha real codificable B.2 del triage U9 Cultura. Sin sync de check-final: el ítem 3 del checklist v1 ya audita "naturaleza correcta por sección" como bloque, sin necesidad de comprobación separable nueva. Registro de actualizaciones del propio `formulacion-objetivos.md` también actualizado. Primer lote (de 3) del triage doctrinal U9 Cultura.
+
 ## [v12.47 — 2026-06-07] — CLAUDE.md raíz: fila nueva en la tabla de documentos clave para `contratos-recursos-editoriales.md`
 
 `CLAUDE.md` — añadida fila para `docs/contratos-recursos-editoriales.md` en la tabla *Documentos clave (índice de navegación)*, insertada tras `docs/formulacion-objetivos.md`. Cierre de la deuda de sincronización documental abierta en v12.41 (creación del documento sin actualización paralela del índice raíz). Sin cambios de doctrina.

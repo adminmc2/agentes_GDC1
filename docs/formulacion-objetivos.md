@@ -142,7 +142,14 @@ La distinción no es cosmética: Evaluación **no introduce contenido nuevo** (`
 
 **Cultura** — naturaleza intercultural-aplicada.
 - Progresión — página única, dos tramos: *identificar* el rasgo cultural → *contrastarlo* con la cultura propia.
+- **Abstracción del rasgo cultural, no enumeración del contenido.** El objetivo nombra el **rasgo cultural** que la sección trabaja (el *uso*, el *papel*, las *ocasiones*, los *sistemas*); **no enumera el inventario de contenido específico** (qué tres trajes, qué tres regiones, qué tres marcadores). El contenido específico vive en los rótulos del cuerpo, no en el objetivo.
 - Ejemplo: *"Contrastar los sistemas de tratamiento del español con los de la lengua del estudiante."*
+
+**Par ❌/✅ (Cultura — enumeración vs abstracción del rasgo):**
+
+| ❌ Versión enumerativa (inventario de contenido) | ✅ Versión por rasgo cultural (abstracción) |
+|---|---|
+| *"Identificar tres trajes tradicionales, tres regiones donde se llevan y tres marcadores de quién/cuándo/cómo elaborado."* (U9C, primera ronda rechazada) | *"Contrastar el uso del traje tradicional en las fiestas regionales del mundo hispanohablante."* (ejemplo normativo derivado del caso U9C) |
 
 **Reflexión** — naturaleza metacognitiva-aplicada.
 - Sin progresión interna — momento único de cierre.
@@ -344,3 +351,4 @@ La teoría del Procesamiento del Input (VanPatten, 1996, 2004) establece que ant
 | 2026-05-21 | **Reestructuración a formato operativo.** Reordenado por uso: procedimiento primero, luego naturaleza+modelo, verificación, referencia y fundamentos al final. Disuelta la acreción (bis/ter, §1.5, §7.7). Títulos de sección declarados API canónica estable. Contenido normativo sin cambios — solo orden y numeración. |
 | 2026-05-21 | **Lenguaje no marcado por género** (Fase 1 del lote). Ejemplos de §2.2 y prosa normativa saneados: *alumno → estudiante*, *profesor → docente* (epicenos aceptados). Sin cambio de contenido normativo. |
 | 2026-05-23 | **Saneamiento normativo Destrezas — etiqueta y desempate.** §2.1 tabla + §2.2 Destrezas: simplificada la etiqueta de naturaleza *"comunicativo / performativo de la destreza"* → *"comunicativo"* (la calificación "performativo" era decorativa, sin criterio operativo distinto). §1.2 nueva ⚠ regla de desempate para Destrezas en bloques mixtos input+output (L→E, CO→H o protocolo combinado): prevalece la capacidad final productiva, Bloom 3. `destrezas-pautas.md §11` actualiza el bullet de Bloom de bloque para citar la nueva regla. |
+| 2026-06-07 | **Refuerzo Cultura — abstracción del rasgo cultural, no enumeración del contenido.** §2.2 Cultura: bullet nuevo que explicita el principio (el objetivo nombra el *rasgo* cultural — *uso*, *papel*, *ocasiones*, *sistemas* — no el inventario de contenido específico) + tabla par ❌/✅ siguiendo el patrón ya usado para Evaluación en la misma §2.2. Caso de origen: brecha real codificable B.2 del triage U9 Cultura (objetivos primera ronda enumeraron tres trajes + tres regiones + tres marcadores en vez de abstraer el rasgo). Sin sync de check-final: el ítem 3 del checklist v1 ya audita "naturaleza correcta por sección" como bloque. |
