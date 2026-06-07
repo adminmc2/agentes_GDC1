@@ -18,10 +18,10 @@ Objetivo: verificar que `$archivo` cumple las reglas activas y canónicas codifi
 3. **Relee las autoridades canónicas** de repo A:
    - `docs/manual-estilo-final.md` — toda la doctrina activa.
    - `docs/formulacion-objetivos.md` — criterio de objetivos.
-4. **Aplica el checklist v1 de 13 ítems** sobre el archivo auditado, ítem por ítem.
+4. **Aplica el checklist v1 de 14 ítems** sobre el archivo auditado, ítem por ítem.
 5. **Devuelve un informe** con cabecera + tabla + cierre.
 
-## Checklist v1 — 13 ítems
+## Checklist v1 — 14 ítems
 
 ### 1. Estructura mínima de `final/` (§2)
 
@@ -107,6 +107,27 @@ Cuando el cuerpo de un rótulo propone al estudiante una **misión de lectura, e
 
 Si la respuesta parece "es ya visible", marcar ⚠ con cita y la formulación *"posible §10.9 — confirmar"*.
 
+### 14. Proporcionalidad entre mecánica y finalidad (§10.10)
+
+La mecánica didáctica que el cuerpo del rótulo propone (pasos de la dinámica, asignación de roles, atrezo, transiciones físicas, rotaciones de grupo) debe estar **proporcionada al objetivo** que el rótulo persigue. Si la mecánica consume más tiempo, atención, infraestructura o andamiaje del docente que el aprendizaje que produce, hay desproporción.
+
+⚠ **Por defecto, NUNCA ❌ automático** — mismo régimen que §10.6 y §10.9. La proporcionalidad mecánica/finalidad es juicio editorial: requiere ponderar el peso pedagógico real del objetivo, no solo contar pasos de la dinámica. Una mecánica "grande" puede estar justificada si el objetivo lleva carga comunicativa también grande. Solo marcar ❌ si el desequilibrio es grosero y evidente. El resto de candidatos → ⚠ con cita y nota *"posible §10.10 — confirmar"*.
+
+**Formas en que aparece** (búsqueda heurística por señales del cuerpo del rótulo):
+
+- Dinámicas con rotaciones múltiples, asignación de roles o transiciones físicas para repaso de contenido cubrible en plenaria breve.
+- Atrezo o materiales especiales (cartas, fichas, tableros, recortables) con preparación desproporcionada al uso real.
+- Diseños teatrales (escenarios, representaciones, presentaciones) para microcontenido sin peso comunicativo proporcional.
+- Instrucciones de mecánica que ocupan más espacio en el cuerpo que la descripción del objetivo y del contenido lingüístico.
+
+**Filtro orientativo al detectar candidata:**
+
+> *El tiempo, la atención y el andamiaje que esta mecánica consume, ¿están proporcionados al aprendizaje que produce? ¿Podría una versión más simple cubrir el mismo objetivo con menos despliegue?*
+
+Si la respuesta parece "podría una versión más simple", marcar ⚠ con cita y la formulación *"posible §10.10 — confirmar"*.
+
+⚠ **Distinto de §10.1 *Prescripción de decisiones libres del docente*** (auditado en ítem 8). El ítem 8 detecta cierre indebido de decisiones libres; el ítem 14 detecta desproporción de la mecánica con independencia de quién decide los detalles.
+
 ## Fuera del alcance v1 (no auditar)
 
 - Patrones pendientes de codificación (§13 del manual).
@@ -144,7 +165,7 @@ Si la respuesta parece "es ya visible", marcar ⚠ con cita y la formulación *"
 
 - **Bloqueadores** (todos los ❌): lista compacta de incumplimientos que impiden cerrar la sección.
 - **No bloqueantes** (⚠ menores resolubles sin consulta): lista compacta.
-- **Zonas de consulta** (⚠ que requieren OK del autor, especialmente §10.6): lista con la formulación *"posible §10.6 — confirmar"* o equivalente.
+- **Zonas de consulta** (⚠ que requieren OK del autor, especialmente §10.6, §10.9 y §10.10): lista con la formulación *"posible §10.6 — confirmar"* / *"posible §10.9 — confirmar"* / *"posible §10.10 — confirmar"* o equivalente.
 
 ## Límites duros (no negociables)
 

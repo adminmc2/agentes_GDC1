@@ -675,6 +675,30 @@ Si la respuesta es "es ya visible", la misión necesita reformularse: cambiar la
 
 ⚠ **No se aplica retroactivamente sin consulta editorial.** Detectar una misión candidata en un archivo `final/` ya cerrado requiere citar la consigna en chat, aplicar el filtro y proponer reformulación al editor. Silencio o ausencia de respuesta no equivalen a aprobación.
 
+### 10.10 Proporcionalidad entre mecánica y finalidad: la mecánica no pesa más que el objetivo
+
+Las mecánicas didácticas que el cuerpo del rótulo propone (pasos de la dinámica, asignación de roles, atrezo, transiciones físicas, rotaciones de grupo) deben estar **proporcionadas al objetivo** que el rótulo persigue. Si el aparato mecánico consume más tiempo de aula, más explicación, más infraestructura o más andamiaje del docente que el aprendizaje que produce, **se produce desproporción**: la mecánica eclipsa la finalidad en lugar de servirla.
+
+**Formas en que aparece:**
+
+- Dinámicas de grupo elaboradas (rotaciones múltiples, asignación de roles, transiciones físicas en el aula) para repasar contenido que el docente puede cubrir en plenaria breve.
+- Atrezo o materiales especiales (cartas, fichas, tableros, recortables) cuya preparación supera el tiempo de uso real en clase.
+- Mecánica con más pasos de los necesarios para producir el output que el ejercicio pide.
+- Diseños teatrales (escenarios, representaciones, presentaciones) para microcontenido que no carga peso comunicativo proporcional al despliegue.
+- Instrucciones de mecánica que ocupan más espacio en el cuerpo del rótulo que la descripción del objetivo y del contenido lingüístico que la mecánica vehicula.
+
+**Filtro orientativo antes de cerrar el cuerpo de un rótulo con mecánica elaborada:**
+
+> *El tiempo, la atención y el andamiaje que esta mecánica consume, ¿están proporcionados al aprendizaje que produce? ¿Podría una versión más simple cubrir el mismo objetivo con menos despliegue?*
+
+Si la mecánica pesa más que el objetivo, simplificar o sustituir por una dinámica más liviana que cubra el mismo aprendizaje.
+
+⚠ **Régimen de aplicación.** ⚠ por defecto, NUNCA ❌ automático. La proporcionalidad mecánica/finalidad es juicio editorial: requiere ponderar el peso pedagógico real del objetivo, no solo contar pasos de la dinámica. Una mecánica "grande" puede estar justificada si el objetivo lleva carga comunicativa también grande (producción oral en grupo, juego de rol con varios turnos). Solo marcar ❌ si el desequilibrio es grosero y evidente. El resto de candidatos → ⚠ con cita y nota *"posible §10.10 — confirmar"*.
+
+⚠ **Distinto de §10.1 *Prescripción de decisiones libres del docente*.** Aquel bullet veta que la guía cierre decisiones que el docente puede resolver libremente. §10.10 no juzga quién decide los detalles, sino si la mecánica propuesta guarda proporción con la finalidad. Una mecánica puede dejar margen al docente y seguir estando sobredimensionada para el aprendizaje que produce.
+
+**Caso de origen.** Brecha estructural mayor detectada en el triage U8 Cultura de repo B (post-mortem C.1: el checklist canónico verificaba reglas formales pero no examinaba proporcionalidad mecánica↔finalidad), que llevó a introducir el ítem #27 *Test de proporcionalidad* en el checklist canónico de aquel repo. Esta subsección traslada ese criterio a `final/`.
+
 ---
 
 ## 11. Cómo aplicar este manual
@@ -768,6 +792,7 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-06-07 | §10.9 nueva — misión verificable de lectura, escucha o búsqueda: la consigna debe requerir realmente el material; si la información buscada ya es visible (pies de foto, titulares, descarte trivial, único candidato), la misión es ritual y debe reformularse. Sibling semántico de §10.6 pero distinto plano: §10.6 regula el cuerpo del docente, §10.9 la operatividad de la consigna al estudiante. Régimen de aplicación: ⚠ por defecto, sin retroactividad sin consulta editorial. Caso detectado en U9 Destrezas R1 (misión de "encontrar 3 monumentos" cuyos nombres estaban ya en los pies de foto). |
 | 2026-06-07 | §10.1 — bullet nuevo: lengua profesional natural — sin coloquialismos, muletillas mecánicas, fórmulas o valoraciones de coaching ni jerga emocional. Cierra la asimetría con el criterio #23 de repo B (codificado tras triage U9C): repo A ya tenía vetada la jerga didáctica metodológica (técnico-pedagógica); ahora completa los cuatro registros restantes del quinteto vetado (coloquial, mecánico, coaching, emocional). Bullet único compacto con (a)-(d) por densidad de §10.1. Caso detectado en U9 Comunicación (5 ocurrencias). |
 | 2026-06-07 | §10.1 — bullet nuevo: invención de hilo temático no sostenido por la fuente. Cláusula afirmativa: tematizar es válido si el material y la secuencia sostienen el hilo (título del diálogo, enunciado del ejercicio, contenido sostenido). Veto: elevar mención circunstancial a eje organizador o fabricar marco narrativo añadido para cohesión retórica. Caso de origen: U9 Comunicación — diálogo *¿Qué hiciste ayer?* con queja circunstancial *"No me gustan los lunes"* elevada a hilo organizador con 13 ocurrencias fabricadas. Filtro orientativo incorporado. Cierra brecha estructural mayor detectada en triage U9C (B.1). |
+| 2026-06-07 | §10.10 nueva — proporcionalidad entre mecánica y finalidad: la mecánica didáctica propuesta en el cuerpo del rótulo debe estar proporcionada al objetivo; si la mecánica eclipsa la finalidad (más despliegue del que el aprendizaje justifica), simplificar o sustituir. Régimen ⚠ por defecto, NUNCA ❌ automático — juicio editorial. Cláusula explícita de distinción con §10.1 *Prescripción de decisiones libres del docente* (allí se veta quién decide; aquí se veta el peso de la mecánica independientemente de quién decide los detalles). Caso de origen: criterio trasladado del endurecimiento del checklist post-triage U8 Cultura de repo B (#27 *Test de proporcionalidad*). |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
