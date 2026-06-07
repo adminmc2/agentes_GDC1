@@ -699,6 +699,34 @@ Si la mecánica pesa más que el objetivo, simplificar o sustituir por una diná
 
 **Caso de origen.** Brecha estructural mayor detectada en el triage U8 Cultura de repo B (post-mortem C.1: el checklist canónico verificaba reglas formales pero no examinaba proporcionalidad mecánica↔finalidad), que llevó a introducir el ítem #27 *Test de proporcionalidad* en el checklist canónico de aquel repo. Esta subsección traslada ese criterio a `final/`.
 
+### 10.11 Comprobación real — papel activo del estudiante
+
+§10.3 regula **quién ejecuta físicamente** la acción (el docente no se atribuye acciones que realiza el estudiante: *"Abra la página 14"* cuando quien abre es el alumno). §10.11 regula si la acción atribuida al estudiante lo coloca en un **papel activo, nombrable y observable**. Las dos reglas son ortogonales y se aplican juntas.
+
+**Principio.** Cuando un rótulo activa trabajo del estudiante, ese trabajo debe ser **activo, nombrable y observable**. El estudiante no puede quedar reducido a *escuchar*, *mirar*, *copiar*, *indicar* o *reaccionar* sin operación cognitiva o interactiva añadida.
+
+- **Nombrable en una frase**: *los estudiantes [hacen X concreto] [sobre Y material]*. Si la frase no se puede formar limpiamente, el papel no está claro.
+- **Observable**: el docente puede ver en el aula si está sucediendo (los estudiantes escriben, hablan en pareja, manipulan la tarjeta, debaten, ordenan, comparan).
+
+**Verbos que por sí solos no bastan** (sin operación cognitiva o interactiva añadida): *escuchar*, *mirar*, *indicar* (señalar sin justificar), *reaccionar a*, *seguir* (a la clase, al docente), *participar* (sin tarea verbalizable), *copiar* / *transcribir*.
+
+**Formas en que aparece la mecánica pasiva:**
+
+- Rótulos donde el docente **lanza** estímulos y los estudiantes solo indican o reaccionan (*"Lance el léxico de palabra en palabra y la clase indica la casilla"* — el docente trabaja, la clase recibe).
+- Tareas de transcripción literal sin componente de procesamiento (*"copien la frase del libro"* — sin contraste, comparación, transformación o uso).
+- Escucha sin tarea cognitiva verificable (*"oyen el audio"* sin recogida posterior).
+- Rótulos donde toda la mecánica recae en el docente (proyecta, lee, narra, demuestra) y la única acción del estudiante es atender.
+
+**Filtro orientativo al cerrar el cuerpo de un rótulo:**
+
+> *¿Puedo nombrar en una frase qué hace activamente el estudiante en este rótulo, y un docente podría verlo en el aula? Si la frase mejor que se me ocurre es "los estudiantes escuchan / miran / indican / reaccionan", ¿hay operación cognitiva o interactiva añadida — o el rótulo deja al estudiante como receptor?*
+
+Si el rótulo deja al estudiante como receptor, reformular para incorporar operación activa (escribir, comparar, debatir, ordenar, transformar, usar oralmente, decidir, justificar).
+
+⚠ **Régimen de aplicación.** ⚠ por defecto, NUNCA ❌ automático. La frontera entre escucha activa con tarea (válida) y escucha pasiva (inválida) requiere juicio editorial — depende del contexto del bloque y de qué tarea posterior recoge lo escuchado. Solo marcar ❌ si el desequilibrio es grosero y evidente (rótulo completo sin verbo de acción del estudiante salvo *escuchar* / *mirar* / *indicar*).
+
+**Caso de origen.** Brecha estructural detectada en el triage U8 Cultura de repo B (post-mortem A.1: *"Lance el léxico de palabra en palabra"* — docente lanza, clase indica casilla) y convertida después en el ítem #12 *Comprobación real — papel activo del estudiante* del checklist canónico de aquel repo. El registro lo documenta como **patrón crónico**, con reincidencias previas en U7C, U8V y U8G.
+
 ---
 
 ## 11. Cómo aplicar este manual
@@ -793,6 +821,7 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-06-07 | §10.1 — bullet nuevo: lengua profesional natural — sin coloquialismos, muletillas mecánicas, fórmulas o valoraciones de coaching ni jerga emocional. Cierra la asimetría con el criterio #23 de repo B (codificado tras triage U9C): repo A ya tenía vetada la jerga didáctica metodológica (técnico-pedagógica); ahora completa los cuatro registros restantes del quinteto vetado (coloquial, mecánico, coaching, emocional). Bullet único compacto con (a)-(d) por densidad de §10.1. Caso detectado en U9 Comunicación (5 ocurrencias). |
 | 2026-06-07 | §10.1 — bullet nuevo: invención de hilo temático no sostenido por la fuente. Cláusula afirmativa: tematizar es válido si el material y la secuencia sostienen el hilo (título del diálogo, enunciado del ejercicio, contenido sostenido). Veto: elevar mención circunstancial a eje organizador o fabricar marco narrativo añadido para cohesión retórica. Caso de origen: U9 Comunicación — diálogo *¿Qué hiciste ayer?* con queja circunstancial *"No me gustan los lunes"* elevada a hilo organizador con 13 ocurrencias fabricadas. Filtro orientativo incorporado. Cierra brecha estructural mayor detectada en triage U9C (B.1). |
 | 2026-06-07 | §10.10 nueva — proporcionalidad entre mecánica y finalidad: la mecánica didáctica propuesta en el cuerpo del rótulo debe estar proporcionada al objetivo; si la mecánica eclipsa la finalidad (más despliegue del que el aprendizaje justifica), simplificar o sustituir. Régimen ⚠ por defecto, NUNCA ❌ automático — juicio editorial. Cláusula explícita de distinción con §10.1 *Prescripción de decisiones libres del docente* (allí se veta quién decide; aquí se veta el peso de la mecánica independientemente de quién decide los detalles). Caso de origen: criterio trasladado del endurecimiento del checklist post-triage U8 Cultura de repo B (#27 *Test de proporcionalidad*). |
+| 2026-06-07 | §10.11 nueva — comprobación real del papel activo del estudiante: cuando un rótulo activa trabajo del estudiante, ese trabajo debe ser activo, nombrable y observable; *escuchar*, *mirar*, *copiar*, *indicar* o *reaccionar* no bastan por sí solos. Ortogonal a §10.3 (que regula quién ejecuta físicamente la acción). Régimen ⚠ por defecto, NUNCA ❌ automático — juicio editorial sobre la tarea cognitiva o interactiva añadida. Caso de origen: brecha estructural del triage U8 Cultura de repo B (post-mortem A.1: *"Lance el léxico de palabra en palabra"*), convertida en el ítem #12 *Comprobación real — papel activo del estudiante* del checklist canónico. Patrón crónico documentado con reincidencias en U7C, U8V y U8G. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 

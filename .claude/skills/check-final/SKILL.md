@@ -18,10 +18,10 @@ Objetivo: verificar que `$archivo` cumple las reglas activas y canónicas codifi
 3. **Relee las autoridades canónicas** de repo A:
    - `docs/manual-estilo-final.md` — toda la doctrina activa.
    - `docs/formulacion-objetivos.md` — criterio de objetivos.
-4. **Aplica el checklist v1 de 14 ítems** sobre el archivo auditado, ítem por ítem.
+4. **Aplica el checklist v1 de 15 ítems** sobre el archivo auditado, ítem por ítem.
 5. **Devuelve un informe** con cabecera + tabla + cierre.
 
-## Checklist v1 — 14 ítems
+## Checklist v1 — 15 ítems
 
 ### 1. Estructura mínima de `final/` (§2)
 
@@ -128,6 +128,27 @@ Si la respuesta parece "podría una versión más simple", marcar ⚠ con cita y
 
 ⚠ **Distinto de §10.1 *Prescripción de decisiones libres del docente*** (auditado en ítem 8). El ítem 8 detecta cierre indebido de decisiones libres; el ítem 14 detecta desproporción de la mecánica con independencia de quién decide los detalles.
 
+### 15. Comprobación real — papel activo del estudiante (§10.11)
+
+Cuando un rótulo activa trabajo del estudiante, ese trabajo debe ser **activo, nombrable y observable**. El estudiante no puede quedar reducido a *escuchar*, *mirar*, *copiar*, *indicar* o *reaccionar* sin operación cognitiva o interactiva añadida.
+
+⚠ **Por defecto, NUNCA ❌ automático** — mismo régimen que §10.6, §10.9 y §10.10. La frontera entre escucha activa con tarea (válida) y escucha pasiva (inválida) requiere juicio editorial: depende del contexto del bloque y de qué tarea posterior recoge lo escuchado. Solo marcar ❌ si el desequilibrio es grosero y evidente (rótulo completo sin verbo de acción del estudiante salvo *escuchar* / *mirar* / *indicar*). El resto de candidatos → ⚠ con cita y nota *"posible §10.11 — confirmar"*.
+
+**Formas en que aparece la mecánica pasiva** (búsqueda heurística por señales del cuerpo del rótulo):
+
+- Rótulos donde el docente **lanza** estímulos y los estudiantes solo indican o reaccionan (*"Lance X y la clase indica Y"*).
+- Tareas de transcripción literal sin componente de procesamiento (*"copien la frase del libro"* sin contraste, comparación, transformación o uso).
+- Escucha sin tarea cognitiva verificable (*"oyen el audio"* sin recogida posterior).
+- Rótulos donde toda la mecánica recae en el docente (proyecta, lee, narra, demuestra) y la única acción del estudiante es atender.
+
+**Filtro orientativo al detectar candidata:**
+
+> *¿Puedo nombrar en una frase qué hace activamente el estudiante en este rótulo, y un docente podría verlo en el aula? Si la frase mejor que se me ocurre es "los estudiantes escuchan / miran / indican / reaccionan", ¿hay operación cognitiva o interactiva añadida?*
+
+Si la respuesta parece "no hay operación añadida", marcar ⚠ con cita y la formulación *"posible §10.11 — confirmar"*.
+
+⚠ **Distinto del ítem 7 (§10.3 — voz del cuerpo)**. El ítem 7 detecta atribución incorrecta de quién ejecuta físicamente la acción (*"Abra la página"* cuando abre el alumno). El ítem 15 detecta si la acción atribuida al estudiante lo coloca en un papel activo, nombrable y observable. Las dos reglas son ortogonales y se auditan juntas.
+
 ## Fuera del alcance v1 (no auditar)
 
 - Patrones pendientes de codificación (§13 del manual).
@@ -165,7 +186,7 @@ Si la respuesta parece "podría una versión más simple", marcar ⚠ con cita y
 
 - **Bloqueadores** (todos los ❌): lista compacta de incumplimientos que impiden cerrar la sección.
 - **No bloqueantes** (⚠ menores resolubles sin consulta): lista compacta.
-- **Zonas de consulta** (⚠ que requieren OK del autor, especialmente §10.6, §10.9 y §10.10): lista con la formulación *"posible §10.6 — confirmar"* / *"posible §10.9 — confirmar"* / *"posible §10.10 — confirmar"* o equivalente.
+- **Zonas de consulta** (⚠ que requieren OK del autor, especialmente §10.6, §10.9, §10.10 y §10.11): lista con la formulación *"posible §10.6 — confirmar"* / *"posible §10.9 — confirmar"* / *"posible §10.10 — confirmar"* / *"posible §10.11 — confirmar"* o equivalente.
 
 ## Límites duros (no negociables)
 
