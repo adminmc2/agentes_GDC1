@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.42 — 2026-06-07] — §10.1 — bullet nuevo: lengua profesional natural (cierre asimetría con #23 de repo B)
+
+`docs/manual-estilo-final.md` §10.1 — bullet nuevo que veta cuatro registros adicionales del cuerpo del docente: (a) coloquialismos (*soltar la actividad, lanzar el juego*), (b) muletillas mecánicas (*a la señal, pulse play y reproduzca*), (c) fórmulas o valoraciones de coaching (*marque la ronda con energía, suba la intensidad*), (d) jerga emocional (*engancharse al grupo, vibrar con la actividad*). Distinto del bullet ya existente sobre *jerga didáctica metodológica* (técnico-pedagógica): el nuevo veta los registros coloquial, ritual y motivacional. Cierra la asimetría con el criterio #23 de repo B (codificado tras triage U9C, lote 4/4) que repo A no había trasladado todavía. Estructura: un bullet único compacto con (a)-(d) para mantener densidad de §10.1. Caso detectado en U9 Comunicación (5 ocurrencias). Sin sync de check-final — el ítem 8 del checklist v1 ya audita §10.1 como bloque.
+
 ## [v12.41 — 2026-06-07] — `contratos-recursos-editoriales.md` nuevo (D1 + D2 del triage U9D)
 
 `docs/contratos-recursos-editoriales.md` — documento canónico nuevo que regula la **spec textual interna** de tarjetas de estrategia y píldoras formativas. Codifica dos brechas estructurales del post-mortem U9D: (D1) la tarjeta entrega el frame literal con inicios prefijados y huecos, no enseña a construirlo (antipatrón origen *USA EL ANDAMIO*; modelo de referencia Wray & Lewis 1997 *writing frames*); (D2) la píldora desarrolla habilidad nuclear A1 transferible a cualquier material futuro del mismo tipo, no mecánica-tarea sobre el audio/texto concreto del libro (antipatrón origen: 5 candidatas iniciales píldora 9.3). Sin activación path-scoped — doctrina de consulta sobre redacción de tarjetas/píldoras. `docs/manual-estilo-final.md` §1 *Lo que NO redefine este manual* — añadida línea de cruce que remite a este nuevo documento; el manual sigue regulando cómo se nombran y dónde aparecen las menciones en `final/`, no qué dicen los recursos por dentro.
