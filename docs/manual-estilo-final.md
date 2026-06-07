@@ -30,6 +30,8 @@ Cualquier archivo `.md` que matchee el patrón `unidades/**/final/*.md`:
 
 La **formulación de objetivos** (cómo se redacta un objetivo general de sección o un objetivo de bloque: verbos validados/prohibidos, naturaleza por sección, anti-aditivo, etc.) se rige por `docs/formulacion-objetivos.md`. Este manual no redefine ese criterio.
 
+La **spec textual interna de recursos editoriales propios del proyecto** (tarjetas de estrategia: cara A/B, principio operativo, criterio de nombre; píldoras formativas: principio operativo, criterio de aceptación; análogos futuros) se rige por `docs/contratos-recursos-editoriales.md`. Este manual sí regula cómo se nombran, se tipografían y dónde aparecen las menciones a esos recursos en el cuerpo de `final/` (§2.1, §6.1, §9), pero no qué dicen los recursos por dentro.
+
 ### A qué NO aplica
 
 - `unidades/**/propuesta/*.md` → fuente editorial rica con metanotas, trazabilidad de proceso, briefs, etc. Tiene sus propias reglas (las del repo B).

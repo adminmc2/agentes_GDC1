@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.41 — 2026-06-07] — `contratos-recursos-editoriales.md` nuevo (D1 + D2 del triage U9D)
+
+`docs/contratos-recursos-editoriales.md` — documento canónico nuevo que regula la **spec textual interna** de tarjetas de estrategia y píldoras formativas. Codifica dos brechas estructurales del post-mortem U9D: (D1) la tarjeta entrega el frame literal con inicios prefijados y huecos, no enseña a construirlo (antipatrón origen *USA EL ANDAMIO*; modelo de referencia Wray & Lewis 1997 *writing frames*); (D2) la píldora desarrolla habilidad nuclear A1 transferible a cualquier material futuro del mismo tipo, no mecánica-tarea sobre el audio/texto concreto del libro (antipatrón origen: 5 candidatas iniciales píldora 9.3). Sin activación path-scoped — doctrina de consulta sobre redacción de tarjetas/píldoras. `docs/manual-estilo-final.md` §1 *Lo que NO redefine este manual* — añadida línea de cruce que remite a este nuevo documento; el manual sigue regulando cómo se nombran y dónde aparecen las menciones en `final/`, no qué dicen los recursos por dentro.
+
 ## [v12.40 — 2026-06-07] — §10.9 nueva (misión verificable) + sync check-final 12→13 ítems
 
 `docs/manual-estilo-final.md` — §10.9 nueva codifica que la consigna al estudiante de leer/oír/buscar debe **requerir realmente** el material; si la respuesta ya es visible (pies de foto, titulares, descarte trivial, único candidato), la misión es ritual y se reformula. Sibling semántico de §10.6 pero distinto plano: §10.6 regula el cuerpo del docente, §10.9 la operatividad de la consigna al estudiante. Régimen ⚠ por defecto, sin retroactividad automática. Caso de origen: U9 Destrezas R1 ("encontrar 3 monumentos" cuyos nombres estaban ya en los pies de foto). Codificación derivada del triage del post-mortem U9D (lote D4 de 5). `.claude/skills/check-final/SKILL.md` — sincronizado al checklist v1 de 13 ítems: nuevo ítem 13 con heurísticas por palabras-señal (*encontrar*, *busca*, *señala*, *cuente cuántos*…) y formulación canónica *"posible §10.9 — confirmar"*. Sin tocar archivos `final/` existentes.
