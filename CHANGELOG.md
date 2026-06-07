@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.40 — 2026-06-07] — §10.9 nueva (misión verificable) + sync check-final 12→13 ítems
+
+`docs/manual-estilo-final.md` — §10.9 nueva codifica que la consigna al estudiante de leer/oír/buscar debe **requerir realmente** el material; si la respuesta ya es visible (pies de foto, titulares, descarte trivial, único candidato), la misión es ritual y se reformula. Sibling semántico de §10.6 pero distinto plano: §10.6 regula el cuerpo del docente, §10.9 la operatividad de la consigna al estudiante. Régimen ⚠ por defecto, sin retroactividad automática. Caso de origen: U9 Destrezas R1 ("encontrar 3 monumentos" cuyos nombres estaban ya en los pies de foto). Codificación derivada del triage del post-mortem U9D (lote D4 de 5). `.claude/skills/check-final/SKILL.md` — sincronizado al checklist v1 de 13 ítems: nuevo ítem 13 con heurísticas por palabras-señal (*encontrar*, *busca*, *señala*, *cuente cuántos*…) y formulación canónica *"posible §10.9 — confirmar"*. Sin tocar archivos `final/` existentes.
+
 ## [v12.39 — 2026-05-29] — Fix bug latente: merge no destructivo protege `hilo.relaciones[]`
 
 `generar_reciclaje_capa1.py` — el detector de pérdidas y la lógica de fusión del merge no destructivo (v11.76) reconocían `etiquetas`, `explicacion`, `detalle` y procedencia verbal como enriquecimiento editorial, pero **no `hilo.relaciones[]`** (campo añadido en v11.86, posterior al detector). Cualquier regeneración íntegra borraba silenciosamente las relaciones cross-hilo cerradas. Bug detectado al ejecutar el paso de higiene tras v12.37: las 15 entradas U2/U3 cerradas (v12.10/v12.18) desaparecían sin abortar. Fix: `_hilo_tiene_enriquecimiento` reconoce ahora `relaciones` no vacías; `merge_no_destructivo` preserva el array del previo si la salida nueva no lo trae. Test verificado: regeneración íntegra conserva las 15 entradas; diff sobre canónico = solo bump automático de `_meta` (`v12.18 → v12.39`). Validadores estructural + cross-unidad sin regresión (0 errores; 197 avisos legacy + alertas R1/R4 conocidas).

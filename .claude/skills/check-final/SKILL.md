@@ -18,10 +18,10 @@ Objetivo: verificar que `$archivo` cumple las reglas activas y canónicas codifi
 3. **Relee las autoridades canónicas** de repo A:
    - `docs/manual-estilo-final.md` — toda la doctrina activa.
    - `docs/formulacion-objetivos.md` — criterio de objetivos.
-4. **Aplica el checklist v1 de 12 ítems** sobre el archivo auditado, ítem por ítem.
+4. **Aplica el checklist v1 de 13 ítems** sobre el archivo auditado, ítem por ítem.
 5. **Devuelve un informe** con cabecera + tabla + cierre.
 
-## Checklist v1 — 12 ítems
+## Checklist v1 — 13 ítems
 
 ### 1. Estructura mínima de `final/` (§2)
 
@@ -88,6 +88,24 @@ Aplica a todas las secciones **salvo Evaluación**. En Evaluación no se audita 
 Estructura siempre auditable: rótulo + frase obligatoria *"Mencione que por [logros], reciben la insignia ¡LEMA!"* presente. Sin línea repetida *"Entrega de insignia ¡LEMA!"* bajo el rótulo → si está, ❌.
 
 Segunda frase cultural opcional: presente → ✅ si no plantea problema visible. ⚠ si parece **afirmación cultural no sustentada por el propio texto** (caso límite que requiere revisión humana). **No se audita verificabilidad factual con cruces externos — fuera del alcance v1.**
+
+### 13. Misión verificable de lectura, escucha o búsqueda (§10.9)
+
+Cuando el cuerpo de un rótulo propone al estudiante una **misión de lectura, escucha o búsqueda** sobre material de la página, la consigna debe **requerir realmente** procesar el material. Si la información buscada ya es visible por título, pie de foto, etiqueta, descarte trivial o único candidato presente, la misión es ritual.
+
+⚠ **Por defecto, NUNCA ❌ automático** — mismo régimen que §10.6. La validación de "¿la respuesta ya es visible?" requiere conocimiento de la página del libro que el chat no siempre puede verificar. Solo marcar ❌ si es caso grosero y evidente (la consigna nombra explícitamente algo que aparece literal en pie de foto, titular, etiqueta de la misma página). El resto de candidatos → ⚠ con cita y nota *"posible §10.9 — confirmar"*.
+
+**Formas en que aparece** (búsqueda heurística por palabras-señal del cuerpo del rótulo):
+
+- *encontrar* / *busca* / *busque* / *localiza* / *identifica* + nombre propio o dato concreto.
+- *señala* / *marca* + elemento de lista visible.
+- *di* / *dime* / *cuente* cuántos / cuáles + categoría enumerada en la propia página.
+
+**Filtro orientativo al detectar candidata:**
+
+> *Esta misión, ¿requiere realmente leer/oír el material o la respuesta es ya visible/obvia para el estudiante?*
+
+Si la respuesta parece "es ya visible", marcar ⚠ con cita y la formulación *"posible §10.9 — confirmar"*.
 
 ## Fuera del alcance v1 (no auditar)
 

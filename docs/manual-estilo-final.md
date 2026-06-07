@@ -648,6 +648,29 @@ El bloque queda en una o dos frases:
 
 Si el lema no tiene comentario cultural verdadero o significativo, **no se inventa**: el bloque queda solo con la frase obligatoria.
 
+### 10.9 Misión verificable de lectura, escucha o búsqueda: la consigna debe requerir el material
+
+Cuando el cuerpo de un rótulo propone una **misión de lectura, escucha o búsqueda** al estudiante, la consigna debe **requerir realmente** que el estudiante lea, oiga o procese el material para resolverla. Si la información buscada ya es visible por título, etiqueta, imagen u otro indicio obvio en la página, la misión es **ritual, no operativa**.
+
+**Formas en que aparece:**
+
+- Búsqueda de nombres ya visibles en imágenes (pies de foto, rótulos, leyendas).
+- Búsqueda de datos ya impresos en titulares, cabeceras o entradillas del propio ejercicio.
+- Resolución por descarte donde una opción está marcada de antemano.
+- Consigna de identificar X cuando X es el único candidato presente en la página.
+
+**Filtro orientativo antes de cerrar el cuerpo de un rótulo con misión de procesamiento del material:**
+
+> *Esta misión, ¿requiere realmente leer/oír el material o la respuesta es ya visible/obvia para el estudiante?*
+
+Si la respuesta es "es ya visible", la misión necesita reformularse: cambiar la información buscada por una que exija realmente procesar el material, o sustituir una búsqueda ritual por una operación que sí requiera procesamiento (*comparar*, *clasificar*, *jerarquizar*, *conectar*, *relacionar con*…). El problema no es el verbo *buscar* o *encontrar* en sí, sino su uso ritual cuando lo buscado ya está visible.
+
+⚠ **Distinto de §10.6.** §10.6 regula el recuento del docente sobre contenido visible **en el cuerpo de la guía** (qué dice la guía al docente). §10.9 regula la **validez operativa de la consigna que la guía propone trasladar al estudiante** (qué pide la guía que el docente pida al estudiante). Una protege la redacción; la otra protege la operatividad de la tarea propuesta.
+
+**Ejemplo de la observación que dio origen al criterio.** Cuerpo del rótulo R1 de U9 Destrezas proponía como misión *"encontrar los 3 monumentos principales del folleto y el dato de cuántos siglos estuvieron los romanos"*. Los nombres de los monumentos estaban ya en los pies de foto de la página; la tarea de "encontrar los nombres" no requería leer el folleto. Reformulación posible: comparar los tres monumentos por antigüedad, ordenarlos en una línea temporal, relacionarlos con un dato del cuerpo del texto.
+
+⚠ **No se aplica retroactivamente sin consulta editorial.** Detectar una misión candidata en un archivo `final/` ya cerrado requiere citar la consigna en chat, aplicar el filtro y proponer reformulación al editor. Silencio o ausencia de respuesta no equivalen a aprobación.
+
 ---
 
 ## 11. Cómo aplicar este manual
@@ -738,6 +761,7 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-06-06 | §2.1 *Evaluación — estructura específica* — refuerzo: fijados nombres canónicos exactos *Versión A — Deberes y revisión en clase* y *Versión B — En clase*, orden estricto A → B, y fórmula canónica de cierre de la Versión B (*"Igual que en la Versión A."*). Codificación desde patrón cumplido en U1E + U3E. |
 | 2026-06-06 | §2.1 *Comunicación — tarjetas de estrategia* — refuerzo: los tres componentes del formato canónico (cadena fija + destreza + título) son obligatorios. La destreza no es opcional (omisión = línea mal formada). El título canónico va en cursiva título-case, sin prefijos descriptivos de subtipo (*Hablar de la familia*, no *Esquema comunicativo: hablar de la familia*). Casos detectados en U3 Cultura (sin destreza) y U3 Comunicación (con prefijo). V3 + V4 del lote U3 con consulta previa a `tarjetas-estrategia-comunicacion-pautas.md` de repo B. |
 | 2026-06-06 | §2.1 *Comunicación — referencias a las caras de la tarjeta en el cuerpo* — refuerzo: distinción explícita entre título canónico de la tarjeta (cursiva título-case, *Decir la hora*) y nombre descriptivo de cara en el cuerpo (redonda, por contenido — *"la cara del diálogo modelo"*). No mezclar ambos en una misma unidad de referencia; si hace falta nombrar las dos cosas, separarlas (*"la cara del diálogo modelo de la tarjeta de estrategia* Decir la hora*"*). Caso detectado en U3 Comunicación. V2 del lote U3 con consulta previa a `tarjetas-estrategia-comunicacion-pautas.md` de repo B. |
+| 2026-06-07 | §10.9 nueva — misión verificable de lectura, escucha o búsqueda: la consigna debe requerir realmente el material; si la información buscada ya es visible (pies de foto, titulares, descarte trivial, único candidato), la misión es ritual y debe reformularse. Sibling semántico de §10.6 pero distinto plano: §10.6 regula el cuerpo del docente, §10.9 la operatividad de la consigna al estudiante. Régimen de aplicación: ⚠ por defecto, sin retroactividad sin consulta editorial. Caso detectado en U9 Destrezas R1 (misión de "encontrar 3 monumentos" cuyos nombres estaban ya en los pies de foto). |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
