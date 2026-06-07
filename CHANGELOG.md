@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.47 — 2026-06-07] — CLAUDE.md raíz: fila nueva en la tabla de documentos clave para `contratos-recursos-editoriales.md`
+
+`CLAUDE.md` — añadida fila para `docs/contratos-recursos-editoriales.md` en la tabla *Documentos clave (índice de navegación)*, insertada tras `docs/formulacion-objetivos.md`. Cierre de la deuda de sincronización documental abierta en v12.41 (creación del documento sin actualización paralela del índice raíz). Sin cambios de doctrina.
+
 ## [v12.46 — 2026-06-07] — Cierre formal de la ronda autónoma post-U9D + decisión declarada sobre brecha #5
 
 Cierre de la ronda doctrinal post-U9D. 4 brechas codificadas en v12.42-v12.45: #1 lengua profesional natural (§10.1 bullet, cierre asimetría con criterio #23 de repo B), #2 invención de hilo temático no sostenido por la fuente (§10.1 bullet), #3 papel activo del estudiante (§10.11 ortogonal a §10.3), #4 proporcionalidad mecánica↔finalidad (§10.10). Checker `check-final` pasó de 12 a 15 ítems durante la ronda. **Decisión declarada sobre brecha #5 — viabilidad de aula 25-30 estudiantes**: queda **fuera del scope del manual de estilo**. Es criterio de proceso/operativa de aula (en repo B vive como ítem #29 del checklist canónico, codificado en el mismo lote 3/5 del triage U8C que dio origen a #27 = §10.10 y #12 = §10.11), no de redacción del cuerpo del docente. Pendiente de canalizar a su fuente operativa cuando aparezca (skill específica de viabilidad, gate ex-ante de proceso, o documento operativo aparte); hasta entonces no se vuelca al manual ni al checker. Sin cambios de código o doctrina — solo trazabilidad.

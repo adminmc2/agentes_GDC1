@@ -139,6 +139,7 @@ Ejemplo concreto (fase 1, extracción de U4):
 | `fases/1-extraccion-inventario/{schema,reglas,convenciones}.md` | Contratos de fase 1 | ✅ Manda (en fase 1) |
 | `docs/manual-estilo-final.md` | Manual de estilo de la capa `final/` — autoridad de estilo, tipografía, terminología, metadiscurso | ✅ Manda (en `unidades/**/final/*.md`, activado vía `.claude/rules/final-style.md`) |
 | `docs/formulacion-objetivos.md` | Criterios de formulación de objetivos generales y específicos (Bloom, verbos, naturaleza por sección) | ✅ Manda (objetivos en `final/`) |
+| `docs/contratos-recursos-editoriales.md` | Spec textual interna de recursos editoriales propios del proyecto: tarjetas de estrategia (principio operativo, antipatrones, modelo de referencia, criterio de nombre) y píldoras formativas (principio operativo, antipatrones, criterio de aceptación). Frontera con `manual-estilo-final.md`: el manual regula cómo se nombran y dónde aparecen las menciones en `final/`; este documento regula qué dicen los recursos por dentro. | ✅ Manda (spec interna de tarjeta/píldora) |
 | `README.md` | Descripción del proyecto, estado de las 8 fases, cómo se trabaja | Apunta |
 | `PROCESO-MAESTRO.md` | Modelo conceptual, decisiones cerradas, esquemas, bitácora | Consulta |
 | `REVIEW.md` | Plan ejecutable con gates, estado vivo, próximos pasos | Estado, no manda reglas |
