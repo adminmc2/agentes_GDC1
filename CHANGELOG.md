@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.43 — 2026-06-07] — §10.1 — bullet nuevo: invención de hilo temático no sostenido por la fuente
+
+`docs/manual-estilo-final.md` §10.1 — bullet nuevo con cláusula afirmativa y veto. **Sí** se puede sostener un hilo o marco temático cuando el material del libro lo trae y la secuencia de ejercicios lo sostiene (título del diálogo, enunciado del ejercicio, contenido sostenido del audio o del texto). **No** es válido elevar una mención circunstancial del material a eje organizador del bloque o de la sección, ni fabricar un marco narrativo añadido para dar cohesión retórica. Caso de origen: U9 Comunicación — diálogo *¿Qué hiciste ayer?* con la queja circunstancial *"No me gustan los lunes"* de Graciela elevada a hilo organizador con 13 ocurrencias fabricadas (*"diálogo del lunes"*, *"fórmula social del lunes"*, *"el rato del lunes en clase"*…). Filtro orientativo incorporado al estilo de §10.6/§10.9. Sin sync de check-final — ítem 8 audita §10.1 como bloque. Cierre de la brecha estructural mayor detectada en triage U9C (B.1) — anomalía cuantitativa más alta de aquella sesión. Brecha #2 de 5 de la ronda autónoma post-U9D.
+
 ## [v12.42 — 2026-06-07] — §10.1 — bullet nuevo: lengua profesional natural (cierre asimetría con #23 de repo B)
 
 `docs/manual-estilo-final.md` §10.1 — bullet nuevo que veta cuatro registros adicionales del cuerpo del docente: (a) coloquialismos (*soltar la actividad, lanzar el juego*), (b) muletillas mecánicas (*a la señal, pulse play y reproduzca*), (c) fórmulas o valoraciones de coaching (*marque la ronda con energía, suba la intensidad*), (d) jerga emocional (*engancharse al grupo, vibrar con la actividad*). Distinto del bullet ya existente sobre *jerga didáctica metodológica* (técnico-pedagógica): el nuevo veta los registros coloquial, ritual y motivacional. Cierra la asimetría con el criterio #23 de repo B (codificado tras triage U9C, lote 4/4) que repo A no había trasladado todavía. Estructura: un bullet único compacto con (a)-(d) para mantener densidad de §10.1. Caso detectado en U9 Comunicación (5 ocurrencias). Sin sync de check-final — el ítem 8 del checklist v1 ya audita §10.1 como bloque.
