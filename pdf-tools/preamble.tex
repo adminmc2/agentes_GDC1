@@ -1,0 +1,114 @@
+% =============================================================
+% Preamble LaTeX para el Diagnóstico NC1 — versión mínima
+% Compatible con BasicTeX (sin paquetes contribuidos exóticos)
+% Compilado con: pandoc ... --pdf-engine=xelatex -H preamble.tex
+% =============================================================
+
+% --- Fuentes del sistema (xelatex) ---
+\usepackage{fontspec}
+\setmainfont{Helvetica Neue}
+\setsansfont{Helvetica Neue}
+\setmonofont{Menlo}[Scale=0.88]
+
+% Fuente fallback con cobertura Unicode completa para símbolos
+% (flechas, casillas, emojis…). Se usa explícitamente vía \uchar{}
+\newfontfamily\unisymfont{Arial Unicode MS}
+\newcommand{\uchar}[1]{{\unisymfont #1}}
+
+% --- Geometría de la página ---
+\usepackage[a4paper,
+            top=2.5cm, bottom=2.5cm,
+            left=2.5cm, right=2.5cm,
+            footskip=1.2cm,
+            headheight=14pt]{geometry}
+
+% --- Colores: paleta NC1 ---
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F2B3A}
+\definecolor{muted}{HTML}{6B6B6B}
+\definecolor{soft}{HTML}{F4F4F4}
+\definecolor{border}{HTML}{D0D0D0}
+\definecolor{ncvocab}{HTML}{E58B73}     % salmón Vocabulario
+\definecolor{ncgram}{HTML}{3F6BB0}      % azul Gramática
+\definecolor{nccomu}{HTML}{5BA86A}      % verde Comunicación
+\definecolor{ncdest}{HTML}{E8B647}      % amarillo Destrezas
+\definecolor{ncnar}{HTML}{D4732C}       % naranja Cultura/Evaluación
+
+% --- Interlineado y párrafo ---
+\linespread{1.20}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em plus 0.1em}
+
+% --- Cabecera y pie (paquete core) ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{muted}{\small\textsc{Diagnóstico NC1}}}
+\fancyhead[R]{\textcolor{muted}{\small\nouppercase{\leftmark}}}
+\fancyfoot[C]{\textcolor{muted}{\small\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{border}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\sectionmark}[1]{\markboth{\textcolor{accent}{#1}}{}}
+
+% --- Estilos de section/subsection/etc (sin titlesec) ---
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0pt}
+  {-1.6em \@plus -0.3em \@minus -0.2em}
+  {0.9em \@plus 0.2em}
+  {\normalfont\Large\bfseries\color{accent}}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0pt}
+  {-1.2em \@plus -0.3em \@minus -0.2em}
+  {0.55em \@plus 0.2em}
+  {\normalfont\large\bfseries\color{accent}}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0pt}
+  {-0.9em \@plus -0.3em \@minus -0.2em}
+  {0.4em \@plus 0.2em}
+  {\normalfont\normalsize\bfseries\color{accent}}}
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{0pt}
+  {-0.7em \@plus -0.3em \@minus -0.2em}
+  {-0.6em}
+  {\normalfont\normalsize\bfseries\color{accent}}}
+\makeatother
+
+% --- Listas: ajusta separación con \parsep / \itemsep ---
+\makeatletter
+\def\@listi{\leftmargin\leftmargini
+            \parsep 0pt
+            \topsep 0.3em
+            \itemsep 0.25em}
+\let\@listI\@listi
+\@listi
+\makeatother
+
+% --- Citas: cursivas, color suave (sin paquetes contribuidos) ---
+\let\oldquote\quote
+\let\oldendquote\endquote
+\renewenvironment{quote}{\oldquote\itshape\color{muted}\small}{\oldendquote}
+
+% --- Tablas ---
+\renewcommand{\arraystretch}{1.3}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% --- Hipervínculos ---
+\usepackage[hidelinks,
+            pdftitle={Diagnóstico de Nuevo Compañeros 1},
+            pdfauthor={SGEL},
+            pdfsubject={Bitácora del asesor pedagógico — NC1}]{hyperref}
+
+% --- Sustitución del símbolo ☐ por un cuadrado real (sin newunicodechar) ---
+% El ☐ del MD se transforma en \protect\nccheck via Lua filter, pero
+% como fallback el carácter unicode se renderiza directo si la fuente lo soporta.
+\newcommand{\nccheck}{$\Box$}
+
+% --- Mejor tipografía: holgura para evitar overfulls y palabras cortadas raras ---
+\sloppy
+\emergencystretch=3em
+\hyphenpenalty=400
+\tolerance=2000
+
+% --- TOC en su propia página: salto al terminar el índice ---
+\let\origtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{\origtableofcontents\clearpage}

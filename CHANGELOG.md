@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.61 — 2026-06-14] — Diagnóstico NC1 para asesores + pipeline `pdf-tools/`
+
+`docs/diagnostico-nc1-asesores.md` nuevo (1289 líneas) — bitácora del asesor pedagógico de NC1, documento entregable a asesores externos para revisión editorial del libro. `pdf-tools/` nuevo — pipeline de generación PDF del diagnóstico: `build.sh` (sed → pandoc → xelatex), `preamble.tex` (estilos LaTeX con paleta NC1, fuentes Helvetica Neue + Menlo + Arial Unicode MS), `README.md` y `.gitignore`. Stack sin Node.js: pandoc + xelatex + bash + fuentes del sistema. Salida en `pdf-tools/out/diagnostico-nc1-asesores.pdf` (gitignored).
+
 ## [v12.60 — 2026-06-14] — U4 cierre completo: 6 secciones `final/` + itinerario + material complementario + recursos fuente
 
 `unidades/U4/` — cierre del piloto U4 *Comidas y bebidas*: las 6 secciones `final/` (vocabulario, gramática, comunicación, destrezas, cultura, evaluación) listas para imprenta; itinerario imprimible `U4-itinerarios.md` (144 líneas); inventario `U4-nc1-material-complementario.json` (1145 líneas); 3 PDFs fuente SGEL (*Actividades Extra 4*, *Evaluación 4*, *Gamificación*) + 1 PPTX (*UNIDAD4NUEVOCOMPANEROS*) en `unidades/U4/recursos/`; actualización del CSV `unidades/U4/recursos/tarjetas/comidas-preparadas.csv` (+3 entradas). U4 sigue el mismo patrón de cierre de U1-U3 (commit `126526a` para U3). Las 11 reglas del manual derivadas del piloto U4 ya están integradas en v12.49→v12.59.
