@@ -841,6 +841,25 @@ Casos detectados en U4 Destrezas: *"Ponga la pista 50 una vez completa"*, *"con 
 
 > *¿Este recorte pierde algo (información operativa, dinámica, claridad) o solo redundancia?* Si solo redundancia → aplicar. Si pierde algo → consultar.
 
+### 11.5 Techos de longitud por sección (sin suelo)
+
+Las secciones de `final/` tienen un **techo operativo de palabras** tras la pasada de compactación de §11.4:
+
+| Sección | Techo |
+|---|---|
+| Vocabulario | ≤ 1500 |
+| Gramática | ≤ 1600 |
+| Comunicación | ≤ 1450 |
+| Destrezas | ≤ 1400 |
+| Evaluación | ≤ 950 |
+| Cultura | ≤ 800 |
+
+Si la derivación inicial supera el techo, aplicar §11.4 hasta entrar en rango. Si, tras la compactación, la sección sigue por encima del techo, **consultar al editor** antes de seguir recortando o de darla por cerrada.
+
+**No hay suelo.** Una sección puede quedar por debajo del techo si la economía pedagógica lo sostiene (caso real: U3 Cultura cerrada en 529 palabras). Las bandas observadas del corpus U1-U4 (*Vocabulario 1200-1500, Gramática 1300-1600, Comunicación 1100-1450, Destrezas 1050-1400, Evaluación 800-950, Cultura 500-800*) son **referencia analítica**, no gate normativo.
+
+**Cómo medir.** Conteo con `wc -w` sobre el archivo cerrado de la sección. La medición se toma tras la compactación, no sobre la derivación inicial.
+
 ---
 
 ## 12. Cambios y versiones
@@ -899,6 +918,7 @@ Casos detectados en U4 Destrezas: *"Ponga la pista 50 una vez completa"*, *"con 
 | 2026-06-14 | §10.7 — ampliación de *bloque* a *jerga editorial interna* (bloque, rótulo): título reemplazado a *Sin jerga editorial interna en el cuerpo del docente (bloque, rótulo)*, intro reescrita incluyendo *rótulo* (etiqueta imperativa en MAYÚSCULAS) junto a *bloque*, cabecera de tabla *Casos a evitar* actualizada a *Jerga editorial interna* y dos filas nuevas. El docente ve ejercicios numerados y acciones concretas; no llama a estas piezas *bloques* ni *rótulos*. Caso detectado en U4 Comunicación. |
 | 2026-06-14 | §11.4 — bloque nuevo *Límite de la compactación — unicidad de interpretación y separación de acciones*: la compactación preserva (a) unicidad de interpretación (sin formulaciones de doble lectura por economía) y (b) separación de acciones en lugares distintos del aula (cuaderno, libro, pizarra, voz: cada acción mantiene su sujeto y verbo). Filtro de cierre macro complementario al filtro pre-recorte ya existente. Si la frase compactada admite dos lecturas o funde acciones, deshacer la compactación. Caso detectado en U4 Destrezas. |
 | 2026-06-14 | §13 — Patrón 3 ampliado a formato plural con segunda ocurrencia U4 Vocabulario; Patrones 6 y 7 añadidos como observaciones sin codificar (*repetición monotemática de conector* y *variables algebraicas X/Y en cuerpo docente*). Revisar al cerrar U5 antes de decidir codificación. |
+| 2026-06-14 | §11.5 nueva — techos de longitud por sección (sin suelo): Vocabulario ≤1500, Gramática ≤1600, Comunicación ≤1450, Destrezas ≤1400, Evaluación ≤950, Cultura ≤800. Si la derivación inicial supera el techo, aplicar §11.4; si sigue por encima tras compactar, consultar al editor. Sin suelo (la economía pedagógica puede sostener secciones más cortas; caso U3 Cultura en 529 palabras). Bandas observadas del corpus U1-U4 incluidas como referencia analítica, no gate normativo. Codifica la Cuestión A del Informe consolidado U4 tras medición empírica (`wc -w unidades/U[1-4]/final/*.md`). |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
