@@ -168,6 +168,14 @@ Los rótulos no-correctivos de la Versión B se etiquetan con el **procedimiento
 
 En este modelo **no aplica** el criterio del verbo imperativo del docente (§4.2).
 
+#### Evaluación — coherencia entre Versión A y Versión B
+
+La Versión B contiene una **sinopsis de mecánicas** (en *CORRECCIÓN COLECTIVA* y en las tandas de *REALIZACIÓN ESCALONADA*) que remite a las decisiones tomadas en Versión A. Si una mecánica se edita en Versión A (cambio de modo de corrección, eliminación de un paso, sustitución de una dinámica), **reescribir en Versión B la sinopsis correspondiente con la nueva mecánica de A**.
+
+**Caso a evitar.** La Versión A elimina *"lectura en voz alta de pareja voluntaria + juicio de la clase"* en el ejercicio 6 y la sustituye por clave proyectada + comparación silenciosa, pero la Versión B mantiene *"una pareja voluntaria dramatiza un mini-diálogo para el ejercicio 6"* — desalineación entre las dos versiones del mismo archivo.
+
+**Filtro de detección al cerrar Evaluación.** Tras cualquier edición de mecánica en Versión A, recorrer Versión B y comprobar que la sinopsis sigue coherente. La Versión B no es contenido independiente: es la versión-en-clase de las mismas decisiones de A.
+
 ---
 
 ## 3. Acentuación diacrítica
@@ -242,6 +250,14 @@ Hay **excepciones convenidas** que sobrescriben la regla general por motivos edi
 | Referencias a unidades **dentro de párrafo** | minúscula | `los países hispanohablantes que conocieron en la unidad 0` |
 | Referencias a unidades **dentro de rótulo en mayúsculas** | MAYÚSCULA (excepción por el rótulo) | `RECUPERE EL ABECEDARIO DE LA UNIDAD 0` |
 | Categorías canónicas de tarjetas | Mayúscula inicial en `Tarjetas` y `Vocabulario` o `Destreza` | `Tarjetas de Vocabulario - <campo>` · `Tarjetas de Destreza - <qué destreza> - <nombre>` |
+
+**Referencia interna a otra sección de la misma unidad.** Dentro del **cuerpo del docente**, las referencias a otra sección de la misma unidad usan *"el apartado de [Vocabulario | Gramática | Comunicación | Destrezas | Cultura | Evaluación]"*, en minúscula y redonda. La forma *"la unidad X [Sección]"* o **unidad X [Sección]** queda reservada a referencias inter-unidad (a unidades distintas de la que se está redactando).
+
+- ✅ *"recordando las fórmulas del apartado de Gramática"* (dentro de la misma unidad)
+- ✅ *"como aprendieron en la **unidad 2**"* (referencia a otra unidad)
+- ❌ *dentro del cuerpo de U4: "recordando las fórmulas de la unidad 4 Gramática"*
+
+Caso detectado en U4 Destrezas.
 
 ### 4.3 Calcos del inglés a evitar
 
@@ -361,6 +377,12 @@ Estos se mantienen tal cual.
 | Hipótesis o conjetura del grupo recogida por el docente | `respuestas` · `propuestas` | ~~apuestas~~ |
 | Personas que intervienen oralmente en plenaria o puesta en común | `intervenciones` · `turnos` · `aportaciones` | ~~voces~~ |
 
+**Nota — formas canónicas reservadas.** Las palabras designadas en el banco anterior (*ejercicio*, *pista*, *página*, *foto*, *docente*, *cuadro*, etc.) quedan **reservadas para su referente canónico**. Si en un mismo archivo una de esas formas aparece con su sentido canónico y además se reutiliza con otra acepción potencialmente confundible, la segunda se sustituye por un **sinónimo no canónico** (*adivinanza*, *indicio*, *clave*, etc.).
+
+**Filtro de cierre.** Al cerrar el archivo, comprobar que ninguna forma canónica del banco convive con una segunda acepción ambigua dentro de la misma pieza editorial.
+
+Caso detectado en U4 Vocabulario B1: *"pista 43"* (audio) coexistía con *"la primera pista"*, *"las cuatro pistas restantes"*, *"justifiquen con la pista"* (adivinanza léxica del ejercicio 3). Las segundas se sustituyeron por *adivinanza*.
+
 ### 8.2 Tiempos en el cuerpo
 
 Los tiempos prescriptivos **no aparecen en el cuerpo de los rótulos** (cuántos minutos dura cada paso). Los tiempos orientativos viven en metanotas del proceso editorial (`propuesta/`), no en `final/`.
@@ -381,6 +403,23 @@ Ejemplos análogos:
 - `L1` → `lengua materna del estudiante` (o `su lengua`).
 
 **Excepción**: pares mínimos ortográficos (`g/j`, `b/v`, `h/sin h`) NO son siglas que sustituyan palabras — son la representación literal de la oposición ortográfica. Se mantienen tal cual.
+
+### 8.4 Coherencia terminológica entre objetivo, rótulo y cuerpo
+
+El cuerpo del docente mantiene la **terminología elegida** en el objetivo de sección, en el objetivo de bloque y en el rótulo imperativo. **No se sustituye dentro del cuerpo por equivalentes coloquiales o aproximativos** (*palabras pequeñas*, *personas*, *pedazos de la frase*) cuando el objetivo y el rótulo ya emplean una forma técnica o precisa (*pronombres átonos*, *pronombres tónicos*, *complementos*).
+
+Si por decisión editorial se opta por una formulación menos técnica, esa formulación se mantiene **en las tres capas**; no se introduce una capa terminológica paralela en el cuerpo.
+
+**Pasada de coherencia transversal.** Tras cualquier edición terminológica (cambio de un término, sustitución de una etiqueta), pasada por el resto del archivo: si el término ha cambiado en el rótulo o en el objetivo, todas sus menciones posteriores en el cuerpo deben alinearse con la forma elegida.
+
+**Casos a evitar:**
+
+| ❌ Incoherente | ✅ Coherente |
+|---|---|
+| Rótulo: *PRONOMBRES ÁTONOS*. Cuerpo: *"las palabras pequeñas que van con el verbo"*. | Rótulo: *PRONOMBRES ÁTONOS*. Cuerpo: *"los pronombres átonos que van con el verbo"*. |
+| Rótulo actualizado a *PRONOMBRES ÁTONOS*; ejercicio 3 sin actualizar: *"añadir a delante de la persona, elegir la palabra pequeña"*. | Cuerpo de ejercicio 3 actualizado tras el cambio: *"añadir a delante del pronombre tónico, elegir el pronombre átono"*. |
+
+Caso detectado en U4 Gramática B1.
 
 ---
 
@@ -496,7 +535,7 @@ El cuerpo del docente vive en **lengua de aula con acción concreta**. No contie
 - **Afirmaciones hiperbólicas, grandilocuentes o no verificables**: *"son las preguntas reales de cualquier hablante de español al escribir un nombre nuevo: las van a oír y a hacer toda la vida"*, *"este vocabulario les acompañará siempre"*, *"es la clave para…"*. No aportan valor lingüístico ni didáctico; son retórica de relleno. Si una afirmación no aporta valor lingüístico verificable, fuera del cuerpo. Sustituir por explicación funcional concreta (ej.: *"son importantes para esclarecer entre dos opciones"*).
 - **Predicciones narrativas sobre la respuesta de la clase**: *"saldrá X"*, *"dirán Y"*, *"la clase responderá Z"*. Narran el resultado esperado en vez de indicar qué hace el docente para conducirlo. Sustituir por andamiaje activo (*guíelos para que…*, *conduzca a…*, *apoye las respuestas que aparezcan…*). Se exceptúan las bifurcaciones operativas con instrucción para cada rama (*si sale X, confírmelo; si no, redirija con Y*).
 - **Invención de hilo temático no sostenido por la fuente**. Un hilo o marco temático solo es válido cuando el material del libro lo trae y la secuencia de ejercicios lo sostiene: título del diálogo, enunciado del ejercicio, o contenido sostenido del audio o del texto. **No es válido elevar una mención circunstancial del material a eje organizador** del bloque o de la sección, ni fabricar un marco narrativo añadido para dar cohesión retórica. El cuerpo del docente describe la tarea real y el foco real; no inventa un hilo temático suplementario. Caso de origen: U9 Comunicación — el diálogo *¿Qué hiciste ayer?* contenía la queja circunstancial *"No me gustan los lunes"* de Graciela; el cuerpo del docente la elevó a hilo organizador con 13 ocurrencias fabricadas (*"diálogo del lunes"*, *"fórmula social del lunes"*, *"el rato del lunes en clase"*…), ninguna sostenida por el título ni por la secuencia de ejercicios. Filtro orientativo antes de redactar un rótulo con marco temático: *¿este hilo está en el título, en el enunciado del ejercicio o en el contenido sostenido del material — o lo estoy fabricando a partir de una mención lateral?* Si la respuesta es "lo estoy fabricando", reformular para describir la tarea y el foco real.
-- **Prescripción de decisiones libres del docente**: paletas de colores específicas (*a · rojo · e · amarillo · i · verde…*), mapeos concretos de items intercambiables (combos de tarjetas, asignación de roles, orden de turnos), mecánicas detalladas cuya secuencia exacta no es obligatoria pedagógicamente. La guía orienta el qué y el para qué; el docente decide el cómo concreto cuando la elección no carga peso didáctico. Sustituir por instrucción abierta: *"asigne un color distinto a cada vocal"*, *"reparta las tarjetas en parejas"*, *"haga dos o tres rondas"*.
+- **Prescripción de decisiones libres del docente**: paletas de colores específicas (*a · rojo · e · amarillo · i · verde…*), mapeos concretos de ítems intercambiables (combos de tarjetas, asignación de roles, orden de turnos), mecánicas detalladas cuya secuencia exacta no es obligatoria pedagógicamente, **reescritura en pizarra de cuadros, ejemplos o ítems que el libro ya presenta**, **notación abstracta de roles** (*A/B*, *alumno 1/alumno 2*) cuando la mecánica no requiere etiquetas funcionales, y **series cerradas de preguntas-modelo** en sondeos o activaciones (*"¿a ti te gusta la carne? ¿y la pasta?"*) cuando el docente puede formular las preguntas que considere. La guía orienta el qué y el para qué; el docente decide el cómo concreto cuando la elección no carga peso didáctico. Sustituir por instrucción abierta: *"asigne un color distinto a cada vocal"*, *"se preguntan por turnos, responden y reaccionan; cambian de rol al terminar"*, *"apoye con el cuadro de la página X"*, *"sondee los gustos del aula sobre los seis alimentos"*. Casos detectados en U2 Gramática y Cultura (paletas, combos, mecánicas), U4 Gramática (pizarra duplicadora), U4 Comunicación (notación A/B) y U4 Destrezas (paleta de preguntas).
 - **Jerga didáctica metodológica en cuerpo o títulos** (*scaffolding, anticipación de hipótesis, esquemas previos, mantra de la regla, reparar la conversación, weaning off* en cuerpo, etc.). El cuerpo del docente **instruye en lengua de aula**, no describe la estrategia subyacente ni su nombre teórico. La metanota es donde vive ese vocabulario (cuando aplique a la propuesta rica); el cuerpo del rótulo no. Sustituir por la **acción concreta** (*"pida que avancen una hipótesis sobre el horario"* en lugar de *"haga una anticipación de hipótesis"*). Caso detectado en U3 Gramática, Comunicación y Cultura.
 - **Lengua profesional natural — sin coloquialismos, muletillas mecánicas, fórmulas o valoraciones de coaching ni jerga emocional**. El cuerpo del docente describe acciones y apoyos en lengua profesional natural; no adopta registro coloquial, ritual ni motivacional. Quedan fuera: (a) **coloquialismos** (*soltar la actividad, montar el ejercicio, lanzar el juego*) — sustituir por verbos profesionales (*proponer, iniciar, presentar*); (b) **muletillas mecánicas** (*a la señal, pulse play y reproduzca, deles la salida*) — sustituir por instrucción directa (*reproduzca, indique el inicio*); (c) **fórmulas o valoraciones de coaching** (*marque la ronda con energía, suba la intensidad, mantenga el ritmo*) — el cuerpo describe acción, no el estado emocional deseado del aula; (d) **jerga emocional** (*engancharse al grupo, conectar con el aula, vibrar con la actividad*) — sustituir por descripción funcional (*reincorporarse, participar*). Distinto de la *jerga didáctica metodológica*: allí se veta el nombre técnico-pedagógico de la estrategia; aquí se vetan el registro coloquial, la muletilla mecánica y el tono motivacional/emocional. Caso detectado en U9 Comunicación (5 ocurrencias).
 - **Listas o pasos que duplican el contenido de una tarjeta o píldora ya disponible**. Si una tarjeta de estrategia, una píldora formativa o cualquier material editorial propio del proyecto ya cubre un desglose (los pasos, la tabla, la lista), el cuerpo del docente **remite a él** (*"remita al paso 5 de la tarjeta"*, *"vea el cuadro de la píldora"*) en lugar de reproducir el desglose en el cuerpo. La duplicación añade ruido y desincroniza si el material editorial cambia. Lógica equivalente a §10.6 aplicada al material editorial propio del proyecto, no al libro del alumno. Caso detectado en U3 Destrezas.
@@ -528,6 +567,18 @@ El cuerpo describe acciones que el docente realiza desde su posición frente al 
 **Excepción — sí va imperativo al docente** cuando la acción ocurre en la zona del docente (pizarra, voz, gesto, modelado): *Escriba en la pizarra · Lea con la clase · Dibuje un triángulo · Mime las acciones · Diríjase a una persona del grupo*.
 
 **Filtro de detección.** Antes de cualquier imperativo en el cuerpo, preguntarse: *¿esta acción la ejecuta el docente desde su posición, o la ejecuta el estudiante sobre su propio material?* Si es del estudiante, reformular con *Proponga / Pida que / Pídales que / Dígales que*.
+
+**Persona gramatical del cuerpo.** El cuerpo se redacta siempre en **imperativo de cortesía (usted)** dirigido al docente: *Lea con la clase*, *Pida que…*, *Modele con un voluntario*. **Nunca en tercera persona descriptiva** (*El docente formula la pregunta*, *El docente dice la palabra*, *El profesor lee con la clase*). El lapsus a tercera persona es más frecuente en mecánicas con varios actores (docente, clase, voluntario); aplicar una **pasada de coherencia de voz** cuando el rótulo encadena acciones entre docente, clase y voluntario.
+
+**Casos a evitar:**
+
+| ❌ Incorrecto (tercera persona) | ✅ Correcto (imperativo usted) |
+|---|---|
+| *El docente formula la pregunta y la clase responde.* | *Formule la pregunta; la clase responde.* |
+| *El docente dice la palabra y la clase repite.* | *Diga la palabra; la clase repite.* |
+| *El profesor lee con la clase el ejemplo.* | *Lea con la clase el ejemplo.* |
+
+Caso detectado en U4 Comunicación (rótulos GUÍE ej. 2 y ACOMPAÑE ej. 10).
 
 ### 10.4 Estilo propositivo en restricciones temporales de fase inductiva
 
@@ -580,6 +631,7 @@ Las **aclaraciones-recuento** que enumeran o desglosan contenido que el docente 
 - Lista parentética de ejemplos cuando el docente ya los tiene delante.
 - Reproducción de citas textuales del libro tras *"lea con la clase el ejemplo del ejercicio X: …"* o *"…el ejemplo del libro: …"*. La cita ya está en el libro a la vista del docente; sale el contenido tras los dos puntos, se mantiene la instrucción (*"Lea con la clase el ejemplo del ejercicio X"*).
 - Descripciones del enunciado o del formato del ejercicio que recuentan lo que el docente ya ve en el libro: *"El ejercicio 3 pide cuatro datos sobre Jorge"*, *"El ejercicio 4 cierra la comprensión con cuatro frases de verdadero o falso"*, *"Pase al ejercicio 7: dictado de ocho números"*. La identificación del ejercicio se hace con referencia numerada (*"Para el ejercicio 3"*, *"En el ejercicio 4"*); la orientación describe lo que el docente hace, no lo que el ejercicio pide.
+- Mecánica global descrita como inventario de ítems: cuando el rótulo propone una mecánica que se aplica **a todo el ejercicio** (mano alzada rápida, lectura + respuesta, dictado completo, corrección en parejas), enumerar ítem por ítem el inventario visible convierte en obligación explícita lo que ya está implícito en la mecánica global. Los ítems concretos solo se citan si son **foco lingüístico genuino** (error frecuente, contraste relevante, opción ambigua). Ejemplos a evitar: *"pregunte quién pone una manzana, quién Ø"* · *"por qué te gusta en el primer ítem; por qué os gustan en el tercero"*.
 
 **El valor está en lo que la aclaración añade, no en lo que enumera.** Una aclaración aporta si:
 
@@ -622,9 +674,9 @@ Si la respuesta es "solo recuenta", **proponer** la eliminación al editor en ch
 
 ⚠ **Los ejemplos de esta tabla NO son plantillas reutilizables.** Cada nuevo caso requiere consulta independiente, aunque parezca análogo a uno ya resuelto. La tabla es histórico de decisiones, no jurisprudencia.
 
-### 10.7 Sin referencias a "bloque" en el cuerpo del docente
+### 10.7 Sin jerga editorial interna en el cuerpo del docente (bloque, rótulo)
 
-Los **bloques** son convención editorial interna (división del archivo `final/` por *Ejercicios X-Y*). **No aparecen en el cuerpo del docente.** En su lugar, las referencias intra-archivo se hacen:
+Los **bloques** (división del archivo `final/` por *Ejercicios X-Y*) y los **rótulos** (etiquetas imperativas en MAYÚSCULAS que abren cada paso) son **convención editorial interna**. Ambos términos **no aparecen en el cuerpo del docente** como auto-referencia editorial. El docente ve ejercicios numerados y acciones concretas; no llama a estas piezas *bloques* ni *rótulos*. En su lugar, las referencias intra-archivo se hacen:
 
 - por **número de ejercicio**: *"el ejercicio 4"*, *"los ejercicios anteriores"*, *"el ejercicio 7"*.
 - por **temporalidad**: *"anteriormente"*, *"ya visto"*, *"trabajado antes"*, *"como aprendieron"*.
@@ -632,12 +684,14 @@ Los **bloques** son convención editorial interna (división del archivo `final/
 
 **Casos a evitar:**
 
-| ❌ Con "bloque" | ✅ Por ejercicio / anteriormente / contenido |
+| ❌ Jerga editorial interna | ✅ Por ejercicio / anteriormente / contenido |
 |---|---|
 | *"al cerrar el bloque…"* | *"al cerrar la sección…"* / *"al cerrar el ejercicio X…"* |
 | *"los patrones del bloque…"* | *"los patrones del ejercicio 4"* / *"los patrones vistos"* |
 | *"integra todo lo del bloque"* | *"integra todo lo trabajado en los ejercicios anteriores"* |
 | *"la tarjeta del bloque 1"* | *"la tarjeta usada anteriormente"* / *"la tarjeta del ejercicio 3"* |
+| *"Haga la transición desde el rótulo anterior…"* | *"Conecte con lo trabajado anteriormente…"* |
+| *"En el rótulo siguiente verán…"* | *"En el siguiente paso…"* / por contenido |
 
 **Razón.** El docente no ve la sección como dividida en "bloques" — ve ejercicios numerados. La división en bloques es organización interna del archivo (para legibilidad editorial); referenciarla al docente añade jerga sin función.
 
@@ -763,6 +817,19 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 - Aplicar §10.4 (estilo propositivo) y §10.5 (sin doblete de marca temporal) cuando el caso sea claro y autoejecutable.
 - Variar los cierres de corrección según naturaleza del ejercicio (ej. *Corrigen en parejas* vs. *Corrija en plenaria*).
 
+**Límite de la compactación — unicidad de interpretación y separación de acciones.** La compactación reduce redundancias y relleno, pero **preserva** dos cosas:
+
+- **Unicidad de interpretación**: evitar formulaciones de doble lectura por economía (*"una vez completa"*, *"entre turnos"* sin antecedente claro, *"Verificación en plenaria"* sin objeto verbal). Si la reducción introduce ambigüedad, se deshace.
+- **Separación de acciones en lugares distintos del aula**: cuando docente o estudiantes actúan en soportes o espacios distintos (cuaderno, libro, pizarra, voz), cada acción mantiene su propio sujeto y verbo. No fundir en una sola cláusula acciones que necesitan deslinde operativo.
+
+**Filtro de cierre de la pasada de compactación:**
+
+> *¿La frase compactada admite una sola lectura? ¿Cada acción concreta conserva su sujeto y su verbo?*
+
+Si no, **deshacer la compactación**. La reducción solo es válida cuando no pierde unicidad ni claridad operativa.
+
+Casos detectados en U4 Destrezas: *"Ponga la pista 50 una vez completa"*, *"con detención breve entre turnos"*, *"Verificación en plenaria"*, *"subrayando dónde está la respuesta —la prueba de la tarjeta"*.
+
 **Cuándo SÍ se abre consulta en chat (no automatismo, no compactación silenciosa):**
 
 - Eliminación de generalizaciones o aclaraciones-recuento del libro — siempre §10.6, con gate de consulta previa.
@@ -822,6 +889,16 @@ Tras verificar estructura, objetivo y dinámica del archivo, se realiza una **pa
 | 2026-06-07 | §10.1 — bullet nuevo: invención de hilo temático no sostenido por la fuente. Cláusula afirmativa: tematizar es válido si el material y la secuencia sostienen el hilo (título del diálogo, enunciado del ejercicio, contenido sostenido). Veto: elevar mención circunstancial a eje organizador o fabricar marco narrativo añadido para cohesión retórica. Caso de origen: U9 Comunicación — diálogo *¿Qué hiciste ayer?* con queja circunstancial *"No me gustan los lunes"* elevada a hilo organizador con 13 ocurrencias fabricadas. Filtro orientativo incorporado. Cierra brecha estructural mayor detectada en triage U9C (B.1). |
 | 2026-06-07 | §10.10 nueva — proporcionalidad entre mecánica y finalidad: la mecánica didáctica propuesta en el cuerpo del rótulo debe estar proporcionada al objetivo; si la mecánica eclipsa la finalidad (más despliegue del que el aprendizaje justifica), simplificar o sustituir. Régimen ⚠ por defecto, NUNCA ❌ automático — juicio editorial. Cláusula explícita de distinción con §10.1 *Prescripción de decisiones libres del docente* (allí se veta quién decide; aquí se veta el peso de la mecánica independientemente de quién decide los detalles). Caso de origen: criterio trasladado del endurecimiento del checklist post-triage U8 Cultura de repo B (#27 *Test de proporcionalidad*). |
 | 2026-06-07 | §10.11 nueva — comprobación real del papel activo del estudiante: cuando un rótulo activa trabajo del estudiante, ese trabajo debe ser activo, nombrable y observable; *escuchar*, *mirar*, *copiar*, *indicar* o *reaccionar* no bastan por sí solos. Ortogonal a §10.3 (que regula quién ejecuta físicamente la acción). Régimen ⚠ por defecto, NUNCA ❌ automático — juicio editorial sobre la tarea cognitiva o interactiva añadida. Caso de origen: brecha estructural del triage U8 Cultura de repo B (post-mortem A.1: *"Lance el léxico de palabra en palabra"*), convertida en el ítem #12 *Comprobación real — papel activo del estudiante* del checklist canónico. Patrón crónico documentado con reincidencias en U7C, U8V y U8G. |
+| 2026-06-14 | §2.1 — subsección nueva *Evaluación — coherencia entre Versión A y Versión B*: la Versión B contiene sinopsis de mecánicas (en *CORRECCIÓN COLECTIVA* y en las tandas de *REALIZACIÓN ESCALONADA*) que remite a las decisiones de A; tras editar una mecánica en A, reescribir en B la sinopsis correspondiente con la nueva mecánica de A. Caso detectado en U4 Evaluación (drift ej. 6). |
+| 2026-06-14 | §4.2 — nota nueva tras la tabla: dentro del cuerpo del docente, las referencias a otra sección de la misma unidad usan *"el apartado de [Vocabulario \| Gramática \| Comunicación \| Destrezas \| Cultura \| Evaluación]"* en minúscula y redonda; la forma *"unidad X [Sección]"* queda reservada a referencias inter-unidad. Caso detectado en U4 Destrezas. |
+| 2026-06-14 | §8.1 — nota nueva tras la tabla: las formas canónicas del banco (*ejercicio*, *pista*, *página*, *foto*, *docente*, *cuadro*...) quedan reservadas para su referente canónico; si en un mismo archivo una de esas formas convive con una segunda acepción potencialmente confundible, la segunda se sustituye por sinónimo no canónico (*adivinanza*, *indicio*, *clave*). Filtro de cierre del archivo. Caso detectado en U4 Vocabulario B1 (*pista* audio vs *pista* adivinanza léxica). |
+| 2026-06-14 | §8.4 nueva — coherencia terminológica entre objetivo, rótulo y cuerpo: el cuerpo del docente mantiene la terminología elegida en el objetivo de sección, en el objetivo de bloque y en el rótulo imperativo; no se introduce capa coloquial paralela cuando las otras dos capas emplean forma técnica o precisa. Pasada de coherencia transversal tras cualquier edición terminológica. Caso detectado en U4 Gramática B1 (*PRONOMBRES ÁTONOS* vs *palabras pequeñas*). |
+| 2026-06-14 | §10.1 — bullet *Prescripción de decisiones libres del docente* ampliado con tres patrones más del mismo principio: reescritura en pizarra de cuadros/ejemplos/ítems que el libro ya presenta, notación abstracta de roles (*A/B*, *alumno 1/alumno 2*) cuando la mecánica no requiere etiquetas funcionales, y series cerradas de preguntas-modelo en sondeos cuando el docente puede formular las preguntas que considere. Sustituciones de instrucción abierta actualizadas. Casos detectados en U2G, U2Cu, U4G, U4C, U4D. |
+| 2026-06-14 | §10.3 — nota nueva tras el *Filtro de detección*: el cuerpo se redacta siempre en imperativo de cortesía (usted), nunca en tercera persona descriptiva (*El docente formula*, *El profesor lee*); pasada de coherencia de voz cuando el rótulo encadena acciones entre docente, clase y voluntario. Tabla ❌/✅ con tres casos. Caso detectado en U4 Comunicación (GUÍE ej. 2, ACOMPAÑE ej. 10). |
+| 2026-06-14 | §10.6 — bullet 6 nuevo en *Formas en que aparecen*: cuando el rótulo propone una mecánica que se aplica a todo el ejercicio (mano alzada rápida, lectura+respuesta, dictado, corrección en parejas), enumerar ítem por ítem el inventario visible convierte en obligación explícita lo implícito; los ítems concretos solo se citan si son foco lingüístico genuino (error frecuente, contraste relevante, opción ambigua). Régimen ⚠ + gate de consulta previa de §10.6 intactos. Caso detectado en U4 Evaluación. |
+| 2026-06-14 | §10.7 — ampliación de *bloque* a *jerga editorial interna* (bloque, rótulo): título reemplazado a *Sin jerga editorial interna en el cuerpo del docente (bloque, rótulo)*, intro reescrita incluyendo *rótulo* (etiqueta imperativa en MAYÚSCULAS) junto a *bloque*, cabecera de tabla *Casos a evitar* actualizada a *Jerga editorial interna* y dos filas nuevas. El docente ve ejercicios numerados y acciones concretas; no llama a estas piezas *bloques* ni *rótulos*. Caso detectado en U4 Comunicación. |
+| 2026-06-14 | §11.4 — bloque nuevo *Límite de la compactación — unicidad de interpretación y separación de acciones*: la compactación preserva (a) unicidad de interpretación (sin formulaciones de doble lectura por economía) y (b) separación de acciones en lugares distintos del aula (cuaderno, libro, pizarra, voz: cada acción mantiene su sujeto y verbo). Filtro de cierre macro complementario al filtro pre-recorte ya existente. Si la frase compactada admite dos lecturas o funde acciones, deshacer la compactación. Caso detectado en U4 Destrezas. |
+| 2026-06-14 | §13 — Patrón 3 ampliado a formato plural con segunda ocurrencia U4 Vocabulario; Patrones 6 y 7 añadidos como observaciones sin codificar (*repetición monotemática de conector* y *variables algebraicas X/Y en cuerpo docente*). Revisar al cerrar U5 antes de decidir codificación. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 
@@ -843,13 +920,13 @@ Lista interna de patrones detectados durante el piloto que **no se han codificad
 
 ### Patrón 3 — Autoafirmaciones sobre el éxito esperado de una dinámica
 
-**Caso piloto** (U1G B3, ensayo en parejas tras el modelado del docente):
-
-> *"Dos o tres intercambios bastan para automatizar la melodía y la fórmula."*
+**Casos piloto**:
+- U1G B3 (2026-05-26, ensayo en parejas tras el modelado del docente): *"Dos o tres intercambios bastan para automatizar la melodía y la fórmula."*
+- U4 Vocabulario (2026-06-14, eliminado en piloto): *"Cinco rondas activan el género y el plural."*
 
 **Qué describe.** Afirmación que **declara cuántas repeticiones, rondas o intercambios bastarán para producir tal aprendizaje** (prescripción pedagógica generalista). La instrucción concreta de cantidad (*tres rondas, dos vueltas*) se mantiene; lo que sale es la afirmación de **suficiencia para conseguir X**.
 
-**Estado.** Eliminado en piloto. Sin codificar — decisión caso a caso por ahora. Revisar al cerrar más unidades: si el patrón se repite consistentemente, se codifica como subcaso de §10.1.
+**Estado.** Eliminado en piloto. Sigue sin codificar — dos ocurrencias directas no alcanzan masa crítica para regla de §10. Revisar al cerrar U5.
 
 ### Patrón 4 — Fusión de rótulos secuenciales con acciones encadenadas
 
@@ -875,3 +952,25 @@ Lista interna de patrones detectados durante el piloto que **no se han codificad
 **Qué describe.** Ejemplos que **no están en el libro** pero son trivialmente recuperables para un docente de ELE A1.1 (paradigmas verbales básicos, opuestos M/F evidentes). Distinto de §10.6 (recuento del libro).
 
 **Estado.** Sin codificar — la línea con worked examples que sí orientan (apocopación *primer curso, tercer piso*, modelados orales que disparan dinámica) sigue siendo inestable. Revisar al cerrar U2 y U3.
+
+### Patrón 6 — Repetición monotemática de conector entre rótulos o entre frases de inicio de párrafo
+
+**Casos piloto** (2026-06-14):
+- U4 Gramática: *Pase al* repetido 9 veces como apertura sistemática.
+- U4 Comunicación: *Para el* repetido 6 veces.
+
+**Qué describe.** Uso sistemático de un único conector de transición (*Pase al ejercicio X*, *Para el ejercicio Y*) al inicio de rótulos o párrafos sucesivos, donde el corpus U1-U3 muestra variación entre alternativas (*Para el*, *En el*, *Continúe con*, *Invite a hacer*, *Termine con*, *Dirija la atención a*).
+
+**Estado.** Aplicado en piloto (variación distribuida tras aviso del editor). Sin codificar como regla — exige juicio editorial sobre dónde es legítima la repetición y dónde es monotonía. Revisar al cerrar U5: si el patrón se repite consistentemente, considerar codificación con gate de consulta previa.
+
+### Patrón 7 — Variables algebraicas (X, Y) en cuerpo docente
+
+**Caso piloto** (U4 Cultura, 2026-06-14, eliminado en piloto):
+
+> *"trae una frase modelo en X se come Y por la calle"*
+
+**Qué describe.** Uso de variables simbólicas algebraicas (*X*, *Y*) como placeholders en el cuerpo del docente. Un A1.1 adolescente no decodifica las variables como huecos a rellenar; las lee como letras literales. El docente sí las decodifica pero debe traducirlas al instruir al estudiante.
+
+**Sustitución posible:** dos ejemplos reales concretos como plantilla (*"trae una frase contándolo: por ejemplo en Japón se come sushi por la calle, o en Marruecos se comen kebabs en los puestos callejeros"*).
+
+**Estado.** Una sola ocurrencia. Sin masa crítica. Revisar al cerrar U5: si reaparece, codificar como subcaso de jerga metalingüística (§10.1 bullet de jerga didáctica) o como entrada propia.
