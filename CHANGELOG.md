@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.60 — 2026-06-14] — U4 cierre completo: 6 secciones `final/` + itinerario + material complementario + recursos fuente
+
+`unidades/U4/` — cierre del piloto U4 *Comidas y bebidas*: las 6 secciones `final/` (vocabulario, gramática, comunicación, destrezas, cultura, evaluación) listas para imprenta; itinerario imprimible `U4-itinerarios.md` (144 líneas); inventario `U4-nc1-material-complementario.json` (1145 líneas); 3 PDFs fuente SGEL (*Actividades Extra 4*, *Evaluación 4*, *Gamificación*) + 1 PPTX (*UNIDAD4NUEVOCOMPANEROS*) en `unidades/U4/recursos/`; actualización del CSV `unidades/U4/recursos/tarjetas/comidas-preparadas.csv` (+3 entradas). U4 sigue el mismo patrón de cierre de U1-U3 (commit `126526a` para U3). Las 11 reglas del manual derivadas del piloto U4 ya están integradas en v12.49→v12.59.
+
 ## [v12.59 — 2026-06-14] — `manual-estilo-final.md` §12: 10 entradas nuevas de *Cambios y versiones*
 
 `docs/manual-estilo-final.md` §12 — 10 filas nuevas en la tabla *Cambios y versiones*, todas con fecha 2026-06-14, una por cada regla efectivamente aplicada al manual en el procesamiento del Informe consolidado U4: §2.1 coherencia A↔B; §4.2 referencia interna apartado de X; §8.1 formas canónicas reservadas; §8.4 nueva coherencia terminológica; §10.1 ampliación bullet sobre-prescripción; §10.3 persona gramatical; §10.6 bullet 6 mecánica global; §10.7 ampliación a jerga editorial interna; §11.4 límite de la compactación; §13 ampliación Patrón 3 + Patrones 6 y 7 nuevos (agrupados en una fila). Ajustes del revisor frente al draft inicial: (a) eliminada la fila dedicada al descarte de P-2.1.c — §12 documenta cambios efectivos del manual, no propuestas descartadas; la trazabilidad del descarte ya queda en CHANGELOG/REVIEW; (b) las tres anotaciones de §13 agrupadas en una sola fila (mismo destino, misma fecha, mismo tipo de cambio). **Cierre completo del procesamiento del Informe consolidado U4**: 9 propuestas firmes aplicadas + 1 descartada por error de marco + 3 anotaciones a §13 + sincronización de §12. Total de la sesión: v12.49 a v12.59 (11 bumps).

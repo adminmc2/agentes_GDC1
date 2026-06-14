@@ -1,0 +1,1146 @@
+{
+  "unidad": "U4",
+  "actualizado": "2026-06-07",
+  "fuente_carpeta": "unidades/U4/recursos/",
+  "nota": "Inventario del material complementario de U4 ('Comidas y bebidas'), descrito como conjunto de ejercicios/dinámicas independientes (no como archivos). El campo archivo_fuente indica el contenedor físico. El chat principal decide la integración en final/. El extractor no integra. BLINKLEARNING incorporado progresivamente a partir de capturas recibidas en chat (pendientes de depósito en unidades/U4/recursos/capturas/). Vídeo Blinklearning pendiente de verificación.",
+  "esquema_version": "2.0",
+  "campos_descriptores": {
+    "tipo_dinamica": "lúdica | competitiva | cooperativa | reflexiva | investigacion | presentacion | mecanizacion | cinetica | reconocimiento | asociacion | autocorregible | individual",
+    "categoria_editorial": "diapositivas_aula | juego_lexico | juego_ortografico | tarea_interaccion | tarea_investigacion | dinamica_movimiento | concurso_cultural | ejercicio_proyeccion | evaluacion | gamificacion | itinerario | captura_plataforma | ejercicio_digital_interactivo | otro",
+    "competencias": "CO comprension oral | CE comprension escrita | EO expresion oral | EE expresion escrita | IO interaccion oral | MED mediacion",
+    "secciones_aplicables": "vocabulario | gramatica | comunicacion | destrezas | cultura | evaluacion | reflexion | transversal"
+  },
+  "items": [
+    {
+      "id": "U4-mc-001",
+      "ejercicio": "¿Qué hay en la nevera? — presentación proyectable",
+      "tipo": "presentacion_aula",
+      "formato_soporte": "presentacion_pptx",
+      "archivo_fuente": "UNIDAD4NUEVOCOMPANEROS.pptx",
+      "paginas_en_fuente": "diapositivas 1-11",
+      "origen": "editorial_SGEL",
+      "ambito": "U4",
+      "categoria_editorial": "diapositivas_aula",
+      "tipo_dinamica": ["presentacion", "mecanizacion", "reconocimiento"],
+
+      "duracion_estimada": "15-20 min",
+      "agrupamiento": "clase entera (presentación guiada por el docente)",
+      "agrupamiento_detalle": "El docente proyecta y conduce; los alumnos observan el contenido de la nevera, escuchan y repiten los nombres de los alimentos y deducen los tres patrones de uso del impersonal hay (singular contable con artículo indeterminado, plural contable sin determinante o con numeral, incontable sin determinante). La diapositiva 10 funciona como tabla síntesis de los tres patrones; la diapositiva 11 cierra retomando la pregunta inicial para repaso oral en plenaria.",
+      "materiales_necesarios": ["proyector o pantalla", "archivo .pptx (PowerPoint, Keynote o equivalente)"],
+
+      "objetivo_didactico": "Presentar el léxico de alimentos básicos (frutas, verduras, lácteos, carnes, bebidas) en el contexto de la nevera y deducir el uso del impersonal hay con sus tres variantes de determinación: hay + un/una + sustantivo singular contable, hay + sustantivo plural contable (con o sin numeral), hay + sustantivo incontable (sin determinante).",
+
+      "competencias": ["CO (escuchar al docente)", "EO (repetir y verbalizar los alimentos)", "CE (leer las frases ejemplo)"],
+
+      "funciones_comunicativas": [
+        "nombrar alimentos presentes en un espacio (la nevera)",
+        "preguntar y responder sobre la existencia de alimentos con hay"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "7 alimentos nucleares: piña, plátanos, uvas, agua, queso, pollo, fruta/verdura (genéricos)",
+          "léxico ampliado en slide 10: manzana, fresa, plátano (singular/plural), zumo, leche, chocolate"
+        ],
+        "gramatica_explicita": [
+          "impersonal hay (forma única para singular y plural)",
+          "artículo indeterminado un/una con sustantivos singulares contables (hay una piña, hay una manzana)",
+          "plural contable sin determinante o con numeral (hay plátanos, hay uvas, hay tres plátanos)",
+          "incontables sin determinante (hay agua, hay queso, hay pollo, hay zumo, hay leche, hay chocolate)",
+          "contraste contable vs incontable en alimentos (un plátano / plátanos vs agua / queso)"
+        ],
+        "fonetica_ortografia": [
+          "diptongos en nombres de alimentos (zumo, queso, agua)",
+          "ñ en piña"
+        ]
+      },
+
+      "apoyos": ["visual fuerte (imagen del alimento en cada diapositiva)", "auditivo (modelo oral del docente)", "escrito (estructura hay + alimento aparece bajo cada imagen)"],
+
+      "descripcion_dinamica": "Presentación de 11 diapositivas en tres bloques. Bloque 1 (slides 1-2): portada 'NUEVO COMPAÑEROS — Hay' y pregunta disparadora '¿Qué hay en la nevera?'. Bloque 2 (slides 3-9): siete diapositivas de presentación, una por alimento o grupo de alimentos, alternando los tres patrones de determinación (frutas y verduras genérico, una piña singular contable, plátanos plural, uvas plural, agua incontable, queso incontable, pollo incontable). Bloque 3 (slides 10-11): slide 10 como tabla síntesis con los tres patrones contrastados (hay una manzana / hay una fresa / hay un plátano · hay manzanas / hay fresas / hay tres plátanos · queso / zumo / leche / chocolate + Hay…); slide 11 cierra repitiendo la pregunta inicial para producción oral en plenaria.",
+
+      "estructura_interna": [
+        "Slide 1 — portada 'Nuevo Compañeros — Hay'",
+        "Slide 2 — pregunta disparadora '¿Qué hay en la nevera?'",
+        "Slide 3 — hay frutas y verduras (genérico)",
+        "Slide 4 — hay una piña (singular contable con un/una)",
+        "Slide 5 — hay plátanos (plural contable sin determinante)",
+        "Slide 6 — hay uvas (plural contable sin determinante)",
+        "Slide 7 — hay agua (incontable sin determinante)",
+        "Slide 8 — hay queso (incontable sin determinante)",
+        "Slide 9 — hay pollo (incontable sin determinante)",
+        "Slide 10 — tabla síntesis de los tres patrones (singular un/una · plural con o sin numeral · incontable) con manzana/fresa/plátano + queso/zumo/leche/chocolate",
+        "Slide 11 — cierre: '¿Qué hay en la nevera?' para producción oral en plenaria"
+      ],
+
+      "secciones_aplicables": ["vocabulario", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — presentación del léxico de alimentos como alternativa visual a la nevera del libro (ej. 1-3)",
+        "gramatica.md — presentación inductiva del impersonal hay con sus tres patrones de determinación (apoyo visual a los ejercicios 1-5 del libro sobre hay)",
+        "vocabulario.md — repaso oral de cierre con slide 11 después de la fijación léxica"
+      ],
+
+      "adaptaciones_posibles": [
+        "Saltar el bloque 2 (slides 3-9) si el grupo ya conoce los alimentos y usar solo la tabla síntesis (slide 10) como repaso del patrón gramatical",
+        "Pedir a un estudiante que verbalice cada diapositiva antes de mostrar el texto (clic-reveal)",
+        "Ampliar con preguntas: '¿Hay leche en la nevera?', '¿Cuántos plátanos hay?'",
+        "Tras la slide 11, abrir producción libre con la propia nevera/mochila del aula como contexto"
+      ],
+
+      "consideraciones": [
+        "Presentación nuclear muy corta (11 slides frente a las 22-24 de U1/U2/U3) — encaja en un único bloque de aula",
+        "Slide 10 es la pieza didácticamente más densa (3 patrones contrastados) — conviene detenerse para inducción explícita de la regla",
+        "Léxico parcialmente cubierto en el libro del alumno; el .pptx introduce piña, uvas, fruta/verdura genéricos que pueden requerir aclaración",
+        "La presentación NO trabaja gustar ni cantidades graduales (mucho/poco) — esos contenidos viven en los materiales del Cuaderno de juegos y de Actividades Extra"
+      ],
+
+      "gestion_aula": "Preparación: comprobar que el .pptx abre con transiciones (clic-reveal por slide). Inicio (2-3 min): activar conocimientos previos con la pregunta '¿Qué hay en tu nevera ahora?'. Desarrollo (10-12 min): proyectar slides 3-9 con repetición coral y verbalización individual; detenerse en slide 10 para inducir la regla de los tres patrones. Cierre (3-5 min): slide 11 como producción oral en plenaria o pequeñas rondas.",
+
+      "observaciones": "Producto editorial cerrado y compacto; útil tal cual como presentación inductiva del léxico de alimentos + gramática de hay. Su brevedad lo hace especialmente compatible con sesiones de 30-45 min donde se quiere abrir vocabulario y gramática a la vez. Combina bien con U4-mc-006 (¿Me conoces?) como práctica posterior con gusta y con U4-mc-007 (Bingonevera) como juego de fijación léxica."
+    },
+
+    {
+      "id": "U4-mc-002",
+      "ejercicio": "El carro de la compra (Actividades Extra 4) — vacío de información en parejas con lista de la compra",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "05Companeros1Nuevaedicion_actividadesextra4.pdf",
+      "paginas_en_fuente": "pp. 1-2",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 4",
+      "ambito": "U4",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["cooperativa", "interaccion_oral", "mecanizacion"],
+
+      "duracion_estimada": "10-15 min",
+      "agrupamiento": "parejas (Alumno A + Alumno B)",
+      "agrupamiento_detalle": "El docente recorta la ficha en las dos mitades (Alumno A y Alumno B) y reparte una a cada miembro de la pareja. Cada alumno ve sus propias imágenes de alimentos y una lista de la compra de 14 ítems. Por turnos, preguntan al compañero si tiene cada alimento ('¿Tienes plátanos?') y señalan en su lista los que el compañero confirma tener. Al final, ambos llegan a saber qué seis alimentos tiene cada uno.",
+      "materiales_necesarios": ["ficha fotocopiada y recortada por la mitad (cara Alumno A + cara Alumno B)", "lápiz por estudiante"],
+
+      "objetivo_didactico": "Practicar el vocabulario de la comida visto en la unidad mediante una interacción oral con vacío de información, fijando la pregunta '¿Tienes + alimento?' y las dos respuestas mínimas ('Sí, sí tengo' / 'No, no tengo').",
+
+      "competencias": ["IO (interacción oral con turnos pregunta-respuesta)", "CE (leer la propia lista)", "EO (verbalizar la pregunta y la respuesta)", "EE (marcar en la lista los alimentos confirmados)"],
+
+      "funciones_comunicativas": [
+        "preguntar a alguien si tiene un alimento ('¿Tienes plátanos?')",
+        "afirmar o negar la posesión de un alimento ('Sí, sí tengo' / 'No, no tengo')"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "14 alimentos en la lista: azúcar, carne, pescado, arroz, patatas, tomates, pollo, huevos, queso, leche, manzanas, pasta, plátanos, zumo",
+          "alimentos visualizados en Alumno A: arroz, manzanas, plátanos, huevos, leche, pescado",
+          "alimentos visualizados en Alumno B: huevos, pollo, patatas, zumo, carne, plátanos"
+        ],
+        "gramatica_explicita": [
+          "presente de tener en 2.ª persona singular (interrogativa) y 1.ª persona singular (afirmativa/negativa)",
+          "fórmula interrogativa ¿Tienes + sustantivo?",
+          "respuesta corta con duplicación afirmativa (Sí, sí tengo) y negativa (No, no tengo)",
+          "ausencia de determinante en alimentos plurales contables e incontables tras tener"
+        ]
+      },
+
+      "estructura_interna": [
+        "p. 1 — página del docente: objetivo + instrucciones + soluciones (Alumno A: arroz, manzanas, plátanos, huevos, leche, pescado / Alumno B: huevos, pollo, patatas, zumo, carne, plátanos)",
+        "p. 2 — ficha del alumno: dos mitades recortables, Alumno A (lista de la compra + 6 imágenes de sus alimentos + modelo de diálogo) y Alumno B (lista de la compra + 6 imágenes de sus alimentos + modelo de diálogo)"
+      ],
+
+      "alimentos_alumno_A": ["arroz", "manzanas", "plátanos", "huevos", "leche", "pescado"],
+      "alimentos_alumno_B": ["huevos", "pollo", "patatas", "zumo", "carne", "plátanos"],
+
+      "apoyos": ["visual (imágenes fotorrealistas de los alimentos)", "lista de la compra impresa como organizador", "modelo de diálogo de dos turnos en el enunciado"],
+
+      "descripcion_dinamica": "Cada estudiante recibe una mitad de la ficha con 6 imágenes de alimentos y la lista de la compra completa de 14 ítems. Por turnos, pregunta al compañero si tiene un alimento de la lista; el compañero responde según sus imágenes. Cada alumno señala en su lista los alimentos confirmados por el compañero. El intercambio finaliza cuando ambos han identificado los 6 alimentos del otro.",
+
+      "secciones_aplicables": ["vocabulario", "comunicacion"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — práctica oral del léxico de alimentos como cierre lúdico de los ejercicios 1-7 del libro",
+        "comunicacion.md — fijación de la fórmula '¿Tienes + alimento?' como rutina comunicativa",
+        "destrezas.md — práctica de interacción oral con vacío de información complementaria a las destrezas del libro"
+      ],
+
+      "adaptaciones_posibles": [
+        "Aumentar dificultad pidiendo respuestas más largas: '¿Tienes plátanos? — Sí, tengo plátanos / No, no tengo plátanos, pero tengo manzanas'",
+        "Variante con cantidades: añadir '¿Cuántos?' tras la afirmación si la lista incluye contables",
+        "Reducir a tres alimentos por mitad para grupos más débiles",
+        "Ampliación tras el intercambio: cada alumno escribe la lista completa de su compañero con la fórmula 'tiene + alimento'"
+      ],
+
+      "consideraciones": [
+        "El intercambio incluye un alimento común a ambos (huevos, plátanos) — útil para que el cruce no sea trivial",
+        "Las imágenes pueden ser ambiguas (los plátanos de Alumno A y Alumno B son visualmente similares — confirmar en plenaria)",
+        "La fórmula de respuesta del modelo ('Sí, sí tengo' con duplicación enfática) es coloquial — el docente puede aclarar que también es válido 'Sí, tengo' a secas",
+        "Léxico de 14 alimentos cubre buena parte del vocabulario nuclear de U4 — útil como práctica integradora tras la presentación del léxico"
+      ],
+
+      "gestion_aula": "Preparación: recortar las fichas por la mitad antes de la clase (una pareja = una ficha completa partida). Modelado (2 min): el docente como Alumno A pregunta a un voluntario por uno o dos alimentos. Práctica en parejas (6-10 min). Cierre (2-3 min): puesta en común con la página de soluciones — cada pareja contrasta su versión final con la solución.",
+
+      "observaciones": "Producto editorial cerrado; encaja perfectamente como práctica oral de fijación tras la presentación del léxico de alimentos (U4-mc-001 o ej. 1-3 del libro). Funciona mejor antes de introducir gustar, ya que el patrón comunicativo es más simple (tener vs gustar). Compatible con grupos heterogéneos por su simplicidad estructural."
+    },
+
+    {
+      "id": "U4-mc-003",
+      "ejercicio": "¿Dónde se come...? (Actividades Extra 4) — investigación cultural sobre platos hispanos",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "05Companeros1Nuevaedicion_actividadesextra4.pdf",
+      "paginas_en_fuente": "pp. 3-4",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 4",
+      "ambito": "U4",
+      "categoria_editorial": "tarea_investigacion",
+      "tipo_dinamica": ["investigacion", "cooperativa", "reflexiva"],
+
+      "duracion_estimada": "25-40 min (incluye búsqueda online + puesta en común)",
+      "agrupamiento": "parejas o grupos pequeños",
+      "agrupamiento_detalle": "El docente reparte una ficha por pareja o grupo de 3. Los alumnos disponen de un dispositivo con conexión (móvil, tableta, ordenador) y consultan en internet de dónde son típicos los siete platos propuestos y al menos tres ingredientes principales de cada uno. Completan la tabla y comparten resultados en plenaria.",
+      "materiales_necesarios": ["ficha fotocopiada (una por pareja o grupo)", "dispositivo con conexión a internet por grupo", "lápiz"],
+
+      "objetivo_didactico": "Repasar el vocabulario de las comidas, trabajar con referentes culturales del mundo hispano (7 platos típicos de 7 países distintos) y practicar la utilización de buscadores en español como estrategia de aprendizaje autónomo.",
+
+      "competencias": ["CE (lectura de páginas web en español)", "EE (rellenar la tabla con país e ingredientes)", "MED (síntesis de información cultural en español)", "IO (negociación dentro del grupo durante la búsqueda)"],
+
+      "funciones_comunicativas": [
+        "buscar información cultural en español",
+        "describir un plato típico ('La paella es de España y lleva marisco, arroz y pimiento')",
+        "identificar el origen geográfico de un plato"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "7 platos hispanos: paella, cebiche, ropavieja, sancocho, arepa, burritos, dulce de leche",
+          "8 países: España, Perú, Ecuador, Cuba, México, Costa Rica, Colombia, Venezuela, Argentina",
+          "ingredientes culinarios: marisco, arroz, pimiento, pescado, cebolla, limón, carne, tomate, sal, yuca, plátano, harina, aceite, queso, vainilla, leche, azúcar"
+        ],
+        "gramatica_explicita": [
+          "presente impersonal con se (se come, ¿dónde se come?)",
+          "ser + de + país de origen (la paella es de España)",
+          "presente de llevar para ingredientes (lleva arroz, marisco y pimiento)"
+        ]
+      },
+
+      "platos_y_soluciones": {
+        "paella": {"pais": ["España"], "ingredientes": ["marisco", "arroz", "pimiento"]},
+        "cebiche": {"pais": ["Perú", "Ecuador"], "ingredientes": ["pescado", "cebolla", "limón"]},
+        "ropavieja": {"pais": ["Cuba", "México"], "ingredientes": ["carne", "tomate", "sal"]},
+        "sancocho": {"pais": ["Cuba", "Costa Rica", "Colombia"], "ingredientes": ["yuca", "plátano", "carne"]},
+        "arepa": {"pais": ["Colombia", "Venezuela"], "ingredientes": ["harina", "aceite", "sal"]},
+        "burritos": {"pais": ["México"], "ingredientes": ["carne", "queso", "harina"]},
+        "dulce_de_leche": {"pais": ["Argentina"], "ingredientes": ["vainilla", "leche", "azúcar"]}
+      },
+
+      "estructura_interna": [
+        "p. 3 — página del docente: objetivo + instrucciones + soluciones por plato (país + 3 ingredientes principales)",
+        "p. 4 — ficha del alumno: consigna + tabla de tres columnas (Plato / País / Ingredientes principales) con 7 filas y foto del plato en la columna 'Plato'"
+      ],
+
+      "apoyos": ["visual (foto de cada plato en la tabla)", "estructura tabular como organizador", "soporte digital para la búsqueda"],
+
+      "descripcion_dinamica": "Cada pareja o grupo lee los 7 platos de la tabla y, con apoyo de un buscador en español, identifica el país (o países) de origen y al menos 3 ingredientes principales por plato. Rellena la tabla y, al terminar, comparte hallazgos en plenaria. El docente puede orientar variantes regionales (sancocho cubano vs colombiano, cebiche peruano vs ecuatoriano).",
+
+      "secciones_aplicables": ["cultura", "vocabulario", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "cultura.md — actividad nuclear de la sección cultura U4 (gastronomía hispana) como práctica de descubrimiento autónomo",
+        "vocabulario.md — ampliación léxica del vocabulario de alimentos con ingredientes nuevos (yuca, harina, marisco)",
+        "destrezas.md — práctica de comprensión lectora y mediación con fuentes auténticas en español"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión sin dispositivos: el docente proporciona 7 textos breves prerredactados sobre cada plato y los alumnos extraen país + ingredientes",
+        "Versión competitiva: cronómetro, primer grupo en completar correctamente gana",
+        "Ampliación oral: cada grupo elige un plato y prepara una presentación de 2 minutos para la clase",
+        "Versión culinaria: cada grupo prepara o trae una versión simplificada de uno de los platos para una clase posterior",
+        "Reducir a 4 platos para grupos más débiles o con menos tiempo"
+      ],
+
+      "consideraciones": [
+        "Varios platos tienen múltiples países de origen (cebiche en Perú y Ecuador, sancocho en 3 países, ropavieja en Cuba y México) — útil para abrir conversación sobre variantes regionales y herencia colonial",
+        "Soluciones SGEL listan 3 ingredientes principales (no exhaustivos) — admitir variantes razonables del estudiante",
+        "Algunos ingredientes no son habituales en español de aula (yuca, marisco, vainilla) — útil como ampliación léxica pero verificar comprensión",
+        "Plato 'dulce de leche' es solo postre, no plato — el docente puede comentar la distinción",
+        "Buscadores en español: si los alumnos buscan en su L1, los resultados pueden no coincidir con la denominación hispana (especialmente para arepa o sancocho)"
+      ],
+
+      "gestion_aula": "Preparación: una ficha por grupo + asegurar acceso a dispositivos. Inicio (3-5 min): leer juntos el primer plato como modelo de búsqueda. Investigación (15-20 min): trabajo cooperativo, el docente circula y apoya con vocabulario. Cierre (10-15 min): puesta en común plato a plato, contraste con las soluciones, comentario cultural breve sobre variantes regionales.",
+
+      "observaciones": "Actividad cultural nuclear para U4; cubre toda la geografía hispana en una sola dinámica. Útil como cierre de la sección Cultura y como práctica de mediación lectora. Funciona especialmente bien como tarea integradora a finales de unidad porque combina léxico (alimentos + ingredientes), cultura (mundo hispano) y destreza de búsqueda autónoma en español."
+    },
+
+    {
+      "id": "U4-mc-004",
+      "ejercicio": "¿Y a ti qué te gusta? (Actividades Extra 4) — test de personalidad en parejas",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "05Companeros1Nuevaedicion_actividadesextra4.pdf",
+      "paginas_en_fuente": "pp. 5-6",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 4",
+      "ambito": "U4 (con repaso transversal U2-U3)",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["cooperativa", "interaccion_oral", "lúdica", "reflexiva"],
+
+      "duracion_estimada": "15-20 min",
+      "agrupamiento": "parejas",
+      "agrupamiento_detalle": "Cada estudiante recibe una ficha. Por turnos, hacen las 5 preguntas del test a su compañero y apuntan las respuestas (la letra a/b/c). Al terminar, calculan la puntuación del compañero (3/2/1 puntos por a/b/c) y leen el perfil correspondiente (menos de 6 / 6-10 / 11-15). Comparten resultados primero en pareja y luego con la clase.",
+      "materiales_necesarios": ["ficha fotocopiada (una por estudiante)", "lápiz"],
+
+      "objetivo_didactico": "Practicar la estructura me gusta / no me gusta y el vocabulario aprendido en la unidad mediante una actividad de comprensión lectora y expresión / comprensión oral en parejas, que culmina en una interpretación lúdica del perfil personal del compañero.",
+
+      "competencias": ["IO (intercambio en parejas con preguntas y respuestas)", "CE (lectura del test y de los perfiles)", "EO (verbalizar la propia respuesta y leer el perfil del compañero)", "EE (anotar las respuestas del compañero)"],
+
+      "funciones_comunicativas": [
+        "preguntar por gustos y preferencias ('¿Qué deporte te gusta?')",
+        "expresar gustos con gusta + sustantivo singular ('Me gusta el fútbol')",
+        "expresar gustos con gustan + sustantivo plural ('Me gustan las ensaladas')",
+        "negar gustos con no me gusta / no escucho / no voy ('No me gusta ninguna asignatura', 'No escucho música', 'No voy nunca al cine')"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "deportes: fútbol, ajedrez (+ 'sentarme en el sillón' como ausencia de deporte)",
+          "asignaturas: Educación Física, Matemáticas, Lengua, Ciencias Sociales, Ciencias Naturales",
+          "comidas: ensaladas, verduras, paella, hamburguesa, patatas",
+          "música: música para bailar, música tranquila",
+          "cine: por supuesto, películas famosas, no voy nunca",
+          "adjetivos de personalidad (en los perfiles): tranquila, dinámico/-a"
+        ],
+        "gramatica_explicita": [
+          "gusta + sustantivo singular (Me gusta el fútbol, Me gusta el cine)",
+          "gustan + sustantivo plural (Me gustan las ensaladas)",
+          "negación: no me gusta ningún/ninguna + sustantivo (No me gusta ninguna asignatura)",
+          "ser + atributo de personalidad (Eres una persona demasiado tranquila, Eres dinámico/-a)",
+          "tener que + infinitivo (Tienes que moverte más, Tienes que poner más interés)",
+          "verbo en 1.ª persona como respuesta autónoma (No escucho música, No voy nunca al cine, Sentarme en el sillón)"
+        ]
+      },
+
+      "preguntas_test": [
+        "¿Qué deporte te gusta? (a. fútbol / b. ajedrez / c. sentarme en el sillón)",
+        "Tu asignatura favorita es… (a. Ed. Física / b. Mat./Leng./CC. Sociales/CC. Naturales / c. ninguna)",
+        "¿Qué comida te gusta más? (a. ensaladas y verduras / b. paella / c. hamburguesa con patatas)",
+        "¿Qué tipo de música te gusta escuchar? (a. para bailar / b. tranquila / c. no escucho)",
+        "¿Te gusta el cine? (a. por supuesto / b. solo películas famosas / c. no voy nunca)"
+      ],
+
+      "perfiles_resultado": [
+        "Menos de 6 puntos — Eres una persona demasiado tranquila. Tienes que moverte más y tener más aficiones.",
+        "6-10 puntos — Bueno, no está mal, pero tienes que poner más interés a las cosas.",
+        "11-15 puntos — ¡Fenomenal! Eres dinámico/-a y te gusta la vida, ¡enhorabuena!"
+      ],
+
+      "apoyos": ["formato de test cerrado con opciones a/b/c", "tabla de puntuación impresa", "tres perfiles prerredactados como apoyo de comprensión lectora"],
+
+      "descripcion_dinamica": "Cada estudiante hace las 5 preguntas del test a su compañero y apunta sus respuestas. Al final, calculan los puntos (a=3, b=2, c=1) y leen el perfil correspondiente. Comparten el resultado entre los dos y luego en plenaria con el resto del grupo. El docente puede prolongar pidiendo a algunos voluntarios que justifiquen su perfil o que digan si están de acuerdo con él.",
+
+      "secciones_aplicables": ["comunicacion", "destrezas", "transversal"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — práctica oral integrada de gustar como cierre lúdico de la sección",
+        "destrezas.md — interacción oral en parejas con apoyo escrito",
+        "vocabulario.md — repaso transversal del léxico de asignaturas (U2), comidas (U4) y aficiones (U1, U3)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión adaptada con preguntas propias: cada estudiante reformula una de las 5 preguntas adaptándola a sus propios gustos",
+        "Ampliación escrita: tras el test, cada alumno redacta tres frases describiendo a su compañero ('A mi compañero le gusta el fútbol, le gustan las hamburguesas y no le gusta el cine')",
+        "Versión cooperativa: en grupos de 4, cada uno se entrevista con los otros 3 y elabora el perfil medio del grupo",
+        "Reducir a 3 preguntas para grupos más débiles"
+      ],
+
+      "consideraciones": [
+        "Los perfiles incluyen juicios valorativos ('demasiado tranquila', 'tienes que poner más interés') — el docente puede aclarar que es lúdico y no real",
+        "Estructura concordancia singular/plural en gustar requiere atención (Me gusta el cine vs Me gustan las ensaladas) — útil como repaso post-presentación",
+        "La opción c de cada pregunta usa verbos en 1.ª persona o infinitivo (No escucho, No voy, Sentarme) — útil para mostrar que 'no me gusta X' admite alternativas más naturales",
+        "Léxico de asignaturas presupone conocimiento de U2 — verificar activación"
+      ],
+
+      "gestion_aula": "Preparación: una ficha por estudiante. Modelado (2-3 min): el docente hace la primera pregunta a un voluntario en voz alta y apunta su respuesta en la pizarra. Entrevistas en parejas (8-10 min): cada uno entrevista al otro. Cálculo y lectura del perfil (3-5 min). Cierre (3-5 min): puesta en común — los estudiantes comparten su perfil con la clase y comentan si se reconocen.",
+
+      "observaciones": "Actividad lúdica de cierre integrador para U4; combina gustar (contenido nuclear) + léxico transversal U1-U4 en un formato motivador (test de revista). Funciona muy bien como ruptura tras bloques más densos. Compatible con grupos heterogéneos y útil como evaluación formativa indirecta del manejo de gustar."
+    },
+
+    {
+      "id": "U4-mc-005",
+      "ejercicio": "¡Salimos a cenar! (Actividades Extra 4) — juego de rol en grupos sobre pedir en un restaurante",
+      "tipo": "actividad_fotocopiable",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "05Companeros1Nuevaedicion_actividadesextra4.pdf",
+      "paginas_en_fuente": "pp. 7-8",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Actividades Extra NC1 — Unidad 4",
+      "ambito": "U4",
+      "categoria_editorial": "tarea_interaccion",
+      "tipo_dinamica": ["cooperativa", "interaccion_oral", "lúdica", "reflexiva"],
+
+      "duracion_estimada": "30-45 min (incluye preparación + representación de varios grupos)",
+      "agrupamiento": "grupos de cuatro estudiantes (camarero + padre + madre + hijo/-a)",
+      "agrupamiento_detalle": "El docente forma grupos de 4 y reparte el menú + las cuatro tarjetas de rol (camarero, padre, madre, hijo/-a). Cada estudiante asume su rol y consulta sus consignas. El grupo prepara una conversación de restaurante (10-15 min) y la representa después delante de los compañeros (3-5 min por grupo).",
+      "materiales_necesarios": ["ficha fotocopiada con menú + tarjetas de rol (una por grupo)", "lápiz para tomar notas en la preparación", "opcional: atrezo (delantal/libreta para el camarero)"],
+
+      "objetivo_didactico": "Afianzar el vocabulario de las comidas y de las estructuras para desenvolverse en un restaurante o cafetería, mediante una dinámica de juego de rol en grupos que culmina en una representación oral delante de los compañeros.",
+
+      "competencias": ["IO (interacción oral en grupo con múltiples turnos)", "EO (representación oral con personaje asignado)", "CO (responder a las intervenciones de los demás)", "CE (lectura del menú y de las consignas del rol)", "EE (toma de notas opcional durante la preparación)"],
+
+      "funciones_comunicativas": [
+        "saludar y atender en un restaurante ('¿Qué van a tomar?')",
+        "pedir un plato ('De primero quiero…', 'Para mí, la paella')",
+        "informar de que no hay un plato ('Ya no hay pollo asado')",
+        "rectificar / aclarar ('Los macarrones no son con tomate, son a la carbonara')",
+        "rechazar un plato con justificación ('No me gusta la carne', 'Estoy a dieta')",
+        "negociar peticiones ('Tu hijo no puede tomar refresco de cola')"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "primeros platos: ensalada, sopa de verduras, macarrones con tomate, paella, alubias con chorizo",
+          "segundos platos: pollo asado con patatas, trucha con ensalada, cebiche, burritos, hamburguesa con patatas fritas",
+          "postres: helado, manzana, plátano, dulce de leche, yogur",
+          "bebidas: agua mineral, vino, cerveza, refresco de cola",
+          "estados/situaciones: hambriento, a dieta, tener que conducir",
+          "fórmulas de restaurante: menú, primeros platos, segundos platos, postres, bebidas"
+        ],
+        "gramatica_explicita": [
+          "presente de querer y tomar para pedir (Quiero un café, Voy a tomar paella)",
+          "ya no + presente (ya no hay pollo asado)",
+          "no … con, sino … con (no son con tomate, son a la carbonara)",
+          "estar + adjetivo de estado (estás hambriento, estás a dieta)",
+          "tener que + infinitivo (tienes que conducir)",
+          "no poder + infinitivo (tu hijo no puede tomar refresco)",
+          "negación con me gusta (no te gusta la carne, no te gusta el pescado)"
+        ]
+      },
+
+      "roles_y_consignas": {
+        "camarero": ["Ya no hay pollo asado.", "Los macarrones no son con tomate, son a la carbonara (con bacón y nata)."],
+        "padre": ["No te gusta la carne.", "Estás hambriento.", "Tienes que conducir."],
+        "madre": ["Estás a dieta.", "Tu hijo no puede tomar refresco de cola."],
+        "hijo_a": ["Quieres tomar refresco de cola.", "No te gusta el pescado."]
+      },
+
+      "apoyos": ["menú impreso como organizador visual del léxico", "tarjetas de rol con consignas breves como guion mínimo", "contexto familiar (familia + camarero) como anclaje cultural"],
+
+      "descripcion_dinamica": "Cada grupo de 4 asume sus roles (camarero, padre, madre, hijo/-a) y prepara una conversación de restaurante respetando las consignas de cada tarjeta. Las consignas generan tensiones cómicas (el padre no come carne pero está hambriento; el hijo quiere refresco pero la madre lo prohíbe; el camarero introduce contratiempos: no hay pollo, los macarrones son distintos). Cada grupo representa su escena delante del resto y los compañeros pueden votar la mejor representación o la más creativa.",
+
+      "secciones_aplicables": ["comunicacion", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — tarea final integradora de la sección comunicación de U4 (pedir en restaurante + léxico de alimentos + gustar)",
+        "destrezas.md — práctica de interacción oral grupal con producción dramatizada",
+        "cultura.md — exposición al esquema clásico del menú español (primero + segundo + postre + bebida) como referente cultural"
+      ],
+
+      "adaptaciones_posibles": [
+        "Reducir a 3 roles (camarero + 2 clientes) para grupos pequeños",
+        "Ampliar consignas: añadir un quinto rol de comensal con sus propias condiciones",
+        "Versión escrita: cada grupo redacta primero el guion y luego lo representa",
+        "Variante con menú propio: cada grupo crea su propio menú (regional, vegetariano, internacional) y luego representa",
+        "Variante con vídeo: los grupos graban su escena en vez de representarla en directo",
+        "Reducir a 3 platos por categoría (en vez de 4-5) para simplificar"
+      ],
+
+      "consideraciones": [
+        "El menú incluye dos platos de Cultura U4 (paella, cebiche, burritos, dulce de leche) — útil para reactivar el contenido cultural en contexto comunicativo",
+        "Algunas consignas presuponen léxico no necesariamente activado (hambriento, a dieta, no poder tomar) — el docente puede pre-enseñarlo brevemente",
+        "Léxico del menú es extenso (19 platos/bebidas) — el grupo no tiene que usarlo todo, solo el necesario para la negociación",
+        "La consigna 'tienes que conducir' habilita conversación implícita sobre alcohol y menores — el docente puede o no abrir el tema según el grupo",
+        "El bacón y la nata (macarrones a la carbonara) son léxico nuevo — útil como ampliación o aclararlo en plenaria antes",
+        "Vino y cerveza en el menú para una familia con hijo: el contexto cultural mediterráneo lo admite, pero puede generar discusión en grupos de culturas más restrictivas"
+      ],
+
+      "gestion_aula": "Preparación: una ficha por grupo, recortar las tarjetas de rol si se prefiere. Inicio (5 min): leer el menú en plenaria y aclarar vocabulario nuevo. Asignación de roles (2 min). Preparación en grupos (10-15 min): el docente circula y apoya con vocabulario y estructuras. Representaciones (15-25 min: 3-5 min por grupo en grupos de 6-8 estudiantes). Cierre (3-5 min): comentario sobre estrategias y léxico nuevo aparecido.",
+
+      "observaciones": "Actividad de cierre por excelencia para U4; combina léxico nuclear (alimentos + bebidas) + gramática (gustar + querer) + competencia comunicativa (restaurante) en una tarea productiva extensa. Funciona como evaluación formativa indirecta de toda la unidad. Puede grabarse para autoevaluación posterior. La componente lúdica (consignas en tensión) garantiza implicación."
+    },
+
+    {
+      "id": "U4-mc-006",
+      "ejercicio": "¿Me conoces? (Cuaderno de juegos NC1) — concurso de gustos en parejas con emoticonos y alimentos",
+      "tipo": "juego_aula",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "Nuevocompaneros1gamificacion_117959.pdf",
+      "paginas_en_fuente": "pp. 19-22",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Cuaderno de juegos NC1 (Belén García-Alifa, Javier Villatoro, SGEL, 2021)",
+      "ambito": "U4",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["lúdica", "competitiva", "cooperativa", "reflexiva", "interaccion_oral"],
+
+      "duracion_estimada": "1 hora",
+      "agrupamiento": "parejas, con implicación de toda la clase como público",
+      "agrupamiento_detalle": "Cada alumno tiene 5 fichas con alimentos y emoticonos diversos. En solitario y sin que su compañero lo vea, une (con clips, blue-tack) los emoticonos a las fichas en función de sus gustos. Por turnos, cada pareja sube al 'set' (mesa y dos sillas) y se sienta delante del 'público' (resto de la clase). El profesor (o un alumno) hace de presentador del concurso y pregunta a los miembros de la pareja qué gustos creen que tiene el otro. Se cuentan los aciertos.",
+      "materiales_necesarios": ["papel y cartulina (opcional)", "material de escritura", "clips o blue-tack para unir emoticonos a fichas", "fichas recortables de alimentos + emoticonos del cuaderno (pp. 20-22)", "espacio de 'set' (mesa + dos sillas frente al público)"],
+
+      "objetivo_didactico": "Sistematizar y repasar estructuras con el verbo gustar y sus gradaciones (mucho, no mucho, nada…) y el vocabulario relacionado con los alimentos, mediante una dinámica lúdica de tipo concurso televisivo que combina interacción oral, predicción y verificación.",
+
+      "competencias": ["IO (interacción oral con turnos pregunta-respuesta delante del público)", "EO (verbalizar gustos propios y predicciones sobre el compañero)", "CO (escuchar al presentador y las respuestas del compañero)", "CE (leer las fichas de alimentos)"],
+
+      "funciones_comunicativas": [
+        "preguntar por los gustos de un tercero ('¿Le gustan los helados a Pablo?')",
+        "predecir los gustos del compañero",
+        "expresar gustos con gradación (le gustan mucho, no le gustan nada)",
+        "confirmar o refutar una predicción con el emoticono mostrado"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "30+ alimentos en fichas pp. 21-22: cebolla, huevos, pollo, plátanos, zanahorias, yogur, leche, tomates, pan, pescado, pizza, queso, zumo, manzanas, frutos secos, filetes, galletas, atún, calamares, espaguetis, naranjas, uvas, flan, ajo, agua, ensalada, burrito, pasta, helado, peras, hamburguesas, patatas, azúcar, arroz, sandía, carne, bombones, café, mantequilla, chocolate, bocadillo, melón, tarta, macarrones, fruta, rosquillas, limón, limonada, sal, cruasán, huevos fritos, té, ajos, zumo de naranja, piña, fresas, limones, aceitunas, arroz con tomate, paella, melocotones, pimientos, berenjena, aguacate",
+          "36 emoticonos en p. 20 (sonriente, triste, sorprendido, dormido, enfadado, con corazones, con gafas, etc.) como representación gradual del gusto"
+        ],
+        "gramatica_explicita": [
+          "presente de gustar en 3.ª persona singular y plural (le gusta + sg / le gustan + pl)",
+          "complemento indirecto átono le con referente nominal explícito (le gustan los helados a Pablo)",
+          "gradaciones de gustar con adverbios (mucho, no mucho, nada, bastante)",
+          "concordancia número del sujeto con gusta/gustan"
+        ]
+      },
+
+      "anclaje_libro_alumno": {
+        "vocabulario": "ejercicios 1-7",
+        "gramatica": "ejercicios 6-10",
+        "comunicacion": "ejercicios 1-8",
+        "destrezas": "ejercicios 1-5",
+        "cultura": "ejercicios 1-4"
+      },
+
+      "estructura_interna": [
+        "p. 19 — instrucciones del juego: objetivos, dinámica en parejas con público, descripción del 'concurso', modelo de diálogo presentador-alumno",
+        "p. 20 — tablero de 36 emoticonos recortables (gradaciones afectivas) + 10 cuadros vacíos para emoticonos propios del alumno",
+        "p. 21 — 30 fichas de alimentos (lote 1): cebolla, huevos, pollo, plátanos, zanahorias, yogur, leche, tomates, pan, pescado, pizza, queso, zumo, manzanas, frutos secos, filetes, galletas, atún, calamares, espaguetis, naranjas, uvas, flan, ajo, agua, ensalada, burrito, pasta, helado, peras",
+        "p. 22 — 35 fichas de alimentos (lote 2): hamburguesas, patatas, azúcar, arroz, sandía, carne, bombones, café, mantequilla, chocolate, bocadillo, melón, tarta, macarrones, fruta, rosquillas, limón, limonada, pollo, sal, cruasán, huevos fritos, té, ajos, zumo de naranja, piña, fresas, limones, aceitunas, arroz con tomate, paella, melocotones, pimientos, berenjena, aguacate"
+      ],
+
+      "apoyos": ["visual fuerte (emoticonos como representación gradual del gusto)", "fichas léxicas autocontenidas", "marco lúdico de concurso televisivo (presentador, set, público)"],
+
+      "descripcion_dinamica": "Fase 1 (en solitario): cada alumno elige 5 fichas de alimentos y les une con clip o blue-tack un emoticono que represente su grado de gusto, sin que el compañero lo vea. Fase 2 (concurso): la pareja sube al set; el presentador pregunta a Alumno 1 '¿Le gustan los helados a [Alumno 2]?' y Alumno 1 predice ('Le gustan mucho'). Alumno 2 muestra su tarjeta con el emoticono real, confirmando o refutando. Se cuenta el acierto. Cada pareja pasa por el set por turnos. Variante eliminatoria: los ganadores de cada pareja vuelven a competir hasta llegar a un único ganador.",
+
+      "secciones_aplicables": ["vocabulario", "gramatica", "comunicacion"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — práctica oral integrada de gustar con gradaciones (cierre lúdico tras la sección de comunicación)",
+        "gramatica.md — fijación lúdica de gustar en 3.ª persona con complemento indirecto explícito",
+        "vocabulario.md — repaso transversal del léxico de alimentos con un corpus muy amplio (65+ ítems)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión reducida (sin set ni público): solo en parejas, cada uno predice los gustos del otro sin presentador",
+        "Versión cooperativa: en grupos de 4, cada uno predice los gustos de los otros 3 y se cuenta el acierto global",
+        "Ampliación: tras el concurso, redactar 3 frases sobre los gustos del compañero ('A Pablo le gustan mucho los helados, no le gusta nada el pescado…')",
+        "Variante con post-it propios: los alumnos escriben sus propios alimentos en post-it y los usan en vez de las fichas (más personalizado, sugerido en 'Más ideas' del cuaderno)",
+        "Reducir a 3 fichas por alumno para grupos cortos en tiempo",
+        "Ampliar emoticonos: usar los 10 cuadros vacíos para que cada alumno dibuje emoticonos personalizados con sus propios matices"
+      ],
+
+      "consideraciones": [
+        "Actividad larga (1 hora estimada por SGEL) — verificar que cabe en la sesión o partir en dos bloques (preparación + concurso)",
+        "Léxico muy extenso (65+ alimentos en pp. 21-22) — el docente puede pre-seleccionar las fichas relevantes para evitar dispersión",
+        "Emoticonos en p. 20 son ambiguos (algunos no están claramente asociados a un grado de gusto) — el docente puede pre-codificar 3-4 emoticonos canónicos (encanta / gusta mucho / no gusta / odia)",
+        "Setup logístico (set + público + presentador) requiere disposición flexible del aula",
+        "La fase de concurso es lenta si pasan muchas parejas: para grupos grandes, hacer rondas paralelas con presentadores-alumnos",
+        "El presentador es rol clave: puede asumirlo el docente al principio y luego rotar entre alumnos"
+      ],
+
+      "gestion_aula": "Preparación: recortar fichas de alimentos y emoticonos (pp. 20-22) con tiempo o pedirlo a los alumnos como tarea previa. Inicio (5 min): explicar el formato concurso y modelar con un voluntario. Fase 1 en solitario (10 min): cada uno elige fichas y une emoticonos. Fase 2 concurso (30-40 min): las parejas pasan por el set por turnos. Cierre (5-10 min): conteo de aciertos por pareja, comentario sobre los gustos más sorprendentes.",
+
+      "observaciones": "Actividad nuclear de gamificación para U4; el cuaderno la dimensiona como la dinámica más larga y rica de la unidad (1 hora). Combina vocabulario muy extenso + gramática nuclear (gustar) + componente afectivo-social (conocerse mejor) en formato concurso televisivo. Funciona especialmente bien si el docente acepta el rol de presentador con tono lúdico. Compatible con grupos de 8-20 estudiantes; para grupos mayores, hacer rondas paralelas."
+    },
+
+    {
+      "id": "U4-mc-007",
+      "ejercicio": "Bingonevera (Cuaderno de juegos NC1) — bingo léxico de alimentos para sistematizar el plural",
+      "tipo": "juego_aula",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "Nuevocompaneros1gamificacion_117959.pdf",
+      "paginas_en_fuente": "pp. 23-28",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Cuaderno de juegos NC1 (Belén García-Alifa, Javier Villatoro, SGEL, 2021)",
+      "ambito": "U4",
+      "categoria_editorial": "juego_lexico",
+      "tipo_dinamica": ["lúdica", "competitiva", "mecanizacion", "reconocimiento", "asociacion"],
+
+      "duracion_estimada": "20-30 min",
+      "agrupamiento": "toda la clase, por grupos o parejas (según número de estudiantes)",
+      "agrupamiento_detalle": "El docente recorta los cartones de bingo y las fichas de alimentos (que funcionan como los números del bingo clásico). Escribe en la pizarra el vocabulario que contienen las fichas. Reparte un cartón a cada estudiante o pareja y mete las fichas en una bolsa. Un estudiante 'canta' las fichas que va sacando hasta que alguien consigue línea o bingo.",
+      "materiales_necesarios": ["cartones de bingo recortados (pp. 25-27, 6 cartones de 3×5)", "fichas de alimentos recortadas (p. 24, 20 fichas + extras p. 28 para ampliar)", "sobre o bolsita para las fichas", "material de escritura para nuevos cartones (p. 28)"],
+
+      "objetivo_didactico": "Sistematizar la construcción del plural de nombres y adjetivos (tema central de gramática U4) y repasar el vocabulario de los alimentos mediante un bingo léxico que asocia oralmente la fórmula impersonal hay + alimento con su forma escrita en singular o plural.",
+
+      "competencias": ["CO (escuchar al estudiante que canta)", "CE (leer las fichas del propio cartón)", "EO (verbalizar el alimento y anunciar línea/bingo)", "EE (marcar las fichas en el cartón)"],
+
+      "funciones_comunicativas": [
+        "nombrar alimentos y bebidas",
+        "anunciar línea o bingo ('¡línea!', '¡bingo!')",
+        "confirmar o discutir una marca en el cartón"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "20 alimentos nucleares (p. 24): manzana, flan, tarta, pasta, naranjas, yogur, queso, limonada, galletas, zumo de piña, café, frutos secos, carne a la parrilla, pescado, helado, pizza, sopa, uvas, atún en lata, paella",
+          "contraste singular/plural en alimentos contables (manzana / naranjas / uvas / galletas / frutos secos) frente a incontables (queso, café, helado)",
+          "construcciones compuestas (zumo de piña, carne a la parrilla, atún en lata, arroz con tomate)"
+        ],
+        "gramatica_explicita": [
+          "plural regular en -s (manzanas, naranjas, uvas)",
+          "plural regular en -es tras consonante (limones, melones)",
+          "concordancia número en construcciones (carne a la parrilla, atún en lata como sintagmas fijos)",
+          "ausencia de determinante en plurales contables como contenido nuclear de gramática U4"
+        ]
+      },
+
+      "anclaje_libro_alumno": {
+        "vocabulario": "ejercicios 1-7",
+        "comunicacion": "ejercicios 1-8",
+        "destrezas": "ejercicios 1-5",
+        "cultura": "ejercicios 1-4"
+      },
+
+      "estructura_interna": [
+        "p. 23 — instrucciones del juego: objetivos, dinámica del bingo, mecánica de canto, anuncio de línea/bingo, sugerencias de extensión",
+        "p. 24 — 20 fichas de alimentos recortables para la bolsita (cantar)",
+        "p. 25 — 2 cartones de bingo de 3×5 con mezcla de alimentos y casillas con icono de bombo (pizza, uvas, carne a la parrilla… / limonada, uvas, tarta…)",
+        "p. 26 — 2 cartones de bingo de 3×5 (café, pizza, helado, queso, frutos secos, limonada, naranjas, pescado, paella / uvas, limonada, queso, zumo de piña, café, helado, sopa, atún en lata, frutos secos)",
+        "p. 27 — 2 cartones de bingo de 3×5 (flan, pasta, tarta, naranjas, queso, yogur, limonada, paella, pizza / sopa, flan, atún en lata, manzana, pizza, paella, limonada, tarta, queso)",
+        "p. 28 — materiales adicionales: 8 casillas vacías para nuevas fichas + cartón vacío 3×5 + 5 iconos de bombo para extender la actividad"
+      ],
+
+      "apoyos": ["visual (tipografía clara en todas las fichas)", "icono de bombo como casilla libre/comodín", "mecánica de bingo conocida internacionalmente"],
+
+      "descripcion_dinamica": "Un estudiante (o el docente) saca fichas de la bolsa y las 'canta' en voz alta usando la fórmula '¡huevos!', '¡leche!', '¡pizza!' (o con el modelo decorativo de la p. 23 que ilustra el canto). Los alumnos marcan en su cartón el alimento si lo tienen. Quien complete una fila grita '¡línea!'; quien complete el cartón entero, '¡bingo!'. Variante: el juego puede extenderse creando nuevos cartones con las casillas vacías de la p. 28 y nuevas fichas, especialmente para repasar otro lote de vocabulario.",
+
+      "secciones_aplicables": ["vocabulario", "gramatica"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — fijación lúdica del léxico de alimentos como repaso al final del bloque (ej. 1-7 del libro)",
+        "gramatica.md — fijación de la formación del plural en sintagmas con alimentos (apoyo a la sistematización del plural en U4)",
+        "comunicacion.md — práctica oral breve con la fórmula impersonal hay + alimento si el estudiante canta usando esa estructura"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión con cantado en hay: el estudiante que saca la ficha canta con '¡Hay pizza!', '¡Hay huevos!' (refuerza el contenido gramatical de U4)",
+        "Versión con plural forzado: el estudiante canta usando hay + el alimento siempre en plural cuando sea posible ('hay manzanas', 'hay naranjas')",
+        "Versión cooperativa: los cartones se reparten en parejas que tienen que decidir juntas si marcan o no",
+        "Ampliación con cartones nuevos: usar la p. 28 para crear cartones con vocabulario de Bingonevera + del libro del alumno",
+        "Versión rápida: dejar de jugar al primer bingo (no jugar hasta agotar la bolsa)",
+        "Versión competitiva por equipos: cada equipo tiene 2-3 cartones y compite por el bingo grupal"
+      ],
+
+      "consideraciones": [
+        "El léxico de las fichas (20 alimentos) cubre solo parte del vocabulario de U4 — el docente puede ampliar con la p. 28 (8 casillas vacías + cartón vacío)",
+        "Algunos cartones tienen casillas con icono de bombo (comodín) que cuentan como marcadas automáticamente — útil para acelerar la partida",
+        "La instrucción de 'escribir en la pizarra el vocabulario que contienen las fichas' es una pre-tarea léxica importante: garantiza que el grupo reconozca el ítem cuando se canta",
+        "Si se quiere reforzar la formación del plural (contenido nuclear U4), pedir explícitamente que el cantante use la forma plural cuando aplique",
+        "Léxico parcialmente compartido con U4-mc-006 (¿Me conoces?) — pueden encadenarse en la misma sesión como bloque lúdico de fijación"
+      ],
+
+      "gestion_aula": "Preparación: recortar cartones y fichas + escribir el vocabulario en la pizarra. Inicio (3-5 min): repasar el léxico de las fichas, modelar el canto. Partida (15-20 min): un alumno canta, los demás marcan, anuncios de línea y bingo. Cierre (3-5 min): contraste de los cartones ganadores con la lista cantada, comentario sobre plurales encontrados.",
+
+      "observaciones": "Actividad lúdica clásica adaptada al léxico de U4; útil tanto como apertura para activar léxico como cierre para fijarlo. Combina con U4-mc-006 (¿Me conoces?) en una secuencia coherente de gamificación: primero bingo (reconocer alimentos), luego concurso (gustar sobre alimentos). Bajo coste logístico (mecánica conocida, materiales sencillos), alta participación garantizada."
+    },
+
+    {
+      "id": "U4-mc-008",
+      "ejercicio": "Evaluación 4 — prueba escrita de 9 ejercicios (vocabulario, gramática, comunicación, destrezas)",
+      "tipo": "evaluacion_sumativa",
+      "formato_soporte": "pdf_fotocopiable",
+      "archivo_fuente": "14Companeros1Nuevaedicion_evaluacion4.pdf",
+      "paginas_en_fuente": "pp. 1-2",
+      "origen": "editorial_SGEL",
+      "obra_origen": "Evaluación NC1 — Unidad 4",
+      "ambito": "U4",
+      "categoria_editorial": "evaluacion",
+      "tipo_dinamica": ["individual", "autocorregible"],
+
+      "duracion_estimada": "30-45 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El docente reparte la ficha (una por estudiante) y los alumnos la completan de forma autónoma en silencio. Al terminar, la entrega para corrección o se hace una corrección colectiva en plenaria, según la modalidad elegida (Versión A deberes / Versión B sesión completa, como en U1-U3).",
+      "materiales_necesarios": ["ficha fotocopiada (una por estudiante)", "lápiz o bolígrafo"],
+
+      "objetivo_didactico": "Evaluar los aprendizajes nucleares de U4 — léxico de alimentos contables/incontables, verbo querer, artículo indeterminado, verbo gustar y construcción de frases con orden adecuado — y la comprensión escrita de un menú.",
+
+      "competencias": ["CE (lectura de instrucciones y de un menú simulado)", "EE (clasificación, conjugación, construcción de frases)", "comprensión lectora aplicada"],
+
+      "funciones_comunicativas": [
+        "clasificar alimentos según su categoría léxica",
+        "expresar preferencias y deseos en un contexto comunicativo",
+        "interpretar un menú escrito"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "alimentos contables vs incontables (objeto de los ejercicios de vocabulario)",
+          "categorías léxicas (frutas, verduras, lácteos, carnes, pescados, bebidas)",
+          "léxico del menú: primeros, segundos, postres, bebidas"
+        ],
+        "gramatica_explicita": [
+          "presente del verbo querer (irregular -ie-)",
+          "artículo indeterminado (un/una) y partitivos / cero (cuando no procede)",
+          "verbo gustar con sus tres personas básicas y contraste singular/plural",
+          "orden de constituyentes en la frase enunciativa simple"
+        ]
+      },
+
+      "anclaje_libro_alumno": {
+        "vocabulario": "ejercicios 1-7",
+        "gramatica": "ejercicios 6-10 (querer, hay/está, gustar)",
+        "comunicacion": "ejercicios 1-8 (la hora extendida, pedir comida, gustos)",
+        "destrezas": "ejercicios 1-5"
+      },
+
+      "estructura_interna": [
+        "p. 1 — Vocabulario (ej. 1-3) y Gramática y Comunicación (ej. 4-5): clasificación de alimentos, ejercicios sobre contable/incontable, verbo querer, artículo indeterminado",
+        "p. 2 — Gramática y Comunicación (ej. 6-7) y Destrezas (ej. 8-9): verbo gustar (concordancia singular/plural), construcción de frases con orden correcto, lectura de un menú y respuestas a preguntas de comprensión"
+      ],
+
+      "apoyos": ["formato estandarizado de evaluación NC1 (mismo molde que U1-U3)", "preguntas cerradas y semiabiertas para autocorrección"],
+
+      "descripcion_dinamica": "El alumno realiza los 9 ejercicios de forma individual y silenciosa. La prueba está organizada en cuatro bloques (Vocabulario, Gramática y Comunicación 1, Gramática y Comunicación 2, Destrezas) que cubren los contenidos nucleares de U4. La corrección puede ser autocorregida con clave proporcionada por el docente o corregida en plenaria.",
+
+      "secciones_aplicables": ["evaluacion"],
+
+      "posibles_anclajes_en_final": [
+        "evaluacion.md — base de la sección Evaluación de U4 en su versión A (deberes + revisión en clase) y B (sesión completa con realización escalonada), siguiendo el patrón establecido en U1-U3"
+      ],
+
+      "adaptaciones_posibles": [
+        "Versión A (deberes): repartir la prueba como tarea para casa y revisar al día siguiente en plenaria (sin nota individual o con nota orientativa)",
+        "Versión B (sesión completa): realizar en clase en tres tandas con pausas entre bloques y corrección colectiva tras cada tanda",
+        "Ampliación oral: tras el ej. de menú, pedir a algunos estudiantes que verbalicen su pedido como si estuvieran en el restaurante",
+        "Versión adaptada: para alumnos con necesidades, reducir ejercicios o permitir uso del libro como consulta"
+      ],
+
+      "consideraciones": [
+        "Inventario realizado solo con la portada de los dos PDFs (pp. 1-2) — los enunciados específicos de los 9 ejercicios no están extraídos en este pase, conviene revisar la ficha antes de la sesión para alinear con lo trabajado en clase",
+        "Patrón estructural idéntico al de U1-U3 (mismo formato editorial SGEL) — la sección Evaluación de U4 en final/ puede heredar el patrón de U1-U3 con ajuste de contenidos",
+        "Distinción contable/incontable es contenido nuclear de U4 y aparece evaluada explícitamente — clave que el grupo lo tenga consolidado",
+        "El ej. de orden de frases (ej. 7) es un control gramatical básico — útil para detectar lagunas estructurales"
+      ],
+
+      "gestion_aula": "Preparación: una copia por estudiante + clave de soluciones para corrección. Inicio (2-3 min): leer instrucciones generales y aclarar dudas. Realización individual (25-35 min, según versión A o B). Corrección (5-10 min en clase si es Versión B; al día siguiente si es Versión A). Cierre: comentario sobre los errores más frecuentes y plan de refuerzo individualizado.",
+
+      "observaciones": "Evaluación sumativa estandarizada de U4. Funciona como cierre de la unidad y como input para programar refuerzos. El formato es el mismo que en U1-U3, lo que facilita la comparación longitudinal del progreso del alumno a lo largo del primer trimestre."
+    },
+
+    {
+      "id": "U4-mc-009",
+      "ejercicio": "Ejercicio 1 — Empareja las palabras con su imagen (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U4/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U4",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 4 - Comidas y bebidas → Libro del alumno → Ejercicio 1",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "asociacion", "reconocimiento", "autocorregible", "individual"],
+
+      "duracion_estimada": "3-5 min",
+      "agrupamiento": "individual (autónomo, asíncrono o en aula de informática)",
+      "agrupamiento_detalle": "El alumno resuelve el ejercicio en su dispositivo (ordenador, tableta o móvil) accediendo a Blinklearning con sus credenciales. Empareja arrastrando o seleccionando cada palabra con su imagen correspondiente entre 10 alimentos. La plataforma cuenta los intentos (attempts) y dispone de botones Solution / Restart exercise para autocorrección.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Fijar el reconocimiento visual del léxico nuclear de alimentos de U4 mediante el emparejamiento autocorregible de 10 palabras con sus imágenes correspondientes.",
+
+      "competencias": ["CE (lectura de las palabras)", "reconocimiento visual de los alimentos", "asociación palabra ↔ imagen"],
+
+      "funciones_comunicativas": [
+        "reconocer e identificar alimentos por su nombre escrito",
+        "asociar léxico con su referente visual"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "10 alimentos: manzana, tomate, chocolate, macarrones, azúcar, hamburguesa, leche, bocadillo, ensalada, pollo",
+          "categorías mezcladas: frutas (manzana), verduras/condimentos (tomate, azúcar), dulces (chocolate), pasta (macarrones), carne (hamburguesa, pollo), lácteos (leche), comida rápida (bocadillo), platos completos (ensalada)"
+        ],
+        "gramatica_explicita": [
+          "sustantivos en singular (predominantemente incontables y singulares contables)",
+          "género: 6 masculinos (tomate, chocolate, azúcar, bocadillo, pollo, macarrones pl.) y 4 femeninos (manzana, leche, hamburguesa, ensalada)"
+        ]
+      },
+
+      "apoyos": ["visual fotorrealista de cada alimento", "autocorrección inmediata con contador de intentos", "botón Solution para ver la respuesta"],
+
+      "descripcion_dinamica": "El alumno ve 20 tarjetas en una cuadrícula 3×7 (10 con palabra, 10 con imagen) y debe formar las 10 parejas correctas. La plataforma muestra 'attempts' como contador de intentos. Al pulsar Solution se revela la solución; Restart exercise permite reiniciar.",
+
+      "secciones_aplicables": ["vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — práctica autónoma de fijación léxica como deberes tras la presentación del léxico de alimentos (ej. 1-3 del libro)",
+        "vocabulario.md — refuerzo digital complementario al U4-mc-001 (PPT ¿Qué hay en la nevera?) y U4-mc-007 (Bingonevera)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Como deberes para casa con autocorrección",
+        "En el aula con proyector como repaso colectivo (el grupo decide cada emparejamiento por consenso)",
+        "Combinado con producción oral: tras emparejar, el alumno verbaliza 'hay + alimento' con cada ítem"
+      ],
+
+      "consideraciones": [
+        "Léxico parcialmente solapado con U4-mc-007 (Bingonevera) — útil como pre-tarea o post-tarea de fijación",
+        "Inventario realizado a partir de captura del chat — pendiente depósito de la captura en unidades/U4/recursos/capturas/",
+        "Macarrones es el único plural — útil para reactivar la regla del plural (contenido nuclear gramatical de U4)"
+      ],
+
+      "gestion_aula": "Modalidad asíncrona (deberes): asignación previa a la sesión, revisión en plenaria al día siguiente. Modalidad síncrona (aula): proyectar y resolver en plenaria como repaso (5 min) o trabajo individual en aula de informática (5-8 min con cierre colectivo).",
+
+      "observaciones": "Ejercicio digital de bajo coste cognitivo, ideal como entrada del bloque de vocabulario o como repaso al cierre. Compatible con cualquier momento del itinerario de U4."
+    },
+
+    {
+      "id": "U4-mc-010",
+      "ejercicio": "Ejercicio 2 — Observa las imágenes y encuentra las palabras en la sopa de letras (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U4/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U4",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 4 - Comidas y bebidas → Libro del alumno → Ejercicio 2",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "juego_ortografico", "reconocimiento", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-10 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El alumno observa las 8 imágenes numeradas (1-8) y localiza cada una de las 8 palabras correspondientes en la sopa de letras. La plataforma marca con color la palabra encontrada y permite autocorrección.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar la ortografía del léxico de alimentos de U4 mediante una sopa de letras interactiva que obliga a reconocer la grafía exacta de cada palabra a partir de su referente visual.",
+
+      "competencias": ["CE (lectura de la lista y de la sopa de letras)", "EE (localización ortográfica)", "reconocimiento visual del alimento + de su grafía", "rastreo visual"],
+
+      "funciones_comunicativas": [
+        "reconocer la grafía de los alimentos",
+        "asociar imagen y palabra escrita"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "8 alimentos numerados: 1. galletas (pl.), 2. naranja, 3. frutos secos, 4. plátano, 5. queso, 6. zanahoria, 7. pan, 8. huevos (pl.)",
+          "categorías: dulces (galletas), frutas (naranja, plátano), frutos secos (compuesto), lácteos (queso), verduras (zanahoria), cereales (pan), proteínas (huevos)"
+        ],
+        "gramatica_explicita": [
+          "contraste singular / plural en la lista (galletas, huevos, frutos secos vs naranja, plátano, queso, zanahoria, pan)",
+          "compuesto léxico 'frutos secos' como sintagma fijo",
+          "ortografía con dígrafos y letras 'difíciles': ll (galletas), j (naranja), z (zanahoria), ñ (no aparece, pero el contraste pan/plátano sí)"
+        ]
+      },
+
+      "estructura_interna": [
+        "Bloque superior — 8 imágenes numeradas (1-8) con un alimento cada una",
+        "Bloque inferior izquierdo — sopa de letras de 11 columnas × 12 filas con las 8 palabras escondidas (orientaciones variadas)",
+        "Bloque inferior derecho — lista de las 8 palabras a localizar, marcadas con subrayado cuando ya se han encontrado"
+      ],
+
+      "palabras_solucion": ["galletas", "naranja", "frutos secos", "plátano", "queso", "zanahoria", "pan", "huevos"],
+
+      "apoyos": ["visual fotorrealista de cada alimento numerado", "lista de palabras objetivo siempre visible", "autocorrección por coloreado al localizar la palabra"],
+
+      "descripcion_dinamica": "El alumno mira las imágenes numeradas, identifica la palabra que les corresponde y la busca en la sopa de letras arrastrando o trazando sobre las letras. La plataforma marca la palabra encontrada y la tacha en la lista. Cuando todas están localizadas, la sopa queda resuelta.",
+
+      "secciones_aplicables": ["vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — fijación ortográfica del léxico de alimentos como complemento al U4-mc-009 (emparejamiento) — secuencia natural: reconocer imagen → localizar grafía",
+        "vocabulario.md — deberes autónomos tras la presentación del léxico nuclear (ej. 1-7 del libro)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Como deberes para casa con autocorrección",
+        "En el aula con proyector como rastreo grupal (el grupo localiza colectivamente palabra a palabra)",
+        "Ampliación oral: tras localizar cada palabra, verbalizar una frase con hay + alimento",
+        "Adaptación impresa: capturar la sopa y resolverla en papel para grupos sin acceso digital"
+      ],
+
+      "consideraciones": [
+        "Léxico parcialmente nuevo respecto al PPT (zanahoria, frutos secos) y al Bingonevera (galletas, frutos secos, naranja, queso aparecen también en mc-007) — útil como ampliación del campo léxico",
+        "Sintagma 'frutos secos' como pieza compuesta puede requerir verificación: la sopa lo tiene en dos posiciones contiguas (FRUTOS / SECOS) o como cadena única",
+        "Ortografía de 'zanahoria' y 'galletas' (dígrafo ll) son puntos típicos de error — la actividad sirve también como pre-evaluación ortográfica",
+        "Inventario realizado a partir de captura del chat — pendiente depósito de la captura en unidades/U4/recursos/capturas/"
+      ],
+
+      "gestion_aula": "Modalidad asíncrona (deberes): asignación tras la presentación léxica + revisión rápida al día siguiente. Modalidad síncrona: proyección con resolución en plenaria (5-8 min) como cierre lúdico, especialmente productivo en sesiones cortas de cierre.",
+
+      "observaciones": "Ejercicio digital con buen retorno didáctico: combina reconocimiento visual + ortografía + rastreo en un solo formato. Bajo coste cognitivo, alta participación. Encaja como segundo paso natural tras U4-mc-009 en la secuencia de fijación léxica autónoma."
+    },
+
+    {
+      "id": "U4-mc-011",
+      "ejercicio": "Ejercicio 3 — Observa el ejemplo y completa las frases (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U4/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U4",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 4 - Comidas y bebidas → Libro del alumno → Ejercicio 3",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["mecanizacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "8-12 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El alumno observa el ejemplo (A María le gustan los plátanos y no le gustan las manzanas) y completa los huecos de 5 frases sobre 5 personas distintas (Luis y Lidia / yo y mi padre / tú / vosotros / yo). Cada frase incluye huecos para el pronombre átono (me/te/le/nos/os/les), la forma de gustar (gusta/gustan) y el complemento alimenticio (con su determinante el/la/los/las). La plataforma autocorrige con contador de intentos (attempts).",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Sistematizar el paradigma completo de gustar — pronombres átonos en las 6 personas (me, te, le, nos, os, les) + concordancia con sujeto singular/plural (gusta/gustan) + ampliación de los complementos a la negación y a la afirmación enfática con sí — mediante completado de 5 frases modelo con apoyo visual.",
+
+      "competencias": ["CE (lectura de las frases incompletas + interpretación de las imágenes con check ✓ o cruz ✗)", "EE (completado de los huecos con la forma correcta)", "asociación tónico/átono (a mí ↔ me, a ti ↔ te, etc.)"],
+
+      "funciones_comunicativas": [
+        "expresar gustos propios y de terceros (mí, ti, él/ella, nosotros, vosotros, ellos/ellas)",
+        "expresar lo que no nos gusta con negación",
+        "contraponer gustos con sí enfático ('no me gustan X y sí me gustan Y')"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "frutas: plátanos, manzanas, uvas, melocotones",
+          "postres: helado, flan",
+          "verduras: patata, cebollas",
+          "carnes y pescados: pescado, carne",
+          "comida rápida: macarrones, hamburguesas"
+        ],
+        "gramatica_explicita": [
+          "paradigma completo de gustar con CI átono en las 6 personas: me, te, le, nos, os, les",
+          "concordancia número del sujeto con gusta (sg) / gustan (pl): le gusta el flan vs le gustan los plátanos",
+          "duplicación con pronombre tónico introducido por 'a': a María / a Luis y a Lidia / a mí y a mi padre / a ti / a vosotros / a mí",
+          "negación de gustar con 'no' antepuesto al pronombre átono (no le gustan, no te gusta, no os gusta, no me gustan)",
+          "afirmación enfática con 'sí' tras negación contrapuesta ('y sí me gustan las hamburguesas')",
+          "artículo definido obligatorio con el complemento de gustar (el helado, la patata, las uvas, los plátanos)",
+          "uso de 'también' como conector de adición entre dos gustos del mismo signo ('nos gusta el helado y también nos gusta el flan')"
+        ]
+      },
+
+      "estructura_interna": [
+        "Ejemplo modelo — A María le gustan los plátanos (✓) y no le gustan las manzanas (✗)",
+        "Frase 1 — A Luis y a Lidia LES gustan LAS UVAS (✓) y no LES gustan LOS MELOCOTONES (✗) — 3.ª pl. afirmativa + 3.ª pl. negativa",
+        "Frase 2 — A mí y a mi padre NOS gusta el HELADO (✓) y también NOS gusta el FLAN (✓) — 1.ª pl. doble afirmación con 'también'",
+        "Frase 3 — A ti NO TE gusta la PATATA (✗) y no TE gustan LAS CEBOLLAS (✗) — 2.ª sg. doble negación + contraste singular/plural",
+        "Frase 4 — A vosotros OS gusta el PESCADO (✓) y no OS gusta la CARNE (✗) — 2.ª pl. afirmativa + negativa",
+        "Frase 5 — A mí NO ME gustan los MACARRONES (✗) y sí ME gustan LAS HAMBURGUESAS (✓) — 1.ª sg. contraste no/sí enfático"
+      ],
+
+      "soluciones": {
+        "frase_1": "A Luis y a Lidia les gustan las uvas y no les gustan los melocotones.",
+        "frase_2": "A mí y a mi padre nos gusta el helado y también nos gusta el flan.",
+        "frase_3": "A ti no te gusta la patata y no te gustan las cebollas.",
+        "frase_4": "A vosotros os gusta el pescado y no os gusta la carne.",
+        "frase_5": "A mí no me gustan los macarrones y sí me gustan las hamburguesas."
+      },
+
+      "apoyos": ["visual fotorrealista de cada alimento con marca de gusto (✓ verde) o rechazo (✗ rojo)", "ejemplo modelo prerredactado en la cabecera", "huecos preformateados con casilla azul"],
+
+      "descripcion_dinamica": "El alumno lee el ejemplo de María, entiende la mecánica (alimento con ✓ → afirmación, alimento con ✗ → negación) y completa los huecos de las 5 frases. La plataforma valora cada hueco al pulsar Hide / Solution. El contador de intentos permite reflexión sobre los errores.",
+
+      "secciones_aplicables": ["gramatica", "comunicacion"],
+
+      "posibles_anclajes_en_final": [
+        "gramatica.md — sistematización del paradigma completo de gustar (apoyo a la sección de gramática del libro donde gustar se introduce con todas sus personas)",
+        "comunicacion.md — práctica autónoma de expresión de gustos en distintas personas, complementaria a las parejas del aula",
+        "destrezas.md — ejercicio de fijación previo a producciones más libres (correo, presentación de gustos)"
+      ],
+
+      "adaptaciones_posibles": [
+        "Como deberes para casa con autocorrección",
+        "En el aula con proyector como repaso colectivo: el grupo decide cada hueco por consenso y justifica la concordancia",
+        "Ampliación: tras resolver, el alumno escribe 2 frases propias con la misma estructura (a + persona + pronombre + gusta/gustan + alimento)",
+        "Versión reducida: trabajar solo 2-3 frases en grupos débiles",
+        "Versión oral: tras resolver, verbalizar cada frase con entonación contrastiva (afirmación vs negación, no vs sí)"
+      ],
+
+      "consideraciones": [
+        "Es el ejercicio gramaticalmente más denso de la serie Blinklearning U4: cubre las 6 personas, singular/plural, afirmación, negación y contraste enfático no/sí en 5 frases",
+        "La frase 5 introduce el patrón contraargumentativo con sí enfático — útil pero requiere atención porque rompe la regla simple 'no + verbo'",
+        "La frase 3 incluye un error potencial: 'patata' como singular contable es plausible solo en sentido genérico ('la patata' como tipo de alimento) — el docente puede aclarar el matiz",
+        "Léxico parcialmente nuevo (melocotones, cebollas) respecto al PPT y al libro nuclear — útil como ampliación",
+        "Concordancia tónico/átono (a mí ↔ me, a ti ↔ te, a vosotros ↔ os) es un punto típico de error en aprendices A1 — el ejercicio fuerza a producir las dos formas en simultáneo",
+        "Inventario realizado a partir de captura del chat — pendiente depósito de la captura en unidades/U4/recursos/capturas/"
+      ],
+
+      "gestion_aula": "Modalidad asíncrona (deberes): asignar tras la presentación del paradigma de gustar en clase, revisar al día siguiente en plenaria centrándose en la frase 5 (no/sí). Modalidad síncrona: proyectar y resolver frase a frase, justificando concordancia (gusta/gustan según el sujeto pospuesto), 10-12 min.",
+
+      "observaciones": "Ejercicio nuclear de la serie Blinklearning U4: sistematiza gustar al completo y prepara para la producción libre. Encaja como puente entre la presentación del verbo (libro/PPT) y las dinámicas comunicativas (U4-mc-004, U4-mc-006). Buena pieza de evaluación formativa indirecta porque pone a prueba todas las dimensiones del paradigma a la vez."
+    },
+
+    {
+      "id": "U4-mc-012",
+      "ejercicio": "Ejercicio 4 — Señala el intruso (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U4/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U4",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 4 - Comidas y bebidas → Libro del alumno → Ejercicio 4",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["reflexiva", "reconocimiento", "asociacion", "autocorregible", "individual"],
+
+      "duracion_estimada": "5-8 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El alumno lee cada serie de 4 alimentos y selecciona el que no pertenece a la misma categoría léxica que los otros tres. La plataforma autocorrige y cuenta los intentos (attempts).",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Consolidar la categorización léxica de los alimentos por familias semánticas (lácteos, frutas, verduras, dulces, bebidas, carnes, pescados y mariscos, frutos secos) mediante la identificación del elemento que rompe la categoría en 8 series de 4 alimentos.",
+
+      "competencias": ["CE (lectura de cada serie léxica)", "categorización semántica", "razonamiento de inclusión/exclusión categorial"],
+
+      "funciones_comunicativas": [
+        "clasificar alimentos por familias semánticas",
+        "identificar excepciones y diferencias categoriales"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "32 alimentos repartidos en 8 series de 4",
+          "categorías presentes: lácteos (yogur, leche, queso, mantequilla), frutas (manzana, plátano, naranja, melocotón), verduras (zanahoria, cebolla, tomate), dulces y bollería (tarta, galleta(s), chocolate), bebidas (zumo, agua, leche, zumo de naranja), carnes (carne, filete), pescados y mariscos (pescado, trucha, gambas, calamares), pasta y cereales (pasta), frutos secos, platos compuestos (ensalada)"
+        ],
+        "gramatica_explicita": [
+          "sustantivos en singular y plural (galleta vs galletas; frutos secos como sintagma plural fijo)",
+          "concepto de campo léxico / familia semántica como criterio de agrupación"
+        ]
+      },
+
+      "series_y_soluciones": [
+        {"serie_1": ["yogur", "pescado", "leche", "queso"], "intruso": "pescado", "razon": "lácteos vs pescado"},
+        {"serie_2": ["manzana", "plátano", "galleta", "naranja"], "intruso": "galleta", "razon": "frutas vs dulce/bollería"},
+        {"serie_3": ["zanahoria", "cebolla", "tomate", "melocotón"], "intruso": "melocotón", "razon": "verduras vs fruta"},
+        {"serie_4": ["tarta", "galletas", "chocolate", "ensalada"], "intruso": "ensalada", "razon": "dulces/bollería vs plato salado"},
+        {"serie_5": ["zumo", "pasta", "agua", "leche"], "intruso": "pasta", "razon": "bebidas vs alimento sólido (cereal)"},
+        {"serie_6": ["verdura", "carne", "pescado", "mantequilla"], "intruso": "mantequilla", "razon": "alimentos principales vs grasa untable / lácteo derivado"},
+        {"serie_7": ["zanahoria", "zumo de naranja", "filete", "naranja"], "intruso": "filete", "razon": "vegetales y derivados vs carne"},
+        {"serie_8": ["trucha", "frutos secos", "gambas", "calamares"], "intruso": "frutos secos", "razon": "pescados y mariscos vs frutos secos"}
+      ],
+
+      "apoyos": ["formato visual en cápsulas/botones con separador /", "autocorrección por coloreado azul de la selección correcta", "contador de intentos"],
+
+      "descripcion_dinamica": "El alumno lee cada una de las 8 series de 4 alimentos separadas por barras y pincha el ítem que no pertenece a la misma familia léxica que los otros tres. La plataforma marca la selección y permite reiniciar el ejercicio con Restart exercise o consultar la solución con Hide / Solution.",
+
+      "secciones_aplicables": ["vocabulario"],
+
+      "posibles_anclajes_en_final": [
+        "vocabulario.md — fijación de las familias semánticas del léxico de alimentos como deberes o repaso tras la sección de vocabulario del libro (ej. 1-7)",
+        "vocabulario.md — pre-tarea de la sección Cultura U4 (gastronomía hispana, U4-mc-003) para activar la noción de campo léxico antes del trabajo intercultural"
+      ],
+
+      "adaptaciones_posibles": [
+        "Como deberes para casa con autocorrección",
+        "En el aula con proyector: resolver en plenaria y discutir cada categoría (qué tienen en común los tres alimentos restantes)",
+        "Ampliación productiva: tras resolver, el alumno escribe el nombre de la categoría que comparten los 3 alimentos restantes (lácteos, frutas, verduras, dulces, bebidas…)",
+        "Versión inversa: dar 4 alimentos compatibles y pedir un quinto que sería intruso",
+        "Versión cooperativa: en parejas, cada uno justifica al otro por qué su elección rompe la categoría"
+      ],
+
+      "consideraciones": [
+        "Ejercicio cognitivamente más exigente que un emparejamiento simple — requiere razonamiento categorial, no solo reconocimiento",
+        "Algunas categorías admiten más de una lectura (serie 6: mantequilla podría considerarse lácteo, pero la categoría dominante de los otros tres es 'alimentos principales o grupos alimenticios'; serie 5: pasta como alimento sólido contrasta con tres bebidas) — útil para abrir debate categorial en clase, no solo para autocorregir",
+        "La serie 7 (zanahoria + zumo de naranja + filete + naranja) tiene una categoría difusa (vegetales y derivados vegetales) — puede confundir si el alumno espera una categoría estricta como 'frutas' o 'verduras'",
+        "Léxico parcialmente nuevo respecto al libro nuclear (mantequilla, filete, trucha, gambas, calamares, frutos secos) — útil como ampliación, pero verificar comprensión previa",
+        "Inventario realizado a partir de captura del chat — pendiente depósito de la captura en unidades/U4/recursos/capturas/"
+      ],
+
+      "gestion_aula": "Modalidad asíncrona (deberes): asignar tras la presentación del léxico, revisar al día siguiente discutiendo los casos ambiguos (series 5, 6, 7). Modalidad síncrona: resolución colectiva en plenaria pidiendo justificación de cada elección, 8-10 min — productivo como pretexto para verbalizar campos léxicos.",
+
+      "observaciones": "Ejercicio de categorización léxica con valor metalingüístico: obliga al alumno a tomar conciencia de las familias semánticas en el campo de los alimentos. Buena pieza de cierre del bloque de vocabulario de U4 y de preparación para el trabajo cultural (U4-mc-003) donde las categorías léxicas se aplican a platos hispanos. Combina bien con U4-mc-007 (Bingonevera) como práctica de fijación léxica de signo distinto: reconocer (bingo) vs discriminar (intruso)."
+    },
+
+    {
+      "id": "U4-mc-013",
+      "ejercicio": "Ejercicio 5 — Lee el diálogo y señala verdadero o falso (Blinklearning)",
+      "tipo": "ejercicio_digital_autocorregible",
+      "formato_soporte": "ejercicio_interactivo_blinklearning",
+      "archivo_fuente": "captura recibida en chat (pendiente de depósito en unidades/U4/recursos/capturas/)",
+      "origen": "plataforma_blinklearning",
+      "obra_origen": "Plataforma Blinklearning NC1 — ejercicios extra interactivos",
+      "ambito": "U4",
+      "ubicacion_plataforma": "Blinklearning → NC1 → Unidad 4 - Comidas y bebidas → Libro del alumno → Ejercicio 5",
+      "categoria_editorial": "ejercicio_digital_interactivo",
+      "tipo_dinamica": ["reflexiva", "reconocimiento", "autocorregible", "individual"],
+
+      "duracion_estimada": "8-12 min",
+      "agrupamiento": "individual",
+      "agrupamiento_detalle": "El alumno lee un diálogo de 14 turnos en un restaurante (camarero + 3 comensales: Luis, Carmen, Antonio) y responde 5 ítems de verdadero/falso sobre lo que pide cada uno en cada plato. La plataforma autocorrige y cuenta los intentos.",
+      "materiales_necesarios": ["dispositivo con navegador", "acceso a Blinklearning", "credenciales de alumno NC1"],
+
+      "objetivo_didactico": "Desarrollar la comprensión lectora en un contexto comunicativo nuclear de U4 (pedir comida en un restaurante) mediante un diálogo modelo entre un camarero y tres clientes, evaluando la captación de detalles concretos sobre cada plato pedido a través de 5 ítems V/F.",
+
+      "competencias": ["CE (lectura del diálogo de 14 turnos)", "comprensión detallada", "razonamiento de identificación / discriminación (V/F)", "asociación léxica (macarrones = pasta, manzana = fruta)"],
+
+      "funciones_comunicativas": [
+        "comprender una conversación de restaurante (atender al cliente, pedir comida, organizar primero/segundo/postre)",
+        "identificar quién pide qué en cada plato",
+        "asociar un ítem concreto a una categoría léxica (macarrones → pasta, manzana → fruta, trucha → pescado)"
+      ],
+
+      "contenidos_linguisticos": {
+        "lexico": [
+          "léxico de restaurante: primer plato, segundo, postre, comer, tomar",
+          "alimentos del diálogo: ensalada, macarrones con queso y tomate, pollo con patatas, pescado, trucha, helado, manzana, tarta de chocolate",
+          "fórmulas de cortesía: Buenas tardes, por favor, muchas gracias, Muy bien",
+          "categorías evaluadas: pasta (macarrones), pescado (trucha), fruta (manzana)"
+        ],
+        "gramatica_explicita": [
+          "presente de querer (1.ª sg, 2.ª sg, 3.ª pl)",
+          "fórmula 'de primer plato + querer + alimento' / 'de segundo + querer + alimento' / 'de postre + querer + alimento'",
+          "estructura 'yo, X' como respuesta elíptica ('Yo, una manzana', 'Yo, tarta de chocolate')",
+          "presente de tomar (¿quieren tomar?)",
+          "uso de también para añadir un gusto/pedido compartido ('Yo también', 'pues yo quiero ensalada también')",
+          "artículo indeterminado en alimentos contables (una trucha, una manzana)",
+          "ausencia de artículo en alimentos plurales o incontables (ensalada, pescado, pollo con patatas, helado, tarta de chocolate)"
+        ]
+      },
+
+      "estructura_interna": [
+        "Bloque superior — diálogo de 14 turnos entre Camarero, Luis, Carmen y Antonio en un restaurante (primer plato → segundo → postre)",
+        "Bloque inferior — 5 ítems de verdadero/falso con radio button para cada respuesta"
+      ],
+
+      "items_vf": [
+        {"item": "1 Luis y Carmen quieren ensalada de primer plato.", "solucion": "verdadero", "razon": "Carmen dice 'Yo, de primer plato, quiero ensalada' y Luis dice 'pues yo quiero ensalada también'"},
+        {"item": "2 Antonio quiere pasta de primero.", "solucion": "verdadero", "razon": "Antonio pide 'macarrones con queso y tomate' = pasta"},
+        {"item": "3 Antonio y Carmen quieren pescado de segundo.", "solucion": "falso", "razon": "Carmen pide 'pollo con patatas' y Antonio dice 'Yo también' — quieren pollo, no pescado; el pescado lo pide Luis"},
+        {"item": "4 Luis quiere fruta de postre.", "solucion": "verdadero", "razon": "Luis dice 'Yo, una manzana' = fruta"},
+        {"item": "5 Carmen quiere helado de limón de postre.", "solucion": "falso", "razon": "Carmen pide 'tarta de chocolate'; el helado lo pide Antonio, sin especificar sabor"}
+      ],
+
+      "personajes_y_pedidos": {
+        "luis": {"primero": "ensalada (también)", "segundo": "pescado (una trucha)", "postre": "manzana"},
+        "carmen": {"primero": "ensalada", "segundo": "pollo con patatas", "postre": "tarta de chocolate"},
+        "antonio": {"primero": "macarrones con queso y tomate", "segundo": "pollo con patatas (yo también)", "postre": "helado"}
+      },
+
+      "apoyos": ["diálogo escrito con turnos identificados por nombre", "estructura tripartita primero/segundo/postre como organizador comprensivo", "ítems V/F con radio button accesible", "autocorrección por coloreado azul de la respuesta seleccionada"],
+
+      "descripcion_dinamica": "El alumno lee el diálogo entero y responde los 5 ítems V/F marcando el radio button correspondiente. Algunos ítems requieren inferencia categorial (macarrones = pasta, manzana = fruta) y otros discriminación de quién pide qué (Antonio no pide pescado, Carmen no pide helado).",
+
+      "secciones_aplicables": ["comunicacion", "destrezas"],
+
+      "posibles_anclajes_en_final": [
+        "comunicacion.md — comprensión lectora del modelo de diálogo de restaurante, preparatoria a la producción oral (U4-mc-005 ¡Salimos a cenar!)",
+        "destrezas.md — práctica autónoma de comprensión lectora con detalle, complementaria a las destrezas del libro",
+        "cultura.md — exposición al esquema clásico del menú español (primero + segundo + postre) en contexto dialogado"
+      ],
+
+      "adaptaciones_posibles": [
+        "Como deberes para casa con autocorrección",
+        "En el aula con proyector: lectura dramatizada del diálogo entre 4 alumnos antes de responder, 12-15 min",
+        "Ampliación productiva: tras resolver, los alumnos en parejas reescriben el diálogo cambiando los pedidos y representan la nueva versión",
+        "Ampliación oral: cada alumno verbaliza qué pediría él si fuera el cuarto comensal (de primero, segundo y postre)",
+        "Versión reducida: trabajar solo los 3 primeros ítems V/F para grupos débiles"
+      ],
+
+      "consideraciones": [
+        "Ítems 2 y 4 evalúan inferencia categorial (macarrones → pasta, manzana → fruta) — útil para comprobar que el alumno generaliza, no solo memoriza",
+        "Ítem 3 requiere inferir el sujeto elíptico de 'Yo también' (Antonio) y conectarlo con el pedido previo de Carmen — punto típico de error si el alumno no atiende al hilo dialogal",
+        "Ítem 5 introduce un distractor con grado de especificidad ('helado de limón' frente a 'helado' a secas) — útil para entrenar lectura precisa",
+        "El diálogo es un modelo cerrado que puede reutilizarse como guion para representación oral (anclaje con U4-mc-005)",
+        "Léxico de restaurante (camarero, primer plato, segundo, postre, tomar) es contenido nuclear de U4 — el ejercicio sirve también como evaluación formativa indirecta del bloque de comunicación",
+        "Inventario realizado a partir de captura del chat — pendiente depósito de la captura en unidades/U4/recursos/capturas/"
+      ],
+
+      "gestion_aula": "Modalidad asíncrona (deberes): asignar tras la presentación del léxico de restaurante, revisar al día siguiente discutiendo los ítems 2, 4 (inferencia categorial) y 3 (referencia elíptica). Modalidad síncrona: lectura dramatizada del diálogo en grupos de 4 (5 min) + resolución colectiva de los V/F con justificación (5-7 min).",
+
+      "observaciones": "Cierre natural de la serie Blinklearning U4: pasa del léxico aislado (mc-009, mc-010, mc-012) y la gramática de gustar (mc-011) al texto dialogado en contexto comunicativo. Funciona como puente entre la comprensión lectora autónoma y la producción oral guiada de U4-mc-005 (¡Salimos a cenar!). Buena pieza de evaluación formativa indirecta del bloque de comunicación de U4."
+    }
+  ]
+}
