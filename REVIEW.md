@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-06-14 (v12.62 — **U5 `final/` arranque**: `unidades/U5/final/vocabulario.md` (8792 bytes), primera sección del piloto U5 *La familia*. Sigue el modelo metodológico estabilizado en U1-U4. Próximas secciones U5 pendientes: gramática, comunicación, destrezas, cultura, evaluación + itinerario + inventario material complementario).
+> **Última actualización:** 2026-06-14 (v12.63 — `CLAUDE.md` raíz: cross-reference repo A → capa pedagógica de repo B. Párrafo nuevo *Consulta pedagógica activa* en §*Modelo de dos repositorios* + fila nueva en tabla *Documentos clave* listando *repo B — capa pedagógica* como bloque documental (`*-pautas.md`, `proceso-operativo.md`, `marco-teorico-metodologico.md`). La doctrina pedagógica no se duplica; sigue siendo fuente única en repo B. Cierra la Cuestión B del Informe consolidado U4 con reformulación arquitectónica del revisor: descartado `docs/criterios-pedagogicos-NC1.md` original (duplicaba); aplicada opción cross-reference mínima; aparcada regla path-scoped `.claude/rules/final-pedagogia.md` para segunda fase si hace falta. Cuestión A (diana de longitud) sigue abierta).
+>
+> **Hito previo (v12.62):** 2026-06-14 (**U5 `final/` arranque**: `unidades/U5/final/vocabulario.md` (8792 bytes), primera sección del piloto U5 *La familia*. Sigue el modelo metodológico estabilizado en U1-U4. Próximas secciones U5 pendientes: gramática, comunicación, destrezas, cultura, evaluación + itinerario + inventario material complementario).
 >
 > **Hito previo (v12.61):** 2026-06-14 (**Diagnóstico NC1 para asesores + pipeline `pdf-tools/`**. `docs/diagnostico-nc1-asesores.md` (1289 líneas, bitácora de revisión editorial entregable a asesores externos) + `pdf-tools/` (pipeline pandoc + xelatex sin Node.js: `build.sh`, `preamble.tex` con paleta NC1, README). Salida en `pdf-tools/out/` (gitignored)).
 >

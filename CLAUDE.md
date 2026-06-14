@@ -41,6 +41,8 @@ El proyecto vivió en **dos repositorios separados**:
 - **Repo A — este** (`guia-didactica-profesor-IA`): el **entregable publicado + infraestructura + capa editorial activa**. Contiene `unidades/UX/propuesta/` (fuente rica con metanotas, snapshot publicado desde repo B) y `unidades/UX/final/` (versión limpia para InDesign, donde sucede toda la edición editorial actual). Inventarios canónicos, fases, scripts, dashboard, docs raíz.
 - **Repo B — externo** (`~/Desktop/temporal-antiguo-guia-ia/`): **congelado editorialmente desde 2026-05-25**. Mantiene el sistema metodológico histórico (hub, pautas, plantillas, referencias, registro), las propuestas originales y el archivo del sistema CrewAI v5. Solo se consulta como referencia; no se edita.
 
+**Consulta pedagógica activa.** Aunque repo B está congelado editorialmente, su capa de doctrina pedagógica (`unidades/*-pautas.md`, `proceso-operativo.md`, `marco-teorico-metodologico.md`, criterios sobre instrumentos) sigue siendo **fuente única viva** del proyecto para decisiones metodológicas. Cuando una edición en `unidades/**/final/*.md` toque una decisión de diseño didáctico (activación, secuenciación, mecánicas, viabilidad de aula), consultar el pauta correspondiente antes de decidir. La doctrina pedagógica no se duplica en repo A.
+
 **Desde 2026-05-25 toda edición editorial ocurre en repo A**, capa `unidades/UX/final/`. La capa `propuesta/` queda como fuente rica intacta.
 
 ## Flujo de publicación canónica (histórico — repo B congelado desde 2026-05-25)
@@ -140,6 +142,7 @@ Ejemplo concreto (fase 1, extracción de U4):
 | `docs/manual-estilo-final.md` | Manual de estilo de la capa `final/` — autoridad de estilo, tipografía, terminología, metadiscurso | ✅ Manda (en `unidades/**/final/*.md`, activado vía `.claude/rules/final-style.md`) |
 | `docs/formulacion-objetivos.md` | Criterios de formulación de objetivos generales y específicos (Bloom, verbos, naturaleza por sección) | ✅ Manda (objetivos en `final/`) |
 | `docs/contratos-recursos-editoriales.md` | Spec textual interna de recursos editoriales propios del proyecto: tarjetas de estrategia (principio operativo, antipatrones, modelo de referencia, criterio de nombre) y píldoras formativas (principio operativo, antipatrones, criterio de aceptación). Frontera con `manual-estilo-final.md`: el manual regula cómo se nombran y dónde aparecen las menciones en `final/`; este documento regula qué dicen los recursos por dentro. | ✅ Manda (spec interna de tarjeta/píldora) |
+| `repo B — capa pedagógica` (`~/Desktop/temporal-antiguo-guia-ia/unidades/*-pautas.md` + `proceso-operativo.md` + `marco-teorico-metodologico.md`) | Fuente única de doctrina pedagógica del proyecto: criterios por sección, criterios sobre instrumentos, marco MARS-EARS y proceso operativo. Consulta obligatoria cuando la decisión en `unidades/**/final/*.md` sea metodológica/pedagógica (activación, secuenciación, mecánicas, viabilidad de aula), no solo estilística. No se duplica en repo A. | ✅ Manda (decisiones pedagógicas) |
 | `README.md` | Descripción del proyecto, estado de las 8 fases, cómo se trabaja | Apunta |
 | `PROCESO-MAESTRO.md` | Modelo conceptual, decisiones cerradas, esquemas, bitácora | Consulta |
 | `REVIEW.md` | Plan ejecutable con gates, estado vivo, próximos pasos | Estado, no manda reglas |

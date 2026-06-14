@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.63 — 2026-06-14] — `CLAUDE.md` raíz: cross-reference repo A → capa pedagógica de repo B
+
+`CLAUDE.md` — dos cambios coordinados que hacen visible el router documental hacia la capa pedagógica de repo B (congelado editorialmente, pero fuente única viva para decisiones metodológicas): (a) párrafo nuevo *"Consulta pedagógica activa"* en §*Modelo de dos repositorios (A / B)* — cuando una edición en `unidades/**/final/*.md` toque una decisión de diseño didáctico (activación, secuenciación, mecánicas, viabilidad de aula), consultar el pauta correspondiente antes de decidir; (b) fila nueva en la tabla *Documentos clave* listando *repo B — capa pedagógica* como bloque documental (`*-pautas.md`, `proceso-operativo.md`, `marco-teorico-metodologico.md`). La doctrina pedagógica no se duplica en repo A; sigue siendo fuente única en repo B. Cierre de la Cuestión B del Informe consolidado U4 con reformulación arquitectónica del revisor: descartada la propuesta original de `docs/criterios-pedagogicos-NC1.md` (duplicaba doctrina existente en repo B); aplicada la opción 3 (cross-reference mínimo). Aparcada la opción complementaria de regla path-scoped `.claude/rules/final-pedagogia.md` para segunda fase si el cross-reference no basta (riesgo de inflado de contexto con imports masivos). Cuestión A del Informe (diana de longitud) sigue abierta.
+
 ## [v12.62 — 2026-06-14] — U5 `final/` arranque: vocabulario.md
 
 `unidades/U5/final/vocabulario.md` nuevo (8792 bytes). Primera sección del piloto U5 *La familia* en versión `final/`. Sigue el modelo metodológico estabilizado en U1-U4 (manual de estilo `final/` con las 12 secciones doctrinales + §13 patrones observados, schema v2.0 de material complementario, plantilla de itinerario imprimible). Próximas secciones U5 pendientes: gramática, comunicación, destrezas, cultura, evaluación + itinerario + inventario material complementario.
