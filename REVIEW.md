@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-06-14 (v12.61 — **Diagnóstico NC1 para asesores + pipeline `pdf-tools/`**. `docs/diagnostico-nc1-asesores.md` (1289 líneas, bitácora de revisión editorial entregable a asesores externos) + `pdf-tools/` (pipeline pandoc + xelatex sin Node.js: `build.sh`, `preamble.tex` con paleta NC1, README). Salida en `pdf-tools/out/` (gitignored)).
+> **Última actualización:** 2026-06-14 (v12.62 — **U5 `final/` arranque**: `unidades/U5/final/vocabulario.md` (8792 bytes), primera sección del piloto U5 *La familia*. Sigue el modelo metodológico estabilizado en U1-U4. Próximas secciones U5 pendientes: gramática, comunicación, destrezas, cultura, evaluación + itinerario + inventario material complementario).
+>
+> **Hito previo (v12.61):** 2026-06-14 (**Diagnóstico NC1 para asesores + pipeline `pdf-tools/`**. `docs/diagnostico-nc1-asesores.md` (1289 líneas, bitácora de revisión editorial entregable a asesores externos) + `pdf-tools/` (pipeline pandoc + xelatex sin Node.js: `build.sh`, `preamble.tex` con paleta NC1, README). Salida en `pdf-tools/out/` (gitignored)).
 >
 > **Hito previo (v12.60):** 2026-06-14 (**U4 cierre completo**: 6 secciones `final/` (vocabulario, gramática, comunicación, destrezas, cultura, evaluación), itinerario imprimible `U4-itinerarios.md`, inventario `U4-nc1-material-complementario.json` (1145 líneas), 3 PDFs fuente SGEL + 1 PPTX en `recursos/`, +3 entradas en CSV `comidas-preparadas`. Mismo patrón que U3 (commit 126526a). Las 11 reglas del manual derivadas del piloto U4 ya están en v12.49→v12.59).
 >

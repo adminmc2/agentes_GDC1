@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.62 — 2026-06-14] — U5 `final/` arranque: vocabulario.md
+
+`unidades/U5/final/vocabulario.md` nuevo (8792 bytes). Primera sección del piloto U5 *La familia* en versión `final/`. Sigue el modelo metodológico estabilizado en U1-U4 (manual de estilo `final/` con las 12 secciones doctrinales + §13 patrones observados, schema v2.0 de material complementario, plantilla de itinerario imprimible). Próximas secciones U5 pendientes: gramática, comunicación, destrezas, cultura, evaluación + itinerario + inventario material complementario.
+
 ## [v12.61 — 2026-06-14] — Diagnóstico NC1 para asesores + pipeline `pdf-tools/`
 
 `docs/diagnostico-nc1-asesores.md` nuevo (1289 líneas) — bitácora del asesor pedagógico de NC1, documento entregable a asesores externos para revisión editorial del libro. `pdf-tools/` nuevo — pipeline de generación PDF del diagnóstico: `build.sh` (sed → pandoc → xelatex), `preamble.tex` (estilos LaTeX con paleta NC1, fuentes Helvetica Neue + Menlo + Arial Unicode MS), `README.md` y `.gitignore`. Stack sin Node.js: pandoc + xelatex + bash + fuentes del sistema. Salida en `pdf-tools/out/diagnostico-nc1-asesores.pdf` (gitignored).
