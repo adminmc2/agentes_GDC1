@@ -15,36 +15,29 @@ Conjugar los verbos ser, llamarse y tener en presente singular.
 
 PRESENTE LAS TRES FORMAS DE SER, LLAMARSE Y TENER
 
-Dibuje un triángulo en la pizarra con su propio nombre en el centro y etiquete los tres vértices con el pronombre **entre paréntesis**: **(yo)** arriba, **(él/ella)** abajo izquierda, **(tú)** abajo derecha. Comente que en español los pronombres personales son opcionales: la forma del verbo ya indica la persona.
+Dibuje en la pizarra los tres triángulos del modelo, uno por verbo. Comente que los pronombres van entre paréntesis porque en español son opcionales: la forma del verbo ya indica la persona. Cada vértice se lee hacia el centro y cierra una frase.
 
-Vértice **(yo)**: preséntese en directo: *Me llamo [nombre], soy de [ciudad], tengo X años*. Escriba las tres frases bajo el vértice. Rodee *me*.
+Triángulo de *llamarse*: escriba su nombre en el centro. Preséntese en directo y escriba *me llamo* en **(yo)**. Pregunte: *si le contáis a un amigo quién soy yo, ¿qué decís?*; recoja respuestas hasta *se llama* y escríbalo en **(él/ella)**. Diríjase a una persona del grupo con *¿Cómo te llamas?* — esta es la forma que usan entre ellos siempre — y escriba *te llamas* en **(tú)**. Rodee *me*, *se* y *te*, y únalos con una flecha: *me → se → te*. Marque que este pronombre es obligatorio, va delante y separado del verbo, y cambia con la persona.
 
-Vértice **(él/ella)**: pregunte: *si le contáis a un amigo quién soy yo, ¿qué decís?* Recoja respuestas: *se llama…, es de…, tiene…*. Escríbalo. Rodee *se*.
+Triángulo de *ser*: escriba su ciudad en el centro y recorra los tres vértices igual — *soy de*, *es de*, *eres de*. Subraye *soy, eres, es*: no se parecen entre sí, hay que memorizarlas.
 
-Vértice **(tú)**: explique que esta es la forma que usan entre ellos siempre. Diríjase a una persona del grupo y formule las tres preguntas: *¿Cómo te llamas? ¿De dónde eres? ¿Cuántos años tienes?* Escriba las formas verbales bajo el vértice. Rodee *te*. Flecha en pizarra: *me → se → te*.
+Triángulo de *tener*: escriba su edad en el centro y complete los vértices — *tengo*, *tiene*, *tienes*. Subraye el *-go* de *tengo* y la *-ie* de *tienes*. Destaque la doble irregularidad.
 
-Marque rápidamente cuatro cosas en el triángulo, sin desarrollar:
+En parejas copian los tres triángulos y los completan con los datos de la pareja. Una pareja voluntaria lee sus tres frases al cierre.
 
-- Los pronombres entre paréntesis: **opcionales en español**.
-- *me/te/se*: **obligatorio**, delante y separado del verbo, cambia con la persona.
-- *Ser*: subraye *soy, eres, es* — no se parecen entre sí, hay que memorizarlas.
-- *Tener*: subraye el *-go* de *tengo* y la *-ie* de *tienes*. Destaque la doble irregularidad.
-
-En parejas dibujan su propio triángulo con el nombre de la pareja en el centro y completan los vértices con sus datos. Una pareja voluntaria lee al cierre.
-
-Proponga abrir la **página 14**: el cuadro del libro es la versión ordenada del triángulo.
+Proponga abrir la **página 14**: el cuadro del libro es la versión ordenada de los tres triángulos.
 
 CONTRASTE SER Y TENER
 
 Pase al **ejercicio 1**: cada estudiante elige entre *ser* y *tener* en las seis frases. Corrija en plenaria. Señale el contraste: **edad → tener**; **nacionalidad o profesión → ser**.
 
-Pase al **ejercicio 2**: completan los seis huecos con la forma de *tener*. Corrigen en parejas. Si alguien duda, recuérdele el aviso del triángulo: *-go* en *yo*, *ie* en *tú/él/ella*.
+Pase al **ejercicio 2**: completan los seis huecos con la forma de *tener*. Corrigen en parejas. Si alguien duda, recuérdele el aviso del triángulo de *tener*: *-go* en *yo*, *ie* en *tú/él/ella*.
 
 ORIENTE LA COMBINACIÓN DE PRONOMBRE, VERBO Y COMPLEMENTO
 
 Para el **ejercicio 3**, lea con la clase el ejemplo del libro. Construyen cuatro frases combinando pronombre + verbo + complemento, con las tres piezas concordando. Si el verbo es *llamarse*, recuérdeles el aviso: *me/te/se* delante y separado. Comprueban en parejas; puesta en común con dos o tres combinaciones en plenaria.
 
-Cierre opcional con el **pañuelo conjugador**: dos equipos numerados; lance pronombre + verbo + número; los dos alumnos con ese número se enfrentan y gana punto el primero que diga la forma correcta. Tres o cuatro rondas con los nueve casos.
+Cierre opcional con el **pañuelo conjugador**, si el aula tiene espacio. Numere a los estudiantes de cada equipo y sitúese en el centro con un pañuelo. Diga un número y una consigna (*tres: tú, tener*): los dos estudiantes con ese número corren a por el pañuelo y gana punto quien lo coja y diga la forma correcta (*tienes*). Tres o cuatro rondas hasta cubrir los nueve casos: *ser*, *llamarse* y *tener* en las tres personas del singular.
 
 ### Ejercicios 4-7
 
@@ -64,7 +57,7 @@ Lance al grupo cuatro preguntas breves, una a una, recogiendo dos o tres respues
 
 En el **ejercicio 4**, completan la tabla con el género que falta en los siete pares: regulares -o/-a y con cambio de acento (campeón/campeona). Corrigen en parejas.
 
-El **ejercicio 5** amplía a diez sustantivos masculinos que pasan a femenino: ocho aplican los patrones del **ejercicio 4** (alumno → alumna, doctor → doctora…) y dos invariables (estudiante, cantante: solo cambia el artículo). Corrigen en parejas. Cierre con los dos últimos: *estos no cambian, solo cambia el artículo*.
+El **ejercicio 5** amplía a diez sustantivos masculinos que pasan a femenino: ocho aplican los patrones del **ejercicio 4** (alumno → alumna, doctor → doctora…) y dos invariables (estudiante, cantante). Corrigen en parejas. Cierre con los dos últimos: *estos no cambian, solo cambia el artículo*.
 
 PRACTIQUE LA CONCORDANCIA CON COLORES Y NACIONALIDADES
 
@@ -80,9 +73,9 @@ Escriba en la pizarra los ocho colores del libro (*rojo, blanco, negro, amarillo
 
 En el **ejercicio 7**, describen los siete objetos con el color de la imagen, ajustando el adjetivo al género. Recoja las descripciones en plenaria una a una; si alguien duda, remítale a la pizarra o al cuadro del libro.
 
-Para cerrar conectando con lo aprendido, proponga una **cadena oral en clase**. El primer estudiante dice una frase con un objeto del aula y un color: *El boli es negro*. El siguiente continúa cambiando **solo una cosa** — o el objeto o el color, no los dos a la vez. El color es libre (los ocho del cuadro), aplicado en la forma correcta según el género del objeto.
+Para cerrar, proponga una **cadena oral**. El primer estudiante dice una frase con un objeto del aula y un color: *El boli es negro*. El siguiente continúa cambiando **solo una cosa** — o el objeto o el color, no los dos a la vez. El color es libre (los ocho del cuadro), aplicado en la forma correcta según el género del objeto.
 
-Ejemplos tras *El boli es negro*: *El boli es amarillo* (cambia solo color, masculino) · *La mochila es negra* (cambia objeto, ajusta a femenino) · *La silla es roja* (cambia objeto y color, femenino). Si alguien se equivoca con la concordancia, el siguiente reinicia con un objeto nuevo.
+Ejemplos tras *El boli es negro*: *El boli es amarillo* (cambia solo color, masculino) · *La mochila es negra* (cambia objeto, ajusta a femenino). Si alguien se equivoca con la concordancia, el siguiente reinicia con un objeto nuevo.
 
 SISTEMATICE LA REGLA DE CONCORDANCIA DE MASCULINO Y FEMENINO
 
@@ -97,11 +90,11 @@ PRESENTE LOS INTERROGATIVOS BÁSICOS Y SU ENTONACIÓN
 
 Ponga la **pista 11**, **ejercicio 8**. Primera escucha: siguen las ocho preguntas con la vista. Segunda escucha: repiten cada pregunta tras oírla. Señale los signos *¿?* al principio y al final: pregunte si en su lengua existen también. Comente que las preguntas con palabra interrogativa al inicio tienen melodía descendente, y las que no la llevan (*¿Eres coreana? ¿Tienes móvil?*) suben al final.
 
-Tercera pasada haciendo de **director de orquesta**: mientras repiten cada pregunta, mueven la mano siguiendo el tono — la mano **baja** al final en las preguntas que empiezan por palabra interrogativa (*¿Cómo te llamas? ↓*), y **sube** al final en las que no la llevan (*¿Eres coreana? ↑*). Modele con gestos exagerados; después lo hacen ellos al repetir.
+Tercera pasada haciendo de **director de orquesta**: mientras repiten cada pregunta, mueven la mano siguiendo el tono — la mano **baja** al final en las preguntas que empiezan por palabra interrogativa (*¿Cómo te llamas? ↓*), y **sube** al final en las que no la llevan (*¿Eres coreana? ↑*). Modele con gestos exagerados; después lo hacen ellos.
 
 Con el **ejercicio 9**, **pista 12**, primera escucha siguiendo con la vista, segunda con repetición. Tres preguntas que el alumno necesitará constantemente en clase: *¿Cómo se escribe X? ¿Qué significa X? ¿Cómo se dice X en español?* Comente que son útiles cuando no se sabe algo.
 
-Antes de la interacción real, modele cómo elegir la pregunta según lo que se quiere saber. Por ejemplo: *Si quiero saber el significado de una palabra inglesa, ¿qué pregunta uso?* Siga con este tipo de situaciones con otras preguntas. Dos ejemplos así bastan para que el alumno elija.
+Antes de la interacción, modele cómo elegir la pregunta según lo que se quiere saber. Por ejemplo: *Si quiero saber el significado de una palabra inglesa, ¿qué pregunta uso?* Dos ejemplos así, con preguntas distintas, bastan.
 
 En parejas, ensayan brevemente: A elige una pregunta y la formula a B con una palabra cualquiera; B contesta lo que sepa o dice *no sé*. Cambien de rol.
 
