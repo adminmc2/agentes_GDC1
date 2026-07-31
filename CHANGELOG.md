@@ -15,6 +15,24 @@
 
 ---
 
+## [v12.66 — 2026-07-31] — U5 Destrezas cerrada + saneamiento de U5 Comunicación + unificación del nombre de la tarjeta de mediación
+
+`unidades/U5/final/destrezas.md` (nueva, 1336 palabras) · `unidades/U5/final/comunicacion.md` (nueva, 1447) · `unidades/U5/final/gramatica.md` (nueva, 1605) · `unidades/U3/final/destrezas.md`.
+
+**(1) U5 Destrezas derivada y auditada.** Sección nueva a partir de `propuesta/destrezas.md`. Checklist v1 de `check-final` pasado: único ❌ (§10.3, *"Vuelvan a la página 58"* con imperativo dirigido a la clase) corregido; verbo de rótulo repetido en el bloque 3 corregido. Fuera de la derivación: canción, consolidación distribuida, specs de tarjeta y píldora, notación A/B, mapeo cerrado de personajes, paletas de pizarra y los cuatro pasos recitados de *Lee en cuatro pasos* (§2, §10.1).
+
+**(2) Los cuatro objetivos rehechos contra la doctrina de sección.** `destrezas-pautas.md` §11 de repo B (lista de verbos validados + *medio ≠ objetivo*) y `formulacion-objetivos.md` §1.2 (⚠ Destrezas: el objetivo de bloque nombra la capacidad de la destreza, no los recursos ni la lista de sub-tareas). Los objetivos derivados de la propuesta eran aditivos o llevaban coletilla de medios. Resultado: general *Presentar la vivienda que mejor encaja con las necesidades de una familia*; bloques *Identificar la información principal de una descripción de habitación* · *Comparar una vivienda ideal con viviendas reales* · *Describir una casa y la distribución de sus espacios*.
+
+**(3) Nombre de la tarjeta de mediación unificado a *Cuenta lo que oyes*.** U3 `final/` la llamaba *Cuenta lo que dice otra persona*, nombre introducido en la derivación y sin respaldo en ninguna fuente: la spec de la tarjeta (`U03-destrezas.md` §D de repo B), `registro-recursos.md`, `U03-itinerarios.md`, `U4-itinerarios.md` y las propuestas de U4-U6 usan todas *Cuenta lo que oyes*. Corregidas las dos menciones de U3 y alineada la de U5. U4 ya era correcta. Propuestas y repo B sin tocar.
+
+**(4) Rótulo de mediación realineado con la propuesta.** La píldora 5.2 pasa a abrir el rótulo, en el lugar donde la propuesta pone `Buscar web SGEL--Píldora formativa 5.2`; eliminada la frase de reintroducción de la tarjeta, que era invención de la derivación (la propuesta da la tarjeta por ya en mano); las cuatro columnas se nombran desde la píldora —quién · qué · cuándo · dónde— con el aviso de que la de *dónde* queda vacía porque el texto no da ciudad. Cierra de paso la duplicación tarjeta↔píldora (§10.1).
+
+**(5) Ejercicio 6 — el biombo no tapaba nada.** El dormitorio de quien dicta no está sobre la mesa, así que la barrera resolvía un problema inexistente y *"comparar el plano con el dormitorio descrito"* no tenía referente: la actividad no cerraba, y menos en un aula de 25. Sustituido por dibujar el plano propio antes de emparejar; al terminar se comparan los dos planos. La pareja se autocorrige sin depender de que el docente llegue a trece mesas.
+
+**(6) U5 Comunicación — cuatro saneamientos.** Cierre del ejercicio 7 reescrito: la frase *"para preparar la transición al sonido /x/"* era hilo fabricado (§10.1) —la concordancia de plural no prepara nada fonético— y el puente real ya existía en *rojo* y *jugador*; el cierre pasa a una ronda de adjetivos sobre objetos del aula donde la concordancia es la clave que resuelve. Objetivo del bloque de pronunciación *Relacionar* → *Reconocer*: `formulacion-objetivos.md` §1.1 paso 3 y §1.2 paso 3 catalogan *relacionar* como mecánica de ejercicio a descartar. *fotografías* → *fotos* (§8.1). *voluntarios* → *intervenciones* / *quienes se ofrezcan* (§7.1).
+
+**Deudas abiertas.** `gramatica.md` cierra en 1605 palabras, 5 por encima del techo §11.5 (≤1600). Valoración de fondo de la píldora 5.2 pendiente de decisión del autor: dos de sus cuatro columnas quedan vacías sobre el texto del ejercicio 8, el descarte elimina dos datos de un texto de 75 palabras y las candidatas a comparar son casas inventadas libremente, que pueden no discriminar. Zonas §10.6 (L39, L43) y §10.10 (L90) de `destrezas.md` sin OK explícito.
+
 ## [v12.65 — 2026-07-30] — U1 Gramática: triángulo único → tres triángulos por verbo + *pañuelo conjugador* reescrito
 
 `unidades/U1/final/gramatica.md` — cuatro correcciones editoriales autorizadas por el autor sobre unidad bloqueada (`.claude/rules/u1-final-locked.md`). La versión de `propuesta/` no se toca (fuente rica intacta).

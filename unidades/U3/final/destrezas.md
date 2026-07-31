@@ -71,11 +71,11 @@ Opcional: *¿qué pareja dice más horas en treinta segundos?*
 Objetivo
 Hablar de experiencias familiares reformulando lo que dice otra persona.
 
-*Imprimir tarjeta de estrategia—mediación oral—*Cuenta lo que dice otra persona**
+*Imprimir tarjeta de estrategia—mediación oral—*Cuenta lo que oyes**
 
 MEDIE LO QUE DICE OTRA PERSONA SOBRE SU FAMILIA
 
-Comente que la operación de pasar del yo al él/ella ya la conocen de las **unidades 1 y 2** (presentar a alguien por su nombre, edad, lugar). Esta vez van a ir un paso más allá: **contar a la clase una experiencia familiar de la pareja**. Reparta la tarjeta *Cuenta lo que dice otra persona*.
+Comente que la operación de pasar del yo al él/ella ya la conocen de las **unidades 1 y 2** (presentar a alguien por su nombre, edad, lugar). Esta vez van a ir un paso más allá: **contar a la clase una experiencia familiar de la pareja**. Reparta la tarjeta *Cuenta lo que oyes*.
 
 Recorra las tres secciones de la tarjeta nombrando lo que es ampliación y lo que es nuevo:
 
