@@ -37,15 +37,15 @@ PROPICIE LA RONDA DE LOCALIZACIONES EN PAREJAS
 
 Pase al **ejercicio 4** y a sus diez fotos. Confirme en plenaria que la clase reconoce los lugares del recuadro. Forme parejas y dé la consigna: una persona pregunta por las cinco primeras fotos eligiendo un lugar para cada personaje, la otra responde; después intercambian el rol y la segunda pregunta por las cinco restantes. La cara del esquema de funciones de la tarjeta apoya el cambio de forma del verbo cuando el sujeto pasa a primera o segunda persona.
 
-Cierre recogiendo en plenaria dos parejas voluntarias: cada una lee tres de sus intercambios. Llame la atención sobre los cambios de persona de *estar* para preparar la producción libre.
+Cierre recogiendo en plenaria dos parejas que se ofrezcan: cada una lee tres de sus intercambios. Llame la atención sobre los cambios de persona de *estar* para preparar la producción libre.
 
 FAVOREZCA LA PRODUCCIÓN DEL DIÁLOGO POR FASES
 
-Pase al **ejercicio 5**. Anuncie que cada pareja va a crear su propio diálogo siguiendo el modelo del **ejercicio 1** y los pasos del libro, en tres fases. En la primera, cada pareja decide en el cuaderno a quién van a buscar, dónde está esa persona y a qué hora sale; pase por las mesas resolviendo dudas y proponiendo combinaciones a quien se atasque.
+Pase al **ejercicio 5**. Anuncie que cada pareja va a crear su propio diálogo siguiendo el modelo del **ejercicio 1** y los pasos del libro, en tres fases. En la primera, cada pareja decide en el cuaderno a quién van a buscar, dónde está esa persona y a qué hora sale; pase resolviendo dudas y proponiendo combinaciones a quien se atasque.
 
 En la segunda, las parejas dan la vuelta a la tarjeta de estrategia *Ubicar algo o a alguien*, a la cara del diálogo modelo y de los trucos comunicativos, y escriben el diálogo apoyándose en ella. Recuérdeles que pueden elegir las tarjetas de estrategia que les encajen: *Saludar y despedirse* para abrir y cerrar, y *Decir la hora*. Pase resolviendo dudas, sobre todo entre singular y plural y entre *está en* y las locuciones.
 
-En la tercera, en lugar de salir todas las parejas a la pizarra, cada pareja se junta con otra para representarse el diálogo mutuamente y comprobar que funciona. Cierre con dos o tres parejas voluntarias que lo dramatizan ante toda la clase.
+En la tercera, en lugar de salir todas las parejas a la pizarra, cada pareja se junta con otra para representarse el diálogo mutuamente y comprobar que funciona. Cierre con dos o tres parejas que se ofrezcan y lo dramaticen ante toda la clase.
 
 ### Ejercicios 6-7
 

@@ -15,6 +15,16 @@
 
 ---
 
+## [v12.69 — 2026-08-01] — U5 Comunicación y Destrezas: lote de correcciones post-v12.66 revisado por el autor
+
+`unidades/U5/final/comunicacion.md` (1448 palabras, techo ≤1450) · `unidades/U5/final/destrezas.md` (1315, techo ≤1400).
+
+**(1) Comunicación — tres retoques.** *parejas voluntarias* → *parejas que se ofrezcan* en los dos cierres de dramatización (§7.1) y compactación menor en la fase 1 del ejercicio 5 (*pase por las mesas resolviendo dudas* → *pase resolviendo dudas*).
+
+**(2) Destrezas — resolución de la valoración de fondo de la píldora 5.2 pendiente desde v12.66.** El procedimiento de cuatro columnas (*quién · qué · cuándo · dónde*) con descarte dato a dato — que dejaba dos columnas vacías sobre un texto de 75 palabras — se sustituye por mediación basada en necesidades: subrayado de las necesidades de la familia González distinguiendo imprescindibles de preferibles, conexión necesidad→casa respaldada por la descripción y verificada por otra persona del grupo, y gestión explícita del caso sin casa (*necesidades pendientes* / el grupo explica qué falta). Fórmulas *del mediador* → *de la tarjeta* Cuenta lo que oyes, con línea nueva *Deje a la vista la tarjeta*. Además: objetivo del bloque 6-8 *Describir una casa y la distribución de sus espacios* → *Presentar la vivienda que mejor responde a las necesidades de una familia* (capacidad final productiva, §1.2 de `formulacion-objetivos.md`); revisión entre pares con foco en concordancia y precisión en lugar del juego de adivinar la frase de partida (ejercicio 7, sin cuantificar frases); preparación de la escucha del ejercicio 4 sin la introducción forzada de léxico (*chimenea, escaleras, terraza, leña*) y con aclaración de léxico tras la primera escucha.
+
+`cultura.md` queda intacta y fuera del lote por decisión del autor; su publicación se decidirá como lote independiente.
+
 ## [v12.68 — 2026-08-01] — Hotfix: género en U5 Evaluación + fila U5 de `formulacion-objetivos.md` §2.2
 
 `unidades/U5/final/evaluacion.md` (947 palabras, techo ≤950) · `docs/formulacion-objetivos.md`. **(1)** *tres parejas voluntarias* → *tres parejas que se ofrezcan* en las dos ocurrencias (Versión A y B) — infracción de §7.1 del manual. **(2)** Con OK explícito del autor, la fila U5 de la tabla ❌/✅ de §2.2 Evaluación pasa al formato de la fila U7: el *«Demostrar que puede describir…»* (rechazado en v12.67 por arrastrar verbos comunicativos encadenados) deja de ser ejemplo validado y la ✅ queda en *«Consolidar los contenidos trabajados en la unidad.»* (Dirección B). Registro de actualizaciones del propio documento al día. Cierra la primera deuda de v12.67.

@@ -36,9 +36,9 @@ Comparar una vivienda ideal con viviendas reales.
 
 PREPARE LA ESCUCHA DE LA CASA DE CELIA
 
-Dirija la atención a la foto del **ejercicio 4** y al título *Mi casa perfecta*. Pregunte qué espacios esperan oír y recoja las propuestas en la pizarra; si no aparecen *chimenea*, *escaleras*, *terraza* y *leña*, introdúzcalas señalando el ventanal y el tejado. Dibuje al lado un rectángulo dividido en tres niveles, uno por piso, y manténgalo a la vista: ayuda a colocar lo que se oiga.
+Dirija la atención a la foto del **ejercicio 4** y al título *Mi casa perfecta*. Pregunte qué espacios esperan oír y recoja las propuestas en la pizarra. Dibuje al lado un rectángulo dividido en tres niveles, uno por piso, y manténgalo a la vista: ayuda a colocar lo que se oiga.
 
-Recuerde la tarjeta *Escucha en tres modos* y guíe hacia el *detective*, porque faltan diez palabras concretas. Ponga la **pista 62** sin pausas; completan los diez huecos. Verificación en parejas y segunda escucha solo de los tramos con desacuerdo. Cierre situando cada palabra en su nivel.
+Recuerde la tarjeta *Escucha en tres modos* y guíe hacia el *detective*, porque deben recuperar palabras concretas. Ponga la **pista 62** sin pausas; completan los diez huecos. Verificación en parejas y segunda escucha solo de los tramos con desacuerdo. Tras la primera escucha, aclare el léxico que haya impedido completar algún tramo. Cierre situando cada palabra en su nivel.
 
 CONTRASTE LA CASA IDEAL CON LAS CASAS DE VALENCIA
 
@@ -49,7 +49,7 @@ Ponga la **pista 63** entera; cada pareja completa la tabla. Repítala si hace f
 ### Ejercicios 6-8
 
 Objetivo
-Describir una casa y la distribución de sus espacios.
+Presentar la vivienda que mejor responde a las necesidades de una familia.
 
 *Imprimir tarjeta de estrategia—expresión escrita—*Amplía tu frase**
 
@@ -67,21 +67,23 @@ Reparta o proyecte la tarjeta *Amplía tu frase* y léala con la clase: una fras
 
 Pida que vuelvan a la **página 58** y recorra los cuatro textos con la clase distinguiendo lo que se mantiene —las estructuras *hay*, *tengo* y *está*— de lo que cambia: los objetos y los adjetivos. Comente que la casa ideal se escribe igual, a mayor escala.
 
-En el **ejercicio 7**, forme grupos de cuatro y siga los pasos del libro: cada estudiante responde primero a las preguntas guía y después escribe su casa ideal en seis u ocho frases, ampliando cada una con la tarjeta. Circule resolviendo dudas y remita a la cara de revisión cuando vea una frase demasiado corta o un adjetivo sin concordar.
+En el **ejercicio 7**, forme grupos de cuatro y siga los pasos del libro: cada estudiante responde primero a las preguntas guía y después escribe su casa ideal ampliando cada frase con la tarjeta. Circule resolviendo dudas y remita a la cara de revisión cuando vea una frase demasiado corta o un adjetivo sin concordar.
 
-Al cerrar la escritura, proponga un intercambio dentro del grupo: cada estudiante lee en voz alta una frase ampliada y quien escucha adivina cuál era la frase de partida.
+Al cerrar la escritura, cada estudiante intercambia su texto con otra persona del grupo; quien lee comprueba la concordancia de los adjetivos y señala una frase que necesite más precisión. Quien escribe revisa esa frase antes de cerrar.
 
 COORDINE LA MEDIACIÓN PARA ELEGIR LA CASA DE LA FAMILIA GONZÁLEZ
+
+Deje a la vista la tarjeta *Cuenta lo que oyes*.
 
 | 📽 PÍLDORA FORMATIVA 5.2 · *Del texto a la decisión* |
 |---|
 | Versión enriquecida e interactiva de esta fase para usar con proyector. Desarrollo, explotación y material proyectable en ele.sgel.es/descargas. |
 
-Plantee la pregunta del **ejercicio 8**: de las cuatro casas que ha escrito el grupo, ¿cuál le sirve a esta familia? Recoja dos o tres ideas iniciales sin valorarlas.
+Plantee la pregunta del **ejercicio 8**: de las cuatro casas que ha escrito el grupo, ¿cuál le sirve a esta familia?
 
-Lectura individual silenciosa del texto sobre la familia González. Cada estudiante traza cuatro columnas —quién · qué · cuándo · dónde— y reparte en ellas, sin descartar nada, todo lo factual del texto; la de dónde se queda vacía, porque el texto no dice en qué ciudad viven. Verifique la distribución en plenaria. Sobre las columnas ya rellenas, cada uno se pregunta dato a dato *¿este dato cambia la elección de casa?* y aparta los que no; al cerrar quedan tres o cuatro datos en pie.
+Lectura individual silenciosa del texto sobre la familia González. Cada estudiante subraya las necesidades de la familia que una vivienda puede satisfacer y distingue las imprescindibles de las preferibles. Verifique la distribución en plenaria antes de pasar a la decisión en grupo.
 
-En los grupos de cuatro, cada estudiante relee las casas del grupo y conecta cada dato conservado con la casa que lo cumple. Antes de decidir, enseña sus datos a otra persona del grupo, que comprueba que se entienden y que cada uno encuentra al menos una casa; si alguno queda sin casa, vuelven al texto. Solo entonces el grupo discute en voz alta y completa la frase *Elegimos la casa de ___ porque ___*, hablando con las fórmulas del mediador y usando la fórmula de reparación cuando algo no se entienda.
+En los grupos de cuatro, cada estudiante relee las casas del grupo y conecta cada necesidad conservada con la casa que la cumple. Antes de decidir, otra persona del grupo comprueba que cada conexión esté respaldada por la descripción de la casa. Las necesidades que ninguna vivienda cumple se mantienen como necesidades pendientes; si ninguna casa cumple las imprescindibles, el grupo lo indica y explica qué falta. Solo entonces el grupo discute en voz alta y completa la frase *Elegimos la casa de ___ porque ___*, hablando con las fórmulas de la tarjeta *Cuenta lo que oyes* y usando la fórmula de reparación cuando algo no se entienda.
 
 Cierre recogiendo una elección por grupo con su razón en una frase.
 
