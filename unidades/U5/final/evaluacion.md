@@ -21,7 +21,7 @@ Lea cada objeto del **ejercicio 3** y pida una respuesta directa de la clase: ¿
 
 DIÁLOGOS DE DESCRIPCIÓN Y UBICACIÓN
 
-Pida tres parejas voluntarias, una por conversación del **ejercicio 4**; cada una lee en voz alta el diálogo ordenado con entonación de pregunta y respuesta, y el resto verifica contra su cuaderno y levanta la mano ante una palabra fuera de sitio. Llame la atención sobre la posición del verbo tras el interrogativo (*¿dónde está mi abuela?*) y la concordancia en femenino (*mi gata es negra y blanca*). La pareja que necesite apoyo consulta la tarjeta de estrategia *Describir cómo es algo*.
+Pida tres parejas que se ofrezcan, una por conversación del **ejercicio 4**; cada una lee en voz alta el diálogo ordenado con entonación de pregunta y respuesta, y el resto verifica contra su cuaderno y levanta la mano ante una palabra fuera de sitio. Llame la atención sobre la posición del verbo tras el interrogativo (*¿dónde está mi abuela?*) y la concordancia en femenino (*mi gata es negra y blanca*). La pareja que necesite apoyo consulta la tarjeta de estrategia *Describir cómo es algo*.
 
 LUGARES DE LA CIUDAD
 
@@ -55,7 +55,7 @@ Tercera tanda, en grupos de tres o cuatro: **ejercicio 5**. Cada grupo se entrev
 
 CORRECCIÓN COLECTIVA
 
-Corrija en plenaria los cinco ejercicios alternando modos: clave proyectada con los tres ítems críticos para el **ejercicio 1**; parejas de pregunta y respuesta cruzada con la tarjeta *Ubicar algo o a alguien* para el **ejercicio 2**; mano alzada con justificación para el **ejercicio 3**; tres parejas voluntarias dramatizan las conversaciones del **ejercicio 4**; intercambio con tres personas para el **ejercicio 5**, o ronda de tres respuestas oídas si el aula no permite moverse. Los puntos de atención son los mismos que en la Versión A.
+Corrija en plenaria los cinco ejercicios alternando modos: clave proyectada con los tres ítems críticos para el **ejercicio 1**; parejas de pregunta y respuesta cruzada con la tarjeta *Ubicar algo o a alguien* para el **ejercicio 2**; mano alzada con justificación para el **ejercicio 3**; tres parejas que se ofrezcan dramatizan las conversaciones del **ejercicio 4**; intercambio con tres personas para el **ejercicio 5**, o ronda de tres respuestas oídas si el aula no permite moverse. Los puntos de atención son los mismos que en la Versión A.
 
 FEEDBACK FOCALIZADO
 

@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.68 — 2026-08-01] — Hotfix: género en U5 Evaluación + fila U5 de `formulacion-objetivos.md` §2.2
+
+`unidades/U5/final/evaluacion.md` (947 palabras, techo ≤950) · `docs/formulacion-objetivos.md`. **(1)** *tres parejas voluntarias* → *tres parejas que se ofrezcan* en las dos ocurrencias (Versión A y B) — infracción de §7.1 del manual. **(2)** Con OK explícito del autor, la fila U5 de la tabla ❌/✅ de §2.2 Evaluación pasa al formato de la fila U7: el *«Demostrar que puede describir…»* (rechazado en v12.67 por arrastrar verbos comunicativos encadenados) deja de ser ejemplo validado y la ✅ queda en *«Consolidar los contenidos trabajados en la unidad.»* (Dirección B). Registro de actualizaciones del propio documento al día. Cierra la primera deuda de v12.67.
+
 ## [v12.67 — 2026-08-01] — U5 Evaluación cerrada — última sección de U5 en `final/`
 
 `unidades/U5/final/evaluacion.md` (nueva, 943 palabras, techo §11.5 ≤950).
