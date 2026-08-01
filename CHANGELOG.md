@@ -15,6 +15,16 @@
 
 ---
 
+## [v12.67 — 2026-08-01] — U5 Evaluación cerrada — última sección de U5 en `final/`
+
+`unidades/U5/final/evaluacion.md` (nueva, 943 palabras, techo §11.5 ≤950).
+
+**(1) Derivada de `propuesta/evaluacion.md` (2089 palabras) y auditada.** Checklist v1 de `check-final`: 14 ✅ / 1 ⚠ / 0 ❌. Estructura §2.1 Evaluación completa (apertura solo *Objetivo*, headers canónicos Versión A/B, cierre B con *«Igual que en la Versión A.»*, conexión a la **unidad 6** en una sola frase verificada contra su inventario). Rótulo *Propuesta A/B* → *Versión A/B*; *DESCRIBIR Y UBICAR EN DIÁLOGO* → *DIÁLOGOS DE DESCRIPCIÓN Y UBICACIÓN* (etiqueta sin verbo, §2.1); Caja 1/Caja 2 y cara A → formato canónico §6.1 y *«la cara del esquema de funciones»* (naming de U5 Comunicación); *actividad* → *ejercicio*, *mingle* y *whisper correction* → lengua de aula. Recapitulación de las cinco insignias mantenida (lemas en MAYÚSCULAS y negrita) sin la frase-balance (§10.1); referencia a la evaluación sumativa externa fuera (ningún precedente la lleva).
+
+**(2) Objetivo por Dirección B tras rechazo del autor a la fórmula de evidencia.** La derivación aplicó primero la versión de la tabla ❌/✅ de `formulacion-objetivos.md` §2.2 (*«Demostrar que puede describir la propia casa y ubicar personas y objetos en español»*); el autor la descartó (*demostrar* + verbos comunicativos encadenados, mismo patrón que la fila U7). Cierre con la Dirección B: *«Consolidar los contenidos trabajados en la unidad.»* — igual que U2E y U4E.
+
+**Deudas abiertas.** La fila U5 de la tabla §2.2 de `formulacion-objetivos.md` sigue marcando como ✅ la versión *demostrar* que el autor acaba de descartar — actualización pendiente de OK. Zonas §10.6 de `evaluacion.md` sin OK explícito (citas de ítems críticos del ejercicio 1 y modelo de preguntas del ejercicio 5). Sin commitear de la sesión anterior: `cultura.md` (sin trackear) y ediciones en `comunicacion.md` y `destrezas.md`.
+
 ## [v12.66 — 2026-07-31] — U5 Destrezas cerrada + saneamiento de U5 Comunicación + unificación del nombre de la tarjeta de mediación
 
 `unidades/U5/final/destrezas.md` (nueva, 1336 palabras) · `unidades/U5/final/comunicacion.md` (nueva, 1447) · `unidades/U5/final/gramatica.md` (nueva, 1605) · `unidades/U3/final/destrezas.md`.
