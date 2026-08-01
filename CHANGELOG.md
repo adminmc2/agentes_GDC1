@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.70 — 2026-08-01] — U5 itinerario imprimible cerrado (patrón U4 v12.60, derivado de final/)
+
+`unidades/U5/U5-itinerarios.md` (nuevo): básico con 15 bloques CLASE + 5 CASA (6 ejercicios a casa, análogos U1-U4) y píldoras 5.1/5.2 marcadas; estación de servicio con Caja 1 = 59 tarjetas en 5 campos (verificada contra `registro-recursos.md §5` + CSVs) y Caja 2 = 3 (2 {comunicación} + 1 {escritura}); materiales complementarios con anclajes y tiempos desde los 4 archivos SGEL + 3 capturas depositados en `unidades/U5/recursos/` (se commitean, patrón U4) + tablas del diseñador. Pendiente: capturas Blinklearning y título/enlace del vídeo. `cultura.md` intacta y fuera del lote.
+
 ## [v12.69 — 2026-08-01] — U5 Comunicación y Destrezas: lote de correcciones post-v12.66 revisado por el autor
 
 `unidades/U5/final/comunicacion.md` (1448 palabras, techo ≤1450) · `unidades/U5/final/destrezas.md` (1315, techo ≤1400).
