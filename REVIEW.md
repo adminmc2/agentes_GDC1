@@ -10,7 +10,9 @@
 >
 > **Regla editorial:** la bitácora se centra en **estado y decisiones vivas**. Entradas nuevas cortas. Cuando una entrada deja de ser operativa, se compacta y, si procede, se referencia el histórico (`docs/historico/`) en lugar de replicar el detalle.
 >
-> **Última actualización:** 2026-08-01 (v12.70 — **U5 itinerario imprimible cerrado**: `unidades/U5/U5-itinerarios.md` derivado de la capa `final/` completa (patrón U4 v12.60). Básico 15 CLASE + 5 CASA con análogos U1-U4; Caja 1 = 59 tarjetas / Caja 2 = 3 verificadas contra registro §5/§5bis; materiales complementarios anclados y temporizados desde los archivos SGEL depositados en `unidades/U5/recursos/` (commiteados, patrón U4). Pendiente: capturas Blinklearning y título/enlace del vídeo; siguiente entregable, `U5-nc1-material-complementario.json`. `cultura.md` sigue intacta y fuera del lote).
+> **Última actualización:** 2026-08-02 (v12.71 — **U5 Cultura commiteada, unidad 5 completa y versionada**: `unidades/U5/final/cultura.md` (733 palabras, techo ≤800, greps limpios) entra en el repo por decisión del autor; era el único resto sin trackear de U5. La carpeta `unidades/U6/final/` en curso queda fuera del lote).
+>
+> **Hito previo (v12.70):** 2026-08-01 (**U5 itinerario imprimible cerrado**: `unidades/U5/U5-itinerarios.md` derivado de la capa `final/` completa (patrón U4 v12.60). Básico 15 CLASE + 5 CASA con análogos U1-U4; Caja 1 = 59 tarjetas / Caja 2 = 3 verificadas contra registro §5/§5bis; materiales complementarios anclados y temporizados desde los archivos SGEL depositados en `unidades/U5/recursos/` (commiteados, patrón U4). Pendiente: capturas Blinklearning y título/enlace del vídeo; siguiente entregable, `U5-nc1-material-complementario.json`. `cultura.md` sigue intacta y fuera del lote).
 >
 > **Hito previo (v12.69):** 2026-08-01 (**U5 Comunicación y Destrezas, lote post-v12.66 revisado por el autor**: género §7.1 en los cierres de dramatización de Comunicación (1448 palabras, techo ≤1450) y, en Destrezas (1315, techo ≤1400), **resolución de la valoración de fondo de la píldora 5.2 pendiente desde v12.66** — las cuatro columnas con descarte dato a dato se sustituyen por mediación basada en necesidades (imprescindibles vs preferibles, conexión necesidad→casa verificada por pares, caso sin casa gestionado), objetivo del bloque 6-8 reformulado a la capacidad final productiva (*Presentar la vivienda que mejor responde a las necesidades de una familia*) y revisión entre pares en el ejercicio 7. `cultura.md` intacta y fuera del lote por decisión del autor).
 >
@@ -656,6 +658,8 @@ En cada iteración:
 ---
 
 ## Bitácora de actualizaciones del REVIEW
+
+- **2026-08-02** — **U5 Cultura commiteada** (v12.71). `unidades/U5/final/cultura.md` (733 palabras ≤800, greps §7.1 limpios) entra en el repo por decisión explícita del autor — cierra el único resto sin versionar de U5; la unidad queda completa en `final/` + itinerario. `unidades/U6/final/` (sesión U6 en curso) fuera del lote.
 
 - **2026-08-01** — **U5 itinerario imprimible** (v12.70). `unidades/U5/U5-itinerarios.md` nuevo, derivado de `final/` (patrón U4 v12.60): 15 CLASE + 5 CASA (Voc 7 · Gram 1-2 · Com 2 · Com 9 · Dest 3, análogos U1-U4), Caja 1 = 59 / Caja 2 = 3 verificadas contra registro §5/§5bis, materiales SGEL de `unidades/U5/recursos/` anclados y temporizados (gamificación 50 min y *La fiesta* 40+40+30 de la fuente; resto estimaciones aprobadas), tablas del diseñador con fotograma del vídeo y capturas del PPT depositados. Pendientes: capturas Blinklearning, título/enlace del vídeo, `U5-nc1-material-complementario.json`. `cultura.md` fuera del lote.
 
