@@ -63,11 +63,11 @@ Modele en directo con quien se ofrezca: pregunte *¿Vamos al cine?* y deje que e
 
 ORIENTE EL INTERCAMBIO DE PROPUESTAS
 
-Pase al **ejercicio 10**. Antes del intercambio, explique qué significa *apetecer* (sentir ganas de hacer algo) con un par de ejemplos (*Me apetece un café*, *No me apetece estudiar*). Recorra después las seis fotos rápidamente fijándose en lo que destaca en cada una y pida que cada estudiante decida si le apetece o no cada una de las fotografías. Recoja en plenaria dos o tres clasificaciones distintas con un porqué corto.
+Pase al **ejercicio 10**. Dibuje un esquema de tres casillas en la pizarra: *(No) tengo ganas* + *de* + *ir a…* La primera no cambia nunca y el verbo de la tercera va siempre en infinitivo; los destinos salen de las seis fotos. Modele tres combinaciones, una afirmativa y dos negativas. Cada estudiante escribe su frase para cada foto, primero con el esquema a la vista y después sin él. Recoja dos o tres en plenaria.
 
-En parejas, aplican las dos fórmulas del **ejercicio 9** alternando los roles tras tres propuestas. La respuesta sale de la clasificación previa: aceptan lo que les apetece, rechazan lo que no, y siempre con un porqué anclado en la foto. La cuarta imagen abre la sustitución de *Julia* por alguien real del grupo.
+En parejas, aplican las dos fórmulas del **ejercicio 9** alternando los roles tras tres propuestas. La respuesta sale de las frases que han escrito: aceptan lo que han marcado con ganas, rechazan lo demás, y siempre con un porqué anclado en la foto. La cuarta imagen abre la sustitución de *Julia* por alguien real del grupo.
 
-Pase por las mesas vigilando el balance. Cierre con dos parejas voluntarias compartiendo el plan que más les apeteció.
+Pase por las mesas vigilando el balance. Cierre con dos parejas voluntarias compartiendo la propuesta que sí aceptaron.
 
 ### Ejercicios 11-12
 

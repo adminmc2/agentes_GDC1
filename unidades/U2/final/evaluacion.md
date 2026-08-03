@@ -31,7 +31,7 @@ Para el **ejercicio 7**, conceda un tiempo razonable para que cada estudiante es
 
 JUEGO DE ADIVINANZAS
 
-Para el **ejercicio 8**, modele con quien se ofrezca una ronda completa: *¿Eres un chico? ¿Eres argentino? ¿Tienes más de treinta años? ¿Eres futbolista?* hasta llegar a la respuesta. Después, en grupos de tres o cuatro, los estudiantes alternan el rol de *personaje secreto*. Dos o tres rondas por grupo bastan. Recoja en plenaria una pareja personaje-pregunta-clave que les haya resultado especialmente útil.
+Para el **ejercicio 8**, modele con quien se ofrezca una ronda completa: *¿Eres un chico? ¿Eres argentino? ¿Tienes más de treinta años? ¿Eres futbolista?* hasta llegar a la respuesta. Después, en grupos de tres o cuatro, los estudiantes alternan el rol de *personaje secreto*. Dos o tres rondas por grupo bastan. Recoja en plenaria dos o tres personajes con la pregunta que más ayudó a adivinarlos.
 
 FEEDBACK FOCALIZADO
 

@@ -15,6 +15,14 @@
 
 ---
 
+## [v12.72 — 2026-08-03] — U2 Comunicación y Evaluación: retirada de *apetecer* + frase ilegible del juego de adivinanzas
+
+`unidades/U2/final/comunicacion.md` (1104 palabras, techo ≤1450) · `unidades/U2/final/evaluacion.md` (949, techo ≤950).
+
+**(1) Comunicación, ejercicio 10.** *Apetecer* no aparece en ningún inventario de U0-U9 ni en la propuesta de U2: entró al redactar `final/`. Es peninsular (en América el hueco lo ocupan *tener ganas de*, *provocar*, *antojarse*) y es verbo de afección con pronombre átono, misma estructura que *gustar*, que la unidad aplaza explícitamente. Sustituido por *(no) tengo ganas de* + infinitivo presentado con Sentence Builder (`repertorios/comunicacion.md` §3.4B): esquema de tres casillas en pizarra, tres combinaciones modeladas, producción con esquema a la vista y después sin él. *Querer* se descartó por pragmática — *no quiero* rechaza sin mitigar, y el bloque enseña a rechazar una invitación. Dos arrastres de coherencia en el mismo bloque.
+
+**(2) Evaluación, ejercicio 8.** *«Recoja en plenaria una pareja personaje-pregunta-clave que les haya resultado especialmente útil»* → *«Recoja en plenaria dos o tres personajes con la pregunta que más ayudó a adivinarlos»*. *Pareja* colisionaba con su acepción canónica (dos estudiantes, tres usos en el mismo archivo; §8.1 nota de formas reservadas), el compuesto de dos guiones era imparseable y *les* no tenía antecedente.
+
 ## [v12.71 — 2026-08-02] — U5 Cultura incorporada al repo: unidad 5 completa en final/
 
 `unidades/U5/final/cultura.md` (733 palabras, techo ≤800) entra en el repo por decisión del autor tras permanecer sin trackear desde su redacción (v12.66-v12.69, intacta desde entonces; greps §7.1 limpios). Con esto U5 queda completa y versionada: 6 secciones en `final/` + `U5-itinerarios.md`. La carpeta `unidades/U6/final/` (sesión U6 en curso) queda fuera del lote.
