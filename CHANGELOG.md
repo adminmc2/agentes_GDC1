@@ -15,6 +15,22 @@
 
 ---
 
+## [v12.73 — 2026-08-04] — U6 Gramática en `final/`: el imperativo de *tú* pasa a explicarse por la tercera persona del presente
+
+`unidades/U6/final/gramatica.md` (1224 palabras, techo ≤1600), derivada de `unidades/U6/propuesta/gramatica.md`. Sección sin audio; 5 ejercicios en las páginas 64-65 y dos cuadros (presente de irregulares + imperativo). Sesión de redacción larga, con el cuerpo revisado frase a frase por el autor.
+
+**(1) Cambio de regla del imperativo.** La propuesta explicaba la orden de *tú* como transformación del infinitivo (*-ar → -a*, *-er/-ir → -e*), lo que deja *cerrar → cierra* como excepción que hay que parchear. Sustituida por la regla estándar —el imperativo afirmativo de *tú* coincide con la tercera persona del singular del presente (marcoELE, ProfeDeELE, RAE)—, que además explota que los dos cuadros están en la misma página 64. Consecuencias: *cierra*, *juega* y *duerme* dejan de necesitar explicación propia; el reparto del ejercicio 4 pasa de «cuatro regulares + tres memorizados + *cerrar* aparte» a **cinco que cumplen la regla + tres que se memorizan** (*haz, pon, ven*); y las excepciones se descubren probando la regla contra los verbos del cuadro del presente. Rótulo nuevo: `ENLACE LA FORMA DE LA TERCERA PERSONA DEL PRESENTE CON EL IMPERATIVO TÚ`.
+
+**(2) Explicación del presente irregular reorganizada.** La lectura por filas de la propuesta enunciaba una zona segura que *ir* no cumple y una bota que *hacer* tampoco, dejando dos de seis verbos como parches finales. Ahora se clasifica tomando *tener* (unidades 1-2, ya explicado con su *-go* y su diptongo) como modelo: *venir* es su caso idéntico, *hacer* solo tiene primera persona en *-go*, e *ir* es totalmente irregular como *ser*. La bota se dibuja solo donde existe y sirve para fijar que *nosotros* y *vosotros* quedan al margen.
+
+**(3) Objetivos.** General *«Aplicar las formas irregulares del presente y del imperativo de tú para hablar de acciones y dar órdenes»* (los de la propuesta y las primeras derivaciones eran aditivos o mecánicos). Bloques: *«Conjugar los verbos irregulares en presente»* y *«Formular órdenes e instrucciones con el imperativo afirmativo de tú»*.
+
+**(4) Dos dinámicas sustituidas.** El dictado de cierre del bloque 1 —instrumento que `gramatica-pautas.md` §15 #8 propone para materializar el interleaving— pasa a **tres en raya gramatical** (#50 del banco de dinámicas, sin usar en el curso): seis irregulares y tres regulares en el mismo tablero. Y la activación abre con dos situaciones imaginarias planteadas con nombres del grupo, de las que la clase saca la orden.
+
+**(5) Tarjetas retiradas.** Comprobada la adecuación del set *establecimientos* a los ejercicios 1-2: solo cuatro de las veinte tarjetas tienen frase donde aparecer, y una de ellas está en el ejemplo. Uso pasivo según `tarjetas-vocabulario-pautas.md` §10bis; fuera de la sección.
+
+**(6) Errata editorial del libro** en p65-act4 (ya registrada en el inventario como `P-p65-act4-error-editorial`) trasladada como aviso operativo: el solucionario numera su primera respuesta sobre el ejemplo, la numeración va desplazada y añade una décima orden sin ítem.
+
 ## [v12.72 — 2026-08-03] — U2 Comunicación y Evaluación: retirada de *apetecer* + frase ilegible del juego de adivinanzas
 
 `unidades/U2/final/comunicacion.md` (1104 palabras, techo ≤1450) · `unidades/U2/final/evaluacion.md` (949, techo ≤950).
