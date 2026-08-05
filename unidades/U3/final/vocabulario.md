@@ -21,7 +21,7 @@ Pida que abran el libro en la **página 32** y observen la foto de la familia re
 
 PRESENTE EL VOCABULARIO CON EL ÁRBOL GENEALÓGICO
 
-Reparta entre la clase las Tarjetas de Vocabulario - familia. Cuando aparezca una palabra que alguien no entienda, quienes tienen esa tarjeta dan pistas a partir de su significado. Esta dinámica acompaña toda la sección.
+Reparta entre la clase las Tarjetas de Vocabulario - familia. Cuando aparezca una palabra que alguien no entienda, quienes tienen esa tarjeta dan indicios a partir de su significado. Esta dinámica acompaña toda la sección.
 
 Pida que se fijen en el árbol genealógico del **ejercicio 1**. Pregunte si saben qué es y cómo funciona. Destaque las tres generaciones: abuelos, padres/tíos, hermanos/primos. Ponga la **pista 31**. Primera escucha: solo escuchan. Segunda escucha: repiten cada palabra en voz alta después de oírla. Tras las dos escuchas, refuerce señalando cada persona del árbol y nombrándola despacio.
 
@@ -94,7 +94,13 @@ CONSOLIDE EL VOCABULARIO DE FAMILIA Y PROFESIONES
 
 Invite a completar el **ejercicio 10** como cierre. Tras el chat-cotilleo, la clase ya domina la información de ambos textos; el reto ahora es elegir el verbo correcto para cada hueco. Pida que completen las frases individualmente. Compruebe en plenaria.
 
-Para finalizar, proponga un *¿quién es quién?* oral con las tres familias de la sección (David, Javier, Lucía). Dé una pista: *es enfermera*. La clase responde con el parentesco completo: *es la madre de Javier*. Empiece con pistas de una sola familia y pase a pistas cruzadas. Después, en parejas, una persona da la pista y la otra responde.
+Para finalizar, proponga un *¿quién es quién?* oral con las tres familias de la sección (David, Javier, Lucía). Describa a un miembro con un solo dato y la clase responde con el parentesco completo.
+
+Primera ronda, familia por familia: anuncie de quién habla —*de la familia de Javier: es enfermera*— y la clase responde *es la madre de Javier*. Segunda ronda, mezclando las tres: describa sin anunciar la familia —*es agricultor y tiene vacas*—, de modo que la respuesta tenga que identificar también de quién es pariente: *es el padre de Lucía*.
+
+De la familia de David el libro solo da parentesco y nombres, sin profesiones: descríbala con los datos del árbol genealógico, *es la mujer de Luis*.
+
+Después, en parejas, una persona describe y la otra responde.
 
 Cierre preguntando: *¿vuestra familia o la familia de alguien conocido se parece más a la de Javier o a la de Lucía?* Recoja tres o cuatro respuestas breves.
 

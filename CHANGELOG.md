@@ -15,6 +15,14 @@
 
 ---
 
+## [v12.74 — 2026-08-05] — U3 Vocabulario: el *¿quién es quién?* de cierre pasa de "pistas cruzadas" a dos rondas explícitas
+
+`unidades/U3/final/vocabulario.md`. El cierre del bloque 6-10 instruía *«Empiece con pistas de una sola familia y pase a pistas cruzadas»*: la etiqueta *cruzadas* solo se entiende si ya se conoce el juego. Reescrito como dos rondas con su ejemplo cada una — primera ronda anunciando la familia (*de la familia de Javier: es enfermera* → *es la madre de Javier*), segunda sin anunciarla (*es agricultor y tiene vacas* → *es el padre de Lucía*), que es lo que obliga a nombrar el parentesco completo. Añadido el aviso de que la familia de David (pistas 32-33) solo se describe por parentesco, sin profesiones: el modelo *es enfermera* no le sirve.
+
+**Colisión §8.1 resuelta.** *pista* como indicio convivía con **pista 31-35** (audio, forma canónica reservada) — mismo caso documentado en U4 Vocabulario B1, sin resolver en U3. En el cierre desaparece el sustantivo al reformular con el verbo *describir*; en la línea de las Tarjetas de Vocabulario - familia, *dan pistas* → *dan indicios*.
+
+---
+
 ## [v12.73 — 2026-08-04] — U6 Gramática en `final/`: el imperativo de *tú* pasa a explicarse por la tercera persona del presente
 
 `unidades/U6/final/gramatica.md` (1224 palabras, techo ≤1600), derivada de `unidades/U6/propuesta/gramatica.md`. Sección sin audio; 5 ejercicios en las páginas 64-65 y dos cuadros (presente de irregulares + imperativo). Sesión de redacción larga, con el cuerpo revisado frase a frase por el autor.
