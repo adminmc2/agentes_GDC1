@@ -15,6 +15,22 @@
 
 ---
 
+## [v12.75 — 2026-08-06] — U6 Comunicación en `final/`: el cuadro *Observa* pasa de línea de lectura a explicación de las cinco partes del día
+
+`unidades/U6/final/comunicacion.md` (1450 palabras, techo ≤1450), derivada de `unidades/U6/propuesta/comunicacion.md`. Doble página 66-67, 10 ejercicios en cuatro bloques, pistas 67 y 68, cuadros *Observa* y *b = v*, insignia ficha 6.3 **¡QUEDAMOS!** y tarjeta de estrategia de Caja 2. Sesión larga, con el cuerpo revisado frase a frase por el autor.
+
+**(1) El cuadro *Observa* explicado, no leído.** La propuesta lo despachaba con *«Lea con la clase el cuadro Observa, las cinco partes del día»*. Comprobado contra los inventarios U0-U6 que las franjas horarias son **contenido nuevo**: U3 enseña la hora (*es/son*, *y/menos*, *cuarto*, *media*) y no contiene ninguna ocurrencia de *de la mañana / de la tarde / de la noche / mediodía / madrugada*. Ahora el rótulo da la regla —la parte del día se añade detrás de la hora, en el formato de 12 horas, aunque los carteles la escriban en el de 24—, los cinco tramos del cuadro uno a uno, *del mediodía* como única forma con *del*, y el aviso de que esas horas son simplificación del aula: en español el corte lo marca la luz (DPD), y por eso el propio ejemplo del libro llama *las ocho y media de la tarde* a un cierre de las 20:30. La práctica del ejercicio 6 pasa a exigir la parte del día en la respuesta (*abre a las cinco de la tarde*), que es la operación real que el ejercicio pide y que ni el cuadro ni el enunciado explicitan.
+
+**(2) Dos objetivos de bloque rehechos.** Ejercicios 1-3: *«Reconocer las tres preguntas que organizan un plan: a dónde, a qué hora y cómo»* — sustituye a *«Comprender una situación de invitación a hacer planes»*, con verbo vetado por `formulacion-objetivos.md` §4.2 y sin anclaje a lo que el bloque extrae. Ejercicio 8: *«Quedar con alguien para hacer un plan de fin de semana»* — sustituye a *«Preguntar y responder en una situación para organizar planes»*, que abría igual que el bloque anterior y arrastraba una condición vacía. El objetivo general se conserva de la propuesta, sin marca de género.
+
+**(3) Rótulos y nombre de la tarjeta.** El rótulo del ejercicio 7 pasa a `CONDUZCA LA PRÁCTICA DE LOS MEDIOS DE TRANSPORTE` (había dos `PROPICIE` en el mismo archivo). La tarjeta se nombra en las tres menciones como *Preguntar por los planes de **otra persona*** por decisión del autor: **diverge del título registrado en `registro-recursos.md` de repo B** (*…de otro*), que está congelado.
+
+**(4) Retiradas de contenido visible (§10.6, con OK del autor).** La reformulación de los seis pasos del ejercicio 8, la cita de las expresiones del paso 4, la lista de las ocho palabras de la pista 68, los cuatro nombres del ejercicio 7 y el cierre sobre la grafía, que repetía *«el oído no ayuda: hay que conocer la palabra»* tres renglones antes. Retirado también *«El libro pide la práctica por escrito»*: única ocurrencia de esa fórmula en toda la capa `final/`.
+
+**(5) Vídeo y lengua del estudiante.** Las pausas de predicción se sitúan **antes** de cada decisión, no en ella, para que haya algo que predecir; y la activación admite recoger respuestas en la lengua del estudiante, como ya hacía la Gramática de esta unidad.
+
+Fuera del lote por decisión del autor: `unidades/U6/final/vocabulario.md` y `unidades/U6/recursos/tarjetas/profesiones.csv`, sin commitear.
+
 ## [v12.74 — 2026-08-05] — U3 Vocabulario: el *¿quién es quién?* de cierre pasa de "pistas cruzadas" a dos rondas explícitas
 
 `unidades/U3/final/vocabulario.md`. El cierre del bloque 6-10 instruía *«Empiece con pistas de una sola familia y pase a pistas cruzadas»*: la etiqueta *cruzadas* solo se entiende si ya se conoce el juego. Reescrito como dos rondas con su ejemplo cada una — primera ronda anunciando la familia (*de la familia de Javier: es enfermera* → *es la madre de Javier*), segunda sin anunciarla (*es agricultor y tiene vacas* → *es el padre de Lucía*), que es lo que obliga a nombrar el parentesco completo. Añadido el aviso de que la familia de David (pistas 32-33) solo se describe por parentesco, sin profesiones: el modelo *es enfermera* no le sirve.
