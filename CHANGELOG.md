@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.77 — 2026-08-06] — U6 Destrezas en `final/`: ejercicios 6 y 7 reescritos contra las transcripciones
+
+`unidades/U6/final/destrezas.md` (1381 palabras, techo ≤1400), derivada de la propuesta y revisada frase a frase con el autor. Páginas 68-69, 11 ejercicios en tres bloques, pistas 69-70, insignia ficha 6.4 **¡MI LUGAR IDEAL!**, tarjeta nueva *Pregúntale al texto* (comprensión lectora), píldora 6.2 *Del plano al texto*. Cambios de fondo: la escucha de Daniela pasa a pregunta rectora con dos opciones de respuesta y corrección centrada en lo no literal (la trampa «cambia un dato de un lugar al otro» solo era cierta en 2 de 5 ítems); el ejercicio 7 se reescribe con la transcripción (todo se ejecuta en el cuaderno, órdenes en imperativo de tú con marcadores de lugar, la primera instrucción como base); el léxico nuevo del texto de Madrid se trabaja por deducción en contexto (patrón U5D); objetivo general nuevo (*Identificar información sobre otros lugares y describir el barrio de sus sueños*) y bloque final *en un texto breve*; rótulos al banco canónico (ORIENTE · DIRIJA · ORGANICE por CONTINÚE y GUÍE ×3). Detalle en la bitácora de REVIEW.
+
 ## [v12.76 — 2026-08-06] — U6 Vocabulario en `final/` + tarjetas de profesiones: entra el lote pendiente
 
 `unidades/U6/final/vocabulario.md` (1470 palabras, techo ≤1500; pistas 64-66, insignia ficha 6.1 **¡MI BARRIO AL DETALLE!**, bloques 1-4 · 5-6 · 7-8), redactada en sesión previa, entra en el repo por decisión del autor. `unidades/U6/recursos/tarjetas/profesiones.csv`: combos de las diez tarjetas revisados — patrón *el/la + [profesión] + trabaja en + el/la + [lugar]* en todas, *hablar con + el/la + [profesión]* sustituye a *ir a…* en la mayoría y *querer ser + [profesión]* en PROFESOR, con ejemplos ajustados. `destrezas.md` (redactada hoy, pendiente de tres decisiones del autor) queda fuera del lote.
