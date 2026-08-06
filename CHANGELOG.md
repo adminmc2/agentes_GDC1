@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.76 — 2026-08-06] — U6 Vocabulario en `final/` + tarjetas de profesiones: entra el lote pendiente
+
+`unidades/U6/final/vocabulario.md` (1470 palabras, techo ≤1500; pistas 64-66, insignia ficha 6.1 **¡MI BARRIO AL DETALLE!**, bloques 1-4 · 5-6 · 7-8), redactada en sesión previa, entra en el repo por decisión del autor. `unidades/U6/recursos/tarjetas/profesiones.csv`: combos de las diez tarjetas revisados — patrón *el/la + [profesión] + trabaja en + el/la + [lugar]* en todas, *hablar con + el/la + [profesión]* sustituye a *ir a…* en la mayoría y *querer ser + [profesión]* en PROFESOR, con ejemplos ajustados. `destrezas.md` (redactada hoy, pendiente de tres decisiones del autor) queda fuera del lote.
+
 ## [v12.75 — 2026-08-06] — U6 Comunicación en `final/`: el cuadro *Observa* pasa de línea de lectura a explicación de las cinco partes del día
 
 `unidades/U6/final/comunicacion.md` (1450 palabras, techo ≤1450), derivada de `unidades/U6/propuesta/comunicacion.md`. Doble página 66-67, 10 ejercicios en cuatro bloques, pistas 67 y 68, cuadros *Observa* y *b = v*, insignia ficha 6.3 **¡QUEDAMOS!** y tarjeta de estrategia de Caja 2. Sesión larga, con el cuerpo revisado frase a frase por el autor.
