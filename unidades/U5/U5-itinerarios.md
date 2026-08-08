@@ -77,12 +77,13 @@ Imprime estas tarjetas al principio de la unidad y podrán usarlas de forma indi
 
 #### Vocabulario {color: salmón}
 
+- **BLINKLEARNING Juega y aprende** (Ej. 1, 2, 4) — 3 ejercicios interactivos: el mobiliario en la casa (1), el crucigrama de las partes de la casa (2) y el correo de los alojamientos (4)
 - **Actividades Extra 5** *Cosas de casa* — Ejercicios 3-5 (10-15 min)
-- **BLINKLEARNING Juega y aprende** — (pendiente: ejercicios y capturas)
 
 #### Gramática {color: azul}
 
 - **Actividades Extra 5** *¿Dónde están mis gafas?* — Ejercicios 3-4 (15-20 min)
+- **BLINKLEARNING Juega y aprende** (Ej. 3, 5) — 2 ejercicios interactivos: escucha de posiciones con los marcadores de lugar (3) y elección entre *ser* y *estar* (5)
 - **Power Point Unidad 5** *Ser y estar* — Ejercicios 5-7 (15-25 min)
 - **Actividades Extra 5** *¿Ser o estar?* — Ejercicios 5-7 (15-20 min)
 - **Actividades Extra 5** *¡Cuántos salones!* — Ejercicio 8 (20-30 min)
@@ -111,18 +112,19 @@ Origen físico de cada material complementario para extraer portadas o miniatura
 
 | # | Material | Archivo fuente | Páginas (extensión) | Imagen para maqueta (página exacta) |
 |---|---|---|---|---|
-| 1 | Actividades Extra 5 *Cosas de casa* | `Compa4ed1ActividadesextraU5.pdf` | pp. 1-2 | p. 2 (sopa de letras con las ocho pistas *sirve para*) |
-| 2 | BLINKLEARNING Juega y aprende | capturas (pendiente depósito en `unidades/U5/recursos/capturas/`) | — | pendiente |
+| 1 | BLINKLEARNING Juega y aprende — Ej. 1, 2, 4 | capturas depositadas: `ejercicio1.png`, `ejercicio2.png`, `ejercicio4.png` | — | captura del Ej. 2 (la casa con el crucigrama de las seis partes, `ejercicio2.png`) |
+| 2 | Actividades Extra 5 *Cosas de casa* | `Compa4ed1ActividadesextraU5.pdf` | pp. 1-2 | p. 2 (sopa de letras con las ocho pistas *sirve para*) |
 
 #### Gramática
 
 | # | Material | Archivo fuente | Páginas (extensión) | Imagen para maqueta (página exacta) |
 |---|---|---|---|---|
 | 1 | Actividades Extra 5 *¿Dónde están mis gafas?* | `Compa4ed1ActividadesextraU5.pdf` | pp. 5-6 | p. 6 (fichas A/B con el salón desordenado de David) |
-| 2 | Power Point Unidad 5 *Ser y estar* | `Compa4ed1_UNIDAD5.pptx` | diapositivas 1-25 | capturas depositadas: portada (`Captura de pantalla 2026-08-01 a las 22.52.20.png`) y slide 15 (`powerpoint5.png`) |
-| 3 | Actividades Extra 5 *¿Ser o estar?* | `Compa4ed1ActividadesextraU5.pdf` | pp. 7-8 | p. 8 (ficha con los tres recuadros y las doce líneas) |
-| 4 | Actividades Extra 5 *¡Cuántos salones!* | `Compa4ed1ActividadesextraU5.pdf` | pp. 3-4 | p. 4 (seis fotos de salones y descripciones a-f) |
-| 5 | Gamificación *La casa de tus sueños* | `Compa4ed1_Cuadernodejuegos copia.pdf` | p. 1 (p. 31 del cuaderno) | p. 1 (casita con los bocadillos *Está en la playa*, *Tiene piscina*) |
+| 2 | BLINKLEARNING Juega y aprende — Ej. 3, 5 | capturas depositadas: `ejercicio3parte1.png`, `ejercicio3parte2.png`, `ejercicio3parte3.png`, `ejercicio5.png` | — | captura del Ej. 5 (las siete frases con la elección *ser/estar*, `ejercicio5.png`) |
+| 3 | Power Point Unidad 5 *Ser y estar* | `Compa4ed1_UNIDAD5.pptx` | diapositivas 1-25 | capturas depositadas: portada (`Captura de pantalla 2026-08-01 a las 22.52.20.png`) y slide 15 (`powerpoint5.png`) |
+| 4 | Actividades Extra 5 *¿Ser o estar?* | `Compa4ed1ActividadesextraU5.pdf` | pp. 7-8 | p. 8 (ficha con los tres recuadros y las doce líneas) |
+| 5 | Actividades Extra 5 *¡Cuántos salones!* | `Compa4ed1ActividadesextraU5.pdf` | pp. 3-4 | p. 4 (seis fotos de salones y descripciones a-f) |
+| 6 | Gamificación *La casa de tus sueños* | `Compa4ed1_Cuadernodejuegos copia.pdf` | p. 1 (p. 31 del cuaderno) | p. 1 (casita con los bocadillos *Está en la playa*, *Tiene piscina*) |
 
 #### Comunicación
 

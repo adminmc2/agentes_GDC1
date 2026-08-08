@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.82 — 2026-08-08] — U5 Itinerarios: entran los 5 ejercicios de Blinklearning en el extendido
+
+`unidades/U5/U5-itinerarios.md`: la línea «pendiente: ejercicios y capturas» se sustituye por los ejercicios reales, analizados y anclados — Vocabulario (Ej. 1, 2, 4: mobiliario, crucigrama de partes de la casa, correo de alojamientos) y Gramática (Ej. 3, 5: escucha de posiciones con marcadores y elección *ser/estar*); notas del diseñador actualizadas con las 7 capturas depositadas en `unidades/U5/recursos/` (renumeración de la tabla de Gramática). Detalle en la bitácora de REVIEW.
+
 ## [v12.81 — 2026-08-08] — Estilo de itinerarios codificado en `docs/`
 
 `docs/estilo-itinerarios.md` nuevo (fuente única de los criterios de redacción de itinerarios post-congelamiento de repo B: descripción `[CLASE]` = acción global + ancla, sin detalle micro; tarjetas en títulos de bloque; `[CASA]` como tarea concreta) + fila nueva en la tabla de documentos clave de `CLAUDE.md`. Origen: criterio formulado por el autor durante la sesión U6 (v12.80).
