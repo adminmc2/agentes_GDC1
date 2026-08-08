@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.81 — 2026-08-08] — Estilo de itinerarios codificado en `docs/`
+
+`docs/estilo-itinerarios.md` nuevo (fuente única de los criterios de redacción de itinerarios post-congelamiento de repo B: descripción `[CLASE]` = acción global + ancla, sin detalle micro; tarjetas en títulos de bloque; `[CASA]` como tarea concreta) + fila nueva en la tabla de documentos clave de `CLAUDE.md`. Origen: criterio formulado por el autor durante la sesión U6 (v12.80).
+
 ## [v12.80 — 2026-08-08] — U6 Itinerarios: básico, estación de servicio y extendido con el material complementario analizado
 
 `unidades/U6/U6-itinerarios.md` nuevo (patrón U5 v12.70): básico derivado de los seis `final/` con 5 bloques [CASA] acordados con el autor; estación de servicio verificada contra registro §5/§5bis y CSVs (Caja 1: 20 tarjetas; Caja 2: 2); extendido con los seis materiales depositados en `unidades/U6/recursos/` analizados uno a uno y anclados (tiempos de fuente en los dos juegos del cuaderno; el resto, estimaciones aprobadas). Novedad de curso: Proyecto WEB 2 *Un folleto turístico* (Unidades 4-6). Pendiente marcado: PPTX de unidad (solo captura); el fotograma del vídeo (`videou6.png`) entró durante el cierre. Entran también los archivos fuente depositados. Detalle en la bitácora de REVIEW.
