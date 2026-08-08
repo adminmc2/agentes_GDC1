@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.80 — 2026-08-08] — U6 Itinerarios: básico, estación de servicio y extendido con el material complementario analizado
+
+`unidades/U6/U6-itinerarios.md` nuevo (patrón U5 v12.70): básico derivado de los seis `final/` con 5 bloques [CASA] acordados con el autor; estación de servicio verificada contra registro §5/§5bis y CSVs (Caja 1: 20 tarjetas; Caja 2: 2); extendido con los seis materiales depositados en `unidades/U6/recursos/` analizados uno a uno y anclados (tiempos de fuente en los dos juegos del cuaderno; el resto, estimaciones aprobadas). Novedad de curso: Proyecto WEB 2 *Un folleto turístico* (Unidades 4-6). Pendiente marcado: PPTX de unidad (solo captura); el fotograma del vídeo (`videou6.png`) entró durante el cierre. Entran también los archivos fuente depositados. Detalle en la bitácora de REVIEW.
+
 ## [v12.79 — 2026-08-08] — U6 Evaluación en `final/` + fila U6 de objetivos de Evaluación: entra el trabajo de la sesión paralela
 
 `unidades/U6/final/evaluacion.md` (920 palabras, techo ≤950), redactada en sesión paralela, entra por orden del autor: Versión A (deberes y revisión con semáforo de comprensión) y Versión B (en clase), objetivo Dirección B *Consolidar los contenidos trabajados en la unidad* y conexión a la **unidad 7**. `docs/formulacion-objetivos.md`: fila U6 de la tabla ❌/✅ de §2.2 Evaluación al formato U5/U7 tras el rechazo del objetivo de evidencia. Con esto `unidades/U6/final/` queda completa (6/6 secciones). Detalle en la bitácora de REVIEW.
