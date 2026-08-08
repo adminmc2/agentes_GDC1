@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.79 — 2026-08-08] — U6 Evaluación en `final/` + fila U6 de objetivos de Evaluación: entra el trabajo de la sesión paralela
+
+`unidades/U6/final/evaluacion.md` (920 palabras, techo ≤950), redactada en sesión paralela, entra por orden del autor: Versión A (deberes y revisión con semáforo de comprensión) y Versión B (en clase), objetivo Dirección B *Consolidar los contenidos trabajados en la unidad* y conexión a la **unidad 7**. `docs/formulacion-objetivos.md`: fila U6 de la tabla ❌/✅ de §2.2 Evaluación al formato U5/U7 tras el rechazo del objetivo de evidencia. Con esto `unidades/U6/final/` queda completa (6/6 secciones). Detalle en la bitácora de REVIEW.
+
 ## [v12.78 — 2026-08-08] — U6 Cultura en `final/`: pre-enseñanza léxica con misión de detalle y cierre en el techo justo
 
 `unidades/U6/final/cultura.md` (800 palabras, techo ≤800), derivada de `unidades/U6/propuesta/cultura.md` y revisada frase a frase con el autor. Página 70, 3 ejercicios, pista 71, insignia ficha 6.5 **¡UNA CIUDAD, MIL CARAS!**, sin tarjeta ni píldora. Cambios de fondo: la pre-enseñanza lineal del léxico pasa a primer vistazo + misión de detalle por tercios (adaptación de *El zoom cultural*, elegida por el autor entre tres alternativas de los bancos de repo B); la tarea del ejercicio 1 se declara con estrategia de apoyo tras descartar una falsa «pregunta guía»; el reciclaje se corrige contra inventario (sin *estar* ni colores: queda *ser* y *tener* con fechas y siglos). Retiradas autorizadas §10.6/§10.8/Patrón 7; P1 rechazada. Detalle en la bitácora de REVIEW.
