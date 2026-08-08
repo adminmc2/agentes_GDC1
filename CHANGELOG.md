@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.78 — 2026-08-08] — U6 Cultura en `final/`: pre-enseñanza léxica con misión de detalle y cierre en el techo justo
+
+`unidades/U6/final/cultura.md` (800 palabras, techo ≤800), derivada de `unidades/U6/propuesta/cultura.md` y revisada frase a frase con el autor. Página 70, 3 ejercicios, pista 71, insignia ficha 6.5 **¡UNA CIUDAD, MIL CARAS!**, sin tarjeta ni píldora. Cambios de fondo: la pre-enseñanza lineal del léxico pasa a primer vistazo + misión de detalle por tercios (adaptación de *El zoom cultural*, elegida por el autor entre tres alternativas de los bancos de repo B); la tarea del ejercicio 1 se declara con estrategia de apoyo tras descartar una falsa «pregunta guía»; el reciclaje se corrige contra inventario (sin *estar* ni colores: queda *ser* y *tener* con fechas y siglos). Retiradas autorizadas §10.6/§10.8/Patrón 7; P1 rechazada. Detalle en la bitácora de REVIEW.
+
 ## [v12.77 — 2026-08-06] — U6 Destrezas en `final/`: ejercicios 6 y 7 reescritos contra las transcripciones
 
 `unidades/U6/final/destrezas.md` (1381 palabras, techo ≤1400), derivada de la propuesta y revisada frase a frase con el autor. Páginas 68-69, 11 ejercicios en tres bloques, pistas 69-70, insignia ficha 6.4 **¡MI LUGAR IDEAL!**, tarjeta nueva *Pregúntale al texto* (comprensión lectora), píldora 6.2 *Del plano al texto*. Cambios de fondo: la escucha de Daniela pasa a pregunta rectora con dos opciones de respuesta y corrección centrada en lo no literal (la trampa «cambia un dato de un lugar al otro» solo era cierta en 2 de 5 ítems); el ejercicio 7 se reescribe con la transcripción (todo se ejecuta en el cuaderno, órdenes en imperativo de tú con marcadores de lugar, la primera instrucción como base); el léxico nuevo del texto de Madrid se trabaja por deducción en contexto (patrón U5D); objetivo general nuevo (*Identificar información sobre otros lugares y describir el barrio de sus sueños*) y bloque final *en un texto breve*; rótulos al banco canónico (ORIENTE · DIRIJA · ORGANICE por CONTINÚE y GUÍE ×3). Detalle en la bitácora de REVIEW.
