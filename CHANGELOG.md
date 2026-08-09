@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.83 — 2026-08-09] — U7 Vocabulario en `final/`: primera sección de U7, revisada frase a frase
+
+`unidades/U7/final/vocabulario.md` nuevo (1484 palabras, techo ≤1500): derivado de la propuesta y revisado frase a frase por el autor; el ejercicio 4 se redacta contra la transcripción de la pista 73 (Día de la Madre sin número de día); las tarjetas de meses del año quedan fuera de la referencia por decisión del autor (el CSV se conserva); entran el fútbol de vocabulario (#51) y una adaptación en dos fases de *Conexiones misteriosas* (#10) con las tarjetas de animales, y se reutiliza la tarjeta de estrategia *Caza el dato*. Detalle en la bitácora de REVIEW.
+
 ## [v12.82 — 2026-08-08] — U5 Itinerarios: entran los 5 ejercicios de Blinklearning en el extendido
 
 `unidades/U5/U5-itinerarios.md`: la línea «pendiente: ejercicios y capturas» se sustituye por los ejercicios reales, analizados y anclados — Vocabulario (Ej. 1, 2, 4: mobiliario, crucigrama de partes de la casa, correo de alojamientos) y Gramática (Ej. 3, 5: escucha de posiciones con marcadores y elección *ser/estar*); notas del diseñador actualizadas con las 7 capturas depositadas en `unidades/U5/recursos/` (renumeración de la tabla de Gramática). Detalle en la bitácora de REVIEW.
