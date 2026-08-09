@@ -124,7 +124,7 @@ Ejemplo concreto (fase 1, extracción de U4):
 ## Lo que NO se hace
 
 - No editar la capa `propuesta/` — es fuente rica intacta. La edición editorial ocurre en `unidades/UX/final/`.
-- No editar en repo B — congelado editorialmente desde 2026-05-25.
+- No editar en repo B — congelado editorialmente desde 2026-05-25. **Única excepción**: `unidades/registro-recursos.md` es **registro vivo de uso** (journaling de dinámicas, insignias, tarjetas y verbos aplicados) — se consulta antes de proponer y se actualiza al cerrar cada sección de `final/`.
 - No ejecutar el sistema CrewAI antiguo (archivado en repo B, no conectado al sistema actual).
 - No saltarse la validación antes de cerrar un artefacto.
 - No inventar contenido editorial.
@@ -143,7 +143,7 @@ Ejemplo concreto (fase 1, extracción de U4):
 | `docs/formulacion-objetivos.md` | Criterios de formulación de objetivos generales y específicos (Bloom, verbos, naturaleza por sección) | ✅ Manda (objetivos en `final/`) |
 | `docs/estilo-itinerarios.md` | Criterios de redacción de los itinerarios (`unidades/UX/UX-itinerarios.md`) surgidos tras el congelamiento de repo B; la estructura sigue en la plantilla canónica de repo B | ✅ Manda (redacción de itinerarios) |
 | `docs/contratos-recursos-editoriales.md` | Spec textual interna de recursos editoriales propios del proyecto: tarjetas de estrategia (principio operativo, antipatrones, modelo de referencia, criterio de nombre) y píldoras formativas (principio operativo, antipatrones, criterio de aceptación). Frontera con `manual-estilo-final.md`: el manual regula cómo se nombran y dónde aparecen las menciones en `final/`; este documento regula qué dicen los recursos por dentro. | ✅ Manda (spec interna de tarjeta/píldora) |
-| `repo B — capa pedagógica` (`~/Desktop/temporal-antiguo-guia-ia/unidades/*-pautas.md` + `proceso-operativo.md` + `marco-teorico-metodologico.md`) | Fuente única de doctrina pedagógica del proyecto: criterios por sección, criterios sobre instrumentos, marco MARS-EARS y proceso operativo. Consulta obligatoria cuando la decisión en `unidades/**/final/*.md` sea metodológica/pedagógica (activación, secuenciación, mecánicas, viabilidad de aula), no solo estilística. No se duplica en repo A. | ✅ Manda (decisiones pedagógicas) |
+| `repo B — capa pedagógica` (`~/Desktop/temporal-antiguo-guia-ia/unidades/*-pautas.md` + `proceso-operativo.md` + `marco-teorico-metodologico.md`) | Fuente única de doctrina pedagógica del proyecto: criterios por sección, criterios sobre instrumentos, marco MARS-EARS y proceso operativo. Consulta obligatoria cuando la decisión en `unidades/**/final/*.md` sea metodológica/pedagógica (activación, secuenciación, mecánicas, viabilidad de aula), no solo estilística. No se duplica en repo A. Su `unidades/registro-recursos.md` sigue siendo **registro vivo** pese al congelamiento: consulta obligatoria de no-repetición + actualización al cerrar cada sección de `final/`. | ✅ Manda (decisiones pedagógicas) |
 | `README.md` | Descripción del proyecto, estado de las 8 fases, cómo se trabaja | Apunta |
 | `PROCESO-MAESTRO.md` | Modelo conceptual, decisiones cerradas, esquemas, bitácora | Consulta |
 | `REVIEW.md` | Plan ejecutable con gates, estado vivo, próximos pasos | Estado, no manda reglas |

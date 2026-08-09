@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.84 — 2026-08-09] — Registro de recursos declarado vivo pese al congelamiento de repo B
+
+`CLAUDE.md`: excepción explícita al congelamiento — `unidades/registro-recursos.md` de repo B sigue siendo **registro vivo** (journaling de uso: consulta de no-repetición + actualización al cerrar cada sección de `final/`), codificada en el bullet de «Lo que NO se hace» y en la fila «repo B — capa pedagógica». Origen: incoherencia detectada en la sesión U7 Vocabulario. En repo B quedan registradas las tres dinámicas/reactivaciones de U7V `final/` y corregido §5 (meses = set no llevado al aula; animales 14→29). Detalle en la bitácora de REVIEW.
+
 ## [v12.83 — 2026-08-09] — U7 Vocabulario en `final/`: primera sección de U7, revisada frase a frase
 
 `unidades/U7/final/vocabulario.md` nuevo (1484 palabras, techo ≤1500): derivado de la propuesta y revisado frase a frase por el autor; el ejercicio 4 se redacta contra la transcripción de la pista 73 (Día de la Madre sin número de día); las tarjetas de meses del año quedan fuera de la referencia por decisión del autor (el CSV se conserva); entran el fútbol de vocabulario (#51) y una adaptación en dos fases de *Conexiones misteriosas* (#10) con las tarjetas de animales, y se reutiliza la tarjeta de estrategia *Caza el dato*. Detalle en la bitácora de REVIEW.
