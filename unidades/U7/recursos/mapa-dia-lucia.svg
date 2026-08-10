@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 960" width="920" height="960" font-family="Helvetica, Arial, sans-serif">
+  <rect width="920" height="960" fill="#ffffff"/>
+
+  <defs>
+    <marker id="punta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="48" font-size="22" font-weight="bold" fill="#1a1a1a">El mapa del día de Lucía</text>
+  <text x="60" y="72" font-size="14" fill="#5a5a5a">Referencia para el dibujo de pizarra. Frases del cuadro «Uso de las preposiciones», página 75; «vuelve a casa» es del ejercicio 5.</text>
+  <circle cx="68" cy="94" r="7" fill="#1a1a1a"/>
+  <text x="84" y="99" font-size="14" fill="#5a5a5a">= Lucía. Cada preposición dice dónde está el punto respecto al lugar.</text>
+
+  <!-- ================= 1. DÓNDE ================= -->
+  <text x="60" y="140" font-size="13" letter-spacing="1.5" fill="#5a5a5a">1 · DÓNDE</text>
+
+  <rect x="60" y="160" width="180" height="150" rx="6" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="150" y="186" font-size="17" text-anchor="middle" fill="#1a1a1a">CASA</text>
+  <rect x="680" y="160" width="180" height="150" rx="6" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="770" y="186" font-size="17" text-anchor="middle" fill="#1a1a1a">PISCINA</text>
+
+  <!-- ida: sale de su casa -->
+  <path d="M 150 216 L 672 216" fill="none" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#punta)"/>
+  <circle cx="150" cy="216" r="8" fill="#1a1a1a"/>
+  <rect x="256" y="170" width="58" height="30" rx="15" fill="#1a1a1a"/>
+  <text x="285" y="191" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ffffff">de</text>
+  <line x1="285" y1="200" x2="285" y2="212" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="420" y="240" font-size="13" text-anchor="middle" fill="#5a5a5a">sale <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">de</tspan> su casa</text>
+
+  <!-- vuelta: viene de la piscina / vuelve a casa -->
+  <path d="M 770 282 L 248 282" fill="none" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#punta)"/>
+  <circle cx="770" cy="282" r="8" fill="#1a1a1a"/>
+  <rect x="606" y="236" width="58" height="30" rx="15" fill="#1a1a1a"/>
+  <text x="635" y="257" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ffffff">de</text>
+  <line x1="635" y1="266" x2="635" y2="278" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="298" y="236" width="52" height="30" rx="15" fill="#1a1a1a"/>
+  <text x="324" y="257" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ffffff">a</text>
+  <line x1="324" y1="266" x2="324" y2="278" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="575" y="306" font-size="13" text-anchor="middle" fill="#5a5a5a">viene <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">de</tspan> la piscina</text>
+  <text x="324" y="306" font-size="13" text-anchor="middle" fill="#5a5a5a">vuelve <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">a</tspan> casa</text>
+
+  <text x="460" y="344" font-size="13" text-anchor="middle" fill="#5a5a5a">donde arranca la flecha, <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">de</tspan>; donde termina, <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">a</tspan></text>
+
+  <!-- POLIDEPORTIVO: figura dentro, sin flecha -->
+  <rect x="60" y="368" width="300" height="100" rx="6" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="210" y="396" font-size="17" text-anchor="middle" fill="#1a1a1a">POLIDEPORTIVO</text>
+  <circle cx="168" cy="434" r="8" fill="#1a1a1a"/>
+  <rect x="188" y="419" width="60" height="30" rx="15" fill="#1a1a1a"/>
+  <text x="218" y="440" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ffffff">en</text>
+  <text x="410" y="414" font-size="14" fill="#5a5a5a">Sin flecha: el punto no se mueve, está dentro.</text>
+  <text x="410" y="438" font-size="14" fill="#5a5a5a">juega <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">en</tspan> el polideportivo</text>
+
+  <line x1="60" y1="492" x2="860" y2="492" stroke="#c8c8c8" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- ================= 2. CUÁNDO ================= -->
+  <text x="60" y="528" font-size="13" letter-spacing="1.5" fill="#5a5a5a">2 · CUÁNDO — la misma figura, sobre la línea del día</text>
+
+  <!-- hora concreta -->
+  <text x="60" y="588" font-size="14" fill="#1a1a1a">Una hora concreta</text>
+  <line x1="280" y1="582" x2="480" y2="582" stroke="#1a1a1a" stroke-width="3"/>
+  <circle cx="380" cy="582" r="8" fill="#1a1a1a"/>
+  <rect x="354" y="540" width="52" height="30" rx="15" fill="#1a1a1a"/>
+  <text x="380" y="561" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ffffff">a</text>
+  <line x1="380" y1="570" x2="380" y2="578" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="540" y="588" font-size="14" fill="#5a5a5a">se levanta <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">a</tspan> las siete y media</text>
+
+  <!-- tramo -->
+  <text x="60" y="680" font-size="14" fill="#1a1a1a">Un tramo del día</text>
+  <line x1="280" y1="674" x2="480" y2="674" stroke="#1a1a1a" stroke-width="3"/>
+  <rect x="320" y="666" width="120" height="16" fill="#1a1a1a" opacity="0.18"/>
+  <path d="M 316 674 L 448 674" fill="none" stroke="#1a1a1a" stroke-width="2.5" marker-end="url(#punta)"/>
+  <circle cx="316" cy="674" r="8" fill="#1a1a1a"/>
+  <rect x="351" y="626" width="58" height="30" rx="15" fill="#1a1a1a"/>
+  <text x="380" y="647" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ffffff">por</text>
+  <line x1="380" y1="656" x2="380" y2="666" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="380" y="704" font-size="13" text-anchor="middle" fill="#5a5a5a">recorre el tramo entero</text>
+  <text x="540" y="680" font-size="14" fill="#5a5a5a">va a la biblioteca <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">por</tspan> la tarde</text>
+
+  <!-- hora + parte del dia -->
+  <text x="60" y="782" font-size="14" fill="#1a1a1a">La hora, y de qué</text>
+  <text x="60" y="800" font-size="14" fill="#1a1a1a">parte del día es</text>
+  <line x1="280" y1="776" x2="480" y2="776" stroke="#1a1a1a" stroke-width="3"/>
+  <rect x="300" y="768" width="140" height="16" fill="#1a1a1a" opacity="0.18"/>
+  <text x="370" y="806" font-size="13" text-anchor="middle" fill="#5a5a5a">mañana</text>
+  <circle cx="340" cy="776" r="8" fill="#1a1a1a"/>
+  <rect x="314" y="728" width="52" height="30" rx="15" fill="#1a1a1a"/>
+  <text x="340" y="749" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ffffff">a</text>
+  <line x1="340" y1="758" x2="340" y2="770" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="386" y="728" width="58" height="30" rx="15" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="415" y="749" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#1a1a1a">de</text>
+  <path d="M 415 758 L 415 768" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="540" y="782" font-size="14" fill="#5a5a5a">desayuna <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">a</tspan> las ocho <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">de</tspan> la mañana</text>
+
+  <line x1="60" y1="842" x2="860" y2="842" stroke="#c8c8c8" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- ================= 3. CÓMO VA ================= -->
+  <text x="60" y="878" font-size="13" letter-spacing="1.5" fill="#5a5a5a">3 · CÓMO VA — el punto va dentro del vehículo</text>
+
+  <rect x="280" y="898" width="200" height="52" rx="6" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="400" y="930" font-size="16" text-anchor="middle" fill="#1a1a1a">bicicleta</text>
+  <circle cx="316" cy="924" r="8" fill="#1a1a1a"/>
+  <rect x="196" y="909" width="60" height="30" rx="15" fill="#1a1a1a"/>
+  <text x="226" y="930" font-size="18" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ffffff">en</text>
+  <text x="540" y="930" font-size="14" fill="#5a5a5a">va <tspan font-style="italic" font-weight="bold" fill="#1a1a1a">en</tspan> bicicleta al cole</text>
+</svg>

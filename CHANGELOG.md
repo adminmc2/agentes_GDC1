@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.85 — 2026-08-10] — U7 Gramática en `final/` + figura del mapa de preposiciones
+
+`unidades/U7/final/gramatica.md` nuevo (1392 palabras, techo ≤1600): 9/9 ejercicios y los tres cuadros de las páginas 74-75. Objetivo general con núcleo compuesto (verbos de la rutina + preposiciones, regla G1); presentación de los reflexivos rehecha por par contrastivo *Yo ducho a mi hermano / Yo me ducho* —fuera el espejo y toda mecánica corporal—; párrafo nuevo de regulares e irregulares anclado a la bota de la **unidad 6**; el mapa de preposiciones lo colocan los estudiantes y el cuadro lo confirma. `unidades/U7/recursos/mapa-dia-lucia.svg` y `.png` nuevos: representación del cuadro de la página 75 con figura, punto de referencia y trayectoria. Detalle en la bitácora de REVIEW.
+
 ## [v12.84 — 2026-08-09] — Registro de recursos declarado vivo pese al congelamiento de repo B
 
 `CLAUDE.md`: excepción explícita al congelamiento — `unidades/registro-recursos.md` de repo B sigue siendo **registro vivo** (journaling de uso: consulta de no-repetición + actualización al cerrar cada sección de `final/`), codificada en el bullet de «Lo que NO se hace» y en la fila «repo B — capa pedagógica». Origen: incoherencia detectada en la sesión U7 Vocabulario. En repo B quedan registradas las tres dinámicas/reactivaciones de U7V `final/` y corregido §5 (meses = set no llevado al aula; animales 14→29). Detalle en la bitácora de REVIEW.
