@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.86 — 2026-08-12] — U7 Comunicación en `final/`
+
+`unidades/U7/final/comunicacion.md` nuevo (1419 palabras, techo ≤1450): 13/13 ejercicios y pistas 77-80 contra inventario (escuchas pendientes de transcripción). Bloque de entonación solo con ¿? / ¡! —fuera el punto y la declarativa de la propuesta; errata «audio 81» → pista 80—; ejercicio 3 profundizado (orden por bloques + autocorrección contra el diálogo); vídeo del ejercicio 10 remitido al Cuaderno de actividades (icono confirmado en PDF). Detalle en la bitácora de REVIEW.
+
 ## [v12.85 — 2026-08-10] — U7 Gramática en `final/` + figura del mapa de preposiciones
 
 `unidades/U7/final/gramatica.md` nuevo (1392 palabras, techo ≤1600): 9/9 ejercicios y los tres cuadros de las páginas 74-75. Objetivo general con núcleo compuesto (verbos de la rutina + preposiciones, regla G1); presentación de los reflexivos rehecha por par contrastivo *Yo ducho a mi hermano / Yo me ducho* —fuera el espejo y toda mecánica corporal—; párrafo nuevo de regulares e irregulares anclado a la bota de la **unidad 6**; el mapa de preposiciones lo colocan los estudiantes y el cuadro lo confirma. `unidades/U7/recursos/mapa-dia-lucia.svg` y `.png` nuevos: representación del cuadro de la página 75 con figura, punto de referencia y trayectoria. Detalle en la bitácora de REVIEW.
