@@ -42,7 +42,7 @@ Pedir y dar información sobre los horarios del día.
 
 *Imprimir tarjeta de estrategia—interacción oral—*Preguntar y decir cómo es tu día**
 
-DÉ PASO A UNA RUEDA DE PREGUNTAS
+DÉ PASO A LAS PREGUNTAS POR TURNOS EN PAREJAS
 
 Dirija la atención al **ejercicio 4** y lea con la clase el ejemplo del libro. Reparta la tarjeta de estrategia *Preguntar y decir cómo es tu día* y presente cómo funciona: ordena la conversación en tres pasos —preguntar (*¿A qué hora…?*), contestar con la hora y reaccionar para devolver el turno (*¡Qué temprano! ¿Y tú?*)— y da las frases hechas de cada paso. Modele con alguien del grupo un intercambio completo siguiendo los tres pasos. En parejas, se preguntan por turnos con los verbos del recuadro, contestan con sus datos y reaccionan antes de devolver la pregunta. Recoja en plenaria la hora más temprana y la más tardía que hayan aparecido.
 

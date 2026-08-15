@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.88 — 2026-08-15] — Cierre de las tres deudas abiertas antes de U7 Cultura
+
+Rótulo huérfano del ejercicio 4 de `unidades/U7/final/comunicacion.md` corregido: *DÉ PASO A UNA RUEDA DE PREGUNTAS* → *DÉ PASO A LAS PREGUNTAS POR TURNOS EN PAREJAS* (la rueda se había sustituido en v12.86 por modelado + parejas). Deuda de transcripciones cerrada por verificación: ninguna frase de U7 Comunicación ni de U7 Destrezas afirma contenido sonoro no verificable — el diálogo de la pista 77 y las frases de la 79 están impresos en el inventario. Back-audit de dinámicas U1-U6 en `final/` completado (v12.84): 73 filas nuevas en `§1bis` del registro de repo B. Detalle en la bitácora de REVIEW.
+
 ## [v12.87 — 2026-08-13] — U7 Destrezas en `final/`
 
 `unidades/U7/final/destrezas.md` nuevo (1375 palabras, techo ≤1400): 8/8 ejercicios de las páginas 78-79 y la pista 81 contra inventario (transcripción pendiente). Objetivos de los dos bloques receptivos con *identificar* —*reconocer* rechazado por presuponer conocimiento previo—; el del ejercicio 5 desespecificado a *«Identificar información concreta al escuchar una historia sencilla»*. Píldora 7.2 retitulada *Leer un texto descriptivo*. Las dos tarjetas se presentan por lo que se hace con ellas, sin jerga de cara ni de banco; «línea del día» sustituida por el día de Pedro en la pizarra. Registro de repo B: §3 con el título nuevo de P7.2 y §4 con las mayúsculas de la insignia 7.4. Detalle en la bitácora de REVIEW.
