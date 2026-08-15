@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.87 — 2026-08-13] — U7 Destrezas en `final/`
+
+`unidades/U7/final/destrezas.md` nuevo (1375 palabras, techo ≤1400): 8/8 ejercicios de las páginas 78-79 y la pista 81 contra inventario (transcripción pendiente). Objetivos de los dos bloques receptivos con *identificar* —*reconocer* rechazado por presuponer conocimiento previo—; el del ejercicio 5 desespecificado a *«Identificar información concreta al escuchar una historia sencilla»*. Píldora 7.2 retitulada *Leer un texto descriptivo*. Las dos tarjetas se presentan por lo que se hace con ellas, sin jerga de cara ni de banco; «línea del día» sustituida por el día de Pedro en la pizarra. Registro de repo B: §3 con el título nuevo de P7.2 y §4 con las mayúsculas de la insignia 7.4. Detalle en la bitácora de REVIEW.
+
 ## [v12.86 — 2026-08-12] — U7 Comunicación en `final/`
 
 `unidades/U7/final/comunicacion.md` nuevo (1419 palabras, techo ≤1450): 13/13 ejercicios y pistas 77-80 contra inventario (escuchas pendientes de transcripción). Bloque de entonación solo con ¿? / ¡! —fuera el punto y la declarativa de la propuesta; errata «audio 81» → pista 80—; ejercicio 3 profundizado (orden por bloques + autocorrección contra el diálogo); vídeo del ejercicio 10 remitido al Cuaderno de actividades (icono confirmado en PDF). Detalle en la bitácora de REVIEW.
