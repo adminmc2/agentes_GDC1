@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.90 — 2026-08-16] — Errata de imagen del inventario de U7 corregida
+
+`U7-p80-act01.imagen.descripcion` decia *«Fotografias de delfines en espectaculo acuatico, flamingos y cabras»*; la pagina 80 trae **una sola foto** de delfines y ninguna de flamencos ni de cabras (verificado contra el PDF al derivar U7 Cultura, v12.89). Reescrita con el formato de recuento de las demas entradas de U7. `validar_inventario.py 7` limpio.
+
 ## [v12.89 — 2026-08-16] — U7 Cultura en `final/`
 
 `unidades/U7/final/cultura.md` nuevo (766 palabras, techo ≤800), quinta sección de `final/` de U7: 2/2 ejercicios de la página 80 y la pista 82 contra inventario. Foto verificada contra el PDF: **una sola foto de delfines**, sin flamencos ni cabras — el inventario está equivocado (deuda abierta). Mecánica de lectura sustituida por elección justificada con recuento, porque el reparto por partes repetía el jigsaw de U3 Cultura y no escala a 10+ parejas. Detalle en la bitácora de REVIEW.
