@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.89 — 2026-08-16] — U7 Cultura en `final/`
+
+`unidades/U7/final/cultura.md` nuevo (766 palabras, techo ≤800), quinta sección de `final/` de U7: 2/2 ejercicios de la página 80 y la pista 82 contra inventario. Foto verificada contra el PDF: **una sola foto de delfines**, sin flamencos ni cabras — el inventario está equivocado (deuda abierta). Mecánica de lectura sustituida por elección justificada con recuento, porque el reparto por partes repetía el jigsaw de U3 Cultura y no escala a 10+ parejas. Detalle en la bitácora de REVIEW.
+
 ## [v12.88 — 2026-08-15] — Cierre de las tres deudas abiertas antes de U7 Cultura
 
 Rótulo huérfano del ejercicio 4 de `unidades/U7/final/comunicacion.md` corregido: *DÉ PASO A UNA RUEDA DE PREGUNTAS* → *DÉ PASO A LAS PREGUNTAS POR TURNOS EN PAREJAS* (la rueda se había sustituido en v12.86 por modelado + parejas). Deuda de transcripciones cerrada por verificación: ninguna frase de U7 Comunicación ni de U7 Destrezas afirma contenido sonoro no verificable — el diálogo de la pista 77 y las frases de la 79 están impresos en el inventario. Back-audit de dinámicas U1-U6 en `final/` completado (v12.84): 73 filas nuevas en `§1bis` del registro de repo B. Detalle en la bitácora de REVIEW.
