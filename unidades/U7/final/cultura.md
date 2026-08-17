@@ -14,9 +14,9 @@ CONTEXTUALICE EL ZOO-AQUARIUM DE MADRID CON SU FOTO
 
 Proponga abrir la **página 80** y lea con la clase el título de la sección, *Un recorrido apasionante por los 5 continentes*. Dirija la atención a la foto: un delfín tumbado sobre una plataforma y otro asomando en el agua.
 
-Proponga un cambio de papel: en vez de describir la foto, la clase pregunta. En parejas, formulan tres preguntas que le harían al zoo antes de leer —de dónde vienen estos delfines, quién los cuida, qué hacen durante el día—. Recoja cinco o seis y déjelas apuntadas en la pizarra.
+Proponga un cambio de papel: en vez de describir la foto, la clase pregunta. En parejas, formulan tres preguntas que le harían al zoo antes de leer. Recoja cinco o seis y déjelas apuntadas en la pizarra.
 
-Sobre esas preguntas, introduzca el léxico del texto como indicio de lo que la lectura va a responder: a quien pregunte quién los cuida, asocie *educador medioambiental*; a quien pregunte qué hacen con los animales, *investigar* y *conservar*; a quien pregunte por qué tienen tantos, *biodiversidad* y *ecosistema*. Acompañe cada palabra con una paráfrasis breve: *conservar es cuidar para que no desaparezca · biodiversidad es muchos tipos de animales y plantas*.
+Sobre esas preguntas, introduzca el léxico que la lectura va a traer —*educador medioambiental*, *investigar*, *conservar*, *biodiversidad*, *ecosistema*—, enganchando cada palabra a la pregunta del grupo que más se le acerque. Acompañe cada una con una paráfrasis breve: *conservar es cuidar para que no desaparezca · biodiversidad es muchos tipos de animales y plantas*.
 
 Deje las preguntas en la pizarra y anuncie que el texto habla de lo que hace este zoo.
 

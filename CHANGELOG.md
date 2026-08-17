@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.92 — 2026-08-17] — Cierre de los avisos de `/check-final` sobre U7 Cultura y Evaluación
+
+Auditoría de las dos secciones: 0 bloqueadores. Resueltos los cuatro avisos accionables — desespecificadas en Cultura la serie de preguntas-modelo y el mapeo cerrado pregunta→léxico (§10.1, mismo criterio que el autor aplicó en Evaluación), y en Evaluación sustituidas la predicción de error del ejercicio 1 y la enumeración sin criterio del ejercicio 2. Cultura 736 palabras, Evaluación 942. Registro §1 de repo B alineado. Detalle en la bitácora de REVIEW.
+
 ## [v12.91 — 2026-08-17] — U7 Evaluación en `final/`: **U7 completa**
 
 `unidades/U7/final/evaluacion.md` nuevo (941 palabras, techo ≤950), sexta y última sección de U7. 6/6 ejercicios de la página 81 contra inventario y PDF. **Pizarras individuales y cuaderno en alto quedan prohibidos** como modo de corrección (decisión del autor, aplica a todo el corpus): el ejercicio 1 pasa a cadena oral. Corregidos dos errores de la propuesta y desespecificados tres focos que predecían dudas en vez de nombrar rasgos. Detalle en la bitácora de REVIEW.

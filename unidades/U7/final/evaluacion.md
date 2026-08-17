@@ -9,9 +9,9 @@ Antes de cada ejercicio, escanee a la clase con el **semáforo de comprensión**
 
 VERBOS REFLEXIVOS
 
-Corrija el **ejercicio 1** en cadena: diga el número de ítem y una persona distinta cada vez lee en voz alta la forma completa, con el pronombre delante; la clase confirma o corrige. El peso está en *acostarse*, el único que cambia la raíz y el que sale tres veces —ítems 1, 3 y 7—: recupere la bota de la **unidad 6** si aparece *acosto*. En los otros cuatro, todos regulares, lo que falla es la doble marca de persona: pronombre y terminación tienen que coincidir. Deténgase además en el 3, donde el pronombre va detrás del *no*.
+Corrija el **ejercicio 1** en cadena: diga el número de ítem y una persona distinta cada vez lee en voz alta la forma completa, con el pronombre delante; la clase confirma o corrige. El peso está en *acostarse*, el único que cambia la raíz y el que sale tres veces —ítems 1, 3 y 7—: recupere la bota de la **unidad 6** si aparece *acosto*. En los otros cuatro, todos regulares, el foco es la doble marca de persona: pronombre y terminación tienen que coincidir. Deténgase además en el 3, donde el pronombre va detrás del *no*.
 
-Para el **ejercicio 2**, proyecte la clave y dé un momento para comparar con el cuaderno. Deténgase en el cambio de pronombre que arrastra el cambio de sujeto: los cinco ítems piden reescribir ambos. Confirme el 1 (*te duchas*), el 2 (*se levanta*) y el 5 (*os acostáis*).
+Para el **ejercicio 2**, proyecte la clave y dé un momento para comparar con el cuaderno. Deténgase en el cambio de pronombre que arrastra el cambio de sujeto: los cinco ítems piden reescribir ambos. Confirme el 4 (*se afeitan*), el único donde el pronombre no cambia al cambiar el sujeto.
 
 VERBOS DE MOVIMIENTO Y RUTINA
 
