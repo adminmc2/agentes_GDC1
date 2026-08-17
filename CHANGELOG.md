@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.94 — 2026-08-17] — U7: itinerario redactado
+
+`unidades/U7/U7-itinerarios.md` nuevo: básico con 18 bloques [CLASE] y 7 [CASA] (10 ejercicios, reparto revisado con el autor), las 11 pistas 72-82 asignadas y las píldoras 7.1/7.2 marcadas; extendido con estación de servicio (29 {animales} + 2 {comunicación}) y los materiales SGEL de `recursos/` mapeados con página exacta para el diseñador. Dos vídeos distinguidos: el de sección de Comunicación (fijo, pendiente de depósito) y el vídeo final *La vida de Marcos* (U6-7) en Cultura y Evaluación. Materiales depositados en el commit y newline final añadido a `tarjetas/animales.csv` (cierra el falso recuento 28/29).
+
 ## [v12.93 — 2026-08-17] — §2.1: la excepción de Cultura, codificada
 
 Subsección nueva *Cultura — bloque único sin objetivo propio* en `docs/manual-estilo-final.md` §2.1: Cultura ocupa una sola página, se resuelve en un solo bloque y su header va seguido directamente del primer rótulo. Codifica un patrón unánime del corpus (U1C-U7C: 1 header y 1 objetivo, frente a N y N+1 en las secciones de varios bloques) que `/check-final` marcaba como ⚠ por no estar escrito. Checklist del skill sincronizado en el mismo lote. Commit propio de manual (§11.3), sin contenido editorial.
