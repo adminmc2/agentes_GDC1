@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.91 — 2026-08-17] — U7 Evaluación en `final/`: **U7 completa**
+
+`unidades/U7/final/evaluacion.md` nuevo (941 palabras, techo ≤950), sexta y última sección de U7. 6/6 ejercicios de la página 81 contra inventario y PDF. **Pizarras individuales y cuaderno en alto quedan prohibidos** como modo de corrección (decisión del autor, aplica a todo el corpus): el ejercicio 1 pasa a cadena oral. Corregidos dos errores de la propuesta y desespecificados tres focos que predecían dudas en vez de nombrar rasgos. Detalle en la bitácora de REVIEW.
+
 ## [v12.90 — 2026-08-16] — Errata de imagen del inventario de U7 corregida
 
 `U7-p80-act01.imagen.descripcion` decia *«Fotografias de delfines en espectaculo acuatico, flamingos y cabras»*; la pagina 80 trae **una sola foto** de delfines y ninguna de flamencos ni de cabras (verificado contra el PDF al derivar U7 Cultura, v12.89). Reescrita con el formato de recuento de las demas entradas de U7. `validar_inventario.py 7` limpio.
