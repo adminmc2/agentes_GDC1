@@ -27,6 +27,8 @@ Objetivo: verificar que `$archivo` cumple las reglas activas y canónicas codifi
 
 Apertura canónica (Insignia gamificada + Objetivo + Imprimir ficha + Insignia y obtención), headers `### Ejercicios X-Y` o `### Ejercicio X`, bloques con Objetivo + rótulos + cuerpo, ENTREGA DE INSIGNIA al cierre. Ausencia de residuos de `propuesta/` (metanotas, trazabilidad, brief de píldora, spec de tarjeta, cabeceras `# UXX —` o `## DOBLE PÁGINA`).
 
+**Excepción Cultura**: ver §2.1 *Cultura — bloque único sin objetivo propio* — un solo header seguido directamente del primer rótulo, **sin *Objetivo* de bloque**; el objetivo general de la apertura lo cubre. La apertura canónica y el *ENTREGA DE INSIGNIA* sí se auditan con normalidad.
+
 **Excepción Evaluación**: ver §2.1 *Evaluación — estructura específica* — apertura solo con *Objetivo* (sin *Insignia gamificada* ni *Imprimir ficha* ni *Insignia y obtención*), headers `### Versión A — ...` y `### Versión B — ...` (no `### Ejercicios X-Y`), sin *ENTREGA DE INSIGNIA*.
 
 ### 2. Convenciones específicas de la sección (§2.1)

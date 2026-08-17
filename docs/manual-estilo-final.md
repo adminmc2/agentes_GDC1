@@ -129,6 +129,14 @@ Las etiquetas internas se reservan a la spec textual de la tarjeta (que no va en
 
 **Distinción título de tarjeta vs nombre de cara.** El **título canónico de la tarjeta** (la función comunicativa) se cita siempre en **cursiva título-case** — *Saludar y despedirse*, *Decir la hora*, *Hablar de la familia*. El **nombre descriptivo de la cara en el cuerpo** se redacta **en redonda** (no en cursiva) y es **por contenido** — *"la cara del diálogo modelo"*, *"la cara del esquema de funciones"*. No mezclar los dos en una misma unidad de referencia. Si hace falta mencionar ambas cosas, separarlas: nombre de la cara en redonda + título de la tarjeta en cursiva. Incorrecto: *"la cara del esquema Decir la hora de la tarjeta de estrategia"*. Correcto: *"la cara del diálogo modelo de la tarjeta de estrategia* Decir la hora*"*. Caso detectado en U3 Comunicación.
 
+#### Cultura — bloque único sin objetivo propio
+
+Cultura ocupa **una sola página** del libro y se resuelve en **un solo bloque**. Su header (`### Ejercicios 1-2`, `### Ejercicios 1-3`…) va seguido directamente del primer rótulo: **no lleva *Objetivo* de bloque**. El objetivo general de la sección, que ya figura en la apertura canónica, cubre íntegramente esa única sub-secuencia; repetirlo bajo el header sería un duplicado literal.
+
+Es la única sección con apertura canónica completa (*Insignia gamificada* + *Objetivo* + *Imprimir ficha* + *Insignia y obtención*, con *ENTREGA DE INSIGNIA* al cierre) cuyo bloque no lleva objetivo propio. En Vocabulario, Gramática, Comunicación y Destrezas cada header abre su bloque con su *Objetivo*.
+
+**Casos canónicos:** U1C, U2C, U3C, U4C, U5C, U6C y U7C — las siete cerradas con un solo header y un solo *Objetivo*, el general. Contraste medido en el corpus: las secciones de varios bloques presentan N headers y N+1 objetivos; Cultura presenta 1 y 1.
+
 #### Evaluación — conexión a unidad siguiente
 
 Cada `unidades/U[X]/final/evaluacion.md` cierra dentro del rótulo *AUTOEVALUACIÓN Y CIERRE* con una **sola frase escueta** de conexión a la unidad siguiente. Formato canónico:
@@ -919,6 +927,8 @@ Si la derivación inicial supera el techo, aplicar §11.4 hasta entrar en rango.
 | 2026-06-14 | §11.4 — bloque nuevo *Límite de la compactación — unicidad de interpretación y separación de acciones*: la compactación preserva (a) unicidad de interpretación (sin formulaciones de doble lectura por economía) y (b) separación de acciones en lugares distintos del aula (cuaderno, libro, pizarra, voz: cada acción mantiene su sujeto y verbo). Filtro de cierre macro complementario al filtro pre-recorte ya existente. Si la frase compactada admite dos lecturas o funde acciones, deshacer la compactación. Caso detectado en U4 Destrezas. |
 | 2026-06-14 | §13 — Patrón 3 ampliado a formato plural con segunda ocurrencia U4 Vocabulario; Patrones 6 y 7 añadidos como observaciones sin codificar (*repetición monotemática de conector* y *variables algebraicas X/Y en cuerpo docente*). Revisar al cerrar U5 antes de decidir codificación. |
 | 2026-06-14 | §11.5 nueva — techos de longitud por sección (sin suelo): Vocabulario ≤1500, Gramática ≤1600, Comunicación ≤1450, Destrezas ≤1400, Evaluación ≤950, Cultura ≤800. Si la derivación inicial supera el techo, aplicar §11.4; si sigue por encima tras compactar, consultar al editor. Sin suelo (la economía pedagógica puede sostener secciones más cortas; caso U3 Cultura en 529 palabras). Bandas observadas del corpus U1-U4 incluidas como referencia analítica, no gate normativo. Codifica la Cuestión A del Informe consolidado U4 tras medición empírica (`wc -w unidades/U[1-4]/final/*.md`). |
+
+| 2026-08-17 | §2.1 — subsección nueva *Cultura — bloque único sin objetivo propio*: Cultura ocupa una sola página y se resuelve en un solo bloque, cuyo header va seguido directamente del primer rótulo, sin *Objetivo* de bloque; el objetivo general de la sección ya lo cubre y repetirlo sería duplicado literal. Codificación desde patrón unánime del corpus: las siete secciones de Cultura cerradas (U1C-U7C) tienen 1 header y 1 objetivo, frente a N headers y N+1 objetivos en las secciones de varios bloques. Cierra la brecha que `/check-final` revelaba al marcar ⚠ en el ítem 1 de toda Cultura por una excepción practicada pero no escrita — mismo caso que motivó *Evaluación — estructura específica* el 2026-06-05. Checklist del skill sincronizado en el mismo lote. |
 
 Este manual es **vivo**. Las reglas se ajustan a medida que la capa `final/` crezca y aparezcan casos límite no contemplados. Cualquier modificación se documenta arriba.
 

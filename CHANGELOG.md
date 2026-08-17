@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.93 — 2026-08-17] — §2.1: la excepción de Cultura, codificada
+
+Subsección nueva *Cultura — bloque único sin objetivo propio* en `docs/manual-estilo-final.md` §2.1: Cultura ocupa una sola página, se resuelve en un solo bloque y su header va seguido directamente del primer rótulo. Codifica un patrón unánime del corpus (U1C-U7C: 1 header y 1 objetivo, frente a N y N+1 en las secciones de varios bloques) que `/check-final` marcaba como ⚠ por no estar escrito. Checklist del skill sincronizado en el mismo lote. Commit propio de manual (§11.3), sin contenido editorial.
+
 ## [v12.92 — 2026-08-17] — Cierre de los avisos de `/check-final` sobre U7 Cultura y Evaluación
 
 Auditoría de las dos secciones: 0 bloqueadores. Resueltos los cuatro avisos accionables — desespecificadas en Cultura la serie de preguntas-modelo y el mapeo cerrado pregunta→léxico (§10.1, mismo criterio que el autor aplicó en Evaluación), y en Evaluación sustituidas la predicción de error del ejercicio 1 y la enumeración sin criterio del ejercicio 2. Cultura 736 palabras, Evaluación 942. Registro §1 de repo B alineado. Detalle en la bitácora de REVIEW.
