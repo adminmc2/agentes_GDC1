@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.96 — 2026-08-18] — U7: fotogramas de los dos vídeos depositados
+
+`video1.png` (conversación telefónica de Pablo y Jorge — vídeo de sección de Comunicación) y `video2.png` (desayuno de Marcos con su padre — vídeo final *La vida de Marcos*) depositados en `recursos/` e incorporados a la tabla del diseñador de `U7-itinerarios.md`: se resuelve el «pendiente de depósito» de Comunicación y el fotograma sustituye a la cabecera del PDF como imagen de maqueta del vídeo final. El `video2.png` de U5 queda fuera hasta aclarar a qué corresponde.
+
 ## [v12.95 — 2026-08-18] — U7: itinerario revisado con el autor
 
 Segunda pasada sobre `U7-itinerarios.md` con decisiones del autor: un [CASA] por sección (V6, G3, C7, D3), retoques de redacción en títulos y descripciones, píldoras con su nombre real y Caja 2 en `1 {comunicación} + 1 {expresión oral}`. Criterio nuevo codificado en `docs/estilo-itinerarios.md` §4: la expresión oral se cuenta aparte en Caja 2 (deroga el cruce IO↔EO de la plantilla congelada). La Actividad global 2 (cuaderno pp. 49-55) queda para el itinerario de U9, precedente de la global 1 en U5.

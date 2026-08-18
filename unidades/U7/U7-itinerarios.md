@@ -131,7 +131,7 @@ Origen físico de cada material complementario para extraer portadas o miniatura
 
 | # | Material | Archivo fuente | Páginas (extensión) | Imagen para maqueta (página exacta) |
 |---|---|---|---|---|
-| 1 | Vídeo Blinklearning | pendiente de depósito (sin fotograma en `recursos/`) | — | fotograma del diálogo del sábado de Pablo y Jorge (por depositar) |
+| 1 | Vídeo Blinklearning | `video1.png` (fotograma depositado; pendiente: verificación de título y enlace) | — | fotograma de la conversación telefónica de Pablo y Jorge a pantalla partida (`video1.png`) |
 | 2 | Power Point Unidad 7 *Hablar de horarios* | `Compa4ed1_UNIDAD7.pptx` | 8 diapositivas | diapositiva 5 (el reloj con las fracciones de la hora, *y cinco… menos cuarto*) |
 | 3 | Actividades Extra 7 *Entrevistas* | `Compa4ed1ActividadesextraU7.pdf` | pp. 9-10 | p. 10 (transcripción de la entrevista a Juan con los once huecos) |
 
@@ -146,4 +146,4 @@ Origen físico de cada material complementario para extraer portadas o miniatura
 | # | Material | Archivo fuente | Páginas (extensión) | Imagen para maqueta (página exacta) |
 |---|---|---|---|---|
 | 1 | Evaluación 7 | `Compa4ed1EvaluacionU7.pdf` | pp. 1-2 | p. 1 (cabecera con el bloque *Vocabulario* y las seis fotos de animales) |
-| 2 | Vídeo final *La vida de Marcos* con su ficha | `Compa4ed1_FichaVideosU6-7.pdf` | 1 p. (cubre las unidades 6 y 7) | p. 1 (cabecera con las ocho imágenes de la vida de Marcos) |
+| 2 | Vídeo final *La vida de Marcos* con su ficha | `Compa4ed1_FichaVideosU6-7.pdf` + `video2.png` (fotograma depositado) | 1 p. (cubre las unidades 6 y 7) | fotograma del desayuno de Marcos con su padre (`video2.png`) |
