@@ -26,6 +26,10 @@ Los bloques `[CASA]` mantienen el formato de la plantilla: una sola línea donde
 
 La descripción `[CLASE]` cabe en **una línea de la maqueta InDesign**. Referencia orientativa de la plantilla: ~100-130 caracteres; el árbitro real es el desborde en maqueta, y ante desborde se recorta lo accesorio, nunca el ancla.
 
+## 4. Caja 2: la expresión oral se cuenta aparte
+
+**Criterio (autor, 2026-08-18, sesión U7):** en la estación de servicio, las tarjetas de estrategia de **expresión oral** llevan su propia categoría `{expresión oral}` — no se funden con `{comunicación}`, que queda para la interacción oral. Deroga el cruce IO ↔ EO de la plantilla congelada de repo B, que mandaba contarlas juntas en `{comunicación}`. Primer caso: U7, *Presenta en tres pasos* → `1 {comunicación} + 1 {expresión oral}`.
+
 ---
 
-*Registro: criterio formulado por el autor durante la redacción de U6-itinerarios (v12.80). Si surge un criterio nuevo de itinerarios, se añade aquí (fuente única), no en CLAUDE.md ni en el manual de `final/`.*
+*Registro: criterios §1-§3 formulados por el autor durante la redacción de U6-itinerarios (v12.80); §4 durante la de U7 (v12.95). Si surge un criterio nuevo de itinerarios, se añade aquí (fuente única), no en CLAUDE.md ni en el manual de `final/`.*

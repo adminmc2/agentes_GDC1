@@ -4,50 +4,47 @@
 
 ### SECCIÓN VOCABULARIO {color: salmón}
 
-- **[CLASE] EJERCICIO 1** Los doce meses del año
-  Orden de los doce meses con sus calendarios y comprobación y repetición a coro con la pista 72.
-- **[CASA] EJERCICIO 2** Escritura de los meses de cada estación en el propio país siguiendo la frase modelo
+- **[CLASE] EJERCICIOS 1-2** Los meses del año y las estaciones
+  Orden de los doce meses con la pista 72 y escritura de los meses de cada estación en el propio país.
 - **[CLASE] EJERCICIOS 3-4** Cumpleaños y fechas señaladas
   El calendario de cumpleaños de la clase y la escucha de las fechas de las fiestas con la pista 73 y la tarjeta de escucha.
-- **[CLASE] EJERCICIO 5** Los once animales
+- **[CLASE] EJERCICIO 5** Presentación del vocabulario de los animales
   Escucha y repetición de los once animales de las fotos con la pista 74.
 - **[CASA] EJERCICIO 6** Clasificación de los once animales en domésticos y salvajes en la tabla
 - **[CLASE] EJERCICIO 7** Los animales de la granja
-  Identificación de los cuatro animales de la granja con la pista 75 y juego de adivinanzas con las Tarjetas de Vocabulario - animales.
+  Identificación de los cuatro animales de la granja con la pista 75 y juego con las Tarjetas de Vocabulario - animales.
 - **[CLASE] EJERCICIO 8** El primer día del potro Rayo
   Lectura del texto con la pista 76, las seis preguntas del test y su corrección en plenaria.
 
 ### SECCIÓN GRAMÁTICA {color: azul}
 
-- **[CLASE] EJERCICIO 1** El presente de los verbos reflexivos
-  El cuadro de los verbos reflexivos de la página 74, los diez huecos de práctica guiada y el juego de adivinar el personaje.
-- **[CASA] EJERCICIOS 2-3** Elección del verbo de cada frase con el recuadro y escritura de la frase de cada foto siguiendo el ejemplo
-- **[CLASE] EJERCICIOS 4-5** Las preposiciones *a*, *en*, *de* y *por* {píldora formativa 7.1 · gramática · las preposiciones del día}
+- **[CLASE] EJERCICIOS 1-2** El presente de los verbos reflexivos
+  El cuadro de los verbos reflexivos de la página 74, práctica guiada en los dos ejercicios y el juego de adivinar el personaje.
+- **[CASA] EJERCICIO 3** Descripción de lo que hace la persona de cada foto siguiendo el ejemplo del libro
+- **[CLASE] EJERCICIOS 4-5** Las preposiciones *a*, *en*, *de* y *por* {píldora formativa 7.1 · gramática · el mapa del día de Lucía}
   El mapa del día de Lucía en la pizarra, el cuadro de usos de la página 75 y práctica en los dos ejercicios.
 - **[CLASE] EJERCICIOS 6-7** Los verbos *salir* y *volver*
   El cuadro de *salir* y *volver* de la página 75, los infinitivos de cada forma y la construcción de las siete frases.
-- **[CLASE] EJERCICIO 8** Los signos de puntuación
-  Reconocimiento de los signos de puntuación y de su nombre en plenaria.
-- **[CASA] EJERCICIO 9** Colocación de los signos de puntuación que faltan en las seis frases
+- **[CLASE] EJERCICIOS 8-9** Los signos de puntuación
+  Reconocimiento de los signos y de su nombre en plenaria y colocación de los que faltan en las seis frases.
 
 ### SECCIÓN COMUNICACIÓN {color: verde}
 
-- **[CLASE] EJERCICIO 1** Vídeo del sábado de Pablo y Jorge
-  Visionado del vídeo con la pista 77, completado de los ocho huecos del diálogo y lectura repartida en plenaria.
-- **[CASA] EJERCICIOS 2-3** Verdadero o falso justificando las falsas y orden de las frases con autocorrección en el diálogo
+- **[CLASE] EJERCICIOS 1-3** Vídeo del sábado de Pablo y Jorge
+  Visionado del vídeo con la pista 77, completado del diálogo y comprensión con verdadero o falso y frases por ordenar.
 - **[CLASE] EJERCICIOS 4-6** La rutina por horas con la tarjeta *Preguntar y decir cómo es tu día*
   Preguntas por turnos con los verbos del recuadro, entrevista a alguien del centro y las siete viñetas en parejas.
 - **[CASA] EJERCICIO 7** Texto breve sobre la rutina de la pareja empezando por la fórmula del libro
-- **[CLASE] EJERCICIOS 8-10** El día de Enrique en el colegio interno
+- **[CLASE] EJERCICIOS 8-10** La rutina de Enrique y el chat de los domingos
   Horarios de Enrique con la pista 78, contraste con las predicciones de la clase y chat sobre los domingos en parejas.
 - **[CLASE] EJERCICIOS 11-13** La entonación de preguntas y exclamaciones
-  Las curvas de la pregunta y la exclamación con la pista 79 y los signos según la entonación con la pista 80.
+  Reconocimiento y repetición de la entonación con la pista 79 y colocación de los signos según lo que se oye con la pista 80.
 
 ### SECCIÓN DESTREZAS {color: amarillo}
 
-- **[CLASE] EJERCICIO 1** El día de Pedro, cuidador del zoo de Madrid {píldora formativa 7.2 · destreza · lectura del texto descriptivo}
-  Lectura del texto por sus marcadores temporales, las cuatro preguntas en plenaria y la línea del día en la pizarra.
-- **[CASA] EJERCICIOS 2-3** Clasificación de los animales del texto en la tabla y completado de las cinco frases releyendo
+- **[CLASE] EJERCICIOS 1-2** El día de Pedro, cuidador del zoo de Madrid {píldora formativa 7.2 · destreza · leer un texto descriptivo}
+  Lectura del texto por sus marcadores temporales, la línea del día en la pizarra y la clasificación de los animales del texto.
+- **[CASA] EJERCICIO 3** Completado de las cinco frases sobre el día de Pedro releyendo el texto
 - **[CLASE] EJERCICIO 4** Reto de memoria sobre el día de Pedro
   Reconstrucción de memoria de la línea del día y completado de las cuatro frases con las palabras subrayadas.
 - **[CLASE] EJERCICIO 5** La historia de Budi el orangután
@@ -74,7 +71,8 @@ Imprime estas tarjetas al principio de la unidad y podrán usarlas de forma indi
 - 29 {animales}
 
 **CAJA 2—ESTRATEGIAS** — 2 tarjetas
-- 2 {comunicación}
+- 1 {comunicación}
+- 1 {expresión oral}
 
 ### Materiales complementarios
 

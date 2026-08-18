@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.95 — 2026-08-18] — U7: itinerario revisado con el autor
+
+Segunda pasada sobre `U7-itinerarios.md` con decisiones del autor: un [CASA] por sección (V6, G3, C7, D3), retoques de redacción en títulos y descripciones, píldoras con su nombre real y Caja 2 en `1 {comunicación} + 1 {expresión oral}`. Criterio nuevo codificado en `docs/estilo-itinerarios.md` §4: la expresión oral se cuenta aparte en Caja 2 (deroga el cruce IO↔EO de la plantilla congelada). La Actividad global 2 (cuaderno pp. 49-55) queda para el itinerario de U9, precedente de la global 1 en U5.
+
 ## [v12.94 — 2026-08-17] — U7: itinerario redactado
 
 `unidades/U7/U7-itinerarios.md` nuevo: básico con 18 bloques [CLASE] y 7 [CASA] (10 ejercicios, reparto revisado con el autor), las 11 pistas 72-82 asignadas y las píldoras 7.1/7.2 marcadas; extendido con estación de servicio (29 {animales} + 2 {comunicación}) y los materiales SGEL de `recursos/` mapeados con página exacta para el diseñador. Dos vídeos distinguidos: el de sección de Comunicación (fijo, pendiente de depósito) y el vídeo final *La vida de Marcos* (U6-7) en Cultura y Evaluación. Materiales depositados en el commit y newline final añadido a `tarjetas/animales.csv` (cierra el falso recuento 28/29).
