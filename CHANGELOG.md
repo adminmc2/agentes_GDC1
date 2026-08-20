@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.97 — 2026-08-20] — U8: Vocabulario derivado a `final/`
+
+Primera sección de U8 en `final/` (`unidades/U8/final/vocabulario.md`, 910 palabras, 0 bloqueadores en /check-final): derivación de la propuesta con rediseño en sesión con el autor de toda la capa de tarjetas — adivinanza por imagen con intercambio entre parejas (ejercicio 1) y *Simón dice* opcional (ejercicio 2, `dinamicas-101` #54) sustituyen a cognados, combinatoria de tres mazos y especialistas, inviables por depender del número de estudiantes; insignia 8.1 renombrada **¡DE PIES A CABEZA!**. Registro de repo B actualizado (§1 + tablas de insignias); newline final añadido a `partes-del-cuerpo.csv` (precedente v12.94).
+
 ## [v12.96 — 2026-08-18] — U7: fotogramas de los dos vídeos depositados
 
 `video1.png` (conversación telefónica de Pablo y Jorge — vídeo de sección de Comunicación) y `video2.png` (desayuno de Marcos con su padre — vídeo final *La vida de Marcos*) depositados en `recursos/` e incorporados a la tabla del diseñador de `U7-itinerarios.md`: se resuelve el «pendiente de depósito» de Comunicación y el fotograma sustituye a la cabecera del PDF como imagen de maqueta del vídeo final. El `video2.png` de U5 queda fuera hasta aclarar a qué corresponde.
