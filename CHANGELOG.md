@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.98 — 2026-08-21] — U8: Gramática derivada a `final/`
+
+Segunda sección de U8 en `final/` (`unidades/U8/final/gramatica.md`, 1410 palabras, 0 bloqueadores en /check-final): los 8 ejercicios de las páginas 84-85 en cuatro bloques, con los tres cuadros integrados y sin pistas de audio (la sección no tiene). Objetivo general reformulado con el autor tras descartar el de la propuesta (*construir frases con gustar y doler*: `gustar` es reciclaje de U4, no contenido de U8) — queda **conjugar doler con sus pronombres átonos y graduar la frase con los adverbios de cantidad**, con el objetivo del tercer bloque alineado (*graduar con muy los adjetivos y adverbios, y con mucho/-a/-os/-as los nombres y verbos*). Píldora 8.1 titulada **Muy y mucho** por decisión del autor; las tres alternativas de autoría siguen en la propuesta. Etiqueta *de objeto indirecto* fuera de los objetivos y pasada de redacción sobre toda la sección.
+
 ## [v12.97 — 2026-08-20] — U8: Vocabulario derivado a `final/`
 
 Primera sección de U8 en `final/` (`unidades/U8/final/vocabulario.md`, 910 palabras, 0 bloqueadores en /check-final): derivación de la propuesta con rediseño en sesión con el autor de toda la capa de tarjetas — adivinanza por imagen con intercambio entre parejas (ejercicio 1) y *Simón dice* opcional (ejercicio 2, `dinamicas-101` #54) sustituyen a cognados, combinatoria de tres mazos y especialistas, inviables por depender del número de estudiantes; insignia 8.1 renombrada **¡DE PIES A CABEZA!**. Registro de repo B actualizado (§1 + tablas de insignias); newline final añadido a `partes-del-cuerpo.csv` (precedente v12.94).
