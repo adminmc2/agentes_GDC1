@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.99 — 2026-08-21] — U8: Comunicación derivada a `final/`
+
+Tercera sección de U8 en `final/` (`unidades/U8/final/comunicacion.md`, 1269 palabras, 0 bloqueadores en /check-final): los 12 ejercicios de las páginas 86-87 en cuatro bloques, las cuatro pistas (86-89) en su ejercicio exacto, línea canónica de vídeo (pista 86 si no hay proyector) y tarjeta de estrategia *Describir a una persona* (interacción oral). Objetivo general fijado por el autor (*Describir a una persona conocida combinando su físico y su carácter*); bloque 1 reformulado a objetivo de procesamiento (*Identificar en un diálogo los datos que describen a una persona*) tras descartar *representar la adivinanza* por nombrar actividad y no aprendizaje. El *duelo de opuestos* de la propuesta cae por aritmética de reparto y entra el **emparejamiento de contrarios con tarjetas** (diseño del autor: el ejercicio se resuelve solo; la comprobación es la actividad). Ficha nueva **8.4 — Tarjetas de retratos** (`unidades/U8/recursos/ficha-8.4-tarjetas-retratos.md`) para la dinámica del vídeo; insignias de Destrezas y Cultura renumeradas a 8.5/8.6 en el registro de repo B.
+
 ## [v12.98 — 2026-08-21] — U8: Gramática derivada a `final/`
 
 Segunda sección de U8 en `final/` (`unidades/U8/final/gramatica.md`, 1410 palabras, 0 bloqueadores en /check-final): los 8 ejercicios de las páginas 84-85 en cuatro bloques, con los tres cuadros integrados y sin pistas de audio (la sección no tiene). Objetivo general reformulado con el autor tras descartar el de la propuesta (*construir frases con gustar y doler*: `gustar` es reciclaje de U4, no contenido de U8) — queda **conjugar doler con sus pronombres átonos y graduar la frase con los adverbios de cantidad**, con el objetivo del tercer bloque alineado (*graduar con muy los adjetivos y adverbios, y con mucho/-a/-os/-as los nombres y verbos*). Píldora 8.1 titulada **Muy y mucho** por decisión del autor; las tres alternativas de autoría siguen en la propuesta. Etiqueta *de objeto indirecto* fuera de los objetivos y pasada de redacción sobre toda la sección.
