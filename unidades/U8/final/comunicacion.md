@@ -39,7 +39,7 @@ Describir a personas del aula para que la pareja las reconozca.
 
 PRESENTE LA FÓRMULA DESCRIPTIVA Y LAS TARJETAS
 
-Dirija la atención al **ejercicio 4**. Pida que cada estudiante lo resuelva solo, en silencio. Para comprobarlo, reparta entre la clase las tarjetas de los adjetivos del ejercicio: quien recibe una se levanta y busca a la persona que lleva el contrario de su adjetivo. Cuando todas las parejas de contrarios están formadas, cada una dice sus dos adjetivos en voz alta y el resto comprueba su solución desde su sitio.
+Dirija la atención al **ejercicio 4**. Pida que cada estudiante lo resuelva solo, en silencio. Para comprobarlo, mezcle las Tarjetas de Vocabulario - características físicas con las Tarjetas de Vocabulario - carácter y personalidad y repártalas todas; quien reciba dos juega con las dos. Cada estudiante se levanta y busca a la persona que lleva el contrario de su palabra. Las parejas formadas dicen sus dos adjetivos en voz alta y la clase comprueba su solución del ejercicio; algunos adjetivos de los mazos no tienen contrario (*fuerte*, *castaño*, *inteligente*…): quien los lleva dice su palabra al final y la clase lo confirma. Al terminar, las tarjetas vuelven a la caja del aula.
 
 Reparta entonces la tarjeta de estrategia *Describir a una persona* y presente la cara de las fórmulas: frases para preguntar quién es, para describir el aspecto general con *ser*, las partes con *tener*, lo que se lleva con *llevar* y el carácter graduado con la escala del cuadro *Muy / Bastante / Un poco* de la **página 87**, y para reaccionar pidiendo más; bajo cada frase, su banco de palabras.
 

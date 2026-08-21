@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.100 — 2026-08-21] — U8 Comunicación: comprobación del ejercicio 4 rediseñada por el autor
+
+Corrección sobre v12.99: cada estudiante resuelve el **ejercicio 4** solo y la comprobación es el emparejamiento de contrarios — se mezclan los mazos *Características físicas* y *Carácter y personalidad* completos y se reparten todas las tarjetas (quien recibe dos juega las dos); las parejas formadas comprueban el ejercicio y los adjetivos sin contrario se constatan al final. Verificado contra los CSV: las 16 palabras del ejercicio están en las tarjetas (12 físicas + 4 de carácter). 1310 palabras. Registro de repo B alineado (`unidades/U8/final/comunicacion.md`).
+
 ## [v12.99 — 2026-08-21] — U8: Comunicación derivada a `final/`
 
 Tercera sección de U8 en `final/` (`unidades/U8/final/comunicacion.md`, 1269 palabras, 0 bloqueadores en /check-final): los 12 ejercicios de las páginas 86-87 en cuatro bloques, las cuatro pistas (86-89) en su ejercicio exacto, línea canónica de vídeo (pista 86 si no hay proyector) y tarjeta de estrategia *Describir a una persona* (interacción oral). Objetivo general fijado por el autor (*Describir a una persona conocida combinando su físico y su carácter*); bloque 1 reformulado a objetivo de procesamiento (*Identificar en un diálogo los datos que describen a una persona*) tras descartar *representar la adivinanza* por nombrar actividad y no aprendizaje. El *duelo de opuestos* de la propuesta cae por aritmética de reparto y entra el **emparejamiento de contrarios con tarjetas** (diseño del autor: el ejercicio se resuelve solo; la comprobación es la actividad). Ficha nueva **8.4 — Tarjetas de retratos** (`unidades/U8/recursos/ficha-8.4-tarjetas-retratos.md`) para la dinámica del vídeo; insignias de Destrezas y Cultura renumeradas a 8.5/8.6 en el registro de repo B.
