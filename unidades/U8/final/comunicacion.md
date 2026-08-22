@@ -54,11 +54,11 @@ Organice la rotación: cada estudiante lee sus dos descripciones a su pareja, qu
 ### Ejercicios 7-8
 
 Objetivo
-Retratar a un familiar de la pareja a partir de sus respuestas.
+Describir a un familiar de otra persona.
 
 PREPARE LA ESCUCHA Y LA ENTREVISTA FAMILIAR
 
-Dirija la atención al **ejercicio 7** y a la tabla vacía. Presente a David, un chico que habla de sí mismo y de su familia, y pida a cada pareja que proponga qué color de pelo y de ojos puede tener cada miembro; recoja dos o tres propuestas en la pizarra. Ponga la **pista 87** dos veces: la clase completa la tabla con los cuatro retratos. Compare con la pizarra: qué propuesta acertó, qué miembro sorprendió.
+Dirija la atención al **ejercicio 7** y a la tabla: tres datos por persona — la edad, el pelo y los ojos. Pida que lean las casillas antes de escuchar, para saber qué datos buscar. Ponga la **pista 87**: primera escucha completando lo que capten; segunda para completar y comprobar el resto. Cotejo en parejas; reponga la pista solo sobre las casillas con desacuerdo.
 
 Encadene con el **ejercicio 8**. En parejas, una persona pregunta con las cinco preguntas del libro por uno o dos familiares que la otra elige; esta contesta con sus datos reales mezclando físico y carácter, con la cara del diálogo modelo de la tarjeta de estrategia *Describir a una persona* a la vista. A mitad del tiempo intercambian los papeles.
 

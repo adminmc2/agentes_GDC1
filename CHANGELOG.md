@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.101 — 2026-08-22] — U8 Comunicación: objetivo del bloque 3 y escucha del ejercicio 7 corregidos por el autor
+
+Dos correcciones sobre v12.100: el objetivo del bloque 3 pasa a **Describir a un familiar de otra persona** (*retratar… a partir de sus respuestas* nombraba actividad con coletilla de medios); la explotación del **ejercicio 7** sustituye la predicción de colores sin contexto por la tabla como guía de escucha — leer las casillas antes de oír, dos escuchas (captar → completar y comprobar), cotejo en parejas y reposición solo sobre desacuerdos. 1293 palabras (`unidades/U8/final/comunicacion.md`).
+
 ## [v12.100 — 2026-08-21] — U8 Comunicación: comprobación del ejercicio 4 rediseñada por el autor
 
 Corrección sobre v12.99: cada estudiante resuelve el **ejercicio 4** solo y la comprobación es el emparejamiento de contrarios — se mezclan los mazos *Características físicas* y *Carácter y personalidad* completos y se reparten todas las tarjetas (quien recibe dos juega las dos); las parejas formadas comprueban el ejercicio y los adjetivos sin contrario se constatan al final. Verificado contra los CSV: las 16 palabras del ejercicio están en las tarjetas (12 físicas + 4 de carácter). 1310 palabras. Registro de repo B alineado (`unidades/U8/final/comunicacion.md`).
