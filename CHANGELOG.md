@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.103 — 2026-08-23] — U8: Cultura derivada a `final/`
+
+Quinta y última sección lingüística de U8 en la capa final (748 palabras): dos ejercicios de la página 90 en bloque único, ficha 8.6 e insignia renombrada **¡MENUDO PLANAZO!** (cae *azul* por catalogar el elemento vehículo). Decisiones del autor: objetivo general **Contrastar la semana azul como modelo de viaje escolar con la experiencia del propio centro**, **objetivo de bloque propio** (**Formular un plan sencillo de viaje escolar**) — contradice §2.1 del manual, actualización de la regla y retro U1C-U7C **pendientes** — y rótulo **COORDINE LA COMPRENSIÓN DETALLADA DEL TEXTO** en lugar del de la propuesta. Registro §4/§4bis/§6 de repo B alineado (`unidades/U8/final/cultura.md`).
+
 ## [v12.102 — 2026-08-23] — U8: Destrezas derivada a `final/`
 
 Cuarta sección de U8 en la capa final (1397 palabras): 9 ejercicios de las páginas 88-89 en tres bloques, **pista 90** en el ejercicio 6, tarjeta nueva de **mediación oral *Cuenta cómo es*** (primera del corpus), píldora 8.2 renombrada **Escuchar la descripción de una persona** y ficha 8.5. Las **parejas espejo con cambio de pareja** sustituyen al trío mediador de la propuesta; los cuatro objetivos re-derivados con el autor. Registro §1/§3 de repo B alineado (`unidades/U8/final/destrezas.md`).
