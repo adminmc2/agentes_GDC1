@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.109 — 2026-08-24] — U5: `video2.png` commiteado como depósito pendiente de identificar
+
+Fotograma de un chico guardando la mochila en su habitación, depositado en `unidades/U5/recursos/` desde v12.96 sin identificar (la fila de vídeo de U5 ya está cubierta por `videou5.png`). Entra al repo como material depositado; identificación y fila del itinerario pendientes de aclarar con el autor.
+
 ## [v12.108 — 2026-08-23] — U8: fotograma del vídeo de Comunicación depositado
 
 `vid8.png` (los dos amigos conversando en el patio del instituto) depositado en `recursos/` e incorporado a la tabla del diseñador de `U8-itinerarios.md` con la fórmula U6/U7: se resuelve el «pendiente de depósito» del fotograma; título y enlace del vídeo siguen por verificar (la nota *Buscar Vídeo* de `final/comunicacion.md` sigue viva).
