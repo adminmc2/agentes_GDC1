@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.102 — 2026-08-23] — U8: Destrezas derivada a `final/`
+
+Cuarta sección de U8 en la capa final (1397 palabras): 9 ejercicios de las páginas 88-89 en tres bloques, **pista 90** en el ejercicio 6, tarjeta nueva de **mediación oral *Cuenta cómo es*** (primera del corpus), píldora 8.2 renombrada **Escuchar la descripción de una persona** y ficha 8.5. Las **parejas espejo con cambio de pareja** sustituyen al trío mediador de la propuesta; los cuatro objetivos re-derivados con el autor. Registro §1/§3 de repo B alineado (`unidades/U8/final/destrezas.md`).
+
 ## [v12.101 — 2026-08-22] — U8 Comunicación: objetivo del bloque 3 y escucha del ejercicio 7 corregidos por el autor
 
 Dos correcciones sobre v12.100: el objetivo del bloque 3 pasa a **Describir a un familiar de otra persona** (*retratar… a partir de sus respuestas* nombraba actividad con coletilla de medios); la explotación del **ejercicio 7** sustituye la predicción de colores sin contexto por la tabla como guía de escucha — leer las casillas antes de oír, dos escuchas (captar → completar y comprobar), cotejo en parejas y reposición solo sobre desacuerdos. 1293 palabras (`unidades/U8/final/comunicacion.md`).
