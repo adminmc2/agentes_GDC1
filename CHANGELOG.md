@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.105 — 2026-08-23] — U8: Evaluación derivada a `final/` — U8 completa
+
+Sexta y última sección de U8 en la capa final (943 palabras): siete ejercicios de la página 91 en dos versiones canónicas A/B, objetivo Dirección B (*Consolidar los contenidos trabajados en la unidad*). Caen las **pizarras individuales** (→ escritura en la pizarra del aula por personas voluntarias), la **tarjeta-abanico** (Evaluación no añade material → clave proyectada) y el recap de insignias; rótulo **REVISIÓN FOCALIZADA** sustituye al anglicismo *FEEDBACK FOCALIZADO* (retro U2-U7 pendiente); conexión a la **unidad 9** verificada (ropa + primeros indefinidos de *ir* y *estar*). Auditoría /check-final: **13 ✅ / 2 ⚠ / 0 ❌** (`unidades/U8/final/evaluacion.md`).
+
 ## [v12.104 — 2026-08-23] — Manual §2.1 Cultura invertida, /check-final sincronizado y ajuste de U8C
 
 La regla §2.1 *Cultura — bloque único sin objetivo propio* se **invierte** a *Cultura — bloque único con objetivo propio en grano distinto* (decisión del autor: un objetivo específico igual o casi igual al general no sirve; retro-derivación de U1C-U7C **pendiente**), con el checklist de `/check-final` sincronizado en el mismo lote. Auditoría de U8C: **14 ✅ / 1 ⚠ / 0 ❌** — las dos candidatas §10.6 (síntesis-ancla en pizarra) se mantienen por decisión del autor y la entrega alinea *hecho hipótesis* con la obtención (`docs/manual-estilo-final.md`, `.claude/skills/check-final/SKILL.md`, `unidades/U8/final/cultura.md`).
