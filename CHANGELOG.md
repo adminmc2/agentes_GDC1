@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.106 — 2026-08-23] — U8: itinerario redactado
+
+`unidades/U8/U8-itinerarios.md` nuevo, derivado de los seis `final/` + inventario, patrón U7 y `docs/estilo-itinerarios.md`: básico con 15 bloques [CLASE] + 4 [CASA] (reparto acordado con el autor: V 3-4 en par, G 3, C 4, D 5; Cultura entera en aula), las 8 pistas 83-90 asignadas y las píldoras 8.1/8.2 marcadas con su nombre real. Estación de servicio verificada contra CSVs (Caja 1: 56 = 23+24+9; Caja 2: `1 {comunicación} + 1 {mediación}`, precedente U3); extendido con los materiales SGEL de `recursos/` mapeados con página exacta para el diseñador (*Twister* pp. 42-43 y *El mentiroso* pp. 44-45 del cuaderno; la Actividad global 2 queda en U9). Pendientes de depósito: fotograma del vídeo de Comunicación y PPTX de unidad (solo captura). Materiales depositados en el commit.
+
 ## [v12.105 — 2026-08-23] — U8: Evaluación derivada a `final/` — U8 completa
 
 Sexta y última sección de U8 en la capa final (943 palabras): siete ejercicios de la página 91 en dos versiones canónicas A/B, objetivo Dirección B (*Consolidar los contenidos trabajados en la unidad*). Caen las **pizarras individuales** (→ escritura en la pizarra del aula por personas voluntarias), la **tarjeta-abanico** (Evaluación no añade material → clave proyectada) y el recap de insignias; rótulo **REVISIÓN FOCALIZADA** sustituye al anglicismo *FEEDBACK FOCALIZADO* (retro U2-U7 pendiente); conexión a la **unidad 9** verificada (ropa + primeros indefinidos de *ir* y *estar*). Auditoría /check-final: **13 ✅ / 2 ⚠ / 0 ❌** (`unidades/U8/final/evaluacion.md`).
