@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.108 — 2026-08-23] — U8: fotograma del vídeo de Comunicación depositado
+
+`vid8.png` (los dos amigos conversando en el patio del instituto) depositado en `recursos/` e incorporado a la tabla del diseñador de `U8-itinerarios.md` con la fórmula U6/U7: se resuelve el «pendiente de depósito» del fotograma; título y enlace del vídeo siguen por verificar (la nota *Buscar Vídeo* de `final/comunicacion.md` sigue viva).
+
 ## [v12.107 — 2026-08-23] — U8 itinerario: tope de 4 materiales por sección en el extendido
 
 Regla nueva del autor: máximo 4 materiales complementarios por sección. Comunicación tenía 6 → *Actividades Extra 8 Descripciones* pasa a Vocabulario (Ejercicios 6-8; su objetivo impreso es el vocabulario del cuerpo y la descripción de personas) y *Gamificación El mentiroso* pasa a Destrezas (Ejercicio 7; misma mecánica que la adivinanza de famosos). Queda V 4 · G 2 · C 4 · D 3 · Cu+E 1; tablas del diseñador reordenadas (`unidades/U8/U8-itinerarios.md`).

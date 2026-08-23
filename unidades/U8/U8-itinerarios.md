@@ -127,7 +127,7 @@ Origen físico de cada material complementario para extraer portadas o miniatura
 
 | # | Material | Archivo fuente | Páginas (extensión) | Imagen para maqueta (página exacta) |
 |---|---|---|---|---|
-| 1 | Vídeo Blinklearning | pendiente de depósito (título y enlace por verificar; la nota *Buscar Vídeo* de `final/comunicacion.md` sigue viva) | — | pendiente de depósito del fotograma |
+| 1 | Vídeo Blinklearning | `vid8.png` (fotograma depositado; pendiente: verificación de título y enlace) | — | fotograma de los dos amigos conversando en el patio del instituto (`vid8.png`) |
 | 2 | BLINKLEARNING Juega y aprende — Ej. 3 | captura depositada: `ej3.png` | — | captura del Ej. 3 (los cuatro retratos con los nombres para unir, `ej3.png`) |
 | 3 | Power Point Unidad 8 | `ppoint8.png` (captura depositada; PPTX pendiente de depósito — título y n.º de diapositivas por verificar) | — | captura de la diapositiva de los contrarios *simpático / antipática* (`ppoint8.png`) |
 | 4 | Actividades Extra 8 *Mi personaje* | `Compa4ed1ActividadesextraU8.pdf` | pp. 7-8 | p. 8 (las dos viñetas modelo, Carmelo y María, con sus bocadillos) |
