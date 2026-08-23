@@ -76,6 +76,7 @@ Imprime estas tarjetas al principio de la unidad y podrán usarlas de forma indi
 
 - **BLINKLEARNING Juega y aprende** (Ej. 1-2) — 2 ejercicios interactivos: las partes del cuerpo emparejadas con su foto (1) y los verbos de cada parte del cuerpo (2)
 - **Actividades Extra 8** *Enredos* — Ejercicios 1-2 (20-30 min)
+- **Actividades Extra 8** *Descripciones* — Ejercicios 6-8 (20-30 min)
 - **Gamificación** *Twister* — Ejercicios 1-2 (20 min)
 
 #### Gramática {color: azul}
@@ -89,13 +90,12 @@ Imprime estas tarjetas al principio de la unidad y podrán usarlas de forma indi
 - **BLINKLEARNING Juega y aprende** (Ej. 3) — 1 ejercicio interactivo de escucha: cada descripción con su retrato y su nombre
 - **Power Point Unidad 8** — Ejercicio 4 (10-20 min)
 - **Actividades Extra 8** *Mi personaje* — Ejercicios 5-6 (25-35 min)
-- **Actividades Extra 8** *Descripciones* — Ejercicios 4-6 (20-30 min)
-- **Gamificación** *El mentiroso* — Ejercicios 4-6 (30 min)
 
 #### Destrezas {color: amarillo}
 
 - **BLINKLEARNING Juega y aprende** (Ej. 5) — 1 ejercicio interactivo: el crucigrama de los adjetivos de carácter
 - **Actividades Extra 8** *Adjetivos de carácter* — Ejercicios 1-2 (15-20 min)
+- **Gamificación** *El mentiroso* — Ejercicio 7 (30 min)
 
 #### Cultura y Evaluación {color: naranja}
 
@@ -113,7 +113,8 @@ Origen físico de cada material complementario para extraer portadas o miniatura
 |---|---|---|---|---|
 | 1 | BLINKLEARNING Juega y aprende — Ej. 1-2 | capturas depositadas: `ej1.png`, `ej2.png` | — | captura del Ej. 1 (las partes del cuerpo emparejadas con sus fotos, `ej1.png`) |
 | 2 | Actividades Extra 8 *Enredos* | `Compa4ed1ActividadesextraU8.pdf` | pp. 1-2 | p. 2 (ficha del estudiante con el ejemplo de las cinco instrucciones) |
-| 3 | Gamificación *Twister* | `Compa4ed1_Cuadernodejuegos.pdf` | pp. 42-43 del cuaderno | p. 43 (hoja recortable de los dos dodecaedros de colores y partes del cuerpo) |
+| 3 | Actividades Extra 8 *Descripciones* | `Compa4ed1ActividadesextraU8.pdf` | pp. 9-10 | p. 10 (fichas de Alumno A y B con las fotos de Alejandro, Blanca, Lola y Eduardo) |
+| 4 | Gamificación *Twister* | `Compa4ed1_Cuadernodejuegos.pdf` | pp. 42-43 del cuaderno | p. 43 (hoja recortable de los dos dodecaedros de colores y partes del cuerpo) |
 
 #### Gramática
 
@@ -130,8 +131,6 @@ Origen físico de cada material complementario para extraer portadas o miniatura
 | 2 | BLINKLEARNING Juega y aprende — Ej. 3 | captura depositada: `ej3.png` | — | captura del Ej. 3 (los cuatro retratos con los nombres para unir, `ej3.png`) |
 | 3 | Power Point Unidad 8 | `ppoint8.png` (captura depositada; PPTX pendiente de depósito — título y n.º de diapositivas por verificar) | — | captura de la diapositiva de los contrarios *simpático / antipática* (`ppoint8.png`) |
 | 4 | Actividades Extra 8 *Mi personaje* | `Compa4ed1ActividadesextraU8.pdf` | pp. 7-8 | p. 8 (las dos viñetas modelo, Carmelo y María, con sus bocadillos) |
-| 5 | Actividades Extra 8 *Descripciones* | `Compa4ed1ActividadesextraU8.pdf` | pp. 9-10 | p. 10 (fichas de Alumno A y B con las fotos de Alejandro, Blanca, Lola y Eduardo) |
-| 6 | Gamificación *El mentiroso* | `Compa4ed1_Cuadernodejuegos.pdf` | pp. 44-45 del cuaderno | p. 45 (hoja recortable con las nueve tarjetas de personas) |
 
 #### Destrezas
 
@@ -139,6 +138,7 @@ Origen físico de cada material complementario para extraer portadas o miniatura
 |---|---|---|---|---|
 | 1 | BLINKLEARNING Juega y aprende — Ej. 5 | captura depositada: `ej5.png` | — | captura del Ej. 5 (el crucigrama de los adjetivos de carácter, `ej5.png`) |
 | 2 | Actividades Extra 8 *Adjetivos de carácter* | `Compa4ed1ActividadesextraU8.pdf` | pp. 5-6 | p. 6 (ficha con los ocho anagramas y el mensaje oculto) |
+| 3 | Gamificación *El mentiroso* | `Compa4ed1_Cuadernodejuegos.pdf` | pp. 44-45 del cuaderno | p. 45 (hoja recortable con las nueve tarjetas de personas) |
 
 #### Cultura y Evaluación
 

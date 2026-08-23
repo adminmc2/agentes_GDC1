@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.107 — 2026-08-23] — U8 itinerario: tope de 4 materiales por sección en el extendido
+
+Regla nueva del autor: máximo 4 materiales complementarios por sección. Comunicación tenía 6 → *Actividades Extra 8 Descripciones* pasa a Vocabulario (Ejercicios 6-8; su objetivo impreso es el vocabulario del cuerpo y la descripción de personas) y *Gamificación El mentiroso* pasa a Destrezas (Ejercicio 7; misma mecánica que la adivinanza de famosos). Queda V 4 · G 2 · C 4 · D 3 · Cu+E 1; tablas del diseñador reordenadas (`unidades/U8/U8-itinerarios.md`).
+
 ## [v12.106 — 2026-08-23] — U8: itinerario redactado
 
 `unidades/U8/U8-itinerarios.md` nuevo, derivado de los seis `final/` + inventario, patrón U7 y `docs/estilo-itinerarios.md`: básico con 15 bloques [CLASE] + 4 [CASA] (reparto acordado con el autor: V 3-4 en par, G 3, C 4, D 5; Cultura entera en aula), las 8 pistas 83-90 asignadas y las píldoras 8.1/8.2 marcadas con su nombre real. Estación de servicio verificada contra CSVs (Caja 1: 56 = 23+24+9; Caja 2: `1 {comunicación} + 1 {mediación}`, precedente U3); extendido con los materiales SGEL de `recursos/` mapeados con página exacta para el diseñador (*Twister* pp. 42-43 y *El mentiroso* pp. 44-45 del cuaderno; la Actividad global 2 queda en U9). Pendientes de depósito: fotograma del vídeo de Comunicación y PPTX de unidad (solo captura). Materiales depositados en el commit.
