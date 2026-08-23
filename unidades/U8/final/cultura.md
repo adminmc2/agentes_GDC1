@@ -49,4 +49,4 @@ Como cierre opcional, proponga una microinvestigación para la próxima clase: c
 
 ENTREGA DE INSIGNIA
 
-Mencione que por haber levantado hipótesis sobre la foto, clasificado el léxico del texto en cuatro casillas, localizado las frases que deciden las afirmaciones y contrastado la semana azul con el viaje del propio centro para diseñar la semana ideal, reciben la insignia **¡MENUDO PLANAZO!**
+Mencione que por haber hecho hipótesis sobre la foto, clasificado el léxico del texto en cuatro casillas, localizado las frases que deciden las afirmaciones y contrastado la semana azul con el viaje del propio centro para diseñar la semana ideal, reciben la insignia **¡MENUDO PLANAZO!**

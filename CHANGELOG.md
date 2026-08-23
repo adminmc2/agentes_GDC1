@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.104 — 2026-08-23] — Manual §2.1 Cultura invertida, /check-final sincronizado y ajuste de U8C
+
+La regla §2.1 *Cultura — bloque único sin objetivo propio* se **invierte** a *Cultura — bloque único con objetivo propio en grano distinto* (decisión del autor: un objetivo específico igual o casi igual al general no sirve; retro-derivación de U1C-U7C **pendiente**), con el checklist de `/check-final` sincronizado en el mismo lote. Auditoría de U8C: **14 ✅ / 1 ⚠ / 0 ❌** — las dos candidatas §10.6 (síntesis-ancla en pizarra) se mantienen por decisión del autor y la entrega alinea *hecho hipótesis* con la obtención (`docs/manual-estilo-final.md`, `.claude/skills/check-final/SKILL.md`, `unidades/U8/final/cultura.md`).
+
 ## [v12.103 — 2026-08-23] — U8: Cultura derivada a `final/`
 
 Quinta y última sección lingüística de U8 en la capa final (748 palabras): dos ejercicios de la página 90 en bloque único, ficha 8.6 e insignia renombrada **¡MENUDO PLANAZO!** (cae *azul* por catalogar el elemento vehículo). Decisiones del autor: objetivo general **Contrastar la semana azul como modelo de viaje escolar con la experiencia del propio centro**, **objetivo de bloque propio** (**Formular un plan sencillo de viaje escolar**) — contradice §2.1 del manual, actualización de la regla y retro U1C-U7C **pendientes** — y rótulo **COORDINE LA COMPRENSIÓN DETALLADA DEL TEXTO** en lugar del de la propuesta. Registro §4/§4bis/§6 de repo B alineado (`unidades/U8/final/cultura.md`).
