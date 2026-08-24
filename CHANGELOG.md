@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.110 — 2026-08-24] — Estilo de itinerarios §5 codificado + fila del paseo-galería en repo B
+
+Criterio del autor (sesión U8, aplicado en v12.107) codificado como fuente única en `docs/estilo-itinerarios.md` §5: máximo 4 materiales complementarios por sección del extendido; el excedente se reubica por contenido, no se recorta. En repo B, aplicada la fila §1 pendiente desde v12.105: paseo-galería de los monstruos de U8 Evaluación (variante en mesas del Gallery Walk #61, precedente U4D; commit `16ec205` de repo B).
+
 ## [v12.109 — 2026-08-24] — U5: `video2.png` commiteado como depósito pendiente de identificar
 
 Fotograma de un chico guardando la mochila en su habitación, depositado en `unidades/U5/recursos/` desde v12.96 sin identificar (la fila de vídeo de U5 ya está cubierta por `videou5.png`). Entra al repo como material depositado; identificación y fila del itinerario pendientes de aclarar con el autor.

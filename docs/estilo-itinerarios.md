@@ -30,6 +30,10 @@ La descripción `[CLASE]` cabe en **una línea de la maqueta InDesign**. Referen
 
 **Criterio (autor, 2026-08-18, sesión U7):** en la estación de servicio, las tarjetas de estrategia de **expresión oral** llevan su propia categoría `{expresión oral}` — no se funden con `{comunicación}`, que queda para la interacción oral. Deroga el cruce IO ↔ EO de la plantilla congelada de repo B, que mandaba contarlas juntas en `{comunicación}`. Primer caso: U7, *Presenta en tres pasos* → `1 {comunicación} + 1 {expresión oral}`.
 
+## 5. Extendido: máximo 4 materiales complementarios por sección
+
+**Criterio (autor, 2026-08-23, sesión U8):** en los materiales complementarios del itinerario extendido, cada sección lista **como máximo 4 materiales**. Si una sección acumula más, el excedente se **reubica** en otra sección cuyo contenido también refuerce — decidido por el objetivo impreso del material o por su mecánica —, no se recorta sin más. Primer caso: U8, Comunicación con 6 → *Actividades Extra Descripciones* a Vocabulario (su objetivo impreso es el vocabulario del cuerpo y la descripción de personas) y la gamificación *El mentiroso* a Destrezas (misma mecánica que la adivinanza de famosos).
+
 ---
 
-*Registro: criterios §1-§3 formulados por el autor durante la redacción de U6-itinerarios (v12.80); §4 durante la de U7 (v12.95). Si surge un criterio nuevo de itinerarios, se añade aquí (fuente única), no en CLAUDE.md ni en el manual de `final/`.*
+*Registro: criterios §1-§3 formulados por el autor durante la redacción de U6-itinerarios (v12.80); §4 durante la de U7 (v12.95); §5 durante la de U8 (v12.107). Si surge un criterio nuevo de itinerarios, se añade aquí (fuente única), no en CLAUDE.md ni en el manual de `final/`.*
