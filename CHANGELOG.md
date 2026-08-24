@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.112 — 2026-08-24] — U9 Vocabulario derivada a `final/`
+
+Primera sección de U9 en `final/`: `unidades/U9/final/vocabulario.md` (1235 palabras, techo 1500). Objetivos de sección y de bloque mantenidos verbatim de la propuesta por decisión del autor (prevalece sobre §4.2/§1.3 de `formulacion-objetivos.md`); tarjetas *Ropa* por pareja con intercambio (cae el reparto contado); apertura con pregunta gancho; eliminaciones §10.6 con OK; sin marcas de tiempo. `/check-final` 13✅/1⚠/1❌, ambos resueltos en sesión. Registro de repo B actualizado (§1 dos filas capa final; la fila de §5 queda como está, decisión del autor). CSVs de la sección lanzados a canónica: `ropa.csv` ya estaba publicado (idéntico a repo B, cabecera + 19); publicado `unidades/U1/recursos/tarjetas/colores.csv` (set transversal ampliado a 11, copia idéntica del canónico de repo B, mapeo U01-propuesta → U1).
+
 ## [v12.111 — 2026-08-24] — Retro FEEDBACK→REVISIÓN FOCALIZADA descartada por el autor
 
 Decisión del autor: las unidades cerradas U2-U7 no se reabren — conservan el rótulo *FEEDBACK FOCALIZADO* en sus Evaluaciones (U3 no lo usa); *REVISIÓN FOCALIZADA* rige de U8 en adelante. Cierra el pendiente abierto en v12.105. Sin cambios en archivos editoriales; el manual no codifica este rótulo.
