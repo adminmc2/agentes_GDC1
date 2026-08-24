@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.113 — 2026-08-24] — U9 Vocabulario: dos retoques de claridad del autor
+
+Ejercicio 7: la recogida de los gustos de Laura vuelve a ser la acción principal, con las tres palabras del texto ancladas por contenido (*pero* la falda que sí tiene · *normalmente* las zapatillas blancas · *en cambio* los colores que no le gustan) — el párrafo derivado había quedado abstracto al retirar las citas. Ejercicio 8: «persona a persona» → «foto a foto» (se leía como corrección estudiante a estudiante; son cuatro recogidas, una por foto). 1247 palabras, bajo techo. Archivo: `unidades/U9/final/vocabulario.md`.
+
 ## [v12.112 — 2026-08-24] — U9 Vocabulario derivada a `final/`
 
 Primera sección de U9 en `final/`: `unidades/U9/final/vocabulario.md` (1235 palabras, techo 1500). Objetivos de sección y de bloque mantenidos verbatim de la propuesta por decisión del autor (prevalece sobre §4.2/§1.3 de `formulacion-objetivos.md`); tarjetas *Ropa* por pareja con intercambio (cae el reparto contado); apertura con pregunta gancho; eliminaciones §10.6 con OK; sin marcas de tiempo. `/check-final` 13✅/1⚠/1❌, ambos resueltos en sesión. Registro de repo B actualizado (§1 dos filas capa final; la fila de §5 queda como está, decisión del autor). CSVs de la sección lanzados a canónica: `ropa.csv` ya estaba publicado (idéntico a repo B, cabecera + 19); publicado `unidades/U1/recursos/tarjetas/colores.csv` (set transversal ampliado a 11, copia idéntica del canónico de repo B, mapeo U01-propuesta → U1).

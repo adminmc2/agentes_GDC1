@@ -65,7 +65,7 @@ ACOMPAÑE LA LECTURA DEL TEXTO DE LAURA
 
 Dirija la atención al **ejercicio 7**: la foto de Laura y su texto con tres huecos. Antes de leer, comente brevemente con la clase qué se ve en la foto: la ropa que lleva, la actitud. Cada estudiante lee el texto en silencio y completa los tres huecos con las palabras del recuadro.
 
-Ponga en común selectivamente los huecos con desacuerdo. Al cerrar, señale las tres palabras que articulan los gustos de Laura: *pero* introduce una excepción, *normalmente* marca el hábito y *en cambio* señala el contraste. Recoja verbalmente con la clase lo que le gusta a Laura, lo que no le gusta nada y lo que tiene.
+Ponga en común selectivamente los huecos con desacuerdo. Cierre con la recogida verbal de los gustos de Laura —lo que le gusta, lo que no le gusta nada y lo que tiene—, apoyándose en las tres palabras que ordenan su texto: *pero* introduce la excepción (la falda que sí tiene), *normalmente* marca el hábito (las zapatillas blancas) y *en cambio* opone los colores que no le gustan.
 
 DOSIFIQUE LA ESCUCHA POR PERSONAJE
 
@@ -73,7 +73,7 @@ Dirija la atención al **ejercicio 8**: las cuatro fotos numeradas. En pareja, l
 
 Reproduzca la **pista 93** deteniéndola tras la descripción de cada persona; en cada pausa, cada estudiante escribe individualmente el nombre que cree que corresponde a la foto. Tras la cuarta, una segunda escucha completa para resolver dudas.
 
-Corrija persona a persona en plenaria: recoja la respuesta de cada foto y pida a quien quiera justificarla con un dato concreto que oyó.
+Corrija foto a foto en plenaria: recoja el nombre de cada una y pida a quien quiera justificarlo con un dato concreto que oyó.
 
 CIERRE LA SECCIÓN CON LA ENTREVISTA Y LA DESCRIPCIÓN DE OTRA PERSONA
 
