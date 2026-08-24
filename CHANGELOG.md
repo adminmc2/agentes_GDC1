@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.115 — 2026-08-24] — U9 Vocabulario: comentario cultural de *pinta* reescrito
+
+La segunda frase de ENTREGA DE INSIGNIA explicaba mal el lema: *pinta* es «aspecto o apariencia de alguien o algo» (verificado contra el Diccionario del estudiante de la RAE — la entrada del DLE bloquea el acceso y pinta¹ falta en rae-api), con *buena/mala pinta* y el plural despectivo de ropa (*no puedo salir con estas pintas*). Opción B del autor. 1248 palabras. Archivo: `unidades/U9/final/vocabulario.md`.
+
 ## [v12.114 — 2026-08-24] — U9 Vocabulario: pasada de variación de fórmulas repetidas
 
 Detectado por el autor el Patrón 6 del manual (repetición monotemática de conector): «Dirija la atención» ×5 → ×1 (ej. 2 y 8 *Pase al* · ej. 7 *Continúe con* · ej. 9 *Lea con la clase*) y «Cierre con» ×6 → ×2 (*Ponga en común* · *Al terminar* · *Como cierre* · *Para acabar*). 1235 palabras. Borrado además el artefacto de iCloud `.git 2/` (duplicado de una ref antigua de origin/main). Archivo: `unidades/U9/final/vocabulario.md`.

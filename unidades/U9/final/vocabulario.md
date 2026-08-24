@@ -85,4 +85,4 @@ Para acabar, dos o tres párrafos leídos en voz alta en plenaria; tras cada lec
 
 ENTREGA DE INSIGNIA
 
-Mencione que por nombrar las prendas con su color, describir la ropa de la familia de Marta y de la clase, reproducir el diálogo de la tienda y escribir el párrafo sobre los gustos de otra persona, reciben la insignia **¡QUÉ PINTA!** Comente que en español *pinta* es el aspecto de una persona o de una cosa: *¡qué pinta!* se dice al ver cómo va vestido alguien.
+Mencione que por nombrar las prendas con su color, describir la ropa de la familia de Marta y de la clase, reproducir el diálogo de la tienda y escribir el párrafo sobre los gustos de otra persona, reciben la insignia **¡QUÉ PINTA!** Comente que en español *pinta* es el aspecto o la apariencia de alguien o de algo —hay *buena pinta* y *mala pinta*— y que el plural es la queja clásica de ropa: *no puedo salir con estas pintas*.
