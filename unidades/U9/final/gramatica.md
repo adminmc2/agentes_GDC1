@@ -6,7 +6,7 @@ Usar el pretérito indefinido de *ir* y *estar* en frases y preguntas sencillas 
 Imprimir ficha 9.2—insignia: **¡CONTAMOS EL FINDE!**
 
 Insignia y obtención
-Comente a la clase que al terminar la sección recibirán la insignia **¡CONTAMOS EL FINDE!** Para obtenerla deberán construir frases con *ir* y *estar* en pretérito indefinido, situarlas en el pasado con los marcadores temporales, relacionar los interrogativos con la información que piden y elegir la preposición correcta para cada verbo.
+Comente a la clase que al terminar la sección recibirán la insignia **¡CONTAMOS EL FINDE!** Para obtenerla deberán construir frases con *ir* y *estar* en pretérito indefinido, situarlas en el pasado con los marcadores temporales, relacionar los interrogativos con la información que piden y corregir los errores de las frases sobre el pasado.
 
 ### Ejercicios 1-3
 
@@ -59,11 +59,11 @@ Para cerrar, mueva al grupo. Forme un círculo de sillas y pida que alguien se c
 ### Ejercicio 7
 
 Objetivo
-Aplicar la preposición *a* con *ir* y la preposición *en* con *estar* a frases sencillas en pretérito indefinido.
+Corregir errores en frases sencillas con *ir* y *estar* en pretérito indefinido.
 
-ASOCIE CADA VERBO CON SU PREPOSICIÓN
+PREPARE LA REVISIÓN CON EL CUADRO OBSERVA
 
-De vuelta a la **página 94**, dirija la atención al cuadro *Observa*: IR pide *a* y ESTAR pide *en*, con los dos ejemplos sobre el mismo personaje. No es un uso nuevo de las preposiciones —*a* y *en* ya se usaron en presente con la rutina diaria de la **unidad 7**—; lo nuevo es fijar qué preposición acompaña a cada verbo también en el indefinido. Lleve la regla a la tabla del **ejercicio 3**: la clase produce de viva voz dos frases con cada hermano —*Pedro fue a Barcelona · Pedro estuvo en Madrid · Ana fue a Sevilla · Ana estuvo en Granada*—, cada verbo con su preposición.
+De vuelta a la **página 94**, dirija la atención al cuadro *Observa*, la última pieza que se fija antes de revisar frases completas: IR pide *a* y ESTAR pide *en*. No es un uso nuevo de las preposiciones —*a* y *en* ya se usaron en presente con la rutina diaria de la **unidad 7**—; lo nuevo es fijar qué preposición acompaña a cada verbo también en el indefinido. Lleve la regla a la tabla del **ejercicio 3**: la clase produce de viva voz dos frases con cada hermano —*Pedro fue a Barcelona · Pedro estuvo en Madrid · Ana fue a Sevilla · Ana estuvo en Granada*—, cada verbo con su preposición.
 
 ORGANICE LA CAZA DE ERRORES EN PAREJAS
 
@@ -71,4 +71,4 @@ En el **ejercicio 7**, cada frase esconde un error que hay que cazar y corregir.
 
 ENTREGA DE INSIGNIA
 
-Mencione que por construir frases con *ir* y *estar* en pretérito indefinido, situarlas en el pasado con los marcadores, relacionar los interrogativos con la información que piden y elegir la preposición correcta de cada verbo, reciben la insignia **¡CONTAMOS EL FINDE!** Comente que en español *finde* es el acortamiento coloquial de *fin de semana*.
+Mencione que por construir frases con *ir* y *estar* en pretérito indefinido, situarlas en el pasado con los marcadores, relacionar los interrogativos con la información que piden y corregir los errores de las frases sobre el pasado, reciben la insignia **¡CONTAMOS EL FINDE!** Comente que en español *finde* es el acortamiento coloquial de *fin de semana*.

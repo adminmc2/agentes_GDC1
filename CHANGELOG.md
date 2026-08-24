@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.118 — 2026-08-25] — U9 Gramática: el bloque del ejercicio 7 deja de colgar de la preposición
+
+Detectado por el autor: el ejercicio 7 solo tiene un ítem de preposición (el 4) — el bloque es una caza de errores integradora. Objetivo del bloque reformulado a *Corregir errores en frases sencillas con ir y estar en pretérito indefinido*; el cuarto logro de la obtención y de la ENTREGA pasa a *corregir los errores de las frases sobre el pasado*; el cuadro *Observa* queda como pieza previa a la revisión y el rótulo pasa de *ASOCIE CADA VERBO CON SU PREPOSICIÓN* a *PREPARE LA REVISIÓN CON EL CUADRO OBSERVA*. 1505 palabras. Archivos: `unidades/U9/final/gramatica.md` + fila §6 del registro (repo B).
+
 ## [v12.117 — 2026-08-24] — U9 Gramática: los interrogativos se explican, no se dan por sabidos
 
 El párrafo del mapa del ejercicio 4 solo describía la acción de anotar (detectado por el autor); ahora activa la operación de la **unidad 3** (cada interrogativo pide un tipo de información, con su etiqueta en el mapa) y explica las piezas nuevas: *con quién* (compañía, respuesta *con Juan*) y *qué día* en el mapa, *por qué*/*porque* en el cuadro. Verificado contra corpus y registry: *por qué* nunca se enseñó en U1-U8 — la frase «todas se conocen desde las primeras unidades» era errónea. 1503 palabras. Archivo: `unidades/U9/final/gramatica.md`.
