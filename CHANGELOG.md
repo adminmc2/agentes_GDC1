@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.111 — 2026-08-24] — Retro FEEDBACK→REVISIÓN FOCALIZADA descartada por el autor
+
+Decisión del autor: las unidades cerradas U2-U7 no se reabren — conservan el rótulo *FEEDBACK FOCALIZADO* en sus Evaluaciones (U3 no lo usa); *REVISIÓN FOCALIZADA* rige de U8 en adelante. Cierra el pendiente abierto en v12.105. Sin cambios en archivos editoriales; el manual no codifica este rótulo.
+
 ## [v12.110 — 2026-08-24] — Estilo de itinerarios §5 codificado + fila del paseo-galería en repo B
 
 Criterio del autor (sesión U8, aplicado en v12.107) codificado como fuente única en `docs/estilo-itinerarios.md` §5: máximo 4 materiales complementarios por sección del extendido; el excedente se reubica por contenido, no se recorta. En repo B, aplicada la fila §1 pendiente desde v12.105: paseo-galería de los monstruos de U8 Evaluación (variante en mesas del Gallery Walk #61, precedente U4D; commit `16ec205` de repo B).
