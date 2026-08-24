@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.116 — 2026-08-24] — U9 Gramática derivada a `final/`
+
+`unidades/U9/final/gramatica.md` (1437 palabras, techo ≤1600) derivada de la propuesta. Objetivo general re-derivado por decisión del autor (*Usar el pretérito indefinido de ir y estar en frases y preguntas sencillas sobre el pasado*) y bloques sin verbo repetido (*conjugar / relacionar / aplicar*). Erratas corregidas contra inventario (ej. 2 ítems 1-2-7; ej. 5 con tres preguntas en presente y foco *quién / con quién*; cuadro 3; hermanos García; anclaje de Carlos → página 101, §3 del registro de repo B corregido). Check-final 12 ✅ / 3 ⚠ / 0 ❌ resuelto en sesión + pasada de repeticiones; *finde* verificado contra el DLE.
+
 ## [v12.115 — 2026-08-24] — U9 Vocabulario: comentario cultural de *pinta* reescrito
 
 La segunda frase de ENTREGA DE INSIGNIA explicaba mal el lema: *pinta* es «aspecto o apariencia de alguien o algo» (verificado contra el Diccionario del estudiante de la RAE — la entrada del DLE bloquea el acceso y pinta¹ falta en rae-api), con *buena/mala pinta* y el plural despectivo de ropa (*no puedo salir con estas pintas*). Opción B del autor. 1248 palabras. Archivo: `unidades/U9/final/vocabulario.md`.
