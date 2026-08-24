@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.114 — 2026-08-24] — U9 Vocabulario: pasada de variación de fórmulas repetidas
+
+Detectado por el autor el Patrón 6 del manual (repetición monotemática de conector): «Dirija la atención» ×5 → ×1 (ej. 2 y 8 *Pase al* · ej. 7 *Continúe con* · ej. 9 *Lea con la clase*) y «Cierre con» ×6 → ×2 (*Ponga en común* · *Al terminar* · *Como cierre* · *Para acabar*). 1235 palabras. Borrado además el artefacto de iCloud `.git 2/` (duplicado de una ref antigua de origin/main). Archivo: `unidades/U9/final/vocabulario.md`.
+
 ## [v12.113 — 2026-08-24] — U9 Vocabulario: dos retoques de claridad del autor
 
 Ejercicio 7: la recogida de los gustos de Laura vuelve a ser la acción principal, con las tres palabras del texto ancladas por contenido (*pero* la falda que sí tiene · *normalmente* las zapatillas blancas · *en cambio* los colores que no le gustan) — el párrafo derivado había quedado abstracto al retirar las citas. Ejercicio 8: «persona a persona» → «foto a foto» (se leía como corrección estudiante a estudiante; son cuatro recogidas, una por foto). 1247 palabras, bajo techo. Archivo: `unidades/U9/final/vocabulario.md`.

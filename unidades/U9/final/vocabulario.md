@@ -19,13 +19,13 @@ Pida a la clase que abra la **página 92**. Dirija una mirada breve a la foto de
 
 Comente que las Tarjetas de Vocabulario - colores están disponibles en la caja del aula por si alguna pareja necesita confirmar la forma de un color concreto.
 
-Cierre con una puesta en común selectiva sobre los ítems con desacuerdo entre parejas vecinas, atendiendo en especial a la concordancia del color con la prenda.
+Ponga en común selectivamente los ítems con desacuerdo entre parejas vecinas, atendiendo en especial a la concordancia del color con la prenda.
 
 ESTABLEZCA EL PARADIGMA DE LA ROPA
 
-Dirija la atención al **ejercicio 2**: el dibujo de la familia de Marta con dieciséis prendas numeradas y el banco de palabras. En pareja, relacionan cada número con su prenda. Reproduzca la **pista 91** para que comprueben sus respuestas; corrija solo las discrepancias.
+Pase al **ejercicio 2**: el dibujo de la familia de Marta con dieciséis prendas numeradas y el banco de palabras. En pareja, relacionan cada número con su prenda. Reproduzca la **pista 91** para que comprueben sus respuestas; corrija solo las discrepancias.
 
-Reparta después una tarjeta de las Tarjetas de Vocabulario - ropa a cada pareja. Cada estudiante elige una de las frases del reverso y construye con ella una frase personal sobre esa prenda: lo que lleva hoy, lo que tiene en su armario o lo que le gusta. Cierre con una ronda rápida en plenaria en la que cada pareja lee sus dos frases.
+Reparta después una tarjeta de las Tarjetas de Vocabulario - ropa a cada pareja. Cada estudiante elige una de las frases del reverso y construye con ella una frase personal sobre esa prenda: lo que lleva hoy, lo que tiene en su armario o lo que le gusta. Al terminar, cada pareja lee sus dos frases en una ronda rápida en plenaria.
 
 DIRIJA LA DESCRIPCIÓN DE LA FAMILIA Y DE LA CLASE
 
@@ -54,7 +54,7 @@ Para el **ejercicio 6**, cada pareja prepara su propia conversación en la tiend
 
 Ensayan el diálogo dos veces alternando los roles; para la segunda vuelta cambian la prenda intercambiando la tarjeta con otra pareja.
 
-Cierre con dos parejas representando su diálogo en plenaria. Identifique con la clase qué prenda quiso comprar cada cliente y qué cambió respecto al diálogo modelo: la talla, el color, el precio.
+Como cierre, dos parejas representan su diálogo en plenaria. Identifique con la clase qué prenda quiso comprar cada cliente y qué cambió respecto al diálogo modelo: la talla, el color, el precio.
 
 ### Ejercicios 7-10
 
@@ -63,13 +63,13 @@ Comprender textos descriptivos sobre los gustos de ropa de una persona, identifi
 
 ACOMPAÑE LA LECTURA DEL TEXTO DE LAURA
 
-Dirija la atención al **ejercicio 7**: la foto de Laura y su texto con tres huecos. Antes de leer, comente brevemente con la clase qué se ve en la foto: la ropa que lleva, la actitud. Cada estudiante lee el texto en silencio y completa los tres huecos con las palabras del recuadro.
+Continúe con el **ejercicio 7**: la foto de Laura y su texto con tres huecos. Antes de leer, comente brevemente con la clase qué se ve en la foto: la ropa que lleva, la actitud. Cada estudiante lee el texto en silencio y completa los tres huecos con las palabras del recuadro.
 
 Ponga en común selectivamente los huecos con desacuerdo. Cierre con la recogida verbal de los gustos de Laura —lo que le gusta, lo que no le gusta nada y lo que tiene—, apoyándose en las tres palabras que ordenan su texto: *pero* introduce la excepción (la falda que sí tiene), *normalmente* marca el hábito (las zapatillas blancas) y *en cambio* opone los colores que no le gustan.
 
 DOSIFIQUE LA ESCUCHA POR PERSONAJE
 
-Dirija la atención al **ejercicio 8**: las cuatro fotos numeradas. En pareja, la clase observa las fotos e identifica en voz baja qué destaca de cada persona: la prenda más visible, un color, un rasgo.
+Pase al **ejercicio 8**. En pareja, la clase observa las cuatro fotos numeradas e identifica en voz baja qué destaca de cada persona: la prenda más visible, un color, un rasgo.
 
 Reproduzca la **pista 93** deteniéndola tras la descripción de cada persona; en cada pausa, cada estudiante escribe individualmente el nombre que cree que corresponde a la foto. Tras la cuarta, una segunda escucha completa para resolver dudas.
 
@@ -77,11 +77,11 @@ Corrija foto a foto en plenaria: recoja el nombre de cada una y pida a quien qui
 
 CIERRE LA SECCIÓN CON LA ENTREVISTA Y LA DESCRIPCIÓN DE OTRA PERSONA
 
-Dirija la atención al **ejercicio 9**, las cuatro preguntas sobre ropa y colores favoritos. En pareja, la clase se entrevista: cada estudiante hace las cuatro preguntas a su pareja y retiene las respuestas; después cambian de rol.
+Lea con la clase las cuatro preguntas del **ejercicio 9** sobre ropa y colores favoritos. En pareja, la clase se entrevista: cada estudiante hace las cuatro preguntas a su pareja y retiene las respuestas; después cambian de rol.
 
 Para el **ejercicio 10**, cada estudiante escribe un párrafo sobre los gustos de su pareja usando el esqueleto del libro. El texto de Laura sirve como modelo de estructura: qué le gusta, qué no le gusta nada, sus colores favoritos, qué lleva hoy.
 
-Cierre con dos o tres párrafos leídos en voz alta en plenaria; tras cada lectura, la persona descrita reacciona en una frase: confirma, matiza o corrige.
+Para acabar, dos o tres párrafos leídos en voz alta en plenaria; tras cada lectura, la persona descrita reacciona en una frase: confirma, matiza o corrige.
 
 ENTREGA DE INSIGNIA
 
