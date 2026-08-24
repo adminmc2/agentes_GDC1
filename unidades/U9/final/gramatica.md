@@ -44,9 +44,9 @@ MAPEE LA SEMANA DE ANDRÉS CON LOS INTERROGATIVOS
 
 En la **página 95**, el **ejercicio 4** abre con la agenda de la semana de Andrés, un hombre de negocios que viaja mucho. Lea la agenda completa con la clase, día por día, para asentar el contexto.
 
-Trabaje las siete preguntas levantando un mapa visible: en la pizarra o sobre la página proyectada, anote junto a cada día el interrogativo que usa su pregunta — el lunes empieza por *dónde* y busca un lugar. Recorra los seis días restantes anotando el interrogativo de cada pregunta: *cuándo · con quién · quién · qué día · con quién · dónde*. Las parejas responden cada pregunta en voz alta consultando la agenda: siete recogidas, una por día.
+Antes de responder nada, active lo que la clase ya sabe de la **unidad 3**: cada interrogativo pide un tipo de información — *dónde*, un lugar; *quién*, una persona; *cuándo*, un momento. Trabaje las siete preguntas levantando un mapa visible en la pizarra o sobre la página proyectada: lea cada pregunta, la clase dice qué información busca, y anote junto al día el interrogativo con su etiqueta (*lunes — dónde — lugar*). Dos preguntas piden explicación porque traen piezas nuevas: *¿con quién?* no pregunta por la persona que hace algo, sino por la compañía, y la respuesta empieza por *con* (*con Juan*); *¿qué día?* combina *qué* con los días de la semana que ya manejan. Con el mapa completo, las parejas responden las siete preguntas en voz alta consultando la agenda: siete recogidas, una por día.
 
-El cuadro *Interrogativos*, en la misma página, recoge las partículas que acaban de circular sobre la semana de Andrés, con un par pregunta-respuesta en indefinido cada una, y añade la que la agenda no usó: *¿por qué?*, con su respuesta con *porque*. Recórralo en voz alta; todas se conocen desde las primeras unidades y la incorporación nueva es *con quién*.
+El cuadro *Interrogativos*, en la misma página, ordena las cinco partículas con un par pregunta-respuesta en indefinido cada una: *dónde*, *quién* y *cuándo* son repaso de la **unidad 3**, *con quién* acaba de estrenarse en el mapa, y *¿por qué?* aparece por primera vez y la agenda no la usa. Deténgase en esta última: pregunta la causa y la respuesta empieza por *porque*, escrito junto y sin tilde.
 
 CONSOLIDE EL SISTEMA INTERROGATIVO EN PASADO
 

@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.117 — 2026-08-24] — U9 Gramática: los interrogativos se explican, no se dan por sabidos
+
+El párrafo del mapa del ejercicio 4 solo describía la acción de anotar (detectado por el autor); ahora activa la operación de la **unidad 3** (cada interrogativo pide un tipo de información, con su etiqueta en el mapa) y explica las piezas nuevas: *con quién* (compañía, respuesta *con Juan*) y *qué día* en el mapa, *por qué*/*porque* en el cuadro. Verificado contra corpus y registry: *por qué* nunca se enseñó en U1-U8 — la frase «todas se conocen desde las primeras unidades» era errónea. 1503 palabras. Archivo: `unidades/U9/final/gramatica.md`.
+
 ## [v12.116 — 2026-08-24] — U9 Gramática derivada a `final/`
 
 `unidades/U9/final/gramatica.md` (1437 palabras, techo ≤1600) derivada de la propuesta. Objetivo general re-derivado por decisión del autor (*Usar el pretérito indefinido de ir y estar en frases y preguntas sencillas sobre el pasado*) y bloques sin verbo repetido (*conjugar / relacionar / aplicar*). Erratas corregidas contra inventario (ej. 2 ítems 1-2-7; ej. 5 con tres preguntas en presente y foco *quién / con quién*; cuadro 3; hermanos García; anclaje de Carlos → página 101, §3 del registro de repo B corregido). Check-final 12 ✅ / 3 ⚠ / 0 ❌ resuelto en sesión + pasada de repeticiones; *finde* verificado contra el DLE.
