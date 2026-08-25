@@ -48,7 +48,7 @@ Las parejas recorren los cinco ítems con la tarjeta visible: una persona pregun
 
 Ponga en común algunos pares y confirme que todas las respuestas llevan *estar* + *en*.
 
-CONDUZCA EL INTERCAMBIO DEL CUÁNDO Y EL CON QUIÉN
+CONDUZCA LA ENTREVISTA DEL FIN DE SEMANA CON LAS FICHAS
 
 Señale el cuadro *Observa* de la **página 97**, que recuerda el reparto fijado en el apartado de Gramática: *ir* con *a*, *estar* con *en*. Con el cuadro a la vista, apóyese en el ejemplo del **ejercicio 4**: la pregunta con *¿cuándo?* se contesta con el momento y la de *¿con quién?* con la compañía — una usa *estuviste* y la otra *fuiste*.
 
@@ -61,20 +61,20 @@ Recoja en plenaria dos o tres intercambios completos: lugar, momento y compañí
 Objetivo
 Presentar en pareja a la clase un diálogo sobre el fin de semana.
 
-ANIME LA RONDA DE DIÁLOGOS
+ANIME LA REPRESENTACIÓN DE LOS DIÁLOGOS ANTE LA CLASE
 
 Proponga la tarea del **ejercicio 5** con dos vías: contar el fin de semana real, o representar el de uno de los cuatro personajes del diálogo o el de una persona inventada — un primo, una amiga del barrio. Cada pareja elige sin justificarlo ante la clase.
 
-Defina un tiempo breve de preparación siguiendo los pasos del libro: cada estudiante rellena su lado de la tabla con el sábado y el domingo, repasa la cara del diálogo modelo de la tarjeta y ensaya una vez con su pareja.
+Pida recuperar la tarjeta *Hablar del fin de semana* de los ejercicios anteriores y explique la otra cara, la del diálogo modelo: una conversación completa de seis turnos y los trucos del que cuenta — abrir con una valoración, dosificar los tres datos, devolver el turno. Defina un tiempo breve de preparación siguiendo los pasos del libro: cada estudiante rellena su lado de la tabla con el sábado y el domingo y, con ese guion a la vista, ensaya una vez el diálogo con su pareja.
 
-Organice la ronda: las parejas pasan al frente una tras otra, sin pausas largas entre diálogos. Cada representación abre con el saludo, intercambia los tres datos —lugar, momento y compañía— y devuelve el turno con *¿Y tú?*
+Representan ante la clase dos o tres parejas que se ofrezcan. El resto escucha con una misión: apuntar el lugar, el momento y la compañía de cada diálogo; tras cada representación, la clase los dice y la pareja confirma.
 
 Tras la última pareja, pregunte qué fin de semana sorprendió más a la clase y por qué; una o dos respuestas bastan.
 
 ### Ejercicios 6-7
 
 Objetivo
-Completar las tres reglas de la tilde a partir de la clasificación por sílaba tónica.
+Deducir las tres reglas de la tilde a partir de la sílaba tónica de las palabras.
 
 SISTEMATICE LAS REGLAS DE LA TILDE
 

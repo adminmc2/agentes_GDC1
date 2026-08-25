@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.120 — 2026-08-25] — U9 Comunicación: ronda de ajustes del autor sobre la sección cerrada
+
+Cinco ajustes tras v12.119: la cara del diálogo modelo de la tarjeta se retoma y se explica en el **ejercicio 5** (cerraba un vacío — la tarjeta quedó atrás dos actividades antes); rótulos re-anclados a lengua de aula (*CONDUZCA LA ENTREVISTA DEL FIN DE SEMANA CON LAS FICHAS* · *ANIME LA REPRESENTACIÓN DE LOS DIÁLOGOS ANTE LA CLASE*); representación viable para 25 estudiantes (dos o tres parejas que se ofrezcan + misión de escucha para el resto, patrón U1C/U6C declarado); objetivo del bloque 6-7 → *Deducir las tres reglas de la tilde a partir de la sílaba tónica de las palabras* (completar era la mecánica del ejercicio). 1329 palabras. Archivo: `unidades/U9/final/comunicacion.md`.
+
 ## [v12.119 — 2026-08-25] — U9 Comunicación derivada a `final/`
 
 `unidades/U9/final/comunicacion.md` (1276 palabras, techo ≤1450) derivada de la propuesta. Objetivo general bicéfalo por decisión del autor (*Intercambiar preguntas y respuestas sobre el fin de semana pasado y aplicar las reglas de la tilde según la sílaba tónica*, patrón U9V); bloque 1-2 re-derivado a clave lingüística (*Reconocer en el diálogo las fórmulas para preguntar y contar el fin de semana*) y rótulo del bloque 3-4 reanclado a finalidad (*PRESENTE LAS FÓRMULAS PARA CONTAR EL FIN DE SEMANA*). Correcciones contra inventario: el ejercicio 3 solo trabaja *estar* (ítem de la discoteca sin foto, señalado), el ejercicio 4 pasa al *cuándo/con quién* con las fichas del libro sin A/B como roles. Acentuación enseñada como contenido nuevo (sílaba tónica y tres tipos; la tilde solo se había nombrado en U7). Check-final 13 ✅ / 2 ⚠ / 0 ❌ resuelto en sesión + pasada profunda de repeticiones; *ponerse al día* verificado contra el DLE. Archivos: `unidades/U9/final/comunicacion.md` + fila §6 del registro (repo B).
