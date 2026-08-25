@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.119 — 2026-08-25] — U9 Comunicación derivada a `final/`
+
+`unidades/U9/final/comunicacion.md` (1276 palabras, techo ≤1450) derivada de la propuesta. Objetivo general bicéfalo por decisión del autor (*Intercambiar preguntas y respuestas sobre el fin de semana pasado y aplicar las reglas de la tilde según la sílaba tónica*, patrón U9V); bloque 1-2 re-derivado a clave lingüística (*Reconocer en el diálogo las fórmulas para preguntar y contar el fin de semana*) y rótulo del bloque 3-4 reanclado a finalidad (*PRESENTE LAS FÓRMULAS PARA CONTAR EL FIN DE SEMANA*). Correcciones contra inventario: el ejercicio 3 solo trabaja *estar* (ítem de la discoteca sin foto, señalado), el ejercicio 4 pasa al *cuándo/con quién* con las fichas del libro sin A/B como roles. Acentuación enseñada como contenido nuevo (sílaba tónica y tres tipos; la tilde solo se había nombrado en U7). Check-final 13 ✅ / 2 ⚠ / 0 ❌ resuelto en sesión + pasada profunda de repeticiones; *ponerse al día* verificado contra el DLE. Archivos: `unidades/U9/final/comunicacion.md` + fila §6 del registro (repo B).
+
 ## [v12.118 — 2026-08-25] — U9 Gramática: el bloque del ejercicio 7 deja de colgar de la preposición
 
 Detectado por el autor: el ejercicio 7 solo tiene un ítem de preposición (el 4) — el bloque es una caza de errores integradora. Objetivo del bloque reformulado a *Corregir errores en frases sencillas con ir y estar en pretérito indefinido*; el cuarto logro de la obtención y de la ENTREGA pasa a *corregir los errores de las frases sobre el pasado*; el cuadro *Observa* queda como pieza previa a la revisión y el rótulo pasa de *ASOCIE CADA VERBO CON SU PREPOSICIÓN* a *PREPARE LA REVISIÓN CON EL CUADRO OBSERVA*. 1505 palabras. Archivos: `unidades/U9/final/gramatica.md` + fila §6 del registro (repo B).
