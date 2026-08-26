@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.123 — 2026-08-26] — U9 Destrezas: objetivo del bloque 3-4 re-derivado a capacidad amplia
+
+Detectado por el autor en dos rondas: *Deducir el orden del viaje de María y la ciudad de cada texto…* nombraba las respuestas de los ejercicios (informacional), y la alternativa de inferencia léxica se quedaba corta — son dos actividades con meta más amplia. Queda *Reconocer la información esencial de una escucha y una lectura sobre viajes* (comprensión esencial receptiva, grano distinto de los datos concretos del bloque 1-2; la inferencia por claves queda como estrategia). 1388 palabras. Archivo: `unidades/U9/final/destrezas.md`.
+
 ## [v12.122 — 2026-08-26] — U9 Destrezas: rótulo del verdadero o falso re-anclado a lengua de aula
 
 Detectado por el autor: *RECOJA LA CORRECCIÓN DE LAS AFIRMACIONES CONTRA EL FOLLETO* no nombraba ninguna actividad de aula («contra el folleto» es jerga de verificación de editor). Pasa a *DIRIJA EL VERDADERO O FALSO SOBRE EL FOLLETO* (verbo de conducción + nombre de aula de la actividad + material, patrón U9C). Cuerpo sin cambios; 1394 palabras. Archivos: `unidades/U9/final/destrezas.md` + fila §6 del registro (repo B).

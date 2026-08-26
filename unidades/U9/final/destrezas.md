@@ -30,7 +30,7 @@ En parejas contrastan; donde haya desacuerdo, vuelven al folleto a defender su o
 ### Ejercicios 3-4
 
 Objetivo
-Deducir el orden del viaje de María y la ciudad de cada texto a partir de sus claves.
+Reconocer la información esencial de una escucha y una lectura sobre viajes.
 
 GUÍE LA ESCUCHA DEL VIAJE DE MARÍA
 
