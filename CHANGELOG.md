@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.124 — 2026-08-26] — U9 Destrezas: ejercicio 4 restaurado al emparejamiento texto↔foto y claves del detective en pizarra
+
+Dos rondas de claridad del autor. (1) El párrafo de las claves del ejercicio 3 se reescribe en versión pizarra, elegida entre tres propuestas: *entorno · tema · palabra parecida* escritas y explicadas una a una. (2) Fallo de diseño detectado en el ejercicio 4: la derivación pedía «decidir qué ciudad describe cada texto», irresoluble leyendo en A1.1 (por eso el libro manda a internet); se restaura la tarea de la propuesta — emparejar texto↔foto con la frase que los une; los nombres se resuelven en plenaria, internet opcional. Seis recortes compensatorios para el techo. 1397 palabras. Archivo: `unidades/U9/final/destrezas.md`.
+
 ## [v12.123 — 2026-08-26] — U9 Destrezas: objetivo del bloque 3-4 re-derivado a capacidad amplia
 
 Detectado por el autor en dos rondas: *Deducir el orden del viaje de María y la ciudad de cada texto…* nombraba las respuestas de los ejercicios (informacional), y la alternativa de inferencia léxica se quedaba corta — son dos actividades con meta más amplia. Queda *Reconocer la información esencial de una escucha y una lectura sobre viajes* (comprensión esencial receptiva, grano distinto de los datos concretos del bloque 1-2; la inferencia por claves queda como estrategia). 1388 palabras. Archivo: `unidades/U9/final/destrezas.md`.

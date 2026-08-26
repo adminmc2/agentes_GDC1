@@ -15,15 +15,15 @@ Identificar datos concretos en un folleto turístico.
 
 PRESENTE EL FOLLETO DE SEGOVIA CON LAS FECHAS DEL PASADO
 
-Dirija la atención al folleto del **ejercicio 1**, en la **página 98**, con las tres fotos de los monumentos. Antes de leer, recoja una lluvia de palabras parecidas: nombre las palabras clave del folleto —*acueducto, catedral, monumento, plaza, romano, ciudad histórica*— y pida la palabra parecida a cada una en otra lengua que la clase conozca. Anote la red en la pizarra, a la vista durante la lectura.
+Dirija la atención al folleto del **ejercicio 1**, en la **página 98**. Antes de leer, recoja una lluvia de palabras parecidas: nombre las palabras clave del folleto —*acueducto, catedral, monumento, plaza, romano, ciudad histórica*— y pida la palabra parecida a cada una en otra lengua que la clase conozca. Anote la red en la pizarra, a la vista durante la lectura.
 
-Lea después con la clase el cuadro *Observa*: *a. C.* sitúa una fecha antes del nacimiento de Cristo y *d. C.* después. Añada la pieza que el cuadro no trae: los siglos, en números romanos, se leen como números —*siglo doce* para el Alcázar del *s. XII*—. Las dos notaciones aparecen aquí por primera vez.
+Lea después con la clase el cuadro *Observa*: *a. C.* sitúa una fecha antes del nacimiento de Cristo y *d. C.* después. Añada la pieza que el cuadro no trae: los siglos, en números romanos, se leen como números —*siglo doce* para el Alcázar del *s. XII*—.
 
 Pase a la lectura silenciosa con una sola misión: encontrar tres cosas que cada uno haría en un día en Segovia según el folleto; cierre recogiendo las respuestas de dos o tres estudiantes.
 
 DIRIJA EL VERDADERO O FALSO SOBRE EL FOLLETO
 
-Pase a las cinco frases del **ejercicio 2**. Anuncie que algunas son verdaderas y otras falsas, y que una falsa solo queda corregida con la frase exacta del folleto que lo prueba. Cada estudiante decide en su cuaderno y subraya en el folleto la frase decisiva; el último ítem se resuelve con los siglos que acaban de aprender a leer.
+Pase a las cinco frases del **ejercicio 2**. Anuncie que algunas son verdaderas y otras falsas, y que una falsa solo queda corregida con la frase exacta del folleto que lo prueba. Cada estudiante decide en su cuaderno y subraya en el folleto la frase decisiva.
 
 En parejas contrastan; donde haya desacuerdo, vuelven al folleto a defender su opción. Recoja en plenaria solo los desacuerdos: quien defiende una respuesta lee en voz alta su frase del folleto y la clase confirma o completa. Cierre: alguien acaba de visitar Segovia y la clase va a oír cómo lo cuenta.
 
@@ -36,9 +36,9 @@ GUÍE LA ESCUCHA DEL VIAJE DE MARÍA
 
 Dirija la mirada al cuadro del **ejercicio 3**, en la **página 99**: María va a contar su visita a Segovia y la tarea es colocar los cuatro lugares en los huecos *Primero, Después, Luego, Por último*.
 
-Antes de la pista, plantee la actitud del detective: María va a usar palabras nuevas y pararse en una es perder el resto. Cada una se resuelve con una de tres claves: el entorno —lo que se oye antes y después—, el tema —lo que ya saben por el folleto— y la palabra parecida en otra lengua, como las de la pizarra. La tarjeta *Escucha en tres modos* queda en la caja del aula como repaso del modo detective.
+Antes de poner la pista, avise: en el relato de María hay palabras que la clase aún no conoce, y la regla del detective es seguir escuchando sin pararse. Escriba en la pizarra las tres claves para deducir una palabra nueva —*entorno · tema · palabra parecida*— y explíquelas con la clase: el entorno son las palabras vecinas que se oyen alrededor; el tema es Segovia, que ya conocen por el folleto; la palabra parecida es la de otra lengua que suena casi igual, como las de la red de la pizarra. La tarjeta *Escucha en tres modos* sigue a mano en la caja del aula.
 
-Reproduzca la **pista 96** una vez con el cuadro a la vista: cada estudiante coloca los lugares y marca con un círculo las palabras nuevas, anotando al margen una hipótesis de significado. Reponga la pista si el grupo la pide. En parejas contrastan el orden y las palabras que circularon, con la clave que dedujo cada una; pase entre las mesas sin dar la solución, con la pregunta *¿qué clave te puede ayudar aquí?*.
+Reproduzca la **pista 96** una vez con el cuadro a la vista: cada estudiante coloca los lugares y marca con un círculo las palabras nuevas, anotando al margen una hipótesis de significado. En parejas contrastan el orden y las palabras que circularon, con la clave que dedujo cada una; pase entre las mesas sin dar la solución, con la pregunta *¿qué clave te puede ayudar aquí?*.
 
 Recoja en plenaria el orden final, anclado en los marcadores temporales, y una o dos palabras nuevas con su clave. Cierre: María terminó su viaje y quedan dos ciudades romanas por reconocer.
 
@@ -48,11 +48,11 @@ Recoja en plenaria el orden final, anclado en los marcadores temporales, y una o
 
 ORIENTE LA LECTURA DE LAS DOS CIUDADES ROMANAS
 
-Empiece el **ejercicio 4** por las dos fotos: un puente romano y unas esculturas en una plaza. Los dos textos hablan de Mérida y de Alcalá de Henares, pero no dicen cuál es cuál: la tarea es decidir qué ciudad describe cada texto y demostrarlo con una clave del texto.
+Empiece el **ejercicio 4** por las dos fotos: un puente romano sobre un río y unas esculturas en una plaza. Los textos describen Mérida y Alcalá de Henares sin decir cuál es cuál, pero cada uno menciona lo que se ve en una de las fotos.
 
-En parejas leen en silencio, deciden la ciudad de cada texto y subrayan su clave. La decisión nace del texto; quien quiera puede verificarla en internet con el libro digital o el móvil. Aclare entre las mesas el vocabulario que lo necesite: *Complutum*, *restos arqueológicos*, *Casa Natal*.
+En parejas, leen en silencio buscando esa conexión y subrayan la frase que une cada texto con su foto: en uno, el puente romano sobre el río; en el otro, el autor de *El Quijote*, el de las esculturas. El nombre de cada ciudad no sale del texto: quien quiera lo busca en internet con el libro digital o el móvil. Pase entre las mesas aclarando el vocabulario: *Complutum*, *restos arqueológicos*, *Casa Natal*.
 
-Recoja en plenaria cada emparejamiento con su clave; si alguien verificó por internet, un comentario breve. Cierre: la clase ha leído y oído viajes ajenos; ahora cada estudiante cuenta el suyo.
+Recoja los dos emparejamientos con su frase y resuelva los nombres: el puente sobre el Guadiana es Mérida; la ciudad de Cervantes, Alcalá de Henares. Cierre: la clase ha leído y oído viajes ajenos; ahora cada estudiante cuenta el suyo.
 
 ### Ejercicios 5-6
 
@@ -69,7 +69,7 @@ Recupere la tarjeta *Cuenta cómo es*, que usaron en la **unidad 8** para el ret
 
 Modele una ronda con quien se ofrezca: usted llama, la otra persona contesta desde unos pasos con un viaje breve, y usted cuenta a la clase los datos en tercera persona, con el cambio de persona y una fórmula de reparación visibles.
 
-Forme tríos; al terminar cada llamada rotan los papeles, hasta que los tres hayan pasado por el de quien llama y cuenta. Cierre recogiendo dos o tres datos sorprendentes de tríos que se ofrezcan, cada uno con la fórmula del cambio de persona que más usó.
+Forme tríos; al terminar cada llamada rotan los papeles, hasta que los tres hayan pasado por el de quien llama y cuenta. Cierre recogiendo dos o tres datos sorprendentes de tríos que se ofrezcan.
 
 FOMENTE LA ESCRITURA DEL BLOG DEL VIAJE
 
