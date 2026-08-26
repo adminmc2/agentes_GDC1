@@ -21,7 +21,7 @@ Lea después con la clase el cuadro *Observa*: *a. C.* sitúa una fecha antes de
 
 Pase a la lectura silenciosa con una sola misión: encontrar tres cosas que cada uno haría en un día en Segovia según el folleto; cierre recogiendo las respuestas de dos o tres estudiantes.
 
-RECOJA LA CORRECCIÓN DE LAS AFIRMACIONES CONTRA EL FOLLETO
+DIRIJA EL VERDADERO O FALSO SOBRE EL FOLLETO
 
 Pase a las cinco frases del **ejercicio 2**. Anuncie que algunas son verdaderas y otras falsas, y que una falsa solo queda corregida con la frase exacta del folleto que lo prueba. Cada estudiante decide en su cuaderno y subraya en el folleto la frase decisiva; el último ítem se resuelve con los siglos que acaban de aprender a leer.
 

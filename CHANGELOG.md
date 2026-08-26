@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.122 — 2026-08-26] — U9 Destrezas: rótulo del verdadero o falso re-anclado a lengua de aula
+
+Detectado por el autor: *RECOJA LA CORRECCIÓN DE LAS AFIRMACIONES CONTRA EL FOLLETO* no nombraba ninguna actividad de aula («contra el folleto» es jerga de verificación de editor). Pasa a *DIRIJA EL VERDADERO O FALSO SOBRE EL FOLLETO* (verbo de conducción + nombre de aula de la actividad + material, patrón U9C). Cuerpo sin cambios; 1394 palabras. Archivos: `unidades/U9/final/destrezas.md` + fila §6 del registro (repo B).
+
 ## [v12.121 — 2026-08-26] — U9 Destrezas derivada a `final/`
 
 `unidades/U9/final/destrezas.md` (1396 palabras, techo ≤1400) derivada de la propuesta. General opción del autor (*Contar un viaje propio en pasado, al teléfono y por escrito, a partir de los viajes leídos y escuchados*); objetivo del bloque 1-2 re-derivado dos veces en sesión hasta capacidad de aprendizaje de lengua (*Identificar datos concretos en un folleto turístico*); píldora 9.3 renombrada *Las tres claves del detective* (*pista* reservada al audio, §8.1); *a. C. / d. C.* y siglos romanos enseñados como contenido nuevo; trío telefónico del libro con rotación completa y roles por función. Check-final 14 ✅ / 1 ⚠ / 0 ❌ resuelto en sesión. Archivos: `unidades/U9/final/destrezas.md` + registro repo B (§1 ×2, §3, §6).
