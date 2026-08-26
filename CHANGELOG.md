@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.121 — 2026-08-26] — U9 Destrezas derivada a `final/`
+
+`unidades/U9/final/destrezas.md` (1396 palabras, techo ≤1400) derivada de la propuesta. General opción del autor (*Contar un viaje propio en pasado, al teléfono y por escrito, a partir de los viajes leídos y escuchados*); objetivo del bloque 1-2 re-derivado dos veces en sesión hasta capacidad de aprendizaje de lengua (*Identificar datos concretos en un folleto turístico*); píldora 9.3 renombrada *Las tres claves del detective* (*pista* reservada al audio, §8.1); *a. C. / d. C.* y siglos romanos enseñados como contenido nuevo; trío telefónico del libro con rotación completa y roles por función. Check-final 14 ✅ / 1 ⚠ / 0 ❌ resuelto en sesión. Archivos: `unidades/U9/final/destrezas.md` + registro repo B (§1 ×2, §3, §6).
+
 ## [v12.120 — 2026-08-25] — U9 Comunicación: ronda de ajustes del autor sobre la sección cerrada
 
 Cinco ajustes tras v12.119: la cara del diálogo modelo de la tarjeta se retoma y se explica en el **ejercicio 5** (cerraba un vacío — la tarjeta quedó atrás dos actividades antes); rótulos re-anclados a lengua de aula (*CONDUZCA LA ENTREVISTA DEL FIN DE SEMANA CON LAS FICHAS* · *ANIME LA REPRESENTACIÓN DE LOS DIÁLOGOS ANTE LA CLASE*); representación viable para 25 estudiantes (dos o tres parejas que se ofrezcan + misión de escucha para el resto, patrón U1C/U6C declarado); objetivo del bloque 6-7 → *Deducir las tres reglas de la tilde a partir de la sílaba tónica de las palabras* (completar era la mecánica del ejercicio). 1329 palabras. Archivo: `unidades/U9/final/comunicacion.md`.
