@@ -52,7 +52,7 @@ Empiece el **ejercicio 4** por las dos fotos: un puente romano sobre un río y u
 
 En parejas, leen en silencio buscando esa conexión y subrayan la frase que une cada texto con su foto: en uno, el puente romano sobre el río; en el otro, el autor de *El Quijote*, el de las esculturas. El nombre de cada ciudad no sale del texto: quien quiera lo busca en internet con el libro digital o el móvil. Pase entre las mesas aclarando el vocabulario: *Complutum*, *restos arqueológicos*, *Casa Natal*.
 
-Recoja los dos emparejamientos con su frase y resuelva los nombres: el puente sobre el Guadiana es Mérida; la ciudad de Cervantes, Alcalá de Henares. Cierre: la clase ha leído y oído viajes ajenos; ahora cada estudiante cuenta el suyo.
+Recoja los dos emparejamientos con su frase y resuelva los nombres: el puente sobre el Guadiana es Mérida; la ciudad de Cervantes, Alcalá de Henares. Anuncie lo que sigue: cada estudiante contará un viaje suyo, al teléfono y en un blog.
 
 ### Ejercicios 5-6
 
@@ -61,9 +61,9 @@ Presentar un viaje en pasado, al teléfono y en el blog.
 
 *Imprimir tarjeta de estrategia—expresión escrita—*Dale forma al texto**
 
-ORGANICE LA LLAMADA DEL VIAJE EN TRÍOS
+ORGANICE LA LLAMADA DE TELÉFONO SOBRE EL VIAJE
 
-Plantee la tarea del **ejercicio 5** como una llamada con testigo. En cada trío, quien llama pregunta por teléfono a quien contesta por un viaje reciente, con las cuatro preguntas del libro; la tercera persona no oye la llamada: solo recibe lo que quien llama va contando, cambiado del *yo* al *él* o *ella*, y puede pedir más datos. El teléfono se simula con la mano como auricular; quien contesta se sienta a unos pasos y habla en voz baja: su voz solo debe llegar a quien llama.
+Plantee la tarea del **ejercicio 5**: una llamada de teléfono en tríos. Quien llama pregunta a quien contesta por un viaje reciente, con las cuatro preguntas del libro; la tercera persona no oye la llamada — solo recibe lo que quien llama va contando, cambiado del *yo* al *él* o *ella*, y puede pedir más datos. El teléfono se simula con la mano como auricular; quien contesta se sienta a unos pasos y habla en voz baja: su voz solo debe llegar a quien llama.
 
 Recupere la tarjeta *Cuenta cómo es*, que usaron en la **unidad 8** para el retrato hablado, y repase sus dos caras. La cara de los cuatro pasos funciona igual con un viaje: los cuatro datos son ahora las cuatro preguntas del libro —dónde, cómo, con quién, qué sitios— y la tabla del cambio de persona suma los verbos del pasado: *fui→fue, estuve→estuvo, fuimos→fueron, estuvimos→estuvieron*. La cara de la reparación sigue igual: corregir el dato que no llegó, añadir otro y comprobar que la tercera persona se hace una idea del viaje.
 

@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.125 — 2026-08-27] — U9 Destrezas: cierre del ejercicio 4 y llamada de teléfono en lengua llana
+
+Tres ajustes del autor: el cierre del ejercicio 4 deja el balance falso (*«la clase ha leído y oído viajes ajenos»*) y pasa a anuncio operativo (*Anuncie lo que sigue: cada estudiante contará un viaje suyo, al teléfono y en un blog*, patrón U1D); el rótulo del ejercicio 5 pasa a *ORGANICE LA LLAMADA DE TELÉFONO SOBRE EL VIAJE* y su arranque explica los tres papeles sin la etiqueta «llamada con testigo», que no se entendía. 1396 palabras. Archivo: `unidades/U9/final/destrezas.md`.
+
 ## [v12.124 — 2026-08-26] — U9 Destrezas: ejercicio 4 restaurado al emparejamiento texto↔foto y claves del detective en pizarra
 
 Dos rondas de claridad del autor. (1) El párrafo de las claves del ejercicio 3 se reescribe en versión pizarra, elegida entre tres propuestas: *entorno · tema · palabra parecida* escritas y explicadas una a una. (2) Fallo de diseño detectado en el ejercicio 4: la derivación pedía «decidir qué ciudad describe cada texto», irresoluble leyendo en A1.1 (por eso el libro manda a internet); se restaura la tarea de la propuesta — emparejar texto↔foto con la frase que los une; los nombres se resuelven en plenaria, internet opcional. Seis recortes compensatorios para el techo. 1397 palabras. Archivo: `unidades/U9/final/destrezas.md`.
