@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.126 — 2026-08-27] — U9 Cultura derivada a `final/`
+
+Quinta sección de U9 en la capa final (792 palabras, techo ≤800). Objetivo general de la propuesta verificado y mantenido; objetivo de bloque nuevo bajo §2.1 Cultura (*Describir el traje tradicional de la propia ciudad o país con frases sencillas*). Decisiones del autor: línea física D59 descartada por desproporción (queda sondeo oral breve), ejercicio 3 con andamiaje de dos pasos (apuntes de palabras clave → texto), mosaico dictado por la clase y ampliado con la diversidad real (diecisiete comunidades), entrega en frase única. `/check-final` no lanzado (cierre por decisión del autor). Archivo: `unidades/U9/final/cultura.md`.
+
 ## [v12.125 — 2026-08-27] — U9 Destrezas: cierre del ejercicio 4 y llamada de teléfono en lengua llana
 
 Tres ajustes del autor: el cierre del ejercicio 4 deja el balance falso (*«la clase ha leído y oído viajes ajenos»*) y pasa a anuncio operativo (*Anuncie lo que sigue: cada estudiante contará un viaje suyo, al teléfono y en un blog*, patrón U1D); el rótulo del ejercicio 5 pasa a *ORGANICE LA LLAMADA DE TELÉFONO SOBRE EL VIAJE* y su arranque explica los tres papeles sin la etiqueta «llamada con testigo», que no se entendía. 1396 palabras. Archivo: `unidades/U9/final/destrezas.md`.
