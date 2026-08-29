@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.127 — 2026-08-29] — U9 Evaluación derivada a `final/` — cierra U9 y el curso
+
+Sexta y última sección de U9 (950 palabras, techo ≤950; cuerpo de la propuesta 1523). Objetivo Dirección B mantenido verbatim. Dos datos de la propuesta corregidos contra el inventario: *fui/fue* y *estuve/estuvo* no se escriben igual (compiten primera y tercera persona), y el orden verbo-sujeto no está en el ejercicio 2 sino en el 3 y el 6. Cuatro mecánicas rediseñadas en sesión con el autor: agrupación por personas en el 1 (caen dictado inverso y deletreo), verbo + preposición en el 2 (caen los relevos, rotos en las interrogativas), recogida con las dos respuestas válidas en el 3 (caen las esquinas físicas), cotejo en parejas en el 6 (caen las mitades de aula). Cierre de curso sin conexión a unidad siguiente. Archivo: `unidades/U9/final/evaluacion.md`.
+
 ## [v12.126 — 2026-08-27] — U9 Cultura derivada a `final/`
 
 Quinta sección de U9 en la capa final (792 palabras, techo ≤800). Objetivo general de la propuesta verificado y mantenido; objetivo de bloque nuevo bajo §2.1 Cultura (*Describir el traje tradicional de la propia ciudad o país con frases sencillas*). Decisiones del autor: línea física D59 descartada por desproporción (queda sondeo oral breve), ejercicio 3 con andamiaje de dos pasos (apuntes de palabras clave → texto), mosaico dictado por la clase y ampliado con la diversidad real (diecisiete comunidades), entrega en frase única. `/check-final` no lanzado (cierre por decisión del autor). Archivo: `unidades/U9/final/cultura.md`.
