@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.129 — 2026-08-30] — U0 «Punto de partida» derivada a `final/` — última unidad sin capa final
+
+Archivo único `unidades/U0/final/punto-de-partida.md` (1402 palabras), no las seis secciones canónicas: U0 es unidad atípica y el inventario mapea su contenido íntegro a `vocabulario`. Se respeta en esencia la propuesta —seis bloques, ficha 0.2 con su circulación, imitación inmediata, letra con gesto, deletreo en cadena— y sale la canción de Suno, que no es material SGEL y queda solo en `propuesta/`. Objetivos re-derivados desde los ejercicios: general *Deletrear en voz alta palabras y nombres propios en español* (el de la propuesta era aditivo y Bloom 1) más seis de bloque. Cuatro datos corregidos contra el PDF fuente: Guinea Ecuatorial no está en el mapa, *judo* no es aguda, los gestos concretos del abecedario pasan a instrucción abierta (§10.1), y la pizarra inexistente del cierre del ejercicio 2. `/check-final` auditado como Vocabulario: 9 ✅ / 6 ⚠ / 0 ❌.
+
 ## [v12.128 — 2026-08-30] — U9 Itinerario imprimible — último del curso
 
 Itinerario de U9 creado con la anatomía de U8 y redacción propia (`unidades/U9/U9-itinerarios.md`, 148 líneas). Básico: trece bloques derivados de `final/` con cuatro `[CASA]` (Vocabulario 10, Gramática 5-6, Comunicación 7, Destrezas 2). Estación de servicio: Caja 1 con 30 tarjetas (19 *ropa* + 11 *colores* ampliado) y Caja 2 con las dos que la unidad añade — las reactivadas no cuentan. Extendido con diecisiete materiales complementarios bajo el techo de 4 por sección y las cinco tablas del diseñador; los tiempos del Cuaderno de juegos son la duración impresa. Se depositan además los once archivos SGEL de `unidades/U9/recursos/`.
