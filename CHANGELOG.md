@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.128 — 2026-08-30] — U9 Itinerario imprimible — último del curso
+
+Itinerario de U9 creado con la anatomía de U8 y redacción propia (`unidades/U9/U9-itinerarios.md`, 148 líneas). Básico: trece bloques derivados de `final/` con cuatro `[CASA]` (Vocabulario 10, Gramática 5-6, Comunicación 7, Destrezas 2). Estación de servicio: Caja 1 con 30 tarjetas (19 *ropa* + 11 *colores* ampliado) y Caja 2 con las dos que la unidad añade — las reactivadas no cuentan. Extendido con diecisiete materiales complementarios bajo el techo de 4 por sección y las cinco tablas del diseñador; los tiempos del Cuaderno de juegos son la duración impresa. Se depositan además los once archivos SGEL de `unidades/U9/recursos/`.
+
 ## [v12.127 — 2026-08-29] — U9 Evaluación derivada a `final/` — cierra U9 y el curso
 
 Sexta y última sección de U9 (950 palabras, techo ≤950; cuerpo de la propuesta 1523). Objetivo Dirección B mantenido verbatim. Dos datos de la propuesta corregidos contra el inventario: *fui/fue* y *estuve/estuvo* no se escriben igual (compiten primera y tercera persona), y el orden verbo-sujeto no está en el ejercicio 2 sino en el 3 y el 6. Cuatro mecánicas rediseñadas en sesión con el autor: agrupación por personas en el 1 (caen dictado inverso y deletreo), verbo + preposición en el 2 (caen los relevos, rotos en las interrogativas), recogida con las dos respuestas válidas en el 3 (caen las esquinas físicas), cotejo en parejas en el 6 (caen las mitades de aula). Cierre de curso sin conexión a unidad siguiente. Archivo: `unidades/U9/final/evaluacion.md`.
