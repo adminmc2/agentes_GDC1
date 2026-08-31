@@ -15,6 +15,10 @@
 
 ---
 
+## [v12.130 — 2026-08-31] — Presentación promocional de la guía didáctica
+
+`docs/presentacion-guia-didactica.md` nuevo (1106 palabras) — texto para la doble página de presentación de la guía, réplica funcional de la del libro del alumno pero girada al docente. Anatomía derivada de `docs/diagnostico-nc1-asesores.md` §2; cifras contadas contra las nueve estaciones de servicio de `unidades/U*/U*-itinerarios.md` (322 tarjetas de vocabulario en 23 campos, 22 de estrategia) y contra el registro de repo B (más de 160 dinámicas, más de 20 píldoras). Cabecera, texto de entrada en seis bullets, las seis secciones, itinerario, materiales y notas para el diseñador. Redactado en sesión con el autor tras descartar el registro de eslogan y volver al de catálogo editorial.
+
 ## [v12.129 — 2026-08-30] — U0 «Punto de partida» derivada a `final/` — última unidad sin capa final
 
 Archivo único `unidades/U0/final/punto-de-partida.md` (1402 palabras), no las seis secciones canónicas: U0 es unidad atípica y el inventario mapea su contenido íntegro a `vocabulario`. Se respeta en esencia la propuesta —seis bloques, ficha 0.2 con su circulación, imitación inmediata, letra con gesto, deletreo en cadena— y sale la canción de Suno, que no es material SGEL y queda solo en `propuesta/`. Objetivos re-derivados desde los ejercicios: general *Deletrear en voz alta palabras y nombres propios en español* (el de la propuesta era aditivo y Bloom 1) más seis de bloque. Cuatro datos corregidos contra el PDF fuente: Guinea Ecuatorial no está en el mapa, *judo* no es aguda, los gestos concretos del abecedario pasan a instrucción abierta (§10.1), y la pizarra inexistente del cierre del ejercicio 2. `/check-final` auditado como Vocabulario: 9 ✅ / 6 ⚠ / 0 ❌.
