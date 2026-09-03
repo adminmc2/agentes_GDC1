@@ -15,6 +15,14 @@
 
 ---
 
+## [v12.131 — 2026-09-03] — Arquitectura del sistema producto: giro de prioridad hacia fuente y gate
+
+`docs/arquitectura-sistema-producto-guias-ia.md` (borrador del revisor, 610 → 700 líneas) reordenado desde el cuello de botella real en lugar de desde la arquitectura ideal. §5.1.1 pasa a «espacio de búsqueda — cero adoptados» con regla de spike previo; persistencia se degrada de análisis principal a prueba diferida (§6.3.3), porque la fase 2 ya es cómputo cross-unidad sobre los JSON; nueva §6.3.1 con el análisis de la fuente real. Añadidas Fase 0 de evidencia barata, regla transversal de coste en minutos de autor y, en §9, las preguntas previas de usuario/derechos y continuidad de NC1 durante A-I.
+
+Hallazgo que motiva el giro: **el contrato de fase 1 describe mal su propia fuente**. Declara «PDF del libro del alumno» cuando la entrada real es la edición anotada del profesor con soluciones sobreimpresas — algo que `docs/diagnostico-nc1-asesores.md` ya documentaba. Es contradicción interna entre dos documentos versionados, no descubrimiento: sube la prioridad y baja el coste. Ninguna regla vigente separa texto del alumno de anotación del profesor.
+
+Dos correcciones posteriores del revisor: §1.2 separa ahora **nivel** (tipo de evidencia) de **estatuto** (formalizada vs de sesión), porque formalizar no sube de nivel sino que cambia el estatuto; y la forma concreta del gate baja de requisito contractual a punto de partida observado, sujeto a validarse o sustituirse en Fase 0. Sin cambios en `unidades/`, contratos de fase ni scripts.
+
 ## [v12.130 — 2026-08-31] — Presentación promocional de la guía didáctica
 
 `docs/presentacion-guia-didactica.md` nuevo (1106 palabras) — texto para la doble página de presentación de la guía, réplica funcional de la del libro del alumno pero girada al docente. Anatomía derivada de `docs/diagnostico-nc1-asesores.md` §2; cifras contadas contra las nueve estaciones de servicio de `unidades/U*/U*-itinerarios.md` (322 tarjetas de vocabulario en 23 campos, 22 de estrategia) y contra el registro de repo B (más de 160 dinámicas, más de 20 píldoras). Cabecera, texto de entrada en seis bullets, las seis secciones, itinerario, materiales y notas para el diseñador. Redactado en sesión con el autor tras descartar el registro de eslogan y volver al de catálogo editorial.
