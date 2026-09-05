@@ -1,16 +1,15 @@
 # Arquitectura del sistema producto para guias didacticas con IA
 
-> Estado: borrador de definicion para discusion con el ejecutor.
-> Fecha: 2026-09-03 · revisado 2026-09-05.
+> Estado: borrador de arquitectura; documento de definicion, no norma operativa.
+> Ultima revision: 2026-09-05.
 > Funcion: fijar el objetivo real del sistema futuro, ordenar su construccion por fases y separar claramente el producto final de las herramientas transitorias de ingenieria.
->
-> Revision del 2026-09-05, tras leer entero el repositorio de propuestas: entra la ingesta documental como problema de primer orden (§5.1.1, §6.3, Fase 0), se corrige la regla de coste por el efecto Goodhart, se anade una regla transversal de exposicion de la fuente y se responde la pregunta 0a de §9.
+> Criterio de lectura: toda decision externa entra como candidata y debe revalidarse con fuente primaria y prueba en contexto.
 
 ## 1. Correccion de marco
 
 El objetivo final no es operar este proyecto dentro de VS Code.
 
-El objetivo final tampoco es que Claude Code sea la interfaz definitiva del sistema.
+El sistema puede construirse con Claude Code, pero su operacion final no debe depender de Claude Code como interfaz de uso.
 
 El objetivo final es construir un sistema robusto al que el usuario entra directamente, aporta contenido o fuente, y desde ahi se ejecuta todo el flujo operativo con apoyo de IA y revision humana.
 
@@ -153,6 +152,83 @@ Consecuencia:
 
 Cautela: NC2 no puede usarse como fuerza de diseno mientras no este medido que hay atado a NC1. Hoy el acoplamiento es real y verificable en el repositorio: `"curso": "nc1"` en el schema, valores fijos de autoevaluacion NC1, un enum de tiempos verbales que excluye Participio y Gerundio porque NC1 no los usa, el acoplamiento de cabecera con `unidades/nc1-curso.json`, la convencion de nombres `nc1-` y unas 6.700 lineas de registries de nivel A1. El inventario explicito de esas ataduras es tarea de Fase 0.
 
+## 3.6 Topologia de repositorios de construccion
+
+La construccion del sistema nuevo no se repartira entre varios repositorios de aplicacion.
+
+La separacion correcta es esta:
+
+- **este repositorio actual** sirve para cerrar la definicion, auditar el sistema existente y conservar el contexto editorial y los artefactos que actuan como fuente de contraste;
+- **repo B** sigue siendo fuente metodologica viva de consulta, pero no lugar de construccion;
+- **el sistema nuevo** se construye entero en un **unico repositorio nuevo** de producto, con topologia **monorepo**.
+
+Consecuencia operativa: frontend, servicio web, worker, modelo de datos, migraciones, tests, configuracion de Railway y artefactos de Spec Kit viven en ese unico repositorio nuevo. Puede haber varios servicios desplegados, pero no varios repositorios de producto desde el arranque.
+
+Hay una frontera material que el monorepo no elimina: los inventarios viven versionados aqui, pero los PDFs fuente estan fuera de Git por derechos (`unidades/**/fuente/*.pdf` en `.gitignore`). El repositorio nuevo no los hereda al clonarse. Antes de cualquier spike que toque fuente debe declararse un mecanismo explicito de acceso —ruta local configurable, copia controlada o almacenamiento autorizado— y registrarlo segun §7.
+
+Mientras el contrato de fase 1 siga gobernado en este repositorio, el repo nuevo lo consume como insumo auditado. Mover la autoridad de ese contrato exige una decision explicita, no una mudanza tacita por arrastre.
+
+Matiz de arranque: la lista de arriba es el **destino** del repositorio, no su contenido del primer dia. Lo primero que vive alli son los prototipos de Fase 0 —tareas 1 y 2—, no un andamiaje de cuatro servicios vacios esperando contenido.
+
+## 3.7 Modo de operacion inicial: Railway
+
+Para la **primera version operativa** del sistema, la plataforma objetivo del repositorio nuevo pasa a ser **Railway**. Esto no decide todavia la plataforma final de largo plazo, pero si fija el primer entorno real donde el producto debe correr de punta a punta.
+
+La decision no nace de cero, y conviene separar dos planos que la version anterior mezclaba.
+
+Los **archivos** son evidencia de nivel 2: `railway.toml` y `Dockerfile` fijan builder, healthcheck y comando de arranque; `diagrama.py` prueba un patron de servicio HTTP con `/api/status` y uso de `DATABASE_URL`; `web/index.html` prueba que ya existe una shell de interfaz y un repertorio de endpoints. `Procfile` queda como rastro historico, no como anclaje de arranque vigente.
+
+El **despliegue** es evidencia de nivel 1 con estatuto formalizado: este repositorio ya estuvo desplegado en Railway con gate cumplido —HTTP 200 en la URL publica, `/api/version` sirviendo la version del CHANGELOG, build slim funcional con dos dependencias—. El stack se retiro en v11.21 y se **reactivo en v12.22**, que es de donde vienen los archivos actuales. La entrada `B5` de `REVIEW.md` conserva ese gate; su nota de estado quedo obsoleta y se corrige aparte.
+
+Todo esto ancla Railway como camino operativo **ya probado** y una base conceptual web/API. No prueba que el modelo de datos actual ni el codigo del dashboard deban migrarse tal cual al producto nuevo.
+
+La organizacion inicial correcta no es un mosaico difuso de scripts, sino un sistema con **cuatro componentes operativos**:
+
+1. **Frontend web.** Interfaz para entrar al sistema, seleccionar o subir fuente, lanzar tareas, ver estados, revisar incidencias y aprobar cierres. Puede reaprovechar ideas de navegacion y analitica del dashboard actual, no necesariamente su codigo ni su lenguaje visual.
+2. **Servicio web / API.** Capa HTTP que aplica el control de acceso que se cierre en Fase A, expone acciones, registra estados, coordina aprobaciones y entrega al frontend el estado vivo del sistema. No presupone todavia un sistema completo de cuentas si la v1 arranca con acceso restringido.
+3. **Worker de tareas largas.** Proceso separado del HTTP para extraccion, parseo documental, validaciones, generacion y tareas que no deben bloquear la interfaz. La frontera HTTP / jobs largos si queda fijada desde el principio; la forma concreta de la cola no.
+4. **Persistencia y artefactos.** Separar desde el principio la persistencia operativa de la persistencia canonica del contenido. La operativa —estados, jobs, aprobaciones y control de acceso— si puede vivir en Postgres desde la v1. La canonica del contenido editorial y la trazabilidad fina de artefactos siguen abiertas a prueba (§5.4, §6.3.3). Los PDFs y artefactos viven fuera de Git con un mecanismo de almacenamiento todavia por cerrar.
+
+En Railway esto se traduce, como minimo, en **tres piezas desplegadas**: un servicio web, un worker y una base de datos Postgres para la capa operativa. La separacion entre frontend y API puede arrancar en un solo servicio mientras el producto se estabiliza, pero la separacion entre HTTP y jobs largos conviene existir desde el principio. El almacenamiento de artefactos no queda resuelto por nombrar Railway: antes del paso 5 de §3.8 hay que decidir si la v1 trabaja con volumen controlado, bucket autorizado o acceso local restringido.
+
+## 3.8 Orden practico de construccion de componentes
+
+La construccion no debe empezar por todos los componentes a la vez. El primer recorrido end-to-end que da sentido a este orden no es generico: es el **gate de fidelidad fuente -> inventario**, desde la seleccion de una unidad o PDF hasta la revision humana de incidencias y el cierre de la tarea.
+
+Ese gate no se inventa aqui: existe ya como prototipo por la tarea 1 de Fase 0. Lo que este orden construye no es el gate, sino el recorrido operativo que lo envuelve —interfaz, estados, API, worker— alrededor de algo que a esas alturas ya funciona.
+
+Antes del paso 1 hay una precondicion material: declarar como accede el repositorio nuevo a los PDFs con derechos sin violar §7.
+
+El orden util es este:
+
+1. **Cerrar la interfaz minima.** Un frontend utilizable para entrar, elegir una unidad o PDF, lanzar el gate de fidelidad y ver su estado e incidencias.
+2. **Cerrar el modelo de estados.** Definir en base de datos que es una tarea, que estados tiene, quien la lanza, quien la revisa y que significa aprobar o devolver.
+3. **Cerrar la API del flujo minimo.** Crear los endpoints que unen frontend, persistencia operativa y ejecucion de la tarea en un solo recorrido visible.
+4. **Separar el worker y declarar la cola minima.** Sacar del servicio web toda tarea larga: extraccion, comparacion, parseo, validacion y generacion, con un mecanismo explicito de entrega de trabajos aunque al principio sea simple.
+5. **Cerrar el almacenamiento de artefactos.** Elegir y montar el mecanismo que guarda PDFs fuente, salidas intermedias y artefactos finales fuera de Git, con referencias trazables desde la capa operativa.
+6. **Ampliar capacidad por capacidad.** Una vez exista ese esqueleto operativo, integrar gates, parseres, modelos y fases nuevas sin rehacer la base.
+
+La regla de fondo es simple: **primero un flujo end-to-end visible en Railway; despues crecimiento por componentes**, no una arquitectura completa dibujada pero sin recorrido operativo.
+
+## 3.9 Plano de operacion y plano de construccion
+
+Operacion y construccion no deben describirse como si fueran la misma cosa.
+
+- **Plano de operacion del producto.** Lo componen el frontend, la API, el worker, la base de datos y el almacenamiento de artefactos desplegados en Railway. Este plano responde a la pregunta: **como usa el sistema un usuario real cuando ya esta encendido**.
+- **Plano de construccion del producto.** Lo componen la constitution del repositorio nuevo, Spec Kit, superpowers, `CLAUDE.md`, VS Code, Claude Code, tests, migraciones y despliegues del monorepo nuevo. Este plano responde a la pregunta: **como se diseña, implementa, valida y despliega cada componente del sistema**.
+
+El primero gobierna la experiencia del usuario final. El segundo gobierna el trabajo de ingenieria.
+
+Papel de cada pieza en el plano de construccion:
+
+- **La constitution del repositorio nuevo** es el contrato rector del plano de construccion. `CLAUDE.md` y las reglas path-scoped aterrizan esa constitution a operativa local; no la sustituyen.
+- **Spec Kit y superpowers** cubren dos mitades del mismo metodo de construccion: el primero define constitution, specify, plan, tasks, implement y converge; el segundo disciplina implementacion y verificacion. Su adopcion formal sigue sujeta al criterio de §5.1.1.
+- **Claude Code** ejecuta trabajo de ingenieria sobre el repositorio: analiza, edita, valida y automatiza.
+- **VS Code** es una de las superficies posibles de trabajo para esa construccion.
+- **Railway** no define como se construye el codigo: define donde se despliega y opera el resultado.
+
+La consecuencia practica es que frontend, backend, worker y persistencia no se "hacen con Spec Kit" ni "operan con Claude Code": se **construyen** con ese workflow y despues **operan** como servicios propios del producto.
+
 ## 4. Que papel tiene Claude Code entonces
 
 Claude Code encaja como herramienta de ingenieria del sistema, no como sistema final de operacion.
@@ -291,14 +367,16 @@ Dictamen:
 Con la evidencia actual, todavia no conviene fijar como decisiones cerradas:
 
 - el runtime final de agentes;
-- la forma canonica final de persistencia;
+- la forma canonica final de persistencia del contenido editorial;
 - el proveedor principal de modelos, y tampoco el gateway o agregador por el que se acceda a ellos;
-- la plataforma de despliegue;
+- la plataforma final de despliegue, aunque la primera version operativa se montara en Railway;
 - si el producto consume un sistema de diseno ya existente o solo su patron de contrato escrito;
 - si el dashboard seguira separado o se integrara;
 - si la capa de automatizacion visual tendra o no un papel relevante.
 
-Aviso sobre dos de ellas. La plataforma de despliegue resuelve **donde corre** el sistema; no resuelve la entrega, que depende de usuario, derechos, alcance y modelo de uso (§9.0a). Y el gateway de modelos es una pieza de implementacion: la decision que va antes es la regla de exposicion de la fuente (§7), no la configuracion de un proveedor concreto.
+Aviso sobre dos de ellas. **Railway queda fijado aqui como plataforma operativa provisional** para la primera version del **repositorio nuevo de producto**, porque ya hay anclaje tecnico suficiente en el repositorio actual y hace falta un destino real de construccion. Eso decide **donde correra primero** el sistema; no resuelve por si solo la entrega, que depende de usuario, derechos, alcance y modelo de uso (§9.0a), ni obliga a que Railway sea la plataforma final. Y el gateway de modelos es una pieza de implementacion: la decision que va antes es la regla de exposicion de la fuente (§7), no la configuracion de un proveedor concreto.
+
+La distincion que evita contradicciones es esta: **persistencia operativa** de tareas, estados, jobs y control de acceso puede fijarse ya; **persistencia canonica del contenido editorial y de su trazabilidad final** sigue abierta y debe resolverse con la prueba diferida de §6.3.3.
 
 Estas piezas deben resolverse cuando cada fase haya producido evidencia funcional suficiente.
 
@@ -309,10 +387,12 @@ La forma correcta de cerrar las decisiones abiertas no es por preferencia tecnic
 | Decision abierta | Evidencia actual | Prueba minima necesaria | Cuando decidir |
 |---|---|---|---|
 | Runtime de orquestacion | Hoy ya existe flujo real, pero repartido entre documentos, scripts, decisiones humanas y validaciones parciales. Tambien esta claro que el sistema necesita gates y estado, pero no esta demostrado que necesite ya un runtime agentico complejo. | Construir un primer recorrido end-to-end de una sola capacidad con estados visibles, reintentos simples y aprobacion humana. Si ese flujo no cabe con claridad en una orquestacion ligera, se justifica evaluar runtime mas fuerte. | Despues de cerrar el primer recorrido end-to-end operativo de una fase real. |
-| Persistencia canonica final | El JSON por unidad ya funciona para extraer, validar y conservar artefactos. Lo no probado todavia es si basta para consulta transversal, versionado operativo, trazabilidad fina y reutilizacion NC2. | Comparar un mismo caso real en tres modos: solo JSON, JSON + indice derivado, y modelo con almacenamiento mas estructurado. Medir coste de escritura, consulta transversal, trazabilidad y facilidad de alimentar fases posteriores. | Despues de probar el primer flujo completo desde PDF hasta artefacto reutilizable. |
+| Persistencia canonica final del contenido editorial | El JSON por unidad ya funciona para extraer, validar y conservar artefactos. Lo no probado todavia es si basta para consulta transversal, versionado operativo, trazabilidad fina y reutilizacion NC2. | Comparar un mismo caso real en tres modos: solo JSON, JSON + indice derivado, y modelo con almacenamiento mas estructurado. Medir coste de escritura, consulta transversal, trazabilidad y facilidad de alimentar fases posteriores. | Despues de probar el primer flujo completo desde PDF hasta artefacto reutilizable. |
 | Proveedor principal de modelos | Esta probado que la capa debe ser programatica y no depender de una interfaz de consumo. No esta probado todavia que un solo proveedor cubra bien coste, vision, fiabilidad y tareas auxiliares. | Ejecutar un banco pequeno de tareas reales del proyecto separando vision, estructuracion, verificacion y redaccion asistida. Comparar calidad cerrada por tarea y coste por tarea, no solo coste por token. | Cuando exista una bateria minima de tareas reales repetibles y medibles. |
 | Dashboard separado o interfaz unificada | El dashboard actual ya demuestra valor analitico, pero no esta probado si debe seguir separado o convertirse en parte de la interfaz principal del producto. | Probar una version minima donde un mismo usuario haga una tarea completa y consulte incidencias y analitica sin cambiar de contexto. Si el dashboard separado introduce friccion o duplicacion, se integra. | Despues del primer prototipo de interfaz operativa. |
 | Papel de una automatizacion visual tipo canvas | Hay evidencia de que puede servir para integraciones o automatizaciones externas, pero no de que sea la mejor base del nucleo operativo. | Probar una sola automatizacion periférica real, por ejemplo notificacion, ingestión o sincronizacion de artefactos, y medir si aporta claridad operativa o solo otra capa de complejidad. | Solo despues de que el nucleo del flujo principal este claro. |
+
+Antes del primer recorrido end-to-end deben quedar escritas cuatro precondiciones operativas: mecanismo de acceso a la fuente con derechos, mecanismo de almacenamiento de artefactos, mecanismo de entrega de trabajos al worker y alcance real del control de acceso de la v1.
 
 ## 6. Capacidad 1: leer PDFs del libro por unidad y extraer la informacion
 
@@ -435,6 +515,12 @@ Por tanto, lo que debe definirse no es solo el formato de salida de fase 1, sino
 - dashboard;
 - reutilizacion futura en NC2.
 
+Separacion provisional para la **primera version operativa en Railway**:
+
+- **Postgres** guarda usuarios, tareas, estados, aprobaciones, auditoria y referencias a artefactos.
+- **Almacenamiento de ficheros** guarda PDFs fuente, salidas intermedias y artefactos generados; no deben vivir en Git.
+- **JSON por unidad** puede seguir existiendo como artefacto de trabajo o exportacion versionable, pero no debe confundirse con todo el almacenamiento operativo del sistema.
+
 Regla de cierre para esta decision:
 
 - no elegir formato por costumbre;
@@ -442,6 +528,8 @@ Regla de cierre para esta decision:
 - elegir la estructura que mejor sirva al flujo completo una vez probado el primer recorrido end-to-end.
 
 ### 6.3.3 Persistencia: prueba diferida, no analisis principal de este momento
+
+Esta prueba diferida se refiere a la **persistencia canonica del contenido editorial**, no a la persistencia operativa minima de tareas, estados y jobs que el primer prototipo ya puede montar para funcionar.
 
 Esta decision estaba desarrollada aqui como el analisis profundo principal del documento. Se degrada a **prueba diferida** por tres razones:
 
@@ -622,22 +710,40 @@ La materia prima de este sistema son paginas literales de un libro con derechos 
 
 Ejemplo del nivel equivocado: decidir "no activar el registro de prompts en el gateway" es una precaucion de herramienta, y llega tarde. La decision de proyecto es anterior y mas alta: que parte de la fuente puede cruzar a un tercero, y con que autorizacion.
 
+### Mapa minimo de protocolos por fase
+
+La seguridad de este sistema no debe quedar a memoria de sesion. La pasada actual deja identificado este mapa minimo de protocolos a fijar por fase:
+
+- **Ya, en todo el repositorio sin excepcion:** `P5 · R2, R3, R4` para secretos, permisos minimos y logs.
+- **Fase 0 / tarea 2:** `P5 · R1`. Los PDFs que se parsean son datos no confiables; lo extraido se trata como dato, nunca como instruccion.
+- **Fase A:** `P12`. Identidad y acceso dejan de ser opcion cuando el sistema tenga varios usuarios reales dentro de SGEL.
+- **Fase B:** `P2 · P3 · P6`. Van a la constitution del repositorio nuevo y a sus validaciones duras, no a notas blandas de sesion.
+- **Fase C:** `P5 · R1` y `P2`. El gate de fidelidad es tambien validacion adversarial de la extraccion.
+- **Fase F:** `P8 · P12`. Scope explicito y ejecuciones auditables.
+- **Fase G:** `P10 · checklist · P11`. Paso obligatorio antes de cualquier despliegue con cliente o equipo usando el sistema vivo.
+
+No todo se transfiere tal cual. El criterio de otro contexto de "empezar amplio y recortar" no pasa automaticamente a este sistema, y los checklists pensados para otra superficie con modelo deben rederivarse antes de gobernar extraccion o generacion editorial.
+
 ### Fase 0. Evidencia barata
 
-Va antes que A porque no depende de ninguna decision de arquitectura y rinde igual si la plataforma se construye, si tarda meses o si no llega a existir nunca.
+Va antes que A porque no depende del runtime final ni de cerrar toda la arquitectura. Combina auditoria del sistema actual en este repositorio con prototipos minimos en el repositorio nuevo. Si el producto tarda meses o no llega a existir nunca, la parte de auditoria sigue rindiendo igual.
 
-1. Cerrar una **linea base operativa** del gate de fidelidad y pasarlo por las diez unidades; **formalizar el resultado en un artefacto versionado** del repositorio. No es una subida de nivel —la evidencia ya es de nivel 1 por tipo— sino un cambio de estatuto: de evidencia de sesion a evidencia formalizada (§1.2). En esta misma tarea no se da por final la forma del gate: se deja escrita y estable la vara provisional con la que el spike del punto 2 va a comparar los candidatos que preserven mejor la pagina. La linea base incluye tambien una **clasificacion provisional** de divergencia real frente a artefacto de comparacion, suficientemente legible para revision humana —es el requisito 1 de §6.3.1, y su sitio es el gate base, no el banco de pruebas entre parsers—; el spike del punto 2 podra confirmarla, mejorarla o sustituirla.
-2. **Spike de parseo y control documental sobre PDFs reales**, con el criterio de exito escrito antes de ejecutarlo. Es el **primer spike tecnico del proyecto** —antes que el runtime y antes que la interfaz— porque despeja la incertidumbre mas barata de una capacidad fundacional. Se ejecuta **en este repositorio**, que es donde estan la fuente y el inventario contra el que comparar, y no en ningun contenedor futuro. Compara los candidatos del §5.1.1 contra la linea base del punto 1. Responde a cuatro preguntas, y solo a esas:
+Por eso Fase 0 no pertenece entera a un solo lado: las tareas 1 y 2 se ejecutan y formalizan en el repositorio nuevo; las tareas 3 a 6 auditan el sistema actual y se ejecutan aqui.
+
+1. Cerrar una **linea base operativa** del gate de fidelidad y pasarlo por las diez unidades; **formalizar el resultado en un artefacto versionado del repositorio nuevo**. No es una subida de nivel —la evidencia ya es de nivel 1 por tipo— sino un cambio de estatuto: de evidencia de sesion a evidencia formalizada (§1.2). En esta misma tarea no se da por final la forma del gate: se deja escrita y estable la vara provisional con la que el spike del punto 2 va a comparar los candidatos que preserven mejor la pagina. La linea base incluye tambien una **clasificacion provisional** de divergencia real frente a artefacto de comparacion, suficientemente legible para revision humana —es el requisito 1 de §6.3.1, y su sitio es el gate base, no el banco de pruebas entre parsers—; el spike del punto 2 podra confirmarla, mejorarla o sustituirla.
+2. **Spike de parseo y control documental sobre PDFs reales**, con el criterio de exito escrito antes de ejecutarlo. Es el **primer spike tecnico del proyecto** —antes que el runtime y antes que la interfaz— porque despeja la incertidumbre mas barata de una capacidad fundacional. Se ejecuta **en el repositorio nuevo del producto**, usando como muestra de contraste la fuente y el inventario auditados en este repositorio. No empieza hasta declarar como accede ese repo a los PDFs con derechos conforme a §7. Compara los candidatos del §5.1.1 contra la linea base del punto 1. Responde a cuatro preguntas, y solo a esas:
    - si mejora la separacion entre texto del alumno y anotacion del profesor;
    - si conserva mejor el orden de lectura y los bloques de la pagina;
    - si reduce divergencias falsas frente al inventario;
    - si puede ejecutarse sin violar la regla de exposicion de la fuente (§7).
 
    Ninguno de los candidatos de §5.1.1 llega elegido: llegan como espacio de busqueda, y el resultado de este spike es lo unico que puede cambiarles el nivel.
-3. Corregir el contrato de la fuente: declarar que es edicion anotada y anadir la separacion alumno/anotacion (§6.3.1).
-4. Inventario de ataduras a NC1: que exactamente hay que tocar para que el sistema sirva a Companeros 2 (§3.5).
-5. Auditar que demuestra ya la fase 2 sobre consulta transversal en JSON, antes de disenar pruebas nuevas de persistencia (§6.3.3).
-6. Medir minutos de revision por unidad, como telemetria de referencia y no como criterio de aprobacion (§7).
+3. Corregir el contrato de la fuente: declarar que es edicion anotada y anadir la separacion alumno/anotacion (§6.3.1). **Esta tarea se ejecuta en este repositorio**, porque aqui vive hoy la autoridad del contrato de fase 1.
+4. Inventario de ataduras a NC1: que exactamente hay que tocar para que el sistema sirva a Companeros 2 (§3.5). **Esta tarea se ejecuta en este repositorio**, porque aqui estan el schema, los registries y la cabecera canonica actual.
+5. Auditar que demuestra ya la fase 2 sobre consulta transversal en JSON, antes de disenar pruebas nuevas de persistencia (§6.3.3). **Esta tarea se ejecuta en este repositorio**, porque aqui viven hoy los artefactos y validadores que hay que contrastar.
+6. Medir minutos de revision por unidad, como telemetria de referencia y no como criterio de aprobacion (§7). **Esta tarea se ejecuta sobre el trabajo editorial de este repositorio**.
+
+Durante Fase 0, el repositorio nuevo no reescribe el contrato de fase 1: consume la version auditada de este repositorio. Si mas adelante ese contrato migra, la autoridad cambia por decision explicita.
 
 ### Fase A. Definicion del producto
 
@@ -664,7 +770,7 @@ Va antes que A porque no depende de ninguna decision de arquitectura y rinde igu
 - anadir al contrato la separacion entre texto del alumno y anotacion del profesor (§6.3.1);
 - registrar errores recurrentes en memoria correctiva.
 
-Nota de secuencia: los dos primeros puntos se adelantan a Fase 0 por ser baratos y no depender de A ni de B. Fase C consolida y formaliza lo que Fase 0 haya probado, no lo descubre.
+Nota de secuencia: en Fase 0 se adelantan la correccion del contrato y la definicion experimental del gate por ser baratos y no depender del runtime final. Fase C consolida y formaliza lo que Fase 0 haya probado, no lo descubre.
 
 ### Fase D. Persistencia y estructura de conocimiento
 

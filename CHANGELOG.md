@@ -15,6 +15,12 @@
 
 ---
 
+## [v12.133 — 2026-09-05] — Arquitectura futura y Railway: cierre documental del lote
+
+`docs/arquitectura-sistema-producto-guias-ia.md` cerro el lote estructural pendiente: §3.6-§3.9 fijan topologia del repo nuevo, Railway como plataforma operativa provisional, orden de construccion y separacion entre plano de construccion y plano de operacion; §5.4 + §6.3.3 separan persistencia operativa de persistencia canonica; Fase 0 queda partida entre este repo y el repo nuevo; §7 incorpora el mapa minimo de protocolos por fase.
+
+`REVIEW.md` quedo alineado con `B5` y con verificacion externa real: `entornoeditorial.up.railway.app` responde y los endpoints `/api/inventario`, `/api/inventarios` y `/api/reciclaje` quedan anclados como exposicion publica sin autenticacion, con campos de contenido derivados del libro (`instruccion_original`, `respuestas`, `ejemplo_libro`, transcripciones). No cambia el dashboard ni el despliegue; cambia el dictamen documental y la trazabilidad del riesgo abierto.
+
 ## [v12.132 — 2026-09-05] — Arquitectura del sistema producto: ingesta documental, evidencia de nivel 4 y exposición de la fuente
 
 `docs/arquitectura-sistema-producto-guias-ia.md` (700 → 771 líneas) tras barrer entero el repositorio de propuestas (150 fichas, 14 protocolos y el tracker de solapes; quince leídas completas). **Hueco corregido**: faltaba la capa de ingesta documental, que toca de lleno la capacidad 1. Nueva tercera pasada en §5.1.1 con dos grupos —parseo (Docling, MarkItDown, Chandra, Mistral OCR, anydoc) y método de construcción (spec-kit + superpowers como par, contrato de diseño escrito, ponytail subordinado)— y §6.3 deja de dar por suficiente `pdftotext`: la separación alumno/anotación es un problema de disposición de página, no de cadenas.
