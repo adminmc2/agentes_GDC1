@@ -15,6 +15,14 @@
 
 ---
 
+## [v12.132 — 2026-09-05] — Arquitectura del sistema producto: ingesta documental, evidencia de nivel 4 y exposición de la fuente
+
+`docs/arquitectura-sistema-producto-guias-ia.md` (700 → 771 líneas) tras barrer entero el repositorio de propuestas (150 fichas, 14 protocolos y el tracker de solapes; quince leídas completas). **Hueco corregido**: faltaba la capa de ingesta documental, que toca de lleno la capacidad 1. Nueva tercera pasada en §5.1.1 con dos grupos —parseo (Docling, MarkItDown, Chandra, Mistral OCR, anydoc) y método de construcción (spec-kit + superpowers como par, contrato de diseño escrito, ponytail subordinado)— y §6.3 deja de dar por suficiente `pdftotext`: la separación alumno/anotación es un problema de disposición de página, no de cadenas.
+
+**Tres correcciones de criterio**: §1.2 declara que el veredicto de un catálogo ajeno no viaja (las etiquetas del repositorio de propuestas son decisiones de APEX — transfiere el contenido técnico, no el veredicto); §5.1.1 baja todo el bloque nuevo a **nivel 4**, porque llega leído del catálogo y no contrastado en fuente primaria; y §7 corrige la regla de coste por la ley de Goodhart — los minutos de autor pasan a telemetría y la aprobación se decide con métricas preexistentes del trabajo real.
+
+**Regla transversal nueva en §7 — exposición de la fuente**: la materia prima no cruza a terceros por defecto, en cuatro cláusulas de nivel de proyecto. **Fase 0** gana la tarea 2 (spike de parseo y control documental sobre PDFs reales, en este repositorio, declarado primer spike técnico) y la tarea 1 se redefine como línea base operativa con clasificación provisional, que absorbe el requisito 1 de §6.3.1. **§9.0a respondida**: varios usuarios dentro de SGEL, producto del autor entregado a SGEL. Sin cambios en `unidades/`, contratos de fase ni scripts; `CLAUDE.md` sin tocar por decisión del autor.
+
 ## [v12.131 — 2026-09-03] — Arquitectura del sistema producto: giro de prioridad hacia fuente y gate
 
 `docs/arquitectura-sistema-producto-guias-ia.md` (borrador del revisor, 610 → 700 líneas) reordenado desde el cuello de botella real en lugar de desde la arquitectura ideal. §5.1.1 pasa a «espacio de búsqueda — cero adoptados» con regla de spike previo; persistencia se degrada de análisis principal a prueba diferida (§6.3.3), porque la fase 2 ya es cómputo cross-unidad sobre los JSON; nueva §6.3.1 con el análisis de la fuente real. Añadidas Fase 0 de evidencia barata, regla transversal de coste en minutos de autor y, en §9, las preguntas previas de usuario/derechos y continuidad de NC1 durante A-I.

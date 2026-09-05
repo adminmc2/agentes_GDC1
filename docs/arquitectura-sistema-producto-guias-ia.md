@@ -1,8 +1,10 @@
 # Arquitectura del sistema producto para guias didacticas con IA
 
 > Estado: borrador de definicion para discusion con el ejecutor.
-> Fecha: 2026-09-03.
+> Fecha: 2026-09-03 · revisado 2026-09-05.
 > Funcion: fijar el objetivo real del sistema futuro, ordenar su construccion por fases y separar claramente el producto final de las herramientas transitorias de ingenieria.
+>
+> Revision del 2026-09-05, tras leer entero el repositorio de propuestas: entra la ingesta documental como problema de primer orden (§5.1.1, §6.3, Fase 0), se corrige la regla de coste por el efecto Goodhart, se anade una regla transversal de exposicion de la fuente y se responde la pregunta 0a de §9.
 
 ## 1. Correccion de marco
 
@@ -57,6 +59,10 @@ Consecuencia:
 - el repositorio de propuestas sirve para abrir caminos y ahorrar exploracion ciega;
 - no obliga a adoptar nada;
 - toda pieza externa que entre en la arquitectura debe revalidarse con fuente primaria y con prueba en contexto.
+
+**El veredicto de un catalogo ajeno no viaja.** El repositorio de propuestas se construyo para decidir que entra en APEX: un producto clinico regulado, multiusuario, con sus propias lineas rojas de datos personales y de compliance. Sus etiquetas de estado —adoptado, a probar, referencia— son decisiones **de aquel dominio**.
+
+De una ficha transfiere su contenido tecnico verificable. No transfiere su veredicto. Una pieza marcada como adoptada alli entra aqui como candidato de nivel 3, igual que cualquier otra, y no cambia de nivel hasta probarse contra material real de este proyecto. Confundir las dos cosas es la version silenciosa de cerrar por anticipacion: se hereda una decision sin haberla tomado.
 
 ## 2. Diagnostico rector
 
@@ -206,7 +212,7 @@ Pero su valor correcto no es "decidir por nosotros", sino reducir el espacio de 
 
 ### 5.1.1 Espacio de busqueda de candidatos externos — cero adoptados
 
-Ninguno de los candidatos de esta seccion esta adoptado ni preseleccionado. Toda la evidencia recogida aqui es de **nivel 3** de la jerarquia de §1.2 (documentacion oficial o fuente primaria del producto), no de nivel 1 ni de nivel 2. La funcion de la seccion es reducir el espacio de busqueda, no crear inercia de adopcion.
+Ninguno de los candidatos de esta seccion esta adoptado ni preseleccionado. La seccion mezcla dos planos de evidencia: **nivel 3** cuando cita documentacion oficial o fuente primaria de cada pieza, y **nivel 4** cuando resume como el repositorio de propuestas las compara, agrupa o prioriza. La funcion de la seccion es reducir el espacio de busqueda, no crear inercia de adopcion.
 
 **Regla de spike previo.** Ninguna pieza externa entra en la arquitectura sin una prueba contra una tarea real de este proyecto, y el criterio de exito de esa prueba debe estar **escrito antes de ejecutarla**. Un spike sin criterio previo no cuenta como evidencia de nivel 1, porque siempre se puede leer como confirmacion de lo que ya se queria hacer.
 
@@ -217,6 +223,26 @@ Estado tras una segunda pasada de contraste:
 - `n8n`: la documentacion oficial lo presenta como plataforma de workflows y agentes con canvas visual, codigo, integraciones, human-in-the-loop y despliegue en infraestructura propia o cloud. Por tanto es candidato real para automatizacion e integraciones, no una decision automatica sobre el nucleo del producto.
 - `Claude Platform API`: la documentacion oficial presenta una capa programatica con acceso API, pricing por uso, modelos, tools, structured outputs y batch processing. Por tanto la capa de modelos debe pensarse como backend programatico y no como extension de una interfaz de consumo.
 - `Claude Code`: la documentacion oficial lo presenta como herramienta de desarrollo multi-superficie y menciona Agent SDK para construir workflows propios. Por tanto sigue siendo valido como herramienta de ingenieria, no como prueba de que deba ser la interfaz final del sistema.
+
+**Tercera pasada, con el repositorio de propuestas leido entero** (150 fichas, 14 protocolos y el tracker de solapes). Aparecen dos grupos que las dos pasadas anteriores no habian mirado.
+
+**Grupo 1 — ingesta y parseo documental.** Es el hallazgo importante de la pasada, porque toca de lleno la capacidad 1 y no estaba considerado en ninguna parte de este documento:
+
+- `Docling` (IBM / LF AI, MIT): PDF a Markdown o JSON conservando **layout, orden de lectura y estructura de tablas**, con OCR, en ejecucion local sin servicio externo. Disponible como CLI, libreria y servicio.
+- `MarkItDown` (Microsoft, MIT): conversion rapida de documentos digitales; **no hace OCR**.
+- `Chandra`: OCR local de alta fidelidad. El codigo es permisivo pero el modelo lleva otra licencia, que hay que leer antes de contar con el.
+- `Mistral OCR`: extraccion estructurada potente, con opcion de contenedor propio.
+- `anydoc`: conversion muy rapida, solo capa de texto.
+
+El catalogo ya formula un reparto por tipo de documento —parser ligero para el limpio, parser con layout para el complejo— que aqui vale como punto de partida a validar, no como conclusion.
+
+**Grupo 2 — metodo de construccion.** Cuatro piezas que gobiernan **como** se construye, no que se construye:
+
+- `spec-kit` y `superpowers` funcionan como par: el primero define el que y las reglas, el segundo construye y verifica el como con prueba primero, revision y evidencia. Por separado cada uno pierde la mitad de su valor, y este documento solo habia mirado el primero.
+- contrato de diseno escrito, en la linea del patron `DESIGN.md`: la direccion estetica se fija en un documento que el agente obedece, no en una herramienta que la genera en cada pantalla.
+- `ponytail`: ruleset contra la sobreconstruccion. Es disciplina de implementacion, subordinada al metodo; no es pieza rectora del arranque y no debe tratarse como tal.
+
+Ninguna de estas nueve piezas esta adoptada. **Hoy todo este bloque es de nivel 4**: llega leido del catalogo, no contrastado en fuente primaria. Abrir la documentacion oficial de cada pieza lo sube a nivel 3, y solo el spike de Fase 0 puede llevarlo mas arriba. Todas arrastran el aviso de veredicto ajeno de §1.2 y a todas les aplica la regla de spike previo con criterio escrito.
 
 ### 5.1.2 Candidatos utiles pero todavia no ratificados por fuente primaria suficiente o por prueba local
 
@@ -266,9 +292,13 @@ Con la evidencia actual, todavia no conviene fijar como decisiones cerradas:
 
 - el runtime final de agentes;
 - la forma canonica final de persistencia;
-- el proveedor principal de modelos;
+- el proveedor principal de modelos, y tampoco el gateway o agregador por el que se acceda a ellos;
+- la plataforma de despliegue;
+- si el producto consume un sistema de diseno ya existente o solo su patron de contrato escrito;
 - si el dashboard seguira separado o se integrara;
 - si la capa de automatizacion visual tendra o no un papel relevante.
+
+Aviso sobre dos de ellas. La plataforma de despliegue resuelve **donde corre** el sistema; no resuelve la entrega, que depende de usuario, derechos, alcance y modelo de uso (§9.0a). Y el gateway de modelos es una pieza de implementacion: la decision que va antes es la regla de exposicion de la fuente (§7), no la configuracion de un proveedor concreto.
 
 Estas piezas deben resolverse cuando cada fase haya producido evidencia funcional suficiente.
 
@@ -331,13 +361,15 @@ Extraccion primaria:
 Control de fidelidad:
 
 - debe ser independiente del canal primario;
-- `pdftotext` y equivalentes son utiles aqui;
-- su funcion es detectar drift textual, no sustituir la extraccion completa.
+- `pdftotext` y equivalentes sirven para el drift textual, y solo para eso: devuelven cadenas sin posicion en la pagina;
+- la separacion entre texto del alumno y anotacion del profesor **no es un problema de cadenas sino de disposicion**, y para eso hace falta un parser que conserve layout y orden de lectura (§5.1.1);
+- su funcion es detectar divergencia, no sustituir la extraccion completa.
 
 Dictamen:
 
 - el problema principal no es falta de OCR;
-- el problema principal es falta de un gate de fidelidad previo a integrar.
+- el problema principal es falta de un gate de fidelidad previo a integrar;
+- y el carril de control no puede quedarse en `pdftotext`, porque la separacion que el contrato no cubre exige informacion que `pdftotext` no emite.
 
 ### 6.3.1 Analisis principal de este momento: la fuente real y el gate
 
@@ -568,15 +600,44 @@ Razon: todos los gates de este documento terminan en "revision humana", y el rev
 
 Ejemplo de aplicacion correcta: el gate de fidelidad convierte "revisar dos o tres paginas al azar contra el PDF" en "revisar una lista corta de divergencias ya clasificadas". Ahorra minutos y ademas cubre mas superficie.
 
+**Correccion: los minutos son telemetria, no criterio de aprobacion.** Un ahorro en minutos estimado por el propio revisor es justo el tipo de medida que la ley de Goodhart corrompe. Percibir que se va mas rapido y ir mas rapido no son la misma cosa, y aqui quien estima es la misma persona que se beneficia de la estimacion.
+
+Por tanto los minutos se registran como referencia, y la aprobacion se decide con metricas que ya existen en el trabajo real y que nadie fabrico para esta ocasion:
+
+- divergencias detectadas antes de cerrar una unidad;
+- falsos positivos que la revision deja de tener que descartar;
+- avisos de auditoria que quedan sin resolver al cerrar;
+- deuda de revision pendiente al final de cada unidad.
+
+Y una prueba que no necesita numero: si se retirase la pieza, ¿se volveria al metodo anterior sin notarlo? Si la respuesta es que si, no estaba aportando.
+
+### Regla transversal a todas las fases: exposicion de la fuente
+
+La materia prima de este sistema son paginas literales de un libro con derechos de una editorial, en su edicion anotada del profesor. Esa materia prima no cruza a terceros por defecto, y la regla que lo impide **no puede vivir en la configuracion de una herramienta**.
+
+- ninguna fase envia texto de la fuente a un servicio de terceros sin decision expresa y registrada para esa fase;
+- cuando una tarea se pueda resolver en local con calidad suficiente, se resuelve en local;
+- entre piezas comparables, la ejecucion local cuenta como criterio de seleccion, no como extra;
+- si una tarea exige un servicio externo, se declara que sale, hacia donde y con que retencion **antes** de la primera llamada.
+
+Ejemplo del nivel equivocado: decidir "no activar el registro de prompts en el gateway" es una precaucion de herramienta, y llega tarde. La decision de proyecto es anterior y mas alta: que parte de la fuente puede cruzar a un tercero, y con que autorizacion.
+
 ### Fase 0. Evidencia barata
 
 Va antes que A porque no depende de ninguna decision de arquitectura y rinde igual si la plataforma se construye, si tarda meses o si no llega a existir nunca.
 
-1. Cerrar el gate de fidelidad y pasarlo por las diez unidades; **formalizar el resultado en un artefacto versionado** del repositorio. No es una subida de nivel —la evidencia ya es de nivel 1 por tipo— sino un cambio de estatuto: de evidencia de sesion a evidencia formalizada (§1.2). En esta misma tarea se valida o se sustituye la forma concreta del gate, que §6.3.1 deja deliberadamente abierta.
-2. Corregir el contrato de la fuente: declarar que es edicion anotada y anadir la separacion alumno/anotacion (§6.3.1).
-3. Inventario de ataduras a NC1: que exactamente hay que tocar para que el sistema sirva a Companeros 2 (§3.5).
-4. Auditar que demuestra ya la fase 2 sobre consulta transversal en JSON, antes de disenar pruebas nuevas de persistencia (§6.3.3).
-5. Medir minutos de revision por unidad, para tener linea base de la regla transversal.
+1. Cerrar una **linea base operativa** del gate de fidelidad y pasarlo por las diez unidades; **formalizar el resultado en un artefacto versionado** del repositorio. No es una subida de nivel —la evidencia ya es de nivel 1 por tipo— sino un cambio de estatuto: de evidencia de sesion a evidencia formalizada (§1.2). En esta misma tarea no se da por final la forma del gate: se deja escrita y estable la vara provisional con la que el spike del punto 2 va a comparar los candidatos que preserven mejor la pagina. La linea base incluye tambien una **clasificacion provisional** de divergencia real frente a artefacto de comparacion, suficientemente legible para revision humana —es el requisito 1 de §6.3.1, y su sitio es el gate base, no el banco de pruebas entre parsers—; el spike del punto 2 podra confirmarla, mejorarla o sustituirla.
+2. **Spike de parseo y control documental sobre PDFs reales**, con el criterio de exito escrito antes de ejecutarlo. Es el **primer spike tecnico del proyecto** —antes que el runtime y antes que la interfaz— porque despeja la incertidumbre mas barata de una capacidad fundacional. Se ejecuta **en este repositorio**, que es donde estan la fuente y el inventario contra el que comparar, y no en ningun contenedor futuro. Compara los candidatos del §5.1.1 contra la linea base del punto 1. Responde a cuatro preguntas, y solo a esas:
+   - si mejora la separacion entre texto del alumno y anotacion del profesor;
+   - si conserva mejor el orden de lectura y los bloques de la pagina;
+   - si reduce divergencias falsas frente al inventario;
+   - si puede ejecutarse sin violar la regla de exposicion de la fuente (§7).
+
+   Ninguno de los candidatos de §5.1.1 llega elegido: llegan como espacio de busqueda, y el resultado de este spike es lo unico que puede cambiarles el nivel.
+3. Corregir el contrato de la fuente: declarar que es edicion anotada y anadir la separacion alumno/anotacion (§6.3.1).
+4. Inventario de ataduras a NC1: que exactamente hay que tocar para que el sistema sirva a Companeros 2 (§3.5).
+5. Auditar que demuestra ya la fase 2 sobre consulta transversal en JSON, antes de disenar pruebas nuevas de persistencia (§6.3.3).
+6. Medir minutos de revision por unidad, como telemetria de referencia y no como criterio de aprobacion (§7).
 
 ### Fase A. Definicion del producto
 
@@ -675,7 +736,17 @@ Dos preguntas previas condicionan a todas las demas y hoy no estan formuladas en
 
 **0a. Quien es el usuario del producto y que regimen de derechos aplica a los PDFs que entran.** §3.1 habla de "la interfaz real para el usuario" sin definir si ese usuario es el autor interno, SGEL, un docente externo o varios perfiles a la vez. La respuesta condiciona autenticacion, hosting, tenancy y modelo de coste. Y hay una segunda mitad que el documento no menciona ni una vez: la entrada son PDFs de editorial, gitignorados por copyright, que ademas pueden incluir la capa docente con soluciones. Sin regimen de derechos definido no esta claro que el producto pueda existir fuera de uso interno.
 
+**Respondida el 2026-09-05.** El usuario son **varios perfiles dentro de SGEL**; el producto es del autor y **se entrega** a SGEL; y la fuente son libros de la propia editorial que va a operar la herramienta. Eso cierra como bloqueo inmediato la duda de **titularidad y uso interno** —quien aporta el material es quien usa el sistema— pero no cierra por si solo la exposicion a terceros, la retencion ni las condiciones contractuales de los proveedores. Aun asi deja tres consecuencias vivas:
+
+- hay un momento de entrega, asi que nada del sistema puede depender de la maquina del autor ni de como la tiene montada;
+- la capa de modelos no puede colgar de una suscripcion personal: quien opera, paga (§4.1);
+- varios usuarios en **una sola** organizacion piden identidad y roles, no multi-tenencia. No se construye en la primera version, pero tampoco puede quedar clausurado por como se construya.
+
+Y una precision que la respuesta no cierra: que la editorial aporte el material no autoriza por si solo a que ese material cruce a terceros. Eso lo gobierna la regla de exposicion de la fuente (§7).
+
 **0b. Que pasa con NC1 mientras se construyen las fases A-I.** El documento describe nueve fases y no menciona ni una vez el entregable editorial en curso. Es el riesgo mayor del plan: que la construccion de la plataforma se coma el libro que hay que entregar.
+
+Estado a 2026-09-05: las diez unidades tienen ya capa `final/` —55 archivos mas nueve itinerarios, con U0 como unidad atipica— asi que el corpus ha llegado a meseta y el riesgo es hoy menor que hace un mes. Lo que queda son deudas declaradas (avisos de auditoria sin resolver, registro de repo B sin actualizar, bloques de la presentacion sin aplicar), y todas se pagan en el mismo recurso escaso: horas del autor.
 
 Y despues de esas dos:
 
